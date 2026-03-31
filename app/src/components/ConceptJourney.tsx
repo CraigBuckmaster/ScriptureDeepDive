@@ -9,7 +9,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { ChevronRight } from 'lucide-react-native';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 export interface JourneyStop {
   ref: string;
@@ -26,6 +26,8 @@ interface Props {
 }
 
 export default function ConceptJourney({ stops, onNavigate }: Props) {
+  const { base } = useTheme();
+
   if (!stops || stops.length === 0) return null;
 
   return (
@@ -36,27 +38,27 @@ export default function ConceptJourney({ stops, onNavigate }: Props) {
           <View key={`${stop.book}-${stop.chapter}-${idx}`} style={styles.row}>
             {/* Timeline spine */}
             <View style={styles.spine}>
-              <View style={styles.dot} />
-              {!isLast && <View style={styles.line} />}
+              <View style={[styles.dot, { backgroundColor: base.gold, borderColor: base.goldDim }]} />
+              {!isLast && <View style={[styles.line, { backgroundColor: base.goldDim + '60' }]} />}
             </View>
 
             {/* Content card */}
             <TouchableOpacity
-              style={styles.card}
+              style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.gold + '18' }]}
               activeOpacity={0.7}
               onPress={() => onNavigate(stop.book, stop.chapter)}
             >
               <View style={styles.cardHeader}>
-                <View style={styles.refBadge}>
-                  <Text style={styles.refText}>{stop.ref}</Text>
+                <View style={[styles.refBadge, { backgroundColor: base.gold + '20' }]}>
+                  <Text style={[styles.refText, { color: base.gold }]}>{stop.ref}</Text>
                 </View>
                 <ChevronRight size={14} color={base.textMuted} />
               </View>
-              <Text style={styles.label}>{stop.label}</Text>
-              <Text style={styles.development}>{stop.development}</Text>
-              <View style={styles.changesBox}>
-                <Text style={styles.changesTitle}>What Changes</Text>
-                <Text style={styles.changesText}>{stop.what_changes}</Text>
+              <Text style={[styles.label, { color: base.text }]}>{stop.label}</Text>
+              <Text style={[styles.development, { color: base.textDim }]}>{stop.development}</Text>
+              <View style={[styles.changesBox, { backgroundColor: base.gold + '0A', borderLeftColor: base.gold + '40' }]}>
+                <Text style={[styles.changesTitle, { color: base.gold }]}>What Changes</Text>
+                <Text style={[styles.changesText, { color: base.textDim }]}>{stop.what_changes}</Text>
               </View>
             </TouchableOpacity>
           </View>
@@ -87,21 +89,16 @@ const styles = StyleSheet.create({
     width: DOT_SIZE,
     height: DOT_SIZE,
     borderRadius: DOT_SIZE / 2,
-    backgroundColor: base.gold,
     borderWidth: 2,
-    borderColor: base.goldDim,
   },
   line: {
     flex: 1,
     width: LINE_WIDTH,
-    backgroundColor: base.goldDim + '60',
     marginTop: 2,
   },
   card: {
     flex: 1,
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.gold + '18',
     borderRadius: radii.lg,
     padding: spacing.sm,
     marginBottom: spacing.md,
@@ -114,39 +111,32 @@ const styles = StyleSheet.create({
     marginBottom: spacing.xs,
   },
   refBadge: {
-    backgroundColor: base.gold + '20',
     paddingHorizontal: spacing.sm,
     paddingVertical: 2,
     borderRadius: radii.sm,
   },
   refText: {
-    color: base.gold,
     fontFamily: fontFamily.uiMedium,
     fontSize: 11,
   },
   label: {
-    color: base.text,
     fontFamily: fontFamily.displayMedium,
     fontSize: 15,
     marginBottom: spacing.xs,
   },
   development: {
-    color: base.textDim,
     fontFamily: fontFamily.ui,
     fontSize: 13,
     lineHeight: 20,
     marginBottom: spacing.sm,
   },
   changesBox: {
-    backgroundColor: base.gold + '0A',
     borderLeftWidth: 2,
-    borderLeftColor: base.gold + '40',
     borderRadius: radii.sm,
     paddingHorizontal: spacing.sm,
     paddingVertical: spacing.xs,
   },
   changesTitle: {
-    color: base.gold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 10,
     textTransform: 'uppercase',
@@ -154,7 +144,6 @@ const styles = StyleSheet.create({
     marginBottom: 2,
   },
   changesText: {
-    color: base.textDim,
     fontFamily: fontFamily.ui,
     fontSize: 12,
     lineHeight: 18,

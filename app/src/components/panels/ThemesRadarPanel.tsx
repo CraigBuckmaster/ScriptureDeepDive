@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import Svg, { Circle, Line, Polygon, Text as SvgText } from 'react-native-svg';
-import { getPanelColors, base, spacing, fontFamily } from '../../theme';
+import { useTheme, spacing, fontFamily } from '../../theme';
 
 interface ThemeScore {
   label?: string;
@@ -17,6 +17,7 @@ const CENTER = SIZE / 2;
 const MAX_R = 95;
 
 export function ThemesRadarPanel({ data }: Props) {
+  const { base, getPanelColors } = useTheme();
   const colors = getPanelColors('themes');
   if (!data?.scores?.length) return null;
 

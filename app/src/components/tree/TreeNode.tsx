@@ -4,7 +4,7 @@
 
 import React, { memo, useCallback } from 'react';
 import { Circle, Rect, Text as SvgText, G } from 'react-native-svg';
-import { base, eras } from '../../theme';
+import { useTheme, eras } from '../../theme';
 import { TREE_CONSTANTS, type LayoutNode, type TreePerson } from '../../utils/treeBuilder';
 
 interface Props {
@@ -15,6 +15,7 @@ interface Props {
 }
 
 export const TreeNode = memo(function TreeNode({ node, dimmed, filterEra, onPress }: Props) {
+  const { base } = useTheme();
   const { data, x, y } = node;
   const isSpine = data.nodeType === 'spine';
   const r = isSpine ? TREE_CONSTANTS.spineRadius : TREE_CONSTANTS.satelliteRadius;

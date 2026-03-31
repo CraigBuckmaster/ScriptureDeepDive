@@ -7,9 +7,8 @@
 
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
-import { getScholarColor, fontFamily } from '../theme';
+import { useTheme, fontFamily, radii, spacing } from '../theme';
 import { getPanelLabel } from '../utils/panelLabels';
-import { radii, spacing } from '../theme';
 
 interface Props {
   scholarId: string;
@@ -17,6 +16,7 @@ interface Props {
 }
 
 export function ScholarTag({ scholarId, onPress }: Props) {
+  const { getScholarColor } = useTheme();
   const color = getScholarColor(scholarId);
   const label = getPanelLabel(scholarId);
 

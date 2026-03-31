@@ -9,7 +9,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { BadgeChip } from './BadgeChip';
-import { base, spacing, fontFamily } from '../theme';
+import { useTheme, spacing, fontFamily } from '../theme';
 import type { Chapter } from '../types';
 
 interface Props {
@@ -24,12 +24,13 @@ export function ChapterHeader({
   chapter, noteCount, onNotesPress,
   onTimelinePress, onMapPress,
 }: Props) {
+  const { base } = useTheme();
   const hasContextPills = !!(chapter.timeline_link_text || chapter.map_story_link_text || noteCount > 0);
 
   return (
     <View style={styles.container}>
       {/* Title */}
-      <Text style={styles.title} accessibilityRole="header">
+      <Text style={[styles.title, { color: base.text }]} accessibilityRole="header">
         {chapter.title || `Chapter ${chapter.chapter_num}`}
       </Text>
 
@@ -37,7 +38,7 @@ export function ChapterHeader({
       {(chapter.subtitle || hasContextPills) && (
         <View style={styles.subtitleRow}>
           {chapter.subtitle ? (
-            <Text style={styles.subtitle}>{chapter.subtitle}</Text>
+            <Text style={[styles.subtitle, { color: base.textDim }]}>{chapter.subtitle}</Text>
           ) : null}
 
           {chapter.timeline_link_text && onTimelinePress && (
@@ -74,7 +75,6 @@ const styles = StyleSheet.create({
     paddingBottom: spacing.md,
   },
   title: {
-    color: base.text,
     fontFamily: fontFamily.displaySemiBold,
     fontSize: 22,
     lineHeight: 30,
@@ -88,7 +88,6 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   subtitle: {
-    color: base.textDim,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 14,
     marginRight: 2,

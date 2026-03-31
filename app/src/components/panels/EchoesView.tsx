@@ -9,7 +9,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { TappableReference } from '../TappableReference';
 import { parseReference } from '../../utils/verseResolver';
-import { base, spacing, fontFamily, getPanelColors } from '../../theme';
+import { useTheme, spacing, fontFamily } from '../../theme';
 import type { EchoEntry, EchoType, ParsedRef } from '../../types';
 
 interface Props {
@@ -32,6 +32,7 @@ const TYPE_COLORS: Record<EchoType, string> = {
 };
 
 export function EchoesView({ entries, onRefPress }: Props) {
+  const { base, getPanelColors } = useTheme();
   const colors = getPanelColors('cross');
 
   const handleRefPress = (ref: string) => {
@@ -46,7 +47,7 @@ export function EchoesView({ entries, onRefPress }: Props) {
         const typeLabel = TYPE_LABELS[entry.type] ?? entry.type;
 
         return (
-          <View key={i} style={styles.card}>
+          <View key={i} style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
             {/* Type badge */}
             <View style={[styles.badge, { backgroundColor: typeColor + '20' }]}>
               <Text style={[styles.badgeText, { color: typeColor }]}>
@@ -61,7 +62,7 @@ export function EchoesView({ entries, onRefPress }: Props) {
                   {entry.source_ref}
                 </Text>
               </TouchableOpacity>
-              <Text style={styles.arrow}>→</Text>
+              <Text style={[styles.arrow, { color: base.textMuted }]}>→</Text>
               <TouchableOpacity onPress={() => handleRefPress(entry.target_ref)}>
                 <Text style={[styles.refText, { color: colors.accent }]}>
                   {entry.target_ref}
@@ -72,21 +73,21 @@ export function EchoesView({ entries, onRefPress }: Props) {
             {/* Source context */}
             {entry.source_context ? (
               <View style={styles.section}>
-                <Text style={styles.sectionLabel}>Source Context</Text>
+                <Text style={[styles.sectionLabel, { color: base.textMuted }]}>Source Context</Text>
                 <TappableReference text={entry.source_context} onRefPress={onRefPress} />
               </View>
             ) : null}
 
             {/* Connection */}
             <View style={styles.section}>
-              <Text style={styles.sectionLabel}>Connection</Text>
+              <Text style={[styles.sectionLabel, { color: base.textMuted }]}>Connection</Text>
               <TappableReference text={entry.connection} onRefPress={onRefPress} />
             </View>
 
             {/* Significance */}
             {entry.significance ? (
               <View style={styles.section}>
-                <Text style={styles.sectionLabel}>Significance</Text>
+                <Text style={[styles.sectionLabel, { color: base.textMuted }]}>Significance</Text>
                 <TappableReference text={entry.significance} onRefPress={onRefPress} />
               </View>
             ) : null}
@@ -102,9 +103,7 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.xs,
   },
   card: {
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.border,
     borderRadius: 8,
     padding: spacing.sm + 2,
     marginBottom: spacing.sm,
@@ -132,7 +131,6 @@ const styles = StyleSheet.create({
     fontSize: 13,
   },
   arrow: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 13,
   },
@@ -142,7 +140,6 @@ const styles = StyleSheet.create({
   sectionLabel: {
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 11,
-    color: base.textMuted,
     letterSpacing: 0.5,
     textTransform: 'uppercase',
     marginBottom: 2,

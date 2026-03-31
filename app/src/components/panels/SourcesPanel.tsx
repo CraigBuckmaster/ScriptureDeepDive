@@ -1,12 +1,13 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { TappableReference } from '../TappableReference';
-import { getPanelColors, base, spacing, fontFamily } from '../../theme';
+import { useTheme, spacing, fontFamily } from '../../theme';
 import type { SourceEntry, ParsedRef } from '../../types';
 
 interface Props { entries: SourceEntry[]; onRefPress?: (ref: ParsedRef) => void; }
 
 export function SourcesPanel({ entries, onRefPress }: Props) {
+  const { base, getPanelColors } = useTheme();
   const colors = getPanelColors('src');
   return (
     <View style={{ gap: spacing.md }}>

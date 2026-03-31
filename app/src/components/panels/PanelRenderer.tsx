@@ -7,7 +7,7 @@
 
 import React, { useMemo } from 'react';
 import { View, Text } from 'react-native';
-import { base, spacing, fontFamily } from '../../theme';
+import { useTheme, spacing, fontFamily } from '../../theme';
 import { isScholarPanel } from '../../utils/panelLabels';
 import { logger } from '../../utils/logger';
 import type { ParsedRef } from '../../types';
@@ -52,6 +52,8 @@ export function PanelRenderer({
   onRefPress, onWordStudyPress, onScholarPress,
   onPersonPress, onPlacePress, onEventPress,
 }: Props) {
+  const { base } = useTheme();
+
   const data = useMemo(() => {
     try {
       return JSON.parse(contentJson);

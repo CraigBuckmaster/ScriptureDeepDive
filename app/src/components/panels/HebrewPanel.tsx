@@ -12,7 +12,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { TappableReference } from '../TappableReference';
-import { getPanelColors, base, spacing, fontFamily } from '../../theme';
+import { useTheme, spacing, fontFamily } from '../../theme';
 import type { HebEntry, ParsedRef } from '../../types';
 
 interface Props {
@@ -22,6 +22,7 @@ interface Props {
 }
 
 export function HebrewPanel({ entries, onWordStudyPress, onRefPress }: Props) {
+  const { base, getPanelColors } = useTheme();
   const colors = getPanelColors('heb');
 
   return (

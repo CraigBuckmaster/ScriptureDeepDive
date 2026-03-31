@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 interface Props { completed: number; total: number; }
 
 export function PlanProgressBar({ completed, total }: Props) {
+  const { base } = useTheme();
   const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
   return (
     <View style={{ gap: 4 }}>

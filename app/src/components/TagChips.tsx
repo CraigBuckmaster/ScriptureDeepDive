@@ -5,7 +5,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
 import { X, Plus } from 'lucide-react-native';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 interface Props {
   tags: string[];
@@ -14,6 +14,7 @@ interface Props {
 }
 
 export function TagChips({ tags, onTagsChange, editable = true }: Props) {
+  const { base } = useTheme();
   const [showInput, setShowInput] = useState(false);
   const [inputValue, setInputValue] = useState('');
 
@@ -33,8 +34,8 @@ export function TagChips({ tags, onTagsChange, editable = true }: Props) {
   return (
     <View style={styles.container}>
       {tags.map((tag) => (
-        <View key={tag} style={styles.chip}>
-          <Text style={styles.chipText}>#{tag}</Text>
+        <View key={tag} style={[styles.chip, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
+          <Text style={[styles.chipText, { color: base.goldDim }]}>#{tag}</Text>
           {editable && (
             <TouchableOpacity
               onPress={() => handleRemoveTag(tag)}
@@ -49,12 +50,12 @@ export function TagChips({ tags, onTagsChange, editable = true }: Props) {
       {editable && !showInput && (
         <TouchableOpacity style={styles.addButton} onPress={() => setShowInput(true)}>
           <Plus size={12} color={base.gold} />
-          <Text style={styles.addText}>tag</Text>
+          <Text style={[styles.addText, { color: base.gold }]}>tag</Text>
         </TouchableOpacity>
       )}
 
       {showInput && (
-        <View style={styles.inputWrap}>
+        <View style={[styles.inputWrap, { backgroundColor: base.bgElevated, borderColor: base.gold }]}>
           <TextInput
             value={inputValue}
             onChangeText={setInputValue}
@@ -62,7 +63,7 @@ export function TagChips({ tags, onTagsChange, editable = true }: Props) {
             onBlur={() => { if (!inputValue.trim()) setShowInput(false); }}
             placeholder="tag name"
             placeholderTextColor={base.textMuted}
-            style={styles.input}
+            style={[styles.input, { color: base.text }]}
             autoFocus
             returnKeyType="done"
             autoCapitalize="none"
@@ -83,16 +84,13 @@ const styles = StyleSheet.create({
   chip: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: base.bgElevated,
     borderRadius: radii.sm,
     paddingHorizontal: 8,
     paddingVertical: 4,
     gap: 4,
     borderWidth: 1,
-    borderColor: base.border,
   },
   chipText: {
-    color: base.goldDim,
     fontFamily: fontFamily.ui,
     fontSize: 11,
   },
@@ -104,19 +102,15 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
   },
   addText: {
-    color: base.gold,
     fontFamily: fontFamily.ui,
     fontSize: 11,
   },
   inputWrap: {
-    backgroundColor: base.bgElevated,
     borderRadius: radii.sm,
     borderWidth: 1,
-    borderColor: base.gold,
     paddingHorizontal: 6,
   },
   input: {
-    color: base.text,
     fontFamily: fontFamily.ui,
     fontSize: 11,
     minWidth: 60,

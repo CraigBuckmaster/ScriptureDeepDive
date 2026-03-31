@@ -4,12 +4,13 @@
 
 import React, { memo } from 'react';
 import { G, Line } from 'react-native-svg';
-import { base } from '../../theme';
+import { useTheme } from '../../theme';
 import type { MarriageBar } from '../../utils/treeBuilder';
 
 interface Props { bar: MarriageBar; }
 
 export const MarriageBarSvg = memo(function MarriageBarSvg({ bar }: Props) {
+  const { base } = useTheme();
   const opacity = bar.dimmed ? 0.1 : 0.5;
   const color = base.goldDim;
   const { x1, x2, y, midX } = bar;

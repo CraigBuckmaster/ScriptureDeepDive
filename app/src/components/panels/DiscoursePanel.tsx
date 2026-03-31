@@ -8,7 +8,7 @@
 import React, { useState, useCallback } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, LayoutAnimation } from 'react-native';
 import { ChevronDown, ChevronRight } from 'lucide-react-native';
-import { base, spacing, radii, fontFamily } from '../../theme';
+import { useTheme, spacing, radii, fontFamily } from '../../theme';
 
 // ── Types ────────────────────────────────────────────────────────────
 
@@ -86,6 +86,7 @@ interface NodeCardProps {
 }
 
 function NodeCard({ node, depth }: NodeCardProps) {
+  const { base } = useTheme();
   const [expanded, setExpanded] = useState(depth === 0);
   const hasChildren = node.children && node.children.length > 0;
   const color = NODE_TYPE_COLORS[node.type] || base.gold;
@@ -98,7 +99,7 @@ function NodeCard({ node, depth }: NodeCardProps) {
 
   return (
     <View style={[styles.nodeWrapper, { marginLeft: depth * 16 }]}>
-      <View style={[styles.nodeCard, { borderLeftColor: color }]}>
+      <View style={[styles.nodeCard, { borderLeftColor: color, backgroundColor: base.bgElevated }]}>
         {/* Header row */}
         <View style={styles.nodeHeader}>
           <View style={styles.nodeHeaderLeft}>
@@ -115,14 +116,14 @@ function NodeCard({ node, depth }: NodeCardProps) {
               <Text style={[styles.typeBadgeText, { color }]}>{label}</Text>
             </View>
             {node.marker && (
-              <Text style={styles.marker}>{node.marker}</Text>
+              <Text style={[styles.marker, { color: base.textDim }]}>{node.marker}</Text>
             )}
           </View>
-          <Text style={styles.verseRange}>{node.verse_range}</Text>
+          <Text style={[styles.verseRange, { color: base.gold }]}>{node.verse_range}</Text>
         </View>
 
         {/* Text content */}
-        <Text style={[styles.nodeText, depth > 0 && styles.nodeTextSmall]}>
+        <Text style={[styles.nodeText, { color: base.textDim }, depth > 0 && styles.nodeTextSmall]}>
           {node.text}
         </Text>
       </View>
@@ -142,9 +143,11 @@ function NodeCard({ node, depth }: NodeCardProps) {
 // ── Main Panel ───────────────────────────────────────────────────────
 
 export function DiscoursePanel({ data }: Props) {
+  const { base } = useTheme();
+
   if (!data || !data.nodes) {
     return (
-      <Text style={styles.emptyText}>No argument structure data available.</Text>
+      <Text style={[styles.emptyText, { color: base.textMuted }]}>No argument structure data available.</Text>
     );
   }
 
@@ -152,9 +155,9 @@ export function DiscoursePanel({ data }: Props) {
     <View style={styles.container}>
       {/* Thesis callout */}
       {data.thesis && (
-        <View style={styles.thesisBox}>
-          <Text style={styles.thesisLabel}>MAIN THESIS</Text>
-          <Text style={styles.thesisText}>{data.thesis}</Text>
+        <View style={[styles.thesisBox, { backgroundColor: base.bgElevated, borderLeftColor: base.gold }]}>
+          <Text style={[styles.thesisLabel, { color: base.gold }]}>MAIN THESIS</Text>
+          <Text style={[styles.thesisText, { color: base.text }]}>{data.thesis}</Text>
         </View>
       )}
 
@@ -167,7 +170,7 @@ export function DiscoursePanel({ data }: Props) {
 
       {/* Note */}
       {data.note && (
-        <Text style={styles.noteText}>{data.note}</Text>
+        <Text style={[styles.noteText, { color: base.textMuted }]}>{data.note}</Text>
       )}
     </View>
   );
@@ -180,21 +183,17 @@ const styles = StyleSheet.create({
     gap: spacing.md,
   },
   thesisBox: {
-    backgroundColor: base.bgElevated,
     borderLeftWidth: 3,
-    borderLeftColor: base.gold,
     borderRadius: radii.sm,
     padding: spacing.md,
   },
   thesisLabel: {
-    color: base.gold,
     fontFamily: fontFamily.display,
     fontSize: 10,
     letterSpacing: 0.5,
     marginBottom: spacing.xs,
   },
   thesisText: {
-    color: base.text,
     fontFamily: fontFamily.bodySemiBold,
     fontSize: 15,
     lineHeight: 22,
@@ -206,7 +205,6 @@ const styles = StyleSheet.create({
     marginBottom: spacing.xs,
   },
   nodeCard: {
-    backgroundColor: base.bgElevated,
     borderLeftWidth: 3,
     borderRadius: radii.sm,
     padding: spacing.sm,
@@ -228,7 +226,7 @@ const styles = StyleSheet.create({
   typeBadge: {
     paddingHorizontal: 6,
     paddingVertical: 2,
-    borderRadius: radii.xs,
+    borderRadius: radii.sm,
   },
   typeBadgeText: {
     fontFamily: fontFamily.uiSemiBold,
@@ -236,17 +234,14 @@ const styles = StyleSheet.create({
     letterSpacing: 0.3,
   },
   marker: {
-    color: base.textDim,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 12,
   },
   verseRange: {
-    color: base.gold,
     fontFamily: fontFamily.displayMedium,
     fontSize: 11,
   },
   nodeText: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 13,
     lineHeight: 20,
@@ -259,13 +254,11 @@ const styles = StyleSheet.create({
     marginTop: spacing.xs,
   },
   noteText: {
-    color: base.textMuted,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 12,
     marginTop: spacing.sm,
   },
   emptyText: {
-    color: base.textMuted,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 13,
   },

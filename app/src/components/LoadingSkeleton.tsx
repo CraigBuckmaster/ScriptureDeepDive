@@ -10,7 +10,7 @@ import Animated, {
   withRepeat,
   withTiming,
 } from 'react-native-reanimated';
-import { base, spacing, radii } from '../theme';
+import { useTheme, spacing, radii } from '../theme';
 
 interface Props {
   lines?: number;
@@ -19,6 +19,7 @@ interface Props {
 }
 
 export function LoadingSkeleton({ lines = 3, width = '100%', height = 14 }: Props) {
+  const { base } = useTheme();
   const opacity = useSharedValue(0.3);
 
   useEffect(() => {

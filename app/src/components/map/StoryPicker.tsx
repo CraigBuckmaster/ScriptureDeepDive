@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { ScrollView, Text, TouchableOpacity } from 'react-native';
-import { base, spacing, radii, eras, fontFamily } from '../../theme';
+import { useTheme, spacing, radii, eras, fontFamily } from '../../theme';
 import { lightImpact } from '../../utils/haptics';
 import type { MapStory } from '../../types';
 
@@ -17,6 +17,7 @@ interface Props {
 const CHIP_HEIGHT = 32;
 
 export function StoryPicker({ stories, activeStoryId, onSelect }: Props) {
+  const { base } = useTheme();
   if (stories.length === 0) {
     return (
       <Text style={{

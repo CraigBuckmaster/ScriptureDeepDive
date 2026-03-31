@@ -7,7 +7,7 @@ import React, { useMemo } from 'react';
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { X } from 'lucide-react-native';
 import { BadgeChip } from '../BadgeChip';
-import { base, spacing, radii, eras, eraNames, fontFamily, MIN_TOUCH_TARGET } from '../../theme';
+import { useTheme, spacing, radii, eras, eraNames, fontFamily, MIN_TOUCH_TARGET } from '../../theme';
 import type { MapStory, Place } from '../../types';
 import { logger } from '../../utils/logger';
 
@@ -21,6 +21,7 @@ interface Props {
 }
 
 export function StoryPanel({ story, places, showModern, onPlaceTap, onChapterPress, onClose }: Props) {
+  const { base } = useTheme();
   const eraColor = eras[story.era] ?? base.gold;
   const eraLabel = eraNames[story.era] ?? story.era;
 

@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 interface Props {
   chapters: number;
@@ -13,6 +13,7 @@ interface Props {
 }
 
 export function WeeklySummary({ chapters, bookNames }: Props) {
+  const { base } = useTheme();
   if (chapters < 1) return null;
 
   const bookList = bookNames.length > 0
@@ -25,24 +26,21 @@ export function WeeklySummary({ chapters, bookNames }: Props) {
     : `This week: ${chapters} ${chapterWord}`;
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>{summary}</Text>
+    <View style={[styles.container, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
+      <Text style={[styles.text, { color: base.textDim }]}>{summary}</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: base.bgElevated,
     borderRadius: radii.md,
     borderWidth: 1,
-    borderColor: base.border,
     paddingVertical: spacing.sm,
     paddingHorizontal: spacing.md,
     marginBottom: spacing.md,
   },
   text: {
-    color: base.textDim,
     fontFamily: fontFamily.ui,
     fontSize: 13,
   },

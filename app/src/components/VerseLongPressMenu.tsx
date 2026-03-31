@@ -15,7 +15,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import { Copy, Share2, BookOpen, Highlighter } from 'lucide-react-native';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { copyVerse, shareVerse } from '../utils/shareVerse';
 import { logger } from '../utils/logger';
 
@@ -33,6 +33,7 @@ interface Props {
 export function VerseLongPressMenu({
   visible, verseText, verseRef, translation, onClose, onAddNote, onHighlight, highlightColor,
 }: Props) {
+  const { base } = useTheme();
   const [copyFeedback, setCopyFeedback] = useState(false);
 
   const handleCopy = async () => {
@@ -74,24 +75,24 @@ export function VerseLongPressMenu({
       <TouchableWithoutFeedback onPress={onClose}>
         <View style={styles.backdrop}>
           <TouchableWithoutFeedback>
-            <View style={styles.sheet}>
+            <View style={[styles.sheet, { backgroundColor: base.bgElevated }]}>
               {/* Verse preview */}
-              <Text style={styles.refLabel}>{verseRef}</Text>
-              <Text style={styles.preview} numberOfLines={3}>{verseText}</Text>
+              <Text style={[styles.refLabel, { color: base.gold }]}>{verseRef}</Text>
+              <Text style={[styles.preview, { color: base.textDim }]} numberOfLines={3}>{verseText}</Text>
 
-              <View style={styles.divider} />
+              <View style={[styles.divider, { backgroundColor: base.border }]} />
 
               {/* Actions */}
               <TouchableOpacity style={styles.action} onPress={handleCopy} activeOpacity={0.7}>
                 <Copy size={18} color={copyFeedback ? base.gold : base.textDim} />
-                <Text style={[styles.actionText, copyFeedback && styles.actionTextActive]}>
+                <Text style={[styles.actionText, { color: base.text }, copyFeedback && { color: base.gold }]}>
                   {copyFeedback ? 'Copied!' : 'Copy'}
                 </Text>
               </TouchableOpacity>
 
               <TouchableOpacity style={styles.action} onPress={handleShare} activeOpacity={0.7}>
                 <Share2 size={18} color={base.textDim} />
-                <Text style={styles.actionText}>Share</Text>
+                <Text style={[styles.actionText, { color: base.text }]}>Share</Text>
               </TouchableOpacity>
 
               {onHighlight && (
@@ -104,7 +105,7 @@ export function VerseLongPressMenu({
               {onAddNote && (
                 <TouchableOpacity style={styles.action} onPress={handleNote} activeOpacity={0.7}>
                   <BookOpen size={18} color={base.textDim} />
-                  <Text style={styles.actionText}>Add Note</Text>
+                  <Text style={[styles.actionText, { color: base.text }]}>Add Note</Text>
                 </TouchableOpacity>
               )}
             </View>
@@ -122,20 +123,17 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   sheet: {
-    backgroundColor: base.bgElevated,
     borderTopLeftRadius: radii.lg,
     borderTopRightRadius: radii.lg,
     padding: spacing.md,
     paddingBottom: spacing.xxl,
   },
   refLabel: {
-    color: base.gold,
     fontFamily: fontFamily.displayMedium,
     fontSize: 13,
     marginBottom: spacing.xs,
   },
   preview: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 14,
     lineHeight: 22,
@@ -143,7 +141,6 @@ const styles = StyleSheet.create({
   },
   divider: {
     height: 1,
-    backgroundColor: base.border,
     marginVertical: spacing.sm,
   },
   action: {
@@ -153,11 +150,7 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.sm + 2,
   },
   actionText: {
-    color: base.text,
     fontFamily: fontFamily.uiMedium,
     fontSize: 15,
-  },
-  actionTextActive: {
-    color: base.gold,
   },
 });

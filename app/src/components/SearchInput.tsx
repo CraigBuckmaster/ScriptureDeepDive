@@ -8,7 +8,7 @@
 import React from 'react';
 import { View, TextInput, TouchableOpacity, StyleSheet, type TextInputProps } from 'react-native';
 import { X } from 'lucide-react-native';
-import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 
 interface Props extends Omit<TextInputProps, 'style'> {
   value: string;
@@ -18,13 +18,14 @@ interface Props extends Omit<TextInputProps, 'style'> {
 }
 
 export function SearchInput({ value, onChangeText, compact, ...rest }: Props) {
+  const { base } = useTheme();
   return (
-    <View style={[styles.wrapper, compact && styles.wrapperCompact]}>
+    <View style={[styles.wrapper, { backgroundColor: base.bgElevated, borderColor: base.border }, compact && styles.wrapperCompact]}>
       <TextInput
         value={value}
         onChangeText={onChangeText}
         placeholderTextColor={base.textMuted}
-        style={[styles.input, compact && styles.inputCompact]}
+        style={[styles.input, { color: base.text }, compact && styles.inputCompact]}
         {...rest}
       />
       {value.length > 0 && (
@@ -46,17 +47,14 @@ const styles = StyleSheet.create({
   wrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: base.bgElevated,
     borderRadius: radii.md,
     borderWidth: 1,
-    borderColor: base.border,
   },
   wrapperCompact: {
     borderRadius: radii.sm,
   },
   input: {
     flex: 1,
-    color: base.text,
     fontFamily: fontFamily.ui,
     fontSize: 14,
     paddingHorizontal: spacing.md,

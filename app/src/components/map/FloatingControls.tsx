@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { base, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../../theme';
+import { useTheme, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../../theme';
 
 interface Props {
   showModern: boolean;
@@ -14,6 +14,7 @@ interface Props {
 }
 
 export function FloatingControls({ showModern, onToggleNames, onCentre }: Props) {
+  const { base } = useTheme();
   return (
     <View style={{
       position: 'absolute', top: spacing.lg, right: spacing.md,

@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { getPanelColors, base, spacing, fontFamily } from '../../theme';
+import { useTheme, spacing, fontFamily } from '../../theme';
 import type { HebTextEntry } from '../../types';
 
 interface Props { entries: HebTextEntry[]; }
 
 export function HebrewReadingPanel({ entries }: Props) {
+  const { base, getPanelColors } = useTheme();
   const colors = getPanelColors('hebText');
   return (
     <View style={{ gap: spacing.md }}>

@@ -14,7 +14,7 @@ import {
   TouchableWithoutFeedback, type LayoutRectangle,
 } from 'react-native';
 import { Check } from 'lucide-react-native';
-import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import { selectionFeedback } from '../utils/haptics';
 
 export interface DropdownOption {
@@ -30,6 +30,7 @@ interface Props {
 }
 
 export function CompactDropdown({ value, options, onSelect, direction = 'down' }: Props) {
+  const { base } = useTheme();
   const [open, setOpen] = useState(false);
   const [pillLayout, setPillLayout] = useState<LayoutRectangle | null>(null);
   const pillRef = useRef<View>(null);
@@ -55,11 +56,11 @@ export function CompactDropdown({ value, options, onSelect, direction = 'down' }
       <TouchableOpacity
         onPress={handleOpen}
         activeOpacity={0.7}
-        style={styles.pill}
+        style={[styles.pill, { backgroundColor: base.bgElevated, borderColor: base.border }]}
         accessibilityRole="button"
         accessibilityLabel={`${activeLabel}, tap to change`}
       >
-        <Text style={styles.pillLabel}>{activeLabel}</Text>
+        <Text style={[styles.pillLabel, { color: base.text }]}>{activeLabel}</Text>
       </TouchableOpacity>
 
       {/* Dropdown overlay */}
@@ -69,6 +70,7 @@ export function CompactDropdown({ value, options, onSelect, direction = 'down' }
             <TouchableWithoutFeedback>
               <View style={[
                 styles.menu,
+                { backgroundColor: base.bgElevated, borderColor: base.border },
                 pillLayout && {
                   position: 'absolute',
                   left: pillLayout.x,
@@ -90,7 +92,8 @@ export function CompactDropdown({ value, options, onSelect, direction = 'down' }
                     >
                       <Text style={[
                         styles.menuLabel,
-                        isActive && styles.menuLabelActive,
+                        { color: base.text },
+                        isActive && { color: base.gold },
                       ]}>
                         {opt.label}
                       </Text>
@@ -109,9 +112,7 @@ export function CompactDropdown({ value, options, onSelect, direction = 'down' }
 
 const styles = StyleSheet.create({
   pill: {
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.border,
     borderRadius: radii.pill,
     paddingHorizontal: spacing.sm + 4,
     paddingVertical: 4,
@@ -119,7 +120,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   pillLabel: {
-    color: base.text,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 12,
   },
@@ -127,9 +127,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   menu: {
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.border,
     borderRadius: radii.md,
     overflow: 'hidden',
     // Subtle shadow on iOS
@@ -147,11 +145,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md,
   },
   menuLabel: {
-    color: base.text,
     fontFamily: fontFamily.uiMedium,
     fontSize: 14,
-  },
-  menuLabelActive: {
-    color: base.gold,
   },
 });

@@ -9,7 +9,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { ButtonRow } from './ButtonRow';
 import { PanelContainer } from './PanelContainer';
 import { CHAPTER_PANEL_CATEGORIES } from '../utils/panelLabels';
-import { base, spacing, fontFamily } from '../theme';
+import { useTheme, spacing, fontFamily } from '../theme';
 import type { ChapterPanel, ParsedRef } from '../types';
 
 interface Props {
@@ -27,6 +27,8 @@ export function ScholarlyBlock({
   chapterPanels, activePanel, onToggle, onClose,
   onRefPress, onWordStudyPress, onScholarPress, onPersonPress,
 }: Props) {
+  const { base } = useTheme();
+
   if (chapterPanels.length === 0) return null;
 
   const activeChapterPanel = activePanel
@@ -37,9 +39,9 @@ export function ScholarlyBlock({
     <View style={styles.container}>
       {/* Divider */}
       <View style={styles.dividerRow}>
-        <View style={styles.dividerLine} />
-        <Text style={styles.dividerLabel}>CHAPTER ANALYSIS</Text>
-        <View style={styles.dividerLine} />
+        <View style={[styles.dividerLine, { backgroundColor: base.border }]} />
+        <Text style={[styles.dividerLabel, { color: base.textMuted }]}>CHAPTER ANALYSIS</Text>
+        <View style={[styles.dividerLine, { backgroundColor: base.border }]} />
       </View>
 
       {/* Button row with category grouping */}
@@ -81,10 +83,8 @@ const styles = StyleSheet.create({
   dividerLine: {
     flex: 1,
     height: 1,
-    backgroundColor: base.border,
   },
   dividerLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.uiMedium,
     fontSize: 10,
     letterSpacing: 1.2,

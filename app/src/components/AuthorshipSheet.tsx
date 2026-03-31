@@ -5,7 +5,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Modal, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 interface Props {
   visible: boolean;
@@ -13,6 +13,7 @@ interface Props {
 }
 
 export function AuthorshipSheet({ visible, onClose }: Props) {
+  const { base } = useTheme();
   return (
     <Modal visible={visible} transparent animationType="slide">
       <TouchableOpacity style={{ flex: 1 }} activeOpacity={1} onPress={onClose} />
