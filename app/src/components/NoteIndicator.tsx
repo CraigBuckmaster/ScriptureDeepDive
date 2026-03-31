@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
-import { base, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, MIN_TOUCH_TARGET } from '../theme';
 
 interface Props {
   verseNum: number;
@@ -14,6 +14,7 @@ interface Props {
 }
 
 export function NoteIndicator({ verseNum, hasNote, onPress }: Props) {
+  const { base } = useTheme();
   return (
     <TouchableOpacity
       onPress={() => onPress(verseNum)}
