@@ -4,12 +4,14 @@ import ChapterListScreen from '../screens/ChapterListScreen';
 import BookIntroScreen from '../screens/BookIntroScreen';
 import ChapterScreen from '../screens/ChapterScreen';
 import ParallelPassageScreen from '../screens/ParallelPassageScreen';
-import { base } from '../theme';
+import { useTheme } from '../theme';
 import type { ReadStackParamList } from './types';
 
 const Stack = createStackNavigator<ReadStackParamList>();
 
 export function ReadStack() {
+  const { base } = useTheme();
+
   return (
     <Stack.Navigator
       screenOptions={{

@@ -5,12 +5,14 @@ import ChapterListScreen from '../screens/ChapterListScreen';
 import BookListScreen from '../screens/BookListScreen';
 import BookIntroScreen from '../screens/BookIntroScreen';
 import ParallelPassageScreen from '../screens/ParallelPassageScreen';
-import { base } from '../theme';
+import { useTheme } from '../theme';
 import type { HomeStackParamList } from './types';
 
 const Stack = createStackNavigator<HomeStackParamList>();
 
 export function HomeStack() {
+  const { base } = useTheme();
+
   return (
     <Stack.Navigator screenOptions={{ headerShown: false, cardStyle: { backgroundColor: base.bg } }}>
       <Stack.Screen name="HomeMain" component={HomeScreen} />
