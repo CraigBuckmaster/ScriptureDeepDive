@@ -12,6 +12,7 @@ export { TimelinePanel } from './TimelinePanel';
 
 // Chapter-level panels
 export { LiteraryStructurePanel } from './LiteraryStructurePanel';
+export { ChiasmView } from './ChiasmView';
 export { HebrewReadingPanel } from './HebrewReadingPanel';
 export { ThemesRadarPanel } from './ThemesRadarPanel';
 export { PeoplePanel } from './PeoplePanel';

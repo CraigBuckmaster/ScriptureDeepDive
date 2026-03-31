@@ -319,9 +319,30 @@ export interface LitRow {
   is_key: boolean;
 }
 
+// ── Chiasm Structure (Phase 4) ──────────────────────────────────────
+
+export interface ChiasmPair {
+  label: string;
+  top: string;
+  bottom: string;
+  color: string;
+}
+
+export interface ChiasmCenter {
+  label: string;
+  text: string;
+}
+
+export interface ChiasmData {
+  title: string;
+  pairs: ChiasmPair[];
+  center: ChiasmCenter;
+}
+
 export interface LitPanel {
   rows: LitRow[];
   note: string;
+  chiasm?: ChiasmData;
 }
 
 export interface ThemeScore {
