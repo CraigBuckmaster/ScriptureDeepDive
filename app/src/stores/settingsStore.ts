@@ -3,6 +3,13 @@
  *
  * Hydrated from SQLite user_preferences table on app start.
  * Changes are written back to SQLite immediately.
+ *
+ * NOTE: Setter functions (setTranslation, setFontSize, etc.) update
+ * Zustand state synchronously then persist to SQLite in the background.
+ * Callers intentionally fire-and-forget — the UI reflects the new value
+ * instantly while the DB write completes asynchronously. If persistence
+ * fails, the preference reverts on next app launch (acceptable trade-off
+ * vs. blocking the UI on every settings change).
  */
 
 import { create } from 'zustand';

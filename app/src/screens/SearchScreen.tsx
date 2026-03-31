@@ -7,7 +7,7 @@
  *   - "Load more" button when verses are sliced at 20
  */
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useMemo } from 'react';
 import { View, Text, TextInput, TouchableOpacity, SectionList, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
@@ -39,7 +39,7 @@ export default function SearchScreen() {
   const displayedVerses = results.verses.slice(0, verseLimit);
   const hasMoreVerses = results.verses.length > verseLimit;
 
-  const sections = [
+  const sections = useMemo(() => [
     ...(results.people.length ? [{
       title: 'People',
       data: results.people.map((p) => ({ type: 'person' as const, item: p })),
@@ -55,7 +55,7 @@ export default function SearchScreen() {
         ...(hasMoreVerses ? [{ type: 'loadMore' as const, item: null }] : []),
       ],
     }] : []),
-  ];
+  ], [results.people, results.wordStudies, displayedVerses, hasMoreVerses]);
 
   const trimmed = query.trim();
   const hasResults = results.people.length > 0 || results.wordStudies.length > 0 || results.verses.length > 0;

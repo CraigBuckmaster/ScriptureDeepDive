@@ -19,3 +19,4 @@ export { useHighlightsForChapter } from './useHighlights';
 export { useBookmarkedVerses } from './useBookmarkedVerses';
 export { useTTS } from './useTTS';
 export { useDifficultPassages, useDifficultPassage } from './useDifficultPassages';
+export { useSwipeNavigation } from './useSwipeNavigation';

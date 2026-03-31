@@ -8,7 +8,7 @@
  * both modes. Per-book progress bars show reading completion.
  */
 
-import React, { useState, useMemo, useRef } from 'react';
+import React, { useState, useMemo, useRef, useCallback } from 'react';
 import { View, Text, TouchableOpacity, SectionList, FlatList, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
@@ -35,6 +35,39 @@ const NT_GROUPS = [
   { title: 'General Epistles', range: [57, 65] },
   { title: 'Apocalypse', range: [65, 66] },
 ];
+
+const BookRow = React.memo(function BookRow({ book, onPress }: {
+  book: BookWithProgress;
+  onPress: (bookId: string) => void;
+}) {
+  return (
+    <TouchableOpacity
+      onPress={() => onPress(book.id)}
+      style={styles.bookRow}
+    >
+      <View style={styles.bookRowContent}>
+        <View style={styles.bookRowHeader}>
+          <Text style={[styles.bookName, !book.is_live && styles.bookNameDim]}>
+            {book.name}
+          </Text>
+          <Text style={styles.chapterCount}>
+            {book.chaptersRead > 0
+              ? `${book.chaptersRead}/${book.total_chapters}`
+              : `${book.total_chapters} ch`}
+          </Text>
+        </View>
+        {book.chaptersRead > 0 && (
+          <View style={styles.progressTrack}>
+            <View style={[
+              styles.progressFill,
+              { width: `${(book.chaptersRead / book.total_chapters) * 100}%` },
+            ]} />
+          </View>
+        )}
+      </View>
+    </TouchableOpacity>
+  );
+});
 
 export default function BookListScreen() {
   const navigation = useNavigation<ScreenNavProp<'Read', 'BookList'>>();
@@ -72,34 +105,13 @@ export default function BookListScreen() {
   );
 
   // ── Shared book row ──────────────────────────────────────────
-  const renderBookRow = (book: BookWithProgress) => (
-    <TouchableOpacity
-      key={book.id}
-      onPress={() => navigation.navigate('ChapterList', { bookId: book.id })}
-      style={styles.bookRow}
-    >
-      <View style={styles.bookRowContent}>
-        <View style={styles.bookRowHeader}>
-          <Text style={[styles.bookName, !book.is_live && styles.bookNameDim]}>
-            {book.name}
-          </Text>
-          <Text style={styles.chapterCount}>
-            {book.chaptersRead > 0
-              ? `${book.chaptersRead}/${book.total_chapters}`
-              : `${book.total_chapters} ch`}
-          </Text>
-        </View>
-        {book.chaptersRead > 0 && (
-          <View style={styles.progressTrack}>
-            <View style={[
-              styles.progressFill,
-              { width: `${(book.chaptersRead / book.total_chapters) * 100}%` },
-            ]} />
-          </View>
-        )}
-      </View>
-    </TouchableOpacity>
-  );
+  const handleBookPress = useCallback((bookId: string) => {
+    navigation.navigate('ChapterList', { bookId });
+  }, [navigation]);
+
+  const renderBookRow = useCallback(({ item: book }: { item: BookWithProgress }) => (
+    <BookRow book={book} onPress={handleBookPress} />
+  ), [handleBookPress]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -147,7 +159,7 @@ export default function BookListScreen() {
           ref={scrollRef}
           data={searchResults}
           keyExtractor={(b) => b.id}
-          renderItem={({ item }) => renderBookRow(item)}
+          renderItem={renderBookRow}
           contentContainerStyle={styles.listContent}
           ListEmptyComponent={
             <View style={styles.emptyWrap}>
@@ -160,7 +172,7 @@ export default function BookListScreen() {
           ref={scrollRef}
           data={canonicalBooks}
           keyExtractor={(b) => b.id}
-          renderItem={({ item }) => renderBookRow(item)}
+          renderItem={renderBookRow}
           contentContainerStyle={styles.listContent}
         />
       ) : (
@@ -175,7 +187,7 @@ export default function BookListScreen() {
               </Text>
             </View>
           )}
-          renderItem={({ item }) => renderBookRow(item)}
+          renderItem={renderBookRow}
         />
       )}
     </SafeAreaView>

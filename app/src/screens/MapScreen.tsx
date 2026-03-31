@@ -104,14 +104,16 @@ export default function MapScreen({ route, navigation }: {
     }, 500);
   }, []);
 
-  // Deep-link handling
+  // Deep-link handling — process once after data loads
+  const deepLinkProcessed = useRef(false);
   useEffect(() => {
+    if (deepLinkProcessed.current) return;
     if (initialStoryId && stories.length) {
       const story = stories.find((s) => s.id === initialStoryId);
-      if (story) selectStory(story);
+      if (story) { selectStory(story); deepLinkProcessed.current = true; }
     } else if (initialPlaceId && places.length) {
       const place = places.find((p) => p.id === initialPlaceId);
-      if (place) panToPlace(place);
+      if (place) { panToPlace(place); deepLinkProcessed.current = true; }
     }
   }, [initialStoryId, initialPlaceId, stories.length, places.length]);
 

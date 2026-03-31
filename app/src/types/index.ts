@@ -231,7 +231,7 @@ export interface RecentChapter extends ReadingProgress {
 
 /** Section with its panels pre-loaded and parsed. */
 export interface SectionWithPanels extends Section {
-  panels: Record<string, unknown>;
+  panels: Record<string, object>;
 }
 
 // ══════════════════════════════════════════════════════════════

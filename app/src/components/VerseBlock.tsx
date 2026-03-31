@@ -21,7 +21,7 @@ interface Props {
   onNotePress?: (verseNum: number) => void;
 }
 
-export function VerseBlock({
+export const VerseBlock = React.memo(function VerseBlock({
   verses, vhlGroups, activeVhlGroups, notedVerses, sectionId,
   fontSize = 16, onVhlWordPress, onNotePress,
 }: Props) {
@@ -66,7 +66,7 @@ export function VerseBlock({
       ))}
     </View>
   );
-}
+});
 
 const styles = StyleSheet.create({
   container: {
