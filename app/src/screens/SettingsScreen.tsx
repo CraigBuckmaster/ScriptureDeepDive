@@ -26,6 +26,7 @@ import { Download } from 'lucide-react-native';
 import { useSettingsStore } from '../stores';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { NotificationSettings } from '../components/NotificationSettings';
+import { ThemePicker } from '../components/ThemePicker';
 import { getContentStats, type ContentStats } from '../db/content';
 import { getUserDb } from '../db/userDatabase';
 import { exportStudyData, ExportError } from '../utils/exportData';
@@ -56,6 +57,8 @@ export default function SettingsScreen() {
   const setVhlEnabled = useSettingsStore((s) => s.setVhlEnabled);
   const studyCoachEnabled = useSettingsStore((s) => s.studyCoachEnabled);
   const setStudyCoachEnabled = useSettingsStore((s) => s.setStudyCoachEnabled);
+  const theme = useSettingsStore((s) => s.theme);
+  const setTheme = useSettingsStore((s) => s.setTheme);
 
   const [stats, setStats] = useState<ContentStats | null>(null);
   const [exporting, setExporting] = useState(false);
@@ -145,6 +148,9 @@ export default function SettingsScreen() {
             ))}
           </View>
         </Row>
+
+        {/* Appearance */}
+        <ThemePicker theme={theme} setTheme={setTheme} />
 
         {/* Font Size */}
         <Row label={`Font Size: ${fontSize}pt`} base={base}>

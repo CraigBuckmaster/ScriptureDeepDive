@@ -86,13 +86,14 @@ Batches 0–5 complete (word study bugfix, scholar bios, ghost panels, people en
 ## What's Next
 
 1. **Deep Study Features Phase 22** — Discourse Analysis Expansion (Galatians, Ephesians, Hebrews, 1 Corinthians)
-2. **Thin Panel Enrichment** (~259 panels) — 138 section panels (mostly thin cross-refs in Chronicles/Nehemiah/Esther) + 121 chapter panels (mostly thin ppl/rec in prophets)
-3. **Inline Style Migration** (Arch Batch 7) — 318 inline `style={{ }}` objects, migrate to `StyleSheet.create()`
-4. **Cross-reference thread expansion** (Batch 13)
-5. **Map story enhancements** (Batch 14)
-6. **Isaiah 23-66 enrichment debt** (44 chapters, thin panels)
-7. **Kings/Chronicles MacArthur enrichment debt** (112 chapters)
-8. **Test foundation → CI/CD → branch protection** (Arch 8A-C)
+2. **Theme Batch T6** — Legacy cleanup (remove static base export, internalize colors.ts)
+3. **Thin Panel Enrichment** (~259 panels) — 138 section panels (mostly thin cross-refs in Chronicles/Nehemiah/Esther) + 121 chapter panels (mostly thin ppl/rec in prophets)
+4. **Inline Style Migration** (Arch Batch 7) — 318 inline `style={{ }}` objects, migrate to `StyleSheet.create()`
+5. **Cross-reference thread expansion** (Batch 13)
+6. **Map story enhancements** (Batch 14)
+7. **Isaiah 23-66 enrichment debt** (44 chapters, thin panels)
+8. **Kings/Chronicles MacArthur enrichment debt** (112 chapters)
+9. **Test foundation → CI/CD → branch protection** (Arch 8A-C)
 
 ---
 
