@@ -413,6 +413,52 @@
         }
       ],
       "note": "Chapter 5 concludes with assurance: faith overcomes, witnesses confirm, and believers can know they have eternal life. The abrupt closing warns against idols."
+    },
+    "tx": {
+      "notes": [],
+      "stories": [
+        {
+          "title": "The Comma Johanneum",
+          "passage": "1 John 5:7-8",
+          "summary": "The Textus Receptus and KJV include a Trinitarian gloss in 1 John 5:7: 'the Father, the Word, and the Holy Spirit, and these three are one.' This is the most explicit Trinitarian statement in the New Testament — but it is entirely absent from Greek manuscripts before the 16th century.",
+          "evidence": [
+            {
+              "manuscript": "All Greek manuscripts before 1500",
+              "reading": "Absent from every known Greek manuscript"
+            },
+            {
+              "manuscript": "Codex Sinaiticus, Vaticanus, Alexandrinus",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Old Latin manuscripts (2nd-4th c.)",
+              "reading": "Absent from most; appears only in later Latin MSS"
+            },
+            {
+              "manuscript": "Vulgate (Jerome, 4th c.)",
+              "reading": "Absent from Jerome's original"
+            },
+            {
+              "manuscript": "Priscillian of Spain (c. 380)",
+              "reading": "Earliest citation, in a Latin theological treatise"
+            },
+            {
+              "manuscript": "Erasmus's editions (1516, 1519)",
+              "reading": "Absent — Erasmus excluded it citing lack of Greek evidence"
+            },
+            {
+              "manuscript": "Complutensian Polyglot (1514)",
+              "reading": "Present — apparently based on a late Latin-influenced Greek MS"
+            },
+            {
+              "manuscript": "Codex Montfortianus (c. 1520)",
+              "reading": "Present — widely suspected of being created to pressure Erasmus"
+            }
+          ],
+          "consensus": "The Comma Johanneum is universally recognized by textual critics as a scribal insertion originating in Latin theological commentary and entering the Greek text only in the 16th century. It is excluded from all critical editions of the Greek New Testament (NA28, UBS5).",
+          "significance": "The episode illustrates the difference between the history of Christian doctrine and the textual history of Scripture. Trinitarian theology does not rest on this interpolation; the doctrine is well-attested from genuine texts. The Comma is a lesson in why textual criticism matters."
+        }
+      ]
     }
   },
   "vhl_groups": []

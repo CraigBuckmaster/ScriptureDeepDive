@@ -601,7 +601,45 @@
         "type": "Connection",
         "text": "Daniel was told to 'roll up and seal the words of the scroll until the time of the end.' John is told the opposite: 'Do not seal up the words of the prophecy of this scroll, because the time is near' (Rev 22:10). The contrast indicates that what was …"
       }
-    ]
+    ],
+    "tx": {
+      "notes": [],
+      "stories": [
+        {
+          "title": "Book of Life or Tree of Life?",
+          "passage": "Revelation 22:19",
+          "summary": "The KJV reads 'book of life' while virtually every modern translation reads 'tree of life.' The difference traces to Erasmus's 1516 Greek New Testament, which back-translated from the Latin Vulgate for the final chapters of Revelation because his Greek manuscript lacked those pages.",
+          "evidence": [
+            {
+              "manuscript": "All known Greek manuscripts of Revelation",
+              "reading": "Tree of life (xylon zoes)"
+            },
+            {
+              "manuscript": "Latin Vulgate",
+              "reading": "Book of life (libro vitae)"
+            },
+            {
+              "manuscript": "Erasmus's first Greek edition (1516)",
+              "reading": "Book of life — back-translated from Vulgate"
+            },
+            {
+              "manuscript": "Textus Receptus",
+              "reading": "Book of life — perpetuates Erasmus's error"
+            },
+            {
+              "manuscript": "KJV (1611)",
+              "reading": "Book of life — follows Textus Receptus"
+            },
+            {
+              "manuscript": "All modern critical editions",
+              "reading": "Tree of life — based on Greek manuscript tradition"
+            }
+          ],
+          "consensus": "This is not a case of textual ambiguity but of a demonstrable early printing error. Erasmus back-translated from Latin because he lacked a Greek exemplar for these verses. Every Greek manuscript supports 'tree of life.'",
+          "significance": "The episode is a landmark in the history of textual criticism. It demonstrates that even the received Greek text of the Reformation era contains readings without Greek manuscript support — and that the discipline of textual criticism is not an attack on Scripture but a recovery of it."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }

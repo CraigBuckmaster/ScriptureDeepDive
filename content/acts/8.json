@@ -396,20 +396,61 @@
         "direction": "backward"
       }
     ],
-    "tx": [
-      {
-        "ref": "Acts 8",
-        "title": "Western text (Codex Bezae D) vs Alexandrian text",
-        "content": "Alexandrian(P45, P74, א, B) is the primary scholarly text.Western(Codex Bezae D) is 10–15% longer, with additions that appear to expand and harmonise.",
-        "note": "Acts has the most significant NT textual variation. The Western text of Acts is not simply corrupt but may preserve early oral expansions. Most scholars follow the shorter Alexandrian text as more original."
-      },
-      {
-        "ref": "Acts 8 (general)",
-        "title": "P45 and early papyrus witnesses",
-        "content": "The Chester Beatty Papyrus (P45, c.250 AD) is the earliest substantial Acts manuscript, generally supporting the Alexandrian text with some unique readings.",
-        "note": "The papyrus evidence has largely confirmed the Alexandrian tradition as the best text of Acts, though the Western text’s substantial additions remain a subject of scholarly investigation."
-      }
-    ],
+    "tx": {
+      "notes": [
+        {
+          "ref": "Acts 8",
+          "title": "Western text (Codex Bezae D) vs Alexandrian text",
+          "content": "Alexandrian(P45, P74, א, B) is the primary scholarly text.Western(Codex Bezae D) is 10–15% longer, with additions that appear to expand and harmonise.",
+          "note": "Acts has the most significant NT textual variation. The Western text of Acts is not simply corrupt but may preserve early oral expansions. Most scholars follow the shorter Alexandrian text as more original."
+        },
+        {
+          "ref": "Acts 8 (general)",
+          "title": "P45 and early papyrus witnesses",
+          "content": "The Chester Beatty Papyrus (P45, c.250 AD) is the earliest substantial Acts manuscript, generally supporting the Alexandrian text with some unique readings.",
+          "note": "The papyrus evidence has largely confirmed the Alexandrian tradition as the best text of Acts, though the Western text’s substantial additions remain a subject of scholarly investigation."
+        }
+      ],
+      "stories": [
+        {
+          "title": "Philip's Baptism Confession",
+          "passage": "Acts 8:37",
+          "summary": "In the scene of the Ethiopian eunuch's baptism, many manuscripts include a verse where Philip requires a confession of faith before baptizing: 'I believe that Jesus Christ is the Son of God.' This verse is absent from the earliest manuscripts and was likely added to align the narrative with developing baptismal practice.",
+          "evidence": [
+            {
+              "manuscript": "Papyrus 45 (3rd c.)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Codex Vaticanus (B, 4th c.)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Codex Sinaiticus (Aleph, 4th c.)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Codex Bezae (D, 5th c.)",
+              "reading": "Present — in expanded form"
+            },
+            {
+              "manuscript": "Old Latin manuscripts (several)",
+              "reading": "Present"
+            },
+            {
+              "manuscript": "Irenaeus (c. 180)",
+              "reading": "Cites a form of the verse"
+            },
+            {
+              "manuscript": "Byzantine majority text",
+              "reading": "Present"
+            }
+          ],
+          "consensus": "The verse is a secondary addition, absent from the earliest witnesses. It reflects the early church's practice of requiring a christological confession at baptism and may have been added precisely because the narrative seemed to omit this expected element.",
+          "significance": "The variant illustrates how liturgical practice shapes textual transmission. Whether the verse is original or not, the theological content — faith in Christ as prerequisite for baptism — is well-attested in Acts and the New Testament more broadly."
+        }
+      ]
+    },
     "debate": [
       {
         "title": "Authorship and Historicity of Scripture Walkthrough",

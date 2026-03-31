@@ -269,14 +269,51 @@
       ],
       "note": ""
     },
-    "tx": [
-      {
-        "ref": "6:12",
-        "title": "Forgive us our debts as we have forgiven our debtors",
-        "content": "Matthew uses opheilemata (debts) where Luke uses hamartias (sins). The debt metaphor treats sin as a moral obligation unpaid.",
-        "note": "The reception of forgiveness is structurally connected to its extension. Neither is a condition for salvation; both are characteristics of the same transformed character."
-      }
-    ],
+    "tx": {
+      "notes": [
+        {
+          "ref": "6:12",
+          "title": "Forgive us our debts as we have forgiven our debtors",
+          "content": "Matthew uses opheilemata (debts) where Luke uses hamartias (sins). The debt metaphor treats sin as a moral obligation unpaid.",
+          "note": "The reception of forgiveness is structurally connected to its extension. Neither is a condition for salvation; both are characteristics of the same transformed character."
+        }
+      ],
+      "stories": [
+        {
+          "title": "The Doxology of the Lord's Prayer",
+          "passage": "Matthew 6:13b",
+          "summary": "The familiar doxology — 'For yours is the kingdom and the power and the glory forever, Amen' — is absent from the oldest Greek manuscripts. It entered the text from early Christian liturgical usage, likely drawn from 1 Chronicles 29:11-13, and was so thoroughly embedded in worship that it was eventually incorporated into many manuscript copies.",
+          "evidence": [
+            {
+              "manuscript": "Codex Sinaiticus (Aleph, 4th c.)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Codex Vaticanus (B, 4th c.)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Codex Bezae (D, 5th c.)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Didache (c. 100 AD)",
+              "reading": "Present — earliest citation, slightly different form"
+            },
+            {
+              "manuscript": "Codex Washingtonianus (W, 5th c.)",
+              "reading": "Present"
+            },
+            {
+              "manuscript": "Byzantine majority text",
+              "reading": "Present"
+            }
+          ],
+          "consensus": "The doxology is a liturgical addition, not original to Matthew. All critical editions exclude it from the main text. Its origin in corporate worship and its resonance with Old Testament praise language explain both its absence from early manuscripts and its persistence in Christian tradition.",
+          "significance": "The doxology, though not original, is liturgically ancient — used in Christian worship within decades of Matthew's composition. Its textual status does not diminish its place in worship. The episode also illustrates how liturgy and scripture have always been in conversation."
+        }
+      ]
+    },
     "debate": [
       {
         "title": "The Lord's Prayer: Model or Formula?",

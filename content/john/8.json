@@ -553,20 +553,69 @@
         "direction": "backward"
       }
     ],
-    "tx": [
-      {
-        "ref": "7:53–8:11",
-        "title": "Pericope Adulterae — not original to John",
-        "content": "Absent from P66, P75, Sinaiticus, Vaticanus, Alexandrinus, and most early versions. Found in various locations in different manuscripts. NA28 places it in double brackets.",
-        "note": "The passage is almost certainly not original to John's Gospel. It likely represents genuine Jesus tradition that circulated independently. Its canonical status is accepted by most traditions despite its textual uncertainty."
-      },
-      {
-        "ref": "8:57",
-        "title": "\"You are not yet fifty years old\"",
-        "content": "Some interpreters have used the \"fifty\" to argue Jesus was around 46-49 years old, not 30 (contradicting Luke 3:23). More likely \"fifty\" is simply the round number for the end of a man's active years (cf. Num 4:3) — not a precise age estimate.",
-        "note": "No textual variant; the \"fifty\" is original. The exegetical problem is hermeneutical, not textual."
-      }
-    ],
+    "tx": {
+      "notes": [
+        {
+          "ref": "7:53–8:11",
+          "title": "Pericope Adulterae — not original to John",
+          "content": "Absent from P66, P75, Sinaiticus, Vaticanus, Alexandrinus, and most early versions. Found in various locations in different manuscripts. NA28 places it in double brackets.",
+          "note": "The passage is almost certainly not original to John's Gospel. It likely represents genuine Jesus tradition that circulated independently. Its canonical status is accepted by most traditions despite its textual uncertainty."
+        },
+        {
+          "ref": "8:57",
+          "title": "\"You are not yet fifty years old\"",
+          "content": "Some interpreters have used the \"fifty\" to argue Jesus was around 46-49 years old, not 30 (contradicting Luke 3:23). More likely \"fifty\" is simply the round number for the end of a man's active years (cf. Num 4:3) — not a precise age estimate.",
+          "note": "No textual variant; the \"fifty\" is original. The exegetical problem is hermeneutical, not textual."
+        }
+      ],
+      "stories": [
+        {
+          "title": "The Woman Caught in Adultery",
+          "passage": "John 7:53–8:11",
+          "summary": "This vivid narrative of Jesus forgiving an adulteress is absent from the oldest and most reliable manuscripts of John. It appears to float in the tradition — found in different locations in different manuscripts — suggesting it was a widely circulated independent story later inserted into John.",
+          "evidence": [
+            {
+              "manuscript": "Papyrus 66 (c. 200)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Papyrus 75 (c. 175-225)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Codex Sinaiticus (Aleph, 4th c.)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Codex Vaticanus (B, 4th c.)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Codex Alexandrinus (A, 5th c.)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Codex Bezae (D, 5th c.)",
+              "reading": "Present at John 7:53"
+            },
+            {
+              "manuscript": "Family 13 manuscripts",
+              "reading": "Placed after Luke 21:38"
+            },
+            {
+              "manuscript": "Some manuscripts",
+              "reading": "Placed after John 21:25"
+            },
+            {
+              "manuscript": "Majority text (later manuscripts)",
+              "reading": "Present at John 7:53"
+            }
+          ],
+          "consensus": "Virtually all textual critics agree that the passage was not originally part of John's Gospel. The vocabulary is markedly non-Johannine. However, most scholars regard the story as historically authentic — a genuine episode from Jesus's ministry preserved in oral tradition.",
+          "significance": "The story's uncertain textual home does not diminish its theological power. It embodies the Johannine theme of Jesus as life-giver and judge-who-does-not-condemn. Augustine noted that some teachers removed it to prevent women from concluding that adultery was pardonable."
+        }
+      ]
+    },
     "debate": [
       {
         "title": "Does \"before Abraham was, I am\" assert eternal deity or simply pre-existence?",

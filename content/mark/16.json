@@ -344,20 +344,61 @@
         "note": "Whoever believes and is baptized will be saved — the longer ending’s commission is built on pisteuō. The Great Commission in this form connects faith, baptism, salvation, and signs. The signs that accompany belief echo the signs of the Galilean ministry: exorcism, new tongues, healing."
       }
     ],
-    "tx": [
-      {
-        "ref": "16:8",
-        "title": "The original ending — ending at ephobonto gar",
-        "content": "Sinaiticus, Vaticanus, and the majority of early MSSend at 16:8 with ephobonto gar (\"for they were afraid\").Later MSSadd the Longer Ending (16:9-20); a few add the Shorter Ending.",
-        "note": "The Longer Ending (16:9-20) is absent from the two oldest complete Greek MSS, was unknown to Clement and Origen, and is noted as absent or disputed by Eusebius and Jerome. Most textual critics regard 16:8 as the original ending of Mark, whether deliberately abrupt or accidentally truncated."
-      },
-      {
-        "ref": "16:9-20",
-        "title": "The Longer Ending — textual status",
-        "content": "Irenaeus (c.AD 185)is the earliest patristic witness to cite from the Longer Ending, confirming it circulated by the late second century. The vocabulary and style differ measurably from 1:1-16:8.",
-        "note": "The Longer Ending is canonical (included in the NT canon since the fourth century) but not original to Mark. It is a second-century synthesis drawing on resurrection traditions from Matthew, Luke, John, and Acts. Its canonical status does not depend on Markan authorship."
-      }
-    ],
+    "tx": {
+      "notes": [
+        {
+          "ref": "16:8",
+          "title": "The original ending — ending at ephobonto gar",
+          "content": "Sinaiticus, Vaticanus, and the majority of early MSSend at 16:8 with ephobonto gar (\"for they were afraid\").Later MSSadd the Longer Ending (16:9-20); a few add the Shorter Ending.",
+          "note": "The Longer Ending (16:9-20) is absent from the two oldest complete Greek MSS, was unknown to Clement and Origen, and is noted as absent or disputed by Eusebius and Jerome. Most textual critics regard 16:8 as the original ending of Mark, whether deliberately abrupt or accidentally truncated."
+        },
+        {
+          "ref": "16:9-20",
+          "title": "The Longer Ending — textual status",
+          "content": "Irenaeus (c.AD 185)is the earliest patristic witness to cite from the Longer Ending, confirming it circulated by the late second century. The vocabulary and style differ measurably from 1:1-16:8.",
+          "note": "The Longer Ending is canonical (included in the NT canon since the fourth century) but not original to Mark. It is a second-century synthesis drawing on resurrection traditions from Matthew, Luke, John, and Acts. Its canonical status does not depend on Markan authorship."
+        }
+      ],
+      "stories": [
+        {
+          "title": "The Long Ending of Mark",
+          "passage": "Mark 16:9-20",
+          "summary": "The twelve verses following 16:8 are absent from the two earliest complete manuscripts of the New Testament. The text ends abruptly at 16:8 with the women fleeing in fear — a conclusion that troubled ancient copyists and prompted several supplemental endings.",
+          "evidence": [
+            {
+              "manuscript": "Codex Sinaiticus (Aleph, 4th c.)",
+              "reading": "Ends at 16:8; no additional text"
+            },
+            {
+              "manuscript": "Codex Vaticanus (B, 4th c.)",
+              "reading": "Ends at 16:8; blank column left after, suggesting scribe knew of longer ending"
+            },
+            {
+              "manuscript": "Eusebius of Caesarea (c. 325)",
+              "reading": "States that 16:9-20 is absent from accurate manuscripts known to him"
+            },
+            {
+              "manuscript": "Jerome (c. 383)",
+              "reading": "Notes that 16:9-20 is absent from most Greek copies"
+            },
+            {
+              "manuscript": "Majority of later Greek manuscripts",
+              "reading": "Include 16:9-20"
+            },
+            {
+              "manuscript": "Shorter Ending (some Old Latin, Sahidic)",
+              "reading": "A one-sentence summary ending appended after 16:8"
+            },
+            {
+              "manuscript": "Freer Logion (Codex W, 5th c.)",
+              "reading": "Additional expansion inserted within 16:14"
+            }
+          ],
+          "consensus": "The critical consensus holds that Mark originally ended at 16:8 and that the Long Ending (16:9-20) was added in the second century. The vocabulary, style, and content differ from Mark's established patterns. Most modern translations include it with a note.",
+          "significance": "The abrupt ending at 16:8 may be intentional — Markan irony leaving the reader to complete the story. Alternatively, the original ending may have been lost. Either way, 16:9-20, though not original to Mark, preserves early Christian tradition about post-resurrection appearances."
+        }
+      ]
+    },
     "debate": [
       {
         "title": "Where does the original Mark end?",

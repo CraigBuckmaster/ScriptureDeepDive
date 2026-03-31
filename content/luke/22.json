@@ -671,20 +671,65 @@
         "note": "At the trial (v.69) Jesus uses the Son of Man title with its Daniel 7 resonance: \"from now on, the Son of Man will be seated at the right hand of the mighty God.\" The precise moment of his greatest apparent humiliation is when he claims the most exalted position. The trial produces the clearest Christological statement in Luke."
       }
     ],
-    "tx": [
-      {
-        "ref": "22:19b-20",
-        "title": "Longer vs. shorter text of the institution narrative",
-        "content": "The longer text (including \"given for you; do this in remembrance of me\" and the full second cup saying) is absent from Codex Bezae and some Old Latin versions. NA28 includes it on the strength of the overwhelming manuscript evidence and its presence in 1 Cor 11:24-25.",
-        "note": "The longer text is almost certainly original. The shorter text may have been produced by liturgical revision (removing the double cup) or accidental haplography."
-      },
-      {
-        "ref": "22:43-44",
-        "title": "The angel and the bloody sweat",
-        "content": "Present in Sinaiticus, D, and many others; absent from p75, the corrector of Sinaiticus, and some Alexandrian MSS. NA28 includes with brackets.",
-        "note": "Genuine textual uncertainty; the internal evidence (Luke's medical vocabulary, emphasis on prayer and humanity of Jesus) favours inclusion. The external evidence is evenly balanced."
-      }
-    ],
+    "tx": {
+      "notes": [
+        {
+          "ref": "22:19b-20",
+          "title": "Longer vs. shorter text of the institution narrative",
+          "content": "The longer text (including \"given for you; do this in remembrance of me\" and the full second cup saying) is absent from Codex Bezae and some Old Latin versions. NA28 includes it on the strength of the overwhelming manuscript evidence and its presence in 1 Cor 11:24-25.",
+          "note": "The longer text is almost certainly original. The shorter text may have been produced by liturgical revision (removing the double cup) or accidental haplography."
+        },
+        {
+          "ref": "22:43-44",
+          "title": "The angel and the bloody sweat",
+          "content": "Present in Sinaiticus, D, and many others; absent from p75, the corrector of Sinaiticus, and some Alexandrian MSS. NA28 includes with brackets.",
+          "note": "Genuine textual uncertainty; the internal evidence (Luke's medical vocabulary, emphasis on prayer and humanity of Jesus) favours inclusion. The external evidence is evenly balanced."
+        }
+      ],
+      "stories": [
+        {
+          "title": "The Bloody Sweat",
+          "passage": "Luke 22:43-44",
+          "summary": "Two verses describe an angel strengthening Jesus and his sweat falling like great drops of blood. These verses are absent from several important early manuscripts and were likely removed by some scribes who found the image of Jesus requiring angelic aid theologically troubling.",
+          "evidence": [
+            {
+              "manuscript": "Papyrus 69 (3rd c.)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Papyrus 75 (c. 175-225)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Codex Alexandrinus (A, 5th c.)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Codex Vaticanus (B, 4th c.)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Codex Sinaiticus (Aleph, 4th c.)",
+              "reading": "Present (added by later corrector)"
+            },
+            {
+              "manuscript": "Justin Martyr (c. 150)",
+              "reading": "References the passage, suggesting early existence"
+            },
+            {
+              "manuscript": "Irenaeus (c. 180)",
+              "reading": "Cites the passage explicitly"
+            },
+            {
+              "manuscript": "Majority of manuscripts",
+              "reading": "Present"
+            }
+          ],
+          "consensus": "Most modern critics accept the passage as original, arguing that the strongest scribal tendency here would be suppression (doctrinally motivated omission) rather than addition. The external evidence is split, but internal evidence favors authenticity.",
+          "significance": "The passage is the only Gospel account emphasizing the full humanity and genuine suffering of Jesus in Gethsemane with physiological detail. Its presence or absence does not change the theological portrait but illustrates how theological concern could influence copying."
+        }
+      ]
+    },
     "debate": [
       {
         "title": "Is Luke 22:43-44 (the angel and the bloody sweat) original?",

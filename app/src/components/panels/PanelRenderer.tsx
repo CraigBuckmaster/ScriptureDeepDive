@@ -32,7 +32,7 @@ import { TranslationPanel } from './TranslationPanel';
 import { SourcesPanel } from './SourcesPanel';
 import { ReceptionPanel } from './ReceptionPanel';
 import { ThreadingPanel } from './ThreadingPanel';
-import { TextualPanel } from './TextualPanel';
+import { TextualPanel, CompositeTextualPanel } from './TextualPanel';
 import { DebatePanel } from './DebatePanel';
 import { DiscoursePanel } from './DiscoursePanel';
 
@@ -136,6 +136,10 @@ export function PanelRenderer({
       return <ThreadingPanel entries={data} onRefPress={onRefPress} />;
     case 'tx':
     case 'textual':
+      // Shape detection: array → legacy. {notes, stories} → composite with Manuscript Stories tab.
+      if (data && !Array.isArray(data) && data.notes !== undefined) {
+        return <CompositeTextualPanel data={data} />;
+      }
       return <TextualPanel entries={Array.isArray(data) ? data : []} />;
     case 'debate':
       return <DebatePanel entries={Array.isArray(data) ? data : []} onScholarPress={onScholarPress} />;

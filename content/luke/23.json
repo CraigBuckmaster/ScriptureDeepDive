@@ -545,20 +545,57 @@
         "note": "The word (v.25) that summarises the passion: Pilate \"surrendered Jesus to their will.\" The same word is used of divine handing-over in Paul (Rom 4:25; 8:32) — God handed him over for us. The human handing-over by Pilate is simultaneously the divine handing-over for redemption."
       }
     ],
-    "tx": [
-      {
-        "ref": "23:34a",
-        "title": "\"Father, forgive them\"",
-        "content": "Absent from p75, B, W, and a few others; present in the majority of witnesses. NA28 includes with note.",
-        "note": "The omission in major Alexandrian witnesses creates genuine uncertainty. Most scholars favour inclusion based on internal evidence and the early witness of Marcion (who is said to have known it) and the Acts 7:60 echo."
-      },
-      {
-        "ref": "23:17",
-        "title": "The release custom",
-        "content": "Verse 17 (\"Now he was obligated to release one man to them at the feast\") is absent from the best manuscripts and is a scribal addition from Mark 15:6. NA28 omits it entirely.",
-        "note": "Verse 17 should not be included in the text. Its presence in some editions reflects the KJV tradition which followed later manuscript families."
-      }
-    ],
+    "tx": {
+      "notes": [
+        {
+          "ref": "23:34a",
+          "title": "\"Father, forgive them\"",
+          "content": "Absent from p75, B, W, and a few others; present in the majority of witnesses. NA28 includes with note.",
+          "note": "The omission in major Alexandrian witnesses creates genuine uncertainty. Most scholars favour inclusion based on internal evidence and the early witness of Marcion (who is said to have known it) and the Acts 7:60 echo."
+        },
+        {
+          "ref": "23:17",
+          "title": "The release custom",
+          "content": "Verse 17 (\"Now he was obligated to release one man to them at the feast\") is absent from the best manuscripts and is a scribal addition from Mark 15:6. NA28 omits it entirely.",
+          "note": "Verse 17 should not be included in the text. Its presence in some editions reflects the KJV tradition which followed later manuscript families."
+        }
+      ],
+      "stories": [
+        {
+          "title": "Father, Forgive Them",
+          "passage": "Luke 23:34a",
+          "summary": "The first of the Seven Last Words — 'Father, forgive them, for they do not know what they do' — is absent from several early and important manuscripts. Some scholars have proposed it was removed by copyists who doubted that divine forgiveness extended to those responsible for the crucifixion.",
+          "evidence": [
+            {
+              "manuscript": "Papyrus 75 (c. 175-225)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Codex Vaticanus (B, 4th c.)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Codex Bezae (D, 5th c.)",
+              "reading": "Present"
+            },
+            {
+              "manuscript": "Codex Sinaiticus (Aleph, 4th c.)",
+              "reading": "Present"
+            },
+            {
+              "manuscript": "Old Latin manuscripts",
+              "reading": "Most include it"
+            },
+            {
+              "manuscript": "Majority text",
+              "reading": "Present"
+            }
+          ],
+          "consensus": "The evidence is genuinely divided. Some critics argue the prayer was suppressed after the destruction of Jerusalem in 70 AD, when its apparent non-fulfillment became theologically awkward. Others argue its Lukan character (forgiveness motif, similar to Stephen's prayer in Acts 7:60) argues for authenticity.",
+          "significance": "Whether original or not, the prayer's theology is consonant with Luke's entire portrait of Jesus as the one who forgives, eats with sinners, and welcomes the repentant thief. It became one of the most beloved sayings in Christian tradition."
+        }
+      ]
+    },
     "debate": [
       {
         "title": "Is \"Father, forgive them\" (23:34a) original?",

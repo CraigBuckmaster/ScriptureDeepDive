@@ -540,7 +540,41 @@
         "type": "Connection",
         "text": "Paul's instruction to 'teach and admonish one another through psalms, hymns, and songs from the Spirit' reflects a similar vision of ordered charismatic worship."
       }
-    ]
+    ],
+    "tx": {
+      "notes": [],
+      "stories": [
+        {
+          "title": "Women Be Silent in the Churches",
+          "passage": "1 Corinthians 14:34-35",
+          "summary": "Two verses instructing women to be silent in church and ask questions at home are placed after verse 40 in several important Western manuscripts rather than after verse 33 as in the majority tradition. This displacement has led a significant minority of scholars to classify them as a post-Pauline interpolation.",
+          "evidence": [
+            {
+              "manuscript": "Codex Vaticanus (B, 4th c.)",
+              "reading": "Present after v.33"
+            },
+            {
+              "manuscript": "Codex Sinaiticus (Aleph, 4th c.)",
+              "reading": "Present after v.33"
+            },
+            {
+              "manuscript": "Codex Bezae (D, 5th c.) and several Western MSS",
+              "reading": "Present but placed after v.40"
+            },
+            {
+              "manuscript": "Papyri 46 (c. 200)",
+              "reading": "Present after v.33"
+            },
+            {
+              "manuscript": "No manuscript",
+              "reading": "Omits the verses entirely"
+            }
+          ],
+          "consensus": "No manuscript omits the verses, but the displacement in Western manuscripts is a recognized textual puzzle. Scholars who regard the verses as interpolated argue they are a later gloss that was inserted at different points. Those who regard them as original note Pauline parallels in 1 Tim 2:11-12 and the lack of any manuscript support for omission.",
+          "significance": "The textual debate is entangled with questions of Pauline authorship, the tension with 11:5 (which assumes women pray and prophesy in church), and the historical situation of Corinth. The displacement data is real but insufficient to establish interpolation; it may reflect liturgical annotation rather than scribal insertion."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }

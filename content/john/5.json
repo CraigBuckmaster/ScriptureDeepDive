@@ -460,14 +460,51 @@
         "direction": "backward"
       }
     ],
-    "tx": [
-      {
-        "ref": "5:3b-4",
-        "title": "Angel stirring the water",
-        "content": "NA28 omits vv.3b-4 entirely — absent from P66, P75, Sinaiticus, and Vaticanus. Almost certainly a scribal addition explaining the popular superstition about the pool's healing properties. The man's reference to \"when the water is stirred\" (v.7) makes sense without the explanatory gloss.",
-        "note": "The omission is virtually certain. The best witnesses unanimously lack the passage; it reads as an explanatory gloss for readers unfamiliar with the local tradition."
-      }
-    ],
+    "tx": {
+      "notes": [
+        {
+          "ref": "5:3b-4",
+          "title": "Angel stirring the water",
+          "content": "NA28 omits vv.3b-4 entirely — absent from P66, P75, Sinaiticus, and Vaticanus. Almost certainly a scribal addition explaining the popular superstition about the pool's healing properties. The man's reference to \"when the water is stirred\" (v.7) makes sense without the explanatory gloss.",
+          "note": "The omission is virtually certain. The best witnesses unanimously lack the passage; it reads as an explanatory gloss for readers unfamiliar with the local tradition."
+        }
+      ],
+      "stories": [
+        {
+          "title": "The Angel Stirring the Water",
+          "passage": "John 5:3b-4",
+          "summary": "A clause in 5:3 ('waiting for the moving of the water') and all of 5:4 (an angel stirring the pool, healing whoever enters first) are absent from the earliest manuscripts. They appear to be a scribal gloss explaining the popular belief referred to in verse 7.",
+          "evidence": [
+            {
+              "manuscript": "Papyrus 66 (c. 200)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Papyrus 75 (c. 175-225)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Codex Sinaiticus (Aleph, 4th c.)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Codex Vaticanus (B, 4th c.)",
+              "reading": "Absent"
+            },
+            {
+              "manuscript": "Codex Bezae (D, 5th c.)",
+              "reading": "Present"
+            },
+            {
+              "manuscript": "Many later manuscripts",
+              "reading": "Present, often marked with asterisk or obelus indicating doubt"
+            }
+          ],
+          "consensus": "Virtually all textual critics classify 5:3b-4 as a scribal interpolation. The passage is absent from the best witnesses, shows non-Johannine vocabulary, and was clearly added to explain an otherwise puzzling reference to popular belief.",
+          "significance": "The interpolation shows how ancient copyists functioned as interpreters. The scribe who added verse 4 was not inventing theology but explaining what the local population believed. The episode itself is unaffected — Jesus's act of healing on the Sabbath stands regardless of which theory of the pool is correct."
+        }
+      ]
+    },
     "debate": [
       {
         "title": "Realised vs. Future Eschatology in John 5",
