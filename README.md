@@ -1,8 +1,8 @@
 # Companion Study
 
-*Logos & Letters, verse by verse*
+*Don't just read the Bible. Learn to read it the way it was written.*
 
-**Scholarly Bible study with 54 commentators, Hebrew & Greek word studies, an interactive genealogy tree, a biblical world map, and verse-by-verse analysis — entirely offline.**
+**The only Bible app that bridges the gap between reading scripture and understanding ancient literature.** 45+ scholars, interlinear Hebrew & Greek, and 8 features no other app offers — seminary-level depth, entirely offline, and free.
 
 ## Features
 

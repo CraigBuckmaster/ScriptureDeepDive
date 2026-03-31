@@ -83,7 +83,7 @@ function getGreeting(): string {
 
 function getSubtitle(readingStats: ReadingStats | null): string {
   if (!readingStats || readingStats.totalChapters === 0) {
-    return 'Begin your journey through Scripture';
+    return 'Learn to read the Bible the way it was written';
   }
   if (readingStats.currentStreak > 1) {
     return `${readingStats.currentStreak}-day reading streak`;

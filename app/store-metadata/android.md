@@ -4,34 +4,48 @@
 Companion Study — Bible Study
 
 ## Short Description (80 chars)
-Scholarly Bible study with 40+ commentators, word studies, maps, and timelines.
+Don't just read the Bible. Learn to read it the way it was written. Free.
 
 ## Full Description
-Companion Study is a free, offline Bible study app that pairs the biblical text with scholarly commentary from 43 commentators spanning evangelical, reformed, Jewish academic, literary-critical, and patristic traditions.
+Don't just read the Bible. Learn to read it the way it was written.
 
-Every chapter features verse-by-verse analysis across up to 15 scholarly panel types — Hebrew and Greek word studies, historical context, cross-references, literary structure, theological themes, translation comparisons, ancient sources, and more.
+Companion Study is the only Bible app that bridges the gap between reading scripture and understanding ancient literature. It's free, offline, and delivers seminary-level depth without requiring you to know how to use academic tools.
 
-<b>Key Features</b>
+<b>8 Features No Other App Offers</b>
 
-• <b>Dual Translation</b> — Read in NIV or ESV. Verse highlighting colors divine names, places, people, and key terms.
+Every Bible app tells you what the text says. Companion Study teaches you how to read it:
 
-• <b>43 Scholar Commentaries</b> — From MacArthur to Alter, Calvin to NET Bible — curated notes across the theological spectrum.
+• <b>Original Audience Lens</b> — What the first readers assumed but never stated
+• <b>Ancient Near Eastern Parallels</b> — What Genesis is arguing against, and why
+• <b>Intertextual Allusion Mapping</b> — When the NT echoes the OT, see the original context
+• <b>Chiasm & Literary Structure</b> — See the architecture of ancient texts visually
+• <b>Genre-Aware Study Guidance</b> — Read apocalyptic differently from epistle, poetry from narrative
+• <b>Hermeneutical Coaching</b> — Learn study methods while you study
+• <b>Progressive Revelation</b> — Watch a concept develop from Genesis to Revelation
+• <b>Study Depth Tracking</b> — See what you haven't explored yet in every section
 
-• <b>Hebrew & Greek Word Studies</b> — Original-language roots, transliteration, glosses, semantic range, and significance.
+<b>Scholarly Depth, Curated For You</b>
 
-• <b>Interactive Genealogy Tree</b> — 211 biblical figures on a zoomable family tree with biographies and family connections.
+45+ scholars from across the theological spectrum — evangelical, reformed, Jewish academic, literary-critical, and patristic — with commentary at the section level. Not a library you have to dig through. Curated perspectives, delivered inline, with tradition labels so you know where each voice is coming from.
 
-• <b>Biblical World Map</b> — 71 ancient places, 28 narrative journey overlays with region polygons and travel paths.
+<b>Study Tools</b>
 
-• <b>Timeline</b> — 216 events from Creation to Revelation on a proportional, era-colored timeline.
+• <b>Interlinear Hebrew & Greek</b> — Tap any verse for original language with morphology
+• <b>Concordance Search</b> — Find every verse where a Hebrew or Greek word appears
+• <b>43 Word Studies</b> — Deep dives into the Bible's most important terms
+• <b>50 Prophecy Chains</b> — Trace fulfillment across 283 links
+• <b>53 Difficult Passages</b> — Multi-view scholarly responses to the hardest texts
+• <b>20 Concept Themes</b> — Explore covenant, atonement, kingdom across the canon
+• <b>Interactive Genealogy Tree</b> — 282 people with full bios
+• <b>Biblical World Map</b> — 28 journeys with route overlays across 73 places
+• <b>543-Event Timeline</b> — From creation to revelation with chapter deep-links
+• <b>Parallel Passages</b> — Synoptic comparison with diff highlighting
 
-• <b>Parallel Passages</b> — 45 synoptic passage sets with side-by-side comparison and unique-word highlighting.
+<b>Personal Study</b>
 
-• <b>Study Tools</b> — Bookmarks, color highlights, notes, reading plans, text-to-speech, verse sharing.
+Multi-color highlights with collections. Notes with search. Bookmarks. 10 curated reading plans. Text-to-speech with verse highlighting. Reading streaks. Verse sharing. 3 translations: NIV, ESV, KJV. Cross-device sync.
 
-<b>Content:</b> 30 books, 879 chapters. New books added via over-the-air updates.
-
-Entirely offline. No account. No ads. No subscriptions. Free.
+Entirely offline. No account required. No ads. Free.
 
 ## Category
 Books & Reference

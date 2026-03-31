@@ -7,46 +7,52 @@ Companion Study
 Logos & Letters, verse by verse
 
 ## Promotional Text (170 chars)
-Explore the Bible with 40+ scholars, Hebrew & Greek word studies, an interactive family tree, a biblical world map, and verse-by-verse commentary. Offline. Free.
+Don't just read the Bible. Learn to read it the way it was written. 45+ scholars, Hebrew & Greek interlinear, and 8 features no other app offers. Free.
 
 ## Description
-Companion Study is a free, offline Bible study app that pairs the biblical text with scholarly commentary from 43 commentators spanning evangelical, reformed, Jewish academic, literary-critical, and patristic traditions.
+Don't just read the Bible. Learn to read it the way it was written.
 
-Every chapter of every live book features verse-by-verse analysis across up to 15 scholarly panel types — Hebrew and Greek word studies, historical context, cross-references, literary structure analysis, theological theme mapping, translation comparisons, ancient source citations, reception history, and more.
+Companion Study is the only Bible app that bridges the gap between reading scripture and understanding ancient literature. It's free, offline, and delivers seminary-level depth without requiring you to know how to use academic tools.
 
-KEY FEATURES
+HOW IT'S DIFFERENT
 
-Dual Translation Reading
-Read in NIV or ESV with a single tap. Verse highlighting layers color divine names, places, people, and key terms directly in the text.
+Every Bible app tells you what the text says. Companion Study teaches you how to read it — with 8 features no competitor offers at any price:
 
-43 Scholar Commentaries
-From John MacArthur to Robert Alter, from John Calvin to the NET Bible translators — access curated scholarly notes from across the theological spectrum.
+• Original Audience Lens — What the first readers assumed but never stated
+• Ancient Near Eastern Parallels — What Genesis is arguing against, and why
+• Intertextual Allusion Mapping — When the NT echoes the OT, see the original context
+• Chiasm & Literary Structure — See the architecture of ancient texts visually
+• Genre-Aware Study Guidance — Read apocalyptic differently from epistle, poetry from narrative
+• Hermeneutical Coaching — Learn study methods while you study
+• Progressive Revelation — Watch a concept develop from Genesis to Revelation
+• Study Depth Tracking — See what you haven't explored yet in every section
 
-Hebrew & Greek Word Studies
-Tap any highlighted word to explore its original-language root, transliteration, glosses, semantic range, and theological significance.
+SCHOLARLY DEPTH, CURATED FOR YOU
 
-Interactive Genealogy Tree
-Explore 211 biblical figures on a zoomable family tree. Tap any person for their biography, family connections, and scripture references.
+45+ scholars from across the theological spectrum — evangelical, reformed, Jewish academic, literary-critical, and patristic — with commentary at the section level. Not a library you have to dig through. Curated perspectives, delivered inline, with tradition labels so you know where each voice is coming from.
 
-Biblical World Map
-71 ancient places with 28 narrative journey overlays. Follow Abraham from Ur to Canaan, trace the Exodus route, or explore Paul's missionary journeys.
+TOOLS THAT CONNECT THE DOTS
 
-Timeline
-216 events from Creation to Revelation, positioned on a proportional timeline with era-colored bands and detailed event descriptions.
+• Interlinear Hebrew & Greek — Tap any verse to see the original language with morphology and glosses
+• Concordance Search — Find every verse where a Hebrew or Greek word appears
+• 43 Word Studies — Curated deep dives into the Bible's most important terms
+• 50 Prophecy Chains — Trace fulfillment from promise to completion across 283 links
+• 53 Difficult Passages — Multi-view scholarly responses to the Bible's hardest texts
+• 20 Concept Themes — Explore covenant, atonement, kingdom, and more across the canon
+• Interactive Genealogy Tree — 282 people on a zoomable family tree with full bios
+• Biblical World Map — 28 narrative journeys with route overlays across 73 places
+• 543-Event Timeline — From creation to revelation with chapter deep-links
 
-Parallel Passage Comparison
-45 synoptic passage sets with side-by-side Gospel text comparison and unique-word highlighting.
+PERSONAL STUDY
 
-Personal Study Tools
-Bookmarks, color-coded verse highlights, personal notes, reading plans, text-to-speech, and verse sharing as branded image cards.
+Multi-color verse highlights with collections. Notes with full-text search. Bookmarks. 10 curated reading plans designed around our unique features. Text-to-speech with verse highlighting and speed control. Reading streaks. Verse sharing.
 
-CONTENT
-30 books live with 879 chapters of verse-by-verse analysis. New books added regularly via over-the-air updates — no app store update required.
+3 translations: NIV, ESV, KJV. Cross-device sync with cloud backup.
 
-Entirely offline after installation. No account required. No ads. No subscriptions. No in-app purchases.
+Entirely offline after installation. No ads. Free.
 
 ## Keywords (100 chars)
-bible study,commentary,hebrew,greek,word study,devotional,NIV,ESV,genealogy,map,timeline,scholarly
+bible study,interlinear,hebrew,greek,commentary,scholarly,chiasm,word study,NIV,ESV,free,offline
 
 ## What's New (v1.0.0)
 Welcome to Companion Study! Explore 30 books and 879 chapters with verse-by-verse scholarly commentary, Hebrew and Greek word studies, interactive exploration tools, and personal study features.

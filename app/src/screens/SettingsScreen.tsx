@@ -37,9 +37,10 @@ const APP_VERSION = require('../../app.json').expo.version ?? '1.0.0';
 /* ── About copy ─────────────────────────────────────────────────── */
 
 const ABOUT_PARAGRAPHS = [
-  'Companion Study is a verse-by-verse Bible study app designed for readers who want depth without a seminary library. Every chapter pairs the biblical text with commentary drawn from evangelical, reformed, Jewish, critical, and patristic traditions \u2014 placing multiple scholarly voices side by side so you can see how the text has been understood across centuries and communities.',
-  'Beyond commentary, each chapter surfaces the original Hebrew and Greek, historical context, cross-references, and thematic connections that give Scripture its layered richness. Interactive tools \u2014 a genealogy tree, biblical world map, timeline, word studies, prophecy chains, and concept explorer \u2014 let you trace threads across the entire canon.',
-  'Your study is personal. Highlight verses, take notes, build collections, and bookmark passages \u2014 all stored privately on your device.',
+  'Don\u2019t just read the Bible. Learn to read it the way it was written.',
+  'Companion Study is a free Bible study app that does what no other app does: it teaches you how ancient texts actually work. Every chapter pairs the biblical text with scholarly commentary from 45+ commentators \u2014 evangelical, reformed, Jewish, critical, and patristic \u2014 placing multiple perspectives side by side so you can see how the text has been understood across centuries, traditions, and communities.',
+  'Beyond commentary, Companion Study surfaces what other apps can\u2019t: the original audience\u2019s assumptions, ancient Near Eastern parallels, chiastic literary structures, intertextual allusions, genre-aware reading guidance, and progressive revelation tracking. Interactive tools \u2014 genealogy trees, a biblical world map, timelines, word studies, prophecy chains, and a concept explorer \u2014 let you trace threads across the entire canon.',
+  'Your study is personal. Highlight verses in multiple colors, take notes, build collections, and bookmark passages \u2014 all stored privately on your device. No account required. No ads. No paywall on scholarship.',
 ];
 
 /* ── Component ──────────────────────────────────────────────────── */
