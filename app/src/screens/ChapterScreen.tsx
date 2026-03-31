@@ -11,7 +11,7 @@ import React, { useCallback, useMemo, useRef, useEffect, useState } from 'react'
 import { View, ScrollView, LayoutAnimation, Platform, UIManager, StyleSheet, type NativeSyntheticEvent, type NativeScrollEvent } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
-import type { Book } from '../types';
+import type { Book, CoachingTip } from '../types';
 
 import { useChapterData } from '../hooks/useChapterData';
 import { useSwipeNavigation } from '../hooks/useSwipeNavigation';
@@ -19,6 +19,7 @@ import { useNotedVerses } from '../hooks/useNotedVerses';
 import { useReaderStore, useSettingsStore } from '../stores';
 import { recordVisit } from '../db/user';
 import { GenreBanner } from '../components/GenreBanner';
+import { StudyCoachCard } from '../components/StudyCoachCard';
 import { useStudyDepth } from '../hooks/useStudyDepth';
 import { getBook } from '../db/content';
 
@@ -45,6 +46,7 @@ export default function ChapterScreen() {
   const { bookId, chapterNum } = route.params ?? {};
 
   const fontSize = useSettingsStore((s) => s.fontSize);
+  const studyCoachEnabled = useSettingsStore((s) => s.studyCoachEnabled);
   const activePanel = useReaderStore((s) => s.activePanel);
   const setActivePanel = useReaderStore((s) => s.setActivePanel);
   const clearActivePanel = useReaderStore((s) => s.clearActivePanel);
@@ -64,6 +66,22 @@ export default function ChapterScreen() {
   const btnRowYMap = useRef<Record<string, number>>({});
   const [bookData, setBookData] = React.useState<Book | null>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [dismissedTips, setDismissedTips] = useState<Set<number>>(new Set());
+
+  // Parse coaching tips from chapter data
+  const coachingTips = useMemo<CoachingTip[]>(() => {
+    if (!chapter?.coaching_json) return [];
+    try {
+      return JSON.parse(chapter.coaching_json);
+    } catch {
+      return [];
+    }
+  }, [chapter?.coaching_json]);
+
+  // Reset dismissed tips when chapter changes
+  useEffect(() => {
+    setDismissedTips(new Set());
+  }, [bookId, chapterNum]);
 
   // Scroll progress tracking
   const handleScroll = useCallback((e: NativeSyntheticEvent<NativeScrollEvent>) => {
@@ -230,59 +248,76 @@ export default function ChapterScreen() {
           />
         ) : null}
 
-        {/* Sections */}
-        {sections.map((sec) => (
-          <View
-            key={sec.id}
-            onLayout={(e) => {
-              sectionYMap.current[sec.id] = e.nativeEvent.layout.y;
-            }}
-          >
-          <SectionBlock
-            section={sec}
-            panels={sec.panels}
-            verses={verses}
-            vhlGroups={vhlGroups}
-            activeVhlGroups={activeVhlGroups}
-            notedVerses={notedVerses}
-            activePanel={activeSectionPanelType}
-            fontSize={fontSize}
-            onPanelToggle={handleSectionPanelToggle}
-            onNotePress={(v) => { setNoteVerseNum(v); toggleNotes(); }}
-            depthExplored={depthMap.get(sec.id)?.explored}
-            depthTotal={depthMap.get(sec.id)?.total}
-            onDepthRecord={recordOpen}
-            renderButtonRow={(panels, sectionId) => (
-              <View onLayout={(e) => {
-                const sectionY = sectionYMap.current[sectionId] ?? 0;
-                btnRowYMap.current[sectionId] = sectionY + e.nativeEvent.layout.y;
-              }}>
-                <ButtonRow
-                  panels={panels}
-                  activePanel={
-                    activeSectionPanelType?.sectionId === sectionId
-                      ? activeSectionPanelType.panelType
-                      : null
-                  }
-                  onToggle={(type) => handleSectionPanelToggle(sectionId, type)}
+        {/* Sections (with coaching cards interleaved) */}
+        {sections.flatMap((sec) => {
+          const elements: React.ReactNode[] = [
+            <View
+              key={sec.id}
+              onLayout={(e) => {
+                sectionYMap.current[sec.id] = e.nativeEvent.layout.y;
+              }}
+            >
+            <SectionBlock
+              section={sec}
+              panels={sec.panels}
+              verses={verses}
+              vhlGroups={vhlGroups}
+              activeVhlGroups={activeVhlGroups}
+              notedVerses={notedVerses}
+              activePanel={activeSectionPanelType}
+              fontSize={fontSize}
+              onPanelToggle={handleSectionPanelToggle}
+              onNotePress={(v) => { setNoteVerseNum(v); toggleNotes(); }}
+              depthExplored={depthMap.get(sec.id)?.explored}
+              depthTotal={depthMap.get(sec.id)?.total}
+              onDepthRecord={recordOpen}
+              renderButtonRow={(panels, sectionId) => (
+                <View onLayout={(e) => {
+                  const sectionY = sectionYMap.current[sectionId] ?? 0;
+                  btnRowYMap.current[sectionId] = sectionY + e.nativeEvent.layout.y;
+                }}>
+                  <ButtonRow
+                    panels={panels}
+                    activePanel={
+                      activeSectionPanelType?.sectionId === sectionId
+                        ? activeSectionPanelType.panelType
+                        : null
+                    }
+                    onToggle={(type) => handleSectionPanelToggle(sectionId, type)}
+                  />
+                </View>
+              )}
+              renderPanel={(panel) => (
+                <PanelContainer
+                  panelType={panel.panel_type}
+                  contentJson={panel.content_json}
+                  isOpen
+                  onClose={clearActivePanel}
+                  onRefPress={(ref) => {
+                    navigation.push('Chapter', { bookId: ref.bookId, chapterNum: ref.chapter });
+                  }}
                 />
-              </View>
-            )}
-            renderPanel={(panel) => (
-              <PanelContainer
-                panelType={panel.panel_type}
-                contentJson={panel.content_json}
-                isOpen
-                onClose={clearActivePanel}
-                onRefPress={(ref) => {
-                  // Navigate to referenced chapter
-                  navigation.push('Chapter', { bookId: ref.bookId, chapterNum: ref.chapter });
-                }}
-              />
-            )}
-          />
-          </View>
-        ))}
+              )}
+            />
+            </View>,
+          ];
+
+          // Inject coaching card after this section if applicable
+          if (studyCoachEnabled && coachingTips.length > 0) {
+            const tip = coachingTips.find((t) => t.after_section === sec.section_num);
+            if (tip && !dismissedTips.has(tip.after_section)) {
+              elements.push(
+                <StudyCoachCard
+                  key={`coach-${tip.after_section}`}
+                  tip={tip.tip}
+                  onDismiss={() => setDismissedTips((prev) => new Set(prev).add(tip.after_section))}
+                />,
+              );
+            }
+          }
+
+          return elements;
+        })}
 
         {/* Chapter-level scholarly block */}
         <ScholarlyBlock

@@ -106,7 +106,8 @@ CREATE TABLE chapters (
   timeline_link_event TEXT,
   timeline_link_text TEXT,
   map_story_link_id TEXT,
-  map_story_link_text TEXT
+  map_story_link_text TEXT,
+  coaching_json TEXT
 );
 
 CREATE TABLE sections (
@@ -381,17 +382,22 @@ def populate_chapters(cur):
             tl = data.get('timeline_link')
             ms = data.get('map_story_link')
 
+            # Coaching tips (optional)
+            coaching = data.get('coaching')
+            coaching_str = _json_str(coaching) if coaching else None
+
             cur.execute(
                 'INSERT INTO chapters (id, book_id, chapter_num, title, subtitle, '
                 'timeline_link_event, timeline_link_text, '
-                'map_story_link_id, map_story_link_text) '
-                'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                'map_story_link_id, map_story_link_text, coaching_json) '
+                'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                 (chapter_id, book_id, ch_num,
                  data.get('title'), data.get('subtitle'),
                  tl['event_id'] if tl else None,
                  tl['text'] if tl else None,
                  ms['story_id'] if ms else None,
-                 ms['text'] if ms else None)
+                 ms['text'] if ms else None,
+                 coaching_str)
             )
             chapter_count += 1
 

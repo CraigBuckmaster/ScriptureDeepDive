@@ -31,6 +31,13 @@ export interface Chapter {
   timeline_link_text: string | null;
   map_story_link_id: string | null;
   map_story_link_text: string | null;
+  coaching_json: string | null;
+}
+
+export interface CoachingTip {
+  after_section: number;
+  tip: string;
+  genre_tag: string;
 }
 
 export interface Section {
