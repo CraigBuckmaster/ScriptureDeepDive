@@ -157,3 +157,20 @@ export const CHAPTER_PANEL_ORDER = [
   'lit', 'hebtext', 'themes', 'ppl', 'trans',
   'src', 'rec', 'thread', 'tx', 'textual', 'debate', 'discourse',
 ];
+
+// ── Chapter Panel Categories ───────────────────────────────────────
+
+export interface PanelCategory {
+  label: string;
+  types: string[];
+}
+
+/**
+ * Chapter-level panel button categories for visual grouping.
+ * Panels not listed here render in an uncategorized group at the end.
+ */
+export const CHAPTER_PANEL_CATEGORIES: PanelCategory[] = [
+  { label: 'LANGUAGE & FORM', types: ['lit', 'hebtext', 'discourse', 'themes'] },
+  { label: 'WORLD BEHIND THE TEXT', types: ['ppl', 'trans', 'src', 'rec'] },
+  { label: 'SCHOLARLY TOOLS', types: ['thread', 'tx', 'textual', 'debate'] },
+];
