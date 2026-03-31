@@ -6,7 +6,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { TappableReference } from '../TappableReference';
-import { getPanelColors, base, spacing, fontFamily } from '../../theme';
+import { useTheme, spacing, fontFamily } from '../../theme';
 import { parseReference } from '../../utils/verseResolver';
 import type { CrossRefEntry, ParsedRef } from '../../types';
 
@@ -16,6 +16,7 @@ interface Props {
 }
 
 export function CrossRefPanel({ entries, onRefPress }: Props) {
+  const { base, getPanelColors } = useTheme();
   const colors = getPanelColors('cross');
 
   return (

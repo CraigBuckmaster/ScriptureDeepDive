@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { getPanelColors, base, spacing, fontFamily } from '../../theme';
+import { useTheme, spacing, fontFamily } from '../../theme';
 import type { TransPanel } from '../../types';
 
 interface TransRow {
@@ -67,6 +67,7 @@ function parseHtmlTable(html: string): TransRow[] {
 }
 
 export function TranslationPanel({ data }: Props) {
+  const { base, getPanelColors } = useTheme();
   const colors = getPanelColors('trans');
 
   // Handle both structured data and legacy HTML strings

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { getPanelColors, base, spacing, radii, fontFamily } from '../../theme';
+import { useTheme, spacing, radii, fontFamily } from '../../theme';
 import { ManuscriptStoriesView } from './ManuscriptStoriesView';
 import type { TextualEntry } from '../../types';
 import type { ManuscriptStory } from './ManuscriptStoriesView';
@@ -8,6 +8,7 @@ import type { ManuscriptStory } from './ManuscriptStoriesView';
 interface Props { entries: TextualEntry[]; }
 
 export function TextualPanel({ entries }: Props) {
+  const { base, getPanelColors } = useTheme();
   const colors = getPanelColors('tx');
   return (
     <View style={styles.entryList}>
@@ -15,11 +16,11 @@ export function TextualPanel({ entries }: Props) {
         <View key={i} style={styles.entry}>
           <View style={styles.entryHeader}>
             <Text style={[styles.entryRef, { color: colors.accent }]}>{e.ref}</Text>
-            <Text style={styles.entryTitle}>{e.title}</Text>
+            <Text style={[styles.entryTitle, { color: base.textDim }]}>{e.title}</Text>
           </View>
-          <Text style={styles.entryContent}>{e.content}</Text>
+          <Text style={[styles.entryContent, { color: base.textDim }]}>{e.content}</Text>
           {e.note ? (
-            <Text style={styles.entryNote}>{e.note}</Text>
+            <Text style={[styles.entryNote, { color: base.textMuted }]}>{e.note}</Text>
           ) : null}
         </View>
       ))}
@@ -37,6 +38,7 @@ interface CompositeProps {
 }
 
 export function CompositeTextualPanel({ data }: CompositeProps) {
+  const { base } = useTheme();
   const hasNotes = data.notes && data.notes.length > 0;
   const hasStories = data.stories && data.stories.length > 0;
   const showTabs = hasNotes && hasStories;
@@ -52,20 +54,20 @@ export function CompositeTextualPanel({ data }: CompositeProps) {
   return (
     <View>
       {/* Tab bar */}
-      <View style={styles.tabBar}>
+      <View style={[styles.tabBar, { backgroundColor: base.bgElevated }]}>
         <TouchableOpacity
-          style={[styles.tab, activeTab === 'notes' && styles.tabActive]}
+          style={[styles.tab, activeTab === 'notes' && [styles.tabActive, { backgroundColor: base.gold + '25' }]]}
           onPress={() => setActiveTab('notes')}
         >
-          <Text style={[styles.tabText, activeTab === 'notes' && styles.tabTextActive]}>
+          <Text style={[styles.tabText, { color: base.textMuted }, activeTab === 'notes' && { color: base.gold }]}>
             Notes
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={[styles.tab, activeTab === 'stories' && styles.tabActive]}
+          style={[styles.tab, activeTab === 'stories' && [styles.tabActive, { backgroundColor: base.gold + '25' }]]}
           onPress={() => setActiveTab('stories')}
         >
-          <Text style={[styles.tabText, activeTab === 'stories' && styles.tabTextActive]}>
+          <Text style={[styles.tabText, { color: base.textMuted }, activeTab === 'stories' && { color: base.gold }]}>
             Manuscript Stories
           </Text>
         </TouchableOpacity>
@@ -96,18 +98,15 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   entryTitle: {
-    color: base.textDim,
     fontFamily: fontFamily.display,
     fontSize: 11,
   },
   entryContent: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 14,
     lineHeight: 22,
   },
   entryNote: {
-    color: base.textMuted,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 13,
   },
@@ -115,7 +114,6 @@ const styles = StyleSheet.create({
   // Composite tab bar
   tabBar: {
     flexDirection: 'row',
-    backgroundColor: base.bgElevated,
     borderRadius: radii.md,
     padding: 2,
     marginBottom: spacing.sm,
@@ -126,15 +124,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: radii.sm + 2,
   },
-  tabActive: {
-    backgroundColor: base.gold + '25',
-  },
+  tabActive: {},
   tabText: {
-    color: base.textMuted,
     fontFamily: fontFamily.uiMedium,
     fontSize: 12,
-  },
-  tabTextActive: {
-    color: base.gold,
   },
 });

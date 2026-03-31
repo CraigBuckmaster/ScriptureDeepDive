@@ -10,7 +10,7 @@ import React, { useCallback } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { SectionHeader } from './SectionHeader';
 import { VerseBlock } from './VerseBlock';
-import { base, spacing } from '../theme';
+import { useTheme, spacing } from '../theme';
 import type { Section, SectionPanel, Verse, VHLGroup, ParsedRef } from '../types';
 
 interface Props {
@@ -45,6 +45,8 @@ export function SectionBlock({
   renderButtonRow, renderPanel,
   depthExplored, depthTotal, onDepthRecord,
 }: Props) {
+  const { base } = useTheme();
+
   // Filter verses for this section
   const sectionVerses = verses.filter(
     (v) => v.verse_num >= section.verse_start && v.verse_num <= section.verse_end
@@ -70,7 +72,7 @@ export function SectionBlock({
       : null;
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { borderBottomColor: base.border + '60' }]}>
       <SectionHeader header={section.header} explored={depthExplored} total={depthTotal} />
 
       <VerseBlock
@@ -99,7 +101,6 @@ export function SectionBlock({
 const styles = StyleSheet.create({
   container: {
     borderBottomWidth: 1,
-    borderBottomColor: base.border + '60',
     paddingBottom: spacing.sm,
   },
 });

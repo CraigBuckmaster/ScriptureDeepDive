@@ -28,6 +28,7 @@ export const VerseBlock = React.memo(function VerseBlock({
   verses, vhlGroups, activeVhlGroups, notedVerses, sectionId,
   fontSize = 16, onVhlWordPress, onNotePress, onVerseLongPress, onVerseNumPress, activeVerseNum,
 }: Props) {
+  const { base } = useTheme();
   if (!verses.length) return null;
 
   const lineHeight = fontSize * 1.6;
@@ -38,14 +39,14 @@ export const VerseBlock = React.memo(function VerseBlock({
       {verses.map((verse) => (
         <TouchableOpacity
           key={verse.verse_num}
-          style={[styles.verseRow, activeVerseNum === verse.verse_num && styles.verseRowActive]}
+          style={[styles.verseRow, activeVerseNum === verse.verse_num && { backgroundColor: base.gold + '15', borderRadius: 4, marginHorizontal: -4, paddingHorizontal: 4 }]}
           onLongPress={onVerseLongPress ? () => onVerseLongPress(verse.verse_num, verse.text) : undefined}
           activeOpacity={onVerseLongPress ? 0.7 : 1}
           delayLongPress={400}
         >
           {/* Verse number (tap for interlinear) */}
           <Text
-            style={[styles.verseNum, { fontSize: numSize, lineHeight }]}
+            style={[styles.verseNum, { fontSize: numSize, lineHeight, color: base.verseNum }]}
             accessibilityLabel={`Verse ${verse.verse_num}`}
             onPress={onVerseNumPress ? () => onVerseNumPress(verse.verse_num) : undefined}
           >
@@ -87,14 +88,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginBottom: 8,
   },
-  verseRowActive: {
-    backgroundColor: base.gold + '15',
-    borderRadius: 4,
-    marginHorizontal: -4,
-    paddingHorizontal: 4,
-  },
   verseNum: {
-    color: base.verseNum,
     fontFamily: fontFamily.display,
     marginRight: 4,
     minWidth: 28,

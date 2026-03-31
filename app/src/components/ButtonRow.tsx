@@ -16,7 +16,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { PanelButton } from './PanelButton';
 import { SECTION_PANEL_ORDER, CHAPTER_PANEL_ORDER, isScholarPanel } from '../utils/panelLabels';
 import type { PanelCategory } from '../utils/panelLabels';
-import { base, spacing, fontFamily } from '../theme';
+import { useTheme, spacing, fontFamily } from '../theme';
 import type { SectionPanel, ChapterPanel } from '../types';
 
 interface Props {
@@ -29,6 +29,8 @@ interface Props {
 }
 
 export function ButtonRow({ panels, activePanel, onToggle, isChapterLevel, categories }: Props) {
+  const { base } = useTheme();
+
   const { contentTypes, scholarTypes } = useMemo(() => {
     const available = new Set(panels.map((p) => p.panel_type));
     const order = isChapterLevel ? CHAPTER_PANEL_ORDER : SECTION_PANEL_ORDER;
@@ -86,7 +88,7 @@ export function ButtonRow({ panels, activePanel, onToggle, isChapterLevel, categ
         categorizedGroups.map((group) => (
           <View key={group.label || '_uncategorized'} style={styles.categoryGroup}>
             {group.label.length > 0 && (
-              <Text style={styles.categoryLabel}>{group.label}</Text>
+              <Text style={[styles.categoryLabel, { color: base.textMuted }]}>{group.label}</Text>
             )}
             <View style={styles.categoryButtons}>
               {group.types.map((type) => (
@@ -114,7 +116,7 @@ export function ButtonRow({ panels, activePanel, onToggle, isChapterLevel, categ
 
       {/* Divider between content and scholars */}
       {contentTypes.length > 0 && scholarTypes.length > 0 && (
-        <View style={styles.divider} />
+        <View style={[styles.divider, { backgroundColor: base.border }]} />
       )}
 
       {/* Scholar panels */}
@@ -142,7 +144,6 @@ const styles = StyleSheet.create({
   divider: {
     width: 1,
     height: 24,
-    backgroundColor: base.border,
     marginHorizontal: 2,
   },
   categoryGroup: {
@@ -151,7 +152,6 @@ const styles = StyleSheet.create({
   },
   categoryLabel: {
     fontSize: 8,
-    color: base.textMuted,
     fontFamily: fontFamily.uiSemiBold,
     letterSpacing: 1.2,
     paddingLeft: 2,

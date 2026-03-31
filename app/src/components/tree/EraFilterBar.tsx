@@ -15,7 +15,7 @@ import {
   StyleSheet,
   type LayoutChangeEvent,
 } from 'react-native';
-import { eras, eraPillLabels, base, spacing, radii, fontFamily } from '../../theme';
+import { useTheme, eras, eraPillLabels, spacing, radii, fontFamily } from '../../theme';
 import { lightImpact } from '../../utils/haptics';
 
 interface Props {
@@ -30,6 +30,7 @@ const CHIP_HEIGHT = 32;
 const DOT_SIZE = 6;
 
 export function EraFilterBar({ activeEra, onSelect }: Props) {
+  const { base } = useTheme();
   const scrollRef = useRef<ScrollView>(null);
   const chipLayouts = useRef<Record<string, { x: number; width: number }>>({});
 

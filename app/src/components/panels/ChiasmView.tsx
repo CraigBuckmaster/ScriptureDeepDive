@@ -8,7 +8,7 @@
 
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { base, spacing, fontFamily } from '../../theme';
+import { useTheme, spacing, fontFamily } from '../../theme';
 import type { ChiasmData } from '../../types';
 
 interface Props {
@@ -16,10 +16,12 @@ interface Props {
 }
 
 export function ChiasmView({ data }: Props) {
+  const { base } = useTheme();
+
   return (
     <View style={styles.container}>
       {/* Title */}
-      <Text style={styles.title}>{data.title}</Text>
+      <Text style={[styles.title, { color: base.gold }]}>{data.title}</Text>
 
       {/* Pairs — top half */}
       {data.pairs.map((pair, i) => (
@@ -34,15 +36,15 @@ export function ChiasmView({ data }: Props) {
             styles.card,
             { backgroundColor: pair.color + '15', borderColor: pair.color + '30' },
           ]}>
-            <Text style={styles.cardText}>{pair.top}</Text>
+            <Text style={[styles.cardText, { color: base.textDim }]}>{pair.top}</Text>
           </View>
         </View>
       ))}
 
       {/* Center / focal point */}
-      <View style={[styles.centerCard, { borderColor: base.gold + '50' }]}>
-        <Text style={styles.centerLabel}>{data.center.label}</Text>
-        <Text style={styles.centerText}>{data.center.text}</Text>
+      <View style={[styles.centerCard, { borderColor: base.gold + '50', backgroundColor: base.gold + '10' }]}>
+        <Text style={[styles.centerLabel, { color: base.gold }]}>{data.center.label}</Text>
+        <Text style={[styles.centerText, { color: base.text }]}>{data.center.text}</Text>
       </View>
 
       {/* Pairs — bottom half (reversed) */}
@@ -58,7 +60,7 @@ export function ChiasmView({ data }: Props) {
             styles.card,
             { backgroundColor: pair.color + '15', borderColor: pair.color + '30' },
           ]}>
-            <Text style={styles.cardText}>{pair.bottom}</Text>
+            <Text style={[styles.cardText, { color: base.textDim }]}>{pair.bottom}</Text>
           </View>
         </View>
       ))}
@@ -74,7 +76,6 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: fontFamily.displayMedium,
     fontSize: 13,
-    color: base.gold,
     textAlign: 'center',
     marginBottom: spacing.xs,
   },
@@ -100,7 +101,6 @@ const styles = StyleSheet.create({
   cardText: {
     fontFamily: fontFamily.body,
     fontSize: 13,
-    color: base.textDim,
     lineHeight: 20,
   },
   centerCard: {
@@ -108,18 +108,15 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: spacing.sm + 2,
     marginLeft: 36,
-    backgroundColor: base.gold + '10',
   },
   centerLabel: {
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 14,
-    color: base.gold,
     marginBottom: 2,
   },
   centerText: {
     fontFamily: fontFamily.body,
     fontSize: 13,
-    color: base.text,
     lineHeight: 20,
   },
 });

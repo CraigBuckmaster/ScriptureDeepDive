@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-import { base, spacing, radii, fontFamily } from '../../theme';
+import { useTheme, spacing, radii, fontFamily } from '../../theme';
 
 interface Props {
   addRef: string;
@@ -28,9 +28,10 @@ export function NewNoteInput({
   onBlur,
   onCancel,
 }: Props) {
+  const { base } = useTheme();
   return (
-    <View style={styles.addForm}>
-      <Text style={styles.addLabel}>{formatNoteRef(addRef)}</Text>
+    <View style={[styles.addForm, { borderBottomColor: base.border }]}>
+      <Text style={[styles.addLabel, { color: base.gold }]}>{formatNoteRef(addRef)}</Text>
       <TextInput
         ref={newTextRef}
         value={newText}
@@ -39,10 +40,10 @@ export function NewNoteInput({
         multiline
         placeholder="Type your note — saves automatically..."
         placeholderTextColor={base.textMuted}
-        style={styles.addInput}
+        style={[styles.addInput, { backgroundColor: base.bgElevated, color: base.text, borderColor: base.border }]}
       />
       <TouchableOpacity onPress={onCancel} style={styles.cancelButton}>
-        <Text style={styles.cancelText}>Cancel</Text>
+        <Text style={[styles.cancelText, { color: base.textMuted }]}>Cancel</Text>
       </TouchableOpacity>
     </View>
   );
@@ -53,16 +54,12 @@ const styles = StyleSheet.create({
     padding: spacing.md,
     gap: spacing.sm,
     borderBottomWidth: 1,
-    borderBottomColor: base.border,
   },
   addLabel: {
-    color: base.gold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 12,
   },
   addInput: {
-    backgroundColor: base.bgElevated,
-    color: base.text,
     borderRadius: radii.sm,
     paddingHorizontal: spacing.sm,
     paddingVertical: spacing.sm,
@@ -70,7 +67,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     minHeight: 60,
     borderWidth: 1,
-    borderColor: base.border,
     textAlignVertical: 'top',
   },
   cancelButton: {
@@ -79,7 +75,6 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
   },
   cancelText: {
-    color: base.textMuted,
     fontSize: 13,
   },
 });

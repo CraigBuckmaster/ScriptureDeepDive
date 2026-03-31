@@ -13,7 +13,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft, ArrowRight, ChevronDown, Info, Volume2 } from 'lucide-react-native';
 import { lightImpact } from '../utils/haptics';
-import { base, spacing, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 
 interface Props {
   bookName: string;
@@ -32,9 +32,11 @@ export function ChapterNavBar({
   bookName, chapterNum, hasPrev, hasNext,
   onPrev, onNext, onQnav, onIntroPress, onTTSPress, ttsActive,
 }: Props) {
+  const { base } = useTheme();
+
   return (
-    <SafeAreaView edges={['top']} style={styles.safeArea}>
-      <View style={styles.bar}>
+    <SafeAreaView edges={['top']} style={[styles.safeArea, { backgroundColor: base.bg }]}>
+      <View style={[styles.bar, { borderBottomColor: base.border }]}>
         {/* Left: Book name → Qnav */}
         <TouchableOpacity
           onPress={onQnav}
@@ -43,7 +45,7 @@ export function ChapterNavBar({
           accessibilityRole="button"
           style={styles.pickerButton}
         >
-          <Text style={styles.bookName} numberOfLines={1}>{bookName}</Text>
+          <Text style={[styles.bookName, { color: base.navText }]} numberOfLines={1}>{bookName}</Text>
           <ChevronDown size={14} color={base.navText} />
         </TouchableOpacity>
 
@@ -64,7 +66,7 @@ export function ChapterNavBar({
             accessibilityLabel={`Chapter ${chapterNum}. Tap to jump to another chapter.`}
             accessibilityRole="button"
           >
-            <Text style={styles.chapterNum}>{chapterNum}</Text>
+            <Text style={[styles.chapterNum, { color: base.text }]}>{chapterNum}</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -106,9 +108,7 @@ export function ChapterNavBar({
 }
 
 const styles = StyleSheet.create({
-  safeArea: {
-    backgroundColor: base.bg,
-  },
+  safeArea: {},
   bar: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -116,7 +116,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     height: 48,
     borderBottomWidth: 1,
-    borderBottomColor: base.border,
   },
   pickerButton: {
     flexDirection: 'row',
@@ -126,7 +125,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   bookName: {
-    color: base.navText,
     fontFamily: fontFamily.displayMedium,
     fontSize: 14,
     flexShrink: 1,
@@ -143,7 +141,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   chapterNum: {
-    color: base.text,
     fontFamily: fontFamily.displayMedium,
     fontSize: 16,
     minWidth: 32,

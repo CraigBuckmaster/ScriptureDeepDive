@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 interface Props {
   planName: string;
@@ -10,6 +10,8 @@ interface Props {
 }
 
 export function DailyReadingCard({ planName, dayNum, chapters, onStartReading }: Props) {
+  const { base } = useTheme();
+
   return (
     <View style={{
       backgroundColor: base.bgElevated, borderWidth: 1, borderColor: base.gold + '40',

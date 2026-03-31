@@ -1,12 +1,13 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { TappableReference } from '../TappableReference';
-import { getPanelColors, base, spacing, fontFamily } from '../../theme';
+import { useTheme, spacing, fontFamily } from '../../theme';
 import type { ParsedRef, RecEntry } from '../../types';
 
 interface Props { entries: RecEntry[]; onRefPress?: (ref: ParsedRef) => void; }
 
 export function ReceptionPanel({ entries, onRefPress }: Props) {
+  const { base, getPanelColors } = useTheme();
   const colors = getPanelColors('rec');
   if (!entries?.length) {
     return (

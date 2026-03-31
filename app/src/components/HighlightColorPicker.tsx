@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { selectionFeedback } from '../utils/haptics';
 
 export const HIGHLIGHT_COLORS = [
@@ -25,6 +25,8 @@ interface Props {
 }
 
 export function HighlightColorPicker({ visible, currentColor, onSelect, onClose }: Props) {
+  const { base } = useTheme();
+
   return (
     <Modal visible={visible} transparent animationType="fade">
       <TouchableOpacity style={styles.backdrop} activeOpacity={1} onPress={onClose}>

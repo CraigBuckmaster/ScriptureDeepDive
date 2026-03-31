@@ -9,7 +9,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { TappableReference } from '../TappableReference';
 import { ScholarTag } from '../ScholarTag';
-import { getScholarColor, base, spacing, fontFamily } from '../../theme';
+import { useTheme, spacing, fontFamily } from '../../theme';
 import type { CommentaryNote, ParsedRef } from '../../types';
 
 interface Props {
@@ -20,6 +20,7 @@ interface Props {
 }
 
 export function CommentaryPanel({ notes, scholarId, onScholarPress, onRefPress }: Props) {
+  const { base, getScholarColor } = useTheme();
   const color = getScholarColor(scholarId);
 
   return (

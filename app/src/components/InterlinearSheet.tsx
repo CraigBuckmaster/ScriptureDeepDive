@@ -14,7 +14,7 @@ import {
 import { X } from 'lucide-react-native';
 import { getInterlinearWords } from '../db/content';
 import { LoadingSkeleton } from './LoadingSkeleton';
-import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { InterlinearWord } from '../types';
 
 interface Props {
@@ -31,6 +31,7 @@ export function InterlinearSheet({
   visible, bookId, chapter, verse, verseRef,
   onClose, onWordStudyPress,
 }: Props) {
+  const { base } = useTheme();
   const [words, setWords] = useState<InterlinearWord[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -65,12 +66,12 @@ export function InterlinearSheet({
       <TouchableWithoutFeedback onPress={onClose}>
         <View style={styles.backdrop}>
           <TouchableWithoutFeedback>
-            <View style={styles.sheet}>
+            <View style={[styles.sheet, { backgroundColor: base.bgElevated }]}>
               {/* Header */}
               <View style={styles.header}>
                 <View>
-                  <Text style={styles.label}>INTERLINEAR</Text>
-                  <Text style={styles.verseRef}>{verseRef}</Text>
+                  <Text style={[styles.label, { color: base.textMuted }]}>INTERLINEAR</Text>
+                  <Text style={[styles.verseRef, { color: base.gold }]}>{verseRef}</Text>
                 </View>
                 <TouchableOpacity onPress={onClose} hitSlop={{ top: 8, right: 8, bottom: 8, left: 8 }}>
                   <X size={20} color={base.textMuted} />
@@ -83,7 +84,7 @@ export function InterlinearSheet({
                   <LoadingSkeleton lines={3} />
                 </View>
               ) : words.length === 0 ? (
-                <Text style={styles.emptyText}>
+                <Text style={[styles.emptyText, { color: base.textMuted }]}>
                   No interlinear data available for this verse.
                 </Text>
               ) : (
@@ -98,25 +99,26 @@ export function InterlinearSheet({
                   {words.map((w) => (
                     <TouchableOpacity
                       key={w.id}
-                      style={styles.wordCard}
+                      style={[styles.wordCard, { backgroundColor: base.bg, borderColor: base.border }]}
                       activeOpacity={w.word_study_id ? 0.7 : 1}
                       onPress={w.word_study_id && onWordStudyPress
                         ? () => onWordStudyPress(w.word_study_id!)
                         : undefined}
                     >
                       {/* Original text (large) */}
-                      <Text style={[styles.original, isOT && styles.originalHebrew]}>
+                      <Text style={[styles.original, { color: base.text }, isOT && styles.originalHebrew]}>
                         {w.original}
                       </Text>
 
                       {/* Transliteration */}
-                      <Text style={styles.transliteration}>{w.transliteration}</Text>
+                      <Text style={[styles.transliteration, { color: base.textDim }]}>{w.transliteration}</Text>
 
                       {/* Strong's number */}
                       {w.strongs ? (
                         <Text style={[
                           styles.strongs,
-                          w.word_study_id ? styles.strongsLinked : null,
+                          { color: base.textMuted },
+                          w.word_study_id ? { color: base.gold } : null,
                         ]}>
                           {w.strongs}
                         </Text>
@@ -124,17 +126,17 @@ export function InterlinearSheet({
 
                       {/* Morphology */}
                       {w.morphology ? (
-                        <Text style={styles.morphology}>{w.morphology}</Text>
+                        <Text style={[styles.morphology, { color: base.textMuted }]}>{w.morphology}</Text>
                       ) : null}
 
                       {/* Gloss */}
                       {w.gloss ? (
-                        <Text style={styles.gloss} numberOfLines={2}>{w.gloss}</Text>
+                        <Text style={[styles.gloss, { color: base.text }]} numberOfLines={2}>{w.gloss}</Text>
                       ) : null}
 
                       {/* Word study indicator */}
                       {w.word_study_id ? (
-                        <View style={styles.wsIndicator} />
+                        <View style={[styles.wsIndicator, { backgroundColor: base.gold }]} />
                       ) : null}
                     </TouchableOpacity>
                   ))}
@@ -155,7 +157,6 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   sheet: {
-    backgroundColor: base.bgElevated,
     borderTopLeftRadius: radii.lg,
     borderTopRightRadius: radii.lg,
     padding: spacing.md,
@@ -169,13 +170,11 @@ const styles = StyleSheet.create({
     marginBottom: spacing.md,
   },
   label: {
-    color: base.textMuted,
     fontFamily: fontFamily.uiMedium,
     fontSize: 10,
     letterSpacing: 0.5,
   },
   verseRef: {
-    color: base.gold,
     fontFamily: fontFamily.displayMedium,
     fontSize: 14,
     marginTop: 2,
@@ -184,7 +183,6 @@ const styles = StyleSheet.create({
     padding: spacing.md,
   },
   emptyText: {
-    color: base.textMuted,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 13,
     textAlign: 'center',
@@ -199,16 +197,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row-reverse',
   },
   wordCard: {
-    backgroundColor: base.bg,
     borderRadius: radii.md,
     borderWidth: 1,
-    borderColor: base.border,
     padding: spacing.sm,
     width: 110,
     alignItems: 'center',
   },
   original: {
-    color: base.text,
     fontFamily: fontFamily.body,
     fontSize: 20,
     textAlign: 'center',
@@ -218,29 +213,22 @@ const styles = StyleSheet.create({
     fontSize: 22,
   },
   transliteration: {
-    color: base.textDim,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 11,
     textAlign: 'center',
     marginBottom: 4,
   },
   strongs: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 10,
     marginBottom: 2,
   },
-  strongsLinked: {
-    color: base.gold,
-  },
   morphology: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 9,
     marginBottom: 4,
   },
   gloss: {
-    color: base.text,
     fontFamily: fontFamily.ui,
     fontSize: 11,
     textAlign: 'center',
@@ -252,6 +240,5 @@ const styles = StyleSheet.create({
     width: 6,
     height: 6,
     borderRadius: 3,
-    backgroundColor: base.gold,
   },
 });

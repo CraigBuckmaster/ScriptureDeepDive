@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Modal, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getScholar } from '../db/content';
-import { getScholarColor, base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { Scholar, ScholarBio } from '../types';
 import { logger } from '../utils/logger';
 
@@ -19,6 +19,7 @@ interface Props {
 }
 
 export function ScholarInfoSheet({ visible, onClose, scholarId, onGoToFullBio }: Props) {
+  const { base, getScholarColor } = useTheme();
   const [scholar, setScholar] = useState<Scholar | null>(null);
   const [bio, setBio] = useState<ScholarBio | null>(null);
 

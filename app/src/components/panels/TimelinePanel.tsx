@@ -7,7 +7,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { TappableReference } from '../TappableReference';
 import { BadgeChip } from '../BadgeChip';
-import { getPanelColors, base, spacing, radii, fontFamily } from '../../theme';
+import { useTheme, spacing, radii, fontFamily } from '../../theme';
 import type { TimelineEventEntry, ParsedRef } from '../../types';
 
 interface Props {
@@ -17,6 +17,7 @@ interface Props {
 }
 
 export function TimelinePanel({ events, onEventPress, onRefPress }: Props) {
+  const { base, getPanelColors } = useTheme();
   const colors = getPanelColors('tl');
 
   return (

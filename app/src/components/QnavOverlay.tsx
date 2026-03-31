@@ -13,7 +13,7 @@ import { useBooks } from '../hooks/useBooks';
 import { useSettingsStore } from '../stores';
 import { SearchInput } from './SearchInput';
 import { selectionFeedback } from '../utils/haptics';
-import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 
 interface Props {
   visible: boolean;
@@ -27,6 +27,7 @@ export function QnavOverlay({
   visible, currentBookId, currentChapter,
   onClose, onSelectChapter,
 }: Props) {
+  const { base } = useTheme();
   const sheetRef = useRef<BottomSheet>(null);
   const { books } = useBooks();
   const translation = useSettingsStore((s) => s.translation);
@@ -82,8 +83,8 @@ export function QnavOverlay({
       snapPoints={snapPoints}
       enablePanDownToClose
       onClose={onClose}
-      backgroundStyle={styles.sheetBg}
-      handleIndicatorStyle={styles.handle}
+      backgroundStyle={[styles.sheetBg, { backgroundColor: base.bg, borderColor: base.border }]}
+      handleIndicatorStyle={[styles.handle, { backgroundColor: base.textMuted }]}
     >
       {/* Controls */}
       <View style={styles.controls}>
@@ -100,7 +101,7 @@ export function QnavOverlay({
           <View style={styles.toggleRow}>
             {(['ot', 'nt'] as const).map((t) => (
               <TouchableOpacity key={t} onPress={() => setTestament(t)}>
-                <Text style={[styles.toggleLabel, testament === t && styles.toggleActive]}>
+                <Text style={[styles.toggleLabel, { color: base.textMuted }, testament === t && { color: base.gold, borderBottomWidth: 2, borderBottomColor: base.gold }]}>
                   {t === 'ot' ? 'Old Testament' : 'New Testament'}
                 </Text>
               </TouchableOpacity>
@@ -114,9 +115,9 @@ export function QnavOverlay({
             <TouchableOpacity
               key={t}
               onPress={() => handleTranslation(t)}
-              style={[styles.translationPill, translation === t && styles.translationPillActive]}
+              style={[styles.translationPill, { backgroundColor: base.bgElevated, borderColor: base.border }, translation === t && { backgroundColor: base.gold + '30', borderColor: base.gold + '60' }]}
             >
-              <Text style={[styles.translationLabel, translation === t && styles.translationLabelActive]}>
+              <Text style={[styles.translationLabel, { color: base.textMuted }, translation === t && { color: base.gold }]}>
                 {t.toUpperCase()}
               </Text>
             </TouchableOpacity>
@@ -135,10 +136,10 @@ export function QnavOverlay({
               onPress={() => setExpandedBook(expandedBook === book.id ? null : book.id)}
               style={styles.bookRow}
             >
-              <Text style={[styles.bookName, !book.is_live && styles.bookNameDim]}>
+              <Text style={[styles.bookName, { color: base.text }, !book.is_live && { color: base.textMuted }]}>
                 {book.name}
               </Text>
-              <Text style={styles.bookChapterCount}>{book.total_chapters} ch</Text>
+              <Text style={[styles.bookChapterCount, { color: base.textMuted }]}>{book.total_chapters} ch</Text>
             </TouchableOpacity>
 
             {expandedBook === book.id && (
@@ -150,12 +151,13 @@ export function QnavOverlay({
                       key={ch}
                       onPress={() => book.is_live && handleSelect(book.id, ch)}
                       disabled={!book.is_live}
-                      style={[styles.chapterCell, isCurrent && styles.chapterCellCurrent]}
+                      style={[styles.chapterCell, { backgroundColor: base.bgElevated }, isCurrent && { backgroundColor: base.gold + '30', borderWidth: 1, borderColor: base.gold + '60' }]}
                     >
                       <Text style={[
                         styles.chapterNum,
-                        !book.is_live && styles.chapterNumDim,
-                        isCurrent && styles.chapterNumCurrent,
+                        { color: base.gold },
+                        !book.is_live && { color: base.textMuted + '40' },
+                        isCurrent && { color: base.gold },
                       ]}>
                         {ch}
                       </Text>
@@ -173,15 +175,12 @@ export function QnavOverlay({
 
 const styles = StyleSheet.create({
   sheetBg: {
-    backgroundColor: base.bg,
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
     borderWidth: 1,
-    borderColor: base.border,
     borderBottomWidth: 0,
   },
   handle: {
-    backgroundColor: base.textMuted,
     width: 36,
   },
   controls: {
@@ -194,39 +193,23 @@ const styles = StyleSheet.create({
     gap: spacing.md,
   },
   toggleLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.displayMedium,
     fontSize: 13,
     paddingBottom: 4,
-  },
-  toggleActive: {
-    color: base.gold,
-    borderBottomWidth: 2,
-    borderBottomColor: base.gold,
   },
   translationRow: {
     flexDirection: 'row',
     gap: spacing.sm,
   },
   translationPill: {
-    backgroundColor: base.bgElevated,
     borderRadius: radii.pill,
     paddingHorizontal: 14,
     paddingVertical: 4,
     borderWidth: 1,
-    borderColor: base.border,
-  },
-  translationPillActive: {
-    backgroundColor: base.gold + '30',
-    borderColor: base.gold + '60',
   },
   translationLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 11,
-  },
-  translationLabelActive: {
-    color: base.gold,
   },
   listContent: {
     paddingBottom: spacing.xxl,
@@ -240,15 +223,10 @@ const styles = StyleSheet.create({
     minHeight: MIN_TOUCH_TARGET,
   },
   bookName: {
-    color: base.text,
     fontFamily: fontFamily.display,
     fontSize: 14,
   },
-  bookNameDim: {
-    color: base.textMuted,
-  },
   bookChapterCount: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 11,
   },
@@ -264,23 +242,10 @@ const styles = StyleSheet.create({
     height: MIN_TOUCH_TARGET,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: base.bgElevated,
     borderRadius: radii.sm,
   },
-  chapterCellCurrent: {
-    backgroundColor: base.gold + '30',
-    borderWidth: 1,
-    borderColor: base.gold + '60',
-  },
   chapterNum: {
-    color: base.gold,
     fontFamily: fontFamily.uiMedium,
     fontSize: 13,
-  },
-  chapterNumDim: {
-    color: base.textMuted + '40',
-  },
-  chapterNumCurrent: {
-    color: base.gold,
   },
 });

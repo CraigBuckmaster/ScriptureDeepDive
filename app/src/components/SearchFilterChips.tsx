@@ -6,7 +6,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { X } from 'lucide-react-native';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 export interface SearchFilter {
   testament: 'all' | 'ot' | 'nt';
@@ -27,6 +27,7 @@ const TESTAMENT_OPTIONS: { id: 'all' | 'ot' | 'nt'; label: string }[] = [
 ];
 
 export function SearchFilterChips({ filter, onFilterChange, onBookPickerOpen }: Props) {
+  const { base } = useTheme();
   return (
     <ScrollView
       horizontal
@@ -39,10 +40,10 @@ export function SearchFilterChips({ filter, onFilterChange, onBookPickerOpen }: 
           <TouchableOpacity
             key={opt.id}
             onPress={() => onFilterChange({ testament: opt.id, bookId: null, bookName: null })}
-            style={[styles.chip, isActive && styles.chipActive]}
+            style={[styles.chip, { borderColor: base.border }, isActive && { borderColor: base.gold, backgroundColor: base.gold + '20' }]}
             activeOpacity={0.7}
           >
-            <Text style={[styles.chipLabel, isActive && styles.chipLabelActive]}>
+            <Text style={[styles.chipLabel, { color: base.textMuted }, isActive && { color: base.gold }]}>
               {opt.label}
             </Text>
           </TouchableOpacity>
@@ -52,22 +53,22 @@ export function SearchFilterChips({ filter, onFilterChange, onBookPickerOpen }: 
       {/* Book filter chip */}
       {filter.bookId ? (
         <TouchableOpacity
-          style={[styles.chip, styles.chipActive]}
+          style={[styles.chip, { borderColor: base.gold, backgroundColor: base.gold + '20' }]}
           onPress={() => onFilterChange({ ...filter, bookId: null, bookName: null })}
           activeOpacity={0.7}
         >
-          <Text style={[styles.chipLabel, styles.chipLabelActive]}>
+          <Text style={[styles.chipLabel, { color: base.gold }]}>
             {filter.bookName ?? filter.bookId}
           </Text>
           <X size={12} color={base.gold} />
         </TouchableOpacity>
       ) : (
         <TouchableOpacity
-          style={styles.chip}
+          style={[styles.chip, { borderColor: base.border }]}
           onPress={onBookPickerOpen}
           activeOpacity={0.7}
         >
-          <Text style={styles.chipLabel}>Book...</Text>
+          <Text style={[styles.chipLabel, { color: base.textMuted }]}>Book...</Text>
         </TouchableOpacity>
       )}
     </ScrollView>
@@ -86,21 +87,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 4,
     borderWidth: 1,
-    borderColor: base.border,
     borderRadius: radii.pill,
     paddingHorizontal: spacing.sm + 2,
     paddingVertical: 4,
   },
-  chipActive: {
-    borderColor: base.gold,
-    backgroundColor: base.gold + '20',
-  },
   chipLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.uiMedium,
     fontSize: 12,
-  },
-  chipLabelActive: {
-    color: base.gold,
   },
 });

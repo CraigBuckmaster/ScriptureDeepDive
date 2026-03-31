@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { base, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
+import { useTheme, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
 
 const SPEEDS = [0.5, 0.75, 1.0, 1.25, 1.5];
 
@@ -25,29 +25,30 @@ export function TTSControls({
   isPlaying, currentVerse, totalVerses, speed,
   onPlay, onPause, onStop, onSkipNext, onSkipPrev, onSetSpeed,
 }: Props) {
+  const { base } = useTheme();
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: base.bgElevated, borderTopColor: base.border }]}>
       {/* Verse counter */}
-      <Text style={styles.counter}>
+      <Text style={[styles.counter, { color: base.textMuted }]}>
         Verse {currentVerse + 1} of {totalVerses}
       </Text>
 
       {/* Controls row */}
       <View style={styles.controls}>
         <TouchableOpacity onPress={onSkipPrev} style={styles.skipButton}>
-          <Text style={styles.skipIcon}>⏮</Text>
+          <Text style={[styles.skipIcon, { color: base.gold }]}>⏮</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={isPlaying ? onPause : onPlay}
-          style={styles.playButton}
+          style={[styles.playButton, { backgroundColor: base.gold + '30' }]}
         >
-          <Text style={styles.playIcon}>{isPlaying ? '⏸' : '▶'}</Text>
+          <Text style={[styles.playIcon, { color: base.gold }]}>{isPlaying ? '⏸' : '▶'}</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={onSkipNext} style={styles.skipButton}>
-          <Text style={styles.skipIcon}>⏭</Text>
+          <Text style={[styles.skipIcon, { color: base.gold }]}>⏭</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={onStop} style={styles.skipButton}>
-          <Text style={styles.stopIcon}>⏹</Text>
+          <Text style={[styles.stopIcon, { color: base.textMuted }]}>⏹</Text>
         </TouchableOpacity>
       </View>
 
@@ -57,9 +58,9 @@ export function TTSControls({
           <TouchableOpacity
             key={s}
             onPress={() => onSetSpeed(s)}
-            style={[styles.speedPill, speed === s && styles.speedPillActive]}
+            style={[styles.speedPill, speed === s && { backgroundColor: base.gold + '30' }]}
           >
-            <Text style={[styles.speedLabel, speed === s && styles.speedLabelActive]}>
+            <Text style={[styles.speedLabel, { color: base.textMuted }, speed === s && { color: base.gold }]}>
               {s}x
             </Text>
           </TouchableOpacity>
@@ -71,14 +72,11 @@ export function TTSControls({
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: base.bgElevated,
     borderTopWidth: 1,
-    borderTopColor: base.border,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.xs,
   },
   counter: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 10,
     textAlign: 'center',
@@ -97,23 +95,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   skipIcon: {
-    color: base.gold,
     fontSize: 18,
   },
   playButton: {
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: base.gold + '30',
     justifyContent: 'center',
     alignItems: 'center',
   },
   playIcon: {
-    color: base.gold,
     fontSize: 20,
   },
   stopIcon: {
-    color: base.textMuted,
     fontSize: 16,
   },
   speedRow: {
@@ -127,15 +121,8 @@ const styles = StyleSheet.create({
     paddingVertical: 2,
     borderRadius: radii.pill,
   },
-  speedPillActive: {
-    backgroundColor: base.gold + '30',
-  },
   speedLabel: {
-    color: base.textMuted,
     fontSize: 10,
     fontFamily: fontFamily.uiMedium,
-  },
-  speedLabelActive: {
-    color: base.gold,
   },
 });

@@ -6,7 +6,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { TappableReference } from '../TappableReference';
-import { getPanelColors, base, spacing, radii, fontFamily } from '../../theme';
+import { useTheme, spacing, radii, fontFamily } from '../../theme';
 import type { PlaceEntry, ParsedRef } from '../../types';
 
 interface Props {
@@ -16,6 +16,7 @@ interface Props {
 }
 
 export function PlacesPanel({ entries, onPlacePress, onRefPress }: Props) {
+  const { base, getPanelColors } = useTheme();
   const colors = getPanelColors('poi');
 
   return (

@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 const TRANSLATIONS: { id: string; label: string }[] = [
   { id: 'niv', label: 'NIV' },
@@ -19,12 +19,13 @@ interface Props {
 }
 
 export function TranslationPicker({ selected, onSelect }: Props) {
+  const { base } = useTheme();
   return (
     <ScrollView
       horizontal
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.row}
-      style={styles.scroll}
+      style={[styles.scroll, { borderBottomColor: base.border, backgroundColor: base.bg }]}
     >
       {TRANSLATIONS.map((t) => {
         const isActive = t.id === selected;
@@ -32,10 +33,10 @@ export function TranslationPicker({ selected, onSelect }: Props) {
           <TouchableOpacity
             key={t.id}
             onPress={() => onSelect(t.id)}
-            style={[styles.pill, isActive && styles.pillActive]}
+            style={[styles.pill, { borderColor: base.border }, isActive && { borderColor: base.gold, backgroundColor: base.gold + '20' }]}
             activeOpacity={0.7}
           >
-            <Text style={[styles.pillLabel, isActive && styles.pillLabelActive]}>
+            <Text style={[styles.pillLabel, { color: base.textMuted }, isActive && { color: base.gold }]}>
               {t.label}
             </Text>
           </TouchableOpacity>
@@ -48,8 +49,6 @@ export function TranslationPicker({ selected, onSelect }: Props) {
 const styles = StyleSheet.create({
   scroll: {
     borderBottomWidth: 1,
-    borderBottomColor: base.border,
-    backgroundColor: base.bg,
   },
   row: {
     flexDirection: 'row',
@@ -60,21 +59,12 @@ const styles = StyleSheet.create({
   },
   pill: {
     borderWidth: 1,
-    borderColor: base.border,
     borderRadius: radii.pill,
     paddingHorizontal: spacing.sm + 2,
     paddingVertical: 4,
   },
-  pillActive: {
-    borderColor: base.gold,
-    backgroundColor: base.gold + '20',
-  },
   pillLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.uiMedium,
     fontSize: 11,
-  },
-  pillLabelActive: {
-    color: base.gold,
   },
 });

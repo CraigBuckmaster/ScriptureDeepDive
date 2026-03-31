@@ -4,7 +4,7 @@
 
 import React, { memo } from 'react';
 import { Path } from 'react-native-svg';
-import { base, eras } from '../../theme';
+import { useTheme, eras } from '../../theme';
 
 interface Props {
   source: { x: number; y: number };
@@ -15,6 +15,7 @@ interface Props {
 }
 
 export const TreeLink = memo(function TreeLink({ source, target, isSpine, dimmed, era }: Props) {
+  const { base } = useTheme();
   const midY = (source.y + target.y) / 2;
   const d = `M${source.x},${source.y} C${source.x},${midY} ${target.x},${midY} ${target.x},${target.y}`;
   const color = isSpine ? base.goldDim : (era ? (eras[era] ?? base.textMuted) : base.textMuted);

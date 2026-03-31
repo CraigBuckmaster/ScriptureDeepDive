@@ -5,7 +5,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Animated, Text, StyleSheet } from 'react-native';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 interface Props {
   message: string | null;
@@ -13,6 +13,7 @@ interface Props {
 }
 
 export function MilestoneToast({ message, onDismiss }: Props) {
+  const { base } = useTheme();
   const translateY = useRef(new Animated.Value(80)).current;
   const opacity = useRef(new Animated.Value(0)).current;
 
@@ -58,10 +59,15 @@ export function MilestoneToast({ message, onDismiss }: Props) {
     <Animated.View
       style={[
         styles.toast,
-        { transform: [{ translateY }], opacity },
+        {
+          backgroundColor: base.bgElevated,
+          borderColor: base.gold + '60',
+          transform: [{ translateY }],
+          opacity,
+        },
       ]}
     >
-      <Text style={styles.text}>{message}</Text>
+      <Text style={[styles.text, { color: base.gold }]}>{message}</Text>
     </Animated.View>
   );
 }
@@ -72,10 +78,8 @@ const styles = StyleSheet.create({
     bottom: spacing.xxl,
     left: spacing.lg,
     right: spacing.lg,
-    backgroundColor: base.bgElevated,
     borderRadius: radii.md,
     borderWidth: 1,
-    borderColor: base.gold + '60',
     paddingVertical: spacing.sm + 2,
     paddingHorizontal: spacing.md,
     shadowColor: '#000',
@@ -85,7 +89,6 @@ const styles = StyleSheet.create({
     elevation: 6,
   },
   text: {
-    color: base.gold,
     fontFamily: fontFamily.uiMedium,
     fontSize: 14,
     textAlign: 'center',

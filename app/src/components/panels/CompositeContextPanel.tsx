@@ -11,7 +11,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { TabbedPanelRenderer } from './TabbedPanelRenderer';
 import type { TabConfig } from './TabbedPanelRenderer';
 import { TappableReference } from '../TappableReference';
-import { base, spacing, fontFamily, getPanelColors } from '../../theme';
+import { useTheme, spacing, fontFamily } from '../../theme';
 import type { CompositeContextData, ParsedRef } from '../../types';
 
 interface Props {
@@ -67,28 +67,29 @@ interface ANEParallelViewProps {
 }
 
 function ANEParallelView({ entries, onRefPress }: ANEParallelViewProps) {
+  const { base, getPanelColors } = useTheme();
   const colors = getPanelColors('hist');
 
   return (
     <View style={styles.tabContent}>
       {entries.map((entry, i) => (
-        <View key={i} style={styles.aneCard}>
+        <View key={i} style={[styles.aneCard, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
           <Text style={[styles.aneTitle, { color: colors.accent }]}>
             {entry.parallel}
           </Text>
 
           <View style={styles.aneRow}>
-            <Text style={styles.aneLabel}>Similarity</Text>
+            <Text style={[styles.aneLabel, { color: base.textMuted }]}>Similarity</Text>
             <TappableReference text={entry.similarity} onRefPress={onRefPress} />
           </View>
 
           <View style={styles.aneRow}>
-            <Text style={styles.aneLabel}>Difference</Text>
+            <Text style={[styles.aneLabel, { color: base.textMuted }]}>Difference</Text>
             <TappableReference text={entry.difference} onRefPress={onRefPress} />
           </View>
 
           <View style={styles.aneRow}>
-            <Text style={styles.aneLabel}>Significance</Text>
+            <Text style={[styles.aneLabel, { color: base.textMuted }]}>Significance</Text>
             <TappableReference text={entry.significance} onRefPress={onRefPress} />
           </View>
         </View>
@@ -102,9 +103,7 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.xs,
   },
   aneCard: {
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.border,
     borderRadius: 8,
     padding: spacing.sm + 2,
     marginBottom: spacing.sm,
@@ -120,7 +119,6 @@ const styles = StyleSheet.create({
   aneLabel: {
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 11,
-    color: base.textMuted,
     letterSpacing: 0.5,
     textTransform: 'uppercase',
     marginBottom: 2,

@@ -14,7 +14,7 @@
 
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
-import { base, radii, fontFamily } from '../theme';
+import { useTheme, radii, fontFamily } from '../theme';
 import { getPanelLabel, isScholarPanel } from '../utils/panelLabels';
 import { lightImpact } from '../utils/haptics';
 
@@ -25,6 +25,7 @@ interface Props {
 }
 
 export function PanelButton({ panelType, isActive, onPress }: Props) {
+  const { base } = useTheme();
   const isScholar = isScholarPanel(panelType);
   const label = getPanelLabel(panelType);
 

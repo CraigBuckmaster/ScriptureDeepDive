@@ -9,7 +9,7 @@ import React, { useMemo } from 'react';
 import { Text, type TextStyle } from 'react-native';
 import { extractReferences } from '../utils/referenceParser';
 import { parseReference, type ParsedRef } from '../utils/verseResolver';
-import { base, fontFamily } from '../theme';
+import { useTheme, fontFamily } from '../theme';
 
 interface Props {
   text: string;
@@ -18,6 +18,7 @@ interface Props {
 }
 
 export function TappableReference({ text, style, onRefPress }: Props) {
+  const { base } = useTheme();
   const segments = useMemo(() => {
     if (!text) return [];
     const refs = extractReferences(text);
@@ -39,6 +40,13 @@ export function TappableReference({ text, style, onRefPress }: Props) {
 
     return parts;
   }, [text]);
+
+  const defaultStyle: TextStyle = {
+    color: base.text,
+    fontFamily: fontFamily.body,
+    fontSize: 16,
+    lineHeight: 26,
+  };
 
   if (segments.length === 0) return null;
   if (segments.length === 1 && segments[0].type === 'text') {
@@ -70,9 +78,3 @@ export function TappableReference({ text, style, onRefPress }: Props) {
   );
 }
 
-const defaultStyle: TextStyle = {
-  color: base.text,
-  fontFamily: fontFamily.body,
-  fontSize: 16,
-  lineHeight: 26,
-};

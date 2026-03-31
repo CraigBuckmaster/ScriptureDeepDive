@@ -12,7 +12,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { base, spacing, fontFamily } from '../../theme';
+import { useTheme, spacing, fontFamily } from '../../theme';
 
 export interface TabConfig {
   /** Unique key for this tab, e.g. 'historical', 'audience', 'ane' */
@@ -29,6 +29,8 @@ interface TabbedPanelRendererProps {
 }
 
 export function TabbedPanelRenderer({ tabs, children }: TabbedPanelRendererProps) {
+  const { base } = useTheme();
+
   const visibleTabs = useMemo(
     () => tabs.filter((t) => t.hasData),
     [tabs],
@@ -49,7 +51,7 @@ export function TabbedPanelRenderer({ tabs, children }: TabbedPanelRendererProps
   return (
     <View>
       {/* Tab bar */}
-      <View style={styles.tabBar}>
+      <View style={[styles.tabBar, { borderBottomColor: base.border }]}>
         {visibleTabs.map((tab) => {
           const isActive = tab.key === activeKey;
           return (
@@ -57,9 +59,9 @@ export function TabbedPanelRenderer({ tabs, children }: TabbedPanelRendererProps
               key={tab.key}
               onPress={() => setActiveKey(tab.key)}
               activeOpacity={0.7}
-              style={[styles.tab, isActive && styles.tabActive]}
+              style={[styles.tab, isActive && [styles.tabActive, { borderBottomColor: base.gold, backgroundColor: base.gold + '12' }]]}
             >
-              <Text style={[styles.tabLabel, isActive && styles.tabLabelActive]}>
+              <Text style={[styles.tabLabel, { color: base.textMuted }, isActive && { color: base.gold, fontWeight: '700' }]}>
                 {tab.label}
               </Text>
             </TouchableOpacity>
@@ -77,7 +79,6 @@ const styles = StyleSheet.create({
   tabBar: {
     flexDirection: 'row',
     borderBottomWidth: 1,
-    borderBottomColor: base.border,
   },
   tab: {
     paddingHorizontal: spacing.sm + 2,
@@ -85,17 +86,10 @@ const styles = StyleSheet.create({
   },
   tabActive: {
     borderBottomWidth: 2,
-    borderBottomColor: base.gold,
-    backgroundColor: base.gold + '12',
   },
   tabLabel: {
     fontFamily: fontFamily.uiMedium,
     fontSize: 12,
-    color: base.textMuted,
     fontWeight: '500',
-  },
-  tabLabelActive: {
-    color: base.gold,
-    fontWeight: '700',
   },
 });

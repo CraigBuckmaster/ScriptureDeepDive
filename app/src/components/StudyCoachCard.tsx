@@ -9,7 +9,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Lightbulb } from 'lucide-react-native';
-import { base, spacing, fontFamily } from '../theme';
+import { useTheme, spacing, fontFamily } from '../theme';
 
 interface Props {
   tip: string;
@@ -17,21 +17,22 @@ interface Props {
 }
 
 export function StudyCoachCard({ tip, onDismiss }: Props) {
+  const { base } = useTheme();
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { borderLeftColor: base.gold, backgroundColor: base.gold + '08' }]}>
       <View style={styles.header}>
         <View style={styles.headerLeft}>
           <Lightbulb size={12} color={base.gold} />
-          <Text style={styles.label}>STUDY COACH</Text>
+          <Text style={[styles.label, { color: base.gold }]}>STUDY COACH</Text>
         </View>
         <TouchableOpacity
           onPress={onDismiss}
           hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
         >
-          <Text style={styles.dismiss}>✕</Text>
+          <Text style={[styles.dismiss, { color: base.textMuted }]}>✕</Text>
         </TouchableOpacity>
       </View>
-      <Text style={styles.tip}>{tip}</Text>
+      <Text style={[styles.tip, { color: base.textDim }]}>{tip}</Text>
     </View>
   );
 }
@@ -39,8 +40,6 @@ export function StudyCoachCard({ tip, onDismiss }: Props) {
 const styles = StyleSheet.create({
   container: {
     borderLeftWidth: 3,
-    borderLeftColor: base.gold,
-    backgroundColor: base.gold + '08',
     borderTopRightRadius: 6,
     borderBottomRightRadius: 6,
     paddingVertical: spacing.sm,
@@ -62,18 +61,15 @@ const styles = StyleSheet.create({
   label: {
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 9,
-    color: base.gold,
     letterSpacing: 0.5,
   },
   dismiss: {
     fontFamily: fontFamily.ui,
     fontSize: 13,
-    color: base.textMuted,
   },
   tip: {
     fontFamily: fontFamily.body,
     fontSize: 13,
-    color: base.textDim,
     lineHeight: 20,
   },
 });
