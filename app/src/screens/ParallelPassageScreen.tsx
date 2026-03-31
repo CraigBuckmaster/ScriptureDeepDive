@@ -13,6 +13,8 @@ import { useSettingsStore } from '../stores';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { SearchInput } from '../components/SearchInput';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
+import { DiffAnnotationList } from '../components/DiffAnnotation';
+import type { DiffAnnotationData } from '../components/DiffAnnotation';
 import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { SynopticEntry } from '../types';
 import { logger } from '../utils/logger';
@@ -144,6 +146,9 @@ export default function ParallelPassageScreen() {
   let passages: { book: string; ref: string }[] = [];
   try { passages = JSON.parse(compareEntry.passages_json); } catch (err) { logger.warn('ParallelPassageScreen', 'Operation failed', err); }
 
+  let diffAnnotations: DiffAnnotationData[] = [];
+  try { diffAnnotations = JSON.parse(compareEntry.diff_annotations_json || '[]'); } catch (err) { logger.warn('ParallelPassageScreen', 'Failed to parse diff_annotations_json', err); }
+
   return (
     <SafeAreaView style={styles.container}>
       {/* Header */}
@@ -171,7 +176,7 @@ export default function ParallelPassageScreen() {
         ))}
       </ScrollView>
 
-      {/* Verse text */}
+      {/* Verse text + diff annotations */}
       <ScrollView style={styles.verseScroll} contentContainerStyle={styles.verseContent}>
         <Text style={styles.verseRef}>
           {passages[activeTab]?.book} {passages[activeTab]?.ref}
@@ -184,6 +189,7 @@ export default function ParallelPassageScreen() {
             Loading or not available in current content...
           </Text>
         )}
+        <DiffAnnotationList annotations={diffAnnotations} />
       </ScrollView>
     </SafeAreaView>
   );

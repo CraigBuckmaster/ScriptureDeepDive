@@ -45,7 +45,8 @@ Prophecy chains (50 chains, 283 links, browse + detail screens) · Enhanced note
 | 7 | Study Coach Mode | **Complete** |
 | 8 | Textual Notes Enrichment (tx panel upgrade) | **Complete** |
 | 9 | Progressive Revelation (Concept Journey) | **Complete** |
-| 10-23 | See `_tools/DEEP_STUDY_FEATURES_PLAN.md` | Planned |
+| 10 | Synoptic Diff Highlighting (ParallelPassage upgrade) | **Complete** |
+| 11-23 | See `_tools/DEEP_STUDY_FEATURES_PLAN.md` | Planned |
 
 ### Content Remediation
 
@@ -59,7 +60,7 @@ Batches 0–5 complete (word study bugfix, scholar bios, ghost panels, people en
 
 ## What's Next
 
-1. **Deep Study Features Phase 10** — Synoptic Diff Highlighting (remaining Session F phase)
+1. **Deep Study Features Phase 11 + 16** — Sharing (Session G) — See `_tools/DEEP_STUDY_FEATURES_PLAN.md`
 3. **Thin Panel Enrichment** (~259 panels) — 138 section panels (mostly thin cross-refs in Chronicles/Nehemiah/Esther) + 121 chapter panels (mostly thin ppl/rec in prophets)
 4. **Inline Style Migration** (Arch Batch 7) — 318 inline `style={{ }}` objects, migrate to `StyleSheet.create()`
 5. **Cross-reference thread expansion** (Batch 13)
@@ -99,4 +100,4 @@ git add -A && git commit -m "..." && git push
 cd app && eas update --branch production
 ```
 
-DB version: 0.26 · 54 scholars
+DB version: 0.27 · 54 scholars
