@@ -16,12 +16,17 @@ import { create } from 'zustand';
 import { getPreference, setPreference } from '../db/user';
 import { logger } from '../utils/logger';
 
+type ThemePreference = 'dark' | 'sepia' | 'light' | 'system';
+
+const VALID_THEMES: ThemePreference[] = ['dark', 'sepia', 'light', 'system'];
+
 interface SettingsState {
   translation: string;
   fontSize: number;
   vhlEnabled: boolean;
   bookListMode: string;
   studyCoachEnabled: boolean;
+  theme: ThemePreference;
   isHydrated: boolean;
 
   setTranslation: (t: string) => void;
@@ -29,6 +34,7 @@ interface SettingsState {
   setVhlEnabled: (v: boolean) => void;
   setBookListMode: (m: string) => void;
   setStudyCoachEnabled: (v: boolean) => void;
+  setTheme: (t: ThemePreference) => void;
   hydrate: () => Promise<void>;
 }
 
@@ -38,6 +44,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
   vhlEnabled: true,
   bookListMode: 'canonical',
   studyCoachEnabled: true,
+  theme: 'dark' as ThemePreference,
   isHydrated: false,
 
   setTranslation: async (t) => {
@@ -66,6 +73,11 @@ export const useSettingsStore = create<SettingsState>((set) => ({
     await setPreference('studyCoachEnabled', v ? '1' : '0');
   },
 
+  setTheme: async (t) => {
+    set({ theme: t });
+    await setPreference('theme', t);
+  },
+
   hydrate: async () => {
     try {
       const t = await getPreference('translation');
@@ -73,6 +85,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
       const v = await getPreference('vhlEnabled');
       const blm = await getPreference('bookListMode');
       const sc = await getPreference('studyCoachEnabled');
+      const th = await getPreference('theme');
 
       set({
         translation: (t === 'esv' || t === 'kjv' ? t : 'niv'),
@@ -80,6 +93,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
         vhlEnabled: v !== '0',
         bookListMode: blm === 'canonical' ? 'canonical' : 'thematic',
         studyCoachEnabled: sc !== '0',
+        theme: (VALID_THEMES.includes(th as ThemePreference) ? th : 'dark') as ThemePreference,
         isHydrated: true,
       });
     } catch (err) {

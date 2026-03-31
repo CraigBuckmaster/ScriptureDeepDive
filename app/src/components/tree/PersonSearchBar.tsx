@@ -5,7 +5,7 @@
 import React, { useState, useMemo } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { SearchInput } from '../SearchInput';
-import { base, spacing, radii, eras, MIN_TOUCH_TARGET, fontFamily } from '../../theme';
+import { useTheme, spacing, radii, eras, MIN_TOUCH_TARGET, fontFamily } from '../../theme';
 import type { Person } from '../../types';
 
 interface Props {
@@ -14,6 +14,7 @@ interface Props {
 }
 
 export function PersonSearchBar({ people, onSelect }: Props) {
+  const { base } = useTheme();
   const [query, setQuery] = useState('');
 
   const results = useMemo(() => {

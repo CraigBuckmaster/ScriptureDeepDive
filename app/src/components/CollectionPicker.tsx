@@ -17,7 +17,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { X, Plus, Check, Folder } from 'lucide-react-native';
 import { getCollections, createCollection } from '../db/user';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { StudyCollection } from '../types';
 
 const PRESET_COLORS = [
@@ -37,6 +37,7 @@ interface Props {
 }
 
 export function CollectionPicker({ visible, onClose, currentCollectionId, onSelect }: Props) {
+  const { base } = useTheme();
   const [collections, setCollections] = useState<StudyCollection[]>([]);
   const [showCreate, setShowCreate] = useState(false);
   const [newName, setNewName] = useState('');
@@ -70,10 +71,10 @@ export function CollectionPicker({ visible, onClose, currentCollectionId, onSele
       >
         <TouchableOpacity style={styles.backdrop} onPress={onClose} activeOpacity={1} />
 
-        <SafeAreaView edges={['bottom']} style={styles.sheet}>
+        <SafeAreaView edges={['bottom']} style={[styles.sheet, { backgroundColor: base.bgElevated }]}>
           {/* Header */}
-          <View style={styles.header}>
-            <Text style={styles.headerTitle}>Select Collection</Text>
+          <View style={[styles.header, { borderBottomColor: base.border }]}>
+            <Text style={[styles.headerTitle, { color: base.text }]}>Select Collection</Text>
             <TouchableOpacity onPress={onClose}>
               <X size={20} color={base.textMuted} />
             </TouchableOpacity>
@@ -87,7 +88,7 @@ export function CollectionPicker({ visible, onClose, currentCollectionId, onSele
                 onChangeText={setNewName}
                 placeholder="Collection name"
                 placeholderTextColor={base.textMuted}
-                style={styles.createInput}
+                style={[styles.createInput, { backgroundColor: base.bg, color: base.text, borderColor: base.border }]}
                 autoFocus
               />
               <View style={styles.colorRow}>
@@ -98,36 +99,36 @@ export function CollectionPicker({ visible, onClose, currentCollectionId, onSele
                     style={[
                       styles.colorSwatch,
                       { backgroundColor: color },
-                      newColor === color && styles.colorSwatchSelected,
+                      newColor === color && [styles.colorSwatchSelected, { borderColor: base.text }],
                     ]}
                   />
                 ))}
               </View>
               <View style={styles.createActions}>
                 <TouchableOpacity onPress={() => setShowCreate(false)}>
-                  <Text style={styles.cancelText}>Cancel</Text>
+                  <Text style={[styles.cancelText, { color: base.textMuted }]}>Cancel</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={handleCreate} style={styles.createButton}>
-                  <Text style={styles.createButtonText}>Create</Text>
+                <TouchableOpacity onPress={handleCreate} style={[styles.createButton, { backgroundColor: base.gold }]}>
+                  <Text style={[styles.createButtonText, { color: base.bg }]}>Create</Text>
                 </TouchableOpacity>
               </View>
             </View>
           ) : (
             <>
               {/* Add new button */}
-              <TouchableOpacity style={styles.addRow} onPress={() => setShowCreate(true)}>
+              <TouchableOpacity style={[styles.addRow, { borderBottomColor: base.border }]} onPress={() => setShowCreate(true)}>
                 <Plus size={16} color={base.gold} />
-                <Text style={styles.addText}>New Collection</Text>
+                <Text style={[styles.addText, { color: base.gold }]}>New Collection</Text>
               </TouchableOpacity>
 
               {/* None option */}
               <TouchableOpacity
-                style={styles.collectionRow}
+                style={[styles.collectionRow, { borderBottomColor: base.border }]}
                 onPress={() => handleSelect(null)}
               >
                 <View style={styles.collectionInfo}>
-                  <Text style={styles.collectionName}>None</Text>
-                  <Text style={styles.collectionDesc}>Remove from collection</Text>
+                  <Text style={[styles.collectionName, { color: base.text }]}>None</Text>
+                  <Text style={[styles.collectionDesc, { color: base.textMuted }]}>Remove from collection</Text>
                 </View>
                 {currentCollectionId === null && (
                   <Check size={18} color={base.gold} />
@@ -141,14 +142,14 @@ export function CollectionPicker({ visible, onClose, currentCollectionId, onSele
                 style={styles.list}
                 renderItem={({ item }) => (
                   <TouchableOpacity
-                    style={styles.collectionRow}
+                    style={[styles.collectionRow, { borderBottomColor: base.border }]}
                     onPress={() => handleSelect(item.id)}
                   >
                     <View style={[styles.colorBar, { backgroundColor: item.color }]} />
                     <View style={styles.collectionInfo}>
-                      <Text style={styles.collectionName}>{item.name}</Text>
+                      <Text style={[styles.collectionName, { color: base.text }]}>{item.name}</Text>
                       {item.description ? (
-                        <Text style={styles.collectionDesc} numberOfLines={1}>
+                        <Text style={[styles.collectionDesc, { color: base.textMuted }]} numberOfLines={1}>
                           {item.description}
                         </Text>
                       ) : null}
@@ -161,7 +162,7 @@ export function CollectionPicker({ visible, onClose, currentCollectionId, onSele
                 ListEmptyComponent={
                   <View style={styles.emptyWrap}>
                     <Folder size={24} color={base.textMuted} />
-                    <Text style={styles.emptyText}>No collections yet</Text>
+                    <Text style={[styles.emptyText, { color: base.textMuted }]}>No collections yet</Text>
                   </View>
                 }
               />
@@ -183,7 +184,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.5)',
   },
   sheet: {
-    backgroundColor: base.bgElevated,
     borderTopLeftRadius: radii.lg,
     borderTopRightRadius: radii.lg,
     maxHeight: '70%',
@@ -195,10 +195,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: spacing.md,
     borderBottomWidth: 1,
-    borderBottomColor: base.border,
   },
   headerTitle: {
-    color: base.text,
     fontFamily: fontFamily.displayMedium,
     fontSize: 16,
   },
@@ -208,10 +206,8 @@ const styles = StyleSheet.create({
     gap: spacing.xs,
     padding: spacing.md,
     borderBottomWidth: 1,
-    borderBottomColor: base.border,
   },
   addText: {
-    color: base.gold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 14,
   },
@@ -223,7 +219,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: spacing.md,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: base.border,
   },
   colorBar: {
     width: 4,
@@ -235,12 +230,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   collectionName: {
-    color: base.text,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 14,
   },
   collectionDesc: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 12,
     marginTop: 2,
@@ -251,7 +244,6 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
   },
   emptyText: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 13,
   },
@@ -260,15 +252,12 @@ const styles = StyleSheet.create({
     gap: spacing.md,
   },
   createInput: {
-    backgroundColor: base.bg,
-    color: base.text,
     fontFamily: fontFamily.ui,
     fontSize: 14,
     borderRadius: radii.sm,
     paddingHorizontal: spacing.sm,
     height: 40,
     borderWidth: 1,
-    borderColor: base.border,
   },
   colorRow: {
     flexDirection: 'row',
@@ -281,7 +270,6 @@ const styles = StyleSheet.create({
   },
   colorSwatchSelected: {
     borderWidth: 2,
-    borderColor: base.text,
   },
   createActions: {
     flexDirection: 'row',
@@ -290,18 +278,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   cancelText: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 14,
   },
   createButton: {
-    backgroundColor: base.gold,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.xs,
     borderRadius: radii.sm,
   },
   createButtonText: {
-    color: base.bg,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 14,
   },

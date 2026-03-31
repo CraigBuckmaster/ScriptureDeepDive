@@ -23,7 +23,7 @@ import { NoteLinkSheet } from '../NoteLinkSheet';
 import { NoteCard } from './NoteCard';
 import { NewNoteInput } from './NewNoteInput';
 import { useNotesOverlay } from './useNotesOverlay';
-import { base, spacing, fontFamily, MIN_TOUCH_TARGET } from '../../theme';
+import { useTheme, spacing, fontFamily, MIN_TOUCH_TARGET } from '../../theme';
 import type { UserNote } from '../../types';
 
 interface Props {
@@ -36,6 +36,7 @@ interface Props {
 }
 
 export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, initialVerseNum }: Props) {
+  const { base } = useTheme();
   const state = useNotesOverlay({ visible, onClose, bookId, bookName, chapterNum, initialVerseNum });
 
   const renderNote = ({ item: note }: { item: UserNote }) => (
@@ -62,10 +63,10 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
   return (
     <Modal visible={visible} animationType="slide" presentationStyle="fullScreen">
       <SafeAreaProvider>
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
           {/* Header — outside KAV so it doesn't shift with keyboard */}
-          <View style={styles.header}>
-            <Text style={styles.headerTitle}>
+          <View style={[styles.header, { borderBottomColor: base.border }]}>
+            <Text style={[styles.headerTitle, { color: base.text }]}>
               Notes — {state.displayName} {chapterNum}
             </Text>
             <View style={styles.headerActions}>
@@ -103,7 +104,7 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
               contentContainerStyle={styles.listContent}
               ListEmptyComponent={
                 <View style={styles.emptyWrap}>
-                  <Text style={styles.emptyText}>No notes yet for this chapter.</Text>
+                  <Text style={[styles.emptyText, { color: base.textMuted }]}>No notes yet for this chapter.</Text>
                 </View>
               }
               renderItem={renderNote}
@@ -136,7 +137,6 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   keyboardView: {
     flex: 1,
@@ -148,10 +148,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     height: 48,
     borderBottomWidth: 1,
-    borderBottomColor: base.border,
   },
   headerTitle: {
-    color: base.text,
     fontFamily: fontFamily.displayMedium,
     fontSize: 14,
   },
@@ -172,7 +170,6 @@ const styles = StyleSheet.create({
     paddingTop: spacing.xxl,
   },
   emptyText: {
-    color: base.textMuted,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 15,
   },

@@ -7,7 +7,7 @@
 
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { base, spacing, fontFamily } from '../theme';
+import { useTheme, spacing, fontFamily } from '../theme';
 
 interface Props {
   genreLabel: string;
@@ -15,31 +15,30 @@ interface Props {
 }
 
 export function GenreBanner({ genreLabel, genreGuidance }: Props) {
+  const { base } = useTheme();
   const [dismissed, setDismissed] = useState(false);
 
   if (dismissed) return null;
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: base.gold + '0A', borderColor: base.gold + '25' }]}>
       <View style={styles.header}>
-        <Text style={styles.label}>{genreLabel.toUpperCase()}</Text>
+        <Text style={[styles.label, { color: base.gold }]}>{genreLabel.toUpperCase()}</Text>
         <TouchableOpacity
           onPress={() => setDismissed(true)}
           hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
         >
-          <Text style={styles.dismiss}>✕</Text>
+          <Text style={[styles.dismiss, { color: base.textMuted }]}>✕</Text>
         </TouchableOpacity>
       </View>
-      <Text style={styles.guidance}>{genreGuidance}</Text>
+      <Text style={[styles.guidance, { color: base.textMuted }]}>{genreGuidance}</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: base.gold + '0A',
     borderWidth: 1,
-    borderColor: base.gold + '25',
     borderRadius: 8,
     padding: spacing.sm,
     marginBottom: spacing.md,
@@ -53,18 +52,15 @@ const styles = StyleSheet.create({
   label: {
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 10,
-    color: base.gold,
     letterSpacing: 0.5,
   },
   dismiss: {
     fontFamily: fontFamily.ui,
     fontSize: 14,
-    color: base.textMuted,
   },
   guidance: {
     fontFamily: fontFamily.body,
     fontSize: 13,
-    color: base.textMuted,
     lineHeight: 18,
   },
 });

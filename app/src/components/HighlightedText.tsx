@@ -15,19 +15,9 @@
 
 import React, { useMemo, useCallback } from 'react';
 import { Text, type TextStyle } from 'react-native';
-import { panels, base, fontFamily } from '../theme';
+import { panels, useTheme, fontFamily } from '../theme';
 import type { VHLGroup } from '../types';
 import { logger } from '../utils/logger';
-
-// ── VHL group → color mapping ───────────────────────────────────────
-
-const VHL_COLORS: Record<string, string> = {
-  'vhl-divine': panels.heb.accent,    // #e890b8 pink
-  'vhl-place': panels.poi.accent,     // #30a848 green
-  'vhl-person': panels.ppl.accent,    // #e86040 orange
-  'vhl-time': panels.tl.accent,       // #70b8e8 blue
-  'vhl-key': base.gold,               // #bfa050 gold
-};
 
 // ── BTN TYPE mapping (button CSS class → panel_type in DB) ──────────
 
@@ -60,6 +50,24 @@ interface WordMatch {
 export function HighlightedText({
   text, groups, activeGroups, sectionId, onVhlWordPress, style,
 }: Props) {
+  const { base } = useTheme();
+
+  // ── VHL group → color mapping ───────────────────────────────────────
+  const VHL_COLORS: Record<string, string> = useMemo(() => ({
+    'vhl-divine': panels.heb.accent,    // #e890b8 pink
+    'vhl-place': panels.poi.accent,     // #30a848 green
+    'vhl-person': panels.ppl.accent,    // #e86040 orange
+    'vhl-time': panels.tl.accent,       // #70b8e8 blue
+    'vhl-key': base.gold,               // #bfa050 gold
+  }), [base.gold]);
+
+  const defaultStyle: TextStyle = useMemo(() => ({
+    color: base.text,
+    fontFamily: fontFamily.body,
+    fontSize: 16,
+    lineHeight: 26,
+  }), [base.text]);
+
   // Build word → match lookup from all active VHL groups
   const wordMap = useMemo(() => {
     const map = new Map<string, WordMatch>();
@@ -95,7 +103,7 @@ export function HighlightedText({
       }
     }
     return map;
-  }, [groups, activeGroups]);
+  }, [groups, activeGroups, VHL_COLORS, base.gold]);
 
   const handlePress = useCallback(
     (btnTypes: string[]) => {
@@ -143,14 +151,7 @@ export function HighlightedText({
     }
 
     return <Text style={[defaultStyle, style]}>{elements}</Text>;
-  }, [text, wordMap, style, handlePress]);
+  }, [text, wordMap, style, handlePress, defaultStyle]);
 
   return <>{rendered}</>;
 }
-
-const defaultStyle: TextStyle = {
-  color: base.text,
-  fontFamily: fontFamily.body,
-  fontSize: 16,
-  lineHeight: 26,
-};

@@ -2,12 +2,13 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { TappableReference } from '../TappableReference';
 import { BadgeChip } from '../BadgeChip';
-import { getPanelColors, base, spacing, fontFamily } from '../../theme';
+import { useTheme, spacing, fontFamily } from '../../theme';
 import type { ThreadEntry, ParsedRef } from '../../types';
 
 interface Props { entries: ThreadEntry[]; onRefPress?: (ref: ParsedRef) => void; }
 
 export function ThreadingPanel({ entries, onRefPress }: Props) {
+  const { base, getPanelColors } = useTheme();
   const colors = getPanelColors('thread');
   return (
     <View style={{ gap: spacing.md }}>

@@ -17,12 +17,14 @@ import DifficultPassagesBrowseScreen from '../screens/DifficultPassagesBrowseScr
 import DifficultPassageDetailScreen from '../screens/DifficultPassageDetailScreen';
 import ConcordanceScreen from '../screens/ConcordanceScreen';
 import ChapterScreen from '../screens/ChapterScreen';
-import { base } from '../theme';
+import { useTheme } from '../theme';
 import type { ExploreStackParamList } from './types';
 
 const Stack = createStackNavigator<ExploreStackParamList>();
 
 export function ExploreStack() {
+  const { base } = useTheme();
+
   return (
     <Stack.Navigator
       screenOptions={{

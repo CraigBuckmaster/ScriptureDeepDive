@@ -8,7 +8,7 @@
 import React, { useMemo } from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, LayoutAnimation, Platform, UIManager } from 'react-native';
 import { PanelRenderer } from './panels/PanelRenderer';
-import { getPanelColors, base, spacing } from '../theme';
+import { useTheme, spacing } from '../theme';
 import { lightImpact } from '../utils/haptics';
 import type { ParsedRef } from '../types';
 
@@ -34,6 +34,8 @@ export function PanelContainer({
   onRefPress, onWordStudyPress, onScholarPress,
   onPersonPress, onPlacePress, onEventPress,
 }: Props) {
+  const { base, getPanelColors } = useTheme();
+
   if (!isOpen) return null;
 
   const colors = getPanelColors(panelType);
@@ -56,7 +58,7 @@ export function PanelContainer({
           accessibilityRole="button"
           style={styles.closeButton}
         >
-          <Text style={styles.closeText}>✕</Text>
+          <Text style={[styles.closeText, { color: base.textMuted }]}>✕</Text>
         </TouchableOpacity>
       )}
 
@@ -93,7 +95,6 @@ const styles = StyleSheet.create({
     zIndex: 10,
   },
   closeText: {
-    color: base.textMuted,
     fontSize: 16,
     lineHeight: 18,
   },

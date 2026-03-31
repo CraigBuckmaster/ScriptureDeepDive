@@ -7,7 +7,7 @@
 
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { getPanelColors, base, spacing, radii, fontFamily } from '../../theme';
+import { useTheme, spacing, radii, fontFamily } from '../../theme';
 
 export interface ManuscriptEvidence {
   manuscript: string;
@@ -28,11 +28,12 @@ interface Props {
 }
 
 function StoryCard({ story }: { story: ManuscriptStory }) {
+  const { base, getPanelColors } = useTheme();
   const [expanded, setExpanded] = useState(false);
   const colors = getPanelColors('tx');
 
   return (
-    <View style={styles.card}>
+    <View style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
       {/* Header */}
       <TouchableOpacity
         onPress={() => setExpanded(!expanded)}
@@ -40,38 +41,38 @@ function StoryCard({ story }: { story: ManuscriptStory }) {
         style={styles.cardHeader}
       >
         <View style={styles.cardHeaderLeft}>
-          <View style={styles.passageBadge}>
-            <Text style={styles.passageText}>{story.passage}</Text>
+          <View style={[styles.passageBadge, { backgroundColor: base.gold + '20' }]}>
+            <Text style={[styles.passageText, { color: base.gold }]}>{story.passage}</Text>
           </View>
           <Text style={[styles.storyTitle, { color: colors.accent }]}>{story.title}</Text>
         </View>
-        <Text style={styles.expandChevron}>{expanded ? '▲' : '▼'}</Text>
+        <Text style={[styles.expandChevron, { color: base.textMuted }]}>{expanded ? '▲' : '▼'}</Text>
       </TouchableOpacity>
 
       {/* Summary always visible */}
-      <Text style={styles.summary}>{story.summary}</Text>
+      <Text style={[styles.summary, { color: base.textDim }]}>{story.summary}</Text>
 
       {/* Expanded: evidence + consensus + significance */}
       {expanded && (
-        <View style={styles.expandedContent}>
+        <View style={[styles.expandedContent, { borderTopColor: base.borderLight }]}>
           {/* Evidence table */}
-          <Text style={styles.sectionLabel}>Manuscript Evidence</Text>
-          <View style={styles.evidenceTable}>
+          <Text style={[styles.sectionLabel, { color: base.gold }]}>Manuscript Evidence</Text>
+          <View style={[styles.evidenceTable, { borderColor: base.borderLight }]}>
             {story.evidence.map((ev, i) => (
-              <View key={i} style={[styles.evidenceRow, i % 2 === 0 && styles.evidenceRowAlt]}>
-                <Text style={styles.evidenceMs} numberOfLines={2}>{ev.manuscript}</Text>
-                <Text style={styles.evidenceReading}>{ev.reading}</Text>
+              <View key={i} style={[styles.evidenceRow, i % 2 === 0 && { backgroundColor: base.gold + '08' }]}>
+                <Text style={[styles.evidenceMs, { color: base.text }]} numberOfLines={2}>{ev.manuscript}</Text>
+                <Text style={[styles.evidenceReading, { color: base.textDim }]}>{ev.reading}</Text>
               </View>
             ))}
           </View>
 
           {/* Consensus */}
-          <Text style={styles.sectionLabel}>Scholarly Consensus</Text>
-          <Text style={styles.consensusText}>{story.consensus}</Text>
+          <Text style={[styles.sectionLabel, { color: base.gold }]}>Scholarly Consensus</Text>
+          <Text style={[styles.consensusText, { color: base.textDim }]}>{story.consensus}</Text>
 
           {/* Significance */}
-          <Text style={styles.sectionLabel}>Significance</Text>
-          <Text style={styles.significanceText}>{story.significance}</Text>
+          <Text style={[styles.sectionLabel, { color: base.gold }]}>Significance</Text>
+          <Text style={[styles.significanceText, { color: base.textDim }]}>{story.significance}</Text>
         </View>
       )}
     </View>
@@ -95,9 +96,7 @@ const styles = StyleSheet.create({
     gap: spacing.md,
   },
   card: {
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.border,
     borderRadius: radii.lg,
     padding: spacing.sm,
   },
@@ -113,13 +112,11 @@ const styles = StyleSheet.create({
   },
   passageBadge: {
     alignSelf: 'flex-start',
-    backgroundColor: base.gold + '20',
     paddingHorizontal: spacing.xs + 2,
     paddingVertical: 2,
     borderRadius: radii.sm,
   },
   passageText: {
-    color: base.gold,
     fontFamily: fontFamily.uiMedium,
     fontSize: 11,
   },
@@ -129,14 +126,12 @@ const styles = StyleSheet.create({
     flexShrink: 1,
   },
   expandChevron: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 10,
     marginTop: 2,
     marginLeft: spacing.xs,
   },
   summary: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 13,
     lineHeight: 20,
@@ -144,13 +139,11 @@ const styles = StyleSheet.create({
   },
   expandedContent: {
     borderTopWidth: 1,
-    borderTopColor: base.borderLight,
     marginTop: spacing.xs,
     paddingTop: spacing.sm,
     gap: spacing.sm,
   },
   sectionLabel: {
-    color: base.gold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 10,
     textTransform: 'uppercase',
@@ -161,38 +154,30 @@ const styles = StyleSheet.create({
     borderRadius: radii.sm,
     overflow: 'hidden',
     borderWidth: 1,
-    borderColor: base.borderLight,
   },
   evidenceRow: {
     flexDirection: 'row',
     padding: spacing.xs,
     gap: spacing.xs,
   },
-  evidenceRowAlt: {
-    backgroundColor: base.gold + '08',
-  },
   evidenceMs: {
-    color: base.text,
     fontFamily: fontFamily.uiMedium,
     fontSize: 11,
     flex: 1,
     flexShrink: 1,
   },
   evidenceReading: {
-    color: base.textDim,
     fontFamily: fontFamily.ui,
     fontSize: 11,
     flex: 1,
     flexShrink: 1,
   },
   consensusText: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 13,
     lineHeight: 20,
   },
   significanceText: {
-    color: base.textDim,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 13,
     lineHeight: 20,

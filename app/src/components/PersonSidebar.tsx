@@ -9,7 +9,7 @@ import { View, Text, TouchableOpacity, Modal, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { BadgeChip } from './BadgeChip';
 import { getPersonChildren, getSpousesOf, getPerson } from '../db/content';
-import { base, spacing, radii, eras, eraNames, fontFamily } from '../theme';
+import { useTheme, spacing, radii, eras, eraNames, fontFamily } from '../theme';
 import type { Person } from '../types';
 import { logger } from '../utils/logger';
 
@@ -22,6 +22,7 @@ interface Props {
 }
 
 export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterPress }: Props) {
+  const { base } = useTheme();
   const [children, setChildren] = useState<Person[]>([]);
   const [spouses, setSpouses] = useState<Person[]>([]);
   const [father, setFather] = useState<Person | null>(null);

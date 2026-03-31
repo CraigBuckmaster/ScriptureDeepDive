@@ -33,7 +33,7 @@ import { StoryPanel } from '../components/map/StoryPanel';
 import { FloatingControls } from '../components/map/FloatingControls';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 
-import { base, spacing } from '../theme';
+import { useTheme, spacing } from '../theme';
 import type { MapStory, Place } from '../types';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { logger } from '../utils/logger';
@@ -49,6 +49,7 @@ export default function MapScreen({ route, navigation }: {
   route: ScreenRouteProp<'Explore', 'Map'>;
   navigation: ScreenNavProp<'Explore', 'Map'>;
 }) {
+  const { base } = useTheme();
   useLandscapeUnlock();
   const initialStoryId = route?.params?.storyId;
   const initialPlaceId = route?.params?.placeId;
@@ -151,7 +152,7 @@ export default function MapScreen({ route, navigation }: {
 
   if (placesLoading || storiesLoading) {
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, { backgroundColor: base.bg }]}>
         <View style={[styles.loadingPad, { paddingTop: insets.top + spacing.lg }]}>
           <LoadingSkeleton lines={6} />
         </View>
@@ -160,7 +161,7 @@ export default function MapScreen({ route, navigation }: {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: base.bg }]}>
       {/* Map fills the entire screen */}
       <MapView
         ref={mapRef}
@@ -227,7 +228,7 @@ export default function MapScreen({ route, navigation }: {
 
       {/* Story panel */}
       {showPanel && activeStory && (
-        <View style={styles.storyPanelWrap}>
+        <View style={[styles.storyPanelWrap, { backgroundColor: base.bgElevated, borderTopColor: base.border }]}>
           <StoryPanel
             story={activeStory}
             places={places}
@@ -248,7 +249,6 @@ export default function MapScreen({ route, navigation }: {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   loadingPad: {
     padding: spacing.lg,
@@ -277,9 +277,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: base.bgElevated,
     borderTopWidth: 1,
-    borderTopColor: base.border,
     maxHeight: '40%',
     zIndex: 20,
   },

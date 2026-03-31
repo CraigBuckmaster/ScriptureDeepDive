@@ -34,7 +34,7 @@ import {
   createCollection,
 } from '../db/user';
 import { parseVerseRef, displayRef } from '../utils/verseRef';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { UserNote, StudyCollection } from '../types';
 
 type TabKey = 'collections' | 'tags' | 'all';
@@ -65,6 +65,7 @@ function parseTags(json: string): string[] {
 }
 
 export default function AllNotesScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'AllNotes'>>();
   const [activeTab, setActiveTab] = useState<TabKey>('all');
 
@@ -160,7 +161,7 @@ export default function AllNotesScreen() {
 
   // Tab selector
   const TabBar = () => (
-    <View style={styles.tabBar}>
+    <View style={[styles.tabBar, { borderBottomColor: base.border }]}>
       {([
         { key: 'collections' as TabKey, label: 'Collections', icon: Folder },
         { key: 'tags' as TabKey, label: 'Tags', icon: Tag },
@@ -168,11 +169,11 @@ export default function AllNotesScreen() {
       ]).map(({ key, label, icon: Icon }) => (
         <TouchableOpacity
           key={key}
-          style={[styles.tab, activeTab === key && styles.tabActive]}
+          style={[styles.tab, activeTab === key && [styles.tabActive, { borderBottomColor: base.gold }]]}
           onPress={() => { setActiveTab(key); setSelectedTag(null); }}
         >
           <Icon size={14} color={activeTab === key ? base.gold : base.textMuted} />
-          <Text style={[styles.tabLabel, activeTab === key && styles.tabLabelActive]}>
+          <Text style={[styles.tabLabel, { color: base.textMuted }, activeTab === key && { color: base.gold }]}>
             {label}
           </Text>
         </TouchableOpacity>
@@ -185,24 +186,24 @@ export default function AllNotesScreen() {
     <ScrollView contentContainerStyle={styles.tabContent}>
       {collections.length === 0 ? (
         <View style={styles.emptyWrap}>
-          <Text style={styles.emptyText}>No collections yet. Assign notes to collections from the chapter notes view.</Text>
+          <Text style={[styles.emptyText, { color: base.textMuted }]}>No collections yet. Assign notes to collections from the chapter notes view.</Text>
         </View>
       ) : (
         collections.map((col) => (
           <TouchableOpacity
             key={col.id}
-            style={styles.collectionCard}
+            style={[styles.collectionCard, { backgroundColor: base.bgElevated, borderColor: base.border }]}
             onPress={() => handleCollectionPress(col.id)}
           >
             <View style={[styles.colorBar, { backgroundColor: col.color }]} />
             <View style={styles.collectionInfo}>
-              <Text style={styles.collectionName}>{col.name}</Text>
+              <Text style={[styles.collectionName, { color: base.text }]}>{col.name}</Text>
               {col.description ? (
-                <Text style={styles.collectionDesc} numberOfLines={1}>{col.description}</Text>
+                <Text style={[styles.collectionDesc, { color: base.textMuted }]} numberOfLines={1}>{col.description}</Text>
               ) : null}
             </View>
-            <View style={styles.countBadge}>
-              <Text style={styles.countText}>{collectionCounts[col.id] ?? 0}</Text>
+            <View style={[styles.countBadge, { backgroundColor: base.gold + '20' }]}>
+              <Text style={[styles.countText, { color: base.gold }]}>{collectionCounts[col.id] ?? 0}</Text>
             </View>
           </TouchableOpacity>
         ))
@@ -215,22 +216,22 @@ export default function AllNotesScreen() {
     <ScrollView contentContainerStyle={styles.tabContent}>
       {tags.length === 0 ? (
         <View style={styles.emptyWrap}>
-          <Text style={styles.emptyText}>No tags yet. Add tags to your notes to see them here.</Text>
+          <Text style={[styles.emptyText, { color: base.textMuted }]}>No tags yet. Add tags to your notes to see them here.</Text>
         </View>
       ) : selectedTag ? (
         <>
           <TouchableOpacity style={styles.backRow} onPress={() => setSelectedTag(null)}>
-            <Text style={styles.backText}>← All Tags</Text>
+            <Text style={[styles.backText, { color: base.gold }]}>← All Tags</Text>
           </TouchableOpacity>
-          <Text style={styles.selectedTagHeader}>#{selectedTag}</Text>
+          <Text style={[styles.selectedTagHeader, { color: base.gold }]}>#{selectedTag}</Text>
           {tagNotes.map((note) => (
             <TouchableOpacity
               key={note.id}
-              style={styles.noteCard}
+              style={[styles.noteCard, { backgroundColor: base.bgElevated, borderColor: base.border }]}
               onPress={() => handleRefPress(note.verse_ref)}
             >
-              <Text style={styles.noteRef}>{displayRef(note.verse_ref)}</Text>
-              <Text style={styles.noteText} numberOfLines={2}>{note.note_text}</Text>
+              <Text style={[styles.noteRef, { color: base.gold }]}>{displayRef(note.verse_ref)}</Text>
+              <Text style={[styles.noteText, { color: base.textDim }]} numberOfLines={2}>{note.note_text}</Text>
             </TouchableOpacity>
           ))}
         </>
@@ -239,10 +240,10 @@ export default function AllNotesScreen() {
           {tags.map((tag) => (
             <TouchableOpacity
               key={tag}
-              style={styles.tagChip}
+              style={[styles.tagChip, { backgroundColor: base.bgElevated, borderColor: base.border }]}
               onPress={() => setSelectedTag(tag)}
             >
-              <Text style={styles.tagChipText}>#{tag}</Text>
+              <Text style={[styles.tagChipText, { color: base.goldDim }]}>#{tag}</Text>
             </TouchableOpacity>
           ))}
         </View>
@@ -254,14 +255,14 @@ export default function AllNotesScreen() {
   const renderAllTab = () => (
     <>
       {/* Search bar */}
-      <View style={styles.searchRow}>
+      <View style={[styles.searchRow, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
         <Search size={16} color={base.textMuted} />
         <TextInput
           value={searchQuery}
           onChangeText={setSearchQuery}
           placeholder="Search notes..."
           placeholderTextColor={base.textMuted}
-          style={styles.searchInput}
+          style={[styles.searchInput, { color: base.text }]}
           returnKeyType="search"
         />
         {searchQuery.length > 0 && (
@@ -277,7 +278,7 @@ export default function AllNotesScreen() {
         contentContainerStyle={styles.listContent}
         ListEmptyComponent={
           <View style={styles.emptyWrap}>
-            <Text style={styles.emptyText}>
+            <Text style={[styles.emptyText, { color: base.textMuted }]}>
               {searchQuery ? 'No notes match your search.' : 'No notes yet. Tap the pencil icon next to any verse to start.'}
             </Text>
           </View>
@@ -285,15 +286,15 @@ export default function AllNotesScreen() {
         renderItem={({ item: group }) => (
           <View style={styles.group}>
             <TouchableOpacity onPress={() => handleRefPress(group.key)}>
-              <Text style={styles.groupHeader}>{group.label}</Text>
+              <Text style={[styles.groupHeader, { color: base.gold, borderBottomColor: base.border + '60' }]}>{group.label}</Text>
             </TouchableOpacity>
 
             {group.notes.map((note) => {
               const noteTags = parseTags(note.tags_json);
               return (
-                <View key={note.id} style={styles.noteCard}>
+                <View key={note.id} style={[styles.noteCard, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
                   <TouchableOpacity onPress={() => handleRefPress(note.verse_ref)}>
-                    <Text style={styles.noteRef}>{displayRef(note.verse_ref)}</Text>
+                    <Text style={[styles.noteRef, { color: base.gold }]}>{displayRef(note.verse_ref)}</Text>
                   </TouchableOpacity>
 
                   {editingId === note.id ? (
@@ -303,24 +304,24 @@ export default function AllNotesScreen() {
                       multiline
                       autoFocus
                       onBlur={() => handleUpdate(note.id)}
-                      style={styles.editInput}
+                      style={[styles.editInput, { color: base.text }]}
                     />
                   ) : (
                     <TouchableOpacity onPress={() => { setEditingId(note.id); setEditText(note.note_text); }}>
-                      <Text style={styles.noteText}>{note.note_text}</Text>
+                      <Text style={[styles.noteText, { color: base.textDim }]}>{note.note_text}</Text>
                     </TouchableOpacity>
                   )}
 
                   {noteTags.length > 0 && (
                     <View style={styles.noteTagRow}>
                       {noteTags.map((t) => (
-                        <Text key={t} style={styles.noteTag}>#{t}</Text>
+                        <Text key={t} style={[styles.noteTag, { color: base.goldDim }]}>#{t}</Text>
                       ))}
                     </View>
                   )}
 
                   <View style={styles.noteFooter}>
-                    <Text style={styles.noteDate}>{note.updated_at?.slice(0, 10)}</Text>
+                    <Text style={[styles.noteDate, { color: base.textMuted }]}>{note.updated_at?.slice(0, 10)}</Text>
                     <TouchableOpacity onPress={() => handleDelete(note.id)}>
                       <Text style={styles.deleteText}>Delete</Text>
                     </TouchableOpacity>
@@ -335,7 +336,7 @@ export default function AllNotesScreen() {
   );
 
   return (
-    <SafeAreaView style={styles.container} edges={['top']}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]} edges={['top']}>
       <ScreenHeader
         title="Notes"
         onBack={() => navigation.goBack()}
@@ -354,7 +355,6 @@ export default function AllNotesScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   header: {
     paddingHorizontal: spacing.md,
@@ -364,7 +364,6 @@ const styles = StyleSheet.create({
   tabBar: {
     flexDirection: 'row',
     borderBottomWidth: 1,
-    borderBottomColor: base.border,
   },
   tab: {
     flex: 1,
@@ -376,15 +375,10 @@ const styles = StyleSheet.create({
   },
   tabActive: {
     borderBottomWidth: 2,
-    borderBottomColor: base.gold,
   },
   tabLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 12,
-  },
-  tabLabelActive: {
-    color: base.gold,
   },
   tabContent: {
     padding: spacing.md,
@@ -393,12 +387,10 @@ const styles = StyleSheet.create({
   collectionCard: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: base.bgElevated,
     borderRadius: radii.md,
     padding: spacing.md,
     marginBottom: spacing.sm,
     borderWidth: 1,
-    borderColor: base.border,
   },
   colorBar: {
     width: 4,
@@ -410,24 +402,20 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   collectionName: {
-    color: base.text,
     fontFamily: fontFamily.displayMedium,
     fontSize: 14,
   },
   collectionDesc: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 12,
     marginTop: 2,
   },
   countBadge: {
-    backgroundColor: base.gold + '20',
     borderRadius: 10,
     paddingHorizontal: 8,
     paddingVertical: 2,
   },
   countText: {
-    color: base.gold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 12,
   },
@@ -437,15 +425,12 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
   },
   tagChip: {
-    backgroundColor: base.bgElevated,
     borderRadius: radii.md,
     paddingHorizontal: spacing.sm,
     paddingVertical: spacing.xs,
     borderWidth: 1,
-    borderColor: base.border,
   },
   tagChipText: {
-    color: base.goldDim,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 13,
   },
@@ -453,12 +438,10 @@ const styles = StyleSheet.create({
     marginBottom: spacing.sm,
   },
   backText: {
-    color: base.gold,
     fontFamily: fontFamily.ui,
     fontSize: 13,
   },
   selectedTagHeader: {
-    color: base.gold,
     fontFamily: fontFamily.displayMedium,
     fontSize: 18,
     marginBottom: spacing.md,
@@ -466,7 +449,6 @@ const styles = StyleSheet.create({
   searchRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: base.bgElevated,
     borderRadius: radii.md,
     marginHorizontal: spacing.md,
     marginBottom: spacing.md,
@@ -474,11 +456,9 @@ const styles = StyleSheet.create({
     height: 40,
     gap: spacing.xs,
     borderWidth: 1,
-    borderColor: base.border,
   },
   searchInput: {
     flex: 1,
-    color: base.text,
     fontFamily: fontFamily.ui,
     fontSize: 14,
     height: 40,
@@ -493,7 +473,6 @@ const styles = StyleSheet.create({
     paddingTop: spacing.xxl,
   },
   emptyText: {
-    color: base.textMuted,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 15,
     textAlign: 'center',
@@ -503,27 +482,21 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
   },
   groupHeader: {
-    color: base.gold,
     fontFamily: fontFamily.displayMedium,
     fontSize: 14,
     paddingBottom: spacing.xs,
     borderBottomWidth: 1,
-    borderBottomColor: base.border + '60',
   },
   noteCard: {
-    backgroundColor: base.bgElevated,
     borderRadius: radii.md,
     padding: spacing.sm,
     borderWidth: 1,
-    borderColor: base.border,
   },
   noteRef: {
-    color: base.gold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 12,
   },
   editInput: {
-    color: base.text,
     fontFamily: fontFamily.body,
     fontSize: 14,
     marginTop: 4,
@@ -531,7 +504,6 @@ const styles = StyleSheet.create({
     textAlignVertical: 'top',
   },
   noteText: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 14,
     marginTop: 4,
@@ -543,7 +515,6 @@ const styles = StyleSheet.create({
     marginTop: spacing.xs,
   },
   noteTag: {
-    color: base.goldDim,
     fontFamily: fontFamily.ui,
     fontSize: 10,
   },
@@ -553,7 +524,6 @@ const styles = StyleSheet.create({
     marginTop: spacing.xs,
   },
   noteDate: {
-    color: base.textMuted,
     fontSize: 10,
   },
   deleteText: {

@@ -7,10 +7,11 @@ import { getPlans, getActivePlanId, getPlanProgress } from '../db/user';
 import { PlanProgressBar } from '../components/PlanProgressBar';
 import { BadgeChip } from '../components/BadgeChip';
 import { ScreenHeader } from '../components/ScreenHeader';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { ReadingPlan, PlanProgress } from '../db/user';
 
 export default function PlanListScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'PlanList'>>();
   const [plans, setPlans] = useState<ReadingPlan[]>([]);
   const [activePlanId, setActivePlanId] = useState<string | null>(null);
@@ -27,7 +28,7 @@ export default function PlanListScreen() {
   const completed = progress.filter((p) => p.completed_at).length;
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       <ScreenHeader
         title="Reading Plans"
         onBack={() => navigation.goBack()}
@@ -38,10 +39,10 @@ export default function PlanListScreen() {
       {activePlanId && plans.find((p) => p.id === activePlanId) && (
         <TouchableOpacity
           onPress={() => navigation.navigate('PlanDetail', { planId: activePlanId })}
-          style={styles.activeCard}
+          style={[styles.activeCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '40' }]}
         >
-          <Text style={styles.activeLabel}>ACTIVE PLAN</Text>
-          <Text style={styles.activeName}>
+          <Text style={[styles.activeLabel, { color: base.textMuted }]}>ACTIVE PLAN</Text>
+          <Text style={[styles.activeName, { color: base.text }]}>
             {plans.find((p) => p.id === activePlanId)?.name}
           </Text>
           <View style={styles.progressWrap}>
@@ -57,14 +58,14 @@ export default function PlanListScreen() {
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() => navigation.navigate('PlanDetail', { planId: item.id })}
-            style={styles.row}
+            style={[styles.row, { borderBottomColor: base.border + '40' }]}
             accessibilityLabel={`${item.name}, ${item.total_days} days`}
             accessibilityRole="button"
           >
-            <Text style={styles.planName}>{item.name}</Text>
-            <Text style={styles.planDesc}>{item.description}</Text>
+            <Text style={[styles.planName, { color: base.text }]}>{item.name}</Text>
+            <Text style={[styles.planDesc, { color: base.textDim }]}>{item.description}</Text>
             <View style={styles.planMetaRow}>
-              <Text style={styles.planMeta}>{item.total_days} days</Text>
+              <Text style={[styles.planMeta, { color: base.textMuted }]}>{item.total_days} days</Text>
               {item.id === activePlanId && <BadgeChip label="Active" color={base.gold} />}
             </View>
           </TouchableOpacity>
@@ -77,7 +78,6 @@ export default function PlanListScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   header: {
     paddingHorizontal: spacing.md,
@@ -87,20 +87,16 @@ const styles = StyleSheet.create({
   activeCard: {
     marginHorizontal: spacing.md,
     marginBottom: spacing.lg,
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.gold + '40',
     borderRadius: radii.md,
     padding: spacing.md,
   },
   activeLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.display,
     fontSize: 9,
     letterSpacing: 0.5,
   },
   activeName: {
-    color: base.text,
     fontFamily: fontFamily.displayMedium,
     fontSize: 16,
     marginTop: 4,
@@ -114,21 +110,17 @@ const styles = StyleSheet.create({
   row: {
     paddingVertical: spacing.md,
     borderBottomWidth: 1,
-    borderBottomColor: base.border + '40',
   },
   planName: {
-    color: base.text,
     fontFamily: fontFamily.displayMedium,
     fontSize: 14,
   },
   planDesc: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 13,
     marginTop: 4,
   },
   planMeta: {
-    color: base.textMuted,
     fontSize: 11,
   },
   planMetaRow: {

@@ -18,7 +18,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { X, Search, Link } from 'lucide-react-native';
 import { getAllNotes, searchNotesFTS, getLinkedNotes } from '../db/user';
 import { displayRef } from '../utils/verseRef';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { UserNote } from '../types';
 
 interface Props {
@@ -30,6 +30,7 @@ interface Props {
 }
 
 export function NoteLinkSheet({ visible, onClose, currentNoteId, linkedNoteIds, onLink }: Props) {
+  const { base } = useTheme();
   const [notes, setNotes] = useState<UserNote[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -64,24 +65,24 @@ export function NoteLinkSheet({ visible, onClose, currentNoteId, linkedNoteIds, 
       >
         <TouchableOpacity style={styles.backdrop} onPress={onClose} activeOpacity={1} />
 
-        <SafeAreaView edges={['bottom']} style={styles.sheet}>
+        <SafeAreaView edges={['bottom']} style={[styles.sheet, { backgroundColor: base.bgElevated }]}>
           {/* Header */}
-          <View style={styles.header}>
-            <Text style={styles.headerTitle}>Link to Note</Text>
+          <View style={[styles.header, { borderBottomColor: base.border }]}>
+            <Text style={[styles.headerTitle, { color: base.text }]}>Link to Note</Text>
             <TouchableOpacity onPress={onClose}>
               <X size={20} color={base.textMuted} />
             </TouchableOpacity>
           </View>
 
           {/* Search */}
-          <View style={styles.searchRow}>
+          <View style={[styles.searchRow, { backgroundColor: base.bg, borderColor: base.border }]}>
             <Search size={16} color={base.textMuted} />
             <TextInput
               value={searchQuery}
               onChangeText={setSearchQuery}
               placeholder="Search notes..."
               placeholderTextColor={base.textMuted}
-              style={styles.searchInput}
+              style={[styles.searchInput, { color: base.text }]}
               returnKeyType="search"
             />
             {searchQuery.length > 0 && (
@@ -101,27 +102,27 @@ export function NoteLinkSheet({ visible, onClose, currentNoteId, linkedNoteIds, 
               const linked = isLinked(item.id);
               return (
                 <TouchableOpacity
-                  style={[styles.noteRow, linked && styles.noteRowLinked]}
+                  style={[styles.noteRow, { borderBottomColor: base.border }, linked && styles.noteRowLinked]}
                   onPress={() => handleLink(item.id)}
                   disabled={linked}
                 >
                   <View style={styles.noteInfo}>
-                    <Text style={styles.noteRef}>{displayRef(item.verse_ref)}</Text>
-                    <Text style={styles.noteText} numberOfLines={2}>
+                    <Text style={[styles.noteRef, { color: base.gold }]}>{displayRef(item.verse_ref)}</Text>
+                    <Text style={[styles.noteText, { color: base.textDim }]} numberOfLines={2}>
                       {item.note_text}
                     </Text>
                   </View>
                   {linked ? (
                     <Link size={16} color={base.gold} />
                   ) : (
-                    <Text style={styles.linkText}>Link</Text>
+                    <Text style={[styles.linkText, { color: base.gold }]}>Link</Text>
                   )}
                 </TouchableOpacity>
               );
             }}
             ListEmptyComponent={
               <View style={styles.emptyWrap}>
-                <Text style={styles.emptyText}>
+                <Text style={[styles.emptyText, { color: base.textMuted }]}>
                   {searchQuery ? 'No notes match your search.' : 'No other notes to link.'}
                 </Text>
               </View>
@@ -143,7 +144,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.5)',
   },
   sheet: {
-    backgroundColor: base.bgElevated,
     borderTopLeftRadius: radii.lg,
     borderTopRightRadius: radii.lg,
     maxHeight: '80%',
@@ -154,17 +154,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: spacing.md,
     borderBottomWidth: 1,
-    borderBottomColor: base.border,
   },
   headerTitle: {
-    color: base.text,
     fontFamily: fontFamily.displayMedium,
     fontSize: 16,
   },
   searchRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: base.bg,
     borderRadius: radii.md,
     marginHorizontal: spacing.md,
     marginVertical: spacing.sm,
@@ -172,11 +169,9 @@ const styles = StyleSheet.create({
     height: 36,
     gap: spacing.xs,
     borderWidth: 1,
-    borderColor: base.border,
   },
   searchInput: {
     flex: 1,
-    color: base.text,
     fontFamily: fontFamily.ui,
     fontSize: 14,
     height: 36,
@@ -192,7 +187,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: spacing.md,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: base.border,
   },
   noteRowLinked: {
     opacity: 0.5,
@@ -202,18 +196,15 @@ const styles = StyleSheet.create({
     marginRight: spacing.sm,
   },
   noteRef: {
-    color: base.gold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 12,
   },
   noteText: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 13,
     marginTop: 2,
   },
   linkText: {
-    color: base.gold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 13,
   },
@@ -222,7 +213,6 @@ const styles = StyleSheet.create({
     padding: spacing.xl,
   },
   emptyText: {
-    color: base.textMuted,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 14,
   },

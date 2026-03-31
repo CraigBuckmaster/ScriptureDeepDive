@@ -9,12 +9,14 @@ import PlanListScreen from '../screens/PlanListScreen';
 import PlanDetailScreen from '../screens/PlanDetailScreen';
 import ChapterScreen from '../screens/ChapterScreen';
 import BookIntroScreen from '../screens/BookIntroScreen';
-import { base } from '../theme';
+import { useTheme } from '../theme';
 import type { MoreStackParamList } from './types';
 
 const Stack = createStackNavigator<MoreStackParamList>();
 
 export function MoreStack() {
+  const { base } = useTheme();
+
   return (
     <Stack.Navigator screenOptions={{ headerShown: false, cardStyle: { backgroundColor: base.bg } }}>
       <Stack.Screen name="MoreMenu" component={MoreMenuScreen} />

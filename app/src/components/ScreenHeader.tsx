@@ -13,7 +13,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, type ViewStyle } from 'react-native';
 import { ArrowLeft } from 'lucide-react-native';
-import { base, spacing, MIN_TOUCH_TARGET, fontFamily } from '../theme';
+import { useTheme, spacing, MIN_TOUCH_TARGET, fontFamily } from '../theme';
 
 interface Props {
   title: string;
@@ -28,6 +28,8 @@ interface Props {
 }
 
 export function ScreenHeader({ title, subtitle, onBack, style, titleColor, backLabel }: Props) {
+  const { base } = useTheme();
+
   return (
     <View style={[styles.row, style]}>
       <TouchableOpacity
@@ -39,9 +41,9 @@ export function ScreenHeader({ title, subtitle, onBack, style, titleColor, backL
         <ArrowLeft size={20} color={base.gold} />
       </TouchableOpacity>
       <View style={styles.textWrap}>
-        <Text style={[styles.title, titleColor ? { color: titleColor } : undefined]} numberOfLines={1} accessibilityRole="header">{title}</Text>
+        <Text style={[styles.title, { color: titleColor ?? base.gold }]} numberOfLines={1} accessibilityRole="header">{title}</Text>
         {subtitle ? (
-          <Text style={styles.subtitle}>{subtitle}</Text>
+          <Text style={[styles.subtitle, { color: base.textMuted }]}>{subtitle}</Text>
         ) : null}
       </View>
     </View>
@@ -64,12 +66,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    color: base.gold,
     fontFamily: fontFamily.displaySemiBold,
     fontSize: 22,
   },
   subtitle: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 12,
   },

@@ -10,10 +10,11 @@ import type { ScreenNavProp } from '../navigation/types';
 import { getBookmarks, removeBookmark } from '../db/user';
 import { parseVerseRef, displayRef } from '../utils/verseRef';
 import { ScreenHeader } from '../components/ScreenHeader';
-import { base, spacing, fontFamily } from '../theme';
+import { useTheme, spacing, fontFamily } from '../theme';
 import type { Bookmark } from '../types';
 
 export default function BookmarkListScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'Bookmarks'>>();
   const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
 
@@ -28,7 +29,7 @@ export default function BookmarkListScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       <ScreenHeader
         title="Bookmarks"
         onBack={() => navigation.goBack()}
@@ -40,7 +41,7 @@ export default function BookmarkListScreen() {
         contentContainerStyle={styles.listContent}
         ListEmptyComponent={
           <View style={styles.emptyWrap}>
-            <Text style={styles.emptyText}>No bookmarks yet. Tap ☆ next to any verse.</Text>
+            <Text style={[styles.emptyText, { color: base.textMuted }]}>No bookmarks yet. Tap ☆ next to any verse.</Text>
           </View>
         }
         renderItem={({ item }) => {
@@ -54,11 +55,11 @@ export default function BookmarkListScreen() {
               accessibilityLabel={`${item.verse_ref}${item.label ? ', ' + item.label : ''}`}
               accessibilityHint="Tap to read, long press to remove"
               accessibilityRole="button"
-              style={styles.row}
+              style={[styles.row, { borderBottomColor: base.border + '40' }]}
             >
-              <Text style={styles.verseRef}>{displayRef(item.verse_ref)}</Text>
-              {item.label && <Text style={styles.label}>{item.label}</Text>}
-              <Text style={styles.date}>{item.created_at?.slice(0, 10)}</Text>
+              <Text style={[styles.verseRef, { color: base.gold }]}>{displayRef(item.verse_ref)}</Text>
+              {item.label && <Text style={[styles.label, { color: base.textDim }]}>{item.label}</Text>}
+              <Text style={[styles.date, { color: base.textMuted }]}>{item.created_at?.slice(0, 10)}</Text>
             </TouchableOpacity>
           );
         }}
@@ -70,7 +71,6 @@ export default function BookmarkListScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   header: {
     paddingHorizontal: spacing.md,
@@ -85,27 +85,22 @@ const styles = StyleSheet.create({
     paddingTop: spacing.xxl,
   },
   emptyText: {
-    color: base.textMuted,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 15,
   },
   row: {
     paddingVertical: spacing.md,
     borderBottomWidth: 1,
-    borderBottomColor: base.border + '40',
   },
   verseRef: {
-    color: base.gold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 13,
   },
   label: {
-    color: base.textDim,
     fontSize: 12,
     marginTop: 2,
   },
   date: {
-    color: base.textMuted,
     fontSize: 10,
     marginTop: 4,
   },

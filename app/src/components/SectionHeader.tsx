@@ -6,7 +6,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { DepthDots } from './DepthDots';
-import { base, spacing, fontFamily } from '../theme';
+import { useTheme, spacing, fontFamily } from '../theme';
 
 interface Props {
   header: string;
@@ -15,9 +15,10 @@ interface Props {
 }
 
 export function SectionHeader({ header, explored, total }: Props) {
+  const { base } = useTheme();
   return (
-    <View style={styles.container} accessibilityRole="header">
-      <Text style={styles.text}>{header}</Text>
+    <View style={[styles.container, { borderBottomColor: base.border }]} accessibilityRole="header">
+      <Text style={[styles.text, { color: base.gold }]}>{header}</Text>
       {total != null && total > 0 ? (
         <DepthDots explored={explored ?? 0} total={total} />
       ) : null}
@@ -31,13 +32,11 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     borderBottomWidth: 1,
-    borderBottomColor: base.border,
     paddingHorizontal: spacing.md,
     paddingTop: 32,
     paddingBottom: spacing.sm,
   },
   text: {
-    color: base.gold,
     fontFamily: fontFamily.displayMedium,
     fontSize: 13,
     lineHeight: 20,

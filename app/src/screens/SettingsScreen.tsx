@@ -26,10 +26,11 @@ import { Download } from 'lucide-react-native';
 import { useSettingsStore } from '../stores';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { NotificationSettings } from '../components/NotificationSettings';
+import { ThemePicker } from '../components/ThemePicker';
 import { getContentStats, type ContentStats } from '../db/content';
 import { getUserDb } from '../db/userDatabase';
 import { exportStudyData, ExportError } from '../utils/exportData';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { logger } from '../utils/logger';
 
 const APP_VERSION = require('../../app.json').expo.version ?? '1.0.0';
@@ -46,6 +47,7 @@ const ABOUT_PARAGRAPHS = [
 /* ── Component ──────────────────────────────────────────────────── */
 
 export default function SettingsScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'Settings'>>();
   const translation = useSettingsStore((s) => s.translation);
   const fontSize = useSettingsStore((s) => s.fontSize);
@@ -55,6 +57,8 @@ export default function SettingsScreen() {
   const setVhlEnabled = useSettingsStore((s) => s.setVhlEnabled);
   const studyCoachEnabled = useSettingsStore((s) => s.studyCoachEnabled);
   const setStudyCoachEnabled = useSettingsStore((s) => s.setStudyCoachEnabled);
+  const theme = useSettingsStore((s) => s.theme);
+  const setTheme = useSettingsStore((s) => s.setTheme);
 
   const [stats, setStats] = useState<ContentStats | null>(null);
   const [exporting, setExporting] = useState(false);
@@ -108,7 +112,7 @@ export default function SettingsScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       <ScrollView contentContainerStyle={styles.content}>
         <ScreenHeader
           title="Settings"
@@ -117,24 +121,25 @@ export default function SettingsScreen() {
         />
 
         {/* ── PREFERENCES ──────────────────────────────────────── */}
-        <SectionLabel text="PREFERENCES" />
+        <SectionLabel text="PREFERENCES" base={base} />
 
         {/* Translation */}
-        <Row label="Default Translation">
-          <View style={styles.pillToggle}>
+        <Row label="Default Translation" base={base}>
+          <View style={[styles.pillToggle, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
             {(['niv', 'esv'] as const).map((t) => (
               <TouchableOpacity
                 key={t}
                 onPress={() => setTranslation(t)}
                 style={[
                   styles.pillOption,
-                  translation === t && styles.pillOptionActive,
+                  translation === t && [styles.pillOptionActive, { backgroundColor: base.gold + '30' }],
                 ]}
               >
                 <Text
                   style={[
                     styles.pillLabel,
-                    translation === t && styles.pillLabelActive,
+                    { color: base.textMuted },
+                    translation === t && { color: base.gold },
                   ]}
                 >
                   {t.toUpperCase()}
@@ -144,20 +149,23 @@ export default function SettingsScreen() {
           </View>
         </Row>
 
+        {/* Appearance */}
+        <ThemePicker theme={theme} setTheme={setTheme} />
+
         {/* Font Size */}
-        <Row label={`Font Size: ${fontSize}pt`}>
+        <Row label={`Font Size: ${fontSize}pt`} base={base}>
           <View style={styles.sizeControls}>
             <TouchableOpacity
               onPress={() => setFontSize(fontSize - 1)}
-              style={styles.sizeButton}
+              style={[styles.sizeButton, { backgroundColor: base.bgElevated, borderColor: base.border }]}
             >
-              <Text style={styles.sizeButtonText}>−</Text>
+              <Text style={[styles.sizeButtonText, { color: base.gold }]}>−</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => setFontSize(fontSize + 1)}
-              style={styles.sizeButton}
+              style={[styles.sizeButton, { backgroundColor: base.bgElevated, borderColor: base.border }]}
             >
-              <Text style={styles.sizeButtonText}>+</Text>
+              <Text style={[styles.sizeButtonText, { color: base.gold }]}>+</Text>
             </TouchableOpacity>
           </View>
         </Row>
@@ -167,7 +175,7 @@ export default function SettingsScreen() {
           <Text
             style={[
               styles.previewText,
-              { fontSize, lineHeight: fontSize * 1.6 },
+              { fontSize, lineHeight: fontSize * 1.6, color: base.textDim },
             ]}
           >
             In the beginning God created the heavens and the earth.
@@ -175,7 +183,7 @@ export default function SettingsScreen() {
         </View>
 
         {/* VHL Toggle */}
-        <Row label="Verse Highlighting">
+        <Row label="Verse Highlighting" base={base}>
           <Switch
             value={vhlEnabled}
             onValueChange={setVhlEnabled}
@@ -185,7 +193,7 @@ export default function SettingsScreen() {
         </Row>
 
         {/* Study Coach */}
-        <Row label="Study Coach">
+        <Row label="Study Coach" base={base}>
           <Switch
             value={studyCoachEnabled}
             onValueChange={setStudyCoachEnabled}
@@ -199,13 +207,14 @@ export default function SettingsScreen() {
 
         {/* ── ABOUT ────────────────────────────────────────────── */}
         <View style={styles.section}>
-          <SectionLabel text="ABOUT" />
+          <SectionLabel text="ABOUT" base={base} />
 
           {ABOUT_PARAGRAPHS.map((para, idx) => (
             <Text
               key={idx}
               style={[
                 styles.aboutText,
+                { color: base.textDim },
                 idx < ABOUT_PARAGRAPHS.length - 1 && styles.aboutParagraphGap,
               ]}
             >
@@ -215,7 +224,7 @@ export default function SettingsScreen() {
 
           {/* Stats strip */}
           {stats && (
-            <Text style={styles.statsStrip}>
+            <Text style={[styles.statsStrip, { color: base.textMuted }]}>
               {formatStat(stats.liveBooks, 'Book')}
               {'  \u00B7  '}
               {formatStat(stats.liveChapters, 'Chapter')}
@@ -226,12 +235,12 @@ export default function SettingsScreen() {
             </Text>
           )}
 
-          <Text style={styles.version}>Version {APP_VERSION}</Text>
+          <Text style={[styles.version, { color: base.textMuted }]}>Version {APP_VERSION}</Text>
         </View>
 
         {/* ── DATA ─────────────────────────────────────────────── */}
         <View style={styles.section}>
-          <SectionLabel text="DATA" />
+          <SectionLabel text="DATA" base={base} />
 
           {/* Export */}
           <TouchableOpacity
@@ -245,16 +254,16 @@ export default function SettingsScreen() {
             ) : (
               <Download size={16} color={base.gold} />
             )}
-            <Text style={styles.exportText}>
+            <Text style={[styles.exportText, { color: base.gold }]}>
               {exporting ? 'Preparing export\u2026' : 'Export Study Data'}
             </Text>
           </TouchableOpacity>
-          <Text style={styles.exportHint}>
+          <Text style={[styles.exportHint, { color: base.textMuted }]}>
             Notes, bookmarks, and highlights as JSON
           </Text>
 
           {/* Destructive actions */}
-          <View style={styles.dangerZone}>
+          <View style={[styles.dangerZone, { borderTopColor: base.border + '40' }]}>
             <TouchableOpacity onPress={handleClearHistory} style={styles.dangerRow}>
               <Text style={styles.dangerText}>Clear Reading History</Text>
             </TouchableOpacity>
@@ -315,14 +324,14 @@ function confirmClear(
 
 /* ── Sub-components ─────────────────────────────────────────────── */
 
-function SectionLabel({ text }: { text: string }) {
-  return <Text style={styles.sectionLabel}>{text}</Text>;
+function SectionLabel({ text, base }: { text: string; base: ReturnType<typeof useTheme>['base'] }) {
+  return <Text style={[styles.sectionLabel, { color: base.textMuted }]}>{text}</Text>;
 }
 
-function Row({ label, children }: { label: string; children: React.ReactNode }) {
+function Row({ label, children, base }: { label: string; children: React.ReactNode; base: ReturnType<typeof useTheme>['base'] }) {
   return (
-    <View style={styles.row}>
-      <Text style={styles.rowLabel}>{label}</Text>
+    <View style={[styles.row, { borderBottomColor: base.border + '40' }]}>
+      <Text style={[styles.rowLabel, { color: base.text }]}>{label}</Text>
       {children}
     </View>
   );
@@ -333,7 +342,6 @@ function Row({ label, children }: { label: string; children: React.ReactNode }) 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   content: {
     padding: spacing.md,
@@ -341,7 +349,6 @@ const styles = StyleSheet.create({
 
   /* Section label */
   sectionLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.uiMedium,
     fontSize: 11,
     letterSpacing: 0.5,
@@ -358,10 +365,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: spacing.md,
     borderBottomWidth: 1,
-    borderBottomColor: base.border + '40',
   },
   rowLabel: {
-    color: base.text,
     fontFamily: fontFamily.uiMedium,
     fontSize: 14,
   },
@@ -369,10 +374,8 @@ const styles = StyleSheet.create({
   /* Translation pill toggle */
   pillToggle: {
     flexDirection: 'row',
-    backgroundColor: base.bgElevated,
     borderRadius: radii.pill,
     borderWidth: 1,
-    borderColor: base.border,
   },
   pillOption: {
     paddingHorizontal: 16,
@@ -380,15 +383,12 @@ const styles = StyleSheet.create({
     borderRadius: radii.pill,
   },
   pillOptionActive: {
-    backgroundColor: base.gold + '30',
   },
   pillLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 12,
   },
   pillLabelActive: {
-    color: base.gold,
   },
 
   /* Font size controls */
@@ -401,14 +401,11 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
     borderRadius: 16,
-    backgroundColor: base.bgElevated,
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: base.border,
   },
   sizeButtonText: {
-    color: base.gold,
     fontSize: 16,
   },
 
@@ -417,13 +414,11 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.sm,
   },
   previewText: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
   },
 
   /* About */
   aboutText: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 14,
     lineHeight: 22,
@@ -432,7 +427,6 @@ const styles = StyleSheet.create({
     marginBottom: spacing.md,
   },
   statsStrip: {
-    color: base.textMuted,
     fontFamily: fontFamily.uiMedium,
     fontSize: 12,
     marginTop: spacing.lg,
@@ -440,7 +434,6 @@ const styles = StyleSheet.create({
     letterSpacing: 0.3,
   },
   version: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 11,
     marginTop: spacing.sm,
@@ -455,12 +448,10 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
   },
   exportText: {
-    color: base.gold,
     fontFamily: fontFamily.uiMedium,
     fontSize: 14,
   },
   exportHint: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 11,
     marginTop: -spacing.sm,
@@ -470,7 +461,6 @@ const styles = StyleSheet.create({
   /* Danger zone */
   dangerZone: {
     borderTopWidth: 1,
-    borderTopColor: base.border + '40',
     marginTop: spacing.sm,
     paddingTop: spacing.sm,
   },

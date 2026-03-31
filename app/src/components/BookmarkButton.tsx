@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
-import { base, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, MIN_TOUCH_TARGET } from '../theme';
 import { mediumImpact } from '../utils/haptics';
 
 interface Props {
@@ -14,6 +14,8 @@ interface Props {
 }
 
 export function BookmarkButton({ isBookmarked, onToggle, verseNum }: Props) {
+  const { base } = useTheme();
+
   return (
     <TouchableOpacity
       onPress={() => { mediumImpact(); onToggle(); }}

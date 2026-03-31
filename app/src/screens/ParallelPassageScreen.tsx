@@ -15,7 +15,7 @@ import { SearchInput } from '../components/SearchInput';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { DiffAnnotationList } from '../components/DiffAnnotation';
 import type { DiffAnnotationData } from '../components/DiffAnnotation';
-import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { SynopticEntry } from '../types';
 import { logger } from '../utils/logger';
 
@@ -27,6 +27,7 @@ const CATEGORY_LABELS: Record<string, string> = {
 };
 
 export default function ParallelPassageScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Read', 'ParallelPassage'>>();
   const [entries, setEntries] = useState<SynopticEntry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -73,7 +74,7 @@ export default function ParallelPassageScreen() {
   // LOADING
   if (isLoading) {
     return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
         <View style={styles.browseHeader}>
           <ScreenHeader title="Parallel Passages" onBack={() => navigation.goBack()} />
         </View>
@@ -87,7 +88,7 @@ export default function ParallelPassageScreen() {
     const categories = ['all', ...new Set(entries.map((e) => e.category).filter(Boolean))];
 
     return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
         <View style={styles.browseHeader}>
           <ScreenHeader
             title="Parallel Passages"
@@ -108,6 +109,8 @@ export default function ParallelPassageScreen() {
               <TouchableOpacity key={cat ?? 'all'} onPress={() => setCatFilter(cat ?? 'all')}>
                 <Text style={[
                   styles.filterLabel,
+                  { color: base.textMuted },
+                  catFilter === cat && { color: base.gold, borderBottomColor: base.gold },
                   catFilter === cat && styles.filterLabelActive,
                 ]}>
                   {cat === 'all' ? 'All' : (CATEGORY_LABELS[cat!] ?? cat)}
@@ -128,10 +131,10 @@ export default function ParallelPassageScreen() {
             return (
               <TouchableOpacity
                 onPress={() => { setCompareEntry(item); setActiveTab(0); }}
-                style={styles.entryRow}
+                style={[styles.entryRow, { borderBottomColor: base.border + '40' }]}
               >
-                <Text style={styles.entryTitle}>{item.title}</Text>
-                <Text style={styles.entryRefs}>
+                <Text style={[styles.entryTitle, { color: base.text }]}>{item.title}</Text>
+                <Text style={[styles.entryRefs, { color: base.textMuted }]}>
                   {passages.map((p) => `${p.book} ${p.ref}`).join(' · ')}
                 </Text>
               </TouchableOpacity>
@@ -150,7 +153,7 @@ export default function ParallelPassageScreen() {
   try { diffAnnotations = JSON.parse(compareEntry.diff_annotations_json || '[]'); } catch (err) { logger.warn('ParallelPassageScreen', 'Failed to parse diff_annotations_json', err); }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       {/* Header */}
       <View style={styles.compareHeader}>
         <ScreenHeader
@@ -167,9 +170,9 @@ export default function ParallelPassageScreen() {
           <TouchableOpacity
             key={i}
             onPress={() => setActiveTab(i)}
-            style={[styles.tab, activeTab === i && styles.tabActive]}
+            style={[styles.tab, { borderColor: base.border }, activeTab === i && { backgroundColor: base.gold + '30', borderColor: base.gold }]}
           >
-            <Text style={[styles.tabLabel, activeTab === i && styles.tabLabelActive]}>
+            <Text style={[styles.tabLabel, { color: base.textMuted }, activeTab === i && { color: base.gold }]}>
               {p.book}
             </Text>
           </TouchableOpacity>
@@ -178,14 +181,14 @@ export default function ParallelPassageScreen() {
 
       {/* Verse text + diff annotations */}
       <ScrollView style={styles.verseScroll} contentContainerStyle={styles.verseContent}>
-        <Text style={styles.verseRef}>
+        <Text style={[styles.verseRef, { color: base.gold }]}>
           {passages[activeTab]?.book} {passages[activeTab]?.ref}
         </Text>
         {(resolvedTexts[passages[activeTab]?.book] ?? []).map((text, i) => (
-          <Text key={i} style={styles.verseText}>{text}</Text>
+          <Text key={i} style={[styles.verseText, { color: base.text }]}>{text}</Text>
         ))}
         {!resolvedTexts[passages[activeTab]?.book] && (
-          <Text style={styles.versePlaceholder}>
+          <Text style={[styles.versePlaceholder, { color: base.textMuted }]}>
             Loading or not available in current content...
           </Text>
         )}
@@ -198,7 +201,6 @@ export default function ParallelPassageScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   browseHeader: {
     paddingHorizontal: spacing.md,
@@ -212,16 +214,13 @@ const styles = StyleSheet.create({
     marginBottom: spacing.md,
   },
   filterLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.display,
     fontSize: 10,
     paddingBottom: 4,
     paddingHorizontal: 4,
   },
   filterLabelActive: {
-    color: base.gold,
     borderBottomWidth: 2,
-    borderBottomColor: base.gold,
   },
   listPadding: {
     paddingHorizontal: spacing.md,
@@ -229,15 +228,12 @@ const styles = StyleSheet.create({
   entryRow: {
     paddingVertical: spacing.md,
     borderBottomWidth: 1,
-    borderBottomColor: base.border + '40',
   },
   entryTitle: {
-    color: base.text,
     fontFamily: fontFamily.displayMedium,
     fontSize: 14,
   },
   entryRefs: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 11,
     marginTop: 4,
@@ -253,23 +249,14 @@ const styles = StyleSheet.create({
   },
   tab: {
     borderWidth: 1,
-    borderColor: base.border,
     borderRadius: radii.sm,
     paddingHorizontal: 12,
     minHeight: MIN_TOUCH_TARGET,
     justifyContent: 'center',
   },
-  tabActive: {
-    backgroundColor: base.gold + '30',
-    borderColor: base.gold,
-  },
   tabLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.display,
     fontSize: 11,
-  },
-  tabLabelActive: {
-    color: base.gold,
   },
   verseScroll: {
     flex: 1,
@@ -278,20 +265,17 @@ const styles = StyleSheet.create({
     padding: spacing.md,
   },
   verseRef: {
-    color: base.gold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 12,
     marginBottom: spacing.sm,
   },
   verseText: {
-    color: base.text,
     fontFamily: fontFamily.body,
     fontSize: 16,
     lineHeight: 26,
     marginBottom: 4,
   },
   versePlaceholder: {
-    color: base.textMuted,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 14,
   },

@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { Modal, View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { resolveVerseText, type ParsedRef } from '../utils/verseResolver';
 import { useSettingsStore } from '../stores';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 interface Props {
   visible: boolean;
@@ -17,6 +17,7 @@ interface Props {
 }
 
 export function CrossRefPopup({ visible, onClose, reference, onGoToChapter }: Props) {
+  const { base } = useTheme();
   const translation = useSettingsStore((s) => s.translation);
   const [verseTexts, setVerseTexts] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);

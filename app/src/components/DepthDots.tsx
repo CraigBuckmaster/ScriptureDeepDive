@@ -6,7 +6,7 @@
 
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { base } from '../theme';
+import { useTheme } from '../theme';
 
 interface Props {
   explored: number;
@@ -14,6 +14,8 @@ interface Props {
 }
 
 export function DepthDots({ explored, total }: Props) {
+  const { base } = useTheme();
+
   if (total === 0) return null;
 
   const dots: boolean[] = [];
@@ -26,7 +28,7 @@ export function DepthDots({ explored, total }: Props) {
       {dots.map((filled, i) => (
         <View
           key={i}
-          style={[styles.dot, filled ? styles.filled : styles.unfilled]}
+          style={[styles.dot, filled ? { backgroundColor: base.gold } : styles.unfilled]}
         />
       ))}
     </View>
@@ -43,9 +45,6 @@ const styles = StyleSheet.create({
     width: 4,
     height: 4,
     borderRadius: 2,
-  },
-  filled: {
-    backgroundColor: base.gold,
   },
   unfilled: {
     backgroundColor: '#444',

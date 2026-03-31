@@ -20,7 +20,7 @@ import {
   ERA_RANGES, TOTAL_WIDTH, AXIS_Y, ERA_BAR_Y, ERA_BAR_H,
   type PositionedEvent,
 } from '../utils/timelineLayout';
-import { base, spacing, radii, eras, eraNames, fontFamily, categoryColors } from '../theme';
+import { useTheme, spacing, radii, eraNames, fontFamily } from '../theme';
 import type { TimelineEntry } from '../types';
 
 interface CategoryFilters {
@@ -39,6 +39,7 @@ function filterReducer(state: CategoryFilters, action: FilterAction): CategoryFi
 const INITIAL_FILTERS: CategoryFilters = { event: true, book: true, person: true, world: true };
 
 export default function TimelineScreen() {
+  const { base, eras, categoryColors } = useTheme();
   useLandscapeUnlock();
   const route = useRoute<ScreenRouteProp<'Explore', 'Timeline'>>();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'Timeline'>>();
@@ -110,7 +111,7 @@ export default function TimelineScreen() {
 
   if (isLoading) {
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, { backgroundColor: base.bg }]}>
         <View style={[styles.loadingPad, { paddingTop: insets.top + spacing.lg }]}>
           <LoadingSkeleton lines={6} />
         </View>
@@ -122,7 +123,7 @@ export default function TimelineScreen() {
   const SVG_HEIGHT = computeSvgHeight(hasBelow);
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: base.bg }]}>
       <View style={{ paddingTop: insets.top }}>
         <EraFilterBar activeEra={filterEra} onSelect={handleEraChange} />
 
@@ -138,10 +139,10 @@ export default function TimelineScreen() {
               key={key}
               onPress={() => dispatchFilter({ type: 'toggle', category: key })}
               hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
-              style={[styles.categoryChip, filters[key] && styles.categoryChipActive]}
+              style={[styles.categoryChip, { borderColor: base.border, backgroundColor: base.bg + 'EE' }, filters[key] && [styles.categoryChipActive, { borderColor: base.gold + '55' }]]}
             >
               <View style={[styles.categoryDot, { backgroundColor: color }]} />
-              <Text style={[styles.categoryLabel, filters[key] && { color }]}>{label}</Text>
+              <Text style={[styles.categoryLabel, { color: base.textMuted }, filters[key] && { color }]}>{label}</Text>
             </TouchableOpacity>
           ))}
         </View>
@@ -224,23 +225,23 @@ export default function TimelineScreen() {
       {selectedEvent && (
         <Modal visible transparent animationType="slide">
           <TouchableOpacity style={styles.modalBackdrop} activeOpacity={1} onPress={() => setSelectedEvent(null)} />
-          <View style={styles.detailSheet}>
+          <View style={[styles.detailSheet, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
             <ScrollView contentContainerStyle={styles.detailContent}>
-              <View style={styles.grabHandle} />
+              <View style={[styles.grabHandle, { backgroundColor: base.textMuted }]} />
               {selectedEvent.era && <BadgeChip label={eraNames[selectedEvent.era] ?? selectedEvent.era} color={eras[selectedEvent.era] ?? base.gold} />}
-              <Text style={styles.detailTitle}>
+              <Text style={[styles.detailTitle, { color: base.text }]}>
                 {selectedEvent.name}
               </Text>
-              <Text style={styles.detailYear}>
+              <Text style={[styles.detailYear, { color: base.gold }]}>
                 {formatYear(selectedEvent.year)}
               </Text>
               {selectedEvent.scripture_ref && (
-                <Text style={styles.detailRef}>
+                <Text style={[styles.detailRef, { color: base.goldDim }]}>
                   {selectedEvent.scripture_ref}
                 </Text>
               )}
               {selectedEvent.summary && (
-                <Text style={styles.detailSummary}>
+                <Text style={[styles.detailSummary, { color: base.textDim }]}>
                   {selectedEvent.summary}
                 </Text>
               )}
@@ -251,7 +252,7 @@ export default function TimelineScreen() {
                 const chapterNum = parseInt(match[3], 10);
                 return (
                   <TouchableOpacity
-                    style={styles.chapterButton}
+                    style={[styles.chapterButton, { backgroundColor: base.gold + '22', borderColor: base.gold + '55' }]}
                     onPress={() => {
                       setSelectedEvent(null);
                       navigation.navigate('ReadTab', {
@@ -260,7 +261,7 @@ export default function TimelineScreen() {
                       });
                     }}
                   >
-                    <Text style={styles.chapterButtonText}>Go to Chapter →</Text>
+                    <Text style={[styles.chapterButtonText, { color: base.gold }]}>Go to Chapter →</Text>
                   </TouchableOpacity>
                 );
               })()}
@@ -275,7 +276,6 @@ export default function TimelineScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   loadingPad: {
     padding: spacing.lg,
@@ -284,11 +284,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   detailSheet: {
-    backgroundColor: base.bgElevated,
     borderTopLeftRadius: radii.lg,
     borderTopRightRadius: radii.lg,
     borderTopWidth: 1,
-    borderColor: base.border,
     maxHeight: '50%',
   },
   detailContent: {
@@ -298,30 +296,25 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     width: 40,
     height: 4,
-    backgroundColor: base.textMuted,
     borderRadius: 2,
     marginBottom: spacing.md,
   },
   detailTitle: {
-    color: base.text,
     fontFamily: fontFamily.displaySemiBold,
     fontSize: 18,
     marginTop: spacing.sm,
   },
   detailYear: {
-    color: base.gold,
     fontFamily: fontFamily.uiMedium,
     fontSize: 13,
     marginTop: 4,
   },
   detailRef: {
-    color: base.goldDim,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 13,
     marginTop: 4,
   },
   detailSummary: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 14,
     lineHeight: 22,
@@ -329,16 +322,13 @@ const styles = StyleSheet.create({
   },
   chapterButton: {
     marginTop: spacing.md,
-    backgroundColor: base.gold + '22',
     borderWidth: 1,
-    borderColor: base.gold + '55',
     borderRadius: radii.pill,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
     alignSelf: 'flex-start',
   },
   chapterButtonText: {
-    color: base.gold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 13,
   },
@@ -353,16 +343,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 4,
     borderWidth: 1,
-    borderColor: base.border,
     borderRadius: radii.pill,
     paddingHorizontal: 8,
     height: 28,
-    backgroundColor: base.bg + 'EE',
     opacity: 0.5,
   },
   categoryChipActive: {
     opacity: 1,
-    borderColor: base.gold + '55',
   },
   categoryDot: {
     width: 6,
@@ -373,6 +360,5 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.display,
     fontSize: 10,
     letterSpacing: 0.3,
-    color: base.textMuted,
   },
 });

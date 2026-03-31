@@ -12,7 +12,7 @@
 
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 export interface DiffAnnotationData {
   location: string;
@@ -51,6 +51,7 @@ interface Props {
 }
 
 export function DiffAnnotation({ annotation }: Props) {
+  const { base } = useTheme();
   const [expanded, setExpanded] = useState(false);
   const color = DIFF_TYPE_COLORS[annotation.diff_type] ?? DIFF_TYPE_COLORS.wording;
   const bg = DIFF_TYPE_BG[annotation.diff_type] ?? DIFF_TYPE_BG.wording;
@@ -60,20 +61,20 @@ export function DiffAnnotation({ annotation }: Props) {
     <TouchableOpacity
       onPress={() => setExpanded(!expanded)}
       activeOpacity={0.75}
-      style={[styles.card, { borderLeftColor: color }]}
+      style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.border, borderLeftColor: color }]}
     >
       {/* Header row */}
       <View style={styles.header}>
         <View style={[styles.typeBadge, { backgroundColor: bg }]}>
           <Text style={[styles.typeText, { color }]}>{label}</Text>
         </View>
-        <Text style={styles.location} numberOfLines={expanded ? 0 : 1}>{annotation.location}</Text>
-        <Text style={styles.chevron}>{expanded ? '▲' : '▼'}</Text>
+        <Text style={[styles.location, { color: base.textMuted }]} numberOfLines={expanded ? 0 : 1}>{annotation.location}</Text>
+        <Text style={[styles.chevron, { color: base.textMuted }]}>{expanded ? '▲' : '▼'}</Text>
       </View>
 
       {/* Collapsed preview */}
       {!expanded && (
-        <Text style={styles.previewText} numberOfLines={1}>
+        <Text style={[styles.previewText, { color: base.textMuted }]} numberOfLines={1}>
           {annotation.explanation}
         </Text>
       )}
@@ -83,23 +84,23 @@ export function DiffAnnotation({ annotation }: Props) {
         <View style={styles.expandedContent}>
           {/* Side A */}
           <View style={styles.textRow}>
-            <View style={styles.textLabelBox}>
-              <Text style={styles.textLabel}>A</Text>
+            <View style={[styles.textLabelBox, { backgroundColor: base.gold + '25' }]}>
+              <Text style={[styles.textLabel, { color: base.gold }]}>A</Text>
             </View>
-            <Text style={styles.textContent}>{annotation.matthew}</Text>
+            <Text style={[styles.textContent, { color: base.text }]}>{annotation.matthew}</Text>
           </View>
 
           {/* Side B */}
           <View style={styles.textRow}>
-            <View style={[styles.textLabelBox, styles.textLabelBoxB]}>
-              <Text style={styles.textLabel}>B</Text>
+            <View style={[styles.textLabelBox, styles.textLabelBoxB, { backgroundColor: base.textMuted + '25' }]}>
+              <Text style={[styles.textLabel, { color: base.gold }]}>B</Text>
             </View>
-            <Text style={styles.textContent}>{annotation.luke}</Text>
+            <Text style={[styles.textContent, { color: base.text }]}>{annotation.luke}</Text>
           </View>
 
           {/* Explanation */}
-          <View style={styles.explanationBox}>
-            <Text style={styles.explanationText}>{annotation.explanation}</Text>
+          <View style={[styles.explanationBox, { backgroundColor: base.gold + '08' }]}>
+            <Text style={[styles.explanationText, { color: base.textDim }]}>{annotation.explanation}</Text>
           </View>
         </View>
       )}
@@ -112,11 +113,13 @@ interface ListProps {
 }
 
 export function DiffAnnotationList({ annotations }: ListProps) {
+  const { base } = useTheme();
+
   if (!annotations || annotations.length === 0) return null;
 
   return (
     <View style={styles.listContainer}>
-      <Text style={styles.listHeader}>Textual Differences</Text>
+      <Text style={[styles.listHeader, { color: base.gold }]}>Textual Differences</Text>
       {annotations.map((a, i) => (
         <DiffAnnotation key={i} annotation={a} />
       ))}
@@ -130,16 +133,13 @@ const styles = StyleSheet.create({
     paddingBottom: spacing.md,
   },
   listHeader: {
-    color: base.gold,
     fontFamily: fontFamily.displayMedium,
     fontSize: 13,
     marginBottom: spacing.sm,
     marginTop: spacing.md,
   },
   card: {
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.border,
     borderLeftWidth: 3,
     borderRadius: radii.md,
     padding: spacing.sm,
@@ -164,18 +164,15 @@ const styles = StyleSheet.create({
     letterSpacing: 0.4,
   },
   location: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 11,
     flex: 1,
   },
   chevron: {
-    color: base.textMuted,
     fontSize: 9,
     fontFamily: fontFamily.ui,
   },
   previewText: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 12,
     fontStyle: 'italic',
@@ -193,35 +190,28 @@ const styles = StyleSheet.create({
     width: 20,
     height: 20,
     borderRadius: 10,
-    backgroundColor: base.gold + '25',
     alignItems: 'center',
     justifyContent: 'center',
     flexShrink: 0,
     marginTop: 1,
   },
-  textLabelBoxB: {
-    backgroundColor: base.textMuted + '25',
-  },
+  textLabelBoxB: {},
   textLabel: {
-    color: base.gold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 10,
   },
   textContent: {
-    color: base.text,
     fontFamily: fontFamily.body,
     fontSize: 13,
     lineHeight: 20,
     flex: 1,
   },
   explanationBox: {
-    backgroundColor: base.gold + '08',
     borderRadius: radii.sm,
     padding: spacing.sm,
     marginTop: spacing.xs,
   },
   explanationText: {
-    color: base.textDim,
     fontFamily: fontFamily.ui,
     fontSize: 12,
     lineHeight: 19,

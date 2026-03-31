@@ -11,7 +11,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { Bookmark, Clock, Calendar, Settings, ArrowRight, StickyNote } from 'lucide-react-native';
-import { base, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
+import { useTheme, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
 
 interface MenuItem {
   icon: React.ElementType;
@@ -28,13 +28,14 @@ const MENU_ITEMS: MenuItem[] = [
 ];
 
 export default function MoreMenuScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'MoreMenu'>>();
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title} accessibilityRole="header">More</Text>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
+      <Text style={[styles.title, { color: base.gold }]} accessibilityRole="header">More</Text>
 
-      <View style={styles.menuList}>
+      <View style={[styles.menuList, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
         {MENU_ITEMS.map((item, idx) => (
           <TouchableOpacity
             key={item.screen}
@@ -42,11 +43,11 @@ export default function MoreMenuScreen() {
             activeOpacity={0.6}
             style={[
               styles.menuRow,
-              idx < MENU_ITEMS.length - 1 && styles.menuRowBorder,
+              idx < MENU_ITEMS.length - 1 && [styles.menuRowBorder, { borderBottomColor: base.border + '40' }],
             ]}
           >
             <item.icon size={20} color={base.textDim} />
-            <Text style={styles.menuLabel}>{item.label}</Text>
+            <Text style={[styles.menuLabel, { color: base.text }]}>{item.label}</Text>
             <ArrowRight size={14} color={base.textMuted} />
           </TouchableOpacity>
         ))}
@@ -58,21 +59,17 @@ export default function MoreMenuScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
     paddingHorizontal: spacing.md,
   },
   title: {
-    color: base.gold,
     fontFamily: fontFamily.displaySemiBold,
     fontSize: 22,
     marginTop: spacing.lg,
     marginBottom: spacing.lg,
   },
   menuList: {
-    backgroundColor: base.bgElevated,
     borderRadius: radii.lg,
     borderWidth: 1,
-    borderColor: base.border,
     overflow: 'hidden',
   },
   menuRow: {
@@ -85,11 +82,9 @@ const styles = StyleSheet.create({
   },
   menuRowBorder: {
     borderBottomWidth: 1,
-    borderBottomColor: base.border + '40',
   },
   menuLabel: {
     flex: 1,
-    color: base.text,
     fontFamily: fontFamily.uiMedium,
     fontSize: 15,
   },

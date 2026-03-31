@@ -1,13 +1,13 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useMemo } from 'react';
 import { View, Text, ActivityIndicator } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { NavigationContainer, DarkTheme } from '@react-navigation/native';
+import { NavigationContainer, DarkTheme, DefaultTheme } from '@react-navigation/native';
 
-import { FONT_MAP, base } from './src/theme';
+import { FONT_MAP, base, ThemeProvider, useTheme } from './src/theme';
 import { initDatabase } from './src/db/database';
 import { initUserDatabase } from './src/db/userDatabase';
 import { useSettingsStore } from './src/stores';
@@ -17,17 +17,36 @@ import { ErrorBoundary } from './src/components/ErrorBoundary';
 // Keep splash visible while we load
 SplashScreen.preventAutoHideAsync();
 
-const navTheme = {
-  ...DarkTheme,
-  colors: {
-    ...DarkTheme.colors,
-    background: base.bg,
-    card: base.bg,
-    text: base.text,
-    border: base.border,
-    primary: base.gold,
-  },
-};
+/** Inner app shell — consumes theme context for nav theme + status bar. */
+function AppShell() {
+  const { base: themeBase, mode, statusBarStyle } = useTheme();
+
+  const navTheme = useMemo(() => {
+    const baseTheme = mode === 'dark' ? DarkTheme : DefaultTheme;
+    return {
+      ...baseTheme,
+      colors: {
+        ...baseTheme.colors,
+        background: themeBase.bg,
+        card: themeBase.bg,
+        text: themeBase.text,
+        border: themeBase.border,
+        primary: themeBase.gold,
+      },
+    };
+  }, [themeBase, mode]);
+
+  return (
+    <>
+      <NavigationContainer theme={navTheme}>
+        <ErrorBoundary>
+          <RootNavigator />
+        </ErrorBoundary>
+      </NavigationContainer>
+      <StatusBar style={statusBarStyle === 'light-content' ? 'light' : 'dark'} />
+    </>
+  );
+}
 
 export default function App() {
   const [fontsLoaded] = useFonts(FONT_MAP);
@@ -67,12 +86,9 @@ export default function App() {
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }} onLayout={onLayoutReady}>
-      <NavigationContainer theme={navTheme}>
-        <ErrorBoundary>
-          <RootNavigator />
-        </ErrorBoundary>
-      </NavigationContainer>
-      <StatusBar style="light" />
+      <ThemeProvider>
+        <AppShell />
+      </ThemeProvider>
     </GestureHandlerRootView>
   );
 }

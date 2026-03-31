@@ -6,9 +6,10 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Switch } from 'react-native';
 import { requestPermission, scheduleDailyVerse, cancelAllNotifications } from '../services/notifications';
 import { getPreference, setPreference } from '../db/user';
-import { base, spacing, fontFamily } from '../theme';
+import { useTheme, spacing, fontFamily } from '../theme';
 
 export function NotificationSettings() {
+  const { base } = useTheme();
   const [granted, setGranted] = useState(false);
   const [dailyVerse, setDailyVerse] = useState(false);
 

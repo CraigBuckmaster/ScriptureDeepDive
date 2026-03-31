@@ -10,7 +10,7 @@ import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-nativ
 import { X, ChevronRight, Link, Folder } from 'lucide-react-native';
 import { TagChips } from '../TagChips';
 import { displayRef } from '../../utils/verseRef';
-import { base, spacing, radii, fontFamily } from '../../theme';
+import { useTheme, spacing, radii, fontFamily } from '../../theme';
 import type { UserNote, StudyCollection } from '../../types';
 
 interface Props {
@@ -50,11 +50,12 @@ export function NoteCard({
   onOpenLinkSheet,
   onUnlink,
 }: Props) {
+  const { base } = useTheme();
   const noteTags = isEditing ? editTags : parseTags(note.tags_json);
 
   return (
-    <View style={[styles.noteCard, isEditing && styles.noteCardEditing]}>
-      <Text style={styles.noteRef}>{formatNoteRef(note.verse_ref)}</Text>
+    <View style={[styles.noteCard, { backgroundColor: base.bgElevated, borderColor: isEditing ? base.gold : base.border }]}>
+      <Text style={[styles.noteRef, { color: base.gold }]}>{formatNoteRef(note.verse_ref)}</Text>
 
       {isEditing ? (
         <>
@@ -63,58 +64,58 @@ export function NoteCard({
             onChangeText={onEditTextChange}
             multiline
             autoFocus
-            style={styles.editInput}
+            style={[styles.editInput, { color: base.text, backgroundColor: base.bg, borderColor: base.border }]}
           />
 
           {/* Tags */}
-          <View style={styles.metaSection}>
-            <Text style={styles.metaLabel}>TAGS</Text>
+          <View style={[styles.metaSection, { borderTopColor: base.border }]}>
+            <Text style={[styles.metaLabel, { color: base.textMuted }]}>TAGS</Text>
             <TagChips tags={editTags} onTagsChange={onTagsChange} />
           </View>
 
           {/* Collection */}
-          <View style={styles.metaSection}>
-            <Text style={styles.metaLabel}>COLLECTION</Text>
-            <TouchableOpacity style={styles.collectionButton} onPress={onOpenCollectionPicker}>
+          <View style={[styles.metaSection, { borderTopColor: base.border }]}>
+            <Text style={[styles.metaLabel, { color: base.textMuted }]}>COLLECTION</Text>
+            <TouchableOpacity style={[styles.collectionButton, { backgroundColor: base.bg }]} onPress={onOpenCollectionPicker}>
               {editCollection ? (
                 <View style={styles.collectionRow}>
                   <View style={[styles.colorDot, { backgroundColor: editCollection.color }]} />
-                  <Text style={styles.collectionName}>{editCollection.name}</Text>
+                  <Text style={[styles.collectionName, { color: base.text }]}>{editCollection.name}</Text>
                 </View>
               ) : (
-                <Text style={styles.collectionPlaceholder}>None</Text>
+                <Text style={[styles.collectionPlaceholder, { color: base.textMuted }]}>None</Text>
               )}
               <ChevronRight size={16} color={base.textMuted} />
             </TouchableOpacity>
           </View>
 
           {/* Linked notes */}
-          <View style={styles.metaSection}>
+          <View style={[styles.metaSection, { borderTopColor: base.border }]}>
             <View style={styles.metaHeader}>
-              <Text style={styles.metaLabel}>LINKED NOTES</Text>
+              <Text style={[styles.metaLabel, { color: base.textMuted }]}>LINKED NOTES</Text>
               <TouchableOpacity onPress={onOpenLinkSheet}>
-                <Text style={styles.addLinkText}>+ Link</Text>
+                <Text style={[styles.addLinkText, { color: base.gold }]}>+ Link</Text>
               </TouchableOpacity>
             </View>
             {editLinkedNotes.length > 0 ? (
               editLinkedNotes.map((linked) => (
                 <View key={linked.id} style={styles.linkedNoteRow}>
                   <Link size={12} color={base.goldDim} />
-                  <Text style={styles.linkedNoteRef}>{displayRef(linked.verse_ref)}</Text>
+                  <Text style={[styles.linkedNoteRef, { color: base.goldDim }]}>{displayRef(linked.verse_ref)}</Text>
                   <TouchableOpacity onPress={() => onUnlink(linked.id)}>
                     <X size={14} color={base.textMuted} />
                   </TouchableOpacity>
                 </View>
               ))
             ) : (
-              <Text style={styles.noLinksText}>No linked notes</Text>
+              <Text style={[styles.noLinksText, { color: base.textMuted }]}>No linked notes</Text>
             )}
           </View>
 
           {/* Actions */}
           <View style={styles.noteFooter}>
             <TouchableOpacity onPress={() => onDone(note.id)}>
-              <Text style={styles.doneText}>Done</Text>
+              <Text style={[styles.doneText, { color: base.gold }]}>Done</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => onDelete(note.id)}>
               <Text style={styles.deleteText}>Delete</Text>
@@ -124,13 +125,13 @@ export function NoteCard({
       ) : (
         <>
           <TouchableOpacity onPress={() => onStartEditing(note)}>
-            <Text style={styles.noteText}>{note.note_text}</Text>
+            <Text style={[styles.noteText, { color: base.textDim }]}>{note.note_text}</Text>
           </TouchableOpacity>
 
           {noteTags.length > 0 && (
             <View style={styles.tagRow}>
               {noteTags.map((t) => (
-                <Text key={t} style={styles.tagLabel}>
+                <Text key={t} style={[styles.tagLabel, { color: base.goldDim }]}>
                   #{t}
                 </Text>
               ))}
@@ -138,7 +139,7 @@ export function NoteCard({
           )}
 
           <View style={styles.noteFooter}>
-            <Text style={styles.noteDate}>{note.updated_at?.slice(0, 10)}</Text>
+            <Text style={[styles.noteDate, { color: base.textMuted }]}>{note.updated_at?.slice(0, 10)}</Text>
             {note.collection_id && (
               <View style={styles.collectionBadge}>
                 <Folder size={10} color={base.goldDim} />
@@ -153,33 +154,24 @@ export function NoteCard({
 
 const styles = StyleSheet.create({
   noteCard: {
-    backgroundColor: base.bgElevated,
     borderRadius: radii.md,
     padding: spacing.sm,
     borderWidth: 1,
-    borderColor: base.border,
-  },
-  noteCardEditing: {
-    borderColor: base.gold,
   },
   noteRef: {
-    color: base.gold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 12,
   },
   editInput: {
-    color: base.text,
     fontFamily: fontFamily.body,
     fontSize: 14,
     marginTop: 4,
     minHeight: 60,
     textAlignVertical: 'top',
-    backgroundColor: base.bg,
     borderRadius: radii.sm,
     padding: spacing.xs,
   },
   noteText: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 14,
     marginTop: 4,
@@ -191,7 +183,6 @@ const styles = StyleSheet.create({
     marginTop: spacing.xs,
   },
   tagLabel: {
-    color: base.goldDim,
     fontFamily: fontFamily.ui,
     fontSize: 10,
   },
@@ -199,7 +190,6 @@ const styles = StyleSheet.create({
     marginTop: spacing.md,
     paddingTop: spacing.sm,
     borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: base.border,
   },
   metaHeader: {
     flexDirection: 'row',
@@ -207,14 +197,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   metaLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 10,
     letterSpacing: 0.3,
     marginBottom: spacing.xs,
   },
   addLinkText: {
-    color: base.gold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 11,
   },
@@ -222,7 +210,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: base.bg,
     borderRadius: radii.sm,
     padding: spacing.xs,
   },
@@ -237,12 +224,10 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   collectionName: {
-    color: base.text,
     fontFamily: fontFamily.ui,
     fontSize: 13,
   },
   collectionPlaceholder: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 13,
   },
@@ -254,12 +239,10 @@ const styles = StyleSheet.create({
   },
   linkedNoteRef: {
     flex: 1,
-    color: base.goldDim,
     fontFamily: fontFamily.ui,
     fontSize: 12,
   },
   noLinksText: {
-    color: base.textMuted,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 12,
   },
@@ -270,14 +253,12 @@ const styles = StyleSheet.create({
     marginTop: spacing.sm,
   },
   noteDate: {
-    color: base.textMuted,
     fontSize: 10,
   },
   collectionBadge: {
     padding: 2,
   },
   doneText: {
-    color: base.gold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 13,
   },

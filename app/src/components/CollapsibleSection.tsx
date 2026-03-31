@@ -7,7 +7,7 @@
 import React, { useState, useCallback } from 'react';
 import { View, Text, TouchableOpacity, LayoutAnimation, Platform, UIManager } from 'react-native';
 import { Plus, Minus } from 'lucide-react-native';
-import { base, spacing, fontFamily } from '../theme';
+import { useTheme, spacing, fontFamily } from '../theme';
 
 // Enable LayoutAnimation on Android
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
@@ -22,6 +22,7 @@ interface Props {
 }
 
 export function CollapsibleSection({ title, initiallyCollapsed = true, accentColor, children }: Props) {
+  const { base } = useTheme();
   const [collapsed, setCollapsed] = useState(initiallyCollapsed);
   const accent = accentColor ?? base.gold;
 

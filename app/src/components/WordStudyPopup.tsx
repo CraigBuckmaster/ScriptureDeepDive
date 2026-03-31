@@ -10,7 +10,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Modal, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getAllWordStudies } from '../db/content';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { WordStudy } from '../types';
 import { logger } from '../utils/logger';
 
@@ -22,6 +22,7 @@ interface Props {
 }
 
 export function WordStudyPopup({ visible, onClose, word, onGoToFullStudy }: Props) {
+  const { base } = useTheme();
   const [study, setStudy] = useState<WordStudy | null>(null);
 
   useEffect(() => {

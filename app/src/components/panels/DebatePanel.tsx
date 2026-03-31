@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { getPanelColors, base, spacing, fontFamily } from '../../theme';
+import { useTheme, spacing, fontFamily } from '../../theme';
 import type { DebateEntry } from '../../types';
 
 interface Props { entries: DebateEntry[]; onScholarPress?: (scholarId: string) => void; }
 
 export function DebatePanel({ entries, onScholarPress }: Props) {
+  const { base, getPanelColors } = useTheme();
   const colors = getPanelColors('debate');
   if (!entries?.length) return null;
 

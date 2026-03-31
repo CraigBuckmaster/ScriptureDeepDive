@@ -12,6 +12,10 @@ export type { TypographyPreset } from './typography';
 export { spacing, radii, MIN_TOUCH_TARGET } from './spacing';
 export { FONT_MAP } from './fonts';
 
+export { useTheme } from './ThemeContext';
+export { ThemeProvider } from './ThemeProvider';
+export type { ThemePalette, ThemeMode } from './palettes';
+
 import { panels, scholars } from './colors';
 import type { PanelColors } from './colors';
 

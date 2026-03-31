@@ -17,13 +17,14 @@ import { Search as SearchIcon } from 'lucide-react-native';
 import { useSearch } from '../hooks/useSearch';
 import { SearchInput } from '../components/SearchInput';
 import { SearchFilterChips, type SearchFilter } from '../components/SearchFilterChips';
-import { base, spacing, radii, fontFamily, eras } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { Person, WordStudy, Verse } from '../types';
 
 const INITIAL_VERSE_LIMIT = 20;
 const LOAD_MORE_INCREMENT = 30;
 
 export default function SearchScreen() {
+  const { base, eras } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Search', 'SearchMain'>>();
   const [query, setQuery] = useState('');
   const [verseLimit, setVerseLimit] = useState(INITIAL_VERSE_LIMIT);
@@ -64,7 +65,7 @@ export default function SearchScreen() {
   const hasResults = results.people.length > 0 || results.wordStudies.length > 0 || results.verses.length > 0;
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       {/* Search input */}
       <View style={styles.inputWrapper}>
         <SearchInput
@@ -91,14 +92,14 @@ export default function SearchScreen() {
         /* Idle state */
         <View style={styles.emptyCenter}>
           <SearchIcon size={28} color={base.textMuted + '60'} />
-          <Text style={styles.emptyText}>
+          <Text style={[styles.emptyText, { color: base.textMuted }]}>
             Search verses, people, and more
           </Text>
         </View>
       ) : !hasResults && !isLoading ? (
         /* No results */
         <View style={styles.emptyCenter}>
-          <Text style={styles.emptyText}>
+          <Text style={[styles.emptyText, { color: base.textMuted }]}>
             No results found for "{trimmed}"
           </Text>
         </View>
@@ -109,8 +110,8 @@ export default function SearchScreen() {
           keyExtractor={(item, i) => `${item.type}-${i}`}
           contentContainerStyle={styles.listContent}
           renderSectionHeader={({ section }) => (
-            <View style={styles.sectionHeader}>
-              <Text style={styles.sectionTitle}>
+            <View style={[styles.sectionHeader, { backgroundColor: base.bg }]}>
+              <Text style={[styles.sectionTitle, { color: base.textMuted }]}>
                 {section.title.toUpperCase()}
               </Text>
             </View>
@@ -122,7 +123,7 @@ export default function SearchScreen() {
                   onPress={() => setVerseLimit((prev) => prev + LOAD_MORE_INCREMENT)}
                   style={styles.loadMoreButton}
                 >
-                  <Text style={styles.loadMoreText}>Load more verses</Text>
+                  <Text style={[styles.loadMoreText, { color: base.gold }]}>Load more verses</Text>
                 </TouchableOpacity>
               );
             }
@@ -141,8 +142,8 @@ export default function SearchScreen() {
                     { backgroundColor: p.era ? (eras[p.era] ?? base.textMuted) : base.textMuted },
                   ]} />
                   <View style={styles.personText}>
-                    <Text style={styles.personName}>{p.name}</Text>
-                    <Text style={styles.personRole} numberOfLines={1}>{p.role}</Text>
+                    <Text style={[styles.personName, { color: base.text }]}>{p.name}</Text>
+                    <Text style={[styles.personRole, { color: base.textMuted }]} numberOfLines={1}>{p.role}</Text>
                   </View>
                 </TouchableOpacity>
               );
@@ -158,7 +159,7 @@ export default function SearchScreen() {
                   style={styles.wordRow}
                 >
                   <Text style={styles.wordOriginal}>{w.original}</Text>
-                  <Text style={styles.wordTranslit}>{w.transliteration}</Text>
+                  <Text style={[styles.wordTranslit, { color: base.goldDim }]}>{w.transliteration}</Text>
                 </TouchableOpacity>
               );
             }
@@ -173,10 +174,10 @@ export default function SearchScreen() {
                 })}
                 style={styles.verseRow}
               >
-                <Text style={styles.verseRef}>
+                <Text style={[styles.verseRef, { color: base.gold }]}>
                   {displayName} {v.chapter_num}:{v.verse_num}
                 </Text>
-                <Text style={styles.verseText} numberOfLines={2}>{v.text}</Text>
+                <Text style={[styles.verseText, { color: base.textDim }]} numberOfLines={2}>{v.text}</Text>
               </TouchableOpacity>
             );
           }}
@@ -189,7 +190,6 @@ export default function SearchScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   inputWrapper: {
     paddingHorizontal: spacing.md,
@@ -203,10 +203,8 @@ const styles = StyleSheet.create({
   sectionHeader: {
     paddingTop: spacing.md,
     paddingBottom: spacing.xs,
-    backgroundColor: base.bg,
   },
   sectionTitle: {
-    color: base.textMuted,
     fontFamily: fontFamily.display,
     fontSize: 10,
     letterSpacing: 0.5,
@@ -217,7 +215,6 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
   },
   emptyText: {
-    color: base.textMuted,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 15,
   },
@@ -237,12 +234,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   personName: {
-    color: base.text,
     fontFamily: fontFamily.uiMedium,
     fontSize: 14,
   },
   personRole: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 11,
   },
@@ -256,7 +251,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   wordTranslit: {
-    color: base.goldDim,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 12,
   },
@@ -265,12 +259,10 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.xs,
   },
   verseRef: {
-    color: base.gold,
     fontFamily: fontFamily.uiMedium,
     fontSize: 12,
   },
   verseText: {
-    color: base.textDim,
     fontFamily: fontFamily.ui,
     fontSize: 12,
   },
@@ -280,7 +272,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   loadMoreText: {
-    color: base.gold,
     fontFamily: fontFamily.uiMedium,
     fontSize: 13,
   },
