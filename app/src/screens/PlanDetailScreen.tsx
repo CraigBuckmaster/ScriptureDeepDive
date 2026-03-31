@@ -7,11 +7,12 @@ import { getPlans, getActivePlanId, getPlanProgress, startPlan, completePlanDay,
 import { PlanProgressBar } from '../components/PlanProgressBar';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { ReadingPlan, PlanProgress } from '../db/user';
 import { logger } from '../utils/logger';
 
 export default function PlanDetailScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'PlanDetail'>>();
   const route = useRoute<ScreenRouteProp<'More', 'PlanDetail'>>();
   const { planId } = route.params ?? {};
@@ -51,17 +52,17 @@ export default function PlanDetailScreen() {
 
   if (!plan) {
     return (
-      <View style={styles.loading}>
+      <View style={[styles.loading, { backgroundColor: base.bg }]}>
         <LoadingSkeleton lines={6} height={16} />
       </View>
     );
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       <View style={styles.topSection}>
         <ScreenHeader title={plan.name} onBack={() => navigation.goBack()} />
-        <Text style={styles.description}>{plan.description}</Text>
+        <Text style={[styles.description, { color: base.textDim }]}>{plan.description}</Text>
 
         {isActive ? (
           <View style={styles.progressBlock}>
@@ -71,8 +72,8 @@ export default function PlanDetailScreen() {
             </TouchableOpacity>
           </View>
         ) : (
-          <TouchableOpacity onPress={handleStart} style={styles.startButton}>
-            <Text style={styles.startButtonText}>Start Plan</Text>
+          <TouchableOpacity onPress={handleStart} style={[styles.startButton, { backgroundColor: base.gold + '30' }]}>
+            <Text style={[styles.startButtonText, { color: base.gold }]}>Start Plan</Text>
           </TouchableOpacity>
         )}
       </View>
@@ -86,8 +87,8 @@ export default function PlanDetailScreen() {
           const isDone = !!dayProgress?.completed_at;
 
           return (
-            <View style={styles.dayRow} accessibilityLabel={`Day ${dayData.day}${isDone ? ", completed" : ""}`}>
-              <Text style={[styles.dayNum, isDone && styles.dayDone]}>
+            <View style={[styles.dayRow, { borderBottomColor: base.border + '40' }]} accessibilityLabel={`Day ${dayData.day}${isDone ? ", completed" : ""}`}>
+              <Text style={[styles.dayNum, { color: base.textMuted }, isDone && styles.dayDone]}>
                 {isDone ? '✓' : dayData.day}
               </Text>
               <View style={styles.dayChapters}>
@@ -101,7 +102,7 @@ export default function PlanDetailScreen() {
                       });
                     }}
                   >
-                    <Text style={styles.chapterLabel}>{ch.replace('_', ' ')}</Text>
+                    <Text style={[styles.chapterLabel, { color: base.textDim }]}>{ch.replace('_', ' ')}</Text>
                   </TouchableOpacity>
                 ))}
               </View>
@@ -116,11 +117,9 @@ export default function PlanDetailScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   loading: {
     flex: 1,
-    backgroundColor: base.bg,
     padding: spacing.lg,
   },
   topSection: {
@@ -128,7 +127,6 @@ const styles = StyleSheet.create({
     paddingTop: spacing.lg,
   },
   description: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 14,
     marginTop: 4,
@@ -145,14 +143,12 @@ const styles = StyleSheet.create({
   },
   startButton: {
     marginTop: spacing.md,
-    backgroundColor: base.gold + '30',
     borderRadius: radii.sm,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
     alignSelf: 'flex-start' as const,
   },
   startButtonText: {
-    color: base.gold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 14,
   },
@@ -165,10 +161,8 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
     paddingVertical: spacing.sm,
     borderBottomWidth: 1,
-    borderBottomColor: base.border + '40',
   },
   dayNum: {
-    color: base.textMuted,
     fontSize: 14,
     width: 20,
   },
@@ -179,7 +173,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   chapterLabel: {
-    color: base.textDim,
     fontFamily: fontFamily.ui,
     fontSize: 13,
   },

@@ -15,10 +15,11 @@ import { getBook } from '../db/content';
 import { getProgressForBook } from '../db/user';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { ArrowRight } from 'lucide-react-native';
-import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { Book } from '../types';
 
 export default function ChapterListScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Read', 'ChapterList'>>();
   const route = useRoute<ScreenRouteProp<'Read', 'ChapterList'>>();
   const { bookId } = route.params ?? {};
@@ -34,10 +35,10 @@ export default function ChapterListScreen() {
     }
   }, [bookId]);
 
-  if (!book) return <View style={styles.container} />;
+  if (!book) return <View style={[styles.container, { backgroundColor: base.bg }]} />;
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       <ScrollView contentContainerStyle={styles.content}>
         {/* Header with back button */}
         <ScreenHeader
@@ -55,7 +56,7 @@ export default function ChapterListScreen() {
           accessibilityLabel="About this book"
           accessibilityRole="button"
         >
-          <Text style={styles.introLinkText}>About This Book</Text>
+          <Text style={[styles.introLinkText, { color: base.gold }]}>About This Book</Text>
           <ArrowRight size={13} color={base.gold} />
         </TouchableOpacity>
 
@@ -70,12 +71,14 @@ export default function ChapterListScreen() {
                 disabled={!book.is_live}
                 style={[
                   styles.cell,
-                  isVisited && styles.cellVisited,
+                  { backgroundColor: base.bgElevated },
+                  isVisited && { backgroundColor: base.gold + '30' },
                 ]}
               >
                 <Text style={[
                   styles.cellText,
-                  !book.is_live && styles.cellTextDim,
+                  { color: base.gold },
+                  !book.is_live && { color: base.textMuted },
                 ]}>
                   {ch}
                 </Text>
@@ -91,7 +94,6 @@ export default function ChapterListScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   content: {
     padding: spacing.md,
@@ -103,7 +105,6 @@ const styles = StyleSheet.create({
     marginBottom: spacing.lg,
   },
   introLinkText: {
-    color: base.gold,
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 13,
   },
@@ -117,18 +118,10 @@ const styles = StyleSheet.create({
     height: MIN_TOUCH_TARGET,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: base.bgElevated,
     borderRadius: radii.sm,
   },
-  cellVisited: {
-    backgroundColor: base.gold + '30',
-  },
   cellText: {
-    color: base.gold,
     fontFamily: fontFamily.uiMedium,
     fontSize: 14,
-  },
-  cellTextDim: {
-    color: base.textMuted,
   },
 });

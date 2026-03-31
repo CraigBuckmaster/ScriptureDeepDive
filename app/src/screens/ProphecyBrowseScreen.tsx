@@ -11,7 +11,7 @@ import { useProphecyChains } from '../hooks/useProphecyChains';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { BadgeChip } from '../components/BadgeChip';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { ProphecyChain, ProphecyChainLink } from '../types';
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -58,6 +58,7 @@ function getRefRange(links: ProphecyChainLink[]): string {
 }
 
 export default function ProphecyBrowseScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ProphecyBrowse'>>();
   const { chains, isLoading } = useProphecyChains();
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
@@ -76,7 +77,7 @@ export default function ProphecyBrowseScreen() {
 
   if (isLoading) {
     return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
         <View style={styles.loadingPad}>
           <LoadingSkeleton lines={6} />
         </View>
@@ -85,7 +86,7 @@ export default function ProphecyBrowseScreen() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       <View style={styles.topSection}>
         <ScreenHeader
           title="Prophecy & Typology"
@@ -100,6 +101,8 @@ export default function ProphecyBrowseScreen() {
               <Text
                 style={[
                   styles.filterLabel,
+                  { color: base.textMuted },
+                  categoryFilter === cat && { color: base.gold, borderBottomColor: base.gold },
                   categoryFilter === cat && styles.filterLabelActive,
                 ]}
               >
@@ -122,12 +125,12 @@ export default function ProphecyBrowseScreen() {
           return (
             <TouchableOpacity
               onPress={() => navigation.navigate('ProphecyDetail', { chainId: item.id })}
-              style={styles.card}
+              style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.gold + '25' }]}
               accessibilityLabel={item.title}
               accessibilityRole="button"
             >
               <View style={styles.cardHeader}>
-                <Text style={styles.cardTitle} numberOfLines={2}>
+                <Text style={[styles.cardTitle, { color: base.text }]} numberOfLines={2}>
                   {item.title}
                 </Text>
                 <BadgeChip
@@ -138,14 +141,14 @@ export default function ProphecyBrowseScreen() {
               </View>
 
               {item.summary && (
-                <Text style={styles.cardSummary} numberOfLines={2}>
+                <Text style={[styles.cardSummary, { color: base.textDim }]} numberOfLines={2}>
                   {item.summary}
                 </Text>
               )}
 
               <View style={styles.cardFooter}>
-                <Text style={styles.refRange}>{refRange}</Text>
-                <Text style={styles.linkCount}>{links.length} links</Text>
+                <Text style={[styles.refRange, { color: base.goldDim }]}>{refRange}</Text>
+                <Text style={[styles.linkCount, { color: base.textMuted }]}>{links.length} links</Text>
               </View>
             </TouchableOpacity>
           );
@@ -158,7 +161,6 @@ export default function ProphecyBrowseScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   loadingPad: {
     padding: spacing.lg,
@@ -177,24 +179,19 @@ const styles = StyleSheet.create({
     marginBottom: spacing.md,
   },
   filterLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.displayMedium,
     fontSize: 12,
     paddingBottom: 4,
   },
   filterLabelActive: {
-    color: base.gold,
     borderBottomWidth: 2,
-    borderBottomColor: base.gold,
   },
   listContent: {
     paddingHorizontal: spacing.md,
     paddingBottom: spacing.xxl,
   },
   card: {
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.gold + '25',
     borderRadius: radii.md,
     padding: spacing.md,
     marginBottom: spacing.sm,
@@ -207,12 +204,10 @@ const styles = StyleSheet.create({
   },
   cardTitle: {
     flex: 1,
-    color: base.text,
     fontFamily: fontFamily.displayMedium,
     fontSize: 15,
   },
   cardSummary: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 13,
     lineHeight: 18,
@@ -225,12 +220,10 @@ const styles = StyleSheet.create({
     marginTop: spacing.sm,
   },
   refRange: {
-    color: base.goldDim,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 11,
   },
   linkCount: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 11,
   },
