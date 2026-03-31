@@ -19,13 +19,14 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { ChevronLeft, Search, X } from 'lucide-react-native';
 import { useConcepts, Concept } from '../hooks/useConceptData';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { ExploreStackParamList } from '../navigation/types';
 
 type Nav = NativeStackNavigationProp<ExploreStackParamList, 'ConceptBrowse'>;
 
 export default function ConceptBrowseScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<Nav>();
   const { concepts, loading } = useConcepts();
   const [search, setSearch] = useState('');
@@ -44,18 +45,18 @@ export default function ConceptBrowseScreen() {
 
   const renderItem = ({ item }: { item: Concept }) => (
     <TouchableOpacity
-      style={styles.card}
+      style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
       activeOpacity={0.7}
       onPress={() => navigation.navigate('ConceptDetail', { conceptId: item.id })}
     >
-      <Text style={styles.cardTitle}>{item.title}</Text>
-      <Text style={styles.cardDesc} numberOfLines={3}>
+      <Text style={[styles.cardTitle, { color: base.text }]}>{item.title}</Text>
+      <Text style={[styles.cardDesc, { color: base.textDim }]} numberOfLines={3}>
         {item.description}
       </Text>
       <View style={styles.tagRow}>
         {item.tags.slice(0, 3).map((tag) => (
-          <View key={tag} style={styles.tag}>
-            <Text style={styles.tagText}>{tag}</Text>
+          <View key={tag} style={[styles.tag, { backgroundColor: base.gold + '15' }]}>
+            <Text style={[styles.tagText, { color: base.gold }]}>{tag}</Text>
           </View>
         ))}
       </View>
@@ -63,23 +64,23 @@ export default function ConceptBrowseScreen() {
   );
 
   return (
-    <SafeAreaView style={styles.container} edges={['top']}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]} edges={['top']}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()} hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}>
           <ChevronLeft size={24} color={base.gold} />
         </TouchableOpacity>
-        <Text style={styles.title}>Concepts</Text>
+        <Text style={[styles.title, { color: base.gold }]}>Concepts</Text>
         <View style={{ width: 24 }} />
       </View>
 
       {/* Search */}
       <View style={styles.searchRow}>
-        <View style={styles.searchBox}>
+        <View style={[styles.searchBox, { backgroundColor: base.bgElevated }]}>
           <Search size={16} color={base.textMuted} />
           <TextInput
             ref={inputRef}
-            style={styles.searchInput}
+            style={[styles.searchInput, { color: base.text }]}
             placeholder="Search concepts…"
             placeholderTextColor={base.textMuted}
             value={search}
@@ -101,7 +102,7 @@ export default function ConceptBrowseScreen() {
         </View>
       ) : filtered.length === 0 ? (
         <View style={styles.center}>
-          <Text style={styles.emptyText}>No concepts found</Text>
+          <Text style={[styles.emptyText, { color: base.textMuted }]}>No concepts found</Text>
         </View>
       ) : (
         <FlatList
@@ -120,7 +121,6 @@ export default function ConceptBrowseScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   header: {
     flexDirection: 'row',
@@ -130,7 +130,6 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.sm,
   },
   title: {
-    color: base.gold,
     fontFamily: fontFamily.displaySemiBold,
     fontSize: 18,
   },
@@ -141,7 +140,6 @@ const styles = StyleSheet.create({
   searchBox: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: base.bgElevated,
     borderRadius: radii.md,
     paddingHorizontal: spacing.sm,
     height: 40,
@@ -149,7 +147,6 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     flex: 1,
-    color: base.text,
     fontFamily: fontFamily.ui,
     fontSize: 14,
     paddingVertical: 0,
@@ -159,21 +156,17 @@ const styles = StyleSheet.create({
     paddingTop: spacing.xs,
   },
   card: {
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.gold + '20',
     borderRadius: radii.lg,
     padding: spacing.md,
     marginBottom: spacing.sm,
   },
   cardTitle: {
-    color: base.text,
     fontFamily: fontFamily.displayMedium,
     fontSize: 15,
     marginBottom: spacing.xs,
   },
   cardDesc: {
-    color: base.textDim,
     fontFamily: fontFamily.ui,
     fontSize: 13,
     lineHeight: 18,
@@ -185,13 +178,11 @@ const styles = StyleSheet.create({
     marginTop: spacing.sm,
   },
   tag: {
-    backgroundColor: base.gold + '15',
     paddingHorizontal: spacing.xs + 2,
     paddingVertical: 2,
     borderRadius: radii.sm,
   },
   tagText: {
-    color: base.gold,
     fontFamily: fontFamily.ui,
     fontSize: 10,
   },
@@ -201,7 +192,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   emptyText: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 14,
   },
