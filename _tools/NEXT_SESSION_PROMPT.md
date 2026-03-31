@@ -31,6 +31,16 @@ Batches 1–6 complete (ghost deps, git history purge, DB version externalizatio
 
 Prophecy chains (50 chains, 283 links, browse + detail screens) · Enhanced notes (3-tab AllNotes, collections, FTS) · Discourse panels (Romans 1-16) · Concept Explorer (20 concepts) · Difficult Passages (53 entries, all enriched, browse + detail screens) · Word Studies (43 studies) · Timeline system (543 entries, 87% chapter deep-link coverage, full UI)
 
+### Deep Study Features (In Progress)
+
+| Phase | Description | Status |
+|-------|-------------|--------|
+| 0 | Chapter panel button categorization (3 groups) | **Complete** |
+| 1 | TabbedPanelRenderer composite infrastructure | **Complete** |
+| 2 | Composite Context Panel (hist → tabbed) | Next |
+| 3 | Composite Connections Panel (cross → tabbed) | Next |
+| 4-23 | See `_tools/DEEP_STUDY_FEATURES_PLAN.md` | Planned |
+
 ### Content Remediation
 
 Batches 0–5 complete (word study bugfix, scholar bios, ghost panels, people enrichment, parallel passages, new word studies). Difficult Passages enrichment 15A-E all complete — 53/53 passages fully enriched with 243 responses across 35+ scholars, no scholar >10%.
@@ -43,13 +53,14 @@ Batches 0–5 complete (word study bugfix, scholar bios, ghost panels, people en
 
 ## What's Next
 
-1. **Thin Panel Enrichment** (~259 panels) — 138 section panels (mostly thin cross-refs in Chronicles/Nehemiah/Esther) + 121 chapter panels (mostly thin ppl/rec in prophets)
-2. **Inline Style Migration** (Arch Batch 7) — 318 inline `style={{ }}` objects, migrate to `StyleSheet.create()`
-3. **Cross-reference thread expansion** (Batch 13)
-4. **Map story enhancements** (Batch 14)
-5. **Isaiah 23-66 enrichment debt** (44 chapters, thin panels)
-6. **Kings/Chronicles MacArthur enrichment debt** (112 chapters)
-7. **Test foundation → CI/CD → branch protection** (Arch 8A-C)
+1. **Deep Study Features Phase 2 + 3** — Composite Context Panel (hist → tabbed with historical/audience/ANE tabs) + Composite Connections Panel (cross → tabbed with refs/echoes tabs)
+2. **Thin Panel Enrichment** (~259 panels) — 138 section panels (mostly thin cross-refs in Chronicles/Nehemiah/Esther) + 121 chapter panels (mostly thin ppl/rec in prophets)
+3. **Inline Style Migration** (Arch Batch 7) — 318 inline `style={{ }}` objects, migrate to `StyleSheet.create()`
+4. **Cross-reference thread expansion** (Batch 13)
+5. **Map story enhancements** (Batch 14)
+6. **Isaiah 23-66 enrichment debt** (44 chapters, thin panels)
+7. **Kings/Chronicles MacArthur enrichment debt** (112 chapters)
+8. **Test foundation → CI/CD → branch protection** (Arch 8A-C)
 
 ---
 
