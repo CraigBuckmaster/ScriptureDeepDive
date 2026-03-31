@@ -17,7 +17,7 @@ import { useScrollToTop } from '@react-navigation/native';
 import { useBooks, type BookWithProgress } from '../hooks/useBooks';
 import { useSettingsStore } from '../stores';
 import { SearchInput } from '../components/SearchInput';
-import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 
 // ── Tradition groupings (by book_order index) ────────────────────
 
@@ -36,31 +36,32 @@ const NT_GROUPS = [
   { title: 'Apocalypse', range: [65, 66] },
 ];
 
-const BookRow = React.memo(function BookRow({ book, onPress }: {
+const BookRow = React.memo(function BookRow({ book, onPress, base }: {
   book: BookWithProgress;
   onPress: (bookId: string) => void;
+  base: ReturnType<typeof useTheme>['base'];
 }) {
   return (
     <TouchableOpacity
       onPress={() => onPress(book.id)}
-      style={styles.bookRow}
+      style={[styles.bookRow, { borderBottomColor: base.border + '40' }]}
     >
       <View style={styles.bookRowContent}>
         <View style={styles.bookRowHeader}>
-          <Text style={[styles.bookName, !book.is_live && styles.bookNameDim]}>
+          <Text style={[styles.bookName, { color: base.text }, !book.is_live && { color: base.textMuted }]}>
             {book.name}
           </Text>
-          <Text style={styles.chapterCount}>
+          <Text style={[styles.chapterCount, { color: base.textMuted }]}>
             {book.chaptersRead > 0
               ? `${book.chaptersRead}/${book.total_chapters}`
               : `${book.total_chapters} ch`}
           </Text>
         </View>
         {book.chaptersRead > 0 && (
-          <View style={styles.progressTrack}>
+          <View style={[styles.progressTrack, { backgroundColor: base.border }]}>
             <View style={[
               styles.progressFill,
-              { width: `${(book.chaptersRead / book.total_chapters) * 100}%` },
+              { width: `${(book.chaptersRead / book.total_chapters) * 100}%`, backgroundColor: base.gold + '50' },
             ]} />
           </View>
         )}
@@ -70,6 +71,7 @@ const BookRow = React.memo(function BookRow({ book, onPress }: {
 });
 
 export default function BookListScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Read', 'BookList'>>();
   const scrollRef = useRef<FlatList>(null);
   useScrollToTop(scrollRef);
@@ -110,18 +112,18 @@ export default function BookListScreen() {
   }, [navigation]);
 
   const renderBookRow = useCallback(({ item: book }: { item: BookWithProgress }) => (
-    <BookRow book={book} onPress={handleBookPress} />
-  ), [handleBookPress]);
+    <BookRow book={book} onPress={handleBookPress} base={base} />
+  ), [handleBookPress, base]);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       {/* Title + segment toggle on same row */}
       <View style={styles.titleRow}>
-        <Text style={styles.title}>Library</Text>
+        <Text style={[styles.title, { color: base.gold }]}>Library</Text>
         <View style={styles.segmentRow}>
           {([['canonical', 'Canonical'], ['thematic', 'By Genre']] as const).map(([key, label]) => (
             <TouchableOpacity key={key} onPress={() => setMode(key)}>
-              <Text style={[styles.segmentLabel, mode === key && styles.segmentActive]}>
+              <Text style={[styles.segmentLabel, { color: base.textMuted }, mode === key && [styles.segmentActive, { color: base.gold, borderBottomColor: base.gold }]]}>
                 {label}
               </Text>
             </TouchableOpacity>
@@ -134,7 +136,7 @@ export default function BookListScreen() {
         <View style={styles.testamentRow}>
           {(['ot', 'nt'] as const).map((t) => (
             <TouchableOpacity key={t} onPress={() => setTestament(t)}>
-              <Text style={[styles.testamentLabel, testament === t && styles.testamentActive]}>
+              <Text style={[styles.testamentLabel, { color: base.textMuted }, testament === t && [styles.testamentActive, { color: base.gold, borderBottomColor: base.gold }]]}>
                 {t === 'ot' ? 'Old Testament' : 'New Testament'}
               </Text>
             </TouchableOpacity>
@@ -163,7 +165,7 @@ export default function BookListScreen() {
           contentContainerStyle={styles.listContent}
           ListEmptyComponent={
             <View style={styles.emptyWrap}>
-              <Text style={styles.emptyText}>No books matching "{search.trim()}"</Text>
+              <Text style={[styles.emptyText, { color: base.textMuted }]}>No books matching "{search.trim()}"</Text>
             </View>
           }
         />
@@ -181,8 +183,8 @@ export default function BookListScreen() {
           keyExtractor={(item) => item.id}
           contentContainerStyle={styles.listContent}
           renderSectionHeader={({ section }) => (
-            <View style={styles.sectionHeader}>
-              <Text style={styles.sectionTitle}>
+            <View style={[styles.sectionHeader, { backgroundColor: base.bg }]}>
+              <Text style={[styles.sectionTitle, { color: base.textMuted }]}>
                 {section.title.toUpperCase()}
               </Text>
             </View>
@@ -197,10 +199,8 @@ export default function BookListScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   title: {
-    color: base.gold,
     fontFamily: fontFamily.displaySemiBold,
     fontSize: 22,
   },
@@ -217,15 +217,12 @@ const styles = StyleSheet.create({
     gap: spacing.md,
   },
   segmentLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.displayMedium,
     fontSize: 13,
     paddingBottom: 4,
   },
   segmentActive: {
-    color: base.gold,
     borderBottomWidth: 2,
-    borderBottomColor: base.gold,
   },
   testamentRow: {
     flexDirection: 'row',
@@ -234,15 +231,12 @@ const styles = StyleSheet.create({
     marginBottom: spacing.sm,
   },
   testamentLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.uiMedium,
     fontSize: 12,
     paddingBottom: 3,
   },
   testamentActive: {
-    color: base.gold,
     borderBottomWidth: 2,
-    borderBottomColor: base.gold,
   },
   searchRow: {
     paddingHorizontal: spacing.md,
@@ -252,13 +246,11 @@ const styles = StyleSheet.create({
     paddingBottom: spacing.xxl,
   },
   sectionHeader: {
-    backgroundColor: base.bg,
     paddingHorizontal: spacing.md,
     paddingTop: spacing.md,
     paddingBottom: spacing.xs,
   },
   sectionTitle: {
-    color: base.textMuted,
     fontFamily: fontFamily.uiMedium,
     fontSize: 11,
     letterSpacing: 0.5,
@@ -268,7 +260,6 @@ const styles = StyleSheet.create({
     minHeight: MIN_TOUCH_TARGET,
     justifyContent: 'center',
     borderBottomWidth: 1,
-    borderBottomColor: base.border + '40',
   },
   bookRowContent: {
     paddingVertical: 6,
@@ -279,27 +270,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   bookName: {
-    color: base.text,
     fontFamily: fontFamily.display,
     fontSize: 14,
   },
   bookNameDim: {
-    color: base.textMuted,
   },
   chapterCount: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 11,
   },
   progressTrack: {
     height: 2,
-    backgroundColor: base.border,
     borderRadius: 1,
     marginTop: 4,
   },
   progressFill: {
     height: 2,
-    backgroundColor: base.gold + '50',
     borderRadius: 1,
   },
   emptyWrap: {
@@ -307,7 +293,6 @@ const styles = StyleSheet.create({
     paddingTop: spacing.xxl,
   },
   emptyText: {
-    color: base.textMuted,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 14,
   },

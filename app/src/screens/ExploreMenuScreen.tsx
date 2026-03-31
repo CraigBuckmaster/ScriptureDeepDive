@@ -11,7 +11,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { useScrollToTop } from '@react-navigation/native';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 interface Feature {
   title: string;
@@ -71,14 +71,15 @@ const GRID_FEATURES: Feature[] = [
 ];
 
 export default function ExploreMenuScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ExploreMenu'>>();
   const scrollRef = useRef<ScrollView>(null);
   useScrollToTop(scrollRef);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       <ScrollView ref={scrollRef} contentContainerStyle={styles.content}>
-        <Text style={styles.title} accessibilityRole="header">Explore</Text>
+        <Text style={[styles.title, { color: base.gold }]} accessibilityRole="header">Explore</Text>
 
         {/* Hero cards — full width */}
         {HERO_FEATURES.map((f) => (
@@ -86,10 +87,10 @@ export default function ExploreMenuScreen() {
             key={f.screen}
             onPress={() => navigation.navigate(f.screen)}
             activeOpacity={0.7}
-            style={styles.heroCard}
+            style={[styles.heroCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
           >
-            <Text style={styles.heroTitle}>{f.title}</Text>
-            <Text style={styles.heroSubtitle}>{f.subtitle}</Text>
+            <Text style={[styles.heroTitle, { color: base.text }]}>{f.title}</Text>
+            <Text style={[styles.heroSubtitle, { color: base.textDim }]}>{f.subtitle}</Text>
           </TouchableOpacity>
         ))}
 
@@ -100,10 +101,10 @@ export default function ExploreMenuScreen() {
               key={f.screen}
               onPress={() => navigation.navigate(f.screen)}
               activeOpacity={0.7}
-              style={styles.gridCard}
+              style={[styles.gridCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
             >
-              <Text style={styles.gridTitle}>{f.title}</Text>
-              <Text style={styles.gridSubtitle}>{f.subtitle}</Text>
+              <Text style={[styles.gridTitle, { color: base.text }]}>{f.title}</Text>
+              <Text style={[styles.gridSubtitle, { color: base.textMuted }]}>{f.subtitle}</Text>
             </TouchableOpacity>
           ))}
         </View>
@@ -115,33 +116,27 @@ export default function ExploreMenuScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   content: {
     padding: spacing.md,
     paddingBottom: spacing.xxl,
   },
   title: {
-    color: base.gold,
     fontFamily: fontFamily.displaySemiBold,
     fontSize: 22,
     marginBottom: spacing.lg,
   },
   heroCard: {
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.gold + '20',
     borderRadius: radii.lg,
     padding: spacing.md,
     marginBottom: spacing.sm + 2,
   },
   heroTitle: {
-    color: base.text,
     fontFamily: fontFamily.displayMedium,
     fontSize: 15,
   },
   heroSubtitle: {
-    color: base.textDim,
     fontFamily: fontFamily.ui,
     fontSize: 12,
     marginTop: 3,
@@ -154,21 +149,17 @@ const styles = StyleSheet.create({
   },
   gridCard: {
     width: '48%',
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.gold + '20',
     borderRadius: radii.md,
     padding: spacing.md,
     minHeight: 72,
     justifyContent: 'center',
   },
   gridTitle: {
-    color: base.text,
     fontFamily: fontFamily.displayMedium,
     fontSize: 13,
   },
   gridSubtitle: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 11,
     marginTop: 3,

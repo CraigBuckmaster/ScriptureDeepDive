@@ -40,7 +40,7 @@ import { InterlinearSheet } from '../components/InterlinearSheet';
 import { TTSControls } from '../components/TTSControls';
 import { useTTS } from '../hooks/useTTS';
 
-import { base, spacing } from '../theme';
+import { useTheme, spacing } from '../theme';
 
 // Enable LayoutAnimation on Android
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
@@ -48,6 +48,7 @@ if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental
 }
 
 export default function ChapterScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Read', 'Chapter'>>();
   const route = useRoute<ScreenRouteProp<'Read', 'Chapter'>>();
   const { bookId, chapterNum } = route.params ?? {};
@@ -227,7 +228,7 @@ export default function ChapterScreen() {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: base.bg }]}>
       <ChapterNavBar
         bookName={bookData?.name ?? bookId}
         chapterNum={chapterNum}
@@ -245,8 +246,8 @@ export default function ChapterScreen() {
       />
 
       {/* Reading progress bar */}
-      <View style={styles.progressTrack}>
-        <View style={[styles.progressFill, { width: `${scrollProgress * 100}%` }]} />
+      <View style={[styles.progressTrack, { backgroundColor: base.border }]}>
+        <View style={[styles.progressFill, { width: `${scrollProgress * 100}%`, backgroundColor: base.gold }]} />
       </View>
 
       {/* Translation picker */}
@@ -465,15 +466,12 @@ export default function ChapterScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   progressTrack: {
     height: 2,
-    backgroundColor: base.border,
   },
   progressFill: {
     height: 2,
-    backgroundColor: base.gold,
   },
   scroll: {
     flex: 1,
