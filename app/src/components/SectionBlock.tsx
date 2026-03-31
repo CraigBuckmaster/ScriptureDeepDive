@@ -64,9 +64,6 @@ export function SectionBlock({
     <View style={styles.container}>
       <SectionHeader header={section.header} />
 
-      {/* Panel button row above verses — primary discovery point */}
-      {renderButtonRow?.(panels, section.id)}
-
       <VerseBlock
         verses={sectionVerses}
         vhlGroups={vhlGroups}
@@ -77,6 +74,9 @@ export function SectionBlock({
         onVhlWordPress={handleVhlWordPress}
         onNotePress={onNotePress}
       />
+
+      {/* Panel button row after verses */}
+      {renderButtonRow?.(panels, section.id)}
 
       {/* Active panel content */}
       {activeSectionPanel && renderPanel?.(activeSectionPanel)}
