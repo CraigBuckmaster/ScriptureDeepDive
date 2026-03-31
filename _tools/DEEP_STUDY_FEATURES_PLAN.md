@@ -15,6 +15,39 @@ Before starting ANY phase, clone the repo and read:
 
 ---
 
+## CRITICAL — What Is NOT Changing
+
+This plan is **purely additive**. Every existing feature on the chapter page is preserved exactly as-is. Nothing is being replaced, removed, or redesigned. The wireframes used during planning simplified the UI for readability — they are NOT replacement specs.
+
+### ChapterScreen features that MUST remain untouched:
+
+| Component | File | What it does |
+|-----------|------|--------------|
+| **ChapterNavBar** | `components/ChapterNavBar.tsx` | Full nav bar: Book Name ▾ (Qnav picker) \| ‹ chapter# › (prev/next arrows) \| ⓘ (book intro). DO NOT simplify or replace. |
+| **QnavOverlay** | `components/QnavOverlay.tsx` | Full-screen book/chapter quick-navigation modal. Triggered by tapping book name or chapter number in nav bar. |
+| **NotesOverlay** | `components/notes/NotesOverlay.tsx` | 3-tab notes system (chapter notes, collections, search). Triggered by note badges and verse-level note icons. |
+| **ChapterHeader** | `components/ChapterHeader.tsx` | Title, subtitle, and tappable BadgeChip pills (timeline link, map link, notes count). |
+| **Reading progress bar** | Inline in `ChapterScreen.tsx` | 2px gold bar below nav bar tracking scroll position. |
+| **SectionHeader** | `components/SectionHeader.tsx` | Cinzel gold heading with bottom border for each section. |
+| **VerseBlock + VHL** | `components/VerseBlock.tsx` | Verse text rendering with Verse Highlight Links (colored tappable words that open relevant panels). |
+| **SectionBlock** | `components/SectionBlock.tsx` | Container: SectionHeader → VerseBlock → ButtonRow → active panel. VHL tap handler resolves panel types. |
+| **ButtonRow** | `components/ButtonRow.tsx` | Section-level: content buttons (square) + divider + scholar pills. Wrapping flex layout. |
+| **PanelButton** | `components/PanelButton.tsx` | Individual toggle: square for content, pill for scholars. Gold active state. |
+| **PanelContainer** | `components/PanelContainer.tsx` | Panel wrapper with close button, colored left border, header. |
+| **ScholarlyBlock** | `components/ScholarlyBlock.tsx` | "CHAPTER ANALYSIS" divider + chapter-level ButtonRow + active panel. |
+| **Swipe navigation** | `ChapterScreen.tsx` (onTouchStart/End) | Horizontal swipe to navigate between chapters. |
+| **TTSControls** | `components/TTSControls.tsx` | Play/pause, skip, speed control (exists as component, integration in progress). |
+| **All existing panel types** | `components/panels/*.tsx` | Every existing panel renderer (Hebrew, Context, Historical, CrossRef, Commentary, Places, Timeline, Literary Structure, Hebrew Reading, Themes Radar, People, Translation, Sources, Reception, Threading, Textual, Debate, Discourse) continues to work unchanged for existing data shapes. |
+
+### The integration rules:
+
+1. **New ambient UI (genre banner, depth dots, coach cards) is INSERTED between existing components** — never replacing them.
+2. **Composite panels enhance existing panels** — they detect new data shapes and render tabs, but old data shapes still render exactly as before through the same code paths.
+3. **Phase 0 (chapter categorization) only adds category label headers** between existing buttons. Same buttons, same order, same behavior.
+4. **No component is deleted, renamed, or restructured** unless explicitly stated in a phase's "Files to modify" table.
+
+---
+
 ## Phase 0 — Chapter Panel Categorization
 
 **Goal:** Group the existing 10-11 chapter-level buttons into 3 labeled categories. Zero functionality change, pure UX improvement.
