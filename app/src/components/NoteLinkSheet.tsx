@@ -18,7 +18,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { X, Search, Link } from 'lucide-react-native';
 import { getAllNotes, searchNotesFTS, getLinkedNotes } from '../db/user';
 import { displayRef } from '../utils/verseRef';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { UserNote } from '../types';
 
 interface Props {

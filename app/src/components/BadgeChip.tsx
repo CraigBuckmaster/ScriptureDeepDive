@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
-import { base, radii, spacing, fontFamily } from '../theme';
+import { useTheme, radii, spacing, fontFamily } from '../theme';
 
 interface Props {
   label: string;
@@ -14,6 +14,7 @@ interface Props {
 }
 
 export function BadgeChip({ label, icon, color, onPress }: Props) {
+  const { base } = useTheme();
   const accent = color ?? base.gold;
 
   const content = (
