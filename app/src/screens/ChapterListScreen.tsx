@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     borderRadius: radii.sm,
   },
   cellVisited: {
-    backgroundColor: base.gold + '15',
+    backgroundColor: base.gold + '30',
   },
   cellText: {
     color: base.gold,
@@ -129,6 +129,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   cellTextDim: {
-    color: base.textMuted + '40',
+    color: base.textMuted,
   },
 });

@@ -6,6 +6,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Modal } from 'react-native';
 import { base, spacing, radii, fontFamily } from '../theme';
+import { selectionFeedback } from '../utils/haptics';
 
 const HIGHLIGHT_COLORS = [
   { name: 'gold', hex: '#bfa050', label: 'Key verses' },
@@ -41,7 +42,7 @@ export function HighlightColorPicker({ visible, currentColor, onSelect, onClose 
             {HIGHLIGHT_COLORS.map((c) => (
               <TouchableOpacity
                 key={c.name}
-                onPress={() => { onSelect(c.name); onClose(); }}
+                onPress={() => { selectionFeedback(); onSelect(c.name); onClose(); }}
                 style={{
                   width: 36, height: 36, borderRadius: 18,
                   backgroundColor: c.hex + '60',

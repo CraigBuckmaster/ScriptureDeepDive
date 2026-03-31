@@ -9,6 +9,7 @@ import React, { useMemo } from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, LayoutAnimation, Platform, UIManager } from 'react-native';
 import { PanelRenderer } from './panels/PanelRenderer';
 import { getPanelColors, base, spacing } from '../theme';
+import { lightImpact } from '../utils/haptics';
 import type { ParsedRef } from '../types';
 
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
@@ -49,8 +50,8 @@ export function PanelContainer({
       {/* Close button */}
       {onClose && (
         <TouchableOpacity
-          onPress={onClose}
-          hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+          onPress={() => { lightImpact(); onClose(); }}
+          hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
           accessibilityLabel="Close panel"
           accessibilityRole="button"
           style={styles.closeButton}

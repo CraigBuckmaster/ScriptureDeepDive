@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 import { Check } from 'lucide-react-native';
 import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { selectionFeedback } from '../utils/haptics';
 
 export interface DropdownOption {
   key: string;
@@ -43,6 +44,7 @@ export function CompactDropdown({ value, options, onSelect, direction = 'down' }
   }, []);
 
   const handleSelect = useCallback((key: string) => {
+    selectionFeedback();
     onSelect(key);
     setOpen(false);
   }, [onSelect]);

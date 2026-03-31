@@ -28,7 +28,7 @@ export const VerseBlock = React.memo(function VerseBlock({
   if (!verses.length) return null;
 
   const lineHeight = fontSize * 1.6;
-  const numSize = Math.max(9, fontSize * 0.6);
+  const numSize = Math.max(11, fontSize * 0.65);
 
   return (
     <View style={styles.container}>

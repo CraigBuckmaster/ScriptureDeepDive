@@ -20,7 +20,7 @@ export const base = {
   bg3: '#1a1508',
   text: '#f0e8d8',
   textDim: '#b8a888',
-  textMuted: '#908878',
+  textMuted: '#a09888',
   gold: '#bfa050',
   goldDim: '#8a6e1a',
   goldBright: '#d4b868',
@@ -127,7 +127,6 @@ export const scholars: Record<string, string> = {
   lane: '#b0c0b0',
   cockerill: '#a0a8c0',
   mccartney: '#9f8fa8',
-  jobes: '#b8a8b0',
   davids: '#a8b0b8',
   green: '#b0b8a8',
   yarbrough: '#a8b8a0',
@@ -182,4 +181,13 @@ export const eraPillLabels: Record<string, string> = {
   intertestamental: 'Intertestam.',
   nt: 'NT',
   apostolic: 'Apostolic',
+} as const;
+
+// ── Category Colors (timeline, browse screens) ─────────────────────
+
+export const categoryColors = {
+  event: base.gold,
+  book: '#7a6b5a',
+  person: '#6a9fb5',
+  world: '#b07d4f',
 } as const;

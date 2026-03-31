@@ -76,6 +76,11 @@ export function TabNavigator() {
           tabBarLabel: 'Search',
           tabBarIcon: ({ color, size }) => <Search color={color} size={size} />,
         }}
+        listeners={({ navigation }) => ({
+          tabPress: (e) => {
+            navigation.navigate('SearchTab', { screen: 'SearchMain' });
+          },
+        })}
       />
       <Tab.Screen
         name="MoreTab"
