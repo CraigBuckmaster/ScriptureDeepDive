@@ -51,7 +51,9 @@ Prophecy chains (50 chains, 283 links, browse + detail screens) · Enhanced note
 | 12 | Multi-Translation Support (KJV added, TranslationPicker) | **Complete** |
 | 13 | Interlinear Viewer (444K words, Hebrew + Greek) | **Complete** |
 | 14 | User Accounts & Cloud Sync (architecture doc) | **Complete** |
-| 17-23 | See `_tools/DEEP_STUDY_FEATURES_PLAN.md` | Planned |
+| 17 | TTS Controls Integration | **Complete** |
+| 18 | Search Filters (OT/NT/Book) | **Complete** |
+| 19-23 | See `_tools/DEEP_STUDY_FEATURES_PLAN.md` | Planned |
 
 ### Content Remediation
 
@@ -65,7 +67,7 @@ Batches 0–5 complete (word study bugfix, scholar bios, ghost panels, people en
 
 ## What's Next
 
-1. **Deep Study Features Phase 17+18** — TTS Integration + Search Filters — Session L
+1. **Deep Study Features Phase 19+20** — Highlight UX Polish + Recommendations — Session N
 2. **Thin Panel Enrichment** (~259 panels) — 138 section panels (mostly thin cross-refs in Chronicles/Nehemiah/Esther) + 121 chapter panels (mostly thin ppl/rec in prophets)
 3. **Inline Style Migration** (Arch Batch 7) — 318 inline `style={{ }}` objects, migrate to `StyleSheet.create()`
 4. **Cross-reference thread expansion** (Batch 13)
