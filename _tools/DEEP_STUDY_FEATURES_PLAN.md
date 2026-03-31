@@ -1578,6 +1578,449 @@ feat(content): Phase 23 — 10 curated feature-integrated reading plans
 
 ---
 
+---
+
+# PART 3 — Enhancement Features (Phases 17–23)
+
+These phases bring existing "Good" features to "Strong" by polishing UX, expanding content, and filling functional gaps surfaced in the competitive analysis.
+
+---
+
+## Phase 17 — TTS Integration
+
+**Goal:** Wire the existing `useTTS` hook and `TTSControls` component into ChapterScreen so users can listen to chapters.
+
+**Current state:** `hooks/useTTS.ts` wraps expo-speech with verse-by-verse auto-advance, speed control, play/pause/skip. `components/TTSControls.tsx` renders the control bar. Neither is imported into ChapterScreen.
+
+### Files to modify
+
+| File | Change |
+|------|--------|
+| `app/src/screens/ChapterScreen.tsx` | Import useTTS + TTSControls, render controls bar at bottom when active |
+| `app/src/components/ChapterNavBar.tsx` | Add a speaker/headphone icon button to trigger TTS mode |
+| `app/src/components/TTSControls.tsx` | Migrate inline styles to StyleSheet.create (Arch Batch 7 compliance) |
+
+### Integration design
+
+- **Activation:** Speaker icon in ChapterNavBar (right side, next to ⓘ). Tapping toggles TTS mode.
+- **When active:** TTSControls bar renders as a sticky bottom bar above the tab navigator (position: absolute bottom, or use a Zustand `isTTSActive` flag).
+- **Auto-scroll:** When TTS advances to a new verse, scroll the chapter view to keep the current verse visible. Highlight the currently-speaking verse with a subtle gold left border.
+- **Chapter navigation:** Stop TTS when user swipes to a new chapter. Auto-play next chapter is a future enhancement.
+- **Speed persistence:** Save selected speed to user preferences (existing preferences table in user.db).
+
+### Implementation steps
+
+1. Migrate TTSControls.tsx inline styles to StyleSheet.create
+2. Add speaker icon to ChapterNavBar (lucide `Volume2` or `Headphones`)
+3. Add `isTTSActive` state to ChapterScreen (or reader store)
+4. Call `useTTS(verses)` in ChapterScreen, pass controls to TTSControls
+5. Render TTSControls as a fixed bottom bar when active
+6. Add verse highlighting during playback (subtle gold left border on active verse)
+7. Auto-scroll to active verse during playback
+8. Stop TTS on chapter change (useEffect cleanup)
+9. Test: tap speaker → controls appear, play → verses read aloud with auto-advance, speed changes persist
+
+### Effort: Small (partial session)
+
+---
+
+## Phase 18 — Search Filters
+
+**Goal:** Add testament and book filter chips to SearchScreen for more precise verse searching.
+
+**Current state:** SearchScreen uses FTS5 across verses, people, and word studies. No filtering by testament or book. Results capped at 20 with "load more."
+
+### Files to modify
+
+| File | Change |
+|------|--------|
+| `app/src/screens/SearchScreen.tsx` | Add filter chip row below search input |
+| `app/src/hooks/useSearch.ts` | Accept filter params, modify verse query with WHERE clauses |
+
+### Filter chips design
+
+- Row of horizontal scrollable chips below search input
+- **Testament:** `All` / `OT` / `NT` (single select, default: All)
+- **Book:** Optional book picker that appears when a testament is selected. Scrollable pill list of book names in canonical order. Multi-select.
+- **Sort:** `Relevance` / `Canonical Order` (single select, default: Relevance)
+
+### Query modification
+
+```sql
+-- Current:
+SELECT ... FROM verses_fts WHERE verses_fts MATCH ?
+
+-- With filters:
+SELECT ... FROM verses_fts
+JOIN verses ON verses.rowid = verses_fts.rowid
+JOIN books ON books.id = verses.book_id
+WHERE verses_fts MATCH ?
+  AND books.testament = ?       -- if testament filter active
+  AND books.id IN (?, ?, ?)     -- if book filter active
+ORDER BY ...                    -- relevance or book_order + chapter + verse
+```
+
+### Implementation steps
+
+1. Add filter state to SearchScreen (testament, bookIds, sortOrder)
+2. Create FilterChipRow component (horizontal scroll, pill-shaped chips)
+3. Pass filters to useSearch hook
+4. Modify verse query in useSearch to apply WHERE clauses
+5. Add book picker (shows when OT or NT selected — list of books for that testament)
+6. Test: search "love" → filter to NT → filter to 1 Corinthians → verify results narrow correctly
+
+### Effort: Small (partial session)
+
+---
+
+## Phase 19 — Highlight UX Polish
+
+**Goal:** Enhance verse highlighting with multi-color management, organized collections, and export.
+
+**Current state:** 5 named colors (gold/Key verses, blue/Commands, green/Prayers, pink/Prophecy, purple/Study later). HighlightColorPicker is a modal with color circles. Highlights stored in `verse_highlights` table in user.db. No way to view all highlights by color, no export.
+
+### Files to create
+
+| File | Purpose |
+|------|---------|
+| `app/src/screens/HighlightBrowseScreen.tsx` | Browse all highlights, filterable by color |
+| `app/src/components/HighlightExport.tsx` | Export highlights as formatted text |
+
+### Files to modify
+
+| File | Change |
+|------|--------|
+| `app/src/screens/MoreMenuScreen.tsx` | Add "Highlights" menu item |
+| `app/src/navigation/types.ts` | Add HighlightBrowse route |
+| `app/src/db/user.ts` | Add `getHighlightsByColor()`, `getAllHighlights()` queries |
+| `app/src/components/HighlightColorPicker.tsx` | Add "View all [color]" link below color circles |
+
+### HighlightBrowseScreen design
+
+- Header: "Highlights" with total count
+- Color filter row: all 5 color circles as filter pills, plus "All" option
+- List: verse reference + verse text + color dot, grouped by book
+- Tap → navigate to chapter with verse scrolled into view
+- Long-press → remove highlight
+- Export button in header → generates formatted text (plain text or markdown)
+
+### Export format
+
+```
+# My Highlights — Companion Study
+## Key Verses (Gold)
+Genesis 1:1 — In the beginning God created the heavens and the earth.
+John 3:16 — For God so loved the world...
+
+## Commands (Blue)
+Matthew 28:19 — Therefore go and make disciples...
+```
+
+### Implementation steps
+
+1. Add query functions to user.ts
+2. Create HighlightBrowseScreen with color filter
+3. Add route to navigation
+4. Add menu item in MoreMenuScreen
+5. Add "View all" link in HighlightColorPicker
+6. Create export function (Share API with formatted text)
+7. Test: highlight verses in different colors, browse screen shows correct grouping, export produces clean text
+
+### Effort: Small-Medium (1 session)
+
+---
+
+## Phase 20 — Personalized Recommendations
+
+**Goal:** Make the "From Your Study" section on HomeScreen contextually smarter using existing user data.
+
+**Current state:** HomeScreen shows "From Your Study" with suggestion cards. The suggestions are based on recent reading but don't leverage the full study data available.
+
+### Recommendation engine (heuristic, no AI needed)
+
+```typescript
+interface Recommendation {
+  type: 'concept' | 'prophecy' | 'person' | 'wordStudy' | 'difficultPassage' | 'unexplored';
+  title: string;
+  subtitle: string;
+  navigateTo: { screen: string; params: object };
+}
+
+// Recommendation sources (priority order):
+// 1. Concepts related to recently-read books
+//    "You read Romans 1-3. Explore the concept: Justification"
+// 2. Prophecy chains that start in recently-read books
+//    "You read Isaiah 53. Trace the Suffering Servant prophecy chain"
+// 3. People encountered in recent chapters
+//    "You met Melchizedek in Genesis 14. Read his full story."
+// 4. Word studies relevant to recent reading
+//    "You read Psalm 23. Explore the word study: roeh (shepherd)"
+// 5. Difficult passages in recently-read chapters
+//    "Genesis 6:1-4 — Who are the 'sons of God'?"
+// 6. Unexplored features
+//    "You've never visited the Genealogy Tree. Try it."
+```
+
+### Files to create
+
+| File | Purpose |
+|------|---------|
+| `app/src/hooks/useRecommendations.ts` | Heuristic recommendation engine |
+
+### Files to modify
+
+| File | Change |
+|------|--------|
+| `app/src/hooks/useHomeData.ts` | Call useRecommendations, include in return |
+| `app/src/screens/HomeScreen.tsx` | Render recommendation cards with type-specific icons and navigation |
+
+### Data sources (all already in scripture.db)
+
+- `reading_history` → recently-read books/chapters (user.db)
+- `concepts` → concept-to-book mappings via tags
+- `prophecy_chains` → chains with book references
+- `people` → people-to-chapter mappings
+- `word_studies` → studies with book/chapter relevance
+- `difficult_passages` → passage locations
+
+### Implementation steps
+
+1. Create `useRecommendations.ts` — query recent history, cross-reference with explore data, return 3-5 recommendations
+2. Update `useHomeData` to include recommendations
+3. Update HomeScreen to render recommendation cards with type icons (concept = lightbulb, prophecy = chain, person = user, etc.)
+4. Each card navigates to the relevant explore screen
+5. Test: read Genesis 1-3, return to Home → see recommendations for Covenant concept, Creation word study, Adam person bio
+
+### Effort: Small-Medium (partial session)
+
+---
+
+## Phase 21 — Concordance Search
+
+**Goal:** After Phase 13 (interlinear) ships, add a concordance mode that shows every occurrence of a Hebrew/Greek word across the Bible.
+
+**⚠ Depends on Phase 13.** Cannot be implemented until interlinear_words table exists.
+
+### Integration with Phase 13
+
+Phase 13 gives us a `interlinear_words` table with Strong's numbers per word. Concordance search queries this table:
+
+```sql
+-- "Show me every verse where H2617 (hesed) appears"
+SELECT DISTINCT iw.book_id, iw.chapter_num, iw.verse_num,
+       iw.original, iw.transliteration, iw.gloss,
+       v.text, b.name as book_name
+FROM interlinear_words iw
+JOIN verses v ON v.book_id = iw.book_id
+  AND v.chapter_num = iw.chapter_num
+  AND v.verse_num = iw.verse_num
+  AND v.translation = 'niv'
+JOIN books b ON b.id = iw.book_id
+WHERE iw.strongs = ?
+ORDER BY b.book_order, iw.chapter_num, iw.verse_num
+```
+
+### Entry points
+
+1. **From InterlinearSheet (Phase 13):** Tap a Strong's number → "See all N occurrences"
+2. **From WordStudyDetailScreen:** "Concordance: see every verse with this word"
+3. **From SearchScreen:** New "Original Language" search mode alongside verse/people/word study
+
+### Files to create
+
+| File | Purpose |
+|------|---------|
+| `app/src/screens/ConcordanceScreen.tsx` | Full concordance results view |
+| `app/src/components/ConcordanceEntry.tsx` | Single result: ref + gloss + verse text with word highlighted |
+
+### Files to modify
+
+| File | Change |
+|------|--------|
+| `app/src/db/database.ts` | Add `getConcordanceResults(strongs)` query |
+| `app/src/components/panels/InterlinearSheet.tsx` | Add "See all occurrences" button per word |
+| `app/src/screens/WordStudyDetailScreen.tsx` | Add concordance link |
+| `app/src/navigation/types.ts` | Add Concordance route |
+
+### Implementation steps
+
+1. Add concordance query to database.ts
+2. Create ConcordanceScreen — header with word info (original, transliteration, Strong's, gloss), count badge, scrollable list of every verse
+3. Create ConcordanceEntry — verse ref, verse text with the target word highlighted in gold
+4. Add navigation from InterlinearSheet and WordStudyDetailScreen
+5. Test: open interlinear on Genesis 1:1 → tap bereshit → "See all occurrences" → shows every verse with H7225
+
+### Effort: Medium (1 session, but only after Phase 13)
+
+---
+
+## Phase 22 — Discourse Analysis Expansion
+
+**Goal:** Expand discourse/argument flow panels from Romans (16 chapters) to Galatians, Ephesians, Hebrews, and 1 Corinthians.
+
+**Current state:** DiscoursePanel exists with data for Romans 1-16. The component is done — this is a pure content generation phase.
+
+### Content scope
+
+| Book | Chapters | Priority |
+|------|----------|----------|
+| Galatians | 6 | High — short, densely argued, frequently studied |
+| Ephesians | 6 | High — structured argument, two-part (doctrinal + practical) |
+| Hebrews | 13 | High — complex sustained argument, most benefit from flow analysis |
+| 1 Corinthians | 16 | Medium — longer, topic-by-topic structure |
+
+**Total: 41 chapters of discourse data**
+
+### Data shape (same as existing Romans data)
+
+```python
+chapter_panels['discourse'] = {
+  "thesis": "Paul argues that justification is by faith alone...",
+  "sections": [
+    {
+      "label": "Thesis Statement",
+      "verses": "1:1-5",
+      "function": "thesis",         # thesis | support | illustration | objection | rebuttal | application | conclusion | transition
+      "summary": "Paul states his core argument...",
+      "connects_to": "next"
+    }
+  ],
+  "flow_note": "The argument builds from..."
+}
+```
+
+### Content generation approach
+
+- Standard enrichment script pattern: write generator to `/tmp/`, run, validate, build
+- Split into 4 scripts (one per book) to manage context
+- Source: academic commentaries on argument structure (Fee, Thiselton, Schreiner, Bruce, Cockerill, Lincoln)
+- Each section needs: verse range, rhetorical function label, summary, connection to next section
+
+### Implementation steps
+
+1. Write `/tmp/gen_discourse_galatians.py` — discourse data for Galatians 1-6
+2. Run, validate, verify section counts
+3. Repeat for Ephesians, Hebrews, 1 Corinthians
+4. Build, validate_sqlite
+5. Test: open Galatians 1 → chapter analysis → "Argument Flow" button appears and works
+
+### Effort: Medium (content-heavy, 1-2 sessions)
+
+---
+
+## Phase 23 — Curated Study Plans
+
+**Goal:** Create 5-10 reading plans that leverage CS's unique features, and seed them into the reading_plans table.
+
+**Current state:** `reading_plans` table exists in user.db (migration 1) but is empty. PlanListScreen and PlanDetailScreen UI exists and works. No plans are seeded.
+
+### Plan concepts (leveraging CS differentiators)
+
+| Plan | Days | Unique angle |
+|------|------|-------------|
+| Genesis Deep Dive | 14 | Each day: read chapter + explore one panel type (Day 1: Gen 1 + ANE parallels, Day 2: Gen 2 + word study) |
+| Covenant Journey | 10 | Traces covenant concept progressively: Gen 9 → Gen 15 → Exod 19 → 2 Sam 7 → Jer 31 → Heb 8 |
+| Prophecy Fulfilled | 12 | Follows 12 prophecy chains from OT promise to NT fulfillment |
+| The Difficult Questions | 10 | 10 difficult passages, one per day, with all scholarly perspectives |
+| Paul's Arguments | 14 | Romans + Galatians with discourse panels — learn how Paul builds an argument |
+| Psalms of Lament | 7 | 7 lament psalms with genre guidance and literary structure |
+| The Life of David | 10 | 1-2 Samuel chapters with people bios, maps, and timeline links |
+| Creation to Covenant | 21 | Genesis 1-50 at ~2.5 chapters/day with full panel exploration |
+| Meet the Scholars | 7 | 7 chapters, each day featuring a different scholar tradition |
+| Hebrew Word Treasures | 10 | 10 chapters paired with key Hebrew word studies |
+
+### Data shape
+
+```json
+{
+  "id": "covenant_journey",
+  "name": "Covenant Journey",
+  "description": "Trace the covenant concept from Noah to the New Covenant. Each day pairs a key passage with the Concept Explorer, cross-references, and scholarly commentary.",
+  "total_days": 10,
+  "chapters_json": "[{\"day\":1,\"book\":\"genesis\",\"chapter\":9,\"focus\":\"Read + explore Covenant concept\"},{\"day\":2,\"book\":\"genesis\",\"chapter\":15,\"focus\":\"Abrahamic covenant + cross-refs\"}]"
+}
+```
+
+### Seeding mechanism
+
+Plans are seeded during user.db migration (new migration). This ensures they exist on first launch and after updates.
+
+```sql
+-- Migration 3 (or next available):
+INSERT OR IGNORE INTO reading_plans (id, name, description, total_days, chapters_json) VALUES
+  ('covenant_journey', 'Covenant Journey', '...', 10, '[...]'),
+  ('prophecy_fulfilled', 'Prophecy Fulfilled', '...', 12, '[...]'),
+  ...
+```
+
+### Files to modify
+
+| File | Change |
+|------|--------|
+| `app/src/db/userDatabase.ts` | New migration seeding plans |
+
+### Implementation steps
+
+1. Write plan content (10 plans × day-by-day chapter assignments with focus notes)
+2. Add migration to userDatabase.ts that seeds all plans
+3. Test: fresh install → PlanListScreen shows all plans, tap plan → PlanDetailScreen shows daily readings, start plan → progress tracking works
+
+### Effort: Small-Medium (mostly content writing, minimal code)
+
+---
+
+## Updated Execution Order (Full)
+
+```
+PART 1 — Differentiation Features (Sessions A-F)
+  Phase 0  (categorization)       — Session A
+  Phase 1  (tabbed infra)         — Session A
+  Phase 2  (Context Hub)          — Session B
+  Phase 3  (Connections Hub)      — Session B
+  Phase 4  (Chiasm View)          — Session C
+  Phase 5  (Genre Banner)         — Session D
+  Phase 6  (Study Depth)          — Session D
+  Phase 7  (Study Coach)          — Session E
+  Phase 8  (Textual Enrichment)   — Session F
+  Phase 9  (Concept Journey)      — Session F
+  Phase 10 (Synoptic Diffs)       — Session F
+
+PART 2 — Competitive Gap Features (Sessions G-K)
+  Phase 11 (Verse Sharing)        — Session G
+  Phase 16 (Streaks/Engagement)   — Session G
+  Phase 12 (Multi-Translation)    — Session H
+  Phase 13 (Interlinear)          — Session I + J
+  Phase 14 (Accounts/Sync)        — Session K (architecture doc only)
+  Phase 15 (AI Q&A)               — DEFERRED
+
+PART 3 — Enhancement Features (Sessions L-O)
+  Phase 17 (TTS Integration)      — Session L
+  Phase 18 (Search Filters)       — Session L
+  Phase 20 (Recommendations)      — Session L
+  Phase 19 (Highlight UX)         — Session M
+  Phase 21 (Concordance)          — Session N (depends on Phase 13)
+  Phase 22 (Discourse Expansion)  — Session N (content-only)
+  Phase 23 (Reading Plans)        — Session O (content + seed migration)
+```
+
+**Total: ~15 sessions across 23 phases.**
+
+---
+
+## Updated Commit Convention (Phases 17-23)
+
+```
+feat(tts): Phase 17 — TTS integration into ChapterScreen
+feat(search): Phase 18 — testament and book filter chips
+feat(highlights): Phase 19 — highlight browse screen, collections, export
+feat(home): Phase 20 — personalized study recommendations
+feat(concordance): Phase 21 — Strong's concordance search
+feat(content): Phase 22 — discourse analysis for Galatians, Ephesians, Hebrews, 1 Cor
+feat(plans): Phase 23 — 10 curated study plans seeded into reading_plans
+```
+
+---
+
 ## Validation Checklist Per Phase
 
 - [ ] `python3 _tools/validate.py` passes (content integrity)
