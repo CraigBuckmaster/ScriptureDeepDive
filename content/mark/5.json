@@ -28,21 +28,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Region of the Gerasenes</div><div class=\"poi-coords\">Eastern shore of the Sea of Galilee; Decapolis territory</div><div class=\"poi-text\">This is Gentile land — the pigs confirm it. The Decapolis (ten Greek cities) was a region of Hellenistic culture east of the Jordan. Jesus’s first extended Gentile engagement happens at the far edge of Jewish geography, in a cemetery, among unclean animals.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">The Sea / Steep Bank</div><div class=\"poi-coords\">Sea of Galilee eastern shore</div><div class=\"poi-text\">The herd of 2,000 pigs rushing down the steep bank into the sea dramatizes the exorcism’s scale and irrevocability. The sea, which Jesus crossed in the storm, now becomes the grave of Legion.</div></div>"
         },
-        "ctx": "The Gerasene exorcism is the longest and most dramatic in Mark. Three elements make it distinctive: the man’s extreme condition (tombs, chains, self-harm), the demons’ naming as Legion, and the first explicit mission to Gentiles — Jesus tells the restored man to go home and testify in the Decapolis, breaking the Messianic Secret pattern that governs Jewish territory.",
-        "cross": [
-          {
-            "ref": "Isa 65:3-4",
-            "note": "People who sit among the graves and spend their nights keeping secret vigil — the tomb-dweller is an OT figure of uncleanness and idolatry. Jesus enters this extreme uncleanness without contamination."
-          },
-          {
-            "ref": "Deut 5:9",
-            "note": "The God who judges to the third and fourth generation — the demonic claim over territory (v.10) reflects the ancient notion of territorial spirits."
-          },
-          {
-            "ref": "Luke 8:38-39",
-            "note": "The parallel account confirms the Decapolis mission and adds that the man proclaimed what God had done — equating Jesus with God."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 65:3-4",
+              "note": "People who sit among the graves and spend their nights keeping secret vigil — the tomb-dweller is an OT figure of uncleanness and idolatry. Jesus enters this extreme uncleanness without contamination."
+            },
+            {
+              "ref": "Deut 5:9",
+              "note": "The God who judges to the third and fourth generation — the demonic claim over territory (v.10) reflects the ancient notion of territorial spirits."
+            },
+            {
+              "ref": "Luke 8:38-39",
+              "note": "The parallel account confirms the Decapolis mission and adds that the man proclaimed what God had done — equating Jesus with God."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -120,6 +121,9 @@
               "note": "He began to tell in the Decapolis — the ten Greek cities of the Transjordan region. The Gentile mission, barely visible in Mark, is planted here. By the time of Acts 9 there are disciples throughout the region."
             }
           ]
+        },
+        "hist": {
+          "context": "The Gerasene exorcism is the longest and most dramatic in Mark. Three elements make it distinctive: the man’s extreme condition (tombs, chains, self-harm), the demons’ naming as Legion, and the first explicit mission to Gentiles — Jesus tells the restored man to go home and testify in the Decapolis, breaking the Messianic Secret pattern that governs Jewish territory."
         }
       }
     },
@@ -140,21 +144,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Region of the Gerasenes</div><div class=\"poi-coords\">Eastern shore of the Sea of Galilee; Decapolis territory</div><div class=\"poi-text\">This is Gentile land — the pigs confirm it. The Decapolis (ten Greek cities) was a region of Hellenistic culture east of the Jordan. Jesus’s first extended Gentile engagement happens at the far edge of Jewish geography, in a cemetery, among unclean animals.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">The Sea / Steep Bank</div><div class=\"poi-coords\">Sea of Galilee eastern shore</div><div class=\"poi-text\">The herd of 2,000 pigs rushing down the steep bank into the sea dramatizes the exorcism’s scale and irrevocability. The sea, which Jesus crossed in the storm, now becomes the grave of Legion.</div></div>"
         },
-        "ctx": "Mark interweaves two restoration stories — the technique known as a Markan sandwich. Jairus’s dying daughter provides the frame; the bleeding woman is inserted into the middle. The structural connection is the number twelve: the woman bled for twelve years; the girl is twelve years old. Both are daughters (v.23, v.34), both are restored to full life.",
-        "cross": [
-          {
-            "ref": "Lev 15:25-30",
-            "note": "A woman with an abnormal discharge — the Levitical law that the bleeding woman has been under. She has been ceremonially unclean for twelve years, excluded from worship and touch."
-          },
-          {
-            "ref": "1 Kings 17:17-24",
-            "note": "Elijah raises the widow’s son — the closest OT parallel to a resurrection. Jesus does what the prophet did, but by command rather than prayer."
-          },
-          {
-            "ref": "Ps 30:3",
-            "note": "You brought me up from the realm of the dead — the psalm of resurrection that frames the raising of Jairus’s daughter."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 15:25-30",
+              "note": "A woman with an abnormal discharge — the Levitical law that the bleeding woman has been under. She has been ceremonially unclean for twelve years, excluded from worship and touch."
+            },
+            {
+              "ref": "1 Kings 17:17-24",
+              "note": "Elijah raises the widow’s son — the closest OT parallel to a resurrection. Jesus does what the prophet did, but by command rather than prayer."
+            },
+            {
+              "ref": "Ps 30:3",
+              "note": "You brought me up from the realm of the dead — the psalm of resurrection that frames the raising of Jairus’s daughter."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -232,6 +237,9 @@
               "note": "He gave strict orders not to let anyone know — the Messianic Secret applied to a resurrection. The crowds already know the girl was dead (v.40: they laughed at Jesus). The command is not to suppress the resurrection but to control the interpretation of who Jesus is."
             }
           ]
+        },
+        "hist": {
+          "context": "Mark interweaves two restoration stories — the technique known as a Markan sandwich. Jairus’s dying daughter provides the frame; the bleeding woman is inserted into the middle. The structural connection is the number twelve: the woman bled for twelve years; the girl is twelve years old. Both are daughters (v.23, v.34), both are restored to full life."
         }
       }
     },
@@ -252,21 +260,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Region of the Gerasenes</div><div class=\"poi-coords\">Eastern shore of the Sea of Galilee; Decapolis territory</div><div class=\"poi-text\">This is Gentile land — the pigs confirm it. The Decapolis (ten Greek cities) was a region of Hellenistic culture east of the Jordan. Jesus’s first extended Gentile engagement happens at the far edge of Jewish geography, in a cemetery, among unclean animals.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">The Sea / Steep Bank</div><div class=\"poi-coords\">Sea of Galilee eastern shore</div><div class=\"poi-text\">The herd of 2,000 pigs rushing down the steep bank into the sea dramatizes the exorcism’s scale and irrevocability. The sea, which Jesus crossed in the storm, now becomes the grave of Legion.</div></div>"
         },
-        "ctx": "The Gerasene exorcism is the longest and most dramatic in Mark. Three elements make it distinctive: the man’s extreme condition (tombs, chains, self-harm), the demons’ naming as Legion, and the first explicit mission to Gentiles — Jesus tells the restored man to go home and testify in the Decapolis, breaking the Messianic Secret pattern that governs Jewish territory.",
-        "cross": [
-          {
-            "ref": "Isa 65:3-4",
-            "note": "People who sit among the graves and spend their nights keeping secret vigil — the tomb-dweller is an OT figure of uncleanness and idolatry. Jesus enters this extreme uncleanness without contamination."
-          },
-          {
-            "ref": "Deut 5:9",
-            "note": "The God who judges to the third and fourth generation — the demonic claim over territory (v.10) reflects the ancient notion of territorial spirits."
-          },
-          {
-            "ref": "Luke 8:38-39",
-            "note": "The parallel account confirms the Decapolis mission and adds that the man proclaimed what God had done — equating Jesus with God."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 65:3-4",
+              "note": "People who sit among the graves and spend their nights keeping secret vigil — the tomb-dweller is an OT figure of uncleanness and idolatry. Jesus enters this extreme uncleanness without contamination."
+            },
+            {
+              "ref": "Deut 5:9",
+              "note": "The God who judges to the third and fourth generation — the demonic claim over territory (v.10) reflects the ancient notion of territorial spirits."
+            },
+            {
+              "ref": "Luke 8:38-39",
+              "note": "The parallel account confirms the Decapolis mission and adds that the man proclaimed what God had done — equating Jesus with God."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -344,6 +353,9 @@
               "note": "He began to tell in the Decapolis — the ten Greek cities of the Transjordan region. The Gentile mission, barely visible in Mark, is planted here. By the time of Acts 9 there are disciples throughout the region."
             }
           ]
+        },
+        "hist": {
+          "context": "The Gerasene exorcism is the longest and most dramatic in Mark. Three elements make it distinctive: the man’s extreme condition (tombs, chains, self-harm), the demons’ naming as Legion, and the first explicit mission to Gentiles — Jesus tells the restored man to go home and testify in the Decapolis, breaking the Messianic Secret pattern that governs Jewish territory."
         }
       }
     }

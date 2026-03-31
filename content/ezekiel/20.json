@@ -25,21 +25,22 @@
             "paragraph": "The phrase 'for the sake of my name' occurs seven times in chapter 20 — God's most frequent self-citation in any single chapter. It reveals that God's primary motivation for saving Israel was not Israel's merit but his own reputation among the nations. Salvation is ultimately about God's glory, not human deserving. This is the most theocentric theology of salvation in the OT."
           }
         ],
-        "ctx": "Elders come to inquire of God (August 591 BC). God refuses to answer and instead rehearses Israel's history as a catalog of rebellion. Unlike the standard salvation history (Exodus, Sinai, wilderness, conquest), Ezekiel tells an anti-history: rebellion in Egypt (vv.5-9), rebellion in the wilderness first generation (vv.10-17), rebellion by the second generation (vv.18-26). At every stage, God nearly destroyed Israel but relented 'for the sake of my name.' The history is not one of faithfulness interrupted by sin but of sin interrupted by grace.",
-        "cross": [
-          {
-            "ref": "Ps 106",
-            "note": "Psalm 106 rehearses the same history of rebellion — but more gently. Ezekiel's version is far more severe, with no positive episodes at all."
-          },
-          {
-            "ref": "Acts 7:39-43",
-            "note": "Stephen's speech recounts the same history of wilderness rebellion, citing Ezekiel's framework."
-          },
-          {
-            "ref": "Deut 9:4-6",
-            "note": "Moses warned: God is not giving you the land because of your righteousness — you are a stiff-necked people."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 106",
+              "note": "Psalm 106 rehearses the same history of rebellion — but more gently. Ezekiel's version is far more severe, with no positive episodes at all."
+            },
+            {
+              "ref": "Acts 7:39-43",
+              "note": "Stephen's speech recounts the same history of wilderness rebellion, citing Ezekiel's framework."
+            },
+            {
+              "ref": "Deut 9:4-6",
+              "note": "Moses warned: God is not giving you the land because of your righteousness — you are a stiff-necked people."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -108,6 +109,9 @@
               "note": "Zimmerli interprets the 'not good statutes' as referring to the principle of firstborn dedication (Exod 13:2), which Israel perverted into child sacrifice. God gave a good law that Israel corrupted into an abomination — the statutes were 'not good' in their perverted application, not in their original intention."
             }
           ]
+        },
+        "hist": {
+          "context": "Elders come to inquire of God (August 591 BC). God refuses to answer and instead rehearses Israel's history as a catalog of rebellion. Unlike the standard salvation history (Exodus, Sinai, wilderness, conquest), Ezekiel tells an anti-history: rebellion in Egypt (vv.5-9), rebellion in the wilderness first generation (vv.10-17), rebellion by the second generation (vv.18-26). At every stage, God nearly destroyed Israel but relented 'for the sake of my name.' The history is not one of faithfulness interrupted by sin but of sin interrupted by grace."
         }
       }
     },
@@ -125,21 +129,22 @@
             "paragraph": "God will bring Israel into the 'wilderness of the nations' — a second wilderness experience among the peoples. As the first wilderness purged the exodus generation, this second wilderness will purge the exilic generation. The rebels will be sifted out; the faithful will enter the land. Exile is not merely punishment but purgation — a refining process."
           }
         ],
-        "ctx": "After the relentless negative history (vv.1-26), the oracle shifts to the future. God will gather Israel from the nations and bring them through a 'second exodus' in the wilderness. There he will purge the rebels, and the purified remnant will worship on 'my holy mountain' (Zion). The restoration is not a return to the old order but a new beginning after purgation. The section ends with God's motive: Israel will know that he is the LORD when he treats them according to his name, not according to their evil ways.",
-        "cross": [
-          {
-            "ref": "Hos 2:14-15",
-            "note": "Hosea also prophesied a second wilderness experience — God will allure Israel back to the desert for covenant renewal."
-          },
-          {
-            "ref": "Isa 43:16-21",
-            "note": "Isaiah's new exodus prophecy: forget the former things; God is doing a new thing in the wilderness."
-          },
-          {
-            "ref": "Rom 11:26-27",
-            "note": "All Israel will be saved — Paul's vision of national restoration echoes Ezekiel's purged-remnant theology."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Hos 2:14-15",
+              "note": "Hosea also prophesied a second wilderness experience — God will allure Israel back to the desert for covenant renewal."
+            },
+            {
+              "ref": "Isa 43:16-21",
+              "note": "Isaiah's new exodus prophecy: forget the former things; God is doing a new thing in the wilderness."
+            },
+            {
+              "ref": "Rom 11:26-27",
+              "note": "All Israel will be saved — Paul's vision of national restoration echoes Ezekiel's purged-remnant theology."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -200,6 +205,9 @@
               "note": "Zimmerli sees the restored worship as the theological goal of the entire chapter: the anti-history of rebellion serves the vision of purified worship on God's holy mountain. The negative past exists to contrast with the positive future."
             }
           ]
+        },
+        "hist": {
+          "context": "After the relentless negative history (vv.1-26), the oracle shifts to the future. God will gather Israel from the nations and bring them through a 'second exodus' in the wilderness. There he will purge the rebels, and the purified remnant will worship on 'my holy mountain' (Zion). The restoration is not a return to the old order but a new beginning after purgation. The section ends with God's motive: Israel will know that he is the LORD when he treats them according to his name, not according to their evil ways."
         }
       }
     }

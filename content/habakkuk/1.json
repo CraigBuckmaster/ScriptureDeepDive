@@ -31,21 +31,22 @@
             "paragraph": "The cry 'Violence!' (hamas) is Habakkuk's opening charge against the state of affairs in Judah. Hamas denotes aggressive, destructive behavior that violates social order and covenant norms. The term appears six times in the book (1:2, 3, 9; 2:8, 17 [2x]), forming a structural thread: the violence within Judah (ch. 1) will be matched by the violence Babylon inflicts (ch. 2), which will itself be judged."
           }
         ],
-        "ctx": "Habakkuk is unique among the prophets: instead of delivering God's message to the people, he delivers the people's complaint to God. The opening lament (vv. 2-4) follows the form of the individual lament psalm ('How long?' cf. Ps 13:1-2) but with a prophetic edge. The complaint targets conditions within Judah during the reign of Jehoiakim (609-598 BC): violence, injustice, the paralysis of torah, and the perversion of justice. The law is 'numbed' (tapug, literally 'chilled' or 'paralyzed'), unable to function as the social regulator it was designed to be. The righteous are 'hemmed in' by the wicked — surrounded and overwhelmed. Habakkuk's complaint is not abstract philosophy but lived experience of a prophet watching his society disintegrate under corrupt leadership.",
-        "cross": [
-          {
-            "ref": "Ps 13:1-2",
-            "note": "The psalmist's parallel lament: 'How long, LORD? Will you forget me forever?'"
-          },
-          {
-            "ref": "Jer 12:1-4",
-            "note": "Jeremiah's parallel theodicy: 'Why does the way of the wicked prosper?'"
-          },
-          {
-            "ref": "2 Kgs 23:36-24:7",
-            "note": "The reign of Jehoiakim, the likely historical setting of Habakkuk's complaint."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 13:1-2",
+              "note": "The psalmist's parallel lament: 'How long, LORD? Will you forget me forever?'"
+            },
+            {
+              "ref": "Jer 12:1-4",
+              "note": "Jeremiah's parallel theodicy: 'Why does the way of the wicked prosper?'"
+            },
+            {
+              "ref": "2 Kgs 23:36-24:7",
+              "note": "The reign of Jehoiakim, the likely historical setting of Habakkuk's complaint."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -101,6 +102,9 @@
               "note": "Robertson reads the complaint as arising from the specific conditions of Jehoiakim's reign: the king who burned Jeremiah's scroll (Jer 36), imposed heavy taxes, built his palace with forced labor (Jer 22:13-17), and murdered an innocent prophet (Jer 26:20-23). Habakkuk's 'violence' is not abstract but historically concrete."
             }
           ]
+        },
+        "hist": {
+          "context": "Habakkuk is unique among the prophets: instead of delivering God's message to the people, he delivers the people's complaint to God. The opening lament (vv. 2-4) follows the form of the individual lament psalm ('How long?' cf. Ps 13:1-2) but with a prophetic edge. The complaint targets conditions within Judah during the reign of Jehoiakim (609-598 BC): violence, injustice, the paralysis of torah, and the perversion of justice. The law is 'numbed' (tapug, literally 'chilled' or 'paralyzed'), unable to function as the social regulator it was designed to be. The righteous are 'hemmed in' by the wicked — surrounded and overwhelmed. Habakkuk's complaint is not abstract philosophy but lived experience of a prophet watching his society disintegrate under corrupt leadership."
         }
       }
     },
@@ -118,21 +122,22 @@
             "paragraph": "The Kasdim (Chaldeans) were the Neo-Babylonian dynasty founded by Nabopolassar in 626 BC and brought to its zenith by Nebuchadnezzar II (605-562 BC). God's announcement that he is 'raising up' (meqim) the Chaldeans is the shocking divine answer to Habakkuk's complaint: YHWH will address internal injustice by unleashing external devastation. The cure is worse than the disease — or so it seems to the prophet."
           }
         ],
-        "ctx": "God's answer to Habakkuk's complaint is not what the prophet expected. Instead of reforming Judah from within, YHWH will send the Babylonians as an instrument of judgment. The description of the Chaldeans (vv. 6-11) is a masterpiece of military portraiture: they are 'ruthless and impetuous,' their horses swifter than leopards and fiercer than wolves, their cavalry swooping 'like eagles.' They mock kings, laugh at fortifications, and sweep across the earth seizing territory that is not their own. The climactic accusation (v. 11) is that they are 'guilty people, whose own strength is their god' — a diagnosis of imperial hubris that will become the basis for the five woes of chapter 2. God is using a godless empire to punish a faithless covenant people, raising the theodicy to a new level of intensity.",
-        "cross": [
-          {
-            "ref": "Isa 10:5-7",
-            "note": "Isaiah's parallel: Assyria as the 'rod of my anger,' an unwitting instrument of divine judgment who will himself be judged for his arrogance."
-          },
-          {
-            "ref": "Jer 25:8-11",
-            "note": "Jeremiah's prophecy of seventy years of Babylonian domination, the same historical event Habakkuk addresses."
-          },
-          {
-            "ref": "Dan 1:1-2",
-            "note": "The fulfillment of the Babylonian threat: Nebuchadnezzar besieges Jerusalem and carries off temple vessels."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 10:5-7",
+              "note": "Isaiah's parallel: Assyria as the 'rod of my anger,' an unwitting instrument of divine judgment who will himself be judged for his arrogance."
+            },
+            {
+              "ref": "Jer 25:8-11",
+              "note": "Jeremiah's prophecy of seventy years of Babylonian domination, the same historical event Habakkuk addresses."
+            },
+            {
+              "ref": "Dan 1:1-2",
+              "note": "The fulfillment of the Babylonian threat: Nebuchadnezzar besieges Jerusalem and carries off temple vessels."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -184,6 +189,9 @@
               "note": "Robertson reads God's answer as operating on two levels simultaneously: historically, it announces the Babylonian invasion; theologically, it reveals that YHWH is sovereign even over pagan empires. The Babylonians do not know they serve God's purposes, which makes their eventual judgment just: they think they act autonomously, but they are instruments. The phrase 'guilty people' (ashem) in v. 11 already anticipates the woe oracles of chapter 2."
             }
           ]
+        },
+        "hist": {
+          "context": "God's answer to Habakkuk's complaint is not what the prophet expected. Instead of reforming Judah from within, YHWH will send the Babylonians as an instrument of judgment. The description of the Chaldeans (vv. 6-11) is a masterpiece of military portraiture: they are 'ruthless and impetuous,' their horses swifter than leopards and fiercer than wolves, their cavalry swooping 'like eagles.' They mock kings, laugh at fortifications, and sweep across the earth seizing territory that is not their own. The climactic accusation (v. 11) is that they are 'guilty people, whose own strength is their god' — a diagnosis of imperial hubris that will become the basis for the five woes of chapter 2. God is using a godless empire to punish a faithless covenant people, raising the theodicy to a new level of intensity."
         }
       }
     },
@@ -201,21 +209,22 @@
             "paragraph": "The address 'O Rock' (tsur) in v. 12 invokes one of the most ancient divine titles, emphasizing God's stability and permanence (cf. Deut 32:4, 15, 18, 30-31). Habakkuk grounds his second complaint in God's character: if YHWH is the eternal Rock, too pure to look on evil, how can he use an instrument more wicked than the people being punished? The title anchors the prophet's protest in theology, not despair."
           }
         ],
-        "ctx": "Habakkuk's second complaint deepens the theodicy: God's answer has not resolved the problem but intensified it. If YHWH is eternal, holy, and too pure to tolerate evil, how can he use the Babylonians — who are more wicked than Judah — as his instrument of justice? The fishing metaphor (vv. 14-17) is vivid: the Babylonian conqueror treats nations like fish caught in a net, then worships his own net (military technology) and dragnet (imperial strategy) as the source of his prosperity. The chapter ends with an unanswered question: 'Is he to keep on emptying his net, destroying nations without mercy?' The question hangs in the air, awaiting the divine response of chapter 2.",
-        "cross": [
-          {
-            "ref": "Deut 32:4",
-            "note": "The Song of Moses' invocation of God as the Rock whose works are perfect and whose ways are just."
-          },
-          {
-            "ref": "Jer 12:1-2",
-            "note": "Jeremiah's parallel complaint: 'You are always righteous, LORD, when I bring a case before you. Yet I would speak with you about your justice.'"
-          },
-          {
-            "ref": "Rom 9:19-21",
-            "note": "Paul's engagement with the same question: 'Who are you, a human being, to talk back to God?'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 32:4",
+              "note": "The Song of Moses' invocation of God as the Rock whose works are perfect and whose ways are just."
+            },
+            {
+              "ref": "Jer 12:1-2",
+              "note": "Jeremiah's parallel complaint: 'You are always righteous, LORD, when I bring a case before you. Yet I would speak with you about your justice.'"
+            },
+            {
+              "ref": "Rom 9:19-21",
+              "note": "Paul's engagement with the same question: 'Who are you, a human being, to talk back to God?'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -267,6 +276,9 @@
               "note": "Robertson identifies the second complaint as the theological heart of the book. The first complaint asked why God does nothing; the second asks why God does something so apparently unjust. The progression is crucial: it moves from the problem of divine passivity to the problem of divine activity, from 'Why don't you act?' to 'Why do you act like this?' The fishing metaphor (vv. 14-17) brilliantly captures the dehumanizing effect of imperial conquest: people become fish, devoid of dignity and rulership."
             }
           ]
+        },
+        "hist": {
+          "context": "Habakkuk's second complaint deepens the theodicy: God's answer has not resolved the problem but intensified it. If YHWH is eternal, holy, and too pure to tolerate evil, how can he use the Babylonians — who are more wicked than Judah — as his instrument of justice? The fishing metaphor (vv. 14-17) is vivid: the Babylonian conqueror treats nations like fish caught in a net, then worships his own net (military technology) and dragnet (imperial strategy) as the source of his prosperity. The chapter ends with an unanswered question: 'Is he to keep on emptying his net, destroying nations without mercy?' The question hangs in the air, awaiting the divine response of chapter 2."
         }
       }
     }

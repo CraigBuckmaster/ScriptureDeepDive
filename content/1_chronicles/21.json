@@ -25,17 +25,18 @@
             "paragraph": "The most famous divergence in Chronicles: “Satan rose up against Israel and incited David to take a census” (v.1). In 2 Samuel 24:1: “the LORD’s anger burned against Israel, and he incited David.” The Chronicler assigns the incitement to Satan rather than to God. This is not a contradiction but a theological development: the post-exilic community had a more developed understanding of secondary causation and spiritual adversaries."
           }
         ],
-        "ctx": "David orders Joab to count Israel’s fighting men. Joab objects: “Why does my lord want to do this? Why should he bring guilt on Israel?” The census implies military self-reliance — counting your forces suggests you trust numbers rather than God. The Chronicler’s version has Satan as the instigator; Samuel has God himself inciting David in anger. Both are theologically true from different angles: God permits what Satan initiates; Satan operates within God’s sovereign allowance. The results: Israel has 1,100,000 warriors; Judah has 470,000.",
-        "cross": [
-          {
-            "ref": "2 Sam 24:1–9",
-            "note": "The parallel. “The LORD’s anger” vs. “Satan” — the most discussed divergence between the two histories."
-          },
-          {
-            "ref": "Job 1:6–12",
-            "note": "Satan operates under God’s permission. The Job framework helps reconcile the Samuel/Chronicles versions: God permits what Satan proposes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 24:1–9",
+              "note": "The parallel. “The LORD’s anger” vs. “Satan” — the most discussed divergence between the two histories."
+            },
+            {
+              "ref": "Job 1:6–12",
+              "note": "Satan operates under God’s permission. The Job framework helps reconcile the Samuel/Chronicles versions: God permits what Satan proposes."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -53,6 +54,9 @@
               "note": "sātān without the article may function as a proper name here, unlike hassatan (“the adversary”) in Job 1–2. This is significant for the development of Satan as a figure in Jewish theology."
             }
           ]
+        },
+        "hist": {
+          "context": "David orders Joab to count Israel’s fighting men. Joab objects: “Why does my lord want to do this? Why should he bring guilt on Israel?” The census implies military self-reliance — counting your forces suggests you trust numbers rather than God. The Chronicler’s version has Satan as the instigator; Samuel has God himself inciting David in anger. Both are theologically true from different angles: God permits what Satan initiates; Satan operates within God’s sovereign allowance. The results: Israel has 1,100,000 warriors; Judah has 470,000."
         }
       }
     },
@@ -62,17 +66,18 @@
       "verse_start": 9,
       "verse_end": 30,
       "panels": {
-        "ctx": "God sends Gad the prophet with three choices: three years of famine, three months of military defeat, or three days of plague. David chooses the plague: “Let me fall into the hands of the LORD, for his mercy is very great.” Seventy thousand die. The angel stretches his hand toward Jerusalem, and David sees him standing at the threshing floor of Araunah (called Ornan in Chronicles). David buys the threshing floor, builds an altar, and offers sacrifices. Fire falls from heaven, consuming the offering. Then the Chronicler’s unique addition: “Then David said, ‘The house of the LORD God is to be here, and also the altar of burnt offering for Israel’” (21:28/22:1). The catastrophe of the census produces the location of the temple. Evil is redirected to sacred purpose.",
-        "cross": [
-          {
-            "ref": "2 Sam 24:10–25",
-            "note": "The parallel. Chronicles adds the fire from heaven and the temple-site declaration."
-          },
-          {
-            "ref": "Gen 22:2",
-            "note": "Mount Moriah — where Abraham nearly sacrificed Isaac. 2 Chr 3:1 identifies the threshing floor with Moriah. Sacrifice upon sacrifice upon sacrifice at the same site."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 24:10–25",
+              "note": "The parallel. Chronicles adds the fire from heaven and the temple-site declaration."
+            },
+            {
+              "ref": "Gen 22:2",
+              "note": "Mount Moriah — where Abraham nearly sacrificed Isaac. 2 Chr 3:1 identifies the threshing floor with Moriah. Sacrifice upon sacrifice upon sacrifice at the same site."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -90,6 +95,9 @@
               "note": "The threshing floor of Ornan (ʾornān, called Araunah in Samuel) is identified in 2 Chr 3:1 with Mount Moriah. The site thus connects Abraham’s near-sacrifice of Isaac, David’s altar, and Solomon’s temple."
             }
           ]
+        },
+        "hist": {
+          "context": "God sends Gad the prophet with three choices: three years of famine, three months of military defeat, or three days of plague. David chooses the plague: “Let me fall into the hands of the LORD, for his mercy is very great.” Seventy thousand die. The angel stretches his hand toward Jerusalem, and David sees him standing at the threshing floor of Araunah (called Ornan in Chronicles). David buys the threshing floor, builds an altar, and offers sacrifices. Fire falls from heaven, consuming the offering. Then the Chronicler’s unique addition: “Then David said, ‘The house of the LORD God is to be here, and also the altar of burnt offering for Israel’” (21:28/22:1). The catastrophe of the census produces the location of the temple. Evil is redirected to sacred purpose."
         }
       }
     }

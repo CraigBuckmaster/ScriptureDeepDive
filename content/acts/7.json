@@ -54,21 +54,22 @@
             "current": true
           }
         ],
-        "ctx": "Acts 7 is the longest speech in Acts (60 verses) and the most confrontational. Stephen's survey is structured in three movements: (1) Patriarchs — God works outside the land (vv.2–16); (2) Moses — Israel repeatedly rejects their deliverer (vv.17–43); (3) Tabernacle/Temple — God never needed the building (vv.44–50); climaxing in direct indictment (vv.51–53). The recurring pattern: God sends a deliverer → the people reject him → God's purpose advances anyway. Joseph rejected → becomes ruler. Moses rejected (twice) → becomes deliverer. The pattern builds relentlessly toward: you rejected the Righteous One (v52).",
-        "cross": [
-          {
-            "ref": "Genesis 12:1–3",
-            "note": "God's call of Abraham in Mesopotamia — the foundation of Stephen's argument. The covenant begins outside Canaan, with a God not confined to any geography."
-          },
-          {
-            "ref": "Deuteronomy 18:15",
-            "note": "The prophet-like-Moses prophecy — cited in v37 as fulfilled in Jesus. Stephen's survey culminates in this claim: the whole of Israel's history pointed to Jesus, whom they rejected."
-          },
-          {
-            "ref": "Amos 5:25–27",
-            "note": "Cited in vv.42–43 — Israel's wilderness idolatry and the resulting exile. Stephen uses the prophets to confirm the pattern: Israel's rejection of God's agents is not a recent anomaly."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Genesis 12:1–3",
+              "note": "God's call of Abraham in Mesopotamia — the foundation of Stephen's argument. The covenant begins outside Canaan, with a God not confined to any geography."
+            },
+            {
+              "ref": "Deuteronomy 18:15",
+              "note": "The prophet-like-Moses prophecy — cited in v37 as fulfilled in Jesus. Stephen's survey culminates in this claim: the whole of Israel's history pointed to Jesus, whom they rejected."
+            },
+            {
+              "ref": "Amos 5:25–27",
+              "note": "Cited in vv.42–43 — Israel's wilderness idolatry and the resulting exile. Stephen uses the prophets to confirm the pattern: Israel's rejection of God's agents is not a recent anomaly."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -133,6 +134,9 @@
               "note": "\"Seventy-five in all\" — the NET notes this follows the LXX (Gen 46:27; Exod 1:5 LXX) rather than the Hebrew text (seventy). Luke uses the LXX consistently, as do most NT authors when citing the OT."
             }
           ]
+        },
+        "hist": {
+          "context": "Acts 7 is the longest speech in Acts (60 verses) and the most confrontational. Stephen's survey is structured in three movements: (1) Patriarchs — God works outside the land (vv.2–16); (2) Moses — Israel repeatedly rejects their deliverer (vv.17–43); (3) Tabernacle/Temple — God never needed the building (vv.44–50); climaxing in direct indictment (vv.51–53). The recurring pattern: God sends a deliverer → the people reject him → God's purpose advances anyway. Joseph rejected → becomes ruler. Moses rejected (twice) → becomes deliverer. The pattern builds relentlessly toward: you rejected the Righteous One (v52)."
         }
       }
     },
@@ -179,21 +183,22 @@
             "current": false
           }
         ],
-        "ctx": "Stephen's direct accusation (vv.51–53) is the speech's thesis: 'You always resist the Holy Spirit.' After fifty verses of historical narration (building the case), he shifts suddenly to direct denunciation — reversing the roles. The Sanhedrin expected to judge him; he turns the court and judges them from their own history. His two dying prayers deliberately echo Jesus's two cross-words from Luke 23: 'Lord Jesus, receive my spirit' (Luke 23:46: 'into your hands I commit my spirit') and 'Lord, do not hold this sin against them' (Luke 23:34: 'Father, forgive them'). The first martyr walks the same road as the first and only perfect martyr.",
-        "cross": [
-          {
-            "ref": "Isaiah 66:1–2",
-            "note": "The direct Temple quotation (vv.49–50) — \"Heaven is my throne, earth my footstool. What kind of house will you build for me?\" The prophetic undermining of Temple theology from within Israel's own prophetic tradition."
-          },
-          {
-            "ref": "Luke 23:34, 46",
-            "note": "\"Father, forgive them\" and \"Into your hands I commit my spirit\" — Stephen's two dying prayers (vv.59–60) deliberately mirror these two cross-words, establishing the martyrdom pattern for all subsequent Christian suffering."
-          },
-          {
-            "ref": "Psalm 110:1",
-            "note": "\"Sit at my right hand\" — Jesus is seen standing (v55), not sitting, in honour of his first martyr. The session at the right hand is established; the standing signals the moment's solemnity."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isaiah 66:1–2",
+              "note": "The direct Temple quotation (vv.49–50) — \"Heaven is my throne, earth my footstool. What kind of house will you build for me?\" The prophetic undermining of Temple theology from within Israel's own prophetic tradition."
+            },
+            {
+              "ref": "Luke 23:34, 46",
+              "note": "\"Father, forgive them\" and \"Into your hands I commit my spirit\" — Stephen's two dying prayers (vv.59–60) deliberately mirror these two cross-words, establishing the martyrdom pattern for all subsequent Christian suffering."
+            },
+            {
+              "ref": "Psalm 110:1",
+              "note": "\"Sit at my right hand\" — Jesus is seen standing (v55), not sitting, in honour of his first martyr. The session at the right hand is established; the standing signals the moment's solemnity."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -258,6 +263,9 @@
               "note": "Saul holding the coats is not a minor detail. Ancient stoning procedure required witnesses to divest themselves of outer garments to throw the first stones. Saul's function as coat-keeper indicates a semi-official supervisory role — a young man of standing, not a mere bystander."
             }
           ]
+        },
+        "hist": {
+          "context": "Stephen's direct accusation (vv.51–53) is the speech's thesis: 'You always resist the Holy Spirit.' After fifty verses of historical narration (building the case), he shifts suddenly to direct denunciation — reversing the roles. The Sanhedrin expected to judge him; he turns the court and judges them from their own history. His two dying prayers deliberately echo Jesus's two cross-words from Luke 23: 'Lord Jesus, receive my spirit' (Luke 23:46: 'into your hands I commit my spirit') and 'Lord, do not hold this sin against them' (Luke 23:34: 'Father, forgive them'). The first martyr walks the same road as the first and only perfect martyr."
         }
       }
     },
@@ -304,21 +312,22 @@
             "current": true
           }
         ],
-        "ctx": "Acts 7 is the longest speech in Acts (60 verses) and the most confrontational. Stephen's survey is structured in three movements: (1) Patriarchs — God works outside the land (vv.2–16); (2) Moses — Israel repeatedly rejects their deliverer (vv.17–43); (3) Tabernacle/Temple — God never needed the building (vv.44–50); climaxing in direct indictment (vv.51–53). The recurring pattern: God sends a deliverer → the people reject him → God's purpose advances anyway. Joseph rejected → becomes ruler. Moses rejected (twice) → becomes deliverer. The pattern builds relentlessly toward: you rejected the Righteous One (v52).",
-        "cross": [
-          {
-            "ref": "Genesis 12:1–3",
-            "note": "God's call of Abraham in Mesopotamia — the foundation of Stephen's argument. The covenant begins outside Canaan, with a God not confined to any geography."
-          },
-          {
-            "ref": "Deuteronomy 18:15",
-            "note": "The prophet-like-Moses prophecy — cited in v37 as fulfilled in Jesus. Stephen's survey culminates in this claim: the whole of Israel's history pointed to Jesus, whom they rejected."
-          },
-          {
-            "ref": "Amos 5:25–27",
-            "note": "Cited in vv.42–43 — Israel's wilderness idolatry and the resulting exile. Stephen uses the prophets to confirm the pattern: Israel's rejection of God's agents is not a recent anomaly."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Genesis 12:1–3",
+              "note": "God's call of Abraham in Mesopotamia — the foundation of Stephen's argument. The covenant begins outside Canaan, with a God not confined to any geography."
+            },
+            {
+              "ref": "Deuteronomy 18:15",
+              "note": "The prophet-like-Moses prophecy — cited in v37 as fulfilled in Jesus. Stephen's survey culminates in this claim: the whole of Israel's history pointed to Jesus, whom they rejected."
+            },
+            {
+              "ref": "Amos 5:25–27",
+              "note": "Cited in vv.42–43 — Israel's wilderness idolatry and the resulting exile. Stephen uses the prophets to confirm the pattern: Israel's rejection of God's agents is not a recent anomaly."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -383,6 +392,9 @@
               "note": "\"Seventy-five in all\" — the NET notes this follows the LXX (Gen 46:27; Exod 1:5 LXX) rather than the Hebrew text (seventy). Luke uses the LXX consistently, as do most NT authors when citing the OT."
             }
           ]
+        },
+        "hist": {
+          "context": "Acts 7 is the longest speech in Acts (60 verses) and the most confrontational. Stephen's survey is structured in three movements: (1) Patriarchs — God works outside the land (vv.2–16); (2) Moses — Israel repeatedly rejects their deliverer (vv.17–43); (3) Tabernacle/Temple — God never needed the building (vv.44–50); climaxing in direct indictment (vv.51–53). The recurring pattern: God sends a deliverer → the people reject him → God's purpose advances anyway. Joseph rejected → becomes ruler. Moses rejected (twice) → becomes deliverer. The pattern builds relentlessly toward: you rejected the Righteous One (v52)."
         }
       }
     }

@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 10,
       "panels": {
-        "ctx": "The bronze altar is 20 cubits square and 10 cubits high — four times larger than the tabernacle’s altar. The bronze Sea, 10 cubits in diameter, rests on twelve bronze bulls (three facing each cardinal direction). Ten basins for washing, five on each side. The scale of everything exceeds the tabernacle. The Chronicler presents Solomon’s temple as the tabernacle glorified — same functions, vastly larger scale.",
-        "cross": [
-          {
-            "ref": "1 Kgs 7:23–39",
-            "note": "The Kings parallel with more detailed measurements."
-          },
-          {
-            "ref": "Exod 30:18–21",
-            "note": "The tabernacle’s bronze basin for priestly washing. Solomon multiplies it tenfold."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 7:23–39",
+              "note": "The Kings parallel with more detailed measurements."
+            },
+            {
+              "ref": "Exod 30:18–21",
+              "note": "The tabernacle’s bronze basin for priestly washing. Solomon multiplies it tenfold."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "The Sea holds bātîm shĕlōshet ʾalāpîm (“3,000 baths”) — Kings says 2,000. The discrepancy may reflect different measurement standards or the distinction between capacity and normal fill level."
             }
           ]
+        },
+        "hist": {
+          "context": "The bronze altar is 20 cubits square and 10 cubits high — four times larger than the tabernacle’s altar. The bronze Sea, 10 cubits in diameter, rests on twelve bronze bulls (three facing each cardinal direction). Ten basins for washing, five on each side. The scale of everything exceeds the tabernacle. The Chronicler presents Solomon’s temple as the tabernacle glorified — same functions, vastly larger scale."
         }
       }
     },
@@ -54,13 +58,14 @@
       "verse_start": 11,
       "verse_end": 22,
       "panels": {
-        "ctx": "Huram-Abi completes the bronze work: pots, shovels, bowls. Solomon’s gold furnishings include ten lampstands, ten tables, a hundred gold sprinkling bowls. The altar of gold, the court of the priests, and the great court with bronze doors are completed. The Chronicler provides a compressed but comprehensive inventory. The final note: “The doors of the temple were of gold.” Every threshold between the worshipper and God’s presence is gold — precious, permanent, and gleaming.",
-        "cross": [
-          {
-            "ref": "1 Kgs 7:40–51",
-            "note": "The parallel inventory. Chronicles compresses but preserves the essential items."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 7:40–51",
+              "note": "The parallel inventory. Chronicles compresses but preserves the essential items."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -78,6 +83,9 @@
               "note": "The multiplication of tables and lampstands from 1 to 10 each may reflect Second Temple practice or the Chronicler’s understanding of the larger temple’s liturgical needs."
             }
           ]
+        },
+        "hist": {
+          "context": "Huram-Abi completes the bronze work: pots, shovels, bowls. Solomon’s gold furnishings include ten lampstands, ten tables, a hundred gold sprinkling bowls. The altar of gold, the court of the priests, and the great court with bronze doors are completed. The Chronicler provides a compressed but comprehensive inventory. The final note: “The doors of the temple were of gold.” Every threshold between the worshipper and God’s presence is gold — precious, permanent, and gleaming."
         }
       }
     }

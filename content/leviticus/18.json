@@ -31,21 +31,22 @@
             "paragraph": "The negative frame for the sexual ethics: Israel must not replicate the practices of Egypt (the land they left) or Canaan (the land they are entering). The holiness code is explicitly counter-cultural."
           }
         ],
-        "ctx": "Leviticus 18 opens the Holiness Code (Lev 17–26) with an extensive list of prohibited sexual relationships. The structure: introduction (vv.1–5, do not do as Egypt and Canaan do), prohibited family relationships (vv.6–18), prohibited acts (vv.19–23), theological rationale and warning (vv.24–30). The family prohibitions are graduated: parent, stepparent, sibling, half-sibling, grandchild, aunt, uncle's wife, daughter-in-law, sister-in-law, a woman and her daughter. The common thread is kinship — the sexual act creates a \"one flesh\" bond that, within the family, would create destructive boundary-crossing.",
-        "cross": [
-          {
-            "ref": "1 Cor 5:1",
-            "note": "\"It is actually reported that there is sexual immorality among you, and of a kind that even pagans do not tolerate: A man is sleeping with his father's wife.\" Paul applies Lev 18:8 directly to the Corinthian situation."
-          },
-          {
-            "ref": "Matt 5:27–28",
-            "note": "\"You have heard that it was said, 'You shall not commit adultery.' But I tell you that anyone who looks at a woman lustfully has already committed adultery with her in his heart.\" Jesus deepens the Levitical sexual ethics from act to motive."
-          },
-          {
-            "ref": "1 Thess 4:3–5",
-            "note": "\"It is God's will that you should be sanctified: that you should avoid sexual immorality; that each of you should learn to control your own body in a way that is holy and honourable.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 5:1",
+              "note": "\"It is actually reported that there is sexual immorality among you, and of a kind that even pagans do not tolerate: A man is sleeping with his father's wife.\" Paul applies Lev 18:8 directly to the Corinthian situation."
+            },
+            {
+              "ref": "Matt 5:27–28",
+              "note": "\"You have heard that it was said, 'You shall not commit adultery.' But I tell you that anyone who looks at a woman lustfully has already committed adultery with her in his heart.\" Jesus deepens the Levitical sexual ethics from act to motive."
+            },
+            {
+              "ref": "1 Thess 4:3–5",
+              "note": "\"It is God's will that you should be sanctified: that you should avoid sexual immorality; that each of you should learn to control your own body in a way that is holy and honourable.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -97,6 +98,9 @@
               "note": "Milgrom: The theological rationale for the sexual ethics is stark: the land itself vomits out inhabitants who defile it with these acts. Milgrom notes that the land is pictured as a moral subject — capable of being defiled and capable of rejecting its inhabitants. This is not superstition but a sophisticated metaphor for the moral consequences built into creation itself."
             }
           ]
+        },
+        "hist": {
+          "context": "Leviticus 18 opens the Holiness Code (Lev 17–26) with an extensive list of prohibited sexual relationships. The structure: introduction (vv.1–5, do not do as Egypt and Canaan do), prohibited family relationships (vv.6–18), prohibited acts (vv.19–23), theological rationale and warning (vv.24–30). The family prohibitions are graduated: parent, stepparent, sibling, half-sibling, grandchild, aunt, uncle's wife, daughter-in-law, sister-in-law, a woman and her daughter. The common thread is kinship — the sexual act creates a \"one flesh\" bond that, within the family, would create destructive boundary-crossing."
         }
       }
     },
@@ -120,17 +124,18 @@
             "paragraph": "The strongest Hebrew term of moral revulsion — used for practices that are fundamentally incompatible with the covenant order. In Lev 18–20 it applies to prohibited sexual acts and idolatry."
           }
         ],
-        "ctx": "Verses 19–23 add four further prohibitions: menstrual intercourse (v.19), adultery (v.20), Molech child sacrifice (v.21), and male homosexual intercourse (v.22), and bestiality (v.23). The Molech prohibition is striking in this context — child sacrifice is not primarily addressed as a homicide but as a sexual-covenantal transgression: you are giving your \"seed\" (zeraʿ, the same word for semen/offspring) to a foreign deity. The chapter closes (vv.24–30) with the theological rationale: the Canaanites committed these acts and the land vomited them out. Israel will face the same fate if they follow the same path.",
-        "cross": [
-          {
-            "ref": "Rom 1:24–27",
-            "note": "\"Therefore God gave them over in the sinful desires of their hearts to sexual impurity… Even their women exchanged natural sexual relations for unnatural ones. In the same way the men also abandoned natural relations with women and were inflamed with lust for one another.\" Paul situates sexual disorder as a consequence of idolatry — the same theological connection Lev 18:21–22 makes."
-          },
-          {
-            "ref": "2 Kgs 23:10",
-            "note": "\"He desecrated Topheth, which was in the Valley of Ben Hinnom, so no one could use it to sacrifice their son or daughter in the fire to Molek.\" Josiah's reform directly addresses the Molech prohibition of Lev 18:21."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 1:24–27",
+              "note": "\"Therefore God gave them over in the sinful desires of their hearts to sexual impurity… Even their women exchanged natural sexual relations for unnatural ones. In the same way the men also abandoned natural relations with women and were inflamed with lust for one another.\" Paul situates sexual disorder as a consequence of idolatry — the same theological connection Lev 18:21–22 makes."
+            },
+            {
+              "ref": "2 Kgs 23:10",
+              "note": "\"He desecrated Topheth, which was in the Valley of Ben Hinnom, so no one could use it to sacrifice their son or daughter in the fire to Molek.\" Josiah's reform directly addresses the Molech prohibition of Lev 18:21."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -182,6 +187,9 @@
               "note": "Milgrom: The land-vomiting metaphor is unique to Lev 18 in the Torah. Milgrom's analysis: the land is imaged as a digestible organism — it ingests its inhabitants, and if they corrupt it with these acts, it ejects them. The metaphor is both ecological and covenantal: the land and the covenant are bound together."
             }
           ]
+        },
+        "hist": {
+          "context": "Verses 19–23 add four further prohibitions: menstrual intercourse (v.19), adultery (v.20), Molech child sacrifice (v.21), and male homosexual intercourse (v.22), and bestiality (v.23). The Molech prohibition is striking in this context — child sacrifice is not primarily addressed as a homicide but as a sexual-covenantal transgression: you are giving your \"seed\" (zeraʿ, the same word for semen/offspring) to a foreign deity. The chapter closes (vv.24–30) with the theological rationale: the Canaanites committed these acts and the land vomited them out. Israel will face the same fate if they follow the same path."
         }
       }
     }

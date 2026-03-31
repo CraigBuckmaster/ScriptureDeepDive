@@ -31,21 +31,22 @@
             "paragraph": "The word kyrios functions with double reference in the slave-master instructions (vv. 5–9): slaves serve their earthly masters ‘as you would obey Christ’ (v. 5), knowing that ‘the Lord will reward each one’ (v. 8). Masters are reminded that they have the same Master in heaven (v. 9). The christological reframing of the master-slave relationship relativises earthly authority under divine sovereignty."
           }
         ],
-        "ctx": "The household code continues from 5:22–33 with instructions for children and parents (vv. 1–4) and slaves and masters (vv. 5–9). Children are to obey their parents ‘in the Lord’ (v. 1)—a christological qualifier that transforms familial obedience into an act of worship. Fathers are warned against exasperating their children and instructed instead to bring them up ‘in the training and instruction of the Lord’ (v. 4). The slave-master instructions (vv. 5–9) are remarkable for their christological transformation of the institution: slaves serve ‘as slaves of Christ, doing the will of God from the heart’ (v. 6), and masters are reminded that they share the same Lord (v. 9). The reciprocal obligations subvert the social hierarchy from within while leaving the institution formally intact.",
-        "cross": [
-          {
-            "ref": "Col 3:20–4:1",
-            "note": "The parallel household code in Colossians addresses the same relationships (children/parents, slaves/masters) with nearly identical language, though Ephesians develops each instruction more fully."
-          },
-          {
-            "ref": "Exod 20:12",
-            "note": "The fifth commandment quoted in Eph 6:2–3 provides the OT foundation for the parent-child relationship. Paul identifies it as ‘the first commandment with a promise.’"
-          },
-          {
-            "ref": "Phlm 15–16",
-            "note": "Paul’s letter to Philemon addresses the slave-master relationship concretely, asking Philemon to receive Onesimus ‘no longer as a slave, but better than a slave, as a dear brother.’"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Col 3:20–4:1",
+              "note": "The parallel household code in Colossians addresses the same relationships (children/parents, slaves/masters) with nearly identical language, though Ephesians develops each instruction more fully."
+            },
+            {
+              "ref": "Exod 20:12",
+              "note": "The fifth commandment quoted in Eph 6:2–3 provides the OT foundation for the parent-child relationship. Paul identifies it as ‘the first commandment with a promise.’"
+            },
+            {
+              "ref": "Phlm 15–16",
+              "note": "Paul’s letter to Philemon addresses the slave-master relationship concretely, asking Philemon to receive Onesimus ‘no longer as a slave, but better than a slave, as a dear brother.’"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -102,6 +103,9 @@
               "note": "O’Brien emphasises the christological transformation of each relationship. In the parent-child instructions, obedience is ‘in the Lord’ and training is ‘of the Lord.’ In the slave-master instructions, service is rendered ‘as to the Lord’ and masters answer to the Lord. O’Brien argues that this christological reframing does not merely Christianise existing social structures but introduces a fundamentally new dynamic that will eventually subvert the institution of slavery from within."
             }
           ]
+        },
+        "hist": {
+          "context": "The household code continues from 5:22–33 with instructions for children and parents (vv. 1–4) and slaves and masters (vv. 5–9). Children are to obey their parents ‘in the Lord’ (v. 1)—a christological qualifier that transforms familial obedience into an act of worship. Fathers are warned against exasperating their children and instructed instead to bring them up ‘in the training and instruction of the Lord’ (v. 4). The slave-master instructions (vv. 5–9) are remarkable for their christological transformation of the institution: slaves serve ‘as slaves of Christ, doing the will of God from the heart’ (v. 6), and masters are reminded that they share the same Lord (v. 9). The reciprocal obligations subvert the social hierarchy from within while leaving the institution formally intact."
         }
       }
     },
@@ -125,21 +129,22 @@
             "paragraph": "The noun palē (v. 12) denotes close hand-to-hand combat, not distant warfare. Paul’s point: the spiritual battle is not impersonal or detached but intimate and intense. The opponents are not ‘flesh and blood’ but cosmic spiritual powers: rulers, authorities, powers of this dark world, and spiritual forces of evil in the heavenly realms."
           }
         ],
-        "ctx": "The armour of God passage (vv. 10–20) is the climactic section of Ephesians, drawing together the letter’s themes of cosmic powers (1:21; 3:10), the heavenly realms (1:3, 20; 2:6; 3:10), and the believers’ union with the exalted Christ. The call to ‘be strong in the Lord’ (v. 10) introduces the military metaphor, which is developed through six pieces of armour drawn from Isaiah’s description of God as a warrior (Isa 11:5; 59:17) and the Roman legionary’s equipment. The belt of truth (v. 14a), the breastplate of righteousness (v. 14b), the shoes of the gospel of peace (v. 15), the shield of faith (v. 16), the helmet of salvation (v. 17a), and the sword of the Spirit (v. 17b) form a comprehensive spiritual arsenal. The passage concludes with a call to prayer (vv. 18–20)—the spiritual discipline that activates the armour.",
-        "cross": [
-          {
-            "ref": "Isa 59:17",
-            "note": "Isaiah’s description of God putting on righteousness as a breastplate and the helmet of salvation on his head provides the OT source for Paul’s armour imagery. Paul transfers the warrior-God’s equipment to believers who share in God’s battle against evil."
-          },
-          {
-            "ref": "1 Thess 5:8",
-            "note": "Paul’s earlier use of armour imagery—‘putting on faith and love as a breastplate, and the hope of salvation as a helmet’—provides a compressed parallel to the fuller description in Eph 6:10–17."
-          },
-          {
-            "ref": "2 Cor 10:3–5",
-            "note": "Paul’s statement that ‘the weapons we fight with are not the weapons of the world’ but have divine power to demolish strongholds provides the conceptual framework for the spiritual warfare of Eph 6:10–20."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 59:17",
+              "note": "Isaiah’s description of God putting on righteousness as a breastplate and the helmet of salvation on his head provides the OT source for Paul’s armour imagery. Paul transfers the warrior-God’s equipment to believers who share in God’s battle against evil."
+            },
+            {
+              "ref": "1 Thess 5:8",
+              "note": "Paul’s earlier use of armour imagery—‘putting on faith and love as a breastplate, and the hope of salvation as a helmet’—provides a compressed parallel to the fuller description in Eph 6:10–17."
+            },
+            {
+              "ref": "2 Cor 10:3–5",
+              "note": "Paul’s statement that ‘the weapons we fight with are not the weapons of the world’ but have divine power to demolish strongholds provides the conceptual framework for the spiritual warfare of Eph 6:10–20."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -200,6 +205,9 @@
               "note": "O’Brien identifies the passage as the practical climax of the entire letter. The cosmic powers introduced in 1:21 and 3:10 are now identified as the church’s adversaries. O’Brien notes that the armour imagery is drawn primarily from Isaiah (11:5; 49:2; 52:7; 59:17), where God himself is the warrior. Paul transfers the divine warrior’s equipment to believers, who share in God’s battle by virtue of their union with the exalted Christ. The prayer section (vv. 18–20) is not an appendix but the means by which the armour is activated and the community is strengthened for battle."
             }
           ]
+        },
+        "hist": {
+          "context": "The armour of God passage (vv. 10–20) is the climactic section of Ephesians, drawing together the letter’s themes of cosmic powers (1:21; 3:10), the heavenly realms (1:3, 20; 2:6; 3:10), and the believers’ union with the exalted Christ. The call to ‘be strong in the Lord’ (v. 10) introduces the military metaphor, which is developed through six pieces of armour drawn from Isaiah’s description of God as a warrior (Isa 11:5; 59:17) and the Roman legionary’s equipment. The belt of truth (v. 14a), the breastplate of righteousness (v. 14b), the shoes of the gospel of peace (v. 15), the shield of faith (v. 16), the helmet of salvation (v. 17a), and the sword of the Spirit (v. 17b) form a comprehensive spiritual arsenal. The passage concludes with a call to prayer (vv. 18–20)—the spiritual discipline that activates the armour."
         }
       }
     },
@@ -217,17 +225,18 @@
             "paragraph": "The final word of the letter’s benediction is en aphtharsia (v. 24)—‘with an undying love’ or ‘in immortality.’ The term adds an eschatological note: the grace and love that characterise the believers’ relationship with Christ are imperishable, extending beyond death into eternity."
           }
         ],
-        "ctx": "The letter’s closing is brief. Paul commends Tychicus as the bearer of the letter and source of personal news (vv. 21–22)—the same role Tychicus plays for Colossians (Col 4:7–8). The benediction (vv. 23–24) invokes peace, love with faith, and grace for all who love the Lord Jesus Christ ‘with an undying love.’ The letter that began with ‘every spiritual blessing in the heavenly realms’ (1:3) closes with grace that is imperishable, forming an inclusio of divine generosity.",
-        "cross": [
-          {
-            "ref": "Col 4:7–8",
-            "note": "The nearly identical commendation of Tychicus confirms that both letters were sent at the same time and carried by the same messenger."
-          },
-          {
-            "ref": "2 Tim 4:22",
-            "note": "Paul’s closing benediction—‘the Lord be with your spirit. Grace be with you all’—provides a parallel to the grace-benediction pattern of Eph 6:24."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Col 4:7–8",
+              "note": "The nearly identical commendation of Tychicus confirms that both letters were sent at the same time and carried by the same messenger."
+            },
+            {
+              "ref": "2 Tim 4:22",
+              "note": "Paul’s closing benediction—‘the Lord be with your spirit. Grace be with you all’—provides a parallel to the grace-benediction pattern of Eph 6:24."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -276,6 +285,9 @@
               "note": "O’Brien reads the closing as a pastoral gesture: after the cosmic theology and demanding ethics of the letter, Paul grounds the community in the concrete reality of a fellow-believer (Tychicus) and the assurance of divine grace. The letter’s final word—aphtharsia—points beyond the present evil age to the consummation of God’s eternal purpose."
             }
           ]
+        },
+        "hist": {
+          "context": "The letter’s closing is brief. Paul commends Tychicus as the bearer of the letter and source of personal news (vv. 21–22)—the same role Tychicus plays for Colossians (Col 4:7–8). The benediction (vv. 23–24) invokes peace, love with faith, and grace for all who love the Lord Jesus Christ ‘with an undying love.’ The letter that began with ‘every spiritual blessing in the heavenly realms’ (1:3) closes with grace that is imperishable, forming an inclusio of divine generosity."
         }
       }
     }

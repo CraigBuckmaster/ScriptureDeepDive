@@ -31,21 +31,22 @@
             "paragraph": "In v. 4, YHWH describes leading Israel 'with cords of human kindness, with ties of love.' The word havley can mean either 'cords' or 'birth pangs,' adding an ambiguity that enriches the parental metaphor. God's guidance of Israel through history is depicted as gentle leading with a rope, like a parent guiding a toddler, and as the labor of bringing a nation to birth."
           }
         ],
-        "ctx": "Chapter 11 is widely regarded as the emotional climax of the book and one of the most theologically significant passages in the Old Testament. The father-son metaphor shifts the register from the marriage allegory of chapters 1-3 to parental love, creating a second axis of divine-human relationship. The opening verse ('When Israel was a child, I loved him, and out of Egypt I called my son') is quoted in Matthew 2:15 as fulfilled in Jesus' return from Egypt. The historical review (vv. 1-4) recalls the exodus and wilderness period as a time of parental nurture: teaching to walk, lifting to the cheek, bending down to feed. These are intimate, physical images of caregiving that have no parallel in ancient Near Eastern religious literature. No Mesopotamian or Canaanite deity is depicted nursing, teaching, or physically holding a human community. Verses 5-7 then shift to judgment: the child who was loved will return to Egypt/Assyria because of its refusal to return to YHWH.",
-        "cross": [
-          {
-            "ref": "Matt 2:15",
-            "note": "Matthew cites Hosea 11:1 as fulfilled in Jesus' return from Egypt after Herod's death: 'Out of Egypt I called my son.'"
-          },
-          {
-            "ref": "Exod 4:22-23",
-            "note": "The foundational declaration: 'Israel is my firstborn son... Let my son go, so he may worship me.'"
-          },
-          {
-            "ref": "Deut 1:31",
-            "note": "Moses recalls that God 'carried you, as a father carries his son, all the way you went until you reached this place.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 2:15",
+              "note": "Matthew cites Hosea 11:1 as fulfilled in Jesus' return from Egypt after Herod's death: 'Out of Egypt I called my son.'"
+            },
+            {
+              "ref": "Exod 4:22-23",
+              "note": "The foundational declaration: 'Israel is my firstborn son... Let my son go, so he may worship me.'"
+            },
+            {
+              "ref": "Deut 1:31",
+              "note": "Moses recalls that God 'carried you, as a father carries his son, all the way you went until you reached this place.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "This passage contains the most intimate divine self-revelation in the prophetic corpus. The father metaphor operates differently from the marriage metaphor: where the marriage metaphor emphasizes covenant obligation and betrayal, the father metaphor emphasizes nurture, growth, and the unconditional quality of parental love. The Hebrew verbs in vv. 1-4 are remarkable for their physicality: calling, teaching to walk, taking in arms, healing, leading, lifting, bending, feeding. God is not an abstract principle but a hands-on parent."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 11 is widely regarded as the emotional climax of the book and one of the most theologically significant passages in the Old Testament. The father-son metaphor shifts the register from the marriage allegory of chapters 1-3 to parental love, creating a second axis of divine-human relationship. The opening verse ('When Israel was a child, I loved him, and out of Egypt I called my son') is quoted in Matthew 2:15 as fulfilled in Jesus' return from Egypt. The historical review (vv. 1-4) recalls the exodus and wilderness period as a time of parental nurture: teaching to walk, lifting to the cheek, bending down to feed. These are intimate, physical images of caregiving that have no parallel in ancient Near Eastern religious literature. No Mesopotamian or Canaanite deity is depicted nursing, teaching, or physically holding a human community. Verses 5-7 then shift to judgment: the child who was loved will return to Egypt/Assyria because of its refusal to return to YHWH."
         }
       }
     },
@@ -137,25 +141,26 @@
             "paragraph": "From the root nhm, which denotes the deep stirring of emotion that leads to a change of course. The plural intensifies: God's compassions are 'kindled' (kamar, the same verb used for Joseph's emotional response to Benjamin, Gen 43:30). This is not sentimentality but the visceral emotional upheaval within God that prevents the execution of deserved judgment."
           }
         ],
-        "ctx": "Verses 8-9 are among the most remarkable in the entire Old Testament. After chapters of sustained indictment, YHWH suddenly breaks off the prosecution and cries out in anguish: 'How can I give you up, Ephraim? How can I hand you over, Israel?' The four rhetorical questions are not addressed to Israel but to God himself: they represent an internal divine soliloquy in which YHWH debates whether to execute the full penalty of covenant violation. Admah and Zeboiim were cities destroyed along with Sodom and Gomorrah (Deut 29:23) — total annihilation. Yet God declares, 'I will not carry out my fierce anger,' giving the astonishing reason: 'For I am God, and not a man — the Holy One among you.' Divine holiness, which elsewhere demands judgment, here restrains it. The divine identity as 'not a man' means that God is not bound by the human logic of retribution. This is the theological climax of the entire book: the revelation that divine love is rooted not in human response but in divine character.",
-        "cross": [
-          {
-            "ref": "Gen 19:24-25",
-            "note": "The destruction of Sodom, Admah, and Zeboiim that God now refuses to replicate against Ephraim."
-          },
-          {
-            "ref": "Deut 29:23",
-            "note": "The reference to Admah and Zeboiim as examples of total divine destruction."
-          },
-          {
-            "ref": "Jer 31:20",
-            "note": "Jeremiah echoes Hosea's language: 'Is not Ephraim my dear son, the child in whom I delight? My heart yearns for him; I have great compassion for him.'"
-          },
-          {
-            "ref": "Lam 3:22",
-            "note": "The theological conclusion drawn from Hosea's revelation: 'Because of the LORD's great love we are not consumed, for his compassions never fail.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 19:24-25",
+              "note": "The destruction of Sodom, Admah, and Zeboiim that God now refuses to replicate against Ephraim."
+            },
+            {
+              "ref": "Deut 29:23",
+              "note": "The reference to Admah and Zeboiim as examples of total divine destruction."
+            },
+            {
+              "ref": "Jer 31:20",
+              "note": "Jeremiah echoes Hosea's language: 'Is not Ephraim my dear son, the child in whom I delight? My heart yearns for him; I have great compassion for him.'"
+            },
+            {
+              "ref": "Lam 3:22",
+              "note": "The theological conclusion drawn from Hosea's revelation: 'Because of the LORD's great love we are not consumed, for his compassions never fail.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -220,6 +225,9 @@
               "note": "These verses contain the most radical theological statement in the Hebrew Bible about the nature of God. The divine soliloquy reveals an internal conflict between wrath and compassion that is resolved not by balancing the two but by the priority of compassion rooted in divine identity. The phrase 'I am God, and not a man' does not assert divine power over human weakness but divine love over human retributive logic. Andersen and Freedman argue that this passage represents Hosea's most original contribution to Israelite theology: the revelation that YHWH's holiness, contrary to expectation, is the ground of mercy rather than judgment."
             }
           ]
+        },
+        "hist": {
+          "context": "Verses 8-9 are among the most remarkable in the entire Old Testament. After chapters of sustained indictment, YHWH suddenly breaks off the prosecution and cries out in anguish: 'How can I give you up, Ephraim? How can I hand you over, Israel?' The four rhetorical questions are not addressed to Israel but to God himself: they represent an internal divine soliloquy in which YHWH debates whether to execute the full penalty of covenant violation. Admah and Zeboiim were cities destroyed along with Sodom and Gomorrah (Deut 29:23) — total annihilation. Yet God declares, 'I will not carry out my fierce anger,' giving the astonishing reason: 'For I am God, and not a man — the Holy One among you.' Divine holiness, which elsewhere demands judgment, here restrains it. The divine identity as 'not a man' means that God is not bound by the human logic of retribution. This is the theological climax of the entire book: the revelation that divine love is rooted not in human response but in divine character."
         }
       }
     }

@@ -31,21 +31,22 @@
             "paragraph": "The phrase 'wall of fire' (chomat ʼesh) is unique in the Hebrew Bible. It combines the protective function of a city wall with the theophanic imagery of divine fire (Exod 3:2; 13:21-22; Deut 4:24). God Himself replaces the physical fortification that the measuring man assumed was necessary. The image recasts Jerusalem's apparent vulnerability — a city without walls in a hostile world — as a sign of divine sufficiency rather than military weakness."
           }
         ],
-        "ctx": "The third night vision addresses a practical anxiety of the post-exilic community: Jerusalem's walls remained in ruins (they would not be rebuilt until Nehemiah's mission in 445 BC, over seventy years later). A young man sets out to measure the city for reconstruction, but an angel intervenes to declare that Jerusalem will overflow its boundaries, protected not by stone walls but by God's fiery presence. The vision transforms an urban planning concern into a theological statement: the restored Jerusalem will be defined not by human construction but by divine habitation. The promise anticipates both the historical growth of the Second Temple city and the eschatological 'new Jerusalem' imagery that appears in Revelation 21.",
-        "cross": [
-          {
-            "ref": "Ezekiel 40:3",
-            "note": "Ezekiel's visionary guide also carries a measuring line to survey the new temple, but in Zechariah the measuring project is interrupted: God's plans exceed human measurement."
-          },
-          {
-            "ref": "Revelation 21:15-16",
-            "note": "The angel who measures the new Jerusalem in Revelation completes the trajectory Zechariah initiates: the final city has enormous, symbolic dimensions that express God's boundless provision."
-          },
-          {
-            "ref": "Exodus 13:21-22",
-            "note": "The pillar of fire that led Israel through the wilderness is the prototypal 'wall of fire,' and Zechariah's imagery relocates this wilderness protection to the eschatological city."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezekiel 40:3",
+              "note": "Ezekiel's visionary guide also carries a measuring line to survey the new temple, but in Zechariah the measuring project is interrupted: God's plans exceed human measurement."
+            },
+            {
+              "ref": "Revelation 21:15-16",
+              "note": "The angel who measures the new Jerusalem in Revelation completes the trajectory Zechariah initiates: the final city has enormous, symbolic dimensions that express God's boundless provision."
+            },
+            {
+              "ref": "Exodus 13:21-22",
+              "note": "The pillar of fire that led Israel through the wilderness is the prototypal 'wall of fire,' and Zechariah's imagery relocates this wilderness protection to the eschatological city."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "Boda identifies the third vision as the 'Jerusalem expansion oracle,' which addresses the post-exilic community's anxiety about physical security by redefining security in theocentric terms. The interruption of the measuring act signals what Boda calls a 'divine override': human planning is not rejected but radically reframed. The promise of a 'city without walls' would have sounded alarming in the ancient Near East, where unwalled cities were vulnerable to attack. Zechariah transforms this vulnerability into a sign of unlimited blessing: the city will burst its boundaries because God's people and God's glory will overflow any enclosure."
             }
           ]
+        },
+        "hist": {
+          "context": "The third night vision addresses a practical anxiety of the post-exilic community: Jerusalem's walls remained in ruins (they would not be rebuilt until Nehemiah's mission in 445 BC, over seventy years later). A young man sets out to measure the city for reconstruction, but an angel intervenes to declare that Jerusalem will overflow its boundaries, protected not by stone walls but by God's fiery presence. The vision transforms an urban planning concern into a theological statement: the restored Jerusalem will be defined not by human construction but by divine habitation. The promise anticipates both the historical growth of the Second Temple city and the eschatological 'new Jerusalem' imagery that appears in Revelation 21."
         }
       }
     },
@@ -116,21 +120,22 @@
             "paragraph": "The verb shakan denotes settled, ongoing habitation — the same root from which mishkan ('tabernacle') derives (Exod 25:8). In Zechariah 2:10-11, God promises to shakan 'in your midst,' recalling the tabernacle/temple tradition of divine indwelling. The post-exilic community, still rebuilding the temple, is assured that God's dwelling among them is not contingent on architectural completion but on covenantal commitment."
           }
         ],
-        "ctx": "The oracle that follows the third vision shifts from visionary symbolism to direct prophetic speech. The imperative 'Come! Come! Flee from the land of the north' (2:6) addresses Jews still residing in Babylon and the diaspora, urging them to join the restoration community. The reference to 'the four winds of heaven' recalls the fourfold scattering of the second vision (1:19). The prophecy then expands to include 'many nations' who will join themselves to YHWH (2:11) — a universalist note that anticipates the eschatological vision of Zechariah 14:16-19 and the New Testament mission to the gentiles. The chapter closes with a command to universal silence before God (2:13), a cultic formula marking the transition from human speech to divine action (cf. Hab 2:20; Zeph 1:7).",
-        "cross": [
-          {
-            "ref": "Isaiah 52:1-2",
-            "note": "Isaiah's call to 'awake, awake, Zion, clothe yourself with strength' parallels Zechariah's summons to Daughter Zion, and both envision a liberated, glorified Jerusalem."
-          },
-          {
-            "ref": "Zephaniah 3:14-17",
-            "note": "Zephaniah's call to Daughter Zion to 'sing' and 'be glad' because the LORD is 'in your midst' uses nearly identical language, forming a prophetic chorus of restoration joy."
-          },
-          {
-            "ref": "John 1:14",
-            "note": "John's declaration that the Word 'became flesh and made his dwelling (eskenosen) among us' employs the Greek equivalent of shakan, connecting Zechariah's promise of divine indwelling to the incarnation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isaiah 52:1-2",
+              "note": "Isaiah's call to 'awake, awake, Zion, clothe yourself with strength' parallels Zechariah's summons to Daughter Zion, and both envision a liberated, glorified Jerusalem."
+            },
+            {
+              "ref": "Zephaniah 3:14-17",
+              "note": "Zephaniah's call to Daughter Zion to 'sing' and 'be glad' because the LORD is 'in your midst' uses nearly identical language, forming a prophetic chorus of restoration joy."
+            },
+            {
+              "ref": "John 1:14",
+              "note": "John's declaration that the Word 'became flesh and made his dwelling (eskenosen) among us' employs the Greek equivalent of shakan, connecting Zechariah's promise of divine indwelling to the incarnation."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -190,6 +195,9 @@
               "note": "The climax of the chapter, in Boda's analysis, is the shift from national restoration to universal inclusion: 'many nations will become my people' (2:11). This universalist horizon is not peripheral but central to Zechariah's theological vision. The concluding command to silence (2:13) marks the transition from prophetic discourse to divine action — all human speech must cease before the magnitude of what God is about to accomplish."
             }
           ]
+        },
+        "hist": {
+          "context": "The oracle that follows the third vision shifts from visionary symbolism to direct prophetic speech. The imperative 'Come! Come! Flee from the land of the north' (2:6) addresses Jews still residing in Babylon and the diaspora, urging them to join the restoration community. The reference to 'the four winds of heaven' recalls the fourfold scattering of the second vision (1:19). The prophecy then expands to include 'many nations' who will join themselves to YHWH (2:11) — a universalist note that anticipates the eschatological vision of Zechariah 14:16-19 and the New Testament mission to the gentiles. The chapter closes with a command to universal silence before God (2:13), a cultic formula marking the transition from human speech to divine action (cf. Hab 2:20; Zeph 1:7)."
         }
       }
     }

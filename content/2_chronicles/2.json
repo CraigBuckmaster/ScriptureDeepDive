@@ -17,13 +17,14 @@
       "verse_start": 1,
       "verse_end": 10,
       "panels": {
-        "ctx": "Solomon conscripts 153,600 labourers and sends to Huram (Hiram) of Tyre for materials and a master craftsman. His message to Huram contains a theological statement absent from Kings: “The temple I am going to build will be great, because our God is greater than all other gods.” Solomon acknowledges the temple’s inadequacy: “The heavens, even the highest heavens, cannot contain him. Who then am I to build a temple for him?” Grandeur and humility coexist.",
-        "cross": [
-          {
-            "ref": "1 Kgs 5:1–12",
-            "note": "The Kings parallel. The Chronicler expands Solomon’s theological reasoning and adds specifications."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 5:1–12",
+              "note": "The Kings parallel. The Chronicler expands Solomon’s theological reasoning and adds specifications."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -41,6 +42,9 @@
               "note": "The rhetorical question echoes Solomon’s later prayer (6:18) and David’s (1 Chr 17:16). The “who am I?” of inadequacy is a persistent Davidic-Solomonic theme."
             }
           ]
+        },
+        "hist": {
+          "context": "Solomon conscripts 153,600 labourers and sends to Huram (Hiram) of Tyre for materials and a master craftsman. His message to Huram contains a theological statement absent from Kings: “The temple I am going to build will be great, because our God is greater than all other gods.” Solomon acknowledges the temple’s inadequacy: “The heavens, even the highest heavens, cannot contain him. Who then am I to build a temple for him?” Grandeur and humility coexist."
         }
       }
     },
@@ -50,13 +54,14 @@
       "verse_start": 11,
       "verse_end": 18,
       "panels": {
-        "ctx": "Huram replies with a remarkable confession: “Because the LORD loves his people, he has made you their king.” A pagan king attributes Solomon’s kingship to YHWH’s love. He sends Huram-Abi, a mixed-heritage craftsman (Danite mother, Tyrian father). Solomon organises the alien labour force: 70,000 carriers, 80,000 stonecutters, 3,600 foremen. The numbers match the Exodus workforce — the temple is built by the same scale of organised labour as the tabernacle.",
-        "cross": [
-          {
-            "ref": "Exod 36:1–7",
-            "note": "Bezalel and Oholiab, the tabernacle craftsmen. Huram-Abi is the temple’s equivalent — a divinely skilled artisan for sacred construction."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 36:1–7",
+              "note": "Bezalel and Oholiab, the tabernacle craftsmen. Huram-Abi is the temple’s equivalent — a divinely skilled artisan for sacred construction."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -74,6 +79,9 @@
               "note": "The mixed parentage of Huram-Abi differs from 1 Kgs 7:14 (which says his mother was from Naphtali). The discrepancy may reflect different traditions about tribal affiliation after intermarriage."
             }
           ]
+        },
+        "hist": {
+          "context": "Huram replies with a remarkable confession: “Because the LORD loves his people, he has made you their king.” A pagan king attributes Solomon’s kingship to YHWH’s love. He sends Huram-Abi, a mixed-heritage craftsman (Danite mother, Tyrian father). Solomon organises the alien labour force: 70,000 carriers, 80,000 stonecutters, 3,600 foremen. The numbers match the Exodus workforce — the temple is built by the same scale of organised labour as the tabernacle."
         }
       }
     }

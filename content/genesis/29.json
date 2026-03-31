@@ -31,22 +31,26 @@
             "paragraph": "V.3: The stone covering the well mouth required collective effort to move — reinforcing that the well was a communal resource requiring cooperation. Jacob rolling it away alone (v.10) for Rachel demonstrates his exceptional strength, his impassioned response to her beauty, and the first hint that something exceptional has begun."
           }
         ],
-        "hist": "The well-meeting is a biblical type-scene: a man travels to a foreign land, meets a woman at a well, she runs to tell her family, a betrothal follows (cf. Isaac and Rebekah, ch.24; Moses and Zipporah, Exod 2:15-21). The type-scene signals to attentive readers what is coming. But each instance subverts or complicates the pattern; Genesis 29 will produce two marriages, not one, and the expected resolution will be twisted by Laban's deception.",
-        "ctx": "The well-meeting scene is a literary type-scene — a recognized genre in the ancient world where a future spouse or significant figure is encountered at a well, water is drawn, and a journey to the family follows. Abraham's servant met Rebekah at a well (ch.24); Moses will meet Zipporah at a well (Exod 2:15–21). The form signals to the ancient reader: this is a significant encounter with providential dimensions. Jacob rolling the large stone alone (usually requiring multiple shepherds, v.8) is an act of love-fueled strength.",
-        "cross": [
-          {
-            "ref": "Gen 24:10–27",
-            "note": "Rebekah at the well — the preceding type-scene that Genesis 29 echoes. The pattern: journey → well → watering → running to family → hospitality."
-          },
-          {
-            "ref": "Exod 2:15–21",
-            "note": "Moses meets Zipporah at a well in Midian — the pattern continues in the next generation of covenant history."
-          },
-          {
-            "ref": "John 4:1–26",
-            "note": "Jesus at the well with the Samaritan woman — the NT fulfillment of the well-meeting type-scene, now carrying full theological weight about living water and true worship."
-          }
-        ],
+        "hist": {
+          "historical": "The well-meeting is a biblical type-scene: a man travels to a foreign land, meets a woman at a well, she runs to tell her family, a betrothal follows (cf. Isaac and Rebekah, ch.24; Moses and Zipporah, Exod 2:15-21). The type-scene signals to attentive readers what is coming. But each instance subverts or complicates the pattern; Genesis 29 will produce two marriages, not one, and the expected resolution will be twisted by Laban's deception.",
+          "context": "The well-meeting scene is a literary type-scene — a recognized genre in the ancient world where a future spouse or significant figure is encountered at a well, water is drawn, and a journey to the family follows. Abraham's servant met Rebekah at a well (ch.24); Moses will meet Zipporah at a well (Exod 2:15–21). The form signals to the ancient reader: this is a significant encounter with providential dimensions. Jacob rolling the large stone alone (usually requiring multiple shepherds, v.8) is an act of love-fueled strength."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 24:10–27",
+              "note": "Rebekah at the well — the preceding type-scene that Genesis 29 echoes. The pattern: journey → well → watering → running to family → hospitality."
+            },
+            {
+              "ref": "Exod 2:15–21",
+              "note": "Moses meets Zipporah at a well in Midian — the pattern continues in the next generation of covenant history."
+            },
+            {
+              "ref": "John 4:1–26",
+              "note": "Jesus at the well with the Samaritan woman — the NT fulfillment of the well-meeting type-scene, now carrying full theological weight about living water and true worship."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Paddan Aram / Laban's household",
@@ -145,17 +149,18 @@
             "paragraph": "V.25: The narrative irony of Laban's substitution of Leah for Rachel is multiple. The same root (r-m-h) was used for Jacob's deception of Isaac (27:35). The deceiver is deceived, and by his own uncle, using his own techniques: darkness, disguise, and the exploitation of expectation. The verb appears twice — \"he deceived me\" (v.25) — and Jacob cannot miss the echo."
           }
         ],
-        "ctx": "Jacob's seven years of labor \"seemed but a few days because of the love he had for her\" — the most romantic line in the OT. It also sets up the chapter's devastating irony: those seven years will be doubled. The man who deceived his father about the identity of his son will be deceived about the identity of his bride. Laban is Jacob's mirror, and the reflection is uncomfortable.",
-        "cross": [
-          {
-            "ref": "Gal 6:7",
-            "note": "Do not be deceived: God cannot be mocked. A man reaps what he sows — Paul articulates the principle enacted in Laban's deception of Jacob."
-          },
-          {
-            "ref": "Hos 12:12",
-            "note": "Jacob fled to the land of Aram; Israel served to get a wife — Hosea recalls Jacob's Haran servitude as a figure of Israel's humiliation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gal 6:7",
+              "note": "Do not be deceived: God cannot be mocked. A man reaps what he sows — Paul articulates the principle enacted in Laban's deception of Jacob."
+            },
+            {
+              "ref": "Hos 12:12",
+              "note": "Jacob fled to the land of Aram; Israel served to get a wife — Hosea recalls Jacob's Haran servitude as a figure of Israel's humiliation."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Laban's household",
@@ -273,6 +278,9 @@
               "note": "The NET note on \"complete the week\" (malle shebu'at zot) explains this refers to the full seven-day wedding feast, not another seven years of work first. Jacob would complete Leah's bridal week, then receive Rachel and then serve another seven years. The arrangement is not generous — Jacob receives Rachel almost immediately — but the debt is real: fourteen years of labour for two wives."
             }
           ]
+        },
+        "hist": {
+          "context": "Jacob's seven years of labor \"seemed but a few days because of the love he had for her\" — the most romantic line in the OT. It also sets up the chapter's devastating irony: those seven years will be doubled. The man who deceived his father about the identity of his son will be deceived about the identity of his bride. Laban is Jacob's mirror, and the reflection is uncomfortable."
         }
       }
     },
@@ -296,18 +304,22 @@
             "paragraph": "V.31: \"The LORD saw that Leah was hated/unloved\" — the divine sight that precedes divine action. God sees what Jacob does not see: the full weight of Leah's situation. The same divine sight will be extended to Hagar (16:13, \"You are the God who sees me\"), to the Israelites in Egypt (Exod 3:7), and to the afflicted throughout the OT. God's sight is the theological engine of his rescue."
           }
         ],
-        "hist": "The naming of each son encodes Leah's emotional state at the time of his birth — a running commentary on her experience of the marriage. Reuben (\"See, a son!\" or \"See my affliction\"), Simeon (\"He heard\"), Levi (\"He will be attached\"), Judah (\"I will praise the LORD\"). Each name documents both a moment of hope (God noticed, God heard) and a desire (now Jacob will love me). The fourth son breaks the pattern: with Judah the plea for Jacob's love is replaced by praise of God. Something shifts.",
-        "ctx": "Laban's deception is a masterpiece of poetic justice. Jacob deceived his blind father by covering himself with his older brother's identity; Laban deceives Jacob in the darkness of the wedding night by substituting the older sister for the younger. The mechanism is almost identical. Laban's justification — \"it is not so done in our country, to give the younger before the firstborn\" — is a knife in Jacob's ribs: he who violated the firstborn's right now has it quoted at him. He will never be free of this irony.",
-        "cross": [
-          {
-            "ref": "Gen 27:1–4",
-            "note": "Isaac's dim eyes could not distinguish Jacob from Esau in daylight; Jacob cannot distinguish Leah from Rachel in the darkness. The structural parallel is deliberate — Genesis is a book of mirrors."
-          },
-          {
-            "ref": "Gal 6:7",
-            "note": "\"Whatever a man sows, that he will also reap\" — the Jacob/Laban deception cycle is the OT's most extended illustration of this principle."
-          }
-        ],
+        "hist": {
+          "historical": "The naming of each son encodes Leah's emotional state at the time of his birth — a running commentary on her experience of the marriage. Reuben (\"See, a son!\" or \"See my affliction\"), Simeon (\"He heard\"), Levi (\"He will be attached\"), Judah (\"I will praise the LORD\"). Each name documents both a moment of hope (God noticed, God heard) and a desire (now Jacob will love me). The fourth son breaks the pattern: with Judah the plea for Jacob's love is replaced by praise of God. Something shifts.",
+          "context": "Laban's deception is a masterpiece of poetic justice. Jacob deceived his blind father by covering himself with his older brother's identity; Laban deceives Jacob in the darkness of the wedding night by substituting the older sister for the younger. The mechanism is almost identical. Laban's justification — \"it is not so done in our country, to give the younger before the firstborn\" — is a knife in Jacob's ribs: he who violated the firstborn's right now has it quoted at him. He will never be free of this irony."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 27:1–4",
+              "note": "Isaac's dim eyes could not distinguish Jacob from Esau in daylight; Jacob cannot distinguish Leah from Rachel in the darkness. The structural parallel is deliberate — Genesis is a book of mirrors."
+            },
+            {
+              "ref": "Gal 6:7",
+              "note": "\"Whatever a man sows, that he will also reap\" — the Jacob/Laban deception cycle is the OT's most extended illustration of this principle."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

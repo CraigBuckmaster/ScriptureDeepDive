@@ -37,21 +37,22 @@
             "paragraph": "The central verb of Levitical sacrifice. Milgrom's analysis: in impurity contexts it means \"to purge/cleanse\"; in guilt contexts it means \"to ransom.\" The goal is always restored covenant access."
           }
         ],
-        "ctx": "The sin offering (ḥaṭṭāʾt) is the first explicitly expiatory sacrifice — it addresses sins committed unintentionally (bišgāgāh). Its scope is tiered: the anointed priest who sins requires a young bull (vv.3–12); if the whole community sins, a young bull (vv.13–21); a leader requires a male goat (vv.22–26); an ordinary Israelite requires a female goat or lamb (vv.27–35). The ritual is complex — the blood is applied to the horns of the incense altar (inside the tabernacle) or smeared on the altar of burnt offering (outside), depending on who sinned. The higher the sinner's status, the deeper into the sanctuary the blood goes, and the greater the purging required.",
-        "cross": [
-          {
-            "ref": "Heb 9:13–14",
-            "note": "\"The blood of goats and bulls… how much more will the blood of Christ… cleanse our consciences from acts that lead to death.\" The ḥaṭṭāʾt's purging logic is fulfilled in Christ's blood that cleanses not just the outer sanctuary but the human conscience."
-          },
-          {
-            "ref": "Heb 13:11–12",
-            "note": "\"The high priest carries the blood of animals into the Most Holy Place as a sin offering, but the bodies are burned outside the camp. And so Jesus also suffered outside the city gate.\" The sin offering's structure maps onto the Passion."
-          },
-          {
-            "ref": "2 Cor 5:21",
-            "note": "\"God made him who had no sin to be sin (ḥaṭṭāʾt) for us.\" The Greek ἁμαρτία can be read as \"sin offering\" — Christ became the ḥaṭṭāʾt itself."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 9:13–14",
+              "note": "\"The blood of goats and bulls… how much more will the blood of Christ… cleanse our consciences from acts that lead to death.\" The ḥaṭṭāʾt's purging logic is fulfilled in Christ's blood that cleanses not just the outer sanctuary but the human conscience."
+            },
+            {
+              "ref": "Heb 13:11–12",
+              "note": "\"The high priest carries the blood of animals into the Most Holy Place as a sin offering, but the bodies are burned outside the camp. And so Jesus also suffered outside the city gate.\" The sin offering's structure maps onto the Passion."
+            },
+            {
+              "ref": "2 Cor 5:21",
+              "note": "\"God made him who had no sin to be sin (ḥaṭṭāʾt) for us.\" The Greek ἁμαρτία can be read as \"sin offering\" — Christ became the ḥaṭṭāʾt itself."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -103,6 +104,9 @@
               "note": "Milgrom: The graded scale of offerings (bull for priest/community, goat for leader, female goat/lamb for individual) reflects not graded guilt but graded purification need. The priest's sin defiles the inner altar (incense altar); the individual's sin defiles only the outer altar. Status determines the location of defilement."
             }
           ]
+        },
+        "hist": {
+          "context": "The sin offering (ḥaṭṭāʾt) is the first explicitly expiatory sacrifice — it addresses sins committed unintentionally (bišgāgāh). Its scope is tiered: the anointed priest who sins requires a young bull (vv.3–12); if the whole community sins, a young bull (vv.13–21); a leader requires a male goat (vv.22–26); an ordinary Israelite requires a female goat or lamb (vv.27–35). The ritual is complex — the blood is applied to the horns of the incense altar (inside the tabernacle) or smeared on the altar of burnt offering (outside), depending on who sinned. The higher the sinner's status, the deeper into the sanctuary the blood goes, and the greater the purging required."
         }
       }
     },
@@ -120,17 +124,18 @@
             "paragraph": "The tribal or clan head — a position of authority below the high priest but above ordinary Israelites. His sin offering (male goat) reflects his intermediate status."
           }
         ],
-        "ctx": "The graded sin-offering scale continues: a leader (nāśîʾ) brings a male goat (vv.22–26); an ordinary Israelite (nepeš, \"person\") brings a female goat (vv.27–31) or female lamb (vv.32–35). The gradation is not moral but ritual — higher status means greater capacity to contaminate the sanctuary, requiring greater purification. In each case the blood is applied to the horns of the outer altar (not the inner incense altar) — the lower-status sin defiles only the outer court. The consistent result in each section is identical: \"the priest shall make atonement for them, and they will be forgiven\" (vv.20, 26, 31, 35).",
-        "cross": [
-          {
-            "ref": "1 John 1:9",
-            "note": "\"If we confess our sins, he is faithful and just and will forgive us our sins and purify us from all unrighteousness.\" The sin offering's promise — confession → atonement → forgiveness — is restated in explicitly NT terms."
-          },
-          {
-            "ref": "Ps 32:1–2",
-            "note": "\"Blessed is the one whose transgressions are forgiven, whose sins are covered… whose sin the Lord does not count against them.\" David describes the sin offering's result in the language of blessedness."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 John 1:9",
+              "note": "\"If we confess our sins, he is faithful and just and will forgive us our sins and purify us from all unrighteousness.\" The sin offering's promise — confession → atonement → forgiveness — is restated in explicitly NT terms."
+            },
+            {
+              "ref": "Ps 32:1–2",
+              "note": "\"Blessed is the one whose transgressions are forgiven, whose sins are covered… whose sin the Lord does not count against them.\" David describes the sin offering's result in the language of blessedness."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -182,6 +187,9 @@
               "note": "Milgrom: The ritual prescriptions for sin offering reflect a coherent priestly symbolic system. The gradations of holiness and offering type form an internally consistent theology of sacred space and divine access."
             }
           ]
+        },
+        "hist": {
+          "context": "The graded sin-offering scale continues: a leader (nāśîʾ) brings a male goat (vv.22–26); an ordinary Israelite (nepeš, \"person\") brings a female goat (vv.27–31) or female lamb (vv.32–35). The gradation is not moral but ritual — higher status means greater capacity to contaminate the sanctuary, requiring greater purification. In each case the blood is applied to the horns of the outer altar (not the inner incense altar) — the lower-status sin defiles only the outer court. The consistent result in each section is identical: \"the priest shall make atonement for them, and they will be forgiven\" (vv.20, 26, 31, 35)."
         }
       }
     }

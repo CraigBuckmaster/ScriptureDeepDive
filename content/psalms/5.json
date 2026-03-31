@@ -22,17 +22,18 @@
             "paragraph": "\"In the morning (bōqer), LORD, you hear my voice; in the morning I lay my requests before you and wait expectantly\" (v.3). Morning prayer is intentional: David arranges his requests before God like a priest arranging the morning sacrifice on the altar. The word ʿārak (arrange/lay out) is the sacrificial term for arranging wood and offerings."
           }
         ],
-        "ctx": "David asks God to hear his words, consider his lament, listen to his cry (vv.1–2). He prays in the morning and waits (v.3). God takes no pleasure in wickedness (v.4); the arrogant cannot stand before God’s eyes (v.5). David will enter God’s house in reverence and awe (v.7).",
-        "cross": [
-          {
-            "ref": "Ps 55:17",
-            "note": "\"Evening, morning and noon I cry out\" — David’s threefold prayer habit."
-          },
-          {
-            "ref": "Mark 1:35",
-            "note": "\"Very early in the morning, Jesus got up and went to a solitary place to pray\" — the pattern David established."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 55:17",
+              "note": "\"Evening, morning and noon I cry out\" — David’s threefold prayer habit."
+            },
+            {
+              "ref": "Mark 1:35",
+              "note": "\"Very early in the morning, Jesus got up and went to a solitary place to pray\" — the pattern David established."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -103,6 +104,9 @@
               "note": "Goldingay: \"wait expectantly\" — the verb ṣāpâ means to look out, to scan the horizon. After praying, David watches for God’s response like a watchman scanning for dawn."
             }
           ]
+        },
+        "hist": {
+          "context": "David asks God to hear his words, consider his lament, listen to his cry (vv.1–2). He prays in the morning and waits (v.3). God takes no pleasure in wickedness (v.4); the arrogant cannot stand before God’s eyes (v.5). David will enter God’s house in reverence and awe (v.7)."
         }
       }
     },
@@ -120,17 +124,18 @@
             "paragraph": "\"Lead me (nəḥēnî), LORD, in your righteousness\" (v.8). The request for guidance through enemy territory. David does not ask for information but for direction: make your way straight before me. The path is God’s righteousness, not David’s navigation."
           }
         ],
-        "ctx": "David asks for guidance (v.8), describes the enemies’ deceitful speech (vv.9–10: no truth in their mouths, throats like open graves), and calls for their judgement (v.10). Then the psalm brightens: \"let all who take refuge in you be glad; let them ever sing for joy\" (v.11). God spreads protection over them; those who love God’s name rejoice (v.11). The psalm closes with divine blessing: \"you surround them with your favour as with a shield\" (v.12).",
-        "cross": [
-          {
-            "ref": "Rom 3:13",
-            "note": "\"Their throats are open graves\" — Paul quotes Psalm 5:9 in his indictment of human sinfulness."
-          },
-          {
-            "ref": "Ps 1:6",
-            "note": "\"The LORD watches over the way of the righteous\" — the same protective guidance."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 3:13",
+              "note": "\"Their throats are open graves\" — Paul quotes Psalm 5:9 in his indictment of human sinfulness."
+            },
+            {
+              "ref": "Ps 1:6",
+              "note": "\"The LORD watches over the way of the righteous\" — the same protective guidance."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -205,6 +210,9 @@
               "note": "Goldingay: \"surround them with favour as with a shield\" echoes Psalm 3:3 (shield around me). God’s protection is comprehensive — surrounding, not merely frontal."
             }
           ]
+        },
+        "hist": {
+          "context": "David asks for guidance (v.8), describes the enemies’ deceitful speech (vv.9–10: no truth in their mouths, throats like open graves), and calls for their judgement (v.10). Then the psalm brightens: \"let all who take refuge in you be glad; let them ever sing for joy\" (v.11). God spreads protection over them; those who love God’s name rejoice (v.11). The psalm closes with divine blessing: \"you surround them with your favour as with a shield\" (v.12)."
         }
       }
     }

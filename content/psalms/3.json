@@ -25,17 +25,18 @@
             "paragraph": "\"But you, LORD, are a shield (māgēn) around me\" (v.3). The first lament in the Psalter. David flees Absalom (superscription). Enemies multiply. But the pivot is \"but you\" — the turn from crisis to faith. God is shield, glory, and the one who lifts David’s head. The lament structure: complaint (vv.1–2), trust (vv.3–4), petition/confidence (vv.5–8)."
           }
         ],
-        "ctx": "The superscription places this psalm during Absalom’s rebellion (2 Sam 15–18). Many say David has no deliverance (v.2). But David cries out to God, who answers from his holy mountain (v.4). The lament formula appears for the first time: situation → appeal → trust.",
-        "cross": [
-          {
-            "ref": "2 Sam 15:13–14",
-            "note": "David flees Jerusalem when Absalom seizes power — the historical context."
-          },
-          {
-            "ref": "Ps 18:2",
-            "note": "\"The LORD is my rock, my fortress and my deliverer\" — the same shield/refuge language."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 15:13–14",
+              "note": "David flees Jerusalem when Absalom seizes power — the historical context."
+            },
+            {
+              "ref": "Ps 18:2",
+              "note": "\"The LORD is my rock, my fortress and my deliverer\" — the same shield/refuge language."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Goldingay: \"my glory and the lifter of my head\" — God restores what enemies took. When others humiliate, God dignifies. The head that hung in shame is raised by the hand of God."
             }
           ]
+        },
+        "hist": {
+          "context": "The superscription places this psalm during Absalom’s rebellion (2 Sam 15–18). Many say David has no deliverance (v.2). But David cries out to God, who answers from his holy mountain (v.4). The lament formula appears for the first time: situation → appeal → trust."
         }
       }
     },
@@ -131,17 +135,18 @@
             "paragraph": "\"From the LORD comes deliverance (yəshūʿâ). May your blessing be on your people\" (v.8). The psalm ends with a corporate prayer. David’s personal deliverance expands to a prayer for all Israel. The individual lament becomes communal intercession."
           }
         ],
-        "ctx": "David slept and woke — because the LORD sustained him (v.5). He is not afraid of ten thousands drawn up against him (v.6). He calls on God to arise and strike his enemies (v.7). The psalm closes: salvation belongs to the LORD; may blessing rest on the people (v.8). From personal terror to communal confidence in seven verses.",
-        "cross": [
-          {
-            "ref": "Ps 4:8",
-            "note": "\"In peace I will lie down and sleep\" — the companion psalm, also about sleeping in safety."
-          },
-          {
-            "ref": "Prov 3:24",
-            "note": "\"When you lie down, you will not be afraid; your sleep will be sweet\" — the wisdom parallel."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 4:8",
+              "note": "\"In peace I will lie down and sleep\" — the companion psalm, also about sleeping in safety."
+            },
+            {
+              "ref": "Prov 3:24",
+              "note": "\"When you lie down, you will not be afraid; your sleep will be sweet\" — the wisdom parallel."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -236,6 +241,9 @@
               "note": "Goldingay: the final line is a blessing, not a request. The psalm ends giving rather than asking — the mark of a soul that has moved from panic to peace."
             }
           ]
+        },
+        "hist": {
+          "context": "David slept and woke — because the LORD sustained him (v.5). He is not afraid of ten thousands drawn up against him (v.6). He calls on God to arise and strike his enemies (v.7). The psalm closes: salvation belongs to the LORD; may blessing rest on the people (v.8). From personal terror to communal confidence in seven verses."
         }
       }
     }

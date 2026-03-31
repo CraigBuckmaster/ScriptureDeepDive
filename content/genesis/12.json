@@ -53,26 +53,30 @@
             "paragraph": "Abram \"passed through the land as far as the site of the great tree of Moreh at Shechem\" (v.6). The verb ʿābar (\"to cross/pass through\") is the root of ʿibrî (\"Hebrew\") — the one who has crossed over. Abram's physical transit through the land is a ritual claiming of it: his altar-building at Shechem and Bethel (vv.7-8) marks the land with covenant presence before a single acre has been legally acquired. The land belongs to the one who walks through it by divine promise (cf. 13:17)."
           }
         ],
-        "hist": "None",
-        "ctx": "The sevenfold promise of 12:1–3 stands as the hinge of the entire Old Testament. Everything in Genesis 12–50 is the story of this promise being worked out. Everything in Exodus–Malachi is the story of the nation born from this promise. The NT declares the promise fulfilled in Christ (Gal 3:16). The three elements — land, seed, blessing — become the framework for all biblical theology.",
-        "cross": [
-          {
-            "ref": "Gal 3:8",
-            "note": "Paul: \"The Scripture, foreseeing that God would justify the Gentiles by faith, preached the gospel beforehand to Abraham, saying, 'In you shall all the nations be blessed.'\""
-          },
-          {
-            "ref": "Heb 11:8",
-            "note": "Abraham obeyed when called, \"not knowing where he was going\" — faith without prior information."
-          },
-          {
-            "ref": "Rom 4:3",
-            "note": "\"Abraham believed God, and it was counted to him as righteousness\" — Gen 15:6 expands what begins in ch.12."
-          },
-          {
-            "ref": "Acts 3:25",
-            "note": "Peter at Pentecost: \"You are the sons of the prophets and of the covenant that God made with your fathers, saying to Abraham, 'And in your offspring shall all the families of the earth be blessed.'\""
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "The sevenfold promise of 12:1–3 stands as the hinge of the entire Old Testament. Everything in Genesis 12–50 is the story of this promise being worked out. Everything in Exodus–Malachi is the story of the nation born from this promise. The NT declares the promise fulfilled in Christ (Gal 3:16). The three elements — land, seed, blessing — become the framework for all biblical theology."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gal 3:8",
+              "note": "Paul: \"The Scripture, foreseeing that God would justify the Gentiles by faith, preached the gospel beforehand to Abraham, saying, 'In you shall all the nations be blessed.'\""
+            },
+            {
+              "ref": "Heb 11:8",
+              "note": "Abraham obeyed when called, \"not knowing where he was going\" — faith without prior information."
+            },
+            {
+              "ref": "Rom 4:3",
+              "note": "\"Abraham believed God, and it was counted to him as righteousness\" — Gen 15:6 expands what begins in ch.12."
+            },
+            {
+              "ref": "Acts 3:25",
+              "note": "Peter at Pentecost: \"You are the sons of the prophets and of the covenant that God made with your fathers, saying to Abraham, 'And in your offspring shall all the families of the earth be blessed.'\""
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Haran",
@@ -238,22 +242,26 @@
             "paragraph": "The \"serious diseases\" (nĕgāʿîm) God inflicted on Pharaoh and his household (v.17) use the same vocabulary as the later Exodus plagues. The root nāgaʿ (\"to strike/touch\") appears throughout the plague narratives (Exod 11:1). The connection is deliberate: Abram's Egyptian episode is a proto-Exodus, with a Pharaoh who takes a covenant woman, is struck by divine affliction, and releases the patriarch with possessions intact. The Exodus pattern is embedded as a type within the Abraham narrative."
           }
         ],
-        "hist": "Abram's route from Haran to Canaan follows the major ancient highway through Syria-Palestine. Shechem (modern Nablus area) sits in the central hill country between Mounts Gerizim and Ebal — a natural geographical and later religious center. The note \"Canaanites were in the land\" is either a contemporary observation or a later explanatory gloss clarifying the geopolitical situation for readers after the conquest.",
-        "ctx": "None",
-        "cross": [
-          {
-            "ref": "Gen 33:18–19",
-            "note": "Jacob returns to Shechem and buys the field where Joseph will later be buried."
-          },
-          {
-            "ref": "Josh 24:1",
-            "note": "Joshua gathers all Israel at Shechem for covenant renewal — completing a circle that began with Abram's altar."
-          },
-          {
-            "ref": "John 4:5–6",
-            "note": "Jesus meets the Samaritan woman at Jacob's well near Shechem — the ancient land of promise now hosting the living water."
-          }
-        ],
+        "hist": {
+          "historical": "Abram's route from Haran to Canaan follows the major ancient highway through Syria-Palestine. Shechem (modern Nablus area) sits in the central hill country between Mounts Gerizim and Ebal — a natural geographical and later religious center. The note \"Canaanites were in the land\" is either a contemporary observation or a later explanatory gloss clarifying the geopolitical situation for readers after the conquest.",
+          "context": "None"
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 33:18–19",
+              "note": "Jacob returns to Shechem and buys the field where Joseph will later be buried."
+            },
+            {
+              "ref": "Josh 24:1",
+              "note": "Joshua gathers all Israel at Shechem for covenant renewal — completing a circle that began with Abram's altar."
+            },
+            {
+              "ref": "John 4:5–6",
+              "note": "Jesus meets the Samaritan woman at Jacob's well near Shechem — the ancient land of promise now hosting the living water."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

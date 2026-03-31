@@ -37,17 +37,18 @@
             "paragraph": "Verse 12 sets up a proverb quoted across Scripture: 'Hatred stirs up conflict, but love covers over all wrongs.' Śinʾâ is the opposite of ʾahăbâ (love); its characteristic action is to stir up (tĕʿōrēr) strife. The covering function of love does not mean concealing evil but choosing reconciliation over retaliation."
           }
         ],
-        "ctx": "Chapter 10 marks the transition from extended instruction (chs.1–9) to the individual proverb collection (chs.10–22:16). The literary form changes completely: instead of sustained addresses, we now have self-contained two-line observations, almost all structured as antithetical parallelism (wise/fool, righteous/wicked). Chapter 10 is dominated by speech and character: the mouth of the righteous is a fountain of life; the wicked conceals violence. The collection's dominant concern is how wisdom and folly show up in the texture of everyday life.",
-        "cross": [
-          {
-            "ref": "Jas 5:20",
-            "note": "James quotes the principle behind v.12 (\"love covers a multitude of sins\") — Peter does the same in 1 Pet 4:8. Both NT letters preserve the Proverbs principle as settled teaching."
-          },
-          {
-            "ref": "Matt 12:34–37",
-            "note": "Jesus' words about the mouth in Matthew echo the repeated emphasis of ch.10: \"out of the overflow of the heart the mouth speaks... by your words you will be acquitted, and by your words you will be condemned.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jas 5:20",
+              "note": "James quotes the principle behind v.12 (\"love covers a multitude of sins\") — Peter does the same in 1 Pet 4:8. Both NT letters preserve the Proverbs principle as settled teaching."
+            },
+            {
+              "ref": "Matt 12:34–37",
+              "note": "Jesus' words about the mouth in Matthew echo the repeated emphasis of ch.10: \"out of the overflow of the heart the mouth speaks... by your words you will be acquitted, and by your words you will be condemned.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -112,6 +113,9 @@
               "note": "The NET note on 'the mouth of the righteous is a fountain of life' discusses the water imagery for life-giving speech throughout Proverbs (10:11; 13:14; 14:27; 16:22). The fountain is a spring that continually produces fresh water — life-giving speech is not occasional but continuous, not a special act but a character quality that flows from a rightly formed heart."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 10 marks the transition from extended instruction (chs.1–9) to the individual proverb collection (chs.10–22:16). The literary form changes completely: instead of sustained addresses, we now have self-contained two-line observations, almost all structured as antithetical parallelism (wise/fool, righteous/wicked). Chapter 10 is dominated by speech and character: the mouth of the righteous is a fountain of life; the wicked conceals violence. The collection's dominant concern is how wisdom and folly show up in the texture of everyday life."
         }
       }
     },
@@ -135,17 +139,18 @@
             "paragraph": "V.21: \"the lips of the righteous nourish many.\" The image of righteous speech as nourishment connects to the tree of life and to Wisdom's feast in ch.9. The righteous person, through their words, becomes a source of life for others."
           }
         ],
-        "ctx": "The second half of ch.10 continues the emphasis on speech (vv.18–21, 31–32) while introducing the stability contrast: the righteous stand firm forever (v.25); the wicked are swept away when the storm comes. This is not naive optimism about the short term but a claim about the ultimate structure of reality. The storm image is eschatological as well as temporal — in the final accounting, the righteous are rooted; the wicked are gone. V.27's \"fear of the LORD adds length to life\" returns the chapter to the book's governing principle.",
-        "cross": [
-          {
-            "ref": "Jas 3:5–10",
-            "note": "James' extended meditation on the tongue — 'a small part of the body but it makes great boasts … no human being can tame the tongue' — develops the same speech-theology that dominates Proverbs 10:17–32."
-          },
-          {
-            "ref": "Matt 12:36–37",
-            "note": "Jesus warns that people will give account for every careless word, 'for by your words you will be acquitted, and by your words you will be condemned.' This is Proverbs 10's doctrine of consequential speech in eschatological key."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jas 3:5–10",
+              "note": "James' extended meditation on the tongue — 'a small part of the body but it makes great boasts … no human being can tame the tongue' — develops the same speech-theology that dominates Proverbs 10:17–32."
+            },
+            {
+              "ref": "Matt 12:36–37",
+              "note": "Jesus warns that people will give account for every careless word, 'for by your words you will be acquitted, and by your words you will be condemned.' This is Proverbs 10's doctrine of consequential speech in eschatological key."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -210,6 +215,9 @@
               "note": "The NET note on 'the righteous have an everlasting foundation' (vetsadiq yesod olam) discusses the foundation image. Yesod olam (eternal/everlasting foundation) occurs in rabbinic literature as a title for the extremely righteous person (tzaddik yesod olam). The cosmic resonance is intentional: the righteous person is not merely stable but grounded in the eternal order of things — in God himself."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half of ch.10 continues the emphasis on speech (vv.18–21, 31–32) while introducing the stability contrast: the righteous stand firm forever (v.25); the wicked are swept away when the storm comes. This is not naive optimism about the short term but a claim about the ultimate structure of reality. The storm image is eschatological as well as temporal — in the final accounting, the righteous are rooted; the wicked are gone. V.27's \"fear of the LORD adds length to life\" returns the chapter to the book's governing principle."
         }
       }
     }

@@ -31,21 +31,22 @@
             "paragraph": "The people \"go from one sin to another\" and \"do not know me\" (v.3). The verb rāmâ (\"to deceive\") describes a society where trust has completely collapsed: \"Friend deceives friend, and no one speaks the truth\" (v.5). The social fabric has disintegrated because the theological foundation — knowledge of God — has been abandoned."
           }
         ],
-        "ctx": "Chapter 9 is the emotional climax of the first major section of Jeremiah. The prophet's tears flow from the same source as God's grief — the impending destruction of a people who refuse to repent. The social critique is devastating: lying has become so pervasive that neighbor cannot trust neighbor, brother cannot trust brother. The Hebrew plays on Jacob's name (\"every brother is a supplanter/Jacob,\" v.4), suggesting that the entire nation has become a nation of Jacobs — deceivers.",
-        "cross": [
-          {
-            "ref": "Gen 27:36",
-            "note": "The Jacob wordplay: \"Is he not rightly named Jacob? He has supplanted me twice.\" The nation has inherited its ancestor's worst trait."
-          },
-          {
-            "ref": "Luke 19:41–44",
-            "note": "Jesus weeps over Jerusalem — the ultimate fulfillment of Jeremiah's tears over a city that refuses the terms of peace."
-          },
-          {
-            "ref": "Rom 9:2–3",
-            "note": "Paul expresses \"great sorrow and unceasing anguish\" for Israel — apostolic grief mirroring prophetic grief."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 27:36",
+              "note": "The Jacob wordplay: \"Is he not rightly named Jacob? He has supplanted me twice.\" The nation has inherited its ancestor's worst trait."
+            },
+            {
+              "ref": "Luke 19:41–44",
+              "note": "Jesus weeps over Jerusalem — the ultimate fulfillment of Jeremiah's tears over a city that refuses the terms of peace."
+            },
+            {
+              "ref": "Rom 9:2–3",
+              "note": "Paul expresses \"great sorrow and unceasing anguish\" for Israel — apostolic grief mirroring prophetic grief."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Brueggemann calls this \"the poem of total social disintegration.\" When deception becomes the norm, community is impossible. The prophet stands between a God he cannot deny and a people he cannot save — and the position is unbearable."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 9 is the emotional climax of the first major section of Jeremiah. The prophet's tears flow from the same source as God's grief — the impending destruction of a people who refuse to repent. The social critique is devastating: lying has become so pervasive that neighbor cannot trust neighbor, brother cannot trust brother. The Hebrew plays on Jacob's name (\"every brother is a supplanter/Jacob,\" v.4), suggesting that the entire nation has become a nation of Jacobs — deceivers."
         }
       }
     },
@@ -123,21 +127,22 @@
             "paragraph": "The climactic declaration: \"Let the one who boasts boast about this: that they have the understanding to know me (yādaʿ), that I am the LORD\" (v.24). The verb yādaʿ here transcends intellectual knowledge — it denotes relational, experiential, covenantal knowing. The triad that follows — ḥesed (steadfast love), mišpāṭ (justice), ṣĕdāqâ (righteousness) — defines what knowing God produces in practice."
           }
         ],
-        "ctx": "Verses 23–24 are among the most quoted in the Hebrew Bible. Paul cites them in 1 Corinthians 1:31 and 2 Corinthians 10:17 to argue that boasting in human achievement is excluded by the gospel. The triad of divine attributes — steadfast love, justice, righteousness — provides the ethical content of \"knowing God.\" This is not abstract theology but concrete practice: to know God is to practice his character in the world. The chapter closes with a warning that circumcision of the flesh without circumcision of the heart is worthless (v.26), echoing 4:4.",
-        "cross": [
-          {
-            "ref": "1 Cor 1:31",
-            "note": "Paul quotes Jeremiah 9:24 directly: \"Let the one who boasts boast in the Lord.\" The prophetic text becomes foundational for Pauline theology of grace."
-          },
-          {
-            "ref": "Mic 6:8",
-            "note": "Micah's famous triad — justice, mercy, humble walking — parallels Jeremiah's ḥesed-mišpāṭ-ṣĕdāqâ as the definition of what God requires."
-          },
-          {
-            "ref": "Rom 2:28–29",
-            "note": "Paul's argument that true circumcision is of the heart directly continues Jeremiah's point in 9:25–26."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 1:31",
+              "note": "Paul quotes Jeremiah 9:24 directly: \"Let the one who boasts boast in the Lord.\" The prophetic text becomes foundational for Pauline theology of grace."
+            },
+            {
+              "ref": "Mic 6:8",
+              "note": "Micah's famous triad — justice, mercy, humble walking — parallels Jeremiah's ḥesed-mišpāṭ-ṣĕdāqâ as the definition of what God requires."
+            },
+            {
+              "ref": "Rom 2:28–29",
+              "note": "Paul's argument that true circumcision is of the heart directly continues Jeremiah's point in 9:25–26."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -194,6 +199,9 @@
               "note": "Brueggemann reads this as a direct challenge to every form of human self-sufficiency. The three false securities — intellectual, military, economic — are the pillars of every empire. To \"know God\" is to operate by a completely different set of values: love, justice, righteousness."
             }
           ]
+        },
+        "hist": {
+          "context": "Verses 23–24 are among the most quoted in the Hebrew Bible. Paul cites them in 1 Corinthians 1:31 and 2 Corinthians 10:17 to argue that boasting in human achievement is excluded by the gospel. The triad of divine attributes — steadfast love, justice, righteousness — provides the ethical content of \"knowing God.\" This is not abstract theology but concrete practice: to know God is to practice his character in the world. The chapter closes with a warning that circumcision of the flesh without circumcision of the heart is worthless (v.26), echoing 4:4."
         }
       }
     }

@@ -25,17 +25,18 @@
             "paragraph": "\"I rose to open for my beloved, and my hands dripped with myrrh, my fingers with flowing myrrh, on the handles of the bolt\" (v.5). The lover left myrrh on the door — evidence of his presence, fragrance of his absence. He came and went while she hesitated. The myrrh-drenched bolt is the poem’s most poignant image: love was here, and you missed it."
           }
         ],
-        "ctx": "The poem’s crisis. The Lover knocks at night; the Beloved hesitates (\"I have taken off my robe — must I put it on again?\" v.3). She rises to open, but he has gone (v.6). She searches the streets and the watchmen find her — this time they beat her and take her cloak (v.7). The darker parallel to chapter 3’s search: love delayed is love complicated. Hesitation has consequences.",
-        "cross": [
-          {
-            "ref": "Rev 3:20",
-            "note": "\"I stand at the door and knock\" — the same image of the beloved knocking while the one inside delays."
-          },
-          {
-            "ref": "Matt 25:10–12",
-            "note": "\"The door was shut... ‘Lord, open the door!’\" — delayed response to the bridegroom’s arrival."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rev 3:20",
+              "note": "\"I stand at the door and knock\" — the same image of the beloved knocking while the one inside delays."
+            },
+            {
+              "ref": "Matt 25:10–12",
+              "note": "\"The door was shut... ‘Lord, open the door!’\" — delayed response to the bridegroom’s arrival."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -117,6 +118,9 @@
               "note": "Garrett: the myrrh on the door handles is the most evocative image in the poem. He was here; the fragrance proves it; but he is gone. Presence becomes absence scented with what was almost touched."
             }
           ]
+        },
+        "hist": {
+          "context": "The poem’s crisis. The Lover knocks at night; the Beloved hesitates (\"I have taken off my robe — must I put it on again?\" v.3). She rises to open, but he has gone (v.6). She searches the streets and the watchmen find her — this time they beat her and take her cloak (v.7). The darker parallel to chapter 3’s search: love delayed is love complicated. Hesitation has consequences."
         }
       }
     },
@@ -134,17 +138,18 @@
             "paragraph": "\"My beloved (dōdî) is radiant and ruddy, outstanding among ten thousand\" (v.10). The Daughters ask: what makes your beloved special? She responds with the male wasf — the only extended male-beauty description in the Bible. Head of gold, locks like raven, eyes like doves, cheeks like spice beds, lips dripping myrrh, arms of gold, body like ivory, legs like pillars of marble, appearance like Lebanon. \"He is altogether lovely\" (v.16)."
           }
         ],
-        "ctx": "The Daughters of Jerusalem ask: why is your beloved better than others? (v.9). Her response is the male wasf — a head-to-toe description matching the female wasf of chapter 4. Gold, beryl, ivory, sapphire, marble, Lebanon cedar — the materials are precious and architectural. He is landscape and structure: as solid as he is beautiful. \"This is my beloved, this is my friend\" (v.16) — the same word (rēaʿ) used for companion. He is both lover and friend.",
-        "cross": [
-          {
-            "ref": "Dan 10:5–6",
-            "note": "\"A man dressed in linen... body like topaz, face like lightning\" — the angelic-visitor description uses similar precious-material imagery."
-          },
-          {
-            "ref": "Rev 1:13–16",
-            "note": "The glorified Christ described with gold, white, blazing eyes — the same genre of luminous description."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Dan 10:5–6",
+              "note": "\"A man dressed in linen... body like topaz, face like lightning\" — the angelic-visitor description uses similar precious-material imagery."
+            },
+            {
+              "ref": "Rev 1:13–16",
+              "note": "The glorified Christ described with gold, white, blazing eyes — the same genre of luminous description."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -226,6 +231,9 @@
               "note": "Garrett: the closing dual identity — beloved AND friend — is the poem’s relational ideal: passion sustained by companionship, desire grounded in knowledge."
             }
           ]
+        },
+        "hist": {
+          "context": "The Daughters of Jerusalem ask: why is your beloved better than others? (v.9). Her response is the male wasf — a head-to-toe description matching the female wasf of chapter 4. Gold, beryl, ivory, sapphire, marble, Lebanon cedar — the materials are precious and architectural. He is landscape and structure: as solid as he is beautiful. \"This is my beloved, this is my friend\" (v.16) — the same word (rēaʿ) used for companion. He is both lover and friend."
         }
       }
     }

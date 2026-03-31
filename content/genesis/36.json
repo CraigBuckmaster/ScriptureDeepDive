@@ -28,18 +28,22 @@
             "paragraph": "The toledot formula organizes all of Genesis. Ch.36's toledot of Esau is the rejected line's account — necessary to show God's sovereignty operates even outside the chosen line."
           }
         ],
-        "hist": "The Esau genealogy of Genesis 36 is one of the most comprehensive genealogical lists in the OT, covering three generations of Esau's descendants and the chieftains (allufim) of Edom. It fulfils the promise made to Abraham that he would be \"the father of many nations\" (17:4-5) and to Rebekah that \"two nations are in your womb\" (25:23). The list also demonstrates the fulfillment of the Abrahamic blessing on Esau specifically: \"I will make you into a great nation\" (cf. 17:20 for Ishmael; the principle applies to both rejected sons). Edom will be a persistent presence — and enemy — in Israel's later history.",
-        "ctx": "The toledot of Esau stands between the end of the Jacob narrative (ch.35) and the beginning of the Joseph narrative (ch.37). It functions as a bracket — Esau's line is established and then set aside, exactly as Ishmael's line was established (ch.25) before returning to Isaac. The pattern: rejected line receives a complete genealogy then exits the main story, while the chosen line carries the covenant forward. Esau's departure from Canaan echoes Lot's separation from Abraham (ch.13) — both involve too many possessions to coexist, both result in the chosen man remaining in the land of promise.",
-        "cross": [
-          {
-            "ref": "Num 20:14-21",
-            "note": "Israel requests passage through Edom — Edom refuses; the two nations of 25:23 in their first recorded political encounter."
-          },
-          {
-            "ref": "Amos 1:11",
-            "note": "For three sins of Edom — the Edomite hostility to Israel that Genesis 36 prefigures."
-          }
-        ],
+        "hist": {
+          "historical": "The Esau genealogy of Genesis 36 is one of the most comprehensive genealogical lists in the OT, covering three generations of Esau's descendants and the chieftains (allufim) of Edom. It fulfils the promise made to Abraham that he would be \"the father of many nations\" (17:4-5) and to Rebekah that \"two nations are in your womb\" (25:23). The list also demonstrates the fulfillment of the Abrahamic blessing on Esau specifically: \"I will make you into a great nation\" (cf. 17:20 for Ishmael; the principle applies to both rejected sons). Edom will be a persistent presence — and enemy — in Israel's later history.",
+          "context": "The toledot of Esau stands between the end of the Jacob narrative (ch.35) and the beginning of the Joseph narrative (ch.37). It functions as a bracket — Esau's line is established and then set aside, exactly as Ishmael's line was established (ch.25) before returning to Isaac. The pattern: rejected line receives a complete genealogy then exits the main story, while the chosen line carries the covenant forward. Esau's departure from Canaan echoes Lot's separation from Abraham (ch.13) — both involve too many possessions to coexist, both result in the chosen man remaining in the land of promise."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 20:14-21",
+              "note": "Israel requests passage through Edom — Edom refuses; the two nations of 25:23 in their first recorded political encounter."
+            },
+            {
+              "ref": "Amos 1:11",
+              "note": "For three sins of Edom — the Edomite hostility to Israel that Genesis 36 prefigures."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Edom / Seir",
@@ -138,18 +142,22 @@
             "paragraph": "The toledot formula organizes all of Genesis. Ch.36's toledot of Esau is the rejected line's account — necessary to show God's sovereignty operates even outside the chosen line."
           }
         ],
-        "hist": "The Horite genealogy (vv.20-30) and the list of Edomite kings (vv.31-39) are the most detailed pre-Israelite political records in Genesis. The eight Edomite kings who reigned before Israel had a king represent a complete royal succession — the monarchy was not hereditary (each king is from a different place and family) but elective, a confederacy of chieftains choosing among themselves. The final list of allufim (vv.40-43) likely represents the political structure of Edom at the time of the Exodus.",
-        "ctx": "The toledot of Esau stands between the end of the Jacob narrative (ch.35) and the beginning of the Joseph narrative (ch.37). It functions as a bracket — Esau's line is established and then set aside, exactly as Ishmael's line was established (ch.25) before returning to Isaac. The pattern: rejected line receives a complete genealogy then exits the main story, while the chosen line carries the covenant forward. Esau's departure from Canaan echoes Lot's separation from Abraham (ch.13) — both involve too many possessions to coexist, both result in the chosen man remaining in the land of promise.",
-        "cross": [
-          {
-            "ref": "1 Kgs 11:14-22",
-            "note": "Hadad the Edomite — an Edomite king who will be raised up as an adversary of Solomon; the Edomite royal tradition of Gen 36 has a long reach."
-          },
-          {
-            "ref": "Obad 1:1-4",
-            "note": "The oracle against Edom — the nation fully described in Gen 36 becomes the subject of a complete prophetic book."
-          }
-        ],
+        "hist": {
+          "historical": "The Horite genealogy (vv.20-30) and the list of Edomite kings (vv.31-39) are the most detailed pre-Israelite political records in Genesis. The eight Edomite kings who reigned before Israel had a king represent a complete royal succession — the monarchy was not hereditary (each king is from a different place and family) but elective, a confederacy of chieftains choosing among themselves. The final list of allufim (vv.40-43) likely represents the political structure of Edom at the time of the Exodus.",
+          "context": "The toledot of Esau stands between the end of the Jacob narrative (ch.35) and the beginning of the Joseph narrative (ch.37). It functions as a bracket — Esau's line is established and then set aside, exactly as Ishmael's line was established (ch.25) before returning to Isaac. The pattern: rejected line receives a complete genealogy then exits the main story, while the chosen line carries the covenant forward. Esau's departure from Canaan echoes Lot's separation from Abraham (ch.13) — both involve too many possessions to coexist, both result in the chosen man remaining in the land of promise."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 11:14-22",
+              "note": "Hadad the Edomite — an Edomite king who will be raised up as an adversary of Solomon; the Edomite royal tradition of Gen 36 has a long reach."
+            },
+            {
+              "ref": "Obad 1:1-4",
+              "note": "The oracle against Edom — the nation fully described in Gen 36 becomes the subject of a complete prophetic book."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Seir / Edom",

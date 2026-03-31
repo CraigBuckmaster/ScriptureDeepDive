@@ -31,17 +31,18 @@
             "paragraph": "Moses's intercession turns not on Israel's repentance (there is none) but on God's own reputation among the nations. The nations who heard of the Exodus will say YHWH was unable to complete what he began. God's honour is the ground of Moses's appeal."
           }
         ],
-        "ctx": "Numbers 14 is the climactic crisis of the Pentateuch. The people weep through the night, propose returning to Egypt, and move to stone Caleb and Joshua. God announces his intention to destroy Israel and start over with Moses. Moses intercedes with three arguments: (1) God's reputation among the nations (vv.13–16); (2) the divine character proclamation of Exod 34:6–7 (vv.17–19); (3) the covenant itself (\"forgive, as you have forgiven since Egypt,\" v.19). God responds: \"I have forgiven them, as you asked\" — but with a judicial consequence. The Exodus generation will die in the wilderness. Every person who was counted in the census (20 years and older) will not enter Canaan. Only Caleb and Joshua are excepted. Forty years in the wilderness: one year for each day of the spy mission.",
-        "cross": [
-          {
-            "ref": "Heb 3:16–4:2",
-            "note": "\"Who were they who heard and rebelled? Were they not all those Moses led out of Egypt?… They were not able to enter, because of their unbelief.\" The writer of Hebrews makes Num 14 the paradigmatic warning passage for the NT church: covenant proximity does not guarantee covenant entry."
-          },
-          {
-            "ref": "Exod 34:6–7",
-            "note": "\"The Lord, the Lord, the compassionate and gracious God, slow to anger, abounding in love and faithfulness.\" Moses quotes the Sinai self-revelation of God as the basis for his intercession — God's own stated character is the grounds for the appeal."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 3:16–4:2",
+              "note": "\"Who were they who heard and rebelled? Were they not all those Moses led out of Egypt?… They were not able to enter, because of their unbelief.\" The writer of Hebrews makes Num 14 the paradigmatic warning passage for the NT church: covenant proximity does not guarantee covenant entry."
+            },
+            {
+              "ref": "Exod 34:6–7",
+              "note": "\"The Lord, the Lord, the compassionate and gracious God, slow to anger, abounding in love and faithfulness.\" Moses quotes the Sinai self-revelation of God as the basis for his intercession — God's own stated character is the grounds for the appeal."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Ashley: The narrative context of Kadesh rebellion in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Numbers 14 is the climactic crisis of the Pentateuch. The people weep through the night, propose returning to Egypt, and move to stone Caleb and Joshua. God announces his intention to destroy Israel and start over with Moses. Moses intercedes with three arguments: (1) God's reputation among the nations (vv.13–16); (2) the divine character proclamation of Exod 34:6–7 (vv.17–19); (3) the covenant itself (\"forgive, as you have forgiven since Egypt,\" v.19). God responds: \"I have forgiven them, as you asked\" — but with a judicial consequence. The Exodus generation will die in the wilderness. Every person who was counted in the census (20 years and older) will not enter Canaan. Only Caleb and Joshua are excepted. Forty years in the wilderness: one year for each day of the spy mission."
         }
       }
     },
@@ -129,17 +133,18 @@
             "paragraph": "The word for the unauthorized assault on the Amalekites and Canaanites — the people try to enter the land on their own, after the sentence has been declared. Presumption is the opposite of faith: where faith acts on God's invitation, presumption acts on God's absence."
           }
         ],
-        "ctx": "The divine sentence (vv.26–35) is precise: everyone counted in the census (20+) will die in the wilderness — one year for each spy day, forty years total. Only Caleb and Joshua are exempted. The ten unfaithful spies die immediately of plague. Then in an act of grotesque irony, the people immediately reverse course and attempt to enter Canaan anyway — without the ark, without Moses, against Moses's warning. They are defeated by the Amalekites and Canaanites. Presumption after refusal is no more pleasing to God than refusal itself. The generation is now condemned from both directions: they refused when God invited; they attempted when God forbade.",
-        "cross": [
-          {
-            "ref": "Num 14:44",
-            "note": "\"Nevertheless, in their presumption they went up toward the high hill country, though neither Moses nor the ark of the Lord's covenant moved from the camp.\" The absent ark is the theological marker: Israel attempted what only God's presence can accomplish. Without the ark (the symbol of divine accompaniment), the campaign was doomed before it began."
-          },
-          {
-            "ref": "Luke 14:28–32",
-            "note": "\"Suppose a king is about to go to war against another king. Won't he first sit down and consider whether he is able with ten thousand men to oppose the one coming against him with twenty thousand?\" Jesus's principle of counting the cost before action reflects the Num 14 lesson: the issue is not whether to fight but whether God is with you."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 14:44",
+              "note": "\"Nevertheless, in their presumption they went up toward the high hill country, though neither Moses nor the ark of the Lord's covenant moved from the camp.\" The absent ark is the theological marker: Israel attempted what only God's presence can accomplish. Without the ark (the symbol of divine accompaniment), the campaign was doomed before it began."
+            },
+            {
+              "ref": "Luke 14:28–32",
+              "note": "\"Suppose a king is about to go to war against another king. Won't he first sit down and consider whether he is able with ten thousand men to oppose the one coming against him with twenty thousand?\" Jesus's principle of counting the cost before action reflects the Num 14 lesson: the issue is not whether to fight but whether God is with you."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -204,6 +209,9 @@
               "note": "Ashley: The narrative context of Kadesh rebellion in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "The divine sentence (vv.26–35) is precise: everyone counted in the census (20+) will die in the wilderness — one year for each spy day, forty years total. Only Caleb and Joshua are exempted. The ten unfaithful spies die immediately of plague. Then in an act of grotesque irony, the people immediately reverse course and attempt to enter Canaan anyway — without the ark, without Moses, against Moses's warning. They are defeated by the Amalekites and Canaanites. Presumption after refusal is no more pleasing to God than refusal itself. The generation is now condemned from both directions: they refused when God invited; they attempted when God forbade."
         }
       }
     }

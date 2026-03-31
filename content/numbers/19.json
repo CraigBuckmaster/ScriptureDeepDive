@@ -31,17 +31,18 @@
             "paragraph": "The red heifer rite is called a ḥuqqāh (permanent statute) — one of the ḥuqqîm (statutes) for which no reason is given. The Talmud notes this is one of the Torah's most puzzling laws: the ashes that purify the impure simultaneously make the priest who uses them impure. The paradox is deliberate."
           }
         ],
-        "ctx": "Numbers 19 is the Torah's most theologically mysterious chapter. A red heifer without defect, never yoked, is slaughtered outside the camp, burned entirely (with cedar wood, hyssop, and scarlet yarn), and its ashes mixed with water to create \"water of cleansing\" for corpse-impurity. The paradox: the ashes that purify the corpse-contaminated person make the priest who prepares and applies the water impure until evening. The pure becomes impure while making the impure pure. This ḥuqqāh (statute beyond rational explanation) models the principle of substitutionary purification — the one who purifies takes on the impurity they remove. The Mishnah asks why; the Torah does not answer.",
-        "cross": [
-          {
-            "ref": "Heb 9:13–14",
-            "note": "\"The blood of goats and bulls and the ashes of a heifer sprinkled on those who are ceremonially unclean sanctify them so that they are outwardly clean. How much more, then, will the blood of Christ, who through the eternal Spirit offered himself unblemished to God, cleanse our consciences from acts that lead to death.\""
-          },
-          {
-            "ref": "1 Pet 1:19",
-            "note": "\"The precious blood of Christ, a lamb without blemish or defect.\" The \"without defect, never yoked\" requirements of the red heifer are fulfilled in Christ — the unblemished one who had never been subjected to the yoke of sin."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 9:13–14",
+              "note": "\"The blood of goats and bulls and the ashes of a heifer sprinkled on those who are ceremonially unclean sanctify them so that they are outwardly clean. How much more, then, will the blood of Christ, who through the eternal Spirit offered himself unblemished to God, cleanse our consciences from acts that lead to death.\""
+            },
+            {
+              "ref": "1 Pet 1:19",
+              "note": "\"The precious blood of Christ, a lamb without blemish or defect.\" The \"without defect, never yoked\" requirements of the red heifer are fulfilled in Christ — the unblemished one who had never been subjected to the yoke of sin."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Ashley: The narrative context of red heifer in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Numbers 19 is the Torah's most theologically mysterious chapter. A red heifer without defect, never yoked, is slaughtered outside the camp, burned entirely (with cedar wood, hyssop, and scarlet yarn), and its ashes mixed with water to create \"water of cleansing\" for corpse-impurity. The paradox: the ashes that purify the corpse-contaminated person make the priest who prepares and applies the water impure until evening. The pure becomes impure while making the impure pure. This ḥuqqāh (statute beyond rational explanation) models the principle of substitutionary purification — the one who purifies takes on the impurity they remove. The Mishnah asks why; the Torah does not answer."
         }
       }
     },
@@ -123,17 +127,18 @@
             "paragraph": "The primary unit of Israelite habitation. When someone dies in a tent, the tent and everything in it becomes impure for seven days — the enclosed space amplifies the spread of corpse-impurity. The open-field rules (v.16) apply less severe spreading logic."
           }
         ],
-        "ctx": "The application rules (vv.14–22) specify how corpse-impurity spreads and how the red heifer water is applied. Death in a tent makes the tent and all its contents impure; touching a human bone, a corpse, a grave, or someone slain in open country creates seven-day impurity. The purification ritual: a clean person takes hyssop, dips it in the water, and sprinkles the unclean person on days 3 and 7. After washing on day 7, the person is clean by evening. The closing paradox is restated: the person who sprinkles the water becomes impure until evening; anything the unclean person touches before purification becomes impure.",
-        "cross": [
-          {
-            "ref": "Ps 51:7",
-            "note": "\"Cleanse me with hyssop, and I will be clean; wash me, and I will be whiter than snow.\" David's prayer uses the red heifer purification imagery — the hyssop sprinkling of Num 19:18 becomes the metaphor for moral cleansing."
-          },
-          {
-            "ref": "John 19:29",
-            "note": "\"A jar of wine vinegar was there, so they soaked a sponge in it, put the sponge on a stalk of the hyssop plant, and lifted it to Jesus' lips.\" The hyssop at the crucifixion connects to the Passover (Exod 12:22) and the red heifer purification — Christ is the one being purified by his own death, purifying all who touch him."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 51:7",
+              "note": "\"Cleanse me with hyssop, and I will be clean; wash me, and I will be whiter than snow.\" David's prayer uses the red heifer purification imagery — the hyssop sprinkling of Num 19:18 becomes the metaphor for moral cleansing."
+            },
+            {
+              "ref": "John 19:29",
+              "note": "\"A jar of wine vinegar was there, so they soaked a sponge in it, put the sponge on a stalk of the hyssop plant, and lifted it to Jesus' lips.\" The hyssop at the crucifixion connects to the Passover (Exod 12:22) and the red heifer purification — Christ is the one being purified by his own death, purifying all who touch him."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -198,6 +203,9 @@
               "note": "Ashley: The narrative context of red heifer in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "The application rules (vv.14–22) specify how corpse-impurity spreads and how the red heifer water is applied. Death in a tent makes the tent and all its contents impure; touching a human bone, a corpse, a grave, or someone slain in open country creates seven-day impurity. The purification ritual: a clean person takes hyssop, dips it in the water, and sprinkles the unclean person on days 3 and 7. After washing on day 7, the person is clean by evening. The closing paradox is restated: the person who sprinkles the water becomes impure until evening; anything the unclean person touches before purification becomes impure."
         }
       }
     }

@@ -31,21 +31,22 @@
             "paragraph": "An intensive form of šabbāt — a complete, total cessation. Applied to the weekly Sabbath and to the great annual sabbaths (Passover, Day of Atonement). The word signals that these are not merely days off but covenantal rest — participation in God's own rest."
           }
         ],
-        "ctx": "Leviticus 23 gives the complete sacred calendar: (1) the weekly Sabbath (v.3); (2) Passover and Unleavened Bread (vv.4–8, 14 Nisan); (3) Firstfruits/Omer (vv.9–14, first Sunday after Passover); (4) Weeks/Pentecost/Shavuot (vv.15–21, 50 days after Firstfruits). The spring feasts are a theological narrative: Passover = redemption from Egypt; Unleavened Bread = separation from corruption; Firstfruits = resurrection and new life; Weeks = the Spirit's harvest. Paul reads them as a typological sequence that Christ fulfils: \"Christ, our Passover lamb, has been sacrificed\" (1 Cor 5:7); \"Christ, the firstfruits\" (1 Cor 15:20); Pentecost as the Spirit's outpouring (Acts 2).",
-        "cross": [
-          {
-            "ref": "1 Cor 5:7–8",
-            "note": "\"For Christ, our Passover lamb, has been sacrificed. Therefore let us keep the Festival, not with the old bread leavened with malice and wickedness, but with the unleavened bread of sincerity and truth.\""
-          },
-          {
-            "ref": "1 Cor 15:20",
-            "note": "\"But Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep.\" The Firstfruits feast (v.10) is fulfilled in the resurrection."
-          },
-          {
-            "ref": "Acts 2:1–4",
-            "note": "\"When the day of Pentecost came… all of them were filled with the Holy Spirit.\" Pentecost — the Feast of Weeks — is the appointed time when God pours out his Spirit."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 5:7–8",
+              "note": "\"For Christ, our Passover lamb, has been sacrificed. Therefore let us keep the Festival, not with the old bread leavened with malice and wickedness, but with the unleavened bread of sincerity and truth.\""
+            },
+            {
+              "ref": "1 Cor 15:20",
+              "note": "\"But Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep.\" The Firstfruits feast (v.10) is fulfilled in the resurrection."
+            },
+            {
+              "ref": "Acts 2:1–4",
+              "note": "\"When the day of Pentecost came… all of them were filled with the Holy Spirit.\" Pentecost — the Feast of Weeks — is the appointed time when God pours out his Spirit."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -97,6 +98,9 @@
               "note": "Milgrom: The counting of the Omer (50 days from Firstfruits to Weeks) creates a liturgical arc between the grain harvest's beginning and its completion. The number 50 (from ḥǎmiššîm, fifty) gives Pentecost its Greek name. The feast is both agricultural (completion of harvest) and historical — later tradition associates it with the Sinai covenant."
             }
           ]
+        },
+        "hist": {
+          "context": "Leviticus 23 gives the complete sacred calendar: (1) the weekly Sabbath (v.3); (2) Passover and Unleavened Bread (vv.4–8, 14 Nisan); (3) Firstfruits/Omer (vv.9–14, first Sunday after Passover); (4) Weeks/Pentecost/Shavuot (vv.15–21, 50 days after Firstfruits). The spring feasts are a theological narrative: Passover = redemption from Egypt; Unleavened Bread = separation from corruption; Firstfruits = resurrection and new life; Weeks = the Spirit's harvest. Paul reads them as a typological sequence that Christ fulfils: \"Christ, our Passover lamb, has been sacrificed\" (1 Cor 5:7); \"Christ, the firstfruits\" (1 Cor 15:20); Pentecost as the Spirit's outpouring (Acts 2)."
         }
       }
     },
@@ -120,21 +124,22 @@
             "paragraph": "The Feast of Trumpets (Rosh Hashanah) on 1 Tishri — the blast of the šôpār (ram's horn) that inaugurates the autumn season and calls Israel to assembly. The trumpet-call is both announcement and summons."
           }
         ],
-        "ctx": "The autumn feasts complete the sacred year: Trumpets (1 Tishri, vv.24–25) — the šôpār blast inaugurating the month; Day of Atonement (10 Tishri, vv.26–32) — the great fast and sanctuary purging of Lev 16; Tabernacles (15–21 Tishri, vv.33–43) — a seven-day harvest festival in booths, followed by a solemn assembly (šĕmînî ʿaṣeret, \"eighth-day assembly,\" v.36). The autumn feasts follow the same theological logic as the spring: Trumpets = eschatological summons; Atonement = final judgement/cleansing; Tabernacles = eschatological feast in God's presence. Revelation's imagery of trumpets, judgement, and the great harvest draws extensively on this autumn feast sequence.",
-        "cross": [
-          {
-            "ref": "Rev 8:2",
-            "note": "\"And I saw the seven angels who stand before God, and seven trumpets were given to them.\" The seven trumpet-blasts of Revelation draw on the Yom Teruah trumpet-theology."
-          },
-          {
-            "ref": "Zech 14:16–19",
-            "note": "\"Then the survivors from all the nations that have attacked Jerusalem will go up year after year to worship the King, the Lord Almighty, and to celebrate the Festival of Tabernacles.\" Tabernacles is the eschatological feast — the nations join Israel in celebrating God's harvest."
-          },
-          {
-            "ref": "John 7:37–38",
-            "note": "\"On the last and greatest day of the festival, Jesus stood and said in a loud voice, 'Let anyone who is thirsty come to me and drink.'\" Jesus's water-of-life declaration on the last day of Tabernacles claims to fulfil the feast's deepest longing."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rev 8:2",
+              "note": "\"And I saw the seven angels who stand before God, and seven trumpets were given to them.\" The seven trumpet-blasts of Revelation draw on the Yom Teruah trumpet-theology."
+            },
+            {
+              "ref": "Zech 14:16–19",
+              "note": "\"Then the survivors from all the nations that have attacked Jerusalem will go up year after year to worship the King, the Lord Almighty, and to celebrate the Festival of Tabernacles.\" Tabernacles is the eschatological feast — the nations join Israel in celebrating God's harvest."
+            },
+            {
+              "ref": "John 7:37–38",
+              "note": "\"On the last and greatest day of the festival, Jesus stood and said in a loud voice, 'Let anyone who is thirsty come to me and drink.'\" Jesus's water-of-life declaration on the last day of Tabernacles claims to fulfil the feast's deepest longing."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -186,6 +191,9 @@
               "note": "Milgrom: The ritual prescriptions for appointed feasts reflect a coherent priestly symbolic system. The gradations of holiness and offering type form an internally consistent theology of sacred space and divine access."
             }
           ]
+        },
+        "hist": {
+          "context": "The autumn feasts complete the sacred year: Trumpets (1 Tishri, vv.24–25) — the šôpār blast inaugurating the month; Day of Atonement (10 Tishri, vv.26–32) — the great fast and sanctuary purging of Lev 16; Tabernacles (15–21 Tishri, vv.33–43) — a seven-day harvest festival in booths, followed by a solemn assembly (šĕmînî ʿaṣeret, \"eighth-day assembly,\" v.36). The autumn feasts follow the same theological logic as the spring: Trumpets = eschatological summons; Atonement = final judgement/cleansing; Tabernacles = eschatological feast in God's presence. Revelation's imagery of trumpets, judgement, and the great harvest draws extensively on this autumn feast sequence."
         }
       }
     }

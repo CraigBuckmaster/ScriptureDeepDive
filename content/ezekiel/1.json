@@ -25,17 +25,18 @@
             "paragraph": "Ezekiel is identified as a priest (hakkohen) — the only major prophet explicitly called a priest. This priestly identity shapes the entire book: temple visions, purity language, and the theology of divine glory (kabod) all reflect priestly concerns."
           }
         ],
-        "ctx": "The superscription anchors the book in precise chronology: the thirtieth year (probably Ezekiel's age, the year a priest would begin temple service — cf. Num 4:3), the fifth year of Jehoiachin's exile (593 BC), by the Kebar River in Babylonia. Instead of entering the temple, Ezekiel receives a vision of the heavenly throne — the temple comes to him.",
-        "cross": [
-          {
-            "ref": "Num 4:3",
-            "note": "Levitical service began at age thirty — the year Ezekiel should have begun priestly duties in the Jerusalem temple."
-          },
-          {
-            "ref": "2 Kgs 24:10-16",
-            "note": "The deportation of 597 BC that brought Ezekiel and King Jehoiachin to Babylon."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 4:3",
+              "note": "Levitical service began at age thirty — the year Ezekiel should have begun priestly duties in the Jerusalem temple."
+            },
+            {
+              "ref": "2 Kgs 24:10-16",
+              "note": "The deportation of 597 BC that brought Ezekiel and King Jehoiachin to Babylon."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -88,6 +89,9 @@
               "note": "Zimmerli identifies the double date formula as evidence of editorial layering: the original autobiographical 'thirtieth year' was supplemented by the chronological framework tied to Jehoiachin's exile, creating the book's characteristic dating system used throughout."
             }
           ]
+        },
+        "hist": {
+          "context": "The superscription anchors the book in precise chronology: the thirtieth year (probably Ezekiel's age, the year a priest would begin temple service — cf. Num 4:3), the fifth year of Jehoiachin's exile (593 BC), by the Kebar River in Babylonia. Instead of entering the temple, Ezekiel receives a vision of the heavenly throne — the temple comes to him."
         }
       }
     },
@@ -111,21 +115,22 @@
             "paragraph": "A key word throughout Ezekiel, occurring over 50 times. Here the ruah animates the living creatures — wherever the spirit goes, they go. This same spirit will later fill the dry bones (ch. 37) and the new temple (chs. 40-48)."
           }
         ],
-        "ctx": "The four living creatures draw on ancient Near Eastern iconography — composite guardian figures (lamassu, shedu) flanked Mesopotamian thrones and temple entrances. But Ezekiel transforms pagan imagery: these are not independent deities but servants of YHWH, bearing his throne. The priest sees cherubim not in Jerusalem's temple but in Babylon — God's glory has traveled to the exiles.",
-        "cross": [
-          {
-            "ref": "Isa 6:1-3",
-            "note": "Isaiah's seraphim vision parallels Ezekiel's throne vision — both describe the divine council attending God's throne."
-          },
-          {
-            "ref": "Rev 4:6-8",
-            "note": "John's four living creatures echo Ezekiel's hayyot with the same four faces, now surrounding the heavenly throne in continuous worship."
-          },
-          {
-            "ref": "Exod 25:18-20",
-            "note": "The cherubim atop the ark of the covenant — the earthly counterpart to Ezekiel's heavenly throne bearers."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 6:1-3",
+              "note": "Isaiah's seraphim vision parallels Ezekiel's throne vision — both describe the divine council attending God's throne."
+            },
+            {
+              "ref": "Rev 4:6-8",
+              "note": "John's four living creatures echo Ezekiel's hayyot with the same four faces, now surrounding the heavenly throne in continuous worship."
+            },
+            {
+              "ref": "Exod 25:18-20",
+              "note": "The cherubim atop the ark of the covenant — the earthly counterpart to Ezekiel's heavenly throne bearers."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -190,6 +195,9 @@
               "note": "Zimmerli identifies three layers of tradition in the vision: an original core vision of the throne (vv.4, 22, 26-28), a secondary expansion describing the living creatures (vv.5-12), and a later addition of the wheels (vv.15-21). Each layer adds theological depth to the merkabah tradition."
             }
           ]
+        },
+        "hist": {
+          "context": "The four living creatures draw on ancient Near Eastern iconography — composite guardian figures (lamassu, shedu) flanked Mesopotamian thrones and temple entrances. But Ezekiel transforms pagan imagery: these are not independent deities but servants of YHWH, bearing his throne. The priest sees cherubim not in Jerusalem's temple but in Babylon — God's glory has traveled to the exiles."
         }
       }
     },
@@ -213,21 +221,22 @@
             "paragraph": "The climactic revelation: the kavod (glory/weight/presence) of YHWH appears above the throne. This is the central theological concept of Ezekiel — the glory that will depart the temple (chs. 8-11), dwell among the exiles, and ultimately return (43:1-5). Kavod theology replaces temple theology for the exile."
           }
         ],
-        "ctx": "The vision reaches its climax with the appearance of the divine glory (kavod YHWH). Ezekiel the priest, trained to encounter God's presence in the temple, now sees that presence enthroned above the heavens on a mobile chariot-throne. The theological implication is staggering: God's presence is not tied to Jerusalem. He has come to Babylon. This becomes the interpretive key for the entire book.",
-        "cross": [
-          {
-            "ref": "Exod 24:9-11",
-            "note": "Moses, Aaron, and the elders saw God on a pavement of sapphire — Ezekiel's throne of lapis lazuli echoes this Sinai theophany."
-          },
-          {
-            "ref": "Rev 4:2-3",
-            "note": "John sees a throne in heaven with someone seated on it who has the appearance of jasper and carnelian, directly echoing Ezekiel's vision."
-          },
-          {
-            "ref": "Dan 7:9-10",
-            "note": "Daniel's Ancient of Days vision shares the throne-theophany tradition with Ezekiel, including fire and the divine council."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 24:9-11",
+              "note": "Moses, Aaron, and the elders saw God on a pavement of sapphire — Ezekiel's throne of lapis lazuli echoes this Sinai theophany."
+            },
+            {
+              "ref": "Rev 4:2-3",
+              "note": "John sees a throne in heaven with someone seated on it who has the appearance of jasper and carnelian, directly echoing Ezekiel's vision."
+            },
+            {
+              "ref": "Dan 7:9-10",
+              "note": "Daniel's Ancient of Days vision shares the throne-theophany tradition with Ezekiel, including fire and the divine council."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -296,6 +305,9 @@
               "note": "Zimmerli sees the culminating vision as deliberate theological restraint: Ezekiel piles up approximation formulas (kemar'eh, demut, ke'en) to indicate that human language cannot capture the divine reality. The 'likeness of the glory' is the outermost edge of what a human can perceive and survive."
             }
           ]
+        },
+        "hist": {
+          "context": "The vision reaches its climax with the appearance of the divine glory (kavod YHWH). Ezekiel the priest, trained to encounter God's presence in the temple, now sees that presence enthroned above the heavens on a mobile chariot-throne. The theological implication is staggering: God's presence is not tied to Jerusalem. He has come to Babylon. This becomes the interpretive key for the entire book."
         }
       }
     }

@@ -37,21 +37,22 @@
             "paragraph": "Anthropomorphic language for divine acceptance. Signals the worshipper's offering is received."
           }
         ],
-        "ctx": "Leviticus opens where Exodus ends — God dwelling in the tabernacle (Exod 40:34–38), now calling Israel to draw near through sacrifice. The burnt offering is the foundational sacrifice: it is entirely consumed, symbolising total self-dedication to God. The worshipper lays a hand on the animal's head (v.4), identifying with it, and the offering achieves atonement (kippēr). The detailed attention to blood manipulation (vv.5,11,15) underscores that life belongs to God — blood represents life given back to the giver of life.",
-        "cross": [
-          {
-            "ref": "Rom 12:1",
-            "note": "Paul calls believers to present themselves as \"living sacrifices\" — the NT counterpart to the ʿōlāh."
-          },
-          {
-            "ref": "Heb 10:5–7",
-            "note": "The Psalmist's words applied to Christ: \"Offerings you did not desire… here I am.\" The ʿōlāh finds its fulfilment in total self-offering."
-          },
-          {
-            "ref": "Exod 29:18",
-            "note": "The burnt offering is central to Aaron's ordination — the same ritual Lev 8–9 will enact."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 12:1",
+              "note": "Paul calls believers to present themselves as \"living sacrifices\" — the NT counterpart to the ʿōlāh."
+            },
+            {
+              "ref": "Heb 10:5–7",
+              "note": "The Psalmist's words applied to Christ: \"Offerings you did not desire… here I am.\" The ʿōlāh finds its fulfilment in total self-offering."
+            },
+            {
+              "ref": "Exod 29:18",
+              "note": "The burnt offering is central to Aaron's ordination — the same ritual Lev 8–9 will enact."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -111,6 +112,9 @@
               "note": "Milgrom: Hand-leaning (semikhāh) transfers identity — the worshipper's self is symbolically united with the animal. Kippēr here means \"to purge\" or \"to ransom.\" Milgrom distinguishes this from expiation: it is the worshipper's acceptance, not guilt-removal."
             }
           ]
+        },
+        "hist": {
+          "context": "Leviticus opens where Exodus ends — God dwelling in the tabernacle (Exod 40:34–38), now calling Israel to draw near through sacrifice. The burnt offering is the foundational sacrifice: it is entirely consumed, symbolising total self-dedication to God. The worshipper lays a hand on the animal's head (v.4), identifying with it, and the offering achieves atonement (kippēr). The detailed attention to blood manipulation (vv.5,11,15) underscores that life belongs to God — blood represents life given back to the giver of life."
         }
       }
     },
@@ -128,17 +132,18 @@
             "paragraph": "The provision of birds as an acceptable substitute ensures the poorest Israelite can participate in the sacrificial system. Access to God is not proportional to wealth."
           }
         ],
-        "ctx": "The chapter's structure is deliberately tiered: cattle (vv.3–9), sheep or goats (vv.10–13), birds (vv.14–17). Each tier has slightly different procedures — birds are not slaughtered with a knife but wrung by the neck — yet each achieves the same covenantal result. The democratising logic is striking: no Israelite, however poor, is excluded from approaching God through sacrifice.",
-        "cross": [
-          {
-            "ref": "Luke 2:24",
-            "note": "Mary and Joseph bring \"a pair of turtledoves or two young pigeons\" at Jesus's presentation — the offering of the poor. The incarnate Son enters under the poverty provision of the sacrificial law."
-          },
-          {
-            "ref": "2 Cor 8:9",
-            "note": "\"Though he was rich, yet for your sake he became poor.\" Christ himself draws near under the lowest tier of the offering system."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 2:24",
+              "note": "Mary and Joseph bring \"a pair of turtledoves or two young pigeons\" at Jesus's presentation — the offering of the poor. The incarnate Son enters under the poverty provision of the sacrificial law."
+            },
+            {
+              "ref": "2 Cor 8:9",
+              "note": "\"Though he was rich, yet for your sake he became poor.\" Christ himself draws near under the lowest tier of the offering system."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -190,6 +195,9 @@
               "note": "Milgrom: The bird ritual is a priestly adaptation. Unlike land animals, birds cannot have hands laid on them — the priest acts on the worshipper's behalf throughout. This anticipates the fuller priestly mediation of the later chapters."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter's structure is deliberately tiered: cattle (vv.3–9), sheep or goats (vv.10–13), birds (vv.14–17). Each tier has slightly different procedures — birds are not slaughtered with a knife but wrung by the neck — yet each achieves the same covenantal result. The democratising logic is striking: no Israelite, however poor, is excluded from approaching God through sacrifice."
         }
       }
     }

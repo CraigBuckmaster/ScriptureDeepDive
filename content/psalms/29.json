@@ -22,17 +22,18 @@
             "paragraph": "\"The voice (qōl) of the LORD is over the waters\" (v.3). Seven thunders of the LORD’s voice: over waters (v.3), powerful (v.4), majestic (v.4), breaks cedars (v.5), makes Lebanon skip (v.6). The storm psalm: God’s voice IS the thunder. Each \"voice of the LORD\" is a thunderclap."
           }
         ],
-        "ctx": "A hymn to God’s power in the storm. The heavenly beings are called to worship (vv.1–2). Then seven \"voice of the LORD\" declarations trace the storm from sea to land: over waters (v.3), powerful and majestic (v.4), shattering cedars and making mountains skip (vv.5–6).",
-        "cross": [
-          {
-            "ref": "Job 37:2–5",
-            "note": "\"Listen! Listen to the roar of his voice, to the rumbling that comes from his mouth\" — the same thunder theology."
-          },
-          {
-            "ref": "Rev 4:5",
-            "note": "\"From the throne came flashes of lightning, rumblings and peals of thunder\" — the heavenly storm."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Job 37:2–5",
+              "note": "\"Listen! Listen to the roar of his voice, to the rumbling that comes from his mouth\" — the same thunder theology."
+            },
+            {
+              "ref": "Rev 4:5",
+              "note": "\"From the throne came flashes of lightning, rumblings and peals of thunder\" — the heavenly storm."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -123,6 +124,9 @@
               "note": "Goldingay: 'over the waters' may refer to both the Mediterranean Sea and the primordial waters of chaos. The storm-theophany thus echoes creation — Yahweh's voice that ordered chaos continues to resound."
             }
           ]
+        },
+        "hist": {
+          "context": "A hymn to God’s power in the storm. The heavenly beings are called to worship (vv.1–2). Then seven \"voice of the LORD\" declarations trace the storm from sea to land: over waters (v.3), powerful and majestic (v.4), shattering cedars and making mountains skip (vv.5–6)."
         }
       }
     },
@@ -140,17 +144,18 @@
             "paragraph": "\"The LORD sits enthroned over the flood (mabbūl); the LORD is enthroned as King forever\" (v.10). Mabbūl is used elsewhere only for Noah’s flood (Genesis 6–9). God who sent the flood also rules over it. Chaos is not uncontrolled; it is governed."
           }
         ],
-        "ctx": "More thunders: flashes of lightning (v.7), shakes the desert (v.8), twists oaks and strips forests (v.9). \"In his temple all cry, ‘Glory!’\" (v.9). Then the throne: God sits enthroned over the flood — the Noah-flood word. The God who unleashed chaos also governs it. \"The LORD gives strength to his people; the LORD blesses his people with peace\" (v.11). The storm ends in shalom.",
-        "cross": [
-          {
-            "ref": "Gen 6–9",
-            "note": "The mabbūl (flood) — the only other occurrence of this word."
-          },
-          {
-            "ref": "Ps 93:3–4",
-            "note": "\"The seas have lifted up their voice... mightier than the breakers of the sea — the LORD on high is mighty\" — the same enthronement-over-waters theology."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 6–9",
+              "note": "The mabbūl (flood) — the only other occurrence of this word."
+            },
+            {
+              "ref": "Ps 93:3–4",
+              "note": "\"The seas have lifted up their voice... mightier than the breakers of the sea — the LORD on high is mighty\" — the same enthronement-over-waters theology."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -241,6 +246,9 @@
               "note": "Goldingay: the psalm moves from heaven (v.1) through earth's landscape (vv.3-9) to eternity (v.10) to Israel (v.11). The scope narrows from cosmic to communal: all that power is for 'his people.'"
             }
           ]
+        },
+        "hist": {
+          "context": "More thunders: flashes of lightning (v.7), shakes the desert (v.8), twists oaks and strips forests (v.9). \"In his temple all cry, ‘Glory!’\" (v.9). Then the throne: God sits enthroned over the flood — the Noah-flood word. The God who unleashed chaos also governs it. \"The LORD gives strength to his people; the LORD blesses his people with peace\" (v.11). The storm ends in shalom."
         }
       }
     }

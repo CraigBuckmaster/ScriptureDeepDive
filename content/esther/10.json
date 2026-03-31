@@ -25,17 +25,18 @@
             "paragraph": "King Xerxes imposed tribute (mas) on the empire. The word mas echoes Solomon’s forced labour (1 Kgs 5:13) and the Egyptian bondage (Exod 1:11). The empire’s extractive machinery continues — but within it, the Jews are now secure."
           }
         ],
-        "ctx": "The mention of imperial tribute frames the book: it opened with the king’s display of wealth (1:4) and closes with his taxation. The empire grinds on. Within it, one community’s survival story is recorded in the royal annals alongside tax records. Sacred history lives inside secular archives.",
-        "cross": [
-          {
-            "ref": "1 Kgs 5:13",
-            "note": "Solomon’s forced labour — the same word mas for imperial extraction."
-          },
-          {
-            "ref": "Gen 41:40–44",
-            "note": "Joseph’s position in Egypt — the archetype Mordecai fulfils."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 5:13",
+              "note": "Solomon’s forced labour — the same word mas for imperial extraction."
+            },
+            {
+              "ref": "Gen 41:40–44",
+              "note": "Joseph’s position in Egypt — the archetype Mordecai fulfils."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -84,6 +85,9 @@
               "note": "Jobes: the return to imperial routine signals narrative closure. The crisis is absorbed into ongoing history. But the annals preserve a record — and so does the book of Esther."
             }
           ]
+        },
+        "hist": {
+          "context": "The mention of imperial tribute frames the book: it opened with the king’s display of wealth (1:4) and closes with his taxation. The empire grinds on. Within it, one community’s survival story is recorded in the royal annals alongside tax records. Sacred history lives inside secular archives."
         }
       }
     },
@@ -101,22 +105,26 @@
             "paragraph": "Mordecai \"worked for (dōrēš) the good of his people and spoke up for the welfare of all the Jews.\" The verb dōrēš (seek, inquire, care for) is the Chronicler’s signature word (2 Chr 7:14). To seek the good of one’s people is the vocation of the faithful leader in exile."
           }
         ],
-        "hist": "Mordecai is described as \"second in rank to King Xerxes\" — the same position Joseph held in Egypt (Gen 41:40–44). The diaspora Jew at the pinnacle of foreign power is a biblical archetype: Joseph, Daniel, Mordecai. Each saves his people from the inside.",
-        "ctx": "The book ends not with Esther but with Mordecai, and not with the Jews but with the Persian empire. The final note is that Mordecai is \"prominent among the Jews and held in high esteem by his many fellow Jews.\" His greatness serves his people. Power is measured by service.",
-        "cross": [
-          {
-            "ref": "Gen 41:40–44",
-            "note": "Joseph as Pharaoh’s second — the archetype Mordecai fulfils."
-          },
-          {
-            "ref": "Dan 6:28",
-            "note": "Daniel prospered under multiple empires — the same diaspora pattern."
-          },
-          {
-            "ref": "Phil 2:3–4",
-            "note": "Consider others’ interests above your own — Mordecai’s ethic in NT language."
-          }
-        ],
+        "hist": {
+          "historical": "Mordecai is described as \"second in rank to King Xerxes\" — the same position Joseph held in Egypt (Gen 41:40–44). The diaspora Jew at the pinnacle of foreign power is a biblical archetype: Joseph, Daniel, Mordecai. Each saves his people from the inside.",
+          "context": "The book ends not with Esther but with Mordecai, and not with the Jews but with the Persian empire. The final note is that Mordecai is \"prominent among the Jews and held in high esteem by his many fellow Jews.\" His greatness serves his people. Power is measured by service."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 41:40–44",
+              "note": "Joseph as Pharaoh’s second — the archetype Mordecai fulfils."
+            },
+            {
+              "ref": "Dan 6:28",
+              "note": "Daniel prospered under multiple empires — the same diaspora pattern."
+            },
+            {
+              "ref": "Phil 2:3–4",
+              "note": "Consider others’ interests above your own — Mordecai’s ethic in NT language."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

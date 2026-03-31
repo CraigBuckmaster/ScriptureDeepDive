@@ -31,21 +31,22 @@
             "paragraph": "Edom boasts in \"the terror you inspire and the pride of your heart\" (v.16). Dwelling in the clefts of the rock -- Petra's famous rose-red city -- gave Edom a false sense of invulnerability. God declares: \"Though you build your nest as high as the eagle, I will bring you down.\""
           }
         ],
-        "ctx": "Chapter 49 collects five shorter oracles against surrounding nations. Ammon (vv.1-6) is condemned for seizing Israelite territory after the exile of Gad. Edom (vv.7-22) receives the harshest treatment -- the \"brother\" nation descended from Esau that rejoiced over Jerusalem's fall. The Edom oracle draws heavily on Obadiah, suggesting shared prophetic tradition.",
-        "cross": [
-          {
-            "ref": "Obad 1-4",
-            "note": "Obadiah's parallel oracle against Edom -- the eagle's nest imagery and rock-dwelling pride."
-          },
-          {
-            "ref": "Amos 1:13-15",
-            "note": "Amos condemns Ammon for ripping open pregnant women in Gilead -- the same violence Jeremiah addresses."
-          },
-          {
-            "ref": "Gen 25:23",
-            "note": "\"The older will serve the younger\" -- the Jacob-Esau dynamic that underlies the Israel-Edom relationship."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Obad 1-4",
+              "note": "Obadiah's parallel oracle against Edom -- the eagle's nest imagery and rock-dwelling pride."
+            },
+            {
+              "ref": "Amos 1:13-15",
+              "note": "Amos condemns Ammon for ripping open pregnant women in Gilead -- the same violence Jeremiah addresses."
+            },
+            {
+              "ref": "Gen 25:23",
+              "note": "\"The older will serve the younger\" -- the Jacob-Esau dynamic that underlies the Israel-Edom relationship."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Brueggemann reads the Edom oracle as \"the judgment of the brother.\" Edom's sin is not mere political hostility but fraternal betrayal -- the violation of kinship obligations that goes back to Jacob and Esau."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 49 collects five shorter oracles against surrounding nations. Ammon (vv.1-6) is condemned for seizing Israelite territory after the exile of Gad. Edom (vv.7-22) receives the harshest treatment -- the \"brother\" nation descended from Esau that rejoiced over Jerusalem's fall. The Edom oracle draws heavily on Obadiah, suggesting shared prophetic tradition."
         }
       }
     },
@@ -123,17 +127,18 @@
             "paragraph": "The oracle against Elam (vv.34-39) is unique in that Elam is not a neighbor of Israel but a distant eastern power (modern southwestern Iran). God will \"break the bow of Elam\" (v.35) -- the Elamites were famous archers, and the bow was their primary military asset. The inclusion of distant Elam demonstrates the universal scope of divine judgment."
           }
         ],
-        "ctx": "The three remaining oracles target different regions: Damascus to the north (Aram/Syria), Kedar and Hazor to the east (Arabian tribes), and Elam to the far east (Persia). The geographic sweep -- from Aram through Arabia to Persia -- fulfills Jeremiah's commission as \"prophet to the nations\" (1:5). No region is beyond the reach of divine sovereignty. Elam receives a restoration promise (v.39), closing the collection on a note of hope.",
-        "cross": [
-          {
-            "ref": "Isa 17:1-3",
-            "note": "Isaiah's parallel oracle against Damascus -- the northern neighbor faces the same judgment."
-          },
-          {
-            "ref": "Acts 2:9",
-            "note": "Elamites are listed among those present at Pentecost -- the restoration promise (49:39) fulfilled in the inclusion of Elamites in the early church."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 17:1-3",
+              "note": "Isaiah's parallel oracle against Damascus -- the northern neighbor faces the same judgment."
+            },
+            {
+              "ref": "Acts 2:9",
+              "note": "Elamites are listed among those present at Pentecost -- the restoration promise (49:39) fulfilled in the inclusion of Elamites in the early church."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -190,6 +195,9 @@
               "note": "Brueggemann notes that \"the oracles against the nations end (before Babylon) with a restoration promise. The theological trajectory is not annihilation but renewal. God's final word to the nations is hope.\""
             }
           ]
+        },
+        "hist": {
+          "context": "The three remaining oracles target different regions: Damascus to the north (Aram/Syria), Kedar and Hazor to the east (Arabian tribes), and Elam to the far east (Persia). The geographic sweep -- from Aram through Arabia to Persia -- fulfills Jeremiah's commission as \"prophet to the nations\" (1:5). No region is beyond the reach of divine sovereignty. Elam receives a restoration promise (v.39), closing the collection on a note of hope."
         }
       }
     }

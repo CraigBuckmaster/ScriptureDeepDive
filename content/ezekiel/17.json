@@ -25,21 +25,22 @@
             "paragraph": "God calls this oracle a hidah (riddle) and a mashal (parable) — a deliberately encoded story requiring interpretation. The first eagle is Nebuchadnezzar, the cedar top is Jehoiachin, the seed planted in fertile soil is Zedekiah, and the second eagle is Pharaoh of Egypt. The riddle format engages the audience before exposing their king's treachery."
           }
         ],
-        "ctx": "The allegory maps precisely onto recent history: Nebuchadnezzar (the first great eagle) took the top of the cedar (King Jehoiachin) to Babylon and planted a vine (Zedekiah) in the land. But the vine turned its roots toward a second eagle (Egypt), seeking water (military alliance). The question: will the vine prosper after betraying the one who planted it? The answer: no — it will be uprooted.",
-        "cross": [
-          {
-            "ref": "2 Kgs 24:17",
-            "note": "Nebuchadnezzar installed Zedekiah as king — the historical event behind the 'planting' of the vine."
-          },
-          {
-            "ref": "Jer 37:5-10",
-            "note": "Zedekiah's appeal to Egypt and Pharaoh's brief military approach — the second eagle in action."
-          },
-          {
-            "ref": "2 Chr 36:13",
-            "note": "Zedekiah rebelled against Nebuchadnezzar who had made him swear by God — oath-breaking as covenant violation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 24:17",
+              "note": "Nebuchadnezzar installed Zedekiah as king — the historical event behind the 'planting' of the vine."
+            },
+            {
+              "ref": "Jer 37:5-10",
+              "note": "Zedekiah's appeal to Egypt and Pharaoh's brief military approach — the second eagle in action."
+            },
+            {
+              "ref": "2 Chr 36:13",
+              "note": "Zedekiah rebelled against Nebuchadnezzar who had made him swear by God — oath-breaking as covenant violation."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Zimmerli stresses that the riddle format is not merely literary decoration but functions to force the audience to participate in their own judgment. By solving the riddle, they condemn the vine's disloyalty — and then discover they are the vine."
             }
           ]
+        },
+        "hist": {
+          "context": "The allegory maps precisely onto recent history: Nebuchadnezzar (the first great eagle) took the top of the cedar (King Jehoiachin) to Babylon and planted a vine (Zedekiah) in the land. But the vine turned its roots toward a second eagle (Egypt), seeking water (military alliance). The question: will the vine prosper after betraying the one who planted it? The answer: no — it will be uprooted."
         }
       }
     },
@@ -117,25 +121,26 @@
             "paragraph": "Zedekiah's oath to Nebuchadnezzar was sworn in God's name — making the political treaty a sacred covenant. Breaking the oath is not merely political treachery but violation of God's name. God treats pagan treaty oaths as binding when sworn in his name, placing the integrity of his own reputation above Judah's political interests."
           }
         ],
-        "ctx": "The interpretation (vv.11-21) is followed by a messianic oracle (vv.22-24) that transforms the entire allegory. God himself will take a tender shoot from the top of the cedar (the Davidic line) and plant it on a high mountain (Zion), where it will grow into a magnificent cedar sheltering all nations. The political failure of human kings (Zedekiah) will be replaced by God's own planting — the messianic king.",
-        "cross": [
-          {
-            "ref": "Isa 11:1",
-            "note": "A shoot from the stump of Jesse — Isaiah's parallel messianic image of a tender branch from the royal line."
-          },
-          {
-            "ref": "Dan 4:10-12",
-            "note": "Nebuchadnezzar's dream of a great tree sheltering all creatures — Daniel's cosmic tree parallels Ezekiel's cosmic cedar."
-          },
-          {
-            "ref": "Matt 13:31-32",
-            "note": "The mustard seed growing into a great tree where birds nest — Jesus uses the same cosmic tree imagery."
-          },
-          {
-            "ref": "Mark 4:30-32",
-            "note": "The kingdom of God is like a mustard seed — the smallest becoming the greatest, echoing the tender shoot."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 11:1",
+              "note": "A shoot from the stump of Jesse — Isaiah's parallel messianic image of a tender branch from the royal line."
+            },
+            {
+              "ref": "Dan 4:10-12",
+              "note": "Nebuchadnezzar's dream of a great tree sheltering all creatures — Daniel's cosmic tree parallels Ezekiel's cosmic cedar."
+            },
+            {
+              "ref": "Matt 13:31-32",
+              "note": "The mustard seed growing into a great tree where birds nest — Jesus uses the same cosmic tree imagery."
+            },
+            {
+              "ref": "Mark 4:30-32",
+              "note": "The kingdom of God is like a mustard seed — the smallest becoming the greatest, echoing the tender shoot."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -188,6 +193,9 @@
               "note": "Zimmerli sees the reversal formula ('I bring low the high tree and make high the low tree') as eschatological — God overturns all human political orders. The cosmic cedar is not merely a better king but a new order of reality."
             }
           ]
+        },
+        "hist": {
+          "context": "The interpretation (vv.11-21) is followed by a messianic oracle (vv.22-24) that transforms the entire allegory. God himself will take a tender shoot from the top of the cedar (the Davidic line) and plant it on a high mountain (Zion), where it will grow into a magnificent cedar sheltering all nations. The political failure of human kings (Zedekiah) will be replaced by God's own planting — the messianic king."
         }
       }
     }

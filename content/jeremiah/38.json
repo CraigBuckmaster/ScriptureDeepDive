@@ -25,21 +25,22 @@
             "paragraph": "Jeremiah sinks into the mud (tit) at the bottom of the cistern (v.6). The physical detail -- \"there was no water in it, only mud\" -- makes the scene vivid: a dry cistern with accumulated sludge at the bottom, into which the prophet slowly sinks. The tit is both literal danger and metaphorical resonance -- the psalmist's cry \"I sink in the miry depths\" (Ps 69:2) becomes concrete reality."
           }
         ],
-        "ctx": "The officials demand Jeremiah's death for \"weakening the hands\" of the soldiers by telling people to surrender. Zedekiah capitulates: \"He is in your hands. The king can do nothing to oppose you\" (v.5). Jeremiah is lowered into the cistern of Malkijah. He would have died there except for Ebed-Melech, a Cushite official who appeals directly to the king and organizes a rescue with rags and ropes. Ebed-Melech -- a foreigner, possibly a eunuch -- becomes the hero of the chapter while Israel's own leaders try to murder their prophet.",
-        "cross": [
-          {
-            "ref": "Ps 40:2",
-            "note": "\"He lifted me out of the slimy pit, out of the mud and mire\" -- the psalm that Jeremiah's rescue fulfills."
-          },
-          {
-            "ref": "Gen 37:24-28",
-            "note": "Joseph thrown into a cistern and rescued through an outsider's intervention -- the typological parallel."
-          },
-          {
-            "ref": "Acts 8:27-39",
-            "note": "Another Ethiopian (the eunuch) receives divine favor -- the pattern of outsiders who act faithfully when insiders fail."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 40:2",
+              "note": "\"He lifted me out of the slimy pit, out of the mud and mire\" -- the psalm that Jeremiah's rescue fulfills."
+            },
+            {
+              "ref": "Gen 37:24-28",
+              "note": "Joseph thrown into a cistern and rescued through an outsider's intervention -- the typological parallel."
+            },
+            {
+              "ref": "Acts 8:27-39",
+              "note": "Another Ethiopian (the eunuch) receives divine favor -- the pattern of outsiders who act faithfully when insiders fail."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Brueggemann reads the cistern as \"the physical expression of prophetic marginalization.\" The one who speaks truth is literally pushed into a hole and covered over. But the truth cannot be buried; it rises from the mud."
             }
           ]
+        },
+        "hist": {
+          "context": "The officials demand Jeremiah's death for \"weakening the hands\" of the soldiers by telling people to surrender. Zedekiah capitulates: \"He is in your hands. The king can do nothing to oppose you\" (v.5). Jeremiah is lowered into the cistern of Malkijah. He would have died there except for Ebed-Melech, a Cushite official who appeals directly to the king and organizes a rescue with rags and ropes. Ebed-Melech -- a foreigner, possibly a eunuch -- becomes the hero of the chapter while Israel's own leaders try to murder their prophet."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "Zedekiah confesses: \"I am afraid (yare') of the Jews who have gone over to the Babylonians\" (v.19). The king fears his own deserters more than God. This single confession reveals the spiritual bankruptcy of the monarchy: the king's decisions are driven by fear of human opinion rather than by the word of God."
           }
         ],
-        "ctx": "The final private meeting between king and prophet is the most intimate scene in the book. Zedekiah swears an oath of protection, then asks for honest counsel. Jeremiah's answer is the same: surrender to Babylon and live; resist and the city burns. Zedekiah reveals his real obstacle: fear of his own people. The conversation ends with a cover story to protect both men from the officials. This is the last word between king and prophet.",
-        "cross": [
-          {
-            "ref": "Prov 29:25",
-            "note": "\"Fear of man will prove to be a snare, but whoever trusts in the LORD is kept safe\" -- the proverb that Zedekiah illustrates negatively."
-          },
-          {
-            "ref": "John 12:42-43",
-            "note": "Many leaders believed in Jesus but would not confess him \"for they loved human praise more than praise from God\" -- the same cowardice."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 29:25",
+              "note": "\"Fear of man will prove to be a snare, but whoever trusts in the LORD is kept safe\" -- the proverb that Zedekiah illustrates negatively."
+            },
+            {
+              "ref": "John 12:42-43",
+              "note": "Many leaders believed in Jesus but would not confess him \"for they loved human praise more than praise from God\" -- the same cowardice."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -180,6 +185,9 @@
               "note": "Brueggemann calls this \"the most honest sentence Zedekiah ever speaks.\" The king drops all pretense and admits that his decisions are governed by fear, not faith. \"The tragedy is not that he doesn't know the truth but that he does.\""
             }
           ]
+        },
+        "hist": {
+          "context": "The final private meeting between king and prophet is the most intimate scene in the book. Zedekiah swears an oath of protection, then asks for honest counsel. Jeremiah's answer is the same: surrender to Babylon and live; resist and the city burns. Zedekiah reveals his real obstacle: fear of his own people. The conversation ends with a cover story to protect both men from the officials. This is the last word between king and prophet."
         }
       }
     }

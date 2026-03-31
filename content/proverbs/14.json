@@ -31,17 +31,18 @@
             "paragraph": "There is a way that seems yāšār — straight, right — to a person, but its end is the way of death (v. 12). The terrifying point is that subjective moral certainty is no guarantee of truth. Self-deception is possible precisely because the wrong path feels right. Only external wisdom (God's word, wise counsel) can correct the internal compass."
           }
         ],
-        "ctx": "The first half opens with the wise woman as builder (v.1). V.10 is an island of interiority: each heart knows its own bitterness. V.12 is the chapter's most sobering verse: self-perceived rightness is not a reliable guide.",
-        "cross": [
-          {
-            "ref": "Prov 9:1",
-            "note": "Wisdom has built her house -- the wise woman of 14:1 enacts what Lady Wisdom does."
-          },
-          {
-            "ref": "Matt 7:13-14",
-            "note": "The way that seems right but leads to death anticipates the Sermon's broad road."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 9:1",
+              "note": "Wisdom has built her house -- the wise woman of 14:1 enacts what Lady Wisdom does."
+            },
+            {
+              "ref": "Matt 7:13-14",
+              "note": "The way that seems right but leads to death anticipates the Sermon's broad road."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "The NET note on 'a way that seems right to a man' (derekh yashar lifney ish) discusses the subjective character of human moral reasoning — what seems right to the individual knower may be fatally wrong. The note traces the appearance-reality gap through Proverbs: the simple are led astray by appearances (9:17); the mocker mistakes his folly for wisdom (14:6). Only the fear of the LORD provides an external standard."
             }
           ]
+        },
+        "hist": {
+          "context": "The first half opens with the wise woman as builder (v.1). V.10 is an island of interiority: each heart knows its own bitterness. V.12 is the chapter's most sobering verse: self-perceived rightness is not a reliable guide."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "Whoever oppresses the poor reproaches his Maker, but whoever is gracious (ḥônēn) to the needy honours God (v. 31). The logic is theological: the poor bear the image of God, so treatment of them is treatment of God. Ḥônēn (from ḥānan, to be gracious) is the same root used of God's own grace toward humanity."
           }
         ],
-        "ctx": "The second half addresses poverty (vv.20-21,31), the fear of the LORD as fortress and fountain (vv.26-27), peace-heart versus envying-bones (v.30), and righteousness as national exaltation (v.34). The chapter's theological centre: how you treat the poor reveals your relationship to their Maker.",
-        "cross": [
-          {
-            "ref": "Prov 13:14",
-            "note": "Fountain of life -- 14:27 applies the same image to the fear of the LORD."
-          },
-          {
-            "ref": "Matt 25:40",
-            "note": "Whatever you did for the least -- the NT fulfilment of v.31's identification of the poor with their Maker."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 13:14",
+              "note": "Fountain of life -- 14:27 applies the same image to the fear of the LORD."
+            },
+            {
+              "ref": "Matt 25:40",
+              "note": "Whatever you did for the least -- the NT fulfilment of v.31's identification of the poor with their Maker."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -178,6 +183,9 @@
               "note": "The NET note on 'righteousness exalts a nation' discusses the political-theological claim: tsedaqah (righteousness, covenant faithfulness) at the national level produces national exaltation (rum, lifting up). The note discusses whether this is a promise (faithfulness guarantees national prosperity) or an observation (faithful nations generally flourish). The note favours the latter, given Proverbs' general preference for observable principles over mechanical guarantees."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half addresses poverty (vv.20-21,31), the fear of the LORD as fortress and fountain (vv.26-27), peace-heart versus envying-bones (v.30), and righteousness as national exaltation (v.34). The chapter's theological centre: how you treat the poor reveals your relationship to their Maker."
         }
       }
     }

@@ -54,21 +54,22 @@
             "current": false
           }
         ],
-        "ctx": "The Agrippa speech is the climax of Paul's captivity apologetic — the most comprehensive statement of the Gospel in Acts. The audience is the most distinguished he has addressed, and the speech is the most theologically complete and personally vulnerable (v.11: 'I was so obsessed with persecuting them'). Paul's conclusion (v.29: 'I pray that all may become what I am, except for these chains') is the boldest evangelistic appeal in Acts — a prisoner inviting a king to share his faith.",
-        "cross": [
-          {
-            "ref": "Isaiah 42:6–7; 49:6",
-            "note": "\"A light for the Gentiles, to open eyes that are blind\" — the Servant commission that Paul applies to himself (vv.17–18). The Gentile mission is not innovation but the fulfilment of what the Servant songs pointed toward."
-          },
-          {
-            "ref": "Acts 9:1–19",
-            "note": "The first Damascus account — told by Luke as narrator. Acts 26 adds 'kicking against the goads,' the fullest commission statement, and Paul's immediate obedience."
-          },
-          {
-            "ref": "Acts 13:47",
-            "note": "\"I have made you a light for the Gentiles\" — the Isaiah 49:6 quotation Paul applied at Pisidian Antioch. The Agrippa speech gives the full theological content behind that commission."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isaiah 42:6–7; 49:6",
+              "note": "\"A light for the Gentiles, to open eyes that are blind\" — the Servant commission that Paul applies to himself (vv.17–18). The Gentile mission is not innovation but the fulfilment of what the Servant songs pointed toward."
+            },
+            {
+              "ref": "Acts 9:1–19",
+              "note": "The first Damascus account — told by Luke as narrator. Acts 26 adds 'kicking against the goads,' the fullest commission statement, and Paul's immediate obedience."
+            },
+            {
+              "ref": "Acts 13:47",
+              "note": "\"I have made you a light for the Gentiles\" — the Isaiah 49:6 quotation Paul applied at Pisidian Antioch. The Agrippa speech gives the full theological content behind that commission."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -133,6 +134,9 @@
               "note": "Keener notes the commission statement combines language from multiple Servant Songs (Isaiah 42:6–7, 16; 49:6; 61:1–2) and Ezekiel 2:1–3. Paul presents himself as the inheritor of the prophetic and servant tradition — his Gentile mission is not innovation but the fulfilment of what the whole prophetic corpus pointed toward."
             }
           ]
+        },
+        "hist": {
+          "context": "The Agrippa speech is the climax of Paul's captivity apologetic — the most comprehensive statement of the Gospel in Acts. The audience is the most distinguished he has addressed, and the speech is the most theologically complete and personally vulnerable (v.11: 'I was so obsessed with persecuting them'). Paul's conclusion (v.29: 'I pray that all may become what I am, except for these chains') is the boldest evangelistic appeal in Acts — a prisoner inviting a king to share his faith."
         }
       }
     },
@@ -179,21 +183,22 @@
             "current": false
           }
         ],
-        "ctx": "The three responses to Paul's speech are Luke's typology of responses to the Gospel: Festus (intellectual dismissal — 'you are out of your mind'), Agrippa (engaged deflection — 'do you think you can persuade me?'), and the official verdict (legal but not personal acknowledgment — 'this man has done nothing wrong'). Paul's closing appeal — praying that all may become what he is except for the chains — is simultaneously the boldest and most humble evangelistic statement in the NT.",
-        "cross": [
-          {
-            "ref": "1 Corinthians 1:18",
-            "note": "\"The message of the cross is foolishness to those who are perishing\" — Festus's \"you are out of your mind\" is the Corinthian reaction to the resurrection, encountered at the highest political level."
-          },
-          {
-            "ref": "Acts 17:32",
-            "note": "\"When they heard about the resurrection of the dead, some of them sneered\" — the Athens reaction mirrors Festus's. The resurrection is consistently the point of intellectual dismissal."
-          },
-          {
-            "ref": "Acts 26:29",
-            "note": "\"I pray to God that... all who are listening to me today may become what I am, except for these chains\" — the most comprehensive evangelistic appeal in Acts."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Corinthians 1:18",
+              "note": "\"The message of the cross is foolishness to those who are perishing\" — Festus's \"you are out of your mind\" is the Corinthian reaction to the resurrection, encountered at the highest political level."
+            },
+            {
+              "ref": "Acts 17:32",
+              "note": "\"When they heard about the resurrection of the dead, some of them sneered\" — the Athens reaction mirrors Festus's. The resurrection is consistently the point of intellectual dismissal."
+            },
+            {
+              "ref": "Acts 26:29",
+              "note": "\"I pray to God that... all who are listening to me today may become what I am, except for these chains\" — the most comprehensive evangelistic appeal in Acts."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -258,6 +263,9 @@
               "note": "Keener notes the fifth innocence declaration and its qualification. 'This man could have been set free if he had not appealed to Caesar' — simultaneously declares Paul's innocence and confirms the irrevocability of the appeal. The Roman legal system has both vindicated Paul and locked him into the journey to Rome."
             }
           ]
+        },
+        "hist": {
+          "context": "The three responses to Paul's speech are Luke's typology of responses to the Gospel: Festus (intellectual dismissal — 'you are out of your mind'), Agrippa (engaged deflection — 'do you think you can persuade me?'), and the official verdict (legal but not personal acknowledgment — 'this man has done nothing wrong'). Paul's closing appeal — praying that all may become what he is except for the chains — is simultaneously the boldest and most humble evangelistic statement in the NT."
         }
       }
     }

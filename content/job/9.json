@@ -25,17 +25,18 @@
             "paragraph": "\"How can mere mortals prove their righteousness (ṣādaq) before God?\" (v.2). The legal terminology: ṣādaq means to win one’s case, to be vindicated in court. Job accepts Eliphaz’s premise (4:17) but draws a different conclusion: the problem is not guilt but powerlessness. Even an innocent person cannot get a fair hearing against God."
           }
         ],
-        "ctx": "Job agrees with Eliphaz that no mortal can be righteous before God — but not because all mortals are guilty. Rather, because God is too powerful to be challenged. The power differential makes fair adjudication impossible. God moves mountains, shakes the earth, seals up the stars, walks on the waves (vv.5–10). Against such power, what court can function?",
-        "cross": [
-          {
-            "ref": "Ps 104:5–9",
-            "note": "\"He set the earth on its foundations\" — the same creation power, but in the Psalm it’s praise; in Job it’s the problem."
-          },
-          {
-            "ref": "Amos 4:13",
-            "note": "\"He who forms the mountains, creates the wind\" — God’s creative power as evidence of sovereignty."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 104:5–9",
+              "note": "\"He set the earth on its foundations\" — the same creation power, but in the Psalm it’s praise; in Job it’s the problem."
+            },
+            {
+              "ref": "Amos 4:13",
+              "note": "\"He who forms the mountains, creates the wind\" — God’s creative power as evidence of sovereignty."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -104,6 +105,9 @@
               "note": "Habel: Job confronts the fundamental problem of his legal case. He has a complaint, but the defendant (God) is also the judge. No human court can adjudicate between a mortal and the Almighty."
             }
           ]
+        },
+        "hist": {
+          "context": "Job agrees with Eliphaz that no mortal can be righteous before God — but not because all mortals are guilty. Rather, because God is too powerful to be challenged. The power differential makes fair adjudication impossible. God moves mountains, shakes the earth, seals up the stars, walks on the waves (vv.5–10). Against such power, what court can function?"
         }
       }
     },
@@ -113,17 +117,18 @@
       "verse_start": 13,
       "verse_end": 24,
       "panels": {
-        "ctx": "Job descends into despair about justice. Even if he summoned God and God responded, Job doesn’t believe God would listen (v.16). Even if he were innocent, his own mouth would condemn him (v.20). Whether innocent or guilty, God destroys (v.22). \"When a scourge brings sudden death, he mocks at the calamity of the innocent\" (v.23) — Job’s most daring accusation so far.",
-        "cross": [
-          {
-            "ref": "Eccl 9:2–3",
-            "note": "\"The same destiny overtakes all\" — the same collapse of the moral distinction between righteous and wicked."
-          },
-          {
-            "ref": "Ps 44:22",
-            "note": "\"For your sake we face death all day long\" — the righteous suffering without explanation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Eccl 9:2–3",
+              "note": "\"The same destiny overtakes all\" — the same collapse of the moral distinction between righteous and wicked."
+            },
+            {
+              "ref": "Ps 44:22",
+              "note": "\"For your sake we face death all day long\" — the righteous suffering without explanation."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -188,6 +193,9 @@
               "note": "Habel: Job’s case reaches its most aggressive point. He accuses the judge of bias, mockery, and complicity with injustice. This is contempt of court — and it is the only honest response to innocent suffering within a monotheistic framework."
             }
           ]
+        },
+        "hist": {
+          "context": "Job descends into despair about justice. Even if he summoned God and God responded, Job doesn’t believe God would listen (v.16). Even if he were innocent, his own mouth would condemn him (v.20). Whether innocent or guilty, God destroys (v.22). \"When a scourge brings sudden death, he mocks at the calamity of the innocent\" (v.23) — Job’s most daring accusation so far."
         }
       }
     },
@@ -205,17 +213,18 @@
             "paragraph": "\"If only there were someone to mediate (mōkîyaḥ) between us\" (v.33). The first cry for a mediator — someone who could lay his hand on both parties and adjudicate fairly. Job needs a third party because God is both his opponent and his judge. This longing will escalate: witness in heaven (16:19), redeemer who lives (19:25)."
           }
         ],
-        "ctx": "Job’s legal frustration reaches its climax. His days are swift (v.25), he cannot cleanse himself (v.30–31), and there is no umpire to level the playing field (v.33). The mediator cry is the theological seed that grows through the dialogue: Job needs someone between himself and God. The NT will identify this mediator as Christ (1 Tim 2:5).",
-        "cross": [
-          {
-            "ref": "1 Tim 2:5",
-            "note": "\"There is one mediator between God and mankind, the man Christ Jesus\" — the answer to Job’s cry, across the canon."
-          },
-          {
-            "ref": "Heb 9:15",
-            "note": "\"Christ is the mediator of a new covenant\" — the arbiter Job longed for."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Tim 2:5",
+              "note": "\"There is one mediator between God and mankind, the man Christ Jesus\" — the answer to Job’s cry, across the canon."
+            },
+            {
+              "ref": "Heb 9:15",
+              "note": "\"Christ is the mediator of a new covenant\" — the arbiter Job longed for."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -284,6 +293,9 @@
               "note": "Habel: the mōkîyaḥ request is the pivotal legal moment. Job recognises that without a neutral arbiter, his case is hopeless. The plaintiff cannot get a fair hearing from a judge who is also the accused."
             }
           ]
+        },
+        "hist": {
+          "context": "Job’s legal frustration reaches its climax. His days are swift (v.25), he cannot cleanse himself (v.30–31), and there is no umpire to level the playing field (v.33). The mediator cry is the theological seed that grows through the dialogue: Job needs someone between himself and God. The NT will identify this mediator as Christ (1 Tim 2:5)."
         }
       }
     }

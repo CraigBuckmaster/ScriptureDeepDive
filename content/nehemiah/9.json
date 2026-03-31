@@ -25,17 +25,18 @@
             "paragraph": "The twenty-fourth day: fasting, sackcloth, and earth on their heads. The joy of chapter 8 gives way to confession in chapter 9. Both are proper responses to Torah. Joy and penitence are not contradictions but complements."
           }
         ],
-        "ctx": "Two days after Tabernacles ends, the community assembles for confession. The sequence is deliberate: celebration first (ch 8), then repentance (ch 9). Joy grounds repentance; repentance deepens joy. The order prevents despair.",
-        "cross": [
-          {
-            "ref": "Dan 9:3–4",
-            "note": "Daniel’s prayer in fasting and sackcloth — the closest parallel."
-          },
-          {
-            "ref": "Joel 2:12–13",
-            "note": "\"Rend your hearts, not your garments\" — the prophetic ideal this assembly embodies."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Dan 9:3–4",
+              "note": "Daniel’s prayer in fasting and sackcloth — the closest parallel."
+            },
+            {
+              "ref": "Joel 2:12–13",
+              "note": "\"Rend your hearts, not your garments\" — the prophetic ideal this assembly embodies."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -88,6 +89,9 @@
               "note": "Kidner: \"They separated themselves from foreigners — not ethnically but religiously. The confession requires a defined community. You cannot confess on behalf of everyone; only on behalf of your own people.\""
             }
           ]
+        },
+        "hist": {
+          "context": "Two days after Tabernacles ends, the community assembles for confession. The sequence is deliberate: celebration first (ch 8), then repentance (ch 9). Joy grounds repentance; repentance deepens joy. The order prevents despair."
         }
       }
     },
@@ -111,22 +115,26 @@
             "paragraph": "\"They were disobedient and rebelled (sāraḇû) against you\" (v.26). The verb sāraḇ occurs four times in the prayer — a deliberate drumbeat of repeated failure."
           }
         ],
-        "hist": "The prayer surveys the entire sweep of OT history: creation (v.6), Abraham (vv.7–8), Exodus (vv.9–15), wilderness (vv.16–21), conquest (vv.22–25), judges-prophets cycle (vv.26–30), exile (v.30). It is the most complete historical summary in the Bible, more extensive than Psalm 78 or Stephen’s speech (Acts 7).",
-        "ctx": "The prayer’s structure reveals its theology: God acts → Israel rebels → God punishes → God shows mercy → cycle repeats. The pattern is not progress but repetition. Each cycle makes the same point: Israel’s failure is constant; God’s mercy is more constant still.",
-        "cross": [
-          {
-            "ref": "Ps 106",
-            "note": "The penitential historical psalm — the nearest canonical parallel."
-          },
-          {
-            "ref": "Acts 7:2–53",
-            "note": "Stephen’s historical recital — follows the same trajectory."
-          },
-          {
-            "ref": "Ezra 9:6–15",
-            "note": "Ezra’s penitential prayer — shorter but structurally identical."
-          }
-        ],
+        "hist": {
+          "historical": "The prayer surveys the entire sweep of OT history: creation (v.6), Abraham (vv.7–8), Exodus (vv.9–15), wilderness (vv.16–21), conquest (vv.22–25), judges-prophets cycle (vv.26–30), exile (v.30). It is the most complete historical summary in the Bible, more extensive than Psalm 78 or Stephen’s speech (Acts 7).",
+          "context": "The prayer’s structure reveals its theology: God acts → Israel rebels → God punishes → God shows mercy → cycle repeats. The pattern is not progress but repetition. Each cycle makes the same point: Israel’s failure is constant; God’s mercy is more constant still."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 106",
+              "note": "The penitential historical psalm — the nearest canonical parallel."
+            },
+            {
+              "ref": "Acts 7:2–53",
+              "note": "Stephen’s historical recital — follows the same trajectory."
+            },
+            {
+              "ref": "Ezra 9:6–15",
+              "note": "Ezra’s penitential prayer — shorter but structurally identical."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -216,13 +224,14 @@
             "paragraph": "\"In view of all this, we are making a binding agreement (ʾămānâ), putting it in writing, and our leaders, Levites, and priests are affixing their seals to it.\" The prayer leads directly to covenant commitment. Confession without commitment is incomplete."
           }
         ],
-        "ctx": "The prayer’s conclusion is not a petition but a resolution. \"In view of all this\" (ûḇəḵāl zōʾt) turns the recital into the ground for action. History is not merely remembered but responded to. The sealed covenant of chapter 10 flows directly from this prayer.",
-        "cross": [
-          {
-            "ref": "Josh 24:14–27",
-            "note": "Joshua’s covenant at Shechem — the nearest structural parallel: historical recital followed by covenant commitment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 24:14–27",
+              "note": "Joshua’s covenant at Shechem — the nearest structural parallel: historical recital followed by covenant commitment."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -275,6 +284,9 @@
               "note": "Kidner: \"Slaves in our own land. The bitterest sentence in the prayer. They have the land but not the freedom. Restoration is real but not yet complete.\""
             }
           ]
+        },
+        "hist": {
+          "context": "The prayer’s conclusion is not a petition but a resolution. \"In view of all this\" (ûḇəḵāl zōʾt) turns the recital into the ground for action. History is not merely remembered but responded to. The sealed covenant of chapter 10 flows directly from this prayer."
         }
       }
     }

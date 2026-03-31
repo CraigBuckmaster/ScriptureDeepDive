@@ -31,21 +31,22 @@
             "paragraph": "The Torah must not \"depart\" from Joshua's mouth — the verbmûšmeans to withdraw or recede. Meditation on God's word is not private devotion but the operational strategy for conquest."
           }
         ],
-        "ctx": "The book opens at the hinge point of Israel's history: Moses is dead, the wilderness is behind, and Canaan lies ahead. God speaks directly to Joshua — the only time in the book he receives this kind of unmediated commission. The threefold \"be strong and courageous\" echoes Moses' farewell charge (Deut 31:6-8,23) and frames the entire conquest as an act of obedient faith, not military genius.",
-        "cross": [
-          {
-            "ref": "Deut 31:6-8",
-            "note": "Moses gave the same charge to Israel and to Joshua publicly. God now repeats it privately — confirming that divine commission, not popular acclaim, is the basis of Joshua's authority."
-          },
-          {
-            "ref": "Heb 4:8-10",
-            "note": "\"If Joshua had given them rest, God would not have spoken later about another day.\" The NT reads Joshua's conquest as incomplete — the true rest comes through Christ."
-          },
-          {
-            "ref": "Matt 28:20",
-            "note": "\"I am with you always, to the end of the age.\" Jesus' Great Commission echoes Joshua's: the promise of presence is the ground of every mission."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 31:6-8",
+              "note": "Moses gave the same charge to Israel and to Joshua publicly. God now repeats it privately — confirming that divine commission, not popular acclaim, is the basis of Joshua's authority."
+            },
+            {
+              "ref": "Heb 4:8-10",
+              "note": "\"If Joshua had given them rest, God would not have spoken later about another day.\" The NT reads Joshua's conquest as incomplete — the true rest comes through Christ."
+            },
+            {
+              "ref": "Matt 28:20",
+              "note": "\"I am with you always, to the end of the age.\" Jesus' Great Commission echoes Joshua's: the promise of presence is the ground of every mission."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "Howard: \"This Book of the Law\" is the earliest reference to a written Torah as an authoritative document. The canonical implication is significant: Joshua's authority is derived from and subordinate to written Scripture. The leader serves the text, not the reverse."
             }
           ]
+        },
+        "hist": {
+          "context": "The book opens at the hinge point of Israel's history: Moses is dead, the wilderness is behind, and Canaan lies ahead. God speaks directly to Joshua — the only time in the book he receives this kind of unmediated commission. The threefold \"be strong and courageous\" echoes Moses' farewell charge (Deut 31:6-8,23) and frames the entire conquest as an act of obedient faith, not military genius."
         }
       }
     },
@@ -135,17 +139,18 @@
             "paragraph": "The officers are to \"pass through\" (ʿābar) the camp — the same verb used for crossing the Jordan. The administrative preparation mirrors the physical crossing: everything is in motion toward the land."
           }
         ],
-        "ctx": "Joshua immediately exercises his commission — within three days, Israel will cross the Jordan. The Transjordan tribes (Reuben, Gad, half-Manasseh) are reminded of their obligation from Numbers 32: their fighting men must cross and help conquer western Canaan before returning to their eastern inheritance. Their response — \"Just as we obeyed Moses in everything, so we will obey you\" — is both pledge and irony, given how poorly they obeyed Moses.",
-        "cross": [
-          {
-            "ref": "Num 32:20-22",
-            "note": "The original agreement between Moses and the Transjordan tribes. Joshua now enforces the same terms — continuity of covenant obligation across leadership transitions."
-          },
-          {
-            "ref": "Josh 22:1-6",
-            "note": "The fulfilment: after the conquest, Joshua releases the Transjordan tribes with a blessing. They kept their word."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 32:20-22",
+              "note": "The original agreement between Moses and the Transjordan tribes. Joshua now enforces the same terms — continuity of covenant obligation across leadership transitions."
+            },
+            {
+              "ref": "Josh 22:1-6",
+              "note": "The fulfilment: after the conquest, Joshua releases the Transjordan tribes with a blessing. They kept their word."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -218,6 +223,9 @@
               "note": "Howard: The Transjordan pledge functions as the chapter's literary resolution — the people accept Joshua's authority just as they accepted Moses', completing the leadership transition that God initiated in vv.1-9."
             }
           ]
+        },
+        "hist": {
+          "context": "Joshua immediately exercises his commission — within three days, Israel will cross the Jordan. The Transjordan tribes (Reuben, Gad, half-Manasseh) are reminded of their obligation from Numbers 32: their fighting men must cross and help conquer western Canaan before returning to their eastern inheritance. Their response — \"Just as we obeyed Moses in everything, so we will obey you\" — is both pledge and irony, given how poorly they obeyed Moses."
         }
       }
     }

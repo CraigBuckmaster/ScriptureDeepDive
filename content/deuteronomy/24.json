@@ -31,17 +31,18 @@
             "paragraph": "The pledge laws protect the poor from exploitation by creditors. Taking a person's cloak as pledge and not returning it by nightfall leaves them without covering for the cold night. The covenant frames creditor-debtor relations within the ethic of neighbour-love."
           }
         ],
-        "ctx": "Chapter 24 opens with the famous marriage/divorce regulation (vv.1-4) and combines it with humanitarian provisions: exemption from military service for newly married men (v.5), prohibition on taking millstones as pledges (v.6), consequences for kidnapping (v.7), and pledge laws protecting the poor (vv.10-13). The chapter's common thread is protecting the vulnerable from exploitation -- especially those in economically precarious positions.",
-        "cross": [
-          {
-            "ref": "Matt 19:3-9",
-            "note": "\"Moses permitted you to divorce your wives because your hearts were hard. But it was not this way from the beginning.\" Jesus uses Deuteronomy 24 to distinguish God's creation intention from Moses's accommodation of human sinfulness."
-          },
-          {
-            "ref": "Jas 5:4",
-            "note": "\"Look! The wages you failed to pay the workers who mowed your fields are crying out against you.\" James's condemnation of wage withholding is the NT application of Deuteronomy 24:14-15's same-day payment requirement."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 19:3-9",
+              "note": "\"Moses permitted you to divorce your wives because your hearts were hard. But it was not this way from the beginning.\" Jesus uses Deuteronomy 24 to distinguish God's creation intention from Moses's accommodation of human sinfulness."
+            },
+            {
+              "ref": "Jas 5:4",
+              "note": "\"Look! The wages you failed to pay the workers who mowed your fields are crying out against you.\" James's condemnation of wage withholding is the NT application of Deuteronomy 24:14-15's same-day payment requirement."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 24 opens with the famous marriage/divorce regulation (vv.1-4) and combines it with humanitarian provisions: exemption from military service for newly married men (v.5), prohibition on taking millstones as pledges (v.6), consequences for kidnapping (v.7), and pledge laws protecting the poor (vv.10-13). The chapter's common thread is protecting the vulnerable from exploitation -- especially those in economically precarious positions."
         }
       }
     },
@@ -133,17 +137,18 @@
             "paragraph": "The principle of individual culpability -- each person dies for their own sin -- is a legal principle but also a theological one. Covenant consequences are not automatically inherited; each person stands before God and the law on their own account."
           }
         ],
-        "ctx": "The chapter concludes with: same-day wage payment for poor workers (vv.14-15), individual culpability (v.16), justice for the alien, orphan, and widow (v.17), and gleaning laws (vv.19-22). The gleaning laws -- leave some of your harvest for the foreigner, orphan, and widow -- are the OT's most practical anti-poverty provision. Unlike charity, gleaning preserves the dignity of the poor: they work for what they receive.",
-        "cross": [
-          {
-            "ref": "Ruth 2:15-17",
-            "note": "Boaz's protection and provision for Ruth in the fields is the Deuteronomy 24 gleaning laws in their most generous and generous interpretation."
-          },
-          {
-            "ref": "Lev 19:9-10",
-            "note": "The Leviticus gleaning law provides the same protection using almost identical language -- showing the consistency of the Pentateuch's care-for-the-vulnerable ethic."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ruth 2:15-17",
+              "note": "Boaz's protection and provision for Ruth in the fields is the Deuteronomy 24 gleaning laws in their most generous and generous interpretation."
+            },
+            {
+              "ref": "Lev 19:9-10",
+              "note": "The Leviticus gleaning law provides the same protection using almost identical language -- showing the consistency of the Pentateuch's care-for-the-vulnerable ethic."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -212,6 +217,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter concludes with: same-day wage payment for poor workers (vv.14-15), individual culpability (v.16), justice for the alien, orphan, and widow (v.17), and gleaning laws (vv.19-22). The gleaning laws -- leave some of your harvest for the foreigner, orphan, and widow -- are the OT's most practical anti-poverty provision. Unlike charity, gleaning preserves the dignity of the poor: they work for what they receive."
         }
       }
     }

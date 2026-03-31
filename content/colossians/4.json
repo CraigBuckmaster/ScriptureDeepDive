@@ -25,17 +25,18 @@
             "paragraph": "The verb exagorazomenoi (v. 5, ‘making the most of every opportunity’) literally means ‘buying up the time.’ The kairos is the specific, God-given moment for witness. Paul exhorts the Colossians to seize each opportunity for wise engagement with outsiders, combining gracious speech with the sharpness of salt (v. 6)."
           }
         ],
-        "ctx": "The household code concludes with a one-verse instruction to masters (v. 1): ‘provide your slaves with what is right and fair, because you know that you also have a Master in heaven.’ Paul then turns to prayer and mission (vv. 2–4): the community is to pray persistently, including for Paul’s own evangelistic work (‘that God may open a door for our message,’ v. 3). The exhortation to wise conduct toward outsiders (vv. 5–6) and gracious, seasoned speech completes the ethical section, emphasising the missional dimension of community life.",
-        "cross": [
-          {
-            "ref": "Eph 6:9",
-            "note": "The parallel master instruction uses identical logic: masters share a Master in heaven who shows no favouritism."
-          },
-          {
-            "ref": "Eph 5:15–16",
-            "note": "The exhortation to ‘make the most of every opportunity’ appears in both Ephesians and Colossians, confirming the twin letters’ common vocabulary."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Eph 6:9",
+              "note": "The parallel master instruction uses identical logic: masters share a Master in heaven who shows no favouritism."
+            },
+            {
+              "ref": "Eph 5:15–16",
+              "note": "The exhortation to ‘make the most of every opportunity’ appears in both Ephesians and Colossians, confirming the twin letters’ common vocabulary."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -88,6 +89,9 @@
               "note": "O’Brien notes that the transition from household code to missional exhortation is seamless: the same community that orders its internal relationships under Christ’s lordship must also engage the surrounding culture with wisdom and grace."
             }
           ]
+        },
+        "hist": {
+          "context": "The household code concludes with a one-verse instruction to masters (v. 1): ‘provide your slaves with what is right and fair, because you know that you also have a Master in heaven.’ Paul then turns to prayer and mission (vv. 2–4): the community is to pray persistently, including for Paul’s own evangelistic work (‘that God may open a door for our message,’ v. 3). The exhortation to wise conduct toward outsiders (vv. 5–6) and gracious, seasoned speech completes the ethical section, emphasising the missional dimension of community life."
         }
       }
     },
@@ -105,21 +109,22 @@
             "paragraph": "Paul’s closing greetings identify a network of co-workers (synergoi, vv. 10–11): Aristarchus, Mark, Jesus Justus, Epaphras, Luke, and Demas. The term synergos implies shared labour in the gospel mission, not merely personal friendship. This network sustains Paul’s ministry from prison and connects the scattered churches."
           }
         ],
-        "ctx": "The greetings section (vv. 7–18) is one of the most informative in the Pauline corpus. Tychicus and Onesimus carry the letter (vv. 7–9)—connecting Colossians to Philemon. Six companions send greetings (vv. 10–14): Aristarchus (fellow prisoner), Mark (Barnabas’s cousin, now reconciled with Paul), Jesus called Justus (one of three Jewish co-workers), Epaphras (the Colossians’ own pastor, wrestling in prayer for them), Luke (the beloved physician), and Demas (who will later desert Paul, 2 Tim 4:10). Special instructions follow: greet the church in Laodicea, share letters between Colossae and Laodicea, and tell Archippus to complete his ministry (vv. 15–17). Paul’s autograph (‘I, Paul, write this greeting in my own hand,’ v. 18) authenticates the letter and closes with a request to remember his chains and a benediction of grace.",
-        "cross": [
-          {
-            "ref": "Phlm 23–24",
-            "note": "The greeting list in Philemon overlaps significantly with Col 4:10–14: Epaphras, Mark, Aristarchus, Demas, and Luke appear in both, confirming the letters’ simultaneity."
-          },
-          {
-            "ref": "Eph 6:21–22",
-            "note": "The commendation of Tychicus in Ephesians uses virtually identical language to Col 4:7–8, confirming that both letters were carried by the same messenger."
-          },
-          {
-            "ref": "2 Tim 4:10–11",
-            "note": "The later reference to Demas’s desertion and Mark’s faithfulness provides the biographical sequel to Col 4:10, 14."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Phlm 23–24",
+              "note": "The greeting list in Philemon overlaps significantly with Col 4:10–14: Epaphras, Mark, Aristarchus, Demas, and Luke appear in both, confirming the letters’ simultaneity."
+            },
+            {
+              "ref": "Eph 6:21–22",
+              "note": "The commendation of Tychicus in Ephesians uses virtually identical language to Col 4:7–8, confirming that both letters were carried by the same messenger."
+            },
+            {
+              "ref": "2 Tim 4:10–11",
+              "note": "The later reference to Demas’s desertion and Mark’s faithfulness provides the biographical sequel to Col 4:10, 14."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -176,6 +181,9 @@
               "note": "O’Brien notes that the greetings section, while seemingly routine, performs important theological and pastoral functions: it connects the isolated communities into a network, endorses specific individuals, and models the koinōnia that the letter’s theology demands. The autograph (v. 18) functions as a seal of apostolic authority."
             }
           ]
+        },
+        "hist": {
+          "context": "The greetings section (vv. 7–18) is one of the most informative in the Pauline corpus. Tychicus and Onesimus carry the letter (vv. 7–9)—connecting Colossians to Philemon. Six companions send greetings (vv. 10–14): Aristarchus (fellow prisoner), Mark (Barnabas’s cousin, now reconciled with Paul), Jesus called Justus (one of three Jewish co-workers), Epaphras (the Colossians’ own pastor, wrestling in prayer for them), Luke (the beloved physician), and Demas (who will later desert Paul, 2 Tim 4:10). Special instructions follow: greet the church in Laodicea, share letters between Colossae and Laodicea, and tell Archippus to complete his ministry (vv. 15–17). Paul’s autograph (‘I, Paul, write this greeting in my own hand,’ v. 18) authenticates the letter and closes with a request to remember his chains and a benediction of grace."
         }
       }
     }

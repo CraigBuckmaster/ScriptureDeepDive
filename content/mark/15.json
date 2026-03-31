@@ -69,21 +69,22 @@
             "current": false
           }
         ],
-        "ctx": "Pilate’s trial of Jesus is a study in political cowardice that mirrors Herod’s in chapter 6: both men know the prisoner is innocent, both protect him briefly, both capitulate to external pressure. Barabbas is the paradigm of substitutionary atonement: the guilty party goes free while the innocent one is condemned. The soldiers’ mock coronation (purple robe, crown of thorns, “Hail, king!”) is an unwitting enactment of the truth.",
-        "cross": [
-          {
-            "ref": "Isa 53:7",
-            "note": "He was oppressed and afflicted, yet he did not open his mouth — the silent Servant who “gave no answer” (v.4-5)."
-          },
-          {
-            "ref": "Isa 53:5",
-            "note": "The punishment that brought us peace was on him; by his wounds we are healed — the flogging of v.15 fulfils this text."
-          },
-          {
-            "ref": "Ps 22:7",
-            "note": "All who see me mock me; they hurl insults, shaking their heads — the mockery of the Passion psalm begins here."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 53:7",
+              "note": "He was oppressed and afflicted, yet he did not open his mouth — the silent Servant who “gave no answer” (v.4-5)."
+            },
+            {
+              "ref": "Isa 53:5",
+              "note": "The punishment that brought us peace was on him; by his wounds we are healed — the flogging of v.15 fulfils this text."
+            },
+            {
+              "ref": "Ps 22:7",
+              "note": "All who see me mock me; they hurl insults, shaking their heads — the mockery of the Passion psalm begins here."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -161,6 +162,9 @@
               "note": "Flogged (ephragelōsen) — verberatio was so severe that victims sometimes died from it. The pre-crucifixion flogging guaranteed rapid death on the cross. The medical evidence for the physical devastation of Roman flogging supports the narrative’s plausibility."
             }
           ]
+        },
+        "hist": {
+          "context": "Pilate’s trial of Jesus is a study in political cowardice that mirrors Herod’s in chapter 6: both men know the prisoner is innocent, both protect him briefly, both capitulate to external pressure. Barabbas is the paradigm of substitutionary atonement: the guilty party goes free while the innocent one is condemned. The soldiers’ mock coronation (purple robe, crown of thorns, “Hail, king!”) is an unwitting enactment of the truth."
         }
       }
     },
@@ -222,21 +226,22 @@
             "current": false
           }
         ],
-        "ctx": "The crucifixion account is structured around three sets of three: three inscriptions (Title, King of the Jews, Messiah); three groups of mockers (passers-by, chief priests, the crucified); and the three hours of darkness (noon to three). The moment of death is framed by two tearing events: the darkness and the torn veil. The centurion’s confession (“Son of God”) is the Gospel’s climax — the first human being to say what the opening verse (1:1) declared.",
-        "cross": [
-          {
-            "ref": "Ps 22:1-31",
-            "note": "My God, my God, why have you forsaken me — the Passion psalm that structures the crucifixion narrative: lots for clothing (Ps 22:18), the taunts (Ps 22:7-8), the cry (Ps 22:1), the vindication (Ps 22:24-31)."
-          },
-          {
-            "ref": "Isa 53:12",
-            "note": "He was numbered with the transgressors — fulfilled in v.27: crucified between two rebels."
-          },
-          {
-            "ref": "Exod 26:31-33",
-            "note": "The Temple veil separating the Holy of Holies — torn from top to bottom at the moment of death."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 22:1-31",
+              "note": "My God, my God, why have you forsaken me — the Passion psalm that structures the crucifixion narrative: lots for clothing (Ps 22:18), the taunts (Ps 22:7-8), the cry (Ps 22:1), the vindication (Ps 22:24-31)."
+            },
+            {
+              "ref": "Isa 53:12",
+              "note": "He was numbered with the transgressors — fulfilled in v.27: crucified between two rebels."
+            },
+            {
+              "ref": "Exod 26:31-33",
+              "note": "The Temple veil separating the Holy of Holies — torn from top to bottom at the moment of death."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -314,6 +319,9 @@
               "note": "Pilate was surprised that he was already dead — victims of crucifixion typically survived 1-3 days. Jesus died after approximately 6 hours — likely due to the severity of the flogging. Pilate’s verification through the centurion is an early historical attestation against later claims of a swoon."
             }
           ]
+        },
+        "hist": {
+          "context": "The crucifixion account is structured around three sets of three: three inscriptions (Title, King of the Jews, Messiah); three groups of mockers (passers-by, chief priests, the crucified); and the three hours of darkness (noon to three). The moment of death is framed by two tearing events: the darkness and the torn veil. The centurion’s confession (“Son of God”) is the Gospel’s climax — the first human being to say what the opening verse (1:1) declared."
         }
       }
     },
@@ -375,21 +383,22 @@
             "current": false
           }
         ],
-        "ctx": "Pilate’s trial of Jesus is a study in political cowardice that mirrors Herod’s in chapter 6: both men know the prisoner is innocent, both protect him briefly, both capitulate to external pressure. Barabbas is the paradigm of substitutionary atonement: the guilty party goes free while the innocent one is condemned. The soldiers’ mock coronation (purple robe, crown of thorns, “Hail, king!”) is an unwitting enactment of the truth.",
-        "cross": [
-          {
-            "ref": "Isa 53:7",
-            "note": "He was oppressed and afflicted, yet he did not open his mouth — the silent Servant who “gave no answer” (v.4-5)."
-          },
-          {
-            "ref": "Isa 53:5",
-            "note": "The punishment that brought us peace was on him; by his wounds we are healed — the flogging of v.15 fulfils this text."
-          },
-          {
-            "ref": "Ps 22:7",
-            "note": "All who see me mock me; they hurl insults, shaking their heads — the mockery of the Passion psalm begins here."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 53:7",
+              "note": "He was oppressed and afflicted, yet he did not open his mouth — the silent Servant who “gave no answer” (v.4-5)."
+            },
+            {
+              "ref": "Isa 53:5",
+              "note": "The punishment that brought us peace was on him; by his wounds we are healed — the flogging of v.15 fulfils this text."
+            },
+            {
+              "ref": "Ps 22:7",
+              "note": "All who see me mock me; they hurl insults, shaking their heads — the mockery of the Passion psalm begins here."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -467,6 +476,9 @@
               "note": "Flogged (ephragelōsen) — verberatio was so severe that victims sometimes died from it. The pre-crucifixion flogging guaranteed rapid death on the cross. The medical evidence for the physical devastation of Roman flogging supports the narrative’s plausibility."
             }
           ]
+        },
+        "hist": {
+          "context": "Pilate’s trial of Jesus is a study in political cowardice that mirrors Herod’s in chapter 6: both men know the prisoner is innocent, both protect him briefly, both capitulate to external pressure. Barabbas is the paradigm of substitutionary atonement: the guilty party goes free while the innocent one is condemned. The soldiers’ mock coronation (purple robe, crown of thorns, “Hail, king!”) is an unwitting enactment of the truth."
         }
       }
     }

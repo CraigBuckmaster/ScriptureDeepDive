@@ -31,7 +31,6 @@
             "paragraph": "Herodias' daughter danced before Herod and his guests. The verb is simple but the context is loaded — the dance leads to the Baptist's beheading. Matthew draws a grim line from entertainment to murder. The most consequential moral failures often begin with triviality."
           }
         ],
-        "ctx": "The death of John is recounted as a flashback triggered by Herod's superstitious fear (v.2). Its placement here is structural: the forerunner who prepared the way has been killed; the one whose way he prepared is about to demonstrate who he is in the feeding of the five thousand. The pattern of prophet-rejection and murder is the context in which Matthew 14–28 operates. John's disciples report to Jesus — and Jesus withdraws, but then the crowds find him anyway.",
         "poi": [
           {
             "name": "Herod's palace / court",
@@ -39,16 +38,18 @@
             "text": "The beheading of John occurs at Herod Antipas's birthday banquet — either at his Galilean capital Tiberias or at the fortress Machaerus east of the Dead Sea (Josephus locates John's imprisonment at Machaerus). The geography of power executes the one who challenged it."
           }
         ],
-        "cross": [
-          {
-            "ref": "Mark 6:14–29",
-            "note": "Mark's fuller account includes the name Salome for the daughter of Herodias (from Josephus). Matthew's abbreviated version focuses the irony: a king bound by his own rash oath."
-          },
-          {
-            "ref": "Matt 11:2–14",
-            "note": "John's death fulfils what Jesus implied — the forerunner suffers the Elijah's fate (17:12) before the Son of Man suffers his."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mark 6:14–29",
+              "note": "Mark's fuller account includes the name Salome for the daughter of Herodias (from Josephus). Matthew's abbreviated version focuses the irony: a king bound by his own rash oath."
+            },
+            {
+              "ref": "Matt 11:2–14",
+              "note": "John's death fulfils what Jesus implied — the forerunner suffers the Elijah's fate (17:12) before the Son of Man suffers his."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -117,6 +118,9 @@
               "note": "The Catena notes Origen's reading of Herodias's daughter as a figure of pleasure that destroys wisdom. The dance at a birthday banquet -- a context of celebration and indulgence -- produces the death of the greatest prophet. Unchecked pleasure produces moral catastrophe."
             }
           ]
+        },
+        "hist": {
+          "context": "The death of John is recounted as a flashback triggered by Herod's superstitious fear (v.2). Its placement here is structural: the forerunner who prepared the way has been killed; the one whose way he prepared is about to demonstrate who he is in the feeding of the five thousand. The pattern of prophet-rejection and murder is the context in which Matthew 14–28 operates. John's disciples report to Jesus — and Jesus withdraws, but then the crowds find him anyway."
         }
       }
     },
@@ -140,7 +144,6 @@
             "paragraph": "Twelve baskets of fragments (klasmata) remained — one per apostle. The surplus is not accidental but deliberate: God provides not merely enough but more than enough. The number twelve echoes the twelve tribes; the abundance is for all Israel."
           }
         ],
-        "ctx": "The feeding of the five thousand (vv.13–21) is the only miracle recorded in all four gospels. Its eucharistic resonance is unmistakable: took, blessed, broke, gave — the same four verbs as the Last Supper (26:26). Jesus begins the gesture that will be completed in the upper room. The walking on water (vv.22–33) follows immediately — both miracles occurring after John's death, as if the forerunner's death triggers a new level of self-disclosure. The disciples' \"Truly you are the Son of God\" (v.33) is the first corporate confession of his divine identity in Matthew.",
         "poi": [
           {
             "name": "Desolate place near Bethsaida",
@@ -158,20 +161,22 @@
             "text": "The landing at Gennesaret triggers another wave of healings. Gennesaret is a fertile plain on the northwest shore — a prosperous agricultural area. Even landing in Gennesaret produces healing: Jesus's geographical presence generates covenant restoration."
           }
         ],
-        "cross": [
-          {
-            "ref": "2 Kgs 4:42–44",
-            "note": "Elisha feeding a hundred with twenty loaves, with food left over. Jesus feeds five thousand with five loaves — the eschatological multiplication exceeds the prophetic precedent."
-          },
-          {
-            "ref": "Job 9:8; Ps 77:19",
-            "note": "Who alone treads on the waves of the sea; your path led through the sea. The language of God's sea-walking applied to Jesus. The disciples' terror is the appropriate theophanic response."
-          },
-          {
-            "ref": "Matt 26:26",
-            "note": "Took bread, gave thanks, broke it, gave it to the disciples. The fourfold action of the feeding is the fourfold action of the Last Supper — the wilderness feeding anticipates the covenant meal."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 4:42–44",
+              "note": "Elisha feeding a hundred with twenty loaves, with food left over. Jesus feeds five thousand with five loaves — the eschatological multiplication exceeds the prophetic precedent."
+            },
+            {
+              "ref": "Job 9:8; Ps 77:19",
+              "note": "Who alone treads on the waves of the sea; your path led through the sea. The language of God's sea-walking applied to Jesus. The disciples' terror is the appropriate theophanic response."
+            },
+            {
+              "ref": "Matt 26:26",
+              "note": "Took bread, gave thanks, broke it, gave it to the disciples. The fourfold action of the feeding is the fourfold action of the Last Supper — the wilderness feeding anticipates the covenant meal."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -240,6 +245,9 @@
               "note": "The Catena presents Peter's walking-and-sinking as the church's experience of faith and doubt. Chrysostom: Peter's bold faith brings him to the water; his shifting attention to circumstances brings him under it. The Lord's immediate response -- immediately Jesus reached out his hand -- is the pastoral promise: the hand extends before the cry is fully formed."
             }
           ]
+        },
+        "hist": {
+          "context": "The feeding of the five thousand (vv.13–21) is the only miracle recorded in all four gospels. Its eucharistic resonance is unmistakable: took, blessed, broke, gave — the same four verbs as the Last Supper (26:26). Jesus begins the gesture that will be completed in the upper room. The walking on water (vv.22–33) follows immediately — both miracles occurring after John's death, as if the forerunner's death triggers a new level of self-disclosure. The disciples' \"Truly you are the Son of God\" (v.33) is the first corporate confession of his divine identity in Matthew."
         }
       }
     },
@@ -263,7 +271,6 @@
             "paragraph": "Peter walks on water, then 'doubts' (distazō — to stand in two ways, to be in two minds). The word captures the moment of divided attention: eyes on Jesus, then eyes on waves. Faith and doubt coexist in the same person, in the same moment. Jesus rescues both."
           }
         ],
-        "ctx": "The death of John is recounted as a flashback triggered by Herod's superstitious fear (v.2). Its placement here is structural: the forerunner who prepared the way has been killed; the one whose way he prepared is about to demonstrate who he is in the feeding of the five thousand. The pattern of prophet-rejection and murder is the context in which Matthew 14–28 operates. John's disciples report to Jesus — and Jesus withdraws, but then the crowds find him anyway.",
         "poi": [
           {
             "name": "Herod's palace / court",
@@ -271,16 +278,18 @@
             "text": "The beheading of John occurs at Herod Antipas's birthday banquet — either at his Galilean capital Tiberias or at the fortress Machaerus east of the Dead Sea (Josephus locates John's imprisonment at Machaerus). The geography of power executes the one who challenged it."
           }
         ],
-        "cross": [
-          {
-            "ref": "Mark 6:14–29",
-            "note": "Mark's fuller account includes the name Salome for the daughter of Herodias (from Josephus). Matthew's abbreviated version focuses the irony: a king bound by his own rash oath."
-          },
-          {
-            "ref": "Matt 11:2–14",
-            "note": "John's death fulfils what Jesus implied — the forerunner suffers the Elijah's fate (17:12) before the Son of Man suffers his."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mark 6:14–29",
+              "note": "Mark's fuller account includes the name Salome for the daughter of Herodias (from Josephus). Matthew's abbreviated version focuses the irony: a king bound by his own rash oath."
+            },
+            {
+              "ref": "Matt 11:2–14",
+              "note": "John's death fulfils what Jesus implied — the forerunner suffers the Elijah's fate (17:12) before the Son of Man suffers his."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -349,6 +358,9 @@
               "note": "The Catena notes Origen's reading of Herodias's daughter as a figure of pleasure that destroys wisdom. The dance at a birthday banquet -- a context of celebration and indulgence -- produces the death of the greatest prophet. Unchecked pleasure produces moral catastrophe."
             }
           ]
+        },
+        "hist": {
+          "context": "The death of John is recounted as a flashback triggered by Herod's superstitious fear (v.2). Its placement here is structural: the forerunner who prepared the way has been killed; the one whose way he prepared is about to demonstrate who he is in the feeding of the five thousand. The pattern of prophet-rejection and murder is the context in which Matthew 14–28 operates. John's disciples report to Jesus — and Jesus withdraws, but then the crowds find him anyway."
         }
       }
     }

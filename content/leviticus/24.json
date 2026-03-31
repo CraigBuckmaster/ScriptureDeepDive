@@ -31,21 +31,22 @@
             "paragraph": "Twelve loaves representing the twelve tribes, set before the Lord permanently on the gold table in the holy place. \"Bread of the face\" — placed before God's face, renewed each Sabbath, eaten by the priests in the holy place. A perpetual covenant meal."
           }
         ],
-        "ctx": "Leviticus 24 begins with two standing orders for the sanctuary's interior: the lampstand (vv.1–4) and the bread of the presence (vv.5–9). Both are tāmîd — perpetual. The lampstand of pure gold burns through every night; the twelve loaves are replaced each Sabbath, the old ones eaten by the priests. Together they represent the two aspects of uninterrupted covenant: God's light (presence/guidance) and Israel's sustenance (his provision). The lampstand is kept burning by Israel's olive oil; the bread is renewed weekly. Human faithfulness maintains the signs of divine presence.",
-        "cross": [
-          {
-            "ref": "John 8:12",
-            "note": "\"I am the light of the world. Whoever follows me will never walk in darkness, but will have the light of life.\" Jesus declares himself the fulfilment of the perpetual lampstand — the eternal, never-extinguished light."
-          },
-          {
-            "ref": "John 6:35",
-            "note": "\"I am the bread of life.\" Jesus is the antetype of the bread of the presence — the true bread placed before God on behalf of all humanity."
-          },
-          {
-            "ref": "Rev 1:20",
-            "note": "\"The mystery of the seven stars that you saw in my right hand and of the seven golden lampstands is this: The seven stars are the angels of the seven churches, and the seven lampstands are the seven churches.\" The church inherits the lampstand imagery — a perpetual light in the darkness."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 8:12",
+              "note": "\"I am the light of the world. Whoever follows me will never walk in darkness, but will have the light of life.\" Jesus declares himself the fulfilment of the perpetual lampstand — the eternal, never-extinguished light."
+            },
+            {
+              "ref": "John 6:35",
+              "note": "\"I am the bread of life.\" Jesus is the antetype of the bread of the presence — the true bread placed before God on behalf of all humanity."
+            },
+            {
+              "ref": "Rev 1:20",
+              "note": "\"The mystery of the seven stars that you saw in my right hand and of the seven golden lampstands is this: The seven stars are the angels of the seven churches, and the seven lampstands are the seven churches.\" The church inherits the lampstand imagery — a perpetual light in the darkness."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -97,6 +98,9 @@
               "note": "Milgrom: The weekly bread renewal \"on behalf of the Israelites as a lasting covenant\" (v.8) frames the bread of presence as a covenant sign. The twelve loaves are not food for God (he does not eat) but a permanent covenant token — Israel's twelve tribes perpetually before God's face, acknowledged by him, belonging to him."
             }
           ]
+        },
+        "hist": {
+          "context": "Leviticus 24 begins with two standing orders for the sanctuary's interior: the lampstand (vv.1–4) and the bread of the presence (vv.5–9). Both are tāmîd — perpetual. The lampstand of pure gold burns through every night; the twelve loaves are replaced each Sabbath, the old ones eaten by the priests. Together they represent the two aspects of uninterrupted covenant: God's light (presence/guidance) and Israel's sustenance (his provision). The lampstand is kept burning by Israel's olive oil; the bread is renewed weekly. Human faithfulness maintains the signs of divine presence."
         }
       }
     },
@@ -120,17 +124,18 @@
             "paragraph": "The lex talionis — the law of proportional retaliation. It is not a mandate for revenge but a limit on it: the punishment must not exceed the offence. The same measure applies to native and foreigner alike (v.22) — equal justice regardless of origin."
           }
         ],
-        "ctx": "The narrative break in Lev 24 is jarring — from the ordered sanctuary regulations to a specific incident: the son of an Israelite mother and Egyptian father blasphemes during a fight, is put in custody, and God pronounces the death penalty by stoning. The incident (vv.10–16, 23) frames the lex talionis (vv.17–22): life for life, eye for eye, tooth for tooth, fracture for fracture. The same law applies to native and foreigner — equal justice is the covenant's requirement. The blasphemer is executed outside the camp; the entire community participates in the stoning.",
-        "cross": [
-          {
-            "ref": "Matt 5:38–39",
-            "note": "\"You have heard that it was said, 'An eye for an eye and a tooth for a tooth.' But I tell you, do not resist an evil person.\" Jesus does not abolish the lex talionis but exceeds it: the new covenant standard is not equal retaliation but gracious non-retaliation."
-          },
-          {
-            "ref": "Lev 19:18",
-            "note": "The lex talionis (equal retaliation) and the love command (Lev 19:18) exist in tension that the NT resolves: the justice principle is satisfied by Christ (bearing the full penalty); those in Christ are freed to absorb injustice rather than perpetuate it."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 5:38–39",
+              "note": "\"You have heard that it was said, 'An eye for an eye and a tooth for a tooth.' But I tell you, do not resist an evil person.\" Jesus does not abolish the lex talionis but exceeds it: the new covenant standard is not equal retaliation but gracious non-retaliation."
+            },
+            {
+              "ref": "Lev 19:18",
+              "note": "The lex talionis (equal retaliation) and the love command (Lev 19:18) exist in tension that the NT resolves: the justice principle is satisfied by Christ (bearing the full penalty); those in Christ are freed to absorb injustice rather than perpetuate it."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -182,6 +187,9 @@
               "note": "Milgrom: \"You are to have the same law for the foreigner and the native-born\" — the equal justice principle is one of Leviticus's most radical statements. In the ancient Near East, legal systems routinely differentiated penalties by social status and ethnic origin. Leviticus insists on uniform application: the same law for all who live within the covenant community."
             }
           ]
+        },
+        "hist": {
+          "context": "The narrative break in Lev 24 is jarring — from the ordered sanctuary regulations to a specific incident: the son of an Israelite mother and Egyptian father blasphemes during a fight, is put in custody, and God pronounces the death penalty by stoning. The incident (vv.10–16, 23) frames the lex talionis (vv.17–22): life for life, eye for eye, tooth for tooth, fracture for fracture. The same law applies to native and foreigner — equal justice is the covenant's requirement. The blasphemer is executed outside the camp; the entire community participates in the stoning."
         }
       }
     }

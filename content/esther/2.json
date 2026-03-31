@@ -31,18 +31,22 @@
             "paragraph": "Esther \"had not revealed her nationality or family background, because Mordecai had forbidden her to do so.\" The hiddenness is strategic. In a book where God is hidden, God’s agent is also hidden. The theology of concealment operates at every level."
           }
         ],
-        "hist": "The beauty preparation period was twelve months: six months with oil of myrrh, six months with perfumes (v.12). This was standard Persian royal protocol for women entering the king’s harem. The process was not merely cosmetic but included acculturation to court manners, language, and protocol.",
-        "ctx": "Esther’s concealment of her Jewish identity is the narrative engine. It creates the dramatic tension of chapters 5–7: the queen is one of the people targeted for destruction, and the king doesn’t know. Every scene in the book is shaped by who knows what — and who doesn’t.",
-        "cross": [
-          {
-            "ref": "Gen 12:11–13",
-            "note": "Abraham conceals Sarah’s identity in Egypt — the patriarchal precedent for strategic concealment."
-          },
-          {
-            "ref": "Dan 1:3–7",
-            "note": "Daniel and friends given Babylonian names — the same dual-identity pattern in exile."
-          }
-        ],
+        "hist": {
+          "historical": "The beauty preparation period was twelve months: six months with oil of myrrh, six months with perfumes (v.12). This was standard Persian royal protocol for women entering the king’s harem. The process was not merely cosmetic but included acculturation to court manners, language, and protocol.",
+          "context": "Esther’s concealment of her Jewish identity is the narrative engine. It creates the dramatic tension of chapters 5–7: the queen is one of the people targeted for destruction, and the king doesn’t know. Every scene in the book is shaped by who knows what — and who doesn’t."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 12:11–13",
+              "note": "Abraham conceals Sarah’s identity in Egypt — the patriarchal precedent for strategic concealment."
+            },
+            {
+              "ref": "Dan 1:3–7",
+              "note": "Daniel and friends given Babylonian names — the same dual-identity pattern in exile."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -132,17 +136,18 @@
             "paragraph": "Esther \"won the favour (ḥēn) of everyone who saw her\" (v.15). The word ḥēn is the same root as \"grace.\" She finds grace not through manipulation but through some quality the narrator leaves unnamed. Like Joseph in Egypt, favour follows her without explanation — which is to say, it follows by providence."
           }
         ],
-        "ctx": "Esther is chosen \"in the tenth month, the month of Tebeth, in the seventh year\" (v.16). She enters the palace four years after Vashti’s removal (1:3 = year 3; 2:16 = year 7). The four-year gap coincides with Xerxes’ absence on the failed Greek campaign (Herodotus). The king returns defeated and chooses a new queen. Providence uses military defeat to advance its purpose.",
-        "cross": [
-          {
-            "ref": "Gen 39:4–6",
-            "note": "Joseph found favour in Potiphar’s house — the same unexplained grace."
-          },
-          {
-            "ref": "Prov 3:3–4",
-            "note": "\"Let love and faithfulness never leave you... then you will find favour in the sight of God and man.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 39:4–6",
+              "note": "Joseph found favour in Potiphar’s house — the same unexplained grace."
+            },
+            {
+              "ref": "Prov 3:3–4",
+              "note": "\"Let love and faithfulness never leave you... then you will find favour in the sight of God and man.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -195,6 +200,9 @@
               "note": "Jobes: \"Esther’s favour is unexplained by the narrative. The Hebrew ḥēn simply happens to her, as it happened to Joseph, as it happened to Daniel. The narrator is pointing to something beyond human charm.\""
             }
           ]
+        },
+        "hist": {
+          "context": "Esther is chosen \"in the tenth month, the month of Tebeth, in the seventh year\" (v.16). She enters the palace four years after Vashti’s removal (1:3 = year 3; 2:16 = year 7). The four-year gap coincides with Xerxes’ absence on the failed Greek campaign (Herodotus). The king returns defeated and chooses a new queen. Providence uses military defeat to advance its purpose."
         }
       }
     },
@@ -212,17 +220,18 @@
             "paragraph": "The plot is recorded in \"the book of the annals\" (sēper diḇrê hayyāmîm). This record will be read to the sleepless king in chapter 6 — the pivotal \"coincidence\" that reverses everything. An unrewarded deed, filed and forgotten, becomes God’s timing mechanism."
           }
         ],
-        "ctx": "Mordecai saves the king’s life but receives no reward. The oversight is recorded. This Chekhov’s gun — planted in chapter 2, fired in chapter 6 — is the book’s finest structural achievement. The reader who knows the ending sees providence; the reader who doesn’t sees injustice. Both readings are correct.",
-        "cross": [
-          {
-            "ref": "Gen 40:14—23",
-            "note": "The cupbearer forgets Joseph for two years. The same pattern: an unrewarded deed, a forgotten benefactor, a providential delay."
-          },
-          {
-            "ref": "Esth 6:1–3",
-            "note": "The delayed reward — the sleepless night that changes everything."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 40:14—23",
+              "note": "The cupbearer forgets Joseph for two years. The same pattern: an unrewarded deed, a forgotten benefactor, a providential delay."
+            },
+            {
+              "ref": "Esth 6:1–3",
+              "note": "The delayed reward — the sleepless night that changes everything."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -271,6 +280,9 @@
               "note": "Jobes: \"The unrewarded deed is the fulcrum of the entire book. Without this planted detail, chapter 6 has no mechanism. The narrator places it here casually, almost as an afterthought — which is exactly how providence works.\""
             }
           ]
+        },
+        "hist": {
+          "context": "Mordecai saves the king’s life but receives no reward. The oversight is recorded. This Chekhov’s gun — planted in chapter 2, fired in chapter 6 — is the book’s finest structural achievement. The reader who knows the ending sees providence; the reader who doesn’t sees injustice. Both readings are correct."
         }
       }
     }

@@ -57,21 +57,22 @@
             "current": false
           }
         ],
-        "ctx": "Paul's three-year Ephesian ministry is the most strategically significant in Acts after Antioch and Corinth. Ephesus was the hub of trade routes reaching all of Asia Minor — the 'all of Asia heard' (v.10) is realistic, not hyperbole: the Gospel spread through Ephesian converts to Colossae, Laodicea, Hierapolis, and beyond (cf. Col 1:7 — Epaphras, a Pauline convert, founded the Colossian church). The seven sons of Sceva (vv.14–16) and the book-burning (vv.19–20) demonstrate the Gospel's confrontation with and victory over the dominant magical culture.",
-        "cross": [
-          {
-            "ref": "Colossians 1:7",
-            "note": "\"You learned it from Epaphras, our dear fellow servant\" — the Colossian church was founded by a Pauline convert from Ephesus, confirming the \"all of Asia heard\" claim."
-          },
-          {
-            "ref": "Revelation 2:1–7",
-            "note": "The letter to Ephesus in Revelation: 'you have forsaken the love you had at first.' Paul's three-year ministry planted deeply; the subsequent generation faced the challenge of maintaining first love."
-          },
-          {
-            "ref": "2 Corinthians 1:8–10",
-            "note": "\"We were under great pressure, far beyond our ability to endure, so that we despaired of life itself.\" Paul's reference to an Ephesian crisis — possibly connected to this period."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Colossians 1:7",
+              "note": "\"You learned it from Epaphras, our dear fellow servant\" — the Colossian church was founded by a Pauline convert from Ephesus, confirming the \"all of Asia heard\" claim."
+            },
+            {
+              "ref": "Revelation 2:1–7",
+              "note": "The letter to Ephesus in Revelation: 'you have forsaken the love you had at first.' Paul's three-year ministry planted deeply; the subsequent generation faced the challenge of maintaining first love."
+            },
+            {
+              "ref": "2 Corinthians 1:8–10",
+              "note": "\"We were under great pressure, far beyond our ability to endure, so that we despaired of life itself.\" Paul's reference to an Ephesian crisis — possibly connected to this period."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -136,6 +137,9 @@
               "note": "Keener provides background on magical papyri from Ephesus and Alexandria — the Ephesian Letters (Ephesia grammata) were among the most famous magical texts in the ancient world. The burning of 50,000 drachmas' worth represents the elimination of a major regional industry."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul's three-year Ephesian ministry is the most strategically significant in Acts after Antioch and Corinth. Ephesus was the hub of trade routes reaching all of Asia Minor — the 'all of Asia heard' (v.10) is realistic, not hyperbole: the Gospel spread through Ephesian converts to Colossae, Laodicea, Hierapolis, and beyond (cf. Col 1:7 — Epaphras, a Pauline convert, founded the Colossian church). The seven sons of Sceva (vv.14–16) and the book-burning (vv.19–20) demonstrate the Gospel's confrontation with and victory over the dominant magical culture."
         }
       }
     },
@@ -182,21 +186,22 @@
             "current": false
           }
         ],
-        "ctx": "The Demetrius riot is Acts' most vivid demonstration of the Gospel's socioeconomic impact. The charge is economic before religious: 'our trade will lose its good name' precedes 'the temple will be discredited.' This is the clearest example in Acts of opposition motivated by financial self-interest (also Philippi, 16:19). The city clerk's intervention is providential: his legally precise dismissal prevents both Paul's death and a Roman crackdown on Ephesus for rioting.",
-        "cross": [
-          {
-            "ref": "Acts 16:19",
-            "note": "\"When her owners realized that their hope of making money was gone, they seized Paul and Silas\" — the Philippi pattern: economic motivation behind opposition."
-          },
-          {
-            "ref": "1 Corinthians 15:32",
-            "note": "\"If I fought wild beasts in Ephesus with no more than human hopes...\" — Paul's possible reference to mortal danger at Ephesus."
-          },
-          {
-            "ref": "2 Corinthians 1:8–10",
-            "note": "\"We were under great pressure, far beyond our ability to endure, so that we despaired of life itself.\" Possibly the riot or its aftermath."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 16:19",
+              "note": "\"When her owners realized that their hope of making money was gone, they seized Paul and Silas\" — the Philippi pattern: economic motivation behind opposition."
+            },
+            {
+              "ref": "1 Corinthians 15:32",
+              "note": "\"If I fought wild beasts in Ephesus with no more than human hopes...\" — Paul's possible reference to mortal danger at Ephesus."
+            },
+            {
+              "ref": "2 Corinthians 1:8–10",
+              "note": "\"We were under great pressure, far beyond our ability to endure, so that we despaired of life itself.\" Possibly the riot or its aftermath."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -261,6 +266,9 @@
               "note": "Keener notes that the 'image which fell from heaven' (diopetous) refers to a meteorite or similar object enshrined in the Temple — a well-attested feature of ancient religion. The city clerk's appeal to Ephesus's status as 'temple guardian' (neōkoros) addresses the crowd's most fundamental civic identity."
             }
           ]
+        },
+        "hist": {
+          "context": "The Demetrius riot is Acts' most vivid demonstration of the Gospel's socioeconomic impact. The charge is economic before religious: 'our trade will lose its good name' precedes 'the temple will be discredited.' This is the clearest example in Acts of opposition motivated by financial self-interest (also Philippi, 16:19). The city clerk's intervention is providential: his legally precise dismissal prevents both Paul's death and a Roman crackdown on Ephesus for rioting."
         }
       }
     }

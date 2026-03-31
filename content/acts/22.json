@@ -54,21 +54,22 @@
             "current": false
           }
         ],
-        "ctx": "This is the second of three Damascus road accounts in Acts (chs 9, 22, 26). Each retelling is tailored to its audience. Here, addressing a hostile Jewish crowd, Paul emphasises his Jewish credentials (Tarsus-born, Jerusalem-trained, Gamaliel-taught), Ananias's Jewish piety (v.12), and the Jerusalem temple vision (vv.17–21). He is establishing that his Gentile mission was not a personal preference or deviation from Judaism but a direct divine commission received in Jerusalem's most sacred space.",
-        "cross": [
-          {
-            "ref": "Acts 9:1–19",
-            "note": "The first Damascus road account — told by Luke as narrator. Acts 22 adds: the Jerusalem temple vision (vv.17–21), Ananias's Jewish credentials (v.12), the 'Righteous One' title (v.14)."
-          },
-          {
-            "ref": "Galatians 1:13–16",
-            "note": "\"You have heard of my previous way of life in Judaism, how intensely I persecuted the church of God... But God... was pleased to reveal his Son in me so that I might preach him among the Gentiles\" — Paul's autobiographical account matches the Acts 22 version."
-          },
-          {
-            "ref": "Acts 7:58",
-            "note": "\"The witnesses laid their coats at the feet of a young man named Saul\" — Paul now acknowledges his role at Stephen's stoning (v.20), closing the narrative arc that began in Acts 7."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 9:1–19",
+              "note": "The first Damascus road account — told by Luke as narrator. Acts 22 adds: the Jerusalem temple vision (vv.17–21), Ananias's Jewish credentials (v.12), the 'Righteous One' title (v.14)."
+            },
+            {
+              "ref": "Galatians 1:13–16",
+              "note": "\"You have heard of my previous way of life in Judaism, how intensely I persecuted the church of God... But God... was pleased to reveal his Son in me so that I might preach him among the Gentiles\" — Paul's autobiographical account matches the Acts 22 version."
+            },
+            {
+              "ref": "Acts 7:58",
+              "note": "\"The witnesses laid their coats at the feet of a young man named Saul\" — Paul now acknowledges his role at Stephen's stoning (v.20), closing the narrative arc that began in Acts 7."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -133,6 +134,9 @@
               "note": "Keener notes the deliberate contrast in how Ananias is described: in Acts 9:10 he is simply 'a disciple'; here he is 'a devout observer of the law and highly respected by all the Jews living there.' The description is tailored to the Jewish audience: Paul's conversion was mediated by someone whose Jewish credentials the crowd would recognise and respect."
             }
           ]
+        },
+        "hist": {
+          "context": "This is the second of three Damascus road accounts in Acts (chs 9, 22, 26). Each retelling is tailored to its audience. Here, addressing a hostile Jewish crowd, Paul emphasises his Jewish credentials (Tarsus-born, Jerusalem-trained, Gamaliel-taught), Ananias's Jewish piety (v.12), and the Jerusalem temple vision (vv.17–21). He is establishing that his Gentile mission was not a personal preference or deviation from Judaism but a direct divine commission received in Jerusalem's most sacred space."
         }
       }
     },
@@ -179,21 +183,22 @@
             "current": false
           }
         ],
-        "ctx": "The trigger for the riot — 'Rid the earth of him!' (v.22) — is the word 'Gentiles.' Paul could say he was personally transformed, that he saw the Risen Christ, that he was commissioned in the Temple — the crowd endured all of this. But when Paul announces that his commission was to the Gentiles, the crowd erupts. The theological problem is not Paul's conversion but the implications of that conversion for Gentile inclusion. This is the Jerusalem Council controversy enacted at street level.",
-        "cross": [
-          {
-            "ref": "Acts 21:36",
-            "note": "\"Get rid of him!\" — the same crowd cry at the Temple arrest. The verbal parallel to Jesus's passion (Luke 23:18: \"Away with this man!\") is deliberate."
-          },
-          {
-            "ref": "Acts 16:37",
-            "note": "\"They beat us publicly without a trial, even though we are Roman citizens\" — the Philippi citizenship claim. Paul uses this right strategically, not routinely."
-          },
-          {
-            "ref": "Romans 1:16",
-            "note": "\"I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes: first to the Jew, then to the Gentile\" — the theological principle behind Paul's Gentile commission, which the crowd rejected."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 21:36",
+              "note": "\"Get rid of him!\" — the same crowd cry at the Temple arrest. The verbal parallel to Jesus's passion (Luke 23:18: \"Away with this man!\") is deliberate."
+            },
+            {
+              "ref": "Acts 16:37",
+              "note": "\"They beat us publicly without a trial, even though we are Roman citizens\" — the Philippi citizenship claim. Paul uses this right strategically, not routinely."
+            },
+            {
+              "ref": "Romans 1:16",
+              "note": "\"I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes: first to the Jew, then to the Gentile\" — the theological principle behind Paul's Gentile commission, which the crowd rejected."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -258,6 +263,9 @@
               "note": "Keener provides background on the two types of Roman citizenship. Purchased citizenship was available to wealthy non-Romans under certain conditions; it was nonetheless fully legal. Birth citizenship was inherited. Paul's birth citizenship in Tarsus was a consequence of Tarsus's status as a Roman citizen city — granted to Tarsus either by Pompey or Julius Caesar."
             }
           ]
+        },
+        "hist": {
+          "context": "The trigger for the riot — 'Rid the earth of him!' (v.22) — is the word 'Gentiles.' Paul could say he was personally transformed, that he saw the Risen Christ, that he was commissioned in the Temple — the crowd endured all of this. But when Paul announces that his commission was to the Gentiles, the crowd erupts. The theological problem is not Paul's conversion but the implications of that conversion for Gentile inclusion. This is the Jerusalem Council controversy enacted at street level."
         }
       }
     }

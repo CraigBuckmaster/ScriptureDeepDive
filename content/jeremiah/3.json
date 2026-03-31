@@ -31,21 +31,22 @@
             "paragraph": "The noun mĕšubâ derives from the same root šûb but with a negative prefix — it means \"turning away\" rather than \"turning back.\" Israel is called mĕšubâ (faithless/backsliding), a pun on the very verb of repentance. She has turned, but in the wrong direction."
           }
         ],
-        "ctx": "Chapter 3 develops the marriage metaphor introduced in chapter 2. Deuteronomy 24:1–4 prohibited a divorced woman from returning to her first husband after marrying another — yet God invites Israel to return despite her serial unfaithfulness. This exceeds the legal provision and reveals grace beyond law. The comparison between the northern kingdom (Israel, exiled in 722 BC) and Judah is damning: Judah saw what happened to Israel and still did not learn. Judah is worse than Israel because she sinned with the warning of precedent.",
-        "cross": [
-          {
-            "ref": "Deut 24:1–4",
-            "note": "The legal background: a divorced woman cannot return to her first husband. God transcends his own law by inviting faithless Israel back — grace overrides legal provision."
-          },
-          {
-            "ref": "Hos 1–3",
-            "note": "Hosea's marriage to Gomer provides the fullest prophetic development of the marriage metaphor — God as the faithful husband pursuing an unfaithful wife."
-          },
-          {
-            "ref": "Matt 19:8",
-            "note": "Jesus explains that Mosaic divorce law reflected hardness of heart, not God's ideal — the same tension Jeremiah navigates between legal stricture and divine mercy."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 24:1–4",
+              "note": "The legal background: a divorced woman cannot return to her first husband. God transcends his own law by inviting faithless Israel back — grace overrides legal provision."
+            },
+            {
+              "ref": "Hos 1–3",
+              "note": "Hosea's marriage to Gomer provides the fullest prophetic development of the marriage metaphor — God as the faithful husband pursuing an unfaithful wife."
+            },
+            {
+              "ref": "Matt 19:8",
+              "note": "Jesus explains that Mosaic divorce law reflected hardness of heart, not God's ideal — the same tension Jeremiah navigates between legal stricture and divine mercy."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Brueggemann reads the Israel/Judah comparison as a critique of institutional religion. Judah had the temple, the reforms, the outward signs of faithfulness — and it was all \"pretense\" (šeqer). The most dangerous form of apostasy is the one that looks like orthodoxy."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 3 develops the marriage metaphor introduced in chapter 2. Deuteronomy 24:1–4 prohibited a divorced woman from returning to her first husband after marrying another — yet God invites Israel to return despite her serial unfaithfulness. This exceeds the legal provision and reveals grace beyond law. The comparison between the northern kingdom (Israel, exiled in 722 BC) and Judah is damning: Judah saw what happened to Israel and still did not learn. Judah is worse than Israel because she sinned with the warning of precedent."
         }
       }
     },
@@ -123,17 +127,18 @@
             "paragraph": "God promises to \"heal your faithlessness\" (v.22) — using the verb rāpāʾ for spiritual restoration. The metaphor treats apostasy as a disease rather than merely a crime, opening the possibility of cure rather than only punishment."
           }
         ],
-        "ctx": "Verses 11–18 shift dramatically from indictment to invitation. God calls the northern exiles to return, promising shepherds \"after my own heart\" (v.15) and a future when the Ark of the Covenant will no longer be needed because God's presence will fill Jerusalem itself (v.16). This is one of the most eschatological passages in early Jeremiah — pointing beyond the present crisis to a transformed future.",
-        "cross": [
-          {
-            "ref": "Jer 23:4",
-            "note": "The promise of faithful shepherds recurs later in Jeremiah, ultimately pointing to the messianic king — the righteous Branch from David's line."
-          },
-          {
-            "ref": "Rev 21:22",
-            "note": "John's vision of the New Jerusalem \"without a temple\" fulfils Jeremiah's prophecy of a city where the Ark is no longer needed — God's unmediated presence replaces all cultic apparatus."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 23:4",
+              "note": "The promise of faithful shepherds recurs later in Jeremiah, ultimately pointing to the messianic king — the righteous Branch from David's line."
+            },
+            {
+              "ref": "Rev 21:22",
+              "note": "John's vision of the New Jerusalem \"without a temple\" fulfils Jeremiah's prophecy of a city where the Ark is no longer needed — God's unmediated presence replaces all cultic apparatus."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -182,6 +187,9 @@
               "note": "Brueggemann sees this passage as a vision of \"world turned right side up\" — faithful leaders, divine presence without mediation, and nations gathered to Jerusalem. The prophetic imagination refuses to let the present crisis define the future."
             }
           ]
+        },
+        "hist": {
+          "context": "Verses 11–18 shift dramatically from indictment to invitation. God calls the northern exiles to return, promising shepherds \"after my own heart\" (v.15) and a future when the Ark of the Covenant will no longer be needed because God's presence will fill Jerusalem itself (v.16). This is one of the most eschatological passages in early Jeremiah — pointing beyond the present crisis to a transformed future."
         }
       }
     },
@@ -199,17 +207,18 @@
             "paragraph": "God longed to be called \"my Father\" (ʾābî) by Israel (v.19). The paternal metaphor complements the spousal one — God is both husband and father, and Israel's infidelity wounds both relationships. The liturgy of repentance in vv.22–25 finally uses this address: \"You are the LORD our God.\""
           }
         ],
-        "ctx": "The chapter closes with a liturgy of repentance (vv.22b–25) that may reflect an actual worship text. The confession is remarkably specific: \"The shameful god has consumed the wealth of our ancestors\" (v.24). This suggests that Baal worship was not merely a spiritual failing but an economic one — temple revenues and resources diverted to false cults.",
-        "cross": [
-          {
-            "ref": "Hos 14:1–3",
-            "note": "Hosea likewise provides a liturgy of return with specific language for the penitent: \"Take words with you and return to the LORD.\""
-          },
-          {
-            "ref": "Luke 15:18",
-            "note": "The prodigal son's confession — \"Father, I have sinned\" — echoes the same pattern of return and address to the Father that Jeremiah envisions."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Hos 14:1–3",
+              "note": "Hosea likewise provides a liturgy of return with specific language for the penitent: \"Take words with you and return to the LORD.\""
+            },
+            {
+              "ref": "Luke 15:18",
+              "note": "The prodigal son's confession — \"Father, I have sinned\" — echoes the same pattern of return and address to the Father that Jeremiah envisions."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -258,6 +267,9 @@
               "note": "Brueggemann calls this \"prophetic ventriloquism\" — Jeremiah speaks the words of repentance that the people should speak but have not yet spoken. The prophet performs the community's future conversion in advance, making it imaginatively available."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter closes with a liturgy of repentance (vv.22b–25) that may reflect an actual worship text. The confession is remarkably specific: \"The shameful god has consumed the wealth of our ancestors\" (v.24). This suggests that Baal worship was not merely a spiritual failing but an economic one — temple revenues and resources diverted to false cults."
         }
       }
     }

@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 19,
       "panels": {
-        "ctx": "Hezekiah tears his clothes, puts on sackcloth, and goes to the temple. He sends to Isaiah: “This day is a day of distress and rebuke and disgrace.” Isaiah responds with God’s word: “Do not be afraid. He will return to his own country.” Then Sennacherib sends a letter directly to Hezekiah: “Do not let the god you depend on deceive you. No god has delivered anyone from me.” Hezekiah takes the letter into the temple and spreads it before the LORD — one of the most powerful acts of prayer in Scripture. He prays not for himself but for God’s honour: “So that all kingdoms on earth may know that you alone, LORD, are God.”",
-        "cross": [
-          {
-            "ref": "Isa 37:1–20",
-            "note": "The parallel in Isaiah preserves the same account. The prayer tradition was important enough to be recorded in both prophetic and historical literature."
-          },
-          {
-            "ref": "2 Chr 32:20",
-            "note": "Chronicles adds that “Hezekiah and Isaiah cried out to the LORD” — the king and the prophet praying together."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 37:1–20",
+              "note": "The parallel in Isaiah preserves the same account. The prayer tradition was important enough to be recorded in both prophetic and historical literature."
+            },
+            {
+              "ref": "2 Chr 32:20",
+              "note": "Chronicles adds that “Hezekiah and Isaiah cried out to the LORD” — the king and the prophet praying together."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -67,6 +68,9 @@
               "note": "The image of the king spreading a threatening letter before God in the temple is the narrative’s most iconic act of faith. It redefines the power dynamic: the letter’s author thinks he is addressing Hezekiah; Hezekiah redirects it to God."
             }
           ]
+        },
+        "hist": {
+          "context": "Hezekiah tears his clothes, puts on sackcloth, and goes to the temple. He sends to Isaiah: “This day is a day of distress and rebuke and disgrace.” Isaiah responds with God’s word: “Do not be afraid. He will return to his own country.” Then Sennacherib sends a letter directly to Hezekiah: “Do not let the god you depend on deceive you. No god has delivered anyone from me.” Hezekiah takes the letter into the temple and spreads it before the LORD — one of the most powerful acts of prayer in Scripture. He prays not for himself but for God’s honour: “So that all kingdoms on earth may know that you alone, LORD, are God.”"
         }
       }
     },
@@ -76,21 +80,22 @@
       "verse_start": 20,
       "verse_end": 37,
       "panels": {
-        "ctx": "Isaiah delivers God’s response: a poem mocking Sennacherib’s arrogance. “Who is it you have ridiculed and blasphemed? Against whom have you raised your voice? Against the Holy One of Israel!” God promises to defend Jerusalem “for my sake and for the sake of David my servant.” That night, the angel of the LORD strikes down 185,000 in the Assyrian camp. Sennacherib withdraws to Nineveh and is later assassinated by his own sons in the temple of his god Nisrok. The same Sennacherib who mocked YHWH dies in the house of an idol that cannot protect him.",
-        "cross": [
-          {
-            "ref": "Isa 37:21–38",
-            "note": "The parallel in Isaiah preserves the same oracle with identical wording, confirming the tradition’s fixity."
-          },
-          {
-            "ref": "Exod 12:29",
-            "note": "The angel of the LORD strikes the firstborn of Egypt at night. The same divine agent operates at Jerusalem: nocturnal, sudden, comprehensive."
-          },
-          {
-            "ref": "Ps 46:5–6",
-            "note": "“God is within her, she will not fall; God will help her at break of day. Nations are in uproar, kingdoms fall.”"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 37:21–38",
+              "note": "The parallel in Isaiah preserves the same oracle with identical wording, confirming the tradition’s fixity."
+            },
+            {
+              "ref": "Exod 12:29",
+              "note": "The angel of the LORD strikes the firstborn of Egypt at night. The same divine agent operates at Jerusalem: nocturnal, sudden, comprehensive."
+            },
+            {
+              "ref": "Ps 46:5–6",
+              "note": "“God is within her, she will not fall; God will help her at break of day. Nations are in uproar, kingdoms fall.”"
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -130,6 +135,9 @@
               "note": "“I will defend this city for my sake and for the sake of David my servant.” Two reasons, neither of which is Hezekiah’s merit: God’s own honour and the Davidic covenant. Jerusalem’s survival is grace, not reward."
             }
           ]
+        },
+        "hist": {
+          "context": "Isaiah delivers God’s response: a poem mocking Sennacherib’s arrogance. “Who is it you have ridiculed and blasphemed? Against whom have you raised your voice? Against the Holy One of Israel!” God promises to defend Jerusalem “for my sake and for the sake of David my servant.” That night, the angel of the LORD strikes down 185,000 in the Assyrian camp. Sennacherib withdraws to Nineveh and is later assassinated by his own sons in the temple of his god Nisrok. The same Sennacherib who mocked YHWH dies in the house of an idol that cannot protect him."
         }
       }
     }

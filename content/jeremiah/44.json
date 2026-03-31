@@ -25,17 +25,18 @@
             "paragraph": "\"Even to this day they have not humbled themselves (lo' dukke'u, from daka') or shown fear\" (v.10). After the fall of Jerusalem, the destruction of the temple, exile, and flight to Egypt, the people still have not repented. The persistence of impenitence in the face of catastrophe is the final theological puzzle of the book."
           }
         ],
-        "ctx": "Chapter 44 is Jeremiah's last recorded oracle and perhaps the most confrontational speech in the book. Addressing the Egyptian diaspora community -- at Migdol, Tahpanhes, Memphis, and Upper Egypt -- he catalogs the entire history of divine patience and human refusal. The refrain \"again and again\" (hashkem) recurs: God sent prophets, they refused to listen. The same pattern that defined the Jerusalem years continues in Egypt.",
-        "cross": [
-          {
-            "ref": "2 Chr 36:15-16",
-            "note": "\"The LORD, the God of their ancestors, sent word to them through his messengers again and again ... but they mocked God's messengers\" -- the Chronicler's summary of the same pattern."
-          },
-          {
-            "ref": "Rom 2:4-5",
-            "note": "\"God's kindness is intended to lead you to repentance\" -- the NT statement of the principle that Judah violated."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Chr 36:15-16",
+              "note": "\"The LORD, the God of their ancestors, sent word to them through his messengers again and again ... but they mocked God's messengers\" -- the Chronicler's summary of the same pattern."
+            },
+            {
+              "ref": "Rom 2:4-5",
+              "note": "\"God's kindness is intended to lead you to repentance\" -- the NT statement of the principle that Judah violated."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -88,6 +89,9 @@
               "note": "Brueggemann reads the rhetorical questions as \"the exhaustion of prophetic patience.\" After a career of pleading, the prophet can only ask: why are you doing this to yourselves? The mystery of persistent self-destruction exceeds explanation."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 44 is Jeremiah's last recorded oracle and perhaps the most confrontational speech in the book. Addressing the Egyptian diaspora community -- at Migdol, Tahpanhes, Memphis, and Upper Egypt -- he catalogs the entire history of divine patience and human refusal. The refrain \"again and again\" (hashkem) recurs: God sent prophets, they refused to listen. The same pattern that defined the Jerusalem years continues in Egypt."
         }
       }
     },
@@ -105,17 +109,18 @@
             "paragraph": "The women respond: \"We will certainly do everything we said we would: we will burn incense to the queen of heaven\" (v.17). Their argument: when we worshipped the queen of heaven, things were good; when we stopped (during Josiah's reforms), things got bad. The logic is correlation without causation -- they attribute prosperity to Ishtar and blame Yahwism for the catastrophe. This is the book's final theological confrontation."
           }
         ],
-        "ctx": "The women's defense of queen-of-heaven worship is the most sustained theological argument from the \"opposition\" in the book. They argue from experience: prosperity under syncretism, disaster under reform. Jeremiah reverses the causation: the disaster came not because you stopped worshipping the queen of heaven but because you had been worshipping her all along. The accumulated sin finally reached its tipping point. This is Jeremiah's last recorded speech.",
-        "cross": [
-          {
-            "ref": "Jer 7:18",
-            "note": "The first mention of queen-of-heaven worship -- whole families participating in the cult. The book ends where the Temple Sermon began."
-          },
-          {
-            "ref": "1 Cor 10:20-22",
-            "note": "Paul warns against participation in idol feasts -- the NT continuation of the anti-syncretism polemic."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 7:18",
+              "note": "The first mention of queen-of-heaven worship -- whole families participating in the cult. The book ends where the Temple Sermon began."
+            },
+            {
+              "ref": "1 Cor 10:20-22",
+              "note": "Paul warns against participation in idol feasts -- the NT continuation of the anti-syncretism polemic."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -172,6 +177,9 @@
               "note": "Brueggemann calls the women's argument \"the most sophisticated defense of syncretism in the Bible.\" It is not ignorant but experiential -- they argue from lived reality. Jeremiah must counter not with abstract theology but with alternative historical interpretation."
             }
           ]
+        },
+        "hist": {
+          "context": "The women's defense of queen-of-heaven worship is the most sustained theological argument from the \"opposition\" in the book. They argue from experience: prosperity under syncretism, disaster under reform. Jeremiah reverses the causation: the disaster came not because you stopped worshipping the queen of heaven but because you had been worshipping her all along. The accumulated sin finally reached its tipping point. This is Jeremiah's last recorded speech."
         }
       }
     }

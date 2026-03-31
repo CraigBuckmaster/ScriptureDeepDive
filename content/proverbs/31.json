@@ -31,17 +31,18 @@
             "paragraph": "Open your mouth (pitḥû-pîkā) for the mute, for the rights of all the destitute (v. 8). The command to speak for those who cannot speak for themselves is the ethical climax of the queen mother's instruction. Royal power exists not for self-aggrandisement but for advocacy. The bĕnê ḥălôp (sons of passing away, i.e. the perishing) are those whose voices the powerful must amplify."
           }
         ],
-        "ctx": "Proverbs 31 opens with the sayings of King Lemuel — another non-Israelite wisdom figure, like Agur. Uniquely, this instruction was taught to him by his mother. The instruction for a king is brief and pointed: avoid women who ruin kings, avoid wine that clouds royal judgment, and speak up for the poor and destitute. V.8–9 are among the most activist verses in Proverbs: \"Speak up for those who cannot speak for themselves.\" The book that began with a father's instruction to a son ends with a mother's instruction to a king and a poem about a woman.",
-        "cross": [
-          {
-            "ref": "Deut 17:16–17",
-            "note": "Lemuel's mother warns against women and wine — the very traps Deuteronomy warns kings to avoid: 'He must not take many wives, or his heart will be led astray. He must not accumulate large amounts of silver and gold.'"
-          },
-          {
-            "ref": "Isa 1:17, 23",
-            "note": "Isaiah condemns rulers who fail to 'defend the cause of the fatherless' and 'plead the case of the widow.' Lemuel's mother demands the same: 'speak up for those who cannot speak for themselves' (v. 8)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 17:16–17",
+              "note": "Lemuel's mother warns against women and wine — the very traps Deuteronomy warns kings to avoid: 'He must not take many wives, or his heart will be led astray. He must not accumulate large amounts of silver and gold.'"
+            },
+            {
+              "ref": "Isa 1:17, 23",
+              "note": "Isaiah condemns rulers who fail to 'defend the cause of the fatherless' and 'plead the case of the widow.' Lemuel's mother demands the same: 'speak up for those who cannot speak for themselves' (v. 8)."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "NET: pen lol benei chalof (literally 'those who are passing away' -- the vulnerable dying) -- the note explains the specific social groups the king is to defend: those who cannot speak for themselves in the legal system."
             }
           ]
+        },
+        "hist": {
+          "context": "Proverbs 31 opens with the sayings of King Lemuel — another non-Israelite wisdom figure, like Agur. Uniquely, this instruction was taught to him by his mother. The instruction for a king is brief and pointed: avoid women who ruin kings, avoid wine that clouds royal judgment, and speak up for the poor and destitute. V.8–9 are among the most activist verses in Proverbs: \"Speak up for those who cannot speak for themselves.\" The book that began with a father's instruction to a son ends with a mother's instruction to a king and a poem about a woman."
         }
       }
     },
@@ -122,17 +126,18 @@
             "paragraph": "Give her of the fruit of her hands, and let her works halĕlûhā — praise her — in the gates (v. 31). The verb hālal (to praise) is the root of 'hallelujah.' The city gates were the place of public honour and legal recognition. The book closes not with abstract theology but with concrete recognition: wisdom lived out in a woman's daily work receives public, lasting praise."
           }
         ],
-        "ctx": "The poem of the excellent wife (vv.10–31) is an acrostic — each verse begins with the next letter of the Hebrew alphabet, from aleph to taw. This is not merely a literary flourish; it signals completeness. The A-to-Z of human excellence is embodied in this woman. She is the answer to the question with which the book wrestled: what does wisdom look like when fully embodied in a human life? The answer is not a philosopher or a king but a woman whose fear of the LORD produces comprehensive excellence in every dimension of her life.",
-        "cross": [
-          {
-            "ref": "Prov 1:7; 9:10",
-            "note": "The book began with \"the fear of the LORD is the beginning of wisdom\" — it ends with \"a woman who fears the LORD is to be praised.\" The thesis and the embodiment bracket the entire collection."
-          },
-          {
-            "ref": "Ruth",
-            "note": "Ruth is identified as an ʾēšet ḥayil in Ruth 3:11 — \"all the people of my town know that you are a woman of noble character.\" Ruth is the narrative embodiment of the Prov 31 portrait."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 1:7; 9:10",
+              "note": "The book began with \"the fear of the LORD is the beginning of wisdom\" — it ends with \"a woman who fears the LORD is to be praised.\" The thesis and the embodiment bracket the entire collection."
+            },
+            {
+              "ref": "Ruth",
+              "note": "Ruth is identified as an ʾēšet ḥayil in Ruth 3:11 — \"all the people of my town know that you are a woman of noble character.\" Ruth is the narrative embodiment of the Prov 31 portrait."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -184,6 +189,9 @@
               "note": "NET: the fear of the LORD as the poem's theological climax -- the note traces the inclusio with 1:7 (the fear of the LORD is the beginning of wisdom) and 9:10 (the beginning of wisdom is the fear of the LORD). The book's thesis in ch.1 is the book's final portrait in ch.31."
             }
           ]
+        },
+        "hist": {
+          "context": "The poem of the excellent wife (vv.10–31) is an acrostic — each verse begins with the next letter of the Hebrew alphabet, from aleph to taw. This is not merely a literary flourish; it signals completeness. The A-to-Z of human excellence is embodied in this woman. She is the answer to the question with which the book wrestled: what does wisdom look like when fully embodied in a human life? The answer is not a philosopher or a king but a woman whose fear of the LORD produces comprehensive excellence in every dimension of her life."
         }
       }
     }

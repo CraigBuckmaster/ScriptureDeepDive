@@ -29,6 +29,10 @@ interface Props {
   renderButtonRow?: (panels: SectionPanel[], sectionId: string) => React.ReactNode;
   /** Render prop for active panel content */
   renderPanel?: (panel: SectionPanel) => React.ReactNode;
+  /** Study depth tracking */
+  depthExplored?: number;
+  depthTotal?: number;
+  onDepthRecord?: (sectionId: string, panelType: string) => void;
 }
 
 export function SectionBlock({
@@ -36,6 +40,7 @@ export function SectionBlock({
   notedVerses, activePanel, fontSize,
   onPanelToggle, onNotePress, onRefPress,
   renderButtonRow, renderPanel,
+  depthExplored, depthTotal, onDepthRecord,
 }: Props) {
   // Filter verses for this section
   const sectionVerses = verses.filter(
@@ -49,6 +54,7 @@ export function SectionBlock({
       const matchType = panelTypes.find((pt) => availableTypes.has(pt));
       if (matchType) {
         onPanelToggle(sectionId, matchType);
+        onDepthRecord?.(sectionId, matchType);
       }
     },
     [panels, onPanelToggle]
@@ -62,7 +68,7 @@ export function SectionBlock({
 
   return (
     <View style={styles.container}>
-      <SectionHeader header={section.header} />
+      <SectionHeader header={section.header} explored={depthExplored} total={depthTotal} />
 
       <VerseBlock
         verses={sectionVerses}

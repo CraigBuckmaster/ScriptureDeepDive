@@ -25,21 +25,22 @@
             "paragraph": "Each tribe receives a cheleq (portion), a horizontal strip of land running east-west across the full width of the country from the eastern border to the Mediterranean. This egalitarian arrangement — equal width for each tribe — replaces the irregular, size-based allocations of Joshua's distribution. Seven tribes are north of the sacred district (Dan, Asher, Naphtali, Manasseh, Ephraim, Reuben, Judah) and five are south (Benjamin, Simeon, Issachar, Zebulun, Gad). Judah is placed immediately north of the sacred district, the position of greatest honor."
           }
         ],
-        "ctx": "The tribal allotments begin with the seven northern tribes, listed from north to south: Dan, Asher, Naphtali, Manasseh, Ephraim, Reuben, and Judah. Each tribe receives an east-west strip of equal width spanning the entire breadth of the land. This arrangement is strikingly different from the historical distribution under Joshua, where tribal territories varied greatly in size and shape. The egalitarian design reflects the principle that all tribes are equal before YHWH. The ordering departs from both birth order and historical precedent. Dan, the northernmost, was historically the tribe most associated with idolatry (the Dan sanctuary of Judges 18). His placement at the extreme north may represent a restoration from the margins. Judah is positioned immediately north of the sacred district — the most prestigious location — reflecting Judah's role as the royal and messianic tribe. The sacred district itself (detailed in vv. 8-22) occupies the center of the land, making the temple the literal and figurative heart of the nation.",
-        "cross": [
-          {
-            "ref": "Josh 13-19",
-            "note": "The original tribal land distribution under Joshua. Ezekiel's egalitarian strips replace Joshua's irregular and contested boundaries."
-          },
-          {
-            "ref": "Gen 49:1-28",
-            "note": "Jacob's blessing of the twelve tribes. Ezekiel's tribal arrangement partially reflects but significantly reorganizes the traditional tribal order."
-          },
-          {
-            "ref": "Rev 7:4-8",
-            "note": "The 144,000 from the twelve tribes of Israel. Revelation's tribal list also rearranges the traditional order, omitting Dan entirely — possibly reflecting Dan's association with idolatry."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 13-19",
+              "note": "The original tribal land distribution under Joshua. Ezekiel's egalitarian strips replace Joshua's irregular and contested boundaries."
+            },
+            {
+              "ref": "Gen 49:1-28",
+              "note": "Jacob's blessing of the twelve tribes. Ezekiel's tribal arrangement partially reflects but significantly reorganizes the traditional tribal order."
+            },
+            {
+              "ref": "Rev 7:4-8",
+              "note": "The 144,000 from the twelve tribes of Israel. Revelation's tribal list also rearranges the traditional order, omitting Dan entirely — possibly reflecting Dan's association with idolatry."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Zimmerli classifies this section as Stammesliste (tribal list) and notes its departure from all known historical tribal geographies. The egalitarian strips represent an idealized redistribution that owes more to theological principle than to topographical reality. Zimmerli observes that the ordering places Rachel tribes (Ephraim, Manasseh, Benjamin) closest to the sacred center, possibly reflecting a tradition that privileges the Joseph/Rachel lineage."
             }
           ]
+        },
+        "hist": {
+          "context": "The tribal allotments begin with the seven northern tribes, listed from north to south: Dan, Asher, Naphtali, Manasseh, Ephraim, Reuben, and Judah. Each tribe receives an east-west strip of equal width spanning the entire breadth of the land. This arrangement is strikingly different from the historical distribution under Joshua, where tribal territories varied greatly in size and shape. The egalitarian design reflects the principle that all tribes are equal before YHWH. The ordering departs from both birth order and historical precedent. Dan, the northernmost, was historically the tribe most associated with idolatry (the Dan sanctuary of Judges 18). His placement at the extreme north may represent a restoration from the margins. Judah is positioned immediately north of the sacred district — the most prestigious location — reflecting Judah's role as the royal and messianic tribe. The sacred district itself (detailed in vv. 8-22) occupies the center of the land, making the temple the literal and figurative heart of the nation."
         }
       }
     },
@@ -117,21 +121,22 @@
             "paragraph": "The miqdash (sanctuary) occupies the exact center of the sacred district, which itself occupies the exact center of the land. This concentric positioning establishes the temple as the geographic, political, and theological nucleus of the nation. The sacred district (terumah) measures 25,000 by 25,000 cubits (approximately 13 km square) and is divided into three horizontal strips: the priestly zone (25,000 x 10,000), the Levitical zone (25,000 x 10,000), and the city zone (25,000 x 5,000). The prince's territory flanks the entire district east and west."
           }
         ],
-        "ctx": "The sacred district described in 45:1-8 is now elaborated in full detail within the context of the tribal allotments. The district is a square of 25,000 by 25,000 cubits, centered between the tribal territories of Judah (north) and Benjamin (south). The northern half (25,000 x 10,000) belongs to the Zadokite priests and contains the sanctuary at its center. Below it, a parallel strip (25,000 x 10,000) is assigned to the Levites. The southern strip (25,000 x 5,000) is the city's property, containing the city of 4,500 cubits per side with an open area of 250 cubits on each side for grazing and cultivation. The city has twelve gates, three on each side, each named for a tribe of Israel. Workers from all tribes cultivate the city's land, making the capital a truly pan-Israelite entity. The prince's territory extends east and west from the sacred district to the national borders, flanking the terumah on both sides. His land is bounded by the sacred district, so that he cannot encroach on holy space.",
-        "cross": [
-          {
-            "ref": "Ezek 45:1-8",
-            "note": "The initial description of the sacred district. Chapter 48 provides the same information in greater detail and within the context of the full tribal distribution."
-          },
-          {
-            "ref": "Rev 21:12-13",
-            "note": "The New Jerusalem has twelve gates, three on each side, named for the twelve tribes of Israel. This directly echoes Ezekiel 48:30-35."
-          },
-          {
-            "ref": "Num 2:1-34",
-            "note": "The Israelite camp in the wilderness was arranged with the tabernacle at the center and the tribes in concentric rings. Ezekiel's sacred district follows the same principle of centralized holiness."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 45:1-8",
+              "note": "The initial description of the sacred district. Chapter 48 provides the same information in greater detail and within the context of the full tribal distribution."
+            },
+            {
+              "ref": "Rev 21:12-13",
+              "note": "The New Jerusalem has twelve gates, three on each side, named for the twelve tribes of Israel. This directly echoes Ezekiel 48:30-35."
+            },
+            {
+              "ref": "Num 2:1-34",
+              "note": "The Israelite camp in the wilderness was arranged with the tabernacle at the center and the tribes in concentric rings. Ezekiel's sacred district follows the same principle of centralized holiness."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -192,6 +197,9 @@
               "note": "Zimmerli regards this section as a Heiligtumsordnung (sanctuary ordinance) that recapitulates 45:1-8 with greater precision. He notes that the three-tier sanctity classification (most holy, holy, common) maps the priestly holiness spectrum onto territorial geography, creating what he calls a 'geography of holiness' that extends the temple's spatial logic to the entire national territory."
             }
           ]
+        },
+        "hist": {
+          "context": "The sacred district described in 45:1-8 is now elaborated in full detail within the context of the tribal allotments. The district is a square of 25,000 by 25,000 cubits, centered between the tribal territories of Judah (north) and Benjamin (south). The northern half (25,000 x 10,000) belongs to the Zadokite priests and contains the sanctuary at its center. Below it, a parallel strip (25,000 x 10,000) is assigned to the Levites. The southern strip (25,000 x 5,000) is the city's property, containing the city of 4,500 cubits per side with an open area of 250 cubits on each side for grazing and cultivation. The city has twelve gates, three on each side, each named for a tribe of Israel. Workers from all tribes cultivate the city's land, making the capital a truly pan-Israelite entity. The prince's territory extends east and west from the sacred district to the national borders, flanking the terumah on both sides. His land is bounded by the sacred district, so that he cannot encroach on holy space."
         }
       }
     },
@@ -215,29 +223,30 @@
             "paragraph": "The city has twelve she'arim (gates), three per side, each named for a tribe: north (Reuben, Judah, Levi), east (Joseph, Benjamin, Dan), south (Simeon, Issachar, Zebulun), west (Gad, Asher, Naphtali). The inclusion of Levi and Joseph (not Ephraim/Manasseh separately) yields exactly twelve names. The gate-naming ensures every tribe has a permanent stake in the holy city, regardless of where their territorial allotment lies."
           }
         ],
-        "ctx": "The five southern tribes are listed from north to south: Benjamin, Simeon, Issachar, Zebulun, and Gad. Benjamin, placed immediately south of the sacred district, mirrors Judah's honored position to the north, reflecting the historical alliance between Judah and Benjamin. The chapter concludes with the city's dimensions (4,500 cubits per side, approximately 2.4 km) and its twelve gates, three per wall, each named for a tribe. The gate-naming includes Levi (who receives no territorial allotment but has a gate) and counts Joseph as one tribe (rather than splitting Ephraim and Manasseh), yielding exactly twelve gates. The final verse delivers the climactic revelation: the name of the city from that day forward shall be YHWH Shammah — 'The LORD is There.' This closing declaration resolves the central tension of the book. The glory departed (10:18-19; 11:22-23), leaving the temple and city empty of divine presence. Through forty-eight chapters of judgment, exile, and visionary restoration, the book has led to this culminating word: God is permanently present with His people. The God who left has returned, and His return is permanent.",
-        "cross": [
-          {
-            "ref": "Ezek 11:22-23",
-            "note": "The glory departed from the city. The name YHWH Shammah declares the reversal: God is now permanently there."
-          },
-          {
-            "ref": "Isa 60:14",
-            "note": "The city will be called 'The City of the LORD, the Zion of the Holy One of Israel.' The renaming tradition for the eschatological city appears in multiple prophetic texts."
-          },
-          {
-            "ref": "Jer 33:16",
-            "note": "Jerusalem will be called 'The LORD Our Righteousness.' Like Ezekiel's YHWH Shammah, the city's new name expresses a theological truth about God's character and presence."
-          },
-          {
-            "ref": "Rev 21:2-3",
-            "note": "The New Jerusalem comes down from heaven, and a voice declares: 'God's dwelling place is now among the people.' Revelation's vision of ultimate divine presence fulfills Ezekiel's YHWH Shammah."
-          },
-          {
-            "ref": "Rev 21:12-13",
-            "note": "The New Jerusalem has twelve gates, three on each side, each inscribed with the name of a tribe of Israel — directly drawn from Ezekiel 48:30-35."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 11:22-23",
+              "note": "The glory departed from the city. The name YHWH Shammah declares the reversal: God is now permanently there."
+            },
+            {
+              "ref": "Isa 60:14",
+              "note": "The city will be called 'The City of the LORD, the Zion of the Holy One of Israel.' The renaming tradition for the eschatological city appears in multiple prophetic texts."
+            },
+            {
+              "ref": "Jer 33:16",
+              "note": "Jerusalem will be called 'The LORD Our Righteousness.' Like Ezekiel's YHWH Shammah, the city's new name expresses a theological truth about God's character and presence."
+            },
+            {
+              "ref": "Rev 21:2-3",
+              "note": "The New Jerusalem comes down from heaven, and a voice declares: 'God's dwelling place is now among the people.' Revelation's vision of ultimate divine presence fulfills Ezekiel's YHWH Shammah."
+            },
+            {
+              "ref": "Rev 21:12-13",
+              "note": "The New Jerusalem has twelve gates, three on each side, each inscribed with the name of a tribe of Israel — directly drawn from Ezekiel 48:30-35."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -310,6 +319,9 @@
               "note": "Zimmerli identifies YHWH Shammah as the Schlussformel (concluding formula) of the entire book. He notes that the twelve-gate city echoes both the wilderness camp arrangement (Num 2) and the eschatological city of later apocalyptic tradition (Rev 21). The two-word name accomplishes theologically what forty-eight chapters have narrated dramatically: the restored, permanent presence of YHWH among His people. For Zimmerli, this is the Grundaussage (foundational statement) of Ezekiel's theology: God's presence, lost through Israel's sin, has been recovered through divine initiative alone."
             }
           ]
+        },
+        "hist": {
+          "context": "The five southern tribes are listed from north to south: Benjamin, Simeon, Issachar, Zebulun, and Gad. Benjamin, placed immediately south of the sacred district, mirrors Judah's honored position to the north, reflecting the historical alliance between Judah and Benjamin. The chapter concludes with the city's dimensions (4,500 cubits per side, approximately 2.4 km) and its twelve gates, three per wall, each named for a tribe. The gate-naming includes Levi (who receives no territorial allotment but has a gate) and counts Joseph as one tribe (rather than splitting Ephraim and Manasseh), yielding exactly twelve gates. The final verse delivers the climactic revelation: the name of the city from that day forward shall be YHWH Shammah — 'The LORD is There.' This closing declaration resolves the central tension of the book. The glory departed (10:18-19; 11:22-23), leaving the temple and city empty of divine presence. Through forty-eight chapters of judgment, exile, and visionary restoration, the book has led to this culminating word: God is permanently present with His people. The God who left has returned, and His return is permanent."
         }
       }
     }

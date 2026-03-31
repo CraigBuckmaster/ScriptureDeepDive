@@ -31,21 +31,22 @@
             "paragraph": "The phrase orients the reader: Moses speaks from Transjordan, looking west toward the land he will never enter. Every word of Deuteronomy is coloured by this pathos — Moses at the border, speaking to those who will cross."
           }
         ],
-        "ctx": "Deuteronomy opens with precise geographical and temporal data: the plains of Moab, the fortieth year, the eleventh month, the first day. Moses is 120 years old. He has forty days to live. The whole book is his farewell address — three speeches, a song, and a blessing. Ch.1 begins with a review of the Horeb commission: God commanded Israel to move from Sinai toward Canaan. Moses recounts the appointment of judges (Exod 18) and the seriousness of impartial justice.",
-        "cross": [
-          {
-            "ref": "Acts 7:38",
-            "note": "\"He was in the assembly in the wilderness, with the angel who spoke to him on Mount Sinai.\" Stephen's speech draws heavily on Deuteronomy's historical retrospective — Moses at Horeb is the paradigm of God speaking through a mediator."
-          },
-          {
-            "ref": "Heb 3:7–11",
-            "note": "\"Today, if you hear his voice, do not harden your hearts as you did in the rebellion.\" Hebrews applies the Deuteronomic retrospective directly to the church — the wilderness generation's failure is a warning for every generation."
-          },
-          {
-            "ref": "John 1:17",
-            "note": "\"The law was given through Moses; grace and truth came through Jesus Christ.\" The Johannine contrast echoes Deuteronomy's structure: Moses mediates the covenant; Jesus is its fulfilment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 7:38",
+              "note": "\"He was in the assembly in the wilderness, with the angel who spoke to him on Mount Sinai.\" Stephen's speech draws heavily on Deuteronomy's historical retrospective — Moses at Horeb is the paradigm of God speaking through a mediator."
+            },
+            {
+              "ref": "Heb 3:7–11",
+              "note": "\"Today, if you hear his voice, do not harden your hearts as you did in the rebellion.\" Hebrews applies the Deuteronomic retrospective directly to the church — the wilderness generation's failure is a warning for every generation."
+            },
+            {
+              "ref": "John 1:17",
+              "note": "\"The law was given through Moses; grace and truth came through Jesus Christ.\" The Johannine contrast echoes Deuteronomy's structure: Moses mediates the covenant; Jesus is its fulfilment."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "NET Note: The verbhôʾîl(\"undertook\") is rare. Moses \"undertook to explain\" (bēʾēr) the Torah, suggesting interpretive exposition, not mere recitation."
             }
           ]
+        },
+        "hist": {
+          "context": "Deuteronomy opens with precise geographical and temporal data: the plains of Moab, the fortieth year, the eleventh month, the first day. Moses is 120 years old. He has forty days to live. The whole book is his farewell address — three speeches, a song, and a blessing. Ch.1 begins with a review of the Horeb commission: God commanded Israel to move from Sinai toward Canaan. Moses recounts the appointment of judges (Exod 18) and the seriousness of impartial justice."
         }
       }
     },
@@ -141,21 +145,22 @@
             "paragraph": "The verb rāgan (to murmur, complain) runs through the wilderness narrative like a refrain. Israel's repeated murmuring is not petty discontent but theological rebellion — they are accusing God of malice."
           }
         ],
-        "ctx": "Moses recounts the spy episode from Numbers 13–14 with a key difference: here the people initiate the spy mission (v.22). Moses' retrospective emphasises Israel's failure of faith: they saw the land's power and forgot God's promise. Caleb and Joshua alone held firm. The result: a generation condemned to die in the wilderness. The Kadesh narrative is the hinge of Israel's history: the moment when a generation chose fear over faith.",
-        "cross": [
-          {
-            "ref": "Heb 3:16–19",
-            "note": "\"Who were they who heard and rebelled? Were they not all those Moses led out of Egypt?... Their bodies perished in the wilderness.\" Hebrews reads the Kadesh failure as a warning about hardening the heart against God's \"today.\""
-          },
-          {
-            "ref": "Ps 95:7–11",
-            "note": "\"Today, if you hear his voice, do not harden your hearts as you did at Meribah.\" The Psalter returns to the Kadesh crisis as the paradigm of covenant failure."
-          },
-          {
-            "ref": "Num 13:1–2",
-            "note": "In Numbers, God commands the spy mission; in Deuteronomy, the people request it. Moses' retelling emphasises their initiative — and therefore their culpability."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 3:16–19",
+              "note": "\"Who were they who heard and rebelled? Were they not all those Moses led out of Egypt?... Their bodies perished in the wilderness.\" Hebrews reads the Kadesh failure as a warning about hardening the heart against God's \"today.\""
+            },
+            {
+              "ref": "Ps 95:7–11",
+              "note": "\"Today, if you hear his voice, do not harden your hearts as you did at Meribah.\" The Psalter returns to the Kadesh crisis as the paradigm of covenant failure."
+            },
+            {
+              "ref": "Num 13:1–2",
+              "note": "In Numbers, God commands the spy mission; in Deuteronomy, the people request it. Moses' retelling emphasises their initiative — and therefore their culpability."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -236,6 +241,9 @@
               "note": "Calvin: Moses' exclusion from the land is among the most sobering passages in Scripture. Even the greatest servant is not exempt from consequences. God's love does not preclude his discipline; it demands it."
             }
           ]
+        },
+        "hist": {
+          "context": "Moses recounts the spy episode from Numbers 13–14 with a key difference: here the people initiate the spy mission (v.22). Moses' retrospective emphasises Israel's failure of faith: they saw the land's power and forgot God's promise. Caleb and Joshua alone held firm. The result: a generation condemned to die in the wilderness. The Kadesh narrative is the hinge of Israel's history: the moment when a generation chose fear over faith."
         }
       }
     }

@@ -31,17 +31,18 @@
             "paragraph": "The repeated divine gift formula drives the chapter. God has allocated territories to Edom, Moab, and Ammon just as he has to Israel. The theology of territorial gift is universal: God is sovereign over all nations' inheritances."
           }
         ],
-        "ctx": "Deuteronomy 2 recounts thirty-eight years of wilderness wandering compressed into a few verses, then traces Israel's path around the territories of Edom, Moab, and Ammon. God explicitly forbids Israel from taking any land belonging to these three nations — each has received its inheritance from God just as Israel has received Canaan. Israel is to pay for food and water — behaving as peaceful guests, not conquerors. Then the tone shifts: Sihon the Amorite is a different case. God hardens Sihon's heart (v.30) and Israel's victories begin.",
-        "cross": [
-          {
-            "ref": "Amos 9:7",
-            "note": "\"'Did I not bring Israel up from Egypt, the Philistines from Caphtor and the Arameans from Kir?'\" Amos expands Deuteronomy 2's theology: God orchestrates the migrations and inheritances of all nations, not just Israel."
-          },
-          {
-            "ref": "Acts 17:26",
-            "note": "\"He marked out their appointed times in history and the boundaries of their lands.\" Paul's Areopagus speech draws directly on Deuteronomy 2's theology of divinely allocated national boundaries."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Amos 9:7",
+              "note": "\"'Did I not bring Israel up from Egypt, the Philistines from Caphtor and the Arameans from Kir?'\" Amos expands Deuteronomy 2's theology: God orchestrates the migrations and inheritances of all nations, not just Israel."
+            },
+            {
+              "ref": "Acts 17:26",
+              "note": "\"He marked out their appointed times in history and the boundaries of their lands.\" Paul's Areopagus speech draws directly on Deuteronomy 2's theology of divinely allocated national boundaries."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Calvin: The command not to harass Moab reveals that God's sovereignty extends to all nations. The land belongs to God, and he distributes it according to his purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Deuteronomy 2 recounts thirty-eight years of wilderness wandering compressed into a few verses, then traces Israel's path around the territories of Edom, Moab, and Ammon. God explicitly forbids Israel from taking any land belonging to these three nations — each has received its inheritance from God just as Israel has received Canaan. Israel is to pay for food and water — behaving as peaceful guests, not conquerors. Then the tone shifts: Sihon the Amorite is a different case. God hardens Sihon's heart (v.30) and Israel's victories begin."
         }
       }
     },
@@ -137,17 +141,18 @@
             "paragraph": "One of Deuteronomy's key words. Israel's relationship to the land is not conquest in the ordinary sense but inheritance — receiving what God has given. The possession of Canaan is simultaneously military action and covenant fulfilment."
           }
         ],
-        "ctx": "Moses sends a message of peace to Sihon of Heshbon: allow Israel to pass through, purchasing food and water. Sihon refuses — God has hardened his spirit so that Israel might take his territory as the first of many inheritances. The ensuing battle results in complete victory: all towns taken, the population devoted to destruction. The territory from the Arnon to the Jabbok becomes Israel's first inheritance. Moses uses this victory as a theological marker: what happened to Sihon will happen to all the nations west of the Jordan.",
-        "cross": [
-          {
-            "ref": "Neh 9:22",
-            "note": "\"You gave them kingdoms and nations... They took over the country of Sihon king of Heshbon and the country of Og king of Bashan.\" Nehemiah's great prayer recites Israel's wilderness victories as acts of pure divine grace."
-          },
-          {
-            "ref": "Ps 135:10–12",
-            "note": "\"He struck down many nations and killed mighty kings — Sihon king of the Amorites, Og king of Bashan.\" The Psalter's liturgical recitation of Sihon's defeat shows how this victory became a cornerstone of Israel's worship testimony."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Neh 9:22",
+              "note": "\"You gave them kingdoms and nations... They took over the country of Sihon king of Heshbon and the country of Og king of Bashan.\" Nehemiah's great prayer recites Israel's wilderness victories as acts of pure divine grace."
+            },
+            {
+              "ref": "Ps 135:10–12",
+              "note": "\"He struck down many nations and killed mighty kings — Sihon king of the Amorites, Og king of Bashan.\" The Psalter's liturgical recitation of Sihon's defeat shows how this victory became a cornerstone of Israel's worship testimony."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -220,6 +225,9 @@
               "note": "Calvin: The total destruction of Sihon's cities is not arbitrary cruelty but covenantal judgment. The Amorites had been given 400 years of patience (Gen 15:16); their iniquity was now complete."
             }
           ]
+        },
+        "hist": {
+          "context": "Moses sends a message of peace to Sihon of Heshbon: allow Israel to pass through, purchasing food and water. Sihon refuses — God has hardened his spirit so that Israel might take his territory as the first of many inheritances. The ensuing battle results in complete victory: all towns taken, the population devoted to destruction. The territory from the Arnon to the Jabbok becomes Israel's first inheritance. Moses uses this victory as a theological marker: what happened to Sihon will happen to all the nations west of the Jordan."
         }
       }
     }

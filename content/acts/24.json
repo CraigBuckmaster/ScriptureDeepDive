@@ -54,21 +54,22 @@
             "current": false
           }
         ],
-        "ctx": "The Felix trial is Acts' first formal legal hearing before a Roman governor. Tertullus's prosecution speech (vv.2–8) uses the standard Roman oratorical form: captatio benevolentiae (flattery of the judge, vv.2–4), narratio (statement of facts, v.5), probatio (proof, vv.5–6), conclusio (request, v.8). Paul's defence (vv.10–21) strips away the flattery, denies the provable charges, and redirects to the real issue: resurrection. Felix's delay (v.22: 'when Lysias the commander comes down, I will decide your case') is not justice but procrastination — driven by hope of a bribe (v.26).",
-        "cross": [
-          {
-            "ref": "Romans 15:25–28",
-            "note": "\"Now, however, I am on my way to Jerusalem in the service of the Lord's people there. For Macedonia and Achaia were pleased to make a contribution for the poor among the Lord's people in Jerusalem\" — Paul's own account of what he was doing in Jerusalem (v.17)."
-          },
-          {
-            "ref": "Acts 23:29",
-            "note": "Claudius Lysias's verdict: 'nothing worthy of death or imprisonment' — Paul references the Sanhedrin hearing (vv.20–21) as his own evidence that no crime was found."
-          },
-          {
-            "ref": "2 Corinthians 1:12",
-            "note": "\"Now this is our boast: Our conscience testifies that we have conducted ourselves... in holiness and sincerity that are from God\" — Paul's consistent claim of clear conscience (Acts 23:1; 24:16) is his personal testimony throughout the captivity period."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Romans 15:25–28",
+              "note": "\"Now, however, I am on my way to Jerusalem in the service of the Lord's people there. For Macedonia and Achaia were pleased to make a contribution for the poor among the Lord's people in Jerusalem\" — Paul's own account of what he was doing in Jerusalem (v.17)."
+            },
+            {
+              "ref": "Acts 23:29",
+              "note": "Claudius Lysias's verdict: 'nothing worthy of death or imprisonment' — Paul references the Sanhedrin hearing (vv.20–21) as his own evidence that no crime was found."
+            },
+            {
+              "ref": "2 Corinthians 1:12",
+              "note": "\"Now this is our boast: Our conscience testifies that we have conducted ourselves... in holiness and sincerity that are from God\" — Paul's consistent claim of clear conscience (Acts 23:1; 24:16) is his personal testimony throughout the captivity period."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -133,6 +134,9 @@
               "note": "Keener notes the significance of Paul's reference to 'gifts for the poor' (eleēmosynas). This is the only explicit reference in Acts to the Jerusalem collection, which was the central project of Paul's third journey (1 Cor 16; 2 Cor 8–9; Rom 15:25–28). The collection was both a practical act of solidarity and a theological statement about Gentile-Jewish unity in the body of Christ."
             }
           ]
+        },
+        "hist": {
+          "context": "The Felix trial is Acts' first formal legal hearing before a Roman governor. Tertullus's prosecution speech (vv.2–8) uses the standard Roman oratorical form: captatio benevolentiae (flattery of the judge, vv.2–4), narratio (statement of facts, v.5), probatio (proof, vv.5–6), conclusio (request, v.8). Paul's defence (vv.10–21) strips away the flattery, denies the provable charges, and redirects to the real issue: resurrection. Felix's delay (v.22: 'when Lysias the commander comes down, I will decide your case') is not justice but procrastination — driven by hope of a bribe (v.26)."
         }
       }
     },
@@ -179,21 +183,22 @@
             "current": false
           }
         ],
-        "ctx": "Felix's response to Paul's preaching is one of the most tragic vignettes in Acts: 'As Paul talked about righteousness, self-control and the judgment to come, Felix was troubled' — and postponed. Felix was 'well acquainted with the Way' (v.22), had a Jewish wife (Drusilla, Herod Agrippa I's daughter), heard Paul's Gospel repeatedly over two years — and left Paul imprisoned for the bribe that never came and to please his opponents. Felix had every advantage for conversion and chose the worse part.",
-        "cross": [
-          {
-            "ref": "Luke 10:42",
-            "note": "\"Mary has chosen what is better, and it will not be taken away from her\" — the contrast with Felix: Mary chose to hear; Felix heard and postponed."
-          },
-          {
-            "ref": "Hebrews 3:15",
-            "note": "\"Today, if you hear his voice, do not harden your hearts\" — Felix heard; he hardened."
-          },
-          {
-            "ref": "Acts 28:31",
-            "note": "Paul preaching \"without hindrance\" in Rome — the eventual outcome of the journey that included two years imprisoned under Felix. The delay was not the end."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 10:42",
+              "note": "\"Mary has chosen what is better, and it will not be taken away from her\" — the contrast with Felix: Mary chose to hear; Felix heard and postponed."
+            },
+            {
+              "ref": "Hebrews 3:15",
+              "note": "\"Today, if you hear his voice, do not harden your hearts\" — Felix heard; he hardened."
+            },
+            {
+              "ref": "Acts 28:31",
+              "note": "Paul preaching \"without hindrance\" in Rome — the eventual outcome of the journey that included two years imprisoned under Felix. The delay was not the end."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -258,6 +263,9 @@
               "note": "Keener provides background on Drusilla. She was Herod Agrippa I's youngest daughter, previously married to Azizus king of Emesa, whom she left to marry Felix at his instigation (Josephus, Antiquities 20.7.1–2). Her Jewish background made her potentially interested in Paul's claims about Jesus as Messiah. That Felix brought her to hear Paul suggests genuine curiosity, not merely courtesy."
             }
           ]
+        },
+        "hist": {
+          "context": "Felix's response to Paul's preaching is one of the most tragic vignettes in Acts: 'As Paul talked about righteousness, self-control and the judgment to come, Felix was troubled' — and postponed. Felix was 'well acquainted with the Way' (v.22), had a Jewish wife (Drusilla, Herod Agrippa I's daughter), heard Paul's Gospel repeatedly over two years — and left Paul imprisoned for the bribe that never came and to please his opponents. Felix had every advantage for conversion and chose the worse part."
         }
       }
     }

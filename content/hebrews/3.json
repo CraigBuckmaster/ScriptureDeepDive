@@ -25,21 +25,22 @@
             "paragraph": "Jesus is designated both ἀπόστολος (apostle, ‘one sent’) and ἀρχιερεύς (high priest). This is the only time Jesus is called ἀπόστολος in the NT. The dual title combines the outward function (sent by God to humanity, like Moses) with the inward function (representing humanity before God, as high priest). Moses was the apostle of the old covenant; Jesus is apostle and high priest of the new."
           }
         ],
-        "ctx": "The Moses comparison is the second major comparison in Hebrews (after angels). Moses was the greatest figure in Judaism—lawgiver, prophet, mediator of the Sinai covenant. The comparison is carefully respectful: Moses was faithful in God’s house as a servant (θεράπων, not δοῦλος—an honorable term used in Num 12:7 LXX). But the Son is faithful over God’s house as the builder and owner. The builder/house metaphor establishes an ontological distinction: a servant within the house belongs to it, but the builder transcends it.",
-        "cross": [
-          {
-            "ref": "Numbers 12:7",
-            "note": "God’s declaration that Moses is ‘faithful in all my house’ is the text the author of Hebrews both affirms and transcends: Moses was faithful as a servant, but the Son as a son over the house."
-          },
-          {
-            "ref": "1 Corinthians 3:10–11",
-            "note": "Paul’s building metaphor (Christ as foundation, apostles as builders) provides a Pauline parallel to Hebrews’ builder/house christology."
-          },
-          {
-            "ref": "Hebrews 1:2",
-            "note": "The Son’s role as creator (‘through whom also he made the universe’) grounds the builder metaphor: the one who built ‘all things’ (v. 4) is God/the Son."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Numbers 12:7",
+              "note": "God’s declaration that Moses is ‘faithful in all my house’ is the text the author of Hebrews both affirms and transcends: Moses was faithful as a servant, but the Son as a son over the house."
+            },
+            {
+              "ref": "1 Corinthians 3:10–11",
+              "note": "Paul’s building metaphor (Christ as foundation, apostles as builders) provides a Pauline parallel to Hebrews’ builder/house christology."
+            },
+            {
+              "ref": "Hebrews 1:2",
+              "note": "The Son’s role as creator (‘through whom also he made the universe’) grounds the builder metaphor: the one who built ‘all things’ (v. 4) is God/the Son."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -93,7 +94,10 @@
             }
           ]
         },
-        "hist": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24)."
+        "hist": {
+          "historical": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24).",
+          "context": "The Moses comparison is the second major comparison in Hebrews (after angels). Moses was the greatest figure in Judaism—lawgiver, prophet, mediator of the Sinai covenant. The comparison is carefully respectful: Moses was faithful in God’s house as a servant (θεράπων, not δοῦλος—an honorable term used in Num 12:7 LXX). But the Son is faithful over God’s house as the builder and owner. The builder/house metaphor establishes an ontological distinction: a servant within the house belongs to it, but the builder transcends it."
+        }
       }
     },
     {
@@ -116,21 +120,22 @@
             "paragraph": "The noun κατάπαυσις (katapausis, rest, cessation) is a key theological term in Hebrews 3–4. It refers simultaneously to the promised land (which the wilderness generation forfeited), to God’s sabbath rest (Gen 2:2), and to the eschatological rest that remains for God’s people (4:9). This layered meaning allows the author to read the wilderness narrative as a type of the community’s present situation: they too stand on the border of a ‘rest’ that can be forfeited through unbelief."
           }
         ],
-        "ctx": "The second warning passage (3:7–4:13) is the longest in Hebrews and uses Psalm 95 as a sustained midrash on the wilderness generation’s failure. The author reads Israel’s history typologically: as the exodus generation heard God’s voice at Sinai but hardened their hearts through unbelief and were excluded from the promised land, so the community of Jesus-followers hears God’s voice in the Son and risks the same fate through apostasy. The key word is ‘today’ (σήμερον)—the window of opportunity remains open but will not stay open indefinitely.",
-        "cross": [
-          {
-            "ref": "Psalm 95:7–11",
-            "note": "The psalm Paul quotes in full is a liturgical call to worship that recalls the wilderness rebellion at Meribah/Massah and God’s consequent oath excluding that generation from his rest."
-          },
-          {
-            "ref": "Numbers 14:20–35",
-            "note": "The narrative behind Ps 95: after the spy report, the people rebelled and God swore that none of that generation (except Caleb and Joshua) would enter the promised land."
-          },
-          {
-            "ref": "1 Corinthians 10:1–12",
-            "note": "Paul’s typological reading of the wilderness narrative as a warning to the Corinthian church employs the same hermeneutical strategy: Israel’s past is a type of the church’s present danger."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Psalm 95:7–11",
+              "note": "The psalm Paul quotes in full is a liturgical call to worship that recalls the wilderness rebellion at Meribah/Massah and God’s consequent oath excluding that generation from his rest."
+            },
+            {
+              "ref": "Numbers 14:20–35",
+              "note": "The narrative behind Ps 95: after the spy report, the people rebelled and God swore that none of that generation (except Caleb and Joshua) would enter the promised land."
+            },
+            {
+              "ref": "1 Corinthians 10:1–12",
+              "note": "Paul’s typological reading of the wilderness narrative as a warning to the Corinthian church employs the same hermeneutical strategy: Israel’s past is a type of the church’s present danger."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -191,6 +196,9 @@
               "note": "The Ps 95 midrash functions as both warning and invitation: the wilderness failure demonstrates the consequences of unbelief, but the ongoing ‘today’ signals that the offer of rest remains open. The communal dimension is critical: the exhortation to ‘encourage one another daily’ (v. 13) recognizes that faith is sustained not in isolation but in community. The closing identification of ἀπιστία (unbelief) as the root cause (v. 19) prepares for the faith chapter (ch. 11): the opposite of the wilderness failure is the faith exhibited by the heroes of Israel’s past."
             }
           ]
+        },
+        "hist": {
+          "context": "The second warning passage (3:7–4:13) is the longest in Hebrews and uses Psalm 95 as a sustained midrash on the wilderness generation’s failure. The author reads Israel’s history typologically: as the exodus generation heard God’s voice at Sinai but hardened their hearts through unbelief and were excluded from the promised land, so the community of Jesus-followers hears God’s voice in the Son and risks the same fate through apostasy. The key word is ‘today’ (σήμερον)—the window of opportunity remains open but will not stay open indefinitely."
         }
       }
     }

@@ -28,17 +28,18 @@
             "paragraph": "\"How abundant are the good things that you have stored up for those who fear you\" (v.19). The psalm alternates between desperate lament and extravagant confidence. David is besieged, forgotten like the dead, surrounded by terror (vv.9–13). Yet: \"I trust in you, LORD; I say, ‘You are my God.’ My times are in your hands\" (vv.14–15)."
           }
         ],
-        "ctx": "David takes refuge in God (v.1), asks for deliverance (v.2), commits his spirit (v.5), and then describes his distress: eyes weak with sorrow, life consumed by anguish, strength failing, bones wasting (vv.9–10). He is forgotten like the dead, broken like pottery (v.12). Terror on every side (v.13). Yet the pivot: \"But I trust in you, LORD. My times are in your hands\" (vv.14–15).",
-        "cross": [
-          {
-            "ref": "Luke 23:46",
-            "note": "\"Father, into your hands I commit my spirit\" — Jesus’ final words quoting Psalm 31:5."
-          },
-          {
-            "ref": "Jer 20:10",
-            "note": "\"I hear many whispering, ‘Terror on every side!’\" — Jeremiah echoes David’s language."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 23:46",
+              "note": "\"Father, into your hands I commit my spirit\" — Jesus’ final words quoting Psalm 31:5."
+            },
+            {
+              "ref": "Jer 20:10",
+              "note": "\"I hear many whispering, ‘Terror on every side!’\" — Jeremiah echoes David’s language."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -117,6 +118,9 @@
               "note": "Goldingay: \"my times are in your hands\" is the psalm’s theological centre. Not my plans, not my schedule, not my preferred timeline — but my actual times, as God assigns them."
             }
           ]
+        },
+        "hist": {
+          "context": "David takes refuge in God (v.1), asks for deliverance (v.2), commits his spirit (v.5), and then describes his distress: eyes weak with sorrow, life consumed by anguish, strength failing, bones wasting (vv.9–10). He is forgotten like the dead, broken like pottery (v.12). Terror on every side (v.13). Yet the pivot: \"But I trust in you, LORD. My times are in your hands\" (vv.14–15)."
         }
       }
     },
@@ -134,17 +138,18 @@
             "paragraph": "\"How abundant is your goodness (ṭūb) that you have stored up for those who fear you\" (v.19). Stored up — like treasure reserved, accumulated, waiting. God’s goodness is not improvised but prepared in advance. The suffering of vv.9–18 is answered by the hidden treasure of v.19."
           }
         ],
-        "ctx": "The psalm’s second half erupts in praise. God’s goodness is stored up (v.19), his people are sheltered in his presence from intrigues and accusation (v.20). \"Praise be to the LORD, for he showed me the wonders of his love when I was in a city under siege\" (v.21). The closing exhortation: \"Be strong and take heart, all you who hope in the LORD\" (v.24).",
-        "cross": [
-          {
-            "ref": "Rom 8:28",
-            "note": "\"In all things God works for the good of those who love him\" — the stored-up goodness theology."
-          },
-          {
-            "ref": "Eph 1:3–4",
-            "note": "\"Every spiritual blessing in Christ\" — blessings stored up before the foundation of the world."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 8:28",
+              "note": "\"In all things God works for the good of those who love him\" — the stored-up goodness theology."
+            },
+            {
+              "ref": "Eph 1:3–4",
+              "note": "\"Every spiritual blessing in Christ\" — blessings stored up before the foundation of the world."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -223,6 +228,9 @@
               "note": "Goldingay: the exhortation shifts from David’s personal testimony to communal encouragement. His experience becomes everyone’s resource."
             }
           ]
+        },
+        "hist": {
+          "context": "The psalm’s second half erupts in praise. God’s goodness is stored up (v.19), his people are sheltered in his presence from intrigues and accusation (v.20). \"Praise be to the LORD, for he showed me the wonders of his love when I was in a city under siege\" (v.21). The closing exhortation: \"Be strong and take heart, all you who hope in the LORD\" (v.24)."
         }
       }
     }

@@ -37,25 +37,26 @@
             "paragraph": "Many will follow their sensuality - false teaching produces moral decay. Doctrine and ethics are inseparable."
           }
         ],
-        "ctx": "Peter warns that as there were false prophets in Israel, so there will be false teachers among them. They will secretly bring in destructive heresies, even denying the Master who bought them. Many will follow their sensuality, bringing Christianity into disrepute. In greed they will exploit with fabricated words. Their condemnation has not been idle; their destruction has not been asleep.",
-        "cross": [
-          {
-            "ref": "Matthew 7:15",
-            "note": "Beware of false prophets who come in sheep's clothing."
-          },
-          {
-            "ref": "1 Timothy 4:1",
-            "note": "Some will depart from the faith, devoting themselves to deceitful spirits."
-          },
-          {
-            "ref": "Jude 4",
-            "note": "Certain people have crept in unnoticed, perverting grace into sensuality."
-          },
-          {
-            "ref": "Acts 20:29-30",
-            "note": "Fierce wolves will come in, not sparing the flock."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matthew 7:15",
+              "note": "Beware of false prophets who come in sheep's clothing."
+            },
+            {
+              "ref": "1 Timothy 4:1",
+              "note": "Some will depart from the faith, devoting themselves to deceitful spirits."
+            },
+            {
+              "ref": "Jude 4",
+              "note": "Certain people have crept in unnoticed, perverting grace into sensuality."
+            },
+            {
+              "ref": "Acts 20:29-30",
+              "note": "Fierce wolves will come in, not sparing the flock."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -109,7 +110,10 @@
             }
           ]
         },
-        "hist": "Second Peter addresses the threat of false teachers who deny Christ's return (parousia) and promote moral license. The author presents himself as the apostle Peter writing shortly before his death (1:14), though many scholars date the letter later due to its developed theology, reference to Paul's letters as 'Scripture' (3:16), and literary dependence on Jude. The false teachers mock the delay of Christ's return ('Where is the promise of his coming?' 3:4) and use this skepticism to justify immoral living. The letter defends apostolic eyewitness testimony (1:16-18), warns of judgment using Old Testament examples (2:4-10), and explains that God's patience allows time for repentance (3:9)."
+        "hist": {
+          "historical": "Second Peter addresses the threat of false teachers who deny Christ's return (parousia) and promote moral license. The author presents himself as the apostle Peter writing shortly before his death (1:14), though many scholars date the letter later due to its developed theology, reference to Paul's letters as 'Scripture' (3:16), and literary dependence on Jude. The false teachers mock the delay of Christ's return ('Where is the promise of his coming?' 3:4) and use this skepticism to justify immoral living. The letter defends apostolic eyewitness testimony (1:16-18), warns of judgment using Old Testament examples (2:4-10), and explains that God's patience allows time for repentance (3:9).",
+          "context": "Peter warns that as there were false prophets in Israel, so there will be false teachers among them. They will secretly bring in destructive heresies, even denying the Master who bought them. Many will follow their sensuality, bringing Christianity into disrepute. In greed they will exploit with fabricated words. Their condemnation has not been idle; their destruction has not been asleep."
+        }
       }
     },
     {
@@ -138,25 +142,26 @@
             "paragraph": "An example (deigma) of what is going to happen - Sodom and Gomorrah illustrate the fate of the ungodly."
           }
         ],
-        "ctx": "Peter gives three examples of divine judgment. First, God did not spare angels who sinned but cast them into Tartarus, committed to chains of gloomy darkness. Second, God did not spare the ancient world but preserved Noah, a herald of righteousness, when he brought flood on the ungodly. Third, God condemned Sodom and Gomorrah to extinction, making them an example for the ungodly. But God rescued righteous Lot, distressed by the sensuality of the lawless. The Lord knows how to rescue the godly from trials and keep the unrighteous under punishment.",
-        "cross": [
-          {
-            "ref": "Genesis 6:1-4",
-            "note": "The sons of God saw the daughters of man - angelic sin."
-          },
-          {
-            "ref": "Genesis 7:21-23",
-            "note": "All flesh died that moved on the earth."
-          },
-          {
-            "ref": "Genesis 19:24-25",
-            "note": "The LORD rained sulfur and fire on Sodom and Gomorrah."
-          },
-          {
-            "ref": "Jude 6-7",
-            "note": "Angels who did not stay in their position; Sodom and Gomorrah."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Genesis 6:1-4",
+              "note": "The sons of God saw the daughters of man - angelic sin."
+            },
+            {
+              "ref": "Genesis 7:21-23",
+              "note": "All flesh died that moved on the earth."
+            },
+            {
+              "ref": "Genesis 19:24-25",
+              "note": "The LORD rained sulfur and fire on Sodom and Gomorrah."
+            },
+            {
+              "ref": "Jude 6-7",
+              "note": "Angels who did not stay in their position; Sodom and Gomorrah."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -221,6 +226,9 @@
               "note": "Davids notes the parallel with Jude 5-7. The examples are traditional Jewish illustrations of divine judgment."
             }
           ]
+        },
+        "hist": {
+          "context": "Peter gives three examples of divine judgment. First, God did not spare angels who sinned but cast them into Tartarus, committed to chains of gloomy darkness. Second, God did not spare the ancient world but preserved Noah, a herald of righteousness, when he brought flood on the ungodly. Third, God condemned Sodom and Gomorrah to extinction, making them an example for the ungodly. But God rescued righteous Lot, distressed by the sensuality of the lawless. The Lord knows how to rescue the godly from trials and keep the unrighteous under punishment."
         }
       }
     },
@@ -250,25 +258,26 @@
             "paragraph": "The dog returns to its own vomit - a proverb illustrating the revolting return to sin. Apostasy is disgusting."
           }
         ],
-        "ctx": "Peter describes the false teachers in vivid terms. They are bold and willful, blaspheming glorious ones where angels do not. They are like irrational animals, born to be caught and destroyed. They revel in daytime dissipation, feasting with believers while indulging in deception. Their eyes are full of adultery; they entice unstable souls; their hearts are trained in greed. They follow Balaam's way, who loved gain. They are waterless springs, mists driven by storms, destined for blackness. They speak bombast but entice through sensuality. Promising freedom, they are slaves of corruption. Those who escape defilement through knowledge of Christ but become entangled again are worse off than before. Better not to have known than to turn back. The proverb applies: the dog returns to vomit; the sow returns to mud.",
-        "cross": [
-          {
-            "ref": "Numbers 22-24",
-            "note": "Balaam's story - greed and deception."
-          },
-          {
-            "ref": "Jude 11",
-            "note": "They rush for profit into Balaam's error."
-          },
-          {
-            "ref": "Matthew 12:45",
-            "note": "The last state is worse than the first."
-          },
-          {
-            "ref": "Proverbs 26:11",
-            "note": "Like a dog that returns to his vomit."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Numbers 22-24",
+              "note": "Balaam's story - greed and deception."
+            },
+            {
+              "ref": "Jude 11",
+              "note": "They rush for profit into Balaam's error."
+            },
+            {
+              "ref": "Matthew 12:45",
+              "note": "The last state is worse than the first."
+            },
+            {
+              "ref": "Proverbs 26:11",
+              "note": "Like a dog that returns to his vomit."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -333,6 +342,9 @@
               "note": "Davids notes extensive parallels with Jude. Both letters draw on common tradition to describe false teachers."
             }
           ]
+        },
+        "hist": {
+          "context": "Peter describes the false teachers in vivid terms. They are bold and willful, blaspheming glorious ones where angels do not. They are like irrational animals, born to be caught and destroyed. They revel in daytime dissipation, feasting with believers while indulging in deception. Their eyes are full of adultery; they entice unstable souls; their hearts are trained in greed. They follow Balaam's way, who loved gain. They are waterless springs, mists driven by storms, destined for blackness. They speak bombast but entice through sensuality. Promising freedom, they are slaves of corruption. Those who escape defilement through knowledge of Christ but become entangled again are worse off than before. Better not to have known than to turn back. The proverb applies: the dog returns to vomit; the sow returns to mud."
         }
       }
     }

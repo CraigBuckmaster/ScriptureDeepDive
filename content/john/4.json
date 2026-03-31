@@ -34,21 +34,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Sychar / Jacob's Well</div><div class=\"poi-coords\">32.2094° N, 35.2853° E</div><div class=\"poi-text\">The well near ancient Shechem (modern Nablus) in Samaria, traditionally identified with the well that Jacob dug (Gen 33:18-20; 48:22). The site is one of the most reliably identified in the Holy Land — the Greek Orthodox Church of Saint Photini (the Samaritan woman) has been built over the well, which still exists at a depth of 30 metres. \"Jacob's well was there\" (4:6) is one of John's characteristic matter-of-fact geographical notes that archaeology has confirmed.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Mount Gerizim</div><div class=\"poi-coords\">32.1980° N, 35.2733° E</div><div class=\"poi-text\">The sacred mountain of the Samaritans, visible from Jacob's Well. The Samaritans built their temple here (destroyed by the Hasmonean John Hyrcanus in 128 BC) and continued to regard it as the true place of worship. The woman's question about worship location (4:20) is not deflection but genuine theological dispute. Jesus's answer transcends both Gerizim and Jerusalem, pointing to the new mode of worship the Spirit's coming will inaugurate.</div></div>"
         },
-        "ctx": "[('Samaritans and Jews', \"Samaritans were the descendants of the mixed population settled in Israel by the Assyrians after 722 BC, intermarried with surviving Israelites. They accepted only the Pentateuch as scripture and worshipped on Mount Gerizim, which they identified as the true site of the Mosaic command to worship. Jewish-Samaritan relations were hostile; a Jew drawing water from a Samaritan woman's jar would incur ritual impurity. Jesus's request for water (v.7) and his sustained conversation with a woman in public (v.27) both violate conventional social boundaries simultaneously.\"), ('The Five Husbands', \"Commentators have proposed symbolic readings: the five husbands = the five foreign nations whose gods Samaria adopted (2 Kgs 17:24-34); the current man = the false religion of Gerizim. More naturally, Jesus reveals the specific details of the woman's domestic life as evidence of his prophetic knowledge. The symbolic and literal readings need not be mutually exclusive.\")]",
-        "cross": [
-          {
-            "ref": "Jer 2:13",
-            "note": "\"My people have forsaken me, the spring of living water, and have dug their own cisterns, broken cisterns that cannot hold water\" — the OT background for Jesus's \"living water\" offer."
-          },
-          {
-            "ref": "Isa 12:3",
-            "note": "\"With joy you will draw water from the wells of salvation\" — the eschatological drawing of water as a metaphor for receiving salvation."
-          },
-          {
-            "ref": "Gen 29:1-14",
-            "note": "Jacob meets Rachel at a well — one of a series of well-meetings in the OT (Rebekah, Exod 2:16-17) that follow a betrothal pattern: man meets woman at well, waters sheep, runs to tell family, meal prepared. Jesus's meeting at Jacob's well follows this pattern, with the woman as the one who runs to tell the town."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 2:13",
+              "note": "\"My people have forsaken me, the spring of living water, and have dug their own cisterns, broken cisterns that cannot hold water\" — the OT background for Jesus's \"living water\" offer."
+            },
+            {
+              "ref": "Isa 12:3",
+              "note": "\"With joy you will draw water from the wells of salvation\" — the eschatological drawing of water as a metaphor for receiving salvation."
+            },
+            {
+              "ref": "Gen 29:1-14",
+              "note": "Jacob meets Rachel at a well — one of a series of well-meetings in the OT (Rebekah, Exod 2:16-17) that follow a betrothal pattern: man meets woman at well, waters sheep, runs to tell family, meal prepared. Jesus's meeting at Jacob's well follows this pattern, with the woman as the one who runs to tell the town."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -108,6 +109,9 @@
               "note": "Cyril of Alexandria: \"God is Spirit — he is not confined to one place but fills all things. Therefore the worship that pleases him is not tied to any mountain or any temple but is the worship of the inner person, in the Spirit he gives and in the truth of his Son.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Samaritans and Jews', \"Samaritans were the descendants of the mixed population settled in Israel by the Assyrians after 722 BC, intermarried with surviving Israelites. They accepted only the Pentateuch as scripture and worshipped on Mount Gerizim, which they identified as the true site of the Mosaic command to worship. Jewish-Samaritan relations were hostile; a Jew drawing water from a Samaritan woman's jar would incur ritual impurity. Jesus's request for water (v.7) and his sustained conversation with a woman in public (v.27) both violate conventional social boundaries simultaneously.\"), ('The Five Husbands', \"Commentators have proposed symbolic readings: the five husbands = the five foreign nations whose gods Samaria adopted (2 Kgs 17:24-34); the current man = the false religion of Gerizim. More naturally, Jesus reveals the specific details of the woman's domestic life as evidence of his prophetic knowledge. The symbolic and literal readings need not be mutually exclusive.\")]"
         }
       }
     },
@@ -128,17 +132,18 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Sychar / Jacob's Well</div><div class=\"poi-coords\">32.2094° N, 35.2853° E</div><div class=\"poi-text\">The well near ancient Shechem (modern Nablus) in Samaria, traditionally identified with the well that Jacob dug (Gen 33:18-20; 48:22). The site is one of the most reliably identified in the Holy Land — the Greek Orthodox Church of Saint Photini (the Samaritan woman) has been built over the well, which still exists at a depth of 30 metres. \"Jacob's well was there\" (4:6) is one of John's characteristic matter-of-fact geographical notes that archaeology has confirmed.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Mount Gerizim</div><div class=\"poi-coords\">32.1980° N, 35.2733° E</div><div class=\"poi-text\">The sacred mountain of the Samaritans, visible from Jacob's Well. The Samaritans built their temple here (destroyed by the Hasmonean John Hyrcanus in 128 BC) and continued to regard it as the true place of worship. The woman's question about worship location (4:20) is not deflection but genuine theological dispute. Jesus's answer transcends both Gerizim and Jerusalem, pointing to the new mode of worship the Spirit's coming will inaugurate.</div></div>"
         },
-        "ctx": "[('The Second Sign', 'John explicitly numbers this as the \"second sign\" (v.54), forming a bracket with the first sign at Cana (2:11): two Cana signs frame the Jerusalem and Samaria material of chs 2-4. Both signs involve transformation: water to wine (quality transformed), a dying child healed at a distance (life restored). The second sign goes further: the healing occurs with no physical presence, no touch, no object — only a word spoken across 20 miles of geography.'), ('Faith Before Evidence', 'The official believes before he sees: \"The man took Jesus at his word and departed\" (v.50). He does not wait for a sign; he acts on the spoken word. The servants\\' confirmation en route is the evidence that follows faith, not the basis for it. This is John\\'s model of mature faith: \"You believe because you have seen me. Blessed are those who have not seen and yet have believed\" (20:29).')]",
-        "cross": [
-          {
-            "ref": "Matt 8:5-13",
-            "note": "The parallel healing of a centurion's servant — also at a distance, also involving a Gentile officer, also a rebuke about sign-dependence. The two accounts may be the same event recorded differently, or two separate but structurally parallel healings."
-          },
-          {
-            "ref": "1 Kgs 17:17-24",
-            "note": "Elijah raises the widow's son — the OT background for healing from death's door as a prophetic act establishing the prophet's credentials."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 8:5-13",
+              "note": "The parallel healing of a centurion's servant — also at a distance, also involving a Gentile officer, also a rebuke about sign-dependence. The two accounts may be the same event recorded differently, or two separate but structurally parallel healings."
+            },
+            {
+              "ref": "1 Kgs 17:17-24",
+              "note": "Elijah raises the widow's son — the OT background for healing from death's door as a prophetic act establishing the prophet's credentials."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -190,6 +195,9 @@
               "note": "The Catena preserves Augustine's comment that the Samaritans who \"urged him to stay\" (v40) model the posture of every true believer: not content with secondary testimony, they want direct encounter. Chrysostom adds that the two days Jesus spent in Samaria is a prophetic figure — the two days representing the two peoples (Jew and Gentile) who would receive the Gospel in successive ages."
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Second Sign', 'John explicitly numbers this as the \"second sign\" (v.54), forming a bracket with the first sign at Cana (2:11): two Cana signs frame the Jerusalem and Samaria material of chs 2-4. Both signs involve transformation: water to wine (quality transformed), a dying child healed at a distance (life restored). The second sign goes further: the healing occurs with no physical presence, no touch, no object — only a word spoken across 20 miles of geography.'), ('Faith Before Evidence', 'The official believes before he sees: \"The man took Jesus at his word and departed\" (v.50). He does not wait for a sign; he acts on the spoken word. The servants\\' confirmation en route is the evidence that follows faith, not the basis for it. This is John\\'s model of mature faith: \"You believe because you have seen me. Blessed are those who have not seen and yet have believed\" (20:29).')]"
         }
       }
     },
@@ -216,21 +224,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Sychar / Jacob's Well</div><div class=\"poi-coords\">32.2094° N, 35.2853° E</div><div class=\"poi-text\">The well near ancient Shechem (modern Nablus) in Samaria, traditionally identified with the well that Jacob dug (Gen 33:18-20; 48:22). The site is one of the most reliably identified in the Holy Land — the Greek Orthodox Church of Saint Photini (the Samaritan woman) has been built over the well, which still exists at a depth of 30 metres. \"Jacob's well was there\" (4:6) is one of John's characteristic matter-of-fact geographical notes that archaeology has confirmed.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Mount Gerizim</div><div class=\"poi-coords\">32.1980° N, 35.2733° E</div><div class=\"poi-text\">The sacred mountain of the Samaritans, visible from Jacob's Well. The Samaritans built their temple here (destroyed by the Hasmonean John Hyrcanus in 128 BC) and continued to regard it as the true place of worship. The woman's question about worship location (4:20) is not deflection but genuine theological dispute. Jesus's answer transcends both Gerizim and Jerusalem, pointing to the new mode of worship the Spirit's coming will inaugurate.</div></div>"
         },
-        "ctx": "[('Samaritans and Jews', \"Samaritans were the descendants of the mixed population settled in Israel by the Assyrians after 722 BC, intermarried with surviving Israelites. They accepted only the Pentateuch as scripture and worshipped on Mount Gerizim, which they identified as the true site of the Mosaic command to worship. Jewish-Samaritan relations were hostile; a Jew drawing water from a Samaritan woman's jar would incur ritual impurity. Jesus's request for water (v.7) and his sustained conversation with a woman in public (v.27) both violate conventional social boundaries simultaneously.\"), ('The Five Husbands', \"Commentators have proposed symbolic readings: the five husbands = the five foreign nations whose gods Samaria adopted (2 Kgs 17:24-34); the current man = the false religion of Gerizim. More naturally, Jesus reveals the specific details of the woman's domestic life as evidence of his prophetic knowledge. The symbolic and literal readings need not be mutually exclusive.\")]",
-        "cross": [
-          {
-            "ref": "Jer 2:13",
-            "note": "\"My people have forsaken me, the spring of living water, and have dug their own cisterns, broken cisterns that cannot hold water\" — the OT background for Jesus's \"living water\" offer."
-          },
-          {
-            "ref": "Isa 12:3",
-            "note": "\"With joy you will draw water from the wells of salvation\" — the eschatological drawing of water as a metaphor for receiving salvation."
-          },
-          {
-            "ref": "Gen 29:1-14",
-            "note": "Jacob meets Rachel at a well — one of a series of well-meetings in the OT (Rebekah, Exod 2:16-17) that follow a betrothal pattern: man meets woman at well, waters sheep, runs to tell family, meal prepared. Jesus's meeting at Jacob's well follows this pattern, with the woman as the one who runs to tell the town."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 2:13",
+              "note": "\"My people have forsaken me, the spring of living water, and have dug their own cisterns, broken cisterns that cannot hold water\" — the OT background for Jesus's \"living water\" offer."
+            },
+            {
+              "ref": "Isa 12:3",
+              "note": "\"With joy you will draw water from the wells of salvation\" — the eschatological drawing of water as a metaphor for receiving salvation."
+            },
+            {
+              "ref": "Gen 29:1-14",
+              "note": "Jacob meets Rachel at a well — one of a series of well-meetings in the OT (Rebekah, Exod 2:16-17) that follow a betrothal pattern: man meets woman at well, waters sheep, runs to tell family, meal prepared. Jesus's meeting at Jacob's well follows this pattern, with the woman as the one who runs to tell the town."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -290,6 +299,9 @@
               "note": "Cyril of Alexandria: \"God is Spirit — he is not confined to one place but fills all things. Therefore the worship that pleases him is not tied to any mountain or any temple but is the worship of the inner person, in the Spirit he gives and in the truth of his Son.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Samaritans and Jews', \"Samaritans were the descendants of the mixed population settled in Israel by the Assyrians after 722 BC, intermarried with surviving Israelites. They accepted only the Pentateuch as scripture and worshipped on Mount Gerizim, which they identified as the true site of the Mosaic command to worship. Jewish-Samaritan relations were hostile; a Jew drawing water from a Samaritan woman's jar would incur ritual impurity. Jesus's request for water (v.7) and his sustained conversation with a woman in public (v.27) both violate conventional social boundaries simultaneously.\"), ('The Five Husbands', \"Commentators have proposed symbolic readings: the five husbands = the five foreign nations whose gods Samaria adopted (2 Kgs 17:24-34); the current man = the false religion of Gerizim. More naturally, Jesus reveals the specific details of the woman's domestic life as evidence of his prophetic knowledge. The symbolic and literal readings need not be mutually exclusive.\")]"
         }
       }
     }

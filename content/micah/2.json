@@ -25,21 +25,22 @@
             "paragraph": "The interjection hoy opens a prophetic woe-oracle, a specific genre that announces impending doom upon a named group (cf. Isa 5:8-23; Hab 2:6-19). Here the targets are those who 'plan iniquity on their beds' — the economic elites who scheme at night and execute their plans at dawn, seizing fields and houses through legal manipulation and violence. The woe-oracle was originally a funeral cry, lending the indictment an undertone of death."
           }
         ],
-        "ctx": "Micah's social justice indictment targets the specific practice of land seizure by wealthy elites. In Israelite theology, the land belonged to YHWH and was distributed by tribal allotment (Josh 13-19); alienation of ancestral land was a fundamental covenant violation (cf. Naboth's vineyard, 1 Kgs 21). The oppressors 'covet fields and seize them' (v. 2), directly violating the tenth commandment. The divine response mirrors the crime: just as the elites planned evil against the people, YHWH plans disaster against the planners (v. 3). The punishment of losing their own land allotment (v. 5) fits the crime precisely: those who stole land will have no land to divide when YHWH restores justice.",
-        "cross": [
-          {
-            "ref": "1 Kgs 21:1-16",
-            "note": "Naboth's vineyard: the paradigmatic case of land seizure that Micah's oracle condemns."
-          },
-          {
-            "ref": "Isa 5:8",
-            "note": "Isaiah's parallel woe: 'Woe to you who add house to house and join field to field till no space is left.'"
-          },
-          {
-            "ref": "Lev 25:23",
-            "note": "The theological principle: 'The land must not be sold permanently, because the land is mine.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 21:1-16",
+              "note": "Naboth's vineyard: the paradigmatic case of land seizure that Micah's oracle condemns."
+            },
+            {
+              "ref": "Isa 5:8",
+              "note": "Isaiah's parallel woe: 'Woe to you who add house to house and join field to field till no space is left.'"
+            },
+            {
+              "ref": "Lev 25:23",
+              "note": "The theological principle: 'The land must not be sold permanently, because the land is mine.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -92,6 +93,9 @@
               "note": "Waltke emphasizes the social location of Micah's critique: as a rural prophet, he witnessed the consolidation of small landholdings into large estates by urban elites. The process resembled modern land-grabbing: legal manipulation, economic pressure, and occasional violence transformed independent farmers into landless tenants or debt-slaves."
             }
           ]
+        },
+        "hist": {
+          "context": "Micah's social justice indictment targets the specific practice of land seizure by wealthy elites. In Israelite theology, the land belonged to YHWH and was distributed by tribal allotment (Josh 13-19); alienation of ancestral land was a fundamental covenant violation (cf. Naboth's vineyard, 1 Kgs 21). The oppressors 'covet fields and seize them' (v. 2), directly violating the tenth commandment. The divine response mirrors the crime: just as the elites planned evil against the people, YHWH plans disaster against the planners (v. 3). The punishment of losing their own land allotment (v. 5) fits the crime precisely: those who stole land will have no land to divide when YHWH restores justice."
         }
       }
     },
@@ -109,21 +113,22 @@
             "paragraph": "The remnant (shĕʾerit) motif appears for the first time in v. 12 and becomes central to Micah's theology of hope. Despite the devastating judgments, YHWH will 'surely gather' a remnant — the surviving faithful who will be reassembled like a flock in a sheepfold. The image of a noisy crowd (hamon adam, 'a multitude of people') suggests that the remnant will not be a tiny handful but a reconstituted nation."
           }
         ],
-        "ctx": "Verses 6-11 depict a confrontation between Micah and his opponents, likely false prophets and their wealthy patrons. The command 'Do not prophesy' (v. 6) reveals active suppression of the prophetic word. The opponents argue that God would never do such things (v. 7), that the LORD's spirit is not impatient. Micah's response exposes their hypocrisy: they strip robes from passersby, evict women from their homes, and rob children of their blessing. The sarcastic conclusion (v. 11) is devastating: the only prophet this people would accept is one who prophesies wine and beer. Verses 12-13 shift abruptly to a remnant promise, jarring after the indictment. Many scholars attribute these verses to a later redaction, but others see the judgment-hope pattern as integral to prophetic rhetoric. 'The One who breaks open the way' (v. 13) is a royal-shepherd figure who leads the flock out of confinement, anticipating the messianic imagery of chapter 5.",
-        "cross": [
-          {
-            "ref": "Amos 7:10-17",
-            "note": "Amaziah's attempt to silence Amos, the closest parallel to Micah's confrontation with the establishment."
-          },
-          {
-            "ref": "Isa 30:10-11",
-            "note": "Isaiah's audience likewise demands: 'Tell us pleasant things, prophesy illusions.'"
-          },
-          {
-            "ref": "John 10:1-4",
-            "note": "Jesus as the shepherd who goes ahead of the flock, developing Micah's 'breaker' image."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Amos 7:10-17",
+              "note": "Amaziah's attempt to silence Amos, the closest parallel to Micah's confrontation with the establishment."
+            },
+            {
+              "ref": "Isa 30:10-11",
+              "note": "Isaiah's audience likewise demands: 'Tell us pleasant things, prophesy illusions.'"
+            },
+            {
+              "ref": "John 10:1-4",
+              "note": "Jesus as the shepherd who goes ahead of the flock, developing Micah's 'breaker' image."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -196,6 +201,9 @@
               "note": "Waltke sees the breaker-king as a composite figure who combines the roles of military liberator, shepherd-gatherer, and exodus leader. The image anticipates the fuller messianic portrait of 5:2-5a."
             }
           ]
+        },
+        "hist": {
+          "context": "Verses 6-11 depict a confrontation between Micah and his opponents, likely false prophets and their wealthy patrons. The command 'Do not prophesy' (v. 6) reveals active suppression of the prophetic word. The opponents argue that God would never do such things (v. 7), that the LORD's spirit is not impatient. Micah's response exposes their hypocrisy: they strip robes from passersby, evict women from their homes, and rob children of their blessing. The sarcastic conclusion (v. 11) is devastating: the only prophet this people would accept is one who prophesies wine and beer. Verses 12-13 shift abruptly to a remnant promise, jarring after the indictment. Many scholars attribute these verses to a later redaction, but others see the judgment-hope pattern as integral to prophetic rhetoric. 'The One who breaks open the way' (v. 13) is a royal-shepherd figure who leads the flock out of confinement, anticipating the messianic imagery of chapter 5."
         }
       }
     }

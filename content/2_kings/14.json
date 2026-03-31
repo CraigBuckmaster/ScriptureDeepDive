@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 22,
       "panels": {
-        "ctx": "Amaziah of Judah does right “but not as David had done” — the qualified verdict. He defeats Edom, then unwisely challenges Israel’s Jehoash. Jehoash replies with a parable: “A thistle in Lebanon sent a message to a cedar: ‘Give your daughter to my son in marriage.’ Then a wild beast trampled the thistle.” Amaziah ignores the warning. Israel defeats Judah, breaks down 180 metres of Jerusalem’s wall, and plunders the temple. A Judahite king’s overconfidence produces the first breach of Jerusalem since David captured it.",
-        "cross": [
-          {
-            "ref": "2 Sam 5:6–9",
-            "note": "David captured Jerusalem and made it his capital. The breach of the wall under Amaziah reverses David’s achievement."
-          },
-          {
-            "ref": "Prov 16:18",
-            "note": "“Pride goes before destruction, and a haughty spirit before a fall.” Amaziah’s challenge to Israel is pride incarnate."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 5:6–9",
+              "note": "David captured Jerusalem and made it his capital. The breach of the wall under Amaziah reverses David’s achievement."
+            },
+            {
+              "ref": "Prov 16:18",
+              "note": "“Pride goes before destruction, and a haughty spirit before a fall.” Amaziah’s challenge to Israel is pride incarnate."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -63,6 +64,9 @@
               "note": "Amaziah’s defeat by Israel demonstrates that military victory over one enemy (Edom) does not guarantee invincibility. Success in one arena produces dangerous overconfidence in another."
             }
           ]
+        },
+        "hist": {
+          "context": "Amaziah of Judah does right “but not as David had done” — the qualified verdict. He defeats Edom, then unwisely challenges Israel’s Jehoash. Jehoash replies with a parable: “A thistle in Lebanon sent a message to a cedar: ‘Give your daughter to my son in marriage.’ Then a wild beast trampled the thistle.” Amaziah ignores the warning. Israel defeats Judah, breaks down 180 metres of Jerusalem’s wall, and plunders the temple. A Judahite king’s overconfidence produces the first breach of Jerusalem since David captured it."
         }
       }
     },
@@ -72,17 +76,18 @@
       "verse_start": 23,
       "verse_end": 29,
       "panels": {
-        "ctx": "Jeroboam II reigns 41 years and restores Israel’s borders from Lebo Hamath to the Dead Sea — the greatest territorial extent since Solomon. The narrator mentions Jonah son of Amittai (v.25) as the prophet who predicted this expansion. But the treatment is shockingly brief: the most prosperous king since Solomon gets seven verses. The narrator has no interest in political success that isn’t accompanied by covenant faithfulness. Amos and Hosea prophesy during this reign, condemning the wealth and injustice that Jeroboam’s prosperity enables.",
-        "cross": [
-          {
-            "ref": "Amos 6:1–7",
-            "note": "Amos condemns the luxury of Jeroboam II’s elite: ivory beds, choice meats, idle music — while the poor are trampled. Prosperity without justice is judgment in disguise."
-          },
-          {
-            "ref": "Jonah 1:1",
-            "note": "Jonah son of Amittai — the same prophet mentioned here — is sent to Nineveh. His Israelite nationalism (he wants Nineveh destroyed) fits the context of Jeroboam’s expansionist reign."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Amos 6:1–7",
+              "note": "Amos condemns the luxury of Jeroboam II’s elite: ivory beds, choice meats, idle music — while the poor are trampled. Prosperity without justice is judgment in disguise."
+            },
+            {
+              "ref": "Jonah 1:1",
+              "note": "Jonah son of Amittai — the same prophet mentioned here — is sent to Nineveh. His Israelite nationalism (he wants Nineveh destroyed) fits the context of Jeroboam’s expansionist reign."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -118,6 +123,9 @@
               "note": "Seven verses for a 41-year reign is the narrator’s most eloquent commentary: political success without covenant faithfulness is theologically irrelevant. The Deuteronomistic historian is not writing political history but theological history."
             }
           ]
+        },
+        "hist": {
+          "context": "Jeroboam II reigns 41 years and restores Israel’s borders from Lebo Hamath to the Dead Sea — the greatest territorial extent since Solomon. The narrator mentions Jonah son of Amittai (v.25) as the prophet who predicted this expansion. But the treatment is shockingly brief: the most prosperous king since Solomon gets seven verses. The narrator has no interest in political success that isn’t accompanied by covenant faithfulness. Amos and Hosea prophesy during this reign, condemning the wealth and injustice that Jeroboam’s prosperity enables."
         }
       }
     }

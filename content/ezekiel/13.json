@@ -31,21 +31,22 @@
             "paragraph": "They cry 'shalom, shalom' — but there is no shalom. This echoes Jeremiah 6:14 and 8:11 word for word. Both contemporary prophets identify the same disease: false prophets who anesthetize the nation against God's warnings. Peace-preaching in the face of judgment is not kindness but cruelty."
           }
         ],
-        "ctx": "Ezekiel, like Jeremiah, faces opposition from prophets who proclaim peace and prosperity. These are not foreign prophets but Israelite prophets who claim to speak for YHWH. Their oracles come from their own imagination (libbam), not from divine revelation. They are foxes among ruins — scavengers who exploit the disaster rather than repairing the breach. Their failure is specifically described as not 'standing in the gap' (v.5) — they did not intercede for the people.",
-        "cross": [
-          {
-            "ref": "Jer 6:14",
-            "note": "They dress the wound of my people as though it were not serious. 'Peace, peace,' they say, when there is no peace — identical diagnosis from Jeremiah."
-          },
-          {
-            "ref": "Matt 7:15",
-            "note": "Jesus warns of false prophets who come in sheep's clothing — the tradition of prophetic discernment continues."
-          },
-          {
-            "ref": "2 Pet 2:1",
-            "note": "False prophets will introduce destructive heresies — the NT extends Ezekiel's warning to the church."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 6:14",
+              "note": "They dress the wound of my people as though it were not serious. 'Peace, peace,' they say, when there is no peace — identical diagnosis from Jeremiah."
+            },
+            {
+              "ref": "Matt 7:15",
+              "note": "Jesus warns of false prophets who come in sheep's clothing — the tradition of prophetic discernment continues."
+            },
+            {
+              "ref": "2 Pet 2:1",
+              "note": "False prophets will introduce destructive heresies — the NT extends Ezekiel's warning to the church."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Zimmerli identifies the 'wall and whitewash' oracle as belonging to the tradition of prophetic conflict (cf. 1 Kings 22, Micaiah vs. Ahab's prophets). The problem is not that false prophets lack sincerity but that they lack authorization — they speak from their own spirit, not from the divine council."
             }
           ]
+        },
+        "hist": {
+          "context": "Ezekiel, like Jeremiah, faces opposition from prophets who proclaim peace and prosperity. These are not foreign prophets but Israelite prophets who claim to speak for YHWH. Their oracles come from their own imagination (libbam), not from divine revelation. They are foxes among ruins — scavengers who exploit the disaster rather than repairing the breach. Their failure is specifically described as not 'standing in the gap' (v.5) — they did not intercede for the people."
         }
       }
     },
@@ -131,17 +135,18 @@
             "paragraph": "The women sew 'magic bands' (kesatot) on wrists and make veils for heads to 'hunt souls.' The exact nature of these objects is debated — they may be amulets, binding cloths, or divination tools. Whatever the precise practice, it represents the use of magical manipulation to control people, preying on the vulnerable for personal gain."
           }
         ],
-        "ctx": "This is one of the rare biblical passages addressing female prophetic practitioners specifically. These women are not condemned for being female prophets (Huldah was a legitimate prophetess, 2 Kgs 22:14) but for practicing divination and magical manipulation. They 'hunt souls' — trapping the living and freeing the guilty. Their magic inverts justice: the righteous suffer and the wicked prosper through their interventions.",
-        "cross": [
-          {
-            "ref": "2 Kgs 22:14-20",
-            "note": "Huldah the prophetess spoke truth from God — the contrast with these false prophetesses is stark."
-          },
-          {
-            "ref": "Acts 16:16-18",
-            "note": "Paul encounters a slave girl with a divination spirit — the exploitation of the vulnerable through spiritual manipulation continues into the NT."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 22:14-20",
+              "note": "Huldah the prophetess spoke truth from God — the contrast with these false prophetesses is stark."
+            },
+            {
+              "ref": "Acts 16:16-18",
+              "note": "Paul encounters a slave girl with a divination spirit — the exploitation of the vulnerable through spiritual manipulation continues into the NT."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -194,6 +199,9 @@
               "note": "Zimmerli connects the 'hunting of souls' to necromantic practices — the women may have claimed to capture and release spirits of the dead. The language of 'keeping alive' and 'putting to death' suggests power over life and death that belongs to God alone."
             }
           ]
+        },
+        "hist": {
+          "context": "This is one of the rare biblical passages addressing female prophetic practitioners specifically. These women are not condemned for being female prophets (Huldah was a legitimate prophetess, 2 Kgs 22:14) but for practicing divination and magical manipulation. They 'hunt souls' — trapping the living and freeing the guilty. Their magic inverts justice: the righteous suffer and the wicked prosper through their interventions."
         }
       }
     }

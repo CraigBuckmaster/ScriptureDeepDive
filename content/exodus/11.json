@@ -44,18 +44,22 @@
             "paragraph": "V.6: \"There will be loud wailing throughout Egypt — worse than there has ever been or ever will be.\" The great cry of the Egyptians mirrors Israel's cry of oppression in 2:23 (\"Their cry for help because of their slavery went up to God\"). The God who heard Israel's cry now causes Egypt's cry. This reversal — oppressor and oppressed exchanging positions — is the signature move of the Exodus narrative."
           }
         ],
-        "hist": "The announcement of the tenth plague — death of every firstborn — targets both Egyptian religion and social structure. The firstborn son held special legal status in Egyptian inheritance law and was associated with the continuation of the family cult for the deceased. Pharaoh himself was considered the 'firstborn' of the gods. The 'great cry' (v. 6) echoes the cry genre in Mesopotamian lament literature, where cities destroyed by divine judgment are mourned with ritual wailing.",
-        "ctx": "Exodus 11 is the hinge chapter between the nine plagues and the final Passover plague. The chapter announces the tenth plague in advance, giving the reader (and Israel) the framework before Passover night unfolds in ch.12. The announcement moves from the LORD's private word to Moses (vv.1-3) to Moses's public proclamation to Pharaoh (vv.4-8). The silver and gold request (v.2) prefigures the Exodus as a kind of \"back wages\" for centuries of slavery (cf. Gen 15:14).",
-        "cross": [
-          {
-            "ref": "Gen 15:14",
-            "note": "They will come out with great possessions -- the silver and gold request (v.2) fulfils God's word to Abraham. The Exodus is not just liberation; it is compensation."
-          },
-          {
-            "ref": "Exod 4:22-23",
-            "note": "Israel is my firstborn son... let my son go, so he may worship me. If you refuse, I will kill your firstborn son -- the tenth plague is the direct execution of the warning given before the plagues began. The firstborn logic has run from ch.4 to ch.11."
-          }
-        ],
+        "hist": {
+          "historical": "The announcement of the tenth plague — death of every firstborn — targets both Egyptian religion and social structure. The firstborn son held special legal status in Egyptian inheritance law and was associated with the continuation of the family cult for the deceased. Pharaoh himself was considered the 'firstborn' of the gods. The 'great cry' (v. 6) echoes the cry genre in Mesopotamian lament literature, where cities destroyed by divine judgment are mourned with ritual wailing.",
+          "context": "Exodus 11 is the hinge chapter between the nine plagues and the final Passover plague. The chapter announces the tenth plague in advance, giving the reader (and Israel) the framework before Passover night unfolds in ch.12. The announcement moves from the LORD's private word to Moses (vv.1-3) to Moses's public proclamation to Pharaoh (vv.4-8). The silver and gold request (v.2) prefigures the Exodus as a kind of \"back wages\" for centuries of slavery (cf. Gen 15:14)."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 15:14",
+              "note": "They will come out with great possessions -- the silver and gold request (v.2) fulfils God's word to Abraham. The Exodus is not just liberation; it is compensation."
+            },
+            {
+              "ref": "Exod 4:22-23",
+              "note": "Israel is my firstborn son... let my son go, so he may worship me. If you refuse, I will kill your firstborn son -- the tenth plague is the direct execution of the warning given before the plagues began. The firstborn logic has run from ch.4 to ch.11."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -143,18 +147,22 @@
             "paragraph": "V.4: Moses's departure \"in fierce anger\" (bĕḥorî-ʾaf) from Pharaoh demonstrates prophetic anger as a moral response to injustice rather than personal offense. The word ḥārā (to burn with anger) is used of God's own anger throughout the OT. Moses's anger here is righteous alignment with the divine response to Pharaoh's continued hardness."
           }
         ],
-        "hist": "The narrative summary of the plagues' purpose — to demonstrate divine power and harden Pharaoh — uses language drawn from ancient Near Eastern royal annals, where kings would recount campaigns to demonstrate their god's supremacy. The theological pattern of divine hardening has parallels in Mesopotamian omen literature, where a deity could 'fix' (kunnû) a ruler's heart for judgment. The 'signs and wonders' vocabulary (ʾōtōt ûmōpĕtîm) became Israel's standard shorthand for the Exodus events throughout the Hebrew Bible.",
-        "ctx": "The two-verse closing of ch.11 provides the theological summary of the entire plague narrative: Pharaoh's refusal is within God's purposive will; the multiplication of wonders is intentional. The hardening of Pharaoh's heart is among the most theologically discussed passages in the OT -- simultaneously human responsibility (Pharaoh hardens himself, e.g. 8:15,32) and divine sovereignty (God hardens Pharaoh, e.g. 9:12; 10:1). Both are true; neither cancels the other.",
-        "cross": [
-          {
-            "ref": "Rom 9:17",
-            "note": "For Scripture says to Pharaoh: \"I raised you up for this very purpose, that I might display my power in you and that my name might be proclaimed in all the earth\" -- Paul cites the hardening as the paradigm of divine sovereignty and human responsibility in tension."
-          },
-          {
-            "ref": "Exod 9:16",
-            "note": "I have raised you up for this very purpose, that I might show you my power and that my name might be proclaimed in all the earth -- the divine purpose stated before the final plagues."
-          }
-        ],
+        "hist": {
+          "historical": "The narrative summary of the plagues' purpose — to demonstrate divine power and harden Pharaoh — uses language drawn from ancient Near Eastern royal annals, where kings would recount campaigns to demonstrate their god's supremacy. The theological pattern of divine hardening has parallels in Mesopotamian omen literature, where a deity could 'fix' (kunnû) a ruler's heart for judgment. The 'signs and wonders' vocabulary (ʾōtōt ûmōpĕtîm) became Israel's standard shorthand for the Exodus events throughout the Hebrew Bible.",
+          "context": "The two-verse closing of ch.11 provides the theological summary of the entire plague narrative: Pharaoh's refusal is within God's purposive will; the multiplication of wonders is intentional. The hardening of Pharaoh's heart is among the most theologically discussed passages in the OT -- simultaneously human responsibility (Pharaoh hardens himself, e.g. 8:15,32) and divine sovereignty (God hardens Pharaoh, e.g. 9:12; 10:1). Both are true; neither cancels the other."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 9:17",
+              "note": "For Scripture says to Pharaoh: \"I raised you up for this very purpose, that I might display my power in you and that my name might be proclaimed in all the earth\" -- Paul cites the hardening as the paradigm of divine sovereignty and human responsibility in tension."
+            },
+            {
+              "ref": "Exod 9:16",
+              "note": "I have raised you up for this very purpose, that I might show you my power and that my name might be proclaimed in all the earth -- the divine purpose stated before the final plagues."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

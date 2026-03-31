@@ -31,21 +31,22 @@
             "paragraph": "\"You cry out, 'Sword of the LORD, how long till you rest? Return to your sheath; cease and be still'\" (v.6). The personified sword of the LORD refuses to rest because \"the LORD has commanded it\" (v.7). The sword acts not on its own but under divine orders -- even the instrument of destruction is under sovereign control."
           }
         ],
-        "ctx": "The oracle against Philistia is brief but intense. The Philistine cities -- Gaza, Ashkelon, and the remnant of their coastland -- face destruction from the north (Babylon). The cities of Tyre and Sidon are also mentioned (v.4), suggesting the invasion sweeps the entire coastal plain. The final image -- the personified sword of the LORD that cannot rest -- is one of the most striking in the oracles against the nations.",
-        "cross": [
-          {
-            "ref": "Isa 14:29-31",
-            "note": "Isaiah's parallel oracle against Philistia: \"Do not rejoice, all you Philistines ... smoke comes from the north.\""
-          },
-          {
-            "ref": "Amos 1:6-8",
-            "note": "Amos announces judgment on Gaza, Ashkelon, Ashdod, and Ekron -- the same Philistine cities."
-          },
-          {
-            "ref": "Zeph 2:4-7",
-            "note": "Zephaniah prophesies the destruction of the Philistine cities and their occupation by the remnant of Judah."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 14:29-31",
+              "note": "Isaiah's parallel oracle against Philistia: \"Do not rejoice, all you Philistines ... smoke comes from the north.\""
+            },
+            {
+              "ref": "Amos 1:6-8",
+              "note": "Amos announces judgment on Gaza, Ashkelon, Ashdod, and Ekron -- the same Philistine cities."
+            },
+            {
+              "ref": "Zeph 2:4-7",
+              "note": "Zephaniah prophesies the destruction of the Philistine cities and their occupation by the remnant of Judah."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Brueggemann identifies the personified sword as \"the image of purposeful destruction.\" The sword is not chaos but commission. Judgment is not random violence but directed divine action. This is both terrifying and, paradoxically, reassuring -- destruction has a limit set by the one who commands it."
             }
           ]
+        },
+        "hist": {
+          "context": "The oracle against Philistia is brief but intense. The Philistine cities -- Gaza, Ashkelon, and the remnant of their coastland -- face destruction from the north (Babylon). The cities of Tyre and Sidon are also mentioned (v.4), suggesting the invasion sweeps the entire coastal plain. The final image -- the personified sword of the LORD that cannot rest -- is one of the most striking in the oracles against the nations."
         }
       }
     }

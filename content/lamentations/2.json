@@ -25,25 +25,26 @@
             "paragraph": "\"The Lord is like an enemy (āʿib); he has swallowed up Israel\" (v.5). The most theologically shocking statement in the book. God himself has destroyed: his dwelling (v.2), his altar (v.7), his temple (v.7), his festival and Sabbath (v.6). The king and priest are rejected (v.6). The wall weeps (v.8). The gates sink into the ground (v.9). The elders sit on the ground in silence, dust on their heads; the young women bow down (v.10)."
           }
         ],
-        "ctx": "Chapter 2 escalates from chapter 1: there, God was the acknowledged cause; here, God is described AS the enemy. The poet uses language normally reserved for foreign invaders (swallowed, destroyed, demolished) but applies it to YHWH. The destruction of the temple (v.7) is the theological catastrophe — the place where God dwelt is the place God destroyed. The silence of v.10 (elders sit wordless, dust-covered) is the appropriate human response: when God acts as enemy, words fail.",
-        "cross": [
-          {
-            "ref": "Jer 21:5–6",
-            "note": "I myself will fight against you with an outstretched hand — Jeremiah’s warning that God would fight against Jerusalem, which Lamentations 2 describes as fulfilled."
-          },
-          {
-            "ref": "Ps 74:4–8",
-            "note": "Your foes roared in the place where you met with us. They burned your sanctuary to the ground — the same temple-destruction grief."
-          },
-          {
-            "ref": "Isa 63:10",
-            "note": "They rebelled and grieved his Holy Spirit, so he turned and became their enemy — Isaiah’s version of Lam 2’s theology."
-          },
-          {
-            "ref": "Matt 27:51",
-            "note": "The temple curtain was torn in two — the NT’s temple-destruction, this time enacted by God for redemption, not judgment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 21:5–6",
+              "note": "I myself will fight against you with an outstretched hand — Jeremiah’s warning that God would fight against Jerusalem, which Lamentations 2 describes as fulfilled."
+            },
+            {
+              "ref": "Ps 74:4–8",
+              "note": "Your foes roared in the place where you met with us. They burned your sanctuary to the ground — the same temple-destruction grief."
+            },
+            {
+              "ref": "Isa 63:10",
+              "note": "They rebelled and grieved his Holy Spirit, so he turned and became their enemy — Isaiah’s version of Lam 2’s theology."
+            },
+            {
+              "ref": "Matt 27:51",
+              "note": "The temple curtain was torn in two — the NT’s temple-destruction, this time enacted by God for redemption, not judgment."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -116,6 +117,9 @@
               "note": "O’Connor calls the silence of v.10 the poem’s most powerful verse: dust, ground, bowed heads. The body processes what language cannot articulate. Silence here is not emptiness but overwhelmed fullness."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 2 escalates from chapter 1: there, God was the acknowledged cause; here, God is described AS the enemy. The poet uses language normally reserved for foreign invaders (swallowed, destroyed, demolished) but applies it to YHWH. The destruction of the temple (v.7) is the theological catastrophe — the place where God dwelt is the place God destroyed. The silence of v.10 (elders sit wordless, dust-covered) is the appropriate human response: when God acts as enemy, words fail."
         }
       }
     },
@@ -133,25 +137,26 @@
             "paragraph": "\"Pour out (shifkî) your heart like water in the presence of the Lord\" (v.19). The poet breaks down: \"My eyes fail from weeping, I am in torment within\" (v.11). Children faint in the streets, asking for food (v.12). The question: \"What can I compare you to, Daughter Jerusalem? Who can heal you? Your wound is as deep as the sea\" (v.13). The prophets gave false visions (v.14). Then the command: lift your hands to him for the lives of your children who faint with hunger at every street corner (v.19). The chapter ends with accusation: \"On the day of the LORD’s anger no one escaped or survived\" (v.22)."
           }
         ],
-        "ctx": "Verse 13 declares the wound \"deep as the sea\" — infinite, immeasurable. The false prophets of v.14 are blamed for the catastrophe: they gave \"worthless and misleading\" oracles instead of exposing sin. Verse 19 contains the book’s only instruction: POUR OUT YOUR HEART. This is the single imperative in five chapters of grief. It does not say \"understand\" or \"accept\" or \"move on.\" It says POUR. The image is liquid — grief as water, released before God. The chapter ends not with hope but with accusation (v.22): God invited enemies to a feast-day of slaughter.",
-        "cross": [
-          {
-            "ref": "Jer 14:14",
-            "note": "The prophets are prophesying lies in my name — the false prophecy that Lam 2:14 blames for the disaster."
-          },
-          {
-            "ref": "Ps 62:8",
-            "note": "Trust in him at all times; pour out your hearts to him — the psalm version of Lam 2:19’s command."
-          },
-          {
-            "ref": "Joel 2:12–13",
-            "note": "Return to me with all your heart, with fasting and weeping — the prophetic call that matches Lam 2:19’s imperative."
-          },
-          {
-            "ref": "Matt 26:38–39",
-            "note": "My soul is overwhelmed with sorrow. He fell with his face to the ground and prayed — Jesus in Gethsemane enacts Lam 2:19."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 14:14",
+              "note": "The prophets are prophesying lies in my name — the false prophecy that Lam 2:14 blames for the disaster."
+            },
+            {
+              "ref": "Ps 62:8",
+              "note": "Trust in him at all times; pour out your hearts to him — the psalm version of Lam 2:19’s command."
+            },
+            {
+              "ref": "Joel 2:12–13",
+              "note": "Return to me with all your heart, with fasting and weeping — the prophetic call that matches Lam 2:19’s imperative."
+            },
+            {
+              "ref": "Matt 26:38–39",
+              "note": "My soul is overwhelmed with sorrow. He fell with his face to the ground and prayed — Jesus in Gethsemane enacts Lam 2:19."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -224,6 +229,9 @@
               "note": "O’Connor calls ‘pour out your heart like water’ the poem’s invitation to radical honesty: not polite prayer but the complete discharge of grief, anger, and accusation before God. This is liturgical permission to be devastated."
             }
           ]
+        },
+        "hist": {
+          "context": "Verse 13 declares the wound \"deep as the sea\" — infinite, immeasurable. The false prophets of v.14 are blamed for the catastrophe: they gave \"worthless and misleading\" oracles instead of exposing sin. Verse 19 contains the book’s only instruction: POUR OUT YOUR HEART. This is the single imperative in five chapters of grief. It does not say \"understand\" or \"accept\" or \"move on.\" It says POUR. The image is liquid — grief as water, released before God. The chapter ends not with hope but with accusation (v.22): God invited enemies to a feast-day of slaughter."
         }
       }
     }

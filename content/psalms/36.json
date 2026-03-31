@@ -22,17 +22,18 @@
             "paragraph": "\"An oracle is within my heart concerning the sinfulness of the wicked: there is no fear of God before his eyes\" (v.1). Paul quotes this in Romans 3:18. The wicked person’s fundamental problem: no reverence for God. Without fear, sin has no brake."
           }
         ],
-        "ctx": "",
-        "cross": [
-          {
-            "ref": "Rom 3:10–18",
-            "note": "Paul quotes v. 1 — 'There is no fear of God before their eyes' — as the climax of his indictment of universal sinfulness. The psalmist's observation about the wicked becomes Paul's diagnosis of all humanity."
-          },
-          {
-            "ref": "Ps 10:3–11",
-            "note": "Psalm 10 provides a parallel portrait of the wicked person who flatters himself, whose mouth is full of deceit, who says in his heart 'God has forgotten.' The psychology of self-deception recurs."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 3:10–18",
+              "note": "Paul quotes v. 1 — 'There is no fear of God before their eyes' — as the climax of his indictment of universal sinfulness. The psalmist's observation about the wicked becomes Paul's diagnosis of all humanity."
+            },
+            {
+              "ref": "Ps 10:3–11",
+              "note": "Psalm 10 provides a parallel portrait of the wicked person who flatters himself, whose mouth is full of deceit, who says in his heart 'God has forgotten.' The psychology of self-deception recurs."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -123,6 +124,9 @@
               "note": "Goldingay: the progression is chilling: deceptive speech (v.3a), ceasing to be wise or do good (v.3b), plotting evil in bed (v.4a), committing to wrong (v.4b). The descent from words to plans to commitment traces sin's escalation."
             }
           ]
+        },
+        "hist": {
+          "context": ""
         }
       }
     },
@@ -140,21 +144,22 @@
             "paragraph": "\"Your love (ḥesed), LORD, reaches to the heavens, your faithfulness to the skies\" (v.5). The psalm’s theology: God’s love is cosmic in scale. It reaches the heavens; his faithfulness touches the clouds; his righteousness is like great mountains; his justice like the great deep (vv.5–6). \"How priceless is your unfailing love, God! People take refuge in the shadow of your wings\" (v.7)."
           }
         ],
-        "ctx": "",
-        "cross": [
-          {
-            "ref": "Ps 57:10",
-            "note": "The identical phrase — 'your love reaches to the heavens, your faithfulness to the skies' — appears in both psalms, forming a shared vocabulary of cosmic-scale divine loyalty."
-          },
-          {
-            "ref": "Rev 22:1–2",
-            "note": "The 'river of your delights' (v. 8) and 'fountain of life' (v. 9) anticipate Revelation's river of the water of life flowing from God's throne. Eden's rivers, Psalm 36, and Revelation's consummation form a single arc."
-          },
-          {
-            "ref": "John 8:12",
-            "note": "The affirmation 'in your light we see light' (v. 9) finds its christological fulfilment in Jesus' 'I am the light of the world.' Divine illumination in the psalm becomes incarnate presence in the Gospel."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 57:10",
+              "note": "The identical phrase — 'your love reaches to the heavens, your faithfulness to the skies' — appears in both psalms, forming a shared vocabulary of cosmic-scale divine loyalty."
+            },
+            {
+              "ref": "Rev 22:1–2",
+              "note": "The 'river of your delights' (v. 8) and 'fountain of life' (v. 9) anticipate Revelation's river of the water of life flowing from God's throne. Eden's rivers, Psalm 36, and Revelation's consummation form a single arc."
+            },
+            {
+              "ref": "John 8:12",
+              "note": "The affirmation 'in your light we see light' (v. 9) finds its christological fulfilment in Jesus' 'I am the light of the world.' Divine illumination in the psalm becomes incarnate presence in the Gospel."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -245,6 +250,9 @@
               "note": "Goldingay: 'fountain of life' — the image works on multiple levels: physical survival (water), spiritual vitality (life), and epistemological clarity (light). The psalm's deepest verse is also its most economical."
             }
           ]
+        },
+        "hist": {
+          "context": ""
         }
       }
     }

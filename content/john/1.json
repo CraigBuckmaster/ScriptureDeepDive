@@ -31,25 +31,26 @@
             "paragraph": "The verb (v.14) is from skēnē (tent/tabernacle). John says the Word \"tabernacled\" among us — deliberately evoking the Exodus Tabernacle where God's glory (shekinah) dwelt in Israel's midst (Exod 40:34-38). The Incarnation is the new, definitive Tabernacle: God dwelling with his people, no longer in a tent of acacia wood but in a body of flesh."
           }
         ],
-        "ctx": "[('The Prologue and Genesis 1', 'John opens with \"In the beginning\" (en archē) — the exact opening of the LXX\\'s Genesis 1:1. The correspondence is deliberate: John is presenting the Incarnation as a new creation event. As the first creation came through the spoken Word of God (Gen 1:3, \"Let there be light\"), so the new creation comes through the incarnate Word. The light/darkness contrast of 1:4-5 maps directly onto the first day of creation.'), ('The Prologue and Wisdom Literature', 'Jewish wisdom tradition (Prov 8:22-31; Sir 24; Wis 7:22-8:1) had long personified divine Wisdom as a figure present at creation, dwelling with Israel, and mediating between God and humanity. John draws on this tradition but makes a decisive move: he identifies the personified Word/Wisdom not with Torah (as Sirach does) but with the person of Jesus Christ (v.17). The prologue is a deliberate christological reinterpretation of Jewish wisdom theology.')]",
-        "cross": [
-          {
-            "ref": "Gen 1:1-3",
-            "note": "\"In the beginning God created the heavens and the earth... And God said, Let there be light\" — the creation by divine speech that John's prologue re-enacts in the Incarnation."
-          },
-          {
-            "ref": "Exod 40:34-35",
-            "note": "\"The cloud covered the tent of meeting, and the glory of the Lord filled the tabernacle\" — the Tabernacle indwelling John echoes with eskēnōsen (he tabernacled, v.14)."
-          },
-          {
-            "ref": "Col 1:15-17",
-            "note": "\"He is the image of the invisible God, the firstborn over all creation. For in him all things were created\" — Paul's parallel Christological hymn."
-          },
-          {
-            "ref": "Heb 1:1-3",
-            "note": "\"In these last days he has spoken to us by his Son, whom he appointed heir of all things, and through whom also he made the universe\" — the same pre-existent creative agency."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 1:1-3",
+              "note": "\"In the beginning God created the heavens and the earth... And God said, Let there be light\" — the creation by divine speech that John's prologue re-enacts in the Incarnation."
+            },
+            {
+              "ref": "Exod 40:34-35",
+              "note": "\"The cloud covered the tent of meeting, and the glory of the Lord filled the tabernacle\" — the Tabernacle indwelling John echoes with eskēnōsen (he tabernacled, v.14)."
+            },
+            {
+              "ref": "Col 1:15-17",
+              "note": "\"He is the image of the invisible God, the firstborn over all creation. For in him all things were created\" — Paul's parallel Christological hymn."
+            },
+            {
+              "ref": "Heb 1:1-3",
+              "note": "\"In these last days he has spoken to us by his Son, whom he appointed heir of all things, and through whom also he made the universe\" — the same pre-existent creative agency."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -109,6 +110,9 @@
               "note": "Chrysostom: \"He became flesh — not changed into flesh, for the divine nature cannot be changed; but he assumed flesh while remaining what he was. The sun is not diminished when it shines on mud, nor was the Word polluted when it clothed itself in flesh. He assumed our nature to raise our nature to his own level.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Prologue and Genesis 1', 'John opens with \"In the beginning\" (en archē) — the exact opening of the LXX\\'s Genesis 1:1. The correspondence is deliberate: John is presenting the Incarnation as a new creation event. As the first creation came through the spoken Word of God (Gen 1:3, \"Let there be light\"), so the new creation comes through the incarnate Word. The light/darkness contrast of 1:4-5 maps directly onto the first day of creation.'), ('The Prologue and Wisdom Literature', 'Jewish wisdom tradition (Prov 8:22-31; Sir 24; Wis 7:22-8:1) had long personified divine Wisdom as a figure present at creation, dwelling with Israel, and mediating between God and humanity. John draws on this tradition but makes a decisive move: he identifies the personified Word/Wisdom not with Torah (as Sirach does) but with the person of Jesus Christ (v.17). The prologue is a deliberate christological reinterpretation of Jewish wisdom theology.')]"
         }
       }
     },
@@ -132,21 +136,22 @@
             "paragraph": "The Spirit \"remained\" (emeinen, v.32) on Jesus — a detail unique to John that will become a major theological theme: in John's Gospel, \"abiding\" is the characteristic of genuine relationship with Christ. The Spirit's permanent resting on Jesus distinguishes him from the OT prophets on whom the Spirit came and departed."
           }
         ],
-        "ctx": "[(\"The Baptist's Testimony\", 'John structures the Baptist\\'s witness as a series of \"next day\" scenes (vv.29, 35, 43) — a week of escalating testimony building toward Jesus\\'s first sign at Cana (ch.2). The Baptist\\'s triple denial (\"I am not the Messiah / Elijah / the Prophet\") mirrors the triple denial that will characterise Peter later — but in an ironic positive direction: the Baptist\\'s denials all serve to magnify Jesus. His self-description (\"voice of one calling in the wilderness\") deliberately positions him as the fulfilment of Isaiah 40:3.'), ('\"Come and See\"', 'The phrase \"come and see\" (vv.39, 46) is John\\'s characteristic invitation throughout the Gospel — an experiential epistemology: discipleship begins not with arguments but with encounter. Jesus\\'s first words in John\\'s Gospel are a question: \"What do you want?\" (v.38). The disciples answer with a question: \"Where are you staying?\" Jesus\\'s response sets the tone for the entire Gospel: \"Come and see.\"')]",
-        "cross": [
-          {
-            "ref": "Isa 40:3",
-            "note": "\"A voice of one calling: 'In the wilderness prepare the way for the Lord'\" — the prophetic text John the Baptist applies to himself in v.23."
-          },
-          {
-            "ref": "Isa 53:7",
-            "note": "\"He was led like a lamb to the slaughter\" — the Suffering Servant as lamb, which \"Lamb of God\" invokes."
-          },
-          {
-            "ref": "Gen 28:12",
-            "note": "\"He saw a stairway resting on the earth, with its top reaching to heaven, and the angels of God were ascending and descending on it\" — Jacob's ladder, which Jesus applies to himself in v.51."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 40:3",
+              "note": "\"A voice of one calling: 'In the wilderness prepare the way for the Lord'\" — the prophetic text John the Baptist applies to himself in v.23."
+            },
+            {
+              "ref": "Isa 53:7",
+              "note": "\"He was led like a lamb to the slaughter\" — the Suffering Servant as lamb, which \"Lamb of God\" invokes."
+            },
+            {
+              "ref": "Gen 28:12",
+              "note": "\"He saw a stairway resting on the earth, with its top reaching to heaven, and the angels of God were ascending and descending on it\" — Jacob's ladder, which Jesus applies to himself in v.51."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -206,6 +211,9 @@
               "note": "Cyril of Alexandria: \"The Word became flesh — that is, became a complete human being, body and rational soul together. He put on human nature in its entirety in order to heal it in its entirety. What is not assumed is not healed; but what is united to God is saved.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[(\"The Baptist's Testimony\", 'John structures the Baptist\\'s witness as a series of \"next day\" scenes (vv.29, 35, 43) — a week of escalating testimony building toward Jesus\\'s first sign at Cana (ch.2). The Baptist\\'s triple denial (\"I am not the Messiah / Elijah / the Prophet\") mirrors the triple denial that will characterise Peter later — but in an ironic positive direction: the Baptist\\'s denials all serve to magnify Jesus. His self-description (\"voice of one calling in the wilderness\") deliberately positions him as the fulfilment of Isaiah 40:3.'), ('\"Come and See\"', 'The phrase \"come and see\" (vv.39, 46) is John\\'s characteristic invitation throughout the Gospel — an experiential epistemology: discipleship begins not with arguments but with encounter. Jesus\\'s first words in John\\'s Gospel are a question: \"What do you want?\" (v.38). The disciples answer with a question: \"Where are you staying?\" Jesus\\'s response sets the tone for the entire Gospel: \"Come and see.\"')]"
         }
       }
     },
@@ -229,25 +237,26 @@
             "paragraph": "The verb (v.14) is from skēnē (tent/tabernacle). John says the Word \"tabernacled\" among us — deliberately evoking the Exodus Tabernacle where God's glory (shekinah) dwelt in Israel's midst (Exod 40:34-38). The Incarnation is the new, definitive Tabernacle: God dwelling with his people, no longer in a tent of acacia wood but in a body of flesh."
           }
         ],
-        "ctx": "[('The Prologue and Genesis 1', 'John opens with \"In the beginning\" (en archē) — the exact opening of the LXX\\'s Genesis 1:1. The correspondence is deliberate: John is presenting the Incarnation as a new creation event. As the first creation came through the spoken Word of God (Gen 1:3, \"Let there be light\"), so the new creation comes through the incarnate Word. The light/darkness contrast of 1:4-5 maps directly onto the first day of creation.'), ('The Prologue and Wisdom Literature', 'Jewish wisdom tradition (Prov 8:22-31; Sir 24; Wis 7:22-8:1) had long personified divine Wisdom as a figure present at creation, dwelling with Israel, and mediating between God and humanity. John draws on this tradition but makes a decisive move: he identifies the personified Word/Wisdom not with Torah (as Sirach does) but with the person of Jesus Christ (v.17). The prologue is a deliberate christological reinterpretation of Jewish wisdom theology.')]",
-        "cross": [
-          {
-            "ref": "Gen 1:1-3",
-            "note": "\"In the beginning God created the heavens and the earth... And God said, Let there be light\" — the creation by divine speech that John's prologue re-enacts in the Incarnation."
-          },
-          {
-            "ref": "Exod 40:34-35",
-            "note": "\"The cloud covered the tent of meeting, and the glory of the Lord filled the tabernacle\" — the Tabernacle indwelling John echoes with eskēnōsen (he tabernacled, v.14)."
-          },
-          {
-            "ref": "Col 1:15-17",
-            "note": "\"He is the image of the invisible God, the firstborn over all creation. For in him all things were created\" — Paul's parallel Christological hymn."
-          },
-          {
-            "ref": "Heb 1:1-3",
-            "note": "\"In these last days he has spoken to us by his Son, whom he appointed heir of all things, and through whom also he made the universe\" — the same pre-existent creative agency."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 1:1-3",
+              "note": "\"In the beginning God created the heavens and the earth... And God said, Let there be light\" — the creation by divine speech that John's prologue re-enacts in the Incarnation."
+            },
+            {
+              "ref": "Exod 40:34-35",
+              "note": "\"The cloud covered the tent of meeting, and the glory of the Lord filled the tabernacle\" — the Tabernacle indwelling John echoes with eskēnōsen (he tabernacled, v.14)."
+            },
+            {
+              "ref": "Col 1:15-17",
+              "note": "\"He is the image of the invisible God, the firstborn over all creation. For in him all things were created\" — Paul's parallel Christological hymn."
+            },
+            {
+              "ref": "Heb 1:1-3",
+              "note": "\"In these last days he has spoken to us by his Son, whom he appointed heir of all things, and through whom also he made the universe\" — the same pre-existent creative agency."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -307,6 +316,9 @@
               "note": "Chrysostom: \"He became flesh — not changed into flesh, for the divine nature cannot be changed; but he assumed flesh while remaining what he was. The sun is not diminished when it shines on mud, nor was the Word polluted when it clothed itself in flesh. He assumed our nature to raise our nature to his own level.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Prologue and Genesis 1', 'John opens with \"In the beginning\" (en archē) — the exact opening of the LXX\\'s Genesis 1:1. The correspondence is deliberate: John is presenting the Incarnation as a new creation event. As the first creation came through the spoken Word of God (Gen 1:3, \"Let there be light\"), so the new creation comes through the incarnate Word. The light/darkness contrast of 1:4-5 maps directly onto the first day of creation.'), ('The Prologue and Wisdom Literature', 'Jewish wisdom tradition (Prov 8:22-31; Sir 24; Wis 7:22-8:1) had long personified divine Wisdom as a figure present at creation, dwelling with Israel, and mediating between God and humanity. John draws on this tradition but makes a decisive move: he identifies the personified Word/Wisdom not with Torah (as Sirach does) but with the person of Jesus Christ (v.17). The prologue is a deliberate christological reinterpretation of Jewish wisdom theology.')]"
         }
       }
     },
@@ -330,21 +342,22 @@
             "paragraph": "The Spirit \"remained\" (emeinen, v.32) on Jesus — a detail unique to John that will become a major theological theme: in John's Gospel, \"abiding\" is the characteristic of genuine relationship with Christ. The Spirit's permanent resting on Jesus distinguishes him from the OT prophets on whom the Spirit came and departed."
           }
         ],
-        "ctx": "[(\"The Baptist's Testimony\", 'John structures the Baptist\\'s witness as a series of \"next day\" scenes (vv.29, 35, 43) — a week of escalating testimony building toward Jesus\\'s first sign at Cana (ch.2). The Baptist\\'s triple denial (\"I am not the Messiah / Elijah / the Prophet\") mirrors the triple denial that will characterise Peter later — but in an ironic positive direction: the Baptist\\'s denials all serve to magnify Jesus. His self-description (\"voice of one calling in the wilderness\") deliberately positions him as the fulfilment of Isaiah 40:3.'), ('\"Come and See\"', 'The phrase \"come and see\" (vv.39, 46) is John\\'s characteristic invitation throughout the Gospel — an experiential epistemology: discipleship begins not with arguments but with encounter. Jesus\\'s first words in John\\'s Gospel are a question: \"What do you want?\" (v.38). The disciples answer with a question: \"Where are you staying?\" Jesus\\'s response sets the tone for the entire Gospel: \"Come and see.\"')]",
-        "cross": [
-          {
-            "ref": "Isa 40:3",
-            "note": "\"A voice of one calling: 'In the wilderness prepare the way for the Lord'\" — the prophetic text John the Baptist applies to himself in v.23."
-          },
-          {
-            "ref": "Isa 53:7",
-            "note": "\"He was led like a lamb to the slaughter\" — the Suffering Servant as lamb, which \"Lamb of God\" invokes."
-          },
-          {
-            "ref": "Gen 28:12",
-            "note": "\"He saw a stairway resting on the earth, with its top reaching to heaven, and the angels of God were ascending and descending on it\" — Jacob's ladder, which Jesus applies to himself in v.51."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 40:3",
+              "note": "\"A voice of one calling: 'In the wilderness prepare the way for the Lord'\" — the prophetic text John the Baptist applies to himself in v.23."
+            },
+            {
+              "ref": "Isa 53:7",
+              "note": "\"He was led like a lamb to the slaughter\" — the Suffering Servant as lamb, which \"Lamb of God\" invokes."
+            },
+            {
+              "ref": "Gen 28:12",
+              "note": "\"He saw a stairway resting on the earth, with its top reaching to heaven, and the angels of God were ascending and descending on it\" — Jacob's ladder, which Jesus applies to himself in v.51."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -404,6 +417,9 @@
               "note": "Cyril of Alexandria: \"The Word became flesh — that is, became a complete human being, body and rational soul together. He put on human nature in its entirety in order to heal it in its entirety. What is not assumed is not healed; but what is united to God is saved.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[(\"The Baptist's Testimony\", 'John structures the Baptist\\'s witness as a series of \"next day\" scenes (vv.29, 35, 43) — a week of escalating testimony building toward Jesus\\'s first sign at Cana (ch.2). The Baptist\\'s triple denial (\"I am not the Messiah / Elijah / the Prophet\") mirrors the triple denial that will characterise Peter later — but in an ironic positive direction: the Baptist\\'s denials all serve to magnify Jesus. His self-description (\"voice of one calling in the wilderness\") deliberately positions him as the fulfilment of Isaiah 40:3.'), ('\"Come and See\"', 'The phrase \"come and see\" (vv.39, 46) is John\\'s characteristic invitation throughout the Gospel — an experiential epistemology: discipleship begins not with arguments but with encounter. Jesus\\'s first words in John\\'s Gospel are a question: \"What do you want?\" (v.38). The disciples answer with a question: \"Where are you staying?\" Jesus\\'s response sets the tone for the entire Gospel: \"Come and see.\"')]"
         }
       }
     }
@@ -730,6 +746,18 @@
         "literary",
         "cross"
       ]
+    }
+  ],
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "\"In the beginning was the Word\" deliberately echoes Genesis 1:1. John is telling you: this isn't just another story — this is the creation story retold. The Word who spoke everything into being has now entered what he made. Read the Prologue as a second Genesis.",
+      "genre_tag": "canonical_thread"
+    },
+    {
+      "after_section": 3,
+      "tip": "John the Baptist identifies Jesus with two titles: \"Lamb of God\" (v. 29) and the one who \"baptizes with the Holy Spirit\" (v. 33). One points backward to sacrifice (Passover, Isaiah 53), the other forward to Pentecost. In a single witness, the entire arc of redemption is compressed.",
+      "genre_tag": "theological_insight"
     }
   ]
 }

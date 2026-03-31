@@ -17,13 +17,14 @@
       "verse_start": 1,
       "verse_end": 28,
       "panels": {
-        "ctx": "Benjamin receives a second, fuller genealogy (expanding the brief entry in 7:6–12). The detail reflects Benjamin’s importance to the post-exilic community: Jerusalem was in Benjamin’s territory, and many returnees were Benjaminites. The genealogy lists clans, heads of families, and settlements — including Aijalon and Gath, indicating territorial claims that extended into the Shephelah.",
-        "cross": [
-          {
-            "ref": "Josh 18:11–28",
-            "note": "Benjamin’s tribal allotment, which included Jerusalem and key towns along the Judah-Benjamin border."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 18:11–28",
+              "note": "Benjamin’s tribal allotment, which included Jerusalem and key towns along the Judah-Benjamin border."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -41,6 +42,9 @@
               "note": "The phrase “according to their genealogies” (lĕtōlĕdōtām) indicates that the Chronicler is working from written genealogical records, not oral tradition."
             }
           ]
+        },
+        "hist": {
+          "context": "Benjamin receives a second, fuller genealogy (expanding the brief entry in 7:6–12). The detail reflects Benjamin’s importance to the post-exilic community: Jerusalem was in Benjamin’s territory, and many returnees were Benjaminites. The genealogy lists clans, heads of families, and settlements — including Aijalon and Gath, indicating territorial claims that extended into the Shephelah."
         }
       }
     },
@@ -50,17 +54,18 @@
       "verse_start": 29,
       "verse_end": 40,
       "panels": {
-        "ctx": "The genealogy narrows to the family of Gibeon, tracing from Jeiel (the “father of Gibeon”) through Ner to Kish to Saul. This is the bridge between the genealogies (ch 1–9) and the narrative (ch 10): the last name in the list is the first character in the story. Saul’s family tree is repeated almost identically in 9:35–44 — the Chronicler frames the narrative with the genealogy, ensuring the reader understands Saul’s identity before witnessing his death.",
-        "cross": [
-          {
-            "ref": "1 Sam 9:1–2",
-            "note": "Saul’s introduction in Samuel provides the same ancestry: Kish son of Abiel, a Benjaminite. The Chronicler’s version adds generational depth."
-          },
-          {
-            "ref": "1 Chr 9:35–44",
-            "note": "The identical genealogy is repeated at the end of chapter 9, creating an inclusio that frames the transition from genealogy to narrative."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Sam 9:1–2",
+              "note": "Saul’s introduction in Samuel provides the same ancestry: Kish son of Abiel, a Benjaminite. The Chronicler’s version adds generational depth."
+            },
+            {
+              "ref": "1 Chr 9:35–44",
+              "note": "The identical genealogy is repeated at the end of chapter 9, creating an inclusio that frames the transition from genealogy to narrative."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -78,6 +83,9 @@
               "note": "Esh-Baal (“man of Baal”) corresponds to Ish-Bosheth (“man of shame”) in 2 Sam 2:8. The substitution of bōshet for baʿal reflects post-exilic scribal sensitivity to Baal names."
             }
           ]
+        },
+        "hist": {
+          "context": "The genealogy narrows to the family of Gibeon, tracing from Jeiel (the “father of Gibeon”) through Ner to Kish to Saul. This is the bridge between the genealogies (ch 1–9) and the narrative (ch 10): the last name in the list is the first character in the story. Saul’s family tree is repeated almost identically in 9:35–44 — the Chronicler frames the narrative with the genealogy, ensuring the reader understands Saul’s identity before witnessing his death."
         }
       }
     }

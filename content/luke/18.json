@@ -28,21 +28,22 @@
             "paragraph": "The tax collector's prayer (v.13) uses a word from the Temple's sacrificial vocabulary: be propitiated, be turned toward me in mercy. He does not ask to be understood, excused, or compared favourably — he asks for mercy from a God whose holiness his life has violated."
           }
         ],
-        "ctx": "[('The Widow and the Unjust Judge', 'Widows in the ancient world had no independent legal standing — they depended on male relatives or public advocates to press their legal cases. The unjust judge had no interest in justice; the widow had no leverage. Her only resource was persistence. The parable argues from the lesser to the greater: if even a corrupt, godless judge eventually yields to persistence, how much more certainly will the God who loves his people respond to their persistent prayer?'), ('Camel and Needle', 'The camel-through-a-needle\\'s-eye saying (v.25) is one of Jesus\\'s most debated images. There is no evidence for the theory that \"needle\\'s gate\" was a small gate in Jerusalem\\'s walls (this explanation first appears in medieval sources). The saying uses deliberate hyperbole — the largest animal in Palestine through the smallest opening — to express genuine impossibility: rich people do not enter the kingdom through their own resources.')]",
-        "cross": [
-          {
-            "ref": "Matt 19:13-30",
-            "note": "The parallel children, rich ruler, and camel-needle sequence in Matthew."
-          },
-          {
-            "ref": "Mark 10:13-31",
-            "note": "Mark's version of the same sequence, closest to Luke's in detail."
-          },
-          {
-            "ref": "Ps 17:1-2",
-            "note": "\"Hear me, Lord, my plea is just; listen to my cry. Hear my prayer\" — the Psalm of the persisting righteous sufferer that provides the OT background for the widow's persistence."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 19:13-30",
+              "note": "The parallel children, rich ruler, and camel-needle sequence in Matthew."
+            },
+            {
+              "ref": "Mark 10:13-31",
+              "note": "Mark's version of the same sequence, closest to Luke's in detail."
+            },
+            {
+              "ref": "Ps 17:1-2",
+              "note": "\"Hear me, Lord, my plea is just; listen to my cry. Hear my prayer\" — the Psalm of the persisting righteous sufferer that provides the OT background for the widow's persistence."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -118,6 +119,9 @@
         },
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jericho</div><div class=\"poi-coords\">31.8561° N, 35.4614° E</div><div class=\"poi-text\">One of the world's oldest cities, located in the Jordan Valley about 15 miles northeast of Jerusalem and 800 feet below sea level. The final major city before Jerusalem on the pilgrim route from Galilee through the Jordan Valley. Jesus's approach to Jericho marks the journey narrative's final phase — the next stop after Jericho is Jerusalem.</div></div>"
+        },
+        "hist": {
+          "context": "[('The Widow and the Unjust Judge', 'Widows in the ancient world had no independent legal standing — they depended on male relatives or public advocates to press their legal cases. The unjust judge had no interest in justice; the widow had no leverage. Her only resource was persistence. The parable argues from the lesser to the greater: if even a corrupt, godless judge eventually yields to persistence, how much more certainly will the God who loves his people respond to their persistent prayer?'), ('Camel and Needle', 'The camel-through-a-needle\\'s-eye saying (v.25) is one of Jesus\\'s most debated images. There is no evidence for the theory that \"needle\\'s gate\" was a small gate in Jerusalem\\'s walls (this explanation first appears in medieval sources). The saying uses deliberate hyperbole — the largest animal in Palestine through the smallest opening — to express genuine impossibility: rich people do not enter the kingdom through their own resources.')]"
         }
       }
     },
@@ -141,21 +145,22 @@
             "paragraph": "The verb (v.41) means both to recover sight and to look up — it is the same word used for Jesus looking up at the tax collectors and sinners who gathered around him. The physical recovery of sight is a transparent image of the spiritual sight that the chapter's first half described: the tax collector who saw himself clearly, the children who received with clear simplicity."
           }
         ],
-        "ctx": "[('Third Passion Prediction', \"Luke's third explicit passion prediction (after 9:22 and 9:44) is the most detailed: delivered to Gentiles, mocked, insulted, spit on, flogged, killed, raised on the third day. The disciples understand nothing (18:34) — a compressed Lukan note that Luke will later explain as divinely ordained hiddenness (24:25-27, 44-45) rather than simple obtuseness.\"), ('Jericho on the Journey', 'Jesus approaches Jericho (18:35) — the last major city before Jerusalem, about 15 miles from the capital and 800 feet below sea level. The blind beggar at Jericho and then Zacchaeus in Jericho (19:1-10) are the final healing and call stories before the Jerusalem entry. The location signals that the journey narrative is reaching its climax.')]",
-        "cross": [
-          {
-            "ref": "Mark 10:46-52",
-            "note": "Mark's more detailed version, naming the blind man as Bartimaeus and placing him as Jesus leaves Jericho rather than approaches it."
-          },
-          {
-            "ref": "Isa 35:5",
-            "note": "\"Then will the eyes of the blind be opened\" — the eschatological promise that Jesus's healings fulfil, consistent with 7:22's answer to John the Baptist."
-          },
-          {
-            "ref": "Ps 2:7; Isa 11:1-5",
-            "note": "The Davidic messianic promises that the \"Son of David\" title invokes — the expected king who would restore justice and judge the poor with equity."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mark 10:46-52",
+              "note": "Mark's more detailed version, naming the blind man as Bartimaeus and placing him as Jesus leaves Jericho rather than approaches it."
+            },
+            {
+              "ref": "Isa 35:5",
+              "note": "\"Then will the eyes of the blind be opened\" — the eschatological promise that Jesus's healings fulfil, consistent with 7:22's answer to John the Baptist."
+            },
+            {
+              "ref": "Ps 2:7; Isa 11:1-5",
+              "note": "The Davidic messianic promises that the \"Son of David\" title invokes — the expected king who would restore justice and judge the poor with equity."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -231,6 +236,9 @@
         },
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jericho</div><div class=\"poi-coords\">31.8561° N, 35.4614° E</div><div class=\"poi-text\">One of the world's oldest cities, located in the Jordan Valley about 15 miles northeast of Jerusalem and 800 feet below sea level. The final major city before Jerusalem on the pilgrim route from Galilee through the Jordan Valley. Jesus's approach to Jericho marks the journey narrative's final phase — the next stop after Jericho is Jerusalem.</div></div>"
+        },
+        "hist": {
+          "context": "[('Third Passion Prediction', \"Luke's third explicit passion prediction (after 9:22 and 9:44) is the most detailed: delivered to Gentiles, mocked, insulted, spit on, flogged, killed, raised on the third day. The disciples understand nothing (18:34) — a compressed Lukan note that Luke will later explain as divinely ordained hiddenness (24:25-27, 44-45) rather than simple obtuseness.\"), ('Jericho on the Journey', 'Jesus approaches Jericho (18:35) — the last major city before Jerusalem, about 15 miles from the capital and 800 feet below sea level. The blind beggar at Jericho and then Zacchaeus in Jericho (19:1-10) are the final healing and call stories before the Jerusalem entry. The location signals that the journey narrative is reaching its climax.')]"
         }
       }
     },
@@ -254,21 +262,22 @@
             "paragraph": "The tax collector's prayer (v.13) uses a word from the Temple's sacrificial vocabulary: be propitiated, be turned toward me in mercy. He does not ask to be understood, excused, or compared favourably — he asks for mercy from a God whose holiness his life has violated."
           }
         ],
-        "ctx": "[('The Widow and the Unjust Judge', 'Widows in the ancient world had no independent legal standing — they depended on male relatives or public advocates to press their legal cases. The unjust judge had no interest in justice; the widow had no leverage. Her only resource was persistence. The parable argues from the lesser to the greater: if even a corrupt, godless judge eventually yields to persistence, how much more certainly will the God who loves his people respond to their persistent prayer?'), ('Camel and Needle', 'The camel-through-a-needle\\'s-eye saying (v.25) is one of Jesus\\'s most debated images. There is no evidence for the theory that \"needle\\'s gate\" was a small gate in Jerusalem\\'s walls (this explanation first appears in medieval sources). The saying uses deliberate hyperbole — the largest animal in Palestine through the smallest opening — to express genuine impossibility: rich people do not enter the kingdom through their own resources.')]",
-        "cross": [
-          {
-            "ref": "Matt 19:13-30",
-            "note": "The parallel children, rich ruler, and camel-needle sequence in Matthew."
-          },
-          {
-            "ref": "Mark 10:13-31",
-            "note": "Mark's version of the same sequence, closest to Luke's in detail."
-          },
-          {
-            "ref": "Ps 17:1-2",
-            "note": "\"Hear me, Lord, my plea is just; listen to my cry. Hear my prayer\" — the Psalm of the persisting righteous sufferer that provides the OT background for the widow's persistence."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 19:13-30",
+              "note": "The parallel children, rich ruler, and camel-needle sequence in Matthew."
+            },
+            {
+              "ref": "Mark 10:13-31",
+              "note": "Mark's version of the same sequence, closest to Luke's in detail."
+            },
+            {
+              "ref": "Ps 17:1-2",
+              "note": "\"Hear me, Lord, my plea is just; listen to my cry. Hear my prayer\" — the Psalm of the persisting righteous sufferer that provides the OT background for the widow's persistence."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -344,6 +353,9 @@
         },
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jericho</div><div class=\"poi-coords\">31.8561° N, 35.4614° E</div><div class=\"poi-text\">One of the world's oldest cities, located in the Jordan Valley about 15 miles northeast of Jerusalem and 800 feet below sea level. The final major city before Jerusalem on the pilgrim route from Galilee through the Jordan Valley. Jesus's approach to Jericho marks the journey narrative's final phase — the next stop after Jericho is Jerusalem.</div></div>"
+        },
+        "hist": {
+          "context": "[('The Widow and the Unjust Judge', 'Widows in the ancient world had no independent legal standing — they depended on male relatives or public advocates to press their legal cases. The unjust judge had no interest in justice; the widow had no leverage. Her only resource was persistence. The parable argues from the lesser to the greater: if even a corrupt, godless judge eventually yields to persistence, how much more certainly will the God who loves his people respond to their persistent prayer?'), ('Camel and Needle', 'The camel-through-a-needle\\'s-eye saying (v.25) is one of Jesus\\'s most debated images. There is no evidence for the theory that \"needle\\'s gate\" was a small gate in Jerusalem\\'s walls (this explanation first appears in medieval sources). The saying uses deliberate hyperbole — the largest animal in Palestine through the smallest opening — to express genuine impossibility: rich people do not enter the kingdom through their own resources.')]"
         }
       }
     }

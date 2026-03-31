@@ -88,22 +88,26 @@
             "paragraph": "The \"springs of the deep and the floodgates of the heavens\" that closed (v.2) are the same cosmological features that opened in 7:11. The Flood narrative uses the language of \"deep\" (tĕhôm) — the same word as Gen 1:2 — to describe a temporary undoing of the creation order. The closing of these sources is the reversal: the boundaries God set between waters and dry land (Gen 1:9-10) are being re-established by divine decision."
           }
         ],
-        "hist": "The precise chronology of the flood's recession (vv.3-5) reflects the same kind of careful dating as the flood's onset (7:11). The ark rests on \"the mountains of Ararat\" (v.4) — a range in eastern Turkey/Armenia, not a specific peak. The mountain called \"Ararat\" today (Agri Dagi) became associated with the ark landing in post-biblical tradition, but the text specifies a range.",
-        "ctx": "Genesis 8:1 is the most important verse in the flood narrative: \"But God remembered Noah.\" After the comprehensive destruction of 7:21-24 — the silence of a drowned world — the narrative pivots on one verb. God remembered. The covenant partner is not forgotten in the chaos. The arc of the entire flood narrative is captured here: judgment (chapters 6-7), remembrance (8:1), restoration (8:2-9:17). The flood is not God's final word; the remembrance is.",
-        "cross": [
-          {
-            "ref": "Exod 2:24",
-            "note": "God heard their groaning and he remembered his covenant with Abraham, with Isaac and with Jacob — the same zakar-structure: God remembers his covenant partner and acts."
-          },
-          {
-            "ref": "Ps 105:8",
-            "note": "He remembers his covenant forever — divine remembrance as the basis of covenant faithfulness."
-          },
-          {
-            "ref": "Luke 23:42",
-            "note": "Jesus, remember me when you come into your kingdom — the thief's prayer echoes the flood narrative's pivot."
-          }
-        ],
+        "hist": {
+          "historical": "The precise chronology of the flood's recession (vv.3-5) reflects the same kind of careful dating as the flood's onset (7:11). The ark rests on \"the mountains of Ararat\" (v.4) — a range in eastern Turkey/Armenia, not a specific peak. The mountain called \"Ararat\" today (Agri Dagi) became associated with the ark landing in post-biblical tradition, but the text specifies a range.",
+          "context": "Genesis 8:1 is the most important verse in the flood narrative: \"But God remembered Noah.\" After the comprehensive destruction of 7:21-24 — the silence of a drowned world — the narrative pivots on one verb. God remembered. The covenant partner is not forgotten in the chaos. The arc of the entire flood narrative is captured here: judgment (chapters 6-7), remembrance (8:1), restoration (8:2-9:17). The flood is not God's final word; the remembrance is."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 2:24",
+              "note": "God heard their groaning and he remembered his covenant with Abraham, with Isaac and with Jacob — the same zakar-structure: God remembers his covenant partner and acts."
+            },
+            {
+              "ref": "Ps 105:8",
+              "note": "He remembers his covenant forever — divine remembrance as the basis of covenant faithfulness."
+            },
+            {
+              "ref": "Luke 23:42",
+              "note": "Jesus, remember me when you come into your kingdom — the thief's prayer echoes the flood narrative's pivot."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -197,22 +201,26 @@
             "paragraph": "The narrator carefully distinguishes between the \"drying\" (v.13: haḇāh — the water drained) and the earth being \"completely dry\" (v.14: yābĕšāh — solid dryness). The same root (yābēš / ḥārāb) describes the Exodus crossing: \"the Israelites went through the sea on dry ground\" (Exod 14:22). The Flood's recession is narrated in the typological vocabulary of Israel's foundational deliverance — Noah's emergence from the waters anticipating Israel's."
           }
         ],
-        "hist": "The sending of birds to test flood conditions has an exact parallel in Gilgamesh Tablet XI, where Utnapishtim sends a dove, a swallow, and a raven in succession. The parallels are close enough to suggest a shared tradition. The difference: in Gilgamesh the raven is sent last and its non-return signals the end; in Genesis the order is reversed (raven first, then dove three times), and the focus is on the dove's progressive reports of the earth's restoration.",
-        "ctx": "The waiting, the sending, the receiving back, the waiting again — the rhythm of this section captures the experience of patient faith in the middle of an unknown situation. Noah cannot see from inside the ark what is happening outside. He can only send, wait, and interpret the results. This is faith living between the promise (God remembered) and the fulfillment (the command to leave the ark) — waiting with hope but without sight.",
-        "cross": [
-          {
-            "ref": "Matt 3:16",
-            "note": "The Spirit of God descending like a dove — the dove at Jesus's baptism echoes the dove of the flood, connecting the new creation to the original restoration."
-          },
-          {
-            "ref": "Song 2:14",
-            "note": "My dove in the clefts of the rock — the dove as the beloved, seeking a resting place."
-          },
-          {
-            "ref": "Ps 74:19",
-            "note": "Do not hand over the life of your dove to wild beasts — the dove as an image of the vulnerable beloved of God."
-          }
-        ],
+        "hist": {
+          "historical": "The sending of birds to test flood conditions has an exact parallel in Gilgamesh Tablet XI, where Utnapishtim sends a dove, a swallow, and a raven in succession. The parallels are close enough to suggest a shared tradition. The difference: in Gilgamesh the raven is sent last and its non-return signals the end; in Genesis the order is reversed (raven first, then dove three times), and the focus is on the dove's progressive reports of the earth's restoration.",
+          "context": "The waiting, the sending, the receiving back, the waiting again — the rhythm of this section captures the experience of patient faith in the middle of an unknown situation. Noah cannot see from inside the ark what is happening outside. He can only send, wait, and interpret the results. This is faith living between the promise (God remembered) and the fulfillment (the command to leave the ark) — waiting with hope but without sight."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 3:16",
+              "note": "The Spirit of God descending like a dove — the dove at Jesus's baptism echoes the dove of the flood, connecting the new creation to the original restoration."
+            },
+            {
+              "ref": "Song 2:14",
+              "note": "My dove in the clefts of the rock — the dove as the beloved, seeking a resting place."
+            },
+            {
+              "ref": "Ps 74:19",
+              "note": "Do not hand over the life of your dove to wild beasts — the dove as an image of the vulnerable beloved of God."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -306,26 +314,30 @@
             "paragraph": "God's instruction to \"multiply on the earth\" (v.17) and the parallel commission in v.17 — \"that they may multiply on the earth, that they may be fruitful and increase in number\" — restores the tôledôt-producing mandate of Gen 1:28. The generations that will flow from Noah's emergence are the re-establishment of the human story after the Flood's interruption. Every subsequent genealogy in Genesis traces back through this moment of re-emergence."
           }
         ],
-        "hist": "The command to leave the ark is structured as a reversal of the entry: Noah and his family exit in the same order they entered (family first, then animals — cf. 7:7,13-14 with 8:16-19). The orderly departure mirrors the orderly entry: the covenant-keeping God structures both the entry into judgment and the exit into restoration with the same careful attention.",
-        "ctx": "Noah does not leave the ark until God commands him to — despite the earth being dry (v.14) and the command apparently being weeks in coming (the earth dried in the first month, v.13; the command comes in the second month, v.15). This is an important detail: Noah waited for the divine word. He did not act on his own assessment but on God's explicit command. The patience of faith: waiting for the word even when conditions seem ready.",
-        "cross": [
-          {
-            "ref": "Gen 6:5",
-            "note": "The diagnosis of v.21 is verbatim from 6:5 — but the conclusion reverses: same heart, opposite divine response. Mercy triumphs over judgment (James 2:13)."
-          },
-          {
-            "ref": "Isa 54:9",
-            "note": "“As I swore that the waters of Noah would no more go over the earth, so I have sworn that I will not be angry with you.” The flood-covenant becomes the template for God’s covenant faithfulness to Israel."
-          },
-          {
-            "ref": "Eph 5:2",
-            "note": "Christ’s sacrifice is a “fragrant offering” (reach nihoah"
-          },
-          {
-            "ref": "Rom 8:20–22",
-            "note": "Creation groans for liberation — the promise of Gen 8:22 (creation continues) points toward the hope of creation’s renewal, not its abandonment."
-          }
-        ],
+        "hist": {
+          "historical": "The command to leave the ark is structured as a reversal of the entry: Noah and his family exit in the same order they entered (family first, then animals — cf. 7:7,13-14 with 8:16-19). The orderly departure mirrors the orderly entry: the covenant-keeping God structures both the entry into judgment and the exit into restoration with the same careful attention.",
+          "context": "Noah does not leave the ark until God commands him to — despite the earth being dry (v.14) and the command apparently being weeks in coming (the earth dried in the first month, v.13; the command comes in the second month, v.15). This is an important detail: Noah waited for the divine word. He did not act on his own assessment but on God's explicit command. The patience of faith: waiting for the word even when conditions seem ready."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 6:5",
+              "note": "The diagnosis of v.21 is verbatim from 6:5 — but the conclusion reverses: same heart, opposite divine response. Mercy triumphs over judgment (James 2:13)."
+            },
+            {
+              "ref": "Isa 54:9",
+              "note": "“As I swore that the waters of Noah would no more go over the earth, so I have sworn that I will not be angry with you.” The flood-covenant becomes the template for God’s covenant faithfulness to Israel."
+            },
+            {
+              "ref": "Eph 5:2",
+              "note": "Christ’s sacrifice is a “fragrant offering” (reach nihoah"
+            },
+            {
+              "ref": "Rom 8:20–22",
+              "note": "Creation groans for liberation — the promise of Gen 8:22 (creation continues) points toward the hope of creation’s renewal, not its abandonment."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -419,26 +431,30 @@
             "paragraph": "God's inner resolve — \"Never again will I curse the ground... never again will I destroy all living creatures\" (v.21) — uses the emphatic negation lōʾ ʾōsip (literally \"I will not add to\"). This is the pre-covenant commitment that will be formally ratified in the rainbow covenant of ch.9. The Flood judgment was unrepeatable not because humanity improved but because God committed himself to sustaining the creation order despite human sinfulness: \"even though every inclination of the human heart is evil from childhood.\""
           }
         ],
-        "hist": "Noah's burnt offerings are the first recorded sacrifices in the post-flood world. The use of clean animals (for which extra pairs were taken in 7:2) confirms that the distinction between clean and unclean animals was preserved through the flood. The divine response — \"never again will I curse the ground because of humans\" — is the first explicit covenantal promise in the post-flood world, preceding the formal covenant of chapter 9.",
-        "ctx": "The chapter closes with the most dramatic reversal in the flood narrative: God's assessment of humanity has not changed (\"the human heart is evil from youth\"), yet his response to it changes completely. He will never again destroy the earth. The reason is not that humanity has improved — the same evaluation of 6:5 stands. The reason is the sacrifice: the pleasing aroma of Noah's offering moves God to mercy. The logic is sacrificial-covenantal: the offering covers what the sin cannot.",
-        "cross": [
-          {
-            "ref": "Gen 6:5",
-            "note": "The diagnosis of v.21 is verbatim from 6:5 — but the conclusion reverses: same heart, opposite divine response. Mercy triumphs over judgment (James 2:13)."
-          },
-          {
-            "ref": "Isa 54:9",
-            "note": "“As I swore that the waters of Noah would no more go over the earth, so I have sworn that I will not be angry with you.” The flood-covenant becomes the template for God’s covenant faithfulness to Israel."
-          },
-          {
-            "ref": "Eph 5:2",
-            "note": "Christ’s sacrifice is a “fragrant offering” (reach nihoah"
-          },
-          {
-            "ref": "Rom 8:20–22",
-            "note": "Creation groans for liberation — the promise of Gen 8:22 (creation continues) points toward the hope of creation’s renewal, not its abandonment."
-          }
-        ],
+        "hist": {
+          "historical": "Noah's burnt offerings are the first recorded sacrifices in the post-flood world. The use of clean animals (for which extra pairs were taken in 7:2) confirms that the distinction between clean and unclean animals was preserved through the flood. The divine response — \"never again will I curse the ground because of humans\" — is the first explicit covenantal promise in the post-flood world, preceding the formal covenant of chapter 9.",
+          "context": "The chapter closes with the most dramatic reversal in the flood narrative: God's assessment of humanity has not changed (\"the human heart is evil from youth\"), yet his response to it changes completely. He will never again destroy the earth. The reason is not that humanity has improved — the same evaluation of 6:5 stands. The reason is the sacrifice: the pleasing aroma of Noah's offering moves God to mercy. The logic is sacrificial-covenantal: the offering covers what the sin cannot."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 6:5",
+              "note": "The diagnosis of v.21 is verbatim from 6:5 — but the conclusion reverses: same heart, opposite divine response. Mercy triumphs over judgment (James 2:13)."
+            },
+            {
+              "ref": "Isa 54:9",
+              "note": "“As I swore that the waters of Noah would no more go over the earth, so I have sworn that I will not be angry with you.” The flood-covenant becomes the template for God’s covenant faithfulness to Israel."
+            },
+            {
+              "ref": "Eph 5:2",
+              "note": "Christ’s sacrifice is a “fragrant offering” (reach nihoah"
+            },
+            {
+              "ref": "Rom 8:20–22",
+              "note": "Creation groans for liberation — the promise of Gen 8:22 (creation continues) points toward the hope of creation’s renewal, not its abandonment."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

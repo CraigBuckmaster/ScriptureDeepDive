@@ -17,13 +17,14 @@
       "verse_start": 1,
       "verse_end": 7,
       "panels": {
-        "ctx": "Between the two ark episodes, the Chronicler places David’s international recognition. Hiram of Tyre sends materials and craftsmen for David’s palace. David takes more wives in Jerusalem and has more sons and daughters. “David knew that the LORD had established him as king over Israel and that his kingdom had been highly exalted for the sake of his people Israel.” The phrase “for the sake of his people” is the Chronicler’s distinctive addition: kingship exists to serve the nation, not the king.",
-        "cross": [
-          {
-            "ref": "2 Sam 5:11–16",
-            "note": "The parallel is close, but the Chronicler adds the theological note about David’s kingdom being “for the sake of his people.”"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 5:11–16",
+              "note": "The parallel is close, but the Chronicler adds the theological note about David’s kingdom being “for the sake of his people.”"
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -41,6 +42,9 @@
               "note": "The phrase lĕmaʿan ʿammō yisrāʾēl (“for the sake of his people Israel”) is characteristic of the Chronicler’s theology. The king is God’s instrument for Israel’s benefit."
             }
           ]
+        },
+        "hist": {
+          "context": "Between the two ark episodes, the Chronicler places David’s international recognition. Hiram of Tyre sends materials and craftsmen for David’s palace. David takes more wives in Jerusalem and has more sons and daughters. “David knew that the LORD had established him as king over Israel and that his kingdom had been highly exalted for the sake of his people Israel.” The phrase “for the sake of his people” is the Chronicler’s distinctive addition: kingship exists to serve the nation, not the king."
         }
       }
     },
@@ -50,13 +54,14 @@
       "verse_start": 8,
       "verse_end": 17,
       "panels": {
-        "ctx": "Two Philistine attacks are repelled through divine guidance. David “inquires of God” before each battle (the verb darash again). The first victory at Baal Perazim: “God has broken out against my enemies.” The second: God tells David to circle behind and attack when he hears marching in the balsam trees. Both victories demonstrate the Chronicler’s pattern: inquire of God → obey instructions → receive victory. “So David’s fame spread throughout every land, and the LORD made all the nations fear him.”",
-        "cross": [
-          {
-            "ref": "2 Sam 5:17–25",
-            "note": "The Samuel parallel. The Chronicler follows it closely, emphasising the inquiry pattern."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 5:17–25",
+              "note": "The Samuel parallel. The Chronicler follows it closely, emphasising the inquiry pattern."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -74,6 +79,9 @@
               "note": "Samuel says David “carried away” (nasaʾ) the Philistine gods; the Chronicler says he “ordered them burned” (yisraphû). The change aligns David’s action with the Deuteronomic command to destroy idols (Deut 7:5)."
             }
           ]
+        },
+        "hist": {
+          "context": "Two Philistine attacks are repelled through divine guidance. David “inquires of God” before each battle (the verb darash again). The first victory at Baal Perazim: “God has broken out against my enemies.” The second: God tells David to circle behind and attack when he hears marching in the balsam trees. Both victories demonstrate the Chronicler’s pattern: inquire of God → obey instructions → receive victory. “So David’s fame spread throughout every land, and the LORD made all the nations fear him.”"
         }
       }
     }

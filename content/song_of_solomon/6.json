@@ -25,17 +25,18 @@
             "paragraph": "\"My beloved has gone down to his garden (gannîm), to the beds of spices\" (v.2). The garden returns. After the crisis of chapter 5, the beloved knows where her lover is: in the garden (her). \"I am my beloved’s and my beloved is mine\" (v.3) — the formula from 2:16 reversed. The shift from \"mine/his\" to \"his/mine\" marks growth: from claiming to belonging."
           }
         ],
-        "ctx": "The Daughters ask where the beloved has gone (v.1). She answers: he has gone to his garden. The crisis is resolved not through dramatic reunion but through quiet knowledge: she knows where he is, and she knows she belongs to him. The mutual-belonging formula evolves: \"I am my beloved’s\" comes first now. She leads with surrender, not possession.",
-        "cross": [
-          {
-            "ref": "Song 2:16",
-            "note": "\"My beloved is mine and I am his\" — the earlier formula. The reversal marks growth."
-          },
-          {
-            "ref": "Gal 2:20",
-            "note": "\"I no longer live, but Christ lives in me\" — the surrender-first identity that echoes the reversed formula."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Song 2:16",
+              "note": "\"My beloved is mine and I am his\" — the earlier formula. The reversal marks growth."
+            },
+            {
+              "ref": "Gal 2:20",
+              "note": "\"I no longer live, but Christ lives in me\" — the surrender-first identity that echoes the reversed formula."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -97,6 +98,9 @@
               "note": "Garrett: the resolution is anticlimactic by design. After the drama of ch 5, the answer is simple: he is in his garden. Love’s crises often resolve quietly."
             }
           ]
+        },
+        "hist": {
+          "context": "The Daughters ask where the beloved has gone (v.1). She answers: he has gone to his garden. The crisis is resolved not through dramatic reunion but through quiet knowledge: she knows where he is, and she knows she belongs to him. The mutual-belonging formula evolves: \"I am my beloved’s\" comes first now. She leads with surrender, not possession."
         }
       }
     },
@@ -114,17 +118,18 @@
             "paragraph": "\"You are as beautiful as Tirzah, my darling, lovely as Jerusalem, majestic as troops with banners\" (v.4). Tirzah means \"beautiful\" and was the early capital of the northern kingdom. The beloved is compared to two capital cities — the beauty of both kingdoms combined. And then: \"majestic as troops with banners\" — her beauty has military force."
           }
         ],
-        "ctx": "The Lover praises the Beloved again: beautiful as Tirzah, lovely as Jerusalem (v.4). He asks her to turn her eyes away because they overwhelm him (v.5). The wasf elements repeat from chapter 4 (hair, teeth, temples). Then a comparison: sixty queens, eighty concubines, virgins without number — but she is unique, the only one, her mother’s favourite (vv.8–9). The Daughters see her and call her blessed (v.9). \"Who is this that appears like the dawn, fair as the moon, bright as the sun, majestic as the stars?\" (v.10).",
-        "cross": [
-          {
-            "ref": "Prov 12:4",
-            "note": "\"A wife of noble character is her husband’s crown\" — the same theology of marital honour."
-          },
-          {
-            "ref": "Rev 21:2",
-            "note": "\"The Holy City, the new Jerusalem, prepared as a bride beautifully dressed\" — Jerusalem as bride, echoing the Song’s city-as-beauty imagery."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 12:4",
+              "note": "\"A wife of noble character is her husband’s crown\" — the same theology of marital honour."
+            },
+            {
+              "ref": "Rev 21:2",
+              "note": "\"The Holy City, the new Jerusalem, prepared as a bride beautifully dressed\" — Jerusalem as bride, echoing the Song’s city-as-beauty imagery."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -206,6 +211,9 @@
               "note": "Garrett: \"majestic as the stars in procession\" — the astronomical imagery elevates the beloved beyond earthly comparison. She is cosmic."
             }
           ]
+        },
+        "hist": {
+          "context": "The Lover praises the Beloved again: beautiful as Tirzah, lovely as Jerusalem (v.4). He asks her to turn her eyes away because they overwhelm him (v.5). The wasf elements repeat from chapter 4 (hair, teeth, temples). Then a comparison: sixty queens, eighty concubines, virgins without number — but she is unique, the only one, her mother’s favourite (vv.8–9). The Daughters see her and call her blessed (v.9). \"Who is this that appears like the dawn, fair as the moon, bright as the sun, majestic as the stars?\" (v.10)."
         }
       }
     }

@@ -25,21 +25,22 @@
             "paragraph": "This declaration is the theological thesis of the chapter and one of the most important statements in the OT. Each individual is accountable for their own sin. The righteous father does not guarantee a righteous son; the wicked father does not condemn a righteous son. Moral identity is personal, not hereditary."
           }
         ],
-        "ctx": "The exiles quoted a proverb: 'The fathers eat sour grapes and the children's teeth are set on edge' — meaning they blamed their suffering on their ancestors' sins. God abolishes this proverb with a three-generation case study: a righteous man (lives), his wicked son (dies), and his righteous grandson (lives). Each generation stands or falls on its own moral conduct. This is Ezekiel's definitive statement on individual responsibility.",
-        "cross": [
-          {
-            "ref": "Jer 31:29-30",
-            "note": "Jeremiah also quotes and refutes the same proverb — both prophets independently combat the theology of inherited guilt."
-          },
-          {
-            "ref": "Deut 24:16",
-            "note": "Fathers shall not be put to death for their children, nor children for their fathers — the legal precedent for individual accountability."
-          },
-          {
-            "ref": "Rom 2:6",
-            "note": "God will render to each according to their works — Paul restates the principle of individual judgment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 31:29-30",
+              "note": "Jeremiah also quotes and refutes the same proverb — both prophets independently combat the theology of inherited guilt."
+            },
+            {
+              "ref": "Deut 24:16",
+              "note": "Fathers shall not be put to death for their children, nor children for their fathers — the legal precedent for individual accountability."
+            },
+            {
+              "ref": "Rom 2:6",
+              "note": "God will render to each according to their works — Paul restates the principle of individual judgment."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Zimmerli identifies the three-generation schema as a casuistic legal form (case law): if a man does X, he lives; if his son does Y, he dies. The priestly-legal structure transforms theology into jurisprudence, reflecting Ezekiel's priestly training."
             }
           ]
+        },
+        "hist": {
+          "context": "The exiles quoted a proverb: 'The fathers eat sour grapes and the children's teeth are set on edge' — meaning they blamed their suffering on their ancestors' sins. God abolishes this proverb with a three-generation case study: a righteous man (lives), his wicked son (dies), and his righteous grandson (lives). Each generation stands or falls on its own moral conduct. This is Ezekiel's definitive statement on individual responsibility."
         }
       }
     },
@@ -117,21 +121,22 @@
             "paragraph": "The verb shuv (turn/return) is the OT's primary word for repentance. It means a complete reversal of direction — not mere regret but a changed life. God pleads: 'Turn! Turn from your evil ways! Why will you die, house of Israel?' The double imperative reveals divine urgency — God does not desire the death of anyone."
           }
         ],
-        "ctx": "The chapter climaxes with one of the most important theological declarations in the OT: God takes no pleasure in the death of the wicked but desires that they turn and live (v.23, restated in 33:11). This transforms the portrait of God from a judge eager to punish to a father pleading for his children to choose life. The invitation to repent is not an afterthought but the point of the entire oracle.",
-        "cross": [
-          {
-            "ref": "Ezek 33:11",
-            "note": "As I live, I take no pleasure in the death of the wicked — the same declaration restated after Jerusalem's fall."
-          },
-          {
-            "ref": "2 Pet 3:9",
-            "note": "The Lord is not slow about his promise but is patient, not wishing any to perish but all to come to repentance — Peter echoes Ezekiel's theology."
-          },
-          {
-            "ref": "Luke 15:7",
-            "note": "There is more joy in heaven over one sinner who repents — Jesus embodies the God who desires repentance."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 33:11",
+              "note": "As I live, I take no pleasure in the death of the wicked — the same declaration restated after Jerusalem's fall."
+            },
+            {
+              "ref": "2 Pet 3:9",
+              "note": "The Lord is not slow about his promise but is patient, not wishing any to perish but all to come to repentance — Peter echoes Ezekiel's theology."
+            },
+            {
+              "ref": "Luke 15:7",
+              "note": "There is more joy in heaven over one sinner who repents — Jesus embodies the God who desires repentance."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -196,6 +201,9 @@
               "note": "Zimmerli sees the dual command ('repent' + 'get a new heart') as reflecting two streams of tradition: the Deuteronomistic call to repentance and the priestly promise of inner transformation. Ezekiel holds both together without resolving the tension — human responsibility and divine grace remain in dialectical relationship."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter climaxes with one of the most important theological declarations in the OT: God takes no pleasure in the death of the wicked but desires that they turn and live (v.23, restated in 33:11). This transforms the portrait of God from a judge eager to punish to a father pleading for his children to choose life. The invitation to repent is not an afterthought but the point of the entire oracle."
         }
       }
     }

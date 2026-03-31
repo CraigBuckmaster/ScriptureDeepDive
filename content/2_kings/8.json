@@ -25,17 +25,18 @@
             "paragraph": "Elisha weeps (v.11) — not for himself but for the future suffering Hazael will inflict on Israel. The prophet sees what the diplomat will become: “You will set fire to their fortified places, kill their young men, dash their children to the ground, and rip open their pregnant women.” Prophetic sight brings prophetic grief."
           }
         ],
-        "ctx": "Two scenes intercut: the Shunammite woman from chapter 4 returns from seven years in Philistia and has her land restored — at the exact moment Gehazi is telling the king about Elisha’s miracle of raising her son. Providence arranges the timing. Then Elisha visits Damascus, where Ben-Hadad is ill. Hazael is sent to ask whether the king will recover. Elisha’s answer is deliberately ambiguous: “Go, say to him, ‘You will certainly recover’ — but the LORD has revealed to me that he will in fact die.” Elisha stares at Hazael and weeps: he sees the atrocities Hazael will commit against Israel. The next day Hazael smothers Ben-Hadad with a wet cloth and seizes the throne.",
-        "cross": [
-          {
-            "ref": "1 Kgs 19:15",
-            "note": "At Horeb, God told Elijah to anoint Hazael king of Aram. Elisha now fulfils this commission — the prophetic word from Sinai reaches Damascus."
-          },
-          {
-            "ref": "Amos 1:3–4",
-            "note": "“For three sins of Damascus, even for four, I will not relent. Because she threshed Gilead with sledges having iron teeth.” Amos condemns the very atrocities Elisha foresees here."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 19:15",
+              "note": "At Horeb, God told Elijah to anoint Hazael king of Aram. Elisha now fulfils this commission — the prophetic word from Sinai reaches Damascus."
+            },
+            {
+              "ref": "Amos 1:3–4",
+              "note": "“For three sins of Damascus, even for four, I will not relent. Because she threshed Gilead with sledges having iron teeth.” Amos condemns the very atrocities Elisha foresees here."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -83,6 +84,9 @@
               "note": "The narrator reports the regicide without moral commentary. The Deuteronomistic historian trusts the reader to supply the judgment: this is what happens when God’s instruments are themselves morally corrupt."
             }
           ]
+        },
+        "hist": {
+          "context": "Two scenes intercut: the Shunammite woman from chapter 4 returns from seven years in Philistia and has her land restored — at the exact moment Gehazi is telling the king about Elisha’s miracle of raising her son. Providence arranges the timing. Then Elisha visits Damascus, where Ben-Hadad is ill. Hazael is sent to ask whether the king will recover. Elisha’s answer is deliberately ambiguous: “Go, say to him, ‘You will certainly recover’ — but the LORD has revealed to me that he will in fact die.” Elisha stares at Hazael and weeps: he sees the atrocities Hazael will commit against Israel. The next day Hazael smothers Ben-Hadad with a wet cloth and seizes the throne."
         }
       }
     },
@@ -92,17 +96,18 @@
       "verse_start": 16,
       "verse_end": 29,
       "panels": {
-        "ctx": "The focus shifts to Judah. Joram son of Jehoshaphat becomes king — and “walked in the ways of the kings of Israel, as the house of Ahab had done, for he married a daughter of Ahab.” The Omride corruption has crossed the border through marriage alliance. Edom revolts; Judah loses control. Then Ahaziah succeeds and continues the same pattern. The stage is set for Jehu’s revolution: both kingdoms are now ruled by kings connected to the house of Ahab, and both are ripe for judgment.",
-        "cross": [
-          {
-            "ref": "1 Kgs 16:31",
-            "note": "Ahab’s marriage to Jezebel introduced Baal worship. Now the pattern repeats: intermarriage with Ahab’s house imports Ahab’s sins into Judah."
-          },
-          {
-            "ref": "2 Chr 21:6",
-            "note": "The parallel in Chronicles adds that Joram murdered his brothers upon taking the throne — further evidence of the Omride corruption spreading through the marriage alliance."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 16:31",
+              "note": "Ahab’s marriage to Jezebel introduced Baal worship. Now the pattern repeats: intermarriage with Ahab’s house imports Ahab’s sins into Judah."
+            },
+            {
+              "ref": "2 Chr 21:6",
+              "note": "The parallel in Chronicles adds that Joram murdered his brothers upon taking the throne — further evidence of the Omride corruption spreading through the marriage alliance."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -138,6 +143,9 @@
               "note": "The lamplight metaphor — “to maintain a lamp for David” — means that the Davidic line continues to burn even when individual kings are faithless. The promise to David is unconditional in its persistence, even though individual kings face consequences."
             }
           ]
+        },
+        "hist": {
+          "context": "The focus shifts to Judah. Joram son of Jehoshaphat becomes king — and “walked in the ways of the kings of Israel, as the house of Ahab had done, for he married a daughter of Ahab.” The Omride corruption has crossed the border through marriage alliance. Edom revolts; Judah loses control. Then Ahaziah succeeds and continues the same pattern. The stage is set for Jehu’s revolution: both kingdoms are now ruled by kings connected to the house of Ahab, and both are ripe for judgment."
         }
       }
     }

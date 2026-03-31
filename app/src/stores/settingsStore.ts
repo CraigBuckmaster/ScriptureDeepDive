@@ -21,12 +21,14 @@ interface SettingsState {
   fontSize: number;
   vhlEnabled: boolean;
   bookListMode: string;
+  studyCoachEnabled: boolean;
   isHydrated: boolean;
 
   setTranslation: (t: string) => void;
   setFontSize: (s: number) => void;
   setVhlEnabled: (v: boolean) => void;
   setBookListMode: (m: string) => void;
+  setStudyCoachEnabled: (v: boolean) => void;
   hydrate: () => Promise<void>;
 }
 
@@ -35,6 +37,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
   fontSize: 16,
   vhlEnabled: true,
   bookListMode: 'canonical',
+  studyCoachEnabled: true,
   isHydrated: false,
 
   setTranslation: async (t) => {
@@ -58,18 +61,25 @@ export const useSettingsStore = create<SettingsState>((set) => ({
     await setPreference('bookListMode', m);
   },
 
+  setStudyCoachEnabled: async (v) => {
+    set({ studyCoachEnabled: v });
+    await setPreference('studyCoachEnabled', v ? '1' : '0');
+  },
+
   hydrate: async () => {
     try {
       const t = await getPreference('translation');
       const f = await getPreference('fontSize');
       const v = await getPreference('vhlEnabled');
       const blm = await getPreference('bookListMode');
+      const sc = await getPreference('studyCoachEnabled');
 
       set({
         translation: (t === 'esv' ? 'esv' : 'niv'),
         fontSize: f ? Math.min(24, Math.max(12, parseInt(f, 10) || 16)) : 16,
         vhlEnabled: v !== '0',
         bookListMode: blm === 'canonical' ? 'canonical' : 'thematic',
+        studyCoachEnabled: sc !== '0',
         isHydrated: true,
       });
     } catch (err) {

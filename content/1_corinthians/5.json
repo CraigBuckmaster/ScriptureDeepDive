@@ -31,21 +31,22 @@
             "paragraph": "The noun zymē (leaven/yeast) in vv. 6–8 draws on the Passover tradition of removing all leaven from the household (Exod 12:15). Paul deploys the metaphor: a small amount of yeast works through the whole batch of dough. Tolerating the incestuous man’s sin will corrupt the entire community. The command to ‘get rid of the old yeast’ (v. 7) and the identification of Christ as ‘our Passover lamb’ (to pascha hēmōn, v. 7) ground the ethical imperative in Christology: because Christ has been sacrificed, the community must live in purity."
           }
         ],
-        "ctx": "Paul now turns from the general problem of divisions (chs. 1–4) to specific moral failures. The case involves a man cohabiting with his stepmother — probably his father’s wife after the father’s death or divorce. Both Leviticus 18:8 and Roman law (the lex Iulia) prohibited such unions. The Corinthian church’s response was not grief but arrogance (v. 2): they may have interpreted their tolerance as evidence of spiritual maturity or ‘freedom’ in Christ. Paul’s instruction to ‘hand this man over to Satan for the destruction of the flesh’ (v. 5) is one of the most debated phrases in the letter. It likely refers to excommunication — removal from the protective sphere of the church into the domain of Satan — with the hope that physical or social consequences will produce repentance and ultimate salvation.",
-        "cross": [
-          {
-            "ref": "Lev 18:8",
-            "note": "The Torah explicitly prohibits uncovering the nakedness of one’s father’s wife — the offence Paul addresses here."
-          },
-          {
-            "ref": "Matt 18:15–18",
-            "note": "Jesus’ instructions on church discipline provide the dominical precedent for the communal judgment Paul commands."
-          },
-          {
-            "ref": "1 Tim 1:20",
-            "note": "Paul mentions handing Hymenaeus and Alexander over to Satan ‘to be taught not to blaspheme’ — a parallel remedial use of excommunication."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 18:8",
+              "note": "The Torah explicitly prohibits uncovering the nakedness of one’s father’s wife — the offence Paul addresses here."
+            },
+            {
+              "ref": "Matt 18:15–18",
+              "note": "Jesus’ instructions on church discipline provide the dominical precedent for the communal judgment Paul commands."
+            },
+            {
+              "ref": "1 Tim 1:20",
+              "note": "Paul mentions handing Hymenaeus and Alexander over to Satan ‘to be taught not to blaspheme’ — a parallel remedial use of excommunication."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Thiselton connects the leaven metaphor to the broader Pauline pattern of indicative-imperative: the indicative (‘Christ our Passover has been sacrificed’) grounds the imperative (‘get rid of the old leaven’). The order is theologically non-negotiable: action follows from identity, not the reverse."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul now turns from the general problem of divisions (chs. 1–4) to specific moral failures. The case involves a man cohabiting with his stepmother — probably his father’s wife after the father’s death or divorce. Both Leviticus 18:8 and Roman law (the lex Iulia) prohibited such unions. The Corinthian church’s response was not grief but arrogance (v. 2): they may have interpreted their tolerance as evidence of spiritual maturity or ‘freedom’ in Christ. Paul’s instruction to ‘hand this man over to Satan for the destruction of the flesh’ (v. 5) is one of the most debated phrases in the letter. It likely refers to excommunication — removal from the protective sphere of the church into the domain of Satan — with the hope that physical or social consequences will produce repentance and ultimate salvation."
         }
       }
     },
@@ -131,21 +135,22 @@
             "paragraph": "The verb krinō (to judge) appears five times in vv. 12–13, creating a concentrated meditation on the proper scope of Christian judgment. Paul distinguishes between judging outsiders (which is God’s prerogative) and judging insiders (which is the church’s responsibility). The distinction directly contradicts the Corinthians’ practice: they were judging the world through lawsuits (6:1–8) while failing to judge the sinner within their own community. Paul’s quotation of Deut 17:7 / 19:19 / 22:21 (‘Expel the wicked person from among you’) roots ecclesial discipline in Torah."
           }
         ],
-        "ctx": "Paul clarifies a misunderstanding from an earlier (now lost) letter (v. 9): when he told them not to associate with sexually immoral people, he did not mean pagans generally — that would require leaving the world entirely. He meant believers who persist in flagrant sin while claiming the name of Christ. The vice list in v. 11 (sexually immoral, greedy, idolaters, slanderers, drunkards, swindlers) is not exhaustive but representative of the moral failures that warrant communal discipline. The closing quotation from Deuteronomy (‘Expel the wicked person from among you’) connects the New Testament church’s practice to Israel’s covenant community discipline.",
-        "cross": [
-          {
-            "ref": "Deut 17:7",
-            "note": "The direct source of Paul’s concluding command — the formula used in Israel’s covenant community to execute judgment on serious offenders."
-          },
-          {
-            "ref": "Matt 18:17",
-            "note": "Jesus’ instruction to treat the unrepentant sinner as ‘a pagan or a tax collector’ parallels Paul’s call for exclusion of the persistently immoral."
-          },
-          {
-            "ref": "2 Thess 3:14–15",
-            "note": "Paul instructs the Thessalonians to ‘take special note’ of the disobedient and not associate with them, while still warning them as brothers."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 17:7",
+              "note": "The direct source of Paul’s concluding command — the formula used in Israel’s covenant community to execute judgment on serious offenders."
+            },
+            {
+              "ref": "Matt 18:17",
+              "note": "Jesus’ instruction to treat the unrepentant sinner as ‘a pagan or a tax collector’ parallels Paul’s call for exclusion of the persistently immoral."
+            },
+            {
+              "ref": "2 Thess 3:14–15",
+              "note": "Paul instructs the Thessalonians to ‘take special note’ of the disobedient and not associate with them, while still warning them as brothers."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -210,6 +215,9 @@
               "note": "Thiselton observes that the Deuteronomy formula exarate ton ponēron ex hymōn autōn (‘expel the wicked person from among you’) is a performative utterance: by quoting it, Paul authorises the community to act. The OT formula becomes a NT ecclesial speech-act."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul clarifies a misunderstanding from an earlier (now lost) letter (v. 9): when he told them not to associate with sexually immoral people, he did not mean pagans generally — that would require leaving the world entirely. He meant believers who persist in flagrant sin while claiming the name of Christ. The vice list in v. 11 (sexually immoral, greedy, idolaters, slanderers, drunkards, swindlers) is not exhaustive but representative of the moral failures that warrant communal discipline. The closing quotation from Deuteronomy (‘Expel the wicked person from among you’) connects the New Testament church’s practice to Israel’s covenant community discipline."
         }
       }
     }

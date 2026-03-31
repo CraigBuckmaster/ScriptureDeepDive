@@ -37,17 +37,18 @@
             "paragraph": "The ʾîš bĕliyyaʿal (worthless person) in vv. 12–15 is a deceiver who signals with winks and shuffling feet. Bĕliyyaʿal literally means 'without profit' or 'without rising' — a person of no moral value. In later usage it becomes virtually a proper name for extreme evil (cf. 2 Cor 6:15, Belial)."
           }
         ],
-        "ctx": "Chapter 6 collects four distinct warnings: financial surety (vv.1–5), laziness (vv.6–11), the troublemaker (vv.12–15), and the seven abominations (vv.16–19), before returning to the adulteress (vv.20–35). The ant passage (vv.6–11) is one of Proverbs' most famous — wisdom observed in creation, not just received in instruction. The ant has no supervisor, yet acts with perfect diligence. The sluggard is not just lazy; he is refusing to read the lessons written into creation.",
-        "cross": [
-          {
-            "ref": "Prov 24:30–34",
-            "note": "The second ant passage — an extended narrative version of vv.9–11: the narrator walks past the sluggard's field and sees the thorns and weeds, drawing the same conclusion."
-          },
-          {
-            "ref": "2 Thess 3:10",
-            "note": "Paul's instruction: \"the one who is unwilling to work shall not eat\" echoes the Proverbs logic that diligence is connected to provision, and idleness to poverty."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 24:30–34",
+              "note": "The second ant passage — an extended narrative version of vv.9–11: the narrator walks past the sluggard's field and sees the thorns and weeds, drawing the same conclusion."
+            },
+            {
+              "ref": "2 Thess 3:10",
+              "note": "Paul's instruction: \"the one who is unwilling to work shall not eat\" echoes the Proverbs logic that diligence is connected to provision, and idleness to poverty."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -112,6 +113,9 @@
               "note": "The NET note on the 'six things the LORD hates, seven that are detestable to him' discusses the X / X+1 numerical pattern (also Prov 30:15–33; Amos 1–2; Job 5:19). The pattern suggests completeness with a climax — the seventh item is the culminating point. Here the social sin (sowing discord among brothers) is the apex of the list of individual sins."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 6 collects four distinct warnings: financial surety (vv.1–5), laziness (vv.6–11), the troublemaker (vv.12–15), and the seven abominations (vv.16–19), before returning to the adulteress (vv.20–35). The ant passage (vv.6–11) is one of Proverbs' most famous — wisdom observed in creation, not just received in instruction. The ant has no supervisor, yet acts with perfect diligence. The sluggard is not just lazy; he is refusing to read the lessons written into creation."
         }
       }
     },
@@ -135,17 +139,18 @@
             "paragraph": "The adulterer \"has no sense\" (ḥāsar lēb, literally \"lacks heart/mind\"). This is Proverbs' standard diagnosis of the fool: not primarily wickedness but profound stupidity about how reality works. He thinks he is gaining something; he is destroying himself."
           }
         ],
-        "ctx": "The seven abominations list (vv.16–19) is notable for what tops it — haughty eyes — and what ends it: \"a person who stirs up conflict in the community.\" The list traces an inward-to-outward movement: eyes (attitude), tongue (words), hands (violence), heart (planning), feet (action), false witness (speech), community conflict (social destruction). The adulteress passage (vv.20–35) that follows uses fire imagery (vv.27–28) to make the point graphically: adultery is picking up fire in your lap and expecting not to be burned.",
-        "cross": [
-          {
-            "ref": "Mark 7:21–22",
-            "note": "Jesus' list of evils from the heart — 'sexual immorality, theft, murder, adultery' — overlaps significantly with the seven abominations of 6:16–19, confirming the sage's diagnosis of human corruption."
-          },
-          {
-            "ref": "Exod 20:14, 17",
-            "note": "The adultery warning in vv. 20–35 extends the Decalogue's prohibition. Proverbs does what the law alone cannot: it shows the practical consequences — financial ruin, social shame, and the husband's relentless fury."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mark 7:21–22",
+              "note": "Jesus' list of evils from the heart — 'sexual immorality, theft, murder, adultery' — overlaps significantly with the seven abominations of 6:16–19, confirming the sage's diagnosis of human corruption."
+            },
+            {
+              "ref": "Exod 20:14, 17",
+              "note": "The adultery warning in vv. 20–35 extends the Decalogue's prohibition. Proverbs does what the law alone cannot: it shows the practical consequences — financial ruin, social shame, and the husband's relentless fury."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -210,6 +215,9 @@
               "note": "The NET note on chasar-lev ('lacking heart/mind') explains this is a standard Hebrew idiom for stupidity or moral obtuseness (also Prov 7:7; 9:4, 16; 10:13; 11:12; 12:11). The note traces the idiom: having a heart = wisdom orientation; lacking a heart = the absence of that orientation. The adulterer is not evil so much as fundamentally witless."
             }
           ]
+        },
+        "hist": {
+          "context": "The seven abominations list (vv.16–19) is notable for what tops it — haughty eyes — and what ends it: \"a person who stirs up conflict in the community.\" The list traces an inward-to-outward movement: eyes (attitude), tongue (words), hands (violence), heart (planning), feet (action), false witness (speech), community conflict (social destruction). The adulteress passage (vv.20–35) that follows uses fire imagery (vv.27–28) to make the point graphically: adultery is picking up fire in your lap and expecting not to be burned."
         }
       }
     }

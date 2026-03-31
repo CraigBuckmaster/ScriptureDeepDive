@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 3,
       "panels": {
-        "ctx": "“In the spring, at the time when kings go off to war, Joab led out the armed forces.” In Samuel, this verse (2 Sam 11:1) launches the Bathsheba-Uriah narrative. The Chronicler uses the same opening but skips to the fall of Rabbah. 2 Samuel 11–12 — adultery, murder, Nathan’s confrontation, the dead child — is completely absent. David takes Rabbah’s crown and puts the Ammonites to forced labour. The Chronicler’s David never sins with Bathsheba, never murders Uriah, never hears “You are the man!” This is the most significant omission in the entire book.",
-        "cross": [
-          {
-            "ref": "2 Sam 11:1–12:25",
-            "note": "The Bathsheba affair — entirely absent from Chronicles. The Chronicler’s David is the David of worship and temple, not the David of sin and repentance."
-          },
-          {
-            "ref": "2 Sam 12:26–31",
-            "note": "The capture of Rabbah — which the Chronicler preserves. Only the military conclusion is retained; the moral crisis is erased."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 11:1–12:25",
+              "note": "The Bathsheba affair — entirely absent from Chronicles. The Chronicler’s David is the David of worship and temple, not the David of sin and repentance."
+            },
+            {
+              "ref": "2 Sam 12:26–31",
+              "note": "The capture of Rabbah — which the Chronicler preserves. Only the military conclusion is retained; the moral crisis is erased."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "The transition from “Joab led out the armed forces” directly to “Joab attacked Rabbah” compresses an entire year of narrative (2 Sam 11:1–12:26) into a single verse break."
             }
           ]
+        },
+        "hist": {
+          "context": "“In the spring, at the time when kings go off to war, Joab led out the armed forces.” In Samuel, this verse (2 Sam 11:1) launches the Bathsheba-Uriah narrative. The Chronicler uses the same opening but skips to the fall of Rabbah. 2 Samuel 11–12 — adultery, murder, Nathan’s confrontation, the dead child — is completely absent. David takes Rabbah’s crown and puts the Ammonites to forced labour. The Chronicler’s David never sins with Bathsheba, never murders Uriah, never hears “You are the man!” This is the most significant omission in the entire book."
         }
       }
     },
@@ -54,17 +58,18 @@
       "verse_start": 4,
       "verse_end": 8,
       "panels": {
-        "ctx": "Three Philistine warriors of extraordinary size are killed by David’s men: Sibbecai kills Sippai at Gezer; Elhanan kills Lahmi brother of Goliath (in Samuel: Elhanan kills Goliath himself — a famous textual problem); Jonathan son of Shimea kills a six-fingered giant at Gath. The Chronicler closes: “These were descendants of the giants in Gath, and they fell at the hands of David and his men.” Brief, martial, and uncomplicated.",
-        "cross": [
-          {
-            "ref": "2 Sam 21:18–22",
-            "note": "The parallel. The Elhanan/Goliath discrepancy is one of the most discussed textual problems in the OT."
-          },
-          {
-            "ref": "1 Sam 17:4–51",
-            "note": "David kills Goliath. The Chronicler omits this famous story entirely but preserves these lesser-known giant-killings."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 21:18–22",
+              "note": "The parallel. The Elhanan/Goliath discrepancy is one of the most discussed textual problems in the OT."
+            },
+            {
+              "ref": "1 Sam 17:4–51",
+              "note": "David kills Goliath. The Chronicler omits this famous story entirely but preserves these lesser-known giant-killings."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -82,6 +87,9 @@
               "note": "The Hebrew of “Lahmi brother of Goliath” (ʾet-lahmî ʾahî golyat) may be a secondary reading derived from misreading bet-hallāhmî (“the Bethlehemite”) in the Samuel parallel."
             }
           ]
+        },
+        "hist": {
+          "context": "Three Philistine warriors of extraordinary size are killed by David’s men: Sibbecai kills Sippai at Gezer; Elhanan kills Lahmi brother of Goliath (in Samuel: Elhanan kills Goliath himself — a famous textual problem); Jonathan son of Shimea kills a six-fingered giant at Gath. The Chronicler closes: “These were descendants of the giants in Gath, and they fell at the hands of David and his men.” Brief, martial, and uncomplicated."
         }
       }
     }

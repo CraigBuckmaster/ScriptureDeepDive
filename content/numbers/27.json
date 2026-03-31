@@ -25,17 +25,18 @@
             "paragraph": "The daughters' legal argument: their father's name and inheritance should not be lost because he died without male heirs. The appeal is to covenant family continuity — no Israelite household should be extinguished from the inheritance."
           }
         ],
-        "ctx": "The five daughters of Zelophehad (Mahlah, Noah, Hoglah, Milcah, Tirzah) bring their case to Moses, Eleazar, and the whole assembly: their father died without male heirs. They request his inheritance pass to them. Moses brings it to God; God rules in their favour and establishes new law — daughters inherit when there are no sons. The ruling establishes a comprehensive inheritance priority: son, daughter, brothers, father's brothers, nearest clan relative.",
-        "cross": [
-          {
-            "ref": "Josh 17:3-4",
-            "note": "\"Zelophehad had no sons but only daughters, whose names were Mahlah, Noah, Hoglah, Milcah and Tirzah. They went to Eleazar the priest, Joshua son of Nun, and the leaders and said, 'The Lord commanded Moses to give us an inheritance among our brothers.' So Joshua gave them an inheritance among their father's brothers.\""
-          },
-          {
-            "ref": "Gal 3:28",
-            "note": "\"There is neither Jew nor Gentile, neither slave nor free, nor is there male and female, for you are all one in Christ Jesus.\" The NT principle of equality in inheritance finds OT anticipation in the Zelophehad ruling."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 17:3-4",
+              "note": "\"Zelophehad had no sons but only daughters, whose names were Mahlah, Noah, Hoglah, Milcah and Tirzah. They went to Eleazar the priest, Joshua son of Nun, and the leaders and said, 'The Lord commanded Moses to give us an inheritance among our brothers.' So Joshua gave them an inheritance among their father's brothers.\""
+            },
+            {
+              "ref": "Gal 3:28",
+              "note": "\"There is neither Jew nor Gentile, neither slave nor free, nor is there male and female, for you are all one in Christ Jesus.\" The NT principle of equality in inheritance finds OT anticipation in the Zelophehad ruling."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Ashley: The narrative context of daughters and Joshua in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "The five daughters of Zelophehad (Mahlah, Noah, Hoglah, Milcah, Tirzah) bring their case to Moses, Eleazar, and the whole assembly: their father died without male heirs. They request his inheritance pass to them. Moses brings it to God; God rules in their favour and establishes new law — daughters inherit when there are no sons. The ruling establishes a comprehensive inheritance priority: son, daughter, brothers, father's brothers, nearest clan relative."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "The commissioning gesture for Joshua — the same hand-laying used for ordination (Lev 8) and substitution (Num 8). Moses transfers his authority to Joshua through the physical gesture before Eleazar and the whole assembly."
           }
         ],
-        "ctx": "God shows Moses the land from Mount Abarim — he will see it but not enter it. Moses's response is entirely pastoral: his first concern is not his own fate but the community's future. \"May the Lord appoint a man over this community so that they will not be like sheep without a shepherd.\" God appoints Joshua — \"a man in whom is the spirit\" — and Moses commissions him before Eleazar and the whole assembly through hand-laying and public authorisation.",
-        "cross": [
-          {
-            "ref": "Deut 34:9",
-            "note": "\"Now Joshua son of Nun was filled with the spirit of wisdom because Moses had laid his hands on him. So the Israelites listened to him and did what the Lord had commanded Moses.\""
-          },
-          {
-            "ref": "John 10:11",
-            "note": "\"I am the good shepherd. The good shepherd lays down his life for the sheep.\" Moses's prayer for a shepherd-leader (v.17) is answered first by Joshua and ultimately by Christ — the shepherd who not only guides but dies for the flock."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 34:9",
+              "note": "\"Now Joshua son of Nun was filled with the spirit of wisdom because Moses had laid his hands on him. So the Israelites listened to him and did what the Lord had commanded Moses.\""
+            },
+            {
+              "ref": "John 10:11",
+              "note": "\"I am the good shepherd. The good shepherd lays down his life for the sheep.\" Moses's prayer for a shepherd-leader (v.17) is answered first by Joshua and ultimately by Christ — the shepherd who not only guides but dies for the flock."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -192,6 +197,9 @@
               "note": "Ashley: The narrative context of daughters and Joshua in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "God shows Moses the land from Mount Abarim — he will see it but not enter it. Moses's response is entirely pastoral: his first concern is not his own fate but the community's future. \"May the Lord appoint a man over this community so that they will not be like sheep without a shepherd.\" God appoints Joshua — \"a man in whom is the spirit\" — and Moses commissions him before Eleazar and the whole assembly through hand-laying and public authorisation."
         }
       }
     }

@@ -31,22 +31,26 @@
             "paragraph": "The decree was found at Ecbatana (modern Hamadan, Iran) — the Median summer capital, not in Babylon where Tattenai suggested searching. The Persian court moved seasonally; records followed the king."
           }
         ],
-        "hist": "Ecbatana was the old Median capital, used as a summer residence by Persian kings. Royal archives were maintained at multiple capitals (Babylon, Susa, Ecbatana, Persepolis). The fact that the decree was found at Ecbatana, not Babylon, shows Cyrus may have issued it during a summer stay. The archival discovery is entirely consistent with known Persian administrative practice.",
-        "ctx": "Darius goes beyond confirming Cyrus’s decree — he expands it. He orders imperial funding from Trans-Euphrates tax revenues, commands Tattenai to stay away, and threatens death to anyone who interferes. The investigation that could have ended the project instead secures it with greater resources than before. God turns bureaucratic threat into bureaucratic blessing.",
-        "cross": [
-          {
-            "ref": "Ezra 1:1–4",
-            "note": "The original Cyrus decree — now confirmed by Darius from the archives."
-          },
-          {
-            "ref": "Prov 21:1",
-            "note": "\"The king’s heart is a stream of water in the hand of the LORD\" — demonstrated again through Darius."
-          },
-          {
-            "ref": "Isa 45:13",
-            "note": "\"He will rebuild my city and set my exiles free\" — fulfilled through successive Persian kings."
-          }
-        ],
+        "hist": {
+          "historical": "Ecbatana was the old Median capital, used as a summer residence by Persian kings. Royal archives were maintained at multiple capitals (Babylon, Susa, Ecbatana, Persepolis). The fact that the decree was found at Ecbatana, not Babylon, shows Cyrus may have issued it during a summer stay. The archival discovery is entirely consistent with known Persian administrative practice.",
+          "context": "Darius goes beyond confirming Cyrus’s decree — he expands it. He orders imperial funding from Trans-Euphrates tax revenues, commands Tattenai to stay away, and threatens death to anyone who interferes. The investigation that could have ended the project instead secures it with greater resources than before. God turns bureaucratic threat into bureaucratic blessing."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezra 1:1–4",
+              "note": "The original Cyrus decree — now confirmed by Darius from the archives."
+            },
+            {
+              "ref": "Prov 21:1",
+              "note": "\"The king’s heart is a stream of water in the hand of the LORD\" — demonstrated again through Darius."
+            },
+            {
+              "ref": "Isa 45:13",
+              "note": "\"He will rebuild my city and set my exiles free\" — fulfilled through successive Persian kings."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -142,22 +146,26 @@
             "paragraph": "The Passover celebration (pesaḥ) immediately follows the dedication. The sequence is deliberate: the temple is dedicated, then the founding festival of Israel’s identity is celebrated within it. Worship and redemption history converge."
           }
         ],
-        "hist": "The temple was completed on 3 Adar (March 516 BC) — exactly 70 years after its destruction in 586 BC. The precision of the Jeremiah fulfilment is striking: from destruction to completion, seventy years to the month. The dedication was modest compared to Solomon’s (100 bulls vs 22,000) but the joy was genuine.",
-        "ctx": "The Aramaic section ends at v.18, and the text returns to Hebrew for the Passover narrative (vv.19–22). The language shift marks a transition from imperial-administrative to covenant-liturgical. The Passover is described in Hebrew because it belongs to Israel’s internal life, not to Persian administration.",
-        "cross": [
-          {
-            "ref": "1 Kgs 8:62–66",
-            "note": "Solomon’s temple dedication — the model this celebration echoes on a smaller scale."
-          },
-          {
-            "ref": "Exod 12:1–14",
-            "note": "The original Passover — now celebrated in a rebuilt temple by a restored people."
-          },
-          {
-            "ref": "2 Chr 35:1–19",
-            "note": "Josiah’s great Passover — the last before the exile. Ezra’s Passover resumes the tradition."
-          }
-        ],
+        "hist": {
+          "historical": "The temple was completed on 3 Adar (March 516 BC) — exactly 70 years after its destruction in 586 BC. The precision of the Jeremiah fulfilment is striking: from destruction to completion, seventy years to the month. The dedication was modest compared to Solomon’s (100 bulls vs 22,000) but the joy was genuine.",
+          "context": "The Aramaic section ends at v.18, and the text returns to Hebrew for the Passover narrative (vv.19–22). The language shift marks a transition from imperial-administrative to covenant-liturgical. The Passover is described in Hebrew because it belongs to Israel’s internal life, not to Persian administration."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 8:62–66",
+              "note": "Solomon’s temple dedication — the model this celebration echoes on a smaller scale."
+            },
+            {
+              "ref": "Exod 12:1–14",
+              "note": "The original Passover — now celebrated in a rebuilt temple by a restored people."
+            },
+            {
+              "ref": "2 Chr 35:1–19",
+              "note": "Josiah’s great Passover — the last before the exile. Ezra’s Passover resumes the tradition."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

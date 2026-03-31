@@ -31,21 +31,22 @@
             "paragraph": "A rare compound verb (ἕτερος + διδάσκω) found only in the Pastorals (here and 6:3), meaning to teach something qualitatively other than the apostolic deposit. The prefix ἕτερος implies not merely additional teaching but doctrinally alien content. This is the Pastorals’ signature term for heresy and sets the polemical agenda for the entire letter."
           }
         ],
-        "ctx": "Ephesus in the mid-60s AD was a cosmopolitan center where Jewish and Hellenistic religious traditions intersected. The false teaching Paul combats appears to combine Jewish elements (myths, genealogies, law-speculation in vv. 4, 7) with an ascetic tendency that will become explicit in 4:1–5. The reference to genealogies (γενεαλογίαι) may point to speculative expansions of OT family trees (possibly proto-Gnostic emanation schemes) or Hellenistic Jewish haggadic traditions. Ephesus was already familiar with religious syncretism, as Paul’s earlier ministry there involved confrontation with both Jewish exorcists and devotees of Artemis (Acts 19).",
-        "cross": [
-          {
-            "ref": "Galatians 1:6–9",
-            "note": "Paul’s insistence on a single authoritative gospel and his anathema against those who preach a different one provides the theological precedent for his command against ἑτεροδιδασκαλία here."
-          },
-          {
-            "ref": "Titus 1:14",
-            "note": "The parallel warning against Jewish myths in the letter to Titus confirms that the same type of false teaching was spreading across multiple Pauline churches during this period."
-          },
-          {
-            "ref": "Acts 20:29–30",
-            "note": "Paul’s farewell speech to the Ephesian elders predicted that savage wolves would arise from within the church—a prophecy now being fulfilled in the very community Timothy oversees."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Galatians 1:6–9",
+              "note": "Paul’s insistence on a single authoritative gospel and his anathema against those who preach a different one provides the theological precedent for his command against ἑτεροδιδασκαλία here."
+            },
+            {
+              "ref": "Titus 1:14",
+              "note": "The parallel warning against Jewish myths in the letter to Titus confirms that the same type of false teaching was spreading across multiple Pauline churches during this period."
+            },
+            {
+              "ref": "Acts 20:29–30",
+              "note": "Paul’s farewell speech to the Ephesian elders predicted that savage wolves would arise from within the church—a prophecy now being fulfilled in the very community Timothy oversees."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -122,6 +123,9 @@
               "note": "The Ephesian situation involves teachers whose speculations have crossed from legitimate theological inquiry into territory that undermines community formation. The contrast between their εκζητήσεις (speculations/controversies) and God’s οἰκονομία (plan/stewardship) in v. 4 frames the choice starkly: speculative myth-making vs. the divine economy of salvation received by faith. The triple criterion of love, good conscience, and sincere faith functions as a pastoral diagnostic for evaluating any teaching."
             }
           ]
+        },
+        "hist": {
+          "context": "Ephesus in the mid-60s AD was a cosmopolitan center where Jewish and Hellenistic religious traditions intersected. The false teaching Paul combats appears to combine Jewish elements (myths, genealogies, law-speculation in vv. 4, 7) with an ascetic tendency that will become explicit in 4:1–5. The reference to genealogies (γενεαλογίαι) may point to speculative expansions of OT family trees (possibly proto-Gnostic emanation schemes) or Hellenistic Jewish haggadic traditions. Ephesus was already familiar with religious syncretism, as Paul’s earlier ministry there involved confrontation with both Jewish exorcists and devotees of Artemis (Acts 19)."
         }
       }
     },
@@ -139,17 +143,18 @@
             "paragraph": "An adverb derived from νόμος (nomos, law), creating a deliberate wordplay: the law is good if used ‘law-fully’—that is, in accordance with its intended purpose. BDAG defines it as ‘in conformity with rules or standards.’ Paul’s point is not antinomian; the law retains a valid function in exposing sin, but it was never designed as a vehicle for speculative genealogies or self-righteous display."
           }
         ],
-        "ctx": "Paul’s nuanced view of the Torah’s function here echoes Romans 7:12 (‘the law is holy, righteous and good’) while insisting on its proper use. The vice list in vv. 9–10 follows a pattern loosely aligned with the Decalogue, suggesting Paul sees the law’s primary function as identifying and condemning sin. The phrase ‘the glorious gospel of the blessed God’ (v. 11) is striking in its doxological language and sets the gospel as the standard against which all teaching must be measured.",
-        "cross": [
-          {
-            "ref": "Romans 7:7–12",
-            "note": "Paul’s earlier reflection on the law’s purpose—not to produce righteousness but to reveal sin—provides the theological foundation for his insistence here that the law is good when used properly."
-          },
-          {
-            "ref": "Galatians 3:19–24",
-            "note": "The law as a guardian (παιδαγωγός) leading to Christ parallels the Pastorals’ view that the law’s function is pedagogical and revelatory, not soteriological."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Romans 7:7–12",
+              "note": "Paul’s earlier reflection on the law’s purpose—not to produce righteousness but to reveal sin—provides the theological foundation for his insistence here that the law is good when used properly."
+            },
+            {
+              "ref": "Galatians 3:19–24",
+              "note": "The law as a guardian (παιδαγωγός) leading to Christ parallels the Pastorals’ view that the law’s function is pedagogical and revelatory, not soteriological."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -210,6 +215,9 @@
               "note": "The vice catalogue functions simultaneously as moral taxonomy and social rhetoric. By linking the opponents’ teaching to behaviors universally condemned in Greco-Roman moral philosophy, Paul delegitimizes their position not only theologically but socially. The terminal phrase ‘according to the gospel of the glory of the blessed God’ establishes the gospel—not the law, and certainly not speculative tradition—as the ultimate criterion of sound teaching."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul’s nuanced view of the Torah’s function here echoes Romans 7:12 (‘the law is holy, righteous and good’) while insisting on its proper use. The vice list in vv. 9–10 follows a pattern loosely aligned with the Decalogue, suggesting Paul sees the law’s primary function as identifying and condemning sin. The phrase ‘the glorious gospel of the blessed God’ (v. 11) is striking in its doxological language and sets the gospel as the standard against which all teaching must be measured."
         }
       }
     },
@@ -233,21 +241,22 @@
             "paragraph": "Paul calls himself the πρῶτος (foremost, chief) of sinners—not merely the worst chronologically but the paradigmatic sinner. BDAG gives the sense as ‘most prominent.’ Paul’s self-designation functions as a theological argument: if the worst sinner can receive mercy, then no one is beyond the reach of Christ’s saving work."
           }
         ],
-        "ctx": "Paul’s autobiographical digression (vv. 12–17) is not mere personal reminiscence but a carefully constructed paradigm. By narrating his own transformation from blasphemer and persecutor (cf. Acts 8:3; 9:1–2; Gal 1:13) to apostle, he demonstrates the very gospel he commissions Timothy to defend. The closing charge (vv. 18–20) names Hymenaeus and Alexander as examples of those who have ‘shipwrecked’ their faith—the only individuals named in connection with the Ephesian heresy. Hymenaeus reappears in 2 Tim 2:17, suggesting ongoing influence; Alexander may be the coppersmith of 2 Tim 4:14.",
-        "cross": [
-          {
-            "ref": "Acts 9:1–19",
-            "note": "Paul’s conversion on the Damascus road is the historical event underlying his self-description as the foremost of sinners who received mercy—a paradigm of sovereign grace."
-          },
-          {
-            "ref": "1 Corinthians 15:9–10",
-            "note": "Paul’s earlier confession of being the least of the apostles because he persecuted the church provides a parallel to his ‘chief of sinners’ language here, though the Pastorals intensify the self-abasement."
-          },
-          {
-            "ref": "2 Timothy 2:17–18",
-            "note": "Hymenaeus reappears in Paul’s second letter to Timothy, still teaching falsehood (that the resurrection has already occurred), confirming the persistence of the Ephesian heresy."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 9:1–19",
+              "note": "Paul’s conversion on the Damascus road is the historical event underlying his self-description as the foremost of sinners who received mercy—a paradigm of sovereign grace."
+            },
+            {
+              "ref": "1 Corinthians 15:9–10",
+              "note": "Paul’s earlier confession of being the least of the apostles because he persecuted the church provides a parallel to his ‘chief of sinners’ language here, though the Pastorals intensify the self-abasement."
+            },
+            {
+              "ref": "2 Timothy 2:17–18",
+              "note": "Hymenaeus reappears in Paul’s second letter to Timothy, still teaching falsehood (that the resurrection has already occurred), confirming the persistence of the Ephesian heresy."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -324,6 +333,9 @@
               "note": "The naming of Hymenaeus and Alexander functions as a public warning to the Ephesian community. The language of ‘shipwreck’ (εναυάγησαν) draws on maritime imagery common in Greco-Roman moral discourse to describe catastrophic moral failure. The disciplinary action of ‘handing over to Satan’ reflects a two-sphere cosmology in which expulsion from the community entails exposure to hostile spiritual forces—a practice attested also in 1 Cor 5:5 and the Qumran community (1QS 2:4–18)."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul’s autobiographical digression (vv. 12–17) is not mere personal reminiscence but a carefully constructed paradigm. By narrating his own transformation from blasphemer and persecutor (cf. Acts 8:3; 9:1–2; Gal 1:13) to apostle, he demonstrates the very gospel he commissions Timothy to defend. The closing charge (vv. 18–20) names Hymenaeus and Alexander as examples of those who have ‘shipwrecked’ their faith—the only individuals named in connection with the Ephesian heresy. Hymenaeus reappears in 2 Tim 2:17, suggesting ongoing influence; Alexander may be the coppersmith of 2 Tim 4:14."
         }
       }
     }

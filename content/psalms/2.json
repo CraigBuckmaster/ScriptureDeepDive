@@ -22,17 +22,18 @@
             "paragraph": "\"Against the LORD and against his anointed (māshîaḥ)\" (v.2). The first appearance of \"Messiah\" in the Psalter. The nations rage against God AND his anointed king. The psalm is both historical (David’s kingship) and prophetic (Christ’s kingdom). The NT quotes it more than any other psalm."
           }
         ],
-        "ctx": "The nations conspire, the rulers plot — against God and his anointed (vv.1–2). Their aim: to break free from divine rule (v.3). God’s response: laughter from heaven (v.4). Then rebuke and terror (v.5). Then the declaration: \"I have installed my king on Zion, my holy mountain\" (v.6). The political rebellion is futile because God’s king is already enthroned.",
-        "cross": [
-          {
-            "ref": "Acts 4:25–28",
-            "note": "The early church quotes Psalm 2:1–2 and identifies the nations as Herod and Pilate conspiring against Christ."
-          },
-          {
-            "ref": "Rev 19:15–16",
-            "note": "\"He will rule them with an iron sceptre\" — Revelation quotes Psalm 2 for the returning Christ."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 4:25–28",
+              "note": "The early church quotes Psalm 2:1–2 and identifies the nations as Herod and Pilate conspiring against Christ."
+            },
+            {
+              "ref": "Rev 19:15–16",
+              "note": "\"He will rule them with an iron sceptre\" — Revelation quotes Psalm 2 for the returning Christ."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -123,6 +124,9 @@
               "note": "Goldingay: the shift from earth to heaven (v.4) reframes everything. What looks threatening from below looks comic from above. Perspective determines response."
             }
           ]
+        },
+        "hist": {
+          "context": "The nations conspire, the rulers plot — against God and his anointed (vv.1–2). Their aim: to break free from divine rule (v.3). God’s response: laughter from heaven (v.4). Then rebuke and terror (v.5). Then the declaration: \"I have installed my king on Zion, my holy mountain\" (v.6). The political rebellion is futile because God’s king is already enthroned."
         }
       }
     },
@@ -146,25 +150,26 @@
             "paragraph": "\"Kiss (nashqū) the son, lest he be angry\" (v.12). The kiss of submission — a vassal’s gesture of loyalty to the king. To \"kiss the son\" is to submit to God’s anointed. Refusal provokes wrath; submission brings blessing. The psalm ends where Psalm 1 began: \"blessed\" (ʾashre)."
           }
         ],
-        "ctx": "God declares the king his son (v.7), promises the nations as inheritance (v.8), and authorises iron-sceptre rule (v.9). Then the warning to the kings: be wise, serve the LORD with fear, kiss the son (vv.10–12). The psalm closes with the same word that opened Psalm 1: \"blessed\" (ʾashre) — blessed are all who take refuge in him. The two-psalm introduction is complete: from individual blessing (Ps 1) to cosmic kingdom (Ps 2), both ending in ʾashre.",
-        "cross": [
-          {
-            "ref": "Matt 3:17",
-            "note": "\"This is my Son, whom I love\" — the Father’s declaration echoing Psalm 2:7."
-          },
-          {
-            "ref": "Heb 1:5",
-            "note": "\"You are my Son; today I have become your Father\" — applied to Christ’s superiority over angels."
-          },
-          {
-            "ref": "Acts 13:33",
-            "note": "Paul applies Psalm 2:7 to Jesus’ resurrection: \"You are my son; today I have become your Father.\""
-          },
-          {
-            "ref": "Rev 2:26–27",
-            "note": "\"To the one who is victorious... I will give authority over the nations — ‘ruling them with an iron sceptre’\" — quoting Ps 2:9."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 3:17",
+              "note": "\"This is my Son, whom I love\" — the Father’s declaration echoing Psalm 2:7."
+            },
+            {
+              "ref": "Heb 1:5",
+              "note": "\"You are my Son; today I have become your Father\" — applied to Christ’s superiority over angels."
+            },
+            {
+              "ref": "Acts 13:33",
+              "note": "Paul applies Psalm 2:7 to Jesus’ resurrection: \"You are my son; today I have become your Father.\""
+            },
+            {
+              "ref": "Rev 2:26–27",
+              "note": "\"To the one who is victorious... I will give authority over the nations — ‘ruling them with an iron sceptre’\" — quoting Ps 2:9."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -259,6 +264,9 @@
               "note": "Goldingay: \"take refuge\" (hāsâ) is one of the Psalter’s key verbs. The psalms repeatedly return to God as refuge, shelter, fortress, rock. This is the relational word that balances the psalm’s political language."
             }
           ]
+        },
+        "hist": {
+          "context": "God declares the king his son (v.7), promises the nations as inheritance (v.8), and authorises iron-sceptre rule (v.9). Then the warning to the kings: be wise, serve the LORD with fear, kiss the son (vv.10–12). The psalm closes with the same word that opened Psalm 1: \"blessed\" (ʾashre) — blessed are all who take refuge in him. The two-psalm introduction is complete: from individual blessing (Ps 1) to cosmic kingdom (Ps 2), both ending in ʾashre."
         }
       }
     }

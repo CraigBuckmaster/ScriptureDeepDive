@@ -60,22 +60,26 @@
             "paragraph": "Abraham's greeting of the three visitors — \"If I have found favour in your eyes, my Lord (ʾadonāy), do not pass your servant by\" (v.3) — and the subsequent narrative oscillation between \"the men/angels\" and \"the LORD\" reflects the theological complexity of the encounter. The three visitors are divine messengers, but one of them is, or represents, YHWH himself. Theophany in the OT is often mediated — God present but characterised — and this encounter is one of the most dramatic instances."
           }
         ],
-        "hist": "None",
-        "ctx": "Abraham's hospitality to the three strangers (running to meet them, bowing, preparing a lavish meal) is a paradigm of Near Eastern hospitality. Hebrews 13:2 uses this episode to commend hospitality to strangers: \"some have entertained angels unawares.\" The dramatic irony — Abraham and Sarah hosting divine visitors without initially recognizing them — builds the tension of the announcement beautifully.",
-        "cross": [
-          {
-            "ref": "Heb 13:2",
-            "note": "The explicit NT application: Abraham unknowingly hosted divine messengers. The episode becomes a basis for the Christian virtue of hospitality to strangers."
-          },
-          {
-            "ref": "Luke 1:37",
-            "note": "Gabriel echoes the divine question to Sarah: \"For nothing will be impossible with God\" — the Annunciation repeats the Mamre promise structure."
-          },
-          {
-            "ref": "Rom 9:9",
-            "note": "Paul quotes Gen 18:10 (\"At the appointed time I will return, and Sarah shall have a son\") to ground the promise of Isaac in divine faithfulness rather than human descent."
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "Abraham's hospitality to the three strangers (running to meet them, bowing, preparing a lavish meal) is a paradigm of Near Eastern hospitality. Hebrews 13:2 uses this episode to commend hospitality to strangers: \"some have entertained angels unawares.\" The dramatic irony — Abraham and Sarah hosting divine visitors without initially recognizing them — builds the tension of the announcement beautifully."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 13:2",
+              "note": "The explicit NT application: Abraham unknowingly hosted divine messengers. The episode becomes a basis for the Christian virtue of hospitality to strangers."
+            },
+            {
+              "ref": "Luke 1:37",
+              "note": "Gabriel echoes the divine question to Sarah: \"For nothing will be impossible with God\" — the Annunciation repeats the Mamre promise structure."
+            },
+            {
+              "ref": "Rom 9:9",
+              "note": "Paul quotes Gen 18:10 (\"At the appointed time I will return, and Sarah shall have a son\") to ground the promise of Isaac in divine faithfulness rather than human descent."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -176,22 +180,26 @@
             "paragraph": "Abraham's extended negotiation with God (vv.23-32) is one of the OT's most remarkable intercession texts. The verb hithpallel (the reflex of pālal, \"to judge/intervene\") is the standard word for prayer — literally \"to judge oneself,\" to place oneself under divine scrutiny on behalf of another. Abraham intercedes not for himself but for any righteous persons who might be in Sodom. His intercession is the model for all prophetic-intercessory prayer: based on God's character, tenacious, and calibrated to the reality of divine mercy."
           }
         ],
-        "hist": "None",
-        "ctx": "Abraham's intercession for Sodom is one of the most remarkable scenes in the OT — a human pressing divine justice, negotiating down from fifty to ten. The boldness is breathtaking: \"Shall not the Judge of all the earth do what is just?\" Abraham appeals to God's own character. This is not defiance but deep theological understanding: Abraham knows God is both just and merciful, and grounds his appeal in that knowledge. The intercession fails (ten righteous are not found), but the method — bold, persistent prayer rooted in divine character — becomes the model for biblical prayer.",
-        "cross": [
-          {
-            "ref": "Exod 32:11–14",
-            "note": "Moses intercedes for Israel after the golden calf — the same pattern: bold appeal to divine character and covenant promise, God \"relenting\" from judgment."
-          },
-          {
-            "ref": "Luke 18:1–8",
-            "note": "Jesus' parable of the persistent widow echoes Abraham's persistence in intercession — keep asking, God will answer."
-          },
-          {
-            "ref": "Rom 8:34",
-            "note": "Christ at God's right hand \"intercedes for us\" — the ultimate fulfillment of Abraham's intercessory role."
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "Abraham's intercession for Sodom is one of the most remarkable scenes in the OT — a human pressing divine justice, negotiating down from fifty to ten. The boldness is breathtaking: \"Shall not the Judge of all the earth do what is just?\" Abraham appeals to God's own character. This is not defiance but deep theological understanding: Abraham knows God is both just and merciful, and grounds his appeal in that knowledge. The intercession fails (ten righteous are not found), but the method — bold, persistent prayer rooted in divine character — becomes the model for biblical prayer."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 32:11–14",
+              "note": "Moses intercedes for Israel after the golden calf — the same pattern: bold appeal to divine character and covenant promise, God \"relenting\" from judgment."
+            },
+            {
+              "ref": "Luke 18:1–8",
+              "note": "Jesus' parable of the persistent widow echoes Abraham's persistence in intercession — keep asking, God will answer."
+            },
+            {
+              "ref": "Rom 8:34",
+              "note": "Christ at God's right hand \"intercedes for us\" — the ultimate fulfillment of Abraham's intercessory role."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

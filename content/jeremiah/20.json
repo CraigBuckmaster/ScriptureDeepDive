@@ -25,17 +25,18 @@
             "paragraph": "Jeremiah renames Pashhur \"Magor-Missabib\" — \"terror on every side\" (v.3). This is the first of Jeremiah's renaming oracles, a prophetic act that redefines a person's identity according to their destiny. Pashhur, whose name may mean \"ease/prosperity,\" will become the embodiment of terror. The phrase \"terror on every side\" becomes a signature expression in Jeremiah (6:25, 20:10, 46:5, 49:29)."
           }
         ],
-        "ctx": "Pashhur son of Immer was the chief officer of the temple — effectively the head of temple security. His response to Jeremiah's sign-act (ch. 19) is physical violence: he has the prophet beaten and put in stocks at the Upper Benjamin Gate. This is the first instance of physical persecution recorded in the book, and it provokes both an oracle of judgment against Pashhur and the most intense of all the confessions (vv.7-18).",
-        "cross": [
-          {
-            "ref": "Acts 5:40",
-            "note": "The apostles are flogged by the Sanhedrin — the pattern of religious authorities persecuting prophets continues into the NT."
-          },
-          {
-            "ref": "Jer 29:26",
-            "note": "Pashhur's successor Zephaniah is urged to put Jeremiah in stocks again — the institutional hostility persists across administrations."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 5:40",
+              "note": "The apostles are flogged by the Sanhedrin — the pattern of religious authorities persecuting prophets continues into the NT."
+            },
+            {
+              "ref": "Jer 29:26",
+              "note": "Pashhur's successor Zephaniah is urged to put Jeremiah in stocks again — the institutional hostility persists across administrations."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -92,6 +93,9 @@
               "note": "Brueggemann reads the beating as the institutional response to prophetic truth: \"When the temple establishment cannot refute the message, it assaults the messenger. Violence is the argument of last resort.\""
             }
           ]
+        },
+        "hist": {
+          "context": "Pashhur son of Immer was the chief officer of the temple — effectively the head of temple security. His response to Jeremiah's sign-act (ch. 19) is physical violence: he has the prophet beaten and put in stocks at the Upper Benjamin Gate. This is the first instance of physical persecution recorded in the book, and it provokes both an oracle of judgment against Pashhur and the most intense of all the confessions (vv.7-18)."
         }
       }
     },
@@ -115,21 +119,22 @@
             "paragraph": "Jeremiah curses the day of his birth (v.14): \"Cursed be the day I was born!\" This echoes Job 3:1-10 and inverts the prenatal calling of 1:5 — the prophet who was \"known before birth\" now wishes he had never been born. The arc from \"before I formed you\" (1:5) to \"cursed be the day\" (20:14) is the full trajectory of prophetic suffering."
           }
         ],
-        "ctx": "Jeremiah 20:7-18 is the most intense personal lament in the Hebrew Bible. It divides into three movements: accusation and compulsion (vv.7-9), trust and praise (vv.11-13), and birth curse (vv.14-18). The juxtaposition of praise (v.13: \"Sing to the LORD!\") with the birth curse (v.14: \"Cursed be the day!\") is jarring and deliberate — faith and despair coexist without resolution. The book's confessions end here, at the bottom.",
-        "cross": [
-          {
-            "ref": "Job 3:1-10",
-            "note": "Job curses the day of his birth in nearly identical language — two suffering servants at the extremity of human endurance."
-          },
-          {
-            "ref": "2 Cor 4:7-12",
-            "note": "Paul's \"jars of clay\" passage echoes the paradox: the power of the message in the weakness of the messenger. \"Always carrying in the body the death of Jesus.\""
-          },
-          {
-            "ref": "Jer 1:5",
-            "note": "\"Before I formed you in the womb I knew you\" — the prenatal calling that 20:14-18 desperately wishes to undo."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Job 3:1-10",
+              "note": "Job curses the day of his birth in nearly identical language — two suffering servants at the extremity of human endurance."
+            },
+            {
+              "ref": "2 Cor 4:7-12",
+              "note": "Paul's \"jars of clay\" passage echoes the paradox: the power of the message in the weakness of the messenger. \"Always carrying in the body the death of Jesus.\""
+            },
+            {
+              "ref": "Jer 1:5",
+              "note": "\"Before I formed you in the womb I knew you\" — the prenatal calling that 20:14-18 desperately wishes to undo."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -202,6 +207,9 @@
               "note": "Brueggemann reads the birth curse as \"the collapse of prophetic identity.\" The confessions began with the prophet defending himself against external enemies; they end with the prophet turning against his own existence. There is no deeper crisis."
             }
           ]
+        },
+        "hist": {
+          "context": "Jeremiah 20:7-18 is the most intense personal lament in the Hebrew Bible. It divides into three movements: accusation and compulsion (vv.7-9), trust and praise (vv.11-13), and birth curse (vv.14-18). The juxtaposition of praise (v.13: \"Sing to the LORD!\") with the birth curse (v.14: \"Cursed be the day!\") is jarring and deliberate — faith and despair coexist without resolution. The book's confessions end here, at the bottom."
         }
       }
     }

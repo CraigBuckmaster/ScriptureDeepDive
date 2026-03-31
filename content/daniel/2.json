@@ -25,25 +25,26 @@
             "paragraph": "\"The mystery (rāz) was revealed to Daniel in a vision of the night\" (v.19). Nebuchadnezzar demands his wise men tell him both the dream AND its meaning (vv.1–11). They protest: no king has ever asked this (v.10). Daniel asks for time, gathers friends to pray, and God reveals the mystery in a night vision (vv.14–19). Daniel’s praise-prayer declares God \"changes times and seasons, removes kings and sets up kings\" (v.21) — the book’s thesis in miniature."
           }
         ],
-        "ctx": "The second year of Nebuchadnezzar (c.603 BC). The demand to reveal both dream and interpretation is an impossible test designed to distinguish genuine divine access from clever guessing. Babylonian dream-interpretation manuals (omen texts) required the dreamer to recount the dream first. Nebuchadnezzar reverses the procedure. The chapter shifts from Hebrew to Aramaic at 2:4b and remains Aramaic through ch.7 — the lingua franca section addressing the nations directly.",
-        "cross": [
-          {
-            "ref": "Gen 41:15–16",
-            "note": "Joseph interprets Pharaoh’s dream: \"I cannot do it, but God will give the answer\" — the same theology as Daniel 2:27–28."
-          },
-          {
-            "ref": "Matt 21:44",
-            "note": "Jesus: \"The stone will crush them\" — echoing the unhewn stone of Daniel 2:34–35."
-          },
-          {
-            "ref": "Rev 17:12–14",
-            "note": "Ten kings who receive authority for one hour — developing the ten-toe imagery of Daniel 2:41–43."
-          },
-          {
-            "ref": "1 Cor 1:20",
-            "note": "Where is the wise person? God made foolish the wisdom of the world — the pattern Daniel 2 establishes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 41:15–16",
+              "note": "Joseph interprets Pharaoh’s dream: \"I cannot do it, but God will give the answer\" — the same theology as Daniel 2:27–28."
+            },
+            {
+              "ref": "Matt 21:44",
+              "note": "Jesus: \"The stone will crush them\" — echoing the unhewn stone of Daniel 2:34–35."
+            },
+            {
+              "ref": "Rev 17:12–14",
+              "note": "Ten kings who receive authority for one hour — developing the ten-toe imagery of Daniel 2:41–43."
+            },
+            {
+              "ref": "1 Cor 1:20",
+              "note": "Where is the wise person? God made foolish the wisdom of the world — the pattern Daniel 2 establishes."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -129,6 +130,9 @@
               "note": "Collins notes that Daniel’s approach is diplomatic, not confrontational. He asks for time (v.16), organises prayer (v.17–18), and gives credit to God (v.28). The wise courtier navigates the system without compromising theology."
             }
           ]
+        },
+        "hist": {
+          "context": "The second year of Nebuchadnezzar (c.603 BC). The demand to reveal both dream and interpretation is an impossible test designed to distinguish genuine divine access from clever guessing. Babylonian dream-interpretation manuals (omen texts) required the dreamer to recount the dream first. Nebuchadnezzar reverses the procedure. The chapter shifts from Hebrew to Aramaic at 2:4b and remains Aramaic through ch.7 — the lingua franca section addressing the nations directly."
         }
       }
     },
@@ -146,25 +150,26 @@
             "paragraph": "\"A rock (ʾeben) was cut out, but not by human hands. It struck the statue on its feet and smashed them\" (v.34). Daniel reveals the dream: gold head (Babylon), silver chest (Medo-Persia), bronze belly (Greece), iron legs (Rome), iron-clay feet (divided kingdoms). A stone \"cut out but not by human hands\" strikes the feet and the entire statue collapses. The stone becomes a mountain that fills the earth (vv.34–35). \"The God of heaven will set up a kingdom that will never be destroyed\" (v.44)."
           }
         ],
-        "ctx": "The four-kingdom schema was known in the ancient world (Hesiod’s ages of gold, silver, bronze, iron), but Daniel’s version is uniquely theological: the kingdoms decline not randomly but under divine sovereignty, and they are replaced not by a fifth human empire but by God’s own kingdom. The \"stone cut without hands\" is the decisive anti-imperial image: God’s kingdom comes from outside the political system entirely. Nebuchadnezzar’s response (v.46–47) is the first of his progressive confessions, reaching full monotheistic praise in ch.4.",
-        "cross": [
-          {
-            "ref": "Ps 2:9",
-            "note": "You will break them with a rod of iron — the messianic king shattering nations, parallel to the stone shattering the statue."
-          },
-          {
-            "ref": "Luke 20:18",
-            "note": "Everyone who falls on that stone will be broken — Jesus identifies himself as the stone of Daniel 2."
-          },
-          {
-            "ref": "Rev 11:15",
-            "note": "The kingdom of the world has become the kingdom of our Lord and of his Messiah — the fulfilment of Daniel 2:44."
-          },
-          {
-            "ref": "1 Cor 15:24",
-            "note": "Then the end will come, when he hands over the kingdom to God the Father after he has destroyed all dominion — the Danielic programme completed."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 2:9",
+              "note": "You will break them with a rod of iron — the messianic king shattering nations, parallel to the stone shattering the statue."
+            },
+            {
+              "ref": "Luke 20:18",
+              "note": "Everyone who falls on that stone will be broken — Jesus identifies himself as the stone of Daniel 2."
+            },
+            {
+              "ref": "Rev 11:15",
+              "note": "The kingdom of the world has become the kingdom of our Lord and of his Messiah — the fulfilment of Daniel 2:44."
+            },
+            {
+              "ref": "1 Cor 15:24",
+              "note": "Then the end will come, when he hands over the kingdom to God the Father after he has destroyed all dominion — the Danielic programme completed."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -250,6 +255,9 @@
               "note": "Collins notes that the stone-kingdom is described in political, not purely spiritual, terms: it \"crushes\" and \"brings to an end.\" The language is eschatological, pointing to a future divine intervention, not a gradual spiritual transformation."
             }
           ]
+        },
+        "hist": {
+          "context": "The four-kingdom schema was known in the ancient world (Hesiod’s ages of gold, silver, bronze, iron), but Daniel’s version is uniquely theological: the kingdoms decline not randomly but under divine sovereignty, and they are replaced not by a fifth human empire but by God’s own kingdom. The \"stone cut without hands\" is the decisive anti-imperial image: God’s kingdom comes from outside the political system entirely. Nebuchadnezzar’s response (v.46–47) is the first of his progressive confessions, reaching full monotheistic praise in ch.4."
         }
       }
     }

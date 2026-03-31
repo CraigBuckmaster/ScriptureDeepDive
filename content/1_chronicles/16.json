@@ -17,13 +17,14 @@
       "verse_start": 1,
       "verse_end": 7,
       "panels": {
-        "ctx": "The ark is set inside the tent David pitched for it. Burnt offerings and fellowship offerings are made. David blesses the people in the name of the LORD and distributes food to “each Israelite man and woman.” Then David assigns Asaph and his associates to minister regularly before the ark “according to each day’s requirements.” Worship is not a one-time event but an ongoing institution.",
-        "cross": [
-          {
-            "ref": "2 Sam 6:17–19",
-            "note": "The parallel in Samuel is brief; the Chronicler expands the liturgical details."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 6:17–19",
+              "note": "The parallel in Samuel is brief; the Chronicler expands the liturgical details."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -41,6 +42,9 @@
               "note": "The three verbs — lĕhazkir (to invoke/remember), lĕhōdōt (to give thanks), lĕhallēl (to praise) — define the three modes of Levitical worship ministry."
             }
           ]
+        },
+        "hist": {
+          "context": "The ark is set inside the tent David pitched for it. Burnt offerings and fellowship offerings are made. David blesses the people in the name of the LORD and distributes food to “each Israelite man and woman.” Then David assigns Asaph and his associates to minister regularly before the ark “according to each day’s requirements.” Worship is not a one-time event but an ongoing institution."
         }
       }
     },
@@ -58,21 +62,22 @@
             "paragraph": "The psalm includes the command: “Look to the LORD and his strength; seek his face always” (v.11). The verb darash (“seek”) is the Chronicler’s central theological term, and here it appears in David’s own psalm. The king commands what the Chronicler preaches: seek God."
           }
         ],
-        "ctx": "David’s psalm is a composite: vv.8–22 = Psalm 105:1–15; vv.23–33 = Psalm 96:1–13; vv.34–36 = Psalm 106:1, 47–48. The Chronicler attributes this liturgical anthology to David and places it at the founding moment of Jerusalemite worship. The psalm covers God’s covenant faithfulness, his universal kingship, and a plea for deliverance. After the psalm, the Chronicler notes the dual worship arrangement: Asaph’s group at the ark in Jerusalem; Zadok’s group at the tabernacle in Gibeon. Two sites, one worship.",
-        "cross": [
-          {
-            "ref": "Ps 105:1–15",
-            "note": "The first section of David’s psalm, celebrating God’s covenant and mighty deeds."
-          },
-          {
-            "ref": "Ps 96:1–13",
-            "note": "The second section, calling all nations to worship the LORD."
-          },
-          {
-            "ref": "Ps 106:1, 47–48",
-            "note": "The closing doxology: “Save us, LORD our God, and gather us from the nations.”"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 105:1–15",
+              "note": "The first section of David’s psalm, celebrating God’s covenant and mighty deeds."
+            },
+            {
+              "ref": "Ps 96:1–13",
+              "note": "The second section, calling all nations to worship the LORD."
+            },
+            {
+              "ref": "Ps 106:1, 47–48",
+              "note": "The closing doxology: “Save us, LORD our God, and gather us from the nations.”"
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -90,6 +95,9 @@
               "note": "The plea “gather us and deliver us from the nations” echoes Ps 106:47 but takes on new urgency in the Chronicler’s post-exilic context. The gathered community prays for further gathering."
             }
           ]
+        },
+        "hist": {
+          "context": "David’s psalm is a composite: vv.8–22 = Psalm 105:1–15; vv.23–33 = Psalm 96:1–13; vv.34–36 = Psalm 106:1, 47–48. The Chronicler attributes this liturgical anthology to David and places it at the founding moment of Jerusalemite worship. The psalm covers God’s covenant faithfulness, his universal kingship, and a plea for deliverance. After the psalm, the Chronicler notes the dual worship arrangement: Asaph’s group at the ark in Jerusalem; Zadok’s group at the tabernacle in Gibeon. Two sites, one worship."
         }
       }
     }

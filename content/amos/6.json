@@ -31,17 +31,18 @@
             "paragraph": "The marzeaḥ was a well-attested institution in the ancient Near East: an elite banqueting club associated with excessive eating, drinking, and funerary rites. Ugaritic texts describe the marzeaḥ as a luxury dining society. Amos declares that this revelry will 'end' — the first to feast will be the first to go into exile."
           }
         ],
-        "ctx": "The 'woe' oracle targets the ruling class of both Judah ('those who are complacent in Zion') and Israel ('those who feel secure on Mount Samaria'). The detailed inventory of luxury — ivory beds, choice lambs, idle music, fine wine, premium lotions — is not merely descriptive but accusatory. These people 'do not grieve over the ruin of Joseph' (v. 6): their wealth has insulated them from the suffering of their own people. The punishment fits the crime: those who are first in luxury will be first in exile.",
-        "cross": [
-          {
-            "ref": "Luke 16:19-31",
-            "note": "The parable of the rich man and Lazarus — a NT narrative exploring the same theme of luxury oblivious to suffering."
-          },
-          {
-            "ref": "Jas 5:1-6",
-            "note": "James' denunciation of wealthy oppressors echoes Amos' vocabulary and ethical demands."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 16:19-31",
+              "note": "The parable of the rich man and Lazarus — a NT narrative exploring the same theme of luxury oblivious to suffering."
+            },
+            {
+              "ref": "Jas 5:1-6",
+              "note": "James' denunciation of wealthy oppressors echoes Amos' vocabulary and ethical demands."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -98,6 +99,9 @@
               "note": "Andersen and Freedman identify the luxury catalogue as a deliberate inversion of covenant blessing: the prosperity God gave Israel has been privatized by the elite and weaponized against the poor. The goods themselves are not evil, but their concentration in the hands of an indifferent ruling class constitutes systemic injustice."
             }
           ]
+        },
+        "hist": {
+          "context": "The 'woe' oracle targets the ruling class of both Judah ('those who are complacent in Zion') and Israel ('those who feel secure on Mount Samaria'). The detailed inventory of luxury — ivory beds, choice lambs, idle music, fine wine, premium lotions — is not merely descriptive but accusatory. These people 'do not grieve over the ruin of Joseph' (v. 6): their wealth has insulated them from the suffering of their own people. The punishment fits the crime: those who are first in luxury will be first in exile."
         }
       }
     },
@@ -115,17 +119,18 @@
             "paragraph": "God swears by himself — the most solemn oath possible, since there is no greater authority by which to swear (cf. Heb 6:13). The object of his abhorrence is 'the pride of Jacob,' the arrogant self-sufficiency that has replaced dependence on God."
           }
         ],
-        "ctx": "The section opens with God swearing by himself to deliver the city and everything in it. The scene in vv. 9-10 is haunting: a relative comes to carry out the dead and, finding a survivor hiding in the house, whispers 'Hush! We must not mention the name of the LORD.' The terror is so complete that even invoking God's name seems dangerous. The chapter closes with military futility (can horses run on rocks?) and the announcement of a nation that will oppress Israel 'from Lebo Hamath to the valley of the Arabah' — the full extent of Jeroboam II's restored territory.",
-        "cross": [
-          {
-            "ref": "Heb 6:13-14",
-            "note": "'Because God could swear by no one greater, he swore by himself' — the NT commentary on the solemnity of divine self-oath."
-          },
-          {
-            "ref": "2 Kgs 14:25",
-            "note": "Jeroboam II restored Israel's borders from Lebo-hamath to the Sea of the Arabah — the exact territory Amos says will be oppressed (v. 14)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 6:13-14",
+              "note": "'Because God could swear by no one greater, he swore by himself' — the NT commentary on the solemnity of divine self-oath."
+            },
+            {
+              "ref": "2 Kgs 14:25",
+              "note": "Jeroboam II restored Israel's borders from Lebo-hamath to the Sea of the Arabah — the exact territory Amos says will be oppressed (v. 14)."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -186,6 +191,9 @@
               "note": "Andersen and Freedman observe that God's self-oath (v. 8) parallels his oath 'by his holiness' in 4:2, creating a structural bracket around the central speeches. Both oaths guarantee judgment; together they form the theological backbone of divine certainty throughout the book."
             }
           ]
+        },
+        "hist": {
+          "context": "The section opens with God swearing by himself to deliver the city and everything in it. The scene in vv. 9-10 is haunting: a relative comes to carry out the dead and, finding a survivor hiding in the house, whispers 'Hush! We must not mention the name of the LORD.' The terror is so complete that even invoking God's name seems dangerous. The chapter closes with military futility (can horses run on rocks?) and the announcement of a nation that will oppress Israel 'from Lebo Hamath to the valley of the Arabah' — the full extent of Jeroboam II's restored territory."
         }
       }
     }

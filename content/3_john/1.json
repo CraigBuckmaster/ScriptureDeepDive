@@ -37,25 +37,26 @@
             "paragraph": "You are faithful in what you are doing for the brothers, even though they are strangers - hospitality to itinerant missionaries is commended."
           }
         ],
-        "ctx": "The elder to the beloved Gaius, whom I love in truth. Beloved, I pray that all may go well with you and that you may be in good health, as it goes well with your soul. For I rejoiced greatly when the brothers came and testified to your truth, as indeed you are walking in the truth. I have no greater joy than to hear that my children are walking in the truth. Beloved, it is a faithful thing you do in all your efforts for these brothers, strangers as they are, who testified to your love before the church. You will do well to send them on their journey in a manner worthy of God. For they have gone out for the sake of the name, accepting nothing from the Gentiles. Therefore we ought to support people like these, that we may be fellow workers for the truth.",
-        "cross": [
-          {
-            "ref": "Romans 16:23",
-            "note": "Gaius, who is host to me and to the whole church, greets you."
-          },
-          {
-            "ref": "3 John 4",
-            "note": "I have no greater joy than to hear that my children walk in truth."
-          },
-          {
-            "ref": "Matthew 10:40-42",
-            "note": "Whoever receives you receives me; whoever gives a cup of cold water..."
-          },
-          {
-            "ref": "Hebrews 13:2",
-            "note": "Do not neglect to show hospitality to strangers."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Romans 16:23",
+              "note": "Gaius, who is host to me and to the whole church, greets you."
+            },
+            {
+              "ref": "3 John 4",
+              "note": "I have no greater joy than to hear that my children walk in truth."
+            },
+            {
+              "ref": "Matthew 10:40-42",
+              "note": "Whoever receives you receives me; whoever gives a cup of cold water..."
+            },
+            {
+              "ref": "Hebrews 13:2",
+              "note": "Do not neglect to show hospitality to strangers."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -113,7 +114,10 @@
             }
           ]
         },
-        "hist": "Third John is a personal letter from 'the elder' to Gaius, commending his hospitality to traveling missionaries. The letter reveals conflict within the early church: Diotrephes 'loves to be first' (v. 9), refuses to acknowledge the elder's authority, spreads malicious accusations, and excommunicates those who show hospitality to the elder's emissaries. This power struggle illustrates the transition from apostolic to local leadership in the late first century. Demetrius is commended as trustworthy (v. 12), possibly the letter carrier. The letter provides a rare window into the practical challenges of church governance, hospitality networks, and authority disputes in early Christianity."
+        "hist": {
+          "historical": "Third John is a personal letter from 'the elder' to Gaius, commending his hospitality to traveling missionaries. The letter reveals conflict within the early church: Diotrephes 'loves to be first' (v. 9), refuses to acknowledge the elder's authority, spreads malicious accusations, and excommunicates those who show hospitality to the elder's emissaries. This power struggle illustrates the transition from apostolic to local leadership in the late first century. Demetrius is commended as trustworthy (v. 12), possibly the letter carrier. The letter provides a rare window into the practical challenges of church governance, hospitality networks, and authority disputes in early Christianity.",
+          "context": "The elder to the beloved Gaius, whom I love in truth. Beloved, I pray that all may go well with you and that you may be in good health, as it goes well with your soul. For I rejoiced greatly when the brothers came and testified to your truth, as indeed you are walking in the truth. I have no greater joy than to hear that my children are walking in the truth. Beloved, it is a faithful thing you do in all your efforts for these brothers, strangers as they are, who testified to your love before the church. You will do well to send them on their journey in a manner worthy of God. For they have gone out for the sake of the name, accepting nothing from the Gentiles. Therefore we ought to support people like these, that we may be fellow workers for the truth."
+        }
       }
     },
     {
@@ -142,25 +146,26 @@
             "paragraph": "Demetrius has received a good testimony from everyone - universal commendation contrasts with Diotrephes condemnation."
           }
         ],
-        "ctx": "I have written something to the church, but Diotrephes, who likes to put himself first, does not acknowledge our authority. So if I come, I will bring up what he is doing, talking wicked nonsense against us. And not content with that, he refuses to welcome the brothers, and also stops those who want to and puts them out of the church. Beloved, do not imitate evil but imitate good. Whoever does good is from God; whoever does evil has not seen God. Demetrius has received a good testimony from everyone, and from the truth itself. We also add our testimony, and you know that our testimony is true.",
-        "cross": [
-          {
-            "ref": "Matthew 23:6-7",
-            "note": "They love the place of honor at feasts and the best seats."
-          },
-          {
-            "ref": "Mark 10:42-45",
-            "note": "Whoever would be great among you must be your servant."
-          },
-          {
-            "ref": "Acts 20:30",
-            "note": "Men will arise, speaking twisted things, to draw away disciples."
-          },
-          {
-            "ref": "1 Timothy 5:19",
-            "note": "Do not admit a charge against an elder except on the evidence of two or three witnesses."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matthew 23:6-7",
+              "note": "They love the place of honor at feasts and the best seats."
+            },
+            {
+              "ref": "Mark 10:42-45",
+              "note": "Whoever would be great among you must be your servant."
+            },
+            {
+              "ref": "Acts 20:30",
+              "note": "Men will arise, speaking twisted things, to draw away disciples."
+            },
+            {
+              "ref": "1 Timothy 5:19",
+              "note": "Do not admit a charge against an elder except on the evidence of two or three witnesses."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -217,6 +222,9 @@
               "note": "Kruse emphasizes that the elder plans to confront Diotrephes personally. Serious problems require direct address."
             }
           ]
+        },
+        "hist": {
+          "context": "I have written something to the church, but Diotrephes, who likes to put himself first, does not acknowledge our authority. So if I come, I will bring up what he is doing, talking wicked nonsense against us. And not content with that, he refuses to welcome the brothers, and also stops those who want to and puts them out of the church. Beloved, do not imitate evil but imitate good. Whoever does good is from God; whoever does evil has not seen God. Demetrius has received a good testimony from everyone, and from the truth itself. We also add our testimony, and you know that our testimony is true."
         }
       }
     },
@@ -246,21 +254,22 @@
             "paragraph": "Greet the friends by name - personal attention to individuals in the community. Each is known and valued."
           }
         ],
-        "ctx": "I had much to write to you, but I would rather not write with pen and ink. I hope to see you soon, and we will talk face to face. Peace be to you. The friends greet you. Greet the friends, each by name.",
-        "cross": [
-          {
-            "ref": "2 John 12",
-            "note": "I have much to write but prefer to come and talk face to face."
-          },
-          {
-            "ref": "John 15:15",
-            "note": "I have called you friends, for all that I have heard from my Father I have made known to you."
-          },
-          {
-            "ref": "Philippians 4:21",
-            "note": "Greet every saint in Christ Jesus."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 John 12",
+              "note": "I have much to write but prefer to come and talk face to face."
+            },
+            {
+              "ref": "John 15:15",
+              "note": "I have called you friends, for all that I have heard from my Father I have made known to you."
+            },
+            {
+              "ref": "Philippians 4:21",
+              "note": "Greet every saint in Christ Jesus."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -305,6 +314,9 @@
               "note": "Kruse emphasizes the personal touch: each friend is to be greeted by name. Individual attention reflects love."
             }
           ]
+        },
+        "hist": {
+          "context": "I had much to write to you, but I would rather not write with pen and ink. I hope to see you soon, and we will talk face to face. Peace be to you. The friends greet you. Greet the friends, each by name."
         }
       }
     }

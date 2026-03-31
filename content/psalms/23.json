@@ -28,21 +28,22 @@
             "paragraph": "\"Even though I walk through the valley of the shadow of death (ṣalmāwet), I will fear no evil, for you are with me\" (v.4). Ṣalmāwet may be a compound word (shadow + death) or a single word meaning \"deep darkness.\" Either way: the darkest possible valley, walked through, not avoided. \"Through\" is the key preposition: the valley is traversed, not inhabited."
           }
         ],
-        "ctx": "The Psalter’s most famous psalm. David the former shepherd describes God as his shepherd. Green pastures, still waters, restored soul, right paths (vv.2–3). The crisis comes in v.4: the valley of death’s shadow. But the shift from \"he\" to \"you\" at this point is the psalm’s most intimate literary move: in the darkest valley, God becomes \"you\" — addressed directly, not described.",
-        "cross": [
-          {
-            "ref": "John 10:11",
-            "note": "\"I am the good shepherd. The good shepherd lays down his life for the sheep\" — Jesus claims to be the shepherd of Psalm 23."
-          },
-          {
-            "ref": "Ezek 34:11–16",
-            "note": "\"I myself will search for my sheep and look after them\" — God as shepherd in the prophets."
-          },
-          {
-            "ref": "Rev 7:17",
-            "note": "\"The Lamb at the centre of the throne will be their shepherd\" — the eschatological shepherd."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 10:11",
+              "note": "\"I am the good shepherd. The good shepherd lays down his life for the sheep\" — Jesus claims to be the shepherd of Psalm 23."
+            },
+            {
+              "ref": "Ezek 34:11–16",
+              "note": "\"I myself will search for my sheep and look after them\" — God as shepherd in the prophets."
+            },
+            {
+              "ref": "Rev 7:17",
+              "note": "\"The Lamb at the centre of the throne will be their shepherd\" — the eschatological shepherd."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -129,6 +130,9 @@
               "note": "Goldingay: the pronoun shift from \"he\" to \"you\" is the psalm’s emotional fulcrum. In green pastures, David talks ABOUT God. In the death-valley, he talks TO God. Proximity increases with danger."
             }
           ]
+        },
+        "hist": {
+          "context": "The Psalter’s most famous psalm. David the former shepherd describes God as his shepherd. Green pastures, still waters, restored soul, right paths (vv.2–3). The crisis comes in v.4: the valley of death’s shadow. But the shift from \"he\" to \"you\" at this point is the psalm’s most intimate literary move: in the darkest valley, God becomes \"you\" — addressed directly, not described."
         }
       }
     },
@@ -146,17 +150,18 @@
             "paragraph": "\"Surely goodness (ṭōb) and love will follow me all the days of my life\" (v.6). The psalm’s closing confidence: not just for today but for \"all the days\" and \"forever.\" The word \"follow\" (rādaf) literally means \"pursue\" — the same verb used for enemies chasing. But here, goodness and ḥesed are the pursuers. David is chased by grace."
           }
         ],
-        "ctx": "The metaphor shifts from shepherd to host. God prepares a banquet in the presence of David’s enemies (v.5) — the enemies watch while David feasts. His head is anointed with oil, his cup overflows. Then the psalm’s grand finale: goodness and ḥesed will PURSUE him every day, and he will dwell in God’s house forever (v.6). The psalm that began with \"I shall not want\" ends with \"forever.\" From sufficiency to eternity.",
-        "cross": [
-          {
-            "ref": "Luke 15:22–24",
-            "note": "\"Bring the fattened calf! Let’s have a feast\" — the prodigal’s father prepares a table in the presence of the older brother."
-          },
-          {
-            "ref": "Rev 19:9",
-            "note": "\"Blessed are those who are invited to the wedding supper of the Lamb\" — the eschatological table."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 15:22–24",
+              "note": "\"Bring the fattened calf! Let’s have a feast\" — the prodigal’s father prepares a table in the presence of the older brother."
+            },
+            {
+              "ref": "Rev 19:9",
+              "note": "\"Blessed are those who are invited to the wedding supper of the Lamb\" — the eschatological table."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -239,6 +244,9 @@
               "note": "Goldingay: \"dwell in the house of the LORD forever\" is the psalm’s destination. The journey through green pastures, dark valleys, and enemy territory ends at home."
             }
           ]
+        },
+        "hist": {
+          "context": "The metaphor shifts from shepherd to host. God prepares a banquet in the presence of David’s enemies (v.5) — the enemies watch while David feasts. His head is anointed with oil, his cup overflows. Then the psalm’s grand finale: goodness and ḥesed will PURSUE him every day, and he will dwell in God’s house forever (v.6). The psalm that began with \"I shall not want\" ends with \"forever.\" From sufficiency to eternity."
         }
       }
     }
@@ -480,6 +488,13 @@
         "literary",
         "cross"
       ]
+    }
+  ],
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "The imagery shifts from third person (\"he leads me\") to second person (\"you are with me\") right at the psalm's darkest moment — the valley of the shadow of death. When danger is most intimate, so is God's presence. David stops talking about God and starts talking to him.",
+      "genre_tag": "literary_pattern"
     }
   ]
 }

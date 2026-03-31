@@ -31,18 +31,22 @@
             "paragraph": "\"What does anyone gain (yitrōn) from all their labours?\" (v.3). A commercial term: what is the net profit? Qoheleth applies business accounting to existence itself. The answer he keeps finding: zero."
           }
         ],
-        "hist": "The \"Teacher\" (Qoheleth) is introduced as \"son of David, king in Jerusalem\" (v.1) — traditionally identified with Solomon, though most scholars see this as a literary persona. The royal fiction gives Qoheleth the resources to test every human pursuit.",
-        "ctx": "The poem of natural cycles (vv.4–11) establishes the framework: sun rises and sets, wind blows in circuits, rivers flow to the sea but the sea is never full, and no one remembers what came before. Nature’s endless repetition is the metaphor for human futility. Nothing is new under the sun.",
-        "cross": [
-          {
-            "ref": "Rom 8:20",
-            "note": "\"The creation was subjected to frustration\" — Paul’s theology of a groaning creation echoes Qoheleth."
-          },
-          {
-            "ref": "Ps 39:5–6",
-            "note": "\"Each person’s life is but a breath\" — the same hebel theology."
-          }
-        ],
+        "hist": {
+          "historical": "The \"Teacher\" (Qoheleth) is introduced as \"son of David, king in Jerusalem\" (v.1) — traditionally identified with Solomon, though most scholars see this as a literary persona. The royal fiction gives Qoheleth the resources to test every human pursuit.",
+          "context": "The poem of natural cycles (vv.4–11) establishes the framework: sun rises and sets, wind blows in circuits, rivers flow to the sea but the sea is never full, and no one remembers what came before. Nature’s endless repetition is the metaphor for human futility. Nothing is new under the sun."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 8:20",
+              "note": "\"The creation was subjected to frustration\" — Paul’s theology of a groaning creation echoes Qoheleth."
+            },
+            {
+              "ref": "Ps 39:5–6",
+              "note": "\"Each person’s life is but a breath\" — the same hebel theology."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -145,17 +149,18 @@
             "paragraph": "\"Chasing after wind\" (rəʿūṭ rûaḥ). The image recurs throughout the book: every human pursuit is like trying to catch the wind. You can feel it; you cannot hold it. The phrase is Qoheleth’s verdict on wisdom, pleasure, toil, and wealth."
           }
         ],
-        "ctx": "Qoheleth establishes his credentials: \"I, the Teacher, was king over Israel in Jerusalem\" (v.12). He devoted himself to study and exploration — and concluded that the pursuit of wisdom, while better than folly, cannot resolve life’s fundamental absurdity. \"With much wisdom comes much sorrow; the more knowledge, the more grief\" (v.18). Wisdom sees more clearly, and what it sees is painful.",
-        "cross": [
-          {
-            "ref": "1 Kgs 4:29–34",
-            "note": "Solomon’s wisdom surpassed all others — the persona Qoheleth claims."
-          },
-          {
-            "ref": "1 Cor 1:19–20",
-            "note": "\"Where is the wise person?\" — Paul’s critique of human wisdom echoes Qoheleth."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 4:29–34",
+              "note": "Solomon’s wisdom surpassed all others — the persona Qoheleth claims."
+            },
+            {
+              "ref": "1 Cor 1:19–20",
+              "note": "\"Where is the wise person?\" — Paul’s critique of human wisdom echoes Qoheleth."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -237,6 +242,9 @@
               "note": "Fox: grief through knowledge is not anti-intellectual. Qoheleth values wisdom (7:12). His point: wisdom’s reward includes seeing truths that hurt."
             }
           ]
+        },
+        "hist": {
+          "context": "Qoheleth establishes his credentials: \"I, the Teacher, was king over Israel in Jerusalem\" (v.12). He devoted himself to study and exploration — and concluded that the pursuit of wisdom, while better than folly, cannot resolve life’s fundamental absurdity. \"With much wisdom comes much sorrow; the more knowledge, the more grief\" (v.18). Wisdom sees more clearly, and what it sees is painful."
         }
       }
     }

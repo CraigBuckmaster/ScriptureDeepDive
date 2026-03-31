@@ -34,21 +34,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Sea of Galilee</div><div class=\"poi-coords\">32.8208° N, 35.5847° E</div><div class=\"poi-text\">Also called the Sea of Tiberias (after the city Herod Antipas built on its western shore, named for Emperor Tiberius). A freshwater lake 13 miles long and 8 miles wide, 680 feet below sea level. Famous for sudden violent storms funnelled from the surrounding hills. Jesus walked on this lake (6:19), calmed its storms (Mark 4:39), and most of his Galilean ministry centred on its northern shore. The feeding of the 5,000 took place on its northeastern shore.</div></div>"
         },
-        "ctx": "[('Passover Setting', 'John specifies that \"the Jewish Passover Festival was near\" (v.4) — placing the feeding in the Passover framework and connecting it to the Exodus manna. The feeding of 5,000 echoes Moses feeding Israel in the wilderness (Exod 16; Num 11); the discourse (6:31-58) makes the Exodus connection explicit. Jesus is the new Moses who gives not bread from heaven (manna) but is himself the bread from heaven.'), ('Walking on Water as Theophany', 'The OT consistently attributes walking on the sea to God alone: \"He alone stretches out the heavens and treads on the waves of the sea\" (Job 9:8). \"Your path led through the sea, your way through the mighty waters\" (Ps 77:19). When Jesus walks on water and says \"I am\" (egō eimi), John is presenting a theophany: the disciples are in the presence of YHWH.')]",
-        "cross": [
-          {
-            "ref": "Exod 16:1-36",
-            "note": "The manna in the wilderness — the background the crowd (6:31) and Jesus himself (6:49-58) explicitly invoke in the Bread of Life discourse."
-          },
-          {
-            "ref": "Job 9:8",
-            "note": "\"He alone stretches out the heavens and treads on the waves of the sea\" — walking on the sea as an exclusively divine attribute."
-          },
-          {
-            "ref": "Ps 107:23-32",
-            "note": "God stilling the storm and bringing the boat safely to harbor — the psalm background for the sea-crossing episode."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 16:1-36",
+              "note": "The manna in the wilderness — the background the crowd (6:31) and Jesus himself (6:49-58) explicitly invoke in the Bread of Life discourse."
+            },
+            {
+              "ref": "Job 9:8",
+              "note": "\"He alone stretches out the heavens and treads on the waves of the sea\" — walking on the sea as an exclusively divine attribute."
+            },
+            {
+              "ref": "Ps 107:23-32",
+              "note": "God stilling the storm and bringing the boat safely to harbor — the psalm background for the sea-crossing episode."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -108,6 +109,9 @@
               "note": "Chrysostom: \"It is I — do not be afraid. He first identified himself, then commanded them not to fear. For to know who was present was the cure of their fear. When they knew it was not a phantom but the Lord, their fear dissolved into wonder and then into worship.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Passover Setting', 'John specifies that \"the Jewish Passover Festival was near\" (v.4) — placing the feeding in the Passover framework and connecting it to the Exodus manna. The feeding of 5,000 echoes Moses feeding Israel in the wilderness (Exod 16; Num 11); the discourse (6:31-58) makes the Exodus connection explicit. Jesus is the new Moses who gives not bread from heaven (manna) but is himself the bread from heaven.'), ('Walking on Water as Theophany', 'The OT consistently attributes walking on the sea to God alone: \"He alone stretches out the heavens and treads on the waves of the sea\" (Job 9:8). \"Your path led through the sea, your way through the mighty waters\" (Ps 77:19). When Jesus walks on water and says \"I am\" (egō eimi), John is presenting a theophany: the disciples are in the presence of YHWH.')]"
         }
       }
     },
@@ -134,21 +138,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Sea of Galilee</div><div class=\"poi-coords\">32.8208° N, 35.5847° E</div><div class=\"poi-text\">Also called the Sea of Tiberias (after the city Herod Antipas built on its western shore, named for Emperor Tiberius). A freshwater lake 13 miles long and 8 miles wide, 680 feet below sea level. Famous for sudden violent storms funnelled from the surrounding hills. Jesus walked on this lake (6:19), calmed its storms (Mark 4:39), and most of his Galilean ministry centred on its northern shore. The feeding of the 5,000 took place on its northeastern shore.</div></div>"
         },
-        "ctx": "[('The Manna Typology', 'The crowd quotes Ps 78:24 (\"He gave them bread from heaven to eat,\" v.31) to demand a sign like Moses\\'s manna. Jesus corrects two assumptions: (1) Moses did not give the manna — the Father did; (2) the manna was not the true bread from heaven — that is what the Father is now giving. The typological argument is that manna was a shadow pointing to Christ, who is the substance. Those who ate manna died; those who eat this bread live forever (v.49-51).'), ('Division and Departure', 'The discourse produces the most dramatic departure in the Gospel: \"many of his disciples turned back and no longer followed him\" (v.66). This is not the crowd — it is disciples. The hard teaching about eating his flesh and drinking his blood functions as a sifting: those who cannot accept the claim that Jesus is himself the life-giving gift depart. Peter\\'s confession (v.68-69) stands in sharp contrast as the model of perseverant faith.')]",
-        "cross": [
-          {
-            "ref": "Exod 16:4",
-            "note": "\"I will rain down bread from heaven for you\" — the manna promise that the crowd invokes (v.31) and Jesus reinterprets."
-          },
-          {
-            "ref": "Ps 78:24-25",
-            "note": "\"He rained down manna for the people to eat, he gave them the grain of heaven. Human beings ate the bread of angels; he sent them all the food they could eat.\""
-          },
-          {
-            "ref": "Isa 55:1-3",
-            "note": "\"Come, all you who are thirsty, come to the waters... Listen, listen to me, and eat what is good\" — the Isaiah background for Jesus's invitation \"Whoever comes to me will never go hungry, and whoever believes in me will never be thirsty\" (v.35)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 16:4",
+              "note": "\"I will rain down bread from heaven for you\" — the manna promise that the crowd invokes (v.31) and Jesus reinterprets."
+            },
+            {
+              "ref": "Ps 78:24-25",
+              "note": "\"He rained down manna for the people to eat, he gave them the grain of heaven. Human beings ate the bread of angels; he sent them all the food they could eat.\""
+            },
+            {
+              "ref": "Isa 55:1-3",
+              "note": "\"Come, all you who are thirsty, come to the waters... Listen, listen to me, and eat what is good\" — the Isaiah background for Jesus's invitation \"Whoever comes to me will never go hungry, and whoever believes in me will never be thirsty\" (v.35)."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -208,6 +213,9 @@
               "note": "Chrysostom: \"Lord, to whom shall we go? He does not say 'we will not go' — but 'to whom shall we go?' As if to say: You have us completely. There is nowhere else. We have tried everything else and found it empty. You have the words of eternal life: where else would we look?\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Manna Typology', 'The crowd quotes Ps 78:24 (\"He gave them bread from heaven to eat,\" v.31) to demand a sign like Moses\\'s manna. Jesus corrects two assumptions: (1) Moses did not give the manna — the Father did; (2) the manna was not the true bread from heaven — that is what the Father is now giving. The typological argument is that manna was a shadow pointing to Christ, who is the substance. Those who ate manna died; those who eat this bread live forever (v.49-51).'), ('Division and Departure', 'The discourse produces the most dramatic departure in the Gospel: \"many of his disciples turned back and no longer followed him\" (v.66). This is not the crowd — it is disciples. The hard teaching about eating his flesh and drinking his blood functions as a sifting: those who cannot accept the claim that Jesus is himself the life-giving gift depart. Peter\\'s confession (v.68-69) stands in sharp contrast as the model of perseverant faith.')]"
         }
       }
     },
@@ -234,21 +242,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Sea of Galilee</div><div class=\"poi-coords\">32.8208° N, 35.5847° E</div><div class=\"poi-text\">Also called the Sea of Tiberias (after the city Herod Antipas built on its western shore, named for Emperor Tiberius). A freshwater lake 13 miles long and 8 miles wide, 680 feet below sea level. Famous for sudden violent storms funnelled from the surrounding hills. Jesus walked on this lake (6:19), calmed its storms (Mark 4:39), and most of his Galilean ministry centred on its northern shore. The feeding of the 5,000 took place on its northeastern shore.</div></div>"
         },
-        "ctx": "[('Passover Setting', 'John specifies that \"the Jewish Passover Festival was near\" (v.4) — placing the feeding in the Passover framework and connecting it to the Exodus manna. The feeding of 5,000 echoes Moses feeding Israel in the wilderness (Exod 16; Num 11); the discourse (6:31-58) makes the Exodus connection explicit. Jesus is the new Moses who gives not bread from heaven (manna) but is himself the bread from heaven.'), ('Walking on Water as Theophany', 'The OT consistently attributes walking on the sea to God alone: \"He alone stretches out the heavens and treads on the waves of the sea\" (Job 9:8). \"Your path led through the sea, your way through the mighty waters\" (Ps 77:19). When Jesus walks on water and says \"I am\" (egō eimi), John is presenting a theophany: the disciples are in the presence of YHWH.')]",
-        "cross": [
-          {
-            "ref": "Exod 16:1-36",
-            "note": "The manna in the wilderness — the background the crowd (6:31) and Jesus himself (6:49-58) explicitly invoke in the Bread of Life discourse."
-          },
-          {
-            "ref": "Job 9:8",
-            "note": "\"He alone stretches out the heavens and treads on the waves of the sea\" — walking on the sea as an exclusively divine attribute."
-          },
-          {
-            "ref": "Ps 107:23-32",
-            "note": "God stilling the storm and bringing the boat safely to harbor — the psalm background for the sea-crossing episode."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 16:1-36",
+              "note": "The manna in the wilderness — the background the crowd (6:31) and Jesus himself (6:49-58) explicitly invoke in the Bread of Life discourse."
+            },
+            {
+              "ref": "Job 9:8",
+              "note": "\"He alone stretches out the heavens and treads on the waves of the sea\" — walking on the sea as an exclusively divine attribute."
+            },
+            {
+              "ref": "Ps 107:23-32",
+              "note": "God stilling the storm and bringing the boat safely to harbor — the psalm background for the sea-crossing episode."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -308,6 +317,9 @@
               "note": "Chrysostom: \"It is I — do not be afraid. He first identified himself, then commanded them not to fear. For to know who was present was the cure of their fear. When they knew it was not a phantom but the Lord, their fear dissolved into wonder and then into worship.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Passover Setting', 'John specifies that \"the Jewish Passover Festival was near\" (v.4) — placing the feeding in the Passover framework and connecting it to the Exodus manna. The feeding of 5,000 echoes Moses feeding Israel in the wilderness (Exod 16; Num 11); the discourse (6:31-58) makes the Exodus connection explicit. Jesus is the new Moses who gives not bread from heaven (manna) but is himself the bread from heaven.'), ('Walking on Water as Theophany', 'The OT consistently attributes walking on the sea to God alone: \"He alone stretches out the heavens and treads on the waves of the sea\" (Job 9:8). \"Your path led through the sea, your way through the mighty waters\" (Ps 77:19). When Jesus walks on water and says \"I am\" (egō eimi), John is presenting a theophany: the disciples are in the presence of YHWH.')]"
         }
       }
     },
@@ -334,21 +346,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Sea of Galilee</div><div class=\"poi-coords\">32.8208° N, 35.5847° E</div><div class=\"poi-text\">Also called the Sea of Tiberias (after the city Herod Antipas built on its western shore, named for Emperor Tiberius). A freshwater lake 13 miles long and 8 miles wide, 680 feet below sea level. Famous for sudden violent storms funnelled from the surrounding hills. Jesus walked on this lake (6:19), calmed its storms (Mark 4:39), and most of his Galilean ministry centred on its northern shore. The feeding of the 5,000 took place on its northeastern shore.</div></div>"
         },
-        "ctx": "[('The Manna Typology', 'The crowd quotes Ps 78:24 (\"He gave them bread from heaven to eat,\" v.31) to demand a sign like Moses\\'s manna. Jesus corrects two assumptions: (1) Moses did not give the manna — the Father did; (2) the manna was not the true bread from heaven — that is what the Father is now giving. The typological argument is that manna was a shadow pointing to Christ, who is the substance. Those who ate manna died; those who eat this bread live forever (v.49-51).'), ('Division and Departure', 'The discourse produces the most dramatic departure in the Gospel: \"many of his disciples turned back and no longer followed him\" (v.66). This is not the crowd — it is disciples. The hard teaching about eating his flesh and drinking his blood functions as a sifting: those who cannot accept the claim that Jesus is himself the life-giving gift depart. Peter\\'s confession (v.68-69) stands in sharp contrast as the model of perseverant faith.')]",
-        "cross": [
-          {
-            "ref": "Exod 16:4",
-            "note": "\"I will rain down bread from heaven for you\" — the manna promise that the crowd invokes (v.31) and Jesus reinterprets."
-          },
-          {
-            "ref": "Ps 78:24-25",
-            "note": "\"He rained down manna for the people to eat, he gave them the grain of heaven. Human beings ate the bread of angels; he sent them all the food they could eat.\""
-          },
-          {
-            "ref": "Isa 55:1-3",
-            "note": "\"Come, all you who are thirsty, come to the waters... Listen, listen to me, and eat what is good\" — the Isaiah background for Jesus's invitation \"Whoever comes to me will never go hungry, and whoever believes in me will never be thirsty\" (v.35)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 16:4",
+              "note": "\"I will rain down bread from heaven for you\" — the manna promise that the crowd invokes (v.31) and Jesus reinterprets."
+            },
+            {
+              "ref": "Ps 78:24-25",
+              "note": "\"He rained down manna for the people to eat, he gave them the grain of heaven. Human beings ate the bread of angels; he sent them all the food they could eat.\""
+            },
+            {
+              "ref": "Isa 55:1-3",
+              "note": "\"Come, all you who are thirsty, come to the waters... Listen, listen to me, and eat what is good\" — the Isaiah background for Jesus's invitation \"Whoever comes to me will never go hungry, and whoever believes in me will never be thirsty\" (v.35)."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -408,6 +421,9 @@
               "note": "Chrysostom: \"Lord, to whom shall we go? He does not say 'we will not go' — but 'to whom shall we go?' As if to say: You have us completely. There is nowhere else. We have tried everything else and found it empty. You have the words of eternal life: where else would we look?\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Manna Typology', 'The crowd quotes Ps 78:24 (\"He gave them bread from heaven to eat,\" v.31) to demand a sign like Moses\\'s manna. Jesus corrects two assumptions: (1) Moses did not give the manna — the Father did; (2) the manna was not the true bread from heaven — that is what the Father is now giving. The typological argument is that manna was a shadow pointing to Christ, who is the substance. Those who ate manna died; those who eat this bread live forever (v.49-51).'), ('Division and Departure', 'The discourse produces the most dramatic departure in the Gospel: \"many of his disciples turned back and no longer followed him\" (v.66). This is not the crowd — it is disciples. The hard teaching about eating his flesh and drinking his blood functions as a sifting: those who cannot accept the claim that Jesus is himself the life-giving gift depart. Peter\\'s confession (v.68-69) stands in sharp contrast as the model of perseverant faith.')]"
         }
       }
     }

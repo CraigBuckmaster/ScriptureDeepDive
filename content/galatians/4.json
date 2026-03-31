@@ -31,17 +31,18 @@
             "paragraph": "One of the most debated expressions in Galatians. It may refer to basic principles of religious knowledge, elemental spirits, or the physical elements. Paul applies the term to both Jews (under the law) and Gentiles (under paganism) before Christ, suggesting that both systems function as enslavement to sub-Christian spiritual realities."
           }
         ],
-        "ctx": "Paul develops the paidagogos metaphor into a fuller analogy of inheritance. An heir who is still a minor is no different from a slave, even though he owns the whole estate (v. 1). Before Christ, God’s people were ‘enslaved under the elemental spiritual forces’ (v. 3). But when ‘the fullness of time’ arrived, God sent his Son, born of a woman, born under the law, to redeem those under the law, that they might receive adoption (vv. 4–5). The Christological affirmation in vv. 4–5 affirms the pre-existence of the Son, his incarnation, his submission to the law, his redemptive work, and the consequent adoption of believers.",
-        "cross": [
-          {
-            "ref": "Rom 8:14–17",
-            "note": "Paul’s fuller exposition of adoption parallels Gal 4:4–7: those led by the Spirit are God’s children, crying ‘Abba, Father,’ and are co-heirs with Christ."
-          },
-          {
-            "ref": "John 1:14",
-            "note": "The incarnational language—‘the Word became flesh’—provides the Johannine parallel to Paul’s compressed Christology in Gal 4:4."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 8:14–17",
+              "note": "Paul’s fuller exposition of adoption parallels Gal 4:4–7: those led by the Spirit are God’s children, crying ‘Abba, Father,’ and are co-heirs with Christ."
+            },
+            {
+              "ref": "John 1:14",
+              "note": "The incarnational language—‘the Word became flesh’—provides the Johannine parallel to Paul’s compressed Christology in Gal 4:4."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -102,6 +103,9 @@
               "note": "Bruce notes the inheritance analogy draws on both Jewish and Greco-Roman legal conventions. In Roman law, the father set the date when the minor would assume full control. The cry ‘Abba, Father’ preserves the ipsissima vox of Jesus and signifies that believers share in the Son’s own relationship with the Father."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul develops the paidagogos metaphor into a fuller analogy of inheritance. An heir who is still a minor is no different from a slave, even though he owns the whole estate (v. 1). Before Christ, God’s people were ‘enslaved under the elemental spiritual forces’ (v. 3). But when ‘the fullness of time’ arrived, God sent his Son, born of a woman, born under the law, to redeem those under the law, that they might receive adoption (vv. 4–5). The Christological affirmation in vv. 4–5 affirms the pre-existence of the Son, his incarnation, his submission to the law, his redemptive work, and the consequent adoption of believers."
         }
       }
     },
@@ -119,17 +123,18 @@
             "paragraph": "Paul describes the stoicheia as ‘weak and miserable’ (asthenē kai ptōcha, v. 9). The adjectives denote impotence: the elemental forces lack the power to bring about the righteousness they demand. To return to them is a step backward from power to impotence."
           }
         ],
-        "ctx": "Paul shifts from theology to pastoral appeal. Before conversion the Galatians were enslaved to beings that ‘by nature are not gods’ (v. 8). Now they are turning back to ‘weak and miserable forces,’ observing ‘special days and months and seasons and years’ (v. 10)—the Jewish liturgical calendar the agitators are imposing. Paul fears his labour has been ‘wasted’ (v. 11). The emotional intensity increases in vv. 12–20: Paul appeals to their former love, recalling how they received him despite his illness (v. 13) and would have ‘torn out your eyes’ for him (v. 15). He contrasts his own motives with the agitators’ desire to ‘alienate’ the Galatians (v. 17).",
-        "cross": [
-          {
-            "ref": "Col 2:16–17",
-            "note": "Paul’s warning against judging regarding festivals, New Moons, or Sabbath days parallels Gal 4:10. Both treat calendar observance as a return to the shadow superseded by Christ."
-          },
-          {
-            "ref": "1 Thess 2:7–8",
-            "note": "Paul’s tender self-description as a nursing mother parallels the parental imagery of Gal 4:19."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Col 2:16–17",
+              "note": "Paul’s warning against judging regarding festivals, New Moons, or Sabbath days parallels Gal 4:10. Both treat calendar observance as a return to the shadow superseded by Christ."
+            },
+            {
+              "ref": "1 Thess 2:7–8",
+              "note": "Paul’s tender self-description as a nursing mother parallels the parental imagery of Gal 4:19."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -186,6 +191,9 @@
               "note": "Bruce notes the paradox of v. 9: the Galatians came to know God, but more importantly, were known by God—the initiative is divine. Bruce suggests Paul’s illness may have been malaria contracted in Pamphylia, prompting his journey to the higher elevations of Galatian Phrygia."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul shifts from theology to pastoral appeal. Before conversion the Galatians were enslaved to beings that ‘by nature are not gods’ (v. 8). Now they are turning back to ‘weak and miserable forces,’ observing ‘special days and months and seasons and years’ (v. 10)—the Jewish liturgical calendar the agitators are imposing. Paul fears his labour has been ‘wasted’ (v. 11). The emotional intensity increases in vv. 12–20: Paul appeals to their former love, recalling how they received him despite his illness (v. 13) and would have ‘torn out your eyes’ for him (v. 15). He contrasts his own motives with the agitators’ desire to ‘alienate’ the Galatians (v. 17)."
         }
       }
     },
@@ -203,21 +211,22 @@
             "paragraph": "The verb appears only here in the NT. Paul explicitly identifies his interpretive method: the Genesis narrative is read typologically, with Hagar = Sinai covenant = slavery = present Jerusalem and Sarah = promise covenant = freedom = Jerusalem above. This is not arbitrary allegory but typological correspondence grounded in historical pattern."
           }
         ],
-        "ctx": "Paul’s most daring exegetical move. He takes the Judaizers’ own hero—Abraham—and turns the narrative against them. Abraham had two sons: Ishmael, born of the slave woman according to the flesh, and Isaac, born of the free woman according to the promise. Hagar corresponds to the Sinai covenant and present Jerusalem (in slavery with her children); Sarah corresponds to the covenant of promise and the Jerusalem above (free). The allegory concludes with the command to ‘cast out the slave woman and her son’ (Gen 21:10, v. 30), applied to the expulsion of the Judaizing teaching.",
-        "cross": [
-          {
-            "ref": "Gen 21:8–12",
-            "note": "The original narrative of Ishmael’s expulsion provides the historical basis for Paul’s typological application."
-          },
-          {
-            "ref": "Isa 54:1",
-            "note": "Paul quotes Isaiah’s barren-woman oracle in v. 27, applying it to the Jerusalem above: the barren Sarah will have more children than Hagar."
-          },
-          {
-            "ref": "Heb 12:22",
-            "note": "The contrast between earthly Sinai and heavenly Jerusalem uses similar spatial theology."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 21:8–12",
+              "note": "The original narrative of Ishmael’s expulsion provides the historical basis for Paul’s typological application."
+            },
+            {
+              "ref": "Isa 54:1",
+              "note": "Paul quotes Isaiah’s barren-woman oracle in v. 27, applying it to the Jerusalem above: the barren Sarah will have more children than Hagar."
+            },
+            {
+              "ref": "Heb 12:22",
+              "note": "The contrast between earthly Sinai and heavenly Jerusalem uses similar spatial theology."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -270,6 +279,9 @@
               "note": "Bruce compares Paul’s method to Philo’s treatment of the same narrative. Unlike Philo’s timeless philosophical extraction, Paul’s allegory is salvation-historical: it maps the Hagar-Sarah contrast onto the eschatological transition from old covenant to new. The geographical identification of Hagar with Mount Sinai in Arabia is textually complex but rhetorically effective."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul’s most daring exegetical move. He takes the Judaizers’ own hero—Abraham—and turns the narrative against them. Abraham had two sons: Ishmael, born of the slave woman according to the flesh, and Isaac, born of the free woman according to the promise. Hagar corresponds to the Sinai covenant and present Jerusalem (in slavery with her children); Sarah corresponds to the covenant of promise and the Jerusalem above (free). The allegory concludes with the command to ‘cast out the slave woman and her son’ (Gen 21:10, v. 30), applied to the expulsion of the Judaizing teaching."
         }
       }
     }

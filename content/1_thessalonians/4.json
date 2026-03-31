@@ -43,17 +43,18 @@
             "paragraph": "Believers must not act in <em>pathos epithymias</em> (v.5) — 'lustful passion' — like pagans who do not know God. Sexual ethics are grounded in theology: knowing God transforms behavior."
           }
         ],
-        "ctx": "Sexual ethics in Thessalonica required explicit instruction. Greco-Roman culture was permissive: prostitution was legal, extramarital sex common, and sexual restraint was not a general expectation. Paul's teaching would have been countercultural. The call to holiness was a call to be different.",
-        "cross": [
-          {
-            "ref": "1 Cor 6:18-20",
-            "note": "Paul's extended treatment of sexual ethics in 1 Corinthians echoes this passage: 'Flee from sexual immorality... your body is a temple of the Holy Spirit.'"
-          },
-          {
-            "ref": "Rom 6:19",
-            "note": "The call to present one's members as 'slaves to righteousness leading to holiness' uses the same sanctification language."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 6:18-20",
+              "note": "Paul's extended treatment of sexual ethics in 1 Corinthians echoes this passage: 'Flee from sexual immorality... your body is a temple of the Holy Spirit.'"
+            },
+            {
+              "ref": "Rom 6:19",
+              "note": "The call to present one's members as 'slaves to righteousness leading to holiness' uses the same sanctification language."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -130,6 +131,9 @@
               "note": "The gift of the Spirit provides both the standard and the power for holy living. Wanamaker emphasizes that Paul's ethics are pneumatic, not merely legal."
             }
           ]
+        },
+        "hist": {
+          "context": "Sexual ethics in Thessalonica required explicit instruction. Greco-Roman culture was permissive: prostitution was legal, extramarital sex common, and sexual restraint was not a general expectation. Paul's teaching would have been countercultural. The call to holiness was a call to be different."
         }
       }
     },
@@ -159,17 +163,18 @@
             "paragraph": "Paul urges them to <em>hēsychazō</em> (v.11) — 'live quietly.' The word suggests tranquility, minding one's own affairs rather than meddling. Eschatological excitement should not produce social disruption."
           }
         ],
-        "ctx": "The exhortation to 'mind your own business' and 'work with your hands' suggests some Thessalonians had become idle, perhaps expecting Christ's imminent return. Why work if the end is near? Paul counters that faithfulness in ordinary life is the proper response to eschatological hope.",
-        "cross": [
-          {
-            "ref": "2 Thess 3:6-12",
-            "note": "Paul addresses the idleness problem more sharply in 2 Thessalonians: 'If anyone is not willing to work, let him not eat.'"
-          },
-          {
-            "ref": "Eph 4:28",
-            "note": "Paul's instruction that the thief 'must work, doing something useful with his own hands' echoes this emphasis on productive labor."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Thess 3:6-12",
+              "note": "Paul addresses the idleness problem more sharply in 2 Thessalonians: 'If anyone is not willing to work, let him not eat.'"
+            },
+            {
+              "ref": "Eph 4:28",
+              "note": "Paul's instruction that the thief 'must work, doing something useful with his own hands' echoes this emphasis on productive labor."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -238,6 +243,9 @@
               "note": "The dual concern — 'not be dependent on anyone' and 'win respect of outsiders' — shows Paul's attention to both internal and external witness. Idleness damages both."
             }
           ]
+        },
+        "hist": {
+          "context": "The exhortation to 'mind your own business' and 'work with your hands' suggests some Thessalonians had become idle, perhaps expecting Christ's imminent return. Why work if the end is near? Paul counters that faithfulness in ordinary life is the proper response to eschatological hope."
         }
       }
     },
@@ -273,17 +281,18 @@
             "paragraph": "We will be <em>harpazō</em> (v.17) — 'caught up' or 'snatched away' — in the clouds. The Latin translation <em>rapiemur</em> gives us the word 'rapture.' The verb suggests sudden, powerful action."
           }
         ],
-        "ctx": "The Thessalonians were grieving believers who had died before Christ's return. Would they miss the parousia? Paul's answer is emphatic: the dead in Christ will rise first. Far from being disadvantaged, they have priority. This passage (along with 1 Cor 15) is foundational for Christian hope in bodily resurrection.",
-        "cross": [
-          {
-            "ref": "1 Cor 15:51-52",
-            "note": "Paul's parallel description of the resurrection: 'We will not all sleep, but we will all be changed — in a flash, in the twinkling of an eye, at the last trumpet.'"
-          },
-          {
-            "ref": "John 11:25-26",
-            "note": "Jesus's declaration to Martha: 'I am the resurrection and the life. The one who believes in me will live, even though they die.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 15:51-52",
+              "note": "Paul's parallel description of the resurrection: 'We will not all sleep, but we will all be changed — in a flash, in the twinkling of an eye, at the last trumpet.'"
+            },
+            {
+              "ref": "John 11:25-26",
+              "note": "Jesus's declaration to Martha: 'I am the resurrection and the life. The one who believes in me will live, even though they die.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -360,6 +369,9 @@
               "note": "The 'rapture' language (harpazō) emphasizes divine agency: believers do not ascend by their own power but are caught up by God's action. The parousia is God's work from start to finish."
             }
           ]
+        },
+        "hist": {
+          "context": "The Thessalonians were grieving believers who had died before Christ's return. Would they miss the parousia? Paul's answer is emphatic: the dead in Christ will rise first. Far from being disadvantaged, they have priority. This passage (along with 1 Cor 15) is foundational for Christian hope in bodily resurrection."
         }
       }
     }

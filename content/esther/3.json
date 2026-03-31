@@ -31,22 +31,26 @@
             "paragraph": "Mordecai \"would not kneel or bow down\" (lōʾ yik̅raʿ wəlōʾ yištaḥăweh). No explicit reason is given. The refusal may be theological (bowing to a descendant of Amalek), personal, or ethnic. The ambiguity is deliberate — the narrator foregrounds the act, not the motivation."
           }
         ],
-        "hist": "Haman’s elevation \"above all the nobles\" (v.1) parallels Joseph’s elevation in Egypt — but inverted. Joseph saved; Haman destroys. The Amalekite-Israelite enmity was ancient: God declared \"war against Amalek from generation to generation\" (Exod 17:16). Haman is the latest incarnation.",
-        "ctx": "Haman’s response to one man’s refusal is genocide. The escalation from personal insult to ethnic annihilation reveals the nature of the enemy: this is not rational grievance but disproportionate, irrational hatred. \"He scorned the idea of killing only Mordecai\" (v.6) — the singular slight produces a universal sentence.",
-        "cross": [
-          {
-            "ref": "Exod 17:8–16",
-            "note": "Amalek attacks Israel in the wilderness — the origin of the enmity."
-          },
-          {
-            "ref": "1 Sam 15:7–33",
-            "note": "Saul spares Agag — the failure that echoes into Esther."
-          },
-          {
-            "ref": "Deut 25:17–19",
-            "note": "\"Remember what Amalek did... blot out their name\" — the command Mordecai embodies."
-          }
-        ],
+        "hist": {
+          "historical": "Haman’s elevation \"above all the nobles\" (v.1) parallels Joseph’s elevation in Egypt — but inverted. Joseph saved; Haman destroys. The Amalekite-Israelite enmity was ancient: God declared \"war against Amalek from generation to generation\" (Exod 17:16). Haman is the latest incarnation.",
+          "context": "Haman’s response to one man’s refusal is genocide. The escalation from personal insult to ethnic annihilation reveals the nature of the enemy: this is not rational grievance but disproportionate, irrational hatred. \"He scorned the idea of killing only Mordecai\" (v.6) — the singular slight produces a universal sentence."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 17:8–16",
+              "note": "Amalek attacks Israel in the wilderness — the origin of the enmity."
+            },
+            {
+              "ref": "1 Sam 15:7–33",
+              "note": "Saul spares Agag — the failure that echoes into Esther."
+            },
+            {
+              "ref": "Deut 25:17–19",
+              "note": "\"Remember what Amalek did... blot out their name\" — the command Mordecai embodies."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -142,18 +146,22 @@
             "paragraph": "\"The city of Susa was bewildered\" (nāḇōkâ). The empire’s capital is disturbed by the decree. The non-Jewish population is not enthusiastic but confused. The genocide is the king and Haman’s project, not the people’s."
           }
         ],
-        "hist": "The pur (lot) is an Akkadian loanword for divination by casting. Haman uses the lot to determine the \"lucky\" date — pagan divination choosing the day for Jewish genocide. The 13th of Adar (February–March 473 BC) gives eleven months of suspense — the longest dramatic delay in the book.",
-        "ctx": "Haman offers the king 10,000 talents of silver (approximately 375 tons) to fund the genocide. Whether the king accepts or refuses the money is ambiguous (v.11: \"Keep the money\" could mean \"I decline\" or \"It’s yours to use\"). The financial transaction gives the genocide an economic dimension: anti-Semitism as revenue source.",
-        "cross": [
-          {
-            "ref": "Prov 16:33",
-            "note": "\"The lot is cast into the lap, but its every decision is from the LORD\" — the theological comment on the pur."
-          },
-          {
-            "ref": "Exod 1:9–10",
-            "note": "Pharaoh’s rationale for oppression — the structural parallel to Haman’s."
-          }
-        ],
+        "hist": {
+          "historical": "The pur (lot) is an Akkadian loanword for divination by casting. Haman uses the lot to determine the \"lucky\" date — pagan divination choosing the day for Jewish genocide. The 13th of Adar (February–March 473 BC) gives eleven months of suspense — the longest dramatic delay in the book.",
+          "context": "Haman offers the king 10,000 talents of silver (approximately 375 tons) to fund the genocide. Whether the king accepts or refuses the money is ambiguous (v.11: \"Keep the money\" could mean \"I decline\" or \"It’s yours to use\"). The financial transaction gives the genocide an economic dimension: anti-Semitism as revenue source."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 16:33",
+              "note": "\"The lot is cast into the lap, but its every decision is from the LORD\" — the theological comment on the pur."
+            },
+            {
+              "ref": "Exod 1:9–10",
+              "note": "Pharaoh’s rationale for oppression — the structural parallel to Haman’s."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

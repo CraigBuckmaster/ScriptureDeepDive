@@ -31,18 +31,22 @@
             "paragraph": "V.9: the lion imagery for Judah runs from this verse through the Psalter (Ps 7:2), the prophets (Isa 31:4; Mic 5:8), and into Revelation (Rev 5:5 -- \"the Lion of the tribe of Judah\"). The cub who goes out and returns from the prey becomes the lion who crouches in regal security. Power under sovereign control."
           }
         ],
-        "hist": "Genesis 49 is one of the oldest pieces of poetry in the OT and one of the most theologically complex. The blessings/prophecies of Jacob over his twelve sons have been called the earliest example of Israelite tribal poetry. Each saying captures the destiny, character, and historical role of a tribe — some are blessing, some are indictment, all are prophetic. The passage is oracular poetry: the dying patriarch speaks of future tribal realities as present certainties.",
-        "ctx": "Genesis 49 is the Testament of Jacob -- the longest deathbed poem in the OT. The first half (vv.1-21) addresses ten sons with individual oracles ranging from dispossession (Reuben, Simeon, Levi) through the chapter's theological centrepiece (Judah, vv.8-12) to the shorter tribal notices. The Judah oracle is the chapter's heart: the scepter, the lion, the coming ruler to whom the obedience of the nations belongs -- this is royal messianic prophecy from the lips of a dying patriarch.",
-        "cross": [
-          {
-            "ref": "2 Sam 7:12-13",
-            "note": "I will raise up your offspring to succeed you... I will establish his kingdom -- the Davidic covenant is the historical fulfilment of the Judah oracle. David is the first lion of Judah; the dynasty is the scepter that does not depart."
-          },
-          {
-            "ref": "Rev 5:5",
-            "note": "The Lion of the tribe of Judah, the Root of David, has triumphed -- the NT identifies Jesus as the final fulfilment of Genesis 49:9-10. The obedience of the nations is his."
-          }
-        ],
+        "hist": {
+          "historical": "Genesis 49 is one of the oldest pieces of poetry in the OT and one of the most theologically complex. The blessings/prophecies of Jacob over his twelve sons have been called the earliest example of Israelite tribal poetry. Each saying captures the destiny, character, and historical role of a tribe — some are blessing, some are indictment, all are prophetic. The passage is oracular poetry: the dying patriarch speaks of future tribal realities as present certainties.",
+          "context": "Genesis 49 is the Testament of Jacob -- the longest deathbed poem in the OT. The first half (vv.1-21) addresses ten sons with individual oracles ranging from dispossession (Reuben, Simeon, Levi) through the chapter's theological centrepiece (Judah, vv.8-12) to the shorter tribal notices. The Judah oracle is the chapter's heart: the scepter, the lion, the coming ruler to whom the obedience of the nations belongs -- this is royal messianic prophecy from the lips of a dying patriarch."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 7:12-13",
+              "note": "I will raise up your offspring to succeed you... I will establish his kingdom -- the Davidic covenant is the historical fulfilment of the Judah oracle. David is the first lion of Judah; the dynasty is the scepter that does not depart."
+            },
+            {
+              "ref": "Rev 5:5",
+              "note": "The Lion of the tribe of Judah, the Root of David, has triumphed -- the NT identifies Jesus as the final fulfilment of Genesis 49:9-10. The obedience of the nations is his."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -142,18 +146,22 @@
             "paragraph": "V.33: the death formula -- breathed his last (wayyigwa) and was gathered (wayeqabeits) to his people. The phrase \"gathered to his people\" is not merely dying; it implies reunion with those who have died before. It is an ancient expression of what resurrection faith will later articulate more explicitly: death is not dissolution but a joining."
           }
         ],
-        "hist": "The blessings of Dan through Benjamin continue the range from the specific to the general, from the historical to the visionary. Joseph's blessing is the most extensive after Judah's — the favourite son receives a poetic description of divine protection through every adversity that reads as a summary of the Joseph cycle. Benjamin's wolf imagery is the shortest and sharpest of the tribal sayings. Jacob's death — the most elaborately described in Genesis — is marked by the formal gathering of feet into the bed, the breathing of his last, and being gathered to his people.",
-        "ctx": "The second half delivers the Joseph oracle (vv.22-26) -- the longest and most richly blessed of the twelve -- and Benjamin's brief but striking wolf image (v.27). The Joseph oracle is structured around the three divine names (v.24): the Mighty One, the Shepherd, the Rock. It is the blessing of the one who suffered most and remained faithful. Jacob then dies with precise burial instructions for Machpelah -- the cave purchased by Abraham, the physical anchor of the covenant in the promised land.",
-        "cross": [
-          {
-            "ref": "Gen 23:17-20",
-            "note": "The cave of Machpelah -- purchased by Abraham for Sarah's burial. It now holds Abraham, Sarah, Isaac, Rebekah, Leah, and will hold Jacob. The burial instructions preserve the covenant geography."
-          },
-          {
-            "ref": "Heb 11:22",
-            "note": "By faith Joseph, when his end was near, spoke about the departure of the Israelites from Egypt and gave instructions concerning the burial of his bones -- the same faith that animated Jacob's instructions animates Joseph's (Exod 13:19)."
-          }
-        ],
+        "hist": {
+          "historical": "The blessings of Dan through Benjamin continue the range from the specific to the general, from the historical to the visionary. Joseph's blessing is the most extensive after Judah's — the favourite son receives a poetic description of divine protection through every adversity that reads as a summary of the Joseph cycle. Benjamin's wolf imagery is the shortest and sharpest of the tribal sayings. Jacob's death — the most elaborately described in Genesis — is marked by the formal gathering of feet into the bed, the breathing of his last, and being gathered to his people.",
+          "context": "The second half delivers the Joseph oracle (vv.22-26) -- the longest and most richly blessed of the twelve -- and Benjamin's brief but striking wolf image (v.27). The Joseph oracle is structured around the three divine names (v.24): the Mighty One, the Shepherd, the Rock. It is the blessing of the one who suffered most and remained faithful. Jacob then dies with precise burial instructions for Machpelah -- the cave purchased by Abraham, the physical anchor of the covenant in the promised land."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 23:17-20",
+              "note": "The cave of Machpelah -- purchased by Abraham for Sarah's burial. It now holds Abraham, Sarah, Isaac, Rebekah, Leah, and will hold Jacob. The burial instructions preserve the covenant geography."
+            },
+            {
+              "ref": "Heb 11:22",
+              "note": "By faith Joseph, when his end was near, spoke about the departure of the Israelites from Egypt and gave instructions concerning the burial of his bones -- the same faith that animated Jacob's instructions animates Joseph's (Exod 13:19)."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

@@ -25,17 +25,18 @@
             "paragraph": "\"Miserable comforters (mənaḥămê ʿāmāl), all of you!\" (v.2). The friends came to comfort (2:11). Job now diagnoses their comfort as additional misery. The mənaḥēm (“comforter”) has become ʿāmāl (“trouble”). The healers are the wound."
           }
         ],
-        "ctx": "Job’s response is his most violent description of God’s attack. God has “torn me in his anger” (v.9), “shattered me” (v.12), “pierced my kidneys” (v.13), “broken through me like a warrior” (v.14). The imagery is of divine warfare: God is not a passive sovereign permitting suffering but an active combatant assaulting Job.",
-        "cross": [
-          {
-            "ref": "Lam 3:1–6",
-            "note": "\"I am the man who has seen affliction by the rod of his wrath\" — Jeremiah’s parallel experience of divine assault."
-          },
-          {
-            "ref": "Ps 22:1",
-            "note": "\"My God, why have you forsaken me?\" — the cry Jesus quotes on the cross, which echoes Job’s sense of abandonment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lam 3:1–6",
+              "note": "\"I am the man who has seen affliction by the rod of his wrath\" — Jeremiah’s parallel experience of divine assault."
+            },
+            {
+              "ref": "Ps 22:1",
+              "note": "\"My God, why have you forsaken me?\" — the cry Jesus quotes on the cross, which echoes Job’s sense of abandonment."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Habel: Job describes the attack as evidence of judicial misconduct. The judge has become the assailant. The trial has degenerated into violence. Habel: this is Job’s strongest argument that the legal system has failed."
             }
           ]
+        },
+        "hist": {
+          "context": "Job’s response is his most violent description of God’s attack. God has “torn me in his anger” (v.9), “shattered me” (v.12), “pierced my kidneys” (v.13), “broken through me like a warrior” (v.14). The imagery is of divine warfare: God is not a passive sovereign permitting suffering but an active combatant assaulting Job."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "\"Even now my witness (ʿêdî) is in heaven; my advocate is on high\" (v.19). A dramatic escalation from 9:33 (arbiter). Job now believes he has a witness who will testify on his behalf in the heavenly court. Who is this witness? Not the friends. Not the Satan. The text does not say. But the trajectory is unmistakable: arbiter (9:33) → witness (16:19) → redeemer (19:25)."
           }
         ],
-        "ctx": "Job cries out to the earth not to cover his blood (v.18) — an allusion to Abel’s blood crying from the ground (Gen 4:10). He then makes the astonishing claim: someone in heaven will testify for him. This is the book’s christological trajectory. Job needs someone who is both divine (in heaven) and sympathetic (his advocate). The NT identifies this as Christ (1 John 2:1).",
-        "cross": [
-          {
-            "ref": "Gen 4:10",
-            "note": "\"Your brother’s blood cries out to me from the ground\" — the Abel allusion: innocent blood demands hearing."
-          },
-          {
-            "ref": "1 John 2:1",
-            "note": "\"We have an advocate with the Father — Jesus Christ, the Righteous One\" — the NT fulfilment of Job’s witness/advocate."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 4:10",
+              "note": "\"Your brother’s blood cries out to me from the ground\" — the Abel allusion: innocent blood demands hearing."
+            },
+            {
+              "ref": "1 John 2:1",
+              "note": "\"We have an advocate with the Father — Jesus Christ, the Righteous One\" — the NT fulfilment of Job’s witness/advocate."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -192,6 +197,9 @@
               "note": "Habel: the witness in heaven is the pivotal development in Job’s legal strategy. He has moved from “I need an arbiter” to “I have a witness.” The case is no longer hopeless; there is an advocate in the court."
             }
           ]
+        },
+        "hist": {
+          "context": "Job cries out to the earth not to cover his blood (v.18) — an allusion to Abel’s blood crying from the ground (Gen 4:10). He then makes the astonishing claim: someone in heaven will testify for him. This is the book’s christological trajectory. Job needs someone who is both divine (in heaven) and sympathetic (his advocate). The NT identifies this as Christ (1 John 2:1)."
         }
       }
     }

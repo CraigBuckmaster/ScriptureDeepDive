@@ -31,21 +31,22 @@
             "paragraph": "God does nothing without revealing his 'secret counsel' (sod) to his servants the prophets. The term sod refers to the divine council — the heavenly assembly where God's plans are determined (cf. Jer 23:18, 22; 1 Kgs 22:19-23). The prophet's authority derives from having been admitted to this council."
           }
         ],
-        "ctx": "Chapter 3 begins the first of three 'Hear this word' speeches (3:1; 4:1; 5:1). The seven rhetorical questions (vv. 3-6) form one of the most tightly constructed arguments in prophetic literature. Each question assumes that effects have causes: lions roar because they have prey, traps spring because something triggered them. The climax (vv. 7-8) applies this logic to prophecy: the lion (YHWH) has roared, therefore the prophet must speak. Amos defends his ministry not through credentials but through logical necessity.",
-        "cross": [
-          {
-            "ref": "Jer 23:18",
-            "note": "'Who has stood in the council of the LORD?' — the prophetic claim to have been admitted to the divine council, the same concept Amos invokes."
-          },
-          {
-            "ref": "1 Kgs 22:19-23",
-            "note": "Micaiah's vision of the divine council, where God's plans are discussed and implemented through prophetic agents."
-          },
-          {
-            "ref": "Rom 1:18-20",
-            "note": "Paul's argument that God's attributes are clearly seen in creation, making humanity 'without excuse' — a cause-and-effect argument similar to Amos 3."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 23:18",
+              "note": "'Who has stood in the council of the LORD?' — the prophetic claim to have been admitted to the divine council, the same concept Amos invokes."
+            },
+            {
+              "ref": "1 Kgs 22:19-23",
+              "note": "Micaiah's vision of the divine council, where God's plans are discussed and implemented through prophetic agents."
+            },
+            {
+              "ref": "Rom 1:18-20",
+              "note": "Paul's argument that God's attributes are clearly seen in creation, making humanity 'without excuse' — a cause-and-effect argument similar to Amos 3."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Andersen and Freedman identify the rhetorical questions as a 'sorites' — a chain argument in which each premise leads to the next. They note that the questions are arranged in pairs (vv. 3-4, 5-6) with the conclusion in vv. 7-8, forming a 2+2+2 pattern. The logical structure is: just as effects presuppose causes, so prophetic speech presupposes divine revelation."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 3 begins the first of three 'Hear this word' speeches (3:1; 4:1; 5:1). The seven rhetorical questions (vv. 3-6) form one of the most tightly constructed arguments in prophetic literature. Each question assumes that effects have causes: lions roar because they have prey, traps spring because something triggered them. The climax (vv. 7-8) applies this logic to prophecy: the lion (YHWH) has roared, therefore the prophet must speak. Amos defends his ministry not through credentials but through logical necessity."
         }
       }
     },
@@ -127,17 +131,18 @@
             "paragraph": "The word recurs throughout Amos (1:4, 7, 10, 12, 14; 2:2, 5; 3:9, 10, 11; 6:8). Fortresses represent military security and elite wealth. God's judgment consistently targets these symbols of power: the fire that consumes foreign fortresses will also consume Israel's."
           }
         ],
-        "ctx": "God summons witnesses to observe Samaria's corruption: the great tumult within her, the oppression among her people, those who hoard plunder and loot in their fortresses. The announcement of judgment (vv. 11-15) specifies that an enemy will strip the land, tear down fortresses, and destroy the winter and summer houses of the wealthy elite. The destruction of the ivory-decorated houses (v. 15) targets the conspicuous consumption that Amos repeatedly condemns.",
-        "cross": [
-          {
-            "ref": "1 Kgs 22:39",
-            "note": "Ahab's ivory house — the precedent for the luxury Amos condemns."
-          },
-          {
-            "ref": "Amos 6:4-6",
-            "note": "The fuller description of elite luxury: ivory beds, choice food, idle music, fine wine."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 22:39",
+              "note": "Ahab's ivory house — the precedent for the luxury Amos condemns."
+            },
+            {
+              "ref": "Amos 6:4-6",
+              "note": "The fuller description of elite luxury: ivory beds, choice food, idle music, fine wine."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -198,6 +203,9 @@
               "note": "Andersen and Freedman note the structural parallel between 3:9-15 and the oracles of chapters 1-2: both involve summoning witnesses, presenting charges, and announcing punishment. The Israel oracle has become a self-contained covenant lawsuit, with God as prosecutor, the nations as jury, and Israel as defendant."
             }
           ]
+        },
+        "hist": {
+          "context": "God summons witnesses to observe Samaria's corruption: the great tumult within her, the oppression among her people, those who hoard plunder and loot in their fortresses. The announcement of judgment (vv. 11-15) specifies that an enemy will strip the land, tear down fortresses, and destroy the winter and summer houses of the wealthy elite. The destruction of the ivory-decorated houses (v. 15) targets the conspicuous consumption that Amos repeatedly condemns."
         }
       }
     }

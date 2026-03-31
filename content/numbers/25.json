@@ -31,21 +31,22 @@
             "paragraph": "Phinehas’s act is described as qinʾh (zeal/jealousy) — the same root as God’s jealousy for Israel in Exod 20:5 (\"I, the Lord your God, am a jealous God\"). Phinehas acts with divine jealousy because Israel’s unfaithfulness has provoked the divine jealousy that defends the covenant."
           }
         ],
-        "ctx": "Numbers 25 is the darkest chapter in the Balaam cycle’s aftermath. Balak could not curse Israel through Balaam; according to Num 31:16 and Rev 2:14, Balaam advised Balak to seduce Israel into covenant violation through the Midianite/Moabite women. The plan works: Israel worships Baal of Peor; God commands the execution of the leaders; a plague begins; a plague of 24,000 breaks out. At the height of the plague, an Israelite man brazenly brings a Midianite woman into the camp before Moses and the weeping congregation. Phinehas (Aaron’s grandson) takes a spear and drives it through both of them in the tent. The plague stops. God grants Phinehas a \"covenant of a lasting priesthood\" for his zeal.",
-        "cross": [
-          {
-            "ref": "1 Cor 10:8",
-            "note": "\"We should not commit sexual immorality, as some of them did — and in one day twenty-three thousand of them died.\" Paul references Baal Peor as a warning for NT believers — the number differs slightly from Num 25 (24,000), possibly because Paul counts only the plague deaths or rounds differently."
-          },
-          {
-            "ref": "Ps 106:28–31",
-            "note": "\"They yoked themselves to the Baal of Peor and ate sacrifices offered to lifeless gods… But Phinehas stood up and intervened, and the plague was checked. This was credited to him as righteousness for endless generations to come.\""
-          },
-          {
-            "ref": "Rev 2:14",
-            "note": "\"You have people there who hold to the teaching of Balaam, who taught Balak to entice the Israelites to sin by eating food sacrificed to idols and by committing sexual immorality.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 10:8",
+              "note": "\"We should not commit sexual immorality, as some of them did — and in one day twenty-three thousand of them died.\" Paul references Baal Peor as a warning for NT believers — the number differs slightly from Num 25 (24,000), possibly because Paul counts only the plague deaths or rounds differently."
+            },
+            {
+              "ref": "Ps 106:28–31",
+              "note": "\"They yoked themselves to the Baal of Peor and ate sacrifices offered to lifeless gods… But Phinehas stood up and intervened, and the plague was checked. This was credited to him as righteousness for endless generations to come.\""
+            },
+            {
+              "ref": "Rev 2:14",
+              "note": "\"You have people there who hold to the teaching of Balaam, who taught Balak to entice the Israelites to sin by eating food sacrificed to idols and by committing sexual immorality.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Ashley: The narrative context of Peor apostasy in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Numbers 25 is the darkest chapter in the Balaam cycle’s aftermath. Balak could not curse Israel through Balaam; according to Num 31:16 and Rev 2:14, Balaam advised Balak to seduce Israel into covenant violation through the Midianite/Moabite women. The plan works: Israel worships Baal of Peor; God commands the execution of the leaders; a plague begins; a plague of 24,000 breaks out. At the height of the plague, an Israelite man brazenly brings a Midianite woman into the camp before Moses and the weeping congregation. Phinehas (Aaron’s grandson) takes a spear and drives it through both of them in the tent. The plague stops. God grants Phinehas a \"covenant of a lasting priesthood\" for his zeal."
         }
       }
     },
@@ -127,17 +131,18 @@
             "paragraph": "Phinehas’s spear pierces both offenders simultaneously through their bodies. The graphic detail is not gratuitous but judicial: the execution is public, undeniable, and immediately visible to the congregation. The plague stops at this moment."
           }
         ],
-        "ctx": "The offenders are named (vv.14–15): the Israelite man is Zimri son of Salu, a leader of a Simeonite family; the Midianite woman is Cozbi daughter of Zur, a Midianite tribal chief. Both are of high status — this is not a case of marginal individuals but of prominent community leaders engaging in public covenant violation. The chapter closes (vv.16–18) with God’s command to treat the Midianites as enemies because of the Baal Peor seduction and because of Cozbi’s role. The Midianite war of Num 31 will execute this command.",
-        "cross": [
-          {
-            "ref": "Num 31:7–8",
-            "note": "\"They fought against Midian, as the Lord commanded Moses, and killed every man… They also killed Balaam son of Beor with the sword.\" The Midianite war executes the command of Num 25:17, and Balaam’s death confirms the connection between his counsel and the Baal Peor apostasy (31:16)."
-          },
-          {
-            "ref": "1 Kgs 18:40",
-            "note": "\"Then Elijah commanded them, ‘Seize the prophets of Baal. Don’t let anyone get away!’ They seized them, and Elijah had them brought down to the Kishon Valley and slaughtered there.\" Elijah’s zeal against Baal worship mirrors Phinehas’s zeal at Baal Peor — both act with divine jealousy against covenant idolatry."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 31:7–8",
+              "note": "\"They fought against Midian, as the Lord commanded Moses, and killed every man… They also killed Balaam son of Beor with the sword.\" The Midianite war executes the command of Num 25:17, and Balaam’s death confirms the connection between his counsel and the Baal Peor apostasy (31:16)."
+            },
+            {
+              "ref": "1 Kgs 18:40",
+              "note": "\"Then Elijah commanded them, ‘Seize the prophets of Baal. Don’t let anyone get away!’ They seized them, and Elijah had them brought down to the Kishon Valley and slaughtered there.\" Elijah’s zeal against Baal worship mirrors Phinehas’s zeal at Baal Peor — both act with divine jealousy against covenant idolatry."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -206,6 +211,9 @@
               "note": "Ashley: The narrative context of Peor apostasy in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "The offenders are named (vv.14–15): the Israelite man is Zimri son of Salu, a leader of a Simeonite family; the Midianite woman is Cozbi daughter of Zur, a Midianite tribal chief. Both are of high status — this is not a case of marginal individuals but of prominent community leaders engaging in public covenant violation. The chapter closes (vv.16–18) with God’s command to treat the Midianites as enemies because of the Baal Peor seduction and because of Cozbi’s role. The Midianite war of Num 31 will execute this command."
         }
       }
     }

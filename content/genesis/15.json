@@ -50,26 +50,30 @@
             "paragraph": "\"He credited it to him as righteousness\" (v.6) — ṣĕdāqāh is forensic, relational, and covenantal: the right standing of a party who has fulfilled covenant obligations. Here, remarkably, it is credited (ḥāšab — counted/imputed) to Abram not on the basis of performance but of faith. The theological revolution of this verse is that covenant standing can be received through trust before any law is given or any act performed — the basis of Paul's entire argument in Romans 3-5."
           }
         ],
-        "hist": "None",
-        "ctx": "Genesis 15:6 is arguably the most theologically significant verse in the entire Old Testament. Paul quotes it three times (Rom 4:3, 9, 22; Gal 3:6) to establish that justification has always been by faith, not works. This is not a NT innovation — it is the foundational principle of how God has always related to humanity. Abram's faith is the pattern; his righteousness is the prototype of what Paul calls \"the righteousness of God.\"",
-        "cross": [
-          {
-            "ref": "Rom 4:1–25",
-            "note": "Paul's full exposition: Abraham was justified before circumcision (ch.15 precedes ch.17), proving that faith, not law or circumcision, is the basis of righteousness."
-          },
-          {
-            "ref": "Gal 3:6–9",
-            "note": "The Abrahamic faith-righteousness is the basis of Gentile justification: \"those who are of faith are blessed along with Abraham, the man of faith.\""
-          },
-          {
-            "ref": "Heb 11:11–12",
-            "note": "Abraham's faith in the impossible promise is the model for faith as \"the assurance of things hoped for.\""
-          },
-          {
-            "ref": "Jas 2:21–23",
-            "note": "James (using the same verse!) argues that Abraham's faith was \"completed\" by his works — not contradicting Paul but emphasizing genuine faith produces action."
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "Genesis 15:6 is arguably the most theologically significant verse in the entire Old Testament. Paul quotes it three times (Rom 4:3, 9, 22; Gal 3:6) to establish that justification has always been by faith, not works. This is not a NT innovation — it is the foundational principle of how God has always related to humanity. Abram's faith is the pattern; his righteousness is the prototype of what Paul calls \"the righteousness of God.\""
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 4:1–25",
+              "note": "Paul's full exposition: Abraham was justified before circumcision (ch.15 precedes ch.17), proving that faith, not law or circumcision, is the basis of righteousness."
+            },
+            {
+              "ref": "Gal 3:6–9",
+              "note": "The Abrahamic faith-righteousness is the basis of Gentile justification: \"those who are of faith are blessed along with Abraham, the man of faith.\""
+            },
+            {
+              "ref": "Heb 11:11–12",
+              "note": "Abraham's faith in the impossible promise is the model for faith as \"the assurance of things hoped for.\""
+            },
+            {
+              "ref": "Jas 2:21–23",
+              "note": "James (using the same verse!) argues that Abraham's faith was \"completed\" by his works — not contradicting Paul but emphasizing genuine faith produces action."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -170,22 +174,26 @@
             "paragraph": "\"Then birds of prey came down on the carcasses, but Abram drove them away\" (v.11). The ʿayiṭ (birds of prey / vultures) descending on the covenant sacrifice are understood by some as threats to the covenant — nations and forces that will attempt to devour it — which Abram actively repels. His role as guardian of the covenant ceremony anticipates Israel's ongoing struggle to maintain covenant integrity against external and internal threats that seek to \"pick at\" the divine promises."
           }
         ],
-        "hist": "The covenant ceremony of Genesis 15 has direct parallels in ANE suzerainty treaties. In Mari texts and Hittite treaty documents, parties to a covenant would walk between the halves of slain animals, invoking the curse: \"May what happened to these animals happen to the one who breaks this covenant.\" The stunning innovation in Genesis 15 is that GOD alone passes through — taking the covenant curse upon himself, making it an unconditional divine commitment.",
-        "ctx": "The one-sided nature of this covenant is theologically explosive. Abram is put into a \"deep sleep\" — he cannot pass through the pieces. Only the divine presence (fire pot and torch) passes. This means the covenant's fulfillment depends entirely on God, not on Abram's faithfulness. It is an unconditional promise, a suzerain's self-imposed oath. Theologians see this as the basis for the \"new covenant\" of Hebrews, where God's own Son bears the covenant curse on the cross.",
-        "cross": [
-          {
-            "ref": "Jer 34:18–20",
-            "note": "When Israelites \"cut a covenant\" and then broke it by re-enslaving freed servants, God invokes the curse of walking between the pieces — exactly the Genesis 15 ceremony."
-          },
-          {
-            "ref": "Gal 3:15–17",
-            "note": "Paul argues the Mosaic law cannot annul the Abraham covenant, which was confirmed 430 years earlier — an unconditional promise cannot be made conditional later."
-          },
-          {
-            "ref": "Heb 6:13–18",
-            "note": "God swore by himself because there was no greater (v.13) — the basis of \"two unchangeable things\" (promise + oath) giving \"strong encouragement\" to those who flee to Christ."
-          }
-        ],
+        "hist": {
+          "historical": "The covenant ceremony of Genesis 15 has direct parallels in ANE suzerainty treaties. In Mari texts and Hittite treaty documents, parties to a covenant would walk between the halves of slain animals, invoking the curse: \"May what happened to these animals happen to the one who breaks this covenant.\" The stunning innovation in Genesis 15 is that GOD alone passes through — taking the covenant curse upon himself, making it an unconditional divine commitment.",
+          "context": "The one-sided nature of this covenant is theologically explosive. Abram is put into a \"deep sleep\" — he cannot pass through the pieces. Only the divine presence (fire pot and torch) passes. This means the covenant's fulfillment depends entirely on God, not on Abram's faithfulness. It is an unconditional promise, a suzerain's self-imposed oath. Theologians see this as the basis for the \"new covenant\" of Hebrews, where God's own Son bears the covenant curse on the cross."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 34:18–20",
+              "note": "When Israelites \"cut a covenant\" and then broke it by re-enslaving freed servants, God invokes the curse of walking between the pieces — exactly the Genesis 15 ceremony."
+            },
+            {
+              "ref": "Gal 3:15–17",
+              "note": "Paul argues the Mosaic law cannot annul the Abraham covenant, which was confirmed 430 years earlier — an unconditional promise cannot be made conditional later."
+            },
+            {
+              "ref": "Heb 6:13–18",
+              "note": "God swore by himself because there was no greater (v.13) — the basis of \"two unchangeable things\" (promise + oath) giving \"strong encouragement\" to those who flee to Christ."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -324,22 +332,26 @@
             "paragraph": "\"The sin of the Amorites has not yet reached its full measure\" (v.16) — the delay in the land's inheritance is theologically motivated: God will not dispossess the Canaanites until their covenant-breaking and moral corruption has reached a threshold that justifies displacement. The divine patience toward the Amorites for four generations is an act of mercy. When Israel eventually takes the land, it is not conquest for conquest's sake but the execution of a covenant that has been patient and just."
           }
         ],
-        "hist": "The covenant ceremony of Genesis 15 has direct parallels in ANE suzerainty treaties. In Mari texts and Hittite treaty documents, parties to a covenant would walk between the halves of slain animals, invoking the curse: \"May what happened to these animals happen to the one who breaks this covenant.\" The stunning innovation in Genesis 15 is that GOD alone passes through — taking the covenant curse upon himself, making it an unconditional divine commitment.",
-        "ctx": "The one-sided nature of this covenant is theologically explosive. Abram is put into a \"deep sleep\" — he cannot pass through the pieces. Only the divine presence (fire pot and torch) passes. This means the covenant's fulfillment depends entirely on God, not on Abram's faithfulness. It is an unconditional promise, a suzerain's self-imposed oath. Theologians see this as the basis for the \"new covenant\" of Hebrews, where God's own Son bears the covenant curse on the cross.",
-        "cross": [
-          {
-            "ref": "Jer 34:18–20",
-            "note": "When Israelites \"cut a covenant\" and then broke it by re-enslaving freed servants, God invokes the curse of walking between the pieces — exactly the Genesis 15 ceremony."
-          },
-          {
-            "ref": "Gal 3:15–17",
-            "note": "Paul argues the Mosaic law cannot annul the Abraham covenant, which was confirmed 430 years earlier — an unconditional promise cannot be made conditional later."
-          },
-          {
-            "ref": "Heb 6:13–18",
-            "note": "God swore by himself because there was no greater (v.13) — the basis of \"two unchangeable things\" (promise + oath) giving \"strong encouragement\" to those who flee to Christ."
-          }
-        ],
+        "hist": {
+          "historical": "The covenant ceremony of Genesis 15 has direct parallels in ANE suzerainty treaties. In Mari texts and Hittite treaty documents, parties to a covenant would walk between the halves of slain animals, invoking the curse: \"May what happened to these animals happen to the one who breaks this covenant.\" The stunning innovation in Genesis 15 is that GOD alone passes through — taking the covenant curse upon himself, making it an unconditional divine commitment.",
+          "context": "The one-sided nature of this covenant is theologically explosive. Abram is put into a \"deep sleep\" — he cannot pass through the pieces. Only the divine presence (fire pot and torch) passes. This means the covenant's fulfillment depends entirely on God, not on Abram's faithfulness. It is an unconditional promise, a suzerain's self-imposed oath. Theologians see this as the basis for the \"new covenant\" of Hebrews, where God's own Son bears the covenant curse on the cross."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 34:18–20",
+              "note": "When Israelites \"cut a covenant\" and then broke it by re-enslaving freed servants, God invokes the curse of walking between the pieces — exactly the Genesis 15 ceremony."
+            },
+            {
+              "ref": "Gal 3:15–17",
+              "note": "Paul argues the Mosaic law cannot annul the Abraham covenant, which was confirmed 430 years earlier — an unconditional promise cannot be made conditional later."
+            },
+            {
+              "ref": "Heb 6:13–18",
+              "note": "God swore by himself because there was no greater (v.13) — the basis of \"two unchangeable things\" (promise + oath) giving \"strong encouragement\" to those who flee to Christ."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

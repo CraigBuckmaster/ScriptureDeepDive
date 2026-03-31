@@ -25,21 +25,22 @@
             "paragraph": "The siege begins on the tenth day of the tenth month (v.1) and the wall is breached on the ninth day of the fourth month (v.3–4) — approximately eighteen months. These dates become perpetual fast days in Jewish tradition (Zech 8:19). The calendar of catastrophe is fixed in communal memory."
           }
         ],
-        "ctx": "In Zedekiah’s ninth year, Nebuchadnezzar besieges Jerusalem. The siege lasts eighteen months. Famine becomes severe. The wall is breached. Zedekiah flees toward the Jordan but is captured in the plains of Jericho — where Joshua entered the land, the last king exits it. He is brought to Nebuchadnezzar at Riblah. His sons are killed before his eyes, then his eyes are put out — the last thing Zedekiah sees is the death of his dynasty. He is bound in bronze shackles and taken to Babylon. The king who should have shepherded God’s people is blinded, chained, and led away.",
-        "cross": [
-          {
-            "ref": "Jer 39:1–10",
-            "note": "Jeremiah’s parallel account adds that Nebuchadnezzar’s officers sat in the Middle Gate after the breach and that Jeremiah was released from prison."
-          },
-          {
-            "ref": "Jer 52:4–11",
-            "note": "Jeremiah 52 reproduces this chapter almost verbatim — the catastrophe was important enough to record in two separate canonical locations."
-          },
-          {
-            "ref": "Ezek 12:12–13",
-            "note": "Ezekiel prophesied that the king would “cover his face so that he cannot see the land” and would be taken to Babylon — he would “not see it.” Fulfilled in Zedekiah’s blinding."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 39:1–10",
+              "note": "Jeremiah’s parallel account adds that Nebuchadnezzar’s officers sat in the Middle Gate after the breach and that Jeremiah was released from prison."
+            },
+            {
+              "ref": "Jer 52:4–11",
+              "note": "Jeremiah 52 reproduces this chapter almost verbatim — the catastrophe was important enough to record in two separate canonical locations."
+            },
+            {
+              "ref": "Ezek 12:12–13",
+              "note": "Ezekiel prophesied that the king would “cover his face so that he cannot see the land” and would be taken to Babylon — he would “not see it.” Fulfilled in Zedekiah’s blinding."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -79,6 +80,9 @@
               "note": "The narrator records Zedekiah’s flight and capture without commentary. The facts speak: the Davidic king abandons his city, is caught in open country, and is subjected to a foreign emperor’s judgment. Every dimension of the Davidic promise — city, throne, freedom — is stripped away."
             }
           ]
+        },
+        "hist": {
+          "context": "In Zedekiah’s ninth year, Nebuchadnezzar besieges Jerusalem. The siege lasts eighteen months. Famine becomes severe. The wall is breached. Zedekiah flees toward the Jordan but is captured in the plains of Jericho — where Joshua entered the land, the last king exits it. He is brought to Nebuchadnezzar at Riblah. His sons are killed before his eyes, then his eyes are put out — the last thing Zedekiah sees is the death of his dynasty. He is bound in bronze shackles and taken to Babylon. The king who should have shepherded God’s people is blinded, chained, and led away."
         }
       }
     },
@@ -88,21 +92,22 @@
       "verse_start": 13,
       "verse_end": 21,
       "panels": {
-        "ctx": "Nebuzaradan, commander of the guard, burns the temple, the royal palace, and every important building in Jerusalem. The bronze pillars Jachin and Boaz, the bronze Sea, the movable stands — everything Solomon built is broken up and carried to Babylon. The gold and silver vessels are taken. The chief priest Seraiah and the second priest Zephaniah are executed at Riblah. The narrator catalogues the destruction with archival precision, listing every object removed. The inventory is a reverse echo of 1 Kings 7, where Solomon’s temple furnishings were catalogued with pride. What was built with glory is dismantled with thoroughness.",
-        "cross": [
-          {
-            "ref": "1 Kgs 7:15–51",
-            "note": "Solomon’s temple furnishings — the bronze pillars, the Sea, the stands. Every item described there is destroyed here. The destruction list is the construction list in reverse."
-          },
-          {
-            "ref": "Lam 1:1–2",
-            "note": "“How deserted lies the city, once so full of people! How like a widow is she, who once was great among the nations!” The book of Lamentations is the emotional response to this chapter."
-          },
-          {
-            "ref": "Ps 74:3–8",
-            "note": "“Turn your steps toward these everlasting ruins, all this destruction the enemy has brought on the sanctuary.” A psalm lamenting the temple’s destruction."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 7:15–51",
+              "note": "Solomon’s temple furnishings — the bronze pillars, the Sea, the stands. Every item described there is destroyed here. The destruction list is the construction list in reverse."
+            },
+            {
+              "ref": "Lam 1:1–2",
+              "note": "“How deserted lies the city, once so full of people! How like a widow is she, who once was great among the nations!” The book of Lamentations is the emotional response to this chapter."
+            },
+            {
+              "ref": "Ps 74:3–8",
+              "note": "“Turn your steps toward these everlasting ruins, all this destruction the enemy has brought on the sanctuary.” A psalm lamenting the temple’s destruction."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -142,6 +147,9 @@
               "note": "The reverse inventory — listing what was removed rather than what was made — is the narrator’s literary technique for expressing irreversible loss. The reader who remembers 1 Kings 7 recognises each item and knows it is gone. The narrative carries its grief in its structure."
             }
           ]
+        },
+        "hist": {
+          "context": "Nebuzaradan, commander of the guard, burns the temple, the royal palace, and every important building in Jerusalem. The bronze pillars Jachin and Boaz, the bronze Sea, the movable stands — everything Solomon built is broken up and carried to Babylon. The gold and silver vessels are taken. The chief priest Seraiah and the second priest Zephaniah are executed at Riblah. The narrator catalogues the destruction with archival precision, listing every object removed. The inventory is a reverse echo of 1 Kings 7, where Solomon’s temple furnishings were catalogued with pride. What was built with glory is dismantled with thoroughness."
         }
       }
     },
@@ -151,21 +159,22 @@
       "verse_start": 22,
       "verse_end": 30,
       "panels": {
-        "ctx": "Nebuchadnezzar appoints Gedaliah as governor over the remnant. Ishmael, a royal descendant, assassinates him. The survivors flee to Egypt, fearing Babylonian reprisal — completing the circle: Israel came out of Egypt with Moses; now the remnant returns to Egypt in terror. But the book does not end there. Its final four verses shift to 561 BC: Evil-Merodach of Babylon releases Jehoiachin from prison, gives him a seat above the other captive kings, and provides a regular allowance for the rest of his life. The Davidic king is not dead. The dynasty is in exile, not extinct. The last word is not destruction but a whisper of survival — a lamp still burning in the darkness.",
-        "cross": [
-          {
-            "ref": "Jer 40–41",
-            "note": "Jeremiah provides the extended account of Gedaliah’s governorship and Ishmael’s assassination, including the flight to Egypt against Jeremiah’s explicit warning."
-          },
-          {
-            "ref": "2 Sam 7:14–16",
-            "note": "“When he does wrong, I will punish him... But my love will never be taken away from him... Your throne will be established forever.” Jehoiachin’s release is the “never taken away” clause in action."
-          },
-          {
-            "ref": "Matt 1:12",
-            "note": "“After the exile to Babylon: Jeconiah was the father of Shealtiel.” The genealogy passes through the exiled king. The messianic line survives Babylon."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 40–41",
+              "note": "Jeremiah provides the extended account of Gedaliah’s governorship and Ishmael’s assassination, including the flight to Egypt against Jeremiah’s explicit warning."
+            },
+            {
+              "ref": "2 Sam 7:14–16",
+              "note": "“When he does wrong, I will punish him... But my love will never be taken away from him... Your throne will be established forever.” Jehoiachin’s release is the “never taken away” clause in action."
+            },
+            {
+              "ref": "Matt 1:12",
+              "note": "“After the exile to Babylon: Jeconiah was the father of Shealtiel.” The genealogy passes through the exiled king. The messianic line survives Babylon."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -217,6 +226,9 @@
               "note": "“Day by day the king gave Jehoiachin a regular allowance as long as he lived.” The final sentence is not a summary but a promise: the provision continues indefinitely. As long as Jehoiachin lives, David’s line lives. And as long as David’s line lives, God’s promise lives."
             }
           ]
+        },
+        "hist": {
+          "context": "Nebuchadnezzar appoints Gedaliah as governor over the remnant. Ishmael, a royal descendant, assassinates him. The survivors flee to Egypt, fearing Babylonian reprisal — completing the circle: Israel came out of Egypt with Moses; now the remnant returns to Egypt in terror. But the book does not end there. Its final four verses shift to 561 BC: Evil-Merodach of Babylon releases Jehoiachin from prison, gives him a seat above the other captive kings, and provides a regular allowance for the rest of his life. The Davidic king is not dead. The dynasty is in exile, not extinct. The last word is not destruction but a whisper of survival — a lamp still burning in the darkness."
         }
       }
     }

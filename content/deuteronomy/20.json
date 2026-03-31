@@ -31,17 +31,18 @@
             "paragraph": "The fearful soldier is exempted from battle -- not as punishment but as protection for the army. A fearful soldier is a contagion: his fear infects others and undermines collective courage. The Gideon narrative (Judg 7:3) applies exactly this Deuteronomic principle."
           }
         ],
-        "ctx": "Chapter 20 provides rules of engagement for warfare. Before battle, a priest addresses the army: God is with you; do not fear. Then officers identify four exemptions: new house, new vineyard, new marriage, and fearful heart. The four categories of incompleteness -- things started but not finished -- excuse a soldier because they divide attention and heart. Covenant warfare requires wholehearted soldiers.",
-        "cross": [
-          {
-            "ref": "Judg 7:3",
-            "note": "\"Gideon announced, 'Anyone who trembles with fear may turn back.' So twenty-two thousand men left, while ten thousand remained.\" Gideon's fearful-soldier discharge is the explicit application of Deuteronomy 20:8."
-          },
-          {
-            "ref": "Luke 14:31-32",
-            "note": "\"Suppose a king is about to go to war against another king. Won't he first sit down and consider whether he is able... to oppose the one coming against him?\" Jesus's parable reflects the Deuteronomy 20 principle of counting the cost before engaging."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Judg 7:3",
+              "note": "\"Gideon announced, 'Anyone who trembles with fear may turn back.' So twenty-two thousand men left, while ten thousand remained.\" Gideon's fearful-soldier discharge is the explicit application of Deuteronomy 20:8."
+            },
+            {
+              "ref": "Luke 14:31-32",
+              "note": "\"Suppose a king is about to go to war against another king. Won't he first sit down and consider whether he is able... to oppose the one coming against him?\" Jesus's parable reflects the Deuteronomy 20 principle of counting the cost before engaging."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 20 provides rules of engagement for warfare. Before battle, a priest addresses the army: God is with you; do not fear. Then officers identify four exemptions: new house, new vineyard, new marriage, and fearful heart. The four categories of incompleteness -- things started but not finished -- excuse a soldier because they divide attention and heart. Covenant warfare requires wholehearted soldiers."
         }
       }
     },
@@ -129,17 +133,18 @@
             "paragraph": "The trees of the field are identified with human life -- they sustain it. The prohibition on cutting down fruit trees even in warfare is one of the most ecologically protective commands in the ancient world. Creation belongs to God and must not be wantonly destroyed even in conflict."
           }
         ],
-        "ctx": "The rules of engagement distinguish between distant cities (offer peace first; if refused, besiege and enslave; if they fight, kill the men and take the rest) and Canaanite cities (herem -- total destruction). Even in the most severe military action, fruit trees around besieged cities must not be cut down -- they serve life and must not be destroyed in the service of death. The distinction between people who may be killed and trees that must be preserved shows that the warfare rules have a consistent ecological-humanitarian framework.",
-        "cross": [
-          {
-            "ref": "Matt 5:9",
-            "note": "\"Blessed are the peacemakers, for they will be called children of God.\" The Deuteronomy 20 requirement to offer peace first is the OT anticipation of the peacemaker beatitude."
-          },
-          {
-            "ref": "Rev 7:3",
-            "note": "\"Do not harm the land or the sea or the trees until we put a seal on the foreheads of the servants of our God.\" Revelation's protection of creation echoes the Deuteronomy 20 tree-protection command in eschatological form."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 5:9",
+              "note": "\"Blessed are the peacemakers, for they will be called children of God.\" The Deuteronomy 20 requirement to offer peace first is the OT anticipation of the peacemaker beatitude."
+            },
+            {
+              "ref": "Rev 7:3",
+              "note": "\"Do not harm the land or the sea or the trees until we put a seal on the foreheads of the servants of our God.\" Revelation's protection of creation echoes the Deuteronomy 20 tree-protection command in eschatological form."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -208,6 +213,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "The rules of engagement distinguish between distant cities (offer peace first; if refused, besiege and enslave; if they fight, kill the men and take the rest) and Canaanite cities (herem -- total destruction). Even in the most severe military action, fruit trees around besieged cities must not be cut down -- they serve life and must not be destroyed in the service of death. The distinction between people who may be killed and trees that must be preserved shows that the warfare rules have a consistent ecological-humanitarian framework."
         }
       }
     }

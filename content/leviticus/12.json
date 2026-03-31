@@ -31,21 +31,22 @@
             "paragraph": "The purification periods — 33 days for a boy (total 40), 66 days for a girl (total 80) — are liturgical durations, not medical prescriptions. The doubled period for a girl has been much discussed; no fully satisfying explanation has emerged."
           }
         ],
-        "ctx": "Leviticus 12 is brief (8 verses) but theologically dense. Childbirth is not sin — the mother is not guilty of anything. Yet the blood flow associated with birth creates a state of ritual impurity similar to menstrual impurity (niddāh). The purification period has two phases: the first (7 days for boy/14 for girl) she is like during menstruation — full impurity; the second (33/66 days) she is \"continuing in the blood of her purification\" — lesser impurity. At the end she brings a burnt offering and a sin offering. The sin offering (ḥaṭṭāʾt) here is not for a sin committed but for the transition from an impure state back to the holy — the same logic as the purification offering throughout Leviticus.",
-        "cross": [
-          {
-            "ref": "Luke 2:22–24",
-            "note": "\"When the time came for the purification rites required by the Law of Moses, Joseph and Mary took him to Jerusalem.\" Mary brought the bird offering (v.8) — the poor person's provision. The Son of God entered the world under the full weight of the Levitical purity system, born of a woman under the law."
-          },
-          {
-            "ref": "Gal 4:4–5",
-            "note": "\"God sent his Son, born of a woman, born under the law, to redeem those under the law.\" The incarnation is defined by entry under Levitical obligation."
-          },
-          {
-            "ref": "Ps 51:5",
-            "note": "\"Surely I was sinful at birth, sinful from the time my mother conceived me.\" The childbirth-impurity law gave David the vocabulary for his meditation on original sinfulness — not that birth causes sin, but that the impurity system maps onto the human condition of needing purification."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 2:22–24",
+              "note": "\"When the time came for the purification rites required by the Law of Moses, Joseph and Mary took him to Jerusalem.\" Mary brought the bird offering (v.8) — the poor person's provision. The Son of God entered the world under the full weight of the Levitical purity system, born of a woman under the law."
+            },
+            {
+              "ref": "Gal 4:4–5",
+              "note": "\"God sent his Son, born of a woman, born under the law, to redeem those under the law.\" The incarnation is defined by entry under Levitical obligation."
+            },
+            {
+              "ref": "Ps 51:5",
+              "note": "\"Surely I was sinful at birth, sinful from the time my mother conceived me.\" The childbirth-impurity law gave David the vocabulary for his meditation on original sinfulness — not that birth causes sin, but that the impurity system maps onto the human condition of needing purification."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -97,6 +98,9 @@
               "note": "Milgrom: The ḥaṭṭāʾt at the end of the purification period is a \"purification offering\" (Milgrom's preferred translation) — it purges the sanctuary of whatever residual impurity the mother's condition may have generated, even at a distance. The offering is not for sin; it marks the transition from impure state to clean."
             }
           ]
+        },
+        "hist": {
+          "context": "Leviticus 12 is brief (8 verses) but theologically dense. Childbirth is not sin — the mother is not guilty of anything. Yet the blood flow associated with birth creates a state of ritual impurity similar to menstrual impurity (niddāh). The purification period has two phases: the first (7 days for boy/14 for girl) she is like during menstruation — full impurity; the second (33/66 days) she is \"continuing in the blood of her purification\" — lesser impurity. At the end she brings a burnt offering and a sin offering. The sin offering (ḥaṭṭāʾt) here is not for a sin committed but for the transition from an impure state back to the holy — the same logic as the purification offering throughout Leviticus."
         }
       }
     },
@@ -114,17 +118,18 @@
             "paragraph": "The two-offering combination marking re-entry. The burnt offering expresses total consecration; the sin offering purges residual impurity. Together they formally restore the mother to full covenant worship."
           }
         ],
-        "ctx": "The purification offerings mark the transition from impure state back to full covenant life. The prescribed offering is a year-old lamb plus a bird. The poverty provision — two turtledoves or two pigeons — is the offering Mary brought at Jesus's presentation (Luke 2:24), revealing the holy family's economic situation. The priest declares the mother clean — not because she sinned in giving birth, but because the blood-flow impurity is formally resolved and she is re-integrated into the covenant community.",
-        "cross": [
-          {
-            "ref": "Luke 2:22–24",
-            "note": "Joseph and Mary brought the poverty provision of v.8 — a pair of turtledoves. The Son of God entered under the full weight of the Levitical system, born of a woman under the law."
-          },
-          {
-            "ref": "Heb 9:12–14",
-            "note": "He entered the Most Holy Place once for all by his own blood — the fulfillment of every ḥaṭṭāʾt offering."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 2:22–24",
+              "note": "Joseph and Mary brought the poverty provision of v.8 — a pair of turtledoves. The Son of God entered under the full weight of the Levitical system, born of a woman under the law."
+            },
+            {
+              "ref": "Heb 9:12–14",
+              "note": "He entered the Most Holy Place once for all by his own blood — the fulfillment of every ḥaṭṭāʾt offering."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -176,6 +181,9 @@
               "note": "Milgrom: The ritual prescriptions for purification after childbirth reflect a coherent priestly symbolic system. The gradations of holiness and offering type form an internally consistent theology of sacred space and divine access."
             }
           ]
+        },
+        "hist": {
+          "context": "The purification offerings mark the transition from impure state back to full covenant life. The prescribed offering is a year-old lamb plus a bird. The poverty provision — two turtledoves or two pigeons — is the offering Mary brought at Jesus's presentation (Luke 2:24), revealing the holy family's economic situation. The priest declares the mother clean — not because she sinned in giving birth, but because the blood-flow impurity is formally resolved and she is re-integrated into the covenant community."
         }
       }
     }

@@ -25,17 +25,18 @@
             "paragraph": "The war against Midian is explicitly framed as divine neqam (vengeance / retributive justice) for the Baal Peor seduction. This is not ethnic warfare but covenant justice: Midian attacked Israel's covenant faithfulness through religious-sexual seduction, and the response is proportional covenant judgment."
           }
         ],
-        "ctx": "Numbers 31 executes the command of Num 25:17-18: war against Midian for the Baal Peor seduction. Israel defeats Midian, killing all the men including five Midianite kings and Balaam. Moses is furious that the women were spared — they were the Peor seduction's agents (v.16). Only the virgin girls are spared. The chapter provides extensive purity requirements for returning soldiers and a detailed spoil-distribution formula. The war's theological purpose is the elimination of the specific religious-sexual threat that nearly destroyed Israel at Peor.",
-        "cross": [
-          {
-            "ref": "Rev 19:11-15",
-            "note": "\"I saw heaven standing open and there before me was a white horse, whose rider is called Faithful and True. With justice he judges and wages war.\" The divine-warrior imagery of Num 31 finds its eschatological fulfilment — covenant warfare reaches its ultimate expression."
-          },
-          {
-            "ref": "Num 25:17-18",
-            "note": "\"Treat the Midianites as enemies and kill them, because they treated you as enemies when they deceived you in the Peor incident.\" The Midianite war executes this specific command — it is not impulsive violence but the fulfilment of a covenant instruction."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rev 19:11-15",
+              "note": "\"I saw heaven standing open and there before me was a white horse, whose rider is called Faithful and True. With justice he judges and wages war.\" The divine-warrior imagery of Num 31 finds its eschatological fulfilment — covenant warfare reaches its ultimate expression."
+            },
+            {
+              "ref": "Num 25:17-18",
+              "note": "\"Treat the Midianites as enemies and kill them, because they treated you as enemies when they deceived you in the Peor incident.\" The Midianite war executes this specific command — it is not impulsive violence but the fulfilment of a covenant instruction."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Ashley: The narrative context of Midianite war in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Numbers 31 executes the command of Num 25:17-18: war against Midian for the Baal Peor seduction. Israel defeats Midian, killing all the men including five Midianite kings and Balaam. Moses is furious that the women were spared — they were the Peor seduction's agents (v.16). Only the virgin girls are spared. The chapter provides extensive purity requirements for returning soldiers and a detailed spoil-distribution formula. The war's theological purpose is the elimination of the specific religious-sexual threat that nearly destroyed Israel at Peor."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "The voluntary warrior's offering (vv.48-54) is described as making atonement — unusual since no specific sin is confessed. The atonement appears to be a general acknowledgment that even covenant warriors who survived a divinely commanded war stand before God in need of his mercy, not self-congratulation."
           }
         ],
-        "ctx": "The spoil division (vv.25-47) distributes equally between soldiers and community, with a levy from each half going to the Lord (via priests and Levites). The warriors' voluntary additional offering (vv.48-54) — 16,750 shekels of gold jewellery — is given because not one Israelite soldier died in the battle (v.49). The offering is presented as atonement and memorial. The war's final accounting is theological: the community received everything; not one life was lost; the gold offering acknowledges that God fought for them.",
-        "cross": [
-          {
-            "ref": "2 Sam 8:11-12",
-            "note": "\"King David dedicated these articles to the Lord, as he had done with the silver and gold from all the nations he had subdued.\" David's practice of consecrating war spoil reflects the principle established in the warrior's offering of Num 31."
-          },
-          {
-            "ref": "1 Sam 30:24",
-            "note": "\"The share of the man who stayed with the supplies is to be the same as that of him who went down to the battle.\" David codifies the equal-spoil-distribution principle of Num 31:27."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 8:11-12",
+              "note": "\"King David dedicated these articles to the Lord, as he had done with the silver and gold from all the nations he had subdued.\" David's practice of consecrating war spoil reflects the principle established in the warrior's offering of Num 31."
+            },
+            {
+              "ref": "1 Sam 30:24",
+              "note": "\"The share of the man who stayed with the supplies is to be the same as that of him who went down to the battle.\" David codifies the equal-spoil-distribution principle of Num 31:27."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -196,6 +201,9 @@
               "note": "Ashley: The narrative context of Midianite war in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "The spoil division (vv.25-47) distributes equally between soldiers and community, with a levy from each half going to the Lord (via priests and Levites). The warriors' voluntary additional offering (vv.48-54) — 16,750 shekels of gold jewellery — is given because not one Israelite soldier died in the battle (v.49). The offering is presented as atonement and memorial. The war's final accounting is theological: the community received everything; not one life was lost; the gold offering acknowledges that God fought for them."
         }
       }
     }

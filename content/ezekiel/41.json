@@ -31,21 +31,22 @@
             "paragraph": "The hekhal is the main worship hall, the room before the Most Holy Place. In Solomon's temple, this contained the lampstand, the table of showbread, and the altar of incense. Ezekiel's hekhal is forty cubits long by twenty wide, exactly matching Solomon's dimensions (1 Kgs 6:17). The continuity with the historical temple is maintained even as the vision transcends it."
           }
         ],
-        "ctx": "The measuring guide leads Ezekiel into the temple building itself, the innermost zone of sacred space. The progression follows the graded holiness pattern: portico (entrance), outer hall (hekhal), and Most Holy Place (qodesh haqqodashim). The guide measures the Most Holy Place but does not invite Ezekiel to enter. The dimensions match Solomon's temple (1 Kgs 6), but key items are missing: no ark, no cherubim atop the ark, no lampstand, no table of showbread. The absence is theologically significant: the glory of God itself will fill this space (43:1-5), making representational objects unnecessary. Side rooms in three stories line the temple walls (vv. 5-11), providing storage and service space.",
-        "cross": [
-          {
-            "ref": "1 Kgs 6:16-20",
-            "note": "Solomon's Most Holy Place: twenty cubits long, twenty wide, twenty high, overlaid with gold. Ezekiel maintains the ground dimensions but omits the gold and the ark. The presence of God replaces all symbolic furniture."
-          },
-          {
-            "ref": "Heb 9:3-5",
-            "note": "The author of Hebrews describes the Most Holy Place of the tabernacle with its ark, gold jar of manna, Aaron's rod, and stone tablets. Ezekiel's empty Most Holy Place signals a new era where the reality replaces the symbols."
-          },
-          {
-            "ref": "Rev 21:22",
-            "note": "John's New Jerusalem has 'no temple, because the Lord God Almighty and the Lamb are its temple.' This represents the ultimate trajectory beyond Ezekiel's vision: from symbol to presence to direct access."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 6:16-20",
+              "note": "Solomon's Most Holy Place: twenty cubits long, twenty wide, twenty high, overlaid with gold. Ezekiel maintains the ground dimensions but omits the gold and the ark. The presence of God replaces all symbolic furniture."
+            },
+            {
+              "ref": "Heb 9:3-5",
+              "note": "The author of Hebrews describes the Most Holy Place of the tabernacle with its ark, gold jar of manna, Aaron's rod, and stone tablets. Ezekiel's empty Most Holy Place signals a new era where the reality replaces the symbols."
+            },
+            {
+              "ref": "Rev 21:22",
+              "note": "John's New Jerusalem has 'no temple, because the Lord God Almighty and the Lamb are its temple.' This represents the ultimate trajectory beyond Ezekiel's vision: from symbol to presence to direct access."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -94,6 +95,9 @@
               "note": "Zimmerli notes that Ezekiel remains outside the Most Holy Place, maintaining the priestly distinction between ordinary priests (who enter the outer hall) and the high priest (who alone enters the inner room). Even in vision, Ezekiel the priest observes the boundaries. This detail confirms the priestly character of the entire temple torah."
             }
           ]
+        },
+        "hist": {
+          "context": "The measuring guide leads Ezekiel into the temple building itself, the innermost zone of sacred space. The progression follows the graded holiness pattern: portico (entrance), outer hall (hekhal), and Most Holy Place (qodesh haqqodashim). The guide measures the Most Holy Place but does not invite Ezekiel to enter. The dimensions match Solomon's temple (1 Kgs 6), but key items are missing: no ark, no cherubim atop the ark, no lampstand, no table of showbread. The absence is theologically significant: the glory of God itself will fill this space (43:1-5), making representational objects unnecessary. Side rooms in three stories line the temple walls (vv. 5-11), providing storage and service space."
         }
       }
     },
@@ -111,21 +115,22 @@
             "paragraph": "The interior walls are decorated with alternating cherubim and palm trees. Each cherub has two faces: a human face and a lion face (v. 19). Unlike the four-faced cherubim of chapter 1, these have only two faces, adapted for flat decorative relief. The palm trees (timmorim) symbolize paradise (cf. the garden of Eden and the temple as a new Eden). The alternating pattern creates a visual theology: guardians (cherubim) and paradise (palms) interwoven throughout the temple."
           }
         ],
-        "ctx": "The tour continues with the large building west of the temple (v. 12, purpose unspecified), the overall temple dimensions (v. 13-15a), and then the interior decoration. The walls are paneled with wood from floor to windows and adorned with carved cherubim and palm trees (vv. 18-20). The cherubim-and-palms motif connects the temple to Eden: Solomon's temple also used these decorations (1 Kgs 6:29), identifying the temple as a symbolic return to paradise, the place where God dwells with humanity. The wooden altar (v. 22) is called 'the table that is before the LORD,' combining altar and table imagery. The chapter closes with the thick double doors of the outer hall, also carved with cherubim and palms.",
-        "cross": [
-          {
-            "ref": "1 Kgs 6:29-35",
-            "note": "Solomon's temple used the same cherubim-and-palm-tree decorative program. Ezekiel's vision maintains this tradition, confirming the temple-as-Eden symbolism."
-          },
-          {
-            "ref": "Gen 3:24",
-            "note": "Cherubim guard the way to the tree of life after the expulsion from Eden. In the temple, cherubim decorate the walls as guardians of sacred space, and the palm trees recall the garden's vegetation. The temple is Eden recovered."
-          },
-          {
-            "ref": "Rev 22:1-2",
-            "note": "The tree of life in the New Jerusalem completes the garden-temple trajectory: what was lost in Eden, symbolized in the temple, is fully restored in the new creation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 6:29-35",
+              "note": "Solomon's temple used the same cherubim-and-palm-tree decorative program. Ezekiel's vision maintains this tradition, confirming the temple-as-Eden symbolism."
+            },
+            {
+              "ref": "Gen 3:24",
+              "note": "Cherubim guard the way to the tree of life after the expulsion from Eden. In the temple, cherubim decorate the walls as guardians of sacred space, and the palm trees recall the garden's vegetation. The temple is Eden recovered."
+            },
+            {
+              "ref": "Rev 22:1-2",
+              "note": "The tree of life in the New Jerusalem completes the garden-temple trajectory: what was lost in Eden, symbolized in the temple, is fully restored in the new creation."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -174,6 +179,9 @@
               "note": "Zimmerli reads the temple decoration as a theological program: the alternating cherubim and palms create a visual rhythm that communicates the interplay between divine guardianship and paradisiacal restoration. The temple is not merely a building but a cosmological statement: sacred space as recovered Eden."
             }
           ]
+        },
+        "hist": {
+          "context": "The tour continues with the large building west of the temple (v. 12, purpose unspecified), the overall temple dimensions (v. 13-15a), and then the interior decoration. The walls are paneled with wood from floor to windows and adorned with carved cherubim and palm trees (vv. 18-20). The cherubim-and-palms motif connects the temple to Eden: Solomon's temple also used these decorations (1 Kgs 6:29), identifying the temple as a symbolic return to paradise, the place where God dwells with humanity. The wooden altar (v. 22) is called 'the table that is before the LORD,' combining altar and table imagery. The chapter closes with the thick double doors of the outer hall, also carved with cherubim and palms."
         }
       }
     }

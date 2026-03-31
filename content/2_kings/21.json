@@ -25,21 +25,22 @@
             "paragraph": "Manasseh “passed his son through the fire” (v.6), practised sorcery and divination, and consulted mediums and spiritists. The catalogue of abominations is comprehensive — every category of prohibited practice in Deuteronomy 18:10–12 is represented."
           }
         ],
-        "ctx": "Manasseh reigns 55 years — the longest reign of any king — and undoes everything Hezekiah built. He rebuilds the high places, erects Baal altars and an Asherah pole in the temple, worships the starry hosts, sacrifices his son, practises sorcery, and fills Jerusalem with innocent blood “from end to end.” The prophets declare: “I am going to bring such disaster on Jerusalem and Judah that the ears of everyone who hears of it will tingle.” God will “wipe Jerusalem as one wipes a dish.” Manasseh’s 55 years determine Judah’s fate: even Josiah’s reform cannot undo this damage (23:26–27).",
-        "cross": [
-          {
-            "ref": "2 Kgs 23:26–27",
-            "note": "“Still the LORD did not turn away from the heat of his fierce anger... because of all that Manasseh had done.” Even Josiah’s reform cannot reverse Manasseh’s damage."
-          },
-          {
-            "ref": "Jer 15:4",
-            "note": "“I will make them abhorrent to all the kingdoms of the earth because of what Manasseh son of Hezekiah king of Judah did in Jerusalem.” Jeremiah cites Manasseh by name as the cause."
-          },
-          {
-            "ref": "2 Chr 33:10–13",
-            "note": "Chronicles adds that Manasseh repented in Assyrian captivity. The Deuteronomistic historian omits this — his narrative requires Manasseh to be the irredeemable cause of exile."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 23:26–27",
+              "note": "“Still the LORD did not turn away from the heat of his fierce anger... because of all that Manasseh had done.” Even Josiah’s reform cannot reverse Manasseh’s damage."
+            },
+            {
+              "ref": "Jer 15:4",
+              "note": "“I will make them abhorrent to all the kingdoms of the earth because of what Manasseh son of Hezekiah king of Judah did in Jerusalem.” Jeremiah cites Manasseh by name as the cause."
+            },
+            {
+              "ref": "2 Chr 33:10–13",
+              "note": "Chronicles adds that Manasseh repented in Assyrian captivity. The Deuteronomistic historian omits this — his narrative requires Manasseh to be the irredeemable cause of exile."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -79,6 +80,9 @@
               "note": "The “measuring line” and “plumb line” are instruments of both construction and destruction. God built Jerusalem with these tools; now he will demolish it with the same. The Creator becomes the Destroyer when creation rejects its Creator."
             }
           ]
+        },
+        "hist": {
+          "context": "Manasseh reigns 55 years — the longest reign of any king — and undoes everything Hezekiah built. He rebuilds the high places, erects Baal altars and an Asherah pole in the temple, worships the starry hosts, sacrifices his son, practises sorcery, and fills Jerusalem with innocent blood “from end to end.” The prophets declare: “I am going to bring such disaster on Jerusalem and Judah that the ears of everyone who hears of it will tingle.” God will “wipe Jerusalem as one wipes a dish.” Manasseh’s 55 years determine Judah’s fate: even Josiah’s reform cannot undo this damage (23:26–27)."
         }
       }
     },
@@ -88,13 +92,14 @@
       "verse_start": 19,
       "verse_end": 26,
       "panels": {
-        "ctx": "Amon succeeds Manasseh and continues his practices for two years before his own officials assassinate him. The “people of the land” (landowners, traditional power base) kill the conspirators and enthrone eight-year-old Josiah. The transition is rapid and violent — two verses for a king who made no difference.",
-        "cross": [
-          {
-            "ref": "2 Kgs 12:20–21",
-            "note": "Joash was also assassinated by his officials. The pattern recurs: unfaithful kings die by internal conspiracy."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 12:20–21",
+              "note": "Joash was also assassinated by his officials. The pattern recurs: unfaithful kings die by internal conspiracy."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -130,6 +135,9 @@
               "note": "The “people of the land” function as guardians of the Davidic succession. Their intervention at moments of crisis (here and in 11:14, 18–20) reveals that the dynasty survives not by its own strength but through the loyalty of its traditional base."
             }
           ]
+        },
+        "hist": {
+          "context": "Amon succeeds Manasseh and continues his practices for two years before his own officials assassinate him. The “people of the land” (landowners, traditional power base) kill the conspirators and enthrone eight-year-old Josiah. The transition is rapid and violent — two verses for a king who made no difference."
         }
       }
     }

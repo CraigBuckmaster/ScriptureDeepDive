@@ -37,25 +37,26 @@
             "paragraph": "That you may have fellowship with us - the purpose of proclamation is community. Fellowship with apostles means fellowship with Father and Son."
           }
         ],
-        "ctx": "The letter opens without typical greeting, plunging directly into proclamation. That which was from the beginning, which we have heard, seen, looked upon, and touched with our hands - the Word of life. The life was made manifest; we have seen it and testify to it. We proclaim eternal life which was with the Father and was made manifest to us. We proclaim so that you may have fellowship with us - and our fellowship is with the Father and with his Son Jesus Christ. We write these things so that our joy may be complete.",
-        "cross": [
-          {
-            "ref": "John 1:1-4",
-            "note": "In the beginning was the Word, and the Word was with God."
-          },
-          {
-            "ref": "John 1:14",
-            "note": "The Word became flesh and dwelt among us, and we have seen his glory."
-          },
-          {
-            "ref": "John 20:27",
-            "note": "Put your finger here, and see my hands - Thomas touching the risen Christ."
-          },
-          {
-            "ref": "2 John 12",
-            "note": "I have much to write but hope to come so that our joy may be complete."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 1:1-4",
+              "note": "In the beginning was the Word, and the Word was with God."
+            },
+            {
+              "ref": "John 1:14",
+              "note": "The Word became flesh and dwelt among us, and we have seen his glory."
+            },
+            {
+              "ref": "John 20:27",
+              "note": "Put your finger here, and see my hands - Thomas touching the risen Christ."
+            },
+            {
+              "ref": "2 John 12",
+              "note": "I have much to write but hope to come so that our joy may be complete."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -109,7 +110,10 @@
             }
           ]
         },
-        "hist": "First John addresses a crisis caused by secessionists who have left the Johannine community (2:19). These opponents likely held proto-Gnostic views: denying that Jesus Christ came 'in the flesh' (4:2), claiming sinless perfection while living immorally (1:8-10), and failing to love fellow believers (2:9-11). The author, traditionally identified as the apostle John writing from Ephesus in the 90s AD, establishes tests of authentic Christianity: right belief about Christ's incarnation, righteous living, and love for the community. The letter's repetitive, spiral structure reinforces these themes through variation rather than linear argument. The community had experienced a traumatic split, and the letter reassures those who remained of their standing with God."
+        "hist": {
+          "historical": "First John addresses a crisis caused by secessionists who have left the Johannine community (2:19). These opponents likely held proto-Gnostic views: denying that Jesus Christ came 'in the flesh' (4:2), claiming sinless perfection while living immorally (1:8-10), and failing to love fellow believers (2:9-11). The author, traditionally identified as the apostle John writing from Ephesus in the 90s AD, establishes tests of authentic Christianity: right belief about Christ's incarnation, righteous living, and love for the community. The letter's repetitive, spiral structure reinforces these themes through variation rather than linear argument. The community had experienced a traumatic split, and the letter reassures those who remained of their standing with God.",
+          "context": "The letter opens without typical greeting, plunging directly into proclamation. That which was from the beginning, which we have heard, seen, looked upon, and touched with our hands - the Word of life. The life was made manifest; we have seen it and testify to it. We proclaim eternal life which was with the Father and was made manifest to us. We proclaim so that you may have fellowship with us - and our fellowship is with the Father and with his Son Jesus Christ. We write these things so that our joy may be complete."
+        }
       }
     },
     {
@@ -138,25 +142,26 @@
             "paragraph": "If we confess our sins, he is faithful and just to forgive - confession is agreement with God about sin. Forgiveness is certain."
           }
         ],
-        "ctx": "This is the message we have heard: God is light; in him is no darkness at all. If we claim fellowship while walking in darkness, we lie and do not practice the truth. But if we walk in the light as he is in the light, we have fellowship with one another, and the blood of Jesus his Son cleanses us from all sin. If we claim to have no sin, we deceive ourselves and the truth is not in us. If we confess our sins, he is faithful and just to forgive us our sins and cleanse us from all unrighteousness. If we claim we have not sinned, we make him a liar and his word is not in us.",
-        "cross": [
-          {
-            "ref": "John 8:12",
-            "note": "I am the light of the world. Whoever follows me will not walk in darkness."
-          },
-          {
-            "ref": "Psalm 32:5",
-            "note": "I acknowledged my sin to you, and you forgave the iniquity of my sin."
-          },
-          {
-            "ref": "Proverbs 28:13",
-            "note": "Whoever conceals his transgressions will not prosper, but he who confesses them will obtain mercy."
-          },
-          {
-            "ref": "James 5:16",
-            "note": "Confess your sins to one another and pray for one another."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 8:12",
+              "note": "I am the light of the world. Whoever follows me will not walk in darkness."
+            },
+            {
+              "ref": "Psalm 32:5",
+              "note": "I acknowledged my sin to you, and you forgave the iniquity of my sin."
+            },
+            {
+              "ref": "Proverbs 28:13",
+              "note": "Whoever conceals his transgressions will not prosper, but he who confesses them will obtain mercy."
+            },
+            {
+              "ref": "James 5:16",
+              "note": "Confess your sins to one another and pray for one another."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -213,6 +218,9 @@
               "note": "Kruse notes that the false teachers may have claimed sinlessness. John counters that genuine believers confess sin and receive cleansing."
             }
           ]
+        },
+        "hist": {
+          "context": "This is the message we have heard: God is light; in him is no darkness at all. If we claim fellowship while walking in darkness, we lie and do not practice the truth. But if we walk in the light as he is in the light, we have fellowship with one another, and the blood of Jesus his Son cleanses us from all sin. If we claim to have no sin, we deceive ourselves and the truth is not in us. If we confess our sins, he is faithful and just to forgive us our sins and cleanse us from all unrighteousness. If we claim we have not sinned, we make him a liar and his word is not in us."
         }
       }
     }

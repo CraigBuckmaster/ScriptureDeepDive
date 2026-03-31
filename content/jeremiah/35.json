@@ -25,17 +25,18 @@
             "paragraph": "The Recabites are descendants of Jonadab son of Rekab (Recab), who commanded his family to abstain from wine, never build houses, never sow seed, never plant vineyards, but live in tents (vv.6-7). For over 200 years they have obeyed their ancestor's command. God brings Jeremiah to test them: he offers them wine in the temple. They refuse."
           }
         ],
-        "ctx": "The Recabite episode is a brilliant object lesson in contrasting faithfulness. A nomadic clan obeys a human ancestor's commands for two centuries, while Israel disobeys the living God's commands from the moment they are given. The Recabites' faithfulness is not held up as a religious ideal -- their abstinence is cultural, not theological -- but as a shaming comparison. If humans can obey a human father so consistently, why can't Israel obey God?",
-        "cross": [
-          {
-            "ref": "2 Kgs 10:15-23",
-            "note": "Jehonadab son of Rekab -- the ancestor who established the Recabite way of life and supported Jehu's purge of Baal worship."
-          },
-          {
-            "ref": "Matt 15:3-6",
-            "note": "Jesus contrasts human traditions with God's commandments -- the same dynamic Jeremiah exploits with the Recabites."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 10:15-23",
+              "note": "Jehonadab son of Rekab -- the ancestor who established the Recabite way of life and supported Jehu's purge of Baal worship."
+            },
+            {
+              "ref": "Matt 15:3-6",
+              "note": "Jesus contrasts human traditions with God's commandments -- the same dynamic Jeremiah exploits with the Recabites."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -88,6 +89,9 @@
               "note": "Brueggemann reads the Recabite episode as an indictment of \"selective obedience.\" Israel obeys nothing; the Recabites obey everything. The contrast demolishes every excuse."
             }
           ]
+        },
+        "hist": {
+          "context": "The Recabite episode is a brilliant object lesson in contrasting faithfulness. A nomadic clan obeys a human ancestor's commands for two centuries, while Israel disobeys the living God's commands from the moment they are given. The Recabites' faithfulness is not held up as a religious ideal -- their abstinence is cultural, not theological -- but as a shaming comparison. If humans can obey a human father so consistently, why can't Israel obey God?"
         }
       }
     },
@@ -105,17 +109,18 @@
             "paragraph": "\"Will you not learn a lesson (musar) and obey my words?\" (v.13). The word musar carries the dual sense of discipline and instruction. Israel has received both -- corrective punishment and prophetic teaching -- and has responded to neither. The Recabites needed only their ancestor's word; Israel has had God's word and still refuses."
           }
         ],
-        "ctx": "The application is devastating: \"Jonadab's descendants have carried out the command their forefather gave them, but these people have not obeyed me\" (v.16). The Recabites receive a permanent blessing: \"Jonadab will never fail to have a descendant to serve me\" (v.19). Their faithfulness to a human command earns divine guarantee. Israel's unfaithfulness to the divine command earns destruction.",
-        "cross": [
-          {
-            "ref": "Heb 12:9",
-            "note": "\"We have human fathers who disciplined us and we respected them. How much more should we submit to the Father of spirits?\" -- the same argument from lesser to greater."
-          },
-          {
-            "ref": "Jer 7:13",
-            "note": "\"Again and again I spoke to you, but you did not listen\" -- the refrain of rejected prophetic speech that the Recabites' obedience throws into relief."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 12:9",
+              "note": "\"We have human fathers who disciplined us and we respected them. How much more should we submit to the Father of spirits?\" -- the same argument from lesser to greater."
+            },
+            {
+              "ref": "Jer 7:13",
+              "note": "\"Again and again I spoke to you, but you did not listen\" -- the refrain of rejected prophetic speech that the Recabites' obedience throws into relief."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -168,6 +173,9 @@
               "note": "Brueggemann contrasts the two outcomes: \"Israel receives the judgment it was warned about. The Recabites receive a permanence they never requested. Obedience is its own argument.\""
             }
           ]
+        },
+        "hist": {
+          "context": "The application is devastating: \"Jonadab's descendants have carried out the command their forefather gave them, but these people have not obeyed me\" (v.16). The Recabites receive a permanent blessing: \"Jonadab will never fail to have a descendant to serve me\" (v.19). Their faithfulness to a human command earns divine guarantee. Israel's unfaithfulness to the divine command earns destruction."
         }
       }
     }

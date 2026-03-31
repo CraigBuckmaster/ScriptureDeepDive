@@ -37,21 +37,22 @@
             "paragraph": "Mercy triumphs over judgment. Those who show mercy will receive mercy."
           }
         ],
-        "ctx": "James addresses the sin of favoritism. A rich man enters in fine clothing; a poor man in shabby clothes. The rich is honored; the poor is told to stand or sit on the floor.",
-        "cross": [
-          {
-            "ref": "Leviticus 19:15",
-            "note": "You shall do no injustice in court. You shall not be partial."
-          },
-          {
-            "ref": "Deuteronomy 10:17",
-            "note": "The LORD your God is not partial and takes no bribe."
-          },
-          {
-            "ref": "Matthew 5:7",
-            "note": "Blessed are the merciful, for they shall receive mercy."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Leviticus 19:15",
+              "note": "You shall do no injustice in court. You shall not be partial."
+            },
+            {
+              "ref": "Deuteronomy 10:17",
+              "note": "The LORD your God is not partial and takes no bribe."
+            },
+            {
+              "ref": "Matthew 5:7",
+              "note": "Blessed are the merciful, for they shall receive mercy."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -113,7 +114,10 @@
             }
           ]
         },
-        "hist": "James writes to 'the twelve tribes in the Dispersion' — Jewish Christians scattered throughout the Roman Empire after persecution in Jerusalem (Acts 8:1; 11:19). The letter reflects the earliest stage of Christianity when believers still gathered in synagogues (2:2, Greek synagōgē). James, the brother of Jesus, led the Jerusalem church (Acts 15; Gal 2:9) until his martyrdom in AD 62. His letter addresses practical concerns: economic disparity between rich and poor, the relationship between faith and works, and the power of the tongue. The wisdom tradition of Judaism pervades the letter, echoing Proverbs and Jesus' Sermon on the Mount. The agricultural imagery (1:11; 3:12; 5:7) and references to early and late rains reflect the Palestinian context."
+        "hist": {
+          "historical": "James writes to 'the twelve tribes in the Dispersion' — Jewish Christians scattered throughout the Roman Empire after persecution in Jerusalem (Acts 8:1; 11:19). The letter reflects the earliest stage of Christianity when believers still gathered in synagogues (2:2, Greek synagōgē). James, the brother of Jesus, led the Jerusalem church (Acts 15; Gal 2:9) until his martyrdom in AD 62. His letter addresses practical concerns: economic disparity between rich and poor, the relationship between faith and works, and the power of the tongue. The wisdom tradition of Judaism pervades the letter, echoing Proverbs and Jesus' Sermon on the Mount. The agricultural imagery (1:11; 3:12; 5:7) and references to early and late rains reflect the Palestinian context.",
+          "context": "James addresses the sin of favoritism. A rich man enters in fine clothing; a poor man in shabby clothes. The rich is honored; the poor is told to stand or sit on the floor."
+        }
       }
     },
     {
@@ -142,25 +146,26 @@
             "paragraph": "Was not Abraham justified by works? James uses justify to mean demonstrated."
           }
         ],
-        "ctx": "This is the most debated passage in James. James insists that genuine faith produces works. Abraham faith was completed by his works when he offered Isaac.",
-        "cross": [
-          {
-            "ref": "Genesis 15:6",
-            "note": "Abraham believed the LORD, and he counted it to him as righteousness."
-          },
-          {
-            "ref": "Genesis 22:1-19",
-            "note": "The Aqedah: Abraham offering of Isaac."
-          },
-          {
-            "ref": "Joshua 2:1-21",
-            "note": "Rahab hid the spies and was saved."
-          },
-          {
-            "ref": "Romans 3:28",
-            "note": "Paul: a person is justified by faith apart from works of the law."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Genesis 15:6",
+              "note": "Abraham believed the LORD, and he counted it to him as righteousness."
+            },
+            {
+              "ref": "Genesis 22:1-19",
+              "note": "The Aqedah: Abraham offering of Isaac."
+            },
+            {
+              "ref": "Joshua 2:1-21",
+              "note": "Rahab hid the spies and was saved."
+            },
+            {
+              "ref": "Romans 3:28",
+              "note": "Paul: a person is justified by faith apart from works of the law."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -221,6 +226,9 @@
               "note": "McCartney emphasizes that James defines faith by its fruit. Dead faith is mere assent; living faith obeys."
             }
           ]
+        },
+        "hist": {
+          "context": "This is the most debated passage in James. James insists that genuine faith produces works. Abraham faith was completed by his works when he offered Isaac."
         }
       }
     }

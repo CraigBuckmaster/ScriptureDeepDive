@@ -34,8 +34,10 @@
             "paragraph": "V.13: \"Stand firm and you will see the deliverance (yĕshûʿat) the LORD will bring you today.\" The word yĕshûʿāh (salvation, rescue) — from the same root as Yeshua/Joshua/Jesus — appears at the Red Sea as the name for what God is about to do. The crossing of the sea is the first great yĕshûʿāh; the NT Gospels present Jesus as the final and universal yĕshûʿāh."
           }
         ],
-        "hist": "Pi-hahiroth, Migdol, and Baal-zephon are all attested in Egyptian texts. Migdol (from Semitic magdal, 'tower/fortress') appears in Egyptian border records. Baal-zephon was a Canaanite-Egyptian shrine, suggesting the Israelites camped near a pagan cult site — heightening the theological drama of what follows. The Egyptian chariot corps was the ancient world's premier military technology; the six hundred select chariots (v. 7) represents an elite strike force.",
-        "ctx": "Israel's cry (v.10) is fear, not faith — and God acts anyway. The people's complaint (vv.11–12: \"Is it because there are no graves in Egypt?\") is their first of many wilderness complaints, but it does not delay the rescue. God does not require composure before he saves; he saves the afraid, the complaining, the unworthy. Moses' word — \"Fear not, stand firm, see the salvation\" — is the first great formula of faith in the face of impossible odds.",
+        "hist": {
+          "historical": "Pi-hahiroth, Migdol, and Baal-zephon are all attested in Egyptian texts. Migdol (from Semitic magdal, 'tower/fortress') appears in Egyptian border records. Baal-zephon was a Canaanite-Egyptian shrine, suggesting the Israelites camped near a pagan cult site — heightening the theological drama of what follows. The Egyptian chariot corps was the ancient world's premier military technology; the six hundred select chariots (v. 7) represents an elite strike force.",
+          "context": "Israel's cry (v.10) is fear, not faith — and God acts anyway. The people's complaint (vv.11–12: \"Is it because there are no graves in Egypt?\") is their first of many wilderness complaints, but it does not delay the rescue. God does not require composure before he saves; he saves the afraid, the complaining, the unworthy. Moses' word — \"Fear not, stand firm, see the salvation\" — is the first great formula of faith in the face of impossible odds."
+        },
         "poi": [
           {
             "name": "Pi Hahiroth / Baal Zephon / Red Sea",
@@ -48,20 +50,22 @@
             "text": "Yam Suph is traditionally the Red Sea; some scholars identify it with a marshy lake in the Suez region. Whichever identification is correct, the theological point is the same: the sea that blocks escape becomes the instrument of both salvation and judgment."
           }
         ],
-        "cross": [
-          {
-            "ref": "Isa 43:2",
-            "note": "\"When you pass through the waters, I will be with you.\" Isaiah draws on the Red Sea crossing as the paradigm for future redemptions."
-          },
-          {
-            "ref": "Ps 46:10",
-            "note": "\"Be still, and know that I am God.\" The imperative silence of Exod 14:14 becomes a Psalm of confidence — stillness as the posture of faith when God fights."
-          },
-          {
-            "ref": "1 Cor 10:1–2",
-            "note": "Paul identifies the cloud and the sea crossing as baptism — Israel \"baptised into Moses\" as the type of Christian initiation into Christ."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 43:2",
+              "note": "\"When you pass through the waters, I will be with you.\" Isaiah draws on the Red Sea crossing as the paradigm for future redemptions."
+            },
+            {
+              "ref": "Ps 46:10",
+              "note": "\"Be still, and know that I am God.\" The imperative silence of Exod 14:14 becomes a Psalm of confidence — stillness as the posture of faith when God fights."
+            },
+            {
+              "ref": "1 Cor 10:1–2",
+              "note": "Paul identifies the cloud and the sea crossing as baptism — Israel \"baptised into Moses\" as the type of Christian initiation into Christ."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -149,8 +153,10 @@
             "paragraph": "V.31: \"And when the Israelites saw the mighty hand of the LORD displayed against the Egyptians, the people feared the LORD and put their trust in him and in Moses his servant.\" The verb ʾāman (to believe, trust, be firm) — from which ʾāmēn derives — marks this as the pivotal moment of corporate faith. The same verb will be used of Abraham in Gen 15:6: \"He believed the LORD, and he credited it to him as righteousness.\" At the sea, Israel walks the same path."
           }
         ],
-        "hist": "The 'strong east wind' that divides the sea (v. 21) has prompted attempts at naturalistic explanation — wind setdown events in shallow bodies of water are documented in the Lake Manzala region. However, the text presents this as divine intervention at a specific moment. The disabling of chariot wheels in the mud (v. 25) is consistent with the terrain of the marshy lake region. The Song of the Sea (ch. 15) that follows is considered by many scholars to be among the oldest poetry in the Bible, possibly contemporaneous with the events themselves.",
-        "ctx": "The closing verse (v.31) is the theological conclusion: Israel saw the great power, feared the LORD, and believed. The sequence matters — seeing produces fear produces faith. This is not blind faith; it is responsive faith, grounded in observable divine action. The Red Sea crossing is the epistemological foundation of Israel's trust in Moses and in God throughout the wilderness — it is what every subsequent complaint forgets and every call to faith remembers.",
+        "hist": {
+          "historical": "The 'strong east wind' that divides the sea (v. 21) has prompted attempts at naturalistic explanation — wind setdown events in shallow bodies of water are documented in the Lake Manzala region. However, the text presents this as divine intervention at a specific moment. The disabling of chariot wheels in the mud (v. 25) is consistent with the terrain of the marshy lake region. The Song of the Sea (ch. 15) that follows is considered by many scholars to be among the oldest poetry in the Bible, possibly contemporaneous with the events themselves.",
+          "context": "The closing verse (v.31) is the theological conclusion: Israel saw the great power, feared the LORD, and believed. The sequence matters — seeing produces fear produces faith. This is not blind faith; it is responsive faith, grounded in observable divine action. The Red Sea crossing is the epistemological foundation of Israel's trust in Moses and in God throughout the wilderness — it is what every subsequent complaint forgets and every call to faith remembers."
+        },
         "poi": [
           {
             "name": "The Sea — crossing",
@@ -163,20 +169,22 @@
             "text": "The Egyptians pursue into the sea bed and are destroyed when the waters return. The entire Egyptian chariot force — the military expression of Pharaoh's power — is eliminated in the same sea that Israel crossed safely. Geography of salvation is simultaneously geography of judgment."
           }
         ],
-        "cross": [
-          {
-            "ref": "Exod 15:1–21",
-            "note": "The Song of Moses immediately follows — the crossing becomes the first great poem of Israel's worship."
-          },
-          {
-            "ref": "Isa 51:10",
-            "note": "\"Was it not you who dried up the sea... that made the depths of the sea a way for the redeemed to pass over?\" Isaiah uses the crossing as the paradigm for new-covenant redemption."
-          },
-          {
-            "ref": "Rev 15:3",
-            "note": "The redeemed in heaven sing \"the song of Moses and the Lamb\" — the Red Sea Song (Exod 15) and the cross are the two great redemption events the song celebrates."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 15:1–21",
+              "note": "The Song of Moses immediately follows — the crossing becomes the first great poem of Israel's worship."
+            },
+            {
+              "ref": "Isa 51:10",
+              "note": "\"Was it not you who dried up the sea... that made the depths of the sea a way for the redeemed to pass over?\" Isaiah uses the crossing as the paradigm for new-covenant redemption."
+            },
+            {
+              "ref": "Rev 15:3",
+              "note": "The redeemed in heaven sing \"the song of Moses and the Lamb\" — the Red Sea Song (Exod 15) and the cross are the two great redemption events the song celebrates."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

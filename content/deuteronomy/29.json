@@ -31,17 +31,18 @@
             "paragraph": "The \"root of bitterness\" (v.18) is the apostate individual within the covenant community -- the one who takes the covenant oath while planning to exempt himself from it. The image is of a poisonous plant that spreads underground, contaminating the community before its effects are visible."
           }
         ],
-        "ctx": "Chapter 29 is the third of Moses' addresses -- a covenant renewal for the new generation. He begins with the contrast between what their eyes have seen (Exodus, wilderness miracles) and what their hearts have not understood (v.4). The appeal is both cognitive and affective: they have seen everything; they must now comprehend what it means. Moses then binds all Israel -- the present generation and all future generations -- to the Moab covenant (v.15). A severe warning against apostate individuals follows. The chapter closes with the most-quoted verse of Deuteronomy 29: \"The secret things belong to the LORD our God, but the things revealed belong to us and to our children forever\" (v.29).",
-        "cross": [
-          {
-            "ref": "Rom 11:8",
-            "note": "\"God gave them a spirit of stupor, eyes that could not see and ears that could not hear, to this very day.\" Paul quotes Deuteronomy 29:4 in his discussion of Israel's hardening -- spiritual sight is God's gift, not human achievement."
-          },
-          {
-            "ref": "Heb 12:15",
-            "note": "\"See to it that no one falls short of the grace of God and that no bitter root grows up to cause trouble and defile many.\" The Hebrews author applies Deuteronomy 29:18's bitter root warning to the NT community."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 11:8",
+              "note": "\"God gave them a spirit of stupor, eyes that could not see and ears that could not hear, to this very day.\" Paul quotes Deuteronomy 29:4 in his discussion of Israel's hardening -- spiritual sight is God's gift, not human achievement."
+            },
+            {
+              "ref": "Heb 12:15",
+              "note": "\"See to it that no one falls short of the grace of God and that no bitter root grows up to cause trouble and defile many.\" The Hebrews author applies Deuteronomy 29:18's bitter root warning to the NT community."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 29 is the third of Moses' addresses -- a covenant renewal for the new generation. He begins with the contrast between what their eyes have seen (Exodus, wilderness miracles) and what their hearts have not understood (v.4). The appeal is both cognitive and affective: they have seen everything; they must now comprehend what it means. Moses then binds all Israel -- the present generation and all future generations -- to the Moab covenant (v.15). A severe warning against apostate individuals follows. The chapter closes with the most-quoted verse of Deuteronomy 29: \"The secret things belong to the LORD our God, but the things revealed belong to us and to our children forever\" (v.29)."
         }
       }
     },
@@ -127,17 +131,18 @@
             "paragraph": "Verse 29's famous statement about hidden and revealed things is one of Deuteronomy's most theologically important. God has revealed what Israel needs to know for covenant faithfulness; what he has not revealed is his own business. This is the foundational principle of revealed religion: work with what God has said, not with what he has not said."
           }
         ],
-        "ctx": "The chapter closes with a prospective description of the land's desolation when Israel apostatises -- foreign nations will ask why the land is ruined. The answer: because they forsook the covenant of the LORD. Then the most-quoted verse of chapter 29: \"The secret things belong to the LORD our God, but the things revealed belong to us and to our children forever, that we may follow all the words of this law.\" The hidden/revealed distinction is the foundational principle of biblical epistemology: act on what God has given, trust him with what he has withheld.",
-        "cross": [
-          {
-            "ref": "Deut 30:11-14",
-            "note": "\"Now what I am commanding you today is not too difficult for you or beyond your reach... the word is very near you.\" The revealed things of 29:29 are explicitly accessible -- not remote or esoteric."
-          },
-          {
-            "ref": "Rev 22:18-19",
-            "note": "\"I warn everyone who hears the words of the prophecy of this scroll: If anyone adds anything to them, God will add to that person the plagues described in this scroll.\" Revelation's canonical closing warning echoes Deuteronomy 29's covenant completeness -- the revealed things are sufficient."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 30:11-14",
+              "note": "\"Now what I am commanding you today is not too difficult for you or beyond your reach... the word is very near you.\" The revealed things of 29:29 are explicitly accessible -- not remote or esoteric."
+            },
+            {
+              "ref": "Rev 22:18-19",
+              "note": "\"I warn everyone who hears the words of the prophecy of this scroll: If anyone adds anything to them, God will add to that person the plagues described in this scroll.\" Revelation's canonical closing warning echoes Deuteronomy 29's covenant completeness -- the revealed things are sufficient."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -202,6 +207,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter closes with a prospective description of the land's desolation when Israel apostatises -- foreign nations will ask why the land is ruined. The answer: because they forsook the covenant of the LORD. Then the most-quoted verse of chapter 29: \"The secret things belong to the LORD our God, but the things revealed belong to us and to our children forever, that we may follow all the words of this law.\" The hidden/revealed distinction is the foundational principle of biblical epistemology: act on what God has given, trust him with what he has withheld."
         }
       }
     }

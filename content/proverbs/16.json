@@ -31,17 +31,18 @@
             "paragraph": "A just peles and scales belong to the LORD; all the weights in the bag are his doing (v. 11). Even the instruments of commerce are God's concern. The word peles means an exact balance — the standard itself. When marketplaces are honest, they reflect divine order; when corrupt, they assault it."
           }
         ],
-        "ctx": "The first half contains the most concentrated theology of divine sovereignty in Proverbs. Vv.1-9 form a unit: human plans, divine outcomes, committed works, proper ends, weighed motives. The king section (vv.10-15) applies this to political authority.",
-        "cross": [
-          {
-            "ref": "Ps 37:5",
-            "note": "Commit your way to the LORD — the same gālaḵ verb as v.3."
-          },
-          {
-            "ref": "Prov 19:21",
-            "note": "Many are the plans in a person's heart, but it is the LORD's purpose that prevails."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 37:5",
+              "note": "Commit your way to the LORD — the same gālaḵ verb as v.3."
+            },
+            {
+              "ref": "Prov 19:21",
+              "note": "Many are the plans in a person's heart, but it is the LORD's purpose that prevails."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "The NET note on 'a person plans their course, but the LORD establishes their steps' discusses yakhon (establishes, makes firm, directs). The note traces this sovereignty vocabulary through the chapter (v.1: ma'aneh lashon from the LORD; v.3: plans established; v.9: steps directed) to identify the consistent claim: human agency is real and productive within divine sovereignty that encloses and governs it."
             }
           ]
+        },
+        "hist": {
+          "context": "The first half contains the most concentrated theology of divine sovereignty in Proverbs. Vv.1-9 form a unit: human plans, divine outcomes, committed works, proper ends, weighed motives. The king section (vv.10-15) applies this to political authority."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "The lot (gôrāl) is cast into the lap, but its every decision is from the LORD (v. 33). The gôrāl was a physical object — likely stones or marked sticks — used for decision-making. The verse makes the remarkable claim that even apparently random processes are governed by God's sovereignty. Chance, in the biblical worldview, does not exist."
           }
         ],
-        "ctx": "The second half contains pride before a fall (v.18) and better patient than a warrior (v.32). The repeated \"way seeming right\" (v.25 = 14:12) signals its importance. V.33 returns to the opening sovereignty theme: even the lot is the LORD's.",
-        "cross": [
-          {
-            "ref": "Prov 14:12",
-            "note": "Way that appears right but leads to death — the exact repetition signals this is among Proverbs' most crucial warnings."
-          },
-          {
-            "ref": "Jas 4:6",
-            "note": "God opposes the proud but gives grace to the humble — v.18 is the negative side of this principle."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 14:12",
+              "note": "Way that appears right but leads to death — the exact repetition signals this is among Proverbs' most crucial warnings."
+            },
+            {
+              "ref": "Jas 4:6",
+              "note": "God opposes the proud but gives grace to the humble — v.18 is the negative side of this principle."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -178,6 +183,9 @@
               "note": "The NET note on 'gracious words are a honeycomb' (tsuf devash imrei-no'am) discusses the medical claim: 'healing to the bones' (marpe leatsamot). Atsamot (bones) represents the inner structural reality of the body — bones are what you are when everything superficial is stripped away. Gracious speech heals at the deepest structural level, not merely the surface feeling."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half contains pride before a fall (v.18) and better patient than a warrior (v.32). The repeated \"way seeming right\" (v.25 = 14:12) signals its importance. V.33 returns to the opening sovereignty theme: even the lot is the LORD's."
         }
       }
     }

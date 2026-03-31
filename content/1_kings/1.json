@@ -37,21 +37,22 @@
             "paragraph": "Adonijah is described asṭôb-tōʾar mĕʾōd(very handsome, v.6) — the same language used of Absalom (2 Sam 14:25) and Saul (1 Sam 9:2). Physical impressiveness is consistently associated with failed kingship in Samuel-Kings; God's choice runs on different criteria (1 Sam 16:7)."
           }
         ],
-        "ctx": "The opening scene is devastating in its economy. David, who once killed Goliath and outran armies, cannot even keep warm. The mighty warrior-king who united Israel is now a helpless old man attended by a young woman. Into this power vacuum steps Adonijah, David's eldest surviving son, who \"exalts himself\" with chariots, horsemen, and fifty runners — the identical program Absalom used (2 Sam 15:1). The narrator adds the chilling parenthetical: \"His father had never rebuked him at any time by saying, 'Why do you behave as you do?'\" (v.6). David's lifelong failure as a father now threatens the succession God has promised to Solomon.",
-        "cross": [
-          {
-            "ref": "2 Sam 15:1–6",
-            "note": "Absalom's identical self-promotion — chariots, runners, gate politicking — provides the template Adonijah follows. The narrator expects the reader to recognise the parallel and anticipate the same outcome."
-          },
-          {
-            "ref": "1 Chr 22:9–10",
-            "note": "\"A son who will be born to you will be a man of rest... Solomon is his name... He is the one who will build a house for my Name.\" God's designation of Solomon was established before Adonijah's bid."
-          },
-          {
-            "ref": "1 Sam 16:7",
-            "note": "\"The LORD does not look at the things people look at. People look at the outward appearance, but the LORD looks at the heart.\" Adonijah's impressive appearance is irrelevant to God's choice."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 15:1–6",
+              "note": "Absalom's identical self-promotion — chariots, runners, gate politicking — provides the template Adonijah follows. The narrator expects the reader to recognise the parallel and anticipate the same outcome."
+            },
+            {
+              "ref": "1 Chr 22:9–10",
+              "note": "\"A son who will be born to you will be a man of rest... Solomon is his name... He is the one who will build a house for my Name.\" God's designation of Solomon was established before Adonijah's bid."
+            },
+            {
+              "ref": "1 Sam 16:7",
+              "note": "\"The LORD does not look at the things people look at. People look at the outward appearance, but the LORD looks at the heart.\" Adonijah's impressive appearance is irrelevant to God's choice."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -103,6 +104,9 @@
               "note": "Provan: The Nathan-Bathsheba alliance is the narrator's way of showing that God's purposes work through human agency, not around it. The prophetic word (2 Sam 7:12; 12:24–25) requires human action for its fulfilment. Providence does not negate the need for courage and strategy."
             }
           ]
+        },
+        "hist": {
+          "context": "The opening scene is devastating in its economy. David, who once killed Goliath and outran armies, cannot even keep warm. The mighty warrior-king who united Israel is now a helpless old man attended by a young woman. Into this power vacuum steps Adonijah, David's eldest surviving son, who \"exalts himself\" with chariots, horsemen, and fifty runners — the identical program Absalom used (2 Sam 15:1). The narrator adds the chilling parenthetical: \"His father had never rebuked him at any time by saying, 'Why do you behave as you do?'\" (v.6). David's lifelong failure as a father now threatens the succession God has promised to Solomon."
         }
       }
     },
@@ -126,21 +130,22 @@
             "paragraph": "Adonijah seizes the altar horns (v.50) — the projecting corners of the bronze altar where sacrificial blood was applied. Gripping them was a recognised act of seeking sanctuary (cf. Exod 21:14). The altar provided protection because it was God's property; killing someone there would desecrate holy ground."
           }
         ],
-        "ctx": "The anointing at Gihon is a counter-coronation — a deliberate, prophetically authorised response to Adonijah's illegitimate feast at En Rogel. David acts decisively for the first time in the narrative, commanding Zadok, Nathan, and Benaiah to take Solomon on the royal mule (a sign of designated succession), anoint him at the Gihon spring (Jerusalem's water source, symbolising life), and blow the trumpet. The sound of the trumpet and the people's shout reaches Adonijah's feast and scatters his guests instantly. The contrast is total: Adonijah's self-made ceremony dissolves at the first note of the legitimate king's coronation.",
-        "cross": [
-          {
-            "ref": "2 Sam 7:12–13",
-            "note": "\"I will raise up your offspring to succeed you... He is the one who will build a house for my Name, and I will establish the throne of his kingdom forever.\" Solomon's anointing fulfils the Davidic covenant's immediate promise."
-          },
-          {
-            "ref": "Ps 2:6–7",
-            "note": "\"I have installed my king on Zion, my holy mountain... You are my son; today I have become your father.\" The coronation psalm likely composed for Solomon's anointing."
-          },
-          {
-            "ref": "Exod 21:13–14",
-            "note": "The altar asylum law: the altar horns provide refuge for the unintentional killer but not the deliberate murderer. Adonijah's fate depends on whether Solomon considers his bid treasonous or forgivable."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 7:12–13",
+              "note": "\"I will raise up your offspring to succeed you... He is the one who will build a house for my Name, and I will establish the throne of his kingdom forever.\" Solomon's anointing fulfils the Davidic covenant's immediate promise."
+            },
+            {
+              "ref": "Ps 2:6–7",
+              "note": "\"I have installed my king on Zion, my holy mountain... You are my son; today I have become your father.\" The coronation psalm likely composed for Solomon's anointing."
+            },
+            {
+              "ref": "Exod 21:13–14",
+              "note": "The altar asylum law: the altar horns provide refuge for the unintentional killer but not the deliberate murderer. Adonijah's fate depends on whether Solomon considers his bid treasonous or forgivable."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -192,6 +197,9 @@
               "note": "Provan: Solomon's conditional mercy — \"if he shows himself worthy\" — establishes the conditional framework that will govern the entire book. The Solomonic kingdom, like the Mosaic covenant, offers blessing for faithfulness and judgment for rebellion. This conditionality is the DNA of Deuteronomistic theology."
             }
           ]
+        },
+        "hist": {
+          "context": "The anointing at Gihon is a counter-coronation — a deliberate, prophetically authorised response to Adonijah's illegitimate feast at En Rogel. David acts decisively for the first time in the narrative, commanding Zadok, Nathan, and Benaiah to take Solomon on the royal mule (a sign of designated succession), anoint him at the Gihon spring (Jerusalem's water source, symbolising life), and blow the trumpet. The sound of the trumpet and the people's shout reaches Adonijah's feast and scatters his guests instantly. The contrast is total: Adonijah's self-made ceremony dissolves at the first note of the legitimate king's coronation."
         }
       }
     }

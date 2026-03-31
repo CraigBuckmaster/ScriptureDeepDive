@@ -31,17 +31,18 @@
             "paragraph": "Do not move (ʾal-tassēg) an ancient boundary stone or encroach on the fields of the fatherless (v. 10). The orphan theme intensifies the warning from 22:28: those without a father to defend their inheritance are the most vulnerable to land theft. Their gōʾēl (redeemer/kinsman defender) is God himself — the strongest possible deterrent."
           }
         ],
-        "ctx": "The first half of ch.23 continues the Thirty Sayings with warnings against craving the ruler's food (v.3), exploiting the poor (v.10), and neglecting discipline (vv.13-14). The boundary-stone warning (v.10) is among the most pointed social ethics in the collection.",
-        "cross": [
-          {
-            "ref": "Deut 19:14",
-            "note": "Do not move your neighbour's boundary stone — the legal basis for v.10's boundary-stone warning."
-          },
-          {
-            "ref": "Prov 22:28",
-            "note": "Do not move an ancient boundary stone — the direct parallel, establishing the principle as a repeated warning."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 19:14",
+              "note": "Do not move your neighbour's boundary stone — the legal basis for v.10's boundary-stone warning."
+            },
+            {
+              "ref": "Prov 22:28",
+              "note": "Do not move an ancient boundary stone — the direct parallel, establishing the principle as a repeated warning."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "NET: go'el (Defender) — the kinsman-redeemer who advocates for the vulnerable. God as go'el of the fatherless makes encroachment on their land a legal offence against the most powerful possible advocate."
             }
           ]
+        },
+        "hist": {
+          "context": "The first half of ch.23 continues the Thirty Sayings with warnings against craving the ruler's food (v.3), exploiting the poor (v.10), and neglecting discipline (vv.13-14). The boundary-stone warning (v.10) is among the most pointed social ethics in the collection."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "The extended warning against wine (vv. 29–35) is Proverbs' most vivid alcohol passage. Yayin is standard grape wine; its effects are described with clinical precision — red eyes, bruises, hallucinations ('your eyes will see strange things'), loss of pain sensation ('they struck me but I did not feel it'). The final line captures addiction's cycle: 'When will I wake up? I will seek another drink.'"
           }
         ],
-        "ctx": "The second half addresses the parental heart's joy when children are wise (vv.19-25), the warning against the adulterous woman (vv.26-28), and the chapter's most extended passage: the warning against wine (vv.29-35). The wine passage is the most vivid description of addiction in the OT.",
-        "cross": [
-          {
-            "ref": "Prov 31:4-7",
-            "note": "It is not for kings to drink wine — the royal wine-warning that mirrors ch.23's extended treatment."
-          },
-          {
-            "ref": "Eph 5:18",
-            "note": "Do not get drunk on wine, which leads to debauchery — the NT application of the wine-warning principle."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 31:4-7",
+              "note": "It is not for kings to drink wine — the royal wine-warning that mirrors ch.23's extended treatment."
+            },
+            {
+              "ref": "Eph 5:18",
+              "note": "Do not get drunk on wine, which leads to debauchery — the NT application of the wine-warning principle."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -178,6 +183,9 @@
               "note": "The NET note on 'do not gaze at wine when it is red, when it sparkles in the cup, when it goes down smoothly' explains that the warning is at the moment of temptation, not merely at the point of intoxication. Wisdom addresses the decision before it is made. The sensory appeal of wine — its colour, sparkle, and smooth taste — is precisely what must not be allowed to govern the choice."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half addresses the parental heart's joy when children are wise (vv.19-25), the warning against the adulterous woman (vv.26-28), and the chapter's most extended passage: the warning against wine (vv.29-35). The wine passage is the most vivid description of addiction in the OT."
         }
       }
     }

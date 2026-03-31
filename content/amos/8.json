@@ -25,17 +25,18 @@
             "paragraph": "The wordplay is the key to the vision: qayits (summer fruit, the last harvest before winter) sounds like qets (end, termination). God says 'The time is ripe (qets) for my people Israel; I will spare them no longer.' The pun is untranslatable but devastating: the ripe fruit signals that Israel's time has run out."
           }
         ],
-        "ctx": "The fourth vision uses a pun to deliver its message: summer fruit (qayits) sounds like 'the end' (qets). The vision transitions into a direct indictment of commercial fraud (vv. 4-6): merchants who can't wait for the Sabbath to end so they can cheat customers with rigged scales, sell the sweepings of grain, and buy the poor for a pair of sandals. The economic critique is precise: these are not random accusations but descriptions of specific commercial practices that exploited the vulnerable.",
-        "cross": [
-          {
-            "ref": "Mic 6:10-11",
-            "note": "'Am I still to forget your ill-gotten treasures and the short ephah?' — Micah's parallel condemnation of commercial fraud."
-          },
-          {
-            "ref": "Deut 25:13-16",
-            "note": "The Torah's prohibition against dishonest weights and measures, which the merchants of Amos 8 are violating."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mic 6:10-11",
+              "note": "'Am I still to forget your ill-gotten treasures and the short ephah?' — Micah's parallel condemnation of commercial fraud."
+            },
+            {
+              "ref": "Deut 25:13-16",
+              "note": "The Torah's prohibition against dishonest weights and measures, which the merchants of Amos 8 are violating."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -96,6 +97,9 @@
               "note": "Andersen and Freedman connect the vision (vv. 1-3) to the indictment (vv. 4-6) through the theme of ripeness and rot: the fruit is ripe, and so is the corruption. The merchants' crimes recapitulate the charges of 2:6-8, creating a structural inclusio between the opening oracle against Israel and this penultimate vision."
             }
           ]
+        },
+        "hist": {
+          "context": "The fourth vision uses a pun to deliver its message: summer fruit (qayits) sounds like 'the end' (qets). The vision transitions into a direct indictment of commercial fraud (vv. 4-6): merchants who can't wait for the Sabbath to end so they can cheat customers with rigged scales, sell the sweepings of grain, and buy the poor for a pair of sandals. The economic critique is precise: these are not random accusations but descriptions of specific commercial practices that exploited the vulnerable."
         }
       }
     },
@@ -113,17 +117,18 @@
             "paragraph": "The famine of vv. 11-12 is uniquely devastating: not hunger for bread or thirst for water, but for hearing 'the words of the LORD.' God will withdraw prophetic revelation — the ultimate punishment for a people who silenced his prophets (2:12; 7:12-13). Those who rejected the word when it was offered will search for it in vain."
           }
         ],
-        "ctx": "This section moves from cosmic upheaval (the land trembling, the sun going dark at noon, festivals turning to mourning) to the most devastating punishment Amos announces: the withdrawal of God's word. People will stagger from sea to sea, searching for the word of the LORD, and not find it. The famine of the word is worse than any physical famine because it removes the possibility of divine guidance and restoration. The chapter closes with the strongest of Israel finding their strength failing (v. 13) and those who swear by false gods falling, never to rise again (v. 14).",
-        "cross": [
-          {
-            "ref": "1 Sam 3:1",
-            "note": "'The word of the LORD was rare; there were not many visions' — an earlier period of prophetic silence, before Samuel's call."
-          },
-          {
-            "ref": "Matt 4:4",
-            "note": "'Man shall not live on bread alone, but on every word that comes from the mouth of God' — Jesus affirms the priority of God's word over physical sustenance, the principle underlying Amos' famine imagery."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Sam 3:1",
+              "note": "'The word of the LORD was rare; there were not many visions' — an earlier period of prophetic silence, before Samuel's call."
+            },
+            {
+              "ref": "Matt 4:4",
+              "note": "'Man shall not live on bread alone, but on every word that comes from the mouth of God' — Jesus affirms the priority of God's word over physical sustenance, the principle underlying Amos' famine imagery."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -184,6 +189,9 @@
               "note": "Andersen and Freedman argue that the famine of the word (vv. 11-12) is the theological counterpart to the physical famine of 4:6: where God sent hunger to provoke repentance and Israel refused, now God sends the worse hunger — silence — as the final consequence of that refusal. The two famines bracket the central speeches, creating a progression from warning to judgment."
             }
           ]
+        },
+        "hist": {
+          "context": "This section moves from cosmic upheaval (the land trembling, the sun going dark at noon, festivals turning to mourning) to the most devastating punishment Amos announces: the withdrawal of God's word. People will stagger from sea to sea, searching for the word of the LORD, and not find it. The famine of the word is worse than any physical famine because it removes the possibility of divine guidance and restoration. The chapter closes with the strongest of Israel finding their strength failing (v. 13) and those who swear by false gods falling, never to rise again (v. 14)."
         }
       }
     }

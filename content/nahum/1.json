@@ -31,21 +31,22 @@
             "paragraph": "The participle noqem occurs three times in 1:2, an extraordinary rhetorical concentration. The root nqm denotes the execution of retributive justice, not capricious revenge. In ancient Near Eastern treaty contexts, the suzerain's vengeance against a rebellious vassal was a legal obligation. YHWH's threefold vengeance establishes the juridical framework for the entire oracle: Nineveh's destruction is warranted by covenant law."
           }
         ],
-        "ctx": "Nahum's superscription identifies the book as both a massa (\"oracle\" or \"burden\") and a \"vision\" (hazon), combining prophetic authority with visionary revelation. The opening hymn (1:2-8) is a partial acrostic poem tracing roughly half the Hebrew alphabet (aleph through kaph), drawing on theophanic traditions reminiscent of Deuteronomy 33, Judges 5, and Psalm 18. The imagery of YHWH rebuking the sea, withering Bashan and Carmel, and melting mountains echoes the Divine Warrior motif deeply embedded in Israelite liturgical tradition. The pivot at verse 7 — 'The LORD is good, a refuge in times of trouble' — introduces the crucial theological distinction: YHWH's wrath is not indiscriminate but discriminating, destroying enemies while sheltering the faithful. The 'overwhelming flood' of verse 8 may allude to the historical tradition that the Khosr River's flooding contributed to Nineveh's fall in 612 BC.",
-        "cross": [
-          {
-            "ref": "Exod 34:6-7",
-            "note": "The foundational divine self-revelation describes YHWH as 'slow to anger' yet not clearing the guilty — the same tension Nahum exploits in 1:2-3, applying covenant theology to Assyria's judgment."
-          },
-          {
-            "ref": "Ps 18:7-15",
-            "note": "David's theophanic psalm describes God's descent with earthquake, storm, and rebuke of the waters — imagery Nahum draws upon for the cosmic scope of YHWH's intervention against Nineveh."
-          },
-          {
-            "ref": "Isa 52:7",
-            "note": "The 'feet of one who brings good news' in Nahum 1:15 directly parallels Isaiah's herald of peace, linking Nineveh's fall to the restoration of Zion."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 34:6-7",
+              "note": "The foundational divine self-revelation describes YHWH as 'slow to anger' yet not clearing the guilty — the same tension Nahum exploits in 1:2-3, applying covenant theology to Assyria's judgment."
+            },
+            {
+              "ref": "Ps 18:7-15",
+              "note": "David's theophanic psalm describes God's descent with earthquake, storm, and rebuke of the waters — imagery Nahum draws upon for the cosmic scope of YHWH's intervention against Nineveh."
+            },
+            {
+              "ref": "Isa 52:7",
+              "note": "The 'feet of one who brings good news' in Nahum 1:15 directly parallels Isaiah's herald of peace, linking Nineveh's fall to the restoration of Zion."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -105,6 +106,9 @@
               "note": "The juxtaposition of refuge (maʻoz) and flood (sheteph) in adjacent verses creates a deliberate theological contrast. The same divine power that overwhelms the wicked protects the faithful. Nahum thus stands within the Deuteronomic tradition of blessing and curse (Deut 28-30), applied now to the international arena."
             }
           ]
+        },
+        "hist": {
+          "context": "Nahum's superscription identifies the book as both a massa (\"oracle\" or \"burden\") and a \"vision\" (hazon), combining prophetic authority with visionary revelation. The opening hymn (1:2-8) is a partial acrostic poem tracing roughly half the Hebrew alphabet (aleph through kaph), drawing on theophanic traditions reminiscent of Deuteronomy 33, Judges 5, and Psalm 18. The imagery of YHWH rebuking the sea, withering Bashan and Carmel, and melting mountains echoes the Divine Warrior motif deeply embedded in Israelite liturgical tradition. The pivot at verse 7 — 'The LORD is good, a refuge in times of trouble' — introduces the crucial theological distinction: YHWH's wrath is not indiscriminate but discriminating, destroying enemies while sheltering the faithful. The 'overwhelming flood' of verse 8 may allude to the historical tradition that the Khosr River's flooding contributed to Nineveh's fall in 612 BC."
         }
       }
     },
@@ -122,17 +126,18 @@
             "paragraph": "The participle mevasser (from basar, 'to bring news') in 1:15 denotes a messenger announcing victory. This term carries deep theological weight: in Isaiah 40:9 and 52:7, the mevasser announces YHWH's return to Zion and the end of exile. Nahum appropriates the term to declare that Nineveh's destruction is itself the 'good news' that liberates Judah from Assyrian oppression."
           }
         ],
-        "ctx": "Verses 9-15 shift from theophanic hymn to direct address, alternating between Nineveh (vv. 9, 11, 14) and Judah (vv. 12-13, 15). This rhetorical oscillation creates a dramatic contrast: what is doom for Assyria is liberation for Judah. The image of 'entangled thorns' and 'dry stubble' (v. 10) suggests the inextricable corruption of Nineveh's social fabric. Verse 11 likely alludes to Sennacherib, whose campaign against Judah in 701 BC was the paradigmatic act of plotting 'evil against the LORD' (cf. 2 Kgs 18-19; Isa 36-37). The command to 'celebrate your festivals' (v. 15) presupposes that Assyrian domination had disrupted Judah's cultic life. The herald on the mountains announces not merely military victory but the restoration of covenant worship.",
-        "cross": [
-          {
-            "ref": "2 Kgs 19:35-37",
-            "note": "The destruction of Sennacherib's army before Jerusalem and his subsequent assassination fulfill the pattern Nahum describes: the one who plotted evil against the LORD meets a decisive end."
-          },
-          {
-            "ref": "Rom 10:15",
-            "note": "Paul quotes the 'beautiful feet' tradition (combining Isa 52:7 and Nah 1:15) to describe the preaching of the gospel, extending the herald motif from Nineveh's political destruction to eschatological salvation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 19:35-37",
+              "note": "The destruction of Sennacherib's army before Jerusalem and his subsequent assassination fulfill the pattern Nahum describes: the one who plotted evil against the LORD meets a decisive end."
+            },
+            {
+              "ref": "Rom 10:15",
+              "note": "Paul quotes the 'beautiful feet' tradition (combining Isa 52:7 and Nah 1:15) to describe the preaching of the gospel, extending the herald motif from Nineveh's political destruction to eschatological salvation."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -192,6 +197,9 @@
               "note": "The herald (mevasser) on the mountains stands at the intersection of prophetic and cultic traditions. The summons to resume pilgrimage festivals (haggim) implies that Assyrian hegemony had effectively suppressed Judah's covenant worship — a historical reality attested by the syncretistic practices Josiah's reforms sought to eliminate."
             }
           ]
+        },
+        "hist": {
+          "context": "Verses 9-15 shift from theophanic hymn to direct address, alternating between Nineveh (vv. 9, 11, 14) and Judah (vv. 12-13, 15). This rhetorical oscillation creates a dramatic contrast: what is doom for Assyria is liberation for Judah. The image of 'entangled thorns' and 'dry stubble' (v. 10) suggests the inextricable corruption of Nineveh's social fabric. Verse 11 likely alludes to Sennacherib, whose campaign against Judah in 701 BC was the paradigmatic act of plotting 'evil against the LORD' (cf. 2 Kgs 18-19; Isa 36-37). The command to 'celebrate your festivals' (v. 15) presupposes that Assyrian domination had disrupted Judah's cultic life. The herald on the mountains announces not merely military victory but the restoration of covenant worship."
         }
       }
     }

@@ -31,18 +31,22 @@
             "paragraph": "The Lord's Prayer opens with the most intimate address available — 'our Father.' In Aramaic, abba. Jesus invites disciples to address the Creator of the universe with familial warmth. The 'our' is equally significant: prayer is communal even when private."
           }
         ],
-        "hist": "None",
-        "ctx": "The three practices of Jewish piety — almsgiving, prayer, fasting — are structured by a single repeated diagnosis (don't perform for human approval) and a single repeated promise (your Father who sees in secret will reward you). The Lord's Prayer (vv.9–13) is set within the teaching on prayer as the positive model: brief, God-centred, community-shaped (\"our Father,\" \"our daily bread,\" \"our debts\"). It is not a formula to be recited but a pattern to be followed.",
-        "cross": [
-          {
-            "ref": "Ezek 36:23",
-            "note": "Let me show the holiness of my great name — \"hallowed be your name\" in the Lord's Prayer echoes Ezekiel's new covenant promise that God will hallow his own name through Israel's restoration."
-          },
-          {
-            "ref": "Isa 58:3–7",
-            "note": "Why have we fasted and you have not seen it? — God's critique of fasting for show. Matthew 6:16–18 echoes Isaiah's critique of performative religiosity."
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "The three practices of Jewish piety — almsgiving, prayer, fasting — are structured by a single repeated diagnosis (don't perform for human approval) and a single repeated promise (your Father who sees in secret will reward you). The Lord's Prayer (vv.9–13) is set within the teaching on prayer as the positive model: brief, God-centred, community-shaped (\"our Father,\" \"our daily bread,\" \"our debts\"). It is not a formula to be recited but a pattern to be followed."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 36:23",
+              "note": "Let me show the holiness of my great name — \"hallowed be your name\" in the Lord's Prayer echoes Ezekiel's new covenant promise that God will hallow his own name through Israel's restoration."
+            },
+            {
+              "ref": "Isa 58:3–7",
+              "note": "Why have we fasted and you have not seen it? — God's critique of fasting for show. Matthew 6:16–18 echoes Isaiah's critique of performative religiosity."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -130,18 +134,22 @@
             "paragraph": "Used six times in vv.25-34. Not 'planning' (which is wise) but 'anxious worry' — the kind that divides the mind (the root merizo means 'divide'). Worry literally splits attention between God and circumstances. The antidote is not indifference but trust: 'seek first his kingdom.'"
           }
         ],
-        "hist": "None",
-        "ctx": "The second section of ch.6 moves from the three piety practices to the three anxieties: treasure (vv.19–21), sight (vv.22–23), and service (v.24) provide the theological diagnosis; the birds and flowers (vv.26–30) provide the analogical argument; and vv.31–34 provide the positive alternative — seek first the kingdom. The logic is: worry is the symptom of a heart whose treasure is on earth (v.21) and whose eye is single toward money (v.24). Re-order the heart and the worry is resolved.",
-        "cross": [
-          {
-            "ref": "1 Kgs 10:1–7",
-            "note": "Solomon in all his splendour (v.29). The flowers of the field exceed even the peak of human royal magnificence — God's artistry in creation exceeds human achievement."
-          },
-          {
-            "ref": "Ps 55:22",
-            "note": "Cast your burden on the LORD and he will sustain you — the OT basis for the anxiety teaching. Jesus is extending the Psalmist's invitation into a sustained argument from God's faithfulness in creation."
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "The second section of ch.6 moves from the three piety practices to the three anxieties: treasure (vv.19–21), sight (vv.22–23), and service (v.24) provide the theological diagnosis; the birds and flowers (vv.26–30) provide the analogical argument; and vv.31–34 provide the positive alternative — seek first the kingdom. The logic is: worry is the symptom of a heart whose treasure is on earth (v.21) and whose eye is single toward money (v.24). Re-order the heart and the worry is resolved."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 10:1–7",
+              "note": "Solomon in all his splendour (v.29). The flowers of the field exceed even the peak of human royal magnificence — God's artistry in creation exceeds human achievement."
+            },
+            {
+              "ref": "Ps 55:22",
+              "note": "Cast your burden on the LORD and he will sustain you — the OT basis for the anxiety teaching. Jesus is extending the Psalmist's invitation into a sustained argument from God's faithfulness in creation."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [

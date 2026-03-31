@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 13,
       "panels": {
-        "ctx": "Josiah begins seeking God at age 16, begins purging Judah at age 20, and repairs the temple at age 26 — all BEFORE the Book of the Law is discovered. The Chronicler’s chronology differs from Kings: Josiah’s reforms are motivated by personal devotion, not merely by the book’s discovery. The reform has internal motivation that precedes external stimulus.",
-        "cross": [
-          {
-            "ref": "2 Kgs 22:1–7",
-            "note": "Kings places Josiah's reform after the book discovery. Chronicles reveals that reforms began in his eighth year, six years before the book was found — Josiah's righteousness was proactive, not reactive."
-          },
-          {
-            "ref": "1 Kgs 13:1–3",
-            "note": "The anonymous prophet at Bethel foretold that 'a son named Josiah' would desecrate Jeroboam's altar. Josiah's purge of northern shrines (v. 6) fulfils this 300-year-old prophecy by name."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 22:1–7",
+              "note": "Kings places Josiah's reform after the book discovery. Chronicles reveals that reforms began in his eighth year, six years before the book was found — Josiah's righteousness was proactive, not reactive."
+            },
+            {
+              "ref": "1 Kgs 13:1–3",
+              "note": "The anonymous prophet at Bethel foretold that 'a son named Josiah' would desecrate Jeroboam's altar. Josiah's purge of northern shrines (v. 6) fulfils this 300-year-old prophecy by name."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events."
             }
           ]
+        },
+        "hist": {
+          "context": "Josiah begins seeking God at age 16, begins purging Judah at age 20, and repairs the temple at age 26 — all BEFORE the Book of the Law is discovered. The Chronicler’s chronology differs from Kings: Josiah’s reforms are motivated by personal devotion, not merely by the book’s discovery. The reform has internal motivation that precedes external stimulus."
         }
       }
     },
@@ -54,21 +58,22 @@
       "verse_start": 14,
       "verse_end": 33,
       "panels": {
-        "ctx": "During temple repairs, Hilkiah finds the Book of the Law. Josiah tears his robes. Huldah the prophetess delivers the oracle: judgment is coming, but Josiah will be gathered to his ancestors in peace. Josiah reads the book publicly and renews the covenant. “As long as he lived, they did not fail to follow the LORD.” The qualification “as long as he lived” is ominous — after his death, the fall is swift.",
-        "cross": [
-          {
-            "ref": "2 Kgs 22:8–23:3",
-            "note": "Kings records the book discovery, Huldah's prophecy, and the covenant renewal identically. Both sources agree on the prophetess Huldah's central role — she authenticated the scroll and delivered God's verdict."
-          },
-          {
-            "ref": "Deut 28:15–68",
-            "note": "Josiah's anguish upon hearing the book likely reflects the curses of Deuteronomy 28 — he realised that the nation had already triggered the covenant curses that would lead to exile."
-          },
-          {
-            "ref": "2 Kgs 23:25",
-            "note": "Kings gives Josiah the highest accolade of any king: 'Neither before nor after Josiah was there a king like him who turned to the LORD with all his heart and soul and strength.' Yet even this could not avert the coming judgment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 22:8–23:3",
+              "note": "Kings records the book discovery, Huldah's prophecy, and the covenant renewal identically. Both sources agree on the prophetess Huldah's central role — she authenticated the scroll and delivered God's verdict."
+            },
+            {
+              "ref": "Deut 28:15–68",
+              "note": "Josiah's anguish upon hearing the book likely reflects the curses of Deuteronomy 28 — he realised that the nation had already triggered the covenant curses that would lead to exile."
+            },
+            {
+              "ref": "2 Kgs 23:25",
+              "note": "Kings gives Josiah the highest accolade of any king: 'Neither before nor after Josiah was there a king like him who turned to the LORD with all his heart and soul and strength.' Yet even this could not avert the coming judgment."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -86,6 +91,9 @@
               "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events."
             }
           ]
+        },
+        "hist": {
+          "context": "During temple repairs, Hilkiah finds the Book of the Law. Josiah tears his robes. Huldah the prophetess delivers the oracle: judgment is coming, but Josiah will be gathered to his ancestors in peace. Josiah reads the book publicly and renews the covenant. “As long as he lived, they did not fail to follow the LORD.” The qualification “as long as he lived” is ominous — after his death, the fall is swift."
         }
       }
     }

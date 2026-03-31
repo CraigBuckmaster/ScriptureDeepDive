@@ -25,21 +25,22 @@
             "paragraph": "Jeremiah exercises his right of redemption (ge'ulla) to buy a field at Anathoth from his cousin Hanamel (v.7). The ge'ulla is the kinsman-redeemer obligation from Leviticus 25:25 -- the nearest relative must purchase family land to keep it within the clan. Buying land during a siege, when the Babylonian army surrounds the city, is an extraordinary act of faith: the purchase presupposes a future in which the land will have value."
           }
         ],
-        "ctx": "The date is 588 BC -- the tenth year of Zedekiah, the eighteenth year of Nebuchadnezzar. Jerusalem is under siege. Jeremiah is confined in the courtyard of the guard because his prophecies of Babylonian victory were considered treason. In this setting, God commands the prophet to buy a field -- the most counterintuitive economic act imaginable. Buying real estate during a siege by the army you have prophesied will conquer is either insanity or the deepest possible faith in future restoration.",
-        "cross": [
-          {
-            "ref": "Lev 25:25-28",
-            "note": "The kinsman-redeemer land law that Jeremiah fulfills -- keeping family property within the clan."
-          },
-          {
-            "ref": "Ruth 4:1-12",
-            "note": "Boaz acts as kinsman-redeemer for Naomi's land -- the same ge'ulla institution in narrative form."
-          },
-          {
-            "ref": "Heb 11:1",
-            "note": "\"Faith is confidence in what we hope for\" -- Jeremiah's field purchase is the OT's supreme illustration."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 25:25-28",
+              "note": "The kinsman-redeemer land law that Jeremiah fulfills -- keeping family property within the clan."
+            },
+            {
+              "ref": "Ruth 4:1-12",
+              "note": "Boaz acts as kinsman-redeemer for Naomi's land -- the same ge'ulla institution in narrative form."
+            },
+            {
+              "ref": "Heb 11:1",
+              "note": "\"Faith is confidence in what we hope for\" -- Jeremiah's field purchase is the OT's supreme illustration."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -104,6 +105,9 @@
               "note": "Brueggemann calls this \"the most radical act of hope in the Hebrew Bible.\" While Babylonian siege ramps rise against the walls, the prophet signs a real estate contract. Hope is not optimism; it is the purchase of a field during a siege."
             }
           ]
+        },
+        "hist": {
+          "context": "The date is 588 BC -- the tenth year of Zedekiah, the eighteenth year of Nebuchadnezzar. Jerusalem is under siege. Jeremiah is confined in the courtyard of the guard because his prophecies of Babylonian victory were considered treason. In this setting, God commands the prophet to buy a field -- the most counterintuitive economic act imaginable. Buying real estate during a siege by the army you have prophesied will conquer is either insanity or the deepest possible faith in future restoration."
         }
       }
     },
@@ -121,17 +125,18 @@
             "paragraph": "God responds to Jeremiah's prayer: \"Is anything too hard (yippale') for me?\" (v.27). The verb pala' means to be extraordinary, wonderful, beyond human capacity. God throws Jeremiah's own word (32:17) back at him: you affirmed that nothing is too hard for me -- now believe it."
           }
         ],
-        "ctx": "God's response (vv.26-44) mirrors Jeremiah's prayer structurally: a review of Israel's history (vv.28-35) followed by the promise of restoration (vv.36-44). The language is comprehensive: God will \"gather them from all the lands,\" \"bring them back to this place,\" give them \"singleness of heart and action,\" make \"an everlasting covenant\" with them, and \"never stop doing good to them\" (vv.37-40). This is the new covenant of chapter 31 restated in different terms.",
-        "cross": [
-          {
-            "ref": "Gen 18:14",
-            "note": "\"Is anything too hard for the LORD?\" -- God's question to Sarah uses the same root pala'. Both passages address impossibility overcome by divine power."
-          },
-          {
-            "ref": "Luke 1:37",
-            "note": "\"Nothing will be impossible with God\" -- the angel's words to Mary echo both Genesis 18 and Jeremiah 32."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 18:14",
+              "note": "\"Is anything too hard for the LORD?\" -- God's question to Sarah uses the same root pala'. Both passages address impossibility overcome by divine power."
+            },
+            {
+              "ref": "Luke 1:37",
+              "note": "\"Nothing will be impossible with God\" -- the angel's words to Mary echo both Genesis 18 and Jeremiah 32."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -184,6 +189,9 @@
               "note": "Brueggemann identifies five irreversible promises: gather, restore, covenant, never cease doing good, plant with all my heart. The repetition of \"I will\" creates a wall of divine commitment against which no counter-argument can stand."
             }
           ]
+        },
+        "hist": {
+          "context": "God's response (vv.26-44) mirrors Jeremiah's prayer structurally: a review of Israel's history (vv.28-35) followed by the promise of restoration (vv.36-44). The language is comprehensive: God will \"gather them from all the lands,\" \"bring them back to this place,\" give them \"singleness of heart and action,\" make \"an everlasting covenant\" with them, and \"never stop doing good to them\" (vv.37-40). This is the new covenant of chapter 31 restated in different terms."
         }
       }
     }

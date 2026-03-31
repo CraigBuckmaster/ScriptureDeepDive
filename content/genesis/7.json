@@ -31,22 +31,26 @@
             "paragraph": "V.4: The seven-day waiting period before the flood echoes the seven-day creation structure of chapter 1. The flood narrative is structured as a mirror of the creation account: the waters cover the earth (returning to the tohu vavohu of 1:2), then recede, then the earth is re-created. The seven-day rhythm signals that what is about to happen is a de-creation and re-creation."
           }
         ],
-        "hist": "The two accounts of Noah entering the ark (vv.1-5 and vv.7-9) have been identified by source critics as evidence of two different sources (J and P) being combined. The differences (seven pairs vs. two pairs of clean animals; seven days vs. rain immediately) are real but may also reflect the normal ancient narrative technique of resumptive repetition (telling the same event twice with different emphasis). The theological coherence of the flood narrative as a whole argues against arbitrary combination.",
-        "ctx": "The command to enter the ark is accompanied by God's personal testimony: \"I have found you righteous in this generation\" (v.1). This is an extraordinary statement — God himself publicly affirms Noah's righteousness. The flood is not arbitrary destruction; it is the moral response of a just God who has carefully distinguished the righteous from the wicked before executing judgment. Noah enters the ark with divine certification of his standing.",
-        "cross": [
-          {
-            "ref": "1 Pet 3:20",
-            "note": "Eight people were saved through water — Peter reads the flood as a type of baptism and notes the specific number of survivors."
-          },
-          {
-            "ref": "2 Pet 2:5",
-            "note": "God protected Noah, a preacher of righteousness, and brought the flood on the ungodly world — Noah as preacher, not merely survivor."
-          },
-          {
-            "ref": "Luke 17:27",
-            "note": "People were eating and drinking, marrying and being given in marriage up to the day Noah entered the ark — normal life until sudden judgment."
-          }
-        ],
+        "hist": {
+          "historical": "The two accounts of Noah entering the ark (vv.1-5 and vv.7-9) have been identified by source critics as evidence of two different sources (J and P) being combined. The differences (seven pairs vs. two pairs of clean animals; seven days vs. rain immediately) are real but may also reflect the normal ancient narrative technique of resumptive repetition (telling the same event twice with different emphasis). The theological coherence of the flood narrative as a whole argues against arbitrary combination.",
+          "context": "The command to enter the ark is accompanied by God's personal testimony: \"I have found you righteous in this generation\" (v.1). This is an extraordinary statement — God himself publicly affirms Noah's righteousness. The flood is not arbitrary destruction; it is the moral response of a just God who has carefully distinguished the righteous from the wicked before executing judgment. Noah enters the ark with divine certification of his standing."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Pet 3:20",
+              "note": "Eight people were saved through water — Peter reads the flood as a type of baptism and notes the specific number of survivors."
+            },
+            {
+              "ref": "2 Pet 2:5",
+              "note": "God protected Noah, a preacher of righteousness, and brought the flood on the ungodly world — Noah as preacher, not merely survivor."
+            },
+            {
+              "ref": "Luke 17:27",
+              "note": "People were eating and drinking, marrying and being given in marriage up to the day Noah entered the ark — normal life until sudden judgment."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -170,26 +174,30 @@
             "paragraph": "V.16: The most tender detail of the entire flood narrative. After all the animals and Noah's family have entered, the LORD himself shuts the door. Noah does not close the ark; God closes it. The one who commanded the building is the one who seals the safety. The sovereign God who opens the springs of the deep and the windows of heaven personally secures the door of the ark."
           }
         ],
-        "hist": "The date formula of v.11 — \"the seventeenth day of the second month\" in the six hundredth year of Noah's life — is one of the most precise chronological notations in the primeval history. This precision serves a theological purpose: the flood is a datable, historical event in real time, not a mythological event outside history. The ANE flood traditions (Atrahasis, Gilgamesh) have no comparable chronological precision, suggesting Genesis is making a historical claim the myths do not.",
-        "ctx": "The entry sequence of vv.13-16 is deliberately ceremonial: \"on that very day\" (v.13) Noah and his family entered; the animals came \"two by two\" (v.15); \"those that entered were male and female\" (v.16). The repetitive, almost liturgical description of the entry suggests a solemn procession — the last acts of the old world before its end. And then: \"the LORD shut him in\" (v.16). The old world is sealed off; the new world is sealed in.",
-        "cross": [
-          {
-            "ref": "Gen 1:2, 6–10",
-            "note": "The creation structures that the flood reverses — thetehom"
-          },
-          {
-            "ref": "Ps 29:10",
-            "note": "“The LORD sits enthroned over the flood” — the flood demonstrated the LORD’s sovereignty over even the most catastrophic forces of chaos."
-          },
-          {
-            "ref": "Isa 54:9",
-            "note": "God swears by the flood of Noah never again to cover the earth — the flood is the benchmark of divine wrath that God pledges not to repeat."
-          },
-          {
-            "ref": "2 Pet 3:5–7",
-            "note": "Peter links the flood to the final judgment by fire — the same God who destroyed the world by water will judge it by fire at the end."
-          }
-        ],
+        "hist": {
+          "historical": "The date formula of v.11 — \"the seventeenth day of the second month\" in the six hundredth year of Noah's life — is one of the most precise chronological notations in the primeval history. This precision serves a theological purpose: the flood is a datable, historical event in real time, not a mythological event outside history. The ANE flood traditions (Atrahasis, Gilgamesh) have no comparable chronological precision, suggesting Genesis is making a historical claim the myths do not.",
+          "context": "The entry sequence of vv.13-16 is deliberately ceremonial: \"on that very day\" (v.13) Noah and his family entered; the animals came \"two by two\" (v.15); \"those that entered were male and female\" (v.16). The repetitive, almost liturgical description of the entry suggests a solemn procession — the last acts of the old world before its end. And then: \"the LORD shut him in\" (v.16). The old world is sealed off; the new world is sealed in."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 1:2, 6–10",
+              "note": "The creation structures that the flood reverses — thetehom"
+            },
+            {
+              "ref": "Ps 29:10",
+              "note": "“The LORD sits enthroned over the flood” — the flood demonstrated the LORD’s sovereignty over even the most catastrophic forces of chaos."
+            },
+            {
+              "ref": "Isa 54:9",
+              "note": "God swears by the flood of Noah never again to cover the earth — the flood is the benchmark of divine wrath that God pledges not to repeat."
+            },
+            {
+              "ref": "2 Pet 3:5–7",
+              "note": "Peter links the flood to the final judgment by fire — the same God who destroyed the world by water will judge it by fire at the end."
+            }
+          ]
+        },
         "tl": [
           {
             "date": "c. 2350 BC",
@@ -347,26 +355,30 @@
             "paragraph": "V.23: Two words that carry the full weight of the flood narrative. Against the total erasure of every living creature — \"all flesh that moved on the earth\" — stands this: only Noah. The narrowing of all of humanity and all of creation to a single covenant partner is the most concentrated expression of divine particularity in the entire primeval history."
           }
         ],
-        "hist": "The flood's duration is precisely recorded: 40 days of rain (v.12), 150 days of water prevailing (v.24). The precision contrasts with the Gilgamesh Epic, where the flood lasts only seven days. The extended duration in Genesis makes a theological point: this is not a passing catastrophe but a sustained judgment — the waters prevail for five months. The ark is not a shelter for a week but the world for half a year.",
-        "ctx": "The chapter ends with a startling contrast: total destruction on one side, raq Noach (\"only Noah\") on the other. The narrative has moved from the universal (all flesh corrupted, all flesh destroyed) to the singular (only Noah survived) to the seed of restoration. The flood wipes out the old world; the ark preserves the seed of the new one. The logic of the entire chapter is the logic of the cross: comprehensive judgment, comprehensive grace for those inside.",
-        "cross": [
-          {
-            "ref": "Gen 1:2, 6–10",
-            "note": "The creation structures that the flood reverses — thetehom"
-          },
-          {
-            "ref": "Ps 29:10",
-            "note": "“The LORD sits enthroned over the flood” — the flood demonstrated the LORD’s sovereignty over even the most catastrophic forces of chaos."
-          },
-          {
-            "ref": "Isa 54:9",
-            "note": "God swears by the flood of Noah never again to cover the earth — the flood is the benchmark of divine wrath that God pledges not to repeat."
-          },
-          {
-            "ref": "2 Pet 3:5–7",
-            "note": "Peter links the flood to the final judgment by fire — the same God who destroyed the world by water will judge it by fire at the end."
-          }
-        ],
+        "hist": {
+          "historical": "The flood's duration is precisely recorded: 40 days of rain (v.12), 150 days of water prevailing (v.24). The precision contrasts with the Gilgamesh Epic, where the flood lasts only seven days. The extended duration in Genesis makes a theological point: this is not a passing catastrophe but a sustained judgment — the waters prevail for five months. The ark is not a shelter for a week but the world for half a year.",
+          "context": "The chapter ends with a startling contrast: total destruction on one side, raq Noach (\"only Noah\") on the other. The narrative has moved from the universal (all flesh corrupted, all flesh destroyed) to the singular (only Noah survived) to the seed of restoration. The flood wipes out the old world; the ark preserves the seed of the new one. The logic of the entire chapter is the logic of the cross: comprehensive judgment, comprehensive grace for those inside."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 1:2, 6–10",
+              "note": "The creation structures that the flood reverses — thetehom"
+            },
+            {
+              "ref": "Ps 29:10",
+              "note": "“The LORD sits enthroned over the flood” — the flood demonstrated the LORD’s sovereignty over even the most catastrophic forces of chaos."
+            },
+            {
+              "ref": "Isa 54:9",
+              "note": "God swears by the flood of Noah never again to cover the earth — the flood is the benchmark of divine wrath that God pledges not to repeat."
+            },
+            {
+              "ref": "2 Pet 3:5–7",
+              "note": "Peter links the flood to the final judgment by fire — the same God who destroyed the world by water will judge it by fire at the end."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

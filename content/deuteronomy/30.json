@@ -31,21 +31,22 @@
             "paragraph": "The great promise of Deuteronomy 30:6 -- God himself will circumcise the heart -- is the OT's most explicit anticipation of the new covenant. Heart circumcision in ch.10:16 was a command (\"circumcise your hearts\"); here it is a promise (\"God will circumcise your heart\"). The new covenant provides what the old covenant demanded."
           }
         ],
-        "ctx": "Chapter 30 is one of the most theologically rich chapters in the OT. It anticipates Israel's exile and return with remarkable specificity, promises a divine heart-circumcision (v.6) that enables what the law demands, and closes with the most explicit statement of the covenant's binary character: \"I have set before you life and death, blessings and curses. Now choose life\" (v.19). Paul quotes vv.12-14 in Romans 10:6-8 to argue that the righteousness of faith is accessible to all -- the word is \"near you, in your mouth and in your heart.\"",
-        "cross": [
-          {
-            "ref": "Jer 31:31-34",
-            "note": "\"I will make a new covenant with the people of Israel... I will put my law in their minds and write it on their hearts.\" Jeremiah's new covenant promise is the prophetic development of Deuteronomy 30:6's heart-circumcision promise."
-          },
-          {
-            "ref": "Ezek 36:26-27",
-            "note": "\"I will give you a new heart and put a new spirit in you... And I will put my Spirit in you and move you to follow my decrees.\" Ezekiel's new covenant promise is the eschatological fulfilment of Deuteronomy 30:6."
-          },
-          {
-            "ref": "Rom 10:6-8",
-            "note": "\"The righteousness that is by faith says: 'Do not say in your heart, 'Who will ascend into heaven?'' ... But what does it say? 'The word is near you; it is in your mouth and in your heart.'\" Paul quotes Deut 30:12-14 to argue that the NT gospel of faith has the same accessibility as the Mosaic covenant."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 31:31-34",
+              "note": "\"I will make a new covenant with the people of Israel... I will put my law in their minds and write it on their hearts.\" Jeremiah's new covenant promise is the prophetic development of Deuteronomy 30:6's heart-circumcision promise."
+            },
+            {
+              "ref": "Ezek 36:26-27",
+              "note": "\"I will give you a new heart and put a new spirit in you... And I will put my Spirit in you and move you to follow my decrees.\" Ezekiel's new covenant promise is the eschatological fulfilment of Deuteronomy 30:6."
+            },
+            {
+              "ref": "Rom 10:6-8",
+              "note": "\"The righteousness that is by faith says: 'Do not say in your heart, 'Who will ascend into heaven?'' ... But what does it say? 'The word is near you; it is in your mouth and in your heart.'\" Paul quotes Deut 30:12-14 to argue that the NT gospel of faith has the same accessibility as the Mosaic covenant."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 30 is one of the most theologically rich chapters in the OT. It anticipates Israel's exile and return with remarkable specificity, promises a divine heart-circumcision (v.6) that enables what the law demands, and closes with the most explicit statement of the covenant's binary character: \"I have set before you life and death, blessings and curses. Now choose life\" (v.19). Paul quotes vv.12-14 in Romans 10:6-8 to argue that the righteousness of faith is accessible to all -- the word is \"near you, in your mouth and in your heart.\""
         }
       }
     },
@@ -137,17 +141,18 @@
             "paragraph": "The ultimate Deuteronomic statement. Not \"choose correct theology\" or \"choose better behaviour\" -- choose life. And life is defined: \"the LORD is your life.\" To choose God is to choose life; to reject God is to choose death. This binary is the clearest possible statement of what is at stake in every covenant choice."
           }
         ],
-        "ctx": "The chapter's conclusion is Deuteronomy's most famous passage: the accessibility of the covenant word (vv.11-14) and the great binary choice (vv.15-20). Moses sets before Israel the two ways: life and prosperity, or death and destruction. Love the LORD, walk in his ways, keep his commands and you will live and increase. Turn away and you will perish. Heaven and earth are called as witnesses. Then the most direct command in the book: \"Choose life, so that you and your children may live.\"",
-        "cross": [
-          {
-            "ref": "John 14:6",
-            "note": "\"I am the way and the truth and the life. No one comes to the Father except through me.\" Jesus' self-identification as the Life is the NT answer to Deuteronomy 30:19-20's choice of life -- he is not merely the path to life but is himself the life that Israel was called to choose."
-          },
-          {
-            "ref": "Gal 3:11-12",
-            "note": "\"Clearly no one who relies on the law is justified before God, because 'the righteous will live by faith.' The law is not based on faith.\" Paul sets Deuteronomy 30's \"choose\" within the larger framework of faith vs. works -- the accessibility of the word (30:14) is the accessibility of faith."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 14:6",
+              "note": "\"I am the way and the truth and the life. No one comes to the Father except through me.\" Jesus' self-identification as the Life is the NT answer to Deuteronomy 30:19-20's choice of life -- he is not merely the path to life but is himself the life that Israel was called to choose."
+            },
+            {
+              "ref": "Gal 3:11-12",
+              "note": "\"Clearly no one who relies on the law is justified before God, because 'the righteous will live by faith.' The law is not based on faith.\" Paul sets Deuteronomy 30's \"choose\" within the larger framework of faith vs. works -- the accessibility of the word (30:14) is the accessibility of faith."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -212,6 +217,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter's conclusion is Deuteronomy's most famous passage: the accessibility of the covenant word (vv.11-14) and the great binary choice (vv.15-20). Moses sets before Israel the two ways: life and prosperity, or death and destruction. Love the LORD, walk in his ways, keep his commands and you will live and increase. Turn away and you will perish. Heaven and earth are called as witnesses. Then the most direct command in the book: \"Choose life, so that you and your children may live.\""
         }
       }
     }

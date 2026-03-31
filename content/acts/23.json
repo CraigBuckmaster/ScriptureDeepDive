@@ -54,21 +54,22 @@
             "current": false
           }
         ],
-        "ctx": "The Sanhedrin hearing (vv.1–10) is one of Acts' most dramatic scenes: Paul rebukes the high priest, is rebuked for it, then invokes the resurrection to split the council. The resulting riot saves him from coordinated opposition. Then the conspiracy of forty men (vv.12–22) reveals how desperate his enemies are — and how God providentially uses a nephew's overheard conversation to preserve his apostle. The Lord's vision (v.11: 'you must also testify in Rome') gives Paul's entire captivity narrative its theological direction: what looks like imprisonment is actually preparation for the mission's climax.",
-        "cross": [
-          {
-            "ref": "Acts 18:9–10",
-            "note": "The Lord's night vision at Corinth: 'Do not be afraid; keep on speaking' — the same pattern of direct divine reassurance at the point of maximum danger."
-          },
-          {
-            "ref": "Acts 9:15",
-            "note": "\"This man is my chosen instrument to proclaim my name... to the Gentiles and their kings\" — Paul's Rome mission was part of the Damascus road commission. The Sanhedrin hearing is the penultimate step toward its fulfilment."
-          },
-          {
-            "ref": "Matthew 23:27",
-            "note": "\"Woe to you, teachers of the law and Pharisees, you hypocrites! You are like whitewashed tombs\" — Paul's \"whitewashed wall\" (v.3) uses the same imagery Jesus used of the religious establishment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 18:9–10",
+              "note": "The Lord's night vision at Corinth: 'Do not be afraid; keep on speaking' — the same pattern of direct divine reassurance at the point of maximum danger."
+            },
+            {
+              "ref": "Acts 9:15",
+              "note": "\"This man is my chosen instrument to proclaim my name... to the Gentiles and their kings\" — Paul's Rome mission was part of the Damascus road commission. The Sanhedrin hearing is the penultimate step toward its fulfilment."
+            },
+            {
+              "ref": "Matthew 23:27",
+              "note": "\"Woe to you, teachers of the law and Pharisees, you hypocrites! You are like whitewashed tombs\" — Paul's \"whitewashed wall\" (v.3) uses the same imagery Jesus used of the religious establishment."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -137,6 +138,9 @@
               "note": "Keener notes the conspiracy of forty men represents a significant organized resistance. The oath not to eat or drink until Paul was dead was a recognised form of vow — binding and extremely serious. The conspiracy's sophistication (involving both religious leaders and a planned ambush) shows that the opposition to Paul had moved beyond spontaneous riot to coordinated assassination planning."
             }
           ]
+        },
+        "hist": {
+          "context": "The Sanhedrin hearing (vv.1–10) is one of Acts' most dramatic scenes: Paul rebukes the high priest, is rebuked for it, then invokes the resurrection to split the council. The resulting riot saves him from coordinated opposition. Then the conspiracy of forty men (vv.12–22) reveals how desperate his enemies are — and how God providentially uses a nephew's overheard conversation to preserve his apostle. The Lord's vision (v.11: 'you must also testify in Rome') gives Paul's entire captivity narrative its theological direction: what looks like imprisonment is actually preparation for the mission's climax."
         }
       }
     },
@@ -183,21 +187,22 @@
             "current": false
           }
         ],
-        "ctx": "The letter of Claudius Lysias (vv.25–30) is one of Acts' most carefully crafted literary devices. It functions as an official Roman document summarising Paul's case — and it advances Luke's legal argument: a Roman officer, acting in his official capacity, found no capital charge. The letter's slight inaccuracy (v.27: 'for I had learned that he is a Roman citizen' — actually Lysias discovered this after the arrest) is historically realistic: officials shade their reports to present themselves favourably. Luke preserves this small detail as evidence of verisimilitude.",
-        "cross": [
-          {
-            "ref": "Acts 18:14–15",
-            "note": "Gallio's ruling at Corinth: 'no misdemeanor or serious crime' — the first Roman innocence declaration. The cumulative pattern: Roman officials consistently find Paul not guilty."
-          },
-          {
-            "ref": "Acts 25:25",
-            "note": "\"I found he had done nothing deserving death\" — Festus's verdict continues the Roman innocence chain."
-          },
-          {
-            "ref": "Acts 26:31–32",
-            "note": "\"This man is not doing anything that deserves death or imprisonment... he could have been set free if he had not appealed to Caesar\" — the climactic Roman innocence verdict."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 18:14–15",
+              "note": "Gallio's ruling at Corinth: 'no misdemeanor or serious crime' — the first Roman innocence declaration. The cumulative pattern: Roman officials consistently find Paul not guilty."
+            },
+            {
+              "ref": "Acts 25:25",
+              "note": "\"I found he had done nothing deserving death\" — Festus's verdict continues the Roman innocence chain."
+            },
+            {
+              "ref": "Acts 26:31–32",
+              "note": "\"This man is not doing anything that deserves death or imprisonment... he could have been set free if he had not appealed to Caesar\" — the climactic Roman innocence verdict."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -262,6 +267,9 @@
               "note": "\"Herod's palace\" (praitōrion) — Keener notes this was the former palace of Herod the Great, later converted to the Roman governor's official residence. Archaeological excavations at Caesarea have confirmed the existence of this Herodian structure. Luke's specific detail about Paul's imprisonment location is consistent with the archaeological record."
             }
           ]
+        },
+        "hist": {
+          "context": "The letter of Claudius Lysias (vv.25–30) is one of Acts' most carefully crafted literary devices. It functions as an official Roman document summarising Paul's case — and it advances Luke's legal argument: a Roman officer, acting in his official capacity, found no capital charge. The letter's slight inaccuracy (v.27: 'for I had learned that he is a Roman citizen' — actually Lysias discovered this after the arrest) is historically realistic: officials shade their reports to present themselves favourably. Luke preserves this small detail as evidence of verisimilitude."
         }
       }
     }

@@ -31,17 +31,18 @@
             "paragraph": "The simple description — an acacia wood box — is deliberate understatement. The ark's significance is entirely in its contents (the covenant tablets) and its role (the meeting point between God and Israel). God's dwelling is defined not by architectural grandeur but by the presence of his word."
           }
         ],
-        "ctx": "Moses recounts the aftermath of the golden calf: new stone tablets, their deposit in the ark, the death of Aaron, the Levites' appointment to priestly service. The sequence is remarkable — immediately after Israel's greatest failure comes the restoration of all the institutions of worship. The covenant is not merely resumed; it is rebuilt on the same terms. This is the pattern of divine grace: not a lowering of standards after failure but full restoration of the original covenant.",
-        "cross": [
-          {
-            "ref": "Heb 9:4",
-            "note": "\"This ark contained the gold jar of manna, Aaron's staff that had budded, and the stone tablets of the covenant.\" The author of Hebrews describes the ark's contents as a summary of Israel's covenant history."
-          },
-          {
-            "ref": "2 Cor 3:3",
-            "note": "\"Written not with ink but with the Spirit of the living God, not on tablets of stone but on tablets of human hearts.\" Paul reinterprets the stone tablets through the new covenant of Jer 31:33."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 9:4",
+              "note": "\"This ark contained the gold jar of manna, Aaron's staff that had budded, and the stone tablets of the covenant.\" The author of Hebrews describes the ark's contents as a summary of Israel's covenant history."
+            },
+            {
+              "ref": "2 Cor 3:3",
+              "note": "\"Written not with ink but with the Spirit of the living God, not on tablets of stone but on tablets of human hearts.\" Paul reinterprets the stone tablets through the new covenant of Jer 31:33."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Moses recounts the aftermath of the golden calf: new stone tablets, their deposit in the ark, the death of Aaron, the Levites' appointment to priestly service. The sequence is remarkable — immediately after Israel's greatest failure comes the restoration of all the institutions of worship. The covenant is not merely resumed; it is rebuilt on the same terms. This is the pattern of divine grace: not a lowering of standards after failure but full restoration of the original covenant."
         }
       }
     },
@@ -137,17 +141,18 @@
             "paragraph": "The metaphor of heart-circumcision appears here (10:16) and reaches its fullest form in 30:6, where God himself will circumcise their hearts. Heart circumcision removes the stubborn resistance to God. Paul develops this in Romans 2:29 and Colossians 2:11."
           }
         ],
-        "ctx": "Verses 12–22 are one of Deuteronomy's great theological summaries. Moses asks: what does God require of you? Five-fold: fear, walk, love, serve, observe (v.12). Then he grounds these demands in God's character: God is the God of gods, Lord of lords — yet he loves the alien, provides for the orphan and widow, executes justice for the oppressed. The demands flow from the character: love the alien because God loves the alien; fear God because he is incomparable.",
-        "cross": [
-          {
-            "ref": "Mic 6:8",
-            "note": "\"He has shown you, O mortal, what is good. And what does the LORD require of you? To act justly and to love mercy and to walk humbly with your God.\" Micah's great summary echoes Deuteronomy 10:12's question and structure."
-          },
-          {
-            "ref": "Matt 23:23",
-            "note": "\"You have neglected the more important matters of the law — justice, mercy and faithfulness.\" Jesus identifies the \"weightier matters\" in terms that directly reflect Deuteronomy 10's justice-for-the-powerless theology."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mic 6:8",
+              "note": "\"He has shown you, O mortal, what is good. And what does the LORD require of you? To act justly and to love mercy and to walk humbly with your God.\" Micah's great summary echoes Deuteronomy 10:12's question and structure."
+            },
+            {
+              "ref": "Matt 23:23",
+              "note": "\"You have neglected the more important matters of the law — justice, mercy and faithfulness.\" Jesus identifies the \"weightier matters\" in terms that directly reflect Deuteronomy 10's justice-for-the-powerless theology."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -220,6 +225,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Verses 12–22 are one of Deuteronomy's great theological summaries. Moses asks: what does God require of you? Five-fold: fear, walk, love, serve, observe (v.12). Then he grounds these demands in God's character: God is the God of gods, Lord of lords — yet he loves the alien, provides for the orphan and widow, executes justice for the oppressed. The demands flow from the character: love the alien because God loves the alien; fear God because he is incomparable."
         }
       }
     }

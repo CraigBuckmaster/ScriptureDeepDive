@@ -25,21 +25,22 @@
             "paragraph": "A baptism of repentance for the forgiveness of sins — metanoia is not merely remorse but a fundamental reorientation of direction. The Greek root means to turn the mind around. John’s baptism is an enacted declaration of this turn — a public covenant of allegiance to the coming kingdom. The pairing with “forgiveness of sins” (aphesin hamartiōn) makes it clear that the turn is also a transaction: the forgiveness is real, not merely symbolic."
           }
         ],
-        "ctx": "Luke’s dating of John’s ministry (3:1-2) is the most precise historical synchronization in the Gospels: six Roman and Jewish officials are named to anchor the story within secular history. The word of God came to John in the wilderness — echoing the OT prophetic commissioning formula. John’s ethical demands are distinctively Luke’s: the crowd, tax collectors, and soldiers each ask “what should we do?” — a question Luke’s Jesus will answer throughout the Gospel.",
-        "cross": [
-          {
-            "ref": "Isa 40:3-5",
-            "note": "A voice of one calling in the wilderness — Luke quotes more of Isaiah 40 than either Matthew or Mark, extending to v.5: “all people will see God’s salvation.” The universal scope is Luke’s editorial addition."
-          },
-          {
-            "ref": "Mal 3:1-2",
-            "note": "Who can endure the day of his coming? For he will be like a refiner’s fire — the winnowing and burning imagery of 3:17."
-          },
-          {
-            "ref": "Amos 5:18-20",
-            "note": "The Day of the LORD will be darkness, not light — the OT prophetic tradition behind John’s wrath-warning."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 40:3-5",
+              "note": "A voice of one calling in the wilderness — Luke quotes more of Isaiah 40 than either Matthew or Mark, extending to v.5: “all people will see God’s salvation.” The universal scope is Luke’s editorial addition."
+            },
+            {
+              "ref": "Mal 3:1-2",
+              "note": "Who can endure the day of his coming? For he will be like a refiner’s fire — the winnowing and burning imagery of 3:17."
+            },
+            {
+              "ref": "Amos 5:18-20",
+              "note": "The Day of the LORD will be darkness, not light — the OT prophetic tradition behind John’s wrath-warning."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -142,7 +143,10 @@
             "text": "The baptism inaugurates Jesus’s public ministry. Luke notes he was about thirty years old. The genealogy establishes his credentials: Son of Adam, Son of God.",
             "current": true
           }
-        ]
+        ],
+        "hist": {
+          "context": "Luke’s dating of John’s ministry (3:1-2) is the most precise historical synchronization in the Gospels: six Roman and Jewish officials are named to anchor the story within secular history. The word of God came to John in the wilderness — echoing the OT prophetic commissioning formula. John’s ethical demands are distinctively Luke’s: the crowd, tax collectors, and soldiers each ask “what should we do?” — a question Luke’s Jesus will answer throughout the Gospel."
+        }
       }
     },
     {
@@ -159,21 +163,22 @@
             "paragraph": "The genealogy ends: the son of Adam, the son of God (3:38). Luke traces Jesus’s lineage not just to Abraham (as Matthew does) but to Adam — and then to God. The endpoint is theological: Jesus is the Son of God, the second Adam (cf. Rom 5:12-19; 1 Cor 15:45). His solidarity is not merely with Israel but with all humanity from creation."
           }
         ],
-        "ctx": "Luke’s baptism account uniquely notes that the heaven opened while Jesus was praying — prayer is the context for divine disclosure throughout Luke. The genealogy follows the baptism, not (as in Matthew) the birth. Luke’s genealogy runs backward from Jesus to Adam, rather than forward from Abraham to Jesus — a Gentile-audience choice that emphasizes Jesus’s solidarity with all humanity rather than his Jewish particularity.",
-        "cross": [
-          {
-            "ref": "Ps 2:7",
-            "note": "You are my Son; today I have become your Father — the royal coronation psalm behind the voice at the baptism."
-          },
-          {
-            "ref": "Isa 42:1",
-            "note": "Here is my servant, whom I uphold, my chosen one in whom I delight — the Servant Song behind the “well pleased” declaration."
-          },
-          {
-            "ref": "Gen 5:1-32",
-            "note": "The genealogy from Adam — Luke’s genealogy reverses Genesis’s forward genealogical movement, retracing human lineage back to its origin in God."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 2:7",
+              "note": "You are my Son; today I have become your Father — the royal coronation psalm behind the voice at the baptism."
+            },
+            {
+              "ref": "Isa 42:1",
+              "note": "Here is my servant, whom I uphold, my chosen one in whom I delight — the Servant Song behind the “well pleased” declaration."
+            },
+            {
+              "ref": "Gen 5:1-32",
+              "note": "The genealogy from Adam — Luke’s genealogy reverses Genesis’s forward genealogical movement, retracing human lineage back to its origin in God."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -276,7 +281,10 @@
             "text": "The baptism inaugurates Jesus’s public ministry. Luke notes he was about thirty years old. The genealogy establishes his credentials: Son of Adam, Son of God.",
             "current": true
           }
-        ]
+        ],
+        "hist": {
+          "context": "Luke’s baptism account uniquely notes that the heaven opened while Jesus was praying — prayer is the context for divine disclosure throughout Luke. The genealogy follows the baptism, not (as in Matthew) the birth. Luke’s genealogy runs backward from Jesus to Adam, rather than forward from Abraham to Jesus — a Gentile-audience choice that emphasizes Jesus’s solidarity with all humanity rather than his Jewish particularity."
+        }
       }
     },
     {
@@ -293,21 +301,22 @@
             "paragraph": "A baptism of repentance for the forgiveness of sins — metanoia is not merely remorse but a fundamental reorientation of direction. The Greek root means to turn the mind around. John’s baptism is an enacted declaration of this turn — a public covenant of allegiance to the coming kingdom. The pairing with “forgiveness of sins” (aphesin hamartiōn) makes it clear that the turn is also a transaction: the forgiveness is real, not merely symbolic."
           }
         ],
-        "ctx": "Luke’s dating of John’s ministry (3:1-2) is the most precise historical synchronization in the Gospels: six Roman and Jewish officials are named to anchor the story within secular history. The word of God came to John in the wilderness — echoing the OT prophetic commissioning formula. John’s ethical demands are distinctively Luke’s: the crowd, tax collectors, and soldiers each ask “what should we do?” — a question Luke’s Jesus will answer throughout the Gospel.",
-        "cross": [
-          {
-            "ref": "Isa 40:3-5",
-            "note": "A voice of one calling in the wilderness — Luke quotes more of Isaiah 40 than either Matthew or Mark, extending to v.5: “all people will see God’s salvation.” The universal scope is Luke’s editorial addition."
-          },
-          {
-            "ref": "Mal 3:1-2",
-            "note": "Who can endure the day of his coming? For he will be like a refiner’s fire — the winnowing and burning imagery of 3:17."
-          },
-          {
-            "ref": "Amos 5:18-20",
-            "note": "The Day of the LORD will be darkness, not light — the OT prophetic tradition behind John’s wrath-warning."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 40:3-5",
+              "note": "A voice of one calling in the wilderness — Luke quotes more of Isaiah 40 than either Matthew or Mark, extending to v.5: “all people will see God’s salvation.” The universal scope is Luke’s editorial addition."
+            },
+            {
+              "ref": "Mal 3:1-2",
+              "note": "Who can endure the day of his coming? For he will be like a refiner’s fire — the winnowing and burning imagery of 3:17."
+            },
+            {
+              "ref": "Amos 5:18-20",
+              "note": "The Day of the LORD will be darkness, not light — the OT prophetic tradition behind John’s wrath-warning."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -410,7 +419,10 @@
             "text": "The baptism inaugurates Jesus’s public ministry. Luke notes he was about thirty years old. The genealogy establishes his credentials: Son of Adam, Son of God.",
             "current": true
           }
-        ]
+        ],
+        "hist": {
+          "context": "Luke’s dating of John’s ministry (3:1-2) is the most precise historical synchronization in the Gospels: six Roman and Jewish officials are named to anchor the story within secular history. The word of God came to John in the wilderness — echoing the OT prophetic commissioning formula. John’s ethical demands are distinctively Luke’s: the crowd, tax collectors, and soldiers each ask “what should we do?” — a question Luke’s Jesus will answer throughout the Gospel."
+        }
       }
     }
   ],

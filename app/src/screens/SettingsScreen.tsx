@@ -52,6 +52,8 @@ export default function SettingsScreen() {
   const setTranslation = useSettingsStore((s) => s.setTranslation);
   const setFontSize = useSettingsStore((s) => s.setFontSize);
   const setVhlEnabled = useSettingsStore((s) => s.setVhlEnabled);
+  const studyCoachEnabled = useSettingsStore((s) => s.studyCoachEnabled);
+  const setStudyCoachEnabled = useSettingsStore((s) => s.setStudyCoachEnabled);
 
   const [stats, setStats] = useState<ContentStats | null>(null);
   const [exporting, setExporting] = useState(false);
@@ -178,6 +180,16 @@ export default function SettingsScreen() {
             onValueChange={setVhlEnabled}
             trackColor={{ false: base.bgSurface, true: base.gold + '60' }}
             thumbColor={vhlEnabled ? base.gold : base.textMuted}
+          />
+        </Row>
+
+        {/* Study Coach */}
+        <Row label="Study Coach">
+          <Switch
+            value={studyCoachEnabled}
+            onValueChange={setStudyCoachEnabled}
+            trackColor={{ false: base.bgSurface, true: base.gold + '60' }}
+            thumbColor={studyCoachEnabled ? base.gold : base.textMuted}
           />
         </Row>
 

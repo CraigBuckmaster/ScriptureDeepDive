@@ -31,17 +31,18 @@
             "paragraph": "This verse echoes 1:7 (which read: \"the fear of the LORD is the beginning of knowledge\"). The variation is deliberate: wisdom and knowledge are parallel. Ch.9 closes the extended Wisdom discourse of chs.1–9 by returning to the thesis of ch.1. The entire section is bracketed."
           }
         ],
-        "ctx": "Chapter 9 is the architectural close of Proverbs 1–9. It sets Wisdom (vv.1–6) and Lady Folly (vv.13–18) in direct parallel — two women, two houses, two invitations, two radically different destinations. Between them stands a series of proverbs about the mocker and the wise (vv.7–12). The structure is deliberate: the extended Wisdom discourse of chs.1–9 ends with the starkest possible presentation of the choice. Wisdom's banquet leads to life; Folly's stolen water leads to death. Choose.",
-        "cross": [
-          {
-            "ref": "Matt 22:1–14",
-            "note": "Jesus' parable of the wedding banquet — a king sends servants to invite guests who refuse — mirrors Wisdom's banquet invitation. Both feature a lavish host, sent messengers, and the deadly consequences of refusal."
-          },
-          {
-            "ref": "Isa 55:1–3",
-            "note": "Isaiah's 'Come, all you who are thirsty, come to the waters … come, buy wine and milk without money' echoes Wisdom's open invitation to the naïve. Both offer life freely to whoever will accept."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 22:1–14",
+              "note": "Jesus' parable of the wedding banquet — a king sends servants to invite guests who refuse — mirrors Wisdom's banquet invitation. Both feature a lavish host, sent messengers, and the deadly consequences of refusal."
+            },
+            {
+              "ref": "Isa 55:1–3",
+              "note": "Isaiah's 'Come, all you who are thirsty, come to the waters … come, buy wine and milk without money' echoes Wisdom's open invitation to the naïve. Both offer life freely to whoever will accept."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "The NET note on 'stolen water is sweet; food eaten in secret is delicious' explains that Dame Folly's appeal in v.17 is the psychological appeal of the forbidden. The 'sweetness' of stolen water and secret food is entirely a function of their being stolen and secret — the pleasure is in transgression, not in any inherent quality of the water or food."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 9 is the architectural close of Proverbs 1–9. It sets Wisdom (vv.1–6) and Lady Folly (vv.13–18) in direct parallel — two women, two houses, two invitations, two radically different destinations. Between them stands a series of proverbs about the mocker and the wise (vv.7–12). The structure is deliberate: the extended Wisdom discourse of chs.1–9 ends with the starkest possible presentation of the choice. Wisdom's banquet leads to life; Folly's stolen water leads to death. Choose."
         }
       }
     },
@@ -129,17 +133,18 @@
             "paragraph": "The shades of the dead in Sheol. Folly's house, like the adulteress's house (2:18; 7:27), is populated by the dead. The guests at her banquet are already in the realm of the dead — they just don't know it yet. This is Proverbs' final and most concentrated statement on the folly of Folly: her guests are dead and don't know it."
           }
         ],
-        "ctx": "Lady Folly (vv.13–18) is the dark mirror of Lady Wisdom. The parallels are exact and deliberate: both sit at \"the highest point of the city\" (v.3 and v.14); both call out to \"those who have no sense\" (v.4 and v.16); both offer a meal. But the content differs completely. Wisdom's invitation leads to life; Folly's stolen water leads to death. The simple who pass by face a genuine choice between two identical-sounding invitations with opposite destinations. This is the book's final and most concentrated statement of its entire message.",
-        "cross": [
-          {
-            "ref": "Prov 1:20–33",
-            "note": "Lady Folly is Lady Wisdom's dark mirror. Both call from the high places (1:20–21; 9:14), both invite the simple — but Wisdom's house leads to life while Folly's guests are in Sheol. The structural parallel is deliberate."
-          },
-          {
-            "ref": "Rev 17:1–6",
-            "note": "The seductive woman of Revelation — Babylon seated on many waters with a golden cup full of abominations — draws on the Lady Folly archetype. Proverbs' two-women framework shapes apocalyptic imagery."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 1:20–33",
+              "note": "Lady Folly is Lady Wisdom's dark mirror. Both call from the high places (1:20–21; 9:14), both invite the simple — but Wisdom's house leads to life while Folly's guests are in Sheol. The structural parallel is deliberate."
+            },
+            {
+              "ref": "Rev 17:1–6",
+              "note": "The seductive woman of Revelation — Babylon seated on many waters with a golden cup full of abominations — draws on the Lady Folly archetype. Proverbs' two-women framework shapes apocalyptic imagery."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -204,6 +209,9 @@
               "note": "The NET note on 'simple and knows nothing' (petayut vebal yadah mah) explains petayut (simplicity, naivete) as the noun form of peti (the naive person that Proverbs consistently addresses). Folly is characterised by the same quality she seeks in her audience — she is not a sophisticated deceiver but a powerful, mindless force that leads the equally mindless to destruction."
             }
           ]
+        },
+        "hist": {
+          "context": "Lady Folly (vv.13–18) is the dark mirror of Lady Wisdom. The parallels are exact and deliberate: both sit at \"the highest point of the city\" (v.3 and v.14); both call out to \"those who have no sense\" (v.4 and v.16); both offer a meal. But the content differs completely. Wisdom's invitation leads to life; Folly's stolen water leads to death. The simple who pass by face a genuine choice between two identical-sounding invitations with opposite destinations. This is the book's final and most concentrated statement of its entire message."
         }
       }
     }

@@ -37,22 +37,26 @@
             "paragraph": "The divine panic that falls on surrounding peoples (v.5) is the same supernatural fear that appears in Exod 23:27 and Josh 2:9. God protects his covenant people through psychological warfare on their enemies."
           }
         ],
-        "hist": "The return to Bethel is commanded by God as a direct response to the Shechem massacre (ch.34): Jacob must return to the place where he first encountered God and fulfil the vow he made there (28:20-22). The purification of the household — putting away foreign gods, changing garments, purifying themselves — is the first ritual purification scene in the patriarchal narratives. The earrings buried at Shechem are likely the same teraphim-related objects Rachel stole (31:19), now finally disposed of.",
-        "ctx": "God's command to go to Bethel (v.1) immediately follows the Shechem massacre of ch.34 — the spiritual crisis of that event is answered by a call to worship. The burial of foreign gods at Shechem (v.4) resolves the teraphim subplot begun in 31:19. The full purification before ascending to Bethel establishes the pattern of moral and ritual preparation that will characterize Israel's later approach to the sanctuary. The divine terror protecting Jacob on the journey (v.5) is God's providence actively clearing the path — the same hands that wounded Jacob at Peniel now protect him on the road.",
-        "cross": [
-          {
-            "ref": "Gen 28:20–22",
-            "note": "Jacob's vow: \"If God will be with me... then I will return here.\" God now commands the fulfillment of the vow twenty years later."
-          },
-          {
-            "ref": "Josh 24:23",
-            "note": "At Shechem, Joshua commands Israel to \"put away the foreign gods that are among you\" — the same command Jacob gave, at the same location. History rhymes."
-          },
-          {
-            "ref": "Exod 23:27",
-            "note": "God promises Moses: \"I will send my terror ahead of you\" — the same divine protection operative in v.5."
-          }
-        ],
+        "hist": {
+          "historical": "The return to Bethel is commanded by God as a direct response to the Shechem massacre (ch.34): Jacob must return to the place where he first encountered God and fulfil the vow he made there (28:20-22). The purification of the household — putting away foreign gods, changing garments, purifying themselves — is the first ritual purification scene in the patriarchal narratives. The earrings buried at Shechem are likely the same teraphim-related objects Rachel stole (31:19), now finally disposed of.",
+          "context": "God's command to go to Bethel (v.1) immediately follows the Shechem massacre of ch.34 — the spiritual crisis of that event is answered by a call to worship. The burial of foreign gods at Shechem (v.4) resolves the teraphim subplot begun in 31:19. The full purification before ascending to Bethel establishes the pattern of moral and ritual preparation that will characterize Israel's later approach to the sanctuary. The divine terror protecting Jacob on the journey (v.5) is God's providence actively clearing the path — the same hands that wounded Jacob at Peniel now protect him on the road."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 28:20–22",
+              "note": "Jacob's vow: \"If God will be with me... then I will return here.\" God now commands the fulfillment of the vow twenty years later."
+            },
+            {
+              "ref": "Josh 24:23",
+              "note": "At Shechem, Joshua commands Israel to \"put away the foreign gods that are among you\" — the same command Jacob gave, at the same location. History rhymes."
+            },
+            {
+              "ref": "Exod 23:27",
+              "note": "God promises Moses: \"I will send my terror ahead of you\" — the same divine protection operative in v.5."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Bethel",
@@ -160,22 +164,26 @@
             "paragraph": "A standing stone used as a memorial to divine encounter. Jacob set one up at Bethel in 28:18; he sets up another here (v.14), along with a drink offering and oil — the first mention of a libation in Genesis."
           }
         ],
-        "hist": "The deaths in this section — Deborah (Rebekah's nurse), Rachel (in childbirth), and Isaac — create a dirge-like quality for the end of Genesis 35. Rachel's death in childbirth near Bethlehem, naming her son Ben-Oni (\"son of my sorrow\") while Jacob renames him Benjamin (\"son of my right hand\"), is one of the most pathos-filled moments in the patriarchal narratives. The pillar Jacob erects over her tomb marks the first formal grave-monument in the Bible.",
-        "ctx": "The Bethel theophany is the third major covenant encounter in Jacob's life (first: Gen 28; second: Peniel, Gen 32; third: here). Each encounter marks a stage of Jacob's transformation. The name change confirmed here (v.10) was first given at Peniel — the double confirmation at two sacred sites seals the new identity. God's speech in vv.11–12 recapitulates the Abrahamic covenant in its fullness: El Shaddai (the name), fruitfulness (the commission), nations and kings (the scope), and the land (the specific promise).",
-        "cross": [
-          {
-            "ref": "Gen 17:1",
-            "note": "El Shaddai appears to Abraham with identical covenant language: be fruitful, multiply, nations and kings."
-          },
-          {
-            "ref": "Gen 28:18–19",
-            "note": "Jacob's first Bethel pillar. Now a second pillar is set up at the same site — the vow fulfilled, the site consecrated again."
-          },
-          {
-            "ref": "Gen 48:3–4",
-            "note": "On his deathbed Jacob recalls this exact Bethel theophany — it remains his most definitive encounter with God."
-          }
-        ],
+        "hist": {
+          "historical": "The deaths in this section — Deborah (Rebekah's nurse), Rachel (in childbirth), and Isaac — create a dirge-like quality for the end of Genesis 35. Rachel's death in childbirth near Bethlehem, naming her son Ben-Oni (\"son of my sorrow\") while Jacob renames him Benjamin (\"son of my right hand\"), is one of the most pathos-filled moments in the patriarchal narratives. The pillar Jacob erects over her tomb marks the first formal grave-monument in the Bible.",
+          "context": "The Bethel theophany is the third major covenant encounter in Jacob's life (first: Gen 28; second: Peniel, Gen 32; third: here). Each encounter marks a stage of Jacob's transformation. The name change confirmed here (v.10) was first given at Peniel — the double confirmation at two sacred sites seals the new identity. God's speech in vv.11–12 recapitulates the Abrahamic covenant in its fullness: El Shaddai (the name), fruitfulness (the commission), nations and kings (the scope), and the land (the specific promise)."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 17:1",
+              "note": "El Shaddai appears to Abraham with identical covenant language: be fruitful, multiply, nations and kings."
+            },
+            {
+              "ref": "Gen 28:18–19",
+              "note": "Jacob's first Bethel pillar. Now a second pillar is set up at the same site — the vow fulfilled, the site consecrated again."
+            },
+            {
+              "ref": "Gen 48:3–4",
+              "note": "On his deathbed Jacob recalls this exact Bethel theophany — it remains his most definitive encounter with God."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Ephrath / Bethlehem",

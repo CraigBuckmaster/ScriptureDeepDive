@@ -37,25 +37,26 @@
             "paragraph": "Jesus is the founder and perfecter of faith. He both inaugurates and completes. He is not merely an example but the one who blazed the trail and reached the goal. His cross and session are the model and the motivation."
           }
         ],
-        "ctx": "Chapter 12 applies chapter 11. The cloud of witnesses is not a gallery of spectators but a company of testifiers whose lives commend faith. The author shifts from backward look (chapter 11) to forward run (chapter 12). Jesus is now explicitly named as the ultimate exemplar—He endured the cross for the joy set before Him and sat down at God's right hand. His example is the supreme encouragement for perseverance.",
-        "cross": [
-          {
-            "ref": "1 Corinthians 9:24–27",
-            "note": "Paul's athletic metaphor: Run in such a way as to get the prize. I discipline my body."
-          },
-          {
-            "ref": "Philippians 3:13–14",
-            "note": "Forgetting what lies behind and straining forward to what lies ahead, I press on toward the goal."
-          },
-          {
-            "ref": "Hebrews 2:10",
-            "note": "Jesus is the founder of salvation, made perfect through suffering."
-          },
-          {
-            "ref": "Psalm 110:1",
-            "note": "Sit at my right hand—the session that concludes Christ's earthly race."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Corinthians 9:24–27",
+              "note": "Paul's athletic metaphor: Run in such a way as to get the prize. I discipline my body."
+            },
+            {
+              "ref": "Philippians 3:13–14",
+              "note": "Forgetting what lies behind and straining forward to what lies ahead, I press on toward the goal."
+            },
+            {
+              "ref": "Hebrews 2:10",
+              "note": "Jesus is the founder of salvation, made perfect through suffering."
+            },
+            {
+              "ref": "Psalm 110:1",
+              "note": "Sit at my right hand—the session that concludes Christ's earthly race."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -117,7 +118,10 @@
             }
           ]
         },
-        "hist": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24)."
+        "hist": {
+          "historical": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24).",
+          "context": "Chapter 12 applies chapter 11. The cloud of witnesses is not a gallery of spectators but a company of testifiers whose lives commend faith. The author shifts from backward look (chapter 11) to forward run (chapter 12). Jesus is now explicitly named as the ultimate exemplar—He endured the cross for the joy set before Him and sat down at God's right hand. His example is the supreme encouragement for perseverance."
+        }
       }
     },
     {
@@ -146,25 +150,26 @@
             "paragraph": "The goal of discipline is that we may share in His holiness. Suffering is not arbitrary but purposeful. It produces the peaceful fruit of righteousness for those trained by it."
           }
         ],
-        "ctx": "The author now addresses the readers' suffering directly. He quotes Proverbs 3:11–12, interpreting their trials as paternal discipline. The logic is filial: a father disciplines his sons precisely because they are sons. The human father analogy (vv. 9–10) moves to the divine reality: earthly fathers disciplined imperfectly; God disciplines perfectly, for our good, that we may share His holiness. The immediate pain yields the long-term fruit of righteousness.",
-        "cross": [
-          {
-            "ref": "Proverbs 3:11–12",
-            "note": "The text the author quotes: Do not despise the Lord's discipline or be weary of His reproof, for the Lord reproves him whom He loves."
-          },
-          {
-            "ref": "Deuteronomy 8:5",
-            "note": "As a man disciplines his son, so the LORD your God disciplines you."
-          },
-          {
-            "ref": "Job 5:17",
-            "note": "Blessed is the one whom God reproves; therefore despise not the discipline of the Almighty."
-          },
-          {
-            "ref": "James 1:2–4",
-            "note": "Count it all joy when you meet trials, for the testing of faith produces steadfastness."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Proverbs 3:11–12",
+              "note": "The text the author quotes: Do not despise the Lord's discipline or be weary of His reproof, for the Lord reproves him whom He loves."
+            },
+            {
+              "ref": "Deuteronomy 8:5",
+              "note": "As a man disciplines his son, so the LORD your God disciplines you."
+            },
+            {
+              "ref": "Job 5:17",
+              "note": "Blessed is the one whom God reproves; therefore despise not the discipline of the Almighty."
+            },
+            {
+              "ref": "James 1:2–4",
+              "note": "Count it all joy when you meet trials, for the testing of faith produces steadfastness."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -233,6 +238,9 @@
               "note": "Cockerill emphasizes the pastoral sensitivity: the readers are suffering, and the author validates their experience while reframing it. Discipline is painful but purposeful. The fruit of righteousness is the goal."
             }
           ]
+        },
+        "hist": {
+          "context": "The author now addresses the readers' suffering directly. He quotes Proverbs 3:11–12, interpreting their trials as paternal discipline. The logic is filial: a father disciplines his sons precisely because they are sons. The human father analogy (vv. 9–10) moves to the divine reality: earthly fathers disciplined imperfectly; God disciplines perfectly, for our good, that we may share His holiness. The immediate pain yields the long-term fruit of righteousness."
         }
       }
     },
@@ -262,25 +270,26 @@
             "paragraph": "Esau is called profane—one who treats sacred things as common. He sold his birthright for a single meal. The warning is against short-term gratification that forfeits eternal inheritance."
           }
         ],
-        "ctx": "The author shifts from individual endurance to communal responsibility. The call to strengthen drooping hands and weak knees (Isaiah 35:3) and make straight paths (Proverbs 4:26) addresses the community's care for struggling members. The goal is holiness and peace—without which no one will see the Lord. Esau serves as the negative example: he traded his birthright for immediate gratification and found no opportunity for repentance, even though he sought it with tears.",
-        "cross": [
-          {
-            "ref": "Isaiah 35:3",
-            "note": "Strengthen the weak hands, and make firm the feeble knees."
-          },
-          {
-            "ref": "Proverbs 4:26",
-            "note": "Ponder the path of your feet; then all your ways will be sure."
-          },
-          {
-            "ref": "Genesis 25:29–34",
-            "note": "Esau sold his birthright to Jacob for a bowl of stew."
-          },
-          {
-            "ref": "Genesis 27:30–40",
-            "note": "Esau sought the blessing with tears but found no opportunity to change what was done."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isaiah 35:3",
+              "note": "Strengthen the weak hands, and make firm the feeble knees."
+            },
+            {
+              "ref": "Proverbs 4:26",
+              "note": "Ponder the path of your feet; then all your ways will be sure."
+            },
+            {
+              "ref": "Genesis 25:29–34",
+              "note": "Esau sold his birthright to Jacob for a bowl of stew."
+            },
+            {
+              "ref": "Genesis 27:30–40",
+              "note": "Esau sought the blessing with tears but found no opportunity to change what was done."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -345,6 +354,9 @@
               "note": "Cockerill emphasizes that holiness and peace are corporate responsibilities. The Esau example warns against trading birthright (new covenant blessings) for immediate ease (escaping persecution by abandoning Christ)."
             }
           ]
+        },
+        "hist": {
+          "context": "The author shifts from individual endurance to communal responsibility. The call to strengthen drooping hands and weak knees (Isaiah 35:3) and make straight paths (Proverbs 4:26) addresses the community's care for struggling members. The goal is holiness and peace—without which no one will see the Lord. Esau serves as the negative example: he traded his birthright for immediate gratification and found no opportunity for repentance, even though he sought it with tears."
         }
       }
     },
@@ -374,29 +386,30 @@
             "paragraph": "Jesus is the mediator of a new covenant—the same term used in 8:6 and 9:15. His mediating work enables believers' access to the heavenly Zion. Abel's blood cried for vengeance; Jesus' blood speaks a better word."
           }
         ],
-        "ctx": "The contrast between Sinai and Zion is the chapter's theological climax. Sinai was physical, terrifying, untouchable—even Moses trembled. But believers have come to Mount Zion, the heavenly Jerusalem, innumerable angels, the assembly of the firstborn, God the judge of all, spirits of the righteous made perfect, Jesus the mediator, and sprinkled blood that speaks better than Abel's. Every element celebrates access, not exclusion. The contrast underscores: why would anyone return to Sinai?",
-        "cross": [
-          {
-            "ref": "Exodus 19:12–22",
-            "note": "The approach to Sinai: boundaries, warnings, terror."
-          },
-          {
-            "ref": "Exodus 20:18–21",
-            "note": "The people stood far off; Moses approached the thick darkness."
-          },
-          {
-            "ref": "Deuteronomy 9:19",
-            "note": "Moses says: I was afraid of the anger and hot displeasure."
-          },
-          {
-            "ref": "Galatians 4:24–26",
-            "note": "Paul's allegory: Sinai corresponds to the present Jerusalem in slavery; the Jerusalem above is free."
-          },
-          {
-            "ref": "Revelation 21:2",
-            "note": "The holy city, new Jerusalem, coming down out of heaven from God."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exodus 19:12–22",
+              "note": "The approach to Sinai: boundaries, warnings, terror."
+            },
+            {
+              "ref": "Exodus 20:18–21",
+              "note": "The people stood far off; Moses approached the thick darkness."
+            },
+            {
+              "ref": "Deuteronomy 9:19",
+              "note": "Moses says: I was afraid of the anger and hot displeasure."
+            },
+            {
+              "ref": "Galatians 4:24–26",
+              "note": "Paul's allegory: Sinai corresponds to the present Jerusalem in slavery; the Jerusalem above is free."
+            },
+            {
+              "ref": "Revelation 21:2",
+              "note": "The holy city, new Jerusalem, coming down out of heaven from God."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -457,6 +470,9 @@
               "note": "Cockerill emphasizes that the list in vv. 22–24 is cumulative: each element adds to the glory of new covenant access. The readers already belong to this heavenly assembly. Why would they exchange it for the terror of Sinai's obsolete system?"
             }
           ]
+        },
+        "hist": {
+          "context": "The contrast between Sinai and Zion is the chapter's theological climax. Sinai was physical, terrifying, untouchable—even Moses trembled. But believers have come to Mount Zion, the heavenly Jerusalem, innumerable angels, the assembly of the firstborn, God the judge of all, spirits of the righteous made perfect, Jesus the mediator, and sprinkled blood that speaks better than Abel's. Every element celebrates access, not exclusion. The contrast underscores: why would anyone return to Sinai?"
         }
       }
     },
@@ -486,25 +502,26 @@
             "paragraph": "We are receiving a kingdom that cannot be shaken. This unshakable kingdom is the inheritance believers possess. It is the stable foundation amid cosmic upheaval."
           }
         ],
-        "ctx": "The final warning draws on the Sinai/Zion contrast. Those who refused the earthly warning did not escape (the wilderness generation). How much less will we escape if we reject the heavenly speaker? Haggai 2:6 is quoted: God will shake heaven and earth, removing what can be shaken so that what cannot be shaken may remain. Believers receive an unshakable kingdom. The response: gratitude and acceptable worship with reverence and awe, for our God is a consuming fire (Deuteronomy 4:24).",
-        "cross": [
-          {
-            "ref": "Haggai 2:6",
-            "note": "Yet once more I will shake the heavens and the earth—the eschatological shaking the author interprets."
-          },
-          {
-            "ref": "Deuteronomy 4:24",
-            "note": "For the LORD your God is a consuming fire, a jealous God."
-          },
-          {
-            "ref": "Hebrews 10:26–31",
-            "note": "The earlier warning: if we go on sinning deliberately, there remains only fearful judgment."
-          },
-          {
-            "ref": "2 Peter 3:10–13",
-            "note": "The heavens will pass away with a roar; we are waiting for new heavens and a new earth."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Haggai 2:6",
+              "note": "Yet once more I will shake the heavens and the earth—the eschatological shaking the author interprets."
+            },
+            {
+              "ref": "Deuteronomy 4:24",
+              "note": "For the LORD your God is a consuming fire, a jealous God."
+            },
+            {
+              "ref": "Hebrews 10:26–31",
+              "note": "The earlier warning: if we go on sinning deliberately, there remains only fearful judgment."
+            },
+            {
+              "ref": "2 Peter 3:10–13",
+              "note": "The heavens will pass away with a roar; we are waiting for new heavens and a new earth."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -565,6 +582,9 @@
               "note": "Cockerill emphasizes that the consuming fire is not a threat to believers but a description of God's holiness that demands appropriate response. The unshakable kingdom is not future only; believers are receiving it now. Gratitude and worship are the evidence of genuine faith."
             }
           ]
+        },
+        "hist": {
+          "context": "The final warning draws on the Sinai/Zion contrast. Those who refused the earthly warning did not escape (the wilderness generation). How much less will we escape if we reject the heavenly speaker? Haggai 2:6 is quoted: God will shake heaven and earth, removing what can be shaken so that what cannot be shaken may remain. Believers receive an unshakable kingdom. The response: gratitude and acceptable worship with reverence and awe, for our God is a consuming fire (Deuteronomy 4:24)."
         }
       }
     }

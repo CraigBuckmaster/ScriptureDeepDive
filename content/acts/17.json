@@ -57,21 +57,22 @@
             "current": false
           }
         ],
-        "ctx": "The Thessalonica charge — 'these men who have caused trouble all over the world have come here' (v.6) — is Acts' most dramatic summary of the Gospel's reach. The accusers unwittingly describe the mission's global scope. The specific charge of 'another king' (v.7) reflects the Roman political sensitivity to any competing loyalty — a charge that will follow Paul all the way to Rome.",
-        "cross": [
-          {
-            "ref": "1 Thessalonians 1:6–8",
-            "note": "\"You became imitators of us and of the Lord, for you welcomed the message in the midst of severe suffering... your faith in God has become known everywhere.\" Paul's letter confirms the Acts account."
-          },
-          {
-            "ref": "1 Thessalonians 2:2",
-            "note": "\"We had previously suffered and been treated outrageously in Philippi... but we dared to tell you his gospel in the face of strong opposition.\""
-          },
-          {
-            "ref": "Acts 18:5",
-            "note": "\"When Silas and Timothy came from Macedonia, Paul devoted himself exclusively to preaching\" — the Berea team eventually rejoins Paul in Corinth."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Thessalonians 1:6–8",
+              "note": "\"You became imitators of us and of the Lord, for you welcomed the message in the midst of severe suffering... your faith in God has become known everywhere.\" Paul's letter confirms the Acts account."
+            },
+            {
+              "ref": "1 Thessalonians 2:2",
+              "note": "\"We had previously suffered and been treated outrageously in Philippi... but we dared to tell you his gospel in the face of strong opposition.\""
+            },
+            {
+              "ref": "Acts 18:5",
+              "note": "\"When Silas and Timothy came from Macedonia, Paul devoted himself exclusively to preaching\" — the Berea team eventually rejoins Paul in Corinth."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -136,6 +137,9 @@
               "note": "Keener notes the Bereans' practice was unusual: most synagogues rejected Paul's interpretation immediately. The Bereans treated his argument as worthy of serious examination — a combination of openness and rigour that Luke explicitly commends."
             }
           ]
+        },
+        "hist": {
+          "context": "The Thessalonica charge — 'these men who have caused trouble all over the world have come here' (v.6) — is Acts' most dramatic summary of the Gospel's reach. The accusers unwittingly describe the mission's global scope. The specific charge of 'another king' (v.7) reflects the Roman political sensitivity to any competing loyalty — a charge that will follow Paul all the way to Rome."
         }
       }
     },
@@ -182,21 +186,22 @@
             "current": false
           }
         ],
-        "ctx": "The Areopagus speech is the most carefully crafted address in Acts — designed for a Greek philosophical audience with no OT background. Paul builds on common ground: their religious thoroughness, the unknown God altar, Greek poets' statements about divine immanence (Aratus: 'We are his offspring'; Epimenides: 'In him we live and move and have our being'). He then uses these as stepping stones to the biblical God who made, sustains, and will judge all — climaxing with the resurrection. The Athens speech is the full elaboration of the Lystra natural theology argument (14:15–17).",
-        "cross": [
-          {
-            "ref": "Acts 14:15–17",
-            "note": "The Lystra natural theology sermon — the template for Athens. Both begin with the living God who made everything; Athens is the sophisticated elaboration."
-          },
-          {
-            "ref": "Romans 1:18–23",
-            "note": "\"What may be known about God is plain to them, because God has made it plain to them.\" Paul's theological account of natural revelation underpins the Areopagus argument."
-          },
-          {
-            "ref": "1 Corinthians 1:18–25",
-            "note": "\"Greeks look for wisdom, but we preach Christ crucified... foolishness to Gentiles.\" Paul's later reflection on what the Athens experience taught him about proclamation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 14:15–17",
+              "note": "The Lystra natural theology sermon — the template for Athens. Both begin with the living God who made everything; Athens is the sophisticated elaboration."
+            },
+            {
+              "ref": "Romans 1:18–23",
+              "note": "\"What may be known about God is plain to them, because God has made it plain to them.\" Paul's theological account of natural revelation underpins the Areopagus argument."
+            },
+            {
+              "ref": "1 Corinthians 1:18–25",
+              "note": "\"Greeks look for wisdom, but we preach Christ crucified... foolishness to Gentiles.\" Paul's later reflection on what the Athens experience taught him about proclamation."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -261,6 +266,9 @@
               "note": "Keener: quoting Aratus and Epimenides in a philosophical setting is cultural competence, not cultural capitulation — the kind of cross-cultural communication Paul describes in 1 Cor 9:19–23 ('I have become all things to all people'). Paul uses the best of Greek thought to carry the biblical message into Greek minds."
             }
           ]
+        },
+        "hist": {
+          "context": "The Areopagus speech is the most carefully crafted address in Acts — designed for a Greek philosophical audience with no OT background. Paul builds on common ground: their religious thoroughness, the unknown God altar, Greek poets' statements about divine immanence (Aratus: 'We are his offspring'; Epimenides: 'In him we live and move and have our being'). He then uses these as stepping stones to the biblical God who made, sustains, and will judge all — climaxing with the resurrection. The Athens speech is the full elaboration of the Lystra natural theology argument (14:15–17)."
         }
       }
     }

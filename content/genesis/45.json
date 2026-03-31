@@ -37,22 +37,26 @@
             "paragraph": "The first use of this key theological term — the preserved survivor group. Joseph frames his Egypt posting as preservation of a covenant remnant. The prophets will develop this concept extensively (Isa 10:20–22; Jer 23:3)."
           }
         ],
-        "hist": "The revelation scene of Genesis 45 is one of the most celebrated moments in all of Scripture. After three chapters of testing, Joseph cannot restrain himself (v.1). He clears the room of Egyptians and reveals himself to his brothers in private — the most intimate moment in a narrative that has been conducted entirely in public performance. His first words after the revelation are not accusation but theology: \"I am Joseph. Is my father still alive?\" And then immediately: \"God sent me ahead of you.\"",
-        "ctx": "The disclosure speech is structured: (1) I am Joseph — identity; (2) do not be distressed — grace; (3) God sent me — sovereignty; (4) to preserve life — purpose; (5) it was not you but God — the definitive statement. The fivefold attribution to God mirrors the fivefold attribution before Pharaoh (41:16,25,28,32,39). Joseph reads his entire life — pit, slavery, prison, palace — through the lens of a single divine purpose.",
-        "cross": [
-          {
-            "ref": "Gen 50:20",
-            "note": "\"You intended to harm me, but God intended it for good.\" Chapter 45 is the provisional statement; 50:20 is the complete one."
-          },
-          {
-            "ref": "Acts 7:9–14",
-            "note": "Stephen uses Joseph's story to demonstrate God's faithfulness despite rejection."
-          },
-          {
-            "ref": "Rom 8:28",
-            "note": "\"All things work together for good for those who love God\" — the doctrinal formulation of what Joseph experiences narratively."
-          }
-        ],
+        "hist": {
+          "historical": "The revelation scene of Genesis 45 is one of the most celebrated moments in all of Scripture. After three chapters of testing, Joseph cannot restrain himself (v.1). He clears the room of Egyptians and reveals himself to his brothers in private — the most intimate moment in a narrative that has been conducted entirely in public performance. His first words after the revelation are not accusation but theology: \"I am Joseph. Is my father still alive?\" And then immediately: \"God sent me ahead of you.\"",
+          "context": "The disclosure speech is structured: (1) I am Joseph — identity; (2) do not be distressed — grace; (3) God sent me — sovereignty; (4) to preserve life — purpose; (5) it was not you but God — the definitive statement. The fivefold attribution to God mirrors the fivefold attribution before Pharaoh (41:16,25,28,32,39). Joseph reads his entire life — pit, slavery, prison, palace — through the lens of a single divine purpose."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 50:20",
+              "note": "\"You intended to harm me, but God intended it for good.\" Chapter 45 is the provisional statement; 50:20 is the complete one."
+            },
+            {
+              "ref": "Acts 7:9–14",
+              "note": "Stephen uses Joseph's story to demonstrate God's faithfulness despite rejection."
+            },
+            {
+              "ref": "Rom 8:28",
+              "note": "\"All things work together for good for those who love God\" — the doctrinal formulation of what Joseph experiences narratively."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -148,22 +152,26 @@
             "paragraph": "Jacob's \"it is enough\" is the word for abundance — more than enough. The report of Joseph alive is so far beyond what Jacob could hope that \"enough\" is the only word left."
           }
         ],
-        "hist": "The news reaches Pharaoh who receives it warmly and expands Joseph's invitation to include all of Jacob's household. The brothers are loaded with gifts and provisions for the journey. Joseph sends wagons — the mark of Egyptian official transport — and Benjamin receives five times as much as his brothers (echoing the five portions at the feast, 43:34). The word \"trembling\" (wayyecherad) describes Jacob's response to the news: the same word used for Isaac after he learned Jacob had received his blessing (27:33). Jacob is literally shaken back to life.",
-        "ctx": "Joseph's urgency — \"Hurry and go up to my father\" — is the first time he expresses urgency. For twenty-two years everything moved on God's timing. Now the time has come, and his first thought is the grieving old man in Canaan. Jacob's \"it is enough\" is the patricarch's final great act of faith — twenty-two years of grief inverting in a moment.",
-        "cross": [
-          {
-            "ref": "Gen 46:29–30",
-            "note": "Jacob and Joseph's reunion: Joseph falls on his neck and weeps. \"Now let me die, since I have seen your face and you are still alive.\""
-          },
-          {
-            "ref": "Gen 50:20",
-            "note": "The full theodicy — \"you meant evil against me, but God meant it for good\" — is the completion of the disclosure speech."
-          },
-          {
-            "ref": "Luke 15:24",
-            "note": "\"This son of mine was dead and is alive again\" — the parable uses the Joseph-revelation dynamic: the one thought dead is alive; the response is celebration."
-          }
-        ],
+        "hist": {
+          "historical": "The news reaches Pharaoh who receives it warmly and expands Joseph's invitation to include all of Jacob's household. The brothers are loaded with gifts and provisions for the journey. Joseph sends wagons — the mark of Egyptian official transport — and Benjamin receives five times as much as his brothers (echoing the five portions at the feast, 43:34). The word \"trembling\" (wayyecherad) describes Jacob's response to the news: the same word used for Isaac after he learned Jacob had received his blessing (27:33). Jacob is literally shaken back to life.",
+          "context": "Joseph's urgency — \"Hurry and go up to my father\" — is the first time he expresses urgency. For twenty-two years everything moved on God's timing. Now the time has come, and his first thought is the grieving old man in Canaan. Jacob's \"it is enough\" is the patricarch's final great act of faith — twenty-two years of grief inverting in a moment."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 46:29–30",
+              "note": "Jacob and Joseph's reunion: Joseph falls on his neck and weeps. \"Now let me die, since I have seen your face and you are still alive.\""
+            },
+            {
+              "ref": "Gen 50:20",
+              "note": "The full theodicy — \"you meant evil against me, but God meant it for good\" — is the completion of the disclosure speech."
+            },
+            {
+              "ref": "Luke 15:24",
+              "note": "\"This son of mine was dead and is alive again\" — the parable uses the Joseph-revelation dynamic: the one thought dead is alive; the response is celebration."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

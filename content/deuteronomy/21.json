@@ -31,13 +31,14 @@
             "paragraph": "The captive woman law is remarkable for its protection of a conquered woman's dignity. She may mourn her family for a full month before becoming anyone's wife. If the man divorces her, she goes free -- she cannot be sold as a slave."
           }
         ],
-        "ctx": "Chapter 21 collects four case laws: (1) an unsolved murder -- the nearest town performs an expiation ceremony to purge blood-guilt from the land (vv.1-9); (2) a female captive taken in warfare -- she must be given time to grieve before marriage, and if divorced she goes free (vv.10-14). Both laws reflect the same principle: covenant community life must respect the dignity of persons and the moral ecology of the land God has given.",
-        "cross": [
-          {
-            "ref": "Num 35:33-34",
-            "note": "\"Do not pollute the land where you are. Bloodshed pollutes the land, and atonement cannot be made for the land on which blood has been shed, except by the blood of the one who shed it.\" Numbers provides the theological rationale for the Deuteronomy 21 heifer ceremony."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 35:33-34",
+              "note": "\"Do not pollute the land where you are. Bloodshed pollutes the land, and atonement cannot be made for the land on which blood has been shed, except by the blood of the one who shed it.\" Numbers provides the theological rationale for the Deuteronomy 21 heifer ceremony."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 21 collects four case laws: (1) an unsolved murder -- the nearest town performs an expiation ceremony to purge blood-guilt from the land (vv.1-9); (2) a female captive taken in warfare -- she must be given time to grieve before marriage, and if divorced she goes free (vv.10-14). Both laws reflect the same principle: covenant community life must respect the dignity of persons and the moral ecology of the land God has given."
         }
       }
     },
@@ -129,17 +133,18 @@
             "paragraph": "Deuteronomy 21:23 is quoted by Paul in Galatians 3:13: \"Christ redeemed us from the curse of the law by becoming a curse for us.\" The verse is the OT textual basis for understanding the crucifixion as Christ bearing the covenant curse."
           }
         ],
-        "ctx": "The chapter continues with: (3) the rights of the firstborn in a polygamous household -- the firstborn of the unloved wife receives the double portion regardless of paternal preference (vv.15-17); (4) the rebellious son -- if incorrigible, he is to be brought before the elders for community judgment (vv.18-21); (5) the hanging-on-a-tree legislation -- a body must be buried before nightfall, for a hanged man is under God's curse (vv.22-23). Paul applies v.23 directly to the crucifixion in Galatians 3:13.",
-        "cross": [
-          {
-            "ref": "Gal 3:13",
-            "note": "\"Christ redeemed us from the curse of the law by becoming a curse for us, for it is written: 'Cursed is everyone who is hung on a pole.'\" Paul directly quotes Deuteronomy 21:23 to interpret the crucifixion. The cross is where Jesus bore the covenant curse that Israel's disobedience incurred."
-          },
-          {
-            "ref": "John 19:31",
-            "note": "\"The Jewish leaders did not want the bodies left on the crosses during the Sabbath... they asked Pilate to have the legs broken and the bodies taken down.\" The urgency reflects the Deuteronomy 21:22-23 requirement."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gal 3:13",
+              "note": "\"Christ redeemed us from the curse of the law by becoming a curse for us, for it is written: 'Cursed is everyone who is hung on a pole.'\" Paul directly quotes Deuteronomy 21:23 to interpret the crucifixion. The cross is where Jesus bore the covenant curse that Israel's disobedience incurred."
+            },
+            {
+              "ref": "John 19:31",
+              "note": "\"The Jewish leaders did not want the bodies left on the crosses during the Sabbath... they asked Pilate to have the legs broken and the bodies taken down.\" The urgency reflects the Deuteronomy 21:22-23 requirement."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -208,6 +213,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter continues with: (3) the rights of the firstborn in a polygamous household -- the firstborn of the unloved wife receives the double portion regardless of paternal preference (vv.15-17); (4) the rebellious son -- if incorrigible, he is to be brought before the elders for community judgment (vv.18-21); (5) the hanging-on-a-tree legislation -- a body must be buried before nightfall, for a hanged man is under God's curse (vv.22-23). Paul applies v.23 directly to the crucifixion in Galatians 3:13."
         }
       }
     }

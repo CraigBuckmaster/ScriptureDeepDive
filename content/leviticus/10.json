@@ -37,21 +37,22 @@
             "paragraph": "From dāmam, to be silent, to cease. Aaron's silence in the face of the death of his two sons is one of the most haunting moments in the Torah. Moses speaks; Aaron says nothing. His silence has been read as grief, as acceptance, as shock, and as the deepest possible priestly response: the service of God continues."
           }
         ],
-        "ctx": "The death of Nadab and Abihu is the most shocking event in Leviticus — coming on the heels of the chapter 9 glory-fire, it is the shadow side of the divine fire. The same fire that consumed the offering in acceptance (9:24) now consumes Nadab and Abihu in judgment. Moses's response to Aaron (v.3) is a terse theological commentary: \"Among those who approach me I will be proved holy; in the sight of all the people I will be honoured.\" Holiness and honour require boundary maintenance. God is not indifferent to how he is approached. Moses forbids Aaron and the remaining sons from mourning publicly (vv.6–7) — the priestly service continues even in the face of death. The following laws (vv.8–11) — no wine or strong drink before entering — may explain the offence: Nadab and Abihu may have been drunk.",
-        "cross": [
-          {
-            "ref": "2 Sam 6:6–7",
-            "note": "Uzzah touched the ark to steady it and died immediately. The pattern: approaching the sacred with presumptuousness, however well-intentioned, invites judgment. Divine holiness is not suspended by good motives."
-          },
-          {
-            "ref": "1 Cor 11:29–30",
-            "note": "\"Whoever eats and drinks without discerning the body of Christ eats and drinks judgment on themselves. That is why many among you are weak and sick, and a number of you have fallen asleep.\" The NT carries forward the principle: careless approach to the holy has consequences."
-          },
-          {
-            "ref": "Acts 5:1–11",
-            "note": "Ananias and Sapphira — sudden death for profaning the worship of the early church. The pattern of Nadab and Abihu continues in the new covenant community."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 6:6–7",
+              "note": "Uzzah touched the ark to steady it and died immediately. The pattern: approaching the sacred with presumptuousness, however well-intentioned, invites judgment. Divine holiness is not suspended by good motives."
+            },
+            {
+              "ref": "1 Cor 11:29–30",
+              "note": "\"Whoever eats and drinks without discerning the body of Christ eats and drinks judgment on themselves. That is why many among you are weak and sick, and a number of you have fallen asleep.\" The NT carries forward the principle: careless approach to the holy has consequences."
+            },
+            {
+              "ref": "Acts 5:1–11",
+              "note": "Ananias and Sapphira — sudden death for profaning the worship of the early church. The pattern of Nadab and Abihu continues in the new covenant community."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -107,6 +108,9 @@
               "note": "Milgrom: The fire that consumed them was the same fire from 9:24 — the divine fire that has taken up residence on the altar. It is not an exceptional act of judgment but the normal operation of divine holiness: the holy consumes what is incompatible with it. The sacred fire does not know intention; it knows only authorisation."
             }
           ]
+        },
+        "hist": {
+          "context": "The death of Nadab and Abihu is the most shocking event in Leviticus — coming on the heels of the chapter 9 glory-fire, it is the shadow side of the divine fire. The same fire that consumed the offering in acceptance (9:24) now consumes Nadab and Abihu in judgment. Moses's response to Aaron (v.3) is a terse theological commentary: \"Among those who approach me I will be proved holy; in the sight of all the people I will be honoured.\" Holiness and honour require boundary maintenance. God is not indifferent to how he is approached. Moses forbids Aaron and the remaining sons from mourning publicly (vv.6–7) — the priestly service continues even in the face of death. The following laws (vv.8–11) — no wine or strong drink before entering — may explain the offence: Nadab and Abihu may have been drunk."
         }
       }
     },
@@ -124,17 +128,18 @@
             "paragraph": "The Qal of ḥārāh — to burn, to be hot with anger. Moses is furious that the sin offering was burned rather than eaten (as required by Lev 6:26). But Aaron's explanation wins him over — and the chapter ends not with divine judgment but with Moses's acceptance of a legitimate priestly decision."
           }
         ],
-        "ctx": "The chapter's second half (vv.12–20) turns from death to the ongoing priestly service — life goes on at the altar even on the worst day. Moses instructs Eleazar and Ithamar (the surviving sons) about their portions of the grain offering and the sin offering. Then he discovers that the sin offering goat has been burned rather than eaten and confronts them angrily. Aaron responds: in the circumstances of this day — two sons dead, themselves in mourning — how could eating the sin offering be pleasing to the Lord? Moses accepts this reasoning. The passage is remarkable: a priest makes a situational judgement that diverges from the written rule, gives his reasoning, and is vindicated. Priestly authority includes contextual discernment.",
-        "cross": [
-          {
-            "ref": "Matt 12:3–7",
-            "note": "\"Haven't you read what David did when he and his companions were hungry? He entered the house of God and ate the consecrated bread — which was not lawful for him to eat… If you had known what these words mean, 'I desire mercy, not sacrifice,' you would not have condemned the innocent.\" Jesus defends David's action using the same logic Aaron uses here: extraordinary circumstances can legitimately modify ritual prescription when the intent remains faithful."
-          },
-          {
-            "ref": "Hos 6:6",
-            "note": "\"I desire mercy, not sacrifice.\" The tension between rule and context that Aaron navigates here runs through the OT prophetic tradition and into Jesus's own teaching."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 12:3–7",
+              "note": "\"Haven't you read what David did when he and his companions were hungry? He entered the house of God and ate the consecrated bread — which was not lawful for him to eat… If you had known what these words mean, 'I desire mercy, not sacrifice,' you would not have condemned the innocent.\" Jesus defends David's action using the same logic Aaron uses here: extraordinary circumstances can legitimately modify ritual prescription when the intent remains faithful."
+            },
+            {
+              "ref": "Hos 6:6",
+              "note": "\"I desire mercy, not sacrifice.\" The tension between rule and context that Aaron navigates here runs through the OT prophetic tradition and into Jesus's own teaching."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -186,6 +191,9 @@
               "note": "Milgrom: \"When Moses heard this, he was satisfied\" — the Hebrew wayyîṭab bĕʿênāyw, literally \"it was good in his eyes.\" This is a significant concession: the ordained law has a measure of flexibility when the priest responsible for implementing it makes a reasoned case. The priestly system is not mechanical."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter's second half (vv.12–20) turns from death to the ongoing priestly service — life goes on at the altar even on the worst day. Moses instructs Eleazar and Ithamar (the surviving sons) about their portions of the grain offering and the sin offering. Then he discovers that the sin offering goat has been burned rather than eaten and confronts them angrily. Aaron responds: in the circumstances of this day — two sons dead, themselves in mourning — how could eating the sin offering be pleasing to the Lord? Moses accepts this reasoning. The passage is remarkable: a priest makes a situational judgement that diverges from the written rule, gives his reasoning, and is vindicated. Priestly authority includes contextual discernment."
         }
       }
     }

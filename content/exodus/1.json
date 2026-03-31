@@ -97,22 +97,26 @@
             "paragraph": "V.7 uses five verbs to describe Israel's explosive growth: fruitful (pārā), increased greatly (shārats), multiplied (rābā), grew very numerous (ʿātsam mĕʾōd), and filled the land. This is the language of Gen 1:28 — the creation mandate — being fulfilled in an unlikely place. Egypt becomes the incubator for the nation God promised Abraham would be \"as numerous as the stars.\""
           }
         ],
-        "hist": "The \"store cities\" Pithom and Rameses are attested archaeologically (Tell el-Maskhuta/Tell er-Retaba for Pithom; Pi-Ramesse in the eastern Delta for Rameses). Semitic slave labour in Egyptian building projects is documented in administrative papyri. A \"new king who did not know Joseph\" fits the transition from Hyksos dynasty (sympathetic to Semites) to native Egyptian pharaohs (hostile to them) around 1550 BC, or the rise of Ramesses II (c.1279 BC) in the late-date view.",
-        "ctx": "Exodus 1:7 deliberately echoes the creation mandate of Genesis 1:28 (\"be fruitful and multiply\") and the covenant promises to Abraham (Gen 12:2; 17:2). The very fruitfulness that fulfils the Abrahamic promise triggers Pharaoh's terror. God's blessing produces the crisis that will produce the Exodus. The oppressor's logic is political (v.10: \"lest they join our enemies\") — but the narrative frames it as unwitting preparation for God's mighty acts.",
-        "cross": [
-          {
-            "ref": "Gen 15:13",
-            "note": "God told Abraham: \"your offspring will be sojourners in a land not their own, and they will be servants there, and they will be afflicted for four hundred years.\" Exodus 1 begins the fulfilment."
-          },
-          {
-            "ref": "Gen 46:27",
-            "note": "The seventy who went down are now \"as numerous as the stars of heaven\" (Deut 10:22)."
-          },
-          {
-            "ref": "Acts 7:17–19",
-            "note": "Stephen: \"the time of the promise drew near... there arose another king... who dealt shrewdly with our race.\""
-          }
-        ],
+        "hist": {
+          "historical": "The \"store cities\" Pithom and Rameses are attested archaeologically (Tell el-Maskhuta/Tell er-Retaba for Pithom; Pi-Ramesse in the eastern Delta for Rameses). Semitic slave labour in Egyptian building projects is documented in administrative papyri. A \"new king who did not know Joseph\" fits the transition from Hyksos dynasty (sympathetic to Semites) to native Egyptian pharaohs (hostile to them) around 1550 BC, or the rise of Ramesses II (c.1279 BC) in the late-date view.",
+          "context": "Exodus 1:7 deliberately echoes the creation mandate of Genesis 1:28 (\"be fruitful and multiply\") and the covenant promises to Abraham (Gen 12:2; 17:2). The very fruitfulness that fulfils the Abrahamic promise triggers Pharaoh's terror. God's blessing produces the crisis that will produce the Exodus. The oppressor's logic is political (v.10: \"lest they join our enemies\") — but the narrative frames it as unwitting preparation for God's mighty acts."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 15:13",
+              "note": "God told Abraham: \"your offspring will be sojourners in a land not their own, and they will be servants there, and they will be afflicted for four hundred years.\" Exodus 1 begins the fulfilment."
+            },
+            {
+              "ref": "Gen 46:27",
+              "note": "The seventy who went down are now \"as numerous as the stars of heaven\" (Deut 10:22)."
+            },
+            {
+              "ref": "Acts 7:17–19",
+              "note": "Stephen: \"the time of the promise drew near... there arose another king... who dealt shrewdly with our race.\""
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -224,22 +228,26 @@
             "paragraph": "V.11: The word for the oppressive work imposed on Israel. Comes from the root sābal (to bear a burden). It appears again in Exod 6:6-7 where God promises to free them \"from under the yoke of the Egyptians.\" The repeated burdens of Israel become the foil for God's redemptive lightening: where Pharaoh added burdens, God removes them."
           }
         ],
-        "hist": "Egyptian records from the New Kingdom confirm the use of foreign labourers — including Semitic peoples — in state building projects. The Papyrus Leiden 348 (c. 1280 BC) documents rations issued to 'Apiru workers at Pi-Ramesse. Forced-labour gangs (corvée) were standard in Egyptian construction. The 'store cities' (miskenōt) functioned as supply depots along military and trade routes in the eastern Delta.",
-        "ctx": "The midwives' response to Pharaoh is the first act of principled civil disobedience in Scripture — and the first instance of \"we must obey God rather than men\" (Acts 5:29). Their deception is rewarded (v.20–21): God dealt well with them and gave them families. The ethical complexity has generated extensive commentary — but the narrative's verdict is unambiguous: fearing God matters more than obeying Pharaoh.",
-        "cross": [
-          {
-            "ref": "Acts 5:29",
-            "note": "\"We must obey God rather than men\" — the midwives' action is the paradigm case."
-          },
-          {
-            "ref": "Dan 3:16–18",
-            "note": "Shadrach, Meshach, Abednego refuse Nebuchadnezzar: the same structure of loyalty to God over imperial decree."
-          },
-          {
-            "ref": "Exod 1:21",
-            "note": "God gives the midwives families — 'households' — the very thing Pharaoh was trying to prevent Israel from building."
-          }
-        ],
+        "hist": {
+          "historical": "Egyptian records from the New Kingdom confirm the use of foreign labourers — including Semitic peoples — in state building projects. The Papyrus Leiden 348 (c. 1280 BC) documents rations issued to 'Apiru workers at Pi-Ramesse. Forced-labour gangs (corvée) were standard in Egyptian construction. The 'store cities' (miskenōt) functioned as supply depots along military and trade routes in the eastern Delta.",
+          "context": "The midwives' response to Pharaoh is the first act of principled civil disobedience in Scripture — and the first instance of \"we must obey God rather than men\" (Acts 5:29). Their deception is rewarded (v.20–21): God dealt well with them and gave them families. The ethical complexity has generated extensive commentary — but the narrative's verdict is unambiguous: fearing God matters more than obeying Pharaoh."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 5:29",
+              "note": "\"We must obey God rather than men\" — the midwives' action is the paradigm case."
+            },
+            {
+              "ref": "Dan 3:16–18",
+              "note": "Shadrach, Meshach, Abednego refuse Nebuchadnezzar: the same structure of loyalty to God over imperial decree."
+            },
+            {
+              "ref": "Exod 1:21",
+              "note": "God gives the midwives families — 'households' — the very thing Pharaoh was trying to prevent Israel from building."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -342,18 +350,22 @@
             "paragraph": "V.17: \"The midwives, however, feared God.\" The fear of God (yiʾrāʾ ʾĕlōhîm) is the moral foundation that enables their courageous refusal. Throughout the OT this phrase denotes practical, covenant-grounded reverence — not terror but orientation toward God's will above human authority. God's response (v.21) is to give them families of their own — the reward of covenant faithfulness."
           }
         ],
-        "hist": "The practice of birth control through midwife intervention and infanticide of male children is attested in the ancient world. Egyptian medical papyri describe midwifery practices. The instruction to cast boys into the Nile may reflect an ironic reversal — the Nile, Egypt's source of life and the domain of the god Hapi, becomes an instrument of death. Pharaonic decrees were absolute; resistance by the midwives was an act of extraordinary courage in a totalitarian state.",
-        "ctx": "Pharaoh's final decree turns the entire Egyptian people into instruments of his genocidal policy. The Nile, which Egyptians worshipped as the god Hapi and source of all life, is commanded to be an instrument of death. The narrative irony is acute: the river will shortly run with blood in the first plague (Exod 7:20), and the same water that Pharaoh commands to swallow Hebrew boys will eventually swallow his army (Exod 14:28). The Nile is not his to command.",
-        "cross": [
-          {
-            "ref": "Matt 2:16",
-            "note": "Herod's slaughter of the innocents deliberately echoes Pharaoh's decree — Matthew frames the massacre as the repetition of an ancient pattern: earthly power attempting to destroy God's deliverer."
-          },
-          {
-            "ref": "Acts 7:19",
-            "note": "Stephen: \"He dealt shrewdly with our race... forcing our fathers to expose their infants so that they would not survive.\" The entire oppression compressed into apostolic preaching."
-          }
-        ],
+        "hist": {
+          "historical": "The practice of birth control through midwife intervention and infanticide of male children is attested in the ancient world. Egyptian medical papyri describe midwifery practices. The instruction to cast boys into the Nile may reflect an ironic reversal — the Nile, Egypt's source of life and the domain of the god Hapi, becomes an instrument of death. Pharaonic decrees were absolute; resistance by the midwives was an act of extraordinary courage in a totalitarian state.",
+          "context": "Pharaoh's final decree turns the entire Egyptian people into instruments of his genocidal policy. The Nile, which Egyptians worshipped as the god Hapi and source of all life, is commanded to be an instrument of death. The narrative irony is acute: the river will shortly run with blood in the first plague (Exod 7:20), and the same water that Pharaoh commands to swallow Hebrew boys will eventually swallow his army (Exod 14:28). The Nile is not his to command."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 2:16",
+              "note": "Herod's slaughter of the innocents deliberately echoes Pharaoh's decree — Matthew frames the massacre as the repetition of an ancient pattern: earthly power attempting to destroy God's deliverer."
+            },
+            {
+              "ref": "Acts 7:19",
+              "note": "Stephen: \"He dealt shrewdly with our race... forcing our fathers to expose their infants so that they would not survive.\" The entire oppression compressed into apostolic preaching."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

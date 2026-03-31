@@ -31,22 +31,26 @@
             "paragraph": "The Levites \"made it clear\" (məpōrāš) and \"gave the meaning\" (wəśōm śēkel). The verb suggests translation and explanation — possibly from Hebrew into Aramaic (the people’s spoken language after exile), plus exposition. This is the birth of the synagogue sermon."
           }
         ],
-        "hist": "The reading takes place on the first day of the seventh month (Tishri 1 = Feast of Trumpets). Ezra reads from a wooden platform (migdal ēṣ) built for the occasion — the precursor of the synagogue bimah. The assembly includes \"men and women and all who could understand\" — children above a certain age are present. Torah is for the whole community.",
-        "ctx": "This is the climax of the entire Ezra-Nehemiah narrative. The wall protects the community (Nehemiah’s work); the Torah defines the community (Ezra’s work). Chapters 1–7 are Nehemiah’s memoir about walls; chapters 8–10 are about the word. The wall is the body; the Torah is the soul.",
-        "cross": [
-          {
-            "ref": "Deut 31:10–13",
-            "note": "Moses commands Torah reading every seven years at Tabernacles — the law Ezra is fulfilling."
-          },
-          {
-            "ref": "2 Kgs 22:8–13",
-            "note": "Josiah’s discovery of the Torah and its public reading — the nearest pre-exilic parallel."
-          },
-          {
-            "ref": "Luke 4:16–21",
-            "note": "Jesus reads Torah in the synagogue at Nazareth — the tradition that begins here."
-          }
-        ],
+        "hist": {
+          "historical": "The reading takes place on the first day of the seventh month (Tishri 1 = Feast of Trumpets). Ezra reads from a wooden platform (migdal ēṣ) built for the occasion — the precursor of the synagogue bimah. The assembly includes \"men and women and all who could understand\" — children above a certain age are present. Torah is for the whole community.",
+          "context": "This is the climax of the entire Ezra-Nehemiah narrative. The wall protects the community (Nehemiah’s work); the Torah defines the community (Ezra’s work). Chapters 1–7 are Nehemiah’s memoir about walls; chapters 8–10 are about the word. The wall is the body; the Torah is the soul."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 31:10–13",
+              "note": "Moses commands Torah reading every seven years at Tabernacles — the law Ezra is fulfilling."
+            },
+            {
+              "ref": "2 Kgs 22:8–13",
+              "note": "Josiah’s discovery of the Torah and its public reading — the nearest pre-exilic parallel."
+            },
+            {
+              "ref": "Luke 4:16–21",
+              "note": "Jesus reads Torah in the synagogue at Nazareth — the tradition that begins here."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -136,17 +140,18 @@
             "paragraph": "\"The joy of the LORD is your strength\" (ḥeḏwat YHWH hîʾ māʿūzzəḵem). The most quoted sentence in Nehemiah. Joy is not mere happiness but the strength that comes from knowing God’s character. It is a resource, not just an emotion."
           }
         ],
-        "ctx": "The people weep when they hear the Torah — presumably because they recognise how far they have fallen from its standards. Nehemiah, Ezra, and the Levites redirect them: \"Do not grieve, for the joy of the LORD is your strength.\" Conviction of sin is necessary, but it must lead to joy in God’s grace, not to despair. Grief without joy becomes paralysis.",
-        "cross": [
-          {
-            "ref": "Ps 30:5",
-            "note": "\"Weeping may stay for the night, but rejoicing comes in the morning.\""
-          },
-          {
-            "ref": "Phil 4:4",
-            "note": "\"Rejoice in the Lord always\" — the NT extension of Nehemiah’s principle."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 30:5",
+              "note": "\"Weeping may stay for the night, but rejoicing comes in the morning.\""
+            },
+            {
+              "ref": "Phil 4:4",
+              "note": "\"Rejoice in the Lord always\" — the NT extension of Nehemiah’s principle."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -207,6 +212,9 @@
               "note": "Kidner on sharing with those who have nothing: \"Joy that does not share is not the joy of the LORD. Celebration without generosity is merely consumption.\""
             }
           ]
+        },
+        "hist": {
+          "context": "The people weep when they hear the Torah — presumably because they recognise how far they have fallen from its standards. Nehemiah, Ezra, and the Levites redirect them: \"Do not grieve, for the joy of the LORD is your strength.\" Conviction of sin is necessary, but it must lead to joy in God’s grace, not to despair. Grief without joy becomes paralysis."
         }
       }
     },
@@ -224,17 +232,18 @@
             "paragraph": "They discover the command to dwell in booths (sukkōt) during the seventh month (Lev 23:42–43). The festival had not been celebrated this way \"from the days of Joshua son of Nun.\" A nine-hundred-year gap in observance, now restored."
           }
         ],
-        "ctx": "The discovery that Tabernacles had not been properly celebrated since Joshua is remarkable. Josiah’s reform (2 Kgs 23:22) restored Passover; Nehemiah’s community restores Tabernacles. Each generation recovers a different part of the tradition. Torah reading produces fresh discovery even in old texts.",
-        "cross": [
-          {
-            "ref": "Lev 23:33–43",
-            "note": "The Tabernacles instructions the people now follow."
-          },
-          {
-            "ref": "Deut 31:10–13",
-            "note": "Torah reading during Tabernacles every seven years."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 23:33–43",
+              "note": "The Tabernacles instructions the people now follow."
+            },
+            {
+              "ref": "Deut 31:10–13",
+              "note": "Torah reading during Tabernacles every seven years."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -287,6 +296,9 @@
               "note": "Kidner: \"Nine hundred years. The law had been there all along, but no generation had fully obeyed this command. Torah is inexhaustible — each generation finds something the previous ones missed.\""
             }
           ]
+        },
+        "hist": {
+          "context": "The discovery that Tabernacles had not been properly celebrated since Joshua is remarkable. Josiah’s reform (2 Kgs 23:22) restored Passover; Nehemiah’s community restores Tabernacles. Each generation recovers a different part of the tradition. Torah reading produces fresh discovery even in old texts."
         }
       }
     }

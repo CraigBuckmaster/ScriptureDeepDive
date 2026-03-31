@@ -31,18 +31,22 @@
             "paragraph": "The return is described as \"going up\" (ālâ) to Jerusalem — the same verb used for pilgrimage. Geography and theology merge: Jerusalem is always \"up\" regardless of which direction you approach from."
           }
         ],
-        "hist": "The list parallels Nehemiah 7:6–73 with minor variations — both draw from an official register. Such lists served dual purpose in the Persian period: establishing legal claims to ancestral property, and proving membership in the covenant community. Family identity was the basis for land allocation.",
-        "ctx": "The genealogy is not filler — it is the theological backbone of the chapter. These names prove that God kept his promise: a remnant returned. Every family listed is evidence that the exile did not destroy the covenant community. The structure moves from laypeople (vv.2–35) to religious personnel (vv.36–58) to those with uncertain identity (vv.59–63).",
-        "cross": [
-          {
-            "ref": "Neh 7:6–73",
-            "note": "The parallel register — nearly identical, confirming both draw from an official source."
-          },
-          {
-            "ref": "Isa 10:20–22",
-            "note": "\"A remnant will return\" — the very thing this list documents."
-          }
-        ],
+        "hist": {
+          "historical": "The list parallels Nehemiah 7:6–73 with minor variations — both draw from an official register. Such lists served dual purpose in the Persian period: establishing legal claims to ancestral property, and proving membership in the covenant community. Family identity was the basis for land allocation.",
+          "context": "The genealogy is not filler — it is the theological backbone of the chapter. These names prove that God kept his promise: a remnant returned. Every family listed is evidence that the exile did not destroy the covenant community. The structure moves from laypeople (vv.2–35) to religious personnel (vv.36–58) to those with uncertain identity (vv.59–63)."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Neh 7:6–73",
+              "note": "The parallel register — nearly identical, confirming both draw from an official source."
+            },
+            {
+              "ref": "Isa 10:20–22",
+              "note": "\"A remnant will return\" — the very thing this list documents."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -132,17 +136,18 @@
             "paragraph": "Those who \"searched for their genealogical records but could not find them\" (v.62) were \"excluded from the priesthood as unclean.\" The verb hityaḥēś means to prove one's lineage by documentation. Without proof, no priestly service — identity in Israel is not self-declared but verified."
           }
         ],
-        "ctx": "The exclusion of those without genealogical proof (vv.59–63) seems harsh but protects the integrity of the priesthood. The decision is deferred to a future priest with Urim and Thummim (v.63) — acknowledging human limitation and awaiting divine verdict. Mercy and rigour coexist.",
-        "cross": [
-          {
-            "ref": "Num 3:10",
-            "note": "Only verified Aaronides may serve as priests — the principle underlying the genealogical requirement."
-          },
-          {
-            "ref": "Neh 7:64–65",
-            "note": "The parallel account with identical exclusion language."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 3:10",
+              "note": "Only verified Aaronides may serve as priests — the principle underlying the genealogical requirement."
+            },
+            {
+              "ref": "Neh 7:64–65",
+              "note": "The parallel account with identical exclusion language."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -215,6 +220,9 @@
               "note": "The decision to wait for the Urim and Thummim is an act of humility. Kidner: \"They refused to resolve ambiguity by human authority alone. Better to wait for God than to guess wrong about the priesthood.\""
             }
           ]
+        },
+        "hist": {
+          "context": "The exclusion of those without genealogical proof (vv.59–63) seems harsh but protects the integrity of the priesthood. The decision is deferred to a future priest with Urim and Thummim (v.63) — acknowledging human limitation and awaiting divine verdict. Mercy and rigour coexist."
         }
       }
     },
@@ -232,17 +240,18 @@
             "paragraph": "The leaders gave \"according to their ability\" (kəḵōḥām) — freewill offerings for the house of God. The same principle governs NT giving (2 Cor 8:12). Generosity scaled to capacity, not uniformity."
           }
         ],
-        "ctx": "The total of 42,360 (v.64) exceeds the sum of individual groups (29,818). The difference likely includes women, children, and/or families counted in the aggregate but not individually listed. The 7,337 servants and 200 singers indicate the community included non-Israelite dependents — the return was not exclusively ethnic.",
-        "cross": [
-          {
-            "ref": "Exod 35:21–29",
-            "note": "The tabernacle freewill offering — the first-exodus parallel to this second-exodus generosity."
-          },
-          {
-            "ref": "2 Cor 8:3‒5",
-            "note": "Giving \"according to their ability, and even beyond\" — Paul echoes the Ezra principle."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 35:21–29",
+              "note": "The tabernacle freewill offering — the first-exodus parallel to this second-exodus generosity."
+            },
+            {
+              "ref": "2 Cor 8:3‒5",
+              "note": "Giving \"according to their ability, and even beyond\" — Paul echoes the Ezra principle."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -315,6 +324,9 @@
               "note": "The generosity is striking given that these are returnees from exile, not wealthy landowners. They give from what they have, not from surplus."
             }
           ]
+        },
+        "hist": {
+          "context": "The total of 42,360 (v.64) exceeds the sum of individual groups (29,818). The difference likely includes women, children, and/or families counted in the aggregate but not individually listed. The 7,337 servants and 200 singers indicate the community included non-Israelite dependents — the return was not exclusively ethnic."
         }
       }
     }

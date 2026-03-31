@@ -37,9 +37,13 @@ Prophecy chains (50 chains, 283 links, browse + detail screens) · Enhanced note
 |-------|-------------|--------|
 | 0 | Chapter panel button categorization (3 groups) | **Complete** |
 | 1 | TabbedPanelRenderer composite infrastructure | **Complete** |
-| 2 | Composite Context Panel (hist → tabbed) | Next |
-| 3 | Composite Connections Panel (cross → tabbed) | Next |
-| 4-23 | See `_tools/DEEP_STUDY_FEATURES_PLAN.md` | Planned |
+| 2 | Context Hub (hist+ctx merge → tabbed composite) | **Complete** |
+| 3 | Connections Hub (cross → tabbed with echoes slot) | **Complete** |
+| 4 | Literary Structure upgrade (chiasm view) | **Complete** |
+| 5 | Genre Guidance Banner | **Complete** |
+| 6 | Depth Indicator Dots | **Complete** |
+| 7 | Study Coach Mode | **Complete** |
+| 8-23 | See `_tools/DEEP_STUDY_FEATURES_PLAN.md` | Planned |
 
 ### Content Remediation
 
@@ -53,14 +57,14 @@ Batches 0–5 complete (word study bugfix, scholar bios, ghost panels, people en
 
 ## What's Next
 
-1. **Deep Study Features Phase 2 + 3** — Composite Context Panel (hist → tabbed with historical/audience/ANE tabs) + Composite Connections Panel (cross → tabbed with refs/echoes tabs)
-2. **Thin Panel Enrichment** (~259 panels) — 138 section panels (mostly thin cross-refs in Chronicles/Nehemiah/Esther) + 121 chapter panels (mostly thin ppl/rec in prophets)
-3. **Inline Style Migration** (Arch Batch 7) — 318 inline `style={{ }}` objects, migrate to `StyleSheet.create()`
-4. **Cross-reference thread expansion** (Batch 13)
-5. **Map story enhancements** (Batch 14)
-6. **Isaiah 23-66 enrichment debt** (44 chapters, thin panels)
-7. **Kings/Chronicles MacArthur enrichment debt** (112 chapters)
-8. **Test foundation → CI/CD → branch protection** (Arch 8A-C)
+1. **Deep Study Features Phase 8+** — See `_tools/DEEP_STUDY_FEATURES_PLAN.md` for next phases
+3. **Thin Panel Enrichment** (~259 panels) — 138 section panels (mostly thin cross-refs in Chronicles/Nehemiah/Esther) + 121 chapter panels (mostly thin ppl/rec in prophets)
+4. **Inline Style Migration** (Arch Batch 7) — 318 inline `style={{ }}` objects, migrate to `StyleSheet.create()`
+5. **Cross-reference thread expansion** (Batch 13)
+6. **Map story enhancements** (Batch 14)
+7. **Isaiah 23-66 enrichment debt** (44 chapters, thin panels)
+8. **Kings/Chronicles MacArthur enrichment debt** (112 chapters)
+9. **Test foundation → CI/CD → branch protection** (Arch 8A-C)
 
 ---
 
@@ -93,4 +97,4 @@ git add -A && git commit -m "..." && git push
 cd app && eas update --branch production
 ```
 
-DB version: 0.20 · 54 scholars
+DB version: 0.22 · 54 scholars

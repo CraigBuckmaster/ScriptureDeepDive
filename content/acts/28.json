@@ -57,21 +57,22 @@
             "current": false
           }
         ],
-        "ctx": "Paul's arrival in Rome (v.14: 'and so we came to Rome') is Acts' climactic geographical fulfilment of the 1:8 commission. The brothers and sisters who meet him on the Appian Way are the human expression of the church he had addressed in his letter years earlier without visiting. Paul's response — 'he thanked God and was encouraged' (v.15) — is the only recorded instance of Paul being encouraged by others in Acts. Even the apostle to the Gentiles needed the community of faith.",
-        "cross": [
-          {
-            "ref": "Acts 1:8",
-            "note": "\"To the ends of the earth\" — Rome was the capital of the ends of the earth for Paul's world. His arrival fulfils the geographic scope of the commission given in Acts 1."
-          },
-          {
-            "ref": "Romans 1:10–11",
-            "note": "\"I long to see you so that I may impart to you some spiritual gift... that is, that you and I may be mutually encouraged by each other's faith\" — Paul's letter-prayer now answered in person."
-          },
-          {
-            "ref": "Acts 23:11",
-            "note": "\"You must also testify in Rome\" — the Lord's promise, made in Jerusalem after Paul's arrest, is now kept: Paul stands in Rome."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 1:8",
+              "note": "\"To the ends of the earth\" — Rome was the capital of the ends of the earth for Paul's world. His arrival fulfils the geographic scope of the commission given in Acts 1."
+            },
+            {
+              "ref": "Romans 1:10–11",
+              "note": "\"I long to see you so that I may impart to you some spiritual gift... that is, that you and I may be mutually encouraged by each other's faith\" — Paul's letter-prayer now answered in person."
+            },
+            {
+              "ref": "Acts 23:11",
+              "note": "\"You must also testify in Rome\" — the Lord's promise, made in Jerusalem after Paul's arrest, is now kept: Paul stands in Rome."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -136,6 +137,9 @@
               "note": "Keener notes that Puteoli was the main Italian port for Alexandrian grain ships — the same route Paul was travelling. The presence of believers there before Paul's arrival confirms that the Gospel had reached Rome and Italian ports through unknown channels well before Paul's arrival (cf. Romans 1:8: 'your faith is being reported all over the world')."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul's arrival in Rome (v.14: 'and so we came to Rome') is Acts' climactic geographical fulfilment of the 1:8 commission. The brothers and sisters who meet him on the Appian Way are the human expression of the church he had addressed in his letter years earlier without visiting. Paul's response — 'he thanked God and was encouraged' (v.15) — is the only recorded instance of Paul being encouraged by others in Acts. Even the apostle to the Gentiles needed the community of faith."
         }
       }
     },
@@ -182,21 +186,22 @@
             "current": false
           }
         ],
-        "ctx": "Acts ends in a deliberate act of literary suspension. Paul is in Rome, preaching freely — the goal of the entire narrative is achieved. Luke does not tell us the outcome of Paul's trial because the trial's outcome is not his point. His point is that the word of God has arrived at the ends of the earth and is being proclaimed without hindrance. The Isaiah citation (vv.25–27) is the third and final statement of turning to the Gentiles (cf. 13:46–47; 18:6) — each time the pattern: Israel partially rejects, Gentiles receive. The 'without hindrance' of v.31 is Acts' theological thesis proven: no human power can finally stop the Gospel.",
-        "cross": [
-          {
-            "ref": "Acts 1:8",
-            "note": "\"You will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth\" — the commission of Acts 1:8 is fulfilled in Acts 28:31. The book is structured as its own fulfilment."
-          },
-          {
-            "ref": "Isaiah 6:9–10",
-            "note": "\"You will be ever hearing but never understanding\" — the third use of this Isaiah text in the NT (also Matt 13:14; John 12:40). Each use marks a decisive moment when Israel's hardening opens the door wider to the Gentiles."
-          },
-          {
-            "ref": "Romans 11:11–15",
-            "note": "\"Salvation has come to the Gentiles to make Israel envious... their loss means riches for the Gentiles\" — Paul's theological account of the pattern Acts 28 narrates."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 1:8",
+              "note": "\"You will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth\" — the commission of Acts 1:8 is fulfilled in Acts 28:31. The book is structured as its own fulfilment."
+            },
+            {
+              "ref": "Isaiah 6:9–10",
+              "note": "\"You will be ever hearing but never understanding\" — the third use of this Isaiah text in the NT (also Matt 13:14; John 12:40). Each use marks a decisive moment when Israel's hardening opens the door wider to the Gentiles."
+            },
+            {
+              "ref": "Romans 11:11–15",
+              "note": "\"Salvation has come to the Gentiles to make Israel envious... their loss means riches for the Gentiles\" — Paul's theological account of the pattern Acts 28 narrates."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -261,6 +266,9 @@
               "note": "Keener notes that 'all who came to see him' (v.30 — tous eisporeuomenous pros auton) suggests Paul received a steady stream of visitors during his house arrest — soldiers, guards, local believers, curious visitors, official contacts. The Prison Epistles (Philippians, Colossians, Ephesians, Philemon) were written during this period, confirming that Paul's Roman imprisonment was one of his most productive periods."
             }
           ]
+        },
+        "hist": {
+          "context": "Acts ends in a deliberate act of literary suspension. Paul is in Rome, preaching freely — the goal of the entire narrative is achieved. Luke does not tell us the outcome of Paul's trial because the trial's outcome is not his point. His point is that the word of God has arrived at the ends of the earth and is being proclaimed without hindrance. The Isaiah citation (vv.25–27) is the third and final statement of turning to the Gentiles (cf. 13:46–47; 18:6) — each time the pattern: Israel partially rejects, Gentiles receive. The 'without hindrance' of v.31 is Acts' theological thesis proven: no human power can finally stop the Gospel."
         }
       }
     }

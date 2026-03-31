@@ -25,25 +25,26 @@
             "paragraph": "\"Go, strip off the sackcloth from your body and take off your sandals.\" And he did so, going around stripped (ʿārōm) and barefoot. Then the LORD said: \"Just as my servant Isaiah has gone stripped and barefoot for three years, as a sign and portent against Egypt and Cush\" (vv.2–3). In the year the Assyrian army commander came to Ashdod and captured it (711 BC), God commands Isaiah to walk naked for three years as a living sign that Egypt and Cush will be led away as captives."
           }
         ],
-        "ctx": "The date marker (the fall of Ashdod, 711 BC) is historically confirmed by Sargon II’s own records. The three-year naked prophecy is the most extreme prophetic sign-act in Isaiah. The nakedness represents the humiliation of prisoners of war, who were stripped and marched barefoot. Isaiah embodies the fate of those who trust in Egypt: they will be stripped, exposed, ashamed. The sign is directed against Judah’s temptation to ally with Egypt, not against Egypt itself.",
-        "cross": [
-          {
-            "ref": "2 Sam 6:14",
-            "note": "David danced before the LORD wearing a linen ephod — another example of prophetic nakedness/minimal clothing."
-          },
-          {
-            "ref": "Mic 1:8",
-            "note": "Therefore I will weep and wail; I will go about barefoot and naked — Micah’s parallel sign-act."
-          },
-          {
-            "ref": "Jer 13:1–11",
-            "note": "The linen belt buried at the Euphrates — another extreme prophetic sign-act."
-          },
-          {
-            "ref": "Ezek 4:1–17",
-            "note": "Ezekiel’s 430 days lying on his side — the most extreme sign-act in the OT, paralleling Isaiah’s 3 years."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 6:14",
+              "note": "David danced before the LORD wearing a linen ephod — another example of prophetic nakedness/minimal clothing."
+            },
+            {
+              "ref": "Mic 1:8",
+              "note": "Therefore I will weep and wail; I will go about barefoot and naked — Micah’s parallel sign-act."
+            },
+            {
+              "ref": "Jer 13:1–11",
+              "note": "The linen belt buried at the Euphrates — another extreme prophetic sign-act."
+            },
+            {
+              "ref": "Ezek 4:1–17",
+              "note": "Ezekiel’s 430 days lying on his side — the most extreme sign-act in the OT, paralleling Isaiah’s 3 years."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -108,6 +109,9 @@
               "note": "Childs notes the sign-act functions like a parable-in-action: it arrests attention and demands interpretation. The naked prophet FORCES the question: why?"
             }
           ]
+        },
+        "hist": {
+          "context": "The date marker (the fall of Ashdod, 711 BC) is historically confirmed by Sargon II’s own records. The three-year naked prophecy is the most extreme prophetic sign-act in Isaiah. The nakedness represents the humiliation of prisoners of war, who were stripped and marched barefoot. Isaiah embodies the fate of those who trust in Egypt: they will be stripped, exposed, ashamed. The sign is directed against Judah’s temptation to ally with Egypt, not against Egypt itself."
         }
       }
     },
@@ -125,25 +129,26 @@
             "paragraph": "\"How then can we escape (pālāṭ)?\" (v.6). Egypt and Cush will be led away as prisoners: young and old, naked and barefoot, with buttocks bared — to Egypt’s shame (v.4). Those who trusted in Cush and boasted in Egypt will be dismayed (v.5). The coastland people (Judah?) will say: \"See what has happened to those we relied on! How then can we escape?\" (v.6)."
           }
         ],
-        "ctx": "The rhetorical question \"How can we escape?\" (v.6) is the oracle’s payoff: if Egypt (the superpower you trusted) cannot save itself, how will it save you? The answer is: it cannot. The only escape is trust in God, not in military alliances. The \"buttocks bared\" detail (v.4) is not gratuitous but historically accurate: Assyrian reliefs depict prisoners marched naked as humiliation.",
-        "cross": [
-          {
-            "ref": "Isa 30:1–5",
-            "note": "Woe to those who go down to Egypt for help and do not look to the Holy One of Israel — the same anti-alliance theology."
-          },
-          {
-            "ref": "Isa 31:1",
-            "note": "Woe to those who go down to Egypt for help, who rely on horses — the repeated warning."
-          },
-          {
-            "ref": "Heb 2:3",
-            "note": "How shall we escape if we ignore so great a salvation? — the NT version of the escape-question."
-          },
-          {
-            "ref": "Ps 20:7",
-            "note": "Some trust in chariots and some in horses, but we trust in the name of the LORD our God."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 30:1–5",
+              "note": "Woe to those who go down to Egypt for help and do not look to the Holy One of Israel — the same anti-alliance theology."
+            },
+            {
+              "ref": "Isa 31:1",
+              "note": "Woe to those who go down to Egypt for help, who rely on horses — the repeated warning."
+            },
+            {
+              "ref": "Heb 2:3",
+              "note": "How shall we escape if we ignore so great a salvation? — the NT version of the escape-question."
+            },
+            {
+              "ref": "Ps 20:7",
+              "note": "Some trust in chariots and some in horses, but we trust in the name of the LORD our God."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -212,6 +217,9 @@
               "note": "Childs notes the question \"how can we escape?\" remains open in Isaiah — it is answered fully only in Second Isaiah’s proclamation of the Servant who provides the escape (ch.53)."
             }
           ]
+        },
+        "hist": {
+          "context": "The rhetorical question \"How can we escape?\" (v.6) is the oracle’s payoff: if Egypt (the superpower you trusted) cannot save itself, how will it save you? The answer is: it cannot. The only escape is trust in God, not in military alliances. The \"buttocks bared\" detail (v.4) is not gratuitous but historically accurate: Assyrian reliefs depict prisoners marched naked as humiliation."
         }
       }
     }

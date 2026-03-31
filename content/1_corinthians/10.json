@@ -31,21 +31,22 @@
             "paragraph": "The noun peirasmos (testing, temptation) in v. 13 carries a dual sense: external trial and internal enticement. Paul's assurance that God provides a 'way of escape' (ekbasis) with every testing is one of the most quoted pastoral promises in the Pauline corpus. The term ekbasis (literally 'a way out') may allude to the military concept of an escape route from an ambush—God provides not immunity from testing but a viable path through it."
           }
         ],
-        "ctx": "Paul draws on four specific episodes from the wilderness narrative to warn the Corinthians against spiritual presumption: the golden calf (Exod 32; cited via Exod 32:6 in v. 7), sexual immorality at Baal Peor (Num 25:1–9; v. 8), testing God at Massah/Meribah and via the bronze serpent incident (Num 21:5–6; v. 9), and grumbling in various episodes (Num 14:2, 29, 36–37; Num 16:41–49; v. 10). The number 'twenty-three thousand' in v. 8 (versus Num 25:9's 'twenty-four thousand') has generated extensive discussion; the most common explanation is that Paul cites those who fell 'in one day' while Numbers gives the total including those executed by the judges. The controlling point is unmistakable: sacramental privilege (cloud, sea, spiritual food and drink) does not guarantee divine approval if accompanied by idolatry and immorality.",
-        "cross": [
-          {
-            "ref": "Exod 13:21–22",
-            "note": "The pillar of cloud and fire that guided Israel through the wilderness is the referent of Paul's 'under the cloud' (v. 1). This divine presence prefigures the Spirit's guidance of the church."
-          },
-          {
-            "ref": "Num 25:1–9",
-            "note": "The sexual immorality at Baal Peor, where Israelite men 'began to indulge in sexual immorality with Moabite women' who 'invited them to the sacrifices to their gods,' directly parallels the Corinthian situation: idol-food consumption and sexual licence were intertwined in pagan temple practice."
-          },
-          {
-            "ref": "Num 21:5–6",
-            "note": "Israel's complaint against God and Moses resulted in the plague of venomous serpents. Paul uses this as a warning against 'testing Christ' (v. 9)—a remarkable christological identification of the pre-incarnate Christ with the God of Israel."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 13:21–22",
+              "note": "The pillar of cloud and fire that guided Israel through the wilderness is the referent of Paul's 'under the cloud' (v. 1). This divine presence prefigures the Spirit's guidance of the church."
+            },
+            {
+              "ref": "Num 25:1–9",
+              "note": "The sexual immorality at Baal Peor, where Israelite men 'began to indulge in sexual immorality with Moabite women' who 'invited them to the sacrifices to their gods,' directly parallels the Corinthian situation: idol-food consumption and sexual licence were intertwined in pagan temple practice."
+            },
+            {
+              "ref": "Num 21:5–6",
+              "note": "Israel's complaint against God and Moses resulted in the plague of venomous serpents. Paul uses this as a warning against 'testing Christ' (v. 9)—a remarkable christological identification of the pre-incarnate Christ with the God of Israel."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "Thiselton draws attention to the phrase ta telē tōn aiōnōn ('the ends of the ages,' v. 11), arguing that the plural 'ages' reflects Paul's sense that multiple strands of redemptive history converge in the present eschatological moment. The Corinthians live at the intersection of ages—a position of extraordinary privilege and corresponding responsibility."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul draws on four specific episodes from the wilderness narrative to warn the Corinthians against spiritual presumption: the golden calf (Exod 32; cited via Exod 32:6 in v. 7), sexual immorality at Baal Peor (Num 25:1–9; v. 8), testing God at Massah/Meribah and via the bronze serpent incident (Num 21:5–6; v. 9), and grumbling in various episodes (Num 14:2, 29, 36–37; Num 16:41–49; v. 10). The number 'twenty-three thousand' in v. 8 (versus Num 25:9's 'twenty-four thousand') has generated extensive discussion; the most common explanation is that Paul cites those who fell 'in one day' while Numbers gives the total including those executed by the judges. The controlling point is unmistakable: sacramental privilege (cloud, sea, spiritual food and drink) does not guarantee divine approval if accompanied by idolatry and immorality."
         }
       }
     },
@@ -141,17 +145,18 @@
             "paragraph": "The noun trapeza (table) in v. 21 sets up an exclusive either/or: the 'table of the Lord' versus the 'table of demons.' In the ancient world, a table denoted a sacrificial or communal meal setting. The concept of incompatible tables draws on OT covenant theology (cf. Mal 1:7, 12 LXX, where the altar is called the Lord's trapeza). Paul's point is not that demons possess real divine power but that participating at their 'table' constitutes a betrayal of one's exclusive covenant allegiance to Christ."
           }
         ],
-        "ctx": "Paul now moves from historical warning (vv. 1–13) to direct prohibition (vv. 14–22). The command to 'flee from idolatry' (v. 14) is unambiguous and non-negotiable. The argument rests on the analogy between three tables: the Lord's Table (vv. 16–17), Israel's altar (v. 18), and pagan sacrificial tables (vv. 19–21). Participation at each table creates a real communion (koinōnia) with the power being served. Since the Lord's Table and the demon's table represent mutually exclusive allegiances, one cannot partake of both. The rhetorical question 'Are we trying to arouse the Lord's jealousy?' (v. 22) echoes the language of Deuteronomy's covenant-jealousy passages (Deut 32:16–21).",
-        "cross": [
-          {
-            "ref": "Deut 32:17",
-            "note": "Moses' Song warns that Israel 'sacrificed to demons (LXX: daimoniois), not to God, to gods they had not known.' Paul directly cites this LXX text in v. 20 to identify the spiritual reality behind pagan sacrifice."
-          },
-          {
-            "ref": "1 Cor 11:25–26",
-            "note": "Paul's institution narrative in ch. 11 provides the positive counterpart to this warning: the Lord's Supper is a 'new covenant' meal that proclaims Christ's death until he comes. The two passages together establish that eucharistic participation and idolatrous feasting are irreconcilable."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 32:17",
+              "note": "Moses' Song warns that Israel 'sacrificed to demons (LXX: daimoniois), not to God, to gods they had not known.' Paul directly cites this LXX text in v. 20 to identify the spiritual reality behind pagan sacrifice."
+            },
+            {
+              "ref": "1 Cor 11:25–26",
+              "note": "Paul's institution narrative in ch. 11 provides the positive counterpart to this warning: the Lord's Supper is a 'new covenant' meal that proclaims Christ's death until he comes. The two passages together establish that eucharistic participation and idolatrous feasting are irreconcilable."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -204,6 +209,9 @@
               "note": "Thiselton offers a nuanced analysis of Paul's three-table argument, noting that the term koinōnia functions differently in each case. At the Lord's Table, koinōnia denotes participatory communion with Christ; at Israel's altar, it denotes covenantal identification with God; at the pagan table, it denotes (unwitting) communion with demons. Thiselton argues that Paul's logic is not symmetrical—the Lord's Table creates a positive spiritual bond, while the pagan table creates an objectively harmful one, whether or not the participant intends it. The rhetorical force of the passage depends on the Corinthians accepting the eucharistic premise (which they apparently do) and then recognising its implications for idolatrous meals (which they have not)."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul now moves from historical warning (vv. 1–13) to direct prohibition (vv. 14–22). The command to 'flee from idolatry' (v. 14) is unambiguous and non-negotiable. The argument rests on the analogy between three tables: the Lord's Table (vv. 16–17), Israel's altar (v. 18), and pagan sacrificial tables (vv. 19–21). Participation at each table creates a real communion (koinōnia) with the power being served. Since the Lord's Table and the demon's table represent mutually exclusive allegiances, one cannot partake of both. The rhetorical question 'Are we trying to arouse the Lord's jealousy?' (v. 22) echoes the language of Deuteronomy's covenant-jealousy passages (Deut 32:16–21)."
         }
       }
     },
@@ -227,21 +235,22 @@
             "paragraph": "The imperative 'do it all for the glory of God' (v. 31) uses doxa in its distinctively biblical sense: not mere reputation but the weighty manifestation of God's character. The command provides the overarching ethical principle that subsumes all the specific rulings of chs. 8–10. Every decision about food, drink, and social interaction is to be evaluated by a single criterion: does it display God's character to the watching world?"
           }
         ],
-        "ctx": "Paul now addresses the practical middle ground: what about meat purchased in the macellum (meat market, v. 25) or served at a private dinner (v. 27)? Unlike temple banquets (vv. 14–22), these situations do not involve direct cultic participation. Paul's ruling is remarkably liberal: eat freely without investigating the meat's origin ('without raising questions of conscience'). The citation of Psalm 24:1 ('The earth is the Lord's, and everything in it') grounds this freedom theologically: all food belongs to God and is therefore clean. The only exception is when someone explicitly identifies the meat as sacrificial (v. 28)—not because the food changes character but because the informant's conscience and the social signal require restraint.",
-        "cross": [
-          {
-            "ref": "Rom 14:13–21",
-            "note": "Paul's fullest treatment of the conscience principle appears in Romans 14, where the 'strong' must not despise the 'weak' and the 'weak' must not judge the 'strong.' Both passages prioritise love over liberty and communal edification over individual freedom."
-          },
-          {
-            "ref": "Col 3:17",
-            "note": "The principle that 'whatever you do, whether in word or deed, do it all in the name of the Lord Jesus' parallels the comprehensive ethical vision of 1 Cor 10:31: all of life is worship."
-          },
-          {
-            "ref": "Ps 24:1",
-            "note": "Paul's citation of 'The earth is the Lord's' (v. 26) grounds food freedom in creation theology: since everything belongs to God, no food is inherently defiled. This aligns with Jesus' declaration that all foods are clean (Mark 7:19)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 14:13–21",
+              "note": "Paul's fullest treatment of the conscience principle appears in Romans 14, where the 'strong' must not despise the 'weak' and the 'weak' must not judge the 'strong.' Both passages prioritise love over liberty and communal edification over individual freedom."
+            },
+            {
+              "ref": "Col 3:17",
+              "note": "The principle that 'whatever you do, whether in word or deed, do it all in the name of the Lord Jesus' parallels the comprehensive ethical vision of 1 Cor 10:31: all of life is worship."
+            },
+            {
+              "ref": "Ps 24:1",
+              "note": "Paul's citation of 'The earth is the Lord's' (v. 26) grounds food freedom in creation theology: since everything belongs to God, no food is inherently defiled. This aligns with Jesus' declaration that all foods are clean (Mark 7:19)."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -298,6 +307,9 @@
               "note": "Thiselton provides socio-rhetorical analysis of the term 'conscience' (syneidēsis) in this passage, noting that its repeated use signals a shift from theological argument (vv. 14–22) to practical pastoral wisdom (vv. 23–33). He argues that Paul distinguishes between conscience as an internal moral faculty and conscience as a social-relational reality: the believer's own conscience is free (v. 29a), but the other person's conscience creates a relational obligation (v. 29b). Thiselton concludes that Paul's ethic is neither individualistic (my rights) nor collectivist (the group decides) but dialogical: freedom is exercised in responsive relationship with others."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul now addresses the practical middle ground: what about meat purchased in the macellum (meat market, v. 25) or served at a private dinner (v. 27)? Unlike temple banquets (vv. 14–22), these situations do not involve direct cultic participation. Paul's ruling is remarkably liberal: eat freely without investigating the meat's origin ('without raising questions of conscience'). The citation of Psalm 24:1 ('The earth is the Lord's, and everything in it') grounds this freedom theologically: all food belongs to God and is therefore clean. The only exception is when someone explicitly identifies the meat as sacrificial (v. 28)—not because the food changes character but because the informant's conscience and the social signal require restraint."
         }
       }
     }

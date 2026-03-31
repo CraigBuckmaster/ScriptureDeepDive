@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 15,
       "panels": {
-        "ctx": "David tells Nathan he wants to build God a house. God reverses the initiative: “I will build YOU a house.” The oracle promises David’s offspring an eternal throne and a father-son relationship with God. Nearly identical to 2 Samuel 7, the Chronicler preserves this text with minimal changes because the covenant is too important to paraphrase. One significant difference: the Chronicler omits “When he does wrong, I will punish him” (2 Sam 7:14b) — consistent with his pattern of idealising David’s line.",
-        "cross": [
-          {
-            "ref": "2 Sam 7:1–17",
-            "note": "The parallel account. The Chronicler follows it closely but removes the punishment clause."
-          },
-          {
-            "ref": "Ps 89:3–4",
-            "note": "“I have made a covenant with my chosen one... I will establish your line forever and make your throne firm through all generations.”"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 7:1–17",
+              "note": "The parallel account. The Chronicler follows it closely but removes the punishment clause."
+            },
+            {
+              "ref": "Ps 89:3–4",
+              "note": "“I have made a covenant with my chosen one... I will establish your line forever and make your throne firm through all generations.”"
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "The absence of the punishment clause (cf. 2 Sam 7:14b) shifts the covenant’s tone from conditional to unconditional. The Chronicler presents an idealised version of the promise suited to his pastoral purpose."
             }
           ]
+        },
+        "hist": {
+          "context": "David tells Nathan he wants to build God a house. God reverses the initiative: “I will build YOU a house.” The oracle promises David’s offspring an eternal throne and a father-son relationship with God. Nearly identical to 2 Samuel 7, the Chronicler preserves this text with minimal changes because the covenant is too important to paraphrase. One significant difference: the Chronicler omits “When he does wrong, I will punish him” (2 Sam 7:14b) — consistent with his pattern of idealising David’s line."
         }
       }
     },
@@ -54,13 +58,14 @@
       "verse_start": 16,
       "verse_end": 27,
       "panels": {
-        "ctx": "David sits before the LORD and prays one of the great prayers of the OT: “Who am I, LORD God, and what is my family, that you have brought me this far?” He rehearses God’s uniqueness, Israel’s election, and the promise just received. The prayer is humble, wondering, and God-centred. David doesn’t ask for more; he marvels at what has already been given.",
-        "cross": [
-          {
-            "ref": "2 Sam 7:18–29",
-            "note": "The parallel prayer. The Chronicler follows it closely with minor variations."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 7:18–29",
+              "note": "The parallel prayer. The Chronicler follows it closely with minor variations."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -78,6 +83,9 @@
               "note": "The phrase kĕtōrat hāʾādām hammaʿalāh is extremely difficult. It may mean “you have regarded me according to the manner of a man of high degree” or “you have shown me future generations.” The text is likely corrupt."
             }
           ]
+        },
+        "hist": {
+          "context": "David sits before the LORD and prays one of the great prayers of the OT: “Who am I, LORD God, and what is my family, that you have brought me this far?” He rehearses God’s uniqueness, Israel’s election, and the promise just received. The prayer is humble, wondering, and God-centred. David doesn’t ask for more; he marvels at what has already been given."
         }
       }
     }

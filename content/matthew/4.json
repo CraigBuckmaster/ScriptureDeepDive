@@ -34,22 +34,26 @@
             "paragraph": "Jesus responds to each temptation with this perfect passive: 'it stands written' — the force of the perfect tense is that Scripture was written in the past and remains authoritative in the present. Jesus fights Satan not with miraculous power but with the permanent authority of the written word."
           }
         ],
-        "hist": "None",
-        "ctx": "The temptation narrative is structured as a Deuteronomy exam. Jesus has just been declared God's Son at the baptism; Satan now attacks that identity three times with \"if you are the Son of God.\" Each test targets a different dimension of messianic identity: provision (bread/Messiah as miracle-worker), protection (temple/Messiah as wonderworker), power (kingdoms/Messiah as military conqueror). Jesus answers each with Deuteronomy, recapitulating Israel's wilderness story as the obedient Son where Israel was disobedient.",
-        "cross": [
-          {
-            "ref": "Deut 8:3; 6:16; 6:13",
-            "note": "The three texts Jesus quotes — all from the section of Deuteronomy addressing Israel's wilderness failures. Jesus is passing the test Israel failed, from the same textbook."
-          },
-          {
-            "ref": "Ps 91:11–12",
-            "note": "Satan quotes Scripture (correctly) to support the second temptation. The misuse of Scripture in service of testing God is the diagnostic of the second temptation."
-          },
-          {
-            "ref": "Num 14:33–34; Exod 16–17",
-            "note": "Israel's 40 years of wilderness wandering — bread complaints, water testing, idolatry. Jesus's 40 days recapitulates all three failures and passes them all."
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "The temptation narrative is structured as a Deuteronomy exam. Jesus has just been declared God's Son at the baptism; Satan now attacks that identity three times with \"if you are the Son of God.\" Each test targets a different dimension of messianic identity: provision (bread/Messiah as miracle-worker), protection (temple/Messiah as wonderworker), power (kingdoms/Messiah as military conqueror). Jesus answers each with Deuteronomy, recapitulating Israel's wilderness story as the obedient Son where Israel was disobedient."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 8:3; 6:16; 6:13",
+              "note": "The three texts Jesus quotes — all from the section of Deuteronomy addressing Israel's wilderness failures. Jesus is passing the test Israel failed, from the same textbook."
+            },
+            {
+              "ref": "Ps 91:11–12",
+              "note": "Satan quotes Scripture (correctly) to support the second temptation. The misuse of Scripture in service of testing God is the diagnostic of the second temptation."
+            },
+            {
+              "ref": "Num 14:33–34; Exod 16–17",
+              "note": "Israel's 40 years of wilderness wandering — bread complaints, water testing, idolatry. Jesus's 40 days recapitulates all three failures and passes them all."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Wilderness of Judea",
@@ -141,18 +145,22 @@
             "paragraph": "Jesus begins with the same message as John (3:2): 'Repent, for the kingdom of heaven has come near.' The verb kēryssō denotes a herald's public announcement — authoritative, urgent, demanding response. Jesus does not suggest or invite; he proclaims."
           }
         ],
-        "hist": "None",
-        "ctx": "The move to Galilee (vv.12–17) fulfils Isaiah 9:1–2 and inaugurates the public ministry. Galilee of the Gentiles — the northernmost, most cosmopolitan region — is the location Matthew chooses for the first proclamation. The kingdom begins at the margins, not the centre. Jesus's first words (v.17) are identical to John's first words (3:2): the continuity is deliberate. The forerunner has been arrested; the one he prepared the way for now steps forward.",
-        "cross": [
-          {
-            "ref": "Isa 9:1–2",
-            "note": "Land of Zebulun and Naphtali; people in darkness see a great light — the OT context is the Assyrian devastation of the northern tribes. Matthew reads it as fulfilled by Jesus's Galilean ministry: light dawns on the most oppressed region first."
-          },
-          {
-            "ref": "Matt 3:2",
-            "note": "Repent, for the kingdom of heaven has come near — Jesus's first words are verbatim John's. The continuity of the message is as important as the discontinuity of the messenger."
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "The move to Galilee (vv.12–17) fulfils Isaiah 9:1–2 and inaugurates the public ministry. Galilee of the Gentiles — the northernmost, most cosmopolitan region — is the location Matthew chooses for the first proclamation. The kingdom begins at the margins, not the centre. Jesus's first words (v.17) are identical to John's first words (3:2): the continuity is deliberate. The forerunner has been arrested; the one he prepared the way for now steps forward."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 9:1–2",
+              "note": "Land of Zebulun and Naphtali; people in darkness see a great light — the OT context is the Assyrian devastation of the northern tribes. Matthew reads it as fulfilled by Jesus's Galilean ministry: light dawns on the most oppressed region first."
+            },
+            {
+              "ref": "Matt 3:2",
+              "note": "Repent, for the kingdom of heaven has come near — Jesus's first words are verbatim John's. The continuity of the message is as important as the discontinuity of the messenger."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Galilee",
@@ -303,18 +311,22 @@
             "paragraph": "A metaphor that redefines their existing skill. They already know nets, currents, patience, and timing. Now the catch changes. The image is not gentle gathering but active pursuit — fishing requires going where the fish are."
           }
         ],
-        "hist": "None",
-        "ctx": "The calling of the first disciples (vv.18–22) and the summary of Jesus's early ministry (vv.23–25) bookend each other. The disciples are called with a fishing metaphor that will govern their identity throughout the gospel; the summary describes a ministry of teaching, proclaiming, and healing — the three activities that characterise everything in chs.5–9. The geographic sweep of v.25 (Galilee, Decapolis, Jerusalem, Judea, Transjordan) anticipates the commission to \"all nations\" of 28:19.",
-        "cross": [
-          {
-            "ref": "Jer 16:16",
-            "note": "I will send for many fishermen — God's gathering of Israel. Jesus's \"fish for people\" call re-uses the prophetic metaphor."
-          },
-          {
-            "ref": "Matt 28:19",
-            "note": "The geographic spread of v.25 anticipates the Great Commission: the movement from Galilee to all nations begins here."
-          }
-        ]
+        "hist": {
+          "historical": "None",
+          "context": "The calling of the first disciples (vv.18–22) and the summary of Jesus's early ministry (vv.23–25) bookend each other. The disciples are called with a fishing metaphor that will govern their identity throughout the gospel; the summary describes a ministry of teaching, proclaiming, and healing — the three activities that characterise everything in chs.5–9. The geographic sweep of v.25 (Galilee, Decapolis, Jerusalem, Judea, Transjordan) anticipates the commission to \"all nations\" of 28:19."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 16:16",
+              "note": "I will send for many fishermen — God's gathering of Israel. Jesus's \"fish for people\" call re-uses the prophetic metaphor."
+            },
+            {
+              "ref": "Matt 28:19",
+              "note": "The geographic spread of v.25 anticipates the Great Commission: the movement from Galilee to all nations begins here."
+            }
+          ]
+        }
       }
     }
   ],

@@ -31,18 +31,22 @@
             "paragraph": "V.8: \"With mighty wrestlings I have wrestled with my sister and prevailed.\" The word naphtuley (wrestlings, struggles of God) anticipates the wrestling of Jacob at the Jabbok (32:24-32). The naming of the twelve tribes is shot through with the vocabulary of struggle — with God, with each other, with circumstance. The name Naphthali is the first time the struggle-language appears that will be definitional for Israel."
           }
         ],
-        "hist": "The surrogate-birth arrangement was a recognised legal institution in the ancient Near East. Nuzi texts (15th century BCE) specify that a barren wife must provide a slave to her husband for childbearing; the children are legally the wife's. Rachel follows exactly this protocol. The arrangement does not reflect approval of polygamy or slavery but the legal and cultural context in which these events occur. The narrative records the practice without endorsing it.",
-        "ctx": "\"Give me children, or I shall die!\" — Rachel's demand is raw maternal desperation. Jacob's sharp rebuke (\"Am I in the place of God?\") is theologically correct but pastorally cold — he identifies God as the withholder without any compassion for his wife's anguish. The surrogacy arrangement echoes Sarah and Hagar (ch.16): the barren wife offers her servant as a surrogate, children born \"on my knees\" are legally the wife's. The pattern repeats, with both wives using surrogates, creating a four-mother competition that will produce the twelve tribes.",
-        "cross": [
-          {
-            "ref": "Gen 16:2",
-            "note": "Sarah offers Hagar to Abraham — the identical surrogacy pattern. Genesis deliberately repeats this structure: barrenness → surrogate → conflict. The covenant's most important sons come from the most humanly messy circumstances."
-          },
-          {
-            "ref": "1 Sam 1:10–11",
-            "note": "Hannah's prayer for a son echoes Rachel's desperation. Both women weep and plead; both are given sons by divine intervention (Samuel, Joseph)."
-          }
-        ],
+        "hist": {
+          "historical": "The surrogate-birth arrangement was a recognised legal institution in the ancient Near East. Nuzi texts (15th century BCE) specify that a barren wife must provide a slave to her husband for childbearing; the children are legally the wife's. Rachel follows exactly this protocol. The arrangement does not reflect approval of polygamy or slavery but the legal and cultural context in which these events occur. The narrative records the practice without endorsing it.",
+          "context": "\"Give me children, or I shall die!\" — Rachel's demand is raw maternal desperation. Jacob's sharp rebuke (\"Am I in the place of God?\") is theologically correct but pastorally cold — he identifies God as the withholder without any compassion for his wife's anguish. The surrogacy arrangement echoes Sarah and Hagar (ch.16): the barren wife offers her servant as a surrogate, children born \"on my knees\" are legally the wife's. The pattern repeats, with both wives using surrogates, creating a four-mother competition that will produce the twelve tribes."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 16:2",
+              "note": "Sarah offers Hagar to Abraham — the identical surrogacy pattern. Genesis deliberately repeats this structure: barrenness → surrogate → conflict. The covenant's most important sons come from the most humanly messy circumstances."
+            },
+            {
+              "ref": "1 Sam 1:10–11",
+              "note": "Hannah's prayer for a son echoes Rachel's desperation. Both women weep and plead; both are given sons by divine intervention (Samuel, Joseph)."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -138,17 +142,18 @@
             "paragraph": "V.16: Leah's declaration — \"I have hired you\" — uses the root sachar that will appear in Jacob's wage negotiations with Laban (30:28-32) and in the naming of Issachar. The economic language of hiring and wages pervades the chapter: Jacob works for wages (Laban), Rachel buys a night with mandrakes (Leah), Leah pays for a night (Jacob). The commercialisation of intimate life is a symptom of the relational disorder in the household."
           }
         ],
-        "ctx": "The mandrake episode is the OT's most unvarnished portrait of marital dysfunction. Rachel, who has Jacob's love, trades a night with him for Leah's mandrakes (believed to enhance fertility). Leah, who has Jacob's sons, meets her husband at the gate: \"You must come in to me, for I have hired you.\" The husband of twelve sons' worth of wives is being negotiated over like a commodity. The chapter's irony is total: Rachel gets the mandrakes but stays barren; Leah gets the night and conceives. The fertility magic doesn't work — God does.",
-        "cross": [
-          {
-            "ref": "1 Sam 1:19-20",
-            "note": "God remembered Hannah — the same divine remembering that opens Rachel's pregnancy in 30:22 is the template for all subsequent barren-woman narratives."
-          },
-          {
-            "ref": "Ps 113:9",
-            "note": "He settles the childless woman in her home as a happy mother of children — the divine pattern of Gen 30:22 is celebrated as characteristic of God."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Sam 1:19-20",
+              "note": "God remembered Hannah — the same divine remembering that opens Rachel's pregnancy in 30:22 is the template for all subsequent barren-woman narratives."
+            },
+            {
+              "ref": "Ps 113:9",
+              "note": "He settles the childless woman in her home as a happy mother of children — the divine pattern of Gen 30:22 is celebrated as characteristic of God."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -221,6 +226,9 @@
               "note": "The NET note on \"God remembered Rachel\" discusses the Hebrew idiom of divine remembering as action, not recollection. The note compares 8:1 (God remembered Noah) and Exodus 2:24 (God remembered his covenant). In each case \"remembered\" signals the initiation of a decisive divine intervention. The note also addresses the dual language: God remembered and listened (shama), the same verb used for Leah's sons Simeon and Issachar — the God who heard Leah's situation now hears Rachel's."
             }
           ]
+        },
+        "hist": {
+          "context": "The mandrake episode is the OT's most unvarnished portrait of marital dysfunction. Rachel, who has Jacob's love, trades a night with him for Leah's mandrakes (believed to enhance fertility). Leah, who has Jacob's sons, meets her husband at the gate: \"You must come in to me, for I have hired you.\" The husband of twelve sons' worth of wives is being negotiated over like a commodity. The chapter's irony is total: Rachel gets the mandrakes but stays barren; Leah gets the night and conceives. The fertility magic doesn't work — God does."
         }
       }
     },
@@ -250,21 +258,22 @@
             "paragraph": "Barrenness in the ancient world carried social shame — the assumption that divine disfavor caused it. Rachel's \"reproach\" is not personal guilt but social stigma. God's act of remembering is both the removal of the stigma and the answer to the question the previous chapter left open: will Rachel always be barren? No — in God's time."
           }
         ],
-        "ctx": "\"God remembered Rachel\" — after all the mandrakes and surrogates and hired nights, the resolution is a simple statement of divine initiative. The entire chapter's frantic human activity is suddenly revealed as the background against which divine action alone produces the desired result. Joseph's birth is not the product of Rachel's schemes but of God's timing. He will become the most significant of Jacob's sons — Egypt's savior, the dreamer, the type of Christ.",
-        "cross": [
-          {
-            "ref": "Gen 8:1",
-            "note": "God \"remembered\" Noah — the same formula. Divine remembering is action, not mere recollection."
-          },
-          {
-            "ref": "Exod 2:24",
-            "note": "God \"remembered his covenant\" with Abraham, Isaac, and Jacob — the Exodus liberation begins with the same verb."
-          },
-          {
-            "ref": "1 Sam 1:19–20",
-            "note": "God \"remembered\" Hannah — she bears Samuel. The pattern of barren woman → divine remembering → significant son is one of the OT's most repeated structures."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 8:1",
+              "note": "God \"remembered\" Noah — the same formula. Divine remembering is action, not mere recollection."
+            },
+            {
+              "ref": "Exod 2:24",
+              "note": "God \"remembered his covenant\" with Abraham, Isaac, and Jacob — the Exodus liberation begins with the same verb."
+            },
+            {
+              "ref": "1 Sam 1:19–20",
+              "note": "God \"remembered\" Hannah — she bears Samuel. The pattern of barren woman → divine remembering → significant son is one of the OT's most repeated structures."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -337,6 +346,9 @@
               "note": "The NET note on the prosperity formula (wayyifros meod meod) observes this uses the same verb (paras = to spread out, break through) used in 28:14 for the promise to Jacob: \"your descendants will spread out.\" Jacob's prosperity is the first fulfilment of the Bethel promise: he is beginning to \"spread\" in the ways promised. The note connects this to the broader pattern of patriarchal blessing flowing to the nations through Abraham's descendants."
             }
           ]
+        },
+        "hist": {
+          "context": "\"God remembered Rachel\" — after all the mandrakes and surrogates and hired nights, the resolution is a simple statement of divine initiative. The entire chapter's frantic human activity is suddenly revealed as the background against which divine action alone produces the desired result. Joseph's birth is not the product of Rachel's schemes but of God's timing. He will become the most significant of Jacob's sons — Egypt's savior, the dreamer, the type of Christ."
         }
       }
     }

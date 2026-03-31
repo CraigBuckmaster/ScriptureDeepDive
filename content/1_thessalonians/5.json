@@ -43,17 +43,18 @@
             "paragraph": "Paul commands putting on the <em>thōrax</em> (v.8) — the breastplate of faith and love. The armor imagery (echoing Isa 59:17) portrays the Christian life as spiritual warfare requiring divine protection."
           }
         ],
-        "ctx": "The Thessalonians wondered when the day would come. Paul's answer: the timing is unknowable, but readiness is achievable. The thief metaphor was dominical tradition (Matt 24:43; Luke 12:39); Paul applies it consistently. Believers are not in darkness, so the day should not surprise them like a thief.",
-        "cross": [
-          {
-            "ref": "Matt 24:42-44",
-            "note": "Jesus's parable of the thief is the source of Paul's imagery: 'You do not know on what day your Lord will come... the Son of Man will come at an hour when you do not expect him.'"
-          },
-          {
-            "ref": "Eph 6:13-17",
-            "note": "Paul's extended armor metaphor in Ephesians elaborates this brief reference: breastplate of righteousness, shield of faith, helmet of salvation, sword of the Spirit."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 24:42-44",
+              "note": "Jesus's parable of the thief is the source of Paul's imagery: 'You do not know on what day your Lord will come... the Son of Man will come at an hour when you do not expect him.'"
+            },
+            {
+              "ref": "Eph 6:13-17",
+              "note": "Paul's extended armor metaphor in Ephesians elaborates this brief reference: breastplate of righteousness, shield of faith, helmet of salvation, sword of the Spirit."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -130,6 +131,9 @@
               "note": "The section's purpose is pastoral: 'encourage one another' (v.11). Wanamaker emphasizes that eschatology serves paraenesis — future hope shapes present community life."
             }
           ]
+        },
+        "hist": {
+          "context": "The Thessalonians wondered when the day would come. Paul's answer: the timing is unknowable, but readiness is achievable. The thief metaphor was dominical tradition (Matt 24:43; Luke 12:39); Paul applies it consistently. Believers are not in darkness, so the day should not surprise them like a thief."
         }
       }
     },
@@ -165,17 +169,18 @@
             "paragraph": "They must not quench the <em>pneuma</em> (v.19). The Spirit's fire can be dampened by resistance or neglect. Prophecies must be tested, not despised, but the Spirit's work must not be suppressed."
           }
         ],
-        "ctx": "Paul closes with rapid-fire instructions for community life. The staccato rhythm (nineteen imperatives in eleven verses) suggests these may have been a standard early Christian catechesis. Topics range from respecting leaders to testing prophecy to abstaining from evil.",
-        "cross": [
-          {
-            "ref": "Rom 12:9-21",
-            "note": "Paul's series of short exhortations in Romans has a similar rhythm and covers similar ground: love, honor, patience, prayer, generosity."
-          },
-          {
-            "ref": "1 Cor 14:29",
-            "note": "The instruction to 'test' prophecies echoes Paul's concern in Corinth: 'Two or three prophets should speak, and the others should weigh carefully what is said.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 12:9-21",
+              "note": "Paul's series of short exhortations in Romans has a similar rhythm and covers similar ground: love, honor, patience, prayer, generosity."
+            },
+            {
+              "ref": "1 Cor 14:29",
+              "note": "The instruction to 'test' prophecies echoes Paul's concern in Corinth: 'Two or three prophets should speak, and the others should weigh carefully what is said.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -248,6 +253,9 @@
               "note": "The pair 'test everything, hold fast to good, abstain from evil' forms a practical guide for discernment. Neither uncritical acceptance nor blanket rejection — careful evaluation."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul closes with rapid-fire instructions for community life. The staccato rhythm (nineteen imperatives in eleven verses) suggests these may have been a standard early Christian catechesis. Topics range from respecting leaders to testing prophecy to abstaining from evil."
         }
       }
     },
@@ -271,17 +279,18 @@
             "paragraph": "May their 'whole' (<em>holoklēros</em>) spirit, soul, and body be kept blameless. The word emphasizes integrity: every part of the person, with nothing missing or broken."
           }
         ],
-        "ctx": "Paul's benediction returns to the theme of sanctification that opened chapter 4. The prayer is comprehensive: 'whole spirit, soul, and body.' The triad is not a precise anthropological division (Paul uses different categories elsewhere) but an emphatic way of saying 'the whole person.'",
-        "cross": [
-          {
-            "ref": "Phil 1:6",
-            "note": "Paul's confidence that 'he who began a good work in you will carry it on to completion' echoes the assurance here that 'the one who calls you is faithful, and he will do it.'"
-          },
-          {
-            "ref": "Jude 24-25",
-            "note": "Jude's benediction similarly celebrates God's power 'to keep you from stumbling and to present you before his glorious presence without fault.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Phil 1:6",
+              "note": "Paul's confidence that 'he who began a good work in you will carry it on to completion' echoes the assurance here that 'the one who calls you is faithful, and he will do it.'"
+            },
+            {
+              "ref": "Jude 24-25",
+              "note": "Jude's benediction similarly celebrates God's power 'to keep you from stumbling and to present you before his glorious presence without fault.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -354,6 +363,9 @@
               "note": "The adjuration (enorkizō) is solemn — Paul 'charges' them in the Lord's name. Wanamaker suggests some in the community might have been marginalized; Paul ensures all hear the letter."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul's benediction returns to the theme of sanctification that opened chapter 4. The prayer is comprehensive: 'whole spirit, soul, and body.' The triad is not a precise anthropological division (Paul uses different categories elsewhere) but an emphatic way of saying 'the whole person.'"
         }
       }
     }

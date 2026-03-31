@@ -31,25 +31,26 @@
             "paragraph": "The promise to send 'the prophet Elijah' (ʼEliyyah hannaviʼ, 4:5) before 'the great and dreadful day of the LORD' is the final prophetic word of the Old Testament in the Christian canonical order. Elijah, who was taken to heaven without dying (2 Kgs 2:11), is the only named individual whose return is prophesied. His mission is reconciliation: 'He will turn the hearts of the parents to their children, and the hearts of the children to their parents' (4:6). The New Testament identifies this Elijah figure with John the Baptist (Matt 11:14; 17:10-13; Luke 1:17), while Jewish tradition associates Elijah with the messianic age and assigns him a place at the Passover table."
           }
         ],
-        "ctx": "Malachi 4 (3:19-24 in the Hebrew text) is the conclusion of both Malachi and, in the Christian canonical order, of the entire Old Testament prophetic corpus. The chapter divides into three units: the Day of the LORD as furnace fire (4:1), the sun of righteousness rising for the faithful (4:2-3), and the closing commandments to remember Moses' law and expect Elijah's return (4:4-6). The day that 'burns like a furnace' (4:1) continues the refining imagery of 3:2-3 but intensifies it: the arrogant and evildoers will become 'stubble' consumed completely. For the God-fearers, the same day brings not destruction but healing: the 'sun of righteousness' rises with 'healing in its rays,' and they go out and 'frolic like well-fed calves' (4:2) — an image of exuberant liberation. The book closes with two imperatives: remember Moses' torah (4:4) and expect Elijah's return (4:5-6). These two commands bridge backward (to the law-giving at Sinai/Horeb) and forward (to the eschatological day), encapsulating the entire span of Israel's faith: Torah obedience in the present, prophetic hope for the future.",
-        "cross": [
-          {
-            "ref": "Matthew 11:14",
-            "note": "Jesus identifies John the Baptist as 'the Elijah who was to come,' explicitly connecting Malachi 4:5's prophecy to the Baptist's ministry of preparation."
-          },
-          {
-            "ref": "Luke 1:17",
-            "note": "The angel Gabriel announces that John will go before the Lord 'in the spirit and power of Elijah, to turn the hearts of the parents to their children' — directly citing Malachi 4:6."
-          },
-          {
-            "ref": "2 Kings 2:11",
-            "note": "Elijah's bodily ascension to heaven in a chariot of fire provides the narrative basis for the expectation of his return: having never died, he is uniquely available for re-entry into history."
-          },
-          {
-            "ref": "Matthew 17:10-13",
-            "note": "After the Transfiguration, Jesus explains that 'Elijah has already come' in the person of John the Baptist, confirming Malachi's prophecy while redefining its scope."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matthew 11:14",
+              "note": "Jesus identifies John the Baptist as 'the Elijah who was to come,' explicitly connecting Malachi 4:5's prophecy to the Baptist's ministry of preparation."
+            },
+            {
+              "ref": "Luke 1:17",
+              "note": "The angel Gabriel announces that John will go before the Lord 'in the spirit and power of Elijah, to turn the hearts of the parents to their children' — directly citing Malachi 4:6."
+            },
+            {
+              "ref": "2 Kings 2:11",
+              "note": "Elijah's bodily ascension to heaven in a chariot of fire provides the narrative basis for the expectation of his return: having never died, he is uniquely available for re-entry into history."
+            },
+            {
+              "ref": "Matthew 17:10-13",
+              "note": "After the Transfiguration, Jesus explains that 'Elijah has already come' in the person of John the Baptist, confirming Malachi's prophecy while redefining its scope."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -126,6 +127,9 @@
               "note": "Hill reads the closing verses as a 'canonical epilogue' designed to position Malachi at the intersection of Torah and prophecy, law and eschatology. The command to remember Moses anchors the community in covenant obligation; the promise of Elijah opens the horizon to eschatological restoration. Hill notes that the final word of the Hebrew Bible in the Christian canon is cherem ('curse/destruction'), creating an ominous tension that only the New Testament's arrival of John the Baptist and Christ can resolve."
             }
           ]
+        },
+        "hist": {
+          "context": "Malachi 4 (3:19-24 in the Hebrew text) is the conclusion of both Malachi and, in the Christian canonical order, of the entire Old Testament prophetic corpus. The chapter divides into three units: the Day of the LORD as furnace fire (4:1), the sun of righteousness rising for the faithful (4:2-3), and the closing commandments to remember Moses' law and expect Elijah's return (4:4-6). The day that 'burns like a furnace' (4:1) continues the refining imagery of 3:2-3 but intensifies it: the arrogant and evildoers will become 'stubble' consumed completely. For the God-fearers, the same day brings not destruction but healing: the 'sun of righteousness' rises with 'healing in its rays,' and they go out and 'frolic like well-fed calves' (4:2) — an image of exuberant liberation. The book closes with two imperatives: remember Moses' torah (4:4) and expect Elijah's return (4:5-6). These two commands bridge backward (to the law-giving at Sinai/Horeb) and forward (to the eschatological day), encapsulating the entire span of Israel's faith: Torah obedience in the present, prophetic hope for the future."
         }
       }
     }

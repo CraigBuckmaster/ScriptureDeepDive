@@ -31,21 +31,22 @@
             "paragraph": "The priest's verdict is a binary ritual declaration, not a medical diagnosis. The same physical condition may be declared clean or unclean depending on its appearance, spread, and associated signs. The criteria are liturgical, not pathological."
           }
         ],
-        "ctx": "Leviticus 13 is the longest chapter in the book (59 verses) — a detailed diagnostic manual for the priest examining skin conditions. The logic throughout is consistent: a condition that has completely turned white and is not spreading may be clean (completeness even in the extreme = the skin has reached a stable state); a raw patch, spreading discolouration, or white hair in the mark = unclean. The person must present themselves twice (after seven days, sometimes a second seven days) before a final verdict is given. If declared unclean, the person tears their clothes, leaves hair dishevelled, covers their upper lip, and calls out \"Unclean! Unclean!\" — they are quarantined outside the camp.",
-        "cross": [
-          {
-            "ref": "Luke 17:11–19",
-            "note": "\"Ten men who had leprosy met him. They called out in a loud voice, 'Jesus, Master, have pity on us!' When he saw them, he said, 'Go, show yourselves to the priests.'\" Jesus follows the Levitical procedure — the priest's declaration of clean is required for re-entry into community. He fulfils, not abolishes, the system."
-          },
-          {
-            "ref": "Num 12:9–15",
-            "note": "Miriam struck with ṣāraʿat for speaking against Moses — quarantined outside the camp for seven days, then readmitted. The entire nation waited for her (v.15). The social dimension of the purity law: the community halts for one member's restoration."
-          },
-          {
-            "ref": "Isa 53:4",
-            "note": "\"Surely he took up our pain and bore our suffering, yet we considered him punished by God, stricken by him, and afflicted.\" The Servant's suffering is described using ṣāraʿat language — \"stricken\" (nāgûaʿ) is the word for the ṣāraʿat-sufferer. Christ bears the ultimate exile."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 17:11–19",
+              "note": "\"Ten men who had leprosy met him. They called out in a loud voice, 'Jesus, Master, have pity on us!' When he saw them, he said, 'Go, show yourselves to the priests.'\" Jesus follows the Levitical procedure — the priest's declaration of clean is required for re-entry into community. He fulfils, not abolishes, the system."
+            },
+            {
+              "ref": "Num 12:9–15",
+              "note": "Miriam struck with ṣāraʿat for speaking against Moses — quarantined outside the camp for seven days, then readmitted. The entire nation waited for her (v.15). The social dimension of the purity law: the community halts for one member's restoration."
+            },
+            {
+              "ref": "Isa 53:4",
+              "note": "\"Surely he took up our pain and bore our suffering, yet we considered him punished by God, stricken by him, and afflicted.\" The Servant's suffering is described using ṣāraʿat language — \"stricken\" (nāgûaʿ) is the word for the ṣāraʿat-sufferer. Christ bears the ultimate exile."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -97,6 +98,9 @@
               "note": "Milgrom: The ṣāraʿat-sufferer's required appearance (torn garment, loosened hair, covered lip) mirrors the mourning rituals of the bereaved. Milgrom's observation: the ṣāraʿat-sufferer is treated as one who is socially dead — excluded from the living community. This confirms the link between impurity and death that runs through Lev 11–15."
             }
           ]
+        },
+        "hist": {
+          "context": "Leviticus 13 is the longest chapter in the book (59 verses) — a detailed diagnostic manual for the priest examining skin conditions. The logic throughout is consistent: a condition that has completely turned white and is not spreading may be clean (completeness even in the extreme = the skin has reached a stable state); a raw patch, spreading discolouration, or white hair in the mark = unclean. The person must present themselves twice (after seven days, sometimes a second seven days) before a final verdict is given. If declared unclean, the person tears their clothes, leaves hair dishevelled, covers their upper lip, and calls out \"Unclean! Unclean!\" — they are quarantined outside the camp."
         }
       }
     },
@@ -114,17 +118,18 @@
             "paragraph": "The same term applied to skin disease is used for spreading mould/mildew on fabric (vv.47–59) and on buildings (Lev 14:33–57). Ṣāraʿat is not a single disease but a category: spreading, boundary-violating contamination in skin, fabric, or stone."
           }
         ],
-        "ctx": "The chapter extends the ṣāraʿat category from human skin to fabric and leather — woolly garments, linen items, and leather goods. The diagnostic process mirrors the skin disease procedure: quarantine for seven days (v.50), re-examine, wash if the spread has stopped, re-quarantine a second seven days if ambiguous, burn if it spreads. The application of ṣāraʿat to inanimate objects confirms that it is a ritual category (boundary-violating contamination) rather than a medical one.",
-        "cross": [
-          {
-            "ref": "Rev 3:4",
-            "note": "\"You have a few people in Sardis who have not soiled their garments; they will walk with me, dressed in white, for they are worthy.\" The language of pure/soiled garments extends the Levitical fabric-purity metaphor into the NT eschatological register."
-          },
-          {
-            "ref": "Jude 23",
-            "note": "\"Save others by snatching them from the fire; to others show mercy, mixed with fear — hating even the clothing stained by corrupted flesh.\" Jude borrows the ṣāraʿat-in-fabric logic to describe moral contamination."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rev 3:4",
+              "note": "\"You have a few people in Sardis who have not soiled their garments; they will walk with me, dressed in white, for they are worthy.\" The language of pure/soiled garments extends the Levitical fabric-purity metaphor into the NT eschatological register."
+            },
+            {
+              "ref": "Jude 23",
+              "note": "\"Save others by snatching them from the fire; to others show mercy, mixed with fear — hating even the clothing stained by corrupted flesh.\" Jude borrows the ṣāraʿat-in-fabric logic to describe moral contamination."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -184,6 +189,9 @@
               "note": "Milgrom: The ritual prescriptions for skin diseases reflect a coherent priestly symbolic system. The gradations of holiness and offering type form an internally consistent theology of sacred space and divine access."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter extends the ṣāraʿat category from human skin to fabric and leather — woolly garments, linen items, and leather goods. The diagnostic process mirrors the skin disease procedure: quarantine for seven days (v.50), re-examine, wash if the spread has stopped, re-quarantine a second seven days if ambiguous, burn if it spreads. The application of ṣāraʿat to inanimate objects confirms that it is a ritual category (boundary-violating contamination) rather than a medical one."
         }
       }
     }

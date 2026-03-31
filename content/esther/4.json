@@ -25,18 +25,22 @@
             "paragraph": "Mordecai puts on sackcloth and ashes and goes into the city \"wailing loudly and bitterly.\" The mourning is public and extreme. No one entering the king’s gate may wear sackcloth (v.2) — grief is forbidden at the threshold of power. The palace excludes the very emotion the crisis demands."
           }
         ],
-        "hist": "\"In every province to which the edict and order of the king came, there was great mourning among the Jews, with fasting, weeping and wailing. Many lay in sackcloth and ashes\" (v.3). The mourning is empire-wide. The Jewish community’s only weapon is grief — and in a book without God’s name, grief directed at whom?",
-        "ctx": "Esther learns of the decree through intermediaries. She sends clothes to Mordecai (he refuses them) and then sends Hathak to find out what is happening. The layered communication — Esther → Hathak → Mordecai → Hathak → Esther — mirrors the concealment theme: even the queen cannot communicate directly with her guardian.",
-        "cross": [
-          {
-            "ref": "Joel 1:13–14",
-            "note": "\"Put on sackcloth and mourn, you priests\" — the prophetic pattern of communal lament."
-          },
-          {
-            "ref": "Dan 9:3",
-            "note": "Daniel’s response to crisis: prayer with fasting, sackcloth, and ashes."
-          }
-        ],
+        "hist": {
+          "historical": "\"In every province to which the edict and order of the king came, there was great mourning among the Jews, with fasting, weeping and wailing. Many lay in sackcloth and ashes\" (v.3). The mourning is empire-wide. The Jewish community’s only weapon is grief — and in a book without God’s name, grief directed at whom?",
+          "context": "Esther learns of the decree through intermediaries. She sends clothes to Mordecai (he refuses them) and then sends Hathak to find out what is happening. The layered communication — Esther → Hathak → Mordecai → Hathak → Esther — mirrors the concealment theme: even the queen cannot communicate directly with her guardian."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Joel 1:13–14",
+              "note": "\"Put on sackcloth and mourn, you priests\" — the prophetic pattern of communal lament."
+            },
+            {
+              "ref": "Dan 9:3",
+              "note": "Daniel’s response to crisis: prayer with fasting, sackcloth, and ashes."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -112,22 +116,26 @@
             "paragraph": "\"If I perish, I perish\" (kaʾăšer ʾāḇadətî ʾāḇāḏtî). Esther accepts the possibility of death without any guarantee of deliverance. This is faith without assurance — the most radical form. She does not say \"God will save me.\" She says \"If I die, I die.\""
           }
         ],
-        "hist": "Persian law forbade unsummoned approach to the king under penalty of death (v.11). The only exception: the king extends his golden sceptre. Esther has not been summoned for thirty days. Her approach is genuinely life-threatening — this is not rhetorical drama but real danger.",
-        "ctx": "The exchange between Mordecai and Esther is the theological centre of the book. Mordecai’s argument has three parts: (1) don’t think you’ll escape — being in the palace won’t save you (v.13); (2) deliverance will arise \"from another place\" even if you refuse — God’s purpose cannot be thwarted (v.14a); (3) \"who knows?\" — perhaps this is why you’re here (v.14b). The argument moves from warning to theology to vocation. Esther’s response moves from fear to resolve: \"If I perish, I perish.\"",
-        "cross": [
-          {
-            "ref": "Exod 4:10–16",
-            "note": "Moses’ reluctance and God’s insistence — the calling-and-resistance pattern."
-          },
-          {
-            "ref": "Dan 3:16–18",
-            "note": "Shadrach, Meshach, Abednego: \"our God is able to deliver us... but even if he does not\" — the same faith-without-guarantee."
-          },
-          {
-            "ref": "Luke 22:42",
-            "note": "\"Not my will, but yours be done\" — the ultimate expression of submission to uncertain outcomes."
-          }
-        ],
+        "hist": {
+          "historical": "Persian law forbade unsummoned approach to the king under penalty of death (v.11). The only exception: the king extends his golden sceptre. Esther has not been summoned for thirty days. Her approach is genuinely life-threatening — this is not rhetorical drama but real danger.",
+          "context": "The exchange between Mordecai and Esther is the theological centre of the book. Mordecai’s argument has three parts: (1) don’t think you’ll escape — being in the palace won’t save you (v.13); (2) deliverance will arise \"from another place\" even if you refuse — God’s purpose cannot be thwarted (v.14a); (3) \"who knows?\" — perhaps this is why you’re here (v.14b). The argument moves from warning to theology to vocation. Esther’s response moves from fear to resolve: \"If I perish, I perish.\""
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 4:10–16",
+              "note": "Moses’ reluctance and God’s insistence — the calling-and-resistance pattern."
+            },
+            {
+              "ref": "Dan 3:16–18",
+              "note": "Shadrach, Meshach, Abednego: \"our God is able to deliver us... but even if he does not\" — the same faith-without-guarantee."
+            },
+            {
+              "ref": "Luke 22:42",
+              "note": "\"Not my will, but yours be done\" — the ultimate expression of submission to uncertain outcomes."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

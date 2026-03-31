@@ -31,25 +31,26 @@
             "paragraph": "The east gate of the inner court opens only on Sabbaths and new moons for the prince's worship. On the six working days it remains shut. This regulated opening creates a liturgical rhythm: the gate's status marks sacred time. The prince stands at the gatepost while the priests officiate, then worships at the threshold. He enters the vestibule from outside but never passes through the gate itself."
           }
         ],
-        "ctx": "The inner east gate remains shut during the six working days but opens on Sabbaths and new moons for the prince's worship. The prince enters the gate vestibule from the outer court and stands at the gatepost while the Zadokite priests offer his burnt offerings and fellowship offerings. He worships at the threshold and then withdraws; the gate remains open until evening. The people also worship at the entrance of the gate on Sabbaths and new moons. The Sabbath offering is six lambs and a ram (with grain offerings of one ephah per ram, and 'as much as he wishes' for the lambs), while the new moon offering adds a young bull. A unique traffic regulation governs festival processions: worshipers who enter by the north gate must exit by the south gate, and vice versa, ensuring a continuous flow and preventing congestion. The daily offering is a year-old lamb each morning with a grain offering of one-sixth ephah and one-third hin of oil. This tamid (continual offering) anchors the daily worship cycle.",
-        "cross": [
-          {
-            "ref": "Num 28:9-10",
-            "note": "The Mosaic Sabbath offering was two male lambs. Ezekiel's prescription of six lambs and a ram represents a significant expansion, reflecting the greater glory of the eschatological temple."
-          },
-          {
-            "ref": "Ezek 44:3",
-            "note": "The prince's position at the east gate was introduced in 44:3, where he eats bread before YHWH in the gate vestibule. Chapter 46 elaborates his liturgical role at this same location."
-          },
-          {
-            "ref": "Exod 29:38-42",
-            "note": "The daily tamid offering of two lambs (morning and evening). Ezekiel prescribes only a morning lamb, possibly simplifying the tradition or reflecting a different practice."
-          },
-          {
-            "ref": "Ps 100:4",
-            "note": "Enter His gates with thanksgiving and His courts with praise. The regulated processional flow of 46:9-10 embodies this psalm's vision of ordered, joyful approach to God's presence."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 28:9-10",
+              "note": "The Mosaic Sabbath offering was two male lambs. Ezekiel's prescription of six lambs and a ram represents a significant expansion, reflecting the greater glory of the eschatological temple."
+            },
+            {
+              "ref": "Ezek 44:3",
+              "note": "The prince's position at the east gate was introduced in 44:3, where he eats bread before YHWH in the gate vestibule. Chapter 46 elaborates his liturgical role at this same location."
+            },
+            {
+              "ref": "Exod 29:38-42",
+              "note": "The daily tamid offering of two lambs (morning and evening). Ezekiel prescribes only a morning lamb, possibly simplifying the tradition or reflecting a different practice."
+            },
+            {
+              "ref": "Ps 100:4",
+              "note": "Enter His gates with thanksgiving and His courts with praise. The regulated processional flow of 46:9-10 embodies this psalm's vision of ordered, joyful approach to God's presence."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "Zimmerli classifies this section as Gottesdienstordnung (worship ordinance) and notes the tension between fixed and voluntary elements. The mandated Sabbath and new moon offerings represent institutional worship; the freewill offering in v. 12 preserves space for spontaneous devotion. Zimmerli identifies the daily tamid prescription (vv. 13-15) as a later addition to the original Sabbath/new moon legislation, reflecting the post-exilic community's standardization of daily worship."
             }
           ]
+        },
+        "hist": {
+          "context": "The inner east gate remains shut during the six working days but opens on Sabbaths and new moons for the prince's worship. The prince enters the gate vestibule from the outer court and stands at the gatepost while the Zadokite priests offer his burnt offerings and fellowship offerings. He worships at the threshold and then withdraws; the gate remains open until evening. The people also worship at the entrance of the gate on Sabbaths and new moons. The Sabbath offering is six lambs and a ram (with grain offerings of one ephah per ram, and 'as much as he wishes' for the lambs), while the new moon offering adds a young bull. A unique traffic regulation governs festival processions: worshipers who enter by the north gate must exit by the south gate, and vice versa, ensuring a continuous flow and preventing congestion. The daily offering is a year-old lamb each morning with a grain offering of one-sixth ephah and one-third hin of oil. This tamid (continual offering) anchors the daily worship cycle."
         }
       }
     },
@@ -135,21 +139,22 @@
             "paragraph": "The prince's nachalah (inheritance) may be gifted to his sons and remains within the family permanently. If he gifts land to a servant, however, it reverts to the prince in the year of liberty (shenat haddror, the Jubilee). This prevents the permanent alienation of princely territory. Critically, the prince may not seize land from the people's inheritance (nachalat ha-am), preventing the royal land-grabbing that characterized the monarchy (cf. 1 Kgs 21, Naboth's vineyard)."
           }
         ],
-        "ctx": "This brief unit establishes land-inheritance regulations for the prince. The prince may grant portions of his territory to his sons as a permanent inheritance, maintaining dynastic stability. Gifts to servants, however, revert to the prince in the year of liberty (the Jubilee), preventing permanent alienation of royal land to non-family members. The critical prohibition is negative: the prince may not take any of the people's inheritance, pushing them off their property. This directly addresses the abuse exemplified by Ahab's seizure of Naboth's vineyard (1 Kgs 21) and the systemic land-grabbing condemned by Isaiah (Isa 5:8). The prince must give his sons' inheritance only from his own holdings. This legislation anchors the anti-oppression principle announced in 45:8-9 in concrete property law.",
-        "cross": [
-          {
-            "ref": "Lev 25:8-17",
-            "note": "The Jubilee legislation requires the return of ancestral land every fifty years. Ezekiel's year of liberty (shenat haddror) adapts this principle for the prince's land grants to servants."
-          },
-          {
-            "ref": "1 Kgs 21:1-16",
-            "note": "Ahab's seizure of Naboth's vineyard through Jezebel's conspiracy. Ezekiel's prohibition directly addresses this type of royal land-grabbing."
-          },
-          {
-            "ref": "Isa 5:8",
-            "note": "Woe to those who add house to house and field to field until there is no space left. Ezekiel's property law prevents the latifundia system that concentrated land in the hands of the powerful."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 25:8-17",
+              "note": "The Jubilee legislation requires the return of ancestral land every fifty years. Ezekiel's year of liberty (shenat haddror) adapts this principle for the prince's land grants to servants."
+            },
+            {
+              "ref": "1 Kgs 21:1-16",
+              "note": "Ahab's seizure of Naboth's vineyard through Jezebel's conspiracy. Ezekiel's prohibition directly addresses this type of royal land-grabbing."
+            },
+            {
+              "ref": "Isa 5:8",
+              "note": "Woe to those who add house to house and field to field until there is no space left. Ezekiel's property law prevents the latifundia system that concentrated land in the hands of the powerful."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -198,6 +203,9 @@
               "note": "Zimmerli sees this unit as a Nasi-Ordnung (prince ordinance) that addresses the most dangerous abuse of monarchic power: land confiscation. He notes that the vocabulary of nachalah (inheritance) ties this passage to the broader Deuteronomistic theology of land as divine gift that no human authority may permanently redistribute."
             }
           ]
+        },
+        "hist": {
+          "context": "This brief unit establishes land-inheritance regulations for the prince. The prince may grant portions of his territory to his sons as a permanent inheritance, maintaining dynastic stability. Gifts to servants, however, revert to the prince in the year of liberty (the Jubilee), preventing permanent alienation of royal land to non-family members. The critical prohibition is negative: the prince may not take any of the people's inheritance, pushing them off their property. This directly addresses the abuse exemplified by Ahab's seizure of Naboth's vineyard (1 Kgs 21) and the systemic land-grabbing condemned by Isaiah (Isa 5:8). The prince must give his sons' inheritance only from his own holdings. This legislation anchors the anti-oppression principle announced in 45:8-9 in concrete property law."
         }
       }
     },
@@ -215,21 +223,22 @@
             "paragraph": "The mevashshot (from b-sh-l, 'to boil, cook') are located in the four corners of the outer court, each measuring 40 by 30 cubits with rows of stonework around the base for fires. These kitchens serve a specific function: the priests boil the guilt offering (asham) and sin offering (chattat) and bake the grain offering (minchah) in them, so that they do not need to bring the holy offerings into the outer court and inadvertently 'sanctify the people' (v. 20). The sanctification concern echoes 44:19 — holy objects transfer holiness to whatever they contact, which would impose ritual obligations on unprepared laypersons."
           }
         ],
-        "ctx": "The guide leads Ezekiel through two sets of kitchens. The first set is located in the western end of the priestly chambers along the inner court, where the priests cook the guilt offering, sin offering, and grain offering. These remain within the priestly zone to prevent holy offerings from being carried into the outer court and inadvertently sanctifying the common people through contact. The second set consists of four enclosed courts in the four corners of the outer court, each 40 by 30 cubits. These are where the temple servants (Levites) boil the people's sacrifices — specifically the fellowship offerings, of which the worshiper eats a portion. The distinction between the two kitchen systems reflects the graded holiness of the offerings: the most holy offerings (sin, guilt, grain) are prepared in the inner, priestly kitchens; the lesser holy offerings (fellowship) are prepared in the outer, Levitical kitchens. This seemingly mundane architectural detail powerfully illustrates Ezekiel's central principle: holiness requires spatial organization.",
-        "cross": [
-          {
-            "ref": "Lev 6:24-30",
-            "note": "The sin offering regulations specify that it must be eaten in the holy place by the priests. Ezekiel's priestly kitchens provide the architectural infrastructure for this requirement."
-          },
-          {
-            "ref": "Ezek 44:19",
-            "note": "The priests must change garments when moving from the inner court to the outer court to avoid sanctifying the people. The separate kitchen systems serve the same holiness-management purpose."
-          },
-          {
-            "ref": "1 Sam 2:13-14",
-            "note": "The wicked practice of Eli's sons, who took the best portions of sacrificial meat for themselves. Ezekiel's regulated kitchen system eliminates the opportunity for such priestly corruption."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 6:24-30",
+              "note": "The sin offering regulations specify that it must be eaten in the holy place by the priests. Ezekiel's priestly kitchens provide the architectural infrastructure for this requirement."
+            },
+            {
+              "ref": "Ezek 44:19",
+              "note": "The priests must change garments when moving from the inner court to the outer court to avoid sanctifying the people. The separate kitchen systems serve the same holiness-management purpose."
+            },
+            {
+              "ref": "1 Sam 2:13-14",
+              "note": "The wicked practice of Eli's sons, who took the best portions of sacrificial meat for themselves. Ezekiel's regulated kitchen system eliminates the opportunity for such priestly corruption."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -282,6 +291,9 @@
               "note": "Zimmerli identifies this unit as a Tempelbaunotiz (temple construction note) that completes the tour of the sacred complex begun in chapter 40. The graded kitchen system reflects the same priestly theology of spatial holiness that governs the entire vision. Zimmerli notes that the detailed attention to cooking facilities is unusual in visionary literature and suggests a practical, operational orientation — the temple is not merely a symbol but a functioning institution."
             }
           ]
+        },
+        "hist": {
+          "context": "The guide leads Ezekiel through two sets of kitchens. The first set is located in the western end of the priestly chambers along the inner court, where the priests cook the guilt offering, sin offering, and grain offering. These remain within the priestly zone to prevent holy offerings from being carried into the outer court and inadvertently sanctifying the common people through contact. The second set consists of four enclosed courts in the four corners of the outer court, each 40 by 30 cubits. These are where the temple servants (Levites) boil the people's sacrifices — specifically the fellowship offerings, of which the worshiper eats a portion. The distinction between the two kitchen systems reflects the graded holiness of the offerings: the most holy offerings (sin, guilt, grain) are prepared in the inner, priestly kitchens; the lesser holy offerings (fellowship) are prepared in the outer, Levitical kitchens. This seemingly mundane architectural detail powerfully illustrates Ezekiel's central principle: holiness requires spatial organization."
         }
       }
     }

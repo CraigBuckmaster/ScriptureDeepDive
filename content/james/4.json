@@ -37,21 +37,22 @@
             "paragraph": "Humble yourselves before the Lord, and he will exalt you."
           }
         ],
-        "ctx": "James diagnoses the source of community conflict: unchecked desires. The solution is radical: submit to God, resist the devil, draw near to God.",
-        "cross": [
-          {
-            "ref": "1 John 2:15-17",
-            "note": "Do not love the world or the things in the world."
-          },
-          {
-            "ref": "1 Peter 5:5-6",
-            "note": "God opposes the proud but gives grace to the humble."
-          },
-          {
-            "ref": "Proverbs 3:34",
-            "note": "The LORD mocks the proud but gives favor to the humble."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 John 2:15-17",
+              "note": "Do not love the world or the things in the world."
+            },
+            {
+              "ref": "1 Peter 5:5-6",
+              "note": "God opposes the proud but gives grace to the humble."
+            },
+            {
+              "ref": "Proverbs 3:34",
+              "note": "The LORD mocks the proud but gives favor to the humble."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -113,7 +114,10 @@
             }
           ]
         },
-        "hist": "James writes to 'the twelve tribes in the Dispersion' — Jewish Christians scattered throughout the Roman Empire after persecution in Jerusalem (Acts 8:1; 11:19). The letter reflects the earliest stage of Christianity when believers still gathered in synagogues (2:2, Greek synagōgē). James, the brother of Jesus, led the Jerusalem church (Acts 15; Gal 2:9) until his martyrdom in AD 62. His letter addresses practical concerns: economic disparity between rich and poor, the relationship between faith and works, and the power of the tongue. The wisdom tradition of Judaism pervades the letter, echoing Proverbs and Jesus' Sermon on the Mount. The agricultural imagery (1:11; 3:12; 5:7) and references to early and late rains reflect the Palestinian context."
+        "hist": {
+          "historical": "James writes to 'the twelve tribes in the Dispersion' — Jewish Christians scattered throughout the Roman Empire after persecution in Jerusalem (Acts 8:1; 11:19). The letter reflects the earliest stage of Christianity when believers still gathered in synagogues (2:2, Greek synagōgē). James, the brother of Jesus, led the Jerusalem church (Acts 15; Gal 2:9) until his martyrdom in AD 62. His letter addresses practical concerns: economic disparity between rich and poor, the relationship between faith and works, and the power of the tongue. The wisdom tradition of Judaism pervades the letter, echoing Proverbs and Jesus' Sermon on the Mount. The agricultural imagery (1:11; 3:12; 5:7) and references to early and late rains reflect the Palestinian context.",
+          "context": "James diagnoses the source of community conflict: unchecked desires. The solution is radical: submit to God, resist the devil, draw near to God."
+        }
       }
     },
     {
@@ -142,21 +146,22 @@
             "paragraph": "You boast in your arrogance. All such boasting is evil."
           }
         ],
-        "ctx": "James addresses two sins: judging brothers and presumptuous planning. Life is a vapor. Right planning acknowledges if the Lord wills.",
-        "cross": [
-          {
-            "ref": "Matthew 7:1-5",
-            "note": "Judge not, that you be not judged."
-          },
-          {
-            "ref": "Proverbs 27:1",
-            "note": "Do not boast about tomorrow."
-          },
-          {
-            "ref": "Luke 12:16-21",
-            "note": "The parable of the rich fool."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matthew 7:1-5",
+              "note": "Judge not, that you be not judged."
+            },
+            {
+              "ref": "Proverbs 27:1",
+              "note": "Do not boast about tomorrow."
+            },
+            {
+              "ref": "Luke 12:16-21",
+              "note": "The parable of the rich fool."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -217,6 +222,9 @@
               "note": "McCartney connects this to the wisdom theme. Planning without God is earthly wisdom."
             }
           ]
+        },
+        "hist": {
+          "context": "James addresses two sins: judging brothers and presumptuous planning. Life is a vapor. Right planning acknowledges if the Lord wills."
         }
       }
     }

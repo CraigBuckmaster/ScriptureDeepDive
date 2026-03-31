@@ -31,18 +31,22 @@
             "paragraph": "Eliashib the high priest and the priests \"consecrated\" (qiddəšû) the Sheep Gate after building it. They did not merely construct — they dedicated. The wall is not just a defensive structure but a sacred boundary."
           }
         ],
-        "hist": "The list assigns 42 construction sections proceeding counterclockwise from the Sheep Gate (northeast corner). Builders include the high priest, district rulers, perfume-makers, goldsmiths, merchants, daughters (3:12), and temple servants. The cross-section of society is remarkable: no class is exempt from physical labour.",
-        "ctx": "The chapter reads like a roster but functions as theology: the wall is built by the entire community, each family responsible for a section. There is no professional construction crew. The wall belongs to everyone because everyone builds it. This is covenant participation made physical.",
-        "cross": [
-          {
-            "ref": "1 Cor 12:12–27",
-            "note": "The body metaphor: each part contributes. Nehemiah 3 is the OT architectural equivalent."
-          },
-          {
-            "ref": "Exod 35–36",
-            "note": "The tabernacle built by skilled volunteers from every family — the same pattern."
-          }
-        ],
+        "hist": {
+          "historical": "The list assigns 42 construction sections proceeding counterclockwise from the Sheep Gate (northeast corner). Builders include the high priest, district rulers, perfume-makers, goldsmiths, merchants, daughters (3:12), and temple servants. The cross-section of society is remarkable: no class is exempt from physical labour.",
+          "context": "The chapter reads like a roster but functions as theology: the wall is built by the entire community, each family responsible for a section. There is no professional construction crew. The wall belongs to everyone because everyone builds it. This is covenant participation made physical."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 12:12–27",
+              "note": "The body metaphor: each part contributes. Nehemiah 3 is the OT architectural equivalent."
+            },
+            {
+              "ref": "Exod 35–36",
+              "note": "The tabernacle built by skilled volunteers from every family — the same pattern."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -132,13 +136,14 @@
             "paragraph": "Several sections use ḥēzîq (\"repaired/strengthened\") rather than bānâ (\"built\"), suggesting these sections needed reinforcement rather than complete reconstruction. The distinction implies careful assessment — some sections were salvageable."
           }
         ],
-        "ctx": "The list completes the circuit: Fountain Gate → Dung Gate → Water Gate → Horse Gate → back to the Sheep Gate (v.32). The wall is a circle, and the chapter traces the full perimeter. The literary structure mirrors the physical structure: a complete circuit of names completing a complete circuit of stone.",
-        "cross": [
-          {
-            "ref": "Neh 12:31–40",
-            "note": "The dedication procession later follows the same route in reverse — walking on what they built."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Neh 12:31–40",
+              "note": "The dedication procession later follows the same route in reverse — walking on what they built."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -211,6 +216,9 @@
               "note": "Kidner: \"The list ends where it began — at the Sheep Gate. The circle is closed. In the text as on the ground, the wall is complete.\""
             }
           ]
+        },
+        "hist": {
+          "context": "The list completes the circuit: Fountain Gate → Dung Gate → Water Gate → Horse Gate → back to the Sheep Gate (v.32). The wall is a circle, and the chapter traces the full perimeter. The literary structure mirrors the physical structure: a complete circuit of names completing a complete circuit of stone."
         }
       }
     }

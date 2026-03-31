@@ -31,21 +31,22 @@
             "paragraph": "Moses anticipates the psychological resistance to the release year. The \"wicked thought\" (beliyaal in the heart) is the rationalization of selfishness masquerading as prudence. Deuteronomy is a manual for the internal life, not just external behavior."
           }
         ],
-        "ctx": "Chapter 15 contains three linked provisions: the seventh-year debt cancellation (vv.1–11), the release of Hebrew slaves in the seventh year (vv.12–18), and the firstborn animal laws (vv.19–23). All three reflect the same theology: Israel was enslaved in Egypt, God freed them, therefore Israel must not enslave its own members permanently. The Exodus is the ground of all social justice legislation in Deuteronomy. Moses not only commands generosity — he anticipates and addresses the psychology of resistance.",
-        "cross": [
-          {
-            "ref": "Luke 4:18–19",
-            "note": "\"He has sent me to proclaim freedom for the prisoners... to proclaim the year of the Lord's favour.\" Jesus' inaugural sermon reads his ministry as the fulfilment of the shemita and Jubilee — the ultimate release year."
-          },
-          {
-            "ref": "Matt 18:23–35",
-            "note": "The parable of the unmerciful servant is a Deuteronomy 15 meditation: a slave is forgiven an enormous debt, then refuses to forgive a small debt owed to him. You who have been released must release others."
-          },
-          {
-            "ref": "2 Cor 8:9",
-            "note": "\"For you know the grace of our Lord Jesus Christ, that though he was rich, yet for your sake he became poor, so that you through his poverty might become rich.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 4:18–19",
+              "note": "\"He has sent me to proclaim freedom for the prisoners... to proclaim the year of the Lord's favour.\" Jesus' inaugural sermon reads his ministry as the fulfilment of the shemita and Jubilee — the ultimate release year."
+            },
+            {
+              "ref": "Matt 18:23–35",
+              "note": "The parable of the unmerciful servant is a Deuteronomy 15 meditation: a slave is forgiven an enormous debt, then refuses to forgive a small debt owed to him. You who have been released must release others."
+            },
+            {
+              "ref": "2 Cor 8:9",
+              "note": "\"For you know the grace of our Lord Jesus Christ, that though he was rich, yet for your sake he became poor, so that you through his poverty might become rich.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 15 contains three linked provisions: the seventh-year debt cancellation (vv.1–11), the release of Hebrew slaves in the seventh year (vv.12–18), and the firstborn animal laws (vv.19–23). All three reflect the same theology: Israel was enslaved in Egypt, God freed them, therefore Israel must not enslave its own members permanently. The Exodus is the ground of all social justice legislation in Deuteronomy. Moses not only commands generosity — he anticipates and addresses the psychology of resistance."
         }
       }
     },
@@ -135,17 +139,18 @@
             "paragraph": "Firstborn animals belong to God — because the firstborn represents the first-fruit of life and production. Dedicating the firstborn acknowledges that new life begins with God and that Israel's herds are covenant property held in trust."
           }
         ],
-        "ctx": "The firstborn animal law concludes chapter 15: male firstborn cattle, sheep, and goats belong to the LORD and may not be put to work or used for shearing. They are eaten at the annual feasts. The pattern of Deuteronomy's economic legislation is now visible: the seventh-year release, the tithes, the firstborn laws — all are structured acknowledgments of divine ownership.",
-        "cross": [
-          {
-            "ref": "Heb 12:23",
-            "note": "\"The church of the firstborn, whose names are written in heaven.\" The NT church is described as a \"firstborn\" community — the first-fruit of the new creation, consecrated to God."
-          },
-          {
-            "ref": "Col 1:15",
-            "note": "\"The Son is the image of the invisible God, the firstborn over all creation.\" Christ is the ultimate Firstborn — the first-fruit of the new creation who defines what all firstborn are meant to be."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 12:23",
+              "note": "\"The church of the firstborn, whose names are written in heaven.\" The NT church is described as a \"firstborn\" community — the first-fruit of the new creation, consecrated to God."
+            },
+            {
+              "ref": "Col 1:15",
+              "note": "\"The Son is the image of the invisible God, the firstborn over all creation.\" Christ is the ultimate Firstborn — the first-fruit of the new creation who defines what all firstborn are meant to be."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -210,6 +215,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "The firstborn animal law concludes chapter 15: male firstborn cattle, sheep, and goats belong to the LORD and may not be put to work or used for shearing. They are eaten at the annual feasts. The pattern of Deuteronomy's economic legislation is now visible: the seventh-year release, the tithes, the firstborn laws — all are structured acknowledgments of divine ownership."
         }
       }
     }

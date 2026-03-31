@@ -25,21 +25,22 @@
             "paragraph": "\"Suddenly the fingers of a human hand appeared and wrote (kəṭab) on the plaster of the wall\" (v.5). Belshazzar’s feast: a thousand nobles, drinking from the sacred vessels taken from Jerusalem’s temple. A hand writes. The king’s face turns pale, his knees knock. No wise man can read it. The queen remembers Daniel."
           }
         ],
-        "ctx": "The chapter moves from Nebuchadnezzar (ch.4) to Belshazzar with no transition — the intervening rulers (Evil-Merodach, Neriglissar, Labashi-Marduk) are skipped. Belshazzar was co-regent with his father Nabonidus, who was absent from Babylon. The Nabonidus Chronicle confirms Belshazzar’s role as acting king. The desecration of the temple vessels is deliberate: Nebuchadnezzar stored but never used them; Belshazzar desecrates them at a drunken feast.",
-        "cross": [
-          {
-            "ref": "2 Chr 36:22–23",
-            "note": "Cyrus’s decree fulfilling Jeremiah’s prophecy — the Persian conquest that Daniel 5 narrates from the Babylonian side."
-          },
-          {
-            "ref": "Rev 17:1–6",
-            "note": "Babylon the great, drunk with the blood of the saints — Revelation’s Babylon draws on the feast imagery of Daniel 5."
-          },
-          {
-            "ref": "Ps 75:8",
-            "note": "In the hand of the LORD is a cup full of foaming wine — the cup of judgment Belshazzar drinks from literally."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Chr 36:22–23",
+              "note": "Cyrus’s decree fulfilling Jeremiah’s prophecy — the Persian conquest that Daniel 5 narrates from the Babylonian side."
+            },
+            {
+              "ref": "Rev 17:1–6",
+              "note": "Babylon the great, drunk with the blood of the saints — Revelation’s Babylon draws on the feast imagery of Daniel 5."
+            },
+            {
+              "ref": "Ps 75:8",
+              "note": "In the hand of the LORD is a cup full of foaming wine — the cup of judgment Belshazzar drinks from literally."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -125,6 +126,9 @@
               "note": "Collins notes the literary artistry: the hand writes while the king watches in real-time. The slow revelation — writing, then failed interpretations, then Daniel’s summons — builds maximum dramatic tension."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter moves from Nebuchadnezzar (ch.4) to Belshazzar with no transition — the intervening rulers (Evil-Merodach, Neriglissar, Labashi-Marduk) are skipped. Belshazzar was co-regent with his father Nabonidus, who was absent from Babylon. The Nabonidus Chronicle confirms Belshazzar’s role as acting king. The desecration of the temple vessels is deliberate: Nebuchadnezzar stored but never used them; Belshazzar desecrates them at a drunken feast."
         }
       }
     },
@@ -142,21 +146,22 @@
             "paragraph": "\"MENE, MENE, TEKEL, PARSIN\" (v.25). Daniel recounts Nebuchadnezzar’s humbling then rebukes Belshazzar: \"You knew all this, yet you have not humbled yourself\" (vv.22–23). MENE — numbered. TEKEL — weighed and found wanting. PARSIN — divided and given to Medes and Persians. That very night Belshazzar is slain (v.30). Darius the Mede takes over (v.31)."
           }
         ],
-        "ctx": "The three Aramaic words are also units of weight/currency: mina, shekel, half-mina. The pun works on two levels: (1) monetary terms (your kingdom has been measured like currency) and (2) verbal roots (numbered, weighed, divided). The wordplay on PARSIN/Persia (prs) adds a third level: your kingdom goes to Persia. The Babylonian Chronicle records Cyrus’s conquest of Babylon on October 12, 539 BC — the city fell without a battle, consistent with the feast-night surprise.",
-        "cross": [
-          {
-            "ref": "Jer 25:11–12",
-            "note": "Jeremiah’s prophecy of 70 years of Babylonian dominion — fulfilled at the moment Daniel 5 describes."
-          },
-          {
-            "ref": "Isa 21:9",
-            "note": "\"Fallen, fallen is Babylon!\" — the double-fallen formula that Daniel 5 narrates."
-          },
-          {
-            "ref": "Rev 18:10",
-            "note": "In one hour your judgment has come — Revelation’s Babylon falls as suddenly as Daniel’s."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 25:11–12",
+              "note": "Jeremiah’s prophecy of 70 years of Babylonian dominion — fulfilled at the moment Daniel 5 describes."
+            },
+            {
+              "ref": "Isa 21:9",
+              "note": "\"Fallen, fallen is Babylon!\" — the double-fallen formula that Daniel 5 narrates."
+            },
+            {
+              "ref": "Rev 18:10",
+              "note": "In one hour your judgment has come — Revelation’s Babylon falls as suddenly as Daniel’s."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -242,6 +247,9 @@
               "note": "Collins observes that the shift from Babylonian to Medo-Persian rule in one night confirms the statue’s prediction (ch.2): the gold head gives way to the silver chest. The prophecy self-verifies within the narrative."
             }
           ]
+        },
+        "hist": {
+          "context": "The three Aramaic words are also units of weight/currency: mina, shekel, half-mina. The pun works on two levels: (1) monetary terms (your kingdom has been measured like currency) and (2) verbal roots (numbered, weighed, divided). The wordplay on PARSIN/Persia (prs) adds a third level: your kingdom goes to Persia. The Babylonian Chronicle records Cyrus’s conquest of Babylon on October 12, 539 BC — the city fell without a battle, consistent with the feast-night surprise."
         }
       }
     }

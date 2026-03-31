@@ -28,21 +28,22 @@
             "paragraph": "\"Then I acknowledged (yādîṭî) my sin to you and did not cover up my iniquity\" (v.5). The turning point: confession. While David was silent, his bones wasted (vv.3–4). When he confessed, God forgave. The contrast: concealment produces decay; confession produces freedom."
           }
         ],
-        "ctx": "David describes the misery of unconfessed sin: groaning, bones wasting, strength sapped (vv.3–4). Then the liberation of confession: \"I said, ‘I will confess,’ and you forgave the guilt of my sin\" (v.5). God is a hiding place, a protector, surrounded by songs of deliverance (v.7). The emotional arc: guilt → silence → decay → confession → forgiveness → joy.",
-        "cross": [
-          {
-            "ref": "Rom 4:7–8",
-            "note": "Paul quotes Psalm 32:1–2 as proof of justification by faith apart from works: \"Blessed are those whose transgressions are forgiven.\""
-          },
-          {
-            "ref": "1 John 1:9",
-            "note": "\"If we confess our sins, he is faithful and just and will forgive us\" — the NT’s version of David’s experience."
-          },
-          {
-            "ref": "Ps 51",
-            "note": "The companion penitential psalm, more explicitly tied to David’s adultery with Bathsheba."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 4:7–8",
+              "note": "Paul quotes Psalm 32:1–2 as proof of justification by faith apart from works: \"Blessed are those whose transgressions are forgiven.\""
+            },
+            {
+              "ref": "1 John 1:9",
+              "note": "\"If we confess our sins, he is faithful and just and will forgive us\" — the NT’s version of David’s experience."
+            },
+            {
+              "ref": "Ps 51",
+              "note": "The companion penitential psalm, more explicitly tied to David’s adultery with Bathsheba."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -121,6 +122,9 @@
               "note": "Goldingay: the three-stage movement (silence → confession → forgiveness) takes place in one verse. The breakthrough is instantaneous. The suffering was in the delay, not in the process."
             }
           ]
+        },
+        "hist": {
+          "context": "David describes the misery of unconfessed sin: groaning, bones wasting, strength sapped (vv.3–4). Then the liberation of confession: \"I said, ‘I will confess,’ and you forgave the guilt of my sin\" (v.5). God is a hiding place, a protector, surrounded by songs of deliverance (v.7). The emotional arc: guilt → silence → decay → confession → forgiveness → joy."
         }
       }
     },
@@ -138,17 +142,18 @@
             "paragraph": "\"The LORD’s unfailing love surrounds (sāmak̅) the one who trusts in him\" (v.10). The psalm’s summary: trust produces surrounding love. The image is of being enclosed by ḥesed on every side. The wicked have many woes; the trusting are wrapped in love."
           }
         ],
-        "ctx": "God speaks: \"I will instruct you and teach you in the way you should go; I will counsel you with my loving eye on you\" (v.8). The warning: \"Do not be like the horse or the mule, which have no understanding but must be controlled by bit and bridle\" (v.9). The contrast (v.10): woes for the wicked, surrounding love for the trusting. The psalm closes: \"Rejoice in the LORD and be glad, you righteous; sing, all you who are upright in heart!\" (v.11).",
-        "cross": [
-          {
-            "ref": "Prov 3:5–6",
-            "note": "\"Trust in the LORD... he will make your paths straight\" — the same guidance theology."
-          },
-          {
-            "ref": "Jas 5:16",
-            "note": "\"Confess your sins to each other and pray for each other so that you may be healed\" — the community application."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 3:5–6",
+              "note": "\"Trust in the LORD... he will make your paths straight\" — the same guidance theology."
+            },
+            {
+              "ref": "Jas 5:16",
+              "note": "\"Confess your sins to each other and pray for each other so that you may be healed\" — the community application."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -227,6 +232,9 @@
               "note": "Goldingay: \"surrounds\" is comprehensive. Not love beside you or ahead of you but encircling you. The trusting person is inside a perimeter of ḥesed."
             }
           ]
+        },
+        "hist": {
+          "context": "God speaks: \"I will instruct you and teach you in the way you should go; I will counsel you with my loving eye on you\" (v.8). The warning: \"Do not be like the horse or the mule, which have no understanding but must be controlled by bit and bridle\" (v.9). The contrast (v.10): woes for the wicked, surrounding love for the trusting. The psalm closes: \"Rejoice in the LORD and be glad, you righteous; sing, all you who are upright in heart!\" (v.11)."
         }
       }
     }

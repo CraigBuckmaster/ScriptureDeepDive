@@ -37,21 +37,22 @@
             "paragraph": "The representative portion burned on the altar as an ʾazkārāh (memorial/token portion). The rest belongs to Aaron and his sons."
           }
         ],
-        "ctx": "The grain offering accompanies the animal offerings as a gift of agricultural produce — the fruit of human labour rather than animal life. It contains no leaven (associated with corruption) and no honey (associated with Canaanite fermented offerings), but always includes salt (the covenant seasoning, v.13) and frankincense. The offering can be raw flour, baked in an oven, on a griddle, or in a pan — five forms in total — reflecting the diversity of Israelite food preparation. The priest burns a representative handful (the ʾazkārāh) and keeps the rest for the priestly household.",
-        "cross": [
-          {
-            "ref": "John 6:35",
-            "note": "\"I am the bread of life.\" The grain offering's bread symbolism points forward — Christ is the true bread from heaven, the firstfruits of a new humanity."
-          },
-          {
-            "ref": "1 Cor 5:7–8",
-            "note": "\"Christ our Passover lamb has been sacrificed. Therefore let us keep the festival — not with the old leaven… but with the unleavened bread of sincerity and truth.\""
-          },
-          {
-            "ref": "Num 15:1–16",
-            "note": "The grain offering always accompanies animal sacrifices in the wilderness — it is never offered alone as a burnt offering is. It functions as complement, not substitute."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 6:35",
+              "note": "\"I am the bread of life.\" The grain offering's bread symbolism points forward — Christ is the true bread from heaven, the firstfruits of a new humanity."
+            },
+            {
+              "ref": "1 Cor 5:7–8",
+              "note": "\"Christ our Passover lamb has been sacrificed. Therefore let us keep the festival — not with the old leaven… but with the unleavened bread of sincerity and truth.\""
+            },
+            {
+              "ref": "Num 15:1–16",
+              "note": "The grain offering always accompanies animal sacrifices in the wilderness — it is never offered alone as a burnt offering is. It functions as complement, not substitute."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -103,6 +104,9 @@
               "note": "Milgrom: The priestly portion (the non-burned remainder) is called \"most holy\" — the same designation as the Ark and the inner sanctuary. This elevates the priests' daily food to the level of the sacred; they eat from the altar's excess."
             }
           ]
+        },
+        "hist": {
+          "context": "The grain offering accompanies the animal offerings as a gift of agricultural produce — the fruit of human labour rather than animal life. It contains no leaven (associated with corruption) and no honey (associated with Canaanite fermented offerings), but always includes salt (the covenant seasoning, v.13) and frankincense. The offering can be raw flour, baked in an oven, on a griddle, or in a pan — five forms in total — reflecting the diversity of Israelite food preparation. The priest burns a representative handful (the ʾazkārāh) and keeps the rest for the priestly household."
         }
       }
     },
@@ -126,17 +130,18 @@
             "paragraph": "The representative portion burned on the altar. From zākar, \"to remember\" — the portion that causes God to \"remember\" the worshipper favourably. The rest goes to the priests."
           }
         ],
-        "ctx": "The firstfruits offering (vv.14–16) is distinct from the regular grain offering — it uses roasted grain or crushed new grain, offered with oil and frankincense. The principle is consistent: the first and best belongs to God before Israel eats of the harvest. This connects to the broader firstfruits theology running through the Torah — firstborn animals (Exod 13), firstborn sons (Exod 13:2), first grain (Num 15:20–21). The logic: what is first consecrates the whole.",
-        "cross": [
-          {
-            "ref": "1 Cor 15:20",
-            "note": "\"Christ has been raised from the dead, the firstfruits of those who have fallen asleep.\" Paul applies the bikkûrîm theology directly to resurrection — Christ is the firstfruits who consecrates the whole harvest of resurrection."
-          },
-          {
-            "ref": "Rom 11:16",
-            "note": "\"If the dough offered as firstfruits is holy, so is the whole lump.\" The firstfruits principle: the first portion consecrates the rest."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 15:20",
+              "note": "\"Christ has been raised from the dead, the firstfruits of those who have fallen asleep.\" Paul applies the bikkûrîm theology directly to resurrection — Christ is the firstfruits who consecrates the whole harvest of resurrection."
+            },
+            {
+              "ref": "Rom 11:16",
+              "note": "\"If the dough offered as firstfruits is holy, so is the whole lump.\" The firstfruits principle: the first portion consecrates the rest."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -196,6 +201,9 @@
               "note": "Milgrom: The ritual prescriptions for grain offering reflect a coherent priestly symbolic system. The gradations of holiness and offering type form an internally consistent theology of sacred space and divine access."
             }
           ]
+        },
+        "hist": {
+          "context": "The firstfruits offering (vv.14–16) is distinct from the regular grain offering — it uses roasted grain or crushed new grain, offered with oil and frankincense. The principle is consistent: the first and best belongs to God before Israel eats of the harvest. This connects to the broader firstfruits theology running through the Torah — firstborn animals (Exod 13), firstborn sons (Exod 13:2), first grain (Num 15:20–21). The logic: what is first consecrates the whole."
         }
       }
     }

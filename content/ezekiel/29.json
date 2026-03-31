@@ -31,21 +31,22 @@
             "paragraph": "The yeʼor is the Egyptian loanword for the Nile, used exclusively in Hebrew for the great river of Egypt. Pharaoh's boast 'My Nile is my own; I made it for myself' (v. 3) represents the ultimate idolatrous claim—attributing creative power to a human ruler. In Egyptian royal theology, Pharaoh was indeed credited with controlling the Nile's inundation, so Ezekiel targets the very heart of Egyptian self-understanding."
           }
         ],
-        "ctx": "Dated to January 587 BC (the tenth year, tenth month, twelfth day), this oracle arrives during Nebuchadnezzar's siege of Jerusalem. Judah's pro-Egyptian party hoped Pharaoh Hophra (Apries) would rescue them (cf. Jer 37:5-7). Ezekiel demolishes that hope by announcing Egypt's own judgment. The seven Egypt oracles (chs. 29-32) form the largest foreign-nation section in the book, reflecting Egypt's outsized role in Judah's political imagination.",
-        "cross": [
-          {
-            "ref": "Isa 51:9-10",
-            "note": "Isaiah also invokes the chaos-monster tradition, calling God to 'cut Rahab to pieces' and 'pierce the dragon.' Both prophets use mythological imagery to affirm YHWH's sovereignty over imperial powers."
-          },
-          {
-            "ref": "Jer 37:5-7",
-            "note": "Jeremiah warned that Egypt's army would retreat and Babylon would return to burn Jerusalem. Ezekiel's oracle against Egypt confirms Jeremiah's message from exile: Egypt cannot save Judah."
-          },
-          {
-            "ref": "Rev 12:9",
-            "note": "The dragon imagery is picked up in Revelation where the great dragon represents Satan's power behind earthly empires, extending Ezekiel's theological pattern of God subduing chaos-monsters."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 51:9-10",
+              "note": "Isaiah also invokes the chaos-monster tradition, calling God to 'cut Rahab to pieces' and 'pierce the dragon.' Both prophets use mythological imagery to affirm YHWH's sovereignty over imperial powers."
+            },
+            {
+              "ref": "Jer 37:5-7",
+              "note": "Jeremiah warned that Egypt's army would retreat and Babylon would return to burn Jerusalem. Ezekiel's oracle against Egypt confirms Jeremiah's message from exile: Egypt cannot save Judah."
+            },
+            {
+              "ref": "Rev 12:9",
+              "note": "The dragon imagery is picked up in Revelation where the great dragon represents Satan's power behind earthly empires, extending Ezekiel's theological pattern of God subduing chaos-monsters."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Zimmerli connects the tannin motif to the broader ancient Near Eastern combat myth tradition but emphasizes Ezekiel's distinctive priestly transformation of the image. Unlike Isaiah's cosmic battle language, Ezekiel presents a fishing expedition—YHWH simply hooks the monster and discards it. The deflation of the mythological register serves Ezekiel's theological purpose: Egypt is not a worthy adversary for God."
             }
           ]
+        },
+        "hist": {
+          "context": "Dated to January 587 BC (the tenth year, tenth month, twelfth day), this oracle arrives during Nebuchadnezzar's siege of Jerusalem. Judah's pro-Egyptian party hoped Pharaoh Hophra (Apries) would rescue them (cf. Jer 37:5-7). Ezekiel demolishes that hope by announcing Egypt's own judgment. The seven Egypt oracles (chs. 29-32) form the largest foreign-nation section in the book, reflecting Egypt's outsized role in Judah's political imagination."
         }
       }
     },
@@ -127,17 +131,18 @@
             "paragraph": "The term shemamah describes total devastation—land so destroyed it provokes horror in those who see it. Applied to Egypt, this is an extraordinary reversal: the fertile Nile valley, symbol of agricultural abundance, will become like wilderness. The 40-year period of desolation parallels Israel's 40 years of wilderness wandering, suggesting a purgative exile for Egypt analogous to Israel's own formative experience."
           }
         ],
-        "ctx": "The staff-of-reed metaphor (v. 7) recalls Sennacherib's taunt in 2 Kings 18:21, where the Rabshakeh warned Hezekiah that relying on Egypt was like leaning on a broken reed. Egypt repeatedly promised military aid to Judah but failed to deliver. The 40-year desolation followed by a diminished return (vv. 13-16) finds no clear historical fulfillment, leading scholars to debate whether this is hyperbolic prophecy or refers to a partial fulfillment under Persian rule.",
-        "cross": [
-          {
-            "ref": "2 Kgs 18:21",
-            "note": "The Assyrian field commander mocked Hezekiah for trusting Egypt as a 'splintered reed of a staff, which pierces the hand of anyone who leans on it.' Ezekiel echoes this exact image."
-          },
-          {
-            "ref": "Jer 46:25-26",
-            "note": "Jeremiah also prophesied against Egypt, announcing that the LORD would punish Amon of Thebes and Pharaoh, but afterward Egypt would be inhabited again—a partial parallel to Ezekiel's restoration prediction."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 18:21",
+              "note": "The Assyrian field commander mocked Hezekiah for trusting Egypt as a 'splintered reed of a staff, which pierces the hand of anyone who leans on it.' Ezekiel echoes this exact image."
+            },
+            {
+              "ref": "Jer 46:25-26",
+              "note": "Jeremiah also prophesied against Egypt, announcing that the LORD would punish Amon of Thebes and Pharaoh, but afterward Egypt would be inhabited again—a partial parallel to Ezekiel's restoration prediction."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -202,6 +207,9 @@
               "note": "Zimmerli observes that Egypt's restoration to 'lowly kingdom' status is remarkable within the oracles-against-the-nations genre, which typically concludes with total destruction. He suggests this reflects an older prophetic tradition that viewed Egypt as punishable but not annihilable, perhaps because Egypt's continued existence as a diminished power serves YHWH's purposes in the divine economy of nations."
             }
           ]
+        },
+        "hist": {
+          "context": "The staff-of-reed metaphor (v. 7) recalls Sennacherib's taunt in 2 Kings 18:21, where the Rabshakeh warned Hezekiah that relying on Egypt was like leaning on a broken reed. Egypt repeatedly promised military aid to Judah but failed to deliver. The 40-year desolation followed by a diminished return (vv. 13-16) finds no clear historical fulfillment, leading scholars to debate whether this is hyperbolic prophecy or refers to a partial fulfillment under Persian rule."
         }
       }
     },
@@ -219,17 +227,18 @@
             "paragraph": "Sakhar denotes wages earned through labor. YHWH speaks as a divine employer, compensating Nebuchadnezzar for his 'service' against Tyre. The theological audacity is striking: a pagan emperor unwittingly serves as YHWH's hired laborer. This concept of God using foreign rulers as instruments of his will parallels Isaiah's calling Cyrus 'my anointed' (Isa 45:1) and demonstrates the absolute sovereignty of YHWH over all nations."
           }
         ],
-        "ctx": "This is the latest dated oracle in Ezekiel: April 571 BC, some 16 years after the previous oracle in this chapter. Nebuchadnezzar's 13-year siege of Tyre (585-573 BC) ended inconclusively—he did not capture enough plunder to pay his army. God therefore 'gives' Egypt to Nebuchadnezzar as compensation. Historically, Nebuchadnezzar did campaign against Egypt in 568/567 BC. Verse 21 ('a horn will sprout for the house of Israel') is an enigmatic promise, possibly pointing to Jehoiachin's release or the future restoration.",
-        "cross": [
-          {
-            "ref": "Isa 45:1-4",
-            "note": "God calls Cyrus 'my anointed' and says he will hand over nations to him. Both prophets share the radical theology that YHWH employs pagan rulers as instruments of his sovereign will."
-          },
-          {
-            "ref": "Luke 1:69",
-            "note": "Zechariah's prophecy that God 'has raised up a horn of salvation for us' echoes Ezekiel 29:21's promise of a horn sprouting for the house of Israel, connecting to messianic expectation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 45:1-4",
+              "note": "God calls Cyrus 'my anointed' and says he will hand over nations to him. Both prophets share the radical theology that YHWH employs pagan rulers as instruments of his sovereign will."
+            },
+            {
+              "ref": "Luke 1:69",
+              "note": "Zechariah's prophecy that God 'has raised up a horn of salvation for us' echoes Ezekiel 29:21's promise of a horn sprouting for the house of Israel, connecting to messianic expectation."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -294,6 +303,9 @@
               "note": "Zimmerli notes that this is the only passage in Ezekiel where prophetic expectation is explicitly corrected by historical outcome. The Tyre siege did not produce the predicted plunder, so a new oracle redirects the divine compensation to Egypt. This remarkably honest editorial process reveals the living, adaptive nature of prophetic tradition."
             }
           ]
+        },
+        "hist": {
+          "context": "This is the latest dated oracle in Ezekiel: April 571 BC, some 16 years after the previous oracle in this chapter. Nebuchadnezzar's 13-year siege of Tyre (585-573 BC) ended inconclusively—he did not capture enough plunder to pay his army. God therefore 'gives' Egypt to Nebuchadnezzar as compensation. Historically, Nebuchadnezzar did campaign against Egypt in 568/567 BC. Verse 21 ('a horn will sprout for the house of Israel') is an enigmatic promise, possibly pointing to Jehoiachin's release or the future restoration."
         }
       }
     }

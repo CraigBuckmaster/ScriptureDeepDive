@@ -37,22 +37,26 @@
             "paragraph": "V.14: The most theologically loaded phrase in the Torah. The divine name YHWH is derived from the verb hayah (to be). The phrase may mean: \"I AM WHO I AM\" (ontological, emphasising God's absolute self-existence); \"I WILL BE WHAT I WILL BE\" (relational, emphasising God's promise to be present); or \"I am the One who causes to be\" (causative). All three dimensions are present and none can be reduced to the others."
           }
         ],
-        "hist": "Horeb (= Sinai) is the theological mountain of the entire Pentateuch — the site of the law-giving (Exod 19), Elijah's flight (1 Kgs 19), and now Moses's commissioning. Its location is debated (traditional identification: Jebel Musa in the Sinai Peninsula; alternative: Jebel al-Lawz in Arabia). The forty years in Midian would place Moses in the region of the Hejaz/Sinai peninsula — consistent with either location.",
-        "ctx": "Moses at the bush is at the lowest point of his trajectory: eighty years old, tending sheep in the wilderness for forty years, having failed in his first attempt at deliverance. The bush burns and is not consumed — the image of Israel under oppression: afflicted but not destroyed. God's appearance here reverses every human expectation: the deliverer is not found in a palace but in a desert; not in his strength but in his weakness; not when he seeks God but when he notices something unusual in his ordinary work.",
-        "cross": [
-          {
-            "ref": "John 8:58",
-            "note": "Jesus: \"Before Abraham was, I AM.\" The divine name of Exodus 3:14 is applied to Christ, the most explicit self-identification in the Gospel of John."
-          },
-          {
-            "ref": "Acts 7:30–34",
-            "note": "Stephen: \"Now when forty years had passed, an angel appeared to him in the wilderness of Mount Sinai, in a flame of fire in a bush.\""
-          },
-          {
-            "ref": "Rev 1:4",
-            "note": "\"From him who is and who was and who is to come\" — the Revelation unpacks the Exodus name YHWH as the three tenses of divine existence."
-          }
-        ],
+        "hist": {
+          "historical": "Horeb (= Sinai) is the theological mountain of the entire Pentateuch — the site of the law-giving (Exod 19), Elijah's flight (1 Kgs 19), and now Moses's commissioning. Its location is debated (traditional identification: Jebel Musa in the Sinai Peninsula; alternative: Jebel al-Lawz in Arabia). The forty years in Midian would place Moses in the region of the Hejaz/Sinai peninsula — consistent with either location.",
+          "context": "Moses at the bush is at the lowest point of his trajectory: eighty years old, tending sheep in the wilderness for forty years, having failed in his first attempt at deliverance. The bush burns and is not consumed — the image of Israel under oppression: afflicted but not destroyed. God's appearance here reverses every human expectation: the deliverer is not found in a palace but in a desert; not in his strength but in his weakness; not when he seeks God but when he notices something unusual in his ordinary work."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 8:58",
+              "note": "Jesus: \"Before Abraham was, I AM.\" The divine name of Exodus 3:14 is applied to Christ, the most explicit self-identification in the Gospel of John."
+            },
+            {
+              "ref": "Acts 7:30–34",
+              "note": "Stephen: \"Now when forty years had passed, an angel appeared to him in the wilderness of Mount Sinai, in a flame of fire in a bush.\""
+            },
+            {
+              "ref": "Rev 1:4",
+              "note": "\"From him who is and who was and who is to come\" — the Revelation unpacks the Exodus name YHWH as the three tenses of divine existence."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Horeb / Mount Sinai",
@@ -392,21 +396,22 @@
             "paragraph": "V.16: \"Gather the elders of Israel\" — the first instruction for community leadership in the Exodus narrative. The elders (zequenim) are the tribal leadership structure that survived the Egyptian bondage. Moses is not to lead alone; he is to work through the existing leadership structure of the people. The congregation model is established before the journey begins: God works through community, not merely through the solitary prophet."
           }
         ],
-        "ctx": "Moses's question \"what is his name?\" is not ignorance of a name but a request for the character, authority, and reliability behind the name. In the ancient world, knowing a god's name was knowing their nature and the basis of relationship with them. YHWH's answer — I AM WHO I AM — refuses domestication while asserting radical, self-grounding presence. The name is a promise: I will be with you (v.12: \"I will be with you,\" ʾehyeh ʿimmak — the same ʾehyeh root) as I have always been.",
-        "cross": [
-          {
-            "ref": "John 8:58",
-            "note": "\"Before Abraham was, I AM\" — Jesus applies the divine name of Exod 3:14 to himself, the most unambiguous divine self-claim in the Gospels."
-          },
-          {
-            "ref": "John 4:26",
-            "note": "To the Samaritan woman: \"I who speak to you am he\" — ego eimi, \"I AM\" — the same self-identification structure as Exod 3:14."
-          },
-          {
-            "ref": "Exod 6:2–3",
-            "note": "God tells Moses: \"I appeared to Abraham, to Isaac, and to Jacob as God Almighty (El Shaddai), but by my name the LORD (YHWH) I did not make myself known to them.\" The full disclosure of the Tetragrammaton is given here and expanded in ch.6."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 8:58",
+              "note": "\"Before Abraham was, I AM\" — Jesus applies the divine name of Exod 3:14 to himself, the most unambiguous divine self-claim in the Gospels."
+            },
+            {
+              "ref": "John 4:26",
+              "note": "To the Samaritan woman: \"I who speak to you am he\" — ego eimi, \"I AM\" — the same self-identification structure as Exod 3:14."
+            },
+            {
+              "ref": "Exod 6:2–3",
+              "note": "God tells Moses: \"I appeared to Abraham, to Isaac, and to Jacob as God Almighty (El Shaddai), but by my name the LORD (YHWH) I did not make myself known to them.\" The full disclosure of the Tetragrammaton is given here and expanded in ch.6."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Egypt — land of promise contrast",
@@ -663,6 +668,9 @@
               "note": "The NET note on \"this is my name forever\" explains the Hebrew le'olam (forever, for all time) and adds that the divine name YHWH (the LORD) appears approximately 6,828 times in the Old Testament, making it by far the most common divine designation. The note discusses the Jewish tradition of not pronouncing the divine name (using Adonai or HaShem as substitutes) as a later development not reflected in the original text, where the name was clearly intended for regular use in worship and speech."
             }
           ]
+        },
+        "hist": {
+          "context": "Moses's question \"what is his name?\" is not ignorance of a name but a request for the character, authority, and reliability behind the name. In the ancient world, knowing a god's name was knowing their nature and the basis of relationship with them. YHWH's answer — I AM WHO I AM — refuses domestication while asserting radical, self-grounding presence. The name is a promise: I will be with you (v.12: \"I will be with you,\" ʾehyeh ʿimmak — the same ʾehyeh root) as I have always been."
         }
       }
     }

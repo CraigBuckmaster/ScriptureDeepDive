@@ -31,17 +31,18 @@
             "paragraph": "\"He performs wonders (peleʾ) that cannot be fathomed\" (v.9). Eliphaz’s doxology is beautiful and orthodox. His theology of God’s greatness is not wrong — it is irrelevant to Job’s situation."
           }
         ],
-        "ctx": "Eliphaz moves from diagnosis (ch 4: the innocent don’t perish) to prescription (ch 5: appeal to God, accept his correction). His advice is textbook wisdom theology: God wounds but binds up (v.18), rescues the needy (v.15), brings down the proud (v.11). All true in general. All useless to Job in particular.",
-        "cross": [
-          {
-            "ref": "Prov 3:11–12",
-            "note": "\"Do not despise the LORD’s discipline\" — the exact theology Eliphaz applies."
-          },
-          {
-            "ref": "Heb 12:5–6",
-            "note": "The NT quotes Proverbs 3:11–12 approvingly — discipline theology is not wrong, just misapplied here."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 3:11–12",
+              "note": "\"Do not despise the LORD’s discipline\" — the exact theology Eliphaz applies."
+            },
+            {
+              "ref": "Heb 12:5–6",
+              "note": "The NT quotes Proverbs 3:11–12 approvingly — discipline theology is not wrong, just misapplied here."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Habel: Eliphaz presents the case for divine discipline. His argument: suffering is corrective, therefore submit. Job will reject this because his suffering is not corrective — it is a test he knows nothing about."
             }
           ]
+        },
+        "hist": {
+          "context": "Eliphaz moves from diagnosis (ch 4: the innocent don’t perish) to prescription (ch 5: appeal to God, accept his correction). His advice is textbook wisdom theology: God wounds but binds up (v.18), rescues the needy (v.15), brings down the proud (v.11). All true in general. All useless to Job in particular."
         }
       }
     },
@@ -129,17 +133,18 @@
             "paragraph": "\"You will know that your tent is secure... you will come to the grave in full vigour\" (vv.24–26). Eliphaz promises shalom — if Job submits. The conditional promise: accept correction, and prosperity returns. This is the friends’ if-then theology at its most seductive."
           }
         ],
-        "ctx": "Eliphaz closes with a beautiful promise: God will deliver from six troubles, no seven (v.19). No harm from famine, war, wild animals, or barren ground. You will die old and satisfied. The promise is a Deuteronomic ideal — covenant blessing for covenant obedience. The problem: Job has been obedient, and the blessing has been removed. The theology works in Deuteronomy; it fails in Uz.",
-        "cross": [
-          {
-            "ref": "Prov 3:11–12",
-            "note": "The direct source of Eliphaz’s theology — discipline as blessing."
-          },
-          {
-            "ref": "Heb 12:5–11",
-            "note": "The NT’s own application of discipline theology — valid in its context."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 3:11–12",
+              "note": "The direct source of Eliphaz’s theology — discipline as blessing."
+            },
+            {
+              "ref": "Heb 12:5–11",
+              "note": "The NT’s own application of discipline theology — valid in its context."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -208,6 +213,9 @@
               "note": "Habel: Eliphaz rests his case. The expert witness has testified: discipline theology explains everything. Job’s task in the next speech is to demolish it."
             }
           ]
+        },
+        "hist": {
+          "context": "Eliphaz closes with a beautiful promise: God will deliver from six troubles, no seven (v.19). No harm from famine, war, wild animals, or barren ground. You will die old and satisfied. The promise is a Deuteronomic ideal — covenant blessing for covenant obedience. The problem: Job has been obedient, and the blessing has been removed. The theology works in Deuteronomy; it fails in Uz."
         }
       }
     }

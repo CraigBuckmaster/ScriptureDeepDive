@@ -25,21 +25,22 @@
             "paragraph": "Chemosh (kemosh), Moab's national deity, \"will go into exile, together with his priests and officials\" (v.7). The exile of a nation's god was the ultimate defeat in ancient Near Eastern thought -- if the god goes into captivity, the nation is spiritually annihilated. Chemosh is mentioned on the Mesha Stele (c. 840 BC) and in the Torah's condemnation of Moabite religion (Num 21:29)."
           }
         ],
-        "ctx": "The oracle against Moab is the longest of the oracles against the nations (47 verses), reflecting Moab's complex relationship with Israel -- kinship through Lot (Gen 19:37), periodic alliance, and recurring hostility. The oracle draws heavily on Isaiah 15-16, sometimes quoting it verbatim. The catalog of destroyed cities reads like a geographical roll call of annihilation: Nebo, Kiriathaim, Heshbon, Horonaim, Luhith, Arnon. The wine metaphor (vv.11-12) compares Moab to wine left undisturbed on its lees -- comfortable but about to be poured out and the jars smashed.",
-        "cross": [
-          {
-            "ref": "Isa 15-16",
-            "note": "Isaiah's parallel oracle against Moab -- Jeremiah draws extensively from it, creating an intertextual web."
-          },
-          {
-            "ref": "Num 21:29",
-            "note": "\"Woe to you, Moab! You are destroyed, people of Chemosh!\" -- the Torah's original lament over Moab."
-          },
-          {
-            "ref": "Ruth 1:1-4",
-            "note": "Ruth the Moabite -- the positive counterpoint to the general condemnation. Even from a condemned nation, faithful individuals emerge."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 15-16",
+              "note": "Isaiah's parallel oracle against Moab -- Jeremiah draws extensively from it, creating an intertextual web."
+            },
+            {
+              "ref": "Num 21:29",
+              "note": "\"Woe to you, Moab! You are destroyed, people of Chemosh!\" -- the Torah's original lament over Moab."
+            },
+            {
+              "ref": "Ruth 1:1-4",
+              "note": "Ruth the Moabite -- the positive counterpoint to the general condemnation. Even from a condemned nation, faithful individuals emerge."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Brueggemann reads the wine metaphor as \"a theology of disruption.\" Undisturbed comfort is not God's goal for any nation. The pouring-out is not vindictive but necessary -- stagnation must be broken for renewal."
             }
           ]
+        },
+        "hist": {
+          "context": "The oracle against Moab is the longest of the oracles against the nations (47 verses), reflecting Moab's complex relationship with Israel -- kinship through Lot (Gen 19:37), periodic alliance, and recurring hostility. The oracle draws heavily on Isaiah 15-16, sometimes quoting it verbatim. The catalog of destroyed cities reads like a geographical roll call of annihilation: Nebo, Kiriathaim, Heshbon, Horonaim, Luhith, Arnon. The wine metaphor (vv.11-12) compares Moab to wine left undisturbed on its lees -- comfortable but about to be poured out and the jars smashed."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "\"We have heard of Moab's pride (ga'on) -- how great is her arrogance! -- of her conceit, her pride and her insolence\" (v.29). The fourfold repetition of pride-words piles accusation upon accusation. Moab's fundamental sin is the same as Babylon's: self-exaltation against the LORD. The nation \"magnified herself against the LORD\" (v.42), and therefore she will be destroyed."
           }
         ],
-        "ctx": "God himself laments over Moab: \"I wail over Moab, for all Moab I cry out\" (v.31). The divine grief within the judgment oracle echoes Jeremiah 12:7-13, where God mourned over Judah. Judgment is not cold indifference but grieved necessity. The chapter closes with a surprising promise: \"Yet I will restore the fortunes of Moab in days to come\" (v.47). Even the condemned nation has a future beyond judgment.",
-        "cross": [
-          {
-            "ref": "Isa 16:6-7",
-            "note": "Isaiah's parallel lament over Moab's pride -- the same vocabulary of arrogance and grief."
-          },
-          {
-            "ref": "Obad 3-4",
-            "note": "Edom's pride receives the same treatment: \"The pride of your heart has deceived you.\" National arrogance is a universal prophetic target."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 16:6-7",
+              "note": "Isaiah's parallel lament over Moab's pride -- the same vocabulary of arrogance and grief."
+            },
+            {
+              "ref": "Obad 3-4",
+              "note": "Edom's pride receives the same treatment: \"The pride of your heart has deceived you.\" National arrogance is a universal prophetic target."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -184,6 +189,9 @@
               "note": "Brueggemann reads God's tears over Moab as \"the most unexpected feature of the oracle.\" The God who commands destruction also grieves it. This dual action -- judging and mourning simultaneously -- defines Jeremiah's theology."
             }
           ]
+        },
+        "hist": {
+          "context": "God himself laments over Moab: \"I wail over Moab, for all Moab I cry out\" (v.31). The divine grief within the judgment oracle echoes Jeremiah 12:7-13, where God mourned over Judah. Judgment is not cold indifference but grieved necessity. The chapter closes with a surprising promise: \"Yet I will restore the fortunes of Moab in days to come\" (v.47). Even the condemned nation has a future beyond judgment."
         }
       }
     }

@@ -31,17 +31,18 @@
             "paragraph": "V.4: words of the mouth are deep waters — unfathomable depth, implications the speaker cannot fully anticipate. The fountain of wisdom, by contrast, is a rushing stream — overflowing, accessible, life-giving."
           }
         ],
-        "ctx": "The first half of ch.18 addresses isolation (v.1), the fool's love of their own opinions (v.2), and speech dynamics (vv.4,6-8). V.10's fortified-tower saying is the theological centre: the LORD's name provides what wealth only imagines providing (v.11). V.13 is the chapter's most immediately practical saying: answering before listening is folly and shame.",
-        "cross": [
-          {
-            "ref": "Ps 61:3",
-            "note": "You have been my refuge, a strong tower against the foe — the same fortified-tower image."
-          },
-          {
-            "ref": "Jas 1:19",
-            "note": "Quick to listen, slow to speak — the NT application of v.13's listening-before-answering principle."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 61:3",
+              "note": "You have been my refuge, a strong tower against the foe — the same fortified-tower image."
+            },
+            {
+              "ref": "Jas 1:19",
+              "note": "Quick to listen, slow to speak — the NT application of v.13's listening-before-answering principle."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "The NET note connects 18:12 ('before honour is humility') to 16:18 (pride before destruction) and 15:33 (humility before honour), identifying this as a recurring structural principle in the moral order."
             }
           ]
+        },
+        "hist": {
+          "context": "The first half of ch.18 addresses isolation (v.1), the fool's love of their own opinions (v.2), and speech dynamics (vv.4,6-8). V.10's fortified-tower saying is the theological centre: the LORD's name provides what wealth only imagines providing (v.11). V.13 is the chapter's most immediately practical saying: answering before listening is folly and shame."
         }
       }
     },
@@ -133,17 +137,18 @@
             "paragraph": "V.22: finds (māṣāʾ) has the same root as 8:35 — \"whoever finds me finds life.\" The parallel is deliberate: finding a wife is structurally equivalent to finding wisdom. The wife who embodies wisdom (31:10-31) is the embodiment of the wisdom the whole book has been seeking."
           }
         ],
-        "ctx": "The second half contains the chapter's most famous verse: death and life in the power of the tongue (v.21). Preceded by the legal principle that cross-examination is essential (v.17) and followed by the deep friendship saying (v.24). The chapter closes with the friend who sticks closer than a brother — pointing beyond itself to Christ.",
-        "cross": [
-          {
-            "ref": "Prov 8:35",
-            "note": "Whoever finds me finds life — the parallel structure to v.22 (finding a wife = finding what is good, receiving favour from the LORD)."
-          },
-          {
-            "ref": "John 15:13-15",
-            "note": "I call you friends — the friend closer than a brother (v.24) finds NT fulfilment in Jesus's friendship with his disciples."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 8:35",
+              "note": "Whoever finds me finds life — the parallel structure to v.22 (finding a wife = finding what is good, receiving favour from the LORD)."
+            },
+            {
+              "ref": "John 15:13-15",
+              "note": "I call you friends — the friend closer than a brother (v.24) finds NT fulfilment in Jesus's friendship with his disciples."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -212,6 +217,9 @@
               "note": "The NET note on davaq (sticks closer) identifies the covenant-loyalty word from Gen 2:24 and Ruth 1:14. The exceptional friend exercises hesed-quality loyalty."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half contains the chapter's most famous verse: death and life in the power of the tongue (v.21). Preceded by the legal principle that cross-examination is essential (v.17) and followed by the deep friendship saying (v.24). The chapter closes with the friend who sticks closer than a brother — pointing beyond itself to Christ."
         }
       }
     }

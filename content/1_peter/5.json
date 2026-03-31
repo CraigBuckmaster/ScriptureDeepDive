@@ -37,25 +37,26 @@
             "paragraph": "Not domineering over those in your charge - leadership is service, not tyranny. Elders are examples, not overlords."
           }
         ],
-        "ctx": "Peter, fellow elder and witness of Christ's sufferings, exhorts elders to shepherd God's flock. Oversight must be willing, not forced; eager, not greedy; exemplary, not domineering. When the chief Shepherd appears, they will receive the unfading crown of glory. Younger ones are to submit to elders. All are to clothe themselves with humility toward one another, for God opposes the proud but gives grace to the humble.",
-        "cross": [
-          {
-            "ref": "John 21:15-17",
-            "note": "Feed my lambs. Tend my sheep. Feed my sheep."
-          },
-          {
-            "ref": "Acts 20:28",
-            "note": "Pay careful attention to yourselves and to all the flock."
-          },
-          {
-            "ref": "Ezekiel 34:2-4",
-            "note": "Woe to the shepherds of Israel who have been feeding themselves!"
-          },
-          {
-            "ref": "James 4:6",
-            "note": "God opposes the proud but gives grace to the humble."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 21:15-17",
+              "note": "Feed my lambs. Tend my sheep. Feed my sheep."
+            },
+            {
+              "ref": "Acts 20:28",
+              "note": "Pay careful attention to yourselves and to all the flock."
+            },
+            {
+              "ref": "Ezekiel 34:2-4",
+              "note": "Woe to the shepherds of Israel who have been feeding themselves!"
+            },
+            {
+              "ref": "James 4:6",
+              "note": "God opposes the proud but gives grace to the humble."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -121,7 +122,10 @@
             }
           ]
         },
-        "hist": "Peter writes to Christians in five Roman provinces of Asia Minor (modern Turkey) — Pontus, Galatia, Cappadocia, Asia, and Bithynia. These believers face social ostracism and verbal abuse (4:4, 14) rather than official state persecution. As 'elect exiles' (1:1), they experience the marginalization of those who no longer participate in pagan civic religion, trade guild feasts, and family worship. The letter's household codes (2:13–3:7) address how Christians should live within Roman social structures. Peter writes from 'Babylon' (5:13) — almost certainly a symbolic name for Rome. Silvanus (Silas) serves as secretary (5:12), and Mark is present (5:13). The letter likely dates to the early 60s AD, before Nero's persecution."
+        "hist": {
+          "historical": "Peter writes to Christians in five Roman provinces of Asia Minor (modern Turkey) — Pontus, Galatia, Cappadocia, Asia, and Bithynia. These believers face social ostracism and verbal abuse (4:4, 14) rather than official state persecution. As 'elect exiles' (1:1), they experience the marginalization of those who no longer participate in pagan civic religion, trade guild feasts, and family worship. The letter's household codes (2:13–3:7) address how Christians should live within Roman social structures. Peter writes from 'Babylon' (5:13) — almost certainly a symbolic name for Rome. Silvanus (Silas) serves as secretary (5:12), and Mark is present (5:13). The letter likely dates to the early 60s AD, before Nero's persecution.",
+          "context": "Peter, fellow elder and witness of Christ's sufferings, exhorts elders to shepherd God's flock. Oversight must be willing, not forced; eager, not greedy; exemplary, not domineering. When the chief Shepherd appears, they will receive the unfading crown of glory. Younger ones are to submit to elders. All are to clothe themselves with humility toward one another, for God opposes the proud but gives grace to the humble."
+        }
       }
     },
     {
@@ -150,25 +154,26 @@
             "paragraph": "Resist him, firm in your faith - the devil is resisted by faith, not by special techniques. Firmness defeats his attacks."
           }
         ],
-        "ctx": "The exhortation continues: humble yourselves so that God may exalt you at the right time. Cast all anxiety on him because he cares. Be sober; the devil prowls like a roaring lion seeking prey. Resist him, firm in faith, knowing that the same sufferings are experienced by the worldwide brotherhood. After suffering a little while, the God of all grace will restore, confirm, strengthen, and establish. To him be dominion forever.",
-        "cross": [
-          {
-            "ref": "James 4:7",
-            "note": "Resist the devil, and he will flee from you."
-          },
-          {
-            "ref": "Ephesians 6:11-13",
-            "note": "Put on the whole armor of God, that you may stand against the schemes of the devil."
-          },
-          {
-            "ref": "Psalm 55:22",
-            "note": "Cast your burden on the LORD, and he will sustain you."
-          },
-          {
-            "ref": "Romans 8:18",
-            "note": "The sufferings of this present time are not worth comparing with the glory to be revealed."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "James 4:7",
+              "note": "Resist the devil, and he will flee from you."
+            },
+            {
+              "ref": "Ephesians 6:11-13",
+              "note": "Put on the whole armor of God, that you may stand against the schemes of the devil."
+            },
+            {
+              "ref": "Psalm 55:22",
+              "note": "Cast your burden on the LORD, and he will sustain you."
+            },
+            {
+              "ref": "Romans 8:18",
+              "note": "The sufferings of this present time are not worth comparing with the glory to be revealed."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -233,6 +238,9 @@
               "note": "Jobes observes that the worldwide brotherhood (v. 9) reminds isolated Christians they are not alone. Suffering is shared."
             }
           ]
+        },
+        "hist": {
+          "context": "The exhortation continues: humble yourselves so that God may exalt you at the right time. Cast all anxiety on him because he cares. Be sober; the devil prowls like a roaring lion seeking prey. Resist him, firm in faith, knowing that the same sufferings are experienced by the worldwide brotherhood. After suffering a little while, the God of all grace will restore, confirm, strengthen, and establish. To him be dominion forever."
         }
       }
     },
@@ -262,25 +270,26 @@
             "paragraph": "Greet one another with a kiss of love. Peace to all who are in Christ."
           }
         ],
-        "ctx": "Peter concludes with personal notes. Silvanus (Silas) is the letter carrier and likely amanuensis. The letter's purpose is summarized: exhortation and testimony that this is the true grace of God - stand firm in it. Greetings come from the chosen sister in Babylon (Rome) and from Mark, described as Peter's son. The kiss of love and the blessing of peace close the letter.",
-        "cross": [
-          {
-            "ref": "Acts 15:22",
-            "note": "Judas called Barsabbas, and Silas, leading men among the brothers."
-          },
-          {
-            "ref": "2 Timothy 4:11",
-            "note": "Get Mark and bring him with you, for he is very useful to me."
-          },
-          {
-            "ref": "Revelation 17:5",
-            "note": "Babylon the great, mother of prostitutes."
-          },
-          {
-            "ref": "Romans 16:16",
-            "note": "Greet one another with a holy kiss."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 15:22",
+              "note": "Judas called Barsabbas, and Silas, leading men among the brothers."
+            },
+            {
+              "ref": "2 Timothy 4:11",
+              "note": "Get Mark and bring him with you, for he is very useful to me."
+            },
+            {
+              "ref": "Revelation 17:5",
+              "note": "Babylon the great, mother of prostitutes."
+            },
+            {
+              "ref": "Romans 16:16",
+              "note": "Greet one another with a holy kiss."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -333,6 +342,9 @@
               "note": "Jobes notes that the mention of Mark connects Peter to early Gospel traditions. Peter and Mark are associated in early church testimony."
             }
           ]
+        },
+        "hist": {
+          "context": "Peter concludes with personal notes. Silvanus (Silas) is the letter carrier and likely amanuensis. The letter's purpose is summarized: exhortation and testimony that this is the true grace of God - stand firm in it. Greetings come from the chosen sister in Babylon (Rome) and from Mark, described as Peter's son. The kiss of love and the blessing of peace close the letter."
         }
       }
     }

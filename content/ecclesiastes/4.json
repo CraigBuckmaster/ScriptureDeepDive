@@ -25,17 +25,18 @@
             "paragraph": "\"I saw the tears of the oppressed (ʿōsheq) — and they have no comforter\" (v.1). The word appears three times in v.1, hammering the theme. Oppression exists, the oppressed weep, and no one comforts them. The power is on the side of the oppressors. Qoheleth’s social observation is as sharp as Amos’s."
           }
         ],
-        "ctx": "Qoheleth turns from existential reflection to social observation. Oppression (vv.1–3): the dead are happier than the living, and the unborn are happiest. Envy (vv.4–6): all toil is driven by envy; better one handful with tranquillity than two with chasing wind. The lonely toiler (vv.7–8): a person alone, no companion, endless work — \"for whom am I toiling?\" The question of purpose without community.",
-        "cross": [
-          {
-            "ref": "Amos 4:1",
-            "note": "\"You cows of Bashan who oppress the poor\" — the same social critique."
-          },
-          {
-            "ref": "Job 3:11–13",
-            "note": "\"Why did I not perish at birth?\" — Job’s parallel conclusion that the dead are better off."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Amos 4:1",
+              "note": "\"You cows of Bashan who oppress the poor\" — the same social critique."
+            },
+            {
+              "ref": "Job 3:11–13",
+              "note": "\"Why did I not perish at birth?\" — Job’s parallel conclusion that the dead are better off."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -121,6 +122,9 @@
               "note": "Fox: \"envy of another\" as the root of toil is a psychological insight. Competition, not necessity, drives most human effort. Remove comparison and the motivation collapses."
             }
           ]
+        },
+        "hist": {
+          "context": "Qoheleth turns from existential reflection to social observation. Oppression (vv.1–3): the dead are happier than the living, and the unborn are happiest. Envy (vv.4–6): all toil is driven by envy; better one handful with tranquillity than two with chasing wind. The lonely toiler (vv.7–8): a person alone, no companion, endless work — \"for whom am I toiling?\" The question of purpose without community."
         }
       }
     },
@@ -138,17 +142,18 @@
             "paragraph": "\"A cord of three strands (haḥūṭ haməshullāsh) is not quickly broken\" (v.12). The most quoted verse in the chapter. Two are better than one; three are stronger still. The image is of rope: individual strands break easily; braided together, they hold. Community is not optional but structural."
           }
         ],
-        "ctx": "After the loneliness of v.7–8, Qoheleth affirms companionship. Two are better: they can help each other up when one falls (v.10), keep each other warm (v.11), defend against attack (v.12). Then a political proverb (vv.13–16): a poor but wise youth is better than an old foolish king. But even the youth’s popularity fades. Popularity is hebel too.",
-        "cross": [
-          {
-            "ref": "Gen 2:18",
-            "note": "\"It is not good for the man to be alone\" — the creation theology behind Qoheleth’s observation."
-          },
-          {
-            "ref": "Matt 18:20",
-            "note": "\"Where two or three gather in my name, there am I\" — Jesus’ version of the threefold cord."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 2:18",
+              "note": "\"It is not good for the man to be alone\" — the creation theology behind Qoheleth’s observation."
+            },
+            {
+              "ref": "Matt 18:20",
+              "note": "\"Where two or three gather in my name, there am I\" — Jesus’ version of the threefold cord."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -230,6 +235,9 @@
               "note": "Fox: the political proverb is another example of hebel: even the replacement king will be forgotten. Power is a revolving door."
             }
           ]
+        },
+        "hist": {
+          "context": "After the loneliness of v.7–8, Qoheleth affirms companionship. Two are better: they can help each other up when one falls (v.10), keep each other warm (v.11), defend against attack (v.12). Then a political proverb (vv.13–16): a poor but wise youth is better than an old foolish king. But even the youth’s popularity fades. Popularity is hebel too."
         }
       }
     }

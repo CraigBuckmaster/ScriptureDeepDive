@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 9,
       "panels": {
-        "ctx": "David’s sons are listed by mother and birthplace: six born at Hebron during his seven-year reign there, then nine (plus Tamar) born at Jerusalem. The Chronicler omits the circumstances of Solomon’s birth entirely — no Bathsheba, no adultery, no murder of Uriah. “Bathshua daughter of Ammiel” appears as Solomon’s mother (v.5) with no hint of scandal. This is the Chronicler’s most famous omission: David’s greatest sin is erased from the record.",
-        "cross": [
-          {
-            "ref": "2 Sam 3:2–5",
-            "note": "David’s sons at Hebron listed with the same names but with additional narrative context (Abigail, Maacah, etc.)."
-          },
-          {
-            "ref": "2 Sam 11–12",
-            "note": "The Bathsheba/Uriah affair — completely absent from Chronicles. The Chronicler’s David is the David of worship, not the David of sin."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 3:2–5",
+              "note": "David’s sons at Hebron listed with the same names but with additional narrative context (Abigail, Maacah, etc.)."
+            },
+            {
+              "ref": "2 Sam 11–12",
+              "note": "The Bathsheba/Uriah affair — completely absent from Chronicles. The Chronicler’s David is the David of worship, not the David of sin."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "Bathshua (bat-shûaʿ) is likely a variant of Bathsheba (bat-shebaʿ). Ammiel (ʿammîʾēl, “my people is God”) is the reverse of Eliam (ʾĕlîʿam, “my God is people”) — the same consonants rearranged."
             }
           ]
+        },
+        "hist": {
+          "context": "David’s sons are listed by mother and birthplace: six born at Hebron during his seven-year reign there, then nine (plus Tamar) born at Jerusalem. The Chronicler omits the circumstances of Solomon’s birth entirely — no Bathsheba, no adultery, no murder of Uriah. “Bathshua daughter of Ammiel” appears as Solomon’s mother (v.5) with no hint of scandal. This is the Chronicler’s most famous omission: David’s greatest sin is erased from the record."
         }
       }
     },
@@ -54,21 +58,22 @@
       "verse_start": 10,
       "verse_end": 24,
       "panels": {
-        "ctx": "The royal line runs from Solomon through the kings of Judah to the exile (matching the Kings account), then continues beyond — through Jehoiachin’s sons to Zerubbabel and several generations further. This is the most theologically significant section of the genealogies: the Davidic line survives exile. The dynasty that seemed to end at 2 Kings 25 is shown here to continue into the Chronicler’s own time. The promise of 2 Samuel 7 is not extinct.",
-        "cross": [
-          {
-            "ref": "2 Kgs 25:27–30",
-            "note": "Jehoiachin released from prison. The genealogy here traces what happened next: Jehoiachin had sons in Babylon, and the line continued."
-          },
-          {
-            "ref": "Ezra 3:2",
-            "note": "Zerubbabel son of Shealtiel led the return and rebuilt the altar. He appears here at 3:19 as Jehoiachin’s grandson."
-          },
-          {
-            "ref": "Matt 1:12–16",
-            "note": "Matthew’s genealogy passes through Jeconiah (Jehoiachin) to Zerubbabel and on to Jesus. The Chronicles genealogy and Matthew’s are tracking the same line."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 25:27–30",
+              "note": "Jehoiachin released from prison. The genealogy here traces what happened next: Jehoiachin had sons in Babylon, and the line continued."
+            },
+            {
+              "ref": "Ezra 3:2",
+              "note": "Zerubbabel son of Shealtiel led the return and rebuilt the altar. He appears here at 3:19 as Jehoiachin’s grandson."
+            },
+            {
+              "ref": "Matt 1:12–16",
+              "note": "Matthew’s genealogy passes through Jeconiah (Jehoiachin) to Zerubbabel and on to Jesus. The Chronicles genealogy and Matthew’s are tracking the same line."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -86,6 +91,9 @@
               "note": "The relationship between Zerubbabel and Shealtiel/Pedaiah is textually complex. The Chronicler names Pedaiah as Zerubbabel’s father (v.19), while Ezra and Haggai call him “son of Shealtiel.” Levirate marriage is the usual explanation."
             }
           ]
+        },
+        "hist": {
+          "context": "The royal line runs from Solomon through the kings of Judah to the exile (matching the Kings account), then continues beyond — through Jehoiachin’s sons to Zerubbabel and several generations further. This is the most theologically significant section of the genealogies: the Davidic line survives exile. The dynasty that seemed to end at 2 Kings 25 is shown here to continue into the Chronicler’s own time. The promise of 2 Samuel 7 is not extinct."
         }
       }
     }

@@ -25,17 +25,18 @@
             "paragraph": "\"In a dream (ḥălōm), in a vision of the night, when deep sleep falls on people... God may speak\" (vv.15–16). Elihu introduces the theology of divine communication through suffering. God speaks to humans in two ways: dreams (vv.15–18) and pain (vv.19–22). Suffering is not punishment but communication — God’s alternative language when words are ignored."
           }
         ],
-        "ctx": "Elihu begins respectfully: he is made of clay like Job (v.6), he will not overwhelm him (v.7). He quotes Job’s own words back to him: \"I am pure, I have done no wrong\" (v.9). Then his counter-argument: God speaks in ways humans don’t perceive (v.14). Dreams and pain are divine messages. This is neither retribution theology (the friends) nor accusation of divine injustice (Job) but a third option: suffering as pedagogy.",
-        "cross": [
-          {
-            "ref": "Gen 20:3–7",
-            "note": "God warns Abimelech in a dream — the dream as divine communication."
-          },
-          {
-            "ref": "Heb 12:5–11",
-            "note": "\"God disciplines those he loves\" — the NT development of Elihu’s discipline theology."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 20:3–7",
+              "note": "God warns Abimelech in a dream — the dream as divine communication."
+            },
+            {
+              "ref": "Heb 12:5–11",
+              "note": "\"God disciplines those he loves\" — the NT development of Elihu’s discipline theology."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Habel: Elihu introduces a new legal argument: God communicates through non-verbal means. The judge speaks not only through verdicts but through circumstances. Suffering is a form of testimony."
             }
           ]
+        },
+        "hist": {
+          "context": "Elihu begins respectfully: he is made of clay like Job (v.6), he will not overwhelm him (v.7). He quotes Job’s own words back to him: \"I am pure, I have done no wrong\" (v.9). Then his counter-argument: God speaks in ways humans don’t perceive (v.14). Dreams and pain are divine messages. This is neither retribution theology (the friends) nor accusation of divine injustice (Job) but a third option: suffering as pedagogy."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "\"If there is an angel as his mediator (mēlîṣ), one out of a thousand, to vouch for a person’s uprightness\" (v.23). Elihu describes a mediating angel — one who intercedes, translates suffering into meaning, and tells God: \"Spare them from going down to the pit; I have found a ransom.\" This echoes Job’s cry for an arbiter (9:33), witness (16:19), and redeemer (19:25)."
           }
         ],
-        "ctx": "Elihu describes the second form of divine speech: physical suffering (vv.19–22). Pain on the sickbed, bones barely visible, appetite gone, flesh wasting. Then the rescue: a mediating angel finds a ransom, and the person is restored (vv.23–26). The restoration includes public testimony: \"I have sinned... but God redeemed me from the pit, and I shall live to enjoy the light\" (vv.27–28). Elihu’s theology is that the cycle is: sin or danger → suffering as warning → repentance → rescue → testimony.",
-        "cross": [
-          {
-            "ref": "Job 9:33",
-            "note": "\"If only there were an arbiter\" — Job’s first cry for mediation, which Elihu now develops."
-          },
-          {
-            "ref": "1 Tim 2:5–6",
-            "note": "\"One mediator between God and mankind, the man Christ Jesus, who gave himself as a ransom\" — the NT fulfilment of Elihu’s mediating angel."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Job 9:33",
+              "note": "\"If only there were an arbiter\" — Job’s first cry for mediation, which Elihu now develops."
+            },
+            {
+              "ref": "1 Tim 2:5–6",
+              "note": "\"One mediator between God and mankind, the man Christ Jesus, who gave himself as a ransom\" — the NT fulfilment of Elihu’s mediating angel."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -196,6 +201,9 @@
               "note": "Habel: Elihu offers a partial resolution to Job’s legal problem. If there is a mediating angel, the gap between God and human that Job identified (9:33) has a solution — at least in principle."
             }
           ]
+        },
+        "hist": {
+          "context": "Elihu describes the second form of divine speech: physical suffering (vv.19–22). Pain on the sickbed, bones barely visible, appetite gone, flesh wasting. Then the rescue: a mediating angel finds a ransom, and the person is restored (vv.23–26). The restoration includes public testimony: \"I have sinned... but God redeemed me from the pit, and I shall live to enjoy the light\" (vv.27–28). Elihu’s theology is that the cycle is: sin or danger → suffering as warning → repentance → rescue → testimony."
         }
       }
     }

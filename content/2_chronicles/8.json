@@ -17,13 +17,14 @@
       "verse_start": 1,
       "verse_end": 10,
       "panels": {
-        "ctx": "After twenty years of building (temple + palace), Solomon rebuilds cities, fortifies strategic locations, and uses the surviving non-Israelite populations as forced labour. “But Solomon did not make slaves of the Israelites” — they served as soldiers, officers, and commanders. The Chronicler presents an idealised administration: foreigners work, Israelites lead.",
-        "cross": [
-          {
-            "ref": "1 Kgs 9:10‐23",
-            "note": "The parallel. Kings includes the Cabul incident (Solomon giving Hiram twenty cities) — the Chronicler reverses it: Hiram gives cities to Solomon."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 9:10‐23",
+              "note": "The parallel. Kings includes the Cabul incident (Solomon giving Hiram twenty cities) — the Chronicler reverses it: Hiram gives cities to Solomon."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -41,6 +42,9 @@
               "note": "The 250 chief officers differs from 1 Kgs 9:23’s 550. The discrepancy may reflect different counting of overlapping administrative categories."
             }
           ]
+        },
+        "hist": {
+          "context": "After twenty years of building (temple + palace), Solomon rebuilds cities, fortifies strategic locations, and uses the surviving non-Israelite populations as forced labour. “But Solomon did not make slaves of the Israelites” — they served as soldiers, officers, and commanders. The Chronicler presents an idealised administration: foreigners work, Israelites lead."
         }
       }
     },
@@ -50,13 +54,14 @@
       "verse_start": 11,
       "verse_end": 18,
       "panels": {
-        "ctx": "Solomon moves Pharaoh’s daughter from the City of David: “No woman of mine shall live in the palace of David king of Israel, because the places the ark of the LORD has entered are holy.” The Chronicler reframes a political marriage as a holiness issue. Solomon then establishes the temple’s liturgical calendar: daily, weekly, monthly, and festival offerings “as Moses had ordered.” Maritime trade with Ophir produces 450 talents of gold.",
-        "cross": [
-          {
-            "ref": "1 Kgs 9:24‐28",
-            "note": "The parallel. Kings does not explain why Pharaoh’s daughter was moved; the Chronicler adds the holiness rationale."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 9:24‐28",
+              "note": "The parallel. Kings does not explain why Pharaoh’s daughter was moved; the Chronicler adds the holiness rationale."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -74,6 +79,9 @@
               "note": "The liturgical calendar (daily, Sabbath, new moon, three festivals) follows the Pentateuchal prescriptions (Num 28–29). Solomon’s worship is Torah-compliant."
             }
           ]
+        },
+        "hist": {
+          "context": "Solomon moves Pharaoh’s daughter from the City of David: “No woman of mine shall live in the palace of David king of Israel, because the places the ark of the LORD has entered are holy.” The Chronicler reframes a political marriage as a holiness issue. Solomon then establishes the temple’s liturgical calendar: daily, weekly, monthly, and festival offerings “as Moses had ordered.” Maritime trade with Ophir produces 450 talents of gold."
         }
       }
     }

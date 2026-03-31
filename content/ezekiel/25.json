@@ -25,17 +25,18 @@
             "paragraph": "The mocking exclamation 'Aha!' (he’ah) captures Ammon's malicious glee at Jerusalem's fall and the Temple's destruction. This is not neutral observation but Schadenfreude — rejoicing in another's disaster. The word itself becomes the charge: mocking God's sanctuary provokes the same God to judgment."
           }
         ],
-        "ctx": "Chapter 25 opens the 'Oracles Against the Nations' section (chs.25-32), a structural unit found in all three major prophets (Isaiah 13-23, Jeremiah 46-51, Ezekiel 25-32). These oracles serve a theological purpose: God's sovereignty extends beyond Israel to all nations. The four nations addressed here — Ammon, Moab, Edom, Philistia — are Israel's immediate neighbours, the 'inner ring' of enemies. Their sin is specifically against Israel: mocking, gloating, and taking revenge during Jerusalem's crisis.",
-        "cross": [
-          {
-            "ref": "Jer 49:1-6",
-            "note": "Jeremiah's parallel oracle against Ammon also predicts dispossession, though it uniquely adds a promise of future restoration for Ammon."
-          },
-          {
-            "ref": "Amos 1:13-15",
-            "note": "Amos condemns Ammon for ripping open pregnant women in Gilead — a history of cruelty that provides background for Ezekiel's oracle."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 49:1-6",
+              "note": "Jeremiah's parallel oracle against Ammon also predicts dispossession, though it uniquely adds a promise of future restoration for Ammon."
+            },
+            {
+              "ref": "Amos 1:13-15",
+              "note": "Amos condemns Ammon for ripping open pregnant women in Gilead — a history of cruelty that provides background for Ezekiel's oracle."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -96,6 +97,9 @@
               "note": "Zimmerli observes that Ammon's sin is theological, not political: saying 'Aha!' over the Temple's desecration reveals contempt for YHWH Himself. The oracle against Ammon is fundamentally about defending God's honour among the nations."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 25 opens the 'Oracles Against the Nations' section (chs.25-32), a structural unit found in all three major prophets (Isaiah 13-23, Jeremiah 46-51, Ezekiel 25-32). These oracles serve a theological purpose: God's sovereignty extends beyond Israel to all nations. The four nations addressed here — Ammon, Moab, Edom, Philistia — are Israel's immediate neighbours, the 'inner ring' of enemies. Their sin is specifically against Israel: mocking, gloating, and taking revenge during Jerusalem's crisis."
         }
       }
     },
@@ -113,17 +117,18 @@
             "paragraph": "Moab's sin is declaring that 'the house of Judah is like all the other nations' (v.8). This denies Israel's election and covenant status — reducing God's chosen people to just another nation. The theological claim that Israel is unique among the goyim is precisely what Moab contests, and precisely what God vindicates through judgment."
           }
         ],
-        "ctx": "Moab's offense is subtler than Ammon's outright mockery: Moab declared that Judah was 'like all the other nations,' denying Israel's special covenant relationship with God. This is a theological attack on election itself. If Jerusalem's fall proves that Judah's God is no different from other nations' gods, then YHWH's universal sovereignty is denied. God answers by judging Moab through the same 'people of the East' who will overrun Ammon.",
-        "cross": [
-          {
-            "ref": "Isa 15-16",
-            "note": "Isaiah's lament for Moab is notably more sympathetic than Ezekiel's terse oracle, reflecting different prophetic perspectives on the same nation."
-          },
-          {
-            "ref": "Ruth 1:16",
-            "note": "Ruth the Moabitess chose YHWH over Moab's theology — her confession contradicts the Moabite claim that Israel's God is 'like all the other nations.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 15-16",
+              "note": "Isaiah's lament for Moab is notably more sympathetic than Ezekiel's terse oracle, reflecting different prophetic perspectives on the same nation."
+            },
+            {
+              "ref": "Ruth 1:16",
+              "note": "Ruth the Moabitess chose YHWH over Moab's theology — her confession contradicts the Moabite claim that Israel's God is 'like all the other nations.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -176,6 +181,9 @@
               "note": "Zimmerli connects Moab's denial of Israel's uniqueness to the broader theological question of election in exile: if Israel is 'like all the nations,' then YHWH is like all the gods. The oracle vindicates monotheism through judgment."
             }
           ]
+        },
+        "hist": {
+          "context": "Moab's offense is subtler than Ammon's outright mockery: Moab declared that Judah was 'like all the other nations,' denying Israel's special covenant relationship with God. This is a theological attack on election itself. If Jerusalem's fall proves that Judah's God is no different from other nations' gods, then YHWH's universal sovereignty is denied. God answers by judging Moab through the same 'people of the East' who will overrun Ammon."
         }
       }
     },
@@ -193,17 +201,18 @@
             "paragraph": "Edom 'took vengeance' (naqam) against Judah — the language implies blood feud, not mere political opportunism. The animosity between Edom and Israel traces back to Jacob and Esau (Genesis 25-27) and erupted whenever Judah was vulnerable. Edom's sin is not passive mockery but active aggression."
           }
         ],
-        "ctx": "Edom's oracle is the shortest of the four but carries the deepest historical roots. Edom was Israel's 'brother nation' (descended from Esau, Jacob's twin), which made its betrayal during Jerusalem's fall especially heinous. Obadiah and Psalm 137:7 record the same accusation: Edom gloated, looted, and actively collaborated with Babylon. The brevity of the oracle belies its intensity — the punishment is 'vengeance' (naqam) because Edom took vengeance.",
-        "cross": [
-          {
-            "ref": "Obad 10-14",
-            "note": "Obadiah's entire prophecy is devoted to Edom's betrayal during Jerusalem's fall, providing the fullest biblical account of the brother's treachery."
-          },
-          {
-            "ref": "Ps 137:7",
-            "note": "The exiles remembered Edom's cry: 'Tear it down! Tear it down to its foundations!' This cry of malice became the charge sheet for divine judgment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Obad 10-14",
+              "note": "Obadiah's entire prophecy is devoted to Edom's betrayal during Jerusalem's fall, providing the fullest biblical account of the brother's treachery."
+            },
+            {
+              "ref": "Ps 137:7",
+              "note": "The exiles remembered Edom's cry: 'Tear it down! Tear it down to its foundations!' This cry of malice became the charge sheet for divine judgment."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -256,6 +265,9 @@
               "note": "Zimmerli notes the unique feature of v.14: God will execute vengeance 'by the hand of my people Israel.' This is the only oracle in the set that assigns Israel as the agent of judgment, anticipating future restoration and reversal of the exile's power dynamics."
             }
           ]
+        },
+        "hist": {
+          "context": "Edom's oracle is the shortest of the four but carries the deepest historical roots. Edom was Israel's 'brother nation' (descended from Esau, Jacob's twin), which made its betrayal during Jerusalem's fall especially heinous. Obadiah and Psalm 137:7 record the same accusation: Edom gloated, looted, and actively collaborated with Babylon. The brevity of the oracle belies its intensity — the punishment is 'vengeance' (naqam) because Edom took vengeance."
         }
       }
     },
@@ -273,17 +285,18 @@
             "paragraph": "The Philistines are called 'Kerethites' (keretim), a name linked to Crete, their probable origin. The wordplay is sharp: keretim sounds like the Hebrew for 'cut off' (karat), and God says He will 'cut off the Kerethites.' The people named for cutting will be cut off — their identity becomes their doom."
           }
         ],
-        "ctx": "The Philistines receive the briefest oracle — only three verses. Their sin parallels Edom's: 'vengeance with malice in their hearts to destroy Judah with ancient hostility.' The Philistines had been Israel's perennial western enemy since the days of the Judges, and their 'ancient hostility' flared during Jerusalem's fall. The oracle completes the geographic sweep: Ammon (northeast), Moab (east), Edom (southeast), Philistia (west) — Israel's enemies on every side.",
-        "cross": [
-          {
-            "ref": "Zeph 2:4-7",
-            "note": "Zephaniah's oracle against Philistia names the same four coastal cities and promises that the remnant of Judah will possess Philistine territory after the exile."
-          },
-          {
-            "ref": "1 Sam 17",
-            "note": "The David and Goliath narrative epitomises the ancient enmity between Israel and Philistia that Ezekiel describes as 'ancient hostility.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Zeph 2:4-7",
+              "note": "Zephaniah's oracle against Philistia names the same four coastal cities and promises that the remnant of Judah will possess Philistine territory after the exile."
+            },
+            {
+              "ref": "1 Sam 17",
+              "note": "The David and Goliath narrative epitomises the ancient enmity between Israel and Philistia that Ezekiel describes as 'ancient hostility.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -336,6 +349,9 @@
               "note": "Zimmerli observes that all four oracles share the recognition formula, making YHWH's self-disclosure to the nations the unifying theological theme. Judgment is not the goal; knowledge of God is the goal."
             }
           ]
+        },
+        "hist": {
+          "context": "The Philistines receive the briefest oracle — only three verses. Their sin parallels Edom's: 'vengeance with malice in their hearts to destroy Judah with ancient hostility.' The Philistines had been Israel's perennial western enemy since the days of the Judges, and their 'ancient hostility' flared during Jerusalem's fall. The oracle completes the geographic sweep: Ammon (northeast), Moab (east), Edom (southeast), Philistia (west) — Israel's enemies on every side."
         }
       }
     }

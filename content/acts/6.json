@@ -54,21 +54,22 @@
             "current": false
           }
         ],
-        "ctx": "The Seven's appointment is the functional origin of the later diaconal office (1 Tim 3:8–13). Their qualifications — Spirit-filled, full of wisdom, of good reputation — set the standard for servant leadership. Notably, all seven have Greek names, suggesting the appointment was deliberately sensitive to the Hellenistic community's representation. Luke places the growth summary of v7 immediately after the structural innovation — the organizational response was Spirit-blessed: 'the word of God spread.' The detail that 'a large number of priests became obedient' signals that the establishment itself is beginning to fracture.",
-        "cross": [
-          {
-            "ref": "Numbers 11:16–17",
-            "note": "Moses appoints seventy elders to share the burden of leadership — the OT precedent for delegated ministry. The Spirit given to Moses is distributed to the seventy."
-          },
-          {
-            "ref": "1 Timothy 3:8–13",
-            "note": "The qualifications for deacons — dignified, not double-tongued, tested — build on the Acts 6 precedent. The office is formally named and structured in the Pastoral Epistles."
-          },
-          {
-            "ref": "Acts 6:7",
-            "note": "\"The word of God spread\" — Luke's growth summary immediately after the structural innovation, confirming the organizational response was Spirit-approved."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Numbers 11:16–17",
+              "note": "Moses appoints seventy elders to share the burden of leadership — the OT precedent for delegated ministry. The Spirit given to Moses is distributed to the seventy."
+            },
+            {
+              "ref": "1 Timothy 3:8–13",
+              "note": "The qualifications for deacons — dignified, not double-tongued, tested — build on the Acts 6 precedent. The office is formally named and structured in the Pastoral Epistles."
+            },
+            {
+              "ref": "Acts 6:7",
+              "note": "\"The word of God spread\" — Luke's growth summary immediately after the structural innovation, confirming the organizational response was Spirit-approved."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -133,6 +134,9 @@
               "note": "The appointment of seven men all with Greek names is almost certainly intentional: the Hellenistic community that raised the complaint receives exclusively Hellenistic representatives to address it. Cultural sensitivity is embedded in the structural response."
             }
           ]
+        },
+        "hist": {
+          "context": "The Seven's appointment is the functional origin of the later diaconal office (1 Tim 3:8–13). Their qualifications — Spirit-filled, full of wisdom, of good reputation — set the standard for servant leadership. Notably, all seven have Greek names, suggesting the appointment was deliberately sensitive to the Hellenistic community's representation. Luke places the growth summary of v7 immediately after the structural innovation — the organizational response was Spirit-blessed: 'the word of God spread.' The detail that 'a large number of priests became obedient' signals that the establishment itself is beginning to fracture."
         }
       }
     },
@@ -179,21 +183,22 @@
             "current": false
           }
         ],
-        "ctx": "The false witness pattern (v13) echoes Jesus's trial (Mark 14:55–59). Luke's parallel is deliberate: Stephen's passion narrative mirrors his Lord's. The charges — speaking against the Temple and the law — are the same charges brought against Jesus. This structural parallel signals that Stephen's martyrdom is patterned on and participates in the suffering of Christ. Stephen is becoming the first Christian whose life is shaped into the shape of the cross.",
-        "cross": [
-          {
-            "ref": "Mark 14:55–59",
-            "note": "False witnesses at Jesus's trial charged him with threatening the Temple — the same charge brought against Stephen. Luke frames Stephen's death as a repetition of Christ's passion in the life of the first martyr."
-          },
-          {
-            "ref": "Exodus 34:29–35",
-            "note": "Moses's shining face after meeting God on Sinai — the OT precedent for Stephen's angelic appearance. Both Moses and Stephen are mediators of divine revelation being rejected by their own people."
-          },
-          {
-            "ref": "Acts 7:55–56",
-            "note": "Stephen's face shines before his speech; his vision of the open heaven confirms God's approval after it. The framing brackets his entire defence with divine endorsement."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mark 14:55–59",
+              "note": "False witnesses at Jesus's trial charged him with threatening the Temple — the same charge brought against Stephen. Luke frames Stephen's death as a repetition of Christ's passion in the life of the first martyr."
+            },
+            {
+              "ref": "Exodus 34:29–35",
+              "note": "Moses's shining face after meeting God on Sinai — the OT precedent for Stephen's angelic appearance. Both Moses and Stephen are mediators of divine revelation being rejected by their own people."
+            },
+            {
+              "ref": "Acts 7:55–56",
+              "note": "Stephen's face shines before his speech; his vision of the open heaven confirms God's approval after it. The framing brackets his entire defence with divine endorsement."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -258,6 +263,9 @@
               "note": "\"Like the face of an angel\" was a recognized idiom in Jewish literature for extraordinary radiance or divine approval (cf. 1 Enoch; Josephus). The Sanhedrin members seeing this would have recognized it as a sign of prophetic authority — making their subsequent rejection all the more culpable."
             }
           ]
+        },
+        "hist": {
+          "context": "The false witness pattern (v13) echoes Jesus's trial (Mark 14:55–59). Luke's parallel is deliberate: Stephen's passion narrative mirrors his Lord's. The charges — speaking against the Temple and the law — are the same charges brought against Jesus. This structural parallel signals that Stephen's martyrdom is patterned on and participates in the suffering of Christ. Stephen is becoming the first Christian whose life is shaped into the shape of the cross."
         }
       }
     }

@@ -25,21 +25,22 @@
             "paragraph": "Take up their cross daily (ton stauron autou) and follow me. Luke uniquely adds the word daily (kath' hēmeran) to the cross-bearing command. In Matthew and Mark, the cross is taken up once — the singular act of following even to death. In Luke it becomes a daily discipline: the self-denying life is not a crisis decision but a continuous practice. Luke’s addition frames discipleship as an ongoing posture rather than a singular dramatic act."
           }
         ],
-        "ctx": "Luke 9 is the turning-point chapter. It opens with the mission of the Twelve (the first extension of Jesus’s own ministry to his disciples) and ends with the determination to go to Jerusalem (9:51). Between them: the feeding of five thousand, Herod’s question, Peter’s confession, the first passion prediction, the cost of discipleship, the Transfiguration, the failed exorcism, the second passion prediction, and the cost of following. Luke compresses more theological content into chapter 9 than any other chapter in the Gospel.",
-        "cross": [
-          {
-            "ref": "Num 11:22",
-            "note": "Should flocks and herds be slaughtered for them? Or should all the fish in the sea be caught? — Moses’s question when the people demand meat in the wilderness. The feeding of five thousand replays the wilderness feeding."
-          },
-          {
-            "ref": "2 Kings 4:42-44",
-            "note": "Feed the people — Elisha’s multiplication of twenty loaves for a hundred people. Jesus’s feeding far exceeds this Elisha miracle."
-          },
-          {
-            "ref": "Isa 53:3",
-            "note": "He was despised and rejected — the passion prediction of 9:22 draws on the Servant Song."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 11:22",
+              "note": "Should flocks and herds be slaughtered for them? Or should all the fish in the sea be caught? — Moses’s question when the people demand meat in the wilderness. The feeding of five thousand replays the wilderness feeding."
+            },
+            {
+              "ref": "2 Kings 4:42-44",
+              "note": "Feed the people — Elisha’s multiplication of twenty loaves for a hundred people. Jesus’s feeding far exceeds this Elisha miracle."
+            },
+            {
+              "ref": "Isa 53:3",
+              "note": "He was despised and rejected — the passion prediction of 9:22 draws on the Servant Song."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -107,6 +108,9 @@
         },
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">The Transfiguration Mountain</div><div class=\"poi-coords\">Traditionally identified as Mt. Tabor or Mt. Hermon</div><div class=\"poi-text\">The “high mountain” (in Mark) is not named in Luke. Tabor (Lower Galilee) and Hermon (near Caesarea Philippi) are the main candidates. The mountain functions as the site of divine disclosure throughout the OT (Sinai, Horeb, Carmel).</div></div>"
+        },
+        "hist": {
+          "context": "Luke 9 is the turning-point chapter. It opens with the mission of the Twelve (the first extension of Jesus’s own ministry to his disciples) and ends with the determination to go to Jerusalem (9:51). Between them: the feeding of five thousand, Herod’s question, Peter’s confession, the first passion prediction, the cost of discipleship, the Transfiguration, the failed exorcism, the second passion prediction, and the cost of following. Luke compresses more theological content into chapter 9 than any other chapter in the Gospel."
         }
       }
     },
@@ -124,21 +128,22 @@
             "paragraph": "Moses and Elijah appeared in glorious splendor, talking with Jesus about his departure (exodon), which he was about to bring to completion at Jerusalem. The Greek word is exodos — the same word as the book of Exodus. Luke uses it to frame the cross as the new Exodus: Jesus’s death in Jerusalem is the ultimate liberation, the final Passover. Moses and Elijah — the architect of the Exodus and the prophet of the return from exile — are the appropriate witnesses to the event that both their lives anticipated."
           }
         ],
-        "ctx": "The Transfiguration is the visual counterpart to the baptism: the same Father speaks, the same Son is confirmed, the same divine commissioning is enacted. But now in the context of the passion: the topic of conversation is his departure/exodus in Jerusalem. Luke’s Transfiguration leads directly into the journey to Jerusalem (9:51 — he resolutely set his face), making the glory of the mountain the preparation for the suffering of the road.",
-        "cross": [
-          {
-            "ref": "Exod 24:15-16",
-            "note": "The cloud covered the mountain and the glory of the LORD settled on it — the Sinai theophany that the Transfiguration cloud echoes."
-          },
-          {
-            "ref": "Deut 18:15",
-            "note": "Listen to him — the voice from the cloud quotes the Deuteronomy command about the prophet like Moses: hear the fulfiller."
-          },
-          {
-            "ref": "Mal 4:5",
-            "note": "See, I will send the prophet Elijah to you before that great and dreadful day of the LORD comes — Elijah’s presence at the Transfiguration confirms that the Elijah-promise has been fulfilled."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 24:15-16",
+              "note": "The cloud covered the mountain and the glory of the LORD settled on it — the Sinai theophany that the Transfiguration cloud echoes."
+            },
+            {
+              "ref": "Deut 18:15",
+              "note": "Listen to him — the voice from the cloud quotes the Deuteronomy command about the prophet like Moses: hear the fulfiller."
+            },
+            {
+              "ref": "Mal 4:5",
+              "note": "See, I will send the prophet Elijah to you before that great and dreadful day of the LORD comes — Elijah’s presence at the Transfiguration confirms that the Elijah-promise has been fulfilled."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -206,6 +211,9 @@
         },
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">The Transfiguration Mountain</div><div class=\"poi-coords\">Traditionally identified as Mt. Tabor or Mt. Hermon</div><div class=\"poi-text\">The “high mountain” (in Mark) is not named in Luke. Tabor (Lower Galilee) and Hermon (near Caesarea Philippi) are the main candidates. The mountain functions as the site of divine disclosure throughout the OT (Sinai, Horeb, Carmel).</div></div>"
+        },
+        "hist": {
+          "context": "The Transfiguration is the visual counterpart to the baptism: the same Father speaks, the same Son is confirmed, the same divine commissioning is enacted. But now in the context of the passion: the topic of conversation is his departure/exodus in Jerusalem. Luke’s Transfiguration leads directly into the journey to Jerusalem (9:51 — he resolutely set his face), making the glory of the mountain the preparation for the suffering of the road."
         }
       }
     },
@@ -223,21 +231,22 @@
             "paragraph": "Take up their cross daily (ton stauron autou) and follow me. Luke uniquely adds the word daily (kath' hēmeran) to the cross-bearing command. In Matthew and Mark, the cross is taken up once — the singular act of following even to death. In Luke it becomes a daily discipline: the self-denying life is not a crisis decision but a continuous practice. Luke’s addition frames discipleship as an ongoing posture rather than a singular dramatic act."
           }
         ],
-        "ctx": "Luke 9 is the turning-point chapter. It opens with the mission of the Twelve (the first extension of Jesus’s own ministry to his disciples) and ends with the determination to go to Jerusalem (9:51). Between them: the feeding of five thousand, Herod’s question, Peter’s confession, the first passion prediction, the cost of discipleship, the Transfiguration, the failed exorcism, the second passion prediction, and the cost of following. Luke compresses more theological content into chapter 9 than any other chapter in the Gospel.",
-        "cross": [
-          {
-            "ref": "Num 11:22",
-            "note": "Should flocks and herds be slaughtered for them? Or should all the fish in the sea be caught? — Moses’s question when the people demand meat in the wilderness. The feeding of five thousand replays the wilderness feeding."
-          },
-          {
-            "ref": "2 Kings 4:42-44",
-            "note": "Feed the people — Elisha’s multiplication of twenty loaves for a hundred people. Jesus’s feeding far exceeds this Elisha miracle."
-          },
-          {
-            "ref": "Isa 53:3",
-            "note": "He was despised and rejected — the passion prediction of 9:22 draws on the Servant Song."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 11:22",
+              "note": "Should flocks and herds be slaughtered for them? Or should all the fish in the sea be caught? — Moses’s question when the people demand meat in the wilderness. The feeding of five thousand replays the wilderness feeding."
+            },
+            {
+              "ref": "2 Kings 4:42-44",
+              "note": "Feed the people — Elisha’s multiplication of twenty loaves for a hundred people. Jesus’s feeding far exceeds this Elisha miracle."
+            },
+            {
+              "ref": "Isa 53:3",
+              "note": "He was despised and rejected — the passion prediction of 9:22 draws on the Servant Song."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -305,6 +314,9 @@
         },
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">The Transfiguration Mountain</div><div class=\"poi-coords\">Traditionally identified as Mt. Tabor or Mt. Hermon</div><div class=\"poi-text\">The “high mountain” (in Mark) is not named in Luke. Tabor (Lower Galilee) and Hermon (near Caesarea Philippi) are the main candidates. The mountain functions as the site of divine disclosure throughout the OT (Sinai, Horeb, Carmel).</div></div>"
+        },
+        "hist": {
+          "context": "Luke 9 is the turning-point chapter. It opens with the mission of the Twelve (the first extension of Jesus’s own ministry to his disciples) and ends with the determination to go to Jerusalem (9:51). Between them: the feeding of five thousand, Herod’s question, Peter’s confession, the first passion prediction, the cost of discipleship, the Transfiguration, the failed exorcism, the second passion prediction, and the cost of following. Luke compresses more theological content into chapter 9 than any other chapter in the Gospel."
         }
       }
     },
@@ -322,21 +334,22 @@
             "paragraph": "Moses and Elijah appeared in glorious splendor, talking with Jesus about his departure (exodon), which he was about to bring to completion at Jerusalem. The Greek word is exodos — the same word as the book of Exodus. Luke uses it to frame the cross as the new Exodus: Jesus’s death in Jerusalem is the ultimate liberation, the final Passover. Moses and Elijah — the architect of the Exodus and the prophet of the return from exile — are the appropriate witnesses to the event that both their lives anticipated."
           }
         ],
-        "ctx": "The Transfiguration is the visual counterpart to the baptism: the same Father speaks, the same Son is confirmed, the same divine commissioning is enacted. But now in the context of the passion: the topic of conversation is his departure/exodus in Jerusalem. Luke’s Transfiguration leads directly into the journey to Jerusalem (9:51 — he resolutely set his face), making the glory of the mountain the preparation for the suffering of the road.",
-        "cross": [
-          {
-            "ref": "Exod 24:15-16",
-            "note": "The cloud covered the mountain and the glory of the LORD settled on it — the Sinai theophany that the Transfiguration cloud echoes."
-          },
-          {
-            "ref": "Deut 18:15",
-            "note": "Listen to him — the voice from the cloud quotes the Deuteronomy command about the prophet like Moses: hear the fulfiller."
-          },
-          {
-            "ref": "Mal 4:5",
-            "note": "See, I will send the prophet Elijah to you before that great and dreadful day of the LORD comes — Elijah’s presence at the Transfiguration confirms that the Elijah-promise has been fulfilled."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 24:15-16",
+              "note": "The cloud covered the mountain and the glory of the LORD settled on it — the Sinai theophany that the Transfiguration cloud echoes."
+            },
+            {
+              "ref": "Deut 18:15",
+              "note": "Listen to him — the voice from the cloud quotes the Deuteronomy command about the prophet like Moses: hear the fulfiller."
+            },
+            {
+              "ref": "Mal 4:5",
+              "note": "See, I will send the prophet Elijah to you before that great and dreadful day of the LORD comes — Elijah’s presence at the Transfiguration confirms that the Elijah-promise has been fulfilled."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -404,6 +417,9 @@
         },
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">The Transfiguration Mountain</div><div class=\"poi-coords\">Traditionally identified as Mt. Tabor or Mt. Hermon</div><div class=\"poi-text\">The “high mountain” (in Mark) is not named in Luke. Tabor (Lower Galilee) and Hermon (near Caesarea Philippi) are the main candidates. The mountain functions as the site of divine disclosure throughout the OT (Sinai, Horeb, Carmel).</div></div>"
+        },
+        "hist": {
+          "context": "The Transfiguration is the visual counterpart to the baptism: the same Father speaks, the same Son is confirmed, the same divine commissioning is enacted. But now in the context of the passion: the topic of conversation is his departure/exodus in Jerusalem. Luke’s Transfiguration leads directly into the journey to Jerusalem (9:51 — he resolutely set his face), making the glory of the mountain the preparation for the suffering of the road."
         }
       }
     }

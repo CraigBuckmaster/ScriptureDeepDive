@@ -31,22 +31,26 @@
             "paragraph": "Joseph remembered the dreams. The zkr root (remember) ties together the cupbearer's forgetting (40:23), Pharaoh's need (41:1), and now the divine commission that has shaped Joseph's entire life."
           }
         ],
-        "hist": "The arrival of the ten brothers in Egypt fulfils the first of Joseph's dreams (the sheaves bowing, 37:7) — they bow before him without recognising him. Joseph's recognition of them without their recognising him creates the narrative tension that will drive chapters 42-45. His decision to test them — accuse them of espionage, demand Benjamin — is complex: is it revenge, self-protection, or a deliberate test of whether his brothers have changed? The chapter reveals the first movement of conscience in the brothers: their guilt about Joseph begins to surface (v.21-22).",
-        "ctx": "Joseph's immediate recognition and the brothers' failure to recognize him is psychologically realistic — he is dressed as an Egyptian ruler after twenty-two years; they are the same Canaanite shepherds he knew as a boy. His harsh speech and the spy accusation are not cruelty but tests. He must know: have they changed? Would they sacrifice another favoured son to save themselves?",
-        "cross": [
-          {
-            "ref": "Gen 37:7",
-            "note": "First dream fulfilled: ten brothers bow with faces to the ground."
-          },
-          {
-            "ref": "Gen 43:26",
-            "note": "Second fulfilment: all eleven brothers bow when Benjamin arrives."
-          },
-          {
-            "ref": "Ps 105:17–19",
-            "note": "The Psalm reads the entire Joseph story as God sending \"a man before them\" — the sale as divine commission."
-          }
-        ],
+        "hist": {
+          "historical": "The arrival of the ten brothers in Egypt fulfils the first of Joseph's dreams (the sheaves bowing, 37:7) — they bow before him without recognising him. Joseph's recognition of them without their recognising him creates the narrative tension that will drive chapters 42-45. His decision to test them — accuse them of espionage, demand Benjamin — is complex: is it revenge, self-protection, or a deliberate test of whether his brothers have changed? The chapter reveals the first movement of conscience in the brothers: their guilt about Joseph begins to surface (v.21-22).",
+          "context": "Joseph's immediate recognition and the brothers' failure to recognize him is psychologically realistic — he is dressed as an Egyptian ruler after twenty-two years; they are the same Canaanite shepherds he knew as a boy. His harsh speech and the spy accusation are not cruelty but tests. He must know: have they changed? Would they sacrifice another favoured son to save themselves?"
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 37:7",
+              "note": "First dream fulfilled: ten brothers bow with faces to the ground."
+            },
+            {
+              "ref": "Gen 43:26",
+              "note": "Second fulfilment: all eleven brothers bow when Benjamin arrives."
+            },
+            {
+              "ref": "Ps 105:17–19",
+              "note": "The Psalm reads the entire Joseph story as God sending \"a man before them\" — the sale as divine commission."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Egypt (famine centre)",
@@ -150,18 +154,22 @@
             "paragraph": "Jacob's threat: \"you would bring down my gray hairs with sorrow to Sheol\" (v.38). The same phrase returns in 44:29 — repeated paternal grief driving the narrative toward crisis."
           }
         ],
-        "hist": "The brothers' awakening conscience — \"surely we are being punished because of our brother\" — is the first movement of moral awareness in the ten since the sale. Their guilt has been suppressed for twenty years; the pressure of Joseph's test brings it to the surface. Reuben's retrospective \"I told you so\" (v.22) reveals that the brothers have been carrying private guilt even without discussing it. The silver found in their sacks on the way home deepens the terror: they believe God is punishing them for the original crime.",
-        "ctx": "The return of the silver (v.28) produces another theological response from the brothers: \"What is this that God has done to us?\" They are beginning to read their distress through a divine lens — exactly what Joseph needs to see. The chapter ends with Jacob refusing to release Benjamin, setting up the famine-pressure that will force his hand in ch.43.",
-        "cross": [
-          {
-            "ref": "Gen 37:22",
-            "note": "Reuben urged the brothers not to kill Joseph (37:22); now he says \"I told you so\" — moral concern real, decisive action too little."
-          },
-          {
-            "ref": "Prov 28:1",
-            "note": "The wicked flee when no one pursues — the brothers' terror at the silver illustrates the psychology of unresolved guilt."
-          }
-        ],
+        "hist": {
+          "historical": "The brothers' awakening conscience — \"surely we are being punished because of our brother\" — is the first movement of moral awareness in the ten since the sale. Their guilt has been suppressed for twenty years; the pressure of Joseph's test brings it to the surface. Reuben's retrospective \"I told you so\" (v.22) reveals that the brothers have been carrying private guilt even without discussing it. The silver found in their sacks on the way home deepens the terror: they believe God is punishing them for the original crime.",
+          "context": "The return of the silver (v.28) produces another theological response from the brothers: \"What is this that God has done to us?\" They are beginning to read their distress through a divine lens — exactly what Joseph needs to see. The chapter ends with Jacob refusing to release Benjamin, setting up the famine-pressure that will force his hand in ch.43."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 37:22",
+              "note": "Reuben urged the brothers not to kill Joseph (37:22); now he says \"I told you so\" — moral concern real, decisive action too little."
+            },
+            {
+              "ref": "Prov 28:1",
+              "note": "The wicked flee when no one pursues — the brothers' terror at the silver illustrates the psychology of unresolved guilt."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

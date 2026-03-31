@@ -28,21 +28,22 @@
             "paragraph": "An OT theophanic image (Exod 8:19; 31:18). Luke preserves this archaic phrase where Matthew writes \"Spirit of God\" — both assert that Jesus's exorcisms are direct divine action."
           }
         ],
-        "ctx": "[('Prayer in Jewish Practice', 'First-century Jewish prayer was formal and communal — the Amidah, fixed blessing formulae. Jesus\\'s \"Father\" address replaces elaborate doxologies with direct filial intimacy. His instruction to pray for the Holy Spirit (11:13) reorients the tradition toward eschatological expectation.'), (\"Luke's Prayer Emphasis\", \"Luke depicts Jesus at prayer more than any other Gospel: at baptism (3:21), before choosing the Twelve (6:12), at the Transfiguration (9:29). The Lord's Prayer here is prompted by a disciple's request — Luke frames it as teaching from relationship, not formal sermon.\")]",
-        "cross": [
-          {
-            "ref": "Matt 6:9-13",
-            "note": "Matthew's fuller Lord's Prayer in the Sermon on the Mount, with the doxology in later manuscripts."
-          },
-          {
-            "ref": "Exod 8:19",
-            "note": "\"The finger of God\" — Pharaoh's magicians identify the plague as direct divine action, the same image Jesus applies to his exorcisms."
-          },
-          {
-            "ref": "Matt 12:22-32",
-            "note": "Parallel Beelzebul controversy with \"Spirit of God\" instead of Luke's \"finger of God\"."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 6:9-13",
+              "note": "Matthew's fuller Lord's Prayer in the Sermon on the Mount, with the doxology in later manuscripts."
+            },
+            {
+              "ref": "Exod 8:19",
+              "note": "\"The finger of God\" — Pharaoh's magicians identify the plague as direct divine action, the same image Jesus applies to his exorcisms."
+            },
+            {
+              "ref": "Matt 12:22-32",
+              "note": "Parallel Beelzebul controversy with \"Spirit of God\" instead of Luke's \"finger of God\"."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -115,6 +116,9 @@
               "note": "Chrysostom: \"Ask and seek and knock — these are not three different things but one thing pressed with increasing urgency. Knocking implies perseverance; seeking adds diligence; but asking is the beginning.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Prayer in Jewish Practice', 'First-century Jewish prayer was formal and communal — the Amidah, fixed blessing formulae. Jesus\\'s \"Father\" address replaces elaborate doxologies with direct filial intimacy. His instruction to pray for the Holy Spirit (11:13) reorients the tradition toward eschatological expectation.'), (\"Luke's Prayer Emphasis\", \"Luke depicts Jesus at prayer more than any other Gospel: at baptism (3:21), before choosing the Twelve (6:12), at the Transfiguration (9:29). The Lord's Prayer here is prompted by a disciple's request — Luke frames it as teaching from relationship, not formal sermon.\")]"
         }
       }
     },
@@ -138,21 +142,22 @@
             "paragraph": "The haplous eye is undivided, generous; the ponēros eye is corrupt, stingy. The metaphor unites moral character with perceptual capacity — what we see clearly depends on who we are."
           }
         ],
-        "ctx": "[('The Six Woes', \"Three woes on Pharisees (11:42-44) and three on legal experts (11:46-52) mirror the Beatitudes in reverse. The dinner-table setting is deliberately ironic — the confrontation happens in the Pharisee's own home, at his invitation.\"), ('\"From Abel to Zechariah\"', 'The range spans the Hebrew canon from first book (Genesis) to last (2 Chronicles). Zechariah son of Jehoiada was stoned in the Temple court (2 Chr 24:20-21), the last recorded prophet-killing in the Hebrew Bible. The indictment is comprehensive.')]",
-        "cross": [
-          {
-            "ref": "Jon 1:17; 2:10",
-            "note": "Jonah in the fish — the \"sign of Jonah\" points to Jesus's death and resurrection as the defining credential of his ministry."
-          },
-          {
-            "ref": "Matt 23:1-36",
-            "note": "Matthew's longer woe-discourse, structurally parallel but with additional woes and greater rhetorical elaboration."
-          },
-          {
-            "ref": "2 Chr 24:20-21",
-            "note": "The stoning of Zechariah in the Temple court — the endpoint of Jesus's indictment of Israel's history of prophetic rejection."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jon 1:17; 2:10",
+              "note": "Jonah in the fish — the \"sign of Jonah\" points to Jesus's death and resurrection as the defining credential of his ministry."
+            },
+            {
+              "ref": "Matt 23:1-36",
+              "note": "Matthew's longer woe-discourse, structurally parallel but with additional woes and greater rhetorical elaboration."
+            },
+            {
+              "ref": "2 Chr 24:20-21",
+              "note": "The stoning of Zechariah in the Temple court — the endpoint of Jesus's indictment of Israel's history of prophetic rejection."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -225,6 +230,9 @@
               "note": "Cyril of Alexandria: \"They tithed even mint and rue — things of the smallest value — but neglected justice and the love of God. They strained at the gnat and swallowed the camel.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Six Woes', \"Three woes on Pharisees (11:42-44) and three on legal experts (11:46-52) mirror the Beatitudes in reverse. The dinner-table setting is deliberately ironic — the confrontation happens in the Pharisee's own home, at his invitation.\"), ('\"From Abel to Zechariah\"', 'The range spans the Hebrew canon from first book (Genesis) to last (2 Chronicles). Zechariah son of Jehoiada was stoned in the Temple court (2 Chr 24:20-21), the last recorded prophet-killing in the Hebrew Bible. The indictment is comprehensive.')]"
         }
       }
     },
@@ -248,21 +256,22 @@
             "paragraph": "An OT theophanic image (Exod 8:19; 31:18). Luke preserves this archaic phrase where Matthew writes \"Spirit of God\" — both assert that Jesus's exorcisms are direct divine action."
           }
         ],
-        "ctx": "[('Prayer in Jewish Practice', 'First-century Jewish prayer was formal and communal — the Amidah, fixed blessing formulae. Jesus\\'s \"Father\" address replaces elaborate doxologies with direct filial intimacy. His instruction to pray for the Holy Spirit (11:13) reorients the tradition toward eschatological expectation.'), (\"Luke's Prayer Emphasis\", \"Luke depicts Jesus at prayer more than any other Gospel: at baptism (3:21), before choosing the Twelve (6:12), at the Transfiguration (9:29). The Lord's Prayer here is prompted by a disciple's request — Luke frames it as teaching from relationship, not formal sermon.\")]",
-        "cross": [
-          {
-            "ref": "Matt 6:9-13",
-            "note": "Matthew's fuller Lord's Prayer in the Sermon on the Mount, with the doxology in later manuscripts."
-          },
-          {
-            "ref": "Exod 8:19",
-            "note": "\"The finger of God\" — Pharaoh's magicians identify the plague as direct divine action, the same image Jesus applies to his exorcisms."
-          },
-          {
-            "ref": "Matt 12:22-32",
-            "note": "Parallel Beelzebul controversy with \"Spirit of God\" instead of Luke's \"finger of God\"."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 6:9-13",
+              "note": "Matthew's fuller Lord's Prayer in the Sermon on the Mount, with the doxology in later manuscripts."
+            },
+            {
+              "ref": "Exod 8:19",
+              "note": "\"The finger of God\" — Pharaoh's magicians identify the plague as direct divine action, the same image Jesus applies to his exorcisms."
+            },
+            {
+              "ref": "Matt 12:22-32",
+              "note": "Parallel Beelzebul controversy with \"Spirit of God\" instead of Luke's \"finger of God\"."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -335,6 +344,9 @@
               "note": "Chrysostom: \"Ask and seek and knock — these are not three different things but one thing pressed with increasing urgency. Knocking implies perseverance; seeking adds diligence; but asking is the beginning.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Prayer in Jewish Practice', 'First-century Jewish prayer was formal and communal — the Amidah, fixed blessing formulae. Jesus\\'s \"Father\" address replaces elaborate doxologies with direct filial intimacy. His instruction to pray for the Holy Spirit (11:13) reorients the tradition toward eschatological expectation.'), (\"Luke's Prayer Emphasis\", \"Luke depicts Jesus at prayer more than any other Gospel: at baptism (3:21), before choosing the Twelve (6:12), at the Transfiguration (9:29). The Lord's Prayer here is prompted by a disciple's request — Luke frames it as teaching from relationship, not formal sermon.\")]"
         }
       }
     },
@@ -358,21 +370,22 @@
             "paragraph": "The haplous eye is undivided, generous; the ponēros eye is corrupt, stingy. The metaphor unites moral character with perceptual capacity — what we see clearly depends on who we are."
           }
         ],
-        "ctx": "[('The Six Woes', \"Three woes on Pharisees (11:42-44) and three on legal experts (11:46-52) mirror the Beatitudes in reverse. The dinner-table setting is deliberately ironic — the confrontation happens in the Pharisee's own home, at his invitation.\"), ('\"From Abel to Zechariah\"', 'The range spans the Hebrew canon from first book (Genesis) to last (2 Chronicles). Zechariah son of Jehoiada was stoned in the Temple court (2 Chr 24:20-21), the last recorded prophet-killing in the Hebrew Bible. The indictment is comprehensive.')]",
-        "cross": [
-          {
-            "ref": "Jon 1:17; 2:10",
-            "note": "Jonah in the fish — the \"sign of Jonah\" points to Jesus's death and resurrection as the defining credential of his ministry."
-          },
-          {
-            "ref": "Matt 23:1-36",
-            "note": "Matthew's longer woe-discourse, structurally parallel but with additional woes and greater rhetorical elaboration."
-          },
-          {
-            "ref": "2 Chr 24:20-21",
-            "note": "The stoning of Zechariah in the Temple court — the endpoint of Jesus's indictment of Israel's history of prophetic rejection."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jon 1:17; 2:10",
+              "note": "Jonah in the fish — the \"sign of Jonah\" points to Jesus's death and resurrection as the defining credential of his ministry."
+            },
+            {
+              "ref": "Matt 23:1-36",
+              "note": "Matthew's longer woe-discourse, structurally parallel but with additional woes and greater rhetorical elaboration."
+            },
+            {
+              "ref": "2 Chr 24:20-21",
+              "note": "The stoning of Zechariah in the Temple court — the endpoint of Jesus's indictment of Israel's history of prophetic rejection."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -445,6 +458,9 @@
               "note": "Cyril of Alexandria: \"They tithed even mint and rue — things of the smallest value — but neglected justice and the love of God. They strained at the gnat and swallowed the camel.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Six Woes', \"Three woes on Pharisees (11:42-44) and three on legal experts (11:46-52) mirror the Beatitudes in reverse. The dinner-table setting is deliberately ironic — the confrontation happens in the Pharisee's own home, at his invitation.\"), ('\"From Abel to Zechariah\"', 'The range spans the Hebrew canon from first book (Genesis) to last (2 Chronicles). Zechariah son of Jehoiada was stoned in the Temple court (2 Chr 24:20-21), the last recorded prophet-killing in the Hebrew Bible. The indictment is comprehensive.')]"
         }
       }
     }

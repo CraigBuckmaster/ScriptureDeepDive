@@ -31,17 +31,18 @@
             "paragraph": "The queen says \"there was no morerûaḥin her\" (v.5) — she was breathless, overwhelmed. The same word means spirit, wind, breath. Solomon's wisdom literally takes her breath away."
           }
         ],
-        "ctx": "The Queen of Sheba visit is the narrative apex of Solomon's international reputation. She comes from the ends of the earth (likely modern Yemen/Ethiopia) to test his wisdom with hard questions — and he answers every one. Her response is threefold: breathlessness at his wisdom, amazement at his prosperity, and a theological confession: \"Praise be to the LORD your God, who has delighted in you\" (v.9). A foreign queen acknowledges YHWH as the source of Solomon's greatness. This is the Abrahamic promise in action: all nations blessed through Abraham's seed. Jesus cites this visit as a rebuke to his generation: \"The Queen of the South will rise at the judgment... for she came from the ends of the earth to listen to Solomon's wisdom, and now something greater than Solomon is here\" (Matt 12:42).",
-        "cross": [
-          {
-            "ref": "Matt 12:42",
-            "note": "Jesus cites the Queen of Sheba as a Gentile who recognised wisdom — condemning those who reject greater wisdom standing before them."
-          },
-          {
-            "ref": "Gen 12:3",
-            "note": "\"All peoples on earth will be blessed through you.\" The queen's visit fulfils the Abrahamic promise: a foreign ruler blessed through Israel's king."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 12:42",
+              "note": "Jesus cites the Queen of Sheba as a Gentile who recognised wisdom — condemning those who reject greater wisdom standing before them."
+            },
+            {
+              "ref": "Gen 12:3",
+              "note": "\"All peoples on earth will be blessed through you.\" The queen's visit fulfils the Abrahamic promise: a foreign ruler blessed through Israel's king."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "Provan: The queen's confession is carefully theological: God placed Solomon on the throne \"because of the LORD's eternal love for Israel.\" She credits not Solomon's merit but God's love. Even a pagan understands what Solomon will forget."
             }
           ]
+        },
+        "hist": {
+          "context": "The Queen of Sheba visit is the narrative apex of Solomon's international reputation. She comes from the ends of the earth (likely modern Yemen/Ethiopia) to test his wisdom with hard questions — and he answers every one. Her response is threefold: breathlessness at his wisdom, amazement at his prosperity, and a theological confession: \"Praise be to the LORD your God, who has delighted in you\" (v.9). A foreign queen acknowledges YHWH as the source of Solomon's greatness. This is the Abrahamic promise in action: all nations blessed through Abraham's seed. Jesus cites this visit as a rebuke to his generation: \"The Queen of the South will rise at the judgment... for she came from the ends of the earth to listen to Solomon's wisdom, and now something greater than Solomon is here\" (Matt 12:42)."
         }
       }
     },
@@ -110,17 +114,18 @@
             "paragraph": "Solomon's annual gold income is 666 talents (v.14) — a number that later appears in Rev 13:18. Whether the echo is intentional or coincidental, the accumulation of wealth at this scale crosses into excess. The narrator catalogues it without celebration: gold shields, ivory throne, gold cups, gold everywhere. The abundance becomes oppressive."
           }
         ],
-        "ctx": "The wealth catalogue reads like a fever dream of gold. 666 talents annually. 200 large shields of hammered gold. 300 small shields. A great ivory throne overlaid with gold, flanked by lions. All drinking vessels of pure gold — \"nothing was made of silver, because silver was considered of little value\" (v.21). Ships bring gold, silver, ivory, apes, and baboons every three years. The narrator piles detail upon detail until the reader feels the weight. Then the final note: Solomon acquires horses and chariots from Egypt and exports them to the Hittites and Arameans (vv.28–29). This directly violates Deut 17:16: \"The king must not acquire great numbers of horses for himself or make the people return to Egypt to get more.\" The seeds of apostasy are being sown in the very prosperity that wisdom produced.",
-        "cross": [
-          {
-            "ref": "Deut 17:16–17",
-            "note": "\"The king must not acquire great numbers of horses... He must not take many wives... He must not accumulate large amounts of silver and gold.\" Solomon violates all three Deuteronomic restrictions — horses (10:26–29), wives (11:1–3), and gold (10:14–22)."
-          },
-          {
-            "ref": "Rev 13:18",
-            "note": "\"The number of the beast is 666.\" Whether an intentional allusion to Solomon's gold or not, the number links excessive wealth to spiritual danger."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 17:16–17",
+              "note": "\"The king must not acquire great numbers of horses... He must not take many wives... He must not accumulate large amounts of silver and gold.\" Solomon violates all three Deuteronomic restrictions — horses (10:26–29), wives (11:1–3), and gold (10:14–22)."
+            },
+            {
+              "ref": "Rev 13:18",
+              "note": "\"The number of the beast is 666.\" Whether an intentional allusion to Solomon's gold or not, the number links excessive wealth to spiritual danger."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -172,6 +177,9 @@
               "note": "Provan: The horse trade with Egypt is the clearest Deuteronomic violation in the chapter. The narrator places it at the chapter's end — the final note before ch. 11's explicit apostasy. The trade with Egypt is the bridge between material excess and spiritual collapse."
             }
           ]
+        },
+        "hist": {
+          "context": "The wealth catalogue reads like a fever dream of gold. 666 talents annually. 200 large shields of hammered gold. 300 small shields. A great ivory throne overlaid with gold, flanked by lions. All drinking vessels of pure gold — \"nothing was made of silver, because silver was considered of little value\" (v.21). Ships bring gold, silver, ivory, apes, and baboons every three years. The narrator piles detail upon detail until the reader feels the weight. Then the final note: Solomon acquires horses and chariots from Egypt and exports them to the Hittites and Arameans (vv.28–29). This directly violates Deut 17:16: \"The king must not acquire great numbers of horses for himself or make the people return to Egypt to get more.\" The seeds of apostasy are being sown in the very prosperity that wisdom produced."
         }
       }
     }

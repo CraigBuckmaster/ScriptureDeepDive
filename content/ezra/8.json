@@ -31,18 +31,22 @@
             "paragraph": "At Casiphia, Ezra recruits Levites described as \"men of understanding\" (mēḇîn). The word implies interpretive skill, not just willingness. Temple service requires trained personnel."
           }
         ],
-        "hist": "Casiphia (v.17) is an unidentified Babylonian locality with a significant Jewish community, possibly a proto-synagogue or study centre. The name may mean \"silver place.\" Ezra sends there specifically for Levites, suggesting it was known as a centre of religious learning.",
-        "ctx": "The Levitical shortage first noted in 2:40 (only 74 Levites) persists sixty years later. Ezra must actively recruit from the diaspora. The ongoing difficulty of staffing the temple with qualified Levites reveals a structural tension: Levites had no land inheritance and the work was demanding. The willing were always fewer than the needed.",
-        "cross": [
-          {
-            "ref": "Ezra 2:40",
-            "note": "Only 74 Levites in the first return — the shortage Ezra now addresses."
-          },
-          {
-            "ref": "Num 3:5–10",
-            "note": "Levites assigned to serve the priests — the job description these recruits are filling."
-          }
-        ],
+        "hist": {
+          "historical": "Casiphia (v.17) is an unidentified Babylonian locality with a significant Jewish community, possibly a proto-synagogue or study centre. The name may mean \"silver place.\" Ezra sends there specifically for Levites, suggesting it was known as a centre of religious learning.",
+          "context": "The Levitical shortage first noted in 2:40 (only 74 Levites) persists sixty years later. Ezra must actively recruit from the diaspora. The ongoing difficulty of staffing the temple with qualified Levites reveals a structural tension: Levites had no land inheritance and the work was demanding. The willing were always fewer than the needed."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezra 2:40",
+              "note": "Only 74 Levites in the first return — the shortage Ezra now addresses."
+            },
+            {
+              "ref": "Num 3:5–10",
+              "note": "Levites assigned to serve the priests — the job description these recruits are filling."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -138,22 +142,26 @@
             "paragraph": "\"I was ashamed (bōš) to ask the king for soldiers.\" Ezra had told the king that God protects those who seek him. Now he must live by his own theology. The shame would have been in contradicting his testimony, not in lacking an escort."
           }
         ],
-        "hist": "The journey from Babylon to Jerusalem was approximately 900 miles via the Fertile Crescent route (direct distance much shorter but the Syrian desert forced a northern arc). The four-month journey with families, children, and twelve tons of precious metal through territory with bandits required extraordinary faith — or extraordinary security. Ezra chose faith.",
-        "ctx": "Ezra’s refusal to request a military escort is the chapter’s theological centrepiece. He had publicly declared God’s protection; requesting soldiers would contradict that testimony before the king. This is not recklessness but consistency: if God’s hand is sufficient, act as though it is. The safe arrival (v.31–32) vindicates the decision.",
-        "cross": [
-          {
-            "ref": "Neh 2:9",
-            "note": "Nehemiah, by contrast, accepts a military escort. Both responses are valid — different men, different callings, same God."
-          },
-          {
-            "ref": "Ps 121:7–8",
-            "note": "\"The LORD will keep you from all harm\" — the theology Ezra stakes the journey on."
-          },
-          {
-            "ref": "Isa 8:17",
-            "note": "\"I will wait for the LORD\" — the posture of the fast at Ahava."
-          }
-        ],
+        "hist": {
+          "historical": "The journey from Babylon to Jerusalem was approximately 900 miles via the Fertile Crescent route (direct distance much shorter but the Syrian desert forced a northern arc). The four-month journey with families, children, and twelve tons of precious metal through territory with bandits required extraordinary faith — or extraordinary security. Ezra chose faith.",
+          "context": "Ezra’s refusal to request a military escort is the chapter’s theological centrepiece. He had publicly declared God’s protection; requesting soldiers would contradict that testimony before the king. This is not recklessness but consistency: if God’s hand is sufficient, act as though it is. The safe arrival (v.31–32) vindicates the decision."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Neh 2:9",
+              "note": "Nehemiah, by contrast, accepts a military escort. Both responses are valid — different men, different callings, same God."
+            },
+            {
+              "ref": "Ps 121:7–8",
+              "note": "\"The LORD will keep you from all harm\" — the theology Ezra stakes the journey on."
+            },
+            {
+              "ref": "Isa 8:17",
+              "note": "\"I will wait for the LORD\" — the posture of the fast at Ahava."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

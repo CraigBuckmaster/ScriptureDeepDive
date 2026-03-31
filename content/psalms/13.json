@@ -22,17 +22,18 @@
             "paragraph": "\"How long (ʿad-ʾānâ), LORD? Will you forget me forever?\" (v.1). Four times \"how long\" in two verses — the most compressed lament in the Psalter. The repetition is desperation: how long forgotten, how long hidden, how long sorrow, how long enemy triumph? The psalm is only six verses but contains the entire lament arc: complaint, petition, trust."
           }
         ],
-        "ctx": "The shortest complete lament. David asks four \"how long\" questions (vv.1–2), makes two petitions (vv.3–4: look at me, answer me, give light to my eyes lest I sleep in death, lest my enemy triumph). Six verses, complete emotional arc.",
-        "cross": [
-          {
-            "ref": "Ps 89:46",
-            "note": "\"How long, LORD? Will you hide yourself forever?\" — the same cry at a national level."
-          },
-          {
-            "ref": "Rev 6:10",
-            "note": "\"How long, Sovereign Lord?\" — the martyrs’ cry echoes David’s."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 89:46",
+              "note": "\"How long, LORD? Will you hide yourself forever?\" — the same cry at a national level."
+            },
+            {
+              "ref": "Rev 6:10",
+              "note": "\"How long, Sovereign Lord?\" — the martyrs’ cry echoes David’s."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -99,6 +100,9 @@
               "note": "Goldingay: the fourfold \"how long\" is not patience but urgency. Each repetition escalates: forgotten → hidden face → daily wrestling → enemy triumph."
             }
           ]
+        },
+        "hist": {
+          "context": "The shortest complete lament. David asks four \"how long\" questions (vv.1–2), makes two petitions (vv.3–4: look at me, answer me, give light to my eyes lest I sleep in death, lest my enemy triumph). Six verses, complete emotional arc."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "\"But I trust in your unfailing love (ḥesed); my heart rejoices in your salvation\" (v.5). The pivot: from \"how long\" to \"but I trust.\" Two verses of trust balance four questions of despair. Ḥesed is God’s covenant loyalty — love that endures when feelings fail."
           }
         ],
-        "ctx": "The pivot is the word \"but\" (v.5). After four questions and two petitions, David declares trust: \"but I trust in your ḥesed.\" His heart rejoices in God’s salvation. He will sing because God has been good (v.6). The psalm moves from darkness to song in one verse. The shift is not based on changed circumstances but on chosen trust.",
-        "cross": [
-          {
-            "ref": "Ps 52:8",
-            "note": "\"I trust in God’s unfailing love for ever and ever\" — the same ḥesed-trust declaration."
-          },
-          {
-            "ref": "Lam 3:22–23",
-            "note": "\"Because of the LORD’s great love we are not consumed\" — the same theology in deeper darkness."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 52:8",
+              "note": "\"I trust in God’s unfailing love for ever and ever\" — the same ḥesed-trust declaration."
+            },
+            {
+              "ref": "Lam 3:22–23",
+              "note": "\"Because of the LORD’s great love we are not consumed\" — the same theology in deeper darkness."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -193,6 +198,9 @@
               "note": "Goldingay: ḥesed-trust is the bedrock. When feelings say \"forgotten,\" covenant love says \"held.\" The psalm chooses covenant over experience."
             }
           ]
+        },
+        "hist": {
+          "context": "The pivot is the word \"but\" (v.5). After four questions and two petitions, David declares trust: \"but I trust in your ḥesed.\" His heart rejoices in God’s salvation. He will sing because God has been good (v.6). The psalm moves from darkness to song in one verse. The shift is not based on changed circumstances but on chosen trust."
         }
       }
     }

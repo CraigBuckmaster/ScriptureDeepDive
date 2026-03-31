@@ -31,17 +31,18 @@
             "paragraph": "The property boundary prohibition protects the covenant land allocation -- each family's portion is a God-given inheritance. Moving a boundary stone was theft without violence but with permanent consequences. The prophets condemn this extensively (Hos 5:10; Prov 22:28)."
           }
         ],
-        "ctx": "Chapter 19 addresses three legal provisions: (1) cities of refuge for the unintentional killer (vv.1-13) -- the system presupposes a meaningful distinction between murder and manslaughter; (2) boundary markers protecting property inheritance (v.14); (3) the law of witnesses (vv.15-21). The cities of refuge require a network of roads so the fugitive can reach safety quickly. Three cities are mandated, with provision for three more if Israel's territory expands (v.9).",
-        "cross": [
-          {
-            "ref": "Heb 6:18",
-            "note": "\"We who have fled to take hold of the hope set before us may be greatly encouraged.\" Hebrews uses the cities of refuge as a type of Christ -- the one who flees to him finds asylum from the righteous judgment he deserves."
-          },
-          {
-            "ref": "Num 35:9-28",
-            "note": "Numbers provides the full theological rationale that Deuteronomy 19 assumes -- intentional vs. unintentional homicide, the role of the congregation, and the limitation on the blood avenger."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 6:18",
+              "note": "\"We who have fled to take hold of the hope set before us may be greatly encouraged.\" Hebrews uses the cities of refuge as a type of Christ -- the one who flees to him finds asylum from the righteous judgment he deserves."
+            },
+            {
+              "ref": "Num 35:9-28",
+              "note": "Numbers provides the full theological rationale that Deuteronomy 19 assumes -- intentional vs. unintentional homicide, the role of the congregation, and the limitation on the blood avenger."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 19 addresses three legal provisions: (1) cities of refuge for the unintentional killer (vv.1-13) -- the system presupposes a meaningful distinction between murder and manslaughter; (2) boundary markers protecting property inheritance (v.14); (3) the law of witnesses (vv.15-21). The cities of refuge require a network of roads so the fugitive can reach safety quickly. Three cities are mandated, with provision for three more if Israel's territory expands (v.9)."
         }
       }
     },
@@ -137,17 +141,18 @@
             "paragraph": "The repeated formula \"show no pity\" in Deuteronomic law is not callousness but proportionality. Pity that distorts justice is injustice toward the wronged party. The talion principle -- eye for eye -- is judicial proportionality at its purest: punishment must match the crime, no more and no less."
           }
         ],
-        "ctx": "The law of witnesses (vv.15-21) establishes two foundational principles: the two-witness requirement for conviction, and the talion principle for false witnesses. False witnesses receive the punishment they sought to inflict on the accused -- a powerful disincentive. The \"eye for eye, tooth for tooth\" (v.21) principle is not vindictiveness but proportionality: punishment may not exceed the crime. This actually limits revenge rather than enabling it.",
-        "cross": [
-          {
-            "ref": "Matt 5:38-39",
-            "note": "\"You have heard that it was said, 'An eye for an eye and a tooth for a tooth.' But I tell you, do not resist an evil person.\" Jesus quotes the Deuteronomy 19 lex talionis -- not to abolish it as a judicial principle but to exceed it in personal ethics."
-          },
-          {
-            "ref": "Matt 18:16",
-            "note": "\"Take one or two others along, so that every matter may be established by the testimony of two or three witnesses.\" Jesus applies the Deuteronomy 17/19 two-witness rule to church discipline."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 5:38-39",
+              "note": "\"You have heard that it was said, 'An eye for an eye and a tooth for a tooth.' But I tell you, do not resist an evil person.\" Jesus quotes the Deuteronomy 19 lex talionis -- not to abolish it as a judicial principle but to exceed it in personal ethics."
+            },
+            {
+              "ref": "Matt 18:16",
+              "note": "\"Take one or two others along, so that every matter may be established by the testimony of two or three witnesses.\" Jesus applies the Deuteronomy 17/19 two-witness rule to church discipline."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -216,6 +221,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "The law of witnesses (vv.15-21) establishes two foundational principles: the two-witness requirement for conviction, and the talion principle for false witnesses. False witnesses receive the punishment they sought to inflict on the accused -- a powerful disincentive. The \"eye for eye, tooth for tooth\" (v.21) principle is not vindictiveness but proportionality: punishment may not exceed the crime. This actually limits revenge rather than enabling it."
         }
       }
     }

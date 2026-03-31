@@ -37,25 +37,26 @@
             "paragraph": "The ark of the covenant was the most sacred object in Israel's worship, containing the tablets of the law, Aaron's rod, and a jar of manna (v. 4). The golden lid (ἱλαστήριον, \"mercy seat\" or \"place of propitiation\") was where the high priest sprinkled blood on the Day of Atonement. The ark represented God's throne among His people."
           }
         ],
-        "ctx": "The author now describes the earthly tabernacle in detail—not to celebrate it but to expose its limitations. The description follows the wilderness tabernacle (not Herod's temple), drawing on Exodus 25–26. The key interpretive point comes in vv. 8–10: the Holy Spirit was indicating through this very structure that \"the way into the Most Holy Place had not yet been disclosed.\" The old system was provisional by design. The phrase \"regulations for the body\" (δικαιώματα σαρκός) emphasizes that these rituals affected external purity but could not cleanse the conscience.",
-        "cross": [
-          {
-            "ref": "Exodus 25–26",
-            "note": "The construction instructions for the tabernacle, which the author summarizes. The gold, curtains, and furniture all pointed to God's dwelling among His people."
-          },
-          {
-            "ref": "Leviticus 16",
-            "note": "The Day of Atonement ritual that governs the author's description of the high priest's annual entry. Only on this day could anyone enter the Most Holy Place."
-          },
-          {
-            "ref": "Exodus 16:33–34",
-            "note": "The command to preserve a jar of manna \"before the LORD\" as a perpetual reminder of God's wilderness provision."
-          },
-          {
-            "ref": "Numbers 17:10",
-            "note": "Aaron's rod that budded was kept before the testimony as a sign against rebels."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exodus 25–26",
+              "note": "The construction instructions for the tabernacle, which the author summarizes. The gold, curtains, and furniture all pointed to God's dwelling among His people."
+            },
+            {
+              "ref": "Leviticus 16",
+              "note": "The Day of Atonement ritual that governs the author's description of the high priest's annual entry. Only on this day could anyone enter the Most Holy Place."
+            },
+            {
+              "ref": "Exodus 16:33–34",
+              "note": "The command to preserve a jar of manna \"before the LORD\" as a perpetual reminder of God's wilderness provision."
+            },
+            {
+              "ref": "Numbers 17:10",
+              "note": "Aaron's rod that budded was kept before the testimony as a sign against rebels."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -133,7 +134,10 @@
             }
           ]
         },
-        "hist": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24)."
+        "hist": {
+          "historical": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24).",
+          "context": "The author now describes the earthly tabernacle in detail—not to celebrate it but to expose its limitations. The description follows the wilderness tabernacle (not Herod's temple), drawing on Exodus 25–26. The key interpretive point comes in vv. 8–10: the Holy Spirit was indicating through this very structure that \"the way into the Most Holy Place had not yet been disclosed.\" The old system was provisional by design. The phrase \"regulations for the body\" (δικαιώματα σαρκός) emphasizes that these rituals affected external purity but could not cleanse the conscience."
+        }
       }
     },
     {
@@ -162,25 +166,26 @@
             "paragraph": "The conscience is the moral awareness that accuses or excuses (Romans 2:15). The old covenant sacrifices could not \"perfect the conscience\" (v. 9); they dealt with external contamination but left internal guilt intact. Christ's blood \"cleanses our conscience from dead works\" (v. 14)—dealing with sin at its root, not just its symptoms."
           }
         ],
-        "ctx": "Verses 11–14 form the theological heart of Hebrews' soteriology. The author now shifts from the earthly tabernacle to Christ's heavenly ministry, using the Day of Atonement as his template. Just as the high priest entered the Holy of Holies with blood, so Christ entered the heavenly sanctuary—but not with animal blood. He entered \"through his own blood\" (διὰ τοῦ ἰδίου αἵματος), having offered Himself. The result is not temporary ritual purity but \"eternal redemption\" and a cleansed conscience.",
-        "cross": [
-          {
-            "ref": "Leviticus 16:14–15",
-            "note": "The Day of Atonement ritual: the high priest sprinkled blood on the mercy seat for his own sins and the people's. Christ's offering surpasses this in every way."
-          },
-          {
-            "ref": "1 Peter 1:18–19",
-            "note": "Redemption \"not with perishable things such as silver or gold... but with the precious blood of Christ, a lamb without blemish.\""
-          },
-          {
-            "ref": "Ephesians 1:7",
-            "note": "In Christ \"we have redemption through his blood, the forgiveness of sins.\""
-          },
-          {
-            "ref": "Romans 3:25",
-            "note": "God presented Christ as ἱλαστήριον (propitiation/mercy seat)—the same term used for the ark's lid in Hebrews 9:5."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Leviticus 16:14–15",
+              "note": "The Day of Atonement ritual: the high priest sprinkled blood on the mercy seat for his own sins and the people's. Christ's offering surpasses this in every way."
+            },
+            {
+              "ref": "1 Peter 1:18–19",
+              "note": "Redemption \"not with perishable things such as silver or gold... but with the precious blood of Christ, a lamb without blemish.\""
+            },
+            {
+              "ref": "Ephesians 1:7",
+              "note": "In Christ \"we have redemption through his blood, the forgiveness of sins.\""
+            },
+            {
+              "ref": "Romans 3:25",
+              "note": "God presented Christ as ἱλαστήριον (propitiation/mercy seat)—the same term used for the ark's lid in Hebrews 9:5."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -249,6 +254,9 @@
               "note": "Cockerill notes that these verses answer the question raised in vv. 9–10: how can the conscience be cleansed? The old system addressed the \"flesh\" (external purification); Christ's blood reaches the \"conscience\" (internal reality). The phrase \"dead works\" (νεκρῶν ἔργων) echoes 6:1 and refers to the religious acts of the old covenant that could not impart life—and to the sins they represented."
             }
           ]
+        },
+        "hist": {
+          "context": "Verses 11–14 form the theological heart of Hebrews' soteriology. The author now shifts from the earthly tabernacle to Christ's heavenly ministry, using the Day of Atonement as his template. Just as the high priest entered the Holy of Holies with blood, so Christ entered the heavenly sanctuary—but not with animal blood. He entered \"through his own blood\" (διὰ τοῦ ἰδίου αἵματος), having offered Himself. The result is not temporary ritual purity but \"eternal redemption\" and a cleansed conscience."
         }
       }
     },
@@ -278,25 +286,26 @@
             "paragraph": "The \"promised eternal inheritance\" (v. 15) is the goal of redemption. In the OT, the inheritance was the land; in the new covenant, it is eternal life with God. The called receive this inheritance because Christ's death redeemed them from the transgressions committed under the first covenant."
           }
         ],
-        "ctx": "The author now addresses why Christ had to die. The argument turns on the double meaning of διαθήκη: a covenant that must be inaugurated (like Sinai, with blood) and a will that takes effect at death (like a bequest). Both meanings require death. The Sinai covenant was inaugurated with blood (Exodus 24:6–8); the new covenant required Christ's blood. The principle stated in v. 22—\"without the shedding of blood there is no forgiveness\"—summarizes the entire sacrificial system and explains its fulfillment in Christ.",
-        "cross": [
-          {
-            "ref": "Exodus 24:6–8",
-            "note": "The covenant ratification ceremony at Sinai: Moses sprinkled blood on the altar and the people, saying, \"This is the blood of the covenant.\""
-          },
-          {
-            "ref": "Matthew 26:28",
-            "note": "At the Last Supper, Jesus said, \"This is my blood of the covenant, which is poured out for many for the forgiveness of sins.\""
-          },
-          {
-            "ref": "Leviticus 17:11",
-            "note": "\"For the life of the flesh is in the blood, and I have given it to you on the altar to make atonement for your souls, for it is the blood that makes atonement by the life.\""
-          },
-          {
-            "ref": "Galatians 3:15",
-            "note": "Paul uses the same διαθήκη/will analogy: once a covenant is ratified, no one can set it aside or add to it."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exodus 24:6–8",
+              "note": "The covenant ratification ceremony at Sinai: Moses sprinkled blood on the altar and the people, saying, \"This is the blood of the covenant.\""
+            },
+            {
+              "ref": "Matthew 26:28",
+              "note": "At the Last Supper, Jesus said, \"This is my blood of the covenant, which is poured out for many for the forgiveness of sins.\""
+            },
+            {
+              "ref": "Leviticus 17:11",
+              "note": "\"For the life of the flesh is in the blood, and I have given it to you on the altar to make atonement for your souls, for it is the blood that makes atonement by the life.\""
+            },
+            {
+              "ref": "Galatians 3:15",
+              "note": "Paul uses the same διαθήκη/will analogy: once a covenant is ratified, no one can set it aside or add to it."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -369,6 +378,9 @@
               "note": "Cockerill emphasizes that the author is answering the question: why did Christ have to die? The double meaning of διαθήκη provides the answer: covenants are inaugurated with blood; wills take effect at death. Christ's death accomplishes both. The Sinai ceremony (vv. 18–21) proves that blood was always required; v. 22 states the principle. This prepares for vv. 23–28: if earthly copies required purification, how much more the heavenly realities?"
             }
           ]
+        },
+        "hist": {
+          "context": "The author now addresses why Christ had to die. The argument turns on the double meaning of διαθήκη: a covenant that must be inaugurated (like Sinai, with blood) and a will that takes effect at death (like a bequest). Both meanings require death. The Sinai covenant was inaugurated with blood (Exodus 24:6–8); the new covenant required Christ's blood. The principle stated in v. 22—\"without the shedding of blood there is no forgiveness\"—summarizes the entire sacrificial system and explains its fulfillment in Christ."
         }
       }
     },
@@ -398,29 +410,30 @@
             "paragraph": "Christ appeared for the \"removal of sin\" (εἰς ἀθέτησιν τῆς ἁμαρτίας, v. 26). The word implies legal nullification—sin's power and penalty are set aside. This is not merely forgiveness but abolition. Christ's sacrifice did not cover sin temporarily; it removed it permanently."
           }
         ],
-        "ctx": "The argument reaches its climax: if the earthly copies required blood purification, the heavenly realities required better sacrifices (v. 23). Christ entered heaven itself to appear before God on our behalf (v. 24). The logic of repetition is rejected: if Christ's sacrifice were like the old system, He would have to suffer repeatedly (v. 25). But He appeared \"once\" (ἅπαξ) at the end of the ages. The chapter closes with the great parallel: humans die once and face judgment; Christ was offered once and will appear a second time—not to deal with sin but to bring salvation.",
-        "cross": [
-          {
-            "ref": "1 John 3:5",
-            "note": "\"He appeared in order to take away sins, and in him there is no sin.\""
-          },
-          {
-            "ref": "1 Peter 3:18",
-            "note": "\"Christ also suffered once for sins, the righteous for the unrighteous, to bring you to God.\""
-          },
-          {
-            "ref": "Romans 6:10",
-            "note": "\"The death he died he died to sin, once for all, but the life he lives he lives to God.\""
-          },
-          {
-            "ref": "Philippians 3:20",
-            "note": "\"Our citizenship is in heaven, and from it we await a Savior, the Lord Jesus Christ.\""
-          },
-          {
-            "ref": "Acts 1:11",
-            "note": "\"This Jesus, who was taken up from you into heaven, will come in the same way as you saw him go.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 John 3:5",
+              "note": "\"He appeared in order to take away sins, and in him there is no sin.\""
+            },
+            {
+              "ref": "1 Peter 3:18",
+              "note": "\"Christ also suffered once for sins, the righteous for the unrighteous, to bring you to God.\""
+            },
+            {
+              "ref": "Romans 6:10",
+              "note": "\"The death he died he died to sin, once for all, but the life he lives he lives to God.\""
+            },
+            {
+              "ref": "Philippians 3:20",
+              "note": "\"Our citizenship is in heaven, and from it we await a Savior, the Lord Jesus Christ.\""
+            },
+            {
+              "ref": "Acts 1:11",
+              "note": "\"This Jesus, who was taken up from you into heaven, will come in the same way as you saw him go.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -493,6 +506,9 @@
               "note": "Cockerill sees these verses as the culmination of the argument begun in 8:1. Christ's entry into heaven itself (v. 24) fulfills the \"true tabernacle\" of 8:2. His once-for-all sacrifice (vv. 25–26) contrasts with the repeated Levitical offerings. The parallel with human death (v. 27) underscores the unrepeatable nature of both: as humans die once, so Christ was offered once. His second coming completes salvation for those who wait."
             }
           ]
+        },
+        "hist": {
+          "context": "The argument reaches its climax: if the earthly copies required blood purification, the heavenly realities required better sacrifices (v. 23). Christ entered heaven itself to appear before God on our behalf (v. 24). The logic of repetition is rejected: if Christ's sacrifice were like the old system, He would have to suffer repeatedly (v. 25). But He appeared \"once\" (ἅπαξ) at the end of the ages. The chapter closes with the great parallel: humans die once and face judgment; Christ was offered once and will appear a second time—not to deal with sin but to bring salvation."
         }
       }
     }

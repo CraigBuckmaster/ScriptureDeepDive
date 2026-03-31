@@ -31,21 +31,22 @@
             "paragraph": "The nasi receives land on both sides of the sacred district, east and west. The placement of the princely territory flanking the sacred zone rather than enclosing it prevents the pre-exilic pattern of royal encroachment on sacred space. The nasi's land is generous but definitively separated from the holy precinct."
           }
         ],
-        "ctx": "When the land is divided by lot, a sacred portion (terumah) must be set apart for YHWH. This district measures 25,000 by 20,000 cubits and occupies the geographic center of the redistributed land. It is divided into three horizontal strips: the northern strip (25,000 x 10,000) contains the sanctuary at its center and houses the Zadokite priests; the middle strip (25,000 x 10,000) is assigned to the Levites for their service; the southern strip (25,000 x 5,000) belongs to the city and is open to all Israel. The prince's territory flanks the sacred district to the east and west, extending to the national borders. This arrangement eliminates the pre-exilic problem of royal territory encroaching on sacred space (the 'threshold beside my threshold' of 43:8). YHWH declares that the princes of Israel shall no longer oppress the people but shall give the land to Israel according to its tribes.",
-        "cross": [
-          {
-            "ref": "Num 35:1-8",
-            "note": "The Levitical cities provided the Levites with residential territory throughout the tribal allotments. Ezekiel's plan consolidates Levitical territory into a single district adjacent to the sanctuary."
-          },
-          {
-            "ref": "Ezek 43:7-8",
-            "note": "The condemnation of royal tombs and the 'threshold beside my threshold.' The sacred district's design in chapter 45 architecturally prevents this problem from recurring."
-          },
-          {
-            "ref": "Ezek 48:8-22",
-            "note": "The detailed allotment of the sacred district is elaborated further in chapter 48, where the same territorial structure is described in the context of the full tribal distribution."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 35:1-8",
+              "note": "The Levitical cities provided the Levites with residential territory throughout the tribal allotments. Ezekiel's plan consolidates Levitical territory into a single district adjacent to the sanctuary."
+            },
+            {
+              "ref": "Ezek 43:7-8",
+              "note": "The condemnation of royal tombs and the 'threshold beside my threshold.' The sacred district's design in chapter 45 architecturally prevents this problem from recurring."
+            },
+            {
+              "ref": "Ezek 48:8-22",
+              "note": "The detailed allotment of the sacred district is elaborated further in chapter 48, where the same territorial structure is described in the context of the full tribal distribution."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Zimmerli classifies this unit as Landverteilungsordnung (land distribution ordinance) and notes its programmatic character: the sacred district establishes the spatial framework for all subsequent legislation in chapters 45-48. He identifies tensions between this passage and chapter 48's fuller description, suggesting editorial development. The terumah concept adapts cultic offering language to territorial allocation, sacralizing geography itself."
             }
           ]
+        },
+        "hist": {
+          "context": "When the land is divided by lot, a sacred portion (terumah) must be set apart for YHWH. This district measures 25,000 by 20,000 cubits and occupies the geographic center of the redistributed land. It is divided into three horizontal strips: the northern strip (25,000 x 10,000) contains the sanctuary at its center and houses the Zadokite priests; the middle strip (25,000 x 10,000) is assigned to the Levites for their service; the southern strip (25,000 x 5,000) belongs to the city and is open to all Israel. The prince's territory flanks the sacred district to the east and west, extending to the national borders. This arrangement eliminates the pre-exilic problem of royal territory encroaching on sacred space (the 'threshold beside my threshold' of 43:8). YHWH declares that the princes of Israel shall no longer oppress the people but shall give the land to Israel according to its tribes."
         }
       }
     },
@@ -123,21 +127,22 @@
             "paragraph": "The demand for accurate weights and measures uses the construct chain 'balances of righteousness' (tsedeq), elevating commercial honesty to the level of covenantal obligation. The ephah (dry measure, approximately 22 liters) and the bath (liquid measure, approximately 22 liters) are standardized as one-tenth of a homer. The shekel is fixed at twenty gerahs, and the mina at sixty shekels. These standards prevent the commercial fraud that the prophets consistently condemned (Amos 8:5; Mic 6:10-11)."
           }
         ],
-        "ctx": "Sandwiched between the sacred district legislation and the festival calendar is a brief but significant unit on commercial justice. YHWH commands the princes of Israel to abandon violence and destruction and practice justice and righteousness. The passage standardizes four key measurements: the ephah (dry capacity), the bath (liquid capacity), the shekel (weight), and the mina (larger weight unit). All are anchored to the homer as the base unit: both the ephah and the bath equal one-tenth of a homer. The shekel is twenty gerahs, and the mina is sixty shekels. This legislation addresses a persistent prophetic complaint: merchants cheated customers by using dishonest weights and measures. By standardizing these units in the context of temple legislation, Ezekiel integrates economic ethics into the sacred order. Justice in the marketplace is as essential to YHWH's new order as correct sacrifice in the temple.",
-        "cross": [
-          {
-            "ref": "Lev 19:35-36",
-            "note": "The Holiness Code demands just balances, just weights, a just ephah, and a just hin. Ezekiel extends this principle into the eschatological temple order."
-          },
-          {
-            "ref": "Amos 8:5",
-            "note": "Amos condemns merchants who make the ephah small and the shekel great and cheat with dishonest scales. Ezekiel's standardization aims to prevent precisely this fraud."
-          },
-          {
-            "ref": "Prov 11:1",
-            "note": "A false balance is an abomination to the LORD, but a just weight is His delight. Ezekiel's legislation institutionalizes this proverb."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 19:35-36",
+              "note": "The Holiness Code demands just balances, just weights, a just ephah, and a just hin. Ezekiel extends this principle into the eschatological temple order."
+            },
+            {
+              "ref": "Amos 8:5",
+              "note": "Amos condemns merchants who make the ephah small and the shekel great and cheat with dishonest scales. Ezekiel's standardization aims to prevent precisely this fraud."
+            },
+            {
+              "ref": "Prov 11:1",
+              "note": "A false balance is an abomination to the LORD, but a just weight is His delight. Ezekiel's legislation institutionalizes this proverb."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -190,6 +195,9 @@
               "note": "Zimmerli identifies this unit as a Mahnwort (admonitory word) directed at the nasi. Its placement between territorial and cultic legislation underscores the prophetic insistence that social justice and proper worship belong to the same divine order. The metrological details may reflect administrative reforms of the Persian period, suggesting post-exilic editorial updating of Ezekiel's vision."
             }
           ]
+        },
+        "hist": {
+          "context": "Sandwiched between the sacred district legislation and the festival calendar is a brief but significant unit on commercial justice. YHWH commands the princes of Israel to abandon violence and destruction and practice justice and righteousness. The passage standardizes four key measurements: the ephah (dry capacity), the bath (liquid capacity), the shekel (weight), and the mina (larger weight unit). All are anchored to the homer as the base unit: both the ephah and the bath equal one-tenth of a homer. The shekel is twenty gerahs, and the mina is sixty shekels. This legislation addresses a persistent prophetic complaint: merchants cheated customers by using dishonest weights and measures. By standardizing these units in the context of temple legislation, Ezekiel integrates economic ethics into the sacred order. Justice in the marketplace is as essential to YHWH's new order as correct sacrifice in the temple."
         }
       }
     },
@@ -207,21 +215,22 @@
             "paragraph": "The chattat (sin/purification offering) dominates the festival calendar. On the first day of the first month and again on the seventh day, a bull is offered as a chattat to purge the sanctuary. The Passover and the festival of the seventh month each require daily chattat offerings. The chattat functions primarily to remove impurity from sacred space rather than to atone for individual sin, maintaining the sanctuary's fitness for divine habitation."
           }
         ],
-        "ctx": "The festival calendar outlines the required offerings for the major observances. The first month begins with sanctuary purification on the first and seventh days, using bull blood applied to the doorposts of the temple, the four corners of the altar ledge, and the posts of the inner court gate. Passover begins on the fourteenth day of the first month, with seven days of unleavened bread. During the festival, the prince provides a bull as a sin offering on the first day and a male goat daily for seven days, along with burnt offerings of seven bulls and seven rams daily, with a grain offering of one ephah per bull and one ephah per ram, plus a hin of oil per ephah. The festival of the seventh month (corresponding to the Feast of Tabernacles) follows the same pattern. Notable omissions from the Mosaic calendar include the Feast of Weeks (Pentecost), the Day of Atonement, and the Festival of Trumpets. These omissions have generated extensive scholarly discussion about whether the calendar represents a simplified ideal, a different tradition, or a deliberate theological statement.",
-        "cross": [
-          {
-            "ref": "Exod 12:1-14",
-            "note": "The institution of Passover. Ezekiel's Passover legislation modifies the original by making the prince responsible for providing the offerings and by specifying a seven-day period of daily burnt offerings far exceeding the Mosaic requirements."
-          },
-          {
-            "ref": "Lev 23:1-44",
-            "note": "The complete Mosaic festival calendar. Ezekiel's calendar notably omits the Day of Atonement, Pentecost, and the Feast of Trumpets, raising questions about the relationship between the two systems."
-          },
-          {
-            "ref": "Num 28-29",
-            "note": "The detailed offering schedule for each festival. Ezekiel's offerings differ in both quantity and type from the Numbers prescriptions, suggesting an independent or reformulated tradition."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 12:1-14",
+              "note": "The institution of Passover. Ezekiel's Passover legislation modifies the original by making the prince responsible for providing the offerings and by specifying a seven-day period of daily burnt offerings far exceeding the Mosaic requirements."
+            },
+            {
+              "ref": "Lev 23:1-44",
+              "note": "The complete Mosaic festival calendar. Ezekiel's calendar notably omits the Day of Atonement, Pentecost, and the Feast of Trumpets, raising questions about the relationship between the two systems."
+            },
+            {
+              "ref": "Num 28-29",
+              "note": "The detailed offering schedule for each festival. Ezekiel's offerings differ in both quantity and type from the Numbers prescriptions, suggesting an independent or reformulated tradition."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -286,6 +295,9 @@
               "note": "Zimmerli notes the significant divergences between this calendar and the Priestly calendar of Numbers 28-29 and Leviticus 23. He attributes the differences to Ezekiel's independent priestly tradition, which may predate the final form of P. The omission of the Day of Atonement is, for Zimmerli, evidence that Yom Kippur as described in Leviticus 16 may be a later priestly development not yet known to Ezekiel's tradents. This raises complex questions about the relative dating of P and Ezekiel."
             }
           ]
+        },
+        "hist": {
+          "context": "The festival calendar outlines the required offerings for the major observances. The first month begins with sanctuary purification on the first and seventh days, using bull blood applied to the doorposts of the temple, the four corners of the altar ledge, and the posts of the inner court gate. Passover begins on the fourteenth day of the first month, with seven days of unleavened bread. During the festival, the prince provides a bull as a sin offering on the first day and a male goat daily for seven days, along with burnt offerings of seven bulls and seven rams daily, with a grain offering of one ephah per bull and one ephah per ram, plus a hin of oil per ephah. The festival of the seventh month (corresponding to the Feast of Tabernacles) follows the same pattern. Notable omissions from the Mosaic calendar include the Feast of Weeks (Pentecost), the Day of Atonement, and the Festival of Trumpets. These omissions have generated extensive scholarly discussion about whether the calendar represents a simplified ideal, a different tradition, or a deliberate theological statement."
         }
       }
     }

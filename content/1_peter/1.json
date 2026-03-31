@@ -37,25 +37,26 @@
             "paragraph": "Originally used of Jews scattered among nations, Peter applies it to Gentile Christians scattered across Asia Minor. They are the new Israel in exile."
           }
         ],
-        "ctx": "Peter writes to Christians in five Roman provinces of Asia Minor - Pontus, Galatia, Cappadocia, Asia, and Bithynia. The greeting establishes their identity: elect according to God's foreknowledge, sanctified by the Spirit, destined for obedience and sprinkling with Christ's blood. The Trinitarian formula grounds their election in the work of the entire Godhead.",
-        "cross": [
-          {
-            "ref": "Ephesians 1:4-5",
-            "note": "He chose us in him before the foundation of the world."
-          },
-          {
-            "ref": "John 15:19",
-            "note": "You are not of the world, but I chose you out of the world."
-          },
-          {
-            "ref": "Hebrews 11:13",
-            "note": "They acknowledged that they were strangers and exiles on the earth."
-          },
-          {
-            "ref": "Exodus 24:8",
-            "note": "Moses sprinkled the blood of the covenant on the people."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ephesians 1:4-5",
+              "note": "He chose us in him before the foundation of the world."
+            },
+            {
+              "ref": "John 15:19",
+              "note": "You are not of the world, but I chose you out of the world."
+            },
+            {
+              "ref": "Hebrews 11:13",
+              "note": "They acknowledged that they were strangers and exiles on the earth."
+            },
+            {
+              "ref": "Exodus 24:8",
+              "note": "Moses sprinkled the blood of the covenant on the people."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -109,7 +110,10 @@
             }
           ]
         },
-        "hist": "Peter writes to Christians in five Roman provinces of Asia Minor (modern Turkey) — Pontus, Galatia, Cappadocia, Asia, and Bithynia. These believers face social ostracism and verbal abuse (4:4, 14) rather than official state persecution. As 'elect exiles' (1:1), they experience the marginalization of those who no longer participate in pagan civic religion, trade guild feasts, and family worship. The letter's household codes (2:13–3:7) address how Christians should live within Roman social structures. Peter writes from 'Babylon' (5:13) — almost certainly a symbolic name for Rome. Silvanus (Silas) serves as secretary (5:12), and Mark is present (5:13). The letter likely dates to the early 60s AD, before Nero's persecution."
+        "hist": {
+          "historical": "Peter writes to Christians in five Roman provinces of Asia Minor (modern Turkey) — Pontus, Galatia, Cappadocia, Asia, and Bithynia. These believers face social ostracism and verbal abuse (4:4, 14) rather than official state persecution. As 'elect exiles' (1:1), they experience the marginalization of those who no longer participate in pagan civic religion, trade guild feasts, and family worship. The letter's household codes (2:13–3:7) address how Christians should live within Roman social structures. Peter writes from 'Babylon' (5:13) — almost certainly a symbolic name for Rome. Silvanus (Silas) serves as secretary (5:12), and Mark is present (5:13). The letter likely dates to the early 60s AD, before Nero's persecution.",
+          "context": "Peter writes to Christians in five Roman provinces of Asia Minor - Pontus, Galatia, Cappadocia, Asia, and Bithynia. The greeting establishes their identity: elect according to God's foreknowledge, sanctified by the Spirit, destined for obedience and sprinkling with Christ's blood. The Trinitarian formula grounds their election in the work of the entire Godhead."
+        }
       }
     },
     {
@@ -138,25 +142,26 @@
             "paragraph": "The genuineness of your faith - more precious than gold that perishes though tested by fire. Trials prove faith genuine."
           }
         ],
-        "ctx": "Peter bursts into doxology: Blessed be the God and Father of our Lord Jesus Christ! The blessing celebrates new birth through resurrection, a living hope, an imperishable inheritance kept in heaven. Present trials test faith's genuineness, producing praise when Christ is revealed. The prophets searched about this salvation; angels long to look into it.",
-        "cross": [
-          {
-            "ref": "John 3:3",
-            "note": "Unless one is born again he cannot see the kingdom of God."
-          },
-          {
-            "ref": "Romans 6:4",
-            "note": "We were buried with him by baptism into death, so that as Christ was raised, we too might walk in newness of life."
-          },
-          {
-            "ref": "James 1:2-4",
-            "note": "Count it all joy when you meet trials, for the testing of your faith produces steadfastness."
-          },
-          {
-            "ref": "Hebrews 11:39-40",
-            "note": "All these, though commended through their faith, did not receive what was promised."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 3:3",
+              "note": "Unless one is born again he cannot see the kingdom of God."
+            },
+            {
+              "ref": "Romans 6:4",
+              "note": "We were buried with him by baptism into death, so that as Christ was raised, we too might walk in newness of life."
+            },
+            {
+              "ref": "James 1:2-4",
+              "note": "Count it all joy when you meet trials, for the testing of your faith produces steadfastness."
+            },
+            {
+              "ref": "Hebrews 11:39-40",
+              "note": "All these, though commended through their faith, did not receive what was promised."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -221,6 +226,9 @@
               "note": "Jobes notes the pastoral purpose: suffering readers need assurance that their trials are not meaningless. Peter grounds encouragement in eschatological hope."
             }
           ]
+        },
+        "hist": {
+          "context": "Peter bursts into doxology: Blessed be the God and Father of our Lord Jesus Christ! The blessing celebrates new birth through resurrection, a living hope, an imperishable inheritance kept in heaven. Present trials test faith's genuineness, producing praise when Christ is revealed. The prophets searched about this salvation; angels long to look into it."
         }
       }
     },
@@ -250,25 +258,26 @@
             "paragraph": "Ransomed not with silver or gold but with the precious blood of Christ. The ransom metaphor implies slavery and liberation."
           }
         ],
-        "ctx": "Peter moves from indicative to imperative. The command is holiness - modeled on God's character (Leviticus 11:44-45; 19:2). The motivation: they are to live as strangers in reverent fear, knowing they were ransomed from futile ways not with silver or gold but with Christ's blood, foreknown before creation.",
-        "cross": [
-          {
-            "ref": "Leviticus 11:44-45",
-            "note": "Be holy, for I am holy - the command Peter quotes."
-          },
-          {
-            "ref": "Leviticus 19:2",
-            "note": "You shall be holy, for I the LORD your God am holy."
-          },
-          {
-            "ref": "Mark 10:45",
-            "note": "The Son of Man came to give his life as a ransom for many."
-          },
-          {
-            "ref": "Ephesians 1:7",
-            "note": "In him we have redemption through his blood."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Leviticus 11:44-45",
+              "note": "Be holy, for I am holy - the command Peter quotes."
+            },
+            {
+              "ref": "Leviticus 19:2",
+              "note": "You shall be holy, for I the LORD your God am holy."
+            },
+            {
+              "ref": "Mark 10:45",
+              "note": "The Son of Man came to give his life as a ransom for many."
+            },
+            {
+              "ref": "Ephesians 1:7",
+              "note": "In him we have redemption through his blood."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -329,6 +338,9 @@
               "note": "Jobes emphasizes that the readers' former way of life was not neutral but futile - empty, vain, leading nowhere. Conversion is rescue from meaninglessness."
             }
           ]
+        },
+        "hist": {
+          "context": "Peter moves from indicative to imperative. The command is holiness - modeled on God's character (Leviticus 11:44-45; 19:2). The motivation: they are to live as strangers in reverent fear, knowing they were ransomed from futile ways not with silver or gold but with Christ's blood, foreknown before creation."
         }
       }
     },
@@ -358,25 +370,26 @@
             "paragraph": "Born again not of perishable seed but of imperishable - through the living and abiding word of God."
           }
         ],
-        "ctx": "Peter returns to new birth, now emphasizing its ethical implications. Purification by obedience leads to sincere love. The imperishable seed is the word of God - living and abiding, in contrast to human flesh which withers like grass. Isaiah 40:6-8 is quoted: the grass withers, the flower falls, but the word of the Lord remains forever.",
-        "cross": [
-          {
-            "ref": "John 13:34-35",
-            "note": "A new commandment I give to you, that you love one another."
-          },
-          {
-            "ref": "Isaiah 40:6-8",
-            "note": "The grass withers, the flower fades, but the word of our God will stand forever."
-          },
-          {
-            "ref": "James 1:18",
-            "note": "Of his own will he brought us forth by the word of truth."
-          },
-          {
-            "ref": "1 John 3:9",
-            "note": "No one born of God makes a practice of sinning, for God's seed abides in him."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 13:34-35",
+              "note": "A new commandment I give to you, that you love one another."
+            },
+            {
+              "ref": "Isaiah 40:6-8",
+              "note": "The grass withers, the flower fades, but the word of our God will stand forever."
+            },
+            {
+              "ref": "James 1:18",
+              "note": "Of his own will he brought us forth by the word of truth."
+            },
+            {
+              "ref": "1 John 3:9",
+              "note": "No one born of God makes a practice of sinning, for God's seed abides in him."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -429,6 +442,9 @@
               "note": "Jobes emphasizes the community dimension: love is directed toward brothers and sisters. Regeneration creates a new family with new obligations."
             }
           ]
+        },
+        "hist": {
+          "context": "Peter returns to new birth, now emphasizing its ethical implications. Purification by obedience leads to sincere love. The imperishable seed is the word of God - living and abiding, in contrast to human flesh which withers like grass. Isaiah 40:6-8 is quoted: the grass withers, the flower falls, but the word of the Lord remains forever."
         }
       }
     }

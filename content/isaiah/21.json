@@ -25,25 +25,26 @@
             "paragraph": "\"Fallen, fallen (nāfəlâ) is Babylon! All the images of its gods lie shattered on the ground!\" (v.9). A dire vision. The desert by the sea: invaders come from the desert like whirlwinds (v.1). A treacherous traitor betrays; a looter loots (v.2). Elam and Media attack (v.2). Isaiah’s body writhes in pain at the vision; his heart falters, horror overwhelms him (vv.3–4). A watchman: \"What do you see?\" Two riders approach. Then the announcement: \"Babylon has fallen!\""
           }
         ],
-        "ctx": "The doubled \"fallen, fallen\" is quoted directly in Revelation 14:8 and 18:2 for eschatological Babylon. Isaiah is physically devastated by the vision (vv.3–4), paralleling Daniel’s collapse (Dan 8:27; 10:8–9). The watchman motif (vv.6–9) creates dramatic tension: the audience waits with the sentinel until the riders arrive with news. Elam and Media (v.2) are the specific agents of Babylon’s fall — Cyrus was king of both regions when he conquered Babylon in 539 BC.",
-        "cross": [
-          {
-            "ref": "Rev 14:8",
-            "note": "Fallen! Fallen is Babylon the Great! — quoting Isa 21:9 verbatim."
-          },
-          {
-            "ref": "Rev 18:2",
-            "note": "Fallen! Fallen is Babylon the Great! She has become a dwelling for demons — Revelation’s full development."
-          },
-          {
-            "ref": "Jer 51:8",
-            "note": "Babylon will suddenly fall and be broken — Jeremiah’s parallel oracle."
-          },
-          {
-            "ref": "Dan 5:30–31",
-            "note": "That very night Belshazzar was slain, and Darius the Mede took over — the narrative fulfilment of the fall."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rev 14:8",
+              "note": "Fallen! Fallen is Babylon the Great! — quoting Isa 21:9 verbatim."
+            },
+            {
+              "ref": "Rev 18:2",
+              "note": "Fallen! Fallen is Babylon the Great! She has become a dwelling for demons — Revelation’s full development."
+            },
+            {
+              "ref": "Jer 51:8",
+              "note": "Babylon will suddenly fall and be broken — Jeremiah’s parallel oracle."
+            },
+            {
+              "ref": "Dan 5:30–31",
+              "note": "That very night Belshazzar was slain, and Darius the Mede took over — the narrative fulfilment of the fall."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -116,6 +117,9 @@
               "note": "Childs: the shattered images are the visual proof of monotheism. When Babylon falls, its gods fall with it. Only YHWH remains standing."
             }
           ]
+        },
+        "hist": {
+          "context": "The doubled \"fallen, fallen\" is quoted directly in Revelation 14:8 and 18:2 for eschatological Babylon. Isaiah is physically devastated by the vision (vv.3–4), paralleling Daniel’s collapse (Dan 8:27; 10:8–9). The watchman motif (vv.6–9) creates dramatic tension: the audience waits with the sentinel until the riders arrive with news. Elam and Media (v.2) are the specific agents of Babylon’s fall — Cyrus was king of both regions when he conquered Babylon in 539 BC."
         }
       }
     },
@@ -133,25 +137,26 @@
             "paragraph": "\"Watchman (shōmēr), what is left of the night? Watchman, what is left of the night?\" (v.11). Oracle against Dumah (Edom, wordplay on \"silence\"): the watchman is asked repeatedly about the night. His answer: \"Morning is coming, but also the night. If you would ask, then ask; and come back yet again\" (v.12). Oracle against Arabia: fugitives in the thickets, bring water for the thirsty, bread for the fugitives (vv.13–15). \"Within one year all the splendour of Kedar will come to an end\" (v.16)."
           }
         ],
-        "ctx": "The Dumah oracle (vv.11–12) is the most enigmatic passage in Isaiah. \"Dumah\" means \"silence\" — a wordplay on Edom (the consonants are rearranged). The repeated question (\"what is left of the night?\") and the ambiguous answer (\"morning comes, but also night\") create a deliberately unresolved tension. The oracle refuses to promise pure dawn; night persists alongside morning. The Arabia oracle (vv.13–17) is more concrete: Kedar’s warriors will be depleted within a year, likely by Assyrian campaigns.",
-        "cross": [
-          {
-            "ref": "Ps 130:6",
-            "note": "My soul waits for the Lord more than watchmen wait for the morning — the same night-watching motif."
-          },
-          {
-            "ref": "Rom 13:12",
-            "note": "The night is nearly over; the day is almost here — the NT version of the watchman’s question."
-          },
-          {
-            "ref": "Isa 34:5–17",
-            "note": "The oracle against Edom — the extended judgment on the same nation addressed in the Dumah oracle."
-          },
-          {
-            "ref": "Gen 25:13",
-            "note": "Kedar son of Ishmael — the Arabian tribe’s genealogical origin."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 130:6",
+              "note": "My soul waits for the Lord more than watchmen wait for the morning — the same night-watching motif."
+            },
+            {
+              "ref": "Rom 13:12",
+              "note": "The night is nearly over; the day is almost here — the NT version of the watchman’s question."
+            },
+            {
+              "ref": "Isa 34:5–17",
+              "note": "The oracle against Edom — the extended judgment on the same nation addressed in the Dumah oracle."
+            },
+            {
+              "ref": "Gen 25:13",
+              "note": "Kedar son of Ishmael — the Arabian tribe’s genealogical origin."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -220,6 +225,9 @@
               "note": "Childs notes the three short oracles (Babylon, Dumah, Arabia) form a triptych: the great empire falls (v.9), the small nation waits in darkness (v.12), the desert warriors flee (v.17). All are under the same sovereignty."
             }
           ]
+        },
+        "hist": {
+          "context": "The Dumah oracle (vv.11–12) is the most enigmatic passage in Isaiah. \"Dumah\" means \"silence\" — a wordplay on Edom (the consonants are rearranged). The repeated question (\"what is left of the night?\") and the ambiguous answer (\"morning comes, but also night\") create a deliberately unresolved tension. The oracle refuses to promise pure dawn; night persists alongside morning. The Arabia oracle (vv.13–17) is more concrete: Kedar’s warriors will be depleted within a year, likely by Assyrian campaigns."
         }
       }
     }

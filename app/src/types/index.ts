@@ -16,6 +16,9 @@ export interface Book {
   total_chapters: number;
   book_order: number;
   is_live: boolean;
+  genre?: string;
+  genre_label?: string;
+  genre_guidance?: string;
 }
 
 export interface Chapter {
@@ -28,6 +31,13 @@ export interface Chapter {
   timeline_link_text: string | null;
   map_story_link_id: string | null;
   map_story_link_text: string | null;
+  coaching_json: string | null;
+}
+
+export interface CoachingTip {
+  after_section: number;
+  tip: string;
+  genre_tag: string;
 }
 
 export interface Section {
@@ -254,6 +264,40 @@ export interface CrossRefEntry {
   note: string;
 }
 
+// ── Composite Context Data (Phase 2) ────────────────────────────────
+
+export interface ANEParallel {
+  parallel: string;
+  similarity: string;
+  difference: string;
+  significance: string;
+}
+
+export interface CompositeContextData {
+  context?: string;
+  historical?: string;
+  audience?: string;
+  ane?: ANEParallel[];
+}
+
+// ── Composite Connections Data (Phase 3) ─────────────────────────────
+
+export type EchoType = 'direct_quote' | 'allusion' | 'echo' | 'typological';
+
+export interface EchoEntry {
+  source_ref: string;
+  target_ref: string;
+  type: EchoType;
+  source_context: string;
+  connection: string;
+  significance: string;
+}
+
+export interface CompositeConnectionsData {
+  refs: CrossRefEntry[];
+  echoes?: EchoEntry[];
+}
+
 export interface CommentaryNote {
   ref: string;
   note: string;
@@ -285,9 +329,30 @@ export interface LitRow {
   is_key: boolean;
 }
 
+// ── Chiasm Structure (Phase 4) ──────────────────────────────────────
+
+export interface ChiasmPair {
+  label: string;
+  top: string;
+  bottom: string;
+  color: string;
+}
+
+export interface ChiasmCenter {
+  label: string;
+  text: string;
+}
+
+export interface ChiasmData {
+  title: string;
+  pairs: ChiasmPair[];
+  center: ChiasmCenter;
+}
+
 export interface LitPanel {
   rows: LitRow[];
   note: string;
+  chiasm?: ChiasmData;
 }
 
 export interface ThemeScore {

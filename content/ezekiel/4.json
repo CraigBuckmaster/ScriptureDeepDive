@@ -31,21 +31,22 @@
             "paragraph": "Ezekiel bears the iniquity (avon) of Israel and Judah by lying on his side — 390 days for Israel, 40 for Judah. The word avon carries a triple meaning: sin, guilt, and its punishment. Ezekiel symbolically absorbs all three through his body."
           }
         ],
-        "ctx": "This is the first of Ezekiel's dramatic sign-acts (Hebrew: ot, 'sign'). Unlike other prophets who primarily spoke, Ezekiel acts out his prophecies with his own body. The siege model is street theater — performed before the exilic community to dramatize Jerusalem's coming fate. The 390 + 40 days echo Israel's wilderness wandering (40 years) and the long history of northern apostasy.",
-        "cross": [
-          {
-            "ref": "Isa 20:1-4",
-            "note": "Isaiah walked naked and barefoot for three years as a sign against Egypt — prophetic sign-acts have precedent."
-          },
-          {
-            "ref": "Num 14:34",
-            "note": "Forty years of wandering for forty days of spying — the day-for-a-year principle Ezekiel applies."
-          },
-          {
-            "ref": "Gal 6:2",
-            "note": "Bearing one another's burdens — Ezekiel literally bears Israel's sin, a foreshadowing of vicarious burden-bearing."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 20:1-4",
+              "note": "Isaiah walked naked and barefoot for three years as a sign against Egypt — prophetic sign-acts have precedent."
+            },
+            {
+              "ref": "Num 14:34",
+              "note": "Forty years of wandering for forty days of spying — the day-for-a-year principle Ezekiel applies."
+            },
+            {
+              "ref": "Gal 6:2",
+              "note": "Bearing one another's burdens — Ezekiel literally bears Israel's sin, a foreshadowing of vicarious burden-bearing."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Zimmerli identifies three originally independent sign-acts that have been combined: the siege model (vv.1-3), the lying on the side (vv.4-6), and the binding (vv.7-8). Each makes a distinct theological point about Jerusalem's coming destruction."
             }
           ]
+        },
+        "hist": {
+          "context": "This is the first of Ezekiel's dramatic sign-acts (Hebrew: ot, 'sign'). Unlike other prophets who primarily spoke, Ezekiel acts out his prophecies with his own body. The siege model is street theater — performed before the exilic community to dramatize Jerusalem's coming fate. The 390 + 40 days echo Israel's wilderness wandering (40 years) and the long history of northern apostasy."
         }
       }
     },
@@ -123,17 +127,18 @@
             "paragraph": "The command to cook bread over human dung strikes at Ezekiel's priestly identity — a priest trained in purity laws is commanded to defile himself. When Ezekiel protests (one of only two times he objects in the book), God relents to cow dung. Even the compromise is shocking: exile will force defilement."
           }
         ],
-        "ctx": "The mixed-grain bread and rationed water symbolize siege famine — the mixing of grains violates the principle of separation (kilayim), and cooking over dung violates priestly purity (Lev 7:19-21). For the priestly prophet, this is a profound theological crisis: exile means living in a state of permanent ritual impurity among the nations.",
-        "cross": [
-          {
-            "ref": "Lev 7:19-21",
-            "note": "Food that touches anything unclean must not be eaten — the purity law that exile will make impossible."
-          },
-          {
-            "ref": "Dan 1:8",
-            "note": "Daniel's refusal to eat defiled food in Babylon contrasts with Ezekiel's forced acceptance of defilement — two responses to the crisis of exile purity."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 7:19-21",
+              "note": "Food that touches anything unclean must not be eaten — the purity law that exile will make impossible."
+            },
+            {
+              "ref": "Dan 1:8",
+              "note": "Daniel's refusal to eat defiled food in Babylon contrasts with Ezekiel's forced acceptance of defilement — two responses to the crisis of exile purity."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -190,6 +195,9 @@
               "note": "Zimmerli sees Ezekiel's protest as a key moment of characterization: unlike other prophets, Ezekiel does not argue about his mission but about ritual purity. His priestly formation shapes even his objections to God."
             }
           ]
+        },
+        "hist": {
+          "context": "The mixed-grain bread and rationed water symbolize siege famine — the mixing of grains violates the principle of separation (kilayim), and cooking over dung violates priestly purity (Lev 7:19-21). For the priestly prophet, this is a profound theological crisis: exile means living in a state of permanent ritual impurity among the nations."
         }
       }
     }

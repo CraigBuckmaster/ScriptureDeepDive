@@ -31,21 +31,22 @@
             "paragraph": "The noun denotes craven fear or cowardice. Paul's point is that the Holy Spirit's indwelling produces not timidity but power, love, and self-discipline—three qualities Timothy will need as opposition intensifies."
           }
         ],
-        "ctx": "2 Timothy is widely regarded as the most personal of Paul's letters, written from a Roman prison with the expectation of death (4:6–8). Paul remembers Timothy's tears (v. 4), recalls his grandmother Lois and mother Eunice (v. 5), and tenderly exhorts him to courage. The emphasis on power vs. timidity suggests Timothy was under significant pressure in Ephesus.",
-        "cross": [
-          {
-            "ref": "1 Timothy 4:14",
-            "note": "The parallel ordination reference describes the same event but emphasizes the presbytery's collective participation."
-          },
-          {
-            "ref": "Acts 16:1–3",
-            "note": "Paul's initial recruitment of Timothy in Lystra provides the biographical backdrop for the familial language here."
-          },
-          {
-            "ref": "Romans 8:15",
-            "note": "The contrast between the spirit of slavery/fear and the Spirit of adoption parallels the contrast here between timidity and power."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Timothy 4:14",
+              "note": "The parallel ordination reference describes the same event but emphasizes the presbytery's collective participation."
+            },
+            {
+              "ref": "Acts 16:1–3",
+              "note": "Paul's initial recruitment of Timothy in Lystra provides the biographical backdrop for the familial language here."
+            },
+            {
+              "ref": "Romans 8:15",
+              "note": "The contrast between the spirit of slavery/fear and the Spirit of adoption parallels the contrast here between timidity and power."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "The fire metaphor addresses the real challenge of sustaining ministerial courage under pressure. The three Spirit-given qualities correspond to Timothy's three spheres of challenge: hostile opposition, fractured community, and personal stability."
             }
           ]
+        },
+        "hist": {
+          "context": "2 Timothy is widely regarded as the most personal of Paul's letters, written from a Roman prison with the expectation of death (4:6–8). Paul remembers Timothy's tears (v. 4), recalls his grandmother Lois and mother Eunice (v. 5), and tenderly exhorts him to courage. The emphasis on power vs. timidity suggests Timothy was under significant pressure in Ephesus."
         }
       }
     },
@@ -137,21 +141,22 @@
             "paragraph": "The noun denotes a model or pattern to be imitated. Paul's 'sound words' are the pattern of healthy teaching—conveying both the content and the form of apostolic instruction."
           }
         ],
-        "ctx": "Paul's exhortation not to be ashamed takes on sharp urgency given his imprisonment. The creedal fragment in vv. 9–10 is widely recognized as pre-Pauline—a salvation summary moving from eternal purpose through historical manifestation to eschatological hope. Paul's claim to be appointed herald, apostle, and teacher grounds his authority in divine commission.",
-        "cross": [
-          {
-            "ref": "Romans 1:16",
-            "note": "Paul's declaration that he is not ashamed of the gospel provides the theological foundation for the same exhortation to Timothy."
-          },
-          {
-            "ref": "Mark 8:38",
-            "note": "Jesus' warning that whoever is ashamed of him will face eschatological consequences adds christological weight."
-          },
-          {
-            "ref": "Ephesians 1:4–5",
-            "note": "The pre-temporal election language parallels the creedal fragment's 'before the beginning of time.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Romans 1:16",
+              "note": "Paul's declaration that he is not ashamed of the gospel provides the theological foundation for the same exhortation to Timothy."
+            },
+            {
+              "ref": "Mark 8:38",
+              "note": "Jesus' warning that whoever is ashamed of him will face eschatological consequences adds christological weight."
+            },
+            {
+              "ref": "Ephesians 1:4–5",
+              "note": "The pre-temporal election language parallels the creedal fragment's 'before the beginning of time.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -224,6 +229,9 @@
               "note": "The deposit language creates a chain of custody: from God through Paul to Timothy through the Holy Spirit. This is pneumatological transmission—the Spirit actively enables faithful preservation."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul's exhortation not to be ashamed takes on sharp urgency given his imprisonment. The creedal fragment in vv. 9–10 is widely recognized as pre-Pauline—a salvation summary moving from eternal purpose through historical manifestation to eschatological hope. Paul's claim to be appointed herald, apostle, and teacher grounds his authority in divine commission."
         }
       }
     },
@@ -241,17 +249,18 @@
             "paragraph": "A concrete marker of Paul's imprisonment. Onesiphorus's willingness to seek out Paul in Rome and identify with a chained prisoner exemplifies the courage Timothy is being exhorted to show. The shame of chains in the Roman world was profound: imprisonment marked one as a criminal and social outcast."
           }
         ],
-        "ctx": "The contrast between Phygelus and Hermogenes (who deserted Paul) and Onesiphorus (who actively sought him out in Rome) provides concrete examples of the shame/courage dynamic. Paul's second imprisonment was apparently more severe than his first, and many associates distanced themselves.",
-        "cross": [
-          {
-            "ref": "Philemon 1:1",
-            "note": "Paul's self-designation as 'a prisoner of Christ Jesus' demonstrates the theological reframing of imprisonment as a badge of apostolic service."
-          },
-          {
-            "ref": "Hebrews 13:3",
-            "note": "The exhortation to remember prisoners 'as if chained with them' reflects the same ethic of solidarity that Onesiphorus exemplified."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Philemon 1:1",
+              "note": "Paul's self-designation as 'a prisoner of Christ Jesus' demonstrates the theological reframing of imprisonment as a badge of apostolic service."
+            },
+            {
+              "ref": "Hebrews 13:3",
+              "note": "The exhortation to remember prisoners 'as if chained with them' reflects the same ethic of solidarity that Onesiphorus exemplified."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -304,6 +313,9 @@
               "note": "The contrast section functions as social exemplification: two named deserters against one named loyalist. Onesiphorus's behavior concretizes the abstract exhortation of v. 8: this is what 'not being ashamed' looks like in practice."
             }
           ]
+        },
+        "hist": {
+          "context": "The contrast between Phygelus and Hermogenes (who deserted Paul) and Onesiphorus (who actively sought him out in Rome) provides concrete examples of the shame/courage dynamic. Paul's second imprisonment was apparently more severe than his first, and many associates distanced themselves."
         }
       }
     }

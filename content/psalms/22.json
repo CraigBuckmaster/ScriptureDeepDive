@@ -28,29 +28,30 @@
             "paragraph": "\"They pierced (kārū) my hands and my feet\" (v.16). The most debated word in the psalm. The Masoretic text reads \"like a lion\" (kaʾari); the LXX and Dead Sea Scrolls support \"they pierced\" (kārū). The Christian tradition reads \"pierced\" as a crucifixion prophecy."
           }
         ],
-        "ctx": "David’s lament begins with the cry Jesus made his own. The sufferer is scorned (v.6), mocked (vv.7–8), surrounded by enemies described as bulls, lions, and dogs (vv.12–16). The physical suffering is detailed with medical precision: dehydration (v.15), skeletal visibility (v.17), pierced extremities (v.16). Garments divided, lots cast (v.18). Every element was fulfilled at Calvary.",
-        "cross": [
-          {
-            "ref": "Matt 27:46",
-            "note": "Jesus quotes Psalm 22:1 from the cross: \"My God, my God, why have you forsaken me?\""
-          },
-          {
-            "ref": "Matt 27:35",
-            "note": "\"They divided his garments among them by casting lots\" — fulfilling Psalm 22:18."
-          },
-          {
-            "ref": "Matt 27:39–43",
-            "note": "\"Those who passed by hurled insults, shaking their heads... He trusts in God. Let God rescue him\" — fulfilling Psalm 22:7–8."
-          },
-          {
-            "ref": "John 19:28",
-            "note": "\"I am thirsty\" — fulfilling Psalm 22:15."
-          },
-          {
-            "ref": "Heb 2:12",
-            "note": "\"I will declare your name to my brothers\" — quoting Psalm 22:22 for Christ’s solidarity with humanity."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 27:46",
+              "note": "Jesus quotes Psalm 22:1 from the cross: \"My God, my God, why have you forsaken me?\""
+            },
+            {
+              "ref": "Matt 27:35",
+              "note": "\"They divided his garments among them by casting lots\" — fulfilling Psalm 22:18."
+            },
+            {
+              "ref": "Matt 27:39–43",
+              "note": "\"Those who passed by hurled insults, shaking their heads... He trusts in God. Let God rescue him\" — fulfilling Psalm 22:7–8."
+            },
+            {
+              "ref": "John 19:28",
+              "note": "\"I am thirsty\" — fulfilling Psalm 22:15."
+            },
+            {
+              "ref": "Heb 2:12",
+              "note": "\"I will declare your name to my brothers\" — quoting Psalm 22:22 for Christ’s solidarity with humanity."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -133,6 +134,9 @@
               "note": "Goldingay: the opening cry is not despair but prayer. David addresses God twice: \"my God, my God.\" The relationship persists through the forsakenness. You can only be forsaken by someone you belong to."
             }
           ]
+        },
+        "hist": {
+          "context": "David’s lament begins with the cry Jesus made his own. The sufferer is scorned (v.6), mocked (vv.7–8), surrounded by enemies described as bulls, lions, and dogs (vv.12–16). The physical suffering is detailed with medical precision: dehydration (v.15), skeletal visibility (v.17), pierced extremities (v.16). Garments divided, lots cast (v.18). Every element was fulfilled at Calvary."
         }
       }
     },
@@ -150,25 +154,26 @@
             "paragraph": "\"They will proclaim (sipprū) his righteousness, declaring to a people yet unborn: He has done it!\" (v.31). The psalm’s last words: \"he has done it\" — in Hebrew a single word that parallels Jesus’ \"it is finished\" (John 19:30). The work is complete. The suffering produces universal proclamation."
           }
         ],
-        "ctx": "The psalm pivots from lament to praise. David asks for rescue (vv.19–21), then declares: \"I will declare your name to my people; in the assembly I will praise you\" (v.22 — quoted in Heb 2:12). The vision expands: all the families of nations will worship (vv.27–28), future generations will be told about the Lord (v.30), and the psalm closes with \"he has done it!\" (v.31) — the OT’s \"it is finished.\"",
-        "cross": [
-          {
-            "ref": "John 19:30",
-            "note": "\"It is finished\" (tetelestai) — parallels \"he has done it!\" in Psalm 22:31."
-          },
-          {
-            "ref": "Heb 2:12",
-            "note": "\"I will declare your name to my brothers\" — quoting Psalm 22:22 for Christ’s identification with humanity."
-          },
-          {
-            "ref": "Rev 7:9–10",
-            "note": "\"A great multitude from every nation\" — the fulfilment of \"all the ends of the earth will turn to the LORD.\""
-          },
-          {
-            "ref": "Phil 2:10–11",
-            "note": "\"Every knee should bow\" — the cosmic worship Psalm 22:27–29 anticipates."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 19:30",
+              "note": "\"It is finished\" (tetelestai) — parallels \"he has done it!\" in Psalm 22:31."
+            },
+            {
+              "ref": "Heb 2:12",
+              "note": "\"I will declare your name to my brothers\" — quoting Psalm 22:22 for Christ’s identification with humanity."
+            },
+            {
+              "ref": "Rev 7:9–10",
+              "note": "\"A great multitude from every nation\" — the fulfilment of \"all the ends of the earth will turn to the LORD.\""
+            },
+            {
+              "ref": "Phil 2:10–11",
+              "note": "\"Every knee should bow\" — the cosmic worship Psalm 22:27–29 anticipates."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -247,6 +252,9 @@
               "note": "Goldingay: \"he has done it\" is one word in Hebrew: ʿasâ. Completed action. The work is finished. The declaration is as terse as it is monumental."
             }
           ]
+        },
+        "hist": {
+          "context": "The psalm pivots from lament to praise. David asks for rescue (vv.19–21), then declares: \"I will declare your name to my people; in the assembly I will praise you\" (v.22 — quoted in Heb 2:12). The vision expands: all the families of nations will worship (vv.27–28), future generations will be told about the Lord (v.30), and the psalm closes with \"he has done it!\" (v.31) — the OT’s \"it is finished.\""
         }
       }
     }

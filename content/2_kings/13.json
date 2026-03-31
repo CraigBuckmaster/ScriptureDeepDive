@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 9,
       "panels": {
-        "ctx": "Jehoahaz (Jehu’s son) reigns 17 years and follows Jeroboam’s sins. Hazael and Ben-Hadad of Aram crush Israel until Jehoahaz’s army is reduced to 50 horsemen, 10 chariots, and 10,000 foot soldiers — a force barely sufficient for border defence. In desperation Jehoahaz “sought the LORD’s favour, and the LORD listened” — a rare moment of repentance in the northern kingdom. God sends a deliverer (unnamed), but the people still don’t remove the Asherah pole in Samaria.",
-        "cross": [
-          {
-            "ref": "Judg 3:9, 15",
-            "note": "The “deliverer” pattern echoes Judges: Israel sins, is oppressed, cries out, God raises a deliverer. The cycle repeats even in the monarchy."
-          },
-          {
-            "ref": "2 Kgs 10:32",
-            "note": "Hazael began reducing Israel during Jehu’s reign. The Aramean oppression spans two generations."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Judg 3:9, 15",
+              "note": "The “deliverer” pattern echoes Judges: Israel sins, is oppressed, cries out, God raises a deliverer. The cycle repeats even in the monarchy."
+            },
+            {
+              "ref": "2 Kgs 10:32",
+              "note": "Hazael began reducing Israel during Jehu’s reign. The Aramean oppression spans two generations."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -63,6 +64,9 @@
               "note": "The narrator’s note that God “listened” to a king who continued in Jeroboam’s sins is theologically remarkable. It suggests that God’s compassion operates even when repentance is incomplete — a theme that challenges strict retribution theology."
             }
           ]
+        },
+        "hist": {
+          "context": "Jehoahaz (Jehu’s son) reigns 17 years and follows Jeroboam’s sins. Hazael and Ben-Hadad of Aram crush Israel until Jehoahaz’s army is reduced to 50 horsemen, 10 chariots, and 10,000 foot soldiers — a force barely sufficient for border defence. In desperation Jehoahaz “sought the LORD’s favour, and the LORD listened” — a rare moment of repentance in the northern kingdom. God sends a deliverer (unnamed), but the people still don’t remove the Asherah pole in Samaria."
         }
       }
     },
@@ -80,17 +84,18 @@
             "paragraph": "Elisha tells Jehoash to shoot an arrow eastward (v.17) and declares it “the arrow of the LORD’s victory, the arrow of victory over Aram.” The arrow is both a military weapon and a prophetic symbol — the direction (east, toward Aram) and the prophet’s declaration transform a physical act into a covenant promise."
           }
         ],
-        "ctx": "Jehoash (Joash) of Israel visits the dying Elisha and weeps: “My father! The chariots and horses of Israel!” — the same cry Elisha made for Elijah (2:12). Elisha tells him to shoot an arrow and then strike the ground with the remaining arrows. Jehoash strikes three times and stops. Elisha is angry: “You should have struck five or six times; then you would have destroyed Aram completely.” Partial obedience yields partial victory. Then Elisha dies and is buried. Later, a dead man thrown into Elisha’s tomb touches the prophet’s bones and revives — even in death, prophetic power persists.",
-        "cross": [
-          {
-            "ref": "2 Kgs 2:12",
-            "note": "Elisha’s cry for Elijah — “My father! The chariots and horses of Israel!” — is now echoed by Jehoash for Elisha. The title transfers across prophetic generations."
-          },
-          {
-            "ref": "Matt 27:52–53",
-            "note": "At Jesus’ death, tombs opened and bodies were raised. Elisha’s bone-miracle anticipates the theme of death unable to contain God’s power."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 2:12",
+              "note": "Elisha’s cry for Elijah — “My father! The chariots and horses of Israel!” — is now echoed by Jehoash for Elisha. The title transfers across prophetic generations."
+            },
+            {
+              "ref": "Matt 27:52–53",
+              "note": "At Jesus’ death, tombs opened and bodies were raised. Elisha’s bone-miracle anticipates the theme of death unable to contain God’s power."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -130,6 +135,9 @@
               "note": "The arrow episode teaches that prophetic promises are not self-executing; they require human participation at full intensity. Half-hearted response to God’s invitation yields half-hearted results."
             }
           ]
+        },
+        "hist": {
+          "context": "Jehoash (Joash) of Israel visits the dying Elisha and weeps: “My father! The chariots and horses of Israel!” — the same cry Elisha made for Elijah (2:12). Elisha tells him to shoot an arrow and then strike the ground with the remaining arrows. Jehoash strikes three times and stops. Elisha is angry: “You should have struck five or six times; then you would have destroyed Aram completely.” Partial obedience yields partial victory. Then Elisha dies and is buried. Later, a dead man thrown into Elisha’s tomb touches the prophet’s bones and revives — even in death, prophetic power persists."
         }
       }
     }

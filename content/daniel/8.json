@@ -25,25 +25,26 @@
             "paragraph": "\"In the vision (ḥāzōn) I saw a ram standing beside the canal\" (v.3). A two-horned ram (Medo-Persia) charges west, north, south. A goat with a prominent horn (Greece/Alexander) crosses the earth without touching ground and shatters the ram. At the height of power, the horn breaks; four replace it. From one comes a small horn that grows toward the Beautiful Land, takes away the daily sacrifice, desecrates the sanctuary for 2,300 evenings and mornings."
           }
         ],
-        "ctx": "The vision shifts back to Hebrew (from Aramaic in chs.2–7), signalling a more Israel-focused perspective. The canal at Susa (Ulai, v.2) places Daniel in the administrative capital of the future Persian empire — he receives the vision at the geographical seat of the empire that will replace Babylon. The 2,300 evenings and mornings (v.14) has been calculated as either 1,150 days (evening + morning = 1 day) or 2,300 literal days, both approximately matching the period of Antiochus IV’s temple desecration (167–164 BC).",
-        "cross": [
-          {
-            "ref": "Dan 2:39",
-            "note": "The third kingdom of bronze — the same Greek empire described here as a goat."
-          },
-          {
-            "ref": "Dan 11:3–4",
-            "note": "A mighty king whose kingdom will be divided to the four winds — the same Alexander/Diadochi event."
-          },
-          {
-            "ref": "1 Macc 1:10–64",
-            "note": "The historical account of Antiochus IV’s desecration that Daniel 8:9–14 prophesies."
-          },
-          {
-            "ref": "Matt 24:15",
-            "note": "Jesus: \"When you see the abomination of desolation spoken of through Daniel\" — referencing this chapter and ch.11."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Dan 2:39",
+              "note": "The third kingdom of bronze — the same Greek empire described here as a goat."
+            },
+            {
+              "ref": "Dan 11:3–4",
+              "note": "A mighty king whose kingdom will be divided to the four winds — the same Alexander/Diadochi event."
+            },
+            {
+              "ref": "1 Macc 1:10–64",
+              "note": "The historical account of Antiochus IV’s desecration that Daniel 8:9–14 prophesies."
+            },
+            {
+              "ref": "Matt 24:15",
+              "note": "Jesus: \"When you see the abomination of desolation spoken of through Daniel\" — referencing this chapter and ch.11."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -129,6 +130,9 @@
               "note": "Collins identifies the \"small horn\" as Antiochus IV Epiphanes with virtual certainty. The description matches the historical record: he attacked the \"beautiful land\" (Israel), removed the daily sacrifice, and desecrated the sanctuary (1 Macc 1:41–64)."
             }
           ]
+        },
+        "hist": {
+          "context": "The vision shifts back to Hebrew (from Aramaic in chs.2–7), signalling a more Israel-focused perspective. The canal at Susa (Ulai, v.2) places Daniel in the administrative capital of the future Persian empire — he receives the vision at the geographical seat of the empire that will replace Babylon. The 2,300 evenings and mornings (v.14) has been calculated as either 1,150 days (evening + morning = 1 day) or 2,300 literal days, both approximately matching the period of Antiochus IV’s temple desecration (167–164 BC)."
         }
       }
     },
@@ -146,25 +150,26 @@
             "paragraph": "\"The vision concerns the time of the end (qēṣ)\" (v.17). Gabriel appears — the first named angel in the Bible (v.16). Gabriel explains: ram = Medo-Persia, goat = Greece, four horns = four kingdoms. A fierce king will destroy mighty and holy people (v.24), stand against the Prince of princes, but be destroyed \"not by human power\" (v.25). Daniel is exhausted and ill for days; \"appalled by the vision; it was beyond understanding\" (v.27)."
           }
         ],
-        "ctx": "Gabriel’s first biblical appearance. The same angel later announces John the Baptist’s birth (Luke 1:19) and Jesus’s conception (Luke 1:26). The phrase \"not by human power\" (v.25) echoes the \"not by human hands\" stone of 2:34 — God’s interventions consistently bypass human instrumentality. Daniel’s physical devastation (v.27) is the consistent response of prophets to apocalyptic revelation: not triumph but trauma.",
-        "cross": [
-          {
-            "ref": "Luke 1:19",
-            "note": "I am Gabriel. I stand in the presence of God — the same angel, centuries later, announces the new era."
-          },
-          {
-            "ref": "Luke 1:26",
-            "note": "Gabriel was sent from God to Nazareth — the angel of Daniel’s visions becomes the angel of the incarnation."
-          },
-          {
-            "ref": "Dan 2:34",
-            "note": "A stone cut out, not by human hands — the same \"not by human\" pattern as 8:25."
-          },
-          {
-            "ref": "Rev 19:20",
-            "note": "The beast was captured and thrown into the lake of fire — the ultimate fulfilment of the horn’s destruction."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 1:19",
+              "note": "I am Gabriel. I stand in the presence of God — the same angel, centuries later, announces the new era."
+            },
+            {
+              "ref": "Luke 1:26",
+              "note": "Gabriel was sent from God to Nazareth — the angel of Daniel’s visions becomes the angel of the incarnation."
+            },
+            {
+              "ref": "Dan 2:34",
+              "note": "A stone cut out, not by human hands — the same \"not by human\" pattern as 8:25."
+            },
+            {
+              "ref": "Rev 19:20",
+              "note": "The beast was captured and thrown into the lake of fire — the ultimate fulfilment of the horn’s destruction."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -250,6 +255,9 @@
               "note": "Collins argues the \"Prince of princes\" (sar sarim) is God himself, making the horn’s offence theologically ultimate: not just attacking Israel but opposing God directly."
             }
           ]
+        },
+        "hist": {
+          "context": "Gabriel’s first biblical appearance. The same angel later announces John the Baptist’s birth (Luke 1:19) and Jesus’s conception (Luke 1:26). The phrase \"not by human power\" (v.25) echoes the \"not by human hands\" stone of 2:34 — God’s interventions consistently bypass human instrumentality. Daniel’s physical devastation (v.27) is the consistent response of prophets to apocalyptic revelation: not triumph but trauma."
         }
       }
     }

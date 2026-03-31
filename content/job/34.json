@@ -25,17 +25,18 @@
             "paragraph": "\"Far be it (ḥālîlâ) from God to do evil, from the Almighty to do wrong\" (v.10). Elihu defends God’s justice categorically. He quotes Job (v.5: \"I am innocent but God denies me justice\") and responds: it is unthinkable that God perverts justice. This is the friends’ position restated, but with stronger philosophical grounding."
           }
         ],
-        "ctx": "Elihu addresses the assembled listeners (vv.2–4) and quotes Job directly (v.5–6). His response is essentially: God IS just because God MUST be just. If God were unjust, creation itself would collapse (vv.14–15). The argument from necessity: if God withdrew his spirit, all life would perish. God sustains everything; therefore God cannot be malicious.",
-        "cross": [
-          {
-            "ref": "Gen 18:25",
-            "note": "\"Will not the Judge of all the earth do right?\" — Abraham’s foundational question, which Elihu answers affirmatively."
-          },
-          {
-            "ref": "Rom 9:14",
-            "note": "\"Is God unjust? Not at all!\" — Paul’s answer to the same question."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 18:25",
+              "note": "\"Will not the Judge of all the earth do right?\" — Abraham’s foundational question, which Elihu answers affirmatively."
+            },
+            {
+              "ref": "Rom 9:14",
+              "note": "\"Is God unjust? Not at all!\" — Paul’s answer to the same question."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Habel: Elihu argues from divine necessity. God cannot do wrong because God’s nature is justice. The argument is metaphysical, not empirical — a different approach from the friends."
             }
           ]
+        },
+        "hist": {
+          "context": "Elihu addresses the assembled listeners (vv.2–4) and quotes Job directly (v.5–6). His response is essentially: God IS just because God MUST be just. If God were unjust, creation itself would collapse (vv.14–15). The argument from necessity: if God withdrew his spirit, all life would perish. God sustains everything; therefore God cannot be malicious."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "\"Can someone who hates justice (mishpāṭ) govern?\" (v.17). Elihu’s rhetorical question: if God governs, he must love justice, because governance requires justice. The one who holds the universe together cannot be the one who tears justice apart."
           }
         ],
-        "ctx": "Elihu presses his case: God is impartial (v.19), sees all (v.21–22), removes leaders without investigation because he already knows (v.24–25), overthrows the wicked in the sight of all (v.26). His conclusion: Job adds rebellion to his sin by multiplying words against God (v.37). Elihu is harsher here than in his first speech, moving from pedagogy toward accusation.",
-        "cross": [
-          {
-            "ref": "Ps 33:13–15",
-            "note": "\"From heaven the LORD looks down and sees all mankind\" — the omniscience Elihu invokes."
-          },
-          {
-            "ref": "Dan 2:21",
-            "note": "\"He changes times and seasons; he deposes kings and raises up others\" — the sovereign governance Elihu describes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 33:13–15",
+              "note": "\"From heaven the LORD looks down and sees all mankind\" — the omniscience Elihu invokes."
+            },
+            {
+              "ref": "Dan 2:21",
+              "note": "\"He changes times and seasons; he deposes kings and raises up others\" — the sovereign governance Elihu describes."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -196,6 +201,9 @@
               "note": "Habel: Elihu’s second speech moves from philosophical defence of divine justice to accusation of Job. The shift mirrors the friends’ trajectory: start with theology, end with condemnation."
             }
           ]
+        },
+        "hist": {
+          "context": "Elihu presses his case: God is impartial (v.19), sees all (v.21–22), removes leaders without investigation because he already knows (v.24–25), overthrows the wicked in the sight of all (v.26). His conclusion: Job adds rebellion to his sin by multiplying words against God (v.37). Elihu is harsher here than in his first speech, moving from pedagogy toward accusation."
         }
       }
     }

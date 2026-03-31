@@ -31,21 +31,22 @@
             "paragraph": "The reversal axiom (v.11: \"all who exalt themselves will be humbled; all who humble themselves will be exalted\") is a central Lukan theme that runs from the Magnificat (1:52) through the beatitudes (6:20-26) to the great banquet here. The Greek words carry weight in the LXX's wisdom tradition."
           }
         ],
-        "ctx": "[('Dinner Party as Theological Arena', \"Luke's Jesus is consistently at table — with Pharisees (7:36-50; 11:37-54; 14:1-24), with tax collectors (5:29-32; 19:1-10), and with disciples (22:7-38). The meal is Luke's preferred setting for theological controversy and reversal. The great banquet parable (14:16-24) is the climax of a sustained dinner-table meditation on who truly belongs at the eschatological feast.\"), ('The Double Invitation', 'First-century dinner invitations worked in two stages: a prior invitation, then a summons when the food was ready. The guests who refuse the second summons (14:18-20) have committed a serious social insult — they accepted the first invitation and then refused when the time came. Their excuses (land, oxen, marriage) are all legitimate activities but none constitute an adequate reason for the insult.')]",
-        "cross": [
-          {
-            "ref": "Matt 22:1-14",
-            "note": "Matthew's parallel great banquet parable, set as a king's wedding feast for his son — more explicitly allegorical and including the man without a wedding garment."
-          },
-          {
-            "ref": "Luke 1:52",
-            "note": "The Magnificat: \"He has brought down rulers from their thrones but has lifted up the humble\" — the reversal axiom that the seating parable (14:7-11) illustrates in miniature."
-          },
-          {
-            "ref": "Prov 25:6-7",
-            "note": "\"Do not exalt yourself in the king's presence... it is better for him to say to you, 'Come up here' than for him to humiliate you before his nobles\" — the wisdom text Jesus's seating parable expands and radicalises."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 22:1-14",
+              "note": "Matthew's parallel great banquet parable, set as a king's wedding feast for his son — more explicitly allegorical and including the man without a wedding garment."
+            },
+            {
+              "ref": "Luke 1:52",
+              "note": "The Magnificat: \"He has brought down rulers from their thrones but has lifted up the humble\" — the reversal axiom that the seating parable (14:7-11) illustrates in miniature."
+            },
+            {
+              "ref": "Prov 25:6-7",
+              "note": "\"Do not exalt yourself in the king's presence... it is better for him to say to you, 'Come up here' than for him to humiliate you before his nobles\" — the wisdom text Jesus's seating parable expands and radicalises."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "Augustine: \"God prepared the banquet from before the foundation of the world. When the time came — when Christ came — he sent his servant to say: 'Come, for everything is now ready.' The readiness is perfect; the refusal is entirely on the side of those invited.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Dinner Party as Theological Arena', \"Luke's Jesus is consistently at table — with Pharisees (7:36-50; 11:37-54; 14:1-24), with tax collectors (5:29-32; 19:1-10), and with disciples (22:7-38). The meal is Luke's preferred setting for theological controversy and reversal. The great banquet parable (14:16-24) is the climax of a sustained dinner-table meditation on who truly belongs at the eschatological feast.\"), ('The Double Invitation', 'First-century dinner invitations worked in two stages: a prior invitation, then a summons when the food was ready. The guests who refuse the second summons (14:18-20) have committed a serious social insult — they accepted the first invitation and then refused when the time came. Their excuses (land, oxen, marriage) are all legitimate activities but none constitute an adequate reason for the insult.')]"
         }
       }
     },
@@ -141,21 +145,22 @@
             "paragraph": "The verb (v.27) means to lift and carry as a burden — the cross as a physical object to be shouldered, not a metaphor for general difficulty. Jesus's hearers knew what crucifixion looked like: a condemned man carrying his own crossbeam through the city to his execution."
           }
         ],
-        "ctx": "[('Cross-Bearing Before the Crucifixion', 'Jesus speaks of cross-bearing before his own crucifixion. His hearers knew the image: condemned criminals carried their crossbeams in public procession as a final humiliation. To \"carry your cross\" was to accept public shame, loss of status, and potentially death. Jesus is not using a vague metaphor — he is describing radical identification with the rejected and condemned.'), ('The Counting-the-Cost Parables', \"The tower-builder and king-at-war parables (14:28-32) make the same point from different angles: wise action requires calculating the full cost before committing. Applied to discipleship, the demand is not to count the cost and decide it's too high, but to count it accurately so that the commitment made is genuine and complete. Cheap discipleship that abandons the project is worse than not starting.\")]",
-        "cross": [
-          {
-            "ref": "Matt 10:37-38",
-            "note": "\"Anyone who loves their father or mother more than me is not worthy of me\" — Matthew's less extreme formulation of the same demand, making explicit that the \"hate\" is relative priority."
-          },
-          {
-            "ref": "Mark 8:34-38",
-            "note": "The cross-bearing saying in Mark, placed after Peter's confession — a slightly different context suggesting the saying circulated widely."
-          },
-          {
-            "ref": "Matt 5:13",
-            "note": "\"You are the salt of the earth. But if the salt loses its saltiness, how can it be made salty again?\" — parallel salt saying in the Sermon on the Mount."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 10:37-38",
+              "note": "\"Anyone who loves their father or mother more than me is not worthy of me\" — Matthew's less extreme formulation of the same demand, making explicit that the \"hate\" is relative priority."
+            },
+            {
+              "ref": "Mark 8:34-38",
+              "note": "The cross-bearing saying in Mark, placed after Peter's confession — a slightly different context suggesting the saying circulated widely."
+            },
+            {
+              "ref": "Matt 5:13",
+              "note": "\"You are the salt of the earth. But if the salt loses its saltiness, how can it be made salty again?\" — parallel salt saying in the Sermon on the Mount."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -228,6 +233,9 @@
               "note": "Chrysostom: \"Salt that has lost its flavour has lost its only usefulness. A disciple who has abandoned the distinctive character of discipleship has lost everything that made him worth anything in God's economy.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Cross-Bearing Before the Crucifixion', 'Jesus speaks of cross-bearing before his own crucifixion. His hearers knew the image: condemned criminals carried their crossbeams in public procession as a final humiliation. To \"carry your cross\" was to accept public shame, loss of status, and potentially death. Jesus is not using a vague metaphor — he is describing radical identification with the rejected and condemned.'), ('The Counting-the-Cost Parables', \"The tower-builder and king-at-war parables (14:28-32) make the same point from different angles: wise action requires calculating the full cost before committing. Applied to discipleship, the demand is not to count the cost and decide it's too high, but to count it accurately so that the commitment made is genuine and complete. Cheap discipleship that abandons the project is worse than not starting.\")]"
         }
       }
     },
@@ -251,21 +259,22 @@
             "paragraph": "The reversal axiom (v.11: \"all who exalt themselves will be humbled; all who humble themselves will be exalted\") is a central Lukan theme that runs from the Magnificat (1:52) through the beatitudes (6:20-26) to the great banquet here. The Greek words carry weight in the LXX's wisdom tradition."
           }
         ],
-        "ctx": "[('Dinner Party as Theological Arena', \"Luke's Jesus is consistently at table — with Pharisees (7:36-50; 11:37-54; 14:1-24), with tax collectors (5:29-32; 19:1-10), and with disciples (22:7-38). The meal is Luke's preferred setting for theological controversy and reversal. The great banquet parable (14:16-24) is the climax of a sustained dinner-table meditation on who truly belongs at the eschatological feast.\"), ('The Double Invitation', 'First-century dinner invitations worked in two stages: a prior invitation, then a summons when the food was ready. The guests who refuse the second summons (14:18-20) have committed a serious social insult — they accepted the first invitation and then refused when the time came. Their excuses (land, oxen, marriage) are all legitimate activities but none constitute an adequate reason for the insult.')]",
-        "cross": [
-          {
-            "ref": "Matt 22:1-14",
-            "note": "Matthew's parallel great banquet parable, set as a king's wedding feast for his son — more explicitly allegorical and including the man without a wedding garment."
-          },
-          {
-            "ref": "Luke 1:52",
-            "note": "The Magnificat: \"He has brought down rulers from their thrones but has lifted up the humble\" — the reversal axiom that the seating parable (14:7-11) illustrates in miniature."
-          },
-          {
-            "ref": "Prov 25:6-7",
-            "note": "\"Do not exalt yourself in the king's presence... it is better for him to say to you, 'Come up here' than for him to humiliate you before his nobles\" — the wisdom text Jesus's seating parable expands and radicalises."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 22:1-14",
+              "note": "Matthew's parallel great banquet parable, set as a king's wedding feast for his son — more explicitly allegorical and including the man without a wedding garment."
+            },
+            {
+              "ref": "Luke 1:52",
+              "note": "The Magnificat: \"He has brought down rulers from their thrones but has lifted up the humble\" — the reversal axiom that the seating parable (14:7-11) illustrates in miniature."
+            },
+            {
+              "ref": "Prov 25:6-7",
+              "note": "\"Do not exalt yourself in the king's presence... it is better for him to say to you, 'Come up here' than for him to humiliate you before his nobles\" — the wisdom text Jesus's seating parable expands and radicalises."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -338,6 +347,9 @@
               "note": "Augustine: \"God prepared the banquet from before the foundation of the world. When the time came — when Christ came — he sent his servant to say: 'Come, for everything is now ready.' The readiness is perfect; the refusal is entirely on the side of those invited.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Dinner Party as Theological Arena', \"Luke's Jesus is consistently at table — with Pharisees (7:36-50; 11:37-54; 14:1-24), with tax collectors (5:29-32; 19:1-10), and with disciples (22:7-38). The meal is Luke's preferred setting for theological controversy and reversal. The great banquet parable (14:16-24) is the climax of a sustained dinner-table meditation on who truly belongs at the eschatological feast.\"), ('The Double Invitation', 'First-century dinner invitations worked in two stages: a prior invitation, then a summons when the food was ready. The guests who refuse the second summons (14:18-20) have committed a serious social insult — they accepted the first invitation and then refused when the time came. Their excuses (land, oxen, marriage) are all legitimate activities but none constitute an adequate reason for the insult.')]"
         }
       }
     }

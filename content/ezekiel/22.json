@@ -31,21 +31,22 @@
             "paragraph": "Ezekiel’s characteristic term of contempt for idols, possibly derived from gelal ('dung'). He uses it 39 times — more than all other biblical authors combined. The word is deliberately crude: idols are excrement, not gods."
           }
         ],
-        "ctx": "Chapter 22 is structured as a covenant lawsuit (rib) against Jerusalem. God acts as prosecutor, cataloguing sins in three categories: bloodshed, idolatry, and social injustice. The list in vv.6-12 reads like a negative mirror of the Holiness Code (Lev 17-26) — every commandment violated, every social boundary transgressed. Fathers are dishonoured, aliens are oppressed, orphans and widows are mistreated, the Sabbath is profaned, sexual sins abound, and bribery pervades the courts.",
-        "cross": [
-          {
-            "ref": "Lev 18:6-23",
-            "note": "The sexual prohibitions of the Holiness Code are systematically violated in Jerusalem — Ezekiel 22 reverses Leviticus 18 point by point."
-          },
-          {
-            "ref": "Isa 1:21-23",
-            "note": "Isaiah’s earlier indictment of Jerusalem as a 'faithful city become a prostitute' uses similar categories of social injustice."
-          },
-          {
-            "ref": "Matt 23:37",
-            "note": "Jesus weeps over Jerusalem as the city that 'kills the prophets' — the blood-guilt tradition continues to the NT."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 18:6-23",
+              "note": "The sexual prohibitions of the Holiness Code are systematically violated in Jerusalem — Ezekiel 22 reverses Leviticus 18 point by point."
+            },
+            {
+              "ref": "Isa 1:21-23",
+              "note": "Isaiah’s earlier indictment of Jerusalem as a 'faithful city become a prostitute' uses similar categories of social injustice."
+            },
+            {
+              "ref": "Matt 23:37",
+              "note": "Jesus weeps over Jerusalem as the city that 'kills the prophets' — the blood-guilt tradition continues to the NT."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Zimmerli notes that this passage gathers together sins scattered across the Holiness Code into a single devastating summary. The effect is cumulative."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 22 is structured as a covenant lawsuit (rib) against Jerusalem. God acts as prosecutor, cataloguing sins in three categories: bloodshed, idolatry, and social injustice. The list in vv.6-12 reads like a negative mirror of the Holiness Code (Lev 17-26) — every commandment violated, every social boundary transgressed. Fathers are dishonoured, aliens are oppressed, orphans and widows are mistreated, the Sabbath is profaned, sexual sins abound, and bribery pervades the courts."
         }
       }
     },
@@ -127,21 +131,22 @@
             "paragraph": "The smelting metaphor is devastating: Israel has become dross — the worthless residue left after precious metal is refined. In Isaiah 1:22, Israel’s silver has become dross; here in Ezekiel, the people themselves are the dross. There is no precious metal left to extract."
           }
         ],
-        "ctx": "The smelting furnace metaphor reverses the exodus tradition. In Deuteronomy 4:20, Egypt was the 'iron-smelting furnace' from which God rescued Israel. Now Jerusalem itself becomes the furnace — but this time there is no rescue. The people are gathered into the city not for protection but for destruction.",
-        "cross": [
-          {
-            "ref": "Deut 4:20",
-            "note": "Egypt was the iron-smelting furnace of redemption; Jerusalem becomes the furnace of judgment — a devastating reversal of the exodus."
-          },
-          {
-            "ref": "Isa 1:22-25",
-            "note": "Isaiah uses the same smelting metaphor but with hope: God will smelt away the dross and restore the pure metal."
-          },
-          {
-            "ref": "Mal 3:2-3",
-            "note": "Malachi prophesies a future refining where the Levites will be purified like gold and silver."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 4:20",
+              "note": "Egypt was the iron-smelting furnace of redemption; Jerusalem becomes the furnace of judgment — a devastating reversal of the exodus."
+            },
+            {
+              "ref": "Isa 1:22-25",
+              "note": "Isaiah uses the same smelting metaphor but with hope: God will smelt away the dross and restore the pure metal."
+            },
+            {
+              "ref": "Mal 3:2-3",
+              "note": "Malachi prophesies a future refining where the Levites will be purified like gold and silver."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -194,6 +199,9 @@
               "note": "Zimmerli identifies this as a 'proof-saying' (Erweiswort) structured around the recognition formula. The furnace is annihilation, not purification."
             }
           ]
+        },
+        "hist": {
+          "context": "The smelting furnace metaphor reverses the exodus tradition. In Deuteronomy 4:20, Egypt was the 'iron-smelting furnace' from which God rescued Israel. Now Jerusalem itself becomes the furnace — but this time there is no rescue. The people are gathered into the city not for protection but for destruction."
         }
       }
     },
@@ -211,21 +219,22 @@
             "paragraph": "The 'gap' (perets) in the wall is both literal and metaphorical. A city wall with a breach is defenceless; a society without intercessors is spiritually defenceless. God searched for someone to 'stand in the gap' (v.30) but found no one."
           }
         ],
-        "ctx": "The final oracle indicts every class of Israelite leadership: prophets (v.25), priests (v.26), officials (v.27), false prophets (v.28), and the people of the land (v.29). Each group has failed its covenant responsibility. God searched for an intercessor and found none (v.30).",
-        "cross": [
-          {
-            "ref": "Ps 106:23",
-            "note": "Moses 'stood in the breach' before God to prevent destruction — the intercessory role that no one fills in Ezekiel’s Jerusalem."
-          },
-          {
-            "ref": "Isa 59:16",
-            "note": "God 'was appalled that there was no one to intervene' — so his own arm worked salvation."
-          },
-          {
-            "ref": "1 Tim 2:5",
-            "note": "Paul identifies Jesus as the one mediator between God and humanity — the ultimate answer to the 'gap.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 106:23",
+              "note": "Moses 'stood in the breach' before God to prevent destruction — the intercessory role that no one fills in Ezekiel’s Jerusalem."
+            },
+            {
+              "ref": "Isa 59:16",
+              "note": "God 'was appalled that there was no one to intervene' — so his own arm worked salvation."
+            },
+            {
+              "ref": "1 Tim 2:5",
+              "note": "Paul identifies Jesus as the one mediator between God and humanity — the ultimate answer to the 'gap.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -286,6 +295,9 @@
               "note": "Zimmerli identifies this as one of the most theologically significant verses in Ezekiel: God actively seeks an intercessor but finds none."
             }
           ]
+        },
+        "hist": {
+          "context": "The final oracle indicts every class of Israelite leadership: prophets (v.25), priests (v.26), officials (v.27), false prophets (v.28), and the people of the land (v.29). Each group has failed its covenant responsibility. God searched for an intercessor and found none (v.30)."
         }
       }
     }

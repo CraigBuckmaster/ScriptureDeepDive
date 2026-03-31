@@ -25,25 +25,26 @@
             "paragraph": "\"Daniel resolved (bəlēb) in his heart not to defile himself with the royal food and wine\" (v.8). Nebuchadnezzar besieges Jerusalem and carries off temple vessels and young Israelite nobles (vv.1–2). Daniel, Hananiah, Mishael, and Azariah are selected for Babylonian re-education: new language, new literature, new names (vv.3–7). Babylon’s programme is total identity replacement. Daniel’s refusal of the king’s food is not dietary pickiness but covenant faithfulness — the first act of resistance in the book."
           }
         ],
-        "ctx": "The year is 605 BC — the first deportation under Nebuchadnezzar. Babylon’s strategy was cultural assimilation: rename captives after Babylonian gods (Belteshazzar = Bel protect his life), retrain them in Babylonian literature and language, and feed them from the king’s table to create loyalty. Daniel’s refusal of the food is the first test of whether covenant identity can survive total cultural immersion. The setting is the third year of Jehoiakim (v.1), synchronised with Babylonian records of Nebuchadnezzar’s first western campaign.",
-        "cross": [
-          {
-            "ref": "2 Kgs 24:1–2",
-            "note": "Nebuchadnezzar’s siege of Jerusalem under Jehoiakim — the historical event behind Daniel 1:1–2."
-          },
-          {
-            "ref": "Deut 32:38",
-            "note": "Moses warns against eating food offered to foreign gods — the Torah basis for Daniel’s refusal."
-          },
-          {
-            "ref": "Phil 3:7–8",
-            "note": "Paul counts all things loss for Christ — the NT parallel to Daniel’s costly refusal of royal privilege."
-          },
-          {
-            "ref": "1 Cor 10:31",
-            "note": "Whatever you eat or drink, do it for the glory of God — the principle Daniel embodies."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 24:1–2",
+              "note": "Nebuchadnezzar’s siege of Jerusalem under Jehoiakim — the historical event behind Daniel 1:1–2."
+            },
+            {
+              "ref": "Deut 32:38",
+              "note": "Moses warns against eating food offered to foreign gods — the Torah basis for Daniel’s refusal."
+            },
+            {
+              "ref": "Phil 3:7–8",
+              "note": "Paul counts all things loss for Christ — the NT parallel to Daniel’s costly refusal of royal privilege."
+            },
+            {
+              "ref": "1 Cor 10:31",
+              "note": "Whatever you eat or drink, do it for the glory of God — the principle Daniel embodies."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -129,6 +130,9 @@
               "note": "The court-tale genre is well attested in the ancient Near East: a wise exile rises in a foreign court. Collins compares the Joseph narrative (Gen 39–41) and Ahiqar. Daniel’s distinctiveness is the theological framework: success comes from God, not cleverness."
             }
           ]
+        },
+        "hist": {
+          "context": "The year is 605 BC — the first deportation under Nebuchadnezzar. Babylon’s strategy was cultural assimilation: rename captives after Babylonian gods (Belteshazzar = Bel protect his life), retrain them in Babylonian literature and language, and feed them from the king’s table to create loyalty. Daniel’s refusal of the food is the first test of whether covenant identity can survive total cultural immersion. The setting is the third year of Jehoiakim (v.1), synchronised with Babylonian records of Nebuchadnezzar’s first western campaign."
         }
       }
     },
@@ -146,21 +150,22 @@
             "paragraph": "\"God gave them knowledge (maddāʿ) and understanding of all kinds of literature and learning\" (v.17). Daniel proposes a ten-day vegetable test (vv.11–14). After ten days they look healthier (v.15). God gives the four young men exceptional learning; Daniel receives additional gift of understanding visions and dreams (v.17). Nebuchadnezzar finds them ten times better than all magicians in his realm (v.20). Daniel remains until the first year of Cyrus (v.21) — he outlasts the empire."
           }
         ],
-        "ctx": "The ten-day test is a miniature of the book’s macro-theme: faithfulness tested, God vindicates. The number ten recurs in Daniel as a testing number (cf. the ten horns, the ten days of Rev 2:10). Daniel’s gift of vision-interpretation (v.17b) distinguishes him from his three friends and sets up the dream-narratives of chs.2, 4, 7–12. The note that Daniel “remained until the first year of Cyrus” (v.21) spans the entire Babylonian empire — 605 to 539 BC, roughly 66 years of faithful service.",
-        "cross": [
-          {
-            "ref": "Gen 41:38–39",
-            "note": "Pharaoh recognises the Spirit of God in Joseph — the pattern Daniel follows: foreign ruler acknowledges divine wisdom in an Israelite exile."
-          },
-          {
-            "ref": "Prov 1:7",
-            "note": "The fear of the LORD is the beginning of knowledge — the theological foundation for Daniel’s intellectual superiority."
-          },
-          {
-            "ref": "Acts 7:22",
-            "note": "Moses was educated in all the wisdom of Egypt — the same pattern: God’s servant masters pagan learning while maintaining covenant identity."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 41:38–39",
+              "note": "Pharaoh recognises the Spirit of God in Joseph — the pattern Daniel follows: foreign ruler acknowledges divine wisdom in an Israelite exile."
+            },
+            {
+              "ref": "Prov 1:7",
+              "note": "The fear of the LORD is the beginning of knowledge — the theological foundation for Daniel’s intellectual superiority."
+            },
+            {
+              "ref": "Acts 7:22",
+              "note": "Moses was educated in all the wisdom of Egypt — the same pattern: God’s servant masters pagan learning while maintaining covenant identity."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -246,6 +251,9 @@
               "note": "Collins reads v.21 as a theological statement: the exile has a terminus. Daniel’s career spans the punishment and reaches the restoration. The first verse of the book is defeat; the last verse of ch.1 is survival."
             }
           ]
+        },
+        "hist": {
+          "context": "The ten-day test is a miniature of the book’s macro-theme: faithfulness tested, God vindicates. The number ten recurs in Daniel as a testing number (cf. the ten horns, the ten days of Rev 2:10). Daniel’s gift of vision-interpretation (v.17b) distinguishes him from his three friends and sets up the dream-narratives of chs.2, 4, 7–12. The note that Daniel “remained until the first year of Cyrus” (v.21) spans the entire Babylonian empire — 605 to 539 BC, roughly 66 years of faithful service."
         }
       }
     }

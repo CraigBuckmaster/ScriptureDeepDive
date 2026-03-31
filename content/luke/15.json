@@ -31,21 +31,22 @@
             "paragraph": "The command in both parables (vv.6, 9) is not merely \"be happy\" but \"join in the joy.\" The finding creates a social event of celebration. The point is not just that the lost is found but that the joy is communal — as is the joy of heaven over one repentant sinner."
           }
         ],
-        "ctx": "[('The Setting: Tax Collectors and Sinners', 'Luke grounds the three parables in a specific social confrontation: tax collectors and sinners are gathering around Jesus; Pharisees and teachers are muttering. All three parables are Jesus\\'s answer to the same objection — \"This man welcomes sinners and eats with them.\" The parables do not defend Jesus\\'s practice; they expose the muttering as a failure to understand God\\'s character.'), ('The Female Image of God', \"The woman in the coin parable (15:8-10) is one of several passages in Luke where God's action is imaged through a female figure (cf. 13:20-21, the woman with yeast). Luke's Jesus is unusual in the ancient world for using women as positive exemplars and images of divine activity without any qualification.\")]",
-        "cross": [
-          {
-            "ref": "Matt 18:12-14",
-            "note": "Matthew's parallel lost sheep parable, placed in the discourse on community care — the application is slightly different (care for straying community members) but the parable is the same."
-          },
-          {
-            "ref": "Ezek 34:11-16",
-            "note": "\"For this is what the Sovereign Lord says: I myself will search for my sheep and look after them\" — the OT background. Jesus's seeking of the lost is the fulfilment of YHWH's promise to be the shepherd Israel's leaders failed to be."
-          },
-          {
-            "ref": "Ps 119:176",
-            "note": "\"I have strayed like a lost sheep\" — the Psalmist's self-description that provides the scriptural image of the lost condition."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 18:12-14",
+              "note": "Matthew's parallel lost sheep parable, placed in the discourse on community care — the application is slightly different (care for straying community members) but the parable is the same."
+            },
+            {
+              "ref": "Ezek 34:11-16",
+              "note": "\"For this is what the Sovereign Lord says: I myself will search for my sheep and look after them\" — the OT background. Jesus's seeking of the lost is the fulfilment of YHWH's promise to be the shepherd Israel's leaders failed to be."
+            },
+            {
+              "ref": "Ps 119:176",
+              "note": "\"I have strayed like a lost sheep\" — the Psalmist's self-description that provides the scriptural image of the lost condition."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "Ambrose: \"The woman is the church. The ten coins are the ten commandments, or the ten nations of the world. The one lost coin is the sinner. She lights a lamp — the light of the gospel — and sweeps the house — that is, she searches everywhere within herself — until she finds what was lost.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Setting: Tax Collectors and Sinners', 'Luke grounds the three parables in a specific social confrontation: tax collectors and sinners are gathering around Jesus; Pharisees and teachers are muttering. All three parables are Jesus\\'s answer to the same objection — \"This man welcomes sinners and eats with them.\" The parables do not defend Jesus\\'s practice; they expose the muttering as a failure to understand God\\'s character.'), ('The Female Image of God', \"The woman in the coin parable (15:8-10) is one of several passages in Luke where God's action is imaged through a female figure (cf. 13:20-21, the woman with yeast). Luke's Jesus is unusual in the ancient world for using women as positive exemplars and images of divine activity without any qualification.\")]"
         }
       }
     },
@@ -141,21 +145,22 @@
             "paragraph": "The father's response (v.20) uses the most visceral Greek word for compassion — a stirring of the intestines, the seat of emotion in antiquity. The same word is used for Jesus's own compassion at healings (7:13; 10:33). The father's love is not cool benevolence but gut-wrenching tenderness."
           }
         ],
-        "ctx": "[(\"The Younger Son's Request\", \"In first-century Jewish culture, requesting the inheritance while the father was still alive was equivalent to wishing the father dead — a supreme act of dishonour. The father's compliance is equally scandalous: he divides the property (including the elder's share) without the family consultation that honour culture demanded. From the parable's first sentence, everything is upside-down.\"), ('Feeding Pigs', 'For a Jewish audience, feeding pigs was the ultimate humiliation: pigs were unclean animals, and caring for them in a Gentile country placed the prodigal in a state of maximum ritual impurity. \"No one gave him anything\" — even his Gentile employer offered nothing. He is at the bottom of every social, ritual, and economic ladder simultaneously.')]",
-        "cross": [
-          {
-            "ref": "Deut 21:17",
-            "note": "The double portion for the eldest son in Jewish inheritance law — the context for the younger son's request. By asking for his portion early, he effectively claims what is not yet legally his and dishonours his father."
-          },
-          {
-            "ref": "2 Cor 5:17",
-            "note": "\"If anyone is in Christ, the new creation has come; the old has gone, the new is here!\" — Paul's theological formulation of the same movement the prodigal embodies: death to the old life, new creation in the father's house."
-          },
-          {
-            "ref": "Ps 103:13",
-            "note": "\"As a father has compassion on his children, so the Lord has compassion on those who fear him\" — the Psalm that provides the OT background for the father's compassion in the parable."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 21:17",
+              "note": "The double portion for the eldest son in Jewish inheritance law — the context for the younger son's request. By asking for his portion early, he effectively claims what is not yet legally his and dishonours his father."
+            },
+            {
+              "ref": "2 Cor 5:17",
+              "note": "\"If anyone is in Christ, the new creation has come; the old has gone, the new is here!\" — Paul's theological formulation of the same movement the prodigal embodies: death to the old life, new creation in the father's house."
+            },
+            {
+              "ref": "Ps 103:13",
+              "note": "\"As a father has compassion on his children, so the Lord has compassion on those who fear him\" — the Psalm that provides the OT background for the father's compassion in the parable."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -228,6 +233,9 @@
               "note": "Chrysostom: \"The elder son represents those who serve God from duty and fear, not from love. His very obedience has become a wall between himself and his father's joy. To keep the commandments without sharing in the father's own heart is to be in the house but not of the family.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[(\"The Younger Son's Request\", \"In first-century Jewish culture, requesting the inheritance while the father was still alive was equivalent to wishing the father dead — a supreme act of dishonour. The father's compliance is equally scandalous: he divides the property (including the elder's share) without the family consultation that honour culture demanded. From the parable's first sentence, everything is upside-down.\"), ('Feeding Pigs', 'For a Jewish audience, feeding pigs was the ultimate humiliation: pigs were unclean animals, and caring for them in a Gentile country placed the prodigal in a state of maximum ritual impurity. \"No one gave him anything\" — even his Gentile employer offered nothing. He is at the bottom of every social, ritual, and economic ladder simultaneously.')]"
         }
       }
     },
@@ -251,21 +259,22 @@
             "paragraph": "The command in both parables (vv.6, 9) is not merely \"be happy\" but \"join in the joy.\" The finding creates a social event of celebration. The point is not just that the lost is found but that the joy is communal — as is the joy of heaven over one repentant sinner."
           }
         ],
-        "ctx": "[('The Setting: Tax Collectors and Sinners', 'Luke grounds the three parables in a specific social confrontation: tax collectors and sinners are gathering around Jesus; Pharisees and teachers are muttering. All three parables are Jesus\\'s answer to the same objection — \"This man welcomes sinners and eats with them.\" The parables do not defend Jesus\\'s practice; they expose the muttering as a failure to understand God\\'s character.'), ('The Female Image of God', \"The woman in the coin parable (15:8-10) is one of several passages in Luke where God's action is imaged through a female figure (cf. 13:20-21, the woman with yeast). Luke's Jesus is unusual in the ancient world for using women as positive exemplars and images of divine activity without any qualification.\")]",
-        "cross": [
-          {
-            "ref": "Matt 18:12-14",
-            "note": "Matthew's parallel lost sheep parable, placed in the discourse on community care — the application is slightly different (care for straying community members) but the parable is the same."
-          },
-          {
-            "ref": "Ezek 34:11-16",
-            "note": "\"For this is what the Sovereign Lord says: I myself will search for my sheep and look after them\" — the OT background. Jesus's seeking of the lost is the fulfilment of YHWH's promise to be the shepherd Israel's leaders failed to be."
-          },
-          {
-            "ref": "Ps 119:176",
-            "note": "\"I have strayed like a lost sheep\" — the Psalmist's self-description that provides the scriptural image of the lost condition."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 18:12-14",
+              "note": "Matthew's parallel lost sheep parable, placed in the discourse on community care — the application is slightly different (care for straying community members) but the parable is the same."
+            },
+            {
+              "ref": "Ezek 34:11-16",
+              "note": "\"For this is what the Sovereign Lord says: I myself will search for my sheep and look after them\" — the OT background. Jesus's seeking of the lost is the fulfilment of YHWH's promise to be the shepherd Israel's leaders failed to be."
+            },
+            {
+              "ref": "Ps 119:176",
+              "note": "\"I have strayed like a lost sheep\" — the Psalmist's self-description that provides the scriptural image of the lost condition."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -338,6 +347,9 @@
               "note": "Ambrose: \"The woman is the church. The ten coins are the ten commandments, or the ten nations of the world. The one lost coin is the sinner. She lights a lamp — the light of the gospel — and sweeps the house — that is, she searches everywhere within herself — until she finds what was lost.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Setting: Tax Collectors and Sinners', 'Luke grounds the three parables in a specific social confrontation: tax collectors and sinners are gathering around Jesus; Pharisees and teachers are muttering. All three parables are Jesus\\'s answer to the same objection — \"This man welcomes sinners and eats with them.\" The parables do not defend Jesus\\'s practice; they expose the muttering as a failure to understand God\\'s character.'), ('The Female Image of God', \"The woman in the coin parable (15:8-10) is one of several passages in Luke where God's action is imaged through a female figure (cf. 13:20-21, the woman with yeast). Luke's Jesus is unusual in the ancient world for using women as positive exemplars and images of divine activity without any qualification.\")]"
         }
       }
     }

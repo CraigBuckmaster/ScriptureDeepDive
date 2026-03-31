@@ -37,22 +37,26 @@
             "paragraph": "Laban accuses Jacob of guarding his heart in secret (v.20 lit. \"stole the heart of Laban\"). The idiom means to deceive — again the family lexicon of deception."
           }
         ],
-        "hist": "The divine command to return is given in the context of Laban's changed disposition (vv.1-2) and Rachel and Leah's confirmation (vv.14-16). The consultation with the wives before departing is significant: Jacob is not making a unilateral decision but building a family consensus. Rachel and Leah's response — \"all the wealth God has taken from our father belongs to us and our children\" — indicates they have arrived at the same conclusion about Laban's exploitation and God's just redistribution.",
-        "ctx": "Jacob's departure is divinely commanded (v.3) and confirmed by the Bethel angel (v.13) — he is not fleeing in fear but obeying God. The twenty-year arc is complete: God kept his Bethel promise (28:15: \"I will be with you and will watch over you wherever you go, and I will bring you back\"). Rachel's theft of the teraphim introduces a subplot of unresolved idolatry that Jacob will address in 35:2–4 when he buries all the foreign gods under the oak at Shechem.",
-        "cross": [
-          {
-            "ref": "Gen 28:15",
-            "note": "God's Bethel promise: \"I will bring you back\" — now fulfilled."
-          },
-          {
-            "ref": "Gen 35:2–4",
-            "note": "Jacob commands his household to put away foreign gods; the teraphim are finally buried."
-          },
-          {
-            "ref": "Deut 26:5",
-            "note": "The liturgical confession: \"My father was a wandering Aramean\" — Jacob's Paddan-aram sojourn remembered."
-          }
-        ],
+        "hist": {
+          "historical": "The divine command to return is given in the context of Laban's changed disposition (vv.1-2) and Rachel and Leah's confirmation (vv.14-16). The consultation with the wives before departing is significant: Jacob is not making a unilateral decision but building a family consensus. Rachel and Leah's response — \"all the wealth God has taken from our father belongs to us and our children\" — indicates they have arrived at the same conclusion about Laban's exploitation and God's just redistribution.",
+          "context": "Jacob's departure is divinely commanded (v.3) and confirmed by the Bethel angel (v.13) — he is not fleeing in fear but obeying God. The twenty-year arc is complete: God kept his Bethel promise (28:15: \"I will be with you and will watch over you wherever you go, and I will bring you back\"). Rachel's theft of the teraphim introduces a subplot of unresolved idolatry that Jacob will address in 35:2–4 when he buries all the foreign gods under the oak at Shechem."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 28:15",
+              "note": "God's Bethel promise: \"I will bring you back\" — now fulfilled."
+            },
+            {
+              "ref": "Gen 35:2–4",
+              "note": "Jacob commands his household to put away foreign gods; the teraphim are finally buried."
+            },
+            {
+              "ref": "Deut 26:5",
+              "note": "The liturgical confession: \"My father was a wandering Aramean\" — Jacob's Paddan-aram sojourn remembered."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -148,17 +152,18 @@
             "paragraph": "The opposite of \"blessing.\" Laban sent nothing; God provided everything. The word contrasts with the abundant flocks Jacob takes — all of it, Jacob insists, is God's provision."
           }
         ],
-        "ctx": "God's warning to Laban in the dream (v.24) is not protection of Jacob's deception but intervention to prevent Laban from harming Jacob — God restrains the powerful uncle from doing violence to the patriarch. Jacob's speech (vv.36–42) is the first time in Genesis he speaks with full moral clarity: he lists twenty years of faithful service and directly attributes his prosperity to God. The man who once grabbed his brother's heel now stands before his accuser and invokes \"the Fear of Isaac.\"",
-        "cross": [
-          {
-            "ref": "Gen 20:3",
-            "note": "God warns Abimelech in a dream — same pattern of divine protection via nocturnal warning."
-          },
-          {
-            "ref": "Gen 28:20–22",
-            "note": "Jacob's Bethel vow: \"if God gives me bread to eat and clothing to wear\" — v.41 shows God kept exactly this promise."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 20:3",
+              "note": "God warns Abimelech in a dream — same pattern of divine protection via nocturnal warning."
+            },
+            {
+              "ref": "Gen 28:20–22",
+              "note": "Jacob's Bethel vow: \"if God gives me bread to eat and clothing to wear\" — v.41 shows God kept exactly this promise."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Flight route from Paddan Aram toward Canaan",
@@ -234,6 +239,9 @@
               "note": "The NET note on \"the way of women\" explains this is a euphemism for menstruation, widely understood in the ancient Near East to create ritual impurity transmitted by contact. The note observes that Rachel's use of this convention is strategically precise: she invokes a purity category that prevents physical search without revealing the actual object of the search. The note leaves open whether the reader is meant to admire or deplore her ingenuity."
             }
           ]
+        },
+        "hist": {
+          "context": "God's warning to Laban in the dream (v.24) is not protection of Jacob's deception but intervention to prevent Laban from harming Jacob — God restrains the powerful uncle from doing violence to the patriarch. Jacob's speech (vv.36–42) is the first time in Genesis he speaks with full moral clarity: he lists twenty years of faithful service and directly attributes his prosperity to God. The man who once grabbed his brother's heel now stands before his accuser and invokes \"the Fear of Isaac.\""
         }
       }
     },
@@ -263,17 +271,18 @@
             "paragraph": "The treaty between Jacob and Laban follows recognizable ancient Near Eastern treaty forms: monument, witnesses (v.50: God as witness), oath, meal (v.54)."
           }
         ],
-        "ctx": "The Mizpah benediction (\"The LORD watch between you and me\") is often quoted as a blessing between friends. In context it is a warning: \"since we distrust each other, may God watch to ensure neither of us crosses this line.\" The heap marks the end of the Jacob-Laban cycle. From this point Jacob moves toward Esau and toward Canaan — the land of promise finally in view. Laban disappears from the narrative. The blessing he speaks over his daughters (v.55) is his only recorded act of genuine fatherly love.",
-        "cross": [
-          {
-            "ref": "Josh 24:25-27",
-            "note": "A stone as witness at Shechem — the covenant-stone motif from Gen 31 reappears in Israel's covenant renewal."
-          },
-          {
-            "ref": "Isa 43:10",
-            "note": "You are my witnesses — the witness-language of covenant from Gen 31 pervades the prophetic covenant lawsuits."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 24:25-27",
+              "note": "A stone as witness at Shechem — the covenant-stone motif from Gen 31 reappears in Israel's covenant renewal."
+            },
+            {
+              "ref": "Isa 43:10",
+              "note": "You are my witnesses — the witness-language of covenant from Gen 31 pervades the prophetic covenant lawsuits."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Galeed / Mizpah",
@@ -353,6 +362,9 @@
               "note": "The NET note on the Mizpah formula confirms Calvin's interpretation against the devotional use: \"May the LORD keep watch between you and me when we are away from each other\" — the context is a covenant enforcement clause. The note observes that the formula is invoked specifically in vv.50-52 with treaty stipulations (do not mistreat my daughters, do not marry other women), making clear that the divine watching is contractual surveillance, not tender care."
             }
           ]
+        },
+        "hist": {
+          "context": "The Mizpah benediction (\"The LORD watch between you and me\") is often quoted as a blessing between friends. In context it is a warning: \"since we distrust each other, may God watch to ensure neither of us crosses this line.\" The heap marks the end of the Jacob-Laban cycle. From this point Jacob moves toward Esau and toward Canaan — the land of promise finally in view. Laban disappears from the narrative. The blessing he speaks over his daughters (v.55) is his only recorded act of genuine fatherly love."
         }
       }
     }

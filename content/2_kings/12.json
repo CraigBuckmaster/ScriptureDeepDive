@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 16,
       "panels": {
-        "ctx": "Joash does right “all the years Jehoiada the priest instructed him” — a qualification the narrator flags early: Joash’s faithfulness depends on his mentor’s presence. When the priests fail to use temple revenue for repairs, Joash establishes a new system: a chest at the temple gate where offerings are collected directly, with royal secretaries and the high priest counting the money together. Craftsmen are hired and the work proceeds with integrity — “they did not require an accounting from those to whom they gave the money, because they acted with complete honesty.”",
-        "cross": [
-          {
-            "ref": "2 Kgs 22:3–7",
-            "note": "Josiah will later initiate an almost identical temple repair project. The pattern — temple decline under bad kings, restoration under reformers — repeats throughout Kings."
-          },
-          {
-            "ref": "2 Chr 24:17–22",
-            "note": "Chronicles adds devastating detail: after Jehoiada’s death, Joash abandoned the LORD and even had Jehoiada’s son Zechariah stoned — the priest’s grandson killing the priest’s son."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 22:3–7",
+              "note": "Josiah will later initiate an almost identical temple repair project. The pattern — temple decline under bad kings, restoration under reformers — repeats throughout Kings."
+            },
+            {
+              "ref": "2 Chr 24:17–22",
+              "note": "Chronicles adds devastating detail: after Jehoiada’s death, Joash abandoned the LORD and even had Jehoiada’s son Zechariah stoned — the priest’s grandson killing the priest’s son."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -63,6 +64,9 @@
               "note": "Joash’s dependent faith raises a crucial question: is faith that relies entirely on a mentor’s guidance genuine faith? The narrative suggests it is real but insufficient. Personal conviction must eventually replace external instruction."
             }
           ]
+        },
+        "hist": {
+          "context": "Joash does right “all the years Jehoiada the priest instructed him” — a qualification the narrator flags early: Joash’s faithfulness depends on his mentor’s presence. When the priests fail to use temple revenue for repairs, Joash establishes a new system: a chest at the temple gate where offerings are collected directly, with royal secretaries and the high priest counting the money together. Craftsmen are hired and the work proceeds with integrity — “they did not require an accounting from those to whom they gave the money, because they acted with complete honesty.”"
         }
       }
     },
@@ -72,17 +76,18 @@
       "verse_start": 17,
       "verse_end": 21,
       "panels": {
-        "ctx": "Hazael’s Aramean army advances toward Jerusalem. Joash buys him off with the temple’s sacred objects and the treasury gold — the very treasures he worked to restore. The irony is bitter: the temple repairer becomes the temple raider when threatened. His officials conspire and assassinate him — Chronicles (2 Chr 24:25) says this was vengeance for the blood of Jehoiada’s son Zechariah, whom Joash had murdered. The king who was saved as an infant in the temple dies at the hands of his own servants.",
-        "cross": [
-          {
-            "ref": "2 Chr 24:20–22",
-            "note": "Zechariah son of Jehoiada prophesies against Joash; Joash has him stoned in the temple court. Zechariah’s dying words: “May the LORD see this and call you to account.” He does."
-          },
-          {
-            "ref": "Matt 23:35",
-            "note": "Jesus references “Zechariah son of Berekiah, whom you murdered between the temple and the altar.” Some scholars identify this with Jehoiada’s son."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Chr 24:20–22",
+              "note": "Zechariah son of Jehoiada prophesies against Joash; Joash has him stoned in the temple court. Zechariah’s dying words: “May the LORD see this and call you to account.” He does."
+            },
+            {
+              "ref": "Matt 23:35",
+              "note": "Jesus references “Zechariah son of Berekiah, whom you murdered between the temple and the altar.” Some scholars identify this with Jehoiada’s son."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -118,6 +123,9 @@
               "note": "The temple-raiding pattern — kings stripping the temple to pay foreign tribute — will recur throughout 2 Kings (16:8; 18:15; 24:13). Each episode represents a step toward the final catastrophe of chapter 25."
             }
           ]
+        },
+        "hist": {
+          "context": "Hazael’s Aramean army advances toward Jerusalem. Joash buys him off with the temple’s sacred objects and the treasury gold — the very treasures he worked to restore. The irony is bitter: the temple repairer becomes the temple raider when threatened. His officials conspire and assassinate him — Chronicles (2 Chr 24:25) says this was vengeance for the blood of Jehoiada’s son Zechariah, whom Joash had murdered. The king who was saved as an infant in the temple dies at the hands of his own servants."
         }
       }
     }

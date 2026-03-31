@@ -25,17 +25,18 @@
             "paragraph": "\"How beautiful (yāfâ) you are, my darling! Oh, how beautiful!\" (v.1). The wasf (Arabic: descriptive praise poem) catalogues the beloved’s beauty from head down: eyes like doves, hair like goats descending Gilead, teeth like shorn sheep, lips like scarlet ribbon, temples like pomegranate, neck like the tower of David, breasts like twin fawns. Each image draws on nature and architecture — the beloved is landscape and fortress both."
           }
         ],
-        "ctx": "The wasf (descriptive praise poem) is a genre known across ANE love poetry. The Lover describes the Beloved from eyes to breasts: each feature is compared to something from nature or architecture. The images are not photographic but evocative — they communicate impression, not anatomy. \"You are altogether beautiful, my darling; there is no flaw in you\" (v.7) is the summary.",
-        "cross": [
-          {
-            "ref": "Prov 5:18–19",
-            "note": "\"May your fountain be blessed, and may you rejoice in the wife of your youth\" — Proverbs’ marital celebration."
-          },
-          {
-            "ref": "Eph 5:27",
-            "note": "\"A radiant church, without stain or wrinkle or any other blemish\" — the church as flawless bride, echoing \"no flaw in you.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 5:18–19",
+              "note": "\"May your fountain be blessed, and may you rejoice in the wife of your youth\" — Proverbs’ marital celebration."
+            },
+            {
+              "ref": "Eph 5:27",
+              "note": "\"A radiant church, without stain or wrinkle or any other blemish\" — the church as flawless bride, echoing \"no flaw in you.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -121,6 +122,9 @@
               "note": "Garrett: \"my bride\" (kallâ) marks the transition. The courtship phase is complete. What follows is the wedding night."
             }
           ]
+        },
+        "hist": {
+          "context": "The wasf (descriptive praise poem) is a genre known across ANE love poetry. The Lover describes the Beloved from eyes to breasts: each feature is compared to something from nature or architecture. The images are not photographic but evocative — they communicate impression, not anatomy. \"You are altogether beautiful, my darling; there is no flaw in you\" (v.7) is the summary."
         }
       }
     },
@@ -138,17 +142,18 @@
             "paragraph": "\"You are a garden locked (gan nāʿūl), my sister, my bride; you are a spring enclosed, a sealed fountain\" (v.12). The locked garden is the poem’s most important image: beauty that is protected, intimacy that is exclusive, sexuality that is reserved. The garden will be opened — but only to the one who holds the key."
           }
         ],
-        "ctx": "The Lover calls the Beloved \"my sister, my bride\" — combining familial intimacy with erotic love. She is a locked garden, a sealed fountain (v.12) — exclusive, protected. Her garden is full of choice fruits (vv.13–14): pomegranates, henna, nard, saffron, calamus, cinnamon, myrrh, aloes. Then the Beloved responds: \"Awake, north wind, and come, south wind! Blow on my garden, that its fragrance may spread. Let my beloved come into his garden\" (v.16). The garden is unlocked. The invitation is given.",
-        "cross": [
-          {
-            "ref": "Gen 2:8–9",
-            "note": "\"The LORD God had planted a garden in the east\" — Eden as the first garden. The Song’s garden imagery recalls paradise."
-          },
-          {
-            "ref": "Rev 22:1–2",
-            "note": "\"The river of the water of life... and on each side of the river stood the tree of life\" — the restored garden at the end of Scripture."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 2:8–9",
+              "note": "\"The LORD God had planted a garden in the east\" — Eden as the first garden. The Song’s garden imagery recalls paradise."
+            },
+            {
+              "ref": "Rev 22:1–2",
+              "note": "\"The river of the water of life... and on each side of the river stood the tree of life\" — the restored garden at the end of Scripture."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -234,6 +239,9 @@
               "note": "Garrett: the Beloved’s initiative in opening the garden is theologically significant: mutual desire, freely expressed. Neither partner is passive."
             }
           ]
+        },
+        "hist": {
+          "context": "The Lover calls the Beloved \"my sister, my bride\" — combining familial intimacy with erotic love. She is a locked garden, a sealed fountain (v.12) — exclusive, protected. Her garden is full of choice fruits (vv.13–14): pomegranates, henna, nard, saffron, calamus, cinnamon, myrrh, aloes. Then the Beloved responds: \"Awake, north wind, and come, south wind! Blow on my garden, that its fragrance may spread. Let my beloved come into his garden\" (v.16). The garden is unlocked. The invitation is given."
         }
       }
     }

@@ -28,21 +28,22 @@
             "paragraph": "\"What is mankind (ʾĕnōsh) that you are mindful of them?\" (v.4). The anthropological question. Against the backdrop of moon and stars, human beings are vanishingly small. Yet God \"is mindful\" of them — attends, remembers, cares. The wonder is not humanity’s greatness but God’s attention."
           }
         ],
-        "ctx": "The psalm moves from God’s cosmic majesty (v.1) to the paradox of divine attention to insignificant humanity (v.4). The heavens, moon, and stars are God’s finger-work (v.3). Against that scale, humans are specks. Yet God notices them. Children and infants praise God and silence the enemy (v.2). Jesus quotes this verse when children shout \"Hosanna\" in the temple (Matt 21:16).",
-        "cross": [
-          {
-            "ref": "Matt 21:15–16",
-            "note": "Jesus quotes Psalm 8:2 when the chief priests object to children’s praise in the temple."
-          },
-          {
-            "ref": "Heb 2:6–8",
-            "note": "The author of Hebrews applies Psalm 8:4–6 to Christ: \"you made him a little lower than the angels.\""
-          },
-          {
-            "ref": "1 Cor 15:27",
-            "note": "Paul quotes Psalm 8:6 for Christ’s ultimate authority: \"God has put everything under his feet.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 21:15–16",
+              "note": "Jesus quotes Psalm 8:2 when the chief priests object to children’s praise in the temple."
+            },
+            {
+              "ref": "Heb 2:6–8",
+              "note": "The author of Hebrews applies Psalm 8:4–6 to Christ: \"you made him a little lower than the angels.\""
+            },
+            {
+              "ref": "1 Cor 15:27",
+              "note": "Paul quotes Psalm 8:6 for Christ’s ultimate authority: \"God has put everything under his feet.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -117,6 +118,9 @@
               "note": "Goldingay: \"what is ʾĕnōsh?\" uses the word for frail, mortal humanity. Not ʾādām (humanity-as-dignity) but ʾĕnōsh (humanity-as-weakness). God attends to the weak."
             }
           ]
+        },
+        "hist": {
+          "context": "The psalm moves from God’s cosmic majesty (v.1) to the paradox of divine attention to insignificant humanity (v.4). The heavens, moon, and stars are God’s finger-work (v.3). Against that scale, humans are specks. Yet God notices them. Children and infants praise God and silence the enemy (v.2). Jesus quotes this verse when children shout \"Hosanna\" in the temple (Matt 21:16)."
         }
       }
     },
@@ -134,17 +138,18 @@
             "paragraph": "\"You crowned them with glory (kābōd) and honour\" (v.5). Humanity’s position: a little lower than the angels (or: than God — the Hebrew ʾĕlōhîm can mean either), crowned with glory and honour, given dominion over creation. This is Genesis 1:26–28 in poetic form. Hebrews 2:6–8 applies it to Christ, who became \"a little lower than the angels\" in incarnation."
           }
         ],
-        "ctx": "The psalm’s second half answers its own question: what is mankind? Answer: crowned with glory (v.5), given dominion (v.6), rulers over animals (vv.7–8). This is the creation mandate (Gen 1:26–28) celebrated in worship. The psalm returns to its opening frame: \"LORD, our Lord, how majestic is your name in all the earth!\" (v.9). The humans who seemed insignificant (v.4) are revealed as God’s vice-regents (vv.5–8). Both truths coexist: we are small AND crowned.",
-        "cross": [
-          {
-            "ref": "Gen 1:26–28",
-            "note": "\"Let us make mankind in our image... let them rule\" — the creation mandate Psalm 8 celebrates."
-          },
-          {
-            "ref": "Heb 2:6–9",
-            "note": "\"You made them a little lower than the angels; you crowned them with glory and honour... we see Jesus, who was made lower than the angels, now crowned with glory and honour\" — the christological reading."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 1:26–28",
+              "note": "\"Let us make mankind in our image... let them rule\" — the creation mandate Psalm 8 celebrates."
+            },
+            {
+              "ref": "Heb 2:6–9",
+              "note": "\"You made them a little lower than the angels; you crowned them with glory and honour... we see Jesus, who was made lower than the angels, now crowned with glory and honour\" — the christological reading."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -223,6 +228,9 @@
               "note": "Goldingay: \"crowned\" is royal language. Every human is crowned by God — not with political power but with dignifying purpose. The imago Dei is a crown, not a title."
             }
           ]
+        },
+        "hist": {
+          "context": "The psalm’s second half answers its own question: what is mankind? Answer: crowned with glory (v.5), given dominion (v.6), rulers over animals (vv.7–8). This is the creation mandate (Gen 1:26–28) celebrated in worship. The psalm returns to its opening frame: \"LORD, our Lord, how majestic is your name in all the earth!\" (v.9). The humans who seemed insignificant (v.4) are revealed as God’s vice-regents (vv.5–8). Both truths coexist: we are small AND crowned."
         }
       }
     }

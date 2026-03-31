@@ -31,17 +31,18 @@
             "paragraph": "The eyes of the LORD are in every place, keeping watch on the evil and the good (v. 3). The image is of comprehensive divine surveillance — not paranoid but pastoral. Nothing escapes notice. This grounds all of Proverbs' moral teaching in theology: behaviour matters because God sees."
           }
         ],
-        "ctx": "The first half is dominated by the tongue (vv.1-2,4,7) and God's omniscience (vv.3,8-9,11). The eyes of the LORD everywhere (v.3) and Death open before him (v.11) are the theological environment in which all speech ethics operate. The two better-than sayings (vv.16-17) introduce the theme: quality of heart matters more than quantity of possession.",
-        "cross": [
-          {
-            "ref": "Prov 12:18",
-            "note": "The tongue of the wise brings healing -- the soothing tongue as tree of life (15:4) extends this."
-          },
-          {
-            "ref": "Jas 1:19-20",
-            "note": "Quick to listen, slow to speak, slow to anger -- NT application of v.1's conflict resolution."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 12:18",
+              "note": "The tongue of the wise brings healing -- the soothing tongue as tree of life (15:4) extends this."
+            },
+            {
+              "ref": "Jas 1:19-20",
+              "note": "Quick to listen, slow to speak, slow to anger -- NT application of v.1's conflict resolution."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "The NET note on 'the eyes of the LORD are everywhere' (bekol-makom einei YHWH) discusses the theological significance of omniscience in the wisdom tradition: God's oversight is not primarily surveillance for punishment but the structural reality that all human behaviour occurs in the presence of the evaluating God. The note connects to Prov 5:21 ('a man's ways are in full view of the LORD') as the same point from a different angle."
             }
           ]
+        },
+        "hist": {
+          "context": "The first half is dominated by the tongue (vv.1-2,4,7) and God's omniscience (vv.3,8-9,11). The eyes of the LORD everywhere (v.3) and Death open before him (v.11) are the theological environment in which all speech ethics operate. The two better-than sayings (vv.16-17) introduce the theme: quality of heart matters more than quantity of possession."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "Before honour is ʿănāwâ — humility (v. 33). This is not self-deprecation but accurate self-assessment before God. The sequence matters: humility is the precondition, not the result, of honour. The fear of the LORD is the mûsār (discipline/instruction) of wisdom, and humility comes before honour — the verse ties together the book's three great themes."
           }
         ],
-        "ctx": "The second half continues the speech theme (vv.23,26,28) before addressing the path of life (v.24), the LORD's care for the vulnerable widow (v.25), the LORD's proximity to the righteous (v.29), and the chapter's closing sequence: wisdom → fear → humility → honour (v.33).",
-        "cross": [
-          {
-            "ref": "Prov 3:34",
-            "note": "He gives grace to the humble -- the honour-through-humility sequence of v.33, cited by James (4:6) and Peter (1 Pet 5:5)."
-          },
-          {
-            "ref": "Prov 11:14",
-            "note": "Many advisers (v.22) -- the repeated counsellor-proverb. Wisdom is consistently communal."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 3:34",
+              "note": "He gives grace to the humble -- the honour-through-humility sequence of v.33, cited by James (4:6) and Peter (1 Pet 5:5)."
+            },
+            {
+              "ref": "Prov 11:14",
+              "note": "Many advisers (v.22) -- the repeated counsellor-proverb. Wisdom is consistently communal."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -178,6 +183,9 @@
               "note": "The NET note on 'humility comes before honour' (lifney khavod anavah) discusses the Hebrew word order: 'before honour [is] humility.' The note traces this principle through 18:12 (before destruction the heart is haughty; before honour comes humility) and into the NT (Jas 4:10; 1 Pet 5:6). The principle is consistent across the entire wisdom tradition: genuine honour is the consequence of genuine humility, not its substitute."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half continues the speech theme (vv.23,26,28) before addressing the path of life (v.24), the LORD's care for the vulnerable widow (v.25), the LORD's proximity to the righteous (v.29), and the chapter's closing sequence: wisdom → fear → humility → honour (v.33)."
         }
       }
     }

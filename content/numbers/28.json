@@ -25,17 +25,18 @@
             "paragraph": "The foundational principle of Israel's public worship: two lambs every morning and evening sustain the covenant relationship without interruption. The altar never goes cold; the covenant is never suspended. Tamid is the pulse of Israel's daily life with God."
           }
         ],
-        "ctx": "Numbers 28-29 provide the most comprehensive listing of Israel's public offering calendar in the Torah. The system operates at four time scales: daily (twice-daily tamid), weekly (Sabbath — double the daily), monthly (new moon), and annual (seven feasts). The tamid is the baseline: two unblemished lambs every day without exception, with grain and drink offerings. The Sabbath offering doubles the tamid; the new moon adds bulls and rams. Each higher time-unit builds on the daily foundation.",
-        "cross": [
-          {
-            "ref": "Heb 10:11",
-            "note": "\"Day after day every priest stands and performs his religious duties; again and again he offers the same sacrifices, which can never take away sins.\" The writer contrasts the repetitive tamid with Christ's once-for-all sacrifice — the perpetual offering points to its own insufficiency and the need for a final, unrepeatable sacrifice."
-          },
-          {
-            "ref": "Rev 8:3-4",
-            "note": "\"Another angel, who had a golden censer, came and stood at the altar. He was given much incense to offer, with the prayers of all God's people, on the golden altar in front of the throne.\" The heavenly altar of perpetual incense fulfils the tamid theology."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 10:11",
+              "note": "\"Day after day every priest stands and performs his religious duties; again and again he offers the same sacrifices, which can never take away sins.\" The writer contrasts the repetitive tamid with Christ's once-for-all sacrifice — the perpetual offering points to its own insufficiency and the need for a final, unrepeatable sacrifice."
+            },
+            {
+              "ref": "Rev 8:3-4",
+              "note": "\"Another angel, who had a golden censer, came and stood at the altar. He was given much incense to offer, with the prayers of all God's people, on the golden altar in front of the throne.\" The heavenly altar of perpetual incense fulfils the tamid theology."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Ashley: The narrative context of daily offerings in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Numbers 28-29 provide the most comprehensive listing of Israel's public offering calendar in the Torah. The system operates at four time scales: daily (twice-daily tamid), weekly (Sabbath — double the daily), monthly (new moon), and annual (seven feasts). The tamid is the baseline: two unblemished lambs every day without exception, with grain and drink offerings. The Sabbath offering doubles the tamid; the new moon adds bulls and rams. Each higher time-unit builds on the daily foundation."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "The offering at the beginning of the wheat harvest — the firstfruits principle applied to the grain harvest's completion. Two loaves of leavened bread presented as firstfruits, plus an elaborate burnt offering sequence."
           }
         ],
-        "ctx": "The annual feast offerings: Passover and Unleavened Bread (vv.16-25) receive extensive offering sequences for all seven days; the Feast of Weeks/Pentecost (vv.26-31) adds a special burnt offering for its single day. Each feast's offering follows the same pattern: burnt offerings (bulls, rams, lambs), sin offering (male goat), plus grain and drink offerings. The accumulation across the festival calendar communicates the covenant's concentrated devotion.",
-        "cross": [
-          {
-            "ref": "1 Cor 15:20",
-            "note": "\"But Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep.\" Paul applies the firstfruits theology of Num 28:26 to the resurrection — Christ is the first of the harvest of resurrection."
-          },
-          {
-            "ref": "Acts 2:1",
-            "note": "\"When the day of Pentecost came, they were all together in one place.\" The Feast of Weeks — specified in Num 28:26-31 — is the day of the Spirit's outpouring, connecting agricultural firstfruits to the eschatological harvest of the new covenant community."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 15:20",
+              "note": "\"But Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep.\" Paul applies the firstfruits theology of Num 28:26 to the resurrection — Christ is the first of the harvest of resurrection."
+            },
+            {
+              "ref": "Acts 2:1",
+              "note": "\"When the day of Pentecost came, they were all together in one place.\" The Feast of Weeks — specified in Num 28:26-31 — is the day of the Spirit's outpouring, connecting agricultural firstfruits to the eschatological harvest of the new covenant community."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -192,6 +197,9 @@
               "note": "Ashley: The narrative context of daily offerings in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "The annual feast offerings: Passover and Unleavened Bread (vv.16-25) receive extensive offering sequences for all seven days; the Feast of Weeks/Pentecost (vv.26-31) adds a special burnt offering for its single day. Each feast's offering follows the same pattern: burnt offerings (bulls, rams, lambs), sin offering (male goat), plus grain and drink offerings. The accumulation across the festival calendar communicates the covenant's concentrated devotion."
         }
       }
     }

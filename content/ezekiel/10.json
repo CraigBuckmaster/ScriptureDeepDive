@@ -25,17 +25,18 @@
             "paragraph": "The man in linen takes burning coals from between the cherubim and scatters them over the city. These are not ordinary coals but fire from the divine presence — the same holiness that purified Isaiah's lips (Isa 6:6-7) now becomes an instrument of destruction. Holy fire can cleanse or consume, depending on the condition of those it touches."
           }
         ],
-        "ctx": "Chapter 10 parallels and identifies the living creatures of chapter 1 as cherubim — the throne-guardians of the ark. The chapter serves a dual function: it describes the mechanism of Jerusalem's destruction (fire from the divine throne) and narrates the first stage of the glory's departure. The glory moves from above the cherubim to the threshold of the temple — a partial withdrawal, a last pause before full departure.",
-        "cross": [
-          {
-            "ref": "Isa 6:6-7",
-            "note": "A seraph took a coal from the altar to purify Isaiah's lips — the same heavenly fire that purifies can also destroy."
-          },
-          {
-            "ref": "Gen 19:24",
-            "note": "The LORD rained down burning sulfur on Sodom — fire from heaven as instrument of divine judgment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 6:6-7",
+              "note": "A seraph took a coal from the altar to purify Isaiah's lips — the same heavenly fire that purifies can also destroy."
+            },
+            {
+              "ref": "Gen 19:24",
+              "note": "The LORD rained down burning sulfur on Sodom — fire from heaven as instrument of divine judgment."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -92,6 +93,9 @@
               "note": "Zimmerli argues that chapter 10 is a deliberate literary recapitulation of chapter 1, now identifying the hayyot as kerubim. This identification links the mobile throne-chariot to the stationary ark-cherubim of the temple, unifying the heavenly and earthly thrones."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 10 parallels and identifies the living creatures of chapter 1 as cherubim — the throne-guardians of the ark. The chapter serves a dual function: it describes the mechanism of Jerusalem's destruction (fire from the divine throne) and narrates the first stage of the glory's departure. The glory moves from above the cherubim to the threshold of the temple — a partial withdrawal, a last pause before full departure."
         }
       }
     },
@@ -109,21 +113,22 @@
             "paragraph": "The kavod YHWH now moves in stages: from above the cherubim to the threshold (v.4), then from the threshold to the east gate of the temple (v.19). This staged departure is theologically significant — God does not flee; he withdraws deliberately, step by step, as if giving Jerusalem every chance to repent before the final departure in 11:22-23."
           }
         ],
-        "ctx": "The detailed re-description of the cherubim (four faces, four wings, wheels full of eyes) serves to identify them with the living creatures of chapter 1. The theological point is profound: the God who appeared in Babylon (ch. 1) is the same God now departing Jerusalem (ch. 10). The throne is mobile — it came to Babylon before it left Jerusalem, ensuring the exiles were never without divine presence.",
-        "cross": [
-          {
-            "ref": "1 Sam 4:21-22",
-            "note": "Ichabod — 'the glory has departed from Israel' — when the ark was captured by the Philistines. Ezekiel narrates a far more devastating departure."
-          },
-          {
-            "ref": "Ezek 43:1-5",
-            "note": "The glory will return from the east — the same direction it departed. What chapters 10-11 take away, chapter 43 will restore."
-          },
-          {
-            "ref": "Matt 23:37-38",
-            "note": "Jesus laments over Jerusalem: 'Your house is left to you desolate' — echoing the glory's departure."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Sam 4:21-22",
+              "note": "Ichabod — 'the glory has departed from Israel' — when the ark was captured by the Philistines. Ezekiel narrates a far more devastating departure."
+            },
+            {
+              "ref": "Ezek 43:1-5",
+              "note": "The glory will return from the east — the same direction it departed. What chapters 10-11 take away, chapter 43 will restore."
+            },
+            {
+              "ref": "Matt 23:37-38",
+              "note": "Jesus laments over Jerusalem: 'Your house is left to you desolate' — echoing the glory's departure."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -176,6 +181,9 @@
               "note": "Zimmerli notes that the departure moves eastward — toward Babylon, toward the exiles. The glory does not ascend and vanish but travels horizontally, following the exiles. God's departure from Jerusalem is simultaneously his arrival among the deportees."
             }
           ]
+        },
+        "hist": {
+          "context": "The detailed re-description of the cherubim (four faces, four wings, wheels full of eyes) serves to identify them with the living creatures of chapter 1. The theological point is profound: the God who appeared in Babylon (ch. 1) is the same God now departing Jerusalem (ch. 10). The throne is mobile — it came to Babylon before it left Jerusalem, ensuring the exiles were never without divine presence."
         }
       }
     }

@@ -25,22 +25,26 @@
             "paragraph": "A \"great outcry\" (ṣəʿāqâ gəḏōlâ) — the same word used for Israel’s cry in Egypt (Exod 3:7). Economic oppression within the covenant community echoes the slavery they were delivered from. The irony is devastating."
           }
         ],
-        "hist": "The economic crisis has multiple causes: famine (v.3), Persian taxation (v.4), and predatory lending by wealthy Jews (v.5). Families are mortgaging fields, vineyards, and homes. Some are selling children into debt-slavery. The wall-building project, while necessary, has diverted labour from agriculture, worsening the food crisis.",
-        "ctx": "The external threat (ch 4) is now matched by an internal one. The community is being destroyed from within by the very people who should protect it. Nehemiah faces the hardest leadership challenge: confronting not enemies but allies.",
-        "cross": [
-          {
-            "ref": "Exod 22:25–27",
-            "note": "The Torah prohibition on interest-charging among Israelites."
-          },
-          {
-            "ref": "Lev 25:35–42",
-            "note": "The Jubilee laws against permanent enslavement of fellow Israelites."
-          },
-          {
-            "ref": "Amos 2:6–8",
-            "note": "Amos condemned the same exploitation — selling the poor for a pair of sandals."
-          }
-        ],
+        "hist": {
+          "historical": "The economic crisis has multiple causes: famine (v.3), Persian taxation (v.4), and predatory lending by wealthy Jews (v.5). Families are mortgaging fields, vineyards, and homes. Some are selling children into debt-slavery. The wall-building project, while necessary, has diverted labour from agriculture, worsening the food crisis.",
+          "context": "The external threat (ch 4) is now matched by an internal one. The community is being destroyed from within by the very people who should protect it. Nehemiah faces the hardest leadership challenge: confronting not enemies but allies."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 22:25–27",
+              "note": "The Torah prohibition on interest-charging among Israelites."
+            },
+            {
+              "ref": "Lev 25:35–42",
+              "note": "The Jubilee laws against permanent enslavement of fellow Israelites."
+            },
+            {
+              "ref": "Amos 2:6–8",
+              "note": "Amos condemned the same exploitation — selling the poor for a pair of sandals."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -130,17 +134,18 @@
             "paragraph": "Nehemiah demands the nobles stop the \"exacting\" (maššāʾ) — predatory lending. He does not merely request; he commands. Then he shakes out the folds of his robe: \"So may God shake out anyone who does not keep this promise.\""
           }
         ],
-        "ctx": "Nehemiah’s confrontation is methodical: he is angry (v.6), he thinks it over (v.7a), he convenes a public assembly (v.7b), he presents the moral argument (vv.8–9), he makes a specific demand (vv.10–11), and he seals it with a symbolic act (v.13). Anger channelled into process.",
-        "cross": [
-          {
-            "ref": "Deut 15:1–11",
-            "note": "The Sabbath-year debt release — the law Nehemiah is enforcing."
-          },
-          {
-            "ref": "Jer 34:8–17",
-            "note": "Zedekiah’s failed slave release — the precedent of promise-breaking."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 15:1–11",
+              "note": "The Sabbath-year debt release — the law Nehemiah is enforcing."
+            },
+            {
+              "ref": "Jer 34:8–17",
+              "note": "Zedekiah’s failed slave release — the precedent of promise-breaking."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -213,6 +218,9 @@
               "note": "Kidner on the robe-shaking: \"A prophetic act — not a tantrum but a sign. It said more than words could: break this promise and you will be emptied.\""
             }
           ]
+        },
+        "hist": {
+          "context": "Nehemiah’s confrontation is methodical: he is angry (v.6), he thinks it over (v.7a), he convenes a public assembly (v.7b), he presents the moral argument (vv.8–9), he makes a specific demand (vv.10–11), and he seals it with a symbolic act (v.13). Anger channelled into process."
         }
       }
     },
@@ -236,17 +244,18 @@
             "paragraph": "\"Remember me with favour, my God, for all I have done for these people.\" The first of Nehemiah’s \"Remember me\" prayers (5:19; 13:14, 22, 31). They are not self-righteousness but appeals to divine witness. Nehemiah wants God to see what humans may not notice."
           }
         ],
-        "ctx": "Nehemiah leads by example. Having demanded that the nobles give up their exploitation, he reveals he has already given up his own rights. For twelve years as governor he took no food allowance, bought no land, and personally fed 150 officials daily at his own table. He demands of others only what he has already demanded of himself.",
-        "cross": [
-          {
-            "ref": "1 Cor 9:15–18",
-            "note": "Paul’s renunciation of apostolic rights — the NT parallel to Nehemiah’s self-denial."
-          },
-          {
-            "ref": "1 Sam 12:3–4",
-            "note": "Samuel’s integrity speech: \"Whose ox have I taken?\" The same pattern."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 9:15–18",
+              "note": "Paul’s renunciation of apostolic rights — the NT parallel to Nehemiah’s self-denial."
+            },
+            {
+              "ref": "1 Sam 12:3–4",
+              "note": "Samuel’s integrity speech: \"Whose ox have I taken?\" The same pattern."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -319,6 +328,9 @@
               "note": "Kidner on \"Remember me\": \"Not a claim to merit but a cry for witness. Nehemiah is not saying ‘I deserve a reward’ but ‘Lord, you saw. You know what it cost.’\""
             }
           ]
+        },
+        "hist": {
+          "context": "Nehemiah leads by example. Having demanded that the nobles give up their exploitation, he reveals he has already given up his own rights. For twelve years as governor he took no food allowance, bought no land, and personally fed 150 officials daily at his own table. He demands of others only what he has already demanded of himself."
         }
       }
     }

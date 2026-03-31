@@ -31,17 +31,18 @@
             "paragraph": "The catalyst for Naaman’s healing is a captured Israelite slave girl (v.2) — a naʿarāh qĕtannāh. She has been torn from her homeland by the very army Naaman commands, yet she directs her master to the prophet of the God of Israel. Faith in the powerless changes the powerful."
           }
         ],
-        "ctx": "Naaman is commander of the Aramean army — a great warrior, honoured by his king, but afflicted with a skin disease. A captured Israelite girl tells his wife about Elisha. Naaman arrives with horses, chariots, and ten talents of silver, expecting a dramatic healing ceremony. Instead, Elisha doesn’t even come to the door; he sends a messenger: “Wash in the Jordan seven times.” Naaman is furious — the rivers of Damascus are better than the Jordan! His servants persuade him to obey, and his flesh is restored “like that of a young boy.” The miracle demolishes every human expectation: the wrong person (a Gentile), the wrong method (no ceremony), the wrong river (the muddy Jordan).",
-        "cross": [
-          {
-            "ref": "Luke 4:27",
-            "note": "Jesus cites this episode: “There were many lepers in Israel in Elisha’s time, but only Naaman the Syrian was cleansed.” The Nazareth synagogue erupts — Jesus is saying God’s grace crosses ethnic boundaries."
-          },
-          {
-            "ref": "Lev 13–14",
-            "note": "The elaborate ritual purity laws for skin diseases. Naaman’s healing bypasses the entire system — a Gentile is cleansed by a prophet’s word, not by priestly examination."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 4:27",
+              "note": "Jesus cites this episode: “There were many lepers in Israel in Elisha’s time, but only Naaman the Syrian was cleansed.” The Nazareth synagogue erupts — Jesus is saying God’s grace crosses ethnic boundaries."
+            },
+            {
+              "ref": "Lev 13–14",
+              "note": "The elaborate ritual purity laws for skin diseases. Naaman’s healing bypasses the entire system — a Gentile is cleansed by a prophet’s word, not by priestly examination."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "The servants’ logic is devastating: “If the prophet had told you to do some great thing, would you not have done it?” The objection to simplicity is pride, not reason."
             }
           ]
+        },
+        "hist": {
+          "context": "Naaman is commander of the Aramean army — a great warrior, honoured by his king, but afflicted with a skin disease. A captured Israelite girl tells his wife about Elisha. Naaman arrives with horses, chariots, and ten talents of silver, expecting a dramatic healing ceremony. Instead, Elisha doesn’t even come to the door; he sends a messenger: “Wash in the Jordan seven times.” Naaman is furious — the rivers of Damascus are better than the Jordan! His servants persuade him to obey, and his flesh is restored “like that of a young boy.” The miracle demolishes every human expectation: the wrong person (a Gentile), the wrong method (no ceremony), the wrong river (the muddy Jordan)."
         }
       }
     },
@@ -110,17 +114,18 @@
             "paragraph": "Naaman’s confession (v.15): “Now I know that there is no God in all the earth except in Israel.” This is a monotheistic declaration from a pagan general — the theological climax of the chapter. He moves from consulting his king to confessing Israel’s God."
           }
         ],
-        "ctx": "Naaman returns to Elisha and makes the confession that eluded every king of Israel: “There is no God in all the earth except in Israel.” He offers gifts; Elisha refuses — grace is not for sale. Naaman asks for two mule-loads of Israelite earth (to worship YHWH on holy ground) and forgiveness for bowing in Rimmon’s temple with his king. Elisha’s response — “Go in peace” — is breathtakingly generous. Then Gehazi, Elisha’s servant, runs after Naaman and lies to extract the gifts. Elisha confronts him: “Naaman’s leprosy will cling to you.” The contrast is total: the Gentile gains faith; the Israelite servant gains leprosy.",
-        "cross": [
-          {
-            "ref": "Matt 10:8",
-            "note": "“Freely you have received; freely give.” Elisha’s refusal of payment establishes the principle Jesus commands his disciples to follow."
-          },
-          {
-            "ref": "Acts 8:18–20",
-            "note": "Simon Magus offers money for the Spirit’s power; Peter rebukes him. The Gehazi pattern recurs in the early church."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 10:8",
+              "note": "“Freely you have received; freely give.” Elisha’s refusal of payment establishes the principle Jesus commands his disciples to follow."
+            },
+            {
+              "ref": "Acts 8:18–20",
+              "note": "Simon Magus offers money for the Spirit’s power; Peter rebukes him. The Gehazi pattern recurs in the early church."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -172,6 +177,9 @@
               "note": "The Gehazi episode inverts the Naaman miracle: faith heals, greed infects. The servant who should have learned from the master’s example instead provides the counter-example."
             }
           ]
+        },
+        "hist": {
+          "context": "Naaman returns to Elisha and makes the confession that eluded every king of Israel: “There is no God in all the earth except in Israel.” He offers gifts; Elisha refuses — grace is not for sale. Naaman asks for two mule-loads of Israelite earth (to worship YHWH on holy ground) and forgiveness for bowing in Rimmon’s temple with his king. Elisha’s response — “Go in peace” — is breathtakingly generous. Then Gehazi, Elisha’s servant, runs after Naaman and lies to extract the gifts. Elisha confronts him: “Naaman’s leprosy will cling to you.” The contrast is total: the Gentile gains faith; the Israelite servant gains leprosy."
         }
       }
     }

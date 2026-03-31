@@ -25,21 +25,22 @@
             "paragraph": "The term hasid denotes one who practices hesed — the covenant loyalty required in 6:8. Micah laments that the hasidim have disappeared from the land: no upright person remains. The absence of the hasid is the social proof that the covenant has been comprehensively violated. Without covenant-keepers, society dissolves into mutual predation."
           }
         ],
-        "ctx": "The final chapter opens with a lament that echoes Hosea's vineyard imagery: Micah is 'like one who gathers summer fruit at the gleaning of the vineyard' — nothing is left. The social fabric has disintegrated: every person lies in ambush for blood, rulers demand bribes, judges accept payment, the powerful dictate their desires, and even family relationships have broken down. The list of corrupted relationships (v. 5-6: neighbor, friend, wife, son against father, daughter against mother) is quoted by Jesus in Matthew 10:35-36 as a description of the social division his message will produce. Verse 7 stands as the pivot point: despite the comprehensive corruption, the prophet personally declares, 'But as for me, I watch in hope for the LORD, I wait for God my Savior.'",
-        "cross": [
-          {
-            "ref": "Matt 10:35-36",
-            "note": "Jesus quotes Micah 7:6 to describe the social division caused by the gospel."
-          },
-          {
-            "ref": "Luke 12:53",
-            "note": "Luke's parallel: family division as a consequence of the kingdom's arrival."
-          },
-          {
-            "ref": "Ps 12:1",
-            "note": "The psalmist's parallel lament: 'Help, LORD, for no one is faithful anymore.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 10:35-36",
+              "note": "Jesus quotes Micah 7:6 to describe the social division caused by the gospel."
+            },
+            {
+              "ref": "Luke 12:53",
+              "note": "Luke's parallel: family division as a consequence of the kingdom's arrival."
+            },
+            {
+              "ref": "Ps 12:1",
+              "note": "The psalmist's parallel lament: 'Help, LORD, for no one is faithful anymore.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Waltke notes that the lament systematically undoes the three requirements of 6:8: instead of justice, there is mutual predation; instead of mercy, there is betrayal; instead of humble walking with God, there is total disregard for the divine. The prophet's personal declaration (v. 7) is the sole surviving fragment of 6:8's ethic."
             }
           ]
+        },
+        "hist": {
+          "context": "The final chapter opens with a lament that echoes Hosea's vineyard imagery: Micah is 'like one who gathers summer fruit at the gleaning of the vineyard' — nothing is left. The social fabric has disintegrated: every person lies in ambush for blood, rulers demand bribes, judges accept payment, the powerful dictate their desires, and even family relationships have broken down. The list of corrupted relationships (v. 5-6: neighbor, friend, wife, son against father, daughter against mother) is quoted by Jesus in Matthew 10:35-36 as a description of the social division his message will produce. Verse 7 stands as the pivot point: despite the comprehensive corruption, the prophet personally declares, 'But as for me, I watch in hope for the LORD, I wait for God my Savior.'"
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "The declaration 'the LORD will be my light' (v. 8) transforms the darkness imagery of 3:6 (night without visions, sun setting on prophets). Where false prophets experience darkness, the penitent community experiences God as light. The transition from darkness to light mirrors the book's movement from judgment to restoration."
           }
         ],
-        "ctx": "The voice shifts from the prophet's personal lament to the community's expression of penitent confidence. The city (Daughter Zion) addresses her enemy (likely Babylon or Assyria personified): 'Do not gloat over me! Though I have fallen, I will rise.' The confession of sin (v. 9: 'Because I have sinned against him') distinguishes this prayer from the superficial repentance of Hosea 6:1-3: here the community acknowledges its guilt and accepts the punishment as just before asserting confidence in eventual vindication. The waiting is purposeful: God will plead the community's case and establish justice. The wall-building promise (v. 11) and the ingathering from Assyria to Egypt (v. 12) envision the reversal of exile and the restoration of national boundaries.",
-        "cross": [
-          {
-            "ref": "Isa 60:1-3",
-            "note": "Isaiah's parallel: 'Arise, shine, for your light has come, and the glory of the LORD rises upon you.'"
-          },
-          {
-            "ref": "Ps 27:1",
-            "note": "The psalmist's parallel confidence: 'The LORD is my light and my salvation — whom shall I fear?'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 60:1-3",
+              "note": "Isaiah's parallel: 'Arise, shine, for your light has come, and the glory of the LORD rises upon you.'"
+            },
+            {
+              "ref": "Ps 27:1",
+              "note": "The psalmist's parallel confidence: 'The LORD is my light and my salvation — whom shall I fear?'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -180,6 +185,9 @@
               "note": "Waltke identifies the key theological move as the transition from 'I have sinned against him' (v. 9a) to 'he will bring me out into the light' (v. 9b). The confession of sin and the confidence in salvation are simultaneous, not sequential: the same faith that recognizes guilt trusts in deliverance."
             }
           ]
+        },
+        "hist": {
+          "context": "The voice shifts from the prophet's personal lament to the community's expression of penitent confidence. The city (Daughter Zion) addresses her enemy (likely Babylon or Assyria personified): 'Do not gloat over me! Though I have fallen, I will rise.' The confession of sin (v. 9: 'Because I have sinned against him') distinguishes this prayer from the superficial repentance of Hosea 6:1-3: here the community acknowledges its guilt and accepts the punishment as just before asserting confidence in eventual vindication. The waiting is purposeful: God will plead the community's case and establish justice. The wall-building promise (v. 11) and the ingathering from Assyria to Egypt (v. 12) envision the reversal of exile and the restoration of national boundaries."
         }
       }
     },
@@ -203,25 +211,26 @@
             "paragraph": "The final word of the book in many translations is hesed — the covenant loyalty that God promised to Abraham 'in days long ago.' The book's last word echoes its central requirement (6:8: 'love mercy/hesed'), creating an inclusio: what God requires of his people (hesed) is what God himself supremely practices."
           }
         ],
-        "ctx": "The closing hymn (vv. 18-20) is among the most beautiful passages in the prophetic corpus. It opens with the question 'Who is a God like you?' (mi-el kamokha), which is a play on the prophet's name (Micah = 'Who is like YHWH?'). The entire book has been building to this question: after seven chapters of oscillation between judgment and mercy, the answer is that YHWH is incomparable precisely in his willingness to pardon sin and 'pass over' transgression. He does not 'stay angry forever' but 'delights in showing mercy' (hesed). The image of God 'treading our sins underfoot' and 'hurling all our iniquities into the depths of the sea' combines military and nautical metaphors for the total elimination of sin. The final verse (v. 20) grounds the hope in the Abrahamic and Jacobean covenants: the faithfulness ('emeth) and covenant love (hesed) promised to the patriarchs 'in days long ago' ensure that God's mercy is not an ad hoc response but a constitutional commitment. The book opens with divine wrath descending on mountains (1:2-4) and closes with divine mercy treading sins underfoot (7:19): the feet that crushed the heights now crush the people's sins.",
-        "cross": [
-          {
-            "ref": "Exod 15:11",
-            "note": "The Song of the Sea's parallel question: 'Who among the gods is like you, LORD?'"
-          },
-          {
-            "ref": "Exod 34:6-7",
-            "note": "The divine self-revelation at Sinai: 'compassionate and gracious, slow to anger, abounding in love and faithfulness.'"
-          },
-          {
-            "ref": "Ps 103:8-12",
-            "note": "The psalmist's meditation on divine forgiveness that echoes Micah's closing hymn."
-          },
-          {
-            "ref": "Gen 12:1-3",
-            "note": "The Abrahamic covenant that Micah invokes as the foundation of divine faithfulness."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 15:11",
+              "note": "The Song of the Sea's parallel question: 'Who among the gods is like you, LORD?'"
+            },
+            {
+              "ref": "Exod 34:6-7",
+              "note": "The divine self-revelation at Sinai: 'compassionate and gracious, slow to anger, abounding in love and faithfulness.'"
+            },
+            {
+              "ref": "Ps 103:8-12",
+              "note": "The psalmist's meditation on divine forgiveness that echoes Micah's closing hymn."
+            },
+            {
+              "ref": "Gen 12:1-3",
+              "note": "The Abrahamic covenant that Micah invokes as the foundation of divine faithfulness."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -290,6 +299,9 @@
               "note": "Waltke considers the closing hymn the theological summit of the book, answering every question raised by the preceding chapters. Why does God judge so severely? Because sin is real. Why does he not destroy permanently? Because he delights in hesed. How can mercy and justice coexist? Because God's holiness expresses itself in both. The final verse grounds everything in the Abrahamic covenant, establishing that the mercy of Micah's God is not situational but constitutional: it was promised before Israel existed and will endure after every particular transgression has been drowned in the sea."
             }
           ]
+        },
+        "hist": {
+          "context": "The closing hymn (vv. 18-20) is among the most beautiful passages in the prophetic corpus. It opens with the question 'Who is a God like you?' (mi-el kamokha), which is a play on the prophet's name (Micah = 'Who is like YHWH?'). The entire book has been building to this question: after seven chapters of oscillation between judgment and mercy, the answer is that YHWH is incomparable precisely in his willingness to pardon sin and 'pass over' transgression. He does not 'stay angry forever' but 'delights in showing mercy' (hesed). The image of God 'treading our sins underfoot' and 'hurling all our iniquities into the depths of the sea' combines military and nautical metaphors for the total elimination of sin. The final verse (v. 20) grounds the hope in the Abrahamic and Jacobean covenants: the faithfulness ('emeth) and covenant love (hesed) promised to the patriarchs 'in days long ago' ensure that God's mercy is not an ad hoc response but a constitutional commitment. The book opens with divine wrath descending on mountains (1:2-4) and closes with divine mercy treading sins underfoot (7:19): the feet that crushed the heights now crush the people's sins."
         }
       }
     }

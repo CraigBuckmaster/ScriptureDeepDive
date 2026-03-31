@@ -34,21 +34,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Temple Treasury / Court of Women</div><div class=\"poi-coords\">31.7780 N, 35.2355 E</div><div class=\"poi-text\">The trumpet-shaped collection boxes in the Court of Women where the widow deposited her two lepta (21:2). Jesus sat opposite the treasury watching the giving. The disciples then remarked on the Temple's massive ashlar stones and votive gifts (21:5), prompting the prediction that not one stone would be left on another (21:6) -- fulfilled in AD 70.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Temple Courts (Teaching)</div><div class=\"poi-coords\">31.7781 N, 35.2354 E</div><div class=\"poi-text\">Jesus taught daily in the Temple courts during Passion Week and spent each night on the Mount of Olives (21:37-38). The people came early each morning to hear him -- the Temple was simultaneously his pulpit, the seat of his opponents, and the building whose destruction he predicted.</div></div>"
         },
-        "ctx": "[(\"The Widow's Two Coins\", 'The widow\\'s offering (21:1-4) is the last act of ministry Jesus observes before the Olivet Discourse — and it is an act that condemns the Temple establishment even as it praises the widow. The scribes who \"devour widows\\' houses\" (20:47) are at work; this widow has been reduced to her last two coins. Her gift is an act of total trust and total surrender, which Jesus commends without intervening to restore her funds.'), ('The Olivet Discourse: Jerusalem and the End', \"Luke's Olivet Discourse (21:5-38) addresses two distinct events: the destruction of Jerusalem (21:20-24, with specific historical language) and the coming of the Son of Man (21:25-28, with cosmic language). Luke's version is more clearly differentiated than Matthew's or Mark's parallel — a feature that has shaped its distinctive reception in Christian eschatology.\")]",
-        "cross": [
-          {
-            "ref": "Mark 12:41-44",
-            "note": "Mark's parallel widow's offering, essentially identical — one of the few passages where Luke and Mark are nearly verbatim."
-          },
-          {
-            "ref": "Matt 24:1-14",
-            "note": "Matthew's parallel Olivet Discourse beginning — nations, earthquakes, persecutions, endurance."
-          },
-          {
-            "ref": "Dan 7:13-14",
-            "note": "\"Son of Man coming in the clouds\" — the Danielic vision that provides the background for the Son of Man coming in Luke 21:27."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mark 12:41-44",
+              "note": "Mark's parallel widow's offering, essentially identical — one of the few passages where Luke and Mark are nearly verbatim."
+            },
+            {
+              "ref": "Matt 24:1-14",
+              "note": "Matthew's parallel Olivet Discourse beginning — nations, earthquakes, persecutions, endurance."
+            },
+            {
+              "ref": "Dan 7:13-14",
+              "note": "\"Son of Man coming in the clouds\" — the Danielic vision that provides the background for the Son of Man coming in Luke 21:27."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -141,7 +142,10 @@
             "text": "Cosmic signs (21:25-26) and the Son of Man coming in a cloud with power and great glory (21:27). Disciples told to stand up and lift their heads -- redemption draws near.",
             "current": false
           }
-        ]
+        ],
+        "hist": {
+          "context": "[(\"The Widow's Two Coins\", 'The widow\\'s offering (21:1-4) is the last act of ministry Jesus observes before the Olivet Discourse — and it is an act that condemns the Temple establishment even as it praises the widow. The scribes who \"devour widows\\' houses\" (20:47) are at work; this widow has been reduced to her last two coins. Her gift is an act of total trust and total surrender, which Jesus commends without intervening to restore her funds.'), ('The Olivet Discourse: Jerusalem and the End', \"Luke's Olivet Discourse (21:5-38) addresses two distinct events: the destruction of Jerusalem (21:20-24, with specific historical language) and the coming of the Son of Man (21:25-28, with cosmic language). Luke's version is more clearly differentiated than Matthew's or Mark's parallel — a feature that has shaped its distinctive reception in Christian eschatology.\")]"
+        }
       }
     },
     {
@@ -167,21 +171,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Mount of Olives</div><div class=\"poi-coords\">31.7781 N, 35.2437 E</div><div class=\"poi-text\">The ridge east of Jerusalem across the Kidron Valley, from which the Temple is dramatically visible. Jesus delivers the Olivet Discourse from here -- the same Mount associated with the final divine intervention in Zechariah 14:4. His evening retreats to the Mount (21:37) also provided the setting for Gethsemane, the arrest (22:39), and the Ascension (24:50; Acts 1:9-12).</div></div>"
         },
-        "ctx": "[('Two Events or One?', 'Luke 21 is the central text in the NT debate about whether Jerusalem\\'s destruction (AD 70) and the Parousia are treated as one event or two. Luke\\'s version is more clearly differentiated than Matthew\\'s: vv.20-24 describe the Roman siege in specific, historical language (\"armies surrounding Jerusalem,\" \"fall by the sword,\" \"taken as prisoners\"), while vv.25-28 use cosmic, transcendent language. The \"times of the Gentiles\" (v.24) appears to be a period between the two events.'), ('\"This Generation\"', 'The saying \"this generation will certainly not pass away until all these things have happened\" (v.32) is the most contested phrase in the Olivet Discourse. Options: (1) the generation alive in AD 30 saw everything fulfilled in AD 70; (2) \"this generation\" means the Jewish people who will persist until the end; (3) the generation alive at the beginning of the end-time signs will see their completion; (4) a combination of near (AD 70) and far (Parousia) fulfilments within a single saying.')]",
-        "cross": [
-          {
-            "ref": "Dan 7:13",
-            "note": "\"In my vision at night I looked, and there before me was one like a son of man, coming with the clouds of heaven\" — the Danielic vision that 21:27 directly invokes."
-          },
-          {
-            "ref": "Isa 13:10",
-            "note": "\"The stars of heaven and their constellations will not show their light... the moon will not give its light\" — the OT cosmic-dissolution language that Jesus uses for the end-time signs."
-          },
-          {
-            "ref": "Matt 24:29-31",
-            "note": "Matthew's parallel cosmic signs and Son of Man coming — Luke's version is briefer but uses the same Danielic language."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Dan 7:13",
+              "note": "\"In my vision at night I looked, and there before me was one like a son of man, coming with the clouds of heaven\" — the Danielic vision that 21:27 directly invokes."
+            },
+            {
+              "ref": "Isa 13:10",
+              "note": "\"The stars of heaven and their constellations will not show their light... the moon will not give its light\" — the OT cosmic-dissolution language that Jesus uses for the end-time signs."
+            },
+            {
+              "ref": "Matt 24:29-31",
+              "note": "Matthew's parallel cosmic signs and Son of Man coming — Luke's version is briefer but uses the same Danielic language."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -274,7 +279,10 @@
             "text": "Cosmic signs (21:25-26) and the Son of Man coming in a cloud with power and great glory (21:27). Disciples told to stand up and lift their heads -- redemption draws near.",
             "current": false
           }
-        ]
+        ],
+        "hist": {
+          "context": "[('Two Events or One?', 'Luke 21 is the central text in the NT debate about whether Jerusalem\\'s destruction (AD 70) and the Parousia are treated as one event or two. Luke\\'s version is more clearly differentiated than Matthew\\'s: vv.20-24 describe the Roman siege in specific, historical language (\"armies surrounding Jerusalem,\" \"fall by the sword,\" \"taken as prisoners\"), while vv.25-28 use cosmic, transcendent language. The \"times of the Gentiles\" (v.24) appears to be a period between the two events.'), ('\"This Generation\"', 'The saying \"this generation will certainly not pass away until all these things have happened\" (v.32) is the most contested phrase in the Olivet Discourse. Options: (1) the generation alive in AD 30 saw everything fulfilled in AD 70; (2) \"this generation\" means the Jewish people who will persist until the end; (3) the generation alive at the beginning of the end-time signs will see their completion; (4) a combination of near (AD 70) and far (Parousia) fulfilments within a single saying.')]"
+        }
       }
     },
     {
@@ -300,21 +308,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Temple Treasury / Court of Women</div><div class=\"poi-coords\">31.7780 N, 35.2355 E</div><div class=\"poi-text\">The trumpet-shaped collection boxes in the Court of Women where the widow deposited her two lepta (21:2). Jesus sat opposite the treasury watching the giving. The disciples then remarked on the Temple's massive ashlar stones and votive gifts (21:5), prompting the prediction that not one stone would be left on another (21:6) -- fulfilled in AD 70.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Temple Courts (Teaching)</div><div class=\"poi-coords\">31.7781 N, 35.2354 E</div><div class=\"poi-text\">Jesus taught daily in the Temple courts during Passion Week and spent each night on the Mount of Olives (21:37-38). The people came early each morning to hear him -- the Temple was simultaneously his pulpit, the seat of his opponents, and the building whose destruction he predicted.</div></div>"
         },
-        "ctx": "[(\"The Widow's Two Coins\", 'The widow\\'s offering (21:1-4) is the last act of ministry Jesus observes before the Olivet Discourse — and it is an act that condemns the Temple establishment even as it praises the widow. The scribes who \"devour widows\\' houses\" (20:47) are at work; this widow has been reduced to her last two coins. Her gift is an act of total trust and total surrender, which Jesus commends without intervening to restore her funds.'), ('The Olivet Discourse: Jerusalem and the End', \"Luke's Olivet Discourse (21:5-38) addresses two distinct events: the destruction of Jerusalem (21:20-24, with specific historical language) and the coming of the Son of Man (21:25-28, with cosmic language). Luke's version is more clearly differentiated than Matthew's or Mark's parallel — a feature that has shaped its distinctive reception in Christian eschatology.\")]",
-        "cross": [
-          {
-            "ref": "Mark 12:41-44",
-            "note": "Mark's parallel widow's offering, essentially identical — one of the few passages where Luke and Mark are nearly verbatim."
-          },
-          {
-            "ref": "Matt 24:1-14",
-            "note": "Matthew's parallel Olivet Discourse beginning — nations, earthquakes, persecutions, endurance."
-          },
-          {
-            "ref": "Dan 7:13-14",
-            "note": "\"Son of Man coming in the clouds\" — the Danielic vision that provides the background for the Son of Man coming in Luke 21:27."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mark 12:41-44",
+              "note": "Mark's parallel widow's offering, essentially identical — one of the few passages where Luke and Mark are nearly verbatim."
+            },
+            {
+              "ref": "Matt 24:1-14",
+              "note": "Matthew's parallel Olivet Discourse beginning — nations, earthquakes, persecutions, endurance."
+            },
+            {
+              "ref": "Dan 7:13-14",
+              "note": "\"Son of Man coming in the clouds\" — the Danielic vision that provides the background for the Son of Man coming in Luke 21:27."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -407,7 +416,10 @@
             "text": "Cosmic signs (21:25-26) and the Son of Man coming in a cloud with power and great glory (21:27). Disciples told to stand up and lift their heads -- redemption draws near.",
             "current": false
           }
-        ]
+        ],
+        "hist": {
+          "context": "[(\"The Widow's Two Coins\", 'The widow\\'s offering (21:1-4) is the last act of ministry Jesus observes before the Olivet Discourse — and it is an act that condemns the Temple establishment even as it praises the widow. The scribes who \"devour widows\\' houses\" (20:47) are at work; this widow has been reduced to her last two coins. Her gift is an act of total trust and total surrender, which Jesus commends without intervening to restore her funds.'), ('The Olivet Discourse: Jerusalem and the End', \"Luke's Olivet Discourse (21:5-38) addresses two distinct events: the destruction of Jerusalem (21:20-24, with specific historical language) and the coming of the Son of Man (21:25-28, with cosmic language). Luke's version is more clearly differentiated than Matthew's or Mark's parallel — a feature that has shaped its distinctive reception in Christian eschatology.\")]"
+        }
       }
     },
     {
@@ -433,21 +445,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Mount of Olives</div><div class=\"poi-coords\">31.7781 N, 35.2437 E</div><div class=\"poi-text\">The ridge east of Jerusalem across the Kidron Valley, from which the Temple is dramatically visible. Jesus delivers the Olivet Discourse from here -- the same Mount associated with the final divine intervention in Zechariah 14:4. His evening retreats to the Mount (21:37) also provided the setting for Gethsemane, the arrest (22:39), and the Ascension (24:50; Acts 1:9-12).</div></div>"
         },
-        "ctx": "[('Two Events or One?', 'Luke 21 is the central text in the NT debate about whether Jerusalem\\'s destruction (AD 70) and the Parousia are treated as one event or two. Luke\\'s version is more clearly differentiated than Matthew\\'s: vv.20-24 describe the Roman siege in specific, historical language (\"armies surrounding Jerusalem,\" \"fall by the sword,\" \"taken as prisoners\"), while vv.25-28 use cosmic, transcendent language. The \"times of the Gentiles\" (v.24) appears to be a period between the two events.'), ('\"This Generation\"', 'The saying \"this generation will certainly not pass away until all these things have happened\" (v.32) is the most contested phrase in the Olivet Discourse. Options: (1) the generation alive in AD 30 saw everything fulfilled in AD 70; (2) \"this generation\" means the Jewish people who will persist until the end; (3) the generation alive at the beginning of the end-time signs will see their completion; (4) a combination of near (AD 70) and far (Parousia) fulfilments within a single saying.')]",
-        "cross": [
-          {
-            "ref": "Dan 7:13",
-            "note": "\"In my vision at night I looked, and there before me was one like a son of man, coming with the clouds of heaven\" — the Danielic vision that 21:27 directly invokes."
-          },
-          {
-            "ref": "Isa 13:10",
-            "note": "\"The stars of heaven and their constellations will not show their light... the moon will not give its light\" — the OT cosmic-dissolution language that Jesus uses for the end-time signs."
-          },
-          {
-            "ref": "Matt 24:29-31",
-            "note": "Matthew's parallel cosmic signs and Son of Man coming — Luke's version is briefer but uses the same Danielic language."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Dan 7:13",
+              "note": "\"In my vision at night I looked, and there before me was one like a son of man, coming with the clouds of heaven\" — the Danielic vision that 21:27 directly invokes."
+            },
+            {
+              "ref": "Isa 13:10",
+              "note": "\"The stars of heaven and their constellations will not show their light... the moon will not give its light\" — the OT cosmic-dissolution language that Jesus uses for the end-time signs."
+            },
+            {
+              "ref": "Matt 24:29-31",
+              "note": "Matthew's parallel cosmic signs and Son of Man coming — Luke's version is briefer but uses the same Danielic language."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -540,7 +553,10 @@
             "text": "Cosmic signs (21:25-26) and the Son of Man coming in a cloud with power and great glory (21:27). Disciples told to stand up and lift their heads -- redemption draws near.",
             "current": false
           }
-        ]
+        ],
+        "hist": {
+          "context": "[('Two Events or One?', 'Luke 21 is the central text in the NT debate about whether Jerusalem\\'s destruction (AD 70) and the Parousia are treated as one event or two. Luke\\'s version is more clearly differentiated than Matthew\\'s: vv.20-24 describe the Roman siege in specific, historical language (\"armies surrounding Jerusalem,\" \"fall by the sword,\" \"taken as prisoners\"), while vv.25-28 use cosmic, transcendent language. The \"times of the Gentiles\" (v.24) appears to be a period between the two events.'), ('\"This Generation\"', 'The saying \"this generation will certainly not pass away until all these things have happened\" (v.32) is the most contested phrase in the Olivet Discourse. Options: (1) the generation alive in AD 30 saw everything fulfilled in AD 70; (2) \"this generation\" means the Jewish people who will persist until the end; (3) the generation alive at the beginning of the end-time signs will see their completion; (4) a combination of near (AD 70) and far (Parousia) fulfilments within a single saying.')]"
+        }
       }
     }
   ],

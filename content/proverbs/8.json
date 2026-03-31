@@ -31,21 +31,22 @@
             "paragraph": "All legitimate governance rests on Wisdom. Kings rule well when they rule by Wisdom; they fail when they abandon it. This is not merely political advice; it is a cosmological claim: the universe is ordered by Wisdom, and all human authority that works is participating in that order."
           }
         ],
-        "ctx": "Chapter 8 is the theological summit of Proverbs — Wisdom's autobiography, climaxing in her account of being present at the creation of the universe (vv.22–31). The chapter opens with Wisdom's public address (vv.1–21) before moving to the cosmic claim (vv.22–31) and closing with the final invitation and warning (vv.32–36). The public address of vv.1–21 establishes Wisdom's character (truthful, just, righteous), her value (better than gold, silver, rubies), and her intimacy with those who seek her (\"I love those who love me\").",
-        "cross": [
-          {
-            "ref": "John 1:1–3",
-            "note": "Wisdom's claim to have been present 'before the world began' (vv. 22–23) is widely read as the Old Testament backdrop to John's Logos prologue: 'In the beginning was the Word … through him all things were made.'"
-          },
-          {
-            "ref": "Col 1:15–17",
-            "note": "Paul's description of Christ — 'before all things, and in him all things hold together' — resonates with Wisdom's self-description as the master craftsman present at creation (vv. 27–31)."
-          },
-          {
-            "ref": "Sir 24:1–22",
-            "note": "Ben Sira's Wisdom hymn in Sirach 24 develops Proverbs 8 explicitly, identifying Wisdom with Torah and locating her dwelling in Jerusalem. The intertestamental tradition saw Proverbs 8 as foundational."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 1:1–3",
+              "note": "Wisdom's claim to have been present 'before the world began' (vv. 22–23) is widely read as the Old Testament backdrop to John's Logos prologue: 'In the beginning was the Word … through him all things were made.'"
+            },
+            {
+              "ref": "Col 1:15–17",
+              "note": "Paul's description of Christ — 'before all things, and in him all things hold together' — resonates with Wisdom's self-description as the master craftsman present at creation (vv. 27–31)."
+            },
+            {
+              "ref": "Sir 24:1–22",
+              "note": "Ben Sira's Wisdom hymn in Sirach 24 develops Proverbs 8 explicitly, identifying Wisdom with Torah and locating her dwelling in Jerusalem. The intertestamental tradition saw Proverbs 8 as foundational."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "The NET note on 'the LORD possessed/created me at the beginning' discusses the crucial qanah debate: does qanah mean 'to possess' (wisdom is an eternal attribute of God) or 'to create' (wisdom is the first created being)? LXX translates ektisen (created). The Arian controversy turned on this verse. Most evangelical scholars follow the 'possessed/begot' reading (Waltke) as more consistent with the book's theology of wisdom as divine attribute."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 8 is the theological summit of Proverbs — Wisdom's autobiography, climaxing in her account of being present at the creation of the universe (vv.22–31). The chapter opens with Wisdom's public address (vv.1–21) before moving to the cosmic claim (vv.22–31) and closing with the final invitation and warning (vv.32–36). The public address of vv.1–21 establishes Wisdom's character (truthful, just, righteous), her value (better than gold, silver, rubies), and her intimacy with those who seek her (\"I love those who love me\")."
         }
       }
     },
@@ -133,21 +137,22 @@
             "paragraph": "The first verb in v.22 is also debated: qānāh can mean \"to possess,\" \"to create,\" or \"to acquire.\" Arius used the \"created\" reading to argue Wisdom/Christ was a created being. Athanasius argued against this. The OT context suggests priority and intimacy with God rather than ontological subordination — Wisdom is before all else, the first of God's works."
           }
         ],
-        "ctx": "None",
-        "cross": [
-          {
-            "ref": "John 1:1–3",
-            "note": "\"In the beginning was the Word, and the Word was with God... through him all things were made.\" John's prologue is a deliberate echo of Prov 8:22–31. The Logos who was \"with God\" in creation mirrors Wisdom who was \"constantly at his side\" (v.30). The NT identifies personified Wisdom with Christ."
-          },
-          {
-            "ref": "Col 1:15–17",
-            "note": "\"The firstborn over all creation... in him all things were created... he is before all things, and in him all things hold together.\" Paul's Christ hymn maps directly to Wisdom's self-description in ch.8."
-          },
-          {
-            "ref": "1 Cor 1:24",
-            "note": "Christ is \"the wisdom of God\" — Paul's explicit identification of the personified Wisdom with Jesus."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 1:1–3",
+              "note": "\"In the beginning was the Word, and the Word was with God... through him all things were made.\" John's prologue is a deliberate echo of Prov 8:22–31. The Logos who was \"with God\" in creation mirrors Wisdom who was \"constantly at his side\" (v.30). The NT identifies personified Wisdom with Christ."
+            },
+            {
+              "ref": "Col 1:15–17",
+              "note": "\"The firstborn over all creation... in him all things were created... he is before all things, and in him all things hold together.\" Paul's Christ hymn maps directly to Wisdom's self-description in ch.8."
+            },
+            {
+              "ref": "1 Cor 1:24",
+              "note": "Christ is \"the wisdom of God\" — Paul's explicit identification of the personified Wisdom with Jesus."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -212,6 +217,9 @@
               "note": "The NET note on the Arian controversy over 8:22 explains that Arius used the LXX's 'created me' to argue that the Son was a created being. Athanasius responded that even if Wisdom is described as 'created,' this refers to the incarnation (the wisdom of God taking human nature), not the eternal Son's origin. The note explains that the evangelical reading takes 8:22 as personalised divine attribute language rather than literal cosmological history."
             }
           ]
+        },
+        "hist": {
+          "context": "None"
         }
       }
     }

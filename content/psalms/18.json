@@ -31,21 +31,22 @@
             "paragraph": "\"The earth trembled and quaked\" (v.7). God’s rescue is described as theophany: earthquake, smoke from nostrils, fire from mouth, dark clouds, cherubim-riding, thunder, hail, lightning. This is the most dramatic divine-intervention description in the Psalter."
           }
         ],
-        "ctx": "The longest psalm so far (50 verses, duplicated in 2 Samuel 22). David praises God for rescue from all enemies. The theophany (vv.7–19) is cosmic: the earth trembles, mountains quake, God rides on a cherub, darkness surrounds him, hailstones and lightning blast the enemy. God reaches down, draws David from deep waters (v.16), sets him in a wide place (v.19). The psalm is retrospective: David reviews his entire career of divine rescue.",
-        "cross": [
-          {
-            "ref": "2 Sam 22",
-            "note": "The parallel text — David’s victory song with minor variations."
-          },
-          {
-            "ref": "Exod 15:1–18",
-            "note": "The Song of the Sea — the exodus rescue that Psalm 18’s theophany echoes."
-          },
-          {
-            "ref": "Hab 3:3–15",
-            "note": "Habakkuk’s theophany echoes Psalm 18’s cosmic imagery."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 22",
+              "note": "The parallel text — David’s victory song with minor variations."
+            },
+            {
+              "ref": "Exod 15:1–18",
+              "note": "The Song of the Sea — the exodus rescue that Psalm 18’s theophany echoes."
+            },
+            {
+              "ref": "Hab 3:3–15",
+              "note": "Habakkuk’s theophany echoes Psalm 18’s cosmic imagery."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -120,6 +121,9 @@
               "note": "Goldingay: \"deep waters\" is chaos-language (Gen 1:2). God rescues from primordial chaos, not just from human enemies. The rescue is cosmic."
             }
           ]
+        },
+        "hist": {
+          "context": "The longest psalm so far (50 verses, duplicated in 2 Samuel 22). David praises God for rescue from all enemies. The theophany (vv.7–19) is cosmic: the earth trembles, mountains quake, God rides on a cherub, darkness surrounds him, hailstones and lightning blast the enemy. God reaches down, draws David from deep waters (v.16), sets him in a wide place (v.19). The psalm is retrospective: David reviews his entire career of divine rescue."
         }
       }
     },
@@ -137,17 +141,18 @@
             "paragraph": "\"You, LORD, light my lamp (nērî); my God turns my darkness into light\" (v.28). The lamp is life, hope, guidance. God illuminates what enemies tried to extinguish. The lamp that the wicked’s death snuffs (Prov 13:9), God reignites for the righteous."
           }
         ],
-        "ctx": "David reflects on God’s faithfulness: to the faithful God is faithful, to the pure he is pure (vv.25–26). God lights his lamp, enables him to leap walls, provides a perfect way (vv.28–30). God arms him for battle, gives him a wide path so his feet don’t slip (vv.32–36). David pursues enemies, shatters them, stamps them like dust (vv.37–42). God made him head of nations (v.43). The psalm closes with a messianic declaration: \"He gives his king great victories; he shows unfailing love to his anointed, to David and his descendants forever\" (v.50).",
-        "cross": [
-          {
-            "ref": "2 Sam 7:12–16",
-            "note": "\"Your throne will be established forever\" — the Davidic covenant Psalm 18:50 echoes."
-          },
-          {
-            "ref": "Rom 15:9",
-            "note": "Paul quotes Psalm 18:49 for Gentile praise: \"I will praise you among the nations.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 7:12–16",
+              "note": "\"Your throne will be established forever\" — the Davidic covenant Psalm 18:50 echoes."
+            },
+            {
+              "ref": "Rom 15:9",
+              "note": "Paul quotes Psalm 18:49 for Gentile praise: \"I will praise you among the nations.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -218,6 +223,9 @@
               "note": "Goldingay: \"you light my lamp\" — in a world without electricity, a lamp is survival. God provides what darkness cannot take: visibility, warmth, hope."
             }
           ]
+        },
+        "hist": {
+          "context": "David reflects on God’s faithfulness: to the faithful God is faithful, to the pure he is pure (vv.25–26). God lights his lamp, enables him to leap walls, provides a perfect way (vv.28–30). God arms him for battle, gives him a wide path so his feet don’t slip (vv.32–36). David pursues enemies, shatters them, stamps them like dust (vv.37–42). God made him head of nations (v.43). The psalm closes with a messianic declaration: \"He gives his king great victories; he shows unfailing love to his anointed, to David and his descendants forever\" (v.50)."
         }
       }
     }

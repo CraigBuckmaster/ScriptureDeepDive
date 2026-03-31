@@ -25,17 +25,18 @@
             "paragraph": "God commands Jeremiah to make a yoke ('ol) of straps and crossbars and wear it on his neck (v.2). The yoke is a sign-act addressed to ambassadors from Edom, Moab, Ammon, Tyre, and Sidon who have gathered in Jerusalem for an anti-Babylonian coalition. The message: every nation must submit to Nebuchadnezzar's yoke. Resistance is futile because God has given \"all these lands\" to Babylon."
           }
         ],
-        "ctx": "The setting is a diplomatic summit in Jerusalem (c. 594-593 BC) where neighboring kings plot rebellion against Babylon. Jeremiah crashes the conference wearing a wooden yoke on his neck -- the most politically explosive sign-act in the book. His message to the foreign ambassadors is that Nebuchadnezzar rules by God's appointment, and any nation that submits to the yoke will survive. This is political suicide: Jeremiah is telling allied nations to surrender to the enemy.",
-        "cross": [
-          {
-            "ref": "Isa 10:5-6",
-            "note": "Isaiah similarly identifies Assyria as the \"rod of my anger\" -- the prophetic tradition of naming empires as divine instruments."
-          },
-          {
-            "ref": "Rom 13:1",
-            "note": "\"Every authority is established by God\" -- Paul's theology of governing authorities follows the same logic Jeremiah applies to Babylon."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 10:5-6",
+              "note": "Isaiah similarly identifies Assyria as the \"rod of my anger\" -- the prophetic tradition of naming empires as divine instruments."
+            },
+            {
+              "ref": "Rom 13:1",
+              "note": "\"Every authority is established by God\" -- Paul's theology of governing authorities follows the same logic Jeremiah applies to Babylon."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -92,6 +93,9 @@
               "note": "Brueggemann identifies a \"theology of imperial mandate\" -- God appoints empires for limited terms. Babylon rules by divine permission, not by inherent right, and the permission has an expiration date."
             }
           ]
+        },
+        "hist": {
+          "context": "The setting is a diplomatic summit in Jerusalem (c. 594-593 BC) where neighboring kings plot rebellion against Babylon. Jeremiah crashes the conference wearing a wooden yoke on his neck -- the most politically explosive sign-act in the book. His message to the foreign ambassadors is that Nebuchadnezzar rules by God's appointment, and any nation that submits to the yoke will survive. This is political suicide: Jeremiah is telling allied nations to surrender to the enemy."
         }
       }
     },
@@ -109,17 +113,18 @@
             "paragraph": "The false prophets claim the temple vessels (kelim) taken to Babylon in 597 BC will \"soon be brought back\" (v.16). Jeremiah counters: not only will the vessels not return -- the remaining vessels will be taken too (v.22). The temple furnishings symbolize institutional continuity; their removal signals the end of the old order."
           }
         ],
-        "ctx": "Jeremiah addresses Zedekiah directly: submit to Babylon and live (v.12). He then confronts the false prophets who promise the rapid return of temple vessels -- a comforting lie. Jeremiah's test: \"If they are prophets and have the word of the LORD, let them plead with the LORD\" to prevent the remaining vessels from being taken (v.18). The test will fail: in 586 BC, everything is stripped.",
-        "cross": [
-          {
-            "ref": "2 Kgs 25:13-17",
-            "note": "The final stripping of the temple: bronze pillars broken up, basins, pots, and articles all taken to Babylon -- fulfilling Jeremiah's prophecy precisely."
-          },
-          {
-            "ref": "Dan 1:2",
-            "note": "The vessels from the temple placed in the temple of Nebuchadnezzar's god -- the beginning of the exile."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 25:13-17",
+              "note": "The final stripping of the temple: bronze pillars broken up, basins, pots, and articles all taken to Babylon -- fulfilling Jeremiah's prophecy precisely."
+            },
+            {
+              "ref": "Dan 1:2",
+              "note": "The vessels from the temple placed in the temple of Nebuchadnezzar's god -- the beginning of the exile."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -168,6 +173,9 @@
               "note": "Brueggemann reads the vessel dispute as \"a conflict over the meaning of institutional symbols.\" The false prophets cling to the temple vessels as signs of continuity; Jeremiah declares the old order finished."
             }
           ]
+        },
+        "hist": {
+          "context": "Jeremiah addresses Zedekiah directly: submit to Babylon and live (v.12). He then confronts the false prophets who promise the rapid return of temple vessels -- a comforting lie. Jeremiah's test: \"If they are prophets and have the word of the LORD, let them plead with the LORD\" to prevent the remaining vessels from being taken (v.18). The test will fail: in 586 BC, everything is stripped."
         }
       }
     }

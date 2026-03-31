@@ -31,21 +31,22 @@
             "paragraph": "The noun koinōnia (fellowship) in v. 9 denotes far more than social companionship. In Greco-Roman usage it could designate a business partnership with shared risk and profit. Paul deploys it theologically: believers have been called into koinōnia with God’s Son, a participatory union that entails shared identity, shared mission, and shared destiny. This foundational concept makes the divisions reported in vv. 10–12 all the more scandalous — they fracture a divinely constituted partnership."
           }
         ],
-        "ctx": "Paul writes from Ephesus (16:8) around AD 55 to a church he founded during his eighteen-month stay in Corinth (Acts 18:1–18). The salutation follows standard Greco-Roman epistolary conventions — sender, recipients, greeting — but Paul transforms each element theologically. Corinth was a Roman colony refounded by Julius Caesar in 44 BC, strategically located on the isthmus connecting mainland Greece to the Peloponnese. By Paul’s day it was the capital of the province of Achaia, a thriving commercial hub with a diverse population of Roman colonists, Greeks, Jews, and freedpersons. The city’s famous wealth, athletic games (the Isthmian Games), and reputation for moral license all shape the letter’s concerns.",
-        "cross": [
-          {
-            "ref": "Gal 1:1",
-            "note": "Paul similarly emphasises his apostleship as originating not from human appointment but through Jesus Christ and God the Father."
-          },
-          {
-            "ref": "Rom 1:7",
-            "note": "The identical phrase ‘called to be his holy people’ appears in the Romans salutation, linking the two letters’ theology of divine calling."
-          },
-          {
-            "ref": "Phil 1:3–6",
-            "note": "Paul’s confidence that God will complete the good work he began parallels the thanksgiving motif of 1 Cor 1:4–9."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gal 1:1",
+              "note": "Paul similarly emphasises his apostleship as originating not from human appointment but through Jesus Christ and God the Father."
+            },
+            {
+              "ref": "Rom 1:7",
+              "note": "The identical phrase ‘called to be his holy people’ appears in the Romans salutation, linking the two letters’ theology of divine calling."
+            },
+            {
+              "ref": "Phil 1:3–6",
+              "note": "Paul’s confidence that God will complete the good work he began parallels the thanksgiving motif of 1 Cor 1:4–9."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "Thiselton observes that the thanksgiving functions as a captatio benevolentiae — a rhetorical strategy to secure goodwill before criticism. Paul’s mention of being ‘enriched in every way’ (v. 5) employs the language of Greco-Roman patronage and benefaction, subtly reorienting it: God, not any human patron, is the source of all enrichment."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul writes from Ephesus (16:8) around AD 55 to a church he founded during his eighteen-month stay in Corinth (Acts 18:1–18). The salutation follows standard Greco-Roman epistolary conventions — sender, recipients, greeting — but Paul transforms each element theologically. Corinth was a Roman colony refounded by Julius Caesar in 44 BC, strategically located on the isthmus connecting mainland Greece to the Peloponnese. By Paul’s day it was the capital of the province of Achaia, a thriving commercial hub with a diverse population of Roman colonists, Greeks, Jews, and freedpersons. The city’s famous wealth, athletic games (the Isthmian Games), and reputation for moral license all shape the letter’s concerns."
         }
       }
     },
@@ -141,21 +145,22 @@
             "paragraph": "The noun stauros (cross) in v. 17 introduces the theological centre of chapters 1–2. In the Greco-Roman world the cross was an instrument of shameful execution reserved for slaves and non-citizens. Paul’s assertion that ‘the cross of Christ’ must not be ‘emptied of its power’ (kenōthē) by eloquent wisdom redefines the cross from symbol of degradation to locus of divine power. The verb kenoō (to empty) anticipates the Christ-hymn language of Phil 2:7."
           }
         ],
-        "ctx": "The factionalism in Corinth likely reflects the Greco-Roman culture of rhetorical competition and patron-client relationships. Corinthian believers were aligning themselves with the preacher who baptized them or whose rhetorical style they preferred — Paul, Apollos, Cephas, or a ‘Christ party.’ This mirrors the sophistic culture of the Roman East, where itinerant orators attracted devoted followings and cities competed for the most eloquent speakers. Apollos, described in Acts 18:24–28 as ‘a learned man with a thorough knowledge of the Scriptures,’ was likely a more polished speaker than Paul (cf. 2 Cor 10:10), making the rivalry especially acute.",
-        "cross": [
-          {
-            "ref": "John 17:20–23",
-            "note": "Jesus’ high-priestly prayer for unity among believers provides the dominical background for Paul’s appeal against divisions."
-          },
-          {
-            "ref": "Eph 4:3–6",
-            "note": "Paul later articulates the theological basis for unity: one body, one Spirit, one Lord, one faith, one baptism, one God."
-          },
-          {
-            "ref": "Gal 3:27–28",
-            "note": "Baptism into Christ erases the social distinctions — Jew/Gentile, slave/free, male/female — that fuel factionalism."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 17:20–23",
+              "note": "Jesus’ high-priestly prayer for unity among believers provides the dominical background for Paul’s appeal against divisions."
+            },
+            {
+              "ref": "Eph 4:3–6",
+              "note": "Paul later articulates the theological basis for unity: one body, one Spirit, one Lord, one faith, one baptism, one God."
+            },
+            {
+              "ref": "Gal 3:27–28",
+              "note": "Baptism into Christ erases the social distinctions — Jew/Gentile, slave/free, male/female — that fuel factionalism."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -224,6 +229,9 @@
               "note": "Thiselton notes that the three rhetorical questions of v. 13 form a chiastic structure centred on the cross: (A) Is Christ divided? (B) Was Paul crucified for you? (B’) Were you baptised in the name of Paul? The cross — not baptism, not preaching style — is the non-negotiable centre."
             }
           ]
+        },
+        "hist": {
+          "context": "The factionalism in Corinth likely reflects the Greco-Roman culture of rhetorical competition and patron-client relationships. Corinthian believers were aligning themselves with the preacher who baptized them or whose rhetorical style they preferred — Paul, Apollos, Cephas, or a ‘Christ party.’ This mirrors the sophistic culture of the Roman East, where itinerant orators attracted devoted followings and cities competed for the most eloquent speakers. Apollos, described in Acts 18:24–28 as ‘a learned man with a thorough knowledge of the Scriptures,’ was likely a more polished speaker than Paul (cf. 2 Cor 10:10), making the rivalry especially acute."
         }
       }
     },
@@ -241,21 +249,22 @@
             "paragraph": "The noun mōria (foolishness) belongs to a word group that Paul deploys with devastating irony throughout chapters 1–2. In Greek philosophical tradition, mōria was the opposite of sophia (wisdom) and designated intellectual deficiency or absurdity. Paul inverts the valuation: the ‘foolishness of God’ (to mōron tou theou, v. 25) is wiser than human wisdom. This rhetorical reversal draws on the prophetic tradition of Isa 29:14 (quoted in v. 19) where God announces the destruction of the wisdom of the wise."
           }
         ],
-        "ctx": "Paul’s argument targets the Greco-Roman culture of sophia (wisdom) that dominated Corinthian intellectual life. First-century Corinth was home to itinerant philosophers, sophistic orators, and rhetorical schools. Status accrued to those who displayed eloquence and philosophical sophistication. Against this backdrop, Paul’s proclamation of a crucified Messiah was doubly offensive: to Jews it contradicted the expectation of a triumphant Davidic king (Deut 21:23: ‘cursed is everyone who is hung on a pole’), and to Greeks it was intellectual absurdity — the notion that divine power could be revealed in the shameful death of a provincial artisan.",
-        "cross": [
-          {
-            "ref": "Isa 29:14",
-            "note": "Paul quotes this passage directly in v. 19: God will destroy the wisdom of the wise, a prophetic precedent for the cross’s overturning of human categories."
-          },
-          {
-            "ref": "Rom 1:16",
-            "note": "The parallel declaration that the gospel is ‘the power of God for salvation’ connects Romans and 1 Corinthians as complementary expositions of the cross’s power."
-          },
-          {
-            "ref": "Col 2:3",
-            "note": "All treasures of wisdom and knowledge are hidden in Christ, not in human philosophy — the positive counterpart to the negative argument here."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 29:14",
+              "note": "Paul quotes this passage directly in v. 19: God will destroy the wisdom of the wise, a prophetic precedent for the cross’s overturning of human categories."
+            },
+            {
+              "ref": "Rom 1:16",
+              "note": "The parallel declaration that the gospel is ‘the power of God for salvation’ connects Romans and 1 Corinthians as complementary expositions of the cross’s power."
+            },
+            {
+              "ref": "Col 2:3",
+              "note": "All treasures of wisdom and knowledge are hidden in Christ, not in human philosophy — the positive counterpart to the negative argument here."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -328,6 +337,9 @@
               "note": "Thiselton highlights the rhetorical structure: Paul sets up the Jewish and Greek expectations as foils, then shatters both with the paradox of Christ crucified. The passage deploys the rhetorical figure of antithesis (foolishness/wisdom, weakness/power) to overturn the audience’s assumed categories."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul’s argument targets the Greco-Roman culture of sophia (wisdom) that dominated Corinthian intellectual life. First-century Corinth was home to itinerant philosophers, sophistic orators, and rhetorical schools. Status accrued to those who displayed eloquence and philosophical sophistication. Against this backdrop, Paul’s proclamation of a crucified Messiah was doubly offensive: to Jews it contradicted the expectation of a triumphant Davidic king (Deut 21:23: ‘cursed is everyone who is hung on a pole’), and to Greeks it was intellectual absurdity — the notion that divine power could be revealed in the shameful death of a provincial artisan."
         }
       }
     },
@@ -345,21 +357,22 @@
             "paragraph": "The noun kauchēsis (boasting) and its cognates pervade the Corinthian correspondence (over 30 occurrences in 1–2 Corinthians). In v. 31 Paul quotes Jer 9:24: ‘Let the one who boasts boast in the Lord.’ Boasting is not eliminated but redirected — from self-congratulation based on social status, wisdom, or spiritual gifts to glorying in God’s counter-intuitive election of the lowly. This redirection of kauchēsis becomes a controlling motif for the entire letter."
           }
         ],
-        "ctx": "Paul turns from theological argument to sociological proof. The composition of the Corinthian congregation itself demonstrates the cross’s logic: not many were wise by human standards, not many influential, not many of noble birth. Archaeological and epigraphic evidence from Roman Corinth confirms a socially stratified community: some members like Gaius and Erastus (Rom 16:23) were wealthy enough to host the church and hold civic office, but the majority were of humble or servile origin. Paul uses this social reality as evidence that God’s election operates by inversion, choosing the despised to shame the honoured.",
-        "cross": [
-          {
-            "ref": "Jer 9:23–24",
-            "note": "The direct source of Paul’s quotation in v. 31: true boasting is in knowing the Lord who exercises kindness, justice, and righteousness."
-          },
-          {
-            "ref": "Matt 11:25–26",
-            "note": "Jesus’ thanksgiving that the Father has hidden things from the wise and revealed them to little children parallels Paul’s argument about God’s election of the foolish."
-          },
-          {
-            "ref": "James 2:5",
-            "note": "James makes the same sociological argument: God chose the poor in the world to be rich in faith and heirs of the kingdom."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 9:23–24",
+              "note": "The direct source of Paul’s quotation in v. 31: true boasting is in knowing the Lord who exercises kindness, justice, and righteousness."
+            },
+            {
+              "ref": "Matt 11:25–26",
+              "note": "Jesus’ thanksgiving that the Father has hidden things from the wise and revealed them to little children parallels Paul’s argument about God’s election of the foolish."
+            },
+            {
+              "ref": "James 2:5",
+              "note": "James makes the same sociological argument: God chose the poor in the world to be rich in faith and heirs of the kingdom."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -424,6 +437,9 @@
               "note": "Thiselton reads the Jeremiah quotation (‘Let the one who boasts boast in the Lord’) as the hermeneutical key to the entire argument of chapters 1–4. Authentic boasting is theo-centric, not anthropo-centric."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul turns from theological argument to sociological proof. The composition of the Corinthian congregation itself demonstrates the cross’s logic: not many were wise by human standards, not many influential, not many of noble birth. Archaeological and epigraphic evidence from Roman Corinth confirms a socially stratified community: some members like Gaius and Erastus (Rom 16:23) were wealthy enough to host the church and hold civic office, but the majority were of humble or servile origin. Paul uses this social reality as evidence that God’s election operates by inversion, choosing the despised to shame the honoured."
         }
       }
     }

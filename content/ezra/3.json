@@ -31,22 +31,26 @@
             "paragraph": "The tāmîd (daily) burnt offerings resume immediately. The ōlâ is the \"ascending offering\" — it goes up entirely to God. Nothing is kept. Total consecration."
           }
         ],
-        "hist": "The seventh month (Tishri) is the most sacred month in the Jewish calendar: it contains the Feast of Trumpets (1st), the Day of Atonement (10th), and the Feast of Tabernacles (15th–21st). The returnees’ first act in the seventh month — rebuilding the altar and celebrating Tabernacles — reestablishes the entire liturgical calendar in one month.",
-        "ctx": "The altar before the temple is theologically deliberate. In the tabernacle system, the bronze altar stood in the courtyard outside — it was the first point of contact between God and worshippers. You could have an altar without a temple (patriarchs did), but not a temple without an altar. The returnees prioritised correctly: access to God through sacrifice comes first.",
-        "cross": [
-          {
-            "ref": "Exod 40:6",
-            "note": "The tabernacle altar placed first in the courtyard — the same priority the returnees follow."
-          },
-          {
-            "ref": "Gen 8:20",
-            "note": "Noah’s first act after the flood: build an altar. The pattern recurs."
-          },
-          {
-            "ref": "Lev 23:33–43",
-            "note": "The Feast of Tabernacles instructions that the returnees now follow."
-          }
-        ],
+        "hist": {
+          "historical": "The seventh month (Tishri) is the most sacred month in the Jewish calendar: it contains the Feast of Trumpets (1st), the Day of Atonement (10th), and the Feast of Tabernacles (15th–21st). The returnees’ first act in the seventh month — rebuilding the altar and celebrating Tabernacles — reestablishes the entire liturgical calendar in one month.",
+          "context": "The altar before the temple is theologically deliberate. In the tabernacle system, the bronze altar stood in the courtyard outside — it was the first point of contact between God and worshippers. You could have an altar without a temple (patriarchs did), but not a temple without an altar. The returnees prioritised correctly: access to God through sacrifice comes first."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 40:6",
+              "note": "The tabernacle altar placed first in the courtyard — the same priority the returnees follow."
+            },
+            {
+              "ref": "Gen 8:20",
+              "note": "Noah’s first act after the flood: build an altar. The pattern recurs."
+            },
+            {
+              "ref": "Lev 23:33–43",
+              "note": "The Feast of Tabernacles instructions that the returnees now follow."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -142,22 +146,26 @@
             "paragraph": "The old men \"wept with a loud voice\" while the young \"shouted for joy.\" The same event produces opposite responses. The Hebrew ēyn makkîr (\"no one could distinguish\") is remarkable — grief and joy became one sound."
           }
         ],
-        "hist": "Solomon’s temple (destroyed 586 BC) had been one of the wonders of the ancient world. The second temple’s foundation was modest by comparison. Haggai 2:3 confirms the disparity: \"Who of you is left who saw this house in its former glory? How does it look to you now? Does it not seem to you like nothing?\" The old men’s weeping was for what was lost.",
-        "ctx": "The weeping-and-shouting paradox (v.12–13) is one of the most psychologically truthful moments in Scripture. Both responses are valid; the narrator refuses to judge either. The community contains both grief for what was lost and joy for what is beginning. This is what restoration actually feels like — not pure triumph, but complicated hope.",
-        "cross": [
-          {
-            "ref": "Hag 2:3–9",
-            "note": "\"The glory of this present house will be greater than the glory of the former\" — Haggai’s answer to the weepers."
-          },
-          {
-            "ref": "Ps 126:5–6",
-            "note": "\"Those who sow with tears will reap with songs of joy\" — the theological resolution of Ezra 3’s paradox."
-          },
-          {
-            "ref": "Zech 4:10",
-            "note": "\"Who dares despise the day of small things?\" — Zechariah’s rebuke to those who compare the new temple unfavourably."
-          }
-        ],
+        "hist": {
+          "historical": "Solomon’s temple (destroyed 586 BC) had been one of the wonders of the ancient world. The second temple’s foundation was modest by comparison. Haggai 2:3 confirms the disparity: \"Who of you is left who saw this house in its former glory? How does it look to you now? Does it not seem to you like nothing?\" The old men’s weeping was for what was lost.",
+          "context": "The weeping-and-shouting paradox (v.12–13) is one of the most psychologically truthful moments in Scripture. Both responses are valid; the narrator refuses to judge either. The community contains both grief for what was lost and joy for what is beginning. This is what restoration actually feels like — not pure triumph, but complicated hope."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Hag 2:3–9",
+              "note": "\"The glory of this present house will be greater than the glory of the former\" — Haggai’s answer to the weepers."
+            },
+            {
+              "ref": "Ps 126:5–6",
+              "note": "\"Those who sow with tears will reap with songs of joy\" — the theological resolution of Ezra 3’s paradox."
+            },
+            {
+              "ref": "Zech 4:10",
+              "note": "\"Who dares despise the day of small things?\" — Zechariah’s rebuke to those who compare the new temple unfavourably."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

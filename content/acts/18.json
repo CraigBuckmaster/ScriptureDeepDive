@@ -54,21 +54,22 @@
             "current": false
           }
         ],
-        "ctx": "The Gallio ruling (vv.12–17) is Acts' most important legal precedent — and its most precisely dateable event. A Delphi inscription confirms Gallio's proconsulship at c. AD 51–52, anchoring the entire Pauline chronology. Gallio's ruling effectively classifies Christianity as a Jewish sect, protected under Rome's tolerance of Judaism. Paul's vision (vv.9–10) explains the eighteen-month stay: 'I have many people in this city' — divine sovereignty as the ground of sustained mission.",
-        "cross": [
-          {
-            "ref": "1 Corinthians 2:1–5",
-            "note": "\"When I came to you, I did not come with eloquence or human wisdom... I resolved to know nothing while I was with you except Jesus Christ and him crucified.\" Paul's approach to Corinth after Athens."
-          },
-          {
-            "ref": "Romans 16:3",
-            "note": "\"Greet Priscilla and Aquila, my co-workers in Christ Jesus\" — the couple Paul met at Corinth becomes among his most valued long-term partners."
-          },
-          {
-            "ref": "1 Corinthians 1:14",
-            "note": "\"I am thankful that I did not baptize any of you except Crispus and Gaius\" — Crispus, the synagogue ruler who believed in v.8, is named in Paul's letter."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Corinthians 2:1–5",
+              "note": "\"When I came to you, I did not come with eloquence or human wisdom... I resolved to know nothing while I was with you except Jesus Christ and him crucified.\" Paul's approach to Corinth after Athens."
+            },
+            {
+              "ref": "Romans 16:3",
+              "note": "\"Greet Priscilla and Aquila, my co-workers in Christ Jesus\" — the couple Paul met at Corinth becomes among his most valued long-term partners."
+            },
+            {
+              "ref": "1 Corinthians 1:14",
+              "note": "\"I am thankful that I did not baptize any of you except Crispus and Gaius\" — Crispus, the synagogue ruler who believed in v.8, is named in Paul's letter."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -133,6 +134,9 @@
               "note": "Keener notes the significance of the Gallio inscription found at Delphi in 1905. It dates Gallio's proconsulship to AD 51–52 with reasonable precision, making it the most valuable external chronological anchor for the Pauline mission."
             }
           ]
+        },
+        "hist": {
+          "context": "The Gallio ruling (vv.12–17) is Acts' most important legal precedent — and its most precisely dateable event. A Delphi inscription confirms Gallio's proconsulship at c. AD 51–52, anchoring the entire Pauline chronology. Gallio's ruling effectively classifies Christianity as a Jewish sect, protected under Rome's tolerance of Judaism. Paul's vision (vv.9–10) explains the eighteen-month stay: 'I have many people in this city' — divine sovereignty as the ground of sustained mission."
         }
       }
     },
@@ -179,21 +183,22 @@
             "current": false
           }
         ],
-        "ctx": "Apollos is one of Acts' most intriguing figures: learned, eloquent, scripturally equipped, accurate about Jesus — but knowing only John's baptism. Priscilla and Aquila do not contradict him publicly but invite him privately for supplementary instruction. The episode models constructive correction within the community: the more experienced teaching the gifted, in private, without public embarrassment. The result is Apollos more effective than before (v.28). Paul's Corinthian letters show he became a significant figure (1 Cor 1:12; 3:5–6).",
-        "cross": [
-          {
-            "ref": "1 Corinthians 3:5–6",
-            "note": "\"What, after all, is Apollos? And what is Paul? Only servants, through whom you came to believe... I planted the seed, Apollos watered it, but God has been making it grow.\""
-          },
-          {
-            "ref": "1 Corinthians 1:12",
-            "note": "\"One of you says, 'I follow Apollos'\" — Apollos became significant enough at Corinth to attract a following, reflecting his extraordinary ability."
-          },
-          {
-            "ref": "Acts 19:1–7",
-            "note": "The disciples at Ephesus who knew only John's baptism — paralleling the Apollos gap. After Priscilla and Aquila instructed Apollos, Paul arrives to address a similar incomplete understanding in a larger group."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Corinthians 3:5–6",
+              "note": "\"What, after all, is Apollos? And what is Paul? Only servants, through whom you came to believe... I planted the seed, Apollos watered it, but God has been making it grow.\""
+            },
+            {
+              "ref": "1 Corinthians 1:12",
+              "note": "\"One of you says, 'I follow Apollos'\" — Apollos became significant enough at Corinth to attract a following, reflecting his extraordinary ability."
+            },
+            {
+              "ref": "Acts 19:1–7",
+              "note": "The disciples at Ephesus who knew only John's baptism — paralleling the Apollos gap. After Priscilla and Aquila instructed Apollos, Paul arrives to address a similar incomplete understanding in a larger group."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -258,6 +263,9 @@
               "note": "Keener notes the private instruction model preserves Apollos's public credibility while correcting his incomplete understanding. Correct in private what can be built on in public — pastoral wisdom confirmed by Apollos's subsequent effectiveness."
             }
           ]
+        },
+        "hist": {
+          "context": "Apollos is one of Acts' most intriguing figures: learned, eloquent, scripturally equipped, accurate about Jesus — but knowing only John's baptism. Priscilla and Aquila do not contradict him publicly but invite him privately for supplementary instruction. The episode models constructive correction within the community: the more experienced teaching the gifted, in private, without public embarrassment. The result is Apollos more effective than before (v.28). Paul's Corinthian letters show he became a significant figure (1 Cor 1:12; 3:5–6)."
         }
       }
     }

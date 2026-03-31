@@ -31,17 +31,18 @@
             "paragraph": "Israel’s distinctive characteristic in the first oracle — they are “a people who live apart and do not consider themselves one of the nations.” The apartness is covenant isolation: not cultural arrogance but divine designation."
           }
         ],
-        "ctx": "The first oracle (vv.7–10) is delivered from Bamoth Baal after Balaam encounters God (v.4) and receives the divine word. The oracle has four rhetorical moves: (1) Balak summoned me, but God has not cursed Israel — I cannot (vv.7–8); (2) Israel is a people apart, uncountable in their blessing (v.9); (3) who can count the dust of Jacob? — the Abrahamic promise (v.10a); (4) let me die the death of the righteous (v.10b). Balak’s furious response — \"What have you done to me? I brought you here to curse my enemies, but you have done nothing but bless them!\" — sets up the second oracle.",
-        "cross": [
-          {
-            "ref": "Gen 13:16",
-            "note": "\"I will make your offspring like the dust of the earth, so that if anyone could count the dust, then your offspring could be counted.\" Balaam’s \"who can count the dust of Jacob?\" (v.10) directly quotes the Abrahamic promise — the blessing Balak paid to reverse is the promise God made to Abraham that cannot be reversed."
-          },
-          {
-            "ref": "Rom 8:31",
-            "note": "\"If God is for us, who can be against us?\" The theological logic of the first oracle: God’s prior blessing renders all human opposition ineffective. Paul’s rhetorical question is the NT distillation of Balaam’s reluctant proclamation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 13:16",
+              "note": "\"I will make your offspring like the dust of the earth, so that if anyone could count the dust, then your offspring could be counted.\" Balaam’s \"who can count the dust of Jacob?\" (v.10) directly quotes the Abrahamic promise — the blessing Balak paid to reverse is the promise God made to Abraham that cannot be reversed."
+            },
+            {
+              "ref": "Rom 8:31",
+              "note": "\"If God is for us, who can be against us?\" The theological logic of the first oracle: God’s prior blessing renders all human opposition ineffective. Paul’s rhetorical question is the NT distillation of Balaam’s reluctant proclamation."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Ashley: The narrative context of Balaam's oracles in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "The first oracle (vv.7–10) is delivered from Bamoth Baal after Balaam encounters God (v.4) and receives the divine word. The oracle has four rhetorical moves: (1) Balak summoned me, but God has not cursed Israel — I cannot (vv.7–8); (2) Israel is a people apart, uncountable in their blessing (v.9); (3) who can count the dust of Jacob? — the Abrahamic promise (v.10a); (4) let me die the death of the righteous (v.10b). Balak’s furious response — \"What have you done to me? I brought you here to curse my enemies, but you have done nothing but bless them!\" — sets up the second oracle."
         }
       }
     },
@@ -131,17 +135,18 @@
             "paragraph": "The second oracle’s theological centre: God’s word is not like human speech — it cannot be retracted, revised, or reversed. What God has spoken over Israel is irrevocable because God’s character is immutable. The oracle is a declaration of divine immutability in the context of prophetic compulsion."
           }
         ],
-        "ctx": "Balak moves Balaam to a different vantage point (Zophim on Pisgah — from where he can see only part of Israel) in hopes that a different view will produce a different result. The second oracle (vv.18–24) is more expansive than the first. Its structure: (1) God is not a man who lies or changes his mind; (2) I was told to bless, and I cannot reverse it; (3) God has seen no iniquity in Jacob that would disqualify the blessing; (4) God who brought Israel out of Egypt is like a wild ox in their midst; (5) no sorcery or divination can work against Jacob — God himself is their announcement. Balak’s response: \"At least don’t curse them at all.\" He has retreated from asking for a curse to asking for no blessing.",
-        "cross": [
-          {
-            "ref": "Heb 6:17–18",
-            "note": "\"God wanted to make the unchanging nature of his purpose very clear to the heirs of what was promised, he confirmed it with an oath. God did this so that, by two unchangeable things in which it is impossible for God to lie, we who have fled to take hold of the hope set before us may be greatly encouraged.\" The immutability of God’s covenant word — the second oracle’s central claim — is the Hebrews’ ground for assurance."
-          },
-          {
-            "ref": "1 Sam 15:29",
-            "note": "\"He who is the Glory of Israel does not lie or change his mind; for he is not a human being, that he should change his mind.\" Samuel quotes the second oracle’s theology directly when addressing Saul’s rejection."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 6:17–18",
+              "note": "\"God wanted to make the unchanging nature of his purpose very clear to the heirs of what was promised, he confirmed it with an oath. God did this so that, by two unchangeable things in which it is impossible for God to lie, we who have fled to take hold of the hope set before us may be greatly encouraged.\" The immutability of God’s covenant word — the second oracle’s central claim — is the Hebrews’ ground for assurance."
+            },
+            {
+              "ref": "1 Sam 15:29",
+              "note": "\"He who is the Glory of Israel does not lie or change his mind; for he is not a human being, that he should change his mind.\" Samuel quotes the second oracle’s theology directly when addressing Saul’s rejection."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -214,6 +219,9 @@
               "note": "Ashley: The narrative context of Balaam's oracles in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Balak moves Balaam to a different vantage point (Zophim on Pisgah — from where he can see only part of Israel) in hopes that a different view will produce a different result. The second oracle (vv.18–24) is more expansive than the first. Its structure: (1) God is not a man who lies or changes his mind; (2) I was told to bless, and I cannot reverse it; (3) God has seen no iniquity in Jacob that would disqualify the blessing; (4) God who brought Israel out of Egypt is like a wild ox in their midst; (5) no sorcery or divination can work against Jacob — God himself is their announcement. Balak’s response: \"At least don’t curse them at all.\" He has retreated from asking for a curse to asking for no blessing."
         }
       }
     }

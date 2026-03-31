@@ -31,25 +31,26 @@
             "paragraph": "In v. 5, the ruler is identified as 'our peace' (shalom): not merely a peacemaker but the embodiment of peace itself. This designation is unique in the OT and anticipates the NT identification of the Messiah as 'our peace' (Eph 2:14)."
           }
         ],
-        "ctx": "The Bethlehem oracle is one of the most important messianic prophecies in the Old Testament, cited in Matthew 2:6 as fulfilled in the birth of Jesus. The specification of Bethlehem Ephrathah (distinguishing it from Bethlehem in Zebulun, Josh 19:15) identifies the Davidic hometown — the ruler comes not from the palace in Jerusalem but from the small clan village where David was born. The phrase 'small among the clans of Judah' echoes David's own insignificance before his anointing (1 Sam 16:1-13). The ruler's origins 'from of old, from ancient times' (v. 2) reaches back beyond David to primordial time, suggesting a figure who is more than human. Verse 3 introduces a waiting period: Israel will be 'abandoned until the time when she who is in labor bears a son,' connecting to the birth imagery of 4:9-10. The ruler will 'stand and shepherd his flock in the strength of the LORD' (v. 4), combining royal and pastoral imagery. He will be 'our peace' (v. 5) even when Assyria invades, and he will deliver Israel through 'seven shepherds, even eight commanders' — a numerical saying expressing completeness of military leadership.",
-        "cross": [
-          {
-            "ref": "Matt 2:4-6",
-            "note": "The chief priests and scribes cite Micah 5:2 when Herod asks where the Messiah is to be born."
-          },
-          {
-            "ref": "1 Sam 16:1-13",
-            "note": "Samuel's anointing of David in Bethlehem, the historical event that establishes Bethlehem's messianic significance."
-          },
-          {
-            "ref": "Eph 2:14",
-            "note": "Paul identifies Christ as 'our peace,' developing Micah's designation."
-          },
-          {
-            "ref": "John 7:42",
-            "note": "The crowd debates whether the Messiah must come from Bethlehem, citing this tradition."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 2:4-6",
+              "note": "The chief priests and scribes cite Micah 5:2 when Herod asks where the Messiah is to be born."
+            },
+            {
+              "ref": "1 Sam 16:1-13",
+              "note": "Samuel's anointing of David in Bethlehem, the historical event that establishes Bethlehem's messianic significance."
+            },
+            {
+              "ref": "Eph 2:14",
+              "note": "Paul identifies Christ as 'our peace,' developing Micah's designation."
+            },
+            {
+              "ref": "John 7:42",
+              "note": "The crowd debates whether the Messiah must come from Bethlehem, citing this tradition."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -122,6 +123,9 @@
               "note": "Waltke sees the birth/abandonment/restoration sequence as a compressed salvation history: Israel suffers until the messianic ruler emerges, after which the scattered brothers return and the shepherd-king provides security. The 'seven shepherds, eight commanders' represents the delegated authority structure under the supreme ruler."
             }
           ]
+        },
+        "hist": {
+          "context": "The Bethlehem oracle is one of the most important messianic prophecies in the Old Testament, cited in Matthew 2:6 as fulfilled in the birth of Jesus. The specification of Bethlehem Ephrathah (distinguishing it from Bethlehem in Zebulun, Josh 19:15) identifies the Davidic hometown — the ruler comes not from the palace in Jerusalem but from the small clan village where David was born. The phrase 'small among the clans of Judah' echoes David's own insignificance before his anointing (1 Sam 16:1-13). The ruler's origins 'from of old, from ancient times' (v. 2) reaches back beyond David to primordial time, suggesting a figure who is more than human. Verse 3 introduces a waiting period: Israel will be 'abandoned until the time when she who is in labor bears a son,' connecting to the birth imagery of 4:9-10. The ruler will 'stand and shepherd his flock in the strength of the LORD' (v. 4), combining royal and pastoral imagery. He will be 'our peace' (v. 5) even when Assyria invades, and he will deliver Israel through 'seven shepherds, even eight commanders' — a numerical saying expressing completeness of military leadership."
         }
       }
     },
@@ -139,17 +143,18 @@
             "paragraph": "The dual simile of dew and lion captures the remnant's double role: blessing to the nations (dew from the LORD, not dependent on human agency) and judgment against enemies (lion among flocks). The dew metaphor echoes Hosea 14:5 and emphasizes that the remnant's beneficial influence comes directly from God, not from human strength."
           }
         ],
-        "ctx": "The remnant is described with two contrasting similes. As dew from the LORD among many peoples (v. 7), the remnant is a source of life and blessing, arriving silently and without human agency. As a lion among flocks (v. 8), the remnant is an irresistible force that no enemy can withstand. The dual imagery suggests that the restored Israel will be both a blessing to the nations (consistent with the Abrahamic promise, Gen 12:3) and a terror to its enemies. Verse 9 resolves the tension: the hand lifted in triumph over enemies ensures that no foe survives to threaten the peace envisioned in vv. 4-6.",
-        "cross": [
-          {
-            "ref": "Gen 12:2-3",
-            "note": "The Abrahamic promise that Israel will be both a great nation and a blessing to all peoples."
-          },
-          {
-            "ref": "Gen 49:9",
-            "note": "Jacob's blessing on Judah as a lion, which Micah extends to the entire remnant."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 12:2-3",
+              "note": "The Abrahamic promise that Israel will be both a great nation and a blessing to all peoples."
+            },
+            {
+              "ref": "Gen 49:9",
+              "note": "Jacob's blessing on Judah as a lion, which Micah extends to the entire remnant."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -198,6 +203,9 @@
               "note": "Waltke notes the theological progression: the remnant's blessing function (dew) precedes its judgment function (lion), suggesting that blessing is God's primary intention while judgment is the response to those who reject it."
             }
           ]
+        },
+        "hist": {
+          "context": "The remnant is described with two contrasting similes. As dew from the LORD among many peoples (v. 7), the remnant is a source of life and blessing, arriving silently and without human agency. As a lion among flocks (v. 8), the remnant is an irresistible force that no enemy can withstand. The dual imagery suggests that the restored Israel will be both a blessing to the nations (consistent with the Abrahamic promise, Gen 12:3) and a terror to its enemies. Verse 9 resolves the tension: the hand lifted in triumph over enemies ensures that no foe survives to threaten the peace envisioned in vv. 4-6."
         }
       }
     },
@@ -215,17 +223,18 @@
             "paragraph": "The verb karat ('to cut off') appears repeatedly in vv. 10-14, creating a litany of destruction: horses, chariots, cities, strongholds, witchcraft, idols, sacred stones, Asherah poles. The repetition of 'I will destroy' emphasizes that the purification is comprehensive and divine in origin. Everything Israel has relied on instead of YHWH will be removed."
           }
         ],
-        "ctx": "The final section of chapter 5 describes the divine purification that must accompany restoration. The list of things to be 'cut off' reveals what Israel has substituted for trust in YHWH: military technology (horses, chariots), fortifications (cities, strongholds), occult practices (witchcraft, spells), and idolatry (carved images, sacred stones, Asherah poles). Each item represents a false source of security. The purification is not punitive but restorative: by removing every false prop, God creates the conditions for genuine covenant reliance. The chapter closes with a warning to disobedient nations (v. 15), extending the scope of judgment beyond Israel to the entire world.",
-        "cross": [
-          {
-            "ref": "Deut 17:16",
-            "note": "The prohibition against accumulating horses, the military self-reliance that Micah condemns."
-          },
-          {
-            "ref": "Zech 9:10",
-            "note": "Zechariah's parallel vision: 'I will take away the chariots from Ephraim and the warhorses from Jerusalem.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 17:16",
+              "note": "The prohibition against accumulating horses, the military self-reliance that Micah condemns."
+            },
+            {
+              "ref": "Zech 9:10",
+              "note": "Zechariah's parallel vision: 'I will take away the chariots from Ephraim and the warhorses from Jerusalem.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -274,6 +283,9 @@
               "note": "Waltke argues that the purification oracle completes the messianic section (chs. 4-5) by establishing that the reign of the Bethlehem ruler requires not only external peace (vv. 4-6) but internal purification (vv. 10-14). The eschatological kingdom is built on holiness as well as justice."
             }
           ]
+        },
+        "hist": {
+          "context": "The final section of chapter 5 describes the divine purification that must accompany restoration. The list of things to be 'cut off' reveals what Israel has substituted for trust in YHWH: military technology (horses, chariots), fortifications (cities, strongholds), occult practices (witchcraft, spells), and idolatry (carved images, sacred stones, Asherah poles). Each item represents a false source of security. The purification is not punitive but restorative: by removing every false prop, God creates the conditions for genuine covenant reliance. The chapter closes with a warning to disobedient nations (v. 15), extending the scope of judgment beyond Israel to the entire world."
         }
       }
     }

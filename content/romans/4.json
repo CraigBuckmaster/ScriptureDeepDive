@@ -31,25 +31,26 @@
             "paragraph": "Paul’s key chronological argument rests on akrobystia: Abraham was credited with righteousness in Genesis 15:6, while circumcision was not commanded until Genesis 17 — a gap of at least 14 years. Righteousness preceded the covenant sign, making Abraham the father of believing Gentiles as well as Jews."
           }
         ],
-        "ctx": "Romans 4 is Paul’s scriptural case study for justification by faith. He chooses Abraham, the father of the Jewish nation, as his test case precisely because Abraham’s story in Genesis demonstrates that faith-righteousness predates circumcision and the law. In Second Temple Judaism, Abraham was typically presented as the paradigm of law-obedience (see Sirach 44:19–21; 1 Maccabees 2:52; Jubilees 23:10). Paul reads Genesis against this tradition, arguing that Abraham was justified by faith (Gen 15:6) before he was circumcised (Gen 17) and long before the law was given (Gal 3:17). David’s testimony in Psalm 32 (vv. 7–8) provides a second witness: blessedness belongs to the one whose sins are forgiven, not to the one who earns it.",
-        "cross": [
-          {
-            "ref": "Gen 15:6",
-            "note": "The foundational text: Abraham believed God, and it was credited to him as righteousness."
-          },
-          {
-            "ref": "Gen 17:9–14",
-            "note": "Circumcision is given as a sign of the covenant, not as the means of righteousness — it follows faith by at least 14 years."
-          },
-          {
-            "ref": "Gal 3:6–9",
-            "note": "Paul’s parallel argument in Galatians uses the same Abraham narrative to establish Gentile inclusion."
-          },
-          {
-            "ref": "Jas 2:21–24",
-            "note": "James cites Abraham’s offering of Isaac as evidence of faith working through deeds — a complementary perspective that addresses a different question."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 15:6",
+              "note": "The foundational text: Abraham believed God, and it was credited to him as righteousness."
+            },
+            {
+              "ref": "Gen 17:9–14",
+              "note": "Circumcision is given as a sign of the covenant, not as the means of righteousness — it follows faith by at least 14 years."
+            },
+            {
+              "ref": "Gal 3:6–9",
+              "note": "Paul’s parallel argument in Galatians uses the same Abraham narrative to establish Gentile inclusion."
+            },
+            {
+              "ref": "Jas 2:21–24",
+              "note": "James cites Abraham’s offering of Isaac as evidence of faith working through deeds — a complementary perspective that addresses a different question."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -122,6 +123,9 @@
               "note": "Schreiner reads David’s testimony as confirming that justification includes the forgiveness of sins. Imputation is not only positive (crediting righteousness) but negative (not counting sin)."
             }
           ]
+        },
+        "hist": {
+          "context": "Romans 4 is Paul’s scriptural case study for justification by faith. He chooses Abraham, the father of the Jewish nation, as his test case precisely because Abraham’s story in Genesis demonstrates that faith-righteousness predates circumcision and the law. In Second Temple Judaism, Abraham was typically presented as the paradigm of law-obedience (see Sirach 44:19–21; 1 Maccabees 2:52; Jubilees 23:10). Paul reads Genesis against this tradition, arguing that Abraham was justified by faith (Gen 15:6) before he was circumcised (Gen 17) and long before the law was given (Gal 3:17). David’s testimony in Psalm 32 (vv. 7–8) provides a second witness: blessedness belongs to the one whose sins are forgiven, not to the one who earns it."
         }
       }
     },
@@ -145,21 +149,22 @@
             "paragraph": "In v. 25 Paul says Christ ‘was delivered over’ (paredothē) for our transgressions and raised for our justification. The same verb used of God’s judicial ‘handing over’ of sinners in 1:24–28 is now applied to Christ: the one who was handed over for sin bears the judgment that was due to sinners."
           }
         ],
-        "ctx": "In 4:13–25 Paul extends the Abraham argument from justification to promise. The Abrahamic covenant was made by divine promise (Gen 12:1–3; 15:5–6; 17:1–8), not by human law-keeping. If the promise depended on the law (which came 430 years later, per Gal 3:17), it would be voided, because law produces wrath where there is transgression (v. 15). Paul then applies the faith paradigm to the present community: Christians are counted as Abraham’s children because they share his faith — faith in the God who raises the dead (v. 17), instantiated in the resurrection of Jesus (vv. 24–25).",
-        "cross": [
-          {
-            "ref": "Gen 17:5",
-            "note": "Abraham as ‘father of many nations’ — the promise Paul sees fulfilled in the Gentile mission."
-          },
-          {
-            "ref": "Gal 3:15–18",
-            "note": "Paul’s parallel argument that the law cannot annul the promise given 430 years earlier."
-          },
-          {
-            "ref": "Heb 11:17–19",
-            "note": "Abraham’s faith in God’s power to raise the dead, tested at the offering of Isaac."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 17:5",
+              "note": "Abraham as ‘father of many nations’ — the promise Paul sees fulfilled in the Gentile mission."
+            },
+            {
+              "ref": "Gal 3:15–18",
+              "note": "Paul’s parallel argument that the law cannot annul the promise given 430 years earlier."
+            },
+            {
+              "ref": "Heb 11:17–19",
+              "note": "Abraham’s faith in God’s power to raise the dead, tested at the offering of Isaac."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -232,6 +237,9 @@
               "note": "Schreiner highlights Abraham as the paradigm of faith: believing against hope, not weakened by the deadness of his body or Sarah’s womb. Faith does not ignore circumstances but trusts in a God who transcends them."
             }
           ]
+        },
+        "hist": {
+          "context": "In 4:13–25 Paul extends the Abraham argument from justification to promise. The Abrahamic covenant was made by divine promise (Gen 12:1–3; 15:5–6; 17:1–8), not by human law-keeping. If the promise depended on the law (which came 430 years later, per Gal 3:17), it would be voided, because law produces wrath where there is transgression (v. 15). Paul then applies the faith paradigm to the present community: Christians are counted as Abraham’s children because they share his faith — faith in the God who raises the dead (v. 17), instantiated in the resurrection of Jesus (vv. 24–25)."
         }
       }
     }

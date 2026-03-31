@@ -25,17 +25,18 @@
             "paragraph": "\"On my bed at night I searched (biqqashtî) for the one my heart loves\" (v.1). The verb is intensive: thorough, persistent searching. She searched in bed, then in the streets, then among the watchmen. The seeking is both literal (nighttime search) and metaphorical (the soul’s quest for the beloved). The pattern: seek → not find → seek more → find. Love requires pursuit."
           }
         ],
-        "ctx": "The Beloved searches for her Lover at night: in bed (v.1), through the streets (v.2), past the watchmen (v.3). She finds him and will not let go until she brings him to her mother’s house (v.4). The refrain returns: do not awaken love until it desires (v.5). The passage echoes psalm-language (\"I sought the LORD and he found me\") and anticipates the longer search in chapter 5.",
-        "cross": [
-          {
-            "ref": "Ps 63:1",
-            "note": "\"You, God, are my God, earnestly I seek you; I thirst for you\" — the same seeking language."
-          },
-          {
-            "ref": "Luke 15:8–10",
-            "note": "The woman searching for her lost coin — the same persistence in seeking what is loved."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 63:1",
+              "note": "\"You, God, are my God, earnestly I seek you; I thirst for you\" — the same seeking language."
+            },
+            {
+              "ref": "Luke 15:8–10",
+              "note": "The woman searching for her lost coin — the same persistence in seeking what is loved."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -113,6 +114,9 @@
               "note": "Garrett: the seeking-finding pattern will repeat in 5:2–8 with a darker outcome. Here the search succeeds; later it will involve beating and humiliation. The poem deepens."
             }
           ]
+        },
+        "hist": {
+          "context": "The Beloved searches for her Lover at night: in bed (v.1), through the streets (v.2), past the watchmen (v.3). She finds him and will not let go until she brings him to her mother’s house (v.4). The refrain returns: do not awaken love until it desires (v.5). The passage echoes psalm-language (\"I sought the LORD and he found me\") and anticipates the longer search in chapter 5."
         }
       }
     },
@@ -130,17 +134,18 @@
             "paragraph": "\"King Solomon made himself a palanquin (ʾappiryōn) from the wood of Lebanon\" (v.9). A royal sedan chair carried by bearers — the wedding procession’s centrepiece. It is made of Lebanon cedar, silver posts, gold base, purple cushions, inlaid with love by the Daughters of Jerusalem. The bridegroom arrives in state."
           }
         ],
-        "ctx": "The scene shifts to a royal wedding procession. Something approaches from the wilderness like columns of smoke, perfumed with myrrh and incense (v.6). Sixty warriors surround Solomon’s litter (v.7–8), all armed against \"terrors of the night.\" The carriage is lavishly described (vv.9–10). The chapter closes: \"Come out... and look at King Solomon wearing a crown, the crown with which his mother crowned him on the day of his wedding\" (v.11). A public celebration of love consummated.",
-        "cross": [
-          {
-            "ref": "Ps 45:8–9",
-            "note": "\"Your robes are all fragrant with myrrh and aloes and cassia\" — the royal wedding psalm."
-          },
-          {
-            "ref": "Matt 25:1–10",
-            "note": "The ten virgins waiting for the bridegroom — the same wedding-procession imagery."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 45:8–9",
+              "note": "\"Your robes are all fragrant with myrrh and aloes and cassia\" — the royal wedding psalm."
+            },
+            {
+              "ref": "Matt 25:1–10",
+              "note": "The ten virgins waiting for the bridegroom — the same wedding-procession imagery."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -226,6 +231,9 @@
               "note": "Garrett: \"inlaid with love\" — the Hebrew is difficult but the sense is clear: love is the decorative principle. The most beautiful thing about the carriage is not gold or silver but love."
             }
           ]
+        },
+        "hist": {
+          "context": "The scene shifts to a royal wedding procession. Something approaches from the wilderness like columns of smoke, perfumed with myrrh and incense (v.6). Sixty warriors surround Solomon’s litter (v.7–8), all armed against \"terrors of the night.\" The carriage is lavishly described (vv.9–10). The chapter closes: \"Come out... and look at King Solomon wearing a crown, the crown with which his mother crowned him on the day of his wedding\" (v.11). A public celebration of love consummated."
         }
       }
     }

@@ -31,17 +31,18 @@
             "paragraph": "Qadosh (holy) means set apart, distinct, consecrated. Israel is \"a holy people to the LORD your God\" — not because of their size or virtue (v.7) but because of God's election and love. Holiness is a gift before it is a demand."
           }
         ],
-        "ctx": "Chapter 7 addresses the herem applied to the seven Canaanite nations. Moses gives three rationales: (1) contamination — intermarriage will lead to idolatry; (2) election — God chose Israel not because of size or merit but out of love; (3) faithfulness — God keeps covenant with those who love him. The command is not racial genocide but a theological surgical procedure: removing the cancer of Canaanite religion before it destroys Israel's covenant identity.",
-        "cross": [
-          {
-            "ref": "1 Pet 2:9",
-            "note": "\"But you are a chosen people, a royal priesthood, a holy nation, God's special possession.\" Peter applies Deut 7:6's election language to the church — the NT Israel is a \"holy nation\" by new-covenant inclusion."
-          },
-          {
-            "ref": "2 Cor 6:14–17",
-            "note": "\"Do not be yoked together with unbelievers... 'Come out from them and be separate, says the Lord.'\" Paul applies the principle of Deut 7's separation to the church's relationship with idolatrous culture."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Pet 2:9",
+              "note": "\"But you are a chosen people, a royal priesthood, a holy nation, God's special possession.\" Peter applies Deut 7:6's election language to the church — the NT Israel is a \"holy nation\" by new-covenant inclusion."
+            },
+            {
+              "ref": "2 Cor 6:14–17",
+              "note": "\"Do not be yoked together with unbelievers... 'Come out from them and be separate, says the Lord.'\" Paul applies the principle of Deut 7's separation to the church's relationship with idolatrous culture."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 7 addresses the herem applied to the seven Canaanite nations. Moses gives three rationales: (1) contamination — intermarriage will lead to idolatry; (2) election — God chose Israel not because of size or merit but out of love; (3) faithfulness — God keeps covenant with those who love him. The command is not racial genocide but a theological surgical procedure: removing the cancer of Canaanite religion before it destroys Israel's covenant identity."
         }
       }
     },
@@ -131,13 +135,14 @@
             "paragraph": "The fear prohibition is Deuteronomy's repeated pastoral refrain. The wilderness generation was disqualified by fear at Kadesh. \"Do not be afraid\" is not a denial of the enemy's power but a reorientation: the enemy's power is real, but God's power is infinitely greater."
           }
         ],
-        "ctx": "Moses anticipates the objection: what if the nations are too numerous? The answer: remember what God did to Pharaoh and Egypt. He will drive out the nations \"little by little\" (v.22) — not all at once, because the land needs time to be inhabited and wild animals would multiply in empty territory. The gradualness is providential wisdom, not delay. The chapter closes with instructions on destroying idols — even the silver and gold of their images must not be kept.",
-        "cross": [
-          {
-            "ref": "2 Tim 1:7",
-            "note": "\"For the Spirit God gave us does not make us timid, but gives us power, love and self-discipline.\" Paul's antidote to fear echoes Deuteronomy 7's repeated \"do not be afraid\" — both are grounded in the character and power of God."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Tim 1:7",
+              "note": "\"For the Spirit God gave us does not make us timid, but gives us power, love and self-discipline.\" Paul's antidote to fear echoes Deuteronomy 7's repeated \"do not be afraid\" — both are grounded in the character and power of God."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -206,6 +211,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Moses anticipates the objection: what if the nations are too numerous? The answer: remember what God did to Pharaoh and Egypt. He will drive out the nations \"little by little\" (v.22) — not all at once, because the land needs time to be inhabited and wild animals would multiply in empty territory. The gradualness is providential wisdom, not delay. The chapter closes with instructions on destroying idols — even the silver and gold of their images must not be kept."
         }
       }
     }

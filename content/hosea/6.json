@@ -31,21 +31,22 @@
             "paragraph": "From the root hyh ('to live'). The claim that God will revive 'after two days' and raise up 'on the third day' has generated extensive christological interpretation. In context, however, it likely reflects Israel's presumptuous confidence in quick restoration: they expect God to heal them on a predictable schedule, as if divine forgiveness operated on a timetable."
           }
         ],
-        "ctx": "The penitential song (vv. 1-3) directly follows YHWH's withdrawal in 5:15 and appears to be the repentant response God was waiting for. The language is beautiful: return, healing, revival, resurrection, acknowledgment of God, the certainty of his coming like spring rain. Yet the divine response in vv. 4-6 reveals that something is fundamentally wrong with this prayer. It is too glib, too confident, too formulaic. Israel treats repentance as a technique that will automatically produce restoration, without genuine moral transformation. The 'two days / third day' formula may reflect liturgical convention: a prescribed period of penitence followed by guaranteed restoration, reducing the living God to a predictable mechanism.",
-        "cross": [
-          {
-            "ref": "Luke 24:46",
-            "note": "Jesus' resurrection 'on the third day' has been connected to this passage by early church interpreters, though the original context is about Israel's presumptuous repentance."
-          },
-          {
-            "ref": "Isa 26:19",
-            "note": "Isaiah's resurrection promise ('your dead will live, their bodies will rise') uses similar language in a more clearly eschatological context."
-          },
-          {
-            "ref": "Ps 30:5",
-            "note": "The psalmist's confidence that 'weeping may stay for the night, but rejoicing comes in the morning' reflects genuine faith rather than formulaic presumption."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 24:46",
+              "note": "Jesus' resurrection 'on the third day' has been connected to this passage by early church interpreters, though the original context is about Israel's presumptuous repentance."
+            },
+            {
+              "ref": "Isa 26:19",
+              "note": "Isaiah's resurrection promise ('your dead will live, their bodies will rise') uses similar language in a more clearly eschatological context."
+            },
+            {
+              "ref": "Ps 30:5",
+              "note": "The psalmist's confidence that 'weeping may stay for the night, but rejoicing comes in the morning' reflects genuine faith rather than formulaic presumption."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -98,6 +99,9 @@
               "note": "The penitential song is one of the most debated passages in Hosea. Some scholars read it as genuine (rejected by a too-harsh God), others as shallow (rightly rejected). Andersen and Freedman argue that the key is the word 'acknowledge' (yada) in v. 3: Israel claims to be pursuing the very knowledge it has rejected (4:1, 6). The claim rings hollow against the book's prior evidence."
             }
           ]
+        },
+        "hist": {
+          "context": "The penitential song (vv. 1-3) directly follows YHWH's withdrawal in 5:15 and appears to be the repentant response God was waiting for. The language is beautiful: return, healing, revival, resurrection, acknowledgment of God, the certainty of his coming like spring rain. Yet the divine response in vv. 4-6 reveals that something is fundamentally wrong with this prayer. It is too glib, too confident, too formulaic. Israel treats repentance as a technique that will automatically produce restoration, without genuine moral transformation. The 'two days / third day' formula may reflect liturgical convention: a prescribed period of penitence followed by guaranteed restoration, reducing the living God to a predictable mechanism."
         }
       }
     },
@@ -115,25 +119,26 @@
             "paragraph": "In v. 6, hesed appears alongside daʿat elohim as what YHWH desires instead of sacrifice. This is the most programmatic statement of Hosea's theology and one of the most important verses in the prophetic corpus. Hesed is not sentimentality but covenant faithfulness: the enduring, self-giving loyalty that sustains relationships through betrayal and restoration. Jesus quotes this verse twice (Matt 9:13; 12:7)."
           }
         ],
-        "ctx": "God's response to the penitential song is devastating. The love of Ephraim and Judah is compared to morning mist and early dew: it appears briefly and evaporates under the first heat. This is the diagnosis of superficial repentance. Verse 6 is Hosea's most famous statement and one of the theological foundations of the prophetic tradition: 'I desire mercy (hesed), not sacrifice, and acknowledgment (daʿat) of God rather than burnt offerings.' This does not abolish the sacrificial system but subordinates it to the relational realities it was meant to express. Without hesed and daʿat, sacrifice is empty ritual. The remainder of the chapter catalogues specific violations: covenant breaking at Adam, murder at Gilead, priestly ambush at Shechem, and the 'horrible thing' in Israel — Ephraim's thoroughgoing prostitution that has defiled the land.",
-        "cross": [
-          {
-            "ref": "Matt 9:13",
-            "note": "Jesus quotes Hosea 6:6 when challenged about eating with sinners: 'Go and learn what this means: I desire mercy, not sacrifice.'"
-          },
-          {
-            "ref": "Matt 12:7",
-            "note": "Jesus quotes Hosea 6:6 a second time when his disciples are accused of Sabbath violation."
-          },
-          {
-            "ref": "1 Sam 15:22",
-            "note": "Samuel's parallel declaration: 'To obey is better than sacrifice, and to heed is better than the fat of rams.'"
-          },
-          {
-            "ref": "Mic 6:6-8",
-            "note": "Micah's parallel: 'What does the LORD require? To act justly, love mercy, walk humbly with your God.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 9:13",
+              "note": "Jesus quotes Hosea 6:6 when challenged about eating with sinners: 'Go and learn what this means: I desire mercy, not sacrifice.'"
+            },
+            {
+              "ref": "Matt 12:7",
+              "note": "Jesus quotes Hosea 6:6 a second time when his disciples are accused of Sabbath violation."
+            },
+            {
+              "ref": "1 Sam 15:22",
+              "note": "Samuel's parallel declaration: 'To obey is better than sacrifice, and to heed is better than the fat of rams.'"
+            },
+            {
+              "ref": "Mic 6:6-8",
+              "note": "Micah's parallel: 'What does the LORD require? To act justly, love mercy, walk humbly with your God.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -202,6 +207,9 @@
               "note": "The divine response to Israel's penitential song is the most theologically concentrated passage in Hosea. The mist/dew simile (v. 4), the hesed/da'at declaration (v. 6), and the geographical catalogue (vv. 7-11) together constitute Hosea's answer to the question: why is Israel's repentance insufficient? The answer is that shuv ('return') requires not liturgical recitation but transformative encounter with the character of God as expressed in hesed and da'at."
             }
           ]
+        },
+        "hist": {
+          "context": "God's response to the penitential song is devastating. The love of Ephraim and Judah is compared to morning mist and early dew: it appears briefly and evaporates under the first heat. This is the diagnosis of superficial repentance. Verse 6 is Hosea's most famous statement and one of the theological foundations of the prophetic tradition: 'I desire mercy (hesed), not sacrifice, and acknowledgment (daʿat) of God rather than burnt offerings.' This does not abolish the sacrificial system but subordinates it to the relational realities it was meant to express. Without hesed and daʿat, sacrifice is empty ritual. The remainder of the chapter catalogues specific violations: covenant breaking at Adam, murder at Gilead, priestly ambush at Shechem, and the 'horrible thing' in Israel — Ephraim's thoroughgoing prostitution that has defiled the land."
         }
       }
     }

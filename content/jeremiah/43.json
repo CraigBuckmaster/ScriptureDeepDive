@@ -25,17 +25,18 @@
             "paragraph": "The people accuse Jeremiah: \"You are lying (sheqer)! The LORD our God has not sent you\" (v.2). The signature word of the book -- sheqer -- is now turned against the prophet himself. Those who lived by lies now accuse the truth-teller of lying. The irony is devastating: throughout the book, sheqer characterized false prophets, scribes, and the people; now it is hurled at the one person who never spoke it."
           }
         ],
-        "ctx": "The remnant rejects Jeremiah's counsel and accuses him and Baruch of a conspiracy to hand them over to Babylon. They force Jeremiah and Baruch to accompany them to Egypt, settling at Tahpanhes in the Nile Delta. The prophet who was commissioned as \"a prophet to the nations\" (1:5) now goes to the oldest of the nations -- not as missionary but as captive. The exodus is reversed: Israel returns to the house of bondage.",
-        "cross": [
-          {
-            "ref": "Num 14:1-4",
-            "note": "The wilderness generation wanted to return to Egypt rather than enter the promised land -- the same pattern of preferring known bondage to unknown faith."
-          },
-          {
-            "ref": "Isa 30:1-2",
-            "note": "\"Woe to those who go down to Egypt for help\" -- Isaiah's parallel warning, now fulfilled."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 14:1-4",
+              "note": "The wilderness generation wanted to return to Egypt rather than enter the promised land -- the same pattern of preferring known bondage to unknown faith."
+            },
+            {
+              "ref": "Isa 30:1-2",
+              "note": "\"Woe to those who go down to Egypt for help\" -- Isaiah's parallel warning, now fulfilled."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -84,6 +85,9 @@
               "note": "Brueggemann reads the accusation as \"the last act of interpretive violence.\" Unable to refute the message, they delegitimize the messenger. The pattern runs from Anathoth (11:21) through Pashhur (20:1) to this final dismissal."
             }
           ]
+        },
+        "hist": {
+          "context": "The remnant rejects Jeremiah's counsel and accuses him and Baruch of a conspiracy to hand them over to Babylon. They force Jeremiah and Baruch to accompany them to Egypt, settling at Tahpanhes in the Nile Delta. The prophet who was commissioned as \"a prophet to the nations\" (1:5) now goes to the oldest of the nations -- not as missionary but as captive. The exodus is reversed: Israel returns to the house of bondage."
         }
       }
     },
@@ -101,17 +105,18 @@
             "paragraph": "God commands Jeremiah to bury large stones ('abanim) in the clay pavement at the entrance to Pharaoh's palace at Tahpanhes (v.9). The sign-act declares that Nebuchadnezzar will set his throne on these very stones -- Babylon will conquer Egypt itself. The people who fled to Egypt for safety will find the same enemy waiting for them there."
           }
         ],
-        "ctx": "Jeremiah's last recorded sign-act: burying stones where Nebuchadnezzar will place his throne. The message is absolute: Egypt is no refuge. Nebuchadnezzar did invade Egypt in 568-567 BC, confirming the prophecy. The final irony of the book's geography is complete: the people fled from Babylon to Egypt, and Babylon followed them.",
-        "cross": [
-          {
-            "ref": "Ezek 29:19-20",
-            "note": "Ezekiel confirms that God gave Egypt to Nebuchadnezzar as compensation for his siege of Tyre."
-          },
-          {
-            "ref": "Jer 46:13-26",
-            "note": "The oracle against Egypt in chapter 46 provides the extended prophecy of Babylonian invasion."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 29:19-20",
+              "note": "Ezekiel confirms that God gave Egypt to Nebuchadnezzar as compensation for his siege of Tyre."
+            },
+            {
+              "ref": "Jer 46:13-26",
+              "note": "The oracle against Egypt in chapter 46 provides the extended prophecy of Babylonian invasion."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -164,6 +169,9 @@
               "note": "Brueggemann calls this \"the universalization of judgment.\" Egypt -- the original enslaver, the perpetual alternative to God -- is not exempt from the same sovereignty that judged Jerusalem."
             }
           ]
+        },
+        "hist": {
+          "context": "Jeremiah's last recorded sign-act: burying stones where Nebuchadnezzar will place his throne. The message is absolute: Egypt is no refuge. Nebuchadnezzar did invade Egypt in 568-567 BC, confirming the prophecy. The final irony of the book's geography is complete: the people fled from Babylon to Egypt, and Babylon followed them."
         }
       }
     }

@@ -31,29 +31,30 @@
             "paragraph": "The verb rapha ('to heal') describes what happens when the river reaches the Dead Sea (yam hammawet, lit. 'sea of death'). The waters are 'healed' (yeraphu), producing abundant fish and supporting lush vegetation along both banks. The trees bear fresh fruit every month, with leaves that serve for healing (terufah). However, the swamps and marshes are not healed — they remain as salt sources, demonstrating that even in the restored creation, utility and purpose govern the extent of transformation."
           }
         ],
-        "ctx": "The guide brings Ezekiel back to the temple entrance, where water flows from under the threshold toward the east and south of the altar. The river is measured at four thousand-cubit intervals, deepening supernaturally at each stage from ankle-deep to an unfordable torrent. No tributaries feed it; the temple itself is the sole source. The river flows eastward through the Arabah to the Dead Sea, healing its salt waters and producing such abundance of fish that fishermen line its shores from En Gedi to En Eglaim. Trees line both banks, bearing fruit monthly and producing leaves for healing — a passage that profoundly influenced Revelation 22:1-2. The swamps and marshes are excepted from healing, remaining as salt sources, a realistic detail within the visionary landscape. This river is not merely a water supply but a cosmic image: life flows from God's dwelling place and transforms everything it touches. The barren becomes fertile, the dead becomes living, the salt becomes fresh. It is a reversal of the curse and an anticipation of new creation.",
-        "cross": [
-          {
-            "ref": "Gen 2:10",
-            "note": "A river flowed out of Eden to water the garden, then divided into four rivers. Ezekiel's temple river deliberately echoes this Edenic geography, presenting the new temple as a return to paradise."
-          },
-          {
-            "ref": "Joel 3:18",
-            "note": "A fountain will flow from the house of the LORD and water the Valley of Acacias. Joel's eschatological spring parallels Ezekiel's temple river."
-          },
-          {
-            "ref": "Zech 14:8",
-            "note": "Living water will flow from Jerusalem, half to the eastern sea and half to the western sea. Zechariah's vision expands Ezekiel's eastward-only river to both coasts."
-          },
-          {
-            "ref": "Rev 22:1-2",
-            "note": "The river of the water of life flows from the throne of God and of the Lamb, with trees of life on both sides bearing twelve kinds of fruit monthly, with leaves for the healing of the nations. This is the most direct and extensive adaptation of Ezekiel 47 in the New Testament."
-          },
-          {
-            "ref": "Ps 46:4",
-            "note": "There is a river whose streams make glad the city of God. The psalm likely draws on the same temple-spring tradition that Ezekiel develops into a full cosmic river."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 2:10",
+              "note": "A river flowed out of Eden to water the garden, then divided into four rivers. Ezekiel's temple river deliberately echoes this Edenic geography, presenting the new temple as a return to paradise."
+            },
+            {
+              "ref": "Joel 3:18",
+              "note": "A fountain will flow from the house of the LORD and water the Valley of Acacias. Joel's eschatological spring parallels Ezekiel's temple river."
+            },
+            {
+              "ref": "Zech 14:8",
+              "note": "Living water will flow from Jerusalem, half to the eastern sea and half to the western sea. Zechariah's vision expands Ezekiel's eastward-only river to both coasts."
+            },
+            {
+              "ref": "Rev 22:1-2",
+              "note": "The river of the water of life flows from the throne of God and of the Lamb, with trees of life on both sides bearing twelve kinds of fruit monthly, with leaves for the healing of the nations. This is the most direct and extensive adaptation of Ezekiel 47 in the New Testament."
+            },
+            {
+              "ref": "Ps 46:4",
+              "note": "There is a river whose streams make glad the city of God. The psalm likely draws on the same temple-spring tradition that Ezekiel develops into a full cosmic river."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -130,6 +131,9 @@
               "note": "Zimmerli identifies the temple-river motif as belonging to the Zion-theology tradition, in which the sacred mountain is the source of cosmic fertility (cf. Ps 46:5; Isa 33:21). He notes that Ezekiel's version is the most fully developed iteration of this tradition in the Hebrew Bible. Zimmerli attributes the passage to a late redactional layer that shares eschatological concerns with Joel 4:18 and Zechariah 14:8. The progressive deepening is a literary-theological construct rather than a topographical description: it illustrates the principle that divine blessing intensifies as it extends."
             }
           ]
+        },
+        "hist": {
+          "context": "The guide brings Ezekiel back to the temple entrance, where water flows from under the threshold toward the east and south of the altar. The river is measured at four thousand-cubit intervals, deepening supernaturally at each stage from ankle-deep to an unfordable torrent. No tributaries feed it; the temple itself is the sole source. The river flows eastward through the Arabah to the Dead Sea, healing its salt waters and producing such abundance of fish that fishermen line its shores from En Gedi to En Eglaim. Trees line both banks, bearing fruit monthly and producing leaves for healing — a passage that profoundly influenced Revelation 22:1-2. The swamps and marshes are excepted from healing, remaining as salt sources, a realistic detail within the visionary landscape. This river is not merely a water supply but a cosmic image: life flows from God's dwelling place and transforms everything it touches. The barren becomes fertile, the dead becomes living, the salt becomes fresh. It is a reversal of the curse and an anticipation of new creation."
         }
       }
     },
@@ -147,25 +151,26 @@
             "paragraph": "The gevul (border) of the land follows an idealized version of the boundaries promised in Numbers 34:1-12. The northern border runs from the Great Sea (Mediterranean) through Hethlon, Lebo-Hamath, Zedad, Berothah, and Sibraim to Hazer-hatticon on the border of Hauran. The eastern border runs along the Jordan between Hauran/Damascus and Gilead down to Tamar, then to the waters of Meribah-Kadesh. The southern border extends from Tamar to the Wadi of Egypt to the Great Sea. The western boundary is the Great Sea itself. Joseph receives a double portion (two tribal allotments), preserving the traditional Josephite inheritance of Ephraim and Manasseh."
           }
         ],
-        "ctx": "YHWH specifies the boundaries of the restored land according to the twelve tribes, with Joseph receiving a double portion (thus twelve allotments for thirteen tribes, since Levi receives the sacred district instead of tribal land). The boundaries broadly correspond to the idealized borders of Numbers 34, though with some differences in the northern extent. The northern boundary extends from the Mediterranean through Hethlon to Lebo-Hamath and further to Damascus, encompassing territory that was part of David's empire at its greatest extent. The eastern boundary is the Jordan, running between Gilead and the land of Israel. The southern boundary extends from Tamar through the waters of Meribah-Kadesh to the Wadi of Egypt. The western boundary is the Mediterranean Sea. A remarkable provision concludes the unit: resident aliens (gerim) who live among the tribes and have children are to be allotted inheritance alongside native-born Israelites, within whichever tribe they reside. This inclusion of gerim in the land distribution is unprecedented in Pentateuchal legislation and represents a dramatic expansion of covenant community boundaries.",
-        "cross": [
-          {
-            "ref": "Num 34:1-12",
-            "note": "The original boundary description for the promised land. Ezekiel's borders broadly correspond but extend further north, reflecting the Davidic empire ideal."
-          },
-          {
-            "ref": "Gen 48:5-6",
-            "note": "Jacob adopts Ephraim and Manasseh as his own sons, giving Joseph a double portion. Ezekiel preserves this tradition by allotting Joseph two tribal territories."
-          },
-          {
-            "ref": "Isa 56:3-7",
-            "note": "Isaiah promises that foreigners who bind themselves to YHWH will not be excluded. Ezekiel's inclusion of resident aliens in the land distribution parallels this inclusive vision."
-          },
-          {
-            "ref": "Eph 2:19",
-            "note": "Gentiles are no longer foreigners and strangers but fellow citizens and members of God's household. The ger provision in Ezekiel 47:22-23 anticipates the Pauline theology of Gentile inclusion."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 34:1-12",
+              "note": "The original boundary description for the promised land. Ezekiel's borders broadly correspond but extend further north, reflecting the Davidic empire ideal."
+            },
+            {
+              "ref": "Gen 48:5-6",
+              "note": "Jacob adopts Ephraim and Manasseh as his own sons, giving Joseph a double portion. Ezekiel preserves this tradition by allotting Joseph two tribal territories."
+            },
+            {
+              "ref": "Isa 56:3-7",
+              "note": "Isaiah promises that foreigners who bind themselves to YHWH will not be excluded. Ezekiel's inclusion of resident aliens in the land distribution parallels this inclusive vision."
+            },
+            {
+              "ref": "Eph 2:19",
+              "note": "Gentiles are no longer foreigners and strangers but fellow citizens and members of God's household. The ger provision in Ezekiel 47:22-23 anticipates the Pauline theology of Gentile inclusion."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -226,6 +231,9 @@
               "note": "Zimmerli identifies this unit as a Grenzbestimmung (boundary determination) that draws on the priestly tradition of Numbers 34 while adapting it to eschatological geography. The extended northern border reflects Second Temple period aspirations for a restored Davidic kingdom. Zimmerli regards the ger-inclusion provision as a late redactional addition reflecting the increasingly cosmopolitan composition of the post-exilic community. Its placement at the end of the boundary description transforms the entire land-distribution from an ethnic to a religious criterion."
             }
           ]
+        },
+        "hist": {
+          "context": "YHWH specifies the boundaries of the restored land according to the twelve tribes, with Joseph receiving a double portion (thus twelve allotments for thirteen tribes, since Levi receives the sacred district instead of tribal land). The boundaries broadly correspond to the idealized borders of Numbers 34, though with some differences in the northern extent. The northern boundary extends from the Mediterranean through Hethlon to Lebo-Hamath and further to Damascus, encompassing territory that was part of David's empire at its greatest extent. The eastern boundary is the Jordan, running between Gilead and the land of Israel. The southern boundary extends from Tamar through the waters of Meribah-Kadesh to the Wadi of Egypt. The western boundary is the Mediterranean Sea. A remarkable provision concludes the unit: resident aliens (gerim) who live among the tribes and have children are to be allotted inheritance alongside native-born Israelites, within whichever tribe they reside. This inclusion of gerim in the land distribution is unprecedented in Pentateuchal legislation and represents a dramatic expansion of covenant community boundaries."
         }
       }
     }

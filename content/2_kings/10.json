@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 17,
       "panels": {
-        "ctx": "Jehu sends letters to Samaria’s leaders demanding the heads of Ahab’s seventy sons. The elders comply, sending the heads in baskets. Jehu stacks them at the gate of Jezreel — then uses them to make a theological argument: “I conspired against my master and killed him, but who killed all these? Know that not a word the LORD has spoken against the house of Ahab will fail.” He kills everyone connected to Ahab’s house, then encounters forty-two relatives of Ahaziah of Judah and kills them too. The purge is comprehensive and brutal.",
-        "cross": [
-          {
-            "ref": "1 Kgs 21:21",
-            "note": "“I will cut off from Ahab every last male.” Jehu executes this sentence literally."
-          },
-          {
-            "ref": "Hos 1:4",
-            "note": "Hosea will later condemn Jehu’s “massacre at Jezreel” — suggesting that Jehu exceeded his commission."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 21:21",
+              "note": "“I will cut off from Ahab every last male.” Jehu executes this sentence literally."
+            },
+            {
+              "ref": "Hos 1:4",
+              "note": "Hosea will later condemn Jehu’s “massacre at Jezreel” — suggesting that Jehu exceeded his commission."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -63,6 +64,9 @@
               "note": "Jehu’s “zeal for the LORD” is genuine but also self-serving. The narrator presents it without endorsement, allowing the reader to see both the legitimacy of the prophetic commission and the excess of its execution."
             }
           ]
+        },
+        "hist": {
+          "context": "Jehu sends letters to Samaria’s leaders demanding the heads of Ahab’s seventy sons. The elders comply, sending the heads in baskets. Jehu stacks them at the gate of Jezreel — then uses them to make a theological argument: “I conspired against my master and killed him, but who killed all these? Know that not a word the LORD has spoken against the house of Ahab will fail.” He kills everyone connected to Ahab’s house, then encounters forty-two relatives of Ahaziah of Judah and kills them too. The purge is comprehensive and brutal."
         }
       }
     },
@@ -72,17 +76,18 @@
       "verse_start": 18,
       "verse_end": 36,
       "panels": {
-        "ctx": "Jehu announces: “Ahab served Baal a little; Jehu will serve him much.” It’s a trap. He summons every Baal priest and worshipper to a great sacrifice, then seals the temple and sends soldiers to kill them all. The Baal temple is demolished and turned into a latrine. Yet the Deuteronomistic verdict is devastating: “Jehu was not careful to keep the law of the LORD with all his heart. He did not turn away from the sins of Jeroboam.” He destroyed Baal but kept the golden calves. Zeal for reform that stops short of full obedience is still failure.",
-        "cross": [
-          {
-            "ref": "1 Kgs 18:40",
-            "note": "Elijah killed 450 prophets of Baal at Carmel. Jehu finishes what Elijah started — but with institutional destruction rather than prophetic contest."
-          },
-          {
-            "ref": "Deut 13:12–18",
-            "note": "The law commanding total destruction of cities that worship other gods. Jehu executes this against Baal worship but ignores the golden calves."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 18:40",
+              "note": "Elijah killed 450 prophets of Baal at Carmel. Jehu finishes what Elijah started — but with institutional destruction rather than prophetic contest."
+            },
+            {
+              "ref": "Deut 13:12–18",
+              "note": "The law commanding total destruction of cities that worship other gods. Jehu executes this against Baal worship but ignores the golden calves."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -118,6 +123,9 @@
               "note": "The Jeroboam clause is the narrator’s permanent standard: every Israelite king is measured against Jeroboam’s foundational sin. No amount of Baal-destroying zeal compensates for maintaining the alternative worship system."
             }
           ]
+        },
+        "hist": {
+          "context": "Jehu announces: “Ahab served Baal a little; Jehu will serve him much.” It’s a trap. He summons every Baal priest and worshipper to a great sacrifice, then seals the temple and sends soldiers to kill them all. The Baal temple is demolished and turned into a latrine. Yet the Deuteronomistic verdict is devastating: “Jehu was not careful to keep the law of the LORD with all his heart. He did not turn away from the sins of Jeroboam.” He destroyed Baal but kept the golden calves. Zeal for reform that stops short of full obedience is still failure."
         }
       }
     }

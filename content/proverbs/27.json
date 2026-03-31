@@ -31,17 +31,18 @@
             "paragraph": "Iron (barzel) sharpens iron, and one person sharpens another (v. 17). The metallurgical image is precise: iron is sharpened not by softer materials but only by something equally hard. Genuine friendship involves friction — comfortable relationships may not produce growth. The proverb valorises constructive conflict between equals."
           }
         ],
-        "ctx": "The first half of ch.27 contains three of Proverbs' most quoted relational sayings: the faithful wounds of a friend (v.6), iron sharpening iron (v.17), and the face-reflected-in-water metaphor for heart-knowledge through relationship (v.19).",
-        "cross": [
-          {
-            "ref": "Prov 17:17",
-            "note": "A friend loves at all times — the faithful-wounds proverb (v.6) specifies what that love sometimes requires: the wound that serves genuine good."
-          },
-          {
-            "ref": "Prov 13:20",
-            "note": "Walk with the wise and become wise — the iron-sharpens-iron principle of v.17 is the mechanism behind this companionship proverb."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 17:17",
+              "note": "A friend loves at all times — the faithful-wounds proverb (v.6) specifies what that love sometimes requires: the wound that serves genuine good."
+            },
+            {
+              "ref": "Prov 13:20",
+              "note": "Walk with the wise and become wise — the iron-sharpens-iron principle of v.17 is the mechanism behind this companionship proverb."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "The NET note on neemanin (trustworthy, reliable) characterises the friend's wounds as faithful even though they hurt. The same root gives amen (reliability, faithfulness). The note also discusses ataroth (many, excessive) for the enemy's kisses — the contrast is between painful reliability and pleasant unreliability. Wisdom chooses the former."
             }
           ]
+        },
+        "hist": {
+          "context": "The first half of ch.27 contains three of Proverbs' most quoted relational sayings: the faithful wounds of a friend (v.6), iron sharpening iron (v.17), and the face-reflected-in-water metaphor for heart-knowledge through relationship (v.19)."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "Know well the condition of your ṣōʾnekā — your flocks (v. 23). The closing agricultural passage (vv. 23–27) grounds wisdom in attentive stewardship. Riches do not last forever (v. 24), but the land, carefully tended, provides perpetually. The Hebrew word for 'know' (yādaʿ) implies intimate, detailed knowledge — not casual awareness but hands-on familiarity."
           }
         ],
-        "ctx": "The second half addresses household management — the prudent wife (v.15-16), knowing your flocks and herds (vv.23-27) — and the chapter's closing observation: riches do not endure forever, but tending what you have does. The chapter is the most relationally focused in Hezekiah's collection.",
-        "cross": [
-          {
-            "ref": "Prov 31:10-31",
-            "note": "Know the condition of your flocks and herds (v.23) — the agricultural management wisdom that connects to the 'eshet ḥayil who manages the household economy."
-          },
-          {
-            "ref": "Phil 4:11",
-            "note": "I have learned, in whatever state I am, to be content — the same contentment-through-diligent-management that vv.23-27 describe."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 31:10-31",
+              "note": "Know the condition of your flocks and herds (v.23) — the agricultural management wisdom that connects to the 'eshet ḥayil who manages the household economy."
+            },
+            {
+              "ref": "Phil 4:11",
+              "note": "I have learned, in whatever state I am, to be content — the same contentment-through-diligent-management that vv.23-27 describe."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -178,6 +183,9 @@
               "note": "The NET note on 'know the condition of your flocks' grounds wisdom in concrete stewardship of what one actually has. The note traces the stewardship theme as consistent with Proverbs' practical orientation: wisdom manages what is actually in hand rather than speculating about what might be obtained."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half addresses household management — the prudent wife (v.15-16), knowing your flocks and herds (vv.23-27) — and the chapter's closing observation: riches do not endure forever, but tending what you have does. The chapter is the most relationally focused in Hezekiah's collection."
         }
       }
     }

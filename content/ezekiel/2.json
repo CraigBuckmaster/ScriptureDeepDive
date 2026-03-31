@@ -31,17 +31,18 @@
             "paragraph": "A wordplay on 'house of Israel' (bet yisra'el). God redefines the nation by its character rather than its covenant name — they are rebels, not merely wanderers. This phrase occurs 12 times in Ezekiel, a relentless rhetorical hammer."
           }
         ],
-        "ctx": "The commission follows the standard prophetic call pattern: theophany (ch. 1), commission (2:1-5), objection (implicit — Ezekiel is told not to fear), and sign (the scroll, 2:9-3:3). But Ezekiel's call is uniquely harsh: God warns from the start that the people will not listen. Success is not measured by response but by faithfulness to deliver the message.",
-        "cross": [
-          {
-            "ref": "Isa 6:9-10",
-            "note": "Isaiah's commission also included the warning that the people would hear but not understand — prophetic calling does not guarantee audience receptivity."
-          },
-          {
-            "ref": "Matt 10:14-15",
-            "note": "Jesus sends disciples with a similar warning: shake the dust off your feet if they refuse to listen."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 6:9-10",
+              "note": "Isaiah's commission also included the warning that the people would hear but not understand — prophetic calling does not guarantee audience receptivity."
+            },
+            {
+              "ref": "Matt 10:14-15",
+              "note": "Jesus sends disciples with a similar warning: shake the dust off your feet if they refuse to listen."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -102,6 +103,9 @@
               "note": "Zimmerli identifies the 'recognition formula' embedded in v.5: 'they will know that a prophet has been among them.' This is the first instance of a pattern that will recur throughout the book — God's actions are designed to produce knowledge of who YHWH is."
             }
           ]
+        },
+        "hist": {
+          "context": "The commission follows the standard prophetic call pattern: theophany (ch. 1), commission (2:1-5), objection (implicit — Ezekiel is told not to fear), and sign (the scroll, 2:9-3:3). But Ezekiel's call is uniquely harsh: God warns from the start that the people will not listen. Success is not measured by response but by faithfulness to deliver the message."
         }
       }
     },
@@ -119,17 +123,18 @@
             "paragraph": "The scroll written on both sides is unusual — scrolls normally had writing only on the inside. Both sides filled with lament, mourning, and woe indicate the overwhelming fullness of God's message of judgment. There is no room for additions; the judgment is complete and comprehensive."
           }
         ],
-        "ctx": "The scroll symbolism is profound: Ezekiel must literally internalize God's word before he can proclaim it. Unlike Jeremiah, who resisted his calling, Ezekiel is commanded to eat and then speak. The message of judgment must become part of the prophet before it can become a word to the people. This anticipates the prophetic sign-acts of chapters 4-5.",
-        "cross": [
-          {
-            "ref": "Jer 15:16",
-            "note": "Jeremiah also consumed God's words: 'When your words came, I ate them; they were my joy.' But Ezekiel's scroll is filled with woe, not joy."
-          },
-          {
-            "ref": "Rev 10:9-10",
-            "note": "John is told to eat a scroll that is sweet in his mouth but bitter in his stomach — directly echoing Ezekiel's experience."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 15:16",
+              "note": "Jeremiah also consumed God's words: 'When your words came, I ate them; they were my joy.' But Ezekiel's scroll is filled with woe, not joy."
+            },
+            {
+              "ref": "Rev 10:9-10",
+              "note": "John is told to eat a scroll that is sweet in his mouth but bitter in his stomach — directly echoing Ezekiel's experience."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -178,6 +183,9 @@
               "note": "Zimmerli notes that the scroll written on both sides (panim ve'ahor) recalls the tablets of the law written on both sides (Exod 32:15). Ezekiel's scroll is a new Sinai revelation for the exile generation."
             }
           ]
+        },
+        "hist": {
+          "context": "The scroll symbolism is profound: Ezekiel must literally internalize God's word before he can proclaim it. Unlike Jeremiah, who resisted his calling, Ezekiel is commanded to eat and then speak. The message of judgment must become part of the prophet before it can become a word to the people. This anticipates the prophetic sign-acts of chapters 4-5."
         }
       }
     }

@@ -37,18 +37,22 @@
             "paragraph": "The tenderness of v.3 makes the assault more not less troubling — Shechem acts with violent entitlement and then romanticizes it. The same phrase is used of Boaz toward Ruth (Ruth 2:13) in a context of genuine honor."
           }
         ],
-        "hist": "The violation of Dinah and the Shechem episode is one of the most disturbing chapters in Genesis. It raises questions about ancient sexual ethics, clan honour, and the line between justice and vengeance that the text does not resolve. The marriage proposal by Hamor and Shechem is presented as genuinely motivated (Shechem loves Dinah, v.3), which complicates but does not excuse the initial violation. The offer of complete social integration — intermarriage, common land ownership, commerce — would effectively end Israel's separateness as a people.",
-        "ctx": "The narrative is told with deliberate moral complexity. Dinah \"went out to see the women of the land\" — an unguarded exposure to Canaanite culture that parallels Lot's movement toward Sodom. Shechem's love is real (v.3) but his initial act is criminal. Jacob's silence (v.5: \"held his peace\") is read by the brothers as passivity; Jacob will later condemn their response (49:5–7). The text refuses to endorse any character: Dinah is a victim; Shechem is both a criminal and a sincere suitor; Jacob is passive; the brothers are righteous in their indignation but murderous in their response.",
-        "cross": [
-          {
-            "ref": "Gen 49:5-7",
-            "note": "Simeon and Levi cursed by Jacob — the Dinah vengeance judged at Jacob's deathbed."
-          },
-          {
-            "ref": "Deut 22:28-29",
-            "note": "Mosaic law on violation — reflects the same concern for the violated woman's welfare as Gen 34."
-          }
-        ],
+        "hist": {
+          "historical": "The violation of Dinah and the Shechem episode is one of the most disturbing chapters in Genesis. It raises questions about ancient sexual ethics, clan honour, and the line between justice and vengeance that the text does not resolve. The marriage proposal by Hamor and Shechem is presented as genuinely motivated (Shechem loves Dinah, v.3), which complicates but does not excuse the initial violation. The offer of complete social integration — intermarriage, common land ownership, commerce — would effectively end Israel's separateness as a people.",
+          "context": "The narrative is told with deliberate moral complexity. Dinah \"went out to see the women of the land\" — an unguarded exposure to Canaanite culture that parallels Lot's movement toward Sodom. Shechem's love is real (v.3) but his initial act is criminal. Jacob's silence (v.5: \"held his peace\") is read by the brothers as passivity; Jacob will later condemn their response (49:5–7). The text refuses to endorse any character: Dinah is a victim; Shechem is both a criminal and a sincere suitor; Jacob is passive; the brothers are righteous in their indignation but murderous in their response."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 49:5-7",
+              "note": "Simeon and Levi cursed by Jacob — the Dinah vengeance judged at Jacob's deathbed."
+            },
+            {
+              "ref": "Deut 22:28-29",
+              "note": "Mosaic law on violation — reflects the same concern for the violated woman's welfare as Gen 34."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Shechem",
@@ -147,18 +151,22 @@
             "paragraph": "The city \"felt secure\" (v.25) — the exact betrayal of the covenant of circumcision. A sign meant for the covenant people was weaponized against those who received it in good faith."
           }
         ],
-        "hist": "The deception of Hamor and Shechem by requiring circumcision as the price of intermarriage, followed by the massacre of all Shechem's males on the third day (when circumcision pain peaks), is one of the most morally troubling episodes in Genesis. Simeon and Levi act without Jacob's knowledge or authorisation. Their action is simultaneously a defence of their sister's honour (which the culture would recognise as legitimate) and a grotesque manipulation of the covenant sign for violent purposes.",
-        "ctx": "Simeon and Levi's response is disproportionate and treacherous: they weaponize the covenant sign of circumcision to incapacitate and then massacre an entire city. Their final question (v.31) is unanswered by Jacob in the text — but Jacob's dying blessing (49:5–7) does answer it: he condemns their anger as cruel and their violence as self-willed. They are right that Dinah was wronged; they are wrong in how they respond. The narrative holds both truths simultaneously without resolving the tension.",
-        "cross": [
-          {
-            "ref": "Gen 49:5–7",
-            "note": "Jacob's deathbed curse on Simeon and Levi: \"Cursed be their anger... I will scatter them in Israel.\" The consequence of this chapter echoes decades later."
-          },
-          {
-            "ref": "2 Sam 13:1–22",
-            "note": "Amnon's assault of Tamar and Absalom's revenge follows the same moral topology: sexual violation, silence from the father (David), violent revenge from a brother."
-          }
-        ],
+        "hist": {
+          "historical": "The deception of Hamor and Shechem by requiring circumcision as the price of intermarriage, followed by the massacre of all Shechem's males on the third day (when circumcision pain peaks), is one of the most morally troubling episodes in Genesis. Simeon and Levi act without Jacob's knowledge or authorisation. Their action is simultaneously a defence of their sister's honour (which the culture would recognise as legitimate) and a grotesque manipulation of the covenant sign for violent purposes.",
+          "context": "Simeon and Levi's response is disproportionate and treacherous: they weaponize the covenant sign of circumcision to incapacitate and then massacre an entire city. Their final question (v.31) is unanswered by Jacob in the text — but Jacob's dying blessing (49:5–7) does answer it: he condemns their anger as cruel and their violence as self-willed. They are right that Dinah was wronged; they are wrong in how they respond. The narrative holds both truths simultaneously without resolving the tension."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 49:5–7",
+              "note": "Jacob's deathbed curse on Simeon and Levi: \"Cursed be their anger... I will scatter them in Israel.\" The consequence of this chapter echoes decades later."
+            },
+            {
+              "ref": "2 Sam 13:1–22",
+              "note": "Amnon's assault of Tamar and Absalom's revenge follows the same moral topology: sexual violation, silence from the father (David), violent revenge from a brother."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

@@ -3,12 +3,16 @@ export { HebrewPanel } from './HebrewPanel';
 export { ContextPanel } from './ContextPanel';
 export { HistoricalContextPanel } from './HistoricalContextPanel';
 export { CrossRefPanel } from './CrossRefPanel';
+export { CompositeContextPanel } from './CompositeContextPanel';
+export { CompositeConnectionsPanel } from './CompositeConnectionsPanel';
+export { EchoesView } from './EchoesView';
 export { CommentaryPanel } from './CommentaryPanel';
 export { PlacesPanel } from './PlacesPanel';
 export { TimelinePanel } from './TimelinePanel';
 
 // Chapter-level panels
 export { LiteraryStructurePanel } from './LiteraryStructurePanel';
+export { ChiasmView } from './ChiasmView';
 export { HebrewReadingPanel } from './HebrewReadingPanel';
 export { ThemesRadarPanel } from './ThemesRadarPanel';
 export { PeoplePanel } from './PeoplePanel';

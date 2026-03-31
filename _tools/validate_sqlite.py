@@ -157,7 +157,7 @@ def main():
 
     # Meta tables — these counts drift as content is enriched. Update after changes.
     check("282 people", q1(cur, "SELECT COUNT(*) FROM people") == 282)
-    check("51 scholars", q1(cur, "SELECT COUNT(*) FROM scholars") == 51)
+    check("54 scholars", q1(cur, "SELECT COUNT(*) FROM scholars") == 54)
     check("71+ places", q1(cur, "SELECT COUNT(*) FROM places") >= 60)
     check("28+ map stories", q1(cur, "SELECT COUNT(*) FROM map_stories") >= 15)
     check("14+ word studies", q1(cur, "SELECT COUNT(*) FROM word_studies") >= 14)
@@ -355,11 +355,12 @@ def main():
     gen1_secs = q1(cur, "SELECT COUNT(*) FROM sections WHERE chapter_id='genesis_1'")
     check("Genesis 1 has 5 sections", gen1_secs == 5, f"got {gen1_secs}")
 
-    # Genesis 1 S1: 9 panel types (heb, hist, ctx, cross, mac, sarna, alter, calvin, net)
+    # Genesis 1 S1: 8 panel types (heb, hist, cross, mac, sarna, alter, calvin, net)
+    # ctx merged into hist as composite object in Phase 2
     gen1_s1_types = [r[0] for r in q(cur,
         "SELECT panel_type FROM section_panels WHERE section_id='genesis_1_s1' ORDER BY panel_type")]
-    expected = ['alter', 'calvin', 'cross', 'ctx', 'heb', 'hist', 'mac', 'net', 'sarna']
-    check("Genesis 1 S1 has 9 panel types", gen1_s1_types == expected,
+    expected = ['alter', 'calvin', 'cross', 'heb', 'hist', 'mac', 'net', 'sarna']
+    check("Genesis 1 S1 has 8 panel types", gen1_s1_types == expected,
           f"got {gen1_s1_types}")
 
     # Psalms 23: verify it exists and has sections

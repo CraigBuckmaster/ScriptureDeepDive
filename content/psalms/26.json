@@ -22,13 +22,14 @@
             "paragraph": "\"Vindicate me (shāfṭēnî), LORD, for I have led a blameless life\" (v.1). Another innocence plea (cf. Ps 7, 17). David invites examination: test me, try me (v.2). He walks in God’s faithfulness, avoids the deceitful, hates evildoers’ company (vv.3–5). He washes his hands in innocence (v.6)."
           }
         ],
-        "ctx": "David claims integrity and invites God’s examination. He has not sat with the deceitful or associated with hypocrites. He washes his hands — the ritual gesture of innocence (cf. Pilate, Matt 27:24).",
-        "cross": [
-          {
-            "ref": "Matt 27:24",
-            "note": "Pilate washes his hands — the same gesture, without the substance."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 27:24",
+              "note": "Pilate washes his hands — the same gesture, without the substance."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -119,6 +120,9 @@
               "note": "Goldingay: the handwashing ritual combined with circling the altar suggests a specific liturgical act — perhaps a processional circuit of thanksgiving. The psalm may have been performed, not merely recited."
             }
           ]
+        },
+        "hist": {
+          "context": "David claims integrity and invites God’s examination. He has not sat with the deceitful or associated with hypocrites. He washes his hands — the ritual gesture of innocence (cf. Pilate, Matt 27:24)."
         }
       }
     },
@@ -136,17 +140,18 @@
             "paragraph": "\"LORD, I love the house where you live (məʿōn), the place where your glory dwells\" (v.8). The temple is David’s joy. His feet stand on level ground; in the assemblies he praises the LORD (v.12)."
           }
         ],
-        "ctx": "David loves God’s house (v.8), asks not to be swept away with sinners (v.9), and declares: \"my feet stand on level ground; in the great congregation I will praise the LORD\" (v.12).",
-        "cross": [
-          {
-            "ref": "Ps 27:4",
-            "note": "\"One thing I ask: to dwell in the house of the LORD\" — the same temple-longing."
-          },
-          {
-            "ref": "Ps 84:10",
-            "note": "\"Better is one day in your courts than a thousand elsewhere\" — the same temple-love."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 27:4",
+              "note": "\"One thing I ask: to dwell in the house of the LORD\" — the same temple-longing."
+            },
+            {
+              "ref": "Ps 84:10",
+              "note": "\"Better is one day in your courts than a thousand elsewhere\" — the same temple-love."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -237,6 +242,9 @@
               "note": "Goldingay: the psalm moves from courtroom (v.1) to temple (v.8) to congregation (v.12). The progression reveals where the psalmist ultimately finds security: not in a verdict but in community worship."
             }
           ]
+        },
+        "hist": {
+          "context": "David loves God’s house (v.8), asks not to be swept away with sinners (v.9), and declares: \"my feet stand on level ground; in the great congregation I will praise the LORD\" (v.12)."
         }
       }
     }

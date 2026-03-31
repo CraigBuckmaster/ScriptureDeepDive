@@ -31,21 +31,22 @@
             "paragraph": "Metanoia in v. 4 denotes a comprehensive reorientation of mind and conduct toward God. Paul warns that God’s kindness (chrēstotēs) is designed to lead to repentance, not to confirm complacency. The noun implies not merely regret but a turning from sin to God."
           }
         ],
-        "ctx": "Paul’s rhetorical strategy in 2:1–16 springs the trap set in 1:18–32. The imaginary interlocutor (a standard device in Greco-Roman diatribe) who agreed with the condemnation of Gentile idolatry now discovers that he too stands under the same divine judgment. While the interlocutor is not explicitly identified as Jewish until 2:17, the logic of the argument — moral superiority based on possessing the law — points in that direction from the outset. Paul’s point is that divine judgment is according to deeds (v. 6), impartial (v. 11), and penetrates to the secrets of the heart (v. 16).",
-        "cross": [
-          {
-            "ref": "Matt 7:1–2",
-            "note": "Jesus warns against judging others while guilty of the same sins — a principle Paul applies to the self-righteous moralist."
-          },
-          {
-            "ref": "Eccl 12:14",
-            "note": "God will bring every deed into judgment, including every hidden thing — the OT precedent for Paul’s claim in v. 16."
-          },
-          {
-            "ref": "Jas 2:13",
-            "note": "Judgment without mercy to those who show no mercy — the same impartiality principle Paul articulates."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 7:1–2",
+              "note": "Jesus warns against judging others while guilty of the same sins — a principle Paul applies to the self-righteous moralist."
+            },
+            {
+              "ref": "Eccl 12:14",
+              "note": "God will bring every deed into judgment, including every hidden thing — the OT precedent for Paul’s claim in v. 16."
+            },
+            {
+              "ref": "Jas 2:13",
+              "note": "Judgment without mercy to those who show no mercy — the same impartiality principle Paul articulates."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "Schreiner takes ‘the law written on their hearts’ as a reference to natural moral knowledge, not the new covenant promise of Jeremiah 31:33. The Gentiles have enough moral awareness to be held accountable, not enough to be saved."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul’s rhetorical strategy in 2:1–16 springs the trap set in 1:18–32. The imaginary interlocutor (a standard device in Greco-Roman diatribe) who agreed with the condemnation of Gentile idolatry now discovers that he too stands under the same divine judgment. While the interlocutor is not explicitly identified as Jewish until 2:17, the logic of the argument — moral superiority based on possessing the law — points in that direction from the outset. Paul’s point is that divine judgment is according to deeds (v. 6), impartial (v. 11), and penetrates to the secrets of the heart (v. 16)."
         }
       }
     },
@@ -141,21 +145,22 @@
             "paragraph": "The contrast gramma / pneuma (letter / Spirit) in v. 29 foreshadows the fuller development in 7:6 and 2 Corinthians 3:6. Gramma denotes the external, written form of the law divorced from the Spirit’s transforming power."
           }
         ],
-        "ctx": "In 2:17–29 Paul directly addresses the Jewish interlocutor by name (‘you who call yourself a Jew,’ v. 17). The rhetorical force depends on the Jewish boast in the law and in Israel’s covenant status. Paul does not deny the validity of the law or circumcision but insists that external possession without internal transformation is worthless. The Deuteronomic concept of heart-circumcision (Deut 10:16; 30:6) provides the prophetic warrant for Paul’s argument. The passage does not negate Jewish identity but redefines it around faith and the Spirit rather than ethnicity and rite.",
-        "cross": [
-          {
-            "ref": "Deut 30:6",
-            "note": "Moses promises that God will circumcise Israel’s heart — the prophetic foundation for Paul’s internalised circumcision."
-          },
-          {
-            "ref": "Jer 4:4",
-            "note": "Jeremiah calls Judah to circumcise their hearts, warning that external ritual without internal reality provokes divine judgment."
-          },
-          {
-            "ref": "Phil 3:3",
-            "note": "Paul identifies true circumcision as those who worship by the Spirit of God, glory in Christ Jesus, and put no confidence in the flesh."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 30:6",
+              "note": "Moses promises that God will circumcise Israel’s heart — the prophetic foundation for Paul’s internalised circumcision."
+            },
+            {
+              "ref": "Jer 4:4",
+              "note": "Jeremiah calls Judah to circumcise their hearts, warning that external ritual without internal reality provokes divine judgment."
+            },
+            {
+              "ref": "Phil 3:3",
+              "note": "Paul identifies true circumcision as those who worship by the Spirit of God, glory in Christ Jesus, and put no confidence in the flesh."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -224,6 +229,9 @@
               "note": "Schreiner connects ‘circumcision of the heart by the Spirit’ to the new covenant promise. The Spirit’s work is what the law could never accomplish — a theme fully developed in chapter 8."
             }
           ]
+        },
+        "hist": {
+          "context": "In 2:17–29 Paul directly addresses the Jewish interlocutor by name (‘you who call yourself a Jew,’ v. 17). The rhetorical force depends on the Jewish boast in the law and in Israel’s covenant status. Paul does not deny the validity of the law or circumcision but insists that external possession without internal transformation is worthless. The Deuteronomic concept of heart-circumcision (Deut 10:16; 30:6) provides the prophetic warrant for Paul’s argument. The passage does not negate Jewish identity but redefines it around faith and the Spirit rather than ethnicity and rite."
         }
       }
     }

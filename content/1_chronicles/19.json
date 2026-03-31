@@ -17,13 +17,14 @@
       "verse_start": 1,
       "verse_end": 9,
       "panels": {
-        "ctx": "Nahash of Ammon dies; David sends a condolence delegation. The Ammonite princes convince Hanun that the envoys are spies. Hanun shaves them, cuts their garments at the buttocks, and sends them away humiliated. When the Ammonites realise they’ve provoked David, they hire Aramean mercenaries. The Chronicler follows 2 Samuel 10 closely — this is the chapter that leads directly to the Bathsheba affair in Samuel, which the Chronicler will skip entirely.",
-        "cross": [
-          {
-            "ref": "2 Sam 10:1–14",
-            "note": "The parallel. Chronicles follows it closely up to the point where Samuel transitions to the Bathsheba narrative."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 10:1–14",
+              "note": "The parallel. Chronicles follows it closely up to the point where Samuel transitions to the Bathsheba narrative."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -41,6 +42,9 @@
               "note": "Shaving half the beard was an extreme dishonour in ANE culture, where the beard symbolised manhood and status. Combined with the garment cutting, this was calculated maximum humiliation."
             }
           ]
+        },
+        "hist": {
+          "context": "Nahash of Ammon dies; David sends a condolence delegation. The Ammonite princes convince Hanun that the envoys are spies. Hanun shaves them, cuts their garments at the buttocks, and sends them away humiliated. When the Ammonites realise they’ve provoked David, they hire Aramean mercenaries. The Chronicler follows 2 Samuel 10 closely — this is the chapter that leads directly to the Bathsheba affair in Samuel, which the Chronicler will skip entirely."
         }
       }
     },
@@ -50,13 +54,14 @@
       "verse_start": 10,
       "verse_end": 19,
       "panels": {
-        "ctx": "Joab faces enemies on two fronts: Ammonites before the city, Arameans behind in the field. He divides the army, assigns Abishai the Ammonite front, and takes the Aramean front himself. “Be strong, and let us fight bravely for our people and the cities of our God. The LORD will do what is good in his sight.” The Arameans flee; the Ammonites retreat. Hadadezer’s allies are defeated and make peace with David. The Arameans no longer help the Ammonites.",
-        "cross": [
-          {
-            "ref": "2 Sam 10:9–19",
-            "note": "Parallel account with minimal differences. The Chronicler follows Samuel’s military narrative faithfully."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 10:9–19",
+              "note": "Parallel account with minimal differences. The Chronicler follows Samuel’s military narrative faithfully."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -74,6 +79,9 @@
               "note": "The number discrepancy (7,000 vs. 700) is likely a scribal error involving the Hebrew number system, where similar letters represent different orders of magnitude."
             }
           ]
+        },
+        "hist": {
+          "context": "Joab faces enemies on two fronts: Ammonites before the city, Arameans behind in the field. He divides the army, assigns Abishai the Ammonite front, and takes the Aramean front himself. “Be strong, and let us fight bravely for our people and the cities of our God. The LORD will do what is good in his sight.” The Arameans flee; the Ammonites retreat. Hadadezer’s allies are defeated and make peace with David. The Arameans no longer help the Ammonites."
         }
       }
     }

@@ -25,25 +25,26 @@
             "paragraph": "\"See, the LORD rides on a swift cloud (ʿāb) and is coming to Egypt. The idols of Egypt tremble before him\" (v.1). Civil war in Egypt (v.2). Egypt’s spirit drained; they consult idols and spirits (v.3). God will hand Egypt over to a cruel master (v.4). The Nile dries up; fishermen mourn; linen workers despair (vv.5–10). The officials of Zoan are fools; Pharaoh’s advisers give senseless counsel (vv.11–13). Egypt staggers like a drunkard (v.14). Nothing Egypt does will prosper (v.15)."
           }
         ],
-        "ctx": "The Egypt oracle addresses Judah’s temptation to rely on Egypt as a counterweight to Assyria (cf. chs.30–31). The \"cruel master\" (v.4) may be Assyria (Esarhaddon conquered Egypt in 671 BC) or an internal tyrant. The Nile’s drying (vv.5–7) strikes at Egypt’s heart: without the Nile, there is no Egypt. The economic collapse (fishing, linen, weaving industries destroyed, vv.8–10) follows the ecological collapse. The wisdom-tradition critique (vv.11–13) targets Egypt’s famous sages: their counsel is foolish because they have forgotten God.",
-        "cross": [
-          {
-            "ref": "Ex 14:21–22",
-            "note": "The LORD drove the sea back — God’s power over Egypt’s waters demonstrated at the exodus."
-          },
-          {
-            "ref": "Ezek 29–32",
-            "note": "Ezekiel’s extended Egypt oracles — developing the same themes with later detail."
-          },
-          {
-            "ref": "Isa 30:1–5",
-            "note": "Woe to those who go down to Egypt for help — the anti-Egypt-alliance oracle."
-          },
-          {
-            "ref": "Rev 11:8",
-            "note": "The great city figuratively called Sodom and Egypt — Egypt as a type of oppression in Revelation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ex 14:21–22",
+              "note": "The LORD drove the sea back — God’s power over Egypt’s waters demonstrated at the exodus."
+            },
+            {
+              "ref": "Ezek 29–32",
+              "note": "Ezekiel’s extended Egypt oracles — developing the same themes with later detail."
+            },
+            {
+              "ref": "Isa 30:1–5",
+              "note": "Woe to those who go down to Egypt for help — the anti-Egypt-alliance oracle."
+            },
+            {
+              "ref": "Rev 11:8",
+              "note": "The great city figuratively called Sodom and Egypt — Egypt as a type of oppression in Revelation."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -116,6 +117,9 @@
               "note": "Childs notes the cloud-riding connects to Daniel 7:13 (the son of man on clouds) and to the NT parousia (Mark 13:26). The cloud-theophany is a recurring image of divine approach."
             }
           ]
+        },
+        "hist": {
+          "context": "The Egypt oracle addresses Judah’s temptation to rely on Egypt as a counterweight to Assyria (cf. chs.30–31). The \"cruel master\" (v.4) may be Assyria (Esarhaddon conquered Egypt in 671 BC) or an internal tyrant. The Nile’s drying (vv.5–7) strikes at Egypt’s heart: without the Nile, there is no Egypt. The economic collapse (fishing, linen, weaving industries destroyed, vv.8–10) follows the ecological collapse. The wisdom-tradition critique (vv.11–13) targets Egypt’s famous sages: their counsel is foolish because they have forgotten God."
         }
       }
     },
@@ -133,25 +137,26 @@
             "paragraph": "\"The LORD Almighty will bless them, saying: ‘Blessed be Egypt my people (ʿammî), Assyria my handiwork, and Israel my inheritance’\" (v.25). Five \"in that day\" oracles: Egypt will tremble before Judah (v.16); five cities in Egypt will speak Hebrew and swear allegiance to the LORD (v.18); an altar to the LORD in the heart of Egypt (v.19); they will cry to the LORD and he will send a saviour (v.20); the LORD will reveal himself to Egypt, and Egypt will acknowledge him (v.21); Egypt and Assyria will worship together (v.23). Then the climax: Israel, Egypt, and Assyria — a threefold blessing (v.25)."
           }
         ],
-        "ctx": "Verse 25 is the most universalist statement in the OT. \"Egypt MY PEOPLE\" — the phrase previously reserved exclusively for Israel (Ex 3:7; 5:1; 7:4) — is applied to Israel’s greatest historical enemy. \"Assyria MY HANDIWORK\" — language used for Israel’s creation (Isa 60:21) applied to Israel’s current oppressor. The theological revolution is total: election-language is extended to the nations. The altar in Egypt (v.19) and the highway between Egypt and Assyria (v.23) envision a world where geography no longer divides worshippers. This is the OT’s most radical vision of universal salvation.",
-        "cross": [
-          {
-            "ref": "Ex 3:7",
-            "note": "I have seen the misery of MY PEOPLE in Egypt — the phrase now applied TO Egypt."
-          },
-          {
-            "ref": "Gal 3:28",
-            "note": "Neither Jew nor Gentile — the NT version of Isa 19:25’s demolition of national barriers."
-          },
-          {
-            "ref": "Eph 2:14–16",
-            "note": "He destroyed the barrier, the dividing wall of hostility — the NT fulfilment of the Egypt-Israel-Assyria highway."
-          },
-          {
-            "ref": "Rev 21:3",
-            "note": "God’s dwelling place is now among the people; they will be his peoples — the plural “peoples” fulfils 19:25’s universal election."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ex 3:7",
+              "note": "I have seen the misery of MY PEOPLE in Egypt — the phrase now applied TO Egypt."
+            },
+            {
+              "ref": "Gal 3:28",
+              "note": "Neither Jew nor Gentile — the NT version of Isa 19:25’s demolition of national barriers."
+            },
+            {
+              "ref": "Eph 2:14–16",
+              "note": "He destroyed the barrier, the dividing wall of hostility — the NT fulfilment of the Egypt-Israel-Assyria highway."
+            },
+            {
+              "ref": "Rev 21:3",
+              "note": "God’s dwelling place is now among the people; they will be his peoples — the plural “peoples” fulfils 19:25’s universal election."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -224,6 +229,9 @@
               "note": "Childs: this verse is the canonical answer to the question \"is God only the God of Israel?\" The answer is: God’s people are wherever God declares them to be. The boundaries of grace are wider than the boundaries of Israel."
             }
           ]
+        },
+        "hist": {
+          "context": "Verse 25 is the most universalist statement in the OT. \"Egypt MY PEOPLE\" — the phrase previously reserved exclusively for Israel (Ex 3:7; 5:1; 7:4) — is applied to Israel’s greatest historical enemy. \"Assyria MY HANDIWORK\" — language used for Israel’s creation (Isa 60:21) applied to Israel’s current oppressor. The theological revolution is total: election-language is extended to the nations. The altar in Egypt (v.19) and the highway between Egypt and Assyria (v.23) envision a world where geography no longer divides worshippers. This is the OT’s most radical vision of universal salvation."
         }
       }
     }

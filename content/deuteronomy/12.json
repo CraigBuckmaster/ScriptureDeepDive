@@ -31,17 +31,18 @@
             "paragraph": "The \"name theology\" of Deuteronomy — God puts his name at the chosen sanctuary — is a deliberate alternative to Exodus-style presence theology. In Deuteronomy, God's name (identity, authority, character) is present at the sanctuary; the divine person is in heaven."
           }
         ],
-        "ctx": "Chapter 12 inaugurates the central law section (chs.12–26) with its most distinctive command: all worship must be centralised at the one sanctuary God will choose. Scattered altars and high places — the Canaanite pattern of worship at every hill and under every green tree — must be destroyed completely. The centralisation demand is simultaneously anti-syncretistic and community-forming: the whole nation gathers in one place. The chapter also addresses a practical consequence: if the slaughter of meat is decentralised, meat may be eaten without sacrifice (vv.15–16) — but blood must still not be consumed. The final verse gives the permanent anti-syncretism principle: do not worship the LORD using the methods of Canaanite religion.",
-        "cross": [
-          {
-            "ref": "John 4:21–24",
-            "note": "\"A time is coming when you will worship the Father neither on this mountain nor in Jerusalem... God is spirit, and his worshipers must worship in the Spirit and in truth.\" Jesus radically fulfils and supersedes the Deuteronomy 12 centralisation principle: the one place of worship is no longer geographical but spiritual."
-          },
-          {
-            "ref": "1 Kgs 8:29",
-            "note": "\"May your eyes be open toward this temple night and day, this place of which you said, 'My Name shall be there.'\" Solomon's dedication prayer uses the Deuteronomic name-theology to consecrate the Jerusalem temple."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 4:21–24",
+              "note": "\"A time is coming when you will worship the Father neither on this mountain nor in Jerusalem... God is spirit, and his worshipers must worship in the Spirit and in truth.\" Jesus radically fulfils and supersedes the Deuteronomy 12 centralisation principle: the one place of worship is no longer geographical but spiritual."
+            },
+            {
+              "ref": "1 Kgs 8:29",
+              "note": "\"May your eyes be open toward this temple night and day, this place of which you said, 'My Name shall be there.'\" Solomon's dedication prayer uses the Deuteronomic name-theology to consecrate the Jerusalem temple."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 12 inaugurates the central law section (chs.12–26) with its most distinctive command: all worship must be centralised at the one sanctuary God will choose. Scattered altars and high places — the Canaanite pattern of worship at every hill and under every green tree — must be destroyed completely. The centralisation demand is simultaneously anti-syncretistic and community-forming: the whole nation gathers in one place. The chapter also addresses a practical consequence: if the slaughter of meat is decentralised, meat may be eaten without sacrifice (vv.15–16) — but blood must still not be consumed. The final verse gives the permanent anti-syncretism principle: do not worship the LORD using the methods of Canaanite religion."
         }
       }
     },
@@ -131,17 +135,18 @@
             "paragraph": "The prohibition of Canaanite worship methods applied to YHWH-worship is one of Deuteronomy 12's most radical statements. It is not only forbidden to worship other gods using their methods; it is also forbidden to worship the true God using those methods. Form matters."
           }
         ],
-        "ctx": "The final verses anticipate the temptation of religious imitation: after the Canaanites are driven out, Israel might adopt their worship practices for the LORD. This is explicitly forbidden. The Canaanites even burned their children to their gods (v.31), the ultimate expression of Canaanite religion's corruption and the most urgent warning about where religious syncretism ultimately leads.",
-        "cross": [
-          {
-            "ref": "Jer 19:5",
-            "note": "\"They have built the high places of Baal to burn their children in the fire as offerings.\" Jeremiah documents exactly the syncretistic child sacrifice Moses warned against."
-          },
-          {
-            "ref": "1 Cor 10:20-21",
-            "note": "The sacrifices of pagans are offered to demons, not to God. You cannot drink the cup of the Lord and the cup of demons too. Paul's analysis of pagan sacrifice echoes the Deuteronomic concern."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 19:5",
+              "note": "\"They have built the high places of Baal to burn their children in the fire as offerings.\" Jeremiah documents exactly the syncretistic child sacrifice Moses warned against."
+            },
+            {
+              "ref": "1 Cor 10:20-21",
+              "note": "The sacrifices of pagans are offered to demons, not to God. You cannot drink the cup of the Lord and the cup of demons too. Paul's analysis of pagan sacrifice echoes the Deuteronomic concern."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -206,6 +211,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "The final verses anticipate the temptation of religious imitation: after the Canaanites are driven out, Israel might adopt their worship practices for the LORD. This is explicitly forbidden. The Canaanites even burned their children to their gods (v.31), the ultimate expression of Canaanite religion's corruption and the most urgent warning about where religious syncretism ultimately leads."
         }
       }
     }

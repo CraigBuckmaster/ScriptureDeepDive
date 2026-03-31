@@ -25,17 +25,18 @@
             "paragraph": "The word that structures the entire chapter — appears 14 times. The land's boundaries are divinely specified with geographic precision: southern boundary (Negev and Sinai), western boundary (Mediterranean coast), northern boundary (Lebo Hamath), eastern boundary (Jordan River and Sea of Kinnereth)."
           }
         ],
-        "ctx": "Numbers 34 provides the geographical boundaries of the promised land — specification unique in its geographic precision. The boundaries define the territory between the Jordan River (east), the Mediterranean (west), Lebo Hamath (north), and the Negev and Sinai (south). The east-Jordan territory already assigned to Reuben, Gad, and Manasseh is explicitly noted as outside these boundaries (vv.14-15). The land God promises has specific, mappable boundaries that are both theological (this is what I am giving you) and practical (this is what you must take).",
-        "cross": [
-          {
-            "ref": "Gen 15:18-21",
-            "note": "\"On that day the Lord made a covenant with Abram and said, 'To your descendants I give this land, from the Wadi of Egypt to the great river, the Euphrates.'\" The Num 34 boundaries are the practical territorial specification of the Abrahamic land promise."
-          },
-          {
-            "ref": "Josh 13:1-7",
-            "note": "\"When Joshua had grown old, the Lord said to him, 'You are now very old, and there are still very large areas of land to be taken over.'\" The Num 34 boundaries were not fully possessed in Joshua's lifetime — the land promise extends beyond the conquest generation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 15:18-21",
+              "note": "\"On that day the Lord made a covenant with Abram and said, 'To your descendants I give this land, from the Wadi of Egypt to the great river, the Euphrates.'\" The Num 34 boundaries are the practical territorial specification of the Abrahamic land promise."
+            },
+            {
+              "ref": "Josh 13:1-7",
+              "note": "\"When Joshua had grown old, the Lord said to him, 'You are now very old, and there are still very large areas of land to be taken over.'\" The Num 34 boundaries were not fully possessed in Joshua's lifetime — the land promise extends beyond the conquest generation."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Ashley: The narrative context of boundaries in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Numbers 34 provides the geographical boundaries of the promised land — specification unique in its geographic precision. The boundaries define the territory between the Jordan River (east), the Mediterranean (west), Lebo Hamath (north), and the Negev and Sinai (south). The east-Jordan territory already assigned to Reuben, Gad, and Manasseh is explicitly noted as outside these boundaries (vv.14-15). The land God promises has specific, mappable boundaries that are both theological (this is what I am giving you) and practical (this is what you must take)."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "The same term as in Num 1-2 for the tribal census leaders. Now the same tribal authority structure is commissioned for land distribution. The covenant community's administrative structure — established at Sinai — functions across the generational transition."
           }
         ],
-        "ctx": "God appoints the men who will administer the land distribution: Eleazar (high priest) and Joshua (military leader) as co-administrators, plus one designated leader from each of the ten tribes receiving Canaan inheritance (Reuben, Gad, and half-Manasseh already have their east-Jordan portions). The list parallels the census leaders of Num 1 but with entirely different men — the Num 1 leaders have all died. New leaders for a new generation, tasked with distributing the gift their parents forfeited.",
-        "cross": [
-          {
-            "ref": "Josh 14:1",
-            "note": "\"These are the areas the Israelites received as an inheritance in the land of Canaan, which Eleazar the priest, Joshua son of Nun and the heads of the tribal clans of Israel allotted to them.\" The Num 34 appointment is fulfilled precisely in Joshua."
-          },
-          {
-            "ref": "Acts 1:26",
-            "note": "\"Then they cast lots, and the lot fell to Matthias; so he was added to the eleven apostles.\" The NT parallel: new leaders appointed by divine guidance for the new covenant community's governance."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 14:1",
+              "note": "\"These are the areas the Israelites received as an inheritance in the land of Canaan, which Eleazar the priest, Joshua son of Nun and the heads of the tribal clans of Israel allotted to them.\" The Num 34 appointment is fulfilled precisely in Joshua."
+            },
+            {
+              "ref": "Acts 1:26",
+              "note": "\"Then they cast lots, and the lot fell to Matthias; so he was added to the eleven apostles.\" The NT parallel: new leaders appointed by divine guidance for the new covenant community's governance."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -196,6 +201,9 @@
               "note": "Ashley: The narrative context of boundaries in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "God appoints the men who will administer the land distribution: Eleazar (high priest) and Joshua (military leader) as co-administrators, plus one designated leader from each of the ten tribes receiving Canaan inheritance (Reuben, Gad, and half-Manasseh already have their east-Jordan portions). The list parallels the census leaders of Num 1 but with entirely different men — the Num 1 leaders have all died. New leaders for a new generation, tasked with distributing the gift their parents forfeited."
         }
       }
     }

@@ -31,25 +31,26 @@
             "paragraph": "A sacrificial metaphor: Paul's life is being σπένδομαι (poured out as a libation). The drink offering (σπονδή) was the wine poured over a sacrifice as a final act of completion (cf. Phil 2:17, where Paul used the same metaphor earlier in his ministry). Here the pouring is already underway—Paul's execution is imminent."
           }
         ],
-        "ctx": "Chapter 4 is widely regarded as one of the most moving passages in the NT. Paul's farewell (vv. 6–8) stands alongside the testaments of Jacob (Gen 49), Moses (Deut 33), Joshua (Josh 24), and Jesus (John 13–17) as a great deathbed charge. The athletic/military trifold in v. 7—'I have fought the good fight, I have finished the race, I have kept the faith'—creates an inclusio with 1 Tim 6:12, where Timothy was charged to 'fight the good fight.' What Paul charged Timothy to do, Paul has done. The 'crown of righteousness' (v. 8) awaits not Paul alone but 'all who have longed for his appearing'—a democratization of eschatological reward.",
-        "cross": [
-          {
-            "ref": "1 Timothy 6:12",
-            "note": "The charge to 'fight the good fight' finds its completion here: Timothy was charged to fight; Paul has fought and finished."
-          },
-          {
-            "ref": "Philippians 2:17",
-            "note": "Paul's earlier use of the drink-offering metaphor was anticipatory; here it is realized—the pouring out has begun."
-          },
-          {
-            "ref": "1 Corinthians 9:24–27",
-            "note": "The race metaphor, used extensively in 1 Corinthians, reaches its climax here: Paul has finished the course."
-          },
-          {
-            "ref": "Acts 20:24",
-            "note": "In his farewell to the Ephesian elders, Paul declared his desire to finish the race and complete the task the Lord had given him—now accomplished."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Timothy 6:12",
+              "note": "The charge to 'fight the good fight' finds its completion here: Timothy was charged to fight; Paul has fought and finished."
+            },
+            {
+              "ref": "Philippians 2:17",
+              "note": "Paul's earlier use of the drink-offering metaphor was anticipatory; here it is realized—the pouring out has begun."
+            },
+            {
+              "ref": "1 Corinthians 9:24–27",
+              "note": "The race metaphor, used extensively in 1 Corinthians, reaches its climax here: Paul has finished the course."
+            },
+            {
+              "ref": "Acts 20:24",
+              "note": "In his farewell to the Ephesian elders, Paul declared his desire to finish the race and complete the task the Lord had given him—now accomplished."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -122,6 +123,9 @@
               "note": "Paul's farewell is constructed as a testament—the literary genre of a dying patriarch's final words (cf. Gen 49; Deut 33; Acts 20:17–35). The sacrificial imagery (σπένδομαι), athletic triumph (ἀγών, δρόμος), and eschatological hope (στέφανος) converge to present Paul's death as both completion and anticipation. The universalized promise ('all who have longed for his appearing') democratizes the apostolic hope: what awaits Paul awaits every faithful believer."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 4 is widely regarded as one of the most moving passages in the NT. Paul's farewell (vv. 6–8) stands alongside the testaments of Jacob (Gen 49), Moses (Deut 33), Joshua (Josh 24), and Jesus (John 13–17) as a great deathbed charge. The athletic/military trifold in v. 7—'I have fought the good fight, I have finished the race, I have kept the faith'—creates an inclusio with 1 Tim 6:12, where Timothy was charged to 'fight the good fight.' What Paul charged Timothy to do, Paul has done. The 'crown of righteousness' (v. 8) awaits not Paul alone but 'all who have longed for his appearing'—a democratization of eschatological reward."
         }
       }
     },
@@ -139,21 +143,22 @@
             "paragraph": "In v. 17, Paul declares that the Lord 'stood at my side' (παρέστη μοι) and gave him strength at his first defense. The verb παρίστημι (paristemi) in the legal context means to stand beside as an advocate or supporter. Despite human desertion (v. 16, 'no one came to my support'), the Lord's presence ensured that the gospel message was fully proclaimed even in the Roman courtroom."
           }
         ],
-        "ctx": "The personal notices in vv. 9–21 are the strongest evidence for Pauline authorship of 2 Timothy: the specificity of names, places, and requests is difficult to explain as literary fiction. Demas, who abandoned Paul 'because he loved this world' (v. 10), was previously commended in Col 4:14 and Phlm 24—a sad trajectory. Alexander the coppersmith (v. 14) may be the same figure mentioned in 1 Tim 1:20. Luke alone remaining with Paul (v. 11) accords with the 'we' passages in Acts. The request for the cloak and scrolls left at Troas (v. 13) provides a poignant domestic detail: even facing death, Paul wanted his books.",
-        "cross": [
-          {
-            "ref": "Colossians 4:14; Philemon 24",
-            "note": "Demas appears as a companion in these earlier letters; his desertion in 2 Tim 4:10 marks a tragic personal reversal."
-          },
-          {
-            "ref": "Acts 15:37–39",
-            "note": "Mark's earlier abandonment of Paul (during the first missionary journey) and Paul's subsequent refusal to take him on the second journey make Paul's request for Mark here (v. 11) a notable reconciliation."
-          },
-          {
-            "ref": "Psalm 22:21",
-            "note": "Paul's declaration that he was 'delivered from the lion's mouth' (v. 17) draws on the Psalmic language of divine rescue from deadly danger."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Colossians 4:14; Philemon 24",
+              "note": "Demas appears as a companion in these earlier letters; his desertion in 2 Tim 4:10 marks a tragic personal reversal."
+            },
+            {
+              "ref": "Acts 15:37–39",
+              "note": "Mark's earlier abandonment of Paul (during the first missionary journey) and Paul's subsequent refusal to take him on the second journey make Paul's request for Mark here (v. 11) a notable reconciliation."
+            },
+            {
+              "ref": "Psalm 22:21",
+              "note": "Paul's declaration that he was 'delivered from the lion's mouth' (v. 17) draws on the Psalmic language of divine rescue from deadly danger."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -230,6 +235,9 @@
               "note": "The final section balances human abandonment with divine faithfulness: 'no one stood with me... but the Lord stood at my side.' This is the letter's pastoral climax: even when every human support fails, divine presence sustains the faithful minister. The benediction ('the Lord be with your spirit; grace be with you all') extends from Timothy individually to the community corporately—the singular 'you' becomes plural, revealing that this 'personal' letter always had a congregational audience."
             }
           ]
+        },
+        "hist": {
+          "context": "The personal notices in vv. 9–21 are the strongest evidence for Pauline authorship of 2 Timothy: the specificity of names, places, and requests is difficult to explain as literary fiction. Demas, who abandoned Paul 'because he loved this world' (v. 10), was previously commended in Col 4:14 and Phlm 24—a sad trajectory. Alexander the coppersmith (v. 14) may be the same figure mentioned in 1 Tim 1:20. Luke alone remaining with Paul (v. 11) accords with the 'we' passages in Acts. The request for the cloak and scrolls left at Troas (v. 13) provides a poignant domestic detail: even facing death, Paul wanted his books."
         }
       }
     }

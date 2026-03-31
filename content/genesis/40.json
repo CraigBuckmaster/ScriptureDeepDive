@@ -31,18 +31,22 @@
             "paragraph": "Joseph's response is theologically crucial: he does not claim personal skill but attributes the capacity for dream interpretation entirely to God. He is a conduit, not a practitioner. This is the same self-understanding Joseph maintains before Pharaoh (41:16)."
           }
         ],
-        "hist": "The encounter with Pharaoh's cupbearer and baker in prison is the penultimate step in Joseph's rise to power. The two officials are imprisoned during an apparent investigation (the cause is unspecified), and Joseph is assigned to attend them. Their dreams — dreamed on the same night — create the occasion for Joseph's first display of interpretive gift in Egypt. Joseph's question to them — \"Do not interpretations belong to God?\" — is the theological claim that will define his role: he is the conduit of divine revelation, not the source of it.",
-        "ctx": "Chapter 40 is structurally a hinge. It connects Joseph's prison period to his court period, and it prepares Pharaoh's need for an interpreter (ch.41). The dreams of the cupbearer and baker mirror each other in form but diverge in outcome — the same motifs (three) yield opposite results (life/death). Joseph's pastoral attention to troubled men (v.6-7: \"he saw that they were troubled... why are your faces downcast?\") shows a quality of care that will characterize his leadership throughout.",
-        "cross": [
-          {
-            "ref": "Neh 1:11",
-            "note": "Nehemiah as cupbearer to Artaxerxes — the same office by which God positions Joseph's advocate."
-          },
-          {
-            "ref": "Ps 105:17-19",
-            "note": "He sent a man before them — Joseph sold as a slave; the word of the LORD tested him until the time his word was fulfilled."
-          }
-        ],
+        "hist": {
+          "historical": "The encounter with Pharaoh's cupbearer and baker in prison is the penultimate step in Joseph's rise to power. The two officials are imprisoned during an apparent investigation (the cause is unspecified), and Joseph is assigned to attend them. Their dreams — dreamed on the same night — create the occasion for Joseph's first display of interpretive gift in Egypt. Joseph's question to them — \"Do not interpretations belong to God?\" — is the theological claim that will define his role: he is the conduit of divine revelation, not the source of it.",
+          "context": "Chapter 40 is structurally a hinge. It connects Joseph's prison period to his court period, and it prepares Pharaoh's need for an interpreter (ch.41). The dreams of the cupbearer and baker mirror each other in form but diverge in outcome — the same motifs (three) yield opposite results (life/death). Joseph's pastoral attention to troubled men (v.6-7: \"he saw that they were troubled... why are your faces downcast?\") shows a quality of care that will characterize his leadership throughout."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Neh 1:11",
+              "note": "Nehemiah as cupbearer to Artaxerxes — the same office by which God positions Joseph's advocate."
+            },
+            {
+              "ref": "Ps 105:17-19",
+              "note": "He sent a man before them — Joseph sold as a slave; the word of the LORD tested him until the time his word was fulfilled."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -140,22 +144,26 @@
             "paragraph": "The cupbearer \"forgot\" (šākaḥ) Joseph. The word echoes through the Joseph narrative as a contrast to God's remembering (41:1: \"after two whole years\"). Human forgetting sets the stage for divine remembering."
           }
         ],
-        "hist": "The two dream interpretations are structurally mirrored: the cupbearer's three branches = three days until restoration; the baker's three baskets = three days until execution. The symmetry is precise and devastating. Joseph's request to the cupbearer — \"remember me when it goes well with you\" — is the most vulnerable moment in the Joseph narrative: the man of faith asking for human help. The chapter ends with the cupbearer forgetting — the bleakest verse in the cycle before the turn of chapter 41.",
-        "ctx": "The parallel dreams (three branches/three baskets) with opposite outcomes demonstrate that the same divine gift of interpretation serves both good and difficult news. Joseph does not soften the baker's interpretation — he delivers the death sentence clearly. This integrity in hard words is consistent with Joseph's character throughout. The final verse — \"the chief cupbearer did not remember Joseph, but forgot him\" — is the low point of the chapter and the setup for ch.41. Two more years will pass before the moment arrives. The delay is part of the plan.",
-        "cross": [
-          {
-            "ref": "Gen 41:1",
-            "note": "After two whole years, Pharaoh dreams — the cupbearer's forgetting is ended by Pharaoh's need."
-          },
-          {
-            "ref": "Ps 105:19",
-            "note": "The LORD's word tests Joseph — the years of waiting are not abandonment but refining."
-          },
-          {
-            "ref": "Gen 50:20",
-            "note": "God's purpose operates through every delay and every forgetfulness: \"you meant evil against me, but God meant it for good.\""
-          }
-        ],
+        "hist": {
+          "historical": "The two dream interpretations are structurally mirrored: the cupbearer's three branches = three days until restoration; the baker's three baskets = three days until execution. The symmetry is precise and devastating. Joseph's request to the cupbearer — \"remember me when it goes well with you\" — is the most vulnerable moment in the Joseph narrative: the man of faith asking for human help. The chapter ends with the cupbearer forgetting — the bleakest verse in the cycle before the turn of chapter 41.",
+          "context": "The parallel dreams (three branches/three baskets) with opposite outcomes demonstrate that the same divine gift of interpretation serves both good and difficult news. Joseph does not soften the baker's interpretation — he delivers the death sentence clearly. This integrity in hard words is consistent with Joseph's character throughout. The final verse — \"the chief cupbearer did not remember Joseph, but forgot him\" — is the low point of the chapter and the setup for ch.41. Two more years will pass before the moment arrives. The delay is part of the plan."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 41:1",
+              "note": "After two whole years, Pharaoh dreams — the cupbearer's forgetting is ended by Pharaoh's need."
+            },
+            {
+              "ref": "Ps 105:19",
+              "note": "The LORD's word tests Joseph — the years of waiting are not abandonment but refining."
+            },
+            {
+              "ref": "Gen 50:20",
+              "note": "God's purpose operates through every delay and every forgetfulness: \"you meant evil against me, but God meant it for good.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

@@ -60,18 +60,22 @@
             "paragraph": "Abram's appeal — \"we are close relatives (ʾanāšîm ʾaḥîm)\" (v.8) — invokes kinship obligation. The word ʾaḥ (brother) in Hebrew covers a range of relatedness from biological brother to close cousin to covenantal ally. Abram's priority of relationship over territory — offering Lot first choice of the land — models the covenant principle that the relationship matters more than the inheritance. His willingness to receive the worse portion demonstrates that he trusts the divine promise more than human negotiation."
           }
         ],
-        "hist": "None",
-        "ctx": "Abram's generosity to Lot is striking — as the patriarch and elder, he had every right to choose first. Instead he defers, trusting God to fulfill the promise regardless of which portion of land he receives. This is a model of faith in action: holding the promise loosely, letting God provide. Lot's choice will prove catastrophically poor.",
-        "cross": [
-          {
-            "ref": "Prov 3:5–6",
-            "note": "Trusting in the LORD rather than leaning on one's own sight — the principle Abram embodies and Lot violates."
-          },
-          {
-            "ref": "2 Pet 2:7–8",
-            "note": "Peter calls Lot \"righteous\" — he was not wicked, but his choice to live near Sodom shows the danger of choosing by sight rather than faith."
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "Abram's generosity to Lot is striking — as the patriarch and elder, he had every right to choose first. Instead he defers, trusting God to fulfill the promise regardless of which portion of land he receives. This is a model of faith in action: holding the promise loosely, letting God provide. Lot's choice will prove catastrophically poor."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 3:5–6",
+              "note": "Trusting in the LORD rather than leaning on one's own sight — the principle Abram embodies and Lot violates."
+            },
+            {
+              "ref": "2 Pet 2:7–8",
+              "note": "Peter calls Lot \"righteous\" — he was not wicked, but his choice to live near Sodom shows the danger of choosing by sight rather than faith."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -177,18 +181,22 @@
             "paragraph": "The separation (pārad) of Abram and Lot (v.11) is the moment of narrative divergence: Lot's story will end in the ashes of Sodom; Abram's will proceed to the stars of the covenant promise. The same root appears in the creation narrative (1:4, 6, 7, 14, 18) where God separates (yabdēl) the elements of creation. Separation in Genesis is often the condition of new beginnings: light from darkness, waters above from waters below, Abram from his homeland, and now Abram from Lot."
           }
         ],
-        "hist": "None",
-        "ctx": "Lot's choice is described in Eden-like language — the Jordan Valley \"like the garden of the LORD.\" This echoes 2:8–9, but the paradise is illusory: Sodom lurks at the end of the road. The text tells us immediately that Sodom's men were \"wicked, great sinners\" — information Lot apparently did not consider. He chose by sight, Abram by faith.",
-        "cross": [
-          {
-            "ref": "Gen 19:24–28",
-            "note": "Lot's choice of the well-watered Jordan plain — compared to 'the garden of the LORD' (v. 10) — proves catastrophic when Sodom is destroyed. The lush landscape becomes a byword for divine judgment."
-          },
-          {
-            "ref": "Gen 12:7",
-            "note": "God's promise of the land (12:7) is now practically enacted: Abram lets Lot choose first, trusting that God's promise secures his inheritance regardless of Lot's selection."
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "Lot's choice is described in Eden-like language — the Jordan Valley \"like the garden of the LORD.\" This echoes 2:8–9, but the paradise is illusory: Sodom lurks at the end of the road. The text tells us immediately that Sodom's men were \"wicked, great sinners\" — information Lot apparently did not consider. He chose by sight, Abram by faith."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 19:24–28",
+              "note": "Lot's choice of the well-watered Jordan plain — compared to 'the garden of the LORD' (v. 10) — proves catastrophic when Sodom is destroyed. The lush landscape becomes a byword for divine judgment."
+            },
+            {
+              "ref": "Gen 12:7",
+              "note": "God's promise of the land (12:7) is now practically enacted: Abram lets Lot choose first, trusting that God's promise secures his inheritance regardless of Lot's selection."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -289,22 +297,26 @@
             "paragraph": "\"I will make your offspring like the dust of the earth\" (v.16) — the ʿāpar (dust) image is drawn from the creation of Adam (2:7: \"formed from the dust of the ground\"). The promise of innumerable descendants is thus grounded in the creation metaphor of humanity's materiality — as uncountable as the particles of the earth itself. The same promise will be elaborated with the stars of heaven (15:5) and the sand of the seashore (22:17), each image emphasising a different dimension of the covenant's scope."
           }
         ],
-        "hist": "None",
-        "ctx": "None",
-        "cross": [
-          {
-            "ref": "Gen 15:18",
-            "note": "The land promise is formalized in covenant: \"To your offspring I give this land, from the river of Egypt to the great river, the river Euphrates.\""
-          },
-          {
-            "ref": "Heb 11:9",
-            "note": "Abraham \"lived in the land of promise, as in a foreign land, living in tents\" — the promise was real but not yet possessed, requiring faith."
-          },
-          {
-            "ref": "Gal 3:16",
-            "note": "Paul identifies the \"offspring\" as singular — Christ — connecting this land promise to its ultimate fulfillment in the new creation."
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "None"
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 15:18",
+              "note": "The land promise is formalized in covenant: \"To your offspring I give this land, from the river of Egypt to the great river, the river Euphrates.\""
+            },
+            {
+              "ref": "Heb 11:9",
+              "note": "Abraham \"lived in the land of promise, as in a foreign land, living in tents\" — the promise was real but not yet possessed, requiring faith."
+            },
+            {
+              "ref": "Gal 3:16",
+              "note": "Paul identifies the \"offspring\" as singular — Christ — connecting this land promise to its ultimate fulfillment in the new creation."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

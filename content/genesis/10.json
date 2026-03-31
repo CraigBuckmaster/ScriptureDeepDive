@@ -62,22 +62,26 @@
             "paragraph": "The fourfold categorisation of each nation's listing — by clans, languages, territories, and nations (v.5, 20, 31) — reflects a comprehensive ancient Near Eastern taxonomy of what constituted a distinct people. Territory (ʾereṣ) is particularly significant: the Table of Nations implicitly maps the world as a mosaic of divinely-ordered territorial grants, anticipating Paul's assertion in Acts 17:26 that God \"marked out their appointed times in history and the boundaries of their lands.\""
           }
         ],
-        "hist": "The Table of Nations is unique in ancient literature — no other ANE text attempts a systematic ethnographic catalogue of the known world's peoples traced to a common ancestor. The seventy nations enumerated (counted in the MT) become a significant biblical number: the seventy elders of Israel (Exod 24:1), the seventy nations addressed in the seventy bulls of Sukkot (Num 29:12-38), and the seventy disciples sent out by Jesus (Luke 10:1).",
-        "ctx": "Chapter 10 is placed before the Babel narrative (chapter 11) — a reversal of chronological order. The scattering of the nations (which happened at Babel, 11:1-9) is described in genealogical form here before the narrative of how it happened. This telescoping serves a theological purpose: the diversity of nations is presented as the fulfilment of God's mandate to fill the earth (9:1) before the story of how that filling was forced by judgment.",
-        "cross": [
-          {
-            "ref": "Deut 32:8",
-            "note": "When the Most High gave the nations their inheritance, when he divided all mankind, he set up boundaries — the table of nations as the background for divine apportionment of the earth."
-          },
-          {
-            "ref": "Acts 17:26",
-            "note": "From one man he made all the nations — Paul echoes Gen 10 in his Areopagus speech."
-          },
-          {
-            "ref": "Rev 7:9",
-            "note": "A great multitude from every nation, tribe, people and language — the nations of Gen 10 reconstituted in the new creation."
-          }
-        ],
+        "hist": {
+          "historical": "The Table of Nations is unique in ancient literature — no other ANE text attempts a systematic ethnographic catalogue of the known world's peoples traced to a common ancestor. The seventy nations enumerated (counted in the MT) become a significant biblical number: the seventy elders of Israel (Exod 24:1), the seventy nations addressed in the seventy bulls of Sukkot (Num 29:12-38), and the seventy disciples sent out by Jesus (Luke 10:1).",
+          "context": "Chapter 10 is placed before the Babel narrative (chapter 11) — a reversal of chronological order. The scattering of the nations (which happened at Babel, 11:1-9) is described in genealogical form here before the narrative of how it happened. This telescoping serves a theological purpose: the diversity of nations is presented as the fulfilment of God's mandate to fill the earth (9:1) before the story of how that filling was forced by judgment."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 32:8",
+              "note": "When the Most High gave the nations their inheritance, when he divided all mankind, he set up boundaries — the table of nations as the background for divine apportionment of the earth."
+            },
+            {
+              "ref": "Acts 17:26",
+              "note": "From one man he made all the nations — Paul echoes Gen 10 in his Areopagus speech."
+            },
+            {
+              "ref": "Rev 7:9",
+              "note": "A great multitude from every nation, tribe, people and language — the nations of Gen 10 reconstituted in the new creation."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -188,22 +192,26 @@
             "paragraph": "The list of cities Nimrod built — Babel, Erech, Akkad, Calneh in Shinar, then Nineveh, Rehoboth Ir, Calah (vv.10-12) — traces the arc of the great ancient empires: Babylonian and Assyrian. The same verb bānāh will be used negatively in 11:4 (the Babel builders: \"let us build a city\") and positively in the patriarchal altar-building (12:7-8). The Table of Nations shows humanity spreading, building, and organising — in both creative and defiant ways — filling the earth as the creation mandate required but also generating the power-structures that will need to be redeemed."
           }
         ],
-        "hist": "Nimrod is one of the most debated figures in biblical history. His cities — Babel, Erech (Uruk), Akkad, Calah, Nineveh — are the great cities of Mesopotamian civilisation. He is associated with both Babylon and Assyria — the two great empires that will dominate Israel's later history. Whether Nimrod is a historical figure or an eponymous representative of Mesopotamian civilisation is uncertain; what is clear is that his cities become the centres of everything that will oppose God's purposes.",
-        "ctx": "The Hamite genealogy includes both Canaan (the cursed line, 9:25) and Nimrod (the builder of empires). Together they represent the two threats to Israel: Canaanite religious corruption and Mesopotamian imperial power. The inclusion of Nimrod in the Hamite genealogy — specifically in the line of Cush, not of Canaan — shows that Ham's legacy extends beyond the Canaanite curse to encompass the entire world of ANE imperial power.",
-        "cross": [
-          {
-            "ref": "Mic 5:6",
-            "note": "The land of Nimrod — Micah uses Nimrod as a synonym for Assyria, showing the tradition of his association with empire."
-          },
-          {
-            "ref": "Gen 11:1-9",
-            "note": "The tower of Babel in the land of Shinar — Nimrod's territory, built in the city Nimrod founded."
-          },
-          {
-            "ref": "Rev 17-18",
-            "note": "Babylon the Great — the eschatological Babylon recalls the original Babylon of Nimrod, the first imperial city."
-          }
-        ],
+        "hist": {
+          "historical": "Nimrod is one of the most debated figures in biblical history. His cities — Babel, Erech (Uruk), Akkad, Calah, Nineveh — are the great cities of Mesopotamian civilisation. He is associated with both Babylon and Assyria — the two great empires that will dominate Israel's later history. Whether Nimrod is a historical figure or an eponymous representative of Mesopotamian civilisation is uncertain; what is clear is that his cities become the centres of everything that will oppose God's purposes.",
+          "context": "The Hamite genealogy includes both Canaan (the cursed line, 9:25) and Nimrod (the builder of empires). Together they represent the two threats to Israel: Canaanite religious corruption and Mesopotamian imperial power. The inclusion of Nimrod in the Hamite genealogy — specifically in the line of Cush, not of Canaan — shows that Ham's legacy extends beyond the Canaanite curse to encompass the entire world of ANE imperial power."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mic 5:6",
+              "note": "The land of Nimrod — Micah uses Nimrod as a synonym for Assyria, showing the tradition of his association with empire."
+            },
+            {
+              "ref": "Gen 11:1-9",
+              "note": "The tower of Babel in the land of Shinar — Nimrod's territory, built in the city Nimrod founded."
+            },
+            {
+              "ref": "Rev 17-18",
+              "note": "Babylon the Great — the eschatological Babylon recalls the original Babylon of Nimrod, the first imperial city."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -304,26 +312,30 @@
             "paragraph": "The closing summary of vv.31-32 — \"These are the sons of Shem... by their clans and languages, in their territories and nations\" — uses both mišpāḥāh (clan, family unit) and gôy (nation, people-group). The same gôy will appear in God's promise to Abraham: \"I will make you into a great nation (gôy gādôl)\" (12:2). Every gôy in the Table of Nations will ultimately fall under the scope of the blessing promised to Abraham's gôy — \"all peoples on earth will be blessed through you\" (12:3)."
           }
         ],
-        "hist": "The Shemite genealogy is the most significant in the table of nations because it leads directly to Abraham. The line Shem → Arphaxad → Shelah → Eber → Peleg → Reu → Serug → Nahor → Terah → Abram (11:10-26) is the covenant line — the thread of promise running through the table of nations to the patriarchal history. The table of nations thus serves as the preface to Abraham: all the nations exist so that through one Shemite, all nations will be blessed.",
-        "ctx": "The table of nations ends as it began: with a summary of the seventy (or seventy-two) nations spread across the earth. The diversity of humanity — all descended from the three sons of Noah, all descended from Adam — is the canvas on which the subsequent story of salvation is painted. God chose one people (Israel, from Shem's line) to be the vehicle of blessing for all peoples. The table of nations is the context that makes the calling of Abraham theologically meaningful.",
-        "cross": [
-          {
-            "ref": "Acts 17:26",
-            "note": "“From one man he made all the nations, that they should inhabit the whole earth” — Paul’s Areopagus sermon draws directly on the theology of Genesis 10."
-          },
-          {
-            "ref": "Gen 12:3",
-            "note": "“All peoples on earth will be blessed through you” — Abraham’s call is the answer to the 70 nations of chapter 10; the particular answers the universal."
-          },
-          {
-            "ref": "Rev 7:9",
-            "note": "“A great multitude that no one could count, from every nation, tribe, people and language” — the 70 nations of Genesis 10 gathered before the throne in the new creation."
-          },
-          {
-            "ref": "Luke 10:1",
-            "note": "Jesus sends out 70 (or 72) disciples — a mission to the 70 nations of the Table of Nations, inaugurating the universal blessing of Abraham."
-          }
-        ],
+        "hist": {
+          "historical": "The Shemite genealogy is the most significant in the table of nations because it leads directly to Abraham. The line Shem → Arphaxad → Shelah → Eber → Peleg → Reu → Serug → Nahor → Terah → Abram (11:10-26) is the covenant line — the thread of promise running through the table of nations to the patriarchal history. The table of nations thus serves as the preface to Abraham: all the nations exist so that through one Shemite, all nations will be blessed.",
+          "context": "The table of nations ends as it began: with a summary of the seventy (or seventy-two) nations spread across the earth. The diversity of humanity — all descended from the three sons of Noah, all descended from Adam — is the canvas on which the subsequent story of salvation is painted. God chose one people (Israel, from Shem's line) to be the vehicle of blessing for all peoples. The table of nations is the context that makes the calling of Abraham theologically meaningful."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 17:26",
+              "note": "“From one man he made all the nations, that they should inhabit the whole earth” — Paul’s Areopagus sermon draws directly on the theology of Genesis 10."
+            },
+            {
+              "ref": "Gen 12:3",
+              "note": "“All peoples on earth will be blessed through you” — Abraham’s call is the answer to the 70 nations of chapter 10; the particular answers the universal."
+            },
+            {
+              "ref": "Rev 7:9",
+              "note": "“A great multitude that no one could count, from every nation, tribe, people and language” — the 70 nations of Genesis 10 gathered before the throne in the new creation."
+            },
+            {
+              "ref": "Luke 10:1",
+              "note": "Jesus sends out 70 (or 72) disciples — a mission to the 70 nations of the Table of Nations, inaugurating the universal blessing of Abraham."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

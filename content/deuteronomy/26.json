@@ -31,17 +31,18 @@
             "paragraph": "The \"now\" of the firstfruits presentation is the culmination of the entire covenantal narrative -- the Exodus wandering, the wilderness years, the gift of land -- all crystallised in the moment of placing the first basket of produce before God. The \"behold\" (hinneh) draws attention to the moment as significant."
           }
         ],
-        "ctx": "Chapter 26 closes the central law section (chs.12-26) with a liturgy: the firstfruits confession (vv.1-11), the third-year tithe declaration (vv.12-15), and a bilateral covenant affirmation (vv.16-19). The firstfruits liturgy is one of the Bible's most beautiful covenant texts -- a portable salvation history in six verses, from Abraham's wandering through Egyptian slavery through Exodus to land possession. The tithe declaration is a covenant oath: I have done what you commanded; now bless me.",
-        "cross": [
-          {
-            "ref": "Acts 7:9-15",
-            "note": "Stephen's speech in Acts 7 recapitulates the same salvation history as Deuteronomy 26:5-9 -- from the patriarchs through Egypt through the Exodus. Both texts are covenant recitation: the story of what God did is the basis of present covenant loyalty."
-          },
-          {
-            "ref": "Heb 11:13-16",
-            "note": "\"All these people were still living by faith when they died... and they admitted that they were foreigners and strangers on earth.\" The Hebrews community is described in language that echoes the \"wandering Aramean\" of Deuteronomy 26:5."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 7:9-15",
+              "note": "Stephen's speech in Acts 7 recapitulates the same salvation history as Deuteronomy 26:5-9 -- from the patriarchs through Egypt through the Exodus. Both texts are covenant recitation: the story of what God did is the basis of present covenant loyalty."
+            },
+            {
+              "ref": "Heb 11:13-16",
+              "note": "\"All these people were still living by faith when they died... and they admitted that they were foreigners and strangers on earth.\" The Hebrews community is described in language that echoes the \"wandering Aramean\" of Deuteronomy 26:5."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 26 closes the central law section (chs.12-26) with a liturgy: the firstfruits confession (vv.1-11), the third-year tithe declaration (vv.12-15), and a bilateral covenant affirmation (vv.16-19). The firstfruits liturgy is one of the Bible's most beautiful covenant texts -- a portable salvation history in six verses, from Abraham's wandering through Egyptian slavery through Exodus to land possession. The tithe declaration is a covenant oath: I have done what you commanded; now bless me."
         }
       }
     },
@@ -127,17 +131,18 @@
             "paragraph": "Segulah is a personal treasure, kept close and valued beyond its monetary worth. God declares Israel his segulah -- not merely his possession but his treasured possession. The word appears in ancient Near Eastern texts for the private treasury of a king, distinct from state wealth. Israel is God's personal treasure."
           }
         ],
-        "ctx": "The covenant bilateral declaration is the climax of Deuteronomy's central law section. Israel declares: \"The LORD is our God; we will walk in obedience to him.\" The LORD declares: \"You are my treasured possession... a holy people.\" Both declarations are in the declarative, not the conditional: not \"if you obey\" but \"I have declared.\" The covenant relationship is established by mutual acknowledgment -- gracious declaration calls forth responsive declaration.",
-        "cross": [
-          {
-            "ref": "1 Pet 2:9",
-            "note": "\"But you are a chosen people, a royal priesthood, a holy nation, God's special possession.\" Peter applies Deuteronomy 26:18-19's \"treasured possession\" language to the NT church."
-          },
-          {
-            "ref": "Rev 21:3",
-            "note": "\"Look! God's dwelling place is now among the people, and he will dwell with them.\" The eschatological covenant formula echoes the bilateral declaration of Deuteronomy 26 -- God with his people, his people with God."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Pet 2:9",
+              "note": "\"But you are a chosen people, a royal priesthood, a holy nation, God's special possession.\" Peter applies Deuteronomy 26:18-19's \"treasured possession\" language to the NT church."
+            },
+            {
+              "ref": "Rev 21:3",
+              "note": "\"Look! God's dwelling place is now among the people, and he will dwell with them.\" The eschatological covenant formula echoes the bilateral declaration of Deuteronomy 26 -- God with his people, his people with God."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -202,6 +207,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "The covenant bilateral declaration is the climax of Deuteronomy's central law section. Israel declares: \"The LORD is our God; we will walk in obedience to him.\" The LORD declares: \"You are my treasured possession... a holy people.\" Both declarations are in the declarative, not the conditional: not \"if you obey\" but \"I have declared.\" The covenant relationship is established by mutual acknowledgment -- gracious declaration calls forth responsive declaration."
         }
       }
     }

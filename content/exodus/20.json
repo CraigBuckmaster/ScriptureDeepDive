@@ -47,22 +47,26 @@
             "paragraph": "V.9: \"Six days you shall labour and do all your work (mĕlaʾkāh).\" The Sabbath command encompasses both work and rest: six days of full engagement, the seventh of complete release. The Hebrew mĕlaʾkāh (work/craft) is the same word used for God's creative work in Gen 2:2-3. Human labor participates in the divine pattern. Sabbath is not reward for sufficient work but the seventh-day structure of creation itself, into which human beings are invited."
           }
         ],
-        "hist": "The Ten Commandments (Decalogue) have structural parallels with ancient Near Eastern law and treaty forms. The self-identification formula ('I am the LORD your God who brought you out') matches the historical preamble of Hittite treaties. The prohibition of 'other gods' is unique — Mesopotamian and Egyptian religion assumed multiple deities. The image prohibition (no carved or cast representations) radically distinguished Israel from every surrounding culture, where cult images were considered essential for divine presence. Sabbath observance is unparalleled in any other ancient Near Eastern culture.",
-        "ctx": "The Decalogue's preamble (\"I am the LORD your God who brought you out of Egypt\") is the key to understanding the entire law. The commandments are not a mechanism for earning relationship with God — they are the description of life for those already in relationship. Every commandment assumes the Exodus has already happened. You are free; here is how free people live before God and each other.",
-        "cross": [
-          {
-            "ref": "Deut 5:6–21",
-            "note": "The Decalogue repeated in Moses' farewell sermon — with slight variations, particularly the Sabbath rationale (Exodus: creation; Deuteronomy: redemption from Egypt)."
-          },
-          {
-            "ref": "Matt 22:37–40",
-            "note": "Jesus' summary: love God with all your heart, soul, mind (commandments 1–4) and love your neighbour as yourself (5–10)."
-          },
-          {
-            "ref": "Rom 3:20",
-            "note": "The law reveals sin: \"through the law comes knowledge of sin.\" The Decalogue does not save; it diagnoses."
-          }
-        ],
+        "hist": {
+          "historical": "The Ten Commandments (Decalogue) have structural parallels with ancient Near Eastern law and treaty forms. The self-identification formula ('I am the LORD your God who brought you out') matches the historical preamble of Hittite treaties. The prohibition of 'other gods' is unique — Mesopotamian and Egyptian religion assumed multiple deities. The image prohibition (no carved or cast representations) radically distinguished Israel from every surrounding culture, where cult images were considered essential for divine presence. Sabbath observance is unparalleled in any other ancient Near Eastern culture.",
+          "context": "The Decalogue's preamble (\"I am the LORD your God who brought you out of Egypt\") is the key to understanding the entire law. The commandments are not a mechanism for earning relationship with God — they are the description of life for those already in relationship. Every commandment assumes the Exodus has already happened. You are free; here is how free people live before God and each other."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 5:6–21",
+              "note": "The Decalogue repeated in Moses' farewell sermon — with slight variations, particularly the Sabbath rationale (Exodus: creation; Deuteronomy: redemption from Egypt)."
+            },
+            {
+              "ref": "Matt 22:37–40",
+              "note": "Jesus' summary: love God with all your heart, soul, mind (commandments 1–4) and love your neighbour as yourself (5–10)."
+            },
+            {
+              "ref": "Rom 3:20",
+              "note": "The law reveals sin: \"through the law comes knowledge of sin.\" The Decalogue does not save; it diagnoses."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -150,22 +154,26 @@
             "paragraph": "V.8: \"Remember (zākor) the Sabbath day and keep it holy.\" The verb zākor (to remember) in Deuteronomy's version becomes shāmor (to observe/guard). Both verbs address the same reality: Sabbath is not self-maintaining. It requires active remembering (cognitive engagement with God's purposes) and active guarding (protection from the intrusion of ordinary life). The Sabbath was made for humanity (Mark 2:27) — a gift that resists being unwrapped without intention."
           }
         ],
-        "hist": "The 'second table' commandments governing human relations have parallels in Egyptian wisdom literature (the 'Negative Confessions' in the Book of the Dead list similar prohibitions) and Mesopotamian law codes. The honour-of-parents command carries a land promise — unique among the commandments and connecting social ethics to covenant theology. The people's fear response (v. 18–19) and request for mediated revelation establishes the prophetic-mediator pattern that defines Moses' unique role.",
-        "ctx": "The fifth commandment (\"honour your father and your mother\") is the bridge between the two tables — it is the first social commandment, concerning the most fundamental social institution (the family). Paul identifies it as \"the first commandment with a promise\" (Eph 6:2). The commandments 6–10 describe the minimum conditions for community life: life protected, marriage protected, property protected, reputation protected, and the heart guarded against desire that destroys.",
-        "cross": [
-          {
-            "ref": "Matt 5:21–48",
-            "note": "The Sermon on the Mount extends the Decalogue to the heart — anger is murder; lust is adultery; covetousness is idolatry."
-          },
-          {
-            "ref": "Rom 13:8–10",
-            "note": "\"The commandments... are summed up in this word: You shall love your neighbour as yourself.\" Paul shows the second table as the shape of neighbourly love."
-          },
-          {
-            "ref": "James 2:10–11",
-            "note": "Violating one commandment makes one guilty of all — the unity of the Decalogue as a single covenant obligation."
-          }
-        ],
+        "hist": {
+          "historical": "The 'second table' commandments governing human relations have parallels in Egyptian wisdom literature (the 'Negative Confessions' in the Book of the Dead list similar prohibitions) and Mesopotamian law codes. The honour-of-parents command carries a land promise — unique among the commandments and connecting social ethics to covenant theology. The people's fear response (v. 18–19) and request for mediated revelation establishes the prophetic-mediator pattern that defines Moses' unique role.",
+          "context": "The fifth commandment (\"honour your father and your mother\") is the bridge between the two tables — it is the first social commandment, concerning the most fundamental social institution (the family). Paul identifies it as \"the first commandment with a promise\" (Eph 6:2). The commandments 6–10 describe the minimum conditions for community life: life protected, marriage protected, property protected, reputation protected, and the heart guarded against desire that destroys."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 5:21–48",
+              "note": "The Sermon on the Mount extends the Decalogue to the heart — anger is murder; lust is adultery; covetousness is idolatry."
+            },
+            {
+              "ref": "Rom 13:8–10",
+              "note": "\"The commandments... are summed up in this word: You shall love your neighbour as yourself.\" Paul shows the second table as the shape of neighbourly love."
+            },
+            {
+              "ref": "James 2:10–11",
+              "note": "Violating one commandment makes one guilty of all — the unity of the Decalogue as a single covenant obligation."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -253,22 +261,26 @@
             "paragraph": "V.5: \"I, the LORD your God, am a jealous God (ʾēl qannāʾ).\" The word qinnāʾ (jealousy/zeal) is used exclusively in positive contexts for God in the OT — never in the petty human sense. It denotes the fierce, exclusive love of a covenant partner who will not share his beloved with rivals. In Num 25:11 Phinehas's \"zeal\" (qinnāʾ) for God mirrors this divine attribute. Paul uses the same dynamic in 2 Cor 11:2: \"I am jealous for you with a godly jealousy.\""
           }
         ],
-        "hist": "The altar laws (vv. 22–26) are among the oldest cultic regulations in the Pentateuch. The prohibition of hewn-stone altars and steps reflects a polemic against Canaanite high-place worship, where elaborately constructed altars and elevated platforms were standard. Uncut stone altars are attested archaeologically at early Israelite sites (the Mount Ebal altar, dated c. 1200 BC, is constructed of uncut fieldstones). The prohibition of steps to prevent exposure of nakedness contrasts with Egyptian priestly practices involving ritual nudity in certain ceremonies.",
-        "ctx": "The fifth commandment (\"honour your father and your mother\") is the bridge between the two tables — it is the first social commandment, concerning the most fundamental social institution (the family). Paul identifies it as \"the first commandment with a promise\" (Eph 6:2). The commandments 6–10 describe the minimum conditions for community life: life protected, marriage protected, property protected, reputation protected, and the heart guarded against desire that destroys.",
-        "cross": [
-          {
-            "ref": "Matt 5:21–48",
-            "note": "The Sermon on the Mount extends the Decalogue to the heart — anger is murder; lust is adultery; covetousness is idolatry."
-          },
-          {
-            "ref": "Rom 13:8–10",
-            "note": "\"The commandments... are summed up in this word: You shall love your neighbour as yourself.\" Paul shows the second table as the shape of neighbourly love."
-          },
-          {
-            "ref": "James 2:10–11",
-            "note": "Violating one commandment makes one guilty of all — the unity of the Decalogue as a single covenant obligation."
-          }
-        ],
+        "hist": {
+          "historical": "The altar laws (vv. 22–26) are among the oldest cultic regulations in the Pentateuch. The prohibition of hewn-stone altars and steps reflects a polemic against Canaanite high-place worship, where elaborately constructed altars and elevated platforms were standard. Uncut stone altars are attested archaeologically at early Israelite sites (the Mount Ebal altar, dated c. 1200 BC, is constructed of uncut fieldstones). The prohibition of steps to prevent exposure of nakedness contrasts with Egyptian priestly practices involving ritual nudity in certain ceremonies.",
+          "context": "The fifth commandment (\"honour your father and your mother\") is the bridge between the two tables — it is the first social commandment, concerning the most fundamental social institution (the family). Paul identifies it as \"the first commandment with a promise\" (Eph 6:2). The commandments 6–10 describe the minimum conditions for community life: life protected, marriage protected, property protected, reputation protected, and the heart guarded against desire that destroys."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 5:21–48",
+              "note": "The Sermon on the Mount extends the Decalogue to the heart — anger is murder; lust is adultery; covetousness is idolatry."
+            },
+            {
+              "ref": "Rom 13:8–10",
+              "note": "\"The commandments... are summed up in this word: You shall love your neighbour as yourself.\" Paul shows the second table as the shape of neighbourly love."
+            },
+            {
+              "ref": "James 2:10–11",
+              "note": "Violating one commandment makes one guilty of all — the unity of the Decalogue as a single covenant obligation."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

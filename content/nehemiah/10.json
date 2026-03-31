@@ -25,13 +25,14 @@
             "paragraph": "Eighty-four names seal the document: Nehemiah first, then priests, Levites, and lay leaders. The naming is the commitment. Each signature binds a family."
           }
         ],
-        "ctx": "The list serves a legal function: these are the guarantors. If the covenant is broken, these families bear responsibility. Public naming creates public accountability.",
-        "cross": [
-          {
-            "ref": "Josh 24:25–27",
-            "note": "Joshua’s covenant with witnesses — the same legal pattern."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 24:25–27",
+              "note": "Joshua’s covenant with witnesses — the same legal pattern."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -80,6 +81,9 @@
               "note": "Kidner: \"Eighty-four signatures. Each name is a promise. The covenant is not abstract but personal — bound to named individuals who can be held accountable.\""
             }
           ]
+        },
+        "hist": {
+          "context": "The list serves a legal function: these are the guarantors. If the covenant is broken, these families bear responsibility. Public naming creates public accountability."
         }
       }
     },
@@ -97,17 +101,18 @@
             "paragraph": "\"We will not neglect the house of our God\" (v.39). The covenant’s final sentence and its summary. Everything else — intermarriage, Sabbath, tithes, wood offering — serves this one principle."
           }
         ],
-        "ctx": "The commitments are specific, not vague: no intermarriage (v.30), Sabbath observance including refusing to buy from foreigners on the Sabbath (v.31), temple tax (v.32), wood offering (v.34), firstfruits (vv.35–37), tithes (vv.37–38). Each addresses a failure documented earlier in the book. The covenant is not aspirational but corrective.",
-        "cross": [
-          {
-            "ref": "Deut 7:3–4",
-            "note": "The intermarriage prohibition the covenant reaffirms."
-          },
-          {
-            "ref": "Exod 23:10–12",
-            "note": "The Sabbath and sabbatical year the covenant revives."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 7:3–4",
+              "note": "The intermarriage prohibition the covenant reaffirms."
+            },
+            {
+              "ref": "Exod 23:10–12",
+              "note": "The Sabbath and sabbatical year the covenant revives."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -168,6 +173,9 @@
               "note": "Kidner: \"The final sentence is the covenant in miniature. Not neglect. The opposite of faithfulness is not hostility but inattention.\""
             }
           ]
+        },
+        "hist": {
+          "context": "The commitments are specific, not vague: no intermarriage (v.30), Sabbath observance including refusing to buy from foreigners on the Sabbath (v.31), temple tax (v.32), wood offering (v.34), firstfruits (vv.35–37), tithes (vv.37–38). Each addresses a failure documented earlier in the book. The covenant is not aspirational but corrective."
         }
       }
     }

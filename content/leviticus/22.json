@@ -31,17 +31,18 @@
             "paragraph": "Anyone who is not a priest or a member of a priest's household. Access to the sacred portions is restricted; consumption by an outsider incurs guilt and requires restitution. The holy food carries holiness-charge; unauthorized consumption defiles both the person and the sanctuary."
           }
         ],
-        "ctx": "Leviticus 22 governs access to the sacred portions of the offerings — who may eat them and under what conditions. The principle is straightforward: the holy food must be consumed in a state of purity by those authorised to receive it. An impure priest must wait; a foreigner, hired servant, or even a divorced daughter returned to her father's house cannot eat the priestly portions. However, a priest's slave (v.11) and a priest's daughter who has not married (vv.12–13) may eat. The regulations define the boundaries of the \"priestly household\" as the domain within which the sacred portions circulate.",
-        "cross": [
-          {
-            "ref": "1 Cor 11:27–29",
-            "note": "\"Whoever eats the bread or drinks the cup of the Lord in an unworthy manner will be guilty of sinning against the body and blood of the Lord… Anyone who eats and drinks without discerning the body of Christ eats and drinks judgment on themselves.\" Paul applies the Levitical sacred-portions logic to the Lord's Supper."
-          },
-          {
-            "ref": "Matt 7:6",
-            "note": "\"Do not give dogs what is sacred; do not throw your pearls to pigs.\" Jesus's saying uses the Levitical logic of holy things requiring proper recipients."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 11:27–29",
+              "note": "\"Whoever eats the bread or drinks the cup of the Lord in an unworthy manner will be guilty of sinning against the body and blood of the Lord… Anyone who eats and drinks without discerning the body of Christ eats and drinks judgment on themselves.\" Paul applies the Levitical sacred-portions logic to the Lord's Supper."
+            },
+            {
+              "ref": "Matt 7:6",
+              "note": "\"Do not give dogs what is sacred; do not throw your pearls to pigs.\" Jesus's saying uses the Levitical logic of holy things requiring proper recipients."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "Milgrom: The definition of the priestly household (priest, wife, children, slaves, but not hired servant or resident alien) is more inclusive than the ethnic priestly line but more exclusive than the general community. The sacred portions circulate within a defined circle of priestly dependents — those whose welfare is bound to the priest's own."
             }
           ]
+        },
+        "hist": {
+          "context": "Leviticus 22 governs access to the sacred portions of the offerings — who may eat them and under what conditions. The principle is straightforward: the holy food must be consumed in a state of purity by those authorised to receive it. An impure priest must wait; a foreigner, hired servant, or even a divorced daughter returned to her father's house cannot eat the priestly portions. However, a priest's slave (v.11) and a priest's daughter who has not married (vv.12–13) may eat. The regulations define the boundaries of the \"priestly household\" as the domain within which the sacred portions circulate."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "The closing command of Lev 22:32 — \"you shall consecrate my name.\" The entire offering system exists to hallow the divine name. Every perfect offering, every kept requirement, is an act of sanctifying God before the congregation."
           }
         ],
-        "ctx": "The second half of Lev 22 addresses the quality of offerings — the same without-defect requirement as Lev 1:3 but now spelled out in explicit exclusions: blind, injured, maimed, infected, scabbed, diseased animals (v.22); crushed, bruised, torn, or cut animals (v.24). The reason is consistent: a blemished offering fails to honour the God it is presented to. The chapter closes (vv.31–33) with the Holiness Summary in its most comprehensive form: \"Keep my commands and follow them. I am the Lord. Do not profane my holy name, for I must be acknowledged as holy by the Israelites. I am the Lord, who made you holy and who brought you out of Egypt to be your God.\"",
-        "cross": [
-          {
-            "ref": "Mal 1:8",
-            "note": "\"When you bring blind animals for sacrifice, is that not wrong? When you sacrifice lame or diseased animals, is that not wrong?… Try offering them to your governor! Would he be pleased with you?\" Malachi quotes Lev 22:20–22 against the post-exilic priests who presented blemished offerings."
-          },
-          {
-            "ref": "1 Pet 1:19",
-            "note": "\"With the precious blood of Christ, a lamb without blemish or defect.\" Peter applies the Lev 22 offering requirement directly to the atonement — Christ is the ʿōlāh without mûm."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mal 1:8",
+              "note": "\"When you bring blind animals for sacrifice, is that not wrong? When you sacrifice lame or diseased animals, is that not wrong?… Try offering them to your governor! Would he be pleased with you?\" Malachi quotes Lev 22:20–22 against the post-exilic priests who presented blemished offerings."
+            },
+            {
+              "ref": "1 Pet 1:19",
+              "note": "\"With the precious blood of Christ, a lamb without blemish or defect.\" Peter applies the Lev 22 offering requirement directly to the atonement — Christ is the ʿōlāh without mûm."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -178,6 +183,9 @@
               "note": "Milgrom: The ritual prescriptions for sacrificial standards reflect a coherent priestly symbolic system. The gradations of holiness and offering type form an internally consistent theology of sacred space and divine access."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half of Lev 22 addresses the quality of offerings — the same without-defect requirement as Lev 1:3 but now spelled out in explicit exclusions: blind, injured, maimed, infected, scabbed, diseased animals (v.22); crushed, bruised, torn, or cut animals (v.24). The reason is consistent: a blemished offering fails to honour the God it is presented to. The chapter closes (vv.31–33) with the Holiness Summary in its most comprehensive form: \"Keep my commands and follow them. I am the Lord. Do not profane my holy name, for I must be acknowledged as holy by the Israelites. I am the Lord, who made you holy and who brought you out of Egypt to be your God.\""
         }
       }
     }

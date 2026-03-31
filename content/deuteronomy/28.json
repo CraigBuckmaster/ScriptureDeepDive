@@ -31,17 +31,18 @@
             "paragraph": "The head/tail metaphor (v.44) summarises the reversal that covenant failure brings: Israel, called to be a leader among nations, becomes a follower; called to lead, becomes enslaved. The image reverses the election blessing of ch.7 with exact precision."
           }
         ],
-        "ctx": "Chapter 28 is Deuteronomy's most dramatic chapter -- 68 verses, 14 of blessings and 54 of curses. The asymmetry is deliberate: the curses are longer and more terrifying than the blessings because the stakes of covenant failure are catastrophic. The blessings are agricultural, domestic, military, and national: fruitful fields, blessed cities, victory over enemies, rain in season, Israel as head among nations. The curses progressively intensify through the first half of the chapter before reaching their most extreme forms in vv.45-68.",
-        "cross": [
-          {
-            "ref": "Lev 26",
-            "note": "The Leviticus 26 blessings and curses provide the legal-covenantal framework that Deuteronomy 28 expands dramatically. Both texts anticipate the exile and both provide the theology of return."
-          },
-          {
-            "ref": "2 Kgs 17; 25",
-            "note": "The fall of Israel (722 BC) and Judah (586 BC) are interpreted through the lens of Deuteronomy 28 -- the curses came upon them because they violated the covenant."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 26",
+              "note": "The Leviticus 26 blessings and curses provide the legal-covenantal framework that Deuteronomy 28 expands dramatically. Both texts anticipate the exile and both provide the theology of return."
+            },
+            {
+              "ref": "2 Kgs 17; 25",
+              "note": "The fall of Israel (722 BC) and Judah (586 BC) are interpreted through the lens of Deuteronomy 28 -- the curses came upon them because they violated the covenant."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 28 is Deuteronomy's most dramatic chapter -- 68 verses, 14 of blessings and 54 of curses. The asymmetry is deliberate: the curses are longer and more terrifying than the blessings because the stakes of covenant failure are catastrophic. The blessings are agricultural, domestic, military, and national: fruitful fields, blessed cities, victory over enemies, rain in season, Israel as head among nations. The curses progressively intensify through the first half of the chapter before reaching their most extreme forms in vv.45-68."
         }
       }
     },
@@ -137,17 +141,18 @@
             "paragraph": "The siege language of vv.52-57 reaches horrifying specificity: the siege will be so severe that parents eat their own children and hide food from family members. The description is not hyperbole but accurate prophecy of what siege warfare does to a starving population."
           }
         ],
-        "ctx": "The second half of the curse section intensifies dramatically: disease, defeat, madness, exile, siege so severe parents eat their children, return to Egypt as slaves with no buyers. Many scholars note that the curse section closely parallels the Vassal Treaties of Esarhaddon (672 BC) -- either as shared ANE treaty formula or as evidence of a specific relationship. The curses are not designed to be fulfilled but to be avoided -- yet the historical narrative of Joshua through Kings shows them progressively fulfilled.",
-        "cross": [
-          {
-            "ref": "Rev 6:1-17",
-            "note": "The four horsemen of the Apocalypse -- war, famine, plague, death -- recapitulate the Deuteronomy 28 curse sequence in eschatological form."
-          },
-          {
-            "ref": "Lam 4:10",
-            "note": "\"With their own hands compassionate women have cooked their own children, who became their food when my people were destroyed.\" Lamentations documents the fulfilment of Deuteronomy 28:57's most horrifying curse during the siege of Jerusalem."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rev 6:1-17",
+              "note": "The four horsemen of the Apocalypse -- war, famine, plague, death -- recapitulate the Deuteronomy 28 curse sequence in eschatological form."
+            },
+            {
+              "ref": "Lam 4:10",
+              "note": "\"With their own hands compassionate women have cooked their own children, who became their food when my people were destroyed.\" Lamentations documents the fulfilment of Deuteronomy 28:57's most horrifying curse during the siege of Jerusalem."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -216,6 +221,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half of the curse section intensifies dramatically: disease, defeat, madness, exile, siege so severe parents eat their children, return to Egypt as slaves with no buyers. Many scholars note that the curse section closely parallels the Vassal Treaties of Esarhaddon (672 BC) -- either as shared ANE treaty formula or as evidence of a specific relationship. The curses are not designed to be fulfilled but to be avoided -- yet the historical narrative of Joshua through Kings shows them progressively fulfilled."
         }
       }
     }

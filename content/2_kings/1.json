@@ -31,21 +31,22 @@
             "paragraph": "Elijah’s devastating question (v.3, repeated vv.6, 16): “Is it because there is no God in Israel that you are going to consult Baal-Zebub?” The rhetorical force is crushing — the king’s action implies YHWH either doesn’t exist or can’t answer."
           }
         ],
-        "ctx": "The opening of 2 Kings continues the theological crisis of 1 Kings: the house of Ahab is still on the throne, and Ahab’s son Ahaziah falls through a lattice in his upper room. Injured, he sends messengers not to YHWH’s prophet but to Baal-Zebub, the Philistine deity at Ekron — a journey of roughly 60 kilometres, bypassing every sanctuary of the living God. Elijah intercepts the messengers with the question that frames the entire chapter: “Is it because there is no God in Israel?” The king’s injury is minor; his theological defection is fatal.",
-        "cross": [
-          {
-            "ref": "1 Kgs 18:21",
-            "note": "“How long will you waver between two opinions?” Elijah’s challenge on Carmel confronted the nation; now the same prophet confronts the king directly with the same issue — who is God?"
-          },
-          {
-            "ref": "Matt 12:24",
-            "note": "The Pharisees accuse Jesus of casting out demons by “Beelzebul, the prince of demons” — the name derived from this Philistine deity."
-          },
-          {
-            "ref": "Deut 18:10–12",
-            "note": "The prohibition against consulting pagan oracles. Ahaziah violates the covenant’s most fundamental boundary."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 18:21",
+              "note": "“How long will you waver between two opinions?” Elijah’s challenge on Carmel confronted the nation; now the same prophet confronts the king directly with the same issue — who is God?"
+            },
+            {
+              "ref": "Matt 12:24",
+              "note": "The Pharisees accuse Jesus of casting out demons by “Beelzebul, the prince of demons” — the name derived from this Philistine deity."
+            },
+            {
+              "ref": "Deut 18:10–12",
+              "note": "The prohibition against consulting pagan oracles. Ahaziah violates the covenant’s most fundamental boundary."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -97,6 +98,9 @@
               "note": "Elijah positions himself between the king and the false god, forcing a confrontation with the real God. The prophet as roadblock is a recurring motif in Kings."
             }
           ]
+        },
+        "hist": {
+          "context": "The opening of 2 Kings continues the theological crisis of 1 Kings: the house of Ahab is still on the throne, and Ahab’s son Ahaziah falls through a lattice in his upper room. Injured, he sends messengers not to YHWH’s prophet but to Baal-Zebub, the Philistine deity at Ekron — a journey of roughly 60 kilometres, bypassing every sanctuary of the living God. Elijah intercepts the messengers with the question that frames the entire chapter: “Is it because there is no God in Israel?” The king’s injury is minor; his theological defection is fatal."
         }
       }
     },
@@ -120,21 +124,22 @@
             "paragraph": "The captains address Elijah as “man of God” (v.9) — the standard respectful title for a prophet. But the captain’s command “come down!” turns the title into mockery. He uses God’s designation while ordering the prophet like a servant."
           }
         ],
-        "ctx": "Ahaziah sends three companies of fifty soldiers to arrest Elijah. The first two captains issue peremptory commands: “Man of God, the king says come down.” Fire from heaven consumes each company. The third captain falls on his knees and pleads: “Let my life be precious in your sight.” Humility is the only survival strategy when confronting God’s representative. After descending, Elijah delivers the same death sentence in person. “So he died, according to the word of the LORD” — the Deuteronomistic formula: the prophetic word is the engine of history. Joram succeeds the childless Ahaziah.",
-        "cross": [
-          {
-            "ref": "1 Kgs 18:38",
-            "note": "Fire from heaven at Carmel consumed the sacrifice. The same God who answered by fire to prove his existence now answers by fire to defend his prophet."
-          },
-          {
-            "ref": "Luke 9:54",
-            "note": "James and John want to call fire “as Elijah did” — Jesus rebukes them. The new covenant operates with different weapons."
-          },
-          {
-            "ref": "Num 16:35",
-            "note": "Fire from the LORD consumed Korah’s 250 rebels who challenged Mosaic authority. Challenging God’s spokesman has consistent consequences."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 18:38",
+              "note": "Fire from heaven at Carmel consumed the sacrifice. The same God who answered by fire to prove his existence now answers by fire to defend his prophet."
+            },
+            {
+              "ref": "Luke 9:54",
+              "note": "James and John want to call fire “as Elijah did” — Jesus rebukes them. The new covenant operates with different weapons."
+            },
+            {
+              "ref": "Num 16:35",
+              "note": "Fire from the LORD consumed Korah’s 250 rebels who challenged Mosaic authority. Challenging God’s spokesman has consistent consequences."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -186,6 +191,9 @@
               "note": "The third captain demonstrates that the pattern is not mechanistic. Humility breaks the cycle — the same theological point as Nineveh in Jonah."
             }
           ]
+        },
+        "hist": {
+          "context": "Ahaziah sends three companies of fifty soldiers to arrest Elijah. The first two captains issue peremptory commands: “Man of God, the king says come down.” Fire from heaven consumes each company. The third captain falls on his knees and pleads: “Let my life be precious in your sight.” Humility is the only survival strategy when confronting God’s representative. After descending, Elijah delivers the same death sentence in person. “So he died, according to the word of the LORD” — the Deuteronomistic formula: the prophetic word is the engine of history. Joram succeeds the childless Ahaziah."
         }
       }
     }

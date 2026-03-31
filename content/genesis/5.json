@@ -88,22 +88,26 @@
             "paragraph": "The drumbeat refrain of Genesis 5 — \"and he died\" — is the theological consequence of the Fall working itself out through history. God had warned Adam: \"dying you will die\" (2:17). Chapter 5 is the documentation: generation after generation, however long-lived, ultimately yielded to the sentence of death. The one exception — Enoch, who \"was not, because God took him\" (v.24) — stands as a promise that death does not have the final word."
           }
         ],
-        "hist": "The ten-generation structure of chapter 5 (Adam to Noah) parallels the post-flood genealogy of chapter 11 (Shem to Abraham), also ten generations. Both genealogies use the same formula and both culminate in a figure of decisive redemptive significance (Noah; Abraham). The extremely long lifespans (ranging from Enoch's 365 years to Methuselah's 969) have no parallel in Israel's wider ANE context except the Sumerian King List, which records pre-flood kings reigning for tens of thousands of years. Genesis's lifespans, though long, are dramatically shorter.",
-        "ctx": "The genealogy of chapter 5 performs two functions simultaneously: it bridges the narrative from Adam's expulsion to Noah's flood across centuries of time, and it carries the theological assertion that the image of God — however damaged by the fall — continues to be transmitted in the human line. The repeated refrain \"and he died\" is the most solemn phrase in the chapter: every name ends the same way. Death is the universal consequence of the fall. Enoch alone breaks the pattern.",
-        "cross": [
-          {
-            "ref": "Luke 3:36-38",
-            "note": "Luke's genealogy of Jesus traces back through Noah and the patriarchs to Adam, son of God — connecting the lineage of Gen 5 to the incarnation."
-          },
-          {
-            "ref": "1 Chr 1:1-4",
-            "note": "Chronicles opens with this same genealogy — the OT's confirmation that Gen 5 is the foundational human lineage."
-          },
-          {
-            "ref": "Jude 14",
-            "note": "Enoch, the seventh from Adam, prophesied — Jude quotes an Enochic tradition, treating the Gen 5 figure as a prophet."
-          }
-        ],
+        "hist": {
+          "historical": "The ten-generation structure of chapter 5 (Adam to Noah) parallels the post-flood genealogy of chapter 11 (Shem to Abraham), also ten generations. Both genealogies use the same formula and both culminate in a figure of decisive redemptive significance (Noah; Abraham). The extremely long lifespans (ranging from Enoch's 365 years to Methuselah's 969) have no parallel in Israel's wider ANE context except the Sumerian King List, which records pre-flood kings reigning for tens of thousands of years. Genesis's lifespans, though long, are dramatically shorter.",
+          "context": "The genealogy of chapter 5 performs two functions simultaneously: it bridges the narrative from Adam's expulsion to Noah's flood across centuries of time, and it carries the theological assertion that the image of God — however damaged by the fall — continues to be transmitted in the human line. The repeated refrain \"and he died\" is the most solemn phrase in the chapter: every name ends the same way. Death is the universal consequence of the fall. Enoch alone breaks the pattern."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 3:36-38",
+              "note": "Luke's genealogy of Jesus traces back through Noah and the patriarchs to Adam, son of God — connecting the lineage of Gen 5 to the incarnation."
+            },
+            {
+              "ref": "1 Chr 1:1-4",
+              "note": "Chronicles opens with this same genealogy — the OT's confirmation that Gen 5 is the foundational human lineage."
+            },
+            {
+              "ref": "Jude 14",
+              "note": "Enoch, the seventh from Adam, prophesied — Jude quotes an Enochic tradition, treating the Gen 5 figure as a prophet."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -235,18 +239,22 @@
             "paragraph": "The genealogical formula \"X lived N years and became the father of Y, and after he became the father of Y, X lived N years and had other sons and daughters\" establishes that the listed names are not necessarily sequential but are the chosen link in the covenant chain. \"Father\" (ʾāb) in Hebrew genealogy can mean ancestor several generations removed. The genealogy is selective, theological, and structured — not a complete demographic record but the skeleton of promise-transmission from Adam to Noah."
           }
         ],
-        "hist": "The section covers Seth through Jared — six of the ten pre-flood patriarchs. The lifespans range from Kenan's 910 years to Jared's 962 years. The function of these extreme lifespans in the narrative is disputed: they may reflect a genuine pre-flood biological reality, a schematic literary convention (as in Sumerian king lists), symbolic significance of specific numbers, or compressed chronology. What is indisputable is their narrative function: they establish that enormous spans of time passed between creation and the flood, time filled with the multiplication of humanity.",
-        "ctx": "The middle section of the genealogy is structurally unremarkable — it is designed to be unremarkable. The repetitive formula does its work precisely by being monotonous. The reader is meant to feel the weight of generation after generation passing: each person born, each person fathering children, each person dying. The monotony of mortality is itself the theological point. Against this relentless backdrop, Enoch's exception will be all the more arresting.",
-        "cross": [
-          {
-            "ref": "1 Chr 1:1–4",
-            "note": "The Chronicler opens his genealogy with this exact sequence — Seth, Enosh, Kenan, etc. — showing that Genesis 5 functions as Israel's foundational family record, bridging creation to covenant."
-          },
-          {
-            "ref": "Luke 3:36–38",
-            "note": "Luke traces Jesus' genealogy back through these patriarchs to Adam and ultimately to God. The Genesis 5 line becomes the backbone of the Messiah's ancestry in the New Testament."
-          }
-        ],
+        "hist": {
+          "historical": "The section covers Seth through Jared — six of the ten pre-flood patriarchs. The lifespans range from Kenan's 910 years to Jared's 962 years. The function of these extreme lifespans in the narrative is disputed: they may reflect a genuine pre-flood biological reality, a schematic literary convention (as in Sumerian king lists), symbolic significance of specific numbers, or compressed chronology. What is indisputable is their narrative function: they establish that enormous spans of time passed between creation and the flood, time filled with the multiplication of humanity.",
+          "context": "The middle section of the genealogy is structurally unremarkable — it is designed to be unremarkable. The repetitive formula does its work precisely by being monotonous. The reader is meant to feel the weight of generation after generation passing: each person born, each person fathering children, each person dying. The monotony of mortality is itself the theological point. Against this relentless backdrop, Enoch's exception will be all the more arresting."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Chr 1:1–4",
+              "note": "The Chronicler opens his genealogy with this exact sequence — Seth, Enosh, Kenan, etc. — showing that Genesis 5 functions as Israel's foundational family record, bridging creation to covenant."
+            },
+            {
+              "ref": "Luke 3:36–38",
+              "note": "Luke traces Jesus' genealogy back through these patriarchs to Adam and ultimately to God. The Genesis 5 line becomes the backbone of the Messiah's ancestry in the New Testament."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -340,26 +348,30 @@
             "paragraph": "Lamech names his son Noah (Nōaḥ) with a wordplay on nāḥam: \"He will comfort us in the labour and painful toil of our hands caused by the ground the LORD has cursed\" (v.29). The name anticipates Noah's role: the builder of the ark through which human and animal life survives the Flood, and the recipient of the covenant that resets humanity's relationship with a cleansed creation. The play between Nōaḥ and nāḥam will echo in God's \"regret\" (nāḥam) in 6:6."
           }
         ],
-        "hist": "Enoch's \"365 years\" is often noted as equal to the solar year. Whether this is significant is disputed. What is undeniable is that his years are the shortest of any patriarch in the chapter — suggesting his \"taking\" was not delayed departure but an early translation at the peak of his walk with God. The post-biblical tradition of Enoch became enormously developed: 1 Enoch (quoted in Jude 14-15) presents him as a prophet and heavenly traveler. The Second Temple period produced extensive Enoch literature.",
-        "ctx": "Enoch's entry breaks the monotonous pattern of the genealogy like a sudden bright note in a sustained minor key. The formula changes, the refrain \"and he died\" is absent, and the explanation is as brief as it is extraordinary: \"God took him.\" The pattern of the chapter has trained the reader to expect death; the absence of death in Enoch's entry is therefore maximally effective. He becomes the great biblical type of those who pass from life to God's presence without death.",
-        "cross": [
-          {
-            "ref": "Heb 11:5",
-            "note": "“By faith Enoch was taken from this life, so that he did not experience death.” The NT reads Enoch’s translation as an act of faith — he pleased God."
-          },
-          {
-            "ref": "Jude 14–15",
-            "note": "Jude quotes Enoch’s prophecy about the coming judgment of the Lord — drawing on the tradition of Enoch as a prophet (from 1 Enoch 1:9)."
-          },
-          {
-            "ref": "2 Kgs 2:11",
-            "note": "Elijah’s translation in a whirlwind parallels Enoch — the two humans in Scripture who bypass death. Both appear at the Transfiguration (Matt 17:3)."
-          },
-          {
-            "ref": "1 Thess 4:17",
-            "note": "“We who are still alive will be caught up” — the eschatological translation of believers echoes the Enoch pattern."
-          }
-        ],
+        "hist": {
+          "historical": "Enoch's \"365 years\" is often noted as equal to the solar year. Whether this is significant is disputed. What is undeniable is that his years are the shortest of any patriarch in the chapter — suggesting his \"taking\" was not delayed departure but an early translation at the peak of his walk with God. The post-biblical tradition of Enoch became enormously developed: 1 Enoch (quoted in Jude 14-15) presents him as a prophet and heavenly traveler. The Second Temple period produced extensive Enoch literature.",
+          "context": "Enoch's entry breaks the monotonous pattern of the genealogy like a sudden bright note in a sustained minor key. The formula changes, the refrain \"and he died\" is absent, and the explanation is as brief as it is extraordinary: \"God took him.\" The pattern of the chapter has trained the reader to expect death; the absence of death in Enoch's entry is therefore maximally effective. He becomes the great biblical type of those who pass from life to God's presence without death."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 11:5",
+              "note": "“By faith Enoch was taken from this life, so that he did not experience death.” The NT reads Enoch’s translation as an act of faith — he pleased God."
+            },
+            {
+              "ref": "Jude 14–15",
+              "note": "Jude quotes Enoch’s prophecy about the coming judgment of the Lord — drawing on the tradition of Enoch as a prophet (from 1 Enoch 1:9)."
+            },
+            {
+              "ref": "2 Kgs 2:11",
+              "note": "Elijah’s translation in a whirlwind parallels Enoch — the two humans in Scripture who bypass death. Both appear at the Transfiguration (Matt 17:3)."
+            },
+            {
+              "ref": "1 Thess 4:17",
+              "note": "“We who are still alive will be caught up” — the eschatological translation of believers echoes the Enoch pattern."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -457,26 +469,30 @@
             "paragraph": "The genealogy closes with Noah's three sons (v.32: \"After Noah was 500 years old, he became the father of Shem, Ham and Japheth\"), the names that will dominate the next several chapters. The three sons are the post-Flood starting point for all subsequent humanity (ch.10 — the Table of Nations). The genealogy of ch.5 has done its work: from Adam to Noah in ten names, from Edenic creation to the threshold of the Flood."
           }
         ],
-        "hist": "Noah is born in a world already described as filled with violence (the context of chapter 6 will confirm this). Lamech's prophetic naming of Noah — connecting him to the relief of the curse — is the first explicit messianic hope since the protoevangelium of 3:15. The structure of the chapter has been pointing toward Noah: ten generations from Adam, the line of Seth reaching its climax in the one who will survive the judgment and carry the human family through to a new beginning.",
-        "ctx": "The genealogy ends not with death but with birth and hope. Noah's birth, accompanied by Lamech's prophetic naming, reorients the chapter's solemn refrain. The genealogy of mortality (every entry ending \"and he died\") culminates in the birth of the one through whom life will continue. The chapter is bookended by image-bearing (v.1-3) and covenant hope (v.28-32): the image of God and the promise of relief frame the long record of human mortality.",
-        "cross": [
-          {
-            "ref": "Gen 6:9",
-            "note": "“Noah was a righteous man, blameless among the people of his time, and he walked faithfully with God” — the same language used for Enoch, echoing Gen 5’s highest commendation."
-          },
-          {
-            "ref": "Heb 11:7",
-            "note": "“By faith Noah, when warned about things not yet seen, in holy fear built an ark” — Noah joins the great cloud of witnesses traced back to Abel and Enoch in Gen 5."
-          },
-          {
-            "ref": "Luke 3:36–38",
-            "note": "Luke’s genealogy of Jesus passes through Shem, Noah, Methuselah, Enoch, Seth, and Adam — anchoring the incarnation in the Genesis 5 genealogy."
-          },
-          {
-            "ref": "1 Pet 3:20",
-            "note": "Eight people were saved through water in the ark — Peter reads Noah’s survival as a type of baptism and salvation."
-          }
-        ],
+        "hist": {
+          "historical": "Noah is born in a world already described as filled with violence (the context of chapter 6 will confirm this). Lamech's prophetic naming of Noah — connecting him to the relief of the curse — is the first explicit messianic hope since the protoevangelium of 3:15. The structure of the chapter has been pointing toward Noah: ten generations from Adam, the line of Seth reaching its climax in the one who will survive the judgment and carry the human family through to a new beginning.",
+          "context": "The genealogy ends not with death but with birth and hope. Noah's birth, accompanied by Lamech's prophetic naming, reorients the chapter's solemn refrain. The genealogy of mortality (every entry ending \"and he died\") culminates in the birth of the one through whom life will continue. The chapter is bookended by image-bearing (v.1-3) and covenant hope (v.28-32): the image of God and the promise of relief frame the long record of human mortality."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 6:9",
+              "note": "“Noah was a righteous man, blameless among the people of his time, and he walked faithfully with God” — the same language used for Enoch, echoing Gen 5’s highest commendation."
+            },
+            {
+              "ref": "Heb 11:7",
+              "note": "“By faith Noah, when warned about things not yet seen, in holy fear built an ark” — Noah joins the great cloud of witnesses traced back to Abel and Enoch in Gen 5."
+            },
+            {
+              "ref": "Luke 3:36–38",
+              "note": "Luke’s genealogy of Jesus passes through Shem, Noah, Methuselah, Enoch, Seth, and Adam — anchoring the incarnation in the Genesis 5 genealogy."
+            },
+            {
+              "ref": "1 Pet 3:20",
+              "note": "Eight people were saved through water in the ark — Peter reads Noah’s survival as a type of baptism and salvation."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

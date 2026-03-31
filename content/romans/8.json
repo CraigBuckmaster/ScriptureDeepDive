@@ -31,21 +31,22 @@
             "paragraph": "Pneuma appears 21 times in Romans 8, making this the most Spirit-saturated chapter in Paul’s letters. The Spirit is the agent of the new life: he sets free from sin and death (v. 2), enables fulfilment of the law’s requirement (v. 4), gives life to mortal bodies (v. 11), puts to death sinful deeds (v. 13), leads as children (v. 14), witnesses to adoption (v. 16), and intercedes with groanings (v. 26). Chapter 8 is the pneumatological counterpart to the Christological argument of chapters 3–5."
           }
         ],
-        "ctx": "Romans 8 is widely considered the climax of the entire letter and one of the greatest chapters in the Bible. Where chapter 7 described the impotence of the law apart from the Spirit, chapter 8 describes the power of the Spirit to accomplish what the law could not. The chapter moves through five movements: no condemnation (vv. 1 4), life in the Spirit vs. flesh (vv. 5–11), adoption as children (vv. 12–17), future glory (vv. 18–25), and invincible assurance (vv. 26–39). The progression from justification (ch. 3) through sanctification (chs. 6–7) to glorification (ch. 8) is now complete. Paul moves from the courtroom to the family to the cosmos.",
-        "cross": [
-          {
-            "ref": "Gal 5:16–25",
-            "note": "Walk by the Spirit and you will not gratify the desires of the flesh — the parallel flesh/Spirit contrast."
-          },
-          {
-            "ref": "Ezek 36:26–27",
-            "note": "God will put his Spirit within his people and cause them to walk in his statutes — the new covenant promise Paul sees fulfilled."
-          },
-          {
-            "ref": "John 1:12–13",
-            "note": "To all who received Christ, he gave the right to become children of God — the adoption theology Paul develops."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gal 5:16–25",
+              "note": "Walk by the Spirit and you will not gratify the desires of the flesh — the parallel flesh/Spirit contrast."
+            },
+            {
+              "ref": "Ezek 36:26–27",
+              "note": "God will put his Spirit within his people and cause them to walk in his statutes — the new covenant promise Paul sees fulfilled."
+            },
+            {
+              "ref": "John 1:12–13",
+              "note": "To all who received Christ, he gave the right to become children of God — the adoption theology Paul develops."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -130,6 +131,9 @@
               "note": "Schreiner emphasises that the flesh/Spirit contrast is not about two competing tendencies within the believer but about two mutually exclusive spheres of existence. Believers are ‘in the Spirit’ (v. 9), not ‘in the flesh,’ though the flesh continues to exert pressure."
             }
           ]
+        },
+        "hist": {
+          "context": "Romans 8 is widely considered the climax of the entire letter and one of the greatest chapters in the Bible. Where chapter 7 described the impotence of the law apart from the Spirit, chapter 8 describes the power of the Spirit to accomplish what the law could not. The chapter moves through five movements: no condemnation (vv. 1 4), life in the Spirit vs. flesh (vv. 5–11), adoption as children (vv. 12–17), future glory (vv. 18–25), and invincible assurance (vv. 26–39). The progression from justification (ch. 3) through sanctification (chs. 6–7) to glorification (ch. 8) is now complete. Paul moves from the courtroom to the family to the cosmos."
         }
       }
     },
@@ -153,25 +157,26 @@
             "paragraph": "The verb systenazō (v. 22) describes creation’s collective groaning in labour pains. The groaning is tripartite: creation groans (v. 22), believers groan (v. 23), and the Spirit groans (v. 26). The labour imagery is hopeful: the pain is not purposeless but productive, pointing toward new birth."
           }
         ],
-        "ctx": "Romans 8:18–30 expands the horizon from individual salvation to cosmic redemption. Paul’s vision encompasses the entire created order, which has been subjected to futility (v. 20) but will be liberated from its bondage to decay (v. 21). This cosmic eschatology is unique in the NT and has profound implications for environmental and creation-care theology. The golden chain of salvation in vv. 29–30 (foreknew → predestined → called → justified → glorified) uses five aorist verbs, treating even glorification as already accomplished in God’s purpose. The passage moves from suffering to hope to assurance with inexorable logic.",
-        "cross": [
-          {
-            "ref": "Gen 3:17–19",
-            "note": "The cursing of the ground because of Adam’s sin — the origin of creation’s subjection to futility."
-          },
-          {
-            "ref": "2 Cor 4:17",
-            "note": "Our light and momentary troubles are achieving an eternal glory that far outweighs them all — the same comparison Paul makes here."
-          },
-          {
-            "ref": "Rev 21:1–4",
-            "note": "The new heaven and new earth, where God wipes away every tear — the cosmic renewal Paul anticipates."
-          },
-          {
-            "ref": "Eph 1:4‑5",
-            "note": "God chose us before the creation of the world and predestined us for adoption — the same ordo salutis."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 3:17–19",
+              "note": "The cursing of the ground because of Adam’s sin — the origin of creation’s subjection to futility."
+            },
+            {
+              "ref": "2 Cor 4:17",
+              "note": "Our light and momentary troubles are achieving an eternal glory that far outweighs them all — the same comparison Paul makes here."
+            },
+            {
+              "ref": "Rev 21:1–4",
+              "note": "The new heaven and new earth, where God wipes away every tear — the cosmic renewal Paul anticipates."
+            },
+            {
+              "ref": "Eph 1:4‑5",
+              "note": "God chose us before the creation of the world and predestined us for adoption — the same ordo salutis."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -256,6 +261,9 @@
               "note": "Schreiner argues that the golden chain is the theological backbone of assurance. Because glorification is already accomplished in God’s purpose (aorist tense), the believer’s final salvation is as certain as God’s own character."
             }
           ]
+        },
+        "hist": {
+          "context": "Romans 8:18–30 expands the horizon from individual salvation to cosmic redemption. Paul’s vision encompasses the entire created order, which has been subjected to futility (v. 20) but will be liberated from its bondage to decay (v. 21). This cosmic eschatology is unique in the NT and has profound implications for environmental and creation-care theology. The golden chain of salvation in vv. 29–30 (foreknew → predestined → called → justified → glorified) uses five aorist verbs, treating even glorification as already accomplished in God’s purpose. The passage moves from suffering to hope to assurance with inexorable logic."
         }
       }
     },
@@ -273,21 +281,22 @@
             "paragraph": "Hypernikaō (v. 37) is a Pauline coinage: hyper (beyond, exceedingly) + nikaō (to conquer). Believers are not merely victors but ‘super-conquerors’ through Christ. The prefix hyper indicates that the margin of victory is not narrow but overwhelming. Every threat listed in vv. 35–39 is not just survived but overwhelmed."
           }
         ],
-        "ctx": "Romans 8:31–39 is the rhetorical climax of the entire letter and one of the most beloved passages in the Bible. Paul launches five rhetorical questions (vv. 31, 33, 34, 35, and the implied question of vv. 38–39) that demolish every possible objection to the believer’s security. The logic is a fortiori: if God gave his own Son, how will he not give all things? The passage draws on the courtroom imagery of Isaiah 50:8–9 (‘who will bring a charge against me?’) and the catalogue of sufferings in Psalm 44:22. The climactic declaration — nothing in all creation can separate us from God’s love in Christ — is the apex of Pauline assurance.",
-        "cross": [
-          {
-            "ref": "Isa 50:8–9",
-            "note": "The Servant’s confidence: ‘He who vindicates me is near. Who then will bring charges against me?’ — the OT source of Paul’s courtroom language."
-          },
-          {
-            "ref": "Ps 44:22",
-            "note": "Paul quotes this psalm directly: ‘For your sake we face death all day long; we are considered as sheep to be slaughtered.’"
-          },
-          {
-            "ref": "John 10:28–29",
-            "note": "Jesus promises that no one can snatch his sheep from his hand or the Father’s hand — the same inviolable security."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 50:8–9",
+              "note": "The Servant’s confidence: ‘He who vindicates me is near. Who then will bring charges against me?’ — the OT source of Paul’s courtroom language."
+            },
+            {
+              "ref": "Ps 44:22",
+              "note": "Paul quotes this psalm directly: ‘For your sake we face death all day long; we are considered as sheep to be slaughtered.’"
+            },
+            {
+              "ref": "John 10:28–29",
+              "note": "Jesus promises that no one can snatch his sheep from his hand or the Father’s hand — the same inviolable security."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -364,6 +373,9 @@
               "note": "Schreiner emphasises that the catalogue of threats is deliberately cosmic in scope. Paul leaves no corner of the universe uncovered: every dimension of reality is subordinate to Christ’s love. This is the fitting conclusion to the argument that began with universal condemnation in 1:18."
             }
           ]
+        },
+        "hist": {
+          "context": "Romans 8:31–39 is the rhetorical climax of the entire letter and one of the most beloved passages in the Bible. Paul launches five rhetorical questions (vv. 31, 33, 34, 35, and the implied question of vv. 38–39) that demolish every possible objection to the believer’s security. The logic is a fortiori: if God gave his own Son, how will he not give all things? The passage draws on the courtroom imagery of Isaiah 50:8–9 (‘who will bring a charge against me?’) and the catalogue of sufferings in Psalm 44:22. The climactic declaration — nothing in all creation can separate us from God’s love in Christ — is the apex of Pauline assurance."
         }
       }
     }

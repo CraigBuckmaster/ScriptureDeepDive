@@ -28,21 +28,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Region of Judea and across the Jordan (Perea)</div><div class=\"poi-coords\">East of the Jordan, common route from Galilee to Jerusalem</div><div class=\"poi-text\">The journey through Perea marks the deliberate turn toward the Passion. Jesus’s movement into Judean territory begins the geographic arc that will end at Golgotha.</div></div>"
         },
-        "ctx": "The movement from Galilee into Judea (10:1) is the geographic turning point: the journey to Jerusalem has begun. The Pharisees’ divorce test receives a creation-order answer that goes behind Moses. The children episode immediately follows — kingdom entry requires becoming like a child: the opposite of the disciples’ gatekeeping.",
-        "cross": [
-          {
-            "ref": "Gen 1:27",
-            "note": "God made them male and female — Jesus grounds the marriage ethic in creation order, not Mosaic concession."
-          },
-          {
-            "ref": "Gen 2:24",
-            "note": "A man will leave his father and mother and be united to his wife — the one-flesh permanence Jesus quotes."
-          },
-          {
-            "ref": "Deut 24:1-4",
-            "note": "The Mosaic divorce certificate — Jesus reinterprets it as a concession to hardness of heart, not divine ideal."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 1:27",
+              "note": "God made them male and female — Jesus grounds the marriage ethic in creation order, not Mosaic concession."
+            },
+            {
+              "ref": "Gen 2:24",
+              "note": "A man will leave his father and mother and be united to his wife — the one-flesh permanence Jesus quotes."
+            },
+            {
+              "ref": "Deut 24:1-4",
+              "note": "The Mosaic divorce certificate — Jesus reinterprets it as a concession to hardness of heart, not divine ideal."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -120,6 +121,9 @@
               "note": "If she divorces her husband — Jewish law did not grant women the right to initiate divorce. Jesus’s extension reflects either a Roman legal context or a principle of equal moral accountability."
             }
           ]
+        },
+        "hist": {
+          "context": "The movement from Galilee into Judea (10:1) is the geographic turning point: the journey to Jerusalem has begun. The Pharisees’ divorce test receives a creation-order answer that goes behind Moses. The children episode immediately follows — kingdom entry requires becoming like a child: the opposite of the disciples’ gatekeeping."
         }
       }
     },
@@ -137,21 +141,22 @@
             "paragraph": "The Son of Man came to give his life as a ransom for many (v.45) — lytron anti pollōn. Lytron is the price paid to free a slave or captive. The anti indicates substitution: his life in the place of many. This is the clearest substitutionary atonement statement in Mark."
           }
         ],
-        "ctx": "The third and most detailed passion prediction (10:33-34) is bracketed by two failure stories: the rich young man who cannot surrender wealth (10:17-22) and James and John who request the best seats (10:35-40). Mark 10:45 is the theological climax of the entire pre-Passion narrative: the ransom saying defines why Jesus is going to Jerusalem.",
-        "cross": [
-          {
-            "ref": "Isa 53:10-12",
-            "note": "He will see the result of his suffering… he bore the sin of many — the servant song that 10:45 directly echoes."
-          },
-          {
-            "ref": "Dan 7:13-14",
-            "note": "The Son of Man receiving authority — here re-described in servant terms: the Son of Man comes not to be served but to give his life."
-          },
-          {
-            "ref": "Exod 21:30",
-            "note": "A ransom for his life — the legal background for lytron: the payment that redeems a life otherwise forfeit."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 53:10-12",
+              "note": "He will see the result of his suffering… he bore the sin of many — the servant song that 10:45 directly echoes."
+            },
+            {
+              "ref": "Dan 7:13-14",
+              "note": "The Son of Man receiving authority — here re-described in servant terms: the Son of Man comes not to be served but to give his life."
+            },
+            {
+              "ref": "Exod 21:30",
+              "note": "A ransom for his life — the legal background for lytron: the payment that redeems a life otherwise forfeit."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -229,6 +234,9 @@
               "note": "Anti pollōn — the preposition anti consistently means substitution in NT Greek. The death is a specific exchange: his life in the place of many, echoing Isa 53:11-12."
             }
           ]
+        },
+        "hist": {
+          "context": "The third and most detailed passion prediction (10:33-34) is bracketed by two failure stories: the rich young man who cannot surrender wealth (10:17-22) and James and John who request the best seats (10:35-40). Mark 10:45 is the theological climax of the entire pre-Passion narrative: the ransom saying defines why Jesus is going to Jerusalem."
         }
       }
     },
@@ -249,21 +257,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jericho</div><div class=\"poi-coords\">Jordan Valley; 250m below sea level; last city before Jerusalem</div><div class=\"poi-text\">Jericho is the gateway to Jerusalem on the eastern approach. After Jericho the road climbs steeply through the Judean wilderness to Jerusalem (from 250m below sea level to 750m above). Bartimaeus is healed at the foot of the final ascent.</div></div>"
         },
-        "ctx": "Bartimaeus is Mark’s most individualized healing recipient — the only one given a name and its meaning. His persistence against the crowd’s silencing, his immediate response to the call (throwing off his cloak — his begging equipment), and his following Jesus on the road make him the model disciple of the entire journey section. His healing is the last act before the Triumphal Entry.",
-        "cross": [
-          {
-            "ref": "Isa 35:5",
-            "note": "Then will the eyes of the blind be opened — the eschatological healing Bartimaeus receives."
-          },
-          {
-            "ref": "Ps 146:8",
-            "note": "The LORD gives sight to the blind — what YHWH does, Jesus does."
-          },
-          {
-            "ref": "2 Sam 7:12-14",
-            "note": "The eternal Davidic throne — the “Son of David” title rooted in the Davidic covenant."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 35:5",
+              "note": "Then will the eyes of the blind be opened — the eschatological healing Bartimaeus receives."
+            },
+            {
+              "ref": "Ps 146:8",
+              "note": "The LORD gives sight to the blind — what YHWH does, Jesus does."
+            },
+            {
+              "ref": "2 Sam 7:12-14",
+              "note": "The eternal Davidic throne — the “Son of David” title rooted in the Davidic covenant."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -341,6 +350,9 @@
               "note": "Was following him in the Way (en tē hodō) — hodos (road/way). In Acts, “the Way” becomes the name for the Christian movement. Bartimaeus is the first person explicitly said to follow Jesus on the Way."
             }
           ]
+        },
+        "hist": {
+          "context": "Bartimaeus is Mark’s most individualized healing recipient — the only one given a name and its meaning. His persistence against the crowd’s silencing, his immediate response to the call (throwing off his cloak — his begging equipment), and his following Jesus on the road make him the model disciple of the entire journey section. His healing is the last act before the Triumphal Entry."
         }
       }
     }

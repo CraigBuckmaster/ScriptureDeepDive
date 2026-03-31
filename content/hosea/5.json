@@ -31,21 +31,22 @@
             "paragraph": "From bagad, denoting betrayal of a trust relationship, especially covenant infidelity. The verb carries the connotation of spousal betrayal, maintaining the marriage metaphor. Israel's covenant violation is not mere negligence but active treachery against a partner who trusted them."
           }
         ],
-        "ctx": "Chapter 5 opens with a triple address that expands the scope of judgment: priests, people, and royal house are all summoned to hear their sentence. The place names Mizpah and Tabor are significant: both were elevated sites associated with worship and military assembly. The accusation that the leaders have been a 'snare' and a 'net' on these sites suggests that the shrines have become traps for the people rather than places of encounter with God. The 'spirit of prostitution' (ruah zenunim) from 4:12 reappears, confirming that Israel's infidelity is not occasional but systemic. The language of 'illegitimate children' (v. 7) extends the marriage metaphor: Israel's syncretistic worship has produced offspring that YHWH does not recognize as his own.",
-        "cross": [
-          {
-            "ref": "Judg 4:6",
-            "note": "Tabor as the site of Deborah's military assembly against Sisera, now ironically described as a place of entrapment."
-          },
-          {
-            "ref": "1 Sam 7:5-6",
-            "note": "Mizpah as the site of Samuel's covenant renewal assembly, now corrupted into a snare."
-          },
-          {
-            "ref": "Isa 1:23",
-            "note": "Isaiah's parallel indictment of rulers as 'companions of thieves' who love bribes and ignore justice."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Judg 4:6",
+              "note": "Tabor as the site of Deborah's military assembly against Sisera, now ironically described as a place of entrapment."
+            },
+            {
+              "ref": "1 Sam 7:5-6",
+              "note": "Mizpah as the site of Samuel's covenant renewal assembly, now corrupted into a snare."
+            },
+            {
+              "ref": "Isa 1:23",
+              "note": "Isaiah's parallel indictment of rulers as 'companions of thieves' who love bribes and ignore justice."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "This passage introduces the political dimension of the covenant lawsuit. The royal house had been complicit in Israel's apostasy since Jeroboam I, and the priests had facilitated it. Andersen and Freedman note that the triple address creates a legal quorum: every branch of Israelite society — religious, civil, and royal — stands accused."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 5 opens with a triple address that expands the scope of judgment: priests, people, and royal house are all summoned to hear their sentence. The place names Mizpah and Tabor are significant: both were elevated sites associated with worship and military assembly. The accusation that the leaders have been a 'snare' and a 'net' on these sites suggests that the shrines have become traps for the people rather than places of encounter with God. The 'spirit of prostitution' (ruah zenunim) from 4:12 reappears, confirming that Israel's infidelity is not occasional but systemic. The language of 'illegitimate children' (v. 7) extends the marriage metaphor: Israel's syncretistic worship has produced offspring that YHWH does not recognize as his own."
         }
       }
     },
@@ -131,21 +135,22 @@
             "paragraph": "YHWH compares himself to a lion (shahal, a young or fierce lion) and a great lion (kephir) in v. 14. The image is terrifying: the covenant God who was shepherd and husband now becomes predator. The lion metaphor appears also in 13:7-8, where YHWH compares himself to a lion, leopard, and bear. This is the dark side of covenant love: the God who protects can also devour when his people prove incorrigibly unfaithful."
           }
         ],
-        "ctx": "Verses 8-15 are widely regarded as Hosea's response to the Syro-Ephraimite crisis of 735-732 BC, when the Aramean-Israelite coalition attacked Judah (Isa 7; 2 Kgs 16:5). The trumpet-blast warning (v. 8) echoes holy war language: the alarm sounds through Gibeah, Ramah, and Beth Aven, moving south to north along the Benjamin-Ephraim border. The crisis is both military and theological: Ephraim has turned to Assyria for help (v. 13), seeking a political alliance instead of divine intervention. Hosea calls the Assyrian king 'the great king' (melek yarev), a title used in Assyrian royal inscriptions. The chapter closes with YHWH's withdrawal to his 'lair' — the lion returning to his den, leaving the prey wounded but alive, waiting for them to seek his face.",
-        "cross": [
-          {
-            "ref": "Isa 7:1-9",
-            "note": "Isaiah's account of the Syro-Ephraimite crisis, the likely historical background of Hosea 5:8-15."
-          },
-          {
-            "ref": "2 Kgs 16:7-9",
-            "note": "Ahaz of Judah appeals to Tiglath-Pileser III of Assyria for help against the coalition — the very political maneuvering Hosea condemns."
-          },
-          {
-            "ref": "Hos 13:7-8",
-            "note": "The lion/leopard/bear imagery returns in intensified form in Hosea's later oracle."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 7:1-9",
+              "note": "Isaiah's account of the Syro-Ephraimite crisis, the likely historical background of Hosea 5:8-15."
+            },
+            {
+              "ref": "2 Kgs 16:7-9",
+              "note": "Ahaz of Judah appeals to Tiglath-Pileser III of Assyria for help against the coalition — the very political maneuvering Hosea condemns."
+            },
+            {
+              "ref": "Hos 13:7-8",
+              "note": "The lion/leopard/bear imagery returns in intensified form in Hosea's later oracle."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -214,6 +219,9 @@
               "note": "This passage is the most historically grounded oracle in the book, likely reflecting the Syro-Ephraimite crisis. The military language, place names, and political allusions provide a rare window into Hosea's engagement with contemporary geopolitics. Yet even here, the theological framework dominates: military crisis is interpreted as covenant consequence, and political alliance is condemned as spiritual adultery."
             }
           ]
+        },
+        "hist": {
+          "context": "Verses 8-15 are widely regarded as Hosea's response to the Syro-Ephraimite crisis of 735-732 BC, when the Aramean-Israelite coalition attacked Judah (Isa 7; 2 Kgs 16:5). The trumpet-blast warning (v. 8) echoes holy war language: the alarm sounds through Gibeah, Ramah, and Beth Aven, moving south to north along the Benjamin-Ephraim border. The crisis is both military and theological: Ephraim has turned to Assyria for help (v. 13), seeking a political alliance instead of divine intervention. Hosea calls the Assyrian king 'the great king' (melek yarev), a title used in Assyrian royal inscriptions. The chapter closes with YHWH's withdrawal to his 'lair' — the lion returning to his den, leaving the prey wounded but alive, waiting for them to seek his face."
         }
       }
     }

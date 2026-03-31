@@ -25,17 +25,18 @@
             "paragraph": "\"Why does the Almighty not set times (ʿittîm) for judgment?\" (v.1). The question: if God is just, why doesn’t he schedule regular court sessions? The wicked should be judged on a fixed calendar, not at some indefinite future point. Justice delayed is justice denied."
           }
         ],
-        "ctx": "Job catalogues social injustice: the wicked move boundary stones (v.2), drive away the orphan’s donkey (v.3), thrust the needy from the road (v.4). The poor harvest fields not their own (v.6), go naked without covering (v.7), are drenched by rain with no shelter (v.8). The city’s dying groan (v.12) — and God charges no one with wrongdoing. This is Job’s social justice speech: the retribution principle fails not just for Job but for the entire world.",
-        "cross": [
-          {
-            "ref": "Hab 1:2–4",
-            "note": "\"How long, LORD, must I call for help, but you do not listen?\" — the prophet’s identical complaint about unanswered injustice."
-          },
-          {
-            "ref": "Amos 2:6–7",
-            "note": "\"They sell the innocent for silver, and the needy for a pair of sandals\" — Amos’ catalogue of the same social crimes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Hab 1:2–4",
+              "note": "\"How long, LORD, must I call for help, but you do not listen?\" — the prophet’s identical complaint about unanswered injustice."
+            },
+            {
+              "ref": "Amos 2:6–7",
+              "note": "\"They sell the innocent for silver, and the needy for a pair of sandals\" — Amos’ catalogue of the same social crimes."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Habel: Job presents evidence of systemic injustice. His argument has expanded from personal injury to social critique: the retribution principle fails everywhere, not just in Uz."
             }
           ]
+        },
+        "hist": {
+          "context": "Job catalogues social injustice: the wicked move boundary stones (v.2), drive away the orphan’s donkey (v.3), thrust the needy from the road (v.4). The poor harvest fields not their own (v.6), go naked without covering (v.7), are drenched by rain with no shelter (v.8). The city’s dying groan (v.12) — and God charges no one with wrongdoing. This is Job’s social justice speech: the retribution principle fails not just for Job but for the entire world."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "\"There are those who rebel against the light (ōr)\" (v.13). The rebels against light: murderers, adulterers, thieves. They prefer darkness because it hides their deeds. Job describes a world where the wicked thrive precisely because they operate in secret — and God does not intervene."
           }
         ],
-        "ctx": "Job describes the nocturnal wicked: the murderer rises at dusk (v.14), the adulterer waits for twilight (v.15), the thief breaks in at night (v.16). Morning is their darkness (v.17). They are friends with the terrors of midnight. Job’s challenge at the end is definitive: “If this is not so, who can prove me false?” (v.25). He demands a counter-argument. The friends have none.",
-        "cross": [
-          {
-            "ref": "John 3:19–20",
-            "note": "\"People loved darkness instead of light because their deeds were evil\" — Jesus’ same diagnosis of those who rebel against light."
-          },
-          {
-            "ref": "Eph 5:11–12",
-            "note": "\"Have nothing to do with the fruitless deeds of darkness\" — Paul’s echo of Job’s light/darkness moral framework."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 3:19–20",
+              "note": "\"People loved darkness instead of light because their deeds were evil\" — Jesus’ same diagnosis of those who rebel against light."
+            },
+            {
+              "ref": "Eph 5:11–12",
+              "note": "\"Have nothing to do with the fruitless deeds of darkness\" — Paul’s echo of Job’s light/darkness moral framework."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -192,6 +197,9 @@
               "note": "Habel: Job’s closing argument for the second cycle. The prosecution’s theory (retribution) has been tested against evidence (the wicked prosper, the innocent suffer) and found wanting. The defence rests."
             }
           ]
+        },
+        "hist": {
+          "context": "Job describes the nocturnal wicked: the murderer rises at dusk (v.14), the adulterer waits for twilight (v.15), the thief breaks in at night (v.16). Morning is their darkness (v.17). They are friends with the terrors of midnight. Job’s challenge at the end is definitive: “If this is not so, who can prove me false?” (v.25). He demands a counter-argument. The friends have none."
         }
       }
     }

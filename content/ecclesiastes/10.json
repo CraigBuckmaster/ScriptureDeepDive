@@ -25,17 +25,18 @@
             "paragraph": "\"As dead flies (zəbūbê māwet) give perfume a bad smell, so a little folly outweighs wisdom and honour\" (v.1). The asymmetry again: a tiny impurity ruins a great good. One dead fly ruins an entire batch of perfume. One foolish act can destroy a lifetime of wisdom. The ratio is disproportionate and unfair — which is precisely the point."
           }
         ],
-        "ctx": "A collection of loosely connected wisdom proverbs. The fool’s heart inclines to the left (v.2). Fools broadcast their foolishness (v.3). The one who digs a pit falls into it; the one who breaks through a wall is bitten by a snake (v.8–9). These are traditional proverbs Qoheleth gathers, not all original to him. Their placement here suggests that even practical wisdom has limits: you can know these truths and still be caught by chance.",
-        "cross": [
-          {
-            "ref": "Prov 26:1–12",
-            "note": "The \"fool\" collection in Proverbs — the same tradition Qoheleth draws from."
-          },
-          {
-            "ref": "Gal 5:9",
-            "note": "\"A little yeast works through the whole batch of dough\" — Paul’s version of the dead-fly principle."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 26:1–12",
+              "note": "The \"fool\" collection in Proverbs — the same tradition Qoheleth draws from."
+            },
+            {
+              "ref": "Gal 5:9",
+              "note": "\"A little yeast works through the whole batch of dough\" — Paul’s version of the dead-fly principle."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -117,6 +118,9 @@
               "note": "Fox: \"right\" and \"left\" are skill/weakness pairs, not moral categories. The fool’s heart goes toward incompetence; the wise person’s goes toward capability."
             }
           ]
+        },
+        "hist": {
+          "context": "A collection of loosely connected wisdom proverbs. The fool’s heart inclines to the left (v.2). Fools broadcast their foolishness (v.3). The one who digs a pit falls into it; the one who breaks through a wall is bitten by a snake (v.8–9). These are traditional proverbs Qoheleth gathers, not all original to him. Their placement here suggests that even practical wisdom has limits: you can know these truths and still be caught by chance."
         }
       }
     },
@@ -134,17 +138,18 @@
             "paragraph": "\"If a snake bites before it is charmed, the charmer (baʿal hallāshōn, \"master of the tongue\") receives no fee\" (v.11). A proverb about timing: even skill is useless if exercised too late. The snake charmer who charms after the bite has wasted his expertise. Wisdom must be timely to be useful."
           }
         ],
-        "ctx": "The proverbs continue: the fool’s words consume him (vv.12–14), fools exhaust themselves because they don’t know the way to town (v.15), woe to the land whose king is a child (v.16) but blessed is the land whose king is noble (v.17). The chapter closes with two warnings: laziness leads to a leaking roof (v.18), and do not curse the king even in thought, because a bird may carry the report (v.20). Practical wisdom for surviving in a world of power and folly.",
-        "cross": [
-          {
-            "ref": "Prov 18:21",
-            "note": "\"The tongue has the power of life and death\" — the same speech-theology."
-          },
-          {
-            "ref": "Jas 3:5–6",
-            "note": "\"The tongue is a small part of the body, but it makes great boasts\" — James’s development of the speech proverbs."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 18:21",
+              "note": "\"The tongue has the power of life and death\" — the same speech-theology."
+            },
+            {
+              "ref": "Jas 3:5–6",
+              "note": "\"The tongue is a small part of the body, but it makes great boasts\" — James’s development of the speech proverbs."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -226,6 +231,9 @@
               "note": "Fox: the king proverbs are political observation, not advice. Qoheleth describes what he has seen: immature rulers produce disorder; disciplined rulers produce stability."
             }
           ]
+        },
+        "hist": {
+          "context": "The proverbs continue: the fool’s words consume him (vv.12–14), fools exhaust themselves because they don’t know the way to town (v.15), woe to the land whose king is a child (v.16) but blessed is the land whose king is noble (v.17). The chapter closes with two warnings: laziness leads to a leaking roof (v.18), and do not curse the king even in thought, because a bird may carry the report (v.20). Practical wisdom for surviving in a world of power and folly."
         }
       }
     }

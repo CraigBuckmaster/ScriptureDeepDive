@@ -31,17 +31,18 @@
             "paragraph": "\"My nard sends forth its fragrance\" (v.12). Nard is an expensive imported perfume from the Himalayas. The same perfume Mary of Bethany pours on Jesus’ feet (John 12:3). Love and extravagance are inseparable."
           }
         ],
-        "ctx": "The poem opens with the woman’s voice — unusual in ancient literature. She desires her lover’s kisses, praises his name as poured-out perfume, and asks him to take her away. The Daughters of Jerusalem serve as a chorus. She describes herself as \"dark but lovely\" (v.5) — sun-darkened from vineyard labour, not pampered. Her beauty is working beauty.",
-        "cross": [
-          {
-            "ref": "John 12:3",
-            "note": "Mary anoints Jesus with nard — the same perfume, the same extravagance of love."
-          },
-          {
-            "ref": "Eph 5:25–32",
-            "note": "Paul reads marital love as a picture of Christ and the church — the allegorical tradition rooted in Song."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 12:3",
+              "note": "Mary anoints Jesus with nard — the same perfume, the same extravagance of love."
+            },
+            {
+              "ref": "Eph 5:25–32",
+              "note": "Paul reads marital love as a picture of Christ and the church — the allegorical tradition rooted in Song."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -127,6 +128,9 @@
               "note": "Garrett: the opening establishes the dramatic situation: the Beloved longs for the Lover, seeks him, and the Daughters of Jerusalem witness. The poem will alternate voices throughout."
             }
           ]
+        },
+        "hist": {
+          "context": "The poem opens with the woman’s voice — unusual in ancient literature. She desires her lover’s kisses, praises his name as poured-out perfume, and asks him to take her away. The Daughters of Jerusalem serve as a chorus. She describes herself as \"dark but lovely\" (v.5) — sun-darkened from vineyard labour, not pampered. Her beauty is working beauty."
         }
       }
     },
@@ -144,17 +148,18 @@
             "paragraph": "\"How beautiful you are, my darling (raʿyātî)!\" (v.15). Raʿyâ means companion, friend, intimate associate. The lover does not just desire the beloved; he befriends her. The relationship is erotic AND companionate."
           }
         ],
-        "ctx": "The Lover speaks: she is beautiful as a mare among Pharaoh’s chariots (v.9) — a striking image of decorated beauty and controlled power. Her cheeks are adorned, her neck circled. He will make her earrings of gold and silver (vv.10–11). She responds: his love is fragrant as myrrh between her breasts (v.13), as henna blossoms in En Gedi (v.14). The dialogue closes with mutual admiration: you are beautiful; our bed is verdant; our house has cedar beams (vv.15–17).",
-        "cross": [
-          {
-            "ref": "Prov 31:10–12",
-            "note": "\"A wife of noble character... her husband has full confidence in her\" — the marital partnership the Song dramatises."
-          },
-          {
-            "ref": "Rev 19:7–9",
-            "note": "\"The wedding of the Lamb has come\" — the eschatological marriage feast that the Song foreshadows."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 31:10–12",
+              "note": "\"A wife of noble character... her husband has full confidence in her\" — the marital partnership the Song dramatises."
+            },
+            {
+              "ref": "Rev 19:7–9",
+              "note": "\"The wedding of the Lamb has come\" — the eschatological marriage feast that the Song foreshadows."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -236,6 +241,9 @@
               "note": "Garrett: the mutual dialogue establishes the Song’s pattern: she speaks, he speaks, they speak together. The voices interweave rather than alternate rigidly."
             }
           ]
+        },
+        "hist": {
+          "context": "The Lover speaks: she is beautiful as a mare among Pharaoh’s chariots (v.9) — a striking image of decorated beauty and controlled power. Her cheeks are adorned, her neck circled. He will make her earrings of gold and silver (vv.10–11). She responds: his love is fragrant as myrrh between her breasts (v.13), as henna blossoms in En Gedi (v.14). The dialogue closes with mutual admiration: you are beautiful; our bed is verdant; our house has cedar beams (vv.15–17)."
         }
       }
     }

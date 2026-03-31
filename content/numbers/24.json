@@ -31,17 +31,18 @@
             "paragraph": "The opening of the third oracle — one of the most beloved phrases in Jewish liturgy, sung at the beginning of morning synagogue service. The aesthetic beauty of Israel’s dwelling places expresses the covenant flourishing that Balak’s curse was meant to destroy."
           }
         ],
-        "ctx": "The third oracle breaks new ground: Balaam abandons divination entirely and simply opens his eyes to see Israel (v.2) — the Spirit of God comes upon him. The oracle (vv.5–9) is the most lyrical of the four: Israel’s tents like valleys spread out, like gardens by the river, like aloes planted by God, like cedars beside waters. The king shall be greater than Agag; the kingdom shall be exalted. Blessed are those who bless Israel; cursed are those who curse Israel (reversing Balak’s request completely). Balak’s furious dismissal: he strikes his hands together and sends Balaam away without the promised payment. Balaam’s response: \"Even if you gave me all the silver and gold in your palace, I could not do anything to go beyond the command of God.\"",
-        "cross": [
-          {
-            "ref": "Gen 12:3",
-            "note": "\"I will bless those who bless you, and whoever curses you I will curse.\" The third oracle’s closing formula (v.9b: \"Blessed is everyone who blesses you and cursed is everyone who curses you\") quotes the Abrahamic covenant directly — Balak hired Balaam to reverse the Abrahamic promise and instead received its reaffirmation."
-          },
-          {
-            "ref": "Rev 22:1–2",
-            "note": "\"The river of the water of life, as clear as crystal, flowing from the throne of God… On each side of the river stood the tree of life.\" The garden imagery of the third oracle (tents like gardens by a river, vv.5–6) prefigures the eschatological garden-city of Revelation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 12:3",
+              "note": "\"I will bless those who bless you, and whoever curses you I will curse.\" The third oracle’s closing formula (v.9b: \"Blessed is everyone who blesses you and cursed is everyone who curses you\") quotes the Abrahamic covenant directly — Balak hired Balaam to reverse the Abrahamic promise and instead received its reaffirmation."
+            },
+            {
+              "ref": "Rev 22:1–2",
+              "note": "\"The river of the water of life, as clear as crystal, flowing from the throne of God… On each side of the river stood the tree of life.\" The garden imagery of the third oracle (tents like gardens by a river, vv.5–6) prefigures the eschatological garden-city of Revelation."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Ashley: The narrative context of final oracles in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "The third oracle breaks new ground: Balaam abandons divination entirely and simply opens his eyes to see Israel (v.2) — the Spirit of God comes upon him. The oracle (vv.5–9) is the most lyrical of the four: Israel’s tents like valleys spread out, like gardens by the river, like aloes planted by God, like cedars beside waters. The king shall be greater than Agag; the kingdom shall be exalted. Blessed are those who bless Israel; cursed are those who curse Israel (reversing Balak’s request completely). Balak’s furious dismissal: he strikes his hands together and sends Balaam away without the promised payment. Balaam’s response: \"Even if you gave me all the silver and gold in your palace, I could not do anything to go beyond the command of God.\""
         }
       }
     },
@@ -123,21 +127,22 @@
             "paragraph": "The messianic oracle of Balaam — the most explicitly royal-messianic prophecy in Numbers. The star (kôkāb) and the sceptre (šēbeṭ) from Jacob/Israel will crush Moab and all the sons of Seth. The language of crushing (māḥaṣ) and ruling (rādāh) is the language of the Davidic monarchy and ultimately of the Messiah."
           }
         ],
-        "ctx": "The fourth oracle (vv.15–19) is the most elevated of the four — and the most explicitly eschatological. The seer who \"sees the vision of the Almighty\" (v.4, 16) looks to the far future: \"I see him, but not now; I behold him, but not near.\" A star from Jacob, a sceptre from Israel, will crush Moab’s temples and destroy all the sons of Seth. Edom will be conquered; Israel will gain strength; a ruler will arise from Jacob. The four brief oracles against Amalek, the Kenites, Asshur, and Eber follow, and Balaam departs. The oracle cycle closes without any curse; Balaam returns to his home, and Balak is left with nothing.",
-        "cross": [
-          {
-            "ref": "Matt 2:2",
-            "note": "\"Where is the one who has been born king of the Jews? We saw his star when it rose and have come to worship him.\" The Magi’s star — almost certainly informed by Balaam’s oracle — represents the fulfilment of the star-from-Jacob prophecy. Non-Israelite observers of astronomical signs seek the messianic king, just as a non-Israelite prophet announced him centuries earlier."
-          },
-          {
-            "ref": "Rev 22:16",
-            "note": "\"I am the Root and the Offspring of David, and the bright Morning Star.\" Jesus applies Balaam’s star imagery to himself in Revelation’s closing chapter."
-          },
-          {
-            "ref": "Gen 49:10",
-            "note": "\"The sceptre will not depart from Judah, nor the ruler’s staff from between his feet, until he to whom it belongs shall come.\" Balaam’s sceptre-from-Israel oracle parallels Jacob’s blessing of Judah — both prophesying a messianic ruler from the covenant people."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 2:2",
+              "note": "\"Where is the one who has been born king of the Jews? We saw his star when it rose and have come to worship him.\" The Magi’s star — almost certainly informed by Balaam’s oracle — represents the fulfilment of the star-from-Jacob prophecy. Non-Israelite observers of astronomical signs seek the messianic king, just as a non-Israelite prophet announced him centuries earlier."
+            },
+            {
+              "ref": "Rev 22:16",
+              "note": "\"I am the Root and the Offspring of David, and the bright Morning Star.\" Jesus applies Balaam’s star imagery to himself in Revelation’s closing chapter."
+            },
+            {
+              "ref": "Gen 49:10",
+              "note": "\"The sceptre will not depart from Judah, nor the ruler’s staff from between his feet, until he to whom it belongs shall come.\" Balaam’s sceptre-from-Israel oracle parallels Jacob’s blessing of Judah — both prophesying a messianic ruler from the covenant people."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -202,6 +207,9 @@
               "note": "Ashley: The narrative context of final oracles in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "The fourth oracle (vv.15–19) is the most elevated of the four — and the most explicitly eschatological. The seer who \"sees the vision of the Almighty\" (v.4, 16) looks to the far future: \"I see him, but not now; I behold him, but not near.\" A star from Jacob, a sceptre from Israel, will crush Moab’s temples and destroy all the sons of Seth. Edom will be conquered; Israel will gain strength; a ruler will arise from Jacob. The four brief oracles against Amalek, the Kenites, Asshur, and Eber follow, and Balaam departs. The oracle cycle closes without any curse; Balaam returns to his home, and Balak is left with nothing."
         }
       }
     }

@@ -34,22 +34,26 @@
             "paragraph": "Used three times in this passage (vv.2, 8, 11). The word ranges from social respect to divine worship. When Herod claims he wants to 'worship' the child (v.8), he uses the same verb the Magi use genuinely (v.11). The identical word masks opposite intentions — homage versus homicide."
           }
         ],
-        "hist": "None",
-        "ctx": "Matthew 2 is built around four OT fulfilment quotations — more than any other chapter. The Magi scene (vv.1–12) establishes the central irony of the chapter: Gentile outsiders from the east recognise and worship the King of the Jews, while the official Jewish establishment in Jerusalem is \"disturbed\" (v.3). Herod knows where the Messiah is to be born (the scholars can tell him precisely) but uses that knowledge to plot murder rather than worship.",
-        "cross": [
-          {
-            "ref": "Mic 5:2",
-            "note": "Bethlehem as the birthplace of the ruler who will shepherd Israel — quoted v.6. Matthew adds a phrase from 2 Sam 5:2 (\"who will shepherd my people Israel\"), combining both texts."
-          },
-          {
-            "ref": "Num 24:17",
-            "note": "A star shall come out of Jacob — Balaam's oracle. The Magi's star may be the fulfilment of this prophecy, connecting Israel's Gentile opponents in Numbers to the Gentile worshippers in Matthew."
-          },
-          {
-            "ref": "Isa 60:6",
-            "note": "Gold and frankincense from the nations — Isaiah's vision of Gentiles bringing tribute to Zion. Matthew's Magi enact this vision."
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "Matthew 2 is built around four OT fulfilment quotations — more than any other chapter. The Magi scene (vv.1–12) establishes the central irony of the chapter: Gentile outsiders from the east recognise and worship the King of the Jews, while the official Jewish establishment in Jerusalem is \"disturbed\" (v.3). Herod knows where the Messiah is to be born (the scholars can tell him precisely) but uses that knowledge to plot murder rather than worship."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mic 5:2",
+              "note": "Bethlehem as the birthplace of the ruler who will shepherd Israel — quoted v.6. Matthew adds a phrase from 2 Sam 5:2 (\"who will shepherd my people Israel\"), combining both texts."
+            },
+            {
+              "ref": "Num 24:17",
+              "note": "A star shall come out of Jacob — Balaam's oracle. The Magi's star may be the fulfilment of this prophecy, connecting Israel's Gentile opponents in Numbers to the Gentile worshippers in Matthew."
+            },
+            {
+              "ref": "Isa 60:6",
+              "note": "Gold and frankincense from the nations — Isaiah's vision of Gentiles bringing tribute to Zion. Matthew's Magi enact this vision."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Jerusalem",
@@ -141,22 +145,26 @@
             "paragraph": "Used four times in chapter 2 (vv.12, 13, 14, 22) — the chapter's structural keyword. Every major action is a withdrawal: the Magi depart another way, Joseph withdraws to Egypt, then to Israel, then to Galilee. The holy family's survival depends on strategic retreat."
           }
         ],
-        "hist": "None",
-        "ctx": "The flight to Egypt (vv.13–15) and the massacre of the innocents (vv.16–18) are Matthew's two darkest scenes — and both serve typological purposes. The flight recapitulates the Exodus (Jesus = Israel / Moses). The massacre echoes Pharaoh's killing of Hebrew infants (Exod 1:16) and the Exile's grief (Jer 31:15). Matthew is reading the birth of Jesus as the convergence point of Israel's entire history.",
-        "cross": [
-          {
-            "ref": "Hos 11:1",
-            "note": "Out of Egypt I called my son — originally Israel at the Exodus. Jesus recapitulates Israel's story as the true, faithful Israel."
-          },
-          {
-            "ref": "Jer 31:15",
-            "note": "Rachel weeping for her children — Jeremiah's lament over the Exile. Matthew applies it to the Bethlehem massacre, reading the massacre as a new Exile-level catastrophe."
-          },
-          {
-            "ref": "Exod 1:15–22",
-            "note": "Pharaoh's massacre of Hebrew infant boys. Herod mirrors Pharaoh; Jesus mirrors Moses — the one who escapes to bring liberation."
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "The flight to Egypt (vv.13–15) and the massacre of the innocents (vv.16–18) are Matthew's two darkest scenes — and both serve typological purposes. The flight recapitulates the Exodus (Jesus = Israel / Moses). The massacre echoes Pharaoh's killing of Hebrew infants (Exod 1:16) and the Exile's grief (Jer 31:15). Matthew is reading the birth of Jesus as the convergence point of Israel's entire history."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Hos 11:1",
+              "note": "Out of Egypt I called my son — originally Israel at the Exodus. Jesus recapitulates Israel's story as the true, faithful Israel."
+            },
+            {
+              "ref": "Jer 31:15",
+              "note": "Rachel weeping for her children — Jeremiah's lament over the Exile. Matthew applies it to the Bethlehem massacre, reading the massacre as a new Exile-level catastrophe."
+            },
+            {
+              "ref": "Exod 1:15–22",
+              "note": "Pharaoh's massacre of Hebrew infant boys. Herod mirrors Pharaoh; Jesus mirrors Moses — the one who escapes to bring liberation."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Egypt",
@@ -307,18 +315,22 @@
             "paragraph": "Distinguished from paroikeō ('sojourn temporarily'). The family settles permanently in Nazareth — this is not a stopover but a new home. The verb quietly establishes Galilee, not Bethlehem, as Jesus' base of operations for the rest of the Gospel."
           }
         ],
-        "hist": "None",
-        "ctx": "The return from Egypt (vv.19–23) completes the Exodus typology: as Israel came up out of Egypt into the promised land, so Jesus comes up from Egypt into Israel. But the destination is Galilee, not Judea — a detail Matthew uses to fulfil \"he will be called a Nazarene.\" The move to Galilee also sets up 4:12–17, where Jesus's Galilean ministry fulfils Isaiah's \"Galilee of the Gentiles.\"",
-        "cross": [
-          {
-            "ref": "Exod 4:19",
-            "note": "Go back to Egypt, for all those who were trying to take your life are dead — God's words to Moses almost verbatim. The angel's words to Joseph in v.20 echo this precisely, underlining the Moses typology."
-          },
-          {
-            "ref": "Isa 11:1",
-            "note": "A shoot from the stump of Jesse / a Branch (nēṣer) from his roots. The wordplay on Nazareth/Nazarene may connect to this — the \"Branch\" prophecy pointing to the Davidic king from Jesse's line."
-          }
-        ]
+        "hist": {
+          "historical": "None",
+          "context": "The return from Egypt (vv.19–23) completes the Exodus typology: as Israel came up out of Egypt into the promised land, so Jesus comes up from Egypt into Israel. But the destination is Galilee, not Judea — a detail Matthew uses to fulfil \"he will be called a Nazarene.\" The move to Galilee also sets up 4:12–17, where Jesus's Galilean ministry fulfils Isaiah's \"Galilee of the Gentiles.\""
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 4:19",
+              "note": "Go back to Egypt, for all those who were trying to take your life are dead — God's words to Moses almost verbatim. The angel's words to Joseph in v.20 echo this precisely, underlining the Moses typology."
+            },
+            {
+              "ref": "Isa 11:1",
+              "note": "A shoot from the stump of Jesse / a Branch (nēṣer) from his roots. The wordplay on Nazareth/Nazarene may connect to this — the \"Branch\" prophecy pointing to the Davidic king from Jesse's line."
+            }
+          ]
+        }
       }
     }
   ],

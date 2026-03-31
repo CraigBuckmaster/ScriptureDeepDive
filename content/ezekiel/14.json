@@ -31,21 +31,22 @@
             "paragraph": "Their iniquity has become a stumbling block (mikhshol) — literally an obstacle that trips them. The phrase occurs seven times in Ezekiel and nowhere else, making it his distinctive vocabulary for the self-destructive nature of sin. Sin is not just offense against God but a trap the sinner sets for himself."
           }
         ],
-        "ctx": "The elders of Israel come to sit before Ezekiel — ostensibly seeking God's word. But God refuses to answer them because they carry idols in their hearts. This creates a new category: heart-idolatry, distinct from temple-idolatry (ch. 8). You can sit before the prophet with no visible idol and still be an idolater. Internal loyalty, not external ritual, is the decisive factor.",
-        "cross": [
-          {
-            "ref": "1 Sam 16:7",
-            "note": "The LORD looks at the heart — the principle underlying God's refusal to answer heart-idolaters."
-          },
-          {
-            "ref": "Jas 4:3",
-            "note": "You ask and do not receive because you ask with wrong motives — NT parallel to seeking God with an idolatrous heart."
-          },
-          {
-            "ref": "1 John 5:21",
-            "note": "Dear children, keep yourselves from idols — John's closing command echoes the heart-idol theology."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Sam 16:7",
+              "note": "The LORD looks at the heart — the principle underlying God's refusal to answer heart-idolaters."
+            },
+            {
+              "ref": "Jas 4:3",
+              "note": "You ask and do not receive because you ask with wrong motives — NT parallel to seeking God with an idolatrous heart."
+            },
+            {
+              "ref": "1 John 5:21",
+              "note": "Dear children, keep yourselves from idols — John's closing command echoes the heart-idol theology."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Zimmerli identifies this as a new form of prophetic torah — instruction on the conditions under which God will respond to inquiry. The passage functions as a rule for prophetic consultation: inner disposition determines whether the word is given or withheld."
             }
           ]
+        },
+        "hist": {
+          "context": "The elders of Israel come to sit before Ezekiel — ostensibly seeking God's word. But God refuses to answer them because they carry idols in their hearts. This creates a new category: heart-idolatry, distinct from temple-idolatry (ch. 8). You can sit before the prophet with no visible idol and still be an idolater. Internal loyalty, not external ritual, is the decisive factor."
         }
       }
     },
@@ -123,25 +127,26 @@
             "paragraph": "Three legendary righteous men: Noah who survived the flood, Daniel who survived the lion's den (or possibly the ancient Dan'el of Ugaritic literature), and Job who endured unjust suffering. Even these paragons of righteousness could save only themselves — not even their own children. The principle of individual accountability overrides even legendary merit."
           }
         ],
-        "ctx": "The oracle employs a four-fold structure: sword, famine, wild beasts, and plague — the four judgments of covenant curse (Lev 26). For each judgment, the same verdict: even if Noah, Daniel, and Job were in the land, they could deliver only themselves. The identity of Daniel is debated: some scholars see the biblical Daniel (Ezekiel's contemporary in Babylon), while others identify the ancient Dan'el known from Ugaritic texts — a legendary wise man paired with other ancient figures.",
-        "cross": [
-          {
-            "ref": "Gen 6:8-9",
-            "note": "Noah found favor in the eyes of the LORD — but even his righteousness could only save his own household."
-          },
-          {
-            "ref": "Job 1:1",
-            "note": "Job was blameless and upright — the paradigm of righteous suffering, now invoked as insufficient to avert national judgment."
-          },
-          {
-            "ref": "Jer 15:1",
-            "note": "Even if Moses and Samuel stood before me, my heart would not turn to this people — Jeremiah uses the same rhetorical device with different exemplars."
-          },
-          {
-            "ref": "Rom 14:12",
-            "note": "Each of us will give an account of himself to God — the NT restates Ezekiel's principle of individual accountability."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 6:8-9",
+              "note": "Noah found favor in the eyes of the LORD — but even his righteousness could only save his own household."
+            },
+            {
+              "ref": "Job 1:1",
+              "note": "Job was blameless and upright — the paradigm of righteous suffering, now invoked as insufficient to avert national judgment."
+            },
+            {
+              "ref": "Jer 15:1",
+              "note": "Even if Moses and Samuel stood before me, my heart would not turn to this people — Jeremiah uses the same rhetorical device with different exemplars."
+            },
+            {
+              "ref": "Rom 14:12",
+              "note": "Each of us will give an account of himself to God — the NT restates Ezekiel's principle of individual accountability."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -202,6 +207,9 @@
               "note": "Zimmerli favors the Ugaritic Dan'el identification, arguing that the trio represents ancient legendary figures of exemplary righteousness known throughout the Near East. Ezekiel draws on international wisdom tradition to make a universal point: even the most renowned righteous men in human memory cannot save a nation under divine judgment."
             }
           ]
+        },
+        "hist": {
+          "context": "The oracle employs a four-fold structure: sword, famine, wild beasts, and plague — the four judgments of covenant curse (Lev 26). For each judgment, the same verdict: even if Noah, Daniel, and Job were in the land, they could deliver only themselves. The identity of Daniel is debated: some scholars see the biblical Daniel (Ezekiel's contemporary in Babylon), while others identify the ancient Dan'el known from Ugaritic texts — a legendary wise man paired with other ancient figures."
         }
       }
     }

@@ -37,25 +37,26 @@
             "paragraph": "The weaker vessel - likely referring to physical vulnerability, not moral or intellectual inferiority. Husbands are to show honor."
           }
         ],
-        "ctx": "Peter continues the household code begun in chapter 2. Wives are to submit to husbands - even unbelieving ones - so that they may be won by conduct rather than words. The emphasis is on inner beauty rather than external adornment. Husbands are to live with wives in an understanding way, showing honor as fellow heirs of grace, so that prayers may not be hindered.",
-        "cross": [
-          {
-            "ref": "Ephesians 5:22-24",
-            "note": "Wives, submit to your own husbands, as to the Lord."
-          },
-          {
-            "ref": "Colossians 3:18-19",
-            "note": "Wives, submit to your husbands. Husbands, love your wives."
-          },
-          {
-            "ref": "1 Corinthians 7:13-16",
-            "note": "The unbelieving husband is made holy because of his wife."
-          },
-          {
-            "ref": "Proverbs 31:30",
-            "note": "Charm is deceitful and beauty is vain, but a woman who fears the LORD is to be praised."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ephesians 5:22-24",
+              "note": "Wives, submit to your own husbands, as to the Lord."
+            },
+            {
+              "ref": "Colossians 3:18-19",
+              "note": "Wives, submit to your husbands. Husbands, love your wives."
+            },
+            {
+              "ref": "1 Corinthians 7:13-16",
+              "note": "The unbelieving husband is made holy because of his wife."
+            },
+            {
+              "ref": "Proverbs 31:30",
+              "note": "Charm is deceitful and beauty is vain, but a woman who fears the LORD is to be praised."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -125,7 +126,10 @@
             }
           ]
         },
-        "hist": "Peter writes to Christians in five Roman provinces of Asia Minor (modern Turkey) — Pontus, Galatia, Cappadocia, Asia, and Bithynia. These believers face social ostracism and verbal abuse (4:4, 14) rather than official state persecution. As 'elect exiles' (1:1), they experience the marginalization of those who no longer participate in pagan civic religion, trade guild feasts, and family worship. The letter's household codes (2:13–3:7) address how Christians should live within Roman social structures. Peter writes from 'Babylon' (5:13) — almost certainly a symbolic name for Rome. Silvanus (Silas) serves as secretary (5:12), and Mark is present (5:13). The letter likely dates to the early 60s AD, before Nero's persecution."
+        "hist": {
+          "historical": "Peter writes to Christians in five Roman provinces of Asia Minor (modern Turkey) — Pontus, Galatia, Cappadocia, Asia, and Bithynia. These believers face social ostracism and verbal abuse (4:4, 14) rather than official state persecution. As 'elect exiles' (1:1), they experience the marginalization of those who no longer participate in pagan civic religion, trade guild feasts, and family worship. The letter's household codes (2:13–3:7) address how Christians should live within Roman social structures. Peter writes from 'Babylon' (5:13) — almost certainly a symbolic name for Rome. Silvanus (Silas) serves as secretary (5:12), and Mark is present (5:13). The letter likely dates to the early 60s AD, before Nero's persecution.",
+          "context": "Peter continues the household code begun in chapter 2. Wives are to submit to husbands - even unbelieving ones - so that they may be won by conduct rather than words. The emphasis is on inner beauty rather than external adornment. Husbands are to live with wives in an understanding way, showing honor as fellow heirs of grace, so that prayers may not be hindered."
+        }
       }
     },
     {
@@ -154,25 +158,26 @@
             "paragraph": "Do not repay evil for evil or reviling for reviling, but on the contrary, bless. The Christian response to hostility is benediction."
           }
         ],
-        "ctx": "Peter summarizes the ethical section with five virtues: unity, sympathy, brotherly love, tender heart, humble mind. The community is to be characterized by harmony, not retaliation. Psalm 34:12-16 is quoted: whoever desires to love life and see good days must keep the tongue from evil and do good. The eyes of the Lord are on the righteous.",
-        "cross": [
-          {
-            "ref": "Romans 12:14-17",
-            "note": "Bless those who persecute you; bless and do not curse."
-          },
-          {
-            "ref": "Psalm 34:12-16",
-            "note": "The eyes of the LORD are on the righteous, and his ears are open to their cry."
-          },
-          {
-            "ref": "Matthew 5:44",
-            "note": "Love your enemies and pray for those who persecute you."
-          },
-          {
-            "ref": "Proverbs 15:1",
-            "note": "A soft answer turns away wrath."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Romans 12:14-17",
+              "note": "Bless those who persecute you; bless and do not curse."
+            },
+            {
+              "ref": "Psalm 34:12-16",
+              "note": "The eyes of the LORD are on the righteous, and his ears are open to their cry."
+            },
+            {
+              "ref": "Matthew 5:44",
+              "note": "Love your enemies and pray for those who persecute you."
+            },
+            {
+              "ref": "Proverbs 15:1",
+              "note": "A soft answer turns away wrath."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -225,6 +230,9 @@
               "note": "Jobes emphasizes that Psalm 34 is a wisdom psalm. Peter grounds ethics in Israel's wisdom tradition."
             }
           ]
+        },
+        "hist": {
+          "context": "Peter summarizes the ethical section with five virtues: unity, sympathy, brotherly love, tender heart, humble mind. The community is to be characterized by harmony, not retaliation. Psalm 34:12-16 is quoted: whoever desires to love life and see good days must keep the tongue from evil and do good. The eyes of the Lord are on the righteous."
         }
       }
     },
@@ -254,25 +262,26 @@
             "paragraph": "Christ proclaimed to the spirits in prison - a notoriously difficult passage. Christ announced victory to imprisoned spiritual beings."
           }
         ],
-        "ctx": "Peter addresses suffering for righteousness. Who can harm those who are zealous for good? Even if they suffer, they are blessed. They must not fear but honor Christ and be ready to defend their hope with gentleness and respect. Christ suffered for sins once for all, the righteous for the unrighteous, to bring us to God. He was put to death in flesh but made alive in spirit, in which he proclaimed to spirits in prison - those who disobeyed in Noah's day. Baptism now saves as an appeal to God from a good conscience, through the resurrection of Christ who has gone into heaven.",
-        "cross": [
-          {
-            "ref": "Matthew 5:10-12",
-            "note": "Blessed are those who are persecuted for righteousness sake."
-          },
-          {
-            "ref": "Isaiah 8:12-13",
-            "note": "Do not fear what they fear; do not be in dread. But the LORD of hosts, him you shall honor as holy."
-          },
-          {
-            "ref": "Genesis 6:1-4",
-            "note": "The sons of God saw the daughters of man - background for spirits in prison."
-          },
-          {
-            "ref": "Romans 6:3-4",
-            "note": "Baptism into Christ's death and resurrection."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matthew 5:10-12",
+              "note": "Blessed are those who are persecuted for righteousness sake."
+            },
+            {
+              "ref": "Isaiah 8:12-13",
+              "note": "Do not fear what they fear; do not be in dread. But the LORD of hosts, him you shall honor as holy."
+            },
+            {
+              "ref": "Genesis 6:1-4",
+              "note": "The sons of God saw the daughters of man - background for spirits in prison."
+            },
+            {
+              "ref": "Romans 6:3-4",
+              "note": "Baptism into Christ's death and resurrection."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -341,6 +350,9 @@
               "note": "Jobes connects Noah's ark to baptism: both involve passing safely through waters of judgment. The few saved through water prefigure baptismal salvation."
             }
           ]
+        },
+        "hist": {
+          "context": "Peter addresses suffering for righteousness. Who can harm those who are zealous for good? Even if they suffer, they are blessed. They must not fear but honor Christ and be ready to defend their hope with gentleness and respect. Christ suffered for sins once for all, the righteous for the unrighteous, to bring us to God. He was put to death in flesh but made alive in spirit, in which he proclaimed to spirits in prison - those who disobeyed in Noah's day. Baptism now saves as an appeal to God from a good conscience, through the resurrection of Christ who has gone into heaven."
         }
       }
     }

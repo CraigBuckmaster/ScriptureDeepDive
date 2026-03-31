@@ -37,21 +37,22 @@
             "paragraph": "The tongue is set on fire by hell. James traces destructive speech to demonic origin."
           }
         ],
-        "ctx": "James warns against becoming teachers lightly. Small things control large: a bit controls a horse, a rudder steers a ship, the tongue directs life. But the tongue is untamable.",
-        "cross": [
-          {
-            "ref": "Proverbs 18:21",
-            "note": "Death and life are in the power of the tongue."
-          },
-          {
-            "ref": "Matthew 12:36-37",
-            "note": "On the day of judgment people will give account for every careless word."
-          },
-          {
-            "ref": "Proverbs 10:19",
-            "note": "When words are many, transgression is not lacking."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Proverbs 18:21",
+              "note": "Death and life are in the power of the tongue."
+            },
+            {
+              "ref": "Matthew 12:36-37",
+              "note": "On the day of judgment people will give account for every careless word."
+            },
+            {
+              "ref": "Proverbs 10:19",
+              "note": "When words are many, transgression is not lacking."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -113,7 +114,10 @@
             }
           ]
         },
-        "hist": "James writes to 'the twelve tribes in the Dispersion' — Jewish Christians scattered throughout the Roman Empire after persecution in Jerusalem (Acts 8:1; 11:19). The letter reflects the earliest stage of Christianity when believers still gathered in synagogues (2:2, Greek synagōgē). James, the brother of Jesus, led the Jerusalem church (Acts 15; Gal 2:9) until his martyrdom in AD 62. His letter addresses practical concerns: economic disparity between rich and poor, the relationship between faith and works, and the power of the tongue. The wisdom tradition of Judaism pervades the letter, echoing Proverbs and Jesus' Sermon on the Mount. The agricultural imagery (1:11; 3:12; 5:7) and references to early and late rains reflect the Palestinian context."
+        "hist": {
+          "historical": "James writes to 'the twelve tribes in the Dispersion' — Jewish Christians scattered throughout the Roman Empire after persecution in Jerusalem (Acts 8:1; 11:19). The letter reflects the earliest stage of Christianity when believers still gathered in synagogues (2:2, Greek synagōgē). James, the brother of Jesus, led the Jerusalem church (Acts 15; Gal 2:9) until his martyrdom in AD 62. His letter addresses practical concerns: economic disparity between rich and poor, the relationship between faith and works, and the power of the tongue. The wisdom tradition of Judaism pervades the letter, echoing Proverbs and Jesus' Sermon on the Mount. The agricultural imagery (1:11; 3:12; 5:7) and references to early and late rains reflect the Palestinian context.",
+          "context": "James warns against becoming teachers lightly. Small things control large: a bit controls a horse, a rudder steers a ship, the tongue directs life. But the tongue is untamable."
+        }
       }
     },
     {
@@ -142,21 +146,22 @@
             "paragraph": "The wisdom from above is first pure, then peaceable. Peacemakers reap righteousness."
           }
         ],
-        "ctx": "James contrasts two wisdoms. Earthly wisdom produces disorder. Heavenly wisdom is characterized by purity, peace, gentleness, mercy.",
-        "cross": [
-          {
-            "ref": "Proverbs 9:10",
-            "note": "The fear of the LORD is the beginning of wisdom."
-          },
-          {
-            "ref": "1 Corinthians 1:18-25",
-            "note": "The wisdom of the world is foolishness with God."
-          },
-          {
-            "ref": "Matthew 5:9",
-            "note": "Blessed are the peacemakers."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Proverbs 9:10",
+              "note": "The fear of the LORD is the beginning of wisdom."
+            },
+            {
+              "ref": "1 Corinthians 1:18-25",
+              "note": "The wisdom of the world is foolishness with God."
+            },
+            {
+              "ref": "Matthew 5:9",
+              "note": "Blessed are the peacemakers."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -213,6 +218,9 @@
               "note": "McCartney notes that James echoes the Two Ways tradition."
             }
           ]
+        },
+        "hist": {
+          "context": "James contrasts two wisdoms. Earthly wisdom produces disorder. Heavenly wisdom is characterized by purity, peace, gentleness, mercy."
         }
       }
     }

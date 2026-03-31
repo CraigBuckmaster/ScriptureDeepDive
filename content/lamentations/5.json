@@ -25,25 +25,26 @@
             "paragraph": "\"Remember (zəkōr), LORD, what has happened to us; look, and see our disgrace\" (v.1). The final poem: 22 verses (matching the alphabet count) but NOT an acrostic. The form breaks. When grief is complete, even poetic order fails. Our inheritance turned over to strangers (v.2). Orphans, widows (v.3). We pay for our own water (v.4). Slaves rule over us (v.5). Our ancestors sinned and are no more; we bear their punishment (v.7). Women have been violated (v.11). Princes hung by their hands (v.12). Joy is gone; dancing turned to mourning (v.15). \"The crown has fallen from our head. Woe to us, for we have sinned!\" (v.16). Mount Zion lies desolate; foxes prowl over it (v.18)."
           }
         ],
-        "ctx": "The broken acrostic is the most debated structural feature in Lamentations. Chapters 1–4 follow the Hebrew alphabet; chapter 5 has 22 verses (the right count) but the letters are NOT in order. Scholars debate whether this is deliberate (form fracturing under grief) or simply a different compositional choice. The pastoral reading is compelling: when suffering exceeds language’s capacity to order it, even the alphabet fails. The poem is communal throughout: \"our\" appears in nearly every verse. This is not one person’s grief but a nation’s.",
-        "cross": [
-          {
-            "ref": "Ps 79:1–4",
-            "note": "The nations have invaded your inheritance; your holy temple is defiled — the same temple-loss grief."
-          },
-          {
-            "ref": "Ex 20:5",
-            "note": "Punishing the children for the sin of the parents to the third and fourth generation — the intergenerational theology behind Lam 5:7."
-          },
-          {
-            "ref": "Ezek 18:2–4",
-            "note": "The fathers ate sour grapes; the children’s teeth are set on edge? No. Each person bears their own sin — Ezekiel’s corrective to the logic of Lam 5:7."
-          },
-          {
-            "ref": "Mark 13:14",
-            "note": "When you see the abomination of desolation standing where it should not be — desolation language that echoes Lam 5:18."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 79:1–4",
+              "note": "The nations have invaded your inheritance; your holy temple is defiled — the same temple-loss grief."
+            },
+            {
+              "ref": "Ex 20:5",
+              "note": "Punishing the children for the sin of the parents to the third and fourth generation — the intergenerational theology behind Lam 5:7."
+            },
+            {
+              "ref": "Ezek 18:2–4",
+              "note": "The fathers ate sour grapes; the children’s teeth are set on edge? No. Each person bears their own sin — Ezekiel’s corrective to the logic of Lam 5:7."
+            },
+            {
+              "ref": "Mark 13:14",
+              "note": "When you see the abomination of desolation standing where it should not be — desolation language that echoes Lam 5:18."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -116,6 +117,9 @@
               "note": "O’Connor draws attention to the sexual violence (v.11) and forced labour (vv.12–13) as the signatures of military occupation. The poem does not aestheticise these; it reports them as facts that God must see."
             }
           ]
+        },
+        "hist": {
+          "context": "The broken acrostic is the most debated structural feature in Lamentations. Chapters 1–4 follow the Hebrew alphabet; chapter 5 has 22 verses (the right count) but the letters are NOT in order. Scholars debate whether this is deliberate (form fracturing under grief) or simply a different compositional choice. The pastoral reading is compelling: when suffering exceeds language’s capacity to order it, even the alphabet fails. The poem is communal throughout: \"our\" appears in nearly every verse. This is not one person’s grief but a nation’s."
         }
       }
     },
@@ -133,25 +137,26 @@
             "paragraph": "\"Restore us (ḥaddēsh) to yourself, LORD, that we may return; renew our days as of old\" (v.21). The book’s final four verses. Verse 19: \"You, LORD, reign forever; your throne endures from generation to generation.\" The eternal sovereignty of God affirmed even amid ruins. Verse 20: \"Why do you always forget us? Why do you forsake us so long?\" The accusation that follows the affirmation. Verse 21: the petition for restoration. Verse 22: \"Unless you have utterly rejected us and are angry with us beyond measure.\" The book ends on a question — or a conditional — that is NOT answered. Jewish liturgical tradition repeats v.21 after v.22, refusing to end on the dark note."
           }
         ],
-        "ctx": "The ending is the most debated feature of Lamentations. Verse 22 is either a conditional (\"unless you have utterly rejected us\") or a concessive (\"even though you have utterly rejected us\"). Either way, the book ends without resolution. There is no divine response. The silence after v.22 is the book’s final theological statement: sometimes God does not answer. The Jewish liturgical practice of repeating v.21 after reading v.22 is an interpretive act: the community refuses to let the last word be rejection. The Christian tradition hears the answer in the gospel: God has NOT utterly rejected.",
-        "cross": [
-          {
-            "ref": "Ps 44:23–26",
-            "note": "Awake, LORD! Why do you sleep? Why do you hide your face? Rise up and help us — the same unanswered cry."
-          },
-          {
-            "ref": "Ps 77:7–9",
-            "note": "Will the Lord reject forever? Has God forgotten to be merciful? — the psalm form of Lam 5:20–22’s question."
-          },
-          {
-            "ref": "Rom 11:1–2",
-            "note": "Did God reject his people? By no means! — Paul’s answer to Lam 5:22’s question."
-          },
-          {
-            "ref": "Isa 49:14–16",
-            "note": "\"The LORD has forsaken me.\" \"Can a mother forget? I will not forget you\" — the prophetic answer to Lam 5’s fear."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 44:23–26",
+              "note": "Awake, LORD! Why do you sleep? Why do you hide your face? Rise up and help us — the same unanswered cry."
+            },
+            {
+              "ref": "Ps 77:7–9",
+              "note": "Will the Lord reject forever? Has God forgotten to be merciful? — the psalm form of Lam 5:20–22’s question."
+            },
+            {
+              "ref": "Rom 11:1–2",
+              "note": "Did God reject his people? By no means! — Paul’s answer to Lam 5:22’s question."
+            },
+            {
+              "ref": "Isa 49:14–16",
+              "note": "\"The LORD has forsaken me.\" \"Can a mother forget? I will not forget you\" — the prophetic answer to Lam 5’s fear."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -224,6 +229,9 @@
               "note": "O’Connor calls v.22 the bravest verse in the Bible: it risks the possibility that God HAS utterly rejected. The poet does not know. The reader does not know. The not-knowing is the space where faith lives or dies."
             }
           ]
+        },
+        "hist": {
+          "context": "The ending is the most debated feature of Lamentations. Verse 22 is either a conditional (\"unless you have utterly rejected us\") or a concessive (\"even though you have utterly rejected us\"). Either way, the book ends without resolution. There is no divine response. The silence after v.22 is the book’s final theological statement: sometimes God does not answer. The Jewish liturgical practice of repeating v.21 after reading v.22 is an interpretive act: the community refuses to let the last word be rejection. The Christian tradition hears the answer in the gospel: God has NOT utterly rejected."
         }
       }
     }

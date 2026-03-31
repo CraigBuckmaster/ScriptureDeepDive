@@ -44,18 +44,22 @@
             "paragraph": "V.31-35: The pārōket (inner veil) separated the Holy Place from the Most Holy Place. Embroidered with cherubim, it guarded the Ark. Its tearing at Jesus's death (Matt 27:51; Mark 15:38; Luke 23:45) is the moment Hebrews 10:19-20 unpacks: the veil was Christ's flesh, and its tearing means free access to the divine Presence for all. The architectural barrier of the old covenant becomes the theological open door of the new."
           }
         ],
-        "hist": "Portable tent-shrines are well attested in the ancient Near East. An Egyptian portable canopy shrine from Tutankhamun's tomb (c.1325 BC) features similar construction: wooden frames, fabric coverings, and carrying poles. The Tabernacle's portability was essential for the wilderness period — a divine dwelling that could travel with the people.",
-        "ctx": "The four layers of covering (fine linen with cherubim, goat hair, ram skins dyed red, durable leather) move from most glorious inside to most durable/protective outside. The invisible glory within; the weather-resistant hide without. The architecture images the theology of the hidden God: his glory is real but veiled, accessible only through the ordained approach.",
-        "cross": [
-          {
-            "ref": "Exod 36:8–19",
-            "note": "The execution narrative in chapter 36 repeats these instructions almost verbatim, confirming exact obedience. The Chronicler-like precision demonstrates that the tabernacle was built exactly as commanded."
-          },
-          {
-            "ref": "Heb 8:5",
-            "note": "Hebrews says Moses was warned to 'make everything according to the pattern shown you on the mountain.' The tabernacle coverings materialise the heavenly blueprint."
-          }
-        ],
+        "hist": {
+          "historical": "Portable tent-shrines are well attested in the ancient Near East. An Egyptian portable canopy shrine from Tutankhamun's tomb (c.1325 BC) features similar construction: wooden frames, fabric coverings, and carrying poles. The Tabernacle's portability was essential for the wilderness period — a divine dwelling that could travel with the people.",
+          "context": "The four layers of covering (fine linen with cherubim, goat hair, ram skins dyed red, durable leather) move from most glorious inside to most durable/protective outside. The invisible glory within; the weather-resistant hide without. The architecture images the theology of the hidden God: his glory is real but veiled, accessible only through the ordained approach."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 36:8–19",
+              "note": "The execution narrative in chapter 36 repeats these instructions almost verbatim, confirming exact obedience. The Chronicler-like precision demonstrates that the tabernacle was built exactly as commanded."
+            },
+            {
+              "ref": "Heb 8:5",
+              "note": "Hebrews says Moses was warned to 'make everything according to the pattern shown you on the mountain.' The tabernacle coverings materialise the heavenly blueprint."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -143,18 +147,22 @@
             "paragraph": "V.36: The outer entrance screen marks the Tabernacle as ʾōhel môʿēd — Tent of Meeting, the place of appointed encounter between God and his people. The môʿēd (appointed time/meeting) root is the same as the Festivals: both the times and the place of encounter are môʿēd. God does not meet Israel sporadically but at appointed, predictable, accessible locations — both the sanctuary and the sacred calendar are expressions of divine accessibility."
           }
         ],
-        "hist": "The tabernacle's wooden frame construction uses acacia (šiṭṭâ), the primary timber available in the Sinai — a hard, durable wood resistant to insects. The silver bases (ʾădānîm) for each frame, made from the census silver (38:25–28), literally mean 'sockets' or 'pedestals.' Stone pedestals for wooden columns are well attested in Egyptian and Canaanite architecture. The overall frame-and-curtain construction is consistent with portable shrine technology known from Egyptian military campaigns — Ramesses II carried a tent-shrine on his Kadesh campaign (c. 1274 BC).",
-        "ctx": "The silver bases are one of the Tabernacle's deepest theological details: they were cast from the silver collected in the census ransom (Exod 30:11–16, 38:25–27). Every Israelite's ransom payment literally became part of the Tabernacle's foundation. God's dwelling rested on the redemption of his people. The connection between atonement and the dwelling is structural, not merely symbolic.",
-        "cross": [
-          {
-            "ref": "Exod 36:20–34",
-            "note": "The parallel execution account in chapter 36 confirms the frames and bases were built exactly as specified. The forty-eight frames and ninety-six silver bases required enormous quantities of donated material."
-          },
-          {
-            "ref": "1 Kgs 6:15–22",
-            "note": "Solomon's temple replaces the portable frame structure with permanent stone walls overlaid with cedar and gold. The tabernacle frames are the architectural ancestor of the temple walls."
-          }
-        ],
+        "hist": {
+          "historical": "The tabernacle's wooden frame construction uses acacia (šiṭṭâ), the primary timber available in the Sinai — a hard, durable wood resistant to insects. The silver bases (ʾădānîm) for each frame, made from the census silver (38:25–28), literally mean 'sockets' or 'pedestals.' Stone pedestals for wooden columns are well attested in Egyptian and Canaanite architecture. The overall frame-and-curtain construction is consistent with portable shrine technology known from Egyptian military campaigns — Ramesses II carried a tent-shrine on his Kadesh campaign (c. 1274 BC).",
+          "context": "The silver bases are one of the Tabernacle's deepest theological details: they were cast from the silver collected in the census ransom (Exod 30:11–16, 38:25–27). Every Israelite's ransom payment literally became part of the Tabernacle's foundation. God's dwelling rested on the redemption of his people. The connection between atonement and the dwelling is structural, not merely symbolic."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 36:20–34",
+              "note": "The parallel execution account in chapter 36 confirms the frames and bases were built exactly as specified. The forty-eight frames and ninety-six silver bases required enormous quantities of donated material."
+            },
+            {
+              "ref": "1 Kgs 6:15–22",
+              "note": "Solomon's temple replaces the portable frame structure with permanent stone walls overlaid with cedar and gold. The tabernacle frames are the architectural ancestor of the temple walls."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -248,22 +256,26 @@
             "paragraph": "The māsāk is the outer screen at the entrance to the tent — less elaborate than the inner veil, marking a lower boundary of holiness. The graduated system (outer court → screen → Holy Place → veil → Most Holy Place) teaches that approach to God involves progressive sanctification, not casual entry."
           }
         ],
-        "hist": "The inner veil (pārōket) separating the Holy Place from the Most Holy Place — woven with cherubim in blue, purple, and scarlet — functions as a symbolic boundary between the earthly and divine realms. In Mesopotamian temples, the innermost chamber (the 'holy of holies') was similarly restricted; only the high priest entered. The colour scheme (blue = sky/heaven, purple = royalty, scarlet = blood/life) uses the most expensive dyes of the ancient world. Tyrian purple from murex snails was worth more than its weight in gold.",
-        "ctx": "The inner veil (v.31–33) and the outer curtain (v.36–37) create two zones of the Tabernacle: the Holy Place (table, lampstand — accessed by priests daily) and the Most Holy Place (ark, mercy seat — accessed by the high priest alone, once a year). The veil is the theological centre of the structure: it marks the point beyond which ordinary human beings cannot go. The torn veil of Matt 27:51 is the Tabernacle's most dramatic moment.",
-        "cross": [
-          {
-            "ref": "Matt 27:51",
-            "note": "The temple veil torn from top to bottom at the crucifixion — the barrier between God and humanity removed by Christ's sacrifice."
-          },
-          {
-            "ref": "Heb 10:19–20",
-            "note": "\"We have confidence to enter the Most Holy Place by the blood of Jesus, by a new and living way opened for us through the curtain, that is, his body.\""
-          },
-          {
-            "ref": "Heb 9:3–5",
-            "note": "The author of Hebrews describes the Most Holy Place and the mercy seat explicitly, reading the entire arrangement typologically."
-          }
-        ],
+        "hist": {
+          "historical": "The inner veil (pārōket) separating the Holy Place from the Most Holy Place — woven with cherubim in blue, purple, and scarlet — functions as a symbolic boundary between the earthly and divine realms. In Mesopotamian temples, the innermost chamber (the 'holy of holies') was similarly restricted; only the high priest entered. The colour scheme (blue = sky/heaven, purple = royalty, scarlet = blood/life) uses the most expensive dyes of the ancient world. Tyrian purple from murex snails was worth more than its weight in gold.",
+          "context": "The inner veil (v.31–33) and the outer curtain (v.36–37) create two zones of the Tabernacle: the Holy Place (table, lampstand — accessed by priests daily) and the Most Holy Place (ark, mercy seat — accessed by the high priest alone, once a year). The veil is the theological centre of the structure: it marks the point beyond which ordinary human beings cannot go. The torn veil of Matt 27:51 is the Tabernacle's most dramatic moment."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 27:51",
+              "note": "The temple veil torn from top to bottom at the crucifixion — the barrier between God and humanity removed by Christ's sacrifice."
+            },
+            {
+              "ref": "Heb 10:19–20",
+              "note": "\"We have confidence to enter the Most Holy Place by the blood of Jesus, by a new and living way opened for us through the curtain, that is, his body.\""
+            },
+            {
+              "ref": "Heb 9:3–5",
+              "note": "The author of Hebrews describes the Most Holy Place and the mercy seat explicitly, reading the entire arrangement typologically."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

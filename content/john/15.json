@@ -31,21 +31,22 @@
             "paragraph": "The seventh and final I am saying with predicate (v.1). \"True\" (alēthinē) echoes the \"true light\" (1:9), \"true bread\" (6:32), and \"true worshippers\" (4:23) — the authentic, genuine, original of which all other examples are copies. Israel was God's vine (Ps 80:8-16; Isa 5:1-7; Jer 2:21), but a vine that failed. Jesus is the true vine — the faithful Israel who does and is what Israel was called to be and failed to be."
           }
         ],
-        "ctx": "[('Israel as Vine — OT Background', 'The vine was the dominant symbol of Israel in the OT: Ps 80 (the vine God brought out of Egypt); Isa 5:1-7 (the Song of the Vineyard — Israel as the unfruitful vine); Jer 2:21 (Israel as a degenerate vine); Ezek 15 (the vine burned as useless wood). Jesus\\'s claim to be \"the true vine\" is a claim to be the faithful Israel that the historical nation failed to be — and to incorporate his followers into that faithfulness.'), ('The Pruning', 'The Father\\'s pruning (v.2) is deliberately paradoxical: it is the fruitful branches that are pruned (katharizei — he cleanses them), not just the fruitless ones. The pruning is not punishment but cultivation: cutting away what prevents greater fruitfulness. The same word (katharos — clean) appears in v.3: \"you are already clean because of the word I have spoken to you.\" The word of Jesus is the pruning instrument.')]",
-        "cross": [
-          {
-            "ref": "Ps 80:8-16",
-            "note": "\"You transplanted a vine from Egypt; you drove out the nations and planted it\" — Israel as YHWH's vine, which Jesus claims to be the true fulfilment of."
-          },
-          {
-            "ref": "Isa 5:1-7",
-            "note": "The Song of the Vineyard — God's vine that produced wild grapes and was abandoned. The negative template that Jesus's \"true vine\" supersedes."
-          },
-          {
-            "ref": "Gal 5:22-23",
-            "note": "\"But the fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness, gentleness and self-control\" — Paul's description of the fruit borne by the branches who remain in the vine."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 80:8-16",
+              "note": "\"You transplanted a vine from Egypt; you drove out the nations and planted it\" — Israel as YHWH's vine, which Jesus claims to be the true fulfilment of."
+            },
+            {
+              "ref": "Isa 5:1-7",
+              "note": "The Song of the Vineyard — God's vine that produced wild grapes and was abandoned. The negative template that Jesus's \"true vine\" supersedes."
+            },
+            {
+              "ref": "Gal 5:22-23",
+              "note": "\"But the fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness, gentleness and self-control\" — Paul's description of the fruit borne by the branches who remain in the vine."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -105,6 +106,9 @@
               "note": "Chrysostom: \"Greater love has no one than this: to lay down one's life for one's friends. He did not say 'for the righteous' or 'for the worthy' — for his friends. And who were his friends? Those who had denied him, abandoned him, would betray him. He calls them friends in the act of dying for them — and in dying for them makes them worthy to be called friends.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Israel as Vine — OT Background', 'The vine was the dominant symbol of Israel in the OT: Ps 80 (the vine God brought out of Egypt); Isa 5:1-7 (the Song of the Vineyard — Israel as the unfruitful vine); Jer 2:21 (Israel as a degenerate vine); Ezek 15 (the vine burned as useless wood). Jesus\\'s claim to be \"the true vine\" is a claim to be the faithful Israel that the historical nation failed to be — and to incorporate his followers into that faithfulness.'), ('The Pruning', 'The Father\\'s pruning (v.2) is deliberately paradoxical: it is the fruitful branches that are pruned (katharizei — he cleanses them), not just the fruitless ones. The pruning is not punishment but cultivation: cutting away what prevents greater fruitfulness. The same word (katharos — clean) appears in v.3: \"you are already clean because of the word I have spoken to you.\" The word of Jesus is the pruning instrument.')]"
         }
       }
     },
@@ -122,21 +126,22 @@
             "paragraph": "The word appears seven times in vv.18-25, escalating from \"hates you\" to \"hated me\" to \"hated my Father\" to \"hated without reason.\" The world's hatred of the disciples is not personal — it is derivative and theological: it is the hatred of Jesus transferred to his followers because they bear his name, and it is ultimately the hatred of the Father expressed through rejection of the Son."
           }
         ],
-        "ctx": "[(\"The World's Hatred — An Expected Response\", \"The transition from the vine (vv.1-17) to the world's hatred (vv.18-25) is deliberate: the fruitfulness promised to those who abide in the vine will be the occasion of the world's hostility. The disciples must understand persecution not as evidence of their failure but as evidence of their connection to Jesus — it is precisely because they bear his name and do his works that the world hates them.\"), ('The Spirit as Witness in Persecution', \"The Paraclete saying of v.26 comes in the context of persecution, not merely as general comfort. The Spirit's testimony about Jesus (v.26) and the disciples' testimony from their experience (v.27) together constitute the twofold witness in the trial-setting that pervades John's Gospel. The disciples are called to testify before hostile courts; the Spirit testifies alongside them.\")]",
-        "cross": [
-          {
-            "ref": "Ps 69:4",
-            "note": "\"Those who hate me without reason outnumber the hairs of my head\" — cited in v.25 for the world's irrational hatred."
-          },
-          {
-            "ref": "Matt 5:11-12",
-            "note": "\"Blessed are you when people insult you, persecute you... because of me. Rejoice and be glad\" — the Beatitude that corresponds to the warning of 15:18-25."
-          },
-          {
-            "ref": "1 John 3:13",
-            "note": "\"Do not be surprised, my brothers and sisters, if the world hates you\" — John's later application of the Farewell Discourse teaching on the world's hatred."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 69:4",
+              "note": "\"Those who hate me without reason outnumber the hairs of my head\" — cited in v.25 for the world's irrational hatred."
+            },
+            {
+              "ref": "Matt 5:11-12",
+              "note": "\"Blessed are you when people insult you, persecute you... because of me. Rejoice and be glad\" — the Beatitude that corresponds to the warning of 15:18-25."
+            },
+            {
+              "ref": "1 John 3:13",
+              "note": "\"Do not be surprised, my brothers and sisters, if the world hates you\" — John's later application of the Farewell Discourse teaching on the world's hatred."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -192,6 +197,9 @@
               "note": "Cyril of Alexandria: \"The Spirit of truth who proceeds from the Father will testify about me. The Spirit testifies not about himself but about the Son. And the Son does not testify about himself but about the Father. This is the order of divine love: each testifying to the other, each glorifying the other, the whole Trinity in mutual self-giving.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[(\"The World's Hatred — An Expected Response\", \"The transition from the vine (vv.1-17) to the world's hatred (vv.18-25) is deliberate: the fruitfulness promised to those who abide in the vine will be the occasion of the world's hostility. The disciples must understand persecution not as evidence of their failure but as evidence of their connection to Jesus — it is precisely because they bear his name and do his works that the world hates them.\"), ('The Spirit as Witness in Persecution', \"The Paraclete saying of v.26 comes in the context of persecution, not merely as general comfort. The Spirit's testimony about Jesus (v.26) and the disciples' testimony from their experience (v.27) together constitute the twofold witness in the trial-setting that pervades John's Gospel. The disciples are called to testify before hostile courts; the Spirit testifies alongside them.\")]"
         }
       }
     }

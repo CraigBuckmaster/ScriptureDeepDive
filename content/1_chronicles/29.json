@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 9,
       "panels": {
-        "ctx": "David gives from his personal treasury: 3,000 talents of gold and 7,000 talents of refined silver. Then he asks: “Who is willing to consecrate themselves to the LORD today?” The leaders respond with 5,000 talents of gold, 10,000 darics, 10,000 talents of silver, 18,000 talents of bronze, and 100,000 talents of iron. “The people rejoiced at the willing response of their leaders, for they had given freely and wholeheartedly to the LORD. David the king also rejoiced greatly.” The offering is voluntary, joyful, and extravagant.",
-        "cross": [
-          {
-            "ref": "Exod 35:20–29",
-            "note": "The free-will offering for the tabernacle. The pattern repeats: God’s people give freely for the construction of God’s dwelling."
-          },
-          {
-            "ref": "2 Cor 9:7",
-            "note": "“God loves a cheerful giver.” The NT principle of joyful giving has its roots in this passage."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 35:20–29",
+              "note": "The free-will offering for the tabernacle. The pattern repeats: God’s people give freely for the construction of God’s dwelling."
+            },
+            {
+              "ref": "2 Cor 9:7",
+              "note": "“God loves a cheerful giver.” The NT principle of joyful giving has its roots in this passage."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "darkĕmōnîm — Persian darics, first minted under Darius I (c.515 BC). Their appearance in a Davidic-era narrative is the most commonly cited anachronism in Chronicles, confirming post-exilic composition."
             }
           ]
+        },
+        "hist": {
+          "context": "David gives from his personal treasury: 3,000 talents of gold and 7,000 talents of refined silver. Then he asks: “Who is willing to consecrate themselves to the LORD today?” The leaders respond with 5,000 talents of gold, 10,000 darics, 10,000 talents of silver, 18,000 talents of bronze, and 100,000 talents of iron. “The people rejoiced at the willing response of their leaders, for they had given freely and wholeheartedly to the LORD. David the king also rejoiced greatly.” The offering is voluntary, joyful, and extravagant."
         }
       }
     },
@@ -62,17 +66,18 @@
             "paragraph": "David’s doxology (v.11): “Yours, O LORD, is the greatness and the power and the glory and the majesty and the splendour.” Five divine attributes ascribed in a single sentence. This becomes one of the most quoted prayers in Jewish and Christian liturgy — Jesus’ Lord’s Prayer doxology (“for yours is the kingdom and the power and the glory”) echoes it directly."
           }
         ],
-        "ctx": "David’s prayer before the whole assembly is the theological climax of 1 Chronicles: “Yours, O LORD, is the greatness and the power and the glory and the majesty and the splendour, for everything in heaven and earth is yours.” He acknowledges that the offerings came from God first: “Everything comes from you, and we have given you only what comes from your hand.” Then Solomon is enthroned “a second time” (the first was 23:1), acknowledged by all leaders, and prospers. David dies “at a good old age, having enjoyed long life, wealth and honour.” The book ends not with exile but with worship, generosity, and orderly succession.",
-        "cross": [
-          {
-            "ref": "Matt 6:13",
-            "note": "The Lord’s Prayer doxology: “For yours is the kingdom and the power and the glory forever.” A direct echo of David’s prayer."
-          },
-          {
-            "ref": "1 Kgs 2:10–12",
-            "note": "David’s death in Kings is brief and political. The Chronicler’s version is devotional and liturgical."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 6:13",
+              "note": "The Lord’s Prayer doxology: “For yours is the kingdom and the power and the glory forever.” A direct echo of David’s prayer."
+            },
+            {
+              "ref": "1 Kgs 2:10–12",
+              "note": "David’s death in Kings is brief and political. The Chronicler’s version is devotional and liturgical."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -98,6 +103,9 @@
               "note": "“A second time” (shēnît) refers to a second anointing ceremony — the first was the private/emergency anointing in 23:1; this is the public, full ceremony."
             }
           ]
+        },
+        "hist": {
+          "context": "David’s prayer before the whole assembly is the theological climax of 1 Chronicles: “Yours, O LORD, is the greatness and the power and the glory and the majesty and the splendour, for everything in heaven and earth is yours.” He acknowledges that the offerings came from God first: “Everything comes from you, and we have given you only what comes from your hand.” Then Solomon is enthroned “a second time” (the first was 23:1), acknowledged by all leaders, and prospers. David dies “at a good old age, having enjoyed long life, wealth and honour.” The book ends not with exile but with worship, generosity, and orderly succession."
         }
       }
     }

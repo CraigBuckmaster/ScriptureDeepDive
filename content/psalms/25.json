@@ -22,13 +22,14 @@
             "paragraph": "\"Show me your ways (dərāk̅ek̅ā), LORD, teach me your paths\" (v.4). An alphabetic acrostic prayer. David asks for guidance, forgiveness, and instruction. Key themes: trust (v.2), teaching (vv.4–5), mercy (v.6), forgiveness (v.7), humility (v.9)."
           }
         ],
-        "ctx": "The first acrostic psalm. Each verse begins with a successive letter of the Hebrew alphabet. David asks God to lead, teach, guide, and forgive. The mood is humble and teachable.",
-        "cross": [
-          {
-            "ref": "Prov 3:5–6",
-            "note": "\"Trust in the LORD with all your heart... he will make your paths straight\" — the wisdom parallel."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 3:5–6",
+              "note": "\"Trust in the LORD with all your heart... he will make your paths straight\" — the wisdom parallel."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -119,6 +120,9 @@
               "note": "Goldingay: the covenant (berît) is mentioned for the first time at the psalm's centre. The relationship between guidance and covenant is causal: God guides because he has bound himself to his people."
             }
           ]
+        },
+        "hist": {
+          "context": "The first acrostic psalm. Each verse begins with a successive letter of the Hebrew alphabet. David asks God to lead, teach, guide, and forgive. The mood is humble and teachable."
         }
       }
     },
@@ -136,17 +140,18 @@
             "paragraph": "\"The LORD confides (sōd) in those who fear him\" (v.14). Sōd is intimate counsel — the inner circle’s conversation. God shares his secrets with the reverent. Fear of the LORD produces not distance but intimacy."
           }
         ],
-        "ctx": "God guides the humble (v.9), confides in the God-fearing (v.14), frees from snares (v.15). David’s eyes are always on the LORD (v.15). The psalm closes with a plea for Israel’s redemption (v.22).",
-        "cross": [
-          {
-            "ref": "John 15:15",
-            "note": "\"I no longer call you servants... I have called you friends\" — the NT fulfilment of God’s intimate counsel."
-          },
-          {
-            "ref": "Prov 3:32",
-            "note": "\"He takes the upright into his confidence\" — the same sōd theology."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 15:15",
+              "note": "\"I no longer call you servants... I have called you friends\" — the NT fulfilment of God’s intimate counsel."
+            },
+            {
+              "ref": "Prov 3:32",
+              "note": "\"He takes the upright into his confidence\" — the same sōd theology."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -237,6 +242,9 @@
               "note": "Goldingay: 'how fiercely they hate me' — the Hebrew is śin'at ḥāmās, 'hatred of violence.' These enemies do not merely dislike the psalmist; they wish him physical harm. The threat is concrete."
             }
           ]
+        },
+        "hist": {
+          "context": "God guides the humble (v.9), confides in the God-fearing (v.14), frees from snares (v.15). David’s eyes are always on the LORD (v.15). The psalm closes with a plea for Israel’s redemption (v.22)."
         }
       }
     }

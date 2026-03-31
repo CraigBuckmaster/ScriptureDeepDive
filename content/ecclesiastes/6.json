@@ -25,17 +25,18 @@
             "paragraph": "\"A stillborn child (nēfel) is better off\" (v.3). Qoheleth’s most extreme statement about wealth without enjoyment. A person with everything — wealth, honour, long life, many children — who cannot enjoy any of it is worse off than a child who was never born. The stillborn at least has rest."
           }
         ],
-        "ctx": "The chapter addresses a \"grievous evil\" (v.1): God gives someone wealth and honour but does not grant the ability to enjoy them. A stranger enjoys them instead (v.2). Even a hundred children and two thousand years of life are worthless without enjoyment (v.3–6). The implication: enjoyment is not automatic. It is a separate gift from wealth itself. You can have everything and still have nothing.",
-        "cross": [
-          {
-            "ref": "Job 3:11–16",
-            "note": "Job’s wish to have been stillborn — the same theology of unborn rest."
-          },
-          {
-            "ref": "Luke 12:20–21",
-            "note": "\"This very night your life will be demanded\" — wealth without enjoyment in Jesus’ parable."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Job 3:11–16",
+              "note": "Job’s wish to have been stillborn — the same theology of unborn rest."
+            },
+            {
+              "ref": "Luke 12:20–21",
+              "note": "\"This very night your life will be demanded\" — wealth without enjoyment in Jesus’ parable."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -113,6 +114,9 @@
               "note": "Fox: \"Do not all go to the same place?\" Death is the equaliser again. The wealthy non-enjoyer and the stillborn end in the same ground."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter addresses a \"grievous evil\" (v.1): God gives someone wealth and honour but does not grant the ability to enjoy them. A stranger enjoys them instead (v.2). Even a hundred children and two thousand years of life are worthless without enjoyment (v.3–6). The implication: enjoyment is not automatic. It is a separate gift from wealth itself. You can have everything and still have nothing."
         }
       }
     },
@@ -130,17 +134,18 @@
             "paragraph": "\"Who knows what is good for a person in life, during the few and meaningless (hebel) days they pass through like a shadow (ṣēl)?\" (v.12). Human life is a shadow: present but insubstantial, real but fleeting. The double image (hebel + shadow) compounds the brevity. And the chapter’s closing question: who can tell anyone what will happen after them? The future is sealed."
           }
         ],
-        "ctx": "The chapter’s second half is a series of rhetorical questions that expect no answer. All human toil is for the mouth, yet appetite is never satisfied (v.7). What advantage has the wise over the fool? (v.8). Better what the eye sees than the roving of appetite (v.9). The closing questions (vv.11–12) summarise Qoheleth’s epistemological humility: we do not know what is good, we pass through like shadows, and no one can tell us what comes next.",
-        "cross": [
-          {
-            "ref": "Ps 144:4",
-            "note": "\"They are like a breath; their days are like a fleeting shadow\" — the identical shadow imagery."
-          },
-          {
-            "ref": "Jas 4:14",
-            "note": "\"You are a mist that appears for a little while\" — James’s version of the shadow life."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 144:4",
+              "note": "\"They are like a breath; their days are like a fleeting shadow\" — the identical shadow imagery."
+            },
+            {
+              "ref": "Jas 4:14",
+              "note": "\"You are a mist that appears for a little while\" — James’s version of the shadow life."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -222,6 +227,9 @@
               "note": "Fox: \"pass through like a shadow\" — the shadow is real (it exists) but insubstantial (it has no weight). Human life is exactly this: real but unable to hold its own shape."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter’s second half is a series of rhetorical questions that expect no answer. All human toil is for the mouth, yet appetite is never satisfied (v.7). What advantage has the wise over the fool? (v.8). Better what the eye sees than the roving of appetite (v.9). The closing questions (vv.11–12) summarise Qoheleth’s epistemological humility: we do not know what is good, we pass through like shadows, and no one can tell us what comes next."
         }
       }
     }

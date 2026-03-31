@@ -25,17 +25,18 @@
             "paragraph": "\"Who, being innocent (nāqî), has ever perished?\" (v.7). Eliphaz states the retribution principle: the innocent do not suffer ultimately. This is not stupid theology — it is the mainstream position of Proverbs and Deuteronomy. Eliphaz’s error is not that the principle is always wrong but that it is always right."
           }
         ],
-        "ctx": "Eliphaz begins gently: \"you have instructed many, you have strengthened feeble hands\" (vv.3–4). He honours Job’s past before delivering his diagnosis. His argument: you taught others to endure; now endure yourself. If you are truly innocent, God will restore you. The unspoken implication: if you are not restored, you are not innocent.",
-        "cross": [
-          {
-            "ref": "Prov 10:3",
-            "note": "\"The LORD does not let the righteous go hungry\" — the proverbial basis for Eliphaz’s theology."
-          },
-          {
-            "ref": "Ps 37:25",
-            "note": "\"I have never seen the righteous forsaken\" — the experiential claim Eliphaz makes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 10:3",
+              "note": "\"The LORD does not let the righteous go hungry\" — the proverbial basis for Eliphaz’s theology."
+            },
+            {
+              "ref": "Ps 37:25",
+              "note": "\"I have never seen the righteous forsaken\" — the experiential claim Eliphaz makes."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -104,6 +105,9 @@
               "note": "Habel: Eliphaz is the first expert witness. His testimony: the retribution principle is universally valid. Job’s suffering proves hidden guilt."
             }
           ]
+        },
+        "hist": {
+          "context": "Eliphaz begins gently: \"you have instructed many, you have strengthened feeble hands\" (vv.3–4). He honours Job’s past before delivering his diagnosis. His argument: you taught others to endure; now endure yourself. If you are truly innocent, God will restore you. The unspoken implication: if you are not restored, you are not innocent."
         }
       }
     },
@@ -127,17 +131,18 @@
             "paragraph": "\"Can a mortal (ʾĕnōsh) be more righteous than God?\" The word ʾĕnōsh emphasises human frailty and mortality. The vision’s point: if God does not trust his own angels, how much less can he trust mortals, who are crushed like moths?"
           }
         ],
-        "ctx": "Eliphaz reports a nocturnal vision — a whispered voice in the night. Its theology: no creature can be righteous before its Creator. Even angels are not trusted. Humans, who live in houses of clay, are crushed without anyone noticing. The vision is authentic but its application is misguided: Eliphaz uses it to argue that Job’s suffering is inevitable, not unjust.",
-        "cross": [
-          {
-            "ref": "1 Kgs 19:12",
-            "note": "\"A still small voice\" — God’s communication in whispers, not storms (until ch 38)."
-          },
-          {
-            "ref": "Ps 143:2",
-            "note": "\"No one living is righteous before you\" — the same theology, affirmed by the Psalmist."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 19:12",
+              "note": "\"A still small voice\" — God’s communication in whispers, not storms (until ch 38)."
+            },
+            {
+              "ref": "Ps 143:2",
+              "note": "\"No one living is righteous before you\" — the same theology, affirmed by the Psalmist."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -202,6 +207,9 @@
               "note": "Habel: Eliphaz introduces supernatural testimony — a night vision that supports the prosecution’s case. The message: no human can claim innocence before the divine court."
             }
           ]
+        },
+        "hist": {
+          "context": "Eliphaz reports a nocturnal vision — a whispered voice in the night. Its theology: no creature can be righteous before its Creator. Even angels are not trusted. Humans, who live in houses of clay, are crushed without anyone noticing. The vision is authentic but its application is misguided: Eliphaz uses it to argue that Job’s suffering is inevitable, not unjust."
         }
       }
     }

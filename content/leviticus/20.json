@@ -31,17 +31,18 @@
             "paragraph": "The divine kārēt — executed by God rather than the community. Some violations receive human death penalty; others receive divine cutting off. Milgrom distinguishes: human execution for public violations; divine kārēt for violations difficult to witness or prove."
           }
         ],
-        "ctx": "Leviticus 20 is the penal companion to Lev 18–19 — it specifies the consequences for the acts prohibited in the earlier chapters. The structure moves from most severe (death: Molech sacrifice, v.2; mediums, v.6; parent-cursing, v.9; adultery, v.10) through graduated sexual violations to the holiness summary (vv.22–26). The chapter confronts modern readers most directly at vv.13 (male homosexual intercourse) and v.15–16 (bestiality) — both receive death penalties. The theological logic: these acts are tôʿēbāh (abomination) — fundamentally incompatible with the covenant order, not merely culturally offensive.",
-        "cross": [
-          {
-            "ref": "Matt 15:4",
-            "note": "\"God said, 'Honour your father and mother' and 'Anyone who curses their father or mother is to be put to death.'\" Jesus quotes Lev 20:9 to confront the Pharisees who allowed legal loopholes to dishonour parents."
-          },
-          {
-            "ref": "1 Cor 6:9–11",
-            "note": "\"Do you not know that wrongdoers will not inherit the kingdom of God?… And that is what some of you were. But you were washed, you were sanctified, you were justified in the name of the Lord Jesus Christ.\" Paul lists violations of Lev 20's sexual ethics and then pronounces the gospel: transformation is possible."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 15:4",
+              "note": "\"God said, 'Honour your father and mother' and 'Anyone who curses their father or mother is to be put to death.'\" Jesus quotes Lev 20:9 to confront the Pharisees who allowed legal loopholes to dishonour parents."
+            },
+            {
+              "ref": "1 Cor 6:9–11",
+              "note": "\"Do you not know that wrongdoers will not inherit the kingdom of God?… And that is what some of you were. But you were washed, you were sanctified, you were justified in the name of the Lord Jesus Christ.\" Paul lists violations of Lev 20's sexual ethics and then pronounces the gospel: transformation is possible."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "Milgrom: The death penalty for male homosexual intercourse is the same as for adultery (v.10) — both are treated as capital covenant violations. Milgrom's analysis: the act violates the created order (Gen 1:27–28's male-female complementarity and the mandate to fill the earth) and is categorised as tôʿēbāh — abomination — the same term as in 18:22."
             }
           ]
+        },
+        "hist": {
+          "context": "Leviticus 20 is the penal companion to Lev 18–19 — it specifies the consequences for the acts prohibited in the earlier chapters. The structure moves from most severe (death: Molech sacrifice, v.2; mediums, v.6; parent-cursing, v.9; adultery, v.10) through graduated sexual violations to the holiness summary (vv.22–26). The chapter confronts modern readers most directly at vv.13 (male homosexual intercourse) and v.15–16 (bestiality) — both receive death penalties. The theological logic: these acts are tôʿēbāh (abomination) — fundamentally incompatible with the covenant order, not merely culturally offensive."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "The chapter's summary formula — not merely \"be holy\" but \"be holy to me\" (lî). Holiness is relational; it is not an abstract quality but a covenantal orientation toward the God who chose Israel."
           }
         ],
-        "ctx": "The second half of Lev 20 continues the sexual violation penalties at lower levels: kārēt for aunt-uncle incest (vv.17–21), childlessness as divine penalty (vv.20–21), exile for mediums (v.27). The theological summary (vv.22–26) restates the Leviticus themes: the land will vomit you out if you defile it; I am the Lord who separated you from the nations as I separated clean from unclean animals. The separation language explicitly links Israel's ethical distinctiveness to the purity system of Lev 11: just as Israel distinguishes clean from unclean in diet, so they must distinguish holy from common in conduct.",
-        "cross": [
-          {
-            "ref": "1 Pet 2:9",
-            "note": "\"But you are a chosen people, a royal priesthood, a holy nation, God's special possession, that you may declare the praises of him who called you out of darkness into his wonderful light.\" Peter applies the Lev 20:26 separation language to the church: set apart as Israel was set apart."
-          },
-          {
-            "ref": "2 Cor 6:17",
-            "note": "\"'Come out from them and be separate,' says the Lord.\" Paul echoes the Levitical separation call for the NT community."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Pet 2:9",
+              "note": "\"But you are a chosen people, a royal priesthood, a holy nation, God's special possession, that you may declare the praises of him who called you out of darkness into his wonderful light.\" Peter applies the Lev 20:26 separation language to the church: set apart as Israel was set apart."
+            },
+            {
+              "ref": "2 Cor 6:17",
+              "note": "\"'Come out from them and be separate,' says the Lord.\" Paul echoes the Levitical separation call for the NT community."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -186,6 +191,9 @@
               "note": "Milgrom: The ritual prescriptions for penalties for sin reflect a coherent priestly symbolic system. The gradations of holiness and offering type form an internally consistent theology of sacred space and divine access."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half of Lev 20 continues the sexual violation penalties at lower levels: kārēt for aunt-uncle incest (vv.17–21), childlessness as divine penalty (vv.20–21), exile for mediums (v.27). The theological summary (vv.22–26) restates the Leviticus themes: the land will vomit you out if you defile it; I am the Lord who separated you from the nations as I separated clean from unclean animals. The separation language explicitly links Israel's ethical distinctiveness to the purity system of Lev 11: just as Israel distinguishes clean from unclean in diet, so they must distinguish holy from common in conduct."
         }
       }
     }

@@ -17,13 +17,14 @@
       "verse_start": 1,
       "verse_end": 15,
       "panels": {
-        "ctx": "David organises the army into twelve monthly divisions of 24,000 men each (total: 288,000). Each division serves one month per year under a named commander. The twelve-month rotation provides a standing army while minimising disruption to civilian life: each soldier serves one month in twelve. The commanders are drawn from David’s mighty warriors (chapter 11) — proven battle leaders now serve as institutional administrators.",
-        "cross": [
-          {
-            "ref": "1 Chr 11:10–47",
-            "note": "The mighty warriors. Several commanders listed here appeared in the chapter 11 roster."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Chr 11:10–47",
+              "note": "The mighty warriors. Several commanders listed here appeared in the chapter 11 roster."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -41,6 +42,9 @@
               "note": "The phrase kol-dĕbar hammahlĕqōt (“all matters of the divisions”) indicates that the monthly rotation covered all military functions: border patrol, garrison duty, and reserve readiness."
             }
           ]
+        },
+        "hist": {
+          "context": "David organises the army into twelve monthly divisions of 24,000 men each (total: 288,000). Each division serves one month per year under a named commander. The twelve-month rotation provides a standing army while minimising disruption to civilian life: each soldier serves one month in twelve. The commanders are drawn from David’s mighty warriors (chapter 11) — proven battle leaders now serve as institutional administrators."
         }
       }
     },
@@ -50,17 +54,18 @@
       "verse_start": 16,
       "verse_end": 34,
       "panels": {
-        "ctx": "Tribal officers for all twelve tribes are listed, followed by David’s economic administrators (overseers of treasury, agriculture, vineyards, orchting, flocks) and his key advisors: Ahithophel as counsellor, Hushai as “the king’s friend,” Joab as army commander. The chapter closes with a note about the incomplete census: “David did not count those twenty years of age or under, because the LORD had promised to make Israel as numerous as the stars.” The census of chapter 21 is referenced obliquely — its incompleteness is now attributed to faith: why count what God has promised to make uncountable?",
-        "cross": [
-          {
-            "ref": "1 Chr 21:1–7",
-            "note": "The census David should not have taken. The Chronicler now explains that David intentionally left it unfinished."
-          },
-          {
-            "ref": "Gen 15:5",
-            "note": "“Look up at the sky and count the stars — if indeed you can count them... So shall your offspring be.” The Abrahamic promise makes census irrelevant."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Chr 21:1–7",
+              "note": "The census David should not have taken. The Chronicler now explains that David intentionally left it unfinished."
+            },
+            {
+              "ref": "Gen 15:5",
+              "note": "“Look up at the sky and count the stars — if indeed you can count them... So shall your offspring be.” The Abrahamic promise makes census irrelevant."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -78,6 +83,9 @@
               "note": "The phrase kĕkōkĕbēy hashshāmayim (“like the stars of the heavens”) directly quotes the Abrahamic promise (Gen 15:5; 22:17). The census’s incompleteness becomes a testimony to divine faithfulness."
             }
           ]
+        },
+        "hist": {
+          "context": "Tribal officers for all twelve tribes are listed, followed by David’s economic administrators (overseers of treasury, agriculture, vineyards, orchting, flocks) and his key advisors: Ahithophel as counsellor, Hushai as “the king’s friend,” Joab as army commander. The chapter closes with a note about the incomplete census: “David did not count those twenty years of age or under, because the LORD had promised to make Israel as numerous as the stars.” The census of chapter 21 is referenced obliquely — its incompleteness is now attributed to faith: why count what God has promised to make uncountable?"
         }
       }
     }

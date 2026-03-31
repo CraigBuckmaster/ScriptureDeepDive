@@ -25,17 +25,18 @@
             "paragraph": "Ezekiel shaves his head and beard with a sword used as a razor — a deeply humiliating act for any Israelite and especially for a priest. Levitical law prohibited priests from shaving their heads (Lev 21:5). The sign-act dramatizes the total humiliation and defilement that Jerusalem will suffer."
           }
         ],
-        "ctx": "The hair is divided into thirds: one-third burned in the city (plague/famine), one-third struck with the sword around the city (death by enemy), one-third scattered to the wind (exile). A few strands are tucked into the prophet's garment folds (the remnant), but even some of these are thrown into the fire. The sign-act maps Jerusalem's fate with mathematical precision.",
-        "cross": [
-          {
-            "ref": "Lev 21:5",
-            "note": "Priests must not shave their heads — Ezekiel's sign-act deliberately violates his priestly identity to dramatize the depth of God's judgment."
-          },
-          {
-            "ref": "Isa 7:20",
-            "note": "The LORD will use a razor hired from beyond the Euphrates to shave Israel — a shared metaphor connecting the two prophets."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 21:5",
+              "note": "Priests must not shave their heads — Ezekiel's sign-act deliberately violates his priestly identity to dramatize the depth of God's judgment."
+            },
+            {
+              "ref": "Isa 7:20",
+              "note": "The LORD will use a razor hired from beyond the Euphrates to shave Israel — a shared metaphor connecting the two prophets."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -84,6 +85,9 @@
               "note": "Zimmerli classifies this as a prophetic sign-act (Zeichenhandlung) that functions as sympathetic magic within the prophetic tradition: the enacted fate of the hair enacts the fate of the city. The prophet's body becomes a map of Jerusalem's destruction."
             }
           ]
+        },
+        "hist": {
+          "context": "The hair is divided into thirds: one-third burned in the city (plague/famine), one-third struck with the sword around the city (death by enemy), one-third scattered to the wind (exile). A few strands are tucked into the prophet's garment folds (the remnant), but even some of these are thrown into the fire. The sign-act maps Jerusalem's fate with mathematical precision."
         }
       }
     },
@@ -101,21 +105,22 @@
             "paragraph": "The plural 'abominations' (to'evot) is a key word in Ezekiel, occurring 43 times. It denotes acts that are fundamentally offensive to God's holiness — idolatry, ritual violation, and covenant betrayal. Jerusalem has committed more abominations than the surrounding nations, making her judgment more severe."
           }
         ],
-        "ctx": "The interpretation reveals the shocking theological logic: Jerusalem, placed 'in the center of the nations' (5:5) as a model of God's order, has become worse than the pagan nations around her. The covenant privilege that should have produced holiness instead produced greater accountability and more severe judgment. 'To whom much is given, much will be required' (Luke 12:48).",
-        "cross": [
-          {
-            "ref": "Deut 28:53-57",
-            "note": "The covenant curses predicted cannibalism during siege — Ezekiel 5:10 fulfills this terrible promise."
-          },
-          {
-            "ref": "Luke 12:48",
-            "note": "Greater knowledge and privilege demand greater accountability — the principle underlying Jerusalem's harsher judgment compared to the nations."
-          },
-          {
-            "ref": "Lam 4:10",
-            "note": "Lamentations confirms the horror: compassionate women cooked their own children during the siege."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 28:53-57",
+              "note": "The covenant curses predicted cannibalism during siege — Ezekiel 5:10 fulfills this terrible promise."
+            },
+            {
+              "ref": "Luke 12:48",
+              "note": "Greater knowledge and privilege demand greater accountability — the principle underlying Jerusalem's harsher judgment compared to the nations."
+            },
+            {
+              "ref": "Lam 4:10",
+              "note": "Lamentations confirms the horror: compassionate women cooked their own children during the siege."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -180,6 +185,9 @@
               "note": "Zimmerli identifies the recognition formula ('they will know that I, the LORD, have spoken in my zeal') as the theological climax: judgment is not arbitrary but purposeful — it produces knowledge of YHWH. Even wrath serves revelation."
             }
           ]
+        },
+        "hist": {
+          "context": "The interpretation reveals the shocking theological logic: Jerusalem, placed 'in the center of the nations' (5:5) as a model of God's order, has become worse than the pagan nations around her. The covenant privilege that should have produced holiness instead produced greater accountability and more severe judgment. 'To whom much is given, much will be required' (Luke 12:48)."
         }
       }
     }

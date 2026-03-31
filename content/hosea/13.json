@@ -31,21 +31,22 @@
             "paragraph": "The bear 'robbed of her cubs' (dov shakkul) is the most terrifying of the three predator images (lion, leopard, bear). A mother bear defending or avenging her cubs was proverbially the most dangerous animal in the ancient Near Eastern world (cf. 2 Sam 17:8; Prov 17:12). God compares himself to this ferocity: divine wrath has the protective fury of a bereaved mother turned lethal."
           }
         ],
-        "ctx": "Chapter 13 is the darkest chapter in Hosea, containing the most sustained and terrifying judgment oracle in the book. It opens with a historical note: Ephraim once spoke and 'people trembled' — the tribe had genuine authority. But Baal worship brought death (v. 1), and now they compound their sin with ever more elaborate idolatry: cast images, silver idols, calf-kissing. The four similes of v. 3 (morning mist, early dew, chaff, smoke) all describe things that appear briefly and vanish — Ephraim's entire national existence is about to evaporate. The divine predator sequence (lion, leopard, bear) intensifies the violence: God will 'tear open' Israel like a wild animal attacking prey. This is the ultimate inversion of the shepherd metaphor: the God who once led Israel 'with cords of human kindness' (11:4) now stalks them as predator. The satisfaction and pride of v. 6 diagnose the root cause: prosperity led to self-sufficiency, and self-sufficiency led to forgetting God.",
-        "cross": [
-          {
-            "ref": "Hos 5:14",
-            "note": "The earlier lion metaphor, now expanded to include leopard and bear in an escalating sequence of predatory images."
-          },
-          {
-            "ref": "2 Sam 17:8",
-            "note": "Hushai describes David's men as 'fierce as a wild bear robbed of her cubs,' using the same imagery Hosea applies to God."
-          },
-          {
-            "ref": "Deut 32:10-18",
-            "note": "The Song of Moses traces the same trajectory: God's care in the wilderness, Israel's prosperity, Israel's forgetting God."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Hos 5:14",
+              "note": "The earlier lion metaphor, now expanded to include leopard and bear in an escalating sequence of predatory images."
+            },
+            {
+              "ref": "2 Sam 17:8",
+              "note": "Hushai describes David's men as 'fierce as a wild bear robbed of her cubs,' using the same imagery Hosea applies to God."
+            },
+            {
+              "ref": "Deut 32:10-18",
+              "note": "The Song of Moses traces the same trajectory: God's care in the wilderness, Israel's prosperity, Israel's forgetting God."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "The chapter opens with what Andersen and Freedman call an 'obituary for Ephraim': the tribe is already dead, killed by its own Baal worship (v. 1). What follows is not a death sentence but a coroner's report. The predator imagery (vv. 7-8) reveals the paradox at the heart of Hosea's theology: the God who loves as a father (ch. 11) and pursues as a husband (ch. 2) can also destroy as a predator. These are not contradictions but dimensions of the same passionate divine character."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 13 is the darkest chapter in Hosea, containing the most sustained and terrifying judgment oracle in the book. It opens with a historical note: Ephraim once spoke and 'people trembled' — the tribe had genuine authority. But Baal worship brought death (v. 1), and now they compound their sin with ever more elaborate idolatry: cast images, silver idols, calf-kissing. The four similes of v. 3 (morning mist, early dew, chaff, smoke) all describe things that appear briefly and vanish — Ephraim's entire national existence is about to evaporate. The divine predator sequence (lion, leopard, bear) intensifies the violence: God will 'tear open' Israel like a wild animal attacking prey. This is the ultimate inversion of the shepherd metaphor: the God who once led Israel 'with cords of human kindness' (11:4) now stalks them as predator. The satisfaction and pride of v. 6 diagnose the root cause: prosperity led to self-sufficiency, and self-sufficiency led to forgetting God."
         }
       }
     },
@@ -131,21 +135,22 @@
             "paragraph": "In v. 14, Sheol and Death are addressed directly as powers that YHWH will either deploy or defeat. The interpretation of the verse is hotly debated: is God summoning death's plagues against Israel (judgment), or is he promising to ransom Israel from death (redemption)? Paul reads the verse as triumph over death (1 Cor 15:55), but the original context may intend the opposite: God is calling death as an ally against unrepentant Israel."
           }
         ],
-        "ctx": "The final section of chapter 13 moves from the predator imagery to the political consequences of Israel's apostasy. The monarchy is indicted: God gave them a king 'in anger' and took him away 'in wrath' (v. 11), likely referring to the series of assassinations that characterized Israel's final decades. The childbirth metaphor (v. 13) describes Ephraim as a foolish child who refuses to be born at the proper time — the moment of crisis is a moment of potential transformation, but Israel will not emerge. Verse 14 is the chapter's crux: 'I will deliver this people from the power of the grave; I will redeem them from death. Where, O death, are your plagues?' In context, these may be rhetorical questions expecting the answer 'Come!' rather than promises of deliverance. Yet Paul's use in 1 Corinthians 15:55 reads them as a promise of resurrection, and the canonical trajectory supports this reading. The chapter closes with the devastating vision of Samaria's fall: military conquest with all its attendant horrors.",
-        "cross": [
-          {
-            "ref": "1 Cor 15:55",
-            "note": "Paul quotes Hosea 13:14 as a victory cry over death: 'Where, O death, is your victory? Where, O death, is your sting?'"
-          },
-          {
-            "ref": "1 Sam 8:4-22",
-            "note": "The institution of the monarchy in response to popular demand, which YHWH granted 'in anger' according to Hosea's retrospective."
-          },
-          {
-            "ref": "2 Kgs 17:1-6",
-            "note": "The fall of Samaria to Assyria in 722 BC, the event anticipated in v. 16."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 15:55",
+              "note": "Paul quotes Hosea 13:14 as a victory cry over death: 'Where, O death, is your victory? Where, O death, is your sting?'"
+            },
+            {
+              "ref": "1 Sam 8:4-22",
+              "note": "The institution of the monarchy in response to popular demand, which YHWH granted 'in anger' according to Hosea's retrospective."
+            },
+            {
+              "ref": "2 Kgs 17:1-6",
+              "note": "The fall of Samaria to Assyria in 722 BC, the event anticipated in v. 16."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -214,6 +219,9 @@
               "note": "The chapter's conclusion is the darkest passage in the Twelve. The monarchy is condemned (v. 11), the moment of potential rebirth is missed (v. 13), death is summoned (v. 14), and military devastation closes the oracle (vv. 15-16). Yet the very extremity of the judgment sets up the extraordinary reversal of chapter 14. Andersen and Freedman argue that v. 14, despite its threatening context, contains a genuine ambiguity that the canonical tradition rightly exploits: the God who summons death is also the God who can ransom from it. The tension is unresolved in Hosea; it awaits resolution in the resurrection."
             }
           ]
+        },
+        "hist": {
+          "context": "The final section of chapter 13 moves from the predator imagery to the political consequences of Israel's apostasy. The monarchy is indicted: God gave them a king 'in anger' and took him away 'in wrath' (v. 11), likely referring to the series of assassinations that characterized Israel's final decades. The childbirth metaphor (v. 13) describes Ephraim as a foolish child who refuses to be born at the proper time — the moment of crisis is a moment of potential transformation, but Israel will not emerge. Verse 14 is the chapter's crux: 'I will deliver this people from the power of the grave; I will redeem them from death. Where, O death, are your plagues?' In context, these may be rhetorical questions expecting the answer 'Come!' rather than promises of deliverance. Yet Paul's use in 1 Corinthians 15:55 reads them as a promise of resurrection, and the canonical trajectory supports this reading. The chapter closes with the devastating vision of Samaria's fall: military conquest with all its attendant horrors."
         }
       }
     }

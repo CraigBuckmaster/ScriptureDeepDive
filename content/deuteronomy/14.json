@@ -31,17 +31,18 @@
             "paragraph": "The dietary distinctions are a condensed version of Leviticus 11. The rationale given here (v.21c) — \"you are a holy people to the LORD your God\" — grounds the food laws not in hygiene but in identity. Israel's eating habits mark them as different: every meal is a declaration of covenant distinctiveness."
           }
         ],
-        "ctx": "Chapter 14 addresses mourning practices (vv.1–2) and dietary laws (vv.3–21) under the same theological heading: \"you are a holy people to the LORD your God.\" Both sections are applications of Israel's covenant identity. The mourning prohibitions distinguish Israel from Canaanite grief practices; the food laws distinguish Israel from Canaanite eating practices. Holiness is embodied in the daily — in how you grieve and how you eat, not only in grand religious occasions.",
-        "cross": [
-          {
-            "ref": "Acts 10:9–16",
-            "note": "\"Do not call anything impure that God has made clean.\" Peter's vision repeals the dietary laws as a covenant boundary between Jews and Gentiles, fulfilling the new covenant's erasure of ethnic/ritual distinctions."
-          },
-          {
-            "ref": "Col 2:16–17",
-            "note": "\"Therefore do not let anyone judge you by what you eat or drink... These are a shadow of the things that were to come; the reality, however, is found in Christ.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 10:9–16",
+              "note": "\"Do not call anything impure that God has made clean.\" Peter's vision repeals the dietary laws as a covenant boundary between Jews and Gentiles, fulfilling the new covenant's erasure of ethnic/ritual distinctions."
+            },
+            {
+              "ref": "Col 2:16–17",
+              "note": "\"Therefore do not let anyone judge you by what you eat or drink... These are a shadow of the things that were to come; the reality, however, is found in Christ.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 14 addresses mourning practices (vv.1–2) and dietary laws (vv.3–21) under the same theological heading: \"you are a holy people to the LORD your God.\" Both sections are applications of Israel's covenant identity. The mourning prohibitions distinguish Israel from Canaanite grief practices; the food laws distinguish Israel from Canaanite eating practices. Holiness is embodied in the daily — in how you grieve and how you eat, not only in grand religious occasions."
         }
       }
     },
@@ -131,13 +135,14 @@
             "paragraph": "The tithe (a tenth of annual produce) is Israel's acknowledgment that God owns the land and its produce — the human farmer is a tenant, not an owner. Giving a tenth is not charity but recognition of prior ownership."
           }
         ],
-        "ctx": "Deuteronomy distinguishes two tithe cycles: the annual tithe for the pilgrimage feasts (vv.22–26), and the third-year tithe for the Levites, foreigners, orphans, and widows (vv.27–29). The annual tithe is consumed \"in the presence of the LORD\" at the chosen sanctuary — a festive meal of rejoicing before God. If the journey is too long to bring produce, it may be converted to money. The third-year tithe stays locally for the poor. Together they form a comprehensive social welfare system embedded in the agricultural calendar.",
-        "cross": [
-          {
-            "ref": "2 Cor 9:6–7",
-            "note": "\"Whoever sows sparingly will also reap sparingly... God loves a cheerful giver.\" Paul's NT tithing theology expands Deuteronomy 14's \"learn to revere\" rationale: giving flows from a transformed heart."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Cor 9:6–7",
+              "note": "\"Whoever sows sparingly will also reap sparingly... God loves a cheerful giver.\" Paul's NT tithing theology expands Deuteronomy 14's \"learn to revere\" rationale: giving flows from a transformed heart."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -202,6 +207,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Deuteronomy distinguishes two tithe cycles: the annual tithe for the pilgrimage feasts (vv.22–26), and the third-year tithe for the Levites, foreigners, orphans, and widows (vv.27–29). The annual tithe is consumed \"in the presence of the LORD\" at the chosen sanctuary — a festive meal of rejoicing before God. If the journey is too long to bring produce, it may be converted to money. The third-year tithe stays locally for the poor. Together they form a comprehensive social welfare system embedded in the agricultural calendar."
         }
       }
     }

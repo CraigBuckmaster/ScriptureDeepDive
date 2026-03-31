@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 30,
       "panels": {
-        "ctx": "The Levitical genealogy is the longest in Chronicles (81 verses) — reflecting the Chronicler’s core conviction that worship is Israel’s primary vocation. The line of Aaron is traced from Levi through Aaron to Zadok and beyond, establishing the legitimate priestly succession. For the post-exilic community, this genealogy answered a critical question: which families have the right to serve as priests in the rebuilt temple?",
-        "cross": [
-          {
-            "ref": "Exod 6:16–25",
-            "note": "The Levitical genealogy in Exodus provides the foundation. The Chronicler extends and expands it with additional generations."
-          },
-          {
-            "ref": "Ezra 7:1–5",
-            "note": "Ezra traces his own priestly ancestry through the same line — from Aaron through Zadok. The genealogies in Chronicles and Ezra serve the same legitimating function."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 6:16–25",
+              "note": "The Levitical genealogy in Exodus provides the foundation. The Chronicler extends and expands it with additional generations."
+            },
+            {
+              "ref": "Ezra 7:1–5",
+              "note": "Ezra traces his own priestly ancestry through the same line — from Aaron through Zadok. The genealogies in Chronicles and Ezra serve the same legitimating function."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "The parenthetical about Azariah serving in Solomon’s temple is a chronological anchor. Some scholars identify this as Azariah I who resisted Uzziah’s attempt to burn incense (2 Chr 26:17)."
             }
           ]
+        },
+        "hist": {
+          "context": "The Levitical genealogy is the longest in Chronicles (81 verses) — reflecting the Chronicler’s core conviction that worship is Israel’s primary vocation. The line of Aaron is traced from Levi through Aaron to Zadok and beyond, establishing the legitimate priestly succession. For the post-exilic community, this genealogy answered a critical question: which families have the right to serve as priests in the rebuilt temple?"
         }
       }
     },
@@ -54,17 +58,18 @@
       "verse_start": 31,
       "verse_end": 81,
       "panels": {
-        "ctx": "David appointed musicians for the house of the LORD (v.31) — the Chronicler traces the genealogies of the three chief musicians: Heman (Kohathite), Asaph (Gershonite), and Ethan/Jeduthun (Merarite). Each one’s ancestry is traced back through the Levitical line to Levi himself. Then the 48 Levitical cities are listed, distributed across all twelve tribal territories (cf. Joshua 21). The musicians and the cities together represent the Chronicler’s vision: worship is central to Israel, and the Levites who serve it are distributed throughout the entire land.",
-        "cross": [
-          {
-            "ref": "Josh 21:1–42",
-            "note": "The Levitical cities allocated by Joshua. The Chronicler’s list closely follows Joshua 21, confirming the tradition’s stability."
-          },
-          {
-            "ref": "1 Chr 25:1–7",
-            "note": "The musicians will be formally organised by David in chapter 25. Here their genealogical credentials are established."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 21:1–42",
+              "note": "The Levitical cities allocated by Joshua. The Chronicler’s list closely follows Joshua 21, confirming the tradition’s stability."
+            },
+            {
+              "ref": "1 Chr 25:1–7",
+              "note": "The musicians will be formally organised by David in chapter 25. Here their genealogical credentials are established."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -82,6 +87,9 @@
               "note": "The phrase “after the ark came to rest” refers to the period between the ark’s arrival in Jerusalem (ch 15–16) and the temple’s construction. Music ministry bridged the transitional period."
             }
           ]
+        },
+        "hist": {
+          "context": "David appointed musicians for the house of the LORD (v.31) — the Chronicler traces the genealogies of the three chief musicians: Heman (Kohathite), Asaph (Gershonite), and Ethan/Jeduthun (Merarite). Each one’s ancestry is traced back through the Levitical line to Levi himself. Then the 48 Levitical cities are listed, distributed across all twelve tribal territories (cf. Joshua 21). The musicians and the cities together represent the Chronicler’s vision: worship is central to Israel, and the Levites who serve it are distributed throughout the entire land."
         }
       }
     }

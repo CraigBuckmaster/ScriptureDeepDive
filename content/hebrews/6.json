@@ -25,21 +25,22 @@
             "paragraph": "The adjective ἀδύνατος (adynatos, impossible) is emphatic by position—placed first in the sentence for maximum rhetorical force. The passage declares it ‘impossible’ to restore to repentance those who have been enlightened, tasted the heavenly gift, shared in the Holy Spirit, tasted the goodness of God’s word—and then fallen away. This is the most debated passage in Hebrews, with Reformed, Arminian, and mediating interpretations offering sharply different readings of its referent and implications."
           }
         ],
-        "ctx": "Hebrews 6:4–6 is one of the most theologically contested passages in the NT. The interpretive options include: (1) a genuine warning to believers that salvation can be lost through deliberate apostasy (Arminian/Wesleyan reading); (2) a hypothetical warning describing a situation that cannot actually occur for the elect (some Reformed readings); (3) a description of people who experienced covenant blessings without genuine regeneration (other Reformed readings); (4) a warning about the irrevocability of apostasy—not that true believers will apostatize, but that if they did, restoration would be impossible (a pastoral intensifier). The agricultural metaphor in vv. 7–8 illustrates the two possible outcomes: land that produces a crop receives blessing; land that produces thorns is cursed and burned.",
-        "cross": [
-          {
-            "ref": "Hebrews 10:26–31",
-            "note": "The fourth warning passage escalates the language: if we deliberately keep on sinning after receiving knowledge of the truth, no sacrifice for sins is left—only fearful expectation of judgment. The two passages must be read together."
-          },
-          {
-            "ref": "Matthew 12:31–32",
-            "note": "Jesus’ teaching on the unforgivable sin (blasphemy against the Holy Spirit) is the closest dominical parallel to the impossible-restoration warning."
-          },
-          {
-            "ref": "2 Peter 2:20–22",
-            "note": "Peter’s description of those who escape the world’s corruption through knowledge of Christ but then become entangled again provides a narrative parallel to the apostasy scenario."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Hebrews 10:26–31",
+              "note": "The fourth warning passage escalates the language: if we deliberately keep on sinning after receiving knowledge of the truth, no sacrifice for sins is left—only fearful expectation of judgment. The two passages must be read together."
+            },
+            {
+              "ref": "Matthew 12:31–32",
+              "note": "Jesus’ teaching on the unforgivable sin (blasphemy against the Holy Spirit) is the closest dominical parallel to the impossible-restoration warning."
+            },
+            {
+              "ref": "2 Peter 2:20–22",
+              "note": "Peter’s description of those who escape the world’s corruption through knowledge of Christ but then become entangled again provides a narrative parallel to the apostasy scenario."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -97,7 +98,10 @@
             }
           ]
         },
-        "hist": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24)."
+        "hist": {
+          "historical": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24).",
+          "context": "Hebrews 6:4–6 is one of the most theologically contested passages in the NT. The interpretive options include: (1) a genuine warning to believers that salvation can be lost through deliberate apostasy (Arminian/Wesleyan reading); (2) a hypothetical warning describing a situation that cannot actually occur for the elect (some Reformed readings); (3) a description of people who experienced covenant blessings without genuine regeneration (other Reformed readings); (4) a warning about the irrevocability of apostasy—not that true believers will apostatize, but that if they did, restoration would be impossible (a pastoral intensifier). The agricultural metaphor in vv. 7–8 illustrates the two possible outcomes: land that produces a crop receives blessing; land that produces thorns is cursed and burned."
+        }
       }
     },
     {
@@ -114,17 +118,18 @@
             "paragraph": "The comparative κρείσσων (kreissōn, better) is a signature Hebrews word, appearing 13 times in the letter. After the severe warning, the author assures the audience of ‘better things’—things that accompany salvation. The pastoral balance is characteristic: warning and encouragement are never separated in this letter."
           }
         ],
-        "ctx": "The shift from warning to encouragement is abrupt but essential to the letter’s pastoral strategy. The author is confident that the audience is not in the category of those described in vv. 4–6 but uses the warning as a motivation to press forward. Their past work and love for God’s people demonstrate genuine faith (v. 10). The exhortation to diligence (σπουδή, v. 11) and imitation of those who inherit promises through faith and patience (v. 12) transitions to the Abraham example that follows.",
-        "cross": [
-          {
-            "ref": "1 Thessalonians 1:3–4",
-            "note": "Paul’s commendation of the Thessalonians’ work of faith, labor of love, and endurance of hope parallels the author’s confidence in the audience’s demonstrated faith."
-          },
-          {
-            "ref": "Hebrews 10:32–34",
-            "note": "A later passage similarly recalls the audience’s past faithfulness under persecution as evidence of genuine salvation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Thessalonians 1:3–4",
+              "note": "Paul’s commendation of the Thessalonians’ work of faith, labor of love, and endurance of hope parallels the author’s confidence in the audience’s demonstrated faith."
+            },
+            {
+              "ref": "Hebrews 10:32–34",
+              "note": "A later passage similarly recalls the audience’s past faithfulness under persecution as evidence of genuine salvation."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -173,6 +178,9 @@
               "note": "The encouragement passage reveals the warning’s intended effect: not despair but diligent perseverance. The author sees evidence of salvation in their love and service, but presses them to maintain the same intensity to the end. The call to imitate (μιμηταί) faithful predecessors anticipates the great faith chapter (11), where a cloud of witnesses models persevering trust."
             }
           ]
+        },
+        "hist": {
+          "context": "The shift from warning to encouragement is abrupt but essential to the letter’s pastoral strategy. The author is confident that the audience is not in the category of those described in vv. 4–6 but uses the warning as a motivation to press forward. Their past work and love for God’s people demonstrate genuine faith (v. 10). The exhortation to diligence (σπουδή, v. 11) and imitation of those who inherit promises through faith and patience (v. 12) transitions to the Abraham example that follows."
         }
       }
     },
@@ -190,21 +198,22 @@
             "paragraph": "The nautical metaphor of the ἄγκυρα (ankura, anchor) applied to hope is striking: it combines stability (firm, ἀσφαλή) with security (βεβαία) and cosmic reach—the anchor penetrates behind the curtain into the heavenly sanctuary. In ancient navigation, an anchor cast into an unseen seabed provided stability in a storm; Christian hope is anchored in the unseen heavenly reality where Christ has already entered as forerunner (πρόδρομος). This image brilliantly connects the nautical world of drifting (2:1) with the cultic world of the tabernacle."
           }
         ],
-        "ctx": "The Abraham example (vv. 13–15) illustrates faith-and-patience: God’s promise to Abraham was confirmed by an oath (Gen 22:16–17), and Abraham patiently waited to receive what was promised. The lesser-to-greater logic: if human oaths settle disputes, how much more does God’s oath—based on two immutable things (his promise and his oath)—provide absolute certainty? The anchor metaphor (vv. 19–20) then locates this hope inside the heavenly sanctuary, where Jesus has entered as forerunner and high priest after the order of Melchizedek. This verse connects the warning section back to the Melchizedek theme, setting up the full exposition in ch. 7.",
-        "cross": [
-          {
-            "ref": "Genesis 22:16–17",
-            "note": "God’s oath to Abraham after the binding of Isaac is the historical referent: because Abraham did not withhold his son, God swore by himself to bless and multiply his descendants."
-          },
-          {
-            "ref": "Hebrews 9:3—5; 10:19–20",
-            "note": "The ‘inner curtain’ behind which the anchor enters is the veil separating the Holy Place from the Most Holy Place—the barrier Christ has penetrated, opening access for all believers."
-          },
-          {
-            "ref": "Leviticus 16:2, 12",
-            "note": "Only the high priest entered behind the curtain, and only once a year on the Day of Atonement—Christ’s entrance is permanent and makes the annual ritual obsolete."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Genesis 22:16–17",
+              "note": "God’s oath to Abraham after the binding of Isaac is the historical referent: because Abraham did not withhold his son, God swore by himself to bless and multiply his descendants."
+            },
+            {
+              "ref": "Hebrews 9:3—5; 10:19–20",
+              "note": "The ‘inner curtain’ behind which the anchor enters is the veil separating the Holy Place from the Most Holy Place—the barrier Christ has penetrated, opening access for all believers."
+            },
+            {
+              "ref": "Leviticus 16:2, 12",
+              "note": "Only the high priest entered behind the curtain, and only once a year on the Day of Atonement—Christ’s entrance is permanent and makes the annual ritual obsolete."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -261,6 +270,9 @@
               "note": "The hope-anchor passage is the letter’s pastoral masterpiece: after the severity of the impossible-restoration warning, the author provides the ultimate reassurance. Hope is not a wishful feeling but a cosmic reality anchored in the heavenly sanctuary. The πρόδρομος (forerunner) title transforms the high-priestly concept: Christ does not merely enter on behalf of his people (as Aaron did) but ahead of them, opening a permanent path of access. The Melchizedek reference in v. 20 signals that the deferred exposition (interrupted at 5:10) is about to resume in ch. 7."
             }
           ]
+        },
+        "hist": {
+          "context": "The Abraham example (vv. 13–15) illustrates faith-and-patience: God’s promise to Abraham was confirmed by an oath (Gen 22:16–17), and Abraham patiently waited to receive what was promised. The lesser-to-greater logic: if human oaths settle disputes, how much more does God’s oath—based on two immutable things (his promise and his oath)—provide absolute certainty? The anchor metaphor (vv. 19–20) then locates this hope inside the heavenly sanctuary, where Jesus has entered as forerunner and high priest after the order of Melchizedek. This verse connects the warning section back to the Melchizedek theme, setting up the full exposition in ch. 7."
         }
       }
     }

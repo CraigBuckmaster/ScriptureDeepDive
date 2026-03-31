@@ -31,21 +31,22 @@
             "paragraph": "Literally ‘a one-woman man,’ this phrase has generated extensive debate: does it exclude (a) polygamists, (b) remarried widowers, (c) divorced and remarried men, or (d) any man lacking marital faithfulness? The most widely held scholarly view is that it describes marital fidelity—a ‘one-woman kind of man’—rather than prescribing a specific marital status. The parallel requirement for enrolled widows (‘one-man woman,’ 5:9) supports this reading."
           }
         ],
-        "ctx": "The overseer qualifications are remarkably domestic and ethical rather than charismatic or intellectual. Except for ‘able to teach’ (v. 2) and ‘not a recent convert’ (v. 6), every qualification concerns character, temperament, and household management. This emphasis reflects both the house-church setting (where the overseer’s home was literally the meeting place) and the polemical context (where the false teachers evidently lacked these moral qualities). Parallel lists appear in Titus 1:5–9 and are loosely analogous to Greco-Roman lists of qualifications for civic or military leadership.",
-        "cross": [
-          {
-            "ref": "Titus 1:5–9",
-            "note": "The parallel list of elder/overseer qualifications in Titus confirms the interchangeability of the two titles and provides a slightly different but complementary set of requirements."
-          },
-          {
-            "ref": "Acts 20:17, 28",
-            "note": "Paul addresses the Ephesian elders (πρεσβυτέρους) and charges them to shepherd the flock over which the Holy Spirit has made them overseers (ἐπισκόπους)—using both terms for the same group."
-          },
-          {
-            "ref": "1 Peter 5:1–4",
-            "note": "Peter’s instructions to elders similarly emphasize willing service, humility, and example-setting rather than institutional authority."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Titus 1:5–9",
+              "note": "The parallel list of elder/overseer qualifications in Titus confirms the interchangeability of the two titles and provides a slightly different but complementary set of requirements."
+            },
+            {
+              "ref": "Acts 20:17, 28",
+              "note": "Paul addresses the Ephesian elders (πρεσβυτέρους) and charges them to shepherd the flock over which the Holy Spirit has made them overseers (ἐπισκόπους)—using both terms for the same group."
+            },
+            {
+              "ref": "1 Peter 5:1–4",
+              "note": "Peter’s instructions to elders similarly emphasize willing service, humility, and example-setting rather than institutional authority."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "The household-management criterion assumes a specific social model: the Greco-Roman οἶκος in which the paterfamilias’s governance was viewed as a microcosm of civic leadership (cf. Aristotle, Politics 1.1253b). Paul appropriates this cultural expectation for ecclesial purposes: the church is the οἶκος θεοῦ (household of God, v. 15), and its leaders must demonstrate the same competence that governs a well-ordered home."
             }
           ]
+        },
+        "hist": {
+          "context": "The overseer qualifications are remarkably domestic and ethical rather than charismatic or intellectual. Except for ‘able to teach’ (v. 2) and ‘not a recent convert’ (v. 6), every qualification concerns character, temperament, and household management. This emphasis reflects both the house-church setting (where the overseer’s home was literally the meeting place) and the polemical context (where the false teachers evidently lacked these moral qualities). Parallel lists appear in Titus 1:5–9 and are loosely analogous to Greco-Roman lists of qualifications for civic or military leadership."
         }
       }
     },
@@ -135,17 +139,18 @@
             "paragraph": "The noun διάκονος (diakonos) originally meant a table-servant or attendant (from διακονέω, to serve). In the Pauline churches it developed into a recognized office (cf. Phil 1:1). The qualifications listed here overlap significantly with those for overseers but omit ‘able to teach’ and ‘not a recent convert,’ suggesting a service-oriented rather than teaching-oriented role. The reference to γυναῖκας (women) in v. 11 is ambiguous: it may refer to deacons’ wives or to female deacons (deaconesses), a reading supported by the parallel of Phoebe as διάκονος in Rom 16:1."
           }
         ],
-        "ctx": "The origin of the diaconate is traditionally traced to Acts 6:1–6, though the Seven appointed there are never called διάκονοι. By Paul’s time the office was sufficiently established to be mentioned alongside overseers in the Philippian salutation (Phil 1:1). The qualifications mirror Greco-Roman expectations for reliable household managers and civic servants: dignity, truthfulness, sobriety, financial integrity. The ambiguous v. 11 (γυναῖκας ὡσαύτως) has been interpreted since patristic times as referring either to deacons’ wives or to a distinct female diaconal office.",
-        "cross": [
-          {
-            "ref": "Philippians 1:1",
-            "note": "Paul’s salutation to the Philippian church explicitly addresses ‘overseers and deacons,’ confirming the established two-office structure that the Pastorals formalize."
-          },
-          {
-            "ref": "Romans 16:1–2",
-            "note": "Phoebe is designated διάκονος of the church at Cenchreae and προστάτις (patron/benefactress), providing evidence for women serving in diaconal roles in the Pauline churches."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Philippians 1:1",
+              "note": "Paul’s salutation to the Philippian church explicitly addresses ‘overseers and deacons,’ confirming the established two-office structure that the Pastorals formalize."
+            },
+            {
+              "ref": "Romans 16:1–2",
+              "note": "Phoebe is designated διάκονος of the church at Cenchreae and προστάτις (patron/benefactress), providing evidence for women serving in diaconal roles in the Pauline churches."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -206,6 +211,9 @@
               "note": "The deacon qualifications demonstrate the same household-management paradigm applied to overseers. The γυναῖκας question in v. 11 is best resolved in favor of female deacons: the structural parallel with v. 8, the absence of a possessive pronoun, and the evidence of Rom 16:1 (Phoebe) support a female diaconal role in the early Pauline churches. The promise that faithful deacons gain an excellent βαθμός (standing) and παρρησία (boldness) may refer to advancement within the community or to spiritual maturity and confidence in witness."
             }
           ]
+        },
+        "hist": {
+          "context": "The origin of the diaconate is traditionally traced to Acts 6:1–6, though the Seven appointed there are never called διάκονοι. By Paul’s time the office was sufficiently established to be mentioned alongside overseers in the Philippian salutation (Phil 1:1). The qualifications mirror Greco-Roman expectations for reliable household managers and civic servants: dignity, truthfulness, sobriety, financial integrity. The ambiguous v. 11 (γυναῖκας ὡσαύτως) has been interpreted since patristic times as referring either to deacons’ wives or to a distinct female diaconal office."
         }
       }
     },
@@ -223,17 +231,18 @@
             "paragraph": "The phrase μυστήριον τῆς εὐσεβείας introduces what most scholars recognize as a pre-Pauline christological hymn or creedal fragment (v. 16b). The six lines follow a pattern of alternating spheres (flesh/Spirit, angels/nations, world/glory) that may reflect an incarnation–exaltation christology. Εὐσεβεία (godliness, piety) is a characteristic Pastorals term (appearing 15 times vs. only once in the undisputed letters) that bridges personal devotion and public respectability."
           }
         ],
-        "ctx": "The hymnic fragment in v. 16 is widely regarded as one of the earliest christological confessions in the NT. Its six clauses present Christ’s career in compressed form: manifested in flesh, vindicated by the Spirit, seen by angels, preached among nations, believed in the world, taken up in glory. The textual variant in v. 16—whether the subject is θεός (God), ὅς (who), or ὕ (which)—is one of the most significant in the NT. Modern critical editions read ὅς (who), while the Majority Text reads θεός (God). The KJV tradition follows the Majority Text, but the earliest manuscripts support ὅς.",
-        "cross": [
-          {
-            "ref": "Philippians 2:6–11",
-            "note": "The Christ hymn in Philippians shares the incarnation–exaltation pattern and pre-Pauline liturgical origin, making these two passages the most important windows into early Christian worship and christology."
-          },
-          {
-            "ref": "Colossians 1:15–20",
-            "note": "Another pre-Pauline hymn celebrating Christ’s cosmic role, showing that hymnic christology was widespread in the Pauline churches and likely shaped the liturgical tradition reflected here."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Philippians 2:6–11",
+              "note": "The Christ hymn in Philippians shares the incarnation–exaltation pattern and pre-Pauline liturgical origin, making these two passages the most important windows into early Christian worship and christology."
+            },
+            {
+              "ref": "Colossians 1:15–20",
+              "note": "Another pre-Pauline hymn celebrating Christ’s cosmic role, showing that hymnic christology was widespread in the Pauline churches and likely shaped the liturgical tradition reflected here."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -286,6 +295,9 @@
               "note": "The ecclesiological declaration (‘pillar and foundation of the truth’) positions the church as the custodial institution for revealed truth in the world—a claim with profound implications for authority structures. The christological hymn functions as a content summary of the μυστήριον: six lines tracing Christ’s trajectory from incarnation to exaltation, arranged in couplets that alternate between earthly and heavenly spheres. Its liturgical provenance suggests the community already confessed this faith; Paul recalls it to anchor the ecclesiology of the preceding verses in the christological reality that the church exists to proclaim."
             }
           ]
+        },
+        "hist": {
+          "context": "The hymnic fragment in v. 16 is widely regarded as one of the earliest christological confessions in the NT. Its six clauses present Christ’s career in compressed form: manifested in flesh, vindicated by the Spirit, seen by angels, preached among nations, believed in the world, taken up in glory. The textual variant in v. 16—whether the subject is θεός (God), ὅς (who), or ὕ (which)—is one of the most significant in the NT. Modern critical editions read ὅς (who), while the Majority Text reads θεός (God). The KJV tradition follows the Majority Text, but the earliest manuscripts support ὅς."
         }
       }
     }

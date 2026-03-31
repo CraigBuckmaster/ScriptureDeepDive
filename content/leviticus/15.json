@@ -31,17 +31,18 @@
             "paragraph": "The standard purification formula for minor impurity throughout Lev 11–15: washing clothes + bathing in water + waiting until evening. No sacrifice required for most contact impurities; water and time suffice."
           }
         ],
-        "ctx": "Leviticus 15 addresses bodily discharges — the final section of the Lev 11–15 purity block. Chronic male discharge (vv.2–15) and chronic female discharge (vv.25–30) are the most severe: extensive contamination rules, seven-day counting after cessation, bird offering. Normal seminal emission (vv.16–18) and menstrual impurity (vv.19–24) are less severe: the person and their partner are impure until evening. The underlying principle across all four cases: bodily fluids associated with the generative function create impurity — not because reproduction is sinful but because the life-force in its most raw state (semen, menstrual blood) is holy and must be handled with ritual care.",
-        "cross": [
-          {
-            "ref": "Mark 5:25–34",
-            "note": "The woman with the chronic blood discharge — twelve years (cf. Lev 15:25–30 for chronic female discharge). She was continuously unclean, excluded from full worship, unable to touch anyone without making them unclean. She touches Jesus's cloak; instead of his becoming unclean, she becomes clean. The reversal is complete."
-          },
-          {
-            "ref": "Ezek 36:25",
-            "note": "\"I will sprinkle clean water on you, and you will be clean; I will cleanse you from all your impurities.\" Ezekiel's new covenant promise uses the Lev 15 purification language — complete cleansing from all zûb-impurity."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mark 5:25–34",
+              "note": "The woman with the chronic blood discharge — twelve years (cf. Lev 15:25–30 for chronic female discharge). She was continuously unclean, excluded from full worship, unable to touch anyone without making them unclean. She touches Jesus's cloak; instead of his becoming unclean, she becomes clean. The reversal is complete."
+            },
+            {
+              "ref": "Ezek 36:25",
+              "note": "\"I will sprinkle clean water on you, and you will be clean; I will cleanse you from all your impurities.\" Ezekiel's new covenant promise uses the Lev 15 purification language — complete cleansing from all zûb-impurity."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "Milgrom: The seminal emission impurity (until evening) is the mildest in the entire purity system. Its brevity signals that normal sexuality is not problematic — only temporarily impurity-generating. The system carefully distinguishes between pathological discharge (major, seven-day, offering required) and normal emission (minor, until evening, water sufficient)."
             }
           ]
+        },
+        "hist": {
+          "context": "Leviticus 15 addresses bodily discharges — the final section of the Lev 11–15 purity block. Chronic male discharge (vv.2–15) and chronic female discharge (vv.25–30) are the most severe: extensive contamination rules, seven-day counting after cessation, bird offering. Normal seminal emission (vv.16–18) and menstrual impurity (vv.19–24) are less severe: the person and their partner are impure until evening. The underlying principle across all four cases: bodily fluids associated with the generative function create impurity — not because reproduction is sinful but because the life-force in its most raw state (semen, menstrual blood) is holy and must be handled with ritual care."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "The purpose of the entire Lev 11–15 purity system: to separate (nāzar) Israel from their impurities so they do not defile the tabernacle in their midst. The purity laws are fundamentally about maintaining the divine dwelling."
           }
         ],
-        "ctx": "The female counterparts mirror the male: menstrual impurity (7 days, vv.19–24) mirrors normal male emission; chronic blood discharge (vv.25–30) mirrors chronic male discharge. The chapter closes with the theological rationale (vv.31–33): \"You must keep the Israelites separate from things that make them unclean, so they will not die in their uncleanness for defiling my dwelling place.\" The purity laws exist for one reason: to protect the divine presence that dwells among Israel. Impurity is not sin, but unmanaged impurity threatens the holy space.",
-        "cross": [
-          {
-            "ref": "Mark 5:25–29",
-            "note": "The woman with twelve-year discharge spent her life under the chronic female discharge rules of Lev 15:25–30 — permanently impure, isolated. When she touches Jesus, the flow stops immediately. Jesus does not become impure; she becomes clean. He is the living anti-ṣāraʿat, the one who purifies rather than being defiled."
-          },
-          {
-            "ref": "Rev 22:14–15",
-            "note": "\"Blessed are those who wash their robes, that they may have the right to the tree of life… Outside are the dogs, those who practise magic arts, the sexually immoral.\" The new creation's inside/outside binary draws on the Levitical camp structure: clean inside, unclean outside."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mark 5:25–29",
+              "note": "The woman with twelve-year discharge spent her life under the chronic female discharge rules of Lev 15:25–30 — permanently impure, isolated. When she touches Jesus, the flow stops immediately. Jesus does not become impure; she becomes clean. He is the living anti-ṣāraʿat, the one who purifies rather than being defiled."
+            },
+            {
+              "ref": "Rev 22:14–15",
+              "note": "\"Blessed are those who wash their robes, that they may have the right to the tree of life… Outside are the dogs, those who practise magic arts, the sexually immoral.\" The new creation's inside/outside binary draws on the Levitical camp structure: clean inside, unclean outside."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -186,6 +191,9 @@
               "note": "Milgrom: The summary of Lev 15 enumerates: seminal discharge, skin discharge, seminal emission, menstrual impurity, and intercourse with a menstrual woman. The categories are precisely ordered and symmetrical. The priestly writers are systematic legislators, not random collectors of taboos."
             }
           ]
+        },
+        "hist": {
+          "context": "The female counterparts mirror the male: menstrual impurity (7 days, vv.19–24) mirrors normal male emission; chronic blood discharge (vv.25–30) mirrors chronic male discharge. The chapter closes with the theological rationale (vv.31–33): \"You must keep the Israelites separate from things that make them unclean, so they will not die in their uncleanness for defiling my dwelling place.\" The purity laws exist for one reason: to protect the divine presence that dwells among Israel. Impurity is not sin, but unmanaged impurity threatens the holy space."
         }
       }
     }

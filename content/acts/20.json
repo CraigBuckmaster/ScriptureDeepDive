@@ -57,21 +57,22 @@
             "current": false
           }
         ],
-        "ctx": "The delegate list of v.4 — men from Berea, Thessalonica, Derbe, Asia — represents the collection party Paul is bringing to Jerusalem. His great collection for the Jerusalem church (1 Cor 16:1–4; 2 Cor 8–9; Rom 15:25–28) was a major theological statement: Gentile churches expressing solidarity with and indebtedness to the mother church. The Sunday gathering at Troas (v.7) is the earliest explicit reference to Sunday as the Christian community's primary worship day — a practice rooted in the resurrection's day.",
-        "cross": [
-          {
-            "ref": "1 Corinthians 16:1–4",
-            "note": "\"Now about the collection for the Lord's people... when I arrive, I will give letters of introduction to the men you approve and send them with your gift to Jerusalem.\" The collection party of Acts 20:4 is the human implementation of this apostolic directive."
-          },
-          {
-            "ref": "Acts 16:9–10",
-            "note": "The Macedonian call at Troas — Paul's first visit. His return visit completes the European mission arc: called to go west at Troas, now returning east through Troas."
-          },
-          {
-            "ref": "Acts 1 Kings 17:21",
-            "note": "Elijah throwing himself on the widow's son — the OT precedent for Paul's posture over Eutychus. Both involve physical contact, prayer, and restoration of life."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Corinthians 16:1–4",
+              "note": "\"Now about the collection for the Lord's people... when I arrive, I will give letters of introduction to the men you approve and send them with your gift to Jerusalem.\" The collection party of Acts 20:4 is the human implementation of this apostolic directive."
+            },
+            {
+              "ref": "Acts 16:9–10",
+              "note": "The Macedonian call at Troas — Paul's first visit. His return visit completes the European mission arc: called to go west at Troas, now returning east through Troas."
+            },
+            {
+              "ref": "Acts 1 Kings 17:21",
+              "note": "Elijah throwing himself on the widow's son — the OT precedent for Paul's posture over Eutychus. Both involve physical contact, prayer, and restoration of life."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -136,6 +137,9 @@
               "note": "Keener notes that 'breaking bread' on the first day of the week is consistent with early Christian practice attested in the Didache (chapter 14) and Justin Martyr's First Apology (chapter 67), both dating to c. AD 100–150. Acts 20:7 is the earliest datable reference to this practice."
             }
           ]
+        },
+        "hist": {
+          "context": "The delegate list of v.4 — men from Berea, Thessalonica, Derbe, Asia — represents the collection party Paul is bringing to Jerusalem. His great collection for the Jerusalem church (1 Cor 16:1–4; 2 Cor 8–9; Rom 15:25–28) was a major theological statement: Gentile churches expressing solidarity with and indebtedness to the mother church. The Sunday gathering at Troas (v.7) is the earliest explicit reference to Sunday as the Christian community's primary worship day — a practice rooted in the resurrection's day."
         }
       }
     },
@@ -182,21 +186,22 @@
             "current": false
           }
         ],
-        "ctx": "The Miletus speech is Paul's only address to Christian leaders in Acts and his most autobiographical speech. It functions as a pastoral testament — a dying man's (or departing man's) final instructions to those he leaves behind. The address moves through three phases: (1) Paul's past ministry model (vv.18–21: how I lived among you); (2) Paul's present situation (vv.22–24: where I am going and why); (3) Paul's future charge (vv.25–35: what I leave you to do). The conclusion — the quotation of Jesus (v.35: 'It is more blessed to give than to receive') — is the only Pauline quotation of a Jesus saying not found in the Gospels.",
-        "cross": [
-          {
-            "ref": "Ephesians 4:11",
-            "note": "\"Christ himself gave the apostles, the prophets, the evangelists, the pastors and teachers\" — Paul's letter to Ephesus elaborates the eldership structure he commissions in the Miletus speech."
-          },
-          {
-            "ref": "1 Peter 5:1–4",
-            "note": "\"Be shepherds of God's flock... not lording it over those entrusted to you\" — Peter's instructions to elders echo the Miletus speech's themes of shepherding and voluntary service."
-          },
-          {
-            "ref": "Acts 20:35",
-            "note": "The only unrecorded Jesus saying in the NT: \"It is more blessed to give than to receive\" — not in any Gospel but preserved here by Paul."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ephesians 4:11",
+              "note": "\"Christ himself gave the apostles, the prophets, the evangelists, the pastors and teachers\" — Paul's letter to Ephesus elaborates the eldership structure he commissions in the Miletus speech."
+            },
+            {
+              "ref": "1 Peter 5:1–4",
+              "note": "\"Be shepherds of God's flock... not lording it over those entrusted to you\" — Peter's instructions to elders echo the Miletus speech's themes of shepherding and voluntary service."
+            },
+            {
+              "ref": "Acts 20:35",
+              "note": "The only unrecorded Jesus saying in the NT: \"It is more blessed to give than to receive\" — not in any Gospel but preserved here by Paul."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -269,6 +274,9 @@
               "note": "Keener provides background on Paul's financial self-support. Manual labour by a philosopher/teacher was unusual and regarded as undignified in the Greco-Roman world. Paul's insistence on supporting himself was a deliberate counter-cultural statement: his Gospel is free because it is not his means of income. This financial independence was both practically and rhetorically significant."
             }
           ]
+        },
+        "hist": {
+          "context": "The Miletus speech is Paul's only address to Christian leaders in Acts and his most autobiographical speech. It functions as a pastoral testament — a dying man's (or departing man's) final instructions to those he leaves behind. The address moves through three phases: (1) Paul's past ministry model (vv.18–21: how I lived among you); (2) Paul's present situation (vv.22–24: where I am going and why); (3) Paul's future charge (vv.25–35: what I leave you to do). The conclusion — the quotation of Jesus (v.35: 'It is more blessed to give than to receive') — is the only Pauline quotation of a Jesus saying not found in the Gospels."
         }
       }
     }

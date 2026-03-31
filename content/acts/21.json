@@ -54,21 +54,22 @@
             "current": false
           }
         ],
-        "ctx": "The journey to Jerusalem is punctuated by prophetic warnings at every stop — Tyre (v.4), Agabus at Caesarea (vv.10–11), the community's pleading (v.12). Paul's response (v.13: 'I am ready not only to be bound, but also to die in Jerusalem') is a deliberate echo of Jesus's own journey to Jerusalem, where he 'set his face toward Jerusalem' (Luke 9:51) knowing what awaited. Luke constructs a parallel passion narrative: Paul walks the same road as his Lord, and the community cannot dissuade him.",
-        "cross": [
-          {
-            "ref": "Luke 9:51",
-            "note": "\"Jesus resolutely set out for Jerusalem\" — Paul's determination mirrors Jesus's own. Luke constructs a parallel passion narrative across both volumes."
-          },
-          {
-            "ref": "Acts 20:22–23",
-            "note": "\"Compelled by the Spirit, I am going to Jerusalem, not knowing what will happen to me there. I only know that prison and hardships are facing me\" — Paul anticipated the warnings at the Miletus speech."
-          },
-          {
-            "ref": "Romans 15:25–28",
-            "note": "\"Now, however, I am on my way to Jerusalem in the service of the Lord's people there\" — Paul's letter written shortly before this journey explains the theological motivation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 9:51",
+              "note": "\"Jesus resolutely set out for Jerusalem\" — Paul's determination mirrors Jesus's own. Luke constructs a parallel passion narrative across both volumes."
+            },
+            {
+              "ref": "Acts 20:22–23",
+              "note": "\"Compelled by the Spirit, I am going to Jerusalem, not knowing what will happen to me there. I only know that prison and hardships are facing me\" — Paul anticipated the warnings at the Miletus speech."
+            },
+            {
+              "ref": "Romans 15:25–28",
+              "note": "\"Now, however, I am on my way to Jerusalem in the service of the Lord's people there\" — Paul's letter written shortly before this journey explains the theological motivation."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -133,6 +134,9 @@
               "note": "Keener notes the historical plausibility of James's concern. Jerusalem had large numbers of Torah-observant Jewish Christians ('thousands... all of them zealous for the law') who had heard distorted reports about Paul's teaching. Paul's willingness to participate in the Nazirite vow purification was genuine — not hypocrisy but cultural flexibility (1 Cor 9:20: 'to the Jews I became like a Jew')."
             }
           ]
+        },
+        "hist": {
+          "context": "The journey to Jerusalem is punctuated by prophetic warnings at every stop — Tyre (v.4), Agabus at Caesarea (vv.10–11), the community's pleading (v.12). Paul's response (v.13: 'I am ready not only to be bound, but also to die in Jerusalem') is a deliberate echo of Jesus's own journey to Jerusalem, where he 'set his face toward Jerusalem' (Luke 9:51) knowing what awaited. Luke constructs a parallel passion narrative: Paul walks the same road as his Lord, and the community cannot dissuade him."
         }
       }
     },
@@ -179,21 +183,22 @@
             "current": false
           }
         ],
-        "ctx": "The Temple arrest is the pivot of Acts — from here Paul is never a free man again. The charge is false (Trophimus was not brought into the forbidden area) but the riot is real. The Roman commander's immediate response from the Antonia fortress saves Paul's life. The pattern now established will govern chs 21–28: Paul is in Roman custody, being moved through a series of legal hearings. Luke's extended narration of Paul's captivity is not an anticlimax but his sustained argument that the Gospel is innocent before Roman law.",
-        "cross": [
-          {
-            "ref": "Acts 21:11",
-            "note": "Agabus's prophecy: 'In this way the Jewish leaders in Jerusalem will bind the owner of this belt and will hand him over to the Gentiles' — fulfilled precisely in vv.30–33."
-          },
-          {
-            "ref": "Luke 21:12",
-            "note": "\"They will seize you and persecute you. They will hand you over to synagogues and put you in prison, and you will be brought before kings and governors, and all on account of my name\" — Jesus's prediction to the disciples, now being fulfilled in Paul."
-          },
-          {
-            "ref": "Acts 28:17",
-            "note": "\"I have done nothing wrong against the Jewish people or against the customs of our ancestors\" — Paul's summary of his defence, which the entire captivity narrative (chs 21–28) substantiates."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 21:11",
+              "note": "Agabus's prophecy: 'In this way the Jewish leaders in Jerusalem will bind the owner of this belt and will hand him over to the Gentiles' — fulfilled precisely in vv.30–33."
+            },
+            {
+              "ref": "Luke 21:12",
+              "note": "\"They will seize you and persecute you. They will hand you over to synagogues and put you in prison, and you will be brought before kings and governors, and all on account of my name\" — Jesus's prediction to the disciples, now being fulfilled in Paul."
+            },
+            {
+              "ref": "Acts 28:17",
+              "note": "\"I have done nothing wrong against the Jewish people or against the customs of our ancestors\" — Paul's summary of his defence, which the entire captivity narrative (chs 21–28) substantiates."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -258,6 +263,9 @@
               "note": "Keener provides historical background on 'the Egyptian': Josephus (Jewish War 2.13.5; Antiquities 20.8.6) describes an Egyptian false prophet who led a large group of followers to the Mount of Olives promising the walls of Jerusalem would fall at his command. The Roman forces dispersed the crowd; the Egyptian escaped. The commander's mistaking Paul for this fugitive explains his surprise at Paul's education and civic standing."
             }
           ]
+        },
+        "hist": {
+          "context": "The Temple arrest is the pivot of Acts — from here Paul is never a free man again. The charge is false (Trophimus was not brought into the forbidden area) but the riot is real. The Roman commander's immediate response from the Antonia fortress saves Paul's life. The pattern now established will govern chs 21–28: Paul is in Roman custody, being moved through a series of legal hearings. Luke's extended narration of Paul's captivity is not an anticlimax but his sustained argument that the Gospel is innocent before Roman law."
         }
       }
     },
@@ -304,21 +312,22 @@
             "current": false
           }
         ],
-        "ctx": "The journey to Jerusalem is punctuated by prophetic warnings at every stop — Tyre (v.4), Agabus at Caesarea (vv.10–11), the community's pleading (v.12). Paul's response (v.13: 'I am ready not only to be bound, but also to die in Jerusalem') is a deliberate echo of Jesus's own journey to Jerusalem, where he 'set his face toward Jerusalem' (Luke 9:51) knowing what awaited. Luke constructs a parallel passion narrative: Paul walks the same road as his Lord, and the community cannot dissuade him.",
-        "cross": [
-          {
-            "ref": "Luke 9:51",
-            "note": "\"Jesus resolutely set out for Jerusalem\" — Paul's determination mirrors Jesus's own. Luke constructs a parallel passion narrative across both volumes."
-          },
-          {
-            "ref": "Acts 20:22–23",
-            "note": "\"Compelled by the Spirit, I am going to Jerusalem, not knowing what will happen to me there. I only know that prison and hardships are facing me\" — Paul anticipated the warnings at the Miletus speech."
-          },
-          {
-            "ref": "Romans 15:25–28",
-            "note": "\"Now, however, I am on my way to Jerusalem in the service of the Lord's people there\" — Paul's letter written shortly before this journey explains the theological motivation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 9:51",
+              "note": "\"Jesus resolutely set out for Jerusalem\" — Paul's determination mirrors Jesus's own. Luke constructs a parallel passion narrative across both volumes."
+            },
+            {
+              "ref": "Acts 20:22–23",
+              "note": "\"Compelled by the Spirit, I am going to Jerusalem, not knowing what will happen to me there. I only know that prison and hardships are facing me\" — Paul anticipated the warnings at the Miletus speech."
+            },
+            {
+              "ref": "Romans 15:25–28",
+              "note": "\"Now, however, I am on my way to Jerusalem in the service of the Lord's people there\" — Paul's letter written shortly before this journey explains the theological motivation."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -383,6 +392,9 @@
               "note": "Keener notes the historical plausibility of James's concern. Jerusalem had large numbers of Torah-observant Jewish Christians ('thousands... all of them zealous for the law') who had heard distorted reports about Paul's teaching. Paul's willingness to participate in the Nazirite vow purification was genuine — not hypocrisy but cultural flexibility (1 Cor 9:20: 'to the Jews I became like a Jew')."
             }
           ]
+        },
+        "hist": {
+          "context": "The journey to Jerusalem is punctuated by prophetic warnings at every stop — Tyre (v.4), Agabus at Caesarea (vv.10–11), the community's pleading (v.12). Paul's response (v.13: 'I am ready not only to be bound, but also to die in Jerusalem') is a deliberate echo of Jesus's own journey to Jerusalem, where he 'set his face toward Jerusalem' (Luke 9:51) knowing what awaited. Luke constructs a parallel passion narrative: Paul walks the same road as his Lord, and the community cannot dissuade him."
         }
       }
     }

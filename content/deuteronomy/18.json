@@ -31,25 +31,26 @@
             "paragraph": "The \"prophet like Moses\" (18:15–18) is one of the OT's most significant messianic texts. The NT applies it explicitly to Jesus (Acts 3:22; John 6:14). The criteria: from among Israel, spirit-equipped, speaking God's words, to be obeyed under penalty of divine judgment."
           }
         ],
-        "ctx": "Chapter 18 addresses three aspects of Israel's religious infrastructure: (1) the material support of Levitical priests (vv.1–8); (2) the prohibition of occult practices (vv.9–13) — divination, sorcery, omens, witchcraft, mediums, spiritists; (3) the promise of the true prophet (vv.14–22). The contrast is sharp: Israel has legitimate channels of divine access (priest and prophet); it must not resort to illegitimate ones. The chapter is the OT's clearest statement about the uniqueness of authorised prophetic revelation.",
-        "cross": [
-          {
-            "ref": "Acts 3:22–23",
-            "note": "\"For Moses said, 'The Lord your God will raise up for you a prophet like me from among your own people; you must listen to everything he tells you.'\" Peter applies Deuteronomy 18:15–19 directly to Jesus at Pentecost."
-          },
-          {
-            "ref": "John 1:21, 25",
-            "note": "\"Are you the Prophet?\" The crowds repeatedly ask this question, showing Deut 18 was a live messianic expectation in Second Temple Judaism."
-          },
-          {
-            "ref": "John 6:14",
-            "note": "\"Surely this is the Prophet who is to come into the world.\" The feeding of the 5,000 (like manna in the wilderness) triggers identification of Jesus as the Deuteronomy 18 prophet."
-          },
-          {
-            "ref": "Heb 1:1–2",
-            "note": "\"In the past God spoke to our ancestors through the prophets... but in these last days he has spoken to us by his Son.\" Hebrews reads the whole prophetic tradition as finding its fulfilment in Christ."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 3:22–23",
+              "note": "\"For Moses said, 'The Lord your God will raise up for you a prophet like me from among your own people; you must listen to everything he tells you.'\" Peter applies Deuteronomy 18:15–19 directly to Jesus at Pentecost."
+            },
+            {
+              "ref": "John 1:21, 25",
+              "note": "\"Are you the Prophet?\" The crowds repeatedly ask this question, showing Deut 18 was a live messianic expectation in Second Temple Judaism."
+            },
+            {
+              "ref": "John 6:14",
+              "note": "\"Surely this is the Prophet who is to come into the world.\" The feeding of the 5,000 (like manna in the wilderness) triggers identification of Jesus as the Deuteronomy 18 prophet."
+            },
+            {
+              "ref": "Heb 1:1–2",
+              "note": "\"In the past God spoke to our ancestors through the prophets... but in these last days he has spoken to us by his Son.\" Hebrews reads the whole prophetic tradition as finding its fulfilment in Christ."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -122,6 +123,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 18 addresses three aspects of Israel's religious infrastructure: (1) the material support of Levitical priests (vv.1–8); (2) the prohibition of occult practices (vv.9–13) — divination, sorcery, omens, witchcraft, mediums, spiritists; (3) the promise of the true prophet (vv.14–22). The contrast is sharp: Israel has legitimate channels of divine access (priest and prophet); it must not resort to illegitimate ones. The chapter is the OT's clearest statement about the uniqueness of authorised prophetic revelation."
         }
       }
     },
@@ -145,17 +149,18 @@
             "paragraph": "The self-reference is the key to the passage messianic significance. The prophet like Moses will be from Israel, receive God's words directly, and must be obeyed. The NT's identification of Jesus as this prophet is the most direct messianic application of Deuteronomy."
           }
         ],
-        "ctx": "Having established the Levitical priesthood's material support, Moses turns to Israel's spiritual infrastructure: the prohibition of all occult access to divine knowledge (vv.9–14) and the promise of the true prophet (vv.15–22). The contrast is complete: Israel has authorised channels of divine communication (priest and prophet); it must not resort to illegitimate ones. The ten forbidden practices are followed by the one authorised alternative: a prophet like Moses, whose words come directly from God.",
-        "cross": [
-          {
-            "ref": "Acts 3:22",
-            "note": "\"The Lord your God will raise up for you a prophet like me from among your own people; you must listen to everything he tells you.\" Peter applies this directly to Jesus."
-          },
-          {
-            "ref": "Matt 17:5",
-            "note": "\"This is my Son, whom I love; with him I am well pleased. Listen to him!\" The divine command at the Transfiguration echoes the Deuteronomy 18 command to \"listen to him.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 3:22",
+              "note": "\"The Lord your God will raise up for you a prophet like me from among your own people; you must listen to everything he tells you.\" Peter applies this directly to Jesus."
+            },
+            {
+              "ref": "Matt 17:5",
+              "note": "\"This is my Son, whom I love; with him I am well pleased. Listen to him!\" The divine command at the Transfiguration echoes the Deuteronomy 18 command to \"listen to him.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -224,6 +229,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Having established the Levitical priesthood's material support, Moses turns to Israel's spiritual infrastructure: the prohibition of all occult access to divine knowledge (vv.9–14) and the promise of the true prophet (vv.15–22). The contrast is complete: Israel has authorised channels of divine communication (priest and prophet); it must not resort to illegitimate ones. The ten forbidden practices are followed by the one authorised alternative: a prophet like Moses, whose words come directly from God."
         }
       }
     }

@@ -31,21 +31,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Wilderness of Judea</div><div class=\"poi-coords\">Barren region between Jerusalem and the Dead Sea</div><div class=\"poi-text\">The wilderness is both geographical and theological — the space of the new exodus. Isaiah promised that the divine highway home would cut through the wilderness (Isa 40:3). John’s location signals that something at the scale of the Exodus is beginning.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jordan River</div><div class=\"poi-coords\">Jordan Valley; traditional baptism site at Qasr el-Yahud</div><div class=\"poi-text\">The Jordan is Israel’s entry river into the Promised Land under Joshua. Being baptized in the Jordan re-enacts the covenant crossing — confessing that Israel needs to enter the land again, renewed.</div></div>"
         },
-        "ctx": "Mark opens without genealogy or birth narrative. His thesis is the single sentence of v.1. John the Baptist is immediately introduced as the fulfilment of two OT texts — Malachi 3:1 and Isaiah 40:3 combined — anchoring the story in covenant history from verse 2.",
-        "cross": [
-          {
-            "ref": "Isa 40:3",
-            "note": "A voice of one calling in the wilderness — the new-exodus promise applied to John as the forerunner."
-          },
-          {
-            "ref": "Mal 3:1",
-            "note": "I will send my messenger ahead of you — the promised forerunner before the Day of the LORD."
-          },
-          {
-            "ref": "John 1:6-8",
-            "note": "John came as a witness to testify — the Fourth Gospel confirms John’s role as witness, not the light."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 40:3",
+              "note": "A voice of one calling in the wilderness — the new-exodus promise applied to John as the forerunner."
+            },
+            {
+              "ref": "Mal 3:1",
+              "note": "I will send my messenger ahead of you — the promised forerunner before the Day of the LORD."
+            },
+            {
+              "ref": "John 1:6-8",
+              "note": "John came as a witness to testify — the Fourth Gospel confirms John’s role as witness, not the light."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -123,6 +124,9 @@
               "note": "John’s “baptism of repentance” (baptisma metanoias) — a genitive of purpose: baptism that expresses and seals repentance. It anticipates Christian baptism but differs in not being in Jesus’s name."
             }
           ]
+        },
+        "hist": {
+          "context": "Mark opens without genealogy or birth narrative. His thesis is the single sentence of v.1. John the Baptist is immediately introduced as the fulfilment of two OT texts — Malachi 3:1 and Isaiah 40:3 combined — anchoring the story in covenant history from verse 2."
         }
       }
     },
@@ -143,21 +147,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Nazareth</div><div class=\"poi-coords\">Lower Galilee, c.100km north of the Jordan baptism site</div><div class=\"poi-text\">Jesus comes from Nazareth — the obscure village of his upbringing — to the Jordan for public commissioning. The ministry will begin in Galilee (1:14) and end in Jerusalem (11:1). The geographical arc mirrors the theological movement.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jordan River</div><div class=\"poi-coords\">Traditional baptism site; Jordan Valley</div><div class=\"poi-text\">The Jordan is Israel’s covenant crossing point. Jesus’s identification with Israel at the Jordan grounds his representative role.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Wilderness</div><div class=\"poi-coords\">Desert of Judea; forty-day retreat</div><div class=\"poi-text\">Forty days echo Israel’s forty years (Num 14) and Moses’s forty days on Sinai (Exod 24). Jesus recapitulates and completes what Israel failed to do.</div></div>"
         },
-        "ctx": "Mark compresses baptism and temptation into five verses. The baptism is a Trinitarian event: Son baptized, Spirit descends, Father speaks. The temptation follows immediately — “at once the Spirit sent him out.” The forty days echo Israel’s forty years in the wilderness; Jesus recapitulates Israel’s story and succeeds where Israel failed.",
-        "cross": [
-          {
-            "ref": "Ps 2:7",
-            "note": "You are my Son — the royal coronation Psalm. The Father’s declaration installs Jesus as the Davidic king."
-          },
-          {
-            "ref": "Isa 42:1",
-            "note": "Here is my servant in whom I delight — the Servant Song combined with Ps 2 at the baptism: Jesus is both Davidic king and Suffering Servant."
-          },
-          {
-            "ref": "Isa 40:3",
-            "note": "The same wilderness where John prepares the way is where Jesus is tested. The new exodus passes through wilderness before the Promised Land."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 2:7",
+              "note": "You are my Son — the royal coronation Psalm. The Father’s declaration installs Jesus as the Davidic king."
+            },
+            {
+              "ref": "Isa 42:1",
+              "note": "Here is my servant in whom I delight — the Servant Song combined with Ps 2 at the baptism: Jesus is both Davidic king and Suffering Servant."
+            },
+            {
+              "ref": "Isa 40:3",
+              "note": "The same wilderness where John prepares the way is where Jesus is tested. The new exodus passes through wilderness before the Promised Land."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -235,6 +240,9 @@
               "note": "“Being tempted” — present participle: ongoing throughout the 40 days, not a single event at the end. The wild animals are unique to Mark — possibly Edenic restoration imagery or Markan geographical realism about the desert terrain."
             }
           ]
+        },
+        "hist": {
+          "context": "Mark compresses baptism and temptation into five verses. The baptism is a Trinitarian event: Son baptized, Spirit descends, Father speaks. The temptation follows immediately — “at once the Spirit sent him out.” The forty days echo Israel’s forty years in the wilderness; Jesus recapitulates Israel’s story and succeeds where Israel failed."
         }
       }
     },
@@ -255,21 +263,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Galilee</div><div class=\"poi-coords\">Northern Israel region; “Galilee of the Gentiles” (Isa 9:1)</div><div class=\"poi-text\">Jesus deliberately begins in the marginal north, not Jerusalem. The geographical choice is theological: the kingdom comes first to the periphery, fulfilling Isaiah’s promise of light in the land of Zebulun and Naphtali.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Sea of Galilee</div><div class=\"poi-coords\">Freshwater lake, 21km x 13km; working fishing economy</div><div class=\"poi-text\">The first disciples are called in their actual working environment. The Sea of Galilee’s fishing industry was substantial. Their immediate abandonment of nets and boat measures the authority of the call.</div></div>"
         },
-        "ctx": "John’s imprisonment triggers Jesus’s public ministry — the forerunner’s silencing signals that the one he announced has arrived. Mark’s kingdom proclamation in v.15 is the most compressed gospel summary in the synoptics: time fulfilled, kingdom near, repent, believe. The calling of the first four disciples requires no prior acquaintance and gives no explanation — the authority is in the call itself.",
-        "cross": [
-          {
-            "ref": "Isa 52:7",
-            "note": "How beautiful on the mountains are the feet of those who bring good news — the proclamation of the kingdom fulfils Isaiah’s new-exodus announcement."
-          },
-          {
-            "ref": "Dan 7:13-14",
-            "note": "The kingdom of God in Mark is Danielic: the rule of the Ancient of Days breaking in through the Son of Man."
-          },
-          {
-            "ref": "Matt 4:17",
-            "note": "From that time on Jesus began to preach: Repent, for the kingdom of heaven has come near — Matthew’s parallel shows the programmatic nature of this proclamation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 52:7",
+              "note": "How beautiful on the mountains are the feet of those who bring good news — the proclamation of the kingdom fulfils Isaiah’s new-exodus announcement."
+            },
+            {
+              "ref": "Dan 7:13-14",
+              "note": "The kingdom of God in Mark is Danielic: the rule of the Ancient of Days breaking in through the Son of Man."
+            },
+            {
+              "ref": "Matt 4:17",
+              "note": "From that time on Jesus began to preach: Repent, for the kingdom of heaven has come near — Matthew’s parallel shows the programmatic nature of this proclamation."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -347,6 +356,9 @@
               "note": "Engiken — debated between “has arrived” and “is at hand.” The perfect tense with a verb of approach most naturally means arrival at the threshold. The kingdom is present in the person of Jesus."
             }
           ]
+        },
+        "hist": {
+          "context": "John’s imprisonment triggers Jesus’s public ministry — the forerunner’s silencing signals that the one he announced has arrived. Mark’s kingdom proclamation in v.15 is the most compressed gospel summary in the synoptics: time fulfilled, kingdom near, repent, believe. The calling of the first four disciples requires no prior acquaintance and gives no explanation — the authority is in the call itself."
         }
       }
     },
@@ -367,21 +379,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Capernaum synagogue</div><div class=\"poi-coords\">Fishing town on northwest shore of Sea of Galilee; synagogue site excavated</div><div class=\"poi-text\">Capernaum is Jesus’s ministry base — Mark calls it “his own town” (2:1). The synagogue is the first public venue: Jesus enters the heart of Jewish communal life. The basalt and limestone synagogue remains at Capernaum preserve the site.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Simon’s house, Capernaum</div><div class=\"poi-coords\">Domestic space near the synagogue</div><div class=\"poi-text\">The kingdom enters the home as naturally as the synagogue. Archaeological work at Capernaum has identified a first-century domestic structure beneath the later octagonal church as a plausible candidate for Peter’s house.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Solitary place outside Capernaum</div><div class=\"poi-coords\">Hillside or desert area north of the town</div><div class=\"poi-text\">Jesus retreats before dawn to pray alone — the pattern of withdrawal and return that runs through Mark. The solitary place is the space of renewal between public ministry episodes.</div></div>"
         },
-        "ctx": "Mark 1:21-45 is a programmatic day in Capernaum displaying Jesus’s authority across every domain: false teaching overturned (synagogue), demons cast out (exorcism), fever healed (Peter’s mother-in-law), the socially excluded restored (leper), and the mission sustained by pre-dawn prayer. The Messianic Secret begins: Jesus silences demons who know his identity (vv.25, 34, 44).",
-        "cross": [
-          {
-            "ref": "Lev 14",
-            "note": "The cleansing ritual for leprosy — Jesus sends the healed man to the priest to fulfil Mosaic law. The miracle is authenticated through covenant procedure."
-          },
-          {
-            "ref": "Isa 61:1",
-            "note": "The Spirit of the Lord is on me…to proclaim freedom for captives — the exorcism fulfils the Isaiah servant’s promise of liberation."
-          },
-          {
-            "ref": "Deut 18:15-18",
-            "note": "The prophet like Moses whose words must be obeyed — the people’s reaction (“what is this authority?”) echoes the promised prophet: Jesus’s authority marks him as Moses’s fulfilment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 14",
+              "note": "The cleansing ritual for leprosy — Jesus sends the healed man to the priest to fulfil Mosaic law. The miracle is authenticated through covenant procedure."
+            },
+            {
+              "ref": "Isa 61:1",
+              "note": "The Spirit of the Lord is on me…to proclaim freedom for captives — the exorcism fulfils the Isaiah servant’s promise of liberation."
+            },
+            {
+              "ref": "Deut 18:15-18",
+              "note": "The prophet like Moses whose words must be obeyed — the people’s reaction (“what is this authority?”) echoes the promised prophet: Jesus’s authority marks him as Moses’s fulfilment."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -459,6 +472,9 @@
               "note": "“As a testimony to them” — directed at the priests. It is a legal certification and a challenge: the priestly establishment must confront a Levitically valid cleansing they cannot attribute to any natural process."
             }
           ]
+        },
+        "hist": {
+          "context": "Mark 1:21-45 is a programmatic day in Capernaum displaying Jesus’s authority across every domain: false teaching overturned (synagogue), demons cast out (exorcism), fever healed (Peter’s mother-in-law), the socially excluded restored (leper), and the mission sustained by pre-dawn prayer. The Messianic Secret begins: Jesus silences demons who know his identity (vv.25, 34, 44)."
         }
       }
     }

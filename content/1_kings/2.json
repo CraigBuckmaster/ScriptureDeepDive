@@ -31,21 +31,22 @@
             "paragraph": "David says he is going \"the way of all the earth\" (v.2) — a dignified euphemism for death found also in Josh 23:14. The phrase universalises death: even the greatest king walks the same road as every commoner. No human dynasty endures in itself; only God's covenant endures."
           }
         ],
-        "ctx": "David's deathbed charge has two layers: the theological (vv.2–4) and the political (vv.5–9). The theological charge is pure Deuteronomy: keep God's commands, walk in his ways, observe his decrees — \"so that you may prosper in all you do\" (v.3). This is the Deuteronomistic thesis applied to kingship. The political charge is harder: deal with Joab (who murdered Abner and Amasa) and Shimei (who cursed the LORD's anointed). David could not act against them in his lifetime due to political constraints; he entrusts justice to Solomon. The dying king gives his son both a torah and a hit list — and the narrator presents both as legitimate charges.",
-        "cross": [
-          {
-            "ref": "Deut 17:18–20",
-            "note": "The \"Law of the King\" — the king must write a copy of the Torah, read it daily, and not consider himself above his brothers. David's charge to Solomon fulfils this Deuteronomic requirement."
-          },
-          {
-            "ref": "Josh 1:7–8",
-            "note": "\"Be strong and very courageous. Be careful to obey all the law my servant Moses gave you.\" Moses to Joshua; now David to Solomon — the same charge transmitted across three generations of leadership."
-          },
-          {
-            "ref": "2 Sam 3:27",
-            "note": "Joab's murder of Abner: \"Joab took him aside in the gateway... and stabbed him in the stomach.\" David could not punish Joab then; he entrusts the reckoning to Solomon."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 17:18–20",
+              "note": "The \"Law of the King\" — the king must write a copy of the Torah, read it daily, and not consider himself above his brothers. David's charge to Solomon fulfils this Deuteronomic requirement."
+            },
+            {
+              "ref": "Josh 1:7–8",
+              "note": "\"Be strong and very courageous. Be careful to obey all the law my servant Moses gave you.\" Moses to Joshua; now David to Solomon — the same charge transmitted across three generations of leadership."
+            },
+            {
+              "ref": "2 Sam 3:27",
+              "note": "Joab's murder of Abner: \"Joab took him aside in the gateway... and stabbed him in the stomach.\" David could not punish Joab then; he entrusts the reckoning to Solomon."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -97,6 +98,9 @@
               "note": "Provan: The political instructions (vv.5–9) create moral complexity for the reader. Is David being vindictive or just? The narrator does not resolve the tension. Solomon must exercise wisdom — the very gift he will soon request — to navigate between mercy and justice."
             }
           ]
+        },
+        "hist": {
+          "context": "David's deathbed charge has two layers: the theological (vv.2–4) and the political (vv.5–9). The theological charge is pure Deuteronomy: keep God's commands, walk in his ways, observe his decrees — \"so that you may prosper in all you do\" (v.3). This is the Deuteronomistic thesis applied to kingship. The political charge is harder: deal with Joab (who murdered Abner and Amasa) and Shimei (who cursed the LORD's anointed). David could not act against them in his lifetime due to political constraints; he entrusts justice to Solomon. The dying king gives his son both a torah and a hit list — and the narrator presents both as legitimate charges."
         }
       }
     },
@@ -120,21 +124,22 @@
             "paragraph": "Solomon tells Shimei to showḥesed(v.7 context, cf. 2 Sam 9) — the same covenant loyalty David showed to Mephibosheth. The term binds the political narrative to the theological: Solomon's consolidation is framed as covenant faithfulness, not mere power politics."
           }
         ],
-        "ctx": "Solomon's consolidation of power proceeds through four episodes, each a test of wisdom. Adonijah requests Abishag (David's last companion) — a thinly veiled claim to the throne, since possessing a king's concubine implied royal succession (cf. 2 Sam 16:21–22). Solomon sees through it instantly. Abiathar is exiled (fulfilling the prophecy against Eli's house, 1 Sam 2:27–36). Joab flees to the altar but is executed there — unlike Adonijah in ch. 1, Joab's crimes are capital. Shimei violates his oath and is executed. Each episode demonstrates Solomon's discernment: the man who will soon ask God for wisdom is already exercising it.",
-        "cross": [
-          {
-            "ref": "1 Sam 2:30–36",
-            "note": "\"I will raise up for myself a faithful priest.\" The exile of Abiathar (v.27) fulfils the prophecy against Eli's house spoken 100+ years earlier. The narrator explicitly notes this (v.27)."
-          },
-          {
-            "ref": "2 Sam 16:5–8",
-            "note": "Shimei's original cursing of David at Bahurim: \"Get out, get out, you man of blood!\" David spared him then; Solomon gives him a second chance with a clear condition."
-          },
-          {
-            "ref": "2 Sam 3:27; 20:10",
-            "note": "Joab's two murders — Abner killed in the gate of Hebron, Amasa stabbed while greeting him. Both were acts of treachery against men at peace. David's dying charge finally brings justice."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Sam 2:30–36",
+              "note": "\"I will raise up for myself a faithful priest.\" The exile of Abiathar (v.27) fulfils the prophecy against Eli's house spoken 100+ years earlier. The narrator explicitly notes this (v.27)."
+            },
+            {
+              "ref": "2 Sam 16:5–8",
+              "note": "Shimei's original cursing of David at Bahurim: \"Get out, get out, you man of blood!\" David spared him then; Solomon gives him a second chance with a clear condition."
+            },
+            {
+              "ref": "2 Sam 3:27; 20:10",
+              "note": "Joab's two murders — Abner killed in the gate of Hebron, Amasa stabbed while greeting him. Both were acts of treachery against men at peace. David's dying charge finally brings justice."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -186,6 +191,9 @@
               "note": "Provan: The fourfold consolidation creates a clean break between the Davidic era of civil war and intrigue and the Solomonic era of peace and construction. The narrator clears the stage so that the temple can be built in a kingdom at rest — the precondition David himself articulated (2 Sam 7:1)."
             }
           ]
+        },
+        "hist": {
+          "context": "Solomon's consolidation of power proceeds through four episodes, each a test of wisdom. Adonijah requests Abishag (David's last companion) — a thinly veiled claim to the throne, since possessing a king's concubine implied royal succession (cf. 2 Sam 16:21–22). Solomon sees through it instantly. Abiathar is exiled (fulfilling the prophecy against Eli's house, 1 Sam 2:27–36). Joab flees to the altar but is executed there — unlike Adonijah in ch. 1, Joab's crimes are capital. Shimei violates his oath and is executed. Each episode demonstrates Solomon's discernment: the man who will soon ask God for wisdom is already exercising it."
         }
       }
     }

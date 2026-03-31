@@ -31,21 +31,22 @@
             "paragraph": "The name Jezreel carries a double meaning rooted in the verb zrʿ ('to sow' or 'to scatter'). Historically it recalls the Jezreel Valley where Jehu slaughtered the house of Ahab (2 Kgs 9-10). Here it announces that God will 'scatter' Israel in judgment. Yet in 2:22-23, the same name is reversed: God will 'sow' (plant) Israel in the land as an act of restoration."
           }
         ],
-        "ctx": "The superscription (v. 1) situates Hosea's ministry across four Judean kings (Uzziah, Jotham, Ahaz, Hezekiah) and one Israelite king (Jeroboam II), spanning roughly 750-715 BC. This is the twilight era of the northern kingdom: Jeroboam II's prosperous reign masked deep social and religious corruption. The divine command to marry a 'promiscuous woman' is without precedent in prophetic literature. Whether Gomer was already unfaithful at the time of marriage or became so afterward is debated, but the theological force is clear: Israel's covenant relationship with YHWH has been defiled by Baal worship, and the prophet's own life must embody this reality. The naming of Jezreel directly targets the ruling Jehu dynasty, announcing its imminent end and the collapse of Israel's military power in the Jezreel Valley.",
-        "cross": [
-          {
-            "ref": "2 Kgs 9:14-37",
-            "note": "Jehu's violent purge at Jezreel that the child's name recalls and that YHWH now declares he will punish."
-          },
-          {
-            "ref": "Jer 3:6-10",
-            "note": "Jeremiah extends Hosea's marriage metaphor, describing both Israel and Judah as unfaithful wives who refused to return."
-          },
-          {
-            "ref": "Isa 1:21",
-            "note": "Isaiah uses the same harlotry language: 'the faithful city has become a prostitute.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 9:14-37",
+              "note": "Jehu's violent purge at Jezreel that the child's name recalls and that YHWH now declares he will punish."
+            },
+            {
+              "ref": "Jer 3:6-10",
+              "note": "Jeremiah extends Hosea's marriage metaphor, describing both Israel and Judah as unfaithful wives who refused to return."
+            },
+            {
+              "ref": "Isa 1:21",
+              "note": "Isaiah uses the same harlotry language: 'the faithful city has become a prostitute.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -122,6 +123,9 @@
               "note": "The birth narrative follows a carefully structured pattern: conception, birth, naming command, and oracle. Each child's name carries a prophetic weight that escalates in severity. Jezreel is punitive but geographically focused; Lo-Ruhamah is relational (withdrawal of compassion); Lo-Ammi is covenantal (dissolution of the covenant formula)."
             }
           ]
+        },
+        "hist": {
+          "context": "The superscription (v. 1) situates Hosea's ministry across four Judean kings (Uzziah, Jotham, Ahaz, Hezekiah) and one Israelite king (Jeroboam II), spanning roughly 750-715 BC. This is the twilight era of the northern kingdom: Jeroboam II's prosperous reign masked deep social and religious corruption. The divine command to marry a 'promiscuous woman' is without precedent in prophetic literature. Whether Gomer was already unfaithful at the time of marriage or became so afterward is debated, but the theological force is clear: Israel's covenant relationship with YHWH has been defiled by Baal worship, and the prophet's own life must embody this reality. The naming of Jezreel directly targets the ruling Jehu dynasty, announcing its imminent end and the collapse of Israel's military power in the Jezreel Valley."
         }
       }
     },
@@ -145,21 +149,22 @@
             "paragraph": "This name reverses the covenant formula of Exodus 6:7: 'I will take you as my people and I will be your God.' The divine self-designation ʼehyeh ('I AM') from Exodus 3:14 is negated: loʾ-ʼehyeh lakhem ('I am not [I AM] to you'). This is the most theologically devastating of the three names, effectively announcing covenant dissolution."
           }
         ],
-        "ctx": "The birth of Lo-Ruhamah and Lo-Ammi marks an escalating sequence of judgment oracles. A subtle but significant textual detail: v. 3 says Gomer bore 'him' (Hosea) a son, but v. 6 simply says she 'gave birth to a daughter' and v. 8 says she 'had another son' — the possessive pronoun linking the children to Hosea is absent, possibly hinting at Gomer's infidelity and the uncertain paternity of the later children. The Judah exception in v. 7 is often regarded as a later editorial addition from a Judean perspective, though some scholars defend its originality as reflecting Hosea's hope that the southern kingdom might avoid the north's fate.",
-        "cross": [
-          {
-            "ref": "Exod 6:7",
-            "note": "The covenant formula 'I will take you as my people and I will be your God' — the very declaration that Lo-Ammi reverses."
-          },
-          {
-            "ref": "Rom 9:25-26",
-            "note": "Paul quotes Hosea 1:10 and 2:23 to argue that God's mercy now extends to Gentiles who were formerly 'not my people.'"
-          },
-          {
-            "ref": "1 Pet 2:10",
-            "note": "Peter applies the Lo-Ammi/Ammi reversal to the church: 'Once you were not a people, but now you are the people of God.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 6:7",
+              "note": "The covenant formula 'I will take you as my people and I will be your God' — the very declaration that Lo-Ammi reverses."
+            },
+            {
+              "ref": "Rom 9:25-26",
+              "note": "Paul quotes Hosea 1:10 and 2:23 to argue that God's mercy now extends to Gentiles who were formerly 'not my people.'"
+            },
+            {
+              "ref": "1 Pet 2:10",
+              "note": "Peter applies the Lo-Ammi/Ammi reversal to the church: 'Once you were not a people, but now you are the people of God.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -224,6 +229,9 @@
               "note": "The three children form a tricolon of escalating severity: loss of political stability (Jezreel), loss of divine compassion (Lo-Ruhamah), loss of covenant identity (Lo-Ammi). This is Hosea's equivalent of the covenant curses in Deuteronomy 28: the relationship is being systematically dismantled. The omission of the possessive pronoun in vv. 6 and 8 is a masterful narrative technique, raising the specter of Gomer's adultery without explicitly stating it."
             }
           ]
+        },
+        "hist": {
+          "context": "The birth of Lo-Ruhamah and Lo-Ammi marks an escalating sequence of judgment oracles. A subtle but significant textual detail: v. 3 says Gomer bore 'him' (Hosea) a son, but v. 6 simply says she 'gave birth to a daughter' and v. 8 says she 'had another son' — the possessive pronoun linking the children to Hosea is absent, possibly hinting at Gomer's infidelity and the uncertain paternity of the later children. The Judah exception in v. 7 is often regarded as a later editorial addition from a Judean perspective, though some scholars defend its originality as reflecting Hosea's hope that the southern kingdom might avoid the north's fate."
         }
       }
     },
@@ -241,17 +249,18 @@
             "paragraph": "Though this word does not appear explicitly in these verses, the reversal oracle of vv. 10-11 embodies the hesed theology that permeates the entire book. Hesed is the key theological term of Hosea: it denotes the loyal, covenant-keeping love that persists even when the other party has been faithless. The sudden shift from judgment to restoration is grounded in YHWH's irrepressible hesed."
           }
         ],
-        "ctx": "These two verses constitute a stunning reversal of everything that preceded them. Without transition or explanation, the prophet pivots from covenant dissolution to extravagant restoration. The imagery of sand on the seashore echoes the Abrahamic promise (Gen 22:17), reaching back past the Sinai covenant to the more ancient and unconditional patriarchal promise. The title 'children of the living God' (bene el-hai) replaces 'not my people,' and the reunification of Judah and Israel under one leader anticipates the eschatological hope that runs through the prophets. Many scholars regard these verses as belonging with chapter 2 in the Hebrew text (where they are 2:1-2), serving as the opening of the extended marriage allegory.",
-        "cross": [
-          {
-            "ref": "Gen 22:17",
-            "note": "The Abrahamic promise of descendants as numerous as sand on the seashore, which Hosea now reapplies to restored Israel."
-          },
-          {
-            "ref": "Rom 9:26",
-            "note": "Paul quotes this passage directly, applying the 'children of the living God' promise to the inclusion of Gentile believers in the people of God."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 22:17",
+              "note": "The Abrahamic promise of descendants as numerous as sand on the seashore, which Hosea now reapplies to restored Israel."
+            },
+            {
+              "ref": "Rom 9:26",
+              "note": "Paul quotes this passage directly, applying the 'children of the living God' promise to the inclusion of Gentile believers in the people of God."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -300,6 +309,9 @@
               "note": "In the Hebrew text these verses open chapter 2, functioning as a programmatic reversal oracle. The structure is chiastic: Lo-Ammi becomes Ammi, Lo-Ruhamah becomes Ruhamah, and Jezreel is transformed from judgment into sowing. Andersen and Freedman argue that this reversal is not a later gloss but is essential to Hosea's theology of irresolvable tension between divine wrath and divine love."
             }
           ]
+        },
+        "hist": {
+          "context": "These two verses constitute a stunning reversal of everything that preceded them. Without transition or explanation, the prophet pivots from covenant dissolution to extravagant restoration. The imagery of sand on the seashore echoes the Abrahamic promise (Gen 22:17), reaching back past the Sinai covenant to the more ancient and unconditional patriarchal promise. The title 'children of the living God' (bene el-hai) replaces 'not my people,' and the reunification of Judah and Israel under one leader anticipates the eschatological hope that runs through the prophets. Many scholars regard these verses as belonging with chapter 2 in the Hebrew text (where they are 2:1-2), serving as the opening of the extended marriage allegory."
         }
       }
     }

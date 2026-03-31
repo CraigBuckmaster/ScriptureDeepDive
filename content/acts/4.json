@@ -54,21 +54,22 @@
             "current": false
           }
         ],
-        "ctx": "The examination before the Sanhedrin is the church's first official hearing before Israel's supreme religious court. The Sadducees' disturbance (v2) is ideological as well as political: they denied bodily resurrection, so the apostolic preaching struck at their core theology. The cornerstone quotation (v11 citing Psalm 118:22) is addressed directly to the 'builders' — the Sanhedrin, Israel's religious leadership. The irony is perfect: the experts in building God's people have rejected the very stone God chose.",
-        "cross": [
-          {
-            "ref": "Psalm 118:22",
-            "note": "\"The stone the builders rejected has become the cornerstone\" — cited in v11. Jesus himself used this text (Matt 21:42; Mark 12:10; Luke 20:17); Peter now applies it to the Sanhedrin. Also cited in 1 Pet 2:7."
-          },
-          {
-            "ref": "Isaiah 28:16",
-            "note": "The cornerstone image combined with Psalm 118 — the stone that the builders reject becomes the most critical structural element. Rejection produces vindication in both Isaiah and the Psalm."
-          },
-          {
-            "ref": "Acts 4:12",
-            "note": "\"There is no other name under heaven given to mankind by which we must be saved\" — the unique-salvation claim: the doctrinal climax of the healing narrative and the most exclusive Christological statement in Acts."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Psalm 118:22",
+              "note": "\"The stone the builders rejected has become the cornerstone\" — cited in v11. Jesus himself used this text (Matt 21:42; Mark 12:10; Luke 20:17); Peter now applies it to the Sanhedrin. Also cited in 1 Pet 2:7."
+            },
+            {
+              "ref": "Isaiah 28:16",
+              "note": "The cornerstone image combined with Psalm 118 — the stone that the builders reject becomes the most critical structural element. Rejection produces vindication in both Isaiah and the Psalm."
+            },
+            {
+              "ref": "Acts 4:12",
+              "note": "\"There is no other name under heaven given to mankind by which we must be saved\" — the unique-salvation claim: the doctrinal climax of the healing narrative and the most exclusive Christological statement in Acts."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -133,6 +134,9 @@
               "note": "Agrammatoi (\"unschooled\") means without formal rabbinic education — not illiterate. The Sanhedrin's amazement is at theological authority exercised without proper credentials. They recognised what they had no category for: Spirit-given authority that required no human certification."
             }
           ]
+        },
+        "hist": {
+          "context": "The examination before the Sanhedrin is the church's first official hearing before Israel's supreme religious court. The Sadducees' disturbance (v2) is ideological as well as political: they denied bodily resurrection, so the apostolic preaching struck at their core theology. The cornerstone quotation (v11 citing Psalm 118:22) is addressed directly to the 'builders' — the Sanhedrin, Israel's religious leadership. The irony is perfect: the experts in building God's people have rejected the very stone God chose."
         }
       }
     },
@@ -179,21 +183,22 @@
             "current": false
           }
         ],
-        "ctx": "The community's prayer in vv.24–30 is a masterclass in applied Scripture. They do not pray for the opposition to be removed but for themselves to be emboldened. Psalm 2 is used to reframe their situation: they are not victims of historical accident but participants in the cosmic drama the psalm describes. This reframing from victim to participant is itself an act of theological courage. Barnabas is introduced (vv.36–37) immediately after the description of communal sharing — not randomly but as a preview. His first appearance as a generous encourager characterises everything he will do in Acts.",
-        "cross": [
-          {
-            "ref": "Psalm 2:1–2",
-            "note": "Cited in vv.25–26 — \"Why do the nations rage and the peoples plot in vain?\" Applied to Herod, Pilate, Gentiles, and Israel conspiring against Jesus. The early church read Psalm 2 as the charter of their situation: opposition to Christ is the rage of the nations; God's response is enthroning his King."
-          },
-          {
-            "ref": "Isaiah 37:16",
-            "note": "Hezekiah's prayer before Sennacherib's threat — \"Sovereign Lord, you made the heavens and the earth\" — echoed in v24. Another moment when God's people faced overwhelming human opposition and appealed to the Creator's sovereignty."
-          },
-          {
-            "ref": "Acts 5:1–11",
-            "note": "Barnabas's generosity (v36–37) is immediately followed by Ananias and Sapphira's counter-example. Luke's literary pairing presents the community's standards: generosity is praised; hypocrisy is exposed."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Psalm 2:1–2",
+              "note": "Cited in vv.25–26 — \"Why do the nations rage and the peoples plot in vain?\" Applied to Herod, Pilate, Gentiles, and Israel conspiring against Jesus. The early church read Psalm 2 as the charter of their situation: opposition to Christ is the rage of the nations; God's response is enthroning his King."
+            },
+            {
+              "ref": "Isaiah 37:16",
+              "note": "Hezekiah's prayer before Sennacherib's threat — \"Sovereign Lord, you made the heavens and the earth\" — echoed in v24. Another moment when God's people faced overwhelming human opposition and appealed to the Creator's sovereignty."
+            },
+            {
+              "ref": "Acts 5:1–11",
+              "note": "Barnabas's generosity (v36–37) is immediately followed by Ananias and Sapphira's counter-example. Luke's literary pairing presents the community's standards: generosity is praised; hypocrisy is exposed."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -258,6 +263,9 @@
               "note": "The community of goods fits the Deuteronomic vision of 15:4 (\"there need be no poor people among you\"). Keener notes the difference from Qumran: Jerusalem sharing is voluntary and iterative (the imperfect tense in v34 — \"they would sell\") rather than a one-time surrender of property as an entrance requirement."
             }
           ]
+        },
+        "hist": {
+          "context": "The community's prayer in vv.24–30 is a masterclass in applied Scripture. They do not pray for the opposition to be removed but for themselves to be emboldened. Psalm 2 is used to reframe their situation: they are not victims of historical accident but participants in the cosmic drama the psalm describes. This reframing from victim to participant is itself an act of theological courage. Barnabas is introduced (vv.36–37) immediately after the description of communal sharing — not randomly but as a preview. His first appearance as a generous encourager characterises everything he will do in Acts."
         }
       }
     }

@@ -25,14 +25,18 @@
             "paragraph": "\"I am doing a great work (məlāʾkâ) and cannot come down.\" Nehemiah’s most quoted line. The word məlāʾkâ is the same word used for God’s work in creation (Gen 2:2). The wall is not a project but a calling."
           }
         ],
-        "hist": "The plain of Ono (modern Kafr Ana) was in neutral territory between Judah and Samaria — a natural meeting point. But it was also far from Jerusalem’s defences. An \"invitation to negotiate\" in open territory was an invitation to assassination. Nehemiah saw through it instantly.",
-        "ctx": "Four identical invitations, four identical refusals. Then a fifth attempt: an open letter accusing Nehemiah of planning rebellion (vv.5–7). Each escalation tests whether Nehemiah will leave the wall. He never does. Focus is his defining trait: \"I am doing a great work and cannot come down.\"",
-        "cross": [
-          {
-            "ref": "Neh 2:19–20",
-            "note": "The first accusation of rebellion — the same weapon, recycled."
-          }
-        ],
+        "hist": {
+          "historical": "The plain of Ono (modern Kafr Ana) was in neutral territory between Judah and Samaria — a natural meeting point. But it was also far from Jerusalem’s defences. An \"invitation to negotiate\" in open territory was an invitation to assassination. Nehemiah saw through it instantly.",
+          "context": "Four identical invitations, four identical refusals. Then a fifth attempt: an open letter accusing Nehemiah of planning rebellion (vv.5–7). Each escalation tests whether Nehemiah will leave the wall. He never does. Focus is his defining trait: \"I am doing a great work and cannot come down.\""
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Neh 2:19–20",
+              "note": "The first accusation of rebellion — the same weapon, recycled."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -122,17 +126,18 @@
             "paragraph": "Shemaiah presents himself as a prophet with a divine warning. But Nehemiah perceives that \"God had not sent him\" — the test of Deut 18:22. False prophecy is the most insidious weapon because it wears God’s voice as a disguise."
           }
         ],
-        "ctx": "\"Should a man like me run away? Should someone like me go into the temple to save his life? I will not go!\" (v.11). Nehemiah refuses on two grounds: (1) running is beneath his calling, and (2) entering the temple sanctuary as a non-priest would violate Torah. The false prophet’s advice is designed to either kill him (assassination in the temple) or discredit him (entering a space reserved for priests).",
-        "cross": [
-          {
-            "ref": "Deut 18:20–22",
-            "note": "The test of a false prophet: a word that does not come from God."
-          },
-          {
-            "ref": "1 Kgs 13:1–26",
-            "note": "The man of God deceived by a false prophet — the cautionary tale."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 18:20–22",
+              "note": "The test of a false prophet: a word that does not come from God."
+            },
+            {
+              "ref": "1 Kgs 13:1–26",
+              "note": "The man of God deceived by a false prophet — the cautionary tale."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -205,6 +210,9 @@
               "note": "Kidner: \"He realised. Not ‘felt’ or ‘suspected’ but perceived with clarity. Discernment is a faculty, not a feeling.\""
             }
           ]
+        },
+        "hist": {
+          "context": "\"Should a man like me run away? Should someone like me go into the temple to save his life? I will not go!\" (v.11). Nehemiah refuses on two grounds: (1) running is beneath his calling, and (2) entering the temple sanctuary as a non-priest would violate Torah. The false prophet’s advice is designed to either kill him (assassination in the temple) or discredit him (entering a space reserved for priests)."
         }
       }
     },
@@ -222,17 +230,18 @@
             "paragraph": "Fifty-two days. The wall of Jerusalem, ruined for over a century, rebuilt in less than two months. The speed itself is the testimony: this was done \"with the help of our God\" (v.16). Human effort at divine pace."
           }
         ],
-        "ctx": "The enemies’ response to the completion (v.16) is the chapter’s theological climax: \"they were afraid and lost their self-confidence, because they realised that this work had been done with the help of our God.\" The wall is not merely defensive architecture — it is an argument. Its very existence testifies that God is real and active.",
-        "cross": [
-          {
-            "ref": "Ps 127:1",
-            "note": "\"Unless the LORD builds the house, the builders labour in vain\" — the psalm the 52-day completion validates."
-          },
-          {
-            "ref": "Zech 4:6",
-            "note": "\"Not by might nor by power, but by my Spirit\" — the prophecy the wall embodies."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 127:1",
+              "note": "\"Unless the LORD builds the house, the builders labour in vain\" — the psalm the 52-day completion validates."
+            },
+            {
+              "ref": "Zech 4:6",
+              "note": "\"Not by might nor by power, but by my Spirit\" — the prophecy the wall embodies."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -305,6 +314,9 @@
               "note": "Kidner on Tobiah’s letters: \"The most dangerous enemy is the one with friends inside. Tobiah had a network of allies within Jerusalem who kept him informed and advocated for him. The wall could not keep out his influence.\""
             }
           ]
+        },
+        "hist": {
+          "context": "The enemies’ response to the completion (v.16) is the chapter’s theological climax: \"they were afraid and lost their self-confidence, because they realised that this work had been done with the help of our God.\" The wall is not merely defensive architecture — it is an argument. Its very existence testifies that God is real and active."
         }
       }
     }

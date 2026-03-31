@@ -25,21 +25,22 @@
             "paragraph": "So that you may know the certainty of the things you have been taught — katēchēthēs: literally, the things in which you were catechized. Luke’s Prologue (1:1-4) is the most polished Greek in the NT — a formal Hellenistic preface in the tradition of Thucydides and Josephus. The word catechize implies formal oral instruction: Theophilus has received teaching; Luke is providing the written foundation beneath it."
           }
         ],
-        "ctx": "Luke’s Prologue (1:1-4) is the only place in the Synoptic Gospels where an author steps out of the narrative to explain his method. He names his sources (eyewitnesses and servants of the word), his method (careful investigation), his scope (from the beginning), his purpose (orderly account), and his audience (Theophilus — most excellent, indicating a person of rank). This is the self-description of a Hellenistic historian. What follows — Gabriel visiting an elderly priest in the Jerusalem Temple — is a deliberate echo of the OT annunciation pattern (Abraham and Sarah, Manoah and his wife, Hannah and Elkanah). Luke positions John’s birth inside Israel’s covenant story from the first scene.",
-        "cross": [
-          {
-            "ref": "Mal 3:1; 4:5-6",
-            "note": "I will send the prophet Elijah before that great and dreadful day of the LORD — the prophecy Gabriel quotes in 1:17: the forerunner who will turn the hearts of parents to children."
-          },
-          {
-            "ref": "Num 6:3",
-            "note": "The Nazirite vow— wine and strong drink forbidden — Gabriel applies to John (1:15), positioning him in the tradition of Samson and Samuel."
-          },
-          {
-            "ref": "Gen 18:11-14",
-            "note": "Abraham and Sarah, too old for children — the OT precedent for Elizabeth’s pregnancy. Luke deliberately echoes the Genesis pattern."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mal 3:1; 4:5-6",
+              "note": "I will send the prophet Elijah before that great and dreadful day of the LORD — the prophecy Gabriel quotes in 1:17: the forerunner who will turn the hearts of parents to children."
+            },
+            {
+              "ref": "Num 6:3",
+              "note": "The Nazirite vow— wine and strong drink forbidden — Gabriel applies to John (1:15), positioning him in the tradition of Samson and Samuel."
+            },
+            {
+              "ref": "Gen 18:11-14",
+              "note": "Abraham and Sarah, too old for children — the OT precedent for Elizabeth’s pregnancy. Luke deliberately echoes the Genesis pattern."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -104,6 +105,9 @@
               "note": "You will be silent because you did not believe — Chrysostom: the silence is merciful, not merely punitive. It protects the announcement’s integrity: if Zechariah had spoken before the birth he would have been dismissed as delusional. The enforced silence preserves the sign."
             }
           ]
+        },
+        "hist": {
+          "context": "Luke’s Prologue (1:1-4) is the only place in the Synoptic Gospels where an author steps out of the narrative to explain his method. He names his sources (eyewitnesses and servants of the word), his method (careful investigation), his scope (from the beginning), his purpose (orderly account), and his audience (Theophilus — most excellent, indicating a person of rank). This is the self-description of a Hellenistic historian. What follows — Gabriel visiting an elderly priest in the Jerusalem Temple — is a deliberate echo of the OT annunciation pattern (Abraham and Sarah, Manoah and his wife, Hannah and Elkanah). Luke positions John’s birth inside Israel’s covenant story from the first scene."
         }
       }
     },
@@ -124,21 +128,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Nazareth</div><div class=\"poi-coords\">Lower Galilee; modern Nazareth, c.25km from the Sea of Galilee</div><div class=\"poi-text\">The Annunciation takes place in the obscure Galilean village of Nazareth — a town mentioned nowhere in the OT. Luke’s emphasis on Nazareth as the origin point (1:26; 2:4; 2:39; 2:51; 4:16) consistently works against the grain of messianic expectation. The Messiah comes from the margins.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Hill country of Judea — Zechariah’s home</div><div class=\"poi-coords\">Traditionally identified with Ein Karem, c.7km west of Jerusalem</div><div class=\"poi-text\">Mary’s journey from Galilee to the hill country of Judea (c.130km) is the first movement narrative in Luke. It joins the two miraculous pregnancies in a single household encounter. The visitation is the first Gospel meeting of the two cousins whose lives are permanently intertwined.</div></div>"
         },
-        "ctx": "The Annunciation is the most theologically dense moment in Luke 1. Gabriel’s words define Jesus’ identity with four titles: great, Son of the Most High, heir of David’s throne, and King of an eternal kingdom. Mary’s question is not doubt (contrast Zechariah) but a practical inquiry about mechanism. The Magnificat that follows is Luke’s first extended speech and the theological manifesto of the Gospel: God’s saving action is the reversal of human power structures, the exaltation of the lowly, and the fulfilment of the Abrahamic covenant.",
-        "cross": [
-          {
-            "ref": "1 Sam 2:1-10",
-            "note": "Hannah’s prayer of praise after Samuel’s birth — the OT template for the Magnificat. Both songs celebrate God’s reversal of human expectations and his faithfulness to the covenant."
-          },
-          {
-            "ref": "Isa 7:14",
-            "note": "The virgin will conceive and give birth to a son — the Isaiah text underlying the Annunciation, though Luke does not cite it explicitly."
-          },
-          {
-            "ref": "2 Sam 7:12-16",
-            "note": "The eternal Davidic throne — Gabriel’s promise (1:32-33) is the direct fulfilment of the Davidic covenant: an heir who will reign forever."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Sam 2:1-10",
+              "note": "Hannah’s prayer of praise after Samuel’s birth — the OT template for the Magnificat. Both songs celebrate God’s reversal of human expectations and his faithfulness to the covenant."
+            },
+            {
+              "ref": "Isa 7:14",
+              "note": "The virgin will conceive and give birth to a son — the Isaiah text underlying the Annunciation, though Luke does not cite it explicitly."
+            },
+            {
+              "ref": "2 Sam 7:12-16",
+              "note": "The eternal Davidic throne — Gabriel’s promise (1:32-33) is the direct fulfilment of the Davidic covenant: an heir who will reign forever."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -203,6 +208,9 @@
               "note": "Augustine: The Magnificat is the song of the whole church, not merely of one woman. Every soul that receives the Word of God and carries it becomes, in some sense, what Mary was: the bearer of Christ to the world. The song belongs to all who make her answer their own."
             }
           ]
+        },
+        "hist": {
+          "context": "The Annunciation is the most theologically dense moment in Luke 1. Gabriel’s words define Jesus’ identity with four titles: great, Son of the Most High, heir of David’s throne, and King of an eternal kingdom. Mary’s question is not doubt (contrast Zechariah) but a practical inquiry about mechanism. The Magnificat that follows is Luke’s first extended speech and the theological manifesto of the Gospel: God’s saving action is the reversal of human power structures, the exaltation of the lowly, and the fulfilment of the Abrahamic covenant."
         }
       }
     },
@@ -220,21 +228,22 @@
             "paragraph": "He has raised up a horn of salvation — a military-strength metaphor from the animal world (Ps 18:2; 132:17). The horn is the animal’s weapon and symbol of power. Zechariah uses it to describe the Davidic Messiah as the embodiment of God’s saving power. The Benedictus consistently frames salvation in the language of the Exodus and the Davidic covenant — the two poles of Israel’s hope."
           }
         ],
-        "ctx": "The naming of John releases Zechariah’s voice, and the first words from his nine months of enforced silence are a prophetic song. The Benedictus (1:68-79) moves in two movements: God’s past action in raising up the Davidic Messiah (1:68-75), and John’s future role as prophet-forerunner (1:76-79). The final verse (1:80) is Luke’s only glimpse of John’s childhood — wilderness formation before public ministry.",
-        "cross": [
-          {
-            "ref": "Ps 72:18-19",
-            "note": "Praise be to the LORD God, the God of Israel, who alone does marvelous deeds — the psalm that opens the Benedictus’ praise formula."
-          },
-          {
-            "ref": "Isa 9:2",
-            "note": "The people walking in darkness have seen a great light — the Isaiah text behind the rising sun imagery (1:79)."
-          },
-          {
-            "ref": "Mal 3:1",
-            "note": "I will send my messenger who will prepare the way before me — the prophet John will fulfil (1:76)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 72:18-19",
+              "note": "Praise be to the LORD God, the God of Israel, who alone does marvelous deeds — the psalm that opens the Benedictus’ praise formula."
+            },
+            {
+              "ref": "Isa 9:2",
+              "note": "The people walking in darkness have seen a great light — the Isaiah text behind the rising sun imagery (1:79)."
+            },
+            {
+              "ref": "Mal 3:1",
+              "note": "I will send my messenger who will prepare the way before me — the prophet John will fulfil (1:76)."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -299,6 +308,9 @@
               "note": "The rising sun will come to us from heaven to shine on those in darkness — Chrysostom: the image of the sun rising is the image of the Resurrection as well as the Incarnation. The dawn that comes is both the historical coming of Jesus and his eschatological return. The Benedictus operates on both temporal planes simultaneously."
             }
           ]
+        },
+        "hist": {
+          "context": "The naming of John releases Zechariah’s voice, and the first words from his nine months of enforced silence are a prophetic song. The Benedictus (1:68-79) moves in two movements: God’s past action in raising up the Davidic Messiah (1:68-75), and John’s future role as prophet-forerunner (1:76-79). The final verse (1:80) is Luke’s only glimpse of John’s childhood — wilderness formation before public ministry."
         }
       }
     }

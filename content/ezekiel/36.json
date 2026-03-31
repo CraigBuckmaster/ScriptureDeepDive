@@ -31,21 +31,22 @@
             "paragraph": "The noun shemamah appears repeatedly in the judgment oracles. The mountains became a shemamah because of Israel's sins, but now God promises to reverse the desolation. The same word echoes in chapter 35 describing Edom's fate: Edom's desolation is permanent, but Israel's is temporary. The contrast is theologically freighted."
           }
         ],
-        "ctx": "This oracle mirrors and reverses chapter 35 in a deliberate literary pairing. Chapter 35 addressed Mount Seir (Edom) with judgment; chapter 36 addresses the mountains of Israel with restoration. The contrast is geographic, theological, and structural. The nations (v. 3) have mocked Israel's desolate mountains, claiming them as plunder. God's response is fierce: the mountains will produce fruit and bear people again (vv. 8-12). The land is not merely scenery; in Israelite theology, the land is covenantal real estate, promised to Abraham and inseparable from God's faithfulness. Restoring the mountains is restoring the covenant.",
-        "cross": [
-          {
-            "ref": "Ezek 6:1-7",
-            "note": "The judgment oracle against the mountains of Israel that chapter 36 deliberately reverses. In chapter 6, the mountains were told to hear the word of destruction; in chapter 36, they hear the word of restoration."
-          },
-          {
-            "ref": "Lev 26:42-45",
-            "note": "The Levitical promise that God would remember the covenant with the land itself. Ezekiel's mountains oracle fulfills this covenantal memory."
-          },
-          {
-            "ref": "Isa 49:19-21",
-            "note": "Isaiah's parallel promise that the desolate land will become too small for the returning population, echoing Ezekiel's vision of multiplied people."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 6:1-7",
+              "note": "The judgment oracle against the mountains of Israel that chapter 36 deliberately reverses. In chapter 6, the mountains were told to hear the word of destruction; in chapter 36, they hear the word of restoration."
+            },
+            {
+              "ref": "Lev 26:42-45",
+              "note": "The Levitical promise that God would remember the covenant with the land itself. Ezekiel's mountains oracle fulfills this covenantal memory."
+            },
+            {
+              "ref": "Isa 49:19-21",
+              "note": "Isaiah's parallel promise that the desolate land will become too small for the returning population, echoing Ezekiel's vision of multiplied people."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Zimmerli identifies this oracle as a Heilsorakel (salvation oracle) structured as a direct reversal of the judgment oracle in 6:1-7. The form-critical parallel is exact: same addressee (mountains), same opening formula, opposite content. This structural reversal is a hallmark of Ezekiel's literary architecture, where the prophet deliberately echoes earlier judgment speeches in later restoration speeches, creating a literary theology of reversal."
             }
           ]
+        },
+        "hist": {
+          "context": "This oracle mirrors and reverses chapter 35 in a deliberate literary pairing. Chapter 35 addressed Mount Seir (Edom) with judgment; chapter 36 addresses the mountains of Israel with restoration. The contrast is geographic, theological, and structural. The nations (v. 3) have mocked Israel's desolate mountains, claiming them as plunder. God's response is fierce: the mountains will produce fruit and bear people again (vv. 8-12). The land is not merely scenery; in Israelite theology, the land is covenantal real estate, promised to Abraham and inseparable from God's faithfulness. Restoring the mountains is restoring the covenant."
         }
       }
     },
@@ -123,17 +127,18 @@
             "paragraph": "Ezekiel the priest uses the most potent purity category available: menstrual uncleanness (cf. Lev 15:19-30). The comparison is deliberately shocking. Israel's conduct made the land ritually contaminated in the same way that menstrual blood renders sacred space inaccessible. This is priestly logic operating at full intensity: sin is not merely moral failure but ritual contamination that makes God's presence impossible."
           }
         ],
-        "ctx": "Before describing restoration, Ezekiel explains why exile happened. The logic is priestly: Israel defiled the land with bloodshed and idolatry (v. 18), so God scattered them among the nations (v. 19). But exile created a new problem: among the nations, Israel 'profaned my holy name' (v. 20) because the nations concluded that Israel's God was too weak to protect His people. The exile thus created a theological crisis: God's reputation was at stake. This sets up the crucial motivation for restoration in the next section.",
-        "cross": [
-          {
-            "ref": "Lev 18:24-28",
-            "note": "The land itself 'vomits out' its inhabitants when defiled. Ezekiel's priestly vocabulary draws directly on this Levitical theology of land-contamination."
-          },
-          {
-            "ref": "Isa 52:5",
-            "note": "Isaiah makes the same point: among the nations, God's name is 'constantly blasphemed' because of Israel's condition. Both prophets identify the exile as a crisis of divine reputation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 18:24-28",
+              "note": "The land itself 'vomits out' its inhabitants when defiled. Ezekiel's priestly vocabulary draws directly on this Levitical theology of land-contamination."
+            },
+            {
+              "ref": "Isa 52:5",
+              "note": "Isaiah makes the same point: among the nations, God's name is 'constantly blasphemed' because of Israel's condition. Both prophets identify the exile as a crisis of divine reputation."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -182,6 +187,9 @@
               "note": "Zimmerli identifies the niddah comparison as uniquely Ezekielian: no other prophet uses this specific purity category for Israel's corporate sin. It reflects Ezekiel's priestly formation, where holiness categories structure all theological reasoning. The dispersion-as-purging motif connects to Ezekiel's broader theology that exile is both punishment and purification."
             }
           ]
+        },
+        "hist": {
+          "context": "Before describing restoration, Ezekiel explains why exile happened. The logic is priestly: Israel defiled the land with bloodshed and idolatry (v. 18), so God scattered them among the nations (v. 19). But exile created a new problem: among the nations, Israel 'profaned my holy name' (v. 20) because the nations concluded that Israel's God was too weak to protect His people. The exile thus created a theological crisis: God's reputation was at stake. This sets up the crucial motivation for restoration in the next section."
         }
       }
     },
@@ -211,25 +219,26 @@
             "paragraph": "Stone is impervious, unresponsive, dead. The heart of stone cannot receive instruction, cannot feel conviction, cannot obey. Replacing stone with flesh (basar) means replacing imperviousness with sensitivity, death with life. This is the most vivid image of regeneration in the Hebrew Bible."
           }
         ],
-        "ctx": "This passage is one of the most theologically significant in the entire Old Testament. The new heart and new spirit promise (vv. 26-27) parallels Jeremiah's new covenant (Jer 31:31-34) but goes further: Ezekiel does not merely promise internal law-writing but the implantation of God's own Spirit. The motivation is stated bluntly: 'It is not for your sake, people of Israel, that I am going to do these things, but for the sake of my holy name' (v. 22). Restoration is entirely grace, entirely God-initiated, entirely for God's glory. The sequence is precise: cleansing (v. 25), new heart (v. 26), Spirit implantation (v. 27), obedience (v. 27b), land restoration (v. 28). The order is theologically non-negotiable: transformation precedes obedience, not the reverse.",
-        "cross": [
-          {
-            "ref": "Jer 31:31-34",
-            "note": "Jeremiah's new covenant promises internal law-writing and universal knowledge of God. Ezekiel's new heart/spirit promise is the parallel formulation: both prophets envision transformation from within rather than external command."
-          },
-          {
-            "ref": "Joel 2:28-29",
-            "note": "Joel's promise of the Spirit poured out on all flesh extends Ezekiel's new-spirit promise to its universal scope. Peter cites Joel at Pentecost (Acts 2:16-21) as the fulfillment of this prophetic trajectory."
-          },
-          {
-            "ref": "John 3:5-8",
-            "note": "Jesus' teaching on being 'born of water and the Spirit' likely alludes to Ezekiel 36:25-27, where water cleansing and Spirit implantation are paired. Jesus expects Nicodemus, 'a teacher of Israel,' to know this passage."
-          },
-          {
-            "ref": "Rom 8:9-11",
-            "note": "Paul's theology of the indwelling Spirit fulfills Ezekiel's promise: God's Spirit dwells within believers, producing the obedience that the law demanded but could not generate."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 31:31-34",
+              "note": "Jeremiah's new covenant promises internal law-writing and universal knowledge of God. Ezekiel's new heart/spirit promise is the parallel formulation: both prophets envision transformation from within rather than external command."
+            },
+            {
+              "ref": "Joel 2:28-29",
+              "note": "Joel's promise of the Spirit poured out on all flesh extends Ezekiel's new-spirit promise to its universal scope. Peter cites Joel at Pentecost (Acts 2:16-21) as the fulfillment of this prophetic trajectory."
+            },
+            {
+              "ref": "John 3:5-8",
+              "note": "Jesus' teaching on being 'born of water and the Spirit' likely alludes to Ezekiel 36:25-27, where water cleansing and Spirit implantation are paired. Jesus expects Nicodemus, 'a teacher of Israel,' to know this passage."
+            },
+            {
+              "ref": "Rom 8:9-11",
+              "note": "Paul's theology of the indwelling Spirit fulfills Ezekiel's promise: God's Spirit dwells within believers, producing the obedience that the law demanded but could not generate."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -294,6 +303,9 @@
               "note": "Zimmerli designates this passage as the 'centre of the message of the book' and locates it within the form-critical category of divine self-disclosure speech. The motivation clause 'for my holy name's sake' is not mere self-interest but the theological principle that God's character is the ground of all historical action. Zimmerli sees the new heart/spirit promise as Ezekiel's unique contribution to the prophetic tradition: where Jeremiah speaks of internalized torah, Ezekiel speaks of implanted ruach — a more radical transformation that goes beyond knowledge to power."
             }
           ]
+        },
+        "hist": {
+          "context": "This passage is one of the most theologically significant in the entire Old Testament. The new heart and new spirit promise (vv. 26-27) parallels Jeremiah's new covenant (Jer 31:31-34) but goes further: Ezekiel does not merely promise internal law-writing but the implantation of God's own Spirit. The motivation is stated bluntly: 'It is not for your sake, people of Israel, that I am going to do these things, but for the sake of my holy name' (v. 22). Restoration is entirely grace, entirely God-initiated, entirely for God's glory. The sequence is precise: cleansing (v. 25), new heart (v. 26), Spirit implantation (v. 27), obedience (v. 27b), land restoration (v. 28). The order is theologically non-negotiable: transformation precedes obedience, not the reverse."
         }
       }
     },
@@ -311,17 +323,18 @@
             "paragraph": "The comparison to a flock evokes both Eden (paradise restored) and the festival flocks that filled Jerusalem at Passover, Weeks, and Tabernacles. The cities will be as full of people as Jerusalem was full of sacrificial animals during the great pilgrim feasts. The image combines agricultural abundance with cultic celebration."
           }
         ],
-        "ctx": "The chapter concludes with a vision of repopulation and rebuilding that matches the covenantal blessings of Leviticus 26 and Deuteronomy 28. The desolate cities will be rebuilt and inhabited; the people will multiply like flocks. The recognition formula appears again (v. 38): 'Then they will know that I am the LORD.' This formula has appeared over 70 times in Ezekiel, and here it reaches its positive fulfillment: God is known not only through judgment but through restoration.",
-        "cross": [
-          {
-            "ref": "Lev 26:9-10",
-            "note": "God's covenant promise to make Israel fruitful, multiply them, and keep His covenant with them. Ezekiel 36:33-38 is the prophetic reaffirmation of these Levitical promises after exile."
-          },
-          {
-            "ref": "Isa 54:1-3",
-            "note": "Isaiah's parallel vision of the barren woman singing for joy because her children will be more numerous than before. Both prophets see post-exile restoration as exceeding the pre-exile state."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 26:9-10",
+              "note": "God's covenant promise to make Israel fruitful, multiply them, and keep His covenant with them. Ezekiel 36:33-38 is the prophetic reaffirmation of these Levitical promises after exile."
+            },
+            {
+              "ref": "Isa 54:1-3",
+              "note": "Isaiah's parallel vision of the barren woman singing for joy because her children will be more numerous than before. Both prophets see post-exile restoration as exceeding the pre-exile state."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -366,6 +379,9 @@
               "note": "Zimmerli observes that the concluding recognition formula in verse 38 transforms the formula from a judgment marker to a salvation marker. Throughout the judgment oracles, 'they will know that I am the LORD' accompanied destruction; here it accompanies rebuilding. The form is identical but the content is inverted."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter concludes with a vision of repopulation and rebuilding that matches the covenantal blessings of Leviticus 26 and Deuteronomy 28. The desolate cities will be rebuilt and inhabited; the people will multiply like flocks. The recognition formula appears again (v. 38): 'Then they will know that I am the LORD.' This formula has appeared over 70 times in Ezekiel, and here it reaches its positive fulfillment: God is known not only through judgment but through restoration."
         }
       }
     }

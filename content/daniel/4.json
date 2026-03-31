@@ -25,21 +25,22 @@
             "paragraph": "\"I saw a tree (ʾilān) in the middle of the land. Its height was enormous. Its top touched the sky\" (vv.10–11). Nebuchadnezzar’s own testimony in first person. He dreams of an enormous tree sheltering all creatures, then a heavenly messenger commands: \"Cut it down! But let the stump remain, bound with iron and bronze, till he knows that the Most High is sovereign\" (vv.14–17)."
           }
         ],
-        "ctx": "This chapter is unique in the OT: a pagan king writes his own testimony of conversion. The tree-as-empire metaphor appears in Ezekiel 31 (Assyria as a cedar) and in Jesus’ mustard seed parable (Matt 13:31–32). The medical condition described (living outdoors, eating grass, unkempt hair and nails) has been identified with boanthropy or clinical lycanthropy. Babylonian records have a gap in Nebuchadnezzar’s reign that some scholars connect to this episode.",
-        "cross": [
-          {
-            "ref": "Ezek 31:3–14",
-            "note": "Assyria as a great cedar, chopped down for pride — the same tree-empire metaphor applied to a different empire."
-          },
-          {
-            "ref": "Ps 75:6–7",
-            "note": "No one from east, west, or south can exalt themselves; God brings one down, he exalts another."
-          },
-          {
-            "ref": "Luke 1:52",
-            "note": "He has brought down rulers from their thrones but has lifted up the humble — Mary’s Magnificat echoes Dan 4."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 31:3–14",
+              "note": "Assyria as a great cedar, chopped down for pride — the same tree-empire metaphor applied to a different empire."
+            },
+            {
+              "ref": "Ps 75:6–7",
+              "note": "No one from east, west, or south can exalt themselves; God brings one down, he exalts another."
+            },
+            {
+              "ref": "Luke 1:52",
+              "note": "He has brought down rulers from their thrones but has lifted up the humble — Mary’s Magnificat echoes Dan 4."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -125,6 +126,9 @@
               "note": "Collins reads the seven \"times\" (periods) as symbolic: seven = completeness. The madness lasts precisely as long as divine pedagogy requires."
             }
           ]
+        },
+        "hist": {
+          "context": "This chapter is unique in the OT: a pagan king writes his own testimony of conversion. The tree-as-empire metaphor appears in Ezekiel 31 (Assyria as a cedar) and in Jesus’ mustard seed parable (Matt 13:31–32). The medical condition described (living outdoors, eating grass, unkempt hair and nails) has been identified with boanthropy or clinical lycanthropy. Babylonian records have a gap in Nebuchadnezzar’s reign that some scholars connect to this episode."
         }
       }
     },
@@ -142,21 +146,22 @@
             "paragraph": "\"Now I, Nebuchadnezzar, praise and exalt and glorify the King of heaven (ʿillāyʾâ), because everything he does is right and all his ways are just. Those who walk in pride he is able to humble\" (v.37). Twelve months later Nebuchadnezzar boasts from his palace roof. Immediately a voice from heaven: your kingdom is departed. Driven from people, eating grass, hair like eagle feathers, nails like bird claws. After \"seven times,\" he looks up — sanity restored."
           }
         ],
-        "ctx": "The boast-judgment sequence (vv.30–31) is instantaneous: the words are still on his lips when the voice speaks. The twelve-month delay (v.29) represents God’s patience — a year to repent before the sentence executes. The restoration (v.34) pivots on direction: Nebuchadnezzar \"raised his eyes toward heaven.\" Looking DOWN = madness; looking UP = restoration. The chapter’s final verse (v.37) is the most extensive confession of God’s sovereignty by any pagan ruler in the OT.",
-        "cross": [
-          {
-            "ref": "Prov 16:18",
-            "note": "Pride goes before destruction, a haughty spirit before a fall — the proverb Daniel 4 dramatises."
-          },
-          {
-            "ref": "Jas 4:6",
-            "note": "God opposes the proud but shows favour to the humble — the NT summary of Daniel 4’s theology."
-          },
-          {
-            "ref": "Phil 2:9–11",
-            "note": "God exalted him to the highest place — the pattern: humbling precedes exaltation, for Christ and for Nebuchadnezzar."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 16:18",
+              "note": "Pride goes before destruction, a haughty spirit before a fall — the proverb Daniel 4 dramatises."
+            },
+            {
+              "ref": "Jas 4:6",
+              "note": "God opposes the proud but shows favour to the humble — the NT summary of Daniel 4’s theology."
+            },
+            {
+              "ref": "Phil 2:9–11",
+              "note": "God exalted him to the highest place — the pattern: humbling precedes exaltation, for Christ and for Nebuchadnezzar."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -242,6 +247,9 @@
               "note": "Collins reads v.37 as the climax of the court-tales section (chs.1–6): the most powerful human on earth acknowledges the Most High. The contest between human and divine sovereignty is decided."
             }
           ]
+        },
+        "hist": {
+          "context": "The boast-judgment sequence (vv.30–31) is instantaneous: the words are still on his lips when the voice speaks. The twelve-month delay (v.29) represents God’s patience — a year to repent before the sentence executes. The restoration (v.34) pivots on direction: Nebuchadnezzar \"raised his eyes toward heaven.\" Looking DOWN = madness; looking UP = restoration. The chapter’s final verse (v.37) is the most extensive confession of God’s sovereignty by any pagan ruler in the OT."
         }
       }
     }

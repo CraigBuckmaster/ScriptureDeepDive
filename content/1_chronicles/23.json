@@ -17,13 +17,14 @@
       "verse_start": 1,
       "verse_end": 6,
       "panels": {
-        "ctx": "David, old and full of years, makes Solomon king over Israel. Then he numbers the Levites aged thirty and over: 38,000 men. He assigns them: 24,000 to supervise temple work, 6,000 as officers and judges, 4,000 as gatekeepers, and 4,000 as musicians “with the instruments I have provided for that purpose.” David personally commissioned the instruments. The Chronicler’s David designs every dimension of worship: personnel, duties, and equipment.",
-        "cross": [
-          {
-            "ref": "1 Kgs 1:28–40",
-            "note": "Solomon’s anointing in Samuel-Kings includes the Adonijah crisis. The Chronicler omits the crisis entirely — Solomon’s succession is presented as seamless."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 1:28–40",
+              "note": "Solomon’s anointing in Samuel-Kings includes the Adonijah crisis. The Chronicler omits the crisis entirely — Solomon’s succession is presented as seamless."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -41,6 +42,9 @@
               "note": "The phrase “instruments I have provided” attributes the design of temple instruments to David personally — a tradition also reflected in Amos 6:5 and Neh 12:36."
             }
           ]
+        },
+        "hist": {
+          "context": "David, old and full of years, makes Solomon king over Israel. Then he numbers the Levites aged thirty and over: 38,000 men. He assigns them: 24,000 to supervise temple work, 6,000 as officers and judges, 4,000 as gatekeepers, and 4,000 as musicians “with the instruments I have provided for that purpose.” David personally commissioned the instruments. The Chronicler’s David designs every dimension of worship: personnel, duties, and equipment."
         }
       }
     },
@@ -50,13 +54,14 @@
       "verse_start": 7,
       "verse_end": 32,
       "panels": {
-        "ctx": "The three main Levitical families are organised into sub-divisions with specific duties. The Gershonites, Kohathites, and Merarites each receive detailed assignments. A significant theological note: “The Levites no longer need to carry the tabernacle” (v.26) — with a permanent temple, the age of service is lowered from 30 to 20. Their duties shift from transport to maintenance: caring for the courts, chambers, purification, showbread, flour, wafers, and measurements. Morning and evening they stand to thank and praise the LORD. The Levites are worship professionals.",
-        "cross": [
-          {
-            "ref": "Num 4:1–49",
-            "note": "The original Levitical duties focused on tabernacle transport. The Chronicler’s version adapts these for permanent temple service."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 4:1–49",
+              "note": "The original Levitical duties focused on tabernacle transport. The Chronicler’s version adapts these for permanent temple service."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -74,6 +79,9 @@
               "note": "The reduction from 30 to 20 years is explained by changed conditions: the permanent temple eliminates the physical demands that justified the higher age for tabernacle transport."
             }
           ]
+        },
+        "hist": {
+          "context": "The three main Levitical families are organised into sub-divisions with specific duties. The Gershonites, Kohathites, and Merarites each receive detailed assignments. A significant theological note: “The Levites no longer need to carry the tabernacle” (v.26) — with a permanent temple, the age of service is lowered from 30 to 20. Their duties shift from transport to maintenance: caring for the courts, chambers, purification, showbread, flour, wafers, and measurements. Morning and evening they stand to thank and praise the LORD. The Levites are worship professionals."
         }
       }
     }

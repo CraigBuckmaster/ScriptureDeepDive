@@ -31,21 +31,22 @@
             "paragraph": "The donkey who sees the angel of the Lord and speaks is one of the Torah’s most memorable narrative devices. The prophet who is supposed to see divine things is blind to what his donkey perceives. The animal’s vision shames the seer’s blindness."
           }
         ],
-        "ctx": "Numbers 22 begins the Balaam cycle (chs.22–24) — one of the most extraordinary extended narratives in the Pentateuch. Balak king of Moab, terrified by Israel’s military victories, hires the renowned seer Balaam to curse Israel. God twice forbids Balaam to go; on the third summons (with greater incentives), God permits it with the instruction: \"do only what I tell you.\" The donkey episode (vv.21–35) is theologically central: Balaam’s prophetic vision is so dulled by desire that his donkey sees the angel he cannot. The angel’s rebuke and Balaam’s submission set up the oracles: Balaam arrives with Balak’s money but God’s words.",
-        "cross": [
-          {
-            "ref": "2 Pet 2:15–16",
-            "note": "\"They have left the straight way and wandered off to follow the way of Balaam son of Bezer, who loved the wages of wickedness. But he was rebuked for his wrongdoing by a donkey — an animal without speech — who spoke with a human voice and restrained the prophet’s madness.\""
-          },
-          {
-            "ref": "Jude 11",
-            "note": "\"They have rushed for profit into Balaam’s error.\" Balaam’s willingness to sell his prophetic gift becomes the NT’s standard example of mercenary ministry."
-          },
-          {
-            "ref": "Rev 2:14",
-            "note": "\"You have people there who hold to the teaching of Balaam, who taught Balak to entice the Israelites to sin by eating food sacrificed to idols and by committing sexual immorality.\" The Balaam connection to Baal Peor (Num 25, 31:16) is the basis for this NT allusion."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Pet 2:15–16",
+              "note": "\"They have left the straight way and wandered off to follow the way of Balaam son of Bezer, who loved the wages of wickedness. But he was rebuked for his wrongdoing by a donkey — an animal without speech — who spoke with a human voice and restrained the prophet’s madness.\""
+            },
+            {
+              "ref": "Jude 11",
+              "note": "\"They have rushed for profit into Balaam’s error.\" Balaam’s willingness to sell his prophetic gift becomes the NT’s standard example of mercenary ministry."
+            },
+            {
+              "ref": "Rev 2:14",
+              "note": "\"You have people there who hold to the teaching of Balaam, who taught Balak to entice the Israelites to sin by eating food sacrificed to idols and by committing sexual immorality.\" The Balaam connection to Baal Peor (Num 25, 31:16) is the basis for this NT allusion."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Ashley: The narrative context of Balaam and donkey in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Numbers 22 begins the Balaam cycle (chs.22–24) — one of the most extraordinary extended narratives in the Pentateuch. Balak king of Moab, terrified by Israel’s military victories, hires the renowned seer Balaam to curse Israel. God twice forbids Balaam to go; on the third summons (with greater incentives), God permits it with the instruction: \"do only what I tell you.\" The donkey episode (vv.21–35) is theologically central: Balaam’s prophetic vision is so dulled by desire that his donkey sees the angel he cannot. The angel’s rebuke and Balaam’s submission set up the oracles: Balaam arrives with Balak’s money but God’s words."
         }
       }
     },
@@ -127,17 +131,18 @@
             "paragraph": "Balaam’s question to Balak upon arrival — \"do I have any power to say anything?\" The rhetorical question undermines Balak’s expectations from the outset. Balaam arrives knowing he cannot deliver what Balak paid for."
           }
         ],
-        "ctx": "Balak’s angry question to Balaam — \"Why didn’t you come when I first summoned you? Did I not say I would reward you well?\" — reveals the transactional nature of his request. He expects that money and status can purchase prophetic output. Balaam’s response is gentle but determinative: \"I can’t say whatever I please. I must speak only what God puts in my mouth.\" The seven altars, seven bulls, and seven rams prepared at Bamoth Baal establish the setting for the four oracles that will follow — each oracle more expansive and more Israel-favouring than the last.",
-        "cross": [
-          {
-            "ref": "Num 23:1–2",
-            "note": "\"Build me seven altars here, and prepare seven bulls and seven rams for me.\" The elaborate sacrificial preparation cannot purchase a curse — it only provides a platform from which God’s blessing will be pronounced more publicly."
-          },
-          {
-            "ref": "Acts 8:18–20",
-            "note": "\"Simon offered them money and said, ‘Give me also this ability.’… Peter answered: ‘May your money perish with you, because you thought you could buy the gift of God with money!’\" The Simon Magus episode is the NT parallel to Balak’s attempt to purchase prophetic output."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 23:1–2",
+              "note": "\"Build me seven altars here, and prepare seven bulls and seven rams for me.\" The elaborate sacrificial preparation cannot purchase a curse — it only provides a platform from which God’s blessing will be pronounced more publicly."
+            },
+            {
+              "ref": "Acts 8:18–20",
+              "note": "\"Simon offered them money and said, ‘Give me also this ability.’… Peter answered: ‘May your money perish with you, because you thought you could buy the gift of God with money!’\" The Simon Magus episode is the NT parallel to Balak’s attempt to purchase prophetic output."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -206,6 +211,9 @@
               "note": "Ashley: The narrative context of Balaam and donkey in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Balak’s angry question to Balaam — \"Why didn’t you come when I first summoned you? Did I not say I would reward you well?\" — reveals the transactional nature of his request. He expects that money and status can purchase prophetic output. Balaam’s response is gentle but determinative: \"I can’t say whatever I please. I must speak only what God puts in my mouth.\" The seven altars, seven bulls, and seven rams prepared at Bamoth Baal establish the setting for the four oracles that will follow — each oracle more expansive and more Israel-favouring than the last."
         }
       }
     }

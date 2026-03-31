@@ -31,21 +31,22 @@
             "paragraph": "The verb euodoō (to prosper) in v. 2 is used in the divine passive: 'in keeping with his income.' The proportional principle anticipates the later teaching of 2 Cor 8–9. Paul's instruction to set aside money weekly on 'the first day of every week' provides early evidence for Sunday as the regular day of Christian assembly."
           }
         ],
-        "ctx": "The collection for the Jerusalem saints was a project of enormous theological significance, demonstrating the organic unity of the church. Giving is weekly (Sunday), proportional (according to income), and systematic. Paul's concern to avoid collections during his visit suggests he wants no appearance of financial pressure. The letters of introduction follow standard ancient epistolary practice.",
-        "cross": [
-          {
-            "ref": "Rom 15:25–27",
-            "note": "The theological rationale: 'If the Gentiles have shared in the Jews' spiritual blessings, they owe it to share material blessings.' The collection is reciprocal grace."
-          },
-          {
-            "ref": "2 Cor 8–9",
-            "note": "Paul's extended treatment provides the theological depth: giving as response to Christ's self-emptying grace (8:9), cheerful generosity (9:7), and the goal of equality (8:13–14)."
-          },
-          {
-            "ref": "Gal 2:10",
-            "note": "At the Jerusalem Council, the 'pillars' asked Paul to 'remember the poor.' The collection fulfils this commitment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 15:25–27",
+              "note": "The theological rationale: 'If the Gentiles have shared in the Jews' spiritual blessings, they owe it to share material blessings.' The collection is reciprocal grace."
+            },
+            {
+              "ref": "2 Cor 8–9",
+              "note": "Paul's extended treatment provides the theological depth: giving as response to Christ's self-emptying grace (8:9), cheerful generosity (9:7), and the goal of equality (8:13–14)."
+            },
+            {
+              "ref": "Gal 2:10",
+              "note": "At the Jerusalem Council, the 'pillars' asked Paul to 'remember the poor.' The collection fulfils this commitment."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -98,6 +99,9 @@
               "note": "Thiselton argues the collection functioned as an eschatological sign: the Gentile pilgrimage to Jerusalem with gifts anticipated the prophetic vision of nations streaming to Zion (Isa 2:2–4; 60:1–14)."
             }
           ]
+        },
+        "hist": {
+          "context": "The collection for the Jerusalem saints was a project of enormous theological significance, demonstrating the organic unity of the church. Giving is weekly (Sunday), proportional (according to income), and systematic. Paul's concern to avoid collections during his visit suggests he wants no appearance of financial pressure. The letters of introduction follow standard ancient epistolary practice."
         }
       }
     },
@@ -121,17 +125,18 @@
             "paragraph": "The noun thyra (door) in v. 9 is used metaphorically for a ministry opportunity. The juxtaposition of 'a great door' and 'many who oppose me' captures the Pauline paradox: effective ministry and fierce opposition coexist."
           }
         ],
-        "ctx": "Paul intends to travel through Macedonia before Corinth, where he hopes to spend the winter. He is in Ephesus, where ministry flourishes despite opposition. Timothy's anticipated visit and Apollos' reluctance reveal relational dynamics within the apostolic team. Paul's protective language about Timothy suggests youth and perhaps temperamental caution.",
-        "cross": [
-          {
-            "ref": "Acts 19:21–22",
-            "note": "Luke confirms Paul's plan to travel through Macedonia and Achaia."
-          },
-          {
-            "ref": "2 Cor 1:15–16",
-            "note": "Paul later explains a change of plan that became controversial."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 19:21–22",
+              "note": "Luke confirms Paul's plan to travel through Macedonia and Achaia."
+            },
+            {
+              "ref": "2 Cor 1:15–16",
+              "note": "Paul later explains a change of plan that became controversial."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -184,6 +189,9 @@
               "note": "Thiselton reconstructs the chronology and notes that Timothy's relationship to the letter itself is uncertain. The instruction to treat Timothy without contempt reflects Graeco-Roman social dynamics where youth and humble origin invited dismissal."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul intends to travel through Macedonia before Corinth, where he hopes to spend the winter. He is in Ephesus, where ministry flourishes despite opposition. Timothy's anticipated visit and Apollos' reluctance reveal relational dynamics within the apostolic team. Paul's protective language about Timothy suggests youth and perhaps temperamental caution."
         }
       }
     },
@@ -207,21 +215,22 @@
             "paragraph": "The noun anathema in v. 22 translates the Hebrew herem—something irrevocably devoted to God for destruction (Josh 6:17). The juxtaposition of anathema and marana tha creates a stark liturgical sequence: curse on the unfaithful, prayer for the Lord's coming."
           }
         ],
-        "ctx": "The closing transitions from travel logistics to rapid-fire exhortations (vv. 13–14), commendations (vv. 15–18), greetings (vv. 19–20), and a final autograph and blessing (vv. 21–24). The five imperatives of v. 13 condense the letter's message. 'Do everything in love' (v. 14) reprises ch. 13. Paul's autograph (v. 21) authenticates the letter. The marana tha preserves the liturgical voice of the earliest Palestinian church.",
-        "cross": [
-          {
-            "ref": "Gal 6:11",
-            "note": "Paul's autograph parallels 1 Cor 16:21, confirming his use of an amanuensis with a closing greeting in his own hand."
-          },
-          {
-            "ref": "Phil 4:23",
-            "note": "The closing grace benediction is a standard Pauline formula."
-          },
-          {
-            "ref": "Rev 22:20",
-            "note": "John's 'Come, Lord Jesus' translates the Aramaic marana tha into Greek."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gal 6:11",
+              "note": "Paul's autograph parallels 1 Cor 16:21, confirming his use of an amanuensis with a closing greeting in his own hand."
+            },
+            {
+              "ref": "Phil 4:23",
+              "note": "The closing grace benediction is a standard Pauline formula."
+            },
+            {
+              "ref": "Rev 22:20",
+              "note": "John's 'Come, Lord Jesus' translates the Aramaic marana tha into Greek."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -278,6 +287,9 @@
               "note": "Thiselton notes the military vocabulary of vv. 13–14 resonated with Corinthian familiarity with Roman legionary culture. The marana tha receives extensive treatment: its preservation in Aramaic indicates a fixed element of the eucharistic liturgy. The letter's closing is a microcosm of its message."
             }
           ]
+        },
+        "hist": {
+          "context": "The closing transitions from travel logistics to rapid-fire exhortations (vv. 13–14), commendations (vv. 15–18), greetings (vv. 19–20), and a final autograph and blessing (vv. 21–24). The five imperatives of v. 13 condense the letter's message. 'Do everything in love' (v. 14) reprises ch. 13. Paul's autograph (v. 21) authenticates the letter. The marana tha preserves the liturgical voice of the earliest Palestinian church."
         }
       }
     }

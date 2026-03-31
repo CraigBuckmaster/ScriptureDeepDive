@@ -31,21 +31,22 @@
             "paragraph": "The proverb 'they sow the wind and reap the whirlwind' (v. 7) is one of the most enduring images in prophetic literature. The escalation from ruah (wind) to sufah (storm/whirlwind) captures the principle of disproportionate consequences: sin's harvest always exceeds its sowing. The agricultural metaphor is devastatingly ironic in a culture that worshipped Baal as the storm god."
           }
         ],
-        "ctx": "Chapter 8 opens with an alarm call and develops two primary charges: idolatry (the calf-idol of Samaria, vv. 4-6) and diplomatic folly (selling themselves to Assyria, vv. 8-10). The calf-idol at Samaria (or Bethel) recalls Jeroboam I's golden calves (1 Kgs 12:28-29), which Hosea treats as the original sin of the northern kingdom. The declaration 'a metalworker has made it; it is not God' (v. 6) is a concise statement of prophetic anti-idol polemic that Isaiah will develop at greater length (Isa 40:18-20; 44:9-20). The wind/whirlwind proverb (v. 7) summarizes the entire chapter: Israel's investments in idolatry and foreign alliances will produce not security but catastrophe, and the catastrophe will be disproportionate to the folly that produced it.",
-        "cross": [
-          {
-            "ref": "1 Kgs 12:28-29",
-            "note": "Jeroboam I's establishment of the golden calves at Bethel and Dan, the founding act of northern apostasy that Hosea condemns."
-          },
-          {
-            "ref": "Deut 28:49",
-            "note": "The covenant curse of an invading nation 'swooping down like an eagle,' the same image Hosea invokes."
-          },
-          {
-            "ref": "Gal 6:7-8",
-            "note": "Paul's parallel principle: 'A man reaps what he sows. Whoever sows to please their flesh will reap destruction.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 12:28-29",
+              "note": "Jeroboam I's establishment of the golden calves at Bethel and Dan, the founding act of northern apostasy that Hosea condemns."
+            },
+            {
+              "ref": "Deut 28:49",
+              "note": "The covenant curse of an invading nation 'swooping down like an eagle,' the same image Hosea invokes."
+            },
+            {
+              "ref": "Gal 6:7-8",
+              "note": "Paul's parallel principle: 'A man reaps what he sows. Whoever sows to please their flesh will reap destruction.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "The chapter opens with an alarm that transitions from military threat (v. 1) to theological indictment (vv. 2-6) to proverbial summary (v. 7). The wind/whirlwind proverb is the rhetorical climax, functioning as an aphorism that condenses the entire prophetic argument into a single memorable image. Andersen and Freedman note that the agricultural metaphor is deliberately chosen to subvert the fertility theology of Baalism: the harvest Israel reaps will be destruction, not abundance."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 8 opens with an alarm call and develops two primary charges: idolatry (the calf-idol of Samaria, vv. 4-6) and diplomatic folly (selling themselves to Assyria, vv. 8-10). The calf-idol at Samaria (or Bethel) recalls Jeroboam I's golden calves (1 Kgs 12:28-29), which Hosea treats as the original sin of the northern kingdom. The declaration 'a metalworker has made it; it is not God' (v. 6) is a concise statement of prophetic anti-idol polemic that Isaiah will develop at greater length (Isa 40:18-20; 44:9-20). The wind/whirlwind proverb (v. 7) summarizes the entire chapter: Israel's investments in idolatry and foreign alliances will produce not security but catastrophe, and the catastrophe will be disproportionate to the folly that produced it."
         }
       }
     },
@@ -131,21 +135,22 @@
             "paragraph": "The passive form of balaʿ ('to swallow') depicts Israel's absorption into the nations as a kind of digestion: the nation has been consumed by the very powers it courted. The image is the opposite of Israel's calling to be set apart (qadosh). Instead of distinctiveness, Israel has become 'something no one wants' — a vessel with no purpose, consumed and discarded."
           }
         ],
-        "ctx": "The second half of the chapter develops the theme of Israel's self-destructive foreign policy. The wild donkey metaphor (v. 9) is particularly apt: the pere (wild donkey, also an Aramaic wordplay on 'Ephraim') is proverbially solitary and untamable (Job 39:5-8), yet here it goes seeking partners. The irony is that Israel has abandoned its calling to distinctiveness in order to buy alliances that will prove worthless. Verse 12 contains one of Hosea's most striking accusations: God's torah has been treated as 'something foreign' (zar) — the very law given to define Israel's identity has become alien to them. The chapter closes with a devastating inclusio: Israel has 'forgotten their Maker' (v. 14), the ultimate covenant failure. The mention of fire consuming fortified cities echoes the covenant curses of Amos 1-2.",
-        "cross": [
-          {
-            "ref": "Job 39:5-8",
-            "note": "The wild donkey (pere) as a symbol of untamed freedom, which Hosea inverts: Ephraim is wild but seeking submission to foreign powers."
-          },
-          {
-            "ref": "Amos 1:4-2:5",
-            "note": "The fire-upon-fortresses formula that Hosea echoes in v. 14, drawing on the same tradition of covenant curse."
-          },
-          {
-            "ref": "Deut 32:15-18",
-            "note": "The Song of Moses' accusation that Israel 'abandoned the God who made him and rejected the Rock his Savior.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Job 39:5-8",
+              "note": "The wild donkey (pere) as a symbol of untamed freedom, which Hosea inverts: Ephraim is wild but seeking submission to foreign powers."
+            },
+            {
+              "ref": "Amos 1:4-2:5",
+              "note": "The fire-upon-fortresses formula that Hosea echoes in v. 14, drawing on the same tradition of covenant curse."
+            },
+            {
+              "ref": "Deut 32:15-18",
+              "note": "The Song of Moses' accusation that Israel 'abandoned the God who made him and rejected the Rock his Savior.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -210,6 +215,9 @@
               "note": "The passage develops a theology of reversal: Israel, which was called to be a distinctive covenant people, has been absorbed into the undifferentiated mass of nations. The wild donkey metaphor, the 'swallowed up' image, and the rejection of torah as 'foreign' together describe a process of identity dissolution. The closing verse crystallizes the diagnosis: Israel has 'forgotten their Maker.' Memory (zakhar) is a covenant term; to forget is to sever the relationship at its deepest level."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half of the chapter develops the theme of Israel's self-destructive foreign policy. The wild donkey metaphor (v. 9) is particularly apt: the pere (wild donkey, also an Aramaic wordplay on 'Ephraim') is proverbially solitary and untamable (Job 39:5-8), yet here it goes seeking partners. The irony is that Israel has abandoned its calling to distinctiveness in order to buy alliances that will prove worthless. Verse 12 contains one of Hosea's most striking accusations: God's torah has been treated as 'something foreign' (zar) — the very law given to define Israel's identity has become alien to them. The chapter closes with a devastating inclusio: Israel has 'forgotten their Maker' (v. 14), the ultimate covenant failure. The mention of fire consuming fortified cities echoes the covenant curses of Amos 1-2."
         }
       }
     }

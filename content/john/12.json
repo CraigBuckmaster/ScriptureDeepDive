@@ -34,21 +34,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Bethany</div><div class=\"poi-coords\">31.7742° N, 35.2659° E</div><div class=\"poi-text\">Six days before Passover, Jesus returns to Bethany for the anointing dinner (12:1-2). The village on the Mount of Olives' eastern slope was Jesus's regular base during the Jerusalem visits. The dinner at which Mary anoints Jesus is held here; the next day the triumphal entry begins from the Bethphage/Bethany area on the Mount of Olives.</div></div>"
         },
-        "ctx": "[(\"Mary's Anointing\", 'The anointing at Bethany parallels the Synoptic accounts but with characteristic Johannine differences: the woman is identified as Mary of Bethany; she anoints Jesus\\'s feet rather than his head; the objector is named as Judas Iscariot; and Jesus explicitly connects it to his burial preparation. The \"pound of pure nard\" (litralatras of nardos pistikēs) was an extraordinarily expensive imported perfume — the household\\'s most valuable possession — poured out entirely.'), ('The Triumphal Entry in John', 'John\\'s account of the entry is shorter than the Synoptics but adds two significant details: (1) the crowd carries palm branches and shouts \"Blessed is the King of Israel\" — explicitly messianic; (2) John notes that the disciples did not understand at the time but understood after the glorification (v.16). The post-resurrection interpretive framework is John\\'s explicit hermeneutical key for the whole Gospel.')]",
-        "cross": [
-          {
-            "ref": "Zech 9:9",
-            "note": "\"See, your king comes to you, righteous and victorious, lowly and riding on a donkey, on a colt, the foal of a donkey\" — the triumphal entry prophecy John cites (v.15), abbreviated."
-          },
-          {
-            "ref": "Ps 118:25-26",
-            "note": "\"Hosanna!\" \"Blessed is he who comes in the name of the Lord!\" — the Hallel psalm the crowd shouts; Hosanna (hōsanna) means \"Save, we pray!\" — a cry that is simultaneously praise and petition."
-          },
-          {
-            "ref": "Isa 6:9-10",
-            "note": "\"He has blinded their eyes and hardened their hearts\" — cited in v.40 to explain Israel's unbelief after all the signs."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Zech 9:9",
+              "note": "\"See, your king comes to you, righteous and victorious, lowly and riding on a donkey, on a colt, the foal of a donkey\" — the triumphal entry prophecy John cites (v.15), abbreviated."
+            },
+            {
+              "ref": "Ps 118:25-26",
+              "note": "\"Hosanna!\" \"Blessed is he who comes in the name of the Lord!\" — the Hallel psalm the crowd shouts; Hosanna (hōsanna) means \"Save, we pray!\" — a cry that is simultaneously praise and petition."
+            },
+            {
+              "ref": "Isa 6:9-10",
+              "note": "\"He has blinded their eyes and hardened their hearts\" — cited in v.40 to explain Israel's unbelief after all the signs."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -104,6 +105,9 @@
               "note": "Chrysostom: \"She poured the ointment on his feet and wiped them with her hair. What love! What devotion! She makes her head — which is the most honoured part of her body — the servant of his feet. This is love: to reverse all proper order of honour in the service of the beloved.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[(\"Mary's Anointing\", 'The anointing at Bethany parallels the Synoptic accounts but with characteristic Johannine differences: the woman is identified as Mary of Bethany; she anoints Jesus\\'s feet rather than his head; the objector is named as Judas Iscariot; and Jesus explicitly connects it to his burial preparation. The \"pound of pure nard\" (litralatras of nardos pistikēs) was an extraordinarily expensive imported perfume — the household\\'s most valuable possession — poured out entirely.'), ('The Triumphal Entry in John', 'John\\'s account of the entry is shorter than the Synoptics but adds two significant details: (1) the crowd carries palm branches and shouts \"Blessed is the King of Israel\" — explicitly messianic; (2) John notes that the disciples did not understand at the time but understood after the glorification (v.16). The post-resurrection interpretive framework is John\\'s explicit hermeneutical key for the whole Gospel.')]"
         }
       }
     },
@@ -124,21 +128,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Bethany</div><div class=\"poi-coords\">31.7742° N, 35.2659° E</div><div class=\"poi-text\">Six days before Passover, Jesus returns to Bethany for the anointing dinner (12:1-2). The village on the Mount of Olives' eastern slope was Jesus's regular base during the Jerusalem visits. The dinner at which Mary anoints Jesus is held here; the next day the triumphal entry begins from the Bethphage/Bethany area on the Mount of Olives.</div></div>"
         },
-        "ctx": "[(\"Isaiah 53 and the Servant's Suffering\", 'John cites Isaiah 53:1 (v.38) and Isaiah 6:10 (v.40) to explain Israel\\'s unbelief. The connection to Isaiah 6 is significant: the hardening that resulted from Isaiah\\'s prophetic ministry is the same hardening that Jesus\\'s signs have produced. John then makes an extraordinary statement: \"Isaiah said this because he saw Jesus\\'s glory and spoke about him\" (v.41). Isaiah\\'s throne-room vision in Isa 6 was a vision of the pre-incarnate Christ — a direct claim to Jesus\\'s pre-existence and divine glory.'), ('The Secret Believers', 'John 12:42-43 introduces a group not found in the Synoptics: leaders who believed but would not confess \"because of the Pharisees... for they loved human praise more than praise from God.\" John does not name them (Joseph of Arimathea and Nicodemus are possible candidates, 19:38-39). The passage raises the question of whether secret faith is real faith — John\\'s answer seems to be that it is incomplete at best.')]",
-        "cross": [
-          {
-            "ref": "Isa 53:1",
-            "note": "\"Who has believed our message and to whom has the arm of the Lord been revealed?\" — cited in v.38 for the unbelief of the Jewish leadership."
-          },
-          {
-            "ref": "Isa 6:9-10",
-            "note": "\"He has blinded their eyes and hardened their hearts\" — cited in v.40, applied to Israel's response to Jesus's signs."
-          },
-          {
-            "ref": "John 8:56",
-            "note": "\"Isaiah said this because he saw Jesus's glory\" — connecting to Isa 6:1 (\"I saw the Lord\") and the pre-incarnate Christ."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 53:1",
+              "note": "\"Who has believed our message and to whom has the arm of the Lord been revealed?\" — cited in v.38 for the unbelief of the Jewish leadership."
+            },
+            {
+              "ref": "Isa 6:9-10",
+              "note": "\"He has blinded their eyes and hardened their hearts\" — cited in v.40, applied to Israel's response to Jesus's signs."
+            },
+            {
+              "ref": "John 8:56",
+              "note": "\"Isaiah said this because he saw Jesus's glory\" — connecting to Isa 6:1 (\"I saw the Lord\") and the pre-incarnate Christ."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -194,6 +199,9 @@
               "note": "Chrysostom: \"What shall I say? Father, save me from this hour? He did not say 'save me from this hour' — he refused this prayer. He shows us that it was in his power to avoid the cross if he had chosen; and he chose not to. This voluntary death is what makes it a sacrifice: not the compulsion of the executioners but the willingness of the one crucified.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[(\"Isaiah 53 and the Servant's Suffering\", 'John cites Isaiah 53:1 (v.38) and Isaiah 6:10 (v.40) to explain Israel\\'s unbelief. The connection to Isaiah 6 is significant: the hardening that resulted from Isaiah\\'s prophetic ministry is the same hardening that Jesus\\'s signs have produced. John then makes an extraordinary statement: \"Isaiah said this because he saw Jesus\\'s glory and spoke about him\" (v.41). Isaiah\\'s throne-room vision in Isa 6 was a vision of the pre-incarnate Christ — a direct claim to Jesus\\'s pre-existence and divine glory.'), ('The Secret Believers', 'John 12:42-43 introduces a group not found in the Synoptics: leaders who believed but would not confess \"because of the Pharisees... for they loved human praise more than praise from God.\" John does not name them (Joseph of Arimathea and Nicodemus are possible candidates, 19:38-39). The passage raises the question of whether secret faith is real faith — John\\'s answer seems to be that it is incomplete at best.')]"
         }
       }
     },
@@ -220,21 +228,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Bethany</div><div class=\"poi-coords\">31.7742° N, 35.2659° E</div><div class=\"poi-text\">Six days before Passover, Jesus returns to Bethany for the anointing dinner (12:1-2). The village on the Mount of Olives' eastern slope was Jesus's regular base during the Jerusalem visits. The dinner at which Mary anoints Jesus is held here; the next day the triumphal entry begins from the Bethphage/Bethany area on the Mount of Olives.</div></div>"
         },
-        "ctx": "[(\"Mary's Anointing\", 'The anointing at Bethany parallels the Synoptic accounts but with characteristic Johannine differences: the woman is identified as Mary of Bethany; she anoints Jesus\\'s feet rather than his head; the objector is named as Judas Iscariot; and Jesus explicitly connects it to his burial preparation. The \"pound of pure nard\" (litralatras of nardos pistikēs) was an extraordinarily expensive imported perfume — the household\\'s most valuable possession — poured out entirely.'), ('The Triumphal Entry in John', 'John\\'s account of the entry is shorter than the Synoptics but adds two significant details: (1) the crowd carries palm branches and shouts \"Blessed is the King of Israel\" — explicitly messianic; (2) John notes that the disciples did not understand at the time but understood after the glorification (v.16). The post-resurrection interpretive framework is John\\'s explicit hermeneutical key for the whole Gospel.')]",
-        "cross": [
-          {
-            "ref": "Zech 9:9",
-            "note": "\"See, your king comes to you, righteous and victorious, lowly and riding on a donkey, on a colt, the foal of a donkey\" — the triumphal entry prophecy John cites (v.15), abbreviated."
-          },
-          {
-            "ref": "Ps 118:25-26",
-            "note": "\"Hosanna!\" \"Blessed is he who comes in the name of the Lord!\" — the Hallel psalm the crowd shouts; Hosanna (hōsanna) means \"Save, we pray!\" — a cry that is simultaneously praise and petition."
-          },
-          {
-            "ref": "Isa 6:9-10",
-            "note": "\"He has blinded their eyes and hardened their hearts\" — cited in v.40 to explain Israel's unbelief after all the signs."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Zech 9:9",
+              "note": "\"See, your king comes to you, righteous and victorious, lowly and riding on a donkey, on a colt, the foal of a donkey\" — the triumphal entry prophecy John cites (v.15), abbreviated."
+            },
+            {
+              "ref": "Ps 118:25-26",
+              "note": "\"Hosanna!\" \"Blessed is he who comes in the name of the Lord!\" — the Hallel psalm the crowd shouts; Hosanna (hōsanna) means \"Save, we pray!\" — a cry that is simultaneously praise and petition."
+            },
+            {
+              "ref": "Isa 6:9-10",
+              "note": "\"He has blinded their eyes and hardened their hearts\" — cited in v.40 to explain Israel's unbelief after all the signs."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -290,6 +299,9 @@
               "note": "Chrysostom: \"She poured the ointment on his feet and wiped them with her hair. What love! What devotion! She makes her head — which is the most honoured part of her body — the servant of his feet. This is love: to reverse all proper order of honour in the service of the beloved.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[(\"Mary's Anointing\", 'The anointing at Bethany parallels the Synoptic accounts but with characteristic Johannine differences: the woman is identified as Mary of Bethany; she anoints Jesus\\'s feet rather than his head; the objector is named as Judas Iscariot; and Jesus explicitly connects it to his burial preparation. The \"pound of pure nard\" (litralatras of nardos pistikēs) was an extraordinarily expensive imported perfume — the household\\'s most valuable possession — poured out entirely.'), ('The Triumphal Entry in John', 'John\\'s account of the entry is shorter than the Synoptics but adds two significant details: (1) the crowd carries palm branches and shouts \"Blessed is the King of Israel\" — explicitly messianic; (2) John notes that the disciples did not understand at the time but understood after the glorification (v.16). The post-resurrection interpretive framework is John\\'s explicit hermeneutical key for the whole Gospel.')]"
         }
       }
     }

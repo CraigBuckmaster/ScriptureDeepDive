@@ -31,21 +31,22 @@
             "paragraph": "The tehom (deep) is the subterranean water source that nourishes the cosmic cedar. This is the same word used in Genesis 1:2 for the primordial deep over which God's Spirit hovered. Ezekiel's tree draws its life from creation's most ancient water source, implying a kind of primal vitality. But the same deep that nourished it will be covered in mourning when the tree falls (v. 15), showing that even cosmic forces respond to God's judgment."
           }
         ],
-        "ctx": "Dated June 587 BC, this oracle uses Assyria as a cautionary tale for Egypt. The cosmic tree allegory draws on widespread ancient Near Eastern traditions of the world tree (cf. Dan 4; the Mesopotamian kiskanu tree). Assyria, once the mightiest empire, was destroyed by Babylon in 612 BC—an event within living memory for Ezekiel's audience. The rhetorical question 'Who can be compared with you in splendor?' (v. 2) forces Pharaoh to identify with Assyria and then recoil at Assyria's fate.",
-        "cross": [
-          {
-            "ref": "Dan 4:10-12",
-            "note": "Nebuchadnezzar's dream of a great tree that sheltered all nations and was then cut down closely parallels Ezekiel's cedar. Both traditions draw on the same ancient Near Eastern world-tree motif to illustrate the rise and fall of empires."
-          },
-          {
-            "ref": "Gen 2:8-9",
-            "note": "Eden's garden with its divinely planted trees provides the theological backdrop. Ezekiel places the cedar in Eden itself, connecting imperial pride to humanity's original sin of overreaching."
-          },
-          {
-            "ref": "Matt 13:31-32",
-            "note": "Jesus' parable of the mustard seed becoming a tree where birds nest inverts the cosmic tree image: the kingdom of God starts small but grows to shelter all nations—the opposite trajectory of proud empires that start large and are cut down."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Dan 4:10-12",
+              "note": "Nebuchadnezzar's dream of a great tree that sheltered all nations and was then cut down closely parallels Ezekiel's cedar. Both traditions draw on the same ancient Near Eastern world-tree motif to illustrate the rise and fall of empires."
+            },
+            {
+              "ref": "Gen 2:8-9",
+              "note": "Eden's garden with its divinely planted trees provides the theological backdrop. Ezekiel places the cedar in Eden itself, connecting imperial pride to humanity's original sin of overreaching."
+            },
+            {
+              "ref": "Matt 13:31-32",
+              "note": "Jesus' parable of the mustard seed becoming a tree where birds nest inverts the cosmic tree image: the kingdom of God starts small but grows to shelter all nations—the opposite trajectory of proud empires that start large and are cut down."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Zimmerli argues that the cosmic tree allegory represents Ezekiel's most sophisticated literary achievement in the oracles-against-nations collection. The priestly orientation is evident in the Eden setting, which Zimmerli connects to Ezekiel's temple theology: the garden of God is the primordial sanctuary, and the tree's expulsion mirrors Adam's. Zimmerli notes that the allegory transcends its immediate target (Assyria/Egypt) to make a universal statement about the fate of all human hubris."
             }
           ]
+        },
+        "hist": {
+          "context": "Dated June 587 BC, this oracle uses Assyria as a cautionary tale for Egypt. The cosmic tree allegory draws on widespread ancient Near Eastern traditions of the world tree (cf. Dan 4; the Mesopotamian kiskanu tree). Assyria, once the mightiest empire, was destroyed by Babylon in 612 BC—an event within living memory for Ezekiel's audience. The rhetorical question 'Who can be compared with you in splendor?' (v. 2) forces Pharaoh to identify with Assyria and then recoil at Assyria's fate."
         }
       }
     },
@@ -127,17 +131,18 @@
             "paragraph": "Sheʼol is the Hebrew abode of the dead—a shadowy underworld where the deceased exist in a diminished state. The felled cedar descends to sheʼol, and the nations that sheltered in its branches mourn. Ezekiel develops an elaborate 'descent to the underworld' tradition that will reach its fullest expression in chapter 32. The theological point is absolute: no matter how great the earthly power, sheʼol is the great equalizer where all human pretension dissolves."
           }
         ],
-        "ctx": "The felling of the cosmic cedar creates cosmic repercussions: the deep mourns (v. 15), Lebanon withers (v. 15), nations quake (v. 16), and trees of Eden in the underworld are 'consoled' to have company (v. 16). The descent-to-Sheol motif becomes a major theme completed in chapter 32. The application to Pharaoh is made explicit in v. 18: 'Which of the trees of Eden can be compared with you in splendor and majesty? Yet you too will be brought down.'",
-        "cross": [
-          {
-            "ref": "Isa 14:3-21",
-            "note": "Isaiah's taunt against the king of Babylon also describes a descent to Sheol where the mighty dead rise to greet the fallen tyrant. Both passages use the descent motif to dramatize the reversal of earthly power in death."
-          },
-          {
-            "ref": "Luke 10:15",
-            "note": "Jesus warns Capernaum: 'Will you be lifted to the heavens? No, you will go down to Hades.' The pattern of exaltation-then-descent in judgment echoes Ezekiel's cosmic tree."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 14:3-21",
+              "note": "Isaiah's taunt against the king of Babylon also describes a descent to Sheol where the mighty dead rise to greet the fallen tyrant. Both passages use the descent motif to dramatize the reversal of earthly power in death."
+            },
+            {
+              "ref": "Luke 10:15",
+              "note": "Jesus warns Capernaum: 'Will you be lifted to the heavens? No, you will go down to Hades.' The pattern of exaltation-then-descent in judgment echoes Ezekiel's cosmic tree."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -202,6 +207,9 @@
               "note": "Zimmerli highlights the theological significance of the purpose statement in v. 14: the cedar's fall is didactic—'so that no other trees exalt themselves.' The lesson is universal, not merely historical. Zimmerli also notes the distinctive blending of mythological (cosmic tree, Sheol) and historical (Assyria, Babylon) registers that characterizes Ezekiel's prophetic style."
             }
           ]
+        },
+        "hist": {
+          "context": "The felling of the cosmic cedar creates cosmic repercussions: the deep mourns (v. 15), Lebanon withers (v. 15), nations quake (v. 16), and trees of Eden in the underworld are 'consoled' to have company (v. 16). The descent-to-Sheol motif becomes a major theme completed in chapter 32. The application to Pharaoh is made explicit in v. 18: 'Which of the trees of Eden can be compared with you in splendor and majesty? Yet you too will be brought down.'"
         }
       }
     }

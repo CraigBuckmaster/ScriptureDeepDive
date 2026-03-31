@@ -31,17 +31,18 @@
             "paragraph": "Darkness (ḥōshek̅) is the anti-creation force. In Genesis 1:2, darkness covered the deep before God spoke light. Job wants to return there — to the pre-creation void where he would never have existed."
           }
         ],
-        "ctx": "After seven days of silence, Job’s first words are not a prayer, not an accusation against God, and not a question about why. They are a wish to have never been born. The speech is the opposite of Genesis 1: systematic un-creation. Day by day, element by element, Job takes apart the world that produced him.",
-        "cross": [
-          {
-            "ref": "Gen 1:3–5",
-            "note": "\"Let there be light\" — the creation language Job inverts."
-          },
-          {
-            "ref": "Jer 20:14–18",
-            "note": "Jeremiah curses the day of his birth — the closest OT parallel."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 1:3–5",
+              "note": "\"Let there be light\" — the creation language Job inverts."
+            },
+            {
+              "ref": "Jer 20:14–18",
+              "note": "Jeremiah curses the day of his birth — the closest OT parallel."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -102,6 +103,9 @@
               "note": "Habel: Job’s opening speech is a legal motion to annul his birth. He is not arguing his case yet — he is establishing that his suffering is so great that existence itself is the problem."
             }
           ]
+        },
+        "hist": {
+          "context": "After seven days of silence, Job’s first words are not a prayer, not an accusation against God, and not a question about why. They are a wish to have never been born. The speech is the opposite of Genesis 1: systematic un-creation. Day by day, element by element, Job takes apart the world that produced him."
         }
       }
     },
@@ -125,17 +129,18 @@
             "paragraph": "In death, Job says, \"I would be at rest\" (nûaḥ). Kings, counsellors, prisoners — all are equal in death. The grave is the great equaliser. This is not nihilism but longing: death is described as the rest that life denies."
           }
         ],
-        "ctx": "The speech moves from wishing he’d never been born (vv.1–10) to wishing he’d died at birth (vv.11–19) to asking why God gives life to the suffering (vv.20–26). The trajectory narrows: from cosmic protest to personal accusation. By v.23, God is the implied target: \"Why is light given to a man whose way is hidden, whom God has hedged in?\"",
-        "cross": [
-          {
-            "ref": "Eccl 4:2–3",
-            "note": "\"I declared that the dead are happier than the living\" — the same grim calculus."
-          },
-          {
-            "ref": "Phil 1:21–23",
-            "note": "Paul’s \"to depart and be with Christ is far better\" — the Christian reframing of Job’s longing."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Eccl 4:2–3",
+              "note": "\"I declared that the dead are happier than the living\" — the same grim calculus."
+            },
+            {
+              "ref": "Phil 1:21–23",
+              "note": "Paul’s \"to depart and be with Christ is far better\" — the Christian reframing of Job’s longing."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -204,6 +209,9 @@
               "note": "Habel: the speech functions as the opening statement of the plaintiff. Job has established his standing (blameless), his suffering (total), and his protest (existence itself is the problem). The trial can begin."
             }
           ]
+        },
+        "hist": {
+          "context": "The speech moves from wishing he’d never been born (vv.1–10) to wishing he’d died at birth (vv.11–19) to asking why God gives life to the suffering (vv.20–26). The trajectory narrows: from cosmic protest to personal accusation. By v.23, God is the implied target: \"Why is light given to a man whose way is hidden, whom God has hedged in?\""
         }
       }
     }

@@ -37,17 +37,18 @@
             "paragraph": "Paul denies using <em>kolakeia</em> (v.5) — flattery or manipulative speech designed to win favor for selfish purposes. Ancient moralists condemned flattery as the speech of parasites and demagogues. Paul's preaching sought God's approval, not human applause."
           }
         ],
-        "ctx": "Paul appears to be defending his ministry against slander — perhaps accusations that he was like the itinerant philosophers who exploited gullible audiences. His self-defense emphasizes purity of motive (not greed or glory), gentleness of manner (like a mother), and integrity of conduct (working night and day).",
-        "cross": [
-          {
-            "ref": "Acts 16:22-24",
-            "note": "Paul's reference to suffering and insult 'at Philippi' (v.2) recalls the beating and imprisonment described in Acts. He came to Thessalonica already wounded but undeterred."
-          },
-          {
-            "ref": "2 Cor 11:7-9",
-            "note": "Paul's practice of self-support to avoid burdening churches is a consistent theme. He worked to remove any obstacle to the gospel."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 16:22-24",
+              "note": "Paul's reference to suffering and insult 'at Philippi' (v.2) recalls the beating and imprisonment described in Acts. He came to Thessalonica already wounded but undeterred."
+            },
+            {
+              "ref": "2 Cor 11:7-9",
+              "note": "Paul's practice of self-support to avoid burdening churches is a consistent theme. He worked to remove any obstacle to the gospel."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -124,6 +125,9 @@
               "note": "The phrase 'labor and hardship' (kopos kai mochthos) was a conventional description of manual work's difficulty. Paul's willingness to do degrading physical labor (in elite eyes) demonstrated his sincerity."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul appears to be defending his ministry against slander — perhaps accusations that he was like the itinerant philosophers who exploited gullible audiences. His self-defense emphasizes purity of motive (not greed or glory), gentleness of manner (like a mother), and integrity of conduct (working night and day)."
         }
       }
     },
@@ -147,17 +151,18 @@
             "paragraph": "The Thessalonians became <em>mimētai</em> (v.14) of the Judean churches by suffering similar persecution. Imitation in Paul is not copying externals but sharing a common pattern of faithfulness under trial."
           }
         ],
-        "ctx": "This section is among the most controversial in Paul's letters due to the harsh language about 'the Jews' in vv.14-16. Scholars debate whether Paul wrote these words, whether they are a later interpolation, or how to interpret them. The historical context is Paul's own experience of Jewish opposition in multiple cities.",
-        "cross": [
-          {
-            "ref": "Acts 17:5-9",
-            "note": "Luke records Jewish opposition in Thessalonica that forced Paul to flee. The accusation — 'These men who have turned the world upside down' — shows the gospel's disruptive power."
-          },
-          {
-            "ref": "Rom 9-11",
-            "note": "Paul's extended treatment of Israel's role in salvation history complicates any reading of 1 Thess 2:14-16 as anti-Jewish. Romans insists that 'all Israel will be saved.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 17:5-9",
+              "note": "Luke records Jewish opposition in Thessalonica that forced Paul to flee. The accusation — 'These men who have turned the world upside down' — shows the gospel's disruptive power."
+            },
+            {
+              "ref": "Rom 9-11",
+              "note": "Paul's extended treatment of Israel's role in salvation history complicates any reading of 1 Thess 2:14-16 as anti-Jewish. Romans insists that 'all Israel will be saved.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -226,6 +231,9 @@
               "note": "Wanamaker surveys interpretive options: authentic Pauline prophetic judgment, post-Pauline interpolation (perhaps after AD 70), or hyperbolic rhetoric in the heat of conflict. He leans toward authenticity while acknowledging the passage's troubling reception history."
             }
           ]
+        },
+        "hist": {
+          "context": "This section is among the most controversial in Paul's letters due to the harsh language about 'the Jews' in vv.14-16. Scholars debate whether Paul wrote these words, whether they are a later interpolation, or how to interpret them. The historical context is Paul's own experience of Jewish opposition in multiple cities."
         }
       }
     },
@@ -249,17 +257,18 @@
             "paragraph": "Paul introduces <em>parousia</em> (v.19) — 'coming' — for Christ's return. The word was used for royal visits: a king's arrival at a city. Christ's parousia will be the ultimate royal visitation."
           }
         ],
-        "ctx": "Paul's inability to return to Thessalonica was a source of genuine anguish. He had tried 'again and again' but 'Satan blocked the way' (v.18). The specific obstacle is unknown — perhaps the bond Jason had posted (Acts 17:9), illness, or other opposition. Paul's deep affection for this young church permeates every line.",
-        "cross": [
-          {
-            "ref": "Acts 17:10",
-            "note": "Luke records that the brothers 'sent Paul and Silas away to Berea' at night. The hasty, forced departure explains Paul's sense of being 'torn away.'"
-          },
-          {
-            "ref": "Phil 4:1",
-            "note": "Paul calls the Philippians his 'joy and crown' — similar language to 1 Thess 2:19-20. These converts are his reward, the evidence that his labor was not in vain."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 17:10",
+              "note": "Luke records that the brothers 'sent Paul and Silas away to Berea' at night. The hasty, forced departure explains Paul's sense of being 'torn away.'"
+            },
+            {
+              "ref": "Phil 4:1",
+              "note": "Paul calls the Philippians his 'joy and crown' — similar language to 1 Thess 2:19-20. These converts are his reward, the evidence that his labor was not in vain."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -328,6 +337,9 @@
               "note": "The 'presence' (parousia) of Christ frames Paul's entire ministry. Wanamaker emphasizes that eschatology is not an appendix to Paul's thought but its organizing center."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul's inability to return to Thessalonica was a source of genuine anguish. He had tried 'again and again' but 'Satan blocked the way' (v.18). The specific obstacle is unknown — perhaps the bond Jason had posted (Acts 17:9), illness, or other opposition. Paul's deep affection for this young church permeates every line."
         }
       }
     }

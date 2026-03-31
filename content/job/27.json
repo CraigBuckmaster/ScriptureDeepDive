@@ -25,17 +25,18 @@
             "paragraph": "\"I will not deny my integrity (tummâ)\" (v.5). The same root as tām (blameless) from 1:1. Job swears an oath on his integrity. He uses God’s own assessment of him (1:8; 2:3) as the basis of his legal defence. The character God praised in heaven, Job defends on earth."
           }
         ],
-        "ctx": "Job swears a formal oath: “As surely as God lives, who has denied me justice... till I die, I will not deny my integrity” (vv.2–5). This is a legal oath — the most solemn form of testimony. Job swears by the God who has (in his view) wronged him. The paradox: he trusts God enough to swear by God while accusing God of injustice.",
-        "cross": [
-          {
-            "ref": "Job 1:1",
-            "note": "\"Blameless and upright\" — God’s own verdict, which Job now defends."
-          },
-          {
-            "ref": "Job 2:3",
-            "note": "\"He still maintains his integrity\" — God’s assessment, which this oath fulfils."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Job 1:1",
+              "note": "\"Blameless and upright\" — God’s own verdict, which Job now defends."
+            },
+            {
+              "ref": "Job 2:3",
+              "note": "\"He still maintains his integrity\" — God’s assessment, which this oath fulfils."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -96,6 +97,9 @@
               "note": "Habel: Job takes the oath. In the ancient legal system, an oath of innocence was the defendant’s final legal instrument. If no one can disprove it, the case is decided."
             }
           ]
+        },
+        "hist": {
+          "context": "Job swears a formal oath: “As surely as God lives, who has denied me justice... till I die, I will not deny my integrity” (vv.2–5). This is a legal oath — the most solemn form of testimony. Job swears by the God who has (in his view) wronged him. The paradox: he trusts God enough to swear by God while accusing God of injustice."
         }
       }
     },
@@ -113,17 +117,18 @@
             "paragraph": "\"What hope has the godless (ḥānēf) when he is cut off, when God takes away his life?\" (v.8). Job now describes the fate of the wicked using the friends’ own language. The reversal is deliberate: Job appropriates retribution theology not to apply it to himself but to his accusers."
           }
         ],
-        "ctx": "In a surprising move, Job describes the wicked’s destruction using language identical to the friends’ speeches. Scholars debate whether this section is Job speaking, a displaced fragment of Zophar’s missing third speech, or Job deliberately adopting the friends’ language to demonstrate he knows their theology — and still rejects its application to himself.",
-        "cross": [
-          {
-            "ref": "Job 20:29",
-            "note": "\"Such is the lot God allots the wicked\" — Zophar’s conclusion, which Job now echoes."
-          },
-          {
-            "ref": "Ps 73:27",
-            "note": "\"Those who are far from you will perish\" — the standard retribution theology."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Job 20:29",
+              "note": "\"Such is the lot God allots the wicked\" — Zophar’s conclusion, which Job now echoes."
+            },
+            {
+              "ref": "Ps 73:27",
+              "note": "\"Those who are far from you will perish\" — the standard retribution theology."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -184,6 +189,9 @@
               "note": "Habel: Job uses the friends’ own rhetoric as a counter-weapon. By describing the fate of the wicked, he implicitly argues: I know what happens to the wicked — and it hasn’t happened to me in the way you claim."
             }
           ]
+        },
+        "hist": {
+          "context": "In a surprising move, Job describes the wicked’s destruction using language identical to the friends’ speeches. Scholars debate whether this section is Job speaking, a displaced fragment of Zophar’s missing third speech, or Job deliberately adopting the friends’ language to demonstrate he knows their theology — and still rejects its application to himself."
         }
       }
     }

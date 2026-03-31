@@ -31,17 +31,18 @@
             "paragraph": "The census counts men aged 20 and over who are able to serve in the army. Numbers is a military book — Israel is not a wandering band of refugees but a covenant army being organised for conquest."
           }
         ],
-        "ctx": "Numbers opens exactly one year and one month after the Exodus (1:1; cf. Exod 12:2) — Israel has been at Sinai for eleven months receiving the law. Now God commissions a military census: all men 20 and older, tribe by tribe, name by name. The census is simultaneously a roll-call of the covenant community and a muster of the army. Twelve tribal leaders are named as co-commissioners. The Levites are explicitly excluded (v.49) — their role is the tabernacle, not the battlefield.",
-        "cross": [
-          {
-            "ref": "Rev 7:4–8",
-            "note": "\"Then I heard the number of those who were sealed: 144,000 from all the tribes of Israel.\" The sealing of 144,000 in Revelation mirrors the tribal census structure of Numbers — God counting and marking his covenant people for a spiritual warfare."
-          },
-          {
-            "ref": "Exod 30:12",
-            "note": "\"When you take a census of the Israelites to count them, each one must pay the Lord a ransom for his life at the time he is counted.\" The Sinai census required atonement money; this Numbers census is commissioned by God without that proviso — Israel is already ransomed through Passover."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rev 7:4–8",
+              "note": "\"Then I heard the number of those who were sealed: 144,000 from all the tribes of Israel.\" The sealing of 144,000 in Revelation mirrors the tribal census structure of Numbers — God counting and marking his covenant people for a spiritual warfare."
+            },
+            {
+              "ref": "Exod 30:12",
+              "note": "\"When you take a census of the Israelites to count them, each one must pay the Lord a ransom for his life at the time he is counted.\" The Sinai census required atonement money; this Numbers census is commissioned by God without that proviso — Israel is already ransomed through Passover."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Ashley: The narrative context of census in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Numbers opens exactly one year and one month after the Exodus (1:1; cf. Exod 12:2) — Israel has been at Sinai for eleven months receiving the law. Now God commissions a military census: all men 20 and older, tribe by tribe, name by name. The census is simultaneously a roll-call of the covenant community and a muster of the army. Twelve tribal leaders are named as co-commissioners. The Levites are explicitly excluded (v.49) — their role is the tabernacle, not the battlefield."
         }
       }
     },
@@ -129,17 +133,18 @@
             "paragraph": "From pāqad (to count, muster, visit). The repeated formula \"their numbered ones were X\" (vv.21, 23, 25…) creates a liturgical cadence — each tribe solemnly numbered and acknowledged."
           }
         ],
-        "ctx": "The tribal counts follow a fixed formula: tribe, lineage, total. Judah is the largest (74,600), followed by Dan (62,700) and Simeon (59,300). The smallest is Manasseh (32,200). Total: 603,550 fighting men — a number that will recur in the second census of ch.26, where the new generation is counted after the wilderness deaths. The Levites are exempt from military service (vv.47–54) — their duty is the tabernacle, not the battlefield. They camp around the sanctuary to prevent anyone unauthorised approaching and dying.",
-        "cross": [
-          {
-            "ref": "Exod 1:7",
-            "note": "\"The Israelites were exceedingly fruitful; they multiplied greatly, increased in numbers and became so numerous that the land was filled with them.\" The census numbers fulfil the promise made to Abraham (Gen 15:5) and the fertility described in Exodus's opening — against every attempt to suppress them."
-          },
-          {
-            "ref": "Heb 12:22–23",
-            "note": "\"You have come to Mount Zion… to the church of the firstborn, whose names are written in heaven.\" The NT community also has a heavenly census — names individually recorded before God."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 1:7",
+              "note": "\"The Israelites were exceedingly fruitful; they multiplied greatly, increased in numbers and became so numerous that the land was filled with them.\" The census numbers fulfil the promise made to Abraham (Gen 15:5) and the fertility described in Exodus's opening — against every attempt to suppress them."
+            },
+            {
+              "ref": "Heb 12:22–23",
+              "note": "\"You have come to Mount Zion… to the church of the firstborn, whose names are written in heaven.\" The NT community also has a heavenly census — names individually recorded before God."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -212,6 +217,9 @@
               "note": "Ashley: The narrative context of census in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "The tribal counts follow a fixed formula: tribe, lineage, total. Judah is the largest (74,600), followed by Dan (62,700) and Simeon (59,300). The smallest is Manasseh (32,200). Total: 603,550 fighting men — a number that will recur in the second census of ch.26, where the new generation is counted after the wilderness deaths. The Levites are exempt from military service (vv.47–54) — their duty is the tabernacle, not the battlefield. They camp around the sanctuary to prevent anyone unauthorised approaching and dying."
         }
       }
     }

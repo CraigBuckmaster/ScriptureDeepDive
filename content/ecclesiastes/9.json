@@ -31,17 +31,18 @@
             "paragraph": "\"Enjoy life (ḥayyîm) with your wife, whom you love\" (v.9). The sixth and most personal \"enjoy\" passage. Not generic enjoyment but specific: love your spouse, eat with gladness, wear white, anoint your head. The counsel is embodied, not abstract."
           }
         ],
-        "ctx": "The chapter opens with death’s universality (vv.1–6): no moral distinction survives the grave. Then the strongest \"enjoy life\" passage (vv.7–10): eat with gladness, drink with a joyful heart, enjoy life with your beloved. \"Whatever your hand finds to do, do it with all your might\" (v.10) — because Sheol has no work or planning. The urgency is death-aware: live fully because death ends the opportunity.",
-        "cross": [
-          {
-            "ref": "Rom 6:23",
-            "note": "\"The wages of sin is death\" — Paul adds what Qoheleth observes: death is universal."
-          },
-          {
-            "ref": "Eph 5:25–28",
-            "note": "\"Husbands, love your wives\" — Paul’s marital ethic develops Qoheleth’s \"enjoy life with your wife.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 6:23",
+              "note": "\"The wages of sin is death\" — Paul adds what Qoheleth observes: death is universal."
+            },
+            {
+              "ref": "Eph 5:25–28",
+              "note": "\"Husbands, love your wives\" — Paul’s marital ethic develops Qoheleth’s \"enjoy life with your wife.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -123,6 +124,9 @@
               "note": "Fox: the \"enjoy\" passage gains urgency from its context between death (vv.1–6) and chance (vv.11–12). Enjoy now because death is certain and timing is unpredictable."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter opens with death’s universality (vv.1–6): no moral distinction survives the grave. Then the strongest \"enjoy life\" passage (vv.7–10): eat with gladness, drink with a joyful heart, enjoy life with your beloved. \"Whatever your hand finds to do, do it with all your might\" (v.10) — because Sheol has no work or planning. The urgency is death-aware: live fully because death ends the opportunity."
         }
       }
     },
@@ -140,17 +144,18 @@
             "paragraph": "\"Time and chance (pegaʿ) happen to them all\" (v.11). The race is not to the swift, the battle not to the strong, bread not to the wise. External circumstances — timing and chance — override merit. Qoheleth observes what meritocracy denies: outcomes are not proportionate to inputs."
           }
         ],
-        "ctx": "The chapter’s second half introduces chance (vv.11–12): no one knows when their time will come; people are caught like fish in a net. Then the parable of the poor wise man (vv.13–18): a small city besieged, saved by a poor wise man, but no one remembered him. Wisdom is better than weapons (v.18), but one sinner destroys much good (v.18). The poor man’s story is hebel in miniature: wisdom works but is not rewarded.",
-        "cross": [
-          {
-            "ref": "Prov 21:31",
-            "note": "\"The horse is made ready for the day of battle, but victory rests with the LORD\" — the same sovereignty over outcomes."
-          },
-          {
-            "ref": "1 Cor 1:26–29",
-            "note": "\"God chose the weak things of the world to shame the strong\" — Paul’s theology of the overlooked wise person."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 21:31",
+              "note": "\"The horse is made ready for the day of battle, but victory rests with the LORD\" — the same sovereignty over outcomes."
+            },
+            {
+              "ref": "1 Cor 1:26–29",
+              "note": "\"God chose the weak things of the world to shame the strong\" — Paul’s theology of the overlooked wise person."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -232,6 +237,9 @@
               "note": "Fox: \"one sinner destroys much good\" is the asymmetry that haunts every institution. Destruction is easier than construction. A single fool can ruin what many wise built over decades."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter’s second half introduces chance (vv.11–12): no one knows when their time will come; people are caught like fish in a net. Then the parable of the poor wise man (vv.13–18): a small city besieged, saved by a poor wise man, but no one remembered him. Wisdom is better than weapons (v.18), but one sinner destroys much good (v.18). The poor man’s story is hebel in miniature: wisdom works but is not rewarded."
         }
       }
     }

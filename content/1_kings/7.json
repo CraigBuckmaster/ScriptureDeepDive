@@ -25,17 +25,18 @@
             "paragraph": "Solomon's largest building (v.2) — 100×50×30 cubits, nearly twice the temple's size. Named for its 45 cedar pillars arranged in rows like a forest. It served as an armoury (Isa 22:8) and reception hall. The narrator's note that the palace took 13 years versus the temple's 7 invites comparison: Solomon spent nearly twice as long on his own house as on God's."
           }
         ],
-        "ctx": "The narrator places the palace description immediately after the temple, creating an implicit comparison. The temple took 7 years; the palace took 13 — nearly twice as long. The palace complex includes the Hall of Pillars, the Hall of Justice (Solomon's throne room), a residence for Pharaoh's daughter, and the massive House of the Forest of Lebanon. The narrator does not criticise Solomon explicitly, but the proportions speak: God's house is magnificent; Solomon's house is even more so.",
-        "cross": [
-          {
-            "ref": "2 Sam 7:2",
-            "note": "David said: \"Here I am, living in a house of cedar, while the ark of God remains in a tent.\" David felt the disproportion. Solomon resolves it by building the temple — then surpasses it with his own palace."
-          },
-          {
-            "ref": "Isa 22:8",
-            "note": "\"You looked to the weapons in the Palace of the Forest\" — the House of the Forest of Lebanon was still serving as an armoury centuries after Solomon built it."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 7:2",
+              "note": "David said: \"Here I am, living in a house of cedar, while the ark of God remains in a tent.\" David felt the disproportion. Solomon resolves it by building the temple — then surpasses it with his own palace."
+            },
+            {
+              "ref": "Isa 22:8",
+              "note": "\"You looked to the weapons in the Palace of the Forest\" — the House of the Forest of Lebanon was still serving as an armoury centuries after Solomon built it."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -87,6 +88,9 @@
               "note": "Provan: Pharaoh's daughter gets her own palace — separate from both the temple and Solomon's residence. The spatial arrangement mirrors the theological tension: the foreign alliance is accommodated but not integrated into the sacred centre. Later, this boundary will collapse."
             }
           ]
+        },
+        "hist": {
+          "context": "The narrator places the palace description immediately after the temple, creating an implicit comparison. The temple took 7 years; the palace took 13 — nearly twice as long. The palace complex includes the Hall of Pillars, the Hall of Justice (Solomon's throne room), a residence for Pharaoh's daughter, and the massive House of the Forest of Lebanon. The narrator does not criticise Solomon explicitly, but the proportions speak: God's house is magnificent; Solomon's house is even more so."
         }
       }
     },
@@ -110,21 +114,22 @@
             "paragraph": "The bronze sea (vv.23–26) — 15 feet in diameter, 7.5 feet high, holding approximately 12,000 gallons — rested on twelve bronze oxen facing outward in four groups of three (the four compass points). It served for priestly washing. The \"sea\" echoes the primordial waters of creation — the temple contains and orders the chaos waters."
           }
         ],
-        "ctx": "Huram (also called Huram-abi) is a master craftsman from Tyre whose mother was from the tribe of Naphtali — a mixed Israelite-Phoenician heritage that qualifies him to work on an Israelite sacred project with Phoenician expertise. His bronze work is described in lavish detail: the two freestanding pillars (Jakin and Boaz), the enormous bronze sea on twelve oxen, ten bronze basins on wheeled stands, and all the smaller vessels. The detail serves a theological purpose: every object is specified because every object is sacred. The chapter concludes with Solomon bringing in David's dedicated silver and gold — the father's treasures stored in the son's building.",
-        "cross": [
-          {
-            "ref": "Exod 31:1–5",
-            "note": "Bezalel, filled with the Spirit for tabernacle craftsmanship, is the prototype for Huram. Both are divinely gifted artisans working on sacred construction."
-          },
-          {
-            "ref": "2 Chr 4:2–5",
-            "note": "The Chronicler's parallel adds detail about the bronze sea's decoration: \"below its rim, figures of bulls encircled it — ten to a cubit.\" The sea was both functional and ornamental."
-          },
-          {
-            "ref": "Jer 52:17",
-            "note": "The Babylonians broke up the bronze sea and the pillars and carried the bronze to Babylon. The temple furnishings survived 370 years before being destroyed in 586 BC."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 31:1–5",
+              "note": "Bezalel, filled with the Spirit for tabernacle craftsmanship, is the prototype for Huram. Both are divinely gifted artisans working on sacred construction."
+            },
+            {
+              "ref": "2 Chr 4:2–5",
+              "note": "The Chronicler's parallel adds detail about the bronze sea's decoration: \"below its rim, figures of bulls encircled it — ten to a cubit.\" The sea was both functional and ornamental."
+            },
+            {
+              "ref": "Jer 52:17",
+              "note": "The Babylonians broke up the bronze sea and the pillars and carried the bronze to Babylon. The temple furnishings survived 370 years before being destroyed in 586 BC."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -176,6 +181,9 @@
               "note": "Provan: The chapter closes with an act of generational continuity — Solomon installs David's treasures. The temple is not Solomon's alone but the fruition of his father's vision. The narrator honours both generations and signals that the Davidic covenant operates across time."
             }
           ]
+        },
+        "hist": {
+          "context": "Huram (also called Huram-abi) is a master craftsman from Tyre whose mother was from the tribe of Naphtali — a mixed Israelite-Phoenician heritage that qualifies him to work on an Israelite sacred project with Phoenician expertise. His bronze work is described in lavish detail: the two freestanding pillars (Jakin and Boaz), the enormous bronze sea on twelve oxen, ten bronze basins on wheeled stands, and all the smaller vessels. The detail serves a theological purpose: every object is specified because every object is sacred. The chapter concludes with Solomon bringing in David's dedicated silver and gold — the father's treasures stored in the son's building."
         }
       }
     }

@@ -31,17 +31,18 @@
             "paragraph": "The adjective dynatos (powerful) in v. 4 describes the apostolic weapons as having ‘divine power’ (dynata tō theō). The dative tō theō could be instrumental (‘powerful through God’) or dative of reference (‘powerful before God’). Either way, the weapons’ power is divine in origin, not human. The contrast with ‘weapons of the world’ (hopla sarkika) establishes that apostolic authority operates on a fundamentally different plane from worldly power."
           }
         ],
-        "ctx": "Chapter 10 marks a dramatic tonal shift: the conciliatory, affectionate tone of chs. 1–9 gives way to sharp polemic against opponents who challenge Paul’s authority. Many scholars see chs. 10–13 as a separate letter (the ‘tearful letter’ or a later addition), though others defend the canonical sequence. Paul’s opponents have charged him with being ‘timid when face to face’ but ‘bold when away’ (v. 1)—an accusation of inconsistency. Paul’s response reframes the issue: his ‘weapons’ are not worldly but divinely powerful, and his authority is exercised not through personal impressiveness but through the Spirit’s power to demolish ideological strongholds.",
-        "cross": [
-          {
-            "ref": "Eph 6:10–18",
-            "note": "Paul’s spiritual-warfare imagery in Ephesians provides the fuller development of the metaphor introduced here: the armour of God, the sword of the Spirit, and the struggle against spiritual powers."
-          },
-          {
-            "ref": "1 Cor 2:4–5",
-            "note": "Paul’s earlier disclaimer—‘My message and my preaching were not with wise and persuasive words, but with a demonstration of the Spirit’s power’—provides the theological rationale for the non-worldly weapons described here."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Eph 6:10–18",
+              "note": "Paul’s spiritual-warfare imagery in Ephesians provides the fuller development of the metaphor introduced here: the armour of God, the sword of the Spirit, and the struggle against spiritual powers."
+            },
+            {
+              "ref": "1 Cor 2:4–5",
+              "note": "Paul’s earlier disclaimer—‘My message and my preaching were not with wise and persuasive words, but with a demonstration of the Spirit’s power’—provides the theological rationale for the non-worldly weapons described here."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -90,6 +91,9 @@
               "note": "Harris provides the most balanced discussion of the literary-critical question (are chs. 10–13 a separate letter?), cautiously defending the canonical sequence while acknowledging the tonal shift. He reads the spiritual-warfare passage as Paul’s programmatic response to opponents who evaluate ministry by worldly criteria: Paul’s weapons operate on a plane the super-apostles cannot comprehend."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 10 marks a dramatic tonal shift: the conciliatory, affectionate tone of chs. 1–9 gives way to sharp polemic against opponents who challenge Paul’s authority. Many scholars see chs. 10–13 as a separate letter (the ‘tearful letter’ or a later addition), though others defend the canonical sequence. Paul’s opponents have charged him with being ‘timid when face to face’ but ‘bold when away’ (v. 1)—an accusation of inconsistency. Paul’s response reframes the issue: his ‘weapons’ are not worldly but divinely powerful, and his authority is exercised not through personal impressiveness but through the Spirit’s power to demolish ideological strongholds."
         }
       }
     },
@@ -107,17 +111,18 @@
             "paragraph": "The noun oikodomē (building up) in v. 8 describes the purpose of apostolic authority: ‘for building you up rather than tearing you down.’ The constructive metaphor is fundamental to Paul’s self-understanding: his authority exists not for self-aggrandisement but for the community’s edification. The same term appears in 13:10, forming an inclusio around the polemical section."
           }
         ],
-        "ctx": "Paul addresses the charge that his letters are ‘weighty and forceful’ but his personal presence is ‘unimpressive’ and his speaking ‘amounts to nothing’ (v. 10). This is one of the few biographical details about Paul’s physical appearance and rhetorical ability in the NT. The Corinthians, formed in a culture that prized rhetorical brilliance and physical presence, found Paul lacking. Paul’s response is not to deny the charge but to redirect the criterion: authority is measured by divine assignment and edifying purpose, not by personal impressiveness.",
-        "cross": [
-          {
-            "ref": "1 Cor 2:1–5",
-            "note": "Paul’s earlier acknowledgement that he came to Corinth ‘not with eloquence or human wisdom’ provides the theological context for the opponents’ critique of his rhetorical ability."
-          },
-          {
-            "ref": "2 Cor 13:10",
-            "note": "The building-up/tearing-down language of 10:8 recurs at the letter’s close (13:10), forming an inclusio around the polemical section."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 2:1–5",
+              "note": "Paul’s earlier acknowledgement that he came to Corinth ‘not with eloquence or human wisdom’ provides the theological context for the opponents’ critique of his rhetorical ability."
+            },
+            {
+              "ref": "2 Cor 13:10",
+              "note": "The building-up/tearing-down language of 10:8 recurs at the letter’s close (13:10), forming an inclusio around the polemical section."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -166,6 +171,9 @@
               "note": "Harris reads Paul’s self-defence as strategically restrained: he claims authority without displaying it (yet). The warning of v. 11—what he is in letters, he will be in person—is a promissory threat whose fulfilment depends on the Corinthians’ response."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul addresses the charge that his letters are ‘weighty and forceful’ but his personal presence is ‘unimpressive’ and his speaking ‘amounts to nothing’ (v. 10). This is one of the few biographical details about Paul’s physical appearance and rhetorical ability in the NT. The Corinthians, formed in a culture that prized rhetorical brilliance and physical presence, found Paul lacking. Paul’s response is not to deny the charge but to redirect the criterion: authority is measured by divine assignment and edifying purpose, not by personal impressiveness."
         }
       }
     },
@@ -183,17 +191,18 @@
             "paragraph": "The noun kanōn (rule, standard, sphere) in vv. 13, 15, 16 denotes the divinely assigned sphere of apostolic operation. Paul’s ‘boasting’ is confined to the territory God has assigned him—which includes Corinth, since Paul was the founding apostle. The super-apostles, by contrast, boast about ‘work done by others’ (v. 15)—they have invaded Paul’s territory and claim credit for his founding labour."
           }
         ],
-        "ctx": "Paul contrasts his own ‘measured’ boasting with the super-apostles’ self-promotion. They ‘commend themselves’ and ‘measure themselves by themselves’ (v. 12)—a circular, self-referential evaluation that Paul dismisses as foolish. His own boasting is confined to his God-assigned sphere (kanōn), which includes Corinth since he founded the church there. The Jer 9:24 citation (v. 17: ‘Let the one who boasts boast in the Lord’) provides the definitive principle: all legitimate boasting is theocentric, directed toward the Lord’s work rather than human achievement.",
-        "cross": [
-          {
-            "ref": "Jer 9:23–24",
-            "note": "Paul’s citation of ‘Let the one who boasts boast in the Lord’ draws on Jeremiah’s repudiation of boasting in wisdom, strength, or riches. The same citation appears in 1 Cor 1:31."
-          },
-          {
-            "ref": "Rom 15:18–20",
-            "note": "Paul’s commitment to preaching ‘where Christ was not known’ and not building ‘on someone else’s foundation’ parallels the sphere-of-activity argument here."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 9:23–24",
+              "note": "Paul’s citation of ‘Let the one who boasts boast in the Lord’ draws on Jeremiah’s repudiation of boasting in wisdom, strength, or riches. The same citation appears in 1 Cor 1:31."
+            },
+            {
+              "ref": "Rom 15:18–20",
+              "note": "Paul’s commitment to preaching ‘where Christ was not known’ and not building ‘on someone else’s foundation’ parallels the sphere-of-activity argument here."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -242,6 +251,9 @@
               "note": "Harris provides the most detailed analysis of the kanōn concept, arguing that Paul understands his apostolic sphere as divinely apportioned rather than self-chosen. The super-apostles’ error is not merely boasting but boasting outside their assigned area—a violation of the divine order of ministry. Harris reads v. 18 as the chapter’s theological climax: the ultimate validation of ministry comes not from self-assessment or peer comparison but from the Lord’s own commendation."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul contrasts his own ‘measured’ boasting with the super-apostles’ self-promotion. They ‘commend themselves’ and ‘measure themselves by themselves’ (v. 12)—a circular, self-referential evaluation that Paul dismisses as foolish. His own boasting is confined to his God-assigned sphere (kanōn), which includes Corinth since he founded the church there. The Jer 9:24 citation (v. 17: ‘Let the one who boasts boast in the Lord’) provides the definitive principle: all legitimate boasting is theocentric, directed toward the Lord’s work rather than human achievement."
         }
       }
     }

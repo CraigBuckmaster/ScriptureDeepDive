@@ -22,17 +22,18 @@
             "paragraph": "\"The king rejoices in your strength (ʿōz), LORD\" (v.1). A thanksgiving for answered prayer. Psalm 20 asked God to answer the king; Psalm 21 celebrates that he did. The pair: petition → fulfilment."
           }
         ],
-        "ctx": "The king’s thanksgiving for God’s blessings: answered prayers (v.2), rich blessings (v.3), crown of pure gold (v.3), life requested and granted (v.4), splendour and majesty (v.5), eternal blessings (v.6), gladness through God’s presence (v.7).",
-        "cross": [
-          {
-            "ref": "Ps 20",
-            "note": "The companion petition psalm. Ps 20 asks; Ps 21 thanks."
-          },
-          {
-            "ref": "2 Sam 12:30",
-            "note": "David takes the crown of the Ammonite king — the possible historical setting."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 20",
+              "note": "The companion petition psalm. Ps 20 asks; Ps 21 thanks."
+            },
+            {
+              "ref": "2 Sam 12:30",
+              "note": "David takes the crown of the Ammonite king — the possible historical setting."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -99,6 +100,9 @@
               "note": "Goldingay: \"you have made him glad with the joy of your presence\" — the king’s greatest blessing is not military victory but divine presence. Joy comes from God’s face, not from the battlefield."
             }
           ]
+        },
+        "hist": {
+          "context": "The king’s thanksgiving for God’s blessings: answered prayers (v.2), rich blessings (v.3), crown of pure gold (v.3), life requested and granted (v.4), splendour and majesty (v.5), eternal blessings (v.6), gladness through God’s presence (v.7)."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "\"You will make them like a blazing furnace (ʾēsh) when you appear\" (v.9). The second half turns from thanksgiving to judgment on enemies. God’s presence is a furnace to the rebellious. The king’s enemies are consumed; the king’s God exalted."
           }
         ],
-        "ctx": "God’s right hand finds all enemies (v.8). They will be destroyed as in a fiery furnace (v.9), their posterity blotted out (v.10). Their plots fail because God sends them fleeing (vv.11–12). The psalm closes: \"Be exalted in your strength, LORD; we will sing and praise your might\" (v.13). From the king’s joy to the congregation’s worship.",
-        "cross": [
-          {
-            "ref": "Mal 4:1",
-            "note": "\"The day is coming; it will burn like a furnace\" — the same furnace-judgment imagery."
-          },
-          {
-            "ref": "Rev 19:11–16",
-            "note": "The returning Christ who strikes down nations — the eschatological fulfilment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mal 4:1",
+              "note": "\"The day is coming; it will burn like a furnace\" — the same furnace-judgment imagery."
+            },
+            {
+              "ref": "Rev 19:11–16",
+              "note": "The returning Christ who strikes down nations — the eschatological fulfilment."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -193,6 +198,9 @@
               "note": "Goldingay: \"we will sing\" shifts from the king’s voice to the community’s. The psalm’s ending is choral, not solo."
             }
           ]
+        },
+        "hist": {
+          "context": "God’s right hand finds all enemies (v.8). They will be destroyed as in a fiery furnace (v.9), their posterity blotted out (v.10). Their plots fail because God sends them fleeing (vv.11–12). The psalm closes: \"Be exalted in your strength, LORD; we will sing and praise your might\" (v.13). From the king’s joy to the congregation’s worship."
         }
       }
     }

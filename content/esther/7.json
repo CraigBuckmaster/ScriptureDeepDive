@@ -25,18 +25,22 @@
             "paragraph": "The adversary and enemy is this vile Haman. In one sentence Esther unmasks herself (Jewish) and Haman (enemy). The double revelation is the climax."
           }
         ],
-        "hist": "The second banquet follows the sleepless night and Haman’s humiliation. The king is primed; Esther’s timing is providential.",
-        "ctx": "Esther reveals everything simultaneously: she is Jewish, her people are condemned, the architect is present. She frames it as a threat to the king’s own queen, making it personal before political.",
-        "cross": [
-          {
-            "ref": "2 Sam 12:1–7",
-            "note": "Nathan’s unmasking — the guilty party present when the trap springs."
-          },
-          {
-            "ref": "Gen 44:18–34",
-            "note": "Judah’s identity-revealing plea before Joseph."
-          }
-        ],
+        "hist": {
+          "historical": "The second banquet follows the sleepless night and Haman’s humiliation. The king is primed; Esther’s timing is providential.",
+          "context": "Esther reveals everything simultaneously: she is Jewish, her people are condemned, the architect is present. She frames it as a threat to the king’s own queen, making it personal before political."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 12:1–7",
+              "note": "Nathan’s unmasking — the guilty party present when the trap springs."
+            },
+            {
+              "ref": "Gen 44:18–34",
+              "note": "Judah’s identity-revealing plea before Joseph."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -126,18 +130,22 @@
             "paragraph": "They hanged Haman on the gallows he prepared for Mordecai. The poetic justice is exact. The gallows is the book’s supreme symbol of reversal."
           }
         ],
-        "hist": "Covering the face was the Persian signal for a condemned man. Harbona’s mention of the gallows provides immediate justice.",
-        "ctx": "The reversal is complete. Every intention boomerangs. The book’s structure is a mirror: everything reflects back to its source.",
-        "cross": [
-          {
-            "ref": "Ps 7:15–16",
-            "note": "His mischief returns upon his own head."
-          },
-          {
-            "ref": "Dan 6:24",
-            "note": "Daniel’s accusers thrown to the lions — same pattern."
-          }
-        ],
+        "hist": {
+          "historical": "Covering the face was the Persian signal for a condemned man. Harbona’s mention of the gallows provides immediate justice.",
+          "context": "The reversal is complete. Every intention boomerangs. The book’s structure is a mirror: everything reflects back to its source."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 7:15–16",
+              "note": "His mischief returns upon his own head."
+            },
+            {
+              "ref": "Dan 6:24",
+              "note": "Daniel’s accusers thrown to the lions — same pattern."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

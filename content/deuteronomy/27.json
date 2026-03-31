@@ -31,17 +31,18 @@
             "paragraph": "The plastered stones with the law inscribed were a public declaration: the law of God governs this land. Before Israel begins to settle Canaan, the covenant is written into its landscape. The uncut stone altar underscores that access to God is on his terms -- human technology may not shape the altar."
           }
         ],
-        "ctx": "Chapter 27 describes the covenant ceremony to take place immediately after crossing the Jordan: plaster-covered stones inscribed with the law at Shechem, an altar of uncut stones, the tribes divided between Gerizim (blessing) and Ebal (curse), and twelve curses recited by the Levites with congregational Amens. The uncut stone altar (no iron tools) echoes Exodus 20:25 -- the approach to God is provided by God, not constructed by humanity. Joshua will implement this ceremony precisely (Josh 8:30-35).",
-        "cross": [
-          {
-            "ref": "Josh 8:30-35",
-            "note": "\"Then Joshua built on Mount Ebal an altar to the LORD... Joshua read all the words of the law -- the blessings and the curses -- just as it is written in the Book of the Law.\" Joshua's faithful implementation confirms the Deuteronomy 27 ceremony as a real covenant ratification event."
-          },
-          {
-            "ref": "Exod 20:25",
-            "note": "\"If you make an altar of stones for me, do not build it with dressed stones, for you will defile it if you use a tool on it.\" The uncut stone altar principle is rooted in Exodus -- the approach to God must not be engineered by human craftsmanship."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 8:30-35",
+              "note": "\"Then Joshua built on Mount Ebal an altar to the LORD... Joshua read all the words of the law -- the blessings and the curses -- just as it is written in the Book of the Law.\" Joshua's faithful implementation confirms the Deuteronomy 27 ceremony as a real covenant ratification event."
+            },
+            {
+              "ref": "Exod 20:25",
+              "note": "\"If you make an altar of stones for me, do not build it with dressed stones, for you will defile it if you use a tool on it.\" The uncut stone altar principle is rooted in Exodus -- the approach to God must not be engineered by human craftsmanship."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 27 describes the covenant ceremony to take place immediately after crossing the Jordan: plaster-covered stones inscribed with the law at Shechem, an altar of uncut stones, the tribes divided between Gerizim (blessing) and Ebal (curse), and twelve curses recited by the Levites with congregational Amens. The uncut stone altar (no iron tools) echoes Exodus 20:25 -- the approach to God is provided by God, not constructed by humanity. Joshua will implement this ceremony precisely (Josh 8:30-35)."
         }
       }
     },
@@ -133,17 +137,18 @@
             "paragraph": "The congregational Amen response to each curse is one of the most powerful liturgical acts in the OT. The assembly does not passively receive the curses -- they actively affirm them. \"Amen\" is a declaration of assent: I acknowledge that this consequence follows this sin, and I accept it."
           }
         ],
-        "ctx": "The twelve curses (vv.15-26) are deliberately targeted at secret sins -- violations hidden from human observers. Idolatry, dishonoring parents, boundary moving, misleading the blind, perverting justice, sexual violations, murder, and accepting a bribe: these are the sins most likely to go unpunished by human courts. The covenant curses address the judicial blind spots. The final curse (v.26) is comprehensive: \"Cursed is anyone who does not uphold the words of this law by carrying them out.\" Paul quotes this in Gal 3:10.",
-        "cross": [
-          {
-            "ref": "Gal 3:10",
-            "note": "\"For all who rely on the works of the law are under a curse, as it is written: 'Cursed is everyone who does not continue to do everything written in the Book of the Law.'\" Paul quotes Deuteronomy 27:26 to argue that the law cannot justify -- no one keeps it perfectly, so all who rely on it are under its curse."
-          },
-          {
-            "ref": "Gal 3:13",
-            "note": "\"Christ redeemed us from the curse of the law by becoming a curse for us.\" The Deuteronomy 27 curse structure finds its resolution in Christ's bearing of the accumulated curse on the cross."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gal 3:10",
+              "note": "\"For all who rely on the works of the law are under a curse, as it is written: 'Cursed is everyone who does not continue to do everything written in the Book of the Law.'\" Paul quotes Deuteronomy 27:26 to argue that the law cannot justify -- no one keeps it perfectly, so all who rely on it are under its curse."
+            },
+            {
+              "ref": "Gal 3:13",
+              "note": "\"Christ redeemed us from the curse of the law by becoming a curse for us.\" The Deuteronomy 27 curse structure finds its resolution in Christ's bearing of the accumulated curse on the cross."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -216,6 +221,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "The twelve curses (vv.15-26) are deliberately targeted at secret sins -- violations hidden from human observers. Idolatry, dishonoring parents, boundary moving, misleading the blind, perverting justice, sexual violations, murder, and accepting a bribe: these are the sins most likely to go unpunished by human courts. The covenant curses address the judicial blind spots. The final curse (v.26) is comprehensive: \"Cursed is anyone who does not uphold the words of this law by carrying them out.\" Paul quotes this in Gal 3:10."
         }
       }
     }

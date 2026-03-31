@@ -31,25 +31,26 @@
             "paragraph": "The bronze-like figure holds a measuring reed (approximately 3.1 meters / 10.5 feet). Measurement in visionary literature is an act of claiming and defining sacred space. To measure is to establish boundaries between holy and common, sacred and profane. The meticulous measurements that follow are not architectural blueprints but theological boundaries."
           }
         ],
-        "ctx": "The temple vision (chs. 40-48) is the longest sustained vision in the Hebrew Bible. It begins on the twenty-fifth year of exile, the fourteenth year after Jerusalem's fall (v. 1) — possibly Jubilee year, when land reverts to its original owner. Ezekiel is transported to 'a very high mountain' (v. 2, echoing Sinai and the Temple Mount) where a bronze-like figure begins measuring the temple complex. The measurements are exhaustively detailed, raising the question: is this a literal architectural plan for a future temple, or a theological vision of ideal sacred space? Interpretive traditions diverge sharply. What is clear is the theological purpose: after the glory departed (chs. 8-11), after judgment was completed (chs. 12-24), after the nations were judged (chs. 25-32), after restoration was promised (chs. 33-39), now the dwelling place for God's returning glory is prepared.",
-        "cross": [
-          {
-            "ref": "Ezek 1:1",
-            "note": "The opening vision of God's glory. The temple vision is the structural counterpart: chapter 1 shows God's mobile glory outside the temple; chapters 40-48 show the fixed dwelling where glory will reside permanently."
-          },
-          {
-            "ref": "Rev 11:1-2",
-            "note": "John is given a measuring rod to measure the temple of God. The act of measuring sacred space draws directly on Ezekiel's template."
-          },
-          {
-            "ref": "Rev 21:15-17",
-            "note": "The angel measures the New Jerusalem with a measuring rod, paralleling the bronze figure measuring Ezekiel's temple. Both visions define the boundaries of eschatological sacred space."
-          },
-          {
-            "ref": "1 Kgs 6:1-38",
-            "note": "Solomon's temple measurements. Ezekiel's temple is deliberately larger and more symmetrical, suggesting an idealized perfection that surpasses the historical temple."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 1:1",
+              "note": "The opening vision of God's glory. The temple vision is the structural counterpart: chapter 1 shows God's mobile glory outside the temple; chapters 40-48 show the fixed dwelling where glory will reside permanently."
+            },
+            {
+              "ref": "Rev 11:1-2",
+              "note": "John is given a measuring rod to measure the temple of God. The act of measuring sacred space draws directly on Ezekiel's template."
+            },
+            {
+              "ref": "Rev 21:15-17",
+              "note": "The angel measures the New Jerusalem with a measuring rod, paralleling the bronze figure measuring Ezekiel's temple. Both visions define the boundaries of eschatological sacred space."
+            },
+            {
+              "ref": "1 Kgs 6:1-38",
+              "note": "Solomon's temple measurements. Ezekiel's temple is deliberately larger and more symmetrical, suggesting an idealized perfection that surpasses the historical temple."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -102,6 +103,9 @@
               "note": "Zimmerli designates chapters 40-48 as 'temple torah' (torat ha-bayit, cf. 43:12): instruction concerning the temple presented in visionary form. The genre is unique: it combines priestly legislation (measurements, regulations) with prophetic vision (divine transport, angelic guide). Zimmerli stresses that the measurements are not construction blueprints but theological statements about the nature of sacred space: holiness requires definition, boundaries, and gradation."
             }
           ]
+        },
+        "hist": {
+          "context": "The temple vision (chs. 40-48) is the longest sustained vision in the Hebrew Bible. It begins on the twenty-fifth year of exile, the fourteenth year after Jerusalem's fall (v. 1) — possibly Jubilee year, when land reverts to its original owner. Ezekiel is transported to 'a very high mountain' (v. 2, echoing Sinai and the Temple Mount) where a bronze-like figure begins measuring the temple complex. The measurements are exhaustively detailed, raising the question: is this a literal architectural plan for a future temple, or a theological vision of ideal sacred space? Interpretive traditions diverge sharply. What is clear is the theological purpose: after the glory departed (chs. 8-11), after judgment was completed (chs. 12-24), after the nations were judged (chs. 25-32), after restoration was promised (chs. 33-39), now the dwelling place for God's returning glory is prepared."
         }
       }
     },
@@ -119,17 +123,18 @@
             "paragraph": "The outer court is the largest public area of the temple complex. It is the zone of transition between the profane world outside the wall and the sacred interior. Thirty rooms line the court (v. 17), providing storage and preparation space. The outer court represents the first degree of holiness in the graduated sacred geography of the temple."
           }
         ],
-        "ctx": "The tour continues with the outer court and its gates. The north and south gates are structurally identical to the east gate (vv. 20-27), establishing symmetry. The outer court contains thirty rooms along its perimeter, a pavement, and a precise distance of one hundred cubits between outer and inner gates. The architecture communicates graded holiness: each gate and courtyard brings the worshiper closer to the divine presence, with increasing restrictions at each threshold. This is priestly theology expressed in stone.",
-        "cross": [
-          {
-            "ref": "1 Kgs 6:36",
-            "note": "Solomon's temple had an inner courtyard of dressed stone. Ezekiel's temple maintains the inner/outer court distinction but with greater precision and symmetry than the historical temple."
-          },
-          {
-            "ref": "2 Chr 4:9",
-            "note": "The Solomonic temple's distinction between the 'court of the priests' and the 'great court' provides the historical precedent for Ezekiel's graded courtyard system."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 6:36",
+              "note": "Solomon's temple had an inner courtyard of dressed stone. Ezekiel's temple maintains the inner/outer court distinction but with greater precision and symmetry than the historical temple."
+            },
+            {
+              "ref": "2 Chr 4:9",
+              "note": "The Solomonic temple's distinction between the 'court of the priests' and the 'great court' provides the historical precedent for Ezekiel's graded courtyard system."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -178,6 +183,9 @@
               "note": "Zimmerli notes the repetitive measurement formula as liturgical in character: the repeated dimensions function like a ritual chant, establishing sacred space through the very act of measuring. The form is as important as the content."
             }
           ]
+        },
+        "hist": {
+          "context": "The tour continues with the outer court and its gates. The north and south gates are structurally identical to the east gate (vv. 20-27), establishing symmetry. The outer court contains thirty rooms along its perimeter, a pavement, and a precise distance of one hundred cubits between outer and inner gates. The architecture communicates graded holiness: each gate and courtyard brings the worshiper closer to the divine presence, with increasing restrictions at each threshold. This is priestly theology expressed in stone."
         }
       }
     },
@@ -195,17 +203,18 @@
             "paragraph": "The inner court is the next degree of holiness beyond the outer court. Only priests and authorized personnel may enter. The transition from outer to inner court crosses a theological boundary: from the zone of general worship to the zone of priestly service. The inner gates face outward, reversing the orientation of the outer gates, so that the worshiper approaching the temple faces the sanctuary directly."
           }
         ],
-        "ctx": "The inner court gates are measured with the same precision as the outer gates, maintaining symmetry. The key difference is orientation: the outer gates face inward (toward the temple), while the inner gates face outward (toward the worshiper). This creates a 'welcoming' architecture: the gate structures draw the worshiper progressively inward toward the center. The measurements continue to communicate graduated holiness: each threshold represents a higher degree of sanctification.",
-        "cross": [
-          {
-            "ref": "Exod 27:9-19",
-            "note": "The tabernacle courtyard prescriptions establish the pattern of graduated sacred space that Ezekiel's temple elaborates into a more complex system."
-          },
-          {
-            "ref": "Heb 9:1-10",
-            "note": "The author of Hebrews describes the tabernacle's graded access (outer room, inner room) as a symbol of limited access under the old covenant. Ezekiel's temple similarly structures access according to holiness gradations."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 27:9-19",
+              "note": "The tabernacle courtyard prescriptions establish the pattern of graduated sacred space that Ezekiel's temple elaborates into a more complex system."
+            },
+            {
+              "ref": "Heb 9:1-10",
+              "note": "The author of Hebrews describes the tabernacle's graded access (outer room, inner room) as a symbol of limited access under the old covenant. Ezekiel's temple similarly structures access according to holiness gradations."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -250,6 +259,9 @@
               "note": "Zimmerli identifies the measurement repetitions as a deliberate literary strategy: the near-identical descriptions of gates create a sense of overwhelming order. The temple is a cosmos of sanctified space, governed by symmetry and proportion that mirror the divine mind."
             }
           ]
+        },
+        "hist": {
+          "context": "The inner court gates are measured with the same precision as the outer gates, maintaining symmetry. The key difference is orientation: the outer gates face inward (toward the temple), while the inner gates face outward (toward the worshiper). This creates a 'welcoming' architecture: the gate structures draw the worshiper progressively inward toward the center. The measurements continue to communicate graduated holiness: each threshold represents a higher degree of sanctification."
         }
       }
     },
@@ -267,17 +279,18 @@
             "paragraph": "Eight tables are placed by the north gate for processing sacrificial animals (v. 41). The tables are equipped with hooks and are the practical workspace of the priestly sacrificial system. The detailed description of sacrificial furniture indicates that this temple will have an active, functioning sacrificial system, raising significant theological questions about the relationship to Christ's completed sacrifice."
           }
         ],
-        "ctx": "The tour moves from gates to sacrificial infrastructure. Eight tables for slaughtering sacrifices, rooms for washing offerings, and chambers for priests are described with the same precision as the gates. The chapter concludes at the portico (ulam) of the temple itself (vv. 48-49), the threshold between the courts and the sanctuary proper. The sacrificial tables raise a major interpretive question: if Christ's sacrifice is complete (Heb 10:10-14), why does Ezekiel's future temple have sacrificial apparatus? Interpretive options include memorial sacrifices (looking back to the cross as OT sacrifices looked forward), a literal millennial system, or symbolic/typological reading of the vision.",
-        "cross": [
-          {
-            "ref": "Lev 1:1-17",
-            "note": "The burnt offering legislation that provides the procedural context for the sacrificial tables. Ezekiel's tables serve the same function as the tabernacle and Solomonic temple's sacrificial areas."
-          },
-          {
-            "ref": "Heb 10:10-14",
-            "note": "The completed sacrifice of Christ that makes 'those who are being sanctified perfect forever.' The relationship between this finished work and Ezekiel's sacrificial system is one of the most debated questions in prophetic interpretation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 1:1-17",
+              "note": "The burnt offering legislation that provides the procedural context for the sacrificial tables. Ezekiel's tables serve the same function as the tabernacle and Solomonic temple's sacrificial areas."
+            },
+            {
+              "ref": "Heb 10:10-14",
+              "note": "The completed sacrifice of Christ that makes 'those who are being sanctified perfect forever.' The relationship between this finished work and Ezekiel's sacrificial system is one of the most debated questions in prophetic interpretation."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -326,6 +339,9 @@
               "note": "Zimmerli reads the sacrificial tables as part of the 'temple torah' genre: instruction about proper worship expressed in architectural terms. The precision of the measurements is not engineering specification but priestly instruction: every detail communicates the theology of ordered holiness."
             }
           ]
+        },
+        "hist": {
+          "context": "The tour moves from gates to sacrificial infrastructure. Eight tables for slaughtering sacrifices, rooms for washing offerings, and chambers for priests are described with the same precision as the gates. The chapter concludes at the portico (ulam) of the temple itself (vv. 48-49), the threshold between the courts and the sanctuary proper. The sacrificial tables raise a major interpretive question: if Christ's sacrifice is complete (Heb 10:10-14), why does Ezekiel's future temple have sacrificial apparatus? Interpretive options include memorial sacrifices (looking back to the cross as OT sacrifices looked forward), a literal millennial system, or symbolic/typological reading of the vision."
         }
       }
     }

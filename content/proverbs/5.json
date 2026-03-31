@@ -31,17 +31,18 @@
             "paragraph": "The realm of the dead. The adulteress's steps lead \"straight to Sheol\" (v.5) — her house is literally a path to death. This is not metaphor for regret; it is a stark theological statement that the road of adultery ends in Sheol."
           }
         ],
-        "ctx": "Proverbs 5 is the first extended warning against the adulteress (she appeared briefly in 2:16–19). The chapter has three movements: the warning (vv.1–14), the positive alternative (vv.15–20), and the theological grounding (vv.21–23). The most striking feature is the extended deathbed speech in vv.11–14 — the man who did not listen imagines himself at the end of life, groaning over what his choices have cost. Proverbs asks the young man to live from the end: what will you wish you had chosen?",
-        "cross": [
-          {
-            "ref": "Heb 12:15–16",
-            "note": "The warning against sexual immorality as a 'bitter root' echoes Proverbs 5's description of the adulteress whose end is 'bitter as gall' (v. 4). Both texts connect sexual sin to communal contamination."
-          },
-          {
-            "ref": "Prov 7:6–27",
-            "note": "The seduction warning here is developed into a full narrative in chapter 7, where the adulteress moves from abstract threat to dramatic character. The two chapters form a pair."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 12:15–16",
+              "note": "The warning against sexual immorality as a 'bitter root' echoes Proverbs 5's description of the adulteress whose end is 'bitter as gall' (v. 4). Both texts connect sexual sin to communal contamination."
+            },
+            {
+              "ref": "Prov 7:6–27",
+              "note": "The seduction warning here is developed into a full narrative in chapter 7, where the adulteress moves from abstract threat to dramatic character. The two chapters form a pair."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "The NET note on 'I was soon in serious trouble in the midst of the assembled congregation' (vagal bera'ah betokh qahal) explains that qahal (assembly) is the formal covenant community gathered for worship and legal proceedings. Public shame before the assembled community was one of the most severe social consequences in ancient Israel — honour was communal and its loss was communal."
             }
           ]
+        },
+        "hist": {
+          "context": "Proverbs 5 is the first extended warning against the adulteress (she appeared briefly in 2:16–19). The chapter has three movements: the warning (vv.1–14), the positive alternative (vv.15–20), and the theological grounding (vv.21–23). The most striking feature is the extended deathbed speech in vv.11–14 — the man who did not listen imagines himself at the end of life, groaning over what his choices have cost. Proverbs asks the young man to live from the end: what will you wish you had chosen?"
         }
       }
     },
@@ -135,17 +139,18 @@
             "paragraph": "From the root meaning to swerve, stagger, or reel — the same verb describes both drunkenness and erotic captivation. The husband should be 'intoxicated always' (v. 19) with his wife's love. The irony is deliberate: the very intoxication the adulteress offers (v. 20) is legitimately available in marriage."
           }
         ],
-        "ctx": "The positive alternative (vv.15–19) is one of the most beautiful passages in Proverbs — a frank, joyful celebration of sexual delight within marriage. The water imagery (cistern, well, springs, fountain) is an ancient metaphor for sexuality. The instruction is not mere duty but delight: \"may you ever be intoxicated with her love\" (v.19). Proverbs does not call the young man to asceticism but to fidelity. The pleasure the adulteress falsely promises is genuinely available within covenant marriage.",
-        "cross": [
-          {
-            "ref": "Song of Songs",
-            "note": "The entire Song of Songs is the positive vision of which Prov 5:15–19 is a brief sketch — the celebration of marital love as a reflection of God's love for Israel and Christ's love for the church."
-          },
-          {
-            "ref": "1 Cor 7:2–5",
-            "note": "Paul's instruction that spouses have authority over one another's bodies and should not deprive each other echoes the Proverbs framework: sexual fulfilment within marriage is the protection against immorality."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Song of Songs",
+              "note": "The entire Song of Songs is the positive vision of which Prov 5:15–19 is a brief sketch — the celebration of marital love as a reflection of God's love for Israel and Christ's love for the church."
+            },
+            {
+              "ref": "1 Cor 7:2–5",
+              "note": "Paul's instruction that spouses have authority over one another's bodies and should not deprive each other echoes the Proverbs framework: sexual fulfilment within marriage is the protection against immorality."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -210,6 +215,9 @@
               "note": "The NET note on 'a loving doe, a graceful deer — may her breasts satisfy you always, may you ever be intoxicated with her love' discusses the animal simile (doe, deer as symbols of beauty and grace in ancient Near Eastern love poetry, cf. Song of Songs 2:7; 3:5) and the 'intoxication' language for legitimate marital love. The erotic register is intentional and positive — not despite its sensory specificity but because of it."
             }
           ]
+        },
+        "hist": {
+          "context": "The positive alternative (vv.15–19) is one of the most beautiful passages in Proverbs — a frank, joyful celebration of sexual delight within marriage. The water imagery (cistern, well, springs, fountain) is an ancient metaphor for sexuality. The instruction is not mere duty but delight: \"may you ever be intoxicated with her love\" (v.19). Proverbs does not call the young man to asceticism but to fidelity. The pleasure the adulteress falsely promises is genuinely available within covenant marriage."
         }
       }
     }

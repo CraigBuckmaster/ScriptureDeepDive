@@ -31,17 +31,18 @@
             "paragraph": "The term euangelion occurs seven times in Galatians (1:6, 7, 7, 11; 2:2, 5, 7, 14), more concentrated per line than in any other Pauline letter. In the Greco-Roman world the word denoted a public announcement of victory or an imperial proclamation. Paul appropriates it for the message of Christ’s death and resurrection, insisting there is only one authentic euangelion—any alternative is no gospel at all (1:6–7)."
           }
         ],
-        "ctx": "Galatians opens with the most abrupt salutation in the Pauline corpus. Paul omits his customary thanksgiving and moves immediately to the crisis. The greeting contains a compressed creedal formula: Christ ‘gave himself for our sins to rescue us from the present evil age’ (1:4), framing the entire letter’s argument. The phrase ‘present evil age’ (tou aiōnos tou enestōtos ponērou) reflects Jewish apocalyptic categories: the current age is under the dominion of sin and death, and Christ’s self-giving inaugurates the age to come.",
-        "cross": [
-          {
-            "ref": "1 Cor 15:3–4",
-            "note": "Paul’s foundational creedal summary—‘Christ died for our sins according to the Scriptures’—parallels the compressed christological formula in Gal 1:4, confirming that Paul’s gospel in Galatians is identical to the apostolic kerygma."
-          },
-          {
-            "ref": "Titus 2:14",
-            "note": "The language of Christ giving himself ‘to redeem us from all wickedness’ echoes Gal 1:4, using similar sacrificial and redemptive vocabulary rooted in the Exodus tradition."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 15:3–4",
+              "note": "Paul’s foundational creedal summary—‘Christ died for our sins according to the Scriptures’—parallels the compressed christological formula in Gal 1:4, confirming that Paul’s gospel in Galatians is identical to the apostolic kerygma."
+            },
+            {
+              "ref": "Titus 2:14",
+              "note": "The language of Christ giving himself ‘to redeem us from all wickedness’ echoes Gal 1:4, using similar sacrificial and redemptive vocabulary rooted in the Exodus tradition."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -102,6 +103,9 @@
               "note": "Bruce emphasises that Paul’s double negation (ouk ... oude) followed by the strong adversative alla creates a tripartite structure: not from men, not through a man, but through Jesus Christ and God the Father. The coordination of Christ and the Father under a single preposition (dia) without the repetition of the article is grammatically significant, pointing to their unity of action. The reference to the resurrection is not incidental: it was the risen Christ who appeared to Paul on the Damascus road, and it is this resurrection appearance that constitutes his apostolic credential (cf. 1 Cor 9:1; 15:8)."
             }
           ]
+        },
+        "hist": {
+          "context": "Galatians opens with the most abrupt salutation in the Pauline corpus. Paul omits his customary thanksgiving and moves immediately to the crisis. The greeting contains a compressed creedal formula: Christ ‘gave himself for our sins to rescue us from the present evil age’ (1:4), framing the entire letter’s argument. The phrase ‘present evil age’ (tou aiōnos tou enestōtos ponērou) reflects Jewish apocalyptic categories: the current age is under the dominion of sin and death, and Christ’s self-giving inaugurates the age to come."
         }
       }
     },
@@ -125,17 +129,18 @@
             "paragraph": "The term anathema derives from the LXX translation of Hebrew ḥērem (the ban of total destruction). Paul invokes the curse twice (vv. 8–9), intensifying the severity: even an apostle or an angel from heaven who preaches a different gospel falls under divine judgment."
           }
         ],
-        "ctx": "Paul’s astonishment (thaumazō) that the Galatians are ‘so quickly’ (houtōs tacheōs) deserting is without parallel in his letters. The typical Pauline thanksgiving section is replaced by rebuke. Paul insists that the rival teaching is not merely a variant interpretation but a heteron euangelion—a ‘different gospel’ that is in fact no gospel at all (ho ouk estin allo). The distinction between heteros (different in kind) and allos (another of the same kind) underscores Paul’s point: there is one authentic gospel, and any deviation from it is a perversion (metastrepsai).",
-        "cross": [
-          {
-            "ref": "2 Cor 11:4",
-            "note": "Paul warns the Corinthians against accepting ‘a different gospel,’ using nearly identical language to Gal 1:6–7. Both passages address the same fundamental danger: rival missionaries distorting the apostolic message."
-          },
-          {
-            "ref": "Deut 4:2",
-            "note": "The prohibition against adding to or subtracting from God’s commands provides the Old Testament background for Paul’s insistence that the gospel admits no supplementation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Cor 11:4",
+              "note": "Paul warns the Corinthians against accepting ‘a different gospel,’ using nearly identical language to Gal 1:6–7. Both passages address the same fundamental danger: rival missionaries distorting the apostolic message."
+            },
+            {
+              "ref": "Deut 4:2",
+              "note": "The prohibition against adding to or subtracting from God’s commands provides the Old Testament background for Paul’s insistence that the gospel admits no supplementation."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -196,6 +201,9 @@
               "note": "Bruce notes that houtōs tacheōs is ambiguous: it could mean quickly after Paul’s departure, quickly after the agitators’ arrival, or too readily. The double curse formula has parallels in Deuteronomic covenant curses and underscores the covenantal seriousness of the gospel."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul’s astonishment (thaumazō) that the Galatians are ‘so quickly’ (houtōs tacheōs) deserting is without parallel in his letters. The typical Pauline thanksgiving section is replaced by rebuke. Paul insists that the rival teaching is not merely a variant interpretation but a heteron euangelion—a ‘different gospel’ that is in fact no gospel at all (ho ouk estin allo). The distinction between heteros (different in kind) and allos (another of the same kind) underscores Paul’s point: there is one authentic gospel, and any deviation from it is a perversion (metastrepsai)."
         }
       }
     },
@@ -219,21 +227,22 @@
             "paragraph": "Ioudaismos appears only here and in 2 Maccabees in biblical literature. It denotes the entire cultural-religious complex of Second Temple Jewish identity. Paul’s statement that he ‘was advancing in Judaism beyond many of my own age’ (v. 14) presents his pre-conversion life as the apex of covenantal zeal."
           }
         ],
-        "ctx": "Paul’s autobiographical narrative in vv. 11–24 serves a polemical function: by demonstrating that he received the gospel by direct revelation rather than human mediation, he refutes the charge that he is a second-hand apostle. The narrative moves through three stages: (1) his pre-conversion life as a zealous persecutor (vv. 13–14); (2) his call and commission, described in language echoing Jeremiah 1:5 and Isaiah 49:1; (3) his deliberate avoidance of Jerusalem for three years, going instead to Arabia and Damascus (vv. 15–17). His brief, fifteen-day visit to Peter (v. 18) and his subsequent invisibility to the Judean churches (vv. 22–24) underscore his independence from human authority.",
-        "cross": [
-          {
-            "ref": "Jer 1:5",
-            "note": "God’s declaration to Jeremiah provides the prophetic template for Paul’s self-understanding. The parallels in Gal 1:15 are deliberate, presenting Paul’s apostolic call in continuity with Israel’s prophetic tradition."
-          },
-          {
-            "ref": "Acts 9:1–19",
-            "note": "Luke’s account of the Damascus road experience provides the narrative framework for the revelation Paul describes in Gal 1:12, 15–16."
-          },
-          {
-            "ref": "Phil 3:4–8",
-            "note": "Paul’s catalogue of Jewish credentials parallels and expands the autobiographical data in Gal 1:13–14, and in both contexts Paul counts these credentials as loss."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 1:5",
+              "note": "God’s declaration to Jeremiah provides the prophetic template for Paul’s self-understanding. The parallels in Gal 1:15 are deliberate, presenting Paul’s apostolic call in continuity with Israel’s prophetic tradition."
+            },
+            {
+              "ref": "Acts 9:1–19",
+              "note": "Luke’s account of the Damascus road experience provides the narrative framework for the revelation Paul describes in Gal 1:12, 15–16."
+            },
+            {
+              "ref": "Phil 3:4–8",
+              "note": "Paul’s catalogue of Jewish credentials parallels and expands the autobiographical data in Gal 1:13–14, and in both contexts Paul counts these credentials as loss."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -298,6 +307,9 @@
               "note": "Bruce observes that Paul’s narrative is a historical argument designed to establish one point: his gospel came from God, not from Jerusalem. The three stages form a chiastic pattern with the revelation as the centre and turning-point. Bruce notes the technical use of historēsai: in classical Greek it means to inquire or investigate."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul’s autobiographical narrative in vv. 11–24 serves a polemical function: by demonstrating that he received the gospel by direct revelation rather than human mediation, he refutes the charge that he is a second-hand apostle. The narrative moves through three stages: (1) his pre-conversion life as a zealous persecutor (vv. 13–14); (2) his call and commission, described in language echoing Jeremiah 1:5 and Isaiah 49:1; (3) his deliberate avoidance of Jerusalem for three years, going instead to Arabia and Damascus (vv. 15–17). His brief, fifteen-day visit to Peter (v. 18) and his subsequent invisibility to the Judean churches (vv. 22–24) underscore his independence from human authority."
         }
       }
     }

@@ -25,18 +25,22 @@
             "paragraph": "Eliashib the priest gave Tobiah a large chamber (liškâ) in the temple courts — a storeroom previously used for offerings, incense, and vessels. The enemy inside the sanctuary. The high priest himself opened the door."
           }
         ],
-        "hist": "Nehemiah had returned to Artaxerxes in the thirty-second year (433 BC, cf. 13:6). During his absence, reforms collapsed. Eliashib, the same high priest who built the Sheep Gate (3:1), gave Tobiah — the arch-opponent — a room in the temple. Nehemiah returns to find the fox not just on the wall but inside the house.",
-        "ctx": "The chapter is structured as four reforms, each ending with \"Remember me, my God.\" Nehemiah’s absence revealed how fragile the reforms were. Without sustained leadership, every gain reversed. The chapter is a warning: reformation requires maintenance, not just initiation.",
-        "cross": [
-          {
-            "ref": "Neh 2:10",
-            "note": "Tobiah first introduced as opponent — now he has a room in the temple."
-          },
-          {
-            "ref": "Matt 21:12–13",
-            "note": "Jesus drives out the money-changers — the same cleansing impulse."
-          }
-        ],
+        "hist": {
+          "historical": "Nehemiah had returned to Artaxerxes in the thirty-second year (433 BC, cf. 13:6). During his absence, reforms collapsed. Eliashib, the same high priest who built the Sheep Gate (3:1), gave Tobiah — the arch-opponent — a room in the temple. Nehemiah returns to find the fox not just on the wall but inside the house.",
+          "context": "The chapter is structured as four reforms, each ending with \"Remember me, my God.\" Nehemiah’s absence revealed how fragile the reforms were. Without sustained leadership, every gain reversed. The chapter is a warning: reformation requires maintenance, not just initiation."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Neh 2:10",
+              "note": "Tobiah first introduced as opponent — now he has a room in the temple."
+            },
+            {
+              "ref": "Matt 21:12–13",
+              "note": "Jesus drives out the money-changers — the same cleansing impulse."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -110,17 +114,18 @@
             "paragraph": "\"Remember me for this, O my God\" (v.14). The second \"Remember me.\" Each reform is sealed with this prayer. Nehemiah builds his case before the only judge who matters."
           }
         ],
-        "ctx": "Without tithes, the Levites abandoned the temple and returned to their fields. Without Levites, worship collapsed. The causal chain: Tobiah in the storeroom → no space for tithes → no tithes → no Levites → no worship. One compromise cascades.",
-        "cross": [
-          {
-            "ref": "Neh 10:37–39",
-            "note": "\"We will not neglect the house of our God\" — the covenant promise already broken."
-          },
-          {
-            "ref": "Mal 3:8–10",
-            "note": "\"Will a mere mortal rob God? Yet you rob me — in tithes and offerings.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Neh 10:37–39",
+              "note": "\"We will not neglect the house of our God\" — the covenant promise already broken."
+            },
+            {
+              "ref": "Mal 3:8–10",
+              "note": "\"Will a mere mortal rob God? Yet you rob me — in tithes and offerings.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -173,6 +178,9 @@
               "note": "Kidner: \"The covenant of chapter 10 lasted less than a decade. The speed of collapse is humbling. What took months to build took weeks to destroy.\""
             }
           ]
+        },
+        "hist": {
+          "context": "Without tithes, the Levites abandoned the temple and returned to their fields. Without Levites, worship collapsed. The causal chain: Tobiah in the storeroom → no space for tithes → no tithes → no Levites → no worship. One compromise cascades."
         }
       }
     },
@@ -190,21 +198,22 @@
             "paragraph": "The Sabbath (šabbāt) is being violated: treading winepresses, loading donkeys, buying from Tyrian merchants. Nehemiah shuts the gates at sunset Friday and stations guards. He personally threatens the merchants: \"If you do this again, I will arrest you.\""
           }
         ],
-        "ctx": "The covenant of 10:31 promised Sabbath observance. Like the tithes, it has collapsed. Nehemiah’s enforcement is physical: gates shut, guards posted, merchants confronted. He does not merely teach Sabbath theology — he enforces Sabbath practice.",
-        "cross": [
-          {
-            "ref": "Neh 10:31",
-            "note": "The covenant promise: \"We will not buy from them on the Sabbath.\""
-          },
-          {
-            "ref": "Isa 58:13–14",
-            "note": "\"If you keep your feet from breaking the Sabbath\" — the prophetic ideal."
-          },
-          {
-            "ref": "Jer 17:19–27",
-            "note": "Jeremiah’s Sabbath gate warning — the prophetic precedent for Nehemiah’s action."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Neh 10:31",
+              "note": "The covenant promise: \"We will not buy from them on the Sabbath.\""
+            },
+            {
+              "ref": "Isa 58:13–14",
+              "note": "\"If you keep your feet from breaking the Sabbath\" — the prophetic ideal."
+            },
+            {
+              "ref": "Jer 17:19–27",
+              "note": "Jeremiah’s Sabbath gate warning — the prophetic precedent for Nehemiah’s action."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -269,6 +278,9 @@
               "note": "Kidner on threatening the merchants: \"Nehemiah is not subtle. His theology has fists. Sometimes the appropriate pastoral response is a threat.\""
             }
           ]
+        },
+        "hist": {
+          "context": "The covenant of 10:31 promised Sabbath observance. Like the tithes, it has collapsed. Nehemiah’s enforcement is physical: gates shut, guards posted, merchants confronted. He does not merely teach Sabbath theology — he enforces Sabbath practice."
         }
       }
     },
@@ -292,22 +304,26 @@
             "paragraph": "\"Remember me with favour, O my God\" (v.31). The fourth and final \"Remember me.\" The book’s last word is not triumph but prayer. Nehemiah’s closing is not \"I succeeded\" but \"God, remember.\""
           }
         ],
-        "hist": "Intermarriage has returned despite Ezra’s reform (Ezra 10). Half the children speak Ashdodite, not Hebrew. Language loss is identity loss. If the next generation cannot read Torah, the community dies from within.",
-        "ctx": "The book ends not with victory but with prayer. Four reforms, four collapses, four \"Remember me\" prayers. The open ending is the narrator’s final theological statement: human faithfulness is fragile; only God’s remembering endures. The book began with a prayer (1:5–11) and ends with one (13:31). Prayer brackets everything.",
-        "cross": [
-          {
-            "ref": "Ezra 9–10",
-            "note": "Ezra’s earlier reform on the same issue — now repeated."
-          },
-          {
-            "ref": "1 Kgs 11:1–8",
-            "note": "Solomon’s intermarriage — the case Nehemiah explicitly cites (v.26)."
-          },
-          {
-            "ref": "Mal 2:10–16",
-            "note": "Malachi addresses the same crisis from the prophetic angle."
-          }
-        ],
+        "hist": {
+          "historical": "Intermarriage has returned despite Ezra’s reform (Ezra 10). Half the children speak Ashdodite, not Hebrew. Language loss is identity loss. If the next generation cannot read Torah, the community dies from within.",
+          "context": "The book ends not with victory but with prayer. Four reforms, four collapses, four \"Remember me\" prayers. The open ending is the narrator’s final theological statement: human faithfulness is fragile; only God’s remembering endures. The book began with a prayer (1:5–11) and ends with one (13:31). Prayer brackets everything."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezra 9–10",
+              "note": "Ezra’s earlier reform on the same issue — now repeated."
+            },
+            {
+              "ref": "1 Kgs 11:1–8",
+              "note": "Solomon’s intermarriage — the case Nehemiah explicitly cites (v.26)."
+            },
+            {
+              "ref": "Mal 2:10–16",
+              "note": "Malachi addresses the same crisis from the prophetic angle."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

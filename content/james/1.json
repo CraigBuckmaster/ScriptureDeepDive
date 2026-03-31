@@ -37,21 +37,22 @@
             "paragraph": "The doubter is like a wave, driven and tossed. The double-minded person is divided in loyalty."
           }
         ],
-        "ctx": "James writes to Jewish Christians scattered throughout the diaspora. His opening moves immediately to the reality of trials. The logic is clear: trials produce endurance, endurance produces maturity.",
-        "cross": [
-          {
-            "ref": "Romans 5:3-5",
-            "note": "Paul makes the same connection: suffering produces endurance, endurance produces character."
-          },
-          {
-            "ref": "1 Peter 1:6-7",
-            "note": "Peter also connects trials to tested faith."
-          },
-          {
-            "ref": "Proverbs 2:6",
-            "note": "The LORD gives wisdom; from his mouth come knowledge and understanding."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Romans 5:3-5",
+              "note": "Paul makes the same connection: suffering produces endurance, endurance produces character."
+            },
+            {
+              "ref": "1 Peter 1:6-7",
+              "note": "Peter also connects trials to tested faith."
+            },
+            {
+              "ref": "Proverbs 2:6",
+              "note": "The LORD gives wisdom; from his mouth come knowledge and understanding."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -121,7 +122,10 @@
             }
           ]
         },
-        "hist": "James writes to 'the twelve tribes in the Dispersion' — Jewish Christians scattered throughout the Roman Empire after persecution in Jerusalem (Acts 8:1; 11:19). The letter reflects the earliest stage of Christianity when believers still gathered in synagogues (2:2, Greek synagōgē). James, the brother of Jesus, led the Jerusalem church (Acts 15; Gal 2:9) until his martyrdom in AD 62. His letter addresses practical concerns: economic disparity between rich and poor, the relationship between faith and works, and the power of the tongue. The wisdom tradition of Judaism pervades the letter, echoing Proverbs and Jesus' Sermon on the Mount. The agricultural imagery (1:11; 3:12; 5:7) and references to early and late rains reflect the Palestinian context."
+        "hist": {
+          "historical": "James writes to 'the twelve tribes in the Dispersion' — Jewish Christians scattered throughout the Roman Empire after persecution in Jerusalem (Acts 8:1; 11:19). The letter reflects the earliest stage of Christianity when believers still gathered in synagogues (2:2, Greek synagōgē). James, the brother of Jesus, led the Jerusalem church (Acts 15; Gal 2:9) until his martyrdom in AD 62. His letter addresses practical concerns: economic disparity between rich and poor, the relationship between faith and works, and the power of the tongue. The wisdom tradition of Judaism pervades the letter, echoing Proverbs and Jesus' Sermon on the Mount. The agricultural imagery (1:11; 3:12; 5:7) and references to early and late rains reflect the Palestinian context.",
+          "context": "James writes to Jewish Christians scattered throughout the diaspora. His opening moves immediately to the reality of trials. The logic is clear: trials produce endurance, endurance produces maturity."
+        }
       }
     },
     {
@@ -144,17 +148,18 @@
             "paragraph": "The rich will fade like a flower. The image echoes Isaiah 40:6-8."
           }
         ],
-        "ctx": "This brief section introduces James critique of wealth that will intensify throughout the letter. The poor brother boasts in exaltation; the rich brother boasts in humiliation.",
-        "cross": [
-          {
-            "ref": "Isaiah 40:6-8",
-            "note": "All flesh is grass. The grass withers, the flower fades."
-          },
-          {
-            "ref": "Luke 1:51-53",
-            "note": "Mary Magnificat: God exalts the humble, sends the rich away empty."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isaiah 40:6-8",
+              "note": "All flesh is grass. The grass withers, the flower fades."
+            },
+            {
+              "ref": "Luke 1:51-53",
+              "note": "Mary Magnificat: God exalts the humble, sends the rich away empty."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -203,6 +208,9 @@
               "note": "McCartney connects this to the OT prophetic tradition."
             }
           ]
+        },
+        "hist": {
+          "context": "This brief section introduces James critique of wealth that will intensify throughout the letter. The poor brother boasts in exaltation; the rich brother boasts in humiliation."
         }
       }
     },
@@ -232,21 +240,22 @@
             "paragraph": "He brought us forth by the word of truth, that we should be firstfruits of his creatures."
           }
         ],
-        "ctx": "James now addresses the source of temptation. God is not the author of evil; each person is tempted by their own desire. But God gives only good gifts.",
-        "cross": [
-          {
-            "ref": "Genesis 3:6",
-            "note": "Eve saw that the tree was good for food, desirable for wisdom."
-          },
-          {
-            "ref": "Romans 6:23",
-            "note": "The wages of sin is death."
-          },
-          {
-            "ref": "1 John 2:16",
-            "note": "The desires of the flesh, the desires of the eyes, and pride of life."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Genesis 3:6",
+              "note": "Eve saw that the tree was good for food, desirable for wisdom."
+            },
+            {
+              "ref": "Romans 6:23",
+              "note": "The wages of sin is death."
+            },
+            {
+              "ref": "1 John 2:16",
+              "note": "The desires of the flesh, the desires of the eyes, and pride of life."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -307,6 +316,9 @@
               "note": "McCartney notes the parallel with Genesis 3: desire leads to sin, sin to death."
             }
           ]
+        },
+        "hist": {
+          "context": "James now addresses the source of temptation. God is not the author of evil; each person is tempted by their own desire. But God gives only good gifts."
         }
       }
     },
@@ -336,21 +348,22 @@
             "paragraph": "Pure and undefiled religion is to visit orphans and widows and keep oneself unstained."
           }
         ],
-        "ctx": "Quick to hear, slow to speak, slow to anger. Be doers of the word, not hearers only. True religion is practical compassion and personal holiness.",
-        "cross": [
-          {
-            "ref": "Matthew 7:24-27",
-            "note": "Everyone who hears these words and does them is like a wise man."
-          },
-          {
-            "ref": "Romans 2:13",
-            "note": "It is not the hearers of the law who are righteous but the doers."
-          },
-          {
-            "ref": "Isaiah 1:17",
-            "note": "Learn to do good; seek justice, correct oppression."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matthew 7:24-27",
+              "note": "Everyone who hears these words and does them is like a wise man."
+            },
+            {
+              "ref": "Romans 2:13",
+              "note": "It is not the hearers of the law who are righteous but the doers."
+            },
+            {
+              "ref": "Isaiah 1:17",
+              "note": "Learn to do good; seek justice, correct oppression."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -411,6 +424,9 @@
               "note": "McCartney notes that James definition of religion is prophetic, not priestly."
             }
           ]
+        },
+        "hist": {
+          "context": "Quick to hear, slow to speak, slow to anger. Be doers of the word, not hearers only. True religion is practical compassion and personal holiness."
         }
       }
     }

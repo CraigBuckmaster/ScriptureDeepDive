@@ -31,21 +31,22 @@
             "paragraph": "The divine attribute of qin'ah (jealousy, zeal) is not a defect in God but a perfection — the passionate commitment of the covenant God to his people. A husband who is indifferent to his wife's infidelity does not love her. God's jealousy is the measure of his love."
           }
         ],
-        "ctx": "Chapter 4 is the theological summit of the historical prologue. Moses draws out the implications of what Israel has seen: at Baal Peor, those who followed other gods died; those who held fast to the LORD lived. The statutes are wise — other nations will marvel at a people whose God is so near. The Horeb theophany is recalled: Israel heard a voice but saw no form — the basis of the aniconic command. The chapter closes with three cities of refuge in Transjordan (vv.41–43) — mercy structures built before Israel even crosses the Jordan.",
-        "cross": [
-          {
-            "ref": "John 4:24",
-            "note": "\"God is spirit, and his worshipers must worship in the Spirit and in truth.\" Jesus' statement expands Deuteronomy 4's aniconic theology: the formless God is worshipped not through images but through Spirit-enabled response."
-          },
-          {
-            "ref": "Rom 1:23",
-            "note": "\"They exchanged the glory of the immortal God for images made to look like a mortal human being and birds and animals and reptiles.\" Paul's idolatry taxonomy in Romans 1 closely follows Deuteronomy 4:15–19's same categories."
-          },
-          {
-            "ref": "Acts 17:24–29",
-            "note": "\"The God who made the world... does not live in temples built by human hands... we should not think that the divine being is like gold or silver or stone.\" Paul's Areopagus argument is a Deuteronomy 4 address to pagans."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 4:24",
+              "note": "\"God is spirit, and his worshipers must worship in the Spirit and in truth.\" Jesus' statement expands Deuteronomy 4's aniconic theology: the formless God is worshipped not through images but through Spirit-enabled response."
+            },
+            {
+              "ref": "Rom 1:23",
+              "note": "\"They exchanged the glory of the immortal God for images made to look like a mortal human being and birds and animals and reptiles.\" Paul's idolatry taxonomy in Romans 1 closely follows Deuteronomy 4:15–19's same categories."
+            },
+            {
+              "ref": "Acts 17:24–29",
+              "note": "\"The God who made the world... does not live in temples built by human hands... we should not think that the divine being is like gold or silver or stone.\" Paul's Areopagus argument is a Deuteronomy 4 address to pagans."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 4 is the theological summit of the historical prologue. Moses draws out the implications of what Israel has seen: at Baal Peor, those who followed other gods died; those who held fast to the LORD lived. The statutes are wise — other nations will marvel at a people whose God is so near. The Horeb theophany is recalled: Israel heard a voice but saw no form — the basis of the aniconic command. The chapter closes with three cities of refuge in Transjordan (vv.41–43) — mercy structures built before Israel even crosses the Jordan."
         }
       }
     },
@@ -135,21 +139,22 @@
             "paragraph": "Miqlaṭ (refuge, asylum) — a place of protection from the blood avenger. The cities of refuge are mercy institutions built into the legal fabric of Israel. The principle: death without due process is not justice."
           }
         ],
-        "ctx": "Moses designates three cities of refuge east of the Jordan: Bezer in the plateau wilderness (for Reuben), Ramoth in Gilead (for Gad), and Golan in Bashan (for Manasseh). The legal principle is that the unintentional killer must not be executed before a proper hearing. Three more cities will be designated west of the Jordan after the conquest (19:1–9). The passage ends by re-establishing the setting for Moses' second and longest address.",
-        "cross": [
-          {
-            "ref": "Num 35:9–28",
-            "note": "\"Select some towns to be your cities of refuge.\" The Numbers legislation provides the full theological rationale that Deuteronomy 19 will elaborate — intentional vs. unintentional homicide and the role of the congregation."
-          },
-          {
-            "ref": "Heb 6:18",
-            "note": "\"We who have fled to take hold of the hope set before us may be greatly encouraged.\" Hebrews uses the cities of refuge as a typological backdrop for the safety found in Christ."
-          },
-          {
-            "ref": "Josh 20:1–9",
-            "note": "Joshua designates all six cities of refuge — three east, three west — fulfilling the Deuteronomic command precisely."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 35:9–28",
+              "note": "\"Select some towns to be your cities of refuge.\" The Numbers legislation provides the full theological rationale that Deuteronomy 19 will elaborate — intentional vs. unintentional homicide and the role of the congregation."
+            },
+            {
+              "ref": "Heb 6:18",
+              "note": "\"We who have fled to take hold of the hope set before us may be greatly encouraged.\" Hebrews uses the cities of refuge as a typological backdrop for the safety found in Christ."
+            },
+            {
+              "ref": "Josh 20:1–9",
+              "note": "Joshua designates all six cities of refuge — three east, three west — fulfilling the Deuteronomic command precisely."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -222,6 +227,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Moses designates three cities of refuge east of the Jordan: Bezer in the plateau wilderness (for Reuben), Ramoth in Gilead (for Gad), and Golan in Bashan (for Manasseh). The legal principle is that the unintentional killer must not be executed before a proper hearing. Three more cities will be designated west of the Jordan after the conquest (19:1–9). The passage ends by re-establishing the setting for Moses' second and longest address."
         }
       }
     }

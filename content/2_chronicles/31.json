@@ -17,21 +17,22 @@
       "verse_start": 1,
       "verse_end": 10,
       "panels": {
-        "ctx": "After the Passover, the people go out and destroy sacred stones, Asherah poles, and high places throughout Judah, Benjamin, Ephraim, and Manasseh. Hezekiah re-establishes the priestly and Levitical divisions “as David had ordered.” He commands the people to give contributions for the priests and Levites. They respond so generously that supplies pile up in heaps. “Since the people began to bring their contributions, we have had enough to eat and plenty to spare, because the LORD has blessed his people.”",
-        "cross": [
-          {
-            "ref": "2 Kgs 18:4",
-            "note": "Kings compresses the entire reform into one verse mentioning high places, sacred stones, Asherah poles, and the bronze serpent. Chronicles expands the aftermath into an institutional reorganisation of tithes and offerings."
-          },
-          {
-            "ref": "Num 18:21–32",
-            "note": "The restoration of Levitical tithes fulfils the Numbers regulations that Levites receive tithes in exchange for their temple service — the entire support system had apparently collapsed under Ahaz."
-          },
-          {
-            "ref": "Mal 3:10",
-            "note": "Malachi's later command to 'bring the whole tithe into the storehouse' assumes the system Hezekiah restored. The overflowing heaps of grain (v. 6–8) demonstrate the abundance that obedient giving produces."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 18:4",
+              "note": "Kings compresses the entire reform into one verse mentioning high places, sacred stones, Asherah poles, and the bronze serpent. Chronicles expands the aftermath into an institutional reorganisation of tithes and offerings."
+            },
+            {
+              "ref": "Num 18:21–32",
+              "note": "The restoration of Levitical tithes fulfils the Numbers regulations that Levites receive tithes in exchange for their temple service — the entire support system had apparently collapsed under Ahaz."
+            },
+            {
+              "ref": "Mal 3:10",
+              "note": "Malachi's later command to 'bring the whole tithe into the storehouse' assumes the system Hezekiah restored. The overflowing heaps of grain (v. 6–8) demonstrate the abundance that obedient giving produces."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -49,6 +50,9 @@
               "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events."
             }
           ]
+        },
+        "hist": {
+          "context": "After the Passover, the people go out and destroy sacred stones, Asherah poles, and high places throughout Judah, Benjamin, Ephraim, and Manasseh. Hezekiah re-establishes the priestly and Levitical divisions “as David had ordered.” He commands the people to give contributions for the priests and Levites. They respond so generously that supplies pile up in heaps. “Since the people began to bring their contributions, we have had enough to eat and plenty to spare, because the LORD has blessed his people.”"
         }
       }
     },
@@ -58,17 +62,18 @@
       "verse_start": 11,
       "verse_end": 21,
       "panels": {
-        "ctx": "Hezekiah orders storerooms prepared in the temple. Officials are appointed to manage the contributions. The Chronicler lists administrators by name. The chapter closes with the comprehensive verdict: “In everything that he undertook in the service of God’s temple and in obedience to the law and the commands, he sought his God and worked wholeheartedly. And so he prospered.” The seek/prosper formula at its purest.",
-        "cross": [
-          {
-            "ref": "Neh 12:44–47",
-            "note": "Nehemiah later restores a similar system of storerooms and Levitical administration, suggesting that Hezekiah's institutional reform became the template for post-exilic practice."
-          },
-          {
-            "ref": "1 Chr 26:20–28",
-            "note": "The treasurers over the storerooms echo David's original treasury appointments. Hezekiah's administration recovers the institutional infrastructure David designed and Ahaz had dismantled."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Neh 12:44–47",
+              "note": "Nehemiah later restores a similar system of storerooms and Levitical administration, suggesting that Hezekiah's institutional reform became the template for post-exilic practice."
+            },
+            {
+              "ref": "1 Chr 26:20–28",
+              "note": "The treasurers over the storerooms echo David's original treasury appointments. Hezekiah's administration recovers the institutional infrastructure David designed and Ahaz had dismantled."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -86,6 +91,9 @@
               "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events."
             }
           ]
+        },
+        "hist": {
+          "context": "Hezekiah orders storerooms prepared in the temple. Officials are appointed to manage the contributions. The Chronicler lists administrators by name. The chapter closes with the comprehensive verdict: “In everything that he undertook in the service of God’s temple and in obedience to the law and the commands, he sought his God and worked wholeheartedly. And so he prospered.” The seek/prosper formula at its purest."
         }
       }
     }

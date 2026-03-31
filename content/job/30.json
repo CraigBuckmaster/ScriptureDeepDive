@@ -25,17 +25,18 @@
             "paragraph": "\"But now (ʿattâ) they mock me, men younger than I\" (v.1). The contrast with chapter 29 is built on this word: \"now.\" Then: honour. Now: mockery. Then: respected elder. Now: laughingstock of outcasts. The temporal marker is a theological indictment: nothing in Job’s character changed; only his circumstances did."
           }
         ],
-        "ctx": "The contrast with chapter 29 is systematic. Then: young men stepped aside (29:8). Now: young men mock him (30:1). Then: chief men fell silent (29:9–10). Now: outcasts spit at him (30:10). Then: he chose their way (29:25). Now: terrors are turned against him (30:15). The reversal is total, and Job presents it as evidence that his suffering is disproportionate to any possible cause.",
-        "cross": [
-          {
-            "ref": "Lam 1:1",
-            "note": "\"How deserted lies the city, once so full of people!\" — the same contrast between former glory and present desolation."
-          },
-          {
-            "ref": "Ps 22:6–7",
-            "note": "\"I am a worm and not a man, scorned and despised\" — the Psalmist’s parallel experience of social rejection."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lam 1:1",
+              "note": "\"How deserted lies the city, once so full of people!\" — the same contrast between former glory and present desolation."
+            },
+            {
+              "ref": "Ps 22:6–7",
+              "note": "\"I am a worm and not a man, scorned and despised\" — the Psalmist’s parallel experience of social rejection."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Habel: Job presents evidence of damages. The contrast between chapters 29 and 30 quantifies the loss: from universal respect to universal contempt."
             }
           ]
+        },
+        "hist": {
+          "context": "The contrast with chapter 29 is systematic. Then: young men stepped aside (29:8). Now: young men mock him (30:1). Then: chief men fell silent (29:9–10). Now: outcasts spit at him (30:10). Then: he chose their way (29:25). Now: terrors are turned against him (30:15). The reversal is total, and Job presents it as evidence that his suffering is disproportionate to any possible cause."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "\"I have become a brother of jackals, a companion of owls\" (v.29). Job’s only companions are the animals of the wasteland. The jackals and ostriches inhabit the ruins; Job inhabits the ruins of his life. The animal imagery marks his exclusion from human community."
           }
         ],
-        "ctx": "Job’s lament reaches its absolute bottom. God has thrown him into the mud (v.19), his skin is blackened and peeling (v.30), his bones burn (v.30), his harp is tuned to mourning and his pipe to wailing (v.31). The chapter ends with music turned to dirge. This is the \"present\" panel of the triptych: past glory (29), present misery (30), future oath (31).",
-        "cross": [
-          {
-            "ref": "Ps 102:3–7",
-            "note": "\"My bones burn like glowing embers... I am like a desert owl, like an owl among the ruins\" — the identical animal-of-ruin imagery."
-          },
-          {
-            "ref": "Isa 34:13–14",
-            "note": "\"Jackals will occupy her palaces... desert creatures will meet with hyenas\" — desolation imagery applied to Edom."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 102:3–7",
+              "note": "\"My bones burn like glowing embers... I am like a desert owl, like an owl among the ruins\" — the identical animal-of-ruin imagery."
+            },
+            {
+              "ref": "Isa 34:13–14",
+              "note": "\"Jackals will occupy her palaces... desert creatures will meet with hyenas\" — desolation imagery applied to Edom."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -196,6 +201,9 @@
               "note": "Habel: Job presents the full extent of his suffering. The catalogue is comprehensive: physical (burning skin, fever), social (brother of jackals), emotional (mourning), and theological (God does not answer). The plaintiff’s damages are total."
             }
           ]
+        },
+        "hist": {
+          "context": "Job’s lament reaches its absolute bottom. God has thrown him into the mud (v.19), his skin is blackened and peeling (v.30), his bones burn (v.30), his harp is tuned to mourning and his pipe to wailing (v.31). The chapter ends with music turned to dirge. This is the \"present\" panel of the triptych: past glory (29), present misery (30), future oath (31)."
         }
       }
     }

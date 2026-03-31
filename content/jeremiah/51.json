@@ -25,17 +25,18 @@
             "paragraph": "\"I will stir up a destroying wind against Babylon and against the people of Leb Kamai\" (v.1). Leb Kamai is an atbash cipher for Kasdim (Chaldeans) -- the same encoding technique used for \"Sheshak\" (= Babel) in 25:26. The coded names may reflect the danger of openly proclaiming Babylon's doom while living under Babylonian rule."
           }
         ],
-        "ctx": "Chapter 51 continues and intensifies the Babylon oracle. The theological argument deepens: Babylon is guilty because she sinned against the Holy One of Israel (v.5), used gold cup of judgment to intoxicate the nations (v.7), and refused to be healed (v.9). The Medes are named as the instrument of Babylon's destruction (v.11) -- fulfilled when the Medo-Persian coalition under Cyrus conquered Babylon in 539 BC. The creation hymn (vv.15-19) -- identical to 10:12-16 -- anchors the judgment in creation theology.",
-        "cross": [
-          {
-            "ref": "Dan 5:25-28",
-            "note": "The handwriting on the wall: \"Mene, Mene, Tekel, Parsin\" -- Babylon weighed and found wanting."
-          },
-          {
-            "ref": "Rev 17:4",
-            "note": "\"The woman held a golden cup in her hand, filled with abominable things\" -- directly echoing Jeremiah 51:7."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Dan 5:25-28",
+              "note": "The handwriting on the wall: \"Mene, Mene, Tekel, Parsin\" -- Babylon weighed and found wanting."
+            },
+            {
+              "ref": "Rev 17:4",
+              "note": "\"The woman held a golden cup in her hand, filled with abominable things\" -- directly echoing Jeremiah 51:7."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -96,6 +97,9 @@
               "note": "Brueggemann reads \"flee from Babylon\" as the programmatic call of the entire exile tradition. The command extends beyond geography to theology: leave the imperial system, its values, its gods. Second Isaiah (Isa 48:20) and Revelation (18:4) repeat the same call."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 51 continues and intensifies the Babylon oracle. The theological argument deepens: Babylon is guilty because she sinned against the Holy One of Israel (v.5), used gold cup of judgment to intoxicate the nations (v.7), and refused to be healed (v.9). The Medes are named as the instrument of Babylon's destruction (v.11) -- fulfilled when the Medo-Persian coalition under Cyrus conquered Babylon in 539 BC. The creation hymn (vv.15-19) -- identical to 10:12-16 -- anchors the judgment in creation theology."
         }
       }
     },
@@ -113,17 +117,18 @@
             "paragraph": "Jeremiah writes all the words of Babylon's doom on a scroll (sepher, v.60) and gives it to Seraiah to read aloud in Babylon, then tie a stone to it and throw it into the Euphrates: \"So will Babylon sink to rise no more\" (v.64). This is the final sign-act of the book -- the written word of judgment sinking into the river as the city it condemns will sink into history."
           }
         ],
-        "ctx": "The oracle concludes with Zion's vindication (vv.34-40), cosmic imagery of Babylon's fall (vv.41-48), and the scroll sign-act (vv.59-64). Seraiah, Baruch's brother (v.59; cf. 32:12), carries the scroll to Babylon in the fourth year of Zedekiah (594 BC) -- the same year as the yoke episode (ch. 27). The sinking scroll is the last prophetic performance: the word of judgment literally goes down, taking Babylon with it. Verse 64b -- \"The words of Jeremiah end here\" -- is the colophon marking the end of the prophetic collection.",
-        "cross": [
-          {
-            "ref": "Rev 18:21",
-            "note": "\"A mighty angel picked up a boulder the size of a large millstone and threw it into the sea: 'With such violence the great city of Babylon will be thrown down.'\" Revelation directly imitates Jeremiah's sinking scroll."
-          },
-          {
-            "ref": "Isa 44:27-45:1",
-            "note": "Isaiah names Cyrus as the LORD's anointed who will conquer Babylon -- the parallel prophecy fulfilled in 539 BC."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rev 18:21",
+              "note": "\"A mighty angel picked up a boulder the size of a large millstone and threw it into the sea: 'With such violence the great city of Babylon will be thrown down.'\" Revelation directly imitates Jeremiah's sinking scroll."
+            },
+            {
+              "ref": "Isa 44:27-45:1",
+              "note": "Isaiah names Cyrus as the LORD's anointed who will conquer Babylon -- the parallel prophecy fulfilled in 539 BC."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -184,6 +189,9 @@
               "note": "Brueggemann reads the sinking scroll as \"the ultimate performative act.\" The word does not merely describe Babylon's fall -- it enacts it. The scroll in the river is Babylon in history: going down, not to rise again."
             }
           ]
+        },
+        "hist": {
+          "context": "The oracle concludes with Zion's vindication (vv.34-40), cosmic imagery of Babylon's fall (vv.41-48), and the scroll sign-act (vv.59-64). Seraiah, Baruch's brother (v.59; cf. 32:12), carries the scroll to Babylon in the fourth year of Zedekiah (594 BC) -- the same year as the yoke episode (ch. 27). The sinking scroll is the last prophetic performance: the word of judgment literally goes down, taking Babylon with it. Verse 64b -- \"The words of Jeremiah end here\" -- is the colophon marking the end of the prophetic collection."
         }
       }
     }

@@ -25,17 +25,18 @@
             "paragraph": "They \"cast lots\" (gōrāl) to bring one in ten to live in Jerusalem. The lot is not chance but divine appointment (Prov 16:33). Those who volunteered (hanniddəḇîm) beyond the lot were \"blessed\" by the people — voluntary sacrifice honoured."
           }
         ],
-        "ctx": "The wall is built (ch 6), the covenant sealed (ch 10), but Jerusalem is empty (7:4). The final step: populating the city. One in ten chosen by lot; others volunteer. The combination of compulsion and voluntarism shows practical wisdom — relying solely on volunteers would leave the city short.",
-        "cross": [
-          {
-            "ref": "Neh 7:4",
-            "note": "\"The city was large but there were few people in it\" — the problem this chapter solves."
-          },
-          {
-            "ref": "Prov 16:33",
-            "note": "\"The lot is cast into the lap, but its every decision is from the LORD.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Neh 7:4",
+              "note": "\"The city was large but there were few people in it\" — the problem this chapter solves."
+            },
+            {
+              "ref": "Prov 16:33",
+              "note": "\"The lot is cast into the lap, but its every decision is from the LORD.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -84,6 +85,9 @@
               "note": "Kidner: \"A tithe of persons. The principle is the same as the tithe of goods: the first portion belongs to God. Jerusalem is God’s city; it needs God’s people.\""
             }
           ]
+        },
+        "hist": {
+          "context": "The wall is built (ch 6), the covenant sealed (ch 10), but Jerusalem is empty (7:4). The final step: populating the city. One in ten chosen by lot; others volunteer. The combination of compulsion and voluntarism shows practical wisdom — relying solely on volunteers would leave the city short."
         }
       }
     },
@@ -101,14 +105,18 @@
             "paragraph": "The residents (yōšəḇê) are listed by tribal origin: Judah, Benjamin, priests, Levites, gatekeepers. The categories mirror Ezra 2 and Nehemiah 7 — the community consistently defines itself by these classifications."
           }
         ],
-        "hist": "The population list includes 468 Judahites, 928 Benjaminites, 1,192 priests, 284 Levites, and 172 gatekeepers — approximately 3,044 named personnel plus families. The total population of Jerusalem may have been 10,000–15,000. The outlying settlements (vv.25–36) show the restored community occupying a small fraction of pre-exilic Judah.",
-        "ctx": "The settlement list (vv.25–36) traces Judahite and Benjaminite villages from Beersheba to the Hinnom Valley. The geography defines the restored province: a small territory centered on Jerusalem, nothing like David’s kingdom. The community is modest in size but specific in identity.",
-        "cross": [
-          {
-            "ref": "Josh 15–19",
-            "note": "The original tribal allotments — the ancestral claim these settlers are reasserting."
-          }
-        ],
+        "hist": {
+          "historical": "The population list includes 468 Judahites, 928 Benjaminites, 1,192 priests, 284 Levites, and 172 gatekeepers — approximately 3,044 named personnel plus families. The total population of Jerusalem may have been 10,000–15,000. The outlying settlements (vv.25–36) show the restored community occupying a small fraction of pre-exilic Judah.",
+          "context": "The settlement list (vv.25–36) traces Judahite and Benjaminite villages from Beersheba to the Hinnom Valley. The geography defines the restored province: a small territory centered on Jerusalem, nothing like David’s kingdom. The community is modest in size but specific in identity."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 15–19",
+              "note": "The original tribal allotments — the ancestral claim these settlers are reasserting."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

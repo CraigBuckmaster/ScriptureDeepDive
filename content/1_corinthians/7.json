@@ -25,21 +25,22 @@
             "paragraph": "The noun charisma (gift) in v. 7 applies the language of spiritual gifts to marital status. Both marriage and celibacy are charismata — grace-gifts from God, not achievements or obligations. This framing prevents both the elevation of celibacy as inherently superior (an ascetic tendency) and the dismissal of singleness as deficient (a social convention). Paul thus relativises marital status: each person has received their own charisma from God."
           }
         ],
-        "ctx": "Paul now responds to questions raised in the Corinthians’ letter (‘now for the matters you wrote about,’ v. 1). The phrase peri de (‘now concerning’) marks a shift to a new topic and recurs at 7:25; 8:1; 12:1; 16:1, 12. The Corinthians’ statement ‘it is good for a man not to have sexual relations with a woman’ (v. 1b) is likely a slogan from an ascetic faction within the church, not Paul’s own view. Some Corinthians, perhaps influenced by Cynic or proto-Gnostic ideas about the body’s irrelevance, were apparently advocating abstinence within marriage. Paul’s response is nuanced: he values celibacy (v. 7) but insists that marriage involves mutual obligation (vv. 3–5) and that sexual abstinence within marriage must be temporary and consensual.",
-        "cross": [
-          {
-            "ref": "Gen 2:18–24",
-            "note": "The creation narrative establishes marriage as God’s provision for companionship and the one-flesh union that forms the background to Paul’s teaching."
-          },
-          {
-            "ref": "Matt 19:3–12",
-            "note": "Jesus’ teaching on marriage, divorce, and the call to celibacy for the sake of the kingdom provides the dominical context for Paul’s discussion."
-          },
-          {
-            "ref": "Mal 2:14–16",
-            "note": "The prophetic tradition treating marriage as a covenant parallels Paul’s emphasis on mutual obligation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 2:18–24",
+              "note": "The creation narrative establishes marriage as God’s provision for companionship and the one-flesh union that forms the background to Paul’s teaching."
+            },
+            {
+              "ref": "Matt 19:3–12",
+              "note": "Jesus’ teaching on marriage, divorce, and the call to celibacy for the sake of the kingdom provides the dominical context for Paul’s discussion."
+            },
+            {
+              "ref": "Mal 2:14–16",
+              "note": "The prophetic tradition treating marriage as a covenant parallels Paul’s emphasis on mutual obligation."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -112,6 +113,9 @@
               "note": "Thiselton draws attention to Paul’s hermeneutical self-awareness: the distinction between ‘the Lord, not I’ (v. 10) and ‘I, not the Lord’ (v. 12) shows Paul operating with a developed sense of the relationship between dominical tradition and apostolic authority."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul now responds to questions raised in the Corinthians’ letter (‘now for the matters you wrote about,’ v. 1). The phrase peri de (‘now concerning’) marks a shift to a new topic and recurs at 7:25; 8:1; 12:1; 16:1, 12. The Corinthians’ statement ‘it is good for a man not to have sexual relations with a woman’ (v. 1b) is likely a slogan from an ascetic faction within the church, not Paul’s own view. Some Corinthians, perhaps influenced by Cynic or proto-Gnostic ideas about the body’s irrelevance, were apparently advocating abstinence within marriage. Paul’s response is nuanced: he values celibacy (v. 7) but insists that marriage involves mutual obligation (vv. 3–5) and that sexual abstinence within marriage must be temporary and consensual."
         }
       }
     },
@@ -129,21 +133,22 @@
             "paragraph": "The noun klēsis (calling) in vv. 17–24 undergoes a distinctive semantic shift. In standard Pauline usage, klēsis refers to God’s saving call (cf. 1:26; Rom 11:29). Here Paul extends the concept: the social situation in which a person was called (married/unmarried, circumcised/uncircumcised, slave/free) becomes itself a legitimate sphere for living out the divine call. Klēsis thus bridges soteriology and social ethics: the circumstances of conversion are not obstacles to faithfulness but arenas for it."
           }
         ],
-        "ctx": "Paul articulates a general principle that governs not just marriage but all social circumstances: each person should remain in the situation they were in when God called them (v. 17). He applies this to circumcision (vv. 18–19) and slavery (vv. 21–23), then restates the principle (v. 24). The principle is not a blanket endorsement of the status quo but a theological statement that salvation in Christ does not require social revolution as a precondition for faithful living. In the context of the letter’s eschatological urgency (‘the time is short,’ v. 29), rearranging one’s social circumstances is less important than living faithfully within them.",
-        "cross": [
-          {
-            "ref": "Gal 3:28",
-            "note": "Paul’s declaration that in Christ there is neither Jew nor Gentile, slave nor free, male nor female provides the theological complement to the social realism of 1 Cor 7."
-          },
-          {
-            "ref": "Phlm 10–16",
-            "note": "Paul’s letter to Philemon addresses the concrete case of a slave (Onesimus), suggesting the social implications of the gospel without mandating social revolution."
-          },
-          {
-            "ref": "Col 3:22–4:1",
-            "note": "Paul’s household code addresses slaves and masters within the framework of serving Christ."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gal 3:28",
+              "note": "Paul’s declaration that in Christ there is neither Jew nor Gentile, slave nor free, male nor female provides the theological complement to the social realism of 1 Cor 7."
+            },
+            {
+              "ref": "Phlm 10–16",
+              "note": "Paul’s letter to Philemon addresses the concrete case of a slave (Onesimus), suggesting the social implications of the gospel without mandating social revolution."
+            },
+            {
+              "ref": "Col 3:22–4:1",
+              "note": "Paul’s household code addresses slaves and masters within the framework of serving Christ."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -208,6 +213,9 @@
               "note": "Thiselton surveys the extensive scholarly debate on v. 21 and concludes that the ambiguity is deliberate: Paul’s primary concern is not social policy but the theological truth that Christ’s purchase relativises all human claims to ownership."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul articulates a general principle that governs not just marriage but all social circumstances: each person should remain in the situation they were in when God called them (v. 17). He applies this to circumcision (vv. 18–19) and slavery (vv. 21–23), then restates the principle (v. 24). The principle is not a blanket endorsement of the status quo but a theological statement that salvation in Christ does not require social revolution as a precondition for faithful living. In the context of the letter’s eschatological urgency (‘the time is short,’ v. 29), rearranging one’s social circumstances is less important than living faithfully within them."
         }
       }
     },
@@ -225,21 +233,22 @@
             "paragraph": "The adjective amerimnos (free from anxiety) in v. 32 captures Paul’s primary pastoral motive for commending singleness. The unmarried person is able to be amerimnos — undistracted in devotion to the Lord. Paul is not opposing marriage but acknowledging that marriage inevitably introduces divided attention (merimnaō, ‘to be anxious/concerned,’ vv. 32–34). His goal is the Corinthians’ benefit (to hymōn autōn symphoron, v. 35), not to impose restrictions."
           }
         ],
-        "ctx": "Paul introduces another topic from the Corinthians’ letter with peri de (‘now about,’ v. 25): the question of virgins (parthenoi). The term may refer to unmarried women, betrothed women, or both. Paul acknowledges he has no direct command from the Lord (v. 25) but offers his judgment as one who is trustworthy (pistos) by the Lord’s mercy. His advice is shaped by ‘the present crisis’ (tēn enestōsan anankēn, v. 26), which may refer to an immediate famine or social upheaval, or more likely to the eschatological tribulation that Paul expected to intensify before Christ’s return. The compressed timeframe (‘the time is short,’ ho kairos synestalmenos estin, v. 29) relativises all earthly commitments.",
-        "cross": [
-          {
-            "ref": "Matt 24:19",
-            "note": "Jesus’ warning that ‘how dreadful it will be in those days for pregnant women and nursing mothers’ reflects the same eschatological urgency about family responsibilities during tribulation."
-          },
-          {
-            "ref": "1 Thess 4:13–18",
-            "note": "Paul’s teaching on the Lord’s return and the gathering of believers provides the eschatological framework for the urgency expressed here."
-          },
-          {
-            "ref": "Rom 13:11–14",
-            "note": "Paul’s call to ‘wake up from slumber’ because ‘the night is nearly over’ shares the temporal compression of 1 Cor 7:29–31."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 24:19",
+              "note": "Jesus’ warning that ‘how dreadful it will be in those days for pregnant women and nursing mothers’ reflects the same eschatological urgency about family responsibilities during tribulation."
+            },
+            {
+              "ref": "1 Thess 4:13–18",
+              "note": "Paul’s teaching on the Lord’s return and the gathering of believers provides the eschatological framework for the urgency expressed here."
+            },
+            {
+              "ref": "Rom 13:11–14",
+              "note": "Paul’s call to ‘wake up from slumber’ because ‘the night is nearly over’ shares the temporal compression of 1 Cor 7:29–31."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -308,6 +317,9 @@
               "note": "Thiselton notes that Paul’s concern for ‘undivided devotion’ (euparedron, v. 35) uses a term that in secular usage meant ‘sitting beside’ in attentive service. The image is of undistracted attendance on the Lord."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul introduces another topic from the Corinthians’ letter with peri de (‘now about,’ v. 25): the question of virgins (parthenoi). The term may refer to unmarried women, betrothed women, or both. Paul acknowledges he has no direct command from the Lord (v. 25) but offers his judgment as one who is trustworthy (pistos) by the Lord’s mercy. His advice is shaped by ‘the present crisis’ (tēn enestōsan anankēn, v. 26), which may refer to an immediate famine or social upheaval, or more likely to the eschatological tribulation that Paul expected to intensify before Christ’s return. The compressed timeframe (‘the time is short,’ ho kairos synestalmenos estin, v. 29) relativises all earthly commitments."
         }
       }
     },
@@ -325,21 +337,22 @@
             "paragraph": "The verb gamizō (to give in marriage) in vv. 36–38 is interpreted in three main ways: (1) a father deciding whether to give his virgin daughter in marriage; (2) a man deciding whether to marry his betrothed; (3) a ‘spiritual marriage’ (virgines subintroductae) where couples lived together in celibate partnership. Most modern scholars favour option (2), reading the passage as advice to a man about whether to marry his fiancée. The cultural context of arranged marriage in the Greco-Roman world makes option (1) plausible, but the personal language of vv. 36–37 suggests the man’s own decision."
           }
         ],
-        "ctx": "Paul concludes the chapter with two specific cases: the engaged couple (vv. 36–38) and the widow (vv. 39–40). Both receive the same nuanced counsel: marriage is fully acceptable, but remaining single is preferable given the eschatological circumstances. The widow is ‘free to marry anyone she wishes, but he must belong to the Lord’ (v. 39) — the earliest explicit NT instruction that remarriage must be to a believer. Paul closes by expressing his opinion that the widow is ‘happier’ if she stays as she is, and adds ‘I think that I too have the Spirit of God’ (v. 40) — a statement that is either gently ironic (understatement) or a defence of his apostolic authority against those who questioned it.",
-        "cross": [
-          {
-            "ref": "Rom 7:2–3",
-            "note": "Paul affirms that a woman is bound to her husband as long as he lives; after his death she is free to remarry."
-          },
-          {
-            "ref": "2 Cor 6:14",
-            "note": "The principle of not being ‘yoked together with unbelievers’ extends the requirement that the widow’s new husband ‘must belong to the Lord.’"
-          },
-          {
-            "ref": "1 Tim 5:14",
-            "note": "Paul later advises younger widows to remarry — a context-dependent instruction that does not contradict the preference for singleness stated here."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 7:2–3",
+              "note": "Paul affirms that a woman is bound to her husband as long as he lives; after his death she is free to remarry."
+            },
+            {
+              "ref": "2 Cor 6:14",
+              "note": "The principle of not being ‘yoked together with unbelievers’ extends the requirement that the widow’s new husband ‘must belong to the Lord.’"
+            },
+            {
+              "ref": "1 Tim 5:14",
+              "note": "Paul later advises younger widows to remarry — a context-dependent instruction that does not contradict the preference for singleness stated here."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -404,6 +417,9 @@
               "note": "Thiselton notes that ‘only in the Lord’ (monon en kyriō) functions as a christological constraint on freedom: the widow’s liberty to remarry is genuine but bounded by her primary allegiance to Christ."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul concludes the chapter with two specific cases: the engaged couple (vv. 36–38) and the widow (vv. 39–40). Both receive the same nuanced counsel: marriage is fully acceptable, but remaining single is preferable given the eschatological circumstances. The widow is ‘free to marry anyone she wishes, but he must belong to the Lord’ (v. 39) — the earliest explicit NT instruction that remarriage must be to a believer. Paul closes by expressing his opinion that the widow is ‘happier’ if she stays as she is, and adds ‘I think that I too have the Spirit of God’ (v. 40) — a statement that is either gently ironic (understatement) or a defence of his apostolic authority against those who questioned it."
         }
       }
     }
