@@ -10,11 +10,12 @@ import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { getScholar, getAllScholars } from '../db/content';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { getScholarColor, base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { Scholar, ScholarBio } from '../types';
 import { logger } from '../utils/logger';
 
 export default function ScholarBioScreen() {
+  const { base, getScholarColor } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ScholarBio'>>();
   const route = useRoute<ScreenRouteProp<'Explore', 'ScholarBio'>>();
   const { scholarId } = route.params ?? {};
@@ -39,7 +40,7 @@ export default function ScholarBioScreen() {
 
   if (!scholar) {
     return (
-      <View style={styles.loading}>
+      <View style={[styles.loading, { backgroundColor: base.bg }]}>
         <LoadingSkeleton lines={8} height={16} />
       </View>
     );
@@ -53,7 +54,7 @@ export default function ScholarBioScreen() {
   } catch (err) { logger.warn('ScholarBioScreen', 'Operation failed', err); }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       <ScrollView contentContainerStyle={styles.content}>
         <ScreenHeader
           title={scholar.name}
@@ -62,24 +63,24 @@ export default function ScholarBioScreen() {
           onBack={() => navigation.goBack()}
         />
         {bio?.eyebrow && (
-          <Text style={styles.eyebrow}>{bio.eyebrow}</Text>
+          <Text style={[styles.eyebrow, { color: base.textMuted }]}>{bio.eyebrow}</Text>
         )}
 
-        <View style={styles.divider} />
+        <View style={[styles.divider, { backgroundColor: base.border }]} />
 
         {/* Bio sections */}
         {bio?.sections?.map((section: ScholarBio['sections'][number], i: number) => (
           <View key={i} style={styles.section}>
-            <Text style={styles.sectionTitle}>{section.title}</Text>
-            <Text style={styles.sectionBody}>{section.body}</Text>
+            <Text style={[styles.sectionTitle, { color: base.gold }]}>{section.title}</Text>
+            <Text style={[styles.sectionBody, { color: base.textDim }]}>{section.body}</Text>
           </View>
         ))}
 
         {/* Appears In */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Appears In</Text>
+          <Text style={[styles.sectionTitle, { color: base.gold }]}>Appears In</Text>
           {typeof scope === 'string' ? (
-            <Text style={styles.scopeText}>{scope}</Text>
+            <Text style={[styles.scopeText, { color: base.textDim }]}>{scope}</Text>
           ) : (
             <View style={styles.scopeGrid}>
               {(scope as string[]).map((bookId) => (
@@ -96,7 +97,7 @@ export default function ScholarBioScreen() {
         </View>
 
         {/* Other Scholars */}
-        <Text style={styles.othersLabel}>OTHER SCHOLARS</Text>
+        <Text style={[styles.othersLabel, { color: base.textMuted }]}>OTHER SCHOLARS</Text>
         <View style={styles.othersGrid}>
           {otherScholars.map((s) => {
             const sColor = getScholarColor(s.id);
@@ -108,7 +109,7 @@ export default function ScholarBioScreen() {
               >
                 <Text style={[styles.otherName, { color: sColor }]}>{s.name}</Text>
                 {s.tradition && (
-                  <Text style={styles.otherTradition}>{s.tradition}</Text>
+                  <Text style={[styles.otherTradition, { color: base.textMuted }]}>{s.tradition}</Text>
                 )}
               </TouchableOpacity>
             );
@@ -122,44 +123,37 @@ export default function ScholarBioScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   loading: {
     flex: 1,
-    backgroundColor: base.bg,
     padding: spacing.lg,
   },
   content: {
     padding: spacing.md,
   },
   eyebrow: {
-    color: base.textMuted,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 13,
     marginTop: 4,
   },
   divider: {
     height: 1,
-    backgroundColor: base.border,
     marginVertical: spacing.md,
   },
   section: {
     marginBottom: spacing.lg,
   },
   sectionTitle: {
-    color: base.gold,
     fontFamily: fontFamily.displayMedium,
     fontSize: 13,
     marginBottom: spacing.sm,
   },
   sectionBody: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 15,
     lineHeight: 24,
   },
   scopeText: {
-    color: base.textDim,
     fontFamily: fontFamily.ui,
     fontSize: 14,
   },
@@ -179,7 +173,6 @@ const styles = StyleSheet.create({
     fontSize: 11,
   },
   othersLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.display,
     fontSize: 10,
     letterSpacing: 0.5,
@@ -201,7 +194,6 @@ const styles = StyleSheet.create({
     fontSize: 11,
   },
   otherTradition: {
-    color: base.textMuted,
     fontSize: 9,
   },
 });

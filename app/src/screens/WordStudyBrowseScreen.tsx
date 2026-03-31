@@ -11,10 +11,11 @@ import { useWordStudies } from '../hooks/useWordStudies';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { SearchInput } from '../components/SearchInput';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { logger } from '../utils/logger';
 
 export default function WordStudyBrowseScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'WordStudyBrowse'>>();
   const { studies, isLoading } = useWordStudies();
   const [langFilter, setLangFilter] = useState<'all' | 'hebrew' | 'greek'>('all');
@@ -36,14 +37,14 @@ export default function WordStudyBrowseScreen() {
 
   if (isLoading) {
     return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
         <View style={styles.loadingPad}><LoadingSkeleton lines={6} /></View>
       </SafeAreaView>
     );
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       <View style={styles.topSection}>
         <ScreenHeader
           title="Word Studies"
@@ -62,7 +63,12 @@ export default function WordStudyBrowseScreen() {
         <View style={styles.langRow}>
           {(['all', 'hebrew', 'greek'] as const).map((l) => (
             <TouchableOpacity key={l} onPress={() => setLangFilter(l)}>
-              <Text style={[styles.langLabel, langFilter === l && styles.langLabelActive]}>
+              <Text style={[
+                styles.langLabel,
+                { color: base.textMuted },
+                langFilter === l && { color: base.gold, borderBottomColor: base.gold },
+                langFilter === l && styles.langLabelActive,
+              ]}>
                 {l === 'all' ? 'All' : l.charAt(0).toUpperCase() + l.slice(1)}
               </Text>
             </TouchableOpacity>
@@ -82,16 +88,16 @@ export default function WordStudyBrowseScreen() {
           return (
             <TouchableOpacity
               onPress={() => navigation.navigate('WordStudyDetail', { wordId: w.id })}
-              style={styles.row}
+              style={[styles.row, { borderBottomColor: base.border + '40' }]}
               accessibilityLabel={`${w.transliteration}, ${w.language}`}
               accessibilityRole="button"
             >
               <View style={styles.wordRow}>
                 <Text style={[styles.original, { color: accentColor }]}>{w.original}</Text>
-                <Text style={styles.transliteration}>{w.transliteration}</Text>
+                <Text style={[styles.transliteration, { color: base.goldDim }]}>{w.transliteration}</Text>
               </View>
-              <Text style={styles.glosses}>{glosses}</Text>
-              {w.strongs && <Text style={styles.strongs}>Strong's: {w.strongs}</Text>}
+              <Text style={[styles.glosses, { color: base.gold }]}>{glosses}</Text>
+              {w.strongs && <Text style={[styles.strongs, { color: base.textMuted }]}>Strong's: {w.strongs}</Text>}
             </TouchableOpacity>
           );
         }}
@@ -103,7 +109,6 @@ export default function WordStudyBrowseScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   loadingPad: {
     padding: spacing.lg,
@@ -121,15 +126,12 @@ const styles = StyleSheet.create({
     marginBottom: spacing.md,
   },
   langLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.displayMedium,
     fontSize: 12,
     paddingBottom: 4,
   },
   langLabelActive: {
-    color: base.gold,
     borderBottomWidth: 2,
-    borderBottomColor: base.gold,
   },
   listContent: {
     paddingHorizontal: spacing.md,
@@ -137,7 +139,6 @@ const styles = StyleSheet.create({
   row: {
     paddingVertical: spacing.md,
     borderBottomWidth: 1,
-    borderBottomColor: base.border + '40',
   },
   wordRow: {
     flexDirection: 'row',
@@ -149,18 +150,15 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   transliteration: {
-    color: base.goldDim,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 13,
   },
   glosses: {
-    color: base.gold,
     fontFamily: fontFamily.bodySemiBold,
     fontSize: 13,
     marginTop: 2,
   },
   strongs: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 10,
     marginTop: 2,

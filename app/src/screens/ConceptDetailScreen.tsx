@@ -20,7 +20,7 @@ import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { ChevronLeft, BookOpen, Users, Scroll, Link2, MapPin } from 'lucide-react-native';
 import { useConceptData } from '../hooks/useConceptData';
 import ConceptJourney from '../components/ConceptJourney';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { ExploreStackParamList } from '../navigation/types';
 
@@ -28,6 +28,7 @@ type Nav = NativeStackNavigationProp<ExploreStackParamList, 'ConceptDetail'>;
 type Route = RouteProp<ExploreStackParamList, 'ConceptDetail'>;
 
 export default function ConceptDetailScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<Nav>();
   const route = useRoute<Route>();
   const { conceptId } = route.params;
@@ -48,7 +49,7 @@ export default function ConceptDetailScreen() {
 
   if (loading) {
     return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
         <View style={styles.center}>
           <ActivityIndicator color={base.gold} />
         </View>
@@ -58,48 +59,48 @@ export default function ConceptDetailScreen() {
 
   if (error || !concept) {
     return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
         <View style={styles.header}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <ChevronLeft size={24} color={base.gold} />
           </TouchableOpacity>
-          <Text style={styles.title}>Concept</Text>
+          <Text style={[styles.title, { color: base.gold }]}>Concept</Text>
           <View style={styles.headerSpacer} />
         </View>
         <View style={styles.center}>
-          <Text style={styles.errorText}>{error || 'Concept not found'}</Text>
+          <Text style={[styles.errorText, { color: base.textMuted }]}>{error || 'Concept not found'}</Text>
         </View>
       </SafeAreaView>
     );
   }
 
   return (
-    <SafeAreaView style={styles.container} edges={['top']}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]} edges={['top']}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()} hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}>
           <ChevronLeft size={24} color={base.gold} />
         </TouchableOpacity>
-        <Text style={styles.title} numberOfLines={1}>{concept.title}</Text>
+        <Text style={[styles.title, { color: base.gold }]} numberOfLines={1}>{concept.title}</Text>
         <View style={styles.headerSpacer} />
       </View>
 
       {/* Tab bar — only shown when journey data exists */}
       {hasJourney && (
-        <View style={styles.tabBar}>
+        <View style={[styles.tabBar, { backgroundColor: base.bgElevated }]}>
           <TouchableOpacity
-            style={[styles.tab, activeTab === 'overview' && styles.tabActive]}
+            style={[styles.tab, activeTab === 'overview' && [styles.tabActive, { backgroundColor: base.gold + '25' }]]}
             onPress={() => setActiveTab('overview')}
           >
-            <Text style={[styles.tabText, activeTab === 'overview' && styles.tabTextActive]}>
+            <Text style={[styles.tabText, { color: base.textMuted }, activeTab === 'overview' && { color: base.gold }]}>
               Overview
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={[styles.tab, activeTab === 'journey' && styles.tabActive]}
+            style={[styles.tab, activeTab === 'journey' && [styles.tabActive, { backgroundColor: base.gold + '25' }]]}
             onPress={() => setActiveTab('journey')}
           >
-            <Text style={[styles.tabText, activeTab === 'journey' && styles.tabTextActive]}>
+            <Text style={[styles.tabText, { color: base.textMuted }, activeTab === 'journey' && { color: base.gold }]}>
               Journey
             </Text>
           </TouchableOpacity>
@@ -120,8 +121,8 @@ export default function ConceptDetailScreen() {
       ) : (
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
         {/* Overview */}
-        <View style={styles.overviewCard}>
-          <Text style={styles.overviewText}>{concept.description}</Text>
+        <View style={[styles.overviewCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}>
+          <Text style={[styles.overviewText, { color: base.text }]}>{concept.description}</Text>
         </View>
 
         {/* Word Studies */}
@@ -129,19 +130,19 @@ export default function ConceptDetailScreen() {
           <View style={styles.section}>
             <View style={styles.sectionHeader}>
               <BookOpen size={16} color={base.gold} />
-              <Text style={styles.sectionTitle}>Word Studies</Text>
+              <Text style={[styles.sectionTitle, { color: base.gold }]}>Word Studies</Text>
             </View>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.hScroll}>
               {wordStudies.map((ws) => (
                 <TouchableOpacity
                   key={ws.id}
-                  style={styles.wordCard}
+                  style={[styles.wordCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
                   activeOpacity={0.7}
                   onPress={() => navigation.navigate('WordStudyDetail', { wordId: ws.id })}
                 >
-                  <Text style={styles.wordOriginal}>{ws.original}</Text>
-                  <Text style={styles.wordTranslit}>{ws.transliteration}</Text>
-                  <Text style={styles.wordGloss} numberOfLines={1}>
+                  <Text style={[styles.wordOriginal, { color: base.gold }]}>{ws.original}</Text>
+                  <Text style={[styles.wordTranslit, { color: base.text }]}>{ws.transliteration}</Text>
+                  <Text style={[styles.wordGloss, { color: base.textMuted }]} numberOfLines={1}>
                     {Array.isArray(ws.glosses) ? ws.glosses.join(', ') : ws.glosses}
                   </Text>
                 </TouchableOpacity>
@@ -155,20 +156,20 @@ export default function ConceptDetailScreen() {
           <View style={styles.section}>
             <View style={styles.sectionHeader}>
               <Scroll size={16} color={base.gold} />
-              <Text style={styles.sectionTitle}>Key Chapters</Text>
+              <Text style={[styles.sectionTitle, { color: base.gold }]}>Key Chapters</Text>
             </View>
             {topChapters.map((ch) => (
               <TouchableOpacity
                 key={ch.chapter_id}
-                style={styles.chapterRow}
+                style={[styles.chapterRow, { backgroundColor: base.bgElevated }]}
                 activeOpacity={0.7}
                 onPress={() => navigation.navigate('Chapter', { bookId: ch.book_dir, chapterNum: ch.chapter_num })}
               >
-                <Text style={styles.chapterText}>
+                <Text style={[styles.chapterText, { color: base.text }]}>
                   {ch.book_name} {ch.chapter_num}
                 </Text>
-                <View style={styles.scoreBadge}>
-                  <Text style={styles.scoreText}>{ch.score}</Text>
+                <View style={[styles.scoreBadge, { backgroundColor: base.gold + '20' }]}>
+                  <Text style={[styles.scoreText, { color: base.gold }]}>{ch.score}</Text>
                 </View>
               </TouchableOpacity>
             ))}
@@ -180,17 +181,17 @@ export default function ConceptDetailScreen() {
           <View style={styles.section}>
             <View style={styles.sectionHeader}>
               <Link2 size={16} color={base.gold} />
-              <Text style={styles.sectionTitle}>Prophecy Chains</Text>
+              <Text style={[styles.sectionTitle, { color: base.gold }]}>Prophecy Chains</Text>
             </View>
             {prophecyChains.map((pc) => (
               <TouchableOpacity
                 key={pc.id}
-                style={styles.chainCard}
+                style={[styles.chainCard, { backgroundColor: base.bgElevated }]}
                 activeOpacity={0.7}
                 onPress={() => navigation.navigate('ProphecyDetail', { chainId: pc.id })}
               >
-                <Text style={styles.chainTitle}>{pc.title}</Text>
-                <Text style={styles.chainSummary} numberOfLines={2}>{pc.summary}</Text>
+                <Text style={[styles.chainTitle, { color: base.text }]}>{pc.title}</Text>
+                <Text style={[styles.chainSummary, { color: base.textMuted }]} numberOfLines={2}>{pc.summary}</Text>
               </TouchableOpacity>
             ))}
           </View>
@@ -201,18 +202,18 @@ export default function ConceptDetailScreen() {
           <View style={styles.section}>
             <View style={styles.sectionHeader}>
               <MapPin size={16} color={base.gold} />
-              <Text style={styles.sectionTitle}>Cross-Reference Threads</Text>
+              <Text style={[styles.sectionTitle, { color: base.gold }]}>Cross-Reference Threads</Text>
             </View>
             {threads.map((t) => {
               const tags = JSON.parse(t.tags_json || '[]');
               return (
-                <View key={t.id} style={styles.threadCard}>
-                  <Text style={styles.threadTheme}>{t.theme}</Text>
+                <View key={t.id} style={[styles.threadCard, { backgroundColor: base.bgElevated }]}>
+                  <Text style={[styles.threadTheme, { color: base.text }]}>{t.theme}</Text>
                   {tags.length > 0 && (
                     <View style={styles.threadTags}>
                       {tags.slice(0, 4).map((tag: string) => (
-                        <View key={tag} style={styles.threadTag}>
-                          <Text style={styles.threadTagText}>{tag}</Text>
+                        <View key={tag} style={[styles.threadTag, { backgroundColor: base.gold + '15' }]}>
+                          <Text style={[styles.threadTagText, { color: base.gold }]}>{tag}</Text>
                         </View>
                       ))}
                     </View>
@@ -228,18 +229,18 @@ export default function ConceptDetailScreen() {
           <View style={styles.section}>
             <View style={styles.sectionHeader}>
               <Users size={16} color={base.gold} />
-              <Text style={styles.sectionTitle}>Key Figures</Text>
+              <Text style={[styles.sectionTitle, { color: base.gold }]}>Key Figures</Text>
             </View>
             <View style={styles.peopleGrid}>
               {people.map((p) => (
                 <TouchableOpacity
                   key={p.id}
-                  style={styles.personCard}
+                  style={[styles.personCard, { backgroundColor: base.bgElevated }]}
                   activeOpacity={0.7}
                   onPress={() => navigation.navigate('PersonDetail', { personId: p.id })}
                 >
-                  <Text style={styles.personName}>{p.name}</Text>
-                  {p.role && <Text style={styles.personRole} numberOfLines={1}>{p.role}</Text>}
+                  <Text style={[styles.personName, { color: base.text }]}>{p.name}</Text>
+                  {p.role && <Text style={[styles.personRole, { color: base.textMuted }]} numberOfLines={1}>{p.role}</Text>}
                 </TouchableOpacity>
               ))}
             </View>
@@ -250,8 +251,8 @@ export default function ConceptDetailScreen() {
         {concept.tags.length > 0 && (
           <View style={styles.tagsSection}>
             {concept.tags.map((tag) => (
-              <View key={tag} style={styles.conceptTag}>
-                <Text style={styles.conceptTagText}>{tag}</Text>
+              <View key={tag} style={[styles.conceptTag, { backgroundColor: base.gold + '15' }]}>
+                <Text style={[styles.conceptTagText, { color: base.gold }]}>{tag}</Text>
               </View>
             ))}
           </View>
@@ -267,7 +268,6 @@ export default function ConceptDetailScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   header: {
     flexDirection: 'row',
@@ -278,7 +278,6 @@ const styles = StyleSheet.create({
   },
   title: {
     flex: 1,
-    color: base.gold,
     fontFamily: fontFamily.displaySemiBold,
     fontSize: 18,
     textAlign: 'center',
@@ -293,7 +292,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   errorText: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 14,
   },
@@ -306,7 +304,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginHorizontal: spacing.md,
     marginBottom: spacing.sm,
-    backgroundColor: base.bgElevated,
     borderRadius: radii.md,
     padding: 2,
   },
@@ -317,15 +314,10 @@ const styles = StyleSheet.create({
     borderRadius: radii.sm + 2,
   },
   tabActive: {
-    backgroundColor: base.gold + '25',
   },
   tabText: {
-    color: base.textMuted,
     fontFamily: fontFamily.uiMedium,
     fontSize: 13,
-  },
-  tabTextActive: {
-    color: base.gold,
   },
   bottomSpacer: {
     height: spacing.xxl,
@@ -333,15 +325,12 @@ const styles = StyleSheet.create({
 
   // Overview
   overviewCard: {
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.gold + '30',
     borderRadius: radii.lg,
     padding: spacing.md,
     marginBottom: spacing.lg,
   },
   overviewText: {
-    color: base.text,
     fontFamily: fontFamily.ui,
     fontSize: 14,
     lineHeight: 22,
@@ -358,7 +347,6 @@ const styles = StyleSheet.create({
     marginBottom: spacing.sm,
   },
   sectionTitle: {
-    color: base.gold,
     fontFamily: fontFamily.displayMedium,
     fontSize: 14,
   },
@@ -369,28 +357,23 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md,
   },
   wordCard: {
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.gold + '20',
     borderRadius: radii.md,
     padding: spacing.sm,
     marginRight: spacing.sm,
     width: 120,
   },
   wordOriginal: {
-    color: base.gold,
     fontFamily: fontFamily.displayMedium,
     fontSize: 18,
     marginBottom: 2,
   },
   wordTranslit: {
-    color: base.text,
     fontFamily: fontFamily.ui,
     fontSize: 12,
     fontStyle: 'italic',
   },
   wordGloss: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 11,
     marginTop: spacing.xs,
@@ -401,56 +384,47 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: base.bgElevated,
     borderRadius: radii.md,
     padding: spacing.sm,
     marginBottom: spacing.xs,
   },
   chapterText: {
-    color: base.text,
     fontFamily: fontFamily.ui,
     fontSize: 14,
   },
   scoreBadge: {
-    backgroundColor: base.gold + '20',
     paddingHorizontal: spacing.xs + 2,
     paddingVertical: 2,
     borderRadius: radii.sm,
   },
   scoreText: {
-    color: base.gold,
     fontFamily: fontFamily.displayMedium,
     fontSize: 12,
   },
 
   // Prophecy Chains
   chainCard: {
-    backgroundColor: base.bgElevated,
     borderRadius: radii.md,
     padding: spacing.sm,
     marginBottom: spacing.xs,
   },
   chainTitle: {
-    color: base.text,
     fontFamily: fontFamily.displayMedium,
     fontSize: 14,
     marginBottom: 2,
   },
   chainSummary: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 12,
   },
 
   // Threads
   threadCard: {
-    backgroundColor: base.bgElevated,
     borderRadius: radii.md,
     padding: spacing.sm,
     marginBottom: spacing.xs,
   },
   threadTheme: {
-    color: base.text,
     fontFamily: fontFamily.displayMedium,
     fontSize: 14,
   },
@@ -461,13 +435,11 @@ const styles = StyleSheet.create({
     marginTop: spacing.xs,
   },
   threadTag: {
-    backgroundColor: base.gold + '15',
     paddingHorizontal: spacing.xs,
     paddingVertical: 1,
     borderRadius: radii.sm,
   },
   threadTagText: {
-    color: base.gold,
     fontFamily: fontFamily.ui,
     fontSize: 10,
   },
@@ -479,19 +451,16 @@ const styles = StyleSheet.create({
     gap: spacing.xs,
   },
   personCard: {
-    backgroundColor: base.bgElevated,
     borderRadius: radii.md,
     padding: spacing.sm,
     minWidth: '48%',
     flex: 1,
   },
   personName: {
-    color: base.text,
     fontFamily: fontFamily.displayMedium,
     fontSize: 13,
   },
   personRole: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 11,
     marginTop: 2,
@@ -505,13 +474,11 @@ const styles = StyleSheet.create({
     marginTop: spacing.sm,
   },
   conceptTag: {
-    backgroundColor: base.gold + '15',
     paddingHorizontal: spacing.sm,
     paddingVertical: spacing.xs,
     borderRadius: radii.md,
   },
   conceptTagText: {
-    color: base.gold,
     fontFamily: fontFamily.ui,
     fontSize: 12,
   },

@@ -21,7 +21,7 @@ import { useProphecyChainDetail } from '../hooks/useProphecyChains';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { BadgeChip } from '../components/BadgeChip';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { ProphecyChainLink } from '../types';
 import { logger } from '../utils/logger';
 
@@ -90,6 +90,7 @@ function formatLinkRef(link: ProphecyChainLink): string {
 }
 
 export default function ProphecyDetailScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ProphecyDetail'>>();
   const route = useRoute<ScreenRouteProp<'Explore', 'ProphecyDetail'>>();
   const { chainId } = route.params ?? {};
@@ -110,7 +111,7 @@ export default function ProphecyDetailScreen() {
 
   if (isLoading || !chain) {
     return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
         <View style={styles.loadingPad}>
           <LoadingSkeleton lines={8} />
         </View>
@@ -124,7 +125,7 @@ export default function ProphecyDetailScreen() {
   const typeLabel = TYPE_LABELS[chain.chain_type] || chain.chain_type;
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       <ScrollView contentContainerStyle={styles.content}>
         <ScreenHeader
           title="Prophecy Chain"
@@ -134,7 +135,7 @@ export default function ProphecyDetailScreen() {
         />
 
         {/* Title and badges */}
-        <Text style={styles.chainTitle}>{chain.title}</Text>
+        <Text style={[styles.chainTitle, { color: base.text }]}>{chain.title}</Text>
         <View style={styles.badgeRow}>
           <BadgeChip label={chain.category} color={categoryColor} />
           <BadgeChip label={typeLabel} color={base.textMuted} />
@@ -142,8 +143,8 @@ export default function ProphecyDetailScreen() {
 
         {/* Summary callout */}
         {chain.summary && (
-          <View style={styles.summaryBox}>
-            <Text style={styles.summaryText}>{chain.summary}</Text>
+          <View style={[styles.summaryBox, { backgroundColor: base.bgElevated, borderLeftColor: base.gold }]}>
+            <Text style={[styles.summaryText, { color: base.textDim }]}>{chain.summary}</Text>
           </View>
         )}
 
@@ -151,14 +152,14 @@ export default function ProphecyDetailScreen() {
         {tags.length > 0 && (
           <View style={styles.tagRow}>
             {tags.map((tag, i) => (
-              <Text key={i} style={styles.tag}>#{tag}</Text>
+              <Text key={i} style={[styles.tag, { color: base.goldDim }]}>#{tag}</Text>
             ))}
           </View>
         )}
 
         {/* Timeline rail */}
         <View style={styles.railSection}>
-          <Text style={styles.sectionLabel}>FULFILLMENT CHAIN</Text>
+          <Text style={[styles.sectionLabel, { color: base.gold }]}>FULFILLMENT CHAIN</Text>
           <View style={styles.rail}>
             {links.map((link, idx) => {
               const isOT = OT_BOOKS.has(link.book_dir);
@@ -171,13 +172,13 @@ export default function ProphecyDetailScreen() {
               return (
                 <View key={idx} style={styles.railItem}>
                   {/* Vertical line connector */}
-                  {!isLast && <View style={styles.railLine} />}
+                  {!isLast && <View style={[styles.railLine, { backgroundColor: base.border }]} />}
 
                   {/* Dot */}
                   <View style={[styles.railDot, { backgroundColor: dotColor }]} />
 
                   {/* Card */}
-                  <View style={styles.railCard}>
+                  <View style={[styles.railCard, { backgroundColor: base.bgElevated, borderColor: base.border + '40' }]}>
                     <View style={styles.railCardHeader}>
                       <TouchableOpacity onPress={() => handleVersePress(link)}>
                         <Text style={[styles.verseRef, { color: dotColor }]}>
@@ -191,10 +192,10 @@ export default function ProphecyDetailScreen() {
                       )}
                     </View>
                     {link.label && (
-                      <Text style={styles.linkLabel}>{link.label}</Text>
+                      <Text style={[styles.linkLabel, { color: base.text }]}>{link.label}</Text>
                     )}
                     {displaySummary && (
-                      <Text style={styles.linkSummary}>{displaySummary}</Text>
+                      <Text style={[styles.linkSummary, { color: base.textDim }]}>{displaySummary}</Text>
                     )}
                   </View>
                 </View>
@@ -210,7 +211,6 @@ export default function ProphecyDetailScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   loadingPad: {
     flex: 1,
@@ -224,7 +224,6 @@ const styles = StyleSheet.create({
     marginBottom: spacing.sm,
   },
   chainTitle: {
-    color: base.text,
     fontFamily: fontFamily.displaySemiBold,
     fontSize: 22,
     marginBottom: spacing.sm,
@@ -235,15 +234,12 @@ const styles = StyleSheet.create({
     marginBottom: spacing.md,
   },
   summaryBox: {
-    backgroundColor: base.bgElevated,
     borderLeftWidth: 3,
-    borderLeftColor: base.gold,
     borderRadius: radii.sm,
     padding: spacing.md,
     marginBottom: spacing.md,
   },
   summaryText: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 14,
     lineHeight: 22,
@@ -255,7 +251,6 @@ const styles = StyleSheet.create({
     marginBottom: spacing.md,
   },
   tag: {
-    color: base.goldDim,
     fontFamily: fontFamily.ui,
     fontSize: 11,
   },
@@ -263,7 +258,6 @@ const styles = StyleSheet.create({
     marginTop: spacing.sm,
   },
   sectionLabel: {
-    color: base.gold,
     fontFamily: fontFamily.display,
     fontSize: 11,
     letterSpacing: 0.4,
@@ -284,7 +278,6 @@ const styles = StyleSheet.create({
     top: 14,
     bottom: -spacing.md,
     width: 2,
-    backgroundColor: base.border,
   },
   railDot: {
     width: 12,
@@ -295,11 +288,9 @@ const styles = StyleSheet.create({
   },
   railCard: {
     flex: 1,
-    backgroundColor: base.bgElevated,
     borderRadius: radii.sm,
     padding: spacing.sm,
     borderWidth: 1,
-    borderColor: base.border + '40',
   },
   railCardHeader: {
     flexDirection: 'row',
@@ -317,13 +308,11 @@ const styles = StyleSheet.create({
     letterSpacing: 0.3,
   },
   linkLabel: {
-    color: base.text,
     fontFamily: fontFamily.bodySemiBold,
     fontSize: 13,
     marginBottom: 2,
   },
   linkSummary: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 12,
     lineHeight: 18,

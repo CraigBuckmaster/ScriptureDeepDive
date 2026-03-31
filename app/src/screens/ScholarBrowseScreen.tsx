@@ -11,10 +11,11 @@ import { useScholars } from '../hooks/useScholars';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { SearchInput } from '../components/SearchInput';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { getScholarColor, base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { logger } from '../utils/logger';
 
 export default function ScholarBrowseScreen() {
+  const { base, getScholarColor } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ScholarBrowse'>>();
   const { scholars, isLoading } = useScholars();
   const [search, setSearch] = useState('');
@@ -49,14 +50,14 @@ export default function ScholarBrowseScreen() {
 
   if (isLoading) {
     return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
         <View style={styles.loadingPad}><LoadingSkeleton lines={6} /></View>
       </SafeAreaView>
     );
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       <View style={styles.topSection}>
         <ScreenHeader
           title="Scholars"
@@ -76,7 +77,12 @@ export default function ScholarBrowseScreen() {
           contentContainerStyle={styles.filterRow}>
           {traditions.map((t) => (
             <TouchableOpacity key={t} onPress={() => setTradition(t)}>
-              <Text style={[styles.filterLabel, tradition === t && styles.filterLabelActive]}>
+              <Text style={[
+                styles.filterLabel,
+                { color: base.textMuted },
+                tradition === t && { color: base.gold, borderBottomColor: base.gold },
+                tradition === t && styles.filterLabelActive,
+              ]}>
                 {t === 'all' ? 'All' : t}
               </Text>
             </TouchableOpacity>
@@ -106,8 +112,8 @@ export default function ScholarBrowseScreen() {
               accessibilityRole="button"
             >
               <Text style={[styles.cardName, { color }]}>{s.name}</Text>
-              {s.tradition && <Text style={styles.cardTradition}>{s.tradition}</Text>}
-              <Text style={styles.cardScope}>{scope}</Text>
+              {s.tradition && <Text style={[styles.cardTradition, { color: base.textMuted }]}>{s.tradition}</Text>}
+              <Text style={[styles.cardScope, { color: base.textDim }]}>{scope}</Text>
             </TouchableOpacity>
           );
         }}
@@ -119,7 +125,6 @@ export default function ScholarBrowseScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   loadingPad: {
     padding: spacing.lg,
@@ -136,16 +141,13 @@ const styles = StyleSheet.create({
     marginBottom: spacing.md,
   },
   filterLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.uiMedium,
     fontSize: 11,
     paddingBottom: 4,
     paddingHorizontal: 4,
   },
   filterLabelActive: {
-    color: base.gold,
     borderBottomWidth: 2,
-    borderBottomColor: base.gold,
   },
   gridContent: {
     paddingHorizontal: spacing.md,
@@ -165,13 +167,11 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   cardTradition: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 10,
     marginTop: 2,
   },
   cardScope: {
-    color: base.textDim,
     fontFamily: fontFamily.ui,
     fontSize: 10,
     marginTop: 2,

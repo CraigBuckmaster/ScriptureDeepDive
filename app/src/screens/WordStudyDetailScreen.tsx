@@ -11,11 +11,12 @@ import { getWordStudy } from '../db/content';
 import { BadgeChip } from '../components/BadgeChip';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { base, spacing, fontFamily } from '../theme';
+import { useTheme, spacing, fontFamily } from '../theme';
 import type { WordStudy } from '../types';
 import { logger } from '../utils/logger';
 
 export default function WordStudyDetailScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'WordStudyDetail'>>();
   const route = useRoute<ScreenRouteProp<'Explore', 'WordStudyDetail'>>();
   const { wordId } = route.params ?? {};
@@ -27,7 +28,7 @@ export default function WordStudyDetailScreen() {
 
   if (!word) {
     return (
-      <View style={styles.loading}>
+      <View style={[styles.loading, { backgroundColor: base.bg }]}>
         <LoadingSkeleton lines={6} height={16} />
       </View>
     );
@@ -47,7 +48,7 @@ export default function WordStudyDetailScreen() {
   } catch (err) { logger.warn('WordStudyDetailScreen', 'Operation failed', err); }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       <ScrollView contentContainerStyle={styles.content}>
         <ScreenHeader
           title="Word Study"
@@ -58,15 +59,15 @@ export default function WordStudyDetailScreen() {
 
         {/* Original word */}
         <Text style={[styles.original, { color: accentColor }]}>{word.original}</Text>
-        <Text style={styles.transliteration}>{word.transliteration}</Text>
+        <Text style={[styles.transliteration, { color: base.goldDim }]}>{word.transliteration}</Text>
         {word.strongs && (
-          <Text style={styles.strongs}>Strong's: {word.strongs}</Text>
+          <Text style={[styles.strongs, { color: base.textMuted }]}>Strong's: {word.strongs}</Text>
         )}
 
         {/* Glosses */}
         {glosses.length > 0 && (
           <View style={styles.section}>
-            <Text style={styles.sectionLabel}>GLOSSES</Text>
+            <Text style={[styles.sectionLabel, { color: base.gold }]}>GLOSSES</Text>
             <View style={styles.chipRow}>
               {glosses.map((g, i) => <BadgeChip key={i} label={g} color={accentColor} />)}
             </View>
@@ -76,30 +77,30 @@ export default function WordStudyDetailScreen() {
         {/* Semantic range */}
         {word.semantic_range && (
           <View style={styles.section}>
-            <Text style={styles.sectionLabel}>SEMANTIC RANGE</Text>
-            <Text style={styles.bodyText}>{word.semantic_range}</Text>
+            <Text style={[styles.sectionLabel, { color: base.gold }]}>SEMANTIC RANGE</Text>
+            <Text style={[styles.bodyText, { color: base.textDim }]}>{word.semantic_range}</Text>
           </View>
         )}
 
         {/* Note */}
         {word.note && (
           <View style={styles.section}>
-            <Text style={styles.sectionLabel}>THEOLOGICAL NOTE</Text>
-            <Text style={styles.bodyText}>{word.note}</Text>
+            <Text style={[styles.sectionLabel, { color: base.gold }]}>THEOLOGICAL NOTE</Text>
+            <Text style={[styles.bodyText, { color: base.textDim }]}>{word.note}</Text>
           </View>
         )}
 
         {/* Occurrences */}
         {occurrences.length > 0 && (
           <View style={styles.section}>
-            <Text style={styles.sectionLabel}>KEY OCCURRENCES</Text>
+            <Text style={[styles.sectionLabel, { color: base.gold }]}>KEY OCCURRENCES</Text>
             {occurrences.map((occ, i) => (
-              <View key={i} style={styles.occurrenceRow}>
+              <View key={i} style={[styles.occurrenceRow, { borderBottomColor: base.textMuted + '22' }]}>
                 <View style={styles.occurrenceHeader}>
                   <BadgeChip label={occ.ref} color={base.textMuted} />
-                  {occ.gloss ? <Text style={styles.occurrenceGloss}>{occ.gloss}</Text> : null}
+                  {occ.gloss ? <Text style={[styles.occurrenceGloss, { color: base.goldDim }]}>{occ.gloss}</Text> : null}
                 </View>
-                {occ.ctx ? <Text style={styles.occurrenceCtx}>{occ.ctx}</Text> : null}
+                {occ.ctx ? <Text style={[styles.occurrenceCtx, { color: base.textDim }]}>{occ.ctx}</Text> : null}
               </View>
             ))}
           </View>
@@ -112,11 +113,9 @@ export default function WordStudyDetailScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   loading: {
     flex: 1,
-    backgroundColor: base.bg,
     padding: spacing.lg,
   },
   content: {
@@ -131,14 +130,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   transliteration: {
-    color: base.goldDim,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 16,
     textAlign: 'center',
     marginTop: 4,
   },
   strongs: {
-    color: base.textMuted,
     fontSize: 12,
     textAlign: 'center',
     marginTop: 4,
@@ -147,7 +144,6 @@ const styles = StyleSheet.create({
     marginTop: spacing.lg,
   },
   sectionLabel: {
-    color: base.gold,
     fontFamily: fontFamily.display,
     fontSize: 11,
     letterSpacing: 0.4,
@@ -159,7 +155,6 @@ const styles = StyleSheet.create({
     marginTop: spacing.xs,
   },
   bodyText: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 15,
     lineHeight: 24,
@@ -169,7 +164,6 @@ const styles = StyleSheet.create({
     marginTop: spacing.sm,
     paddingVertical: spacing.xs,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: base.textMuted + '22',
   },
   occurrenceHeader: {
     flexDirection: 'row',
@@ -177,12 +171,10 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   occurrenceGloss: {
-    color: base.goldDim,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 14,
   },
   occurrenceCtx: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 13,
     lineHeight: 20,
