@@ -46,6 +46,17 @@ This plan is **purely additive**. Every existing feature on the chapter page is 
 3. **Phase 0 (chapter categorization) only adds category label headers** between existing buttons. Same buttons, same order, same behavior.
 4. **No component is deleted, renamed, or restructured** unless explicitly stated in a phase's "Files to modify" table.
 
+### Theme system awareness
+
+A separate Theme System (Dark / Sepia / Light) is planned — see `_tools/THEME_PLAN.md`. All new components created in these phases must follow whichever color convention is active at build time:
+
+- **If theme infrastructure has shipped (Batch T1):** Use `const { base } = useTheme()` for all color references. Never import `base` directly from `theme/colors`.
+- **If theme infrastructure has NOT shipped yet:** Use `import { base } from '../theme'` as normal. These files will be migrated later during the theme rollout.
+
+**Style convention (applies regardless of theme status):** Use `StyleSheet.create()` for layout (dimensions, padding, flex, border radii). Apply colors dynamically via array syntax: `[styles.card, { backgroundColor: base.bgElevated }]`. This keeps layout static and cacheable while allowing colors to be theme-reactive.
+
+**Highlight colors (Phase 19):** The 5 highlight colors (gold, blue, green, pink, purple) were designed for dark backgrounds. When theming ships, these will need per-theme variants to maintain contrast on sepia/light backgrounds. Plan for a `highlightColors` key in the theme palette.
+
 ---
 
 ## PRE-LAUNCH DEPENDENCY — Translation Licensing
@@ -1767,6 +1778,10 @@ Matthew 28:19 — Therefore go and make disciples...
 
 ### Effort: Small-Medium (1 session)
 
+### Theme note
+
+The 5 highlight colors were chosen for dark backgrounds. When the theme system ships, highlight colors will need per-theme variants (darker/more saturated on light backgrounds) to maintain contrast. The `HighlightColorPicker` should read highlight colors from the theme palette (`theme.highlightColors`) rather than hardcoding hex values. If building Phase 19 before theming, use `base`-imported constants that can be swapped to `useTheme()` later.
+
 ---
 
 ## Phase 20 — Personalized Recommendations
@@ -2069,4 +2084,5 @@ feat(plans): Phase 23 — 10 curated study plans seeded into reading_plans
 - [ ] Existing panels still work (backward compatibility)
 - [ ] New composite tabs only appear when data is present
 - [ ] Panel close/toggle behavior unchanged
-- [ ] No inline `style={{ }}` objects — use `StyleSheet.create()`
+- [ ] No inline `style={{ }}` objects — use `StyleSheet.create()` for layout; apply colors via array syntax `[styles.x, { color: base.y }]`
+- [ ] Colors reference `base.*` / `getPanelColors()` tokens (never hardcoded hex) — theme-ready regardless of whether theme infrastructure has shipped yet
