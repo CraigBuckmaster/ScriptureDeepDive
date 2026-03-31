@@ -25,21 +25,22 @@
             "paragraph": "Paul uses two related adjectives in this passage: sarkinos (v. 1, ‘made of flesh’) and sarkikos (v. 3, ‘behaving according to the flesh’). The first (sarkinos) describes the Corinthians’ condition as infant believers; the second (sarkikos) implies culpable behaviour — they are acting according to merely human standards despite having the Spirit. The distinction introduces a third category beyond the pneumatikos/psychikos of chapter 2: the immature believer who possesses the Spirit but lives as though they do not."
           }
         ],
-        "ctx": "Paul now applies the wisdom-foolishness argument directly to the Corinthian factions. The agricultural imagery of planting and watering (vv. 6–9) draws on common Mediterranean farming practice: one worker plants the seed, another irrigates, but only God provides the growth (auxanō). In first-century Corinth, the surrounding Isthmus was cultivated with grain, olives, and vines, making the imagery vivid and immediate. Paul and Apollos are co-labourers (synergoi), not competitors — a radical reframing of the patron-client model that drove the Corinthian factions.",
-        "cross": [
-          {
-            "ref": "John 4:36–38",
-            "note": "Jesus uses the same sowing-reaping imagery to describe the collaboration of different workers in God’s harvest field."
-          },
-          {
-            "ref": "Heb 5:12–14",
-            "note": "The author of Hebrews employs the same milk-versus-solid-food metaphor for spiritual maturity."
-          },
-          {
-            "ref": "Matt 13:3–9",
-            "note": "Jesus’ parable of the sower uses agricultural imagery for the word’s reception, paralleling Paul’s planting metaphor."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 4:36–38",
+              "note": "Jesus uses the same sowing-reaping imagery to describe the collaboration of different workers in God’s harvest field."
+            },
+            {
+              "ref": "Heb 5:12–14",
+              "note": "The author of Hebrews employs the same milk-versus-solid-food metaphor for spiritual maturity."
+            },
+            {
+              "ref": "Matt 13:3–9",
+              "note": "Jesus’ parable of the sower uses agricultural imagery for the word’s reception, paralleling Paul’s planting metaphor."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -108,6 +109,9 @@
               "note": "Thiselton highlights that diakonoi (‘servants’) is deliberately chosen over apostoloi or other status-bearing titles. Paul deconstructs the Corinthian honour system by insisting that leaders are servants, not patrons."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul now applies the wisdom-foolishness argument directly to the Corinthian factions. The agricultural imagery of planting and watering (vv. 6–9) draws on common Mediterranean farming practice: one worker plants the seed, another irrigates, but only God provides the growth (auxanō). In first-century Corinth, the surrounding Isthmus was cultivated with grain, olives, and vines, making the imagery vivid and immediate. Paul and Apollos are co-labourers (synergoi), not competitors — a radical reframing of the patron-client model that drove the Corinthian factions."
         }
       }
     },
@@ -125,21 +129,22 @@
             "paragraph": "The noun themelios (foundation) in vv. 10–12 carries architectural and theological weight. In the ancient world, the foundation determined a building’s stability and alignment. Paul identifies the foundation as Jesus Christ himself — not a doctrine about Christ, but the person of the crucified and risen Lord. No other foundation can be laid (v. 11). The verb tithemi (to lay/place) implies deliberate, authoritative positioning: Paul as ‘expert builder’ (sophos architektōn) laid this foundation in Corinth."
           }
         ],
-        "ctx": "Paul shifts from agricultural to architectural metaphor, a transition signalled at v. 9b (‘God’s building’). The imagery of testing by fire (v. 13) may draw on the common ancient Near Eastern and Greco-Roman practice of assaying metals. The ‘Day’ (v. 13) refers to the eschatological day of judgment when all human work will be exposed and evaluated. The materials listed — gold, silver, costly stones versus wood, hay, straw — represent varying qualities of ministry built on the Christ-foundation. This passage does not describe salvation by works but the evaluation of ministerial quality.",
-        "cross": [
-          {
-            "ref": "Eph 2:19–22",
-            "note": "Paul develops the building metaphor further: Christ is the cornerstone, the apostles and prophets the foundation, and believers are being built into a holy temple."
-          },
-          {
-            "ref": "2 Tim 2:19–21",
-            "note": "The metaphor of a great house with vessels of various materials (gold, silver, wood, clay) echoes the materials imagery here."
-          },
-          {
-            "ref": "1 Pet 2:4–8",
-            "note": "Peter applies the building/stone imagery to Christ as the living stone and believers as living stones being built into a spiritual house."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Eph 2:19–22",
+              "note": "Paul develops the building metaphor further: Christ is the cornerstone, the apostles and prophets the foundation, and believers are being built into a holy temple."
+            },
+            {
+              "ref": "2 Tim 2:19–21",
+              "note": "The metaphor of a great house with vessels of various materials (gold, silver, wood, clay) echoes the materials imagery here."
+            },
+            {
+              "ref": "1 Pet 2:4–8",
+              "note": "Peter applies the building/stone imagery to Christ as the living stone and believers as living stones being built into a spiritual house."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -208,6 +213,9 @@
               "note": "Thiselton draws on Malachi 3:2–3 (‘a refiner’s fire’) and the Stoic notion of ekpyrōsis (cosmic conflagration) as background to the fire imagery. The eschatological fire is not punitive but revelatory: it discloses the true nature of each builder’s work."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul shifts from agricultural to architectural metaphor, a transition signalled at v. 9b (‘God’s building’). The imagery of testing by fire (v. 13) may draw on the common ancient Near Eastern and Greco-Roman practice of assaying metals. The ‘Day’ (v. 13) refers to the eschatological day of judgment when all human work will be exposed and evaluated. The materials listed — gold, silver, costly stones versus wood, hay, straw — represent varying qualities of ministry built on the Christ-foundation. This passage does not describe salvation by works but the evaluation of ministerial quality."
         }
       }
     },
@@ -225,21 +233,22 @@
             "paragraph": "The noun naos (temple/sanctuary) in v. 16 denotes the inner sanctuary where God’s presence dwells, as distinct from hieron, the broader temple complex. Paul’s assertion ‘you are God’s temple’ uses the plural ‘you’ (hymeis), making the temple the community, not the individual (contrast 6:19 where the individual body is the temple). In a city dominated by pagan temples — including the famous temple of Aphrodite on the Acrocorinth — Paul’s claim is provocative: the Christian assembly, not any stone structure, is the dwelling place of the divine Spirit."
           }
         ],
-        "ctx": "Paul draws the argument to its climactic application. The Corinthians are not merely God’s field or building but God’s temple (naos) — the dwelling place of the Holy Spirit. Anyone who ‘destroys’ (phtheirei) this temple through divisive teaching will themselves be destroyed (phtherei). The wordplay is deliberate: the verb phtheirō encompasses both moral corruption and physical destruction. Paul then returns to the wisdom theme, quoting Job 5:13 and Psalm 94:11 to demonstrate that all human wisdom — including the wisdom of Paul, Apollos, and Cephas — is subordinate to God. The climactic declaration ‘all things are yours’ (v. 21) reverses the factionalism: instead of belonging to leaders, all leaders belong to the church, and the church belongs to Christ.",
-        "cross": [
-          {
-            "ref": "2 Cor 6:16",
-            "note": "Paul restates the temple imagery: ‘We are the temple of the living God,’ citing Leviticus 26:11–12 and Ezekiel 37:27."
-          },
-          {
-            "ref": "Eph 2:21–22",
-            "note": "The community as a growing temple in which God dwells by his Spirit — the ecclesiological extension of the same metaphor."
-          },
-          {
-            "ref": "Job 5:13",
-            "note": "Paul quotes Eliphaz’s words (here applied positively): God catches the wise in their craftiness — a rare Pauline use of Job."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Cor 6:16",
+              "note": "Paul restates the temple imagery: ‘We are the temple of the living God,’ citing Leviticus 26:11–12 and Ezekiel 37:27."
+            },
+            {
+              "ref": "Eph 2:21–22",
+              "note": "The community as a growing temple in which God dwells by his Spirit — the ecclesiological extension of the same metaphor."
+            },
+            {
+              "ref": "Job 5:13",
+              "note": "Paul quotes Eliphaz’s words (here applied positively): God catches the wise in their craftiness — a rare Pauline use of Job."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -308,6 +317,9 @@
               "note": "Thiselton identifies the rhetorical strategy as a surprising reversal (peripeteia): the Corinthians thought they were choosing between leaders; Paul reveals that all leaders already belong to them. The sequence panta hymōn — hymeis de Christou — Christos de theou establishes a descending hierarchy of ownership that terminates in God."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul draws the argument to its climactic application. The Corinthians are not merely God’s field or building but God’s temple (naos) — the dwelling place of the Holy Spirit. Anyone who ‘destroys’ (phtheirei) this temple through divisive teaching will themselves be destroyed (phtherei). The wordplay is deliberate: the verb phtheirō encompasses both moral corruption and physical destruction. Paul then returns to the wisdom theme, quoting Job 5:13 and Psalm 94:11 to demonstrate that all human wisdom — including the wisdom of Paul, Apollos, and Cephas — is subordinate to God. The climactic declaration ‘all things are yours’ (v. 21) reverses the factionalism: instead of belonging to leaders, all leaders belong to the church, and the church belongs to Christ."
         }
       }
     }

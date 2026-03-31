@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 13,
       "panels": {
-        "ctx": "Amaziah does right “but not wholeheartedly.” He hires 100,000 Israelite mercenaries, then a prophet tells him to dismiss them: “God is not with Israel.” When Amaziah protests the financial loss, the prophet replies: “The LORD can give you much more than that.” He dismisses them; they rage and plunder Judahite cities. Amaziah defeats Edom with God’s help.",
-        "cross": [
-          {
-            "ref": "2 Kgs 14:1–7",
-            "note": "Kings records Amaziah's Edomite victory briefly. Chronicles adds the episode of the dismissed Israelite mercenaries and the anonymous prophet who told Amaziah to send them home — God's help outweighs military manpower."
-          },
-          {
-            "ref": "Deut 24:16",
-            "note": "Amaziah's decision not to execute the children of his father's assassins explicitly cites 'the Law of Moses' — one of the clearest cases in Chronicles of Torah directly governing royal policy."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 14:1–7",
+              "note": "Kings records Amaziah's Edomite victory briefly. Chronicles adds the episode of the dismissed Israelite mercenaries and the anonymous prophet who told Amaziah to send them home — God's help outweighs military manpower."
+            },
+            {
+              "ref": "Deut 24:16",
+              "note": "Amaziah's decision not to execute the children of his father's assassins explicitly cites 'the Law of Moses' — one of the clearest cases in Chronicles of Torah directly governing royal policy."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "The Chronicler’s distinctive vocabulary shapes the presentation, connecting this section to his broader theological framework."
             }
           ]
+        },
+        "hist": {
+          "context": "Amaziah does right “but not wholeheartedly.” He hires 100,000 Israelite mercenaries, then a prophet tells him to dismiss them: “God is not with Israel.” When Amaziah protests the financial loss, the prophet replies: “The LORD can give you much more than that.” He dismisses them; they rage and plunder Judahite cities. Amaziah defeats Edom with God’s help."
         }
       }
     },
@@ -54,17 +58,18 @@
       "verse_start": 14,
       "verse_end": 28,
       "panels": {
-        "ctx": "After defeating Edom, Amaziah brings back their gods and worships them. A prophet confronts him: “Why do you consult this people’s gods, which could not save their own people from your hand?” Amaziah silences the prophet. Then he challenges Israel’s Jehoash — receives the thistle-and-cedar parable — and is defeated. Jerusalem’s wall is breached. He is eventually assassinated. “From the time that Amaziah turned away from following the LORD, they conspired against him.” The turning point is precise: apostasy triggers assassination.",
-        "cross": [
-          {
-            "ref": "2 Kgs 14:8–20",
-            "note": "Kings records the humiliating defeat by Jehoash of Israel and the 'thistle and cedar' parable identically. Chronicles adds the theological cause: Amaziah worshipped Edomite gods after defeating them."
-          },
-          {
-            "ref": "Isa 44:9–20",
-            "note": "The prophet's incredulous question — 'Why do you worship the gods of a people who could not save their own people from you?' — echoes Isaiah's satire on the absurdity of idol worship."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 14:8–20",
+              "note": "Kings records the humiliating defeat by Jehoash of Israel and the 'thistle and cedar' parable identically. Chronicles adds the theological cause: Amaziah worshipped Edomite gods after defeating them."
+            },
+            {
+              "ref": "Isa 44:9–20",
+              "note": "The prophet's incredulous question — 'Why do you worship the gods of a people who could not save their own people from you?' — echoes Isaiah's satire on the absurdity of idol worship."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -82,6 +87,9 @@
               "note": "The Chronicler’s distinctive vocabulary shapes the presentation, connecting this section to his broader theological framework."
             }
           ]
+        },
+        "hist": {
+          "context": "After defeating Edom, Amaziah brings back their gods and worships them. A prophet confronts him: “Why do you consult this people’s gods, which could not save their own people from your hand?” Amaziah silences the prophet. Then he challenges Israel’s Jehoash — receives the thistle-and-cedar parable — and is defeated. Jerusalem’s wall is breached. He is eventually assassinated. “From the time that Amaziah turned away from following the LORD, they conspired against him.” The turning point is precise: apostasy triggers assassination."
         }
       }
     }

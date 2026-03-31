@@ -31,17 +31,18 @@
             "paragraph": "The opening <em>eucharistoumen</em> (v.2) initiates the longest thanksgiving section in any Pauline letter (1:2-3:13). Paul's gratitude is not conventional politeness but genuine astonishment at what God has done among the Thessalonians despite persecution."
           }
         ],
-        "ctx": "Paul writes from Corinth around AD 50-51, making this likely his earliest surviving letter. He had been forced to leave Thessalonica abruptly after only a few weeks of ministry due to violent opposition (Acts 17:1-10). The letter's warm, pastoral tone reflects his relief at Timothy's good report.",
-        "cross": [
-          {
-            "ref": "Col 1:3-5",
-            "note": "Paul uses the same triad — faith, love, hope — in his thanksgiving for the Colossians, suggesting this was his standard framework for assessing church health."
-          },
-          {
-            "ref": "Rom 8:28-30",
-            "note": "The 'golden chain' of election, calling, justification, and glorification provides the theological backdrop for Paul's confidence in the Thessalonians' election."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Col 1:3-5",
+              "note": "Paul uses the same triad — faith, love, hope — in his thanksgiving for the Colossians, suggesting this was his standard framework for assessing church health."
+            },
+            {
+              "ref": "Rom 8:28-30",
+              "note": "The 'golden chain' of election, calling, justification, and glorification provides the theological backdrop for Paul's confidence in the Thessalonians' election."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "The combination of 'power' (dynamis), 'Holy Spirit' (pneuma hagion), and 'deep conviction' (plērophoria) forms a hendiatris — three expressions for one reality: the gospel's divine authentication in both proclamation and reception."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul writes from Corinth around AD 50-51, making this likely his earliest surviving letter. He had been forced to leave Thessalonica abruptly after only a few weeks of ministry due to violent opposition (Acts 17:1-10). The letter's warm, pastoral tone reflects his relief at Timothy's good report."
         }
       }
     },
@@ -143,17 +147,18 @@
             "paragraph": "The verb <em>epistrephō</em> (v.9) — 'you turned' — is a key conversion term. It implies a complete about-face: from idols to the living God. Conversion is not addition but reorientation."
           }
         ],
-        "ctx": "The Thessalonians' faith had spread throughout the Roman provinces of Macedonia (northern Greece, including Philippi and Berea) and Achaia (southern Greece, including Corinth). Paul describes a remarkable missionary ripple effect — the converts had become evangelists.",
-        "cross": [
-          {
-            "ref": "Acts 17:1-9",
-            "note": "Luke's account in Acts records the Thessalonians' reception of the gospel amid violent persecution, confirming Paul's reference to their 'severe suffering' (v.6)."
-          },
-          {
-            "ref": "Phil 2:15-16",
-            "note": "Paul uses similar light-in-darkness imagery for the Philippians, who also received the gospel 'in the midst of a crooked and twisted generation.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 17:1-9",
+              "note": "Luke's account in Acts records the Thessalonians' reception of the gospel amid violent persecution, confirming Paul's reference to their 'severe suffering' (v.6)."
+            },
+            {
+              "ref": "Phil 2:15-16",
+              "note": "Paul uses similar light-in-darkness imagery for the Philippians, who also received the gospel 'in the midst of a crooked and twisted generation.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -226,6 +231,9 @@
               "note": "The phrase 'to wait for his Son from heaven' (anameno) is unique in Paul. It suggests patient, expectant waiting — not anxious speculation but confident hope. The parousia is not a problem to be solved but a person to be welcomed."
             }
           ]
+        },
+        "hist": {
+          "context": "The Thessalonians' faith had spread throughout the Roman provinces of Macedonia (northern Greece, including Philippi and Berea) and Achaia (southern Greece, including Corinth). Paul describes a remarkable missionary ripple effect — the converts had become evangelists."
         }
       }
     }

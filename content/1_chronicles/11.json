@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 9,
       "panels": {
-        "ctx": "“All Israel came together to David at Hebron.” The Chronicler omits the seven-year reign at Hebron over Judah alone and the civil war with Ish-Bosheth. In his version, David goes directly from Saul’s death to unified kingship. “All Israel” is the Chronicler’s programmatic phrase: the twelve tribes united in worship under David. Then David captures Jerusalem (“the fortress of Zion”) and Joab earns the title of chief commander by leading the assault.",
-        "cross": [
-          {
-            "ref": "2 Sam 5:1–10",
-            "note": "The parallel in Samuel, which includes the seven-year Hebron reign the Chronicler omits."
-          },
-          {
-            "ref": "2 Sam 2:1–4:12",
-            "note": "The civil war between David and Ish-Bosheth — completely absent from Chronicles."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 5:1–10",
+              "note": "The parallel in Samuel, which includes the seven-year Hebron reign the Chronicler omits."
+            },
+            {
+              "ref": "2 Sam 2:1–4:12",
+              "note": "The civil war between David and Ish-Bosheth — completely absent from Chronicles."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "kol-yisrāʾēl (“all Israel”) is the Chronicler’s signature phrase. Its frequency (40+ occurrences) far exceeds its use in Samuel-Kings, reflecting the Chronicler’s emphasis on national unity."
             }
           ]
+        },
+        "hist": {
+          "context": "“All Israel came together to David at Hebron.” The Chronicler omits the seven-year reign at Hebron over Judah alone and the civil war with Ish-Bosheth. In his version, David goes directly from Saul’s death to unified kingship. “All Israel” is the Chronicler’s programmatic phrase: the twelve tribes united in worship under David. Then David captures Jerusalem (“the fortress of Zion”) and Joab earns the title of chief commander by leading the assault."
         }
       }
     },
@@ -54,13 +58,14 @@
       "verse_start": 10,
       "verse_end": 47,
       "panels": {
-        "ctx": "The mighty warriors list parallels 2 Samuel 23:8–39 with additions. Jashobeam killed 300 (or 800 in Samuel) with his spear. Eleazar stood his ground against the Philistines until his hand froze to the sword. Three warriors broke through Philistine lines to get David water from Bethlehem’s well — and David refused to drink it, pouring it out before the LORD: “Far be it from me to drink the blood of these men who went at the risk of their lives.” The list of warriors extends beyond Samuel’s version, adding names the Chronicler drew from independent military records.",
-        "cross": [
-          {
-            "ref": "2 Sam 23:8–39",
-            "note": "The parallel warriors list. Chronicles adds approximately 16 names not found in Samuel."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 23:8–39",
+              "note": "The parallel warriors list. Chronicles adds approximately 16 names not found in Samuel."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -78,6 +83,9 @@
               "note": "The number “300” vs. Samuel’s “800” is a well-known textual variant. The discrepancy may reflect different source documents or scribal transmission errors."
             }
           ]
+        },
+        "hist": {
+          "context": "The mighty warriors list parallels 2 Samuel 23:8–39 with additions. Jashobeam killed 300 (or 800 in Samuel) with his spear. Eleazar stood his ground against the Philistines until his hand froze to the sword. Three warriors broke through Philistine lines to get David water from Bethlehem’s well — and David refused to drink it, pouring it out before the LORD: “Far be it from me to drink the blood of these men who went at the risk of their lives.” The list of warriors extends beyond Samuel’s version, adding names the Chronicler drew from independent military records."
         }
       }
     }

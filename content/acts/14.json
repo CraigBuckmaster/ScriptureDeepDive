@@ -57,21 +57,22 @@
             "current": false
           }
         ],
-        "ctx": "The Lystra episode is Paul's first encounter with purely pagan polytheism — a world without synagogue, Scripture, or Jewish monotheistic preparation. The crowd's identification of Barnabas as Zeus and Paul as Hermes (v.12) reflects a local legend (attested in Ovid, Metamorphoses 8) about gods visiting the region in human form. The apostles' response — tearing their clothes, rushing out, crying 'We are only human!' — is the absolute anti-thesis of the divine honours Herod Agrippa had accepted (12:22–23). Paul's sermon adjusts to his audience: no OT, no synagogue tradition, just creation, providence, and the call to turn to the living God.",
-        "cross": [
-          {
-            "ref": "Acts 12:22–23",
-            "note": "Herod accepted divine acclamation and died immediately. Paul and Barnabas refuse divine acclamation vigorously (vv.14–15). The contrast is deliberate: the pattern of faithful response to divine honours is established by the apostles' own example."
-          },
-          {
-            "ref": "Acts 17:22–31",
-            "note": "The Athens speech develops the Lystra natural theology argument much more fully: the unknown God, creation's testimony, human searching. Lystra is the template; Athens is the elaboration."
-          },
-          {
-            "ref": "2 Corinthians 11:25",
-            "note": "\"Once I was stoned\" — Paul's own reference to the Lystra stoning, confirming the Acts account."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 12:22–23",
+              "note": "Herod accepted divine acclamation and died immediately. Paul and Barnabas refuse divine acclamation vigorously (vv.14–15). The contrast is deliberate: the pattern of faithful response to divine honours is established by the apostles' own example."
+            },
+            {
+              "ref": "Acts 17:22–31",
+              "note": "The Athens speech develops the Lystra natural theology argument much more fully: the unknown God, creation's testimony, human searching. Lystra is the template; Athens is the elaboration."
+            },
+            {
+              "ref": "2 Corinthians 11:25",
+              "note": "\"Once I was stoned\" — Paul's own reference to the Lystra stoning, confirming the Acts account."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -136,6 +137,9 @@
               "note": "Keener notes that Paul's address to a pagan audience in Lystra has no OT citations — he begins with natural theology: the living God made everything and has not left himself without testimony through creation's providential gifts. This is Stoic-style natural theology deployed for Jewish-monotheist purposes — Paul meeting his audience where they are."
             }
           ]
+        },
+        "hist": {
+          "context": "The Lystra episode is Paul's first encounter with purely pagan polytheism — a world without synagogue, Scripture, or Jewish monotheistic preparation. The crowd's identification of Barnabas as Zeus and Paul as Hermes (v.12) reflects a local legend (attested in Ovid, Metamorphoses 8) about gods visiting the region in human form. The apostles' response — tearing their clothes, rushing out, crying 'We are only human!' — is the absolute anti-thesis of the divine honours Herod Agrippa had accepted (12:22–23). Paul's sermon adjusts to his audience: no OT, no synagogue tradition, just creation, providence, and the call to turn to the living God."
         }
       }
     },
@@ -182,21 +186,22 @@
             "current": false
           }
         ],
-        "ctx": "The return journey deliberately retraces the outbound route through the most dangerous cities (Lystra, Iconium, Pisidian Antioch — cities from which Paul had been expelled or nearly killed) to strengthen the young churches. This deliberate return is a statement: Paul does not abandon his converts once persecution drives him out. The appointment of elders (v.23) is the first recorded instance of Paul establishing formal local church leadership — the structure that will be elaborated in his Pastoral Epistles (Titus 1:5; 1 Tim 3:1–7).",
-        "cross": [
-          {
-            "ref": "Titus 1:5",
-            "note": "\"I left you in Crete... so that you might put in order what was left unfinished and appoint elders in every town\" — the Pastoral Epistles formalise what Acts 14:23 begins: elder appointment is the completion of church-planting, not optional afterwards."
-          },
-          {
-            "ref": "Acts 13:1–3",
-            "note": "The commissioning scene at Antioch — the mission is bookended by the sending community's prayer and fasting. The report back (v.27) closes the loop: Antioch sent them; Antioch hears the results."
-          },
-          {
-            "ref": "Acts 15:1–2",
-            "note": "The return to Antioch immediately precedes the Jerusalem Council controversy — the theological crisis that the success of the first journey provokes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Titus 1:5",
+              "note": "\"I left you in Crete... so that you might put in order what was left unfinished and appoint elders in every town\" — the Pastoral Epistles formalise what Acts 14:23 begins: elder appointment is the completion of church-planting, not optional afterwards."
+            },
+            {
+              "ref": "Acts 13:1–3",
+              "note": "The commissioning scene at Antioch — the mission is bookended by the sending community's prayer and fasting. The report back (v.27) closes the loop: Antioch sent them; Antioch hears the results."
+            },
+            {
+              "ref": "Acts 15:1–2",
+              "note": "The return to Antioch immediately precedes the Jerusalem Council controversy — the theological crisis that the success of the first journey provokes."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -261,6 +266,9 @@
               "note": "Keener notes the significance of the full congregational report: \"they gathered the church together.\" The mission was not Paul's private enterprise or even the apostles' project — it was the Antioch church's mission. The report closes the accountability loop: the whole community that prayed them out hears the full account of what God did."
             }
           ]
+        },
+        "hist": {
+          "context": "The return journey deliberately retraces the outbound route through the most dangerous cities (Lystra, Iconium, Pisidian Antioch — cities from which Paul had been expelled or nearly killed) to strengthen the young churches. This deliberate return is a statement: Paul does not abandon his converts once persecution drives him out. The appointment of elders (v.23) is the first recorded instance of Paul establishing formal local church leadership — the structure that will be elaborated in his Pastoral Epistles (Titus 1:5; 1 Tim 3:1–7)."
         }
       }
     }

@@ -37,25 +37,26 @@
             "paragraph": "The gospel was preached even to the dead - either those who heard while alive but are now dead, or Christ's proclamation to departed spirits."
           }
         ],
-        "ctx": "Peter exhorts believers to arm themselves with Christ's mindset toward suffering. Whoever has suffered in the flesh has ceased from sin - suffering produces moral resolve. The time for living in pagan ways is past. Former companions are surprised and malign believers who no longer join them. They will give account to the Judge of living and dead. The gospel was preached to the dead so that though judged in flesh they might live in spirit.",
-        "cross": [
-          {
-            "ref": "Romans 6:7",
-            "note": "One who has died has been set free from sin."
-          },
-          {
-            "ref": "Ephesians 4:17-19",
-            "note": "You must no longer walk as the Gentiles do."
-          },
-          {
-            "ref": "Romans 14:9",
-            "note": "Christ died and lived again, that he might be Lord of both the dead and the living."
-          },
-          {
-            "ref": "2 Corinthians 5:10",
-            "note": "We must all appear before the judgment seat of Christ."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Romans 6:7",
+              "note": "One who has died has been set free from sin."
+            },
+            {
+              "ref": "Ephesians 4:17-19",
+              "note": "You must no longer walk as the Gentiles do."
+            },
+            {
+              "ref": "Romans 14:9",
+              "note": "Christ died and lived again, that he might be Lord of both the dead and the living."
+            },
+            {
+              "ref": "2 Corinthians 5:10",
+              "note": "We must all appear before the judgment seat of Christ."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -117,7 +118,10 @@
             }
           ]
         },
-        "hist": "Peter writes to Christians in five Roman provinces of Asia Minor (modern Turkey) — Pontus, Galatia, Cappadocia, Asia, and Bithynia. These believers face social ostracism and verbal abuse (4:4, 14) rather than official state persecution. As 'elect exiles' (1:1), they experience the marginalization of those who no longer participate in pagan civic religion, trade guild feasts, and family worship. The letter's household codes (2:13–3:7) address how Christians should live within Roman social structures. Peter writes from 'Babylon' (5:13) — almost certainly a symbolic name for Rome. Silvanus (Silas) serves as secretary (5:12), and Mark is present (5:13). The letter likely dates to the early 60s AD, before Nero's persecution."
+        "hist": {
+          "historical": "Peter writes to Christians in five Roman provinces of Asia Minor (modern Turkey) — Pontus, Galatia, Cappadocia, Asia, and Bithynia. These believers face social ostracism and verbal abuse (4:4, 14) rather than official state persecution. As 'elect exiles' (1:1), they experience the marginalization of those who no longer participate in pagan civic religion, trade guild feasts, and family worship. The letter's household codes (2:13–3:7) address how Christians should live within Roman social structures. Peter writes from 'Babylon' (5:13) — almost certainly a symbolic name for Rome. Silvanus (Silas) serves as secretary (5:12), and Mark is present (5:13). The letter likely dates to the early 60s AD, before Nero's persecution.",
+          "context": "Peter exhorts believers to arm themselves with Christ's mindset toward suffering. Whoever has suffered in the flesh has ceased from sin - suffering produces moral resolve. The time for living in pagan ways is past. Former companions are surprised and malign believers who no longer join them. They will give account to the Judge of living and dead. The gospel was preached to the dead so that though judged in flesh they might live in spirit."
+        }
       }
     },
     {
@@ -146,25 +150,26 @@
             "paragraph": "Good stewards of God's varied grace. Gifts are not possessions but trusts to be administered for others' benefit."
           }
         ],
-        "ctx": "The end of all things is at hand - eschatological urgency shapes ethics. Be sober for prayers; love covers sins; show hospitality; use gifts to serve. Speakers should speak as oracles of God; servers should serve by God's strength. The goal: that God may be glorified through Jesus Christ, to whom belongs glory and dominion forever.",
-        "cross": [
-          {
-            "ref": "Romans 12:6-8",
-            "note": "Having gifts that differ according to the grace given to us."
-          },
-          {
-            "ref": "1 Corinthians 12:4-7",
-            "note": "Varieties of gifts, same Spirit; varieties of service, same Lord."
-          },
-          {
-            "ref": "James 5:8",
-            "note": "The coming of the Lord is at hand."
-          },
-          {
-            "ref": "Proverbs 10:12",
-            "note": "Love covers all offenses."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Romans 12:6-8",
+              "note": "Having gifts that differ according to the grace given to us."
+            },
+            {
+              "ref": "1 Corinthians 12:4-7",
+              "note": "Varieties of gifts, same Spirit; varieties of service, same Lord."
+            },
+            {
+              "ref": "James 5:8",
+              "note": "The coming of the Lord is at hand."
+            },
+            {
+              "ref": "Proverbs 10:12",
+              "note": "Love covers all offenses."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -217,6 +222,9 @@
               "note": "Jobes notes that hospitality was countercultural: Christians welcomed strangers regardless of social status."
             }
           ]
+        },
+        "hist": {
+          "context": "The end of all things is at hand - eschatological urgency shapes ethics. Be sober for prayers; love covers sins; show hospitality; use gifts to serve. Speakers should speak as oracles of God; servers should serve by God's strength. The goal: that God may be glorified through Jesus Christ, to whom belongs glory and dominion forever."
         }
       }
     },
@@ -246,25 +254,26 @@
             "paragraph": "Judgment begins with the household of God. If believers face judgment, how much more severe for the disobedient?"
           }
         ],
-        "ctx": "Peter addresses the fiery trial coming upon them. They should not be surprised but rejoice in sharing Christ's sufferings. If insulted for Christ's name, they are blessed - the Spirit of glory rests on them. No one should suffer as a murderer, thief, or evildoer; but suffering as a Christian brings no shame. Judgment begins with God's household; if the righteous are barely saved, what becomes of the ungodly? Let those who suffer according to God's will entrust their souls to a faithful Creator.",
-        "cross": [
-          {
-            "ref": "James 1:2-4",
-            "note": "Count it all joy when you meet various trials."
-          },
-          {
-            "ref": "Matthew 5:11-12",
-            "note": "Blessed are you when others revile you and persecute you on my account."
-          },
-          {
-            "ref": "Proverbs 11:31",
-            "note": "If the righteous is repaid on earth, how much more the wicked and the sinner!"
-          },
-          {
-            "ref": "Romans 8:17",
-            "note": "If children, then heirs - heirs of God and fellow heirs with Christ, provided we suffer with him."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "James 1:2-4",
+              "note": "Count it all joy when you meet various trials."
+            },
+            {
+              "ref": "Matthew 5:11-12",
+              "note": "Blessed are you when others revile you and persecute you on my account."
+            },
+            {
+              "ref": "Proverbs 11:31",
+              "note": "If the righteous is repaid on earth, how much more the wicked and the sinner!"
+            },
+            {
+              "ref": "Romans 8:17",
+              "note": "If children, then heirs - heirs of God and fellow heirs with Christ, provided we suffer with him."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -329,6 +338,9 @@
               "note": "Jobes connects the fiery trial to the refining imagery of 1:7. The metaphor unifies the letter's teaching on suffering."
             }
           ]
+        },
+        "hist": {
+          "context": "Peter addresses the fiery trial coming upon them. They should not be surprised but rejoice in sharing Christ's sufferings. If insulted for Christ's name, they are blessed - the Spirit of glory rests on them. No one should suffer as a murderer, thief, or evildoer; but suffering as a Christian brings no shame. Judgment begins with God's household; if the righteous are barely saved, what becomes of the ungodly? Let those who suffer according to God's will entrust their souls to a faithful Creator."
         }
       }
     }

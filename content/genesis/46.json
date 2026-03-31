@@ -34,18 +34,22 @@
             "paragraph": "V.27: the number seventy carries covenantal weight in the OT. Seventy nations in the Table of Nations (Gen 10); seventy elders of Israel (Exod 24:1); seventy years of exile (Jer 25:11). The seventy who go down to Egypt become the nation that comes up. The number is a promise embedded in a count."
           }
         ],
-        "hist": "The descent to Egypt is the most significant migration in Genesis — more significant than Abraham's move from Ur or even from Haran, because this migration will define Israel for the next four centuries. God appears to Jacob at Beersheba, the southernmost point before the Sinai wilderness, to confirm that the descent is divinely sanctioned. The genealogical list of the seventy who descend with Jacob is the most complete family census of Israel in the OT before the Exodus numbering.",
-        "ctx": "Genesis 46 opens the Egypt section with the theological frame that governs all that follows: this descent is under divine commission, not merely human desperation. The Beersheba vision (vv.1-4) is the pivot: Jacob hesitates at the border of the promised land; God appears and authorises the journey. The genealogy (vv.8-27) is not a bureaucratic list but a theological statement: the seventy who descend are the seed of the promise on the verge of becoming a nation.",
-        "cross": [
-          {
-            "ref": "Deut 10:22",
-            "note": "Your ancestors who went down into Egypt were seventy in all — Moses recalls the number."
-          },
-          {
-            "ref": "Acts 7:14",
-            "note": "Stephen quotes seventy-five (LXX count) — a textual variant that generated ancient debate."
-          }
-        ],
+        "hist": {
+          "historical": "The descent to Egypt is the most significant migration in Genesis — more significant than Abraham's move from Ur or even from Haran, because this migration will define Israel for the next four centuries. God appears to Jacob at Beersheba, the southernmost point before the Sinai wilderness, to confirm that the descent is divinely sanctioned. The genealogical list of the seventy who descend with Jacob is the most complete family census of Israel in the OT before the Exodus numbering.",
+          "context": "Genesis 46 opens the Egypt section with the theological frame that governs all that follows: this descent is under divine commission, not merely human desperation. The Beersheba vision (vv.1-4) is the pivot: Jacob hesitates at the border of the promised land; God appears and authorises the journey. The genealogy (vv.8-27) is not a bureaucratic list but a theological statement: the seventy who descend are the seed of the promise on the verge of becoming a nation."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 10:22",
+              "note": "Your ancestors who went down into Egypt were seventy in all — Moses recalls the number."
+            },
+            {
+              "ref": "Acts 7:14",
+              "note": "Stephen quotes seventy-five (LXX count) — a textual variant that generated ancient debate."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Beersheba",
@@ -143,18 +147,22 @@
             "paragraph": "V.28: The region of Goshen in the northeastern Nile Delta is identified as the settlement area for Jacob's family. The region is suitable for grazing (v.34) and is geographically separated from the Egyptian population centres, allowing Israel to maintain its distinctive identity. The separation is providential: proximity to Joseph but distinctiveness from Egypt."
           }
         ],
-        "hist": "Judah is sent ahead to arrange the meeting with Joseph in Goshen — a striking detail. Judah, who once proposed selling Joseph for silver, is now the family's advance agent securing Joseph's reception. Joseph harnesses his chariot and goes to Goshen to meet his father — a mark of honour; in Egyptian protocol, the subordinate travels to the superior. The meeting of Jacob and Joseph after twenty-two years is one of the most emotionally charged reunions in Scripture. Joseph's practical advice about what to say to Pharaoh is the chapter's final movement: the family is transitioning from pastoral wanderers to Goshen residents.",
-        "ctx": "The reunion of Jacob and Joseph (vv.28-30) is the emotional climax of the Joseph cycle. Twenty-two years of grief resolved in a single embrace. Jacob's words are the words of Simeon in Luke 2:29 -- \"now I am ready to die, since I have seen for myself that you are still alive.\" The satisfaction is complete. The Goshen strategy (vv.31-34) is Joseph's practical wisdom: by identifying as shepherds (detestable to Egyptians), Israel will be allowed to live separately in Goshen, preserving their identity.",
-        "cross": [
-          {
-            "ref": "Exod 1:7",
-            "note": "The Israelites were fruitful and multiplied greatly — the fulfilment of the \"great nation\" promise of 46:3 begins immediately after the descent."
-          },
-          {
-            "ref": "Heb 11:21",
-            "note": "By faith Jacob, when he was dying, blessed each of Joseph's sons — the faith that began at Beersheba reaches to the deathbed."
-          }
-        ],
+        "hist": {
+          "historical": "Judah is sent ahead to arrange the meeting with Joseph in Goshen — a striking detail. Judah, who once proposed selling Joseph for silver, is now the family's advance agent securing Joseph's reception. Joseph harnesses his chariot and goes to Goshen to meet his father — a mark of honour; in Egyptian protocol, the subordinate travels to the superior. The meeting of Jacob and Joseph after twenty-two years is one of the most emotionally charged reunions in Scripture. Joseph's practical advice about what to say to Pharaoh is the chapter's final movement: the family is transitioning from pastoral wanderers to Goshen residents.",
+          "context": "The reunion of Jacob and Joseph (vv.28-30) is the emotional climax of the Joseph cycle. Twenty-two years of grief resolved in a single embrace. Jacob's words are the words of Simeon in Luke 2:29 -- \"now I am ready to die, since I have seen for myself that you are still alive.\" The satisfaction is complete. The Goshen strategy (vv.31-34) is Joseph's practical wisdom: by identifying as shepherds (detestable to Egyptians), Israel will be allowed to live separately in Goshen, preserving their identity."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 1:7",
+              "note": "The Israelites were fruitful and multiplied greatly — the fulfilment of the \"great nation\" promise of 46:3 begins immediately after the descent."
+            },
+            {
+              "ref": "Heb 11:21",
+              "note": "By faith Jacob, when he was dying, blessed each of Joseph's sons — the faith that began at Beersheba reaches to the deathbed."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

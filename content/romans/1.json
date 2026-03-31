@@ -31,21 +31,22 @@
             "paragraph": "Paul identifies himself as klētos apostolos (‘called apostle’), using the same term he applies to the Roman believers in v. 6 (klētoi Iēsou Christou, ‘called of Jesus Christ’) and v. 7 (klētois hagiois, ‘called saints’). The vocabulary of divine calling brackets the opening and establishes that both apostle and church exist by God’s initiative, not human decision."
           }
         ],
-        "ctx": "Paul’s opening salutation (1:1–7) is the longest and most theologically dense of any Pauline letter. Unlike his other epistles, Paul is writing to a church he did not found, so the extended self-introduction serves as a theological ‘calling card’ — a compressed summary of his gospel. The credal formula in vv. 3–4 (descended from David / declared Son of God by the resurrection) may be a pre-Pauline confession that Paul adopts and affirms, establishing common ground with a church that already confesses Christ.",
-        "cross": [
-          {
-            "ref": "Gal 1:15–16",
-            "note": "Paul similarly describes his apostleship as a divine calling, not a human appointment — ‘set apart from my mother’s womb.’"
-          },
-          {
-            "ref": "2 Tim 2:8",
-            "note": "Paul reiterates the twofold Christological formula: descended from David, raised from the dead."
-          },
-          {
-            "ref": "Acts 9:15",
-            "note": "The Lord identifies Paul as his ‘chosen instrument’ to carry his name before Gentiles, kings, and Israel."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gal 1:15–16",
+              "note": "Paul similarly describes his apostleship as a divine calling, not a human appointment — ‘set apart from my mother’s womb.’"
+            },
+            {
+              "ref": "2 Tim 2:8",
+              "note": "Paul reiterates the twofold Christological formula: descended from David, raised from the dead."
+            },
+            {
+              "ref": "Acts 9:15",
+              "note": "The Lord identifies Paul as his ‘chosen instrument’ to carry his name before Gentiles, kings, and Israel."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "Schreiner takes ‘obedience of faith’ as an inclusio with 16:26, framing the entire letter. The phrase indicates that genuine faith always produces obedience — not as a meritorious addition to faith but as its natural fruit."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul’s opening salutation (1:1–7) is the longest and most theologically dense of any Pauline letter. Unlike his other epistles, Paul is writing to a church he did not found, so the extended self-introduction serves as a theological ‘calling card’ — a compressed summary of his gospel. The credal formula in vv. 3–4 (descended from David / declared Son of God by the resurrection) may be a pre-Pauline confession that Paul adopts and affirms, establishing common ground with a church that already confesses Christ."
         }
       }
     },
@@ -141,21 +145,22 @@
             "paragraph": "Pistis occurs over 40 times in Romans. In 1:17 the phrase ‘from faith to faith’ (ek pisteōs eis pistin) is variously interpreted: from the faith of the preacher to the faith of the hearer, from OT faith to NT faith, or as an emphatic idiom meaning ‘entirely by faith.’ The Habakkuk citation that follows (2:4) anchors justification in trust rather than in Torah performance."
           }
         ],
-        "ctx": "Romans 1:16–17 is widely regarded as the thesis statement of the entire letter. Paul’s confession that he is ‘not ashamed of the gospel’ gains force from the context of writing to the imperial capital, where the crucifixion of a provincial Jew as a messianic pretender would be scandalous. The citation of Habakkuk 2:4 (‘the righteous will live by faith’) was pivotal in the Protestant Reformation: Luther, Calvin, and the Reformers built their doctrine of sola fide on this verse. Paul’s personal eagerness to visit Rome (vv. 8–15) is not mere pleasantry but a diplomatic introduction to a church he wishes to use as a mission base for Spain (15:24).",
-        "cross": [
-          {
-            "ref": "Hab 2:4",
-            "note": "Paul quotes Habakkuk’s declaration as the Old Testament warrant for justification by faith — a text he also cites in Galatians 3:11."
-          },
-          {
-            "ref": "Gal 3:11",
-            "note": "Paul appeals to the same Habakkuk text in arguing against Judaizers, confirming that justification has never been through law-keeping."
-          },
-          {
-            "ref": "1 Cor 1:18–25",
-            "note": "The ‘foolishness’ of the cross — the gospel is God’s power despite its apparent weakness."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Hab 2:4",
+              "note": "Paul quotes Habakkuk’s declaration as the Old Testament warrant for justification by faith — a text he also cites in Galatians 3:11."
+            },
+            {
+              "ref": "Gal 3:11",
+              "note": "Paul appeals to the same Habakkuk text in arguing against Judaizers, confirming that justification has never been through law-keeping."
+            },
+            {
+              "ref": "1 Cor 1:18–25",
+              "note": "The ‘foolishness’ of the cross — the gospel is God’s power despite its apparent weakness."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -228,6 +233,9 @@
               "note": "Schreiner takes the Habakkuk quotation as establishing that the righteous person has always lived by faith, not by works of the law. This is not a Pauline innovation but a recovery of the OT pattern."
             }
           ]
+        },
+        "hist": {
+          "context": "Romans 1:16–17 is widely regarded as the thesis statement of the entire letter. Paul’s confession that he is ‘not ashamed of the gospel’ gains force from the context of writing to the imperial capital, where the crucifixion of a provincial Jew as a messianic pretender would be scandalous. The citation of Habakkuk 2:4 (‘the righteous will live by faith’) was pivotal in the Protestant Reformation: Luther, Calvin, and the Reformers built their doctrine of sola fide on this verse. Paul’s personal eagerness to visit Rome (vv. 8–15) is not mere pleasantry but a diplomatic introduction to a church he wishes to use as a mission base for Spain (15:24)."
         }
       }
     },
@@ -251,21 +259,22 @@
             "paragraph": "The verb paradidōmi appears three times in this passage (vv. 24, 26, 28), marking three stages of divine judgment. God does not merely permit sin but actively gives humanity over to the consequences of their own rebellion. This is a judicial ‘handing over’ that is itself the outworking of wrath, not merely its prelude."
           }
         ],
-        "ctx": "Paul’s description of Gentile idolatry and its moral consequences (1:18–32) draws on standard Jewish apologetic against paganism, especially Wisdom of Solomon 13–14. The argument moves from natural revelation (vv. 19–20) to idolatrous exchange (vv. 21–23) to moral degradation (vv. 24–32) in a deliberate rhetorical descent. However, Paul’s purpose is not simply to condemn Gentiles; the trap springs in 2:1 when the Jewish interlocutor who applauds this indictment discovers that he too stands condemned. The passage establishes the universal need for the gospel announced in 1:16–17.",
-        "cross": [
-          {
-            "ref": "Ps 19:1–4",
-            "note": "Creation declares God’s glory — the basis for Paul’s claim that God’s invisible qualities are ‘clearly seen’ through what has been made."
-          },
-          {
-            "ref": "Wis 13:1–9",
-            "note": "The Wisdom of Solomon contains a parallel argument about the inexcusability of idolatry given creation’s testimony to the Creator."
-          },
-          {
-            "ref": "Acts 14:15–17",
-            "note": "Paul makes a similar natural-theology argument at Lystra: God ‘has not left himself without testimony.’"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 19:1–4",
+              "note": "Creation declares God’s glory — the basis for Paul’s claim that God’s invisible qualities are ‘clearly seen’ through what has been made."
+            },
+            {
+              "ref": "Wis 13:1–9",
+              "note": "The Wisdom of Solomon contains a parallel argument about the inexcusability of idolatry given creation’s testimony to the Creator."
+            },
+            {
+              "ref": "Acts 14:15–17",
+              "note": "Paul makes a similar natural-theology argument at Lystra: God ‘has not left himself without testimony.’"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -342,6 +351,9 @@
               "note": "Schreiner argues that the knowledge available through creation is genuine and sufficient to establish culpability, but that fallen humanity universally suppresses it. The problem is not epistemic but moral: people know God exists but refuse to honour him."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul’s description of Gentile idolatry and its moral consequences (1:18–32) draws on standard Jewish apologetic against paganism, especially Wisdom of Solomon 13–14. The argument moves from natural revelation (vv. 19–20) to idolatrous exchange (vv. 21–23) to moral degradation (vv. 24–32) in a deliberate rhetorical descent. However, Paul’s purpose is not simply to condemn Gentiles; the trap springs in 2:1 when the Jewish interlocutor who applauds this indictment discovers that he too stands condemned. The passage establishes the universal need for the gospel announced in 1:16–17."
         }
       }
     }

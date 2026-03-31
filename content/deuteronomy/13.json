@@ -31,21 +31,22 @@
             "paragraph": "The phrase \"other gods\" is Deuteronomy's standard description of idolatry — gods who are \"other\" (acher) than the LORD, alien to the covenant relationship. The idolatry test runs through all of Deuteronomy's false-prophet legislation."
           }
         ],
-        "ctx": "Chapter 13 addresses three scenarios of apostasy: (1) a prophet or dreamer who performs signs but leads to other gods (vv.1–5); (2) a family member who secretly entices to other gods (vv.6–11); (3) a whole city that goes after other gods (vv.12–18). In all three cases the response is the same: death. The severity reflects the stakes: apostasy is not merely personal failure but covenant catastrophe. The chapter also teaches that miraculous signs are not self-validating — a miracle that contradicts God's word is a test, not a confirmation (v.3).",
-        "cross": [
-          {
-            "ref": "Matt 24:24",
-            "note": "\"For false messiahs and false prophets will appear and perform great signs and wonders to deceive, if possible, even the elect.\" Jesus quotes Deuteronomy 13's false prophet scenario as the template for end-time deception."
-          },
-          {
-            "ref": "Gal 1:8",
-            "note": "\"But even if we or an angel from heaven should preach a gospel other than the one we preached to you, let them be under God's curse!\" Paul applies the Deuteronomy 13 logic to gospel preaching: the test is not the messenger's authority but the message's faithfulness."
-          },
-          {
-            "ref": "1 John 4:1",
-            "note": "\"Test the spirits to see whether they are from God, because many false prophets have gone out into the world.\" John's testing-of-spirits instruction is the NT application of Deuteronomy 13's false prophet test."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 24:24",
+              "note": "\"For false messiahs and false prophets will appear and perform great signs and wonders to deceive, if possible, even the elect.\" Jesus quotes Deuteronomy 13's false prophet scenario as the template for end-time deception."
+            },
+            {
+              "ref": "Gal 1:8",
+              "note": "\"But even if we or an angel from heaven should preach a gospel other than the one we preached to you, let them be under God's curse!\" Paul applies the Deuteronomy 13 logic to gospel preaching: the test is not the messenger's authority but the message's faithfulness."
+            },
+            {
+              "ref": "1 John 4:1",
+              "note": "\"Test the spirits to see whether they are from God, because many false prophets have gone out into the world.\" John's testing-of-spirits instruction is the NT application of Deuteronomy 13's false prophet test."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 13 addresses three scenarios of apostasy: (1) a prophet or dreamer who performs signs but leads to other gods (vv.1–5); (2) a family member who secretly entices to other gods (vv.6–11); (3) a whole city that goes after other gods (vv.12–18). In all three cases the response is the same: death. The severity reflects the stakes: apostasy is not merely personal failure but covenant catastrophe. The chapter also teaches that miraculous signs are not self-validating — a miracle that contradicts God's word is a test, not a confirmation (v.3)."
         }
       }
     },
@@ -135,13 +139,14 @@
             "paragraph": "Beliyaal (literally \"without profit/value\") is used for the most contemptible moral failure. The worthless scoundrels of Deut 13:13 who entice a city to apostasy foreshadow the NT's Belial (2 Cor 6:15) — the embodiment of covenant betrayal."
           }
         ],
-        "ctx": "If an entire Israelite city is led into idolatry, it receives the same herem treatment as Canaanite cities: complete destruction, burning to ash, never rebuilt. The logic is consistent: apostasy within the covenant community is more dangerous than apostasy outside it. An Israelite city worshipping false gods is a cancer in the covenant body. The chapter ends with the covenant promise: if you execute this judgment, God will be merciful to you and multiply you.",
-        "cross": [
-          {
-            "ref": "Rev 17–18",
-            "note": "\"Fallen, fallen is Babylon the Great!\" Revelation's imagery of the apostate city destroyed draws on Deuteronomy 13:16's herem of the apostate Israelite city."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rev 17–18",
+              "note": "\"Fallen, fallen is Babylon the Great!\" Revelation's imagery of the apostate city destroyed draws on Deuteronomy 13:16's herem of the apostate Israelite city."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -206,6 +211,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "If an entire Israelite city is led into idolatry, it receives the same herem treatment as Canaanite cities: complete destruction, burning to ash, never rebuilt. The logic is consistent: apostasy within the covenant community is more dangerous than apostasy outside it. An Israelite city worshipping false gods is a cancer in the covenant body. The chapter ends with the covenant promise: if you execute this judgment, God will be merciful to you and multiply you."
         }
       }
     }

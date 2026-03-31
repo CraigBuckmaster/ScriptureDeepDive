@@ -25,17 +25,18 @@
             "paragraph": "Zedekiah is promised he will \"die peacefully\" and receive a proper funeral with a royal fire (misrephот, v.5) -- the burning of spices in his honor. This conditional promise depends on submission to Babylon, which Zedekiah ultimately rejects. The promised peaceful death becomes blinding and exile (39:7)."
           }
         ],
-        "ctx": "Chapter 34 records two episodes during the siege. First, a personal word to Zedekiah: surrender and live, resist and lose everything. Second, the far more significant slave-release episode -- Zedekiah orders the release of Hebrew slaves (following Deut 15), then allows the owners to re-enslave them. This reversal provokes one of the most severe judgment oracles in the book.",
-        "cross": [
-          {
-            "ref": "Jer 21:8-10",
-            "note": "The earlier word to Zedekiah: \"way of life and way of death.\" The conditional offer persists even during the siege."
-          },
-          {
-            "ref": "2 Kgs 25:7",
-            "note": "The actual fate of Zedekiah: sons killed before his eyes, then blinded -- the conditional promise forfeited."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 21:8-10",
+              "note": "The earlier word to Zedekiah: \"way of life and way of death.\" The conditional offer persists even during the siege."
+            },
+            {
+              "ref": "2 Kgs 25:7",
+              "note": "The actual fate of Zedekiah: sons killed before his eyes, then blinded -- the conditional promise forfeited."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -84,6 +85,9 @@
               "note": "Brueggemann reads the conditional promise as \"the persistence of divine grace under impossible conditions.\" Even with siege ramps against the walls, God offers an exit."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 34 records two episodes during the siege. First, a personal word to Zedekiah: surrender and live, resist and lose everything. Second, the far more significant slave-release episode -- Zedekiah orders the release of Hebrew slaves (following Deut 15), then allows the owners to re-enslave them. This reversal provokes one of the most severe judgment oracles in the book."
         }
       }
     },
@@ -101,21 +105,22 @@
             "paragraph": "Zedekiah proclaims deror -- liberty for Hebrew slaves (v.8). The word deror is the same used in Leviticus 25:10 for the Jubilee year (\"Proclaim liberty throughout the land\"). But the owners recapture their freed slaves (v.11), making the deror a mockery. God responds with devastating irony: \"You have not proclaimed freedom (deror) for your slaves, so I now proclaim freedom (deror) for you -- freedom to fall by sword, plague, and famine\" (v.17)."
           }
         ],
-        "ctx": "The slave-release reversal is the most damning social justice episode in Jeremiah. The owners freed their slaves, perhaps during a temporary lifting of the siege when the Egyptian army approached (37:5), then re-enslaved them when the crisis seemed to pass. God's response invokes the ancient covenant-cutting ceremony: \"Those who have violated my covenant and have not fulfilled the terms of the covenant they made before me, I will treat like the calf they cut in two and walked between\" (v.18).",
-        "cross": [
-          {
-            "ref": "Deut 15:12-15",
-            "note": "The law requiring release of Hebrew slaves in the seventh year -- the law Zedekiah briefly enforced then violated."
-          },
-          {
-            "ref": "Gen 15:9-17",
-            "note": "The covenant-cutting ceremony where God alone passes between the halved animals -- the ritual that the slave-owners violated."
-          },
-          {
-            "ref": "Lev 25:10",
-            "note": "\"Proclaim liberty throughout the land\" -- the Jubilee ideal that the slave-release was meant to fulfill."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 15:12-15",
+              "note": "The law requiring release of Hebrew slaves in the seventh year -- the law Zedekiah briefly enforced then violated."
+            },
+            {
+              "ref": "Gen 15:9-17",
+              "note": "The covenant-cutting ceremony where God alone passes between the halved animals -- the ritual that the slave-owners violated."
+            },
+            {
+              "ref": "Lev 25:10",
+              "note": "\"Proclaim liberty throughout the land\" -- the Jubilee ideal that the slave-release was meant to fulfill."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -172,6 +177,9 @@
               "note": "Brueggemann reads the slave episode as \"the collapse of reform under pressure.\" When the external threat recedes, the internal commitment evaporates. True justice requires transformation of will, not merely compliance under duress."
             }
           ]
+        },
+        "hist": {
+          "context": "The slave-release reversal is the most damning social justice episode in Jeremiah. The owners freed their slaves, perhaps during a temporary lifting of the siege when the Egyptian army approached (37:5), then re-enslaved them when the crisis seemed to pass. God's response invokes the ancient covenant-cutting ceremony: \"Those who have violated my covenant and have not fulfilled the terms of the covenant they made before me, I will treat like the calf they cut in two and walked between\" (v.18)."
         }
       }
     }

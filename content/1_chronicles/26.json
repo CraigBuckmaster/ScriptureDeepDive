@@ -17,13 +17,14 @@
       "verse_start": 1,
       "verse_end": 19,
       "panels": {
-        "ctx": "The gatekeepers are organised by family and assigned to specific gates: north, south, east, west, and the storehouse. Obed-Edom (whose house was blessed when the ark stayed there, 13:14) serves among the gatekeepers with 62 descendants — the blessing of the ark continues generationally. The gatekeepers cast lots for their posts, “each family alike.” Their role is practical (security) and theological (controlling access to holy space).",
-        "cross": [
-          {
-            "ref": "1 Chr 13:14",
-            "note": "Obed-Edom’s household was blessed during the three months the ark stayed with him. Now his descendants serve as gatekeepers — permanently near the ark."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Chr 13:14",
+              "note": "Obed-Edom’s household was blessed during the three months the ark stayed with him. Now his descendants serve as gatekeepers — permanently near the ark."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -41,6 +42,9 @@
               "note": "The “storehouse” (ʾasūppîm) housed both sacred vessels and provisions. Guarding the storehouse was a position of significant trust and responsibility."
             }
           ]
+        },
+        "hist": {
+          "context": "The gatekeepers are organised by family and assigned to specific gates: north, south, east, west, and the storehouse. Obed-Edom (whose house was blessed when the ark stayed there, 13:14) serves among the gatekeepers with 62 descendants — the blessing of the ark continues generationally. The gatekeepers cast lots for their posts, “each family alike.” Their role is practical (security) and theological (controlling access to holy space)."
         }
       }
     },
@@ -50,13 +54,14 @@
       "verse_start": 20,
       "verse_end": 32,
       "panels": {
-        "ctx": "Levites manage both the temple treasury (sacred donations, dedicated gifts) and external administration (officers and judges throughout Israel). The Chronicler maps the Levitical presence across the entire kingdom: they serve not only in the temple but as administrators in every region. The chapter closes with a note about officials west of the Jordan and east — Levitical governance extends to the full territorial reach of “all Israel.”",
-        "cross": [
-          {
-            "ref": "2 Chr 19:8–11",
-            "note": "Jehoshaphat appoints Levites as judges throughout Judah. The administrative role described here persists into the monarchy."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Chr 19:8–11",
+              "note": "Jehoshaphat appoints Levites as judges throughout Judah. The administrative role described here persists into the monarchy."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -74,6 +79,9 @@
               "note": "The phrase “for outside duties” (lammĕlāʾkāh hahîṣōnāh) distinguishes temple-internal from territory-wide Levitical service. The Levites’ jurisdiction extended beyond the sanctuary walls."
             }
           ]
+        },
+        "hist": {
+          "context": "Levites manage both the temple treasury (sacred donations, dedicated gifts) and external administration (officers and judges throughout Israel). The Chronicler maps the Levitical presence across the entire kingdom: they serve not only in the temple but as administrators in every region. The chapter closes with a note about officials west of the Jordan and east — Levitical governance extends to the full territorial reach of “all Israel.”"
         }
       }
     }

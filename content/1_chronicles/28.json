@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 10,
       "panels": {
-        "ctx": "David assembles all Israel’s officials and delivers his farewell address. He recounts God’s choice: “Of all my sons — and the LORD has given me many — he has chosen my son Solomon to sit on the throne of the LORD over Israel.” The throne is “of the LORD” — not David’s throne but God’s, administered by David’s son. The conditional element appears: “If he is unswerving in carrying out my commands... his kingdom will be established.” Then David charges Solomon directly: “Acknowledge the God of your father, and serve him with wholehearted devotion. If you seek him, he will be found by you; but if you forsake him, he will reject you forever.”",
-        "cross": [
-          {
-            "ref": "1 Kgs 2:1–4",
-            "note": "David’s charge to Solomon in Kings focuses on political consolidation (deal with Joab, Shimei). The Chronicler’s charge focuses entirely on worship and seeking God."
-          },
-          {
-            "ref": "Deut 31:7–8",
-            "note": "Moses charges Joshua: “Be strong and courageous.” David charges Solomon with the same words (v.20). The temple-builder receives the conqueror’s commission."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 2:1–4",
+              "note": "David’s charge to Solomon in Kings focuses on political consolidation (deal with Joab, Shimei). The Chronicler’s charge focuses entirely on worship and seeking God."
+            },
+            {
+              "ref": "Deut 31:7–8",
+              "note": "Moses charges Joshua: “Be strong and courageous.” David charges Solomon with the same words (v.20). The temple-builder receives the conqueror’s commission."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "kissēʾ malkt YHWH (“the throne of the kingdom of the LORD”) — this unique phrase identifies the Davidic throne as an extension of divine sovereignty. It is used only in Chronicles."
             }
           ]
+        },
+        "hist": {
+          "context": "David assembles all Israel’s officials and delivers his farewell address. He recounts God’s choice: “Of all my sons — and the LORD has given me many — he has chosen my son Solomon to sit on the throne of the LORD over Israel.” The throne is “of the LORD” — not David’s throne but God’s, administered by David’s son. The conditional element appears: “If he is unswerving in carrying out my commands... his kingdom will be established.” Then David charges Solomon directly: “Acknowledge the God of your father, and serve him with wholehearted devotion. If you seek him, he will be found by you; but if you forsake him, he will reject you forever.”"
         }
       }
     },
@@ -62,17 +66,18 @@
             "paragraph": "David gives Solomon the tavnît (v.11) — the detailed architectural plan for the temple. The same word is used for the tabernacle pattern shown to Moses on Sinai (Exod 25:9). David receives the temple blueprints by divine revelation, just as Moses received the tabernacle design. The temple is not David’s design but God’s."
           }
         ],
-        "ctx": "David gives Solomon the plans “that the Spirit had put in his mind” — for the portico, buildings, treasuries, upper rooms, inner rooms, the place of atonement, the courts, the priestly and Levitical divisions, and all the vessels of service. Everything is specified by weight: gold for the gold items, silver for the silver items. The gold lampstands, the table for the bread of the Presence, the altar of incense — every item has a divinely specified weight. David concludes: “All this I have in writing as a result of the LORD’s hand on me, and he enabled me to understand all the details of the plan.”",
-        "cross": [
-          {
-            "ref": "Exod 25:9",
-            "note": "“Make this tabernacle and all its furnishings exactly like the pattern I will show you.” Moses received the tabernacle pattern on Sinai; David receives the temple pattern through the Spirit."
-          },
-          {
-            "ref": "Heb 8:5",
-            "note": "“They serve at a sanctuary that is a copy and shadow of what is in heaven.” The NT extends the principle: earthly worship follows a heavenly pattern."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 25:9",
+              "note": "“Make this tabernacle and all its furnishings exactly like the pattern I will show you.” Moses received the tabernacle pattern on Sinai; David receives the temple pattern through the Spirit."
+            },
+            {
+              "ref": "Heb 8:5",
+              "note": "“They serve at a sanctuary that is a copy and shadow of what is in heaven.” The NT extends the principle: earthly worship follows a heavenly pattern."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -90,6 +95,9 @@
               "note": "tabnît (“pattern, model”) is the same word used in Exod 25:9, 40 for the tabernacle pattern. The verbal echo is intentional: David’s temple revelation parallels Moses’ Sinai revelation."
             }
           ]
+        },
+        "hist": {
+          "context": "David gives Solomon the plans “that the Spirit had put in his mind” — for the portico, buildings, treasuries, upper rooms, inner rooms, the place of atonement, the courts, the priestly and Levitical divisions, and all the vessels of service. Everything is specified by weight: gold for the gold items, silver for the silver items. The gold lampstands, the table for the bread of the Presence, the altar of incense — every item has a divinely specified weight. David concludes: “All this I have in writing as a result of the LORD’s hand on me, and he enabled me to understand all the details of the plan.”"
         }
       }
     }

@@ -25,21 +25,22 @@
             "paragraph": "\"Babylon will be captured; Bel (bel) will be put to shame, Marduk filled with terror\" (v.2). Bel (\"lord\") is the title of Marduk, Babylon's chief deity. The fall of Babylon means the fall of Marduk -- the most powerful god in the ancient Near Eastern pantheon defeated by the God who has \"no form.\" The contest between YHWH and Marduk underlies the entire Babylon oracle."
           }
         ],
-        "ctx": "Chapters 50-51 form the climactic oracle of the book -- the judgment on Babylon itself. The instrument of God's judgment against Judah now faces its own judgment. The oracle is the longest sustained poem in Jeremiah (110 verses) and serves as the theological counterweight to chapters 2-25: as Judah was judged for abandoning God, Babylon is judged for its arrogance, cruelty, and opposition to God's people. Israel's restoration is woven throughout: as Babylon falls, Israel rises.",
-        "cross": [
-          {
-            "ref": "Isa 13-14",
-            "note": "Isaiah's parallel oracle against Babylon -- the prophetic tradition of condemning the empire."
-          },
-          {
-            "ref": "Rev 17-18",
-            "note": "Revelation's \"Babylon the Great\" draws directly on Jeremiah 50-51 for its imagery of the fallen city."
-          },
-          {
-            "ref": "Dan 5",
-            "note": "The handwriting on the wall: Belshazzar's feast and Babylon's fall to Persia -- the historical fulfillment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 13-14",
+              "note": "Isaiah's parallel oracle against Babylon -- the prophetic tradition of condemning the empire."
+            },
+            {
+              "ref": "Rev 17-18",
+              "note": "Revelation's \"Babylon the Great\" draws directly on Jeremiah 50-51 for its imagery of the fallen city."
+            },
+            {
+              "ref": "Dan 5",
+              "note": "The handwriting on the wall: Belshazzar's feast and Babylon's fall to Persia -- the historical fulfillment."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Brueggemann reads the fall of Marduk as \"the deconstruction of imperial religion.\" Every empire claims divine sponsorship; the fall of the empire exposes the claim as fraud. Marduk's shame is the shame of every ideology that sacralizes power."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapters 50-51 form the climactic oracle of the book -- the judgment on Babylon itself. The instrument of God's judgment against Judah now faces its own judgment. The oracle is the longest sustained poem in Jeremiah (110 verses) and serves as the theological counterweight to chapters 2-25: as Judah was judged for abandoning God, Babylon is judged for its arrogance, cruelty, and opposition to God's people. Israel's restoration is woven throughout: as Babylon falls, Israel rises."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "\"Attack the land of Merathaim (double rebellion) and those who live in Pekod (punishment)\" (v.21). Both names are wordplays: Merathaim puns on southern Babylonia's marsh region (mat marrati) while meaning \"double rebellion,\" and Pekod puns on the Puqudu tribe while meaning \"punishment.\" The geography encodes the theology."
           }
         ],
-        "ctx": "The second half escalates the rhetoric. Babylon is called \"the hammer of the whole earth\" (v.23) -- now itself broken. God opens his \"arsenal\" (v.25) and brings out \"the weapons of his wrath.\" The oracle alternates between Babylon's destruction and Israel's release, weaving judgment and salvation into a single fabric. The Redeemer (go'el) is invoked: \"their Redeemer is strong; the LORD Almighty is his name\" (v.34).",
-        "cross": [
-          {
-            "ref": "Isa 47:1-15",
-            "note": "Isaiah's parallel \"virgin daughter of Babylon\" oracle -- the pampered empire humiliated."
-          },
-          {
-            "ref": "Rev 18:2",
-            "note": "\"Fallen! Fallen is Babylon the Great!\" -- John echoes the prophetic tradition of announcing Babylon's definitive collapse."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 47:1-15",
+              "note": "Isaiah's parallel \"virgin daughter of Babylon\" oracle -- the pampered empire humiliated."
+            },
+            {
+              "ref": "Rev 18:2",
+              "note": "\"Fallen! Fallen is Babylon the Great!\" -- John echoes the prophetic tradition of announcing Babylon's definitive collapse."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -188,6 +193,9 @@
               "note": "Brueggemann identifies the Redeemer oracle as \"the theological heart of the Babylon collection.\" God is not a neutral arbiter but a committed kinsman who takes Israel's side against the oppressor."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half escalates the rhetoric. Babylon is called \"the hammer of the whole earth\" (v.23) -- now itself broken. God opens his \"arsenal\" (v.25) and brings out \"the weapons of his wrath.\" The oracle alternates between Babylon's destruction and Israel's release, weaving judgment and salvation into a single fabric. The Redeemer (go'el) is invoked: \"their Redeemer is strong; the LORD Almighty is his name\" (v.34)."
         }
       }
     }

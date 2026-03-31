@@ -31,21 +31,22 @@
             "paragraph": "A homer was approximately 220 liters of dry goods, and a lethek was half a homer. The total payment of fifteen shekels of silver plus barley amounts to roughly the price of a slave (cf. Exod 21:32: thirty shekels for a slave). The combination of silver and barley suggests Hosea could not afford the full price in silver, adding a note of pathos to the redemption scene."
           }
         ],
-        "ctx": "This brief chapter shifts to first-person narration, with Hosea himself as speaker. The command to love 'again' (or 'another,' depending on translation) implies a period of separation during which Gomer had been living with another man or had fallen into slavery. The redemption price is significant: the combination of silver and barley totals approximately thirty shekels — the price of a slave (Exod 21:32) and, centuries later, the price paid for Jesus (Zech 11:12-13; Matt 26:15). The period of enforced waiting (v. 3) may reflect a purification requirement or a probationary period before full conjugal rights are restored. This is the last narrative section of the book; chapters 4-14 shift entirely to oracular poetry.",
-        "cross": [
-          {
-            "ref": "Exod 21:32",
-            "note": "Thirty shekels as the price of a slave, roughly equivalent to Hosea's redemption payment for Gomer."
-          },
-          {
-            "ref": "Zech 11:12-13",
-            "note": "Zechariah's thirty pieces of silver thrown to the potter, echoing the slave-price of redemption and anticipating the price of Jesus' betrayal."
-          },
-          {
-            "ref": "Gal 3:13",
-            "note": "Paul's theology of Christ 'buying back' (redeeming) those under the law's curse extends the Hosea-Gomer redemption pattern."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 21:32",
+              "note": "Thirty shekels as the price of a slave, roughly equivalent to Hosea's redemption payment for Gomer."
+            },
+            {
+              "ref": "Zech 11:12-13",
+              "note": "Zechariah's thirty pieces of silver thrown to the potter, echoing the slave-price of redemption and anticipating the price of Jesus' betrayal."
+            },
+            {
+              "ref": "Gal 3:13",
+              "note": "Paul's theology of Christ 'buying back' (redeeming) those under the law's curse extends the Hosea-Gomer redemption pattern."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "This passage is the biographical counterpart to the oracular restoration of 2:14-23. What the poetry promises in cosmic terms, the narrative enacts in domestic terms. The purchase price, with its echo of slave valuation, anticipates the redemption theology that will become central to both prophetic and apostolic thought. The period of imposed fidelity (v. 3) is Hosea's version of the wilderness sojourn: a liminal period between judgment and full restoration."
             }
           ]
+        },
+        "hist": {
+          "context": "This brief chapter shifts to first-person narration, with Hosea himself as speaker. The command to love 'again' (or 'another,' depending on translation) implies a period of separation during which Gomer had been living with another man or had fallen into slavery. The redemption price is significant: the combination of silver and barley totals approximately thirty shekels — the price of a slave (Exod 21:32) and, centuries later, the price paid for Jesus (Zech 11:12-13; Matt 26:15). The period of enforced waiting (v. 3) may reflect a purification requirement or a probationary period before full conjugal rights are restored. This is the last narrative section of the book; chapters 4-14 shift entirely to oracular poetry."
         }
       }
     },
@@ -127,21 +131,22 @@
             "paragraph": "This temporal marker signals eschatological hope. The waiting period described in v. 4 is not permanent but transitional. The phrase connects to the broader prophetic theme of the 'latter days' (beʾaharit hayyamim), pointing beyond the immediate exile to an ultimate restoration. The return to YHWH and 'David their king' introduces messianic expectation into the Hosean corpus."
           }
         ],
-        "ctx": "The application to Israel (vv. 4-5) interprets the Gomer narrative allegorically. The 'many days' without king, prince, sacrifice, sacred stone, ephod, or household gods describes the condition of exile: stripped of all the institutions — both legitimate (monarchy, sacrifice, ephod) and illegitimate (sacred stones, household gods) — that defined Israelite national life. This is the probationary period of v. 3 writ large. The mention of 'David their king' is remarkable coming from a northern prophet, since the northern kingdom had rejected the Davidic dynasty. It suggests that Hosea recognized the Davidic covenant as the legitimate channel of messianic hope, transcending the north-south divide.",
-        "cross": [
-          {
-            "ref": "Jer 30:9",
-            "note": "Jeremiah echoes Hosea: 'They will serve the LORD their God and David their king, whom I will raise up for them.'"
-          },
-          {
-            "ref": "Ezek 34:23-24",
-            "note": "Ezekiel's vision of 'my servant David' as the one shepherd over reunited Israel develops Hosea's brief allusion."
-          },
-          {
-            "ref": "Luke 1:32-33",
-            "note": "The angel's announcement that Jesus will inherit 'the throne of his father David' fulfills the Hosean/prophetic hope."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 30:9",
+              "note": "Jeremiah echoes Hosea: 'They will serve the LORD their God and David their king, whom I will raise up for them.'"
+            },
+            {
+              "ref": "Ezek 34:23-24",
+              "note": "Ezekiel's vision of 'my servant David' as the one shepherd over reunited Israel develops Hosea's brief allusion."
+            },
+            {
+              "ref": "Luke 1:32-33",
+              "note": "The angel's announcement that Jesus will inherit 'the throne of his father David' fulfills the Hosean/prophetic hope."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -190,6 +195,9 @@
               "note": "The enumeration in v. 4 is remarkable for its mixing of categories: king and prince (political), sacrifice and sacred stone (cultic, both legitimate and illegitimate), ephod and teraphim (oracular). The message is that the entire apparatus of national life — political, religious, and divinatory — will be suspended. Verse 5 then introduces the concept of return (shuv), which becomes the dominant motif of chapters 4-14."
             }
           ]
+        },
+        "hist": {
+          "context": "The application to Israel (vv. 4-5) interprets the Gomer narrative allegorically. The 'many days' without king, prince, sacrifice, sacred stone, ephod, or household gods describes the condition of exile: stripped of all the institutions — both legitimate (monarchy, sacrifice, ephod) and illegitimate (sacred stones, household gods) — that defined Israelite national life. This is the probationary period of v. 3 writ large. The mention of 'David their king' is remarkable coming from a northern prophet, since the northern kingdom had rejected the Davidic dynasty. It suggests that Hosea recognized the Davidic covenant as the legitimate channel of messianic hope, transcending the north-south divide."
         }
       }
     }

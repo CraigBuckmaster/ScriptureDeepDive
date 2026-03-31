@@ -31,21 +31,22 @@
             "paragraph": "In v. 7 Paul describes Andronicus and Junia as ‘outstanding among the apostles’ (episēmoi en tois apostolois). The identification of Junia as a woman and as an apostle has been extensively debated. The name Iounian is almost certainly feminine (Junia), not a contraction of the masculine Junianus. The phrase may mean ‘well known among the apostles’ (they were recognised by the apostles) or ‘notable as apostles’ (they themselves were apostles in the broader sense of ‘missionaries’)."
           }
         ],
-        "ctx": "Romans 16:1–16 contains the longest greeting list in any Pauline letter: 26 individuals and several households are named. This is remarkable for a church Paul had not founded or visited, and it reveals the extensive network of relationships Paul had built across the Mediterranean. The list includes Jews and Gentiles, men and women, slaves and free persons, reflecting the social diversity of the Roman house churches. Phoebe of Cenchreae (vv. 1–2) is commended as the letter’s carrier, a common practice in ancient letter-writing. The greeting list functions both as personal connection and as a strategic move: naming allies establishes Paul’s credibility with a church he has not yet visited.",
-        "cross": [
-          {
-            "ref": "Acts 18:2–3",
-            "note": "Priscilla and Aquila, tentmakers who worked with Paul in Corinth and later hosted a house church."
-          },
-          {
-            "ref": "Col 4:10–17",
-            "note": "A parallel greeting list at the end of Colossians, showing the same pattern."
-          },
-          {
-            "ref": "Phlm 1–2",
-            "note": "Greetings to Apphia, Archippus, and the church in Philemon’s house — the house church model."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 18:2–3",
+              "note": "Priscilla and Aquila, tentmakers who worked with Paul in Corinth and later hosted a house church."
+            },
+            {
+              "ref": "Col 4:10–17",
+              "note": "A parallel greeting list at the end of Colossians, showing the same pattern."
+            },
+            {
+              "ref": "Phlm 1–2",
+              "note": "Greetings to Apphia, Archippus, and the church in Philemon’s house — the house church model."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Schreiner argues that Phoebe’s role as letter-carrier was significant: she would have been the first to read the letter publicly and would have been expected to explain and interpret it. Her commendation is Paul’s way of authorising her role."
             }
           ]
+        },
+        "hist": {
+          "context": "Romans 16:1–16 contains the longest greeting list in any Pauline letter: 26 individuals and several households are named. This is remarkable for a church Paul had not founded or visited, and it reveals the extensive network of relationships Paul had built across the Mediterranean. The list includes Jews and Gentiles, men and women, slaves and free persons, reflecting the social diversity of the Roman house churches. Phoebe of Cenchreae (vv. 1–2) is commended as the letter’s carrier, a common practice in ancient letter-writing. The greeting list functions both as personal connection and as a strategic move: naming allies establishes Paul’s credibility with a church he has not yet visited."
         }
       }
     },
@@ -127,21 +131,22 @@
             "paragraph": "Mystērion in v. 25 echoes 11:25: the ‘mystery hidden for long ages past’ is now disclosed through the prophetic writings and made known to all nations. The mystery is the inclusion of Gentiles alongside Jews in the one people of God through faith in Christ. The doxology (vv. 25–27) bookends the letter: what began with the gospel ‘promised beforehand through his prophets’ (1:2) now concludes with the mystery ‘revealed and made known through the prophetic writings.’"
           }
         ],
-        "ctx": "Romans 16:17–27 contains Paul’s final warning against divisive teachers (vv. 17–20) and the letter’s concluding doxology (vv. 25–27). The warning is brief but sharp: those who cause divisions serve their own appetites and deceive the naive with smooth talk. The promise that ‘the God of peace will soon crush Satan under your feet’ (v. 20) is a dramatic allusion to Genesis 3:15, casting the church’s conflict with false teaching as the cosmic battle between the seed of the woman and the serpent. The doxology is one of the most magnificent in the NT, summarising the entire letter’s argument: the gospel is the revelation of a mystery kept secret for ages but now made known for the obedience of faith among all nations.",
-        "cross": [
-          {
-            "ref": "Gen 3:15",
-            "note": "The proto-evangelium: God will crush the serpent’s head — the OT background for v. 20."
-          },
-          {
-            "ref": "Eph 3:3–6",
-            "note": "The mystery of Christ: Gentiles are fellow heirs with Israel — the same mystery Paul references."
-          },
-          {
-            "ref": "Jude 24–25",
-            "note": "A parallel doxology: to the only God our Saviour be glory, majesty, power, and authority."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 3:15",
+              "note": "The proto-evangelium: God will crush the serpent’s head — the OT background for v. 20."
+            },
+            {
+              "ref": "Eph 3:3–6",
+              "note": "The mystery of Christ: Gentiles are fellow heirs with Israel — the same mystery Paul references."
+            },
+            {
+              "ref": "Jude 24–25",
+              "note": "A parallel doxology: to the only God our Saviour be glory, majesty, power, and authority."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -202,6 +207,9 @@
               "note": "Schreiner argues that the doxology’s emphasis on God’s wisdom (mono sophō theō, ‘the only wise God’) recalls the doxology of 11:33–36 and summarises the entire letter’s argument. The mystery of salvation is the supreme display of divine wisdom, and the only appropriate response is eternal praise."
             }
           ]
+        },
+        "hist": {
+          "context": "Romans 16:17–27 contains Paul’s final warning against divisive teachers (vv. 17–20) and the letter’s concluding doxology (vv. 25–27). The warning is brief but sharp: those who cause divisions serve their own appetites and deceive the naive with smooth talk. The promise that ‘the God of peace will soon crush Satan under your feet’ (v. 20) is a dramatic allusion to Genesis 3:15, casting the church’s conflict with false teaching as the cosmic battle between the seed of the woman and the serpent. The doxology is one of the most magnificent in the NT, summarising the entire letter’s argument: the gospel is the revelation of a mystery kept secret for ages but now made known for the obedience of faith among all nations."
         }
       }
     }

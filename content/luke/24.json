@@ -54,21 +54,22 @@
             "current": true
           }
         ],
-        "ctx": "[('The Emmaus Road', 'The road to Emmaus (24:13-35) is the longest resurrection appearance narrative in the Gospels and unique to Luke. The two disciples embody the confusion and grief of the broader disciple community: they had hoped Jesus was the redeemer of Israel, and now they are leaving Jerusalem. Jesus joins them as an unknown companion, walks with them through their misunderstanding, interprets the Scriptures, and reveals himself in the breaking of bread — then vanishes. The recognition comes through a meal, not through seeing.'), ('Scripture Interpretation in Luke 24', 'Three times in Luke 24, Jesus opens Scripture: to the two disciples on the Emmaus road (24:27), to the assembled disciples in Jerusalem (24:44-47), and implicitly through the angels\\' \"remember what he told you\" (24:6-7). The entire chapter is a hermeneutical event: the resurrection is the key that unlocks all of Moses, the Prophets, and the Psalms. The disciples\\' previous inability to understand the passion predictions is resolved not by more explanation but by the event itself.')]",
-        "cross": [
-          {
-            "ref": "Ps 16:10",
-            "note": "\"You will not abandon me to the realm of the dead, nor will you let your faithful one see decay\" — the resurrection psalm Peter cites in Acts 2:27, which Jesus's resurrection fulfils."
-          },
-          {
-            "ref": "Gen 18:1-8",
-            "note": "Abraham's hospitality to the three visitors — the OT prototype of table hospitality that reveals the divine guest, which the Emmaus meal echoes."
-          },
-          {
-            "ref": "1 Cor 15:3-8",
-            "note": "Paul's earliest list of resurrection appearances, which mentions the appearance to Peter (Cephas) that Luke refers to in 24:34 but does not narrate."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 16:10",
+              "note": "\"You will not abandon me to the realm of the dead, nor will you let your faithful one see decay\" — the resurrection psalm Peter cites in Acts 2:27, which Jesus's resurrection fulfils."
+            },
+            {
+              "ref": "Gen 18:1-8",
+              "note": "Abraham's hospitality to the three visitors — the OT prototype of table hospitality that reveals the divine guest, which the Emmaus meal echoes."
+            },
+            {
+              "ref": "1 Cor 15:3-8",
+              "note": "Paul's earliest list of resurrection appearances, which mentions the appearance to Peter (Cephas) that Luke refers to in 24:34 but does not narrate."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -141,6 +142,9 @@
               "note": "Augustine: \"Did not our heart burn within us? This burning is the sign of the Holy Spirit's work in the reading of Scripture. Where the Scriptures are opened and the living Christ speaks through them, the heart burns. This is the mark of true preaching: not eloquence, but the fire that the word carries from the one who is the Word.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Emmaus Road', 'The road to Emmaus (24:13-35) is the longest resurrection appearance narrative in the Gospels and unique to Luke. The two disciples embody the confusion and grief of the broader disciple community: they had hoped Jesus was the redeemer of Israel, and now they are leaving Jerusalem. Jesus joins them as an unknown companion, walks with them through their misunderstanding, interprets the Scriptures, and reveals himself in the breaking of bread — then vanishes. The recognition comes through a meal, not through seeing.'), ('Scripture Interpretation in Luke 24', 'Three times in Luke 24, Jesus opens Scripture: to the two disciples on the Emmaus road (24:27), to the assembled disciples in Jerusalem (24:44-47), and implicitly through the angels\\' \"remember what he told you\" (24:6-7). The entire chapter is a hermeneutical event: the resurrection is the key that unlocks all of Moses, the Prophets, and the Psalms. The disciples\\' previous inability to understand the passion predictions is resolved not by more explanation but by the event itself.')]"
         }
       }
     },
@@ -187,21 +191,22 @@
             "current": true
           }
         ],
-        "ctx": "[('Physical Resurrection Evidence', 'Jesus\\'s proof of bodily resurrection to the frightened disciples in Luke 24:36-43 is the most explicit anti-docetic material in the Gospels. Three types of evidence are offered: (1) visual — \"look at my hands and feet\"; (2) tactile — \"touch me and see\"; (3) eating broiled fish in their presence. A ghost cannot eat fish. Luke\\'s Jesus provides three sensory witnesses to his physical resurrection before opening the Scriptures.'), ('The Ascension as Narrative Climax', \"Luke is the only Gospel to narrate the Ascension (24:50-53; expanded in Acts 1:9-11). The Ascension is simultaneously the conclusion of the Gospel and the beginning of the church's mission. Jesus departs with hands raised in blessing — the posture of the Aaronic blessing (Num 6:24-26) — and the disciples worship, return to Jerusalem with great joy, and remain continually in the Temple praising God. The Gospel that began in the Temple (Zechariah's vision, 1:5-23) ends in the Temple.\")]",
-        "cross": [
-          {
-            "ref": "Num 6:24-26",
-            "note": "\"The Lord bless you and keep you... the Lord turn his face toward you and give you peace\" — the Aaronic blessing whose posture Jesus adopts at the Ascension: hands lifted in blessing as he is taken up."
-          },
-          {
-            "ref": "Acts 1:9-11",
-            "note": "Luke's own expansion of the Ascension in his second volume — the cloud, the two men in white, the promise of return."
-          },
-          {
-            "ref": "Ps 110:1",
-            "note": "\"Sit at my right hand\" — the Ascension is the fulfilment of Psalm 110:1, which Jesus had cited as a riddle in 20:42-44 and claimed for himself at his trial (22:69). The journey from the cross to the right hand of power is now complete."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 6:24-26",
+              "note": "\"The Lord bless you and keep you... the Lord turn his face toward you and give you peace\" — the Aaronic blessing whose posture Jesus adopts at the Ascension: hands lifted in blessing as he is taken up."
+            },
+            {
+              "ref": "Acts 1:9-11",
+              "note": "Luke's own expansion of the Ascension in his second volume — the cloud, the two men in white, the promise of return."
+            },
+            {
+              "ref": "Ps 110:1",
+              "note": "\"Sit at my right hand\" — the Ascension is the fulfilment of Psalm 110:1, which Jesus had cited as a riddle in 20:42-44 and claimed for himself at his trial (22:69). The journey from the cross to the right hand of power is now complete."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -274,6 +279,9 @@
               "note": "Augustine: \"He opened their minds to understand the Scriptures. He did not give them new Scriptures; he opened their minds to understand the ones they already had. This is the work of the risen Christ in the church: not to add to Scripture but to open our minds so we can receive what is already written.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Physical Resurrection Evidence', 'Jesus\\'s proof of bodily resurrection to the frightened disciples in Luke 24:36-43 is the most explicit anti-docetic material in the Gospels. Three types of evidence are offered: (1) visual — \"look at my hands and feet\"; (2) tactile — \"touch me and see\"; (3) eating broiled fish in their presence. A ghost cannot eat fish. Luke\\'s Jesus provides three sensory witnesses to his physical resurrection before opening the Scriptures.'), ('The Ascension as Narrative Climax', \"Luke is the only Gospel to narrate the Ascension (24:50-53; expanded in Acts 1:9-11). The Ascension is simultaneously the conclusion of the Gospel and the beginning of the church's mission. Jesus departs with hands raised in blessing — the posture of the Aaronic blessing (Num 6:24-26) — and the disciples worship, return to Jerusalem with great joy, and remain continually in the Temple praising God. The Gospel that began in the Temple (Zechariah's vision, 1:5-23) ends in the Temple.\")]"
         }
       }
     },
@@ -320,21 +328,22 @@
             "current": true
           }
         ],
-        "ctx": "[('The Emmaus Road', 'The road to Emmaus (24:13-35) is the longest resurrection appearance narrative in the Gospels and unique to Luke. The two disciples embody the confusion and grief of the broader disciple community: they had hoped Jesus was the redeemer of Israel, and now they are leaving Jerusalem. Jesus joins them as an unknown companion, walks with them through their misunderstanding, interprets the Scriptures, and reveals himself in the breaking of bread — then vanishes. The recognition comes through a meal, not through seeing.'), ('Scripture Interpretation in Luke 24', 'Three times in Luke 24, Jesus opens Scripture: to the two disciples on the Emmaus road (24:27), to the assembled disciples in Jerusalem (24:44-47), and implicitly through the angels\\' \"remember what he told you\" (24:6-7). The entire chapter is a hermeneutical event: the resurrection is the key that unlocks all of Moses, the Prophets, and the Psalms. The disciples\\' previous inability to understand the passion predictions is resolved not by more explanation but by the event itself.')]",
-        "cross": [
-          {
-            "ref": "Ps 16:10",
-            "note": "\"You will not abandon me to the realm of the dead, nor will you let your faithful one see decay\" — the resurrection psalm Peter cites in Acts 2:27, which Jesus's resurrection fulfils."
-          },
-          {
-            "ref": "Gen 18:1-8",
-            "note": "Abraham's hospitality to the three visitors — the OT prototype of table hospitality that reveals the divine guest, which the Emmaus meal echoes."
-          },
-          {
-            "ref": "1 Cor 15:3-8",
-            "note": "Paul's earliest list of resurrection appearances, which mentions the appearance to Peter (Cephas) that Luke refers to in 24:34 but does not narrate."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 16:10",
+              "note": "\"You will not abandon me to the realm of the dead, nor will you let your faithful one see decay\" — the resurrection psalm Peter cites in Acts 2:27, which Jesus's resurrection fulfils."
+            },
+            {
+              "ref": "Gen 18:1-8",
+              "note": "Abraham's hospitality to the three visitors — the OT prototype of table hospitality that reveals the divine guest, which the Emmaus meal echoes."
+            },
+            {
+              "ref": "1 Cor 15:3-8",
+              "note": "Paul's earliest list of resurrection appearances, which mentions the appearance to Peter (Cephas) that Luke refers to in 24:34 but does not narrate."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -407,6 +416,9 @@
               "note": "Augustine: \"Did not our heart burn within us? This burning is the sign of the Holy Spirit's work in the reading of Scripture. Where the Scriptures are opened and the living Christ speaks through them, the heart burns. This is the mark of true preaching: not eloquence, but the fire that the word carries from the one who is the Word.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Emmaus Road', 'The road to Emmaus (24:13-35) is the longest resurrection appearance narrative in the Gospels and unique to Luke. The two disciples embody the confusion and grief of the broader disciple community: they had hoped Jesus was the redeemer of Israel, and now they are leaving Jerusalem. Jesus joins them as an unknown companion, walks with them through their misunderstanding, interprets the Scriptures, and reveals himself in the breaking of bread — then vanishes. The recognition comes through a meal, not through seeing.'), ('Scripture Interpretation in Luke 24', 'Three times in Luke 24, Jesus opens Scripture: to the two disciples on the Emmaus road (24:27), to the assembled disciples in Jerusalem (24:44-47), and implicitly through the angels\\' \"remember what he told you\" (24:6-7). The entire chapter is a hermeneutical event: the resurrection is the key that unlocks all of Moses, the Prophets, and the Psalms. The disciples\\' previous inability to understand the passion predictions is resolved not by more explanation but by the event itself.')]"
         }
       }
     }

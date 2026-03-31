@@ -78,21 +78,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Temple Mount (Second Temple)</div><div class=\"poi-coords\">31.7781 N, 35.2354 E</div><div class=\"poi-text\">The Herodian Temple complex begun c.20 BC and still under construction in AD 70. Jesus taught daily in the outer courts (19:47) during Passion Week. The Temple debates of Luke 20 (authority, vineyard, taxes, resurrection) all take place here, making the complex simultaneously his pulpit and the seat of the authority that will condemn him.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Court of the Gentiles / Solomon's Colonnade</div><div class=\"poi-coords\">31.7776 N, 35.2356 E</div><div class=\"poi-text\">The colonnaded outer court where public teaching and debate took place. The Sanhedrin coalition confronts Jesus here (20:1-2). This space combined market, public forum, and sacred precinct -- the setting of every Passion Week controversy in Luke 20.</div></div>"
         },
-        "ctx": "[('Temple as Battleground', \"Luke 20 takes place entirely in the Temple courts (19:47-20:1), where Jesus has been teaching daily. The establishment's challenge is public and formal — a delegation of chief priests, scribes, and elders confronting a Galilean teacher who has disrupted Temple commerce. The authority question is the opening move in a series of escalating attempts to discredit or entrap Jesus before the crowd.\"), (\"The Vineyard Parable's Allegory\", 'The wicked tenants parable (20:9-18) is one of Luke\\'s most transparently allegorical: the vineyard is Israel (cf. Isa 5:1-7); the owner is God; the servants are the prophets; the son is Jesus. The tenants\\' reasoning (\"the inheritance will be ours,\" v.14) gives the theological diagnosis of the establishment\\'s hostility: they want to possess what belongs to the son.')]",
-        "cross": [
-          {
-            "ref": "Isa 5:1-7",
-            "note": "The Song of the Vineyard — God's vineyard (Israel) that produced only wild grapes and faces destruction. The OT text that Jesus's parable is deliberately invoking."
-          },
-          {
-            "ref": "Ps 118:22",
-            "note": "\"The stone the builders rejected has become the cornerstone\" — the psalm Jesus quotes after the parable, applying the rejected stone to himself."
-          },
-          {
-            "ref": "Matt 22:15-22; Mark 12:13-17",
-            "note": "Parallel taxes-to-Caesar passages in Matthew and Mark."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 5:1-7",
+              "note": "The Song of the Vineyard — God's vineyard (Israel) that produced only wild grapes and faces destruction. The OT text that Jesus's parable is deliberately invoking."
+            },
+            {
+              "ref": "Ps 118:22",
+              "note": "\"The stone the builders rejected has become the cornerstone\" — the psalm Jesus quotes after the parable, applying the rejected stone to himself."
+            },
+            {
+              "ref": "Matt 22:15-22; Mark 12:13-17",
+              "note": "Parallel taxes-to-Caesar passages in Matthew and Mark."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -165,6 +166,9 @@
               "note": "Ambrose: \"Render to Caesar the things that are Caesar's — taxes, tribute, civil obedience. Render to God the things that are God's — faith, service, and above all yourself, for you are made in his image. The coin bears Caesar's face; the soul bears God's.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Temple as Battleground', \"Luke 20 takes place entirely in the Temple courts (19:47-20:1), where Jesus has been teaching daily. The establishment's challenge is public and formal — a delegation of chief priests, scribes, and elders confronting a Galilean teacher who has disrupted Temple commerce. The authority question is the opening move in a series of escalating attempts to discredit or entrap Jesus before the crowd.\"), (\"The Vineyard Parable's Allegory\", 'The wicked tenants parable (20:9-18) is one of Luke\\'s most transparently allegorical: the vineyard is Israel (cf. Isa 5:1-7); the owner is God; the servants are the prophets; the son is Jesus. The tenants\\' reasoning (\"the inheritance will be ours,\" v.14) gives the theological diagnosis of the establishment\\'s hostility: they want to possess what belongs to the son.')]"
         }
       }
     },
@@ -235,21 +239,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Temple Mount (Second Temple)</div><div class=\"poi-coords\">31.7781 N, 35.2354 E</div><div class=\"poi-text\">The Herodian Temple complex begun c.20 BC and still under construction in AD 70. Jesus taught daily in the outer courts (19:47) during Passion Week. The Temple debates of Luke 20 (authority, vineyard, taxes, resurrection) all take place here, making the complex simultaneously his pulpit and the seat of the authority that will condemn him.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Court of the Gentiles / Solomon's Colonnade</div><div class=\"poi-coords\">31.7776 N, 35.2356 E</div><div class=\"poi-text\">The colonnaded outer court where public teaching and debate took place. The Sanhedrin coalition confronts Jesus here (20:1-2). This space combined market, public forum, and sacred precinct -- the setting of every Passion Week controversy in Luke 20.</div></div>"
         },
-        "ctx": "[('Sadducees and Resurrection', 'The Sadducees (priestly aristocracy, controlling the Temple establishment) accepted only the Pentateuch (Torah) as authoritative and found no clear teaching of resurrection there. Their scenario is a classic reductio ad absurdum: levirate marriage (Deut 25:5-6) + resurrection = impossible social complexity. Jesus answers on their own terms — from the Pentateuch, specifically Exod 3:6.'), ('Psalm 110 and Davidic Sonship', 'Psalm 110:1 is the most-cited OT text in the NT. Jesus uses it to press a question that exposes the inadequacy of \"Son of David\" as a complete Christological description. David calls the Messiah \"my Lord\" — how can a son be his father\\'s Lord? The answer Jesus implies: because the Messiah is more than David\\'s son. He is David\\'s Lord.')]",
-        "cross": [
-          {
-            "ref": "Exod 3:6",
-            "note": "\"I am the God of Abraham, the God of Isaac, and the God of Jacob\" — the burning bush text Jesus uses to prove resurrection from the Pentateuch. If God is the God of the patriarchs in the present tense, they must still be alive in some sense."
-          },
-          {
-            "ref": "Ps 110:1",
-            "note": "\"The Lord said to my Lord: Sit at my right hand until I make your enemies a footstool for your feet\" — the most-cited OT verse in the NT, used here to press the Christological question beyond Davidic descent."
-          },
-          {
-            "ref": "Deut 25:5-6",
-            "note": "Levirate marriage law — the Sadducees' question's legal foundation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 3:6",
+              "note": "\"I am the God of Abraham, the God of Isaac, and the God of Jacob\" — the burning bush text Jesus uses to prove resurrection from the Pentateuch. If God is the God of the patriarchs in the present tense, they must still be alive in some sense."
+            },
+            {
+              "ref": "Ps 110:1",
+              "note": "\"The Lord said to my Lord: Sit at my right hand until I make your enemies a footstool for your feet\" — the most-cited OT verse in the NT, used here to press the Christological question beyond Davidic descent."
+            },
+            {
+              "ref": "Deut 25:5-6",
+              "note": "Levirate marriage law — the Sadducees' question's legal foundation."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -322,6 +327,9 @@
               "note": "Augustine: \"David calls him Lord; how can he be his son? Because he is Lord as God, and son as man. He is David's son according to the flesh; he is David's Lord according to his divinity. Both are true — and neither is enough without the other.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Sadducees and Resurrection', 'The Sadducees (priestly aristocracy, controlling the Temple establishment) accepted only the Pentateuch (Torah) as authoritative and found no clear teaching of resurrection there. Their scenario is a classic reductio ad absurdum: levirate marriage (Deut 25:5-6) + resurrection = impossible social complexity. Jesus answers on their own terms — from the Pentateuch, specifically Exod 3:6.'), ('Psalm 110 and Davidic Sonship', 'Psalm 110:1 is the most-cited OT text in the NT. Jesus uses it to press a question that exposes the inadequacy of \"Son of David\" as a complete Christological description. David calls the Messiah \"my Lord\" — how can a son be his father\\'s Lord? The answer Jesus implies: because the Messiah is more than David\\'s son. He is David\\'s Lord.')]"
         }
       }
     },
@@ -392,21 +400,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Temple Mount (Second Temple)</div><div class=\"poi-coords\">31.7781 N, 35.2354 E</div><div class=\"poi-text\">The Herodian Temple complex begun c.20 BC and still under construction in AD 70. Jesus taught daily in the outer courts (19:47) during Passion Week. The Temple debates of Luke 20 (authority, vineyard, taxes, resurrection) all take place here, making the complex simultaneously his pulpit and the seat of the authority that will condemn him.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Court of the Gentiles / Solomon's Colonnade</div><div class=\"poi-coords\">31.7776 N, 35.2356 E</div><div class=\"poi-text\">The colonnaded outer court where public teaching and debate took place. The Sanhedrin coalition confronts Jesus here (20:1-2). This space combined market, public forum, and sacred precinct -- the setting of every Passion Week controversy in Luke 20.</div></div>"
         },
-        "ctx": "[('Temple as Battleground', \"Luke 20 takes place entirely in the Temple courts (19:47-20:1), where Jesus has been teaching daily. The establishment's challenge is public and formal — a delegation of chief priests, scribes, and elders confronting a Galilean teacher who has disrupted Temple commerce. The authority question is the opening move in a series of escalating attempts to discredit or entrap Jesus before the crowd.\"), (\"The Vineyard Parable's Allegory\", 'The wicked tenants parable (20:9-18) is one of Luke\\'s most transparently allegorical: the vineyard is Israel (cf. Isa 5:1-7); the owner is God; the servants are the prophets; the son is Jesus. The tenants\\' reasoning (\"the inheritance will be ours,\" v.14) gives the theological diagnosis of the establishment\\'s hostility: they want to possess what belongs to the son.')]",
-        "cross": [
-          {
-            "ref": "Isa 5:1-7",
-            "note": "The Song of the Vineyard — God's vineyard (Israel) that produced only wild grapes and faces destruction. The OT text that Jesus's parable is deliberately invoking."
-          },
-          {
-            "ref": "Ps 118:22",
-            "note": "\"The stone the builders rejected has become the cornerstone\" — the psalm Jesus quotes after the parable, applying the rejected stone to himself."
-          },
-          {
-            "ref": "Matt 22:15-22; Mark 12:13-17",
-            "note": "Parallel taxes-to-Caesar passages in Matthew and Mark."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 5:1-7",
+              "note": "The Song of the Vineyard — God's vineyard (Israel) that produced only wild grapes and faces destruction. The OT text that Jesus's parable is deliberately invoking."
+            },
+            {
+              "ref": "Ps 118:22",
+              "note": "\"The stone the builders rejected has become the cornerstone\" — the psalm Jesus quotes after the parable, applying the rejected stone to himself."
+            },
+            {
+              "ref": "Matt 22:15-22; Mark 12:13-17",
+              "note": "Parallel taxes-to-Caesar passages in Matthew and Mark."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -479,6 +488,9 @@
               "note": "Ambrose: \"Render to Caesar the things that are Caesar's — taxes, tribute, civil obedience. Render to God the things that are God's — faith, service, and above all yourself, for you are made in his image. The coin bears Caesar's face; the soul bears God's.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Temple as Battleground', \"Luke 20 takes place entirely in the Temple courts (19:47-20:1), where Jesus has been teaching daily. The establishment's challenge is public and formal — a delegation of chief priests, scribes, and elders confronting a Galilean teacher who has disrupted Temple commerce. The authority question is the opening move in a series of escalating attempts to discredit or entrap Jesus before the crowd.\"), (\"The Vineyard Parable's Allegory\", 'The wicked tenants parable (20:9-18) is one of Luke\\'s most transparently allegorical: the vineyard is Israel (cf. Isa 5:1-7); the owner is God; the servants are the prophets; the son is Jesus. The tenants\\' reasoning (\"the inheritance will be ours,\" v.14) gives the theological diagnosis of the establishment\\'s hostility: they want to possess what belongs to the son.')]"
         }
       }
     }

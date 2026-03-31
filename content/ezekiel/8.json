@@ -25,17 +25,18 @@
             "paragraph": "The 'image of jealousy' (semel haqqin'ah) stood at the north gate of the temple — an idol placed in the very entrance of God's house. The word qin'ah ('jealousy') echoes the divine attribute: YHWH is a jealous God (Exod 20:5). The idol provokes the jealousy of the One whose house it desecrates."
           }
         ],
-        "ctx": "Fourteen months after his inaugural vision (September 592 BC), Ezekiel is transported in a vision to the Jerusalem temple. What follows is a guided tour of abominations — four escalating scenes of idolatry, each deeper within the sacred precincts. The vision answers the question: why will God abandon his temple? Because Israel has already abandoned him within it.",
-        "cross": [
-          {
-            "ref": "2 Kgs 21:7",
-            "note": "Manasseh placed an Asherah pole in the temple — a likely historical precedent for the image of jealousy."
-          },
-          {
-            "ref": "Exod 20:4-5",
-            "note": "The second commandment prohibits images and declares YHWH a jealous God — the very jealousy this idol provokes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 21:7",
+              "note": "Manasseh placed an Asherah pole in the temple — a likely historical precedent for the image of jealousy."
+            },
+            {
+              "ref": "Exod 20:4-5",
+              "note": "The second commandment prohibits images and declares YHWH a jealous God — the very jealousy this idol provokes."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -92,6 +93,9 @@
               "note": "Zimmerli argues the 'image of jealousy' is not necessarily Asherah but could be any cultic image. The point is not the identity of the idol but its location: it stands where only YHWH should be honored. Placement, not type, constitutes the offense."
             }
           ]
+        },
+        "hist": {
+          "context": "Fourteen months after his inaugural vision (September 592 BC), Ezekiel is transported in a vision to the Jerusalem temple. What follows is a guided tour of abominations — four escalating scenes of idolatry, each deeper within the sacred precincts. The vision answers the question: why will God abandon his temple? Because Israel has already abandoned him within it."
         }
       }
     },
@@ -109,17 +113,18 @@
             "paragraph": "Tammuz was a Mesopotamian fertility god whose annual death and descent to the underworld was ritually mourned. Women weeping for Tammuz at the temple gate imported Babylonian religion into the heart of YHWH worship. The irony is devastating: exiles in Babylon are watching Jerusalem adopt the very religion of their captors."
           }
         ],
-        "ctx": "The tour reveals three escalating abominations: elders worshiping animal images in secret chambers (Egyptian-style theriomorphic cult), women weeping for Tammuz (Mesopotamian fertility rites), and men worshiping the sun (astral cult). Israel has become a religious marketplace, importing every form of paganism while maintaining the outward shell of YHWH worship. The seventy elders represent the leadership class — the corruption is systemic, not marginal.",
-        "cross": [
-          {
-            "ref": "Rom 1:22-23",
-            "note": "They exchanged the glory of the immortal God for images resembling mortal creatures — Paul's language echoes Ezekiel's animal-worship scene."
-          },
-          {
-            "ref": "Jer 44:17-19",
-            "note": "Judean women worshiped the Queen of Heaven — parallel evidence of fertility cult worship among Judeans."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 1:22-23",
+              "note": "They exchanged the glory of the immortal God for images resembling mortal creatures — Paul's language echoes Ezekiel's animal-worship scene."
+            },
+            {
+              "ref": "Jer 44:17-19",
+              "note": "Judean women worshiped the Queen of Heaven — parallel evidence of fertility cult worship among Judeans."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -180,6 +185,9 @@
               "note": "Zimmerli connects the Tammuz weeping to the broader pattern of syncretism: Israel does not replace YHWH worship but supplements it with foreign cults. This additive syncretism is more dangerous than outright apostasy because it maintains the appearance of loyalty while hollowing out the substance."
             }
           ]
+        },
+        "hist": {
+          "context": "The tour reveals three escalating abominations: elders worshiping animal images in secret chambers (Egyptian-style theriomorphic cult), women weeping for Tammuz (Mesopotamian fertility rites), and men worshiping the sun (astral cult). Israel has become a religious marketplace, importing every form of paganism while maintaining the outward shell of YHWH worship. The seventy elders represent the leadership class — the corruption is systemic, not marginal."
         }
       }
     },
@@ -197,17 +205,18 @@
             "paragraph": "Twenty-five men stand between the porch and the altar — the most sacred zone of the temple — with their backs to the temple and their faces toward the east, worshiping the rising sun. The physical posture captures the spiritual reality: Israel has turned its back on YHWH. This is the climactic abomination."
           }
         ],
-        "ctx": "The fourth and worst scene: twenty-five men (probably twenty-four priestly divisions plus the high priest) worship the sun in the inner court, backs turned to the Holy of Holies. Sun worship was the dominant imperial religion of the ancient Near East. By adopting it in the temple's most sacred space, the priests signal ultimate betrayal — they have chosen the religion of empire over the God who delivered them from empire.",
-        "cross": [
-          {
-            "ref": "2 Kgs 23:5",
-            "note": "Josiah removed the priests who burned incense to the sun, moon, and stars — the same astral cult resurfaces after his death."
-          },
-          {
-            "ref": "Deut 4:19",
-            "note": "Moses warned against being enticed to worship the sun, moon, and stars — the very sin the priests now commit."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 23:5",
+              "note": "Josiah removed the priests who burned incense to the sun, moon, and stars — the same astral cult resurfaces after his death."
+            },
+            {
+              "ref": "Deut 4:19",
+              "note": "Moses warned against being enticed to worship the sun, moon, and stars — the very sin the priests now commit."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -264,6 +273,9 @@
               "note": "Zimmerli identifies the sun worship as the logical climax: the temple tour moves from external gate to inner court, from laity to leadership, from imported cult to cosmic idolatry. The progression is both spatial and theological — each step penetrates deeper into the sacred and deeper into apostasy."
             }
           ]
+        },
+        "hist": {
+          "context": "The fourth and worst scene: twenty-five men (probably twenty-four priestly divisions plus the high priest) worship the sun in the inner court, backs turned to the Holy of Holies. Sun worship was the dominant imperial religion of the ancient Near East. By adopting it in the temple's most sacred space, the priests signal ultimate betrayal — they have chosen the religion of empire over the God who delivered them from empire."
         }
       }
     }

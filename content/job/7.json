@@ -31,17 +31,18 @@
             "paragraph": "\"Remember that my life is a breath (hebel)\" (v.7). The same word that dominates Ecclesiastes. Human life is a puff of air — real but insubstantial, present but passing."
           }
         ],
-        "ctx": "Job shifts from addressing the friends (ch 6) to addressing God directly. The speech is a lament in the classic form: complaint about suffering (vv.1–6), appeal to God (vv.7–11), accusation against God (vv.12–21). Job is no longer talking about God — he is talking to God.",
-        "cross": [
-          {
-            "ref": "Ps 39:4–5",
-            "note": "\"Show me, LORD, my life’s end and the number of my days\" — the same brevity theme."
-          },
-          {
-            "ref": "Jas 4:14",
-            "note": "\"You are a mist that appears for a little while and then vanishes\" — echoing Job’s hebel."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 39:4–5",
+              "note": "\"Show me, LORD, my life’s end and the number of my days\" — the same brevity theme."
+            },
+            {
+              "ref": "Jas 4:14",
+              "note": "\"You are a mist that appears for a little while and then vanishes\" — echoing Job’s hebel."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Habel: Job opens his direct address to God with a plea for attention. The plaintiff has turned to the judge: \"Remember that my life is a breath.\""
             }
           ]
+        },
+        "hist": {
+          "context": "Job shifts from addressing the friends (ch 6) to addressing God directly. The speech is a lament in the classic form: complaint about suffering (vv.1–6), appeal to God (vv.7–11), accusation against God (vv.12–21). Job is no longer talking about God — he is talking to God."
         }
       }
     },
@@ -133,17 +137,18 @@
             "paragraph": "\"What is mankind that you make so much of them, that you examine (pāqad) them every morning?\" (v.17–18). A parody of Psalm 8. In the Psalm, God’s attention is glory; in Job, God’s attention is oppression."
           }
         ],
-        "ctx": "The chapter’s theological heart: Job takes Psalm 8 (“What is mankind that you are mindful of them?”) and inverts it. In the Psalm, divine attention is a gift. In Job, divine attention is surveillance. God watches every moment, tests every morning, refuses to look away even long enough for Job to swallow his spit (v.19). The parody is devastating: the same theology, opposite experience.",
-        "cross": [
-          {
-            "ref": "Ps 8:4",
-            "note": "\"What is mankind that you are mindful of them?\" — the text Job parodies."
-          },
-          {
-            "ref": "Ps 139:7–12",
-            "note": "\"Where can I go from your Spirit?\" — in the Psalm, comfort; in Job, torment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 8:4",
+              "note": "\"What is mankind that you are mindful of them?\" — the text Job parodies."
+            },
+            {
+              "ref": "Ps 139:7–12",
+              "note": "\"Where can I go from your Spirit?\" — in the Psalm, comfort; in Job, torment."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -212,6 +217,9 @@
               "note": "Habel: Job escalates his legal argument. He is not merely complaining but building a case: God’s attention is disproportionate (v.12), oppressive (v.17–18), and unforgiving (v.20–21). The plaintiff demands relief."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter’s theological heart: Job takes Psalm 8 (“What is mankind that you are mindful of them?”) and inverts it. In the Psalm, divine attention is a gift. In Job, divine attention is surveillance. God watches every moment, tests every morning, refuses to look away even long enough for Job to swallow his spit (v.19). The parody is devastating: the same theology, opposite experience."
         }
       }
     }

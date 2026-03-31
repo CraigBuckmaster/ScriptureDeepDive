@@ -28,21 +28,22 @@
             "paragraph": "The verb (vv.22, 25, 26) describes a mind divided and pulled by competing anxieties. Jesus's repeated prohibition is not a command to ignore genuine needs but to refuse the anxiety that makes those needs the centre of life rather than God's kingdom."
           }
         ],
-        "ctx": "[('Inheritance Law in First-Century Judea', \"Under Jewish law (Num 27; Deut 21:17) the eldest son received a double portion of the inheritance. Disputes over division were common and were brought to rabbis or community leaders for adjudication. The man's request treats Jesus as a legal authority — a role Jesus explicitly refuses, redirecting from the legal question to the spiritual one underneath it.\"), ('The Rich Fool in Context', 'The parable of the rich fool (12:16-21) is unique to Luke and sits at the centre of a sustained teaching on wealth that runs through chapters 12-16. The fool\\'s problem is not industry or success but the substitution of possessions for relationship with God — storing up for himself while being \"not rich toward God\" (12:21).')]",
-        "cross": [
-          {
-            "ref": "Matt 6:19-34",
-            "note": "The parallel do-not-worry teaching in the Sermon on the Mount, with the ravens and lilies illustrations and \"seek first his kingdom.\""
-          },
-          {
-            "ref": "Eccl 2:18-19",
-            "note": "Qoheleth's reflection on leaving wealth to those who did not work for it — the same theme underlying the rich fool parable."
-          },
-          {
-            "ref": "Ps 49:10-12",
-            "note": "\"For all can see that the wise die... their wealth will remain though they called lands after their own names\" — the Psalm that provides the scriptural background for the fool's delusion."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 6:19-34",
+              "note": "The parallel do-not-worry teaching in the Sermon on the Mount, with the ravens and lilies illustrations and \"seek first his kingdom.\""
+            },
+            {
+              "ref": "Eccl 2:18-19",
+              "note": "Qoheleth's reflection on leaving wealth to those who did not work for it — the same theme underlying the rich fool parable."
+            },
+            {
+              "ref": "Ps 49:10-12",
+              "note": "\"For all can see that the wise die... their wealth will remain though they called lands after their own names\" — the Psalm that provides the scriptural background for the fool's delusion."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -115,6 +116,9 @@
               "note": "Basil of Caesarea: \"The bread you are holding back belongs to the hungry; the coat you keep locked in storage belongs to the naked; the money you have buried in the ground belongs to the poor. You are wronging as many as you might help.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Inheritance Law in First-Century Judea', \"Under Jewish law (Num 27; Deut 21:17) the eldest son received a double portion of the inheritance. Disputes over division were common and were brought to rabbis or community leaders for adjudication. The man's request treats Jesus as a legal authority — a role Jesus explicitly refuses, redirecting from the legal question to the spiritual one underneath it.\"), ('The Rich Fool in Context', 'The parable of the rich fool (12:16-21) is unique to Luke and sits at the centre of a sustained teaching on wealth that runs through chapters 12-16. The fool\\'s problem is not industry or success but the substitution of possessions for relationship with God — storing up for himself while being \"not rich toward God\" (12:21).')]"
         }
       }
     },
@@ -138,21 +142,22 @@
             "paragraph": "The striking word in v.51 — not eirēnē (peace) but diamerismos (division, splitting). Jesus describes the inevitable social fracture that loyalty to him creates in families where allegiances are divided. Not that he desires strife, but that the kingdom's arrival forces decision, and decision divides."
           }
         ],
-        "ctx": "[('Watchfulness Parables', 'The sequence of watchfulness parables (12:35-48) escalates through three scenarios: servants watching for the master, a householder watching for a thief, and a manager given authority in the master\\'s absence. Peter\\'s question in v.41 (\"is this for us or for everyone?\") sharpens the application — the greatest accountability falls on those with the greatest knowledge and responsibility.'), ('Family Division as Mission Cost', \"Jesus's declaration that he brings division (12:51-53) echoes Mic 7:6, which describes the breakdown of family solidarity as a sign of the end time. In the ancient world, family loyalty was the primary social bond. Loyalty to Jesus that overrides family allegiance would have been culturally scandalous — Jesus names this explicitly and treats it not as unfortunate but as inevitable.\")]",
-        "cross": [
-          {
-            "ref": "Mic 7:6",
-            "note": "\"For a son dishonors his father, a daughter rises up against her mother\" — the OT text Jesus is applying to the divisions his ministry creates."
-          },
-          {
-            "ref": "Matt 24:43-51",
-            "note": "Parallel watchfulness parables: the thief in the night and the faithful or unfaithful servant."
-          },
-          {
-            "ref": "Rev 3:20",
-            "note": "\"Here I am! I stand at the door and knock\" — the Revelation image draws on the same returning-master imagery Jesus employs here."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mic 7:6",
+              "note": "\"For a son dishonors his father, a daughter rises up against her mother\" — the OT text Jesus is applying to the divisions his ministry creates."
+            },
+            {
+              "ref": "Matt 24:43-51",
+              "note": "Parallel watchfulness parables: the thief in the night and the faithful or unfaithful servant."
+            },
+            {
+              "ref": "Rev 3:20",
+              "note": "\"Here I am! I stand at the door and knock\" — the Revelation image draws on the same returning-master imagery Jesus employs here."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -225,6 +230,9 @@
               "note": "Ambrose: \"From everyone who has been given much, much will be demanded. This is the law of divine equity: the servant who knew and did not prepare will be beaten with many blows; the one who did not know with few. The judge weighs not only the act but the knowledge behind it.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Watchfulness Parables', 'The sequence of watchfulness parables (12:35-48) escalates through three scenarios: servants watching for the master, a householder watching for a thief, and a manager given authority in the master\\'s absence. Peter\\'s question in v.41 (\"is this for us or for everyone?\") sharpens the application — the greatest accountability falls on those with the greatest knowledge and responsibility.'), ('Family Division as Mission Cost', \"Jesus's declaration that he brings division (12:51-53) echoes Mic 7:6, which describes the breakdown of family solidarity as a sign of the end time. In the ancient world, family loyalty was the primary social bond. Loyalty to Jesus that overrides family allegiance would have been culturally scandalous — Jesus names this explicitly and treats it not as unfortunate but as inevitable.\")]"
         }
       }
     },
@@ -248,21 +256,22 @@
             "paragraph": "The verb (vv.22, 25, 26) describes a mind divided and pulled by competing anxieties. Jesus's repeated prohibition is not a command to ignore genuine needs but to refuse the anxiety that makes those needs the centre of life rather than God's kingdom."
           }
         ],
-        "ctx": "[('Inheritance Law in First-Century Judea', \"Under Jewish law (Num 27; Deut 21:17) the eldest son received a double portion of the inheritance. Disputes over division were common and were brought to rabbis or community leaders for adjudication. The man's request treats Jesus as a legal authority — a role Jesus explicitly refuses, redirecting from the legal question to the spiritual one underneath it.\"), ('The Rich Fool in Context', 'The parable of the rich fool (12:16-21) is unique to Luke and sits at the centre of a sustained teaching on wealth that runs through chapters 12-16. The fool\\'s problem is not industry or success but the substitution of possessions for relationship with God — storing up for himself while being \"not rich toward God\" (12:21).')]",
-        "cross": [
-          {
-            "ref": "Matt 6:19-34",
-            "note": "The parallel do-not-worry teaching in the Sermon on the Mount, with the ravens and lilies illustrations and \"seek first his kingdom.\""
-          },
-          {
-            "ref": "Eccl 2:18-19",
-            "note": "Qoheleth's reflection on leaving wealth to those who did not work for it — the same theme underlying the rich fool parable."
-          },
-          {
-            "ref": "Ps 49:10-12",
-            "note": "\"For all can see that the wise die... their wealth will remain though they called lands after their own names\" — the Psalm that provides the scriptural background for the fool's delusion."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 6:19-34",
+              "note": "The parallel do-not-worry teaching in the Sermon on the Mount, with the ravens and lilies illustrations and \"seek first his kingdom.\""
+            },
+            {
+              "ref": "Eccl 2:18-19",
+              "note": "Qoheleth's reflection on leaving wealth to those who did not work for it — the same theme underlying the rich fool parable."
+            },
+            {
+              "ref": "Ps 49:10-12",
+              "note": "\"For all can see that the wise die... their wealth will remain though they called lands after their own names\" — the Psalm that provides the scriptural background for the fool's delusion."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -335,6 +344,9 @@
               "note": "Basil of Caesarea: \"The bread you are holding back belongs to the hungry; the coat you keep locked in storage belongs to the naked; the money you have buried in the ground belongs to the poor. You are wronging as many as you might help.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Inheritance Law in First-Century Judea', \"Under Jewish law (Num 27; Deut 21:17) the eldest son received a double portion of the inheritance. Disputes over division were common and were brought to rabbis or community leaders for adjudication. The man's request treats Jesus as a legal authority — a role Jesus explicitly refuses, redirecting from the legal question to the spiritual one underneath it.\"), ('The Rich Fool in Context', 'The parable of the rich fool (12:16-21) is unique to Luke and sits at the centre of a sustained teaching on wealth that runs through chapters 12-16. The fool\\'s problem is not industry or success but the substitution of possessions for relationship with God — storing up for himself while being \"not rich toward God\" (12:21).')]"
         }
       }
     },
@@ -358,21 +370,22 @@
             "paragraph": "The striking word in v.51 — not eirēnē (peace) but diamerismos (division, splitting). Jesus describes the inevitable social fracture that loyalty to him creates in families where allegiances are divided. Not that he desires strife, but that the kingdom's arrival forces decision, and decision divides."
           }
         ],
-        "ctx": "[('Watchfulness Parables', 'The sequence of watchfulness parables (12:35-48) escalates through three scenarios: servants watching for the master, a householder watching for a thief, and a manager given authority in the master\\'s absence. Peter\\'s question in v.41 (\"is this for us or for everyone?\") sharpens the application — the greatest accountability falls on those with the greatest knowledge and responsibility.'), ('Family Division as Mission Cost', \"Jesus's declaration that he brings division (12:51-53) echoes Mic 7:6, which describes the breakdown of family solidarity as a sign of the end time. In the ancient world, family loyalty was the primary social bond. Loyalty to Jesus that overrides family allegiance would have been culturally scandalous — Jesus names this explicitly and treats it not as unfortunate but as inevitable.\")]",
-        "cross": [
-          {
-            "ref": "Mic 7:6",
-            "note": "\"For a son dishonors his father, a daughter rises up against her mother\" — the OT text Jesus is applying to the divisions his ministry creates."
-          },
-          {
-            "ref": "Matt 24:43-51",
-            "note": "Parallel watchfulness parables: the thief in the night and the faithful or unfaithful servant."
-          },
-          {
-            "ref": "Rev 3:20",
-            "note": "\"Here I am! I stand at the door and knock\" — the Revelation image draws on the same returning-master imagery Jesus employs here."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mic 7:6",
+              "note": "\"For a son dishonors his father, a daughter rises up against her mother\" — the OT text Jesus is applying to the divisions his ministry creates."
+            },
+            {
+              "ref": "Matt 24:43-51",
+              "note": "Parallel watchfulness parables: the thief in the night and the faithful or unfaithful servant."
+            },
+            {
+              "ref": "Rev 3:20",
+              "note": "\"Here I am! I stand at the door and knock\" — the Revelation image draws on the same returning-master imagery Jesus employs here."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -445,6 +458,9 @@
               "note": "Ambrose: \"From everyone who has been given much, much will be demanded. This is the law of divine equity: the servant who knew and did not prepare will be beaten with many blows; the one who did not know with few. The judge weighs not only the act but the knowledge behind it.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Watchfulness Parables', 'The sequence of watchfulness parables (12:35-48) escalates through three scenarios: servants watching for the master, a householder watching for a thief, and a manager given authority in the master\\'s absence. Peter\\'s question in v.41 (\"is this for us or for everyone?\") sharpens the application — the greatest accountability falls on those with the greatest knowledge and responsibility.'), ('Family Division as Mission Cost', \"Jesus's declaration that he brings division (12:51-53) echoes Mic 7:6, which describes the breakdown of family solidarity as a sign of the end time. In the ancient world, family loyalty was the primary social bond. Loyalty to Jesus that overrides family allegiance would have been culturally scandalous — Jesus names this explicitly and treats it not as unfortunate but as inevitable.\")]"
         }
       }
     }

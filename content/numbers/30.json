@@ -31,17 +31,18 @@
             "paragraph": "The technical term for the father's or husband's right to nullify a woman's vow. Appears only in covenant-revocation contexts — the most formal possible cancellation of a binding obligation. Silence ratifies; explicit revocation nullifies."
           }
         ],
-        "ctx": "Numbers 30 addresses vows within the household authority structure of ancient Israel. Men's vows are unconditional and binding (v.2). Women's vows have two levels: an unmarried daughter under her father (vv.3-5) and a married woman under her husband (vv.6-15). In both cases, the male authority figure has the right to nullify — but only immediately upon hearing the vow. Silence is ratification; delay removes the right to revoke. The vow law protects both the innocent woman (she can be released from rash vows) and the covenant (all voluntary commitments carry binding force).",
-        "cross": [
-          {
-            "ref": "Matt 5:33-37",
-            "note": "\"Do not swear an oath at all... All you need to say is simply 'Yes' or 'No'.\" Jesus elevates the vow principle beyond the Levitical system: the Christian's ordinary word should be as reliable as a sworn vow."
-          },
-          {
-            "ref": "Eccl 5:4-5",
-            "note": "\"When you make a vow to God, do not delay to fulfil it... It is better not to make a vow than to make one and not fulfil it.\" Ecclesiastes applies the Num 30 principle directly."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 5:33-37",
+              "note": "\"Do not swear an oath at all... All you need to say is simply 'Yes' or 'No'.\" Jesus elevates the vow principle beyond the Levitical system: the Christian's ordinary word should be as reliable as a sworn vow."
+            },
+            {
+              "ref": "Eccl 5:4-5",
+              "note": "\"When you make a vow to God, do not delay to fulfil it... It is better not to make a vow than to make one and not fulfil it.\" Ecclesiastes applies the Num 30 principle directly."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Ashley: The narrative context of vows in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Numbers 30 addresses vows within the household authority structure of ancient Israel. Men's vows are unconditional and binding (v.2). Women's vows have two levels: an unmarried daughter under her father (vv.3-5) and a married woman under her husband (vv.6-15). In both cases, the male authority figure has the right to nullify — but only immediately upon hearing the vow. Silence is ratification; delay removes the right to revoke. The vow law protects both the innocent woman (she can be released from rash vows) and the covenant (all voluntary commitments carry binding force)."
         }
       }
     },
@@ -123,17 +127,18 @@
             "paragraph": "A woman who has been sent away from her husband. Her vow is fully binding — she has no male authority figure to revoke it on her behalf. Her covenant obligations are her own, and she bears full accountability for them as a direct covenant agent."
           }
         ],
-        "ctx": "Widows and divorced women (v.9) bear full, unconditional covenant accountability for their vows — no male authority figure can revoke on their behalf. Married women's vows (vv.10-15) carry the husband's right to revoke (same-day, on hearing), but late revocation transfers guilt from the wife to the husband. The pattern is consistent: where a male authority figure is present and hearing, he has a time-limited right to revoke; where none exists, the woman bears full covenant accountability. The law is not about women's capacity for covenant but about household structures of accountability.",
-        "cross": [
-          {
-            "ref": "1 Cor 7:34",
-            "note": "\"An unmarried woman or virgin is concerned about the Lord's affairs: her aim is to be devoted to the Lord in both body and spirit.\" The unmarried woman's undivided devotion draws on the vow law's logic: she bears her covenant obligations directly, without mediation."
-          },
-          {
-            "ref": "Ruth 1:16-17",
-            "note": "\"Where you go I will go... May the Lord deal with me, be it ever so severely, if even death separates you and me.\" Ruth's oath is a widow's vow — fully binding under Num 30:9."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 7:34",
+              "note": "\"An unmarried woman or virgin is concerned about the Lord's affairs: her aim is to be devoted to the Lord in both body and spirit.\" The unmarried woman's undivided devotion draws on the vow law's logic: she bears her covenant obligations directly, without mediation."
+            },
+            {
+              "ref": "Ruth 1:16-17",
+              "note": "\"Where you go I will go... May the Lord deal with me, be it ever so severely, if even death separates you and me.\" Ruth's oath is a widow's vow — fully binding under Num 30:9."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -198,6 +203,9 @@
               "note": "Ashley: The narrative context of vows in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Widows and divorced women (v.9) bear full, unconditional covenant accountability for their vows — no male authority figure can revoke on their behalf. Married women's vows (vv.10-15) carry the husband's right to revoke (same-day, on hearing), but late revocation transfers guilt from the wife to the husband. The pattern is consistent: where a male authority figure is present and hearing, he has a time-limited right to revoke; where none exists, the woman bears full covenant accountability. The law is not about women's capacity for covenant but about household structures of accountability."
         }
       }
     }

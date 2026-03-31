@@ -17,13 +17,14 @@
       "verse_start": 1,
       "verse_end": 19,
       "panels": {
-        "ctx": "Six tribes are covered in compressed genealogies. The Chronicler’s interest varies — Issachar gets military census data (87,000 fighting men), Benjamin is listed briefly (expanded in chapter 8), Naphtali gets a single verse, and western Manasseh receives moderate treatment. The uneven coverage reflects the Chronicler’s priorities: tribes relevant to the post-exilic community (Judah, Levi, Benjamin) get detailed treatment; northern tribes get summaries.",
-        "cross": [
-          {
-            "ref": "Gen 49:14–15",
-            "note": "Jacob’s blessing on Issachar: “a rawboned donkey lying down among the sheep pens.” The Chronicler provides the military counterpoint: 87,000 warriors."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 49:14–15",
+              "note": "Jacob’s blessing on Issachar: “a rawboned donkey lying down among the sheep pens.” The Chronicler provides the military counterpoint: 87,000 warriors."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -41,6 +42,9 @@
               "note": "Naphtali’s single-verse genealogy lists Jahziel, Guni, Jezer, and Shallum — matching Gen 46:24 exactly. The Chronicler simply reproduces the Genesis tradition without expansion."
             }
           ]
+        },
+        "hist": {
+          "context": "Six tribes are covered in compressed genealogies. The Chronicler’s interest varies — Issachar gets military census data (87,000 fighting men), Benjamin is listed briefly (expanded in chapter 8), Naphtali gets a single verse, and western Manasseh receives moderate treatment. The uneven coverage reflects the Chronicler’s priorities: tribes relevant to the post-exilic community (Judah, Levi, Benjamin) get detailed treatment; northern tribes get summaries."
         }
       }
     },
@@ -50,13 +54,14 @@
       "verse_start": 20,
       "verse_end": 40,
       "panels": {
-        "ctx": "Ephraim’s genealogy includes a unique mourning episode: men of Gath killed Ezer and Elead (Ephraim’s sons) when they went down to seize livestock. “Their father Ephraim mourned for them many days, and his relatives came to comfort him” (v.22). Then he had another son named Beriah (“because misfortune had come to his family”). This brief narrative — grief, naming, and recovery — humanises the genealogy. The chapter closes with Asher’s genealogy, emphasising military strength (26,000 warriors).",
-        "cross": [
-          {
-            "ref": "Gen 48:13–20",
-            "note": "Jacob blessed Ephraim over Manasseh, giving the younger son precedence. The Chronicler’s Ephraim genealogy includes both blessing and grief."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 48:13–20",
+              "note": "Jacob blessed Ephraim over Manasseh, giving the younger son precedence. The Chronicler’s Ephraim genealogy includes both blessing and grief."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -74,6 +79,9 @@
               "note": "bĕrîʿāh is explained as “in misfortune” (bĕrāʿāh). The folk etymology connects the name to the family’s experience of loss, following the biblical naming pattern where names encode circumstances."
             }
           ]
+        },
+        "hist": {
+          "context": "Ephraim’s genealogy includes a unique mourning episode: men of Gath killed Ezer and Elead (Ephraim’s sons) when they went down to seize livestock. “Their father Ephraim mourned for them many days, and his relatives came to comfort him” (v.22). Then he had another son named Beriah (“because misfortune had come to his family”). This brief narrative — grief, naming, and recovery — humanises the genealogy. The chapter closes with Asher’s genealogy, emphasising military strength (26,000 warriors)."
         }
       }
     }

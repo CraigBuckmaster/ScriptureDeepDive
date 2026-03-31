@@ -31,26 +31,30 @@
             "paragraph": "Ezra tears his garment and cloak and \"pulled hair from my head and beard\" (māraṭ). Hair-pulling is the most extreme grief gesture in the ancient Near East — beyond tearing clothes, beyond sackcloth. Ezra’s body expresses what words cannot yet form."
           }
         ],
-        "hist": "The \"peoples of the lands\" include Canaanites, Hittites, Perizzites, Jebusites, Ammonites, Moabites, Egyptians, and Amorites (v.1). This list echoes Deuteronomy 7:1–4 but adds nations not in the original prohibition. The point is theological pattern, not ethnic catalogue: the community is repeating pre-exilic syncretism.",
-        "ctx": "The intermarriage crisis must be read against its context: the exile happened because of exactly this kind of assimilation (1 Kgs 11:1–8; 2 Kgs 17:7–18). The returned community is reproducing the conditions that caused the catastrophe. Ezra’s horror is not ethnic prejudice but historical memory: this is how we lost everything before.",
-        "cross": [
-          {
-            "ref": "Deut 7:1–4",
-            "note": "The original prohibition against intermarriage with Canaanite nations."
-          },
-          {
-            "ref": "1 Kgs 11:1–8",
-            "note": "Solomon’s foreign wives led him into idolatry — the paradigm case."
-          },
-          {
-            "ref": "Neh 13:23–27",
-            "note": "Nehemiah confronts the same issue a generation later — it keeps recurring."
-          },
-          {
-            "ref": "Mal 2:10–16",
-            "note": "Malachi condemns both intermarriage and divorce — the other side of the tension."
-          }
-        ],
+        "hist": {
+          "historical": "The \"peoples of the lands\" include Canaanites, Hittites, Perizzites, Jebusites, Ammonites, Moabites, Egyptians, and Amorites (v.1). This list echoes Deuteronomy 7:1–4 but adds nations not in the original prohibition. The point is theological pattern, not ethnic catalogue: the community is repeating pre-exilic syncretism.",
+          "context": "The intermarriage crisis must be read against its context: the exile happened because of exactly this kind of assimilation (1 Kgs 11:1–8; 2 Kgs 17:7–18). The returned community is reproducing the conditions that caused the catastrophe. Ezra’s horror is not ethnic prejudice but historical memory: this is how we lost everything before."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 7:1–4",
+              "note": "The original prohibition against intermarriage with Canaanite nations."
+            },
+            {
+              "ref": "1 Kgs 11:1–8",
+              "note": "Solomon’s foreign wives led him into idolatry — the paradigm case."
+            },
+            {
+              "ref": "Neh 13:23–27",
+              "note": "Nehemiah confronts the same issue a generation later — it keeps recurring."
+            },
+            {
+              "ref": "Mal 2:10–16",
+              "note": "Malachi condemns both intermarriage and divorce — the other side of the tension."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -146,22 +150,26 @@
             "paragraph": "\"You have given us a remnant (pəlēṭâ) and a stake in your holy place.\" The remnant theology is explicit: survival itself is grace. The community exists not by right but by mercy."
           }
         ],
-        "hist": "Ezra’s prayer is one of the three great penitential prayers of the post-exilic period, alongside Daniel 9:4–19 and Nehemiah 9:5–37. All three share the same structure: recital of God’s goodness, confession of sustained disobedience, acknowledgment that judgment was deserved, and appeal to mercy. The genre became foundational for synagogue liturgy.",
-        "ctx": "The prayer contains no petition. Ezra confesses but does not ask for anything. He does not ask for forgiveness, does not propose a solution, does not plead for mercy. The prayer ends with a bare theological statement: \"Here we are before you in our guilt, though because of it not one of us can stand in your presence.\" The lack of petition is itself the petition: throwing oneself on God’s character without conditions.",
-        "cross": [
-          {
-            "ref": "Dan 9:4–19",
-            "note": "Daniel’s prayer of confession — the closest parallel in structure and theology."
-          },
-          {
-            "ref": "Neh 9:5–37",
-            "note": "The Levites’ penitential prayer — the third member of the post-exilic triad."
-          },
-          {
-            "ref": "1 Kgs 8:46–53",
-            "note": "Solomon’s prayer anticipated exile and return — Ezra’s prayer enacts it."
-          }
-        ],
+        "hist": {
+          "historical": "Ezra’s prayer is one of the three great penitential prayers of the post-exilic period, alongside Daniel 9:4–19 and Nehemiah 9:5–37. All three share the same structure: recital of God’s goodness, confession of sustained disobedience, acknowledgment that judgment was deserved, and appeal to mercy. The genre became foundational for synagogue liturgy.",
+          "context": "The prayer contains no petition. Ezra confesses but does not ask for anything. He does not ask for forgiveness, does not propose a solution, does not plead for mercy. The prayer ends with a bare theological statement: \"Here we are before you in our guilt, though because of it not one of us can stand in your presence.\" The lack of petition is itself the petition: throwing oneself on God’s character without conditions."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Dan 9:4–19",
+              "note": "Daniel’s prayer of confession — the closest parallel in structure and theology."
+            },
+            {
+              "ref": "Neh 9:5–37",
+              "note": "The Levites’ penitential prayer — the third member of the post-exilic triad."
+            },
+            {
+              "ref": "1 Kgs 8:46–53",
+              "note": "Solomon’s prayer anticipated exile and return — Ezra’s prayer enacts it."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

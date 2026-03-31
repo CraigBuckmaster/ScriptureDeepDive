@@ -25,17 +25,18 @@
             "paragraph": "The detailed inventory of bronze temple furnishings stripped by Babylon (vv.17-23) -- pillars, sea, movable stands, pots, shovels, wick trimmers -- reads like a funeral inventory. Each item represents centuries of worship infrastructure reduced to scrap metal. The bronze (nechoshet) that Solomon had cast with such care (1 Kgs 7:13-47) is broken up and hauled to Babylon."
           }
         ],
-        "ctx": "Chapter 52 is a historical appendix nearly identical to 2 Kings 24:18-25:30, added after the editorial note \"the words of Jeremiah end here\" (51:64b). Its purpose is to validate the prophetic word by documenting its fulfillment: everything Jeremiah prophesied -- the siege, the breach, Zedekiah's capture, the temple's destruction, the deportation -- happened exactly as announced. The chapter serves as historical proof that Jeremiah was a true prophet.",
-        "cross": [
-          {
-            "ref": "2 Kgs 24:18-25:21",
-            "note": "The parallel account -- nearly verbatim in many sections. The shared source demonstrates historical accuracy."
-          },
-          {
-            "ref": "Lam 2:6-7",
-            "note": "\"The LORD has rejected his altar and abandoned his sanctuary\" -- Lamentations is the liturgical response to the events documented here."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 24:18-25:21",
+              "note": "The parallel account -- nearly verbatim in many sections. The shared source demonstrates historical accuracy."
+            },
+            {
+              "ref": "Lam 2:6-7",
+              "note": "\"The LORD has rejected his altar and abandoned his sanctuary\" -- Lamentations is the liturgical response to the events documented here."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -92,6 +93,9 @@
               "note": "Brueggemann reads the temple inventory as \"an act of liturgical mourning.\" The detailed listing of what was lost -- each pot, each pillar, each decoration -- functions as a funeral register for a dead institution."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 52 is a historical appendix nearly identical to 2 Kings 24:18-25:30, added after the editorial note \"the words of Jeremiah end here\" (51:64b). Its purpose is to validate the prophetic word by documenting its fulfillment: everything Jeremiah prophesied -- the siege, the breach, Zedekiah's capture, the temple's destruction, the deportation -- happened exactly as announced. The chapter serves as historical proof that Jeremiah was a true prophet."
         }
       }
     },
@@ -109,21 +113,22 @@
             "paragraph": "Evil-Merodach \"lifted up the head\" (nasa' et-ro'sh) of Jehoiachin from prison (v.31). The idiom means to show favor, to elevate. The same phrase appears in Genesis 40:13 when Joseph interprets Pharaoh's cupbearer's dream. After 37 years in prison, the exiled king is given a seat of honor at the Babylonian table. The book ends not with destruction but with a small, strange act of grace."
           }
         ],
-        "ctx": "The book ends with two notes: the exact deportation numbers (4,600 total across three deportations, vv.28-30) and the release of Jehoiachin from prison in the thirty-seventh year of his exile (562 BC, vv.31-34). This final episode is deeply significant: the Davidic king, though in exile, is alive and honored. The dynasty has not been extinguished but preserved in Babylon. The ending mirrors 2 Kings 25:27-30 and creates a note of ambiguous hope -- not triumphant restoration but quiet survival. The seed of David endures.",
-        "cross": [
-          {
-            "ref": "2 Kgs 25:27-30",
-            "note": "The parallel account of Jehoiachin's release -- the same hopeful ending for both books."
-          },
-          {
-            "ref": "Matt 1:11-12",
-            "note": "Jeconiah (Jehoiachin) appears in Jesus's genealogy -- the Davidic line survives through this imprisoned, then released, king."
-          },
-          {
-            "ref": "Gen 40:13",
-            "note": "\"Pharaoh will lift up your head\" -- the same idiom applied to the cupbearer's restoration from prison."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 25:27-30",
+              "note": "The parallel account of Jehoiachin's release -- the same hopeful ending for both books."
+            },
+            {
+              "ref": "Matt 1:11-12",
+              "note": "Jeconiah (Jehoiachin) appears in Jesus's genealogy -- the Davidic line survives through this imprisoned, then released, king."
+            },
+            {
+              "ref": "Gen 40:13",
+              "note": "\"Pharaoh will lift up your head\" -- the same idiom applied to the cupbearer's restoration from prison."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -180,6 +185,9 @@
               "note": "Brueggemann reads the ending as \"hope in its most minimal form.\" Not restoration, not triumph, not even return -- just bread and a seat at the table. But in the world of Jeremiah, where everything has been destroyed, even bread is a miracle. The book ends not with a bang but with a meal."
             }
           ]
+        },
+        "hist": {
+          "context": "The book ends with two notes: the exact deportation numbers (4,600 total across three deportations, vv.28-30) and the release of Jehoiachin from prison in the thirty-seventh year of his exile (562 BC, vv.31-34). This final episode is deeply significant: the Davidic king, though in exile, is alive and honored. The dynasty has not been extinguished but preserved in Babylon. The ending mirrors 2 Kings 25:27-30 and creates a note of ambiguous hope -- not triumphant restoration but quiet survival. The seed of David endures."
         }
       }
     }

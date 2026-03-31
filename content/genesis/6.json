@@ -37,22 +37,26 @@
             "paragraph": "V.6: Not a change of divine mind in the sense of correction of an error. The word naham (in Niphal) means to grieve, to be deeply moved, to relent. God's grief over human evil is anthropopathic language — it expresses genuine divine sorrow over the creature's condition in terms accessible to human understanding. It does not imply God was surprised or that his eternal purposes are altered."
           }
         ],
-        "hist": "The pre-flood corruption narrative has close parallels in Mesopotamian flood literature (Atrahasis, Gilgamesh) where the gods also become distressed by the noise or corruption of humanity and decide to destroy it. Genesis's account inverts the Mesopotamian logic: the gods in Atrahasis are disturbed by the clamour of an overpopulated humanity; God in Genesis is grieved by the moral corruption — violence and wickedness. The difference is fundamental: the flood in Genesis is moral judgment, not divine irritation.",
-        "ctx": "The contrast between Genesis 5's closing hope (Noah) and Genesis 6's opening darkness is stark. The world that chapter 5's genealogy traversed in rapid summary was, it turns out, a world sliding toward catastrophe. The filling of the earth with humanity (5:4) has become the filling of the earth with violence (6:11). The divine image has not prevented the spread of evil; if anything, the multiplication of image-bearers has multiplied the capacity for harm.",
-        "cross": [
-          {
-            "ref": "Jude 6-7",
-            "note": "The angels who did not keep their positions of authority — Jude connects the Gen 6 bene Elohim with fallen angels."
-          },
-          {
-            "ref": "2 Pet 2:4-5",
-            "note": "God did not spare angels when they sinned and did not spare the ancient world but protected Noah — the two events linked."
-          },
-          {
-            "ref": "Matt 24:37-38",
-            "note": "As it was in the days of Noah, so it will be at the coming of the Son of Man — Jesus uses the pre-flood corruption as a type of end-time conditions."
-          }
-        ],
+        "hist": {
+          "historical": "The pre-flood corruption narrative has close parallels in Mesopotamian flood literature (Atrahasis, Gilgamesh) where the gods also become distressed by the noise or corruption of humanity and decide to destroy it. Genesis's account inverts the Mesopotamian logic: the gods in Atrahasis are disturbed by the clamour of an overpopulated humanity; God in Genesis is grieved by the moral corruption — violence and wickedness. The difference is fundamental: the flood in Genesis is moral judgment, not divine irritation.",
+          "context": "The contrast between Genesis 5's closing hope (Noah) and Genesis 6's opening darkness is stark. The world that chapter 5's genealogy traversed in rapid summary was, it turns out, a world sliding toward catastrophe. The filling of the earth with humanity (5:4) has become the filling of the earth with violence (6:11). The divine image has not prevented the spread of evil; if anything, the multiplication of image-bearers has multiplied the capacity for harm."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jude 6-7",
+              "note": "The angels who did not keep their positions of authority — Jude connects the Gen 6 bene Elohim with fallen angels."
+            },
+            {
+              "ref": "2 Pet 2:4-5",
+              "note": "God did not spare angels when they sinned and did not spare the ancient world but protected Noah — the two events linked."
+            },
+            {
+              "ref": "Matt 24:37-38",
+              "note": "As it was in the days of Noah, so it will be at the coming of the Son of Man — Jesus uses the pre-flood corruption as a type of end-time conditions."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -172,26 +176,30 @@
             "paragraph": "V.11,13: The word encompasses all forms of violent injustice — murder, oppression, robbery, cruelty. The earth is described as \"full of chamas\" — the perfect inversion of 1:28's blessing to fill the earth. The earth has been filled, as commanded, but filled with violence rather than the image-bearing, God-honouring humanity that was intended."
           }
         ],
-        "hist": "Noah's characterisation as \"righteous and blameless\" sets him apart from the universal corruption of vv.5-7. The ark (tevah in Hebrew) is the same word used for the basket in which Moses was placed in the Nile (Exod 2:3,5) — a deliberate verbal connection between the two deliverers. Both Noah and Moses are placed in a tevah and carried through waters of judgment to a new beginning. The ark's dimensions (300 × 50 × 30 cubits, with a cubit approximately 18 inches) produce a vessel of approximately 450 × 75 × 45 feet — large enough to carry the stated cargo.",
-        "ctx": "Noah's righteousness is presented as the reason for his selection — but the text does not explain whether his righteousness preceded God's grace or was the product of it. The Reformed tradition reads \"Noah found grace\" (8) as primary: grace precedes righteousness. The Arminian tradition reads Noah's righteousness as the basis of selection. Both agree that Noah's character stands in absolute contrast to the corrupt generation around him — and that this contrast is what the narrator intends to establish.",
-        "cross": [
-          {
-            "ref": "Jer 17:9",
-            "note": "“The heart is deceitful above all things” — the prophet echoes Genesis 6:5’s diagnosis of the human heart."
-          },
-          {
-            "ref": "Eph 2:3–5",
-            "note": "“By nature deserving of wrath… but God, who is rich in mercy” — Paul’s great “but” structurally mirrors Gen 6:5–8."
-          },
-          {
-            "ref": "Matt 24:37–39",
-            "note": "Jesus compares the days before his return to “the days of Noah” — life proceeding as normal until sudden judgment."
-          },
-          {
-            "ref": "Heb 11:7",
-            "note": "“By faith Noah, when warned about things not yet seen, in holy fear built an ark” — his righteousness (Gen 6:9) was the fruit of faith."
-          }
-        ],
+        "hist": {
+          "historical": "Noah's characterisation as \"righteous and blameless\" sets him apart from the universal corruption of vv.5-7. The ark (tevah in Hebrew) is the same word used for the basket in which Moses was placed in the Nile (Exod 2:3,5) — a deliberate verbal connection between the two deliverers. Both Noah and Moses are placed in a tevah and carried through waters of judgment to a new beginning. The ark's dimensions (300 × 50 × 30 cubits, with a cubit approximately 18 inches) produce a vessel of approximately 450 × 75 × 45 feet — large enough to carry the stated cargo.",
+          "context": "Noah's righteousness is presented as the reason for his selection — but the text does not explain whether his righteousness preceded God's grace or was the product of it. The Reformed tradition reads \"Noah found grace\" (8) as primary: grace precedes righteousness. The Arminian tradition reads Noah's righteousness as the basis of selection. Both agree that Noah's character stands in absolute contrast to the corrupt generation around him — and that this contrast is what the narrator intends to establish."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 17:9",
+              "note": "“The heart is deceitful above all things” — the prophet echoes Genesis 6:5’s diagnosis of the human heart."
+            },
+            {
+              "ref": "Eph 2:3–5",
+              "note": "“By nature deserving of wrath… but God, who is rich in mercy” — Paul’s great “but” structurally mirrors Gen 6:5–8."
+            },
+            {
+              "ref": "Matt 24:37–39",
+              "note": "Jesus compares the days before his return to “the days of Noah” — life proceeding as normal until sudden judgment."
+            },
+            {
+              "ref": "Heb 11:7",
+              "note": "“By faith Noah, when warned about things not yet seen, in holy fear built an ark” — his righteousness (Gen 6:9) was the fruit of faith."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -311,26 +319,30 @@
             "paragraph": "V.18: The first occurrence of \"covenant\" (berit) in the Bible. God establishes a covenant with Noah before the flood — not after it. The covenant is announced as the framework within which the flood occurs: Noah is not merely a survivor but the recipient of God's first formal covenant. The pattern of covenant-before-judgment sets the template for all subsequent covenant theology."
           }
         ],
-        "hist": "The ark's dimensions (300 × 50 × 30 cubits) give it a displacement tonnage and volume sufficient to carry the stated cargo — approximately 1.5 million cubic feet. Naval architects have noted that the 6:1 length-to-width ratio is optimal for stability in rough seas. Whether read literally or theologically, the ark's design reflects practical maritime wisdom. God provides blueprints for the salvation he commands.",
-        "ctx": "God's detailed instructions for the ark are a theological statement: salvation is God's initiative, God's design, and God's provision. Noah does not design the ark; he builds what God specifies. The covenant announced in v.18 frames the entire construction project: the ark is not merely a survival vehicle but the physical embodiment of God's covenant faithfulness. What God covenants, he provides the means to fulfill.",
-        "cross": [
-          {
-            "ref": "Ex 2:3",
-            "note": "The same wordtevah"
-          },
-          {
-            "ref": "1 Pet 3:20–21",
-            "note": "Peter reads the ark and flood as a type of baptism — eight people saved through water, now fulfilled in the water of new birth."
-          },
-          {
-            "ref": "2 Pet 2:5",
-            "note": "“He protected Noah, a preacher of righteousness” — Noah’s building of the ark was itself a witness to his generation."
-          },
-          {
-            "ref": "Luke 17:26–27",
-            "note": "Jesus uses Noah’s day as a type of the end times — ordinary life proceeding until sudden, total judgment."
-          }
-        ],
+        "hist": {
+          "historical": "The ark's dimensions (300 × 50 × 30 cubits) give it a displacement tonnage and volume sufficient to carry the stated cargo — approximately 1.5 million cubic feet. Naval architects have noted that the 6:1 length-to-width ratio is optimal for stability in rough seas. Whether read literally or theologically, the ark's design reflects practical maritime wisdom. God provides blueprints for the salvation he commands.",
+          "context": "God's detailed instructions for the ark are a theological statement: salvation is God's initiative, God's design, and God's provision. Noah does not design the ark; he builds what God specifies. The covenant announced in v.18 frames the entire construction project: the ark is not merely a survival vehicle but the physical embodiment of God's covenant faithfulness. What God covenants, he provides the means to fulfill."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ex 2:3",
+              "note": "The same wordtevah"
+            },
+            {
+              "ref": "1 Pet 3:20–21",
+              "note": "Peter reads the ark and flood as a type of baptism — eight people saved through water, now fulfilled in the water of new birth."
+            },
+            {
+              "ref": "2 Pet 2:5",
+              "note": "“He protected Noah, a preacher of righteousness” — Noah’s building of the ark was itself a witness to his generation."
+            },
+            {
+              "ref": "Luke 17:26–27",
+              "note": "Jesus uses Noah’s day as a type of the end times — ordinary life proceeding until sudden, total judgment."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

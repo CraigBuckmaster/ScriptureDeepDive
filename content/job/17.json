@@ -25,17 +25,18 @@
             "paragraph": "\"Where then is my hope (tiqwâ)? Who can see any hope for me?\" (v.15). The word tiqwâ echoes Zophar’s promise of hope through repentance (11:18). Job takes the friends’ own word and declares it empty. The hope they offered has no substance because the premise (sin → repentance → restoration) is wrong."
           }
         ],
-        "ctx": "The shortest chapter in Job’s speeches and the darkest. Job’s spirit is broken, his days are cut short, mockery surrounds him (v.1–2). He asks God to post a pledge for him (v.3) since no human will. He describes the grave as “my father” and the worm as “my mother and sister” (v.14). Family has been replaced by death and decay.",
-        "cross": [
-          {
-            "ref": "Ps 88:3–6",
-            "note": "\"I am overwhelmed with troubles and my life draws near to death\" — the closest Psalm to Job’s tone."
-          },
-          {
-            "ref": "Ps 88:18",
-            "note": "\"Darkness is my closest friend\" — almost identical to Job’s closing sentiment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 88:3–6",
+              "note": "\"I am overwhelmed with troubles and my life draws near to death\" — the closest Psalm to Job’s tone."
+            },
+            {
+              "ref": "Ps 88:18",
+              "note": "\"Darkness is my closest friend\" — almost identical to Job’s closing sentiment."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -96,6 +97,9 @@
               "note": "Habel: Job’s despair is the low point of the legal case. The plaintiff has exhausted his arguments and sees no path to a hearing. Hope descends with him to the dust."
             }
           ]
+        },
+        "hist": {
+          "context": "The shortest chapter in Job’s speeches and the darkest. Job’s spirit is broken, his days are cut short, mockery surrounds him (v.1–2). He asks God to post a pledge for him (v.3) since no human will. He describes the grave as “my father” and the worm as “my mother and sister” (v.14). Family has been replaced by death and decay."
         }
       }
     },
@@ -113,13 +117,14 @@
             "paragraph": "\"Where then is my hope (tiqwâ)? Who can see any hope for me?\" (v.15). Job takes the friends’ own word and declares it empty."
           }
         ],
-        "ctx": "Job describes the grave as his new family: corruption is his father, the worm is his mother and sister (v.14). Every human relationship has been replaced by decay. Hope descends with him to the dust (v.16).",
-        "cross": [
-          {
-            "ref": "Ps 88:18",
-            "note": "\"Darkness is my closest friend\" — almost identical to Job’s sentiment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 88:18",
+              "note": "\"Darkness is my closest friend\" — almost identical to Job’s sentiment."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -168,6 +173,9 @@
               "note": "Habel: Job’s despair is the low point of the legal case. The plaintiff has exhausted his arguments. Hope descends with him to the dust."
             }
           ]
+        },
+        "hist": {
+          "context": "Job describes the grave as his new family: corruption is his father, the worm is his mother and sister (v.14). Every human relationship has been replaced by decay. Hope descends with him to the dust (v.16)."
         }
       }
     }

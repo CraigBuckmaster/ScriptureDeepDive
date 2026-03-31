@@ -31,17 +31,18 @@
             "paragraph": "Matthew frames the resurrection with a 'great earthquake' (seismos megas), echoing the earthquake at Jesus' death (27:51). The same word he used for the storm at sea (8:24). At every pivotal moment — birth, ministry, death, resurrection — creation shakes. The cosmos responds to what is happening to its maker."
           }
         ],
-        "ctx": "The empty tomb is announced by an angel and confirmed by the risen Jesus himself. The women are the first witnesses -- those who followed to the cross (27:55-56) and to the tomb (27:61) are the first to receive and transmit the resurrection announcement. The risen Jesus's words \"go and tell my brothers\" restore the family relationship the disciples' flight had broken.",
-        "cross": [
-          {
-            "ref": "Matt 16:21; 17:23; 20:19",
-            "note": "He has risen, just as he said (v.6) -- the three passion predictions all promised resurrection. The angel's \"just as he said\" is the confirmation that Jesus's word was trustworthy throughout."
-          },
-          {
-            "ref": "Matt 26:32",
-            "note": "After I have risen, I will go ahead of you into Galilee -- predicted at the Last Supper. The angel (v.7) and Jesus himself (v.10) now fulfil it."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 16:21; 17:23; 20:19",
+              "note": "He has risen, just as he said (v.6) -- the three passion predictions all promised resurrection. The angel's \"just as he said\" is the confirmation that Jesus's word was trustworthy throughout."
+            },
+            {
+              "ref": "Matt 26:32",
+              "note": "After I have risen, I will go ahead of you into Galilee -- predicted at the Last Supper. The angel (v.7) and Jesus himself (v.10) now fulfil it."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "The tomb of Jesus",
@@ -156,6 +157,9 @@
               "note": "The Catena traces the Trinitarian structure of the baptismal formula (v.19: into the name of the Father and of the Son and of the Holy Spirit) as the earliest explicit Trinitarian formula in Matthew. The singular onoma (name, not names) places all three persons within a single divine name -- the basis for later Trinitarian theology."
             }
           ]
+        },
+        "hist": {
+          "context": "The empty tomb is announced by an angel and confirmed by the risen Jesus himself. The women are the first witnesses -- those who followed to the cross (27:55-56) and to the tomb (27:61) are the first to receive and transmit the resurrection announcement. The risen Jesus's words \"go and tell my brothers\" restore the family relationship the disciples' flight had broken."
         }
       }
     },
@@ -179,21 +183,22 @@
             "paragraph": "The central imperative is not 'go' (a participle) but 'make disciples' (mathēteusate). The means: baptising and teaching. The scope: 'all nations' (panta ta ethnē). The promise: 'I am with you always.' The Gospel that began with 'God with us' (1:23) ends with the same presence — Immanuel to the end of the age."
           }
         ],
-        "ctx": "The Great Commission (vv.16-20) is the gospel's climax. The guard's bribe (vv.11-15) is Matthew's early apologetic: the officials who sealed the tomb are the first witnesses to its emptiness, and their explanation (theft) was publicly circulated when Matthew wrote. The Commission is built on three foundations: all authority (v.18), all nations (v.19), always with you (v.20).",
-        "cross": [
-          {
-            "ref": "Dan 7:13-14",
-            "note": "All authority given to him -- the Son of Man receiving dominion. The Great Commission is the actualisation of the Danielic vision in the risen Christ."
-          },
-          {
-            "ref": "Matt 1:23",
-            "note": "Immanuel, God with us -- the gospel's opening promise. \"I am with you always\" (v.20) is the closing fulfilment. The bracket is the gospel's central claim."
-          },
-          {
-            "ref": "Gen 12:3",
-            "note": "All peoples on earth blessed through you -- God's promise to Abraham. The Great Commission is its instrument."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Dan 7:13-14",
+              "note": "All authority given to him -- the Son of Man receiving dominion. The Great Commission is the actualisation of the Danielic vision in the risen Christ."
+            },
+            {
+              "ref": "Matt 1:23",
+              "note": "Immanuel, God with us -- the gospel's opening promise. \"I am with you always\" (v.20) is the closing fulfilment. The bracket is the gospel's central claim."
+            },
+            {
+              "ref": "Gen 12:3",
+              "note": "All peoples on earth blessed through you -- God's promise to Abraham. The Great Commission is its instrument."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Galilee — a mountain",
@@ -274,6 +279,9 @@
               "note": "The Catena traces the Great Commission's Trinitarian structure: make disciples (the Father's mission), baptising in the Trinitarian name (the Son's authority over the church), teaching everything I have commanded (the Spirit's role in transmission). 'I am with you always' is the promise of the Spirit's continuing presence -- the risen Christ present through the Spirit until the end of the age."
             }
           ]
+        },
+        "hist": {
+          "context": "The Great Commission (vv.16-20) is the gospel's climax. The guard's bribe (vv.11-15) is Matthew's early apologetic: the officials who sealed the tomb are the first witnesses to its emptiness, and their explanation (theft) was publicly circulated when Matthew wrote. The Commission is built on three foundations: all authority (v.18), all nations (v.19), always with you (v.20)."
         }
       }
     }

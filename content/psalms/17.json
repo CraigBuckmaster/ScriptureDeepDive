@@ -22,17 +22,18 @@
             "paragraph": "\"Hear me, LORD, my plea is just (ṣedeq)\" (v.1). David opens with a claim of righteousness — not sinlessness but innocence in this specific case. He invites God’s examination: \"test me and you will find nothing\" (v.3)."
           }
         ],
-        "ctx": "David asks God to hear his righteous cause (v.1), examine his heart by night (v.3), and protect him like the apple of God’s eye (v.8). He has kept his feet from wrong paths (v.5). The psalm is a prayer for vindication against specific enemies.",
-        "cross": [
-          {
-            "ref": "Ps 26:1–2",
-            "note": "\"Vindicate me, LORD... test me\" — the same examination-invitation."
-          },
-          {
-            "ref": "Deut 32:10",
-            "note": "\"He guarded him as the apple of his eye\" — the same intimate protection image."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 26:1–2",
+              "note": "\"Vindicate me, LORD... test me\" — the same examination-invitation."
+            },
+            {
+              "ref": "Deut 32:10",
+              "note": "\"He guarded him as the apple of his eye\" — the same intimate protection image."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -99,6 +100,9 @@
               "note": "Goldingay: \"you will find nothing\" is absolute confidence in a specific claim, not in overall sinlessness. Context matters."
             }
           ]
+        },
+        "hist": {
+          "context": "David asks God to hear his righteous cause (v.1), examine his heart by night (v.3), and protect him like the apple of God’s eye (v.8). He has kept his feet from wrong paths (v.5). The psalm is a prayer for vindication against specific enemies."
         }
       }
     },
@@ -116,21 +120,22 @@
             "paragraph": "\"Keep me as the apple of your eye (ʾishōn bat); hide me in the shadow of your wings\" (v.8). The \"apple of the eye\" is the pupil — the most reflexively protected part of the body. David asks to be guarded as instinctively as the eye guards its centre. The \"shadow of wings\" adds the mother-bird image."
           }
         ],
-        "ctx": "David asks for the most intimate protection: apple of the eye, shadow of wings (v.8). The enemies are described as fat, arrogant, lion-like (vv.10–12). David asks God to confront them (v.13). The psalm’s closing contrast: the wicked have their reward in this life; David will be satisfied \"with seeing your face when I awake\" (v.15) — another hint of resurrection.",
-        "cross": [
-          {
-            "ref": "Zech 2:8",
-            "note": "\"Whoever touches you touches the apple of his eye\" — the same intimate protection language applied to Israel."
-          },
-          {
-            "ref": "Ruth 2:12",
-            "note": "\"Under whose wings you have come to take refuge\" — the same wing-shelter image."
-          },
-          {
-            "ref": "1 John 3:2",
-            "note": "\"When Christ appears, we shall be like him, for we shall see him as he is\" — seeing God’s face on waking."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Zech 2:8",
+              "note": "\"Whoever touches you touches the apple of his eye\" — the same intimate protection language applied to Israel."
+            },
+            {
+              "ref": "Ruth 2:12",
+              "note": "\"Under whose wings you have come to take refuge\" — the same wing-shelter image."
+            },
+            {
+              "ref": "1 John 3:2",
+              "note": "\"When Christ appears, we shall be like him, for we shall see him as he is\" — seeing God’s face on waking."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -201,6 +206,9 @@
               "note": "Goldingay: \"satisfied with seeing your likeness\" — the satisfaction the wicked found in wealth (v.14), the righteous find in God’s face. Different currencies of fulfilment."
             }
           ]
+        },
+        "hist": {
+          "context": "David asks for the most intimate protection: apple of the eye, shadow of wings (v.8). The enemies are described as fat, arrogant, lion-like (vv.10–12). David asks God to confront them (v.13). The psalm’s closing contrast: the wicked have their reward in this life; David will be satisfied \"with seeing your face when I awake\" (v.15) — another hint of resurrection."
         }
       }
     }

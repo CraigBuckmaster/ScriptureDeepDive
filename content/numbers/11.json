@@ -31,17 +31,18 @@
             "paragraph": "The discontented element within Israel — perhaps the \"mixed multitude\" of Exod 12:38 who joined Israel in the Exodus. Their craving (hittaʾawwû taʾăwāh) ignites the broader rebellion against the manna."
           }
         ],
-        "ctx": "Numbers 11 opens the rebellion sequence that will dominate chs.11–21. Three crises in rapid succession: (1) unnamed complaint → fire at Taberah (vv.1–3); (2) craving for meat → the quail and plague (vv.4–34); (3) Moses's leadership crisis → the seventy elders (vv.14–25). The food complaint is particularly revealing — Israel lists the Egyptian food they miss (fish, cucumbers, melons, leeks, onions, garlic) and despises the manna God provides daily. Moses's own crisis (vv.11–15) is remarkable: he complains to God, \"Why have you brought this trouble on your servant?… If this is how you are going to treat me, please go ahead and kill me.\" God's response is pastoral rather than punitive: he establishes the seventy elders to share Moses's burden, and he sends the quail — but the craving is met with a plague.",
-        "cross": [
-          {
-            "ref": "1 Cor 10:6",
-            "note": "\"Now these things occurred as examples to keep us from setting our hearts on evil things as they did.\" Paul explicitly uses the Num 11 rebellion as a warning for NT believers — the pattern of complaint against God's provision is a trap for every generation."
-          },
-          {
-            "ref": "Ps 106:14–15",
-            "note": "\"In the desert they gave in to their craving; in the wilderness they put God to the test. So he gave them what they asked for, but sent a wasting disease among them.\" The Psalmist summarises Num 11 — God's judgment is not always refusal; sometimes it is granting the craving with consequences."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 10:6",
+              "note": "\"Now these things occurred as examples to keep us from setting our hearts on evil things as they did.\" Paul explicitly uses the Num 11 rebellion as a warning for NT believers — the pattern of complaint against God's provision is a trap for every generation."
+            },
+            {
+              "ref": "Ps 106:14–15",
+              "note": "\"In the desert they gave in to their craving; in the wilderness they put God to the test. So he gave them what they asked for, but sent a wasting disease among them.\" The Psalmist summarises Num 11 — God's judgment is not always refusal; sometimes it is granting the craving with consequences."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Ashley: The narrative context of complaint and quail in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Numbers 11 opens the rebellion sequence that will dominate chs.11–21. Three crises in rapid succession: (1) unnamed complaint → fire at Taberah (vv.1–3); (2) craving for meat → the quail and plague (vv.4–34); (3) Moses's leadership crisis → the seventy elders (vv.14–25). The food complaint is particularly revealing — Israel lists the Egyptian food they miss (fish, cucumbers, melons, leeks, onions, garlic) and despises the manna God provides daily. Moses's own crisis (vv.11–15) is remarkable: he complains to God, \"Why have you brought this trouble on your servant?… If this is how you are going to treat me, please go ahead and kill me.\" God's response is pastoral rather than punitive: he establishes the seventy elders to share Moses's burden, and he sends the quail — but the craving is met with a plague."
         }
       }
     },
@@ -129,17 +133,18 @@
             "paragraph": "The quail migration is so dense it covers the ground to a depth of three feet around the camp. The excess provision — not the lack of it — becomes the instrument of judgment. God's judgment through abundance is the chapter's most disturbing theological note."
           }
         ],
-        "ctx": "Eldad and Medad (vv.26–30) stay in the camp rather than going to the tent of meeting but still receive the Spirit and prophesy — to Joshua's alarm and Moses's liberating response: \"Are you jealous for my sake? I wish that all the Lord's people were prophets.\" The quail arrives in vast quantity (vv.31–33) — those who gathered least collected ten homers. But as they begin eating, \"while the meat was still between their teeth,\" God strikes with a severe plague. The place is named Kibroth Hattaavah — \"Graves of Craving.\" The craving became the grave.",
-        "cross": [
-          {
-            "ref": "Acts 2:17–18",
-            "note": "\"In the last days, God says, I will pour out my Spirit on all people. Your sons and daughters will prophesy.\" Peter quotes Joel in describing Pentecost — the fulfilment of Moses's wish: \"I wish that all the Lord's people were prophets\" (Num 11:29)."
-          },
-          {
-            "ref": "Ps 78:29–31",
-            "note": "\"He gave them what they craved… but before they turned from what they craved, even while the food was still in their mouths, God's anger rose against them.\" The Psalmist's reflection on Kibroth Hattaavah — the anatomy of craving-turned-grave."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 2:17–18",
+              "note": "\"In the last days, God says, I will pour out my Spirit on all people. Your sons and daughters will prophesy.\" Peter quotes Joel in describing Pentecost — the fulfilment of Moses's wish: \"I wish that all the Lord's people were prophets\" (Num 11:29)."
+            },
+            {
+              "ref": "Ps 78:29–31",
+              "note": "\"He gave them what they craved… but before they turned from what they craved, even while the food was still in their mouths, God's anger rose against them.\" The Psalmist's reflection on Kibroth Hattaavah — the anatomy of craving-turned-grave."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -204,6 +209,9 @@
               "note": "Ashley: The narrative context of complaint and quail in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Eldad and Medad (vv.26–30) stay in the camp rather than going to the tent of meeting but still receive the Spirit and prophesy — to Joshua's alarm and Moses's liberating response: \"Are you jealous for my sake? I wish that all the Lord's people were prophets.\" The quail arrives in vast quantity (vv.31–33) — those who gathered least collected ten homers. But as they begin eating, \"while the meat was still between their teeth,\" God strikes with a severe plague. The place is named Kibroth Hattaavah — \"Graves of Craving.\" The craving became the grave."
         }
       }
     }

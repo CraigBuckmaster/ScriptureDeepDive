@@ -25,17 +25,18 @@
             "paragraph": "The oracle opens with the Battle of Carchemish (605 BC), where Nebuchadnezzar defeated Pharaoh Neco and established Babylonian supremacy over the ancient Near East (v.2). Carchemish was a major crossing point on the Euphrates in modern Turkey. The battle is described in vivid military poetry: \"Prepare shield and buckler! Advance to battle! Harness the horses! Mount the steeds!\" (vv.3-4). The pace is breathless -- staccato commands building to defeat."
           }
         ],
-        "ctx": "Chapter 46 opens the oracles against the nations (chs. 46-51), which correspond to Jeremiah's commission as \"a prophet to the nations\" (1:5). Egypt comes first -- Israel's oldest rival and perennial temptation. The Carchemish oracle (vv.2-12) celebrates Babylon's decisive victory, while the invasion oracle (vv.13-26) prophesies Nebuchadnezzar's later campaign against Egypt itself (568 BC).",
-        "cross": [
-          {
-            "ref": "2 Chr 35:20-24",
-            "note": "Josiah's death at Megiddo while trying to intercept Neco on his way to Carchemish -- the battle that set the stage for Judah's final years."
-          },
-          {
-            "ref": "Isa 19:1-15",
-            "note": "Isaiah's oracle against Egypt -- the prophetic tradition of condemning the southern empire."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Chr 35:20-24",
+              "note": "Josiah's death at Megiddo while trying to intercept Neco on his way to Carchemish -- the battle that set the stage for Judah's final years."
+            },
+            {
+              "ref": "Isa 19:1-15",
+              "note": "Isaiah's oracle against Egypt -- the prophetic tradition of condemning the southern empire."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -92,6 +93,9 @@
               "note": "Brueggemann reads the oracle as \"the dethronement of the alternative.\" Egypt represented the perpetual option other than YHWH. With Egypt's defeat, the illusion that any power can rival God is shattered."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 46 opens the oracles against the nations (chs. 46-51), which correspond to Jeremiah's commission as \"a prophet to the nations\" (1:5). Egypt comes first -- Israel's oldest rival and perennial temptation. The Carchemish oracle (vv.2-12) celebrates Babylon's decisive victory, while the invasion oracle (vv.13-26) prophesies Nebuchadnezzar's later campaign against Egypt itself (568 BC)."
         }
       }
     },
@@ -109,17 +113,18 @@
             "paragraph": "\"Egypt is a beautiful heifer ('egla), but a gadfly from the north is coming\" (v.20). The metaphor is devastating: Egypt, sleek and self-satisfied like a well-fed cow, will be tormented by a tiny insect from the north. The disproportion is deliberate -- Babylon is a mere gadfly, but God gives it the power to drive Egypt mad."
           }
         ],
-        "ctx": "The second oracle prophesies Nebuchadnezzar's invasion of Egypt itself (fulfilled c. 568 BC). Egypt's gods -- Amon of Thebes and Pharaoh -- are named as targets (v.25). But the chapter closes with a surprising promise to Israel (vv.27-28): \"Do not fear, Jacob my servant ... I will discipline you but only in due measure.\" The oracle against Egypt becomes, in its conclusion, an oracle of comfort for Israel.",
-        "cross": [
-          {
-            "ref": "Ezek 29-32",
-            "note": "Ezekiel's extensive oracles against Egypt -- a parallel prophetic tradition condemning the southern empire."
-          },
-          {
-            "ref": "Jer 30:10-11",
-            "note": "The \"do not fear, Jacob\" formula from the Book of Consolation is repeated here, framing the OAN section with comfort for Israel."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 29-32",
+              "note": "Ezekiel's extensive oracles against Egypt -- a parallel prophetic tradition condemning the southern empire."
+            },
+            {
+              "ref": "Jer 30:10-11",
+              "note": "The \"do not fear, Jacob\" formula from the Book of Consolation is repeated here, framing the OAN section with comfort for Israel."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -172,6 +177,9 @@
               "note": "Brueggemann reads the closing comfort oracle as \"the pastoral heart within the martial poetry.\" Judgment on the nations is never an end in itself -- it always serves the restoration of God's people."
             }
           ]
+        },
+        "hist": {
+          "context": "The second oracle prophesies Nebuchadnezzar's invasion of Egypt itself (fulfilled c. 568 BC). Egypt's gods -- Amon of Thebes and Pharaoh -- are named as targets (v.25). But the chapter closes with a surprising promise to Israel (vv.27-28): \"Do not fear, Jacob my servant ... I will discipline you but only in due measure.\" The oracle against Egypt becomes, in its conclusion, an oracle of comfort for Israel."
         }
       }
     }

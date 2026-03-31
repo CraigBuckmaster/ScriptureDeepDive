@@ -31,18 +31,22 @@
             "paragraph": "Three times the text notes the Jews \"did not lay their hands on the plunder\" (vv.10, 15, 16). Though the counter-decree authorised plundering, the Jews refused. This deliberate restraint echoes Saul’s failure with Agag — what Saul should have done (refuse the plunder, 1 Sam 15:19), the Jews now do."
           }
         ],
-        "hist": "On the 13th of Adar, the Jews defended themselves throughout the empire. In Susa alone, 500 men were killed including Haman’s ten sons. Esther requests an additional day in Susa (the 14th), and Haman’s sons are publicly displayed. The provincial Jews celebrate on the 14th; Susa Jews on the 15th — hence the two-day Purim observance.",
-        "ctx": "The narrator emphasises restraint over violence. The Jews kill their attackers but refuse the plunder. In a book that replays the Saul-Agag conflict, this detail is crucial: where Saul took Agag’s plunder and lost the kingdom, Mordecai’s community refuses it and preserves the people. The correction of Saul’s failure is complete.",
-        "cross": [
-          {
-            "ref": "1 Sam 15:19–23",
-            "note": "Saul took the plunder from Amalek and lost the kingdom. The Jews now refuse it."
-          },
-          {
-            "ref": "Exod 14:30–31",
-            "note": "Israel’s deliverance at the Sea — the Exodus model for the Purim victory."
-          }
-        ],
+        "hist": {
+          "historical": "On the 13th of Adar, the Jews defended themselves throughout the empire. In Susa alone, 500 men were killed including Haman’s ten sons. Esther requests an additional day in Susa (the 14th), and Haman’s sons are publicly displayed. The provincial Jews celebrate on the 14th; Susa Jews on the 15th — hence the two-day Purim observance.",
+          "context": "The narrator emphasises restraint over violence. The Jews kill their attackers but refuse the plunder. In a book that replays the Saul-Agag conflict, this detail is crucial: where Saul took Agag’s plunder and lost the kingdom, Mordecai’s community refuses it and preserves the people. The correction of Saul’s failure is complete."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Sam 15:19–23",
+              "note": "Saul took the plunder from Amalek and lost the kingdom. The Jews now refuse it."
+            },
+            {
+              "ref": "Exod 14:30–31",
+              "note": "Israel’s deliverance at the Sea — the Exodus model for the Purim victory."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -138,17 +142,18 @@
             "paragraph": "\"These days should be remembered (nizkārîm) and observed in every generation.\" Memory is the purpose of the festival. Purim exists so that no generation forgets: the reversal happened, and the hidden God was its author."
           }
         ],
-        "ctx": "The establishment of Purim is described twice: Mordecai’s letter (vv.20–28) and Esther’s confirmation (vv.29–32). The double authorisation — from the male leader and the female leader — reflects the book’s dual leadership. Both are needed; both carry authority. Esther’s letter has \"full authority\" (v.29).",
-        "cross": [
-          {
-            "ref": "Exod 12:14",
-            "note": "Passover as memorial — the pattern Purim follows: a festival of deliverance that every generation must observe."
-          },
-          {
-            "ref": "Deut 16:11–12",
-            "note": "Festival observance as communal memory — joy rooted in historical rescue."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 12:14",
+              "note": "Passover as memorial — the pattern Purim follows: a festival of deliverance that every generation must observe."
+            },
+            {
+              "ref": "Deut 16:11–12",
+              "note": "Festival observance as communal memory — joy rooted in historical rescue."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -221,6 +226,9 @@
               "note": "Jobes on Esther’s authority: she confirms Purim with \"full authority\" — her own name, her own seal. The concealed girl of chapter 2 is now the authoritative queen of chapter 9."
             }
           ]
+        },
+        "hist": {
+          "context": "The establishment of Purim is described twice: Mordecai’s letter (vv.20–28) and Esther’s confirmation (vv.29–32). The double authorisation — from the male leader and the female leader — reflects the book’s dual leadership. Both are needed; both carry authority. Esther’s letter has \"full authority\" (v.29)."
         }
       }
     }

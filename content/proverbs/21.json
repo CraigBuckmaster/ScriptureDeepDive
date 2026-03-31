@@ -31,17 +31,18 @@
             "paragraph": "To do righteousness and mišpāṭ is more acceptable to the LORD than sacrifice (v. 3). This prophetic principle (cf. 1 Sam 15:22, Mic 6:6–8) appears within the wisdom tradition: ritual observance without ethical conduct is rejected. Mišpāṭ encompasses legal justice, social equity, and right ordering of community life."
           }
         ],
-        "ctx": "The first half of ch.21 opens with the divine weighing of the king's heart (v.1) — establishing God's sovereignty over all earthly authority. V.3 is the chapter's moral centre: doing what is right and just is more acceptable to the LORD than sacrifice. The contrast between ritual compliance and genuine justice is the Proverbs echo of the great prophets (Isa 1:11–17; Amos 5:21–24).",
-        "cross": [
-          {
-            "ref": "Isa 1:11–17",
-            "note": "What to me is the multitude of your sacrifices? — the prophetic parallel to v.3. Justice is what the LORD requires; ritual cannot substitute for it."
-          },
-          {
-            "ref": "Prov 16:9",
-            "note": "The LORD establishes steps — the same sovereignty theme as v.1's king-as-channel."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 1:11–17",
+              "note": "What to me is the multitude of your sacrifices? — the prophetic parallel to v.3. Justice is what the LORD requires; ritual cannot substitute for it."
+            },
+            {
+              "ref": "Prov 16:9",
+              "note": "The LORD establishes steps — the same sovereignty theme as v.1's king-as-channel."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "The NET note connects to 1 Sam 15:22 ('to obey is better than sacrifice'), Ps 40:6-8, and the prophetic critique throughout Amos, Hosea, Isaiah, and Micah. The consistent OT witness: ethics is the substance that cultic practice expresses. Without the substance, the practice is not merely insufficient but offensive."
             }
           ]
+        },
+        "hist": {
+          "context": "The first half of ch.21 opens with the divine weighing of the king's heart (v.1) — establishing God's sovereignty over all earthly authority. V.3 is the chapter's moral centre: doing what is right and just is more acceptable to the LORD than sacrifice. The contrast between ritual compliance and genuine justice is the Proverbs echo of the great prophets (Isa 1:11–17; Amos 5:21–24)."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "The wise scale the city of the mighty and bring down the ḥômâ (fortified wall) in which they trust (v. 22). Physical strength is no match for wisdom. The military metaphor inverts expectations: the wise person conquers not through superior force but through superior understanding. Strategy defeats strength."
           }
         ],
-        "ctx": "The second half addresses diligence versus laziness (vv.25–26), pride as the source of conflict (v.24), and the chapter's climactic verse: no wisdom, insight, or plan can succeed against the LORD (v.30). The divine sovereignty that opened the chapter (v.1) closes it (vv.30–31): human preparation matters, but victory belongs to the LORD.",
-        "cross": [
-          {
-            "ref": "Ps 33:17",
-            "note": "A horse is a vain hope for deliverance — the exact parallel to v.31. The Psalmist and the sage both locate victory with the LORD, not with military preparation."
-          },
-          {
-            "ref": "Prov 16:18",
-            "note": "Pride goes before destruction — the same pride-conflict connection as v.24."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 33:17",
+              "note": "A horse is a vain hope for deliverance — the exact parallel to v.31. The Psalmist and the sage both locate victory with the LORD, not with military preparation."
+            },
+            {
+              "ref": "Prov 16:18",
+              "note": "Pride goes before destruction — the same pride-conflict connection as v.24."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -178,6 +183,9 @@
               "note": "NET: even in the extreme case of warfare, the outcome belongs to the LORD — the human preparation is not invalidated but enclosed within divine determination."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half addresses diligence versus laziness (vv.25–26), pride as the source of conflict (v.24), and the chapter's climactic verse: no wisdom, insight, or plan can succeed against the LORD (v.30). The divine sovereignty that opened the chapter (v.1) closes it (vv.30–31): human preparation matters, but victory belongs to the LORD."
         }
       }
     }

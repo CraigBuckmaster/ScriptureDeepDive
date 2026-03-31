@@ -31,21 +31,22 @@
             "paragraph": "Rahab's confession (v.11) is a complete monotheistic creed from a pagan woman. She declares YHWH sovereign \"in heaven above and on the earth below\" — the same language as the Shema tradition (Deut 4:39). A Canaanite arrives at Israel's theology before Israel arrives at Canaan."
           }
         ],
-        "ctx": "Joshua sends two spies to reconnoitre Jericho — the first major obstacle to the conquest. They end up at Rahab's house, which sits on the city wall. When the king of Jericho sends for them, Rahab hides the spies on her roof and sends the pursuers on a false trail. Her motive is theological, not mercenary: she has heard what God did at the Red Sea and to Sihon and Og, and she believes. This is the book's first example of faith — and it comes from the most unlikely source imaginable.",
-        "cross": [
-          {
-            "ref": "Heb 11:31",
-            "note": "\"By faith Rahab the prostitute did not perish with those who were disobedient, because she had given a friendly welcome to the spies.\" Hebrews places Rahab in the faith hall of fame alongside Abraham and Moses."
-          },
-          {
-            "ref": "Jas 2:25",
-            "note": "\"Was not also Rahab the prostitute justified by works when she received the messengers and sent them out by another way?\" James uses Rahab to prove that faith without works is dead."
-          },
-          {
-            "ref": "Matt 1:5",
-            "note": "Rahab appears in Jesus' genealogy — a Canaanite prostitute in the ancestry of the Messiah. Grace rewrites family trees."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 11:31",
+              "note": "\"By faith Rahab the prostitute did not perish with those who were disobedient, because she had given a friendly welcome to the spies.\" Hebrews places Rahab in the faith hall of fame alongside Abraham and Moses."
+            },
+            {
+              "ref": "Jas 2:25",
+              "note": "\"Was not also Rahab the prostitute justified by works when she received the messengers and sent them out by another way?\" James uses Rahab to prove that faith without works is dead."
+            },
+            {
+              "ref": "Matt 1:5",
+              "note": "Rahab appears in Jesus' genealogy — a Canaanite prostitute in the ancestry of the Messiah. Grace rewrites family trees."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "Howard: Rahab's confession forms the theological centre of the chapter. The chiastic arrangement places her monotheistic declaration at the structural pivot: everything before it builds to it, and everything after it flows from it."
             }
           ]
+        },
+        "hist": {
+          "context": "Joshua sends two spies to reconnoitre Jericho — the first major obstacle to the conquest. They end up at Rahab's house, which sits on the city wall. When the king of Jericho sends for them, Rahab hides the spies on her roof and sends the pursuers on a false trail. Her motive is theological, not mercenary: she has heard what God did at the Red Sea and to Sihon and Og, and she believes. This is the book's first example of faith — and it comes from the most unlikely source imaginable."
         }
       }
     },
@@ -135,17 +139,18 @@
             "paragraph": "The scarlet cord (šānî) that marks Rahab's window recalls the blood of the Passover lamb on the doorposts (Exod 12:7). The wordtiqwâmeans both \"cord\" and \"hope\" — Rahab's lifeline is literally her hope."
           }
         ],
-        "ctx": "Rahab lowers the spies from her window — her house is built into the city wall. They agree: when Israel attacks, Rahab must tie a scarlet cord in her window and gather her family inside. Anyone outside the marked house will die; anyone inside will be saved. The parallel to Passover is unmistakable. The spies return to Joshua with the decisive intelligence: \"the LORD has surely given the whole land into our hands. All the people are melting in fear.\"",
-        "cross": [
-          {
-            "ref": "Exod 12:7,13",
-            "note": "The Passover blood on the doorposts protected Israelite firstborn from the angel of death. Rahab's scarlet cord functions identically: a visible mark on a house that separates the saved from the condemned."
-          },
-          {
-            "ref": "Heb 9:19-22",
-            "note": "\"Without the shedding of blood there is no forgiveness.\" The scarlet cord stands in the long biblical line of blood-signs that mark God's people for salvation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 12:7,13",
+              "note": "The Passover blood on the doorposts protected Israelite firstborn from the angel of death. Rahab's scarlet cord functions identically: a visible mark on a house that separates the saved from the condemned."
+            },
+            {
+              "ref": "Heb 9:19-22",
+              "note": "\"Without the shedding of blood there is no forgiveness.\" The scarlet cord stands in the long biblical line of blood-signs that mark God's people for salvation."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -218,6 +223,9 @@
               "note": "Howard: The scarlet cord functions as the chapter's primary literary symbol — connecting Rahab's personal faith to the communal Passover tradition. The spies' confident report provides the theological bridge to the Jordan crossing in chapter 3."
             }
           ]
+        },
+        "hist": {
+          "context": "Rahab lowers the spies from her window — her house is built into the city wall. They agree: when Israel attacks, Rahab must tie a scarlet cord in her window and gather her family inside. Anyone outside the marked house will die; anyone inside will be saved. The parallel to Passover is unmistakable. The spies return to Joshua with the decisive intelligence: \"the LORD has surely given the whole land into our hands. All the people are melting in fear.\""
         }
       }
     }

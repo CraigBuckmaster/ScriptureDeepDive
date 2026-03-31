@@ -31,21 +31,22 @@
             "paragraph": "Jezebel procuresbĕnê bĕliyyaʿal(worthless men, v.10) to give false testimony against Naboth. The termbĕliyyaʿal(later \"Belial\" — a name for Satan) denotes persons devoid of moral worth. Jezebel corrupts the judicial system by weaponising its forms: elders, fasting, witnesses, execution — all legally correct in form, totally corrupt in substance."
           }
         ],
-        "ctx": "Naboth's vineyard is the moral nadir of Ahab's reign. Ahab wants the vineyard; Naboth refuses on covenantal grounds. Ahab sulks. Jezebel takes over: she forges letters in Ahab's name, proclaims a fast (implying a national crisis), seats Naboth in a place of honour (setting him up), hires false witnesses to accuse him of blasphemy, and has him stoned. Then she tells Ahab: \"Get up and take possession.\" The entire operation is a masterclass in institutional evil — every step follows legal procedure while violating every principle the law was designed to protect. The narrator shows how power corrupts justice: the same legal system that should protect Naboth is turned into the instrument of his murder.",
-        "cross": [
-          {
-            "ref": "Lev 25:23",
-            "note": "\"The land must not be sold permanently, because the land is mine.\" Naboth's refusal is grounded in this Levitical principle — the land belongs to God, not to kings."
-          },
-          {
-            "ref": "Deut 19:15–21",
-            "note": "The two-witness requirement for capital cases. Jezebel technically complies with the form while perverting the substance."
-          },
-          {
-            "ref": "2 Kgs 9:25–26",
-            "note": "Jehu throws Joram's body onto Naboth's plot, fulfilling Elijah's prophecy from this chapter."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 25:23",
+              "note": "\"The land must not be sold permanently, because the land is mine.\" Naboth's refusal is grounded in this Levitical principle — the land belongs to God, not to kings."
+            },
+            {
+              "ref": "Deut 19:15–21",
+              "note": "The two-witness requirement for capital cases. Jezebel technically complies with the form while perverting the substance."
+            },
+            {
+              "ref": "2 Kgs 9:25–26",
+              "note": "Jehu throws Joram's body onto Naboth's plot, fulfilling Elijah's prophecy from this chapter."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -97,6 +98,9 @@
               "note": "Provan: Jezebel's \"Is this how you act as king?\" exposes the clash between two models of kingship: the Deuteronomic king (under law, serving the people) and the Canaanite/Phoenician king (above law, served by the people). The entire book of Kings is this conflict in narrative form."
             }
           ]
+        },
+        "hist": {
+          "context": "Naboth's vineyard is the moral nadir of Ahab's reign. Ahab wants the vineyard; Naboth refuses on covenantal grounds. Ahab sulks. Jezebel takes over: she forges letters in Ahab's name, proclaims a fast (implying a national crisis), seats Naboth in a place of honour (setting him up), hires false witnesses to accuse him of blasphemy, and has him stoned. Then she tells Ahab: \"Get up and take possession.\" The entire operation is a masterclass in institutional evil — every step follows legal procedure while violating every principle the law was designed to protect. The narrator shows how power corrupts justice: the same legal system that should protect Naboth is turned into the instrument of his murder."
         }
       }
     },
@@ -114,21 +118,22 @@
             "paragraph": "Elijah's accusation (v.19) is two words in Hebrew: \"murder\" and \"possess.\" The starkness is intentional — no mitigation, no qualification, no context. The prophet strips Ahab's crime to its essence: you killed a man and stole his land. The simplicity of the charge makes it unanswerable."
           }
         ],
-        "ctx": "God sends Elijah to Naboth's vineyard with a single devastating question: \"Have you murdered and also taken possession?\" The prophecy is specific: dogs will lick Ahab's blood in the same place they licked Naboth's. Jezebel will be eaten by dogs at the wall of Jezreel. Every male in Ahab's house will be destroyed. Then — remarkably — Ahab repents. He tears his clothes, puts on sackcloth, fasts, and \"went around meekly.\" God responds to Elijah: \"Have you noticed how Ahab has humbled himself? Because he has humbled himself, I will not bring this disaster in his day.\" The disaster is delayed, not cancelled. Ahab's repentance is genuine enough to delay judgment but not thorough enough to avert it.",
-        "cross": [
-          {
-            "ref": "2 Kgs 9:26",
-            "note": "\"Yesterday I saw the blood of Naboth and the blood of his sons.\" Jehu fulfils the Naboth prophecy at the very field where Naboth was murdered."
-          },
-          {
-            "ref": "2 Kgs 9:36",
-            "note": "\"This is the word of the LORD: Dogs will devour Jezebel's flesh.\" Fulfilled exactly — dogs ate Jezebel at Jezreel."
-          },
-          {
-            "ref": "Jonah 3:10",
-            "note": "Nineveh's repentance delays judgment. Ahab's repentance follows the same pattern — genuine humility, even from the worst, earns God's merciful delay."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 9:26",
+              "note": "\"Yesterday I saw the blood of Naboth and the blood of his sons.\" Jehu fulfils the Naboth prophecy at the very field where Naboth was murdered."
+            },
+            {
+              "ref": "2 Kgs 9:36",
+              "note": "\"This is the word of the LORD: Dogs will devour Jezebel's flesh.\" Fulfilled exactly — dogs ate Jezebel at Jezreel."
+            },
+            {
+              "ref": "Jonah 3:10",
+              "note": "Nineveh's repentance delays judgment. Ahab's repentance follows the same pattern — genuine humility, even from the worst, earns God's merciful delay."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -180,6 +185,9 @@
               "note": "Provan: God's response to Ahab's repentance is the most theologically generous moment in Ahab's story. Even for the worst king, God's mercy is available. The narrator is not soft on Ahab — the judgment stands — but he shows that God's character is consistent: \"he is patient... not wanting anyone to perish, but everyone to come to repentance\" (2 Pet 3:9)."
             }
           ]
+        },
+        "hist": {
+          "context": "God sends Elijah to Naboth's vineyard with a single devastating question: \"Have you murdered and also taken possession?\" The prophecy is specific: dogs will lick Ahab's blood in the same place they licked Naboth's. Jezebel will be eaten by dogs at the wall of Jezreel. Every male in Ahab's house will be destroyed. Then — remarkably — Ahab repents. He tears his clothes, puts on sackcloth, fasts, and \"went around meekly.\" God responds to Elijah: \"Have you noticed how Ahab has humbled himself? Because he has humbled himself, I will not bring this disaster in his day.\" The disaster is delayed, not cancelled. Ahab's repentance is genuine enough to delay judgment but not thorough enough to avert it."
         }
       }
     }

@@ -37,25 +37,26 @@
             "paragraph": "A people for God's own possession - acquired, treasured, set apart. The language echoes Exodus 19:5."
           }
         ],
-        "ctx": "Peter builds on chapter 1 by describing the community's corporate identity. Having put away malice, they crave spiritual milk for growth. Coming to Christ the living stone, they become living stones built into a spiritual house. Peter weaves OT texts: the cornerstone (Isaiah 28:16), the stone of stumbling (Isaiah 8:14), and the rejected stone that became chief (Psalm 118:22). The climax uses Exodus and Hosea language: you are a chosen race, a royal priesthood, a holy nation.",
-        "cross": [
-          {
-            "ref": "Isaiah 28:16",
-            "note": "Behold, I am laying in Zion a stone, a cornerstone chosen and precious."
-          },
-          {
-            "ref": "Psalm 118:22",
-            "note": "The stone that the builders rejected has become the cornerstone."
-          },
-          {
-            "ref": "Exodus 19:5-6",
-            "note": "You shall be my treasured possession, a kingdom of priests and a holy nation."
-          },
-          {
-            "ref": "Hosea 2:23",
-            "note": "I will say to Not My People, You are my people."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isaiah 28:16",
+              "note": "Behold, I am laying in Zion a stone, a cornerstone chosen and precious."
+            },
+            {
+              "ref": "Psalm 118:22",
+              "note": "The stone that the builders rejected has become the cornerstone."
+            },
+            {
+              "ref": "Exodus 19:5-6",
+              "note": "You shall be my treasured possession, a kingdom of priests and a holy nation."
+            },
+            {
+              "ref": "Hosea 2:23",
+              "note": "I will say to Not My People, You are my people."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -121,7 +122,10 @@
             }
           ]
         },
-        "hist": "Peter writes to Christians in five Roman provinces of Asia Minor (modern Turkey) — Pontus, Galatia, Cappadocia, Asia, and Bithynia. These believers face social ostracism and verbal abuse (4:4, 14) rather than official state persecution. As 'elect exiles' (1:1), they experience the marginalization of those who no longer participate in pagan civic religion, trade guild feasts, and family worship. The letter's household codes (2:13–3:7) address how Christians should live within Roman social structures. Peter writes from 'Babylon' (5:13) — almost certainly a symbolic name for Rome. Silvanus (Silas) serves as secretary (5:12), and Mark is present (5:13). The letter likely dates to the early 60s AD, before Nero's persecution."
+        "hist": {
+          "historical": "Peter writes to Christians in five Roman provinces of Asia Minor (modern Turkey) — Pontus, Galatia, Cappadocia, Asia, and Bithynia. These believers face social ostracism and verbal abuse (4:4, 14) rather than official state persecution. As 'elect exiles' (1:1), they experience the marginalization of those who no longer participate in pagan civic religion, trade guild feasts, and family worship. The letter's household codes (2:13–3:7) address how Christians should live within Roman social structures. Peter writes from 'Babylon' (5:13) — almost certainly a symbolic name for Rome. Silvanus (Silas) serves as secretary (5:12), and Mark is present (5:13). The letter likely dates to the early 60s AD, before Nero's persecution.",
+          "context": "Peter builds on chapter 1 by describing the community's corporate identity. Having put away malice, they crave spiritual milk for growth. Coming to Christ the living stone, they become living stones built into a spiritual house. Peter weaves OT texts: the cornerstone (Isaiah 28:16), the stone of stumbling (Isaiah 8:14), and the rejected stone that became chief (Psalm 118:22). The climax uses Exodus and Hosea language: you are a chosen race, a royal priesthood, a holy nation."
+        }
       }
     },
     {
@@ -150,25 +154,26 @@
             "paragraph": "Live as free people, but do not use freedom as a cover-up for evil. Christian freedom is not license but liberation for service."
           }
         ],
-        "ctx": "Peter shifts to ethical instruction for life in a pagan society. As sojourners and exiles, believers must abstain from fleshly passions. Their conduct must be honorable - so that slanderers will see good deeds and glorify God. Submission to human institutions (emperor, governors) is commanded - not because the state is righteous but because such submission silences critics.",
-        "cross": [
-          {
-            "ref": "Matthew 5:16",
-            "note": "Let your light shine before others, so that they may see your good works and give glory to your Father."
-          },
-          {
-            "ref": "Romans 13:1-7",
-            "note": "Let every person be subject to the governing authorities."
-          },
-          {
-            "ref": "Galatians 5:13",
-            "note": "You were called to freedom, brothers. Only do not use your freedom as an opportunity for the flesh."
-          },
-          {
-            "ref": "Proverbs 24:21",
-            "note": "Fear the LORD and the king."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matthew 5:16",
+              "note": "Let your light shine before others, so that they may see your good works and give glory to your Father."
+            },
+            {
+              "ref": "Romans 13:1-7",
+              "note": "Let every person be subject to the governing authorities."
+            },
+            {
+              "ref": "Galatians 5:13",
+              "note": "You were called to freedom, brothers. Only do not use your freedom as an opportunity for the flesh."
+            },
+            {
+              "ref": "Proverbs 24:21",
+              "note": "Fear the LORD and the king."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -229,6 +234,9 @@
               "note": "Jobes emphasizes that the readers were accused of being social deviants. Peter's strategy is visible virtue that proves accusations false."
             }
           ]
+        },
+        "hist": {
+          "context": "Peter shifts to ethical instruction for life in a pagan society. As sojourners and exiles, believers must abstain from fleshly passions. Their conduct must be honorable - so that slanderers will see good deeds and glorify God. Submission to human institutions (emperor, governors) is commanded - not because the state is righteous but because such submission silences critics."
         }
       }
     },
@@ -258,25 +266,26 @@
             "paragraph": "He bore our sins in his body on the tree - the cross is called tree as in Deuteronomy 21:23. Christ's substitutionary death is the basis for ethical transformation."
           }
         ],
-        "ctx": "Peter addresses household slaves - a significant population in the early church. They are to submit even to harsh masters, for this is gracious: to endure suffering unjustly while mindful of God. Christ is the example: He suffered for you, leaving a pattern to follow. The passage becomes a Christological hymn: He committed no sin, did not revile, entrusted Himself to the righteous Judge, bore our sins on the tree. By His wounds you have been healed.",
-        "cross": [
-          {
-            "ref": "Isaiah 53:4-6",
-            "note": "He was pierced for our transgressions; by his wounds we are healed."
-          },
-          {
-            "ref": "Isaiah 53:9",
-            "note": "He had done no violence, and there was no deceit in his mouth."
-          },
-          {
-            "ref": "Matthew 26:63",
-            "note": "Jesus remained silent before the high priest."
-          },
-          {
-            "ref": "John 10:11",
-            "note": "I am the good shepherd. The good shepherd lays down his life for the sheep."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isaiah 53:4-6",
+              "note": "He was pierced for our transgressions; by his wounds we are healed."
+            },
+            {
+              "ref": "Isaiah 53:9",
+              "note": "He had done no violence, and there was no deceit in his mouth."
+            },
+            {
+              "ref": "Matthew 26:63",
+              "note": "Jesus remained silent before the high priest."
+            },
+            {
+              "ref": "John 10:11",
+              "note": "I am the good shepherd. The good shepherd lays down his life for the sheep."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -341,6 +350,9 @@
               "note": "Jobes notes that Peter does not endorse slavery but addresses slaves within their situation. The focus is faithful witness within existing structures."
             }
           ]
+        },
+        "hist": {
+          "context": "Peter addresses household slaves - a significant population in the early church. They are to submit even to harsh masters, for this is gracious: to endure suffering unjustly while mindful of God. Christ is the example: He suffered for you, leaving a pattern to follow. The passage becomes a Christological hymn: He committed no sin, did not revile, entrusted Himself to the righteous Judge, bore our sins on the tree. By His wounds you have been healed."
         }
       }
     }

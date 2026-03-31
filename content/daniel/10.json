@@ -25,21 +25,22 @@
             "paragraph": "\"I looked up and there before me was a man (ʾish) dressed in linen, with a belt of fine gold. His body like topaz, face like lightning, eyes like flaming torches, arms and legs like burnished bronze, voice like a multitude\" (vv.5–6). Daniel mourns and fasts three weeks. Then this overwhelming theophany. The description parallels Rev 1:13–16. Daniel alone sees the vision; companions flee in terror."
           }
         ],
-        "ctx": "The third year of Cyrus (v.1), approximately 536 BC. The Persian period has begun; the decree to return has been issued (Ezra 1). Daniel’s three-week fast (vv.2–3) coincides with Passover/Unleavened Bread (Nisan 1–21). The figure’s description exceeds any ordinary angel: topaz body, lightning face, torch eyes, bronze limbs, multitude-voice. Whether this is Christ, Gabriel, or another being is debated; the description surpasses Gabriel’s appearances elsewhere.",
-        "cross": [
-          {
-            "ref": "Rev 1:13–16",
-            "note": "One like a son of man: white hair, blazing eyes, bronze feet, thunderous voice — John sees the same figure Daniel sees."
-          },
-          {
-            "ref": "Ezek 1:26–28",
-            "note": "The glory of the LORD: a figure of fire with a rainbow — the throne-vision that parallels Daniel’s."
-          },
-          {
-            "ref": "Matt 17:2",
-            "note": "Jesus was transfigured: face like the sun, clothes white as light — the Transfiguration echoes the heavenly figure."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rev 1:13–16",
+              "note": "One like a son of man: white hair, blazing eyes, bronze feet, thunderous voice — John sees the same figure Daniel sees."
+            },
+            {
+              "ref": "Ezek 1:26–28",
+              "note": "The glory of the LORD: a figure of fire with a rainbow — the throne-vision that parallels Daniel’s."
+            },
+            {
+              "ref": "Matt 17:2",
+              "note": "Jesus was transfigured: face like the sun, clothes white as light — the Transfiguration echoes the heavenly figure."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -121,6 +122,9 @@
               "note": "Collins compares the terror-and-collapse sequence to Paul’s Damascus road experience (Acts 9:3–9): blinding light, falling down, companions affected but unable to see. The pattern suggests a genre convention of divine encounter."
             }
           ]
+        },
+        "hist": {
+          "context": "The third year of Cyrus (v.1), approximately 536 BC. The Persian period has begun; the decree to return has been issued (Ezra 1). Daniel’s three-week fast (vv.2–3) coincides with Passover/Unleavened Bread (Nisan 1–21). The figure’s description exceeds any ordinary angel: topaz body, lightning face, torch eyes, bronze limbs, multitude-voice. Whether this is Christ, Gabriel, or another being is debated; the description surpasses Gabriel’s appearances elsewhere."
         }
       }
     },
@@ -138,25 +142,26 @@
             "paragraph": "\"The prince (sar) of the Persian kingdom resisted me twenty-one days. Then Michael, one of the chief princes, came to help me\" (v.13). The veil is pulled back on heavenly warfare. Daniel’s prayer was heard on day one (v.12), but the answer was delayed by spiritual battle. Michael intervenes. Every earthly empire has a spiritual dimension; prayer engages heavenly warfare; delays are not denials."
           }
         ],
-        "ctx": "This passage is the OT’s most developed teaching on the spiritual dimension of political power. The \"prince of Persia\" is not the human king but a demonic power behind the empire. Michael is identified as Israel’s guardian angel (v.21; 12:1). The 21-day delay matches Daniel’s three-week fast (vv.2–3): his fasting covered the exact period of heavenly combat. The passage implies a structured spiritual hierarchy: national-level demonic powers, archangels, and the messengers between them.",
-        "cross": [
-          {
-            "ref": "Eph 6:12",
-            "note": "Our struggle is not against flesh and blood but against the rulers, authorities, powers of this dark world — the NT’s fullest statement of the worldview Daniel 10 reveals."
-          },
-          {
-            "ref": "Jude 9",
-            "note": "Michael the archangel disputed with the devil about the body of Moses — Michael’s role as contender against demonic powers."
-          },
-          {
-            "ref": "Rev 12:7–9",
-            "note": "Michael and his angels fought against the dragon — the final battle that Daniel 10 anticipates."
-          },
-          {
-            "ref": "2 Kgs 6:17",
-            "note": "Elisha’s prayer: open his eyes so he may see the heavenly army — the same two-tier reality Daniel 10 describes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Eph 6:12",
+              "note": "Our struggle is not against flesh and blood but against the rulers, authorities, powers of this dark world — the NT’s fullest statement of the worldview Daniel 10 reveals."
+            },
+            {
+              "ref": "Jude 9",
+              "note": "Michael the archangel disputed with the devil about the body of Moses — Michael’s role as contender against demonic powers."
+            },
+            {
+              "ref": "Rev 12:7–9",
+              "note": "Michael and his angels fought against the dragon — the final battle that Daniel 10 anticipates."
+            },
+            {
+              "ref": "2 Kgs 6:17",
+              "note": "Elisha’s prayer: open his eyes so he may see the heavenly army — the same two-tier reality Daniel 10 describes."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -238,6 +243,9 @@
               "note": "Collins reads the angel’s return to battle as a narrative frame: the revelation of chs.11–12 occurs during a brief pause in the heavenly war. The information is delivered between battles."
             }
           ]
+        },
+        "hist": {
+          "context": "This passage is the OT’s most developed teaching on the spiritual dimension of political power. The \"prince of Persia\" is not the human king but a demonic power behind the empire. Michael is identified as Israel’s guardian angel (v.21; 12:1). The 21-day delay matches Daniel’s three-week fast (vv.2–3): his fasting covered the exact period of heavenly combat. The passage implies a structured spiritual hierarchy: national-level demonic powers, archangels, and the messengers between them."
         }
       }
     }

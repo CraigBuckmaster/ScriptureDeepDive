@@ -31,21 +31,22 @@
             "paragraph": "The agricultural metaphor of vv. 7–9: sowing to the flesh produces corruption (phthora), while sowing to the Spirit produces eternal life (zōē aiōnios). The present participle ho speirōn indicates a habitual pattern, not an isolated act."
           }
         ],
-        "ctx": "Paul moves from the Spirit’s fruit to its practical applications in community life. The chapter opens with instructions for gentle restoration of a believer caught in sin (v. 1), followed by the command to ‘carry each other’s burdens’ (v. 2)—identified as the fulfilment of ‘the law of Christ’ (ton nomon tou Christou). This striking phrase, in a letter arguing against the Mosaic law, indicates Paul envisions a new ‘law’—the pattern of Christ’s self-giving love. The sowing-reaping principle (vv. 7–9) provides eschatological motivation. The exhortation to ‘do good to all people, especially to those who belong to the family of believers’ (v. 10) defines the scope of Christian responsibility.",
-        "cross": [
-          {
-            "ref": "1 Cor 9:21",
-            "note": "Paul’s reference to being ‘under Christ’s law’ parallels the ‘law of Christ’ in Gal 6:2."
-          },
-          {
-            "ref": "2 Cor 9:6",
-            "note": "The sowing-reaping principle applied to financial generosity parallels Gal 6:7–9."
-          },
-          {
-            "ref": "Matt 7:1–5",
-            "note": "Jesus’ teaching on removing the plank from one’s own eye provides background for Gal 6:1."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 9:21",
+              "note": "Paul’s reference to being ‘under Christ’s law’ parallels the ‘law of Christ’ in Gal 6:2."
+            },
+            {
+              "ref": "2 Cor 9:6",
+              "note": "The sowing-reaping principle applied to financial generosity parallels Gal 6:7–9."
+            },
+            {
+              "ref": "Matt 7:1–5",
+              "note": "Jesus’ teaching on removing the plank from one’s own eye provides background for Gal 6:1."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Bruce notes that the ‘law of Christ’ is a deliberate counterpoint to the Mosaic law. The sowing-reaping metaphor draws on the wisdom tradition (Prov 11:18; Hos 8:7; 10:12) and applies it to the central issue: flesh vs. Spirit lead to two radically different destinies."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul moves from the Spirit’s fruit to its practical applications in community life. The chapter opens with instructions for gentle restoration of a believer caught in sin (v. 1), followed by the command to ‘carry each other’s burdens’ (v. 2)—identified as the fulfilment of ‘the law of Christ’ (ton nomon tou Christou). This striking phrase, in a letter arguing against the Mosaic law, indicates Paul envisions a new ‘law’—the pattern of Christ’s self-giving love. The sowing-reaping principle (vv. 7–9) provides eschatological motivation. The exhortation to ‘do good to all people, especially to those who belong to the family of believers’ (v. 10) defines the scope of Christian responsibility."
         }
       }
     },
@@ -129,21 +133,22 @@
             "paragraph": "Paul’s closing statement—‘I bear on my body the marks of Jesus’ (v. 17)—refers to physical scars from apostolic sufferings. The term was used for brands on slaves indicating ownership. Paul’s scars mark him as Christ’s slave—a status superseding and relativising the mark of circumcision."
           }
         ],
-        "ctx": "Paul takes the pen from his amanuensis and writes the closing in his own hand, using ‘large letters’ (v. 11). He exposes the agitators’ motives: they promote circumcision to avoid persecution for the cross (v. 12) and to boast in the Galatians’ flesh (v. 13). Paul’s own boast is in the cross alone (v. 14), through which the world has been crucified to him and he to the world. The climactic declaration is v. 15: ‘Neither circumcision nor uncircumcision means anything; what counts is the new creation.’ The letter closes with benediction on all who follow this rule, designated as ‘the Israel of God’ (v. 16).",
-        "cross": [
-          {
-            "ref": "2 Cor 5:17",
-            "note": "Paul’s declaration ‘if anyone is in Christ, the new creation has come’ directly parallels Gal 6:15."
-          },
-          {
-            "ref": "Isa 65:17",
-            "note": "The prophetic vision of new heavens and earth provides the OT background for Paul’s concept of kainē ktisis."
-          },
-          {
-            "ref": "Phil 3:3",
-            "note": "Paul’s redefinition of circumcision resonates with Gal 6:14–15, where the cross replaces circumcision as the marker of covenant identity."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Cor 5:17",
+              "note": "Paul’s declaration ‘if anyone is in Christ, the new creation has come’ directly parallels Gal 6:15."
+            },
+            {
+              "ref": "Isa 65:17",
+              "note": "The prophetic vision of new heavens and earth provides the OT background for Paul’s concept of kainē ktisis."
+            },
+            {
+              "ref": "Phil 3:3",
+              "note": "Paul’s redefinition of circumcision resonates with Gal 6:14–15, where the cross replaces circumcision as the marker of covenant identity."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -204,6 +209,9 @@
               "note": "Bruce notes the autograph postscript was a common ancient convention. The exposure of the agitators’ motives is devastating. Bruce argues that ‘the Israel of God’ refers to the whole believing community, Jew and Gentile, who constitute the eschatological people of God."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul takes the pen from his amanuensis and writes the closing in his own hand, using ‘large letters’ (v. 11). He exposes the agitators’ motives: they promote circumcision to avoid persecution for the cross (v. 12) and to boast in the Galatians’ flesh (v. 13). Paul’s own boast is in the cross alone (v. 14), through which the world has been crucified to him and he to the world. The climactic declaration is v. 15: ‘Neither circumcision nor uncircumcision means anything; what counts is the new creation.’ The letter closes with benediction on all who follow this rule, designated as ‘the Israel of God’ (v. 16)."
         }
       }
     }

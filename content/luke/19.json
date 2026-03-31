@@ -37,21 +37,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jericho</div><div class=\"poi-coords\">31.8561° N, 35.4614° E</div><div class=\"poi-text\">Jesus enters Jericho proper for the Zacchaeus encounter after the blind beggar on the approach (18:35). Jericho was a major trading city and tax collection centre — an ideal location for a chief tax collector. The sycamore-fig tree Zacchaeus climbed would have been a common street tree in this warm Jordan Valley city.</div></div>"
         },
-        "ctx": "[('Zacchaeus and the Minas', 'The parable of the minas (19:11-27) is told \"because he was near Jerusalem and the people thought that the kingdom of God was going to appear at once\" (19:11). The parable corrects a misunderstanding: the king will go away first, then return to judge. The delay between departure and return is the time of the servants\\' faithful or unfaithful use of the king\\'s resources. The parable is both a correction of eschatological timetable and a preparation for the passion.'), ('The Historical Background of the Minas Parable', \"When Herod the Great died (4 BC), his son Archelaus went to Rome to have his kingship confirmed. A Jewish delegation followed him to argue against his appointment (Josephus, Ant. 17.299-314). Archelaus was appointed ethnarch, returned, and dealt harshly with his opponents. Jesus's parable maps directly onto this event, known to every Palestinian Jew in his audience. The uncomfortable identification between the king-figure and Jesus is deliberate.\")]",
-        "cross": [
-          {
-            "ref": "Matt 25:14-30",
-            "note": "The parallel parable of the talents in Matthew — three servants, larger sums, the same basic structure. The minas (one each to ten servants) and talents (different amounts to three servants) present the same truth differently."
-          },
-          {
-            "ref": "Luke 15:4-7",
-            "note": "The lost sheep — \"the Son of Man came to seek and save the lost\" (19:10) is the theological statement that connects Zacchaeus to Luke 15's searching parables."
-          },
-          {
-            "ref": "Josephus, Ant. 17.299-314",
-            "note": "The historical account of Archelaus's journey to Rome and the Jewish delegation opposing his kingship — the political event underlying the minas parable."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 25:14-30",
+              "note": "The parallel parable of the talents in Matthew — three servants, larger sums, the same basic structure. The minas (one each to ten servants) and talents (different amounts to three servants) present the same truth differently."
+            },
+            {
+              "ref": "Luke 15:4-7",
+              "note": "The lost sheep — \"the Son of Man came to seek and save the lost\" (19:10) is the theological statement that connects Zacchaeus to Luke 15's searching parables."
+            },
+            {
+              "ref": "Josephus, Ant. 17.299-314",
+              "note": "The historical account of Archelaus's journey to Rome and the Jewish delegation opposing his kingship — the political event underlying the minas parable."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -168,7 +169,10 @@
             "text": "The empty tomb; road to Emmaus; appearances to the disciples.",
             "current": false
           }
-        ]
+        ],
+        "hist": {
+          "context": "[('Zacchaeus and the Minas', 'The parable of the minas (19:11-27) is told \"because he was near Jerusalem and the people thought that the kingdom of God was going to appear at once\" (19:11). The parable corrects a misunderstanding: the king will go away first, then return to judge. The delay between departure and return is the time of the servants\\' faithful or unfaithful use of the king\\'s resources. The parable is both a correction of eschatological timetable and a preparation for the passion.'), ('The Historical Background of the Minas Parable', \"When Herod the Great died (4 BC), his son Archelaus went to Rome to have his kingship confirmed. A Jewish delegation followed him to argue against his appointment (Josephus, Ant. 17.299-314). Archelaus was appointed ethnarch, returned, and dealt harshly with his opponents. Jesus's parable maps directly onto this event, known to every Palestinian Jew in his audience. The uncomfortable identification between the king-figure and Jesus is deliberate.\")]"
+        }
       }
     },
     {
@@ -194,21 +198,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Mount of Olives</div><div class=\"poi-coords\">31.7781° N, 35.2437° E</div><div class=\"poi-text\">The ridge east of Jerusalem across the Kidron Valley, from which the city is dramatically visible. Zechariah 14:4 associated the Mount of Olives with the final divine intervention. Jesus's weeping over Jerusalem (19:41) was triggered by seeing the city from this vantage point.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Bethphage and Bethany</div><div class=\"poi-coords\">31.7764° N, 35.2590° E</div><div class=\"poi-text\">Two villages on the eastern slope of the Mount of Olives, approximately 2km from Jerusalem. Bethany was the home of Mary, Martha, and Lazarus (John 11). The colt was found in these villages; the entry procession began from here.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem Temple Mount</div><div class=\"poi-coords\">31.7781° N, 35.2354° E</div><div class=\"poi-text\">The Herodian Temple complex — massive, gleaming, and recently completed (begun 20 BC, still under construction in AD 70). Jesus's weeping anticipates its destruction; his cleansing claims it as his own. \"Every day he was teaching at the temple\" (v.47) makes the Temple Jesus's base of operations for the Jerusalem ministry.</div></div>"
         },
-        "ctx": "[('The Triumphal Entry as Staged Fulfilment', 'Jesus\\'s arrangements for the colt (19:30-31) show the same precise foreknowledge as the upper room preparation (22:10-12) — a pattern of deliberately staged symbolic action. The choice of a colt on which no one had sat recalls Zech 9:9 (\"your king comes to you, gentle and riding on a donkey, on a colt\") without explicit citation. The action interprets itself for those who know the scripture.'), ('Jesus Weeps', 'Only Luke records Jesus weeping over Jerusalem (19:41-44). The prophetic lament is specific: a siege (19:43-44 describes the Roman siege of AD 70 with remarkable precision — embankment, encirclement, children dashed to the ground). The weeping is not resignation but grief: \"if you had only known\" — the possibility of a different outcome was real.')]",
-        "cross": [
-          {
-            "ref": "Zech 9:9",
-            "note": "\"See, your king comes to you, righteous and victorious, lowly and riding on a donkey, on a colt, the foal of a donkey\" — the prophetic text the entry enacts, though Luke does not cite it explicitly."
-          },
-          {
-            "ref": "Isa 56:7",
-            "note": "\"My house will be called a house of prayer for all nations\" — the Temple cleansing citation, combined with Jer 7:11 (\"den of robbers\")."
-          },
-          {
-            "ref": "Jer 7:11",
-            "note": "\"Has this house, which bears my Name, become a den of robbers to you?\" — Jeremiah's Temple sermon preceding the Babylonian destruction, which Jesus applies to the Temple of his own day."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Zech 9:9",
+              "note": "\"See, your king comes to you, righteous and victorious, lowly and riding on a donkey, on a colt, the foal of a donkey\" — the prophetic text the entry enacts, though Luke does not cite it explicitly."
+            },
+            {
+              "ref": "Isa 56:7",
+              "note": "\"My house will be called a house of prayer for all nations\" — the Temple cleansing citation, combined with Jer 7:11 (\"den of robbers\")."
+            },
+            {
+              "ref": "Jer 7:11",
+              "note": "\"Has this house, which bears my Name, become a den of robbers to you?\" — Jeremiah's Temple sermon preceding the Babylonian destruction, which Jesus applies to the Temple of his own day."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -325,7 +330,10 @@
             "text": "The empty tomb; road to Emmaus; appearances to the disciples.",
             "current": false
           }
-        ]
+        ],
+        "hist": {
+          "context": "[('The Triumphal Entry as Staged Fulfilment', 'Jesus\\'s arrangements for the colt (19:30-31) show the same precise foreknowledge as the upper room preparation (22:10-12) — a pattern of deliberately staged symbolic action. The choice of a colt on which no one had sat recalls Zech 9:9 (\"your king comes to you, gentle and riding on a donkey, on a colt\") without explicit citation. The action interprets itself for those who know the scripture.'), ('Jesus Weeps', 'Only Luke records Jesus weeping over Jerusalem (19:41-44). The prophetic lament is specific: a siege (19:43-44 describes the Roman siege of AD 70 with remarkable precision — embankment, encirclement, children dashed to the ground). The weeping is not resignation but grief: \"if you had only known\" — the possibility of a different outcome was real.')]"
+        }
       }
     },
     {
@@ -351,21 +359,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jericho</div><div class=\"poi-coords\">31.8561° N, 35.4614° E</div><div class=\"poi-text\">Jesus enters Jericho proper for the Zacchaeus encounter after the blind beggar on the approach (18:35). Jericho was a major trading city and tax collection centre — an ideal location for a chief tax collector. The sycamore-fig tree Zacchaeus climbed would have been a common street tree in this warm Jordan Valley city.</div></div>"
         },
-        "ctx": "[('Zacchaeus and the Minas', 'The parable of the minas (19:11-27) is told \"because he was near Jerusalem and the people thought that the kingdom of God was going to appear at once\" (19:11). The parable corrects a misunderstanding: the king will go away first, then return to judge. The delay between departure and return is the time of the servants\\' faithful or unfaithful use of the king\\'s resources. The parable is both a correction of eschatological timetable and a preparation for the passion.'), ('The Historical Background of the Minas Parable', \"When Herod the Great died (4 BC), his son Archelaus went to Rome to have his kingship confirmed. A Jewish delegation followed him to argue against his appointment (Josephus, Ant. 17.299-314). Archelaus was appointed ethnarch, returned, and dealt harshly with his opponents. Jesus's parable maps directly onto this event, known to every Palestinian Jew in his audience. The uncomfortable identification between the king-figure and Jesus is deliberate.\")]",
-        "cross": [
-          {
-            "ref": "Matt 25:14-30",
-            "note": "The parallel parable of the talents in Matthew — three servants, larger sums, the same basic structure. The minas (one each to ten servants) and talents (different amounts to three servants) present the same truth differently."
-          },
-          {
-            "ref": "Luke 15:4-7",
-            "note": "The lost sheep — \"the Son of Man came to seek and save the lost\" (19:10) is the theological statement that connects Zacchaeus to Luke 15's searching parables."
-          },
-          {
-            "ref": "Josephus, Ant. 17.299-314",
-            "note": "The historical account of Archelaus's journey to Rome and the Jewish delegation opposing his kingship — the political event underlying the minas parable."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 25:14-30",
+              "note": "The parallel parable of the talents in Matthew — three servants, larger sums, the same basic structure. The minas (one each to ten servants) and talents (different amounts to three servants) present the same truth differently."
+            },
+            {
+              "ref": "Luke 15:4-7",
+              "note": "The lost sheep — \"the Son of Man came to seek and save the lost\" (19:10) is the theological statement that connects Zacchaeus to Luke 15's searching parables."
+            },
+            {
+              "ref": "Josephus, Ant. 17.299-314",
+              "note": "The historical account of Archelaus's journey to Rome and the Jewish delegation opposing his kingship — the political event underlying the minas parable."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -482,7 +491,10 @@
             "text": "The empty tomb; road to Emmaus; appearances to the disciples.",
             "current": false
           }
-        ]
+        ],
+        "hist": {
+          "context": "[('Zacchaeus and the Minas', 'The parable of the minas (19:11-27) is told \"because he was near Jerusalem and the people thought that the kingdom of God was going to appear at once\" (19:11). The parable corrects a misunderstanding: the king will go away first, then return to judge. The delay between departure and return is the time of the servants\\' faithful or unfaithful use of the king\\'s resources. The parable is both a correction of eschatological timetable and a preparation for the passion.'), ('The Historical Background of the Minas Parable', \"When Herod the Great died (4 BC), his son Archelaus went to Rome to have his kingship confirmed. A Jewish delegation followed him to argue against his appointment (Josephus, Ant. 17.299-314). Archelaus was appointed ethnarch, returned, and dealt harshly with his opponents. Jesus's parable maps directly onto this event, known to every Palestinian Jew in his audience. The uncomfortable identification between the king-figure and Jesus is deliberate.\")]"
+        }
       }
     },
     {
@@ -508,21 +520,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Mount of Olives</div><div class=\"poi-coords\">31.7781° N, 35.2437° E</div><div class=\"poi-text\">The ridge east of Jerusalem across the Kidron Valley, from which the city is dramatically visible. Zechariah 14:4 associated the Mount of Olives with the final divine intervention. Jesus's weeping over Jerusalem (19:41) was triggered by seeing the city from this vantage point.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Bethphage and Bethany</div><div class=\"poi-coords\">31.7764° N, 35.2590° E</div><div class=\"poi-text\">Two villages on the eastern slope of the Mount of Olives, approximately 2km from Jerusalem. Bethany was the home of Mary, Martha, and Lazarus (John 11). The colt was found in these villages; the entry procession began from here.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem Temple Mount</div><div class=\"poi-coords\">31.7781° N, 35.2354° E</div><div class=\"poi-text\">The Herodian Temple complex — massive, gleaming, and recently completed (begun 20 BC, still under construction in AD 70). Jesus's weeping anticipates its destruction; his cleansing claims it as his own. \"Every day he was teaching at the temple\" (v.47) makes the Temple Jesus's base of operations for the Jerusalem ministry.</div></div>"
         },
-        "ctx": "[('The Triumphal Entry as Staged Fulfilment', 'Jesus\\'s arrangements for the colt (19:30-31) show the same precise foreknowledge as the upper room preparation (22:10-12) — a pattern of deliberately staged symbolic action. The choice of a colt on which no one had sat recalls Zech 9:9 (\"your king comes to you, gentle and riding on a donkey, on a colt\") without explicit citation. The action interprets itself for those who know the scripture.'), ('Jesus Weeps', 'Only Luke records Jesus weeping over Jerusalem (19:41-44). The prophetic lament is specific: a siege (19:43-44 describes the Roman siege of AD 70 with remarkable precision — embankment, encirclement, children dashed to the ground). The weeping is not resignation but grief: \"if you had only known\" — the possibility of a different outcome was real.')]",
-        "cross": [
-          {
-            "ref": "Zech 9:9",
-            "note": "\"See, your king comes to you, righteous and victorious, lowly and riding on a donkey, on a colt, the foal of a donkey\" — the prophetic text the entry enacts, though Luke does not cite it explicitly."
-          },
-          {
-            "ref": "Isa 56:7",
-            "note": "\"My house will be called a house of prayer for all nations\" — the Temple cleansing citation, combined with Jer 7:11 (\"den of robbers\")."
-          },
-          {
-            "ref": "Jer 7:11",
-            "note": "\"Has this house, which bears my Name, become a den of robbers to you?\" — Jeremiah's Temple sermon preceding the Babylonian destruction, which Jesus applies to the Temple of his own day."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Zech 9:9",
+              "note": "\"See, your king comes to you, righteous and victorious, lowly and riding on a donkey, on a colt, the foal of a donkey\" — the prophetic text the entry enacts, though Luke does not cite it explicitly."
+            },
+            {
+              "ref": "Isa 56:7",
+              "note": "\"My house will be called a house of prayer for all nations\" — the Temple cleansing citation, combined with Jer 7:11 (\"den of robbers\")."
+            },
+            {
+              "ref": "Jer 7:11",
+              "note": "\"Has this house, which bears my Name, become a den of robbers to you?\" — Jeremiah's Temple sermon preceding the Babylonian destruction, which Jesus applies to the Temple of his own day."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -639,7 +652,10 @@
             "text": "The empty tomb; road to Emmaus; appearances to the disciples.",
             "current": false
           }
-        ]
+        ],
+        "hist": {
+          "context": "[('The Triumphal Entry as Staged Fulfilment', 'Jesus\\'s arrangements for the colt (19:30-31) show the same precise foreknowledge as the upper room preparation (22:10-12) — a pattern of deliberately staged symbolic action. The choice of a colt on which no one had sat recalls Zech 9:9 (\"your king comes to you, gentle and riding on a donkey, on a colt\") without explicit citation. The action interprets itself for those who know the scripture.'), ('Jesus Weeps', 'Only Luke records Jesus weeping over Jerusalem (19:41-44). The prophetic lament is specific: a siege (19:43-44 describes the Roman siege of AD 70 with remarkable precision — embankment, encirclement, children dashed to the ground). The weeping is not resignation but grief: \"if you had only known\" — the possibility of a different outcome was real.')]"
+        }
       }
     }
   ],

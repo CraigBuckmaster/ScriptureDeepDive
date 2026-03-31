@@ -37,25 +37,26 @@
             "paragraph": "The term appears in legal contexts as proof. Faith provides evidence of invisible realities. This is paradoxical: faith sees what sight cannot."
           }
         ],
-        "ctx": "Verse 1 is one of the most famous definitions in Scripture, yet it is not abstract philosophy. It introduces concrete examples. The definition is functional: faith enables perception of realities beyond the senses. Verse 3 establishes that even creation is understood by faith—the visible came from the invisible word of God.",
-        "cross": [
-          {
-            "ref": "Romans 8:24–25",
-            "note": "Hope that is seen is not hope. If we hope for what we do not see, we wait for it with patience."
-          },
-          {
-            "ref": "2 Corinthians 4:18",
-            "note": "We look not to the things that are seen but to the things that are unseen."
-          },
-          {
-            "ref": "2 Corinthians 5:7",
-            "note": "We walk by faith, not by sight."
-          },
-          {
-            "ref": "Genesis 1:1",
-            "note": "In the beginning, God created the heavens and the earth—the foundational truth understood by faith."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Romans 8:24–25",
+              "note": "Hope that is seen is not hope. If we hope for what we do not see, we wait for it with patience."
+            },
+            {
+              "ref": "2 Corinthians 4:18",
+              "note": "We look not to the things that are seen but to the things that are unseen."
+            },
+            {
+              "ref": "2 Corinthians 5:7",
+              "note": "We walk by faith, not by sight."
+            },
+            {
+              "ref": "Genesis 1:1",
+              "note": "In the beginning, God created the heavens and the earth—the foundational truth understood by faith."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -117,7 +118,10 @@
             }
           ]
         },
-        "hist": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24)."
+        "hist": {
+          "historical": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24).",
+          "context": "Verse 1 is one of the most famous definitions in Scripture, yet it is not abstract philosophy. It introduces concrete examples. The definition is functional: faith enables perception of realities beyond the senses. Verse 3 establishes that even creation is understood by faith—the visible came from the invisible word of God."
+        }
       }
     },
     {
@@ -146,25 +150,26 @@
             "paragraph": "Noah in reverent fear built an ark. The verb indicates sober respect for divine warning. His faith condemned the world."
           }
         ],
-        "ctx": "The catalogue begins with pre-flood figures. Abel's faith is evidenced in offering; Enoch's in walking with God; Noah's in building. Each acted on divine revelation they could not verify empirically. The variety demonstrates that faith expresses itself differently depending on vocation and circumstance.",
-        "cross": [
-          {
-            "ref": "Genesis 4:3–5",
-            "note": "The offering of Cain and Abel. God had regard for Abel but not for Cain."
-          },
-          {
-            "ref": "Genesis 5:24",
-            "note": "Enoch walked with God, and he was not, for God took him."
-          },
-          {
-            "ref": "Genesis 6:13–22",
-            "note": "God's warning to Noah and his obedient response."
-          },
-          {
-            "ref": "2 Peter 2:5",
-            "note": "Noah as a herald of righteousness."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Genesis 4:3–5",
+              "note": "The offering of Cain and Abel. God had regard for Abel but not for Cain."
+            },
+            {
+              "ref": "Genesis 5:24",
+              "note": "Enoch walked with God, and he was not, for God took him."
+            },
+            {
+              "ref": "Genesis 6:13–22",
+              "note": "God's warning to Noah and his obedient response."
+            },
+            {
+              "ref": "2 Peter 2:5",
+              "note": "Noah as a herald of righteousness."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -225,6 +230,9 @@
               "note": "Cockerill emphasizes the escalating stakes: Abel's faith brought death, Enoch's avoided it, Noah's survived world judgment."
             }
           ]
+        },
+        "hist": {
+          "context": "The catalogue begins with pre-flood figures. Abel's faith is evidenced in offering; Enoch's in walking with God; Noah's in building. Each acted on divine revelation they could not verify empirically. The variety demonstrates that faith expresses itself differently depending on vocation and circumstance."
         }
       }
     },
@@ -254,25 +262,26 @@
             "paragraph": "Abraham considered God able to give him a son even though he was as good as dead. Faith counts God's power sufficient for divine promises."
           }
         ],
-        "ctx": "Abraham dominates Hebrews 11 as the paradigmatic believer. His faith is exemplified in departing for an unknown land, living as a stranger in the promised land, and believing God for offspring despite biological impossibility. The city whose designer and builder is God introduces the eschatological dimension.",
-        "cross": [
-          {
-            "ref": "Genesis 12:1–4",
-            "note": "God's call to Abram: Go from your country to the land that I will show you."
-          },
-          {
-            "ref": "Genesis 15:5–6",
-            "note": "God's promise of innumerable descendants. Abraham believed, and it was counted to him as righteousness."
-          },
-          {
-            "ref": "Genesis 17:17; 18:11–14",
-            "note": "Abraham's laughter and Sarah's doubt—overcome by God's power."
-          },
-          {
-            "ref": "Romans 4:18–22",
-            "note": "Paul's exposition of Abraham's faith: fully convinced that God was able."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Genesis 12:1–4",
+              "note": "God's call to Abram: Go from your country to the land that I will show you."
+            },
+            {
+              "ref": "Genesis 15:5–6",
+              "note": "God's promise of innumerable descendants. Abraham believed, and it was counted to him as righteousness."
+            },
+            {
+              "ref": "Genesis 17:17; 18:11–14",
+              "note": "Abraham's laughter and Sarah's doubt—overcome by God's power."
+            },
+            {
+              "ref": "Romans 4:18–22",
+              "note": "Paul's exposition of Abraham's faith: fully convinced that God was able."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -333,6 +342,9 @@
               "note": "Cockerill emphasizes the forward-looking dimension: Abraham did not merely leave Ur; he looked for a city. Faith is directional."
             }
           ]
+        },
+        "hist": {
+          "context": "Abraham dominates Hebrews 11 as the paradigmatic believer. His faith is exemplified in departing for an unknown land, living as a stranger in the promised land, and believing God for offspring despite biological impossibility. The city whose designer and builder is God introduces the eschatological dimension."
         }
       }
     },
@@ -362,25 +374,26 @@
             "paragraph": "God is not ashamed to be called their God. Divine honor is attached to these pilgrims. He has prepared a city for them."
           }
         ],
-        "ctx": "This interlude pauses the narrative to reflect on the patriarchs' faith-posture. They died without receiving the promise. Yet they declared themselves strangers and pilgrims. Their eyes were on a better country—not Mesopotamia but heaven. God is not ashamed to be called their God because He has prepared a city for them.",
-        "cross": [
-          {
-            "ref": "Genesis 23:4",
-            "note": "Abraham says to the Hittites: I am a stranger and a sojourner among you."
-          },
-          {
-            "ref": "Genesis 47:9",
-            "note": "Jacob tells Pharaoh: The days of the years of my sojourning are 130 years."
-          },
-          {
-            "ref": "1 Peter 2:11",
-            "note": "Peter addresses believers as sojourners and exiles."
-          },
-          {
-            "ref": "Philippians 3:20",
-            "note": "Our citizenship is in heaven."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Genesis 23:4",
+              "note": "Abraham says to the Hittites: I am a stranger and a sojourner among you."
+            },
+            {
+              "ref": "Genesis 47:9",
+              "note": "Jacob tells Pharaoh: The days of the years of my sojourning are 130 years."
+            },
+            {
+              "ref": "1 Peter 2:11",
+              "note": "Peter addresses believers as sojourners and exiles."
+            },
+            {
+              "ref": "Philippians 3:20",
+              "note": "Our citizenship is in heaven."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -433,6 +446,9 @@
               "note": "Cockerill emphasizes that the patriarchs' confession of stranger-status was not resignation but aspiration. They were purposeful pilgrims."
             }
           ]
+        },
+        "hist": {
+          "context": "This interlude pauses the narrative to reflect on the patriarchs' faith-posture. They died without receiving the promise. Yet they declared themselves strangers and pilgrims. Their eyes were on a better country—not Mesopotamia but heaven. God is not ashamed to be called their God because He has prepared a city for them."
         }
       }
     },
@@ -462,29 +478,30 @@
             "paragraph": "Isaac blessed Jacob and Esau regarding things to come. The patriarchal blessing was not sentiment but prophecy—authoritative declaration of future destiny."
           }
         ],
-        "ctx": "The Aqedah (Genesis 22) is the climax of Abraham's faith. Offered the promised son, Abraham believed God could raise the dead—and figuratively received Isaac back. Isaac, Jacob, and Joseph continue the pattern: each blessed the next generation, trusting God's word for a future they would not see.",
-        "cross": [
-          {
-            "ref": "Genesis 22:1–19",
-            "note": "The Aqedah: God tests Abraham by commanding Isaac's sacrifice. A ram is provided."
-          },
-          {
-            "ref": "Genesis 27:27–40",
-            "note": "Isaac's blessing of Jacob and Esau."
-          },
-          {
-            "ref": "Genesis 48:8–22",
-            "note": "Jacob's blessing of Ephraim and Manasseh."
-          },
-          {
-            "ref": "Genesis 50:24–25",
-            "note": "Joseph's dying charge: God will surely visit you, and you shall carry up my bones."
-          },
-          {
-            "ref": "Romans 4:17",
-            "note": "God gives life to the dead and calls into existence the things that do not exist."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Genesis 22:1–19",
+              "note": "The Aqedah: God tests Abraham by commanding Isaac's sacrifice. A ram is provided."
+            },
+            {
+              "ref": "Genesis 27:27–40",
+              "note": "Isaac's blessing of Jacob and Esau."
+            },
+            {
+              "ref": "Genesis 48:8–22",
+              "note": "Jacob's blessing of Ephraim and Manasseh."
+            },
+            {
+              "ref": "Genesis 50:24–25",
+              "note": "Joseph's dying charge: God will surely visit you, and you shall carry up my bones."
+            },
+            {
+              "ref": "Romans 4:17",
+              "note": "God gives life to the dead and calls into existence the things that do not exist."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -545,6 +562,9 @@
               "note": "Cockerill emphasizes the trans-generational dimension: faith blesses the future it will not see."
             }
           ]
+        },
+        "hist": {
+          "context": "The Aqedah (Genesis 22) is the climax of Abraham's faith. Offered the promised son, Abraham believed God could raise the dead—and figuratively received Isaac back. Isaac, Jacob, and Joseph continue the pattern: each blessed the next generation, trusting God's word for a future they would not see."
         }
       }
     },
@@ -574,33 +594,34 @@
             "paragraph": "Moses endured as seeing the invisible. This is the faith defined in v. 1: perception of unseen realities."
           }
         ],
-        "ctx": "The Moses section is the longest in chapter 11. The author traces his faith from infancy through adulthood. The pattern is consistent: Moses chose affliction over pleasure, reproach over treasure, because he looked to the reward. The reproach of Christ is a remarkable anachronism—the author reads Moses' suffering as participation in the same pattern Christ would complete.",
-        "cross": [
-          {
-            "ref": "Exodus 2:1–10",
-            "note": "Moses' birth, hiding, and rescue."
-          },
-          {
-            "ref": "Exodus 2:11–15",
-            "note": "Moses' choice to identify with his people."
-          },
-          {
-            "ref": "Exodus 12:21–30",
-            "note": "The institution of Passover."
-          },
-          {
-            "ref": "Exodus 14:21–31",
-            "note": "The crossing of the Red Sea."
-          },
-          {
-            "ref": "Joshua 6:1–21",
-            "note": "The fall of Jericho's walls."
-          },
-          {
-            "ref": "Joshua 2:1–21",
-            "note": "Rahab hides the spies."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exodus 2:1–10",
+              "note": "Moses' birth, hiding, and rescue."
+            },
+            {
+              "ref": "Exodus 2:11–15",
+              "note": "Moses' choice to identify with his people."
+            },
+            {
+              "ref": "Exodus 12:21–30",
+              "note": "The institution of Passover."
+            },
+            {
+              "ref": "Exodus 14:21–31",
+              "note": "The crossing of the Red Sea."
+            },
+            {
+              "ref": "Joshua 6:1–21",
+              "note": "The fall of Jericho's walls."
+            },
+            {
+              "ref": "Joshua 2:1–21",
+              "note": "Rahab hides the spies."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -673,6 +694,9 @@
               "note": "Cockerill emphasizes that Moses' choices illustrate the cost of faith. He gave up privilege, embraced reproach, and looked to reward."
             }
           ]
+        },
+        "hist": {
+          "context": "The Moses section is the longest in chapter 11. The author traces his faith from infancy through adulthood. The pattern is consistent: Moses chose affliction over pleasure, reproach over treasure, because he looked to the reward. The reproach of Christ is a remarkable anachronism—the author reads Moses' suffering as participation in the same pattern Christ would complete."
         }
       }
     },
@@ -702,41 +726,42 @@
             "paragraph": "Others were tortured, refusing release so that they might rise again to a better life. Martyrdom is not defeat but exchange—trading temporal life for eternal."
           }
         ],
-        "ctx": "The chapter's conclusion is a torrent of witnesses. The author lists names and summarizes deeds: conquering kingdoms, stopping lions' mouths, quenching fire, escaping the sword. But then the tone shifts: others were tortured, mocked, stoned, sawn in two. The world was not worthy of them. Yet all these, though commended, did not receive what was promised—because God had planned something better, involving us.",
-        "cross": [
-          {
-            "ref": "Judges 6–8",
-            "note": "Gideon's victory over Midian."
-          },
-          {
-            "ref": "Judges 4–5",
-            "note": "Barak's victory over Sisera."
-          },
-          {
-            "ref": "Judges 13–16",
-            "note": "Samson's exploits and death."
-          },
-          {
-            "ref": "Judges 11–12",
-            "note": "Jephthah's victory."
-          },
-          {
-            "ref": "1 Samuel 17",
-            "note": "David's defeat of Goliath."
-          },
-          {
-            "ref": "Daniel 3",
-            "note": "The three young men in the furnace—quenched the power of fire."
-          },
-          {
-            "ref": "Daniel 6",
-            "note": "Daniel in the lions' den—stopped the mouths of lions."
-          },
-          {
-            "ref": "2 Maccabees 6–7",
-            "note": "The martyrdom under Antiochus—tortured, refusing release."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Judges 6–8",
+              "note": "Gideon's victory over Midian."
+            },
+            {
+              "ref": "Judges 4–5",
+              "note": "Barak's victory over Sisera."
+            },
+            {
+              "ref": "Judges 13–16",
+              "note": "Samson's exploits and death."
+            },
+            {
+              "ref": "Judges 11–12",
+              "note": "Jephthah's victory."
+            },
+            {
+              "ref": "1 Samuel 17",
+              "note": "David's defeat of Goliath."
+            },
+            {
+              "ref": "Daniel 3",
+              "note": "The three young men in the furnace—quenched the power of fire."
+            },
+            {
+              "ref": "Daniel 6",
+              "note": "Daniel in the lions' den—stopped the mouths of lions."
+            },
+            {
+              "ref": "2 Maccabees 6–7",
+              "note": "The martyrdom under Antiochus—tortured, refusing release."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -805,6 +830,9 @@
               "note": "Cockerill notes that the rapid catalogue creates a cloud of witnesses effect. The diversity of experience demonstrates that faith is defined by posture, not outcome."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter's conclusion is a torrent of witnesses. The author lists names and summarizes deeds: conquering kingdoms, stopping lions' mouths, quenching fire, escaping the sword. But then the tone shifts: others were tortured, mocked, stoned, sawn in two. The world was not worthy of them. Yet all these, though commended, did not receive what was promised—because God had planned something better, involving us."
         }
       }
     }

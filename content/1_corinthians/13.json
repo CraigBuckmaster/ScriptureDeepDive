@@ -31,17 +31,18 @@
             "paragraph": "The noun chalkos (bronze) and the phrase 'resounding gong' (chalkos ēchōn) in v. 1 evoke the cymbals and percussion instruments used in pagan worship, particularly the ecstatic rites of Cybele and Dionysus in Corinth. Without love, even the most impressive spiritual speech is reduced to the level of pagan cultic noise: impressive sound, devoid of relational content."
           }
         ],
-        "ctx": "Chapter 13 is often read in isolation as a general hymn to love, but its literary setting is crucial: it stands between Paul's discussion of spiritual gifts (ch. 12) and his practical regulations for worship (ch. 14). The chapter functions as the theological criterion by which all gifts are to be evaluated. The three sections trace a carefully designed arc: vv. 1–3 demonstrate love's necessity, vv. 4–7 describe love's character (fifteen verbs), and vv. 8–13 assert love's permanence.",
-        "cross": [
-          {
-            "ref": "Matt 22:37–40",
-            "note": "Jesus identifies love for God and neighbour as the greatest commandments. Paul's elevation of love over all spiritual gifts reflects the same hierarchical ordering."
-          },
-          {
-            "ref": "Rom 13:8–10",
-            "note": "Paul summarises the law in the love commandment: 'whoever loves others has fulfilled the law.' Love is not one virtue among many but the virtue that governs all others."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 22:37–40",
+              "note": "Jesus identifies love for God and neighbour as the greatest commandments. Paul's elevation of love over all spiritual gifts reflects the same hierarchical ordering."
+            },
+            {
+              "ref": "Rom 13:8–10",
+              "note": "Paul summarises the law in the love commandment: 'whoever loves others has fulfilled the law.' Love is not one virtue among many but the virtue that governs all others."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -98,6 +99,9 @@
               "note": "Thiselton analyses the rhetorical structure as a series of protases with increasingly dramatic content, each followed by the same devastating apodosis: without love, the result is zero. The progression covers the full range of human capacity—speaking, knowing, doing—and declares all of it null without love."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 13 is often read in isolation as a general hymn to love, but its literary setting is crucial: it stands between Paul's discussion of spiritual gifts (ch. 12) and his practical regulations for worship (ch. 14). The chapter functions as the theological criterion by which all gifts are to be evaluated. The three sections trace a carefully designed arc: vv. 1–3 demonstrate love's necessity, vv. 4–7 describe love's character (fifteen verbs), and vv. 8–13 assert love's permanence."
         }
       }
     },
@@ -121,17 +125,18 @@
             "paragraph": "The four-fold panta (all things) in v. 7 creates one of the most memorable cadences in the Pauline corpus: love 'always protects (stegei), always trusts (pisteuei), always hopes (elpizei), always perseveres (hypomenei).' The final verb hypomenō is the military term for holding one's ground under fire."
           }
         ],
-        "ctx": "The fifteen verbs of vv. 4–7 define love by its behaviour, not its feelings. Several commentators have noted that this portrait reads like an anti-description of Corinthian behaviour: each negative corrects a specific Corinthian vice documented elsewhere in the letter.",
-        "cross": [
-          {
-            "ref": "Gal 5:22–23",
-            "note": "The fruit of the Spirit overlaps substantially with the love-catalogue. Love heads the Galatians list, suggesting that the fruit of the Spirit is the multi-faceted expression of agapē."
-          },
-          {
-            "ref": "Col 3:12–14",
-            "note": "The Colossians virtue list parallels the structure of 1 Cor 13: love is not one virtue among many but the principle that unifies and perfects all others."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gal 5:22–23",
+              "note": "The fruit of the Spirit overlaps substantially with the love-catalogue. Love heads the Galatians list, suggesting that the fruit of the Spirit is the multi-faceted expression of agapē."
+            },
+            {
+              "ref": "Col 3:12–14",
+              "note": "The Colossians virtue list parallels the structure of 1 Cor 13: love is not one virtue among many but the principle that unifies and perfects all others."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -184,6 +189,9 @@
               "note": "Thiselton provides exhaustive analysis of each verb. The structure falls into three movements: (a) two positive attributes (patient, kind); (b) eight negatives; (c) five positives. The verbal forms (present tenses throughout) describe habitual character, not occasional acts."
             }
           ]
+        },
+        "hist": {
+          "context": "The fifteen verbs of vv. 4–7 define love by its behaviour, not its feelings. Several commentators have noted that this portrait reads like an anti-description of Corinthian behaviour: each negative corrects a specific Corinthian vice documented elsewhere in the letter."
         }
       }
     },
@@ -207,21 +215,22 @@
             "paragraph": "The noun esoptron (mirror) in v. 12 refers to the polished bronze mirrors produced in Corinth, which were famous but produced imperfect reflections. Paul's metaphor is precise: present knowledge of God is real but indirect. The contrast with 'face to face' (prosōpon pros prosōpon) echoes Moses' unique privilege (Num 12:8; Deut 34:10), now extended as an eschatological promise to all believers."
           }
         ],
-        "ctx": "The final section establishes love's eschatological superiority over all gifts. Current spiritual gifts operate within the sphere of partial knowledge, which will be rendered obsolete when the 'complete' arrives. The concluding triad—'faith, hope, and love' (v. 13)—has become one of the most familiar phrases in Christian theology.",
-        "cross": [
-          {
-            "ref": "2 Cor 3:18",
-            "note": "Paul's language of beholding 'with unveiled faces' the Lord's glory extends the mirror metaphor: present beholding, though indirect, is already transformative."
-          },
-          {
-            "ref": "1 John 3:2",
-            "note": "John's eschatological promise parallels Paul's 'then we shall see face to face' and provides an additional witness to the eschatological transition."
-          },
-          {
-            "ref": "James 1:23",
-            "note": "James uses the mirror metaphor differently but confirms its prevalence as a metaphor for imperfect self-knowledge in early Christianity."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Cor 3:18",
+              "note": "Paul's language of beholding 'with unveiled faces' the Lord's glory extends the mirror metaphor: present beholding, though indirect, is already transformative."
+            },
+            {
+              "ref": "1 John 3:2",
+              "note": "John's eschatological promise parallels Paul's 'then we shall see face to face' and provides an additional witness to the eschatological transition."
+            },
+            {
+              "ref": "James 1:23",
+              "note": "James uses the mirror metaphor differently but confirms its prevalence as a metaphor for imperfect self-knowledge in early Christianity."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -274,6 +283,9 @@
               "note": "Thiselton surveys the history of interpretation and concludes that the eschatological reading is overwhelmingly supported. The mirror metaphor is analysed with reference to both Corinthian bronze-mirror production and the philosophical tradition of mirrors as epistemological metaphors. Love is greatest because it alone characterises both the present age and the age to come."
             }
           ]
+        },
+        "hist": {
+          "context": "The final section establishes love's eschatological superiority over all gifts. Current spiritual gifts operate within the sphere of partial knowledge, which will be rendered obsolete when the 'complete' arrives. The concluding triad—'faith, hope, and love' (v. 13)—has become one of the most familiar phrases in Christian theology."
         }
       }
     }

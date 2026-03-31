@@ -31,17 +31,18 @@
             "paragraph": "The entire chapter is built on the word \"if\" (ʾam): if I have done X, then let Y happen to me. This is the ancient Near Eastern oath of clearance — the most solemn legal instrument available. Each \"if\" clause is a sworn denial of a specific sin."
           }
         ],
-        "ctx": "Job’s oath of innocence is the longest and most comprehensive in the OT. He swears against: lust (v.1), deceit (v.5), adultery (v.9), injustice to servants (v.13), neglect of the poor (v.16), withholding from orphans and widows (v.17–21), idolatry (v.24–28), gloating over enemies (v.29), hidden sin (v.33–34). The structure is “if I have done X, then let the curse fall on me.” Each clause invites God to verify. The oath is Job’s final legal instrument: if no one can refute it, the case is decided in his favour.",
-        "cross": [
-          {
-            "ref": "Matt 5:28",
-            "note": "\"Anyone who looks at a woman lustfully has already committed adultery\" — Jesus’ teaching parallels Job’s eye-covenant."
-          },
-          {
-            "ref": "Ps 24:3–4",
-            "note": "\"Who may ascend the mountain of the LORD? The one who has clean hands and a pure heart\" — the entrance requirements that Job claims to meet."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 5:28",
+              "note": "\"Anyone who looks at a woman lustfully has already committed adultery\" — Jesus’ teaching parallels Job’s eye-covenant."
+            },
+            {
+              "ref": "Ps 24:3–4",
+              "note": "\"Who may ascend the mountain of the LORD? The one who has clean hands and a pure heart\" — the entrance requirements that Job claims to meet."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Habel: the oath of innocence is Job’s final legal instrument. Each “if” clause is a sworn denial with an imprecation. In the ancient court, an unrebutted oath decided the case."
             }
           ]
+        },
+        "hist": {
+          "context": "Job’s oath of innocence is the longest and most comprehensive in the OT. He swears against: lust (v.1), deceit (v.5), adultery (v.9), injustice to servants (v.13), neglect of the poor (v.16), withholding from orphans and widows (v.17–21), idolatry (v.24–28), gloating over enemies (v.29), hidden sin (v.33–34). The structure is “if I have done X, then let the curse fall on me.” Each clause invites God to verify. The oath is Job’s final legal instrument: if no one can refute it, the case is decided in his favour."
         }
       }
     },
@@ -131,17 +135,18 @@
             "paragraph": "\"Here is my signature (tāw) — let the Almighty answer me!\" (v.35). Tāw is the last letter of the Hebrew alphabet. Job signs his legal document. The case is filed. The defendant (God) must now respond. Everything that follows — Elihu’s speeches, the whirlwind — is the response to this demand."
           }
         ],
-        "ctx": "Job’s oath concludes with the most dramatic moment in the dialogue. He has sworn against every conceivable sin. Now he signs the document: \"Here is my tāw — let the Almighty answer me!\" He wants God’s written response (v.35). He would wear the indictment on his shoulder like a crown (v.36). The legal metaphor reaches its climax: the case is filed, the signature affixed, the court must now convene.",
-        "cross": [
-          {
-            "ref": "Isa 50:8",
-            "note": "\"He who vindicates me is near. Who will bring charges against me?\" — the same legal confidence."
-          },
-          {
-            "ref": "Rom 8:33–34",
-            "note": "\"Who will bring any charge against those whom God has chosen?\" — Paul’s answer to Job’s question."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 50:8",
+              "note": "\"He who vindicates me is near. Who will bring charges against me?\" — the same legal confidence."
+            },
+            {
+              "ref": "Rom 8:33–34",
+              "note": "\"Who will bring any charge against those whom God has chosen?\" — Paul’s answer to Job’s question."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -222,6 +227,9 @@
               "note": "Habel: the signature is the filing of the legal complaint. The plaintiff has presented his case, sworn his oath, signed the document. The court must now respond. Everything that follows in the book is God’s response to this demand."
             }
           ]
+        },
+        "hist": {
+          "context": "Job’s oath concludes with the most dramatic moment in the dialogue. He has sworn against every conceivable sin. Now he signs the document: \"Here is my tāw — let the Almighty answer me!\" He wants God’s written response (v.35). He would wear the indictment on his shoulder like a crown (v.36). The legal metaphor reaches its climax: the case is filed, the signature affixed, the court must now convene."
         }
       }
     }

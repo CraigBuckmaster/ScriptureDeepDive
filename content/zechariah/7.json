@@ -31,21 +31,22 @@
             "paragraph": "The verb safad describes the ritualized mourning practices that accompanied fasting: weeping, wearing sackcloth, sitting in ashes (Joel 1:13; Mic 1:8). God's rhetorical question in 7:5 — 'When you fasted and mourned ... was it really for me?' — challenges the sincerity of the religious observance. The implication is that the fasts had become self-referential rituals of communal grief rather than genuine expressions of repentance before God."
           }
         ],
-        "ctx": "Chapter 7 marks a structural transition in the book. The night visions are complete (chapters 1-6), and the text shifts to prophetic discourse. The date is the fourth year of King Darius, the fourth day of the ninth month (Kislev), December 518 BC — nearly two years after the night visions. A delegation from Bethel arrives with a practical liturgical question: should the fifth-month fast commemorating the temple's destruction continue now that the temple is being rebuilt? God's response through Zechariah bypasses the specific question and strikes at the root issue: the fasts were never genuinely directed toward God (7:5-6). Whether eating or fasting, the people were serving themselves. The real issue is not the continuation or cessation of fasts but the quality of the community's relationship with God — a theme that connects to the 'earlier prophets' warning of 1:4.",
-        "cross": [
-          {
-            "ref": "Isaiah 58:3-7",
-            "note": "Isaiah's critique of fasting — 'Is this the kind of fast I have chosen?' — is the primary intertext for Zechariah 7. Both prophets redirect attention from ritual observance to ethical substance: justice, mercy, and care for the vulnerable."
-          },
-          {
-            "ref": "Joel 2:12-13",
-            "note": "Joel's call to 'rend your heart and not your garments' addresses the same gap between external religious practice and internal spiritual reality that Zechariah confronts."
-          },
-          {
-            "ref": "Matthew 6:16-18",
-            "note": "Jesus' teaching on fasting — 'when you fast, do not look somber' — continues the prophetic tradition of Zechariah and Isaiah that challenges performative religiosity."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isaiah 58:3-7",
+              "note": "Isaiah's critique of fasting — 'Is this the kind of fast I have chosen?' — is the primary intertext for Zechariah 7. Both prophets redirect attention from ritual observance to ethical substance: justice, mercy, and care for the vulnerable."
+            },
+            {
+              "ref": "Joel 2:12-13",
+              "note": "Joel's call to 'rend your heart and not your garments' addresses the same gap between external religious practice and internal spiritual reality that Zechariah confronts."
+            },
+            {
+              "ref": "Matthew 6:16-18",
+              "note": "Jesus' teaching on fasting — 'when you fast, do not look somber' — continues the prophetic tradition of Zechariah and Isaiah that challenges performative religiosity."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -97,6 +98,9 @@
               "note": "Boda identifies chapter 7 as the opening of the 'fasting discourse' (chapters 7-8), which transitions from the visionary mode of chapters 1-6 to the prophetic-homiletical mode. The Bethel delegation's question about the fifth-month fast provides the occasion for a comprehensive prophetic sermon on the relationship between ritual and ethics. Boda notes that God's response does not answer the question directly but reframes it: the issue is not the calendar (when to fast) but the heart (for whom you fast). This reframing connects to the classical prophetic critique of ritual without justice (Isa 1:11-17; Amos 5:21-24; Mic 6:6-8)."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 7 marks a structural transition in the book. The night visions are complete (chapters 1-6), and the text shifts to prophetic discourse. The date is the fourth year of King Darius, the fourth day of the ninth month (Kislev), December 518 BC — nearly two years after the night visions. A delegation from Bethel arrives with a practical liturgical question: should the fifth-month fast commemorating the temple's destruction continue now that the temple is being rebuilt? God's response through Zechariah bypasses the specific question and strikes at the root issue: the fasts were never genuinely directed toward God (7:5-6). Whether eating or fasting, the people were serving themselves. The real issue is not the continuation or cessation of fasts but the quality of the community's relationship with God — a theme that connects to the 'earlier prophets' warning of 1:4."
         }
       }
     },
@@ -120,21 +124,22 @@
             "paragraph": "The hendiadys chesed verachamim pairs covenant loyalty (chesed) with deep emotional compassion (rachamim, from rechem, 'womb'). This word pair represents the fullest expression of interpersonal obligation in Hebrew ethics: chesed denotes the faithful love that sustains covenantal relationships, while rachamim adds visceral empathy — the gut-level compassion a mother feels for her child. Together they define the ethical substance that the 'earlier prophets' demanded and that ritual fasting cannot replace."
           }
         ],
-        "ctx": "The second half of chapter 7 shifts from critique of ritual to the positive ethical demand. Verses 8-10 summarize the message of 'the earlier prophets' in four imperatives: administer true justice, show mercy and compassion, and do not oppress the vulnerable (widows, orphans, foreigners, and the poor). This is the substantive content that fasting was meant to express but had replaced. Verses 11-14 then narrate the ancestors' refusal to listen, culminating in the devastating metaphor of hearts 'as hard as flint' (7:12). The consequence was scattering 'with a whirlwind among all the nations' (7:14) and a desolate land. The structure is paraenetic: positive command (7:9-10), negative example (7:11-12), and judicial consequence (7:13-14). The implicit question for the post-exilic community is whether they will repeat the ancestors' failure or embrace the prophetic ethic.",
-        "cross": [
-          {
-            "ref": "Micah 6:8",
-            "note": "Micah's summary of what God requires — 'act justly, love mercy, walk humbly' — is the classic formulation of the same ethical demand that Zechariah 7:9-10 articulates."
-          },
-          {
-            "ref": "Amos 5:21-24",
-            "note": "Amos's rejection of empty worship — 'let justice roll on like a river' — belongs to the same prophetic tradition that Zechariah invokes as 'the earlier prophets.'"
-          },
-          {
-            "ref": "James 1:27",
-            "note": "James defines 'pure and faultless' religion as caring for orphans and widows, echoing the prophetic insistence in Zechariah 7:10 that justice for the vulnerable is the substance of true worship."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Micah 6:8",
+              "note": "Micah's summary of what God requires — 'act justly, love mercy, walk humbly' — is the classic formulation of the same ethical demand that Zechariah 7:9-10 articulates."
+            },
+            {
+              "ref": "Amos 5:21-24",
+              "note": "Amos's rejection of empty worship — 'let justice roll on like a river' — belongs to the same prophetic tradition that Zechariah invokes as 'the earlier prophets.'"
+            },
+            {
+              "ref": "James 1:27",
+              "note": "James defines 'pure and faultless' religion as caring for orphans and widows, echoing the prophetic insistence in Zechariah 7:10 that justice for the vulnerable is the substance of true worship."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -190,6 +195,9 @@
               "note": "Boda reads this section as a 'prophetic retrospective' that serves a paraenetic function: by narrating the ancestors' failure, Zechariah holds up a mirror to the post-exilic community. The ethical imperatives of 7:9-10 are not new but represent the distilled message of 'the earlier prophets' — a tradition Zechariah explicitly claims (1:4; 7:7, 12). The structure moves from command to refusal to consequence, creating what Boda calls a 'covenant lawsuit in miniature': God states His demand, documents the violation, and announces the verdict. The implicit appeal is that the present generation will choose differently."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half of chapter 7 shifts from critique of ritual to the positive ethical demand. Verses 8-10 summarize the message of 'the earlier prophets' in four imperatives: administer true justice, show mercy and compassion, and do not oppress the vulnerable (widows, orphans, foreigners, and the poor). This is the substantive content that fasting was meant to express but had replaced. Verses 11-14 then narrate the ancestors' refusal to listen, culminating in the devastating metaphor of hearts 'as hard as flint' (7:12). The consequence was scattering 'with a whirlwind among all the nations' (7:14) and a desolate land. The structure is paraenetic: positive command (7:9-10), negative example (7:11-12), and judicial consequence (7:13-14). The implicit question for the post-exilic community is whether they will repeat the ancestors' failure or embrace the prophetic ethic."
         }
       }
     }

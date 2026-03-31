@@ -31,21 +31,22 @@
             "paragraph": "The sixth commandment uses rāṣaḥ — a specific term for illegal killing (murder), not all killing. The OT does not prohibit capital punishment or warfare. The prohibition is against taking human life in violation of God's judicial authority."
           }
         ],
-        "ctx": "Moses restates the Decalogue (cf. Exod 20:1–17) with significant variations. The most notable: the sabbath commandment is grounded not in creation (as in Exodus) but in the Exodus redemption — \"remember that you were slaves in Egypt\" (v.15). The rest day commemorates liberation as much as creation. Moses also adds: he stood between God and the people because they feared the fire (vv.5, 22–27). The Decalogue is received through a mediator, anticipating the pattern of all covenantal mediation that culminates in Christ.",
-        "cross": [
-          {
-            "ref": "Matt 5:17–20",
-            "note": "\"Do not think that I have come to abolish the Law or the Prophets; I have not come to abolish them but to fulfil them.\" Jesus's relationship to the Decalogue is fulfilment, not replacement — he intensifies the commands toward their inner, heart-level intent."
-          },
-          {
-            "ref": "Rom 13:8–10",
-            "note": "\"Love does no harm to a neighbour. Therefore love is the fulfilment of the law.\" Paul reads the second table of the Decalogue as summarised in love."
-          },
-          {
-            "ref": "Exod 20:1–17",
-            "note": "The Decalogue's first occurrence. The Deuteronomic restatement with its Exodus-grounded sabbath is not a contradiction but a deliberate pastoral expansion."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 5:17–20",
+              "note": "\"Do not think that I have come to abolish the Law or the Prophets; I have not come to abolish them but to fulfil them.\" Jesus's relationship to the Decalogue is fulfilment, not replacement — he intensifies the commands toward their inner, heart-level intent."
+            },
+            {
+              "ref": "Rom 13:8–10",
+              "note": "\"Love does no harm to a neighbour. Therefore love is the fulfilment of the law.\" Paul reads the second table of the Decalogue as summarised in love."
+            },
+            {
+              "ref": "Exod 20:1–17",
+              "note": "The Decalogue's first occurrence. The Deuteronomic restatement with its Exodus-grounded sabbath is not a contradiction but a deliberate pastoral expansion."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Moses restates the Decalogue (cf. Exod 20:1–17) with significant variations. The most notable: the sabbath commandment is grounded not in creation (as in Exodus) but in the Exodus redemption — \"remember that you were slaves in Egypt\" (v.15). The rest day commemorates liberation as much as creation. Moses also adds: he stood between God and the people because they feared the fire (vv.5, 22–27). The Decalogue is received through a mediator, anticipating the pattern of all covenantal mediation that culminates in Christ."
         }
       }
     },
@@ -135,17 +139,18 @@
             "paragraph": "The people's summary of their commitment is comprehensive — \"everything the LORD our God says.\" The scope of covenant loyalty is total, not selective. You cannot choose which commandments to follow; the covenant is an integrated whole."
           }
         ],
-        "ctx": "After the Decalogue, Moses recounts the people's terrified response: let Moses mediate, for if we hear God directly we will die. God affirms this response: \"They are right in what they have said\" (v.28). The fear was appropriate — the holy God's direct voice is death to sinful humanity. The mediator pattern is established as theological necessity. Moses is then commissioned to receive all the commandments and teach the people — the structure of Deuteronomy's entire second address.",
-        "cross": [
-          {
-            "ref": "1 Tim 2:5",
-            "note": "\"For there is one God and one mediator between God and mankind, the man Christ Jesus.\" Paul's statement is the NT answer to Deuteronomy 5:27 — the people's request for a mediator is ultimately answered in the one mediator who is both fully divine and fully human."
-          },
-          {
-            "ref": "Gal 3:19–20",
-            "note": "\"The law was given through angels and entrusted to a mediator.\" Paul draws on the Deuteronomy 5 mediator structure to contrast the Sinai covenant with the direct promise to Abraham."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Tim 2:5",
+              "note": "\"For there is one God and one mediator between God and mankind, the man Christ Jesus.\" Paul's statement is the NT answer to Deuteronomy 5:27 — the people's request for a mediator is ultimately answered in the one mediator who is both fully divine and fully human."
+            },
+            {
+              "ref": "Gal 3:19–20",
+              "note": "\"The law was given through angels and entrusted to a mediator.\" Paul draws on the Deuteronomy 5 mediator structure to contrast the Sinai covenant with the direct promise to Abraham."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -210,6 +215,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "After the Decalogue, Moses recounts the people's terrified response: let Moses mediate, for if we hear God directly we will die. God affirms this response: \"They are right in what they have said\" (v.28). The fear was appropriate — the holy God's direct voice is death to sinful humanity. The mediator pattern is established as theological necessity. Moses is then commissioned to receive all the commandments and teach the people — the structure of Deuteronomy's entire second address."
         }
       }
     }

@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 3,
       "panels": {
-        "ctx": "When Athaliah sees her son Ahaziah dead, she destroys the entire royal family and seizes the throne — the only non-Davidic ruler to sit on Judah’s throne. But Jehosheba (Joash’s aunt and the high priest Jehoiada’s wife) rescues the infant Joash and hides him in the temple for six years. The Davidic line — the promise of 2 Samuel 7 — hangs by a single thread: one baby, hidden in the house of God.",
-        "cross": [
-          {
-            "ref": "2 Sam 7:16",
-            "note": "“Your house and your kingdom will endure forever.” Athaliah’s purge comes within one child of extinguishing the very promise God swore would be eternal."
-          },
-          {
-            "ref": "Matt 2:13–18",
-            "note": "Herod’s slaughter of Bethlehem’s infants echoes Athaliah’s purge. In both cases, God preserves the Davidic heir through the intervention of a faithful individual."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 7:16",
+              "note": "“Your house and your kingdom will endure forever.” Athaliah’s purge comes within one child of extinguishing the very promise God swore would be eternal."
+            },
+            {
+              "ref": "Matt 2:13–18",
+              "note": "Herod’s slaughter of Bethlehem’s infants echoes Athaliah’s purge. In both cases, God preserves the Davidic heir through the intervention of a faithful individual."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -63,6 +64,9 @@
               "note": "The survival of one child against a systematic royal purge is the narrative’s theological wager: God’s promise to David cannot be defeated by human violence. The smallest unit of survival — one hidden infant — is sufficient for God’s purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "When Athaliah sees her son Ahaziah dead, she destroys the entire royal family and seizes the throne — the only non-Davidic ruler to sit on Judah’s throne. But Jehosheba (Joash’s aunt and the high priest Jehoiada’s wife) rescues the infant Joash and hides him in the temple for six years. The Davidic line — the promise of 2 Samuel 7 — hangs by a single thread: one baby, hidden in the house of God."
         }
       }
     },
@@ -72,17 +76,18 @@
       "verse_start": 4,
       "verse_end": 21,
       "panels": {
-        "ctx": "In the seventh year, Jehoiada the priest executes a carefully planned coup. He brings the temple guards and military commanders into the conspiracy, shows them the boy king, and positions armed guards throughout the temple complex. Joash is brought out, crowned, and anointed. The people shout “Long live the king!” Athaliah tears her robes and screams “Treason!” — but she is the usurper. She is executed outside the temple. Jehoiada then leads a covenant renewal: between the LORD, the king, and the people. The Baal temple is destroyed, its priest killed, and the boy king sits on the throne. The city is calm.",
-        "cross": [
-          {
-            "ref": "Deut 17:18–20",
-            "note": "The law of the king: he must write a copy of the Torah and read it daily. The covenant renewal puts the relationship between king and law back at the centre."
-          },
-          {
-            "ref": "2 Chr 23:1–21",
-            "note": "The parallel account adds that Jehosheba was Jehoiada’s wife, giving the priest both personal and institutional motivation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 17:18–20",
+              "note": "The law of the king: he must write a copy of the Torah and read it daily. The covenant renewal puts the relationship between king and law back at the centre."
+            },
+            {
+              "ref": "2 Chr 23:1–21",
+              "note": "The parallel account adds that Jehosheba was Jehoiada’s wife, giving the priest both personal and institutional motivation."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -118,6 +123,9 @@
               "note": "The covenant renewal is not merely a ceremony but a constitutional reset. Athaliah’s reign represented a break in both the Davidic dynasty and the Sinaitic covenant. Jehoiada restores both simultaneously."
             }
           ]
+        },
+        "hist": {
+          "context": "In the seventh year, Jehoiada the priest executes a carefully planned coup. He brings the temple guards and military commanders into the conspiracy, shows them the boy king, and positions armed guards throughout the temple complex. Joash is brought out, crowned, and anointed. The people shout “Long live the king!” Athaliah tears her robes and screams “Treason!” — but she is the usurper. She is executed outside the temple. Jehoiada then leads a covenant renewal: between the LORD, the king, and the people. The Baal temple is destroyed, its priest killed, and the boy king sits on the throne. The city is calm."
         }
       }
     }

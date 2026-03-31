@@ -31,17 +31,18 @@
             "paragraph": "Whoever guards (nōṣēr) his mouth preserves his life (v. 3). The participle form implies continuous vigilance — not a single act of self-control but a habitual posture. The mouth is portrayed as a city gate that must be watched, because what exits it determines whether life or ruin follows."
           }
         ],
-        "ctx": "The first half addresses the teachable son versus the mocker (v.1), speech that preserves or destroys (vv.2-3), diligent versus sluggard (v.4), and the light/lamp contrast (v.9). V.12 is the section's emotional peak: wisdom acknowledges the real suffering of hope deferred before affirming that fulfilment is life-giving.",
-        "cross": [
-          {
-            "ref": "Prov 11:30",
-            "note": "Fruit of the righteous is a tree of life -- 13:12 is its second occurrence, now attached to fulfilled longing."
-          },
-          {
-            "ref": "Prov 10:1",
-            "note": "A wise son makes a glad father -- the father-son relationship anchoring v.1."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 11:30",
+              "note": "Fruit of the righteous is a tree of life -- 13:12 is its second occurrence, now attached to fulfilled longing."
+            },
+            {
+              "ref": "Prov 10:1",
+              "note": "A wise son makes a glad father -- the father-son relationship anchoring v.1."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "The NET note on 'walk with the wise and become wise' (holekh et-chakhamim yechkam) discusses the sociological mechanism: wisdom is transferred through intentional association. The word 'walk with' (halakh et) means accompaniment — the regular, sustained companionship that shapes character over time. This is the positive version of the warning about companionship with sinners in 1:10–19."
             }
           ]
+        },
+        "hist": {
+          "context": "The first half addresses the teachable son versus the mocker (v.1), speech that preserves or destroys (vv.2-3), diligent versus sluggard (v.4), and the light/lamp contrast (v.9). V.12 is the section's emotional peak: wisdom acknowledges the real suffering of hope deferred before affirming that fulfilment is life-giving."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "Whoever spares the šēbeṭ hates his son (v. 24). The rod is not a weapon of abuse but a shepherd's instrument of guidance and correction. The verse operates on the assumption that children left without boundaries are children who are unloved — discipline is an expression of investment, not anger."
           }
         ],
-        "ctx": "The second half contains three of Proverbs' most quoted sayings: fountain of life (v.14), walk with the wise (v.20), and spare the rod (v.24). They share a common logic: formation requires active engagement with wisdom sources.",
-        "cross": [
-          {
-            "ref": "Prov 14:27",
-            "note": "Fear of the LORD is a fountain of life -- the teaching-of-the-wise (13:14) and the fear-of-the-LORD (14:27) are aligned sources."
-          },
-          {
-            "ref": "1 Cor 15:33",
-            "note": "Bad company corrupts good character -- NT application of v.20's companion proverb."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 14:27",
+              "note": "Fear of the LORD is a fountain of life -- the teaching-of-the-wise (13:14) and the fear-of-the-LORD (14:27) are aligned sources."
+            },
+            {
+              "ref": "1 Cor 15:33",
+              "note": "Bad company corrupts good character -- NT application of v.20's companion proverb."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -178,6 +183,9 @@
               "note": "The NET note on 'a sinner's wealth is stored up for the righteous' (chote' tsafun letsadiq) discusses the eschatological resonance: the sinner accumulates wealth that ultimately transfers to the covenant community. The note cites Eccl 2:26 as a parallel (the sinner 'gathers and stores up wealth to hand it over to the one who pleases God') and Prov 28:8 as a third witness."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half contains three of Proverbs' most quoted sayings: fountain of life (v.14), walk with the wise (v.20), and spare the rod (v.24). They share a common logic: formation requires active engagement with wisdom sources."
         }
       }
     }

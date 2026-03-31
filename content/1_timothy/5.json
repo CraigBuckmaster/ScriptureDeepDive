@@ -25,21 +25,22 @@
             "paragraph": "The noun χήρα (chēra) appears nine times in this chapter alone, more than in any other NT chapter. In the Greco-Roman world, widows were among the most vulnerable members of society, lacking the legal and economic protections that marriage provided. The early church developed a formal system of widow care (as early as Acts 6:1) that evolved into an enrolled order with specific qualifications (vv. 9–10). Paul’s instructions here represent the most detailed social-welfare legislation in the NT."
           }
         ],
-        "ctx": "The instructions about treating church members as family (vv. 1–2) establish the pastoral tone for the more detailed regulations that follow. The extended widow passage (vv. 3–16) addresses both charitable support and an enrolled order of widows who served the community. In Greco-Roman Ephesus, a wealthy widow could exercise considerable social influence, while an impoverished one was utterly dependent on family or patronage networks. Paul’s concern is both pastoral (caring for the genuinely destitute) and administrative (preventing abuse of the church’s limited resources).",
-        "cross": [
-          {
-            "ref": "Acts 6:1–6",
-            "note": "The earliest church conflict over widow care in Jerusalem—Hellenistic widows being overlooked in the daily distribution—shows that widow support was a foundational concern of the church from its inception."
-          },
-          {
-            "ref": "James 1:27",
-            "note": "James defines pure religion as caring for orphans and widows in their distress, confirming that widow care was a cross-traditional priority in early Christianity."
-          },
-          {
-            "ref": "Deuteronomy 14:29; 24:19–21",
-            "note": "OT legislation consistently protects widows, orphans, and aliens, establishing the covenantal basis for the church’s social responsibility."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 6:1–6",
+              "note": "The earliest church conflict over widow care in Jerusalem—Hellenistic widows being overlooked in the daily distribution—shows that widow support was a foundational concern of the church from its inception."
+            },
+            {
+              "ref": "James 1:27",
+              "note": "James defines pure religion as caring for orphans and widows in their distress, confirming that widow care was a cross-traditional priority in early Christianity."
+            },
+            {
+              "ref": "Deuteronomy 14:29; 24:19–21",
+              "note": "OT legislation consistently protects widows, orphans, and aliens, establishing the covenantal basis for the church’s social responsibility."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "The household code material transitions from theological instruction to practical social organization. The family metaphor in vv. 1–2 is not merely illustrative but constitutive: the church’s identity as οἶκος θεοῦ (3:15) determines how its members relate. The widow legislation (vv. 3–16) represents the most developed social-welfare policy in the NT, addressing both the rights of the vulnerable and the church’s limited economic capacity. The harsh judgment on neglectful family members (v. 8) reflects core Pauline ethics: faith must produce action."
             }
           ]
+        },
+        "hist": {
+          "context": "The instructions about treating church members as family (vv. 1–2) establish the pastoral tone for the more detailed regulations that follow. The extended widow passage (vv. 3–16) addresses both charitable support and an enrolled order of widows who served the community. In Greco-Roman Ephesus, a wealthy widow could exercise considerable social influence, while an impoverished one was utterly dependent on family or patronage networks. Paul’s concern is both pastoral (caring for the genuinely destitute) and administrative (preventing abuse of the church’s limited resources)."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "The verb καταλέγω (katalegō) appears only here in the NT and specifically denotes formal enrollment on an official register. This is not casual membership but a recognized ecclesial order with binding commitments. The enrolled widow pledged herself to prayer and service, receiving financial support in return—an early form of what would later develop into women’s religious orders."
           }
         ],
-        "ctx": "The enrolled widow order represents an early form of institutional church life distinct from the charismatic structures of Paul’s earlier letters. The age requirement (at least 60), marital fidelity criterion (‘wife of one husband’—the female counterpart of the overseer requirement), and good-works resume (washing feet, helping the afflicted) suggest a semi-formal ministerial role. Paul’s caution about younger widows (vv. 11–15) reflects both pastoral concern and the practical reality that the enrolled order required a permanent commitment that younger women might not sustain.",
-        "cross": [
-          {
-            "ref": "Acts 9:36–41",
-            "note": "Tabitha/Dorcas exemplifies the kind of widow ministry Paul describes: a woman devoted to good works and charity whose service was so valued that Peter was summoned to raise her from the dead."
-          },
-          {
-            "ref": "1 Corinthians 7:8–9, 39–40",
-            "note": "Paul’s earlier teaching on the advantages of singleness for undistracted devotion to the Lord provides the theological backdrop for the enrolled widow order’s commitment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 9:36–41",
+              "note": "Tabitha/Dorcas exemplifies the kind of widow ministry Paul describes: a woman devoted to good works and charity whose service was so valued that Peter was summoned to raise her from the dead."
+            },
+            {
+              "ref": "1 Corinthians 7:8–9, 39–40",
+              "note": "Paul’s earlier teaching on the advantages of singleness for undistracted devotion to the Lord provides the theological backdrop for the enrolled widow order’s commitment."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -188,6 +193,9 @@
               "note": "The enrolled widow institution reflects an intersection of Jewish charitable tradition and Greco-Roman patronage structures. The requirement of demonstrated service (foot-washing, hospitality, affliction-relief) shows that enrollment was earned through a proven track record, not merely claimed by virtue of marital status and age. The younger-widow caution is not misogynistic but situationally specific: in the Ephesian context, idle younger widows were evidently being recruited by the false teachers (cf. 2 Tim 3:6–7), making premature enrollment a pastoral liability."
             }
           ]
+        },
+        "hist": {
+          "context": "The enrolled widow order represents an early form of institutional church life distinct from the charismatic structures of Paul’s earlier letters. The age requirement (at least 60), marital fidelity criterion (‘wife of one husband’—the female counterpart of the overseer requirement), and good-works resume (washing feet, helping the afflicted) suggest a semi-formal ministerial role. Paul’s caution about younger widows (vv. 11–15) reflects both pastoral concern and the practical reality that the enrolled order required a permanent commitment that younger women might not sustain."
         }
       }
     },
@@ -205,21 +213,22 @@
             "paragraph": "The phrase διπλῆς τιμῆς (double honor) is debated: does τιμή mean ‘honor’ in the abstract sense or ‘honorarium/payment’? The context (v. 18, quoting Deut 25:4 and citing the worker’s wage) strongly supports a financial component: elders who lead well deserve both respect and remuneration. The ‘double’ likely means ‘generous’ rather than literally twice a specific amount."
           }
         ],
-        "ctx": "This section addresses three distinct elder-related issues: remuneration for those who serve well (vv. 17–18), disciplinary procedures for accused elders (vv. 19–21), and caution in ordination (vv. 22–25). The two-witness rule for accusations (v. 19) draws directly on Deuteronomy 19:15, applying OT judicial procedure to church governance. The charge to impartiality (v. 21) ‘before God, Christ Jesus, and the elect angels’ invokes a heavenly tribunal as witness—a striking formulation that underscores the gravity of elder discipline.",
-        "cross": [
-          {
-            "ref": "Deuteronomy 25:4",
-            "note": "Paul quotes this OT law (‘do not muzzle an ox while it is treading out the grain’) as he does in 1 Cor 9:9, applying it to ministerial remuneration—a consistent hermeneutical move."
-          },
-          {
-            "ref": "Deuteronomy 19:15",
-            "note": "The two-or-three-witnesses rule for legal proceedings is applied to accusations against elders, establishing due process in church discipline."
-          },
-          {
-            "ref": "Matthew 18:15–17",
-            "note": "Jesus’ teaching on church discipline provides the broader framework for the procedures Paul outlines here."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deuteronomy 25:4",
+              "note": "Paul quotes this OT law (‘do not muzzle an ox while it is treading out the grain’) as he does in 1 Cor 9:9, applying it to ministerial remuneration—a consistent hermeneutical move."
+            },
+            {
+              "ref": "Deuteronomy 19:15",
+              "note": "The two-or-three-witnesses rule for legal proceedings is applied to accusations against elders, establishing due process in church discipline."
+            },
+            {
+              "ref": "Matthew 18:15–17",
+              "note": "Jesus’ teaching on church discipline provides the broader framework for the procedures Paul outlines here."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -288,6 +297,9 @@
               "note": "The elder section reveals a church in organizational development: leadership structures require not only qualification criteria (ch. 3) but also compensation systems, disciplinary procedures, and ordination protocols. The appeal to the OT for both remuneration (Deut 25:4) and judicial process (Deut 19:15) shows Paul grounding ecclesial governance in scriptural precedent. The invocation of the heavenly tribunal (v. 21) elevates elder discipline beyond mere administrative procedure to an act performed under divine scrutiny—a powerful deterrent against favoritism."
             }
           ]
+        },
+        "hist": {
+          "context": "This section addresses three distinct elder-related issues: remuneration for those who serve well (vv. 17–18), disciplinary procedures for accused elders (vv. 19–21), and caution in ordination (vv. 22–25). The two-witness rule for accusations (v. 19) draws directly on Deuteronomy 19:15, applying OT judicial procedure to church governance. The charge to impartiality (v. 21) ‘before God, Christ Jesus, and the elect angels’ invokes a heavenly tribunal as witness—a striking formulation that underscores the gravity of elder discipline."
         }
       }
     }

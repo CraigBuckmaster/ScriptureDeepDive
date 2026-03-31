@@ -22,17 +22,18 @@
             "paragraph": "\"May the LORD answer you (yaʿănek̅ā) when you are in distress\" (v.1). A pre-battle blessing. The congregation prays for the king before he goes to war: may God answer, protect, send help, remember sacrifices, grant desires. The psalm is communal intercession for royal success."
           }
         ],
-        "ctx": "A liturgy of pre-battle intercession. The congregation blesses the king: may the LORD answer you (v.1), protect you (v.1), send help from the sanctuary (v.2), remember your sacrifices (v.3), give you your heart’s desire (v.4). \"May we shout for joy over your victory and lift up our banners in the name of our God\" (v.5).",
-        "cross": [
-          {
-            "ref": "1 Sam 13:9–12",
-            "note": "Saul’s pre-battle sacrifice — the ritual context the psalm assumes."
-          },
-          {
-            "ref": "Eph 6:18–20",
-            "note": "\"Pray in the Spirit on all occasions\" — the NT’s spiritual warfare parallel."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Sam 13:9–12",
+              "note": "Saul’s pre-battle sacrifice — the ritual context the psalm assumes."
+            },
+            {
+              "ref": "Eph 6:18–20",
+              "note": "\"Pray in the Spirit on all occasions\" — the NT’s spiritual warfare parallel."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -99,6 +100,9 @@
               "note": "Goldingay: \"lift up our banners in the name of our God\" — the banners identify which army this is. The name of God is the flag under which Israel fights."
             }
           ]
+        },
+        "hist": {
+          "context": "A liturgy of pre-battle intercession. The congregation blesses the king: may the LORD answer you (v.1), protect you (v.1), send help from the sanctuary (v.2), remember your sacrifices (v.3), give you your heart’s desire (v.4). \"May we shout for joy over your victory and lift up our banners in the name of our God\" (v.5)."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "\"Some trust in chariots and some in horses, but we trust in the name (shēm) of the LORD our God\" (v.7). The psalm’s most famous verse and its theological centre. Military technology vs divine name. Chariots fall; the name stands. The \"name\" is God’s character, reputation, and power — the sum of who he is."
           }
         ],
-        "ctx": "Confidence declared: \"Now this I know: the LORD gives victory to his anointed\" (v.6). The pivotal verse: some trust in chariots and horses, but we trust in the name of the LORD (v.7). The result: \"they are brought to their knees and fall, but we rise up and stand firm\" (v.8). The psalm closes with a final petition: \"LORD, give victory to the king! Answer us when we call!\" (v.9).",
-        "cross": [
-          {
-            "ref": "Isa 31:1",
-            "note": "\"Woe to those who go down to Egypt for help, who rely on horses\" — the prophetic development of the same trust theology."
-          },
-          {
-            "ref": "2 Chr 20:15",
-            "note": "\"The battle is not yours, but God’s\" — the same principle in narrative form."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 31:1",
+              "note": "\"Woe to those who go down to Egypt for help, who rely on horses\" — the prophetic development of the same trust theology."
+            },
+            {
+              "ref": "2 Chr 20:15",
+              "note": "\"The battle is not yours, but God’s\" — the same principle in narrative form."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -201,6 +206,9 @@
               "note": "Goldingay: \"the name\" is everything God has revealed about himself. To trust the name is to trust the character behind it. The name is not a magic word but a personal reality."
             }
           ]
+        },
+        "hist": {
+          "context": "Confidence declared: \"Now this I know: the LORD gives victory to his anointed\" (v.6). The pivotal verse: some trust in chariots and horses, but we trust in the name of the LORD (v.7). The result: \"they are brought to their knees and fall, but we rise up and stand firm\" (v.8). The psalm closes with a final petition: \"LORD, give victory to the king! Answer us when we call!\" (v.9)."
         }
       }
     }

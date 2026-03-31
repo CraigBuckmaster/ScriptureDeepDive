@@ -31,17 +31,18 @@
             "paragraph": "Where there is no ḥāzôn (prophetic vision), the people cast off restraint (v. 18). The word refers specifically to divine revelation communicated through prophets — not generic 'vision statements.' Without God's word actively proclaimed, moral order dissolves. The verb yippāraʿ means to let loose, run wild — the image is of a people unrestrained because unleadered."
           }
         ],
-        "ctx": "The first half of ch.29 addresses governance and social order: stubborn resistance to correction (v.1), the rejoicing of a people under righteous rule (v.2), the king who loves justice (v.4), and the contrast between the hot-tempered fool and the self-controlled wise person (v.11).",
-        "cross": [
-          {
-            "ref": "Exod 32:25",
-            "note": "Moses saw that the people had broken loose — 'pāraʿ' — the same word as v.18's \"cast off restraint.\" Without the word of God, the people break loose as Israel did at Sinai."
-          },
-          {
-            "ref": "Prov 14:34",
-            "note": "Righteousness exalts a nation — the same social-righteousness principle as the rejoicing under righteous rule (v.2)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 32:25",
+              "note": "Moses saw that the people had broken loose — 'pāraʿ' — the same word as v.18's \"cast off restraint.\" Without the word of God, the people break loose as Israel did at Sinai."
+            },
+            {
+              "ref": "Prov 14:34",
+              "note": "Righteousness exalts a nation — the same social-righteousness principle as the rejoicing under righteous rule (v.2)."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "NET: chazon (prophetic vision/revelation) -- not a personal vision or goal but authoritative divine revelation. The note distinguishes this from modern self-help applications of the verse."
             }
           ]
+        },
+        "hist": {
+          "context": "The first half of ch.29 addresses governance and social order: stubborn resistance to correction (v.1), the rejoicing of a people under righteous rule (v.2), the king who loves justice (v.4), and the contrast between the hot-tempered fool and the self-controlled wise person (v.11)."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "The unjust person is a tôʿăbâ (abomination) to the righteous, and the upright in his way is a tôʿăbâ to the wicked (v. 27). The final verse of the Solomonic collection reveals an irreconcilable mutual revulsion: each side finds the other's way of life repulsive. There is no neutral ground. The wisdom tradition ends its proverbs with a stark either/or."
           }
         ],
-        "ctx": "The second half contains the chapter's most famous verse (v.18 — where there is no vision) alongside the fear-of-man snare (v.25), and the chapter's closing observation: the LORD's judgments are compared to those of human authorities. The fear of the LORD overcomes the fear of man.",
-        "cross": [
-          {
-            "ref": "Prov 14:26",
-            "note": "Whoever fears the LORD has a secure fortress — the fear-of-man snare (v.25) is the negative counterpart to the fear-of-the-LORD security."
-          },
-          {
-            "ref": "Acts 5:29",
-            "note": "We must obey God rather than human beings — the NT application of v.25's trust-in-the-LORD over fear-of-man principle."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 14:26",
+              "note": "Whoever fears the LORD has a secure fortress — the fear-of-man snare (v.25) is the negative counterpart to the fear-of-the-LORD security."
+            },
+            {
+              "ref": "Acts 5:29",
+              "note": "We must obey God rather than human beings — the NT application of v.25's trust-in-the-LORD over fear-of-man principle."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -178,6 +183,9 @@
               "note": "NET: fear of man (cherdath adam) -- the note traces the man-fearing trap through the OT. The person whose behaviour is primarily governed by human opinion has made a fundamental epistemological error about who ultimately matters."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half contains the chapter's most famous verse (v.18 — where there is no vision) alongside the fear-of-man snare (v.25), and the chapter's closing observation: the LORD's judgments are compared to those of human authorities. The fear of the LORD overcomes the fear of man."
         }
       }
     }

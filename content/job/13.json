@@ -31,17 +31,18 @@
             "paragraph": "\"Though he slay me, yet will I hope in him\" (v.15). The most famous verse in Job and one of the most debated. The Hebrew is ambiguous: the written text (Ketiv) reads \"I will not hope\" while the marginal reading (Qere) reads \"I will hope.\" Both are grammatically valid. The ambiguity itself is the point: Job simultaneously trusts and protests."
           }
         ],
-        "ctx": "Job silences the friends (vv.1–12), then turns to God with what may be the bravest statement in Scripture. The tension: he will argue his case before God’s face (v.15) even though that confrontation might kill him. His integrity matters more than his life. He would rather die making his case than live in guilty silence.",
-        "cross": [
-          {
-            "ref": "Dan 3:17–18",
-            "note": "\"Our God is able to deliver us... but even if he does not\" — the same defiant conditional faith."
-          },
-          {
-            "ref": "Hab 3:17–18",
-            "note": "\"Though the fig tree does not bud... yet I will rejoice\" — trust despite circumstances."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Dan 3:17–18",
+              "note": "\"Our God is able to deliver us... but even if he does not\" — the same defiant conditional faith."
+            },
+            {
+              "ref": "Hab 3:17–18",
+              "note": "\"Though the fig tree does not bud... yet I will rejoice\" — trust despite circumstances."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Habel: Job dismisses the expert witnesses and demands a direct hearing with the judge. He is willing to risk death (v.15) for the sake of due process. The plaintiff insists on his day in court."
             }
           ]
+        },
+        "hist": {
+          "context": "Job silences the friends (vv.1–12), then turns to God with what may be the bravest statement in Scripture. The tension: he will argue his case before God’s face (v.15) even though that confrontation might kill him. His integrity matters more than his life. He would rather die making his case than live in guilty silence."
         }
       }
     },
@@ -127,17 +131,18 @@
             "paragraph": "\"How many wrongs and sins (chatṭāʾṭ) have I committed?\" (v.23). Job demands an itemised indictment. General accusations are not enough. He wants specifics. This is the language of a defendant who knows the charges are baseless and challenges the prosecution to prove otherwise."
           }
         ],
-        "ctx": "Job sets the terms for his hearing: remove your hand, stop terrifying me, then call and I will answer (vv.20–22). The conditions are about power equalisation — Job cannot speak freely while God’s terror silences him. He demands a level playing field.",
-        "cross": [
-          {
-            "ref": "Ps 51:4",
-            "note": "\"Against you, you only, have I sinned\" — David’s specific confession vs Job’s demand for specific charges."
-          },
-          {
-            "ref": "Isa 43:26",
-            "note": "\"State your case, that you may be proved right\" — God’s own invitation to legal argument."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 51:4",
+              "note": "\"Against you, you only, have I sinned\" — David’s specific confession vs Job’s demand for specific charges."
+            },
+            {
+              "ref": "Isa 43:26",
+              "note": "\"State your case, that you may be proved right\" — God’s own invitation to legal argument."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -202,6 +207,9 @@
               "note": "Habel: Job stipulates the terms of the hearing. He wants due process: fair conditions, specific charges, the right to speak. The legal metaphor reaches its fullest expression in this passage."
             }
           ]
+        },
+        "hist": {
+          "context": "Job sets the terms for his hearing: remove your hand, stop terrifying me, then call and I will answer (vv.20–22). The conditions are about power equalisation — Job cannot speak freely while God’s terror silences him. He demands a level playing field."
         }
       }
     }

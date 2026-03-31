@@ -25,21 +25,22 @@
             "paragraph": "God commands Jeremiah to write all his oracles on a scroll (megilla, v.2). Baruch writes as Jeremiah dictates, then reads the scroll publicly in the temple. The megilla represents the first written collection of prophetic oracles -- a precursor to the biblical book we now possess. The act of writing transforms oral prophecy into permanent Scripture."
           }
         ],
-        "ctx": "The date is the fourth year of Jehoiakim (605-604 BC). God commands a comprehensive scroll of all oracles from 627 BC onward. Baruch reads it three times: in the temple (v.10), to the officials (v.15), and it is then read to the king (v.21). The officials are alarmed and urge Baruch and Jeremiah to hide. The episode preserves a remarkable account of how prophetic literature moved from oral proclamation to written text.",
-        "cross": [
-          {
-            "ref": "Ezek 2:9-3:3",
-            "note": "Ezekiel eats the scroll of lamentation -- the physical consumption of God's written word."
-          },
-          {
-            "ref": "Rev 10:9-10",
-            "note": "John eats the little scroll -- the same pattern of prophetic identification with the written word."
-          },
-          {
-            "ref": "2 Tim 3:16",
-            "note": "\"All Scripture is God-breathed\" -- the doctrine of inspiration that chapters like Jeremiah 36 illustrate in narrative form."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 2:9-3:3",
+              "note": "Ezekiel eats the scroll of lamentation -- the physical consumption of God's written word."
+            },
+            {
+              "ref": "Rev 10:9-10",
+              "note": "John eats the little scroll -- the same pattern of prophetic identification with the written word."
+            },
+            {
+              "ref": "2 Tim 3:16",
+              "note": "\"All Scripture is God-breathed\" -- the doctrine of inspiration that chapters like Jeremiah 36 illustrate in narrative form."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -92,6 +93,9 @@
               "note": "Brueggemann reads the scroll as \"the word becoming text.\" Oral prophecy is perishable; written prophecy is permanent. The transition from speech to writing is itself a theological act -- God's word is being preserved for future generations."
             }
           ]
+        },
+        "hist": {
+          "context": "The date is the fourth year of Jehoiakim (605-604 BC). God commands a comprehensive scroll of all oracles from 627 BC onward. Baruch reads it three times: in the temple (v.10), to the officials (v.15), and it is then read to the king (v.21). The officials are alarmed and urge Baruch and Jeremiah to hide. The episode preserves a remarkable account of how prophetic literature moved from oral proclamation to written text."
         }
       }
     },
@@ -109,17 +113,18 @@
             "paragraph": "Jehoiakim cuts the scroll column by column with a scribal knife (ta'ar, v.23) and burns it in the fire pot. The ta'ar was used to cut papyrus and trim reed pens -- a tool of the scribal profession turned against the scribal product. The king uses the instrument of writing to destroy writing. The detail is loaded with irony."
           }
         ],
-        "ctx": "Jehoiakim's response is the antithesis of his father Josiah's. When Josiah heard the Book of the Law, he tore his robes in repentance (2 Kgs 22:11). When Jehoiakim hears the scroll of Jeremiah, he cuts it up and burns it. The contrast is deliberate: father and son respond to God's word in opposite ways. The chapter notes that neither Jehoiakim nor his attendants \"showed any fear or tore their clothes\" (v.24). But the word cannot be destroyed: Jeremiah dictates the entire scroll again, \"and many similar words were added\" (v.32).",
-        "cross": [
-          {
-            "ref": "2 Kgs 22:11",
-            "note": "Josiah tears his robes when the Book of the Law is read -- the faithful response that Jehoiakim inverts."
-          },
-          {
-            "ref": "Isa 55:11",
-            "note": "\"My word will not return to me empty\" -- the burned scroll is rewritten, confirming the indestructibility of God's word."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 22:11",
+              "note": "Josiah tears his robes when the Book of the Law is read -- the faithful response that Jehoiakim inverts."
+            },
+            {
+              "ref": "Isa 55:11",
+              "note": "\"My word will not return to me empty\" -- the burned scroll is rewritten, confirming the indestructibility of God's word."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -180,6 +185,9 @@
               "note": "Brueggemann identifies a \"contest between fire and ink.\" The king commands fire; God commands rewriting. Fire is temporary; text is permanent. \"Many similar words were added\" -- persecution produces more Scripture, not less."
             }
           ]
+        },
+        "hist": {
+          "context": "Jehoiakim's response is the antithesis of his father Josiah's. When Josiah heard the Book of the Law, he tore his robes in repentance (2 Kgs 22:11). When Jehoiakim hears the scroll of Jeremiah, he cuts it up and burns it. The contrast is deliberate: father and son respond to God's word in opposite ways. The chapter notes that neither Jehoiakim nor his attendants \"showed any fear or tore their clothes\" (v.24). But the word cannot be destroyed: Jeremiah dictates the entire scroll again, \"and many similar words were added\" (v.32)."
         }
       }
     }

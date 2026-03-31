@@ -25,17 +25,18 @@
             "paragraph": "Hananiah breaks (shabar) the yoke from Jeremiah's neck (v.10) and proclaims: \"In the same way I will break the yoke of Nebuchadnezzar king of Babylon off the neck of all the nations.\" The physical act is a counter-sign-act -- a false prophet performing his own symbolic action to contradict the true prophet. The verb shabar echoes the broken flask of chapter 19, but here the breaking is itself an act of prophetic rebellion."
           }
         ],
-        "ctx": "Hananiah son of Azzur prophesies that within two years the temple vessels will be returned and Jehoiachin will come home. His message is everything the people want to hear. Jeremiah initially responds with cautious hope: \"Amen! May the LORD do so!\" (v.6). But he adds the critical test: \"The prophet who prophesies peace will be recognized as one truly sent by the LORD only if his prediction comes true\" (v.9). Hananiah then physically breaks the yoke off Jeremiah's neck. Jeremiah walks away.",
-        "cross": [
-          {
-            "ref": "Deut 18:21-22",
-            "note": "The test of true prophecy: \"If what a prophet proclaims does not come about, that is a message the LORD has not spoken.\" Jeremiah invokes this criterion."
-          },
-          {
-            "ref": "1 Kgs 22:24",
-            "note": "Zedekiah son of Kenaanah strikes Micaiah the prophet -- the same pattern of a false prophet using physical force against a true one."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 18:21-22",
+              "note": "The test of true prophecy: \"If what a prophet proclaims does not come about, that is a message the LORD has not spoken.\" Jeremiah invokes this criterion."
+            },
+            {
+              "ref": "1 Kgs 22:24",
+              "note": "Zedekiah son of Kenaanah strikes Micaiah the prophet -- the same pattern of a false prophet using physical force against a true one."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -92,6 +93,9 @@
               "note": "Brueggemann reads Jeremiah's silence as \"the most powerful prophetic act in the chapter.\" The true prophet does not compete with the false one in the public arena. He withdraws, trusts God to vindicate, and waits."
             }
           ]
+        },
+        "hist": {
+          "context": "Hananiah son of Azzur prophesies that within two years the temple vessels will be returned and Jehoiachin will come home. His message is everything the people want to hear. Jeremiah initially responds with cautious hope: \"Amen! May the LORD do so!\" (v.6). But he adds the critical test: \"The prophet who prophesies peace will be recognized as one truly sent by the LORD only if his prediction comes true\" (v.9). Hananiah then physically breaks the yoke off Jeremiah's neck. Jeremiah walks away."
         }
       }
     },
@@ -109,17 +113,18 @@
             "paragraph": "God replaces the broken wooden yoke with one of iron (barzel, v.13). The escalation is devastating: Hananiah's act of defiance has not removed the burden but made it heavier. Wooden yokes can break; iron yokes cannot. By resisting God's word, Hananiah has increased the severity of judgment."
           }
         ],
-        "ctx": "God's response to Hananiah comes through Jeremiah: \"You have broken a wooden yoke but have made an iron yoke instead\" (v.13). Resistance to divine judgment does not remove it but intensifies it. The death sentence follows: \"This very year you are going to die, because you have preached rebellion against the LORD\" (v.16). Hananiah dies two months later (v.17).",
-        "cross": [
-          {
-            "ref": "Deut 28:48",
-            "note": "\"An iron yoke on your neck\" -- the covenant curse language that God invokes through the iron yoke replacement."
-          },
-          {
-            "ref": "Acts 5:1-11",
-            "note": "Ananias and Sapphira die for lying to the Holy Spirit -- the NT parallel of immediate divine judgment for speaking falsely in God's name."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 28:48",
+              "note": "\"An iron yoke on your neck\" -- the covenant curse language that God invokes through the iron yoke replacement."
+            },
+            {
+              "ref": "Acts 5:1-11",
+              "note": "Ananias and Sapphira die for lying to the Holy Spirit -- the NT parallel of immediate divine judgment for speaking falsely in God's name."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -172,6 +177,9 @@
               "note": "Brueggemann calls Hananiah's death \"the vindication of prophetic patience.\" Jeremiah did not need to argue, shout, or compete. Time itself rendered the verdict."
             }
           ]
+        },
+        "hist": {
+          "context": "God's response to Hananiah comes through Jeremiah: \"You have broken a wooden yoke but have made an iron yoke instead\" (v.13). Resistance to divine judgment does not remove it but intensifies it. The death sentence follows: \"This very year you are going to die, because you have preached rebellion against the LORD\" (v.16). Hananiah dies two months later (v.17)."
         }
       }
     }

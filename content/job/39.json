@@ -25,17 +25,18 @@
             "paragraph": "\"Who let the wild donkey (pereʾ) go free? Who untied its ropes?\" (v.5). God liberated the wild donkey. It roams free, laughs at the town, and scorns the driver’s shout (v.7). God made creatures that serve no human purpose and are not under human control. The wild donkey is free because God made it free."
           }
         ],
-        "ctx": "God’s second round of animal questions. Mountain goats give birth without human midwives (vv.1–4). The wild donkey roams free (vv.5–8). The wild ox cannot be domesticated (vv.9–12). Every animal challenges human centrality: these creatures exist outside the human economy. They serve God’s purposes, not ours. Job’s demand that the universe make sense to HIM is the wrong starting point.",
-        "cross": [
-          {
-            "ref": "Ps 104:10–18",
-            "note": "\"He makes springs pour water into the ravines... the wild donkeys quench their thirst\" — God’s provision for wild creatures."
-          },
-          {
-            "ref": "Matt 10:29",
-            "note": "\"Are not two sparrows sold for a penny? Yet not one of them will fall to the ground outside your Father’s care\" — the same divine attention to animals."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 104:10–18",
+              "note": "\"He makes springs pour water into the ravines... the wild donkeys quench their thirst\" — God’s provision for wild creatures."
+            },
+            {
+              "ref": "Matt 10:29",
+              "note": "\"Are not two sparrows sold for a penny? Yet not one of them will fall to the ground outside your Father’s care\" — the same divine attention to animals."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Habel: God presents evidence from the animal kingdom. Each creature represents a domain God governs without human consultation. The judge demonstrates jurisdictions the plaintiff never knew existed."
             }
           ]
+        },
+        "hist": {
+          "context": "God’s second round of animal questions. Mountain goats give birth without human midwives (vv.1–4). The wild donkey roams free (vv.5–8). The wild ox cannot be domesticated (vv.9–12). Every animal challenges human centrality: these creatures exist outside the human economy. They serve God’s purposes, not ours. Job’s demand that the universe make sense to HIM is the wrong starting point."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "\"Do you give the horse (sūs) its strength? Do you clothe its neck with a flowing mane?\" (v.19). The warhorse is God’s masterpiece of designed ferocity. It paws the ground, charges into battle, laughs at fear, does not shy from the sword. It was not made for Job’s use but for its own terrible glory."
           }
         ],
-        "ctx": "The animal gallery concludes with three extraordinary creatures. The ostrich (vv.13–18): foolish by design, leaves eggs unattended, yet outruns the horse. The warhorse (vv.19–25): terrifying in battle, exulting in its own power. The hawk and eagle (vv.26–30): soaring beyond human reach, their young lapping up blood. God’s creation includes foolishness, violence, and predation — by design, not by accident.",
-        "cross": [
-          {
-            "ref": "Prov 21:31",
-            "note": "\"The horse is made ready for the day of battle, but victory rests with the LORD\" — the horse imagery connecting battle to divine sovereignty."
-          },
-          {
-            "ref": "Deut 32:11",
-            "note": "\"Like an eagle that stirs up its nest and hovers over its young\" — God compared to the eagle he describes here."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 21:31",
+              "note": "\"The horse is made ready for the day of battle, but victory rests with the LORD\" — the horse imagery connecting battle to divine sovereignty."
+            },
+            {
+              "ref": "Deut 32:11",
+              "note": "\"Like an eagle that stirs up its nest and hovers over its young\" — God compared to the eagle he describes here."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -200,6 +205,9 @@
               "note": "Habel: God’s final animal witnesses include the foolish, the violent, and the predatory. The creation is not morally tidy. The retribution principle cannot account for an ostrich. The friends’ theology is too small for God’s world."
             }
           ]
+        },
+        "hist": {
+          "context": "The animal gallery concludes with three extraordinary creatures. The ostrich (vv.13–18): foolish by design, leaves eggs unattended, yet outruns the horse. The warhorse (vv.19–25): terrifying in battle, exulting in its own power. The hawk and eagle (vv.26–30): soaring beyond human reach, their young lapping up blood. God’s creation includes foolishness, violence, and predation — by design, not by accident."
         }
       }
     }

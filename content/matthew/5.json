@@ -37,22 +37,26 @@
             "paragraph": "Not weakness but strength under control — a war horse trained to obey, power submitted to purpose. Jesus applies the word to himself (11:29). The meek 'inherit the earth' (quoting Ps 37:11), not through conquest but through patient trust in God's justice."
           }
         ],
-        "hist": "None",
-        "ctx": "The Sermon on the Mount (chs.5–7) is the first of Matthew's five discourses — the new Torah delivered by the new Moses from a mountain (echoing Sinai). The Beatitudes function as the preamble to the sermon: they describe the character of the community Jesus is forming, not a programme for earning kingdom status. The eight Beatitudes are arranged chiastically, with the first and eighth sharing the same promise (kingdom of heaven), and the fourth (hunger and thirst for righteousness) at the centre.",
-        "cross": [
-          {
-            "ref": "Isa 61:1–3",
-            "note": "The Spirit of the Lord is on me... to proclaim good news to the poor, to bind up the broken-hearted. The Beatitudes echo Isaiah's Servant mission — the poor, the mourning, the meek are the recipients of God's kingdom."
-          },
-          {
-            "ref": "Ps 37:11",
-            "note": "The meek will inherit the earth — the exact language of Beatitude 3. Jesus is citing the Psalter as the portrait of kingdom character."
-          },
-          {
-            "ref": "Matt 23:13–29",
-            "note": "The Seven Woes are the exact inversion of the Eight Beatitudes — blessed/woe, kingdom/condemnation."
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "The Sermon on the Mount (chs.5–7) is the first of Matthew's five discourses — the new Torah delivered by the new Moses from a mountain (echoing Sinai). The Beatitudes function as the preamble to the sermon: they describe the character of the community Jesus is forming, not a programme for earning kingdom status. The eight Beatitudes are arranged chiastically, with the first and eighth sharing the same promise (kingdom of heaven), and the fourth (hunger and thirst for righteousness) at the centre."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 61:1–3",
+              "note": "The Spirit of the Lord is on me... to proclaim good news to the poor, to bind up the broken-hearted. The Beatitudes echo Isaiah's Servant mission — the poor, the mourning, the meek are the recipients of God's kingdom."
+            },
+            {
+              "ref": "Ps 37:11",
+              "note": "The meek will inherit the earth — the exact language of Beatitude 3. Jesus is citing the Psalter as the portrait of kingdom character."
+            },
+            {
+              "ref": "Matt 23:13–29",
+              "note": "The Seven Woes are the exact inversion of the Eight Beatitudes — blessed/woe, kingdom/condemnation."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -127,18 +131,22 @@
             "paragraph": "A key Matthean word (7 times). The disciples' righteousness must 'surpass' (perisseuō — overflow, exceed abundantly) that of the Pharisees. Not more rules but deeper transformation — righteousness that comes from the heart, not merely from meticulous legal compliance."
           }
         ],
-        "hist": "None",
-        "ctx": "Vv.13–16 apply the Beatitudes to the community's social function: salt preserving, light illuminating. Both metaphors describe the kingdom community as functioning for the sake of the world, not merely for itself. Vv.17–20 establish the relationship between Jesus and Torah: fulfilment, not abolition. The startling claim of v.20 — surpassing Pharisaic righteousness — sets up the six antitheses that follow by asking: what does a deeper righteousness look like in practice?",
-        "cross": [
-          {
-            "ref": "Isa 42:6; 49:6",
-            "note": "A light for the Gentiles — the Servant's calling applied to Jesus's community. The \"light of the world\" metaphor connects the disciples' calling to the Servant's mission."
-          },
-          {
-            "ref": "Deut 4:2",
-            "note": "Do not add to or subtract from what I command you. Jesus's statement about the Law's permanence echoes Deuteronomy's same insistence on Torah's integrity."
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "Vv.13–16 apply the Beatitudes to the community's social function: salt preserving, light illuminating. Both metaphors describe the kingdom community as functioning for the sake of the world, not merely for itself. Vv.17–20 establish the relationship between Jesus and Torah: fulfilment, not abolition. The startling claim of v.20 — surpassing Pharisaic righteousness — sets up the six antitheses that follow by asking: what does a deeper righteousness look like in practice?"
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 42:6; 49:6",
+              "note": "A light for the Gentiles — the Servant's calling applied to Jesus's community. The \"light of the world\" metaphor connects the disciples' calling to the Servant's mission."
+            },
+            {
+              "ref": "Deut 4:2",
+              "note": "Do not add to or subtract from what I command you. Jesus's statement about the Law's permanence echoes Deuteronomy's same insistence on Torah's integrity."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -265,18 +273,22 @@
             "paragraph": "'Be perfect as your heavenly Father is perfect' (v.48). Teleios does not mean flawless but complete, whole, lacking nothing in maturity. The standard is not sinless perfection but wholehearted love — love that includes enemies, just as the Father's rain falls on all."
           }
         ],
-        "hist": "None",
-        "ctx": "The six antitheses (vv.21–48) are the demonstration of what \"surpassing righteousness\" (v.20) and \"fulfilment\" (v.17) look like in practice. Each follows the pattern: \"You have heard... but I say.\" The pairs are: murder/anger, adultery/lust, divorce, oaths, retaliation/non-resistance, neighbour love/enemy love. The progression moves from the visible act to the invisible intention, and from the management of harm to the active creation of good.",
-        "cross": [
-          {
-            "ref": "Lev 19:17–18",
-            "note": "Do not hate your brother in your heart... love your neighbour. Jesus's antithesis on anger extends Leviticus's own inward dimension of the command."
-          },
-          {
-            "ref": "Lev 19:2",
-            "note": "Be holy because I, the LORD your God, am holy. The command to be perfect as God is perfect (v.48) echoes the Holiness Code's foundational imperative."
-          }
-        ]
+        "hist": {
+          "historical": "None",
+          "context": "The six antitheses (vv.21–48) are the demonstration of what \"surpassing righteousness\" (v.20) and \"fulfilment\" (v.17) look like in practice. Each follows the pattern: \"You have heard... but I say.\" The pairs are: murder/anger, adultery/lust, divorce, oaths, retaliation/non-resistance, neighbour love/enemy love. The progression moves from the visible act to the invisible intention, and from the management of harm to the active creation of good."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 19:17–18",
+              "note": "Do not hate your brother in your heart... love your neighbour. Jesus's antithesis on anger extends Leviticus's own inward dimension of the command."
+            },
+            {
+              "ref": "Lev 19:2",
+              "note": "Be holy because I, the LORD your God, am holy. The command to be perfect as God is perfect (v.48) echoes the Holiness Code's foundational imperative."
+            }
+          ]
+        }
       }
     }
   ],

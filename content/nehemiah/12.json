@@ -25,18 +25,22 @@
             "paragraph": "The genealogies trace priestly and Levitical families from Zerubbabel’s return (538 BC) through Nehemiah’s governorship (445 BC) — nearly a century of continuity. Institutional memory preserved through names."
           }
         ],
-        "hist": "The genealogies span four generations of high priests: Jeshua → Joiakim → Eliashib → Joiada. This corresponds to approximately 538–430 BC. The list establishes that the priestly succession remained unbroken through the entire Persian period.",
-        "ctx": "The genealogies serve a specific function before the dedication ceremony: they establish that the Levitical personnel officiating at the dedication have legitimate credentials. Identity precedes service, just as the register (ch 7) preceded the covenant renewal (ch 8–10).",
-        "cross": [
-          {
-            "ref": "1 Chr 6:1–53",
-            "note": "The Chronicler’s priestly genealogy — the pre-exilic predecessor."
-          },
-          {
-            "ref": "Ezra 2:36–40",
-            "note": "The priestly families of the first return."
-          }
-        ],
+        "hist": {
+          "historical": "The genealogies span four generations of high priests: Jeshua → Joiakim → Eliashib → Joiada. This corresponds to approximately 538–430 BC. The list establishes that the priestly succession remained unbroken through the entire Persian period.",
+          "context": "The genealogies serve a specific function before the dedication ceremony: they establish that the Levitical personnel officiating at the dedication have legitimate credentials. Identity precedes service, just as the register (ch 7) preceded the covenant renewal (ch 8–10)."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Chr 6:1–53",
+              "note": "The Chronicler’s priestly genealogy — the pre-exilic predecessor."
+            },
+            {
+              "ref": "Ezra 2:36–40",
+              "note": "The priestly families of the first return."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -112,22 +116,26 @@
             "paragraph": "\"The sound of rejoicing in Jerusalem could be heard far away\" (v.43). The joy is not internal but audible. It carries. The enemies who heard the construction (4:1) now hear the celebration. Sound as testimony."
           }
         ],
-        "hist": "The two-choir procession is a unique liturgical event in the OT. Two groups of thanksgiving singers, led by Ezra and Nehemiah respectively, march in opposite directions around the top of the wall and converge at the temple. They walk on the very stones they built. The procession is both celebration and consecration — claiming the wall for God by walking it with worship.",
-        "ctx": "This is the book’s climax. Chapters 1–6: building the wall. Chapters 7–10: building the community. Chapter 12: dedicating both. The two choirs represent the two halves of the wall; their convergence at the temple represents the community united in worship. Architecture and liturgy merge.",
-        "cross": [
-          {
-            "ref": "2 Chr 5:12–14",
-            "note": "Solomon’s temple dedication with musicians — the model this ceremony echoes."
-          },
-          {
-            "ref": "Josh 6:1–20",
-            "note": "The Jericho march — another procession around walls, with opposite outcome. Jericho’s walls fell; Jerusalem’s walls are consecrated."
-          },
-          {
-            "ref": "Ps 48:12–14",
-            "note": "\"Walk about Zion, go around her, count her towers\" — the psalm this procession enacts."
-          }
-        ],
+        "hist": {
+          "historical": "The two-choir procession is a unique liturgical event in the OT. Two groups of thanksgiving singers, led by Ezra and Nehemiah respectively, march in opposite directions around the top of the wall and converge at the temple. They walk on the very stones they built. The procession is both celebration and consecration — claiming the wall for God by walking it with worship.",
+          "context": "This is the book’s climax. Chapters 1–6: building the wall. Chapters 7–10: building the community. Chapter 12: dedicating both. The two choirs represent the two halves of the wall; their convergence at the temple represents the community united in worship. Architecture and liturgy merge."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Chr 5:12–14",
+              "note": "Solomon’s temple dedication with musicians — the model this ceremony echoes."
+            },
+            {
+              "ref": "Josh 6:1–20",
+              "note": "The Jericho march — another procession around walls, with opposite outcome. Jericho’s walls fell; Jerusalem’s walls are consecrated."
+            },
+            {
+              "ref": "Ps 48:12–14",
+              "note": "\"Walk about Zion, go around her, count her towers\" — the psalm this procession enacts."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -217,13 +225,14 @@
             "paragraph": "Men are appointed over \"the storerooms for the contributions, firstfruits and tithes\" (maʿaśēr). The joy of v.43 immediately produces practical organisation. Celebration without structure is ephemeral; the community institutionalises its gratitude."
           }
         ],
-        "ctx": "The brief administrative note (vv.44–47) transitions from celebration to sustainability. Joy funds the institution; the institution sustains the worship. Nehemiah’s genius is always this: spiritual experience translated into organisational structure.",
-        "cross": [
-          {
-            "ref": "Neh 10:37–39",
-            "note": "The covenant commitments now institutionalised."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Neh 10:37–39",
+              "note": "The covenant commitments now institutionalised."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -272,6 +281,9 @@
               "note": "Kidner: \"The administration follows the celebration. This is not anticlimax but wisdom. Ecstasy without infrastructure fades; infrastructure without ecstasy calcifies. Nehemiah provides both.\""
             }
           ]
+        },
+        "hist": {
+          "context": "The brief administrative note (vv.44–47) transitions from celebration to sustainability. Joy funds the institution; the institution sustains the worship. Nehemiah’s genius is always this: spiritual experience translated into organisational structure."
         }
       }
     }

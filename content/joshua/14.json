@@ -25,17 +25,18 @@
             "paragraph": "A key Hebrew term in this section on Eleazar and Joshua distribute by lot carries theological weight that illuminates the passage's role in Joshua's larger narrative of conquest and covenant fulfilment."
           }
         ],
-        "ctx": "This section addresses Eleazar and Joshua distribute by lot. The narrative advances the book's central argument: God is faithful to his promise of land, and Israel's response — obedience or disobedience — determines how they experience that faithfulness within their generation.",
-        "cross": [
-          {
-            "ref": "Deut 31:6",
-            "note": "Moses' charge to Israel — \"be strong and courageous\" — provides the theological foundation for every episode in Joshua. The conquest is the practical outworking of Deuteronomy's promises and warnings."
-          },
-          {
-            "ref": "Heb 4:8-10",
-            "note": "The NT reads Joshua's conquest as typological — a partial fulfilment that points to the greater rest available in Christ."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 31:6",
+              "note": "Moses' charge to Israel — \"be strong and courageous\" — provides the theological foundation for every episode in Joshua. The conquest is the practical outworking of Deuteronomy's promises and warnings."
+            },
+            {
+              "ref": "Heb 4:8-10",
+              "note": "The NT reads Joshua's conquest as typological — a partial fulfilment that points to the greater rest available in Christ."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -108,6 +109,9 @@
               "note": "Howard: The keyword repetitions and structural echoes link this passage to the conquest's overarching theological argument: God keeps his promises, and Israel's response determines whether they experience blessing or judgment within that framework."
             }
           ]
+        },
+        "hist": {
+          "context": "This section addresses Eleazar and Joshua distribute by lot. The narrative advances the book's central argument: God is faithful to his promise of land, and Israel's response — obedience or disobedience — determines how they experience that faithfulness within their generation."
         }
       }
     },
@@ -125,17 +129,18 @@
             "paragraph": "A key Hebrew term in this section on Caleb's faith speech; Hebron awarded carries theological weight that illuminates the passage's role in Joshua's larger narrative of conquest and covenant fulfilment."
           }
         ],
-        "ctx": "This section addresses Caleb's faith speech; Hebron awarded. The narrative advances the book's central argument: God is faithful to his promise of land, and Israel's response — obedience or disobedience — determines how they experience that faithfulness within their generation.",
-        "cross": [
-          {
-            "ref": "Deut 31:6",
-            "note": "Moses' charge to Israel — \"be strong and courageous\" — provides the theological foundation for every episode in Joshua. The conquest is the practical outworking of Deuteronomy's promises and warnings."
-          },
-          {
-            "ref": "Heb 4:8-10",
-            "note": "The NT reads Joshua's conquest as typological — a partial fulfilment that points to the greater rest available in Christ."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 31:6",
+              "note": "Moses' charge to Israel — \"be strong and courageous\" — provides the theological foundation for every episode in Joshua. The conquest is the practical outworking of Deuteronomy's promises and warnings."
+            },
+            {
+              "ref": "Heb 4:8-10",
+              "note": "The NT reads Joshua's conquest as typological — a partial fulfilment that points to the greater rest available in Christ."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -208,6 +213,9 @@
               "note": "Howard: The keyword repetitions and structural echoes link this passage to the conquest's overarching theological argument: God keeps his promises, and Israel's response determines whether they experience blessing or judgment within that framework."
             }
           ]
+        },
+        "hist": {
+          "context": "This section addresses Caleb's faith speech; Hebron awarded. The narrative advances the book's central argument: God is faithful to his promise of land, and Israel's response — obedience or disobedience — determines how they experience that faithfulness within their generation."
         }
       }
     }

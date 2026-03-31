@@ -31,21 +31,22 @@
             "paragraph": "The superscription massaʼ ('oracle, burden') links Malachi to the two oracle collections of Deutero-Zechariah (Zec 9:1; 12:1). The identical superscription across three prophetic units has led some scholars to suggest that Malachi was originally an anonymous appendix to Zechariah, later separated as an independent book. Whether or not this is the case, the massaʼ heading signals a weighty pronouncement of divine judgment."
           }
         ],
-        "ctx": "Malachi opens with a declaration of love that is simultaneously tender and combative. The dialogical form — God speaks, the people challenge, God responds — is Malachi's distinctive literary technique, appearing six times in the book (1:2; 1:6-7; 2:14, 17; 3:7-8, 13). The first disputation addresses the most fundamental question: does God love His people? The community's cynicism suggests they believe the answer is no. God's response invokes the patriarchal election of Jacob over Esau (Gen 25:23), pointing to Edom's recent devastation as evidence that divine favor has preserved Israel while judgment has consumed their brother nation. The reference to Edom's desolation likely reflects the Nabataean displacement of Edomites from their homeland in the fifth-fourth centuries BC. The passage culminates in the recognition formula: 'Great is the LORD — even beyond the borders of Israel!' (1:5), asserting that God's sovereignty extends far beyond the covenant community's perception.",
-        "cross": [
-          {
-            "ref": "Romans 9:13",
-            "note": "Paul quotes Malachi 1:2-3 in his discussion of divine election: 'Jacob I loved, but Esau I hated,' applying the principle of sovereign choice to the question of Israel's destiny in Christ."
-          },
-          {
-            "ref": "Deuteronomy 7:7-8",
-            "note": "Moses grounds God's love for Israel not in Israel's greatness but in God's own covenant loyalty: 'The LORD set his affection on you and chose you — not because you were more numerous' — the same unconditional election Malachi invokes."
-          },
-          {
-            "ref": "Obadiah 1:10-14",
-            "note": "Obadiah's oracle against Edom for violence against 'your brother Jacob' provides historical background for Malachi's assertion that Edom has been judged while Israel has been preserved."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Romans 9:13",
+              "note": "Paul quotes Malachi 1:2-3 in his discussion of divine election: 'Jacob I loved, but Esau I hated,' applying the principle of sovereign choice to the question of Israel's destiny in Christ."
+            },
+            {
+              "ref": "Deuteronomy 7:7-8",
+              "note": "Moses grounds God's love for Israel not in Israel's greatness but in God's own covenant loyalty: 'The LORD set his affection on you and chose you — not because you were more numerous' — the same unconditional election Malachi invokes."
+            },
+            {
+              "ref": "Obadiah 1:10-14",
+              "note": "Obadiah's oracle against Edom for violence against 'your brother Jacob' provides historical background for Malachi's assertion that Edom has been judged while Israel has been preserved."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Hill notes that the Edom oracle serves a dual function: it provides evidence of God's electing love (Israel preserved, Edom destroyed) and establishes the principle that God's sovereignty extends 'beyond the borders of Israel' (1:5) — a universalist note that anticipates the remarkable declaration of 1:11 that God's name will be great 'among the nations.'"
             }
           ]
+        },
+        "hist": {
+          "context": "Malachi opens with a declaration of love that is simultaneously tender and combative. The dialogical form — God speaks, the people challenge, God responds — is Malachi's distinctive literary technique, appearing six times in the book (1:2; 1:6-7; 2:14, 17; 3:7-8, 13). The first disputation addresses the most fundamental question: does God love His people? The community's cynicism suggests they believe the answer is no. God's response invokes the patriarchal election of Jacob over Esau (Gen 25:23), pointing to Edom's recent devastation as evidence that divine favor has preserved Israel while judgment has consumed their brother nation. The reference to Edom's desolation likely reflects the Nabataean displacement of Edomites from their homeland in the fifth-fourth centuries BC. The passage culminates in the recognition formula: 'Great is the LORD — even beyond the borders of Israel!' (1:5), asserting that God's sovereignty extends far beyond the covenant community's perception."
         }
       }
     },
@@ -133,21 +137,22 @@
             "paragraph": "The declaration 'My name will be great among the nations' (1:11) is one of the most remarkable universalist statements in the Hebrew Bible. While the priests profane God's name through contemptible worship, God declares that His name will be honored by the very nations Israel considers pagan. The 'pure offerings' and 'incense' brought by the nations contrast sharply with the defiled sacrifices of Israel's own priests, creating a devastating irony: the outsiders worship more faithfully than the insiders."
           }
         ],
-        "ctx": "The second disputation oracle (1:6-14) is the longest in the book and attacks the priestly corruption that lies at the heart of the community's spiritual crisis. God adopts the roles of father and master (1:6), both of which demand honor and respect that the priests have failed to give. The indictment is specific: the priests offer blind, lame, and diseased animals on the altar — sacrifices they would never dare present to the Persian governor (1:8). The sarcasm is withering: God would prefer someone to 'shut the temple doors' entirely rather than continue these insulting rituals (1:10). The universalist declaration of 1:11 — that God's name will be great 'from where the sun rises to where it sets' and that 'pure offerings' will be brought 'in every place' — stands in stark contrast to the priests' local corruption. This verse has been interpreted as either a present reality (gentile worship superior to Israel's), a future eschatological promise, or both.",
-        "cross": [
-          {
-            "ref": "Leviticus 22:17-25",
-            "note": "The Levitical regulations requiring unblemished sacrificial animals provide the legal standard the priests are violating in Malachi 1:8, 13 — a standard they know but deliberately ignore."
-          },
-          {
-            "ref": "1 Samuel 2:12-17",
-            "note": "Eli's sons, who treated the LORD's offering 'with contempt,' are the priestly archetype for the corruption Malachi attacks — and their judgment (1 Sam 4) foreshadows the consequences Malachi announces."
-          },
-          {
-            "ref": "John 4:21-24",
-            "note": "Jesus' declaration that 'true worshipers will worship the Father in the Spirit and in truth' resonates with Malachi 1:11's vision of worship transcending a single geographic location."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Leviticus 22:17-25",
+              "note": "The Levitical regulations requiring unblemished sacrificial animals provide the legal standard the priests are violating in Malachi 1:8, 13 — a standard they know but deliberately ignore."
+            },
+            {
+              "ref": "1 Samuel 2:12-17",
+              "note": "Eli's sons, who treated the LORD's offering 'with contempt,' are the priestly archetype for the corruption Malachi attacks — and their judgment (1 Sam 4) foreshadows the consequences Malachi announces."
+            },
+            {
+              "ref": "John 4:21-24",
+              "note": "Jesus' declaration that 'true worshipers will worship the Father in the Spirit and in truth' resonates with Malachi 1:11's vision of worship transcending a single geographic location."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -220,6 +225,9 @@
               "note": "Hill identifies 1:10-14 as the 'divine rejection oracle' in which God explicitly repudiates the current sacrificial system. The preference for 'shut doors' over 'useless fires' reverses the entire purpose of the temple cult. The universalist declaration of 1:11 functions as what Hill calls a 'contrast motivation': God will be honored somewhere, by someone — the only question is whether Israel's priests will participate or be replaced."
             }
           ]
+        },
+        "hist": {
+          "context": "The second disputation oracle (1:6-14) is the longest in the book and attacks the priestly corruption that lies at the heart of the community's spiritual crisis. God adopts the roles of father and master (1:6), both of which demand honor and respect that the priests have failed to give. The indictment is specific: the priests offer blind, lame, and diseased animals on the altar — sacrifices they would never dare present to the Persian governor (1:8). The sarcasm is withering: God would prefer someone to 'shut the temple doors' entirely rather than continue these insulting rituals (1:10). The universalist declaration of 1:11 — that God's name will be great 'from where the sun rises to where it sets' and that 'pure offerings' will be brought 'in every place' — stands in stark contrast to the priests' local corruption. This verse has been interpreted as either a present reality (gentile worship superior to Israel's), a future eschatological promise, or both."
         }
       }
     }

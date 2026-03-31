@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 12,
       "panels": {
-        "ctx": "Abijah confronts Jeroboam’s 800,000 troops with his own 400,000. Before battle he delivers a speech from Mount Zemaraim: “Don’t you know that the LORD gave Israel’s kingship to David’s descendants forever? Jeroboam set up golden calves as gods. You drove out the LORD’s priests and made priests of your own. We have not forsaken the LORD.” The speech is found only in Chronicles — the Chronicler’s most extended theological argument for Judah’s legitimacy.",
-        "cross": [
-          {
-            "ref": "1 Kgs 15:1–8",
-            "note": "Kings dismisses Abijah in eight verses, noting his unfaithfulness. Chronicles gives him a dramatic speech defending the Davidic covenant, Aaronic priesthood, and legitimate worship — a radically different portrait."
-          },
-          {
-            "ref": "Num 10:1–10",
-            "note": "Abijah's mention of priestly trumpets in battle alludes to Numbers' instruction that trumpet blasts in war bring God's remembrance and deliverance."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 15:1–8",
+              "note": "Kings dismisses Abijah in eight verses, noting his unfaithfulness. Chronicles gives him a dramatic speech defending the Davidic covenant, Aaronic priesthood, and legitimate worship — a radically different portrait."
+            },
+            {
+              "ref": "Num 10:1–10",
+              "note": "Abijah's mention of priestly trumpets in battle alludes to Numbers' instruction that trumpet blasts in war bring God's remembrance and deliverance."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "The Chronicler’s vocabulary in this section reflects his characteristic theological terminology."
             }
           ]
+        },
+        "hist": {
+          "context": "Abijah confronts Jeroboam’s 800,000 troops with his own 400,000. Before battle he delivers a speech from Mount Zemaraim: “Don’t you know that the LORD gave Israel’s kingship to David’s descendants forever? Jeroboam set up golden calves as gods. You drove out the LORD’s priests and made priests of your own. We have not forsaken the LORD.” The speech is found only in Chronicles — the Chronicler’s most extended theological argument for Judah’s legitimacy."
         }
       }
     },
@@ -54,17 +58,18 @@
       "verse_start": 13,
       "verse_end": 22,
       "panels": {
-        "ctx": "Jeroboam ambushes from behind while Abijah speaks. Judah cries out to God; the priests blow trumpets. God routs Israel: 500,000 casualties. “The Israelites were subdued... because they relied on the LORD.” The battle-by-worship pattern: legitimate worship + reliance on God = military victory. Abijah grows strong. The Chronicler gives him a positive evaluation that Kings (which calls him Abijam and condemns him) does not.",
-        "cross": [
-          {
-            "ref": "1 Kgs 15:7",
-            "note": "Kings merely notes 'there was war between Abijah and Jeroboam.' Chronicles transforms this into a full battle narrative where God strikes down 500,000 Israelite troops — a number emphasising divine judgment."
-          },
-          {
-            "ref": "2 Chr 14:11",
-            "note": "The prayer-before-battle pattern established here recurs in Asa's prayer (14:11) and Jehoshaphat's prayer (20:6–12) — the Chronicler's paradigm for faithful kingship."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 15:7",
+              "note": "Kings merely notes 'there was war between Abijah and Jeroboam.' Chronicles transforms this into a full battle narrative where God strikes down 500,000 Israelite troops — a number emphasising divine judgment."
+            },
+            {
+              "ref": "2 Chr 14:11",
+              "note": "The prayer-before-battle pattern established here recurs in Asa's prayer (14:11) and Jehoshaphat's prayer (20:6–12) — the Chronicler's paradigm for faithful kingship."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -82,6 +87,9 @@
               "note": "Key terms in this section connect to the Chronicler’s broader theological framework."
             }
           ]
+        },
+        "hist": {
+          "context": "Jeroboam ambushes from behind while Abijah speaks. Judah cries out to God; the priests blow trumpets. God routs Israel: 500,000 casualties. “The Israelites were subdued... because they relied on the LORD.” The battle-by-worship pattern: legitimate worship + reliance on God = military victory. Abijah grows strong. The Chronicler gives him a positive evaluation that Kings (which calls him Abijam and condemns him) does not."
         }
       }
     }

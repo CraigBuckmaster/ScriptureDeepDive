@@ -17,13 +17,14 @@
       "verse_start": 1,
       "verse_end": 21,
       "panels": {
-        "ctx": "Solomon declares: “The LORD has said that he would dwell in a dark cloud.” He addresses the assembly, recounting God’s choice of Jerusalem and David. Then he mounts a bronze platform (a Chronicler’s addition — absent from Kings), kneels before the assembly, and spreads his hands toward heaven. His prayer begins with covenant theology: “LORD, God of Israel, there is no God like you in heaven or on earth — you who keep your covenant of love.”",
-        "cross": [
-          {
-            "ref": "1 Kgs 8:12–30",
-            "note": "The parallel prayer. The Chronicler adds the bronze platform detail."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 8:12–30",
+              "note": "The parallel prayer. The Chronicler adds the bronze platform detail."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -41,6 +42,9 @@
               "note": "kiyyōr nĕhōshet (literally “bronze laver/basin”) — an unusual term for a platform. Some scholars suggest a basin-shaped stand or pulpit used for public prayer."
             }
           ]
+        },
+        "hist": {
+          "context": "Solomon declares: “The LORD has said that he would dwell in a dark cloud.” He addresses the assembly, recounting God’s choice of Jerusalem and David. Then he mounts a bronze platform (a Chronicler’s addition — absent from Kings), kneels before the assembly, and spreads his hands toward heaven. His prayer begins with covenant theology: “LORD, God of Israel, there is no God like you in heaven or on earth — you who keep your covenant of love.”"
         }
       }
     },
@@ -50,17 +54,18 @@
       "verse_start": 22,
       "verse_end": 42,
       "panels": {
-        "ctx": "Solomon presents seven petitions covering every crisis: oath-disputes, military defeat, drought, famine/plague, individual prayer, the foreigner who comes to worship, and the army going to battle. Each follows the pattern: when this happens, and they pray toward this temple, then hear from heaven and act. The seventh petition addresses exile: “If they sin against you... and you give them over to an enemy who takes them captive... if they turn back to you with all their heart and soul in the land of their captivity and pray toward the land you gave their ancestors... then from heaven hear their prayer.” For the post-exilic Chronicler, this is the operative petition — they are the people who prayed from captivity and were heard.",
-        "cross": [
-          {
-            "ref": "1 Kgs 8:31‐53",
-            "note": "The parallel prayer with minor variations."
-          },
-          {
-            "ref": "Dan 6:10",
-            "note": "Daniel prays toward Jerusalem three times daily — embodying Solomon’s instruction to pray “toward this temple.”"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 8:31‐53",
+              "note": "The parallel prayer with minor variations."
+            },
+            {
+              "ref": "Dan 6:10",
+              "note": "Daniel prays toward Jerusalem three times daily — embodying Solomon’s instruction to pray “toward this temple.”"
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -78,6 +83,9 @@
               "note": "The closing quotation of Ps 132:8–10 replaces Kings’ Exodus reference. The Chronicler reframes the dedication from historical commemoration to liturgical act."
             }
           ]
+        },
+        "hist": {
+          "context": "Solomon presents seven petitions covering every crisis: oath-disputes, military defeat, drought, famine/plague, individual prayer, the foreigner who comes to worship, and the army going to battle. Each follows the pattern: when this happens, and they pray toward this temple, then hear from heaven and act. The seventh petition addresses exile: “If they sin against you... and you give them over to an enemy who takes them captive... if they turn back to you with all their heart and soul in the land of their captivity and pray toward the land you gave their ancestors... then from heaven hear their prayer.” For the post-exilic Chronicler, this is the operative petition — they are the people who prayed from captivity and were heard."
         }
       }
     }

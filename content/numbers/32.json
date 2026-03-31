@@ -25,17 +25,18 @@
             "paragraph": "Moses's initial rebuke invokes the Kadesh crisis: if Reuben and Gad settle east of the Jordan before the conquest, the rest of Israel will lose heart — just as the spy report discouraged the previous generation. The echo of Num 13-14 is intentional and pointed."
           }
         ],
-        "ctx": "Reuben, Gad, and half-Manasseh have large livestock herds and find the east-Jordan territories ideal. They request to settle there rather than crossing into Canaan. Moses's reaction invokes the spy crisis: \"Should your fellow Israelites go to war while you sit here?\" The tribes propose a compromise: their families settle in east-Jordan cities, but all fighting men cross with Israel and fight until every tribe has its inheritance. Moses accepts with a conditional oath: fulfil the military obligation, receive the east-Jordan land; fail, receive inheritance in Canaan like everyone else.",
-        "cross": [
-          {
-            "ref": "Josh 22:1-4",
-            "note": "\"Then Joshua summoned the Reubenites, the Gadites and the half-tribe of Manasseh and said to them, 'You have done all that Moses the servant of the Lord commanded, and you have obeyed me in everything I commanded.'\" The Num 32 commitment is honoured completely in Joshua."
-          },
-          {
-            "ref": "Heb 6:12",
-            "note": "\"We do not want you to become lazy, but to imitate those who through faith and patience inherit what has been promised.\" The east-Jordan tribes' commitment (fight first, then inherit) models the principle that covenant inheritance requires active participation in the community's mission."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 22:1-4",
+              "note": "\"Then Joshua summoned the Reubenites, the Gadites and the half-tribe of Manasseh and said to them, 'You have done all that Moses the servant of the Lord commanded, and you have obeyed me in everything I commanded.'\" The Num 32 commitment is honoured completely in Joshua."
+            },
+            {
+              "ref": "Heb 6:12",
+              "note": "\"We do not want you to become lazy, but to imitate those who through faith and patience inherit what has been promised.\" The east-Jordan tribes' commitment (fight first, then inherit) models the principle that covenant inheritance requires active participation in the community's mission."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Ashley: The narrative context of Transjordan in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Reuben, Gad, and half-Manasseh have large livestock herds and find the east-Jordan territories ideal. They request to settle there rather than crossing into Canaan. Moses's reaction invokes the spy crisis: \"Should your fellow Israelites go to war while you sit here?\" The tribes propose a compromise: their families settle in east-Jordan cities, but all fighting men cross with Israel and fight until every tribe has its inheritance. Moses accepts with a conditional oath: fulfil the military obligation, receive the east-Jordan land; fail, receive inheritance in Canaan like everyone else."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "The conditional clause of the oath — if the tribes fail to cross with the armed force, the east-Jordan settlement is forfeit and they receive their inheritance in Canaan. The condition is public, specific, and enforceable."
           }
         ],
-        "ctx": "Moses formalises the agreement before Eleazar, Joshua, and the tribal leaders — ensuring it survives his death. The conditional terms are clear: cross armed with Israel, fight until the land is subdued, then return to the east-Jordan inheritance. Failure means Canaan inheritance with everyone else. The chapter closes with the cities being built and additional Manassite territories conquered. The Transjordan settlement begins; the covenant agreement is in force.",
-        "cross": [
-          {
-            "ref": "Josh 1:12-15",
-            "note": "\"But to the Reubenites, the Gadites and the half-tribe of Manasseh, Joshua said, 'Remember the command that Moses the servant of the Lord gave you...'\" Joshua enforces the Num 32 agreement at the Jordan crossing."
-          },
-          {
-            "ref": "Josh 22:2-3",
-            "note": "\"You have kept all that Moses the servant of the Lord commanded you. You have obeyed me in everything I commanded. For a long time now you have not deserted your fellow Israelites but have carried out the mission the Lord your God gave you.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 1:12-15",
+              "note": "\"But to the Reubenites, the Gadites and the half-tribe of Manasseh, Joshua said, 'Remember the command that Moses the servant of the Lord gave you...'\" Joshua enforces the Num 32 agreement at the Jordan crossing."
+            },
+            {
+              "ref": "Josh 22:2-3",
+              "note": "\"You have kept all that Moses the servant of the Lord commanded you. You have obeyed me in everything I commanded. For a long time now you have not deserted your fellow Israelites but have carried out the mission the Lord your God gave you.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -196,6 +201,9 @@
               "note": "Ashley: The narrative context of Transjordan in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Moses formalises the agreement before Eleazar, Joshua, and the tribal leaders — ensuring it survives his death. The conditional terms are clear: cross armed with Israel, fight until the land is subdued, then return to the east-Jordan inheritance. Failure means Canaan inheritance with everyone else. The chapter closes with the cities being built and additional Manassite territories conquered. The Transjordan settlement begins; the covenant agreement is in force."
         }
       }
     }

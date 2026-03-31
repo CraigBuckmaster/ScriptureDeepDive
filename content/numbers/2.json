@@ -31,17 +31,18 @@
             "paragraph": "Each tribe camps \"facing\" the tent of meeting — every Israelite's tent is oriented toward the sanctuary. The spatial arrangement ensures that God's dwelling is the centre of Israel's literal and symbolic world."
           }
         ],
-        "ctx": "Numbers 2 describes the camp arrangement: the tabernacle at the centre, the Levites forming the inner ring, and the twelve tribes in four groups of three forming the outer ring. East side: Judah (lead), Issachar, Zebulun. South: Reuben (lead), Simeon, Gad. West: Ephraim (lead), Manasseh, Benjamin. North: Dan (lead), Asher, Naphtali. Judah leads the march — the tribe of royalty, from which the messianic king will come. The arrangement is a theology in spatial form: God at the centre, surrounded by his covenant people in ordered formation.",
-        "cross": [
-          {
-            "ref": "Rev 21:12–14",
-            "note": "The New Jerusalem has twelve gates named after the twelve tribes of Israel — the eschatological camp arrangement. The tribes' permanent orientation toward the divine presence (Num 2) prefigures the eternal community's orientation toward the throne."
-          },
-          {
-            "ref": "Ezek 1:10",
-            "note": "The four faces of the living creatures (lion, ox, man, eagle) were associated in rabbinic tradition with the four lead tribes of Numbers 2 (Judah the lion, Reuben the man, Ephraim the ox, Dan the eagle). The creatures of the divine throne-chariot mirror the camp arrangement of the covenant army."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rev 21:12–14",
+              "note": "The New Jerusalem has twelve gates named after the twelve tribes of Israel — the eschatological camp arrangement. The tribes' permanent orientation toward the divine presence (Num 2) prefigures the eternal community's orientation toward the throne."
+            },
+            {
+              "ref": "Ezek 1:10",
+              "note": "The four faces of the living creatures (lion, ox, man, eagle) were associated in rabbinic tradition with the four lead tribes of Numbers 2 (Judah the lion, Reuben the man, Ephraim the ox, Dan the eagle). The creatures of the divine throne-chariot mirror the camp arrangement of the covenant army."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Ashley: The narrative context of camp arrangement in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Numbers 2 describes the camp arrangement: the tabernacle at the centre, the Levites forming the inner ring, and the twelve tribes in four groups of three forming the outer ring. East side: Judah (lead), Issachar, Zebulun. South: Reuben (lead), Simeon, Gad. West: Ephraim (lead), Manasseh, Benjamin. North: Dan (lead), Asher, Naphtali. Judah leads the march — the tribe of royalty, from which the messianic king will come. The arrangement is a theology in spatial form: God at the centre, surrounded by his covenant people in ordered formation."
         }
       }
     },
@@ -123,17 +127,18 @@
             "paragraph": "The march order mirrors the camp order — Judah sets out first, then Reuben, then the tabernacle carried by the Levites in the middle, then Ephraim, then Dan as the rear guard. The theology of the camp is the theology of the march: God at the centre, surrounded and protected by his covenant people."
           }
         ],
-        "ctx": "The west and north divisions complete the fourfold camp. Ephraim leads the western division (108,100), representing the Joseph tribes. Dan leads the north and acts as the rear guard (157,600 — the second largest). The total camp count of 603,550 matches the census of ch.1. The chapter closes by noting that the Levites, not counted here, travel with the tabernacle in the centre of the march — they are at once the most protected (surrounded by all twelve tribes) and the most exposed (closest to the dangerous holiness of the divine presence).",
-        "cross": [
-          {
-            "ref": "Num 10:14",
-            "note": "\"The divisions of the camp of Judah went first.\" The camp arrangement of Numbers 2 is enacted in the march of Numbers 10 — the theology of spatial order becomes the theology of historical movement."
-          },
-          {
-            "ref": "1 Cor 14:40",
-            "note": "\"Everything should be done in a fitting and orderly way.\" Paul's instruction to the Corinthian church echoes the camp-order theology of Numbers: the community gathered around God must be ordered, not chaotic."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 10:14",
+              "note": "\"The divisions of the camp of Judah went first.\" The camp arrangement of Numbers 2 is enacted in the march of Numbers 10 — the theology of spatial order becomes the theology of historical movement."
+            },
+            {
+              "ref": "1 Cor 14:40",
+              "note": "\"Everything should be done in a fitting and orderly way.\" Paul's instruction to the Corinthian church echoes the camp-order theology of Numbers: the community gathered around God must be ordered, not chaotic."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -206,6 +211,9 @@
               "note": "Ashley: The narrative context of camp arrangement in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "The west and north divisions complete the fourfold camp. Ephraim leads the western division (108,100), representing the Joseph tribes. Dan leads the north and acts as the rear guard (157,600 — the second largest). The total camp count of 603,550 matches the census of ch.1. The chapter closes by noting that the Levites, not counted here, travel with the tabernacle in the centre of the march — they are at once the most protected (surrounded by all twelve tribes) and the most exposed (closest to the dangerous holiness of the divine presence)."
         }
       }
     }

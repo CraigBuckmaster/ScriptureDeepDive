@@ -25,17 +25,18 @@
             "paragraph": "\"Look up at the heavens (shəḥāqîm) and see; gaze at the clouds so high above you\" (v.5). Elihu’s argument: God is so transcendent that human sin cannot harm him and human righteousness cannot benefit him. The skies are above human reach; so is God. Your moral life affects your neighbours, not your Creator."
           }
         ],
-        "ctx": "Elihu argues that God is unaffected by human behaviour. \"If you sin, how does that affect him? If your sins are many, what does that do to him?\" (v.6). This is a philosophical argument about divine self-sufficiency. It is partly true (God is not diminished by sin) but misses the relational dimension: the God of the Bible cares about human behaviour precisely because he is in relationship with humanity.",
-        "cross": [
-          {
-            "ref": "Ps 50:12–13",
-            "note": "\"If I were hungry I would not tell you, for the world is mine\" — God’s self-sufficiency stated by God himself."
-          },
-          {
-            "ref": "Acts 17:25",
-            "note": "\"He is not served by human hands, as if he needed anything\" — Paul’s Athens speech makes the same point."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 50:12–13",
+              "note": "\"If I were hungry I would not tell you, for the world is mine\" — God’s self-sufficiency stated by God himself."
+            },
+            {
+              "ref": "Acts 17:25",
+              "note": "\"He is not served by human hands, as if he needed anything\" — Paul’s Athens speech makes the same point."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -84,6 +85,9 @@
               "note": "Habel: Elihu removes the relational dimension from theology. If God is unaffected by human action, Job’s complaint is meaningless — but so is Job’s righteousness. The argument undermines the entire premise of the book."
             }
           ]
+        },
+        "hist": {
+          "context": "Elihu argues that God is unaffected by human behaviour. \"If you sin, how does that affect him? If your sins are many, what does that do to him?\" (v.6). This is a philosophical argument about divine self-sufficiency. It is partly true (God is not diminished by sin) but misses the relational dimension: the God of the Bible cares about human behaviour precisely because he is in relationship with humanity."
         }
       }
     },
@@ -101,17 +105,18 @@
             "paragraph": "\"No one says, ‘Where is God my Maker (ʿōseh), who gives songs in the night?’\" (v.10). Elihu’s best line: people cry out under oppression (v.9) but don’t ask the right question. They want relief but not the Giver of relief. They want deliverance but not relationship with the Deliverer."
           }
         ],
-        "ctx": "Elihu observes that oppressed people cry out but God doesn’t answer (v.12–13). Why? Because their cries are empty — motivated by pain, not by genuine seeking. They want rescue from suffering but not encounter with God. Elihu’s insight is sharp: the cry matters less than the orientation of the crier. But applied to Job, it fails: Job has been seeking God since chapter 23.",
-        "cross": [
-          {
-            "ref": "Ps 42:8",
-            "note": "\"At night his song is with me\" — the God who gives songs in the night."
-          },
-          {
-            "ref": "Acts 16:25",
-            "note": "Paul and Silas singing hymns in prison at midnight — the lived version of Elihu’s theology."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 42:8",
+              "note": "\"At night his song is with me\" — the God who gives songs in the night."
+            },
+            {
+              "ref": "Acts 16:25",
+              "note": "Paul and Silas singing hymns in prison at midnight — the lived version of Elihu’s theology."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -176,6 +181,9 @@
               "note": "Habel: Elihu diagnoses Job’s prayers as incorrectly oriented. The right question is not \"why do I suffer?\" but \"where is God my Maker?\" This reframing has merit but is delivered without empathy."
             }
           ]
+        },
+        "hist": {
+          "context": "Elihu observes that oppressed people cry out but God doesn’t answer (v.12–13). Why? Because their cries are empty — motivated by pain, not by genuine seeking. They want rescue from suffering but not encounter with God. Elihu’s insight is sharp: the cry matters less than the orientation of the crier. But applied to Job, it fails: Job has been seeking God since chapter 23."
         }
       }
     }

@@ -54,21 +54,22 @@
             "current": false
           }
         ],
-        "ctx": "The 'God-fearers' (theosebeis, phoboumenoi ton theon) were Gentiles who had adopted Jewish monotheism and ethics without completing formal conversion. They attended synagogues, observed some Jewish practices, and gave to Jewish causes. They were a significant population across the Diaspora world and became a primary harvest field for Paul's Gentile mission. Peter's sheet vision (vv.11–16) is commonly read as abolishing food laws — but its primary application is stated explicitly in v.28: 'God has shown me that I should not call anyone impure or unclean.' The food imagery is the vehicle; the human application is the point.",
-        "cross": [
-          {
-            "ref": "Mark 7:18–19",
-            "note": "\"He declared all foods clean\" — Jesus's teaching that Luke applies practically in Acts 10. The abolition of food distinctions was theologically prepared for; Acts 10 is its social-missional application."
-          },
-          {
-            "ref": "Isaiah 56:6–7",
-            "note": "\"The foreigners who bind themselves to the Lord... these I will bring to my holy mountain.\" The OT promise of Gentile inclusion that Cornelius's reception fulfils."
-          },
-          {
-            "ref": "Acts 1:8",
-            "note": "\"To the ends of the earth\" — Cornelius represents the first formal fulfilment of the Gentile stage of the commission."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mark 7:18–19",
+              "note": "\"He declared all foods clean\" — Jesus's teaching that Luke applies practically in Acts 10. The abolition of food distinctions was theologically prepared for; Acts 10 is its social-missional application."
+            },
+            {
+              "ref": "Isaiah 56:6–7",
+              "note": "\"The foreigners who bind themselves to the Lord... these I will bring to my holy mountain.\" The OT promise of Gentile inclusion that Cornelius's reception fulfils."
+            },
+            {
+              "ref": "Acts 1:8",
+              "note": "\"To the ends of the earth\" — Cornelius represents the first formal fulfilment of the Gentile stage of the commission."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -133,6 +134,9 @@
               "note": "Keener notes that Cornelius's prayers and alms \"have come up as a memorial offering before God\" echoes the incense offering rising before the LORD in the Temple. Cornelius's non-Temple piety has been received by God as an offering — a remarkable statement about the reach of divine grace before formal Gospel proclamation."
             }
           ]
+        },
+        "hist": {
+          "context": "The 'God-fearers' (theosebeis, phoboumenoi ton theon) were Gentiles who had adopted Jewish monotheism and ethics without completing formal conversion. They attended synagogues, observed some Jewish practices, and gave to Jewish causes. They were a significant population across the Diaspora world and became a primary harvest field for Paul's Gentile mission. Peter's sheet vision (vv.11–16) is commonly read as abolishing food laws — but its primary application is stated explicitly in v.28: 'God has shown me that I should not call anyone impure or unclean.' The food imagery is the vehicle; the human application is the point."
         }
       }
     },
@@ -179,21 +183,22 @@
             "current": false
           }
         ],
-        "ctx": "Peter's address to Cornelius's household (vv.34–43) is the most compact and complete summary of the Gospel kerygma in Acts — moving from John's baptism through Jesus's ministry, death, resurrection, and appearances to the commission to witness, ending with the offer of forgiveness. It is the template for apostolic preaching. The Spirit falls while Peter is still speaking — before baptism — demonstrating that the order is God's to determine. Peter's conclusion (v.47: 'Can anyone keep these people from being baptized? They have received the Holy Spirit just as we have') shows that baptism follows the Spirit's work as its public seal, not its prerequisite.",
-        "cross": [
-          {
-            "ref": "Acts 2:38",
-            "note": "The Pentecost pattern: repent → be baptized → receive the Spirit. The Cornelius episode inverts the Spirit-baptism order, demonstrating that the sequence is flexible while the substance (faith, repentance, Spirit, baptism) remains constant."
-          },
-          {
-            "ref": "Joel 2:28",
-            "note": "Quoted at Pentecost: \"I will pour out my Spirit on all people\" — the \"all\" is now visibly fulfilled as the Spirit falls on Gentiles."
-          },
-          {
-            "ref": "Acts 15:7–11",
-            "note": "Peter's later testimony at the Jerusalem Council recalls the Cornelius episode as decisive evidence: 'God, who knows the heart, showed that he accepted them by giving the Holy Spirit to them, just as he did to us.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 2:38",
+              "note": "The Pentecost pattern: repent → be baptized → receive the Spirit. The Cornelius episode inverts the Spirit-baptism order, demonstrating that the sequence is flexible while the substance (faith, repentance, Spirit, baptism) remains constant."
+            },
+            {
+              "ref": "Joel 2:28",
+              "note": "Quoted at Pentecost: \"I will pour out my Spirit on all people\" — the \"all\" is now visibly fulfilled as the Spirit falls on Gentiles."
+            },
+            {
+              "ref": "Acts 15:7–11",
+              "note": "Peter's later testimony at the Jerusalem Council recalls the Cornelius episode as decisive evidence: 'God, who knows the heart, showed that he accepted them by giving the Holy Spirit to them, just as he did to us.'"
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -258,6 +263,9 @@
               "note": "Keener notes that tongues at Cornelius's house function as the sign that the Gentile believers have received the same Spirit as the Jewish believers at Pentecost. Without a visible, audible sign, Peter and the circumcised believers would have had no external evidence. The tongues serve a specific ecclesiological function."
             }
           ]
+        },
+        "hist": {
+          "context": "Peter's address to Cornelius's household (vv.34–43) is the most compact and complete summary of the Gospel kerygma in Acts — moving from John's baptism through Jesus's ministry, death, resurrection, and appearances to the commission to witness, ending with the offer of forgiveness. It is the template for apostolic preaching. The Spirit falls while Peter is still speaking — before baptism — demonstrating that the order is God's to determine. Peter's conclusion (v.47: 'Can anyone keep these people from being baptized? They have received the Holy Spirit just as we have') shows that baptism follows the Spirit's work as its public seal, not its prerequisite."
         }
       }
     }

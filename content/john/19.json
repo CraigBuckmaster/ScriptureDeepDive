@@ -31,21 +31,22 @@
             "paragraph": "The titulus (v.19) — the placard stating the charge — was a standard feature of Roman crucifixion, carried before the condemned or attached to the cross. John records it in three languages (Aramaic, Latin, Greek — the three great languages of the ancient world) and preserves Pilate's insistence on keeping it as written: \"What I have written, I have written.\" The inscription is simultaneously the charge (rebellion), the mockery (king of the Jews), and John's deepest irony: it is the truest thing written in the passion narrative."
           }
         ],
-        "ctx": "[('\"We Have No King But Caesar\"', 'The chief priests\\' declaration in v.15 — \"we have no king but Caesar\" — is the most theologically devastating statement in the passion narrative. Israel\\'s entire history was defined by the claim that YHWH is their only king (1 Sam 8:7; Ps 10:16; Isa 26:13). To say \"we have no king but Caesar\" is to renounce the foundation of Jewish national identity and theology. They reject their king by embracing the Gentile emperor. John records it as the ultimate irony: in rejecting the Messiah, the religious leaders formally renounce their covenant identity.'), ('The Day and Hour of the Crucifixion', 'John\\'s \"about noon\" (v.14 — hōs hektē, the sixth hour) on the \"day of Preparation of the Passover\" (Nisan 14) aligns with the time when the Passover lambs were being slaughtered in the Temple — noon to 3pm. Jesus, the Lamb of God (1:29), dies at the time when the Passover lambs die. This is the crown of John\\'s Passover typology: the Passover Lamb is slaughtered when the lambs are slaughtered.')]",
-        "cross": [
-          {
-            "ref": "Exod 12:1-13",
-            "note": "The Passover lamb — slaughtered at twilight on Nisan 14, whose blood protected Israel. Jesus is crucified on Nisan 14 at the hour the lambs are slaughtered (v.14), fulfilling the type."
-          },
-          {
-            "ref": "Isa 53:3-5",
-            "note": "\"He was despised and rejected... he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him\" — the Suffering Servant whose treatment John's crucifixion narrative parallels."
-          },
-          {
-            "ref": "Ps 22:18",
-            "note": "\"They divide my clothes among them and cast lots for my garment\" — fulfilled in vv.23-24."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 12:1-13",
+              "note": "The Passover lamb — slaughtered at twilight on Nisan 14, whose blood protected Israel. Jesus is crucified on Nisan 14 at the hour the lambs are slaughtered (v.14), fulfilling the type."
+            },
+            {
+              "ref": "Isa 53:3-5",
+              "note": "\"He was despised and rejected... he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him\" — the Suffering Servant whose treatment John's crucifixion narrative parallels."
+            },
+            {
+              "ref": "Ps 22:18",
+              "note": "\"They divide my clothes among them and cast lots for my garment\" — fulfilled in vv.23-24."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -105,6 +106,9 @@
               "note": "Chrysostom: \"What I have written, I have written. Pilate does not know why he will not change it. He thinks it is stubbornness; it is providence. God uses the stubbornness of a Roman governor to preserve the most accurate inscription about his Son that the world has ever seen.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('\"We Have No King But Caesar\"', 'The chief priests\\' declaration in v.15 — \"we have no king but Caesar\" — is the most theologically devastating statement in the passion narrative. Israel\\'s entire history was defined by the claim that YHWH is their only king (1 Sam 8:7; Ps 10:16; Isa 26:13). To say \"we have no king but Caesar\" is to renounce the foundation of Jewish national identity and theology. They reject their king by embracing the Gentile emperor. John records it as the ultimate irony: in rejecting the Messiah, the religious leaders formally renounce their covenant identity.'), ('The Day and Hour of the Crucifixion', 'John\\'s \"about noon\" (v.14 — hōs hektē, the sixth hour) on the \"day of Preparation of the Passover\" (Nisan 14) aligns with the time when the Passover lambs were being slaughtered in the Temple — noon to 3pm. Jesus, the Lamb of God (1:29), dies at the time when the Passover lambs die. This is the crown of John\\'s Passover typology: the Passover Lamb is slaughtered when the lambs are slaughtered.')]"
         }
       }
     },
@@ -128,25 +132,26 @@
             "paragraph": "The hyssop branch used to lift the sponge to Jesus (v.29) is a detail unique to John among the passion accounts (the Synoptics say \"a stick/reed\"). Hyssop was the plant used to apply the Passover blood to the doorposts (Exod 12:22) and in purification rituals (Lev 14:4; Num 19:18; Ps 51:7). John's use of hyssop at the cross is deliberate: the blood of the true Passover Lamb is administered with the Passover plant."
           }
         ],
-        "ctx": "[('The Seamless Garment', \"The seamless robe (v.23) has been interpreted symbolically since at least Cyprian of Carthage: the seamless tunic represents the unity of the church, which cannot be divided without destroying it. More immediately, John records the fulfilment of Ps 22:18 in the soldiers' lot-casting — the specific fulfilment of Scripture in even the smallest details of the passion establishes the sovereignty of God over the event.\"), ('Blood and Water from the Side', 'The eyewitness testimony of v.34-35 — blood and water from the pierced side — has generated extensive theological reflection: (1) Medical: evidence of fluid around the pericardium (confirming physical death); (2) Sacramental: blood = Eucharist, water = baptism; (3) Johannine: water has been the sign of the Spirit (7:38-39), and blood the sign of the atoning death (1:29). John explicitly invokes his eyewitness authority (v.35: \"the man who saw it has given testimony\") — a rare direct assertion of the Gospel\\'s eyewitness character.')]",
-        "cross": [
-          {
-            "ref": "Exod 12:46",
-            "note": "\"Do not break any of the bones\" — the Passover lamb command, fulfilled in v.33-36 when the soldiers do not break Jesus's legs."
-          },
-          {
-            "ref": "Ps 22:18",
-            "note": "\"They divide my clothes among them and cast lots for my garment\" — fulfilled in vv.23-24."
-          },
-          {
-            "ref": "Zech 12:10",
-            "note": "\"They will look on me, the one they have pierced, and they will mourn for him\" — cited in v.37 for the spear-thrust."
-          },
-          {
-            "ref": "Ps 69:21",
-            "note": "\"They put gall in my food and gave me vinegar for my thirst\" — the wine vinegar of v.28-29."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 12:46",
+              "note": "\"Do not break any of the bones\" — the Passover lamb command, fulfilled in v.33-36 when the soldiers do not break Jesus's legs."
+            },
+            {
+              "ref": "Ps 22:18",
+              "note": "\"They divide my clothes among them and cast lots for my garment\" — fulfilled in vv.23-24."
+            },
+            {
+              "ref": "Zech 12:10",
+              "note": "\"They will look on me, the one they have pierced, and they will mourn for him\" — cited in v.37 for the spear-thrust."
+            },
+            {
+              "ref": "Ps 69:21",
+              "note": "\"They put gall in my food and gave me vinegar for my thirst\" — the wine vinegar of v.28-29."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -206,6 +211,9 @@
               "note": "Chrysostom: \"Blood and water came out. Not without purpose, not by chance. Because from those two, the church was built. The believers know what I mean: by water we are regenerated; by blood and flesh we are fed. From the side of Christ, as he slept on the cross, was born the church — as Eve was formed from the side of the sleeping Adam.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Seamless Garment', \"The seamless robe (v.23) has been interpreted symbolically since at least Cyprian of Carthage: the seamless tunic represents the unity of the church, which cannot be divided without destroying it. More immediately, John records the fulfilment of Ps 22:18 in the soldiers' lot-casting — the specific fulfilment of Scripture in even the smallest details of the passion establishes the sovereignty of God over the event.\"), ('Blood and Water from the Side', 'The eyewitness testimony of v.34-35 — blood and water from the pierced side — has generated extensive theological reflection: (1) Medical: evidence of fluid around the pericardium (confirming physical death); (2) Sacramental: blood = Eucharist, water = baptism; (3) Johannine: water has been the sign of the Spirit (7:38-39), and blood the sign of the atoning death (1:29). John explicitly invokes his eyewitness authority (v.35: \"the man who saw it has given testimony\") — a rare direct assertion of the Gospel\\'s eyewitness character.')]"
         }
       }
     },
@@ -229,21 +237,22 @@
             "paragraph": "The titulus (v.19) — the placard stating the charge — was a standard feature of Roman crucifixion, carried before the condemned or attached to the cross. John records it in three languages (Aramaic, Latin, Greek — the three great languages of the ancient world) and preserves Pilate's insistence on keeping it as written: \"What I have written, I have written.\" The inscription is simultaneously the charge (rebellion), the mockery (king of the Jews), and John's deepest irony: it is the truest thing written in the passion narrative."
           }
         ],
-        "ctx": "[('\"We Have No King But Caesar\"', 'The chief priests\\' declaration in v.15 — \"we have no king but Caesar\" — is the most theologically devastating statement in the passion narrative. Israel\\'s entire history was defined by the claim that YHWH is their only king (1 Sam 8:7; Ps 10:16; Isa 26:13). To say \"we have no king but Caesar\" is to renounce the foundation of Jewish national identity and theology. They reject their king by embracing the Gentile emperor. John records it as the ultimate irony: in rejecting the Messiah, the religious leaders formally renounce their covenant identity.'), ('The Day and Hour of the Crucifixion', 'John\\'s \"about noon\" (v.14 — hōs hektē, the sixth hour) on the \"day of Preparation of the Passover\" (Nisan 14) aligns with the time when the Passover lambs were being slaughtered in the Temple — noon to 3pm. Jesus, the Lamb of God (1:29), dies at the time when the Passover lambs die. This is the crown of John\\'s Passover typology: the Passover Lamb is slaughtered when the lambs are slaughtered.')]",
-        "cross": [
-          {
-            "ref": "Exod 12:1-13",
-            "note": "The Passover lamb — slaughtered at twilight on Nisan 14, whose blood protected Israel. Jesus is crucified on Nisan 14 at the hour the lambs are slaughtered (v.14), fulfilling the type."
-          },
-          {
-            "ref": "Isa 53:3-5",
-            "note": "\"He was despised and rejected... he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him\" — the Suffering Servant whose treatment John's crucifixion narrative parallels."
-          },
-          {
-            "ref": "Ps 22:18",
-            "note": "\"They divide my clothes among them and cast lots for my garment\" — fulfilled in vv.23-24."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 12:1-13",
+              "note": "The Passover lamb — slaughtered at twilight on Nisan 14, whose blood protected Israel. Jesus is crucified on Nisan 14 at the hour the lambs are slaughtered (v.14), fulfilling the type."
+            },
+            {
+              "ref": "Isa 53:3-5",
+              "note": "\"He was despised and rejected... he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him\" — the Suffering Servant whose treatment John's crucifixion narrative parallels."
+            },
+            {
+              "ref": "Ps 22:18",
+              "note": "\"They divide my clothes among them and cast lots for my garment\" — fulfilled in vv.23-24."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -303,6 +312,9 @@
               "note": "Chrysostom: \"What I have written, I have written. Pilate does not know why he will not change it. He thinks it is stubbornness; it is providence. God uses the stubbornness of a Roman governor to preserve the most accurate inscription about his Son that the world has ever seen.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('\"We Have No King But Caesar\"', 'The chief priests\\' declaration in v.15 — \"we have no king but Caesar\" — is the most theologically devastating statement in the passion narrative. Israel\\'s entire history was defined by the claim that YHWH is their only king (1 Sam 8:7; Ps 10:16; Isa 26:13). To say \"we have no king but Caesar\" is to renounce the foundation of Jewish national identity and theology. They reject their king by embracing the Gentile emperor. John records it as the ultimate irony: in rejecting the Messiah, the religious leaders formally renounce their covenant identity.'), ('The Day and Hour of the Crucifixion', 'John\\'s \"about noon\" (v.14 — hōs hektē, the sixth hour) on the \"day of Preparation of the Passover\" (Nisan 14) aligns with the time when the Passover lambs were being slaughtered in the Temple — noon to 3pm. Jesus, the Lamb of God (1:29), dies at the time when the Passover lambs die. This is the crown of John\\'s Passover typology: the Passover Lamb is slaughtered when the lambs are slaughtered.')]"
         }
       }
     }

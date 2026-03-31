@@ -37,25 +37,26 @@
             "paragraph": "Certain people have crept in unnoticed - the false teachers infiltrated the community. Their entry was covert, their intentions hostile."
           }
         ],
-        "ctx": "Jude, servant of Jesus Christ and brother of James, writes to those called, beloved in God the Father, and kept for Jesus Christ. Though he wanted to write about common salvation, necessity compels him to address false teachers who have crept in unnoticed - people long ago designated for condemnation, ungodly persons who pervert grace into sensuality and deny our only Master and Lord, Jesus Christ.",
-        "cross": [
-          {
-            "ref": "2 Peter 2:1",
-            "note": "False teachers will secretly bring in destructive heresies."
-          },
-          {
-            "ref": "Galatians 2:4",
-            "note": "False brothers secretly brought in to spy out our freedom."
-          },
-          {
-            "ref": "1 Timothy 6:20",
-            "note": "Guard the deposit entrusted to you."
-          },
-          {
-            "ref": "Titus 1:9",
-            "note": "Hold firm to the trustworthy word as taught."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Peter 2:1",
+              "note": "False teachers will secretly bring in destructive heresies."
+            },
+            {
+              "ref": "Galatians 2:4",
+              "note": "False brothers secretly brought in to spy out our freedom."
+            },
+            {
+              "ref": "1 Timothy 6:20",
+              "note": "Guard the deposit entrusted to you."
+            },
+            {
+              "ref": "Titus 1:9",
+              "note": "Hold firm to the trustworthy word as taught."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -122,7 +123,10 @@
             }
           ]
         },
-        "hist": "Jude, identifying himself as 'brother of James' (and thus brother of Jesus, Mark 6:3), writes urgently against false teachers who have 'crept in unnoticed' (v. 4). These opponents pervert grace into license for immorality and 'deny our only Master and Lord, Jesus Christ.' Jude draws extensively on Jewish apocalyptic tradition, citing 1 Enoch (vv. 14-15) and the Assumption of Moses (v. 9) — texts familiar to his Jewish-Christian audience though not part of the Hebrew Bible. The letter's three Old Testament examples (Israel in the wilderness, fallen angels, Sodom and Gomorrah) and three 'woe' figures (Cain, Balaam, Korah) create a rhetorical pattern of divine judgment against apostasy. The striking parallels with 2 Peter 2 suggest literary dependence."
+        "hist": {
+          "historical": "Jude, identifying himself as 'brother of James' (and thus brother of Jesus, Mark 6:3), writes urgently against false teachers who have 'crept in unnoticed' (v. 4). These opponents pervert grace into license for immorality and 'deny our only Master and Lord, Jesus Christ.' Jude draws extensively on Jewish apocalyptic tradition, citing 1 Enoch (vv. 14-15) and the Assumption of Moses (v. 9) — texts familiar to his Jewish-Christian audience though not part of the Hebrew Bible. The letter's three Old Testament examples (Israel in the wilderness, fallen angels, Sodom and Gomorrah) and three 'woe' figures (Cain, Balaam, Korah) create a rhetorical pattern of divine judgment against apostasy. The striking parallels with 2 Peter 2 suggest literary dependence.",
+          "context": "Jude, servant of Jesus Christ and brother of James, writes to those called, beloved in God the Father, and kept for Jesus Christ. Though he wanted to write about common salvation, necessity compels him to address false teachers who have crept in unnoticed - people long ago designated for condemnation, ungodly persons who pervert grace into sensuality and deny our only Master and Lord, Jesus Christ."
+        }
       }
     },
     {
@@ -151,29 +155,30 @@
             "paragraph": "Wandering stars, for whom the gloom of utter darkness has been reserved forever - they follow no fixed course, destined for blackness."
           }
         ],
-        "ctx": "Jude reminds readers of three OT examples: Israel saved from Egypt but later destroyed for unbelief; angels who abandoned their position kept in chains for judgment; Sodom and Gomorrah destroyed for sexual immorality. These people similarly defile the flesh, reject authority, and blaspheme the glorious ones. Michael the archangel, disputing about Moses body, did not dare pronounce a blasphemous judgment but said The Lord rebuke you. But these people blaspheme what they do not understand. Woe to them! They walk in Cain way, rush into Balaam error, perish in Korah rebellion. They are hidden reefs at your love feasts, waterless clouds, fruitless trees twice dead, wild waves foaming up shame, wandering stars reserved for utter darkness. Enoch prophesied: The Lord comes with ten thousands of his holy ones to execute judgment on all.",
-        "cross": [
-          {
-            "ref": "Numbers 14:29-30",
-            "note": "Israel destroyed in the wilderness for unbelief."
-          },
-          {
-            "ref": "Genesis 6:1-4",
-            "note": "Sons of God and daughters of men - angelic sin."
-          },
-          {
-            "ref": "Genesis 19:1-25",
-            "note": "Destruction of Sodom and Gomorrah."
-          },
-          {
-            "ref": "Numbers 16:1-35",
-            "note": "Korah rebellion and judgment."
-          },
-          {
-            "ref": "1 Enoch 1:9",
-            "note": "The Lord comes with ten thousands of his holy ones."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Numbers 14:29-30",
+              "note": "Israel destroyed in the wilderness for unbelief."
+            },
+            {
+              "ref": "Genesis 6:1-4",
+              "note": "Sons of God and daughters of men - angelic sin."
+            },
+            {
+              "ref": "Genesis 19:1-25",
+              "note": "Destruction of Sodom and Gomorrah."
+            },
+            {
+              "ref": "Numbers 16:1-35",
+              "note": "Korah rebellion and judgment."
+            },
+            {
+              "ref": "1 Enoch 1:9",
+              "note": "The Lord comes with ten thousands of his holy ones."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -255,6 +260,9 @@
               "note": "Green notes the vivid imagery: hidden reefs, waterless clouds, autumn trees without fruit, wild waves, wandering stars. Each image conveys emptiness and danger."
             }
           ]
+        },
+        "hist": {
+          "context": "Jude reminds readers of three OT examples: Israel saved from Egypt but later destroyed for unbelief; angels who abandoned their position kept in chains for judgment; Sodom and Gomorrah destroyed for sexual immorality. These people similarly defile the flesh, reject authority, and blaspheme the glorious ones. Michael the archangel, disputing about Moses body, did not dare pronounce a blasphemous judgment but said The Lord rebuke you. But these people blaspheme what they do not understand. Woe to them! They walk in Cain way, rush into Balaam error, perish in Korah rebellion. They are hidden reefs at your love feasts, waterless clouds, fruitless trees twice dead, wild waves foaming up shame, wandering stars reserved for utter darkness. Enoch prophesied: The Lord comes with ten thousands of his holy ones to execute judgment on all."
         }
       }
     },
@@ -284,25 +292,26 @@
             "paragraph": "Save others by snatching them out of the fire - urgent rescue of those endangered by false teaching."
           }
         ],
-        "ctx": "But remember the predictions of the apostles of our Lord Jesus Christ - they told you that in the last time there would be scoffers following their own ungodly passions. These are the people who cause divisions, worldly people, devoid of the Spirit. But you, beloved, building yourselves up in your most holy faith, praying in the Holy Spirit, keep yourselves in the love of God, waiting for the mercy of our Lord Jesus Christ that leads to eternal life. Have mercy on those who doubt; save others by snatching them from fire; to others show mercy with fear, hating even the garment stained by the flesh.",
-        "cross": [
-          {
-            "ref": "2 Peter 3:3",
-            "note": "Scoffers will come in the last days, following their own sinful desires."
-          },
-          {
-            "ref": "1 Corinthians 2:14",
-            "note": "The natural person does not accept the things of the Spirit."
-          },
-          {
-            "ref": "1 Timothy 4:1",
-            "note": "In later times some will depart from the faith."
-          },
-          {
-            "ref": "Zechariah 3:2",
-            "note": "A brand plucked from the fire."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Peter 3:3",
+              "note": "Scoffers will come in the last days, following their own sinful desires."
+            },
+            {
+              "ref": "1 Corinthians 2:14",
+              "note": "The natural person does not accept the things of the Spirit."
+            },
+            {
+              "ref": "1 Timothy 4:1",
+              "note": "In later times some will depart from the faith."
+            },
+            {
+              "ref": "Zechariah 3:2",
+              "note": "A brand plucked from the fire."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -376,6 +385,9 @@
               "note": "Green emphasizes that the warning is not to abandon the wandering but to rescue them wisely. Compassion and caution must combine."
             }
           ]
+        },
+        "hist": {
+          "context": "But remember the predictions of the apostles of our Lord Jesus Christ - they told you that in the last time there would be scoffers following their own ungodly passions. These are the people who cause divisions, worldly people, devoid of the Spirit. But you, beloved, building yourselves up in your most holy faith, praying in the Holy Spirit, keep yourselves in the love of God, waiting for the mercy of our Lord Jesus Christ that leads to eternal life. Have mercy on those who doubt; save others by snatching them from fire; to others show mercy with fear, hating even the garment stained by the flesh."
         }
       }
     },
@@ -405,25 +417,26 @@
             "paragraph": "Majesty, dominion, and authority - the doxology ascribes to God supreme greatness, sovereign rule, and ultimate power."
           }
         ],
-        "ctx": "Now to him who is able to keep you from stumbling and to present you blameless before the presence of his glory with great joy - to the only God, our Savior, through Jesus Christ our Lord, be glory, majesty, dominion, and authority, before all time and now and forever. Amen.",
-        "cross": [
-          {
-            "ref": "Romans 16:25-27",
-            "note": "To him who is able to strengthen you... to the only wise God be glory forever."
-          },
-          {
-            "ref": "1 Thessalonians 5:23-24",
-            "note": "The God of peace will sanctify you completely... He who calls you is faithful."
-          },
-          {
-            "ref": "Ephesians 3:20-21",
-            "note": "To him who is able to do far more abundantly than all we ask or think."
-          },
-          {
-            "ref": "Philippians 1:6",
-            "note": "He who began a good work in you will bring it to completion."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Romans 16:25-27",
+              "note": "To him who is able to strengthen you... to the only wise God be glory forever."
+            },
+            {
+              "ref": "1 Thessalonians 5:23-24",
+              "note": "The God of peace will sanctify you completely... He who calls you is faithful."
+            },
+            {
+              "ref": "Ephesians 3:20-21",
+              "note": "To him who is able to do far more abundantly than all we ask or think."
+            },
+            {
+              "ref": "Philippians 1:6",
+              "note": "He who began a good work in you will bring it to completion."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -481,6 +494,9 @@
               "note": "Green emphasizes the pastoral comfort: after all the warnings about false teachers, Jude assures readers that God is able to keep them."
             }
           ]
+        },
+        "hist": {
+          "context": "Now to him who is able to keep you from stumbling and to present you blameless before the presence of his glory with great joy - to the only God, our Savior, through Jesus Christ our Lord, be glory, majesty, dominion, and authority, before all time and now and forever. Amen."
         }
       }
     }

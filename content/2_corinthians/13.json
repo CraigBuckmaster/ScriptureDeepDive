@@ -25,21 +25,22 @@
             "paragraph": "The noun astheneia (weakness) in v. 4 brings the letter’s central theme to its christological climax: Christ ‘was crucified in weakness, yet he lives by God’s power.’ The crucifixion—the ultimate expression of weakness—was not the failure of divine power but its paradoxical mode of operation. Paul’s own weakness participates in this christological pattern: ‘we are weak in him, yet by God’s power we will live with him in our dealing with you’ (v. 4b). The cross-resurrection sequence governs apostolic ministry."
           }
         ],
-        "ctx": "Paul opens the final chapter with a stern warning: his third visit will not spare those who persist in sin (v. 2). The two-or-three-witnesses principle (v. 1, citing Deut 19:15) may refer to Paul’s three visits as the required testimony, or to the judicial process he will follow in disciplining offenders. The christological statement of v. 4 is the theological capstone of the entire letter: Christ’s crucifixion-in-weakness and resurrection-in-power establish the pattern that defines both Paul’s ministry and the Corinthians’ experience.",
-        "cross": [
-          {
-            "ref": "Deut 19:15",
-            "note": "The two-or-three-witnesses principle from Deuteronomic law provides the judicial framework for Paul’s disciplinary action. Jesus cited the same text for church discipline (Matt 18:16)."
-          },
-          {
-            "ref": "1 Cor 1:23–25",
-            "note": "Paul’s earlier declaration that the crucified Christ is ‘the power of God and the wisdom of God’ provides the theological foundation for 2 Cor 13:4: the cross is weakness and power simultaneously."
-          },
-          {
-            "ref": "Phil 2:7–9",
-            "note": "The Philippians hymn narrates the same crucifixion-in-weakness / exaltation-in-power sequence that Paul compresses into v. 4."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 19:15",
+              "note": "The two-or-three-witnesses principle from Deuteronomic law provides the judicial framework for Paul’s disciplinary action. Jesus cited the same text for church discipline (Matt 18:16)."
+            },
+            {
+              "ref": "1 Cor 1:23–25",
+              "note": "Paul’s earlier declaration that the crucified Christ is ‘the power of God and the wisdom of God’ provides the theological foundation for 2 Cor 13:4: the cross is weakness and power simultaneously."
+            },
+            {
+              "ref": "Phil 2:7–9",
+              "note": "The Philippians hymn narrates the same crucifixion-in-weakness / exaltation-in-power sequence that Paul compresses into v. 4."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -88,6 +89,9 @@
               "note": "Harris provides the most detailed christological analysis of v. 4, arguing that the ek/ek (‘out of weakness... by the power of God’) structure establishes two causal sources: Christ’s death was ‘out of’ (the condition of) weakness; his life is ‘out of’ (the source of) God’s power. Paul participates in both: weak ‘in him’ (sharing Christ’s cruciform existence) and alive ‘by God’s power’ (sharing Christ’s resurrection life)."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul opens the final chapter with a stern warning: his third visit will not spare those who persist in sin (v. 2). The two-or-three-witnesses principle (v. 1, citing Deut 19:15) may refer to Paul’s three visits as the required testimony, or to the judicial process he will follow in disciplining offenders. The christological statement of v. 4 is the theological capstone of the entire letter: Christ’s crucifixion-in-weakness and resurrection-in-power establish the pattern that defines both Paul’s ministry and the Corinthians’ experience."
         }
       }
     },
@@ -105,17 +109,18 @@
             "paragraph": "The verb dokimazō (to test, to examine) in v. 5 redirects the testing away from Paul and toward the Corinthians themselves: ‘Examine yourselves to see whether you are in the faith; test yourselves.’ The ironic reversal is pointed: the Corinthians have been demanding proof (dokimē, v. 3) that Christ speaks through Paul; Paul redirects the examination to them. The verb carries the connotation of metallurgical assaying: testing metal to determine its genuineness."
           }
         ],
-        "ctx": "Paul turns the tables: instead of defending himself further, he challenges the Corinthians to examine themselves. The question ‘Do you not realise that Christ Jesus is in you?’ (v. 5) is both a reassurance and a challenge: if Christ is in them (which Paul assumes), then their own faith is the proof of Paul’s apostolic authenticity—since it was Paul’s preaching that brought them to Christ. Paul’s prayer (vv. 7, 9) is selfless: he wants them to do what is right regardless of how it reflects on him. The building-up/tearing-down language of v. 10 forms an inclusio with 10:8.",
-        "cross": [
-          {
-            "ref": "1 Cor 11:28",
-            "note": "Paul’s earlier call to ‘examine yourself before eating the bread and drinking the cup’ uses the same vocabulary of self-testing applied here to the broader question of faith’s genuineness."
-          },
-          {
-            "ref": "Gal 6:4",
-            "note": "‘Each one should test their own actions’—the same principle of self-examination rather than comparison with others."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 11:28",
+              "note": "Paul’s earlier call to ‘examine yourself before eating the bread and drinking the cup’ uses the same vocabulary of self-testing applied here to the broader question of faith’s genuineness."
+            },
+            {
+              "ref": "Gal 6:4",
+              "note": "‘Each one should test their own actions’—the same principle of self-examination rather than comparison with others."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -164,6 +169,9 @@
               "note": "Harris argues that vv. 5–10 form the letter’s practical peroratio (conclusion): Paul has made his case, and now invites the jury (the Corinthians) to render their verdict—not on Paul but on themselves. The building-up/tearing-down inclusio (10:8 / 13:10) brackets the entire polemical section with a constructive purpose statement."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul turns the tables: instead of defending himself further, he challenges the Corinthians to examine themselves. The question ‘Do you not realise that Christ Jesus is in you?’ (v. 5) is both a reassurance and a challenge: if Christ is in them (which Paul assumes), then their own faith is the proof of Paul’s apostolic authenticity—since it was Paul’s preaching that brought them to Christ. Paul’s prayer (vv. 7, 9) is selfless: he wants them to do what is right regardless of how it reflects on him. The building-up/tearing-down language of v. 10 forms an inclusio with 10:8."
         }
       }
     },
@@ -181,21 +189,22 @@
             "paragraph": "The phrase koinōnia tou hagiou pneumatos (‘fellowship of the Holy Spirit,’ v. 14) concludes the trinitarian benediction. The genitive tou hagiou pneumatos can be read as subjective (‘the fellowship that the Spirit creates’) or objective (‘participation in the Spirit’). Both are theologically appropriate: the Spirit both creates community (subjective) and is the one in whom believers participate (objective). The trinitarian benediction—grace from Christ, love from God, fellowship from the Spirit—is the most explicitly trinitarian formula in the Pauline corpus and has shaped Christian liturgy for two millennia."
           }
         ],
-        "ctx": "The letter concludes with five imperatives (v. 11: rejoice, strive for restoration, encourage one another, be of one mind, live in peace), a promise (‘the God of love and peace will be with you’), the holy-kiss greeting (v. 12), the saints’ greetings (v. 13), and the trinitarian benediction (v. 14). The benediction—‘May the grace of the Lord Jesus Christ, and the love of God, and the fellowship of the Holy Spirit be with you all’—is the most extensive liturgical formula in Paul’s letters and has been used in Christian worship since the earliest centuries. Its trinitarian structure (Christ, God, Spirit) is not a developed credal statement but an experiential summary: believers know Christ’s grace, God’s love, and the Spirit’s fellowship.",
-        "cross": [
-          {
-            "ref": "Matt 28:19",
-            "note": "The baptismal formula (‘in the name of the Father and of the Son and of the Holy Spirit’) provides the other major trinitarian formula in the NT, complementing Paul’s experiential trinitarian benediction."
-          },
-          {
-            "ref": "Num 6:24–26",
-            "note": "The Aaronic benediction (‘The LORD bless you and keep you’) is the OT liturgical precedent for the apostolic benediction. Paul’s trinitarian expansion reflects the new-covenant’s fuller revelation of God’s nature."
-          },
-          {
-            "ref": "Eph 4:4–6",
-            "note": "The Ephesians confession (‘one Spirit... one Lord... one God and Father’) provides another trinitarian summary, using the same three-person structure in a different order."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 28:19",
+              "note": "The baptismal formula (‘in the name of the Father and of the Son and of the Holy Spirit’) provides the other major trinitarian formula in the NT, complementing Paul’s experiential trinitarian benediction."
+            },
+            {
+              "ref": "Num 6:24–26",
+              "note": "The Aaronic benediction (‘The LORD bless you and keep you’) is the OT liturgical precedent for the apostolic benediction. Paul’s trinitarian expansion reflects the new-covenant’s fuller revelation of God’s nature."
+            },
+            {
+              "ref": "Eph 4:4–6",
+              "note": "The Ephesians confession (‘one Spirit... one Lord... one God and Father’) provides another trinitarian summary, using the same three-person structure in a different order."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -244,6 +253,9 @@
               "note": "Harris provides the most detailed structural analysis of the benediction, noting that the three clauses follow a chiastic pattern with reference to the letter’s themes: grace (the letter’s dominant concept, cf. 8:9; 12:9), love (the relational goal, cf. 5:14; 6:6), and fellowship (the communal reality, cf. 1:7; 8:4; 9:13). Harris argues that the benediction is both a prayer (asking for these gifts) and a declaration (affirming their reality). Its placement as the letter’s final word ensures that the Corinthians’ last impression is not of Paul’s anger but of God’s triune generosity."
             }
           ]
+        },
+        "hist": {
+          "context": "The letter concludes with five imperatives (v. 11: rejoice, strive for restoration, encourage one another, be of one mind, live in peace), a promise (‘the God of love and peace will be with you’), the holy-kiss greeting (v. 12), the saints’ greetings (v. 13), and the trinitarian benediction (v. 14). The benediction—‘May the grace of the Lord Jesus Christ, and the love of God, and the fellowship of the Holy Spirit be with you all’—is the most extensive liturgical formula in Paul’s letters and has been used in Christian worship since the earliest centuries. Its trinitarian structure (Christ, God, Spirit) is not a developed credal statement but an experiential summary: believers know Christ’s grace, God’s love, and the Spirit’s fellowship."
         }
       }
     }

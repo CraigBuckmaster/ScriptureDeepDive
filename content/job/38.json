@@ -31,21 +31,22 @@
             "paragraph": "\"Where (ʾêfō) were you when I laid the earth’s foundation?\" (v.4). The most famous question in the OT. God does not explain Job’s suffering. He asks 77 unanswerable questions about creation, nature, and the cosmos. The strategy: not \"here is why you suffered\" but \"here is who I am.\""
           }
         ],
-        "ctx": "After 37 chapters of silence, God speaks. He does not address Job’s charges, explain the heavenly wager, mention the Satan, discuss retribution theology, or comment on the friends’ arguments. He asks questions. Where were you at creation? Who set the boundaries of the sea? Have you commanded the dawn? Do you know the storehouses of snow? Every question points to the same reality: God’s wisdom operates at a scale Job cannot comprehend.",
-        "cross": [
-          {
-            "ref": "Ps 104:1–9",
-            "note": "\"He makes the clouds his chariot and rides on the wings of the wind\" — the same God who speaks from the storm."
-          },
-          {
-            "ref": "Isa 40:12–14",
-            "note": "\"Who has measured the waters in the hollow of his hand?\" — the same rhetorical questions about creation."
-          },
-          {
-            "ref": "Rom 11:33–36",
-            "note": "\"Oh, the depth of the riches of the wisdom and knowledge of God! How unsearchable his judgments!\" — Paul’s response to the same divine mystery."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 104:1–9",
+              "note": "\"He makes the clouds his chariot and rides on the wings of the wind\" — the same God who speaks from the storm."
+            },
+            {
+              "ref": "Isa 40:12–14",
+              "note": "\"Who has measured the waters in the hollow of his hand?\" — the same rhetorical questions about creation."
+            },
+            {
+              "ref": "Rom 11:33–36",
+              "note": "\"Oh, the depth of the riches of the wisdom and knowledge of God! How unsearchable his judgments!\" — Paul’s response to the same divine mystery."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -138,6 +139,9 @@
               "note": "Habel: the judge finally speaks. But he does not issue a verdict. Instead he cross-examines the plaintiff. The 77 questions are not answers but a reframing: the court operates on a scale Job did not imagine."
             }
           ]
+        },
+        "hist": {
+          "context": "After 37 chapters of silence, God speaks. He does not address Job’s charges, explain the heavenly wager, mention the Satan, discuss retribution theology, or comment on the friends’ arguments. He asks questions. Where were you at creation? Who set the boundaries of the sea? Have you commanded the dawn? Do you know the storehouses of snow? Every question points to the same reality: God’s wisdom operates at a scale Job cannot comprehend."
         }
       }
     },
@@ -155,17 +159,18 @@
             "paragraph": "\"Can you bring forth the constellations (mazzārōṭ) in their seasons?\" (v.32). God governs the stars — not just creating them but scheduling them. The cosmos runs on divine management that Job cannot replicate."
           }
         ],
-        "ctx": "The cosmic tour continues: storehouses of snow and hail (v.22–23), the distribution of lightning (v.24–25), rain on uninhabited land (v.26–27), the parent of ice and frost (v.28–30), constellations in their seasons (v.31–33), thunder and lightning on command (v.34–35). Then the shift to animals: who provides food for the lion and the raven? (vv.39–41). The questions escalate from cosmic to terrestrial to animal — and in every domain, God is the active manager, not Job.",
-        "cross": [
-          {
-            "ref": "Ps 147:8–9",
-            "note": "\"He covers the sky with clouds; he supplies the earth with rain and makes grass grow. He provides food for the cattle\" — the same divine provision God describes here."
-          },
-          {
-            "ref": "Matt 6:26",
-            "note": "\"Look at the birds of the air; they do not sow or reap... your heavenly Father feeds them\" — Jesus’ version of Job 38:41."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 147:8–9",
+              "note": "\"He covers the sky with clouds; he supplies the earth with rain and makes grass grow. He provides food for the cattle\" — the same divine provision God describes here."
+            },
+            {
+              "ref": "Matt 6:26",
+              "note": "\"Look at the birds of the air; they do not sow or reap... your heavenly Father feeds them\" — Jesus’ version of Job 38:41."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -234,6 +239,9 @@
               "note": "Habel: the questions continue to expand the frame. Snow, hail, lightning, stars, lions, ravens — each is a domain God manages without human input. Job’s suffering, real as it is, occurs within this vast system."
             }
           ]
+        },
+        "hist": {
+          "context": "The cosmic tour continues: storehouses of snow and hail (v.22–23), the distribution of lightning (v.24–25), rain on uninhabited land (v.26–27), the parent of ice and frost (v.28–30), constellations in their seasons (v.31–33), thunder and lightning on command (v.34–35). Then the shift to animals: who provides food for the lion and the raven? (vv.39–41). The questions escalate from cosmic to terrestrial to animal — and in every domain, God is the active manager, not Job."
         }
       }
     }

@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 11,
       "panels": {
-        "ctx": "In the seventh year, Jehoiada the priest executes a carefully prepared coup. He brings military commanders into the conspiracy, stations Levites and gatekeepers around the temple, and presents the boy king. “Long live the king!” The Chronicler adds Levitical detail: the Levites guard every entrance, and only priests and serving Levites may enter the temple. The revolution is both military and liturgical.",
-        "cross": [
-          {
-            "ref": "2 Kgs 11:4–12",
-            "note": "Kings credits Jehoiada with organising the coup using royal bodyguards. Chronicles gives the Levites a central role — typical of the Chronicler's emphasis on proper worship personnel in national restoration."
-          },
-          {
-            "ref": "Deut 17:18–20",
-            "note": "The crowning of Joash with 'the testimony' (v. 11) — likely a copy of the Torah — fulfils the Deuteronomic requirement that the king receive and keep the law, symbolising covenantal kingship."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 11:4–12",
+              "note": "Kings credits Jehoiada with organising the coup using royal bodyguards. Chronicles gives the Levites a central role — typical of the Chronicler's emphasis on proper worship personnel in national restoration."
+            },
+            {
+              "ref": "Deut 17:18–20",
+              "note": "The crowning of Joash with 'the testimony' (v. 11) — likely a copy of the Torah — fulfils the Deuteronomic requirement that the king receive and keep the law, symbolising covenantal kingship."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "The Chronicler’s distinctive vocabulary shapes the presentation, connecting this section to his broader theological framework."
             }
           ]
+        },
+        "hist": {
+          "context": "In the seventh year, Jehoiada the priest executes a carefully prepared coup. He brings military commanders into the conspiracy, stations Levites and gatekeepers around the temple, and presents the boy king. “Long live the king!” The Chronicler adds Levitical detail: the Levites guard every entrance, and only priests and serving Levites may enter the temple. The revolution is both military and liturgical."
         }
       }
     },
@@ -54,17 +58,18 @@
       "verse_start": 12,
       "verse_end": 21,
       "panels": {
-        "ctx": "Athaliah hears the commotion, sees the king by the pillar, and screams “Treason!” She is executed outside the temple. Jehoiada makes a covenant between the LORD, the king, and the people. The Baal temple is destroyed, its priest Mattan killed. “All the people of the land rejoiced, and the city was calm.” Order restored through legitimate worship and legitimate kingship.",
-        "cross": [
-          {
-            "ref": "2 Kgs 11:13–20",
-            "note": "Both accounts record Athaliah's execution and the covenant renewal. Chronicles adds the detail that Jehoiada posted 'gatekeepers at the gates of the temple' to exclude the unclean — restoring holiness boundaries."
-          },
-          {
-            "ref": "2 Kgs 11:17",
-            "note": "Kings mentions a single covenant; Chronicles specifies a three-way covenant between the LORD, the king, and the people — emphasising that national renewal requires all parties."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 11:13–20",
+              "note": "Both accounts record Athaliah's execution and the covenant renewal. Chronicles adds the detail that Jehoiada posted 'gatekeepers at the gates of the temple' to exclude the unclean — restoring holiness boundaries."
+            },
+            {
+              "ref": "2 Kgs 11:17",
+              "note": "Kings mentions a single covenant; Chronicles specifies a three-way covenant between the LORD, the king, and the people — emphasising that national renewal requires all parties."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -82,6 +87,9 @@
               "note": "The Chronicler’s distinctive vocabulary shapes the presentation, connecting this section to his broader theological framework."
             }
           ]
+        },
+        "hist": {
+          "context": "Athaliah hears the commotion, sees the king by the pillar, and screams “Treason!” She is executed outside the temple. Jehoiada makes a covenant between the LORD, the king, and the people. The Baal temple is destroyed, its priest Mattan killed. “All the people of the land rejoiced, and the city was calm.” Order restored through legitimate worship and legitimate kingship."
         }
       }
     }

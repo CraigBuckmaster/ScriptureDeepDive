@@ -54,21 +54,22 @@
             "current": false
           }
         ],
-        "ctx": "Acts is the second volume of Luke-Acts — the longest single work in the NT. Luke's prologue (Luke 1:1-4) promises an 'orderly account' for Theophilus; Acts 1:1 resumes that project. The commission of v8 ('Jerusalem... Judea and Samaria... ends of the earth') is the book's own structural outline: Acts 1–7 = Jerusalem; 8–12 = Judea and Samaria; 13–28 = ends of the earth. Luke places the entire plot summary in the mouth of Jesus himself.",
-        "cross": [
-          {
-            "ref": "Luke 24:44–49",
-            "note": "The resurrection commission and the promise to wait in Jerusalem — Acts 1 resumes exactly at Luke's conclusion."
-          },
-          {
-            "ref": "Acts 28:30–31",
-            "note": "The closing scene of Acts has Paul proclaiming the kingdom of God — the same phrase as 1:3, forming the book's theological inclusio."
-          },
-          {
-            "ref": "Daniel 7:13–14",
-            "note": "The cloud that receives Jesus at the Ascension (v9) connects to the Son of Man coming with the clouds — Jesus's exaltation to the Ancient of Days."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 24:44–49",
+              "note": "The resurrection commission and the promise to wait in Jerusalem — Acts 1 resumes exactly at Luke's conclusion."
+            },
+            {
+              "ref": "Acts 28:30–31",
+              "note": "The closing scene of Acts has Paul proclaiming the kingdom of God — the same phrase as 1:3, forming the book's theological inclusio."
+            },
+            {
+              "ref": "Daniel 7:13–14",
+              "note": "The cloud that receives Jesus at the Ascension (v9) connects to the Son of Man coming with the clouds — Jesus's exaltation to the Ancient of Days."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -137,6 +138,9 @@
               "note": "\"To the ends of the earth\" (heos eschatou tēs gēs) draws from Isaiah 49:6, where it describes the reach of the Servant of the Lord. By placing this in Jesus's commission, Luke ties the church's mission to Israel's own prophetic vocation."
             }
           ]
+        },
+        "hist": {
+          "context": "Acts is the second volume of Luke-Acts — the longest single work in the NT. Luke's prologue (Luke 1:1-4) promises an 'orderly account' for Theophilus; Acts 1:1 resumes that project. The commission of v8 ('Jerusalem... Judea and Samaria... ends of the earth') is the book's own structural outline: Acts 1–7 = Jerusalem; 8–12 = Judea and Samaria; 13–28 = ends of the earth. Luke places the entire plot summary in the mouth of Jesus himself."
         }
       }
     },
@@ -183,21 +187,22 @@
             "current": false
           }
         ],
-        "ctx": "The Matthias election (vv.15–26) is the last OT-era decision of the church: lots cast after prayer, using Psalms 69 and 109 as interpretive keys. The apostolic qualification — eyewitness of the resurrection from John's baptism onward — defines the unique, unrepeatable foundation of the church's testimony (cf. Eph 2:20). The presence of Mary and Jesus's brothers in the upper room (v14) is significant: the brothers had been unbelievers during Jesus's ministry (John 7:5). The resurrection has converted them. James will become leader of the Jerusalem church (Acts 15:13).",
-        "cross": [
-          {
-            "ref": "Psalm 69:25",
-            "note": "Cited in v20 for the vacant place — \"May his place be deserted.\" Peter reads the psalm's language about the righteous sufferer's enemies as prophetically applicable to the one who betrayed the Righteous One."
-          },
-          {
-            "ref": "Psalm 109:8",
-            "note": "Cited for the replacement — \"May another take his place of leadership.\" Both psalms are read as requiring historical fulfilment, demonstrating the apostolic hermeneutic of prophetic necessity."
-          },
-          {
-            "ref": "Ephesians 2:20",
-            "note": "The church is \"built on the foundation of the apostles and prophets.\" The restoration of the Twelve preserves the foundation's completeness before the Spirit comes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Psalm 69:25",
+              "note": "Cited in v20 for the vacant place — \"May his place be deserted.\" Peter reads the psalm's language about the righteous sufferer's enemies as prophetically applicable to the one who betrayed the Righteous One."
+            },
+            {
+              "ref": "Psalm 109:8",
+              "note": "Cited for the replacement — \"May another take his place of leadership.\" Both psalms are read as requiring historical fulfilment, demonstrating the apostolic hermeneutic of prophetic necessity."
+            },
+            {
+              "ref": "Ephesians 2:20",
+              "note": "The church is \"built on the foundation of the apostles and prophets.\" The restoration of the Twelve preserves the foundation's completeness before the Spirit comes."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -266,6 +271,9 @@
               "note": "Casting lots was a well-attested Jewish method for discerning divine will (Lev 16:8; Prov 16:33; also used at Qumran). The preceding prayer (vv.24–25) distinguishes it from mere chance: God is asked to guide the outcome."
             }
           ]
+        },
+        "hist": {
+          "context": "The Matthias election (vv.15–26) is the last OT-era decision of the church: lots cast after prayer, using Psalms 69 and 109 as interpretive keys. The apostolic qualification — eyewitness of the resurrection from John's baptism onward — defines the unique, unrepeatable foundation of the church's testimony (cf. Eph 2:20). The presence of Mary and Jesus's brothers in the upper room (v14) is significant: the brothers had been unbelievers during Jesus's ministry (John 7:5). The resurrection has converted them. James will become leader of the Jerusalem church (Acts 15:13)."
         }
       }
     }

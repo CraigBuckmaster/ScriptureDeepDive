@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 4,
       "panels": {
-        "ctx": "Jotham does what is right — “as his father Uzziah had done” but crucially, “he did not enter the temple.” He learned from his father’s mistake. He builds the Upper Gate of the temple, fortifies Ophel, defeats the Ammonites, and receives massive tribute. Nine verses for a good king. The Chronicler is brief because Jotham’s story has no dramatic crisis.",
-        "cross": [
-          {
-            "ref": "2 Kgs 15:32–35",
-            "note": "Kings gives Jotham four verses with a positive assessment but notes the high places remained. Chronicles adds construction projects and military victory over the Ammonites, showing faithfulness producing tangible results."
-          },
-          {
-            "ref": "Mic 1:1",
-            "note": "Micah prophesied during Jotham's reign, suggesting that despite the king's personal faithfulness, social injustice was already festering beneath the surface of Judahite prosperity."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 15:32–35",
+              "note": "Kings gives Jotham four verses with a positive assessment but notes the high places remained. Chronicles adds construction projects and military victory over the Ammonites, showing faithfulness producing tangible results."
+            },
+            {
+              "ref": "Mic 1:1",
+              "note": "Micah prophesied during Jotham's reign, suggesting that despite the king's personal faithfulness, social injustice was already festering beneath the surface of Judahite prosperity."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events."
             }
           ]
+        },
+        "hist": {
+          "context": "Jotham does what is right — “as his father Uzziah had done” but crucially, “he did not enter the temple.” He learned from his father’s mistake. He builds the Upper Gate of the temple, fortifies Ophel, defeats the Ammonites, and receives massive tribute. Nine verses for a good king. The Chronicler is brief because Jotham’s story has no dramatic crisis."
         }
       }
     },
@@ -54,17 +58,18 @@
       "verse_start": 5,
       "verse_end": 9,
       "panels": {
-        "ctx": "“Jotham grew powerful because he walked steadfastly before the LORD his God.” The Chronicler’s thesis in one sentence: steady faithfulness produces power. The brevity of the account is itself a commentary — a faithful, undramatic reign doesn’t need many words. He dies and is buried in the City of David. “Ahaz his son succeeded him.”",
-        "cross": [
-          {
-            "ref": "2 Kgs 15:36–38",
-            "note": "Kings mentions that during Jotham's reign the LORD began to send Rezin and Pekah against Judah — the Syro-Ephraimite threat that would explode under Ahaz. Chronicles omits this, keeping Jotham's record entirely positive."
-          },
-          {
-            "ref": "2 Chr 26:4",
-            "note": "The summary 'he grew powerful because he walked steadfastly before the LORD' echoes his father Uzziah's early reign. Unlike Uzziah, Jotham maintained that steadfastness to the end."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 15:36–38",
+              "note": "Kings mentions that during Jotham's reign the LORD began to send Rezin and Pekah against Judah — the Syro-Ephraimite threat that would explode under Ahaz. Chronicles omits this, keeping Jotham's record entirely positive."
+            },
+            {
+              "ref": "2 Chr 26:4",
+              "note": "The summary 'he grew powerful because he walked steadfastly before the LORD' echoes his father Uzziah's early reign. Unlike Uzziah, Jotham maintained that steadfastness to the end."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -82,6 +87,9 @@
               "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events."
             }
           ]
+        },
+        "hist": {
+          "context": "“Jotham grew powerful because he walked steadfastly before the LORD his God.” The Chronicler’s thesis in one sentence: steady faithfulness produces power. The brevity of the account is itself a commentary — a faithful, undramatic reign doesn’t need many words. He dies and is buried in the City of David. “Ahaz his son succeeded him.”"
         }
       }
     }

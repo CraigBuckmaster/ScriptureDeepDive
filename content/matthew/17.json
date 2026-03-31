@@ -31,7 +31,6 @@
             "paragraph": "Peter offers to build three 'tents' (skēnai), echoing the Feast of Tabernacles and perhaps the wilderness tabernacle. He wants to institutionalise the moment. The Father interrupts: 'Listen to him.' The point is not staying on the mountain but hearing the Son and following him down."
           }
         ],
-        "ctx": "The transfiguration (vv.1–9) is the visual confirmation of Peter's confession (16:16) and the counterweight to the passion announcement (16:21): the one who must suffer is the one whose face shines like the sun. Moses and Elijah represent Torah and the Prophets — the whole of the OT — in conversation with Jesus, whose presence supersedes them (v.8: \"they saw no one except Jesus\"). The cloud and voice repeat the baptism's theophany with the crucial addition: \"Listen to him.\" The question about Elijah (vv.10–13) then confirms that the Elijah of Malachi 4 was John the Baptist — and that John's fate was the pattern for the Son of Man's.",
         "tl": [
           {
             "date": "c. AD 28",
@@ -77,16 +76,18 @@
             "text": "Six days after Caesarea Philippi, Jesus takes Peter, James, and John up a high mountain. The traditional identification is Mount Tabor (Jezreel Valley) or Mount Hermon (near Caesarea Philippi, which is more geographically consistent with \"six days later\"). The mountain is the consistent space of theophany."
           }
         ],
-        "cross": [
-          {
-            "ref": "Exod 24:15–16; 34:29–30",
-            "note": "The cloud of divine presence on Sinai; Moses's face shining. The transfiguration echoes both: the glory-cloud of God's presence; the shining face of the one who stands in God's presence. Jesus is the new Moses — and more."
-          },
-          {
-            "ref": "Mal 4:5–6",
-            "note": "I will send you the prophet Elijah before the great and dreadful day of the LORD. Jesus identifies John as this Elijah — and immediately applies the pattern to himself: they did to him what they wished, and so with the Son of Man."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 24:15–16; 34:29–30",
+              "note": "The cloud of divine presence on Sinai; Moses's face shining. The transfiguration echoes both: the glory-cloud of God's presence; the shining face of the one who stands in God's presence. Jesus is the new Moses — and more."
+            },
+            {
+              "ref": "Mal 4:5–6",
+              "note": "I will send you the prophet Elijah before the great and dreadful day of the LORD. Jesus identifies John as this Elijah — and immediately applies the pattern to himself: they did to him what they wished, and so with the Son of Man."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -155,6 +156,9 @@
               "note": "The Catena notes Origen's reading of the 'until the Son of Man is raised from the dead' instruction (v.9): the Transfiguration vision is sealed until the resurrection interprets it. The resurrection is the hermeneutical key to the Transfiguration. The disciples' confusion (v.10: but why do the teachers of the law say Elijah must come first?) shows they still cannot connect the suffering to the glory."
             }
           ]
+        },
+        "hist": {
+          "context": "The transfiguration (vv.1–9) is the visual confirmation of Peter's confession (16:16) and the counterweight to the passion announcement (16:21): the one who must suffer is the one whose face shines like the sun. Moses and Elijah represent Torah and the Prophets — the whole of the OT — in conversation with Jesus, whose presence supersedes them (v.8: \"they saw no one except Jesus\"). The cloud and voice repeat the baptism's theophany with the crucial addition: \"Listen to him.\" The question about Elijah (vv.10–13) then confirms that the Elijah of Malachi 4 was John the Baptist — and that John's fate was the pattern for the Son of Man's."
         }
       }
     },
@@ -172,7 +176,6 @@
             "paragraph": "The disciples could not cast out the demon because of their 'little faith' (oligopistia). Faith the size of a mustard seed can move mountains — the issue is not quantity but quality. Even tiny faith in a great God accomplishes what great effort without faith cannot."
           }
         ],
-        "ctx": "The descent from the transfiguration into the failed exorcism (vv.14–20) is a deliberate contrast. The disciples who were not on the mountain have failed; faith the size of a mustard seed would have been enough, but their faith was insufficient. The second passion prediction (vv.22–23) follows — the disciples grieve, but do not yet understand. The temple tax episode (vv.24–27) closes the chapter on a surprising note: Jesus the Son, exempt from the Father's house-tax, pays it anyway to avoid causing offense. Sovereignty and servanthood coexist.",
         "tl": [
           {
             "date": "c. AD 28",
@@ -218,16 +221,18 @@
             "text": "Six days after Caesarea Philippi, Jesus takes Peter, James, and John up a high mountain. The traditional identification is Mount Tabor (Jezreel Valley) or Mount Hermon (near Caesarea Philippi, which is more geographically consistent with \"six days later\"). The mountain is the consistent space of theophany."
           }
         ],
-        "cross": [
-          {
-            "ref": "Exod 30:13–16",
-            "note": "The two-drachma temple tax — half a shekel per adult male Israelite, collected annually for the upkeep of the sanctuary. Jesus's exemption claim is based on the Son's relationship to the Father: he would not be taxed for his own Father's house."
-          },
-          {
-            "ref": "Matt 13:31",
-            "note": "Mustard seed faith — the parable used positively (kingdom growth) and now diagnostically (faith sufficient for the impossible). The same image carries both the promise and the rebuke."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 30:13–16",
+              "note": "The two-drachma temple tax — half a shekel per adult male Israelite, collected annually for the upkeep of the sanctuary. Jesus's exemption claim is based on the Son's relationship to the Father: he would not be taxed for his own Father's house."
+            },
+            {
+              "ref": "Matt 13:31",
+              "note": "Mustard seed faith — the parable used positively (kingdom growth) and now diagnostically (faith sufficient for the impossible). The same image carries both the promise and the rebuke."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -296,6 +301,9 @@
               "note": "The Catena notes that the second passion prediction (v.22-23) produces grief in the disciples -- they understand more than before, even if not fully. Chrysostom: 'They were going to be exceedingly grieved -- this is the mark of their love for him. They cannot yet understand resurrection, but they understand death. The grief is the fruit of attachment.'"
             }
           ]
+        },
+        "hist": {
+          "context": "The descent from the transfiguration into the failed exorcism (vv.14–20) is a deliberate contrast. The disciples who were not on the mountain have failed; faith the size of a mustard seed would have been enough, but their faith was insufficient. The second passion prediction (vv.22–23) follows — the disciples grieve, but do not yet understand. The temple tax episode (vv.24–27) closes the chapter on a surprising note: Jesus the Son, exempt from the Father's house-tax, pays it anyway to avoid causing offense. Sovereignty and servanthood coexist."
         }
       }
     },
@@ -313,7 +321,6 @@
             "paragraph": "The temple tax of two drachmas (half-shekel) funded temple operations. Jesus pays it to avoid 'offence' (skandalizō) but first establishes that as the King's son, he is exempt. He voluntarily submits to an obligation he could legitimately refuse — a pattern repeated at the cross."
           }
         ],
-        "ctx": "The transfiguration (vv.1–9) is the visual confirmation of Peter's confession (16:16) and the counterweight to the passion announcement (16:21): the one who must suffer is the one whose face shines like the sun. Moses and Elijah represent Torah and the Prophets — the whole of the OT — in conversation with Jesus, whose presence supersedes them (v.8: \"they saw no one except Jesus\"). The cloud and voice repeat the baptism's theophany with the crucial addition: \"Listen to him.\" The question about Elijah (vv.10–13) then confirms that the Elijah of Malachi 4 was John the Baptist — and that John's fate was the pattern for the Son of Man's.",
         "tl": [
           {
             "date": "c. AD 28",
@@ -359,16 +366,18 @@
             "text": "Six days after Caesarea Philippi, Jesus takes Peter, James, and John up a high mountain. The traditional identification is Mount Tabor (Jezreel Valley) or Mount Hermon (near Caesarea Philippi, which is more geographically consistent with \"six days later\"). The mountain is the consistent space of theophany."
           }
         ],
-        "cross": [
-          {
-            "ref": "Exod 24:15–16; 34:29–30",
-            "note": "The cloud of divine presence on Sinai; Moses's face shining. The transfiguration echoes both: the glory-cloud of God's presence; the shining face of the one who stands in God's presence. Jesus is the new Moses — and more."
-          },
-          {
-            "ref": "Mal 4:5–6",
-            "note": "I will send you the prophet Elijah before the great and dreadful day of the LORD. Jesus identifies John as this Elijah — and immediately applies the pattern to himself: they did to him what they wished, and so with the Son of Man."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 24:15–16; 34:29–30",
+              "note": "The cloud of divine presence on Sinai; Moses's face shining. The transfiguration echoes both: the glory-cloud of God's presence; the shining face of the one who stands in God's presence. Jesus is the new Moses — and more."
+            },
+            {
+              "ref": "Mal 4:5–6",
+              "note": "I will send you the prophet Elijah before the great and dreadful day of the LORD. Jesus identifies John as this Elijah — and immediately applies the pattern to himself: they did to him what they wished, and so with the Son of Man."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -437,6 +446,9 @@
               "note": "The Catena notes Origen's reading of the 'until the Son of Man is raised from the dead' instruction (v.9): the Transfiguration vision is sealed until the resurrection interprets it. The resurrection is the hermeneutical key to the Transfiguration. The disciples' confusion (v.10: but why do the teachers of the law say Elijah must come first?) shows they still cannot connect the suffering to the glory."
             }
           ]
+        },
+        "hist": {
+          "context": "The transfiguration (vv.1–9) is the visual confirmation of Peter's confession (16:16) and the counterweight to the passion announcement (16:21): the one who must suffer is the one whose face shines like the sun. Moses and Elijah represent Torah and the Prophets — the whole of the OT — in conversation with Jesus, whose presence supersedes them (v.8: \"they saw no one except Jesus\"). The cloud and voice repeat the baptism's theophany with the crucial addition: \"Listen to him.\" The question about Elijah (vv.10–13) then confirms that the Elijah of Malachi 4 was John the Baptist — and that John's fate was the pattern for the Son of Man's."
         }
       }
     }

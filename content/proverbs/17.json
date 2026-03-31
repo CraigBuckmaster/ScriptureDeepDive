@@ -31,17 +31,18 @@
             "paragraph": "Starting a quarrel is like breaching a dam (pōṭēr mayim) — once it begins, the flow cannot be contained (v. 14). The image is hydraulic: a small crack in a dam becomes catastrophic as water pressure widens it. Conflict follows the same physics. The counsel is not 'resolve quarrels quickly' but 'do not start them at all.'"
           }
         ],
-        "ctx": "The first half opens with the better-than saying (peace over feasting, v.1) before the refining metaphor (v.3), dignity of the poor (v.5), multigenerational honour (v.6), and conflict dynamics (vv.9,13-14).",
-        "cross": [
-          {
-            "ref": "Ps 66:10",
-            "note": "You tested us, refined us like silver — the Psalmist's praise response to divine testing."
-          },
-          {
-            "ref": "1 Pet 1:6-7",
-            "note": "Trials refine faith as gold is refined — the NT application of the crucible image."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 66:10",
+              "note": "You tested us, refined us like silver — the Psalmist's praise response to divine testing."
+            },
+            {
+              "ref": "1 Pet 1:6-7",
+              "note": "Trials refine faith as gold is refined — the NT application of the crucible image."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "The NET note on kasa (covers) in v.9 uses the same verb as 10:12 — the cover is maintained by deliberate choice not to repeatedly mention a resolved offense. The gossip who repeats removes the cover that love had provided."
             }
           ]
+        },
+        "hist": {
+          "context": "The first half opens with the better-than saying (peace over feasting, v.1) before the refining metaphor (v.3), dignity of the poor (v.5), multigenerational honour (v.6), and conflict dynamics (vv.9,13-14)."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "A cheerful heart (lēb śāmēaḥ) is good medicine, but a crushed spirit dries up the bones (v. 22). Proverbs here articulates psychosomatic medicine millennia before the modern concept: inner emotional states have physical consequences. The Hebrew gēhâ (medicine, healing) and yabbeš-gārem (dries the bone) make the body a barometer of the soul."
           }
         ],
-        "ctx": "The second half contains: the friend for all times (v.17), the cheerful heart as medicine (v.22), and the wisdom of speech restraint (vv.27-28). The chapter closes with the paradox that even fools seem wise when silent.",
-        "cross": [
-          {
-            "ref": "John 15:13",
-            "note": "Greater love has no one than this — the NT apex of v.17's \"friend loves at all times.\" Christ is the brother born for adversity."
-          },
-          {
-            "ref": "Prov 11:13",
-            "note": "A gossip betrays confidence — the quiet restrained person of v.27 is the opposite."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 15:13",
+              "note": "Greater love has no one than this — the NT apex of v.17's \"friend loves at all times.\" Christ is the brother born for adversity."
+            },
+            {
+              "ref": "Prov 11:13",
+              "note": "A gossip betrays confidence — the quiet restrained person of v.27 is the opposite."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -178,6 +183,9 @@
               "note": "The NET note on 'even-tempered' (qar-ruach, cool of spirit) identifies self-control over the spirit as the companion virtue to control over words. The wise person who speaks little is also the person who does not let their spirit run hot."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half contains: the friend for all times (v.17), the cheerful heart as medicine (v.22), and the wisdom of speech restraint (vv.27-28). The chapter closes with the paradox that even fools seem wise when silent."
         }
       }
     }

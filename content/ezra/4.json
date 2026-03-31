@@ -31,18 +31,22 @@
             "paragraph": "They \"weakened the hands\" (mərappîm yəḏê) of the builders — an idiom for discouragement. The same phrase describes the effect of bad news in war (Jer 38:4). Words as weapons."
           }
         ],
-        "hist": "The \"adversaries\" are the mixed population settled in the northern territory by Assyria after 722 BC (2 Kgs 17:24–41). They worshipped YHWH alongside other gods — syncretism. Their offer to help build was likely genuine in their own eyes but would have compromised the temple’s exclusively Yahwistic character. The rejection mirrors the later Samaritan-Jewish split.",
-        "ctx": "Zerubbabel’s refusal (“You have no part with us in building a temple to our God”) sounds exclusionary but is theologically principled. The Cyrus decree authorised the Jewish community specifically. Accepting help from syncretistic neighbours would have diluted the restoration’s covenant character from the foundation up.",
-        "cross": [
-          {
-            "ref": "2 Kgs 17:24–41",
-            "note": "The origin of the mixed population — Assyrian resettlement with syncretistic worship."
-          },
-          {
-            "ref": "Neh 2:20",
-            "note": "Nehemiah’s identical rejection: \"You have no share in Jerusalem or any claim or historic right to it.\""
-          }
-        ],
+        "hist": {
+          "historical": "The \"adversaries\" are the mixed population settled in the northern territory by Assyria after 722 BC (2 Kgs 17:24–41). They worshipped YHWH alongside other gods — syncretism. Their offer to help build was likely genuine in their own eyes but would have compromised the temple’s exclusively Yahwistic character. The rejection mirrors the later Samaritan-Jewish split.",
+          "context": "Zerubbabel’s refusal (“You have no part with us in building a temple to our God”) sounds exclusionary but is theologically principled. The Cyrus decree authorised the Jewish community specifically. Accepting help from syncretistic neighbours would have diluted the restoration’s covenant character from the foundation up."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 17:24–41",
+              "note": "The origin of the mixed population — Assyrian resettlement with syncretistic worship."
+            },
+            {
+              "ref": "Neh 2:20",
+              "note": "Nehemiah’s identical rejection: \"You have no share in Jerusalem or any claim or historic right to it.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -138,18 +142,22 @@
             "paragraph": "Artaxerxes orders the work to \"cease\" (bəṭēl) by force. The same verb describes the creation-rest of Gen 2:2 (God ceased). Here the cessation is forced, not voluntary — a perversion of Sabbath."
           }
         ],
-        "hist": "The narrative in 4:6–23 is chronologically complex. The letters to Ahasuerus (v.6, = Xerxes, 486–465 BC) and Artaxerxes (vv.7–23, 465–424 BC) postdate the temple completion (516 BC). The narrator inserts them here thematically — grouping all opposition together regardless of chronology. Verse 24 returns to the Darius-era temple halt, the main narrative thread.",
-        "ctx": "The Aramaic section (4:8–6:18) is one of the most remarkable features of Ezra. The author preserves official Persian correspondence in its original administrative language. This is not translation — it is documentary evidence embedded in the biblical text. The letters reveal how imperial bureaucracy could be weaponised against the covenant community.",
-        "cross": [
-          {
-            "ref": "Neh 6:5–9",
-            "note": "Sanballat’s similar letter campaign against Nehemiah — the same tactic in the next generation."
-          },
-          {
-            "ref": "Dan 6:4–9",
-            "note": "Administrative manipulation to trap Daniel — the same bureaucratic warfare."
-          }
-        ],
+        "hist": {
+          "historical": "The narrative in 4:6–23 is chronologically complex. The letters to Ahasuerus (v.6, = Xerxes, 486–465 BC) and Artaxerxes (vv.7–23, 465–424 BC) postdate the temple completion (516 BC). The narrator inserts them here thematically — grouping all opposition together regardless of chronology. Verse 24 returns to the Darius-era temple halt, the main narrative thread.",
+          "context": "The Aramaic section (4:8–6:18) is one of the most remarkable features of Ezra. The author preserves official Persian correspondence in its original administrative language. This is not translation — it is documentary evidence embedded in the biblical text. The letters reveal how imperial bureaucracy could be weaponised against the covenant community."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Neh 6:5–9",
+              "note": "Sanballat’s similar letter campaign against Nehemiah — the same tactic in the next generation."
+            },
+            {
+              "ref": "Dan 6:4–9",
+              "note": "Administrative manipulation to trap Daniel — the same bureaucratic warfare."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

@@ -31,18 +31,22 @@
             "paragraph": "V.3: \"I will harden Pharaoh's heart (ḥizzaqtî ʾet-leb parʿōh).\" The verb ḥāzaq (to be strong, firm, hard) is used differently in different plague texts — sometimes God hardens (chs 7-10), sometimes Pharaoh hardens himself (chs 8-9). The theological point: Pharaoh's own resistance reveals his character while simultaneously serving God's purposes for multiplying signs and witnesses (Exod 9:16; Rom 9:17)."
           }
         ],
-        "hist": "Egyptian magicians' ability to manipulate serpents is documented — a text from the First Intermediate Period describes a magician handling serpents. The uraeus cobra was the symbol of pharaonic power and divine protection. The staff-to-serpent sign directly confronts Egypt's most potent religious symbol: YHWH's serpent swallows Pharaoh's serpent.",
-        "ctx": "The framework speech (vv.1–7) is crucial for reading all ten plagues. Three elements: (1) purpose — \"the Egyptians shall know that I am the LORD\"; (2) mechanism — the hardening; (3) scope — \"great acts of judgment.\" The plagues are not primarily punishments but revelations. Each plague targets a domain Egypt claims is controlled by one of its gods — YHWH systematically dismantles the Egyptian theological worldview domain by domain.",
-        "cross": [
-          {
-            "ref": "Rom 9:17–18",
-            "note": "Paul uses the hardening of Pharaoh's heart to discuss divine sovereignty and human responsibility — both are real; neither cancels the other."
-          },
-          {
-            "ref": "Rev 16",
-            "note": "The seven bowl judgments echo the ten plagues — blood (bowl 2), darkness (bowl 5), etc. Exodus's plague sequence is the typological template for eschatological judgment."
-          }
-        ],
+        "hist": {
+          "historical": "Egyptian magicians' ability to manipulate serpents is documented — a text from the First Intermediate Period describes a magician handling serpents. The uraeus cobra was the symbol of pharaonic power and divine protection. The staff-to-serpent sign directly confronts Egypt's most potent religious symbol: YHWH's serpent swallows Pharaoh's serpent.",
+          "context": "The framework speech (vv.1–7) is crucial for reading all ten plagues. Three elements: (1) purpose — \"the Egyptians shall know that I am the LORD\"; (2) mechanism — the hardening; (3) scope — \"great acts of judgment.\" The plagues are not primarily punishments but revelations. Each plague targets a domain Egypt claims is controlled by one of its gods — YHWH systematically dismantles the Egyptian theological worldview domain by domain."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 9:17–18",
+              "note": "Paul uses the hardening of Pharaoh's heart to discuss divine sovereignty and human responsibility — both are real; neither cancels the other."
+            },
+            {
+              "ref": "Rev 16",
+              "note": "The seven bowl judgments echo the ten plagues — blood (bowl 2), darkness (bowl 5), etc. Exodus's plague sequence is the typological template for eschatological judgment."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -130,18 +134,22 @@
             "paragraph": "The Egyptian magicians who replicate Moses and Aaron's signs are ḥarṭummîm — likely lector-priests with access to magical texts. They succeed with the first two signs (staff to serpent, blood, frogs) but fail at the gnats (v.18). Their failure at the third plague marks the tipping point: \"This is the finger of God.\" Egyptian sacred power is exposed as finite before YHWH's infinite authority."
           }
         ],
-        "hist": "The Nile turning to blood (the first plague) directly attacks Hapi, the Egyptian god of the Nile flood. The annual inundation was the basis of Egypt's agricultural prosperity and was celebrated in religious festivals. A natural phenomenon of red-coloured algal bloom (Oscillatoria rubescens) in the Nile has been proposed as a naturalistic backdrop, though the text presents this as a supernatural act. The Egyptian magicians' ability to replicate the sign follows the pattern of magical contest known from Egyptian literature.",
-        "ctx": "The first plague targets the Nile — Egypt's most sacred resource and the source of its agricultural power. The Egyptian gods of the Nile (Hapi, Osiris) cannot protect their domain. Fish die; water is undrinkable for seven days (v.25). The magicians' ability to replicate the plague (v.22) does not diminish YHWH — they cannot reverse it, only add to the problem. Pharaoh's response (v.23: \"he did not take even this to heart\") sets the pattern for the entire plague sequence: each judgment is met with hardened refusal.",
-        "cross": [
-          {
-            "ref": "Ps 78:44",
-            "note": "The psalmist recalls the first plague: 'He turned their rivers into blood; they could not drink from their streams.' The plagues tradition was liturgically rehearsed as evidence of God's sovereign power."
-          },
-          {
-            "ref": "Rev 16:3–4",
-            "note": "The second and third bowl judgments turn the sea and rivers to blood, echoing this plague. Revelation's final judgment recapitulates Egypt's — the exodus pattern shapes eschatology."
-          }
-        ],
+        "hist": {
+          "historical": "The Nile turning to blood (the first plague) directly attacks Hapi, the Egyptian god of the Nile flood. The annual inundation was the basis of Egypt's agricultural prosperity and was celebrated in religious festivals. A natural phenomenon of red-coloured algal bloom (Oscillatoria rubescens) in the Nile has been proposed as a naturalistic backdrop, though the text presents this as a supernatural act. The Egyptian magicians' ability to replicate the sign follows the pattern of magical contest known from Egyptian literature.",
+          "context": "The first plague targets the Nile — Egypt's most sacred resource and the source of its agricultural power. The Egyptian gods of the Nile (Hapi, Osiris) cannot protect their domain. Fish die; water is undrinkable for seven days (v.25). The magicians' ability to replicate the plague (v.22) does not diminish YHWH — they cannot reverse it, only add to the problem. Pharaoh's response (v.23: \"he did not take even this to heart\") sets the pattern for the entire plague sequence: each judgment is met with hardened refusal."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 78:44",
+              "note": "The psalmist recalls the first plague: 'He turned their rivers into blood; they could not drink from their streams.' The plagues tradition was liturgically rehearsed as evidence of God's sovereign power."
+            },
+            {
+              "ref": "Rev 16:3–4",
+              "note": "The second and third bowl judgments turn the sea and rivers to blood, echoing this plague. Revelation's final judgment recapitulates Egypt's — the exodus pattern shapes eschatology."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

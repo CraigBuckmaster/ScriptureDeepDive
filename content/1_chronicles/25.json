@@ -25,17 +25,18 @@
             "paragraph": "The musicians are described as “prophesying with harps, lyres, and cymbals” (v.1). The verb nibāʾ (“to prophesy”) is applied to musical performance. For the Chronicler, music is not entertainment but prophetic ministry — the musicians speak God’s word through melody."
           }
         ],
-        "ctx": "David sets apart Asaph, Heman, and Jeduthun “for the ministry of prophesying, accompanied by harps, lyres, and cymbals.” 288 trained musicians are divided into 24 courses (matching the 24 priestly divisions). The parallel structure is deliberate: priests and musicians serve in the same rotational system because both are essential to worship. Heman is called “the king’s seer” (v.5) and has fourteen sons and three daughters. Total musicians: 288 — all “trained and skilled.”",
-        "cross": [
-          {
-            "ref": "2 Chr 29:30",
-            "note": "Hezekiah commands the Levites to sing praises “with the words of David and of Asaph the seer.” Asaph’s music is classified as prophetic."
-          },
-          {
-            "ref": "2 Chr 35:15",
-            "note": "Jeduthun is called “the king’s seer.” All three chief musicians hold the prophetic title."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Chr 29:30",
+              "note": "Hezekiah commands the Levites to sing praises “with the words of David and of Asaph the seer.” Asaph’s music is classified as prophetic."
+            },
+            {
+              "ref": "2 Chr 35:15",
+              "note": "Jeduthun is called “the king’s seer.” All three chief musicians hold the prophetic title."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -53,6 +54,9 @@
               "note": "hannibĕʾîm bĕkinnōrōt (“prophesying with harps”) — the niphil participle of nābāʾ applied to instrumental performance is unparalleled outside Chronicles."
             }
           ]
+        },
+        "hist": {
+          "context": "David sets apart Asaph, Heman, and Jeduthun “for the ministry of prophesying, accompanied by harps, lyres, and cymbals.” 288 trained musicians are divided into 24 courses (matching the 24 priestly divisions). The parallel structure is deliberate: priests and musicians serve in the same rotational system because both are essential to worship. Heman is called “the king’s seer” (v.5) and has fourteen sons and three daughters. Total musicians: 288 — all “trained and skilled.”"
         }
       }
     },
@@ -62,13 +66,14 @@
       "verse_start": 8,
       "verse_end": 31,
       "panels": {
-        "ctx": "The 288 musicians are divided into 24 groups of 12, assigned by lot. “Young and old alike, teacher as well as student, cast lots for their duties.” The lot system mirrors the priestly divisions of chapter 24 and produces the same egalitarian result: experience does not determine assignment. Each division serves alongside its corresponding priestly course, creating a unified worship calendar where music and sacrifice operate in synchrony.",
-        "cross": [
-          {
-            "ref": "1 Chr 24:1–19",
-            "note": "The 24 priestly courses. Musicians and priests are organised by the same method into the same number of divisions."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Chr 24:1–19",
+              "note": "The 24 priestly courses. Musicians and priests are organised by the same method into the same number of divisions."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -86,6 +91,9 @@
               "note": "The pairing of mēbîn (“teacher/expert”) with talmîd (“student”) in lot-casting emphasises the egalitarian principle: expertise does not override divine assignment."
             }
           ]
+        },
+        "hist": {
+          "context": "The 288 musicians are divided into 24 groups of 12, assigned by lot. “Young and old alike, teacher as well as student, cast lots for their duties.” The lot system mirrors the priestly divisions of chapter 24 and produces the same egalitarian result: experience does not determine assignment. Each division serves alongside its corresponding priestly course, creating a unified worship calendar where music and sacrifice operate in synchrony."
         }
       }
     }

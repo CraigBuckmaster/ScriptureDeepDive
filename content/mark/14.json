@@ -69,21 +69,22 @@
             "current": false
           }
         ],
-        "ctx": "Mark 14:1-31 is the preparation for the Passion in three movements: the anointing at Bethany (prophetic preparation for burial), the Last Supper (covenant inauguration), and the Mount of Olives predictions (betrayal, denial, scattering). The anointing woman who wastes expensive perfume for Jesus is placed in sharp contrast to Judas who immediately goes to sell him for money.",
-        "cross": [
-          {
-            "ref": "Exod 24:8",
-            "note": "This is the blood of the covenant — Moses’ words at the Sinai covenant ratification, quoted in the Last Supper."
-          },
-          {
-            "ref": "Isa 53:12",
-            "note": "He poured out his life unto death… he bore the sin of many — the “poured out for many” language."
-          },
-          {
-            "ref": "Zech 13:7",
-            "note": "Strike the shepherd, and the sheep will be scattered — the text Jesus quotes predicting the disciples’ flight."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 24:8",
+              "note": "This is the blood of the covenant — Moses’ words at the Sinai covenant ratification, quoted in the Last Supper."
+            },
+            {
+              "ref": "Isa 53:12",
+              "note": "He poured out his life unto death… he bore the sin of many — the “poured out for many” language."
+            },
+            {
+              "ref": "Zech 13:7",
+              "note": "Strike the shepherd, and the sheep will be scattered — the text Jesus quotes predicting the disciples’ flight."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -161,6 +162,9 @@
               "note": "I will not drink again… until I drink it new in the kingdom of God — the eschatological dimension of the Eucharist: it points backward (to the exodus) and forward (to the Messianic banquet). The present meal is a foretaste of the kingdom feast."
             }
           ]
+        },
+        "hist": {
+          "context": "Mark 14:1-31 is the preparation for the Passion in three movements: the anointing at Bethany (prophetic preparation for burial), the Last Supper (covenant inauguration), and the Mount of Olives predictions (betrayal, denial, scattering). The anointing woman who wastes expensive perfume for Jesus is placed in sharp contrast to Judas who immediately goes to sell him for money."
         }
       }
     },
@@ -222,21 +226,22 @@
             "current": false
           }
         ],
-        "ctx": "The Gethsemane scene is the most intimate in Mark: three inner disciples, one prayer, three failures to watch. The cup Jesus asks to be removed is the cup of divine wrath (Isa 51:17; Jer 25:15) — the cup he will drink at Golgotha so that others do not have to. His trial before the high priest is the first public declaration of his messianic identity: “I am” with the Danielic-parousia claim. Peter’s denial at the fire mirrors the trial: while Jesus confesses, Peter denies.",
-        "cross": [
-          {
-            "ref": "Ps 22:1",
-            "note": "My God, my God, why have you forsaken me? — the Psalm of the abandoned righteous one that underlies the Gethsemane prayer and the cry of dereliction."
-          },
-          {
-            "ref": "Isa 51:17",
-            "note": "Awake, awake! Rise up, Jerusalem, you who have drunk from the hand of the LORD the cup of his wrath — the cup Jesus asks to be removed."
-          },
-          {
-            "ref": "Dan 7:13",
-            "note": "The Son of Man coming on the clouds of heaven — the Danielic claim Jesus makes before the Sanhedrin in v.62."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 22:1",
+              "note": "My God, my God, why have you forsaken me? — the Psalm of the abandoned righteous one that underlies the Gethsemane prayer and the cry of dereliction."
+            },
+            {
+              "ref": "Isa 51:17",
+              "note": "Awake, awake! Rise up, Jerusalem, you who have drunk from the hand of the LORD the cup of his wrath — the cup Jesus asks to be removed."
+            },
+            {
+              "ref": "Dan 7:13",
+              "note": "The Son of Man coming on the clouds of heaven — the Danielic claim Jesus makes before the Sanhedrin in v.62."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -314,6 +319,9 @@
               "note": "Egō eimi — the Greek equivalent of the Hebrew divine name (Exod 3:14 LXX). The two-word answer is simultaneously the mundane “I am he” (answering “are you the Messiah?”) and the divine self-identification. The high priest correctly hears both dimensions: this is why he tears his robe."
             }
           ]
+        },
+        "hist": {
+          "context": "The Gethsemane scene is the most intimate in Mark: three inner disciples, one prayer, three failures to watch. The cup Jesus asks to be removed is the cup of divine wrath (Isa 51:17; Jer 25:15) — the cup he will drink at Golgotha so that others do not have to. His trial before the high priest is the first public declaration of his messianic identity: “I am” with the Danielic-parousia claim. Peter’s denial at the fire mirrors the trial: while Jesus confesses, Peter denies."
         }
       }
     },
@@ -375,21 +383,22 @@
             "current": false
           }
         ],
-        "ctx": "Mark 14:1-31 is the preparation for the Passion in three movements: the anointing at Bethany (prophetic preparation for burial), the Last Supper (covenant inauguration), and the Mount of Olives predictions (betrayal, denial, scattering). The anointing woman who wastes expensive perfume for Jesus is placed in sharp contrast to Judas who immediately goes to sell him for money.",
-        "cross": [
-          {
-            "ref": "Exod 24:8",
-            "note": "This is the blood of the covenant — Moses’ words at the Sinai covenant ratification, quoted in the Last Supper."
-          },
-          {
-            "ref": "Isa 53:12",
-            "note": "He poured out his life unto death… he bore the sin of many — the “poured out for many” language."
-          },
-          {
-            "ref": "Zech 13:7",
-            "note": "Strike the shepherd, and the sheep will be scattered — the text Jesus quotes predicting the disciples’ flight."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 24:8",
+              "note": "This is the blood of the covenant — Moses’ words at the Sinai covenant ratification, quoted in the Last Supper."
+            },
+            {
+              "ref": "Isa 53:12",
+              "note": "He poured out his life unto death… he bore the sin of many — the “poured out for many” language."
+            },
+            {
+              "ref": "Zech 13:7",
+              "note": "Strike the shepherd, and the sheep will be scattered — the text Jesus quotes predicting the disciples’ flight."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -467,6 +476,9 @@
               "note": "I will not drink again… until I drink it new in the kingdom of God — the eschatological dimension of the Eucharist: it points backward (to the exodus) and forward (to the Messianic banquet). The present meal is a foretaste of the kingdom feast."
             }
           ]
+        },
+        "hist": {
+          "context": "Mark 14:1-31 is the preparation for the Passion in three movements: the anointing at Bethany (prophetic preparation for burial), the Last Supper (covenant inauguration), and the Mount of Olives predictions (betrayal, denial, scattering). The anointing woman who wastes expensive perfume for Jesus is placed in sharp contrast to Judas who immediately goes to sell him for money."
         }
       }
     },
@@ -528,21 +540,22 @@
             "current": false
           }
         ],
-        "ctx": "The Gethsemane scene is the most intimate in Mark: three inner disciples, one prayer, three failures to watch. The cup Jesus asks to be removed is the cup of divine wrath (Isa 51:17; Jer 25:15) — the cup he will drink at Golgotha so that others do not have to. His trial before the high priest is the first public declaration of his messianic identity: “I am” with the Danielic-parousia claim. Peter’s denial at the fire mirrors the trial: while Jesus confesses, Peter denies.",
-        "cross": [
-          {
-            "ref": "Ps 22:1",
-            "note": "My God, my God, why have you forsaken me? — the Psalm of the abandoned righteous one that underlies the Gethsemane prayer and the cry of dereliction."
-          },
-          {
-            "ref": "Isa 51:17",
-            "note": "Awake, awake! Rise up, Jerusalem, you who have drunk from the hand of the LORD the cup of his wrath — the cup Jesus asks to be removed."
-          },
-          {
-            "ref": "Dan 7:13",
-            "note": "The Son of Man coming on the clouds of heaven — the Danielic claim Jesus makes before the Sanhedrin in v.62."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 22:1",
+              "note": "My God, my God, why have you forsaken me? — the Psalm of the abandoned righteous one that underlies the Gethsemane prayer and the cry of dereliction."
+            },
+            {
+              "ref": "Isa 51:17",
+              "note": "Awake, awake! Rise up, Jerusalem, you who have drunk from the hand of the LORD the cup of his wrath — the cup Jesus asks to be removed."
+            },
+            {
+              "ref": "Dan 7:13",
+              "note": "The Son of Man coming on the clouds of heaven — the Danielic claim Jesus makes before the Sanhedrin in v.62."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -620,6 +633,9 @@
               "note": "Egō eimi — the Greek equivalent of the Hebrew divine name (Exod 3:14 LXX). The two-word answer is simultaneously the mundane “I am he” (answering “are you the Messiah?”) and the divine self-identification. The high priest correctly hears both dimensions: this is why he tears his robe."
             }
           ]
+        },
+        "hist": {
+          "context": "The Gethsemane scene is the most intimate in Mark: three inner disciples, one prayer, three failures to watch. The cup Jesus asks to be removed is the cup of divine wrath (Isa 51:17; Jer 25:15) — the cup he will drink at Golgotha so that others do not have to. His trial before the high priest is the first public declaration of his messianic identity: “I am” with the Danielic-parousia claim. Peter’s denial at the fire mirrors the trial: while Jesus confesses, Peter denies."
         }
       }
     }

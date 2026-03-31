@@ -25,17 +25,18 @@
             "paragraph": "\"Have pity (ḥānanî) on me, my friends, have pity, for the hand of God has struck me\" (v.21). The verb is from the root ḥānan — to be gracious, to show mercy. Job begs for what the friends refuse to give: compassion without diagnosis."
           }
         ],
-        "ctx": "Before the famous declaration, Job catalogues his total alienation. God has wronged him (v.6), stripped his honour (v.9), torn down his hope like a tree (v.10). Then the social collapse: relatives avoid him, friends forget, servants ignore, wife finds his breath repulsive, children despise, intimate friends turn against him (vv.13–19). He is “nothing but skin and bones” (v.20). This is the lowest point before the highest moment.",
-        "cross": [
-          {
-            "ref": "Ps 88:8",
-            "note": "\"You have taken from me friend and neighbour — darkness is my closest friend\" — the closest Psalm parallel to Job’s alienation."
-          },
-          {
-            "ref": "Isa 53:3",
-            "note": "\"Despised and rejected by mankind\" — the Suffering Servant who experiences what Job describes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 88:8",
+              "note": "\"You have taken from me friend and neighbour — darkness is my closest friend\" — the closest Psalm parallel to Job’s alienation."
+            },
+            {
+              "ref": "Isa 53:3",
+              "note": "\"Despised and rejected by mankind\" — the Suffering Servant who experiences what Job describes."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -104,6 +105,9 @@
               "note": "Habel: Job presents his final evidence of injury. The catalogue of alienation establishes the full extent of damages. The plaintiff has lost everything — property, health, family, reputation, community. The case for vindication is at maximum strength."
             }
           ]
+        },
+        "hist": {
+          "context": "Before the famous declaration, Job catalogues his total alienation. God has wronged him (v.6), stripped his honour (v.9), torn down his hope like a tree (v.10). Then the social collapse: relatives avoid him, friends forget, servants ignore, wife finds his breath repulsive, children despise, intimate friends turn against him (vv.13–19). He is “nothing but skin and bones” (v.20). This is the lowest point before the highest moment."
         }
       }
     },
@@ -127,21 +131,22 @@
             "paragraph": "\"My redeemer lives (ḥay)\" — the word is emphatic. Not “I hope” or “I wish” but “I know” (yādaʿtî). And the redeemer is not dead, not absent, not hypothetical. He lives. The certitude is staggering after 18 chapters of darkness."
           }
         ],
-        "ctx": "The theological climax of the book. After total alienation (vv.1–20), Job makes the most audacious faith statement in the OT. He knows his redeemer lives. He knows the redeemer will stand on the earth. He knows that after his skin has been destroyed, yet in his flesh he will see God (v.26). The trajectory is complete: arbiter (9:33) → witness (16:19) → redeemer (19:25). Job’s faith has grown through suffering, not despite it.",
-        "cross": [
-          {
-            "ref": "Ruth 3:9",
-            "note": "\"I am your servant Ruth... spread the corner of your garment over me, since you are a guardian-redeemer\" — the gōʾél in action."
-          },
-          {
-            "ref": "Isa 44:6",
-            "note": "\"I am the first and the last; apart from me there is no God... Israel’s Redeemer\" — God as gōʾél."
-          },
-          {
-            "ref": "1 Cor 15:51–53",
-            "note": "\"We will all be changed... the dead will be raised imperishable\" — the resurrection Job could only glimpse."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ruth 3:9",
+              "note": "\"I am your servant Ruth... spread the corner of your garment over me, since you are a guardian-redeemer\" — the gōʾél in action."
+            },
+            {
+              "ref": "Isa 44:6",
+              "note": "\"I am the first and the last; apart from me there is no God... Israel’s Redeemer\" — God as gōʾél."
+            },
+            {
+              "ref": "1 Cor 15:51–53",
+              "note": "\"We will all be changed... the dead will be raised imperishable\" — the resurrection Job could only glimpse."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -218,6 +223,9 @@
               "note": "Habel: the gōʾél declaration is Job’s appeal to the highest court. When human courts fail, when the judge is also the accused, the kinsman-redeemer steps in. Job trusts that the system has a fail-safe: a redeemer who will vindicate him in the end."
             }
           ]
+        },
+        "hist": {
+          "context": "The theological climax of the book. After total alienation (vv.1–20), Job makes the most audacious faith statement in the OT. He knows his redeemer lives. He knows the redeemer will stand on the earth. He knows that after his skin has been destroyed, yet in his flesh he will see God (v.26). The trajectory is complete: arbiter (9:33) → witness (16:19) → redeemer (19:25). Job’s faith has grown through suffering, not despite it."
         }
       }
     }

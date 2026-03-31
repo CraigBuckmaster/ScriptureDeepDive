@@ -22,17 +22,18 @@
             "paragraph": "\"The LORD is my light (ʾōrî) and my salvation — whom shall I fear?\" (v.1). Light (revelation), salvation (rescue), stronghold (refuge) — three identities of God produce fearlessness. David asks one thing: to dwell in God’s house all his days, to gaze on God’s beauty and seek him in his temple (v.4)."
           }
         ],
-        "ctx": "David’s confidence: even if an army besieges him, his heart will not fear (v.3). \"One thing I ask: to dwell in the house of the LORD all the days of my life, to gaze on the beauty of the LORD\" (v.4). The \"one thing\" is singular focus: God’s presence above all else.",
-        "cross": [
-          {
-            "ref": "John 8:12",
-            "note": "\"I am the light of the world\" — Jesus claims to be the light of Psalm 27:1."
-          },
-          {
-            "ref": "Phil 1:21",
-            "note": "\"For to me, to live is Christ\" — Paul’s \"one thing\" echoes David’s."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 8:12",
+              "note": "\"I am the light of the world\" — Jesus claims to be the light of Psalm 27:1."
+            },
+            {
+              "ref": "Phil 1:21",
+              "note": "\"For to me, to live is Christ\" — Paul’s \"one thing\" echoes David’s."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -123,6 +124,9 @@
               "note": "Goldingay: the shelter imagery shifts from booth (sukkāh) to tent ('ōhel) to rock (ṣûr). Each image is more permanent than the last — God's protection escalates from temporary to eternal."
             }
           ]
+        },
+        "hist": {
+          "context": "David’s confidence: even if an army besieges him, his heart will not fear (v.3). \"One thing I ask: to dwell in the house of the LORD all the days of my life, to gaze on the beauty of the LORD\" (v.4). The \"one thing\" is singular focus: God’s presence above all else."
         }
       }
     },
@@ -140,17 +144,18 @@
             "paragraph": "\"Wait (qawwēh) for the LORD; be strong and take heart and wait for the LORD\" (v.14). The psalm’s final word is spoken twice: wait. Active, confident waiting — not passive resignation but expectant endurance. The one who asked to \"gaze on the beauty of the LORD\" (v.4) now waits for that beauty to be revealed."
           }
         ],
-        "ctx": "The psalm’s second half shifts to petition: hear me, do not hide your face, do not reject me (vv.7–9). \"Though my father and mother forsake me, the LORD will receive me\" (v.10). Then the declaration: \"I remain confident of this: I will see the goodness of the LORD in the land of the living\" (v.13). The psalm closes with the double imperative: wait for the LORD.",
-        "cross": [
-          {
-            "ref": "Isa 40:31",
-            "note": "\"Those who wait on the LORD will renew their strength\" — the same waiting-produces-strength theology."
-          },
-          {
-            "ref": "Lam 3:25",
-            "note": "\"The LORD is good to those whose hope is in him, to the one who seeks him\" — the same confident waiting."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 40:31",
+              "note": "\"Those who wait on the LORD will renew their strength\" — the same waiting-produces-strength theology."
+            },
+            {
+              "ref": "Lam 3:25",
+              "note": "\"The LORD is good to those whose hope is in him, to the one who seeks him\" — the same confident waiting."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -241,6 +246,9 @@
               "note": "Goldingay: 'be strong and take heart' — ḥăzaq and 'āmēṣ are military terms. Waiting for God requires the same courage as going into battle. Patience is not weakness; it is strength under discipline."
             }
           ]
+        },
+        "hist": {
+          "context": "The psalm’s second half shifts to petition: hear me, do not hide your face, do not reject me (vv.7–9). \"Though my father and mother forsake me, the LORD will receive me\" (v.10). Then the declaration: \"I remain confident of this: I will see the goodness of the LORD in the land of the living\" (v.13). The psalm closes with the double imperative: wait for the LORD."
         }
       }
     }

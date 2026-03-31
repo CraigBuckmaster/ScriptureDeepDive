@@ -37,25 +37,26 @@
             "paragraph": "Walking in truth and love - the same dual emphasis as 1 John. Truth and love are inseparable marks of genuine faith."
           }
         ],
-        "ctx": "The elder to the elect lady and her children, whom I love in the truth, and not only I but also all who know the truth, because of the truth that abides in us and will be with us forever. Grace, mercy, and peace will be with us from God the Father and from Jesus Christ the Father Son, in truth and love. I rejoiced greatly to find some of your children walking in the truth, just as we were commanded by the Father. And now I ask you, dear lady - not as though I were writing you a new commandment, but the one we have had from the beginning - that we love one another. And this is love, that we walk according to his commandments; this is the commandment, just as you have heard from the beginning, so that you should walk in it.",
-        "cross": [
-          {
-            "ref": "1 John 2:7",
-            "note": "I am writing you no new commandment but an old commandment."
-          },
-          {
-            "ref": "John 13:34",
-            "note": "A new commandment I give to you, that you love one another."
-          },
-          {
-            "ref": "3 John 4",
-            "note": "I have no greater joy than to hear that my children are walking in the truth."
-          },
-          {
-            "ref": "1 John 5:3",
-            "note": "This is the love of God, that we keep his commandments."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 John 2:7",
+              "note": "I am writing you no new commandment but an old commandment."
+            },
+            {
+              "ref": "John 13:34",
+              "note": "A new commandment I give to you, that you love one another."
+            },
+            {
+              "ref": "3 John 4",
+              "note": "I have no greater joy than to hear that my children are walking in the truth."
+            },
+            {
+              "ref": "1 John 5:3",
+              "note": "This is the love of God, that we keep his commandments."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -113,7 +114,10 @@
             }
           ]
         },
-        "hist": "Second John is the shortest book in the New Testament — a single papyrus sheet. The 'elder' writes to the 'elect lady and her children,' probably a house church and its members. The letter addresses the same crisis as 1 John: traveling teachers who deny Christ's coming in the flesh (v. 7). In the ancient world, Christian hospitality was essential for itinerant missionaries (Romans 16:1-2; 3 John 5-8). This letter warns against extending such hospitality to false teachers, which would make the host 'a partner in their evil' (v. 11). The brevity reflects the urgency: the elder hopes to visit soon and speak 'face to face' (v. 12)."
+        "hist": {
+          "historical": "Second John is the shortest book in the New Testament — a single papyrus sheet. The 'elder' writes to the 'elect lady and her children,' probably a house church and its members. The letter addresses the same crisis as 1 John: traveling teachers who deny Christ's coming in the flesh (v. 7). In the ancient world, Christian hospitality was essential for itinerant missionaries (Romans 16:1-2; 3 John 5-8). This letter warns against extending such hospitality to false teachers, which would make the host 'a partner in their evil' (v. 11). The brevity reflects the urgency: the elder hopes to visit soon and speak 'face to face' (v. 12).",
+          "context": "The elder to the elect lady and her children, whom I love in the truth, and not only I but also all who know the truth, because of the truth that abides in us and will be with us forever. Grace, mercy, and peace will be with us from God the Father and from Jesus Christ the Father Son, in truth and love. I rejoiced greatly to find some of your children walking in the truth, just as we were commanded by the Father. And now I ask you, dear lady - not as though I were writing you a new commandment, but the one we have had from the beginning - that we love one another. And this is love, that we walk according to his commandments; this is the commandment, just as you have heard from the beginning, so that you should walk in it."
+        }
       }
     },
     {
@@ -142,25 +146,26 @@
             "paragraph": "Do not give him a greeting - the greeting implied endorsement and partnership. Withholding it maintained doctrinal boundaries."
           }
         ],
-        "ctx": "For many deceivers have gone out into the world, those who do not confess the coming of Jesus Christ in the flesh. Such a one is the deceiver and the antichrist. Watch yourselves, so that you may not lose what we have worked for, but may win a full reward. Everyone who goes on ahead and does not abide in the teaching of Christ does not have God. Whoever abides in the teaching has both the Father and the Son. If anyone comes to you and does not bring this teaching, do not receive him into your house or give him any greeting, for whoever greets him takes part in his wicked works.",
-        "cross": [
-          {
-            "ref": "1 John 4:1-3",
-            "note": "Test the spirits; many false prophets have gone out."
-          },
-          {
-            "ref": "2 John 7",
-            "note": "Those who do not confess Jesus Christ coming in the flesh."
-          },
-          {
-            "ref": "Matthew 10:14",
-            "note": "If anyone will not receive you, shake off the dust."
-          },
-          {
-            "ref": "Titus 3:10",
-            "note": "As for a person who stirs up division, warn him, then avoid him."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 John 4:1-3",
+              "note": "Test the spirits; many false prophets have gone out."
+            },
+            {
+              "ref": "2 John 7",
+              "note": "Those who do not confess Jesus Christ coming in the flesh."
+            },
+            {
+              "ref": "Matthew 10:14",
+              "note": "If anyone will not receive you, shake off the dust."
+            },
+            {
+              "ref": "Titus 3:10",
+              "note": "As for a person who stirs up division, warn him, then avoid him."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -217,6 +222,9 @@
               "note": "Kruse emphasizes that doctrinal boundaries protect the community. Hospitality to false teachers endangers the church."
             }
           ]
+        },
+        "hist": {
+          "context": "For many deceivers have gone out into the world, those who do not confess the coming of Jesus Christ in the flesh. Such a one is the deceiver and the antichrist. Watch yourselves, so that you may not lose what we have worked for, but may win a full reward. Everyone who goes on ahead and does not abide in the teaching of Christ does not have God. Whoever abides in the teaching has both the Father and the Son. If anyone comes to you and does not bring this teaching, do not receive him into your house or give him any greeting, for whoever greets him takes part in his wicked works."
         }
       }
     },
@@ -240,21 +248,22 @@
             "paragraph": "That our joy may be complete - face-to-face fellowship brings fullness that letters cannot achieve."
           }
         ],
-        "ctx": "Though I have much to write to you, I would rather not use paper and ink. Instead I hope to come to you and talk face to face, so that our joy may be complete. The children of your elect sister greet you.",
-        "cross": [
-          {
-            "ref": "3 John 13-14",
-            "note": "I have much to write but hope to see you soon and talk face to face."
-          },
-          {
-            "ref": "1 John 1:4",
-            "note": "We write these things so that our joy may be complete."
-          },
-          {
-            "ref": "Romans 15:32",
-            "note": "That I may come to you with joy and be refreshed."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "3 John 13-14",
+              "note": "I have much to write but hope to see you soon and talk face to face."
+            },
+            {
+              "ref": "1 John 1:4",
+              "note": "We write these things so that our joy may be complete."
+            },
+            {
+              "ref": "Romans 15:32",
+              "note": "That I may come to you with joy and be refreshed."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -299,6 +308,9 @@
               "note": "Kruse emphasizes that the brief letter is intentional - more will be said in person. The letter addresses urgent concerns."
             }
           ]
+        },
+        "hist": {
+          "context": "Though I have much to write to you, I would rather not use paper and ink. Instead I hope to come to you and talk face to face, so that our joy may be complete. The children of your elect sister greet you."
         }
       }
     }

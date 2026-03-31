@@ -25,25 +25,26 @@
             "paragraph": "\"King Nebuchadnezzar made an image (ṣəlēm) of gold, sixty cubits high and six cubits wide\" (v.1). The golden statue — 90 feet tall. All must bow when the music plays or be thrown into a blazing furnace. Shadrach, Meshach, and Abednego refuse. Their answer: \"The God we serve is able to deliver us. But even if he does not, we will not serve your gods\" (vv.17–18). The \"but even if he does not\" is the theological centre: faith is not contingent on rescue."
           }
         ],
-        "ctx": "The 90-foot golden statue appears to be Nebuchadnezzar’s response to ch.2: since the dream said only the HEAD was gold, he builds an ENTIRE statue of gold — rejecting the prophecy of succession. The dimensions (60 × 6 cubits) and the six instruments listed in v.5 have led some commentators to connect the passage with the \"number of the beast\" imagery in Rev 13. The Dura plain where the statue stood has been identified with a site near modern Fallujah, Iraq.",
-        "cross": [
-          {
-            "ref": "Ex 20:3–5",
-            "note": "The first and second commandments: no other gods, no graven images — the Torah basis for the three friends’ refusal."
-          },
-          {
-            "ref": "Matt 10:28",
-            "note": "Do not fear those who kill the body but cannot kill the soul — the principle the three friends embody."
-          },
-          {
-            "ref": "Heb 11:34",
-            "note": "Who through faith \"quenched the fury of the flames\" — the Hebrews 11 honour roll includes this event."
-          },
-          {
-            "ref": "1 Pet 4:12–13",
-            "note": "Do not be surprised at the fiery ordeal: share in Christ’s sufferings and rejoice."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ex 20:3–5",
+              "note": "The first and second commandments: no other gods, no graven images — the Torah basis for the three friends’ refusal."
+            },
+            {
+              "ref": "Matt 10:28",
+              "note": "Do not fear those who kill the body but cannot kill the soul — the principle the three friends embody."
+            },
+            {
+              "ref": "Heb 11:34",
+              "note": "Who through faith \"quenched the fury of the flames\" — the Hebrews 11 honour roll includes this event."
+            },
+            {
+              "ref": "1 Pet 4:12–13",
+              "note": "Do not be surprised at the fiery ordeal: share in Christ’s sufferings and rejoice."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -125,6 +126,9 @@
               "note": "Collins notes this is the book’s clearest statement on martyrdom theology: the faithful may die, and that does not invalidate their faith. This became the foundational text for Jewish and Christian martyrdom."
             }
           ]
+        },
+        "hist": {
+          "context": "The 90-foot golden statue appears to be Nebuchadnezzar’s response to ch.2: since the dream said only the HEAD was gold, he builds an ENTIRE statue of gold — rejecting the prophecy of succession. The dimensions (60 × 6 cubits) and the six instruments listed in v.5 have led some commentators to connect the passage with the \"number of the beast\" imagery in Rev 13. The Dura plain where the statue stood has been identified with a site near modern Fallujah, Iraq."
         }
       }
     },
@@ -142,25 +146,26 @@
             "paragraph": "\"I see four men walking in the fire, unbound and unharmed, and the fourth looks like a son of the gods (bar ʾĕlāhîn)\" (v.25). The furnace is heated seven times hotter (v.19). The soldiers who throw them in die from the heat (v.22). Four figures walk freely inside. The three emerge without even the smell of smoke (v.27)."
           }
         ],
-        "ctx": "Nebuchadnezzar’s identification of the fourth figure as \"a son of the gods\" uses Aramaic bar ʾĕlāhîn, which could mean a divine being, an angel, or (in Christian reading) the pre-incarnate Christ. The king later clarifies: \"God sent his angel\" (v.28). The complete immunity from fire (no burn, no singe, no scorch, no smell) goes beyond natural survival and emphasises total divine protection. This event becomes paradigmatic for Jewish and Christian martyrdom theology.",
-        "cross": [
-          {
-            "ref": "Isa 43:2",
-            "note": "When you walk through the fire, the flames will not set you ablaze — the promise Daniel 3 dramatises literally."
-          },
-          {
-            "ref": "Ps 91:11–12",
-            "note": "He will command his angels concerning you — angelic protection in mortal danger."
-          },
-          {
-            "ref": "Acts 12:6–11",
-            "note": "Peter freed from prison by an angel — the NT pattern of divine rescue from state persecution."
-          },
-          {
-            "ref": "Rev 1:13–14",
-            "note": "One like a son of man among the lampstands — the glorified Christ present amid fire, echoing the fourth figure."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 43:2",
+              "note": "When you walk through the fire, the flames will not set you ablaze — the promise Daniel 3 dramatises literally."
+            },
+            {
+              "ref": "Ps 91:11–12",
+              "note": "He will command his angels concerning you — angelic protection in mortal danger."
+            },
+            {
+              "ref": "Acts 12:6–11",
+              "note": "Peter freed from prison by an angel — the NT pattern of divine rescue from state persecution."
+            },
+            {
+              "ref": "Rev 1:13–14",
+              "note": "One like a son of man among the lampstands — the glorified Christ present amid fire, echoing the fourth figure."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -246,6 +251,9 @@
               "note": "Collins reads Nebuchadnezzar’s decree as a recognition of YHWH’s power within a polytheistic framework — he acknowledges this God’s effectiveness without abandoning his own gods. Full conversion comes only in ch.4."
             }
           ]
+        },
+        "hist": {
+          "context": "Nebuchadnezzar’s identification of the fourth figure as \"a son of the gods\" uses Aramaic bar ʾĕlāhîn, which could mean a divine being, an angel, or (in Christian reading) the pre-incarnate Christ. The king later clarifies: \"God sent his angel\" (v.28). The complete immunity from fire (no burn, no singe, no scorch, no smell) goes beyond natural survival and emphasises total divine protection. This event becomes paradigmatic for Jewish and Christian martyrdom theology."
         }
       }
     }

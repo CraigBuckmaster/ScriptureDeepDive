@@ -31,21 +31,22 @@
             "paragraph": "The verb translated 'made it known' (esēmanen) is theologically significant. It means not simply 'to communicate' but 'to communicate through signs and symbols.' This is the same verb used in John 12:33 and 18:32 for Jesus 'signifying' the manner of his death. Its use in the prologue signals that the entire book operates through symbolic communication—visions, numbers, colors, and images drawn overwhelmingly from the OT prophetic tradition. Readers who insist on woodenly literal interpretation of every image miss the very hermeneutical key the author provides in his opening sentence."
           }
         ],
-        "ctx": "The prologue establishes the book's authority through a carefully constructed chain of revelation: God the Father originates the message, gives it to Jesus Christ, who sends it through his angel to his servant John, who in turn transmits it to the seven churches. This descending chain of mediation echoes Daniel's apocalyptic visions (Dan 2:28-30, 45) and grounds the book's authority not in human speculation but in divine disclosure. The beatitude in verse 3—the first of seven in Revelation (1:3; 14:13; 16:15; 19:9; 20:6; 22:7, 14)—is the only NT book that explicitly pronounces blessing on those who read it aloud, hear it, and keep what is written. This liturgical framing indicates the book was designed for public reading in Christian worship assemblies, not private mystical contemplation.",
-        "cross": [
-          {
-            "ref": "Daniel 2:28-29",
-            "note": "The phrase 'what must soon take place' (ha dei genesthai en tachei) is drawn directly from Daniel 2:28 LXX, where Daniel tells Nebuchadnezzar 'what must take place in the latter days.' John transposes Daniel's eschatological framework into his own context: what Daniel saw as distant future, John proclaims is now imminent."
-          },
-          {
-            "ref": "John 12:33",
-            "note": "The verb sēmaino ('signify') connects Revelation's mode of communication to the Fourth Gospel's theology of signs. Just as Jesus 'signified' the manner of his death through symbolic speech, so the entire Apocalypse communicates divine truth through symbolic vision."
-          },
-          {
-            "ref": "1 Peter 1:10-12",
-            "note": "Peter's description of prophets who searched and inquired about the grace to come parallels Revelation's chain of disclosure: the Spirit of Christ within the prophets pointed forward to sufferings and subsequent glory—the very themes Revelation unfolds on a cosmic canvas."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Daniel 2:28-29",
+              "note": "The phrase 'what must soon take place' (ha dei genesthai en tachei) is drawn directly from Daniel 2:28 LXX, where Daniel tells Nebuchadnezzar 'what must take place in the latter days.' John transposes Daniel's eschatological framework into his own context: what Daniel saw as distant future, John proclaims is now imminent."
+            },
+            {
+              "ref": "John 12:33",
+              "note": "The verb sēmaino ('signify') connects Revelation's mode of communication to the Fourth Gospel's theology of signs. Just as Jesus 'signified' the manner of his death through symbolic speech, so the entire Apocalypse communicates divine truth through symbolic vision."
+            },
+            {
+              "ref": "1 Peter 1:10-12",
+              "note": "Peter's description of prophets who searched and inquired about the grace to come parallels Revelation's chain of disclosure: the Spirit of Christ within the prophets pointed forward to sufferings and subsequent glory—the very themes Revelation unfolds on a cosmic canvas."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "The beatitude form (makarios) places Revelation in continuity with the wisdom tradition and the Sermon on the Mount. The three participles—reading, hearing, keeping—describe a liturgical event: public reading of the scroll in the worshiping assembly, attentive reception, and obedient response. The book was never intended as a code to be cracked by isolated interpreters but as a word to be heard and obeyed by the gathered church."
             }
           ]
+        },
+        "hist": {
+          "context": "The prologue establishes the book's authority through a carefully constructed chain of revelation: God the Father originates the message, gives it to Jesus Christ, who sends it through his angel to his servant John, who in turn transmits it to the seven churches. This descending chain of mediation echoes Daniel's apocalyptic visions (Dan 2:28-30, 45) and grounds the book's authority not in human speculation but in divine disclosure. The beatitude in verse 3—the first of seven in Revelation (1:3; 14:13; 16:15; 19:9; 20:6; 22:7, 14)—is the only NT book that explicitly pronounces blessing on those who read it aloud, hear it, and keep what is written. This liturgical framing indicates the book was designed for public reading in Christian worship assemblies, not private mystical contemplation."
         }
       }
     },
@@ -137,21 +141,22 @@
             "paragraph": "The divine self-designation 'I am the Alpha and the Omega' (v. 8) uses the first and last letters of the Greek alphabet to express totality and sovereignty. This title, applied here to God the Father ('the Lord God... the Almighty'), is later applied to Christ himself (21:6; 22:13), creating one of Revelation's most powerful Christological claims: Jesus shares the divine identity. The background is Isaiah 44:6 and 48:12, where Yahweh declares 'I am the first and I am the last; besides me there is no god.'"
           }
         ],
-        "ctx": "The epistolary greeting (vv. 4-5a) follows standard Greco-Roman letter conventions but transforms them theologically. The triadic source of grace and peace—'him who is, and who was, and who is to come' (a paraphrase of the divine name YHWH, cf. Exod 3:14), the seven spirits before the throne (likely the sevenfold Holy Spirit of Isa 11:2), and Jesus Christ—establishes the Trinitarian ground of the entire book. The doxology (vv. 5b-6) shifts from greeting to worship, celebrating Christ's threefold work: he loves us (present tense), freed us from our sins by his blood (aorist), and made us a kingdom of priests (echoing Exod 19:6). The prophetic oracle of verse 7 combines Daniel 7:13 (coming with clouds) with Zechariah 12:10 (those who pierced him will mourn), fusing Israel's messianic and suffering-servant traditions into a single eschatological event.",
-        "cross": [
-          {
-            "ref": "Exodus 3:14",
-            "note": "The divine title 'who is, and who was, and who is to come' is a dynamic Greek paraphrase of the Tetragrammaton YHWH, derived from the Hebrew verb 'to be.' By rendering God's name in temporal terms (past, present, future), John communicates both God's eternal self-existence and his active engagement with history."
-          },
-          {
-            "ref": "Exodus 19:5-6",
-            "note": "The declaration that Christ has made believers 'a kingdom and priests' directly echoes God's covenant promise at Sinai. What Israel was called to be nationally, the church has become through Christ's redemptive work—a royal priesthood with direct access to God."
-          },
-          {
-            "ref": "Daniel 7:13; Zechariah 12:10",
-            "note": "Verse 7 fuses two OT texts: Daniel's vision of 'one like a son of man coming with the clouds' and Zechariah's oracle that Jerusalem will 'look on the one they have pierced.' This combination is unique to Revelation and Matthew 24:30, identifying Jesus as both the glorious Son of Man and the pierced servant."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exodus 3:14",
+              "note": "The divine title 'who is, and who was, and who is to come' is a dynamic Greek paraphrase of the Tetragrammaton YHWH, derived from the Hebrew verb 'to be.' By rendering God's name in temporal terms (past, present, future), John communicates both God's eternal self-existence and his active engagement with history."
+            },
+            {
+              "ref": "Exodus 19:5-6",
+              "note": "The declaration that Christ has made believers 'a kingdom and priests' directly echoes God's covenant promise at Sinai. What Israel was called to be nationally, the church has become through Christ's redemptive work—a royal priesthood with direct access to God."
+            },
+            {
+              "ref": "Daniel 7:13; Zechariah 12:10",
+              "note": "Verse 7 fuses two OT texts: Daniel's vision of 'one like a son of man coming with the clouds' and Zechariah's oracle that Jerusalem will 'look on the one they have pierced.' This combination is unique to Revelation and Matthew 24:30, identifying Jesus as both the glorious Son of Man and the pierced servant."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -228,6 +233,9 @@
               "note": "The prophetic oracle of v. 7 functions as the book's thesis statement. Everything that follows—the letters, the seals, the trumpets, the bowls, the fall of Babylon, the millennial reign—unfolds under the controlling conviction that Christ will return visibly and universally. The divine self-identification in v. 8 ('the Alpha and the Omega... the Almighty') provides the theological guarantee: the God who stands at the beginning and end of all reality will bring his purposes to completion."
             }
           ]
+        },
+        "hist": {
+          "context": "The epistolary greeting (vv. 4-5a) follows standard Greco-Roman letter conventions but transforms them theologically. The triadic source of grace and peace—'him who is, and who was, and who is to come' (a paraphrase of the divine name YHWH, cf. Exod 3:14), the seven spirits before the throne (likely the sevenfold Holy Spirit of Isa 11:2), and Jesus Christ—establishes the Trinitarian ground of the entire book. The doxology (vv. 5b-6) shifts from greeting to worship, celebrating Christ's threefold work: he loves us (present tense), freed us from our sins by his blood (aorist), and made us a kingdom of priests (echoing Exod 19:6). The prophetic oracle of verse 7 combines Daniel 7:13 (coming with clouds) with Zechariah 12:10 (those who pierced him will mourn), fusing Israel's messianic and suffering-servant traditions into a single eschatological event."
         }
       }
     },
@@ -251,21 +259,22 @@
             "paragraph": "The 'sharp, double-edged sword' proceeding from Christ's mouth (v. 16) symbolizes the penetrating power of his word. The image draws on Isaiah 49:2 ('He made my mouth like a sharpened sword') and anticipates its reappearance in 2:12, 16; 19:15, 21, where the sword executes judgment. The weapon is not in Christ's hand but in his mouth: his word itself is the instrument of both salvation and judgment. The background in Isaiah identifies Christ with the Servant of the Lord whose speech accomplishes God's purposes."
           }
         ],
-        "ctx": "John identifies himself as a fellow sufferer 'on the island called Patmos because of the word of God and the testimony of Jesus' (v. 9). Patmos was a small, rocky island in the Aegean Sea, approximately 10 miles long, used by Rome as a place of banishment (relegatio). John's exile places him in solidarity with the persecuted churches he addresses. The vision occurs 'on the Lord's Day' (en tē kyriакē hēmera, v. 10)—the earliest clear reference to Sunday as a distinctively Christian day of worship, distinguished from the Jewish Sabbath. The Christophany that follows draws imagery from Daniel 7:9-14 (white hair, fiery eyes), Daniel 10:5-6 (bronze feet, thunderous voice), Ezekiel 1:26-28 (glorious human form), and Isaiah 49:2 (mouth like a sword). Every element of Christ's appearance is drawn from OT theophanies, identifying the risen Jesus with the God of Israel who appeared to the prophets.",
-        "cross": [
-          {
-            "ref": "Daniel 7:9-14",
-            "note": "The vision of Christ combines features of both the 'Ancient of Days' (white hair, v. 14) and the 'Son of Man' (human form, v. 13) from Daniel 7. This fusion is theologically significant: attributes that Daniel distributed between two distinct figures—the enthroned God and the one who approaches him—are here combined in a single person. Christ shares the identity of God."
-          },
-          {
-            "ref": "Daniel 10:5-6",
-            "note": "The description of Christ's appearance—robe, golden sash, bronze feet, thunderous voice—closely parallels the angelic figure in Daniel 10. But John's figure is not an angel; he is 'the First and the Last' who 'was dead and is alive forever' (vv. 17-18). Christ transcends the angelic mediators of Daniel's visions."
-          },
-          {
-            "ref": "Isaiah 44:6",
-            "note": "Christ's self-identification as 'the First and the Last' (v. 17) echoes Yahweh's exclusive self-designation in Isaiah 44:6 and 48:12. This is one of Revelation's strongest claims to Christ's full deity: the title that Yahweh claims as uniquely his own is applied without qualification to the risen Jesus."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Daniel 7:9-14",
+              "note": "The vision of Christ combines features of both the 'Ancient of Days' (white hair, v. 14) and the 'Son of Man' (human form, v. 13) from Daniel 7. This fusion is theologically significant: attributes that Daniel distributed between two distinct figures—the enthroned God and the one who approaches him—are here combined in a single person. Christ shares the identity of God."
+            },
+            {
+              "ref": "Daniel 10:5-6",
+              "note": "The description of Christ's appearance—robe, golden sash, bronze feet, thunderous voice—closely parallels the angelic figure in Daniel 10. But John's figure is not an angel; he is 'the First and the Last' who 'was dead and is alive forever' (vv. 17-18). Christ transcends the angelic mediators of Daniel's visions."
+            },
+            {
+              "ref": "Isaiah 44:6",
+              "note": "Christ's self-identification as 'the First and the Last' (v. 17) echoes Yahweh's exclusive self-designation in Isaiah 44:6 and 48:12. This is one of Revelation's strongest claims to Christ's full deity: the title that Yahweh claims as uniquely his own is applied without qualification to the risen Jesus."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -354,6 +363,9 @@
               "note": "The explanatory key in vv. 19-20 shows that the author himself provides interpretive guidance. Readers need not—and should not—invent their own symbolic meanings. Where the text explains its own symbols, those explanations control interpretation. Where it does not, the reader must draw on the OT allusive background to decode the imagery. This principle of 'the text interprets itself' is foundational for responsible reading of Revelation."
             }
           ]
+        },
+        "hist": {
+          "context": "John identifies himself as a fellow sufferer 'on the island called Patmos because of the word of God and the testimony of Jesus' (v. 9). Patmos was a small, rocky island in the Aegean Sea, approximately 10 miles long, used by Rome as a place of banishment (relegatio). John's exile places him in solidarity with the persecuted churches he addresses. The vision occurs 'on the Lord's Day' (en tē kyriакē hēmera, v. 10)—the earliest clear reference to Sunday as a distinctively Christian day of worship, distinguished from the Jewish Sabbath. The Christophany that follows draws imagery from Daniel 7:9-14 (white hair, fiery eyes), Daniel 10:5-6 (bronze feet, thunderous voice), Ezekiel 1:26-28 (glorious human form), and Isaiah 49:2 (mouth like a sword). Every element of Christ's appearance is drawn from OT theophanies, identifying the risen Jesus with the God of Israel who appeared to the prophets."
         }
       }
     }

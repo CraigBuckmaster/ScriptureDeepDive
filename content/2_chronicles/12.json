@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 1,
       "panels": {
-        "ctx": "After three years of faithfulness, Rehoboam abandons the law. Shishak of Egypt invades with 1,200 chariots, 60,000 horsemen, and innumerable troops. Shemaiah confronts Rehoboam: “You have abandoned me; therefore I now abandon you to Shishak.” The leaders humble themselves: “The LORD is just.” Because they humble themselves, God says: “I will not destroy them; I will grant them some deliverance.” Partial humility produces partial deliverance.",
-        "cross": [
-          {
-            "ref": "1 Kgs 14:25–26",
-            "note": "Kings gives two verses to Shishak's invasion; Chronicles expands it to eight, adding Shemaiah's prophecy and the theological explanation: abandonment of God led to abandonment by God."
-          },
-          {
-            "ref": "Jer 12:7",
-            "note": "Jeremiah's lament — 'I have forsaken my house, I have abandoned my inheritance' — echoes the Chronicler's theology: God abandons those who first abandon him."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 14:25–26",
+              "note": "Kings gives two verses to Shishak's invasion; Chronicles expands it to eight, adding Shemaiah's prophecy and the theological explanation: abandonment of God led to abandonment by God."
+            },
+            {
+              "ref": "Jer 12:7",
+              "note": "Jeremiah's lament — 'I have forsaken my house, I have abandoned my inheritance' — echoes the Chronicler's theology: God abandons those who first abandon him."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "The Chronicler’s vocabulary in this section reflects his characteristic theological terminology."
             }
           ]
+        },
+        "hist": {
+          "context": "After three years of faithfulness, Rehoboam abandons the law. Shishak of Egypt invades with 1,200 chariots, 60,000 horsemen, and innumerable troops. Shemaiah confronts Rehoboam: “You have abandoned me; therefore I now abandon you to Shishak.” The leaders humble themselves: “The LORD is just.” Because they humble themselves, God says: “I will not destroy them; I will grant them some deliverance.” Partial humility produces partial deliverance."
         }
       }
     },
@@ -54,17 +58,18 @@
       "verse_start": 9,
       "verse_end": 16,
       "panels": {
-        "ctx": "Shishak takes the temple treasures and the gold shields Solomon made. Rehoboam replaces them with bronze shields — the decline from gold to bronze is the Chronicler’s most powerful symbol. The golden age is over; the bronze age of diminished glory begins. “He did evil because he had not set his heart on seeking the LORD.” The verdict uses the Chronicler’s key verb: darash. Rehoboam’s failure is a failure to seek.",
-        "cross": [
-          {
-            "ref": "1 Kgs 14:27–31",
-            "note": "Both accounts record the bronze shields replacing Solomon's gold ones — a visible marker of diminished glory. Kings adds the assessment 'there was continual warfare between Rehoboam and Jeroboam.'"
-          },
-          {
-            "ref": "2 Chr 11:5–12",
-            "note": "The internal cross-ref to Rehoboam's fortifications shows the irony: the cities he built for defence could not protect against the God he abandoned."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 14:27–31",
+              "note": "Both accounts record the bronze shields replacing Solomon's gold ones — a visible marker of diminished glory. Kings adds the assessment 'there was continual warfare between Rehoboam and Jeroboam.'"
+            },
+            {
+              "ref": "2 Chr 11:5–12",
+              "note": "The internal cross-ref to Rehoboam's fortifications shows the irony: the cities he built for defence could not protect against the God he abandoned."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -82,6 +87,9 @@
               "note": "Key terms in this section connect to the Chronicler’s broader theological framework."
             }
           ]
+        },
+        "hist": {
+          "context": "Shishak takes the temple treasures and the gold shields Solomon made. Rehoboam replaces them with bronze shields — the decline from gold to bronze is the Chronicler’s most powerful symbol. The golden age is over; the bronze age of diminished glory begins. “He did evil because he had not set his heart on seeking the LORD.” The verdict uses the Chronicler’s key verb: darash. Rehoboam’s failure is a failure to seek."
         }
       }
     }

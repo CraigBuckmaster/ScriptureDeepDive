@@ -25,17 +25,18 @@
             "paragraph": "The anonymous prophet from Judah is calledʾîš hāʾĕlōhîm(v.1) — a title of prophetic authority. He prophesies against Jeroboam's altar by name: \"Josiah\" — a king who will not exist for 300 years. This is the most chronologically specific predictive prophecy in Kings."
           }
         ],
-        "ctx": "The unnamed man of God from Judah delivers one of the most remarkable prophecies in the OT: he names Josiah — a king born 300 years later — who will desecrate this very altar (fulfilled in 2 Kgs 23:15–18). The altar splits, Jeroboam's hand withers and is restored, but Jeroboam does not repent. The man of God refuses the king's hospitality as commanded by God: \"Do not eat bread or drink water or return by the way you came.\"",
-        "cross": [
-          {
-            "ref": "2 Kgs 23:15–18",
-            "note": "Josiah fulfils this prophecy exactly — desecrating the Bethel altar and burning bones on it, but sparing the man of God's tomb."
-          },
-          {
-            "ref": "Isa 44:28",
-            "note": "Cyrus named by Isaiah 150 years before his birth. The Josiah prophecy follows the same pattern of divinely specific foreknowledge."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 23:15–18",
+              "note": "Josiah fulfils this prophecy exactly — desecrating the Bethel altar and burning bones on it, but sparing the man of God's tomb."
+            },
+            {
+              "ref": "Isa 44:28",
+              "note": "Cyrus named by Isaiah 150 years before his birth. The Josiah prophecy follows the same pattern of divinely specific foreknowledge."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -87,6 +88,9 @@
               "note": "Provan: The man of God's obedience in the first episode (refusing the king) sets up the tragedy of the second episode (accepting the old prophet's invitation). The narrator constructs the chapter as a test of prophetic fidelity — passed once, failed once, with fatal consequences."
             }
           ]
+        },
+        "hist": {
+          "context": "The unnamed man of God from Judah delivers one of the most remarkable prophecies in the OT: he names Josiah — a king born 300 years later — who will desecrate this very altar (fulfilled in 2 Kgs 23:15–18). The altar splits, Jeroboam's hand withers and is restored, but Jeroboam does not repent. The man of God refuses the king's hospitality as commanded by God: \"Do not eat bread or drink water or return by the way you came.\""
         }
       }
     },
@@ -110,17 +114,18 @@
             "paragraph": "The lion kills the man of God but does not eat the body or attack the donkey (vv.24–25). This supernatural restraint proves the death is divine judgment, not natural accident. The lion is God's instrument — deployed with surgical precision."
           }
         ],
-        "ctx": "The second half of ch. 13 is one of the strangest narratives in Scripture. The old prophet lies, the man of God disobeys, the man of God is killed by a lion, and the old prophet mourns him and asks to be buried alongside him. The moral complexity is deliberate: the man of God who resisted a king's invitation falls for a prophet's lie. The lesson is severe: obedience to God's direct word cannot be overridden by any human authority, even prophetic authority. The chapter closes with the note that Jeroboam \"did not change his evil ways\" — the man of God's mission succeeded prophetically but failed to produce repentance.",
-        "cross": [
-          {
-            "ref": "Gal 1:8",
-            "note": "\"Even if we or an angel from heaven should preach a gospel other than the one we preached to you, let them be under God's curse!\" Paul's principle matches the lesson of ch. 13 exactly: no secondary authority overrides God's direct word."
-          },
-          {
-            "ref": "1 Kgs 20:36",
-            "note": "Another prophet killed by a lion for disobedience — the same pattern of lethal consequence for prophetic unfaithfulness."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gal 1:8",
+              "note": "\"Even if we or an angel from heaven should preach a gospel other than the one we preached to you, let them be under God's curse!\" Paul's principle matches the lesson of ch. 13 exactly: no secondary authority overrides God's direct word."
+            },
+            {
+              "ref": "1 Kgs 20:36",
+              "note": "Another prophet killed by a lion for disobedience — the same pattern of lethal consequence for prophetic unfaithfulness."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -172,6 +177,9 @@
               "note": "Provan: \"This was the sin that led to its downfall\" — the narrator delivers the dynasty's death sentence while Jeroboam is still alive. The verdict precedes the execution by decades. The reader knows the end from the middle."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half of ch. 13 is one of the strangest narratives in Scripture. The old prophet lies, the man of God disobeys, the man of God is killed by a lion, and the old prophet mourns him and asks to be buried alongside him. The moral complexity is deliberate: the man of God who resisted a king's invitation falls for a prophet's lie. The lesson is severe: obedience to God's direct word cannot be overridden by any human authority, even prophetic authority. The chapter closes with the note that Jeroboam \"did not change his evil ways\" — the man of God's mission succeeded prophetically but failed to produce repentance."
         }
       }
     }

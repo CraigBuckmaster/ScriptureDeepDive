@@ -34,21 +34,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Bethany</div><div class=\"poi-coords\">31.7742° N, 35.2659° E</div><div class=\"poi-text\">A village on the eastern slope of the Mount of Olives, about 2 miles (3km) from Jerusalem (v.18). The home of Mary, Martha, and Lazarus — Jesus's closest family-friends in the Jerusalem area. He stayed here during the final week (12:1; Matt 21:17). The traditional site of Lazarus's tomb is preserved in the village of al-Eizariya (Arabic: \"the place of Lazarus\"), where a Byzantine-era tomb-chapel has been venerated since at least the 4th century AD.</div></div>"
         },
-        "ctx": "[('Four Days in the Tomb', 'The detail that Lazarus had been in the tomb four days (v.17) is theologically significant. Jewish tradition held that the soul hovered near the body for three days in hope of return; after three days decomposition was visible and the soul departed finally. By waiting four days, Jesus ensures that no one can attribute the resurrection to a near-death experience or a three-day hover. \"He stinketh\" (v.39, KJV) — Martha\\'s pragmatic observation — confirms the death is genuine and total.'), ('The Seventh Sign', \"The raising of Lazarus is the seventh and climactic sign in John's Gospel — deliberately ordered so that the resurrection of a dead man is the final demonstration of who Jesus is before the cross. The sign's effect is double: many Jews believed (v.45); the Sanhedrin resolved to kill Jesus (11:47-53). The sign that demonstrates Jesus has power over death also triggers the events that will lead to his own death.\")]",
-        "cross": [
-          {
-            "ref": "Ezek 37:12-13",
-            "note": "\"I will open your graves and bring you up from them... you will know that I am the Lord\" — the valley of dry bones as background for Lazarus's resurrection."
-          },
-          {
-            "ref": "1 Kgs 17:17-24",
-            "note": "Elijah raising the widow's son — the OT parallel that frames raising the dead as a prophetic act establishing divine credentials."
-          },
-          {
-            "ref": "Rom 8:11",
-            "note": "\"The Spirit of him who raised Jesus from the dead is living in you; he who raised Christ from the dead will also give life to your mortal bodies\" — Paul's application of the resurrection principle to believers."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 37:12-13",
+              "note": "\"I will open your graves and bring you up from them... you will know that I am the Lord\" — the valley of dry bones as background for Lazarus's resurrection."
+            },
+            {
+              "ref": "1 Kgs 17:17-24",
+              "note": "Elijah raising the widow's son — the OT parallel that frames raising the dead as a prophetic act establishing divine credentials."
+            },
+            {
+              "ref": "Rom 8:11",
+              "note": "\"The Spirit of him who raised Jesus from the dead is living in you; he who raised Christ from the dead will also give life to your mortal bodies\" — Paul's application of the resurrection principle to believers."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -108,6 +109,9 @@
               "note": "Chrysostom: \"Jesus wept. He wept not as one ignorant of what would happen, nor as doubting his own power, but to show that he was truly human, to show that he felt real grief at real death. He wept to comfort the sisters and to show that he too regarded death as an evil — though an evil he was about to overcome.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Four Days in the Tomb', 'The detail that Lazarus had been in the tomb four days (v.17) is theologically significant. Jewish tradition held that the soul hovered near the body for three days in hope of return; after three days decomposition was visible and the soul departed finally. By waiting four days, Jesus ensures that no one can attribute the resurrection to a near-death experience or a three-day hover. \"He stinketh\" (v.39, KJV) — Martha\\'s pragmatic observation — confirms the death is genuine and total.'), ('The Seventh Sign', \"The raising of Lazarus is the seventh and climactic sign in John's Gospel — deliberately ordered so that the resurrection of a dead man is the final demonstration of who Jesus is before the cross. The sign's effect is double: many Jews believed (v.45); the Sanhedrin resolved to kill Jesus (11:47-53). The sign that demonstrates Jesus has power over death also triggers the events that will lead to his own death.\")]"
         }
       }
     },
@@ -128,17 +132,18 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Bethany</div><div class=\"poi-coords\">31.7742° N, 35.2659° E</div><div class=\"poi-text\">A village on the eastern slope of the Mount of Olives, about 2 miles (3km) from Jerusalem (v.18). The home of Mary, Martha, and Lazarus — Jesus's closest family-friends in the Jerusalem area. He stayed here during the final week (12:1; Matt 21:17). The traditional site of Lazarus's tomb is preserved in the village of al-Eizariya (Arabic: \"the place of Lazarus\"), where a Byzantine-era tomb-chapel has been venerated since at least the 4th century AD.</div></div>"
         },
-        "ctx": "[(\"Caiaphas's Unwitting Prophecy\", \"John explicitly identifies Caiaphas's statement as prophecy (v.51) — not despite its cynical political motivation but through it. Caiaphas intends a piece of political pragmatism: sacrifice one troublemaker to preserve the nation's peace with Rome. God speaks through this cynicism the deepest truth of the atonement: the one dies for the many. John's double-level narrative reaches its apex here: the very words used to condemn Jesus proclaim the gospel.\")]",
-        "cross": [
-          {
-            "ref": "Isa 53:8",
-            "note": "\"He was cut off from the land of the living; for the transgression of my people he was punished\" — the Servant's substitutionary death for the people, which Caiaphas's words unwittingly express."
-          },
-          {
-            "ref": "John 18:14",
-            "note": "\"Caiaphas was the one who had advised the Jewish leaders that it would be good if one man died for the people\" — John refers back to this moment at the trial, reminding the reader of its ironic prophetic character."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 53:8",
+              "note": "\"He was cut off from the land of the living; for the transgression of my people he was punished\" — the Servant's substitutionary death for the people, which Caiaphas's words unwittingly express."
+            },
+            {
+              "ref": "John 18:14",
+              "note": "\"Caiaphas was the one who had advised the Jewish leaders that it would be good if one man died for the people\" — John refers back to this moment at the trial, reminding the reader of its ironic prophetic character."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -194,6 +199,9 @@
               "note": "The Catena preserves Theophylact's observation that Caiaphas, by virtue of his office, retained the prophetic gift even while being personally wicked — as the Urim and Thummim functioned through the high-priestly office regardless of the individual. Cyril of Alexandria adds that \"the whole nation\" in v50 and \"the scattered children of God\" in v52 form a two-part prophecy: the particular atonement for Israel and the universal gathering of the Gentiles."
             }
           ]
+        },
+        "hist": {
+          "context": "[(\"Caiaphas's Unwitting Prophecy\", \"John explicitly identifies Caiaphas's statement as prophecy (v.51) — not despite its cynical political motivation but through it. Caiaphas intends a piece of political pragmatism: sacrifice one troublemaker to preserve the nation's peace with Rome. God speaks through this cynicism the deepest truth of the atonement: the one dies for the many. John's double-level narrative reaches its apex here: the very words used to condemn Jesus proclaim the gospel.\")]"
         }
       }
     },
@@ -220,21 +228,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Bethany</div><div class=\"poi-coords\">31.7742° N, 35.2659° E</div><div class=\"poi-text\">A village on the eastern slope of the Mount of Olives, about 2 miles (3km) from Jerusalem (v.18). The home of Mary, Martha, and Lazarus — Jesus's closest family-friends in the Jerusalem area. He stayed here during the final week (12:1; Matt 21:17). The traditional site of Lazarus's tomb is preserved in the village of al-Eizariya (Arabic: \"the place of Lazarus\"), where a Byzantine-era tomb-chapel has been venerated since at least the 4th century AD.</div></div>"
         },
-        "ctx": "[('Four Days in the Tomb', 'The detail that Lazarus had been in the tomb four days (v.17) is theologically significant. Jewish tradition held that the soul hovered near the body for three days in hope of return; after three days decomposition was visible and the soul departed finally. By waiting four days, Jesus ensures that no one can attribute the resurrection to a near-death experience or a three-day hover. \"He stinketh\" (v.39, KJV) — Martha\\'s pragmatic observation — confirms the death is genuine and total.'), ('The Seventh Sign', \"The raising of Lazarus is the seventh and climactic sign in John's Gospel — deliberately ordered so that the resurrection of a dead man is the final demonstration of who Jesus is before the cross. The sign's effect is double: many Jews believed (v.45); the Sanhedrin resolved to kill Jesus (11:47-53). The sign that demonstrates Jesus has power over death also triggers the events that will lead to his own death.\")]",
-        "cross": [
-          {
-            "ref": "Ezek 37:12-13",
-            "note": "\"I will open your graves and bring you up from them... you will know that I am the Lord\" — the valley of dry bones as background for Lazarus's resurrection."
-          },
-          {
-            "ref": "1 Kgs 17:17-24",
-            "note": "Elijah raising the widow's son — the OT parallel that frames raising the dead as a prophetic act establishing divine credentials."
-          },
-          {
-            "ref": "Rom 8:11",
-            "note": "\"The Spirit of him who raised Jesus from the dead is living in you; he who raised Christ from the dead will also give life to your mortal bodies\" — Paul's application of the resurrection principle to believers."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 37:12-13",
+              "note": "\"I will open your graves and bring you up from them... you will know that I am the Lord\" — the valley of dry bones as background for Lazarus's resurrection."
+            },
+            {
+              "ref": "1 Kgs 17:17-24",
+              "note": "Elijah raising the widow's son — the OT parallel that frames raising the dead as a prophetic act establishing divine credentials."
+            },
+            {
+              "ref": "Rom 8:11",
+              "note": "\"The Spirit of him who raised Jesus from the dead is living in you; he who raised Christ from the dead will also give life to your mortal bodies\" — Paul's application of the resurrection principle to believers."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -294,6 +303,9 @@
               "note": "Chrysostom: \"Jesus wept. He wept not as one ignorant of what would happen, nor as doubting his own power, but to show that he was truly human, to show that he felt real grief at real death. He wept to comfort the sisters and to show that he too regarded death as an evil — though an evil he was about to overcome.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Four Days in the Tomb', 'The detail that Lazarus had been in the tomb four days (v.17) is theologically significant. Jewish tradition held that the soul hovered near the body for three days in hope of return; after three days decomposition was visible and the soul departed finally. By waiting four days, Jesus ensures that no one can attribute the resurrection to a near-death experience or a three-day hover. \"He stinketh\" (v.39, KJV) — Martha\\'s pragmatic observation — confirms the death is genuine and total.'), ('The Seventh Sign', \"The raising of Lazarus is the seventh and climactic sign in John's Gospel — deliberately ordered so that the resurrection of a dead man is the final demonstration of who Jesus is before the cross. The sign's effect is double: many Jews believed (v.45); the Sanhedrin resolved to kill Jesus (11:47-53). The sign that demonstrates Jesus has power over death also triggers the events that will lead to his own death.\")]"
         }
       }
     },
@@ -314,17 +326,18 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Bethany</div><div class=\"poi-coords\">31.7742° N, 35.2659° E</div><div class=\"poi-text\">A village on the eastern slope of the Mount of Olives, about 2 miles (3km) from Jerusalem (v.18). The home of Mary, Martha, and Lazarus — Jesus's closest family-friends in the Jerusalem area. He stayed here during the final week (12:1; Matt 21:17). The traditional site of Lazarus's tomb is preserved in the village of al-Eizariya (Arabic: \"the place of Lazarus\"), where a Byzantine-era tomb-chapel has been venerated since at least the 4th century AD.</div></div>"
         },
-        "ctx": "[(\"Caiaphas's Unwitting Prophecy\", \"John explicitly identifies Caiaphas's statement as prophecy (v.51) — not despite its cynical political motivation but through it. Caiaphas intends a piece of political pragmatism: sacrifice one troublemaker to preserve the nation's peace with Rome. God speaks through this cynicism the deepest truth of the atonement: the one dies for the many. John's double-level narrative reaches its apex here: the very words used to condemn Jesus proclaim the gospel.\")]",
-        "cross": [
-          {
-            "ref": "Isa 53:8",
-            "note": "\"He was cut off from the land of the living; for the transgression of my people he was punished\" — the Servant's substitutionary death for the people, which Caiaphas's words unwittingly express."
-          },
-          {
-            "ref": "John 18:14",
-            "note": "\"Caiaphas was the one who had advised the Jewish leaders that it would be good if one man died for the people\" — John refers back to this moment at the trial, reminding the reader of its ironic prophetic character."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 53:8",
+              "note": "\"He was cut off from the land of the living; for the transgression of my people he was punished\" — the Servant's substitutionary death for the people, which Caiaphas's words unwittingly express."
+            },
+            {
+              "ref": "John 18:14",
+              "note": "\"Caiaphas was the one who had advised the Jewish leaders that it would be good if one man died for the people\" — John refers back to this moment at the trial, reminding the reader of its ironic prophetic character."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -380,6 +393,9 @@
               "note": "The Catena preserves Theophylact's observation that Caiaphas, by virtue of his office, retained the prophetic gift even while being personally wicked — as the Urim and Thummim functioned through the high-priestly office regardless of the individual. Cyril of Alexandria adds that \"the whole nation\" in v50 and \"the scattered children of God\" in v52 form a two-part prophecy: the particular atonement for Israel and the universal gathering of the Gentiles."
             }
           ]
+        },
+        "hist": {
+          "context": "[(\"Caiaphas's Unwitting Prophecy\", \"John explicitly identifies Caiaphas's statement as prophecy (v.51) — not despite its cynical political motivation but through it. Caiaphas intends a piece of political pragmatism: sacrifice one troublemaker to preserve the nation's peace with Rome. God speaks through this cynicism the deepest truth of the atonement: the one dies for the many. John's double-level narrative reaches its apex here: the very words used to condemn Jesus proclaim the gospel.\")]"
         }
       }
     }

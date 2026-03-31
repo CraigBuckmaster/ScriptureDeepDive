@@ -31,21 +31,22 @@
             "paragraph": "Monē (v.2) comes from the verb menō (to abide/remain) — the \"many rooms\" are literally \"many remaining-places\" or \"many abiding-places.\" The word connects to John's dominant abiding theme (ch.15): the disciples are to abide in Christ; the Father's house has many abiding-places for those who do. The image is not of a crowded hotel but of a family home with abundant room for all who belong."
           }
         ],
-        "ctx": "[('\"I Am the Way\" in Context', 'Thomas\\'s literal question (\"we don\\'t know where you are going, so how can we know the way?\") receives one of the most compact and radical answers in the Gospel. The way to the Father is not a route, a method, or a set of practices — it is a person. This is John\\'s most direct exclusivism: Jesus is not the best way or the Jewish way or the uniquely authorised way — he is the only way (\"no one comes to the Father except through me\").'), ('\"Greater Works\"', 'The promise that believers will do \"greater works\" (v.12) has been the subject of debate. The greater works are most naturally the worldwide spread of the gospel: the disciples\\' mission will encompass more people, more places, and more nations than Jesus\\'s own three-year ministry in Palestine. The works are greater in scope (universal) rather than in kind (greater miracles).')]",
-        "cross": [
-          {
-            "ref": "Ps 23:6",
-            "note": "\"I will dwell in the house of the Lord forever\" — the Psalm that provides the \"Father's house\" background."
-          },
-          {
-            "ref": "John 10:9",
-            "note": "\"I am the gate; whoever enters through me will be saved\" — the Gate saying that parallels the Way saying."
-          },
-          {
-            "ref": "Acts 4:12",
-            "note": "\"Salvation is found in no one else, for there is no other name under heaven given to mankind by which we must be saved\" — Peter's application of the exclusivity of 14:6."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 23:6",
+              "note": "\"I will dwell in the house of the Lord forever\" — the Psalm that provides the \"Father's house\" background."
+            },
+            {
+              "ref": "John 10:9",
+              "note": "\"I am the gate; whoever enters through me will be saved\" — the Gate saying that parallels the Way saying."
+            },
+            {
+              "ref": "Acts 4:12",
+              "note": "\"Salvation is found in no one else, for there is no other name under heaven given to mankind by which we must be saved\" — Peter's application of the exclusivity of 14:6."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -105,6 +106,9 @@
               "note": "Chrysostom: \"He who has seen me has seen the Father. Not 'has seen the Father himself' — for the Father is not visible in the way the Son is. But he who has seen the Son has seen the one who sent him, because the Son perfectly manifests the Father. The Father is fully present in the Son; to know the Son is to know all that can be known of the Father.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('\"I Am the Way\" in Context', 'Thomas\\'s literal question (\"we don\\'t know where you are going, so how can we know the way?\") receives one of the most compact and radical answers in the Gospel. The way to the Father is not a route, a method, or a set of practices — it is a person. This is John\\'s most direct exclusivism: Jesus is not the best way or the Jewish way or the uniquely authorised way — he is the only way (\"no one comes to the Father except through me\").'), ('\"Greater Works\"', 'The promise that believers will do \"greater works\" (v.12) has been the subject of debate. The greater works are most naturally the worldwide spread of the gospel: the disciples\\' mission will encompass more people, more places, and more nations than Jesus\\'s own three-year ministry in Palestine. The works are greater in scope (universal) rather than in kind (greater miracles).')]"
         }
       }
     },
@@ -128,21 +132,22 @@
             "paragraph": "Jesus's gift of peace (v.27) is explicitly distinguished from the world's peace: \"I do not give to you as the world gives.\" The world's peace is the absence of conflict; Jesus's peace is positive wellbeing rooted in relationship with God — the Hebrew shalom. This peace persists through tribulation (16:33: \"I have overcome the world\") rather than depending on its absence."
           }
         ],
-        "ctx": "[('The Paraclete Promises', \"The five Paraclete sayings in the Farewell Discourse (14:16-17, 26; 15:26-27; 16:7-11, 13-15) are John's theology of the Holy Spirit. Together they describe the Spirit as: another Advocate (same kind as Jesus), the Spirit of truth, the one who teaches all things and reminds, the one who bears witness to Jesus, the one who convicts the world of sin/righteousness/judgment, and the one who guides into all truth. The Spirit's ministry is essentially to continue and apply the ministry of Jesus.\"), ('\"The Father Is Greater Than I\"', 'John 14:28 — \"the Father is greater than I\" — has been one of the most debated verses in Christological history. The subordinationist reading (Arius) took it as evidence of the Son\\'s ontological inferiority. The orthodox reading (Athanasius, Calvin) takes it as a statement about the Son\\'s present economic role: in the Incarnation and mission, the Son is functionally subordinate to the Father while being equal in essence. The context supports this: Jesus is going to the Father (economic return), which should cause them to rejoice (he is going to one who is in every sense his superior in the current arrangement).')]",
-        "cross": [
-          {
-            "ref": "John 16:7",
-            "note": "\"Unless I go away, the Advocate will not come to you; but if I go, I will send him to you\" — the Spirit's coming is dependent on Jesus's departure."
-          },
-          {
-            "ref": "Acts 2:1-4",
-            "note": "Pentecost — the fulfilment of the Paraclete promises of the Farewell Discourse."
-          },
-          {
-            "ref": "Rom 8:26-27",
-            "note": "\"The Spirit himself intercedes for us\" — Paul's application of the Advocate theme."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 16:7",
+              "note": "\"Unless I go away, the Advocate will not come to you; but if I go, I will send him to you\" — the Spirit's coming is dependent on Jesus's departure."
+            },
+            {
+              "ref": "Acts 2:1-4",
+              "note": "Pentecost — the fulfilment of the Paraclete promises of the Farewell Discourse."
+            },
+            {
+              "ref": "Rom 8:26-27",
+              "note": "\"The Spirit himself intercedes for us\" — Paul's application of the Advocate theme."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -202,6 +207,9 @@
               "note": "Chrysostom: \"My peace I give you — not the peace of the world, which is the mere absence of war. The world's peace is often the peace of the graveyard. My peace is the peace of the soul at rest in God, the peace that passes understanding, the peace that persists through tribulation, the peace that the world cannot give and cannot take away.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Paraclete Promises', \"The five Paraclete sayings in the Farewell Discourse (14:16-17, 26; 15:26-27; 16:7-11, 13-15) are John's theology of the Holy Spirit. Together they describe the Spirit as: another Advocate (same kind as Jesus), the Spirit of truth, the one who teaches all things and reminds, the one who bears witness to Jesus, the one who convicts the world of sin/righteousness/judgment, and the one who guides into all truth. The Spirit's ministry is essentially to continue and apply the ministry of Jesus.\"), ('\"The Father Is Greater Than I\"', 'John 14:28 — \"the Father is greater than I\" — has been one of the most debated verses in Christological history. The subordinationist reading (Arius) took it as evidence of the Son\\'s ontological inferiority. The orthodox reading (Athanasius, Calvin) takes it as a statement about the Son\\'s present economic role: in the Incarnation and mission, the Son is functionally subordinate to the Father while being equal in essence. The context supports this: Jesus is going to the Father (economic return), which should cause them to rejoice (he is going to one who is in every sense his superior in the current arrangement).')]"
         }
       }
     }

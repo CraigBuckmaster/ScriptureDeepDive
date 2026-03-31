@@ -25,21 +25,22 @@
             "paragraph": "The prince of Tyre declares 'I am a god' (el ani, v.2). God’s response is devastating: 'You are a man, not a god' — the fundamental distinction that human pride seeks to erase."
           }
         ],
-        "ctx": "The oracle shifts from Tyre as a city to Tyre’s ruler personally. The 'prince' (nagid) claims divine status because of his wisdom in amassing wealth. God establishes the fundamental Creator-creature distinction.",
-        "cross": [
-          {
-            "ref": "Gen 3:5",
-            "note": "The serpent’s original temptation: 'you will be like God.' The prince of Tyre repeats the primal sin."
-          },
-          {
-            "ref": "Isa 14:13-14",
-            "note": "The king of Babylon declares 'I will make myself like the Most High.'"
-          },
-          {
-            "ref": "Acts 12:21-23",
-            "note": "Herod Agrippa accepts divine acclamation and is struck down."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 3:5",
+              "note": "The serpent’s original temptation: 'you will be like God.' The prince of Tyre repeats the primal sin."
+            },
+            {
+              "ref": "Isa 14:13-14",
+              "note": "The king of Babylon declares 'I will make myself like the Most High.'"
+            },
+            {
+              "ref": "Acts 12:21-23",
+              "note": "Herod Agrippa accepts divine acclamation and is struck down."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -104,6 +105,9 @@
               "note": "Zimmerli reads this as a 'wisdom-critical' text: the prince’s wisdom is real but misused."
             }
           ]
+        },
+        "hist": {
+          "context": "The oracle shifts from Tyre as a city to Tyre’s ruler personally. The 'prince' (nagid) claims divine status because of his wisdom in amassing wealth. God establishes the fundamental Creator-creature distinction."
         }
       }
     },
@@ -127,25 +131,26 @@
             "paragraph": "The king is placed 'in Eden, the garden of God.' The Eden imagery elevates the oracle beyond historical commentary into theological territory."
           }
         ],
-        "ctx": "This is one of the most debated passages in Ezekiel. The 'king' (melek, now elevated from 'prince') is described in Edenic and angelic language. Many interpreters have read this as a description of Satan’s fall; others read it as mythological language applied to a human ruler.",
-        "cross": [
-          {
-            "ref": "Gen 3:1-24",
-            "note": "The Eden imagery directly connects to Genesis 3: original perfection, guardian cherub, fall through pride, and expulsion."
-          },
-          {
-            "ref": "Isa 14:12-15",
-            "note": "The 'morning star' passage parallels Ezekiel 28: original glory, fall through pride. Both are traditionally read as reflecting Satan’s fall."
-          },
-          {
-            "ref": "Luke 10:18",
-            "note": "Jesus says 'I saw Satan fall like lightning from heaven.'"
-          },
-          {
-            "ref": "Rev 12:7-9",
-            "note": "The war in heaven and Satan’s expulsion echoes the expulsion from the mountain of God."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 3:1-24",
+              "note": "The Eden imagery directly connects to Genesis 3: original perfection, guardian cherub, fall through pride, and expulsion."
+            },
+            {
+              "ref": "Isa 14:12-15",
+              "note": "The 'morning star' passage parallels Ezekiel 28: original glory, fall through pride. Both are traditionally read as reflecting Satan’s fall."
+            },
+            {
+              "ref": "Luke 10:18",
+              "note": "Jesus says 'I saw Satan fall like lightning from heaven.'"
+            },
+            {
+              "ref": "Rev 12:7-9",
+              "note": "The war in heaven and Satan’s expulsion echoes the expulsion from the mountain of God."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -210,6 +215,9 @@
               "note": "Zimmerli argues this draws on a pre-Israelite myth of a primordial man in paradise — not identical to Genesis 2-3 but from the same tradition pool."
             }
           ]
+        },
+        "hist": {
+          "context": "This is one of the most debated passages in Ezekiel. The 'king' (melek, now elevated from 'prince') is described in Edenic and angelic language. Many interpreters have read this as a description of Satan’s fall; others read it as mythological language applied to a human ruler."
         }
       }
     },
@@ -227,21 +235,22 @@
             "paragraph": "God declares 'I will be proved holy' (niqdashti) through Sidon’s judgment. The niphal form indicates that God’s holiness is demonstrated through his acts of justice."
           }
         ],
-        "ctx": "The brief Sidon oracle functions as a transition from the Tyre oracles to the restoration promise. The chapter concludes with the first explicit restoration oracle since the judgment sections began.",
-        "cross": [
-          {
-            "ref": "Ezek 36:24-28",
-            "note": "The restoration promise anticipates the fuller vision of Ezekiel 36."
-          },
-          {
-            "ref": "Jer 30:10-11",
-            "note": "Jeremiah’s parallel promise: Jacob will return, live in peace."
-          },
-          {
-            "ref": "Zech 2:4-5",
-            "note": "Zechariah’s vision of Jerusalem without walls — God himself will be a wall of fire."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 36:24-28",
+              "note": "The restoration promise anticipates the fuller vision of Ezekiel 36."
+            },
+            {
+              "ref": "Jer 30:10-11",
+              "note": "Jeremiah’s parallel promise: Jacob will return, live in peace."
+            },
+            {
+              "ref": "Zech 2:4-5",
+              "note": "Zechariah’s vision of Jerusalem without walls — God himself will be a wall of fire."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -294,6 +303,9 @@
               "note": "Zimmerli argues the restoration oracle may be a later editorial addition that provides the necessary theological counterweight."
             }
           ]
+        },
+        "hist": {
+          "context": "The brief Sidon oracle functions as a transition from the Tyre oracles to the restoration promise. The chapter concludes with the first explicit restoration oracle since the judgment sections began."
         }
       }
     }

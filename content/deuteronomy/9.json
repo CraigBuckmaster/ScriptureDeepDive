@@ -31,17 +31,18 @@
             "paragraph": "The characterisation \"stiff-necked\" (literally \"hard of neck\") is Israel's defining label for its own obstinacy. A stiff-necked animal resists the yoke; a stiff-necked people resists divine guidance. This is Israel's characteristic sin — not dramatic apostasy but persistent resistance to God's direction."
           }
         ],
-        "ctx": "Chapter 9 is a sustained theological argument against Israelite pride. Moses is emphatic: you are not getting Canaan because you are righteous — you are getting it because the nations are wicked (v.5) and because God made promises to Abraham, Isaac, and Jacob. And to prove the point, he goes through the catalogue of Israel's wilderness failures: the golden calf, Taberah, Massah, Kibroth-hattaavah, and Kadesh (vv.22–24). The generation about to enter Canaan must understand that they enter not as righteous conquerors but as undeserving recipients of covenant mercy.",
-        "cross": [
-          {
-            "ref": "Rom 11:17–21",
-            "note": "\"Do not be arrogant, but tremble.\" Paul applies the Deuteronomy 9 anti-pride warning to Gentile Christians — do not conclude that inclusion in God's covenant is a reward for merit."
-          },
-          {
-            "ref": "Eph 2:8–9",
-            "note": "\"For it is by grace you have been saved, through faith — and this is not from yourselves, it is the gift of God — not by works, so that no one can boast.\" The Ephesian statement of grace is the NT form of Deut 9:4–6's anti-merit theology."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 11:17–21",
+              "note": "\"Do not be arrogant, but tremble.\" Paul applies the Deuteronomy 9 anti-pride warning to Gentile Christians — do not conclude that inclusion in God's covenant is a reward for merit."
+            },
+            {
+              "ref": "Eph 2:8–9",
+              "note": "\"For it is by grace you have been saved, through faith — and this is not from yourselves, it is the gift of God — not by works, so that no one can boast.\" The Ephesian statement of grace is the NT form of Deut 9:4–6's anti-merit theology."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 9 is a sustained theological argument against Israelite pride. Moses is emphatic: you are not getting Canaan because you are righteous — you are getting it because the nations are wicked (v.5) and because God made promises to Abraham, Isaac, and Jacob. And to prove the point, he goes through the catalogue of Israel's wilderness failures: the golden calf, Taberah, Massah, Kibroth-hattaavah, and Kadesh (vv.22–24). The generation about to enter Canaan must understand that they enter not as righteous conquerors but as undeserving recipients of covenant mercy."
         }
       }
     },
@@ -137,17 +141,18 @@
             "paragraph": "Moses' intercessory prayer appeals to the Abrahamic covenant — the prior, unconditional promises God made to the patriarchs. This is covenant intercession at its most theologically precise: Moses is not arguing that Israel deserves mercy but that God has bound himself by oath."
           }
         ],
-        "ctx": "Moses recounts the golden calf incident: God's anger, the tablets smashed, the intercession lasting forty days and nights. The intercession is the theological centre. Moses does not argue Israel's righteousness. He argues three things: (1) Your reputation is at stake — Egypt will mock you; (2) Your promises are at stake — you swore to Abraham; (3) This is your people and your inheritance. The intercession works — Israel is not destroyed. Moses here is at his most Christlike: standing between a guilty people and a righteous God.",
-        "cross": [
-          {
-            "ref": "Exod 32:11–14",
-            "note": "\"LORD, why should your anger burn against your people, whom you brought out of Egypt?\" Moses' intercession in Exodus 32 is the source text for Deuteronomy 9's retrospective."
-          },
-          {
-            "ref": "Heb 7:25",
-            "note": "\"He is able to save completely those who come to God through him, because he always lives to intercede for them.\" The pattern of Mosaic intercession in Deuteronomy 9 anticipates Christ's perpetual high-priestly intercession."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 32:11–14",
+              "note": "\"LORD, why should your anger burn against your people, whom you brought out of Egypt?\" Moses' intercession in Exodus 32 is the source text for Deuteronomy 9's retrospective."
+            },
+            {
+              "ref": "Heb 7:25",
+              "note": "\"He is able to save completely those who come to God through him, because he always lives to intercede for them.\" The pattern of Mosaic intercession in Deuteronomy 9 anticipates Christ's perpetual high-priestly intercession."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -216,6 +221,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Moses recounts the golden calf incident: God's anger, the tablets smashed, the intercession lasting forty days and nights. The intercession is the theological centre. Moses does not argue Israel's righteousness. He argues three things: (1) Your reputation is at stake — Egypt will mock you; (2) Your promises are at stake — you swore to Abraham; (3) This is your people and your inheritance. The intercession works — Israel is not destroyed. Moses here is at his most Christlike: standing between a guilty people and a righteous God."
         }
       }
     }

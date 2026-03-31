@@ -25,17 +25,18 @@
             "paragraph": "The people invoke God as witness ('ed) to their oath: \"May the LORD be a true and faithful witness ('ed) against us if we do not act in accordance with everything the LORD your God sends you to tell us\" (v.5). The oath is solemn and comprehensive: \"Whether it is favorable or unfavorable, we will obey\" (v.6). They will break this oath within days."
           }
         ],
-        "ctx": "The remnant approaches Jeremiah at Geruth Kimham and asks him to pray for divine guidance about whether to go to Egypt. Their oath is elaborate and apparently sincere: they will obey whatever God says. Jeremiah agrees and waits ten days for the word. The delay itself is a test of patience -- and a test of whether the decision to flee to Egypt has already been made in their hearts.",
-        "cross": [
-          {
-            "ref": "1 Sam 3:9",
-            "note": "\"Speak, LORD, for your servant is listening\" -- the model of genuine receptivity that the remnant claims but does not practice."
-          },
-          {
-            "ref": "Jas 1:22",
-            "note": "\"Do not merely listen to the word -- do what it says\" -- the NT warning against the gap between hearing and obeying."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Sam 3:9",
+              "note": "\"Speak, LORD, for your servant is listening\" -- the model of genuine receptivity that the remnant claims but does not practice."
+            },
+            {
+              "ref": "Jas 1:22",
+              "note": "\"Do not merely listen to the word -- do what it says\" -- the NT warning against the gap between hearing and obeying."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -84,6 +85,9 @@
               "note": "Brueggemann reads the oath as \"self-deceiving sincerity.\" The people genuinely believe they will obey -- but only because they assume God will tell them what they already want to hear."
             }
           ]
+        },
+        "hist": {
+          "context": "The remnant approaches Jeremiah at Geruth Kimham and asks him to pray for divine guidance about whether to go to Egypt. Their oath is elaborate and apparently sincere: they will obey whatever God says. Jeremiah agrees and waits ten days for the word. The delay itself is a test of patience -- and a test of whether the decision to flee to Egypt has already been made in their hearts."
         }
       }
     },
@@ -101,17 +105,18 @@
             "paragraph": "The divine answer is emphatic: \"Do not ('al) go to Egypt\" (v.19). The negative particle 'al with the jussive expresses strong prohibition. God offers a clear choice: stay in the land and be restored (vv.10-12), or go to Egypt and face the sword, famine, and plague you are running from (vv.15-17). The warning is absolute: \"not one of them will survive\" (v.17)."
           }
         ],
-        "ctx": "After ten days of waiting, God's answer arrives: stay in the land. The promise is rich: \"I will build you up and not tear you down; I will plant you and not uproot you\" (v.10) -- the constructive verbs from 1:10. God will make Nebuchadnezzar \"have compassion\" on the remnant (v.12). But if they go to Egypt, the very disasters they flee will follow them there. The irony is precise: Egypt will provide none of the safety they seek.",
-        "cross": [
-          {
-            "ref": "Jer 1:10",
-            "note": "\"To uproot and tear down, to build and to plant\" -- the call's vocabulary now applied positively for the first time to this remnant."
-          },
-          {
-            "ref": "Deut 28:68",
-            "note": "\"The LORD will send you back in ships to Egypt\" -- the covenant curse of returning to bondage."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 1:10",
+              "note": "\"To uproot and tear down, to build and to plant\" -- the call's vocabulary now applied positively for the first time to this remnant."
+            },
+            {
+              "ref": "Deut 28:68",
+              "note": "\"The LORD will send you back in ships to Egypt\" -- the covenant curse of returning to bondage."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -168,6 +173,9 @@
               "note": "Brueggemann identifies the \"geography of futility\" -- running to Egypt cannot outpace divine judgment. \"The illusion that a change of location solves a crisis of faith is as old as Jonah and as contemporary as the modern refugee.\""
             }
           ]
+        },
+        "hist": {
+          "context": "After ten days of waiting, God's answer arrives: stay in the land. The promise is rich: \"I will build you up and not tear you down; I will plant you and not uproot you\" (v.10) -- the constructive verbs from 1:10. God will make Nebuchadnezzar \"have compassion\" on the remnant (v.12). But if they go to Egypt, the very disasters they flee will follow them there. The irony is precise: Egypt will provide none of the safety they seek."
         }
       }
     }

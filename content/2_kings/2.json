@@ -37,21 +37,22 @@
             "paragraph": "Elijah is taken up in a sĕʿarāh — a storm-wind (v.1, 11). The same word describes God’s appearance to Job (38:1; 40:6). The whirlwind is a theophanic vehicle."
           }
         ],
-        "ctx": "The journey from Gilgal to Bethel to Jericho to the Jordan is a reverse conquest route — Elijah retraces Joshua’s steps backward through the land before departing it. At each stop the sons of the prophets confirm: “The LORD is going to take your master today.” Elisha’s response — “I know; keep silent” — reveals both awareness and grief. The Jordan parts under Elijah’s mantle, and then the chariot of fire separates them. Elijah ascends. Elisha tears his garments, picks up the fallen mantle, and begins.",
-        "cross": [
-          {
-            "ref": "Deut 21:17",
-            "note": "The firstborn receives a double portion. Elisha’s request uses this exact legal formula."
-          },
-          {
-            "ref": "Josh 3:14–17",
-            "note": "Joshua led Israel across the Jordan on dry ground; Elijah now parts the Jordan with his mantle."
-          },
-          {
-            "ref": "Mal 4:5",
-            "note": "“I will send the prophet Elijah before that great and dreadful day of the LORD.” Elijah’s departure without death opens the door for his return."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 21:17",
+              "note": "The firstborn receives a double portion. Elisha’s request uses this exact legal formula."
+            },
+            {
+              "ref": "Josh 3:14–17",
+              "note": "Joshua led Israel across the Jordan on dry ground; Elijah now parts the Jordan with his mantle."
+            },
+            {
+              "ref": "Mal 4:5",
+              "note": "“I will send the prophet Elijah before that great and dreadful day of the LORD.” Elijah’s departure without death opens the door for his return."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -103,6 +104,9 @@
               "note": "Elisha tears his clothes (grief) but picks up the mantle (obedience). The prophetic calling continues through personal loss."
             }
           ]
+        },
+        "hist": {
+          "context": "The journey from Gilgal to Bethel to Jericho to the Jordan is a reverse conquest route — Elijah retraces Joshua’s steps backward through the land before departing it. At each stop the sons of the prophets confirm: “The LORD is going to take your master today.” Elisha’s response — “I know; keep silent” — reveals both awareness and grief. The Jordan parts under Elijah’s mantle, and then the chariot of fire separates them. Elijah ascends. Elisha tears his garments, picks up the fallen mantle, and begins."
         }
       }
     },
@@ -120,21 +124,22 @@
             "paragraph": "The “youths” (nĕʿārîm qĕtannîm, v.23) who mock Elisha are not small children but young men — the same word (naʿar) describes military aides throughout Kings. Their taunt “Go up, baldy!” is a theological challenge: “Go up like Elijah — disappear! We don’t need your ministry here.”"
           }
         ],
-        "ctx": "Elisha parts the Jordan with Elijah’s mantle, confirming the prophetic succession. The sons of the prophets recognise it immediately: “The spirit of Elijah rests on Elisha.” They search three days for Elijah’s body and find nothing. Elisha then performs two acts that establish the twin poles of his ministry: healing Jericho’s water (creative, life-giving) and confronting mockery at Bethel (judgment on those who reject the prophetic office). The bears at Bethel — a centre of Jeroboam’s calf worship — are instruments of the covenant curses (Lev 26:22).",
-        "cross": [
-          {
-            "ref": "Josh 3:16–17",
-            "note": "The Jordan parted for Joshua’s ark; now it parts for Elisha’s mantle. The prophetic mantle carries the same authority as the ark of the covenant."
-          },
-          {
-            "ref": "Exod 15:25",
-            "note": "Moses made bitter water sweet; Elisha makes bad water wholesome. Both prophets transform the environment."
-          },
-          {
-            "ref": "Lev 26:22",
-            "note": "“I will send wild animals against you.” The covenant curses include animal attacks on communities that reject YHWH."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 3:16–17",
+              "note": "The Jordan parted for Joshua’s ark; now it parts for Elisha’s mantle. The prophetic mantle carries the same authority as the ark of the covenant."
+            },
+            {
+              "ref": "Exod 15:25",
+              "note": "Moses made bitter water sweet; Elisha makes bad water wholesome. Both prophets transform the environment."
+            },
+            {
+              "ref": "Lev 26:22",
+              "note": "“I will send wild animals against you.” The covenant curses include animal attacks on communities that reject YHWH."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -186,6 +191,9 @@
               "note": "The key is location: Bethel was the centre of Jeroboam’s counterfeit worship. The young men represent a community that has systematically rejected YHWH’s prophets."
             }
           ]
+        },
+        "hist": {
+          "context": "Elisha parts the Jordan with Elijah’s mantle, confirming the prophetic succession. The sons of the prophets recognise it immediately: “The spirit of Elijah rests on Elisha.” They search three days for Elijah’s body and find nothing. Elisha then performs two acts that establish the twin poles of his ministry: healing Jericho’s water (creative, life-giving) and confronting mockery at Bethel (judgment on those who reject the prophetic office). The bears at Bethel — a centre of Jeroboam’s calf worship — are instruments of the covenant curses (Lev 26:22)."
         }
       }
     }

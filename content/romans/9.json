@@ -31,25 +31,26 @@
             "paragraph": "Sklērynō (v. 18) describes God’s hardening of Pharaoh. Paul places mercy and hardening in parallel: God has mercy on whom he wants and hardens whom he wants. The verb does not imply that God creates evil ex nihilo but that he confirms the existing disposition of the rebellious heart. The OT background (Exod 4:21; 7:3; 9:12) shows that Pharaoh first hardened his own heart before God hardened it."
           }
         ],
-        "ctx": "Romans 9 opens with Paul’s anguished confession of grief over Israel’s unbelief (vv. 1–5). The intensity is remarkable: Paul could wish himself ‘accursed and cut off from Christ’ (v. 3) for the sake of his kinsmen. This emotional outburst is the pastoral prelude to the most sustained theological argument about divine sovereignty in the NT. Paul’s purpose is to demonstrate that God’s word has not failed (v. 6) despite Israel’s majority rejection of the gospel. The solution is that God’s promises were never based on physical descent but on sovereign election: ‘not all who are descended from Israel are Israel’ (v. 6). The argument moves through three test cases: Isaac over Ishmael, Jacob over Esau, and Moses/Pharaoh as paradigms of mercy and hardening.",
-        "cross": [
-          {
-            "ref": "Gen 25:23",
-            "note": "The LORD told Rebekah: ‘the older will serve the younger’ — the election of Jacob over Esau before birth."
-          },
-          {
-            "ref": "Exod 33:19",
-            "note": "Paul quotes God’s declaration to Moses: ‘I will have mercy on whom I have mercy’ — the sovereignty of divine compassion."
-          },
-          {
-            "ref": "Mal 1:2–3",
-            "note": "Paul cites Malachi: ‘Jacob I loved, Esau I hated’ — a statement about nations and covenantal choice."
-          },
-          {
-            "ref": "Exod 9:16",
-            "note": "God raised up Pharaoh to display his power and proclaim his name — even the hardened serve God’s purpose."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 25:23",
+              "note": "The LORD told Rebekah: ‘the older will serve the younger’ — the election of Jacob over Esau before birth."
+            },
+            {
+              "ref": "Exod 33:19",
+              "note": "Paul quotes God’s declaration to Moses: ‘I will have mercy on whom I have mercy’ — the sovereignty of divine compassion."
+            },
+            {
+              "ref": "Mal 1:2–3",
+              "note": "Paul cites Malachi: ‘Jacob I loved, Esau I hated’ — a statement about nations and covenantal choice."
+            },
+            {
+              "ref": "Exod 9:16",
+              "note": "God raised up Pharaoh to display his power and proclaim his name — even the hardened serve God’s purpose."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -126,6 +127,9 @@
               "note": "Schreiner argues that the mē genoito of v. 14 answers the charge of divine injustice not by explaining God’s reasons but by asserting God’s prerogative. God’s justice is not measured by human standards of fairness but by his own self-consistent character."
             }
           ]
+        },
+        "hist": {
+          "context": "Romans 9 opens with Paul’s anguished confession of grief over Israel’s unbelief (vv. 1–5). The intensity is remarkable: Paul could wish himself ‘accursed and cut off from Christ’ (v. 3) for the sake of his kinsmen. This emotional outburst is the pastoral prelude to the most sustained theological argument about divine sovereignty in the NT. Paul’s purpose is to demonstrate that God’s word has not failed (v. 6) despite Israel’s majority rejection of the gospel. The solution is that God’s promises were never based on physical descent but on sovereign election: ‘not all who are descended from Israel are Israel’ (v. 6). The argument moves through three test cases: Isaac over Ishmael, Jacob over Esau, and Moses/Pharaoh as paradigms of mercy and hardening."
         }
       }
     },
@@ -149,25 +153,26 @@
             "paragraph": "In vv. 32–33 Paul combines Isaiah 28:16 and 8:14 to describe Christ as both a foundation stone and a stumbling stone. Israel stumbled because they pursued righteousness by works rather than by faith. The stone is the same; the response determines whether it is a foundation or an obstacle."
           }
         ],
-        "ctx": "The potter/clay metaphor in 9:19–23 has provoked intense debate since the patristic era. Does Paul teach a strict double predestination where God creates some vessels for wrath and some for mercy? Or is the emphasis on God’s right to show patience with vessels of wrath while preparing vessels of mercy? Paul’s transition in v. 24 is crucial: the ‘vessels of mercy’ include both Jews and Gentiles, demonstrating that God’s sovereign freedom results in the expansion of mercy, not its restriction. The chapter concludes with the irony that Gentiles, who did not pursue righteousness, have obtained it by faith, while Israel, which pursued a law of righteousness, stumbled over the stumbling stone.",
-        "cross": [
-          {
-            "ref": "Isa 29:16",
-            "note": "The potter/clay image: ‘can the pot say of the potter, “he knows nothing”?’"
-          },
-          {
-            "ref": "Jer 18:1–10",
-            "note": "The extended potter metaphor in Jeremiah, where God shapes and reshapes nations like clay."
-          },
-          {
-            "ref": "Hos 2:23",
-            "note": "Paul quotes Hosea: ‘I will call them “my people” who are not my people’ — applied to Gentile inclusion."
-          },
-          {
-            "ref": "Isa 28:16",
-            "note": "The precious cornerstone laid in Zion: whoever believes will never be put to shame."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 29:16",
+              "note": "The potter/clay image: ‘can the pot say of the potter, “he knows nothing”?’"
+            },
+            {
+              "ref": "Jer 18:1–10",
+              "note": "The extended potter metaphor in Jeremiah, where God shapes and reshapes nations like clay."
+            },
+            {
+              "ref": "Hos 2:23",
+              "note": "Paul quotes Hosea: ‘I will call them “my people” who are not my people’ — applied to Gentile inclusion."
+            },
+            {
+              "ref": "Isa 28:16",
+              "note": "The precious cornerstone laid in Zion: whoever believes will never be put to shame."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -240,6 +245,9 @@
               "note": "Schreiner emphasises that Paul holds divine sovereignty (vv. 6–29) and human responsibility (vv. 30–33) together without resolving the tension. Israel stumbled because they pursued the wrong means, but this pursuit was itself part of God’s sovereign plan."
             }
           ]
+        },
+        "hist": {
+          "context": "The potter/clay metaphor in 9:19–23 has provoked intense debate since the patristic era. Does Paul teach a strict double predestination where God creates some vessels for wrath and some for mercy? Or is the emphasis on God’s right to show patience with vessels of wrath while preparing vessels of mercy? Paul’s transition in v. 24 is crucial: the ‘vessels of mercy’ include both Jews and Gentiles, demonstrating that God’s sovereign freedom results in the expansion of mercy, not its restriction. The chapter concludes with the irony that Gentiles, who did not pursue righteousness, have obtained it by faith, while Israel, which pursued a law of righteousness, stumbled over the stumbling stone."
         }
       }
     }

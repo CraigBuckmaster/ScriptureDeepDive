@@ -31,17 +31,18 @@
             "paragraph": "As a keleb (dog) returns to its vomit, so a fool repeats his folly (v. 11). Dogs in the ancient Near East were unclean scavengers, not pets. The image is deliberately revolting: the fool finds his own destructive behaviour irresistible, returning to what should disgust him. Peter quotes this verse (2 Pet 2:22) to describe apostasy."
           }
         ],
-        "ctx": "The first half of ch.26 is Proverbs' most extended treatment of the fool — 12 verses dedicated to anatomising foolishness in its various forms. The gallery includes: snow-in-summer honour (v.1), the curse without cause (v.2), the dog-returns-to-its-vomit proverb (v.11), and the person who is wise in their own eyes (v.12).",
-        "cross": [
-          {
-            "ref": "2 Pet 2:22",
-            "note": "A dog returns to its vomit — Peter cites v.11 directly for the false prophet who returns to their sin after apparent escape."
-          },
-          {
-            "ref": "Prov 14:12",
-            "note": "The way that appears right but leads to death — the wise-in-own-eyes person of v.12 is the same character."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Pet 2:22",
+              "note": "A dog returns to its vomit — Peter cites v.11 directly for the false prophet who returns to their sin after apparent escape."
+            },
+            {
+              "ref": "Prov 14:12",
+              "note": "The way that appears right but leads to death — the wise-in-own-eyes person of v.12 is the same character."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "The NET note on the dog-returns-to-vomit image traces 2 Pet 2:22, which quotes this proverb as the pattern of false teachers who return to their former corruption after being delivered from it. The animal image makes the irrational self-destruction of persistent folly as viscerally clear as possible."
             }
           ]
+        },
+        "hist": {
+          "context": "The first half of ch.26 is Proverbs' most extended treatment of the fool — 12 verses dedicated to anatomising foolishness in its various forms. The gallery includes: snow-in-summer honour (v.1), the curse without cause (v.2), the dog-returns-to-its-vomit proverb (v.11), and the person who is wise in their own eyes (v.12)."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "Like a coating of silver glaze over earthenware are dōlĕqîm (burning, fervent) lips with an evil heart (v. 23). The image is of cheap pottery disguised with a thin silver wash — impressive on the surface, worthless underneath. Eloquent speech can mask malice. The sage warns against being seduced by articulate wickedness."
           }
         ],
-        "ctx": "The second half addresses the sluggard (vv.13-16), the dangerous meddler (v.17), the gossip (v.20-22), and the person who conceals hatred with smooth speech (vv.24-28). The chapter closes with the trap-digger's self-destruction: whoever digs a pit will fall into it (v.27).",
-        "cross": [
-          {
-            "ref": "Prov 16:28",
-            "note": "A perverse person stirs up conflict, and a gossip separates close friends — the same gossip diagnosis as v.20."
-          },
-          {
-            "ref": "Eccl 10:8",
-            "note": "Whoever digs a pit may fall into it — the self-defeating trap of v.27 echoed in Ecclesiastes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 16:28",
+              "note": "A perverse person stirs up conflict, and a gossip separates close friends — the same gossip diagnosis as v.20."
+            },
+            {
+              "ref": "Eccl 10:8",
+              "note": "Whoever digs a pit may fall into it — the self-defeating trap of v.27 echoed in Ecclesiastes."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -178,6 +183,9 @@
               "note": "The NET note on the structural insight about gossip as conflict's fuel traces the gossip-conflict connection through Prov 16:28 (a gossip separates close friends), 17:9 (the tongue that repeats an offense separates close friends), and here (without a gossip, conflict dies). The consistent pattern identifies the gossip as the key variable in community conflict."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half addresses the sluggard (vv.13-16), the dangerous meddler (v.17), the gossip (v.20-22), and the person who conceals hatred with smooth speech (vv.24-28). The chapter closes with the trap-digger's self-destruction: whoever digs a pit will fall into it (v.27)."
         }
       }
     }

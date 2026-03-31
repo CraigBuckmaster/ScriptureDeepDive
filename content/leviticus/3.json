@@ -31,21 +31,22 @@
             "paragraph": "The internal fat surrounding the kidneys and liver — the richest, choicest portion. Always burned on the altar; never eaten by Israel (3:17). The best goes to God."
           }
         ],
-        "ctx": "The šĕlāmîm is the joyful offering — the sacrificial meal that creates communion between God, priests, and worshippers. Unlike the burnt offering (entirely consumed) or sin offering (priestly portion), the šĕlāmîm is shared: God receives the fat and blood (the life), the priests receive the breast and thigh, and the worshipper's family eats the rest in a sacred feast. It is the Old Testament equivalent of Communion. The fat portions (kidneys, liver lobe, the fat covering the organs) must always be burned — the richest part belongs to God, never to human appetite.",
-        "cross": [
-          {
-            "ref": "1 Cor 10:18",
-            "note": "\"Consider the people of Israel: do not those who eat the sacrifices participate in the altar?\" Paul draws the parallel — eating from the altar creates participation in what was offered."
-          },
-          {
-            "ref": "Eph 2:14",
-            "note": "\"He himself is our peace (šālôm), who has made the two groups one.\" Christ is the ultimate šĕlāmîm — the fellowship offering that creates true peace between God and humanity."
-          },
-          {
-            "ref": "Ps 22:26",
-            "note": "\"The poor will eat and be satisfied… those who seek the Lord will praise him.\" The šĕlāmîm meal had a redistributive dimension — the poor were invited to eat from the worshipper's portion."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 10:18",
+              "note": "\"Consider the people of Israel: do not those who eat the sacrifices participate in the altar?\" Paul draws the parallel — eating from the altar creates participation in what was offered."
+            },
+            {
+              "ref": "Eph 2:14",
+              "note": "\"He himself is our peace (šālôm), who has made the two groups one.\" Christ is the ultimate šĕlāmîm — the fellowship offering that creates true peace between God and humanity."
+            },
+            {
+              "ref": "Ps 22:26",
+              "note": "\"The poor will eat and be satisfied… those who seek the Lord will praise him.\" The šĕlāmîm meal had a redistributive dimension — the poor were invited to eat from the worshipper's portion."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -97,6 +98,9 @@
               "note": "Milgrom: The absolute prohibition of fat and blood (vv.16–17) is among Leviticus's most emphatic rulings. Fat belongs to God (the choicest portion); blood belongs to God (life). These prohibitions protect against the human tendency to consume what is holy — to take for oneself what belongs to the divine."
             }
           ]
+        },
+        "hist": {
+          "context": "The šĕlāmîm is the joyful offering — the sacrificial meal that creates communion between God, priests, and worshippers. Unlike the burnt offering (entirely consumed) or sin offering (priestly portion), the šĕlāmîm is shared: God receives the fat and blood (the life), the priests receive the breast and thigh, and the worshipper's family eats the rest in a sacred feast. It is the Old Testament equivalent of Communion. The fat portions (kidneys, liver lobe, the fat covering the organs) must always be burned — the richest part belongs to God, never to human appetite."
         }
       }
     },
@@ -114,17 +118,18 @@
             "paragraph": "An unconditional, perpetual divine command. Appears throughout Leviticus to mark regulations that bind every generation in every place — not merely for the wilderness period."
           }
         ],
-        "ctx": "The chapter closes with one of Leviticus's most emphatic formulas: \"This is a lasting ordinance for the generations to come, wherever you live: You must not eat any fat or any blood\" (v.17). The prohibition on fat and blood frames the entire fellowship offering theology. Blood represents life — it belongs to God as the giver of life. Fat represents the richest portion — it belongs to God as the worthiest gift. Both must be surrendered. The human meal from the šĕlāmîm is always a remainder, a gracious share from God's own table.",
-        "cross": [
-          {
-            "ref": "Acts 15:20",
-            "note": "The Jerusalem Council requires Gentile believers to abstain from blood — maintaining one element of the Levitical blood prohibition in the new covenant context."
-          },
-          {
-            "ref": "Gen 9:4",
-            "note": "\"You must not eat meat that has its lifeblood still in it.\" The blood prohibition predates Sinai — it is rooted in the Noahic covenant, the foundational charter for all humanity."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 15:20",
+              "note": "The Jerusalem Council requires Gentile believers to abstain from blood — maintaining one element of the Levitical blood prohibition in the new covenant context."
+            },
+            {
+              "ref": "Gen 9:4",
+              "note": "\"You must not eat meat that has its lifeblood still in it.\" The blood prohibition predates Sinai — it is rooted in the Noahic covenant, the foundational charter for all humanity."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -184,6 +189,9 @@
               "note": "Milgrom: The ritual prescriptions for peace offering reflect a coherent priestly symbolic system. The gradations of holiness and offering type form an internally consistent theology of sacred space and divine access."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter closes with one of Leviticus's most emphatic formulas: \"This is a lasting ordinance for the generations to come, wherever you live: You must not eat any fat or any blood\" (v.17). The prohibition on fat and blood frames the entire fellowship offering theology. Blood represents life — it belongs to God as the giver of life. Fat represents the richest portion — it belongs to God as the worthiest gift. Both must be surrendered. The human meal from the šĕlāmîm is always a remainder, a gracious share from God's own table."
         }
       }
     }

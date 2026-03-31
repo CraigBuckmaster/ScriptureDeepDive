@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 20,
       "panels": {
-        "ctx": "Josiah launches the most comprehensive reform in Israel’s history. He reads the Book of the Law publicly, renews the covenant, then systematically destroys: the Baal and Asherah vessels in the temple, the idolatrous priests, the high places from Geba to Beersheba, the Topheth in the Valley of Hinnom (the child-sacrifice site), the horses dedicated to the sun god, the altars Manasseh built in the temple courts, and the high places Solomon built for foreign gods on the Mount of Olives. Then he crosses into former Israelite territory and destroys Jeroboam’s altar at Bethel — fulfilling the prophecy of the unnamed man of God from 1 Kings 13:2, spoken 300 years earlier.",
-        "cross": [
-          {
-            "ref": "1 Kgs 13:1–2",
-            "note": "The man of God prophesied against Jeroboam’s altar: “A son named Josiah will be born to the house of David. On you he will sacrifice the priests of the high places.” Fulfilled here, by name, three centuries later."
-          },
-          {
-            "ref": "Deut 12:2–3",
-            "note": "“Destroy completely all the places where the nations you are dispossessing worship their gods.” Josiah finally executes what Moses commanded."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 13:1–2",
+              "note": "The man of God prophesied against Jeroboam’s altar: “A son named Josiah will be born to the house of David. On you he will sacrifice the priests of the high places.” Fulfilled here, by name, three centuries later."
+            },
+            {
+              "ref": "Deut 12:2–3",
+              "note": "“Destroy completely all the places where the nations you are dispossessing worship their gods.” Josiah finally executes what Moses commanded."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -67,6 +68,9 @@
               "note": "The fulfilment of the 1 Kings 13 prophecy is the Deuteronomistic historian’s most dramatic demonstration that the prophetic word controls history. Three hundred years pass, a king is born with the right name, and the word is executed. History is the unfolding of what God has spoken."
             }
           ]
+        },
+        "hist": {
+          "context": "Josiah launches the most comprehensive reform in Israel’s history. He reads the Book of the Law publicly, renews the covenant, then systematically destroys: the Baal and Asherah vessels in the temple, the idolatrous priests, the high places from Geba to Beersheba, the Topheth in the Valley of Hinnom (the child-sacrifice site), the horses dedicated to the sun god, the altars Manasseh built in the temple courts, and the high places Solomon built for foreign gods on the Mount of Olives. Then he crosses into former Israelite territory and destroys Jeroboam’s altar at Bethel — fulfilling the prophecy of the unnamed man of God from 1 Kings 13:2, spoken 300 years earlier."
         }
       }
     },
@@ -76,17 +80,18 @@
       "verse_start": 21,
       "verse_end": 37,
       "panels": {
-        "ctx": "Josiah celebrates a Passover greater than any since the judges — the narrator calls it unprecedented. The verdict seems to confirm his greatness: “Neither before nor after Josiah was there a king like him, who turned to the LORD with all his heart and soul and strength.” But then the devastating qualifier: “Nevertheless, the LORD did not turn away from the heat of his fierce anger... because of all that Manasseh had done.” Josiah’s faithfulness is real but the damage is irreversible. Then Pharaoh Necho marches north to support Assyria against Babylon; Josiah intercepts him at Megiddo and is killed. The “peace” promised by Huldah (22:20) is relative — he dies before the exile, not in it. Jehoahaz succeeds briefly before Egypt deports him and installs Jehoiakim.",
-        "cross": [
-          {
-            "ref": "Deut 6:5",
-            "note": "“Love the LORD your God with all your heart, soul, and strength.” Josiah is the only king who fulfils the Shema completely — and it is still not enough."
-          },
-          {
-            "ref": "2 Chr 35:20–27",
-            "note": "Chronicles adds that Necho warned Josiah not to interfere, claiming divine commission. Josiah ignored the warning and was fatally wounded by archers."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 6:5",
+              "note": "“Love the LORD your God with all your heart, soul, and strength.” Josiah is the only king who fulfils the Shema completely — and it is still not enough."
+            },
+            {
+              "ref": "2 Chr 35:20–27",
+              "note": "Chronicles adds that Necho warned Josiah not to interfere, claiming divine commission. Josiah ignored the warning and was fatally wounded by archers."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -126,6 +131,9 @@
               "note": "The “nevertheless” after the superlative verdict on Josiah is the theological hinge of the entire Deuteronomistic History. It declares that the covenant framework — obey and be blessed — has been so comprehensively violated that no amount of subsequent obedience can restore the balance. The system itself requires something beyond itself."
             }
           ]
+        },
+        "hist": {
+          "context": "Josiah celebrates a Passover greater than any since the judges — the narrator calls it unprecedented. The verdict seems to confirm his greatness: “Neither before nor after Josiah was there a king like him, who turned to the LORD with all his heart and soul and strength.” But then the devastating qualifier: “Nevertheless, the LORD did not turn away from the heat of his fierce anger... because of all that Manasseh had done.” Josiah’s faithfulness is real but the damage is irreversible. Then Pharaoh Necho marches north to support Assyria against Babylon; Josiah intercepts him at Megiddo and is killed. The “peace” promised by Huldah (22:20) is relative — he dies before the exile, not in it. Jehoahaz succeeds briefly before Egypt deports him and installs Jehoiakim."
         }
       }
     }

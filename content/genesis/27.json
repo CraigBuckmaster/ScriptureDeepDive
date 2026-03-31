@@ -50,18 +50,22 @@
             "paragraph": "Jacob's deception of Isaac (vv.15-27) has generated centuries of moral debate. But the narrative's own perspective is more complex: Jacob is fulfilling, through reprehensible means, the divine oracle already given (25:23). Rebekah is the theological actor — she heard the oracle and acts on it; Jacob obeys his mother. The deception is not endorsed by the narrator but is shown to be the vehicle of covenant purpose despite its moral disorder. God's election does not depend on the moral perfection of its instruments."
           }
         ],
-        "hist": "None",
-        "ctx": "Isaac's plan to bless Esau despite the oracle of 25:23 (\"the older shall serve the younger\") raises a deep question: is he acting in ignorance or willful defiance of divine revelation? Rebekah knows the oracle; Isaac presumably does too. The text does not explain Isaac's motivation — his attachment to Esau's game (v.4) may suggest that appetite, like Esau's own, is at the root. The patriarchal blessing is a legally binding act in the ancient world — once spoken, it cannot be recalled.",
-        "cross": [
-          {
-            "ref": "Gen 25:23",
-            "note": "The prenatal oracle: \"the older shall serve the younger.\" Isaac's plan to bless Esau appears to conflict with this divine word — setting up the providential irony that God's purpose will be accomplished despite, not through, human plans."
-          },
-          {
-            "ref": "Heb 11:20",
-            "note": "Hebrews credits Isaac with faith: \"by faith Isaac invoked future blessings on Jacob and Esau\" — even the attempted Esau blessing is read as an act of faith, though misdirected."
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "Isaac's plan to bless Esau despite the oracle of 25:23 (\"the older shall serve the younger\") raises a deep question: is he acting in ignorance or willful defiance of divine revelation? Rebekah knows the oracle; Isaac presumably does too. The text does not explain Isaac's motivation — his attachment to Esau's game (v.4) may suggest that appetite, like Esau's own, is at the root. The patriarchal blessing is a legally binding act in the ancient world — once spoken, it cannot be recalled."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 25:23",
+              "note": "The prenatal oracle: \"the older shall serve the younger.\" Isaac's plan to bless Esau appears to conflict with this divine word — setting up the providential irony that God's purpose will be accomplished despite, not through, human plans."
+            },
+            {
+              "ref": "Heb 11:20",
+              "note": "Hebrews credits Isaac with faith: \"by faith Isaac invoked future blessings on Jacob and Esau\" — even the attempted Esau blessing is read as an act of faith, though misdirected."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -159,22 +163,26 @@
             "paragraph": "\"Esau burst out with a loud and bitter cry (ṣĕʿāqāh gĕdōlāh ûmārāh)\" (v.34) — the ṣĕʿāqāh is the same word used for Sodom's victims (18:20) and Israel's oppression (Exod 3:7). Esau's cry is one of the most emotionally powerful moments in Genesis — the anguish of a man who has lost everything he valued through his own choices (25:34: \"he despised his birthright\") and his father's misalignment with divine election. Hebrews 12:17 cites Esau as the warning against despising covenant privilege."
           }
         ],
-        "hist": "None",
-        "ctx": "Rebekah's complicity in the deception is ethically complex. She is trying to fulfill the divine oracle she received (25:23) — but she is using deception to accomplish what God has already promised. The theological question the narrative poses: did God need her help? The irony is that Jacob receives the blessing, but Rebekah loses her son — she tells Jacob to flee to Laban \"for a few days\" (v.44), and she never sees him again. The scheme works and costs her everything.",
-        "cross": [
-          {
-            "ref": "Gen 25:23",
-            "note": "God told Rebekah that 'the older will serve the younger.' The deception carries out what God ordained, raising the excruciating question of whether the promised end justifies duplicitous means."
-          },
-          {
-            "ref": "Heb 12:16–17",
-            "note": "Hebrews treats Esau as a cautionary figure: 'godless … who for a single meal sold his inheritance rights.' Esau's tears found 'no place of repentance' — the blessing once given was irrevocable."
-          },
-          {
-            "ref": "Rom 9:10–13",
-            "note": "Paul cites the Jacob-Esau narrative as evidence of God's sovereign election: 'Jacob I loved, but Esau I hated.' The blessing scene becomes a proof-text for divine predestination."
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "Rebekah's complicity in the deception is ethically complex. She is trying to fulfill the divine oracle she received (25:23) — but she is using deception to accomplish what God has already promised. The theological question the narrative poses: did God need her help? The irony is that Jacob receives the blessing, but Rebekah loses her son — she tells Jacob to flee to Laban \"for a few days\" (v.44), and she never sees him again. The scheme works and costs her everything."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 25:23",
+              "note": "God told Rebekah that 'the older will serve the younger.' The deception carries out what God ordained, raising the excruciating question of whether the promised end justifies duplicitous means."
+            },
+            {
+              "ref": "Heb 12:16–17",
+              "note": "Hebrews treats Esau as a cautionary figure: 'godless … who for a single meal sold his inheritance rights.' Esau's tears found 'no place of repentance' — the blessing once given was irrevocable."
+            },
+            {
+              "ref": "Rom 9:10–13",
+              "note": "Paul cites the Jacob-Esau narrative as evidence of God's sovereign election: 'Jacob I loved, but Esau I hated.' The blessing scene becomes a proof-text for divine predestination."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -268,18 +276,22 @@
             "paragraph": "Rebekah's instruction that Jacob \"flee to my brother Laban in Harran\" (v.43) begins the narrative that will occupy chs.28-33. The flight from Esau's wrath is simultaneously the mechanism of Isaac's blessing (v.46: \"I'm disgusted with living because of these Hittite women... Jacob... must not marry a Hittite woman\") — the family crisis and the covenant endogamy requirement converge to send Jacob to the family's homeland. Providence routinely works through flight and necessity to position covenant actors for the next chapter of the story."
           }
         ],
-        "hist": "None",
-        "ctx": "Isaac's blessing contains the full Abrahamic covenant formula: land abundance, dominion over brothers, and the curse/bless formula of Gen 12:3. The blessing is irrevocable — once spoken, it cannot be recalled even when the fraud is discovered (v.33). This reflects the legal reality of ancient oral contracts: a spoken blessing has the force of a deed. God honors it, not because of Jacob's deception, but because the content aligns with the divine oracle already given.",
-        "cross": [
-          {
-            "ref": "Gen 12:2–3",
-            "note": "The Abrahamic blessing formula — now formally transmitted to Jacob despite the fraud. The covenant content is preserved even when the covenant carrier is morally compromised."
-          },
-          {
-            "ref": "Num 23:8",
-            "note": "Balaam: \"How can I curse whom God has not cursed?\" — the irrevocability of divine blessing echoes the Isaac episode."
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "Isaac's blessing contains the full Abrahamic covenant formula: land abundance, dominion over brothers, and the curse/bless formula of Gen 12:3. The blessing is irrevocable — once spoken, it cannot be recalled even when the fraud is discovered (v.33). This reflects the legal reality of ancient oral contracts: a spoken blessing has the force of a deed. God honors it, not because of Jacob's deception, but because the content aligns with the divine oracle already given."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 12:2–3",
+              "note": "The Abrahamic blessing formula — now formally transmitted to Jacob despite the fraud. The covenant content is preserved even when the covenant carrier is morally compromised."
+            },
+            {
+              "ref": "Num 23:8",
+              "note": "Balaam: \"How can I curse whom God has not cursed?\" — the irrevocability of divine blessing echoes the Isaac episode."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

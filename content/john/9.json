@@ -34,21 +34,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Pool of Siloam</div><div class=\"poi-coords\">31.7726° N, 35.2354° E</div><div class=\"poi-text\">Located at the southern end of the City of David, the Pool of Siloam was fed by Hezekiah's tunnel from the Gihon Spring. It was used for ritual purification and was the source of the water drawn each morning during Tabernacles in the water-drawing ceremony. Archaeological excavations in 2004-2005 confirmed the first-century pool where Jesus sent the blind man — one of the most dramatic recent confirmations of Johannine geography. The pool is now partially excavated and open to visitors.</div></div>"
         },
-        "ctx": "[('The Theodicy Question', 'The disciples\\' question — \"who sinned, this man or his parents?\" (v.2) — reflects a common Jewish assumption that suffering was caused by specific sin. Jesus refuses both options: \"neither this man nor his parents sinned.\" He redirects the question entirely: the purpose is not punitive but revelatory — \"that the works of God might be displayed in him.\" This is one of the most important theodicy statements in the NT: God\\'s purpose in suffering may be revelation, not retribution.'), ('Progressive Confession', 'The blind man\\'s understanding of Jesus deepens through the chapter under pressure: \"the man they call Jesus\" (v.11) → \"he is a prophet\" (v.17) → \"a man from God\" (v.33) → \"Lord, I believe\" and worship (v.38). Each Pharisaic interrogation, rather than undermining his faith, deepens it. The man who starts knowing nothing about Jesus ends worshipping him. The Pharisees\\' investigation has the opposite of its intended effect.')]",
-        "cross": [
-          {
-            "ref": "Isa 29:18",
-            "note": "\"In that day the deaf will hear the words of the scroll, and out of gloom and darkness the eyes of the blind will see\" — the messianic promise of healing the blind."
-          },
-          {
-            "ref": "Isa 42:7",
-            "note": "\"To open eyes that are blind\" — one of the Servant's tasks, here enacted by Jesus."
-          },
-          {
-            "ref": "Ps 146:8",
-            "note": "\"The Lord gives sight to the blind\" — a divine prerogative now exercised by Jesus."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 29:18",
+              "note": "\"In that day the deaf will hear the words of the scroll, and out of gloom and darkness the eyes of the blind will see\" — the messianic promise of healing the blind."
+            },
+            {
+              "ref": "Isa 42:7",
+              "note": "\"To open eyes that are blind\" — one of the Servant's tasks, here enacted by Jesus."
+            },
+            {
+              "ref": "Ps 146:8",
+              "note": "\"The Lord gives sight to the blind\" — a divine prerogative now exercised by Jesus."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -108,6 +109,9 @@
               "note": "Chrysostom: \"He does not say 'I know he is righteous' or 'I know he is from God' — for he does not yet know these things. He says what he does know: I was blind and now I see. This is the testimony that cannot be refuted, the argument that cannot be answered: personal experience of transformation.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Theodicy Question', 'The disciples\\' question — \"who sinned, this man or his parents?\" (v.2) — reflects a common Jewish assumption that suffering was caused by specific sin. Jesus refuses both options: \"neither this man nor his parents sinned.\" He redirects the question entirely: the purpose is not punitive but revelatory — \"that the works of God might be displayed in him.\" This is one of the most important theodicy statements in the NT: God\\'s purpose in suffering may be revelation, not retribution.'), ('Progressive Confession', 'The blind man\\'s understanding of Jesus deepens through the chapter under pressure: \"the man they call Jesus\" (v.11) → \"he is a prophet\" (v.17) → \"a man from God\" (v.33) → \"Lord, I believe\" and worship (v.38). Each Pharisaic interrogation, rather than undermining his faith, deepens it. The man who starts knowing nothing about Jesus ends worshipping him. The Pharisees\\' investigation has the opposite of its intended effect.')]"
         }
       }
     },
@@ -128,17 +132,18 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Pool of Siloam</div><div class=\"poi-coords\">31.7726° N, 35.2354° E</div><div class=\"poi-text\">Located at the southern end of the City of David, the Pool of Siloam was fed by Hezekiah's tunnel from the Gihon Spring. It was used for ritual purification and was the source of the water drawn each morning during Tabernacles in the water-drawing ceremony. Archaeological excavations in 2004-2005 confirmed the first-century pool where Jesus sent the blind man — one of the most dramatic recent confirmations of Johannine geography. The pool is now partially excavated and open to visitors.</div></div>"
         },
-        "ctx": "[('The Great Reversal', \"The chapter closes with a theological reversal that echoes 1:11-12 and the prologue's light/darkness contrast. Those who were spiritually blind (the man, the social outcast) receive sight and belief. Those who claimed to see (the Pharisees, the religious establishment) are revealed to be blind. The irony is the Gospel's central irony: the light comes to its own and its own do not receive it; but to those who receive it, it gives the right to become children of God.\")]",
-        "cross": [
-          {
-            "ref": "Isa 6:9-10",
-            "note": "\"Be ever hearing, but never understanding; be ever seeing, but never perceiving\" — the hardening of Israel's sight that Jesus's ministry enacts as judgment on those who reject him."
-          },
-          {
-            "ref": "John 12:40",
-            "note": "\"He has blinded their eyes and hardened their hearts, so they can neither see with their eyes... nor understand with their hearts\" — John applies Isa 6 to the Jewish leadership's rejection of Jesus."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 6:9-10",
+              "note": "\"Be ever hearing, but never understanding; be ever seeing, but never perceiving\" — the hardening of Israel's sight that Jesus's ministry enacts as judgment on those who reject him."
+            },
+            {
+              "ref": "John 12:40",
+              "note": "\"He has blinded their eyes and hardened their hearts, so they can neither see with their eyes... nor understand with their hearts\" — John applies Isa 6 to the Jewish leadership's rejection of Jesus."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -194,6 +199,9 @@
               "note": "The Catena collects Chrysostom's sermon on the man's worship (v38): \"He fell down and worshipped. Do you see how his spiritual eyes were opened together with his bodily ones?\" Chrysostom contrasts the blind man (who worships immediately on sight) with the Pharisees (who have seen far more and remain in blindness). Augustine adds that sin in this passage is not the ignorance of blindness but the pride of claiming to see."
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Great Reversal', \"The chapter closes with a theological reversal that echoes 1:11-12 and the prologue's light/darkness contrast. Those who were spiritually blind (the man, the social outcast) receive sight and belief. Those who claimed to see (the Pharisees, the religious establishment) are revealed to be blind. The irony is the Gospel's central irony: the light comes to its own and its own do not receive it; but to those who receive it, it gives the right to become children of God.\")]"
         }
       }
     },
@@ -220,21 +228,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Pool of Siloam</div><div class=\"poi-coords\">31.7726° N, 35.2354° E</div><div class=\"poi-text\">Located at the southern end of the City of David, the Pool of Siloam was fed by Hezekiah's tunnel from the Gihon Spring. It was used for ritual purification and was the source of the water drawn each morning during Tabernacles in the water-drawing ceremony. Archaeological excavations in 2004-2005 confirmed the first-century pool where Jesus sent the blind man — one of the most dramatic recent confirmations of Johannine geography. The pool is now partially excavated and open to visitors.</div></div>"
         },
-        "ctx": "[('The Theodicy Question', 'The disciples\\' question — \"who sinned, this man or his parents?\" (v.2) — reflects a common Jewish assumption that suffering was caused by specific sin. Jesus refuses both options: \"neither this man nor his parents sinned.\" He redirects the question entirely: the purpose is not punitive but revelatory — \"that the works of God might be displayed in him.\" This is one of the most important theodicy statements in the NT: God\\'s purpose in suffering may be revelation, not retribution.'), ('Progressive Confession', 'The blind man\\'s understanding of Jesus deepens through the chapter under pressure: \"the man they call Jesus\" (v.11) → \"he is a prophet\" (v.17) → \"a man from God\" (v.33) → \"Lord, I believe\" and worship (v.38). Each Pharisaic interrogation, rather than undermining his faith, deepens it. The man who starts knowing nothing about Jesus ends worshipping him. The Pharisees\\' investigation has the opposite of its intended effect.')]",
-        "cross": [
-          {
-            "ref": "Isa 29:18",
-            "note": "\"In that day the deaf will hear the words of the scroll, and out of gloom and darkness the eyes of the blind will see\" — the messianic promise of healing the blind."
-          },
-          {
-            "ref": "Isa 42:7",
-            "note": "\"To open eyes that are blind\" — one of the Servant's tasks, here enacted by Jesus."
-          },
-          {
-            "ref": "Ps 146:8",
-            "note": "\"The Lord gives sight to the blind\" — a divine prerogative now exercised by Jesus."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 29:18",
+              "note": "\"In that day the deaf will hear the words of the scroll, and out of gloom and darkness the eyes of the blind will see\" — the messianic promise of healing the blind."
+            },
+            {
+              "ref": "Isa 42:7",
+              "note": "\"To open eyes that are blind\" — one of the Servant's tasks, here enacted by Jesus."
+            },
+            {
+              "ref": "Ps 146:8",
+              "note": "\"The Lord gives sight to the blind\" — a divine prerogative now exercised by Jesus."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -294,6 +303,9 @@
               "note": "Chrysostom: \"He does not say 'I know he is righteous' or 'I know he is from God' — for he does not yet know these things. He says what he does know: I was blind and now I see. This is the testimony that cannot be refuted, the argument that cannot be answered: personal experience of transformation.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Theodicy Question', 'The disciples\\' question — \"who sinned, this man or his parents?\" (v.2) — reflects a common Jewish assumption that suffering was caused by specific sin. Jesus refuses both options: \"neither this man nor his parents sinned.\" He redirects the question entirely: the purpose is not punitive but revelatory — \"that the works of God might be displayed in him.\" This is one of the most important theodicy statements in the NT: God\\'s purpose in suffering may be revelation, not retribution.'), ('Progressive Confession', 'The blind man\\'s understanding of Jesus deepens through the chapter under pressure: \"the man they call Jesus\" (v.11) → \"he is a prophet\" (v.17) → \"a man from God\" (v.33) → \"Lord, I believe\" and worship (v.38). Each Pharisaic interrogation, rather than undermining his faith, deepens it. The man who starts knowing nothing about Jesus ends worshipping him. The Pharisees\\' investigation has the opposite of its intended effect.')]"
         }
       }
     }

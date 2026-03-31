@@ -25,25 +25,26 @@
             "paragraph": "\"A prophecy against the Valley of Vision (ḥizzāyōn)\" (v.1). Jerusalem panics: everyone has fled to the rooftops (v.1). Rulers flee without using their bows; all captured without a fight (v.3). \"Let me weep bitterly. Do not try to console me\" (v.4). The Lord strips away Judah’s defences (v.8). They store water, count buildings, tear down houses to fortify walls (vv.9–11). \"But you did not look to the One who planned it\" (v.11). \"Let us eat and drink, for tomorrow we die!\" (v.13). \"Till your dying day this sin will not be atoned for\" (v.14)."
           }
         ],
-        "ctx": "The \"Valley of Vision\" is Jerusalem (ironic: the city of prophetic vision is blind). The crisis may be Sennacherib’s invasion (701 BC). The detailed defence preparations (vv.9–11) describe real military engineering: water storage, building assessment, wall reinforcement. But: \"you did not look to the One who made it long ago\" (v.11). The preparations are competent but godless. \"Let us eat and drink, for tomorrow we die\" (v.13) is the slogan Paul quotes in 1 Corinthians 15:32 for those who deny the resurrection.",
-        "cross": [
-          {
-            "ref": "1 Cor 15:32",
-            "note": "If the dead are not raised, \"let us eat and drink, for tomorrow we die\" — Paul quotes Isa 22:13 to expose the logic of unbelief."
-          },
-          {
-            "ref": "2 Chr 32:2–8",
-            "note": "Hezekiah’s preparations for Sennacherib’s siege — the historical event behind Isa 22:9–11."
-          },
-          {
-            "ref": "Luke 12:19–20",
-            "note": "Eat, drink, be merry. But God said, \"You fool! This very night your life will be demanded\" — Jesus’ parable echoes Isa 22:13."
-          },
-          {
-            "ref": "Isa 56:12",
-            "note": "\"Let us drink our fill of beer! Tomorrow will be like today\" — the same eat-drink-die cynicism repeated in Third Isaiah."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 15:32",
+              "note": "If the dead are not raised, \"let us eat and drink, for tomorrow we die\" — Paul quotes Isa 22:13 to expose the logic of unbelief."
+            },
+            {
+              "ref": "2 Chr 32:2–8",
+              "note": "Hezekiah’s preparations for Sennacherib’s siege — the historical event behind Isa 22:9–11."
+            },
+            {
+              "ref": "Luke 12:19–20",
+              "note": "Eat, drink, be merry. But God said, \"You fool! This very night your life will be demanded\" — Jesus’ parable echoes Isa 22:13."
+            },
+            {
+              "ref": "Isa 56:12",
+              "note": "\"Let us drink our fill of beer! Tomorrow will be like today\" — the same eat-drink-die cynicism repeated in Third Isaiah."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -116,6 +117,9 @@
               "note": "Childs notes the severity: \"this sin will not be atoned for\" stands in tension with the atonement promise of 53:5–6. The canonical reader asks: what changes between ch.22 and ch.53? The answer: the Servant."
             }
           ]
+        },
+        "hist": {
+          "context": "The \"Valley of Vision\" is Jerusalem (ironic: the city of prophetic vision is blind). The crisis may be Sennacherib’s invasion (701 BC). The detailed defence preparations (vv.9–11) describe real military engineering: water storage, building assessment, wall reinforcement. But: \"you did not look to the One who made it long ago\" (v.11). The preparations are competent but godless. \"Let us eat and drink, for tomorrow we die\" (v.13) is the slogan Paul quotes in 1 Corinthians 15:32 for those who deny the resurrection."
         }
       }
     },
@@ -133,25 +137,26 @@
             "paragraph": "\"I will place on his shoulder the key (maftēaḥ) of the house of David; what he opens no one can shut, and what he shuts no one can open\" (v.22). Shebna the steward is demoted: you who carved a tomb on the height will be hurled away (vv.15–19). Eliakim son of Hilkiah will replace him (v.20). The key of David on his shoulder (v.22). A peg driven into a firm place (v.23). But even the peg will give way (v.25). The key-of-David passage is quoted in Revelation 3:7 for Christ’s authority over the church."
           }
         ],
-        "ctx": "Shebna was a high official under Hezekiah (mentioned in 36:3). His offence appears to be self-aggrandisement: carving himself an elaborate tomb (v.16) while the nation faces crisis. Eliakim replaces him with the \"key of David\" — the authority to control access to the king. Revelation 3:7 applies this to Christ: \"These are the words of him who is holy and true, who holds the key of David.\" The peg-that-gives-way (v.25) warns that even Eliakim’s authority is temporary; only Christ’s key-authority is permanent.",
-        "cross": [
-          {
-            "ref": "Rev 3:7",
-            "note": "He who holds the key of David. What he opens no one can shut; what he shuts no one can open — Christ claims Eliakim’s authority."
-          },
-          {
-            "ref": "Matt 16:19",
-            "note": "I will give you the keys of the kingdom of heaven — Jesus gives Peter key-authority, echoing Isa 22:22."
-          },
-          {
-            "ref": "Isa 36:3",
-            "note": "Eliakim son of Hilkiah the palace administrator — the same Eliakim, now in office during Sennacherib’s crisis."
-          },
-          {
-            "ref": "Rev 1:18",
-            "note": "I hold the keys of death and Hades — Christ’s ultimate key-authority."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rev 3:7",
+              "note": "He who holds the key of David. What he opens no one can shut; what he shuts no one can open — Christ claims Eliakim’s authority."
+            },
+            {
+              "ref": "Matt 16:19",
+              "note": "I will give you the keys of the kingdom of heaven — Jesus gives Peter key-authority, echoing Isa 22:22."
+            },
+            {
+              "ref": "Isa 36:3",
+              "note": "Eliakim son of Hilkiah the palace administrator — the same Eliakim, now in office during Sennacherib’s crisis."
+            },
+            {
+              "ref": "Rev 1:18",
+              "note": "I hold the keys of death and Hades — Christ’s ultimate key-authority."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -224,6 +229,9 @@
               "note": "Childs: the key-authority is simultaneously political (access to the king), theological (access to God), and eschatological (Christ’s final authority). All three layers are present in the canonical text."
             }
           ]
+        },
+        "hist": {
+          "context": "Shebna was a high official under Hezekiah (mentioned in 36:3). His offence appears to be self-aggrandisement: carving himself an elaborate tomb (v.16) while the nation faces crisis. Eliakim replaces him with the \"key of David\" — the authority to control access to the king. Revelation 3:7 applies this to Christ: \"These are the words of him who is holy and true, who holds the key of David.\" The peg-that-gives-way (v.25) warns that even Eliakim’s authority is temporary; only Christ’s key-authority is permanent."
         }
       }
     }

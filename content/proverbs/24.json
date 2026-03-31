@@ -31,17 +31,18 @@
             "paragraph": "Wisdom is like dĕbaš (honey) to the soul — sweet when you find it (v. 14). Honey was the sweetest substance in the ancient world and a sign of the promised land's bounty. The comparison is sensory: wisdom is not duty but delight, an acquired taste that becomes the most satisfying flavour in life."
           }
         ],
-        "ctx": "The first half of ch.24 contains the Thirty Sayings' wisdom-builds-the-house formula (v.3) and the obligation to rescue those staggering toward death (v.11). The honey-and-wisdom comparison (v.13-14) applies the sweetness metaphor: just as honey is good for the body, wisdom is good for the soul — with the same future-hope promise as 23:18.",
-        "cross": [
-          {
-            "ref": "Prov 9:1",
-            "note": "Wisdom has built her house — the personified Wisdom of ch.9 builds; wisdom in v.3 is the principle by which all houses are properly built."
-          },
-          {
-            "ref": "Prov 14:4",
-            "note": "Where there are no oxen the manger is clean, but abundant harvests come through the strength of an ox — the same diligence-requires-mess principle implicit in v.27."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 9:1",
+              "note": "Wisdom has built her house — the personified Wisdom of ch.9 builds; wisdom in v.3 is the principle by which all houses are properly built."
+            },
+            {
+              "ref": "Prov 14:4",
+              "note": "Where there are no oxen the manger is clean, but abundant harvests come through the strength of an ox — the same diligence-requires-mess principle implicit in v.27."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "The NET note on 'the wise have great power, and those with knowledge increase their strength' discusses the counter-intuitive claim: wisdom produces a kind of strength greater than physical power. The note traces the theme through Qohelet (Eccl 9:13-16: a poor wise man saved his city) and identifies wisdom as force-multiplier, not force-replacement."
             }
           ]
+        },
+        "hist": {
+          "context": "The first half of ch.24 contains the Thirty Sayings' wisdom-builds-the-house formula (v.3) and the obligation to rescue those staggering toward death (v.11). The honey-and-wisdom comparison (v.13-14) applies the sweetness metaphor: just as honey is good for the body, wisdom is good for the soul — with the same future-hope promise as 23:18."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "The wise observe and derive instruction — the process is called lāqaḥ mûsār (to take/receive discipline). The field of the sluggard is not merely a cautionary tale but a maśkîl moment: the discerning person can learn wisdom from negative examples. Every ruin tells a story if you have eyes to read it."
           }
         ],
-        "ctx": "The second half includes more sayings from the supplementary collection (vv.23-29) and the extended parable of the sluggard's field (vv.30-34) — one of the most vivid portraits of lazy neglect in Proverbs. The field that produced only weeds because its owner loved sleep is the book's sharpest illustration of what happens when diligence is absent.",
-        "cross": [
-          {
-            "ref": "Prov 6:10-11",
-            "note": "A little sleep, a little slumber — the sluggard passage of ch.6 is echoed and extended in vv.30-34."
-          },
-          {
-            "ref": "2 Thess 3:10",
-            "note": "If anyone is not willing to work, let them not eat — the NT application of Proverbs' consistent diligence ethic."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 6:10-11",
+              "note": "A little sleep, a little slumber — the sluggard passage of ch.6 is echoed and extended in vv.30-34."
+            },
+            {
+              "ref": "2 Thess 3:10",
+              "note": "If anyone is not willing to work, let them not eat — the NT application of Proverbs' consistent diligence ethic."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -178,6 +183,9 @@
               "note": "NET: verbatim repetition of 6:10-11 — the same excuse used repeatedly produces the same result. The literary echo signals that the sluggard's self-deception is chronic, not occasional."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half includes more sayings from the supplementary collection (vv.23-29) and the extended parable of the sluggard's field (vv.30-34) — one of the most vivid portraits of lazy neglect in Proverbs. The field that produced only weeds because its owner loved sleep is the book's sharpest illustration of what happens when diligence is absent."
         }
       }
     }

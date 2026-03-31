@@ -31,17 +31,18 @@
             "paragraph": "V.15: lips that speak knowledge are a rare jewel (kǝlî yāqār — precious vessel). More valuable than gold or rubies. The scarcity of genuinely knowledge-filled speech is itself a commentary on the rarity of wisdom."
           }
         ],
-        "ctx": "The first half of ch.20 opens with the wine-mocker (v.1) before addressing integrity questions: who can claim purity of heart (v.9), the LORD's hatred of dishonest measures (v.10), and the rarity of knowledge-filled speech (v.15). V.5's deep-waters saying is the chapter's most psychologically sophisticated observation.",
-        "cross": [
-          {
-            "ref": "Prov 11:1",
-            "note": "Dishonest scales are an abomination — the differing weights of v.10 repeat this foundational commercial ethics principle."
-          },
-          {
-            "ref": "Ps 51:10",
-            "note": "Create in me a pure heart, O God — v.9's rhetorical question (\"who can claim a pure heart?\") is answered by the Psalmist: only God can create it."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 11:1",
+              "note": "Dishonest scales are an abomination — the differing weights of v.10 repeat this foundational commercial ethics principle."
+            },
+            {
+              "ref": "Ps 51:10",
+              "note": "Create in me a pure heart, O God — v.9's rhetorical question (\"who can claim a pure heart?\") is answered by the Psalmist: only God can create it."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "The NET note on the rhetorical question cites 1 Kgs 8:46, Eccl 7:20, and Job 25:4 as parallel OT acknowledgments of universal sinfulness within the wisdom tradition."
             }
           ]
+        },
+        "hist": {
+          "context": "The first half of ch.20 opens with the wine-mocker (v.1) before addressing integrity questions: who can claim purity of heart (v.9), the LORD's hatred of dishonest measures (v.10), and the rarity of knowledge-filled speech (v.15). V.5's deep-waters saying is the chapter's most psychologically sophisticated observation."
         }
       }
     },
@@ -133,17 +137,18 @@
             "paragraph": "V.28: the king is kept safe by ḥeseḏ (covenant love) and ʾĕmet (truth, faithfulness) — the twin pillars of the LORD's own character (Exod 34:6) applied to kingship. The king who embodies these enacts God's own character in his reign."
           }
         ],
-        "ctx": "The second half contains two profound observations: the human spirit as the LORD's lamp (v.27) and the LORD directing human steps (v.24). Both address the same question: humans cannot fully understand their own ways (v.24) because the searching of the inmost parts belongs ultimately to the LORD's lamp (v.27). V.22's waiting-for-the-LORD is the practical outworking of this theology.",
-        "cross": [
-          {
-            "ref": "Gen 2:7",
-            "note": "God breathed the breath of life into Adam — the nišmat ʾādām of v.27 is the same divine breath. Conscience is the divine breath in us."
-          },
-          {
-            "ref": "Rom 12:19",
-            "note": "Vengeance is mine; I will repay, says the LORD — the NT application of v.22's \"wait for the LORD, he will avenge you.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 2:7",
+              "note": "God breathed the breath of life into Adam — the nišmat ʾādām of v.27 is the same divine breath. Conscience is the divine breath in us."
+            },
+            {
+              "ref": "Rom 12:19",
+              "note": "Vengeance is mine; I will repay, says the LORD — the NT application of v.22's \"wait for the LORD, he will avenge you.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -212,6 +217,9 @@
               "note": "The NET note on 'the hearing ear and the seeing eye — the LORD has made them both' connects to Ps 94:9 and grounds sensory perception as divine gift. The epistemological humility that grounds fear of the LORD applies to the very faculties by which we perceive."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half contains two profound observations: the human spirit as the LORD's lamp (v.27) and the LORD directing human steps (v.24). Both address the same question: humans cannot fully understand their own ways (v.24) because the searching of the inmost parts belongs ultimately to the LORD's lamp (v.27). V.22's waiting-for-the-LORD is the practical outworking of this theology."
         }
       }
     }

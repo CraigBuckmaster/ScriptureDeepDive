@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 8,
       "panels": {
-        "ctx": "Asa does “what was good and right.” He removes foreign altars and high places, smashes sacred stones, cuts down Asherah poles. “The land was at peace... because the LORD gave him rest.” Asa builds fortified cities during the peace: “Let us build these towns. The land is still ours because we have sought the LORD.” The seeking → rest → building sequence is the Chronicler’s model for faithful governance.",
-        "cross": [
-          {
-            "ref": "1 Kgs 15:9–15",
-            "note": "Kings provides Asa's basic assessment. Chronicles expands the peaceful years into a theological narrative: rest came because Asa sought God, and the land had peace because the LORD gave them rest."
-          },
-          {
-            "ref": "Deut 12:2–3",
-            "note": "Asa's removal of foreign altars and high places follows the Deuteronomic programme of centralised worship, making him a model reformer in the Chronicler's eyes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 15:9–15",
+              "note": "Kings provides Asa's basic assessment. Chronicles expands the peaceful years into a theological narrative: rest came because Asa sought God, and the land had peace because the LORD gave them rest."
+            },
+            {
+              "ref": "Deut 12:2–3",
+              "note": "Asa's removal of foreign altars and high places follows the Deuteronomic programme of centralised worship, making him a model reformer in the Chronicler's eyes."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "The Chronicler’s vocabulary in this section reflects his characteristic theological terminology."
             }
           ]
+        },
+        "hist": {
+          "context": "Asa does “what was good and right.” He removes foreign altars and high places, smashes sacred stones, cuts down Asherah poles. “The land was at peace... because the LORD gave him rest.” Asa builds fortified cities during the peace: “Let us build these towns. The land is still ours because we have sought the LORD.” The seeking → rest → building sequence is the Chronicler’s model for faithful governance."
         }
       }
     },
@@ -54,17 +58,18 @@
       "verse_start": 9,
       "verse_end": 15,
       "panels": {
-        "ctx": "Zerah the Cushite attacks with a million men and 300 chariots. Asa’s prayer is the Chronicler’s model battle-prayer: “LORD, there is no one like you to help the powerless against the mighty. Help us, LORD our God, for we rely on you, and in your name we have come against this vast army.” God strikes the Cushites. The prayer is unique to Chronicles — absent from Kings — and illustrates the seek/prosper pattern perfectly.",
-        "cross": [
-          {
-            "ref": "1 Kgs 15:16–22",
-            "note": "Kings omits the Zerah episode entirely — this massive battle against a million-man army is unique to Chronicles, showcasing the Chronicler's theology of prayer and divine intervention."
-          },
-          {
-            "ref": "Ps 20:7",
-            "note": "Asa's prayer — 'there is no one like you to help the powerless against the mighty' — echoes the Psalm: 'Some trust in chariots and some in horses, but we trust in the name of the LORD our God.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 15:16–22",
+              "note": "Kings omits the Zerah episode entirely — this massive battle against a million-man army is unique to Chronicles, showcasing the Chronicler's theology of prayer and divine intervention."
+            },
+            {
+              "ref": "Ps 20:7",
+              "note": "Asa's prayer — 'there is no one like you to help the powerless against the mighty' — echoes the Psalm: 'Some trust in chariots and some in horses, but we trust in the name of the LORD our God.'"
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -82,6 +87,9 @@
               "note": "Key terms in this section connect to the Chronicler’s broader theological framework."
             }
           ]
+        },
+        "hist": {
+          "context": "Zerah the Cushite attacks with a million men and 300 chariots. Asa’s prayer is the Chronicler’s model battle-prayer: “LORD, there is no one like you to help the powerless against the mighty. Help us, LORD our God, for we rely on you, and in your name we have come against this vast army.” God strikes the Cushites. The prayer is unique to Chronicles — absent from Kings — and illustrates the seek/prosper pattern perfectly."
         }
       }
     }

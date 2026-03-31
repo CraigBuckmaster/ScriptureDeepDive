@@ -31,21 +31,22 @@
             "paragraph": "The same verb used in God's commission to Jonah ('call out against Nineveh,' 1:2). The prophet who refused to 'call' to Nineveh now 'calls' to God from the belly of the fish. The wordplay links disobedience and prayer."
           }
         ],
-        "ctx": "Jonah's prayer is a thanksgiving psalm, not a lament — a surprising genre for a man still inside a fish. The prayer draws heavily on the Psalter, weaving together phrases and images from multiple psalms (Pss 18, 42, 69, 88, 120, 142). This has led some scholars to view it as a later insertion, but the canonical reading treats it as an integral part of the narrative: Jonah praises God for deliverance already experienced (rescue from drowning) while still awaiting full deliverance (release from the fish). The language of descent continues: waters, deep, roots of mountains, the pit.",
-        "cross": [
-          {
-            "ref": "Ps 18:4-6",
-            "note": "David's prayer from distress uses nearly identical imagery: cords of death, torrents of destruction, depths of Sheol — followed by God hearing from his temple."
-          },
-          {
-            "ref": "Ps 42:7",
-            "note": "'Deep calls to deep in the roar of your waterfalls; all your waves and breakers have swept over me' — language Jonah echoes in his prayer."
-          },
-          {
-            "ref": "Lam 3:55-56",
-            "note": "Calling on God's name from the depths and receiving the assurance 'Do not close your ears to my cry' — the same pattern of supplication Jonah follows."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 18:4-6",
+              "note": "David's prayer from distress uses nearly identical imagery: cords of death, torrents of destruction, depths of Sheol — followed by God hearing from his temple."
+            },
+            {
+              "ref": "Ps 42:7",
+              "note": "'Deep calls to deep in the roar of your waterfalls; all your waves and breakers have swept over me' — language Jonah echoes in his prayer."
+            },
+            {
+              "ref": "Lam 3:55-56",
+              "note": "Calling on God's name from the depths and receiving the assurance 'Do not close your ears to my cry' — the same pattern of supplication Jonah follows."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -101,6 +102,9 @@
               "note": "Stuart traces the descent imagery to its nadir: the waters surround him, the deep engulfs him, seaweed wraps his head, he sinks to the roots of the mountains. This is the lowest point in the book's vertical geography: heaven → land → sea → deep → Sheol. From this ultimate depth, Jonah cries upward to God's temple."
             }
           ]
+        },
+        "hist": {
+          "context": "Jonah's prayer is a thanksgiving psalm, not a lament — a surprising genre for a man still inside a fish. The prayer draws heavily on the Psalter, weaving together phrases and images from multiple psalms (Pss 18, 42, 69, 88, 120, 142). This has led some scholars to view it as a later insertion, but the canonical reading treats it as an integral part of the narrative: Jonah praises God for deliverance already experienced (rescue from drowning) while still awaiting full deliverance (release from the fish). The language of descent continues: waters, deep, roots of mountains, the pit."
         }
       }
     },
@@ -124,17 +128,18 @@
             "paragraph": "Literally 'breaths of emptiness.' Jonah contrasts idol-worshippers who forfeit God's covenant love (hesed) with himself, who will fulfill his vows. The irony is sharp: in chapter 1, the pagan sailors demonstrated more authentic worship than Jonah."
           }
         ],
-        "ctx": "The psalm concludes with a pivotal theological declaration: 'Salvation comes from the LORD.' This is simultaneously a confession of personal gratitude and the central claim the rest of the book will develop. If salvation is from the LORD, then the LORD determines its recipients — including Ninevites. Jonah speaks the truth that will become the grounds for his own anger in chapter 4. The vomiting onto dry land (v. 10) echoes creation imagery: the sea releases onto land, reversing the descent pattern and beginning Jonah's restoration.",
-        "cross": [
-          {
-            "ref": "Ps 3:8",
-            "note": "'From the LORD comes deliverance' — the psalmic source of Jonah's climactic confession, using the same Hebrew phrase."
-          },
-          {
-            "ref": "Eph 2:8-9",
-            "note": "The NT parallel: salvation by grace, not works. Jonah's declaration prefigures the Pauline doctrine that salvation originates entirely in divine initiative."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 3:8",
+              "note": "'From the LORD comes deliverance' — the psalmic source of Jonah's climactic confession, using the same Hebrew phrase."
+            },
+            {
+              "ref": "Eph 2:8-9",
+              "note": "The NT parallel: salvation by grace, not works. Jonah's declaration prefigures the Pauline doctrine that salvation originates entirely in divine initiative."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -186,6 +191,9 @@
               "note": "Stuart observes that the fish functions as a vehicle of both preservation and transportation. The vomiting onto dry land is not degrading but salvific: it returns Jonah to terra firma and to the possibility of obedience. The scene marks the structural midpoint between commission (1:1-2) and recommission (3:1-2)."
             }
           ]
+        },
+        "hist": {
+          "context": "The psalm concludes with a pivotal theological declaration: 'Salvation comes from the LORD.' This is simultaneously a confession of personal gratitude and the central claim the rest of the book will develop. If salvation is from the LORD, then the LORD determines its recipients — including Ninevites. Jonah speaks the truth that will become the grounds for his own anger in chapter 4. The vomiting onto dry land (v. 10) echoes creation imagery: the sea releases onto land, reversing the descent pattern and beginning Jonah's restoration."
         }
       }
     }

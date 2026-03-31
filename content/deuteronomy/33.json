@@ -31,17 +31,18 @@
             "paragraph": "The opening theophanic declaration -- God coming from Sinai, rising from Seir, shining from Paran -- echoes Habakkuk 3 and Judges 5 (the Song of Deborah). God arrives from his mountain stronghold to bless his people. The cosmic warrior-king descends to pronounce covenant blessing."
           }
         ],
-        "ctx": "Chapter 33 is Moses's farewell blessing on the twelve tribes -- the OT's only example of a prophetic blessing of all Israel at once, comparable to Jacob's blessings in Genesis 49. The chapter begins with a theophanic poem (vv.2-5) describing God's arrival from Sinai and his rule over Jeshurun, then moves through the tribal blessings, and closes with a magnificent doxology (vv.26-29). The tribal blessings vary significantly from Genesis 49 -- reflecting the changed fortunes of the wilderness period.",
-        "cross": [
-          {
-            "ref": "Gen 49:1-28",
-            "note": "Jacob's blessings on the twelve tribes are the direct precedent for Deuteronomy 33. The comparison reveals Judah's changed situation (Deut 33:7 is a prayer for Judah's survival) and Levi's rehabilitation -- from Gen 49's curse for violence to Deut 33's elevation to priestly service."
-          },
-          {
-            "ref": "Rev 7:4-8",
-            "note": "\"Then I heard the number of those who were sealed: 144,000 from all the tribes of Israel.\" Revelation's sealing of the twelve tribes echoes both Moses's and Jacob's tribal blessings -- the covenant people are individually known and accounted for in God's final census."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 49:1-28",
+              "note": "Jacob's blessings on the twelve tribes are the direct precedent for Deuteronomy 33. The comparison reveals Judah's changed situation (Deut 33:7 is a prayer for Judah's survival) and Levi's rehabilitation -- from Gen 49's curse for violence to Deut 33's elevation to priestly service."
+            },
+            {
+              "ref": "Rev 7:4-8",
+              "note": "\"Then I heard the number of those who were sealed: 144,000 from all the tribes of Israel.\" Revelation's sealing of the twelve tribes echoes both Moses's and Jacob's tribal blessings -- the covenant people are individually known and accounted for in God's final census."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 33 is Moses's farewell blessing on the twelve tribes -- the OT's only example of a prophetic blessing of all Israel at once, comparable to Jacob's blessings in Genesis 49. The chapter begins with a theophanic poem (vv.2-5) describing God's arrival from Sinai and his rule over Jeshurun, then moves through the tribal blessings, and closes with a magnificent doxology (vv.26-29). The tribal blessings vary significantly from Genesis 49 -- reflecting the changed fortunes of the wilderness period."
         }
       }
     },
@@ -137,17 +141,18 @@
             "paragraph": "\"Underneath are the everlasting arms\" -- not merely that God is above, sovereign and transcendent, but that he is underneath, bearing the weight of his people. The God who holds up the cosmos holds up the falling saint. This image of divine support from below is unique in the OT."
           }
         ],
-        "ctx": "The remaining tribal blessings (Zebulun, Issachar, Gad, Dan, Naphtali, Asher) are followed by the magnificent doxological close (vv.26-29): \"There is no one like the God of Jeshurun, who rides across the heavens to help you and on the clouds in his majesty... The eternal God is your refuge, and underneath are the everlasting arms.\" The chapter closes: \"Blessed are you, Israel! Who is like you, a people saved by the LORD?\" The question echoes the Exodus victory song (Exod 15:11: \"Who among the gods is like you, LORD?\") -- Israel's uniqueness is a reflection of its God's uniqueness.",
-        "cross": [
-          {
-            "ref": "Exod 15:11",
-            "note": "\"Who among the gods is like you, LORD?\" Moses's question at the Red Sea is answered in the farewell blessing: the people whose God is incomparable are themselves unique. The bookends of Moses's ministry are songs of divine incomparability."
-          },
-          {
-            "ref": "Eph 6:10",
-            "note": "\"Finally, be strong in the Lord and in his mighty power.\" Paul's armour of God passage reflects the Deuteronomy 33 divine warrior theology -- God's people are strong not in their own strength but in the strength of the God who rides the heavens on their behalf."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 15:11",
+              "note": "\"Who among the gods is like you, LORD?\" Moses's question at the Red Sea is answered in the farewell blessing: the people whose God is incomparable are themselves unique. The bookends of Moses's ministry are songs of divine incomparability."
+            },
+            {
+              "ref": "Eph 6:10",
+              "note": "\"Finally, be strong in the Lord and in his mighty power.\" Paul's armour of God passage reflects the Deuteronomy 33 divine warrior theology -- God's people are strong not in their own strength but in the strength of the God who rides the heavens on their behalf."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -212,6 +217,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "The remaining tribal blessings (Zebulun, Issachar, Gad, Dan, Naphtali, Asher) are followed by the magnificent doxological close (vv.26-29): \"There is no one like the God of Jeshurun, who rides across the heavens to help you and on the clouds in his majesty... The eternal God is your refuge, and underneath are the everlasting arms.\" The chapter closes: \"Blessed are you, Israel! Who is like you, a people saved by the LORD?\" The question echoes the Exodus victory song (Exod 15:11: \"Who among the gods is like you, LORD?\") -- Israel's uniqueness is a reflection of its God's uniqueness."
         }
       }
     }

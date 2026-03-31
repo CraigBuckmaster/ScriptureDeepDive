@@ -17,13 +17,14 @@
       "verse_start": 1,
       "verse_end": 7,
       "panels": {
-        "ctx": "The narrative begins abruptly: “Now the Philistines fought against Israel.” No backstory, no Saul narratives, no anointing, no David-and-Goliath — the Chronicler drops the reader directly into the final battle. Saul and three sons (including Jonathan) die on Mount Gilboa. The Israelites flee and the Philistines occupy their towns. The Chronicler compresses 1 Samuel 31 into seven verses, keeping only what serves his purpose: the death that makes room for David.",
-        "cross": [
-          {
-            "ref": "1 Sam 31:1–13",
-            "note": "The parallel account in Samuel, which the Chronicler follows closely but condenses. Samuel provides the broader context; Chronicles provides the theological verdict."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Sam 31:1–13",
+              "note": "The parallel account in Samuel, which the Chronicler follows closely but condenses. Samuel provides the broader context; Chronicles provides the theological verdict."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -41,6 +42,9 @@
               "note": "The phrase “all his house” (kol-bēytō) is a Chronicler’s addition not found in 1 Sam 31:6. It serves a literary rather than historical function: closing the Saulide chapter definitively."
             }
           ]
+        },
+        "hist": {
+          "context": "The narrative begins abruptly: “Now the Philistines fought against Israel.” No backstory, no Saul narratives, no anointing, no David-and-Goliath — the Chronicler drops the reader directly into the final battle. Saul and three sons (including Jonathan) die on Mount Gilboa. The Israelites flee and the Philistines occupy their towns. The Chronicler compresses 1 Samuel 31 into seven verses, keeping only what serves his purpose: the death that makes room for David."
         }
       }
     },
@@ -58,17 +62,18 @@
             "paragraph": "Saul died “because of his unfaithfulness” (maʿal, v.13) — the same word used for the Transjordanian tribes’ exile (5:25). The Chronicler uses one word to explain both individual failure and national catastrophe. Unfaithfulness is the universal cause of disaster."
           }
         ],
-        "ctx": "The Philistines find the bodies, strip Saul’s armour, and put his head in the temple of Dagon. But the men of Jabesh Gilead rescue the bodies (their gratitude for Saul’s early victory, 1 Sam 11). Then the Chronicler delivers his theological verdict — absent from Samuel: Saul died because of (1) unfaithfulness to the LORD, (2) not keeping the LORD’s word, and (3) consulting a medium. “So the LORD put him to death and turned the kingdom over to David son of Jesse.” Three causes, one consequence, one successor.",
-        "cross": [
-          {
-            "ref": "1 Sam 28:7–19",
-            "note": "Saul consults the medium at Endor — the specific act the Chronicler cites as a cause of death."
-          },
-          {
-            "ref": "1 Sam 15:23",
-            "note": "Samuel’s verdict on Saul: “Because you have rejected the word of the LORD, he has rejected you as king.” The Chronicler condenses this into “not keeping the LORD’s word.”"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Sam 28:7–19",
+              "note": "Saul consults the medium at Endor — the specific act the Chronicler cites as a cause of death."
+            },
+            {
+              "ref": "1 Sam 15:23",
+              "note": "Samuel’s verdict on Saul: “Because you have rejected the word of the LORD, he has rejected you as king.” The Chronicler condenses this into “not keeping the LORD’s word.”"
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -86,6 +91,9 @@
               "note": "lishʾōl bĕʾōb (“to inquire of a medium”) — the verb shāʾal (“to ask, inquire”) is the same root used for “seeking” God. Saul sought, but from the wrong source. The Chronicler’s theology hinges on the direction of one’s seeking."
             }
           ]
+        },
+        "hist": {
+          "context": "The Philistines find the bodies, strip Saul’s armour, and put his head in the temple of Dagon. But the men of Jabesh Gilead rescue the bodies (their gratitude for Saul’s early victory, 1 Sam 11). Then the Chronicler delivers his theological verdict — absent from Samuel: Saul died because of (1) unfaithfulness to the LORD, (2) not keeping the LORD’s word, and (3) consulting a medium. “So the LORD put him to death and turned the kingdom over to David son of Jesse.” Three causes, one consequence, one successor."
         }
       }
     }

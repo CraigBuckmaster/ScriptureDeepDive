@@ -25,17 +25,18 @@
             "paragraph": "Amos' intercession uses the same verb (slh) used in prayers for forgiveness throughout the OT. The prophet who proclaims judgment also pleads for mercy — a tension at the heart of prophetic ministry. God relents twice (vv. 3, 6), demonstrating that divine patience is real but not unlimited."
           }
         ],
-        "ctx": "The vision sequence (chs. 7-9) shifts the book from oracular speech to visionary experience. The first two visions follow the same pattern: God shows Amos a devastating judgment (locusts, fire), the prophet intercedes ('Sovereign LORD, forgive! How can Jacob survive? He is so small!'), and God relents. This pattern establishes that judgment is not God's first impulse — he gives multiple opportunities for repentance. But the third vision (vv. 7-9) will break the pattern.",
-        "cross": [
-          {
-            "ref": "Gen 18:23-33",
-            "note": "Abraham's intercession for Sodom — the same pattern of human plea and divine response."
-          },
-          {
-            "ref": "Exod 32:11-14",
-            "note": "Moses' intercession after the golden calf, where God also 'relented' (niham) from the disaster he planned."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 18:23-33",
+              "note": "Abraham's intercession for Sodom — the same pattern of human plea and divine response."
+            },
+            {
+              "ref": "Exod 32:11-14",
+              "note": "Moses' intercession after the golden calf, where God also 'relented' (niham) from the disaster he planned."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -88,6 +89,9 @@
               "note": "Andersen and Freedman note that the two relenting sequences (vv. 1-3, 4-6) create a narrative tension: if God has relented twice, will he relent again? The third vision breaks the pattern, and the answer is devastating: 'I will spare them no longer.' The literary structure builds suspense before delivering the decisive blow."
             }
           ]
+        },
+        "hist": {
+          "context": "The vision sequence (chs. 7-9) shifts the book from oracular speech to visionary experience. The first two visions follow the same pattern: God shows Amos a devastating judgment (locusts, fire), the prophet intercedes ('Sovereign LORD, forgive! How can Jacob survive? He is so small!'), and God relents. This pattern establishes that judgment is not God's first impulse — he gives multiple opportunities for repentance. But the third vision (vv. 7-9) will break the pattern."
         }
       }
     },
@@ -105,17 +109,18 @@
             "paragraph": "The meaning of ʾanak is debated. Traditionally rendered 'plumb line' (a tool for testing whether a wall is true), it may instead mean 'tin' or 'lead' — suggesting a wall made of metal that God is now tearing down. Either way, the image conveys testing and judgment: Israel has been measured and found wanting."
           }
         ],
-        "ctx": "The third vision breaks the pattern established by the first two. God stands beside a wall with an ʾanak in his hand and declares, 'I am setting an ʾanak among my people Israel; I will spare them no longer.' This time there is no intercession, no relenting. The high places of Isaac and the sanctuaries of Israel will be destroyed, and God will rise against the house of Jeroboam with the sword. The shift from mercy to irreversible judgment is the pivotal moment of the vision sequence.",
-        "cross": [
-          {
-            "ref": "Isa 28:17",
-            "note": "'I will make justice the measuring line and righteousness the plumb line' — Isaiah's use of the same construction imagery for divine testing."
-          },
-          {
-            "ref": "2 Kgs 21:13",
-            "note": "God will stretch over Jerusalem the measuring line used against Samaria — the same imagery applied to Judah after Israel's fall."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 28:17",
+              "note": "'I will make justice the measuring line and righteousness the plumb line' — Isaiah's use of the same construction imagery for divine testing."
+            },
+            {
+              "ref": "2 Kgs 21:13",
+              "note": "God will stretch over Jerusalem the measuring line used against Samaria — the same imagery applied to Judah after Israel's fall."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -164,6 +169,9 @@
               "note": "Andersen and Freedman read the absence of intercession as the structural climax of the vision sequence. The pattern [vision → intercession → relenting] has been established twice; its disruption in the third vision is the narrative equivalent of a broken covenant. God is no longer open to negotiation."
             }
           ]
+        },
+        "hist": {
+          "context": "The third vision breaks the pattern established by the first two. God stands beside a wall with an ʾanak in his hand and declares, 'I am setting an ʾanak among my people Israel; I will spare them no longer.' This time there is no intercession, no relenting. The high places of Isaac and the sanctuaries of Israel will be destroyed, and God will rise against the house of Jeroboam with the sword. The shift from mercy to irreversible judgment is the pivotal moment of the vision sequence."
         }
       }
     },
@@ -181,21 +189,22 @@
             "paragraph": "Amaziah calls Amos a 'seer' (hozeh) rather than a 'prophet' (navi), possibly as a dismissive term implying he is a freelance diviner rather than an authorized prophet. Amos' response ('I was neither a prophet nor the son of a prophet') rejects institutional credentials in favor of direct divine calling."
           }
         ],
-        "ctx": "This narrative interruption is the only prose passage in the book and the only scene featuring dialogue. Amaziah, the priest of Bethel, reports Amos' oracles to King Jeroboam as sedition and orders Amos to return to Judah. Amos' response is one of the great declarations of prophetic independence: 'I was neither a prophet nor the son of a prophet, but I was a shepherd, and I also took care of sycamore-fig trees. But the LORD took me from tending the flock and said, Go, prophesy to my people Israel.' The passage dramatizes the conflict between institutional religion and prophetic authority.",
-        "cross": [
-          {
-            "ref": "1 Kgs 13:1-10",
-            "note": "An earlier confrontation between a prophet and the altar at Bethel, under Jeroboam I — Amos' encounter echoes the same location and themes."
-          },
-          {
-            "ref": "Jer 26:8-15",
-            "note": "Jeremiah's trial for prophesying against the temple — the same pattern of institutional resistance to prophetic truth."
-          },
-          {
-            "ref": "Acts 4:19-20",
-            "note": "'We cannot help speaking about what we have seen and heard' — Peter and John's parallel claim of prophetic compulsion against institutional pressure."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 13:1-10",
+              "note": "An earlier confrontation between a prophet and the altar at Bethel, under Jeroboam I — Amos' encounter echoes the same location and themes."
+            },
+            {
+              "ref": "Jer 26:8-15",
+              "note": "Jeremiah's trial for prophesying against the temple — the same pattern of institutional resistance to prophetic truth."
+            },
+            {
+              "ref": "Acts 4:19-20",
+              "note": "'We cannot help speaking about what we have seen and heard' — Peter and John's parallel claim of prophetic compulsion against institutional pressure."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -252,6 +261,9 @@
               "note": "Andersen and Freedman read the Amaziah episode as the dramatic center of the book. The narrative interrupts the vision sequence precisely where the stakes are highest: between the irreversible plumb-line judgment (vv. 7-9) and the fourth vision (8:1-3). The confrontation between prophet and priest embodies the book's fundamental conflict between justice and institutional power."
             }
           ]
+        },
+        "hist": {
+          "context": "This narrative interruption is the only prose passage in the book and the only scene featuring dialogue. Amaziah, the priest of Bethel, reports Amos' oracles to King Jeroboam as sedition and orders Amos to return to Judah. Amos' response is one of the great declarations of prophetic independence: 'I was neither a prophet nor the son of a prophet, but I was a shepherd, and I also took care of sycamore-fig trees. But the LORD took me from tending the flock and said, Go, prophesy to my people Israel.' The passage dramatizes the conflict between institutional religion and prophetic authority."
         }
       }
     }

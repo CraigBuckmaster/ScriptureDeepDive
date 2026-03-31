@@ -25,21 +25,22 @@
             "paragraph": "God announces that the exile will last seventy years (v.11). This number is both literal and typological: the exile from 605 to 538 BC is approximately 67 years; from the temple's destruction (586) to its rebuilding (516) is exactly 70. The number also represents a complete generation -- the fullness of judgment. Daniel later takes this prophecy as the basis for his prayer of national repentance (Dan 9:2)."
           }
         ],
-        "ctx": "Chapter 25 is dated to \"the fourth year of Jehoiakim\" (605 BC) -- the year of the Battle of Carchemish when Babylon replaced Egypt as the superpower. This oracle summarizes twenty-three years of Jeremiah's rejected ministry (627-605 BC) and announces the definitive judgment: seventy years of Babylonian domination. But the chapter also looks beyond exile: Babylon itself will be punished (v.12), establishing the pattern that God's instruments of judgment are themselves judged.",
-        "cross": [
-          {
-            "ref": "Dan 9:2",
-            "note": "Daniel reads Jeremiah's seventy-year prophecy and launches his great prayer of repentance -- one prophetic text generating another."
-          },
-          {
-            "ref": "2 Chr 36:21",
-            "note": "The Chronicler interprets the seventy years as Sabbath rest for the land (cf. Lev 26:34-35) -- the years of rest the land was denied during centuries of disobedience."
-          },
-          {
-            "ref": "Ezra 1:1",
-            "note": "Cyrus's decree fulfills the seventy-year prophecy: \"The LORD moved the heart of Cyrus king of Persia.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Dan 9:2",
+              "note": "Daniel reads Jeremiah's seventy-year prophecy and launches his great prayer of repentance -- one prophetic text generating another."
+            },
+            {
+              "ref": "2 Chr 36:21",
+              "note": "The Chronicler interprets the seventy years as Sabbath rest for the land (cf. Lev 26:34-35) -- the years of rest the land was denied during centuries of disobedience."
+            },
+            {
+              "ref": "Ezra 1:1",
+              "note": "Cyrus's decree fulfills the seventy-year prophecy: \"The LORD moved the heart of Cyrus king of Persia.\""
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Brueggemann reads \"my servant Nebuchadnezzar\" as \"the most astonishing title in prophetic literature.\" God claims the imperial aggressor as his agent. This subverts both Babylonian self-understanding and Judean nationalism."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 25 is dated to \"the fourth year of Jehoiakim\" (605 BC) -- the year of the Battle of Carchemish when Babylon replaced Egypt as the superpower. This oracle summarizes twenty-three years of Jeremiah's rejected ministry (627-605 BC) and announces the definitive judgment: seventy years of Babylonian domination. But the chapter also looks beyond exile: Babylon itself will be punished (v.12), establishing the pattern that God's instruments of judgment are themselves judged."
         }
       }
     },
@@ -117,21 +121,22 @@
             "paragraph": "God gives Jeremiah \"this cup filled with the wine of my wrath\" (kos hayyin hahamema, v.15) to make all nations drink. The cup metaphor for divine judgment appears throughout Scripture (Ps 75:8, Isa 51:17, Rev 14:10). The imagery is of forced intoxication -- the nations will \"drink and stagger and go mad\" (v.16). The cup passes to twenty-three nations, beginning with Jerusalem and ending with \"the king of Sheshak\" -- a cipher for Babylon."
           }
         ],
-        "ctx": "The cup-of-wrath oracle is one of the most expansive judgment visions in the Hebrew Bible. Beginning with Jerusalem and spreading outward to Egypt, Uz, Philistia, Edom, Moab, Ammon, Tyre, Sidon, Arabia, and finally Babylon (encoded as \"Sheshak\"), the vision portrays universal judgment. \"If the city that bears my Name must drink it, should you go unpunished?\" (v.29). Judgment begins with God's own house and extends to every nation.",
-        "cross": [
-          {
-            "ref": "Rev 14:10",
-            "note": "\"He too will drink the wine of God's fury\" -- Revelation draws directly on Jeremiah's cup-of-wrath imagery for eschatological judgment."
-          },
-          {
-            "ref": "Matt 26:39",
-            "note": "Jesus prays: \"Take this cup from me\" -- the Gethsemane prayer echoes the wrath-cup tradition, with Christ drinking the cup that the nations deserved."
-          },
-          {
-            "ref": "1 Pet 4:17",
-            "note": "\"Judgment begins with God's household\" -- the same principle Jeremiah articulates in v.29."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rev 14:10",
+              "note": "\"He too will drink the wine of God's fury\" -- Revelation draws directly on Jeremiah's cup-of-wrath imagery for eschatological judgment."
+            },
+            {
+              "ref": "Matt 26:39",
+              "note": "Jesus prays: \"Take this cup from me\" -- the Gethsemane prayer echoes the wrath-cup tradition, with Christ drinking the cup that the nations deserved."
+            },
+            {
+              "ref": "1 Pet 4:17",
+              "note": "\"Judgment begins with God's household\" -- the same principle Jeremiah articulates in v.29."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -192,6 +197,9 @@
               "note": "Brueggemann identifies a \"leveling theology\" -- every nation, from covenant people to distant empire, stands equally under divine judgment. No special status exempts any people from accountability. Jerusalem and Babylon drink from the same cup."
             }
           ]
+        },
+        "hist": {
+          "context": "The cup-of-wrath oracle is one of the most expansive judgment visions in the Hebrew Bible. Beginning with Jerusalem and spreading outward to Egypt, Uz, Philistia, Edom, Moab, Ammon, Tyre, Sidon, Arabia, and finally Babylon (encoded as \"Sheshak\"), the vision portrays universal judgment. \"If the city that bears my Name must drink it, should you go unpunished?\" (v.29). Judgment begins with God's own house and extends to every nation."
         }
       }
     }

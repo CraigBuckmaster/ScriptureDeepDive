@@ -25,21 +25,22 @@
             "paragraph": "\"Why do the wicked (rəshāʿîm) live on, growing old and increasing in power?\" (v.7). The question that demolishes the friends’ theology. If suffering proves guilt, what does prosperity prove? The wicked grow old, their children are established, their homes are safe, their livestock multiply. Reality contradicts the retribution principle."
           }
         ],
-        "ctx": "Job’s most devastating rebuttal. He asks the friends to actually look at the world instead of reciting theology. The wicked prosper: they are powerful (v.7), their children dance (v.11), they spend their days in prosperity and go to the grave in peace (v.13). They even say to God, “Leave us alone!” (v.14) — and God apparently does. Job is not defending wickedness; he is destroying the premise that suffering = sin.",
-        "cross": [
-          {
-            "ref": "Ps 73:3–5",
-            "note": "\"I envied the arrogant when I saw the prosperity of the wicked. They have no struggles; their bodies are healthy and strong\" — the Psalmist’s identical observation."
-          },
-          {
-            "ref": "Jer 12:1",
-            "note": "\"Why does the way of the wicked prosper?\" — Jeremiah’s same question to God."
-          },
-          {
-            "ref": "Mal 3:14–15",
-            "note": "\"It is futile to serve God... the arrogant are blessed\" — the same complaint in Malachi."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 73:3–5",
+              "note": "\"I envied the arrogant when I saw the prosperity of the wicked. They have no struggles; their bodies are healthy and strong\" — the Psalmist’s identical observation."
+            },
+            {
+              "ref": "Jer 12:1",
+              "note": "\"Why does the way of the wicked prosper?\" — Jeremiah’s same question to God."
+            },
+            {
+              "ref": "Mal 3:14–15",
+              "note": "\"It is futile to serve God... the arrogant are blessed\" — the same complaint in Malachi."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -104,6 +105,9 @@
               "note": "Habel: Job presents counter-evidence that destroys the prosecution’s case. The retribution principle predicts the wicked will suffer. The evidence shows they prosper. The theory fails."
             }
           ]
+        },
+        "hist": {
+          "context": "Job’s most devastating rebuttal. He asks the friends to actually look at the world instead of reciting theology. The wicked prosper: they are powerful (v.7), their children dance (v.11), they spend their days in prosperity and go to the grave in peace (v.13). They even say to God, “Leave us alone!” (v.14) — and God apparently does. Job is not defending wickedness; he is destroying the premise that suffering = sin."
         }
       }
     },
@@ -121,17 +125,18 @@
             "paragraph": "\"So how can you console me with your nonsense (hebel)?\" (v.34). Job uses the Ecclesiastes word — hebel, vanity, breath, emptiness — to characterise the friends’ entire theology. Their comfort is vapour. Their answers are empty air."
           }
         ],
-        "ctx": "Job quotes the friends back to them: “How often is the lamp of the wicked snuffed out?” (v.17 — echoing Bildad 18:5). His answer: not often enough. He then dismantles the “punishment passes to the children” theory (v.19): what good is that to the dead person? They don’t feel it. The speech ends with Job’s harshest verdict on the friends: your comfort is falsehood (v.34).",
-        "cross": [
-          {
-            "ref": "Eccl 8:14",
-            "note": "\"Righteous people who get what the wicked deserve, and wicked people who get what the righteous deserve\" — Qoheleth’s identical observation."
-          },
-          {
-            "ref": "Eccl 9:2",
-            "note": "\"The same destiny overtakes all\" — the same collapse of moral distinction."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Eccl 8:14",
+              "note": "\"Righteous people who get what the wicked deserve, and wicked people who get what the righteous deserve\" — Qoheleth’s identical observation."
+            },
+            {
+              "ref": "Eccl 9:2",
+              "note": "\"The same destiny overtakes all\" — the same collapse of moral distinction."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -200,6 +205,9 @@
               "note": "Habel: Job rests his counter-case. The prosecution’s theory (retribution) fails the empirical test. The defence’s evidence (wicked prosper, righteous suffer) is unanswerable. The friends have lost."
             }
           ]
+        },
+        "hist": {
+          "context": "Job quotes the friends back to them: “How often is the lamp of the wicked snuffed out?” (v.17 — echoing Bildad 18:5). His answer: not often enough. He then dismantles the “punishment passes to the children” theory (v.19): what good is that to the dead person? They don’t feel it. The speech ends with Job’s harshest verdict on the friends: your comfort is falsehood (v.34)."
         }
       }
     }

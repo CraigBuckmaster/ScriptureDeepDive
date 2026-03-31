@@ -25,17 +25,18 @@
             "paragraph": "Solomon’s name is derived from shālōm (v.9): “A son who will be born to you will be a man of rest. I will give him rest from all his enemies. His name will be Solomon, and I will grant Israel peace and quiet during his reign.” The temple requires peace — David the warrior cannot build it; Solomon the man of peace will."
           }
         ],
-        "ctx": "David amasses enormous resources: iron for nails, bronze beyond weighing, cedar logs without number, 100,000 talents of gold and 1,000,000 talents of silver. Then he charges Solomon: “Now, my son, the LORD be with you... build the house of the LORD your God, as he told you.” David explains why he cannot build it himself: “You have shed much blood and have fought many wars. You are not to build a house for my Name because you have shed much blood.” The warrior prepares; the peacemaker builds.",
-        "cross": [
-          {
-            "ref": "1 Kgs 5:3–5",
-            "note": "Solomon’s explanation to Hiram: “My father David could not build a temple... because of the wars... But now the LORD my God has given me rest.”"
-          },
-          {
-            "ref": "1 Chr 28:3",
-            "note": "David repeats the reason: “You are not to build a house for my Name, because you are a warrior and have shed blood.”"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 5:3–5",
+              "note": "Solomon’s explanation to Hiram: “My father David could not build a temple... because of the wars... But now the LORD my God has given me rest.”"
+            },
+            {
+              "ref": "1 Chr 28:3",
+              "note": "David repeats the reason: “You are not to build a house for my Name, because you are a warrior and have shed blood.”"
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -53,6 +54,9 @@
               "note": "shĕlōmōh (Solomon) is explicitly derived from shālōm (peace) in a folk etymology. The name encodes the son’s vocation: he is the peace-king who will build the peace-temple."
             }
           ]
+        },
+        "hist": {
+          "context": "David amasses enormous resources: iron for nails, bronze beyond weighing, cedar logs without number, 100,000 talents of gold and 1,000,000 talents of silver. Then he charges Solomon: “Now, my son, the LORD be with you... build the house of the LORD your God, as he told you.” David explains why he cannot build it himself: “You have shed much blood and have fought many wars. You are not to build a house for my Name because you have shed much blood.” The warrior prepares; the peacemaker builds."
         }
       }
     },
@@ -62,13 +66,14 @@
       "verse_start": 17,
       "verse_end": 19,
       "panels": {
-        "ctx": "David commands all the leaders of Israel to help Solomon: “Is not the LORD your God with you? And has he not granted you rest on every side?” The leaders are enlisted as partners in the project. David doesn’t leave Solomon alone with the burden; he builds a coalition of support. “Now devote your heart and soul to seeking the LORD your God.” The verb darash (“seek”) appears one final time in David’s mouth: seeking God is the prerequisite for building God’s house.",
-        "cross": [
-          {
-            "ref": "1 Chr 28:1–10",
-            "note": "David’s later public charge to the leaders expands on this private commissioning."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Chr 28:1–10",
+              "note": "David’s later public charge to the leaders expands on this private commissioning."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -86,6 +91,9 @@
               "note": "The imperative sequence — darash (seek) then banah (build) — establishes a theological priority: devotion before construction. The syntax encodes the Chronicler’s theology."
             }
           ]
+        },
+        "hist": {
+          "context": "David commands all the leaders of Israel to help Solomon: “Is not the LORD your God with you? And has he not granted you rest on every side?” The leaders are enlisted as partners in the project. David doesn’t leave Solomon alone with the burden; he builds a coalition of support. “Now devote your heart and soul to seeking the LORD your God.” The verb darash (“seek”) appears one final time in David’s mouth: seeking God is the prerequisite for building God’s house."
         }
       }
     }

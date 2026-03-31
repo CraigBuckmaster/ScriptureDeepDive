@@ -25,17 +25,18 @@
             "paragraph": "The metaphor addresses the elite women of Samaria as 'cows of Bashan,' the region east of the Sea of Galilee known for its well-fed cattle (cf. Deut 32:14; Ps 22:12). The image is one of pampered indulgence: these women oppress the poor and demand that their husbands supply their luxury. The comparison is deliberately provocative."
           }
         ],
-        "ctx": "This section opens the second 'Hear this word' speech (4:1). The 'cows of Bashan' metaphor targets the women of Samaria's elite, who drive the cycle of exploitation by demanding luxury from their husbands. The passage then turns to Bethel and Gilgal, the northern sanctuaries, where Amos sarcastically invites Israel to multiply their sacrifices and offerings — because they 'love to do this.' The irony is biting: their worship is self-serving performance, not genuine devotion.",
-        "cross": [
-          {
-            "ref": "Isa 1:11-17",
-            "note": "Isaiah's parallel condemnation of worship without justice: 'I have no pleasure in the blood of bulls and lambs.'"
-          },
-          {
-            "ref": "Ps 22:12",
-            "note": "'Strong bulls of Bashan encircle me' — the same Bashan cattle imagery used in a context of threatening power."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 1:11-17",
+              "note": "Isaiah's parallel condemnation of worship without justice: 'I have no pleasure in the blood of bulls and lambs.'"
+            },
+            {
+              "ref": "Ps 22:12",
+              "note": "'Strong bulls of Bashan encircle me' — the same Bashan cattle imagery used in a context of threatening power."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Andersen and Freedman argue that the 'cows of Bashan' passage is linked to the sarcastic worship pericope (vv. 4-5) as a single rhetorical unit: the women demand luxury (v. 1), and the cult at Bethel provides the religious cover for the economic system that produces it. Worship and exploitation are structurally connected."
             }
           ]
+        },
+        "hist": {
+          "context": "This section opens the second 'Hear this word' speech (4:1). The 'cows of Bashan' metaphor targets the women of Samaria's elite, who drive the cycle of exploitation by demanding luxury from their husbands. The passage then turns to Bethel and Gilgal, the northern sanctuaries, where Amos sarcastically invites Israel to multiply their sacrifices and offerings — because they 'love to do this.' The irony is biting: their worship is self-serving performance, not genuine devotion."
         }
       }
     },
@@ -123,21 +127,22 @@
             "paragraph": "The chapter climaxes with 'Prepare to meet your God, O Israel' — not an evangelistic invitation but a summons to face divine judgment. The God of creation (who forms mountains and creates wind) is coming in person, and Israel must stand before him."
           }
         ],
-        "ctx": "This passage recounts five escalating divine punishments, each followed by the refrain 'yet you have not returned to me.' The plagues echo the Egyptian plagues and the covenant curses of Deuteronomy 28: famine, drought, crop blight, pestilence, and military overthrow. Each was a warning intended to provoke repentance, and each failed. The fivefold refusal forms one of the most poignant passages in prophetic literature — God's grief at his people's stubbornness. The chapter climaxes with a doxology (v. 13) that celebrates God's cosmic power: the one Israel must face is not a local deity but the maker of mountains and wind.",
-        "cross": [
-          {
-            "ref": "Deut 28:22-24",
-            "note": "The covenant curses of drought, blight, and mildew that Amos' plague recital echoes."
-          },
-          {
-            "ref": "Gen 19:24-25",
-            "note": "The overthrow of Sodom, explicitly cited in v. 11 as a precedent for divine destruction."
-          },
-          {
-            "ref": "Rev 9:20-21",
-            "note": "The Revelation parallel: even after plagues, the survivors 'did not repent' — the same pattern of hardened impenitence."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 28:22-24",
+              "note": "The covenant curses of drought, blight, and mildew that Amos' plague recital echoes."
+            },
+            {
+              "ref": "Gen 19:24-25",
+              "note": "The overthrow of Sodom, explicitly cited in v. 11 as a precedent for divine destruction."
+            },
+            {
+              "ref": "Rev 9:20-21",
+              "note": "The Revelation parallel: even after plagues, the survivors 'did not repent' — the same pattern of hardened impenitence."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -202,6 +207,9 @@
               "note": "Andersen and Freedman structure the five plagues as a reverse conquest narrative: where God once gave Israel land, food, and victory, he now removes them systematically. The fivefold refrain creates what they call a 'liturgy of futility' — a catalog of failed divine interventions that builds inexorably toward the final theophanic confrontation of v. 12."
             }
           ]
+        },
+        "hist": {
+          "context": "This passage recounts five escalating divine punishments, each followed by the refrain 'yet you have not returned to me.' The plagues echo the Egyptian plagues and the covenant curses of Deuteronomy 28: famine, drought, crop blight, pestilence, and military overthrow. Each was a warning intended to provoke repentance, and each failed. The fivefold refusal forms one of the most poignant passages in prophetic literature — God's grief at his people's stubbornness. The chapter climaxes with a doxology (v. 13) that celebrates God's cosmic power: the one Israel must face is not a local deity but the maker of mountains and wind."
         }
       }
     }

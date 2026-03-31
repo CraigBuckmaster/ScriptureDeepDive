@@ -25,21 +25,22 @@
             "paragraph": "The tsopheh (watchman) stood on the city wall to scan the horizon for approaching danger. Ezekiel's commission as watchman (first given in 3:16-21) is now restated at this structural pivot in the book. The watchman is responsible for sounding the alarm; the hearers are responsible for responding. If the watchman fails to warn, the blood of the wicked is on his hands. If he warns and they ignore him, they bear their own guilt. This theological framework establishes prophetic responsibility: the prophet does not save—he warns. Salvation or destruction depends on the hearer's response."
           }
         ],
-        "ctx": "Chapter 33 is the structural hinge of the entire book of Ezekiel. Chapters 1-24 pronounced judgment on Jerusalem; chapters 25-32 judged the nations; chapters 33-48 will announce restoration. The watchman commission is restated here because Ezekiel's role shifts: from pronouncing doom to offering hope. The placement after the foreign-nation oracles and before the restoration prophecies is deliberate—the watchman now watches for a new dawn. This chapter also marks the end of Ezekiel's prophetic silence imposed in 24:26-27.",
-        "cross": [
-          {
-            "ref": "Ezek 3:16-21",
-            "note": "The original watchman commission. Chapter 33 reprises the same content almost verbatim, creating a literary bracket (inclusio) around the judgment section of the book."
-          },
-          {
-            "ref": "Heb 13:17",
-            "note": "The New Testament applies the watchman concept to church leaders who 'keep watch over your souls as those who must give an account.' The principle of delegated warning responsibility continues into the Christian community."
-          },
-          {
-            "ref": "Acts 20:26-27",
-            "note": "Paul echoes Ezekiel's watchman language: 'I am innocent of the blood of all of you, for I did not shrink from declaring the whole counsel of God.' Apostolic ministry shares the watchman's accountability."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 3:16-21",
+              "note": "The original watchman commission. Chapter 33 reprises the same content almost verbatim, creating a literary bracket (inclusio) around the judgment section of the book."
+            },
+            {
+              "ref": "Heb 13:17",
+              "note": "The New Testament applies the watchman concept to church leaders who 'keep watch over your souls as those who must give an account.' The principle of delegated warning responsibility continues into the Christian community."
+            },
+            {
+              "ref": "Acts 20:26-27",
+              "note": "Paul echoes Ezekiel's watchman language: 'I am innocent of the blood of all of you, for I did not shrink from declaring the whole counsel of God.' Apostolic ministry shares the watchman's accountability."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -104,6 +105,9 @@
               "note": "Zimmerli analyzes the differences between this passage and 3:16-21. The chapter 33 version is more developed: it begins with the civil analogy (vv. 1-6) before applying it to Ezekiel (vv. 7-9), whereas chapter 3 moved directly to the prophetic application. Zimmerli sees this as evidence of editorial shaping that positions the watchman discourse as a programmatic introduction to the book's second half."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 33 is the structural hinge of the entire book of Ezekiel. Chapters 1-24 pronounced judgment on Jerusalem; chapters 25-32 judged the nations; chapters 33-48 will announce restoration. The watchman commission is restated here because Ezekiel's role shifts: from pronouncing doom to offering hope. The placement after the foreign-nation oracles and before the restoration prophecies is deliberate—the watchman now watches for a new dawn. This chapter also marks the end of Ezekiel's prophetic silence imposed in 24:26-27."
         }
       }
     },
@@ -121,21 +125,22 @@
             "paragraph": "The imperative shuvu ('turn!') is the Hebrew Bible's most characteristic call to repentance. It implies a physical turning—changing direction on the road of life. The verb captures the prophetic conviction that human destiny is not fixed: the wicked who turns from wickedness will live; the righteous who turns to evil will die. Chapter 18 developed this theme at length; chapter 33 restates it as the theological foundation for the restoration oracles that follow. Without the possibility of repentance, the coming promises of restoration would be meaningless."
           }
         ],
-        "ctx": "The exiles are saying, 'Our offenses and sins weigh us down, and we are wasting away because of them. How then can we live?' (v. 10). This despairing question reveals that the fall of Jerusalem—now accomplished—has thrown the exilic community into existential crisis. They believe they are beyond hope. God's response is the passionate declaration of verse 11: 'As surely as I live, I take no pleasure in the death of the wicked, but rather that they turn from their ways and live. Turn! Turn from your evil ways! Why will you die, O house of Israel?'",
-        "cross": [
-          {
-            "ref": "Ezek 18:21-32",
-            "note": "Chapter 18 presented the theology of individual responsibility at length. Chapter 33 reprises the key principles: the wicked can repent and live; the righteous can fall and die. Neither past righteousness nor past sin determines the future."
-          },
-          {
-            "ref": "2 Pet 3:9",
-            "note": "Peter echoes Ezekiel 33:11: God 'is patient with you, not wanting anyone to perish, but everyone to come to repentance.' The divine desire for repentance over death is a consistent biblical theme."
-          },
-          {
-            "ref": "Luke 15:7",
-            "note": "Jesus declares that 'there will be more rejoicing in heaven over one sinner who repents.' The celebration of turning reflects the same divine heart expressed in Ezekiel's passionate appeal."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 18:21-32",
+              "note": "Chapter 18 presented the theology of individual responsibility at length. Chapter 33 reprises the key principles: the wicked can repent and live; the righteous can fall and die. Neither past righteousness nor past sin determines the future."
+            },
+            {
+              "ref": "2 Pet 3:9",
+              "note": "Peter echoes Ezekiel 33:11: God 'is patient with you, not wanting anyone to perish, but everyone to come to repentance.' The divine desire for repentance over death is a consistent biblical theme."
+            },
+            {
+              "ref": "Luke 15:7",
+              "note": "Jesus declares that 'there will be more rejoicing in heaven over one sinner who repents.' The celebration of turning reflects the same divine heart expressed in Ezekiel's passionate appeal."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -200,6 +205,9 @@
               "note": "Zimmerli sees this section as the theological prerequisite for the restoration oracles of chapters 34-48. Without establishing the possibility of repentance and new life, the promises of return, new heart, and new temple would lack foundation. Zimmerli argues that vv. 10-20 function as a 'theological clearing of the ground' before the new edifice of hope is constructed."
             }
           ]
+        },
+        "hist": {
+          "context": "The exiles are saying, 'Our offenses and sins weigh us down, and we are wasting away because of them. How then can we live?' (v. 10). This despairing question reveals that the fall of Jerusalem—now accomplished—has thrown the exilic community into existential crisis. They believe they are beyond hope. God's response is the passionate declaration of verse 11: 'As surely as I live, I take no pleasure in the death of the wicked, but rather that they turn from their ways and live. Turn! Turn from your evil ways! Why will you die, O house of Israel?'"
         }
       }
     },
@@ -217,21 +225,22 @@
             "paragraph": "The devastating announcement hukketah haʿir ('the city has been struck') arrives via a fugitive from Jerusalem. This moment fulfills the prediction of 24:25-27 that a fugitive would bring news and Ezekiel's mouth would be opened. The verb nakah (here in the hophal: hukketah) means 'to be struck, smitten'—the same verb used for God striking Egypt in the plagues. Jerusalem's fall is described with the same language as God's judgment on pagan empires, underscoring the terrible symmetry."
           }
         ],
-        "ctx": "A fugitive arrives on January 8, 585 BC (or possibly 586 BC depending on calendar reckoning) with news that Jerusalem has fallen. This is the event predicted in 24:25-27: when the news arrives, Ezekiel's mouth will be opened and his prophetic silence will end. The evening before the fugitive's arrival, God had already opened Ezekiel's mouth (v. 22). The remaining verses (vv. 23-33) address two audiences: those remaining in the ruins of Judah who claim the land by right of occupation (vv. 23-29), and the exiles who listen to Ezekiel's words like entertainment but do not act on them (vv. 30-33).",
-        "cross": [
-          {
-            "ref": "Ezek 24:25-27",
-            "note": "The prediction fulfilled: 'On that day a fugitive will come to tell you the news. At that time your mouth will be opened; you will speak and no longer be silent.' Chapter 33 is the precise fulfillment of chapter 24's promise."
-          },
-          {
-            "ref": "2 Kgs 25:1-12",
-            "note": "The historical account of Jerusalem's fall under Nebuchadnezzar provides the background for the fugitive's report. The siege lasted 18 months; the city fell in July 586 BC."
-          },
-          {
-            "ref": "James 1:22-25",
-            "note": "James's warning against being 'hearers only' and not doers of the word echoes Ezekiel's complaint about the exiles who enjoy his preaching but do not obey it."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 24:25-27",
+              "note": "The prediction fulfilled: 'On that day a fugitive will come to tell you the news. At that time your mouth will be opened; you will speak and no longer be silent.' Chapter 33 is the precise fulfillment of chapter 24's promise."
+            },
+            {
+              "ref": "2 Kgs 25:1-12",
+              "note": "The historical account of Jerusalem's fall under Nebuchadnezzar provides the background for the fugitive's report. The siege lasted 18 months; the city fell in July 586 BC."
+            },
+            {
+              "ref": "James 1:22-25",
+              "note": "James's warning against being 'hearers only' and not doers of the word echoes Ezekiel's complaint about the exiles who enjoy his preaching but do not obey it."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -296,6 +305,9 @@
               "note": "Zimmerli identifies this as the structural keystone of the book: the fulfillment of the prophetic sign in 24:25-27 that serves as the pivot between the two major halves of Ezekiel. The opening of the prophet's mouth symbolizes the transition from judgment proclamation to restoration announcement. Zimmerli argues this is one of the most carefully planned structural moments in all prophetic literature."
             }
           ]
+        },
+        "hist": {
+          "context": "A fugitive arrives on January 8, 585 BC (or possibly 586 BC depending on calendar reckoning) with news that Jerusalem has fallen. This is the event predicted in 24:25-27: when the news arrives, Ezekiel's mouth will be opened and his prophetic silence will end. The evening before the fugitive's arrival, God had already opened Ezekiel's mouth (v. 22). The remaining verses (vv. 23-33) address two audiences: those remaining in the ruins of Judah who claim the land by right of occupation (vv. 23-29), and the exiles who listen to Ezekiel's words like entertainment but do not act on them (vv. 30-33)."
         }
       }
     }

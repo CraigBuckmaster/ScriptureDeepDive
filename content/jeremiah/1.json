@@ -31,21 +31,22 @@
             "paragraph": "God's knowledge of Jeremiah preceded his formation in the womb (v.5). The temporal particle ṭerem underscores the priority of divine election over human existence. This is not mere foreknowledge but purposeful appointment — God consecrated (hiqdîš) Jeremiah for a specific prophetic mission to the nations."
           }
         ],
-        "ctx": "Jeremiah's ministry begins in the thirteenth year of Josiah (627 BC), during a period of Assyrian decline that created a brief window of Judean independence. Josiah's reforms (2 Kgs 22–23) were underway, but the call narrative makes clear that deeper spiritual renewal was needed. Jeremiah's commission \"to uproot and tear down, to destroy and overthrow, to build and to plant\" (v.10) sets the agenda for the entire book — four verbs of destruction precede two of restoration, reflecting the proportion of judgment to hope in the prophetic message.",
-        "cross": [
-          {
-            "ref": "Isa 49:1",
-            "note": "The Servant of the LORD also called from the womb — a parallel prophetic commissioning that uses similar prenatal election language."
-          },
-          {
-            "ref": "Gal 1:15",
-            "note": "Paul explicitly echoes Jeremiah's call: \"set apart before I was born and called by his grace\" — applying prophetic commissioning language to apostolic vocation."
-          },
-          {
-            "ref": "Exod 4:10–12",
-            "note": "Moses' objection of inadequacy (\"I am slow of speech\") parallels Jeremiah's protest (\"I am too young\"), and God responds the same way — by promising his empowering presence."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 49:1",
+              "note": "The Servant of the LORD also called from the womb — a parallel prophetic commissioning that uses similar prenatal election language."
+            },
+            {
+              "ref": "Gal 1:15",
+              "note": "Paul explicitly echoes Jeremiah's call: \"set apart before I was born and called by his grace\" — applying prophetic commissioning language to apostolic vocation."
+            },
+            {
+              "ref": "Exod 4:10–12",
+              "note": "Moses' objection of inadequacy (\"I am slow of speech\") parallels Jeremiah's protest (\"I am too young\"), and God responds the same way — by promising his empowering presence."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "Brueggemann reads the call as a \"script of vocation\" that subverts conventional power. The prophet is given authority \"over nations and kingdoms\" — not military or political power, but the power of speech. The word itself becomes the instrument of historical change. This is deeply countercultural: a young priest from a backwater village is commissioned to speak truth to empires."
             }
           ]
+        },
+        "hist": {
+          "context": "Jeremiah's ministry begins in the thirteenth year of Josiah (627 BC), during a period of Assyrian decline that created a brief window of Judean independence. Josiah's reforms (2 Kgs 22–23) were underway, but the call narrative makes clear that deeper spiritual renewal was needed. Jeremiah's commission \"to uproot and tear down, to destroy and overthrow, to build and to plant\" (v.10) sets the agenda for the entire book — four verbs of destruction precede two of restoration, reflecting the proportion of judgment to hope in the prophetic message."
         }
       }
     },
@@ -141,21 +145,22 @@
             "paragraph": "The second vision — a boiling pot tilting from the north — is a metaphor for the coming Babylonian invasion. The imagery of scalding liquid spilling southward vividly conveys the devastating force that will pour over Judah. The \"north\" is the traditional direction of enemy approach into Palestine via the Fertile Crescent."
           }
         ],
-        "ctx": "The two visions confirm the call by providing concrete content: God will perform his word (almond branch) through judgment from the north (boiling pot). These paired visions establish the twin pillars of Jeremiah's message — divine faithfulness and impending catastrophe. The chapter closes with God making Jeremiah \"a fortified city, an iron pillar, a bronze wall\" — architectural metaphors promising that the prophet will stand when Jerusalem falls.",
-        "cross": [
-          {
-            "ref": "Amos 7:7–8",
-            "note": "Amos likewise receives paired visions from God that confirm prophetic judgment — the pattern of visionary confirmation is standard in prophetic commissioning."
-          },
-          {
-            "ref": "Jer 25:9",
-            "note": "\"I will send for Nebuchadnezzar my servant\" — the threat from the north that the boiling pot symbolizes is later named explicitly."
-          },
-          {
-            "ref": "Matt 16:18",
-            "note": "Jesus' promise that \"the gates of Hades will not prevail\" echoes God's architectural protection of his messenger — the prophet-community as indestructible fortress."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Amos 7:7–8",
+              "note": "Amos likewise receives paired visions from God that confirm prophetic judgment — the pattern of visionary confirmation is standard in prophetic commissioning."
+            },
+            {
+              "ref": "Jer 25:9",
+              "note": "\"I will send for Nebuchadnezzar my servant\" — the threat from the north that the boiling pot symbolizes is later named explicitly."
+            },
+            {
+              "ref": "Matt 16:18",
+              "note": "Jesus' promise that \"the gates of Hades will not prevail\" echoes God's architectural protection of his messenger — the prophet-community as indestructible fortress."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -220,6 +225,9 @@
               "note": "Brueggemann highlights the extraordinary reversal: the establishment — kings, officials, priests, people — will fight against one young prophet, and they will fail. The text subverts every expectation about where real power resides. Political and religious authority cannot prevail against the word of God carried by a faithful messenger."
             }
           ]
+        },
+        "hist": {
+          "context": "The two visions confirm the call by providing concrete content: God will perform his word (almond branch) through judgment from the north (boiling pot). These paired visions establish the twin pillars of Jeremiah's message — divine faithfulness and impending catastrophe. The chapter closes with God making Jeremiah \"a fortified city, an iron pillar, a bronze wall\" — architectural metaphors promising that the prophet will stand when Jerusalem falls."
         }
       }
     }

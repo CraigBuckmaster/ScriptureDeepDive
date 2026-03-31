@@ -22,13 +22,14 @@
             "paragraph": "\"The earth is the LORD’s (la-YHWH), and everything in it\" (v.1). Total divine ownership. Entrance requirements (vv.3–4): clean hands, pure heart, no idolatry, no false oaths. Psalm 15’s companion entrance liturgy."
           }
         ],
-        "ctx": "The creation claim (v.1) grounds the entrance requirements (vv.3–6). Because God owns everything, entering his presence requires holiness.",
-        "cross": [
-          {
-            "ref": "1 Cor 10:26",
-            "note": "\"The earth is the Lord’s, and everything in it\" — Paul quotes v.1."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 10:26",
+              "note": "\"The earth is the Lord’s, and everything in it\" — Paul quotes v.1."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -119,6 +120,9 @@
               "note": "Goldingay: 'the generation of those who seek him' — dôr is not merely 'generation' (temporal) but 'circle' or 'company' (social). It describes a community defined by its orientation toward God."
             }
           ]
+        },
+        "hist": {
+          "context": "The creation claim (v.1) grounds the entrance requirements (vv.3–6). Because God owns everything, entering his presence requires holiness."
         }
       }
     },
@@ -136,17 +140,18 @@
             "paragraph": "\"Who is this King of Glory (melek̅ hakkābōd)? The LORD strong and mighty, the LORD mighty in battle!\" (v.8). The gates of Jerusalem (or heaven) are summoned to lift their lintels for the arriving King. Traditionally associated with the ark entering Jerusalem (2 Sam 6)."
           }
         ],
-        "ctx": "The processional liturgy: gates summoned to open for the King of Glory. \"Who is he?\" asked twice, answered twice: the LORD strong and mighty, the LORD Almighty.",
-        "cross": [
-          {
-            "ref": "2 Sam 6:12–15",
-            "note": "David brings the ark to Jerusalem — the possible setting."
-          },
-          {
-            "ref": "Eph 1:20–21",
-            "note": "Christ seated \"far above all rule and authority\" — the ascension fulfilment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 6:12–15",
+              "note": "David brings the ark to Jerusalem — the possible setting."
+            },
+            {
+              "ref": "Eph 1:20–21",
+              "note": "Christ seated \"far above all rule and authority\" — the ascension fulfilment."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -237,6 +242,9 @@
               "note": "Goldingay: the final answer identifies the King of Glory as 'Yahweh of Hosts' — the most militarily charged divine title. The psalm ends not in contemplation but in martial acclamation."
             }
           ]
+        },
+        "hist": {
+          "context": "The processional liturgy: gates summoned to open for the King of Glory. \"Who is he?\" asked twice, answered twice: the LORD strong and mighty, the LORD Almighty."
         }
       }
     }

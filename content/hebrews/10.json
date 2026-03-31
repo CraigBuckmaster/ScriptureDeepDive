@@ -37,21 +37,22 @@
             "paragraph": "The yearly sacrifices were a reminder of sins. Far from removing sin, they kept it in view. The Day of Atonement annually declared: You are still guilty."
           }
         ],
-        "ctx": "The author demonstrates from Scripture that the old sacrificial system was never meant to provide final atonement. The shadow-reality contrast, the logic of repetition, and the inadequacy of animal blood all converge. Into this failure steps Christ, whose coming fulfills Psalm 40:6–8.",
-        "cross": [
-          {
-            "ref": "Psalm 40:6–8",
-            "note": "The psalm David spoke, which the author attributes to Christ at His incarnation."
-          },
-          {
-            "ref": "Isaiah 1:11–17",
-            "note": "God declares weariness with sacrifices unaccompanied by justice and obedience."
-          },
-          {
-            "ref": "1 Samuel 15:22",
-            "note": "To obey is better than sacrifice—the principle Hebrews develops Christologically."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Psalm 40:6–8",
+              "note": "The psalm David spoke, which the author attributes to Christ at His incarnation."
+            },
+            {
+              "ref": "Isaiah 1:11–17",
+              "note": "God declares weariness with sacrifices unaccompanied by justice and obedience."
+            },
+            {
+              "ref": "1 Samuel 15:22",
+              "note": "To obey is better than sacrifice—the principle Hebrews develops Christologically."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -129,7 +130,10 @@
             }
           ]
         },
-        "hist": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24)."
+        "hist": {
+          "historical": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24).",
+          "context": "The author demonstrates from Scripture that the old sacrificial system was never meant to provide final atonement. The shadow-reality contrast, the logic of repetition, and the inadequacy of animal blood all converge. Into this failure steps Christ, whose coming fulfills Psalm 40:6–8."
+        }
       }
     },
     {
@@ -158,21 +162,22 @@
             "paragraph": "By one offering Christ has perfected (perfect tense) those being sanctified (present participle). The objective accomplishment is complete; the subjective appropriation continues."
           }
         ],
-        "ctx": "The contrast between standing Levitical priests and the seated Christ is the author's coup de grace. Standing implies unfinished business; sitting implies completion. The chapter returns to Jeremiah 31 to prove: under the new covenant, God remembers sins no more. If sins are forgiven, no further offering is needed.",
-        "cross": [
-          {
-            "ref": "Psalm 110:1",
-            "note": "The foundational royal enthronement text: Sit at my right hand until I make your enemies your footstool."
-          },
-          {
-            "ref": "Jeremiah 31:33–34",
-            "note": "The new covenant promise quoted again: internal law and complete forgiveness."
-          },
-          {
-            "ref": "Romans 8:34",
-            "note": "Christ Jesus is at the right hand of God and is also interceding for us."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Psalm 110:1",
+              "note": "The foundational royal enthronement text: Sit at my right hand until I make your enemies your footstool."
+            },
+            {
+              "ref": "Jeremiah 31:33–34",
+              "note": "The new covenant promise quoted again: internal law and complete forgiveness."
+            },
+            {
+              "ref": "Romans 8:34",
+              "note": "Christ Jesus is at the right hand of God and is also interceding for us."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -241,6 +246,9 @@
               "note": "Cockerill emphasizes that vv. 11–14 complete the argument of 9:1–10:10. The sitting posture is the proof. Verses 15–18 add scriptural confirmation from Jeremiah."
             }
           ]
+        },
+        "hist": {
+          "context": "The contrast between standing Levitical priests and the seated Christ is the author's coup de grace. Standing implies unfinished business; sitting implies completion. The chapter returns to Jeremiah 31 to prove: under the new covenant, God remembers sins no more. If sins are forgiven, no further offering is needed."
         }
       }
     },
@@ -270,21 +278,22 @@
             "paragraph": "The first exhortation: Let us draw near. Drawing near to God was the goal of all worship; now all believers may approach with full assurance."
           }
         ],
-        "ctx": "The theological exposition of 8:1–10:18 yields three exhortations: let us draw near, let us hold fast, let us consider one another. These correspond to faith, hope, and love. The basis is the new and living way Christ opened through His flesh—the veil torn at His death.",
-        "cross": [
-          {
-            "ref": "Matthew 27:51",
-            "note": "At Jesus' death, the curtain of the temple was torn in two, from top to bottom."
-          },
-          {
-            "ref": "Ephesians 2:18",
-            "note": "Through him we both have access in one Spirit to the Father."
-          },
-          {
-            "ref": "1 John 3:21–22",
-            "note": "If our heart does not condemn us, we have confidence before God."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matthew 27:51",
+              "note": "At Jesus' death, the curtain of the temple was torn in two, from top to bottom."
+            },
+            {
+              "ref": "Ephesians 2:18",
+              "note": "Through him we both have access in one Spirit to the Father."
+            },
+            {
+              "ref": "1 John 3:21–22",
+              "note": "If our heart does not condemn us, we have confidence before God."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -353,6 +362,9 @@
               "note": "Cockerill emphasizes that the three exhortations correspond to faith, hope, and love—the Pauline triad. The communal dimension is not optional; perseverance requires fellowship."
             }
           ]
+        },
+        "hist": {
+          "context": "The theological exposition of 8:1–10:18 yields three exhortations: let us draw near, let us hold fast, let us consider one another. These correspond to faith, hope, and love. The basis is the new and living way Christ opened through His flesh—the veil torn at His death."
         }
       }
     },
@@ -382,21 +394,22 @@
             "paragraph": "It is a fearful thing to fall into the hands of the living God. The author promotes sober reckoning with divine holiness."
           }
         ],
-        "ctx": "This is the fourth and most severe warning passage. If there is no further sacrifice for sins, and someone deliberately rejects the only sacrifice there is, what remains? Only a fearful expectation of judgment. The sin is apostasy—trampling the Son of God, profaning His blood, outraging the Spirit of grace.",
-        "cross": [
-          {
-            "ref": "Numbers 15:30–31",
-            "note": "Defiant sin receives no atonement but only death. The author applies this to apostasy from Christ."
-          },
-          {
-            "ref": "Deuteronomy 32:35–36",
-            "note": "Vengeance is mine; I will repay. God judges His people."
-          },
-          {
-            "ref": "Hebrews 6:4–6",
-            "note": "The earlier warning: those who have tasted and then fall away cannot be restored."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Numbers 15:30–31",
+              "note": "Defiant sin receives no atonement but only death. The author applies this to apostasy from Christ."
+            },
+            {
+              "ref": "Deuteronomy 32:35–36",
+              "note": "Vengeance is mine; I will repay. God judges His people."
+            },
+            {
+              "ref": "Hebrews 6:4–6",
+              "note": "The earlier warning: those who have tasted and then fall away cannot be restored."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -457,6 +470,9 @@
               "note": "Cockerill notes that this warning balances the encouragements of vv. 19–25. The access to God through Christ is not to be presumed upon. The warning is pastoral: it aims to prevent apostasy."
             }
           ]
+        },
+        "hist": {
+          "context": "This is the fourth and most severe warning passage. If there is no further sacrifice for sins, and someone deliberately rejects the only sacrifice there is, what remains? Only a fearful expectation of judgment. The sin is apostasy—trampling the Son of God, profaning His blood, outraging the Spirit of grace."
         }
       }
     },
@@ -486,21 +502,22 @@
             "paragraph": "If he shrinks back, my soul has no pleasure in him. The verb describes cowardly retreat. Shrinking back leads to destruction; faith preserves the soul."
           }
         ],
-        "ctx": "After the severe warning, the author softens with encouragement. He recalls their former days when they endured suffering with joy, knowing they had a better possession. This past faithfulness proves their genuineness. The chapter closes with Habakkuk: the righteous shall live by faith.",
-        "cross": [
-          {
-            "ref": "Habakkuk 2:3–4",
-            "note": "The prophecy that the righteous shall live by faith—quoted in Romans and Galatians as well."
-          },
-          {
-            "ref": "James 1:2–4",
-            "note": "Count it all joy when you meet various trials, for the testing of faith produces steadfastness."
-          },
-          {
-            "ref": "Philippians 1:6",
-            "note": "He who began a good work in you will bring it to completion."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Habakkuk 2:3–4",
+              "note": "The prophecy that the righteous shall live by faith—quoted in Romans and Galatians as well."
+            },
+            {
+              "ref": "James 1:2–4",
+              "note": "Count it all joy when you meet various trials, for the testing of faith produces steadfastness."
+            },
+            {
+              "ref": "Philippians 1:6",
+              "note": "He who began a good work in you will bring it to completion."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -561,6 +578,9 @@
               "note": "Cockerill emphasizes that the author's confidence in his readers is grounded assessment. Their past conduct reveals genuine faith. The preserving of the soul is eschatological salvation."
             }
           ]
+        },
+        "hist": {
+          "context": "After the severe warning, the author softens with encouragement. He recalls their former days when they endured suffering with joy, knowing they had a better possession. This past faithfulness proves their genuineness. The chapter closes with Habakkuk: the righteous shall live by faith."
         }
       }
     }

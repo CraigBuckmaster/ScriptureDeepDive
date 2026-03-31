@@ -31,21 +31,22 @@
             "paragraph": "The imperative 'you must return to your God' (v. 6) is Hosea's central call, using the verb shuv that echoes throughout the book. The Jacob narrative serves as historical precedent: if the ancestor could wrestle with God and find grace, the descendants can return and receive the same. The verb connects to the book's governing question: will Israel shuv (return) or not?"
           }
         ],
-        "ctx": "Chapter 12 introduces a new argumentative strategy: the use of ancestral history (Jacob traditions) to indict the present generation. Hosea reaches back to the patriarchal narratives to draw parallels between Jacob's character and Israel's current behavior. The wind/east wind imagery (v. 1) recalls 8:7 (sow the wind) and describes the futility of pursuing Assyrian and Egyptian alliances. The Jacob material (vv. 3-5) condenses the patriarch's biography: grasping the heel (Gen 25:26), wrestling with God (Gen 32:22-32), weeping and seeking favor (Gen 33:4), encountering God at Bethel (Gen 28:10-22). The theological pivot is v. 6: just as Jacob returned to God and was transformed, so Israel must return. The three imperatives — return, maintain love and justice, wait for God — constitute Hosea's most concise ethical program.",
-        "cross": [
-          {
-            "ref": "Gen 25:26",
-            "note": "Jacob grasping Esau's heel at birth, the foundational event Hosea recalls."
-          },
-          {
-            "ref": "Gen 32:22-32",
-            "note": "Jacob's wrestling match at Peniel, which Hosea interprets as a model of transformative encounter with God."
-          },
-          {
-            "ref": "Gen 28:10-22",
-            "note": "Jacob's encounter with God at Bethel, referenced in Hosea's summary of the patriarch's spiritual journey."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 25:26",
+              "note": "Jacob grasping Esau's heel at birth, the foundational event Hosea recalls."
+            },
+            {
+              "ref": "Gen 32:22-32",
+              "note": "Jacob's wrestling match at Peniel, which Hosea interprets as a model of transformative encounter with God."
+            },
+            {
+              "ref": "Gen 28:10-22",
+              "note": "Jacob's encounter with God at Bethel, referenced in Hosea's summary of the patriarch's spiritual journey."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "The Jacob material introduces a historical-typological argument: the ancestor is the type of the nation. Just as Jacob was a deceiver who was transformed by wrestling with God, so Israel must undergo the same transformation. Andersen and Freedman note that Hosea's retelling of the Jacob story subtly reinterprets it: the wrestling is spiritualized, the weeping is emphasized, and the Bethel encounter is foregrounded. The patriarch's biography becomes a narrative call to repentance."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 12 introduces a new argumentative strategy: the use of ancestral history (Jacob traditions) to indict the present generation. Hosea reaches back to the patriarchal narratives to draw parallels between Jacob's character and Israel's current behavior. The wind/east wind imagery (v. 1) recalls 8:7 (sow the wind) and describes the futility of pursuing Assyrian and Egyptian alliances. The Jacob material (vv. 3-5) condenses the patriarch's biography: grasping the heel (Gen 25:26), wrestling with God (Gen 32:22-32), weeping and seeking favor (Gen 33:4), encountering God at Bethel (Gen 28:10-22). The theological pivot is v. 6: just as Jacob returned to God and was transformed, so Israel must return. The three imperatives — return, maintain love and justice, wait for God — constitute Hosea's most concise ethical program."
         }
       }
     },
@@ -127,21 +131,22 @@
             "paragraph": "The word kenaʿan means both 'Canaan' (the land and its people) and 'merchant/trader.' Hosea exploits this double meaning: by calling Ephraim a 'merchant' (v. 7), he simultaneously calls them a 'Canaanite.' Israel has become indistinguishable from the people they were supposed to displace. The commercial fraud (dishonest scales) is a symptom of deeper identity confusion: Israel is no longer Israelite but Canaanite."
           }
         ],
-        "ctx": "The second half of the chapter develops two contrasts: Ephraim-as-merchant versus YHWH-as-God (vv. 7-9), and the prophetic word versus Ephraim's self-deception (vv. 10-14). Ephraim's boast of wealth (v. 8) and claim that no sin can be found is met with God's reminder of the exodus identity: 'I have been the LORD your God ever since you came out of Egypt' (v. 9). The threat to make Israel 'live in tents again' is double-edged: it recalls the Feast of Tabernacles (a joyful remembrance) but also threatens a return to wilderness conditions. The Jacob parallel continues: just as Jacob 'served to get a wife' (v. 12), so YHWH used a prophet (Moses) to bring Israel out of Egypt and care for them (v. 13). The contrast is between human labor (Jacob's service) and divine grace (YHWH's prophetic deliverance).",
-        "cross": [
-          {
-            "ref": "Lev 19:35-36",
-            "note": "The command to use honest scales and measures, which Ephraim's merchants have violated."
-          },
-          {
-            "ref": "Amos 8:5-6",
-            "note": "Amos's parallel condemnation of merchants who use dishonest scales to exploit the poor."
-          },
-          {
-            "ref": "Deut 18:15-18",
-            "note": "The promise of a prophet like Moses through whom God would speak, the prophetic tradition Hosea invokes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 19:35-36",
+              "note": "The command to use honest scales and measures, which Ephraim's merchants have violated."
+            },
+            {
+              "ref": "Amos 8:5-6",
+              "note": "Amos's parallel condemnation of merchants who use dishonest scales to exploit the poor."
+            },
+            {
+              "ref": "Deut 18:15-18",
+              "note": "The promise of a prophet like Moses through whom God would speak, the prophetic tradition Hosea invokes."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -206,6 +211,9 @@
               "note": "The Canaan/merchant wordplay is the chapter's rhetorical masterpiece. By calling Ephraim 'Canaan,' Hosea accomplishes what an entire oracle could not: he strips Israel of its covenant identity in a single word. The remainder of the chapter attempts to restore that identity by recalling the exodus and the prophetic tradition. The Jacob-Moses parallel (vv. 12-13) creates a typology: Jacob served a human master for a human wife; YHWH used a prophet to serve Israel and bring them to freedom. The gap between human striving and divine grace is the theological heart of the passage."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half of the chapter develops two contrasts: Ephraim-as-merchant versus YHWH-as-God (vv. 7-9), and the prophetic word versus Ephraim's self-deception (vv. 10-14). Ephraim's boast of wealth (v. 8) and claim that no sin can be found is met with God's reminder of the exodus identity: 'I have been the LORD your God ever since you came out of Egypt' (v. 9). The threat to make Israel 'live in tents again' is double-edged: it recalls the Feast of Tabernacles (a joyful remembrance) but also threatens a return to wilderness conditions. The Jacob parallel continues: just as Jacob 'served to get a wife' (v. 12), so YHWH used a prophet (Moses) to bring Israel out of Egypt and care for them (v. 13). The contrast is between human labor (Jacob's service) and divine grace (YHWH's prophetic deliverance)."
         }
       }
     }

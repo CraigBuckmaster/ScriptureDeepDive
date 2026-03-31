@@ -25,17 +25,18 @@
             "paragraph": "God commands Jeremiah to buy a potter's clay jar (baqbuq, v.1) and take it to the Valley of Ben Hinnom. The baqbuq is an onomatopoeia — the word imitates the gurgling sound of liquid pouring from a narrow-necked flask. Unlike the soft clay on the wheel (ch. 18), this fired vessel cannot be reshaped. When broken, it is irreparable — the shift from soft clay to hardened pot signals that the time for reshaping has passed."
           }
         ],
-        "ctx": "Chapter 19 escalates the potter imagery from chapter 18. The soft clay on the wheel could be reshaped; this fired flask can only be smashed. The setting — the Valley of Ben Hinnom (Topheth) — connects this sign-act to the child sacrifice indictment of 7:30-34. Jeremiah returns to the most horrific location in Jerusalem's landscape to perform the most violent prophetic gesture yet: shattering the flask as an irreversible declaration of judgment.",
-        "cross": [
-          {
-            "ref": "Jer 7:30-34",
-            "note": "The Topheth oracle from the Temple Sermon — child sacrifice at the Valley of Ben Hinnom. Chapter 19 returns to the same site for the sign-act."
-          },
-          {
-            "ref": "Rev 2:27",
-            "note": "Christ \"will rule them with an iron scepter; he will dash them to pieces like pottery\" — echoing the imagery of smashed vessels as divine judgment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 7:30-34",
+              "note": "The Topheth oracle from the Temple Sermon — child sacrifice at the Valley of Ben Hinnom. Chapter 19 returns to the same site for the sign-act."
+            },
+            {
+              "ref": "Rev 2:27",
+              "note": "Christ \"will rule them with an iron scepter; he will dash them to pieces like pottery\" — echoing the imagery of smashed vessels as divine judgment."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -92,6 +93,9 @@
               "note": "Brueggemann identifies the broken flask as \"the end of negotiation.\" The potter's wheel allowed dialogue between potter and clay. The shattered flask permits no response — the verdict is enacted, not debated."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 19 escalates the potter imagery from chapter 18. The soft clay on the wheel could be reshaped; this fired flask can only be smashed. The setting — the Valley of Ben Hinnom (Topheth) — connects this sign-act to the child sacrifice indictment of 7:30-34. Jeremiah returns to the most horrific location in Jerusalem's landscape to perform the most violent prophetic gesture yet: shattering the flask as an irreversible declaration of judgment."
         }
       }
     },
@@ -109,17 +113,18 @@
             "paragraph": "Jeremiah shatters (šābar) the flask in front of the witnesses (v.10). The verb šābar is used for violent, irreparable breaking — shattering bones (Ps 51:8), breaking yokes (Jer 28:10), demolishing structures. A shattered clay vessel cannot be mended. The irreversibility is the message."
           }
         ],
-        "ctx": "The smashing of the flask is performed publicly before the elders, and then Jeremiah returns to the temple court to deliver the same message to the full population (v.14). The sign-act at Topheth and the verbal proclamation at the temple form a two-stage announcement: visual demonstration followed by verbal interpretation. This public defiance will provoke the first physical attack on Jeremiah (ch. 20).",
-        "cross": [
-          {
-            "ref": "Ps 2:9",
-            "note": "\"You will break them with a rod of iron; you will dash them to pieces like pottery\" — royal psalm imagery applied to divine judgment."
-          },
-          {
-            "ref": "Jer 20:1-2",
-            "note": "The direct consequence: Pashhur the priest beats Jeremiah and puts him in stocks — the temple establishment responds to the sign-act with violence."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 2:9",
+              "note": "\"You will break them with a rod of iron; you will dash them to pieces like pottery\" — royal psalm imagery applied to divine judgment."
+            },
+            {
+              "ref": "Jer 20:1-2",
+              "note": "The direct consequence: Pashhur the priest beats Jeremiah and puts him in stocks — the temple establishment responds to the sign-act with violence."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -168,6 +173,9 @@
               "note": "Brueggemann observes that Jeremiah's return to the temple court is an act of extraordinary courage — he goes back to the institution that has already tried to silence him. The prophet cannot be domesticated."
             }
           ]
+        },
+        "hist": {
+          "context": "The smashing of the flask is performed publicly before the elders, and then Jeremiah returns to the temple court to deliver the same message to the full population (v.14). The sign-act at Topheth and the verbal proclamation at the temple form a two-stage announcement: visual demonstration followed by verbal interpretation. This public defiance will provoke the first physical attack on Jeremiah (ch. 20)."
         }
       }
     }

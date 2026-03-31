@@ -25,17 +25,18 @@
             "paragraph": "Joram removes Ahab’s matztzevet habbaʿal — the standing stone of Baal (v.2). But the Deuteronomistic historian immediately adds: “yet he clung to the sins of Jeroboam.” Removing Baal is not enough; the golden calves remain. Half-measures are no measures."
           }
         ],
-        "ctx": "After Ahab’s death, Moab rebels. Joram enlists Jehoshaphat and Edom for a joint campaign through the wilderness south of the Dead Sea. The army runs out of water after seven days. Joram blames YHWH; Jehoshaphat asks for a prophet. The contrast is sharp: Joram sees God as the problem, Jehoshaphat sees God as the solution — echoing the same dynamic in 1 Kings 22.",
-        "cross": [
-          {
-            "ref": "1 Kgs 22:7",
-            "note": "Jehoshaphat asks “Is there no longer a prophet of the LORD?” — the identical question he asks here. His faithfulness is consistent."
-          },
-          {
-            "ref": "2 Sam 8:2",
-            "note": "David conquered Moab. Moab’s rebellion shows how far Israel has fallen from Davidic power."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 22:7",
+              "note": "Jehoshaphat asks “Is there no longer a prophet of the LORD?” — the identical question he asks here. His faithfulness is consistent."
+            },
+            {
+              "ref": "2 Sam 8:2",
+              "note": "David conquered Moab. Moab’s rebellion shows how far Israel has fallen from Davidic power."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -87,6 +88,9 @@
               "note": "Elisha’s response — “I would not even look at you” to Joram but “I have respect for Jehoshaphat” — shows that legitimate kingship matters."
             }
           ]
+        },
+        "hist": {
+          "context": "After Ahab’s death, Moab rebels. Joram enlists Jehoshaphat and Edom for a joint campaign through the wilderness south of the Dead Sea. The army runs out of water after seven days. Joram blames YHWH; Jehoshaphat asks for a prophet. The contrast is sharp: Joram sees God as the problem, Jehoshaphat sees God as the solution — echoing the same dynamic in 1 Kings 22."
         }
       }
     },
@@ -104,21 +108,22 @@
             "paragraph": "After Mesha sacrifices his firstborn son on the wall, “great wrath” (qetzef gadōl) came against Israel (v.27). Whose wrath? The narrator leaves it deliberately ambiguous — the horror of child sacrifice produces a response so overwhelming that Israel withdraws despite military advantage."
           }
         ],
-        "ctx": "Elisha calls for a harpist; as the music plays, the hand of the LORD comes upon him and he prophesies: dig ditches and the valley will fill with water without rain. The prophecy is fulfilled at dawn. The Moabites, seeing sun reflected red in the water, mistake it for blood and charge into an ambush. Israel devastates Moab. But at the final siege, King Mesha sacrifices his firstborn son on the wall. “There came great wrath against Israel,” and they withdraw. The chapter ends with a theological shudder: the narrator does not explain the mechanism; he lets the horror speak for itself.",
-        "cross": [
-          {
-            "ref": "Exod 17:6",
-            "note": "Moses struck the rock and water came forth — God provides water in the wilderness. Elisha’s miracle operates on the same pattern."
-          },
-          {
-            "ref": "Lev 18:21",
-            "note": "“Do not give any of your children to be sacrificed to Molek.” Child sacrifice is the ultimate covenant violation."
-          },
-          {
-            "ref": "1 Sam 10:5",
-            "note": "Saul encountered prophets with harps, and the Spirit came upon him. Music and prophecy are associated throughout the OT."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 17:6",
+              "note": "Moses struck the rock and water came forth — God provides water in the wilderness. Elisha’s miracle operates on the same pattern."
+            },
+            {
+              "ref": "Lev 18:21",
+              "note": "“Do not give any of your children to be sacrificed to Molek.” Child sacrifice is the ultimate covenant violation."
+            },
+            {
+              "ref": "1 Sam 10:5",
+              "note": "Saul encountered prophets with harps, and the Spirit came upon him. Music and prophecy are associated throughout the OT."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -170,6 +175,9 @@
               "note": "The narrator’s refusal to explain the “great wrath” is itself a theological statement. The withdrawal is not military defeat but moral collapse before unspeakable evil."
             }
           ]
+        },
+        "hist": {
+          "context": "Elisha calls for a harpist; as the music plays, the hand of the LORD comes upon him and he prophesies: dig ditches and the valley will fill with water without rain. The prophecy is fulfilled at dawn. The Moabites, seeing sun reflected red in the water, mistake it for blood and charge into an ambush. Israel devastates Moab. But at the final siege, King Mesha sacrifices his firstborn son on the wall. “There came great wrath against Israel,” and they withdraw. The chapter ends with a theological shudder: the narrator does not explain the mechanism; he lets the horror speak for itself."
         }
       }
     }

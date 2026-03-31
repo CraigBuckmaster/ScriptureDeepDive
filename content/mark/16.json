@@ -72,21 +72,22 @@
             "current": true
           }
         ],
-        "ctx": "Mark’s Gospel ends at 16:8 in the oldest and most reliable manuscripts: the women flee, trembling and afraid, and say nothing to anyone. This abrupt ending has puzzled readers since antiquity — hence the later addition of vv.9-20. But the ending is profoundly Markan: the Gospel began with an announcement (“the beginning of the good news”) and ends by throwing the story forward. The reader, like the women, is left with the empty tomb and the commission to go to Galilee.",
-        "cross": [
-          {
-            "ref": "Mark 14:28",
-            "note": "After I have risen, I will go ahead of you into Galilee — the promise at the Last Supper that the angel’s message fulfils."
-          },
-          {
-            "ref": "Mark 1:1",
-            "note": "The beginning of the good news — the opening of the Gospel that the empty tomb continues, not concludes."
-          },
-          {
-            "ref": "Ps 22:24-31",
-            "note": "He has not despised or scorned the suffering of the afflicted one… he has not hidden his face from him but has listened — the Passion psalm’s ending of vindication that the resurrection enacts."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mark 14:28",
+              "note": "After I have risen, I will go ahead of you into Galilee — the promise at the Last Supper that the angel’s message fulfils."
+            },
+            {
+              "ref": "Mark 1:1",
+              "note": "The beginning of the good news — the opening of the Gospel that the empty tomb continues, not concludes."
+            },
+            {
+              "ref": "Ps 22:24-31",
+              "note": "He has not despised or scorned the suffering of the afflicted one… he has not hidden his face from him but has listened — the Passion psalm’s ending of vindication that the resurrection enacts."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -164,6 +165,9 @@
               "note": "And Peter — the two-word addition singles out Peter from the group. The angel’s message includes him specifically. This anticipates Peter’s restoration (alluded to in John 21) and his central role in the early church. Mark’s Gospel, traditionally the voice of Peter’s preaching, ends with the risen Christ seeking Peter out."
             }
           ]
+        },
+        "hist": {
+          "context": "Mark’s Gospel ends at 16:8 in the oldest and most reliable manuscripts: the women flee, trembling and afraid, and say nothing to anyone. This abrupt ending has puzzled readers since antiquity — hence the later addition of vv.9-20. But the ending is profoundly Markan: the Gospel began with an announcement (“the beginning of the good news”) and ends by throwing the story forward. The reader, like the women, is left with the empty tomb and the commission to go to Galilee."
         }
       }
     },

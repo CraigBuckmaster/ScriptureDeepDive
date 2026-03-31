@@ -31,17 +31,18 @@
             "paragraph": "Whoever conceals transgressions will not prosper, but whoever yōdeh (confesses) and forsakes them will find mercy (v. 13). The verb yādâ in the Hiphil means to acknowledge openly, to throw out into the open. Confession in Proverbs is not ritual but relational — it combines acknowledgment with abandonment (ʿāzab). Half-measures do not receive mercy."
           }
         ],
-        "ctx": "The first half of ch.28 contains two of Proverbs' most psychologically precise observations: the wicked who flee though no one pursues (v.1) — the internal corruption that produces perpetual fear — and the mercy that follows genuine confession of sin (v.13). V.14's closing beatitude: blessed is the one who always trembles before God.",
-        "cross": [
-          {
-            "ref": "Ps 53:5",
-            "note": "They were overwhelmed with dread where there was nothing to dread — the same flight-without-pursuer psychology as v.1."
-          },
-          {
-            "ref": "1 John 1:9",
-            "note": "If we confess our sins, he is faithful and just to forgive us — the NT fulfilment of v.13's mercy that follows genuine confession."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 53:5",
+              "note": "They were overwhelmed with dread where there was nothing to dread — the same flight-without-pursuer psychology as v.1."
+            },
+            {
+              "ref": "1 John 1:9",
+              "note": "If we confess our sins, he is faithful and just to forgive us — the NT fulfilment of v.13's mercy that follows genuine confession."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "The NET note on confession (modeh) and renunciation (azav, forsaking) together constituting genuine repentance traces the two-part structure through 1 Jn 1:9 (if we confess our sins, he is faithful and just to forgive) as the NT parallel. The structure is consistent: honest acknowledgment plus genuine turning equals the covenant pattern of restoration."
             }
           ]
+        },
+        "hist": {
+          "context": "The first half of ch.28 contains two of Proverbs' most psychologically precise observations: the wicked who flee though no one pursues (v.1) — the internal corruption that produces perpetual fear — and the mercy that follows genuine confession of sin (v.13). V.14's closing beatitude: blessed is the one who always trembles before God."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "Whoever gives to the poor (lārāš) will not lack, but whoever hides his eyes will have many curses (v. 27). The rāš is the materially destitute person, and heʿlîm ʿênāyw (hiding the eyes) describes the deliberate act of looking away. Generosity in Proverbs is not charity but economics: the universe is designed so that giving produces abundance and hoarding produces scarcity."
           }
         ],
-        "ctx": "The second half addresses the poor and their oppressors (vv.15,27), the person who hastens to get rich (v.22), and the section's central warning: the one who trusts in themselves is a fool, but the one who walks in wisdom is kept safe (v.26). The chapter closes with the giving-to-the-poor promise: those who give will lack nothing.",
-        "cross": [
-          {
-            "ref": "Prov 11:24-25",
-            "note": "The generous paradox — those who give freely gain more. The same principle as v.27's giving-to-the-poor lacks nothing."
-          },
-          {
-            "ref": "Luke 18:14",
-            "note": "Everyone who exalts himself will be humbled — the NT application of v.26's trust-in-self as folly."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 11:24-25",
+              "note": "The generous paradox — those who give freely gain more. The same principle as v.27's giving-to-the-poor lacks nothing."
+            },
+            {
+              "ref": "Luke 18:14",
+              "note": "Everyone who exalts himself will be humbled — the NT application of v.26's trust-in-self as folly."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -178,6 +183,9 @@
               "note": "The NET note on the closing-eyes image explains that ra'ah (to see) in the negative form (not seeing/closing eyes) means active avoidance of awareness. The note discusses the covenantal implications: to see and not act is to take a moral position. Proverbs does not recognise neutrality in the face of the poor's need."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half addresses the poor and their oppressors (vv.15,27), the person who hastens to get rich (v.22), and the section's central warning: the one who trusts in themselves is a fool, but the one who walks in wisdom is kept safe (v.26). The chapter closes with the giving-to-the-poor promise: those who give will lack nothing."
         }
       }
     }

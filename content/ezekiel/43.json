@@ -31,25 +31,26 @@
             "paragraph": "The phrase torat habayit (v. 12) provides the programmatic label for the entire vision of chapters 40-48. The word torah here functions not in its later sense of 'Mosaic law' but in its original priestly sense of 'instruction, direction' pertaining to sacred space. The 'law' is spatial holiness: the entire mountaintop is 'most holy' (qodesh qodashim), establishing concentric zones of sanctity radiating from the Most Holy Place outward."
           }
         ],
-        "ctx": "The return of YHWH's glory to the new temple constitutes the theological climax of the book of Ezekiel. The prophet is brought to the east gate, where he witnesses the kavod approaching from the east with a sound like many waters and a radiance that illuminates the earth. This reverses the departure sequence narrated in chapters 10-11. The divine voice from within the temple declares this as the place of YHWH's throne and the soles of his feet, where he will dwell among Israel forever. The condition for permanent divine presence is the removal of all defilement, specifically the corpses of kings (likely referring to royal tombs adjacent to the pre-exilic temple) and the idolatrous practices that desecrated the first temple. Verse 12 establishes the foundational principle of the entire temple vision: the law of the temple is absolute holiness on every side.",
-        "cross": [
-          {
-            "ref": "Ezek 10:18-19",
-            "note": "The glory of the LORD departed from the threshold of the temple and stood over the cherubim, then moved to the east gate. Chapter 43 reverses this exact trajectory."
-          },
-          {
-            "ref": "Ezek 11:22-23",
-            "note": "The glory ascended from within the city and stopped above the mountain east of it. The glory returns from this same eastern direction in 43:2."
-          },
-          {
-            "ref": "1 Kgs 8:10-11",
-            "note": "At Solomon's temple dedication, the glory cloud filled the house so that the priests could not stand to minister. Ezekiel's vision promises an even more permanent divine indwelling."
-          },
-          {
-            "ref": "Rev 21:3",
-            "note": "The voice from the throne declares that God's dwelling is with humanity. Revelation's vision of ultimate divine presence draws heavily on Ezekiel's temple imagery."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 10:18-19",
+              "note": "The glory of the LORD departed from the threshold of the temple and stood over the cherubim, then moved to the east gate. Chapter 43 reverses this exact trajectory."
+            },
+            {
+              "ref": "Ezek 11:22-23",
+              "note": "The glory ascended from within the city and stopped above the mountain east of it. The glory returns from this same eastern direction in 43:2."
+            },
+            {
+              "ref": "1 Kgs 8:10-11",
+              "note": "At Solomon's temple dedication, the glory cloud filled the house so that the priests could not stand to minister. Ezekiel's vision promises an even more permanent divine indwelling."
+            },
+            {
+              "ref": "Rev 21:3",
+              "note": "The voice from the throne declares that God's dwelling is with humanity. Revelation's vision of ultimate divine presence draws heavily on Ezekiel's temple imagery."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -130,6 +131,9 @@
               "note": "Zimmerli identifies the condemnation of royal tombs and the 'threshold beside my threshold' (v. 8) as targeting the Solomonic temple complex specifically. The torat habayit of v. 12 functions as a colophon for the entire vision: all that follows in chapters 44-48 are applications of this one principle of comprehensive holiness."
             }
           ]
+        },
+        "hist": {
+          "context": "The return of YHWH's glory to the new temple constitutes the theological climax of the book of Ezekiel. The prophet is brought to the east gate, where he witnesses the kavod approaching from the east with a sound like many waters and a radiance that illuminates the earth. This reverses the departure sequence narrated in chapters 10-11. The divine voice from within the temple declares this as the place of YHWH's throne and the soles of his feet, where he will dwell among Israel forever. The condition for permanent divine presence is the removal of all defilement, specifically the corpses of kings (likely referring to royal tombs adjacent to the pre-exilic temple) and the idolatrous practices that desecrated the first temple. Verse 12 establishes the foundational principle of the entire temple vision: the law of the temple is absolute holiness on every side."
         }
       }
     },
@@ -153,17 +157,18 @@
             "paragraph": "The altar hearth bears two related names: har'el ('mountain of God,' v. 15) and ari'el ('hearth of God' or 'lion of God,' v. 15b-16). The wordplay is deliberate. The altar is simultaneously a miniature sacred mountain (har) and the place where sacrificial fire burns (ari'el). Isaiah 29:1 uses ariel as a name for Jerusalem itself. The four horns (qeranot) at the corners reflect ancient Near Eastern altar design and symbolize the altar's cosmic orientation to the four cardinal directions."
           }
         ],
-        "ctx": "The altar specifications follow immediately after the return of the glory, establishing the instrument of atonement as the first item of cultic furniture described. The altar rises in four stepped tiers from a base trench to the hearth, with each stage slightly smaller than the one below, creating a ziggurat-like profile. The measurements use the long cubit (approximately 52 cm), consistent with the measuring rod described in 40:5. Steps on the east side provide priestly access. The altar is oriented with its steps facing east, so that the officiating priest faces west toward the Most Holy Place, reversing the idolatrous orientation condemned in 8:16 where twenty-five men faced east to worship the sun.",
-        "cross": [
-          {
-            "ref": "Exod 27:1-8",
-            "note": "The tabernacle altar of burnt offering. Ezekiel's altar is considerably larger and more elaborate, reflecting the enhanced sanctity of the eschatological temple."
-          },
-          {
-            "ref": "Isa 29:1",
-            "note": "Isaiah uses 'Ariel' as a name for Jerusalem, employing the same term Ezekiel uses for the altar hearth. Both texts connect the altar with the identity of the city itself."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 27:1-8",
+              "note": "The tabernacle altar of burnt offering. Ezekiel's altar is considerably larger and more elaborate, reflecting the enhanced sanctity of the eschatological temple."
+            },
+            {
+              "ref": "Isa 29:1",
+              "note": "Isaiah uses 'Ariel' as a name for Jerusalem, employing the same term Ezekiel uses for the altar hearth. Both texts connect the altar with the identity of the city itself."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -224,6 +229,9 @@
               "note": "Zimmerli identifies this unit as a priestly technical specification (Massliste) comparable to the altar descriptions in Exodus 27 and 2 Chronicles 4. He notes that the four-tiered design has no parallel in known Israelite altars and likely reflects a theological ideal rather than a historical prototype. The har'el/ari'el wordplay connects the altar to both cosmic mountain theology and the fire-theology of the cult."
             }
           ]
+        },
+        "hist": {
+          "context": "The altar specifications follow immediately after the return of the glory, establishing the instrument of atonement as the first item of cultic furniture described. The altar rises in four stepped tiers from a base trench to the hearth, with each stage slightly smaller than the one below, creating a ziggurat-like profile. The measurements use the long cubit (approximately 52 cm), consistent with the measuring rod described in 40:5. Steps on the east side provide priestly access. The altar is oriented with its steps facing east, so that the officiating priest faces west toward the Most Holy Place, reversing the idolatrous orientation condemned in 8:16 where twenty-five men faced east to worship the sun."
         }
       }
     },
@@ -247,21 +255,22 @@
             "paragraph": "A male goat is offered as a sin offering (chattat) each day for seven days, alongside a bull and a ram. The chattat ritual applies sacrificial blood to the altar's horns and corners to remove impurity. The seven-day duration follows the pattern of Leviticus 8-9 and underscores the completeness (sheva = seven) of the purification process."
           }
         ],
-        "ctx": "The seven-day altar consecration ritual mirrors the tabernacle inauguration of Exodus 29 and Leviticus 8-9, signaling that the new temple represents a new covenantal beginning. Each day requires a young bull as a sin offering, a male goat as a sin offering, and a ram and bull as burnt offerings, all without defect. The Zadokite priests (specified here for the first time in the vision) officiate, sprinkling blood on the altar horns and four corners, then burning the sin offering outside the sacred precinct. Salt accompanies the burnt offerings, echoing the covenant of salt (Lev 2:13; Num 18:19). After the seven days of purification, regular offerings commence on the eighth day, and YHWH declares that He will accept the people. The literary structure thus moves from glory-return (vv. 1-12) through altar-construction (vv. 13-17) to altar-consecration (vv. 18-27), establishing the complete restoration of sacrificial worship.",
-        "cross": [
-          {
-            "ref": "Exod 29:35-37",
-            "note": "The tabernacle altar consecration also lasted seven days, with daily sin offerings to purge the altar. Ezekiel's ritual follows the same pattern but with expanded sacrificial requirements."
-          },
-          {
-            "ref": "Lev 2:13",
-            "note": "The covenant of salt: every grain offering was seasoned with salt. Ezekiel 43:24 extends this requirement to the burnt offerings of the consecration ritual, reinforcing the covenantal significance of the altar."
-          },
-          {
-            "ref": "Heb 9:22-23",
-            "note": "The author of Hebrews argues that the heavenly tabernacle required better sacrifices than the earthly copies. Ezekiel's elaborate purification ritual foreshadows the ultimate cleansing accomplished by Christ's blood."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 29:35-37",
+              "note": "The tabernacle altar consecration also lasted seven days, with daily sin offerings to purge the altar. Ezekiel's ritual follows the same pattern but with expanded sacrificial requirements."
+            },
+            {
+              "ref": "Lev 2:13",
+              "note": "The covenant of salt: every grain offering was seasoned with salt. Ezekiel 43:24 extends this requirement to the burnt offerings of the consecration ritual, reinforcing the covenantal significance of the altar."
+            },
+            {
+              "ref": "Heb 9:22-23",
+              "note": "The author of Hebrews argues that the heavenly tabernacle required better sacrifices than the earthly copies. Ezekiel's elaborate purification ritual foreshadows the ultimate cleansing accomplished by Christ's blood."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -330,6 +339,9 @@
               "note": "Zimmerli treats this section as a distinct literary unit within the temple torah, classifying it as a Ritualordnung (ritual ordinance). He notes that the seven-day schema reflects the priestly creation theology of P, where the seventh day completes a cycle. The eighth day of acceptance introduces an eschatological surplus: the new order surpasses the old. Zimmerli sees evidence of editorial layering, with the Zadokite specification in v. 19 possibly reflecting a later redactional addition to an originally more inclusive priestly text."
             }
           ]
+        },
+        "hist": {
+          "context": "The seven-day altar consecration ritual mirrors the tabernacle inauguration of Exodus 29 and Leviticus 8-9, signaling that the new temple represents a new covenantal beginning. Each day requires a young bull as a sin offering, a male goat as a sin offering, and a ram and bull as burnt offerings, all without defect. The Zadokite priests (specified here for the first time in the vision) officiate, sprinkling blood on the altar horns and four corners, then burning the sin offering outside the sacred precinct. Salt accompanies the burnt offerings, echoing the covenant of salt (Lev 2:13; Num 18:19). After the seven days of purification, regular offerings commence on the eighth day, and YHWH declares that He will accept the people. The literary structure thus moves from glory-return (vv. 1-12) through altar-construction (vv. 13-17) to altar-consecration (vv. 18-27), establishing the complete restoration of sacrificial worship."
         }
       }
     }

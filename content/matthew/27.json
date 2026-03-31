@@ -31,7 +31,6 @@
             "paragraph": "The name bar-abba means 'son of the father.' The crowd chooses Bar-Abbas (a human 'son of the father') over Jesus (the divine Son of the Father). The substitution is ironically precise: the guilty son of a father goes free; the innocent Son of the Father goes to the cross."
           }
         ],
-        "ctx": "The first half moves through Judas's remorse (vv.1-10), the trial before Pilate (vv.11-26), and the mocking (vv.27-31). Both Judas (vv.3-10) and Pilate (vv.11-26) recognise Jesus's innocence; both are destroyed by their choice. The Barabbas exchange is the passion's most concentrated picture of substitution: the guilty son released while the innocent Son is condemned.",
         "tl": [
           {
             "date": "c. AD 30",
@@ -82,16 +81,18 @@
             "text": "Judas returns the thirty pieces of silver to the Temple — the priests use it to buy the Potter's Field. The silver moves from betrayal to Temple treasury to burial ground in three locations, each fulfilling Zechariah's prophecy."
           }
         ],
-        "cross": [
-          {
-            "ref": "Zech 11:12-13",
-            "note": "Thirty pieces of silver; the potter's field -- Matthew attributes this to Jeremiah but draws on Zechariah. The amount and the field fulfil the prophetic script."
-          },
-          {
-            "ref": "Isa 53:7",
-            "note": "He did not open his mouth -- Jesus's silence before Pilate (vv.12-14) enacts the Servant's silence. Pilate is amazed; the silence is theological, not tactical."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Zech 11:12-13",
+              "note": "Thirty pieces of silver; the potter's field -- Matthew attributes this to Jeremiah but draws on Zechariah. The amount and the field fulfil the prophetic script."
+            },
+            {
+              "ref": "Isa 53:7",
+              "note": "He did not open his mouth -- Jesus's silence before Pilate (vv.12-14) enacts the Servant's silence. Pilate is amazed; the silence is theological, not tactical."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -160,6 +161,9 @@
               "note": "The Catena records the patristic meditation on the dereliction cry (v.46: My God, my God, why have you forsaken me? -- Ps 22:1). Chrysostom and Ambrose read it as the cry of Christ's human nature experiencing the full weight of divine abandonment on behalf of sinners -- not a rupture in the Trinity but Christ bearing in his human experience what sin produces."
             }
           ]
+        },
+        "hist": {
+          "context": "The first half moves through Judas's remorse (vv.1-10), the trial before Pilate (vv.11-26), and the mocking (vv.27-31). Both Judas (vv.3-10) and Pilate (vv.11-26) recognise Jesus's innocence; both are destroyed by their choice. The Barabbas exchange is the passion's most concentrated picture of substitution: the guilty son released while the innocent Son is condemned."
         }
       }
     },
@@ -183,7 +187,6 @@
             "paragraph": "The inscription 'This is Jesus, the King of the Jews' is intended as mockery but functions as proclamation. The soldiers dress Jesus in royal colours, give him a crown (of thorns) and a sceptre (a reed). Every act of ridicule accidentally speaks the truth. He is exactly what they mock him for claiming to be."
           }
         ],
-        "ctx": "The crucifixion narrative is saturated with Psalm 22 -- casting lots (v.35), mockery (vv.39-44), and the dereliction cry (v.46). The mockers unknowingly speak the gospel's deepest truth: \"He saved others but he can't save himself\" -- the reason he cannot save himself is the same reason he can save others. The cosmic signs declare that the world has changed. The centurion's confession is the chapter's climax.",
         "tl": [
           {
             "date": "c. AD 30",
@@ -234,16 +237,18 @@
             "text": "The tomb is newly hewn, belonging to Joseph of Arimathea — a rich man's tomb near the execution site. The proximity of tomb to cross means the burial happens quickly before Sabbath. The garden setting (John 19:41) and the rolling stone create the geography of the resurrection morning."
           }
         ],
-        "cross": [
-          {
-            "ref": "Ps 22:18,7-8,1",
-            "note": "Casting lots; mockery; dereliction cry -- Psalm 22 provides the detailed script for Golgotha."
-          },
-          {
-            "ref": "Isa 53:12",
-            "note": "He was numbered with the transgressors -- Jesus between two rebels (v.38) fulfils the Servant song precisely."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 22:18,7-8,1",
+              "note": "Casting lots; mockery; dereliction cry -- Psalm 22 provides the detailed script for Golgotha."
+            },
+            {
+              "ref": "Isa 53:12",
+              "note": "He was numbered with the transgressors -- Jesus between two rebels (v.38) fulfils the Servant song precisely."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -312,6 +317,9 @@
               "note": "Chrysostom: he who had been a secret disciple becomes bold at the moment of greatest danger. The cross does not destroy courage; it creates it in those who see what it means. Even before the resurrection, the cross is producing its first fruits of transformed discipleship."
             }
           ]
+        },
+        "hist": {
+          "context": "The crucifixion narrative is saturated with Psalm 22 -- casting lots (v.35), mockery (vv.39-44), and the dereliction cry (v.46). The mockers unknowingly speak the gospel's deepest truth: \"He saved others but he can't save himself\" -- the reason he cannot save himself is the same reason he can save others. The cosmic signs declare that the world has changed. The centurion's confession is the chapter's climax."
         }
       }
     },
@@ -335,7 +343,6 @@
             "paragraph": "The centurion's confession — 'Surely he was the Son of God' — is the Gospel's climactic christological declaration. A Roman soldier, a Gentile, at the cross says what Israel's leaders refused to say. The irony is total: the confession comes at the moment of apparent defeat, from the least expected person."
           }
         ],
-        "ctx": "The first half moves through Judas's remorse (vv.1-10), the trial before Pilate (vv.11-26), and the mocking (vv.27-31). Both Judas (vv.3-10) and Pilate (vv.11-26) recognise Jesus's innocence; both are destroyed by their choice. The Barabbas exchange is the passion's most concentrated picture of substitution: the guilty son released while the innocent Son is condemned.",
         "tl": [
           {
             "date": "c. AD 30",
@@ -386,16 +393,18 @@
             "text": "Judas returns the thirty pieces of silver to the Temple — the priests use it to buy the Potter's Field. The silver moves from betrayal to Temple treasury to burial ground in three locations, each fulfilling Zechariah's prophecy."
           }
         ],
-        "cross": [
-          {
-            "ref": "Zech 11:12-13",
-            "note": "Thirty pieces of silver; the potter's field -- Matthew attributes this to Jeremiah but draws on Zechariah. The amount and the field fulfil the prophetic script."
-          },
-          {
-            "ref": "Isa 53:7",
-            "note": "He did not open his mouth -- Jesus's silence before Pilate (vv.12-14) enacts the Servant's silence. Pilate is amazed; the silence is theological, not tactical."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Zech 11:12-13",
+              "note": "Thirty pieces of silver; the potter's field -- Matthew attributes this to Jeremiah but draws on Zechariah. The amount and the field fulfil the prophetic script."
+            },
+            {
+              "ref": "Isa 53:7",
+              "note": "He did not open his mouth -- Jesus's silence before Pilate (vv.12-14) enacts the Servant's silence. Pilate is amazed; the silence is theological, not tactical."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -464,6 +473,9 @@
               "note": "The Catena records the patristic meditation on the dereliction cry (v.46: My God, my God, why have you forsaken me? -- Ps 22:1). Chrysostom and Ambrose read it as the cry of Christ's human nature experiencing the full weight of divine abandonment on behalf of sinners -- not a rupture in the Trinity but Christ bearing in his human experience what sin produces."
             }
           ]
+        },
+        "hist": {
+          "context": "The first half moves through Judas's remorse (vv.1-10), the trial before Pilate (vv.11-26), and the mocking (vv.27-31). Both Judas (vv.3-10) and Pilate (vv.11-26) recognise Jesus's innocence; both are destroyed by their choice. The Barabbas exchange is the passion's most concentrated picture of substitution: the guilty son released while the innocent Son is condemned."
         }
       }
     },
@@ -481,7 +493,6 @@
             "paragraph": "The guard at the tomb is uniquely Matthean. Koustōdia is a Latin loanword — a Roman military guard detail. Matthew includes this to preempt the claim that the disciples stole the body. The resurrection is attested despite the best security the Roman empire could provide."
           }
         ],
-        "ctx": "The crucifixion narrative is saturated with Psalm 22 -- casting lots (v.35), mockery (vv.39-44), and the dereliction cry (v.46). The mockers unknowingly speak the gospel's deepest truth: \"He saved others but he can't save himself\" -- the reason he cannot save himself is the same reason he can save others. The cosmic signs declare that the world has changed. The centurion's confession is the chapter's climax.",
         "tl": [
           {
             "date": "c. AD 30",
@@ -532,16 +543,18 @@
             "text": "The tomb is newly hewn, belonging to Joseph of Arimathea — a rich man's tomb near the execution site. The proximity of tomb to cross means the burial happens quickly before Sabbath. The garden setting (John 19:41) and the rolling stone create the geography of the resurrection morning."
           }
         ],
-        "cross": [
-          {
-            "ref": "Ps 22:18,7-8,1",
-            "note": "Casting lots; mockery; dereliction cry -- Psalm 22 provides the detailed script for Golgotha."
-          },
-          {
-            "ref": "Isa 53:12",
-            "note": "He was numbered with the transgressors -- Jesus between two rebels (v.38) fulfils the Servant song precisely."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 22:18,7-8,1",
+              "note": "Casting lots; mockery; dereliction cry -- Psalm 22 provides the detailed script for Golgotha."
+            },
+            {
+              "ref": "Isa 53:12",
+              "note": "He was numbered with the transgressors -- Jesus between two rebels (v.38) fulfils the Servant song precisely."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -610,6 +623,9 @@
               "note": "Chrysostom: he who had been a secret disciple becomes bold at the moment of greatest danger. The cross does not destroy courage; it creates it in those who see what it means. Even before the resurrection, the cross is producing its first fruits of transformed discipleship."
             }
           ]
+        },
+        "hist": {
+          "context": "The crucifixion narrative is saturated with Psalm 22 -- casting lots (v.35), mockery (vv.39-44), and the dereliction cry (v.46). The mockers unknowingly speak the gospel's deepest truth: \"He saved others but he can't save himself\" -- the reason he cannot save himself is the same reason he can save others. The cosmic signs declare that the world has changed. The centurion's confession is the chapter's climax."
         }
       }
     }

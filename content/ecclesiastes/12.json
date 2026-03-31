@@ -31,21 +31,22 @@
             "paragraph": "\"Meaningless! Meaningless! Everything is meaningless!\" (v.8). The thesis of 1:2 returns as the book’s final verdict from Qoheleth. The frame is complete. But the epilogue narrator (vv.9–14) will add the final word."
           }
         ],
-        "ctx": "The aging allegory (vv.1–7) is the most sustained metaphor in Ecclesiastes. Old age described through images: the sun and light grow dim (v.2), the strong men stoop (v.3, arms/legs), the grinders cease (teeth), those looking through windows grow dim (eyes), the doors to the street close (ears), the almond tree blossoms white (hair), the grasshopper drags himself along (stiffness), desire is no longer stirred (v.5). Then: \"the dust returns to the ground it came from, and the spirit returns to God who gave it\" (v.7). The cycle closes: from dust to dust, spirit to God. Genesis 2–3 in reverse.",
-        "cross": [
-          {
-            "ref": "Gen 2:7",
-            "note": "\"The LORD God formed a man from the dust of the ground and breathed into his nostrils the breath of life\" — the creation Qoheleth’s death-verse reverses."
-          },
-          {
-            "ref": "Gen 3:19",
-            "note": "\"Dust you are and to dust you will return\" — the curse that Qoheleth’s allegory illustrates."
-          },
-          {
-            "ref": "2 Cor 4:16",
-            "note": "\"Though outwardly we are wasting away, yet inwardly we are being renewed\" — Paul’s counter to Qoheleth’s aging description."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 2:7",
+              "note": "\"The LORD God formed a man from the dust of the ground and breathed into his nostrils the breath of life\" — the creation Qoheleth’s death-verse reverses."
+            },
+            {
+              "ref": "Gen 3:19",
+              "note": "\"Dust you are and to dust you will return\" — the curse that Qoheleth’s allegory illustrates."
+            },
+            {
+              "ref": "2 Cor 4:16",
+              "note": "\"Though outwardly we are wasting away, yet inwardly we are being renewed\" — Paul’s counter to Qoheleth’s aging description."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -131,6 +132,9 @@
               "note": "Fox: \"the spirit returns to God\" — Fox notes this does not prove individual immortality in Qoheleth’s framework. It means the life-force God lent returns to its source. What happens to the individual after that, Qoheleth does not say."
             }
           ]
+        },
+        "hist": {
+          "context": "The aging allegory (vv.1–7) is the most sustained metaphor in Ecclesiastes. Old age described through images: the sun and light grow dim (v.2), the strong men stoop (v.3, arms/legs), the grinders cease (teeth), those looking through windows grow dim (eyes), the doors to the street close (ears), the almond tree blossoms white (hair), the grasshopper drags himself along (stiffness), desire is no longer stirred (v.5). Then: \"the dust returns to the ground it came from, and the spirit returns to God who gave it\" (v.7). The cycle closes: from dust to dust, spirit to God. Genesis 2–3 in reverse."
         }
       }
     },
@@ -154,21 +158,22 @@
             "paragraph": "\"The words (dābār) of the wise are like goads, their collected sayings like firmly embedded nails\" (v.11). Wisdom’s words are uncomfortable (goads prod cattle) but fixed (nails hold structures together). The discomfort is the point: wisdom pushes you where you would not naturally go."
           }
         ],
-        "ctx": "The narrator steps outside Qoheleth’s voice to evaluate and frame. Qoheleth was wise (v.9), he searched for the right words (v.10), his sayings are like goads and nails (v.11). But: \"of making many books there is no end, and much study wearies the body\" (v.12). The warning against endless intellectual pursuit without conclusion. Then the conclusion: fear God, keep his commandments, because God will bring every deed into judgment (vv.13–14). The epilogue reframes everything: Qoheleth’s observations are valid, but they are not the final word. The final word is God’s judgment and God’s commandments.",
-        "cross": [
-          {
-            "ref": "Prov 1:7",
-            "note": "\"The fear of the LORD is the beginning of knowledge\" — the wisdom tradition’s opening, now confirmed at its close."
-          },
-          {
-            "ref": "Job 28:28",
-            "note": "\"The fear of the Lord — that is wisdom\" — Job’s identical conclusion."
-          },
-          {
-            "ref": "Rev 20:12",
-            "note": "\"The dead were judged according to what they had done\" — the final judgment Qoheleth’s epilogue anticipates."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 1:7",
+              "note": "\"The fear of the LORD is the beginning of knowledge\" — the wisdom tradition’s opening, now confirmed at its close."
+            },
+            {
+              "ref": "Job 28:28",
+              "note": "\"The fear of the Lord — that is wisdom\" — Job’s identical conclusion."
+            },
+            {
+              "ref": "Rev 20:12",
+              "note": "\"The dead were judged according to what they had done\" — the final judgment Qoheleth’s epilogue anticipates."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -258,6 +263,9 @@
               "note": "Fox: the epilogue does not cancel Qoheleth’s observations but frames them. The absurdity is real; the judgment is also real. Both exist simultaneously. Fox: the book’s final theology is not resolution but coexistence of absurdity and accountability."
             }
           ]
+        },
+        "hist": {
+          "context": "The narrator steps outside Qoheleth’s voice to evaluate and frame. Qoheleth was wise (v.9), he searched for the right words (v.10), his sayings are like goads and nails (v.11). But: \"of making many books there is no end, and much study wearies the body\" (v.12). The warning against endless intellectual pursuit without conclusion. Then the conclusion: fear God, keep his commandments, because God will bring every deed into judgment (vv.13–14). The epilogue reframes everything: Qoheleth’s observations are valid, but they are not the final word. The final word is God’s judgment and God’s commandments."
         }
       }
     }

@@ -25,17 +25,18 @@
             "paragraph": "\"I will exalt you, LORD, for you lifted me out (dillîtānî) of the depths\" (v.1). The verb is from drawing water from a well — David was deep in the pit and God pulled him up. For a dedication of the temple (superscription). God healed David, brought him up from the realm of the dead (v.3). \"Weeping may stay for the night, but rejoicing comes in the morning\" (v.5)."
           }
         ],
-        "ctx": "A thanksgiving for healing. David was near death (v.3), cried for help (v.2), and God healed him. The psalm’s most famous verse: \"weeping may stay for the night, but rejoicing comes in the morning\" (v.5). The night of suffering has a time limit; morning always comes.",
-        "cross": [
-          {
-            "ref": "Isa 54:7–8",
-            "note": "\"For a brief moment I abandoned you, but with deep compassion I will bring you back\" — the same temporary-suffering theology."
-          },
-          {
-            "ref": "2 Cor 4:17",
-            "note": "\"Our light and momentary troubles are achieving for us an eternal glory\" — Paul’s version of morning joy."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 54:7–8",
+              "note": "\"For a brief moment I abandoned you, but with deep compassion I will bring you back\" — the same temporary-suffering theology."
+            },
+            {
+              "ref": "2 Cor 4:17",
+              "note": "\"Our light and momentary troubles are achieving for us an eternal glory\" — Paul’s version of morning joy."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -126,6 +127,9 @@
               "note": "Goldingay: the candid admission of false security (šalwāh, 'ease') is rare in the Psalter. The psalmist recognises that his complacency was the problem, not the solution. God withdrew favour to restore dependence."
             }
           ]
+        },
+        "hist": {
+          "context": "A thanksgiving for healing. David was near death (v.3), cried for help (v.2), and God healed him. The psalm’s most famous verse: \"weeping may stay for the night, but rejoicing comes in the morning\" (v.5). The night of suffering has a time limit; morning always comes."
         }
       }
     },
@@ -143,17 +147,18 @@
             "paragraph": "\"You turned my wailing into dancing (māḥōl); you removed my sackcloth and clothed me with joy\" (v.11). The most dramatic reversal image in the Psalter: wailing → dancing, sackcloth → joy. God does not merely stop suffering; he transforms it into celebration. The psalm closes: \"LORD my God, I will praise you forever\" (v.12)."
           }
         ],
-        "ctx": "David cried for mercy (v.8), argued against his death (vv.9–10: \"what is gained by my destruction? Will the dust praise you?\"), and God responded by transforming everything: wailing → dancing, sackcloth → joy-clothing (v.11). The psalm closes with the vow: praise forever (v.12).",
-        "cross": [
-          {
-            "ref": "Jer 31:13",
-            "note": "\"I will turn their mourning into gladness\" — the same reversal promise applied nationally."
-          },
-          {
-            "ref": "Rev 21:4",
-            "note": "\"He will wipe every tear from their eyes\" — the eschatological morning."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 31:13",
+              "note": "\"I will turn their mourning into gladness\" — the same reversal promise applied nationally."
+            },
+            {
+              "ref": "Rev 21:4",
+              "note": "\"He will wipe every tear from their eyes\" — the eschatological morning."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -244,6 +249,9 @@
               "note": "Goldingay: the physical imagery is striking: wailing→dancing involves the whole body. Sackcloth→gladness involves changing garments. The transformation is external and visible, not merely internal and spiritual."
             }
           ]
+        },
+        "hist": {
+          "context": "David cried for mercy (v.8), argued against his death (vv.9–10: \"what is gained by my destruction? Will the dust praise you?\"), and God responded by transforming everything: wailing → dancing, sackcloth → joy-clothing (v.11). The psalm closes with the vow: praise forever (v.12)."
         }
       }
     }

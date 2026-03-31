@@ -57,21 +57,22 @@
             "current": false
           }
         ],
-        "ctx": "Acts 27 is one of the most detailed eyewitness voyage accounts in ancient literature — compared favourably by classicists to the best Greek and Roman seafaring narratives. But Luke's purpose is theological: the ship full of condemned prisoners is preserved because one man on board belongs to God and has an appointment in Rome. The angel's assurance (v.24: 'God has graciously given you the lives of all who sail with you') means 275 other people are kept alive by virtue of their association with Paul.",
-        "cross": [
-          {
-            "ref": "Acts 23:11",
-            "note": "\"You must stand trial before Caesar\" — the Lord's promise that the angel echoes in v.24. The shipwreck is part of the route to Rome, not a setback to it."
-          },
-          {
-            "ref": "Jonah 1:1–16",
-            "note": "The storm, the prophet on board, the endangered crew — the structural parallel with Jonah is intentional. Paul is the anti-Jonah: where Jonah fled his commission, Paul is fulfilling his; where Jonah endangered the ship, Paul's presence saves it."
-          },
-          {
-            "ref": "Psalm 107:23–30",
-            "note": "\"Some went out on the sea in ships... He stilled the storm... and he guided them to their desired haven\" — the psalm of sea rescue that provides the theological framework."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 23:11",
+              "note": "\"You must stand trial before Caesar\" — the Lord's promise that the angel echoes in v.24. The shipwreck is part of the route to Rome, not a setback to it."
+            },
+            {
+              "ref": "Jonah 1:1–16",
+              "note": "The storm, the prophet on board, the endangered crew — the structural parallel with Jonah is intentional. Paul is the anti-Jonah: where Jonah fled his commission, Paul is fulfilling his; where Jonah endangered the ship, Paul's presence saves it."
+            },
+            {
+              "ref": "Psalm 107:23–30",
+              "note": "\"Some went out on the sea in ships... He stilled the storm... and he guided them to their desired haven\" — the psalm of sea rescue that provides the theological framework."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -136,6 +137,9 @@
               "note": "Keener provides background on the Eurakulos (Northeaster). Pliny the Elder and other ancient writers describe this storm system. The storm's route — taking the ship from Crete toward Malta — is consistent with actual Mediterranean storm patterns, confirming the voyage's historicity."
             }
           ]
+        },
+        "hist": {
+          "context": "Acts 27 is one of the most detailed eyewitness voyage accounts in ancient literature — compared favourably by classicists to the best Greek and Roman seafaring narratives. But Luke's purpose is theological: the ship full of condemned prisoners is preserved because one man on board belongs to God and has an appointment in Rome. The angel's assurance (v.24: 'God has graciously given you the lives of all who sail with you') means 275 other people are kept alive by virtue of their association with Paul."
         }
       }
     },
@@ -182,21 +186,22 @@
             "current": false
           }
         ],
-        "ctx": "The shipwreck narrative reaches its climax in Paul's eucharistic bread-breaking (vv.33–36) and the grounding that fulfils the angel's promise exactly (vv.41–44). The bread-breaking in front of all 276 people is the Gospel's table in the midst of disaster — the community of faith sharing food with those who do not yet share their faith. Every one of the 276 reaches land safely: the angel's specific promise is specifically kept.",
-        "cross": [
-          {
-            "ref": "Luke 22:19",
-            "note": "\"He took bread, gave thanks and broke it\" — the Last Supper action that Paul replicates in vv.35–36."
-          },
-          {
-            "ref": "Luke 24:30–31",
-            "note": "\"He took bread, gave thanks, broke it and began to give it to them. Then their eyes were opened\" — Luke consistently uses the eucharistic action as the moment of spiritual recognition."
-          },
-          {
-            "ref": "Acts 27:24",
-            "note": "\"God has graciously given you the lives of all who sail with you\" — the promise fulfilled exactly in v.44: \"everyone reached land safely.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 22:19",
+              "note": "\"He took bread, gave thanks and broke it\" — the Last Supper action that Paul replicates in vv.35–36."
+            },
+            {
+              "ref": "Luke 24:30–31",
+              "note": "\"He took bread, gave thanks, broke it and began to give it to them. Then their eyes were opened\" — Luke consistently uses the eucharistic action as the moment of spiritual recognition."
+            },
+            {
+              "ref": "Acts 27:24",
+              "note": "\"God has graciously given you the lives of all who sail with you\" — the promise fulfilled exactly in v.44: \"everyone reached land safely.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -261,6 +266,9 @@
               "note": "Keener notes that 276 people on a grain ship is historically plausible. Josephus (Life 3.15) mentions a grain ship with 600 on board. The Alexandria-to-Rome grain route routinely carried large numbers; 276 is not exaggerated."
             }
           ]
+        },
+        "hist": {
+          "context": "The shipwreck narrative reaches its climax in Paul's eucharistic bread-breaking (vv.33–36) and the grounding that fulfils the angel's promise exactly (vv.41–44). The bread-breaking in front of all 276 people is the Gospel's table in the midst of disaster — the community of faith sharing food with those who do not yet share their faith. Every one of the 276 reaches land safely: the angel's specific promise is specifically kept."
         }
       }
     }

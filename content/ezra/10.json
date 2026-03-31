@@ -31,22 +31,26 @@
             "paragraph": "The sin is called maʿal — covenant treachery. The same word describes Achan’s theft (Josh 7:1) and Saul’s disobedience (1 Chr 10:13). It is the vocabulary of high betrayal, not minor transgression."
           }
         ],
-        "hist": "The assembly is called for the twentieth day of the ninth month (December 458 BC). The text notes \"all the people sat in the square before the house of God, greatly distressed by the matter and because of the heavy rain\" (v.9). December rains in Jerusalem are cold and heavy. The physical discomfort mirrors the spiritual discomfort.",
-        "ctx": "Shecaniah’s proposal (v.2–4) is remarkable: he proposes putting away the foreign wives \"according to the law\" — though no Torah law explicitly mandates divorce in cases of existing intermarriage. The prohibition is against contracting such marriages, not dissolving them. The community innovates within Torah principles to address a crisis the Torah did not directly anticipate.",
-        "cross": [
-          {
-            "ref": "Deut 7:1–4",
-            "note": "The prohibition against intermarriage that grounds the crisis."
-          },
-          {
-            "ref": "Mal 2:13–16",
-            "note": "\"I hate divorce, says the LORD\" — the tension. God hates both the intermarriage and the dissolution."
-          },
-          {
-            "ref": "Neh 13:23–27",
-            "note": "Nehemiah confronts the same issue but uses confrontation rather than assembly."
-          }
-        ],
+        "hist": {
+          "historical": "The assembly is called for the twentieth day of the ninth month (December 458 BC). The text notes \"all the people sat in the square before the house of God, greatly distressed by the matter and because of the heavy rain\" (v.9). December rains in Jerusalem are cold and heavy. The physical discomfort mirrors the spiritual discomfort.",
+          "context": "Shecaniah’s proposal (v.2–4) is remarkable: he proposes putting away the foreign wives \"according to the law\" — though no Torah law explicitly mandates divorce in cases of existing intermarriage. The prohibition is against contracting such marriages, not dissolving them. The community innovates within Torah principles to address a crisis the Torah did not directly anticipate."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 7:1–4",
+              "note": "The prohibition against intermarriage that grounds the crisis."
+            },
+            {
+              "ref": "Mal 2:13–16",
+              "note": "\"I hate divorce, says the LORD\" — the tension. God hates both the intermarriage and the dissolution."
+            },
+            {
+              "ref": "Neh 13:23–27",
+              "note": "Nehemiah confronts the same issue but uses confrontation rather than assembly."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -144,17 +148,18 @@
             "paragraph": "The list begins with those who \"acknowledged their guilt\" (ʾāšēmû). The public listing is not punitive shaming but transparency: the community records its failures as honestly as its genealogies."
           }
         ],
-        "ctx": "The list names 111 men — 17 priests, 6 Levites, 1 singer, 3 gatekeepers, and 84 laypeople. The priests are listed first because their guilt is greatest: they are the guardians of holiness. The book ends abruptly with this list, without resolution narrative. We are not told whether all divorces occurred, how the women and children fared, or whether the reforms held. The open ending is deliberate: the work of faithfulness is never finished.",
-        "cross": [
-          {
-            "ref": "Neh 13:28–29",
-            "note": "Even the high priest’s family intermarried — Nehemiah confronts Joiada’s son. The problem persists."
-          },
-          {
-            "ref": "Mal 2:10–16",
-            "note": "Malachi addresses the same era — the prophet’s perspective on the crisis."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Neh 13:28–29",
+              "note": "Even the high priest’s family intermarried — Nehemiah confronts Joiada’s son. The problem persists."
+            },
+            {
+              "ref": "Mal 2:10–16",
+              "note": "Malachi addresses the same era — the prophet’s perspective on the crisis."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -227,6 +232,9 @@
               "note": "Kidner on the abrupt ending: \"The book closes with a list, not a hymn. There is no fanfare, no celebration. Obedience is quiet, costly, and incomplete. That is what faithfulness looks like in a fallen world.\""
             }
           ]
+        },
+        "hist": {
+          "context": "The list names 111 men — 17 priests, 6 Levites, 1 singer, 3 gatekeepers, and 84 laypeople. The priests are listed first because their guilt is greatest: they are the guardians of holiness. The book ends abruptly with this list, without resolution narrative. We are not told whether all divorces occurred, how the women and children fared, or whether the reforms held. The open ending is deliberate: the work of faithfulness is never finished."
         }
       }
     }

@@ -25,17 +25,18 @@
             "paragraph": "The chapter opens: “All Israel was listed in the genealogies recorded in the book of the kings of Israel and Judah. They were taken captive to Babylon because of their unfaithfulness” (v.1). The word for “unfaithfulness” is again maʿal — the Chronicler’s signature term. The genealogy now pivots to the PRESENT: who returned and resettled?"
           }
         ],
-        "ctx": "The genealogies reach their destination: the post-exilic community. Judahites, Benjaminites, Ephramites, and Manassites who resettled Jerusalem are listed, followed by priestly families, Levites, gatekeepers, and temple servants. This chapter answers the question the entire genealogical section has been building toward: the returned community IS Israel. The people listed here are the direct heirs of Adam, Abraham, Jacob, Judah, and David. The unbroken genealogical chain from chapter 1 to chapter 9 proves continuity through catastrophe.",
-        "cross": [
-          {
-            "ref": "Neh 11:1–36",
-            "note": "Nehemiah’s list of Jerusalem’s residents closely parallels this chapter. Both draw on the same community records."
-          },
-          {
-            "ref": "Ezra 2:1–70",
-            "note": "The list of returned exiles. Together with 1 Chr 9, these passages document the demographic foundation of Second Temple Judaism."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Neh 11:1–36",
+              "note": "Nehemiah’s list of Jerusalem’s residents closely parallels this chapter. Both draw on the same community records."
+            },
+            {
+              "ref": "Ezra 2:1–70",
+              "note": "The list of returned exiles. Together with 1 Chr 9, these passages document the demographic foundation of Second Temple Judaism."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -53,6 +54,9 @@
               "note": "The “book of the kings of Israel and Judah” may refer to the biblical book of Kings or to a larger court chronicle from which both Kings and Chronicles drew material."
             }
           ]
+        },
+        "hist": {
+          "context": "The genealogies reach their destination: the post-exilic community. Judahites, Benjaminites, Ephramites, and Manassites who resettled Jerusalem are listed, followed by priestly families, Levites, gatekeepers, and temple servants. This chapter answers the question the entire genealogical section has been building toward: the returned community IS Israel. The people listed here are the direct heirs of Adam, Abraham, Jacob, Judah, and David. The unbroken genealogical chain from chapter 1 to chapter 9 proves continuity through catastrophe."
         }
       }
     },
@@ -62,17 +66,18 @@
       "verse_start": 35,
       "verse_end": 44,
       "panels": {
-        "ctx": "The Saulide genealogy from 8:29–40 is repeated almost verbatim. The repetition creates an inclusio — a literary frame that signals the end of the genealogical section and the beginning of the narrative. The last genealogy before the story begins is Saul’s, because Saul’s death (chapter 10) is the event that brings David to the throne. The Chronicler’s story of Israel begins not with creation (already covered in the genealogies) but with the failure of the wrong king and the rise of the right one.",
-        "cross": [
-          {
-            "ref": "1 Chr 8:29–40",
-            "note": "The nearly identical genealogy in chapter 8. Minor textual differences suggest the Chronicler copied from two slightly different versions of the same source."
-          },
-          {
-            "ref": "1 Chr 10:1–14",
-            "note": "Saul’s death follows immediately. The genealogy identifies the character; the narrative evaluates his reign."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Chr 8:29–40",
+              "note": "The nearly identical genealogy in chapter 8. Minor textual differences suggest the Chronicler copied from two slightly different versions of the same source."
+            },
+            {
+              "ref": "1 Chr 10:1–14",
+              "note": "Saul’s death follows immediately. The genealogy identifies the character; the narrative evaluates his reign."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -90,6 +95,9 @@
               "note": "The nearly verbatim repetition of 8:29–40 is the most extensive internal parallel in Chronicles. Comparison reveals minor textual variants that are significant for establishing the Chronicler’s scribal methods."
             }
           ]
+        },
+        "hist": {
+          "context": "The Saulide genealogy from 8:29–40 is repeated almost verbatim. The repetition creates an inclusio — a literary frame that signals the end of the genealogical section and the beginning of the narrative. The last genealogy before the story begins is Saul’s, because Saul’s death (chapter 10) is the event that brings David to the throne. The Chronicler’s story of Israel begins not with creation (already covered in the genealogies) but with the failure of the wrong king and the rise of the right one."
         }
       }
     }

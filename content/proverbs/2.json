@@ -31,17 +31,18 @@
             "paragraph": "God stores up (ṣāpan) wisdom for the upright — the same verb used of hidden treasure in v.4. The person who seeks wisdom as hidden treasure discovers that God has been storing it for them."
           }
         ],
-        "ctx": "Chapter 2 is one long conditional sentence: if you seek wisdom (vv.1–4), then you will find it (vv.5–11), and it will protect you from the wicked man (vv.12–15) and the adulteress (vv.16–19), and you will walk in the good land (vv.20–22). The structure shows that wisdom is not automatic — it requires active pursuit. The conditions of vv.1–4 escalate: accept, store up, turn your ear, apply your heart, call out, cry aloud, look for, search. The intensity of the seeking mirrors the value of the treasure.",
-        "cross": [
-          {
-            "ref": "Matt 7:7–8",
-            "note": "Jesus' 'Ask and it will be given to you; seek and you will find' recasts Proverbs 2's conditional promise in gospel terms: the seeker who cries out for understanding will receive it."
-          },
-          {
-            "ref": "Col 2:2–3",
-            "note": "Paul identifies Christ as the one 'in whom are hidden all the treasures of wisdom and knowledge' — the New Testament fulfilment of Proverbs' promise that seeking yields hidden treasure (v. 4)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 7:7–8",
+              "note": "Jesus' 'Ask and it will be given to you; seek and you will find' recasts Proverbs 2's conditional promise in gospel terms: the seeker who cries out for understanding will receive it."
+            },
+            {
+              "ref": "Col 2:2–3",
+              "note": "Paul identifies Christ as the one 'in whom are hidden all the treasures of wisdom and knowledge' — the New Testament fulfilment of Proverbs' promise that seeking yields hidden treasure (v. 4)."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "The NET note on zarah (strange/foreign woman) discusses the interpretive options: (a) a literal foreign woman who does not share Israel's covenant norms; (b) any woman who is 'strange' in the sense of being forbidden (another man's wife); (c) a metaphorical anti-type to Lady Wisdom. The note favours reading both (a) and (b) as overlapping: the 'strange woman' is both literally foreign and typologically 'strange' to wisdom's ways."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 2 is one long conditional sentence: if you seek wisdom (vv.1–4), then you will find it (vv.5–11), and it will protect you from the wicked man (vv.12–15) and the adulteress (vv.16–19), and you will walk in the good land (vv.20–22). The structure shows that wisdom is not automatic — it requires active pursuit. The conditions of vv.1–4 escalate: accept, store up, turn your ear, apply your heart, call out, cry aloud, look for, search. The intensity of the seeking mirrors the value of the treasure."
         }
       }
     },
@@ -129,17 +133,18 @@
             "paragraph": "The Rephaim are the inhabitants of Sheol — the enfeebled dead. Her house 'sinks down to death' (v. 18), and her paths lead to the rĕpāʾîm. The term carries overtones of the ancient giant-race traditions, adding an ominous mythological resonance to what seems like a simple warning about adultery."
           }
         ],
-        "ctx": "The two dangers from which wisdom protects (vv.12–19) are the violent man and the adulteress. These are not arbitrary examples; they represent the two primary temptations addressed throughout Proverbs 1–9: the appeal of the peer group (belonging, power) and the appeal of forbidden sexuality (intimacy, pleasure). Both offer what wisdom offers — but the counterfeit destroys. The adulteress of v.16–19 is particularly sobering: \"none who go to her return.\" The path of folly is described as a one-way street.",
-        "cross": [
-          {
-            "ref": "Prov 7:27",
-            "note": "The fuller portrait of the adulteress — \"her house is a highway to the grave, leading down to the chambers of death.\" Ch.2's warning is developed in detail in ch.7."
-          },
-          {
-            "ref": "Deut 30:15–18",
-            "note": "The two-ways framework: life/good vs death/evil, walking in God's ways vs turning away. Proverbs' two-path structure is deeply Deuteronomic."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 7:27",
+              "note": "The fuller portrait of the adulteress — \"her house is a highway to the grave, leading down to the chambers of death.\" Ch.2's warning is developed in detail in ch.7."
+            },
+            {
+              "ref": "Deut 30:15–18",
+              "note": "The two-ways framework: life/good vs death/evil, walking in God's ways vs turning away. Proverbs' two-path structure is deeply Deuteronomic."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -204,6 +209,9 @@
               "note": "The NET note on 'covenant of her God' (berit eloheyha) discusses whether 'her God' refers to YHWH or to the gods invoked at the marriage ceremony. The note favours YHWH — the marriage covenant was sworn before Israel's God, making its violation an offence against God as much as against the husband."
             }
           ]
+        },
+        "hist": {
+          "context": "The two dangers from which wisdom protects (vv.12–19) are the violent man and the adulteress. These are not arbitrary examples; they represent the two primary temptations addressed throughout Proverbs 1–9: the appeal of the peer group (belonging, power) and the appeal of forbidden sexuality (intimacy, pleasure). Both offer what wisdom offers — but the counterfeit destroys. The adulteress of v.16–19 is particularly sobering: \"none who go to her return.\" The path of folly is described as a one-way street."
         }
       }
     }

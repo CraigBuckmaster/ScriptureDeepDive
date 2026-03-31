@@ -31,21 +31,22 @@
             "paragraph": "Diakonos in v. 4 describes the governing authority as God’s servant (diakonos theou) — an agent commissioned to carry out a specific function. The ruler is God’s servant for good and for the punishment of evil. The term carries no connotation of the ruler’s personal holiness but of their functional role in God’s ordering of society."
           }
         ],
-        "ctx": "Romans 13:1–7 is the most discussed NT passage on the relationship between Christians and the state. Written to believers living in the imperial capital under Nero (who had not yet begun persecution), Paul calls for submission to governing authorities as divinely established. The passage must be read alongside other NT texts that qualify it: Acts 5:29 (‘we must obey God rather than human beings’), Revelation 13 (the beast as a demonic parody of authority), and Paul’s own experience of unjust arrest and beating (Acts 16:37). Paul is not endorsing tyranny but recognising the general principle that ordered government is part of God’s providential care. The historical context may also reflect a concern that Jewish Christians returning to Rome after Claudius’s expulsion (AD 49) might resist Roman authority.",
-        "cross": [
-          {
-            "ref": "1 Pet 2:13–17",
-            "note": "Peter makes a parallel appeal: submit to every human authority for the Lord’s sake."
-          },
-          {
-            "ref": "Acts 5:29",
-            "note": "Peter and the apostles: ‘we must obey God rather than human beings’ — the qualification to unconditional submission."
-          },
-          {
-            "ref": "Dan 2:21",
-            "note": "God removes kings and sets up kings — the OT precedent for the principle of divine sovereignty over human government."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Pet 2:13–17",
+              "note": "Peter makes a parallel appeal: submit to every human authority for the Lord’s sake."
+            },
+            {
+              "ref": "Acts 5:29",
+              "note": "Peter and the apostles: ‘we must obey God rather than human beings’ — the qualification to unconditional submission."
+            },
+            {
+              "ref": "Dan 2:21",
+              "note": "God removes kings and sets up kings — the OT precedent for the principle of divine sovereignty over human government."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Schreiner emphasises that Paul’s command is grounded in creation theology: God established the institution of government as part of his providential ordering of the world. Submission to government is therefore a form of submission to God. However, when government commands what God forbids, Acts 5:29 applies."
             }
           ]
+        },
+        "hist": {
+          "context": "Romans 13:1–7 is the most discussed NT passage on the relationship between Christians and the state. Written to believers living in the imperial capital under Nero (who had not yet begun persecution), Paul calls for submission to governing authorities as divinely established. The passage must be read alongside other NT texts that qualify it: Acts 5:29 (‘we must obey God rather than human beings’), Revelation 13 (the beast as a demonic parody of authority), and Paul’s own experience of unjust arrest and beating (Acts 16:37). Paul is not endorsing tyranny but recognising the general principle that ordered government is part of God’s providential care. The historical context may also reflect a concern that Jewish Christians returning to Rome after Claudius’s expulsion (AD 49) might resist Roman authority."
         }
       }
     },
@@ -133,21 +137,22 @@
             "paragraph": "Kairos in v. 11 denotes the decisive eschatological moment. Paul urges ethical seriousness because ‘the hour has already come for you to wake up from your slumber.’ The nearness of salvation (v. 11) creates urgency: the night is nearly over and the day is about to dawn. This eschatological framing grounds ethics in the expectation of Christ’s return."
           }
         ],
-        "ctx": "Romans 13:8–14 transitions from civil duty to love as the fulfilment of the law, then to eschatological urgency as the motivation for holiness. The command to ‘put on the Lord Jesus Christ’ (v. 14) was famously the verse that triggered Augustine’s conversion (Confessions 8.12). The day/night imagery is common in early Christian paraenesis (cf. 1 Thess 5:1–11; Eph 5:8–14) and creates a sense of urgency: the eschatological dawn is imminent, so believers must live as children of the day.",
-        "cross": [
-          {
-            "ref": "Matt 22:37–40",
-            "note": "Jesus summarises the law in love for God and love for neighbour — the principle Paul applies."
-          },
-          {
-            "ref": "1 Thess 5:4–8",
-            "note": "Believers are children of the day, not of the night — the same day/night eschatological framework."
-          },
-          {
-            "ref": "Gal 5:14",
-            "note": "The entire law is fulfilled in one word: love your neighbour as yourself."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 22:37–40",
+              "note": "Jesus summarises the law in love for God and love for neighbour — the principle Paul applies."
+            },
+            {
+              "ref": "1 Thess 5:4–8",
+              "note": "Believers are children of the day, not of the night — the same day/night eschatological framework."
+            },
+            {
+              "ref": "Gal 5:14",
+              "note": "The entire law is fulfilled in one word: love your neighbour as yourself."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -216,6 +221,9 @@
               "note": "Schreiner emphasises the eschatological framework: ethical exhortation in Paul is never divorced from the expectation of Christ’s return. The nearness of the end makes moral urgency perpetual."
             }
           ]
+        },
+        "hist": {
+          "context": "Romans 13:8–14 transitions from civil duty to love as the fulfilment of the law, then to eschatological urgency as the motivation for holiness. The command to ‘put on the Lord Jesus Christ’ (v. 14) was famously the verse that triggered Augustine’s conversion (Confessions 8.12). The day/night imagery is common in early Christian paraenesis (cf. 1 Thess 5:1–11; Eph 5:8–14) and creates a sense of urgency: the eschatological dawn is imminent, so believers must live as children of the day."
         }
       }
     }

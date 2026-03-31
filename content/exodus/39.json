@@ -31,18 +31,22 @@
             "paragraph": "V.1,3,5,29: The scarlet thread (shĕnî tôlāʿat — literally \"crimson of the worm\") woven into the priestly garments is the dye extracted from the cochineal insect (kermes or coccus ilicis). It appears alongside blue and purple in all the sacred textiles. Scarlet appears also in the Passover Rahab narrative (Josh 2:18), in David's lament (2 Sam 1:24), and in Prov 31:21. Isaiah 1:18: \"Though your sins are like scarlet (kĕshānî), they shall be white as snow.\""
           }
         ],
-        "hist": "The priestly garment construction follows the instructions of chapter 28 with precise fidelity. The twelve gemstones on the breastpiece — carnelian, chrysolite, beryl, turquoise, lapis lazuli, emerald, jacinth, agate, amethyst, topaz, onyx, and jasper — represent the finest stones available through Late Bronze Age trade networks. Several identifications remain uncertain; the Hebrew terms may not correspond exactly to modern gemological categories. Engraving tribal names on gemstones required lapidary skill (ḥārāš ʾeben) attested in Egyptian workshops.",
-        "ctx": "The ephod and breastpiece (vv.2–21) are described in the same detail as their instructions (Exod 28:6–30). The twelve stones on the breastpiece — one for each tribe, each engraved with a name — represent the entire community carried over the high priest's heart. The shoulder stones carry the names as a \"memorial\" (v.7) — a reminder before God. Every tribe, every person, is carried into God's presence by the one who enters on their behalf.",
-        "cross": [
-          {
-            "ref": "Heb 7:25",
-            "note": "Christ \"always lives to intercede\" — the permanent fulfilment of the high priest's representation of Israel."
-          },
-          {
-            "ref": "John 17:9,20",
-            "note": "Jesus' high-priestly prayer: \"I pray for them... I pray also for those who will believe.\" He carries names over his heart before the Father."
-          }
-        ],
+        "hist": {
+          "historical": "The priestly garment construction follows the instructions of chapter 28 with precise fidelity. The twelve gemstones on the breastpiece — carnelian, chrysolite, beryl, turquoise, lapis lazuli, emerald, jacinth, agate, amethyst, topaz, onyx, and jasper — represent the finest stones available through Late Bronze Age trade networks. Several identifications remain uncertain; the Hebrew terms may not correspond exactly to modern gemological categories. Engraving tribal names on gemstones required lapidary skill (ḥārāš ʾeben) attested in Egyptian workshops.",
+          "context": "The ephod and breastpiece (vv.2–21) are described in the same detail as their instructions (Exod 28:6–30). The twelve stones on the breastpiece — one for each tribe, each engraved with a name — represent the entire community carried over the high priest's heart. The shoulder stones carry the names as a \"memorial\" (v.7) — a reminder before God. Every tribe, every person, is carried into God's presence by the one who enters on their behalf."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 7:25",
+              "note": "Christ \"always lives to intercede\" — the permanent fulfilment of the high priest's representation of Israel."
+            },
+            {
+              "ref": "John 17:9,20",
+              "note": "Jesus' high-priestly prayer: \"I pray for them... I pray also for those who will believe.\" He carries names over his heart before the Father."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -142,18 +146,22 @@
             "paragraph": "V.8-21: The breastpiece of judgment (ḥōshen mishpāṭ) bore twelve stones — one for each tribe, engraved with their names. The High Priest carried \"the names of the sons of Israel over his heart... as a continuing memorial before the LORD.\" The people's names were physically present before God whenever the High Priest entered the Most Holy Place. No Israelite was forgotten or anonymous before God: each name was carried by the one who stood for them all."
           }
         ],
-        "hist": "Moses' inspection and blessing of the completed work (v. 43) parallels the divine inspection in Genesis 1:31 ('God saw all that he had made, and it was very good'). The verbal echo is deliberate — the tabernacle is a microcosm, a re-creation of sacred space. The sevenfold repetition of 'as the LORD commanded Moses' throughout chapters 39–40 mirrors the seven days of creation. Ancient Near Eastern temple-building accounts regularly conclude with a divine or royal inspection and pronouncement of approval.",
-        "ctx": "The inspection and blessing of v.43 is the theological climax of the construction narrative. The phrase \"just as the Lord had commanded Moses\" appears seven times in vv.32–43 — one for each day of creation, one for each dimension of the Tabernacle project. The sevenfold confirmation of obedience is the construction narrative's doxology: Israel did everything God said. After the golden calf — where they did what God did not say — this sevenfold confirmation is profound.",
-        "cross": [
-          {
-            "ref": "Gen 1:31",
-            "note": "\"God saw all that he had made, and it was very good.\" Moses' inspection (v.43) deliberately echoes God's creative evaluation. The Tabernacle's construction is a new creation event."
-          },
-          {
-            "ref": "Matt 25:21",
-            "note": "\"Well done, good and faithful servant!\" Moses' blessing is the OT version of this — the master inspects the servants' work and pronounces blessing for faithful execution."
-          }
-        ],
+        "hist": {
+          "historical": "Moses' inspection and blessing of the completed work (v. 43) parallels the divine inspection in Genesis 1:31 ('God saw all that he had made, and it was very good'). The verbal echo is deliberate — the tabernacle is a microcosm, a re-creation of sacred space. The sevenfold repetition of 'as the LORD commanded Moses' throughout chapters 39–40 mirrors the seven days of creation. Ancient Near Eastern temple-building accounts regularly conclude with a divine or royal inspection and pronouncement of approval.",
+          "context": "The inspection and blessing of v.43 is the theological climax of the construction narrative. The phrase \"just as the Lord had commanded Moses\" appears seven times in vv.32–43 — one for each day of creation, one for each dimension of the Tabernacle project. The sevenfold confirmation of obedience is the construction narrative's doxology: Israel did everything God said. After the golden calf — where they did what God did not say — this sevenfold confirmation is profound."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 1:31",
+              "note": "\"God saw all that he had made, and it was very good.\" Moses' inspection (v.43) deliberately echoes God's creative evaluation. The Tabernacle's construction is a new creation event."
+            },
+            {
+              "ref": "Matt 25:21",
+              "note": "\"Well done, good and faithful servant!\" Moses' blessing is the OT version of this — the master inspects the servants' work and pronounces blessing for faithful execution."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

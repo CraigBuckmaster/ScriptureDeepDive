@@ -22,21 +22,22 @@
             "paragraph": "\"Contend (rîbâ), LORD, with those who contend with me\" (v.1). A legal-military psalm. David asks God to take up shield and buckler (v.2), to say to his soul \"I am your salvation\" (v.3). The enemies set traps without cause (v.7), repaid evil for good (v.12), gloated when David stumbled (v.15). David protests his innocence and asks for vindication."
           }
         ],
-        "ctx": "",
-        "cross": [
-          {
-            "ref": "1 Sam 24:1–22",
-            "note": "David's plea for God to fight his accusers resonates with the Saul narratives, where David refused to strike the LORD's anointed and trusted God to judge between them."
-          },
-          {
-            "ref": "Ps 109:1–5",
-            "note": "Psalm 109 develops the same imprecatory pattern: the psalmist's enemies repay good with evil. Both psalms combine urgent pleas for justice with affirmations of personal innocence."
-          },
-          {
-            "ref": "Matt 5:11–12",
-            "note": "Jesus' teaching — 'Blessed are you when people insult you, persecute you and falsely say all kinds of evil against you' — addresses the same situation of unjust accusation that drives Psalm 35."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Sam 24:1–22",
+              "note": "David's plea for God to fight his accusers resonates with the Saul narratives, where David refused to strike the LORD's anointed and trusted God to judge between them."
+            },
+            {
+              "ref": "Ps 109:1–5",
+              "note": "Psalm 109 develops the same imprecatory pattern: the psalmist's enemies repay good with evil. Both psalms combine urgent pleas for justice with affirmations of personal innocence."
+            },
+            {
+              "ref": "Matt 5:11–12",
+              "note": "Jesus' teaching — 'Blessed are you when people insult you, persecute you and falsely say all kinds of evil against you' — addresses the same situation of unjust accusation that drives Psalm 35."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -127,6 +128,9 @@
               "note": "Goldingay: 'How long, Lord, will you look on?' — the accusation of divine spectatorship is bold. The psalmist charges God not with absence but with inaction — watching suffering without intervening."
             }
           ]
+        },
+        "hist": {
+          "context": ""
         }
       }
     },
@@ -144,17 +148,18 @@
             "paragraph": "\"Vindicate me in your righteousness (ṣidqâ), LORD my God\" (v.24). The psalm moves from plea to confidence. David asks that those who delight in his vindication will praise God continually (v.27). God’s tongue will proclaim his righteousness all day long (v.28)."
           }
         ],
-        "ctx": "",
-        "cross": [
-          {
-            "ref": "Ps 22:22",
-            "note": "The vow to praise God 'in the great assembly' (v. 18) echoes Psalm 22:22. Both psalms move from desperate plea to confident anticipation of public thanksgiving — lament resolved in worship."
-          },
-          {
-            "ref": "John 15:25",
-            "note": "Jesus quotes 'They hated me without reason' (v. 19), applying Psalm 35 (and Ps 69:4) to his own experience. The psalmist's innocent suffering becomes a type of Christ's passion."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 22:22",
+              "note": "The vow to praise God 'in the great assembly' (v. 18) echoes Psalm 22:22. Both psalms move from desperate plea to confident anticipation of public thanksgiving — lament resolved in worship."
+            },
+            {
+              "ref": "John 15:25",
+              "note": "Jesus quotes 'They hated me without reason' (v. 19), applying Psalm 35 (and Ps 69:4) to his own experience. The psalmist's innocent suffering becomes a type of Christ's passion."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -245,6 +250,9 @@
               "note": "Goldingay: the psalm resolves not with the enemies' punishment but with the community's worship. The vindication is social: those who sided with the psalmist celebrate. Justice is communal, not solitary."
             }
           ]
+        },
+        "hist": {
+          "context": ""
         }
       }
     }

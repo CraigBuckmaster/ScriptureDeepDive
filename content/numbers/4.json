@@ -31,17 +31,18 @@
             "paragraph": "The Kohathites must not watch Aaron and his sons cover the objects for transport. The holy things in their transitional state — being wrapped but not yet fully covered — are supremely dangerous. Even the most privileged Levites are excluded from the act of covering itself."
           }
         ],
-        "ctx": "Numbers 4 specifies the exact transport protocols for each Levitical clan. The Kohathites carry the most holy objects — but only after Aaron and his sons have covered them. The sequence is precise: ark covered with the veil from before the Lord → badger skin → blue cloth; table → blue cloth → scarlet cloth → badger skin; lampstand → blue cloth → badger skin; altars → blue cloth → badger skin. Every sacred object has a specific wrapping order. The Kohathites then carry these without touching them (using poles or frames). Anyone who touches the holy objects or even looks at them uncovered dies (v.20).",
-        "cross": [
-          {
-            "ref": "2 Sam 6:6–7",
-            "note": "Uzzah touched the ark to steady it and died. The Num 4:15 protocol — \"they must not touch the holy things or they will die\" — was not merely Levitical fine print but a description of the actual lethal character of holiness mishandled."
-          },
-          {
-            "ref": "Heb 9:5",
-            "note": "\"Above the ark were the cherubim of the Glory, overshadowing the atonement cover.\" The writer of Hebrews describes the ark's mercy seat — the very surface covered in the precise order of Num 4:5–6 — as the locus of the divine Glory."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 6:6–7",
+              "note": "Uzzah touched the ark to steady it and died. The Num 4:15 protocol — \"they must not touch the holy things or they will die\" — was not merely Levitical fine print but a description of the actual lethal character of holiness mishandled."
+            },
+            {
+              "ref": "Heb 9:5",
+              "note": "\"Above the ark were the cherubim of the Glory, overshadowing the atonement cover.\" The writer of Hebrews describes the ark's mercy seat — the very surface covered in the precise order of Num 4:5–6 — as the locus of the divine Glory."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Ashley: The narrative context of Levitical duties in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Numbers 4 specifies the exact transport protocols for each Levitical clan. The Kohathites carry the most holy objects — but only after Aaron and his sons have covered them. The sequence is precise: ark covered with the veil from before the Lord → badger skin → blue cloth; table → blue cloth → scarlet cloth → badger skin; lampstand → blue cloth → badger skin; altars → blue cloth → badger skin. Every sacred object has a specific wrapping order. The Kohathites then carry these without touching them (using poles or frames). Anyone who touches the holy objects or even looks at them uncovered dies (v.20)."
         }
       }
     },
@@ -123,17 +127,18 @@
             "paragraph": "The service age is 30–50 for all Levitical clans. The Hebrew ṣābāʾ (service/army/host) is the same word used for the military census — Levitical sanctuary service is treated with the same seriousness as military service. Both are forms of covenant warfare."
           }
         ],
-        "ctx": "The Gershonites (vv.21–28) carry the curtains, coverings, screens, and ropes — the fabric components of the tabernacle. The Merarites (vv.29–33) carry the structural elements: boards, crossbars, posts, bases — the heavy skeleton of the sanctuary. Both clans serve under the direction of the Aaronic priests (Ithamar son of Aaron coordinates both). The service age of 30–50 is significant: Moses and Aaron presumably counted these men separately from the general census (ages 20–60). The chapter closes with the totals: Kohath 2,750; Gershon 2,630; Merari 3,200 — total Levites in active service: 8,580.",
-        "cross": [
-          {
-            "ref": "Luke 3:23",
-            "note": "\"Now Jesus himself was about thirty years old when he began his ministry.\" Jesus begins his public ministry at the same age as the Levites enter full sanctuary service — the connection was not lost on the early church."
-          },
-          {
-            "ref": "1 Chr 23:24–27",
-            "note": "David later lowers the Levitical service age to 20 — the same as the military census age — reflecting the permanent establishment of the temple and reduced need for the heavy physical transport work of the wilderness period."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 3:23",
+              "note": "\"Now Jesus himself was about thirty years old when he began his ministry.\" Jesus begins his public ministry at the same age as the Levites enter full sanctuary service — the connection was not lost on the early church."
+            },
+            {
+              "ref": "1 Chr 23:24–27",
+              "note": "David later lowers the Levitical service age to 20 — the same as the military census age — reflecting the permanent establishment of the temple and reduced need for the heavy physical transport work of the wilderness period."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -198,6 +203,9 @@
               "note": "Ashley: The narrative context of Levitical duties in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "The Gershonites (vv.21–28) carry the curtains, coverings, screens, and ropes — the fabric components of the tabernacle. The Merarites (vv.29–33) carry the structural elements: boards, crossbars, posts, bases — the heavy skeleton of the sanctuary. Both clans serve under the direction of the Aaronic priests (Ithamar son of Aaron coordinates both). The service age of 30–50 is significant: Moses and Aaron presumably counted these men separately from the general census (ages 20–60). The chapter closes with the totals: Kohath 2,750; Gershon 2,630; Merari 3,200 — total Levites in active service: 8,580."
         }
       }
     }

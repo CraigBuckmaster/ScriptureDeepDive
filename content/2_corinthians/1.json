@@ -31,17 +31,18 @@
             "paragraph": "The noun thlipsis (affliction, distress) appears five times in vv. 4–8. In classical Greek the term denotes physical pressure (pressing grapes); metaphorically it describes the crushing weight of adversity. Paul uses thlipsis as a near-technical term for the eschatological tribulation that characterises the present age (Rom 5:3; 8:35). His own afflictions are not random misfortune but participation in the messianic sufferings that precede the consummation."
           }
         ],
-        "ctx": "The opening thanksgiving (vv. 3–7) replaces the conventional Pauline thanksgiving for the recipients’ faith with a blessing directed to God as the source of all comfort. This unusual form signals the letter’s central theme: God’s power manifested through human weakness and suffering. The passage establishes a ‘comfort chain’: God → Paul → Corinthians → others. Paul’s afflictions are not meaningless but instrumentally purposeful: they equip him to minister comfort to others who face similar trials. The participatory logic is christological: as believers share in Christ’s sufferings, they share proportionally in his comfort.",
-        "cross": [
-          {
-            "ref": "Rom 5:3–5",
-            "note": "Paul’s theology of suffering in Romans follows the same logic: tribulation produces endurance, endurance produces character, character produces hope. Both passages treat affliction as instrumentally productive rather than merely punitive."
-          },
-          {
-            "ref": "Phil 3:10",
-            "note": "Paul’s desire to ‘know Christ and the power of his resurrection and the fellowship of sharing in his sufferings’ provides the christological framework for the comfort theology of 2 Cor 1."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 5:3–5",
+              "note": "Paul’s theology of suffering in Romans follows the same logic: tribulation produces endurance, endurance produces character, character produces hope. Both passages treat affliction as instrumentally productive rather than merely punitive."
+            },
+            {
+              "ref": "Phil 3:10",
+              "note": "Paul’s desire to ‘know Christ and the power of his resurrection and the fellowship of sharing in his sufferings’ provides the christological framework for the comfort theology of 2 Cor 1."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -102,6 +103,9 @@
               "note": "Harris reads the participatory logic as sacramental: the Corinthians share in Paul’s sufferings and comfort not merely sympathetically but really, by virtue of their common incorporation into Christ. The ‘firm hope’ (v. 7) is eschatologically grounded: the present experience of comfort is a foretaste of the final consolation."
             }
           ]
+        },
+        "hist": {
+          "context": "The opening thanksgiving (vv. 3–7) replaces the conventional Pauline thanksgiving for the recipients’ faith with a blessing directed to God as the source of all comfort. This unusual form signals the letter’s central theme: God’s power manifested through human weakness and suffering. The passage establishes a ‘comfort chain’: God → Paul → Corinthians → others. Paul’s afflictions are not meaningless but instrumentally purposeful: they equip him to minister comfort to others who face similar trials. The participatory logic is christological: as believers share in Christ’s sufferings, they share proportionally in his comfort."
         }
       }
     },
@@ -119,17 +123,18 @@
             "paragraph": "The phrase apokrima tou thanatou (‘sentence of death,’ v. 9) is a legal metaphor: Paul felt he had received the official verdict of execution. The term apokrima is rare, appearing only here in the NT, and denotes an official decision or response. The ‘sentence’ was not judicial but existential: Paul experienced a crisis so severe that he considered himself as good as dead. The purpose clause—‘that we might not rely on ourselves but on God, who raises the dead’—transforms catastrophe into pedagogy."
           }
         ],
-        "ctx": "Paul refers to a specific, life-threatening crisis in the province of Asia (v. 8). The precise event is debated: candidates include a serious illness, imprisonment, the silversmith riot in Ephesus (Acts 19:23–41), or an otherwise unrecorded persecution. Paul’s language (‘far beyond our ability to endure, so that we despaired of life itself’) indicates a near-death experience more severe than any previously described. The theological interpretation is characteristically Pauline: the extremity of the danger served to strip away all self-reliance and redirect trust to ‘God, who raises the dead’ (v. 9). The threefold temporal scheme of deliverance (v. 10: past, present, future) grounds confidence in God’s faithfulness.",
-        "cross": [
-          {
-            "ref": "1 Cor 15:32",
-            "note": "Paul’s reference to ‘fighting wild beasts in Ephesus’ may describe the same or a related episode of extreme danger in the province of Asia."
-          },
-          {
-            "ref": "Acts 19:23–41",
-            "note": "Luke’s account of the Ephesian riot led by the silversmith Demetrius provides one possible historical referent for Paul’s ‘Asian affliction,’ though Paul’s language suggests something even more personally threatening."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 15:32",
+              "note": "Paul’s reference to ‘fighting wild beasts in Ephesus’ may describe the same or a related episode of extreme danger in the province of Asia."
+            },
+            {
+              "ref": "Acts 19:23–41",
+              "note": "Luke’s account of the Ephesian riot led by the silversmith Demetrius provides one possible historical referent for Paul’s ‘Asian affliction,’ though Paul’s language suggests something even more personally threatening."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -186,6 +191,9 @@
               "note": "Harris reads Paul’s boast of integrity (v. 12) as an anticipation of the apologetic argument developed in chs. 10–13. The term haplotēs (integrity, sincerity) is a key term in 2 Corinthians (cf. 8:2; 9:11, 13; 11:3), denoting single-minded devotion untainted by ulterior motives."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul refers to a specific, life-threatening crisis in the province of Asia (v. 8). The precise event is debated: candidates include a serious illness, imprisonment, the silversmith riot in Ephesus (Acts 19:23–41), or an otherwise unrecorded persecution. Paul’s language (‘far beyond our ability to endure, so that we despaired of life itself’) indicates a near-death experience more severe than any previously described. The theological interpretation is characteristically Pauline: the extremity of the danger served to strip away all self-reliance and redirect trust to ‘God, who raises the dead’ (v. 9). The threefold temporal scheme of deliverance (v. 10: past, present, future) grounds confidence in God’s faithfulness."
         }
       }
     },
@@ -209,17 +217,18 @@
             "paragraph": "The verb bebaioō (to confirm, to establish) in v. 21 is a legal term denoting the guarantee or ratification of a contract. God is the one who ‘confirms’ both Paul and the Corinthians ‘in Christ.’ The four participles in vv. 21–22 (confirming, anointing, sealing, giving the deposit) describe a comprehensive divine action: God establishes, commissions, authenticates, and guarantees his people."
           }
         ],
-        "ctx": "Paul’s change of travel plans had provoked criticism: he had promised to visit Corinth but altered his itinerary (cf. 1 Cor 16:5–7). His opponents apparently charged him with fickleness (‘Yes, yes’ and ‘No, no,’ v. 17). Paul’s defence is theological: his trustworthiness mirrors the faithfulness of the God he serves. Just as God’s promises find their ‘Yes’ in Christ (v. 20), so Paul’s word is not vacillating but purposeful. The four divine actions of vv. 21–22 (confirming, anointing, sealing, depositing the Spirit) ground Paul’s reliability in God’s own character. The real reason for the changed plans was pastoral: Paul wished to ‘spare’ the Corinthians another painful visit (vv. 23–24).",
-        "cross": [
-          {
-            "ref": "1 Cor 16:5–7",
-            "note": "Paul’s original travel plan (through Macedonia to Corinth) is the backdrop for the accusations of fickleness addressed here. The change of plan was motivated by pastoral concern, not indecisiveness."
-          },
-          {
-            "ref": "Eph 1:13–14",
-            "note": "The sealing/deposit imagery recurs: believers are ‘marked with a seal, the promised Holy Spirit, who is a deposit guaranteeing our inheritance.’ The same threefold metaphor (anointing, sealing, deposit) describes the Spirit’s work."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 16:5–7",
+              "note": "Paul’s original travel plan (through Macedonia to Corinth) is the backdrop for the accusations of fickleness addressed here. The change of plan was motivated by pastoral concern, not indecisiveness."
+            },
+            {
+              "ref": "Eph 1:13–14",
+              "note": "The sealing/deposit imagery recurs: believers are ‘marked with a seal, the promised Holy Spirit, who is a deposit guaranteeing our inheritance.’ The same threefold metaphor (anointing, sealing, deposit) describes the Spirit’s work."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -280,6 +289,9 @@
               "note": "Harris notes that Paul’s self-correction in v. 24 (‘Not that we lord it over your faith’) is an important qualification of apostolic authority. The verb kyrieuō (to lord it over) echoes Jesus’ teaching that leaders must not exercise authority like Gentile rulers (Mark 10:42–45). Paul’s authority is real but non-coercive: he works ‘with’ the Corinthians, not ‘over’ them."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul’s change of travel plans had provoked criticism: he had promised to visit Corinth but altered his itinerary (cf. 1 Cor 16:5–7). His opponents apparently charged him with fickleness (‘Yes, yes’ and ‘No, no,’ v. 17). Paul’s defence is theological: his trustworthiness mirrors the faithfulness of the God he serves. Just as God’s promises find their ‘Yes’ in Christ (v. 20), so Paul’s word is not vacillating but purposeful. The four divine actions of vv. 21–22 (confirming, anointing, sealing, depositing the Spirit) ground Paul’s reliability in God’s own character. The real reason for the changed plans was pastoral: Paul wished to ‘spare’ the Corinthians another painful visit (vv. 23–24)."
         }
       }
     }

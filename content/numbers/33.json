@@ -25,17 +25,18 @@
             "paragraph": "Each wilderness stop is a massa — a journey-stage, a setting-out. The word occurs 42 times in the itinerary, once for each stage. The wilderness is not a featureless void but a sequence of precisely remembered divine appointments. Each campsite is a moment in God's covenant choreography."
           }
         ],
-        "ctx": "Numbers 33 is the Torah's wilderness travel log — 42 campsite names from Rameses to the plains of Moab. The list names places mentioned elsewhere in Exodus-Numbers and many mentioned nowhere else. Theologically, it proves that God's forty-year custody of Israel was precise, intentional, and remembered. Not a single stage is unnamed or forgotten. The wilderness was not chaos but a divinely orchestrated sequence of divine meetings. The chapter closes (vv.50-56) with the conquest command: drive out the inhabitants, destroy their religious sites, possess the land by lot.",
-        "cross": [
-          {
-            "ref": "Acts 7:36-38",
-            "note": "\"He led them out of Egypt and performed wonders and signs in Egypt, at the Red Sea and for forty years in the wilderness.\" Stephen's speech summarises the wilderness period as a single, divinely led journey — the same theology of the Num 33 itinerary."
-          },
-          {
-            "ref": "Heb 3:7-4:2",
-            "note": "The writer of Hebrews interprets the wilderness journey as a warning pattern for the NT community — the places of failure (Meribah, Kadesh) are the itinerary's theological landmarks."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 7:36-38",
+              "note": "\"He led them out of Egypt and performed wonders and signs in Egypt, at the Red Sea and for forty years in the wilderness.\" Stephen's speech summarises the wilderness period as a single, divinely led journey — the same theology of the Num 33 itinerary."
+            },
+            {
+              "ref": "Heb 3:7-4:2",
+              "note": "The writer of Hebrews interprets the wilderness journey as a warning pattern for the NT community — the places of failure (Meribah, Kadesh) are the itinerary's theological landmarks."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Ashley: The narrative context of itinerary in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Numbers 33 is the Torah's wilderness travel log — 42 campsite names from Rameses to the plains of Moab. The list names places mentioned elsewhere in Exodus-Numbers and many mentioned nowhere else. Theologically, it proves that God's forty-year custody of Israel was precise, intentional, and remembered. Not a single stage is unnamed or forgotten. The wilderness was not chaos but a divinely orchestrated sequence of divine meetings. The chapter closes (vv.50-56) with the conquest command: drive out the inhabitants, destroy their religious sites, possess the land by lot."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "The conquest command issued at the journey's end — remove the Canaanite religious infrastructure (carved images, molten idols, high places) and possess the land by divine assignment. The command is comprehensive and non-negotiable."
           }
         ],
-        "ctx": "The wilderness itinerary closes (v.49) and immediately the conquest command issues (vv.50-56): drive out all inhabitants, destroy their religious sites, take possession by lot. The warning is pointed: if the inhabitants are not driven out, those who remain will become \"barbs in your eyes and thorns in your sides.\" The land belongs to God; he is giving it to Israel; Israel must receive it on his terms. Incomplete obedience will produce incomplete blessing — the Judges narrative will prove this with devastating thoroughness.",
-        "cross": [
-          {
-            "ref": "Judg 2:1-3",
-            "note": "\"I said, 'I will never break my covenant with you, and you shall not make a covenant with the people of this land...' But you have disobeyed me. Why have you done this? And I have also said, 'They will become traps for you, and their gods will become snares to you.'\" Judges fulfils the Num 33:55 warning exactly."
-          },
-          {
-            "ref": "2 Cor 10:3-5",
-            "note": "\"For though we live in the world, we do not wage war as the world does... We demolish arguments and every pretension that sets itself up against the knowledge of God.\" Paul's spiritual warfare language echoes the Num 33 conquest command, applied to the Christian's interior conquest of opposing thought."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Judg 2:1-3",
+              "note": "\"I said, 'I will never break my covenant with you, and you shall not make a covenant with the people of this land...' But you have disobeyed me. Why have you done this? And I have also said, 'They will become traps for you, and their gods will become snares to you.'\" Judges fulfils the Num 33:55 warning exactly."
+            },
+            {
+              "ref": "2 Cor 10:3-5",
+              "note": "\"For though we live in the world, we do not wage war as the world does... We demolish arguments and every pretension that sets itself up against the knowledge of God.\" Paul's spiritual warfare language echoes the Num 33 conquest command, applied to the Christian's interior conquest of opposing thought."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -192,6 +197,9 @@
               "note": "Ashley: The narrative context of itinerary in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "The wilderness itinerary closes (v.49) and immediately the conquest command issues (vv.50-56): drive out all inhabitants, destroy their religious sites, take possession by lot. The warning is pointed: if the inhabitants are not driven out, those who remain will become \"barbs in your eyes and thorns in your sides.\" The land belongs to God; he is giving it to Israel; Israel must receive it on his terms. Incomplete obedience will produce incomplete blessing — the Judges narrative will prove this with devastating thoroughness."
         }
       }
     }

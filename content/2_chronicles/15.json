@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 8,
       "panels": {
-        "ctx": "The Spirit comes on Azariah son of Oded: “The LORD is with you when you are with him. If you seek him, he will be found by you, but if you forsake him, he will forsake you.” This is the Chronicler’s thesis in a single sentence — the verse that governs every royal evaluation in the book. Asa is encouraged to press forward with reform.",
-        "cross": [
-          {
-            "ref": "Jer 29:13",
-            "note": "Azariah's 'if you seek him, he will be found by you' (v. 2) is echoed almost verbatim in Jeremiah's letter to the exiles — the same conditional promise bridging pre-exilic and exilic theology."
-          },
-          {
-            "ref": "Judg 2:10–23",
-            "note": "The description of a time 'without the true God, without a priest to teach, and without the law' (v. 3) mirrors the Judges cycle of apostasy, reflecting Israel's recurring pattern of abandonment and return."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 29:13",
+              "note": "Azariah's 'if you seek him, he will be found by you' (v. 2) is echoed almost verbatim in Jeremiah's letter to the exiles — the same conditional promise bridging pre-exilic and exilic theology."
+            },
+            {
+              "ref": "Judg 2:10–23",
+              "note": "The description of a time 'without the true God, without a priest to teach, and without the law' (v. 3) mirrors the Judges cycle of apostasy, reflecting Israel's recurring pattern of abandonment and return."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "The Chronicler’s characteristic vocabulary and theological framework shape the presentation of these events."
             }
           ]
+        },
+        "hist": {
+          "context": "The Spirit comes on Azariah son of Oded: “The LORD is with you when you are with him. If you seek him, he will be found by you, but if you forsake him, he will forsake you.” This is the Chronicler’s thesis in a single sentence — the verse that governs every royal evaluation in the book. Asa is encouraged to press forward with reform."
         }
       }
     },
@@ -54,17 +58,18 @@
       "verse_start": 9,
       "verse_end": 19,
       "panels": {
-        "ctx": "Asa gathers all Judah and Benjamin “and the people from Ephraim, Manasseh, and Simeon who had settled among them” — northerners who defected to Judah. They enter a covenant to seek the LORD with all their heart. Anyone who does not seek the LORD is to be put to death. They seek God eagerly, and “he was found by them.” Asa even deposes his grandmother Maakah for making an Asherah pole. “Asa’s heart was fully committed to the LORD all his life.”",
-        "cross": [
-          {
-            "ref": "1 Kgs 15:13–14",
-            "note": "Kings notes Asa removed his grandmother Maakah from her position because of her Asherah pole. Chronicles sets this within a covenant renewal ceremony involving sacrifice, an oath, and national rededication."
-          },
-          {
-            "ref": "Deut 13:6–11",
-            "note": "The willingness to depose even the queen mother for idolatry reflects Deuteronomy's radical demand: no family loyalty outweighs covenant fidelity."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 15:13–14",
+              "note": "Kings notes Asa removed his grandmother Maakah from her position because of her Asherah pole. Chronicles sets this within a covenant renewal ceremony involving sacrifice, an oath, and national rededication."
+            },
+            {
+              "ref": "Deut 13:6–11",
+              "note": "The willingness to depose even the queen mother for idolatry reflects Deuteronomy's radical demand: no family loyalty outweighs covenant fidelity."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -82,6 +87,9 @@
               "note": "The Chronicler’s characteristic vocabulary and theological framework shape the presentation of these events."
             }
           ]
+        },
+        "hist": {
+          "context": "Asa gathers all Judah and Benjamin “and the people from Ephraim, Manasseh, and Simeon who had settled among them” — northerners who defected to Judah. They enter a covenant to seek the LORD with all their heart. Anyone who does not seek the LORD is to be put to death. They seek God eagerly, and “he was found by them.” Asa even deposes his grandmother Maakah for making an Asherah pole. “Asa’s heart was fully committed to the LORD all his life.”"
         }
       }
     }

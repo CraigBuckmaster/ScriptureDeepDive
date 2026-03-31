@@ -25,17 +25,18 @@
             "paragraph": "Solomon builds the temple on Mount Moriah (v.1) — the only biblical text that identifies the temple site with the place where Abraham nearly sacrificed Isaac (Gen 22:2). The Chronicler connects three events at one location: Abraham’s binding of Isaac, David’s altar at the threshing floor, and Solomon’s temple. Sacrifice upon sacrifice upon sacrifice."
           }
         ],
-        "ctx": "Construction begins in Solomon’s fourth year, on the site David purchased from Ornan. The Chronicler adds the Moriah identification absent from Kings — connecting the temple to Abraham’s supreme act of faith. Dimensions: 60 cubits long, 20 wide. The portico is 20 cubits wide and 120 cubits high (an enormous figure, perhaps symbolic). The interior is overlaid with gold, decorated with palm trees and chains, and set with precious stones.",
-        "cross": [
-          {
-            "ref": "Gen 22:2",
-            "note": "“Go to the region of Moriah. Sacrifice him there.” Abraham’s near-sacrifice of Isaac. The temple rises where the substitute ram died."
-          },
-          {
-            "ref": "1 Kgs 6:1–10",
-            "note": "The Kings parallel provides more architectural detail; Chronicles adds the Moriah connection."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 22:2",
+              "note": "“Go to the region of Moriah. Sacrifice him there.” Abraham’s near-sacrifice of Isaac. The temple rises where the substitute ram died."
+            },
+            {
+              "ref": "1 Kgs 6:1–10",
+              "note": "The Kings parallel provides more architectural detail; Chronicles adds the Moriah connection."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -53,6 +54,9 @@
               "note": "har hammōriyyāh is the only occurrence linking the temple mount to Gen 22:2. Jewish tradition universally accepted this identification, which became foundational for Jerusalem’s theology of sacred space."
             }
           ]
+        },
+        "hist": {
+          "context": "Construction begins in Solomon’s fourth year, on the site David purchased from Ornan. The Chronicler adds the Moriah identification absent from Kings — connecting the temple to Abraham’s supreme act of faith. Dimensions: 60 cubits long, 20 wide. The portico is 20 cubits wide and 120 cubits high (an enormous figure, perhaps symbolic). The interior is overlaid with gold, decorated with palm trees and chains, and set with precious stones."
         }
       }
     },
@@ -62,17 +66,18 @@
       "verse_start": 10,
       "verse_end": 17,
       "panels": {
-        "ctx": "The Most Holy Place is a perfect 20-cubit cube, overlaid with 600 talents of gold. Two cherubim of olive wood, each with 5-cubit wings, span the entire width of the room (20 cubits wing-tip to wing-tip). They stand facing outward — guarding the entrance to God’s presence. The veil of blue, purple, and crimson separates the holy from the most holy. Two bronze pillars, Jakin and Boaz, stand before the temple — the same pillars Nebuchadnezzar will break up in 2 Kings 25:13.",
-        "cross": [
-          {
-            "ref": "1 Kgs 6:23–28",
-            "note": "The Kings description of the cherubim. Chronicles adds that they face outward, toward the main hall."
-          },
-          {
-            "ref": "Exod 26:31–33",
-            "note": "The tabernacle veil. Solomon’s veil uses the same colours: blue, purple, and crimson."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 6:23–28",
+              "note": "The Kings description of the cherubim. Chronicles adds that they face outward, toward the main hall."
+            },
+            {
+              "ref": "Exod 26:31–33",
+              "note": "The tabernacle veil. Solomon’s veil uses the same colours: blue, purple, and crimson."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -90,6 +95,9 @@
               "note": "yākîn (“he establishes”) and bōʿaz (“in him is strength”) — the names function as theological declarations permanently inscribed at the temple entrance."
             }
           ]
+        },
+        "hist": {
+          "context": "The Most Holy Place is a perfect 20-cubit cube, overlaid with 600 talents of gold. Two cherubim of olive wood, each with 5-cubit wings, span the entire width of the room (20 cubits wing-tip to wing-tip). They stand facing outward — guarding the entrance to God’s presence. The veil of blue, purple, and crimson separates the holy from the most holy. Two bronze pillars, Jakin and Boaz, stand before the temple — the same pillars Nebuchadnezzar will break up in 2 Kings 25:13."
         }
       }
     }

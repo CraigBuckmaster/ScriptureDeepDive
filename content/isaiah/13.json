@@ -25,25 +25,26 @@
             "paragraph": "\"A prophecy (massāʾ) against Babylon that Isaiah son of Amoz saw\" (v.1). The Oracles Against Nations begin. God musters an army (v.4). The Day of the LORD comes: cruel, with wrath and fierce anger (v.9). The stars, sun, and moon go dark (v.10). \"I will punish the world for its evil\" (v.11). People more rare than gold (v.12). Babylon’s infants dashed, houses looted, wives violated (vv.15–16)."
           }
         ],
-        "ctx": "The Oracles Against Nations (chs.13–23) is a standard prophetic genre (cf. Jer 46–51; Ezek 25–32; Amos 1–2). Isaiah places Babylon FIRST even though Assyria was the current threat in the 8th century — a remarkable prophetic anticipation of Babylon’s rise. The cosmic imagery (stars dark, sun black, moon not shining, v.10) becomes the template for NT eschatology: Jesus quotes it in Mark 13:24–25, and Rev 6:12–13 develops it. The Day of the LORD language here is the most developed in First Isaiah.",
-        "cross": [
-          {
-            "ref": "Rev 14:8",
-            "note": "Fallen! Fallen is Babylon the Great! — Revelation’s Babylon-oracle draws from Isa 13."
-          },
-          {
-            "ref": "Mark 13:24–25",
-            "note": "The sun will be darkened, the moon will not give its light, the stars will fall — Jesus quotes Isa 13:10."
-          },
-          {
-            "ref": "Rev 6:12–13",
-            "note": "The sun turned black, the moon turned blood-red, the stars fell — developing Isa 13:10’s cosmic signs."
-          },
-          {
-            "ref": "Jer 50–51",
-            "note": "Jeremiah’s extended Babylon oracle — the same theology with later historical detail."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rev 14:8",
+              "note": "Fallen! Fallen is Babylon the Great! — Revelation’s Babylon-oracle draws from Isa 13."
+            },
+            {
+              "ref": "Mark 13:24–25",
+              "note": "The sun will be darkened, the moon will not give its light, the stars will fall — Jesus quotes Isa 13:10."
+            },
+            {
+              "ref": "Rev 6:12–13",
+              "note": "The sun turned black, the moon turned blood-red, the stars fell — developing Isa 13:10’s cosmic signs."
+            },
+            {
+              "ref": "Jer 50–51",
+              "note": "Jeremiah’s extended Babylon oracle — the same theology with later historical detail."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -116,6 +117,9 @@
               "note": "Childs notes the cosmic imagery moves the text beyond any single historical referent. The text is simultaneously about 539 BC (historical fall) and about the eschaton (final judgment). Both readings are canonical."
             }
           ]
+        },
+        "hist": {
+          "context": "The Oracles Against Nations (chs.13–23) is a standard prophetic genre (cf. Jer 46–51; Ezek 25–32; Amos 1–2). Isaiah places Babylon FIRST even though Assyria was the current threat in the 8th century — a remarkable prophetic anticipation of Babylon’s rise. The cosmic imagery (stars dark, sun black, moon not shining, v.10) becomes the template for NT eschatology: Jesus quotes it in Mark 13:24–25, and Rev 6:12–13 develops it. The Day of the LORD language here is the most developed in First Isaiah."
         }
       }
     },
@@ -133,25 +137,26 @@
             "paragraph": "\"Babylon, the jewel (tifʾĕreṭ) of kingdoms, the pride and glory of the Babylonians, will be overthrown by God like Sodom and Gomorrah\" (v.19). God stirs up the Medes against them (v.17). Babylon will never be inhabited again (v.20). Desert creatures, owls, wild goats, hyenas, and jackals will fill her (vv.21–22). \"Her time is at hand, and her days will not be prolonged\" (v.22)."
           }
         ],
-        "ctx": "The Medes (v.17) were the initial conquerors of Babylon — Cyrus the Persian allied with the Medes before conquering Babylon in 539 BC. The \"never inhabited again\" prophecy was progressively fulfilled: Babylon declined under the Persians, was partially rebuilt by Alexander (who died there in 323 BC), then gradually abandoned. By the first century AD it was largely deserted. Today the ruins near Hillah, Iraq, are uninhabited. The Sodom-Gomorrah comparison (v.19) frames Babylon’s fall as divine judgment, not merely political overthrow.",
-        "cross": [
-          {
-            "ref": "Gen 19:24–25",
-            "note": "The LORD rained sulfur on Sodom and Gomorrah — the template for Isa 13:19’s comparison."
-          },
-          {
-            "ref": "Jer 51:37",
-            "note": "Babylon will be a heap of ruins, a haunt of jackals — Jeremiah’s parallel desolation prophecy."
-          },
-          {
-            "ref": "Rev 18:2",
-            "note": "Fallen! A haunt for demons and every impure spirit — Revelation’s development of Isa 13:20–22’s desolation."
-          },
-          {
-            "ref": "Isa 14:22–23",
-            "note": "I will cut off from Babylon her name and survivors — the follow-up in the next chapter."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 19:24–25",
+              "note": "The LORD rained sulfur on Sodom and Gomorrah — the template for Isa 13:19’s comparison."
+            },
+            {
+              "ref": "Jer 51:37",
+              "note": "Babylon will be a heap of ruins, a haunt of jackals — Jeremiah’s parallel desolation prophecy."
+            },
+            {
+              "ref": "Rev 18:2",
+              "note": "Fallen! A haunt for demons and every impure spirit — Revelation’s development of Isa 13:20–22’s desolation."
+            },
+            {
+              "ref": "Isa 14:22–23",
+              "note": "I will cut off from Babylon her name and survivors — the follow-up in the next chapter."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -220,6 +225,9 @@
               "note": "Childs notes the wild-animal catalogue reverses creation’s order: where God placed humans to rule, animals now roam undomesticated. Empire’s fall is de-creation."
             }
           ]
+        },
+        "hist": {
+          "context": "The Medes (v.17) were the initial conquerors of Babylon — Cyrus the Persian allied with the Medes before conquering Babylon in 539 BC. The \"never inhabited again\" prophecy was progressively fulfilled: Babylon declined under the Persians, was partially rebuilt by Alexander (who died there in 323 BC), then gradually abandoned. By the first century AD it was largely deserted. Today the ruins near Hillah, Iraq, are uninhabited. The Sodom-Gomorrah comparison (v.19) frames Babylon’s fall as divine judgment, not merely political overthrow."
         }
       }
     }

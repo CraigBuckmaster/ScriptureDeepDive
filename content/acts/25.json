@@ -54,21 +54,22 @@
             "current": false
           }
         ],
-        "ctx": "Paul's appeal to Caesar is both a legal manoeuvre and a providential fulfilment. Legally it uses the provocatio ad Caesarem — the Roman citizen's right to appeal to the emperor when provincial justice fails. Providentially it fulfils Acts 23:11: 'you must also testify in Rome.' Paul does not passively wait for God to move him to Rome — he invokes the legal mechanism that will get him there. His active participation in the providential plan is characteristically Pauline.",
-        "cross": [
-          {
-            "ref": "Acts 23:11",
-            "note": "\"As you have testified about me in Jerusalem, so you must also testify in Rome\" — the Lord's directive that Paul's appeal now fulfils."
-          },
-          {
-            "ref": "Acts 19:21",
-            "note": "\"After I have been there, I must also visit Rome\" — Paul's own anticipation, now becoming reality."
-          },
-          {
-            "ref": "Acts 26:32",
-            "note": "\"This man could have been set free if he had not appealed to Caesar\" — confirming the appeal was Paul's own decision."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 23:11",
+              "note": "\"As you have testified about me in Jerusalem, so you must also testify in Rome\" — the Lord's directive that Paul's appeal now fulfils."
+            },
+            {
+              "ref": "Acts 19:21",
+              "note": "\"After I have been there, I must also visit Rome\" — Paul's own anticipation, now becoming reality."
+            },
+            {
+              "ref": "Acts 26:32",
+              "note": "\"This man could have been set free if he had not appealed to Caesar\" — confirming the appeal was Paul's own decision."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -133,6 +134,9 @@
               "note": "Keener provides background on the provocatio ad Caesarem. This right, available to Roman citizens since the Lex Valeria (509 BC), allowed any citizen to appeal to the emperor when facing capital punishment in the provinces. Festus had no legal option but to accept the appeal once invoked."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul's appeal to Caesar is both a legal manoeuvre and a providential fulfilment. Legally it uses the provocatio ad Caesarem — the Roman citizen's right to appeal to the emperor when provincial justice fails. Providentially it fulfils Acts 23:11: 'you must also testify in Rome.' Paul does not passively wait for God to move him to Rome — he invokes the legal mechanism that will get him there. His active participation in the providential plan is characteristically Pauline."
         }
       }
     },
@@ -179,21 +183,22 @@
             "current": false
           }
         ],
-        "ctx": "Festus's description of Paul's case to Agrippa (vv.14–21) is Luke's masterstroke of irony. The governor — without intending to — gives the most concise and accurate summary of the Gospel in Acts: 'some points of dispute about their own religion and about a dead man named Jesus who Paul claimed was alive.' Festus is baffled; Paul is preaching the resurrection; and the reader understands that Festus has accidentally described the most important fact in history as a legal technicality.",
-        "cross": [
-          {
-            "ref": "Acts 24:27",
-            "note": "\"Felix wanted to grant a favor to the Jews\" — the same political calculation that imprisoned Paul under Felix now threatens him under Festus (25:9). The pattern of justice compromised by political calculation recurs."
-          },
-          {
-            "ref": "Acts 26:31–32",
-            "note": "\"This man is not doing anything that deserves death or imprisonment\" — Agrippa's verdict after the hearing this chapter sets up."
-          },
-          {
-            "ref": "Luke 21:12–13",
-            "note": "\"They will seize you and persecute you... you will stand before kings and governors, and all on account of my name. And so you will bear testimony to me\" — Jesus's prediction being fulfilled precisely."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 24:27",
+              "note": "\"Felix wanted to grant a favor to the Jews\" — the same political calculation that imprisoned Paul under Felix now threatens him under Festus (25:9). The pattern of justice compromised by political calculation recurs."
+            },
+            {
+              "ref": "Acts 26:31–32",
+              "note": "\"This man is not doing anything that deserves death or imprisonment\" — Agrippa's verdict after the hearing this chapter sets up."
+            },
+            {
+              "ref": "Luke 21:12–13",
+              "note": "\"They will seize you and persecute you... you will stand before kings and governors, and all on account of my name. And so you will bear testimony to me\" — Jesus's prediction being fulfilled precisely."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -258,6 +263,9 @@
               "note": "Keener notes the Roman legal requirement of the apostoli (written statement of charges) when transferring a prisoner to Rome. Without specifying charges, Festus could face legal consequences for an irregular transfer. The Agrippa hearing is both a courtesy to the royal visitor and a practical legal necessity."
             }
           ]
+        },
+        "hist": {
+          "context": "Festus's description of Paul's case to Agrippa (vv.14–21) is Luke's masterstroke of irony. The governor — without intending to — gives the most concise and accurate summary of the Gospel in Acts: 'some points of dispute about their own religion and about a dead man named Jesus who Paul claimed was alive.' Festus is baffled; Paul is preaching the resurrection; and the reader understands that Festus has accidentally described the most important fact in history as a legal technicality."
         }
       }
     }

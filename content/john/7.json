@@ -28,21 +28,22 @@
             "paragraph": "The crowd's amazement at Jesus's teaching without formal rabbinic education (v.15) frames the discourse. Jesus's response (v.16-17) distinguishes teaching that seeks its own glory from teaching that glorifies the one who sent it. The criterion of truth is not source credentials but alignment with God's will — a criterion available to anyone willing to do God's will."
           }
         ],
-        "ctx": "[('The Feast of Tabernacles', 'Sukkot (Tabernacles) was the most joyful of the three pilgrimage feasts, celebrating the harvest and commemorating the wilderness wandering. For seven days, Israelites lived in temporary booths (sukkoth). The feast included the water-drawing ceremony (Simchat Beit HaSho\\'evah): priests drew water from the Pool of Siloam each morning and poured it on the altar, accompanied by singing and flute-playing. The feast also included the illumination ceremony: four golden lampstands in the Temple\\'s Court of Women. Jesus\\'s declarations in ch.7-8 (\"rivers of living water,\" \"I am the light of the world\") directly address these two ceremonies.'), ('Messianic Speculation', 'The debate about whether Jesus is the Messiah runs through the chapter in multiple registers: (1) does he have the right Galilean origin? (2) does no one know where the Messiah comes from? (3) will the Messiah do more signs? (4) will authorities protect him if he\\'s the Messiah? John presents the irony that all these speculations miss the deeper truth: Jesus\\'s true origin is not Bethlehem or Galilee but \"from him who sent me\" — from the Father.')]",
-        "cross": [
-          {
-            "ref": "Lev 23:33-43",
-            "note": "The Feast of Tabernacles commanded in Torah — the seven-day feast of booths commemorating the wilderness wandering."
-          },
-          {
-            "ref": "Deut 18:15-18",
-            "note": "\"The Lord your God will raise up for you a prophet like me from among you\" — \"the Prophet\" the crowd expects (v.40), one of the messianic categories in play throughout the chapter."
-          },
-          {
-            "ref": "Zech 14:16-19",
-            "note": "The eschatological promise that all nations will come to Jerusalem for the Feast of Tabernacles — the eschatological horizon behind the feast Jesus attends."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 23:33-43",
+              "note": "The Feast of Tabernacles commanded in Torah — the seven-day feast of booths commemorating the wilderness wandering."
+            },
+            {
+              "ref": "Deut 18:15-18",
+              "note": "\"The Lord your God will raise up for you a prophet like me from among you\" — \"the Prophet\" the crowd expects (v.40), one of the messianic categories in play throughout the chapter."
+            },
+            {
+              "ref": "Zech 14:16-19",
+              "note": "The eschatological promise that all nations will come to Jerusalem for the Feast of Tabernacles — the eschatological horizon behind the feast Jesus attends."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -102,6 +103,9 @@
               "note": "Augustine: \"If anyone wills to do his will, he shall know whether the teaching is from God or whether I speak from myself. The will is prior to the knowledge. The door to knowledge is opened by the will. Not to know first and then to will, but to will first in order to know.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Feast of Tabernacles', 'Sukkot (Tabernacles) was the most joyful of the three pilgrimage feasts, celebrating the harvest and commemorating the wilderness wandering. For seven days, Israelites lived in temporary booths (sukkoth). The feast included the water-drawing ceremony (Simchat Beit HaSho\\'evah): priests drew water from the Pool of Siloam each morning and poured it on the altar, accompanied by singing and flute-playing. The feast also included the illumination ceremony: four golden lampstands in the Temple\\'s Court of Women. Jesus\\'s declarations in ch.7-8 (\"rivers of living water,\" \"I am the light of the world\") directly address these two ceremonies.'), ('Messianic Speculation', 'The debate about whether Jesus is the Messiah runs through the chapter in multiple registers: (1) does he have the right Galilean origin? (2) does no one know where the Messiah comes from? (3) will the Messiah do more signs? (4) will authorities protect him if he\\'s the Messiah? John presents the irony that all these speculations miss the deeper truth: Jesus\\'s true origin is not Bethlehem or Galilee but \"from him who sent me\" — from the Father.')]"
         }
       }
     },
@@ -119,21 +123,22 @@
             "paragraph": "Jesus's declaration on the last day of Tabernacles (v.37-38) alludes directly to the water-drawing ceremony of Sukkot — the daily procession from the Pool of Siloam to the Temple altar. Where the ceremony used water from a pool in Jerusalem, Jesus offers rivers of living water flowing from within the believer. John's interpretation (v.39) is unambiguous: the rivers of living water are the Holy Spirit, not yet given because Jesus had not yet been glorified (the cross and resurrection)."
           }
         ],
-        "ctx": "[('The Last Day of the Feast', 'The seventh day of Tabernacles was marked by a sevenfold procession around the altar with the water-drawing ceremony, recalling the fall of Jericho. Some traditions held that the eighth day (Shemini Atzeret) was the climactic day. Jesus chooses this specific moment — the water ceremony at its most elaborate — to declare himself the source of the water the ceremony pointed to.'), (\"Nicodemus's Intervention\", 'Nicodemus\\'s second appearance (v.50-52) shows his gradual movement toward Jesus. He does not yet confess Jesus openly; he appeals to procedural justice — \"does our law condemn a man without first hearing him?\" It is not much, but it is more than silence. The Pharisees\\' contemptuous response (\"are you from Galilee, too?\") treats any sympathy with Jesus as disqualifying.')]",
-        "cross": [
-          {
-            "ref": "Isa 55:1",
-            "note": "\"Come, all you who are thirsty, come to the waters\" — the invitation echoed in Jesus's cry \"let anyone who is thirsty come to me.\""
-          },
-          {
-            "ref": "Zech 14:8",
-            "note": "\"Living water will flow out from Jerusalem... in summer and in winter\" — the eschatological living-water promise Jesus claims to fulfil."
-          },
-          {
-            "ref": "Ezek 47:1-12",
-            "note": "The river flowing from the Temple in Ezekiel's vision — perhaps the closest OT antecedent to \"rivers of living water flowing from within.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 55:1",
+              "note": "\"Come, all you who are thirsty, come to the waters\" — the invitation echoed in Jesus's cry \"let anyone who is thirsty come to me.\""
+            },
+            {
+              "ref": "Zech 14:8",
+              "note": "\"Living water will flow out from Jerusalem... in summer and in winter\" — the eschatological living-water promise Jesus claims to fulfil."
+            },
+            {
+              "ref": "Ezek 47:1-12",
+              "note": "The river flowing from the Temple in Ezekiel's vision — perhaps the closest OT antecedent to \"rivers of living water flowing from within.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -189,6 +194,9 @@
               "note": "Chrysostom: \"No man spoke like this man. What an extraordinary confession from those sent to arrest him! They go out as officers of the law and come back as witnesses to his authority. Their office required them to seize him; his words required them to stand and listen. The words were stronger than their orders.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Last Day of the Feast', 'The seventh day of Tabernacles was marked by a sevenfold procession around the altar with the water-drawing ceremony, recalling the fall of Jericho. Some traditions held that the eighth day (Shemini Atzeret) was the climactic day. Jesus chooses this specific moment — the water ceremony at its most elaborate — to declare himself the source of the water the ceremony pointed to.'), (\"Nicodemus's Intervention\", 'Nicodemus\\'s second appearance (v.50-52) shows his gradual movement toward Jesus. He does not yet confess Jesus openly; he appeals to procedural justice — \"does our law condemn a man without first hearing him?\" It is not much, but it is more than silence. The Pharisees\\' contemptuous response (\"are you from Galilee, too?\") treats any sympathy with Jesus as disqualifying.')]"
         }
       }
     },
@@ -212,21 +220,22 @@
             "paragraph": "The crowd's amazement at Jesus's teaching without formal rabbinic education (v.15) frames the discourse. Jesus's response (v.16-17) distinguishes teaching that seeks its own glory from teaching that glorifies the one who sent it. The criterion of truth is not source credentials but alignment with God's will — a criterion available to anyone willing to do God's will."
           }
         ],
-        "ctx": "[('The Feast of Tabernacles', 'Sukkot (Tabernacles) was the most joyful of the three pilgrimage feasts, celebrating the harvest and commemorating the wilderness wandering. For seven days, Israelites lived in temporary booths (sukkoth). The feast included the water-drawing ceremony (Simchat Beit HaSho\\'evah): priests drew water from the Pool of Siloam each morning and poured it on the altar, accompanied by singing and flute-playing. The feast also included the illumination ceremony: four golden lampstands in the Temple\\'s Court of Women. Jesus\\'s declarations in ch.7-8 (\"rivers of living water,\" \"I am the light of the world\") directly address these two ceremonies.'), ('Messianic Speculation', 'The debate about whether Jesus is the Messiah runs through the chapter in multiple registers: (1) does he have the right Galilean origin? (2) does no one know where the Messiah comes from? (3) will the Messiah do more signs? (4) will authorities protect him if he\\'s the Messiah? John presents the irony that all these speculations miss the deeper truth: Jesus\\'s true origin is not Bethlehem or Galilee but \"from him who sent me\" — from the Father.')]",
-        "cross": [
-          {
-            "ref": "Lev 23:33-43",
-            "note": "The Feast of Tabernacles commanded in Torah — the seven-day feast of booths commemorating the wilderness wandering."
-          },
-          {
-            "ref": "Deut 18:15-18",
-            "note": "\"The Lord your God will raise up for you a prophet like me from among you\" — \"the Prophet\" the crowd expects (v.40), one of the messianic categories in play throughout the chapter."
-          },
-          {
-            "ref": "Zech 14:16-19",
-            "note": "The eschatological promise that all nations will come to Jerusalem for the Feast of Tabernacles — the eschatological horizon behind the feast Jesus attends."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 23:33-43",
+              "note": "The Feast of Tabernacles commanded in Torah — the seven-day feast of booths commemorating the wilderness wandering."
+            },
+            {
+              "ref": "Deut 18:15-18",
+              "note": "\"The Lord your God will raise up for you a prophet like me from among you\" — \"the Prophet\" the crowd expects (v.40), one of the messianic categories in play throughout the chapter."
+            },
+            {
+              "ref": "Zech 14:16-19",
+              "note": "The eschatological promise that all nations will come to Jerusalem for the Feast of Tabernacles — the eschatological horizon behind the feast Jesus attends."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -286,6 +295,9 @@
               "note": "Augustine: \"If anyone wills to do his will, he shall know whether the teaching is from God or whether I speak from myself. The will is prior to the knowledge. The door to knowledge is opened by the will. Not to know first and then to will, but to will first in order to know.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Feast of Tabernacles', 'Sukkot (Tabernacles) was the most joyful of the three pilgrimage feasts, celebrating the harvest and commemorating the wilderness wandering. For seven days, Israelites lived in temporary booths (sukkoth). The feast included the water-drawing ceremony (Simchat Beit HaSho\\'evah): priests drew water from the Pool of Siloam each morning and poured it on the altar, accompanied by singing and flute-playing. The feast also included the illumination ceremony: four golden lampstands in the Temple\\'s Court of Women. Jesus\\'s declarations in ch.7-8 (\"rivers of living water,\" \"I am the light of the world\") directly address these two ceremonies.'), ('Messianic Speculation', 'The debate about whether Jesus is the Messiah runs through the chapter in multiple registers: (1) does he have the right Galilean origin? (2) does no one know where the Messiah comes from? (3) will the Messiah do more signs? (4) will authorities protect him if he\\'s the Messiah? John presents the irony that all these speculations miss the deeper truth: Jesus\\'s true origin is not Bethlehem or Galilee but \"from him who sent me\" — from the Father.')]"
         }
       }
     }

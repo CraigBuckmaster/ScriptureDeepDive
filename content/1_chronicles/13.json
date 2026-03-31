@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 8,
       "panels": {
-        "ctx": "David consults “the whole assembly of Israel” about bringing the ark from Kiriath Jearim, where it has rested since the Philistines returned it (1 Sam 7:1). The Chronicler adds a detail absent from Samuel: “Let us also send word to the rest of our people throughout the territories of Israel... to come and join us.” The “all Israel” theme extends to the ark’s transport — this is a national event, not a royal decision. The ark is placed on a new cart and the procession begins with music and celebration.",
-        "cross": [
-          {
-            "ref": "2 Sam 6:1–5",
-            "note": "The parallel in Samuel focuses on David and 30,000 chosen men. The Chronicler expands the participants to “all Israel.”"
-          },
-          {
-            "ref": "1 Sam 7:1–2",
-            "note": "The ark at Kiriath Jearim for 20 years. The Chronicler doesn’t narrate this background but assumes it."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 6:1–5",
+              "note": "The parallel in Samuel focuses on David and 30,000 chosen men. The Chronicler expands the participants to “all Israel.”"
+            },
+            {
+              "ref": "1 Sam 7:1–2",
+              "note": "The ark at Kiriath Jearim for 20 years. The Chronicler doesn’t narrate this background but assumes it."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "“We did not inquire of it” — the verb darash (“seek/inquire”) is the Chronicler’s key theological term. Not seeking the ark = not seeking God."
             }
           ]
+        },
+        "hist": {
+          "context": "David consults “the whole assembly of Israel” about bringing the ark from Kiriath Jearim, where it has rested since the Philistines returned it (1 Sam 7:1). The Chronicler adds a detail absent from Samuel: “Let us also send word to the rest of our people throughout the territories of Israel... to come and join us.” The “all Israel” theme extends to the ark’s transport — this is a national event, not a royal decision. The ark is placed on a new cart and the procession begins with music and celebration."
         }
       }
     },
@@ -54,17 +58,18 @@
       "verse_start": 9,
       "verse_end": 14,
       "panels": {
-        "ctx": "At the threshing floor of Kidon, the oxen stumble. Uzzah reaches out to steady the ark and is struck dead. David is angry and afraid: he names the place Perez Uzzah (“outbreak against Uzzah”) and abandons the transport. The ark goes to the house of Obed-Edom the Gittite, where it remains three months, blessing his household. The episode teaches a brutal lesson: holy objects require holy handling. The cart was an innovation; the law required Levites to carry the ark on poles (Exod 25:14; Num 4:15). David’s zeal was genuine but his method was wrong.",
-        "cross": [
-          {
-            "ref": "Num 4:15",
-            "note": "“The Kohathites are to carry the holy things... they must not touch the holy things or they will die.” The law Uzzah violated."
-          },
-          {
-            "ref": "1 Chr 15:13",
-            "note": "David’s later explanation: “The LORD our God broke out against us because we did not inquire of him about how to do it in the prescribed way.”"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 4:15",
+              "note": "“The Kohathites are to carry the holy things... they must not touch the holy things or they will die.” The law Uzzah violated."
+            },
+            {
+              "ref": "1 Chr 15:13",
+              "note": "David’s later explanation: “The LORD our God broke out against us because we did not inquire of him about how to do it in the prescribed way.”"
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -82,6 +87,9 @@
               "note": "The phrase “because he had put his hand on the ark” (shalach yadō) uses the same language as “stretching out the hand” against something sacred. The act, however reflexive, crossed a covenantal boundary."
             }
           ]
+        },
+        "hist": {
+          "context": "At the threshing floor of Kidon, the oxen stumble. Uzzah reaches out to steady the ark and is struck dead. David is angry and afraid: he names the place Perez Uzzah (“outbreak against Uzzah”) and abandons the transport. The ark goes to the house of Obed-Edom the Gittite, where it remains three months, blessing his household. The episode teaches a brutal lesson: holy objects require holy handling. The cart was an innovation; the law required Levites to carry the ark on poles (Exod 25:14; Num 4:15). David’s zeal was genuine but his method was wrong."
         }
       }
     }

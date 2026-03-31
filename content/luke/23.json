@@ -34,21 +34,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Pilate's Praetorium</div><div class=\"poi-coords\">31.7781 N, 35.2297 E</div><div class=\"poi-text\">Pontius Pilate's Jerusalem residence and judgment hall -- probably Herod's Palace in the upper city rather than the Antonia Fortress. Pilate pronounced his triple declaration of innocence (23:4, 14, 22) from the judgment seat here. The most consequential miscarriage of justice in history: the innocent condemned, the guilty (Barabbas) released.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Herod Antipas's Jerusalem Residence</div><div class=\"poi-coords\">31.7760 N, 35.2300 E</div><div class=\"poi-text\">Herod Antipas maintained a Jerusalem residence for festival seasons. Luke alone records the transfer of Jesus to Herod for examination (23:7-11) -- possible because Herod was in Jerusalem for Passover. His mocking and dressing Jesus in a splendid robe before returning him to Pilate reconciled their prior enmity (23:12).</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Road to Golgotha</div><div class=\"poi-coords\">31.7802 N, 35.2296 E</div><div class=\"poi-text\">The route from the Praetorium to the execution site outside the city wall. Simon of Cyrene was seized on this road and compelled to carry the cross (23:26). Jesus addressed the mourning women of Jerusalem along the way (23:28-31) -- his last public words before the crucifixion, redirecting their grief toward the coming destruction of the city.</div></div>"
         },
-        "ctx": "[(\"Pilate's Triple Declaration\", \"Pilate declares Jesus innocent three times (23:4, 14, 22) — a literary emphasis unique to Luke. The triple declaration mirrors Peter's triple denial and creates a legal framework for the passion: the one condemned to death was declared innocent by the highest Roman authority in the region. Luke's passion narrative is simultaneously a theological document and a legal one.\"), ('The Daughters of Jerusalem', \"Jesus's address to the women (23:28-31) as he carries the cross is unique to Luke. He redirects their mourning from himself to themselves and their children — a prophetic warning of the coming destruction of Jerusalem (21:20-24). The mourning is not wrong, but its object should be redirected. The green tree/dry tree metaphor: if this is what happens to the innocent (Jesus, the green tree), what will happen to the guilty (Jerusalem, the dry tree)?\")]",
-        "cross": [
-          {
-            "ref": "Isa 53:7",
-            "note": "\"He was oppressed and afflicted, yet he did not open his mouth; he was led like a lamb to the slaughter\" — Jesus's silence before Herod (23:9) fulfils the Servant's silence."
-          },
-          {
-            "ref": "Hos 10:8",
-            "note": "\"They will say to the mountains, 'Cover us!' and to the hills, 'Fall on us!'\" — Jesus quotes Hosea as the OT description of the extremity of judgment on unfaithful Israel, applying it to Jerusalem's coming fate."
-          },
-          {
-            "ref": "Acts 4:27-28",
-            "note": "\"Herod and Pontius Pilate met together with the Gentiles and the people of Israel in this city to conspire against your holy servant Jesus\" — the early church's theological reading of the trial narrative, recognising the fulfilment of Psalm 2."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 53:7",
+              "note": "\"He was oppressed and afflicted, yet he did not open his mouth; he was led like a lamb to the slaughter\" — Jesus's silence before Herod (23:9) fulfils the Servant's silence."
+            },
+            {
+              "ref": "Hos 10:8",
+              "note": "\"They will say to the mountains, 'Cover us!' and to the hills, 'Fall on us!'\" — Jesus quotes Hosea as the OT description of the extremity of judgment on unfaithful Israel, applying it to Jerusalem's coming fate."
+            },
+            {
+              "ref": "Acts 4:27-28",
+              "note": "\"Herod and Pontius Pilate met together with the Gentiles and the people of Israel in this city to conspire against your holy servant Jesus\" — the early church's theological reading of the trial narrative, recognising the fulfilment of Psalm 2."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -147,7 +148,10 @@
             "text": "The women return at first light and find the stone rolled away. He is not here; he has risen.",
             "current": false
           }
-        ]
+        ],
+        "hist": {
+          "context": "[(\"Pilate's Triple Declaration\", \"Pilate declares Jesus innocent three times (23:4, 14, 22) — a literary emphasis unique to Luke. The triple declaration mirrors Peter's triple denial and creates a legal framework for the passion: the one condemned to death was declared innocent by the highest Roman authority in the region. Luke's passion narrative is simultaneously a theological document and a legal one.\"), ('The Daughters of Jerusalem', \"Jesus's address to the women (23:28-31) as he carries the cross is unique to Luke. He redirects their mourning from himself to themselves and their children — a prophetic warning of the coming destruction of Jerusalem (21:20-24). The mourning is not wrong, but its object should be redirected. The green tree/dry tree metaphor: if this is what happens to the innocent (Jesus, the green tree), what will happen to the guilty (Jerusalem, the dry tree)?\")]"
+        }
       }
     },
     {
@@ -173,21 +177,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Golgotha / Calvary</div><div class=\"poi-coords\">31.7784 N, 35.2296 E</div><div class=\"poi-text\">The \"Place of the Skull\" -- the crucifixion site traditionally identified with the Church of the Holy Sepulchre (established by Constantine c.AD 325), just outside the first-century city wall. Here Jesus spoke his three words from the cross (Father, forgive them; today you will be in paradise; Father, into your hands I commit my spirit), the sun darkened for three hours, and the Temple veil tore from top to bottom.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Joseph of Arimathea's Tomb</div><div class=\"poi-coords\">31.7784 N, 35.2297 E</div><div class=\"poi-text\">A newly hewn rock tomb near Golgotha (23:53 -- \"one in which no one had yet been laid\"). The proximity to the crucifixion site was providential: the Sabbath was imminent, allowing only enough time to wrap the body in linen before sunset. The women who watched the burial (23:55) would return to the same location on the first day of the week to find the stone rolled away.</div></div>"
         },
-        "ctx": "[('The Three Words from the Cross', 'Luke records three distinct words of Jesus from the cross: (1) \"Father, forgive them\" (23:34); (2) \"Today you will be with me in paradise\" (23:43); (3) \"Father, into your hands I commit my spirit\" (23:46). These three are unique to Luke among the Gospels. Together they present a dying Jesus who intercedes, promises, and entrusts — wholly oriented toward others and toward the Father, not toward himself.'), (\"The Centurion's Verdict\", 'The Roman centurion\\'s response — \"Surely this was a righteous man\" (23:47) — is the third external declaration of innocence in Luke\\'s passion narrative (after Pilate\\'s three declarations and Herod\\'s implicit one). In Matthew and Mark, the centurion says \"Son of God\"; in Luke, \"righteous man\" (dikaios). The Lukan verdict is more judicial — confirming the legal innocence — while the Matthean/Markan version is more Christological.')]",
-        "cross": [
-          {
-            "ref": "Ps 22:18",
-            "note": "\"They divide my clothes among them and cast lots for my garment\" — fulfilled in 23:34."
-          },
-          {
-            "ref": "Ps 31:5",
-            "note": "\"Into your hands I commit my spirit\" — the Psalm verse Jesus quotes as his final word. He dies praying the Psalms."
-          },
-          {
-            "ref": "Isa 53:9",
-            "note": "\"He was assigned a grave with the wicked, and with the rich in his death\" — Joseph of Arimathea's wealthy tomb and the criminals on either side fulfil the double servant text simultaneously."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 22:18",
+              "note": "\"They divide my clothes among them and cast lots for my garment\" — fulfilled in 23:34."
+            },
+            {
+              "ref": "Ps 31:5",
+              "note": "\"Into your hands I commit my spirit\" — the Psalm verse Jesus quotes as his final word. He dies praying the Psalms."
+            },
+            {
+              "ref": "Isa 53:9",
+              "note": "\"He was assigned a grave with the wicked, and with the rich in his death\" — Joseph of Arimathea's wealthy tomb and the criminals on either side fulfil the double servant text simultaneously."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -286,7 +291,10 @@
             "text": "The women return at first light and find the stone rolled away. He is not here; he has risen.",
             "current": false
           }
-        ]
+        ],
+        "hist": {
+          "context": "[('The Three Words from the Cross', 'Luke records three distinct words of Jesus from the cross: (1) \"Father, forgive them\" (23:34); (2) \"Today you will be with me in paradise\" (23:43); (3) \"Father, into your hands I commit my spirit\" (23:46). These three are unique to Luke among the Gospels. Together they present a dying Jesus who intercedes, promises, and entrusts — wholly oriented toward others and toward the Father, not toward himself.'), (\"The Centurion's Verdict\", 'The Roman centurion\\'s response — \"Surely this was a righteous man\" (23:47) — is the third external declaration of innocence in Luke\\'s passion narrative (after Pilate\\'s three declarations and Herod\\'s implicit one). In Matthew and Mark, the centurion says \"Son of God\"; in Luke, \"righteous man\" (dikaios). The Lukan verdict is more judicial — confirming the legal innocence — while the Matthean/Markan version is more Christological.')]"
+        }
       }
     },
     {
@@ -312,21 +320,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Pilate's Praetorium</div><div class=\"poi-coords\">31.7781 N, 35.2297 E</div><div class=\"poi-text\">Pontius Pilate's Jerusalem residence and judgment hall -- probably Herod's Palace in the upper city rather than the Antonia Fortress. Pilate pronounced his triple declaration of innocence (23:4, 14, 22) from the judgment seat here. The most consequential miscarriage of justice in history: the innocent condemned, the guilty (Barabbas) released.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Herod Antipas's Jerusalem Residence</div><div class=\"poi-coords\">31.7760 N, 35.2300 E</div><div class=\"poi-text\">Herod Antipas maintained a Jerusalem residence for festival seasons. Luke alone records the transfer of Jesus to Herod for examination (23:7-11) -- possible because Herod was in Jerusalem for Passover. His mocking and dressing Jesus in a splendid robe before returning him to Pilate reconciled their prior enmity (23:12).</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Road to Golgotha</div><div class=\"poi-coords\">31.7802 N, 35.2296 E</div><div class=\"poi-text\">The route from the Praetorium to the execution site outside the city wall. Simon of Cyrene was seized on this road and compelled to carry the cross (23:26). Jesus addressed the mourning women of Jerusalem along the way (23:28-31) -- his last public words before the crucifixion, redirecting their grief toward the coming destruction of the city.</div></div>"
         },
-        "ctx": "[(\"Pilate's Triple Declaration\", \"Pilate declares Jesus innocent three times (23:4, 14, 22) — a literary emphasis unique to Luke. The triple declaration mirrors Peter's triple denial and creates a legal framework for the passion: the one condemned to death was declared innocent by the highest Roman authority in the region. Luke's passion narrative is simultaneously a theological document and a legal one.\"), ('The Daughters of Jerusalem', \"Jesus's address to the women (23:28-31) as he carries the cross is unique to Luke. He redirects their mourning from himself to themselves and their children — a prophetic warning of the coming destruction of Jerusalem (21:20-24). The mourning is not wrong, but its object should be redirected. The green tree/dry tree metaphor: if this is what happens to the innocent (Jesus, the green tree), what will happen to the guilty (Jerusalem, the dry tree)?\")]",
-        "cross": [
-          {
-            "ref": "Isa 53:7",
-            "note": "\"He was oppressed and afflicted, yet he did not open his mouth; he was led like a lamb to the slaughter\" — Jesus's silence before Herod (23:9) fulfils the Servant's silence."
-          },
-          {
-            "ref": "Hos 10:8",
-            "note": "\"They will say to the mountains, 'Cover us!' and to the hills, 'Fall on us!'\" — Jesus quotes Hosea as the OT description of the extremity of judgment on unfaithful Israel, applying it to Jerusalem's coming fate."
-          },
-          {
-            "ref": "Acts 4:27-28",
-            "note": "\"Herod and Pontius Pilate met together with the Gentiles and the people of Israel in this city to conspire against your holy servant Jesus\" — the early church's theological reading of the trial narrative, recognising the fulfilment of Psalm 2."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 53:7",
+              "note": "\"He was oppressed and afflicted, yet he did not open his mouth; he was led like a lamb to the slaughter\" — Jesus's silence before Herod (23:9) fulfils the Servant's silence."
+            },
+            {
+              "ref": "Hos 10:8",
+              "note": "\"They will say to the mountains, 'Cover us!' and to the hills, 'Fall on us!'\" — Jesus quotes Hosea as the OT description of the extremity of judgment on unfaithful Israel, applying it to Jerusalem's coming fate."
+            },
+            {
+              "ref": "Acts 4:27-28",
+              "note": "\"Herod and Pontius Pilate met together with the Gentiles and the people of Israel in this city to conspire against your holy servant Jesus\" — the early church's theological reading of the trial narrative, recognising the fulfilment of Psalm 2."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -425,7 +434,10 @@
             "text": "The women return at first light and find the stone rolled away. He is not here; he has risen.",
             "current": false
           }
-        ]
+        ],
+        "hist": {
+          "context": "[(\"Pilate's Triple Declaration\", \"Pilate declares Jesus innocent three times (23:4, 14, 22) — a literary emphasis unique to Luke. The triple declaration mirrors Peter's triple denial and creates a legal framework for the passion: the one condemned to death was declared innocent by the highest Roman authority in the region. Luke's passion narrative is simultaneously a theological document and a legal one.\"), ('The Daughters of Jerusalem', \"Jesus's address to the women (23:28-31) as he carries the cross is unique to Luke. He redirects their mourning from himself to themselves and their children — a prophetic warning of the coming destruction of Jerusalem (21:20-24). The mourning is not wrong, but its object should be redirected. The green tree/dry tree metaphor: if this is what happens to the innocent (Jesus, the green tree), what will happen to the guilty (Jerusalem, the dry tree)?\")]"
+        }
       }
     }
   ],

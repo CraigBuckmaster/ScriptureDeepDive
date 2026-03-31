@@ -31,17 +31,18 @@
             "paragraph": "V.11: wisdom (śekel) yields patience (ʾereḵ ʾappô — long of nose, slow to anger). The wise person's patience is not temperamental but theologically grounded: they understand enough to overlook offenses. Patience is the fruit of understanding."
           }
         ],
-        "ctx": "The first half of ch.19 addresses integrity over wealth (v.1), the isolation of poverty (vv.4,6-7), the false witness (vv.5,9), and wisdom-producing patience (v.11). The prudent wife (v.14) is the section's theological climax: she is a divine gift, not an inherited asset.",
-        "cross": [
-          {
-            "ref": "Prov 18:22",
-            "note": "He who finds a wife finds what is good and receives favour from the LORD — the direct parallel to v.14's prudent wife as a divine gift."
-          },
-          {
-            "ref": "Prov 3:13",
-            "note": "Blessed is the one who finds wisdom — the structure of \"finding\" that links wisdom, wife, and divine favour throughout Proverbs."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 18:22",
+              "note": "He who finds a wife finds what is good and receives favour from the LORD — the direct parallel to v.14's prudent wife as a divine gift."
+            },
+            {
+              "ref": "Prov 3:13",
+              "note": "Blessed is the one who finds wisdom — the structure of \"finding\" that links wisdom, wife, and divine favour throughout Proverbs."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "The NET note on tiferet (splendour/glory) for overlooking explains that the one who can overlook has an aesthetic quality — a beauty — in their freedom from the need for restitution."
             }
           ]
+        },
+        "hist": {
+          "context": "The first half of ch.19 addresses integrity over wealth (v.1), the isolation of poverty (vv.4,6-7), the false witness (vv.5,9), and wisdom-producing patience (v.11). The prudent wife (v.14) is the section's theological climax: she is a divine gift, not an inherited asset."
         }
       }
     },
@@ -133,17 +137,18 @@
             "paragraph": "V.21: the LORD's purpose (ʿǎṣâ) is what prevails (tāqûm — stands, is established). The same sovereignty theme as 16:9. Human planning is real and multiplied; divine purpose is singular and final."
           }
         ],
-        "ctx": "The second half contains three of the chapter's most theologically significant verses: kindness to the poor as lending to the LORD (v.17), the LORD's purpose prevailing (v.21), and the fear of the LORD leading to life and contentment (v.23). These form the theological backbone: social ethics, sovereignty, and the life that flows from reverence.",
-        "cross": [
-          {
-            "ref": "Matt 25:40",
-            "note": "Whatever you did for the least of these you did for me — the NT fulfilment of v.17's lending-to-the-LORD principle."
-          },
-          {
-            "ref": "Prov 16:9",
-            "note": "The LORD establishes steps — the same divine sovereignty principle as v.21's prevailing purpose."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 25:40",
+              "note": "Whatever you did for the least of these you did for me — the NT fulfilment of v.17's lending-to-the-LORD principle."
+            },
+            {
+              "ref": "Prov 16:9",
+              "note": "The LORD establishes steps — the same divine sovereignty principle as v.21's prevailing purpose."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -212,6 +217,9 @@
               "note": "The NET note on etsat YHWH (the LORD's counsel/purpose) identifies this as one of the sovereignty proverbs parallel to 16:1–9, framing human planning within divine governance."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half contains three of the chapter's most theologically significant verses: kindness to the poor as lending to the LORD (v.17), the LORD's purpose prevailing (v.21), and the fear of the LORD leading to life and contentment (v.23). These form the theological backbone: social ethics, sovereignty, and the life that flows from reverence."
         }
       }
     }

@@ -31,22 +31,26 @@
             "paragraph": "Egyptian lector-priests skilled in ritual and sacred texts. Their failure here (v.8) sets up the theological point: Egypt's wisdom cannot access what Israel's God reveals."
           }
         ],
-        "hist": "Two years after the cupbearer's release, Pharaoh has two dreams on the same night that his wise men cannot interpret. The cupbearer finally remembers Joseph. The doubling of Pharaoh's dreams is the same device Joseph's own dreams employed (ch.37): divine confirmation through repetition. In Egyptian culture, dreams from the gods were carefully recorded and professionally interpreted; the failure of all of Egypt's experts makes the moment of Joseph's interpretation all the more decisive.",
-        "ctx": "The two-year delay is not a setback — it is precise divine timing. Joseph needed to emerge not when he would have chosen, but when Pharaoh urgently needed him. Every door is closed until the palace door opens. The cupbearer's sudden memory (v.9: \"I remember my offenses today\") is itself providential — guilt and need converge at the exact moment God intends.",
-        "cross": [
-          {
-            "ref": "Dan 2:1–13",
-            "note": "Nebuchadnezzar's dream that none of his wise men can interpret parallels Pharaoh's experience exactly. Both narratives set up a Hebrew exile who succeeds where court professionals fail — divine wisdom outperforms human expertise."
-          },
-          {
-            "ref": "Gen 40:1–23",
-            "note": "The cupbearer finally remembers Joseph — two full years after Joseph interpreted his dream correctly. The 'chief cupbearer did not remember Joseph; he forgot him' (40:23) is resolved here through Pharaoh's distress."
-          },
-          {
-            "ref": "Ps 105:16–22",
-            "note": "The psalm summarises: God 'sent a man before them — Joseph, sold as a slave … the king sent and released him.' The dream sequence is liturgically remembered as providential rescue."
-          }
-        ],
+        "hist": {
+          "historical": "Two years after the cupbearer's release, Pharaoh has two dreams on the same night that his wise men cannot interpret. The cupbearer finally remembers Joseph. The doubling of Pharaoh's dreams is the same device Joseph's own dreams employed (ch.37): divine confirmation through repetition. In Egyptian culture, dreams from the gods were carefully recorded and professionally interpreted; the failure of all of Egypt's experts makes the moment of Joseph's interpretation all the more decisive.",
+          "context": "The two-year delay is not a setback — it is precise divine timing. Joseph needed to emerge not when he would have chosen, but when Pharaoh urgently needed him. Every door is closed until the palace door opens. The cupbearer's sudden memory (v.9: \"I remember my offenses today\") is itself providential — guilt and need converge at the exact moment God intends."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Dan 2:1–13",
+              "note": "Nebuchadnezzar's dream that none of his wise men can interpret parallels Pharaoh's experience exactly. Both narratives set up a Hebrew exile who succeeds where court professionals fail — divine wisdom outperforms human expertise."
+            },
+            {
+              "ref": "Gen 40:1–23",
+              "note": "The cupbearer finally remembers Joseph — two full years after Joseph interpreted his dream correctly. The 'chief cupbearer did not remember Joseph; he forgot him' (40:23) is resolved here through Pharaoh's distress."
+            },
+            {
+              "ref": "Ps 105:16–22",
+              "note": "The psalm summarises: God 'sent a man before them — Joseph, sold as a slave … the king sent and released him.' The dream sequence is liturgically remembered as providential rescue."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -138,22 +142,26 @@
             "paragraph": "Egyptian name given by Pharaoh to Joseph — possibly \"God speaks and he lives.\" The name-change marks Joseph's complete absorption into Egyptian authority."
           }
         ],
-        "hist": "Joseph's appearance before Pharaoh is one of the most dramatically constructed scenes in Genesis. He is brought from prison, shaved, changed into clean clothes, and stands before the most powerful ruler in the known world. His first words — \"I cannot do it, but God will give Pharaoh the answer\" — establish the theological ground of all that follows. Pharaoh's dream of cows and grain is interpreted as seven years of abundance followed by seven years of famine. Joseph adds a policy recommendation without being asked, which Pharaoh accepts immediately.",
-        "ctx": "Joseph's fivefold attribution of the interpretation to God (vv.16,25,28,32,39) is the theological spine of the chapter. Pharaoh himself acknowledges the source: \"Since God has shown you all this\" (v.39). The elevation is thus framed not as human achievement but as divine appointment. Joseph is thirty years old (v.46) — seventeen at the sale, thirty at the palace — thirteen years of pit, slavery, and prison now resolved in a single day.",
-        "cross": [
-          {
-            "ref": "Gen 37:7,9",
-            "note": "Joseph's own dreams of ruling partially fulfilled — brothers' bowing awaits."
-          },
-          {
-            "ref": "Dan 2:27–28",
-            "note": "Daniel before Nebuchadnezzar uses identical theology: \"No wise man can explain... but there is a God in heaven who reveals mysteries.\""
-          },
-          {
-            "ref": "Acts 7:10",
-            "note": "Stephen: \"God... gave Joseph wisdom and enabled him to gain the goodwill of Pharaoh.\""
-          }
-        ],
+        "hist": {
+          "historical": "Joseph's appearance before Pharaoh is one of the most dramatically constructed scenes in Genesis. He is brought from prison, shaved, changed into clean clothes, and stands before the most powerful ruler in the known world. His first words — \"I cannot do it, but God will give Pharaoh the answer\" — establish the theological ground of all that follows. Pharaoh's dream of cows and grain is interpreted as seven years of abundance followed by seven years of famine. Joseph adds a policy recommendation without being asked, which Pharaoh accepts immediately.",
+          "context": "Joseph's fivefold attribution of the interpretation to God (vv.16,25,28,32,39) is the theological spine of the chapter. Pharaoh himself acknowledges the source: \"Since God has shown you all this\" (v.39). The elevation is thus framed not as human achievement but as divine appointment. Joseph is thirty years old (v.46) — seventeen at the sale, thirty at the palace — thirteen years of pit, slavery, and prison now resolved in a single day."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 37:7,9",
+              "note": "Joseph's own dreams of ruling partially fulfilled — brothers' bowing awaits."
+            },
+            {
+              "ref": "Dan 2:27–28",
+              "note": "Daniel before Nebuchadnezzar uses identical theology: \"No wise man can explain... but there is a God in heaven who reveals mysteries.\""
+            },
+            {
+              "ref": "Acts 7:10",
+              "note": "Stephen: \"God... gave Joseph wisdom and enabled him to gain the goodwill of Pharaoh.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -245,22 +253,26 @@
             "paragraph": "Egyptian name given by Pharaoh to Joseph — possibly \"God speaks and he lives.\" The name-change marks Joseph's complete absorption into Egyptian authority."
           }
         ],
-        "hist": "Joseph's exaltation to second in Egypt is the most complete transformation of social status in the OT until the exaltation of Daniel. From the prison to the palace in a single day. Pharaoh's installation is ceremonial and total: signet ring, fine linen robes, gold chain, chariot ride, the cry \"bow the knee.\" Joseph is given an Egyptian name (Zaphenath-paneah) and an Egyptian wife (Asenath, daughter of the priest of On). The seven years of abundance produce harvests so great they cannot be measured.",
-        "ctx": "Joseph's fivefold attribution of the interpretation to God (vv.16,25,28,32,39) is the theological spine of the chapter. Pharaoh himself acknowledges the source: \"Since God has shown you all this\" (v.39). The elevation is thus framed not as human achievement but as divine appointment. Joseph is thirty years old (v.46) — seventeen at the sale, thirty at the palace — thirteen years of pit, slavery, and prison now resolved in a single day.",
-        "cross": [
-          {
-            "ref": "Gen 37:7,9",
-            "note": "Joseph's own dreams of ruling partially fulfilled — brothers' bowing awaits."
-          },
-          {
-            "ref": "Dan 2:27–28",
-            "note": "Daniel before Nebuchadnezzar uses identical theology: \"No wise man can explain... but there is a God in heaven who reveals mysteries.\""
-          },
-          {
-            "ref": "Acts 7:10",
-            "note": "Stephen: \"God... gave Joseph wisdom and enabled him to gain the goodwill of Pharaoh.\""
-          }
-        ],
+        "hist": {
+          "historical": "Joseph's exaltation to second in Egypt is the most complete transformation of social status in the OT until the exaltation of Daniel. From the prison to the palace in a single day. Pharaoh's installation is ceremonial and total: signet ring, fine linen robes, gold chain, chariot ride, the cry \"bow the knee.\" Joseph is given an Egyptian name (Zaphenath-paneah) and an Egyptian wife (Asenath, daughter of the priest of On). The seven years of abundance produce harvests so great they cannot be measured.",
+          "context": "Joseph's fivefold attribution of the interpretation to God (vv.16,25,28,32,39) is the theological spine of the chapter. Pharaoh himself acknowledges the source: \"Since God has shown you all this\" (v.39). The elevation is thus framed not as human achievement but as divine appointment. Joseph is thirty years old (v.46) — seventeen at the sale, thirty at the palace — thirteen years of pit, slavery, and prison now resolved in a single day."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 37:7,9",
+              "note": "Joseph's own dreams of ruling partially fulfilled — brothers' bowing awaits."
+            },
+            {
+              "ref": "Dan 2:27–28",
+              "note": "Daniel before Nebuchadnezzar uses identical theology: \"No wise man can explain... but there is a God in heaven who reveals mysteries.\""
+            },
+            {
+              "ref": "Acts 7:10",
+              "note": "Stephen: \"God... gave Joseph wisdom and enabled him to gain the goodwill of Pharaoh.\""
+            }
+          ]
+        },
         "tl": [
           {
             "date": "c. 1900 BC",

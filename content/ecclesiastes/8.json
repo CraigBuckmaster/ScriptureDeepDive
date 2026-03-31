@@ -25,17 +25,18 @@
             "paragraph": "\"There is a proper time (ʿēṭ) and procedure for every matter\" (v.6). The time-theology of chapter 3 returns in a political context. Knowing the right time to act — before a king, in a dispute, in life — is wisdom. But no one can know the future (v.7), and no one has power over the day of death (v.8)."
           }
         ],
-        "ctx": "Qoheleth observes the political world: obey the king (v.2), know when to speak (v.3–4), recognise proper timing (v.5–6). But human power has limits: no one controls the wind or the day of death (v.8). Even political wisdom cannot overcome mortality. The underlying message: submit to authority where you must, but remember that all authority is temporary.",
-        "cross": [
-          {
-            "ref": "Rom 13:1–2",
-            "note": "\"Let everyone be subject to the governing authorities\" — Paul’s political theology echoes Qoheleth’s."
-          },
-          {
-            "ref": "Dan 2:21",
-            "note": "\"He changes times and seasons; he deposes kings\" — God’s sovereignty over political timing."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 13:1–2",
+              "note": "\"Let everyone be subject to the governing authorities\" — Paul’s political theology echoes Qoheleth’s."
+            },
+            {
+              "ref": "Dan 2:21",
+              "note": "\"He changes times and seasons; he deposes kings\" — God’s sovereignty over political timing."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -113,6 +114,9 @@
               "note": "Fox: death as an uncontrollable force is Qoheleth’s recurring theme. Here it appears in a political context: even kings die. Power does not exempt."
             }
           ]
+        },
+        "hist": {
+          "context": "Qoheleth observes the political world: obey the king (v.2), know when to speak (v.3–4), recognise proper timing (v.5–6). But human power has limits: no one controls the wind or the day of death (v.8). Even political wisdom cannot overcome mortality. The underlying message: submit to authority where you must, but remember that all authority is temporary."
         }
       }
     },
@@ -130,21 +134,22 @@
             "paragraph": "\"No one can comprehend (lōʾ yūk̅al) what goes on under the sun\" (v.17). The epistemological verdict: despite all effort, human understanding cannot grasp God’s work. The wise person who claims to know is also unable. The chapter ends with a limit on wisdom itself."
           }
         ],
-        "ctx": "Qoheleth observes the moral inversion: the wicked receive what the righteous deserve, and vice versa (v.14). This is the same injustice Job protested (Job 21:7–16). Qoheleth’s response differs from Job’s: instead of demanding an explanation, he recommends enjoyment (v.15). Since you cannot fix the system, receive what good you can. The chapter closes with radical epistemological humility: even the wisest cannot comprehend God’s work.",
-        "cross": [
-          {
-            "ref": "Eccl 3:11",
-            "note": "\"No one can fathom what God has done\" — the same epistemological limit, repeated."
-          },
-          {
-            "ref": "Job 21:7–16",
-            "note": "\"Why do the wicked live on?\" — Job’s version of the same moral inversion."
-          },
-          {
-            "ref": "Rom 11:33",
-            "note": "\"How unsearchable his judgments!\" — Paul’s doxological acceptance of the same mystery."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Eccl 3:11",
+              "note": "\"No one can fathom what God has done\" — the same epistemological limit, repeated."
+            },
+            {
+              "ref": "Job 21:7–16",
+              "note": "\"Why do the wicked live on?\" — Job’s version of the same moral inversion."
+            },
+            {
+              "ref": "Rom 11:33",
+              "note": "\"How unsearchable his judgments!\" — Paul’s doxological acceptance of the same mystery."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -230,6 +235,9 @@
               "note": "Fox: \"no one can comprehend\" is Qoheleth’s methodological conclusion. His empirical investigation has reached its limit. The data is insufficient for a comprehensive theory of meaning."
             }
           ]
+        },
+        "hist": {
+          "context": "Qoheleth observes the moral inversion: the wicked receive what the righteous deserve, and vice versa (v.14). This is the same injustice Job protested (Job 21:7–16). Qoheleth’s response differs from Job’s: instead of demanding an explanation, he recommends enjoyment (v.15). Since you cannot fix the system, receive what good you can. The chapter closes with radical epistemological humility: even the wisest cannot comprehend God’s work."
         }
       }
     }

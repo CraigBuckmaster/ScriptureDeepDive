@@ -31,21 +31,22 @@
             "paragraph": "Abib (Nisan) is the month of the Exodus and the Passover. \"Observing\" the month means ordering the year around this sacred memory. The calendar itself is a theological statement: Israel's time begins with redemption, not with creation or agricultural cycles."
           }
         ],
-        "ctx": "Chapter 16 summarises the three pilgrimage feasts: Passover (vv.1–8), Weeks/Pentecost (vv.9–12), and Tabernacles (vv.13–17). All three are to be held at the central sanctuary; all three involve rejoicing; all three include the whole household — sons, daughters, servants, Levites, foreigners, orphans, widows. The feast structure is a community-gathering, equality-enforcing institution. The chapter closes: \"Every man shall give as he is able, according to the blessing of the LORD your God that he has given you\" (v.17).",
-        "cross": [
-          {
-            "ref": "Acts 2:1–4",
-            "note": "\"When the day of Pentecost came, they were all together in one place.\" The outpouring of the Spirit occurs on the festival of Weeks — the first-fruits of the Spirit's harvest are given on the day Israel offered its first-fruits of grain."
-          },
-          {
-            "ref": "John 7:37–39",
-            "note": "\"On the last and greatest day of the festival, Jesus stood and said... 'Let anyone who is thirsty come to me and drink.'\" Jesus' invitation at the Tabernacles festival claims to fulfil what the feast pointed toward."
-          },
-          {
-            "ref": "1 Cor 5:7–8",
-            "note": "\"For Christ, our Passover lamb, has been sacrificed. Therefore let us keep the Festival.\" Paul reads the Christian life as a perpetual Passover festival in light of Christ's sacrifice."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 2:1–4",
+              "note": "\"When the day of Pentecost came, they were all together in one place.\" The outpouring of the Spirit occurs on the festival of Weeks — the first-fruits of the Spirit's harvest are given on the day Israel offered its first-fruits of grain."
+            },
+            {
+              "ref": "John 7:37–39",
+              "note": "\"On the last and greatest day of the festival, Jesus stood and said... 'Let anyone who is thirsty come to me and drink.'\" Jesus' invitation at the Tabernacles festival claims to fulfil what the feast pointed toward."
+            },
+            {
+              "ref": "1 Cor 5:7–8",
+              "note": "\"For Christ, our Passover lamb, has been sacrificed. Therefore let us keep the Festival.\" Paul reads the Christian life as a perpetual Passover festival in light of Christ's sacrifice."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 16 summarises the three pilgrimage feasts: Passover (vv.1–8), Weeks/Pentecost (vv.9–12), and Tabernacles (vv.13–17). All three are to be held at the central sanctuary; all three involve rejoicing; all three include the whole household — sons, daughters, servants, Levites, foreigners, orphans, widows. The feast structure is a community-gathering, equality-enforcing institution. The chapter closes: \"Every man shall give as he is able, according to the blessing of the LORD your God that he has given you\" (v.17)."
         }
       }
     },
@@ -141,17 +145,18 @@
             "paragraph": "The double repetition of tzedek (justice, righteousness) indicates not mere pursuit of justice but zealous, passionate pursuit. The verb radap (to pursue, chase) is used of hunting — justice is pursued with that intensity."
           }
         ],
-        "ctx": "The festival laws transition immediately to judicial laws — the connection is deliberate. A community that celebrates God's justice must embody justice in its courts. Judges are to be appointed in every town; they must judge impartially, take no bribes, not pervert justice. The Asherah pole and sacred stone — symbols of Canaanite fertility religion — must not be set up near the altar: not even in the village square may Canaanite religious symbols stand alongside the altar of the LORD.",
-        "cross": [
-          {
-            "ref": "Amos 5:24",
-            "note": "\"But let justice roll on like a river, righteousness like a never-failing stream!\" Amos's great justice oracle is the prophetic development of Deuteronomy 16:20's \"justice, justice you shall pursue.\""
-          },
-          {
-            "ref": "Matt 23:23",
-            "note": "\"You have neglected the more important matters of the law — justice, mercy and faithfulness.\" Jesus identifies the \"weightier matters\" in terms that directly echo Deuteronomy 16's justice mandate."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Amos 5:24",
+              "note": "\"But let justice roll on like a river, righteousness like a never-failing stream!\" Amos's great justice oracle is the prophetic development of Deuteronomy 16:20's \"justice, justice you shall pursue.\""
+            },
+            {
+              "ref": "Matt 23:23",
+              "note": "\"You have neglected the more important matters of the law — justice, mercy and faithfulness.\" Jesus identifies the \"weightier matters\" in terms that directly echo Deuteronomy 16's justice mandate."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -216,6 +221,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "The festival laws transition immediately to judicial laws — the connection is deliberate. A community that celebrates God's justice must embody justice in its courts. Judges are to be appointed in every town; they must judge impartially, take no bribes, not pervert justice. The Asherah pole and sacred stone — symbols of Canaanite fertility religion — must not be set up near the altar: not even in the village square may Canaanite religious symbols stand alongside the altar of the LORD."
         }
       }
     }

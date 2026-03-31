@@ -25,17 +25,18 @@
             "paragraph": "Ahaz “passed his son through the fire” (v.3) — the verb heʿĕvir is the technical term for the Molech sacrifice. A Judahite king performs the abomination that Leviticus 18:21 explicitly prohibits. The Davidic line has reached its lowest point."
           }
         ],
-        "ctx": "Ahaz represents a new low for Judah. He walks in the ways of Israel’s kings (not David), sacrifices his own son in the fire, and worships at every high place. When Aram and Israel attack, instead of seeking God (as Isaiah urges in Isaiah 7), Ahaz strips the temple treasury and sends it to Tiglath-Pileser with a message: “I am your servant and vassal. Come and save me.” The Assyrian king obliges — conquers Damascus and kills Rezin — but the price is Judah’s independence. Ahaz has traded spiritual freedom for political survival.",
-        "cross": [
-          {
-            "ref": "Isa 7:3–14",
-            "note": "Isaiah offers Ahaz a sign from God; Ahaz refuses under false piety. The Immanuel prophecy is God’s response to the king’s faithlessness."
-          },
-          {
-            "ref": "Lev 18:21",
-            "note": "“Do not give any of your children to be sacrificed to Molek.” Ahaz violates the most sacred boundary of covenant law."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 7:3–14",
+              "note": "Isaiah offers Ahaz a sign from God; Ahaz refuses under false piety. The Immanuel prophecy is God’s response to the king’s faithlessness."
+            },
+            {
+              "ref": "Lev 18:21",
+              "note": "“Do not give any of your children to be sacrificed to Molek.” Ahaz violates the most sacred boundary of covenant law."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -71,6 +72,9 @@
               "note": "Ahaz’s appeal to Assyria is the opposite of Isaiah’s counsel. The prophet says trust God; the king trusts the empire. This choice — faith versus realpolitik — is the defining question of the Hezekiah-Ahaz contrast."
             }
           ]
+        },
+        "hist": {
+          "context": "Ahaz represents a new low for Judah. He walks in the ways of Israel’s kings (not David), sacrifices his own son in the fire, and worships at every high place. When Aram and Israel attack, instead of seeking God (as Isaiah urges in Isaiah 7), Ahaz strips the temple treasury and sends it to Tiglath-Pileser with a message: “I am your servant and vassal. Come and save me.” The Assyrian king obliges — conquers Damascus and kills Rezin — but the price is Judah’s independence. Ahaz has traded spiritual freedom for political survival."
         }
       }
     },
@@ -80,17 +84,18 @@
       "verse_start": 10,
       "verse_end": 20,
       "panels": {
-        "ctx": "Ahaz travels to Damascus to meet Tiglath-Pileser and sees a pagan altar he likes. He sends detailed drawings to Uriah the priest, who builds a copy in the temple courtyard. When Ahaz returns, he uses the new altar for his sacrifices and pushes the bronze altar of Solomon aside. He then systematically rearranges the temple furnishings “because of the king of Assyria” — reconfiguring Israel’s worship space to please a foreign overlord. The temple, which Solomon built for YHWH, is being redesigned to express political submission.",
-        "cross": [
-          {
-            "ref": "1 Kgs 8:22–53",
-            "note": "Solomon’s temple dedication prayer — the temple was consecrated for YHWH alone. Ahaz’s altar replacement is a direct violation of Solomon’s prayer."
-          },
-          {
-            "ref": "Exod 27:1–8",
-            "note": "The bronze altar’s design was given by God at Sinai. Ahaz replaces God’s design with a pagan model — substituting human taste for divine instruction."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 8:22–53",
+              "note": "Solomon’s temple dedication prayer — the temple was consecrated for YHWH alone. Ahaz’s altar replacement is a direct violation of Solomon’s prayer."
+            },
+            {
+              "ref": "Exod 27:1–8",
+              "note": "The bronze altar’s design was given by God at Sinai. Ahaz replaces God’s design with a pagan model — substituting human taste for divine instruction."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -126,6 +131,9 @@
               "note": "Uriah’s compliance without protest illustrates the failure of the priestly office to check royal power. When priests serve kings rather than God, the temple becomes a tool of state policy rather than a house of prayer."
             }
           ]
+        },
+        "hist": {
+          "context": "Ahaz travels to Damascus to meet Tiglath-Pileser and sees a pagan altar he likes. He sends detailed drawings to Uriah the priest, who builds a copy in the temple courtyard. When Ahaz returns, he uses the new altar for his sacrifices and pushes the bronze altar of Solomon aside. He then systematically rearranges the temple furnishings “because of the king of Assyria” — reconfiguring Israel’s worship space to please a foreign overlord. The temple, which Solomon built for YHWH, is being redesigned to express political submission."
         }
       }
     }

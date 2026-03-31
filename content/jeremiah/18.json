@@ -31,21 +31,22 @@
             "paragraph": "The clay (ḥōmer) is \"marred in the potter's hands\" (v.4) — the Hebrew nišḥat suggests the clay was ruined or spoiled. Rather than discarding it, the potter reshapes it \"as seemed best to him.\" The image implies that God's original design for Israel has been marred by sin, but God has not abandoned the project — he is reworking the material."
           }
         ],
-        "ctx": "The potter's house oracle is one of the most famous passages in Jeremiah and a key text for understanding divine sovereignty and human responsibility. The potter's freedom to reshape the clay (v.4) establishes God's sovereign prerogative. But verses 7-10 introduce conditionality: God's announced judgments and blessings are contingent on human response. This is not arbitrary power but responsive governance — God interacts with nations, not as static objects but as moral agents whose choices matter.",
-        "cross": [
-          {
-            "ref": "Isa 45:9",
-            "note": "\"Does the clay say to the potter, \\\"What are you making?\\\"\" — Isaiah's parallel assertion of divine sovereignty over creation."
-          },
-          {
-            "ref": "Rom 9:20-21",
-            "note": "Paul's potter/clay argument draws directly on Jeremiah 18 to establish God's right to show mercy and judgment as he wills."
-          },
-          {
-            "ref": "Gen 2:7",
-            "note": "God \"formed\" (yāṣar) humanity from the dust — the same root as \"potter\" (yôṣēr), linking creation theology to prophetic theology."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 45:9",
+              "note": "\"Does the clay say to the potter, \\\"What are you making?\\\"\" — Isaiah's parallel assertion of divine sovereignty over creation."
+            },
+            {
+              "ref": "Rom 9:20-21",
+              "note": "Paul's potter/clay argument draws directly on Jeremiah 18 to establish God's right to show mercy and judgment as he wills."
+            },
+            {
+              "ref": "Gen 2:7",
+              "note": "God \"formed\" (yāṣar) humanity from the dust — the same root as \"potter\" (yôṣēr), linking creation theology to prophetic theology."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Brueggemann identifies a \"rhetoric of contingency\" — God's word is not a mechanistic decree but a live address that invites response. The future is genuinely open, not predetermined, because God chooses to remain in dialogue with his creation."
             }
           ]
+        },
+        "hist": {
+          "context": "The potter's house oracle is one of the most famous passages in Jeremiah and a key text for understanding divine sovereignty and human responsibility. The potter's freedom to reshape the clay (v.4) establishes God's sovereign prerogative. But verses 7-10 introduce conditionality: God's announced judgments and blessings are contingent on human response. This is not arbitrary power but responsive governance — God interacts with nations, not as static objects but as moral agents whose choices matter."
         }
       }
     },
@@ -127,17 +131,18 @@
             "paragraph": "The people have \"dug a pit (šaḥat) for me\" (v.22). The same word appears in Psalm 7:15 and Proverbs 26:27 — the pit-digger falls into his own trap. Jeremiah's imprecatory prayer (vv.21-23) asks God to let the plotters experience the consequences of their own violence."
           }
         ],
-        "ctx": "The second half of chapter 18 shifts from theology to crisis. Israel's sin is \"something unheard of\" (v.13) — even the snow of Lebanon and mountain streams are more reliable than Israel's faithfulness. The people respond to Jeremiah's message by plotting against him (v.18): \"Come, let us attack him with our tongues.\" Jeremiah's response is his most severe imprecatory prayer — calling for famine, sword, and death upon his enemies.",
-        "cross": [
-          {
-            "ref": "Ps 35:4-8",
-            "note": "The imprecatory psalms provide the literary and theological context for Jeremiah's cursing prayers."
-          },
-          {
-            "ref": "Luke 23:34",
-            "note": "Jesus's \"Father, forgive them\" stands in deliberate contrast to Jeremiah's imprecations — the new covenant exceeds the old in its capacity for mercy."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 35:4-8",
+              "note": "The imprecatory psalms provide the literary and theological context for Jeremiah's cursing prayers."
+            },
+            {
+              "ref": "Luke 23:34",
+              "note": "Jesus's \"Father, forgive them\" stands in deliberate contrast to Jeremiah's imprecations — the new covenant exceeds the old in its capacity for mercy."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -194,6 +199,9 @@
               "note": "Brueggemann observes that the people's defense — \"we have other religious authorities\" — is the perennial strategy of institutional religion: marginalize the critic by citing the consensus."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half of chapter 18 shifts from theology to crisis. Israel's sin is \"something unheard of\" (v.13) — even the snow of Lebanon and mountain streams are more reliable than Israel's faithfulness. The people respond to Jeremiah's message by plotting against him (v.18): \"Come, let us attack him with our tongues.\" Jeremiah's response is his most severe imprecatory prayer — calling for famine, sword, and death upon his enemies."
         }
       }
     }

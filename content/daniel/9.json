@@ -25,25 +25,26 @@
             "paragraph": "\"I turned to the Lord God and pleaded with him in prayer and petition (təḥinnâ), in fasting, and in sackcloth and ashes\" (v.3). Daniel reads Jeremiah’s prophecy of 70 years (v.2; cf. Jer 25:11–12). He responds with confession: \"We have sinned and done wrong\" (v.5). The prayer includes himself (\"we\"). It confesses sin, acknowledges God’s justice, and appeals to mercy: \"We do not make requests because of our righteousness, but because of your great mercy\" (v.18)."
           }
         ],
-        "ctx": "The first year of Darius the Mede (v.1), approximately 539 BC. Daniel reads Jeremiah 25:11–12 and 29:10, which prophesied 70 years of Babylonian exile. The exile began in 605 BC (Daniel’s own deportation), meaning 66 years have passed. Daniel’s prayer is not speculative but responsive to Scripture: he reads the promise and prays it into fulfilment. The prayer (vv.4–19) is one of the great confessions of the OT, paralleling Nehemiah 9 and Ezra 9.",
-        "cross": [
-          {
-            "ref": "Jer 25:11–12",
-            "note": "This whole country will be a desolate wasteland for seventy years — the text Daniel is reading."
-          },
-          {
-            "ref": "Jer 29:10",
-            "note": "When seventy years are completed, I will bring you back — the promise that triggers Daniel’s prayer."
-          },
-          {
-            "ref": "Neh 9:5–37",
-            "note": "Nehemiah’s great confession prayer — the same genre as Daniel 9:4–19."
-          },
-          {
-            "ref": "Rom 3:25",
-            "note": "God presented Christ as a sacrifice of atonement — the NT fulfilment of the atonement Daniel’s prayer anticipates."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 25:11–12",
+              "note": "This whole country will be a desolate wasteland for seventy years — the text Daniel is reading."
+            },
+            {
+              "ref": "Jer 29:10",
+              "note": "When seventy years are completed, I will bring you back — the promise that triggers Daniel’s prayer."
+            },
+            {
+              "ref": "Neh 9:5–37",
+              "note": "Nehemiah’s great confession prayer — the same genre as Daniel 9:4–19."
+            },
+            {
+              "ref": "Rom 3:25",
+              "note": "God presented Christ as a sacrifice of atonement — the NT fulfilment of the atonement Daniel’s prayer anticipates."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -125,6 +126,9 @@
               "note": "Collins notes the hermeneutical significance: Daniel interprets Jeremiah’s 70 years, and then Gabriel reinterprets Daniel’s interpretation as 70 \"sevens\" (490 years). Scripture generates interpretation that generates further interpretation."
             }
           ]
+        },
+        "hist": {
+          "context": "The first year of Darius the Mede (v.1), approximately 539 BC. Daniel reads Jeremiah 25:11–12 and 29:10, which prophesied 70 years of Babylonian exile. The exile began in 605 BC (Daniel’s own deportation), meaning 66 years have passed. Daniel’s prayer is not speculative but responsive to Scripture: he reads the promise and prays it into fulfilment. The prayer (vv.4–19) is one of the great confessions of the OT, paralleling Nehemiah 9 and Ezra 9."
         }
       }
     },
@@ -142,25 +146,26 @@
             "paragraph": "\"Seventy sevens (shābuʿîm) are decreed for your people\" (v.24). Gabriel arrives while Daniel still prays. 490 years decreed for six purposes: finish transgression, end sin, atone for wickedness, bring everlasting righteousness, seal prophecy, anoint the Most Holy (v.24). Timeline: 7 + 62 sevens until the Anointed One (v.25). The Anointed One \"cut off and will have nothing\" (v.26). The most debated prophecy in the Bible."
           }
         ],
-        "ctx": "The 70-weeks prophecy is the most interpreted passage in Daniel. Four main frameworks: (1) The traditional-messianic reading: 69 sevens from Artaxerxes’ decree (445 BC, Neh 2:1–8) to Christ’s crucifixion (~AD 33), with the 70th week future (the tribulation). (2) The critical reading: all 70 sevens fulfilled by the Maccabean period, ending with Antiochus’s death (164 BC). (3) The symbolic reading: 70 × 7 = the complete span of judgment, not a precise chronology. (4) The christological reading: 69 sevens to Christ’s ministry, the 70th week is the cross and destruction of Jerusalem (AD 70). No consensus exists across traditions.",
-        "cross": [
-          {
-            "ref": "Lev 25:8",
-            "note": "Count off seven sabbath years — seven times seven years — the jubilee framework behind the 70 sevens."
-          },
-          {
-            "ref": "Matt 26:28",
-            "note": "This is my blood of the covenant, poured out for the forgiveness of sins — the atonement Daniel 9:24 anticipates."
-          },
-          {
-            "ref": "Gal 4:4",
-            "note": "When the set time had fully come, God sent his Son — the \"fullness of time\" as the 69 sevens completing."
-          },
-          {
-            "ref": "Heb 9:26",
-            "note": "He has appeared once for all at the culmination of the ages to do away with sin — the \"finish transgression\" of Dan 9:24."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 25:8",
+              "note": "Count off seven sabbath years — seven times seven years — the jubilee framework behind the 70 sevens."
+            },
+            {
+              "ref": "Matt 26:28",
+              "note": "This is my blood of the covenant, poured out for the forgiveness of sins — the atonement Daniel 9:24 anticipates."
+            },
+            {
+              "ref": "Gal 4:4",
+              "note": "When the set time had fully come, God sent his Son — the \"fullness of time\" as the 69 sevens completing."
+            },
+            {
+              "ref": "Heb 9:26",
+              "note": "He has appeared once for all at the culmination of the ages to do away with sin — the \"finish transgression\" of Dan 9:24."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -246,6 +251,9 @@
               "note": "Collins notes that \"cut off\" (yikkaret) is covenant-curse language (cf. Gen 17:14; Lev 7:20). The Anointed One suffers the covenant penalty, which is precisely the theology of substitutionary atonement."
             }
           ]
+        },
+        "hist": {
+          "context": "The 70-weeks prophecy is the most interpreted passage in Daniel. Four main frameworks: (1) The traditional-messianic reading: 69 sevens from Artaxerxes’ decree (445 BC, Neh 2:1–8) to Christ’s crucifixion (~AD 33), with the 70th week future (the tribulation). (2) The critical reading: all 70 sevens fulfilled by the Maccabean period, ending with Antiochus’s death (164 BC). (3) The symbolic reading: 70 × 7 = the complete span of judgment, not a precise chronology. (4) The christological reading: 69 sevens to Christ’s ministry, the 70th week is the cross and destruction of Jerusalem (AD 70). No consensus exists across traditions."
         }
       }
     }

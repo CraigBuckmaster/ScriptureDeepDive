@@ -25,17 +25,18 @@
             "paragraph": "\"Mortals, born of woman, are of few days and full of trouble\" (v.1). The universalising opening. Job moves from his specific case to the human condition. Everyone born of woman shares this fate: brief life, abundant trouble. The phrase “born of woman” emphasises human origin and fragility."
           }
         ],
-        "ctx": "Job’s meditation on mortality is the first cycle’s climax. He has argued with all three friends; now he steps back and considers the human condition itself. The central image: a tree can be cut down and sprout again (vv.7–9), but a person dies and does not rise (v.12). Nature has what humans lack: renewal.",
-        "cross": [
-          {
-            "ref": "Ps 90:5–6",
-            "note": "\"You sweep people away... they are like new grass\" — the same brevity and fragility."
-          },
-          {
-            "ref": "1 Pet 1:24",
-            "note": "\"All people are like grass\" — Peter quoting Isaiah, echoing Job’s theme."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 90:5–6",
+              "note": "\"You sweep people away... they are like new grass\" — the same brevity and fragility."
+            },
+            {
+              "ref": "1 Pet 1:24",
+              "note": "\"All people are like grass\" — Peter quoting Isaiah, echoing Job’s theme."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -104,6 +105,9 @@
               "note": "Habel: Job rests his case for the first cycle with a meditation on mortality. The argument: if human life is this short and this fragile, why does God waste it on suffering? The legal question becomes existential."
             }
           ]
+        },
+        "hist": {
+          "context": "Job’s meditation on mortality is the first cycle’s climax. He has argued with all three friends; now he steps back and considers the human condition itself. The central image: a tree can be cut down and sprout again (vv.7–9), but a person dies and does not rise (v.12). Nature has what humans lack: renewal."
         }
       }
     },
@@ -121,17 +125,18 @@
             "paragraph": "\"All the days of my hard service I will wait for my renewal (ḥalîfātî) to come\" (v.14). The word ḥalîfâ means replacement, relief, or renewal — like a soldier’s tour of duty ending when the relief shift arrives. Job imagines waiting in Sheol for God to remember him and summon him back."
           }
         ],
-        "ctx": "After declaring death final (v.12), Job suddenly imagines an alternative: “If only you would hide me in the grave... and then remember me!” (v.13). This is not doctrine but longing. Job does not believe in resurrection; he wishes for it. The conditional “if” (lū) is a wish contrary to fact. But the wish itself is the seed. The trajectory: this longing will grow into “I know that my redeemer lives” (19:25).",
-        "cross": [
-          {
-            "ref": "Ps 16:10",
-            "note": "\"You will not abandon me to the realm of the dead\" — David’s hope, more developed than Job’s."
-          },
-          {
-            "ref": "1 Cor 15:42–44",
-            "note": "\"The body that is sown is perishable, it is raised imperishable\" — the full answer to Job’s longing, centuries later."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 16:10",
+              "note": "\"You will not abandon me to the realm of the dead\" — David’s hope, more developed than Job’s."
+            },
+            {
+              "ref": "1 Cor 15:42–44",
+              "note": "\"The body that is sown is perishable, it is raised imperishable\" — the full answer to Job’s longing, centuries later."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -204,6 +209,9 @@
               "note": "Habel: the resurrection wish is the first appeal for a post-mortem hearing. If Job cannot get justice in this life, perhaps death is not the end. The legal metaphor extends beyond the grave — at least in imagination."
             }
           ]
+        },
+        "hist": {
+          "context": "After declaring death final (v.12), Job suddenly imagines an alternative: “If only you would hide me in the grave... and then remember me!” (v.13). This is not doctrine but longing. Job does not believe in resurrection; he wishes for it. The conditional “if” (lū) is a wish contrary to fact. But the wish itself is the seed. The trajectory: this longing will grow into “I know that my redeemer lives” (19:25)."
         }
       }
     }

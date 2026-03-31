@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 19,
       "panels": {
-        "ctx": "Aaron’s descendants are divided into 24 courses for rotational temple service. Sixteen from Eleazar, eight from Ithamar — proportional to family size. The eighth division is Abijah (v.10) — the division of Zechariah, father of John the Baptist (Luke 1:5). Lots ensure divine selection. The 24-course system persists through the Second Temple and into the NT.",
-        "cross": [
-          {
-            "ref": "Luke 1:5",
-            "note": "Zechariah belonged to the priestly division of Abijah — the eighth course, established here, still functioning 500 years later."
-          },
-          {
-            "ref": "Neh 12:1–26",
-            "note": "Nehemiah lists priestly divisions in the post-exilic period, confirming continuity."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 1:5",
+              "note": "Zechariah belonged to the priestly division of Abijah — the eighth course, established here, still functioning 500 years later."
+            },
+            {
+              "ref": "Neh 12:1–26",
+              "note": "Nehemiah lists priestly divisions in the post-exilic period, confirming continuity."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "ʾabîyāh (Abijah) — the eighth of 24 priestly courses, operative until 70 AD."
             }
           ]
+        },
+        "hist": {
+          "context": "Aaron’s descendants are divided into 24 courses for rotational temple service. Sixteen from Eleazar, eight from Ithamar — proportional to family size. The eighth division is Abijah (v.10) — the division of Zechariah, father of John the Baptist (Luke 1:5). Lots ensure divine selection. The 24-course system persists through the Second Temple and into the NT."
         }
       }
     },
@@ -54,13 +58,14 @@
       "verse_start": 20,
       "verse_end": 31,
       "panels": {
-        "ctx": "The remaining non-priestly Levitical families are assigned by lot, mirroring the priestly process. “They cast lots just as their relatives the descendants of Aaron did.” The eldest brother is treated identically to the youngest — the lot levels hierarchies. The system is designed to be egalitarian within each functional category.",
-        "cross": [
-          {
-            "ref": "1 Chr 23:7–23",
-            "note": "The Levitical families listed here expand chapter 23’s overview."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Chr 23:7–23",
+              "note": "The Levitical families listed here expand chapter 23’s overview."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -78,6 +83,9 @@
               "note": "The phrase “the head of the family and his youngest brother alike” explicitly states egalitarian lot-casting."
             }
           ]
+        },
+        "hist": {
+          "context": "The remaining non-priestly Levitical families are assigned by lot, mirroring the priestly process. “They cast lots just as their relatives the descendants of Aaron did.” The eldest brother is treated identically to the youngest — the lot levels hierarchies. The system is designed to be egalitarian within each functional category."
         }
       }
     }

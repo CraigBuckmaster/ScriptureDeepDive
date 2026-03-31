@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 10,
       "panels": {
-        "ctx": "Reuben was Jacob’s firstborn but lost the birthright because “he defiled his father’s marriage bed” (Gen 35:22). The rights of the firstborn were given to Joseph’s sons; the genealogical pre-eminence to Judah; the ruler came from Judah. The Chronicler explains all this in a single verse (v.1–2) — a masterclass in theological footnoting. The Reubenite genealogy extends to the Assyrian exile, with a note about territorial warfare against the Hagrites.",
-        "cross": [
-          {
-            "ref": "Gen 49:3–4",
-            "note": "Jacob’s deathbed verdict on Reuben: “Turbulent as the waters, you will no longer excel, for you went up onto your father’s bed.”"
-          },
-          {
-            "ref": "Gen 35:22",
-            "note": "Reuben slept with Bilhah, his father’s concubine. The Chronicler references this without narrating it."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 49:3–4",
+              "note": "Jacob’s deathbed verdict on Reuben: “Turbulent as the waters, you will no longer excel, for you went up onto your father’s bed.”"
+            },
+            {
+              "ref": "Gen 35:22",
+              "note": "Reuben slept with Bilhah, his father’s concubine. The Chronicler references this without narrating it."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "The Hebrew states that the bĕkōrāh (“birthright”) was given to the sons of Joseph. This term covers the double inheritance portion (Deut 21:17), not the royal line."
             }
           ]
+        },
+        "hist": {
+          "context": "Reuben was Jacob’s firstborn but lost the birthright because “he defiled his father’s marriage bed” (Gen 35:22). The rights of the firstborn were given to Joseph’s sons; the genealogical pre-eminence to Judah; the ruler came from Judah. The Chronicler explains all this in a single verse (v.1–2) — a masterclass in theological footnoting. The Reubenite genealogy extends to the Assyrian exile, with a note about territorial warfare against the Hagrites."
         }
       }
     },
@@ -62,17 +66,18 @@
             "paragraph": "The Transjordanian tribes were exiled because they were “unfaithful” (maʿal, v.25) to the God of their ancestors. This is the Chronicler’s key term for covenant violation — he uses it more than any other biblical author. Maʿal is not mere disobedience but betrayal: breaking faith with someone who trusted you."
           }
         ],
-        "ctx": "Gad’s genealogy is brief, followed by the half-tribe of Manasseh in Bashan. The Chronicler records their military strength — 44,760 warriors — and their victory over the Hagrites (“because they cried out to God during the battle, and he answered their prayers because they trusted in him”, v.20). Then the devastating coda: “But they were unfaithful to the God of their ancestors and prostituted themselves to the gods of the peoples of the land... So the God of Israel stirred up the spirit of Pul king of Assyria... and he took them into exile.” The genealogy that begins with military triumph ends in deportation.",
-        "cross": [
-          {
-            "ref": "2 Kgs 15:29",
-            "note": "Tiglath-Pileser deported Galilee and the Transjordanian tribes. The Chronicler provides the theological explanation: unfaithfulness."
-          },
-          {
-            "ref": "2 Kgs 17:7–23",
-            "note": "The Deuteronomistic verdict on Israel’s exile parallels the Chronicler’s but uses different vocabulary. Kings emphasises “sin”; Chronicles emphasises “unfaithfulness.”"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 15:29",
+              "note": "Tiglath-Pileser deported Galilee and the Transjordanian tribes. The Chronicler provides the theological explanation: unfaithfulness."
+            },
+            {
+              "ref": "2 Kgs 17:7–23",
+              "note": "The Deuteronomistic verdict on Israel’s exile parallels the Chronicler’s but uses different vocabulary. Kings emphasises “sin”; Chronicles emphasises “unfaithfulness.”"
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -90,6 +95,9 @@
               "note": "wayyimʿălû — “they acted unfaithfully.” The qal of māʿal is used exclusively for covenant betrayal in Chronicles. The root appears 20 times in Chronicles compared to only 5 in all of Samuel-Kings."
             }
           ]
+        },
+        "hist": {
+          "context": "Gad’s genealogy is brief, followed by the half-tribe of Manasseh in Bashan. The Chronicler records their military strength — 44,760 warriors — and their victory over the Hagrites (“because they cried out to God during the battle, and he answered their prayers because they trusted in him”, v.20). Then the devastating coda: “But they were unfaithful to the God of their ancestors and prostituted themselves to the gods of the peoples of the land... So the God of Israel stirred up the spirit of Pul king of Assyria... and he took them into exile.” The genealogy that begins with military triumph ends in deportation."
         }
       }
     }

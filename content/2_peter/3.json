@@ -37,25 +37,26 @@
             "paragraph": "By the word of God heavens existed and earth was formed (synestosa) - creation was by divine speech; so will be destruction."
           }
         ],
-        "ctx": "Peter writes to stir up sincere minds, reminding them of prophetic words and apostolic commands. In the last days scoffers will come, mocking the promise of Christ's coming. They ask: Where is the promise? All continues as from creation. They deliberately overlook that by God's word heavens existed and earth was formed from water, and that the ancient world was destroyed by water. By the same word, present heavens and earth are stored up for fire, kept for judgment day and destruction of the ungodly.",
-        "cross": [
-          {
-            "ref": "Jude 18",
-            "note": "In the last time there will be scoffers, following their own ungodly passions."
-          },
-          {
-            "ref": "Genesis 1:6-9",
-            "note": "God said, Let the waters be gathered."
-          },
-          {
-            "ref": "Genesis 7:11",
-            "note": "The fountains of the great deep burst forth."
-          },
-          {
-            "ref": "Psalm 102:25-26",
-            "note": "Of old you laid the foundation of the earth."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jude 18",
+              "note": "In the last time there will be scoffers, following their own ungodly passions."
+            },
+            {
+              "ref": "Genesis 1:6-9",
+              "note": "God said, Let the waters be gathered."
+            },
+            {
+              "ref": "Genesis 7:11",
+              "note": "The fountains of the great deep burst forth."
+            },
+            {
+              "ref": "Psalm 102:25-26",
+              "note": "Of old you laid the foundation of the earth."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -117,7 +118,10 @@
             }
           ]
         },
-        "hist": "Second Peter addresses the threat of false teachers who deny Christ's return (parousia) and promote moral license. The author presents himself as the apostle Peter writing shortly before his death (1:14), though many scholars date the letter later due to its developed theology, reference to Paul's letters as 'Scripture' (3:16), and literary dependence on Jude. The false teachers mock the delay of Christ's return ('Where is the promise of his coming?' 3:4) and use this skepticism to justify immoral living. The letter defends apostolic eyewitness testimony (1:16-18), warns of judgment using Old Testament examples (2:4-10), and explains that God's patience allows time for repentance (3:9)."
+        "hist": {
+          "historical": "Second Peter addresses the threat of false teachers who deny Christ's return (parousia) and promote moral license. The author presents himself as the apostle Peter writing shortly before his death (1:14), though many scholars date the letter later due to its developed theology, reference to Paul's letters as 'Scripture' (3:16), and literary dependence on Jude. The false teachers mock the delay of Christ's return ('Where is the promise of his coming?' 3:4) and use this skepticism to justify immoral living. The letter defends apostolic eyewitness testimony (1:16-18), warns of judgment using Old Testament examples (2:4-10), and explains that God's patience allows time for repentance (3:9).",
+          "context": "Peter writes to stir up sincere minds, reminding them of prophetic words and apostolic commands. In the last days scoffers will come, mocking the promise of Christ's coming. They ask: Where is the promise? All continues as from creation. They deliberately overlook that by God's word heavens existed and earth was formed from water, and that the ancient world was destroyed by water. By the same word, present heavens and earth are stored up for fire, kept for judgment day and destruction of the ungodly."
+        }
       }
     },
     {
@@ -146,25 +150,26 @@
             "paragraph": "New heavens and a new earth (kainos) - not merely renewed but qualitatively different, where righteousness dwells."
           }
         ],
-        "ctx": "Peter addresses the apparent delay. With the Lord, one day is as a thousand years and a thousand years as one day. The Lord is not slow as some count slowness but is patient, not wishing any to perish but all to reach repentance. The day of the Lord will come like a thief; heavens will pass away with a roar, elements will be burned, earth and its works exposed. Since all will be dissolved, what sort of people ought you to be in holiness and godliness, waiting and hastening the coming day? According to his promise, we wait for new heavens and new earth where righteousness dwells.",
-        "cross": [
-          {
-            "ref": "Psalm 90:4",
-            "note": "A thousand years in your sight are but as yesterday."
-          },
-          {
-            "ref": "1 Thessalonians 5:2",
-            "note": "The day of the Lord will come like a thief in the night."
-          },
-          {
-            "ref": "Isaiah 65:17",
-            "note": "Behold, I create new heavens and a new earth."
-          },
-          {
-            "ref": "Revelation 21:1",
-            "note": "I saw a new heaven and a new earth."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Psalm 90:4",
+              "note": "A thousand years in your sight are but as yesterday."
+            },
+            {
+              "ref": "1 Thessalonians 5:2",
+              "note": "The day of the Lord will come like a thief in the night."
+            },
+            {
+              "ref": "Isaiah 65:17",
+              "note": "Behold, I create new heavens and a new earth."
+            },
+            {
+              "ref": "Revelation 21:1",
+              "note": "I saw a new heaven and a new earth."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -229,6 +234,9 @@
               "note": "Davids notes the tension between divine sovereignty (the day will come) and human responsibility (hastening). Both are affirmed."
             }
           ]
+        },
+        "hist": {
+          "context": "Peter addresses the apparent delay. With the Lord, one day is as a thousand years and a thousand years as one day. The Lord is not slow as some count slowness but is patient, not wishing any to perish but all to reach repentance. The day of the Lord will come like a thief; heavens will pass away with a roar, elements will be burned, earth and its works exposed. Since all will be dissolved, what sort of people ought you to be in holiness and godliness, waiting and hastening the coming day? According to his promise, we wait for new heavens and new earth where righteousness dwells."
         }
       }
     },
@@ -258,25 +266,26 @@
             "paragraph": "Grow in grace and knowledge - steadfastness prevents being carried away by error. Growth is the antidote to apostasy."
           }
         ],
-        "ctx": "Peter exhorts believers to be diligent, to be found at peace, without spot or blemish. They should count divine patience as salvation, as beloved Paul also wrote with wisdom given him. Paul's letters contain hard things that the ignorant and unstable twist, as they do other Scriptures, to their destruction. Therefore, knowing this beforehand, guard yourselves lest you be carried away by the error of lawless people and lose stability. But grow in grace and knowledge of our Lord and Savior Jesus Christ. To him be glory both now and to the day of eternity. Amen.",
-        "cross": [
-          {
-            "ref": "Romans 2:4",
-            "note": "Do you presume on the riches of his kindness and patience?"
-          },
-          {
-            "ref": "Ephesians 4:14",
-            "note": "No longer be children, tossed by every wind of doctrine."
-          },
-          {
-            "ref": "Colossians 1:10",
-            "note": "Walk in a manner worthy of the Lord, bearing fruit and growing in knowledge."
-          },
-          {
-            "ref": "Jude 24-25",
-            "note": "To him who is able to keep you from stumbling."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Romans 2:4",
+              "note": "Do you presume on the riches of his kindness and patience?"
+            },
+            {
+              "ref": "Ephesians 4:14",
+              "note": "No longer be children, tossed by every wind of doctrine."
+            },
+            {
+              "ref": "Colossians 1:10",
+              "note": "Walk in a manner worthy of the Lord, bearing fruit and growing in knowledge."
+            },
+            {
+              "ref": "Jude 24-25",
+              "note": "To him who is able to keep you from stumbling."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -337,6 +346,9 @@
               "note": "Davids notes that the doxology is Christological. Glory belongs to Jesus Christ now and forever. The letter ends as it began - focused on Christ."
             }
           ]
+        },
+        "hist": {
+          "context": "Peter exhorts believers to be diligent, to be found at peace, without spot or blemish. They should count divine patience as salvation, as beloved Paul also wrote with wisdom given him. Paul's letters contain hard things that the ignorant and unstable twist, as they do other Scriptures, to their destruction. Therefore, knowing this beforehand, guard yourselves lest you be carried away by the error of lawless people and lose stability. But grow in grace and knowledge of our Lord and Savior Jesus Christ. To him be glory both now and to the day of eternity. Amen."
         }
       }
     }

@@ -25,21 +25,22 @@
             "paragraph": "Proslambanō (v. 7) is the climactic command of the strong/weak discussion: ‘accept one another, then, just as Christ accepted you.’ The verb carries the sense of warm, personal welcome into fellowship. Christ’s acceptance of sinners is the model and motivation for mutual acceptance within the church. The purpose clause (‘for God’s glory’) elevates unity from a pastoral preference to a doxological imperative."
           }
         ],
-        "ctx": "Romans 15:1–13 concludes the strong/weak discussion begun in 14:1 with a Christological foundation: Christ did not please himself (v. 3) but bore the weaknesses of others. Paul’s catena of OT quotations (vv. 9–12, from 2 Sam 22:50, Deut 32:43, Ps 117:1, Isa 11:10) demonstrates that the inclusion of Gentiles alongside Jews was always God’s plan. The benediction of v. 13 (‘May the God of hope fill you with all joy and peace’) effectively closes the body of the letter. Everything that follows is personal and travelogue.",
-        "cross": [
-          {
-            "ref": "Phil 2:1‑8",
-            "note": "Christ’s self-emptying as the model for Christian humility and other-regarding love."
-          },
-          {
-            "ref": "Isa 11:10",
-            "note": "The Root of Jesse will stand as a banner for the peoples — Paul cites this as the prophetic ground for Gentile hope."
-          },
-          {
-            "ref": "Ps 117:1",
-            "note": "Praise the LORD, all you nations — the shortest psalm, cited as evidence of God’s plan for Gentile worship."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Phil 2:1‑8",
+              "note": "Christ’s self-emptying as the model for Christian humility and other-regarding love."
+            },
+            {
+              "ref": "Isa 11:10",
+              "note": "The Root of Jesse will stand as a banner for the peoples — Paul cites this as the prophetic ground for Gentile hope."
+            },
+            {
+              "ref": "Ps 117:1",
+              "note": "Praise the LORD, all you nations — the shortest psalm, cited as evidence of God’s plan for Gentile worship."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -104,6 +105,9 @@
               "note": "Schreiner emphasises that the call to ‘accept one another’ is not merely tolerant coexistence but active, welcoming inclusion modelled on Christ’s initiative. The Christological pattern (v. 8: Christ became a servant) and the eschatological vision (v. 12: Gentiles hoping in the Root of Jesse) together ground the ecclesiological imperative."
             }
           ]
+        },
+        "hist": {
+          "context": "Romans 15:1–13 concludes the strong/weak discussion begun in 14:1 with a Christological foundation: Christ did not please himself (v. 3) but bore the weaknesses of others. Paul’s catena of OT quotations (vv. 9–12, from 2 Sam 22:50, Deut 32:43, Ps 117:1, Isa 11:10) demonstrates that the inclusion of Gentiles alongside Jews was always God’s plan. The benediction of v. 13 (‘May the God of hope fill you with all joy and peace’) effectively closes the body of the letter. Everything that follows is personal and travelogue."
         }
       }
     },
@@ -121,21 +125,22 @@
             "paragraph": "Leitourgos in v. 16 is a cultic term: Paul describes himself as a ‘priestly servant’ (leitourgon Christou Iēsou) of Christ to the Gentiles, administering the ‘priestly duty’ (hierourgounta) of the gospel. The Gentile converts are the ‘offering’ (prosphora) Paul presents to God. This sacerdotal language reframes missionary work as an act of worship."
           }
         ],
-        "ctx": "Romans 15:14–33 reveals Paul’s travel plans and missionary strategy. He has fully preached the gospel from Jerusalem to Illyricum (v. 19) and now plans to visit Rome en route to Spain (v. 24), the western end of the known world. First, however, he must deliver the collection to Jerusalem (vv. 25–27) — a project he views as a demonstration of Gentile-Jewish unity. The collection symbolises the Gentile churches’ gratitude for the spiritual blessings they received from Jewish Christians. Paul’s request for prayer (vv. 30–32) reveals his awareness of danger in Jerusalem, which was fulfilled when he was arrested there (Acts 21:27–36).",
-        "cross": [
-          {
-            "ref": "Acts 19:21",
-            "note": "Paul resolves to go through Macedonia and Achaia to Jerusalem and then to Rome — the itinerary described here."
-          },
-          {
-            "ref": "2 Cor 8–9",
-            "note": "Paul’s extended treatment of the collection for the Jerusalem saints."
-          },
-          {
-            "ref": "Acts 21:27–36",
-            "note": "The arrest in Jerusalem that Paul feared and for which he requested prayer."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 19:21",
+              "note": "Paul resolves to go through Macedonia and Achaia to Jerusalem and then to Rome — the itinerary described here."
+            },
+            {
+              "ref": "2 Cor 8–9",
+              "note": "Paul’s extended treatment of the collection for the Jerusalem saints."
+            },
+            {
+              "ref": "Acts 21:27–36",
+              "note": "The arrest in Jerusalem that Paul feared and for which he requested prayer."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -200,6 +205,9 @@
               "note": "Schreiner emphasises the collection as a theological statement: the sharing of material blessings from Gentiles to Jews demonstrates the one people of God across ethnic lines. The collection embodies the unity Paul has argued for throughout the letter."
             }
           ]
+        },
+        "hist": {
+          "context": "Romans 15:14–33 reveals Paul’s travel plans and missionary strategy. He has fully preached the gospel from Jerusalem to Illyricum (v. 19) and now plans to visit Rome en route to Spain (v. 24), the western end of the known world. First, however, he must deliver the collection to Jerusalem (vv. 25–27) — a project he views as a demonstration of Gentile-Jewish unity. The collection symbolises the Gentile churches’ gratitude for the spiritual blessings they received from Jewish Christians. Paul’s request for prayer (vv. 30–32) reveals his awareness of danger in Jerusalem, which was fulfilled when he was arrested there (Acts 21:27–36)."
         }
       }
     }

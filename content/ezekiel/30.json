@@ -31,21 +31,22 @@
             "paragraph": "The phrase 'a time of doom for the nations' (et goyim, v. 3) uses the pregnant word ʿet, meaning an appointed time—a kairos moment of divine intervention. This implies that Egypt's judgment is not arbitrary but occurs at God's determined time, reinforcing the theme of divine sovereignty over historical processes."
           }
         ],
-        "ctx": "This undated oracle expands the Egypt judgment theme into cosmic proportions using Day-of-the-LORD language. The list of nations falling alongside Egypt (vv. 5-6)—Cush, Put, Lud, Arabia, Libya, and 'the people of the covenant land'—represents Egypt's entire sphere of influence. The 'people of the covenant land' (v. 5) likely refers to Jewish mercenaries stationed at Elephantine and other Egyptian garrisons, whose fate was bound to Egypt's.",
-        "cross": [
-          {
-            "ref": "Amos 5:18-20",
-            "note": "Amos first reversed Israel's expectations about the Day of the LORD: it would be darkness, not light. Ezekiel extends this reversal to Egypt, showing that no nation is exempt from divine reckoning."
-          },
-          {
-            "ref": "Joel 2:1-2",
-            "note": "Joel describes the Day of the LORD with identical imagery: clouds, darkness, and doom. The shared vocabulary suggests a common prophetic tradition about God's ultimate judgment."
-          },
-          {
-            "ref": "Zeph 1:14-18",
-            "note": "Zephaniah's sweeping Day-of-the-LORD oracle against all creation provides the broadest parallel. Both prophets use the concept to assert YHWH's universal kingship."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Amos 5:18-20",
+              "note": "Amos first reversed Israel's expectations about the Day of the LORD: it would be darkness, not light. Ezekiel extends this reversal to Egypt, showing that no nation is exempt from divine reckoning."
+            },
+            {
+              "ref": "Joel 2:1-2",
+              "note": "Joel describes the Day of the LORD with identical imagery: clouds, darkness, and doom. The shared vocabulary suggests a common prophetic tradition about God's ultimate judgment."
+            },
+            {
+              "ref": "Zeph 1:14-18",
+              "note": "Zephaniah's sweeping Day-of-the-LORD oracle against all creation provides the broadest parallel. Both prophets use the concept to assert YHWH's universal kingship."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Zimmerli classifies this as a 'doom oracle' (Untergangsspruch) distinct from the other Egypt oracles in its eschatological register. The Day-of-the-LORD framework elevates the judgment from historical to cosmic significance. Zimmerli argues this oracle draws on pre-exilic prophetic traditions (Amos, Zephaniah) and applies them to the new context of Egypt's impending fall."
             }
           ]
+        },
+        "hist": {
+          "context": "This undated oracle expands the Egypt judgment theme into cosmic proportions using Day-of-the-LORD language. The list of nations falling alongside Egypt (vv. 5-6)—Cush, Put, Lud, Arabia, Libya, and 'the people of the covenant land'—represents Egypt's entire sphere of influence. The 'people of the covenant land' (v. 5) likely refers to Jewish mercenaries stationed at Elephantine and other Egyptian garrisons, whose fate was bound to Egypt's."
         }
       }
     },
@@ -127,17 +131,18 @@
             "paragraph": "The shephatim YHWH executes against Egypt echo the 'judgments' God inflicted on Egypt during the Exodus (cf. Exod 7:4; 12:12). Ezekiel thus frames the Babylonian conquest as a second Exodus in reverse—this time God's judgments come not to liberate Israel from Egypt but to punish Egypt itself. The theological continuity between the original Exodus plagues and this prophesied devastation reinforces YHWH's consistent character as judge of imperial arrogance."
           }
         ],
-        "ctx": "Ezekiel catalogs Egyptian cities that will fall to Nebuchadnezzar: Memphis (Noph), Thebes (No), Pelusium (Sin), Heliopolis (On), Bubastis (Pi-beseth), and Tahpanhes. This geographic tour covers Upper and Lower Egypt, major cult centers, and military strongholds. Memphis was the administrative capital; Thebes was the great religious center of Amun; Heliopolis was the center of sun worship; Pelusium guarded the eastern delta approach. No corner of Egypt's civilization is spared.",
-        "cross": [
-          {
-            "ref": "Exod 12:12",
-            "note": "God declared at the first Exodus: 'I will bring judgment on all the gods of Egypt.' Ezekiel's systematic destruction of Egypt's major cult cities fulfills the same theological purpose against Egypt's religious infrastructure."
-          },
-          {
-            "ref": "Jer 43:8-13",
-            "note": "Jeremiah prophesied from Tahpanhes that Nebuchadnezzar would set his throne over Egypt. Ezekiel and Jeremiah thus corroborate each other's announcements of Egypt's fall from two different locations."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 12:12",
+              "note": "God declared at the first Exodus: 'I will bring judgment on all the gods of Egypt.' Ezekiel's systematic destruction of Egypt's major cult cities fulfills the same theological purpose against Egypt's religious infrastructure."
+            },
+            {
+              "ref": "Jer 43:8-13",
+              "note": "Jeremiah prophesied from Tahpanhes that Nebuchadnezzar would set his throne over Egypt. Ezekiel and Jeremiah thus corroborate each other's announcements of Egypt's fall from two different locations."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -202,6 +207,9 @@
               "note": "Zimmerli identifies this city catalog as drawing on Egyptian geographic knowledge available in the Neo-Babylonian period. The selection of cult centers (Memphis, Thebes, Heliopolis) alongside military strongholds (Pelusium, Tahpanhes) suggests Ezekiel targets both Egypt's religious ideology and its military confidence. Zimmerli views this as systematically dismantling every pillar of Egyptian self-assurance."
             }
           ]
+        },
+        "hist": {
+          "context": "Ezekiel catalogs Egyptian cities that will fall to Nebuchadnezzar: Memphis (Noph), Thebes (No), Pelusium (Sin), Heliopolis (On), Bubastis (Pi-beseth), and Tahpanhes. This geographic tour covers Upper and Lower Egypt, major cult centers, and military strongholds. Memphis was the administrative capital; Thebes was the great religious center of Amun; Heliopolis was the center of sun worship; Pelusium guarded the eastern delta approach. No corner of Egypt's civilization is spared."
         }
       }
     },
@@ -219,17 +227,18 @@
             "paragraph": "The zeroʿa (arm) of Pharaoh is a political metaphor for military power and royal authority. YHWH has already broken one arm (v. 21, likely referring to Hophra's failed attempt to relieve the siege of Jerusalem in 588 BC), and will break the other as well. Meanwhile, YHWH 'strengthens the arms of the king of Babylon' (v. 24)—the same body-part metaphor applied inversely. The image of Pharaoh dropping his sword with a groan captures total military impotence."
           }
         ],
-        "ctx": "This is the second dated Egypt oracle (April 587 BC, v. 20), arriving after Pharaoh Hophra's brief and unsuccessful attempt to relieve the Babylonian siege of Jerusalem (cf. Jer 37:5-11). Hophra's army advanced but quickly withdrew when Nebuchadnezzar turned to face them. Ezekiel interprets this military failure as YHWH breaking Pharaoh's arm. The remaining arm will also be broken, and the Egyptians will be scattered among nations—the same fate that befell Judah.",
-        "cross": [
-          {
-            "ref": "Jer 37:5-11",
-            "note": "Pharaoh's army marched north to relieve Jerusalem but retreated when the Babylonians turned to engage them. This is the 'broken arm' of Ezekiel 30:21—a military failure interpreted as divine judgment."
-          },
-          {
-            "ref": "Dan 11:22",
-            "note": "Daniel's vision of empires includes armies being 'swept away' and broken, echoing Ezekiel's arm-breaking imagery applied to successive empires."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 37:5-11",
+              "note": "Pharaoh's army marched north to relieve Jerusalem but retreated when the Babylonians turned to engage them. This is the 'broken arm' of Ezekiel 30:21—a military failure interpreted as divine judgment."
+            },
+            {
+              "ref": "Dan 11:22",
+              "note": "Daniel's vision of empires includes armies being 'swept away' and broken, echoing Ezekiel's arm-breaking imagery applied to successive empires."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -294,6 +303,9 @@
               "note": "Zimmerli identifies this as the most historically specific Egypt oracle, directly referencing Hophra's failed campaign. He argues that the arm-breaking metaphor is drawn from royal combat ideology where the pharaoh's arm symbolized his ability to smite enemies. YHWH's breaking of this arm is therefore a direct challenge to Egyptian royal theology."
             }
           ]
+        },
+        "hist": {
+          "context": "This is the second dated Egypt oracle (April 587 BC, v. 20), arriving after Pharaoh Hophra's brief and unsuccessful attempt to relieve the Babylonian siege of Jerusalem (cf. Jer 37:5-11). Hophra's army advanced but quickly withdrew when Nebuchadnezzar turned to face them. Ezekiel interprets this military failure as YHWH breaking Pharaoh's arm. The remaining arm will also be broken, and the Egyptians will be scattered among nations—the same fate that befell Judah."
         }
       }
     }

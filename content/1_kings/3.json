@@ -31,21 +31,22 @@
             "paragraph": "The ability to distinguish good from evil (v.9) is Edenic language — humanity's original aspiration (Gen 3:5) now redeemed through divine gift. What the serpent offered through disobedience, God grants through prayer. Solomon's wisdom reverses the fall's epistemological damage."
           }
         ],
-        "ctx": "The dream at Gibeon is the theological centre of Solomon's early reign. God appears and makes an open-ended offer — \"Ask for whatever you want me to give you\" — a blank cheque with no restrictions. Solomon's response reveals his character: he does not ask for wealth, victory, or long life but for wisdom to govern justly. God is so pleased that he grants all the things Solomon did not ask for as well. The scene establishes the principle that governs the entire Deuteronomistic History: when Israel's king seeks God's priorities first, everything else follows. But the narrator frames the scene with an ominous note: Solomon \"showed his love for the LORD... except that he offered sacrifices and burned incense on the high places\" (v.3). The exception clause hints at the apostasy that will eventually destroy him.",
-        "cross": [
-          {
-            "ref": "Matt 6:33",
-            "note": "\"But seek first his kingdom and his righteousness, and all these things will be given to you as well.\" Jesus' teaching directly echoes the Gibeon principle — seek God's priorities first, and the rest follows."
-          },
-          {
-            "ref": "Jas 1:5",
-            "note": "\"If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault.\" James' invitation mirrors God's offer to Solomon — divine wisdom is available to all who ask."
-          },
-          {
-            "ref": "Prov 8:15–16",
-            "note": "\"By me kings reign and rulers issue decrees that are just.\" Solomon's request for wisdom is a request for the very attribute that makes legitimate governance possible."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 6:33",
+              "note": "\"But seek first his kingdom and his righteousness, and all these things will be given to you as well.\" Jesus' teaching directly echoes the Gibeon principle — seek God's priorities first, and the rest follows."
+            },
+            {
+              "ref": "Jas 1:5",
+              "note": "\"If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault.\" James' invitation mirrors God's offer to Solomon — divine wisdom is available to all who ask."
+            },
+            {
+              "ref": "Prov 8:15–16",
+              "note": "\"By me kings reign and rulers issue decrees that are just.\" Solomon's request for wisdom is a request for the very attribute that makes legitimate governance possible."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -97,6 +98,9 @@
               "note": "Provan: Solomon's self-description as \"a little child who does not know how to go out or come in\" (v.7) is royal humility language, not literal autobiography (he is likely in his twenties). The language echoes Moses' description of the people's need for a shepherd (Num 27:17). The good king sees himself as insufficient for the task."
             }
           ]
+        },
+        "hist": {
+          "context": "The dream at Gibeon is the theological centre of Solomon's early reign. God appears and makes an open-ended offer — \"Ask for whatever you want me to give you\" — a blank cheque with no restrictions. Solomon's response reveals his character: he does not ask for wealth, victory, or long life but for wisdom to govern justly. God is so pleased that he grants all the things Solomon did not ask for as well. The scene establishes the principle that governs the entire Deuteronomistic History: when Israel's king seeks God's priorities first, everything else follows. But the narrator frames the scene with an ominous note: Solomon \"showed his love for the LORD... except that he offered sacrifices and burned incense on the high places\" (v.3). The exception clause hints at the apostasy that will eventually destroy him."
         }
       }
     },
@@ -120,17 +124,18 @@
             "paragraph": "Solomon's command to cut the baby in half (v.25) is not a serious judicial order but a diagnostic probe — a test designed to reveal which woman is the real mother by her response. The verbgāzar(to cut, divide) is used in legal contexts for authoritative decisions. Solomon's verdict is simultaneously the instrument of testing and the act of judgment."
           }
         ],
-        "ctx": "The judgment of the two mothers is the most famous illustration of Solomonic wisdom in the Bible and in world literature. Two prostitutes — women without husbands, male advocates, or social standing — bring their case directly to the king. That Solomon hears them at all demonstrates the accessibility of his justice. His method is psychological brilliance: by threatening to destroy the child, he forces the true mother to reveal herself through self-sacrificial love. The real mother would rather lose her child to the liar than see him killed. The false mother's response — \"Neither mine nor yours; divide him!\" — exposes envy masquerading as equity. Solomon's wisdom operates not by legal precedent but by understanding the human heart.",
-        "cross": [
-          {
-            "ref": "Heb 4:12",
-            "note": "\"The word of God is alive and active... it judges the thoughts and attitudes of the heart.\" Solomon's judgment anticipates the principle that true justice penetrates to motives, not merely evidence."
-          },
-          {
-            "ref": "Prov 25:2",
-            "note": "\"It is the glory of God to conceal a matter; to search out a matter is the glory of kings.\" Solomon's investigation exemplifies the royal duty of uncovering hidden truth."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 4:12",
+              "note": "\"The word of God is alive and active... it judges the thoughts and attitudes of the heart.\" Solomon's judgment anticipates the principle that true justice penetrates to motives, not merely evidence."
+            },
+            {
+              "ref": "Prov 25:2",
+              "note": "\"It is the glory of God to conceal a matter; to search out a matter is the glory of kings.\" Solomon's investigation exemplifies the royal duty of uncovering hidden truth."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -182,6 +187,9 @@
               "note": "Provan: The people's awe (wayyirĕʾû) echoes the \"fear of God\" language that pervades wisdom literature. The response to true wisdom is not admiration but reverence — because divine wisdom in a human vessel points beyond the vessel to the Source."
             }
           ]
+        },
+        "hist": {
+          "context": "The judgment of the two mothers is the most famous illustration of Solomonic wisdom in the Bible and in world literature. Two prostitutes — women without husbands, male advocates, or social standing — bring their case directly to the king. That Solomon hears them at all demonstrates the accessibility of his justice. His method is psychological brilliance: by threatening to destroy the child, he forces the true mother to reveal herself through self-sacrificial love. The real mother would rather lose her child to the liar than see him killed. The false mother's response — \"Neither mine nor yours; divide him!\" — exposes envy masquerading as equity. Solomon's wisdom operates not by legal precedent but by understanding the human heart."
         }
       }
     }

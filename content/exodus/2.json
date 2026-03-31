@@ -94,22 +94,26 @@
             "paragraph": "The waterproofing materials Jochebed used on the basket echo Gen 6:14 where Noah waterproofs the ark with pitch (kōpher). This verbal connection reinforces the ark typology: this small vessel carries a salvation as cosmic in scope as Noah's, though hidden in the reeds of the Nile."
           }
         ],
-        "hist": "The Sargon birth legend (Akkadian, c.2300 BC) describes a baby placed in a basket of rushes, waterproofed with bitumen, set adrift on a river, and rescued by a royal figure — a striking parallel to Moses's birth narrative. This \"exposed infant\" motif was used across the ancient Near East to mark destined leaders. The parallels show Moses's story using conventional heroic-birth literary forms, while its theological distinctives (YHWH's purpose, the midwives, the mother's faith) remain unique.",
-        "ctx": "Pharaoh's decree was \"throw every son into the Nile\" (1:22). Jochebed uses the Nile to save her son — the instrument of Pharaoh's genocide becomes the vehicle of Israel's deliverer. Moses's very survival is an ironic reversal of Pharaoh's plan. His adoption into Pharaoh's household gives him the education and access that will later enable him to confront Pharaoh directly.",
-        "cross": [
-          {
-            "ref": "Gen 6:14",
-            "note": "The basket (tevah) is the same word as Noah's ark. Both are instruments of preservation through water — both preserve the bearer of God's next covenant purpose."
-          },
-          {
-            "ref": "Heb 11:23",
-            "note": "\"By faith Moses' parents hid him for three months after he was born, because they saw he was no ordinary child, and they were not afraid of the king's edict.\""
-          },
-          {
-            "ref": "Acts 7:20–21",
-            "note": "Stephen: \"At this time Moses was born, and he was beautiful before God. And he was brought up for three months in his father's house... and Pharaoh's daughter adopted him.\""
-          }
-        ],
+        "hist": {
+          "historical": "The Sargon birth legend (Akkadian, c.2300 BC) describes a baby placed in a basket of rushes, waterproofed with bitumen, set adrift on a river, and rescued by a royal figure — a striking parallel to Moses's birth narrative. This \"exposed infant\" motif was used across the ancient Near East to mark destined leaders. The parallels show Moses's story using conventional heroic-birth literary forms, while its theological distinctives (YHWH's purpose, the midwives, the mother's faith) remain unique.",
+          "context": "Pharaoh's decree was \"throw every son into the Nile\" (1:22). Jochebed uses the Nile to save her son — the instrument of Pharaoh's genocide becomes the vehicle of Israel's deliverer. Moses's very survival is an ironic reversal of Pharaoh's plan. His adoption into Pharaoh's household gives him the education and access that will later enable him to confront Pharaoh directly."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 6:14",
+              "note": "The basket (tevah) is the same word as Noah's ark. Both are instruments of preservation through water — both preserve the bearer of God's next covenant purpose."
+            },
+            {
+              "ref": "Heb 11:23",
+              "note": "\"By faith Moses' parents hid him for three months after he was born, because they saw he was no ordinary child, and they were not afraid of the king's edict.\""
+            },
+            {
+              "ref": "Acts 7:20–21",
+              "note": "Stephen: \"At this time Moses was born, and he was beautiful before God. And he was brought up for three months in his father's house... and Pharaoh's daughter adopted him.\""
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -281,22 +285,26 @@
             "paragraph": "Moses's refusal of Egyptian wet-nurses (v.7, implied) leads to the child being nursed by his own mother — a providential irony: Pharaoh's daughter pays the child's mother to nurse her own son. Jochebed is able to form Moses's earliest religious identity before the Egyptian court absorbs him."
           }
         ],
-        "hist": "Midian was a tribal region in the northwestern Arabian Peninsula, east of the Gulf of Aqaba. The Midianites were descendants of Abraham through Keturah (Gen 25:2) — distant relatives of Israel. The identification of Jethro/Reuel as a \"priest of Midian\" has puzzled scholars: was he a pagan priest or a worshipper of YHWH? His later reception of Moses' God-story with worship (18:10-12) suggests pre-existing monotheistic inclinations. Moses' forty years in Midian were years of formation — shepherd, husband, father — preparing him for the wilderness years ahead.",
-        "ctx": "Moses's killing of the Egyptian (v.12) and his subsequent flight are not a mere biographical episode — they reveal the tension in his identity (Egyptian by upbringing, Hebrew by birth) and the fact that his first attempt at deliverance is done in his own strength and fails. The bush will come later, when God equips him. The rejection by his own people (v.14: \"who made you a prince?\") anticipates the pattern of prophetic rejection throughout Israel's history.",
-        "cross": [
-          {
-            "ref": "Acts 7:23–29",
-            "note": "Stephen quotes this episode directly: \"When he was forty years old, it came into his heart to visit his brothers... he supposed that his brothers would understand that God was giving them salvation by his hand.\""
-          },
-          {
-            "ref": "Heb 11:24–25",
-            "note": "\"By faith Moses... refused to be called the son of Pharaoh's daughter, choosing rather to be mistreated with the people of God than to enjoy the fleeting pleasures of sin.\""
-          },
-          {
-            "ref": "Exod 18:3–4",
-            "note": "Moses' two sons' names — Gershom (\"sojourner there\") and Eliezer (\"my God is help\") — together summarise Moses' Midian experience: alien and rescued."
-          }
-        ],
+        "hist": {
+          "historical": "Midian was a tribal region in the northwestern Arabian Peninsula, east of the Gulf of Aqaba. The Midianites were descendants of Abraham through Keturah (Gen 25:2) — distant relatives of Israel. The identification of Jethro/Reuel as a \"priest of Midian\" has puzzled scholars: was he a pagan priest or a worshipper of YHWH? His later reception of Moses' God-story with worship (18:10-12) suggests pre-existing monotheistic inclinations. Moses' forty years in Midian were years of formation — shepherd, husband, father — preparing him for the wilderness years ahead.",
+          "context": "Moses's killing of the Egyptian (v.12) and his subsequent flight are not a mere biographical episode — they reveal the tension in his identity (Egyptian by upbringing, Hebrew by birth) and the fact that his first attempt at deliverance is done in his own strength and fails. The bush will come later, when God equips him. The rejection by his own people (v.14: \"who made you a prince?\") anticipates the pattern of prophetic rejection throughout Israel's history."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 7:23–29",
+              "note": "Stephen quotes this episode directly: \"When he was forty years old, it came into his heart to visit his brothers... he supposed that his brothers would understand that God was giving them salvation by his hand.\""
+            },
+            {
+              "ref": "Heb 11:24–25",
+              "note": "\"By faith Moses... refused to be called the son of Pharaoh's daughter, choosing rather to be mistreated with the people of God than to enjoy the fleeting pleasures of sin.\""
+            },
+            {
+              "ref": "Exod 18:3–4",
+              "note": "Moses' two sons' names — Gershom (\"sojourner there\") and Eliezer (\"my God is help\") — together summarise Moses' Midian experience: alien and rescued."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -470,22 +478,26 @@
             "paragraph": "V.17: Moses's first act of deliverance — protecting Jethro's daughters from aggressive shepherds — establishes his character as a mōshîaʿ (one who saves/delivers). This is the same root as \"Yeshua\" (Jesus). The deliverer of Israel is introduced through a micro-redemption in a foreign land, foreshadowing the macro-redemption to come."
           }
         ],
-        "hist": "The 'long period' of oppression fits either the late-date Exodus (c. 1250 BC, under Ramesses II and his successor Merneptah) or the early-date view (c. 1446 BC). The phrase 'the king of Egypt died' marks a political transition. The theological note that 'God heard their groaning and remembered his covenant' uses covenant-treaty language — Israel's cry activates the suzerainty obligations God assumed with Abraham, Isaac, and Jacob.",
-        "ctx": "Exodus 2:23-25 is a theological hinge paragraph — the transition from the human story to the divine response. Four verbs describe God's engagement: he heard their groaning, he remembered his covenant, he saw the people of Israel, he knew (v.25). The final verb — \"God knew\" — echoes the Pharaoh who \"did not know\" (1:8). The contrast is total: the one who chose not to know is answered by the One who fully knows. The stage is set for the burning bush.",
-        "cross": [
-          {
-            "ref": "Gen 15:13–14",
-            "note": "God told Abraham: \"your offspring will be sojourners in a land that is not theirs... I will bring judgment on the nation that they serve.\" Exodus 2:24 is the moment God begins to act on this ancient promise."
-          },
-          {
-            "ref": "Ps 22:24",
-            "note": "\"He has not hidden his face from him, but has heard, when he cried to him.\" The pattern of God hearing the cry of the afflicted is the foundation of the lament Psalms."
-          },
-          {
-            "ref": "Luke 1:72",
-            "note": "Zechariah's song: \"to show the mercy promised to our fathers and to remember his holy covenant.\" The same category — God remembering covenant — applies to the Incarnation."
-          }
-        ],
+        "hist": {
+          "historical": "The 'long period' of oppression fits either the late-date Exodus (c. 1250 BC, under Ramesses II and his successor Merneptah) or the early-date view (c. 1446 BC). The phrase 'the king of Egypt died' marks a political transition. The theological note that 'God heard their groaning and remembered his covenant' uses covenant-treaty language — Israel's cry activates the suzerainty obligations God assumed with Abraham, Isaac, and Jacob.",
+          "context": "Exodus 2:23-25 is a theological hinge paragraph — the transition from the human story to the divine response. Four verbs describe God's engagement: he heard their groaning, he remembered his covenant, he saw the people of Israel, he knew (v.25). The final verb — \"God knew\" — echoes the Pharaoh who \"did not know\" (1:8). The contrast is total: the one who chose not to know is answered by the One who fully knows. The stage is set for the burning bush."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 15:13–14",
+              "note": "God told Abraham: \"your offspring will be sojourners in a land that is not theirs... I will bring judgment on the nation that they serve.\" Exodus 2:24 is the moment God begins to act on this ancient promise."
+            },
+            {
+              "ref": "Ps 22:24",
+              "note": "\"He has not hidden his face from him, but has heard, when he cried to him.\" The pattern of God hearing the cry of the afflicted is the foundation of the lament Psalms."
+            },
+            {
+              "ref": "Luke 1:72",
+              "note": "Zechariah's song: \"to show the mercy promised to our fathers and to remember his holy covenant.\" The same category — God remembering covenant — applies to the Incarnation."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

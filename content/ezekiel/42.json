@@ -25,21 +25,22 @@
             "paragraph": "The term leshakhot (chambers, rooms) combined with haqqodesh (the holy) designates these rooms as sacred infrastructure. They serve three functions: priests eat the most holy offerings here (v. 13), priests change from sacred garments to ordinary clothes here (v. 14), and the sacred vestments are stored here. The rooms are a buffer zone between the holy interior and the common exterior."
           }
         ],
-        "ctx": "The priests' chambers north and south of the temple provide essential sacred infrastructure. These are not living quarters but functional spaces where the boundary between holy and common is managed. Three specific functions are named: eating the most holy offerings (grain, sin, guilt offerings, v. 13), storing priestly garments (v. 14), and changing clothes before exiting to the outer court (v. 14). The clothing-change requirement is theologically significant: garments worn in God's presence absorb holiness and must not contact the common people. Holiness in Ezekiel's priestly theology is contagious, transferable through physical contact.",
-        "cross": [
-          {
-            "ref": "Lev 6:16-18",
-            "note": "The priests eat the grain offering in a holy place. Ezekiel's priests' chambers provide the architectural space for fulfilling this Levitical requirement."
-          },
-          {
-            "ref": "Exod 29:31-34",
-            "note": "The consecration offerings are eaten in the sacred precinct. The priests' chambers in Ezekiel formalize this requirement into permanent architecture."
-          },
-          {
-            "ref": "Lev 16:23-24",
-            "note": "The high priest changes garments after the Day of Atonement service. Ezekiel extends this clothing-change practice to all priestly service, not just the annual atonement ritual."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 6:16-18",
+              "note": "The priests eat the grain offering in a holy place. Ezekiel's priests' chambers provide the architectural space for fulfilling this Levitical requirement."
+            },
+            {
+              "ref": "Exod 29:31-34",
+              "note": "The consecration offerings are eaten in the sacred precinct. The priests' chambers in Ezekiel formalize this requirement into permanent architecture."
+            },
+            {
+              "ref": "Lev 16:23-24",
+              "note": "The high priest changes garments after the Day of Atonement service. Ezekiel extends this clothing-change practice to all priestly service, not just the annual atonement ritual."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -88,6 +89,9 @@
               "note": "Zimmerli sees the priests' chambers as the practical application of the 'holy and common' distinction (cf. 44:23) that structures all of Ezekiel's priestly theology. The rooms are not merely functional; they are hermeneutical: they teach the worshiper that approach to God requires transition, preparation, and transformation."
             }
           ]
+        },
+        "hist": {
+          "context": "The priests' chambers north and south of the temple provide essential sacred infrastructure. These are not living quarters but functional spaces where the boundary between holy and common is managed. Three specific functions are named: eating the most holy offerings (grain, sin, guilt offerings, v. 13), storing priestly garments (v. 14), and changing clothes before exiting to the outer court (v. 14). The clothing-change requirement is theologically significant: garments worn in God's presence absorb holiness and must not contact the common people. Holiness in Ezekiel's priestly theology is contagious, transferable through physical contact."
         }
       }
     },
@@ -105,21 +109,22 @@
             "paragraph": "This is the most important phrase in the entire temple vision. The outer wall's purpose is explicitly stated: to make a separation (havdalah) between the sacred and the profane. The verb havdil (to divide, separate) is the same verb used in Genesis 1 for God's creative acts of separation (light from darkness, waters from waters). The temple wall is a creation boundary: it creates sacred space by separating it from common space."
           }
         ],
-        "ctx": "The measuring guide exits the temple complex through the east gate and measures the outer wall on all four sides. The complex is a perfect square: five hundred cubits on each side (approximately 250 meters / 820 feet). The final verse states the purpose of the entire architectural program: 'to separate the holy from the common' (v. 20). This single phrase summarizes the theology of the entire temple vision. Ezekiel's priestly worldview is defined by this distinction. The destruction of the old temple was caused by the failure to maintain this separation (cf. 22:26). The new temple exists precisely to enforce it permanently.",
-        "cross": [
-          {
-            "ref": "Gen 1:4",
-            "note": "God separated light from darkness. The same verb (havdil) is used for the temple wall's function. Sacred architecture participates in God's ongoing work of creative separation."
-          },
-          {
-            "ref": "Lev 10:10",
-            "note": "The priestly mandate: 'You must distinguish between the holy and the common.' Ezekiel 42:20 makes this distinction architectural and permanent."
-          },
-          {
-            "ref": "Ezek 22:26",
-            "note": "The priests' failure: 'they do not distinguish between the holy and the common.' The new temple's wall ensures this failure cannot be repeated."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 1:4",
+              "note": "God separated light from darkness. The same verb (havdil) is used for the temple wall's function. Sacred architecture participates in God's ongoing work of creative separation."
+            },
+            {
+              "ref": "Lev 10:10",
+              "note": "The priestly mandate: 'You must distinguish between the holy and the common.' Ezekiel 42:20 makes this distinction architectural and permanent."
+            },
+            {
+              "ref": "Ezek 22:26",
+              "note": "The priests' failure: 'they do not distinguish between the holy and the common.' The new temple's wall ensures this failure cannot be repeated."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -164,6 +169,9 @@
               "note": "Zimmerli designates verse 20 as the Grundformel (foundational formula) of the entire temple torah. The havdalah between holy and common is not merely a cultic regulation but a cosmic principle: God's creation began with separation (Gen 1), and God's eschatological temple perfects it. The wall is the architectural embodiment of Genesis 1's creative separations."
             }
           ]
+        },
+        "hist": {
+          "context": "The measuring guide exits the temple complex through the east gate and measures the outer wall on all four sides. The complex is a perfect square: five hundred cubits on each side (approximately 250 meters / 820 feet). The final verse states the purpose of the entire architectural program: 'to separate the holy from the common' (v. 20). This single phrase summarizes the theology of the entire temple vision. Ezekiel's priestly worldview is defined by this distinction. The destruction of the old temple was caused by the failure to maintain this separation (cf. 22:26). The new temple exists precisely to enforce it permanently."
         }
       }
     }

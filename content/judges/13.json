@@ -25,17 +25,18 @@
             "paragraph": "A key Hebrew term in this section on barren woman; Nazirite vow announced; no razor, no wine carries theological weight that illuminates the passage's role in Judges' narrative of covenant decline and divine patience."
           }
         ],
-        "ctx": "This section addresses barren woman; Nazirite vow announced; no razor, no wine. The narrative advances the book's central argument: when Israel forsakes the covenant, disaster follows; when Israel cries out, God raises a deliverer — but each cycle descends further into moral compromise.",
-        "cross": [
-          {
-            "ref": "Judg 2:11-19",
-            "note": "The programmatic cycle statement — sin, oppression, cry, deliverance, rest, relapse — governs every episode in Judges. Each cycle is a local instance of this universal pattern."
-          },
-          {
-            "ref": "Heb 11:32-34",
-            "note": "The NT celebrates the judges' faith while acknowledging their failures. \"Who through faith conquered kingdoms, administered justice, and gained what was promised\" — imperfect faith still accomplishes God's purposes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Judg 2:11-19",
+              "note": "The programmatic cycle statement — sin, oppression, cry, deliverance, rest, relapse — governs every episode in Judges. Each cycle is a local instance of this universal pattern."
+            },
+            {
+              "ref": "Heb 11:32-34",
+              "note": "The NT celebrates the judges' faith while acknowledging their failures. \"Who through faith conquered kingdoms, administered justice, and gained what was promised\" — imperfect faith still accomplishes God's purposes."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -108,6 +109,9 @@
               "note": "Webb: The theological irony is central to the narrator's purpose — God uses increasingly unlikely and morally compromised agents to deliver Israel, demonstrating that salvation depends on divine grace, not human virtue."
             }
           ]
+        },
+        "hist": {
+          "context": "This section addresses barren woman; Nazirite vow announced; no razor, no wine. The narrative advances the book's central argument: when Israel forsakes the covenant, disaster follows; when Israel cries out, God raises a deliverer — but each cycle descends further into moral compromise."
         }
       }
     },
@@ -125,17 +129,18 @@
             "paragraph": "A key Hebrew term in this section on sacrifice consumed by flame; \"the Spirit began to stir him\" carries theological weight that illuminates the passage's role in Judges' narrative of covenant decline and divine patience."
           }
         ],
-        "ctx": "This section addresses sacrifice consumed by flame; \"the Spirit began to stir him\". The narrative advances the book's central argument: when Israel forsakes the covenant, disaster follows; when Israel cries out, God raises a deliverer — but each cycle descends further into moral compromise.",
-        "cross": [
-          {
-            "ref": "Judg 2:11-19",
-            "note": "The programmatic cycle statement — sin, oppression, cry, deliverance, rest, relapse — governs every episode in Judges. Each cycle is a local instance of this universal pattern."
-          },
-          {
-            "ref": "Heb 11:32-34",
-            "note": "The NT celebrates the judges' faith while acknowledging their failures. \"Who through faith conquered kingdoms, administered justice, and gained what was promised\" — imperfect faith still accomplishes God's purposes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Judg 2:11-19",
+              "note": "The programmatic cycle statement — sin, oppression, cry, deliverance, rest, relapse — governs every episode in Judges. Each cycle is a local instance of this universal pattern."
+            },
+            {
+              "ref": "Heb 11:32-34",
+              "note": "The NT celebrates the judges' faith while acknowledging their failures. \"Who through faith conquered kingdoms, administered justice, and gained what was promised\" — imperfect faith still accomplishes God's purposes."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -208,6 +213,9 @@
               "note": "Webb: The theological irony is central to the narrator's purpose — God uses increasingly unlikely and morally compromised agents to deliver Israel, demonstrating that salvation depends on divine grace, not human virtue."
             }
           ]
+        },
+        "hist": {
+          "context": "This section addresses sacrifice consumed by flame; \"the Spirit began to stir him\". The narrative advances the book's central argument: when Israel forsakes the covenant, disaster follows; when Israel cries out, God raises a deliverer — but each cycle descends further into moral compromise."
         }
       }
     }

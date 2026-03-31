@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 22,
       "panels": {
-        "ctx": "Azariah (Uzziah) of Judah reigns 52 years and does right — but is struck with leprosy and lives in quarantine while his son Jotham governs. Meanwhile in Israel, political chaos erupts: Zechariah (6 months, assassinated), Shallum (1 month, assassinated), Menahem (10 years, extracted brutal tribute to pay Assyria), Pekahiah (2 years, assassinated). Five kings in one chapter — the narrator accelerates through them because the northern kingdom is spiralling toward destruction. The Assyrian shadow falls: Tiglath-Pileser III (Pul) extracts a thousand talents of silver from Menahem.",
-        "cross": [
-          {
-            "ref": "2 Chr 26:16–21",
-            "note": "Chronicles explains Uzziah’s leprosy: he entered the temple to burn incense, usurping the priests’ role. Pride at the height of success brought judgment."
-          },
-          {
-            "ref": "Isa 6:1",
-            "note": "“In the year that King Uzziah died, I saw the Lord.” Isaiah’s call vision occurs at the transition this chapter describes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Chr 26:16–21",
+              "note": "Chronicles explains Uzziah’s leprosy: he entered the temple to burn incense, usurping the priests’ role. Pride at the height of success brought judgment."
+            },
+            {
+              "ref": "Isa 6:1",
+              "note": "“In the year that King Uzziah died, I saw the Lord.” Isaiah’s call vision occurs at the transition this chapter describes."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -63,6 +64,9 @@
               "note": "The rapid succession of assassinated kings demonstrates that the northern monarchy has lost all legitimacy. When power can only be seized by murder, the institution itself is bankrupt. The system Jeroboam I created is consuming itself."
             }
           ]
+        },
+        "hist": {
+          "context": "Azariah (Uzziah) of Judah reigns 52 years and does right — but is struck with leprosy and lives in quarantine while his son Jotham governs. Meanwhile in Israel, political chaos erupts: Zechariah (6 months, assassinated), Shallum (1 month, assassinated), Menahem (10 years, extracted brutal tribute to pay Assyria), Pekahiah (2 years, assassinated). Five kings in one chapter — the narrator accelerates through them because the northern kingdom is spiralling toward destruction. The Assyrian shadow falls: Tiglath-Pileser III (Pul) extracts a thousand talents of silver from Menahem."
         }
       }
     },
@@ -72,17 +76,18 @@
       "verse_start": 23,
       "verse_end": 38,
       "panels": {
-        "ctx": "Pekah seizes Israel’s throne through yet another assassination and reigns 20 years. During his reign Tiglath-Pileser conquers the northern territories — Gilead, Galilee, Naphtali — and deports the population. The northern kingdom is being dismembered piece by piece. Hoshea assassinates Pekah and takes the throne. In Judah, Jotham reigns faithfully but cannot stop the rot: “the high places were not removed.” The chapter ends with the Aramean-Israelite coalition forming against Judah — the Syro-Ephraimite crisis that will trigger Isaiah’s Immanuel prophecy.",
-        "cross": [
-          {
-            "ref": "Isa 7:1–14",
-            "note": "The Aramean-Israelite threat against Judah produces Isaiah’s most famous prophecy: “The virgin will conceive and give birth to a son, and will call him Immanuel.”"
-          },
-          {
-            "ref": "1 Chr 5:26",
-            "note": "Chronicles confirms the Assyrian deportation of the Transjordanian tribes: Reuben, Gad, and the half-tribe of Manasseh."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 7:1–14",
+              "note": "The Aramean-Israelite threat against Judah produces Isaiah’s most famous prophecy: “The virgin will conceive and give birth to a son, and will call him Immanuel.”"
+            },
+            {
+              "ref": "1 Chr 5:26",
+              "note": "Chronicles confirms the Assyrian deportation of the Transjordanian tribes: Reuben, Gad, and the half-tribe of Manasseh."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -118,6 +123,9 @@
               "note": "The Assyrian deportations introduce the theme of exile that will dominate the rest of 2 Kings. The removal of populations is not merely military strategy but theological judgment: the people are removed from the land God gave them."
             }
           ]
+        },
+        "hist": {
+          "context": "Pekah seizes Israel’s throne through yet another assassination and reigns 20 years. During his reign Tiglath-Pileser conquers the northern territories — Gilead, Galilee, Naphtali — and deports the population. The northern kingdom is being dismembered piece by piece. Hoshea assassinates Pekah and takes the throne. In Judah, Jotham reigns faithfully but cannot stop the rot: “the high places were not removed.” The chapter ends with the Aramean-Israelite coalition forming against Judah — the Syro-Ephraimite crisis that will trigger Isaiah’s Immanuel prophecy."
         }
       }
     }

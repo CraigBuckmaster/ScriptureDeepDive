@@ -31,21 +31,22 @@
             "paragraph": "The designation of the priest as 'the messenger (malʼakh) of the LORD Almighty' (2:7) is theologically rich. The same word malʼakh means 'angel' or 'messenger,' and its application to the priest equates the priestly teaching function with angelic mediation. The priest is God's authorized spokesman, responsible for preserving and transmitting divine knowledge (daʼath). This usage also connects to the book's title (Malachi = 'my messenger') and the eschatological messenger of 3:1."
           }
         ],
-        "ctx": "The priestly indictment continues from chapter 1 but shifts from sacrificial practice to teaching responsibility. Malachi contrasts the ideal priest — embodied in the 'covenant with Levi' — with the corrupt priests of his own day. The ideal Levite revered God, taught truth, walked in peace and uprightness, and 'turned many from sin' (2:6). The current priests have 'turned from the way,' caused 'many to stumble' by their teaching, and 'violated the covenant with Levi' (2:8). The punishment fits the crime: God will 'smear on your faces the dung from your festival sacrifices' (2:3) — the most humiliating image in the prophets, reducing the priests from honored mediators to refuse carriers. The warning that priestly blessings will become curses (2:2) reverses the Aaronic benediction of Numbers 6:22-27: the very words meant to convey God's favor will convey His judgment.",
-        "cross": [
-          {
-            "ref": "Numbers 25:12-13",
-            "note": "God's 'covenant of peace' with Phinehas, granting his descendants a perpetual priesthood, is the specific covenant tradition Malachi invokes as violated by the current priests."
-          },
-          {
-            "ref": "Deuteronomy 33:8-11",
-            "note": "Moses' blessing on Levi describes the ideal priest as one who teaches God's ordinances and law — the same priestly teaching function that Malachi 2:7 identifies as the priest's primary responsibility."
-          },
-          {
-            "ref": "Hebrews 7:11-28",
-            "note": "The author of Hebrews argues that the Levitical priesthood's imperfection necessitated a new priesthood 'in the order of Melchizedek' — a trajectory that Malachi's priestly critique anticipates."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Numbers 25:12-13",
+              "note": "God's 'covenant of peace' with Phinehas, granting his descendants a perpetual priesthood, is the specific covenant tradition Malachi invokes as violated by the current priests."
+            },
+            {
+              "ref": "Deuteronomy 33:8-11",
+              "note": "Moses' blessing on Levi describes the ideal priest as one who teaches God's ordinances and law — the same priestly teaching function that Malachi 2:7 identifies as the priest's primary responsibility."
+            },
+            {
+              "ref": "Hebrews 7:11-28",
+              "note": "The author of Hebrews argues that the Levitical priesthood's imperfection necessitated a new priesthood 'in the order of Melchizedek' — a trajectory that Malachi's priestly critique anticipates."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Hill notes that the 'covenant with Levi' is not attested elsewhere as a formal covenant designation, though the concept draws on Numbers 25:12-13 and Deuteronomy 33:8-11. Malachi may be innovating theologically, elevating a priestly tradition to full covenant status in order to sharpen the charge of covenant violation."
             }
           ]
+        },
+        "hist": {
+          "context": "The priestly indictment continues from chapter 1 but shifts from sacrificial practice to teaching responsibility. Malachi contrasts the ideal priest — embodied in the 'covenant with Levi' — with the corrupt priests of his own day. The ideal Levite revered God, taught truth, walked in peace and uprightness, and 'turned many from sin' (2:6). The current priests have 'turned from the way,' caused 'many to stumble' by their teaching, and 'violated the covenant with Levi' (2:8). The punishment fits the crime: God will 'smear on your faces the dung from your festival sacrifices' (2:3) — the most humiliating image in the prophets, reducing the priests from honored mediators to refuse carriers. The warning that priestly blessings will become curses (2:2) reverses the Aaronic benediction of Numbers 6:22-27: the very words meant to convey God's favor will convey His judgment."
         }
       }
     },
@@ -129,21 +133,22 @@
             "paragraph": "The word berit ('covenant') appears in multiple registers in this section: the 'covenant of our ancestors' (2:10), the priestly covenant just discussed (2:8), and the marriage covenant witnessed by God (2:14). Malachi treats marriage as a covenantal institution, not merely a social contract — God is 'the witness' (2:14) between husband and wife. This sacralizing of marriage undergirds the strong statement against divorce in 2:16."
           }
         ],
-        "ctx": "The third disputation shifts from priestly to communal sin, addressing two interrelated problems: intermarriage with pagan women and divorce of Jewish wives. The men of Judah have married 'women who worship a foreign god' (2:11) while simultaneously divorcing the 'wife of your youth' (2:14) — suggesting that some men divorced their Jewish wives in order to marry pagan women of higher social or economic status. The passage is among the most debated in the Minor Prophets. Verse 2:16 — traditionally translated 'I hate divorce, says the LORD' — is textually and syntactically difficult; some modern translations render it differently (e.g., 'The man who hates and divorces his wife'). The section closes with the fourth disputation: the people have 'wearied the LORD' with their theological cynicism, claiming that God favors evildoers (2:17). This question — 'Where is the God of justice?' — sets up the answer that will come in chapter 3.",
-        "cross": [
-          {
-            "ref": "Nehemiah 13:23-27",
-            "note": "Nehemiah confronted the same intermarriage crisis that Malachi addresses, even physically assaulting offenders — indicating that the problem persisted despite prophetic warning."
-          },
-          {
-            "ref": "Ezra 9:1-10:44",
-            "note": "Ezra's dramatic response to intermarriage — tearing his robe, praying, and initiating mass divorce of pagan wives — provides the broader historical context for Malachi's marriage discourse."
-          },
-          {
-            "ref": "Matthew 19:3-9",
-            "note": "Jesus' teaching on divorce, citing Genesis 2:24 and declaring that 'what God has joined together, let no one separate,' develops the covenantal marriage theology Malachi establishes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Nehemiah 13:23-27",
+              "note": "Nehemiah confronted the same intermarriage crisis that Malachi addresses, even physically assaulting offenders — indicating that the problem persisted despite prophetic warning."
+            },
+            {
+              "ref": "Ezra 9:1-10:44",
+              "note": "Ezra's dramatic response to intermarriage — tearing his robe, praying, and initiating mass divorce of pagan wives — provides the broader historical context for Malachi's marriage discourse."
+            },
+            {
+              "ref": "Matthew 19:3-9",
+              "note": "Jesus' teaching on divorce, citing Genesis 2:24 and declaring that 'what God has joined together, let no one separate,' develops the covenantal marriage theology Malachi establishes."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -212,6 +217,9 @@
               "note": "Hill notes that the fourth disputation ('You have wearied the LORD') transitions from the marriage crisis to a broader theodicy question. The people's cynicism — 'Where is the God of justice?' — is the theological consequence of their own moral failure: having abandoned covenant fidelity, they can no longer perceive God's just governance. The question sets up the dramatic answer of 3:1-5."
             }
           ]
+        },
+        "hist": {
+          "context": "The third disputation shifts from priestly to communal sin, addressing two interrelated problems: intermarriage with pagan women and divorce of Jewish wives. The men of Judah have married 'women who worship a foreign god' (2:11) while simultaneously divorcing the 'wife of your youth' (2:14) — suggesting that some men divorced their Jewish wives in order to marry pagan women of higher social or economic status. The passage is among the most debated in the Minor Prophets. Verse 2:16 — traditionally translated 'I hate divorce, says the LORD' — is textually and syntactically difficult; some modern translations render it differently (e.g., 'The man who hates and divorces his wife'). The section closes with the fourth disputation: the people have 'wearied the LORD' with their theological cynicism, claiming that God favors evildoers (2:17). This question — 'Where is the God of justice?' — sets up the answer that will come in chapter 3."
         }
       }
     }

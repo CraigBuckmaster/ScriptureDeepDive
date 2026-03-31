@@ -31,21 +31,22 @@
             "paragraph": "In v. 10, Paul states that 'a woman ought to have authority (exousia) over her own head, because of the angels.' This verse is notoriously difficult. The most likely reading is that the head covering is a sign of the woman's own authority to pray and prophesy in the assembly—not a badge of subordination but an emblem of empowerment. The reference to 'angels' may reflect the Jewish tradition of angelic presence in worship (cf. Qumran texts 1QSa 2.3–9; 1QM 7.6)."
           }
         ],
-        "ctx": "The head-covering passage (11:2–16) addresses worship practice in the Corinthian assembly. In the Graeco-Roman world, conventions around head coverings varied by region and context. Roman men typically covered their heads during prayer (capite velato), while Greek men did not. For women, a head covering was a near-universal mark of respectability; an uncovered head could signal sexual availability or cultic ecstasy. Paul's argument weaves together creation theology (Gen 1–2), christological hierarchy (v. 3), cultural propriety (vv. 13–15), and church practice (v. 16). The passage presupposes that women pray and prophesy in the assembly (vv. 5, 13)—a point of tension with 14:34–35 that has generated centuries of scholarly discussion.",
-        "cross": [
-          {
-            "ref": "Gen 1:26–27",
-            "note": "Paul's appeal to the creation of humanity in God's image (v. 7) draws on the Genesis 1 account. The statement that 'man is the image and glory of God; but woman is the glory of man' (v. 7) is Paul's interpretive synthesis of Genesis 1 and 2, not a direct citation."
-          },
-          {
-            "ref": "Gen 2:18–23",
-            "note": "The creation of woman from man (vv. 8–9) appeals to the Genesis 2 narrative of Eve's formation from Adam's rib. Paul uses this not to subordinate women but to establish the mutuality articulated in vv. 11–12: 'in the Lord woman is not independent of man, nor is man independent of woman.'"
-          },
-          {
-            "ref": "Eph 5:22–33",
-            "note": "The Ephesians passage develops the head/body metaphor in the context of marriage. Both passages use kephalē to describe a relational structure, though the specific application differs (worship practice in 1 Cor 11; marriage in Eph 5)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 1:26–27",
+              "note": "Paul's appeal to the creation of humanity in God's image (v. 7) draws on the Genesis 1 account. The statement that 'man is the image and glory of God; but woman is the glory of man' (v. 7) is Paul's interpretive synthesis of Genesis 1 and 2, not a direct citation."
+            },
+            {
+              "ref": "Gen 2:18–23",
+              "note": "The creation of woman from man (vv. 8–9) appeals to the Genesis 2 narrative of Eve's formation from Adam's rib. Paul uses this not to subordinate women but to establish the mutuality articulated in vv. 11–12: 'in the Lord woman is not independent of man, nor is man independent of woman.'"
+            },
+            {
+              "ref": "Eph 5:22–33",
+              "note": "The Ephesians passage develops the head/body metaphor in the context of marriage. Both passages use kephalē to describe a relational structure, though the specific application differs (worship practice in 1 Cor 11; marriage in Eph 5)."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -102,6 +103,9 @@
               "note": "Thiselton provides the most comprehensive analysis of the passage in modern English commentary. He argues that the term kephalē in v. 3 is used with different nuances in each of its three occurrences: 'source' when predicated of God and Christ, 'preeminent partner' when predicated of Christ and man, and 'source/origin' when predicated of man and woman. Thiselton contends that flattening all three to a single meaning (whether 'authority' or 'source') impoverishes the argument. On the vexed question of v. 10, Thiselton adopts the active reading: the woman's head covering is a sign of her own exousia—her right and freedom to participate in prophetic speech. The reference to angels reflects the Qumran-attested tradition of angelic presence in worship, where proper order is maintained out of respect for the heavenly assembly."
             }
           ]
+        },
+        "hist": {
+          "context": "The head-covering passage (11:2–16) addresses worship practice in the Corinthian assembly. In the Graeco-Roman world, conventions around head coverings varied by region and context. Roman men typically covered their heads during prayer (capite velato), while Greek men did not. For women, a head covering was a near-universal mark of respectability; an uncovered head could signal sexual availability or cultic ecstasy. Paul's argument weaves together creation theology (Gen 1–2), christological hierarchy (v. 3), cultural propriety (vv. 13–15), and church practice (v. 16). The passage presupposes that women pray and prophesy in the assembly (vv. 5, 13)—a point of tension with 14:34–35 that has generated centuries of scholarly discussion."
         }
       }
     },
@@ -125,17 +129,18 @@
             "paragraph": "The noun haireseis (factions) in v. 19 intensifies the charge beyond schisma. In classical Greek, hairesis denotes a 'choice' or 'school of thought.' Paul's use carries negative connotations: the factions are not legitimate theological differences but sinful divisions that 'show which of you have God's approval'—an ironic statement, since the factions themselves are evidence of disapproval."
           }
         ],
-        "ctx": "The Corinthian communal meal appears to have been a full dinner (deipnon) in which the Lord's Supper was embedded. Archaeological and social-historical evidence suggests that wealthy patrons hosted the meal in their homes, where the dining room (triclinium) held only nine to twelve reclining guests, while others ate in the atrium or courtyard. The wealthy arrived early (since they controlled their own schedules) and ate the best food and wine, while working-class members arrived later to find the provisions depleted. Paul's outrage is not merely social but theological: this behaviour 'despises the church of God' and 'humiliates those who have nothing' (v. 22).",
-        "cross": [
-          {
-            "ref": "1 Cor 1:10",
-            "note": "Paul's earlier appeal for unity—'that there be no divisions (schismata) among you'—is directly echoed by the division language of 11:18. The Lord's Supper abuses are a specific instance of the broader Corinthian problem of factionalism."
-          },
-          {
-            "ref": "James 2:1–4",
-            "note": "James rebukes the practice of showing favouritism to the rich in the assembly while marginalising the poor—a close parallel to the Corinthian practice Paul denounces."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 1:10",
+              "note": "Paul's earlier appeal for unity—'that there be no divisions (schismata) among you'—is directly echoed by the division language of 11:18. The Lord's Supper abuses are a specific instance of the broader Corinthian problem of factionalism."
+            },
+            {
+              "ref": "James 2:1–4",
+              "note": "James rebukes the practice of showing favouritism to the rich in the assembly while marginalising the poor—a close parallel to the Corinthian practice Paul denounces."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -184,6 +189,9 @@
               "note": "Thiselton draws on the social-scientific work of Gerd Theissen to reconstruct the socio-economic dynamics behind the abuse. The triclinium-atrium division meant that high-status members reclined at table in the dining room while lower-status members stood or sat in the open courtyard. Thiselton argues that the phrase 'each one goes ahead with his own supper' (v. 21) reflects the Roman convivial practice of bringing differential provisions based on social rank—a practice widely attested in Roman satirical literature (Martial, Juvenal, Pliny). Paul's response shatters this social convention: the Lord's Supper must be eaten 'together' (ekdechesthe allēlous, v. 33)."
             }
           ]
+        },
+        "hist": {
+          "context": "The Corinthian communal meal appears to have been a full dinner (deipnon) in which the Lord's Supper was embedded. Archaeological and social-historical evidence suggests that wealthy patrons hosted the meal in their homes, where the dining room (triclinium) held only nine to twelve reclining guests, while others ate in the atrium or courtyard. The wealthy arrived early (since they controlled their own schedules) and ate the best food and wine, while working-class members arrived later to find the provisions depleted. Paul's outrage is not merely social but theological: this behaviour 'despises the church of God' and 'humiliates those who have nothing' (v. 22)."
         }
       }
     },
@@ -207,21 +215,22 @@
             "paragraph": "The noun diathēkē (covenant) in v. 25 ('this cup is the new covenant in my blood') links the Lord's Supper to Jeremiah's prophecy of a 'new covenant' (Jer 31:31–34). In Greek, diathēkē can mean either 'covenant' (bilateral agreement) or 'testament/will' (unilateral disposition). The LXX consistently uses it for Hebrew berith (covenant). Jesus' words identify His shed blood as the ratification of the new covenant promised by the prophets—a covenant written on hearts, not on stone tablets."
           }
         ],
-        "ctx": "Paul's institution narrative (vv. 23–26) is the earliest written account of the Lord's Supper, predating even the Gospel accounts (Mark's Gospel is usually dated to the late 60s AD, while 1 Corinthians was written c. AD 53–55). Paul explicitly claims that he 'received from the Lord' (parelabon apo tou kyriou) what he 'passed on' (paredōka)—the technical vocabulary of Jewish tradition transmission (cf. 15:3). The tradition includes four elements: (1) the bread-word ('This is my body, which is for you'), (2) the command of remembrance, (3) the cup-word ('This cup is the new covenant in my blood'), and (4) the eschatological horizon ('until he comes'). Paul then applies this tradition to the Corinthian situation: unworthy participation brings judgment, including physical illness and death (vv. 29–30).",
-        "cross": [
-          {
-            "ref": "Exod 24:8",
-            "note": "Moses ratified the Sinai covenant by sprinkling blood on the people, saying 'This is the blood of the covenant.' Jesus' cup-word deliberately echoes and transforms this: the new covenant is ratified by His own blood, not the blood of animals."
-          },
-          {
-            "ref": "Matt 26:26–29",
-            "note": "The Synoptic institution narratives (Matt 26; Mark 14; Luke 22) provide parallel accounts. Paul's version is closest to Luke's, sharing the distinctive phrases 'which is for you' and 'do this in remembrance of me' for both elements."
-          },
-          {
-            "ref": "Luke 22:19–20",
-            "note": "Luke's institution narrative closely parallels Paul's, both including the command 'Do this in remembrance of me' and the phrase 'new covenant in my blood.' This suggests a shared liturgical tradition underlying both accounts."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 24:8",
+              "note": "Moses ratified the Sinai covenant by sprinkling blood on the people, saying 'This is the blood of the covenant.' Jesus' cup-word deliberately echoes and transforms this: the new covenant is ratified by His own blood, not the blood of animals."
+            },
+            {
+              "ref": "Matt 26:26–29",
+              "note": "The Synoptic institution narratives (Matt 26; Mark 14; Luke 22) provide parallel accounts. Paul's version is closest to Luke's, sharing the distinctive phrases 'which is for you' and 'do this in remembrance of me' for both elements."
+            },
+            {
+              "ref": "Luke 22:19–20",
+              "note": "Luke's institution narrative closely parallels Paul's, both including the command 'Do this in remembrance of me' and the phrase 'new covenant in my blood.' This suggests a shared liturgical tradition underlying both accounts."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -286,6 +295,9 @@
               "note": "Thiselton argues that the phrase 'in an unworthy manner' (anaxiōs) is an adverb modifying the act of eating, not an adjective describing the eater. The Corinthians are not unworthy people; they are eating in an unworthy way—namely, by perpetuating social stratification at the very meal that proclaims the cross's abolition of human distinctions. Thiselton reads v. 30's references to illness and death as Paul's interpretation of actual events in the Corinthian community: some members have become sick or died, and Paul attributes this to divine discipline."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul's institution narrative (vv. 23–26) is the earliest written account of the Lord's Supper, predating even the Gospel accounts (Mark's Gospel is usually dated to the late 60s AD, while 1 Corinthians was written c. AD 53–55). Paul explicitly claims that he 'received from the Lord' (parelabon apo tou kyriou) what he 'passed on' (paredōka)—the technical vocabulary of Jewish tradition transmission (cf. 15:3). The tradition includes four elements: (1) the bread-word ('This is my body, which is for you'), (2) the command of remembrance, (3) the cup-word ('This cup is the new covenant in my blood'), and (4) the eschatological horizon ('until he comes'). Paul then applies this tradition to the Corinthian situation: unworthy participation brings judgment, including physical illness and death (vv. 29–30)."
         }
       }
     }

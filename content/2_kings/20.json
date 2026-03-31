@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 11,
       "panels": {
-        "ctx": "Hezekiah becomes terminally ill. Isaiah tells him: “Put your house in order, because you are going to die.” Hezekiah turns to the wall and weeps, praying: “Remember how I have walked before you faithfully.” Before Isaiah leaves the middle court, God reverses the sentence: fifteen more years, plus deliverance from Assyria. The sign: the shadow on Ahaz’s stairway retreats ten steps. The miracle confirms the word; the word reverses the death sentence. Prayer changes outcomes — even outcomes announced by a prophet.",
-        "cross": [
-          {
-            "ref": "Isa 38:1–22",
-            "note": "Isaiah’s parallel includes Hezekiah’s psalm of thanksgiving, not preserved in Kings. The two accounts complement each other."
-          },
-          {
-            "ref": "Jonah 3:10",
-            "note": "God relented from the judgment he had announced against Nineveh. The pattern: prophetic announcement is not always prophetic inevitability."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 38:1–22",
+              "note": "Isaiah’s parallel includes Hezekiah’s psalm of thanksgiving, not preserved in Kings. The two accounts complement each other."
+            },
+            {
+              "ref": "Jonah 3:10",
+              "note": "God relented from the judgment he had announced against Nineveh. The pattern: prophetic announcement is not always prophetic inevitability."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -67,6 +68,9 @@
               "note": "Hezekiah’s tears are not weakness but genuine engagement with God. The king who faced Sennacherib with faith now faces death with grief. Both responses are authentic; both receive divine attention."
             }
           ]
+        },
+        "hist": {
+          "context": "Hezekiah becomes terminally ill. Isaiah tells him: “Put your house in order, because you are going to die.” Hezekiah turns to the wall and weeps, praying: “Remember how I have walked before you faithfully.” Before Isaiah leaves the middle court, God reverses the sentence: fifteen more years, plus deliverance from Assyria. The sign: the shadow on Ahaz’s stairway retreats ten steps. The miracle confirms the word; the word reverses the death sentence. Prayer changes outcomes — even outcomes announced by a prophet."
         }
       }
     },
@@ -76,17 +80,18 @@
       "verse_start": 12,
       "verse_end": 21,
       "panels": {
-        "ctx": "Merodach-Baladan of Babylon sends envoys with letters and a gift, ostensibly congratulating Hezekiah on his recovery. Hezekiah shows them everything: the treasury, the armoury, the storehouses — “there was nothing in his palace or in all his kingdom that Hezekiah did not show them.” Isaiah asks: “What did they see?” Answer: everything. Isaiah’s prophecy: “Everything in your palace will be carried off to Babylon.” Hezekiah’s response is chilling: “The word of the LORD you have spoken is good” — because it won’t happen in his lifetime. The seed of Judah’s destruction is planted by its greatest king’s greatest weakness: pride.",
-        "cross": [
-          {
-            "ref": "Isa 39:1–8",
-            "note": "The parallel in Isaiah is nearly identical. The placement at the end of “First Isaiah” (chs 1–39) transitions to the Babylonian exile focus of “Second Isaiah” (chs 40–55)."
-          },
-          {
-            "ref": "2 Kgs 24:13",
-            "note": "Nebuchadnezzar carries off “all the treasures of the temple and the royal palace” — Isaiah’s prophecy fulfilled exactly."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 39:1–8",
+              "note": "The parallel in Isaiah is nearly identical. The placement at the end of “First Isaiah” (chs 1–39) transitions to the Babylonian exile focus of “Second Isaiah” (chs 40–55)."
+            },
+            {
+              "ref": "2 Kgs 24:13",
+              "note": "Nebuchadnezzar carries off “all the treasures of the temple and the royal palace” — Isaiah’s prophecy fulfilled exactly."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -126,6 +131,9 @@
               "note": "Hezekiah’s final words in the narrative — “Will there not be peace and security in my lifetime?” — reveal the limits of even the best king. His faith is real but his moral vision is bounded by his own lifespan. The contrast with Abraham (who blessed nations he would never see) is implicit."
             }
           ]
+        },
+        "hist": {
+          "context": "Merodach-Baladan of Babylon sends envoys with letters and a gift, ostensibly congratulating Hezekiah on his recovery. Hezekiah shows them everything: the treasury, the armoury, the storehouses — “there was nothing in his palace or in all his kingdom that Hezekiah did not show them.” Isaiah asks: “What did they see?” Answer: everything. Isaiah’s prophecy: “Everything in your palace will be carried off to Babylon.” Hezekiah’s response is chilling: “The word of the LORD you have spoken is good” — because it won’t happen in his lifetime. The seed of Judah’s destruction is planted by its greatest king’s greatest weakness: pride."
         }
       }
     }

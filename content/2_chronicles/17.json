@@ -17,21 +17,22 @@
       "verse_start": 1,
       "verse_end": 9,
       "panels": {
-        "ctx": "Jehoshaphat strengthens Judah against Israel, stations troops in fortified cities, and “his heart was devoted to the ways of the LORD.” He sends officials, Levites, and priests throughout Judah “teaching from the Book of the Law of the LORD.” They travel to every town — a national education campaign. “The fear of the LORD fell on all the kingdoms of the lands surrounding Judah.” Torah education produces international respect.",
-        "cross": [
-          {
-            "ref": "1 Kgs 22:41–43",
-            "note": "Kings gives Jehoshaphat five summary verses. Chronicles devotes four full chapters (17–20) to him, making him a model king. The teaching commission of vv. 7–9 is unique to Chronicles."
-          },
-          {
-            "ref": "Deut 6:6–9",
-            "note": "Jehoshaphat's Torah-teaching programme — sending officials with a book of the law through Judah's cities — actualises the Deuteronomic vision of a society formed by Scripture."
-          },
-          {
-            "ref": "Neh 8:1–8",
-            "note": "Nehemiah's later public Torah reading follows the same pattern Jehoshaphat established: leaders taking Scripture to the people rather than waiting for the people to come to the temple."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 22:41–43",
+              "note": "Kings gives Jehoshaphat five summary verses. Chronicles devotes four full chapters (17–20) to him, making him a model king. The teaching commission of vv. 7–9 is unique to Chronicles."
+            },
+            {
+              "ref": "Deut 6:6–9",
+              "note": "Jehoshaphat's Torah-teaching programme — sending officials with a book of the law through Judah's cities — actualises the Deuteronomic vision of a society formed by Scripture."
+            },
+            {
+              "ref": "Neh 8:1–8",
+              "note": "Nehemiah's later public Torah reading follows the same pattern Jehoshaphat established: leaders taking Scripture to the people rather than waiting for the people to come to the temple."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -49,6 +50,9 @@
               "note": "The Chronicler’s characteristic vocabulary and theological framework shape the presentation of these events."
             }
           ]
+        },
+        "hist": {
+          "context": "Jehoshaphat strengthens Judah against Israel, stations troops in fortified cities, and “his heart was devoted to the ways of the LORD.” He sends officials, Levites, and priests throughout Judah “teaching from the Book of the Law of the LORD.” They travel to every town — a national education campaign. “The fear of the LORD fell on all the kingdoms of the lands surrounding Judah.” Torah education produces international respect."
         }
       }
     },
@@ -58,17 +62,18 @@
       "verse_start": 10,
       "verse_end": 19,
       "panels": {
-        "ctx": "Jehoshaphat receives tribute from Philistines and Arabs. His army totals over a million men across five divisions. The commanders “willingly offered themselves for service.” The Chronicler’s formula: seeking God → divine blessing → military strength → international recognition. Jehoshaphat embodies the pattern.",
-        "cross": [
-          {
-            "ref": "1 Kgs 22:45",
-            "note": "Kings merely states Jehoshaphat's might. Chronicles provides the military census — 1,160,000 troops — emphasising that faithfulness produced both spiritual and material strength."
-          },
-          {
-            "ref": "2 Chr 14:8",
-            "note": "The military buildup mirrors Asa's earlier forces (14:8), showing the Chronicler's theme: faithful kings receive God-given military strength without needing foreign alliances."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 22:45",
+              "note": "Kings merely states Jehoshaphat's might. Chronicles provides the military census — 1,160,000 troops — emphasising that faithfulness produced both spiritual and material strength."
+            },
+            {
+              "ref": "2 Chr 14:8",
+              "note": "The military buildup mirrors Asa's earlier forces (14:8), showing the Chronicler's theme: faithful kings receive God-given military strength without needing foreign alliances."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -86,6 +91,9 @@
               "note": "The Chronicler’s characteristic vocabulary and theological framework shape the presentation of these events."
             }
           ]
+        },
+        "hist": {
+          "context": "Jehoshaphat receives tribute from Philistines and Arabs. His army totals over a million men across five divisions. The commanders “willingly offered themselves for service.” The Chronicler’s formula: seeking God → divine blessing → military strength → international recognition. Jehoshaphat embodies the pattern."
         }
       }
     }

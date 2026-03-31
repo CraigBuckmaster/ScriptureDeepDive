@@ -31,22 +31,26 @@
             "paragraph": "V.2: \"The LORD is my strength and my defence (zimrāt).\" The word zimrāt is rare and disputed — possibly \"song,\" possibly \"power\" or \"protection.\" If \"song,\" the LORD himself is the song of his people. This verse is quoted three times in the OT (Ps 118:14; Isa 12:2) and becomes a template for thanksgiving. Isaiah 12:2 makes it the song of the eschatological gathering: the day when \"with joy you will draw water from the wells of salvation.\""
           }
         ],
-        "hist": "The Song of the Sea is widely regarded by scholars as among the oldest texts in the Hebrew Bible, based on archaic grammatical forms, poetic structure, and the presence of Ugaritic cognates. Its antiquity suggests it was composed close to the event. Ancient Near Eastern victory hymns (e.g., Egyptian Hymn to the Nile, Ugaritic Baal Cycle) celebrate divine warriors — the Song of the Sea appropriates and transforms the genre to celebrate a God who needs no weapons.",
-        "ctx": "The Song is not a summary of ch.14 in poetic form — it is a theological interpretation of it. The crossing is cast as cosmic warfare: God as divine warrior, the sea as the instrument of judgment, Egypt's army as the enemy hurled down. The poem moves from past rescue (vv.1–12) to future conquest (vv.13–17) to eternal reign (v.18) — Israel's salvation at the sea is the first act of the story that culminates in God's dwelling among his people.",
-        "cross": [
-          {
-            "ref": "Rev 15:3",
-            "note": "The redeemed sing \"the song of Moses and the Lamb\" — the Song of the Sea and the cross's victory are the two redemptive events the final song unites."
-          },
-          {
-            "ref": "Ps 77:19–20",
-            "note": "The Psalmist meditates on the Red Sea crossing: \"Your way was through the sea, your path through the great waters.\""
-          },
-          {
-            "ref": "Isa 12:2",
-            "note": "\"The LORD is my strength and my song; he has become my salvation\" — Isaiah 12:2 quotes Exod 15:2 verbatim as the song of the new Exodus."
-          }
-        ],
+        "hist": {
+          "historical": "The Song of the Sea is widely regarded by scholars as among the oldest texts in the Hebrew Bible, based on archaic grammatical forms, poetic structure, and the presence of Ugaritic cognates. Its antiquity suggests it was composed close to the event. Ancient Near Eastern victory hymns (e.g., Egyptian Hymn to the Nile, Ugaritic Baal Cycle) celebrate divine warriors — the Song of the Sea appropriates and transforms the genre to celebrate a God who needs no weapons.",
+          "context": "The Song is not a summary of ch.14 in poetic form — it is a theological interpretation of it. The crossing is cast as cosmic warfare: God as divine warrior, the sea as the instrument of judgment, Egypt's army as the enemy hurled down. The poem moves from past rescue (vv.1–12) to future conquest (vv.13–17) to eternal reign (v.18) — Israel's salvation at the sea is the first act of the story that culminates in God's dwelling among his people."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rev 15:3",
+              "note": "The redeemed sing \"the song of Moses and the Lamb\" — the Song of the Sea and the cross's victory are the two redemptive events the final song unites."
+            },
+            {
+              "ref": "Ps 77:19–20",
+              "note": "The Psalmist meditates on the Red Sea crossing: \"Your way was through the sea, your path through the great waters.\""
+            },
+            {
+              "ref": "Isa 12:2",
+              "note": "\"The LORD is my strength and my song; he has become my salvation\" — Isaiah 12:2 quotes Exod 15:2 verbatim as the song of the new Exodus."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -150,22 +154,26 @@
             "paragraph": "V.26: \"I am the LORD who heals you\" — YHWH Ropheka, the first compound divine name in Exodus. The verb rāpāʾ (to heal, mend) will reappear in the Servant Song of Isa 53:5 (\"by his wounds we are healed\") and become the primary medical metaphor in the NT. The healing at Marah introduces a God who is not only powerful over nations but personally attentive to the physical and spiritual health of his people."
           }
         ],
-        "hist": "The journey from the Sea to Marah (three days into the Wilderness of Shur) follows the route along the western Sinai coast. Shur ('wall') may refer to the Egyptian frontier fortification system. Marah ('bitter') is traditionally identified with 'Ain Hawarah, where the water is indeed brackish. Elim with its twelve springs and seventy palm trees has been identified with Wadi Gharandel, an oasis on the western Sinai coast. The three-day waterless march is a realistic travel detail for this terrain.",
-        "ctx": "The Marah test (v.25: \"there he tested them\") comes three days after the greatest miracle Israel has witnessed. The speed of the transition from singing to complaining is not incidental — it is the nature of faith under wilderness conditions. God tests at Marah not to destroy but to form: \"if you will diligently listen.\" The healing of the water is the first sign that the God who judged Egypt heals Israel — the same power applied differently.",
-        "cross": [
-          {
-            "ref": "2 Kgs 2:19–22",
-            "note": "Elisha heals bitter water by throwing salt into it — the Marah pattern repeated in the prophetic period."
-          },
-          {
-            "ref": "John 4:14",
-            "note": "The water Jesus gives becomes \"a spring of water welling up to eternal life\" — the Marah pattern fulfilled: the bitter water of human thirst becomes living water."
-          },
-          {
-            "ref": "Rev 22:2",
-            "note": "The leaves of the tree of life are for the healing of nations — the log thrown into Marah prefigures the cross-shaped wood that heals the creation."
-          }
-        ],
+        "hist": {
+          "historical": "The journey from the Sea to Marah (three days into the Wilderness of Shur) follows the route along the western Sinai coast. Shur ('wall') may refer to the Egyptian frontier fortification system. Marah ('bitter') is traditionally identified with 'Ain Hawarah, where the water is indeed brackish. Elim with its twelve springs and seventy palm trees has been identified with Wadi Gharandel, an oasis on the western Sinai coast. The three-day waterless march is a realistic travel detail for this terrain.",
+          "context": "The Marah test (v.25: \"there he tested them\") comes three days after the greatest miracle Israel has witnessed. The speed of the transition from singing to complaining is not incidental — it is the nature of faith under wilderness conditions. God tests at Marah not to destroy but to form: \"if you will diligently listen.\" The healing of the water is the first sign that the God who judged Egypt heals Israel — the same power applied differently."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 2:19–22",
+              "note": "Elisha heals bitter water by throwing salt into it — the Marah pattern repeated in the prophetic period."
+            },
+            {
+              "ref": "John 4:14",
+              "note": "The water Jesus gives becomes \"a spring of water welling up to eternal life\" — the Marah pattern fulfilled: the bitter water of human thirst becomes living water."
+            },
+            {
+              "ref": "Rev 22:2",
+              "note": "The leaves of the tree of life are for the healing of nations — the log thrown into Marah prefigures the cross-shaped wood that heals the creation."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

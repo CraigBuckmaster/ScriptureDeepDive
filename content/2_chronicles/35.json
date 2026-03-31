@@ -17,21 +17,22 @@
       "verse_start": 1,
       "verse_end": 19,
       "panels": {
-        "ctx": "Josiah celebrates a Passover greater than any since Samuel’s time. The Chronicler devotes 19 verses to the liturgical details: Levitical assignments, priestly stations, sacrifice procedures, singers in position. “The Passover had not been observed like this in Israel since the days of the prophet Samuel.” The Chronicler elevates this Passover above even Hezekiah’s (ch 30). Josiah’s worship is the apex of the monarchy’s liturgical achievement.",
-        "cross": [
-          {
-            "ref": "2 Kgs 23:21–23",
-            "note": "Kings devotes three verses to the Passover. Chronicles gives nineteen, detailing priestly and Levitical preparations, musical arrangements, and the comparison to Samuel's day — this is the climactic worship event in Chronicles."
-          },
-          {
-            "ref": "Exod 12:1–28",
-            "note": "The Passover follows Mosaic regulations meticulously. The Chronicler emphasises that every detail conformed to 'what is written in the book of Moses' — Josiah's Passover is the most Torah-compliant in recorded history."
-          },
-          {
-            "ref": "2 Chr 30:1–27",
-            "note": "The comparison with Hezekiah's Passover is implicit: Hezekiah's was celebrated in the second month with ritual compromises; Josiah's follows every regulation perfectly. The trajectory of reform reaches its apex."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 23:21–23",
+              "note": "Kings devotes three verses to the Passover. Chronicles gives nineteen, detailing priestly and Levitical preparations, musical arrangements, and the comparison to Samuel's day — this is the climactic worship event in Chronicles."
+            },
+            {
+              "ref": "Exod 12:1–28",
+              "note": "The Passover follows Mosaic regulations meticulously. The Chronicler emphasises that every detail conformed to 'what is written in the book of Moses' — Josiah's Passover is the most Torah-compliant in recorded history."
+            },
+            {
+              "ref": "2 Chr 30:1–27",
+              "note": "The comparison with Hezekiah's Passover is implicit: Hezekiah's was celebrated in the second month with ritual compromises; Josiah's follows every regulation perfectly. The trajectory of reform reaches its apex."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -49,6 +50,9 @@
               "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events."
             }
           ]
+        },
+        "hist": {
+          "context": "Josiah celebrates a Passover greater than any since Samuel’s time. The Chronicler devotes 19 verses to the liturgical details: Levitical assignments, priestly stations, sacrifice procedures, singers in position. “The Passover had not been observed like this in Israel since the days of the prophet Samuel.” The Chronicler elevates this Passover above even Hezekiah’s (ch 30). Josiah’s worship is the apex of the monarchy’s liturgical achievement."
         }
       }
     },
@@ -58,21 +62,22 @@
       "verse_start": 20,
       "verse_end": 27,
       "panels": {
-        "ctx": "Pharaoh Necho marches north. Josiah intercepts him at Megiddo. Necho sends messengers: “God has told me to hurry. Stop opposing God, who is with me, or he will destroy you.” The Chronicler adds this detail absent from Kings: Necho claims divine authority, and Josiah ignores it. “Josiah would not turn away from him, but disguised himself.” He is fatally wounded by archers. “Jeremiah composed laments for Josiah.” The greatest reformer dies because he refused to listen to God’s word — even when it came through a pagan king.",
-        "cross": [
-          {
-            "ref": "2 Kgs 23:29–30",
-            "note": "Kings records Josiah's death at Megiddo in two verses. Chronicles adds the devastating detail that Josiah ignored a divine warning delivered through Pharaoh Necho — 'God has told me to hurry; stop opposing God, or he will destroy you.'"
-          },
-          {
-            "ref": "Jer 22:10–12",
-            "note": "Jeremiah's instruction not to weep for the dead king (Josiah) but for his successor who will go into exile shows the prophetic aftermath: Josiah's death was the point of no return for Judah."
-          },
-          {
-            "ref": "Lam 4:20",
-            "note": "Lamentations' 'the LORD's anointed, our very life breath, was caught in their traps' likely refers to Josiah. His death was experienced as a national catastrophe of the highest order."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 23:29–30",
+              "note": "Kings records Josiah's death at Megiddo in two verses. Chronicles adds the devastating detail that Josiah ignored a divine warning delivered through Pharaoh Necho — 'God has told me to hurry; stop opposing God, or he will destroy you.'"
+            },
+            {
+              "ref": "Jer 22:10–12",
+              "note": "Jeremiah's instruction not to weep for the dead king (Josiah) but for his successor who will go into exile shows the prophetic aftermath: Josiah's death was the point of no return for Judah."
+            },
+            {
+              "ref": "Lam 4:20",
+              "note": "Lamentations' 'the LORD's anointed, our very life breath, was caught in their traps' likely refers to Josiah. His death was experienced as a national catastrophe of the highest order."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -90,6 +95,9 @@
               "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events."
             }
           ]
+        },
+        "hist": {
+          "context": "Pharaoh Necho marches north. Josiah intercepts him at Megiddo. Necho sends messengers: “God has told me to hurry. Stop opposing God, who is with me, or he will destroy you.” The Chronicler adds this detail absent from Kings: Necho claims divine authority, and Josiah ignores it. “Josiah would not turn away from him, but disguised himself.” He is fatally wounded by archers. “Jeremiah composed laments for Josiah.” The greatest reformer dies because he refused to listen to God’s word — even when it came through a pagan king."
         }
       }
     }

@@ -25,25 +25,26 @@
             "paragraph": "\"Three times a day he got down on his knees (bārēk̅) and prayed, giving thanks to his God, just as he had done before\" (v.10). Darius appoints Daniel as administrator. Rivals find no corruption. They target his religion. The irrevocable decree: pray to no god except the king for thirty days. Daniel opens his window toward Jerusalem and prays exactly as before. \"Just as he had done before\" is the key: continuity IS resistance."
           }
         ],
-        "ctx": "The irrevocable decree reflects the Medo-Persian legal principle that royal edicts, once signed, could not be revoked (cf. Esther 1:19; 8:8). Darius is trapped by his own law. Daniel’s prayer posture — kneeling, windows open toward Jerusalem — follows Solomon’s prayer at the temple dedication (1 Kgs 8:48). Three-times-daily prayer (morning, afternoon, evening) became standard Jewish practice and may originate from this passage. The stone sealed with the king’s signet (v.17) creates tomb-imagery that the NT develops.",
-        "cross": [
-          {
-            "ref": "1 Kgs 8:48",
-            "note": "Solomon: if they pray toward this city and this temple — the precedent for Daniel’s Jerusalem-facing prayer."
-          },
-          {
-            "ref": "Ps 55:17",
-            "note": "Evening, morning and noon I cry out to God — the three-times-daily prayer Daniel practises."
-          },
-          {
-            "ref": "Matt 27:60–66",
-            "note": "Joseph’s tomb sealed with a stone and a guard — the den/tomb parallel with the stone and seal."
-          },
-          {
-            "ref": "Acts 5:29",
-            "note": "We must obey God rather than human beings — the apostles follow Daniel’s precedent of civil disobedience."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 8:48",
+              "note": "Solomon: if they pray toward this city and this temple — the precedent for Daniel’s Jerusalem-facing prayer."
+            },
+            {
+              "ref": "Ps 55:17",
+              "note": "Evening, morning and noon I cry out to God — the three-times-daily prayer Daniel practises."
+            },
+            {
+              "ref": "Matt 27:60–66",
+              "note": "Joseph’s tomb sealed with a stone and a guard — the den/tomb parallel with the stone and seal."
+            },
+            {
+              "ref": "Acts 5:29",
+              "note": "We must obey God rather than human beings — the apostles follow Daniel’s precedent of civil disobedience."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -129,6 +130,9 @@
               "note": "Collins notes that the \"open windows\" are an act of public, not private, worship. Daniel does not pray in secret; he prays visibly. The courage is in the publicity."
             }
           ]
+        },
+        "hist": {
+          "context": "The irrevocable decree reflects the Medo-Persian legal principle that royal edicts, once signed, could not be revoked (cf. Esther 1:19; 8:8). Darius is trapped by his own law. Daniel’s prayer posture — kneeling, windows open toward Jerusalem — follows Solomon’s prayer at the temple dedication (1 Kgs 8:48). Three-times-daily prayer (morning, afternoon, evening) became standard Jewish practice and may originate from this passage. The stone sealed with the king’s signet (v.17) creates tomb-imagery that the NT develops."
         }
       }
     },
@@ -146,25 +150,26 @@
             "paragraph": "\"My God sent his angel (malʾak̅) and shut the mouths of the lions\" (v.22). Daniel thrown in; stone sealed with the king’s signet. Darius fasts all night. At dawn: \"Daniel, has your God been able to rescue you?\" Daniel answers: alive, unhurt. Darius orders the accusers thrown in — devoured before reaching the floor. Darius decrees: \"In every part of my kingdom people must fear the God of Daniel\" (v.26). Daniel prospers through Darius’s reign and into Cyrus’s (v.28)."
           }
         ],
-        "ctx": "The sealed stone and the king’s signet create deliberate tomb-imagery. The dawn visit, the question expecting no answer, the impossible survival — the parallels to the empty tomb are structural, not incidental. The punishment of the accusers and their families reflects ancient Near Eastern collective punishment practice (cf. Esther 9). Darius’s decree is the third pagan-ruler confession in Daniel (after Nebuchadnezzar twice), progressively expanding the recognition of God’s sovereignty.",
-        "cross": [
-          {
-            "ref": "Ps 91:13",
-            "note": "You will tread on the lion and the cobra — divine protection from dangerous animals."
-          },
-          {
-            "ref": "Heb 11:33",
-            "note": "Who through faith shut the mouths of lions — the Hebrews 11 citation of this event."
-          },
-          {
-            "ref": "2 Tim 4:17",
-            "note": "The Lord rescued me from the lion’s mouth — Paul uses Daniel’s imagery for his own deliverance."
-          },
-          {
-            "ref": "Matt 28:1–6",
-            "note": "At dawn, the women went to the tomb. The stone was rolled away. \"He is not here\" — the resurrection parallels the den-opening."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 91:13",
+              "note": "You will tread on the lion and the cobra — divine protection from dangerous animals."
+            },
+            {
+              "ref": "Heb 11:33",
+              "note": "Who through faith shut the mouths of lions — the Hebrews 11 citation of this event."
+            },
+            {
+              "ref": "2 Tim 4:17",
+              "note": "The Lord rescued me from the lion’s mouth — Paul uses Daniel’s imagery for his own deliverance."
+            },
+            {
+              "ref": "Matt 28:1–6",
+              "note": "At dawn, the women went to the tomb. The stone was rolled away. \"He is not here\" — the resurrection parallels the den-opening."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -250,6 +255,9 @@
               "note": "Collins notes that Darius’s decree uses the same formula as Nebuchadnezzar’s (ch.4): \"his kingdom will not be destroyed.\" The Medo-Persian king echoes the Babylonian king. The confession transfers across empires."
             }
           ]
+        },
+        "hist": {
+          "context": "The sealed stone and the king’s signet create deliberate tomb-imagery. The dawn visit, the question expecting no answer, the impossible survival — the parallels to the empty tomb are structural, not incidental. The punishment of the accusers and their families reflects ancient Near Eastern collective punishment practice (cf. Esther 9). Darius’s decree is the third pagan-ruler confession in Daniel (after Nebuchadnezzar twice), progressively expanding the recognition of God’s sovereignty."
         }
       }
     }

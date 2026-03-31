@@ -25,21 +25,22 @@
             "paragraph": "The word 'sword' (herev) occurs over 15 times in this chapter, creating an overwhelming sense of relentless violence. The sword is God's sword — drawn from its sheath and given to the slayer (Nebuchadnezzar). It is sharpened, polished, and ready. The repetition mimics the rhythmic sound of a blade being whetted against stone."
           }
         ],
-        "ctx": "Chapter 21 is the most violent oracle in Ezekiel — a sword song with an almost hypnotic quality. The sword is God's instrument of judgment, and it will cut down both righteous and wicked (v.3-4), a shocking statement that seems to contradict chapter 18's individual accountability. The tension is real: in the moment of national catastrophe, even the innocent suffer. The sword does not discriminate in battle.",
-        "cross": [
-          {
-            "ref": "Deut 32:41-42",
-            "note": "God whets his flashing sword and takes vengeance — the Song of Moses provides the theological framework for divine warfare."
-          },
-          {
-            "ref": "Isa 34:5-6",
-            "note": "The LORD has a sword bathed in heaven — Isaiah shares the divine sword tradition."
-          },
-          {
-            "ref": "Rev 19:15",
-            "note": "A sharp sword comes from the mouth of the rider on the white horse — the divine sword tradition reaches its NT climax."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 32:41-42",
+              "note": "God whets his flashing sword and takes vengeance — the Song of Moses provides the theological framework for divine warfare."
+            },
+            {
+              "ref": "Isa 34:5-6",
+              "note": "The LORD has a sword bathed in heaven — Isaiah shares the divine sword tradition."
+            },
+            {
+              "ref": "Rev 19:15",
+              "note": "A sharp sword comes from the mouth of the rider on the white horse — the divine sword tradition reaches its NT climax."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Zimmerli argues the sword song (Schwertlied) is one of the most archaic-sounding passages in Ezekiel, possibly drawing on pre-existing martial poetry. The rhythmic, incantatory quality suggests the sword has its own terrible life — once drawn, it must complete its work."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 21 is the most violent oracle in Ezekiel — a sword song with an almost hypnotic quality. The sword is God's instrument of judgment, and it will cut down both righteous and wicked (v.3-4), a shocking statement that seems to contradict chapter 18's individual accountability. The tension is real: in the moment of national catastrophe, even the innocent suffer. The sword does not discriminate in battle."
         }
       }
     },
@@ -117,21 +121,22 @@
             "paragraph": "Nebuchadnezzar stands at the fork in the road and uses three forms of divination to decide: shaking arrows (belomancy), consulting household gods (teraphim), and examining a liver (hepatoscopy). All three are pagan practices — yet God directs the result. Pagan divination becomes the instrument of divine will. The irony is thick: Israel rejected God's prophets, so God speaks through Babylon's soothsayers."
           }
         ],
-        "ctx": "Nebuchadnezzar reaches a literal crossroads: one road leads to Rabbah (capital of Ammon) and the other to Jerusalem. He uses divination to choose — and the lot falls on Jerusalem. The people of Jerusalem dismiss the divination as false, but God insists it is valid: their guilt is the reason the lot fell on them. The chapter ends with an oracle against the Ammonite sword (vv.28-32), ensuring that Ammon will not escape judgment merely because Babylon came to Jerusalem first.",
-        "cross": [
-          {
-            "ref": "Prov 16:33",
-            "note": "The lot is cast into the lap, but its every decision is from the LORD — even Babylonian divination is under God's sovereign control."
-          },
-          {
-            "ref": "2 Kgs 25:1",
-            "note": "Nebuchadnezzar besieged Jerusalem — the fulfillment of the crossroads decision."
-          },
-          {
-            "ref": "Gen 49:10",
-            "note": "The scepter shall not depart from Judah until he comes to whom it belongs — the 'rightful' (mishpat) ruler language of 21:27 echoes the messianic promise."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 16:33",
+              "note": "The lot is cast into the lap, but its every decision is from the LORD — even Babylonian divination is under God's sovereign control."
+            },
+            {
+              "ref": "2 Kgs 25:1",
+              "note": "Nebuchadnezzar besieged Jerusalem — the fulfillment of the crossroads decision."
+            },
+            {
+              "ref": "Gen 49:10",
+              "note": "The scepter shall not depart from Judah until he comes to whom it belongs — the 'rightful' (mishpat) ruler language of 21:27 echoes the messianic promise."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -192,6 +197,9 @@
               "note": "Zimmerli identifies the 'triple ruin' oracle as the formal deposition of the Davidic king: the turban (priestly) and crown (royal) are removed simultaneously. The theocratic ideal of king-priest collapses — until the messianic 'he to whom judgment belongs' arrives to reunify the offices."
             }
           ]
+        },
+        "hist": {
+          "context": "Nebuchadnezzar reaches a literal crossroads: one road leads to Rabbah (capital of Ammon) and the other to Jerusalem. He uses divination to choose — and the lot falls on Jerusalem. The people of Jerusalem dismiss the divination as false, but God insists it is valid: their guilt is the reason the lot fell on them. The chapter ends with an oracle against the Ammonite sword (vv.28-32), ensuring that Ammon will not escape judgment merely because Babylon came to Jerusalem first."
         }
       }
     }

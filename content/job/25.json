@@ -25,13 +25,14 @@
             "paragraph": "\"Dominion (moshāl) and awe belong to God; he establishes order in the heights of heaven\" (v.2). Bildad begins with true theology but cannot connect it to Job’s situation. God rules — agreed. What follows from that for a blameless sufferer? Bildad has no answer."
           }
         ],
-        "ctx": "The shortest speech in the entire dialogue — only 6 verses. Bildad has run out of arguments. Zophar never speaks a third time. The friends’ theology has been exhausted by Job’s evidence. The cycle collapses not because Job won the argument but because the friends’ framework has nothing left to say.",
-        "cross": [
-          {
-            "ref": "Isa 6:1–3",
-            "note": "\"Holy, holy, holy is the LORD Almighty\" — the same awe before divine majesty that Bildad invokes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 6:1–3",
+              "note": "\"Holy, holy, holy is the LORD Almighty\" — the same awe before divine majesty that Bildad invokes."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -80,6 +81,9 @@
               "note": "Habel: the prosecution’s third witness delivers the shortest testimony yet. The case has collapsed."
             }
           ]
+        },
+        "hist": {
+          "context": "The shortest speech in the entire dialogue — only 6 verses. Bildad has run out of arguments. Zophar never speaks a third time. The friends’ theology has been exhausted by Job’s evidence. The cycle collapses not because Job won the argument but because the friends’ framework has nothing left to say."
         }
       }
     },
@@ -97,17 +101,18 @@
             "paragraph": "\"How much less a mortal, who is but a maggot (rimmâ) — a human being, who is only a worm!\" (v.6). Bildad ends where Eliphaz’s night vision began (4:17): no human can be righteous before God. The argument has not advanced in 20 chapters. The friends are repeating themselves."
           }
         ],
-        "ctx": "Bildad’s conclusion — humans are worms before God — recycles Eliphaz’s first speech almost verbatim. The moon is not bright enough, the stars are impure; how much less a maggot? The argument from divine transcendence was stated better by Zophar (11:7–9). Bildad adds nothing. The friends have said everything they can say, and it was not enough.",
-        "cross": [
-          {
-            "ref": "Ps 8:4–6",
-            "note": "\"What is mankind that you are mindful of them?\" — the Psalm that dignifies humanity; Bildad’s speech degrades it."
-          },
-          {
-            "ref": "Job 4:17–19",
-            "note": "Eliphaz’s night vision — the same argument Bildad now repeats, 20 chapters later."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 8:4–6",
+              "note": "\"What is mankind that you are mindful of them?\" — the Psalm that dignifies humanity; Bildad’s speech degrades it."
+            },
+            {
+              "ref": "Job 4:17–19",
+              "note": "Eliphaz’s night vision — the same argument Bildad now repeats, 20 chapters later."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -156,6 +161,9 @@
               "note": "Habel: the final prosecution testimony reduces all humanity to worms. The argument has moved from “Job sinned” to “all humans are worthless.” The case has collapsed into nihilism."
             }
           ]
+        },
+        "hist": {
+          "context": "Bildad’s conclusion — humans are worms before God — recycles Eliphaz’s first speech almost verbatim. The moon is not bright enough, the stars are impure; how much less a maggot? The argument from divine transcendence was stated better by Zophar (11:7–9). Bildad adds nothing. The friends have said everything they can say, and it was not enough."
         }
       }
     }

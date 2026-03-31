@@ -31,22 +31,26 @@
             "paragraph": "Matthew's distinctive phrase (32 times), where Mark and Luke use 'kingdom of God.' The substitution reflects Jewish reverence for the divine name — 'heaven' stands for God. The kingdom is not a place but God's active reign breaking into human affairs."
           }
         ],
-        "hist": "None",
-        "ctx": "John the Baptist is simultaneously the last OT prophet and the first NT herald. His clothing (camel's hair, leather belt) deliberately echoes Elijah (2 Kgs 1:8). His message is pure OT prophetic tradition — repentance, fruit, judgment. But his message points forward to one who is qualitatively greater. The contrast between water baptism (v.11) and Spirit-and-fire baptism announces that something unprecedented is about to occur.",
-        "cross": [
-          {
-            "ref": "Isa 40:3",
-            "note": "A voice calling in the wilderness — the opening of the great consolation section of Isaiah. John's ministry inaugurates the new Exodus: prepare the way, the LORD is coming."
-          },
-          {
-            "ref": "Mal 3:1; 4:5–6",
-            "note": "The messenger who prepares the way; the return of Elijah before the great day of the LORD. Matthew identifies John as this Elijah-figure explicitly in 11:14 and 17:12."
-          },
-          {
-            "ref": "2 Kgs 1:8",
-            "note": "Elijah wore a garment of hair with a leather belt. John's clothing is a deliberate Elijah allusion, legible to any Jewish reader."
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "John the Baptist is simultaneously the last OT prophet and the first NT herald. His clothing (camel's hair, leather belt) deliberately echoes Elijah (2 Kgs 1:8). His message is pure OT prophetic tradition — repentance, fruit, judgment. But his message points forward to one who is qualitatively greater. The contrast between water baptism (v.11) and Spirit-and-fire baptism announces that something unprecedented is about to occur."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 40:3",
+              "note": "A voice calling in the wilderness — the opening of the great consolation section of Isaiah. John's ministry inaugurates the new Exodus: prepare the way, the LORD is coming."
+            },
+            {
+              "ref": "Mal 3:1; 4:5–6",
+              "note": "The messenger who prepares the way; the return of Elijah before the great day of the LORD. Matthew identifies John as this Elijah-figure explicitly in 11:14 and 17:12."
+            },
+            {
+              "ref": "2 Kgs 1:8",
+              "note": "Elijah wore a garment of hair with a leather belt. John's clothing is a deliberate Elijah allusion, legible to any Jewish reader."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Desert of Judea",
@@ -133,22 +137,26 @@
             "paragraph": "The Spirit descends 'like a dove' (hōs peristeran). The comparison is to the manner of descent (gentle, visible) not the Spirit's nature. With the Father's voice and the Son in the water, Matthew presents the Trinity in a single scene — one of the clearest trinitarian moments in the Gospels."
           }
         ],
-        "hist": "None",
-        "ctx": "The baptism of Jesus is the most theologically concentrated event of Matthew 3. John's protest (v.14) acknowledges the anomaly: the one without sin submitting to a repentance-baptism. Jesus's answer — \"to fulfil all righteousness\" — points to his representative solidarity with humanity. The divine response is triadic: the Spirit descends, the Father speaks, the Son is designated. This is the first fully Trinitarian moment in Matthew, anticipating the baptism formula of 28:19.",
-        "cross": [
-          {
-            "ref": "Ps 2:7",
-            "note": "You are my Son, today I have become your Father — the royal coronation psalm. The Father's words at the baptism are a coronation declaration: Jesus is installed as the Davidic King."
-          },
-          {
-            "ref": "Isa 42:1",
-            "note": "Here is my servant whom I uphold, my chosen one in whom I delight — the first Servant Song. The Father's words also echo this: \"with him I am well pleased.\" Jesus is simultaneously Davidic King and Isaianic Servant."
-          },
-          {
-            "ref": "Gen 22:2",
-            "note": "Take your only (agapētos) son... Isaac, whom you love. The language of the baptismal declaration echoes the Aqedah — the offering of the beloved son. The cross is already in view."
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "The baptism of Jesus is the most theologically concentrated event of Matthew 3. John's protest (v.14) acknowledges the anomaly: the one without sin submitting to a repentance-baptism. Jesus's answer — \"to fulfil all righteousness\" — points to his representative solidarity with humanity. The divine response is triadic: the Spirit descends, the Father speaks, the Son is designated. This is the first fully Trinitarian moment in Matthew, anticipating the baptism formula of 28:19."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 2:7",
+              "note": "You are my Son, today I have become your Father — the royal coronation psalm. The Father's words at the baptism are a coronation declaration: Jesus is installed as the Davidic King."
+            },
+            {
+              "ref": "Isa 42:1",
+              "note": "Here is my servant whom I uphold, my chosen one in whom I delight — the first Servant Song. The Father's words also echo this: \"with him I am well pleased.\" Jesus is simultaneously Davidic King and Isaianic Servant."
+            },
+            {
+              "ref": "Gen 22:2",
+              "note": "Take your only (agapētos) son... Isaac, whom you love. The language of the baptismal declaration echoes the Aqedah — the offering of the beloved son. The cross is already in view."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Jordan River",

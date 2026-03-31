@@ -25,13 +25,14 @@
             "paragraph": "Hanani is chosen because \"he was a man of integrity and feared God more than most people.\" The criterion for leadership is not competence but character — specifically, the fear of God."
           }
         ],
-        "ctx": "The wall is built but the city is empty. \"The city was large and spacious, but there were few people in it\" (v.4). Defence without population is unsustainable. The wall protects a shell. Chapter 11 will address repopulation; here Nehemiah sets the security structure first.",
-        "cross": [
-          {
-            "ref": "Neh 11:1–2",
-            "note": "The repopulation solution: lots cast, volunteers blessed."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Neh 11:1–2",
+              "note": "The repopulation solution: lots cast, volunteers blessed."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -104,6 +105,9 @@
               "note": "Kidner: \"A walled city without people is a monument, not a community. The wall was necessary but not sufficient.\""
             }
           ]
+        },
+        "hist": {
+          "context": "The wall is built but the city is empty. \"The city was large and spacious, but there were few people in it\" (v.4). Defence without population is unsustainable. The wall protects a shell. Chapter 11 will address repopulation; here Nehemiah sets the security structure first."
         }
       }
     },
@@ -121,14 +125,18 @@
             "paragraph": "\"God put it into my heart to assemble the nobles and register the people by genealogies\" (v.5). The registration is divinely prompted. Nehemiah does not take a census for administrative convenience but because God directs it."
           }
         ],
-        "hist": "This register is virtually identical to Ezra 2 with minor variations in names and numbers. Both derive from an official record of the first return under Zerubbabel (538 BC). Nehemiah finds this document approximately ninety years later and uses it as the basis for community identity in his generation.",
-        "ctx": "The register serves a specific purpose in Nehemiah’s narrative: establishing who belongs to the community before the covenant renewal ceremony of chapters 8–10. Identity precedes covenant. You must know who the covenant people are before you can renew the covenant.",
-        "cross": [
-          {
-            "ref": "Ezra 2:1–70",
-            "note": "The parallel register — virtually identical, confirming a common source document."
-          }
-        ],
+        "hist": {
+          "historical": "This register is virtually identical to Ezra 2 with minor variations in names and numbers. Both derive from an official record of the first return under Zerubbabel (538 BC). Nehemiah finds this document approximately ninety years later and uses it as the basis for community identity in his generation.",
+          "context": "The register serves a specific purpose in Nehemiah’s narrative: establishing who belongs to the community before the covenant renewal ceremony of chapters 8–10. Identity precedes covenant. You must know who the covenant people are before you can renew the covenant."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezra 2:1–70",
+              "note": "The parallel register — virtually identical, confirming a common source document."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

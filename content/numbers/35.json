@@ -31,17 +31,18 @@
             "paragraph": "The nearest male relative who had both the right and the obligation to avenge a murdered kinsman. The cities of refuge provide a legal check on the goel's vengeance by distinguishing murder (no refuge) from manslaughter (refuge available)."
           }
         ],
-        "ctx": "Numbers 35 addresses two interconnected provisions: the Levitical towns (vv.1-8) and the cities of refuge (vv.9-34). Since the Levites receive no land inheritance, 48 towns with surrounding pastureland are distributed among them from each tribe's territory. Six of these 48 are designated cities of refuge — three on each side of the Jordan, accessible to any unintentional killer (Israelite, resident alien, or foreigner). The city of refuge provides asylum until the high priest's death; the killer may then return home without fear of the blood avenger. The chapter closes with the principle that blood defiles the land, and only the killer's blood can purge that defilement.",
-        "cross": [
-          {
-            "ref": "Josh 20:7-9",
-            "note": "\"So they set apart Kedesh in Galilee in the hill country of Naphtali, Shechem in the hill country of Ephraim, and Kiriath Arba (that is, Hebron) in the hill country of Judah... These towns were designated for all the Israelites and for the foreigners residing among them.\" The Num 35 command is fulfilled in Joshua."
-          },
-          {
-            "ref": "Heb 6:18-20",
-            "note": "\"We who have fled to take hold of the hope set before us may be greatly encouraged. We have this hope as an anchor for the soul, firm and secure. It enters the inner sanctuary behind the curtain, where our forerunner, Jesus, has entered on our behalf.\" The writer of Hebrews applies the city of refuge imagery to Christ — the believer fleeing to him for refuge finds safety in the inner sanctuary he has opened."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 20:7-9",
+              "note": "\"So they set apart Kedesh in Galilee in the hill country of Naphtali, Shechem in the hill country of Ephraim, and Kiriath Arba (that is, Hebron) in the hill country of Judah... These towns were designated for all the Israelites and for the foreigners residing among them.\" The Num 35 command is fulfilled in Joshua."
+            },
+            {
+              "ref": "Heb 6:18-20",
+              "note": "\"We who have fled to take hold of the hope set before us may be greatly encouraged. We have this hope as an anchor for the soul, firm and secure. It enters the inner sanctuary behind the curtain, where our forerunner, Jesus, has entered on our behalf.\" The writer of Hebrews applies the city of refuge imagery to Christ — the believer fleeing to him for refuge finds safety in the inner sanctuary he has opened."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Ashley: The narrative context of Levitical cities in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Numbers 35 addresses two interconnected provisions: the Levitical towns (vv.1-8) and the cities of refuge (vv.9-34). Since the Levites receive no land inheritance, 48 towns with surrounding pastureland are distributed among them from each tribe's territory. Six of these 48 are designated cities of refuge — three on each side of the Jordan, accessible to any unintentional killer (Israelite, resident alien, or foreigner). The city of refuge provides asylum until the high priest's death; the killer may then return home without fear of the blood avenger. The chapter closes with the principle that blood defiles the land, and only the killer's blood can purge that defilement."
         }
       }
     },
@@ -123,17 +127,18 @@
             "paragraph": "The key distinguishing term between murder (premeditated, intentional) and manslaughter (accidental). The cities of refuge provide asylum for the belo-da'at (without knowledge/intent) killer; the intentional murderer finds no refuge and must die."
           }
         ],
-        "ctx": "The homicide law (vv.16-34) distinguishes murder from manslaughter through four criteria: the weapon used (iron, stone, or wood capable of killing — vv.16-18), the relationship (lying in wait or enmity — v.20), the prior relationship (hatred — v.20-21), and the circumstances (sudden, without enmity, without seeing — vv.22-23). The congregation adjudicates the case; the city of refuge provides sanctuary pending trial. The chapter closes with the land-defilement principle (vv.33-34): blood defiles the land, and only the killer's blood expiates blood-guilt. The land cannot be purged of blood except by the blood of the one who shed it.",
-        "cross": [
-          {
-            "ref": "Matt 5:21-22",
-            "note": "\"You have heard that it was said to the people long ago, 'You shall not murder.' But I tell you that anyone who is angry with a brother or sister will be subject to judgment.\" Jesus extends the Num 35 murder category to include the anger and contempt that produce murder — the NT interiorises the OT distinction."
-          },
-          {
-            "ref": "Rom 13:4",
-            "note": "\"For the one in authority is God's servant for your good. But if you do wrong, be afraid, for rulers do not bear the sword for no reason.\" Paul's affirmation of capital punishment for murder reflects the Num 35 principle that intentional killing requires the ultimate sanction."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 5:21-22",
+              "note": "\"You have heard that it was said to the people long ago, 'You shall not murder.' But I tell you that anyone who is angry with a brother or sister will be subject to judgment.\" Jesus extends the Num 35 murder category to include the anger and contempt that produce murder — the NT interiorises the OT distinction."
+            },
+            {
+              "ref": "Rom 13:4",
+              "note": "\"For the one in authority is God's servant for your good. But if you do wrong, be afraid, for rulers do not bear the sword for no reason.\" Paul's affirmation of capital punishment for murder reflects the Num 35 principle that intentional killing requires the ultimate sanction."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -198,6 +203,9 @@
               "note": "Ashley: The narrative context of Levitical cities in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "The homicide law (vv.16-34) distinguishes murder from manslaughter through four criteria: the weapon used (iron, stone, or wood capable of killing — vv.16-18), the relationship (lying in wait or enmity — v.20), the prior relationship (hatred — v.20-21), and the circumstances (sudden, without enmity, without seeing — vv.22-23). The congregation adjudicates the case; the city of refuge provides sanctuary pending trial. The chapter closes with the land-defilement principle (vv.33-34): blood defiles the land, and only the killer's blood expiates blood-guilt. The land cannot be purged of blood except by the blood of the one who shed it."
         }
       }
     }

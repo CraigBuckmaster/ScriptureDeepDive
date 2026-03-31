@@ -25,21 +25,22 @@
             "paragraph": "Ezekiel packs a deportation bag in daylight — a knapsack with only the barest essentials — then digs through the mud-brick wall of his house at evening and carries his bag out with his face covered. The sign-act prophesies Zedekiah's attempted escape from Jerusalem in 586 BC, when the king fled through a breach in the wall and was captured."
           }
         ],
-        "ctx": "This sign-act specifically targets King Zedekiah, 'the prince in Jerusalem' (v.10). Zedekiah attempted to flee Jerusalem at night through a gap in the wall but was captured near Jericho, blinded, and taken to Babylon in chains (2 Kgs 25:4-7). Ezekiel's prophecy is remarkably precise: the covered face (v.6) corresponds to Zedekiah's blinding, and the failed escape (v.13) matches the historical outcome exactly.",
-        "cross": [
-          {
-            "ref": "2 Kgs 25:4-7",
-            "note": "Zedekiah fled through the wall at night, was captured, blinded, and taken to Babylon — the exact fulfillment of Ezekiel's sign-act."
-          },
-          {
-            "ref": "Jer 39:4-7",
-            "note": "Jeremiah's parallel account of Zedekiah's capture, blinding, and deportation."
-          },
-          {
-            "ref": "Jer 52:7-11",
-            "note": "The detailed account of Zedekiah's escape attempt and punishment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 25:4-7",
+              "note": "Zedekiah fled through the wall at night, was captured, blinded, and taken to Babylon — the exact fulfillment of Ezekiel's sign-act."
+            },
+            {
+              "ref": "Jer 39:4-7",
+              "note": "Jeremiah's parallel account of Zedekiah's capture, blinding, and deportation."
+            },
+            {
+              "ref": "Jer 52:7-11",
+              "note": "The detailed account of Zedekiah's escape attempt and punishment."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Zimmerli argues the interpretation (vv.10-16) was added after the events of 586 BC to demonstrate fulfillment. The original sign-act (vv.1-7) was ambiguous; the commentary retrojects the specificity of Zedekiah's actual fate onto the prophetic action."
             }
           ]
+        },
+        "hist": {
+          "context": "This sign-act specifically targets King Zedekiah, 'the prince in Jerusalem' (v.10). Zedekiah attempted to flee Jerusalem at night through a gap in the wall but was captured near Jericho, blinded, and taken to Babylon in chains (2 Kgs 25:4-7). Ezekiel's prophecy is remarkably precise: the covered face (v.6) corresponds to Zedekiah's blinding, and the failed escape (v.13) matches the historical outcome exactly."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "The people quote a proverb: 'The days go by and every vision comes to nothing.' This cynical mashal dismisses prophetic warnings as empty threats. God responds by abolishing the proverb: the word will be fulfilled without delay. No more postponement, no more patience."
           }
         ],
-        "ctx": "Two related oracles address prophetic cynicism. The first (vv.17-20) is a sign-act: eating and drinking with trembling to depict the terror of siege conditions. The second (vv.21-28) confronts the proverb 'the days drag on and every vision fails.' The people had grown numb to prophetic warnings — decades of threatened judgment without fulfillment bred contempt. God's answer: the delay is over.",
-        "cross": [
-          {
-            "ref": "2 Pet 3:3-4",
-            "note": "Scoffers will say: 'Where is the promise of his coming? Everything goes on as it has since the beginning.' Peter addresses the same cynicism Ezekiel confronts."
-          },
-          {
-            "ref": "Hab 2:3",
-            "note": "The vision awaits its appointed time; it will not prove false. Though it linger, wait for it — it will certainly come."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Pet 3:3-4",
+              "note": "Scoffers will say: 'Where is the promise of his coming? Everything goes on as it has since the beginning.' Peter addresses the same cynicism Ezekiel confronts."
+            },
+            {
+              "ref": "Hab 2:3",
+              "note": "The vision awaits its appointed time; it will not prove false. Though it linger, wait for it — it will certainly come."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -184,6 +189,9 @@
               "note": "Zimmerli sees this oracle as addressing the fundamental crisis of prophecy: if a prophetic word is not fulfilled promptly, does it lose authority? Ezekiel insists that divine timing does not undermine divine truth. The delay was mercy; its end is justice."
             }
           ]
+        },
+        "hist": {
+          "context": "Two related oracles address prophetic cynicism. The first (vv.17-20) is a sign-act: eating and drinking with trembling to depict the terror of siege conditions. The second (vv.21-28) confronts the proverb 'the days drag on and every vision fails.' The people had grown numb to prophetic warnings — decades of threatened judgment without fulfillment bred contempt. God's answer: the delay is over."
         }
       }
     }

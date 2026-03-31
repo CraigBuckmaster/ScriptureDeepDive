@@ -25,17 +25,18 @@
             "paragraph": "\"Can you fathom the mysteries (taʿalumâ) of God?\" (v.7). Zophar’s best argument: God’s wisdom is inaccessible. Higher than heavens, deeper than Sheol, longer than earth, wider than sea. The implication: Job cannot understand his own suffering because God’s reasons are hidden."
           }
         ],
-        "ctx": "Zophar is the bluntest of the three friends. No gentle opening, no night vision, no appeal to tradition. He leads with accusation: “Will your idle talk reduce others to silence?” (v.3). His theology matches the others (retribution) but his manner is harshest. He tells Job that God is actually letting him off easy: “Know this: God has even forgotten some of your sin” (v.6).",
-        "cross": [
-          {
-            "ref": "Isa 55:8–9",
-            "note": "\"My thoughts are not your thoughts\" — the same divine transcendence, but in Isaiah it’s comfort; in Zophar it’s accusation."
-          },
-          {
-            "ref": "Rom 11:33–34",
-            "note": "\"How unsearchable his judgments\" — Paul’s doxology uses similar language without Zophar’s cruelty."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 55:8–9",
+              "note": "\"My thoughts are not your thoughts\" — the same divine transcendence, but in Isaiah it’s comfort; in Zophar it’s accusation."
+            },
+            {
+              "ref": "Rom 11:33–34",
+              "note": "\"How unsearchable his judgments\" — Paul’s doxology uses similar language without Zophar’s cruelty."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -104,6 +105,9 @@
               "note": "Habel: Zophar is the third and final expert witness. His testimony: divine wisdom is inscrutable, therefore Job’s protest is presumptuous. The prosecution rests its case."
             }
           ]
+        },
+        "hist": {
+          "context": "Zophar is the bluntest of the three friends. No gentle opening, no night vision, no appeal to tradition. He leads with accusation: “Will your idle talk reduce others to silence?” (v.3). His theology matches the others (retribution) but his manner is harshest. He tells Job that God is actually letting him off easy: “Know this: God has even forgotten some of your sin” (v.6)."
         }
       }
     },
@@ -121,17 +125,18 @@
             "paragraph": "\"You will be secure, because there is hope (tiqwâ)\" (v.18). Zophar’s conditional promise: devote your heart, stretch out your hands, put away sin — THEN life will be brighter, THEN you will be secure, THEN your hope will not be disappointed. The if-then theology at its most seductive."
           }
         ],
-        "ctx": "Zophar’s closing parallels Eliphaz’s (5:17–27): submit, repent, be restored. All three friends reach the same destination by different routes. The promise is genuine in their framework: if suffering = sin, then repentance = restoration. The problem is the first premise.",
-        "cross": [
-          {
-            "ref": "Prov 3:5–6",
-            "note": "\"Trust in the LORD with all your heart\" — the wisdom theology Zophar draws on."
-          },
-          {
-            "ref": "2 Chr 7:14",
-            "note": "\"If my people... humble themselves and pray\" — the conditional restoration promise."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 3:5–6",
+              "note": "\"Trust in the LORD with all your heart\" — the wisdom theology Zophar draws on."
+            },
+            {
+              "ref": "2 Chr 7:14",
+              "note": "\"If my people... humble themselves and pray\" — the conditional restoration promise."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -196,6 +201,9 @@
               "note": "Habel: the prosecution’s closing argument. All three witnesses have testified. The retribution principle has been stated, supported by experience (Eliphaz), tradition (Bildad), and transcendence (Zophar). Job’s rebuttal begins in chapter 12."
             }
           ]
+        },
+        "hist": {
+          "context": "Zophar’s closing parallels Eliphaz’s (5:17–27): submit, repent, be restored. All three friends reach the same destination by different routes. The promise is genuine in their framework: if suffering = sin, then repentance = restoration. The problem is the first premise."
         }
       }
     }

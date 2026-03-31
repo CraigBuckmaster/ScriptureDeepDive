@@ -31,18 +31,22 @@
             "paragraph": "\"I was very much afraid\" (wāʾîrāʾ harbēh məʾōḏ). Royal displeasure could mean death. Nehemiah’s courage is not the absence of fear but action despite fear — the same pattern as Esther 4:16."
           }
         ],
-        "hist": "Nisan (March–April) of the twentieth year: four months after the Kislev report. Nehemiah has been praying for four months before the opportunity arises. The delay is not passivity but preparation — when the moment comes, he is ready with a specific, practical request.",
-        "ctx": "Nehemiah’s \"arrow prayer\" (v.4: \"I prayed to the God of heaven\") is whispered between the king’s question and Nehemiah’s answer. It lasts perhaps two seconds. But it rests on four months of sustained prayer (1:4–11). The arrow prayer works because the foundation prayer preceded it.",
-        "cross": [
-          {
-            "ref": "Esth 4:16",
-            "note": "Esther approaches the king knowing \"if I perish, I perish\" — the same court, the same risk."
-          },
-          {
-            "ref": "Prov 21:1",
-            "note": "\"The king’s heart is a stream of water in the hand of the LORD\" — demonstrated in real time."
-          }
-        ],
+        "hist": {
+          "historical": "Nisan (March–April) of the twentieth year: four months after the Kislev report. Nehemiah has been praying for four months before the opportunity arises. The delay is not passivity but preparation — when the moment comes, he is ready with a specific, practical request.",
+          "context": "Nehemiah’s \"arrow prayer\" (v.4: \"I prayed to the God of heaven\") is whispered between the king’s question and Nehemiah’s answer. It lasts perhaps two seconds. But it rests on four months of sustained prayer (1:4–11). The arrow prayer works because the foundation prayer preceded it."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Esth 4:16",
+              "note": "Esther approaches the king knowing \"if I perish, I perish\" — the same court, the same risk."
+            },
+            {
+              "ref": "Prov 21:1",
+              "note": "\"The king’s heart is a stream of water in the hand of the LORD\" — demonstrated in real time."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -132,14 +136,18 @@
             "paragraph": "Nehemiah \"inspected\" (śōḇēr) the walls — the root š-b-r means to break, crack, examine closely. He examines the breaks in the wall. The verb is diagnostic: before rebuilding, understand the damage."
           }
         ],
-        "hist": "The night inspection follows the Valley Gate westward, past the Jackal Well, to the Dung Gate, then east to the Fountain Gate and the King’s Pool. The route covers the southern and eastern walls — the most damaged sections. Nehemiah rides until the rubble becomes impassable, then turns back.",
-        "ctx": "Nehemiah tells no one his plans. The secrecy is strategic: Sanballat and Tobiah already oppose any Jewish restoration (v.10). Nehemiah assesses before announcing, plans before rallying. \"I had not told anyone what my God had put in my heart to do\" (v.12) — the vision is God-given but the execution requires human wisdom.",
-        "cross": [
-          {
-            "ref": "Neh 2:9–10",
-            "note": "Unlike Ezra (who refused an escort, 8:22), Nehemiah accepts the military officers. Different men, different callings, same God."
-          }
-        ],
+        "hist": {
+          "historical": "The night inspection follows the Valley Gate westward, past the Jackal Well, to the Dung Gate, then east to the Fountain Gate and the King’s Pool. The route covers the southern and eastern walls — the most damaged sections. Nehemiah rides until the rubble becomes impassable, then turns back.",
+          "context": "Nehemiah tells no one his plans. The secrecy is strategic: Sanballat and Tobiah already oppose any Jewish restoration (v.10). Nehemiah assesses before announcing, plans before rallying. \"I had not told anyone what my God had put in my heart to do\" (v.12) — the vision is God-given but the execution requires human wisdom."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Neh 2:9–10",
+              "note": "Unlike Ezra (who refused an escort, 8:22), Nehemiah accepts the military officers. Different men, different callings, same God."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -229,13 +237,14 @@
             "paragraph": "\"We are in disgrace\" (ḥerpâ). The word recurs from 1:3. The wall project is framed not as civic improvement but as removing covenant shame. The motivation is theological: God’s name is dishonoured by Jerusalem’s ruin."
           }
         ],
-        "ctx": "Nehemiah’s rallying speech is masterful: he shares the problem (\"you see the trouble we are in\"), offers the evidence (\"I also told them about the gracious hand of my God on me\"), and issues the call (\"Come, let us rebuild\"). Problem, providence, proposal. The response is immediate: \"Let us start rebuilding.\"",
-        "cross": [
-          {
-            "ref": "Hag 1:2–8",
-            "note": "Haggai’s earlier rallying call to rebuild the temple — same pattern, different structure."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Hag 1:2–8",
+              "note": "Haggai’s earlier rallying call to rebuild the temple — same pattern, different structure."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -308,6 +317,9 @@
               "note": "Kidner on the exclusion: \"Nehemiah drew a line and drew it hard. There would be no repeat of the Ezra 4 compromise offer. The wall was Jewish or it was nothing.\""
             }
           ]
+        },
+        "hist": {
+          "context": "Nehemiah’s rallying speech is masterful: he shares the problem (\"you see the trouble we are in\"), offers the evidence (\"I also told them about the gracious hand of my God on me\"), and issues the call (\"Come, let us rebuild\"). Problem, providence, proposal. The response is immediate: \"Let us start rebuilding.\""
         }
       }
     }

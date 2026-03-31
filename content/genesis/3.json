@@ -37,30 +37,34 @@
             "paragraph": "V.6: The woman saw that the tree was good for food (sensory appeal), pleasing to the eye (aesthetic appeal), and desirable for gaining wisdom (intellectual/spiritual appeal). Three dimensions of temptation, corresponding to 1 John 2:16's \"lust of the flesh, lust of the eyes, and pride of life.\" The triple structure of the temptation mirrors the triple structure of the prohibition."
           }
         ],
-        "hist": "The serpent's strategy — questioning God's word, then denying its consequence, then appealing to the desire for autonomy — is the paradigm of temptation throughout Scripture. The offer of being \"like God, knowing good and evil\" (v.5) appeals to the image-bearing dignity already possessed by humanity (1:26) but promises a counterfeit version: self-determination rather than God-given authority. What is offered is not something new but a distorted version of something already given.",
-        "ctx": "The temptation narrative is a masterpiece of compressed dramatic irony. The woman already possesses the image of God; the serpent offers a counterfeit. She already has everything in the garden; the one prohibited thing becomes the focal point of desire. The structure of the temptation — seeing, desiring, taking — becomes the paradigm for the progression of sin throughout Scripture (cf. Achan, Josh 7:21; David, 2 Sam 11:2-4).",
-        "cross": [
-          {
-            "ref": "Rom 5:12–19",
-            "note": "Paul’s foundational theology of original sin: through one man sin entered the world. Adam’s act is the “trespass” that brought condemnation on all; Christ’s act reverses it."
-          },
-          {
-            "ref": "1 Cor 15:22",
-            "note": "“In Adam all die, so in Christ all will be made alive” — the entire Adam/Christ typology rests on Genesis 3."
-          },
-          {
-            "ref": "Matt 4:1–11",
-            "note": "Jesus’ wilderness temptation mirrors the three appeals of Gen 3:6 — bread/food, spectacle/aesthetics, kingdoms/pride — and reverses each with Scripture."
-          },
-          {
-            "ref": "2 Cor 11:3",
-            "note": "Paul warns the Corinthians against being deceived as Eve was — the serpent’s cunning as an ongoing spiritual danger."
-          },
-          {
-            "ref": "Rev 12:9",
-            "note": "“That ancient serpent called the devil” — Revelation identifies the Genesis serpent with Satan explicitly."
-          }
-        ],
+        "hist": {
+          "historical": "The serpent's strategy — questioning God's word, then denying its consequence, then appealing to the desire for autonomy — is the paradigm of temptation throughout Scripture. The offer of being \"like God, knowing good and evil\" (v.5) appeals to the image-bearing dignity already possessed by humanity (1:26) but promises a counterfeit version: self-determination rather than God-given authority. What is offered is not something new but a distorted version of something already given.",
+          "context": "The temptation narrative is a masterpiece of compressed dramatic irony. The woman already possesses the image of God; the serpent offers a counterfeit. She already has everything in the garden; the one prohibited thing becomes the focal point of desire. The structure of the temptation — seeing, desiring, taking — becomes the paradigm for the progression of sin throughout Scripture (cf. Achan, Josh 7:21; David, 2 Sam 11:2-4)."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 5:12–19",
+              "note": "Paul’s foundational theology of original sin: through one man sin entered the world. Adam’s act is the “trespass” that brought condemnation on all; Christ’s act reverses it."
+            },
+            {
+              "ref": "1 Cor 15:22",
+              "note": "“In Adam all die, so in Christ all will be made alive” — the entire Adam/Christ typology rests on Genesis 3."
+            },
+            {
+              "ref": "Matt 4:1–11",
+              "note": "Jesus’ wilderness temptation mirrors the three appeals of Gen 3:6 — bread/food, spectacle/aesthetics, kingdoms/pride — and reverses each with Scripture."
+            },
+            {
+              "ref": "2 Cor 11:3",
+              "note": "Paul warns the Corinthians against being deceived as Eve was — the serpent’s cunning as an ongoing spiritual danger."
+            },
+            {
+              "ref": "Rev 12:9",
+              "note": "“That ancient serpent called the devil” — Revelation identifies the Genesis serpent with Satan explicitly."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -156,22 +160,26 @@
             "paragraph": "V.10: The first human emotion named in the Bible is fear — specifically, fear of God. Before the fall there was no fear, only open communion. The fear that drives hiding is the beginning of the broken relationship between humanity and God. All subsequent religion's false versions of God — the tyrant who must be appeased — trace back to this moment of shame-driven fear."
           }
         ],
-        "hist": "The divine interrogation in vv.9-13 follows a pattern familiar from ancient Near Eastern covenant litigation: the suzerain summons the vassal to account for breach of covenant. God does not confront the couple with accusation but with questions — giving each party an opportunity to acknowledge, explain, or confess. The pattern of displacement — \"the woman you gave me\" (Adam), \"the serpent deceived me\" (Eve) — is the first recorded instance of blame-shifting, and sets the pattern for all subsequent human avoidance of moral accountability.",
-        "ctx": "The interrogation scene reveals the spiritual anatomy of the post-fall condition: hiding (shame before God), fear (broken communion), blame-shifting (refusal of responsibility). Each element is the direct inversion of the pre-fall condition: open communion, no shame, relational harmony. The fall does not merely add sin to an otherwise intact creation; it inverts the entire structure of human existence.",
-        "cross": [
-          {
-            "ref": "Rev 6:15-16",
-            "note": "Kings and great men hide in caves — the echo of Adam's hiding in Gen 3:8, now at cosmic scale."
-          },
-          {
-            "ref": "John 3:20",
-            "note": "Everyone who does evil hates the light and will not come into the light — Jesus reads Gen 3 as the paradigm of the rejection of divine presence."
-          },
-          {
-            "ref": "Rom 3:10-12",
-            "note": "No one seeks God — Paul reads the pattern of evasion established in Gen 3 as universal human nature."
-          }
-        ],
+        "hist": {
+          "historical": "The divine interrogation in vv.9-13 follows a pattern familiar from ancient Near Eastern covenant litigation: the suzerain summons the vassal to account for breach of covenant. God does not confront the couple with accusation but with questions — giving each party an opportunity to acknowledge, explain, or confess. The pattern of displacement — \"the woman you gave me\" (Adam), \"the serpent deceived me\" (Eve) — is the first recorded instance of blame-shifting, and sets the pattern for all subsequent human avoidance of moral accountability.",
+          "context": "The interrogation scene reveals the spiritual anatomy of the post-fall condition: hiding (shame before God), fear (broken communion), blame-shifting (refusal of responsibility). Each element is the direct inversion of the pre-fall condition: open communion, no shame, relational harmony. The fall does not merely add sin to an otherwise intact creation; it inverts the entire structure of human existence."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rev 6:15-16",
+              "note": "Kings and great men hide in caves — the echo of Adam's hiding in Gen 3:8, now at cosmic scale."
+            },
+            {
+              "ref": "John 3:20",
+              "note": "Everyone who does evil hates the light and will not come into the light — Jesus reads Gen 3 as the paradigm of the rejection of divine presence."
+            },
+            {
+              "ref": "Rom 3:10-12",
+              "note": "No one seeks God — Paul reads the pattern of evasion established in Gen 3 as universal human nature."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -265,30 +273,34 @@
             "paragraph": "V.16-17: The word appears in both the woman's curse (v.16, \"pain in childbearing\") and the man's (v.17, \"painful toil\"). The same word applies to both: both will toil with pain in the fundamental activities of their respective vocations — bearing life and sustaining it. The fall affects not the activities themselves (they were given before the fall) but the conditions under which they are performed."
           }
         ],
-        "hist": "The three curses in Genesis 3 follow the order of the temptation narrative in reverse: serpent (who initiated), woman (who acted second), man (who acted last). The asymmetry of the judgments is significant: the serpent is cursed directly; the ground is cursed for the man's sake; the woman is not cursed but receives consequences. The protoevangelium of v.15 — the first gospel announcement — is embedded within the curse on the serpent, transforming judgment into the first promise of redemption.",
-        "ctx": "The curses are not arbitrary punishments but the natural consequences of the fallen condition, described in terms of the three relationships the fall has broken: humanity's relationship with the spiritual realm (serpent/enmity), woman's relationship with her body and her husband (pain in childbirth, relationship distortion), and man's relationship with the ground (the adamah he was formed from now resists him). Everything that was gift becomes struggle.",
-        "cross": [
-          {
-            "ref": "Gal 3:16",
-            "note": "Paul reads “seed” (zera’"
-          },
-          {
-            "ref": "Rom 16:20",
-            "note": "“The God of peace will soon crush Satan under your feet” — Paul applies the Protoevangelium to the church’s eschatological victory."
-          },
-          {
-            "ref": "Rom 8:20–22",
-            "note": "Creation was subjected to frustration because of the Fall; it waits in eager expectation for the children of God to be revealed — the ground’s curse reversed."
-          },
-          {
-            "ref": "Heb 2:14",
-            "note": "Christ shared in humanity so that by his death he might destroy the one who holds the power of death — the head-crushing of Gen 3:15 accomplished."
-          },
-          {
-            "ref": "Rev 12:17",
-            "note": "The dragon wages war against the woman’s offspring — Revelation frames the entire spiritual conflict in Gen 3:15 terms."
-          }
-        ],
+        "hist": {
+          "historical": "The three curses in Genesis 3 follow the order of the temptation narrative in reverse: serpent (who initiated), woman (who acted second), man (who acted last). The asymmetry of the judgments is significant: the serpent is cursed directly; the ground is cursed for the man's sake; the woman is not cursed but receives consequences. The protoevangelium of v.15 — the first gospel announcement — is embedded within the curse on the serpent, transforming judgment into the first promise of redemption.",
+          "context": "The curses are not arbitrary punishments but the natural consequences of the fallen condition, described in terms of the three relationships the fall has broken: humanity's relationship with the spiritual realm (serpent/enmity), woman's relationship with her body and her husband (pain in childbirth, relationship distortion), and man's relationship with the ground (the adamah he was formed from now resists him). Everything that was gift becomes struggle."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gal 3:16",
+              "note": "Paul reads “seed” (zera’"
+            },
+            {
+              "ref": "Rom 16:20",
+              "note": "“The God of peace will soon crush Satan under your feet” — Paul applies the Protoevangelium to the church’s eschatological victory."
+            },
+            {
+              "ref": "Rom 8:20–22",
+              "note": "Creation was subjected to frustration because of the Fall; it waits in eager expectation for the children of God to be revealed — the ground’s curse reversed."
+            },
+            {
+              "ref": "Heb 2:14",
+              "note": "Christ shared in humanity so that by his death he might destroy the one who holds the power of death — the head-crushing of Gen 3:15 accomplished."
+            },
+            {
+              "ref": "Rev 12:17",
+              "note": "The dragon wages war against the woman’s offspring — Revelation frames the entire spiritual conflict in Gen 3:15 terms."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -376,26 +388,30 @@
             "paragraph": "V.22: The divine deliberation echoes 1:26 (\"let us make\"). \"The man has now become like one of us, knowing good and evil.\" The tragic irony: the serpent's promise (\"you will be like God, knowing good and evil\") has come true in the worst possible way — not divine wisdom but the experiential knowledge of sin and its consequences. The plural (\"us\") of the divine council underscores that the human has transgressed into divine territory."
           }
         ],
-        "hist": "The cherubim stationed at the entrance to the garden (v.24) appear throughout the ancient Near East as guardian figures of sacred spaces — winged creatures flanking the entrance to temples and the approach to deities. In Israel, cherubim guard the ark of the covenant (Exod 25:18-20) and appear in Ezekiel's visions. Their placement at Eden's gate signals that the garden remains a holy place — but one from which the unholy have been expelled. The flaming sword turning every direction is a self-operating barrier, not requiring a guardian to wield it.",
-        "ctx": "The expulsion is the most severe consequence of the fall, but it contains within it the seeds of hope. God provides clothing before expulsion (grace precedes judgment). The tree of life is guarded rather than destroyed (redemption remains possible). The couple leaves together (the relationship survives, however damaged). And the protoevangelium of 3:15 has already been spoken. The expulsion is not abandonment but the beginning of the long covenant history by which God will bring his creature back to the garden — and beyond it.",
-        "cross": [
-          {
-            "ref": "Matt 27:51",
-            "note": "The Temple veil tears at Christ’s death — the cherubim-guarded barrier between humanity and God’s presence is removed."
-          },
-          {
-            "ref": "Rev 22:2,14",
-            "note": "The tree of life reappears in the new Jerusalem, freely accessible to those who have washed their robes — exile reversed, Eden restored and surpassed."
-          },
-          {
-            "ref": "Ex 25:18–22",
-            "note": "Cherubim on the ark of the covenant — the same guardians of Gen 3:24 now frame the mercy seat where God speaks to Israel."
-          },
-          {
-            "ref": "Heb 10:19–20",
-            "note": "“A new and living way opened for us through the curtain, that is, his body” — the exile of Gen 3:24 explicitly reversed by the crucifixion."
-          }
-        ],
+        "hist": {
+          "historical": "The cherubim stationed at the entrance to the garden (v.24) appear throughout the ancient Near East as guardian figures of sacred spaces — winged creatures flanking the entrance to temples and the approach to deities. In Israel, cherubim guard the ark of the covenant (Exod 25:18-20) and appear in Ezekiel's visions. Their placement at Eden's gate signals that the garden remains a holy place — but one from which the unholy have been expelled. The flaming sword turning every direction is a self-operating barrier, not requiring a guardian to wield it.",
+          "context": "The expulsion is the most severe consequence of the fall, but it contains within it the seeds of hope. God provides clothing before expulsion (grace precedes judgment). The tree of life is guarded rather than destroyed (redemption remains possible). The couple leaves together (the relationship survives, however damaged). And the protoevangelium of 3:15 has already been spoken. The expulsion is not abandonment but the beginning of the long covenant history by which God will bring his creature back to the garden — and beyond it."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 27:51",
+              "note": "The Temple veil tears at Christ’s death — the cherubim-guarded barrier between humanity and God’s presence is removed."
+            },
+            {
+              "ref": "Rev 22:2,14",
+              "note": "The tree of life reappears in the new Jerusalem, freely accessible to those who have washed their robes — exile reversed, Eden restored and surpassed."
+            },
+            {
+              "ref": "Ex 25:18–22",
+              "note": "Cherubim on the ark of the covenant — the same guardians of Gen 3:24 now frame the mercy seat where God speaks to Israel."
+            },
+            {
+              "ref": "Heb 10:19–20",
+              "note": "“A new and living way opened for us through the curtain, that is, his body” — the exile of Gen 3:24 explicitly reversed by the crucifixion."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "East of Eden",

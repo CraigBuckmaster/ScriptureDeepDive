@@ -25,21 +25,22 @@
             "paragraph": "The roʿim (shepherds) is a standard ancient Near Eastern metaphor for rulers. In Mesopotamia, Sumerian and Akkadian kings bore the title 'shepherd of the people.' In Israel, God was the true shepherd (Ps 23:1) who delegated pastoral authority to human kings and leaders. Ezekiel's indictment charges Israel's shepherds with feeding themselves rather than the flock—consuming wool, milk, and meat while leaving the sheep scattered, injured, and prey to wild animals. The catalog of neglect (v. 4) systematically lists what good shepherds should do: strengthen the weak, heal the sick, bind up the injured, bring back the strayed, search for the lost. Israel's leaders did none of these."
           }
         ],
-        "ctx": "Following the pivot of chapter 33, the restoration oracles begin with a devastating critique of Israel's failed leadership. The shepherd metaphor was ubiquitous in the ancient Near East: Hammurabi, Ashurbanipal, and Egyptian pharaohs all claimed the shepherd title. Jeremiah used the same metaphor against Judah's kings (Jer 23:1-4). Ezekiel's version is the most elaborate prophetic shepherd discourse in the Hebrew Bible and provides the immediate literary background for Jesus' Good Shepherd discourse in John 10.",
-        "cross": [
-          {
-            "ref": "Jer 23:1-4",
-            "note": "Jeremiah's oracle against the shepherds who destroy and scatter the flock is the closest prophetic parallel. Both prophets use the shepherd metaphor to indict Judah's rulers, and both promise God will raise up a righteous shepherd."
-          },
-          {
-            "ref": "John 10:11-14",
-            "note": "Jesus declares 'I am the good shepherd' against the backdrop of Ezekiel 34. His identification as the shepherd who lays down his life for the sheep claims to fulfill Ezekiel's promise of God himself tending the flock."
-          },
-          {
-            "ref": "1 Pet 5:2-4",
-            "note": "Peter instructs elders to 'be shepherds of God's flock,' echoing the shepherd language of Ezekiel 34 and applying it to church leadership. The 'Chief Shepherd' (archipoimenos) who will appear is Christ."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 23:1-4",
+              "note": "Jeremiah's oracle against the shepherds who destroy and scatter the flock is the closest prophetic parallel. Both prophets use the shepherd metaphor to indict Judah's rulers, and both promise God will raise up a righteous shepherd."
+            },
+            {
+              "ref": "John 10:11-14",
+              "note": "Jesus declares 'I am the good shepherd' against the backdrop of Ezekiel 34. His identification as the shepherd who lays down his life for the sheep claims to fulfill Ezekiel's promise of God himself tending the flock."
+            },
+            {
+              "ref": "1 Pet 5:2-4",
+              "note": "Peter instructs elders to 'be shepherds of God's flock,' echoing the shepherd language of Ezekiel 34 and applying it to church leadership. The 'Chief Shepherd' (archipoimenos) who will appear is Christ."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -108,6 +109,9 @@
               "note": "Zimmerli highlights the catalog of neglected duties in v. 4 as a 'mirror for princes'—a genre known in ancient Near Eastern wisdom literature where the ideal ruler's responsibilities are enumerated. Ezekiel inverts the genre: instead of praising the ideal, he lists the reality of failure. Zimmerli argues this section provides the theological foundation for the subsequent promise of divine shepherding."
             }
           ]
+        },
+        "hist": {
+          "context": "Following the pivot of chapter 33, the restoration oracles begin with a devastating critique of Israel's failed leadership. The shepherd metaphor was ubiquitous in the ancient Near East: Hammurabi, Ashurbanipal, and Egyptian pharaohs all claimed the shepherd title. Jeremiah used the same metaphor against Judah's kings (Jer 23:1-4). Ezekiel's version is the most elaborate prophetic shepherd discourse in the Hebrew Bible and provides the immediate literary background for Jesus' Good Shepherd discourse in John 10."
         }
       }
     },
@@ -125,21 +129,22 @@
             "paragraph": "YHWH declares 'I myself will search (darash) for my sheep and look after them' (v. 11). The verb darash carries the connotation of diligent, even desperate searching—not a casual glance but a thorough investigation. God does what the shepherds refused to do: he personally searches for every scattered sheep. This divine seeking is the theological foundation for Jesus' parable of the lost sheep (Luke 15:4-7), where the shepherd leaves the ninety-nine to seek the one. In Ezekiel, the scope is cosmic: God will gather sheep from all the countries where they were scattered on 'a day of clouds and darkness' (v. 12)—turning the Day-of-the-LORD imagery from judgment (ch. 30) into deliverance."
           }
         ],
-        "ctx": "The pivot from indictment to promise: since human shepherds failed, YHWH himself will shepherd Israel. Every duty the shepherds neglected (v. 4) is now personally assumed by God (vv. 11-16). The reversal is systematic: where they scattered, God gathers; where they neglected the weak, God strengthens them; where they exploited the fat, God judges between fat and lean sheep (vv. 17-22). This section is unprecedented in prophetic literature: no other prophet develops the concept of God as active shepherd to this degree.",
-        "cross": [
-          {
-            "ref": "Ps 23:1-4",
-            "note": "David's psalm 'The LORD is my shepherd' is the poetic expression of the theology Ezekiel develops in narrative form. Both texts present God as the one who guides, provides, and protects."
-          },
-          {
-            "ref": "Luke 15:3-7",
-            "note": "Jesus' parable of the lost sheep directly echoes Ezekiel 34's language of God seeking and finding scattered sheep. The joy of the shepherd who finds the lost sheep reflects the divine emotion Ezekiel describes."
-          },
-          {
-            "ref": "Matt 25:31-33",
-            "note": "Jesus' separation of sheep and goats at the final judgment echoes Ezekiel 34:17-22, where God judges between sheep and sheep, between fat sheep who bully lean ones and the vulnerable who are pushed aside."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 23:1-4",
+              "note": "David's psalm 'The LORD is my shepherd' is the poetic expression of the theology Ezekiel develops in narrative form. Both texts present God as the one who guides, provides, and protects."
+            },
+            {
+              "ref": "Luke 15:3-7",
+              "note": "Jesus' parable of the lost sheep directly echoes Ezekiel 34's language of God seeking and finding scattered sheep. The joy of the shepherd who finds the lost sheep reflects the divine emotion Ezekiel describes."
+            },
+            {
+              "ref": "Matt 25:31-33",
+              "note": "Jesus' separation of sheep and goats at the final judgment echoes Ezekiel 34:17-22, where God judges between sheep and sheep, between fat sheep who bully lean ones and the vulnerable who are pushed aside."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -204,6 +209,9 @@
               "note": "Zimmerli identifies this as the theological high point of the chapter: the transformation of YHWH from judge of shepherds (vv. 1-10) to shepherd himself (vv. 11-16). The personal pronouns are emphatic throughout, stressing divine initiative. Zimmerli connects this to Ezekiel's broader theology of divine action: just as God himself will give a new heart (36:26) and breathe life into dry bones (37:5), so God himself becomes the shepherd because no human proxy is adequate."
             }
           ]
+        },
+        "hist": {
+          "context": "The pivot from indictment to promise: since human shepherds failed, YHWH himself will shepherd Israel. Every duty the shepherds neglected (v. 4) is now personally assumed by God (vv. 11-16). The reversal is systematic: where they scattered, God gathers; where they neglected the weak, God strengthens them; where they exploited the fat, God judges between fat and lean sheep (vv. 17-22). This section is unprecedented in prophetic literature: no other prophet develops the concept of God as active shepherd to this degree."
         }
       }
     },
@@ -227,21 +235,22 @@
             "paragraph": "The berit shalom (covenant of peace) is YHWH's climactic promise: a new covenant that removes wild beasts, provides security, and causes the land to flourish. The word shalom encompasses far more than the absence of conflict—it denotes comprehensive well-being: physical safety, agricultural abundance, social harmony, and right relationship with God. This covenant of peace anticipates the new covenant of Jeremiah 31:31-34 and finds its ultimate expression in the peace Christ brings (Eph 2:14)."
           }
         ],
-        "ctx": "The restoration promise reaches its climax with three interconnected promises: (1) God will set over them one shepherd, 'my servant David' (v. 23), (2) God will make a 'covenant of peace' (v. 25), and (3) the land will become like the garden of Eden with showers of blessing (v. 26). The reference to 'David' is understood as a future Davidic king—an eschatological figure who will embody the ideal kingship that historical David only partially achieved. This is the most explicit messianic promise in Ezekiel.",
-        "cross": [
-          {
-            "ref": "Jer 23:5-6",
-            "note": "Jeremiah promises God will raise up for David a 'righteous Branch,' a king who will reign wisely. Both prophets anticipate an ideal Davidic ruler, and both deliberately use modest titles."
-          },
-          {
-            "ref": "John 10:11-16",
-            "note": "Jesus' declaration 'I am the good shepherd' claims to be the fulfillment of Ezekiel 34's promise. The 'one flock, one shepherd' of John 10:16 echoes Ezekiel's 'one shepherd' in 34:23."
-          },
-          {
-            "ref": "Eph 2:14-17",
-            "note": "Paul identifies Christ as 'our peace' who has made Jews and Gentiles 'one flock,' fulfilling the covenant of peace promised in Ezekiel 34:25."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 23:5-6",
+              "note": "Jeremiah promises God will raise up for David a 'righteous Branch,' a king who will reign wisely. Both prophets anticipate an ideal Davidic ruler, and both deliberately use modest titles."
+            },
+            {
+              "ref": "John 10:11-16",
+              "note": "Jesus' declaration 'I am the good shepherd' claims to be the fulfillment of Ezekiel 34's promise. The 'one flock, one shepherd' of John 10:16 echoes Ezekiel's 'one shepherd' in 34:23."
+            },
+            {
+              "ref": "Eph 2:14-17",
+              "note": "Paul identifies Christ as 'our peace' who has made Jews and Gentiles 'one flock,' fulfilling the covenant of peace promised in Ezekiel 34:25."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -310,6 +319,9 @@
               "note": "Zimmerli reads the nasiʼ title as reflecting Ezekiel's 'theocratic correction' of the monarchy: YHWH is the true king (melek), and the Davidic figure is merely his deputy (nasiʼ). This represents a significant revision of pre-exilic royal theology, which had increasingly identified the king with divine prerogatives. Zimmerli sees this as one of the most important political-theological innovations of the exile."
             }
           ]
+        },
+        "hist": {
+          "context": "The restoration promise reaches its climax with three interconnected promises: (1) God will set over them one shepherd, 'my servant David' (v. 23), (2) God will make a 'covenant of peace' (v. 25), and (3) the land will become like the garden of Eden with showers of blessing (v. 26). The reference to 'David' is understood as a future Davidic king—an eschatological figure who will embody the ideal kingship that historical David only partially achieved. This is the most explicit messianic promise in Ezekiel."
         }
       }
     }

@@ -34,21 +34,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Cana of Galilee</div><div class=\"poi-coords\">32.8461° N, 35.3521° E</div><div class=\"poi-text\">The site of Jesus's first sign, identified with modern Khirbet Qana north of Nazareth, though Kafr Kanna (on the road from Nazareth to Tiberias) has been the traditional pilgrimage site since the Byzantine period. Nathanael was from Cana (John 21:2), making it likely he was present at the wedding. The village is in the heart of lower Galilee, about 5 miles north of Nazareth.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Capernaum</div><div class=\"poi-coords\">32.8807° N, 35.5743° E</div><div class=\"poi-text\">Jesus's base of operations during his Galilean ministry (Matt 4:13 calls it \"his own town\"). After the Cana wedding, Jesus went to Capernaum with his family and disciples (v.12). The excavated remains of an ancient synagogue (on top of which a later 4th-century synagogue was built) and a house traditionally identified as Peter's house are visible today on the north shore of the Sea of Galilee.</div></div>"
         },
-        "ctx": "[('Wedding Feasts in First-Century Galilee', \"Jewish wedding feasts in the first century lasted seven days (cf. Judg 14:12). Running out of wine was a serious social failure — it would have shamed the bridegroom's family for years. Jesus's mother's concern is therefore not trivial. The six stone jars (v.6) used for Jewish purification rituals held 20-30 gallons each — producing perhaps 120-180 gallons of wine in total, an extravagant abundance that signals the eschatological superabundance of the messianic age (cf. Amos 9:13-14; Joel 3:18).\"), ('\"Woman, why do you involve me?\"', 'Jesus\\'s address to his mother as \"Woman\" (gynai) sounds cold in English but was not disrespectful in Greek — he uses the same address at the cross (19:26). The question \"what is that to me and to you?\" (a Semitic idiom) indicates Jesus is not refusing but redirecting: his actions are not governed by family obligation but by the Father\\'s timing. His mother\\'s instruction to the servants (\"Do whatever he tells you\") shows she understands the message.')]",
-        "cross": [
-          {
-            "ref": "Amos 9:13-14",
-            "note": "\"New wine will drip from the mountains\" — the OT eschatological image of superabundant wine as a sign of the messianic age, which the Cana miracle enacts in compressed form."
-          },
-          {
-            "ref": "Gen 49:11",
-            "note": "\"He will tether his donkey to a vine, his colt to the choicest branch; he will wash his garments in wine\" — Jacob's blessing on Judah, which later tradition read as messianic, with wine as the sign of the coming king."
-          },
-          {
-            "ref": "John 4:46",
-            "note": "Jesus returns to Cana for the second sign — healing the royal official's son — structurally linking the two Cana episodes as bookends around the Jerusalem ministry of ch.2-4."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Amos 9:13-14",
+              "note": "\"New wine will drip from the mountains\" — the OT eschatological image of superabundant wine as a sign of the messianic age, which the Cana miracle enacts in compressed form."
+            },
+            {
+              "ref": "Gen 49:11",
+              "note": "\"He will tether his donkey to a vine, his colt to the choicest branch; he will wash his garments in wine\" — Jacob's blessing on Judah, which later tradition read as messianic, with wine as the sign of the coming king."
+            },
+            {
+              "ref": "John 4:46",
+              "note": "Jesus returns to Cana for the second sign — healing the royal official's son — structurally linking the two Cana episodes as bookends around the Jerusalem ministry of ch.2-4."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -108,6 +109,9 @@
               "note": "Chrysostom: \"The master of the feast said the best wine was kept to last. Was not this also the case with the creation? First came the shadows and figures of the law; then, in the fullness of time, the reality and truth came through Jesus Christ. The best was indeed saved for last.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Wedding Feasts in First-Century Galilee', \"Jewish wedding feasts in the first century lasted seven days (cf. Judg 14:12). Running out of wine was a serious social failure — it would have shamed the bridegroom's family for years. Jesus's mother's concern is therefore not trivial. The six stone jars (v.6) used for Jewish purification rituals held 20-30 gallons each — producing perhaps 120-180 gallons of wine in total, an extravagant abundance that signals the eschatological superabundance of the messianic age (cf. Amos 9:13-14; Joel 3:18).\"), ('\"Woman, why do you involve me?\"', 'Jesus\\'s address to his mother as \"Woman\" (gynai) sounds cold in English but was not disrespectful in Greek — he uses the same address at the cross (19:26). The question \"what is that to me and to you?\" (a Semitic idiom) indicates Jesus is not refusing but redirecting: his actions are not governed by family obligation but by the Father\\'s timing. His mother\\'s instruction to the servants (\"Do whatever he tells you\") shows she understands the message.')]"
         }
       }
     },
@@ -134,21 +138,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem Temple Mount</div><div class=\"poi-coords\">31.7781° N, 35.2354° E</div><div class=\"poi-text\">The Herodian Temple complex — rebuilt by Herod the Great beginning c. 20 BC and still under construction 46 years later at Jesus's first Passover visit. The Temple Mount platform covered 35 acres; the outer Court of the Gentiles was surrounded by colonnaded porticos. The money changers and animal sellers operated in the outer court, particularly in the Royal Portico on the south side. Jesus enters this space and claims it as \"my Father's house\" — the first of several Passover visits in John.</div></div>"
         },
-        "ctx": "[(\"John's Temple Cleansing at the Beginning vs. the Synoptics at the End\", 'The Synoptics place the Temple cleansing in Passion Week (Matt 21; Mark 11; Luke 19). John places it at the very start of the ministry. Options: (1) Two separate cleansings; (2) John has deliberately moved it for theological reasons (to introduce the \"temple of his body\" theme early); (3) John preserves the original chronology that the Synoptics moved. Most scholars accept either option 1 or option 2. The theological placement at the start of John is fitting: Jesus immediately establishes his authority over the most sacred institution of Judaism.'), ('The Money Changers and the Temple Economy', \"Pilgrims travelling long distances could not bring animals for sacrifice. The Temple authorities had established a system of approved animals sold in the Temple courts and money changers who converted Roman and foreign coins (bearing graven images, prohibited in the Temple) into Tyrian shekels acceptable for the Temple tax. The system was economically necessary but had become exploitative — prices were inflated, the high priest's family controlled the concessions, and what should have been a house of prayer had become a bazaar.\")]",
-        "cross": [
-          {
-            "ref": "Ps 69:9",
-            "note": "\"Zeal for your house consumes me\" — the Psalm the disciples remembered (v.17), applied to Jesus's consuming passion for the Father's house. Significantly, in the Psalm the second half reads \"and the insults of those who insult you fall on me\" — Jesus absorbs the rejection directed at God."
-          },
-          {
-            "ref": "Zech 14:21",
-            "note": "\"There will no longer be a Canaanite (merchant) in the house of the Lord Almighty\" — the eschatological promise of a purified Temple that Jesus enacts proleptically."
-          },
-          {
-            "ref": "Isa 56:7",
-            "note": "\"My house will be called a house of prayer for all nations\" — the Temple's true purpose that the money changers have obscured."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 69:9",
+              "note": "\"Zeal for your house consumes me\" — the Psalm the disciples remembered (v.17), applied to Jesus's consuming passion for the Father's house. Significantly, in the Psalm the second half reads \"and the insults of those who insult you fall on me\" — Jesus absorbs the rejection directed at God."
+            },
+            {
+              "ref": "Zech 14:21",
+              "note": "\"There will no longer be a Canaanite (merchant) in the house of the Lord Almighty\" — the eschatological promise of a purified Temple that Jesus enacts proleptically."
+            },
+            {
+              "ref": "Isa 56:7",
+              "note": "\"My house will be called a house of prayer for all nations\" — the Temple's true purpose that the money changers have obscured."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -208,6 +213,9 @@
               "note": "Cyril of Alexandria: \"He called his own body a temple because the divine nature dwelt in it as in a holy place. For as the temple was the dwelling-place of God, so also the body of the Son, united to his divinity, was a kind of dwelling-place of God.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[(\"John's Temple Cleansing at the Beginning vs. the Synoptics at the End\", 'The Synoptics place the Temple cleansing in Passion Week (Matt 21; Mark 11; Luke 19). John places it at the very start of the ministry. Options: (1) Two separate cleansings; (2) John has deliberately moved it for theological reasons (to introduce the \"temple of his body\" theme early); (3) John preserves the original chronology that the Synoptics moved. Most scholars accept either option 1 or option 2. The theological placement at the start of John is fitting: Jesus immediately establishes his authority over the most sacred institution of Judaism.'), ('The Money Changers and the Temple Economy', \"Pilgrims travelling long distances could not bring animals for sacrifice. The Temple authorities had established a system of approved animals sold in the Temple courts and money changers who converted Roman and foreign coins (bearing graven images, prohibited in the Temple) into Tyrian shekels acceptable for the Temple tax. The system was economically necessary but had become exploitative — prices were inflated, the high priest's family controlled the concessions, and what should have been a house of prayer had become a bazaar.\")]"
         }
       }
     },
@@ -234,21 +242,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Cana of Galilee</div><div class=\"poi-coords\">32.8461° N, 35.3521° E</div><div class=\"poi-text\">The site of Jesus's first sign, identified with modern Khirbet Qana north of Nazareth, though Kafr Kanna (on the road from Nazareth to Tiberias) has been the traditional pilgrimage site since the Byzantine period. Nathanael was from Cana (John 21:2), making it likely he was present at the wedding. The village is in the heart of lower Galilee, about 5 miles north of Nazareth.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Capernaum</div><div class=\"poi-coords\">32.8807° N, 35.5743° E</div><div class=\"poi-text\">Jesus's base of operations during his Galilean ministry (Matt 4:13 calls it \"his own town\"). After the Cana wedding, Jesus went to Capernaum with his family and disciples (v.12). The excavated remains of an ancient synagogue (on top of which a later 4th-century synagogue was built) and a house traditionally identified as Peter's house are visible today on the north shore of the Sea of Galilee.</div></div>"
         },
-        "ctx": "[('Wedding Feasts in First-Century Galilee', \"Jewish wedding feasts in the first century lasted seven days (cf. Judg 14:12). Running out of wine was a serious social failure — it would have shamed the bridegroom's family for years. Jesus's mother's concern is therefore not trivial. The six stone jars (v.6) used for Jewish purification rituals held 20-30 gallons each — producing perhaps 120-180 gallons of wine in total, an extravagant abundance that signals the eschatological superabundance of the messianic age (cf. Amos 9:13-14; Joel 3:18).\"), ('\"Woman, why do you involve me?\"', 'Jesus\\'s address to his mother as \"Woman\" (gynai) sounds cold in English but was not disrespectful in Greek — he uses the same address at the cross (19:26). The question \"what is that to me and to you?\" (a Semitic idiom) indicates Jesus is not refusing but redirecting: his actions are not governed by family obligation but by the Father\\'s timing. His mother\\'s instruction to the servants (\"Do whatever he tells you\") shows she understands the message.')]",
-        "cross": [
-          {
-            "ref": "Amos 9:13-14",
-            "note": "\"New wine will drip from the mountains\" — the OT eschatological image of superabundant wine as a sign of the messianic age, which the Cana miracle enacts in compressed form."
-          },
-          {
-            "ref": "Gen 49:11",
-            "note": "\"He will tether his donkey to a vine, his colt to the choicest branch; he will wash his garments in wine\" — Jacob's blessing on Judah, which later tradition read as messianic, with wine as the sign of the coming king."
-          },
-          {
-            "ref": "John 4:46",
-            "note": "Jesus returns to Cana for the second sign — healing the royal official's son — structurally linking the two Cana episodes as bookends around the Jerusalem ministry of ch.2-4."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Amos 9:13-14",
+              "note": "\"New wine will drip from the mountains\" — the OT eschatological image of superabundant wine as a sign of the messianic age, which the Cana miracle enacts in compressed form."
+            },
+            {
+              "ref": "Gen 49:11",
+              "note": "\"He will tether his donkey to a vine, his colt to the choicest branch; he will wash his garments in wine\" — Jacob's blessing on Judah, which later tradition read as messianic, with wine as the sign of the coming king."
+            },
+            {
+              "ref": "John 4:46",
+              "note": "Jesus returns to Cana for the second sign — healing the royal official's son — structurally linking the two Cana episodes as bookends around the Jerusalem ministry of ch.2-4."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -308,6 +317,9 @@
               "note": "Chrysostom: \"The master of the feast said the best wine was kept to last. Was not this also the case with the creation? First came the shadows and figures of the law; then, in the fullness of time, the reality and truth came through Jesus Christ. The best was indeed saved for last.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Wedding Feasts in First-Century Galilee', \"Jewish wedding feasts in the first century lasted seven days (cf. Judg 14:12). Running out of wine was a serious social failure — it would have shamed the bridegroom's family for years. Jesus's mother's concern is therefore not trivial. The six stone jars (v.6) used for Jewish purification rituals held 20-30 gallons each — producing perhaps 120-180 gallons of wine in total, an extravagant abundance that signals the eschatological superabundance of the messianic age (cf. Amos 9:13-14; Joel 3:18).\"), ('\"Woman, why do you involve me?\"', 'Jesus\\'s address to his mother as \"Woman\" (gynai) sounds cold in English but was not disrespectful in Greek — he uses the same address at the cross (19:26). The question \"what is that to me and to you?\" (a Semitic idiom) indicates Jesus is not refusing but redirecting: his actions are not governed by family obligation but by the Father\\'s timing. His mother\\'s instruction to the servants (\"Do whatever he tells you\") shows she understands the message.')]"
         }
       }
     }

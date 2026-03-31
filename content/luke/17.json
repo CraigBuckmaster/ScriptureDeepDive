@@ -31,21 +31,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Samaria-Galilee Border</div><div class=\"poi-coords\">32.3° N, 35.2° E</div><div class=\"poi-text\">The frontier between the territories of Samaria and Galilee in the first century — a social as well as geographic boundary. Jesus's route through this region on his way to Jerusalem (9:51) is one of Luke's periodic geographical reminders that the journey continues. The border setting makes the Samaritan leper's presence in the group of ten plausible.</div></div>"
         },
-        "ctx": "[('Boundary Between Samaria and Galilee', \"Jesus's route (v.11) through the border region between Samaria and Galilee is geographically specific and theologically significant. The border was a social and religious boundary — Jewish-Samaritan relations were hostile. The ten lepers' mixed company (nine Jews, presumably, and one Samaritan) suggests that shared suffering crossed the usual boundaries.\"), ('Leprosy and Social Exclusion', 'Biblical \"leprosy\" (tsara\\'at) covered a range of skin conditions requiring Levitical examination and social isolation (Lev 13-14). The requirement to \"stand at a distance\" (v.12) and the command to \"show yourselves to the priests\" (v.14) both reflect the Levitical purity system. The Samaritan\\'s return to Jesus rather than a Jewish priest is itself an implicit theological statement.')]",
-        "cross": [
-          {
-            "ref": "Matt 18:6-7",
-            "note": "Millstone and stumbling blocks — parallel warning in Matthew's community discourse."
-          },
-          {
-            "ref": "Matt 17:20",
-            "note": "\"Truly I tell you, if you have faith as small as a mustard seed, you can say to this mountain, 'Move from here to there,' and it will move\" — Matthew's version uses a mountain rather than a mulberry tree."
-          },
-          {
-            "ref": "2 Kgs 5:1-19",
-            "note": "Naaman the Syrian healed of leprosy by Elisha — the OT precedent for a foreigner receiving cleansing that Israelites failed to seek, which Jesus references in 4:27."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 18:6-7",
+              "note": "Millstone and stumbling blocks — parallel warning in Matthew's community discourse."
+            },
+            {
+              "ref": "Matt 17:20",
+              "note": "\"Truly I tell you, if you have faith as small as a mustard seed, you can say to this mountain, 'Move from here to there,' and it will move\" — Matthew's version uses a mountain rather than a mulberry tree."
+            },
+            {
+              "ref": "2 Kgs 5:1-19",
+              "note": "Naaman the Syrian healed of leprosy by Elisha — the OT precedent for a foreigner receiving cleansing that Israelites failed to seek, which Jesus references in 4:27."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "Bede: \"He was a Samaritan — that is, a foreigner and one rejected by the Jews. Yet he alone returned to give thanks. So often those who are far from the chosen community give back to God what the chosen keep for themselves.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Boundary Between Samaria and Galilee', \"Jesus's route (v.11) through the border region between Samaria and Galilee is geographically specific and theologically significant. The border was a social and religious boundary — Jewish-Samaritan relations were hostile. The ten lepers' mixed company (nine Jews, presumably, and one Samaritan) suggests that shared suffering crossed the usual boundaries.\"), ('Leprosy and Social Exclusion', 'Biblical \"leprosy\" (tsara\\'at) covered a range of skin conditions requiring Levitical examination and social isolation (Lev 13-14). The requirement to \"stand at a distance\" (v.12) and the command to \"show yourselves to the priests\" (v.14) both reflect the Levitical purity system. The Samaritan\\'s return to Jesus rather than a Jewish priest is itself an implicit theological statement.')]"
         }
       }
     },
@@ -144,21 +148,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Samaria-Galilee Border</div><div class=\"poi-coords\">32.3° N, 35.2° E</div><div class=\"poi-text\">The frontier between the territories of Samaria and Galilee in the first century — a social as well as geographic boundary. Jesus's route through this region on his way to Jerusalem (9:51) is one of Luke's periodic geographical reminders that the journey continues. The border setting makes the Samaritan leper's presence in the group of ten plausible.</div></div>"
         },
-        "ctx": "[('When Does the Kingdom Come?', 'The Pharisees\\' question about the timing of the kingdom reflects a common apocalyptic expectation — a datable, observable arrival of the divine reign. Jesus rejects both the calculability (it is not something that can be observed, 17:20) and the locality (not \"here\" or \"there,\" 17:21). The kingdom\\'s presence is not a future event to be calculated but a present reality to be discerned in Jesus himself.'), ('Noah and Lot as Eschatological Types', 'Both Noah (Gen 6-9) and Lot (Gen 18-19) are OT figures of divine rescue preceding divine judgment. In both cases, ordinary life continued up to the moment of catastrophe — eating, drinking, marrying, buying, selling. The lesson is not that these activities are wrong but that they created a false sense of security that blinded people to the crisis.')]",
-        "cross": [
-          {
-            "ref": "Matt 24:17-28",
-            "note": "Matthew's parallel eschatological teaching, placed in the Olivet Discourse after the triumphal entry rather than during the Galilean journey."
-          },
-          {
-            "ref": "Gen 6:5-8",
-            "note": "The days of Noah — the setting of the flood narrative that Jesus invokes as a type of the final judgment."
-          },
-          {
-            "ref": "Gen 19:1-29",
-            "note": "The destruction of Sodom and the escape of Lot — the second OT type Jesus uses, with the specific warning to remember Lot's wife (Gen 19:26)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 24:17-28",
+              "note": "Matthew's parallel eschatological teaching, placed in the Olivet Discourse after the triumphal entry rather than during the Galilean journey."
+            },
+            {
+              "ref": "Gen 6:5-8",
+              "note": "The days of Noah — the setting of the flood narrative that Jesus invokes as a type of the final judgment."
+            },
+            {
+              "ref": "Gen 19:1-29",
+              "note": "The destruction of Sodom and the escape of Lot — the second OT type Jesus uses, with the specific warning to remember Lot's wife (Gen 19:26)."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -231,6 +236,9 @@
               "note": "Chrysostom: \"In Noah's time, people were going about their ordinary business right up to the flood. The catastrophe came not because they were doing evil things but because they were absorbed in ordinary things to the exclusion of the things of God. This is the warning: ordinariness without awareness is its own kind of blindness.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('When Does the Kingdom Come?', 'The Pharisees\\' question about the timing of the kingdom reflects a common apocalyptic expectation — a datable, observable arrival of the divine reign. Jesus rejects both the calculability (it is not something that can be observed, 17:20) and the locality (not \"here\" or \"there,\" 17:21). The kingdom\\'s presence is not a future event to be calculated but a present reality to be discerned in Jesus himself.'), ('Noah and Lot as Eschatological Types', 'Both Noah (Gen 6-9) and Lot (Gen 18-19) are OT figures of divine rescue preceding divine judgment. In both cases, ordinary life continued up to the moment of catastrophe — eating, drinking, marrying, buying, selling. The lesson is not that these activities are wrong but that they created a false sense of security that blinded people to the crisis.')]"
         }
       }
     },
@@ -257,21 +265,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Samaria-Galilee Border</div><div class=\"poi-coords\">32.3° N, 35.2° E</div><div class=\"poi-text\">The frontier between the territories of Samaria and Galilee in the first century — a social as well as geographic boundary. Jesus's route through this region on his way to Jerusalem (9:51) is one of Luke's periodic geographical reminders that the journey continues. The border setting makes the Samaritan leper's presence in the group of ten plausible.</div></div>"
         },
-        "ctx": "[('Boundary Between Samaria and Galilee', \"Jesus's route (v.11) through the border region between Samaria and Galilee is geographically specific and theologically significant. The border was a social and religious boundary — Jewish-Samaritan relations were hostile. The ten lepers' mixed company (nine Jews, presumably, and one Samaritan) suggests that shared suffering crossed the usual boundaries.\"), ('Leprosy and Social Exclusion', 'Biblical \"leprosy\" (tsara\\'at) covered a range of skin conditions requiring Levitical examination and social isolation (Lev 13-14). The requirement to \"stand at a distance\" (v.12) and the command to \"show yourselves to the priests\" (v.14) both reflect the Levitical purity system. The Samaritan\\'s return to Jesus rather than a Jewish priest is itself an implicit theological statement.')]",
-        "cross": [
-          {
-            "ref": "Matt 18:6-7",
-            "note": "Millstone and stumbling blocks — parallel warning in Matthew's community discourse."
-          },
-          {
-            "ref": "Matt 17:20",
-            "note": "\"Truly I tell you, if you have faith as small as a mustard seed, you can say to this mountain, 'Move from here to there,' and it will move\" — Matthew's version uses a mountain rather than a mulberry tree."
-          },
-          {
-            "ref": "2 Kgs 5:1-19",
-            "note": "Naaman the Syrian healed of leprosy by Elisha — the OT precedent for a foreigner receiving cleansing that Israelites failed to seek, which Jesus references in 4:27."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 18:6-7",
+              "note": "Millstone and stumbling blocks — parallel warning in Matthew's community discourse."
+            },
+            {
+              "ref": "Matt 17:20",
+              "note": "\"Truly I tell you, if you have faith as small as a mustard seed, you can say to this mountain, 'Move from here to there,' and it will move\" — Matthew's version uses a mountain rather than a mulberry tree."
+            },
+            {
+              "ref": "2 Kgs 5:1-19",
+              "note": "Naaman the Syrian healed of leprosy by Elisha — the OT precedent for a foreigner receiving cleansing that Israelites failed to seek, which Jesus references in 4:27."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -344,6 +353,9 @@
               "note": "Bede: \"He was a Samaritan — that is, a foreigner and one rejected by the Jews. Yet he alone returned to give thanks. So often those who are far from the chosen community give back to God what the chosen keep for themselves.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Boundary Between Samaria and Galilee', \"Jesus's route (v.11) through the border region between Samaria and Galilee is geographically specific and theologically significant. The border was a social and religious boundary — Jewish-Samaritan relations were hostile. The ten lepers' mixed company (nine Jews, presumably, and one Samaritan) suggests that shared suffering crossed the usual boundaries.\"), ('Leprosy and Social Exclusion', 'Biblical \"leprosy\" (tsara\\'at) covered a range of skin conditions requiring Levitical examination and social isolation (Lev 13-14). The requirement to \"stand at a distance\" (v.12) and the command to \"show yourselves to the priests\" (v.14) both reflect the Levitical purity system. The Samaritan\\'s return to Jesus rather than a Jewish priest is itself an implicit theological statement.')]"
         }
       }
     }

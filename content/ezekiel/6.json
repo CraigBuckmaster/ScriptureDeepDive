@@ -31,21 +31,22 @@
             "paragraph": "Ezekiel's favorite pejorative for idols (39 of the 48 OT occurrences are in Ezekiel). The word is related to gelel ('dung pellets') — a deliberately crude, mocking term that reduces pagan deities to excrement. It strips idols of any dignity or power."
           }
         ],
-        "ctx": "Ezekiel turns from Jerusalem to address the land itself. The mountains personify the nation — 'mountains of Israel' is a recurring phrase (16 times). By addressing the landscape, Ezekiel indicts the entire territory as polluted by idolatry. The corpses of idolaters will be scattered around their altars, making the high places themselves into graveyards.",
-        "cross": [
-          {
-            "ref": "2 Kgs 23:4-20",
-            "note": "Josiah's reform destroyed the high places, but they returned after his death. Ezekiel declares that only divine judgment will permanently end syncretistic worship."
-          },
-          {
-            "ref": "Hos 4:13",
-            "note": "Hosea also condemned worship on hilltops and under trees — the high place tradition ran deep in Israel's apostasy."
-          },
-          {
-            "ref": "Rom 1:21-23",
-            "note": "Paul echoes the prophetic indictment: knowing God, they exchanged his glory for images."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 23:4-20",
+              "note": "Josiah's reform destroyed the high places, but they returned after his death. Ezekiel declares that only divine judgment will permanently end syncretistic worship."
+            },
+            {
+              "ref": "Hos 4:13",
+              "note": "Hosea also condemned worship on hilltops and under trees — the high place tradition ran deep in Israel's apostasy."
+            },
+            {
+              "ref": "Rom 1:21-23",
+              "note": "Paul echoes the prophetic indictment: knowing God, they exchanged his glory for images."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -102,6 +103,9 @@
               "note": "Zimmerli classifies this as a 'proof-saying' (Erweiswort) — the genre centers on the recognition formula 'then you will know that I am the LORD.' The entire oracle exists to produce knowledge of YHWH through the act of judgment."
             }
           ]
+        },
+        "hist": {
+          "context": "Ezekiel turns from Jerusalem to address the land itself. The mountains personify the nation — 'mountains of Israel' is a recurring phrase (16 times). By addressing the landscape, Ezekiel indicts the entire territory as polluted by idolatry. The corpses of idolaters will be scattered around their altars, making the high places themselves into graveyards."
         }
       }
     },
@@ -119,17 +123,18 @@
             "paragraph": "The recognition formula climaxes here: the survivors scattered among the nations will 'know' (yada) that YHWH is LORD through their experience of judgment. This is not intellectual knowledge but experiential, existential knowledge born of catastrophe. The exiles will understand who God is because they have experienced what he does."
           }
         ],
-        "ctx": "A surprising pastoral note emerges: God will spare some who escape the sword among the nations (v.8). These survivors will remember God — not with joy but with self-loathing for their sins. The remnant theology here is not triumphant but traumatic: survival means carrying the memory of betrayal. The remnant is saved not for comfort but for witness.",
-        "cross": [
-          {
-            "ref": "Lev 26:33-39",
-            "note": "The covenant curses predicted scattering among nations and wasting away in guilt — Ezekiel applies this Levitical threat directly."
-          },
-          {
-            "ref": "Deut 30:1-3",
-            "note": "After scattering, if they return to God with all their heart, he will restore them — the future hope behind the present judgment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 26:33-39",
+              "note": "The covenant curses predicted scattering among nations and wasting away in guilt — Ezekiel applies this Levitical threat directly."
+            },
+            {
+              "ref": "Deut 30:1-3",
+              "note": "After scattering, if they return to God with all their heart, he will restore them — the future hope behind the present judgment."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -190,6 +195,9 @@
               "note": "Zimmerli identifies the clapping and stamping as ritual gestures of mourning that the prophet performs on God's behalf — God himself grieves the necessity of judgment. The desolation from desert to Riblah encompasses the entire promised land."
             }
           ]
+        },
+        "hist": {
+          "context": "A surprising pastoral note emerges: God will spare some who escape the sword among the nations (v.8). These survivors will remember God — not with joy but with self-loathing for their sins. The remnant theology here is not triumphant but traumatic: survival means carrying the memory of betrayal. The remnant is saved not for comfort but for witness."
         }
       }
     }

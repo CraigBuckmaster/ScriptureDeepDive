@@ -25,17 +25,18 @@
             "paragraph": "\"I loathe my very life; therefore I will give free rein to my complaint (rîb)\" (v.1–2). The word rîb is a technical legal term: a formal lawsuit or dispute. Job is not venting; he is filing a legal complaint against God."
           }
         ],
-        "ctx": "Job addresses God with increasing boldness. \"Do not declare me guilty; tell me what charges you have against me\" (v.2). He demands that God state the specific accusation. Then a piercing question: \"Does it please you to oppress?\" (v.3). Job implies God might enjoy causing pain — a charge he himself will later withdraw.",
-        "cross": [
-          {
-            "ref": "Ps 139:13–16",
-            "note": "\"You knit me together in my mother’s womb\" — the creation theology Job uses, but with opposite emotion."
-          },
-          {
-            "ref": "Isa 45:9",
-            "note": "\"Does the clay say to the potter, What are you making?\" — the question Job dares to ask."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 139:13–16",
+              "note": "\"You knit me together in my mother’s womb\" — the creation theology Job uses, but with opposite emotion."
+            },
+            {
+              "ref": "Isa 45:9",
+              "note": "\"Does the clay say to the potter, What are you making?\" — the question Job dares to ask."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Habel: Job files his formal rîb — his legal complaint. The demand is procedural: state the charge, present the evidence, or acquit."
             }
           ]
+        },
+        "hist": {
+          "context": "Job addresses God with increasing boldness. \"Do not declare me guilty; tell me what charges you have against me\" (v.2). He demands that God state the specific accusation. Then a piercing question: \"Does it please you to oppress?\" (v.3). Job implies God might enjoy causing pain — a charge he himself will later withdraw."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "\"Your hands shaped (āsāh) me and made me... yet you would destroy (billəʿāh) me\" (v.8). The paradox at the heart of the lament: the Creator is destroying his own creation. The same hands that formed Job now crush him. This is the theology of Genesis 2 meeting the experience of Job 2."
           }
         ],
-        "ctx": "Job recounts his creation in tender terms — poured out like milk, curdled like cheese, clothed with skin and flesh, knit with bones and sinews, granted life and lovingkindness (vv.10–12). Then the turn: \"But this is what you concealed in your heart; I know this was in your mind: if I sinned, you would be watching me\" (vv.13–14). The creative love was a trap. God made Job beautiful only to destroy him.",
-        "cross": [
-          {
-            "ref": "Ps 139:13–16",
-            "note": "The creation-of-the-individual theology — God forms the body in the womb."
-          },
-          {
-            "ref": "Jer 18:1–10",
-            "note": "The potter and the clay — God’s sovereign right over what he makes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 139:13–16",
+              "note": "The creation-of-the-individual theology — God forms the body in the womb."
+            },
+            {
+              "ref": "Jer 18:1–10",
+              "note": "The potter and the clay — God’s sovereign right over what he makes."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -196,6 +201,9 @@
               "note": "Habel: Job’s argument shifts from procedural (demand the charge) to substantive (God’s own actions are contradictory). The plaintiff presents evidence: God made him with care, then destroyed him without cause."
             }
           ]
+        },
+        "hist": {
+          "context": "Job recounts his creation in tender terms — poured out like milk, curdled like cheese, clothed with skin and flesh, knit with bones and sinews, granted life and lovingkindness (vv.10–12). Then the turn: \"But this is what you concealed in your heart; I know this was in your mind: if I sinned, you would be watching me\" (vv.13–14). The creative love was a trap. God made Job beautiful only to destroy him."
         }
       }
     }

@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 3,
       "panels": {
-        "ctx": "Jehu son of Hanani meets Jehoshaphat: “Should you help the wicked and love those who hate the LORD? Because of this, the wrath of the LORD is on you.” But he adds: “There is, however, some good in you, for you have rid the land of the Asherah poles and have set your heart on seeking God.” Partial judgment for partial failure — the Chronicler’s proportional retribution.",
-        "cross": [
-          {
-            "ref": "1 Kgs 22:43–44",
-            "note": "Kings gives Jehoshaphat a positive assessment but notes 'the high places were not removed.' Chronicles instead shows the prophetic rebuke from Jehu son of Hanani for the alliance with Ahab."
-          },
-          {
-            "ref": "2 Chr 16:7–10",
-            "note": "Jehu's father Hanani rebuked Asa for the same sin — relying on foreign alliances. Father and son deliver the same prophetic message to successive kings, showing the pattern of repeated warning."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 22:43–44",
+              "note": "Kings gives Jehoshaphat a positive assessment but notes 'the high places were not removed.' Chronicles instead shows the prophetic rebuke from Jehu son of Hanani for the alliance with Ahab."
+            },
+            {
+              "ref": "2 Chr 16:7–10",
+              "note": "Jehu's father Hanani rebuked Asa for the same sin — relying on foreign alliances. Father and son deliver the same prophetic message to successive kings, showing the pattern of repeated warning."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "The Chronicler’s characteristic vocabulary and theological framework shape the presentation of these events."
             }
           ]
+        },
+        "hist": {
+          "context": "Jehu son of Hanani meets Jehoshaphat: “Should you help the wicked and love those who hate the LORD? Because of this, the wrath of the LORD is on you.” But he adds: “There is, however, some good in you, for you have rid the land of the Asherah poles and have set your heart on seeking God.” Partial judgment for partial failure — the Chronicler’s proportional retribution."
         }
       }
     },
@@ -54,17 +58,18 @@
       "verse_start": 4,
       "verse_end": 11,
       "panels": {
-        "ctx": "Jehoshaphat appoints judges throughout Judah with a charge unique to Chronicles: “Consider carefully what you do, because you are not judging for mere mortals but for the LORD, who is with you whenever you give a verdict. Judge carefully, for with the LORD our God there is no injustice or partiality or bribery.” He establishes a central court in Jerusalem with Levites, priests, and clan leaders. Justice is both local and centralised, both divine and institutional.",
-        "cross": [
-          {
-            "ref": "Deut 16:18–20",
-            "note": "Jehoshaphat's judicial reform — appointing judges with the charge 'judge carefully, for with the LORD there is no injustice' — directly implements Deuteronomy's instructions for establishing justice."
-          },
-          {
-            "ref": "Exod 18:21–26",
-            "note": "The appointment of judges at multiple levels mirrors Moses' delegation of judicial authority at Jethro's advice — the Chronicler portrays Jehoshaphat as a second Moses organising righteous governance."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 16:18–20",
+              "note": "Jehoshaphat's judicial reform — appointing judges with the charge 'judge carefully, for with the LORD there is no injustice' — directly implements Deuteronomy's instructions for establishing justice."
+            },
+            {
+              "ref": "Exod 18:21–26",
+              "note": "The appointment of judges at multiple levels mirrors Moses' delegation of judicial authority at Jethro's advice — the Chronicler portrays Jehoshaphat as a second Moses organising righteous governance."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -82,6 +87,9 @@
               "note": "The Chronicler’s characteristic vocabulary and theological framework shape the presentation of these events."
             }
           ]
+        },
+        "hist": {
+          "context": "Jehoshaphat appoints judges throughout Judah with a charge unique to Chronicles: “Consider carefully what you do, because you are not judging for mere mortals but for the LORD, who is with you whenever you give a verdict. Judge carefully, for with the LORD our God there is no injustice or partiality or bribery.” He establishes a central court in Jerusalem with Levites, priests, and clan leaders. Justice is both local and centralised, both divine and institutional."
         }
       }
     }

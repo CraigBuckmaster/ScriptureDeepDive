@@ -31,18 +31,22 @@
             "paragraph": "The silver cup — possibly used for divination (v.5). Whether Joseph actually practised divination is debated; the claim may be part of the ruse. The cup becomes the instrument of the final test."
           }
         ],
-        "hist": "The planted cup in Benjamin's sack is the final and most severe test in the Joseph cycle. The cup belongs to Joseph and is described as the one he uses for divination — possibly a silver cup used in hydromancy (divining by watching liquid patterns). The accusation against Benjamin of theft from the man who showed them hospitality is designed to recreate the conditions of Joseph's original betrayal: will the brothers abandon Benjamin to slavery, as they once abandoned Joseph, or will they demonstrate that they have changed?",
-        "ctx": "The planted cup is the final test. The scenario exactly replicates the original crisis: a favoured son of Jacob is accused and threatened with permanent removal. The brothers could easily abandon Benjamin — \"let him be the slave; we go free.\" The steward offers precisely this (v.17). The question of the entire narrative hangs in the silence between v.17 and v.18: will they do it again? Judah speaks.",
-        "cross": [
-          {
-            "ref": "John 21:17",
-            "note": "Peter tested three times by the one he denied — the pattern of testing-to-restoration that Joseph applies to his brothers recurs in the NT."
-          },
-          {
-            "ref": "Luke 15:11-32",
-            "note": "The prodigal son welcomed home — the reunion of ch.45 anticipated in Jesus's parable of unexpected grace."
-          }
-        ],
+        "hist": {
+          "historical": "The planted cup in Benjamin's sack is the final and most severe test in the Joseph cycle. The cup belongs to Joseph and is described as the one he uses for divination — possibly a silver cup used in hydromancy (divining by watching liquid patterns). The accusation against Benjamin of theft from the man who showed them hospitality is designed to recreate the conditions of Joseph's original betrayal: will the brothers abandon Benjamin to slavery, as they once abandoned Joseph, or will they demonstrate that they have changed?",
+          "context": "The planted cup is the final test. The scenario exactly replicates the original crisis: a favoured son of Jacob is accused and threatened with permanent removal. The brothers could easily abandon Benjamin — \"let him be the slave; we go free.\" The steward offers precisely this (v.17). The question of the entire narrative hangs in the silence between v.17 and v.18: will they do it again? Judah speaks."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 21:17",
+              "note": "Peter tested three times by the one he denied — the pattern of testing-to-restoration that Joseph applies to his brothers recurs in the NT."
+            },
+            {
+              "ref": "Luke 15:11-32",
+              "note": "The prodigal son welcomed home — the reunion of ch.45 anticipated in Jesus's parable of unexpected grace."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -138,18 +142,22 @@
             "paragraph": "Life-dependency — Jacob's soul tied to Benjamin's. The same word (qāšar) is used in 1 Sam 18:1 for Jonathan's love for David."
           }
         ],
-        "hist": "Judah's speech in 44:18-34 is the longest speech by a human character in the book of Genesis and is widely regarded as one of the great speeches in all of Scripture. It recapitulates the entire narrative from Jacob's perspective — the beloved son, the father's grief, the surety — and culminates in Judah's offer to substitute himself as a slave so that Benjamin can go free. This is the decisive evidence of transformation: the man who proposed selling Joseph as a slave now offers himself as a slave in Benjamin's place.",
-        "ctx": "Judah's speech is structured as: (1) appeal for a hearing, (2) narrative of the situation, (3) Jacob's grief, (4) Judah's own pledge, (5) the substitution offer. The offer in v.33 — \"let your servant remain instead of the boy\" — is the moral climax of the entire Joseph narrative. The man who sold one of Rachel's sons now offers himself in place of the other. The transformation is complete.",
-        "cross": [
-          {
-            "ref": "John 15:13",
-            "note": "Greater love has no one than this: to lay down one's life for one's friends — Judah's offer is the closest OT anticipation of this principle."
-          },
-          {
-            "ref": "Isa 53:4-6",
-            "note": "He bore our griefs — the substitutionary pattern Judah initiates becomes the structure of Israel's greatest prophecy."
-          }
-        ],
+        "hist": {
+          "historical": "Judah's speech in 44:18-34 is the longest speech by a human character in the book of Genesis and is widely regarded as one of the great speeches in all of Scripture. It recapitulates the entire narrative from Jacob's perspective — the beloved son, the father's grief, the surety — and culminates in Judah's offer to substitute himself as a slave so that Benjamin can go free. This is the decisive evidence of transformation: the man who proposed selling Joseph as a slave now offers himself as a slave in Benjamin's place.",
+          "context": "Judah's speech is structured as: (1) appeal for a hearing, (2) narrative of the situation, (3) Jacob's grief, (4) Judah's own pledge, (5) the substitution offer. The offer in v.33 — \"let your servant remain instead of the boy\" — is the moral climax of the entire Joseph narrative. The man who sold one of Rachel's sons now offers himself in place of the other. The transformation is complete."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 15:13",
+              "note": "Greater love has no one than this: to lay down one's life for one's friends — Judah's offer is the closest OT anticipation of this principle."
+            },
+            {
+              "ref": "Isa 53:4-6",
+              "note": "He bore our griefs — the substitutionary pattern Judah initiates becomes the structure of Israel's greatest prophecy."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

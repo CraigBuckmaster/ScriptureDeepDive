@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 15,
       "panels": {
-        "ctx": "David learns from the Uzzah disaster. He prepares a tent for the ark, then declares: “No one but the Levites may carry the ark of God, because the LORD chose them.” He assembles 862 Levites from the three main families (Kohath, Merari, Gershon) and three additional Levitical clans. David explains: “The LORD our God broke out against us because we did not inquire of him about how to do it in the prescribed way.” The lesson is explicit: zeal without knowledge is dangerous; the method matters.",
-        "cross": [
-          {
-            "ref": "Num 4:15",
-            "note": "The Kohathites are designated to carry holy objects — the law David now follows."
-          },
-          {
-            "ref": "Exod 25:14",
-            "note": "“Insert the poles into the rings on the sides of the ark to carry it.” No carts. Poles and Levitical shoulders."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 4:15",
+              "note": "The Kohathites are designated to carry holy objects — the law David now follows."
+            },
+            {
+              "ref": "Exod 25:14",
+              "note": "“Insert the poles into the rings on the sides of the ark to carry it.” No carts. Poles and Levitical shoulders."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "bĕmottōt (“with poles”) on their shoulders (biktēpām) — exactly as prescribed in Num 7:9 and Exod 25:14. The Chronicler uses the technical vocabulary of the Priestly legislation."
             }
           ]
+        },
+        "hist": {
+          "context": "David learns from the Uzzah disaster. He prepares a tent for the ark, then declares: “No one but the Levites may carry the ark of God, because the LORD chose them.” He assembles 862 Levites from the three main families (Kohath, Merari, Gershon) and three additional Levitical clans. David explains: “The LORD our God broke out against us because we did not inquire of him about how to do it in the prescribed way.” The lesson is explicit: zeal without knowledge is dangerous; the method matters."
         }
       }
     },
@@ -54,17 +58,18 @@
       "verse_start": 16,
       "verse_end": 29,
       "panels": {
-        "ctx": "David appoints Levitical musicians for the procession: singers, instrumentalists, and gatekeepers. Heman, Asaph, and Ethan lead with bronze cymbals; others play harps and lyres. Kenaniah, the head Levite, directs the music because “he was skillful at it.” The ark enters Jerusalem with shouting, trumpets, cymbals, harps, and lyres. David dances, wearing a linen ephod. Michal (Saul’s daughter) watches from a window and “despises him in her heart.” The Chronicler preserves this detail from Samuel but omits the subsequent quarrel — the positive event takes priority.",
-        "cross": [
-          {
-            "ref": "2 Sam 6:12–19",
-            "note": "The Samuel parallel includes the quarrel with Michal; the Chronicler stops at the despising."
-          },
-          {
-            "ref": "Ps 150:1–6",
-            "note": "“Praise the LORD with the sounding of the trumpet, with harp and lyre... Let everything that has breath praise the LORD.” The full-spectrum worship described here."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 6:12–19",
+              "note": "The Samuel parallel includes the quarrel with Michal; the Chronicler stops at the despising."
+            },
+            {
+              "ref": "Ps 150:1–6",
+              "note": "“Praise the LORD with the sounding of the trumpet, with harp and lyre... Let everything that has breath praise the LORD.” The full-spectrum worship described here."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -82,6 +87,9 @@
               "note": "The “linen ephod” (ʾēpōd bad) is priestly clothing (cf. 1 Sam 2:18; 22:18). David’s wearing it blurs the line between king and priest — a deliberate theological statement about David’s liturgical role."
             }
           ]
+        },
+        "hist": {
+          "context": "David appoints Levitical musicians for the procession: singers, instrumentalists, and gatekeepers. Heman, Asaph, and Ethan lead with bronze cymbals; others play harps and lyres. Kenaniah, the head Levite, directs the music because “he was skillful at it.” The ark enters Jerusalem with shouting, trumpets, cymbals, harps, and lyres. David dances, wearing a linen ephod. Michal (Saul’s daughter) watches from a window and “despises him in her heart.” The Chronicler preserves this detail from Samuel but omits the subsequent quarrel — the positive event takes priority."
         }
       }
     }

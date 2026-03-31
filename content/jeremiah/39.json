@@ -25,21 +25,22 @@
             "paragraph": "The city wall is breached (hubqe'a, v.2) on the ninth day of the fourth month of Zedekiah's eleventh year -- July 586 BC. The verb baqa' means to split open or break through by force. Eighteen months of siege end with the walls giving way. Everything Jeremiah prophesied for forty years now happens in a single day."
           }
         ],
-        "ctx": "The fall of Jerusalem in 586 BC is the defining catastrophe of the Hebrew Bible. The city that had stood since David's conquest (c. 1000 BC) is breached, burned, and depopulated. The temple that Solomon built is destroyed. The Davidic dynasty -- promised to be \"forever\" (2 Sam 7:16) -- ends. Zedekiah flees, is captured, watches his sons executed, is blinded, and is taken in chains to Babylon. The Babylonian officials sit in the middle gate -- the symbolic heart of the city -- as the new rulers of Judah.",
-        "cross": [
-          {
-            "ref": "2 Kgs 25:1-12",
-            "note": "The parallel account of the fall -- the same events recorded in the historical books."
-          },
-          {
-            "ref": "Lam 1:1-5",
-            "note": "\"How deserted lies the city\" -- Lamentations is the liturgical response to what Jeremiah 39 narrates."
-          },
-          {
-            "ref": "Matt 24:2",
-            "note": "Jesus prophesies the second temple's destruction: \"Not one stone here will be left on another.\" The pattern of temple judgment recurs."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 25:1-12",
+              "note": "The parallel account of the fall -- the same events recorded in the historical books."
+            },
+            {
+              "ref": "Lam 1:1-5",
+              "note": "\"How deserted lies the city\" -- Lamentations is the liturgical response to what Jeremiah 39 narrates."
+            },
+            {
+              "ref": "Matt 24:2",
+              "note": "Jesus prophesies the second temple's destruction: \"Not one stone here will be left on another.\" The pattern of temple judgment recurs."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -96,6 +97,9 @@
               "note": "Brueggemann reads the fall as \"the end of royal theology.\" The Davidic dynasty, the temple, and the city -- the three pillars of Judean identity -- collapse simultaneously. What survives is not institution but word."
             }
           ]
+        },
+        "hist": {
+          "context": "The fall of Jerusalem in 586 BC is the defining catastrophe of the Hebrew Bible. The city that had stood since David's conquest (c. 1000 BC) is breached, burned, and depopulated. The temple that Solomon built is destroyed. The Davidic dynasty -- promised to be \"forever\" (2 Sam 7:16) -- ends. Zedekiah flees, is captured, watches his sons executed, is blinded, and is taken in chains to Babylon. The Babylonian officials sit in the middle gate -- the symbolic heart of the city -- as the new rulers of Judah."
         }
       }
     },
@@ -113,17 +117,18 @@
             "paragraph": "God tells Ebed-Melech: \"I will save you ... because you trusted (batakhta) in me\" (v.18). The verb batakh is the same used in the \"blessed is the one who trusts in the LORD\" passage (17:7). Ebed-Melech -- a foreigner -- exemplifies the trust that Israel lacked. His reward is life itself: \"Your life will be given to you as plunder\" (v.18)."
           }
         ],
-        "ctx": "The irony is rich: Nebuchadnezzar orders his officers to protect Jeremiah and \"do whatever he says\" (v.12). The Babylonian emperor shows more respect for God's prophet than the Judean king did. Jeremiah is entrusted to Gedaliah son of Ahikam -- the family that saved him in chapter 26. Ebed-Melech receives a separate oracle of salvation: because he trusted God when it cost him everything, his life will be spared.",
-        "cross": [
-          {
-            "ref": "Jer 26:24",
-            "note": "Ahikam son of Shaphan protected Jeremiah then; now his son Gedaliah receives custody of the prophet. The reform family's protection spans generations."
-          },
-          {
-            "ref": "Heb 11:6",
-            "note": "\"Without faith it is impossible to please God\" -- Ebed-Melech's trust (batakh) is the OT equivalent."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 26:24",
+              "note": "Ahikam son of Shaphan protected Jeremiah then; now his son Gedaliah receives custody of the prophet. The reform family's protection spans generations."
+            },
+            {
+              "ref": "Heb 11:6",
+              "note": "\"Without faith it is impossible to please God\" -- Ebed-Melech's trust (batakh) is the OT equivalent."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -172,6 +177,9 @@
               "note": "Brueggemann reads Ebed-Melech's oracle as \"the most important salvation oracle in the fall narrative.\" The one who trusted God amid total institutional collapse receives the one thing that matters: life. \"The economy of faith operates outside the economy of empire.\""
             }
           ]
+        },
+        "hist": {
+          "context": "The irony is rich: Nebuchadnezzar orders his officers to protect Jeremiah and \"do whatever he says\" (v.12). The Babylonian emperor shows more respect for God's prophet than the Judean king did. Jeremiah is entrusted to Gedaliah son of Ahikam -- the family that saved him in chapter 26. Ebed-Melech receives a separate oracle of salvation: because he trusted God when it cost him everything, his life will be spared."
         }
       }
     }

@@ -25,17 +25,18 @@
             "paragraph": "\"You demanded security (ḥābal) from your relatives for no reason; you stripped people of their clothing, leaving them naked\" (v.6). Eliphaz invents specific sins. Having failed to convince Job through theology, he fabricates charges: exploitation of the poor, withholding food and water, mistreating widows and orphans. None of this is supported by the narrative."
           }
         ],
-        "ctx": "Eliphaz abandons theological argument and resorts to invention. He accuses Job of specific social crimes (vv.6–9) that directly contradict Job’s character as established in chapters 1–2 and confirmed by God himself. This is the friends’ lowest point: when the theology fails, manufacture the evidence.",
-        "cross": [
-          {
-            "ref": "Isa 58:7",
-            "note": "\"Share your food with the hungry\" — the social justice standard Eliphaz accuses Job of violating."
-          },
-          {
-            "ref": "Matt 25:42–43",
-            "note": "\"I was hungry and you gave me nothing to eat\" — Jesus’ description of judgment for social neglect — the charges Eliphaz invents."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 58:7",
+              "note": "\"Share your food with the hungry\" — the social justice standard Eliphaz accuses Job of violating."
+            },
+            {
+              "ref": "Matt 25:42–43",
+              "note": "\"I was hungry and you gave me nothing to eat\" — Jesus’ description of judgment for social neglect — the charges Eliphaz invents."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Habel: the prosecution, having lost on the evidence, resorts to fabrication. Eliphaz invents crimes that fit the punishment. This is judicial corruption — precisely what Job accused God of (9:24)."
             }
           ]
+        },
+        "hist": {
+          "context": "Eliphaz abandons theological argument and resorts to invention. He accuses Job of specific social crimes (vv.6–9) that directly contradict Job’s character as established in chapters 1–2 and confirmed by God himself. This is the friends’ lowest point: when the theology fails, manufacture the evidence."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "\"Submit to God and be at peace (shālōm) with him\" (v.21). Eliphaz’s final appeal. The promise of shalom through submission. If Job were guilty, this would be good advice. Since he isn’t, it is a demand to confess to crimes he didn’t commit."
           }
         ],
-        "ctx": "After the fabricated charges, Eliphaz returns to the conditional promise: repent and be restored. His closing is beautiful as theology and devastating as pastoral care. “Assign your nuggets to the dust... then the Almighty will be your gold” (vv.24–25). Eliphaz imagines a restored Job who has surrendered wealth for God. The vision is attractive. The premise is false.",
-        "cross": [
-          {
-            "ref": "Isa 55:6–7",
-            "note": "\"Seek the LORD while he may be found\" — the same call to repentance, but in Isaiah the speaker has authority; Eliphaz does not."
-          },
-          {
-            "ref": "Jas 4:8",
-            "note": "\"Come near to God and he will come near to you\" — the NT version of Eliphaz’s counsel, valid in its context."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 55:6–7",
+              "note": "\"Seek the LORD while he may be found\" — the same call to repentance, but in Isaiah the speaker has authority; Eliphaz does not."
+            },
+            {
+              "ref": "Jas 4:8",
+              "note": "\"Come near to God and he will come near to you\" — the NT version of Eliphaz’s counsel, valid in its context."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -192,6 +197,9 @@
               "note": "Habel: the prosecution’s final closing argument. Eliphaz appeals for a plea deal: confess and receive mercy. But Job has nothing to confess. The prosecution has failed."
             }
           ]
+        },
+        "hist": {
+          "context": "After the fabricated charges, Eliphaz returns to the conditional promise: repent and be restored. His closing is beautiful as theology and devastating as pastoral care. “Assign your nuggets to the dust... then the Almighty will be your gold” (vv.24–25). Eliphaz imagines a restored Job who has surrendered wealth for God. The vision is attractive. The premise is false."
         }
       }
     }

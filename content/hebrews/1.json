@@ -31,21 +31,22 @@
             "paragraph": "A NT hapax (ἀπαύγασμα), debated between two meanings: active (‘radiance emitted’) or passive (‘reflection received’). If active, the Son radiates God’s glory outward; if passive, he mirrors it. Most scholars favor the active sense: the Son is the outshining of divine glory, not a secondary reflection. The term also appears in Wis 7:26 for Wisdom as an ‘effulgence of eternal light,’ and the author may be drawing on this Wisdom tradition."
           }
         ],
-        "ctx": "Hebrews opens with one of the most majestic sentences in the NT—a single periodic sentence in Greek stretching from 1:1 to 1:4. The author employs seven descriptors of the Son: heir of all things, agent of creation, radiance of glory, exact imprint of being, sustainer of all things by his powerful word, maker of purification for sins, and enthroned at the right hand of Majesty. This sevenfold christology draws on Wisdom traditions (Wis 7:25–26; Sir 24), Ps 110:1 (right-hand enthronement), and pre-Pauline hymnic material (cf. Phil 2:6–11; Col 1:15–20). The prologue establishes the Son’s absolute supremacy before the angel comparison begins.",
-        "cross": [
-          {
-            "ref": "John 1:1–3, 14",
-            "note": "John’s prologue shares the same pre-existence, creation-agency, and incarnation themes, though Hebrews uses Wisdom rather than Logos vocabulary."
-          },
-          {
-            "ref": "Colossians 1:15–20",
-            "note": "The Christ hymn in Colossians provides the closest parallel to Hebrews’ sevenfold christology: image, firstborn, creation-agent, sustainer, reconciler."
-          },
-          {
-            "ref": "Psalm 110:1",
-            "note": "The most-quoted OT text in the NT, Ps 110:1 (‘Sit at my right hand’) is the foundation for Hebrews’ enthronement christology and appears already in the prologue."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 1:1–3, 14",
+              "note": "John’s prologue shares the same pre-existence, creation-agency, and incarnation themes, though Hebrews uses Wisdom rather than Logos vocabulary."
+            },
+            {
+              "ref": "Colossians 1:15–20",
+              "note": "The Christ hymn in Colossians provides the closest parallel to Hebrews’ sevenfold christology: image, firstborn, creation-agent, sustainer, reconciler."
+            },
+            {
+              "ref": "Psalm 110:1",
+              "note": "The most-quoted OT text in the NT, Ps 110:1 (‘Sit at my right hand’) is the foundation for Hebrews’ enthronement christology and appears already in the prologue."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -103,7 +104,10 @@
             }
           ]
         },
-        "hist": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24)."
+        "hist": {
+          "historical": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24).",
+          "context": "Hebrews opens with one of the most majestic sentences in the NT—a single periodic sentence in Greek stretching from 1:1 to 1:4. The author employs seven descriptors of the Son: heir of all things, agent of creation, radiance of glory, exact imprint of being, sustainer of all things by his powerful word, maker of purification for sins, and enthroned at the right hand of Majesty. This sevenfold christology draws on Wisdom traditions (Wis 7:25–26; Sir 24), Ps 110:1 (right-hand enthronement), and pre-Pauline hymnic material (cf. Phil 2:6–11; Col 1:15–20). The prologue establishes the Son’s absolute supremacy before the angel comparison begins."
+        }
       }
     },
     {
@@ -120,25 +124,26 @@
             "paragraph": "From λειτουργέω (leitourgeō, to serve publicly), the adjective λειτουργικός defines angels as servants. The root gives us ‘liturgy.’ While the Son sits enthroned (v. 3, 13), angels are dispatched as servants (διακονία) for the benefit of those inheriting salvation. The contrast is stark: the Son reigns, angels serve. This demotion of angels may address a community tempted by angel veneration or an angelomorphic christology that placed Christ within the angelic hierarchy."
           }
         ],
-        "ctx": "The catena (chain) of seven OT quotations in vv. 5–13 is the most sustained scriptural argument in the NT. The author draws from Ps 2:7, 2 Sam 7:14, Deut 32:43 (LXX), Ps 104:4, Ps 45:6–7, Ps 102:25–27, and Ps 110:1 to demonstrate the Son’s ontological superiority to angels. This hermeneutical method—reading the Psalms christologically—was characteristic of early Christian exegesis and reflects a ‘two-powers’ reading of the OT that found a divine mediator figure alongside YHWH. The author’s audience may have included Jewish Christians who assigned high status to angels as mediators of the law (cf. 2:2; Gal 3:19; Acts 7:53).",
-        "cross": [
-          {
-            "ref": "Psalm 2:7",
-            "note": "The royal coronation psalm (‘You are my Son; today I have begotten you’) is applied to Christ’s exaltation, interpreting the ‘begetting’ as enthronement rather than ontological origin."
-          },
-          {
-            "ref": "2 Samuel 7:14",
-            "note": "The Davidic covenant promise (‘I will be his Father, and he will be my Son’) is read christologically: God’s covenant with David finds its ultimate fulfillment in Christ."
-          },
-          {
-            "ref": "Psalm 45:6–7",
-            "note": "The royal wedding psalm addressed to the king as ‘God’ (‘Your throne, O God, will last for ever’) is applied directly to the Son—one of the strongest OT christological proof-texts."
-          },
-          {
-            "ref": "Psalm 110:1",
-            "note": "The catena closes where the prologue pointed: ‘Sit at my right hand until I make your enemies a footstool.’ This psalm structures the entire epistle."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Psalm 2:7",
+              "note": "The royal coronation psalm (‘You are my Son; today I have begotten you’) is applied to Christ’s exaltation, interpreting the ‘begetting’ as enthronement rather than ontological origin."
+            },
+            {
+              "ref": "2 Samuel 7:14",
+              "note": "The Davidic covenant promise (‘I will be his Father, and he will be my Son’) is read christologically: God’s covenant with David finds its ultimate fulfillment in Christ."
+            },
+            {
+              "ref": "Psalm 45:6–7",
+              "note": "The royal wedding psalm addressed to the king as ‘God’ (‘Your throne, O God, will last for ever’) is applied directly to the Son—one of the strongest OT christological proof-texts."
+            },
+            {
+              "ref": "Psalm 110:1",
+              "note": "The catena closes where the prologue pointed: ‘Sit at my right hand until I make your enemies a footstool.’ This psalm structures the entire epistle."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -199,6 +204,9 @@
               "note": "The OT catena functions as a christological midrash: seven texts are woven together to demonstrate that the Son holds a unique filial relationship with God that no angel can claim. The structure alternates between what God says to/about the Son and what he says about angels, creating a relentless contrast. The move from sonship (vv. 5–6) through sovereignty (vv. 7–9) and eternality (vv. 10–12) to enthronement (v. 13) traces the full scope of christological supremacy. The pastoral point is clear: a community tempted to regress to angelic mediation must recognize that the Son occupies a category all his own."
             }
           ]
+        },
+        "hist": {
+          "context": "The catena (chain) of seven OT quotations in vv. 5–13 is the most sustained scriptural argument in the NT. The author draws from Ps 2:7, 2 Sam 7:14, Deut 32:43 (LXX), Ps 104:4, Ps 45:6–7, Ps 102:25–27, and Ps 110:1 to demonstrate the Son’s ontological superiority to angels. This hermeneutical method—reading the Psalms christologically—was characteristic of early Christian exegesis and reflects a ‘two-powers’ reading of the OT that found a divine mediator figure alongside YHWH. The author’s audience may have included Jewish Christians who assigned high status to angels as mediators of the law (cf. 2:2; Gal 3:19; Acts 7:53)."
         }
       }
     }

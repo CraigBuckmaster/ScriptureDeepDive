@@ -31,18 +31,22 @@
             "paragraph": "The king displays \"the vast wealth of his kingdom and the splendour and glory (yəqār) of his majesty.\" The word yəqār will later describe what the king wants to give the man he honours (6:3, 6, 7, 9). Human honour is the book’s currency — and its trap."
           }
         ],
-        "hist": "Ahasuerus is identified with Xerxes I of Persia (486–465 BC). The 180-day display of wealth (v.4) likely coincides with Herodotus’s account of Xerxes planning the Greek campaign (483 BC). The banquet for military and provincial leaders was standard Persian practice before major campaigns. The garden setting with \"white and blue linen\" (v.6) matches archaeological evidence from Susa’s apadana (audience hall).",
-        "ctx": "The book opens with a display of absolute power — and its first failure. The king commands 127 provinces but cannot command his own wife. The irony is structural: the narrative begins by establishing the king’s unlimited authority, then immediately undercuts it. The most powerful man on earth is about to be outmanoeuvred by everyone around him.",
-        "cross": [
-          {
-            "ref": "Dan 5:1–4",
-            "note": "Belshazzar’s feast — another Persian-era banquet that leads to humiliation."
-          },
-          {
-            "ref": "Prov 16:18",
-            "note": "\"Pride goes before destruction\" — the proverb the opening enacts."
-          }
-        ],
+        "hist": {
+          "historical": "Ahasuerus is identified with Xerxes I of Persia (486–465 BC). The 180-day display of wealth (v.4) likely coincides with Herodotus’s account of Xerxes planning the Greek campaign (483 BC). The banquet for military and provincial leaders was standard Persian practice before major campaigns. The garden setting with \"white and blue linen\" (v.6) matches archaeological evidence from Susa’s apadana (audience hall).",
+          "context": "The book opens with a display of absolute power — and its first failure. The king commands 127 provinces but cannot command his own wife. The irony is structural: the narrative begins by establishing the king’s unlimited authority, then immediately undercuts it. The most powerful man on earth is about to be outmanoeuvred by everyone around him."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Dan 5:1–4",
+              "note": "Belshazzar’s feast — another Persian-era banquet that leads to humiliation."
+            },
+            {
+              "ref": "Prov 16:18",
+              "note": "\"Pride goes before destruction\" — the proverb the opening enacts."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -138,18 +142,22 @@
             "paragraph": "The response to one woman’s refusal is a law (ḏāṯ) sent to all 127 provinces declaring \"every man should be ruler over his own household.\" The disproportion is comic: the empire mobilises its entire legal apparatus because one wife said no."
           }
         ],
-        "hist": "Memucan’s fear that \"all the women will despise their husbands\" (v.17) reveals the fragility beneath the power display. The edict sent in every language to every province is an act of imperial insecurity, not strength. Herodotus records that Xerxes was indeed prone to impulsive and disproportionate responses.",
-        "ctx": "Vashti’s removal creates the vacancy Esther will fill. The narrator presents this as human foolishness — drunken king, panicked advisors, absurd edict — but the reader sees providence. The entire plot requires this vacancy. What looks like court chaos is the first move in an invisible chess game.",
-        "cross": [
-          {
-            "ref": "Prov 21:1",
-            "note": "\"The king’s heart is a stream of water in the hand of the LORD\" — even this impulsive decision serves God’s purpose."
-          },
-          {
-            "ref": "Dan 6:8–9",
-            "note": "The irrevocability of Persian law — a principle that will return critically in Esther 8."
-          }
-        ],
+        "hist": {
+          "historical": "Memucan’s fear that \"all the women will despise their husbands\" (v.17) reveals the fragility beneath the power display. The edict sent in every language to every province is an act of imperial insecurity, not strength. Herodotus records that Xerxes was indeed prone to impulsive and disproportionate responses.",
+          "context": "Vashti’s removal creates the vacancy Esther will fill. The narrator presents this as human foolishness — drunken king, panicked advisors, absurd edict — but the reader sees providence. The entire plot requires this vacancy. What looks like court chaos is the first move in an invisible chess game."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 21:1",
+              "note": "\"The king’s heart is a stream of water in the hand of the LORD\" — even this impulsive decision serves God’s purpose."
+            },
+            {
+              "ref": "Dan 6:8–9",
+              "note": "The irrevocability of Persian law — a principle that will return critically in Esther 8."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

@@ -31,21 +31,22 @@
             "paragraph": "\"For I know the plans I have for you,\" declares the LORD, \"plans to prosper you and not to harm you, plans to give you hope (tiqwa) and a future\" (v.11). The word tiqwa derives from the root qwh (\"to wait, to hope\"). This is not optimism but eschatological expectation -- a future grounded in God's sovereign purpose rather than present circumstances."
           }
         ],
-        "ctx": "The letter to the Babylonian exiles is one of the most pastorally significant documents in the Hebrew Bible. Written probably in 594 BC, it addresses a community in crisis: torn from their homeland, surrounded by a foreign culture, tempted by false prophets who promise imminent return. Jeremiah's counsel is shockingly counterintuitive: settle down, build houses, plant gardens, marry, and seek the welfare of Babylon. The exile is not a parenthesis to endure but a context for faithful living. The famous promise of 29:11 must be read in this context -- it is not a prosperity promise but a hope grounded in the seventy-year framework.",
-        "cross": [
-          {
-            "ref": "1 Pet 2:11-12",
-            "note": "\"Live such good lives among the pagans that they may see your good deeds and glorify God\" -- the NT equivalent of seeking the shalom of the city."
-          },
-          {
-            "ref": "Dan 6:10",
-            "note": "Daniel faithfully serves the Babylonian and Persian empires while maintaining his prayer life -- the lived realization of Jeremiah's instructions."
-          },
-          {
-            "ref": "Phil 3:20",
-            "note": "\"Our citizenship is in heaven\" -- the exile paradigm shapes NT ecclesiology: the church lives faithfully in a world that is not its permanent home."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Pet 2:11-12",
+              "note": "\"Live such good lives among the pagans that they may see your good deeds and glorify God\" -- the NT equivalent of seeking the shalom of the city."
+            },
+            {
+              "ref": "Dan 6:10",
+              "note": "Daniel faithfully serves the Babylonian and Persian empires while maintaining his prayer life -- the lived realization of Jeremiah's instructions."
+            },
+            {
+              "ref": "Phil 3:20",
+              "note": "\"Our citizenship is in heaven\" -- the exile paradigm shapes NT ecclesiology: the church lives faithfully in a world that is not its permanent home."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Brueggemann calls \"seek the shalom of the city\" the \"most subversive sentence in the Hebrew Bible.\" It requires the conquered to bless the conqueror, the displaced to invest in the displacing city. This is not passivity but active, countercultural faithfulness."
             }
           ]
+        },
+        "hist": {
+          "context": "The letter to the Babylonian exiles is one of the most pastorally significant documents in the Hebrew Bible. Written probably in 594 BC, it addresses a community in crisis: torn from their homeland, surrounded by a foreign culture, tempted by false prophets who promise imminent return. Jeremiah's counsel is shockingly counterintuitive: settle down, build houses, plant gardens, marry, and seek the welfare of Babylon. The exile is not a parenthesis to endure but a context for faithful living. The famous promise of 29:11 must be read in this context -- it is not a prosperity promise but a hope grounded in the seventy-year framework."
         }
       }
     },
@@ -127,17 +131,18 @@
             "paragraph": "The false prophets in Babylon -- Ahab son of Kolaiah and Zedekiah son of Maaseiah -- are condemned for prophesying sheqer (lies) and committing adultery (v.23). The signature sin of Jeremiah appears even in exile: institutional liars who give God's name to their own fantasies. Shemaiah the Nehelamite (v.24) writes back to Jerusalem demanding Jeremiah's arrest."
           }
         ],
-        "ctx": "The second half of the letter addresses false prophets operating among the exiles. Ahab and Zedekiah will be handed over to Nebuchadnezzar and executed (v.21-22). Shemaiah writes to Jerusalem's temple authorities demanding they silence Jeremiah. God's response: Shemaiah and his descendants will be excluded from the restoration community. The conflict between true and false prophecy follows Israel even into exile.",
-        "cross": [
-          {
-            "ref": "Jer 23:14",
-            "note": "The parallel charges against Jerusalem's false prophets: adultery and lies. The same sins corrupt the prophetic office in both locations."
-          },
-          {
-            "ref": "2 Tim 4:3-4",
-            "note": "\"The time will come when people will not endure sound teaching\" -- the NT continuation of the perennial conflict between popular comfort and divine truth."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 23:14",
+              "note": "The parallel charges against Jerusalem's false prophets: adultery and lies. The same sins corrupt the prophetic office in both locations."
+            },
+            {
+              "ref": "2 Tim 4:3-4",
+              "note": "\"The time will come when people will not endure sound teaching\" -- the NT continuation of the perennial conflict between popular comfort and divine truth."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -190,6 +195,9 @@
               "note": "Brueggemann reads Shemaiah's letter as evidence that \"the institutional impulse to silence dissent knows no borders.\" Even from Babylon, the establishment reaches back to Jerusalem to suppress the prophetic voice."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half of the letter addresses false prophets operating among the exiles. Ahab and Zedekiah will be handed over to Nebuchadnezzar and executed (v.21-22). Shemaiah writes to Jerusalem's temple authorities demanding they silence Jeremiah. God's response: Shemaiah and his descendants will be excluded from the restoration community. The conflict between true and false prophecy follows Israel even into exile."
         }
       }
     }

@@ -31,17 +31,18 @@
             "paragraph": "\"The arrows of the Almighty (Shaddai) are in me\" (v.4). Job names God as the one attacking him. He uses the divine warrior image: Shaddai is an archer, and Job is the target. This is not the Satan’s work in Job’s understanding — it is God’s."
           }
         ],
-        "ctx": "Job’s first reply to Eliphaz. He does not engage the retribution principle directly but makes an emotional case: my suffering is heavier than sand (v.3), God’s arrows are in me (v.4), even animals don’t cry out without cause (v.5). The argument: my complaint is proportionate to my pain.",
-        "cross": [
-          {
-            "ref": "Ps 38:2",
-            "note": "\"Your arrows have pierced me\" — the same divine-archer image."
-          },
-          {
-            "ref": "Lam 3:12–13",
-            "note": "\"He drew his bow and made me the target for his arrows\" — Jeremiah’s parallel."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 38:2",
+              "note": "\"Your arrows have pierced me\" — the same divine-archer image."
+            },
+            {
+              "ref": "Lam 3:12–13",
+              "note": "\"He drew his bow and made me the target for his arrows\" — Jeremiah’s parallel."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Habel: Job’s reply is a legal rebuttal. He does not accept Eliphaz’s diagnosis. Instead he presents evidence: the weight of his suffering (proportionality) and his preserved integrity (innocence)."
             }
           ]
+        },
+        "hist": {
+          "context": "Job’s first reply to Eliphaz. He does not engage the retribution principle directly but makes an emotional case: my suffering is heavier than sand (v.3), God’s arrows are in me (v.4), even animals don’t cry out without cause (v.5). The argument: my complaint is proportionate to my pain."
         }
       }
     },
@@ -133,17 +137,18 @@
             "paragraph": "\"Anyone who withholds kindness (ḥesed) from a friend forsakes the fear of the Almighty\" (v.14). Job connects the friends’ failure to love with a failure to fear God. Pastoral cruelty is not just unhelpful — it is unfaithful."
           }
         ],
-        "ctx": "Job turns from God to the friends. The wadi metaphor is drawn from desert geography: caravans depending on seasonal streams find nothing when they arrive. The friends are those empty streams. Job then challenges them: \"Show me where I have been wrong\" (v.24). He does not refuse correction — he refuses unsubstantiated accusation.",
-        "cross": [
-          {
-            "ref": "Jer 15:18",
-            "note": "\"You are to me like a deceptive brook, like a spring that fails\" — Jeremiah uses the same wadi image for God himself."
-          },
-          {
-            "ref": "Prov 17:17",
-            "note": "\"A friend loves at all times, and a brother is born for adversity\" — the standard the friends fail to meet."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 15:18",
+              "note": "\"You are to me like a deceptive brook, like a spring that fails\" — Jeremiah uses the same wadi image for God himself."
+            },
+            {
+              "ref": "Prov 17:17",
+              "note": "\"A friend loves at all times, and a brother is born for adversity\" — the standard the friends fail to meet."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -212,6 +217,9 @@
               "note": "Habel: Job cross-examines the witnesses. He challenges the friends to produce evidence: \"Show me where I have been wrong\" (v.24). They cannot, because there is no evidence. The prosecution’s case is circumstantial."
             }
           ]
+        },
+        "hist": {
+          "context": "Job turns from God to the friends. The wadi metaphor is drawn from desert geography: caravans depending on seasonal streams find nothing when they arrive. The friends are those empty streams. Job then challenges them: \"Show me where I have been wrong\" (v.24). He does not refuse correction — he refuses unsubstantiated accusation."
         }
       }
     }

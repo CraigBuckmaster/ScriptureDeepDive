@@ -31,21 +31,22 @@
             "paragraph": "Katallagē (vv. 10–11) is a distinctively Pauline term. Unlike hilastērion (propitiation), which focuses on satisfying God’s wrath, katallagē emphasises the restored relationship between God and humanity. Paul stresses that reconciliation was accomplished ‘while we were still enemies’ (v. 10) — the initiative was entirely God’s, grounded in love rather than human merit."
           }
         ],
-        "ctx": "Romans 5:1–11 transitions from the doctrinal exposition of justification (chs. 1–4) to its experiential consequences. The opening ‘therefore’ (oun) draws out the implications: peace, access to grace, hope, and reconciliation are the immediate fruits of justification. The passage also introduces the theme of suffering (thlipsis, v. 3), which Paul does not minimise but integrates into a chain of character formation: suffering → perseverance → character → hope. The climax is v. 8, often called ‘the greatest verse on the love of God’: ‘while we were still sinners, Christ died for us.’",
-        "cross": [
-          {
-            "ref": "Eph 2:13–16",
-            "note": "Those who were far off have been brought near through the blood of Christ — reconciliation and peace through the cross."
-          },
-          {
-            "ref": "Col 1:19–22",
-            "note": "God reconciled all things through Christ, making peace through his blood shed on the cross."
-          },
-          {
-            "ref": "Jas 1:2–4",
-            "note": "James presents a parallel chain: trials produce perseverance, and perseverance produces maturity."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Eph 2:13–16",
+              "note": "Those who were far off have been brought near through the blood of Christ — reconciliation and peace through the cross."
+            },
+            {
+              "ref": "Col 1:19–22",
+              "note": "God reconciled all things through Christ, making peace through his blood shed on the cross."
+            },
+            {
+              "ref": "Jas 1:2–4",
+              "note": "James presents a parallel chain: trials produce perseverance, and perseverance produces maturity."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -122,6 +123,9 @@
               "note": "Schreiner argues that the four descriptions of humanity — ‘powerless’ (v. 6), ‘ungodly’ (v. 6), ‘sinners’ (v. 8), ‘enemies’ (v. 10) — are cumulative, not sequential. They describe the same condition from different angles, magnifying the grace of Christ’s death."
             }
           ]
+        },
+        "hist": {
+          "context": "Romans 5:1–11 transitions from the doctrinal exposition of justification (chs. 1–4) to its experiential consequences. The opening ‘therefore’ (oun) draws out the implications: peace, access to grace, hope, and reconciliation are the immediate fruits of justification. The passage also introduces the theme of suffering (thlipsis, v. 3), which Paul does not minimise but integrates into a chain of character formation: suffering → perseverance → character → hope. The climax is v. 8, often called ‘the greatest verse on the love of God’: ‘while we were still sinners, Christ died for us.’"
         }
       }
     },
@@ -145,21 +149,22 @@
             "paragraph": "Charisma appears three times in this passage (vv. 15, 16) and derives from charis (grace). Paul uses it to emphasise that the work of Christ is not merely the reversal of Adam’s sin but its superabundant overcoming. The gift is ‘not like’ the trespass (v. 15) because grace exceeds the damage of sin."
           }
         ],
-        "ctx": "Romans 5:12–21 is Paul’s Adam–Christ typology, one of the most theologically consequential passages in the Bible. The argument compares two representative heads of humanity: Adam, through whose disobedience sin and death entered the world, and Christ, through whose obedience righteousness and life are given. The passage is the primary NT basis for the doctrines of original sin (Augustine) and federal headship (Reformed theology). Paul’s anacoluthon in v. 12 (the sentence begun with ‘just as’ is never completed with its expected ‘so also’ until v. 18) reveals the difficulty of stating the comparison concisely: at every turn, grace exceeds sin.",
-        "cross": [
-          {
-            "ref": "Gen 3:1–19",
-            "note": "The narrative of Adam’s disobedience — the foundational event behind Paul’s Adam–Christ typology."
-          },
-          {
-            "ref": "1 Cor 15:21–22",
-            "note": "Paul’s parallel Adam–Christ comparison: ‘as in Adam all die, so in Christ all will be made alive.’"
-          },
-          {
-            "ref": "1 Cor 15:45–49",
-            "note": "The ‘last Adam’ / ‘second man’ Christology that complements the Romans 5 argument."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 3:1–19",
+              "note": "The narrative of Adam’s disobedience — the foundational event behind Paul’s Adam–Christ typology."
+            },
+            {
+              "ref": "1 Cor 15:21–22",
+              "note": "Paul’s parallel Adam–Christ comparison: ‘as in Adam all die, so in Christ all will be made alive.’"
+            },
+            {
+              "ref": "1 Cor 15:45–49",
+              "note": "The ‘last Adam’ / ‘second man’ Christology that complements the Romans 5 argument."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -236,6 +241,9 @@
               "note": "Schreiner argues that the ‘increase’ of sin through the law is a necessary stage in salvation history. The law must expose the full depth of sin so that grace can be seen as truly superabundant. The law is not the enemy but sin’s unwitting revealer."
             }
           ]
+        },
+        "hist": {
+          "context": "Romans 5:12–21 is Paul’s Adam–Christ typology, one of the most theologically consequential passages in the Bible. The argument compares two representative heads of humanity: Adam, through whose disobedience sin and death entered the world, and Christ, through whose obedience righteousness and life are given. The passage is the primary NT basis for the doctrines of original sin (Augustine) and federal headship (Reformed theology). Paul’s anacoluthon in v. 12 (the sentence begun with ‘just as’ is never completed with its expected ‘so also’ until v. 18) reveals the difficulty of stating the comparison concisely: at every turn, grace exceeds sin."
         }
       }
     }

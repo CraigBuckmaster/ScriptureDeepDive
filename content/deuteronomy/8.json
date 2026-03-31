@@ -31,21 +31,22 @@
             "paragraph": "The manna was physical provision whose purpose was spiritual formation. Life is sustained by God's word, not merely by calories. Jesus quotes this in the wilderness temptation (Matt 4:4), deliberately re-entering Israel's wilderness experience."
           }
         ],
-        "ctx": "Chapter 8 is Deuteronomy's theology of the wilderness. The forty years were not divine abandonment but divine education: God humbled Israel to test what was in their hearts, to teach them that life comes from God's word. The manna was a lesson in dependence — daily provision that could not be stored, requiring daily trust. Their clothing did not wear out; their feet did not swell. The wilderness is a place of care, not merely trial. The purpose: that Israel might know that the LORD disciplines them as a father disciplines a child (v.5).",
-        "cross": [
-          {
-            "ref": "Matt 4:4",
-            "note": "\"It is written: Man shall not live on bread alone, but on every word that comes from the mouth of God.\" Jesus quotes Deut 8:3 in his wilderness temptation, deliberately identifying himself with Israel's wilderness experience and succeeding where they failed."
-          },
-          {
-            "ref": "Prov 3:11–12",
-            "note": "\"My son, do not despise the LORD's discipline... because the LORD disciplines those he loves.\" Proverbs develops the Deuteronomy 8:5 father-child discipline theology."
-          },
-          {
-            "ref": "Heb 12:5–11",
-            "note": "\"The Lord disciplines the one he loves, and he chastens everyone he accepts as his son.\" Hebrews 12 is a sustained theological development of Deuteronomy 8's pedagogical interpretation of suffering."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 4:4",
+              "note": "\"It is written: Man shall not live on bread alone, but on every word that comes from the mouth of God.\" Jesus quotes Deut 8:3 in his wilderness temptation, deliberately identifying himself with Israel's wilderness experience and succeeding where they failed."
+            },
+            {
+              "ref": "Prov 3:11–12",
+              "note": "\"My son, do not despise the LORD's discipline... because the LORD disciplines those he loves.\" Proverbs develops the Deuteronomy 8:5 father-child discipline theology."
+            },
+            {
+              "ref": "Heb 12:5–11",
+              "note": "\"The Lord disciplines the one he loves, and he chastens everyone he accepts as his son.\" Hebrews 12 is a sustained theological development of Deuteronomy 8's pedagogical interpretation of suffering."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 8 is Deuteronomy's theology of the wilderness. The forty years were not divine abandonment but divine education: God humbled Israel to test what was in their hearts, to teach them that life comes from God's word. The manna was a lesson in dependence — daily provision that could not be stored, requiring daily trust. Their clothing did not wear out; their feet did not swell. The wilderness is a place of care, not merely trial. The purpose: that Israel might know that the LORD disciplines them as a father disciplines a child (v.5)."
         }
       }
     },
@@ -141,17 +145,18 @@
             "paragraph": "The prosperity trap is self-attribution — \"my power produced this wealth.\" The arrogance is subtle: not a denial of God's existence but a re-attribution of outcomes."
           }
         ],
-        "ctx": "The prosperity warning is urgent: when you have built fine houses, when your herds have grown, when your silver and gold have increased — then your heart will become proud and you will forget the LORD. Moses anticipates the exact psychological mechanism of covenant forgetting: prosperity produces pride, pride produces self-sufficiency, self-sufficiency produces amnesia about God. The corrective is attribution — \"remember the LORD your God, for it is he who gives you the ability to produce wealth\" (v.18).",
-        "cross": [
-          {
-            "ref": "Luke 12:16–21",
-            "note": "Jesus' parable of the Rich Fool is the dramatic illustration of Deuteronomy 8:17 — \"my power and the strength of my hand have produced this wealth for me.\""
-          },
-          {
-            "ref": "1 Cor 4:7",
-            "note": "\"What do you have that you did not receive? And if you did receive it, why do you boast as though you did not?\" Paul's rhetorical question is a NT Deuteronomy 8 moment — the re-attribution of all gifts to God."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 12:16–21",
+              "note": "Jesus' parable of the Rich Fool is the dramatic illustration of Deuteronomy 8:17 — \"my power and the strength of my hand have produced this wealth for me.\""
+            },
+            {
+              "ref": "1 Cor 4:7",
+              "note": "\"What do you have that you did not receive? And if you did receive it, why do you boast as though you did not?\" Paul's rhetorical question is a NT Deuteronomy 8 moment — the re-attribution of all gifts to God."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -220,6 +225,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "The prosperity warning is urgent: when you have built fine houses, when your herds have grown, when your silver and gold have increased — then your heart will become proud and you will forget the LORD. Moses anticipates the exact psychological mechanism of covenant forgetting: prosperity produces pride, pride produces self-sufficiency, self-sufficiency produces amnesia about God. The corrective is attribution — \"remember the LORD your God, for it is he who gives you the ability to produce wealth\" (v.18)."
         }
       }
     }

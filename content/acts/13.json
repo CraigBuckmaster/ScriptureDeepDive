@@ -57,21 +57,22 @@
             "current": false
           }
         ],
-        "ctx": "The commissioning of vv.1–3 is one of the most significant structural moments in Acts: the Spirit speaks through corporate worship and fasting, names specific individuals, and the community responds with prayer and laying on of hands. This is not apostolic appointment from Jerusalem but Spirit-directed commissioning from Antioch — the grass-roots mission structure that will carry the Gospel to the ends of the earth. Paul's sermon (vv.16–41) is modelled on Stephen's speech (ch.7) — a survey of salvation history building to a Christological climax — but applied now to a Diaspora synagogue audience.",
-        "cross": [
-          {
-            "ref": "Acts 9:15",
-            "note": "\"This man is my chosen instrument to proclaim my name to the Gentiles and their kings\" — the Damascus road commission is now publicly deployed. The Antioch commissioning is the church's formal release of what God had prepared privately."
-          },
-          {
-            "ref": "Galatians 1:15–16",
-            "note": "\"God set me apart from my mother's womb... to reveal his Son in me so that I might preach him among the Gentiles.\" Paul's autobiographical account matches the Acts commissioning narrative."
-          },
-          {
-            "ref": "Isaiah 49:6",
-            "note": "\"I will make you a light for the Gentiles, that my salvation may reach to the ends of the earth\" — cited in Acts 13:47 as Paul's scriptural mandate for the Gentile mission."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 9:15",
+              "note": "\"This man is my chosen instrument to proclaim my name to the Gentiles and their kings\" — the Damascus road commission is now publicly deployed. The Antioch commissioning is the church's formal release of what God had prepared privately."
+            },
+            {
+              "ref": "Galatians 1:15–16",
+              "note": "\"God set me apart from my mother's womb... to reveal his Son in me so that I might preach him among the Gentiles.\" Paul's autobiographical account matches the Acts commissioning narrative."
+            },
+            {
+              "ref": "Isaiah 49:6",
+              "note": "\"I will make you a light for the Gentiles, that my salvation may reach to the ends of the earth\" — cited in Acts 13:47 as Paul's scriptural mandate for the Gentile mission."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -136,6 +137,9 @@
               "note": "Keener notes that Sergius Paulus as proconsul of Cyprus is corroborated by inscriptions. A Latin inscription from Rome and a Greek inscription from Cyprus both mention a Sergius Paulus as a senior official of the period. This is one of Acts' many historically verifiable details."
             }
           ]
+        },
+        "hist": {
+          "context": "The commissioning of vv.1–3 is one of the most significant structural moments in Acts: the Spirit speaks through corporate worship and fasting, names specific individuals, and the community responds with prayer and laying on of hands. This is not apostolic appointment from Jerusalem but Spirit-directed commissioning from Antioch — the grass-roots mission structure that will carry the Gospel to the ends of the earth. Paul's sermon (vv.16–41) is modelled on Stephen's speech (ch.7) — a survey of salvation history building to a Christological climax — but applied now to a Diaspora synagogue audience."
         }
       }
     },
@@ -182,21 +186,22 @@
             "current": false
           }
         ],
-        "ctx": "Paul's Pisidian Antioch sermon is the fullest account of his synagogue preaching in Acts. It moves through four stages: salvation history survey (vv.17–25) → death and resurrection testimony (vv.26–31) → scriptural proof from Psalms 2, 16, and Isaiah 55 (vv.32–37) → invitation and warning (vv.38–41). The Isaiah 49:6 quotation in v.47 is the programmatic declaration of the Gentile mission: 'I have made you a light for the Gentiles, that you may bring salvation to the ends of the earth.' Paul applies to himself the calling of the Servant of the Lord — the mission given to Israel is now carried by Israel's Messiah through his apostle.",
-        "cross": [
-          {
-            "ref": "Isaiah 49:6",
-            "note": "\"I have made you a light for the Gentiles, that you may bring salvation to the ends of the earth\" — cited in v.47 as the scriptural mandate for turning to the Gentiles. This verse will be cited again in Acts 26:23 and Luke 2:32."
-          },
-          {
-            "ref": "Psalm 2:7",
-            "note": "\"You are my son; today I have become your father\" — cited in v.33 as fulfilled in the resurrection. Paul reads the Psalm as a coronation announcement fulfilled at Christ's resurrection-exaltation."
-          },
-          {
-            "ref": "Habakkuk 1:5",
-            "note": "\"Look, you scoffers, wonder and perish... something you would never believe\" — cited in v.41 as a warning to those who reject the Gospel. Paul applies the prophet's warning about Babylon to those who reject Christ."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isaiah 49:6",
+              "note": "\"I have made you a light for the Gentiles, that you may bring salvation to the ends of the earth\" — cited in v.47 as the scriptural mandate for turning to the Gentiles. This verse will be cited again in Acts 26:23 and Luke 2:32."
+            },
+            {
+              "ref": "Psalm 2:7",
+              "note": "\"You are my son; today I have become your father\" — cited in v.33 as fulfilled in the resurrection. Paul reads the Psalm as a coronation announcement fulfilled at Christ's resurrection-exaltation."
+            },
+            {
+              "ref": "Habakkuk 1:5",
+              "note": "\"Look, you scoffers, wonder and perish... something you would never believe\" — cited in v.41 as a warning to those who reject the Gospel. Paul applies the prophet's warning about Babylon to those who reject Christ."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -261,6 +266,9 @@
               "note": "Keener notes that \"appointed for eternal life\" (tetagmenoi eis zōēn aiōnion) reflects Luke's consistent divine-passive for salvation. The same construction appears in Acts 2:47 (\"the Lord added to their number\") and 11:18 (\"God has granted repentance\"). Salvation throughout Acts is consistently presented as God's initiative and gift."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul's Pisidian Antioch sermon is the fullest account of his synagogue preaching in Acts. It moves through four stages: salvation history survey (vv.17–25) → death and resurrection testimony (vv.26–31) → scriptural proof from Psalms 2, 16, and Isaiah 55 (vv.32–37) → invitation and warning (vv.38–41). The Isaiah 49:6 quotation in v.47 is the programmatic declaration of the Gentile mission: 'I have made you a light for the Gentiles, that you may bring salvation to the ends of the earth.' Paul applies to himself the calling of the Servant of the Lord — the mission given to Israel is now carried by Israel's Messiah through his apostle."
         }
       }
     },
@@ -307,21 +315,22 @@
             "current": false
           }
         ],
-        "ctx": "The commissioning of vv.1–3 is one of the most significant structural moments in Acts: the Spirit speaks through corporate worship and fasting, names specific individuals, and the community responds with prayer and laying on of hands. This is not apostolic appointment from Jerusalem but Spirit-directed commissioning from Antioch — the grass-roots mission structure that will carry the Gospel to the ends of the earth. Paul's sermon (vv.16–41) is modelled on Stephen's speech (ch.7) — a survey of salvation history building to a Christological climax — but applied now to a Diaspora synagogue audience.",
-        "cross": [
-          {
-            "ref": "Acts 9:15",
-            "note": "\"This man is my chosen instrument to proclaim my name to the Gentiles and their kings\" — the Damascus road commission is now publicly deployed. The Antioch commissioning is the church's formal release of what God had prepared privately."
-          },
-          {
-            "ref": "Galatians 1:15–16",
-            "note": "\"God set me apart from my mother's womb... to reveal his Son in me so that I might preach him among the Gentiles.\" Paul's autobiographical account matches the Acts commissioning narrative."
-          },
-          {
-            "ref": "Isaiah 49:6",
-            "note": "\"I will make you a light for the Gentiles, that my salvation may reach to the ends of the earth\" — cited in Acts 13:47 as Paul's scriptural mandate for the Gentile mission."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 9:15",
+              "note": "\"This man is my chosen instrument to proclaim my name to the Gentiles and their kings\" — the Damascus road commission is now publicly deployed. The Antioch commissioning is the church's formal release of what God had prepared privately."
+            },
+            {
+              "ref": "Galatians 1:15–16",
+              "note": "\"God set me apart from my mother's womb... to reveal his Son in me so that I might preach him among the Gentiles.\" Paul's autobiographical account matches the Acts commissioning narrative."
+            },
+            {
+              "ref": "Isaiah 49:6",
+              "note": "\"I will make you a light for the Gentiles, that my salvation may reach to the ends of the earth\" — cited in Acts 13:47 as Paul's scriptural mandate for the Gentile mission."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -386,6 +395,9 @@
               "note": "Keener notes that Sergius Paulus as proconsul of Cyprus is corroborated by inscriptions. A Latin inscription from Rome and a Greek inscription from Cyprus both mention a Sergius Paulus as a senior official of the period. This is one of Acts' many historically verifiable details."
             }
           ]
+        },
+        "hist": {
+          "context": "The commissioning of vv.1–3 is one of the most significant structural moments in Acts: the Spirit speaks through corporate worship and fasting, names specific individuals, and the community responds with prayer and laying on of hands. This is not apostolic appointment from Jerusalem but Spirit-directed commissioning from Antioch — the grass-roots mission structure that will carry the Gospel to the ends of the earth. Paul's sermon (vv.16–41) is modelled on Stephen's speech (ch.7) — a survey of salvation history building to a Christological climax — but applied now to a Diaspora synagogue audience."
         }
       }
     }

@@ -31,22 +31,26 @@
             "paragraph": "\"The hand of the LORD his God was on him\" (yaḏ-YHWH ʾelōāw) appears six times in Ezra 7–8 (7:6, 7:9, 7:28, 8:18, 8:22, 8:31). It is Ezra’s signature theological phrase — everything he accomplishes is attributed to divine enablement, not personal competence."
           }
         ],
-        "hist": "Ezra’s mission is dated to 458 BC, the seventh year of Artaxerxes I. This is approximately 58 years after the temple completion (516 BC). A new generation has arisen. Ezra’s role is not construction but formation: he comes to teach Torah and reform the community’s practice.",
-        "ctx": "Ezra’s genealogy (vv.1–5) traces his priestly lineage from Aaron through Zadok to Seraiah (the last chief priest before the exile, executed by Nebuchadnezzar in 2 Kgs 25:18–21). The genealogy is his credential: he is Aaronic, Zadokite, and the heir of the pre-exilic priestly establishment. He has both the bloodline and the expertise.",
-        "cross": [
-          {
-            "ref": "2 Kgs 25:18–21",
-            "note": "Seraiah, Ezra’s ancestor, executed by Nebuchadnezzar. The priestly line survived despite this."
-          },
-          {
-            "ref": "Neh 8:1–12",
-            "note": "Ezra reads the Torah publicly — the culmination of the mission introduced here."
-          },
-          {
-            "ref": "Mal 2:7",
-            "note": "\"The lips of a priest ought to preserve knowledge\" — Ezra embodies this ideal."
-          }
-        ],
+        "hist": {
+          "historical": "Ezra’s mission is dated to 458 BC, the seventh year of Artaxerxes I. This is approximately 58 years after the temple completion (516 BC). A new generation has arisen. Ezra’s role is not construction but formation: he comes to teach Torah and reform the community’s practice.",
+          "context": "Ezra’s genealogy (vv.1–5) traces his priestly lineage from Aaron through Zadok to Seraiah (the last chief priest before the exile, executed by Nebuchadnezzar in 2 Kgs 25:18–21). The genealogy is his credential: he is Aaronic, Zadokite, and the heir of the pre-exilic priestly establishment. He has both the bloodline and the expertise."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 25:18–21",
+              "note": "Seraiah, Ezra’s ancestor, executed by Nebuchadnezzar. The priestly line survived despite this."
+            },
+            {
+              "ref": "Neh 8:1–12",
+              "note": "Ezra reads the Torah publicly — the culmination of the mission introduced here."
+            },
+            {
+              "ref": "Mal 2:7",
+              "note": "\"The lips of a priest ought to preserve knowledge\" — Ezra embodies this ideal."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -136,18 +140,22 @@
             "paragraph": "Artaxerxes authorises Ezra to enforce \"the law (dāt) of your God and the law of the king.\" The Aramaic dāt (from Old Persian dāta) covers both religious and civil law. Persian imperial policy: local religious law has the force of imperial law within the community."
           }
         ],
-        "hist": "Artaxerxes’ letter (vv.12–26, in Aramaic) is one of the most generous imperial grants in the Bible. It authorises: unlimited silver and gold from the royal treasury; tax exemption for all temple personnel; judicial authority to enforce Torah with penalties up to death. The generosity likely reflects Persian policy of using local religious leaders to maintain order in provinces.",
-        "ctx": "The letter shifts back to Aramaic (vv.12–26) for the imperial document, then returns to Hebrew for Ezra’s personal response (vv.27–28). The language shift mirrors Ezra 6: Aramaic for official business, Hebrew for covenant reflection. Ezra’s doxology (vv.27–28) is his only first-person speech so far — and it is pure praise.",
-        "cross": [
-          {
-            "ref": "Neh 2:1–8",
-            "note": "Artaxerxes grants Nehemiah a similar commission thirteen years later (445 BC) — the same king, the same policy of supporting Jewish restoration."
-          },
-          {
-            "ref": "Dan 6:25–27",
-            "note": "Darius’s decree honouring Daniel’s God — a parallel pattern of Persian kings endorsing YHWH."
-          }
-        ],
+        "hist": {
+          "historical": "Artaxerxes’ letter (vv.12–26, in Aramaic) is one of the most generous imperial grants in the Bible. It authorises: unlimited silver and gold from the royal treasury; tax exemption for all temple personnel; judicial authority to enforce Torah with penalties up to death. The generosity likely reflects Persian policy of using local religious leaders to maintain order in provinces.",
+          "context": "The letter shifts back to Aramaic (vv.12–26) for the imperial document, then returns to Hebrew for Ezra’s personal response (vv.27–28). The language shift mirrors Ezra 6: Aramaic for official business, Hebrew for covenant reflection. Ezra’s doxology (vv.27–28) is his only first-person speech so far — and it is pure praise."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Neh 2:1–8",
+              "note": "Artaxerxes grants Nehemiah a similar commission thirteen years later (445 BC) — the same king, the same policy of supporting Jewish restoration."
+            },
+            {
+              "ref": "Dan 6:25–27",
+              "note": "Darius’s decree honouring Daniel’s God — a parallel pattern of Persian kings endorsing YHWH."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

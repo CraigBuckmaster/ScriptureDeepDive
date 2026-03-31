@@ -25,18 +25,22 @@
             "paragraph": "Sanballat \"ridiculed\" (lāʿag) the Jews. Mockery is the first weapon. It costs nothing and demoralises without risk. Tobiah adds: \"Even a fox would break down their wall.\" The insult targets the quality of the work — and by extension, the God behind it."
           }
         ],
-        "hist": "Sanballat mocks \"in the presence of his associates and the army of Samaria\" (v.2). This is a public political performance: the ridicule is designed to maintain his coalition’s confidence that the Jerusalem project will fail. The mockery is strategic, not spontaneous.",
-        "ctx": "Nehemiah’s response to ridicule is prayer, not retaliation: \"Hear us, our God, for we are despised\" (v.4). Then: \"So we rebuilt the wall till all of it reached half its height, for the people worked with all their heart\" (v.6). The best answer to mockery is progress.",
-        "cross": [
-          {
-            "ref": "Ps 123:3–4",
-            "note": "\"We have endured no end of contempt and ridicule\" — the psalm Nehemiah’s prayer echoes."
-          },
-          {
-            "ref": "2 Kgs 18:19–35",
-            "note": "Rabshakeh’s mockery of Jerusalem — the Assyrian precedent for psychological warfare against the city."
-          }
-        ],
+        "hist": {
+          "historical": "Sanballat mocks \"in the presence of his associates and the army of Samaria\" (v.2). This is a public political performance: the ridicule is designed to maintain his coalition’s confidence that the Jerusalem project will fail. The mockery is strategic, not spontaneous.",
+          "context": "Nehemiah’s response to ridicule is prayer, not retaliation: \"Hear us, our God, for we are despised\" (v.4). Then: \"So we rebuilt the wall till all of it reached half its height, for the people worked with all their heart\" (v.6). The best answer to mockery is progress."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 123:3–4",
+              "note": "\"We have endured no end of contempt and ridicule\" — the psalm Nehemiah’s prayer echoes."
+            },
+            {
+              "ref": "2 Kgs 18:19–35",
+              "note": "Rabshakeh’s mockery of Jerusalem — the Assyrian precedent for psychological warfare against the city."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -132,18 +136,22 @@
             "paragraph": "\"Remember the Lord, who is great and awesome, and fight\" (v.14). The verb zāk̅ar (remember) is Nehemiah’s characteristic word — it appears throughout the book. Memory is the foundation of courage."
           }
         ],
-        "hist": "The coalition expands: Sanballat (north), Tobiah and Ammonites (east), Arabs (south), Ashdodites (west). Jerusalem is surrounded on all four sides. The conspiracy is coordinated — a multi-front military threat designed to make defence impossible.",
-        "ctx": "\"We prayed to our God and posted a guard\" (v.9). The sentence contains Nehemiah’s entire theology of action: pray AND act. Not prayer instead of guards. Not guards instead of prayer. Both. This is not a lack of faith but an expression of it — faith engages the means God provides.",
-        "cross": [
-          {
-            "ref": "2 Chr 20:12",
-            "note": "Jehoshaphat: \"We do not know what to do, but our eyes are on you\" — the prayer-then-fight pattern."
-          },
-          {
-            "ref": "Eph 6:10–18",
-            "note": "The armour of God — the NT theological framework for Nehemiah’s practical principle."
-          }
-        ],
+        "hist": {
+          "historical": "The coalition expands: Sanballat (north), Tobiah and Ammonites (east), Arabs (south), Ashdodites (west). Jerusalem is surrounded on all four sides. The conspiracy is coordinated — a multi-front military threat designed to make defence impossible.",
+          "context": "\"We prayed to our God and posted a guard\" (v.9). The sentence contains Nehemiah’s entire theology of action: pray AND act. Not prayer instead of guards. Not guards instead of prayer. Both. This is not a lack of faith but an expression of it — faith engages the means God provides."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Chr 20:12",
+              "note": "Jehoshaphat: \"We do not know what to do, but our eyes are on you\" — the prayer-then-fight pattern."
+            },
+            {
+              "ref": "Eph 6:10–18",
+              "note": "The armour of God — the NT theological framework for Nehemiah’s practical principle."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -233,13 +241,14 @@
             "paragraph": "\"Half did the work while the other half held spears, shields, bows and armour\" (v.16). The image of armed builders is Nehemiah’s signature: construction as combat, building as battle. The ḥănît (spear) in one hand and the trowel in the other."
           }
         ],
-        "ctx": "The armed builder is the chapter’s defining image and one of the most iconic in the OT. \"Those who carried materials did their work with one hand and held a weapon in the other, and each of the builders wore his sword at his side\" (vv.17–18). The wall is built under threat. This is what faith looks like when the environment is hostile: you don’t stop building, but you don’t pretend there’s no danger.",
-        "cross": [
-          {
-            "ref": "1 Cor 16:13",
-            "note": "\"Be on your guard; stand firm in the faith; be courageous; be strong\" — the NT echo of Nehemiah’s armed builders."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 16:13",
+              "note": "\"Be on your guard; stand firm in the faith; be courageous; be strong\" — the NT echo of Nehemiah’s armed builders."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -312,6 +321,9 @@
               "note": "Kidner on sleeping in clothes: \"They lived in a state of permanent readiness. Comfort was sacrificed for vigilance. This is what serious work looks like.\""
             }
           ]
+        },
+        "hist": {
+          "context": "The armed builder is the chapter’s defining image and one of the most iconic in the OT. \"Those who carried materials did their work with one hand and held a weapon in the other, and each of the builders wore his sword at his side\" (vv.17–18). The wall is built under threat. This is what faith looks like when the environment is hostile: you don’t stop building, but you don’t pretend there’s no danger."
         }
       }
     }

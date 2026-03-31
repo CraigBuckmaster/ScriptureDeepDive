@@ -43,17 +43,18 @@
             "paragraph": "This figure <em>antikeimai</em> (v.4) — 'opposes' — everything called God. The participle describes his essential character: he is the Adversary, the ultimate anti-God figure."
           }
         ],
-        "ctx": "Some Thessalonians believed 'the day of the Lord has already come' (v.2). Paul corrects this with apocalyptic teaching: certain events must precede the end. The 'man of lawlessness' must be revealed first. The identity of this figure has been debated for two millennia — Rome, the papacy, various tyrants, a future Antichrist.",
-        "cross": [
-          {
-            "ref": "Dan 11:36-37",
-            "note": "Daniel's description of a king who 'will exalt and magnify himself above every god' provides OT background for Paul's man of lawlessness."
-          },
-          {
-            "ref": "1 John 2:18",
-            "note": "John speaks of 'the Antichrist' who is coming, as well as 'many antichrists' already present. The tradition of an end-time adversary is widespread in early Christianity."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Dan 11:36-37",
+              "note": "Daniel's description of a king who 'will exalt and magnify himself above every god' provides OT background for Paul's man of lawlessness."
+            },
+            {
+              "ref": "1 John 2:18",
+              "note": "John speaks of 'the Antichrist' who is coming, as well as 'many antichrists' already present. The tradition of an end-time adversary is widespread in early Christianity."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -126,6 +127,9 @@
               "note": "The temple imagery draws on Daniel 11:36 and Ezekiel 28:2. Whether Paul envisions a literal Jerusalem temple or the church as God's temple is debated."
             }
           ]
+        },
+        "hist": {
+          "context": "Some Thessalonians believed 'the day of the Lord has already come' (v.2). Paul corrects this with apocalyptic teaching: certain events must precede the end. The 'man of lawlessness' must be revealed first. The identity of this figure has been debated for two millennia — Rome, the papacy, various tyrants, a future Antichrist."
         }
       }
     },
@@ -161,17 +165,18 @@
             "paragraph": "God sends a <em>energeia planēs</em> (v.11) — 'powerful delusion' — so that unbelievers believe the lie. This is judicial hardening: those who rejected truth are confirmed in error by divine action."
           }
         ],
-        "ctx": "The restrainer's identity has generated endless speculation: the Roman Empire, the rule of law, the Holy Spirit, the preaching of the gospel, Michael the archangel. Paul assumes his readers know ('you know what is holding him back,' v.6), but we lack the context. The mystery may be irretrievable.",
-        "cross": [
-          {
-            "ref": "Rev 13:1-8",
-            "note": "Revelation's 'beast from the sea' parallels Paul's lawless one: he blasphemes God, exercises authority, and is worshiped. Both draw on Daniel's fourth beast."
-          },
-          {
-            "ref": "Rom 1:24-28",
-            "note": "Paul's description of God 'giving them over' to depravity echoes the judicial hardening of 2 Thess 2:11. Rejection of truth leads to divine abandonment to error."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rev 13:1-8",
+              "note": "Revelation's 'beast from the sea' parallels Paul's lawless one: he blasphemes God, exercises authority, and is worshiped. Both draw on Daniel's fourth beast."
+            },
+            {
+              "ref": "Rom 1:24-28",
+              "note": "Paul's description of God 'giving them over' to depravity echoes the judicial hardening of 2 Thess 2:11. Rejection of truth leads to divine abandonment to error."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -248,6 +253,9 @@
               "note": "The 'powerful delusion' (energeia planēs) is divine action, not merely permission. Wanamaker notes the difficulty: God actively sends delusion — a hard doctrine, but consistent with judicial hardening elsewhere in Paul."
             }
           ]
+        },
+        "hist": {
+          "context": "The restrainer's identity has generated endless speculation: the Roman Empire, the rule of law, the Holy Spirit, the preaching of the gospel, Michael the archangel. Paul assumes his readers know ('you know what is holding him back,' v.6), but we lack the context. The mystery may be irretrievable."
         }
       }
     },
@@ -277,17 +285,18 @@
             "paragraph": "The imperative <em>stēkō</em> (v.15) — 'stand firm' — is Paul's pastoral counsel amid eschatological confusion. When deception abounds, stability in apostolic teaching is essential."
           }
         ],
-        "ctx": "After the terrifying portrayal of judgment and delusion (vv.1-12), Paul turns to assurance. The Thessalonians are not among the deceived; they were chosen for salvation through sanctification by the Spirit and belief in the truth. Paul's exhortation is to stand firm in the teaching they received.",
-        "cross": [
-          {
-            "ref": "1 Cor 16:13",
-            "note": "Paul's call to 'stand firm in the faith' echoes throughout his letters. Stability is a mark of maturity; being blown about by every wind of doctrine is immaturity (Eph 4:14)."
-          },
-          {
-            "ref": "Phil 4:1",
-            "note": "Paul urges the Philippians to 'stand firm in the Lord.' The verb and concept are standard Pauline paraenesis."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 16:13",
+              "note": "Paul's call to 'stand firm in the faith' echoes throughout his letters. Stability is a mark of maturity; being blown about by every wind of doctrine is immaturity (Eph 4:14)."
+            },
+            {
+              "ref": "Phil 4:1",
+              "note": "Paul urges the Philippians to 'stand firm in the Lord.' The verb and concept are standard Pauline paraenesis."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -360,6 +369,9 @@
               "note": "The prayer balances comfort and strength. Wanamaker observes that 'eternal encouragement' and 'good hope' provide resources for 'every good work and word.'"
             }
           ]
+        },
+        "hist": {
+          "context": "After the terrifying portrayal of judgment and delusion (vv.1-12), Paul turns to assurance. The Thessalonians are not among the deceived; they were chosen for salvation through sanctification by the Spirit and belief in the truth. Paul's exhortation is to stand firm in the teaching they received."
         }
       }
     }

@@ -25,17 +25,18 @@
             "paragraph": "God promises victory through theneʿārîm(young men/officers, v.14) — 232 district commanders followed by 7,000 Israelite troops against Ben-Hadad's coalition. The small, unlikely force wins because God has decreed it. The purpose: \"Then you will know that I am the LORD\" (v.13). Victory serves revelation, not national pride."
           }
         ],
-        "ctx": "Ben-Hadad of Aram besieges Samaria with 32 allied kings. His demands escalate from tribute to total humiliation. Ahab initially accepts, then refuses the second demand. A prophet (unnamed) promises victory: \"I will deliver this vast army into your hands today, and then you will know that I am the LORD.\" The victory comes through the smallest unit — 232 young officers leading the charge. Ben-Hadad, drinking drunk in his tent, barely escapes. The chapter's theological point: God gives Ahab victory not because Ahab deserves it but because \"they said, 'The LORD is a god of the hills but not of the valleys'\" (v.28). God fights for his own Name, not for Ahab's merit.",
-        "cross": [
-          {
-            "ref": "Judg 7:2–7",
-            "note": "Gideon's 300 — the same pattern of God using a small force to demonstrate that victory comes from him, not from military strength."
-          },
-          {
-            "ref": "Deut 20:1–4",
-            "note": "\"When you go to war... do not be afraid of them, because the LORD your God will be with you.\" The Deuteronomic war laws promise divine presence in battle."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Judg 7:2–7",
+              "note": "Gideon's 300 — the same pattern of God using a small force to demonstrate that victory comes from him, not from military strength."
+            },
+            {
+              "ref": "Deut 20:1–4",
+              "note": "\"When you go to war... do not be afraid of them, because the LORD your God will be with you.\" The Deuteronomic war laws promise divine presence in battle."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -87,6 +88,9 @@
               "note": "Provan: The victory through 232 young officers follows the Gideon paradigm: God reduces the force to make the source of victory unmistakable. The narrator is building a case: even Ahab cannot deny that YHWH saved him. His continued apostasy is therefore doubly inexcusable."
             }
           ]
+        },
+        "hist": {
+          "context": "Ben-Hadad of Aram besieges Samaria with 32 allied kings. His demands escalate from tribute to total humiliation. Ahab initially accepts, then refuses the second demand. A prophet (unnamed) promises victory: \"I will deliver this vast army into your hands today, and then you will know that I am the LORD.\" The victory comes through the smallest unit — 232 young officers leading the charge. Ben-Hadad, drinking drunk in his tent, barely escapes. The chapter's theological point: God gives Ahab victory not because Ahab deserves it but because \"they said, 'The LORD is a god of the hills but not of the valleys'\" (v.28). God fights for his own Name, not for Ahab's merit."
         }
       }
     },
@@ -104,17 +108,18 @@
             "paragraph": "Ben-Hadad was underḥērem— devoted to destruction (v.42). Ahab's treaty with him violates the same principle that cost Saul his kingdom when he spared Agag (1 Sam 15). The parallel is deliberate: a king who shows mercy where God demands judgment loses his throne."
           }
         ],
-        "ctx": "Ben-Hadad's advisers claim YHWH is \"a god of the hills\" — so they move the battle to the plains. God sends a prophet: \"Because the Arameans think the LORD is a god of the hills and not a god of the valleys, I will deliver this vast army into your hands.\" The second victory is total: 100,000 killed in one day. But then Ahab makes a treaty with Ben-Hadad instead of executing him — calling him \"my brother.\" A prophet condemns Ahab using a parable (like Nathan to David): \"You have set free a man I had determined should die. Therefore it is your life for his life, your people for his people.\"",
-        "cross": [
-          {
-            "ref": "1 Sam 15:9–23",
-            "note": "Saul spared Agag when God commanded herem. Samuel said: \"To obey is better than sacrifice.\" Ahab's mercy toward Ben-Hadad repeats Saul's sin with the same consequence: the loss of his kingdom and his life."
-          },
-          {
-            "ref": "2 Sam 12:1–7",
-            "note": "Nathan's parable to David. The prophetic parable technique — getting the king to condemn himself — is repeated here in vv.38–42."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Sam 15:9–23",
+              "note": "Saul spared Agag when God commanded herem. Samuel said: \"To obey is better than sacrifice.\" Ahab's mercy toward Ben-Hadad repeats Saul's sin with the same consequence: the loss of his kingdom and his life."
+            },
+            {
+              "ref": "2 Sam 12:1–7",
+              "note": "Nathan's parable to David. The prophetic parable technique — getting the king to condemn himself — is repeated here in vv.38–42."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -166,6 +171,9 @@
               "note": "Provan: The prophet's verdict — \"your life for his life\" — introduces the exchange principle that will govern Ahab's death in ch. 22. The narrative logic is retributive: the mercy Ahab showed to God's enemy will be repaid with the judgment Ahab should have executed."
             }
           ]
+        },
+        "hist": {
+          "context": "Ben-Hadad's advisers claim YHWH is \"a god of the hills\" — so they move the battle to the plains. God sends a prophet: \"Because the Arameans think the LORD is a god of the hills and not a god of the valleys, I will deliver this vast army into your hands.\" The second victory is total: 100,000 killed in one day. But then Ahab makes a treaty with Ben-Hadad instead of executing him — calling him \"my brother.\" A prophet condemns Ahab using a parable (like Nathan to David): \"You have set free a man I had determined should die. Therefore it is your life for his life, your people for his people.\""
         }
       }
     }

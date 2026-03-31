@@ -25,21 +25,22 @@
             "paragraph": "Jeremiah acknowledges God's righteousness (ṣaddîq) before lodging his complaint (v.1). The prophet does not question God's character but struggles with the apparent mismatch between divine justice and observed reality. This is theodicy within the covenant framework — the righteous God seems to allow the wicked to prosper while the faithful suffer."
           }
         ],
-        "ctx": "Jeremiah's complaint continues the \"confession\" begun in 11:18–23. The question \"Why does the way of the wicked prosper?\" (v.1) places Jeremiah in the company of Job, Habakkuk, and the Psalmist (Ps 73). God's response is devastating in its refusal to comfort: \"If you have raced with men on foot and they have worn you out, how can you compete with horses?\" (v.5). Things will get worse, not better. Even Jeremiah's own family is conspiring against him.",
-        "cross": [
-          {
-            "ref": "Hab 1:13",
-            "note": "Habakkuk asks the same question: \"Why do you tolerate the treacherous? Why are you silent while the wicked swallow up those more righteous?\""
-          },
-          {
-            "ref": "Ps 73:2–17",
-            "note": "The psalmist struggles with the prosperity of the wicked until entering the sanctuary — the same theodicy question from a different angle."
-          },
-          {
-            "ref": "Heb 12:1",
-            "note": "\"Let us run with perseverance the race marked out for us\" — the athletic metaphor that echoes God's challenge to Jeremiah about racing and horses."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Hab 1:13",
+              "note": "Habakkuk asks the same question: \"Why do you tolerate the treacherous? Why are you silent while the wicked swallow up those more righteous?\""
+            },
+            {
+              "ref": "Ps 73:2–17",
+              "note": "The psalmist struggles with the prosperity of the wicked until entering the sanctuary — the same theodicy question from a different angle."
+            },
+            {
+              "ref": "Heb 12:1",
+              "note": "\"Let us run with perseverance the race marked out for us\" — the athletic metaphor that echoes God's challenge to Jeremiah about racing and horses."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Brueggemann calls God's response \"the most unsettling divine answer in Scripture.\" Instead of consolation, the prophet receives escalation. The vocation of truth-telling will only become harder. This is not cruelty but honesty — and it is the foundation of prophetic resilience."
             }
           ]
+        },
+        "hist": {
+          "context": "Jeremiah's complaint continues the \"confession\" begun in 11:18–23. The question \"Why does the way of the wicked prosper?\" (v.1) places Jeremiah in the company of Job, Habakkuk, and the Psalmist (Ps 73). God's response is devastating in its refusal to comfort: \"If you have raced with men on foot and they have worn you out, how can you compete with horses?\" (v.5). Things will get worse, not better. Even Jeremiah's own family is conspiring against him."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "God declares he has \"forsaken my house, abandoned my inheritance (naḥălâ)\" (v.7). The term naḥălâ refers to Israel as God's personal possession — the portion he chose for himself. For God to abandon his naḥălâ is the most extreme statement of judgment possible: the one thing God claimed as his own, he now surrenders."
           }
         ],
-        "ctx": "God's lament over his own land is striking — the divine voice expresses grief that mirrors Jeremiah's. God calls Israel \"the beloved of my heart\" (yĕdidût napšî, v.7) even as he announces her destruction. She has \"roared at me like a lion\" (v.8), provoking the response of hatred. The land itself suffers: shepherds trample the vineyard, the pleasant field becomes a desolate wasteland. Yet the chapter ends with a conditional promise: if the nations \"learn the ways of my people,\" they too can be \"built up\" (v.16).",
-        "cross": [
-          {
-            "ref": "Matt 23:37–38",
-            "note": "Jesus' lament: \"Jerusalem, Jerusalem ... how often I have longed to gather your children ... but you were not willing. Look, your house is left to you desolate.\" The same divine grief."
-          },
-          {
-            "ref": "Rom 11:23",
-            "note": "\"If they do not persist in unbelief, they will be grafted in\" — the conditional restoration that Jeremiah 12:16 anticipates."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 23:37–38",
+              "note": "Jesus' lament: \"Jerusalem, Jerusalem ... how often I have longed to gather your children ... but you were not willing. Look, your house is left to you desolate.\" The same divine grief."
+            },
+            {
+              "ref": "Rom 11:23",
+              "note": "\"If they do not persist in unbelief, they will be grafted in\" — the conditional restoration that Jeremiah 12:16 anticipates."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -184,6 +189,9 @@
               "note": "Brueggemann observes that God's lament \"makes judgment unbearable — even for God.\" The text refuses to separate divine wrath from divine grief. Judgment is not the opposite of love but the agonizing expression of love betrayed."
             }
           ]
+        },
+        "hist": {
+          "context": "God's lament over his own land is striking — the divine voice expresses grief that mirrors Jeremiah's. God calls Israel \"the beloved of my heart\" (yĕdidût napšî, v.7) even as he announces her destruction. She has \"roared at me like a lion\" (v.8), provoking the response of hatred. The land itself suffers: shepherds trample the vineyard, the pleasant field becomes a desolate wasteland. Yet the chapter ends with a conditional promise: if the nations \"learn the ways of my people,\" they too can be \"built up\" (v.16)."
         }
       }
     }

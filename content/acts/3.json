@@ -54,21 +54,22 @@
             "current": false
           }
         ],
-        "ctx": "The healing of the lame man is Luke's first post-Pentecost miracle — and he describes it with three vivid verbs in v8 (jumping, walking, praising God) that enact Isaiah 35:6's messianic promise: 'then will the lame leap like a deer.' The miracle is not just a sign of power but a sign of the age: the eschatological restoration Isaiah promised has begun. Peter's immediate deflection (v12: 'Why do you stare at us as if by our own power?') models the apostolic pattern throughout Acts — miracles point beyond the apostle to the risen Christ.",
-        "cross": [
-          {
-            "ref": "Isaiah 35:6",
-            "note": "\"Then will the lame leap like a deer\" — the messianic promise that the healing enacts. Luke frames the miracle as a visible sign that the eschatological age of restoration has arrived."
-          },
-          {
-            "ref": "Acts 4:12",
-            "note": "\"There is no other name under heaven given to mankind by which we must be saved\" — the \"name\" theology of ch.3 (vv.6, 16) reaches its doctrinal climax in ch.4."
-          },
-          {
-            "ref": "John 5:8",
-            "note": "Jesus's healing of a paralytic with the command to \"Get up! Pick up your mat and walk\" is the direct parallel — Peter acts in the name and pattern of the same Jesus."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isaiah 35:6",
+              "note": "\"Then will the lame leap like a deer\" — the messianic promise that the healing enacts. Luke frames the miracle as a visible sign that the eschatological age of restoration has arrived."
+            },
+            {
+              "ref": "Acts 4:12",
+              "note": "\"There is no other name under heaven given to mankind by which we must be saved\" — the \"name\" theology of ch.3 (vv.6, 16) reaches its doctrinal climax in ch.4."
+            },
+            {
+              "ref": "John 5:8",
+              "note": "Jesus's healing of a paralytic with the command to \"Get up! Pick up your mat and walk\" is the direct parallel — Peter acts in the name and pattern of the same Jesus."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -137,6 +138,9 @@
               "note": "The economic contrast is embedded in Peter's words: no silver or gold (the currency of the Temple economy) but the authority of the name. The healing demonstrates that the church's power is not the power of wealth or institution but the power of the risen Christ."
             }
           ]
+        },
+        "hist": {
+          "context": "The healing of the lame man is Luke's first post-Pentecost miracle — and he describes it with three vivid verbs in v8 (jumping, walking, praising God) that enact Isaiah 35:6's messianic promise: 'then will the lame leap like a deer.' The miracle is not just a sign of power but a sign of the age: the eschatological restoration Isaiah promised has begun. Peter's immediate deflection (v12: 'Why do you stare at us as if by our own power?') models the apostolic pattern throughout Acts — miracles point beyond the apostle to the risen Christ."
         }
       }
     },
@@ -183,21 +187,22 @@
             "current": true
           }
         ],
-        "ctx": "Peter's second sermon constructs a deliberate typological argument: Abraham's covenant promise → Moses's prophet-like-me prophecy → Jesus. Each element points forward to its fulfilment. The Deuteronomy 18:15 citation ('a prophet like me') was a live messianic expectation in the first century (John 1:21; 6:14; 7:40). Peter applies it with full covenantal seriousness: Israel's history pointed to Jesus, whom they rejected — and yet, because of Israel's covenantal standing, the first offer of repentance is made to them.",
-        "cross": [
-          {
-            "ref": "Deuteronomy 18:15–19",
-            "note": "The prophet-like-Moses text applied to Jesus — also cited in John 1:21; 6:14; Stephen's speech (Acts 7:37); and Hebrews 3:1–6."
-          },
-          {
-            "ref": "Genesis 22:18",
-            "note": "\"Through your offspring all peoples on earth will be blessed\" — the Abrahamic promise Paul develops in Galatians 3:16, 29. The Gentile mission is covenant fulfilment, not covenant abandonment."
-          },
-          {
-            "ref": "Acts 7:37",
-            "note": "Stephen repeats the Deuteronomy 18 application to Jesus — confirming it was a standard piece of early Christian apologetic, not a one-off application."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deuteronomy 18:15–19",
+              "note": "The prophet-like-Moses text applied to Jesus — also cited in John 1:21; 6:14; Stephen's speech (Acts 7:37); and Hebrews 3:1–6."
+            },
+            {
+              "ref": "Genesis 22:18",
+              "note": "\"Through your offspring all peoples on earth will be blessed\" — the Abrahamic promise Paul develops in Galatians 3:16, 29. The Gentile mission is covenant fulfilment, not covenant abandonment."
+            },
+            {
+              "ref": "Acts 7:37",
+              "note": "Stephen repeats the Deuteronomy 18 application to Jesus — confirming it was a standard piece of early Christian apologetic, not a one-off application."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -262,6 +267,9 @@
               "note": "Peter's identification of his audience as \"heirs of the prophets and of the covenant\" gives them covenantal standing that makes their rejection of Jesus all the more urgent to address — but also makes their repentance all the more possible. The covenant membership can now lead them to receive the blessings Jesus brings."
             }
           ]
+        },
+        "hist": {
+          "context": "Peter's second sermon constructs a deliberate typological argument: Abraham's covenant promise → Moses's prophet-like-me prophecy → Jesus. Each element points forward to its fulfilment. The Deuteronomy 18:15 citation ('a prophet like me') was a live messianic expectation in the first century (John 1:21; 6:14; 7:40). Peter applies it with full covenantal seriousness: Israel's history pointed to Jesus, whom they rejected — and yet, because of Israel's covenantal standing, the first offer of repentance is made to them."
         }
       }
     }

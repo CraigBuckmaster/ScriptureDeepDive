@@ -25,21 +25,22 @@
             "paragraph": "\"Do you seek great things (gedolot) for yourself? Do not seek them\" (v.5). The prohibition is not against ambition in general but against personal advancement when God is bringing \"disaster on all people.\" In a world under judgment, the appropriate ambition is survival, not greatness. Baruch's lament -- \"Woe to me! The LORD has added sorrow to my pain\" (v.3) -- echoes Jeremiah's confessions: the scribe shares the prophet's suffering."
           }
         ],
-        "ctx": "This brief chapter, dated to the fourth year of Jehoiakim (605 BC), is a personal oracle to Baruch. It is placed here as a coda to the narrative section (chs. 26-44) and a bridge to the oracles against the nations (chs. 46-51). Baruch's complaint and God's response encapsulate the entire book in miniature: lament meets divine purpose, and the promise is not comfort but life itself -- \"your life as plunder\" (v.5), the same phrase used for Ebed-Melech (39:18).",
-        "cross": [
-          {
-            "ref": "Jer 39:18",
-            "note": "Ebed-Melech receives the same promise: \"your life as plunder.\" Both the faithful servant and the faithful scribe are promised survival, not prosperity."
-          },
-          {
-            "ref": "Matt 16:25",
-            "note": "\"Whoever wants to save their life will lose it\" -- the NT parallel of the relinquishment ethic."
-          },
-          {
-            "ref": "Jer 20:7-9",
-            "note": "Jeremiah's own confession: Baruch's lament mirrors the prophet's. Master and scribe share the same suffering."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 39:18",
+              "note": "Ebed-Melech receives the same promise: \"your life as plunder.\" Both the faithful servant and the faithful scribe are promised survival, not prosperity."
+            },
+            {
+              "ref": "Matt 16:25",
+              "note": "\"Whoever wants to save their life will lose it\" -- the NT parallel of the relinquishment ethic."
+            },
+            {
+              "ref": "Jer 20:7-9",
+              "note": "Jeremiah's own confession: Baruch's lament mirrors the prophet's. Master and scribe share the same suffering."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -92,6 +93,9 @@
               "note": "Brueggemann reads God's self-disclosure as \"the most intimate divine speech in the book.\" God reveals his own grief at destroying what he built. The creator mourns his own creation. In this context, Baruch's personal ambition is gently but firmly relativized."
             }
           ]
+        },
+        "hist": {
+          "context": "This brief chapter, dated to the fourth year of Jehoiakim (605 BC), is a personal oracle to Baruch. It is placed here as a coda to the narrative section (chs. 26-44) and a bridge to the oracles against the nations (chs. 46-51). Baruch's complaint and God's response encapsulate the entire book in miniature: lament meets divine purpose, and the promise is not comfort but life itself -- \"your life as plunder\" (v.5), the same phrase used for Ebed-Melech (39:18)."
         }
       }
     }

@@ -25,17 +25,18 @@
             "paragraph": "God declares: \"I myself will fight against you with an outstretched hand (yād nĕṭûyâ) and a mighty arm\" (v.5). The phrase \"outstretched hand and mighty arm\" normally describes God's deliverance of Israel from Egypt (Deut 4:34, 5:15). Its reversal here is devastating: the same divine power that saved Israel from Pharaoh will now be turned against Jerusalem. God fights for the enemy."
           }
         ],
-        "ctx": "Chapter 21 opens the second major section of Jeremiah (chs. 21-25), sometimes called the \"royal oracles.\" King Zedekiah sends a delegation to Jeremiah during Nebuchadnezzar's siege (588 BC), hoping for a miracle like the deliverance from Sennacherib in Hezekiah's day (2 Kgs 19). God's answer demolishes that hope: there will be no miraculous deliverance. Instead, God himself will fight against Jerusalem. The only path to survival is surrender — \"whoever goes out and surrenders to the Babylonians will live\" (v.9).",
-        "cross": [
-          {
-            "ref": "2 Kgs 19:35",
-            "note": "The angel's destruction of Sennacherib's army — the precedent Zedekiah hoped to repeat. But this time God fights for Babylon, not against it."
-          },
-          {
-            "ref": "Deut 4:34",
-            "note": "\"Outstretched hand and mighty arm\" as exodus vocabulary — now reversed against the covenant people."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 19:35",
+              "note": "The angel's destruction of Sennacherib's army — the precedent Zedekiah hoped to repeat. But this time God fights for Babylon, not against it."
+            },
+            {
+              "ref": "Deut 4:34",
+              "note": "\"Outstretched hand and mighty arm\" as exodus vocabulary — now reversed against the covenant people."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -92,6 +93,9 @@
               "note": "Brueggemann identifies the \"way of life/way of death\" choice as the most politically subversive statement in the book. Jeremiah tells the king that national survival requires surrendering to the enemy. This is not merely unpopular but treasonous — and it is God's word."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 21 opens the second major section of Jeremiah (chs. 21-25), sometimes called the \"royal oracles.\" King Zedekiah sends a delegation to Jeremiah during Nebuchadnezzar's siege (588 BC), hoping for a miracle like the deliverance from Sennacherib in Hezekiah's day (2 Kgs 19). God's answer demolishes that hope: there will be no miraculous deliverance. Instead, God himself will fight against Jerusalem. The only path to survival is surrender — \"whoever goes out and surrenders to the Babylonians will live\" (v.9)."
         }
       }
     },
@@ -109,17 +113,18 @@
             "paragraph": "The demand to the royal house: \"Administer justice (mišpāṭ) every morning; rescue from the hand of the oppressor the one who has been robbed\" (v.12). The daily administration of justice was the king's primary duty in ancient Israel. When mišpāṭ fails, the entire covenant structure collapses."
           }
         ],
-        "ctx": "The oracle to the \"house of David\" (v.11) addresses the royal institution rather than an individual king. The demand for justice connects Jeremiah to the broader prophetic tradition (Isa 1:17, Amos 5:24, Mic 6:8). The chapter closes with God announcing judgment on Jerusalem: \"I will punish you as your deeds deserve\" (v.14). The \"forest\" that will burn likely refers to the cedar-paneled palace complex.",
-        "cross": [
-          {
-            "ref": "Amos 5:24",
-            "note": "\"Let justice roll on like a river\" — the prophetic demand for systemic justice that Jeremiah continues."
-          },
-          {
-            "ref": "2 Sam 8:15",
-            "note": "David \"did what was just and right for all his people\" — the standard from which the later kings have fallen."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Amos 5:24",
+              "note": "\"Let justice roll on like a river\" — the prophetic demand for systemic justice that Jeremiah continues."
+            },
+            {
+              "ref": "2 Sam 8:15",
+              "note": "David \"did what was just and right for all his people\" — the standard from which the later kings have fallen."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -168,6 +173,9 @@
               "note": "Brueggemann reads \"administer justice every morning\" as a rejection of royal self-interest. The king exists to serve the people's rights, not the other way around. When this priority inverts, the monarchy loses its legitimacy."
             }
           ]
+        },
+        "hist": {
+          "context": "The oracle to the \"house of David\" (v.11) addresses the royal institution rather than an individual king. The demand for justice connects Jeremiah to the broader prophetic tradition (Isa 1:17, Amos 5:24, Mic 6:8). The chapter closes with God announcing judgment on Jerusalem: \"I will punish you as your deeds deserve\" (v.14). The \"forest\" that will burn likely refers to the cedar-paneled palace complex."
         }
       }
     }

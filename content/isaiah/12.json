@@ -25,25 +25,26 @@
             "paragraph": "\"Surely God is my salvation (yəshūʿâ); I will trust and not be afraid. The LORD, the LORD himself, is my strength and my defence; he has become my salvation\" (v.2). Chapter 12 is a two-song epilogue to the Immanuel section (chs.7–11). The first song (vv.1–3) is individual thanksgiving: anger turned away, comfort given, salvation as a well from which to draw water with joy (v.3)."
           }
         ],
-        "ctx": "Chapter 12 closes the first major division of Isaiah (chs.1–12) with praise, just as the Psalter’s five books each end with doxology. The name yəshūʿâ (salvation) shares the same root as the name Yeshua (Jesus). \"With joy you will draw water from the wells of salvation\" (v.3) was sung during the water-pouring ceremony at the Feast of Tabernacles — the context in which Jesus stood and cried \"If anyone is thirsty, let him come to me\" (John 7:37–38).",
-        "cross": [
-          {
-            "ref": "Ex 15:2",
-            "note": "The LORD is my strength and my defence; he has become my salvation — Moses’ song after the Red Sea, quoted verbatim in Isa 12:2."
-          },
-          {
-            "ref": "John 7:37–38",
-            "note": "If anyone is thirsty, let him come to me and drink — Jesus at Tabernacles, echoing Isa 12:3’s wells of salvation."
-          },
-          {
-            "ref": "Ps 118:14",
-            "note": "The LORD is my strength and my song; he has become my salvation — the psalm parallel."
-          },
-          {
-            "ref": "Rev 7:17",
-            "note": "The Lamb will lead them to springs of living water — the fulfilment of drawing from salvation’s wells."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ex 15:2",
+              "note": "The LORD is my strength and my defence; he has become my salvation — Moses’ song after the Red Sea, quoted verbatim in Isa 12:2."
+            },
+            {
+              "ref": "John 7:37–38",
+              "note": "If anyone is thirsty, let him come to me and drink — Jesus at Tabernacles, echoing Isa 12:3’s wells of salvation."
+            },
+            {
+              "ref": "Ps 118:14",
+              "note": "The LORD is my strength and my song; he has become my salvation — the psalm parallel."
+            },
+            {
+              "ref": "Rev 7:17",
+              "note": "The Lamb will lead them to springs of living water — the fulfilment of drawing from salvation’s wells."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -112,6 +113,9 @@
               "note": "Childs notes the doubled yəshūʿâ in v.2 is a wordplay on the name Isaiah (yəshaʿyāhū = \"YHWH saves\"). The prophet’s name IS the chapter’s message."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 12 closes the first major division of Isaiah (chs.1–12) with praise, just as the Psalter’s five books each end with doxology. The name yəshūʿâ (salvation) shares the same root as the name Yeshua (Jesus). \"With joy you will draw water from the wells of salvation\" (v.3) was sung during the water-pouring ceremony at the Feast of Tabernacles — the context in which Jesus stood and cried \"If anyone is thirsty, let him come to me\" (John 7:37–38)."
         }
       }
     },
@@ -129,25 +133,26 @@
             "paragraph": "\"Shout aloud and sing for joy, people of Zion, for great is the Holy One (qədōsh) of Israel among you\" (v.6). The second song (vv.4–6) is communal: \"Make known among the nations what he has done. Proclaim that his name is exalted\" (v.4). \"Sing to the LORD, for he has done glorious things; let this be known to all the world\" (v.5). The \"Holy One of Israel\" — Isaiah’s signature title for God (26 times in Isaiah, 6 elsewhere) — appears in the section’s final verse."
           }
         ],
-        "ctx": "The communal song shifts from personal praise (vv.1–3) to missionary proclamation (vv.4–6): \"make known among the nations,\" \"let this be known to all the world.\" The praise is not private but public and universal. The title \"Holy One of Israel\" links back to the trisagion of 6:3 and forward to its 25 remaining uses throughout the book. The chapter’s six verses serve as a hinge between the Immanuel section (chs.7–11) and the Oracles Against Nations (chs.13–23).",
-        "cross": [
-          {
-            "ref": "Ps 105:1–2",
-            "note": "Give praise to the LORD, proclaim his name; make known among the nations what he has done — nearly identical language."
-          },
-          {
-            "ref": "1 Chr 16:8–10",
-            "note": "Give praise to the LORD, call upon his name; make known among the nations — David’s song of the same pattern."
-          },
-          {
-            "ref": "Isa 6:3",
-            "note": "Holy, holy, holy — the throne-room trisagion that generates the \"Holy One of Israel\" title."
-          },
-          {
-            "ref": "Zeph 3:14–17",
-            "note": "Sing, Daughter Zion; the LORD is with you — the same joy-in-God’s-presence motif."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 105:1–2",
+              "note": "Give praise to the LORD, proclaim his name; make known among the nations what he has done — nearly identical language."
+            },
+            {
+              "ref": "1 Chr 16:8–10",
+              "note": "Give praise to the LORD, call upon his name; make known among the nations — David’s song of the same pattern."
+            },
+            {
+              "ref": "Isa 6:3",
+              "note": "Holy, holy, holy — the throne-room trisagion that generates the \"Holy One of Israel\" title."
+            },
+            {
+              "ref": "Zeph 3:14–17",
+              "note": "Sing, Daughter Zion; the LORD is with you — the same joy-in-God’s-presence motif."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -212,6 +217,9 @@
               "note": "Childs notes the \"Holy One of Israel\" is Isaiah’s theological centre. It holds together holiness (God’s transcendence) and Israel (God’s particular relationship). Neither alone is sufficient."
             }
           ]
+        },
+        "hist": {
+          "context": "The communal song shifts from personal praise (vv.1–3) to missionary proclamation (vv.4–6): \"make known among the nations,\" \"let this be known to all the world.\" The praise is not private but public and universal. The title \"Holy One of Israel\" links back to the trisagion of 6:3 and forward to its 25 remaining uses throughout the book. The chapter’s six verses serve as a hinge between the Immanuel section (chs.7–11) and the Oracles Against Nations (chs.13–23)."
         }
       }
     }

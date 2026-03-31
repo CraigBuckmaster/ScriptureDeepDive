@@ -31,17 +31,18 @@
             "paragraph": "In v. 8 Paul asserts that Scripture ‘announced the gospel in advance to Abraham.’ The verb is a hapax legomenon in the NT. By identifying God’s promise to Abraham as a pre-proclamation of the gospel, Paul roots the Gentile mission in the Abrahamic covenant."
           }
         ],
-        "ctx": "Paul turns from autobiography to theological argument. His opening question—‘You foolish Galatians! Who has bewitched you?’—combines rebuke with bewildered affection. The argument proceeds by appeal to experience (vv. 1–5) and then to Scripture (vv. 6–9). The experiential argument: the Galatians received the Spirit by hearing with faith, not by doing the law. The scriptural argument reaches to Abraham: he ‘believed God, and it was credited to him as righteousness’ (Gen 15:6, v. 6). Those who share Abraham’s faith are Abraham’s true children (v. 7).",
-        "cross": [
-          {
-            "ref": "Gen 15:6",
-            "note": "The foundational text for justification by faith. Abraham believed God’s promise, and it was reckoned to him as righteousness—prior to circumcision and prior to the Mosaic law by centuries."
-          },
-          {
-            "ref": "Gen 12:3",
-            "note": "God’s promise—‘all peoples on earth will be blessed through you’—is identified in Gal 3:8 as the advance proclamation of the gospel."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 15:6",
+              "note": "The foundational text for justification by faith. Abraham believed God’s promise, and it was reckoned to him as righteousness—prior to circumcision and prior to the Mosaic law by centuries."
+            },
+            {
+              "ref": "Gen 12:3",
+              "note": "God’s promise—‘all peoples on earth will be blessed through you’—is identified in Gal 3:8 as the advance proclamation of the gospel."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -98,6 +99,9 @@
               "note": "Bruce draws attention to the visual imagery: Christ was ‘publicly portrayed as crucified’ before the Galatians’ eyes. The verb prographō can mean ‘placarded.’ Bruce argues that the Abraham argument is the backbone of the letter."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul turns from autobiography to theological argument. His opening question—‘You foolish Galatians! Who has bewitched you?’—combines rebuke with bewildered affection. The argument proceeds by appeal to experience (vv. 1–5) and then to Scripture (vv. 6–9). The experiential argument: the Galatians received the Spirit by hearing with faith, not by doing the law. The scriptural argument reaches to Abraham: he ‘believed God, and it was credited to him as righteousness’ (Gen 15:6, v. 6). Those who share Abraham’s faith are Abraham’s true children (v. 7)."
         }
       }
     },
@@ -115,21 +119,22 @@
             "paragraph": "The noun katara appears four times in vv. 10–13, creating a theological chain: those who rely on the law are under a curse (v. 10); Christ redeemed us by becoming a curse for us (v. 13). The substitutionary logic is precise: Christ took the curse so that Abraham’s blessing might come to the Gentiles through faith. The OT quotation from Deut 21:23 applies the Deuteronomic curse formula to the crucifixion."
           }
         ],
-        "ctx": "Paul presents the negative side of the law argument. The logic is syllogistic: (1) the law demands perfect obedience (Deut 27:26, v. 10); (2) no one achieves perfect obedience; (3) therefore all who rely on the law are cursed. The contrast with Hab 2:4 (v. 11) demonstrates that the law operates on a fundamentally different principle from faith. The resolution in v. 13: Christ absorbed the law’s curse through Deut 21:23—crucifixion carries the explicit pronouncement of divine curse.",
-        "cross": [
-          {
-            "ref": "Deut 27:26",
-            "note": "The curse formula provides Paul’s premise in v. 10: the law demands comprehensive, continuous obedience."
-          },
-          {
-            "ref": "Hab 2:4",
-            "note": "The prophet’s declaration ‘the righteous will live by faith’ establishes the faith principle as prior to and superior to law-performance. Paul uses the same text in Rom 1:17."
-          },
-          {
-            "ref": "2 Cor 5:21",
-            "note": "God ‘made him who had no sin to be sin for us’ parallels the substitutionary logic of Gal 3:13."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 27:26",
+              "note": "The curse formula provides Paul’s premise in v. 10: the law demands comprehensive, continuous obedience."
+            },
+            {
+              "ref": "Hab 2:4",
+              "note": "The prophet’s declaration ‘the righteous will live by faith’ establishes the faith principle as prior to and superior to law-performance. Paul uses the same text in Rom 1:17."
+            },
+            {
+              "ref": "2 Cor 5:21",
+              "note": "God ‘made him who had no sin to be sin for us’ parallels the substitutionary logic of Gal 3:13."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -182,6 +187,9 @@
               "note": "Bruce provides detailed analysis of the OT texts, noting that the application of the ‘hanging’ curse to crucifixion was already attested at Qumran (4QpNahum, 11QTemple). The purpose clause of v. 14 is the climax: Christ’s death bridges the Abrahamic promise and its Gentile fulfilment."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul presents the negative side of the law argument. The logic is syllogistic: (1) the law demands perfect obedience (Deut 27:26, v. 10); (2) no one achieves perfect obedience; (3) therefore all who rely on the law are cursed. The contrast with Hab 2:4 (v. 11) demonstrates that the law operates on a fundamentally different principle from faith. The resolution in v. 13: Christ absorbed the law’s curse through Deut 21:23—crucifixion carries the explicit pronouncement of divine curse."
         }
       }
     },
@@ -205,17 +213,18 @@
             "paragraph": "The paidagogos (v. 24) was a household slave responsible for supervising a child’s conduct. Paul’s metaphor is deliberately constraining: the law functioned as a temporary custodian until the coming of faith in Christ. Its authority was real but limited—it ended when the child reached maturity."
           }
         ],
-        "ctx": "Paul addresses the obvious question: if the promise establishes justification by faith, what is the purpose of the law? First, the law was added ‘because of transgressions’ (v. 19)—to make sin visible and condemnable—until the Seed (Christ) should come. Second, the law was given ‘through angels’ and a mediator (Moses), while the promise was given directly by God (v. 20). Paul is careful not to set law and promise in contradiction (v. 21); rather, they serve different functions in God’s single plan.",
-        "cross": [
-          {
-            "ref": "Rom 5:20",
-            "note": "Paul’s statement that the law was brought in ‘so that the trespass might increase’ parallels Gal 3:19: the law’s function was to make sin visible."
-          },
-          {
-            "ref": "Rom 7:7–12",
-            "note": "Paul’s extended reflection on the law’s function develops the principle stated concisely in Gal 3:19–22."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 5:20",
+              "note": "Paul’s statement that the law was brought in ‘so that the trespass might increase’ parallels Gal 3:19: the law’s function was to make sin visible."
+            },
+            {
+              "ref": "Rom 7:7–12",
+              "note": "Paul’s extended reflection on the law’s function develops the principle stated concisely in Gal 3:19–22."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -268,6 +277,9 @@
               "note": "Bruce provides historical context for the 430-year interval, noting Paul follows the LXX chronology. The mediatorial argument draws on Jewish angelology (cf. Deut 33:2 LXX; Acts 7:53). The paidagogos metaphor is essentially temporal: the custodian’s role ends at the coming of age."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul addresses the obvious question: if the promise establishes justification by faith, what is the purpose of the law? First, the law was added ‘because of transgressions’ (v. 19)—to make sin visible and condemnable—until the Seed (Christ) should come. Second, the law was given ‘through angels’ and a mediator (Moses), while the promise was given directly by God (v. 20). Paul is careful not to set law and promise in contradiction (v. 21); rather, they serve different functions in God’s single plan."
         }
       }
     },
@@ -285,17 +297,18 @@
             "paragraph": "The phrase ‘baptized into Christ’ denotes incorporation into Christ’s person. The accompanying metaphor—‘clothed yourselves with Christ’ (Christon enedysasthe)—signifies a complete change of identity. Together, these images express the participatory dimension of justification."
           }
         ],
-        "ctx": "The chapter climaxes with one of the most revolutionary statements in the NT: ‘There is neither Jew nor Gentile, neither slave nor free, nor is there male and female, for you are all one in Christ Jesus’ (v. 28). The three pairs correspond to fundamental social, legal, and biological distinctions. Paul declares that they are no longer determinative of status before God. The phrase ‘male and female’ (arsen kai thēly) echoes Gen 1:27 (LXX), suggesting new creation transcends the old creation’s categories. Verse 29 ties the argument to Abraham: if you belong to Christ, you are Abraham’s seed and heirs.",
-        "cross": [
-          {
-            "ref": "Col 3:10–11",
-            "note": "The parallel passage uses the same baptismal imagery: in the new self, there is no Greek or Jew, slave or free, but Christ is all."
-          },
-          {
-            "ref": "1 Cor 12:13",
-            "note": "Paul’s statement about baptism by one Spirit into one body employs the same pairs and logic as Gal 3:28."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Col 3:10–11",
+              "note": "The parallel passage uses the same baptismal imagery: in the new self, there is no Greek or Jew, slave or free, but Christ is all."
+            },
+            {
+              "ref": "1 Cor 12:13",
+              "note": "Paul’s statement about baptism by one Spirit into one body employs the same pairs and logic as Gal 3:28."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -348,6 +361,9 @@
               "note": "Bruce calls v. 28 ‘the great baptismal reunification formula’ and argues it reflects an early baptismal confession. The three pairs correspond to ethnic, legal, and biological identity categories. The formula may invert the Jewish prayer thanking God for not being a Gentile, slave, or woman."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter climaxes with one of the most revolutionary statements in the NT: ‘There is neither Jew nor Gentile, neither slave nor free, nor is there male and female, for you are all one in Christ Jesus’ (v. 28). The three pairs correspond to fundamental social, legal, and biological distinctions. Paul declares that they are no longer determinative of status before God. The phrase ‘male and female’ (arsen kai thēly) echoes Gen 1:27 (LXX), suggesting new creation transcends the old creation’s categories. Verse 29 ties the argument to Abraham: if you belong to Christ, you are Abraham’s seed and heirs."
         }
       }
     }

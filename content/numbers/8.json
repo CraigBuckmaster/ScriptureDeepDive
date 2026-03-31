@@ -25,17 +25,18 @@
             "paragraph": "The seven lamps must be arranged to light the space \"in front of\" the lampstand — directed forward, not upward or randomly. The lampstand's light is purposeful and oriented: it illuminates the table of showbread, providing light for the sanctuary's priestly service."
           }
         ],
-        "ctx": "The short lampstand section (vv.1–4) connects the tabernacle dedication of ch.7 to the Levitical consecration of ch.8. Aaron is commanded to set up the seven lamps so they illuminate \"the area in front of the lampstand\" — not diffuse light but focused, directed illumination. This tiny passage ties back to the lampstand instructions of Exod 25:31–40 and Lev 24:1–4. Numbers 8's brief inclusion of the lampstand detail is a narrative hinge: the sanctuary is fully operational (ch.7), the light is properly arranged (vv.1–4), and now the Levites who serve in its light are formally consecrated (vv.5–26).",
-        "cross": [
-          {
-            "ref": "Rev 1:20",
-            "note": "\"The seven lampstands are the seven churches.\" John's vision transforms the singular seven-branched menorah into seven separate lampstands, each representing a church community — the covenant people still called to be the light of the world (Matt 5:14–16)."
-          },
-          {
-            "ref": "John 8:12",
-            "note": "\"I am the light of the world.\" Jesus' claim applies the lampstand theology directly to himself — the true lamp before God, giving light in the darkness."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rev 1:20",
+              "note": "\"The seven lampstands are the seven churches.\" John's vision transforms the singular seven-branched menorah into seven separate lampstands, each representing a church community — the covenant people still called to be the light of the world (Matt 5:14–16)."
+            },
+            {
+              "ref": "John 8:12",
+              "note": "\"I am the light of the world.\" Jesus' claim applies the lampstand theology directly to himself — the true lamp before God, giving light in the darkness."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -104,6 +105,9 @@
               "note": "Ashley: The narrative context of lampstand and Levite consecration in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "The short lampstand section (vv.1–4) connects the tabernacle dedication of ch.7 to the Levitical consecration of ch.8. Aaron is commanded to set up the seven lamps so they illuminate \"the area in front of the lampstand\" — not diffuse light but focused, directed illumination. This tiny passage ties back to the lampstand instructions of Exod 25:31–40 and Lev 24:1–4. Numbers 8's brief inclusion of the lampstand detail is a narrative hinge: the sanctuary is fully operational (ch.7), the light is properly arranged (vv.1–4), and now the Levites who serve in its light are formally consecrated (vv.5–26)."
         }
       }
     },
@@ -127,17 +131,18 @@
             "paragraph": "The retirement age for active Levitical service. After 50, the Levite steps down from heavy transport duties but \"assists his brothers\" in lighter duties. Retirement from strenuous service is not exile from covenant life — the retired Levite continues in an advisory, supportive role."
           }
         ],
-        "ctx": "The Levites' formal consecration (vv.5–22) follows a sequence: ritual washing, shaving all hair, washing clothes, presenting themselves before the community, laying of hands by the Israelites (the whole community consecrates the Levites as their substitutes, vv.9–10), Aaron waving them before the Lord, Levites laying hands on the two bulls (one for sin offering, one for burnt offering), atonement. The theology is clear: the Levites are a living offering — the community's representative gift to God. Verses 23–26 establish the service ages (25–50 for active service; 50+ for lighter assistance), slightly different from the 30–50 of ch.4, reflecting different duties at different career stages.",
-        "cross": [
-          {
-            "ref": "Rom 12:1",
-            "note": "\"Offer your bodies as a living sacrifice, holy and pleasing to God.\" Paul's NT equivalent of the Levitical wave offering — the believer presents their whole self as a living offering, the ultimate fulfilment of the Num 8 consecration ceremony."
-          },
-          {
-            "ref": "1 Pet 2:9",
-            "note": "\"You are a royal priesthood.\" The NT democratisation of the Levitical consecration: every believer undergoes a Num 8-type dedication — washed (baptism), presented (profession of faith), consecrated (Spirit-filling)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 12:1",
+              "note": "\"Offer your bodies as a living sacrifice, holy and pleasing to God.\" Paul's NT equivalent of the Levitical wave offering — the believer presents their whole self as a living offering, the ultimate fulfilment of the Num 8 consecration ceremony."
+            },
+            {
+              "ref": "1 Pet 2:9",
+              "note": "\"You are a royal priesthood.\" The NT democratisation of the Levitical consecration: every believer undergoes a Num 8-type dedication — washed (baptism), presented (profession of faith), consecrated (Spirit-filling)."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -202,6 +207,9 @@
               "note": "Ashley: The narrative context of lampstand and Levite consecration in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "The Levites' formal consecration (vv.5–22) follows a sequence: ritual washing, shaving all hair, washing clothes, presenting themselves before the community, laying of hands by the Israelites (the whole community consecrates the Levites as their substitutes, vv.9–10), Aaron waving them before the Lord, Levites laying hands on the two bulls (one for sin offering, one for burnt offering), atonement. The theology is clear: the Levites are a living offering — the community's representative gift to God. Verses 23–26 establish the service ages (25–50 for active service; 50+ for lighter assistance), slightly different from the 30–50 of ch.4, reflecting different duties at different career stages."
         }
       }
     }

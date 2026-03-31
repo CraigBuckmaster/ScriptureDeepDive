@@ -31,21 +31,22 @@
             "paragraph": "This rare word describes thick, corroded deposits on the inside of a bronze cooking pot. It cannot be removed by normal cleaning — only by melting the pot itself."
           }
         ],
-        "ctx": "On the exact day Nebuchadnezzar began the siege of Jerusalem (January 15, 588 BC), God gave Ezekiel this parable. The date formula anchors the allegory to a precise historical moment. The cooking pot reverses the earlier pot metaphor from 11:3 where the elite claimed the pot protected them.",
-        "cross": [
-          {
-            "ref": "Ezek 11:3-11",
-            "note": "The pot metaphor from chapter 11 is reversed: the elite claimed the pot protected them; now the pot destroys them."
-          },
-          {
-            "ref": "Jer 1:13",
-            "note": "Jeremiah’s vision of a boiling pot tilting from the north foreshadows the same judgment."
-          },
-          {
-            "ref": "2 Kgs 25:1",
-            "note": "The historical record confirms the date exactly."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 11:3-11",
+              "note": "The pot metaphor from chapter 11 is reversed: the elite claimed the pot protected them; now the pot destroys them."
+            },
+            {
+              "ref": "Jer 1:13",
+              "note": "Jeremiah’s vision of a boiling pot tilting from the north foreshadows the same judgment."
+            },
+            {
+              "ref": "2 Kgs 25:1",
+              "note": "The historical record confirms the date exactly."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Zimmerli calls this a 'turning-point oracle' — the moment when prophecy shifts from warning to announcement."
             }
           ]
+        },
+        "hist": {
+          "context": "On the exact day Nebuchadnezzar began the siege of Jerusalem (January 15, 588 BC), God gave Ezekiel this parable. The date formula anchors the allegory to a precise historical moment. The cooking pot reverses the earlier pot metaphor from 11:3 where the elite claimed the pot protected them."
         }
       }
     },
@@ -127,21 +131,22 @@
             "paragraph": "God describes Ezekiel’s wife as 'the delight of your eyes' (mahmad ’enekha). The same phrase is used for the temple in v.21 and v.25, creating a devastating parallel: as Ezekiel loses his beloved wife, so Israel will lose its beloved temple."
           }
         ],
-        "ctx": "This is the most personally devastating sign-act in the entire book. God tells Ezekiel that his wife will die that evening and commands him not to mourn publicly. The suppressed grief becomes a living parable: when Jerusalem falls, the exiles will be too stunned to mourn properly.",
-        "cross": [
-          {
-            "ref": "Jer 16:1-9",
-            "note": "God forbids Jeremiah from marrying at all — his celibacy is a sign. Ezekiel’s sign is even more severe."
-          },
-          {
-            "ref": "Lam 2:10-12",
-            "note": "The reality of Jerusalem’s fall matches Ezekiel’s prophecy: stunned silence, children dying."
-          },
-          {
-            "ref": "John 11:35",
-            "note": "Jesus weeps at Lazarus’s tomb — in contrast to Ezekiel’s commanded suppression of grief."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 16:1-9",
+              "note": "God forbids Jeremiah from marrying at all — his celibacy is a sign. Ezekiel’s sign is even more severe."
+            },
+            {
+              "ref": "Lam 2:10-12",
+              "note": "The reality of Jerusalem’s fall matches Ezekiel’s prophecy: stunned silence, children dying."
+            },
+            {
+              "ref": "John 11:35",
+              "note": "Jesus weeps at Lazarus’s tomb — in contrast to Ezekiel’s commanded suppression of grief."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -206,6 +211,9 @@
               "note": "Zimmerli notes the structural significance: this pericope closes the judgment oracles and prepares for oracles against nations."
             }
           ]
+        },
+        "hist": {
+          "context": "This is the most personally devastating sign-act in the entire book. God tells Ezekiel that his wife will die that evening and commands him not to mourn publicly. The suppressed grief becomes a living parable: when Jerusalem falls, the exiles will be too stunned to mourn properly."
         }
       }
     }

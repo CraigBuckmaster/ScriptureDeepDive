@@ -25,17 +25,18 @@
             "paragraph": "Jabez’s name means “pain” — his mother named him for her difficult labour (v.9). His prayer asks God to reverse the meaning of his name: expand my territory, be with me, keep me from harm so I cause no pain. God grants it. Buried in a genealogy, this two-verse prayer became one of the most famous passages in Chronicles."
           }
         ],
-        "ctx": "The Judahite genealogies continue with additional clans, including the famous Jabez prayer (vv.9–10). In the middle of a list of names, the narrator pauses for two verses: Jabez prays, and God grants his request. Then the genealogy resumes as if nothing happened. The effect is striking — a flash of personal devotion in an institutional document. The Chronicler includes it because it illustrates his central theme: those who seek God find him. The genealogy then moves to Simeon’s tribe, with territorial notes about expansion into Edomite territory.",
-        "cross": [
-          {
-            "ref": "Gen 35:18",
-            "note": "Rachel named her dying son Ben-Oni (“son of my trouble”); Jacob renamed him Benjamin (“son of my right hand”). Jabez’s prayer similarly seeks to overcome a name of pain."
-          },
-          {
-            "ref": "Matt 7:7",
-            "note": "“Ask and it will be given to you.” Jabez asks; God gives. The pattern is simple and universal."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 35:18",
+              "note": "Rachel named her dying son Ben-Oni (“son of my trouble”); Jacob renamed him Benjamin (“son of my right hand”). Jabez’s prayer similarly seeks to overcome a name of pain."
+            },
+            {
+              "ref": "Matt 7:7",
+              "note": "“Ask and it will be given to you.” Jabez asks; God gives. The pattern is simple and universal."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -53,6 +54,9 @@
               "note": "The name yaʿbēts is related to ʿōtseb/ʿetseb (“pain, sorrow”). The wordplay: “she named him Jabez (Pain), saying, ‘I gave birth to him in pain.’” His prayer asks God to overturn the destiny encoded in his name."
             }
           ]
+        },
+        "hist": {
+          "context": "The Judahite genealogies continue with additional clans, including the famous Jabez prayer (vv.9–10). In the middle of a list of names, the narrator pauses for two verses: Jabez prays, and God grants his request. Then the genealogy resumes as if nothing happened. The effect is striking — a flash of personal devotion in an institutional document. The Chronicler includes it because it illustrates his central theme: those who seek God find him. The genealogy then moves to Simeon’s tribe, with territorial notes about expansion into Edomite territory."
         }
       }
     },
@@ -62,17 +66,18 @@
       "verse_start": 24,
       "verse_end": 43,
       "panels": {
-        "ctx": "Simeon’s genealogy is brief compared to Judah’s, reflecting the tribe’s small size and eventual absorption into Judah. The Chronicler notes that Simeonites expanded into Gedor and Mount Seir during Hezekiah’s reign, dispossessing the Hamites and Amalekites. This territorial note connects the genealogy to lived history: names map onto land, and land claims persist across generations.",
-        "cross": [
-          {
-            "ref": "Gen 49:5–7",
-            "note": "Jacob’s prophecy: Simeon and Levi will be scattered in Israel. Simeon’s absorption into Judah fulfils this prediction."
-          },
-          {
-            "ref": "Josh 19:1–9",
-            "note": "Simeon’s allotment was within Judah’s territory — the smallest tribal inheritance."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 49:5–7",
+              "note": "Jacob’s prophecy: Simeon and Levi will be scattered in Israel. Simeon’s absorption into Judah fulfils this prediction."
+            },
+            {
+              "ref": "Josh 19:1–9",
+              "note": "Simeon’s allotment was within Judah’s territory — the smallest tribal inheritance."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -90,6 +95,9 @@
               "note": "The “Hamites” (hammĕʿûnîm or hammāʿōnîm) living in Gedor are otherwise unknown. The text may be corrupt; some LXX manuscripts read “Gerar” instead of “Gedor,” which would place the expansion in the Negev."
             }
           ]
+        },
+        "hist": {
+          "context": "Simeon’s genealogy is brief compared to Judah’s, reflecting the tribe’s small size and eventual absorption into Judah. The Chronicler notes that Simeonites expanded into Gedor and Mount Seir during Hezekiah’s reign, dispossessing the Hamites and Amalekites. This territorial note connects the genealogy to lived history: names map onto land, and land claims persist across generations."
         }
       }
     }

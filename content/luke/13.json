@@ -28,21 +28,22 @@
             "paragraph": "Jesus's designation for the bent woman (v.16) is theologically loaded — not merely a biological description but a covenantal one. She belongs to the covenant people; her liberation on the Sabbath is therefore not a violation of the day but its fulfilment."
           }
         ],
-        "ctx": "[(\"Pilate's Massacre of Galileans\", 'The incident of Galileans whose blood Pilate \"mixed with their sacrifices\" is not recorded elsewhere but is consistent with Pilate\\'s documented brutality (Josephus, Ant. 18.3.2; 18.4.1). The victims may have been Zealots or pilgrims at the Temple. Jesus\\'s refusal to interpret their deaths as divine punishment challenges the common theological assumption that catastrophe signals divine displeasure.'), ('The Tower of Siloam', 'The collapse of a tower in the Siloam district (south of the Temple, near the pool of Siloam) killing eighteen people is unknown from external sources. Both incidents — human atrocity and natural disaster — are treated identically: neither implies exceptional guilt in the victims, and both serve as occasions for the general call to repentance.')]",
-        "cross": [
-          {
-            "ref": "Job 1-2",
-            "note": "The book of Job is the OT's fullest engagement with the same question Jesus addresses: is suffering proportionate to sin? Job's comforters assume it is; God's answer rejects that assumption."
-          },
-          {
-            "ref": "Dan 4:12, 21",
-            "note": "The great tree in whose branches birds shelter — the Danielic imagery underlying the mustard seed parable, intentionally scaling down the imperial tree metaphor to a garden plant."
-          },
-          {
-            "ref": "Mark 3:1-6",
-            "note": "The parallel Sabbath healing controversy in Mark, showing the same synagogue-leader opposition and the same argument about Sabbath exceptions for animal care."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Job 1-2",
+              "note": "The book of Job is the OT's fullest engagement with the same question Jesus addresses: is suffering proportionate to sin? Job's comforters assume it is; God's answer rejects that assumption."
+            },
+            {
+              "ref": "Dan 4:12, 21",
+              "note": "The great tree in whose branches birds shelter — the Danielic imagery underlying the mustard seed parable, intentionally scaling down the imperial tree metaphor to a garden plant."
+            },
+            {
+              "ref": "Mark 3:1-6",
+              "note": "The parallel Sabbath healing controversy in Mark, showing the same synagogue-leader opposition and the same argument about Sabbath exceptions for animal care."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -118,6 +119,9 @@
         },
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem</div><div class=\"poi-coords\">31.7767° N, 35.2345° E</div><div class=\"poi-text\">The destination of the entire Lukan journey narrative (9:51-19:28). Jerusalem is simultaneously the city of the prophets' martyrdom, the site of the Temple, and the place of Jesus's own passion. The lament of 13:34-35 names all of these dimensions — the city's grandeur and its tragedy converge in the address \"Jerusalem, Jerusalem.\"</div></div>"
+        },
+        "hist": {
+          "context": "[(\"Pilate's Massacre of Galileans\", 'The incident of Galileans whose blood Pilate \"mixed with their sacrifices\" is not recorded elsewhere but is consistent with Pilate\\'s documented brutality (Josephus, Ant. 18.3.2; 18.4.1). The victims may have been Zealots or pilgrims at the Temple. Jesus\\'s refusal to interpret their deaths as divine punishment challenges the common theological assumption that catastrophe signals divine displeasure.'), ('The Tower of Siloam', 'The collapse of a tower in the Siloam district (south of the Temple, near the pool of Siloam) killing eighteen people is unknown from external sources. Both incidents — human atrocity and natural disaster — are treated identically: neither implies exceptional guilt in the victims, and both serve as occasions for the general call to repentance.')]"
         }
       }
     },
@@ -141,21 +145,22 @@
             "paragraph": "Jesus's term for Herod Antipas (v.32) is uniquely contemptuous in all the Gospels. In Jewish idiom a fox was a cunning but small and destructive animal — the opposite of the lion (noble power). Jesus refuses to dignify Herod's threat with fear."
           }
         ],
-        "ctx": "[('The Journey to Jerusalem', 'Luke periodically reminds the reader that Jesus is travelling toward Jerusalem (9:51; 13:22; 17:11; 18:31; 19:28). The journey is both geographical and theological — it is the via crucis, and every teaching along the way is coloured by its destination.'), ('The Jerusalem Lament', \"The lament over Jerusalem (13:34-35) is one of the most emotionally charged passages in Luke. The maternal image — a hen gathering chicks — is remarkable for its vulnerability: Jesus does not describe his desire to protect Jerusalem through power but through sheltering tenderness. Jerusalem's desolation is not God's preference but the consequence of her refusal.\")]",
-        "cross": [
-          {
-            "ref": "Matt 7:13-14",
-            "note": "\"Enter through the narrow gate\" — Matthew's parallel to the narrow door, given in the Sermon on the Mount."
-          },
-          {
-            "ref": "Matt 23:37-39",
-            "note": "The Jerusalem lament in Matthew, placed at the end of the woe-discourse in the Temple courts rather than during the Galilean journey."
-          },
-          {
-            "ref": "Ps 118:26",
-            "note": "\"Blessed is he who comes in the name of the Lord\" — the Hallel verse Jesus quotes as the condition for Jerusalem seeing him again. It echoes the Palm Sunday acclamation (19:38)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 7:13-14",
+              "note": "\"Enter through the narrow gate\" — Matthew's parallel to the narrow door, given in the Sermon on the Mount."
+            },
+            {
+              "ref": "Matt 23:37-39",
+              "note": "The Jerusalem lament in Matthew, placed at the end of the woe-discourse in the Temple courts rather than during the Galilean journey."
+            },
+            {
+              "ref": "Ps 118:26",
+              "note": "\"Blessed is he who comes in the name of the Lord\" — the Hallel verse Jesus quotes as the condition for Jerusalem seeing him again. It echoes the Palm Sunday acclamation (19:38)."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -231,6 +236,9 @@
         },
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem</div><div class=\"poi-coords\">31.7767° N, 35.2345° E</div><div class=\"poi-text\">The destination of the entire Lukan journey narrative (9:51-19:28). Jerusalem is simultaneously the city of the prophets' martyrdom, the site of the Temple, and the place of Jesus's own passion. The lament of 13:34-35 names all of these dimensions — the city's grandeur and its tragedy converge in the address \"Jerusalem, Jerusalem.\"</div></div>"
+        },
+        "hist": {
+          "context": "[('The Journey to Jerusalem', 'Luke periodically reminds the reader that Jesus is travelling toward Jerusalem (9:51; 13:22; 17:11; 18:31; 19:28). The journey is both geographical and theological — it is the via crucis, and every teaching along the way is coloured by its destination.'), ('The Jerusalem Lament', \"The lament over Jerusalem (13:34-35) is one of the most emotionally charged passages in Luke. The maternal image — a hen gathering chicks — is remarkable for its vulnerability: Jesus does not describe his desire to protect Jerusalem through power but through sheltering tenderness. Jerusalem's desolation is not God's preference but the consequence of her refusal.\")]"
         }
       }
     },
@@ -254,21 +262,22 @@
             "paragraph": "Jesus's designation for the bent woman (v.16) is theologically loaded — not merely a biological description but a covenantal one. She belongs to the covenant people; her liberation on the Sabbath is therefore not a violation of the day but its fulfilment."
           }
         ],
-        "ctx": "[(\"Pilate's Massacre of Galileans\", 'The incident of Galileans whose blood Pilate \"mixed with their sacrifices\" is not recorded elsewhere but is consistent with Pilate\\'s documented brutality (Josephus, Ant. 18.3.2; 18.4.1). The victims may have been Zealots or pilgrims at the Temple. Jesus\\'s refusal to interpret their deaths as divine punishment challenges the common theological assumption that catastrophe signals divine displeasure.'), ('The Tower of Siloam', 'The collapse of a tower in the Siloam district (south of the Temple, near the pool of Siloam) killing eighteen people is unknown from external sources. Both incidents — human atrocity and natural disaster — are treated identically: neither implies exceptional guilt in the victims, and both serve as occasions for the general call to repentance.')]",
-        "cross": [
-          {
-            "ref": "Job 1-2",
-            "note": "The book of Job is the OT's fullest engagement with the same question Jesus addresses: is suffering proportionate to sin? Job's comforters assume it is; God's answer rejects that assumption."
-          },
-          {
-            "ref": "Dan 4:12, 21",
-            "note": "The great tree in whose branches birds shelter — the Danielic imagery underlying the mustard seed parable, intentionally scaling down the imperial tree metaphor to a garden plant."
-          },
-          {
-            "ref": "Mark 3:1-6",
-            "note": "The parallel Sabbath healing controversy in Mark, showing the same synagogue-leader opposition and the same argument about Sabbath exceptions for animal care."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Job 1-2",
+              "note": "The book of Job is the OT's fullest engagement with the same question Jesus addresses: is suffering proportionate to sin? Job's comforters assume it is; God's answer rejects that assumption."
+            },
+            {
+              "ref": "Dan 4:12, 21",
+              "note": "The great tree in whose branches birds shelter — the Danielic imagery underlying the mustard seed parable, intentionally scaling down the imperial tree metaphor to a garden plant."
+            },
+            {
+              "ref": "Mark 3:1-6",
+              "note": "The parallel Sabbath healing controversy in Mark, showing the same synagogue-leader opposition and the same argument about Sabbath exceptions for animal care."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -344,6 +353,9 @@
         },
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem</div><div class=\"poi-coords\">31.7767° N, 35.2345° E</div><div class=\"poi-text\">The destination of the entire Lukan journey narrative (9:51-19:28). Jerusalem is simultaneously the city of the prophets' martyrdom, the site of the Temple, and the place of Jesus's own passion. The lament of 13:34-35 names all of these dimensions — the city's grandeur and its tragedy converge in the address \"Jerusalem, Jerusalem.\"</div></div>"
+        },
+        "hist": {
+          "context": "[(\"Pilate's Massacre of Galileans\", 'The incident of Galileans whose blood Pilate \"mixed with their sacrifices\" is not recorded elsewhere but is consistent with Pilate\\'s documented brutality (Josephus, Ant. 18.3.2; 18.4.1). The victims may have been Zealots or pilgrims at the Temple. Jesus\\'s refusal to interpret their deaths as divine punishment challenges the common theological assumption that catastrophe signals divine displeasure.'), ('The Tower of Siloam', 'The collapse of a tower in the Siloam district (south of the Temple, near the pool of Siloam) killing eighteen people is unknown from external sources. Both incidents — human atrocity and natural disaster — are treated identically: neither implies exceptional guilt in the victims, and both serve as occasions for the general call to repentance.')]"
         }
       }
     }

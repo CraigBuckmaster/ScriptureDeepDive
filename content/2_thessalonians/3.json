@@ -43,17 +43,18 @@
             "paragraph": "The Lord is <em>pistos</em> (v.3) — 'faithful.' Human faith wavers; divine faithfulness does not. God will strengthen and protect them from the evil one."
           }
         ],
-        "ctx": "Paul requests prayer for his ongoing mission. The gospel continues to face opposition — 'evil and perverse people' — but Paul is confident in God's faithfulness. The transitional verses (vv.4-5) prepare for the main concern of the chapter: idleness among some Thessalonians.",
-        "cross": [
-          {
-            "ref": "Col 4:3-4",
-            "note": "Paul similarly requests prayer for an open door for the word in Colossians. Missionary work requires intercessory support."
-          },
-          {
-            "ref": "Rom 15:30-32",
-            "note": "Paul asks Roman believers to pray for deliverance from unbelievers in Judea and for successful ministry. Prayer is consistently linked to mission."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Col 4:3-4",
+              "note": "Paul similarly requests prayer for an open door for the word in Colossians. Missionary work requires intercessory support."
+            },
+            {
+              "ref": "Rom 15:30-32",
+              "note": "Paul asks Roman believers to pray for deliverance from unbelievers in Judea and for successful ministry. Prayer is consistently linked to mission."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -126,6 +127,9 @@
               "note": "The phrase 'not everyone has faith' is litotes (understatement). Paul means: some actively oppose. This is realistic assessment, not pessimism."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul requests prayer for his ongoing mission. The gospel continues to face opposition — 'evil and perverse people' — but Paul is confident in God's faithfulness. The transitional verses (vv.4-5) prepare for the main concern of the chapter: idleness among some Thessalonians."
         }
       }
     },
@@ -161,17 +165,18 @@
             "paragraph": "They should work with <em>hēsychia</em> (v.12) — 'quietness' — and eat their own bread. The word suggests tranquility, minding one's own affairs without disruption."
           }
         ],
-        "ctx": "The idleness problem, hinted at in 1 Thess 4:11-12, now receives direct confrontation. Some Thessalonians had stopped working — perhaps expecting Christ's imminent return. Why work if the end is near? Paul's response is sharp: 'If anyone is not willing to work, let him not eat' (v.10). This is not cruelty but tough love for a church tolerating irresponsibility.",
-        "cross": [
-          {
-            "ref": "1 Thess 4:11-12",
-            "note": "Paul's earlier instruction to 'work with your hands' anticipated this problem. The situation has evidently worsened, requiring more direct intervention."
-          },
-          {
-            "ref": "Eph 4:28",
-            "note": "Paul's instruction that the thief 'must work, doing something useful' reflects the same work ethic. Productivity, not idleness, characterizes the Christian life."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Thess 4:11-12",
+              "note": "Paul's earlier instruction to 'work with your hands' anticipated this problem. The situation has evidently worsened, requiring more direct intervention."
+            },
+            {
+              "ref": "Eph 4:28",
+              "note": "Paul's instruction that the thief 'must work, doing something useful' reflects the same work ethic. Productivity, not idleness, characterizes the Christian life."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -248,6 +253,9 @@
               "note": "The wordplay is Pauline rhetoric at its best. Wanamaker notes that meddling (periergazomenous) may include spreading the eschatological confusion addressed in chapter 2."
             }
           ]
+        },
+        "hist": {
+          "context": "The idleness problem, hinted at in 1 Thess 4:11-12, now receives direct confrontation. Some Thessalonians had stopped working — perhaps expecting Christ's imminent return. Why work if the end is near? Paul's response is sharp: 'If anyone is not willing to work, let him not eat' (v.10). This is not cruelty but tough love for a church tolerating irresponsibility."
         }
       }
     },
@@ -277,17 +285,18 @@
             "paragraph": "They should <em>noutheteō</em> (v.15) — 'warn' or 'admonish' — the disobedient as brothers, not enemies. Discipline aims at restoration, not exclusion."
           }
         ],
-        "ctx": "Paul closes with general exhortations and specific instructions about discipline. The goal is restoration ('warn them as a brother'), not excommunication. The letter's authenticity marker — Paul's own handwritten greeting (v.17) — may counter the forged letter mentioned in 2:2.",
-        "cross": [
-          {
-            "ref": "Gal 6:9",
-            "note": "Paul similarly urges, 'Let us not become weary in doing good, for at the proper time we will reap a harvest if we do not give up.'"
-          },
-          {
-            "ref": "1 Cor 5:11",
-            "note": "Paul's instruction to 'not associate' with immoral believers provides a parallel to the discipline commanded here."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gal 6:9",
+              "note": "Paul similarly urges, 'Let us not become weary in doing good, for at the proper time we will reap a harvest if we do not give up.'"
+            },
+            {
+              "ref": "1 Cor 5:11",
+              "note": "Paul's instruction to 'not associate' with immoral believers provides a parallel to the discipline commanded here."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -364,6 +373,9 @@
               "note": "The title 'Lord of peace' (ho kyrios tēs eirēnēs) echoes 'God of peace' in 1 Thess 5:23. Peace is the Lord's gift to a church troubled by confusion and idleness."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul closes with general exhortations and specific instructions about discipline. The goal is restoration ('warn them as a brother'), not excommunication. The letter's authenticity marker — Paul's own handwritten greeting (v.17) — may counter the forged letter mentioned in 2:2."
         }
       }
     }

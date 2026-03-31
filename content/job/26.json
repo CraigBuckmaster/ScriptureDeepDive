@@ -25,13 +25,14 @@
             "paragraph": "\"How (mah) you have helped the powerless! How you have saved the arm that is feeble!\" (v.2). Pure sarcasm. Job mocks the friends’ entire contribution: you came to help and you failed. Your theology strengthened no one."
           }
         ],
-        "ctx": "Job opens with biting sarcasm directed at Bildad. The four questions (vv.2–4) all expect the answer \"not at all.\" Who gave you these words? Whose spirit spoke through you? The implication: your wisdom came from nowhere divine.",
-        "cross": [
-          {
-            "ref": "Job 13:4",
-            "note": "\"Worthless physicians, all of you!\" — Job’s earlier verdict, now reinforced."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Job 13:4",
+              "note": "\"Worthless physicians, all of you!\" — Job’s earlier verdict, now reinforced."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -80,6 +81,9 @@
               "note": "Habel: Job dismisses the last prosecution witness. The cross-examination is complete. The friends’ testimony has been weighed and found worthless."
             }
           ]
+        },
+        "hist": {
+          "context": "Job opens with biting sarcasm directed at Bildad. The four questions (vv.2–4) all expect the answer \"not at all.\" Who gave you these words? Whose spirit spoke through you? The implication: your wisdom came from nowhere divine."
         }
       }
     },
@@ -103,21 +107,22 @@
             "paragraph": "\"By his power he churned up the sea; by his understanding he cut Rahab to pieces\" (v.12). Rahab is the mythological sea monster representing primordial chaos. God defeats chaos not once but continually. The creation is sustained by ongoing divine combat."
           }
         ],
-        "ctx": "Job delivers his own doxology of divine power — and it surpasses anything the friends said. The dead tremble beneath the waters (v.5), Sheol is naked before God (v.6), God hangs the earth on nothing (v.7), wraps up the waters in clouds (v.8), covers the face of the moon (v.9), marks the horizon between light and darkness (v.10). This is creation theology at its most magnificent. Job’s closing line: \"And these are but the outer fringe of his works; how faint the whisper we hear of him! Who then can understand the thunder of his power?\" (v.14). Everything the friends said about God’s power was a fraction of the truth. Job knows more of God’s power than they do — and is still baffled by his suffering.",
-        "cross": [
-          {
-            "ref": "Gen 1:2",
-            "note": "\"The earth was formless and void (tōhû)\" — the same chaos-word."
-          },
-          {
-            "ref": "Ps 104:2–9",
-            "note": "\"He wraps himself in light... he set the earth on its foundations\" — the creation hymn Job echoes."
-          },
-          {
-            "ref": "Col 1:17",
-            "note": "\"In him all things hold together\" — the NT answer to how the earth hangs on nothing."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 1:2",
+              "note": "\"The earth was formless and void (tōhû)\" — the same chaos-word."
+            },
+            {
+              "ref": "Ps 104:2–9",
+              "note": "\"He wraps himself in light... he set the earth on its foundations\" — the creation hymn Job echoes."
+            },
+            {
+              "ref": "Col 1:17",
+              "note": "\"In him all things hold together\" — the NT answer to how the earth hangs on nothing."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -186,6 +191,9 @@
               "note": "Habel: Job presents his own testimony about God’s power. It exceeds anything the friends said. The irony: the man who accuses God of injustice knows God’s power better than his defenders do."
             }
           ]
+        },
+        "hist": {
+          "context": "Job delivers his own doxology of divine power — and it surpasses anything the friends said. The dead tremble beneath the waters (v.5), Sheol is naked before God (v.6), God hangs the earth on nothing (v.7), wraps up the waters in clouds (v.8), covers the face of the moon (v.9), marks the horizon between light and darkness (v.10). This is creation theology at its most magnificent. Job’s closing line: \"And these are but the outer fringe of his works; how faint the whisper we hear of him! Who then can understand the thunder of his power?\" (v.14). Everything the friends said about God’s power was a fraction of the truth. Job knows more of God’s power than they do — and is still baffled by his suffering."
         }
       }
     }

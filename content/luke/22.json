@@ -51,21 +51,22 @@
             "current": false
           }
         ],
-        "ctx": "[('Passover and the Last Supper', \"The Last Supper is a Passover meal (22:15) — the annual commemoration of the Exodus liberation. Jesus deliberately sets his own death within the Passover framework: as the Passover lamb's blood protected Israel from the death angel and inaugurated the covenant at Sinai, so his blood establishes the new covenant. The four cups of the Passover seder provide the liturgical structure within which the words of institution are spoken.\"), ('Dispute about Greatness at the Table', \"That the disciples argue about greatness (22:24) at the Last Supper is one of Luke's most jarring juxtapositions. Jesus has just spoken of his body given and blood poured out; the Twelve are debating their relative rank. The juxtaposition is not accidental — it displays the gap between the self-giving of the one who serves and the self-seeking of those who should follow him.\")]",
-        "cross": [
-          {
-            "ref": "Jer 31:31-34",
-            "note": "\"The days are coming... when I will make a new covenant with the people of Israel and with the people of Judah\" — the foundational OT promise that Jesus's words of institution fulfil: \"This cup is the new covenant in my blood.\""
-          },
-          {
-            "ref": "Exod 24:8",
-            "note": "\"Moses then took the blood, sprinkled it on the people and said, 'This is the blood of the covenant'\" — the Sinai covenant inauguration that the Last Supper supersedes and fulfils."
-          },
-          {
-            "ref": "Isa 53:12",
-            "note": "\"He was numbered with the transgressors\" — the Isaiah servant text Jesus quotes as he prepares to be arrested (22:37)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 31:31-34",
+              "note": "\"The days are coming... when I will make a new covenant with the people of Israel and with the people of Judah\" — the foundational OT promise that Jesus's words of institution fulfil: \"This cup is the new covenant in my blood.\""
+            },
+            {
+              "ref": "Exod 24:8",
+              "note": "\"Moses then took the blood, sprinkled it on the people and said, 'This is the blood of the covenant'\" — the Sinai covenant inauguration that the Last Supper supersedes and fulfils."
+            },
+            {
+              "ref": "Isa 53:12",
+              "note": "\"He was numbered with the transgressors\" — the Isaiah servant text Jesus quotes as he prepares to be arrested (22:37)."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -141,6 +142,9 @@
         },
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Garden of Gethsemane</div><div class=\"poi-coords\">31.7793 N, 35.2397 E</div><div class=\"poi-text\">An olive grove on the lower western slope of the Mount of Olives. Gat shemanim means \"oil press\" in Aramaic. Jesus went there \"as usual\" (22:39) -- his habitual evening retreat during Passion Week. Here he prayed in anguish sweating like drops of blood (22:44), was strengthened by an angel, and was betrayed by Judas with a kiss and arrested by the Temple guard.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">House of the High Priest (Caiaphas)</div><div class=\"poi-coords\">31.7699 N, 35.2286 E</div><div class=\"poi-text\">Located in the upper city, the residence of Caiaphas served as venue for the preliminary Sanhedrin hearing (22:54-71). In the courtyard below, Peter warmed himself by a fire (22:55) and denied Jesus three times. Then the Lord turned and looked straight at Peter (22:61) -- across that same courtyard -- triggering Peter's bitter weeping.</div></div>"
+        },
+        "hist": {
+          "context": "[('Passover and the Last Supper', \"The Last Supper is a Passover meal (22:15) — the annual commemoration of the Exodus liberation. Jesus deliberately sets his own death within the Passover framework: as the Passover lamb's blood protected Israel from the death angel and inaugurated the covenant at Sinai, so his blood establishes the new covenant. The four cups of the Passover seder provide the liturgical structure within which the words of institution are spoken.\"), ('Dispute about Greatness at the Table', \"That the disciples argue about greatness (22:24) at the Last Supper is one of Luke's most jarring juxtapositions. Jesus has just spoken of his body given and blood poured out; the Twelve are debating their relative rank. The juxtaposition is not accidental — it displays the gap between the self-giving of the one who serves and the self-seeking of those who should follow him.\")]"
         }
       }
     },
@@ -184,21 +188,22 @@
             "current": false
           }
         ],
-        "ctx": "[('Gethsemane and the Human Will of Christ', 'The Gethsemane prayer (\"not my will, but yours be done\") is the sharpest expression in the Gospels of the distinction between Christ\\'s divine and human wills. The human will shrinks from the cup; the divine will embraces it; the submission of the human to the divine is the act of perfect obedience that is itself redemptive. The angel\\'s strengthening (22:43) and the sweat like drops of blood (22:44) underline the genuine agony of the human experience.'), ('The Sanhedrin Trial', \"Luke's Sanhedrin trial (22:66-71) occurs at daybreak — technically conforming to Jewish law that capital trials must be held during the day. Matthew and Mark describe a night trial followed by a morning ratification; Luke compresses the procedure. The key exchange is the same: they ask about messiahship; Jesus answers with the Son of Man at the right hand; they interpret it as blasphemy.\")]",
-        "cross": [
-          {
-            "ref": "Ps 22:1-18",
-            "note": "The Psalm of the suffering righteous one — \"My God, my God, why have you forsaken me?\" — which Matthew and Mark cite at the cross and which underlies the passion narrative throughout."
-          },
-          {
-            "ref": "Dan 7:13-14",
-            "note": "\"There before me was one like a son of man, coming with the clouds of heaven... He was given authority, glory and sovereign power\" — the text Jesus quotes at his trial (22:69)."
-          },
-          {
-            "ref": "Isa 53:3-12",
-            "note": "The Suffering Servant — mocked, beaten, numbered with transgressors — whose profile maps exactly onto the passion narrative Luke is narrating."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 22:1-18",
+              "note": "The Psalm of the suffering righteous one — \"My God, my God, why have you forsaken me?\" — which Matthew and Mark cite at the cross and which underlies the passion narrative throughout."
+            },
+            {
+              "ref": "Dan 7:13-14",
+              "note": "\"There before me was one like a son of man, coming with the clouds of heaven... He was given authority, glory and sovereign power\" — the text Jesus quotes at his trial (22:69)."
+            },
+            {
+              "ref": "Isa 53:3-12",
+              "note": "The Suffering Servant — mocked, beaten, numbered with transgressors — whose profile maps exactly onto the passion narrative Luke is narrating."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -274,6 +279,9 @@
         },
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Garden of Gethsemane</div><div class=\"poi-coords\">31.7793 N, 35.2397 E</div><div class=\"poi-text\">An olive grove on the lower western slope of the Mount of Olives. Gat shemanim means \"oil press\" in Aramaic. Jesus went there \"as usual\" (22:39) -- his habitual evening retreat during Passion Week. Here he prayed in anguish sweating like drops of blood (22:44), was strengthened by an angel, and was betrayed by Judas with a kiss and arrested by the Temple guard.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">House of the High Priest (Caiaphas)</div><div class=\"poi-coords\">31.7699 N, 35.2286 E</div><div class=\"poi-text\">Located in the upper city, the residence of Caiaphas served as venue for the preliminary Sanhedrin hearing (22:54-71). In the courtyard below, Peter warmed himself by a fire (22:55) and denied Jesus three times. Then the Lord turned and looked straight at Peter (22:61) -- across that same courtyard -- triggering Peter's bitter weeping.</div></div>"
+        },
+        "hist": {
+          "context": "[('Gethsemane and the Human Will of Christ', 'The Gethsemane prayer (\"not my will, but yours be done\") is the sharpest expression in the Gospels of the distinction between Christ\\'s divine and human wills. The human will shrinks from the cup; the divine will embraces it; the submission of the human to the divine is the act of perfect obedience that is itself redemptive. The angel\\'s strengthening (22:43) and the sweat like drops of blood (22:44) underline the genuine agony of the human experience.'), ('The Sanhedrin Trial', \"Luke's Sanhedrin trial (22:66-71) occurs at daybreak — technically conforming to Jewish law that capital trials must be held during the day. Matthew and Mark describe a night trial followed by a morning ratification; Luke compresses the procedure. The key exchange is the same: they ask about messiahship; Jesus answers with the Son of Man at the right hand; they interpret it as blasphemy.\")]"
         }
       }
     },
@@ -317,21 +325,22 @@
             "current": false
           }
         ],
-        "ctx": "[('Passover and the Last Supper', \"The Last Supper is a Passover meal (22:15) — the annual commemoration of the Exodus liberation. Jesus deliberately sets his own death within the Passover framework: as the Passover lamb's blood protected Israel from the death angel and inaugurated the covenant at Sinai, so his blood establishes the new covenant. The four cups of the Passover seder provide the liturgical structure within which the words of institution are spoken.\"), ('Dispute about Greatness at the Table', \"That the disciples argue about greatness (22:24) at the Last Supper is one of Luke's most jarring juxtapositions. Jesus has just spoken of his body given and blood poured out; the Twelve are debating their relative rank. The juxtaposition is not accidental — it displays the gap between the self-giving of the one who serves and the self-seeking of those who should follow him.\")]",
-        "cross": [
-          {
-            "ref": "Jer 31:31-34",
-            "note": "\"The days are coming... when I will make a new covenant with the people of Israel and with the people of Judah\" — the foundational OT promise that Jesus's words of institution fulfil: \"This cup is the new covenant in my blood.\""
-          },
-          {
-            "ref": "Exod 24:8",
-            "note": "\"Moses then took the blood, sprinkled it on the people and said, 'This is the blood of the covenant'\" — the Sinai covenant inauguration that the Last Supper supersedes and fulfils."
-          },
-          {
-            "ref": "Isa 53:12",
-            "note": "\"He was numbered with the transgressors\" — the Isaiah servant text Jesus quotes as he prepares to be arrested (22:37)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 31:31-34",
+              "note": "\"The days are coming... when I will make a new covenant with the people of Israel and with the people of Judah\" — the foundational OT promise that Jesus's words of institution fulfil: \"This cup is the new covenant in my blood.\""
+            },
+            {
+              "ref": "Exod 24:8",
+              "note": "\"Moses then took the blood, sprinkled it on the people and said, 'This is the blood of the covenant'\" — the Sinai covenant inauguration that the Last Supper supersedes and fulfils."
+            },
+            {
+              "ref": "Isa 53:12",
+              "note": "\"He was numbered with the transgressors\" — the Isaiah servant text Jesus quotes as he prepares to be arrested (22:37)."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -407,6 +416,9 @@
         },
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Garden of Gethsemane</div><div class=\"poi-coords\">31.7793 N, 35.2397 E</div><div class=\"poi-text\">An olive grove on the lower western slope of the Mount of Olives. Gat shemanim means \"oil press\" in Aramaic. Jesus went there \"as usual\" (22:39) -- his habitual evening retreat during Passion Week. Here he prayed in anguish sweating like drops of blood (22:44), was strengthened by an angel, and was betrayed by Judas with a kiss and arrested by the Temple guard.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">House of the High Priest (Caiaphas)</div><div class=\"poi-coords\">31.7699 N, 35.2286 E</div><div class=\"poi-text\">Located in the upper city, the residence of Caiaphas served as venue for the preliminary Sanhedrin hearing (22:54-71). In the courtyard below, Peter warmed himself by a fire (22:55) and denied Jesus three times. Then the Lord turned and looked straight at Peter (22:61) -- across that same courtyard -- triggering Peter's bitter weeping.</div></div>"
+        },
+        "hist": {
+          "context": "[('Passover and the Last Supper', \"The Last Supper is a Passover meal (22:15) — the annual commemoration of the Exodus liberation. Jesus deliberately sets his own death within the Passover framework: as the Passover lamb's blood protected Israel from the death angel and inaugurated the covenant at Sinai, so his blood establishes the new covenant. The four cups of the Passover seder provide the liturgical structure within which the words of institution are spoken.\"), ('Dispute about Greatness at the Table', \"That the disciples argue about greatness (22:24) at the Last Supper is one of Luke's most jarring juxtapositions. Jesus has just spoken of his body given and blood poured out; the Twelve are debating their relative rank. The juxtaposition is not accidental — it displays the gap between the self-giving of the one who serves and the self-seeking of those who should follow him.\")]"
         }
       }
     },
@@ -450,21 +462,22 @@
             "current": false
           }
         ],
-        "ctx": "[('Gethsemane and the Human Will of Christ', 'The Gethsemane prayer (\"not my will, but yours be done\") is the sharpest expression in the Gospels of the distinction between Christ\\'s divine and human wills. The human will shrinks from the cup; the divine will embraces it; the submission of the human to the divine is the act of perfect obedience that is itself redemptive. The angel\\'s strengthening (22:43) and the sweat like drops of blood (22:44) underline the genuine agony of the human experience.'), ('The Sanhedrin Trial', \"Luke's Sanhedrin trial (22:66-71) occurs at daybreak — technically conforming to Jewish law that capital trials must be held during the day. Matthew and Mark describe a night trial followed by a morning ratification; Luke compresses the procedure. The key exchange is the same: they ask about messiahship; Jesus answers with the Son of Man at the right hand; they interpret it as blasphemy.\")]",
-        "cross": [
-          {
-            "ref": "Ps 22:1-18",
-            "note": "The Psalm of the suffering righteous one — \"My God, my God, why have you forsaken me?\" — which Matthew and Mark cite at the cross and which underlies the passion narrative throughout."
-          },
-          {
-            "ref": "Dan 7:13-14",
-            "note": "\"There before me was one like a son of man, coming with the clouds of heaven... He was given authority, glory and sovereign power\" — the text Jesus quotes at his trial (22:69)."
-          },
-          {
-            "ref": "Isa 53:3-12",
-            "note": "The Suffering Servant — mocked, beaten, numbered with transgressors — whose profile maps exactly onto the passion narrative Luke is narrating."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 22:1-18",
+              "note": "The Psalm of the suffering righteous one — \"My God, my God, why have you forsaken me?\" — which Matthew and Mark cite at the cross and which underlies the passion narrative throughout."
+            },
+            {
+              "ref": "Dan 7:13-14",
+              "note": "\"There before me was one like a son of man, coming with the clouds of heaven... He was given authority, glory and sovereign power\" — the text Jesus quotes at his trial (22:69)."
+            },
+            {
+              "ref": "Isa 53:3-12",
+              "note": "The Suffering Servant — mocked, beaten, numbered with transgressors — whose profile maps exactly onto the passion narrative Luke is narrating."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -540,6 +553,9 @@
         },
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Garden of Gethsemane</div><div class=\"poi-coords\">31.7793 N, 35.2397 E</div><div class=\"poi-text\">An olive grove on the lower western slope of the Mount of Olives. Gat shemanim means \"oil press\" in Aramaic. Jesus went there \"as usual\" (22:39) -- his habitual evening retreat during Passion Week. Here he prayed in anguish sweating like drops of blood (22:44), was strengthened by an angel, and was betrayed by Judas with a kiss and arrested by the Temple guard.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">House of the High Priest (Caiaphas)</div><div class=\"poi-coords\">31.7699 N, 35.2286 E</div><div class=\"poi-text\">Located in the upper city, the residence of Caiaphas served as venue for the preliminary Sanhedrin hearing (22:54-71). In the courtyard below, Peter warmed himself by a fire (22:55) and denied Jesus three times. Then the Lord turned and looked straight at Peter (22:61) -- across that same courtyard -- triggering Peter's bitter weeping.</div></div>"
+        },
+        "hist": {
+          "context": "[('Gethsemane and the Human Will of Christ', 'The Gethsemane prayer (\"not my will, but yours be done\") is the sharpest expression in the Gospels of the distinction between Christ\\'s divine and human wills. The human will shrinks from the cup; the divine will embraces it; the submission of the human to the divine is the act of perfect obedience that is itself redemptive. The angel\\'s strengthening (22:43) and the sweat like drops of blood (22:44) underline the genuine agony of the human experience.'), ('The Sanhedrin Trial', \"Luke's Sanhedrin trial (22:66-71) occurs at daybreak — technically conforming to Jewish law that capital trials must be held during the day. Matthew and Mark describe a night trial followed by a morning ratification; Luke compresses the procedure. The key exchange is the same: they ask about messiahship; Jesus answers with the Son of Man at the right hand; they interpret it as blasphemy.\")]"
         }
       }
     }

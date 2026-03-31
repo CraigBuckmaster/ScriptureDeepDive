@@ -34,8 +34,10 @@
             "paragraph": "V.23-30: The Sabbath is introduced through the manna before Sinai and the formal Decalogue. On the sixth day, double portions; on the seventh, no gathering needed — the ground is bare. The Sabbath is written into creation's rhythm (Gen 2:2-3) and into provision's rhythm before it becomes commandment. The point: rest is not reward for labor but gift from God. Israel must trust that yesterday's provision is enough for today's rest."
           }
         ],
-        "hist": "The 'Wilderness of Sin' (between Elim and Sinai) is the coastal plain of el-Markha on the western Sinai Peninsula. Manna has been compared to the secretion of the tamarisk tree (Tamarix mannifera) caused by scale insects — a sweet, flaky substance still gathered by Bedouin today, called man es-simma. However, the biblical description far exceeds any natural phenomenon in both quantity and regularity. Quail migrate across the Sinai in spring and autumn, sometimes landing exhausted in vast numbers — a phenomenon still observed.",
-        "ctx": "The test structure (v.4: \"that I may test them, whether they will walk in my law\") makes the manna not just a provision but a discipline. Gathering exactly enough for each day, not storing overnight, observing double on the sixth and resting on the seventh — each rule tests whether Israel trusts God for tomorrow. The failure to trust (some leaving manna overnight, some going out on the seventh day) is the first record of sabbath violation and the proto-pattern of every covenant failure.",
+        "hist": {
+          "historical": "The 'Wilderness of Sin' (between Elim and Sinai) is the coastal plain of el-Markha on the western Sinai Peninsula. Manna has been compared to the secretion of the tamarisk tree (Tamarix mannifera) caused by scale insects — a sweet, flaky substance still gathered by Bedouin today, called man es-simma. However, the biblical description far exceeds any natural phenomenon in both quantity and regularity. Quail migrate across the Sinai in spring and autumn, sometimes landing exhausted in vast numbers — a phenomenon still observed.",
+          "context": "The test structure (v.4: \"that I may test them, whether they will walk in my law\") makes the manna not just a provision but a discipline. Gathering exactly enough for each day, not storing overnight, observing double on the sixth and resting on the seventh — each rule tests whether Israel trusts God for tomorrow. The failure to trust (some leaving manna overnight, some going out on the seventh day) is the first record of sabbath violation and the proto-pattern of every covenant failure."
+        },
         "poi": [
           {
             "name": "Wilderness of Sin",
@@ -48,20 +50,22 @@
             "text": "The desert between Egypt and Sinai has no sustainable agriculture. Israel's survival in the wilderness is entirely dependent on divine provision — manna, quail, and water. The geography makes the theology visible: no natural explanation for 40 years of provision in this terrain."
           }
         ],
-        "cross": [
-          {
-            "ref": "John 6:31–35",
-            "note": "The crowd quotes \"He gave them bread from heaven to eat\" (citing Ps 78:24/Exod 16). Jesus responds: \"Moses did not give you the bread from heaven, but my Father gives you the true bread from heaven... I am the bread of life.\""
-          },
-          {
-            "ref": "Deut 8:3",
-            "note": "\"He humbled you and let you hunger and fed you with manna... that he might make you know that man does not live by bread alone, but by every word that comes from the mouth of God.\" Jesus quotes this against Satan (Matt 4:4)."
-          },
-          {
-            "ref": "Rev 2:17",
-            "note": "The hidden manna promised to the overcomers — the eschatological fulfilment of the manna provision."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 6:31–35",
+              "note": "The crowd quotes \"He gave them bread from heaven to eat\" (citing Ps 78:24/Exod 16). Jesus responds: \"Moses did not give you the bread from heaven, but my Father gives you the true bread from heaven... I am the bread of life.\""
+            },
+            {
+              "ref": "Deut 8:3",
+              "note": "\"He humbled you and let you hunger and fed you with manna... that he might make you know that man does not live by bread alone, but by every word that comes from the mouth of God.\" Jesus quotes this against Satan (Matt 4:4)."
+            },
+            {
+              "ref": "Rev 2:17",
+              "note": "The hidden manna promised to the overcomers — the eschatological fulfilment of the manna provision."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -187,8 +191,10 @@
             "paragraph": "V.16-18: Each person was to gather an omer — \"as much as each person needs.\" When measured, those who gathered more had no extra, those who gathered less had no shortage. The redistribution by measure became the proof of sufficiency. Paul quotes this in 2 Cor 8:15 as the principle behind Christian generosity: \"the one who gathered much did not have too much, and the one who gathered little did not have too little.\""
           }
         ],
-        "hist": "The omer measurement (approximately 2.3 litres) was a standard dry measure in the ancient Near East. The double portion on the sixth day and prohibition of gathering on the seventh establishes the Sabbath pattern before the Sinai legislation — suggesting the Sabbath precedes the Law. The golden jar of manna kept 'before the LORD' (v. 33) anticipates the ark of the covenant. The forty-year duration of manna provision connects to the wilderness generation theme that structures the Pentateuch.",
-        "ctx": "The forty-year manna provision (v.35) is the longest sustained divine provision narrative in Scripture. Every morning for forty years, Israel woke to bread on the ground. Every Sabbath, they rested because the bread had been pre-provided. The provision ends the moment they enter Canaan (Josh 5:12) — when they eat the fruit of the land, the manna ceases. God provides exactly what is needed for exactly as long as it is needed.",
+        "hist": {
+          "historical": "The omer measurement (approximately 2.3 litres) was a standard dry measure in the ancient Near East. The double portion on the sixth day and prohibition of gathering on the seventh establishes the Sabbath pattern before the Sinai legislation — suggesting the Sabbath precedes the Law. The golden jar of manna kept 'before the LORD' (v. 33) anticipates the ark of the covenant. The forty-year duration of manna provision connects to the wilderness generation theme that structures the Pentateuch.",
+          "context": "The forty-year manna provision (v.35) is the longest sustained divine provision narrative in Scripture. Every morning for forty years, Israel woke to bread on the ground. Every Sabbath, they rested because the bread had been pre-provided. The provision ends the moment they enter Canaan (Josh 5:12) — when they eat the fruit of the land, the manna ceases. God provides exactly what is needed for exactly as long as it is needed."
+        },
         "poi": [
           {
             "name": "Wilderness of Sin",
@@ -201,20 +207,22 @@
             "text": "The desert between Egypt and Sinai has no sustainable agriculture. Israel's survival in the wilderness is entirely dependent on divine provision — manna, quail, and water. The geography makes the theology visible: no natural explanation for 40 years of provision in this terrain."
           }
         ],
-        "cross": [
-          {
-            "ref": "Josh 5:12",
-            "note": "The manna ceases the day after Israel eats the produce of Canaan — provision calibrated precisely to the period of need."
-          },
-          {
-            "ref": "Heb 9:4",
-            "note": "The golden jar of manna in the ark of the covenant — a permanent memorial of the wilderness provision, kept \"before the LORD.\""
-          },
-          {
-            "ref": "Matt 4:4",
-            "note": "Jesus quotes Deut 8:3 (reflecting on the manna) against Satan: \"Man does not live by bread alone.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 5:12",
+              "note": "The manna ceases the day after Israel eats the produce of Canaan — provision calibrated precisely to the period of need."
+            },
+            {
+              "ref": "Heb 9:4",
+              "note": "The golden jar of manna in the ark of the covenant — a permanent memorial of the wilderness provision, kept \"before the LORD.\""
+            },
+            {
+              "ref": "Matt 4:4",
+              "note": "Jesus quotes Deut 8:3 (reflecting on the manna) against Satan: \"Man does not live by bread alone.\""
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

@@ -25,17 +25,18 @@
             "paragraph": "\"The mirth of the wicked is brief (regaʿ)\" (v.5). Zophar’s core claim: whatever prosperity the wicked enjoy is momentary. They may rise to the heavens but they perish like their own dung (v.7). The vulgarity is deliberate — Zophar is angry."
           }
         ],
-        "ctx": "Zophar’s second speech is driven by emotion, not argument. Job’s redeemer declaration (ch 19) has not moved him — he is “greatly disturbed” (v.2). His response: double down on retribution. The wicked prosper briefly, then collapse spectacularly. Every image is of reversal: height to nothing, feast to vomit, wealth to poverty.",
-        "cross": [
-          {
-            "ref": "Ps 37:35–36",
-            "note": "\"I have seen a wicked and ruthless man flourishing like a native tree, but he soon passed away\" — the same brief-prosperity theology."
-          },
-          {
-            "ref": "Ps 73:18–20",
-            "note": "\"You place them on slippery ground; you cast them down to ruin\" — sudden reversal of the wicked."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 37:35–36",
+              "note": "\"I have seen a wicked and ruthless man flourishing like a native tree, but he soon passed away\" — the same brief-prosperity theology."
+            },
+            {
+              "ref": "Ps 73:18–20",
+              "note": "\"You place them on slippery ground; you cast them down to ruin\" — sudden reversal of the wicked."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Habel: Zophar’s second speech is the prosecution’s desperate response to Job’s redeemer claim. Unable to refute it, he reasserts the retribution principle with greater force."
             }
           ]
+        },
+        "hist": {
+          "context": "Zophar’s second speech is driven by emotion, not argument. Job’s redeemer declaration (ch 19) has not moved him — he is “greatly disturbed” (v.2). His response: double down on retribution. The wicked prosper briefly, then collapse spectacularly. Every image is of reversal: height to nothing, feast to vomit, wealth to poverty."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "\"Such is the lot (ḥéleq) God allots the wicked\" (v.29). The word ḥéleq means the portion assigned by God — the inheritance the wicked receive. For Zophar, suffering IS the wicked person’s divinely appointed share. The logic is circular: if you suffer, suffering is your allotment, which proves you’re wicked."
           }
         ],
-        "ctx": "Grotesque imagery dominates: the wicked person’s food turns to venom in his stomach (v.14), he vomits up riches (v.15), sucked cobra poison (v.16), cannot enjoy rivers of honey (v.17), must give back unenjoyable earnings (v.18). Then divine wrath: fire consumes his tent (v.26), the heavens expose his guilt (v.27), flood waters carry off his house (v.28). Every image is of consumption reversed: what was swallowed is vomited back.",
-        "cross": [
-          {
-            "ref": "Luke 12:20",
-            "note": "\"This very night your life will be demanded from you\" — Jesus’ parable echoes Zophar’s theology of sudden reversal."
-          },
-          {
-            "ref": "Prov 20:17",
-            "note": "\"Food gained by fraud tastes sweet, but one ends up with gravel\" — the proverbial basis for Zophar’s imagery."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 12:20",
+              "note": "\"This very night your life will be demanded from you\" — Jesus’ parable echoes Zophar’s theology of sudden reversal."
+            },
+            {
+              "ref": "Prov 20:17",
+              "note": "\"Food gained by fraud tastes sweet, but one ends up with gravel\" — the proverbial basis for Zophar’s imagery."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -192,6 +197,9 @@
               "note": "Habel: Zophar presents his final evidence: the wicked always lose everything. But his own speech undermines the prosecution — if the wicked always fall, why hasn’t Job been shown to be wicked by any specific evidence?"
             }
           ]
+        },
+        "hist": {
+          "context": "Grotesque imagery dominates: the wicked person’s food turns to venom in his stomach (v.14), he vomits up riches (v.15), sucked cobra poison (v.16), cannot enjoy rivers of honey (v.17), must give back unenjoyable earnings (v.18). Then divine wrath: fire consumes his tent (v.26), the heavens expose his guilt (v.27), flood waters carry off his house (v.28). Every image is of consumption reversed: what was swallowed is vomited back."
         }
       }
     }

@@ -25,13 +25,14 @@
             "paragraph": "\"The lamp of the wicked is snuffed out\" (v.5). The lamp represents life, prosperity, and hope. Bildad says the wicked’s lamp goes dark — their apparent blessing is temporary."
           }
         ],
-        "ctx": "Bildad opens aggressively: “When will you end these speeches?” (v.2). He then launches into the imagery of the wicked’s destruction: their lamp is snuffed, their steps are narrowed, their own schemes trip them up. Snares, traps, and nets — the wicked are caught by their own devices.",
-        "cross": [
-          {
-            "ref": "Prov 13:9",
-            "note": "\"The lamp of the wicked is snuffed out\" — the same image Bildad draws on."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 13:9",
+              "note": "\"The lamp of the wicked is snuffed out\" — the same image Bildad draws on."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -80,6 +81,9 @@
               "note": "Habel: Bildad’s second testimony is a closing argument. No new evidence, no new theory — just rhetorical intimidation."
             }
           ]
+        },
+        "hist": {
+          "context": "Bildad opens aggressively: “When will you end these speeches?” (v.2). He then launches into the imagery of the wicked’s destruction: their lamp is snuffed, their steps are narrowed, their own schemes trip them up. Snares, traps, and nets — the wicked are caught by their own devices."
         }
       }
     },
@@ -103,17 +107,18 @@
             "paragraph": "\"The king of terrors (melek̅ balhōṭ)\" (v.14) — a personification of death itself. Death is the ultimate monarch before whom all others bow. The phrase may allude to Mot, the Canaanite god of death, or Nergal, the Mesopotamian ruler of the underworld."
           }
         ],
-        "ctx": "Bildad’s second speech is shorter and harsher than his first. No appeal to tradition this time — just a relentless catalogue of the wicked person’s destruction. The structure: terrors pursue (vv.5–12), disease consumes (vv.13–14), tent destroyed (vv.15–16), name erased (vv.17–18), no offspring survive (v.19), all who see it are appalled (vv.20–21).",
-        "cross": [
-          {
-            "ref": "Ps 49:14",
-            "note": "\"Like sheep they are destined for the grave, and death will be their shepherd\" — death as ruler over the wicked."
-          },
-          {
-            "ref": "Prov 13:9",
-            "note": "\"The lamp of the wicked is snuffed out\" — the same image Bildad uses (v.5)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 49:14",
+              "note": "\"Like sheep they are destined for the grave, and death will be their shepherd\" — death as ruler over the wicked."
+            },
+            {
+              "ref": "Prov 13:9",
+              "note": "\"The lamp of the wicked is snuffed out\" — the same image Bildad uses (v.5)."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -182,6 +187,9 @@
               "note": "Habel: Bildad’s second testimony is a closing argument. No new evidence, no new theory — just rhetorical intimidation. The prosecution has nothing left but volume."
             }
           ]
+        },
+        "hist": {
+          "context": "Bildad’s second speech is shorter and harsher than his first. No appeal to tradition this time — just a relentless catalogue of the wicked person’s destruction. The structure: terrors pursue (vv.5–12), disease consumes (vv.13–14), tent destroyed (vv.15–16), name erased (vv.17–18), no offspring survive (v.19), all who see it are appalled (vv.20–21)."
         }
       }
     }

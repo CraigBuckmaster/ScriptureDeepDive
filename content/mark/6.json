@@ -28,21 +28,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Nazareth</div><div class=\"poi-coords\">Lower Galilee; Jesus’s hometown, c.6km from Sepphoris</div><div class=\"poi-text\">Nazareth was a small village in Lower Galilee, probably 200–400 inhabitants. Its insignificance relative to nearby Sepphoris made the neighbors’ familiarity with Jesus’s family even more complete. The place that should have been most receptive proves most resistant.</div></div>"
         },
-        "ctx": "Nazareth’s rejection of Jesus is the inverse of the Capernaum synagogue’s amazement (1:22). There, authority in teaching led to wonder. Here, authority in teaching leads to offense — because they know who his family is. Jesus’s inability to do miracles there (v.5) is not a limitation on divine power but a statement about faith as the condition of miraculous reception. Immediately after, the Twelve are sent out in pairs — the mission expands even as the hometown rejects.",
-        "cross": [
-          {
-            "ref": "Jer 11:21",
-            "note": "Do not prophesy in the name of the LORD or you will die by our hands — the rejection of the prophet in his hometown is an OT pattern: Jeremiah, Elijah, Amos."
-          },
-          {
-            "ref": "Deut 25:9",
-            "note": "The sandal-removal ceremony — shaking dust from feet inverts this: instead of removing a sandal in honor, dust is shaken off in testimony against those who reject the covenant."
-          },
-          {
-            "ref": "Luke 4:24",
-            "note": "No prophet is accepted in his hometown — Luke’s parallel expands the saying and connects it to Elijah and Elisha’s Gentile ministry."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 11:21",
+              "note": "Do not prophesy in the name of the LORD or you will die by our hands — the rejection of the prophet in his hometown is an OT pattern: Jeremiah, Elijah, Amos."
+            },
+            {
+              "ref": "Deut 25:9",
+              "note": "The sandal-removal ceremony — shaking dust from feet inverts this: instead of removing a sandal in honor, dust is shaken off in testimony against those who reject the covenant."
+            },
+            {
+              "ref": "Luke 4:24",
+              "note": "No prophet is accepted in his hometown — Luke’s parallel expands the saying and connects it to Elijah and Elisha’s Gentile ministry."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -120,6 +121,9 @@
               "note": "Anointed many sick people with oil — the only explicit mention of anointing with oil for healing in the Synoptics. James 5:14-15 institutionalizes this practice. The oil is not the medium of healing but a physical sign of the Spirit’s work."
             }
           ]
+        },
+        "hist": {
+          "context": "Nazareth’s rejection of Jesus is the inverse of the Capernaum synagogue’s amazement (1:22). There, authority in teaching led to wonder. Here, authority in teaching leads to offense — because they know who his family is. Jesus’s inability to do miracles there (v.5) is not a limitation on divine power but a statement about faith as the condition of miraculous reception. Immediately after, the Twelve are sent out in pairs — the mission expands even as the hometown rejects."
         }
       }
     },
@@ -137,21 +141,22 @@
             "paragraph": "Finally the opportune time came (v.21) — eukairou hēmeras. The same word Mark uses for the kingdom’s decisive time (1:15) is here used for Herod’s birthday banquet and John’s execution. The irony is deliberate: the appointed time that fulfils God’s purposes operates through the same history as the appointed time that Herodias exploits for murder."
           }
         ],
-        "ctx": "The death of John the Baptist is narrated as a flashback — the framing device is Herod’s guilty conscience about Jesus (v.14-16). The story is the longest non-Jesus narrative in Mark and reads like court intrigue: a powerful man, a resentful woman, a reckless oath, a dancing girl. John’s fate is Jesus’s fate in miniature: the righteous prophet silenced by political power. His disciples’ burial of the body (v.29) prefigures Joseph of Arimathea’s burial of Jesus.",
-        "cross": [
-          {
-            "ref": "1 Kings 19:1-3",
-            "note": "Jezebel’s threat against Elijah — Herodias maps onto Jezebel exactly: the foreign woman of power who pursues the righteous prophet to his death. The parallels are too precise to be coincidental."
-          },
-          {
-            "ref": "Esth 5:3",
-            "note": "The king’s rash promise (up to half my kingdom) echoes Ahasuerus’s promise to Esther — but here the model is inverted: Esther asks for lives to be saved; Herodias’s daughter asks for a death."
-          },
-          {
-            "ref": "Matt 14:1-12",
-            "note": "Matthew’s parallel adds that John was the one who condemned Herod’s marriage — confirming Mark’s compressed account."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kings 19:1-3",
+              "note": "Jezebel’s threat against Elijah — Herodias maps onto Jezebel exactly: the foreign woman of power who pursues the righteous prophet to his death. The parallels are too precise to be coincidental."
+            },
+            {
+              "ref": "Esth 5:3",
+              "note": "The king’s rash promise (up to half my kingdom) echoes Ahasuerus’s promise to Esther — but here the model is inverted: Esther asks for lives to be saved; Herodias’s daughter asks for a death."
+            },
+            {
+              "ref": "Matt 14:1-12",
+              "note": "Matthew’s parallel adds that John was the one who condemned Herod’s marriage — confirming Mark’s compressed account."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -229,6 +234,9 @@
               "note": "He liked to listen to him — the imperfect (ēkouen) indicates a regular practice. Herod was a hearer but not a doer. James 1:22 describes the same tragic pattern."
             }
           ]
+        },
+        "hist": {
+          "context": "The death of John the Baptist is narrated as a flashback — the framing device is Herod’s guilty conscience about Jesus (v.14-16). The story is the longest non-Jesus narrative in Mark and reads like court intrigue: a powerful man, a resentful woman, a reckless oath, a dancing girl. John’s fate is Jesus’s fate in miniature: the righteous prophet silenced by political power. His disciples’ burial of the body (v.29) prefigures Joseph of Arimathea’s burial of Jesus."
         }
       }
     },
@@ -246,21 +254,22 @@
             "paragraph": "Take courage! It is I — the Greek is egō eimi, the same construction as the Septuagint’s translation of God’s name in Exod 3:14. Jesus’s self-identification to the terrified disciples in the storm is not merely “it’s me” but the divine “I AM.” The walking on the sea is a theophany."
           }
         ],
-        "ctx": "The feeding of five thousand and the sea-walking are the twin miracles of Mark 6:30-56. The feeding echoes Moses’s manna in the wilderness; the walking on water echoes YHWH’s mastery over the sea (Job 9:8). Mark’s editorial comment (v.52) is devastating: the disciples had not understood about the loaves — their hearts were hardened. The same word used for Pharaoh’s hardening is applied to the disciples.",
-        "cross": [
-          {
-            "ref": "Num 27:17",
-            "note": "The people who have no shepherd — the phrase Jesus’s compassion fulfils. Israel without leadership is Moses’s anxiety; Jesus’s compassion is the answer."
-          },
-          {
-            "ref": "2 Kings 4:42-44",
-            "note": "Elisha feeds a hundred men with twenty loaves — the closest OT parallel. Jesus feeds five thousand with five loaves. The multiplication is on a different scale entirely."
-          },
-          {
-            "ref": "Job 9:8",
-            "note": "He alone stretches out the heavens and treads on the waves of the sea — the divine sea-walking that Jesus performs."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Num 27:17",
+              "note": "The people who have no shepherd — the phrase Jesus’s compassion fulfils. Israel without leadership is Moses’s anxiety; Jesus’s compassion is the answer."
+            },
+            {
+              "ref": "2 Kings 4:42-44",
+              "note": "Elisha feeds a hundred men with twenty loaves — the closest OT parallel. Jesus feeds five thousand with five loaves. The multiplication is on a different scale entirely."
+            },
+            {
+              "ref": "Job 9:8",
+              "note": "He alone stretches out the heavens and treads on the waves of the sea — the divine sea-walking that Jesus performs."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -338,6 +347,9 @@
               "note": "Their hearts were hardened (pēpōrōmenē) — the perfect passive suggests a state resulting from an ongoing process. The disciples’ incomprehension is not innocent confusion but the beginning of the same hardening that Mark attributes to Jesus’s opponents."
             }
           ]
+        },
+        "hist": {
+          "context": "The feeding of five thousand and the sea-walking are the twin miracles of Mark 6:30-56. The feeding echoes Moses’s manna in the wilderness; the walking on water echoes YHWH’s mastery over the sea (Job 9:8). Mark’s editorial comment (v.52) is devastating: the disciples had not understood about the loaves — their hearts were hardened. The same word used for Pharaoh’s hardening is applied to the disciples."
         }
       }
     }

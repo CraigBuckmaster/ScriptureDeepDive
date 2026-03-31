@@ -25,17 +25,18 @@
             "paragraph": "Asa's heart wasšālēm(fully devoted, v.14) \"all his days\" — the same word used negatively of Solomon (11:4). What Solomon failed to maintain, Asa achieves. He is the first king evaluated positively since the division, restoring hope for the Davidic line."
           }
         ],
-        "ctx": "Abijah reigns briefly (3 years) and \"committed all the sins his father had done.\" Then Asa — the first reformer king — reigns 41 years. He expels the male shrine prostitutes, removes the idols, and even deposes his grandmother Maakah for her Asherah pole. His heart is \"fully devoted\" — but with a caveat: \"the high places were not removed.\" The narrator's \"except\" returns (cf. 3:3). Asa is faithful but not completely so. He also strips the temple treasury to buy an alliance with Ben-Hadad of Aram against Israel — using sacred resources for political strategy.",
-        "cross": [
-          {
-            "ref": "2 Chr 15:17",
-            "note": "\"Asa's heart was fully committed to the LORD all his life.\" The Chronicler's parallel evaluation is identical."
-          },
-          {
-            "ref": "2 Chr 16:7–9",
-            "note": "The Chronicler adds the prophet Hanani's rebuke for the Ben-Hadad alliance: \"You relied on the king of Aram and not on the LORD.\" The political alliance was a failure of faith."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Chr 15:17",
+              "note": "\"Asa's heart was fully committed to the LORD all his life.\" The Chronicler's parallel evaluation is identical."
+            },
+            {
+              "ref": "2 Chr 16:7–9",
+              "note": "The Chronicler adds the prophet Hanani's rebuke for the Ben-Hadad alliance: \"You relied on the king of Aram and not on the LORD.\" The political alliance was a failure of faith."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -87,6 +88,9 @@
               "note": "Provan: The \"high places not removed\" caveat follows Asa into his positive evaluation. This persistent qualifier demonstrates the narrator's honesty: even the best Judahite kings fall short of the Deuteronomic ideal. Complete reform awaits Josiah — and even he cannot save the nation."
             }
           ]
+        },
+        "hist": {
+          "context": "Abijah reigns briefly (3 years) and \"committed all the sins his father had done.\" Then Asa — the first reformer king — reigns 41 years. He expels the male shrine prostitutes, removes the idols, and even deposes his grandmother Maakah for her Asherah pole. His heart is \"fully devoted\" — but with a caveat: \"the high places were not removed.\" The narrator's \"except\" returns (cf. 3:3). Asa is faithful but not completely so. He also strips the temple treasury to buy an alliance with Ben-Hadad of Aram against Israel — using sacred resources for political strategy."
         }
       }
     },
@@ -104,17 +108,18 @@
             "paragraph": "The formula \"walked in the way of Jeroboam and in his sin, which he caused Israel to sin\" (v.34) becomes the standard verdict for every northern king. It appears over 20 times in Kings. The golden calves are the measuring stick against which every reign is evaluated."
           }
         ],
-        "ctx": "Nadab reigns only 2 years before Baasha assassinates him and destroys Jeroboam's entire house — fulfilling Ahijah's prophecy (14:10). But Baasha then walks in the same sin: the golden calves remain. The pattern is established: northern kings rise by violence, destroy their predecessors, but perpetuate the same apostasy. The mechanism changes; the sin does not. The narrator demonstrates that the problem is not the dynasty but the system — Jeroboam's calves corrupt whoever rules, regardless of how they gained power.",
-        "cross": [
-          {
-            "ref": "1 Kgs 14:10",
-            "note": "Ahijah's prophecy against Jeroboam's house — fulfilled by Baasha in v.29."
-          },
-          {
-            "ref": "1 Kgs 16:1–4",
-            "note": "Jehu the prophet will deliver an identical prophecy against Baasha — the destroyer becomes the destroyed."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 14:10",
+              "note": "Ahijah's prophecy against Jeroboam's house — fulfilled by Baasha in v.29."
+            },
+            {
+              "ref": "1 Kgs 16:1–4",
+              "note": "Jehu the prophet will deliver an identical prophecy against Baasha — the destroyer becomes the destroyed."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -166,6 +171,9 @@
               "note": "Provan: Baasha's identical sin demonstrates the narrator's point: the problem in Israel is not personal but systemic. Change the king, keep the calves, and nothing changes. Structural reform — not just leadership change — is what Israel needs and never gets."
             }
           ]
+        },
+        "hist": {
+          "context": "Nadab reigns only 2 years before Baasha assassinates him and destroys Jeroboam's entire house — fulfilling Ahijah's prophecy (14:10). But Baasha then walks in the same sin: the golden calves remain. The pattern is established: northern kings rise by violence, destroy their predecessors, but perpetuate the same apostasy. The mechanism changes; the sin does not. The narrator demonstrates that the problem is not the dynasty but the system — Jeroboam's calves corrupt whoever rules, regardless of how they gained power."
         }
       }
     }

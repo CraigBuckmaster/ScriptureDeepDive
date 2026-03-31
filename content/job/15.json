@@ -25,17 +25,18 @@
             "paragraph": "\"Should the wise fill their bellies with the hot east wind (rūaḥ qādîm)?\" (v.2). Eliphaz accuses Job of producing only hot air. The east wind (qādîm) is the sirocco — the dry, scorching desert wind that kills vegetation. Job’s words, Eliphaz says, are destructive, not wise."
           }
         ],
-        "ctx": "Eliphaz has dropped all gentleness. In his first speech (ch 4–5) he began with compliments. Now he leads with “your own mouth condemns you” (v.6). His argument: Job’s protests undermine piety itself, not just Job’s case. By challenging God, Job is discouraging others from faith.",
-        "cross": [
-          {
-            "ref": "Prov 10:19",
-            "note": "\"When words are many, sin is not absent\" — the proverbial basis for Eliphaz’s suspicion of many words."
-          },
-          {
-            "ref": "Job 4:2–4",
-            "note": "Compare Eliphaz’s gentle first opening with this aggressive second one."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 10:19",
+              "note": "\"When words are many, sin is not absent\" — the proverbial basis for Eliphaz’s suspicion of many words."
+            },
+            {
+              "ref": "Job 4:2–4",
+              "note": "Compare Eliphaz’s gentle first opening with this aggressive second one."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -104,6 +105,9 @@
               "note": "Habel: the prosecution reopens its case. Eliphaz introduces new charges: Job’s words themselves are evidence of guilt. His protests undermine public religion."
             }
           ]
+        },
+        "hist": {
+          "context": "Eliphaz has dropped all gentleness. In his first speech (ch 4–5) he began with compliments. Now he leads with “your own mouth condemns you” (v.6). His argument: Job’s protests undermine piety itself, not just Job’s case. By challenging God, Job is discouraging others from faith."
         }
       }
     },
@@ -121,17 +125,18 @@
             "paragraph": "\"The wicked person (rāshāʿ) writhes in pain all their days\" (v.20). Eliphaz paints an elaborate portrait of the wicked person’s fate. The implication is unmistakable: this is your future, Job, unless you repent."
           }
         ],
-        "ctx": "The second half of Eliphaz’s speech is a long catalogue of horrors awaiting the wicked. The wicked live in terror (v.20–21), wander hungry (v.23), are crushed (v.24), defied God (v.25–26), and lose everything (vv.29–34). The description bears uncomfortable resemblance to Job’s actual situation — which is precisely Eliphaz’s rhetorical strategy.",
-        "cross": [
-          {
-            "ref": "Ps 73:16–20",
-            "note": "The Psalmist saw the prosperity of the wicked and was troubled — until he entered the sanctuary. Eliphaz only sees the punishment side."
-          },
-          {
-            "ref": "Prov 1:31–32",
-            "note": "\"They will eat the fruit of their ways\" — the proverbial tradition Eliphaz draws from."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 73:16–20",
+              "note": "The Psalmist saw the prosperity of the wicked and was troubled — until he entered the sanctuary. Eliphaz only sees the punishment side."
+            },
+            {
+              "ref": "Prov 1:31–32",
+              "note": "\"They will eat the fruit of their ways\" — the proverbial tradition Eliphaz draws from."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -196,6 +201,9 @@
               "note": "Habel: Eliphaz presents a precedent catalogue — here is what happens to the wicked. The unspoken conclusion: Job’s experience matches the pattern, therefore Job is wicked."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half of Eliphaz’s speech is a long catalogue of horrors awaiting the wicked. The wicked live in terror (v.20–21), wander hungry (v.23), are crushed (v.24), defied God (v.25–26), and lose everything (vv.29–34). The description bears uncomfortable resemblance to Job’s actual situation — which is precisely Eliphaz’s rhetorical strategy."
         }
       }
     }

@@ -31,7 +31,6 @@
             "paragraph": "Judas 'handed over' Jesus for thirty silver coins — the price of a slave (Exod 21:32). Paradidōmi runs through the passion: Judas hands Jesus to the priests, the priests hand him to Pilate, Pilate hands him to crucifixion. Each act of handing over is simultaneously human treachery and divine plan."
           }
         ],
-        "ctx": "The first half moves through six scenes: the plot (vv.1-5), the anointing (vv.6-13), Judas's bargain (vv.14-16), the Last Supper (vv.17-29), prediction of scattering (vv.30-32), and Peter's boast (vv.33-35). The chapter's deepest irony: the highest act of worship (the unnamed woman's anointing) and the deepest betrayal (Judas's bargain) are placed side by side.",
         "tl": [
           {
             "date": "c. AD 30",
@@ -82,16 +81,18 @@
             "text": "\"Where do you want us to make preparations for you to eat the Passover?\" Jerusalem is the required location for the Passover. The upper room is in Jerusalem. The Last Supper, Gethsemane, the arrest, and the trials all occur within walking distance of each other."
           }
         ],
-        "cross": [
-          {
-            "ref": "Exod 24:8; Jer 31:31-34",
-            "note": "Blood of the covenant; new covenant -- the Last Supper cup combines both."
-          },
-          {
-            "ref": "Zech 13:7",
-            "note": "Strike the shepherd and the sheep scatter -- Jesus quotes Zechariah to interpret the coming desertion. Even the abandonment is within the prophetic script."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 24:8; Jer 31:31-34",
+              "note": "Blood of the covenant; new covenant -- the Last Supper cup combines both."
+            },
+            {
+              "ref": "Zech 13:7",
+              "note": "Strike the shepherd and the sheep scatter -- Jesus quotes Zechariah to interpret the coming desertion. Even the abandonment is within the prophetic script."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -160,6 +161,9 @@
               "note": "The Catena traces the theology of Gethsemane: Jesus's prayer ('let this cup pass, yet not as I will but as you will', v.39) is the text for the doctrine of Christ's human will. Maximus the Confessor developed the Gethsemane prayer as the foundation for asserting Christ's real human will genuinely submitted to the divine will. Monotheletism is refuted by this prayer."
             }
           ]
+        },
+        "hist": {
+          "context": "The first half moves through six scenes: the plot (vv.1-5), the anointing (vv.6-13), Judas's bargain (vv.14-16), the Last Supper (vv.17-29), prediction of scattering (vv.30-32), and Peter's boast (vv.33-35). The chapter's deepest irony: the highest act of worship (the unnamed woman's anointing) and the deepest betrayal (Judas's bargain) are placed side by side."
         }
       }
     },
@@ -183,7 +187,6 @@
             "paragraph": "The cup at the supper becomes the cup in Gethsemane — 'let this cup pass from me.' The same word connects Eucharist and agony. What Jesus offers to his disciples at the table, he himself must drink in the garden. The cup of blessing is also the cup of suffering."
           }
         ],
-        "ctx": "The second half holds together Gethsemane (vv.36-46), the arrest (vv.47-56), the Sanhedrin trial (vv.57-68), and Peter's denial (vv.69-75). The structural parallel is precise: Jesus prays \"not my will\" three times; Peter denies \"I don't know the man\" three times. Perfect obedience and perfect failure are simultaneous.",
         "tl": [
           {
             "date": "c. AD 30",
@@ -234,16 +237,18 @@
             "text": "After the arrest, Jesus is taken to Caiaphas's house for the night trial. Peter follows and denies three times in the courtyard. The high priest's domestic space becomes the site of both the covenant's condemnation and its witness's failure."
           }
         ],
-        "cross": [
-          {
-            "ref": "Isa 53:7",
-            "note": "He was oppressed yet did not open his mouth -- Jesus's silence before the Sanhedrin (v.63) enacts the Servant's silence."
-          },
-          {
-            "ref": "Ps 110:1; Dan 7:13",
-            "note": "Son of Man at the right hand of the Mighty One, coming on clouds -- Jesus combines both texts under oath. Either blasphemy or truth; no middle option."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 53:7",
+              "note": "He was oppressed yet did not open his mouth -- Jesus's silence before the Sanhedrin (v.63) enacts the Servant's silence."
+            },
+            {
+              "ref": "Ps 110:1; Dan 7:13",
+              "note": "Son of Man at the right hand of the Mighty One, coming on clouds -- Jesus combines both texts under oath. Either blasphemy or truth; no middle option."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -312,6 +317,9 @@
               "note": "Chrysostom on Peter's denial: the one who denied three times with oaths and curses became the one who preached three thousand to baptism at Pentecost. The Lord's foreknowledge of the denial and his prayer for Peter (Luke 22:32) transformed the failure into the foundation for the church's pastor."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half holds together Gethsemane (vv.36-46), the arrest (vv.47-56), the Sanhedrin trial (vv.57-68), and Peter's denial (vv.69-75). The structural parallel is precise: Jesus prays \"not my will\" three times; Peter denies \"I don't know the man\" three times. Perfect obedience and perfect failure are simultaneous."
         }
       }
     },
@@ -335,7 +343,6 @@
             "paragraph": "'Not as I will (thelō) but as you will (thelēma).' The Gethsemane prayer reveals two genuine wills — Jesus' human desire to avoid suffering and the Father's redemptive purpose. Obedience means aligning the human will with the divine when they conflict. This is the model for all Christian prayer."
           }
         ],
-        "ctx": "The first half moves through six scenes: the plot (vv.1-5), the anointing (vv.6-13), Judas's bargain (vv.14-16), the Last Supper (vv.17-29), prediction of scattering (vv.30-32), and Peter's boast (vv.33-35). The chapter's deepest irony: the highest act of worship (the unnamed woman's anointing) and the deepest betrayal (Judas's bargain) are placed side by side.",
         "tl": [
           {
             "date": "c. AD 30",
@@ -386,16 +393,18 @@
             "text": "\"Where do you want us to make preparations for you to eat the Passover?\" Jerusalem is the required location for the Passover. The upper room is in Jerusalem. The Last Supper, Gethsemane, the arrest, and the trials all occur within walking distance of each other."
           }
         ],
-        "cross": [
-          {
-            "ref": "Exod 24:8; Jer 31:31-34",
-            "note": "Blood of the covenant; new covenant -- the Last Supper cup combines both."
-          },
-          {
-            "ref": "Zech 13:7",
-            "note": "Strike the shepherd and the sheep scatter -- Jesus quotes Zechariah to interpret the coming desertion. Even the abandonment is within the prophetic script."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 24:8; Jer 31:31-34",
+              "note": "Blood of the covenant; new covenant -- the Last Supper cup combines both."
+            },
+            {
+              "ref": "Zech 13:7",
+              "note": "Strike the shepherd and the sheep scatter -- Jesus quotes Zechariah to interpret the coming desertion. Even the abandonment is within the prophetic script."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -464,6 +473,9 @@
               "note": "The Catena traces the theology of Gethsemane: Jesus's prayer ('let this cup pass, yet not as I will but as you will', v.39) is the text for the doctrine of Christ's human will. Maximus the Confessor developed the Gethsemane prayer as the foundation for asserting Christ's real human will genuinely submitted to the divine will. Monotheletism is refuted by this prayer."
             }
           ]
+        },
+        "hist": {
+          "context": "The first half moves through six scenes: the plot (vv.1-5), the anointing (vv.6-13), Judas's bargain (vv.14-16), the Last Supper (vv.17-29), prediction of scattering (vv.30-32), and Peter's boast (vv.33-35). The chapter's deepest irony: the highest act of worship (the unnamed woman's anointing) and the deepest betrayal (Judas's bargain) are placed side by side."
         }
       }
     },
@@ -481,7 +493,6 @@
             "paragraph": "Peter's threefold denial uses arneomai — the opposite of homologeō (confess). In 10:33, Jesus warned: 'whoever disowns (arneomai) me before others, I will disown before my Father.' Peter does exactly what he swore he would not do. The rooster's crow becomes the sound of self-knowledge."
           }
         ],
-        "ctx": "The second half holds together Gethsemane (vv.36-46), the arrest (vv.47-56), the Sanhedrin trial (vv.57-68), and Peter's denial (vv.69-75). The structural parallel is precise: Jesus prays \"not my will\" three times; Peter denies \"I don't know the man\" three times. Perfect obedience and perfect failure are simultaneous.",
         "tl": [
           {
             "date": "c. AD 30",
@@ -532,16 +543,18 @@
             "text": "After the arrest, Jesus is taken to Caiaphas's house for the night trial. Peter follows and denies three times in the courtyard. The high priest's domestic space becomes the site of both the covenant's condemnation and its witness's failure."
           }
         ],
-        "cross": [
-          {
-            "ref": "Isa 53:7",
-            "note": "He was oppressed yet did not open his mouth -- Jesus's silence before the Sanhedrin (v.63) enacts the Servant's silence."
-          },
-          {
-            "ref": "Ps 110:1; Dan 7:13",
-            "note": "Son of Man at the right hand of the Mighty One, coming on clouds -- Jesus combines both texts under oath. Either blasphemy or truth; no middle option."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 53:7",
+              "note": "He was oppressed yet did not open his mouth -- Jesus's silence before the Sanhedrin (v.63) enacts the Servant's silence."
+            },
+            {
+              "ref": "Ps 110:1; Dan 7:13",
+              "note": "Son of Man at the right hand of the Mighty One, coming on clouds -- Jesus combines both texts under oath. Either blasphemy or truth; no middle option."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -610,6 +623,9 @@
               "note": "Chrysostom on Peter's denial: the one who denied three times with oaths and curses became the one who preached three thousand to baptism at Pentecost. The Lord's foreknowledge of the denial and his prayer for Peter (Luke 22:32) transformed the failure into the foundation for the church's pastor."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half holds together Gethsemane (vv.36-46), the arrest (vv.47-56), the Sanhedrin trial (vv.57-68), and Peter's denial (vv.69-75). The structural parallel is precise: Jesus prays \"not my will\" three times; Peter denies \"I don't know the man\" three times. Perfect obedience and perfect failure are simultaneous."
         }
       }
     }

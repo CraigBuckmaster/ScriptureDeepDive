@@ -28,21 +28,22 @@
             "paragraph": "Today in the town of David a Savior has been born to you — the angel’s announcement uses all three great titles simultaneously: Savior (sōtēr), Messiah (Christos), Lord (Kyrios). Sōtēr was also a title of the Roman emperor and of the gods Asclepius and Zeus. Luke’s proclamation is a deliberate counter-claim: Caesar is not the savior; the child in the manger is."
           }
         ],
-        "ctx": "Luke anchors the birth of Jesus in the largest political reality of the first-century world: Caesar Augustus’s census. The universal decree creates the geographical necessity that brings Joseph and Mary from Nazareth to Bethlehem — fulfilling Micah 5:2 without Luke citing it. The manger and the shepherds are the Gospel’s first great reversal: the one the angels announce as Savior, Messiah, and Lord is found in an animal feeding trough by working-class field workers.",
-        "cross": [
-          {
-            "ref": "Mic 5:2",
-            "note": "But you, Bethlehem Ephrathah…out of you will come for me one who will be ruler over Israel — the prophecy Luke fulfils by the census mechanism without citing it."
-          },
-          {
-            "ref": "Isa 9:6",
-            "note": "For to us a child is born, to us a son is given… his name will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace — the messianic birth announcement Isaiah prefigured."
-          },
-          {
-            "ref": "Ps 72:7-8",
-            "note": "In his days may the righteous flourish and prosperity abound till the moon is no more. May he rule from sea to sea — the universal Davidic peace the angels announce."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mic 5:2",
+              "note": "But you, Bethlehem Ephrathah…out of you will come for me one who will be ruler over Israel — the prophecy Luke fulfils by the census mechanism without citing it."
+            },
+            {
+              "ref": "Isa 9:6",
+              "note": "For to us a child is born, to us a son is given… his name will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace — the messianic birth announcement Isaiah prefigured."
+            },
+            {
+              "ref": "Ps 72:7-8",
+              "note": "In his days may the righteous flourish and prosperity abound till the moon is no more. May he rule from sea to sea — the universal Davidic peace the angels announce."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -107,6 +108,9 @@
               "note": "Glory to God in the highest, and peace on earth — Augustine: the two movements of the angelic song define the whole pattern of redemption: the upward movement of glory to God, and the downward gift of peace to earth. These are not separate transactions but the same act viewed from two directions."
             }
           ]
+        },
+        "hist": {
+          "context": "Luke anchors the birth of Jesus in the largest political reality of the first-century world: Caesar Augustus’s census. The universal decree creates the geographical necessity that brings Joseph and Mary from Nazareth to Bethlehem — fulfilling Micah 5:2 without Luke citing it. The manger and the shepherds are the Gospel’s first great reversal: the one the angels announce as Savior, Messiah, and Lord is found in an animal feeding trough by working-class field workers."
         }
       }
     },
@@ -124,21 +128,22 @@
             "paragraph": "Sovereign Lord, now you may dismiss your servant in peace — the opening of the Nunc Dimittis. Apolysis (release/dismissal) is the word used for releasing a slave or a watchman from duty. Simeon has been standing watch, waiting for the consolation of Israel. Now that his eyes have seen the salvation, the watch is over. He can be released."
           }
         ],
-        "ctx": "The Presentation in the Temple brings the infant Jesus to Jerusalem for the first time — the city that will receive and reject and finally be judged by him. Simeon’s Nunc Dimittis is the third canticle of Luke’s infancy narrative and its most universally scoped: light for the Gentiles and glory for Israel. His prophecy to Mary (2:34-35) is the first shadow of the cross — a sword through her soul. The boy Jesus in the Temple at twelve is Luke’s only childhood story and his first direct speech.",
-        "cross": [
-          {
-            "ref": "Isa 42:6; 49:6",
-            "note": "I will make you a light for the Gentiles — the Servant Song texts that Simeon quotes in 2:32. Jesus is identified as the Servant of YHWH from his infancy."
-          },
-          {
-            "ref": "Lev 12:6-8",
-            "note": "The purification offering after childbirth — the pair of doves or two pigeons was the offering of the poor (2:24), indicating the family’s economic status."
-          },
-          {
-            "ref": "Mal 3:1",
-            "note": "The Lord you are seeking will come to his temple suddenly — the presentation is the literal first coming of the Lord to his Temple."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 42:6; 49:6",
+              "note": "I will make you a light for the Gentiles — the Servant Song texts that Simeon quotes in 2:32. Jesus is identified as the Servant of YHWH from his infancy."
+            },
+            {
+              "ref": "Lev 12:6-8",
+              "note": "The purification offering after childbirth — the pair of doves or two pigeons was the offering of the poor (2:24), indicating the family’s economic status."
+            },
+            {
+              "ref": "Mal 3:1",
+              "note": "The Lord you are seeking will come to his temple suddenly — the presentation is the literal first coming of the Lord to his Temple."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -203,6 +208,9 @@
               "note": "Anna the prophet — Chrysostom: Luke names Anna’s tribe (Asher), her years (84 in widowhood), and her practice (fasting and prayer night and day). This is not decoration but theological testimony: the one who first proclaims Jesus to the public is an elderly widow — the social category least likely to be taken seriously in the first century. God’s pattern of choosing the overlooked continues."
             }
           ]
+        },
+        "hist": {
+          "context": "The Presentation in the Temple brings the infant Jesus to Jerusalem for the first time — the city that will receive and reject and finally be judged by him. Simeon’s Nunc Dimittis is the third canticle of Luke’s infancy narrative and its most universally scoped: light for the Gentiles and glory for Israel. His prophecy to Mary (2:34-35) is the first shadow of the cross — a sword through her soul. The boy Jesus in the Temple at twelve is Luke’s only childhood story and his first direct speech."
         }
       }
     },
@@ -220,21 +228,22 @@
             "paragraph": "Today in the town of David a Savior has been born to you — the angel’s announcement uses all three great titles simultaneously: Savior (sōtēr), Messiah (Christos), Lord (Kyrios). Sōtēr was also a title of the Roman emperor and of the gods Asclepius and Zeus. Luke’s proclamation is a deliberate counter-claim: Caesar is not the savior; the child in the manger is."
           }
         ],
-        "ctx": "Luke anchors the birth of Jesus in the largest political reality of the first-century world: Caesar Augustus’s census. The universal decree creates the geographical necessity that brings Joseph and Mary from Nazareth to Bethlehem — fulfilling Micah 5:2 without Luke citing it. The manger and the shepherds are the Gospel’s first great reversal: the one the angels announce as Savior, Messiah, and Lord is found in an animal feeding trough by working-class field workers.",
-        "cross": [
-          {
-            "ref": "Mic 5:2",
-            "note": "But you, Bethlehem Ephrathah…out of you will come for me one who will be ruler over Israel — the prophecy Luke fulfils by the census mechanism without citing it."
-          },
-          {
-            "ref": "Isa 9:6",
-            "note": "For to us a child is born, to us a son is given… his name will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace — the messianic birth announcement Isaiah prefigured."
-          },
-          {
-            "ref": "Ps 72:7-8",
-            "note": "In his days may the righteous flourish and prosperity abound till the moon is no more. May he rule from sea to sea — the universal Davidic peace the angels announce."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mic 5:2",
+              "note": "But you, Bethlehem Ephrathah…out of you will come for me one who will be ruler over Israel — the prophecy Luke fulfils by the census mechanism without citing it."
+            },
+            {
+              "ref": "Isa 9:6",
+              "note": "For to us a child is born, to us a son is given… his name will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace — the messianic birth announcement Isaiah prefigured."
+            },
+            {
+              "ref": "Ps 72:7-8",
+              "note": "In his days may the righteous flourish and prosperity abound till the moon is no more. May he rule from sea to sea — the universal Davidic peace the angels announce."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -299,6 +308,9 @@
               "note": "Glory to God in the highest, and peace on earth — Augustine: the two movements of the angelic song define the whole pattern of redemption: the upward movement of glory to God, and the downward gift of peace to earth. These are not separate transactions but the same act viewed from two directions."
             }
           ]
+        },
+        "hist": {
+          "context": "Luke anchors the birth of Jesus in the largest political reality of the first-century world: Caesar Augustus’s census. The universal decree creates the geographical necessity that brings Joseph and Mary from Nazareth to Bethlehem — fulfilling Micah 5:2 without Luke citing it. The manger and the shepherds are the Gospel’s first great reversal: the one the angels announce as Savior, Messiah, and Lord is found in an animal feeding trough by working-class field workers."
         }
       }
     }

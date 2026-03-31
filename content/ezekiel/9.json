@@ -31,21 +31,22 @@
             "paragraph": "The man clothed in linen (baddim) wears priestly garments — linen is the fabric of holiness (Lev 16:4). This figure acts as both priest and scribe, marking the righteous for protection. He contrasts with the six executioners who follow him."
           }
         ],
-        "ctx": "God summons seven agents of judgment: one scribe in linen with a writing kit, and six executioners with destroying weapons. The scribe marks those who 'groan and lament' over Jerusalem's abominations — the remnant who share God's grief. The executioners then slaughter everyone without the mark, beginning at the sanctuary. Judgment starts at the house of God (cf. 1 Pet 4:17).",
-        "cross": [
-          {
-            "ref": "Exod 12:7-13",
-            "note": "The Passover blood on doorframes protected Israelites from the destroying angel — the tav mark echoes this protective sign."
-          },
-          {
-            "ref": "Rev 7:2-3",
-            "note": "Angels seal the servants of God on their foreheads before judgment falls — directly echoing Ezekiel's vision."
-          },
-          {
-            "ref": "1 Pet 4:17",
-            "note": "Judgment begins at the house of God — Peter's principle matches Ezekiel 9:6, where the slaughter starts at the sanctuary."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 12:7-13",
+              "note": "The Passover blood on doorframes protected Israelites from the destroying angel — the tav mark echoes this protective sign."
+            },
+            {
+              "ref": "Rev 7:2-3",
+              "note": "Angels seal the servants of God on their foreheads before judgment falls — directly echoing Ezekiel's vision."
+            },
+            {
+              "ref": "1 Pet 4:17",
+              "note": "Judgment begins at the house of God — Peter's principle matches Ezekiel 9:6, where the slaughter starts at the sanctuary."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Zimmerli sees the seven figures as the divine council executing judgment — a heavenly court scene enacted on earth. The man in linen serves as the mediating figure between the divine throne (ch. 1) and the human city, combining priestly and scribal functions."
             }
           ]
+        },
+        "hist": {
+          "context": "God summons seven agents of judgment: one scribe in linen with a writing kit, and six executioners with destroying weapons. The scribe marks those who 'groan and lament' over Jerusalem's abominations — the remnant who share God's grief. The executioners then slaughter everyone without the mark, beginning at the sanctuary. Judgment starts at the house of God (cf. 1 Pet 4:17)."
         }
       }
     },
@@ -123,17 +127,18 @@
             "paragraph": "Ezekiel cries out: 'Will you destroy the entire remnant (she'erit) of Israel?' This is one of only two times Ezekiel intercedes (cf. 11:13). Unlike Abraham bargaining for Sodom or Moses interceding for Israel, Ezekiel's intercession receives no concession — God's response is absolute. The sin of Judah and Israel is 'exceedingly great.'"
           }
         ],
-        "ctx": "Ezekiel falls facedown and intercedes — but God refuses. The blood guilt (damim) filling the land and the perversion of justice in the city have made intercession futile. This is the prophetic counterpart to Jeremiah 7:16 and 14:11, where God told Jeremiah not to pray for the people. The age of intercession has passed; the age of judgment has arrived.",
-        "cross": [
-          {
-            "ref": "Gen 18:23-32",
-            "note": "Abraham interceded for Sodom and found less than ten righteous — Ezekiel faces a similar moment but receives a harsher answer."
-          },
-          {
-            "ref": "Jer 7:16",
-            "note": "God told Jeremiah: 'Do not pray for this people' — both prophets learn that intercession has limits when judgment is decreed."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 18:23-32",
+              "note": "Abraham interceded for Sodom and found less than ten righteous — Ezekiel faces a similar moment but receives a harsher answer."
+            },
+            {
+              "ref": "Jer 7:16",
+              "note": "God told Jeremiah: 'Do not pray for this people' — both prophets learn that intercession has limits when judgment is decreed."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -182,6 +187,9 @@
               "note": "Zimmerli highlights the theological irony: the people claimed 'YHWH has forsaken the land' (8:12, 9:9) to justify idolatry, but it is their idolatry that will cause YHWH to forsake the land. Their self-fulfilling theology brings about the very abandonment they assumed had already occurred."
             }
           ]
+        },
+        "hist": {
+          "context": "Ezekiel falls facedown and intercedes — but God refuses. The blood guilt (damim) filling the land and the perversion of justice in the city have made intercession futile. This is the prophetic counterpart to Jeremiah 7:16 and 14:11, where God told Jeremiah not to pray for the people. The age of intercession has passed; the age of judgment has arrived."
         }
       }
     }

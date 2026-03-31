@@ -28,21 +28,22 @@
             "paragraph": "\"But whose delight is in the law (torâ) of the LORD\" (v.2). Torâ means instruction, guidance, teaching — broader than legal code. The blessed person meditates on it day and night. The tree image follows: planted by water, yielding fruit, leaf unfading. Torah is the water; the person is the tree."
           }
         ],
-        "ctx": "Psalm 1 is the gateway to the entire Psalter. It establishes the fundamental choice: the way of the righteous or the way of the wicked. The righteous person is compared to a tree planted by streams of water (v.3) — rooted, fruitful, enduring. The psalm is not a prayer but a wisdom poem, linking the Psalter to the wisdom tradition (Proverbs, Job, Ecclesiastes).",
-        "cross": [
-          {
-            "ref": "Jer 17:7–8",
-            "note": "\"Blessed is the one who trusts in the LORD... like a tree planted by the water\" — the same tree image."
-          },
-          {
-            "ref": "Josh 1:8",
-            "note": "\"Meditate on it day and night\" — the same Torah-meditation command."
-          },
-          {
-            "ref": "Matt 7:24–27",
-            "note": "The wise and foolish builders — Jesus’ version of the two ways."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 17:7–8",
+              "note": "\"Blessed is the one who trusts in the LORD... like a tree planted by the water\" — the same tree image."
+            },
+            {
+              "ref": "Josh 1:8",
+              "note": "\"Meditate on it day and night\" — the same Torah-meditation command."
+            },
+            {
+              "ref": "Matt 7:24–27",
+              "note": "The wise and foolish builders — Jesus’ version of the two ways."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -137,6 +138,9 @@
               "note": "Goldingay: \"whatever they do prospers\" is a general principle, not an absolute promise. The wisdom tradition knows exceptions (Job, Ecclesiastes). Psalm 1 states the norm; other psalms explore the exceptions."
             }
           ]
+        },
+        "hist": {
+          "context": "Psalm 1 is the gateway to the entire Psalter. It establishes the fundamental choice: the way of the righteous or the way of the wicked. The righteous person is compared to a tree planted by streams of water (v.3) — rooted, fruitful, enduring. The psalm is not a prayer but a wisdom poem, linking the Psalter to the wisdom tradition (Proverbs, Job, Ecclesiastes)."
         }
       }
     },
@@ -154,17 +158,18 @@
             "paragraph": "\"Not so the wicked! They are like chaff (mōṣ) that the wind blows away\" (v.4). The contrast is total: tree vs chaff. Rooted vs rootless. Fruitful vs empty. Enduring vs blown away. Chaff is the waste product of threshing — weightless husks separated from the grain. The wicked have no substance."
           }
         ],
-        "ctx": "The psalm’s second half inverts every image from the first. The righteous are rooted; the wicked are airborne. The righteous bear fruit; the wicked are waste. The righteous endure judgment; the wicked cannot stand (v.5). The LORD \"watches over\" (knows, attends to) the way of the righteous, but the way of the wicked leads to destruction (v.6). The psalm’s final word is “perish” — the Psalter opens with blessing and closes its first poem with warning.",
-        "cross": [
-          {
-            "ref": "Matt 3:12",
-            "note": "\"His winnowing fork is in his hand, and he will clear his threshing floor\" — the same chaff-and-grain separation."
-          },
-          {
-            "ref": "Ps 37:1–2",
-            "note": "\"Do not fret because of the wicked... they will soon wither like the grass\" — the same impermanence."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 3:12",
+              "note": "\"His winnowing fork is in his hand, and he will clear his threshing floor\" — the same chaff-and-grain separation."
+            },
+            {
+              "ref": "Ps 37:1–2",
+              "note": "\"Do not fret because of the wicked... they will soon wither like the grass\" — the same impermanence."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -255,6 +260,9 @@
               "note": "Goldingay: \"perish\" (ʾabad) is the psalm’s last word. The Psalter’s first poem ends with destruction. This is not vindictiveness but honesty: the way without God has no destination."
             }
           ]
+        },
+        "hist": {
+          "context": "The psalm’s second half inverts every image from the first. The righteous are rooted; the wicked are airborne. The righteous bear fruit; the wicked are waste. The righteous endure judgment; the wicked cannot stand (v.5). The LORD \"watches over\" (knows, attends to) the way of the righteous, but the way of the wicked leads to destruction (v.6). The psalm’s final word is “perish” — the Psalter opens with blessing and closes its first poem with warning."
         }
       }
     }

@@ -31,21 +31,22 @@
             "paragraph": "God’s command to Moses: speak to the rock. The contrast with Exod 17 is significant — there God commanded Moses to strike the rock; here he commands speech. Moses strikes twice instead. The failure is one of disobedience in method, not in faith in God’s provision."
           }
         ],
-        "ctx": "Numbers 20 is one of the Torah’s most theologically dense chapters. Three events in rapid succession: Miriam’s death (v.1 — two words in Hebrew, no mourning recorded), the water crisis at Kadesh (vv.2–13), and Aaron’s death at Mount Hor (vv.22–29). The water crisis produces Moses’s sin — he strikes the rock twice and says \"Must we bring you water?\" (v.10), taking credit for God’s provision. God’s verdict: \"Because you did not trust me enough to honour me as holy in the sight of the Israelites, you will not bring this community into the land.\" The greatest leader in Israel’s history is disqualified from the promised land for one act of public unbelief. The place is named Meribah — \"quarrelling.\"",
-        "cross": [
-          {
-            "ref": "Heb 3:16–4:2",
-            "note": "\"Who were they who heard and rebelled? Were they not all those Moses led out of Egypt?\" Moses’s disqualification and the generation’s disqualification share the same root: unbelief that dishonours God’s holiness at the critical moment."
-          },
-          {
-            "ref": "1 Cor 10:4",
-            "note": "\"They drank from the spiritual rock that accompanied them, and that rock was Christ.\" Paul identifies the water-giving rock as a type of Christ — the one struck for Israel’s sake whose provision follows them through the wilderness."
-          },
-          {
-            "ref": "Ps 106:32–33",
-            "note": "\"By the waters of Meribah they angered the Lord, and trouble came to Moses because of them; for they rebelled against the Spirit of God, and rash words came from Moses’ lips.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 3:16–4:2",
+              "note": "\"Who were they who heard and rebelled? Were they not all those Moses led out of Egypt?\" Moses’s disqualification and the generation’s disqualification share the same root: unbelief that dishonours God’s holiness at the critical moment."
+            },
+            {
+              "ref": "1 Cor 10:4",
+              "note": "\"They drank from the spiritual rock that accompanied them, and that rock was Christ.\" Paul identifies the water-giving rock as a type of Christ — the one struck for Israel’s sake whose provision follows them through the wilderness."
+            },
+            {
+              "ref": "Ps 106:32–33",
+              "note": "\"By the waters of Meribah they angered the Lord, and trouble came to Moses because of them; for they rebelled against the Spirit of God, and rash words came from Moses’ lips.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Ashley: The narrative context of Meribah and Aaron's death in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Numbers 20 is one of the Torah’s most theologically dense chapters. Three events in rapid succession: Miriam’s death (v.1 — two words in Hebrew, no mourning recorded), the water crisis at Kadesh (vv.2–13), and Aaron’s death at Mount Hor (vv.22–29). The water crisis produces Moses’s sin — he strikes the rock twice and says \"Must we bring you water?\" (v.10), taking credit for God’s provision. God’s verdict: \"Because you did not trust me enough to honour me as holy in the sight of the Israelites, you will not bring this community into the land.\" The greatest leader in Israel’s history is disqualified from the promised land for one act of public unbelief. The place is named Meribah — \"quarrelling.\""
         }
       }
     },
@@ -127,17 +131,18 @@
             "paragraph": "Edom’s refusal to grant passage — a family betrayal. Edom is Israel’s brother (Esau’s descendants); their refusal to help their kin in the wilderness is a covenant of kinship broken, a theme the prophets will return to repeatedly (Amos 1:11; Obad 10–14)."
           }
         ],
-        "ctx": "Israel requests permission to pass through Edom on the King’s Highway. Moses’s message to Edom (vv.14–17) is a masterpiece of diplomatic humility: \"your brother Israel,\" a summary of the Egyptian suffering, a promise not to use fields or water, an offer to pay for anything consumed. Edom refuses, threatens with the sword, and Israel turns away. Then Aaron dies on Mount Hor — stripped of his priestly garments, which are transferred to Eleazar his son. Aaron dies clothed in his office’s absence; Eleazar inherits the office stripped from his father. The chapter ends in mourning: \"the whole house of Israel mourned for Aaron thirty days.\"",
-        "cross": [
-          {
-            "ref": "Obad 10–14",
-            "note": "\"Because of the violence against your brother Jacob, you will be covered with shame; you will be destroyed forever.\" Obadiah’s prophecy against Edom directly addresses the Num 20 refusal and its generational consequences."
-          },
-          {
-            "ref": "Heb 7:23–24",
-            "note": "\"Now there have been many of those priests, since death prevented them from continuing in office; but because Jesus lives forever, he has a permanent priesthood.\" The transfer from Aaron to Eleazar (death preventing continuation) is the type of the contrast with Christ’s permanent priesthood."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Obad 10–14",
+              "note": "\"Because of the violence against your brother Jacob, you will be covered with shame; you will be destroyed forever.\" Obadiah’s prophecy against Edom directly addresses the Num 20 refusal and its generational consequences."
+            },
+            {
+              "ref": "Heb 7:23–24",
+              "note": "\"Now there have been many of those priests, since death prevented them from continuing in office; but because Jesus lives forever, he has a permanent priesthood.\" The transfer from Aaron to Eleazar (death preventing continuation) is the type of the contrast with Christ’s permanent priesthood."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -210,6 +215,9 @@
               "note": "Ashley: The narrative context of Meribah and Aaron's death in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Israel requests permission to pass through Edom on the King’s Highway. Moses’s message to Edom (vv.14–17) is a masterpiece of diplomatic humility: \"your brother Israel,\" a summary of the Egyptian suffering, a promise not to use fields or water, an offer to pay for anything consumed. Edom refuses, threatens with the sword, and Israel turns away. Then Aaron dies on Mount Hor — stripped of his priestly garments, which are transferred to Eleazar his son. Aaron dies clothed in his office’s absence; Eleazar inherits the office stripped from his father. The chapter ends in mourning: \"the whole house of Israel mourned for Aaron thirty days.\""
         }
       }
     }

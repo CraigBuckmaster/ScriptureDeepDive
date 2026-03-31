@@ -28,21 +28,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Capernaum</div><div class=\"poi-coords\">Northwest shore of Sea of Galilee; ministry base</div><div class=\"poi-text\">The centurion’s story is set here. Capernaum is the Gentile-encounter city: the centurion builds the synagogue, demonstrating that the Gentile mission begins at Jesus’s own base.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Nain</div><div class=\"poi-coords\">Village in lower Galilee, near Jezreel Valley; c.40km south of Capernaum</div><div class=\"poi-text\">The only occurrence of Nain in the NT. The resurrection of the widow’s son occurs here — echoing Elijah’s resurrection of the widow’s son at Zarephath (1 Kings 17). Luke has already cited this precedent in 4:26.</div></div>"
         },
-        "ctx": "Luke 7 presents three encounters that address the question of Jesus’s identity from different angles: the centurion (Gentile military faith), the widow of Nain (the resurrection of the dead), and John’s messengers (the fulfilment of the Isaiah programme). Jesus’s answer to John catalogues the signs of the messianic age — drawn from Isa 35 and 61 — and ends with the beatitude of non-stumbling (7:23).",
-        "cross": [
-          {
-            "ref": "Isa 35:5-6",
-            "note": "Then will the eyes of the blind be opened and the ears of the deaf unstopped — the messianic catalogue Jesus recites to John’s messengers."
-          },
-          {
-            "ref": "1 Kings 17:23",
-            "note": "And Elijah gave him to his mother — the exact phrase Luke uses after the Nain resurrection (7:15). The Elijah pattern is explicit."
-          },
-          {
-            "ref": "Mal 3:1",
-            "note": "I will send my messenger ahead of you — the Malachi text Jesus quotes about John."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 35:5-6",
+              "note": "Then will the eyes of the blind be opened and the ears of the deaf unstopped — the messianic catalogue Jesus recites to John’s messengers."
+            },
+            {
+              "ref": "1 Kings 17:23",
+              "note": "And Elijah gave him to his mother — the exact phrase Luke uses after the Nain resurrection (7:15). The Elijah pattern is explicit."
+            },
+            {
+              "ref": "Mal 3:1",
+              "note": "I will send my messenger ahead of you — the Malachi text Jesus quotes about John."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -107,6 +108,9 @@
               "note": "A friend of tax collectors and sinners — Chrysostom: the accusation is a Christological title. What his accusers mean as an insult is precisely what he is: the friend of those whom the religious system has placed beyond friendship. The slander is the gospel."
             }
           ]
+        },
+        "hist": {
+          "context": "Luke 7 presents three encounters that address the question of Jesus’s identity from different angles: the centurion (Gentile military faith), the widow of Nain (the resurrection of the dead), and John’s messengers (the fulfilment of the Isaiah programme). Jesus’s answer to John catalogues the signs of the messianic age — drawn from Isa 35 and 61 — and ends with the beatitude of non-stumbling (7:23)."
         }
       }
     },
@@ -127,21 +131,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Capernaum</div><div class=\"poi-coords\">Northwest shore of Sea of Galilee; ministry base</div><div class=\"poi-text\">The centurion’s story is set here. Capernaum is the Gentile-encounter city: the centurion builds the synagogue, demonstrating that the Gentile mission begins at Jesus’s own base.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Nain</div><div class=\"poi-coords\">Village in lower Galilee, near Jezreel Valley; c.40km south of Capernaum</div><div class=\"poi-text\">The only occurrence of Nain in the NT. The resurrection of the widow’s son occurs here — echoing Elijah’s resurrection of the widow’s son at Zarephath (1 Kings 17). Luke has already cited this precedent in 4:26.</div></div>"
         },
-        "ctx": "Luke’s anointing scene is unique in several respects from the parallel accounts in Matthew, Mark, and John: the woman is explicitly called a sinner (not Mary of Bethany), the setting is earlier in the ministry, and Jesus’s teaching focus is on the connection between forgiveness and love. The parable of the two debtors (7:41-43) is the interpretive key: the woman’s extravagant love is the evidence of her great forgiveness, not its cause.",
-        "cross": [
-          {
-            "ref": "Prov 31:30",
-            "note": "Charm is deceptive, beauty is fleeting — the contrast between Simon’s transactional hospitality and the woman’s extravagant love."
-          },
-          {
-            "ref": "Song 1:2",
-            "note": "Let him kiss me with the kisses of his mouth — the erotic language of the woman’s devotion redirected into the language of covenant love."
-          },
-          {
-            "ref": "Ps 51:1-3",
-            "note": "Have mercy on me, O God; blot out my transgressions — the penitent prayer that the woman’s weeping enacts."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 31:30",
+              "note": "Charm is deceptive, beauty is fleeting — the contrast between Simon’s transactional hospitality and the woman’s extravagant love."
+            },
+            {
+              "ref": "Song 1:2",
+              "note": "Let him kiss me with the kisses of his mouth — the erotic language of the woman’s devotion redirected into the language of covenant love."
+            },
+            {
+              "ref": "Ps 51:1-3",
+              "note": "Have mercy on me, O God; blot out my transgressions — the penitent prayer that the woman’s weeping enacts."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -206,6 +211,9 @@
               "note": "The parable of the two debtors — Origen: both debtors are forgiven — the one who owed five hundred and the one who owed fifty. The parable insists that no one leaves the encounter unforgiven; the difference is in the recognition of what has been received."
             }
           ]
+        },
+        "hist": {
+          "context": "Luke’s anointing scene is unique in several respects from the parallel accounts in Matthew, Mark, and John: the woman is explicitly called a sinner (not Mary of Bethany), the setting is earlier in the ministry, and Jesus’s teaching focus is on the connection between forgiveness and love. The parable of the two debtors (7:41-43) is the interpretive key: the woman’s extravagant love is the evidence of her great forgiveness, not its cause."
         }
       }
     },
@@ -226,21 +234,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Capernaum</div><div class=\"poi-coords\">Northwest shore of Sea of Galilee; ministry base</div><div class=\"poi-text\">The centurion’s story is set here. Capernaum is the Gentile-encounter city: the centurion builds the synagogue, demonstrating that the Gentile mission begins at Jesus’s own base.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Nain</div><div class=\"poi-coords\">Village in lower Galilee, near Jezreel Valley; c.40km south of Capernaum</div><div class=\"poi-text\">The only occurrence of Nain in the NT. The resurrection of the widow’s son occurs here — echoing Elijah’s resurrection of the widow’s son at Zarephath (1 Kings 17). Luke has already cited this precedent in 4:26.</div></div>"
         },
-        "ctx": "Luke 7 presents three encounters that address the question of Jesus’s identity from different angles: the centurion (Gentile military faith), the widow of Nain (the resurrection of the dead), and John’s messengers (the fulfilment of the Isaiah programme). Jesus’s answer to John catalogues the signs of the messianic age — drawn from Isa 35 and 61 — and ends with the beatitude of non-stumbling (7:23).",
-        "cross": [
-          {
-            "ref": "Isa 35:5-6",
-            "note": "Then will the eyes of the blind be opened and the ears of the deaf unstopped — the messianic catalogue Jesus recites to John’s messengers."
-          },
-          {
-            "ref": "1 Kings 17:23",
-            "note": "And Elijah gave him to his mother — the exact phrase Luke uses after the Nain resurrection (7:15). The Elijah pattern is explicit."
-          },
-          {
-            "ref": "Mal 3:1",
-            "note": "I will send my messenger ahead of you — the Malachi text Jesus quotes about John."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 35:5-6",
+              "note": "Then will the eyes of the blind be opened and the ears of the deaf unstopped — the messianic catalogue Jesus recites to John’s messengers."
+            },
+            {
+              "ref": "1 Kings 17:23",
+              "note": "And Elijah gave him to his mother — the exact phrase Luke uses after the Nain resurrection (7:15). The Elijah pattern is explicit."
+            },
+            {
+              "ref": "Mal 3:1",
+              "note": "I will send my messenger ahead of you — the Malachi text Jesus quotes about John."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -305,6 +314,9 @@
               "note": "A friend of tax collectors and sinners — Chrysostom: the accusation is a Christological title. What his accusers mean as an insult is precisely what he is: the friend of those whom the religious system has placed beyond friendship. The slander is the gospel."
             }
           ]
+        },
+        "hist": {
+          "context": "Luke 7 presents three encounters that address the question of Jesus’s identity from different angles: the centurion (Gentile military faith), the widow of Nain (the resurrection of the dead), and John’s messengers (the fulfilment of the Isaiah programme). Jesus’s answer to John catalogues the signs of the messianic age — drawn from Isa 35 and 61 — and ends with the beatitude of non-stumbling (7:23)."
         }
       }
     },
@@ -325,21 +337,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Capernaum</div><div class=\"poi-coords\">Northwest shore of Sea of Galilee; ministry base</div><div class=\"poi-text\">The centurion’s story is set here. Capernaum is the Gentile-encounter city: the centurion builds the synagogue, demonstrating that the Gentile mission begins at Jesus’s own base.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Nain</div><div class=\"poi-coords\">Village in lower Galilee, near Jezreel Valley; c.40km south of Capernaum</div><div class=\"poi-text\">The only occurrence of Nain in the NT. The resurrection of the widow’s son occurs here — echoing Elijah’s resurrection of the widow’s son at Zarephath (1 Kings 17). Luke has already cited this precedent in 4:26.</div></div>"
         },
-        "ctx": "Luke’s anointing scene is unique in several respects from the parallel accounts in Matthew, Mark, and John: the woman is explicitly called a sinner (not Mary of Bethany), the setting is earlier in the ministry, and Jesus’s teaching focus is on the connection between forgiveness and love. The parable of the two debtors (7:41-43) is the interpretive key: the woman’s extravagant love is the evidence of her great forgiveness, not its cause.",
-        "cross": [
-          {
-            "ref": "Prov 31:30",
-            "note": "Charm is deceptive, beauty is fleeting — the contrast between Simon’s transactional hospitality and the woman’s extravagant love."
-          },
-          {
-            "ref": "Song 1:2",
-            "note": "Let him kiss me with the kisses of his mouth — the erotic language of the woman’s devotion redirected into the language of covenant love."
-          },
-          {
-            "ref": "Ps 51:1-3",
-            "note": "Have mercy on me, O God; blot out my transgressions — the penitent prayer that the woman’s weeping enacts."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 31:30",
+              "note": "Charm is deceptive, beauty is fleeting — the contrast between Simon’s transactional hospitality and the woman’s extravagant love."
+            },
+            {
+              "ref": "Song 1:2",
+              "note": "Let him kiss me with the kisses of his mouth — the erotic language of the woman’s devotion redirected into the language of covenant love."
+            },
+            {
+              "ref": "Ps 51:1-3",
+              "note": "Have mercy on me, O God; blot out my transgressions — the penitent prayer that the woman’s weeping enacts."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -404,6 +417,9 @@
               "note": "The parable of the two debtors — Origen: both debtors are forgiven — the one who owed five hundred and the one who owed fifty. The parable insists that no one leaves the encounter unforgiven; the difference is in the recognition of what has been received."
             }
           ]
+        },
+        "hist": {
+          "context": "Luke’s anointing scene is unique in several respects from the parallel accounts in Matthew, Mark, and John: the woman is explicitly called a sinner (not Mary of Bethany), the setting is earlier in the ministry, and Jesus’s teaching focus is on the connection between forgiveness and love. The parable of the two debtors (7:41-43) is the interpretive key: the woman’s extravagant love is the evidence of her great forgiveness, not its cause."
         }
       }
     }

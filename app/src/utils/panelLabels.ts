@@ -12,9 +12,9 @@ import { scholars as scholarColors } from '../theme/colors';
 const PANEL_LABELS: Record<string, string> = {
   // Section-level
   heb: 'Hebrew',
-  hist: 'History',
+  hist: 'Context',
   ctx: 'Context',
-  cross: 'Cross-Ref',
+  cross: 'Connections',
   poi: 'Places',
   tl: 'Timeline',
   places: 'Places',
@@ -145,7 +145,7 @@ export function isScholarPanel(type: string): boolean {
  * Scholar panels inserted after cross, before poi/tl.
  */
 export const SECTION_PANEL_ORDER = [
-  'heb', 'hist', 'ctx', 'cross',
+  'heb', 'hist', 'cross',
   // ... scholars inserted dynamically ...
   'poi', 'tl', 'places',
 ];

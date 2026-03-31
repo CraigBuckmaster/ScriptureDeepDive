@@ -37,21 +37,22 @@
             "paragraph": "The phrase rosh nesi is debated: 'chief prince' (NIV, taking rosh as an adjective) or 'prince of Rosh, Meshech and Tubal' (taking Rosh as a proper noun). Meshech and Tubal are Anatolian peoples known from Assyrian records. The coalition geography spreads across the far north, making Gog a figure of cosmic, not merely political, threat."
           }
         ],
-        "ctx": "The Gog oracles (chs. 38-39) are among the most debated passages in the Bible. Placed between the restoration promises (chs. 33-37) and the temple vision (chs. 40-48), they describe a final assault against restored Israel by a vast northern coalition. The coalition includes Persia, Cush, Put, Gomer, and Beth-Togarmah — peoples from the Table of Nations (Gen 10) representing the extremities of the known world. Interpretive options include: (1) a historical reference to Scythian or Babylonian threats, (2) a prophetic forecast of a specific end-times invasion, (3) an apocalyptic symbol of the final conflict between God and all anti-God forces. What is clear is the theological function: God's restored people will face one last threat, and God Himself will defeat it decisively, establishing permanent security before the temple is built.",
-        "cross": [
-          {
-            "ref": "Gen 10:2",
-            "note": "Magog, Meshech, and Tubal appear in the Table of Nations as sons of Japheth, placing them in the far north of the ancient world. Ezekiel draws on this primeval geography to construct Gog's coalition."
-          },
-          {
-            "ref": "Rev 20:7-10",
-            "note": "John draws directly on Ezekiel 38-39, using 'Gog and Magog' as shorthand for the final rebellion of the nations against God's people after the millennium. The apocalyptic reading of Ezekiel's oracle is thus canonical."
-          },
-          {
-            "ref": "Isa 14:13",
-            "note": "The 'far north' (tsaphon) in prophetic literature is the direction from which cosmic evil comes, echoing Canaanite mythology of the divine mountain in the north. Gog comes from the 'far reaches of the north' (v. 6)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 10:2",
+              "note": "Magog, Meshech, and Tubal appear in the Table of Nations as sons of Japheth, placing them in the far north of the ancient world. Ezekiel draws on this primeval geography to construct Gog's coalition."
+            },
+            {
+              "ref": "Rev 20:7-10",
+              "note": "John draws directly on Ezekiel 38-39, using 'Gog and Magog' as shorthand for the final rebellion of the nations against God's people after the millennium. The apocalyptic reading of Ezekiel's oracle is thus canonical."
+            },
+            {
+              "ref": "Isa 14:13",
+              "note": "The 'far north' (tsaphon) in prophetic literature is the direction from which cosmic evil comes, echoing Canaanite mythology of the divine mountain in the north. Gog comes from the 'far reaches of the north' (v. 6)."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -104,6 +105,9 @@
               "note": "Zimmerli locates the Gog oracle within the genre of Voelkerkampf (battle of nations) tradition, where cosmic enemies attack the divine city and are defeated by God. This genre appears in Psalms 46, 48, and 76, and in Isaiah 17:12-14. Ezekiel transforms the tradition by placing it after restoration rather than before it, creating an eschatological sequel: even after Israel is restored, one final threat remains, and God must deal with it."
             }
           ]
+        },
+        "hist": {
+          "context": "The Gog oracles (chs. 38-39) are among the most debated passages in the Bible. Placed between the restoration promises (chs. 33-37) and the temple vision (chs. 40-48), they describe a final assault against restored Israel by a vast northern coalition. The coalition includes Persia, Cush, Put, Gomer, and Beth-Togarmah — peoples from the Table of Nations (Gen 10) representing the extremities of the known world. Interpretive options include: (1) a historical reference to Scythian or Babylonian threats, (2) a prophetic forecast of a specific end-times invasion, (3) an apocalyptic symbol of the final conflict between God and all anti-God forces. What is clear is the theological function: God's restored people will face one last threat, and God Himself will defeat it decisively, establishing permanent security before the temple is built."
         }
       }
     },
@@ -121,17 +125,18 @@
             "paragraph": "The combination of machashavah (thought, plan, device) with ra'ah (evil) reveals Gog's interior motivation: calculated predation. He targets Israel precisely because they are at peace, living in 'unwalled villages' (v. 11). The restored community's vulnerability is not weakness but trust in God, and Gog exploits that trust. The Hebrew emphasizes the premeditated character of the attack."
           }
         ],
-        "ctx": "Gog's motive is exposed: he sees restored Israel living securely, without walls, and devises a plan to plunder them. The 'unwalled villages' (v. 11) describe a people so confident in God's protection that they need no fortifications. This peaceful vulnerability is the trigger for Gog's greed. Sheba, Dedan, and the merchants of Tarshish (v. 13) question Gog's intentions, implying that the commercial world recognizes the predatory nature of the invasion. The theological irony is sharp: God has orchestrated the invasion to display His power (v. 16), so Gog's evil scheme is simultaneously genuine evil and divine instrument.",
-        "cross": [
-          {
-            "ref": "Zech 2:4-5",
-            "note": "Zechariah's vision of Jerusalem as an unwalled city with God as a wall of fire around it parallels Ezekiel's unwalled villages. Both prophets see divine protection as replacing physical fortification."
-          },
-          {
-            "ref": "Ps 2:1-4",
-            "note": "The nations raging against the LORD and His anointed, while God laughs from heaven. The pattern is identical to Ezekiel 38: hostile nations assemble, and God responds with devastating power."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Zech 2:4-5",
+              "note": "Zechariah's vision of Jerusalem as an unwalled city with God as a wall of fire around it parallels Ezekiel's unwalled villages. Both prophets see divine protection as replacing physical fortification."
+            },
+            {
+              "ref": "Ps 2:1-4",
+              "note": "The nations raging against the LORD and His anointed, while God laughs from heaven. The pattern is identical to Ezekiel 38: hostile nations assemble, and God responds with devastating power."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -180,6 +185,9 @@
               "note": "Zimmerli identifies the 'evil plan' motif as connecting to the broader prophetic critique of hubris (cf. Isa 10:7-15, where Assyria is both God's instrument and morally culpable). The theological paradox of divine sovereignty and human guilt is central to Ezekiel's eschatology."
             }
           ]
+        },
+        "hist": {
+          "context": "Gog's motive is exposed: he sees restored Israel living securely, without walls, and devises a plan to plunder them. The 'unwalled villages' (v. 11) describe a people so confident in God's protection that they need no fortifications. This peaceful vulnerability is the trigger for Gog's greed. Sheba, Dedan, and the merchants of Tarshish (v. 13) question Gog's intentions, implying that the commercial world recognizes the predatory nature of the invasion. The theological irony is sharp: God has orchestrated the invasion to display His power (v. 16), so Gog's evil scheme is simultaneously genuine evil and divine instrument."
         }
       }
     },
@@ -197,21 +205,22 @@
             "paragraph": "The noun chemah (heat, fury, venom) is one of the strongest words for divine anger in Hebrew. Combined with the verb 'goes up in my face' (v. 18), it creates an image of rage so intense it is physically visible. This is the 'great earthquake' (v. 19), cosmic shaking response that shatters mountains and topples walls."
           }
         ],
-        "ctx": "God's response to Gog's invasion is cataclysmic. The sequence escalates: great earthquake (v. 19), mountains overthrown (v. 20), confusion among Gog's troops (v. 21), plague and bloodshed (v. 22), torrents of rain, hailstones, and burning sulfur (v. 22). Every category of divine judgment is deployed simultaneously. The language echoes the plagues of Egypt, the destruction of Sodom, and the cosmic theophany at Sinai. God fights this battle alone; Israel does nothing. The chapter closes with the recognition formula expanded to all nations (v. 23): this is not a local skirmish but a cosmic demonstration of divine power.",
-        "cross": [
-          {
-            "ref": "Exod 9:22-26",
-            "note": "Hail and fire from heaven in the Egyptian plagues. God uses the same weapons against Gog that He used against Pharaoh: the exodus pattern repeats in the eschatological battle."
-          },
-          {
-            "ref": "Gen 19:24",
-            "note": "Burning sulfur on Sodom. The destruction of Gog echoes the destruction of Sodom, connecting the two as paradigmatic acts of divine judgment against overwhelming evil."
-          },
-          {
-            "ref": "Rev 20:9",
-            "note": "Fire from heaven consuming Gog and Magog in Revelation. John borrows Ezekiel's imagery wholesale, confirming the eschatological reading."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 9:22-26",
+              "note": "Hail and fire from heaven in the Egyptian plagues. God uses the same weapons against Gog that He used against Pharaoh: the exodus pattern repeats in the eschatological battle."
+            },
+            {
+              "ref": "Gen 19:24",
+              "note": "Burning sulfur on Sodom. The destruction of Gog echoes the destruction of Sodom, connecting the two as paradigmatic acts of divine judgment against overwhelming evil."
+            },
+            {
+              "ref": "Rev 20:9",
+              "note": "Fire from heaven consuming Gog and Magog in Revelation. John borrows Ezekiel's imagery wholesale, confirming the eschatological reading."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -260,6 +269,9 @@
               "note": "Zimmerli identifies the theophanic judgment sequence as drawing on the Chaoskampf (battle against chaos) tradition: God fights cosmic enemies with cosmic weapons. The earthquake-fire-hail triad belongs to the oldest layers of Israelite theophanic poetry (cf. Judg 5; Ps 18). Ezekiel adapts ancient war poetry into eschatological prophecy."
             }
           ]
+        },
+        "hist": {
+          "context": "God's response to Gog's invasion is cataclysmic. The sequence escalates: great earthquake (v. 19), mountains overthrown (v. 20), confusion among Gog's troops (v. 21), plague and bloodshed (v. 22), torrents of rain, hailstones, and burning sulfur (v. 22). Every category of divine judgment is deployed simultaneously. The language echoes the plagues of Egypt, the destruction of Sodom, and the cosmic theophany at Sinai. God fights this battle alone; Israel does nothing. The chapter closes with the recognition formula expanded to all nations (v. 23): this is not a local skirmish but a cosmic demonstration of divine power."
         }
       }
     }

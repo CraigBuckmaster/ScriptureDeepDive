@@ -31,17 +31,18 @@
             "paragraph": "With the ṣĕnûʿîm comes wisdom (v. 2). This rare word (appearing only here in the OT) describes those who are modest, unassuming, and unpretentious. Its contrast with zādôn (arrogance) reveals that wisdom requires a posture of receptivity — the arrogant cannot learn because they believe they already know."
           }
         ],
-        "ctx": "Proverbs 11 opens with the marketplace (v.1) and the central contrast: upright versus wicked. The city's prosperity or destruction depends on the moral quality of its residents (vv.10-11). Wisdom is not private virtue but a public good.",
-        "cross": [
-          {
-            "ref": "Lev 19:35-36",
-            "note": "Do not use dishonest standards -- the legal basis for v.1."
-          },
-          {
-            "ref": "Prov 16:18",
-            "note": "Pride goes before destruction -- the same pride-disgrace sequence as v.2."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 19:35-36",
+              "note": "Do not use dishonest standards -- the legal basis for v.1."
+            },
+            {
+              "ref": "Prov 16:18",
+              "note": "Pride goes before destruction -- the same pride-disgrace sequence as v.2."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "The NET note on 'the righteousness of the blameless person keeps his way straight' discusses 'blameless' (tamim, complete/whole, the same word used of Job). The blameless person is not sinlessly perfect but whole in their orientation — fully committed to covenant faithfulness rather than divided between wisdom and folly."
             }
           ]
+        },
+        "hist": {
+          "context": "Proverbs 11 opens with the marketplace (v.1) and the central contrast: upright versus wicked. The city's prosperity or destruction depends on the moral quality of its residents (vv.10-11). Wisdom is not private virtue but a public good."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "The generous soul (nepeš bĕrākâ, lit. 'soul of blessing') will prosper, and whoever refreshes others will be refreshed (v. 25). The paradox of generosity is central to Proverbs' economics: hoarding impoverishes while giving enriches. The Hebrew mašqeh (one who waters) uses agricultural imagery — you reap what you irrigate."
           }
         ],
-        "ctx": "The second half addresses the generous paradox (vv.24-26), wealth-trust (v.28), and the social fruitfulness of the righteous (vv.30-31). The gold-ring-in-a-pig's-snout image (v.22): beauty divorced from character is grotesque.",
-        "cross": [
-          {
-            "ref": "Gen 2:9",
-            "note": "The tree of life in Eden -- Proverbs reclaims this image for righteousness."
-          },
-          {
-            "ref": "2 Cor 9:6-7",
-            "note": "The one who sows generously will reap generously -- NT application of v.24's generous paradox."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 2:9",
+              "note": "The tree of life in Eden -- Proverbs reclaims this image for righteousness."
+            },
+            {
+              "ref": "2 Cor 9:6-7",
+              "note": "The one who sows generously will reap generously -- NT application of v.24's generous paradox."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -178,6 +183,9 @@
               "note": "The NET note on 'tree of life' (ets chayyim) traces the image from Gen 2:9 and 3:22–24 through Prov 3:18; 11:30; 13:12; 15:4 and into Rev 2:7; 22:2, 14. The tree of life is wisdom's symbol in Proverbs (3:18: 'she is a tree of life to those who take hold of her'). The righteous person whose life produces the tree of life is enacting what the original tree of life represents: access to the eternal life of the covenant God."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half addresses the generous paradox (vv.24-26), wealth-trust (v.28), and the social fruitfulness of the righteous (vv.30-31). The gold-ring-in-a-pig's-snout image (v.22): beauty divorced from character is grotesque."
         }
       }
     }

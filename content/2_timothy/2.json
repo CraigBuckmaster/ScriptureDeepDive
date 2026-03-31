@@ -31,21 +31,22 @@
             "paragraph": "The fourth trustworthy saying introduces a hymnic fragment (vv. 11b–13) structured as four conditional statements. The alternation between faithful human response and faithful divine response creates a covenant-shaped logic."
           }
         ],
-        "ctx": "Paul's three-metaphor sequence draws on imagery familiar in Greco-Roman moral discourse. Paul Christianizes these by making Christ the commanding officer, rule-setter, and landowner. The hymnic fragment (vv. 11–13) is widely recognized as pre-Pauline, possibly baptismal. The closing paradox—'if we are faithless, he remains faithful'—grounds divine constancy in God's character rather than human performance.",
-        "cross": [
-          {
-            "ref": "1 Corinthians 9:24–27",
-            "note": "Paul's extended athletic metaphor is the fullest parallel to the athlete image in v. 5."
-          },
-          {
-            "ref": "Romans 6:8",
-            "note": "The 'dying and living with Christ' language echoes Paul's baptismal theology."
-          },
-          {
-            "ref": "1 Corinthians 3:6–8",
-            "note": "Paul's planting/watering imagery complements the farmer metaphor here."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Corinthians 9:24–27",
+              "note": "Paul's extended athletic metaphor is the fullest parallel to the athlete image in v. 5."
+            },
+            {
+              "ref": "Romans 6:8",
+              "note": "The 'dying and living with Christ' language echoes Paul's baptismal theology."
+            },
+            {
+              "ref": "1 Corinthians 3:6–8",
+              "note": "Paul's planting/watering imagery complements the farmer metaphor here."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "The three vocational metaphors function as cultural scripts accessible to any Greco-Roman audience. The hymnic fragment reframes shame/endurance in eschatological terms. The 'faithless/faithful' couplet is theologically provocative: God's fidelity to his own nature both reassures and warns."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul's three-metaphor sequence draws on imagery familiar in Greco-Roman moral discourse. Paul Christianizes these by making Christ the commanding officer, rule-setter, and landowner. The hymnic fragment (vv. 11–13) is widely recognized as pre-Pauline, possibly baptismal. The closing paradox—'if we are faithless, he remains faithful'—grounds divine constancy in God's character rather than human performance."
         }
       }
     },
@@ -141,21 +145,22 @@
             "paragraph": "A medical term for the progressive death of tissue. Paul applies it to the spreading influence of Hymenaeus and Philetus, whose teaching that the resurrection has already occurred was corrupting the faith of some. The metaphor continues the Pastorals' pattern of diagnosing false teaching as disease."
           }
         ],
-        "ctx": "Hymenaeus (previously in 1 Tim 1:20) and Philetus taught that the resurrection had already occurred—an over-realized eschatology that spiritualized bodily resurrection. The vessel metaphor (vv. 20–26) addresses personal purity as a condition for usefulness, culminating in gentle pastoral counsel toward opponents.",
-        "cross": [
-          {
-            "ref": "1 Corinthians 15:12–19",
-            "note": "Paul's extensive argument against resurrection denial provides the backdrop for understanding the Hymenaeus/Philetus heresy."
-          },
-          {
-            "ref": "Romans 6:3–11",
-            "note": "The eschatological tension between 'already died with Christ' and 'not yet raised in glory' is precisely what the over-realized position disturbs."
-          },
-          {
-            "ref": "Isaiah 28:16",
-            "note": "The 'firm foundation of God' draws on the Isaianic foundation-stone tradition."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Corinthians 15:12–19",
+              "note": "Paul's extensive argument against resurrection denial provides the backdrop for understanding the Hymenaeus/Philetus heresy."
+            },
+            {
+              "ref": "Romans 6:3–11",
+              "note": "The eschatological tension between 'already died with Christ' and 'not yet raised in glory' is precisely what the over-realized position disturbs."
+            },
+            {
+              "ref": "Isaiah 28:16",
+              "note": "The 'firm foundation of God' draws on the Isaianic foundation-stone tradition."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -228,6 +233,9 @@
               "note": "The pastoral advice in vv. 24–26 is remarkably restrained: the Lord's servant engages opponents with gentleness, and the outcome is left to divine sovereignty. Pastoral wisdom: firm in truth, gentle in manner, hopeful in expectation."
             }
           ]
+        },
+        "hist": {
+          "context": "Hymenaeus (previously in 1 Tim 1:20) and Philetus taught that the resurrection had already occurred—an over-realized eschatology that spiritualized bodily resurrection. The vessel metaphor (vv. 20–26) addresses personal purity as a condition for usefulness, culminating in gentle pastoral counsel toward opponents."
         }
       }
     }

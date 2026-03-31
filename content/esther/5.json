@@ -25,18 +25,22 @@
             "paragraph": "The king extends the golden sceptre — Esther lives. The sceptre represents absolute authority and grants physical access. Esther touches its tip — the distance between death and life is one arm’s length."
           }
         ],
-        "hist": "Esther approaches on the third day of her fast — physically weakened but spiritually resolved. She dresses in royal robes — outward display masking three days of secret fasting.",
-        "ctx": "The king’s offer — \"up to half the kingdom\" — is a standard Persian diplomatic formula (cf. Mark 6:23). Esther’s restraint in not immediately revealing her request draws the king in gradually.",
-        "cross": [
-          {
-            "ref": "Mark 6:23",
-            "note": "Herod’s identical offer to Salome — same formula, opposite outcome."
-          },
-          {
-            "ref": "Prov 15:23",
-            "note": "A word aptly spoken — Esther’s timing is her art."
-          }
-        ],
+        "hist": {
+          "historical": "Esther approaches on the third day of her fast — physically weakened but spiritually resolved. She dresses in royal robes — outward display masking three days of secret fasting.",
+          "context": "The king’s offer — \"up to half the kingdom\" — is a standard Persian diplomatic formula (cf. Mark 6:23). Esther’s restraint in not immediately revealing her request draws the king in gradually."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mark 6:23",
+              "note": "Herod’s identical offer to Salome — same formula, opposite outcome."
+            },
+            {
+              "ref": "Prov 15:23",
+              "note": "A word aptly spoken — Esther’s timing is her art."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -126,18 +130,22 @@
             "paragraph": "Zeresh advises a gallows fifty cubits (75 feet) high. The excess mirrors the king’s excess in chapter 1. Overreach always precedes downfall."
           }
         ],
-        "hist": "Impalement poles in Persian practice were used for public display. The 50-cubit height is dramatic exaggeration — the victim displayed above the skyline.",
-        "ctx": "Haman leaves the banquet elated, then sees Mordecai. One man’s refusal collapses all joy. His emotional volatility — elation to rage in one verse — is his defining weakness.",
-        "cross": [
-          {
-            "ref": "Prov 16:18",
-            "note": "Pride goes before destruction — the gallows Haman builds becomes his own."
-          },
-          {
-            "ref": "Ps 7:15–16",
-            "note": "He who digs a pit falls into it."
-          }
-        ],
+        "hist": {
+          "historical": "Impalement poles in Persian practice were used for public display. The 50-cubit height is dramatic exaggeration — the victim displayed above the skyline.",
+          "context": "Haman leaves the banquet elated, then sees Mordecai. One man’s refusal collapses all joy. His emotional volatility — elation to rage in one verse — is his defining weakness."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 16:18",
+              "note": "Pride goes before destruction — the gallows Haman builds becomes his own."
+            },
+            {
+              "ref": "Ps 7:15–16",
+              "note": "He who digs a pit falls into it."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

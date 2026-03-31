@@ -31,17 +31,18 @@
             "paragraph": "God is present among the soldiers. The camp's purity requirements reflect the holiness of the divine presence: \"the LORD your God moves about in your camp to protect you... Your camp must be holy, so that he will not see among you anything indecent and turn away from you\" (v.14)."
           }
         ],
-        "ctx": "Chapter 23 contains assembly exclusion laws (vv.1-8), camp purity regulations (vv.9-14), and various social laws. The exclusions -- certain physical conditions, Ammonites and Moabites, Edomites and Egyptians -- reflect covenant-community boundaries and historical relationships. The camp purity laws include latrine requirements outside the camp because God walks in the camp. This is the most visceral expression of the principle that holiness touches every area of life, including sanitation.",
-        "cross": [
-          {
-            "ref": "2 Cor 6:17",
-            "note": "\"Come out from them and be separate, says the Lord. Touch no unclean thing, and I will receive you.\" Paul applies the Deuteronomy 23 purity principle to the church's separation from idolatrous culture."
-          },
-          {
-            "ref": "Rev 21:27",
-            "note": "\"Nothing impure will ever enter it, nor will anyone who does what is shameful or deceitful.\" The New Jerusalem's purity requirements echo Deuteronomy 23's assembly exclusions in eschatological form."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Cor 6:17",
+              "note": "\"Come out from them and be separate, says the Lord. Touch no unclean thing, and I will receive you.\" Paul applies the Deuteronomy 23 purity principle to the church's separation from idolatrous culture."
+            },
+            {
+              "ref": "Rev 21:27",
+              "note": "\"Nothing impure will ever enter it, nor will anyone who does what is shameful or deceitful.\" The New Jerusalem's purity requirements echo Deuteronomy 23's assembly exclusions in eschatological form."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 23 contains assembly exclusion laws (vv.1-8), camp purity regulations (vv.9-14), and various social laws. The exclusions -- certain physical conditions, Ammonites and Moabites, Edomites and Egyptians -- reflect covenant-community boundaries and historical relationships. The camp purity laws include latrine requirements outside the camp because God walks in the camp. This is the most visceral expression of the principle that holiness touches every area of life, including sanitation."
         }
       }
     },
@@ -133,17 +137,18 @@
             "paragraph": "Vows made to God are binding without exception. The voluntary nature of the vow (you are not required to make one) makes its binding character absolute: having promised, you must fulfil. The vow law enforces integrity of speech before God."
           }
         ],
-        "ctx": "The chapter concludes with: protection of escaped slaves (vv.15-16), prohibition of sacred prostitution (vv.17-18), interest laws (vv.19-20), vow obligations (vv.21-23), and the gleaning law (vv.24-25). The gleaning law -- you may eat your neighbour's grapes or grain when passing through, but you may not take any away -- is a practical mechanism for providing for the hungry through dignity-preserving access, not charity handouts.",
-        "cross": [
-          {
-            "ref": "Matt 5:37",
-            "note": "\"Let your 'Yes' be 'Yes,' and your 'No,' 'No.'\" Jesus applies the Deuteronomy 23 vow principle to all speech -- integrity before God extends to every word."
-          },
-          {
-            "ref": "Ruth 2:15-17",
-            "note": "The entire book of Ruth is set within the gleaning laws -- Boaz's protection of Ruth is the Deuteronomy 23 gleaning law in action at its most generous."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 5:37",
+              "note": "\"Let your 'Yes' be 'Yes,' and your 'No,' 'No.'\" Jesus applies the Deuteronomy 23 vow principle to all speech -- integrity before God extends to every word."
+            },
+            {
+              "ref": "Ruth 2:15-17",
+              "note": "The entire book of Ruth is set within the gleaning laws -- Boaz's protection of Ruth is the Deuteronomy 23 gleaning law in action at its most generous."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -212,6 +217,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter concludes with: protection of escaped slaves (vv.15-16), prohibition of sacred prostitution (vv.17-18), interest laws (vv.19-20), vow obligations (vv.21-23), and the gleaning law (vv.24-25). The gleaning law -- you may eat your neighbour's grapes or grain when passing through, but you may not take any away -- is a practical mechanism for providing for the hungry through dignity-preserving access, not charity handouts."
         }
       }
     }

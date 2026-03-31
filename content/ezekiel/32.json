@@ -31,21 +31,22 @@
             "paragraph": "The kherem is a large fishing or hunting net. God will cast his kherem over Pharaoh-as-monster (v. 3), recalling the tannin imagery of chapter 29 but now completing the action: the monster is caught, dragged out, and thrown onto the open field. The word also carries overtones of the 'ban' (kherem) in holy war contexts, suggesting that Pharaoh's capture is an act of sacred destruction."
           }
         ],
-        "ctx": "Dated March 585 BC (v. 1), this lament arrives after Jerusalem's fall (586 BC), which Ezekiel learned about in 33:21. The first half (vv. 1-16) returns to the sea-monster imagery of chapter 29 but transforms it into a funeral dirge. Pharaoh considered himself a lion among nations but is actually a thrashing monster in the waters. God will haul him out with a net and scatter his flesh across mountains and valleys—cosmic in scope, as even celestial bodies are darkened (vv. 7-8).",
-        "cross": [
-          {
-            "ref": "Ezek 29:3-5",
-            "note": "The tannin imagery from chapter 29 is reprised and completed. There Pharaoh was compared to a crocodile in the Nile; here the monster is caught, butchered, and spread across the landscape."
-          },
-          {
-            "ref": "Rev 6:12-14",
-            "note": "The cosmic darkening of sun, moon, and stars in Ezekiel 32:7-8 anticipates the apocalyptic imagery of Revelation's sixth seal, where heavenly bodies respond to divine judgment."
-          },
-          {
-            "ref": "Matt 24:29",
-            "note": "Jesus draws on the same prophetic tradition when he describes the sun being darkened and stars falling before the Son of Man's coming."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 29:3-5",
+              "note": "The tannin imagery from chapter 29 is reprised and completed. There Pharaoh was compared to a crocodile in the Nile; here the monster is caught, butchered, and spread across the landscape."
+            },
+            {
+              "ref": "Rev 6:12-14",
+              "note": "The cosmic darkening of sun, moon, and stars in Ezekiel 32:7-8 anticipates the apocalyptic imagery of Revelation's sixth seal, where heavenly bodies respond to divine judgment."
+            },
+            {
+              "ref": "Matt 24:29",
+              "note": "Jesus draws on the same prophetic tradition when he describes the sun being darkened and stars falling before the Son of Man's coming."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Zimmerli highlights the tension between the qinah form (which normally expresses genuine grief) and the triumphant content (which celebrates the enemy's defeat). This 'ironic lament' is a prophetic innovation that serves theological purposes: mourning the loss of a once-great creature that God himself had made beautiful (cf. 31:9), while simultaneously celebrating YHWH's victory over chaos."
             }
           ]
+        },
+        "hist": {
+          "context": "Dated March 585 BC (v. 1), this lament arrives after Jerusalem's fall (586 BC), which Ezekiel learned about in 33:21. The first half (vv. 1-16) returns to the sea-monster imagery of chapter 29 but transforms it into a funeral dirge. Pharaoh considered himself a lion among nations but is actually a thrashing monster in the waters. God will haul him out with a net and scatter his flesh across mountains and valleys—cosmic in scope, as even celestial bodies are darkened (vv. 7-8)."
         }
       }
     },
@@ -137,17 +141,18 @@
             "paragraph": "The ʿarelim (uncircumcised) appears as a term of shame and exclusion throughout this descent poem. Being among the uncircumcised in death is the ultimate disgrace for Egypt, which practiced circumcision. The repeated refrain creates a catalog of fallen empires—Assyria, Elam, Meshech-Tubal, Edom, Sidon—all consigned to the same shameful zone. The theological implication is clear: military might, cultural achievement, and imperial glory are all leveled in death."
           }
         ],
-        "ctx": "Dated April 585 BC (two weeks after vv. 1-16), this descent-to-the-pit poem is the most elaborate afterlife vision in the Hebrew Bible. Pharaoh is escorted down to the underworld and shown the nations already there: Assyria, Elam, Meshech-Tubal, Edom, the Sidonians, and their princes. Each nation 'bears its shame' among the uncircumcised. The catalog functions as a roll call of fallen empires, reminding Pharaoh that he joins a long queue of once-mighty but now powerless rulers.",
-        "cross": [
-          {
-            "ref": "Isa 14:9-11",
-            "note": "Isaiah's descent-to-Sheol poem for Babylon's king is the closest parallel: the dead rise to greet the newcomer with mocking surprise. Both texts develop the underworld as a space of ironic leveling."
-          },
-          {
-            "ref": "Phil 2:10",
-            "note": "Paul declares that at the name of Jesus every knee will bow, 'in heaven and on earth and under the earth.' Ezekiel's three-tiered cosmos (heavens, earth, underworld) provides part of the background for this confession."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 14:9-11",
+              "note": "Isaiah's descent-to-Sheol poem for Babylon's king is the closest parallel: the dead rise to greet the newcomer with mocking surprise. Both texts develop the underworld as a space of ironic leveling."
+            },
+            {
+              "ref": "Phil 2:10",
+              "note": "Paul declares that at the name of Jesus every knee will bow, 'in heaven and on earth and under the earth.' Ezekiel's three-tiered cosmos (heavens, earth, underworld) provides part of the background for this confession."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -216,6 +221,9 @@
               "note": "Zimmerli identifies this passage as drawing on ancient traditions of the netherworld visit (katabasis), known in both Mesopotamian (Descent of Ishtar) and Greek (Odyssey XI) literature. However, Ezekiel's version is uniquely theological: the underworld tour serves not as adventure narrative but as a comprehensive statement about the leveling power of divine judgment. Zimmerli highlights the priestly concern with circumcision as a boundary marker—even in death, the uncircumcised remain outsiders."
             }
           ]
+        },
+        "hist": {
+          "context": "Dated April 585 BC (two weeks after vv. 1-16), this descent-to-the-pit poem is the most elaborate afterlife vision in the Hebrew Bible. Pharaoh is escorted down to the underworld and shown the nations already there: Assyria, Elam, Meshech-Tubal, Edom, the Sidonians, and their princes. Each nation 'bears its shame' among the uncircumcised. The catalog functions as a roll call of fallen empires, reminding Pharaoh that he joins a long queue of once-mighty but now powerless rulers."
         }
       }
     }

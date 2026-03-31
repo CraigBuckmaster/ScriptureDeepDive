@@ -31,18 +31,22 @@
             "paragraph": "Yāshār means straight, level, ethically aligned. Combined with tām, it describes a life oriented correctly in every dimension — complete in character and straight in conduct."
           }
         ],
-        "hist": "The land of Uz is likely in Edom or northern Arabia (cf. Lam 4:21; Jer 25:20). Job’s wealth is measured in livestock (7,000 sheep, 3,000 camels, 500 yoke of oxen, 500 donkeys) — patriarchal-era markers. He is \"the greatest man among all the people of the East.\"",
-        "ctx": "The narrator establishes Job’s righteousness before the test begins. This is not a story about hidden sin exposed but about genuine righteousness tested. The reader knows what Job does not: his suffering has nothing to do with his behaviour.",
-        "cross": [
-          {
-            "ref": "Ezek 14:14",
-            "note": "Noah, Daniel, and Job — three legendary righteous men."
-          },
-          {
-            "ref": "Gen 6:9",
-            "note": "Noah was \"blameless\" (tāmîm) — the same root word as Job’s tām."
-          }
-        ],
+        "hist": {
+          "historical": "The land of Uz is likely in Edom or northern Arabia (cf. Lam 4:21; Jer 25:20). Job’s wealth is measured in livestock (7,000 sheep, 3,000 camels, 500 yoke of oxen, 500 donkeys) — patriarchal-era markers. He is \"the greatest man among all the people of the East.\"",
+          "context": "The narrator establishes Job’s righteousness before the test begins. This is not a story about hidden sin exposed but about genuine righteousness tested. The reader knows what Job does not: his suffering has nothing to do with his behaviour."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 14:14",
+              "note": "Noah, Daniel, and Job — three legendary righteous men."
+            },
+            {
+              "ref": "Gen 6:9",
+              "note": "Noah was \"blameless\" (tāmîm) — the same root word as Job’s tām."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -130,18 +134,22 @@
             "paragraph": "\"Does Job fear God for nothing (ḥinnām)?\" The most important question in the book. It asks whether disinterested righteousness exists — whether anyone serves God without expecting reward."
           }
         ],
-        "hist": "The \"sons of God\" (bənê hā’ēlōhîm) presenting before the LORD resembles the divine council scene attested in Mesopotamian and Ugaritic literature. The Satan functions as a prosecuting attorney in the heavenly court.",
-        "ctx": "The reader sees what Job never sees: the backstage. The heavenly wager gives the reader information that no character in the story possesses. This dramatic irony is the engine of the entire book. Job’s friends will diagnose his suffering as punishment; the reader knows it is a test.",
-        "cross": [
-          {
-            "ref": "1 Kgs 22:19–22",
-            "note": "Micaiah sees the divine council — the same throne-room setting."
-          },
-          {
-            "ref": "Zech 3:1–2",
-            "note": "The Satan accuses Joshua the high priest — the same prosecutorial role."
-          }
-        ],
+        "hist": {
+          "historical": "The \"sons of God\" (bənê hā’ēlōhîm) presenting before the LORD resembles the divine council scene attested in Mesopotamian and Ugaritic literature. The Satan functions as a prosecuting attorney in the heavenly court.",
+          "context": "The reader sees what Job never sees: the backstage. The heavenly wager gives the reader information that no character in the story possesses. This dramatic irony is the engine of the entire book. Job’s friends will diagnose his suffering as punishment; the reader knows it is a test."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 22:19–22",
+              "note": "Micaiah sees the divine council — the same throne-room setting."
+            },
+            {
+              "ref": "Zech 3:1–2",
+              "note": "The Satan accuses Joshua the high priest — the same prosecutorial role."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -227,17 +235,18 @@
             "paragraph": "\"The LORD gave and the LORD has taken away; blessed be the name of the LORD.\" Job attributes both giving and taking to God. He does not mention the Satan. His theology is radically God-centred: there is no secondary cause worth naming."
           }
         ],
-        "ctx": "Four disasters in rapid succession: Sabeans take the oxen and donkeys, fire from heaven burns the sheep, Chaldeans take the camels, a wind kills the children. Each messenger arrives \"while he was still speaking\" — no recovery time. The architecture is devastating: livestock, livestock, livestock, children. The worst comes last.",
-        "cross": [
-          {
-            "ref": "Eccl 5:15",
-            "note": "\"Naked a man comes from his mother’s womb, and as he comes, so he departs\" — the same theology Job expresses."
-          },
-          {
-            "ref": "1 Tim 6:7",
-            "note": "\"We brought nothing into the world, and we can take nothing out\" — Paul’s echo of Job 1:21."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Eccl 5:15",
+              "note": "\"Naked a man comes from his mother’s womb, and as he comes, so he departs\" — the same theology Job expresses."
+            },
+            {
+              "ref": "1 Tim 6:7",
+              "note": "\"We brought nothing into the world, and we can take nothing out\" — Paul’s echo of Job 1:21."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -306,6 +315,9 @@
               "note": "Habel: Job’s first response is the model plaintiff — he absorbs the blow without counter-accusation. His legal restraint here will contrast with his later demand for a hearing."
             }
           ]
+        },
+        "hist": {
+          "context": "Four disasters in rapid succession: Sabeans take the oxen and donkeys, fire from heaven burns the sheep, Chaldeans take the camels, a wind kills the children. Each messenger arrives \"while he was still speaking\" — no recovery time. The architecture is devastating: livestock, livestock, livestock, children. The worst comes last."
         }
       }
     }

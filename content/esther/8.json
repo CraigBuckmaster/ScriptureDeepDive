@@ -25,18 +25,22 @@
             "paragraph": "The king gives Mordecai his signet ring (ṭabbaʿat) — the same ring he gave Haman (3:10). Power transfers via the seal. The ring that signed genocide now signs deliverance. The instrument is the same; the hand is different."
           }
         ],
-        "hist": "Persian law could not be annulled (cf. Dan 6:8). Haman’s decree stands. The solution is not cancellation but counter-legislation: a second decree authorising the Jews to defend themselves. Two irrevocable laws in direct conflict — the outcome is decided by the people, not the paper.",
-        "ctx": "Esther’s second petition is as brave as her first: she falls at the king’s feet weeping, begging him to \"put an end to the evil plan\" (v.3). The king extends the sceptre again (v.4) — the second time. Esther is now operating in full authority, co-directing the counter-decree with Mordecai.",
-        "cross": [
-          {
-            "ref": "Dan 6:8",
-            "note": "The irrevocability of Persian law that both constrains and enables."
-          },
-          {
-            "ref": "Gen 50:20",
-            "note": "What was meant for evil, God used for good — the theological pattern."
-          }
-        ],
+        "hist": {
+          "historical": "Persian law could not be annulled (cf. Dan 6:8). Haman’s decree stands. The solution is not cancellation but counter-legislation: a second decree authorising the Jews to defend themselves. Two irrevocable laws in direct conflict — the outcome is decided by the people, not the paper.",
+          "context": "Esther’s second petition is as brave as her first: she falls at the king’s feet weeping, begging him to \"put an end to the evil plan\" (v.3). The king extends the sceptre again (v.4) — the second time. Esther is now operating in full authority, co-directing the counter-decree with Mordecai."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Dan 6:8",
+              "note": "The irrevocability of Persian law that both constrains and enables."
+            },
+            {
+              "ref": "Gen 50:20",
+              "note": "What was meant for evil, God used for good — the theological pattern."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -128,18 +132,22 @@
             "paragraph": "\"Many people of other nationalities became Jews\" (mityəhadîm). The verb is unique in the Hebrew Bible. Fear of the Jews drives conversion — not the most theological motivation, but the narrator records it without comment."
           }
         ],
-        "hist": "The counter-decree is written on the 23rd of Sivan (June), giving nearly nine months before the 13th of Adar (March). The decree authorises Jews to \"destroy, kill and annihilate\" any armed force that attacks them — the exact three verbs from Haman’s decree (3:13), now reversed.",
-        "ctx": "The chapter’s final verse — \"many people became Jews because fear of the Jews had seized them\" — is theologically provocative. The conversion is fear-based, not faith-based. The narrator neither endorses nor criticises it. In a book where God is hidden, even conversion is ambiguous.",
-        "cross": [
-          {
-            "ref": "Esth 3:13",
-            "note": "Haman’s three verbs — now reversed in the counter-decree."
-          },
-          {
-            "ref": "Zech 8:23",
-            "note": "Ten Gentiles will take hold of one Jew — a more positive vision of the nations joining Israel."
-          }
-        ],
+        "hist": {
+          "historical": "The counter-decree is written on the 23rd of Sivan (June), giving nearly nine months before the 13th of Adar (March). The decree authorises Jews to \"destroy, kill and annihilate\" any armed force that attacks them — the exact three verbs from Haman’s decree (3:13), now reversed.",
+          "context": "The chapter’s final verse — \"many people became Jews because fear of the Jews had seized them\" — is theologically provocative. The conversion is fear-based, not faith-based. The narrator neither endorses nor criticises it. In a book where God is hidden, even conversion is ambiguous."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Esth 3:13",
+              "note": "Haman’s three verbs — now reversed in the counter-decree."
+            },
+            {
+              "ref": "Zech 8:23",
+              "note": "Ten Gentiles will take hold of one Jew — a more positive vision of the nations joining Israel."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

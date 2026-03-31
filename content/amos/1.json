@@ -31,17 +31,18 @@
             "paragraph": "The verb describes a lion's roar, specifically the roar of a lion about to attack its prey. YHWH's voice from Zion is not a whisper of comfort but a terrifying war cry. The agricultural imagery of pastures withering under this voice connects divine judgment to the world Amos knew intimately."
           }
         ],
-        "ctx": "The superscription dates Amos precisely: during the reigns of Uzziah of Judah and Jeroboam II of Israel, 'two years before the earthquake.' This earthquake was so devastating it was remembered 250 years later (Zech 14:5) and has been confirmed archaeologically at Hazor. The opening metaphor of YHWH roaring like a lion from Zion establishes the tone: this is a book of judgment, delivered by a God who is neither distant nor passive.",
-        "cross": [
-          {
-            "ref": "Joel 3:16",
-            "note": "'The LORD will roar from Zion' — identical language, suggesting a shared prophetic tradition of divine war imagery."
-          },
-          {
-            "ref": "2 Kgs 14:25",
-            "note": "The reign of Jeroboam II and the prophecy of Jonah, placing Amos in the same historical moment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Joel 3:16",
+              "note": "'The LORD will roar from Zion' — identical language, suggesting a shared prophetic tradition of divine war imagery."
+            },
+            {
+              "ref": "2 Kgs 14:25",
+              "note": "The reign of Jeroboam II and the prophecy of Jonah, placing Amos in the same historical moment."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Andersen and Freedman read the opening couplet as a programmatic statement: YHWH's roar from Zion establishes Jerusalem (not Bethel or Samaria) as the true center of divine authority. This is a direct challenge to the northern kingdom's independent cult."
             }
           ]
+        },
+        "hist": {
+          "context": "The superscription dates Amos precisely: during the reigns of Uzziah of Judah and Jeroboam II of Israel, 'two years before the earthquake.' This earthquake was so devastating it was remembered 250 years later (Zech 14:5) and has been confirmed archaeologically at Hazor. The opening metaphor of YHWH roaring like a lion from Zion establishes the tone: this is a book of judgment, delivered by a God who is neither distant nor passive."
         }
       }
     },
@@ -123,17 +127,18 @@
             "paragraph": "The x/x+1 numerical pattern ('for three transgressions ... and for four') is a standard Hebrew rhetorical device indicating a full measure of sin. It does not mean exactly three or four sins but rather an overflowing accumulation. The formula appears eight times in chapters 1-2, creating the book's most recognizable structure."
           }
         ],
-        "ctx": "The oracles-against-nations sequence is one of the most brilliant rhetorical strategies in prophetic literature. Amos begins with Israel's distant enemies (Damascus, Gaza), moves through closer neighbors, and spirals inward toward Israel itself (2:6-16). Each oracle follows the same formula: 'For three transgressions and for four, I will not relent.' The Israelite audience would have cheered the condemnation of their enemies, unaware that the net was closing around them.",
-        "cross": [
-          {
-            "ref": "2 Kgs 8:12",
-            "note": "Hazael's atrocities against Gilead, the specific crime condemned in the Damascus oracle."
-          },
-          {
-            "ref": "Isa 14:29-31",
-            "note": "Another oracle against the Philistine cities, including Gaza, pronouncing doom on the coastal powers."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 8:12",
+              "note": "Hazael's atrocities against Gilead, the specific crime condemned in the Damascus oracle."
+            },
+            {
+              "ref": "Isa 14:29-31",
+              "note": "Another oracle against the Philistine cities, including Gaza, pronouncing doom on the coastal powers."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -198,6 +203,9 @@
               "note": "Andersen and Freedman argue that the eight oracles form a carefully designed literary unit with concentric structure. The outer ring (Damascus-Israel) contains the longest oracles; the inner pairs are shorter. The progression from foreign nations to covenant people is not merely rhetorical but theological: if God judges pagans for violating natural law, how much more will he judge Israel for violating revealed law."
             }
           ]
+        },
+        "hist": {
+          "context": "The oracles-against-nations sequence is one of the most brilliant rhetorical strategies in prophetic literature. Amos begins with Israel's distant enemies (Damascus, Gaza), moves through closer neighbors, and spirals inward toward Israel itself (2:6-16). Each oracle follows the same formula: 'For three transgressions and for four, I will not relent.' The Israelite audience would have cheered the condemnation of their enemies, unaware that the net was closing around them."
         }
       }
     },
@@ -215,21 +223,22 @@
             "paragraph": "Tyre's crime was violating a treaty of brotherhood. The Hebrew berit ahim may refer to the alliance between Hiram of Tyre and Solomon (1 Kgs 5:12; 9:13), suggesting that Tyre betrayed a long-standing diplomatic relationship."
           }
         ],
-        "ctx": "The oracles against Tyre and Edom continue the spiral pattern. Tyre, a commercial power, is condemned for covenant treachery; Edom, Israel's 'brother' (descended from Esau), is condemned for perpetual hostility toward a kinsman nation. The Edom oracle is particularly intense: the verb 'stifled all compassion' (shihet rahamav) suggests a deliberate suppression of the natural kinship instinct.",
-        "cross": [
-          {
-            "ref": "1 Kgs 5:12",
-            "note": "The treaty between Solomon and Hiram of Tyre — the 'covenant of brotherhood' that Tyre violated."
-          },
-          {
-            "ref": "Obad 10-14",
-            "note": "The most extensive prophetic condemnation of Edom's fraternal treachery, sharing themes with the Amos oracle."
-          },
-          {
-            "ref": "Gen 25:23-26",
-            "note": "The origins of the Israel-Edom rivalry in the Jacob and Esau narrative."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 5:12",
+              "note": "The treaty between Solomon and Hiram of Tyre — the 'covenant of brotherhood' that Tyre violated."
+            },
+            {
+              "ref": "Obad 10-14",
+              "note": "The most extensive prophetic condemnation of Edom's fraternal treachery, sharing themes with the Amos oracle."
+            },
+            {
+              "ref": "Gen 25:23-26",
+              "note": "The origins of the Israel-Edom rivalry in the Jacob and Esau narrative."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -286,6 +295,9 @@
               "note": "Andersen and Freedman observe that the formula 'I will send fire' (w-shillahti esh) occurs in all eight oracles, creating a relentless drumbeat of divine judgment. The fire imagery draws on the theophanic tradition: YHWH's presence is fire, and his judgment is the extension of that consuming holiness."
             }
           ]
+        },
+        "hist": {
+          "context": "The oracles against Tyre and Edom continue the spiral pattern. Tyre, a commercial power, is condemned for covenant treachery; Edom, Israel's 'brother' (descended from Esau), is condemned for perpetual hostility toward a kinsman nation. The Edom oracle is particularly intense: the verb 'stifled all compassion' (shihet rahamav) suggests a deliberate suppression of the natural kinship instinct."
         }
       }
     }

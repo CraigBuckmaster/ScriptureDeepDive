@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 2,
       "panels": {
-        "ctx": "At the depth of the famine, Elisha announces the impossible: “About this time tomorrow, a seah of flour for a shekel and two seahs of barley for a shekel at the gate of Samaria.” An officer scoffs: “Even if the LORD opened the floodgates of heaven, could this happen?” Elisha’s reply is lethal: “You will see it with your own eyes, but you will not eat any of it.” The officer’s doubt is not intellectual uncertainty but active mockery of God’s power. His death sentence is proportional: he will witness the fulfilment he denied was possible.",
-        "cross": [
-          {
-            "ref": "Gen 18:14",
-            "note": "“Is anything too hard for the LORD?” Sarah’s doubt and this officer’s scorn both challenge divine capacity."
-          },
-          {
-            "ref": "Isa 55:8–9",
-            "note": "“My thoughts are not your thoughts.” The officer’s calculation of what’s possible is limited by his horizon."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 18:14",
+              "note": "“Is anything too hard for the LORD?” Sarah’s doubt and this officer’s scorn both challenge divine capacity."
+            },
+            {
+              "ref": "Isa 55:8–9",
+              "note": "“My thoughts are not your thoughts.” The officer’s calculation of what’s possible is limited by his horizon."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -63,6 +64,9 @@
               "note": "The officer’s doubt is framed as a question about divine mechanics: “How could this happen?” Elisha’s response ignores the mechanics entirely — he addresses not the “how” but the “whether.” The prophetic word doesn’t explain; it declares."
             }
           ]
+        },
+        "hist": {
+          "context": "At the depth of the famine, Elisha announces the impossible: “About this time tomorrow, a seah of flour for a shekel and two seahs of barley for a shekel at the gate of Samaria.” An officer scoffs: “Even if the LORD opened the floodgates of heaven, could this happen?” Elisha’s reply is lethal: “You will see it with your own eyes, but you will not eat any of it.” The officer’s doubt is not intellectual uncertainty but active mockery of God’s power. His death sentence is proportional: he will witness the fulfilment he denied was possible."
         }
       }
     },
@@ -72,17 +76,18 @@
       "verse_start": 3,
       "verse_end": 20,
       "panels": {
-        "ctx": "Four lepers at the city gate reason: “If we sit here, we die. If we enter the city, we die. Let’s go to the Aramean camp.” They find the camp deserted — the LORD had caused the Arameans to hear the sound of a massive army, and they fled in panic. The lepers eat, drink, plunder — then conscience strikes: “This is a day of good news and we are keeping it to ourselves.” They report to the city. The king suspects a trap; scouts confirm the rout. The people plunder the camp and prices collapse exactly as Elisha prophesied. The doubting officer is appointed to manage the gate traffic — and is trampled to death by the crowd. He sees the abundance but never eats it.",
-        "cross": [
-          {
-            "ref": "Luke 17:12–19",
-            "note": "Ten lepers approach Jesus — only one returns to give thanks. The Elisha narrative establishes lepers as agents of divine disclosure: the most marginalised carry the best news."
-          },
-          {
-            "ref": "Isa 52:7",
-            "note": "“How beautiful are the feet of those who bring good news!” The lepers become the first heralds of salvation — the least likely messengers."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 17:12–19",
+              "note": "Ten lepers approach Jesus — only one returns to give thanks. The Elisha narrative establishes lepers as agents of divine disclosure: the most marginalised carry the best news."
+            },
+            {
+              "ref": "Isa 52:7",
+              "note": "“How beautiful are the feet of those who bring good news!” The lepers become the first heralds of salvation — the least likely messengers."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -130,6 +135,9 @@
               "note": "The officer’s death is narrated twice (vv.17, 20) — the repetition is deliberate. The Deuteronomistic historian wants no reader to miss the point: the prophetic word, once spoken, is inescapable. Belief or unbelief determines your relationship to its fulfilment, not the fulfilment itself."
             }
           ]
+        },
+        "hist": {
+          "context": "Four lepers at the city gate reason: “If we sit here, we die. If we enter the city, we die. Let’s go to the Aramean camp.” They find the camp deserted — the LORD had caused the Arameans to hear the sound of a massive army, and they fled in panic. The lepers eat, drink, plunder — then conscience strikes: “This is a day of good news and we are keeping it to ourselves.” They report to the city. The king suspects a trap; scouts confirm the rout. The people plunder the camp and prices collapse exactly as Elisha prophesied. The doubting officer is appointed to manage the gate traffic — and is trampled to death by the crowd. He sees the abundance but never eats it."
         }
       }
     }

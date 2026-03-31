@@ -31,17 +31,18 @@
             "paragraph": "Solomon tells Hiram that God has given himšālômon every side (v.4) — the peace David never had. This rest from enemies is the precondition for temple construction, fulfilling God's own stated requirement (1 Chr 22:9)."
           }
         ],
-        "ctx": "Solomon's letter to Hiram is a diplomatic masterpiece and a theological confession. He explains the temple project by recounting the Davidic covenant — David could not build because of war, but God promised his son would build. Hiram's response is striking: the pagan king praises YHWH for giving David \"a wise son.\" The Phoenician timber trade was one of the great commercial systems of the ancient world.",
-        "cross": [
-          {
-            "ref": "2 Sam 7:12–13",
-            "note": "Solomon's message to Hiram quotes the Davidic covenant promise as the basis for the temple project."
-          },
-          {
-            "ref": "2 Chr 2:11–12",
-            "note": "The Chronicler's parallel includes Hiram's fuller confession: \"Because the LORD loves his people, he has made you their king.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 7:12–13",
+              "note": "Solomon's message to Hiram quotes the Davidic covenant promise as the basis for the temple project."
+            },
+            {
+              "ref": "2 Chr 2:11–12",
+              "note": "The Chronicler's parallel includes Hiram's fuller confession: \"Because the LORD loves his people, he has made you their king.\""
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "Provan: The Solomon-Hiram treaty is the international dimension of the Solomonic peace. Domestic prosperity (4:25) and international relationships (5:12) together depict the covenant ideal."
             }
           ]
+        },
+        "hist": {
+          "context": "Solomon's letter to Hiram is a diplomatic masterpiece and a theological confession. He explains the temple project by recounting the Davidic covenant — David could not build because of war, but God promised his son would build. Hiram's response is striking: the pagan king praises YHWH for giving David \"a wise son.\" The Phoenician timber trade was one of the great commercial systems of the ancient world."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "The 70,000 carriers and 80,000 stonecutters (v.15) represent 150,000 labourers — approaching Pharaonic scale. Solomon builds for God using the methods of Egypt."
           }
         ],
-        "ctx": "The labour conscription is presented matter-of-factly, but the narrator trusts the reader to hear the Exodus echoes. Thirty thousand Israelites doing forced labour for a building project rhymes with Egypt. The rotational system (one month on, two off) shows administrative wisdom. But it plants the seed of resentment that bears fruit in ch. 12: \"Your father put a heavy yoke on us.\"",
-        "cross": [
-          {
-            "ref": "Exod 1:11",
-            "note": "The vocabulary of forced labour deliberately echoes Israel's oppression in Egypt."
-          },
-          {
-            "ref": "1 Kgs 12:4",
-            "note": "\"Your father put a heavy yoke on us\" — the corvée is the grievance that splits the kingdom."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 1:11",
+              "note": "The vocabulary of forced labour deliberately echoes Israel's oppression in Egypt."
+            },
+            {
+              "ref": "1 Kgs 12:4",
+              "note": "\"Your father put a heavy yoke on us\" — the corvée is the grievance that splits the kingdom."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -178,6 +183,9 @@
               "note": "Provan: The international workforce (Israelites, Sidonians, Gebalites) building the temple together prefigures the temple's purpose: a house of prayer for all nations (Isa 56:7)."
             }
           ]
+        },
+        "hist": {
+          "context": "The labour conscription is presented matter-of-factly, but the narrator trusts the reader to hear the Exodus echoes. Thirty thousand Israelites doing forced labour for a building project rhymes with Egypt. The rotational system (one month on, two off) shows administrative wisdom. But it plants the seed of resentment that bears fruit in ch. 12: \"Your father put a heavy yoke on us.\""
         }
       }
     }

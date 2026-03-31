@@ -31,21 +31,22 @@
             "paragraph": "The phrasebêt YHWHframes the entire construction narrative. The temple is not Solomon's house but God's house — a distinction the narrator enforces by the contrast with ch. 7 (\"Solomon's own palace took thirteen years\")."
           }
         ],
-        "ctx": "The temple construction begins 480 years after the Exodus (v.1) — a number that may be literal or schematic (12 generations × 40 years). Either way, the narrator connects temple to Exodus: the God who brought Israel out of Egypt now dwells among them in a permanent house. The dimensions (60×20×30 cubits) are exactly double the tabernacle, signifying continuity with expansion. Every surface is covered with cedar — no stone is visible inside — and overlaid with gold. The building is both a continuation of the tabernacle and its fulfilment.",
-        "cross": [
-          {
-            "ref": "Exod 26:33–34",
-            "note": "The tabernacle's Most Holy Place and its curtain-veil are the prototype for the temple'sdĕbîr. The temple makes permanent what the tabernacle made portable."
-          },
-          {
-            "ref": "Rev 21:16",
-            "note": "The New Jerusalem is a perfect cube — 12,000 stadia on each side. The cubical Holy of Holies (20×20×20) is the prototype for the eschatological city where God dwells with humanity permanently."
-          },
-          {
-            "ref": "Heb 9:1–5",
-            "note": "The writer of Hebrews describes the tabernacle/temple furniture as \"copies of the heavenly things.\" The earthly temple points beyond itself."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 26:33–34",
+              "note": "The tabernacle's Most Holy Place and its curtain-veil are the prototype for the temple'sdĕbîr. The temple makes permanent what the tabernacle made portable."
+            },
+            {
+              "ref": "Rev 21:16",
+              "note": "The New Jerusalem is a perfect cube — 12,000 stadia on each side. The cubical Holy of Holies (20×20×20) is the prototype for the eschatological city where God dwells with humanity permanently."
+            },
+            {
+              "ref": "Heb 9:1–5",
+              "note": "The writer of Hebrews describes the tabernacle/temple furniture as \"copies of the heavenly things.\" The earthly temple points beyond itself."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -97,6 +98,9 @@
               "note": "Provan: The divine interruption (vv.11–13) breaks the architectural description with a theological warning. The narrator reminds the reader that the most magnificent building in the world is worthless without covenant faithfulness. Form without faith is an empty shell."
             }
           ]
+        },
+        "hist": {
+          "context": "The temple construction begins 480 years after the Exodus (v.1) — a number that may be literal or schematic (12 generations × 40 years). Either way, the narrator connects temple to Exodus: the God who brought Israel out of Egypt now dwells among them in a permanent house. The dimensions (60×20×30 cubits) are exactly double the tabernacle, signifying continuity with expansion. Every surface is covered with cedar — no stone is visible inside — and overlaid with gold. The building is both a continuation of the tabernacle and its fulfilment."
         }
       }
     },
@@ -120,17 +124,18 @@
             "paragraph": "The temple is completed in Solomon's eleventh year (v.38) — seven years of construction. The seven-year period echoes the seven days of creation: the temple is a new creation, a microcosm of the ordered cosmos God made in Genesis 1."
           }
         ],
-        "ctx": "The cherubim dominate the inner sanctuary — two enormous guardian figures whose wings span the entire room. They are the theological centre of the temple: guardians of divine holiness (cf. Gen 3:24, Exod 25:18–22). The olive-wood doors are carved with cherubim, palm trees, and open flowers — a garden scene. The temple interior is Eden restored: gold, precious wood, guardian cherubim, and garden imagery. The seven-year construction completes on a note of both achievement and anticipation — the building is finished, but the glory has not yet come (that happens in ch. 8).",
-        "cross": [
-          {
-            "ref": "Gen 3:24",
-            "note": "Cherubim placed east of Eden to guard the way to the tree of life. The temple cherubim guard the ark — the place of God's presence. The temple is the way back into God's presence that Eden's expulsion closed."
-          },
-          {
-            "ref": "Exod 25:18–22",
-            "note": "The tabernacle's cherubim atop the ark are small (2.5 cubits). Solomon's cherubim are 15 feet tall — the same guardians, massively expanded, signifying intensified divine presence."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 3:24",
+              "note": "Cherubim placed east of Eden to guard the way to the tree of life. The temple cherubim guard the ark — the place of God's presence. The temple is the way back into God's presence that Eden's expulsion closed."
+            },
+            {
+              "ref": "Exod 25:18–22",
+              "note": "The tabernacle's cherubim atop the ark are small (2.5 cubits). Solomon's cherubim are 15 feet tall — the same guardians, massively expanded, signifying intensified divine presence."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -182,6 +187,9 @@
               "note": "Provan: \"Finished in all its details\" — the narrator's verdict on the construction echoes God's verdict on creation: \"God saw all that he had made, and it was very good\" (Gen 1:31). The temple is creation brought to architectural completion."
             }
           ]
+        },
+        "hist": {
+          "context": "The cherubim dominate the inner sanctuary — two enormous guardian figures whose wings span the entire room. They are the theological centre of the temple: guardians of divine holiness (cf. Gen 3:24, Exod 25:18–22). The olive-wood doors are carved with cherubim, palm trees, and open flowers — a garden scene. The temple interior is Eden restored: gold, precious wood, guardian cherubim, and garden imagery. The seven-year construction completes on a note of both achievement and anticipation — the building is finished, but the glory has not yet come (that happens in ch. 8)."
         }
       }
     }

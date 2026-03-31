@@ -28,21 +28,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Capernaum — Jesus’s house</div><div class=\"poi-coords\">Northwest shore of the Sea of Galilee; “his own town” (2:1)</div><div class=\"poi-text\">Capernaum is Jesus’s operational base. The crowd that fills the house and spills outside reflects his rapid notoriety across Galilee (1:28). The roof-opening through which the paralytic is lowered would have been a light brushwood-and-plaster construction typical of Galilean domestic architecture.</div></div>"
         },
-        "ctx": "The healing of the paralytic through the roof is the first direct controversy with the scribes and the first explicit claim of divine authority over sin. Jesus’s question “Which is easier” is a logical trap: the visible miracle proves the invisible pardon. The Son of Man title (v.10) appears for the first time — the Danielic figure who has authority on earth.",
-        "cross": [
-          {
-            "ref": "Dan 7:13-14",
-            "note": "The Son of Man received authority, glory and sovereign power — Jesus’s claim to forgive sins invokes this Danielic title."
-          },
-          {
-            "ref": "Isa 43:25",
-            "note": "I, even I, am he who blots out your transgressions — YHWH’s exclusive claim, which is why the scribes recognize the implication of Jesus’s words."
-          },
-          {
-            "ref": "Ps 103:3",
-            "note": "He forgives all your sins and heals all your diseases — the psalm that links forgiveness and physical restoration, the precise combination Jesus performs."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Dan 7:13-14",
+              "note": "The Son of Man received authority, glory and sovereign power — Jesus’s claim to forgive sins invokes this Danielic title."
+            },
+            {
+              "ref": "Isa 43:25",
+              "note": "I, even I, am he who blots out your transgressions — YHWH’s exclusive claim, which is why the scribes recognize the implication of Jesus’s words."
+            },
+            {
+              "ref": "Ps 103:3",
+              "note": "He forgives all your sins and heals all your diseases — the psalm that links forgiveness and physical restoration, the precise combination Jesus performs."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -120,6 +121,9 @@
               "note": "In full view of them all — emprosthen pantōn. The public nature of the healing is emphasized. This is not private certification but community witness."
             }
           ]
+        },
+        "hist": {
+          "context": "The healing of the paralytic through the roof is the first direct controversy with the scribes and the first explicit claim of divine authority over sin. Jesus’s question “Which is easier” is a logical trap: the visible miracle proves the invisible pardon. The Son of Man title (v.10) appears for the first time — the Danielic figure who has authority on earth."
         }
       }
     },
@@ -140,21 +144,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Capernaum — Jesus’s house</div><div class=\"poi-coords\">Northwest shore of the Sea of Galilee; “his own town” (2:1)</div><div class=\"poi-text\">Capernaum is Jesus’s operational base. The crowd that fills the house and spills outside reflects his rapid notoriety across Galilee (1:28). The roof-opening through which the paralytic is lowered would have been a light brushwood-and-plaster construction typical of Galilean domestic architecture.</div></div>"
         },
-        "ctx": "Mark 2:13-28 groups three controversy stories that reveal Jesus’s radical claim to re-order the religious life of Israel: eating with sinners (the physician metaphor), non-fasting (the bridegroom/new wine metaphor), and grain-picking on the Sabbath (David precedent + the Son of Man as Sabbath Lord). Each controversy escalates the implicit Christological claim.",
-        "cross": [
-          {
-            "ref": "1 Sam 21:1-6",
-            "note": "David eating the consecrated bread — the precedent Jesus cites for his disciples’ grain-picking. Human need overrides ritual restriction when the anointed king’s need is at stake."
-          },
-          {
-            "ref": "Hos 6:6",
-            "note": "I desire mercy, not sacrifice — the OT principle Jesus embodies. Table fellowship with sinners is mercy over ritual purity."
-          },
-          {
-            "ref": "Isa 62:5",
-            "note": "As a bridegroom rejoices over his bride — the divine-human marriage metaphor Jesus applies to himself. His presence is the wedding, not the time for fasting."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Sam 21:1-6",
+              "note": "David eating the consecrated bread — the precedent Jesus cites for his disciples’ grain-picking. Human need overrides ritual restriction when the anointed king’s need is at stake."
+            },
+            {
+              "ref": "Hos 6:6",
+              "note": "I desire mercy, not sacrifice — the OT principle Jesus embodies. Table fellowship with sinners is mercy over ritual purity."
+            },
+            {
+              "ref": "Isa 62:5",
+              "note": "As a bridegroom rejoices over his bride — the divine-human marriage metaphor Jesus applies to himself. His presence is the wedding, not the time for fasting."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -232,6 +237,9 @@
               "note": "In the days of Abiathar the high priest — a textual problem: 1 Sam 21 says Ahimelech, Abiathar’s father, was the priest. Various solutions have been proposed: Abiathar was present but not officiating; the title refers to the Abiathar era rather than the moment; or it is a genuine error in the tradition."
             }
           ]
+        },
+        "hist": {
+          "context": "Mark 2:13-28 groups three controversy stories that reveal Jesus’s radical claim to re-order the religious life of Israel: eating with sinners (the physician metaphor), non-fasting (the bridegroom/new wine metaphor), and grain-picking on the Sabbath (David precedent + the Son of Man as Sabbath Lord). Each controversy escalates the implicit Christological claim."
         }
       }
     },
@@ -252,21 +260,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Capernaum — Jesus’s house</div><div class=\"poi-coords\">Northwest shore of the Sea of Galilee; “his own town” (2:1)</div><div class=\"poi-text\">Capernaum is Jesus’s operational base. The crowd that fills the house and spills outside reflects his rapid notoriety across Galilee (1:28). The roof-opening through which the paralytic is lowered would have been a light brushwood-and-plaster construction typical of Galilean domestic architecture.</div></div>"
         },
-        "ctx": "The healing of the paralytic through the roof is the first direct controversy with the scribes and the first explicit claim of divine authority over sin. Jesus’s question “Which is easier” is a logical trap: the visible miracle proves the invisible pardon. The Son of Man title (v.10) appears for the first time — the Danielic figure who has authority on earth.",
-        "cross": [
-          {
-            "ref": "Dan 7:13-14",
-            "note": "The Son of Man received authority, glory and sovereign power — Jesus’s claim to forgive sins invokes this Danielic title."
-          },
-          {
-            "ref": "Isa 43:25",
-            "note": "I, even I, am he who blots out your transgressions — YHWH’s exclusive claim, which is why the scribes recognize the implication of Jesus’s words."
-          },
-          {
-            "ref": "Ps 103:3",
-            "note": "He forgives all your sins and heals all your diseases — the psalm that links forgiveness and physical restoration, the precise combination Jesus performs."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Dan 7:13-14",
+              "note": "The Son of Man received authority, glory and sovereign power — Jesus’s claim to forgive sins invokes this Danielic title."
+            },
+            {
+              "ref": "Isa 43:25",
+              "note": "I, even I, am he who blots out your transgressions — YHWH’s exclusive claim, which is why the scribes recognize the implication of Jesus’s words."
+            },
+            {
+              "ref": "Ps 103:3",
+              "note": "He forgives all your sins and heals all your diseases — the psalm that links forgiveness and physical restoration, the precise combination Jesus performs."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -344,6 +353,9 @@
               "note": "In full view of them all — emprosthen pantōn. The public nature of the healing is emphasized. This is not private certification but community witness."
             }
           ]
+        },
+        "hist": {
+          "context": "The healing of the paralytic through the roof is the first direct controversy with the scribes and the first explicit claim of divine authority over sin. Jesus’s question “Which is easier” is a logical trap: the visible miracle proves the invisible pardon. The Son of Man title (v.10) appears for the first time — the Danielic figure who has authority on earth."
         }
       }
     }

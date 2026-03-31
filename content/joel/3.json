@@ -25,21 +25,22 @@
             "paragraph": "The name means 'YHWH judges.' The valley is not a geographical location but a theological concept: the place where God renders verdict on the nations. The name encodes the entire chapter's theme: divine judgment (shaphat) exercised in a specific arena (emeq, valley)."
           }
         ],
-        "ctx": "The final chapter shifts to cosmic judgment: God gathers all nations to the Valley of Jehoshaphat (a symbolic name meaning 'YHWH judges') to enter judgment with them on behalf of Israel. The specific charges are the scattering of God's people, the division of God's land, the selling of children into slavery, and the trafficking of Judean captives to Greeks. Tyre, Sidon, and Philistia are singled out. The principle is reciprocal justice: what the nations did to Judah will be done to them.",
-        "cross": [
-          {
-            "ref": "Matt 25:31-32",
-            "note": "Jesus' judgment of the nations echoes Joel's gathering of nations for divine verdict."
-          },
-          {
-            "ref": "Rev 16:16",
-            "note": "The gathering at Armageddon for final battle draws on Joel's valley of judgment tradition."
-          },
-          {
-            "ref": "Obad 15",
-            "note": "'The day of the LORD is near for all nations' — the same universal scope Joel announces."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 25:31-32",
+              "note": "Jesus' judgment of the nations echoes Joel's gathering of nations for divine verdict."
+            },
+            {
+              "ref": "Rev 16:16",
+              "note": "The gathering at Armageddon for final battle draws on Joel's valley of judgment tradition."
+            },
+            {
+              "ref": "Obad 15",
+              "note": "'The day of the LORD is near for all nations' — the same universal scope Joel announces."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -91,6 +92,9 @@
               "note": "Stuart notes that the specificity of the charges against Tyre, Sidon, and Philistia grounds the eschatological vision in historical reality. The retributive principle ('I will return on your own heads what you have done') is the lex talionis applied at the international level."
             }
           ]
+        },
+        "hist": {
+          "context": "The final chapter shifts to cosmic judgment: God gathers all nations to the Valley of Jehoshaphat (a symbolic name meaning 'YHWH judges') to enter judgment with them on behalf of Israel. The specific charges are the scattering of God's people, the division of God's land, the selling of children into slavery, and the trafficking of Judean captives to Greeks. Tyre, Sidon, and Philistia are singled out. The principle is reciprocal justice: what the nations did to Judah will be done to them."
         }
       }
     },
@@ -114,21 +118,22 @@
             "paragraph": "The final verses declare that YHWH will be a 'refuge for his people, a stronghold for the people of Israel.' The word mahseh contrasts with the false security of Edom's cliffs (Obadiah) and Samaria's fortresses (Amos): true security is found in God alone."
           }
         ],
-        "ctx": "The chapter climaxes with the call to holy war and the harvest of judgment. The command to 'beat your plowshares into swords and your pruning hooks into spears' reverses the famous peace oracle of Isaiah 2:4 and Micah 4:3 — this is not the time for peace but for judgment. The multitudes in the Valley of Decision, the darkened sun and moon, and the LORD roaring from Zion create a scene of cosmic finality. But for God's people, the outcome is refuge, not destruction: 'The LORD will be a refuge for his people.' The book closes with a vision of Judah's permanent blessing: mountains dripping with wine, hills flowing with milk, and the LORD dwelling in Zion forever.",
-        "cross": [
-          {
-            "ref": "Isa 2:4",
-            "note": "'They will beat their swords into plowshares' — Joel reverses this peace oracle: in the time of judgment, nations must prepare for war against God."
-          },
-          {
-            "ref": "Amos 1:2",
-            "note": "'The LORD roars from Zion' — the identical phrase shared by Joel and Amos, connecting the two prophets' judgment traditions."
-          },
-          {
-            "ref": "Rev 14:14-20",
-            "note": "The harvest of judgment in Revelation draws directly on Joel's sickle-and-winepress imagery."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 2:4",
+              "note": "'They will beat their swords into plowshares' — Joel reverses this peace oracle: in the time of judgment, nations must prepare for war against God."
+            },
+            {
+              "ref": "Amos 1:2",
+              "note": "'The LORD roars from Zion' — the identical phrase shared by Joel and Amos, connecting the two prophets' judgment traditions."
+            },
+            {
+              "ref": "Rev 14:14-20",
+              "note": "The harvest of judgment in Revelation draws directly on Joel's sickle-and-winepress imagery."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -192,6 +197,9 @@
               "note": "Stuart identifies the 'Valley of Decision' (v. 14) as the book's climactic scene. The name haruts ('decision/threshing') combines judicial and agricultural meanings: God renders his verdict and separates wheat from chaff simultaneously. The book's final image — YHWH dwelling in Zion forever (v. 21) — resolves the entire narrative: the God who sent locusts, who called for repentance, who promised the Spirit, now takes up permanent residence among his people."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter climaxes with the call to holy war and the harvest of judgment. The command to 'beat your plowshares into swords and your pruning hooks into spears' reverses the famous peace oracle of Isaiah 2:4 and Micah 4:3 — this is not the time for peace but for judgment. The multitudes in the Valley of Decision, the darkened sun and moon, and the LORD roaring from Zion create a scene of cosmic finality. But for God's people, the outcome is refuge, not destruction: 'The LORD will be a refuge for his people.' The book closes with a vision of Judah's permanent blessing: mountains dripping with wine, hills flowing with milk, and the LORD dwelling in Zion forever."
         }
       }
     }

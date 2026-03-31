@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 10,
       "panels": {
-        "ctx": "“When Solomon finished praying, fire came down from heaven and consumed the burnt offering and the sacrifices, and the glory of the LORD filled the temple.” The same fire that validated Elijah at Carmel (1 Kgs 18:38) and David at the threshing floor (1 Chr 21:26) now validates Solomon’s temple. The people bow with faces to the ground and worship: “He is good; his love endures forever.” Solomon offers 22,000 cattle and 120,000 sheep — numbers that may be symbolic but communicate staggering generosity. The celebration lasts fourteen days.",
-        "cross": [
-          {
-            "ref": "1 Kgs 8:62–66",
-            "note": "Kings does not include the fire from heaven — this is the Chronicler’s addition, completing the pattern: tabernacle (Lev 9:24), threshing floor (1 Chr 21:26), temple (here)."
-          },
-          {
-            "ref": "Lev 9:24",
-            "note": "Fire from the LORD consumed the first tabernacle offering. The pattern links tabernacle and temple: both validated by divine fire."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 8:62–66",
+              "note": "Kings does not include the fire from heaven — this is the Chronicler’s addition, completing the pattern: tabernacle (Lev 9:24), threshing floor (1 Chr 21:26), temple (here)."
+            },
+            {
+              "ref": "Lev 9:24",
+              "note": "Fire from the LORD consumed the first tabernacle offering. The pattern links tabernacle and temple: both validated by divine fire."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "ʾish yārĕdāh min-hashshāmayim (“fire came down from heaven”) — the Chronicler uses the exact formula from 1 Chr 21:26. The verbal identity marks deliberate thematic connection."
             }
           ]
+        },
+        "hist": {
+          "context": "“When Solomon finished praying, fire came down from heaven and consumed the burnt offering and the sacrifices, and the glory of the LORD filled the temple.” The same fire that validated Elijah at Carmel (1 Kgs 18:38) and David at the threshing floor (1 Chr 21:26) now validates Solomon’s temple. The people bow with faces to the ground and worship: “He is good; his love endures forever.” Solomon offers 22,000 cattle and 120,000 sheep — numbers that may be symbolic but communicate staggering generosity. The celebration lasts fourteen days."
         }
       }
     },
@@ -62,17 +66,18 @@
             "paragraph": "God’s promise in v.14: “If my people, who are called by my name, will humble themselves and pray and seek my face and turn from their wicked ways, then I will hear from heaven, and I will forgive their sin and will heal their land.” Four human actions (humble, pray, seek, turn) matched by three divine responses (hear, forgive, heal). This verse — found only in Chronicles, not Kings — is arguably the most quoted verse in the entire book."
           }
         ],
-        "ctx": "God appears to Solomon at night and responds to his prayer. The famous 2 Chr 7:14 is the theological centrepiece: four conditions (humble, pray, seek, turn) produce three divine responses (hear, forgive, heal). Then the warning: “If you turn away and forsake the decrees and commands I have given you and go off to serve other gods and worship them, then I will uproot Israel from my land.” The temple itself is conditional: “This temple will become a heap of rubble.” For the Chronicler’s audience, this is not theoretical — they have seen it happen.",
-        "cross": [
-          {
-            "ref": "1 Kgs 9:1‐19",
-            "note": "The Kings parallel. 2 Chr 7:14 has no exact equivalent in Kings — it is the Chronicler’s distinctive contribution."
-          },
-          {
-            "ref": "Jer 7:4‐15",
-            "note": "“Do not trust in deceptive words: The temple of the LORD!” Jeremiah’s warning that the temple is not an unconditional guarantee."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 9:1‐19",
+              "note": "The Kings parallel. 2 Chr 7:14 has no exact equivalent in Kings — it is the Chronicler’s distinctive contribution."
+            },
+            {
+              "ref": "Jer 7:4‐15",
+              "note": "“Do not trust in deceptive words: The temple of the LORD!” Jeremiah’s warning that the temple is not an unconditional guarantee."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -90,6 +95,9 @@
               "note": "The four verbs — yikkānĕʿû (humble), wĕyitpallĕlû (pray), wîbąqshû (seek), wĕyāshubû (turn) — form a progressive sequence from internal attitude to external action. Each builds on the previous."
             }
           ]
+        },
+        "hist": {
+          "context": "God appears to Solomon at night and responds to his prayer. The famous 2 Chr 7:14 is the theological centrepiece: four conditions (humble, pray, seek, turn) produce three divine responses (hear, forgive, heal). Then the warning: “If you turn away and forsake the decrees and commands I have given you and go off to serve other gods and worship them, then I will uproot Israel from my land.” The temple itself is conditional: “This temple will become a heap of rubble.” For the Chronicler’s audience, this is not theoretical — they have seen it happen."
         }
       }
     }

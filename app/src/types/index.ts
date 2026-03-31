@@ -254,6 +254,40 @@ export interface CrossRefEntry {
   note: string;
 }
 
+// ── Composite Context Data (Phase 2) ────────────────────────────────
+
+export interface ANEParallel {
+  parallel: string;
+  similarity: string;
+  difference: string;
+  significance: string;
+}
+
+export interface CompositeContextData {
+  context?: string;
+  historical?: string;
+  audience?: string;
+  ane?: ANEParallel[];
+}
+
+// ── Composite Connections Data (Phase 3) ─────────────────────────────
+
+export type EchoType = 'direct_quote' | 'allusion' | 'echo' | 'typological';
+
+export interface EchoEntry {
+  source_ref: string;
+  target_ref: string;
+  type: EchoType;
+  source_context: string;
+  connection: string;
+  significance: string;
+}
+
+export interface CompositeConnectionsData {
+  refs: CrossRefEntry[];
+  echoes?: EchoEntry[];
+}
+
 export interface CommentaryNote {
   ref: string;
   note: string;

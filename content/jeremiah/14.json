@@ -25,21 +25,22 @@
             "paragraph": "Jeremiah calls God \"the hope (miqweh) of Israel\" (v.8) — but the word miqweh also means \"reservoir\" or \"pool of water.\" In the context of a drought oracle, the double meaning is pointed: God is both the hope and the water supply that Israel has abandoned. The drought is both literal and theological — the land dries up because the people have left their source."
           }
         ],
-        "ctx": "Chapter 14 describes a devastating drought — one of the primary covenant curses (Deut 28:23–24). The drought affects every level of creation: nobles send servants for water and find nothing (v.3), farmers cover their heads in despair (v.4), even the doe abandons her newborn fawn (v.5). Jeremiah intercedes with a penitential prayer (vv.7–9), but God responds with a third prohibition against intercession (v.11, cf. 7:16, 11:14).",
-        "cross": [
-          {
-            "ref": "Deut 28:23–24",
-            "note": "The covenant curses include drought: \"The sky over your head will be bronze, the ground beneath you iron.\" The drought fulfills the covenant penalty."
-          },
-          {
-            "ref": "1 Kgs 17:1",
-            "note": "Elijah's drought was a prophetic sign-act of similar magnitude — God withholding rain as judgment."
-          },
-          {
-            "ref": "Amos 4:7–8",
-            "note": "Amos describes selective drought as divine discipline: rain on one city, not another. Jeremiah's drought is universal and final."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 28:23–24",
+              "note": "The covenant curses include drought: \"The sky over your head will be bronze, the ground beneath you iron.\" The drought fulfills the covenant penalty."
+            },
+            {
+              "ref": "1 Kgs 17:1",
+              "note": "Elijah's drought was a prophetic sign-act of similar magnitude — God withholding rain as judgment."
+            },
+            {
+              "ref": "Amos 4:7–8",
+              "note": "Amos describes selective drought as divine discipline: rain on one city, not another. Jeremiah's drought is universal and final."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -96,6 +97,9 @@
               "note": "Brueggemann reads Jeremiah's prayer as a model of \"desperate honesty\" — the prophet admits guilt while still insisting that God act. The prayer refuses both cheap repentance and passive fatalism."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 14 describes a devastating drought — one of the primary covenant curses (Deut 28:23–24). The drought affects every level of creation: nobles send servants for water and find nothing (v.3), farmers cover their heads in despair (v.4), even the doe abandons her newborn fawn (v.5). Jeremiah intercedes with a penitential prayer (vv.7–9), but God responds with a third prohibition against intercession (v.11, cf. 7:16, 11:14)."
         }
       }
     },
@@ -113,17 +117,18 @@
             "paragraph": "The false prophets prophesy šeqer — the same word that characterizes the scribes (8:8), the peace oracle (6:14), and the temple chant (7:4). Šeqer is the signature sin of Jeremiah: a systemic falsehood that pervades every institution. God explicitly disowns these prophets: \"I did not send them or appoint them or speak to them\" (v.14)."
           }
         ],
-        "ctx": "Jeremiah's defense — \"the prophets are telling them, 'You will not see the sword or suffer famine'\" (v.13) — shifts blame to the false prophets. God accepts none of it: the prophets are false, but the people are complicit in choosing to believe comfortable lies. The false prophets will die by the very sword and famine they denied. The chapter closes with another intercessory prayer (vv.19–22) that rehearses covenant language and creation theology.",
-        "cross": [
-          {
-            "ref": "Deut 18:20–22",
-            "note": "The test of a true prophet: if the word does not come true, the prophet has spoken presumptuously. The false prophets fail this test definitively."
-          },
-          {
-            "ref": "2 Pet 2:1",
-            "note": "Peter warns of false prophets who \"secretly introduce destructive heresies\" — the NT continuation of Jeremiah's concern."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 18:20–22",
+              "note": "The test of a true prophet: if the word does not come true, the prophet has spoken presumptuously. The false prophets fail this test definitively."
+            },
+            {
+              "ref": "2 Pet 2:1",
+              "note": "Peter warns of false prophets who \"secretly introduce destructive heresies\" — the NT continuation of Jeremiah's concern."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -184,6 +189,9 @@
               "note": "Brueggemann calls this prayer \"covenant theology in extremis\" — Jeremiah uses every category available: confession of sin, appeal to God's character, creation theology, covenant memory. The prayer is a last-ditch attempt to find leverage with a God who has closed the door."
             }
           ]
+        },
+        "hist": {
+          "context": "Jeremiah's defense — \"the prophets are telling them, 'You will not see the sword or suffer famine'\" (v.13) — shifts blame to the false prophets. God accepts none of it: the prophets are false, but the people are complicit in choosing to believe comfortable lies. The false prophets will die by the very sword and famine they denied. The chapter closes with another intercessory prayer (vv.19–22) that rehearses covenant language and creation theology."
         }
       }
     }

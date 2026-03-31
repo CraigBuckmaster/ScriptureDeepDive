@@ -31,21 +31,22 @@
             "paragraph": "The verb egeirō in the perfect tense (egēgertai, 'has been raised,' v. 4) is theologically decisive. The perfect denotes a completed past action with ongoing present consequences: Christ was raised and remains raised. The passive implies divine agency: God raised Christ."
           }
         ],
-        "ctx": "Chapter 15 addresses a denial among some Corinthians of future bodily resurrection. They may have held a 'realised eschatology' influenced by Greek disdain for the body. Paul's response begins with the foundational kerygma (vv. 1–11). The creedal formula in vv. 3–5 is a pre-Pauline tradition using the technical language of Jewish tradition-transmission (paralambanō/paradidōmi).",
-        "cross": [
-          {
-            "ref": "Isa 53:5–12",
-            "note": "'Christ died for our sins according to the Scriptures' draws on the Suffering Servant passage."
-          },
-          {
-            "ref": "Ps 16:10",
-            "note": "The early church interpreted this as a prophecy of Christ's resurrection (cf. Acts 2:25–31)."
-          },
-          {
-            "ref": "Matt 28:1–10",
-            "note": "The Gospel resurrection narratives expand the creedal statement."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 53:5–12",
+              "note": "'Christ died for our sins according to the Scriptures' draws on the Suffering Servant passage."
+            },
+            {
+              "ref": "Ps 16:10",
+              "note": "The early church interpreted this as a prophecy of Christ's resurrection (cf. Acts 2:25–31)."
+            },
+            {
+              "ref": "Matt 28:1–10",
+              "note": "The Gospel resurrection narratives expand the creedal statement."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -102,6 +103,9 @@
               "note": "Thiselton argues the creedal formula shows signs of Semitic origin and was likely formulated in Aramaic before being translated into Greek. Paul's inclusion of himself simultaneously claims apostolic authority and acknowledges its irregular basis."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 15 addresses a denial among some Corinthians of future bodily resurrection. They may have held a 'realised eschatology' influenced by Greek disdain for the body. Paul's response begins with the foundational kerygma (vv. 1–11). The creedal formula in vv. 3–5 is a pre-Pauline tradition using the technical language of Jewish tradition-transmission (paralambanō/paradidōmi)."
         }
       }
     },
@@ -125,17 +129,18 @@
             "paragraph": "The adjective mataios (futile) in v. 17 describes faith without resurrection: it achieves nothing. The word echoes Ecclesiastes' mataiōtēs (vanity)."
           }
         ],
-        "ctx": "Paul constructs a reductio ad absurdum: if there is no resurrection, seven catastrophic consequences follow. The argument is logically airtight: Paul refuses to separate Christ's resurrection from the general resurrection.",
-        "cross": [
-          {
-            "ref": "Rom 4:25",
-            "note": "Christ 'was raised to life for our justification'—resurrection is essential to salvation's application, not merely its confirmation."
-          },
-          {
-            "ref": "1 Pet 1:3",
-            "note": "Peter grounds Christian hope in the resurrection."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 4:25",
+              "note": "Christ 'was raised to life for our justification'—resurrection is essential to salvation's application, not merely its confirmation."
+            },
+            {
+              "ref": "1 Pet 1:3",
+              "note": "Peter grounds Christian hope in the resurrection."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -184,6 +189,9 @@
               "note": "Thiselton analyses the logical structure as a classical modus tollens argument, one of the most rigorous pieces of argumentation in the Pauline corpus."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul constructs a reductio ad absurdum: if there is no resurrection, seven catastrophic consequences follow. The argument is logically airtight: Paul refuses to separate Christ's resurrection from the general resurrection."
         }
       }
     },
@@ -207,21 +215,22 @@
             "paragraph": "The military noun tagma (order) arranges the resurrection in stages: Christ first, then believers at the parousia, then the consummation when Christ hands the kingdom to the Father."
           }
         ],
-        "ctx": "Paul constructs a positive theology centred on the Adam-Christ typology. Through Adam, death; through Christ, resurrection. Paul sketches an eschatological timeline using Psalm 110:1 and Psalm 8:6.",
-        "cross": [
-          {
-            "ref": "Gen 3:17–19",
-            "note": "Death as a consequence of Adam's sin provides the negative background for the Adam-Christ contrast."
-          },
-          {
-            "ref": "Ps 110:1",
-            "note": "The most-cited OT text in the NT, applied to Christ's present reign."
-          },
-          {
-            "ref": "Phil 2:9–11",
-            "note": "Christ's exaltation leads to universal submission and the Father's glorification."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 3:17–19",
+              "note": "Death as a consequence of Adam's sin provides the negative background for the Adam-Christ contrast."
+            },
+            {
+              "ref": "Ps 110:1",
+              "note": "The most-cited OT text in the NT, applied to Christ's present reign."
+            },
+            {
+              "ref": "Phil 2:9–11",
+              "note": "Christ's exaltation leads to universal submission and the Father's glorification."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -274,6 +283,9 @@
               "note": "Thiselton draws on Cullmann's 'already/not yet' framework. The tagma implies a structured sequence, not a simultaneous event. Christ's reign is a 'between the times' reality."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul constructs a positive theology centred on the Adam-Christ typology. Through Adam, death; through Christ, resurrection. Paul sketches an eschatological timeline using Psalm 110:1 and Psalm 8:6."
         }
       }
     },
@@ -291,17 +303,18 @@
             "paragraph": "One of the most obscure expressions in the Pauline corpus, with over forty proposed interpretations. The most straightforward grammatical reading is vicarious baptism on behalf of the deceased. Paul does not endorse or condemn it; he cites it as evidence that even practitioners implicitly affirm resurrection."
           }
         ],
-        "ctx": "This section transitions from theological argument to practical implications. If the dead are not raised, both extraordinary practices (baptism for the dead) and daily apostolic sacrifice are pointless. The Isaiah 22:13 citation represents hedonism as the logical alternative to resurrection faith.",
-        "cross": [
-          {
-            "ref": "Isa 22:13",
-            "note": "The Epicurean motto as the logical consequence of denying resurrection."
-          },
-          {
-            "ref": "Rom 6:3–4",
-            "note": "Baptism unites the believer with Christ's death and resurrection."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 22:13",
+              "note": "The Epicurean motto as the logical consequence of denying resurrection."
+            },
+            {
+              "ref": "Rom 6:3–4",
+              "note": "Baptism unites the believer with Christ's death and resurrection."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -350,6 +363,9 @@
               "note": "Thiselton surveys over forty interpretations and tentatively favours the view that 'the dead' refers to deceased believers whose lives motivated others to seek baptism. All interpretations are speculative."
             }
           ]
+        },
+        "hist": {
+          "context": "This section transitions from theological argument to practical implications. If the dead are not raised, both extraordinary practices (baptism for the dead) and daily apostolic sacrifice are pointless. The Isaiah 22:13 citation represents hedonism as the logical alternative to resurrection faith."
         }
       }
     },
@@ -373,17 +389,18 @@
             "paragraph": "The adjective pair in v. 44 describes not composition but animating power: the present body is sustained by the natural life-principle (psychē); the resurrection body by the Holy Spirit (pneuma). The body remains a sōma—physical, real, tangible—but its power source is transformed."
           }
         ],
-        "ctx": "Paul addresses 'With what kind of body?' (v. 35) through three analogies: the seed (vv. 36–38), diversity of flesh (vv. 39–41), and the contrast series (vv. 42–44). The Adam-Christ typology returns: the first Adam was a 'living being' (Gen 2:7 LXX); the last Adam is a 'life-giving spirit.'",
-        "cross": [
-          {
-            "ref": "Gen 2:7",
-            "note": "The scriptural basis for the Adam-Christ contrast. The 'living being' characterises the first creation; the 'life-giving spirit' characterises the new creation."
-          },
-          {
-            "ref": "Phil 3:20–21",
-            "note": "Christ 'will transform our lowly bodies so that they will be like his glorious body'—transformation, not replacement."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 2:7",
+              "note": "The scriptural basis for the Adam-Christ contrast. The 'living being' characterises the first creation; the 'life-giving spirit' characterises the new creation."
+            },
+            {
+              "ref": "Phil 3:20–21",
+              "note": "Christ 'will transform our lowly bodies so that they will be like his glorious body'—transformation, not replacement."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -440,6 +457,9 @@
               "note": "Thiselton draws on philosophy of personal identity to argue that Paul navigates between mere resuscitation and abandonment of embodiment. The four-fold contrast series is structured chiastically, with natural/spiritual receiving the most development."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul addresses 'With what kind of body?' (v. 35) through three analogies: the seed (vv. 36–38), diversity of flesh (vv. 39–41), and the contrast series (vv. 42–44). The Adam-Christ typology returns: the first Adam was a 'living being' (Gen 2:7 LXX); the last Adam is a 'life-giving spirit.'"
         }
       }
     },
@@ -463,25 +483,26 @@
             "paragraph": "The noun nikos (victory) in vv. 54–57 clinches the triumph. Paul combines Isaiah 25:8 and Hosea 13:14 into a composite taunt-song against defeated death. The victory is already inaugurated in Christ's resurrection. The 'sting of death is sin' because sin gives death its power; God gives victory 'through our Lord Jesus Christ.'"
           }
         ],
-        "ctx": "The climactic conclusion: a 'mystery' is disclosed—instantaneous transformation for the living at the parousia. Paul celebrates with Isaiah 25:8 and Hosea 13:14 as a taunt-song against death. Verse 58 connects resurrection hope to ethical perseverance: 'your labour in the Lord is not in vain.'",
-        "cross": [
-          {
-            "ref": "Isa 25:8",
-            "note": "The eschatological vision: 'he will swallow up death forever.'"
-          },
-          {
-            "ref": "Hos 13:14",
-            "note": "Reinterpreted by Paul as a victory song: death's sting is removed by Christ's resurrection."
-          },
-          {
-            "ref": "1 Thess 4:15–17",
-            "note": "Paul's earlier teaching about the parousia provides background for the 'mystery' of transformation."
-          },
-          {
-            "ref": "Rev 21:4",
-            "note": "'There will be no more death' echoes the Isaianic promise."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 25:8",
+              "note": "The eschatological vision: 'he will swallow up death forever.'"
+            },
+            {
+              "ref": "Hos 13:14",
+              "note": "Reinterpreted by Paul as a victory song: death's sting is removed by Christ's resurrection."
+            },
+            {
+              "ref": "1 Thess 4:15–17",
+              "note": "Paul's earlier teaching about the parousia provides background for the 'mystery' of transformation."
+            },
+            {
+              "ref": "Rev 21:4",
+              "note": "'There will be no more death' echoes the Isaianic promise."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -538,6 +559,9 @@
               "note": "Thiselton draws on apocalyptic background: mystērion denotes a heavenly secret disclosed through revelation (cf. Dan 2:27–30). Paul reads Isaiah and Hosea through the hermeneutical lens of Christ's resurrection, transforming ambiguous texts into unambiguous victory declarations. Verse 58 exemplifies 'eschatological pragmatism': resurrection hope energises present labour."
             }
           ]
+        },
+        "hist": {
+          "context": "The climactic conclusion: a 'mystery' is disclosed—instantaneous transformation for the living at the parousia. Paul celebrates with Isaiah 25:8 and Hosea 13:14 as a taunt-song against death. Verse 58 connects resurrection hope to ethical perseverance: 'your labour in the Lord is not in vain.'"
         }
       }
     }

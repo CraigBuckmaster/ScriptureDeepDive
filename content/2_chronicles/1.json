@@ -17,13 +17,14 @@
       "verse_start": 1,
       "verse_end": 6,
       "panels": {
-        "ctx": "Solomon goes to Gibeon where the tabernacle and bronze altar of Bezalel are located. He offers a thousand burnt offerings. The Chronicler emphasises the legitimacy of Gibeon worship — the tabernacle is there, even though the ark is in Jerusalem. Solomon’s first act as king is not political consolidation (as in 1 Kings 2) but worship. The Chronicler’s Solomon begins at the altar, not the throne.",
-        "cross": [
-          {
-            "ref": "1 Kgs 3:4–5",
-            "note": "The Kings parallel. The Chronicler omits Solomon’s dream and the judgment of the two prostitutes, keeping only the divine encounter."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 3:4–5",
+              "note": "The Kings parallel. The Chronicler omits Solomon’s dream and the judgment of the two prostitutes, keeping only the divine encounter."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -41,6 +42,9 @@
               "note": "Bezalel’s bronze altar (Exod 38:1–7) provides the direct Mosaic pedigree for Solomon’s worship. The altar at Gibeon is the altar from Sinai."
             }
           ]
+        },
+        "hist": {
+          "context": "Solomon goes to Gibeon where the tabernacle and bronze altar of Bezalel are located. He offers a thousand burnt offerings. The Chronicler emphasises the legitimacy of Gibeon worship — the tabernacle is there, even though the ark is in Jerusalem. Solomon’s first act as king is not political consolidation (as in 1 Kings 2) but worship. The Chronicler’s Solomon begins at the altar, not the throne."
         }
       }
     },
@@ -50,13 +54,14 @@
       "verse_start": 7,
       "verse_end": 17,
       "panels": {
-        "ctx": "God appears to Solomon at night: “Ask for whatever you want me to give you.” Solomon asks for wisdom and knowledge to govern. God grants these plus wealth and honour “such as no king who was before you ever had and none after you will have.” Solomon returns to Jerusalem and his wealth is described: 1,400 chariots, 12,000 horses, silver “as common as stones.” The Chronicler’s version omits the dream framework and the famous judgment scene (1 Kgs 3:16–28) — Solomon’s wisdom is asserted, not demonstrated.",
-        "cross": [
-          {
-            "ref": "1 Kgs 3:5–14",
-            "note": "The Kings parallel includes the dream format and is more expansive on God’s pleasure at Solomon’s request."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 3:5–14",
+              "note": "The Kings parallel includes the dream format and is more expansive on God’s pleasure at Solomon’s request."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -74,6 +79,9 @@
               "note": "hokmah umaddaʿ — “wisdom and knowledge.” The pairing is unique to Chronicles; 1 Kgs 3:9 uses lēb shōmēaʿ (“a discerning heart”). The Chronicler intellectualises the request."
             }
           ]
+        },
+        "hist": {
+          "context": "God appears to Solomon at night: “Ask for whatever you want me to give you.” Solomon asks for wisdom and knowledge to govern. God grants these plus wealth and honour “such as no king who was before you ever had and none after you will have.” Solomon returns to Jerusalem and his wealth is described: 1,400 chariots, 12,000 horses, silver “as common as stones.” The Chronicler’s version omits the dream framework and the famous judgment scene (1 Kgs 3:16–28) — Solomon’s wisdom is asserted, not demonstrated."
         }
       }
     }

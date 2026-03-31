@@ -25,17 +25,18 @@
             "paragraph": "The qualification on the ch.27 Zelophehad ruling: daughters who inherit must marry within their own tribe, otherwise land would transfer between tribes through marriage, disrupting the divinely-determined land allocation. Individual equity (ch.27) is balanced by communal land integrity (ch.36)."
           }
         ],
-        "ctx": "The leaders of Manasseh bring a new concern to Moses: if the daughters marry outside their tribe, their inherited land will transfer to their husbands’ tribe at the next Jubilee, permanently reducing Manasseh’s inheritance. God’s ruling: daughters who inherit must marry within their own tribe. The two rulings together constitute a complete and balanced covenant legal provision: individual equity and communal integrity are both preserved.",
-        "cross": [
-          {
-            "ref": "Josh 17:3–6",
-            "note": "\"Zelophehad son of Hepher had no sons but only daughters... and their father’s brothers’ sons married them. These girls married cousins on their father’s side.\" The Num 36 ruling is fulfilled in Joshua."
-          },
-          {
-            "ref": "1 Cor 7:39",
-            "note": "\"A woman is bound to her husband as long as he lives... but if her husband dies, she is free to marry anyone she wishes, but he must belong to the Lord.\" Paul’s \"in the Lord\" qualification echoes the Num 36 within-tribe principle: covenant community defines the context for marriage."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 17:3–6",
+              "note": "\"Zelophehad son of Hepher had no sons but only daughters... and their father’s brothers’ sons married them. These girls married cousins on their father’s side.\" The Num 36 ruling is fulfilled in Joshua."
+            },
+            {
+              "ref": "1 Cor 7:39",
+              "note": "\"A woman is bound to her husband as long as he lives... but if her husband dies, she is free to marry anyone she wishes, but he must belong to the Lord.\" Paul’s \"in the Lord\" qualification echoes the Num 36 within-tribe principle: covenant community defines the context for marriage."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Ashley: The narrative context of inheritance in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "The leaders of Manasseh bring a new concern to Moses: if the daughters marry outside their tribe, their inherited land will transfer to their husbands’ tribe at the next Jubilee, permanently reducing Manasseh’s inheritance. God’s ruling: daughters who inherit must marry within their own tribe. The two rulings together constitute a complete and balanced covenant legal provision: individual equity and communal integrity are both preserved."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "The compliance formula that closes the Zelophehad story and Numbers itself: the daughters heard the command and did it. The same verb (asah — to do, to act) runs throughout Numbers’ compliance formulas. Numbers ends where it must: with hearing and doing."
           }
         ],
-        "ctx": "The daughters comply: Mahlah, Tirzah, Hoglah, Milcah, and Noah — all five named again — marry their cousins within Manasseh’s clans. The Zelophehad daughters’ story is complete: they sought justice (ch.27), received it, and lived by the covenant qualification that accompanied it (ch.36). Numbers then closes with its final formula: \"These are the commands and regulations the Lord gave through Moses to the Israelites on the plains of Moab by the Jordan across from Jericho.\" The book that began with a census at Sinai ends with covenant compliance at the Jordan. The promised land is one crossing away.",
-        "cross": [
-          {
-            "ref": "Deut 1:1",
-            "note": "\"These are the words Moses spoke to all Israel in the wilderness east of the Jordan — that is, in the Arabah.\" Deuteronomy begins where Numbers ends: Moses speaking to all Israel on the plains of Moab, across from Jericho. The two books form a continuous narrative seam."
-          },
-          {
-            "ref": "Josh 1:2",
-            "note": "\"Moses my servant is dead. Now then, you and all these people, get ready to cross the Jordan River into the land I am about to give to them.\" Joshua picks up precisely where Numbers leaves off — the covenant community poised at the Jordan."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 1:1",
+              "note": "\"These are the words Moses spoke to all Israel in the wilderness east of the Jordan — that is, in the Arabah.\" Deuteronomy begins where Numbers ends: Moses speaking to all Israel on the plains of Moab, across from Jericho. The two books form a continuous narrative seam."
+            },
+            {
+              "ref": "Josh 1:2",
+              "note": "\"Moses my servant is dead. Now then, you and all these people, get ready to cross the Jordan River into the land I am about to give to them.\" Joshua picks up precisely where Numbers leaves off — the covenant community poised at the Jordan."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -192,6 +197,9 @@
               "note": "Ashley: The narrative context of inheritance in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "The daughters comply: Mahlah, Tirzah, Hoglah, Milcah, and Noah — all five named again — marry their cousins within Manasseh’s clans. The Zelophehad daughters’ story is complete: they sought justice (ch.27), received it, and lived by the covenant qualification that accompanied it (ch.36). Numbers then closes with its final formula: \"These are the commands and regulations the Lord gave through Moses to the Israelites on the plains of Moab by the Jordan across from Jericho.\" The book that began with a census at Sinai ends with covenant compliance at the Jordan. The promised land is one crossing away."
         }
       }
     }

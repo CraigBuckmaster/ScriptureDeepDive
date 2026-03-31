@@ -31,17 +31,18 @@
             "paragraph": "As in 1 Tim 1:1, Paul frames his apostleship as the result of divine command (ἐπιταγή, epitagē), not personal initiative or ecclesiastical appointment. The phrase 'God our Savior' (θεοῦ σωτῆρος) reappears as a Pastoral hallmark, simultaneously affirming Jewish monotheism and countering imperial soteriology."
           }
         ],
-        "ctx": "The salutation of Titus is the longest and most theologically dense of the three Pastoral openings. It compresses the entire Pastoral soteriology into three verses: God's eternal purpose (v. 2, 'before the beginning of time'), historical revelation through preaching (v. 3), and personal appropriation through faith (v. 4). Titus, like Timothy, is called a 'true son in our common faith'—establishing his delegated authority. Crete, where Titus was left to complete unfinished organizational work, was proverbially notorious for dishonesty (cf. v. 12, the 'Cretan paradox').",
-        "cross": [
-          {
-            "ref": "2 Timothy 1:9–10",
-            "note": "The parallel creedal fragment in 2 Timothy also moves from pre-temporal purpose through historical appearing, confirming a shared liturgical tradition across the Pastoral Epistles."
-          },
-          {
-            "ref": "1 Timothy 1:1–2",
-            "note": "The parallel salutation to Timothy uses nearly identical language (apostle by command, true son in faith), establishing a consistent pattern of delegated apostolic authority."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Timothy 1:9–10",
+              "note": "The parallel creedal fragment in 2 Timothy also moves from pre-temporal purpose through historical appearing, confirming a shared liturgical tradition across the Pastoral Epistles."
+            },
+            {
+              "ref": "1 Timothy 1:1–2",
+              "note": "The parallel salutation to Timothy uses nearly identical language (apostle by command, true son in faith), establishing a consistent pattern of delegated apostolic authority."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -94,6 +95,9 @@
               "note": "The opening is simultaneously the letter's theological thesis and Titus's credentials statement. By tracing his commission from God's eternal promise through historical revelation to apostolic entrustment, Paul locates Titus's authority within a salvation-historical framework that the Cretan opponents cannot match. The 'common faith' language underscores the universality of the gospel against any local or ethnic modification."
             }
           ]
+        },
+        "hist": {
+          "context": "The salutation of Titus is the longest and most theologically dense of the three Pastoral openings. It compresses the entire Pastoral soteriology into three verses: God's eternal purpose (v. 2, 'before the beginning of time'), historical revelation through preaching (v. 3), and personal appropriation through faith (v. 4). Titus, like Timothy, is called a 'true son in our common faith'—establishing his delegated authority. Crete, where Titus was left to complete unfinished organizational work, was proverbially notorious for dishonesty (cf. v. 12, the 'Cretan paradox')."
         }
       }
     },
@@ -111,21 +115,22 @@
             "paragraph": "The shift from πρεσβυτέρους (elders, v. 5) to ἐπίσκοπον (overseer, v. 7) within the same qualification list is the clearest NT evidence that the two terms refer to the same office. The elder-overseer interchangeability attested here (as in Acts 20:17, 28) represents the earlier, non-hierarchical structure that preceded the later bishop-presbyter-deacon hierarchy developed by Ignatius of Antioch."
           }
         ],
-        "ctx": "Titus's task on Crete is organizational: he must appoint elders in 'every town'—suggesting multiple house churches scattered across the island. The qualification list overlaps significantly with 1 Tim 3:1–7 but is adapted to the Cretan context: the emphasis on self-control, sobriety, and not being given to drunkenness may address specific Cretan cultural traits (cf. the Epimenides quotation in v. 12). The requirement that the elder 'hold firmly to the trustworthy message as it has been taught' (v. 9) directly connects leadership qualifications to the anti-heresy agenda of the letter.",
-        "cross": [
-          {
-            "ref": "1 Timothy 3:1–7",
-            "note": "The parallel overseer qualifications in 1 Timothy provide a complementary list; comparing the two reveals both shared requirements and context-specific emphases."
-          },
-          {
-            "ref": "Acts 14:23",
-            "note": "Paul and Barnabas appointed elders in every church on the first missionary journey—the same organizational pattern Titus is now implementing on Crete."
-          },
-          {
-            "ref": "1 Peter 5:1–4",
-            "note": "Peter's instructions to elders emphasize willing service, humility, and example-setting, complementing the character-based criteria here."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Timothy 3:1–7",
+              "note": "The parallel overseer qualifications in 1 Timothy provide a complementary list; comparing the two reveals both shared requirements and context-specific emphases."
+            },
+            {
+              "ref": "Acts 14:23",
+              "note": "Paul and Barnabas appointed elders in every church on the first missionary journey—the same organizational pattern Titus is now implementing on Crete."
+            },
+            {
+              "ref": "1 Peter 5:1–4",
+              "note": "Peter's instructions to elders emphasize willing service, humility, and example-setting, complementing the character-based criteria here."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -178,6 +183,9 @@
               "note": "The elder-appointment instruction combines organizational pragmatism with theological purpose. The 'every town' scope reveals a Cretan mission field with multiple communities in need of stable leadership. The elder/overseer interchangeability reflects an ecclesiology in which function determines title: these leaders oversee the community's faith and practice. The final qualification—ability to exhort in sound doctrine and refute opponents—bridges the church-order and anti-heresy sections of the letter."
             }
           ]
+        },
+        "hist": {
+          "context": "Titus's task on Crete is organizational: he must appoint elders in 'every town'—suggesting multiple house churches scattered across the island. The qualification list overlaps significantly with 1 Tim 3:1–7 but is adapted to the Cretan context: the emphasis on self-control, sobriety, and not being given to drunkenness may address specific Cretan cultural traits (cf. the Epimenides quotation in v. 12). The requirement that the elder 'hold firmly to the trustworthy message as it has been taught' (v. 9) directly connects leadership qualifications to the anti-heresy agenda of the letter."
         }
       }
     },
@@ -195,21 +203,22 @@
             "paragraph": "Paul quotes the Cretan poet Epimenides (c. 600 BC), who reportedly said: 'Cretans are always liars, evil beasts, lazy gluttons.' The quotation creates the famous 'Epimenides paradox' (also called the 'liar paradox'): if a Cretan says all Cretans are liars, is the statement true or false? Paul endorses the quotation's moral assessment (ἡ μαρτυρία αὕτη ἐστὶν ἀληθής, 'this testimony is true') and applies it to the false teachers on Crete, using their own cultural reputation against them."
           }
         ],
-        "ctx": "The false teachers on Crete are identified as belonging to 'the circumcision group' (v. 10)—Jewish Christians who combined Torah observance with speculative teaching. Their teaching of 'Jewish myths' (v. 14) and 'commands of those who reject the truth' suggests a blend of Jewish halakhic interpretation and Hellenistic religious speculation. The motivation is financial: they are 'ruining whole households for the sake of dishonest gain' (v. 11). Paul's use of the Epimenides quotation is a rhetorical strategy: citing a pagan poet respected by the Cretans to validate his critique.",
-        "cross": [
-          {
-            "ref": "1 Timothy 1:3–7",
-            "note": "The parallel description of the Ephesian false teachers—devoted to myths, genealogies, and law-teaching—confirms similar false teaching across multiple Pauline churches."
-          },
-          {
-            "ref": "Acts 17:28",
-            "note": "Paul's citation of the Greek poet Aratus ('we are his offspring') in his Athens speech demonstrates his willingness to use pagan literature for apologetic purposes."
-          },
-          {
-            "ref": "Galatians 2:12; 6:12–13",
-            "note": "The 'circumcision group' causing trouble in Crete echoes the Judaizing opponents Paul confronted in Galatia and Antioch."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Timothy 1:3–7",
+              "note": "The parallel description of the Ephesian false teachers—devoted to myths, genealogies, and law-teaching—confirms similar false teaching across multiple Pauline churches."
+            },
+            {
+              "ref": "Acts 17:28",
+              "note": "Paul's citation of the Greek poet Aratus ('we are his offspring') in his Athens speech demonstrates his willingness to use pagan literature for apologetic purposes."
+            },
+            {
+              "ref": "Galatians 2:12; 6:12–13",
+              "note": "The 'circumcision group' causing trouble in Crete echoes the Judaizing opponents Paul confronted in Galatia and Antioch."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -270,6 +279,9 @@
               "note": "The anti-heresy section employs three rhetorical strategies: ethnic stereotype (the Epimenides quotation), financial exposal (dishonest gain), and theological diagnosis (professing but denying). Together they construct a comprehensive case for the opponents' illegitimacy. The purity declaration (v. 15) is particularly important: it rejects the ritual-purity framework that the circumcision group was imposing and replaces it with an internalized ethic consistent with Pauline freedom from Torah observance. The closing indictment—‘by their works they deny him'—is the Pastorals' consistent standard: authentic faith is demonstrated by conduct, not by claims to knowledge."
             }
           ]
+        },
+        "hist": {
+          "context": "The false teachers on Crete are identified as belonging to 'the circumcision group' (v. 10)—Jewish Christians who combined Torah observance with speculative teaching. Their teaching of 'Jewish myths' (v. 14) and 'commands of those who reject the truth' suggests a blend of Jewish halakhic interpretation and Hellenistic religious speculation. The motivation is financial: they are 'ruining whole households for the sake of dishonest gain' (v. 11). Paul's use of the Epimenides quotation is a rhetorical strategy: citing a pagan poet respected by the Cretans to validate his critique."
         }
       }
     }

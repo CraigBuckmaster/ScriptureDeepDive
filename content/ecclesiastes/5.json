@@ -25,21 +25,22 @@
             "paragraph": "\"Stand in awe (yərāʾ) of God\" (v.7). The same word as \"fear of the LORD\" throughout the OT. Qoheleth’s theology of worship: approach carefully, speak sparingly, fulfil what you vow. God is in heaven; you are on earth. The distance demands reverence."
           }
         ],
-        "ctx": "The first passage in Ecclesiastes about worship. Guard your steps (v.1), do not be hasty with your mouth (v.2), fulfil your vows (vv.4–6). The theology is simple: God is transcendent, humans are small, and careless words before God are dangerous. This connects to Job 28:28 (\"the fear of the LORD, that is wisdom\") and to Proverbs 1:7.",
-        "cross": [
-          {
-            "ref": "Prov 10:19",
-            "note": "\"When words are many, sin is not absent\" — the same caution about speech."
-          },
-          {
-            "ref": "Matt 6:7",
-            "note": "\"Do not keep on babbling\" — Jesus’ teaching on prayer echoes Qoheleth’s restraint."
-          },
-          {
-            "ref": "Job 28:28",
-            "note": "\"The fear of the Lord, that is wisdom\" — the wisdom tradition’s shared conclusion."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 10:19",
+              "note": "\"When words are many, sin is not absent\" — the same caution about speech."
+            },
+            {
+              "ref": "Matt 6:7",
+              "note": "\"Do not keep on babbling\" — Jesus’ teaching on prayer echoes Qoheleth’s restraint."
+            },
+            {
+              "ref": "Job 28:28",
+              "note": "\"The fear of the Lord, that is wisdom\" — the wisdom tradition’s shared conclusion."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -121,6 +122,9 @@
               "note": "Fox: \"a dream comes with many cares\" — the connection between anxiety and verbosity. Worried people talk too much, including in prayer."
             }
           ]
+        },
+        "hist": {
+          "context": "The first passage in Ecclesiastes about worship. Guard your steps (v.1), do not be hasty with your mouth (v.2), fulfil your vows (vv.4–6). The theology is simple: God is transcendent, humans are small, and careless words before God are dangerous. This connects to Job 28:28 (\"the fear of the LORD, that is wisdom\") and to Proverbs 1:7."
         }
       }
     },
@@ -144,21 +148,22 @@
             "paragraph": "\"To accept their lot (ḥēleq) and be happy in their toil — this is a gift of God\" (v.19). The third \"enjoy\" passage. Contentment is not earned but received. The ability to enjoy what you have is itself God’s gift."
           }
         ],
-        "ctx": "Qoheleth turns to wealth’s futility. Money breeds desire for more money (v.10). As goods increase, so do those who consume them (v.11). A \"grievous evil\": wealth hoarded, then lost, leaving the owner with nothing to pass on (vv.13–17). The response: enjoy what God gives. Eat, drink, find satisfaction in your portion. Happiness is a gift, not an achievement (vv.18–20).",
-        "cross": [
-          {
-            "ref": "1 Tim 6:6–10",
-            "note": "\"The love of money is a root of all kinds of evil\" — Paul’s direct echo of Qoheleth."
-          },
-          {
-            "ref": "Luke 12:15",
-            "note": "\"Life does not consist in an abundance of possessions\" — Jesus’ teaching parallels Qoheleth’s observations."
-          },
-          {
-            "ref": "Job 1:21",
-            "note": "\"Naked I came from my mother’s womb, and naked I will depart\" — the same theology."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Tim 6:6–10",
+              "note": "\"The love of money is a root of all kinds of evil\" — Paul’s direct echo of Qoheleth."
+            },
+            {
+              "ref": "Luke 12:15",
+              "note": "\"Life does not consist in an abundance of possessions\" — Jesus’ teaching parallels Qoheleth’s observations."
+            },
+            {
+              "ref": "Job 1:21",
+              "note": "\"Naked I came from my mother’s womb, and naked I will depart\" — the same theology."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -244,6 +249,9 @@
               "note": "Fox: \"this is a gift of God\" — even the capacity for enjoyment is not self-generated. Fox: Qoheleth’s God is a giver, but an inscrutable one. You cannot predict when or to whom the gift will come."
             }
           ]
+        },
+        "hist": {
+          "context": "Qoheleth turns to wealth’s futility. Money breeds desire for more money (v.10). As goods increase, so do those who consume them (v.11). A \"grievous evil\": wealth hoarded, then lost, leaving the owner with nothing to pass on (vv.13–17). The response: enjoy what God gives. Eat, drink, find satisfaction in your portion. Happiness is a gift, not an achievement (vv.18–20)."
         }
       }
     }

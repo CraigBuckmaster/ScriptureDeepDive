@@ -25,17 +25,18 @@
             "paragraph": "\"Come back, come back, O Shulammite (shullamît)!\" (v.1/6:13). The beloved’s only name in the poem. Related to \"Solomon\" (shəlōmō) and to \"peace\" (shālōm). She is the feminine counterpart of the king: the peace-woman matching the peace-king."
           }
         ],
-        "ctx": "The second wasf describes the beloved from feet upward (the reverse of ch 4’s head-down): sandalled feet, curved thighs, navel like a goblet, waist like a mound of wheat, breasts like fawns, neck like ivory tower, eyes like pools, nose like the tower of Lebanon, head like Carmel, hair that traps a king. The upward direction mirrors her rising: she is ascending in the lover’s vision. \"How beautiful your sandalled feet, O prince’s daughter!\" (v.1).",
-        "cross": [
-          {
-            "ref": "Eph 5:28–29",
-            "note": "\"Husbands ought to love their wives as their own bodies\" — the bodily love the wasf celebrates."
-          },
-          {
-            "ref": "Gen 2:23",
-            "note": "\"This is now bone of my bones and flesh of my flesh\" — the first human celebration of the body that the wasf extends."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Eph 5:28–29",
+              "note": "\"Husbands ought to love their wives as their own bodies\" — the bodily love the wasf celebrates."
+            },
+            {
+              "ref": "Gen 2:23",
+              "note": "\"This is now bone of my bones and flesh of my flesh\" — the first human celebration of the body that the wasf extends."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -113,6 +114,9 @@
               "note": "Garrett: \"held captive\" by her hair — the military language continues (cf. 6:4 \"majestic as troops\"). Love conquers the conqueror."
             }
           ]
+        },
+        "hist": {
+          "context": "The second wasf describes the beloved from feet upward (the reverse of ch 4’s head-down): sandalled feet, curved thighs, navel like a goblet, waist like a mound of wheat, breasts like fawns, neck like ivory tower, eyes like pools, nose like the tower of Lebanon, head like Carmel, hair that traps a king. The upward direction mirrors her rising: she is ascending in the lover’s vision. \"How beautiful your sandalled feet, O prince’s daughter!\" (v.1)."
         }
       }
     },
@@ -130,21 +134,22 @@
             "paragraph": "\"I belong to my beloved, and his desire (təshūqâ) is for me\" (v.10). The final form of the mutual-belonging formula. The progression is complete: \"my beloved is mine and I am his\" (2:16) → \"I am my beloved’s and my beloved is mine\" (6:3) → \"I belong to my beloved, and his desire is for me\" (7:10). The last version is pure surrender and received desire. The word təshūqâ appears only three times in the OT: Gen 3:16 (the woman’s desire for her husband, post-fall), Gen 4:7 (sin’s desire for Cain), and here. The Song redeems the Genesis curse: desire restored to delight."
           }
         ],
-        "ctx": "The formula reaches its final form: \"I belong to my beloved, and his desire is for me.\" Then the beloved invites: \"Come, my beloved, let us go to the countryside... let us go early to the vineyards\" (vv.11–12). The vineyard — where she was forced to labour in chapter 1 (v.6) — is now a place of chosen love. \"There I will give you my love\" (v.12). The mandrakes give off fragrance (v.13) — fertility plants associated with Rachel’s desire for children (Gen 30:14–16). Love, fertility, and the land are united.",
-        "cross": [
-          {
-            "ref": "Gen 3:16",
-            "note": "\"Your desire will be for your husband\" — the curse. Song 7:10 redeems it: desire restored from curse to gift."
-          },
-          {
-            "ref": "Gen 4:7",
-            "note": "\"Sin is crouching at your door; its desire is for you\" — the only other use of təshūqâ before the Song."
-          },
-          {
-            "ref": "Gen 30:14–16",
-            "note": "Rachel, Leah, and the mandrakes — the same fertility association."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 3:16",
+              "note": "\"Your desire will be for your husband\" — the curse. Song 7:10 redeems it: desire restored from curse to gift."
+            },
+            {
+              "ref": "Gen 4:7",
+              "note": "\"Sin is crouching at your door; its desire is for you\" — the only other use of təshūqâ before the Song."
+            },
+            {
+              "ref": "Gen 30:14–16",
+              "note": "Rachel, Leah, and the mandrakes — the same fertility association."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -222,6 +227,9 @@
               "note": "Garrett: the countryside/vineyard setting returns the poem to pastoral origins. The urban court gives way to rural simplicity. Love’s truest expression is not in the palace but in the garden."
             }
           ]
+        },
+        "hist": {
+          "context": "The formula reaches its final form: \"I belong to my beloved, and his desire is for me.\" Then the beloved invites: \"Come, my beloved, let us go to the countryside... let us go early to the vineyards\" (vv.11–12). The vineyard — where she was forced to labour in chapter 1 (v.6) — is now a place of chosen love. \"There I will give you my love\" (v.12). The mandrakes give off fragrance (v.13) — fertility plants associated with Rachel’s desire for children (Gen 30:14–16). Love, fertility, and the land are united."
         }
       }
     }

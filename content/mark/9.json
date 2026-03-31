@@ -28,21 +28,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">High mountain — Transfiguration site</div><div class=\"poi-coords\">Traditionally Mount Tabor (Jezreel Valley) or Mount Hermon (near Caesarea Philippi)</div><div class=\"poi-text\">Geographically, Mount Hermon fits better — it is close to Caesarea Philippi where the confession occurred six days earlier. At 2,814m it is genuinely “high.” The mountain is the locus of divine encounter throughout Israel’s story: Sinai, Horeb, and now the Transfiguration peak.</div></div>"
         },
-        "ctx": "The Transfiguration follows Peter’s confession by six days. The Father’s voice repeats the baptismal declaration with one addition: “Listen to him!” — the echo of Deut 18:15’s command about the prophet like Moses. Moses (law) and Elijah (prophets) appear and then vanish; Jesus alone remains. The mountain is Israel’s covenant mountain in concentrated form.",
-        "cross": [
-          {
-            "ref": "Deut 18:15",
-            "note": "The LORD will raise up a prophet like me… listen to him — the Mosaic promise that the Father’s voice fulfils at the Transfiguration."
-          },
-          {
-            "ref": "Exod 24:15-16",
-            "note": "A cloud covered the mountain… the glory of the LORD — the Sinai theophany cloud that reappears here."
-          },
-          {
-            "ref": "Mal 4:5",
-            "note": "I will send the prophet Elijah before that great and dreadful day — the promise Jesus identifies as fulfilled in John the Baptist (v.13)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 18:15",
+              "note": "The LORD will raise up a prophet like me… listen to him — the Mosaic promise that the Father’s voice fulfils at the Transfiguration."
+            },
+            {
+              "ref": "Exod 24:15-16",
+              "note": "A cloud covered the mountain… the glory of the LORD — the Sinai theophany cloud that reappears here."
+            },
+            {
+              "ref": "Mal 4:5",
+              "note": "I will send the prophet Elijah before that great and dreadful day — the promise Jesus identifies as fulfilled in John the Baptist (v.13)."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -120,6 +121,9 @@
               "note": "Elijah has come — the identification of John the Baptist as the Elijah-figure is implicit. Mark’s readers know John was beheaded; the application is clear: John came and was treated as they wished, just as the Son of Man will be."
             }
           ]
+        },
+        "hist": {
+          "context": "The Transfiguration follows Peter’s confession by six days. The Father’s voice repeats the baptismal declaration with one addition: “Listen to him!” — the echo of Deut 18:15’s command about the prophet like Moses. Moses (law) and Elijah (prophets) appear and then vanish; Jesus alone remains. The mountain is Israel’s covenant mountain in concentrated form."
         }
       }
     },
@@ -140,21 +144,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">High mountain — Transfiguration site</div><div class=\"poi-coords\">Traditionally Mount Tabor (Jezreel Valley) or Mount Hermon (near Caesarea Philippi)</div><div class=\"poi-text\">Geographically, Mount Hermon fits better — it is close to Caesarea Philippi where the confession occurred six days earlier. At 2,814m it is genuinely “high.” The mountain is the locus of divine encounter throughout Israel’s story: Sinai, Horeb, and now the Transfiguration peak.</div></div>"
         },
-        "ctx": "The failed exorcism at the foot of the mountain contrasts with the Transfiguration glory above. The disciples’ failure provokes Jesus’s rebuke of an unbelieving generation. The second passion prediction follows (9:31), and the disciples’ immediate argument about greatness reveals complete misunderstanding. Jesus’s response — a child in the arms — redefines greatness as servitude.",
-        "cross": [
-          {
-            "ref": "Isa 53:12",
-            "note": "He poured out his life unto death… numbered with the transgressors — the Son of Man delivered into human hands."
-          },
-          {
-            "ref": "Isa 57:15",
-            "note": "I live with the one who is contrite and lowly in spirit — the child-welcome (9:36-37) embodies this principle: greatness measured by lowliness."
-          },
-          {
-            "ref": "Isa 66:24",
-            "note": "Where the worms do not die and the fire is not quenched — the Gehenna image Jesus quotes directly in 9:48."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 53:12",
+              "note": "He poured out his life unto death… numbered with the transgressors — the Son of Man delivered into human hands."
+            },
+            {
+              "ref": "Isa 57:15",
+              "note": "I live with the one who is contrite and lowly in spirit — the child-welcome (9:36-37) embodies this principle: greatness measured by lowliness."
+            },
+            {
+              "ref": "Isa 66:24",
+              "note": "Where the worms do not die and the fire is not quenched — the Gehenna image Jesus quotes directly in 9:48."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -232,6 +237,9 @@
               "note": "Gehenna (geenna) — the Valley of Hinnom south of Jerusalem, associated with child sacrifice (2 Kings 23:10) and later Jerusalem’s refuse dump. Jesus employs it as the image of eternal judgment, quoting Isa 66:24 in v.48."
             }
           ]
+        },
+        "hist": {
+          "context": "The failed exorcism at the foot of the mountain contrasts with the Transfiguration glory above. The disciples’ failure provokes Jesus’s rebuke of an unbelieving generation. The second passion prediction follows (9:31), and the disciples’ immediate argument about greatness reveals complete misunderstanding. Jesus’s response — a child in the arms — redefines greatness as servitude."
         }
       }
     },
@@ -252,21 +260,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">High mountain — Transfiguration site</div><div class=\"poi-coords\">Traditionally Mount Tabor (Jezreel Valley) or Mount Hermon (near Caesarea Philippi)</div><div class=\"poi-text\">Geographically, Mount Hermon fits better — it is close to Caesarea Philippi where the confession occurred six days earlier. At 2,814m it is genuinely “high.” The mountain is the locus of divine encounter throughout Israel’s story: Sinai, Horeb, and now the Transfiguration peak.</div></div>"
         },
-        "ctx": "The Transfiguration follows Peter’s confession by six days. The Father’s voice repeats the baptismal declaration with one addition: “Listen to him!” — the echo of Deut 18:15’s command about the prophet like Moses. Moses (law) and Elijah (prophets) appear and then vanish; Jesus alone remains. The mountain is Israel’s covenant mountain in concentrated form.",
-        "cross": [
-          {
-            "ref": "Deut 18:15",
-            "note": "The LORD will raise up a prophet like me… listen to him — the Mosaic promise that the Father’s voice fulfils at the Transfiguration."
-          },
-          {
-            "ref": "Exod 24:15-16",
-            "note": "A cloud covered the mountain… the glory of the LORD — the Sinai theophany cloud that reappears here."
-          },
-          {
-            "ref": "Mal 4:5",
-            "note": "I will send the prophet Elijah before that great and dreadful day — the promise Jesus identifies as fulfilled in John the Baptist (v.13)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 18:15",
+              "note": "The LORD will raise up a prophet like me… listen to him — the Mosaic promise that the Father’s voice fulfils at the Transfiguration."
+            },
+            {
+              "ref": "Exod 24:15-16",
+              "note": "A cloud covered the mountain… the glory of the LORD — the Sinai theophany cloud that reappears here."
+            },
+            {
+              "ref": "Mal 4:5",
+              "note": "I will send the prophet Elijah before that great and dreadful day — the promise Jesus identifies as fulfilled in John the Baptist (v.13)."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -344,6 +353,9 @@
               "note": "Elijah has come — the identification of John the Baptist as the Elijah-figure is implicit. Mark’s readers know John was beheaded; the application is clear: John came and was treated as they wished, just as the Son of Man will be."
             }
           ]
+        },
+        "hist": {
+          "context": "The Transfiguration follows Peter’s confession by six days. The Father’s voice repeats the baptismal declaration with one addition: “Listen to him!” — the echo of Deut 18:15’s command about the prophet like Moses. Moses (law) and Elijah (prophets) appear and then vanish; Jesus alone remains. The mountain is Israel’s covenant mountain in concentrated form."
         }
       }
     },
@@ -364,21 +376,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">High mountain — Transfiguration site</div><div class=\"poi-coords\">Traditionally Mount Tabor (Jezreel Valley) or Mount Hermon (near Caesarea Philippi)</div><div class=\"poi-text\">Geographically, Mount Hermon fits better — it is close to Caesarea Philippi where the confession occurred six days earlier. At 2,814m it is genuinely “high.” The mountain is the locus of divine encounter throughout Israel’s story: Sinai, Horeb, and now the Transfiguration peak.</div></div>"
         },
-        "ctx": "The failed exorcism at the foot of the mountain contrasts with the Transfiguration glory above. The disciples’ failure provokes Jesus’s rebuke of an unbelieving generation. The second passion prediction follows (9:31), and the disciples’ immediate argument about greatness reveals complete misunderstanding. Jesus’s response — a child in the arms — redefines greatness as servitude.",
-        "cross": [
-          {
-            "ref": "Isa 53:12",
-            "note": "He poured out his life unto death… numbered with the transgressors — the Son of Man delivered into human hands."
-          },
-          {
-            "ref": "Isa 57:15",
-            "note": "I live with the one who is contrite and lowly in spirit — the child-welcome (9:36-37) embodies this principle: greatness measured by lowliness."
-          },
-          {
-            "ref": "Isa 66:24",
-            "note": "Where the worms do not die and the fire is not quenched — the Gehenna image Jesus quotes directly in 9:48."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 53:12",
+              "note": "He poured out his life unto death… numbered with the transgressors — the Son of Man delivered into human hands."
+            },
+            {
+              "ref": "Isa 57:15",
+              "note": "I live with the one who is contrite and lowly in spirit — the child-welcome (9:36-37) embodies this principle: greatness measured by lowliness."
+            },
+            {
+              "ref": "Isa 66:24",
+              "note": "Where the worms do not die and the fire is not quenched — the Gehenna image Jesus quotes directly in 9:48."
+            }
+          ]
+        },
         "mar": {
           "source": "Joel Marcus, Mark 1–8 / 8–16, Anchor Bible (2000/2009) — Scholarly Paraphrase",
           "notes": [
@@ -456,6 +469,9 @@
               "note": "Gehenna (geenna) — the Valley of Hinnom south of Jerusalem, associated with child sacrifice (2 Kings 23:10) and later Jerusalem’s refuse dump. Jesus employs it as the image of eternal judgment, quoting Isa 66:24 in v.48."
             }
           ]
+        },
+        "hist": {
+          "context": "The failed exorcism at the foot of the mountain contrasts with the Transfiguration glory above. The disciples’ failure provokes Jesus’s rebuke of an unbelieving generation. The second passion prediction follows (9:31), and the disciples’ immediate argument about greatness reveals complete misunderstanding. Jesus’s response — a child in the arms — redefines greatness as servitude."
         }
       }
     }

@@ -25,18 +25,22 @@
             "paragraph": "Sleep \"fled\" the king. Not \"could not sleep\" but \"sleep fled.\" In a book of hidden agency, even insomnia has a subject — who caused sleep to flee?"
           }
         ],
-        "hist": "Reading royal chronicles as a sleep remedy was Persian court practice. That the king chose this night to read this section is the book’s master coincidence.",
-        "ctx": "This is the pivot. The king’s insomnia → chronicles read → Mordecai’s unrewarded service discovered → Haman arrives to request execution → collision. The timing is impossible as coincidence and perfect as providence.",
-        "cross": [
-          {
-            "ref": "Gen 41:1",
-            "note": "Pharaoh’s dream — divine intervention through a king’s disturbed night."
-          },
-          {
-            "ref": "Dan 2:1",
-            "note": "Nebuchadnezzar’s sleep disturbed — same pattern."
-          }
-        ],
+        "hist": {
+          "historical": "Reading royal chronicles as a sleep remedy was Persian court practice. That the king chose this night to read this section is the book’s master coincidence.",
+          "context": "This is the pivot. The king’s insomnia → chronicles read → Mordecai’s unrewarded service discovered → Haman arrives to request execution → collision. The timing is impossible as coincidence and perfect as providence."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 41:1",
+              "note": "Pharaoh’s dream — divine intervention through a king’s disturbed night."
+            },
+            {
+              "ref": "Dan 2:1",
+              "note": "Nebuchadnezzar’s sleep disturbed — same pattern."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -126,17 +130,18 @@
             "paragraph": "Haman assumes the honour is for himself. His pride designs his own humiliation. Every detail he specifies, he must perform for Mordecai."
           }
         ],
-        "ctx": "Pure comedy and pure theology. Haman designs an elaborate honour ceremony for himself, then executes it for his enemy. His imagination creates his own punishment.",
-        "cross": [
-          {
-            "ref": "Prov 26:27",
-            "note": "Whoever digs a pit will fall into it."
-          },
-          {
-            "ref": "Ps 37:12–13",
-            "note": "The Lord laughs at the wicked."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 26:27",
+              "note": "Whoever digs a pit will fall into it."
+            },
+            {
+              "ref": "Ps 37:12–13",
+              "note": "The Lord laughs at the wicked."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -201,6 +206,9 @@
               "note": "Jobes: the comic centrepiece. Haman scripts his own humiliation in exquisite detail. Comedy and justice merge."
             }
           ]
+        },
+        "hist": {
+          "context": "Pure comedy and pure theology. Haman designs an elaborate honour ceremony for himself, then executes it for his enemy. His imagination creates his own punishment."
         }
       }
     },
@@ -218,13 +226,14 @@
             "paragraph": "The doubled verb expresses certainty. Even Haman’s wife sees the pattern: opposing Jews leads to destruction."
           }
         ],
-        "ctx": "Reverses 5:10–14 exactly. There: boasting, gallows advised. Here: mourning, doom predicted. Same cast, opposite advice.",
-        "cross": [
-          {
-            "ref": "Gen 12:3",
-            "note": "Whoever curses you I will curse — the promise Zeresh unknowingly invokes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 12:3",
+              "note": "Whoever curses you I will curse — the promise Zeresh unknowingly invokes."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -277,6 +286,9 @@
               "note": "Jobes: Zeresh’s words are the closest thing to a theological statement in the book. She invokes covenant theology from outside the covenant."
             }
           ]
+        },
+        "hist": {
+          "context": "Reverses 5:10–14 exactly. There: boasting, gallows advised. Here: mourning, doom predicted. Same cast, opposite advice."
         }
       }
     }

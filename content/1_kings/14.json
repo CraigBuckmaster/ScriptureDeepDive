@@ -25,17 +25,18 @@
             "paragraph": "Jeroboam tells his wife tohitnakkēr(disguise herself, v.2) before visiting Ahijah — the prophet who originally gave Jeroboam the kingdom (11:29–39). The king fears the prophet's discernment. But Ahijah is blind (v.4) — and God tells him she is coming. Physical blindness cannot block prophetic sight."
           }
         ],
-        "ctx": "Jeroboam's son Abijah is sick, and Jeroboam sends his wife in disguise to the now-blind prophet Ahijah. God warns Ahijah in advance: she is coming, and the answer is devastating. Ahijah delivers one of the harshest prophetic judgments in the OT: every male in Jeroboam's house will be cut off, eaten by dogs or birds. Only Abijah will receive a proper burial — \"because in him there is found something pleasing to the LORD.\" The boy dies the moment his mother crosses the threshold of home. The dynasty that began with such promise (11:37–38) ends in total destruction because Jeroboam \"did more evil than all who lived before you.\"",
-        "cross": [
-          {
-            "ref": "1 Kgs 11:37–38",
-            "note": "Ahijah's original promise: \"If you do whatever I command you... I will build you a dynasty as enduring as the one I built for David.\" The conditional promise is now revoked because the condition was never met."
-          },
-          {
-            "ref": "1 Kgs 15:29",
-            "note": "Baasha destroys Jeroboam's entire family — fulfilling Ahijah's prophecy of 14:10."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 11:37–38",
+              "note": "Ahijah's original promise: \"If you do whatever I command you... I will build you a dynasty as enduring as the one I built for David.\" The conditional promise is now revoked because the condition was never met."
+            },
+            {
+              "ref": "1 Kgs 15:29",
+              "note": "Baasha destroys Jeroboam's entire family — fulfilling Ahijah's prophecy of 14:10."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -87,6 +88,9 @@
               "note": "Provan: The boy Abijah — the only member of Jeroboam's house to receive a proper burial — is the narrator's way of saying that judgment is discriminating, not indiscriminate. God's wrath does not destroy the righteous with the wicked (cf. Gen 18:25)."
             }
           ]
+        },
+        "hist": {
+          "context": "Jeroboam's son Abijah is sick, and Jeroboam sends his wife in disguise to the now-blind prophet Ahijah. God warns Ahijah in advance: she is coming, and the answer is devastating. Ahijah delivers one of the harshest prophetic judgments in the OT: every male in Jeroboam's house will be cut off, eaten by dogs or birds. Only Abijah will receive a proper burial — \"because in him there is found something pleasing to the LORD.\" The boy dies the moment his mother crosses the threshold of home. The dynasty that began with such promise (11:37–38) ends in total destruction because Jeroboam \"did more evil than all who lived before you.\""
         }
       }
     },
@@ -104,17 +108,18 @@
             "paragraph": "Judah establishesqĕdēšîm(v.24) — male cult prostitutes associated with Canaanite fertility worship. The practice represents total assimilation to Canaanite religion. Judah has adopted not just Canaanite theology but Canaanite practice."
           }
         ],
-        "ctx": "The narrator shifts to Judah under Rehoboam. The verdict is blunt: \"Judah did evil in the eyes of the LORD\" (v.22). High places, sacred stones, Asherah poles, male shrine prostitutes — the full catalogue of Canaanite religion. Then Shishak (Pharaoh Shoshenq I) invades in Rehoboam's fifth year and carries off the temple treasures, including Solomon's gold shields. Rehoboam replaces them with bronze — a perfect metaphor for the decline: gold becomes bronze. The kingdom that began with gold overflowing now substitutes cheap metal for precious.",
-        "cross": [
-          {
-            "ref": "2 Chr 12:5–8",
-            "note": "The Chronicler adds that the prophet Shemaiah explained the invasion: \"You have abandoned me; therefore, I now abandon you to Shishak.\" Repentance brought a limited reprieve."
-          },
-          {
-            "ref": "1 Kgs 10:16–17",
-            "note": "Solomon's 200 large gold shields and 300 small gold shields — now carried off to Egypt. The symbol of Solomon's glory becomes the spoil of Solomon's successor's failure."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Chr 12:5–8",
+              "note": "The Chronicler adds that the prophet Shemaiah explained the invasion: \"You have abandoned me; therefore, I now abandon you to Shishak.\" Repentance brought a limited reprieve."
+            },
+            {
+              "ref": "1 Kgs 10:16–17",
+              "note": "Solomon's 200 large gold shields and 300 small gold shields — now carried off to Egypt. The symbol of Solomon's glory becomes the spoil of Solomon's successor's failure."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -166,6 +171,9 @@
               "note": "Provan: The gold-to-bronze substitution is the narrative's most compact symbol of decline. Rehoboam still has shields, still posts guards, still processes to the temple — the routine continues. But the gold is gone. The form persists while the glory departs. This is the story of institutional religion when faith has emptied it."
             }
           ]
+        },
+        "hist": {
+          "context": "The narrator shifts to Judah under Rehoboam. The verdict is blunt: \"Judah did evil in the eyes of the LORD\" (v.22). High places, sacred stones, Asherah poles, male shrine prostitutes — the full catalogue of Canaanite religion. Then Shishak (Pharaoh Shoshenq I) invades in Rehoboam's fifth year and carries off the temple treasures, including Solomon's gold shields. Rehoboam replaces them with bronze — a perfect metaphor for the decline: gold becomes bronze. The kingdom that began with gold overflowing now substitutes cheap metal for precious."
         }
       }
     }

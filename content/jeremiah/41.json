@@ -25,17 +25,18 @@
             "paragraph": "Ishmael \"struck down\" (hikka) Gedaliah while eating together (v.2). The verb hikka with the phrase \"by the sword\" denotes murder, and the setting -- at a shared meal -- makes it treachery of the worst kind. Ancient Near Eastern hospitality law made violence against a dinner guest sacrilege. Ishmael also kills the Babylonian soldiers stationed at Mizpah and a group of pilgrims from the north."
           }
         ],
-        "ctx": "The assassination of Gedaliah in the seventh month (October 586 or 585 BC) is one of the most senseless acts in Israelite history. Ishmael, of royal blood, murders the governor during a meal, kills the Babylonian garrison (guaranteeing Babylonian reprisal), slaughters seventy of eighty pilgrims coming to mourn at the ruined temple site, and takes the remnant captive. The Fast of Gedaliah (Tsom Gedaliah) is still observed in Judaism on the third of Tishrei, testifying to the lasting trauma of this event.",
-        "cross": [
-          {
-            "ref": "2 Kgs 25:25",
-            "note": "The parallel account of the assassination -- brief but confirming Jeremiah's detailed narrative."
-          },
-          {
-            "ref": "Ps 41:9",
-            "note": "\"Even my close friend, someone I trusted, who shared my bread, has turned against me\" -- the psalm of betrayal at table."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 25:25",
+              "note": "The parallel account of the assassination -- brief but confirming Jeremiah's detailed narrative."
+            },
+            {
+              "ref": "Ps 41:9",
+              "note": "\"Even my close friend, someone I trusted, who shared my bread, has turned against me\" -- the psalm of betrayal at table."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -88,6 +89,9 @@
               "note": "Brueggemann reads the assassination as \"violence consuming itself.\" Having destroyed the external enemy's patience and the internal leader's governance, Judah is left with neither structure nor hope."
             }
           ]
+        },
+        "hist": {
+          "context": "The assassination of Gedaliah in the seventh month (October 586 or 585 BC) is one of the most senseless acts in Israelite history. Ishmael, of royal blood, murders the governor during a meal, kills the Babylonian garrison (guaranteeing Babylonian reprisal), slaughters seventy of eighty pilgrims coming to mourn at the ruined temple site, and takes the remnant captive. The Fast of Gedaliah (Tsom Gedaliah) is still observed in Judaism on the third of Tishrei, testifying to the lasting trauma of this event."
         }
       }
     },
@@ -105,17 +109,18 @@
             "paragraph": "The remnant camps at Geruth Kimham near Bethlehem (v.17), preparing to flee to Egypt. The place name gerut (\"lodging\") suggests temporary accommodation -- they are already in transit, no longer rooted in the land. The geography moves southward: Mizpah to Bethlehem to Egypt. Each step takes the people farther from the land God gave them."
           }
         ],
-        "ctx": "Johanan and the army officers pursue Ishmael and rescue the captives at Gibeon, but Ishmael escapes to Ammon with eight men. The rescued remnant, fearing Babylonian reprisal for Gedaliah's murder, decides to flee to Egypt -- the very destination Jeremiah has warned against throughout his ministry. The irony is cruel: escaping Babylon by running to the other empire that God has condemned.",
-        "cross": [
-          {
-            "ref": "Deut 17:16",
-            "note": "The king \"must not send people back to Egypt\" -- the Torah prohibition against returning to the house of bondage that the remnant is about to violate."
-          },
-          {
-            "ref": "Hos 11:5",
-            "note": "\"Will they not return to Egypt? Will not Assyria rule over them?\" -- Hosea's warning of reversed exodus."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 17:16",
+              "note": "The king \"must not send people back to Egypt\" -- the Torah prohibition against returning to the house of bondage that the remnant is about to violate."
+            },
+            {
+              "ref": "Hos 11:5",
+              "note": "\"Will they not return to Egypt? Will not Assyria rule over them?\" -- Hosea's warning of reversed exodus."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -164,6 +169,9 @@
               "note": "Brueggemann identifies the Egypt decision as \"the final rejection of prophetic counsel.\" Every crisis in the book has been met with the same response: run from God's word rather than obey it."
             }
           ]
+        },
+        "hist": {
+          "context": "Johanan and the army officers pursue Ishmael and rescue the captives at Gibeon, but Ishmael escapes to Ammon with eight men. The rescued remnant, fearing Babylonian reprisal for Gedaliah's murder, decides to flee to Egypt -- the very destination Jeremiah has warned against throughout his ministry. The irony is cruel: escaping Babylon by running to the other empire that God has condemned."
         }
       }
     }

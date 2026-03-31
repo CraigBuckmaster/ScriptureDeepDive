@@ -37,26 +37,30 @@
             "paragraph": "Cyrus caused a \"voice\" to pass through the kingdom and put it in writing. The dual proclamation (oral + written) is the ANE standard for royal decrees, echoing the dual proclamation at Sinai."
           }
         ],
-        "hist": "The Cyrus Cylinder (539 BC), discovered in Babylon in 1879 and now in the British Museum, confirms Cyrus’s policy of returning captive peoples to their homelands and restoring their temples. The cylinder credits Marduk for choosing Cyrus — exactly paralleling Ezra 1:1’s claim that YHWH stirred Cyrus’s spirit. Isaiah 44:28–45:1 had named Cyrus by name generations earlier as God’s \"shepherd\" and \"anointed.\"",
-        "ctx": "2 Chronicles 36:22–23 and Ezra 1:1–3 are virtually identical — the Chronicler ends with the decree, Ezra begins with it. The books form a continuous narrative: judgment (2 Chr 36:15–21) followed by restoration (Ezra 1:1). The decree fulfils Jeremiah’s seventy-year prophecy (Jer 25:11–12; 29:10): from 605 BC (first deportation) to 538 BC is approximately 67 years; from 586 BC (temple destruction) to 516 BC (temple completion) is exactly 70.",
-        "cross": [
-          {
-            "ref": "2 Chr 36:22–23",
-            "note": "The identical opening — the decree that closes Chronicles opens Ezra."
-          },
-          {
-            "ref": "Isa 44:28–45:1",
-            "note": "Cyrus named by name as God’s \"shepherd\" and \"anointed\" — prophesied generations before his birth."
-          },
-          {
-            "ref": "Jer 25:11–12",
-            "note": "The seventy-year prophecy that Ezra 1:1 declares fulfilled."
-          },
-          {
-            "ref": "Dan 9:2",
-            "note": "Daniel reads Jeremiah’s seventy years and begins interceding — the prayer that precedes the decree."
-          }
-        ],
+        "hist": {
+          "historical": "The Cyrus Cylinder (539 BC), discovered in Babylon in 1879 and now in the British Museum, confirms Cyrus’s policy of returning captive peoples to their homelands and restoring their temples. The cylinder credits Marduk for choosing Cyrus — exactly paralleling Ezra 1:1’s claim that YHWH stirred Cyrus’s spirit. Isaiah 44:28–45:1 had named Cyrus by name generations earlier as God’s \"shepherd\" and \"anointed.\"",
+          "context": "2 Chronicles 36:22–23 and Ezra 1:1–3 are virtually identical — the Chronicler ends with the decree, Ezra begins with it. The books form a continuous narrative: judgment (2 Chr 36:15–21) followed by restoration (Ezra 1:1). The decree fulfils Jeremiah’s seventy-year prophecy (Jer 25:11–12; 29:10): from 605 BC (first deportation) to 538 BC is approximately 67 years; from 586 BC (temple destruction) to 516 BC (temple completion) is exactly 70."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Chr 36:22–23",
+              "note": "The identical opening — the decree that closes Chronicles opens Ezra."
+            },
+            {
+              "ref": "Isa 44:28–45:1",
+              "note": "Cyrus named by name as God’s \"shepherd\" and \"anointed\" — prophesied generations before his birth."
+            },
+            {
+              "ref": "Jer 25:11–12",
+              "note": "The seventy-year prophecy that Ezra 1:1 declares fulfilled."
+            },
+            {
+              "ref": "Dan 9:2",
+              "note": "Daniel reads Jeremiah’s seventy years and begins interceding — the prayer that precedes the decree."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -152,22 +156,26 @@
             "paragraph": "The temple vessels taken by Nebuchadnezzar (2 Kgs 25:14–15) are now returned. Their preservation through 70 years of exile is a theological statement: God preserved the instruments of worship even when the temple was ashes."
           }
         ],
-        "hist": "The inventory of 5,400 vessels (v.11) is remarkably specific. The individual counts in vv.9–10 total only 2,499 — the discrepancy suggests the detailed list covers major items while the total includes smaller pieces. Persian administrative practice required meticulous inventories, attested in records from Persepolis and Susa.",
-        "ctx": "The return of the temple vessels closes a narrative arc from Daniel 1:2 (\"the Lord delivered some of the articles\") through Daniel 5:2–4 (Belshazzar drinks from them at his feast). The vessels’ journey — Jerusalem → Babylon → Jerusalem — mirrors the people’s journey. Both are restored.",
-        "cross": [
-          {
-            "ref": "2 Kgs 25:14–15",
-            "note": "Nebuchadnezzar takes the temple vessels — the beginning of the arc Ezra 1 closes."
-          },
-          {
-            "ref": "Dan 1:2",
-            "note": "\"The Lord delivered some of the articles from the temple\" — even the exile was under God’s control."
-          },
-          {
-            "ref": "Dan 5:2–4",
-            "note": "Belshazzar desecrates the vessels at his feast — the night Babylon falls to Cyrus."
-          }
-        ],
+        "hist": {
+          "historical": "The inventory of 5,400 vessels (v.11) is remarkably specific. The individual counts in vv.9–10 total only 2,499 — the discrepancy suggests the detailed list covers major items while the total includes smaller pieces. Persian administrative practice required meticulous inventories, attested in records from Persepolis and Susa.",
+          "context": "The return of the temple vessels closes a narrative arc from Daniel 1:2 (\"the Lord delivered some of the articles\") through Daniel 5:2–4 (Belshazzar drinks from them at his feast). The vessels’ journey — Jerusalem → Babylon → Jerusalem — mirrors the people’s journey. Both are restored."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 25:14–15",
+              "note": "Nebuchadnezzar takes the temple vessels — the beginning of the arc Ezra 1 closes."
+            },
+            {
+              "ref": "Dan 1:2",
+              "note": "\"The Lord delivered some of the articles from the temple\" — even the exile was under God’s control."
+            },
+            {
+              "ref": "Dan 5:2–4",
+              "note": "Belshazzar desecrates the vessels at his feast — the night Babylon falls to Cyrus."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

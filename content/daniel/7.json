@@ -25,25 +25,26 @@
             "paragraph": "\"One like a son of man (bar ʾĕnāsh), coming with the clouds of heaven. He was given authority, glory and sovereign power; all nations worshipped him. His dominion is everlasting\" (vv.13–14). Four beasts from the sea: lion (Babylon), bear (Medo-Persia), leopard (Greece), terrifying fourth beast with iron teeth and ten horns (Rome). Ancient of Days on his fire-throne, books opened. The son of man receives eternal dominion. Jesus uses \"Son of Man\" over 80 times in the Gospels — all trace to this verse."
           }
         ],
-        "ctx": "Chapter 7 is the structural pivot of the book: the last chapter in Aramaic, the first apocalyptic vision, and the mirror of ch.2’s statue (same four kingdoms, different imagery). The \"sea\" from which the beasts emerge is the primordial chaos-ocean of ancient Near Eastern mythology (cf. Gen 1:2). The \"Ancient of Days\" is the oldest representation of God as an aged, white-haired figure in Jewish literature. The \"son of man\" figure is the most debated identity in the OT: individual Messiah, angelic being, or corporate symbol for the faithful remnant.",
-        "cross": [
-          {
-            "ref": "Mark 14:62",
-            "note": "Jesus before the Sanhedrin: \"You will see the Son of Man sitting at the right hand of the Mighty One and coming on the clouds of heaven\" — the moment they accuse him of blasphemy. He claims to be Daniel’s figure."
-          },
-          {
-            "ref": "Rev 1:7",
-            "note": "Look, he is coming with the clouds, and every eye will see him — Revelation’s opening vision quotes Daniel 7:13."
-          },
-          {
-            "ref": "Rev 4:2–11",
-            "note": "The throne room of heaven — directly developed from Daniel 7:9–10."
-          },
-          {
-            "ref": "Matt 28:18",
-            "note": "All authority in heaven and on earth has been given to me — Jesus claims the authority Dan 7:14 assigns to the son of man."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mark 14:62",
+              "note": "Jesus before the Sanhedrin: \"You will see the Son of Man sitting at the right hand of the Mighty One and coming on the clouds of heaven\" — the moment they accuse him of blasphemy. He claims to be Daniel’s figure."
+            },
+            {
+              "ref": "Rev 1:7",
+              "note": "Look, he is coming with the clouds, and every eye will see him — Revelation’s opening vision quotes Daniel 7:13."
+            },
+            {
+              "ref": "Rev 4:2–11",
+              "note": "The throne room of heaven — directly developed from Daniel 7:9–10."
+            },
+            {
+              "ref": "Matt 28:18",
+              "note": "All authority in heaven and on earth has been given to me — Jesus claims the authority Dan 7:14 assigns to the son of man."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -129,6 +130,9 @@
               "note": "Collins argues the \"son of man\" originally represented the angelic figure Michael (cf. 10:13, 21; 12:1) or a collective symbol for \"the saints of the Most High\" (v.27). The individual-messianic reading developed in the first century and is reflected in the Similitudes of Enoch and the Gospels."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 7 is the structural pivot of the book: the last chapter in Aramaic, the first apocalyptic vision, and the mirror of ch.2’s statue (same four kingdoms, different imagery). The \"sea\" from which the beasts emerge is the primordial chaos-ocean of ancient Near Eastern mythology (cf. Gen 1:2). The \"Ancient of Days\" is the oldest representation of God as an aged, white-haired figure in Jewish literature. The \"son of man\" figure is the most debated identity in the OT: individual Messiah, angelic being, or corporate symbol for the faithful remnant."
         }
       }
     },
@@ -146,25 +150,26 @@
             "paragraph": "\"The saints (qaddishē) of the Most High will receive the kingdom and will possess it forever\" (v.18). Daniel asks for the interpretation. The four beasts are four kingdoms (v.17). The little horn wages war against the saints and defeats them — until the Ancient of Days pronounces judgment in their favour (vv.21–22). The horn will oppress the saints for \"a time, times and half a time\" (v.25) — 3.5 years, the template for Revelation’s tribulation period."
           }
         ],
-        "ctx": "The \"time, times and half a time\" (3.5 years = 42 months = 1,260 days) becomes the most important time-measurement in apocalyptic literature. Revelation uses it in 11:2, 11:3, 12:6, 12:14, 13:5. The period likely originates from the approximate duration of Antiochus IV’s temple desecration (167–164 BC). The saints’ kingdom (v.27) is described in the same terms as the son of man’s (v.14), suggesting identification between the two. The chapter ends with Daniel deeply troubled (v.28) — the apocalyptic visionary is not triumphant but devastated.",
-        "cross": [
-          {
-            "ref": "Rev 11:2–3",
-            "note": "The holy city trampled for 42 months; two witnesses prophesy for 1,260 days — developing Daniel’s 3.5-year period."
-          },
-          {
-            "ref": "Rev 13:5–7",
-            "note": "The beast given authority for 42 months, to wage war against God’s holy people — directly from Daniel 7:21, 25."
-          },
-          {
-            "ref": "1 Cor 6:2–3",
-            "note": "The saints will judge the world; they will judge angels — the Pauline version of Daniel 7:22, 27."
-          },
-          {
-            "ref": "Matt 25:34",
-            "note": "Come, take your inheritance, the kingdom prepared for you — the saints receiving the kingdom."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rev 11:2–3",
+              "note": "The holy city trampled for 42 months; two witnesses prophesy for 1,260 days — developing Daniel’s 3.5-year period."
+            },
+            {
+              "ref": "Rev 13:5–7",
+              "note": "The beast given authority for 42 months, to wage war against God’s holy people — directly from Daniel 7:21, 25."
+            },
+            {
+              "ref": "1 Cor 6:2–3",
+              "note": "The saints will judge the world; they will judge angels — the Pauline version of Daniel 7:22, 27."
+            },
+            {
+              "ref": "Matt 25:34",
+              "note": "Come, take your inheritance, the kingdom prepared for you — the saints receiving the kingdom."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -250,6 +255,9 @@
               "note": "Collins reads the 3.5-year period as alluding to the desecration of the temple under Antiochus IV (167–164 BC), which lasted approximately three and a half years according to 1 Maccabees."
             }
           ]
+        },
+        "hist": {
+          "context": "The \"time, times and half a time\" (3.5 years = 42 months = 1,260 days) becomes the most important time-measurement in apocalyptic literature. Revelation uses it in 11:2, 11:3, 12:6, 12:14, 13:5. The period likely originates from the approximate duration of Antiochus IV’s temple desecration (167–164 BC). The saints’ kingdom (v.27) is described in the same terms as the son of man’s (v.14), suggesting identification between the two. The chapter ends with Daniel deeply troubled (v.28) — the apocalyptic visionary is not triumphant but devastated."
         }
       }
     }

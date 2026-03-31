@@ -37,22 +37,26 @@
             "paragraph": "The verb šārat (serve, minister) is used later for priestly service (Exod 28:35). Joseph's service of Potiphar is rendered with the full care and competence that would later characterize priestly ministry — he serves a pagan master as unto the LORD."
           }
         ],
-        "hist": "Genesis 39 is the chapter of divine presence. The phrase \"the LORD was with Joseph\" (vv.2,3,5,21,23) is the theological refrain that organises the entire chapter — appearing in both the Potiphar section and the prison section. The LORD's presence is what distinguishes Joseph's time in Egypt from ordinary slavery. It is not Joseph's native ability (though he is capable), but the divine presence attending him, that produces the visible prosperity. Potiphar recognises this (v.3) even as a pagan; the prison warden recognises it (v.23).",
-        "ctx": "The fourfold \"LORD was with Joseph\" in this chapter is the interpretive key to the entire Joseph narrative. Joseph does not explain his success through intelligence or initiative — the text consistently attributes it to divine presence. This presence is not conditional on circumstances: it operates in the house of a pagan, in the prison of a corrupt official, and eventually in the court of Pharaoh. The phrase links back to God's promise to Jacob at Bethel (28:15) and forward to the Exodus commission to Moses (Exod 3:12: \"I will be with you\").",
-        "cross": [
-          {
-            "ref": "Gen 28:15",
-            "note": "God's promise: \"I will be with you.\" Fulfilled first in Jacob's life, now operating through Joseph."
-          },
-          {
-            "ref": "Acts 7:9–10",
-            "note": "Stephen: \"God was with him\" — the NT directly quotes Genesis 39 as the key to understanding Joseph's story."
-          },
-          {
-            "ref": "Matt 1:23",
-            "note": "\"God with us\" (Emmanuel) is the terminal fulfillment of the \"God was with him\" formula — from Joseph's Potiphar's-house presence to the incarnation."
-          }
-        ],
+        "hist": {
+          "historical": "Genesis 39 is the chapter of divine presence. The phrase \"the LORD was with Joseph\" (vv.2,3,5,21,23) is the theological refrain that organises the entire chapter — appearing in both the Potiphar section and the prison section. The LORD's presence is what distinguishes Joseph's time in Egypt from ordinary slavery. It is not Joseph's native ability (though he is capable), but the divine presence attending him, that produces the visible prosperity. Potiphar recognises this (v.3) even as a pagan; the prison warden recognises it (v.23).",
+          "context": "The fourfold \"LORD was with Joseph\" in this chapter is the interpretive key to the entire Joseph narrative. Joseph does not explain his success through intelligence or initiative — the text consistently attributes it to divine presence. This presence is not conditional on circumstances: it operates in the house of a pagan, in the prison of a corrupt official, and eventually in the court of Pharaoh. The phrase links back to God's promise to Jacob at Bethel (28:15) and forward to the Exodus commission to Moses (Exod 3:12: \"I will be with you\")."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 28:15",
+              "note": "God's promise: \"I will be with you.\" Fulfilled first in Jacob's life, now operating through Joseph."
+            },
+            {
+              "ref": "Acts 7:9–10",
+              "note": "Stephen: \"God was with him\" — the NT directly quotes Genesis 39 as the key to understanding Joseph's story."
+            },
+            {
+              "ref": "Matt 1:23",
+              "note": "\"God with us\" (Emmanuel) is the terminal fulfillment of the \"God was with him\" formula — from Joseph's Potiphar's-house presence to the incarnation."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Egypt / Potiphar's house",
@@ -166,18 +170,22 @@
             "paragraph": "The garment motif continues: Joseph's robe of many colors was used to deceive Jacob (ch.37); now his garment is used to falsely accuse him. The garment is again both evidence and instrument of his apparent undoing."
           }
         ],
-        "hist": "Potiphar's wife's false accusation and Joseph's imprisonment is the nadir of the Joseph cycle — the righteous man is punished for righteousness. The chapter's theology of divine presence (v.21,23) is its answer to the injustice: the LORD does not remove the injustice but attends Joseph through it. The prison becomes the next stage of Joseph's training, not the end of his story. The warden who trusts Joseph mirrors Potiphar's trust — the pattern of divine blessing attracting human recognition continues even in the deepest confinement.",
-        "ctx": "Joseph's refusal is framed in explicitly theological terms: \"How can I do this great wickedness and sin against God?\" (v.9). He does not primarily say \"it would betray Potiphar\" — though that is mentioned — he says \"it would be sin against God.\" This is the theology of integrity: behavior is governed by the vertical relationship, not only the horizontal. The prison (v.20) is Joseph's reward for righteousness — and God's \"steadfast love\" (ḥesed, v.21) meets him there. The pattern: integrity leads to suffering leads to elevation, repeated twice (house → prison → court).",
-        "cross": [
-          {
-            "ref": "Ps 105:18–19",
-            "note": "The Psalm describes Joseph's prison time as divine testing: \"his feet were hurt with fetters... until what he foretold came to pass, the word of the LORD tested him.\""
-          },
-          {
-            "ref": "Heb 11:24–26",
-            "note": "Moses' choice to suffer with God's people rather than enjoy Egypt's pleasures echoes Joseph's refusal of short-term pleasure for long-term faithfulness."
-          }
-        ],
+        "hist": {
+          "historical": "Potiphar's wife's false accusation and Joseph's imprisonment is the nadir of the Joseph cycle — the righteous man is punished for righteousness. The chapter's theology of divine presence (v.21,23) is its answer to the injustice: the LORD does not remove the injustice but attends Joseph through it. The prison becomes the next stage of Joseph's training, not the end of his story. The warden who trusts Joseph mirrors Potiphar's trust — the pattern of divine blessing attracting human recognition continues even in the deepest confinement.",
+          "context": "Joseph's refusal is framed in explicitly theological terms: \"How can I do this great wickedness and sin against God?\" (v.9). He does not primarily say \"it would betray Potiphar\" — though that is mentioned — he says \"it would be sin against God.\" This is the theology of integrity: behavior is governed by the vertical relationship, not only the horizontal. The prison (v.20) is Joseph's reward for righteousness — and God's \"steadfast love\" (ḥesed, v.21) meets him there. The pattern: integrity leads to suffering leads to elevation, repeated twice (house → prison → court)."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 105:18–19",
+              "note": "The Psalm describes Joseph's prison time as divine testing: \"his feet were hurt with fetters... until what he foretold came to pass, the word of the LORD tested him.\""
+            },
+            {
+              "ref": "Heb 11:24–26",
+              "note": "Moses' choice to suffer with God's people rather than enjoy Egypt's pleasures echoes Joseph's refusal of short-term pleasure for long-term faithfulness."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

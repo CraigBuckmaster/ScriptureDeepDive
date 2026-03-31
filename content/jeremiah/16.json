@@ -31,21 +31,22 @@
             "paragraph": "God also forbids Jeremiah from entering a \"house of mourning\" (bêt marzēaḥ, v.5) or a \"house of feasting\" (bêt mišteh, v.8). The marzēaḥ was a well-attested institution in the ancient Near East — a ritual banquet associated with mourning and ancestor cults. By prohibiting participation in both grief and celebration, God removes Jeremiah from the full range of communal life."
           }
         ],
-        "ctx": "Chapter 16 is the most personally costly oracle in Jeremiah. The prophet is commanded to forgo the three fundamental human activities: marriage (vv.1-4), mourning the dead (vv.5-7), and celebrating with the living (vv.8-9). Each prohibition is a sign-act forecasting total social collapse — there will be no families to raise, no funerals to attend (the dead will be too many), and no occasions for joy. The chapter anticipates Jesus's celibacy and Paul's counsel in 1 Corinthians 7.",
-        "cross": [
-          {
-            "ref": "1 Cor 7:26-29",
-            "note": "Paul advises against marriage \"because of the present crisis\" — echoing Jeremiah's sign-act of celibacy as eschatological witness."
-          },
-          {
-            "ref": "Ezek 24:15-18",
-            "note": "Ezekiel is forbidden to mourn his wife's death — a parallel sign-act where the prophet's personal loss embodies national catastrophe."
-          },
-          {
-            "ref": "Matt 19:12",
-            "note": "Jesus speaks of those who \"have renounced marriage because of the kingdom of heaven\" — voluntary celibacy as prophetic witness."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Cor 7:26-29",
+              "note": "Paul advises against marriage \"because of the present crisis\" — echoing Jeremiah's sign-act of celibacy as eschatological witness."
+            },
+            {
+              "ref": "Ezek 24:15-18",
+              "note": "Ezekiel is forbidden to mourn his wife's death — a parallel sign-act where the prophet's personal loss embodies national catastrophe."
+            },
+            {
+              "ref": "Matt 19:12",
+              "note": "Jesus speaks of those who \"have renounced marriage because of the kingdom of heaven\" — voluntary celibacy as prophetic witness."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Brueggemann reads the celibacy command as the most extreme form of prophetic embodiment. The prophet does not merely announce the future — he lives it. His lonely, childless existence is a permanent, visible indictment of a society that has forfeited its future."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 16 is the most personally costly oracle in Jeremiah. The prophet is commanded to forgo the three fundamental human activities: marriage (vv.1-4), mourning the dead (vv.5-7), and celebrating with the living (vv.8-9). Each prohibition is a sign-act forecasting total social collapse — there will be no families to raise, no funerals to attend (the dead will be too many), and no occasions for joy. The chapter anticipates Jesus's celibacy and Paul's counsel in 1 Corinthians 7."
         }
       }
     },
@@ -127,17 +131,18 @@
             "paragraph": "God will send \"fishermen\" and \"hunters\" (v.16) to pursue the scattered people. The image is ambiguous: fishing and hunting can signify either judgment (dragging people to exile) or restoration (gathering the dispersed). Jesus's call to \"fish for people\" (Matt 4:19) may deliberately evoke this Jeremiah passage, transforming judgment imagery into gospel invitation."
           }
         ],
-        "ctx": "Verses 14-15 contain a remarkable promise: the exodus from Egypt will be superseded by a greater act of redemption. The people will no longer say \"as the LORD lives who brought us up out of Egypt\" but \"who brought us up out of the land of the north.\" The return from exile will become the new defining act of God's salvation — a second exodus that eclipses the first.",
-        "cross": [
-          {
-            "ref": "Isa 43:18-19",
-            "note": "Isaiah likewise declares: \"Forget the former things; see, I am doing a new thing!\" The new exodus tradition runs through both major prophets."
-          },
-          {
-            "ref": "Matt 4:19",
-            "note": "Jesus calls disciples to be \"fishers of people\" — possibly evoking Jeremiah's fishermen imagery in a restored, redemptive context."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 43:18-19",
+              "note": "Isaiah likewise declares: \"Forget the former things; see, I am doing a new thing!\" The new exodus tradition runs through both major prophets."
+            },
+            {
+              "ref": "Matt 4:19",
+              "note": "Jesus calls disciples to be \"fishers of people\" — possibly evoking Jeremiah's fishermen imagery in a restored, redemptive context."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -190,6 +195,9 @@
               "note": "Brueggemann reads the nations'  coming confession as a vision of \"epistemological revolution\" — the nations discover that their inherited gods are \"worthless idols.\" Truth breaks through ancestral deception."
             }
           ]
+        },
+        "hist": {
+          "context": "Verses 14-15 contain a remarkable promise: the exodus from Egypt will be superseded by a greater act of redemption. The people will no longer say \"as the LORD lives who brought us up out of Egypt\" but \"who brought us up out of the land of the north.\" The return from exile will become the new defining act of God's salvation — a second exodus that eclipses the first."
         }
       }
     }

@@ -25,21 +25,22 @@
             "paragraph": "The widow has only an ʾasûkh shemen — a small flask of oil (v.2). The same word appears in 1 Kgs 17:12 for the widow of Zarephath’s jar. Elijah and Elisha both multiply the last reserves of destitute widows — the prophetic ministry consistently begins with the marginalised."
           }
         ],
-        "ctx": "A prophet’s widow faces a creditor who will take her two sons as debt slaves. She has nothing but a flask of oil. Elisha tells her to borrow empty vessels, then pour. The oil flows until every vessel is full. She sells the oil, pays the debt, and lives on the rest. The miracle addresses real-world need: debt slavery was a concrete social crisis. God’s provision works through human action (she must borrow), is proportional to faith (the oil stops when vessels run out), and is comprehensive (debt paid, sons freed, livelihood secured).",
-        "cross": [
-          {
-            "ref": "1 Kgs 17:8–16",
-            "note": "The widow of Zarephath’s oil never ran out. Elijah sustained one widow; Elisha multiplies oil to save another. The pattern escalates."
-          },
-          {
-            "ref": "Mark 12:41–44",
-            "note": "The widow’s mite — another destitute widow whose tiny resource God honours disproportionately."
-          },
-          {
-            "ref": "Deut 15:1–3",
-            "note": "Sabbatical year debt release was designed to prevent this situation. The creditor’s cruelty violates covenant social legislation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 17:8–16",
+              "note": "The widow of Zarephath’s oil never ran out. Elijah sustained one widow; Elisha multiplies oil to save another. The pattern escalates."
+            },
+            {
+              "ref": "Mark 12:41–44",
+              "note": "The widow’s mite — another destitute widow whose tiny resource God honours disproportionately."
+            },
+            {
+              "ref": "Deut 15:1–3",
+              "note": "Sabbatical year debt release was designed to prevent this situation. The creditor’s cruelty violates covenant social legislation."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -87,6 +88,9 @@
               "note": "The cessation of oil when vessels run out introduces a theology of human participation in miracle. God works within the space human faith creates."
             }
           ]
+        },
+        "hist": {
+          "context": "A prophet’s widow faces a creditor who will take her two sons as debt slaves. She has nothing but a flask of oil. Elisha tells her to borrow empty vessels, then pour. The oil flows until every vessel is full. She sells the oil, pays the debt, and lives on the rest. The miracle addresses real-world need: debt slavery was a concrete social crisis. God’s provision works through human action (she must borrow), is proportional to faith (the oil stops when vessels run out), and is comprehensive (debt paid, sons freed, livelihood secured)."
         }
       }
     },
@@ -110,21 +114,22 @@
             "paragraph": "The verb hāvĕq frames the miracle: the child she was promised (“you will embrace a son,” v.16), then held in death (v.20), she now holds alive (v.37)."
           }
         ],
-        "ctx": "The longest narrative in the Elisha cycle. A wealthy Shunammite builds Elisha a room, and he promises her a son. The child is born but dies years later of apparent heatstroke. She rides to Carmel: “Did I ask you for a son? Didn’t I say, Don’t raise my hopes?” Gehazi’s staff fails; Elisha comes himself, lies upon the child, and the boy revives. The miracle parallels 1 Kings 17:17–24 but with deeper emotional texture — particularly the woman’s resistance to hope and her raw grief when hope fails.",
-        "cross": [
-          {
-            "ref": "1 Kgs 17:17–24",
-            "note": "Elijah raised the widow of Zarephath’s son by stretching over the child three times. Elisha uses the same method (v.34)."
-          },
-          {
-            "ref": "Luke 7:11–17",
-            "note": "Jesus raises the widow of Nain’s son. The crowd declares, “A great prophet has appeared.” The Elijah-Elisha echo is deliberate."
-          },
-          {
-            "ref": "Gen 18:10–14",
-            "note": "Sarah laughed at the promise of a son; the Shunammite resists for the same reason. Both receive against all expectation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 17:17–24",
+              "note": "Elijah raised the widow of Zarephath’s son by stretching over the child three times. Elisha uses the same method (v.34)."
+            },
+            {
+              "ref": "Luke 7:11–17",
+              "note": "Jesus raises the widow of Nain’s son. The crowd declares, “A great prophet has appeared.” The Elijah-Elisha echo is deliberate."
+            },
+            {
+              "ref": "Gen 18:10–14",
+              "note": "Sarah laughed at the promise of a son; the Shunammite resists for the same reason. Both receive against all expectation."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -176,6 +181,9 @@
               "note": "Gehazi’s staff fails; Elisha’s presence succeeds. Prophetic power is not transferable through objects. There are no shortcuts in the ministry of resurrection."
             }
           ]
+        },
+        "hist": {
+          "context": "The longest narrative in the Elisha cycle. A wealthy Shunammite builds Elisha a room, and he promises her a son. The child is born but dies years later of apparent heatstroke. She rides to Carmel: “Did I ask you for a son? Didn’t I say, Don’t raise my hopes?” Gehazi’s staff fails; Elisha comes himself, lies upon the child, and the boy revives. The miracle parallels 1 Kings 17:17–24 but with deeper emotional texture — particularly the woman’s resistance to hope and her raw grief when hope fails."
         }
       }
     },
@@ -185,17 +193,18 @@
       "verse_start": 38,
       "verse_end": 44,
       "panels": {
-        "ctx": "Two brief miracles close the chapter, both during famine. Poisonous gourds contaminate the prophets’ stew; Elisha adds flour and it becomes safe. Then a man brings twenty barley loaves and Elisha feeds a hundred prophets with leftovers. Both foreshadow Jesus: the healing of contaminated food recalls his authority over clean and unclean (Mark 7:18–19); the feeding of a hundred with twenty loaves anticipates the feeding of the five thousand (John 6). The ratio is 1:5; Jesus’ miracle is 1:1,000. Elisha establishes the category; Jesus shatters the scale.",
-        "cross": [
-          {
-            "ref": "John 6:1–14",
-            "note": "Jesus feeds 5,000 with five loaves and two fish — leftovers fill twelve baskets. Elisha feeds 100 with twenty loaves. The pattern is identical; the scale transforms."
-          },
-          {
-            "ref": "Matt 14:20",
-            "note": "“They all ate and were satisfied.” Jesus’ miracle exceeds Elisha’s by a factor of fifty."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 6:1–14",
+              "note": "Jesus feeds 5,000 with five loaves and two fish — leftovers fill twelve baskets. Elisha feeds 100 with twenty loaves. The pattern is identical; the scale transforms."
+            },
+            {
+              "ref": "Matt 14:20",
+              "note": "“They all ate and were satisfied.” Jesus’ miracle exceeds Elisha’s by a factor of fifty."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -235,6 +244,9 @@
               "note": "The servant sees twenty loaves and a hundred mouths. Elisha sees the word of the LORD. Obedience to the prophetic word, not mathematics, determines the outcome."
             }
           ]
+        },
+        "hist": {
+          "context": "Two brief miracles close the chapter, both during famine. Poisonous gourds contaminate the prophets’ stew; Elisha adds flour and it becomes safe. Then a man brings twenty barley loaves and Elisha feeds a hundred prophets with leftovers. Both foreshadow Jesus: the healing of contaminated food recalls his authority over clean and unclean (Mark 7:18–19); the feeding of a hundred with twenty loaves anticipates the feeding of the five thousand (John 6). The ratio is 1:5; Jesus’ miracle is 1:1,000. Elisha establishes the category; Jesus shatters the scale."
         }
       }
     }

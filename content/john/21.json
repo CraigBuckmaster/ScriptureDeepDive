@@ -34,21 +34,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Sea of Galilee / Sea of Tiberias</div><div class=\"poi-coords\">32.8208° N, 35.5847° E</div><div class=\"poi-text\">The Gospel's final appearance takes place on the same lake where Jesus walked on water (6:19), where Peter and Andrew were called (Matt 4:18-19), and where the disciples spent so much of their time during the Galilean ministry. The return to Galilee after the resurrection is the return to the beginning — the mission is recommissioned from where it started. The north shore of the lake, where Capernaum, Bethsaida, and the traditional site of Peter's restoration (Church of the Primacy of Peter at Tabgha) are located, is the setting for this final chapter.</div></div>"
         },
-        "ctx": "[('The Charcoal Fire', \"The only two uses of anthrakia (charcoal fire) in the NT are in John 18:18 (Peter's denial) and John 21:9 (the breakfast). The verbal echo is John's most subtle narrative connection. The scene of Peter's restoration is deliberately set beside the same kind of fire as his failure — not accidentally but as Jesus's pastoral genius: the restoration is staged to match the failure in every relevant detail, giving Peter the opportunity to replace the three denials with three affirmations.\"), ('153 Fish', \"The number 153 (v.11) is the only specific number in John's resurrection appearances. Ancient interpreters tried to find symbolic meaning (Jerome: 153 = number of fish species; Augustine: triangular number 1-17; Gregory: perfect number). Modern interpreters are more cautious. What John emphasises is not the number but the two accompanying details: large fish and the net not torn. The size (large) and the intact net together suggest abundance without loss — the mission's full harvest gathered without the breaking of the community.\")]",
-        "cross": [
-          {
-            "ref": "Luke 5:4-7",
-            "note": "The miraculous catch at the beginning of Jesus's ministry — Peter told to cast his nets, an overwhelming catch, Peter's \"go away from me, Lord; I am a sinful man!\" The Galilee appearance mirrors the call — the mission is being re-commissioned after the resurrection."
-          },
-          {
-            "ref": "Ezek 47:10",
-            "note": "\"Fishermen will stand along the shore; from En Gedi to En Eglaim there will be places for spreading nets. The fish will be of many kinds — like the fish of the Mediterranean Sea\" — the eschatological fishing scene that the 153-fish catch evokes."
-          },
-          {
-            "ref": "Matt 4:19",
-            "note": "\"Come, follow me, and I will send you out to fish for people\" — the original call, which the Sea of Galilee appearance recommissions."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 5:4-7",
+              "note": "The miraculous catch at the beginning of Jesus's ministry — Peter told to cast his nets, an overwhelming catch, Peter's \"go away from me, Lord; I am a sinful man!\" The Galilee appearance mirrors the call — the mission is being re-commissioned after the resurrection."
+            },
+            {
+              "ref": "Ezek 47:10",
+              "note": "\"Fishermen will stand along the shore; from En Gedi to En Eglaim there will be places for spreading nets. The fish will be of many kinds — like the fish of the Mediterranean Sea\" — the eschatological fishing scene that the 153-fish catch evokes."
+            },
+            {
+              "ref": "Matt 4:19",
+              "note": "\"Come, follow me, and I will send you out to fish for people\" — the original call, which the Sea of Galilee appearance recommissions."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -108,6 +109,9 @@
               "note": "Chrysostom: \"He had prepared fire, and fish laid on it, and bread. He who said 'I am the bread of life' now bakes bread on a fire. He who turned water into wine now grills fish. The Lord of all things serves his disciples breakfast. What humility! What love! Even after the resurrection, he takes care of their physical needs.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Charcoal Fire', \"The only two uses of anthrakia (charcoal fire) in the NT are in John 18:18 (Peter's denial) and John 21:9 (the breakfast). The verbal echo is John's most subtle narrative connection. The scene of Peter's restoration is deliberately set beside the same kind of fire as his failure — not accidentally but as Jesus's pastoral genius: the restoration is staged to match the failure in every relevant detail, giving Peter the opportunity to replace the three denials with three affirmations.\"), ('153 Fish', \"The number 153 (v.11) is the only specific number in John's resurrection appearances. Ancient interpreters tried to find symbolic meaning (Jerome: 153 = number of fish species; Augustine: triangular number 1-17; Gregory: perfect number). Modern interpreters are more cautious. What John emphasises is not the number but the two accompanying details: large fish and the net not torn. The size (large) and the intact net together suggest abundance without loss — the mission's full harvest gathered without the breaking of the community.\")]"
         }
       }
     },
@@ -134,21 +138,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Sea of Galilee / Sea of Tiberias</div><div class=\"poi-coords\">32.8208° N, 35.5847° E</div><div class=\"poi-text\">The Gospel's final appearance takes place on the same lake where Jesus walked on water (6:19), where Peter and Andrew were called (Matt 4:18-19), and where the disciples spent so much of their time during the Galilean ministry. The return to Galilee after the resurrection is the return to the beginning — the mission is recommissioned from where it started. The north shore of the lake, where Capernaum, Bethsaida, and the traditional site of Peter's restoration (Church of the Primacy of Peter at Tabgha) are located, is the setting for this final chapter.</div></div>"
         },
-        "ctx": "[('The Triple Restoration', 'The three questions are the most explicit pastoral act of restoration in the Gospels. Three denials at a charcoal fire in the courtyard (ch.18) are met by three affirmations at a charcoal fire by the lake (ch.21). Jesus does not refer to the denials; he asks about love, giving Peter the opportunity to replace what he said with what he means. The hurt Peter feels at the third question (v.17) shows that he has understood the connection — the question cuts because it echoes the three-fold failure. The restoration is complete when Jesus commissions Peter to shepherd the flock he had abandoned.'), (\"Peter's Martyrdom Predicted\", 'Jesus predicts Peter\\'s death in v.18-19 — specifically by crucifixion (stretching out the hands) and under compulsion (led where he does not want to go). John\\'s editorial comment (v.19: \"Jesus said this to indicate the kind of death by which Peter would glorify God\") confirms the prediction was fulfilled. Tradition records Peter\\'s martyrdom by crucifixion under Nero (c. AD 64-68), reportedly upside down at his own request, which is consistent with \"glorifying God\" through the same death as his Lord.')]",
-        "cross": [
-          {
-            "ref": "Luke 22:32",
-            "note": "\"I have prayed for you, Simon, that your faith may not fail. And when you have turned back, strengthen your brothers\" — Jesus's pre-denial commission to Peter, fulfilled in the post-resurrection restoration."
-          },
-          {
-            "ref": "Matt 16:18-19",
-            "note": "\"You are Peter, and on this rock I will build my church\" — the original commissioning of Peter that his denial appeared to undo, now renewed."
-          },
-          {
-            "ref": "Acts 2:14-36",
-            "note": "Peter's Pentecost sermon — the fulfilment of \"feed my sheep.\" The shepherd who denied three times is the preacher who brings 3,000 people to faith on the first day."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 22:32",
+              "note": "\"I have prayed for you, Simon, that your faith may not fail. And when you have turned back, strengthen your brothers\" — Jesus's pre-denial commission to Peter, fulfilled in the post-resurrection restoration."
+            },
+            {
+              "ref": "Matt 16:18-19",
+              "note": "\"You are Peter, and on this rock I will build my church\" — the original commissioning of Peter that his denial appeared to undo, now renewed."
+            },
+            {
+              "ref": "Acts 2:14-36",
+              "note": "Peter's Pentecost sermon — the fulfilment of \"feed my sheep.\" The shepherd who denied three times is the preacher who brings 3,000 people to faith on the first day."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -208,6 +213,9 @@
               "note": "Chrysostom: \"Follow me. The same words with which he first called him at the beginning of the Gospel. After all that has happened — the calling, the walking on water, the confession at Caesarea Philippi, the transfiguration, the boast, the denial, the weeping — the word is the same: follow me. Everything else changes; the call does not.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Triple Restoration', 'The three questions are the most explicit pastoral act of restoration in the Gospels. Three denials at a charcoal fire in the courtyard (ch.18) are met by three affirmations at a charcoal fire by the lake (ch.21). Jesus does not refer to the denials; he asks about love, giving Peter the opportunity to replace what he said with what he means. The hurt Peter feels at the third question (v.17) shows that he has understood the connection — the question cuts because it echoes the three-fold failure. The restoration is complete when Jesus commissions Peter to shepherd the flock he had abandoned.'), (\"Peter's Martyrdom Predicted\", 'Jesus predicts Peter\\'s death in v.18-19 — specifically by crucifixion (stretching out the hands) and under compulsion (led where he does not want to go). John\\'s editorial comment (v.19: \"Jesus said this to indicate the kind of death by which Peter would glorify God\") confirms the prediction was fulfilled. Tradition records Peter\\'s martyrdom by crucifixion under Nero (c. AD 64-68), reportedly upside down at his own request, which is consistent with \"glorifying God\" through the same death as his Lord.')]"
         }
       }
     }

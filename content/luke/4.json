@@ -28,21 +28,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Wilderness of Judea</div><div class=\"poi-coords\">Barren terrain west and south of the Jordan; forty days’ trial</div><div class=\"poi-text\">The wilderness is Israel’s formation-ground: Moses’ forty years, Elijah’s forty days, Israel’s forty years. Jesus’ forty days recapitulates and fulfils this tradition.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem — the Temple pinnacle</div><div class=\"poi-coords\">The highest point of the Temple complex, overlooking the Kidron Valley</div><div class=\"poi-text\">Luke’s climax temptation is located at the Temple in Jerusalem — the city that is Luke’s narrative destination throughout the Gospel. The devil’s final offer is a shortcut to the acclaim that the cross is the real path to.</div></div>"
         },
-        "ctx": "Luke’s temptation account reorders Matthew’s sequence: the pinnacle of the Temple (Luke’s climax) comes last rather than second. Jerusalem is Luke’s narrative destination — the city toward which the entire Gospel moves. By placing the Temple temptation last, Luke makes Jerusalem the devil’s final ground and frames the whole Passion narrative as the answer to this temptation: Jesus goes to Jerusalem not to be acclaimed but to die.",
-        "cross": [
-          {
-            "ref": "Deut 8:3",
-            "note": "Man does not live on bread alone but on every word that comes from God — Jesus’s first response, from Israel’s wilderness."
-          },
-          {
-            "ref": "Deut 6:13",
-            "note": "Fear the LORD your God, serve him only — his second response."
-          },
-          {
-            "ref": "Deut 6:16",
-            "note": "Do not put the LORD your God to the test — his third response. All three quotations are from Deuteronomy 6-8, Israel’s wilderness instruction. Jesus succeeds where Israel failed."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 8:3",
+              "note": "Man does not live on bread alone but on every word that comes from God — Jesus’s first response, from Israel’s wilderness."
+            },
+            {
+              "ref": "Deut 6:13",
+              "note": "Fear the LORD your God, serve him only — his second response."
+            },
+            {
+              "ref": "Deut 6:16",
+              "note": "Do not put the LORD your God to the test — his third response. All three quotations are from Deuteronomy 6-8, Israel’s wilderness instruction. Jesus succeeds where Israel failed."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -107,6 +108,9 @@
               "note": "The devil quotes Scripture — Chrysostom: the third temptation’s distinctive feature is the devil’s use of Ps 91:11-12. The Scripture is quoted accurately; it is the application that is satanic. False teachers have always used Scripture in the service of wrong ends. The discernment required is not textual but theological."
             }
           ]
+        },
+        "hist": {
+          "context": "Luke’s temptation account reorders Matthew’s sequence: the pinnacle of the Temple (Luke’s climax) comes last rather than second. Jerusalem is Luke’s narrative destination — the city toward which the entire Gospel moves. By placing the Temple temptation last, Luke makes Jerusalem the devil’s final ground and frames the whole Passion narrative as the answer to this temptation: Jesus goes to Jerusalem not to be acclaimed but to die."
         }
       }
     },
@@ -127,21 +131,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Nazareth</div><div class=\"poi-coords\">Lower Galilee; Jesus’s hometown; the site of the programmatic rejection</div><div class=\"poi-text\">Nazareth is the launching point and the first rejection. Luke’s placement here (before Capernaum) makes Nazareth the mission’s thematic context: rejected by his own, sent to others.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Capernaum</div><div class=\"poi-coords\">Northwest shore of the Sea of Galilee; ministry base</div><div class=\"poi-text\">Capernaum receives what Nazareth rejects. The Capernaum synagogue is the scene of the first exorcism and Peter’s mother-in-law’s healing. The contrast between the two towns maps the Lukan theology of reception and rejection.</div></div>"
         },
-        "ctx": "Luke places the Nazareth sermon at the very beginning of Jesus’s public ministry (contrast Mark 6:1-6, which places it later). This is programmatic: the Isaiah 61 quotation is Luke’s mission statement. The rejection that follows — including the appeal to Elijah and Elisha’s Gentile missions — prefigures both the rejection of Israel’s establishment and the Gentile mission.",
-        "cross": [
-          {
-            "ref": "Isa 61:1-2",
-            "note": "The Spirit of the Lord is on me, because he has anointed me to proclaim good news to the poor — the programme Jesus claims as his own in the Nazareth synagogue."
-          },
-          {
-            "ref": "1 Kings 17:9",
-            "note": "Elijah was sent to a widow in Zarephath in Sidon — the Gentile precedent Jesus cites."
-          },
-          {
-            "ref": "2 Kings 5:14",
-            "note": "Naaman the Syrian was cleansed — the second Gentile precedent. The prophets’ mission to Gentiles is the precedent for Jesus’s universal scope."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 61:1-2",
+              "note": "The Spirit of the Lord is on me, because he has anointed me to proclaim good news to the poor — the programme Jesus claims as his own in the Nazareth synagogue."
+            },
+            {
+              "ref": "1 Kings 17:9",
+              "note": "Elijah was sent to a widow in Zarephath in Sidon — the Gentile precedent Jesus cites."
+            },
+            {
+              "ref": "2 Kings 5:14",
+              "note": "Naaman the Syrian was cleansed — the second Gentile precedent. The prophets’ mission to Gentiles is the precedent for Jesus’s universal scope."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -206,6 +211,9 @@
               "note": "The demons knew he was the Messiah — Chrysostom: the demonic confession is theologically accurate but morally hostile. The demons know who Jesus is; the synagogue at Nazareth refuses to accept who he is. Accurate knowledge of Christ’s identity is not saving faith."
             }
           ]
+        },
+        "hist": {
+          "context": "Luke places the Nazareth sermon at the very beginning of Jesus’s public ministry (contrast Mark 6:1-6, which places it later). This is programmatic: the Isaiah 61 quotation is Luke’s mission statement. The rejection that follows — including the appeal to Elijah and Elisha’s Gentile missions — prefigures both the rejection of Israel’s establishment and the Gentile mission."
         }
       }
     },
@@ -226,21 +234,22 @@
         "places": {
           "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Wilderness of Judea</div><div class=\"poi-coords\">Barren terrain west and south of the Jordan; forty days’ trial</div><div class=\"poi-text\">The wilderness is Israel’s formation-ground: Moses’ forty years, Elijah’s forty days, Israel’s forty years. Jesus’ forty days recapitulates and fulfils this tradition.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem — the Temple pinnacle</div><div class=\"poi-coords\">The highest point of the Temple complex, overlooking the Kidron Valley</div><div class=\"poi-text\">Luke’s climax temptation is located at the Temple in Jerusalem — the city that is Luke’s narrative destination throughout the Gospel. The devil’s final offer is a shortcut to the acclaim that the cross is the real path to.</div></div>"
         },
-        "ctx": "Luke’s temptation account reorders Matthew’s sequence: the pinnacle of the Temple (Luke’s climax) comes last rather than second. Jerusalem is Luke’s narrative destination — the city toward which the entire Gospel moves. By placing the Temple temptation last, Luke makes Jerusalem the devil’s final ground and frames the whole Passion narrative as the answer to this temptation: Jesus goes to Jerusalem not to be acclaimed but to die.",
-        "cross": [
-          {
-            "ref": "Deut 8:3",
-            "note": "Man does not live on bread alone but on every word that comes from God — Jesus’s first response, from Israel’s wilderness."
-          },
-          {
-            "ref": "Deut 6:13",
-            "note": "Fear the LORD your God, serve him only — his second response."
-          },
-          {
-            "ref": "Deut 6:16",
-            "note": "Do not put the LORD your God to the test — his third response. All three quotations are from Deuteronomy 6-8, Israel’s wilderness instruction. Jesus succeeds where Israel failed."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 8:3",
+              "note": "Man does not live on bread alone but on every word that comes from God — Jesus’s first response, from Israel’s wilderness."
+            },
+            {
+              "ref": "Deut 6:13",
+              "note": "Fear the LORD your God, serve him only — his second response."
+            },
+            {
+              "ref": "Deut 6:16",
+              "note": "Do not put the LORD your God to the test — his third response. All three quotations are from Deuteronomy 6-8, Israel’s wilderness instruction. Jesus succeeds where Israel failed."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -305,6 +314,9 @@
               "note": "The devil quotes Scripture — Chrysostom: the third temptation’s distinctive feature is the devil’s use of Ps 91:11-12. The Scripture is quoted accurately; it is the application that is satanic. False teachers have always used Scripture in the service of wrong ends. The discernment required is not textual but theological."
             }
           ]
+        },
+        "hist": {
+          "context": "Luke’s temptation account reorders Matthew’s sequence: the pinnacle of the Temple (Luke’s climax) comes last rather than second. Jerusalem is Luke’s narrative destination — the city toward which the entire Gospel moves. By placing the Temple temptation last, Luke makes Jerusalem the devil’s final ground and frames the whole Passion narrative as the answer to this temptation: Jesus goes to Jerusalem not to be acclaimed but to die."
         }
       }
     }

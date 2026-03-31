@@ -54,21 +54,22 @@
             "current": false
           }
         ],
-        "ctx": "The Jerusalem Council (c. AD 49) is the most important theological deliberation in the NT church's history. The question was not about Jewish Christian observance (Jewish believers could continue circumcision and Torah observance) but about whether Gentile converts must become Jews to be saved. Peter's argument (vv.7–11) is from divine precedent: God accepted the Gentiles without circumcision (Cornelius episode). James's argument (vv.13–18) is from Scripture: Amos 9:11–12 prophesied Gentile inclusion in the restored David's tent. Together they establish the principle that salvation is by grace through faith alone — the theological foundation of the entire Gentile mission.",
-        "cross": [
-          {
-            "ref": "Galatians 2:1–10",
-            "note": "Paul's account of the Jerusalem Council — confirmed the agreement: Paul and Barnabas were given the right hand of fellowship to continue the Gentile mission, while Peter, James, and John would focus on the Jewish mission."
-          },
-          {
-            "ref": "Amos 9:11–12",
-            "note": "Cited in James's speech (vv.16–17) as the OT prophecy of Gentile inclusion: 'I will rebuild David's fallen shelter... so that the rest of humanity may seek the Lord, even all the Gentiles who bear my name.' LXX Amos reads 'seek' where the Hebrew reads 'possess' — James uses the LXX version."
-          },
-          {
-            "ref": "Acts 10:44–48",
-            "note": "The Cornelius episode — Peter's decisive evidence: 'God, who knows the heart, showed that he accepted them by giving the Holy Spirit to them, just as he did to us' (v.8). The Gentile Pentecost is the theological foundation for the Council's decision."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Galatians 2:1–10",
+              "note": "Paul's account of the Jerusalem Council — confirmed the agreement: Paul and Barnabas were given the right hand of fellowship to continue the Gentile mission, while Peter, James, and John would focus on the Jewish mission."
+            },
+            {
+              "ref": "Amos 9:11–12",
+              "note": "Cited in James's speech (vv.16–17) as the OT prophecy of Gentile inclusion: 'I will rebuild David's fallen shelter... so that the rest of humanity may seek the Lord, even all the Gentiles who bear my name.' LXX Amos reads 'seek' where the Hebrew reads 'possess' — James uses the LXX version."
+            },
+            {
+              "ref": "Acts 10:44–48",
+              "note": "The Cornelius episode — Peter's decisive evidence: 'God, who knows the heart, showed that he accepted them by giving the Holy Spirit to them, just as he did to us' (v.8). The Gentile Pentecost is the theological foundation for the Council's decision."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -133,6 +134,9 @@
               "note": "Keener notes the significance of James's use of the LXX version of Amos 9:11–12. The MT Amos reads \"so that they may possess\" (the remnant of Edom); the LXX reads \"so that the rest of humanity may seek the Lord.\" James uses the LXX version because it makes the Gentile inclusion point most clearly. This is standard Jewish hermeneutical practice — using the textual tradition that best supports the argument."
             }
           ]
+        },
+        "hist": {
+          "context": "The Jerusalem Council (c. AD 49) is the most important theological deliberation in the NT church's history. The question was not about Jewish Christian observance (Jewish believers could continue circumcision and Torah observance) but about whether Gentile converts must become Jews to be saved. Peter's argument (vv.7–11) is from divine precedent: God accepted the Gentiles without circumcision (Cornelius episode). James's argument (vv.13–18) is from Scripture: Amos 9:11–12 prophesied Gentile inclusion in the restored David's tent. Together they establish the principle that salvation is by grace through faith alone — the theological foundation of the entire Gentile mission."
         }
       }
     },
@@ -179,21 +183,22 @@
             "current": false
           }
         ],
-        "ctx": "The Paul-Barnabas split (vv.36–41) is one of Acts' most humanly honest passages. Two proven missionaries, full of the Holy Spirit, cannot agree about a third person's fitness for ministry. Luke offers no verdict: Barnabas proved right (Col 4:10 and 2 Tim 4:11 show Mark's eventual full restoration), and Paul proved right (Silas was an excellent choice, and the mission needed an accountable team member). The split doubles the mission's reach: two teams instead of one. God's sovereignty works even through human disagreement.",
-        "cross": [
-          {
-            "ref": "Colossians 4:10",
-            "note": "\"Mark, the cousin of Barnabas... if he comes to you, welcome him\" — Paul's later commendation of Mark shows the relationship was eventually restored."
-          },
-          {
-            "ref": "2 Timothy 4:11",
-            "note": "\"Get Mark and bring him with you, because he is helpful to me in my ministry\" — Paul's final letter shows complete reconciliation. Barnabas was right about Mark; Paul came to agree."
-          },
-          {
-            "ref": "Philippians 1:15–18",
-            "note": "\"Some preach Christ out of envy and rivalry... but what does it matter? The important thing is that in every way, whether from false motives or true, Christ is preached.\" Paul's mature theology of mission: even imperfect motives and divided teams serve the Gospel's advance."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Colossians 4:10",
+              "note": "\"Mark, the cousin of Barnabas... if he comes to you, welcome him\" — Paul's later commendation of Mark shows the relationship was eventually restored."
+            },
+            {
+              "ref": "2 Timothy 4:11",
+              "note": "\"Get Mark and bring him with you, because he is helpful to me in my ministry\" — Paul's final letter shows complete reconciliation. Barnabas was right about Mark; Paul came to agree."
+            },
+            {
+              "ref": "Philippians 1:15–18",
+              "note": "\"Some preach Christ out of envy and rivalry... but what does it matter? The important thing is that in every way, whether from false motives or true, Christ is preached.\" Paul's mature theology of mission: even imperfect motives and divided teams serve the Gospel's advance."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -258,6 +263,9 @@
               "note": "Keener provides context for the Paul-Barnabas dispute. John Mark's departure at Perga (13:13) may have been for legitimate reasons — illness, family, or theological concerns about the Gentile mission's direction. Paul's refusal to take him reflected a mission discipline standard; Barnabas's willingness to give him another chance reflected pastoral patience. Neither was wrong in the abstract; they were incompatible in this specific team."
             }
           ]
+        },
+        "hist": {
+          "context": "The Paul-Barnabas split (vv.36–41) is one of Acts' most humanly honest passages. Two proven missionaries, full of the Holy Spirit, cannot agree about a third person's fitness for ministry. Luke offers no verdict: Barnabas proved right (Col 4:10 and 2 Tim 4:11 show Mark's eventual full restoration), and Paul proved right (Silas was an excellent choice, and the mission needed an accountable team member). The split doubles the mission's reach: two teams instead of one. God's sovereignty works even through human disagreement."
         }
       }
     },
@@ -304,21 +312,22 @@
             "current": false
           }
         ],
-        "ctx": "The Jerusalem Council (c. AD 49) is the most important theological deliberation in the NT church's history. The question was not about Jewish Christian observance (Jewish believers could continue circumcision and Torah observance) but about whether Gentile converts must become Jews to be saved. Peter's argument (vv.7–11) is from divine precedent: God accepted the Gentiles without circumcision (Cornelius episode). James's argument (vv.13–18) is from Scripture: Amos 9:11–12 prophesied Gentile inclusion in the restored David's tent. Together they establish the principle that salvation is by grace through faith alone — the theological foundation of the entire Gentile mission.",
-        "cross": [
-          {
-            "ref": "Galatians 2:1–10",
-            "note": "Paul's account of the Jerusalem Council — confirmed the agreement: Paul and Barnabas were given the right hand of fellowship to continue the Gentile mission, while Peter, James, and John would focus on the Jewish mission."
-          },
-          {
-            "ref": "Amos 9:11–12",
-            "note": "Cited in James's speech (vv.16–17) as the OT prophecy of Gentile inclusion: 'I will rebuild David's fallen shelter... so that the rest of humanity may seek the Lord, even all the Gentiles who bear my name.' LXX Amos reads 'seek' where the Hebrew reads 'possess' — James uses the LXX version."
-          },
-          {
-            "ref": "Acts 10:44–48",
-            "note": "The Cornelius episode — Peter's decisive evidence: 'God, who knows the heart, showed that he accepted them by giving the Holy Spirit to them, just as he did to us' (v.8). The Gentile Pentecost is the theological foundation for the Council's decision."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Galatians 2:1–10",
+              "note": "Paul's account of the Jerusalem Council — confirmed the agreement: Paul and Barnabas were given the right hand of fellowship to continue the Gentile mission, while Peter, James, and John would focus on the Jewish mission."
+            },
+            {
+              "ref": "Amos 9:11–12",
+              "note": "Cited in James's speech (vv.16–17) as the OT prophecy of Gentile inclusion: 'I will rebuild David's fallen shelter... so that the rest of humanity may seek the Lord, even all the Gentiles who bear my name.' LXX Amos reads 'seek' where the Hebrew reads 'possess' — James uses the LXX version."
+            },
+            {
+              "ref": "Acts 10:44–48",
+              "note": "The Cornelius episode — Peter's decisive evidence: 'God, who knows the heart, showed that he accepted them by giving the Holy Spirit to them, just as he did to us' (v.8). The Gentile Pentecost is the theological foundation for the Council's decision."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -383,6 +392,9 @@
               "note": "Keener notes the significance of James's use of the LXX version of Amos 9:11–12. The MT Amos reads \"so that they may possess\" (the remnant of Edom); the LXX reads \"so that the rest of humanity may seek the Lord.\" James uses the LXX version because it makes the Gentile inclusion point most clearly. This is standard Jewish hermeneutical practice — using the textual tradition that best supports the argument."
             }
           ]
+        },
+        "hist": {
+          "context": "The Jerusalem Council (c. AD 49) is the most important theological deliberation in the NT church's history. The question was not about Jewish Christian observance (Jewish believers could continue circumcision and Torah observance) but about whether Gentile converts must become Jews to be saved. Peter's argument (vv.7–11) is from divine precedent: God accepted the Gentiles without circumcision (Cornelius episode). James's argument (vv.13–18) is from Scripture: Amos 9:11–12 prophesied Gentile inclusion in the restored David's tent. Together they establish the principle that salvation is by grace through faith alone — the theological foundation of the entire Gentile mission."
         }
       }
     }

@@ -25,17 +25,18 @@
             "paragraph": "The noun anavah ('humility') in 2:3 is cognate with the adjective anav ('humble, meek'), which becomes a central theological category in Zephaniah. The 'humble of the land' (anvei haʼarets) are the faithful remnant who practice YHWH's justice. The threefold imperative — 'seek the LORD,' 'seek righteousness,' 'seek humility' — defines the pathway to survival on the Day of the LORD. The qualification 'perhaps' (ulay) maintains divine sovereignty: even repentance does not guarantee deliverance, but it is the only course of action that might secure shelter."
           }
         ],
-        "ctx": "The brief call to repentance in 2:1-3 provides the critical pastoral hinge between the Day of the LORD announcement (ch. 1) and the oracles against the nations (2:4-15). The address to the 'shameful nation' (goi lo niksaph, literally 'nation not desired/ashamed') challenges Judah to act 'before the decree takes effect.' The three imperatives — seek the LORD, seek righteousness, seek humility — define the only response that might avert the announced judgment. The conditional 'perhaps you will be sheltered' (ulay tissateru) is theologically significant: it maintains divine freedom while offering genuine hope. The verb sathar ('to shelter, hide') echoes Zephaniah's own name (tsephan-Yah, 'YHWH hides'), creating a deliberate wordplay between the prophet's identity and his message.",
-        "cross": [
-          {
-            "ref": "Amos 5:14-15",
-            "note": "Amos issues an identical conditional call: 'Seek good, not evil, that you may live... Perhaps the LORD God Almighty will have mercy on the remnant of Joseph.' The 'perhaps' formula preserves divine sovereignty in both prophets."
-          },
-          {
-            "ref": "Mic 6:8",
-            "note": "Micah's summary of divine requirements — act justly, love mercy, walk humbly — parallels Zephaniah's threefold imperative of seeking the LORD, righteousness, and humility."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Amos 5:14-15",
+              "note": "Amos issues an identical conditional call: 'Seek good, not evil, that you may live... Perhaps the LORD God Almighty will have mercy on the remnant of Joseph.' The 'perhaps' formula preserves divine sovereignty in both prophets."
+            },
+            {
+              "ref": "Mic 6:8",
+              "note": "Micah's summary of divine requirements — act justly, love mercy, walk humbly — parallels Zephaniah's threefold imperative of seeking the LORD, righteousness, and humility."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -79,6 +80,9 @@
               "note": "The call to repentance functions as the rhetorical and theological center of the book, pivoting from judgment announcement (ch. 1) to judgment execution (2:4-3:7) and ultimately to restoration (3:8-20). The 'humble of the land' (anvei haʼarets) introduce the remnant theology that will dominate the book's conclusion (3:12-13). The wordplay between sathar (v. 3) and the prophet's own name (tsephan-Yah) is almost certainly intentional, making the prophet's identity a living sermon illustration."
             }
           ]
+        },
+        "hist": {
+          "context": "The brief call to repentance in 2:1-3 provides the critical pastoral hinge between the Day of the LORD announcement (ch. 1) and the oracles against the nations (2:4-15). The address to the 'shameful nation' (goi lo niksaph, literally 'nation not desired/ashamed') challenges Judah to act 'before the decree takes effect.' The three imperatives — seek the LORD, seek righteousness, seek humility — define the only response that might avert the announced judgment. The conditional 'perhaps you will be sheltered' (ulay tissateru) is theologically significant: it maintains divine freedom while offering genuine hope. The verb sathar ('to shelter, hide') echoes Zephaniah's own name (tsephan-Yah, 'YHWH hides'), creating a deliberate wordplay between the prophet's identity and his message."
         }
       }
     },
@@ -96,17 +100,18 @@
             "paragraph": "The wordplay in 2:4 is among the most concentrated in prophetic Hebrew: Azzah (Gaza) will be azuvah (abandoned), Ashqelon will become shemamah (desolation), Ashdod will be driven out (geresh) at midday, and Eqron will be uprooted (teʼaʼqer). Each city name is paired with a phonetically similar word of destruction, creating a devastating sound-pattern of doom."
           }
         ],
-        "ctx": "The oracles against the nations begin with Philistia to the west (2:4-7), the nearest and most immediate threat. The four Philistine cities — Gaza, Ashkelon, Ashdod, Ekron — represent the Philistine pentapolis (Gath, already destroyed by this period, is omitted). The phonetic wordplays linking each city name to its fate are a masterpiece of prophetic rhetoric. The designation 'Kerethite people' (v. 5) may connect the Philistines to Crete (Caphtor), their ancestral homeland according to Amos 9:7 and Jeremiah 47:4. The promise that the coastland 'will belong to the remnant of the people of Judah' (v. 7) introduces the restoration motif: the land vacated by divine judgment will be repopulated by the surviving faithful. The note that 'the LORD their God will care for them and restore their fortunes' (v. 7b) anticipates the full restoration oracle of 3:14-20.",
-        "cross": [
-          {
-            "ref": "Jer 47:1-7",
-            "note": "Jeremiah's oracle against the Philistines develops similar themes: YHWH's sword against Ashkelon and the coast, connecting the Philistines to Caphtor (Crete). Both prophets announce the termination of Philistine power."
-          },
-          {
-            "ref": "Amos 1:6-8",
-            "note": "Amos pronounces judgment on the same four Philistine cities for slave-trading, establishing a prophetic consensus on Philistia's crimes and fate."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 47:1-7",
+              "note": "Jeremiah's oracle against the Philistines develops similar themes: YHWH's sword against Ashkelon and the coast, connecting the Philistines to Caphtor (Crete). Both prophets announce the termination of Philistine power."
+            },
+            {
+              "ref": "Amos 1:6-8",
+              "note": "Amos pronounces judgment on the same four Philistine cities for slave-trading, establishing a prophetic consensus on Philistia's crimes and fate."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -158,6 +163,9 @@
               "note": "The Philistia oracle establishes the pattern for the oracles against the nations: west (Philistia), east (Moab/Ammon), south (Cush), north (Assyria). This compass-point arrangement places Judah at the center of a circle of judgment, surrounded by nations under divine sentence. The restoration promise in verse 7 — inserted within the judgment oracle — is structurally significant: it signals that judgment on the nations serves Judah's restoration."
             }
           ]
+        },
+        "hist": {
+          "context": "The oracles against the nations begin with Philistia to the west (2:4-7), the nearest and most immediate threat. The four Philistine cities — Gaza, Ashkelon, Ashdod, Ekron — represent the Philistine pentapolis (Gath, already destroyed by this period, is omitted). The phonetic wordplays linking each city name to its fate are a masterpiece of prophetic rhetoric. The designation 'Kerethite people' (v. 5) may connect the Philistines to Crete (Caphtor), their ancestral homeland according to Amos 9:7 and Jeremiah 47:4. The promise that the coastland 'will belong to the remnant of the people of Judah' (v. 7) introduces the restoration motif: the land vacated by divine judgment will be repopulated by the surviving faithful. The note that 'the LORD their God will care for them and restore their fortunes' (v. 7b) anticipates the full restoration oracle of 3:14-20."
         }
       }
     },
@@ -175,21 +183,22 @@
             "paragraph": "The phrase mimshaq kharul umikhreh melach ('a place of weeds and salt pits') in 2:9 describes permanent agricultural death. Salt-sowing was a symbolic act of perpetual desolation in ancient Near Eastern warfare (cf. Judg 9:45, Abimelech at Shechem). The comparison to Sodom and Gomorrah invokes the paradigmatic destruction by YHWH, linking Moab and Ammon's fate to the most catastrophic divine judgment in Israel's memory."
           }
         ],
-        "ctx": "Verses 8-15 complete the compass-point oracles: east (Moab and Ammon, vv. 8-11), south (Cush, v. 12), and north (Assyria, vv. 13-15). The charge against Moab and Ammon is specific: insults, taunts, and territorial threats against 'my people' (v. 8). The Sodom and Gomorrah comparison is not merely rhetorical but geographical: the Dead Sea region where Sodom was traditionally located borders Moabite and Ammonite territory. The Cushite oracle (v. 12) is the briefest, likely because Cush (Nubia/Ethiopia) was distant and presented no direct threat. The Assyria oracle (vv. 13-15) is the most developed, depicting Nineveh as a desolate ruin inhabited only by animals — a prophecy fulfilled with devastating accuracy in 612 BC. The self-assessment of Nineveh — 'I am the one! And there is none besides me' — parodies the exclusive self-declaration of YHWH (Isa 45:5-6; 47:8), making Nineveh's arrogance a form of blasphemous self-deification.",
-        "cross": [
-          {
-            "ref": "Gen 19:24-25",
-            "note": "The destruction of Sodom and Gomorrah by fire and sulfur is the paradigmatic judgment that Zephaniah invokes against Moab and Ammon, nations whose ancestors (Lot's sons) emerged from that very catastrophe."
-          },
-          {
-            "ref": "Isa 47:8-10",
-            "note": "Babylon's self-declaration 'I am, and there is none besides me' precisely parallels Nineveh's boast in Zephaniah 2:15, suggesting a shared prophetic motif of imperial hubris parodying divine exclusivity."
-          },
-          {
-            "ref": "Nah 2:10-3:7",
-            "note": "Nahum's extended oracle against Nineveh parallels and expands Zephaniah's brief but devastating prediction of the city's desolation, indicating either literary dependence or a shared prophetic tradition."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 19:24-25",
+              "note": "The destruction of Sodom and Gomorrah by fire and sulfur is the paradigmatic judgment that Zephaniah invokes against Moab and Ammon, nations whose ancestors (Lot's sons) emerged from that very catastrophe."
+            },
+            {
+              "ref": "Isa 47:8-10",
+              "note": "Babylon's self-declaration 'I am, and there is none besides me' precisely parallels Nineveh's boast in Zephaniah 2:15, suggesting a shared prophetic motif of imperial hubris parodying divine exclusivity."
+            },
+            {
+              "ref": "Nah 2:10-3:7",
+              "note": "Nahum's extended oracle against Nineveh parallels and expands Zephaniah's brief but devastating prediction of the city's desolation, indicating either literary dependence or a shared prophetic tradition."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -249,6 +258,9 @@
               "note": "The Nineveh oracle echoes Nahum's extended treatment but in compressed, almost epigrammatic form. The self-declaration 'I am, and there is none besides me' (ephsi od) directly parodies YHWH's own exclusive claim (Isa 45:5-6), making Assyria's crime not merely political but theological: the imperial capital has claimed divine status. The desolation of the city — desert creatures, owls, exposed beams — is the fitting reversal of such cosmic pretension."
             }
           ]
+        },
+        "hist": {
+          "context": "Verses 8-15 complete the compass-point oracles: east (Moab and Ammon, vv. 8-11), south (Cush, v. 12), and north (Assyria, vv. 13-15). The charge against Moab and Ammon is specific: insults, taunts, and territorial threats against 'my people' (v. 8). The Sodom and Gomorrah comparison is not merely rhetorical but geographical: the Dead Sea region where Sodom was traditionally located borders Moabite and Ammonite territory. The Cushite oracle (v. 12) is the briefest, likely because Cush (Nubia/Ethiopia) was distant and presented no direct threat. The Assyria oracle (vv. 13-15) is the most developed, depicting Nineveh as a desolate ruin inhabited only by animals — a prophecy fulfilled with devastating accuracy in 612 BC. The self-assessment of Nineveh — 'I am the one! And there is none besides me' — parodies the exclusive self-declaration of YHWH (Isa 45:5-6; 47:8), making Nineveh's arrogance a form of blasphemous self-deification."
         }
       }
     }

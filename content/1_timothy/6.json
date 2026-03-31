@@ -25,17 +25,18 @@
             "paragraph": "The medical metaphor ὑγιαίνω (hygiaino, to be healthy) applied to doctrine is a Pastorals signature: teaching is either ‘healthy’ (ὑγιαίνω) or ‘sick’ (νοσέω, v. 4). BDAG gives ‘to be correct in one’s views.’ The metaphor diagnoses false teaching as a disease of the mind that infects the community—a powerful rhetorical strategy that pathologizes heresy and positions sound doctrine as the cure."
           }
         ],
-        "ctx": "The slave instruction (vv. 1–2) is the shortest of the Pastoral household-code sections and reflects the social reality that many early Christians were enslaved. The transition from slaves (vv. 1–2) to false teachers (vv. 3–5) is abrupt but thematically linked: both address the danger of bringing the gospel into disrepute through inappropriate behavior. The false teachers’ ‘morbid craving for controversy’ (νοσῶν περὶ ζητήσεις, v. 4) contrasts sharply with the ‘sound words’ of Christ.",
-        "cross": [
-          {
-            "ref": "Ephesians 6:5–9; Colossians 3:22–4:1",
-            "note": "Paul’s fuller slave instructions in the earlier epistles provide the theological framework (serving as to the Lord) that this briefer text presupposes."
-          },
-          {
-            "ref": "Titus 2:9–10",
-            "note": "The parallel slave instruction in Titus explicitly adds the motivation ‘so that in every way they will make the teaching about God our Savior attractive’—the missionary rationale underlying both passages."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ephesians 6:5–9; Colossians 3:22–4:1",
+              "note": "Paul’s fuller slave instructions in the earlier epistles provide the theological framework (serving as to the Lord) that this briefer text presupposes."
+            },
+            {
+              "ref": "Titus 2:9–10",
+              "note": "The parallel slave instruction in Titus explicitly adds the motivation ‘so that in every way they will make the teaching about God our Savior attractive’—the missionary rationale underlying both passages."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -92,6 +93,9 @@
               "note": "The slave instruction serves a dual purpose: it maintains social order in a context where Christian egalitarian impulses could provoke hostile attention, and it models the obedient responsiveness that the letter commends throughout. The transition to false teachers (vv. 3–5) implies a connection: the heretics may have encouraged social disruption (slaves challenging masters) as part of their deviant teaching. The medical language (νοσῶν, ὑγιαίνω) pathologizes the opponents’ intellectual posture: where sound doctrine produces social harmony, diseased teaching generates communal conflict."
             }
           ]
+        },
+        "hist": {
+          "context": "The slave instruction (vv. 1–2) is the shortest of the Pastoral household-code sections and reflects the social reality that many early Christians were enslaved. The transition from slaves (vv. 1–2) to false teachers (vv. 3–5) is abrupt but thematically linked: both address the danger of bringing the gospel into disrepute through inappropriate behavior. The false teachers’ ‘morbid craving for controversy’ (νοσῶν περὶ ζητήσεις, v. 4) contrasts sharply with the ‘sound words’ of Christ."
         }
       }
     },
@@ -115,21 +119,22 @@
             "paragraph": "A compound noun from φίλος (loving) and ἄργυρος (silver/money), φιλαργυρία appears only here in the NT. Paul calls it the root (ῥίζα) of all kinds of evil—not ‘all evil’ absolutely but πάντων τῶν κακῶν, ‘all the evils’ (referring to the specific evils just listed). Ancient moralists widely condemned love of money; Paul shares this universal ethical conviction while grounding it in faith: craving money leads to wandering from the faith."
           }
         ],
-        "ctx": "Paul’s teaching on money and contentment draws on widespread Greco-Roman philosophical traditions (Stoicism, Cynicism) while recasting them in a theological key. The saying ‘we brought nothing into the world, and we can take nothing out of it’ (v. 7) echoes Job 1:21, Ecclesiastes 5:15, and Seneca’s Epistles. The critique of those who ‘want to get rich’ (v. 9) specifically targets the false teachers’ financial exploitation (cf. Tit 1:11, ‘teaching for dishonest gain’), linking avarice to heresy.",
-        "cross": [
-          {
-            "ref": "Philippians 4:11–13",
-            "note": "Paul’s personal testimony of contentment in all circumstances provides the experiential complement to the theological teaching here."
-          },
-          {
-            "ref": "Matthew 6:19–21, 24",
-            "note": "Jesus’ teaching that one cannot serve both God and money and that treasures should be stored in heaven provides the dominical foundation for Paul’s anti-avarice ethic."
-          },
-          {
-            "ref": "Ecclesiastes 5:10–15",
-            "note": "The Preacher’s observation that those who love money never have enough parallels Paul’s warning about the insatiable nature of financial desire."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Philippians 4:11–13",
+              "note": "Paul’s personal testimony of contentment in all circumstances provides the experiential complement to the theological teaching here."
+            },
+            {
+              "ref": "Matthew 6:19–21, 24",
+              "note": "Jesus’ teaching that one cannot serve both God and money and that treasures should be stored in heaven provides the dominical foundation for Paul’s anti-avarice ethic."
+            },
+            {
+              "ref": "Ecclesiastes 5:10–15",
+              "note": "The Preacher’s observation that those who love money never have enough parallels Paul’s warning about the insatiable nature of financial desire."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -186,6 +191,9 @@
               "note": "The contentment ethic engages both the opponents and the wider Greco-Roman moral discourse. The term αὐτάρκεια would resonate with any educated Ephesian familiar with Stoic and Cynic ideals, but Paul fills it with theistic content: contentment is a response to divine provision, not an achievement of rational self-mastery. The money warning targets the false teachers’ economic exploitation while also addressing a universal human vulnerability."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul’s teaching on money and contentment draws on widespread Greco-Roman philosophical traditions (Stoicism, Cynicism) while recasting them in a theological key. The saying ‘we brought nothing into the world, and we can take nothing out of it’ (v. 7) echoes Job 1:21, Ecclesiastes 5:15, and Seneca’s Epistles. The critique of those who ‘want to get rich’ (v. 9) specifically targets the false teachers’ financial exploitation (cf. Tit 1:11, ‘teaching for dishonest gain’), linking avarice to heresy."
         }
       }
     },
@@ -203,21 +211,22 @@
             "paragraph": "The phrase combines the verb ἀγωνίζομαι (agonizomai, to compete, to contend) with the cognate noun ἀγών (agōn, contest). Originally athletic terminology for competing in the games, it acquired metaphorical use for any strenuous exertion. Paul uses the same root in 2 Tim 4:7 (‘I have fought the good fight’), creating an inclusio across the two letters: the charge Timothy receives in 1 Timothy, Paul claims to have fulfilled in 2 Timothy."
           }
         ],
-        "ctx": "The direct address ὦ ἄνθρωπε θεοῦ (O man of God, v. 11) is an OT title used for Moses, Samuel, Elijah, and other prophetic figures. By applying it to Timothy, Paul locates him in the prophetic succession and elevates his charge beyond mere organizational management to covenantal responsibility. The doxology in vv. 15–16 is one of the most exalted descriptions of God in the Pauline corpus, using language drawn from Hellenistic Jewish liturgy.",
-        "cross": [
-          {
-            "ref": "2 Timothy 4:6–8",
-            "note": "Paul’s farewell declaration that he has ‘fought the good fight, finished the race, kept the faith’ completes the charge begun here—Timothy must now carry the baton."
-          },
-          {
-            "ref": "Deuteronomy 33:1",
-            "note": "Moses is the archetypal ‘man of God’ in the OT, and Paul’s use of this title for Timothy consciously places him in that prophetic lineage."
-          },
-          {
-            "ref": "John 18:36–37",
-            "note": "Jesus’ good confession before Pontius Pilate, mentioned in v. 13, is the christological model for Timothy’s own faithful witness."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Timothy 4:6–8",
+              "note": "Paul’s farewell declaration that he has ‘fought the good fight, finished the race, kept the faith’ completes the charge begun here—Timothy must now carry the baton."
+            },
+            {
+              "ref": "Deuteronomy 33:1",
+              "note": "Moses is the archetypal ‘man of God’ in the OT, and Paul’s use of this title for Timothy consciously places him in that prophetic lineage."
+            },
+            {
+              "ref": "John 18:36–37",
+              "note": "Jesus’ good confession before Pontius Pilate, mentioned in v. 13, is the christological model for Timothy’s own faithful witness."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -278,6 +287,9 @@
               "note": "The prophetic title ἄνθρωπε θεοῦ elevates Timothy’s role beyond organizational management to prophetic succession. The reference to Christ’s good confession before Pilate introduces a martyrological dimension: Timothy’s faithfulness may require the same kind of courageous witness in hostile circumstances. The doxology functions as both praise and political theology: by ascribing βασιλεύς τῶν βασιλευόντων to Israel’s God, Paul relativizes every earthly ruler—including Caesar."
             }
           ]
+        },
+        "hist": {
+          "context": "The direct address ὦ ἄνθρωπε θεοῦ (O man of God, v. 11) is an OT title used for Moses, Samuel, Elijah, and other prophetic figures. By applying it to Timothy, Paul locates him in the prophetic succession and elevates his charge beyond mere organizational management to covenantal responsibility. The doxology in vv. 15–16 is one of the most exalted descriptions of God in the Pauline corpus, using language drawn from Hellenistic Jewish liturgy."
         }
       }
     },
@@ -295,17 +307,18 @@
             "paragraph": "The noun παραθήκη (parathēkē, deposit, trust) is a legal-commercial term for goods or money entrusted to another for safekeeping (cf. 2 Tim 1:12, 14). Paul applies it to the apostolic teaching: the gospel is not Timothy’s to modify but a sacred trust to be guarded intact and transmitted faithfully. This concept of a fixed ‘deposit of faith’ becomes foundational in patristic theology and is central to debates about tradition and development of doctrine."
           }
         ],
-        "ctx": "The closing charge to the wealthy (vv. 17–19) addresses a different audience from the warning against those who ‘want to get rich’ (v. 9)—here Paul addresses those who are already rich. The counsel is not to renounce wealth but to use it generously and to ground their hope in God rather than in uncertain riches. The final warning against ‘falsely called knowledge’ (τῆς ψευδωνύμου γνώσεως, v. 20) may be the earliest reference to what would later become known as Gnosticism, though the term is used loosely.",
-        "cross": [
-          {
-            "ref": "2 Timothy 1:12–14",
-            "note": "The deposit language reappears in the second letter, where Paul expresses confidence that God will guard what has been entrusted to him, and charges Timothy to guard it through the Holy Spirit."
-          },
-          {
-            "ref": "Luke 12:16–21",
-            "note": "Jesus’ parable of the rich fool illustrates the danger of placing hope in material wealth rather than in God—the same warning Paul issues to the wealthy here."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Timothy 1:12–14",
+              "note": "The deposit language reappears in the second letter, where Paul expresses confidence that God will guard what has been entrusted to him, and charges Timothy to guard it through the Holy Spirit."
+            },
+            {
+              "ref": "Luke 12:16–21",
+              "note": "Jesus’ parable of the rich fool illustrates the danger of placing hope in material wealth rather than in God—the same warning Paul issues to the wealthy here."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -358,6 +371,9 @@
               "note": "The closing charge weaves together three strands: the ethical instruction to the wealthy (a positive alternative to avarice), the deposit metaphor (summarizing Timothy’s custodial responsibility), and the final warning against false knowledge. The παραθήκη (deposit) concept is theologically significant: it implies a stable body of teaching received from the apostle that can be ‘guarded’ intact—a concept that will become central to early Catholic ecclesiology but that here functions within a living apostle-delegate relationship."
             }
           ]
+        },
+        "hist": {
+          "context": "The closing charge to the wealthy (vv. 17–19) addresses a different audience from the warning against those who ‘want to get rich’ (v. 9)—here Paul addresses those who are already rich. The counsel is not to renounce wealth but to use it generously and to ground their hope in God rather than in uncertain riches. The final warning against ‘falsely called knowledge’ (τῆς ψευδωνύμου γνώσεως, v. 20) may be the earliest reference to what would later become known as Gnosticism, though the term is used loosely."
         }
       }
     }

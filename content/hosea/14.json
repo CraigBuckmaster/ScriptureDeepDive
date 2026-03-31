@@ -25,21 +25,22 @@
             "paragraph": "The imperative of shuv, the key verb of the entire book, opens the final chapter. After thirteen chapters of oscillation between judgment and mercy, the book concludes with a direct, unambiguous call to return. The verb here carries its fullest theological weight: not merely 'come back' but 'be transformed, reorient your entire existence toward YHWH.' The accompanying instruction to 'take words with you' specifies that this return must be articulate: Israel must formulate its repentance verbally, confessing specific sins and renouncing specific false securities."
           }
         ],
-        "ctx": "The final chapter is the book's resolution, answering the question that has governed the entire oracular section: will Israel return? Hosea provides the penitential prayer that Israel should pray (vv. 2-3), unlike the superficial prayer of 6:1-3 that was rejected. This prayer is specific where the earlier one was formulaic: it renounces Assyria ('Assyria cannot save us'), military self-reliance ('we will not mount warhorses'), and idolatry ('we will never again say Our gods to what our own hands have made'). The concluding confession, 'in you the fatherless find compassion,' is the theological heart of the prayer: Israel acknowledges its utter dependence on divine mercy, claiming no merit and no alternative source of help. This is the antithesis of the proud self-sufficiency condemned throughout the book.",
-        "cross": [
-          {
-            "ref": "Hos 6:1-3",
-            "note": "The superficial penitential prayer that was rejected; chapter 14's prayer corrects its failures."
-          },
-          {
-            "ref": "Joel 2:12-13",
-            "note": "Joel's parallel call to return 'with all your heart, with fasting and weeping and mourning.'"
-          },
-          {
-            "ref": "Luke 15:18-19",
-            "note": "The prodigal son's prepared speech ('Father, I have sinned...') echoes Hosea's instruction to 'take words.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Hos 6:1-3",
+              "note": "The superficial penitential prayer that was rejected; chapter 14's prayer corrects its failures."
+            },
+            {
+              "ref": "Joel 2:12-13",
+              "note": "Joel's parallel call to return 'with all your heart, with fasting and weeping and mourning.'"
+            },
+            {
+              "ref": "Luke 15:18-19",
+              "note": "The prodigal son's prepared speech ('Father, I have sinned...') echoes Hosea's instruction to 'take words.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "The prescribed prayer is the literary and theological counterpart to the prescribed marriage of chapter 1. Just as God instructed Hosea to marry as a prophetic act, so now God instructs Israel to speak as an act of repentance. The shift from enacted prophecy (sign-act) to verbal prophecy (penitential prayer) mirrors the shift in the book from narrative (chs. 1-3) to oracle (chs. 4-14). Andersen and Freedman note that the prayer's specificity is its validation: unlike the glib confession of 6:1-3, this prayer names sins and renounces them."
             }
           ]
+        },
+        "hist": {
+          "context": "The final chapter is the book's resolution, answering the question that has governed the entire oracular section: will Israel return? Hosea provides the penitential prayer that Israel should pray (vv. 2-3), unlike the superficial prayer of 6:1-3 that was rejected. This prayer is specific where the earlier one was formulaic: it renounces Assyria ('Assyria cannot save us'), military self-reliance ('we will not mount warhorses'), and idolatry ('we will never again say Our gods to what our own hands have made'). The concluding confession, 'in you the fatherless find compassion,' is the theological heart of the prayer: Israel acknowledges its utter dependence on divine mercy, claiming no merit and no alternative source of help. This is the antithesis of the proud self-sufficiency condemned throughout the book."
         }
       }
     },
@@ -123,25 +127,26 @@
             "paragraph": "The botanical imagery of vv. 5-8 is the most luxuriant in the prophetic corpus: lily, cedar of Lebanon, olive tree, grain, vine, cypress/juniper. Together they describe a restored Israel flourishing in every dimension — beauty (lily), strength (cedar), fertility (olive, grain, vine), and evergreen permanence (cypress). The agricultural metaphors that have carried judgment throughout the book now carry restoration."
           }
         ],
-        "ctx": "God's response to the penitential prayer (vv. 4-8) is the book's ultimate resolution: healing, free love, and extravagant agricultural flourishing. The vocabulary of restoration systematically reverses the vocabulary of judgment: the dew that symbolized evanescent loyalty (6:4) now symbolizes divine provision; the blighted root (9:16) is replaced by roots spreading like Lebanon's cedars; the barren womb (9:11-14) gives way to grain, vines, and blossoming. The botanical catalogue (lily, cedar, olive, vine, grain) represents the full spectrum of the promised land's agricultural bounty. Verse 8 contains a final dialogue between God and Ephraim in which YHWH declares, 'I am like a flourishing juniper; your fruitfulness comes from me.' This is the ultimate anti-Baal statement: fertility comes not from the storm god but from YHWH. The marriage/agricultural metaphor reaches its resolution: the unfaithful wife/barren land is restored to fruitfulness through the faithfulness of the divine husband/gardener.",
-        "cross": [
-          {
-            "ref": "Isa 35:1-2",
-            "note": "Isaiah's parallel vision of restoration: 'The desert will rejoice and blossom; like the crocus, it will burst into bloom.'"
-          },
-          {
-            "ref": "Ezek 47:1-12",
-            "note": "Ezekiel's river-of-life vision, where trees bear fruit continuously, parallels the agricultural restoration imagery."
-          },
-          {
-            "ref": "Song 2:1-2",
-            "note": "The lily and cedar imagery connects to Song of Solomon's love poetry, enriching the restoration with nuptial overtones."
-          },
-          {
-            "ref": "John 15:1-5",
-            "note": "Jesus as the 'true vine' develops the vine imagery that Hosea uses for restored Israel."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 35:1-2",
+              "note": "Isaiah's parallel vision of restoration: 'The desert will rejoice and blossom; like the crocus, it will burst into bloom.'"
+            },
+            {
+              "ref": "Ezek 47:1-12",
+              "note": "Ezekiel's river-of-life vision, where trees bear fruit continuously, parallels the agricultural restoration imagery."
+            },
+            {
+              "ref": "Song 2:1-2",
+              "note": "The lily and cedar imagery connects to Song of Solomon's love poetry, enriching the restoration with nuptial overtones."
+            },
+            {
+              "ref": "John 15:1-5",
+              "note": "Jesus as the 'true vine' develops the vine imagery that Hosea uses for restored Israel."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -206,6 +211,9 @@
               "note": "The restoration oracle is the most concentrated expression of divine grace in the prophetic corpus. Every image reverses a prior judgment: dew replaces evanescence, root replaces withering, fruitfulness replaces barrenness. Andersen and Freedman argue that the botanical catalogue (lily, cedar, olive, grain, vine, juniper) constitutes a 'garden of restoration' that recapitulates the garden of Eden. The book that began with a marriage of harlotry ends with a flourishing garden tended by God: the husband-gardener has reclaimed his unfaithful wife-vineyard."
             }
           ]
+        },
+        "hist": {
+          "context": "God's response to the penitential prayer (vv. 4-8) is the book's ultimate resolution: healing, free love, and extravagant agricultural flourishing. The vocabulary of restoration systematically reverses the vocabulary of judgment: the dew that symbolized evanescent loyalty (6:4) now symbolizes divine provision; the blighted root (9:16) is replaced by roots spreading like Lebanon's cedars; the barren womb (9:11-14) gives way to grain, vines, and blossoming. The botanical catalogue (lily, cedar, olive, vine, grain) represents the full spectrum of the promised land's agricultural bounty. Verse 8 contains a final dialogue between God and Ephraim in which YHWH declares, 'I am like a flourishing juniper; your fruitfulness comes from me.' This is the ultimate anti-Baal statement: fertility comes not from the storm god but from YHWH. The marriage/agricultural metaphor reaches its resolution: the unfaithful wife/barren land is restored to fruitfulness through the faithfulness of the divine husband/gardener."
         }
       }
     },
@@ -223,21 +231,22 @@
             "paragraph": "The wisdom vocabulary of the epilogue (hakham, 'wise'; navin, 'discerning'; yashar, 'upright/straight') connects Hosea to the wisdom tradition (Proverbs, Ecclesiastes, Job). The final verse reframes the entire prophetic book as wisdom literature: the reader is challenged to discern the theological patterns within the oracles and to choose the way of the righteous over the way of the rebel."
           }
         ],
-        "ctx": "The final verse is a wisdom epilogue, often attributed to a later editor who placed Hosea's oracles within a sapiential framework. Whether original or editorial, it performs an essential hermeneutical function: it addresses the reader directly, inviting reflection on everything that has preceded. The two-paths theology (righteous walk in God's ways; rebels stumble in them) echoes the opening of Psalm 1 and the conclusion of Deuteronomy. The 'ways of the LORD' are the covenant paths that Israel was called to walk; the book has demonstrated what happens when those paths are abandoned. The epilogue transforms the prophetic book from a historical document about ancient Israel into a wisdom text for all readers, in every era, who face the same choice between faithfulness and rebellion.",
-        "cross": [
-          {
-            "ref": "Ps 1:6",
-            "note": "The two-paths theology: 'the LORD watches over the way of the righteous, but the way of the wicked leads to destruction.'"
-          },
-          {
-            "ref": "Deut 30:19",
-            "note": "Moses' call to choose life or death, blessing or curse, which the wisdom epilogue echoes."
-          },
-          {
-            "ref": "Prov 4:18-19",
-            "note": "The contrast between the path of the righteous (growing brighter) and the path of the wicked (deep darkness)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 1:6",
+              "note": "The two-paths theology: 'the LORD watches over the way of the righteous, but the way of the wicked leads to destruction.'"
+            },
+            {
+              "ref": "Deut 30:19",
+              "note": "Moses' call to choose life or death, blessing or curse, which the wisdom epilogue echoes."
+            },
+            {
+              "ref": "Prov 4:18-19",
+              "note": "The contrast between the path of the righteous (growing brighter) and the path of the wicked (deep darkness)."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -282,6 +291,9 @@
               "note": "Whether original or editorial, the wisdom epilogue performs a crucial canonical function: it transforms the prophetic book from proclamation into instruction, from oracle into torah. The reader is no longer hearing a prophet address ancient Israel but is being directly challenged to choose between the ways of the righteous and the ways of the rebellious. The book that began with a divine command to marry (1:2) ends with a human challenge to walk wisely (14:9)."
             }
           ]
+        },
+        "hist": {
+          "context": "The final verse is a wisdom epilogue, often attributed to a later editor who placed Hosea's oracles within a sapiential framework. Whether original or editorial, it performs an essential hermeneutical function: it addresses the reader directly, inviting reflection on everything that has preceded. The two-paths theology (righteous walk in God's ways; rebels stumble in them) echoes the opening of Psalm 1 and the conclusion of Deuteronomy. The 'ways of the LORD' are the covenant paths that Israel was called to walk; the book has demonstrated what happens when those paths are abandoned. The epilogue transforms the prophetic book from a historical document about ancient Israel into a wisdom text for all readers, in every era, who face the same choice between faithfulness and rebellion."
         }
       }
     }

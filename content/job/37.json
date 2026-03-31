@@ -25,17 +25,18 @@
             "paragraph": "\"God’s voice (qōl) thunders in marvellous ways\" (v.5). The same word for voice and thunder. When God speaks in the storm, nature and revelation merge. The thunder IS God’s voice — not a metaphor but an identity."
           }
         ],
-        "ctx": "Elihu’s final speech climaxes in the storm itself. His heart pounds (v.1), thunder rolls (v.2–5), snow and rain fall (v.6), animals take shelter (v.8), the tempest comes (v.9), ice forms (v.10), clouds scatter lightning (v.11). The storm is both meteorological event and theophanic prelude. Elihu is describing what he sees and hears — and what he sees and hears is God approaching.",
-        "cross": [
-          {
-            "ref": "Ps 29:3–4",
-            "note": "\"The voice of the LORD is over the waters... the voice of the LORD is powerful\" — the thunder psalm."
-          },
-          {
-            "ref": "Exod 19:16–19",
-            "note": "\"Thunder and lightning, with a thick cloud over the mountain\" — the Sinai theophany, the template for all storm-theophanies."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 29:3–4",
+              "note": "\"The voice of the LORD is over the waters... the voice of the LORD is powerful\" — the thunder psalm."
+            },
+            {
+              "ref": "Exod 19:16–19",
+              "note": "\"Thunder and lightning, with a thick cloud over the mountain\" — the Sinai theophany, the template for all storm-theophanies."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -104,6 +105,9 @@
               "note": "Habel: Elihu’s speech dissolves into witness. He is no longer arguing but testifying to what he sees: the storm is coming. The advocate yields the floor to the judge."
             }
           ]
+        },
+        "hist": {
+          "context": "Elihu’s final speech climaxes in the storm itself. His heart pounds (v.1), thunder rolls (v.2–5), snow and rain fall (v.6), animals take shelter (v.8), the tempest comes (v.9), ice forms (v.10), clouds scatter lightning (v.11). The storm is both meteorological event and theophanic prelude. Elihu is describing what he sees and hears — and what he sees and hears is God approaching."
         }
       }
     },
@@ -121,17 +125,18 @@
             "paragraph": "\"Out of the north God comes in golden splendour (zāhāb); he comes in awesome majesty\" (v.22). The final image before the whirlwind. God approaches from the north — the traditional direction of divine appearance in Canaanite and Israelite theology — in blinding golden light. Elihu’s last words describe the arrival. The next voice will be God’s."
           }
         ],
-        "ctx": "Elihu’s closing questions anticipate God’s: \"Do you know how God controls the clouds? Do you know how the lightning flashes?\" (vv.15–16). These are warm-up questions for the 77 questions God will ask in chapters 38–41. Elihu’s final sentence: \"The Almighty is beyond our reach and exalted in power; in his justice and great righteousness, he does not oppress\" (v.23). Then silence. Then the whirlwind.",
-        "cross": [
-          {
-            "ref": "Ezek 1:4",
-            "note": "\"A windstorm coming out of the north — an immense cloud with flashing lightning and surrounded by brilliant light\" — Ezekiel’s theophany parallels Elihu’s description."
-          },
-          {
-            "ref": "Hab 3:3–4",
-            "note": "\"His glory covered the heavens... his splendour was like the sunrise\" — the divine approach."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 1:4",
+              "note": "\"A windstorm coming out of the north — an immense cloud with flashing lightning and surrounded by brilliant light\" — Ezekiel’s theophany parallels Elihu’s description."
+            },
+            {
+              "ref": "Hab 3:3–4",
+              "note": "\"His glory covered the heavens... his splendour was like the sunrise\" — the divine approach."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -196,6 +201,9 @@
               "note": "Habel: Elihu’s final words are stage directions. He describes the approach of the judge. The curtain rises. The human speeches are over. \"Then the LORD answered Job out of the storm.\""
             }
           ]
+        },
+        "hist": {
+          "context": "Elihu’s closing questions anticipate God’s: \"Do you know how God controls the clouds? Do you know how the lightning flashes?\" (vv.15–16). These are warm-up questions for the 77 questions God will ask in chapters 38–41. Elihu’s final sentence: \"The Almighty is beyond our reach and exalted in power; in his justice and great righteousness, he does not oppress\" (v.23). Then silence. Then the whirlwind."
         }
       }
     }

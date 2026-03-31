@@ -22,17 +22,18 @@
             "paragraph": "A miktam of David. The term appears in six psalm titles (16, 56–60). Its meaning is uncertain — possibly \"inscription\" or \"golden poem.\" Psalm 16 is the most important because of its resurrection content."
           }
         ],
-        "ctx": "David takes refuge in God (v.1), declares that apart from God he has no good (v.2), delights in the saints (v.3), and rejects other gods (v.4). \"LORD, you alone are my portion and my cup; you make my lot secure\" (v.5). The ḥēleq (portion) language echoes Ecclesiastes: God is the portion that death cannot take.",
-        "cross": [
-          {
-            "ref": "Phil 3:8",
-            "note": "\"I consider everything a loss because of the surpassing worth of knowing Christ\" — Paul’s version of \"apart from you I have no good thing.\""
-          },
-          {
-            "ref": "Lam 3:24",
-            "note": "\"The LORD is my portion; therefore I will wait for him\" — the identical ḥēleq theology."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Phil 3:8",
+              "note": "\"I consider everything a loss because of the surpassing worth of knowing Christ\" — Paul’s version of \"apart from you I have no good thing.\""
+            },
+            {
+              "ref": "Lam 3:24",
+              "note": "\"The LORD is my portion; therefore I will wait for him\" — the identical ḥēleq theology."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -99,6 +100,9 @@
               "note": "Goldingay: \"you make my lot secure\" — the lot-casting language of land distribution (Josh 14–19). David’s lot is not territory but the LORD himself."
             }
           ]
+        },
+        "hist": {
+          "context": "David takes refuge in God (v.1), declares that apart from God he has no good (v.2), delights in the saints (v.3), and rejects other gods (v.4). \"LORD, you alone are my portion and my cup; you make my lot secure\" (v.5). The ḥēleq (portion) language echoes Ecclesiastes: God is the portion that death cannot take."
         }
       }
     },
@@ -122,21 +126,22 @@
             "paragraph": "\"You make known to me the path (nətîb) of life\" (v.11). The \"path of life\" leads through death to resurrection. Not avoidance of death but passage through it. \"You will fill me with joy in your presence, with eternal pleasures at your right hand.\" Joy, presence, eternity — the psalm’s final three words describe heaven."
           }
         ],
-        "ctx": "David’s body rests secure (v.9), his soul will not be abandoned to Sheol (v.10), his flesh will not decay (v.10). God will show him the path of life — fullness of joy, eternal pleasures at God’s right hand (v.11). Peter’s Pentecost sermon (Acts 2) and Paul’s Antioch sermon (Acts 13) both identify this as Christ’s resurrection prophecy: David’s body decayed, but the one David prophesied about did not.",
-        "cross": [
-          {
-            "ref": "Acts 2:25–28",
-            "note": "Peter quotes Psalm 16:8–11 at Pentecost: \"You will not let your Holy One see decay\" — applied to Christ’s resurrection."
-          },
-          {
-            "ref": "Acts 13:35–37",
-            "note": "Paul quotes Psalm 16:10 in Antioch: David died and decayed; Jesus did not. The psalm is prophetic."
-          },
-          {
-            "ref": "1 Cor 15:54–55",
-            "note": "\"Death has been swallowed up in victory\" — the resurrection the psalm anticipates."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 2:25–28",
+              "note": "Peter quotes Psalm 16:8–11 at Pentecost: \"You will not let your Holy One see decay\" — applied to Christ’s resurrection."
+            },
+            {
+              "ref": "Acts 13:35–37",
+              "note": "Paul quotes Psalm 16:10 in Antioch: David died and decayed; Jesus did not. The psalm is prophetic."
+            },
+            {
+              "ref": "1 Cor 15:54–55",
+              "note": "\"Death has been swallowed up in victory\" — the resurrection the psalm anticipates."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -211,6 +216,9 @@
               "note": "Goldingay: \"eternal pleasures at your right hand\" — the \"right hand\" is the place of honour and power. Eternal pleasure is not idle enjoyment but dignified participation in God’s presence."
             }
           ]
+        },
+        "hist": {
+          "context": "David’s body rests secure (v.9), his soul will not be abandoned to Sheol (v.10), his flesh will not decay (v.10). God will show him the path of life — fullness of joy, eternal pleasures at God’s right hand (v.11). Peter’s Pentecost sermon (Acts 2) and Paul’s Antioch sermon (Acts 13) both identify this as Christ’s resurrection prophecy: David’s body decayed, but the one David prophesied about did not."
         }
       }
     }

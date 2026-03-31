@@ -22,21 +22,22 @@
             "paragraph": "\"He put a new song (shîr ḥādāsh) in my mouth, a hymn of praise to our God\" (v.3). David waited patiently (v.1), God heard (v.1), lifted him from the pit (v.2), set his feet on rock (v.2), and gave him a new song (v.3). The rescue produces music. Then the stunning declaration: \"Sacrifice and offering you did not desire — but my ears you have opened\" (v.6). Hebrews 10:5–7 applies this to Christ’s incarnation."
           }
         ],
-        "ctx": "",
-        "cross": [
-          {
-            "ref": "Heb 10:5–10",
-            "note": "Hebrews quotes vv. 6–8 directly, applying them to Christ: 'Sacrifice and offering you did not desire — but a body you prepared for me.' The psalm's move from ritual sacrifice to obedient will becomes the theology of the incarnation."
-          },
-          {
-            "ref": "Ps 69:1–3",
-            "note": "The 'slimy pit' and 'mud and mire' imagery (v. 2) recurs in Psalm 69, another Davidic psalm that the New Testament applies to Christ. Both psalms pair rescue language with sacrifice theology."
-          },
-          {
-            "ref": "1 Sam 2:1–10",
-            "note": "Hannah's song — 'He raises the poor from the dust' — shares the psalm's theology of divine reversal: God lifts the lowly and sets them on solid ground. Deliverance from the pit is a pattern, not an exception."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 10:5–10",
+              "note": "Hebrews quotes vv. 6–8 directly, applying them to Christ: 'Sacrifice and offering you did not desire — but a body you prepared for me.' The psalm's move from ritual sacrifice to obedient will becomes the theology of the incarnation."
+            },
+            {
+              "ref": "Ps 69:1–3",
+              "note": "The 'slimy pit' and 'mud and mire' imagery (v. 2) recurs in Psalm 69, another Davidic psalm that the New Testament applies to Christ. Both psalms pair rescue language with sacrifice theology."
+            },
+            {
+              "ref": "1 Sam 2:1–10",
+              "note": "Hannah's song — 'He raises the poor from the dust' — shares the psalm's theology of divine reversal: God lifts the lowly and sets them on solid ground. Deliverance from the pit is a pattern, not an exception."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -127,6 +128,9 @@
               "note": "Goldingay: 'in the scroll of the book it is written about me' — megillat-sēfer may refer to Torah, to a specific covenant document, or to God's written plan for the psalmist's life. The written word defines the vocation."
             }
           ]
+        },
+        "hist": {
+          "context": ""
         }
       }
     },
@@ -144,17 +148,18 @@
             "paragraph": "\"But as for me, I am poor and needy; may the Lord think of me. You are my help and my deliverer; you are my God, do not delay (ḥūshâ)\" (v.17). The psalm’s second half is a lament: troubles surround (v.12), sins overtake (v.12), David asks for swift rescue (v.13). Psalm 70 is nearly identical to vv.13–17 — preserved as an independent psalm."
           }
         ],
-        "ctx": "",
-        "cross": [
-          {
-            "ref": "Ps 70:1–5",
-            "note": "Psalm 70 is virtually identical to vv. 13–17 of this psalm — a standalone extract of the urgent plea section. The duplication confirms this prayer's liturgical importance: it was used independently."
-          },
-          {
-            "ref": "Ps 35:26–27",
-            "note": "The language 'may all who seek to take my life be put to shame … may those who delight in my vindication shout for joy' closely parallels Psalm 35's concluding imprecation. The two psalms share vocabulary and theological outlook."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 70:1–5",
+              "note": "Psalm 70 is virtually identical to vv. 13–17 of this psalm — a standalone extract of the urgent plea section. The duplication confirms this prayer's liturgical importance: it was used independently."
+            },
+            {
+              "ref": "Ps 35:26–27",
+              "note": "The language 'may all who seek to take my life be put to shame … may those who delight in my vindication shout for joy' closely parallels Psalm 35's concluding imprecation. The two psalms share vocabulary and theological outlook."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -245,6 +250,9 @@
               "note": "Goldingay: the psalm ends with tension unresolved — 'do not delay, my God.' This is characteristic of Hebrew prayer: it holds praise and plea, gratitude and urgency, in the same breath. Neither cancels the other."
             }
           ]
+        },
+        "hist": {
+          "context": ""
         }
       }
     }

@@ -17,21 +17,22 @@
       "verse_start": 1,
       "verse_end": 13,
       "panels": {
-        "ctx": "A vast army from Moab, Ammon, and Mount Seir invades. Jehoshaphat is alarmed and “resolved to inquire of the LORD.” He proclaims a national fast. His prayer in the temple is one of the great prayers of Chronicles: “We have no power to face this vast army. We do not know what to do, but our eyes are on you.” All Judah stands before the LORD, with their wives, children, and little ones.",
-        "cross": [
-          {
-            "ref": "Ps 83:1–8",
-            "note": "The coalition of Moabites, Ammonites, and Meunites attacking Judah parallels the confederacy described in Psalm 83, where multiple nations conspire against God's people."
-          },
-          {
-            "ref": "1 Kgs 8:33–34",
-            "note": "Jehoshaphat's prayer in the temple court explicitly invokes Solomon's dedication prayer — 'if your people turn and pray toward this temple' — making his prayer a test case of Solomon's promise."
-          },
-          {
-            "ref": "Exod 14:13–14",
-            "note": "The command 'Do not be afraid; stand firm and you will see the deliverance of the LORD' echoes Moses at the Red Sea, positioning Jehoshaphat's crisis as a new exodus moment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 83:1–8",
+              "note": "The coalition of Moabites, Ammonites, and Meunites attacking Judah parallels the confederacy described in Psalm 83, where multiple nations conspire against God's people."
+            },
+            {
+              "ref": "1 Kgs 8:33–34",
+              "note": "Jehoshaphat's prayer in the temple court explicitly invokes Solomon's dedication prayer — 'if your people turn and pray toward this temple' — making his prayer a test case of Solomon's promise."
+            },
+            {
+              "ref": "Exod 14:13–14",
+              "note": "The command 'Do not be afraid; stand firm and you will see the deliverance of the LORD' echoes Moses at the Red Sea, positioning Jehoshaphat's crisis as a new exodus moment."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -49,6 +50,9 @@
               "note": "The Chronicler’s characteristic vocabulary and theological framework shape the presentation of these events."
             }
           ]
+        },
+        "hist": {
+          "context": "A vast army from Moab, Ammon, and Mount Seir invades. Jehoshaphat is alarmed and “resolved to inquire of the LORD.” He proclaims a national fast. His prayer in the temple is one of the great prayers of Chronicles: “We have no power to face this vast army. We do not know what to do, but our eyes are on you.” All Judah stands before the LORD, with their wives, children, and little ones."
         }
       }
     },
@@ -58,17 +62,18 @@
       "verse_start": 14,
       "verse_end": 37,
       "panels": {
-        "ctx": "The Spirit comes on Jahaziel the Levite: “Do not be afraid. The battle is not yours but God’s. You will not have to fight.” Jehoshaphat appoints singers to march ahead of the army: “Give thanks to the LORD, for his love endures forever.” As they sing, the LORD sets ambushes among the enemies, who destroy each other. Judah arrives to find only corpses and plunder. They spend three days collecting it. The Valley of Berakah (“blessing”) is named. The Chronicler’s most spectacular illustration of the worship-wins-battles principle.",
-        "cross": [
-          {
-            "ref": "Exod 15:1–21",
-            "note": "The singers leading the army into battle and the aftermath of praise echo the Song of the Sea. The Chronicler creates a deliberate exodus typology: God fights, the enemy self-destructs, Israel sings."
-          },
-          {
-            "ref": "1 Kgs 22:48–49",
-            "note": "Kings records Jehoshaphat's failed shipping venture at Ezion Geber. Chronicles explains why it failed: 'because you have made an alliance with Ahaziah' — another case of foreign alliances bringing judgment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 15:1–21",
+              "note": "The singers leading the army into battle and the aftermath of praise echo the Song of the Sea. The Chronicler creates a deliberate exodus typology: God fights, the enemy self-destructs, Israel sings."
+            },
+            {
+              "ref": "1 Kgs 22:48–49",
+              "note": "Kings records Jehoshaphat's failed shipping venture at Ezion Geber. Chronicles explains why it failed: 'because you have made an alliance with Ahaziah' — another case of foreign alliances bringing judgment."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -86,6 +91,9 @@
               "note": "The Chronicler’s characteristic vocabulary and theological framework shape the presentation of these events."
             }
           ]
+        },
+        "hist": {
+          "context": "The Spirit comes on Jahaziel the Levite: “Do not be afraid. The battle is not yours but God’s. You will not have to fight.” Jehoshaphat appoints singers to march ahead of the army: “Give thanks to the LORD, for his love endures forever.” As they sing, the LORD sets ambushes among the enemies, who destroy each other. Judah arrives to find only corpses and plunder. They spend three days collecting it. The Valley of Berakah (“blessing”) is named. The Chronicler’s most spectacular illustration of the worship-wins-battles principle."
         }
       }
     }

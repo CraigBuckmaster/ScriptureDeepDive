@@ -31,21 +31,22 @@
             "paragraph": "Homologeō in v. 9 (‘if you declare with your mouth, “Jesus is Lord”’) denotes public, binding declaration. In the Roman world, the confession ‘Jesus is Lord’ (Kyrios Iēsous) was a counter-imperial claim: Caesar is not lord. The pairing of mouth-confession and heart-belief (vv. 9–10) unites external profession with internal conviction."
           }
         ],
-        "ctx": "Romans 10 shifts from divine sovereignty (ch. 9) to human responsibility. Paul’s heart’s desire for Israel is their salvation (v. 1). Their problem is not lack of zeal but misdirected zeal: they sought to establish their own righteousness rather than submit to God’s (v. 3). The confession formula in vv. 9–10 is widely regarded as an early Christian creed, pairing ‘Jesus is Lord’ (the earliest Christian confession, cf. 1 Cor 12:3; Phil 2:11) with belief in the resurrection. The universalism of v. 13 (‘everyone who calls on the name of the Lord will be saved’) is striking in context: Joel 2:32 originally referred to YHWH, and Paul applies it to Jesus, implying the highest possible Christology.",
-        "cross": [
-          {
-            "ref": "Deut 30:12–14",
-            "note": "Paul reinterprets Moses’ ‘accessibility of the word’ passage: the word of faith is near, not in heaven or across the sea."
-          },
-          {
-            "ref": "Joel 2:32",
-            "note": "Everyone who calls on the name of the LORD will be saved — applied by Paul to Jesus Christ."
-          },
-          {
-            "ref": "Phil 2:9–11",
-            "note": "At the name of Jesus every knee will bow and every tongue confess that Jesus Christ is Lord."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 30:12–14",
+              "note": "Paul reinterprets Moses’ ‘accessibility of the word’ passage: the word of faith is near, not in heaven or across the sea."
+            },
+            {
+              "ref": "Joel 2:32",
+              "note": "Everyone who calls on the name of the LORD will be saved — applied by Paul to Jesus Christ."
+            },
+            {
+              "ref": "Phil 2:9–11",
+              "note": "At the name of Jesus every knee will bow and every tongue confess that Jesus Christ is Lord."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "Schreiner emphasises the Christological import of v. 13: Paul applies Joel’s YHWH text to Jesus, implying that calling on Jesus is calling on God. This is implicit affirmation of Christ’s deity."
             }
           ]
+        },
+        "hist": {
+          "context": "Romans 10 shifts from divine sovereignty (ch. 9) to human responsibility. Paul’s heart’s desire for Israel is their salvation (v. 1). Their problem is not lack of zeal but misdirected zeal: they sought to establish their own righteousness rather than submit to God’s (v. 3). The confession formula in vv. 9–10 is widely regarded as an early Christian creed, pairing ‘Jesus is Lord’ (the earliest Christian confession, cf. 1 Cor 12:3; Phil 2:11) with belief in the resurrection. The universalism of v. 13 (‘everyone who calls on the name of the Lord will be saved’) is striking in context: Joel 2:32 originally referred to YHWH, and Paul applies it to Jesus, implying the highest possible Christology."
         }
       }
     },
@@ -135,21 +139,22 @@
             "paragraph": "Kēryssō in vv. 14–15 denotes authoritative proclamation, as a herald announces the decree of a king. Paul’s chain of logic runs backward: calling presupposes believing, believing presupposes hearing, hearing presupposes preaching, preaching presupposes sending. The entire chain depends on God’s initiative in commissioning messengers, making mission the outworking of sovereign mercy."
           }
         ],
-        "ctx": "Romans 10:14–21 presents Paul’s famous ‘chain of salvation’: sending → preaching → hearing → believing → calling. The citation of Isaiah 52:7 (‘how beautiful are the feet of those who bring good news’) connects the gospel mission to the Isaianic herald announcing God’s reign. Paul’s argument then turns to Israel’s failure: they heard but did not believe (vv. 16–21). The chapter ends with Moses and Isaiah testifying that God stretched out his hands to a disobedient and obstinate people. Israel’s rejection is not because the message was unclear but because they refused to obey it.",
-        "cross": [
-          {
-            "ref": "Isa 52:7",
-            "note": "The herald announcing peace and good news — applied by Paul to gospel messengers."
-          },
-          {
-            "ref": "Isa 53:1",
-            "note": "Who has believed our message? — Paul uses this to explain Israel’s unbelief."
-          },
-          {
-            "ref": "Deut 32:21",
-            "note": "Moses predicted that God would provoke Israel to jealousy through a non-nation — the Gentile mission."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 52:7",
+              "note": "The herald announcing peace and good news — applied by Paul to gospel messengers."
+            },
+            {
+              "ref": "Isa 53:1",
+              "note": "Who has believed our message? — Paul uses this to explain Israel’s unbelief."
+            },
+            {
+              "ref": "Deut 32:21",
+              "note": "Moses predicted that God would provoke Israel to jealousy through a non-nation — the Gentile mission."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -214,6 +219,9 @@
               "note": "Schreiner argues that Israel’s failure is both predicted by Scripture and culpable in execution. Divine foreknowledge of Israel’s disobedience does not excuse it."
             }
           ]
+        },
+        "hist": {
+          "context": "Romans 10:14–21 presents Paul’s famous ‘chain of salvation’: sending → preaching → hearing → believing → calling. The citation of Isaiah 52:7 (‘how beautiful are the feet of those who bring good news’) connects the gospel mission to the Isaianic herald announcing God’s reign. Paul’s argument then turns to Israel’s failure: they heard but did not believe (vv. 16–21). The chapter ends with Moses and Isaiah testifying that God stretched out his hands to a disobedient and obstinate people. Israel’s rejection is not because the message was unclear but because they refused to obey it."
         }
       }
     }

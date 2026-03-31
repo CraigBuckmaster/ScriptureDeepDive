@@ -22,17 +22,18 @@
             "paragraph": "\"LORD, have mercy (ḥānnēnî) on me, for I am faint\" (v.2). The first penitential psalm. David is physically broken: bones troubled, soul in anguish. The plea is not for justice but for mercy — grace when you deserve judgment."
           }
         ],
-        "ctx": "The first of seven penitential psalms (6, 32, 38, 51, 102, 130, 143). David is physically and spiritually broken. His bones are troubled (v.2), his soul is in anguish (v.3). The question: \"how long, LORD, how long?\" (v.3) — the Psalter’s recurring cry of impatience in suffering.",
-        "cross": [
-          {
-            "ref": "Ps 38:1–4",
-            "note": "\"LORD, do not rebuke me in your anger\" — the same opening, the same penitential posture."
-          },
-          {
-            "ref": "Heb 12:5–6",
-            "note": "\"The Lord disciplines the one he loves\" — the NT theology of divine correction."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 38:1–4",
+              "note": "\"LORD, do not rebuke me in your anger\" — the same opening, the same penitential posture."
+            },
+            {
+              "ref": "Heb 12:5–6",
+              "note": "\"The Lord disciplines the one he loves\" — the NT theology of divine correction."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -103,6 +104,9 @@
               "note": "Goldingay: \"how long?\" is asked over 20 times in the Psalter. It is the default question of suffering faith: not \"why?\" but \"how much longer?\""
             }
           ]
+        },
+        "hist": {
+          "context": "The first of seven penitential psalms (6, 32, 38, 51, 102, 130, 143). David is physically and spiritually broken. His bones are troubled (v.2), his soul is in anguish (v.3). The question: \"how long, LORD, how long?\" (v.3) — the Psalter’s recurring cry of impatience in suffering."
         }
       }
     },
@@ -120,17 +124,18 @@
             "paragraph": "\"The LORD has heard (shāmaʿ) my cry for mercy\" (v.9). The pivot from despair to confidence. David was drowning in tears (v.6) — flooding his bed, drenching his couch. Then the sudden turn: the LORD has heard. Past tense. The prayer was answered before the psalm ended."
           }
         ],
-        "ctx": "David’s tears are physical: he floods his bed, drenches his couch with weeping, his eyes grow weak with sorrow (vv.6–7). Then the dramatic turn: \"Away from me, all you who do evil, for the LORD has heard my weeping\" (v.8). From tears to triumph in one verse. The enemies will be ashamed and dismayed (v.10). The lament’s resolution comes not through changed circumstances but through the conviction that God heard.",
-        "cross": [
-          {
-            "ref": "Ps 34:17–18",
-            "note": "\"The LORD is close to the brokenhearted and saves those who are crushed in spirit\" — the theology underlying Psalm 6’s resolution."
-          },
-          {
-            "ref": "Rev 21:4",
-            "note": "\"He will wipe every tear from their eyes\" — the final answer to David’s weeping."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 34:17–18",
+              "note": "\"The LORD is close to the brokenhearted and saves those who are crushed in spirit\" — the theology underlying Psalm 6’s resolution."
+            },
+            {
+              "ref": "Rev 21:4",
+              "note": "\"He will wipe every tear from their eyes\" — the final answer to David’s weeping."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -205,6 +210,9 @@
               "note": "Goldingay: \"flood my bed with weeping\" is hyperbole that communicates emotional truth. The exaggeration IS the accuracy — grief feels like drowning."
             }
           ]
+        },
+        "hist": {
+          "context": "David’s tears are physical: he floods his bed, drenches his couch with weeping, his eyes grow weak with sorrow (vv.6–7). Then the dramatic turn: \"Away from me, all you who do evil, for the LORD has heard my weeping\" (v.8). From tears to triumph in one verse. The enemies will be ashamed and dismayed (v.10). The lament’s resolution comes not through changed circumstances but through the conviction that God heard."
         }
       }
     }

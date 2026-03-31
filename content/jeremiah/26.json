@@ -25,17 +25,18 @@
             "paragraph": "The priests and prophets demand: \"You must die!\" (mot tamut, v.8). The phrase is an emphatic infinitive absolute -- \"dying you shall die,\" the same construction used in God's warning to Adam (Gen 2:17) and in capital punishment sentences. Jeremiah faces a formal death sentence for his Temple Sermon."
           }
         ],
-        "ctx": "Chapter 26 provides the narrative account of the Temple Sermon (ch. 7) and its aftermath. Where chapter 7 records the sermon content, chapter 26 records the institutional response: arrest, trial, and near-execution. Jeremiah's defense is simple: \"The LORD sent me\" (v.12). He does not retract or soften the message but offers the people a choice: amend your ways and avoid the judgment, or kill the messenger and bring more guilt upon yourselves.",
-        "cross": [
-          {
-            "ref": "Matt 26:59-66",
-            "note": "Jesus's trial before the Sanhedrin follows the same pattern: religious authorities condemn the prophet for speaking truth about the temple."
-          },
-          {
-            "ref": "Acts 7:51-60",
-            "note": "Stephen's speech and martyrdom -- another prophet killed for challenging the temple establishment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 26:59-66",
+              "note": "Jesus's trial before the Sanhedrin follows the same pattern: religious authorities condemn the prophet for speaking truth about the temple."
+            },
+            {
+              "ref": "Acts 7:51-60",
+              "note": "Stephen's speech and martyrdom -- another prophet killed for challenging the temple establishment."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -92,6 +93,9 @@
               "note": "Brueggemann reads the trial as \"truth against power.\" The prophet has no institutional backing, no army, no allies -- only the claim \"The LORD sent me.\" That claim is either the ultimate authority or the ultimate delusion."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 26 provides the narrative account of the Temple Sermon (ch. 7) and its aftermath. Where chapter 7 records the sermon content, chapter 26 records the institutional response: arrest, trial, and near-execution. Jeremiah's defense is simple: \"The LORD sent me\" (v.12). He does not retract or soften the message but offers the people a choice: amend your ways and avoid the judgment, or kill the messenger and bring more guilt upon yourselves."
         }
       }
     },
@@ -109,17 +113,18 @@
             "paragraph": "The elders invoke the precedent of Micah the prophet (nabi', v.18), who prophesied Jerusalem's destruction under Hezekiah (Mic 3:12) and was not executed. The elders' argument is that punishing a prophet for delivering God's word would bring disaster, as happened when Jehoiakim killed the prophet Uriah (vv.20-23). The defense rests on prophetic precedent."
           }
         ],
-        "ctx": "The elders save Jeremiah by citing Micah's precedent: Hezekiah feared the LORD and sought his favor rather than executing the prophet. The counter-example of Uriah son of Shemaiah (vv.20-23) -- a prophet who delivered the same message as Jeremiah but was hunted down in Egypt and killed by Jehoiakim -- shows how close Jeremiah came to death. Ahikam son of Shaphan, from the influential Shaphan family that supported Josiah's reforms, protects Jeremiah.",
-        "cross": [
-          {
-            "ref": "Mic 3:12",
-            "note": "The specific prophecy cited: \"Zion will be plowed like a field, Jerusalem will become a heap of rubble.\" The same message Jeremiah delivers a century later."
-          },
-          {
-            "ref": "2 Kgs 22:8-13",
-            "note": "Shaphan's family supported Josiah's reforms. Ahikam son of Shaphan now protects Jeremiah -- the reform party sustains the prophetic voice."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Mic 3:12",
+              "note": "The specific prophecy cited: \"Zion will be plowed like a field, Jerusalem will become a heap of rubble.\" The same message Jeremiah delivers a century later."
+            },
+            {
+              "ref": "2 Kgs 22:8-13",
+              "note": "Shaphan's family supported Josiah's reforms. Ahikam son of Shaphan now protects Jeremiah -- the reform party sustains the prophetic voice."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -172,6 +177,9 @@
               "note": "Brueggemann identifies a \"politics of prophecy\" -- the survival of the prophetic voice depends on institutional allies. Ahikam's family protected both the scroll (Josiah's reform) and the prophet (Jeremiah's ministry). Truth needs political infrastructure to survive."
             }
           ]
+        },
+        "hist": {
+          "context": "The elders save Jeremiah by citing Micah's precedent: Hezekiah feared the LORD and sought his favor rather than executing the prophet. The counter-example of Uriah son of Shemaiah (vv.20-23) -- a prophet who delivered the same message as Jeremiah but was hunted down in Egypt and killed by Jehoiakim -- shows how close Jeremiah came to death. Ahikam son of Shaphan, from the influential Shaphan family that supported Josiah's reforms, protects Jeremiah."
         }
       }
     }

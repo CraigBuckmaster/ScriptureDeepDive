@@ -25,17 +25,18 @@
             "paragraph": "Hilkiah discovers the sēpher hattorah — the “Book of the Law” (v.8). Most scholars identify this with Deuteronomy or its core (chs 12–26). The book’s content produces immediate and extreme grief in Josiah, suggesting it contains specific covenant curses that match Judah’s current condition."
           }
         ],
-        "ctx": "Josiah, now 26, orders temple repairs (echoing Joash in chapter 12). During the work, Hilkiah the high priest discovers the “Book of the Law” — apparently lost or hidden during Manasseh’s long reign. When the book is read to Josiah, he tears his robes: “Great is the LORD’s anger that burns against us because those who have gone before us have not obeyed the words of this book.” The discovery of Torah produces crisis, not comfort. The king realises how far Judah has fallen from God’s requirements.",
-        "cross": [
-          {
-            "ref": "Deut 31:24–26",
-            "note": "Moses commanded that the Book of the Law be placed beside the ark as a witness. Josiah discovers it in the temple — exactly where Moses put it."
-          },
-          {
-            "ref": "Deut 28:15–68",
-            "note": "The covenant curses that would have terrified Josiah: siege, famine, exile, disease. Reading Deuteronomy 28 while living in Manasseh’s aftermath would be horrifying."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 31:24–26",
+              "note": "Moses commanded that the Book of the Law be placed beside the ark as a witness. Josiah discovers it in the temple — exactly where Moses put it."
+            },
+            {
+              "ref": "Deut 28:15–68",
+              "note": "The covenant curses that would have terrified Josiah: siege, famine, exile, disease. Reading Deuteronomy 28 while living in Manasseh’s aftermath would be horrifying."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -75,6 +76,9 @@
               "note": "The book’s loss and rediscovery raises profound questions: how does a nation lose its founding document? The answer is Manasseh: 55 years of systematic apostasy can bury Scripture so deeply that its rediscovery feels like a new revelation."
             }
           ]
+        },
+        "hist": {
+          "context": "Josiah, now 26, orders temple repairs (echoing Joash in chapter 12). During the work, Hilkiah the high priest discovers the “Book of the Law” — apparently lost or hidden during Manasseh’s long reign. When the book is read to Josiah, he tears his robes: “Great is the LORD’s anger that burns against us because those who have gone before us have not obeyed the words of this book.” The discovery of Torah produces crisis, not comfort. The king realises how far Judah has fallen from God’s requirements."
         }
       }
     },
@@ -84,17 +88,18 @@
       "verse_start": 14,
       "verse_end": 20,
       "panels": {
-        "ctx": "Josiah sends the high priest and his officials to inquire of the LORD. They go not to Jeremiah or Zephaniah (both active prophets) but to Huldah, a prophetess living in Jerusalem’s Second District. She delivers a two-part oracle: (1) “I am going to bring disaster on this place” — the judgment announced in chapter 21 stands; (2) “Because your heart was responsive and you humbled yourself before the LORD... you will be gathered to your ancestors in peace” — Josiah will die before the catastrophe. A woman validates the Book of the Law and pronounces its verdict. The text sees nothing remarkable in this — prophetic authority belongs to whomever God calls.",
-        "cross": [
-          {
-            "ref": "Judg 4:4–5",
-            "note": "Deborah judged Israel and prophesied. Huldah stands in the same tradition: women as authoritative voices of God at critical moments."
-          },
-          {
-            "ref": "2 Chr 34:22–28",
-            "note": "The parallel preserves the same account. Huldah’s oracle is transmitted identically in both traditions."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Judg 4:4–5",
+              "note": "Deborah judged Israel and prophesied. Huldah stands in the same tradition: women as authoritative voices of God at critical moments."
+            },
+            {
+              "ref": "2 Chr 34:22–28",
+              "note": "The parallel preserves the same account. Huldah’s oracle is transmitted identically in both traditions."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -130,6 +135,9 @@
               "note": "Huldah’s prophetic authority is presented without comment or qualification. She is simply “the prophetess” — the definite article suggests she is well known. The text treats female prophetic authority as unremarkable, a fact often overlooked."
             }
           ]
+        },
+        "hist": {
+          "context": "Josiah sends the high priest and his officials to inquire of the LORD. They go not to Jeremiah or Zephaniah (both active prophets) but to Huldah, a prophetess living in Jerusalem’s Second District. She delivers a two-part oracle: (1) “I am going to bring disaster on this place” — the judgment announced in chapter 21 stands; (2) “Because your heart was responsive and you humbled yourself before the LORD... you will be gathered to your ancestors in peace” — Josiah will die before the catastrophe. A woman validates the Book of the Law and pronounces its verdict. The text sees nothing remarkable in this — prophetic authority belongs to whomever God calls."
         }
       }
     }

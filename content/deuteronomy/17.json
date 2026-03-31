@@ -31,17 +31,18 @@
             "paragraph": "The central sanctuary serves as the supreme court for cases too difficult for local judges. The highest judicial authority in Israel is located in the presence of God — a theological statement about the ultimate source of justice."
           }
         ],
-        "ctx": "Chapter 17 addresses two judicial scenarios: (1) an idolater worthy of death — the trial procedure, the two-witness requirement, the witnesses casting the first stone (vv.2–7); (2) cases too difficult for local courts, referred to the central Levitical-priestly court (vv.8–13). The defiant person who ignores the supreme court's ruling is executed for contempt — the community's legal integrity requires that final decisions be respected. The chapter then introduces the remarkable law of the king (vv.14–20).",
-        "cross": [
-          {
-            "ref": "Matt 18:16",
-            "note": "\"Take one or two others along, so that 'every matter may be established by the testimony of two or three witnesses.'\" Jesus applies the Deuteronomy 17 two-witness rule to church discipline."
-          },
-          {
-            "ref": "John 8:17",
-            "note": "\"In your own Law it is written that the testimony of two witnesses is true. I am one who testifies for myself; my other witness is the Father.\" Jesus invokes the Deuteronomy 17 two-witness rule in his own defence."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 18:16",
+              "note": "\"Take one or two others along, so that 'every matter may be established by the testimony of two or three witnesses.'\" Jesus applies the Deuteronomy 17 two-witness rule to church discipline."
+            },
+            {
+              "ref": "John 8:17",
+              "note": "\"In your own Law it is written that the testimony of two witnesses is true. I am one who testifies for myself; my other witness is the Father.\" Jesus invokes the Deuteronomy 17 two-witness rule in his own defence."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 17 addresses two judicial scenarios: (1) an idolater worthy of death — the trial procedure, the two-witness requirement, the witnesses casting the first stone (vv.2–7); (2) cases too difficult for local courts, referred to the central Levitical-priestly court (vv.8–13). The defiant person who ignores the supreme court's ruling is executed for contempt — the community's legal integrity requires that final decisions be respected. The chapter then introduces the remarkable law of the king (vv.14–20)."
         }
       }
     },
@@ -137,17 +141,18 @@
             "paragraph": "The king must write for himself a copy of the Torah — not commission a copy, but personally write one. The physical act of transcription is a formation exercise: you cannot copy a text without reading it carefully."
           }
         ],
-        "ctx": "The law of the king (vv.14–20) fundamentally redefines kingship. The Israelite king is to be chosen by God (not the people), be from among the Israelites, not multiply horses/wives/wealth, and read the Torah daily so that his heart is not lifted above his brothers. The king is a brother, not a lord. The Deuteronomic ideal — the king as the Torah's primary student and servant — is the measure against which all of Israel's kings will be evaluated in the Deuteronomistic History.",
-        "cross": [
-          {
-            "ref": "1 Kgs 10–11",
-            "note": "Solomon violates all three prohibitions: 1,400 chariots and 12,000 horses (1 Kgs 10:26); 700 wives and 300 concubines (1 Kgs 11:3); accumulated silver and gold beyond measure (1 Kgs 10:27). Deuteronomy 17 is the specific measuring rod against which Solomon is judged."
-          },
-          {
-            "ref": "Matt 21:5",
-            "note": "\"See, your king comes to you, gentle and riding on a donkey.\" Jesus' Palm Sunday entry is an anti-Deuteronomy-17 king announcement: no horses, no military display — the covenant king arrives in the mode of a brother, not a lord."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 10–11",
+              "note": "Solomon violates all three prohibitions: 1,400 chariots and 12,000 horses (1 Kgs 10:26); 700 wives and 300 concubines (1 Kgs 11:3); accumulated silver and gold beyond measure (1 Kgs 10:27). Deuteronomy 17 is the specific measuring rod against which Solomon is judged."
+            },
+            {
+              "ref": "Matt 21:5",
+              "note": "\"See, your king comes to you, gentle and riding on a donkey.\" Jesus' Palm Sunday entry is an anti-Deuteronomy-17 king announcement: no horses, no military display — the covenant king arrives in the mode of a brother, not a lord."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -212,6 +217,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "The law of the king (vv.14–20) fundamentally redefines kingship. The Israelite king is to be chosen by God (not the people), be from among the Israelites, not multiply horses/wives/wealth, and read the Torah daily so that his heart is not lifted above his brothers. The king is a brother, not a lord. The Deuteronomic ideal — the king as the Torah's primary student and servant — is the measure against which all of Israel's kings will be evaluated in the Deuteronomistic History."
         }
       }
     }

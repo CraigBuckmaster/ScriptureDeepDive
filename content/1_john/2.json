@@ -37,25 +37,26 @@
             "paragraph": "By this we know that we have come to know him - knowledge is tested by obedience. Genuine knowing produces keeping."
           }
         ],
-        "ctx": "My little children, I write so that you may not sin. But if anyone does sin, we have an advocate with the Father, Jesus Christ the righteous. He is the propitiation for our sins, and not for ours only but also for the sins of the whole world. By this we know that we have come to know him: if we keep his commandments. Whoever says I know him but does not keep his commandments is a liar, and the truth is not in him. Whoever keeps his word, in him truly the love of God is perfected. By this we may know that we are in him: whoever says he abides in him ought to walk in the same way in which he walked.",
-        "cross": [
-          {
-            "ref": "John 14:16",
-            "note": "I will ask the Father, and he will give you another Helper (parakletos)."
-          },
-          {
-            "ref": "Romans 3:25",
-            "note": "God put forward Christ as a propitiation by his blood."
-          },
-          {
-            "ref": "John 14:15",
-            "note": "If you love me, you will keep my commandments."
-          },
-          {
-            "ref": "John 13:15",
-            "note": "I have given you an example, that you also should do just as I have done."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 14:16",
+              "note": "I will ask the Father, and he will give you another Helper (parakletos)."
+            },
+            {
+              "ref": "Romans 3:25",
+              "note": "God put forward Christ as a propitiation by his blood."
+            },
+            {
+              "ref": "John 14:15",
+              "note": "If you love me, you will keep my commandments."
+            },
+            {
+              "ref": "John 13:15",
+              "note": "I have given you an example, that you also should do just as I have done."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -113,7 +114,10 @@
             }
           ]
         },
-        "hist": "First John addresses a crisis caused by secessionists who have left the Johannine community (2:19). These opponents likely held proto-Gnostic views: denying that Jesus Christ came 'in the flesh' (4:2), claiming sinless perfection while living immorally (1:8-10), and failing to love fellow believers (2:9-11). The author, traditionally identified as the apostle John writing from Ephesus in the 90s AD, establishes tests of authentic Christianity: right belief about Christ's incarnation, righteous living, and love for the community. The letter's repetitive, spiral structure reinforces these themes through variation rather than linear argument. The community had experienced a traumatic split, and the letter reassures those who remained of their standing with God."
+        "hist": {
+          "historical": "First John addresses a crisis caused by secessionists who have left the Johannine community (2:19). These opponents likely held proto-Gnostic views: denying that Jesus Christ came 'in the flesh' (4:2), claiming sinless perfection while living immorally (1:8-10), and failing to love fellow believers (2:9-11). The author, traditionally identified as the apostle John writing from Ephesus in the 90s AD, establishes tests of authentic Christianity: right belief about Christ's incarnation, righteous living, and love for the community. The letter's repetitive, spiral structure reinforces these themes through variation rather than linear argument. The community had experienced a traumatic split, and the letter reassures those who remained of their standing with God.",
+          "context": "My little children, I write so that you may not sin. But if anyone does sin, we have an advocate with the Father, Jesus Christ the righteous. He is the propitiation for our sins, and not for ours only but also for the sins of the whole world. By this we know that we have come to know him: if we keep his commandments. Whoever says I know him but does not keep his commandments is a liar, and the truth is not in him. Whoever keeps his word, in him truly the love of God is perfected. By this we may know that we are in him: whoever says he abides in him ought to walk in the same way in which he walked."
+        }
       }
     },
     {
@@ -142,25 +146,26 @@
             "paragraph": "Whoever hates his brother is in the darkness - hatred is incompatible with light. Love is the mark of those who have passed from darkness."
           }
         ],
-        "ctx": "Beloved, I am writing you no new commandment but an old commandment you had from the beginning - the word you have heard. Yet I am writing you a new commandment, which is true in him and in you, because the darkness is passing away and the true light is already shining. Whoever says he is in the light and hates his brother is still in darkness. Whoever loves his brother abides in the light, and there is no cause for stumbling. But whoever hates his brother is in the darkness, walks in the darkness, and does not know where he is going because the darkness has blinded his eyes. I am writing to you, little children, because your sins are forgiven. I am writing to you, fathers, because you know him who is from the beginning. I am writing to you, young men, because you have overcome the evil one.",
-        "cross": [
-          {
-            "ref": "John 13:34",
-            "note": "A new commandment I give to you, that you love one another."
-          },
-          {
-            "ref": "Leviticus 19:18",
-            "note": "You shall love your neighbor as yourself - the old commandment."
-          },
-          {
-            "ref": "1 John 3:14",
-            "note": "We know that we have passed out of death into life, because we love the brothers."
-          },
-          {
-            "ref": "John 8:12",
-            "note": "I am the light of the world. Whoever follows me will not walk in darkness."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 13:34",
+              "note": "A new commandment I give to you, that you love one another."
+            },
+            {
+              "ref": "Leviticus 19:18",
+              "note": "You shall love your neighbor as yourself - the old commandment."
+            },
+            {
+              "ref": "1 John 3:14",
+              "note": "We know that we have passed out of death into life, because we love the brothers."
+            },
+            {
+              "ref": "John 8:12",
+              "note": "I am the light of the world. Whoever follows me will not walk in darkness."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -221,6 +226,9 @@
               "note": "Kruse notes the pastoral encouragement in vv. 12-14. John affirms the readers spiritual standing before warning about worldliness."
             }
           ]
+        },
+        "hist": {
+          "context": "Beloved, I am writing you no new commandment but an old commandment you had from the beginning - the word you have heard. Yet I am writing you a new commandment, which is true in him and in you, because the darkness is passing away and the true light is already shining. Whoever says he is in the light and hates his brother is still in darkness. Whoever loves his brother abides in the light, and there is no cause for stumbling. But whoever hates his brother is in the darkness, walks in the darkness, and does not know where he is going because the darkness has blinded his eyes. I am writing to you, little children, because your sins are forgiven. I am writing to you, fathers, because you know him who is from the beginning. I am writing to you, young men, because you have overcome the evil one."
         }
       }
     },
@@ -250,25 +258,26 @@
             "paragraph": "The world is passing away along with its desires - the world system is temporary. Only God will endures forever."
           }
         ],
-        "ctx": "Do not love the world or the things in the world. If anyone loves the world, the love of the Father is not in him. For all that is in the world - the desires of the flesh, the desires of the eyes, and the pride of life - is not from the Father but is from the world. And the world is passing away along with its desires, but whoever does the will of God abides forever.",
-        "cross": [
-          {
-            "ref": "James 4:4",
-            "note": "Friendship with the world is enmity with God."
-          },
-          {
-            "ref": "Matthew 6:24",
-            "note": "No one can serve two masters - you cannot serve God and money."
-          },
-          {
-            "ref": "Genesis 3:6",
-            "note": "The tree was good for food, a delight to the eyes, and desired to make one wise - the original temptation."
-          },
-          {
-            "ref": "Matthew 4:8-9",
-            "note": "The devil showed him all the kingdoms of the world - pride of life temptation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "James 4:4",
+              "note": "Friendship with the world is enmity with God."
+            },
+            {
+              "ref": "Matthew 6:24",
+              "note": "No one can serve two masters - you cannot serve God and money."
+            },
+            {
+              "ref": "Genesis 3:6",
+              "note": "The tree was good for food, a delight to the eyes, and desired to make one wise - the original temptation."
+            },
+            {
+              "ref": "Matthew 4:8-9",
+              "note": "The devil showed him all the kingdoms of the world - pride of life temptation."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -321,6 +330,9 @@
               "note": "Kruse notes the eschatological motivation: the world is passing away. Investment in the temporary is foolish; invest in the eternal."
             }
           ]
+        },
+        "hist": {
+          "context": "Do not love the world or the things in the world. If anyone loves the world, the love of the Father is not in him. For all that is in the world - the desires of the flesh, the desires of the eyes, and the pride of life - is not from the Father but is from the world. And the world is passing away along with its desires, but whoever does the will of God abides forever."
         }
       }
     },
@@ -350,25 +362,26 @@
             "paragraph": "Who is the liar but he who denies that Jesus is the Christ - the fundamental lie is christological denial."
           }
         ],
-        "ctx": "Children, it is the last hour, and as you have heard that antichrist is coming, so now many antichrists have come. Therefore we know it is the last hour. They went out from us but were not of us; if they had been of us, they would have remained with us. But they went out that it might become plain they were not of us. But you have been anointed by the Holy One, and you all have knowledge. I write not because you do not know the truth but because you know it. Who is the liar but he who denies that Jesus is the Christ? This is the antichrist, who denies the Father and the Son. No one who denies the Son has the Father. Whoever confesses the Son has the Father also. Let what you heard from the beginning abide in you. If what you heard abides in you, then you too will abide in the Son and in the Father. And this is the promise he made to us - eternal life. The anointing you received from him abides in you, and you have no need that anyone should teach you. As his anointing teaches you about everything and is true and is no lie, abide in him.",
-        "cross": [
-          {
-            "ref": "Matthew 24:24",
-            "note": "False christs and false prophets will arise."
-          },
-          {
-            "ref": "2 John 7",
-            "note": "Many deceivers have gone out into the world, who do not confess Jesus Christ coming in the flesh."
-          },
-          {
-            "ref": "John 14:26",
-            "note": "The Helper, the Holy Spirit, will teach you all things."
-          },
-          {
-            "ref": "John 16:13",
-            "note": "When the Spirit of truth comes, he will guide you into all the truth."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matthew 24:24",
+              "note": "False christs and false prophets will arise."
+            },
+            {
+              "ref": "2 John 7",
+              "note": "Many deceivers have gone out into the world, who do not confess Jesus Christ coming in the flesh."
+            },
+            {
+              "ref": "John 14:26",
+              "note": "The Helper, the Holy Spirit, will teach you all things."
+            },
+            {
+              "ref": "John 16:13",
+              "note": "When the Spirit of truth comes, he will guide you into all the truth."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -429,6 +442,9 @@
               "note": "Kruse notes that the anointing does not make human teachers unnecessary but confirms apostolic teaching. Spirit and word work together."
             }
           ]
+        },
+        "hist": {
+          "context": "Children, it is the last hour, and as you have heard that antichrist is coming, so now many antichrists have come. Therefore we know it is the last hour. They went out from us but were not of us; if they had been of us, they would have remained with us. But they went out that it might become plain they were not of us. But you have been anointed by the Holy One, and you all have knowledge. I write not because you do not know the truth but because you know it. Who is the liar but he who denies that Jesus is the Christ? This is the antichrist, who denies the Father and the Son. No one who denies the Son has the Father. Whoever confesses the Son has the Father also. Let what you heard from the beginning abide in you. If what you heard abides in you, then you too will abide in the Son and in the Father. And this is the promise he made to us - eternal life. The anointing you received from him abides in you, and you have no need that anyone should teach you. As his anointing teaches you about everything and is true and is no lie, abide in him."
         }
       }
     },
@@ -458,25 +474,26 @@
             "paragraph": "Everyone who practices righteousness has been born of him - righteousness is evidence of divine parentage."
           }
         ],
-        "ctx": "And now, little children, abide in him, so that when he appears we may have confidence and not shrink from him in shame at his coming. If you know that he is righteous, you may be sure that everyone who practices righteousness has been born of him.",
-        "cross": [
-          {
-            "ref": "1 John 3:2",
-            "note": "When he appears we shall be like him, for we shall see him as he is."
-          },
-          {
-            "ref": "1 John 4:17",
-            "note": "That we may have confidence for the day of judgment."
-          },
-          {
-            "ref": "John 3:3",
-            "note": "Unless one is born again he cannot see the kingdom of God."
-          },
-          {
-            "ref": "1 Peter 1:23",
-            "note": "You have been born again, not of perishable seed but of imperishable."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 John 3:2",
+              "note": "When he appears we shall be like him, for we shall see him as he is."
+            },
+            {
+              "ref": "1 John 4:17",
+              "note": "That we may have confidence for the day of judgment."
+            },
+            {
+              "ref": "John 3:3",
+              "note": "Unless one is born again he cannot see the kingdom of God."
+            },
+            {
+              "ref": "1 Peter 1:23",
+              "note": "You have been born again, not of perishable seed but of imperishable."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -525,6 +542,9 @@
               "note": "Kruse notes the transition: v. 29 introduces the theme of divine birth that dominates chapter 3."
             }
           ]
+        },
+        "hist": {
+          "context": "And now, little children, abide in him, so that when he appears we may have confidence and not shrink from him in shame at his coming. If you know that he is righteous, you may be sure that everyone who practices righteousness has been born of him."
         }
       }
     }

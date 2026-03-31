@@ -54,21 +54,22 @@
             "current": false
           }
         ],
-        "ctx": "The contrast between James and Peter in vv.1–17 is deliberately stark: James is executed immediately (v.2 — two words in Greek, 'he killed James with a sword'); Peter is imprisoned with maximum security and miraculously freed. Luke does not explain why James dies and Peter is freed — the silence is theological. Both outcomes are within God's sovereign will; neither is outside his governance. The prayer meeting's failure to believe it is Peter at the door (v.15) is Luke's gentle humour and his honest portrait of faith: the community prayed earnestly for Peter's release but was astonished when it happened.",
-        "cross": [
-          {
-            "ref": "Acts 5:19",
-            "note": "The first angelic prison escape — the same pattern repeated with more dramatic detail. God's method of delivering his servants is consistent: angels, opened gates, bewildered guards."
-          },
-          {
-            "ref": "Matthew 26:75",
-            "note": "James and John had asked for seats at Jesus's right and left hand (Mark 10:37). Jesus promised they would drink his cup (Mark 10:39). James is the first apostle to fulfil that promise — martyred by Herod Agrippa."
-          },
-          {
-            "ref": "Acts 12:24",
-            "note": "\"But the word of God continued to spread and flourish\" — the chapter closes with this growth summary immediately after Herod's death: every attempt to stop the Gospel ends in its acceleration."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 5:19",
+              "note": "The first angelic prison escape — the same pattern repeated with more dramatic detail. God's method of delivering his servants is consistent: angels, opened gates, bewildered guards."
+            },
+            {
+              "ref": "Matthew 26:75",
+              "note": "James and John had asked for seats at Jesus's right and left hand (Mark 10:37). Jesus promised they would drink his cup (Mark 10:39). James is the first apostle to fulfil that promise — martyred by Herod Agrippa."
+            },
+            {
+              "ref": "Acts 12:24",
+              "note": "\"But the word of God continued to spread and flourish\" — the chapter closes with this growth summary immediately after Herod's death: every attempt to stop the Gospel ends in its acceleration."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -137,6 +138,9 @@
               "note": "Keener notes the significance of Mary's house. John Mark is Barnabas's cousin (Col 4:10), connecting this Jerusalem household to the Antioch mission. The house was substantial — an outer gate (pylōn) and a servant (paidiskē) indicate a wealthy urban household, consistent with the Acts 4 portrait of wealthy members supporting the community."
             }
           ]
+        },
+        "hist": {
+          "context": "The contrast between James and Peter in vv.1–17 is deliberately stark: James is executed immediately (v.2 — two words in Greek, 'he killed James with a sword'); Peter is imprisoned with maximum security and miraculously freed. Luke does not explain why James dies and Peter is freed — the silence is theological. Both outcomes are within God's sovereign will; neither is outside his governance. The prayer meeting's failure to believe it is Peter at the door (v.15) is Luke's gentle humour and his honest portrait of faith: the community prayed earnestly for Peter's release but was astonished when it happened."
         }
       }
     },
@@ -183,21 +187,22 @@
             "current": false
           }
         ],
-        "ctx": "Herod Agrippa's death is Acts' most dramatic divine judgment since Ananias and Sapphira (5:1–11). The structural parallel is intentional: both episodes involve the claim of divine status, both are met with immediate death, both are followed by church growth. The pattern is one of Luke's major theological themes: those who oppose the word die; the word lives. Josephus's independent account of Herod's death (Antiquities 19.8.2) provides the most direct external corroboration of any specific event narrated in Acts.",
-        "cross": [
-          {
-            "ref": "Acts 5:1–11",
-            "note": "Ananias and Sapphira — the earlier founding-moment judgment. Both episodes follow the same pattern: human pride/deception → immediate divine judgment → church growth summary."
-          },
-          {
-            "ref": "Josephus, Antiquities 19.8.2",
-            "note": "Josephus describes Herod Agrippa's death at a festival in Caesarea: wearing a silver robe that gleamed in the sun, acclaimed as divine, then suddenly struck with severe abdominal pain and dying five days later. The accounts are independent and broadly consistent."
-          },
-          {
-            "ref": "Isaiah 42:8",
-            "note": "\"I am the LORD; that is my name! I will not yield my glory to another\" — the theological principle behind Herod's judgment. God shares his glory with no one; to accept divine acclamation without deflecting it is to claim what belongs to God alone."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 5:1–11",
+              "note": "Ananias and Sapphira — the earlier founding-moment judgment. Both episodes follow the same pattern: human pride/deception → immediate divine judgment → church growth summary."
+            },
+            {
+              "ref": "Josephus, Antiquities 19.8.2",
+              "note": "Josephus describes Herod Agrippa's death at a festival in Caesarea: wearing a silver robe that gleamed in the sun, acclaimed as divine, then suddenly struck with severe abdominal pain and dying five days later. The accounts are independent and broadly consistent."
+            },
+            {
+              "ref": "Isaiah 42:8",
+              "note": "\"I am the LORD; that is my name! I will not yield my glory to another\" — the theological principle behind Herod's judgment. God shares his glory with no one; to accept divine acclamation without deflecting it is to claim what belongs to God alone."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -262,6 +267,9 @@
               "note": "John Mark's introduction here is significant: he is Barnabas's cousin (Col 4:10) and becomes the companion of Paul's first journey. His later departure (13:13) and eventual reconciliation (2 Tim 4:11) make him one of Acts' most humanly interesting supporting characters."
             }
           ]
+        },
+        "hist": {
+          "context": "Herod Agrippa's death is Acts' most dramatic divine judgment since Ananias and Sapphira (5:1–11). The structural parallel is intentional: both episodes involve the claim of divine status, both are met with immediate death, both are followed by church growth. The pattern is one of Luke's major theological themes: those who oppose the word die; the word lives. Josephus's independent account of Herod's death (Antiquities 19.8.2) provides the most direct external corroboration of any specific event narrated in Acts."
         }
       }
     }

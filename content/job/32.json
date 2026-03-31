@@ -25,17 +25,18 @@
             "paragraph": "Elihu means \"My God is He\" — the most theocentric name in the book. He is young, angry at both Job and the friends, and has waited respectfully until the elders finished. He represents a fourth theological position: neither retribution (friends) nor protest (Job) but divine pedagogy — suffering as God’s teaching tool."
           }
         ],
-        "ctx": "Elihu appears without introduction in the prologue and disappears without mention in the epilogue. God never endorses or rebukes him. Scholars debate whether he is a later addition, an intentional bridge between the dialogue and the whirlwind, or both. His four speeches (ch 32–37) share some theology with God’s whirlwind speeches but lack their power.",
-        "cross": [
-          {
-            "ref": "1 Tim 4:12",
-            "note": "\"Don’t let anyone look down on you because you are young\" — the principle Elihu claims."
-          },
-          {
-            "ref": "Eccl 12:12",
-            "note": "\"Of making many books there is no end\" — the weariness Elihu’s verbosity can provoke."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Tim 4:12",
+              "note": "\"Don’t let anyone look down on you because you are young\" — the principle Elihu claims."
+            },
+            {
+              "ref": "Eccl 12:12",
+              "note": "\"Of making many books there is no end\" — the weariness Elihu’s verbosity can provoke."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Habel: Elihu is an uninvited advocate who enters the court after both prosecution and defence have rested. His role is ambiguous: friend of the court? New prosecutor? Bridge to the judge’s ruling?"
             }
           ]
+        },
+        "hist": {
+          "context": "Elihu appears without introduction in the prologue and disappears without mention in the epilogue. God never endorses or rebukes him. Scholars debate whether he is a later addition, an intentional bridge between the dialogue and the whirlwind, or both. His four speeches (ch 32–37) share some theology with God’s whirlwind speeches but lack their power."
         }
       }
     },
@@ -117,13 +121,14 @@
             "paragraph": "\"I too will have my say; I too will tell what I know. For I am full of words, and the spirit within me compels me\" (vv.17–18). Elihu’s self-introduction is enthusiastic to the point of comedy. He describes himself as a wineskin about to burst (v.19). The image is vivid and slightly ridiculous — deliberately so? Scholars disagree."
           }
         ],
-        "ctx": "Elihu promises impartiality: he will not flatter anyone or use titles (v.21–22). This is a young man’s boldness. Whether it is also wisdom remains to be seen. His speeches will contain genuine theological insights mixed with considerable verbosity.",
-        "cross": [
-          {
-            "ref": "Jer 20:9",
-            "note": "\"His word is in my heart like a fire, a fire shut up in my bones\" — the same compulsion to speak that Elihu describes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 20:9",
+              "note": "\"His word is in my heart like a fire, a fire shut up in my bones\" — the same compulsion to speak that Elihu describes."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -184,6 +189,9 @@
               "note": "Habel: Elihu positions himself as an impartial voice. He is neither prosecution nor defence but claims to speak from the Spirit. His actual speeches will partially support both sides."
             }
           ]
+        },
+        "hist": {
+          "context": "Elihu promises impartiality: he will not flatter anyone or use titles (v.21–22). This is a young man’s boldness. Whether it is also wisdom remains to be seen. His speeches will contain genuine theological insights mixed with considerable verbosity."
         }
       }
     }

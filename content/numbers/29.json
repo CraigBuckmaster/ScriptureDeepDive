@@ -25,17 +25,18 @@
             "paragraph": "The alarm-blast that inaugurates the seventh month and calls Israel to assembly. The same teruah vocabulary appears in the Ark Prayer of Num 10:35 and in eschatological trumpet passages throughout the OT."
           }
         ],
-        "ctx": "Numbers 29 provides the autumn feast offerings: the Feast of Trumpets (1 Tishri), the Day of Atonement (10 Tishri — with fasting), and the Feast of Tabernacles (15-22 Tishri — the most elaborate offering sequence in the entire calendar). The autumn feasts form a theological sequence: Trumpets (summons), Atonement (cleansing), Tabernacles (celebration in restored fellowship). The seventh month is the most liturgically dense period of Israel's year.",
-        "cross": [
-          {
-            "ref": "Lev 23:27-32",
-            "note": "The Lev 23 Yom Kippur commands (fasting, no work, the high priest's entry) are the foundation; Num 29:7-11 specifies the public offerings for that day — complementary texts providing the complete Yom Kippur requirement."
-          },
-          {
-            "ref": "Rev 8:2",
-            "note": "\"And I saw the seven angels who stand before God, and seven trumpets were given to them.\" The seven eschatological trumpets draw on the Yom Teruah theology — the final trumpet summons of the covenant community."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 23:27-32",
+              "note": "The Lev 23 Yom Kippur commands (fasting, no work, the high priest's entry) are the foundation; Num 29:7-11 specifies the public offerings for that day — complementary texts providing the complete Yom Kippur requirement."
+            },
+            {
+              "ref": "Rev 8:2",
+              "note": "\"And I saw the seven angels who stand before God, and seven trumpets were given to them.\" The seven eschatological trumpets draw on the Yom Teruah theology — the final trumpet summons of the covenant community."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Ashley: The narrative context of feast offerings in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Numbers 29 provides the autumn feast offerings: the Feast of Trumpets (1 Tishri), the Day of Atonement (10 Tishri — with fasting), and the Feast of Tabernacles (15-22 Tishri — the most elaborate offering sequence in the entire calendar). The autumn feasts form a theological sequence: Trumpets (summons), Atonement (cleansing), Tabernacles (celebration in restored fellowship). The seventh month is the most liturgically dense period of Israel's year."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "The seven-day harvest festival of dwelling in temporary shelters — commemorating the wilderness period. The Tabernacles offering sequence is the most elaborate in the calendar: 70 bulls over seven days (decreasing from 13 to 7), plus rams and lambs, then a solemn assembly on the eighth day."
           }
         ],
-        "ctx": "The Feast of Tabernacles receives the most elaborate offering sequence in Numbers 28-29. Days 1-7 feature decreasing burnt offerings: 13 bulls (day 1), 12, 11, 10, 9, 8, 7 — 70 bulls total, associated in rabbinic tradition with the 70 nations of Genesis 10. The eighth day (shemini atzeret) is a separate solemn assembly with a dramatically reduced offering (1 bull, 1 ram, 7 lambs) — as if God is calling the community to stay one more day in intimate fellowship after the great feast.",
-        "cross": [
-          {
-            "ref": "John 7:37-38",
-            "note": "\"On the last and greatest day of the festival, Jesus stood and said in a loud voice, 'Let anyone who is thirsty come to me and drink.'\" Jesus' declaration on the last day of Tabernacles claims to fulfil the feast's deepest longing."
-          },
-          {
-            "ref": "Zech 14:16",
-            "note": "\"Then the survivors from all the nations that have attacked Jerusalem will go up year after year to worship the King, the Lord Almighty, and to celebrate the Festival of Tabernacles.\" Tabernacles is the eschatological feast — the nations joining Israel in the final celebration."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 7:37-38",
+              "note": "\"On the last and greatest day of the festival, Jesus stood and said in a loud voice, 'Let anyone who is thirsty come to me and drink.'\" Jesus' declaration on the last day of Tabernacles claims to fulfil the feast's deepest longing."
+            },
+            {
+              "ref": "Zech 14:16",
+              "note": "\"Then the survivors from all the nations that have attacked Jerusalem will go up year after year to worship the King, the Lord Almighty, and to celebrate the Festival of Tabernacles.\" Tabernacles is the eschatological feast — the nations joining Israel in the final celebration."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -192,6 +197,9 @@
               "note": "Ashley: The narrative context of feast offerings in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "The Feast of Tabernacles receives the most elaborate offering sequence in Numbers 28-29. Days 1-7 feature decreasing burnt offerings: 13 bulls (day 1), 12, 11, 10, 9, 8, 7 — 70 bulls total, associated in rabbinic tradition with the 70 nations of Genesis 10. The eighth day (shemini atzeret) is a separate solemn assembly with a dramatically reduced offering (1 bull, 1 ram, 7 lambs) — as if God is calling the community to stay one more day in intimate fellowship after the great feast."
         }
       }
     }

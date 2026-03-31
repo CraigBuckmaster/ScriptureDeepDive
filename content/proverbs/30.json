@@ -31,17 +31,18 @@
             "paragraph": "Every word of God is ṣĕrûpâ — refined, purified (v. 5). The same metallurgical language used of God testing hearts (17:3) is now applied to God's own word: it has been through the refining fire and emerged pure, without alloy. Adding to it (v. 6) is therefore both unnecessary and presumptuous — you do not improve on refined gold."
           }
         ],
-        "ctx": "The first half of ch.30 introduces a new voice: Agur son of Jakeh, who opens with an unprecedented confession of intellectual humility (vv.2-3) before asserting the sufficiency of God's word (v.5) and the prayer for neither poverty nor riches (vv.8-9). The numerical sayings begin (vv.11-14) with the four generations who curse or fail to honour.",
-        "cross": [
-          {
-            "ref": "Job 38-41",
-            "note": "God's speech from the whirlwind — Agur's questions about who has gone up to heaven (v.4) echo the divine interrogation of Job. The unfathomability of God is the prerequisite for genuine humility."
-          },
-          {
-            "ref": "Prov 30:5-6",
-            "note": "Every word of God is flawless; do not add to his words — the warning against supplementing God's word with human additions."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Job 38-41",
+              "note": "God's speech from the whirlwind — Agur's questions about who has gone up to heaven (v.4) echo the divine interrogation of Job. The unfathomability of God is the prerequisite for genuine humility."
+            },
+            {
+              "ref": "Prov 30:5-6",
+              "note": "Every word of God is flawless; do not add to his words — the warning against supplementing God's word with human additions."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -93,6 +94,9 @@
               "note": "NET: 'add nothing to his words' -- the note traces the canonical warning through Deut 4:2 and Rev 22:18-19. The prohibition against addition is the canonical claim to completeness and sufficiency."
             }
           ]
+        },
+        "hist": {
+          "context": "The first half of ch.30 introduces a new voice: Agur son of Jakeh, who opens with an unprecedented confession of intellectual humility (vv.2-3) before asserting the sufficiency of God's word (v.5) and the prayer for neither poverty nor riches (vv.8-9). The numerical sayings begin (vv.11-14) with the four generations who curse or fail to honour."
         }
       }
     },
@@ -116,17 +120,18 @@
             "paragraph": "Three things are too wonderful for me, four I do not understand: the derek of an eagle in the sky, of a serpent on a rock, of a ship on the sea, and of a man with a young woman (vv. 18–19). Derek means both physical path and manner of movement. The common thread is that all four leave no trace — they move through their medium and the evidence of their passage vanishes. Mystery, not explanation, is the final word."
           }
         ],
-        "ctx": "The second half of ch.30 is dominated by the numerical sayings — the four things, the way of an eagle (vv.18-19), the earth shaking at four things (vv.21-23), the four small creatures who are wise (vv.24-28), and the four stately creatures (vv.29-31). The numerical form is a teaching device: cataloguing wisdom makes it memorable. The chapter closes with the warning against stirring up anger (v.33).",
-        "cross": [
-          {
-            "ref": "Prov 6:6-8",
-            "note": "Go to the ant, you sluggard — the ants as a wisdom example recurs in v.25. Small creatures with great wisdom are a consistent Proverbs motif."
-          },
-          {
-            "ref": "Matt 6:25-34",
-            "note": "Do not worry about food and clothing — Jesus's teaching embodies the middle way between poverty and riches that Agur's prayer (vv.8-9) requests."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 6:6-8",
+              "note": "Go to the ant, you sluggard — the ants as a wisdom example recurs in v.25. Small creatures with great wisdom are a consistent Proverbs motif."
+            },
+            {
+              "ref": "Matt 6:25-34",
+              "note": "Do not worry about food and clothing — Jesus's teaching embodies the middle way between poverty and riches that Agur's prayer (vv.8-9) requests."
+            }
+          ]
+        },
         "alter": {
           "source": "Robert Alter, The Hebrew Bible: A Translation with Commentary — Scholarly Paraphrase",
           "notes": [
@@ -178,6 +183,9 @@
               "note": "NET: the four small-but-wise creatures -- the note discusses each creature's specific wisdom strategy: the ant's provision-storing, the rock badger's fortified dwelling, the locusts' coordinated advance, the lizard's access to power."
             }
           ]
+        },
+        "hist": {
+          "context": "The second half of ch.30 is dominated by the numerical sayings — the four things, the way of an eagle (vv.18-19), the earth shaking at four things (vv.21-23), the four small creatures who are wise (vv.24-28), and the four stately creatures (vv.29-31). The numerical form is a teaching device: cataloguing wisdom makes it memorable. The chapter closes with the warning against stirring up anger (v.33)."
         }
       }
     }

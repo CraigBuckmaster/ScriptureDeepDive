@@ -22,17 +22,18 @@
             "paragraph": "\"Why (lāmâ), LORD, do you stand far off? Why do you hide yourself in times of trouble?\" (v.1). The Psalter’s most direct accusation of divine absence. Not \"why do I suffer?\" but \"why do YOU hide?\" The question assumes God has the power to intervene and chooses not to. This is Job’s question in psalm form."
           }
         ],
-        "ctx": "The wicked boast (v.3), do not seek God (v.4), sneer at enemies (v.5), say \"nothing will shake me\" (v.6), lurk in ambush (vv.8–9), crush the helpless (v.10), and say \"God will never notice\" (v.11). The psalm is a catalogue of arrogance: the wicked live as if God does not exist. The question \"why do you hide?\" is not answered within the psalm — it is held before God as raw protest.",
-        "cross": [
-          {
-            "ref": "Job 24:1",
-            "note": "\"Why does the Almighty not set times for judgment?\" — Job’s identical complaint."
-          },
-          {
-            "ref": "Hab 1:2–3",
-            "note": "\"How long, LORD, must I call for help?\" — the prophetic version of the same protest."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Job 24:1",
+              "note": "\"Why does the Almighty not set times for judgment?\" — Job’s identical complaint."
+            },
+            {
+              "ref": "Hab 1:2–3",
+              "note": "\"How long, LORD, must I call for help?\" — the prophetic version of the same protest."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -107,6 +108,9 @@
               "note": "Goldingay: \"in all his thoughts there is no room for God\" is not atheism but practical irrelevance. The wicked do not deny God; they ignore God. The effect is the same."
             }
           ]
+        },
+        "hist": {
+          "context": "The wicked boast (v.3), do not seek God (v.4), sneer at enemies (v.5), say \"nothing will shake me\" (v.6), lurk in ambush (vv.8–9), crush the helpless (v.10), and say \"God will never notice\" (v.11). The psalm is a catalogue of arrogance: the wicked live as if God does not exist. The question \"why do you hide?\" is not answered within the psalm — it is held before God as raw protest."
         }
       }
     },
@@ -124,17 +128,18 @@
             "paragraph": "\"You, LORD, hear the desire of the afflicted (ʿănāwîm); you encourage them, and you listen to their cry\" (v.17). The answer to v.1. God does NOT stand far off. He hears, encourages, and listens. The psalm moves from accusation to affirmation — the characteristic lament trajectory."
           }
         ],
-        "ctx": "David calls God to arise (v.12), break the arm of the wicked (v.15), and defend the fatherless and oppressed (v.18). The psalm turns: \"you, LORD, hear the desire of the afflicted\" (v.17). God is king forever (v.16). The nations perish from his land (v.16). The fatherless and oppressed will be vindicated so that \"mere earthly mortals will never again strike terror\" (v.18). The psalm’s last word answers its first: you seemed absent, but you were listening all along.",
-        "cross": [
-          {
-            "ref": "Ps 9:12",
-            "note": "\"He does not ignore the cry of the afflicted\" — the companion psalm’s identical theology."
-          },
-          {
-            "ref": "Luke 18:7–8",
-            "note": "\"Will not God bring about justice for his chosen ones, who cry out to him day and night?\" — Jesus’ parable addresses Psalm 10’s question."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 9:12",
+              "note": "\"He does not ignore the cry of the afflicted\" — the companion psalm’s identical theology."
+            },
+            {
+              "ref": "Luke 18:7–8",
+              "note": "\"Will not God bring about justice for his chosen ones, who cry out to him day and night?\" — Jesus’ parable addresses Psalm 10’s question."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -213,6 +218,9 @@
               "note": "Goldingay: \"you hear the desire of the afflicted\" — not just their words but their desire. God hears what is beneath speech: the longing the afflicted cannot articulate."
             }
           ]
+        },
+        "hist": {
+          "context": "David calls God to arise (v.12), break the arm of the wicked (v.15), and defend the fatherless and oppressed (v.18). The psalm turns: \"you, LORD, hear the desire of the afflicted\" (v.17). God is king forever (v.16). The nations perish from his land (v.16). The fatherless and oppressed will be vindicated so that \"mere earthly mortals will never again strike terror\" (v.18). The psalm’s last word answers its first: you seemed absent, but you were listening all along."
         }
       }
     }

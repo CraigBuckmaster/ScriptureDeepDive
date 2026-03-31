@@ -25,21 +25,22 @@
             "paragraph": "The σωφρον- word group (self-control, sound-mindedness) appears in every sub-section of this chapter: older men (v. 2), older women (v. 4, teaching younger women), young men (v. 6), and Titus himself (v. 12). It is the dominant virtue of the Pastoral Epistles, appearing more frequently than any other ethical term. In Greek philosophy, σωφροσύνη was a cardinal virtue denoting rational self-mastery. Paul Christianizes it as Spirit-empowered discipline."
           }
         ],
-        "ctx": "The household code (Haustafel) in vv. 1–10 organizes instructions by social group: older men (v. 2), older women (vv. 3–4a), young women (vv. 4b–5), young men (vv. 6–8), and slaves (vv. 9–10). This pattern parallels Col 3:18–4:1 and Eph 5:22–6:9 but adapts the form to the Cretan context. The consistent refrain is that good conduct makes the gospel attractive to outsiders: 'so that the word of God may not be reviled' (v. 5), 'so that opponents may be put to shame' (v. 8), 'so that they will make the teaching about God our Savior attractive' (v. 10).",
-        "cross": [
-          {
-            "ref": "Colossians 3:18–4:1",
-            "note": "The Colossian household code provides the closest structural parallel, addressing wives, husbands, children, fathers, and slaves in sequence."
-          },
-          {
-            "ref": "Ephesians 5:22–6:9",
-            "note": "The Ephesian household code is the most developed, especially the marriage section. Together with Colossians and Titus, these three texts constitute the Pauline household-code tradition."
-          },
-          {
-            "ref": "1 Peter 2:18–3:7",
-            "note": "Peter's household code, addressed to slaves, wives, and husbands, shares the same concern for public witness and social respectability."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Colossians 3:18–4:1",
+              "note": "The Colossian household code provides the closest structural parallel, addressing wives, husbands, children, fathers, and slaves in sequence."
+            },
+            {
+              "ref": "Ephesians 5:22–6:9",
+              "note": "The Ephesian household code is the most developed, especially the marriage section. Together with Colossians and Titus, these three texts constitute the Pauline household-code tradition."
+            },
+            {
+              "ref": "1 Peter 2:18–3:7",
+              "note": "Peter's household code, addressed to slaves, wives, and husbands, shares the same concern for public witness and social respectability."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "The household code adapts the Greco-Roman Haustafel tradition for Christian community formation. Each group receives instructions calibrated to their social role and the specific vulnerabilities of the Cretan context. The three purpose clauses (vv. 5, 8, 10) reveal the code's underlying logic: domestic ethics serves the church's mission by demonstrating the gospel's transformative power in the most visible social structures. The slave instruction (vv. 9–10) is particularly significant: the lowest-status group is charged with the highest honor—'adorning' the teaching of God the Savior."
             }
           ]
+        },
+        "hist": {
+          "context": "The household code (Haustafel) in vv. 1–10 organizes instructions by social group: older men (v. 2), older women (vv. 3–4a), young women (vv. 4b–5), young men (vv. 6–8), and slaves (vv. 9–10). This pattern parallels Col 3:18–4:1 and Eph 5:22–6:9 but adapts the form to the Cretan context. The consistent refrain is that good conduct makes the gospel attractive to outsiders: 'so that the word of God may not be reviled' (v. 5), 'so that opponents may be put to shame' (v. 8), 'so that they will make the teaching about God our Savior attractive' (v. 10)."
         }
       }
     },
@@ -123,21 +127,22 @@
             "paragraph": "The phrase 'the blessed hope' (τὴν μακαρίαν ἐλπίδα) is closely linked to 'the appearing of the glory of our great God and Savior, Jesus Christ' (v. 13). The grammatical construction—one article governing both 'hope' and 'appearing'—suggests they are aspects of the same event. The Granville Sharp rule applied to 'our great God and Savior, Jesus Christ' strongly supports reading this as a direct attribution of deity to Christ."
           }
         ],
-        "ctx": "Titus 2:11–14 is widely recognized as one of the most important soteriological passages in the Pastorals and possibly in the entire NT. It moves through three temporal frames: past (grace appeared, v. 11), present (training us to renounce ungodliness, v. 12), and future (the blessed hope and appearing of glory, v. 13). The passage functions as the theological foundation for the ethical instructions that precede and follow it: grace is both the source of salvation and the teacher of godly living. The christological title 'our great God and Savior, Jesus Christ' (v. 13) is one of the clearest affirmations of Christ's deity in the Pauline corpus.",
-        "cross": [
-          {
-            "ref": "Ephesians 2:8–10",
-            "note": "Paul's declaration that salvation is by grace through faith, not by works, provides the broader Pauline context for the grace-theology articulated here."
-          },
-          {
-            "ref": "Romans 5:1–2",
-            "note": "The already/not-yet structure of salvation—justified by faith (past), standing in grace (present), rejoicing in hope of glory (future)—parallels the three-tense structure of Tit 2:11–14."
-          },
-          {
-            "ref": "2 Peter 1:1",
-            "note": "Peter's parallel construction 'our God and Savior Jesus Christ' (using the same Granville Sharp construction) supports the deity-of-Christ reading in Tit 2:13."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ephesians 2:8–10",
+              "note": "Paul's declaration that salvation is by grace through faith, not by works, provides the broader Pauline context for the grace-theology articulated here."
+            },
+            {
+              "ref": "Romans 5:1–2",
+              "note": "The already/not-yet structure of salvation—justified by faith (past), standing in grace (present), rejoicing in hope of glory (future)—parallels the three-tense structure of Tit 2:11–14."
+            },
+            {
+              "ref": "2 Peter 1:1",
+              "note": "Peter's parallel construction 'our God and Savior Jesus Christ' (using the same Granville Sharp construction) supports the deity-of-Christ reading in Tit 2:13."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -198,6 +203,9 @@
               "note": "This is the letter's theological center of gravity. The two-epiphany structure (past appearance of grace, future appearance of glory) creates an eschatological framework within which the ethical instructions of vv. 1–10 make sense: Christian conduct is not mere social conformity but participation in a salvation-historical drama stretching from incarnation to parousia. The personification of grace as 'appearing' and 'training' is theologically innovative: grace is not merely an attitude of God but a historical event with pedagogical consequences. The ecclesiological formula 'a people for his own possession' transfers covenant identity from Israel to the church—a significant claim in a letter addressed to a Gentile community."
             }
           ]
+        },
+        "hist": {
+          "context": "Titus 2:11–14 is widely recognized as one of the most important soteriological passages in the Pastorals and possibly in the entire NT. It moves through three temporal frames: past (grace appeared, v. 11), present (training us to renounce ungodliness, v. 12), and future (the blessed hope and appearing of glory, v. 13). The passage functions as the theological foundation for the ethical instructions that precede and follow it: grace is both the source of salvation and the teacher of godly living. The christological title 'our great God and Savior, Jesus Christ' (v. 13) is one of the clearest affirmations of Christ's deity in the Pauline corpus."
         }
       }
     }

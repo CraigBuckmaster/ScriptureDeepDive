@@ -25,21 +25,22 @@
             "paragraph": "The verb παραρρέω (pararreō) in the passive means ‘to be carried past’ or ‘to drift away’—like a boat slipping its moorings or a ring sliding off a finger. The imagery is not violent apostasy but gradual, almost imperceptible departure. This is the first of five warning passages in Hebrews (2:1–4; 3:7–4:13; 5:11–6:12; 10:26–31; 12:25–29) that punctuate the theological argument with urgent pastoral exhortation."
           }
         ],
-        "ctx": "The first warning passage interrupts the angel argument with a lesser-to-greater (qal wa-homer) comparison: if the message delivered through angels (the Torah, cf. Gal 3:19; Acts 7:53) carried binding authority with just penalties, how much more serious is neglecting the salvation announced by the Lord himself. This rhetorical structure—theological exposition followed by practical exhortation—will repeat throughout Hebrews and reflects the author’s homiletical purpose (13:22, ‘my word of exhortation’).",
-        "cross": [
-          {
-            "ref": "Galatians 3:19",
-            "note": "Paul’s reference to the law being ‘given through angels’ confirms the widespread Jewish tradition that angels mediated the Sinai covenant—the assumption underlying the comparison here."
-          },
-          {
-            "ref": "Hebrews 10:26–31",
-            "note": "The fourth warning passage intensifies the language of judgment: if we deliberately keep on sinning after receiving knowledge of the truth, no sacrifice for sins is left."
-          },
-          {
-            "ref": "Hebrews 12:25",
-            "note": "The fifth warning passage returns to the comparison: if those who refused the one who warned on earth did not escape, how much less will we escape if we turn away from the one who warns from heaven."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Galatians 3:19",
+              "note": "Paul’s reference to the law being ‘given through angels’ confirms the widespread Jewish tradition that angels mediated the Sinai covenant—the assumption underlying the comparison here."
+            },
+            {
+              "ref": "Hebrews 10:26–31",
+              "note": "The fourth warning passage intensifies the language of judgment: if we deliberately keep on sinning after receiving knowledge of the truth, no sacrifice for sins is left."
+            },
+            {
+              "ref": "Hebrews 12:25",
+              "note": "The fifth warning passage returns to the comparison: if those who refused the one who warned on earth did not escape, how much less will we escape if we turn away from the one who warns from heaven."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -93,7 +94,10 @@
             }
           ]
         },
-        "hist": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24)."
+        "hist": {
+          "historical": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24).",
+          "context": "The first warning passage interrupts the angel argument with a lesser-to-greater (qal wa-homer) comparison: if the message delivered through angels (the Torah, cf. Gal 3:19; Acts 7:53) carried binding authority with just penalties, how much more serious is neglecting the salvation announced by the Lord himself. This rhetorical structure—theological exposition followed by practical exhortation—will repeat throughout Hebrews and reflects the author’s homiletical purpose (13:22, ‘my word of exhortation’)."
+        }
       }
     },
     {
@@ -116,21 +120,22 @@
             "paragraph": "The verb τελειόω (teleioō) is central to Hebrews’ theology: it appears 9 times in the epistle (more than in all other NT books combined). It does not mean moral perfection but vocational completion—being brought to the goal (τέλος) of one’s calling. Jesus was ‘made perfect’ through suffering (v. 10)—not morally improved but vocationally qualified to serve as the perfect high priest through experiential solidarity with those he saves."
           }
         ],
-        "ctx": "The author now explains why the Son was temporarily made ‘lower than the angels’ (quoting Ps 8:4–6): the incarnation was not a diminishment but a strategic necessity. By sharing human flesh and blood, the Son could die, and through death destroy the one who holds the power of death—the devil (v. 14). This section introduces key Hebrews concepts: the pioneer of salvation made perfect through suffering (v. 10), the sanctifier and sanctified sharing one origin (v. 11), Jesus as the brother of believers (vv. 11–12), and the merciful and faithful high priest (v. 17)—the last phrase introducing the priestly christology that will dominate chs. 5–10.",
-        "cross": [
-          {
-            "ref": "Psalm 8:4–6",
-            "note": "The psalmist’s meditation on human dignity (‘what is man that you are mindful of him?’) is read christologically: the one made ‘a little lower than the angels’ is Jesus, whose temporary humiliation leads to universal sovereignty."
-          },
-          {
-            "ref": "Philippians 2:6–11",
-            "note": "The Christ hymn’s pattern of descent (taking the form of a servant) and ascent (exaltation and the name above every name) parallels the Hebrews 2 argument of incarnation–suffering–glorification."
-          },
-          {
-            "ref": "Isaiah 8:17–18",
-            "note": "The author attributes Isa 8:17–18 to Jesus (‘Here am I, and the children God has given me’), identifying Jesus with the prophet’s trust in God and solidarity with his people."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Psalm 8:4–6",
+              "note": "The psalmist’s meditation on human dignity (‘what is man that you are mindful of him?’) is read christologically: the one made ‘a little lower than the angels’ is Jesus, whose temporary humiliation leads to universal sovereignty."
+            },
+            {
+              "ref": "Philippians 2:6–11",
+              "note": "The Christ hymn’s pattern of descent (taking the form of a servant) and ascent (exaltation and the name above every name) parallels the Hebrews 2 argument of incarnation–suffering–glorification."
+            },
+            {
+              "ref": "Isaiah 8:17–18",
+              "note": "The author attributes Isa 8:17–18 to Jesus (‘Here am I, and the children God has given me’), identifying Jesus with the prophet’s trust in God and solidarity with his people."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -195,6 +200,9 @@
               "note": "The section reinterprets Ps 8 christologically: the Son’s temporary lowering below the angels was not defeat but the means by which he achieved universal sovereignty. The sequence—incarnation, suffering, death, glorification—mirrors the pattern of the Christ hymn (Phil 2) but with distinctive Hebrews vocabulary: ἀρχηγός (pioneer), τελειόω (perfect/complete), ἀρχιερεύς (high priest). The brother-language (vv. 11–13) grounds the priestly ministry in relational solidarity: the high priest is not a distant functionary but a family member who shares the human condition from the inside."
             }
           ]
+        },
+        "hist": {
+          "context": "The author now explains why the Son was temporarily made ‘lower than the angels’ (quoting Ps 8:4–6): the incarnation was not a diminishment but a strategic necessity. By sharing human flesh and blood, the Son could die, and through death destroy the one who holds the power of death—the devil (v. 14). This section introduces key Hebrews concepts: the pioneer of salvation made perfect through suffering (v. 10), the sanctifier and sanctified sharing one origin (v. 11), Jesus as the brother of believers (vv. 11–12), and the merciful and faithful high priest (v. 17)—the last phrase introducing the priestly christology that will dominate chs. 5–10."
         }
       }
     }

@@ -31,21 +31,22 @@
             "paragraph": "The writing and depositing of the Torah (v.9) is the great archival act of Deuteronomy -- Moses certifies the covenant document and entrusts it to the Levites for preservation beside the ark. The Torah is not oral tradition but written text, preserved, guarded, and read publicly every seven years."
           }
         ],
-        "ctx": "Chapter 31 is the transition chapter of Deuteronomy. Moses formally announces that he is 120 years old and cannot cross the Jordan (v.2). He commissions Joshua before all Israel (vv.7-8) and before God (v.23). The Torah is written and deposited with the Levites beside the ark (v.9), with instructions for a public reading every seventh year at the feast of Tabernacles (vv.10-13). Then God delivers a devastating prediction: Israel will prostitute itself to other gods, and the curses of ch.28 will come. For this reason, God commands Moses to write a song (ch.32) that will serve as a witness against Israel when it apostatises.",
-        "cross": [
-          {
-            "ref": "Josh 1:6-9",
-            "note": "\"Be strong and courageous, because you will lead these people to inherit the land... Be strong and very courageous... Have I not commanded you? Be strong and courageous. Do not be afraid.\" Joshua 1 is a sustained development of Deuteronomy 31's commissioning formula."
-          },
-          {
-            "ref": "Heb 4:8",
-            "note": "\"For if Joshua had given them rest, God would not have spoken later about another day.\" The author of Hebrews uses Joshua's limitation -- he gave Israel rest in Canaan but not the ultimate rest -- to argue for a greater rest that Christ provides."
-          },
-          {
-            "ref": "2 Tim 4:7",
-            "note": "\"I have fought the good fight, I have finished the race, I have kept the faith.\" Paul's farewell echoes Moses's Deuteronomy 31 farewell structure -- the dying leader commissions his successor and entrusts the covenant to those who come after."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 1:6-9",
+              "note": "\"Be strong and courageous, because you will lead these people to inherit the land... Be strong and very courageous... Have I not commanded you? Be strong and courageous. Do not be afraid.\" Joshua 1 is a sustained development of Deuteronomy 31's commissioning formula."
+            },
+            {
+              "ref": "Heb 4:8",
+              "note": "\"For if Joshua had given them rest, God would not have spoken later about another day.\" The author of Hebrews uses Joshua's limitation -- he gave Israel rest in Canaan but not the ultimate rest -- to argue for a greater rest that Christ provides."
+            },
+            {
+              "ref": "2 Tim 4:7",
+              "note": "\"I have fought the good fight, I have finished the race, I have kept the faith.\" Paul's farewell echoes Moses's Deuteronomy 31 farewell structure -- the dying leader commissions his successor and entrusts the covenant to those who come after."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 31 is the transition chapter of Deuteronomy. Moses formally announces that he is 120 years old and cannot cross the Jordan (v.2). He commissions Joshua before all Israel (vv.7-8) and before God (v.23). The Torah is written and deposited with the Levites beside the ark (v.9), with instructions for a public reading every seventh year at the feast of Tabernacles (vv.10-13). Then God delivers a devastating prediction: Israel will prostitute itself to other gods, and the curses of ch.28 will come. For this reason, God commands Moses to write a song (ch.32) that will serve as a witness against Israel when it apostatises."
         }
       }
     },
@@ -135,13 +139,14 @@
             "paragraph": "God's \"I know\" (v.27) -- before Israel has even crossed the Jordan -- is one of Deuteronomy's most sobering divine statements. Omniscience applied to human tendency is not fatalism but realism: God's foreknowledge of Israel's failure does not cause the failure but prepares for its consequences."
           }
         ],
-        "ctx": "The chapter closes with Joshua's direct commissioning before the LORD at the tent of meeting (v.23) -- a more solemn version of the public commissioning before Israel (vv.7-8). God then commands Moses to write the song of ch.32 as a witness -- because \"I know how rebellious and stiff-necked you are. If you have been rebellious against the LORD while I am still alive and with you, how much more will you rebel after I die!\" (v.27). The Torah scroll is deposited beside the ark as a witness against Israel. Two witnesses: the song (in their mouths) and the Torah (beside the ark).",
-        "cross": [
-          {
-            "ref": "Rom 8:29-30",
-            "note": "\"For those God foreknew he also predestined... And those he predestined, he also called; those he called, he also justified.\" God's foreknowledge in Deuteronomy 31 is not fatalism but sovereign governance -- he provides for the foreknown failure without approving it."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 8:29-30",
+              "note": "\"For those God foreknew he also predestined... And those he predestined, he also called; those he called, he also justified.\" God's foreknowledge in Deuteronomy 31 is not fatalism but sovereign governance -- he provides for the foreknown failure without approving it."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -206,6 +211,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter closes with Joshua's direct commissioning before the LORD at the tent of meeting (v.23) -- a more solemn version of the public commissioning before Israel (vv.7-8). God then commands Moses to write the song of ch.32 as a witness -- because \"I know how rebellious and stiff-necked you are. If you have been rebellious against the LORD while I am still alive and with you, how much more will you rebel after I die!\" (v.27). The Torah scroll is deposited beside the ark as a witness against Israel. Two witnesses: the song (in their mouths) and the Torah (beside the ark)."
         }
       }
     }

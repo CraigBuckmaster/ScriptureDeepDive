@@ -17,13 +17,14 @@
       "verse_start": 1,
       "verse_end": 7,
       "panels": {
-        "ctx": "Solomon brings the ark from the City of David into the newly completed temple. The elders carry it, with priests and Levites, during the Festival of Tabernacles in the seventh month. Countless sheep and cattle are sacrificed. The priests place the ark in the Most Holy Place, under the wings of the cherubim. “The poles were so long that their ends could be seen from the Holy Place but not from outside.” The ark has found its permanent home.",
-        "cross": [
-          {
-            "ref": "1 Kgs 8:1‐9",
-            "note": "The parallel. Chronicles adds extensive Levitical musical detail in vv.12–13."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 8:1‐9",
+              "note": "The parallel. Chronicles adds extensive Levitical musical detail in vv.12–13."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -41,6 +42,9 @@
               "note": "The note “they are still there today” reflects the source document’s pre-exilic date, preserved by the post-exilic Chronicler."
             }
           ]
+        },
+        "hist": {
+          "context": "Solomon brings the ark from the City of David into the newly completed temple. The elders carry it, with priests and Levites, during the Festival of Tabernacles in the seventh month. Countless sheep and cattle are sacrificed. The priests place the ark in the Most Holy Place, under the wings of the cherubim. “The poles were so long that their ends could be seen from the Holy Place but not from outside.” The ark has found its permanent home."
         }
       }
     },
@@ -50,17 +54,18 @@
       "verse_start": 8,
       "verse_end": 14,
       "panels": {
-        "ctx": "As the musicians and 120 trumpet-playing priests unite “in one voice to give praise and thanks to the LORD,” the temple fills with a cloud. “The priests could not perform their service because of the cloud, for the glory of the LORD filled the temple of God.” The shekinah — God’s visible presence — descends. The Chronicler adds a detail absent from Kings: the musical trigger. In Chronicles, God’s glory arrives in response to unified worship, not merely at the completion of a building.",
-        "cross": [
-          {
-            "ref": "Exod 40:34‐35",
-            "note": "The cloud filled the tabernacle at its dedication, and Moses could not enter. The same pattern: God’s glory overwhelms human capacity."
-          },
-          {
-            "ref": "1 Kgs 8:10‐11",
-            "note": "The Kings parallel. Chronicles adds the musical context."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 40:34‐35",
+              "note": "The cloud filled the tabernacle at its dedication, and Moses could not enter. The same pattern: God’s glory overwhelms human capacity."
+            },
+            {
+              "ref": "1 Kgs 8:10‐11",
+              "note": "The Kings parallel. Chronicles adds the musical context."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -78,6 +83,9 @@
               "note": "kĕqōl ʾehād (“as one voice”) — the musical unity is the Chronicler’s precondition for theophany. Divided worship does not invoke God’s presence."
             }
           ]
+        },
+        "hist": {
+          "context": "As the musicians and 120 trumpet-playing priests unite “in one voice to give praise and thanks to the LORD,” the temple fills with a cloud. “The priests could not perform their service because of the cloud, for the glory of the LORD filled the temple of God.” The shekinah — God’s visible presence — descends. The Chronicler adds a detail absent from Kings: the musical trigger. In Chronicles, God’s glory arrives in response to unified worship, not merely at the completion of a building."
         }
       }
     }

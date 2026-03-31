@@ -31,21 +31,22 @@
             "paragraph": "The phrase occurs five times in the discourse (vv.11, 15, 17, 18 × 2). Tithēmi means to place, set down, deposit — a deliberate, voluntary act. Jesus does not say \"lose\" or \"forfeit\" his life but \"lay it down\" — as a deposit, with the intention of taking it up again (v.18). The voluntary, purposive character of the death is the discourse's central theological claim."
           }
         ],
-        "ctx": "[('Ezekiel 34 Background', \"The Good Shepherd discourse is a sustained midrash on Ezekiel 34, where God condemns Israel's faithless shepherds (the leadership) and promises to come himself as the true shepherd of his people (34:11-16). Jesus identifies himself as the fulfilment of both dimensions: he is the true shepherd YHWH promised to be (implicitly claiming divine identity) and he is the Davidic king-shepherd YHWH promised to send (34:23-24). The Pharisees who have just thrown out the healed blind man (ch.9) are the hired hands who abandon the sheep.\"), ('\"Other Sheep\" — The Gentile Mission', 'The \"other sheep that are not of this sheep pen\" (v.16) — not of the Jewish fold — are the Gentiles who will hear Jesus\\'s voice and be gathered into one flock. The one flock/one shepherd statement is the most explicit statement in John of the universal scope of Jesus\\'s mission. \"There shall be one flock\" (not \"one fold\" as KJV) — one community, not one institution.')]",
-        "cross": [
-          {
-            "ref": "Ezek 34:11-16",
-            "note": "\"I myself will search for my sheep and look after them... I will rescue them from all the places where they were scattered\" — the divine shepherd promise Jesus claims to fulfil."
-          },
-          {
-            "ref": "Ps 23",
-            "note": "\"The Lord is my shepherd; I lack nothing\" — the Psalm that provides the devotional register for Jesus's shepherd claim."
-          },
-          {
-            "ref": "Zech 13:7",
-            "note": "\"Strike the shepherd, and the sheep will be scattered\" — the prophecy Jesus applies to his own death (Matt 26:31), the inverse of his promise to gather."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 34:11-16",
+              "note": "\"I myself will search for my sheep and look after them... I will rescue them from all the places where they were scattered\" — the divine shepherd promise Jesus claims to fulfil."
+            },
+            {
+              "ref": "Ps 23",
+              "note": "\"The Lord is my shepherd; I lack nothing\" — the Psalm that provides the devotional register for Jesus's shepherd claim."
+            },
+            {
+              "ref": "Zech 13:7",
+              "note": "\"Strike the shepherd, and the sheep will be scattered\" — the prophecy Jesus applies to his own death (Matt 26:31), the inverse of his promise to gather."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -105,6 +106,9 @@
               "note": "Augustine: \"Other sheep I have, not of this fold. The Jewish people were this fold; the Gentiles are the other sheep. When will they become one flock? When the wall of partition is broken down (Eph 2:14). The shepherd is one; his voice is one; the pasture is one. The fold is different; the flock is one.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Ezekiel 34 Background', \"The Good Shepherd discourse is a sustained midrash on Ezekiel 34, where God condemns Israel's faithless shepherds (the leadership) and promises to come himself as the true shepherd of his people (34:11-16). Jesus identifies himself as the fulfilment of both dimensions: he is the true shepherd YHWH promised to be (implicitly claiming divine identity) and he is the Davidic king-shepherd YHWH promised to send (34:23-24). The Pharisees who have just thrown out the healed blind man (ch.9) are the hired hands who abandon the sheep.\"), ('\"Other Sheep\" — The Gentile Mission', 'The \"other sheep that are not of this sheep pen\" (v.16) — not of the Jewish fold — are the Gentiles who will hear Jesus\\'s voice and be gathered into one flock. The one flock/one shepherd statement is the most explicit statement in John of the universal scope of Jesus\\'s mission. \"There shall be one flock\" (not \"one fold\" as KJV) — one community, not one institution.')]"
         }
       }
     },
@@ -122,17 +126,18 @@
             "paragraph": "The neuter hen (one thing, one reality) rather than the masculine heis (one person) — Jesus is not claiming to be the Father but claiming a unity of essence, purpose, and will with the Father. The opponents' response (stoning for blasphemy, v.31; \"you claim to be God,\" v.33) confirms they heard a claim to divine nature, not mere agreement of purpose. The statement is the ontological basis for all the \"I do what the Father does\" language of ch.5."
           }
         ],
-        "ctx": "[('Feast of Dedication (Hanukkah)', 'Hanukkah commemorated the rededication of the Temple by Judas Maccabeus in 164 BC after its desecration by Antiochus IV Epiphanes. The feast celebrated the miraculous burning of a single day\\'s oil for eight days. Solomon\\'s Colonnade — the covered eastern portico of the Temple Mount — provided shelter in winter. The setting of a feast celebrating the Temple\\'s purification and rededication is the backdrop for Jesus\\'s claim to be the one the Father \"set apart\" (consecrated, the same root as hanukkah = dedication, v.36).')]",
-        "cross": [
-          {
-            "ref": "Ps 82:6",
-            "note": "\"I said, 'You are gods; you are all sons of the Most High'\" — the Psalm Jesus cites in vv.34-35, arguing a fortiori: if judges exercising divine authority were called gods, how much more the one the Father actually consecrated and sent into the world."
-          },
-          {
-            "ref": "Deut 6:4",
-            "note": "\"Hear, O Israel: The Lord our God, the Lord is one\" — the Shema, the foundational Jewish monotheism statement, which Jesus's \"I and the Father are one\" simultaneously affirms and complicates."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 82:6",
+              "note": "\"I said, 'You are gods; you are all sons of the Most High'\" — the Psalm Jesus cites in vv.34-35, arguing a fortiori: if judges exercising divine authority were called gods, how much more the one the Father actually consecrated and sent into the world."
+            },
+            {
+              "ref": "Deut 6:4",
+              "note": "\"Hear, O Israel: The Lord our God, the Lord is one\" — the Shema, the foundational Jewish monotheism statement, which Jesus's \"I and the Father are one\" simultaneously affirms and complicates."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -188,6 +193,9 @@
               "note": "Chrysostom: \"They shall never perish — not merely 'it is unlikely they will perish' or 'it is difficult for them to perish' — but 'they shall never perish.' This is certainty, not probability. And why? Because I give them eternal life — the life of God himself. Can God's life be taken away?\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Feast of Dedication (Hanukkah)', 'Hanukkah commemorated the rededication of the Temple by Judas Maccabeus in 164 BC after its desecration by Antiochus IV Epiphanes. The feast celebrated the miraculous burning of a single day\\'s oil for eight days. Solomon\\'s Colonnade — the covered eastern portico of the Temple Mount — provided shelter in winter. The setting of a feast celebrating the Temple\\'s purification and rededication is the backdrop for Jesus\\'s claim to be the one the Father \"set apart\" (consecrated, the same root as hanukkah = dedication, v.36).')]"
         }
       }
     }

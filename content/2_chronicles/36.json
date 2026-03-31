@@ -17,21 +17,22 @@
       "verse_start": 1,
       "verse_end": 14,
       "panels": {
-        "ctx": "The Chronicler compresses the final four kings into 14 verses: Jehoahaz (3 months, deported to Egypt), Jehoiakim (11 years, “he did evil”), Jehoiachin (3 months, deported to Babylon), Zedekiah (11 years, “he did not humble himself before Jeremiah”). The narrative accelerates toward catastrophe. “All the leaders of the priests and the people became more and more unfaithful.” God sends messengers “again and again, because he had pity on his people.” But they mocked, despised, and scoffed “until the wrath of the LORD was aroused against his people and there was no remedy.”",
-        "cross": [
-          {
-            "ref": "2 Kgs 23:31–24:17",
-            "note": "Kings provides detailed accounts of each last king: Jehoahaz (3 months), Jehoiakim (11 years), Jehoiachin (3 months), Zedekiah (11 years). Chronicles compresses all four into fourteen verses — the pace itself conveys the accelerating collapse."
-          },
-          {
-            "ref": "Jer 22:13–30",
-            "note": "Jeremiah's oracles against Jehoiakim ('Woe to him who builds his palace by unrighteousness') and Jehoiachin ('even if you were a signet ring on my right hand, I would pull you off') provide the prophetic commentary Chronicles assumes."
-          },
-          {
-            "ref": "Ezek 17:11–21",
-            "note": "Ezekiel's allegory of the vine and eagle addresses Zedekiah's rebellion against Babylon — the final act of political folly that brought Nebuchadnezzar's siege and the temple's destruction."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 23:31–24:17",
+              "note": "Kings provides detailed accounts of each last king: Jehoahaz (3 months), Jehoiakim (11 years), Jehoiachin (3 months), Zedekiah (11 years). Chronicles compresses all four into fourteen verses — the pace itself conveys the accelerating collapse."
+            },
+            {
+              "ref": "Jer 22:13–30",
+              "note": "Jeremiah's oracles against Jehoiakim ('Woe to him who builds his palace by unrighteousness') and Jehoiachin ('even if you were a signet ring on my right hand, I would pull you off') provide the prophetic commentary Chronicles assumes."
+            },
+            {
+              "ref": "Ezek 17:11–21",
+              "note": "Ezekiel's allegory of the vine and eagle addresses Zedekiah's rebellion against Babylon — the final act of political folly that brought Nebuchadnezzar's siege and the temple's destruction."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -49,6 +50,9 @@
               "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events."
             }
           ]
+        },
+        "hist": {
+          "context": "The Chronicler compresses the final four kings into 14 verses: Jehoahaz (3 months, deported to Egypt), Jehoiakim (11 years, “he did evil”), Jehoiachin (3 months, deported to Babylon), Zedekiah (11 years, “he did not humble himself before Jeremiah”). The narrative accelerates toward catastrophe. “All the leaders of the priests and the people became more and more unfaithful.” God sends messengers “again and again, because he had pity on his people.” But they mocked, despised, and scoffed “until the wrath of the LORD was aroused against his people and there was no remedy.”"
         }
       }
     },
@@ -58,21 +62,22 @@
       "verse_start": 15,
       "verse_end": 23,
       "panels": {
-        "ctx": "Nebuchadnezzar burns the temple, breaks down the walls, and deports the survivors to Babylon. “The land enjoyed its sabbath rests; all the time of its desolation it rested, until the seventy years were completed, in fulfilment of the word of the LORD spoken by Jeremiah.” But the book does not end with destruction. Its final verses are Cyrus’s decree: “The LORD, the God of heaven, has given me all the kingdoms of the earth and he has appointed me to build a temple for him at Jerusalem. Any of his people among you may go up.” The same words open the book of Ezra. Chronicles ends mid-sentence, pointing forward to restoration. The last word is not exile but “let him go up.”",
-        "cross": [
-          {
-            "ref": "2 Kgs 25:1–21",
-            "note": "Kings provides the extended siege and destruction narrative. Chronicles compresses the fall of Jerusalem but adds the crucial theological interpretation: God sent 'messenger after messenger' but they 'mocked God's messengers, despised his words, and scoffed at his prophets.'"
-          },
-          {
-            "ref": "Jer 25:11–12; 29:10",
-            "note": "The seventy-year exile, 'until the land enjoyed its sabbath rests' (v. 21), draws on Jeremiah's prophecy. The land-sabbath concept connects to Leviticus 26:34–35 — the exile repays the sabbatical years Israel never observed."
-          },
-          {
-            "ref": "Ezra 1:1–4",
-            "note": "The Cyrus decree that closes 2 Chronicles is repeated verbatim as the opening of Ezra — the Chronicler ends on hope, not destruction. The last word of the Hebrew Bible (in its canonical order) is 'let him go up' (wĕyāʿal)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 25:1–21",
+              "note": "Kings provides the extended siege and destruction narrative. Chronicles compresses the fall of Jerusalem but adds the crucial theological interpretation: God sent 'messenger after messenger' but they 'mocked God's messengers, despised his words, and scoffed at his prophets.'"
+            },
+            {
+              "ref": "Jer 25:11–12; 29:10",
+              "note": "The seventy-year exile, 'until the land enjoyed its sabbath rests' (v. 21), draws on Jeremiah's prophecy. The land-sabbath concept connects to Leviticus 26:34–35 — the exile repays the sabbatical years Israel never observed."
+            },
+            {
+              "ref": "Ezra 1:1–4",
+              "note": "The Cyrus decree that closes 2 Chronicles is repeated verbatim as the opening of Ezra — the Chronicler ends on hope, not destruction. The last word of the Hebrew Bible (in its canonical order) is 'let him go up' (wĕyāʿal)."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -90,6 +95,9 @@
               "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events."
             }
           ]
+        },
+        "hist": {
+          "context": "Nebuchadnezzar burns the temple, breaks down the walls, and deports the survivors to Babylon. “The land enjoyed its sabbath rests; all the time of its desolation it rested, until the seventy years were completed, in fulfilment of the word of the LORD spoken by Jeremiah.” But the book does not end with destruction. Its final verses are Cyrus’s decree: “The LORD, the God of heaven, has given me all the kingdoms of the earth and he has appointed me to build a temple for him at Jerusalem. Any of his people among you may go up.” The same words open the book of Ezra. Chronicles ends mid-sentence, pointing forward to restoration. The last word is not exile but “let him go up.”"
         }
       }
     }

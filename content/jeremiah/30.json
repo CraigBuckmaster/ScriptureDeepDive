@@ -25,21 +25,22 @@
             "paragraph": "God promises to \"restore the fortunes\" (hashib et-shebut) of Israel and Judah (v.3). The phrase is ambiguous: shebut can mean \"captivity\" (a return from exile) or \"fortune\" (a restoration of prosperity). Both meanings operate simultaneously -- the return from physical exile coincides with spiritual renewal."
           }
         ],
-        "ctx": "Chapters 30-31 are the \"Book of Consolation\" -- the heart of hope within the book of judgment. God commands Jeremiah to write these words in a scroll (v.2), emphasizing their permanent significance. After twenty-nine chapters of predominantly judgment oracles, the tone shifts dramatically. The promise is comprehensive: restoration of land, rebuilding of the city, regathering of the people, and a renewed relationship with God. Jacob's \"time of trouble\" (v.7) will end in deliverance.",
-        "cross": [
-          {
-            "ref": "Isa 40:1-2",
-            "note": "\"Comfort, comfort my people\" -- Isaiah's parallel opening to the consolation oracles. Both prophets shift from judgment to hope at their rhetorical climax."
-          },
-          {
-            "ref": "Rom 8:28",
-            "note": "\"In all things God works for the good\" -- the NT echo of Jeremiah's assurance that suffering has a redemptive purpose."
-          },
-          {
-            "ref": "Dan 12:1",
-            "note": "\"A time of distress such as has not happened\" -- Daniel's \"time of trouble\" draws on Jeremiah's language."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 40:1-2",
+              "note": "\"Comfort, comfort my people\" -- Isaiah's parallel opening to the consolation oracles. Both prophets shift from judgment to hope at their rhetorical climax."
+            },
+            {
+              "ref": "Rom 8:28",
+              "note": "\"In all things God works for the good\" -- the NT echo of Jeremiah's assurance that suffering has a redemptive purpose."
+            },
+            {
+              "ref": "Dan 12:1",
+              "note": "\"A time of distress such as has not happened\" -- Daniel's \"time of trouble\" draws on Jeremiah's language."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -96,6 +97,9 @@
               "note": "Brueggemann identifies the Book of Consolation as \"prophetic imagination at its most daring.\" In the midst of national catastrophe, the prophet envisions a future that contradicts every present reality. This is not wishful thinking but faith in God's sovereign capacity to create newness."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapters 30-31 are the \"Book of Consolation\" -- the heart of hope within the book of judgment. God commands Jeremiah to write these words in a scroll (v.2), emphasizing their permanent significance. After twenty-nine chapters of predominantly judgment oracles, the tone shifts dramatically. The promise is comprehensive: restoration of land, rebuilding of the city, regathering of the people, and a renewed relationship with God. Jacob's \"time of trouble\" (v.7) will end in deliverance."
         }
       }
     },
@@ -113,17 +117,18 @@
             "paragraph": "\"I will restore you to health (te'ala) and heal your wounds\" (v.17). The word te'ala means the fresh growth of flesh over a wound. After diagnosing an incurable wound (cf. 15:18, the \"deceptive brook\"), God now promises to heal what he declared unhealable. The healer was always present; the patient was unwilling. Now both willingness and healing converge."
           }
         ],
-        "ctx": "The healing metaphor dominates vv.12-17: the wound is \"incurable,\" with \"no remedy,\" and \"no one to plead your cause.\" But then the reversal: \"I will restore you to health.\" The turning point is God's initiative, not Israel's merit. The rebuilt city (vv.18-22) will include a ruler \"from among them\" -- another messianic hint -- and the restored community will be \"my people\" and God will be \"your God\" (v.22), the covenant formula renewed.",
-        "cross": [
-          {
-            "ref": "Hos 6:1",
-            "note": "\"Come, let us return to the LORD. He has torn us to pieces but he will heal us\" -- Hosea's parallel healing promise."
-          },
-          {
-            "ref": "Rev 21:3-4",
-            "note": "\"God's dwelling place is now among the people\" -- the ultimate fulfillment of the covenant formula."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Hos 6:1",
+              "note": "\"Come, let us return to the LORD. He has torn us to pieces but he will heal us\" -- Hosea's parallel healing promise."
+            },
+            {
+              "ref": "Rev 21:3-4",
+              "note": "\"God's dwelling place is now among the people\" -- the ultimate fulfillment of the covenant formula."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -180,6 +185,9 @@
               "note": "Brueggemann identifies the healing promise as \"the core verb of the Book of Consolation.\" The God who tears down (1:10) now heals. The same sovereignty that judged now restores. There is no change in God -- only a change in the moment."
             }
           ]
+        },
+        "hist": {
+          "context": "The healing metaphor dominates vv.12-17: the wound is \"incurable,\" with \"no remedy,\" and \"no one to plead your cause.\" But then the reversal: \"I will restore you to health.\" The turning point is God's initiative, not Israel's merit. The rebuilt city (vv.18-22) will include a ruler \"from among them\" -- another messianic hint -- and the restored community will be \"my people\" and God will be \"your God\" (v.22), the covenant formula renewed."
         }
       }
     }

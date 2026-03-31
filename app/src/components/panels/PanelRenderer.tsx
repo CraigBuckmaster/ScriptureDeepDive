@@ -17,6 +17,8 @@ import { HebrewPanel } from './HebrewPanel';
 import { ContextPanel } from './ContextPanel';
 import { HistoricalContextPanel } from './HistoricalContextPanel';
 import { CrossRefPanel } from './CrossRefPanel';
+import { CompositeContextPanel } from './CompositeContextPanel';
+import { CompositeConnectionsPanel } from './CompositeConnectionsPanel';
 import { CommentaryPanel } from './CommentaryPanel';
 import { PlacesPanel } from './PlacesPanel';
 import { TimelinePanel } from './TimelinePanel';
@@ -96,8 +98,18 @@ export function PanelRenderer({
     case 'ctx':
       return <ContextPanel text={typeof data === 'string' ? data : JSON.stringify(data)} onRefPress={onRefPress} />;
     case 'hist':
+      // Composite detection: object with historical/context keys → tabbed panel
+      if (data && typeof data === 'object' && !Array.isArray(data) && (data.historical || data.context)) {
+        return <CompositeContextPanel data={data} onRefPress={onRefPress} />;
+      }
+      // Legacy: plain string → single-view
       return <HistoricalContextPanel text={typeof data === 'string' ? data : JSON.stringify(data)} onRefPress={onRefPress} />;
     case 'cross':
+      // Composite detection: object with refs key → tabbed panel
+      if (data && typeof data === 'object' && !Array.isArray(data) && data.refs) {
+        return <CompositeConnectionsPanel data={data} onRefPress={onRefPress} />;
+      }
+      // Legacy: plain array → single-view
       return <CrossRefPanel entries={data} onRefPress={onRefPress} />;
     case 'poi':
     case 'places':

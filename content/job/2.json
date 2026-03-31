@@ -25,13 +25,14 @@
             "paragraph": "\"Skin for skin\" — a proverbial expression meaning: a person will trade anything to save their own life. The Satan’s argument: Job’s worship in chapter 1 was self-preservation, not genuine piety. He lost possessions and children but kept his body. Take his health, and the mask falls."
           }
         ],
-        "ctx": "The heavenly court reconvenes. God points out that Job \"still maintains his integrity, though you incited me against him to ruin him without any reason (ḥinnām).\" God uses the Satan’s own word back at him. The test was without cause — God admits it. This is the most theologically explosive verse in the prologue.",
-        "cross": [
-          {
-            "ref": "Job 1:9",
-            "note": "The Satan’s first challenge — the second escalates from property to body."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Job 1:9",
+              "note": "The Satan’s first challenge — the second escalates from property to body."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -92,6 +93,9 @@
               "note": "Habel: the second court scene raises the stakes. The Satan argues that bodily suffering is the real test. Habel: this is the prosecutorial appeal after a hung jury."
             }
           ]
+        },
+        "hist": {
+          "context": "The heavenly court reconvenes. God points out that Job \"still maintains his integrity, though you incited me against him to ruin him without any reason (ḥinnām).\" God uses the Satan’s own word back at him. The test was without cause — God admits it. This is the most theologically explosive verse in the prologue."
         }
       }
     },
@@ -115,17 +119,18 @@
             "paragraph": "The friends sit with Job seven days and seven nights without speaking. This is the most profound act of pastoral care in the Bible. Their failure begins when they open their mouths."
           }
         ],
-        "ctx": "Job’s wife speaks one line and disappears from the book. Her advice is exactly what the Satan expected: \"Curse God and die.\" Job refuses. Then silence — seven days of it. The friends’ wordless presence is their finest moment. When they begin to explain, they begin to fail.",
-        "cross": [
-          {
-            "ref": "Gen 50:10",
-            "note": "Seven days of mourning for Jacob — the standard mourning period."
-          },
-          {
-            "ref": "Ezek 3:15",
-            "note": "Ezekiel sits among the exiles \"overwhelmed, for seven days\" — the same stunned silence."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 50:10",
+              "note": "Seven days of mourning for Jacob — the standard mourning period."
+            },
+            {
+              "ref": "Ezek 3:15",
+              "note": "Ezekiel sits among the exiles \"overwhelmed, for seven days\" — the same stunned silence."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -194,6 +199,9 @@
               "note": "Habel: the friends arrive as \"expert witnesses\" for the prosecution. They will argue that suffering proves guilt — the retribution principle. Their seven-day silence is the court’s recess before testimony begins."
             }
           ]
+        },
+        "hist": {
+          "context": "Job’s wife speaks one line and disappears from the book. Her advice is exactly what the Satan expected: \"Curse God and die.\" Job refuses. Then silence — seven days of it. The friends’ wordless presence is their finest moment. When they begin to explain, they begin to fail."
         }
       }
     }

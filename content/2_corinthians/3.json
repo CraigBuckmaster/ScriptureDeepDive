@@ -31,17 +31,18 @@
             "paragraph": "The antithesis gramma/pneuma (letter/Spirit) in v. 6 is one of Paul’s most consequential theological distinctions. The ‘letter’ refers to the Mosaic law as an external written code; the ‘Spirit’ refers to the Holy Spirit as the internalising agent of the new covenant. Paul’s point is not that the OT law was bad but that it was incomplete: it could diagnose sin (‘the letter kills’) but could not empower obedience (‘the Spirit gives life’). This echoes Jeremiah’s prophecy of a new covenant written on hearts (Jer 31:33) and Ezekiel’s promise of a new spirit (Ezek 36:26–27)."
           }
         ],
-        "ctx": "The super-apostles apparently carried ‘letters of recommendation’ (v. 1) to bolster their credentials. Paul’s response is audacious: the Corinthian community itself is his letter of recommendation, ‘written not with ink but with the Spirit of the living God, not on tablets of stone but on tablets of human hearts’ (v. 3). This bold allusion to Exodus 31:18 and Ezekiel 36:26 transforms an ecclesial observation into a covenant-theological claim: the new covenant promised by Jeremiah and Ezekiel has arrived, and its evidence is the Spirit-transformed lives of the Corinthian believers.",
-        "cross": [
-          {
-            "ref": "Jer 31:31–34",
-            "note": "Jeremiah’s new covenant prophecy—‘I will put my law in their minds and write it on their hearts’—is the OT foundation for Paul’s letter/Spirit contrast. The new covenant internalises what the old covenant externalised."
-          },
-          {
-            "ref": "Ezek 36:26–27",
-            "note": "Ezekiel’s promise of a ‘new heart’ and ‘new spirit’ complements Jeremiah’s prophecy and supplies the ‘tablets of human hearts’ imagery Paul employs in v. 3."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 31:31–34",
+              "note": "Jeremiah’s new covenant prophecy—‘I will put my law in their minds and write it on their hearts’—is the OT foundation for Paul’s letter/Spirit contrast. The new covenant internalises what the old covenant externalised."
+            },
+            {
+              "ref": "Ezek 36:26–27",
+              "note": "Ezekiel’s promise of a ‘new heart’ and ‘new spirit’ complements Jeremiah’s prophecy and supplies the ‘tablets of human hearts’ imagery Paul employs in v. 3."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -94,6 +95,9 @@
               "note": "Harris provides detailed analysis of the ‘letter of recommendation’ (systatikas epistolas) motif, noting that letters of commendation were standard in the ancient Mediterranean world. Paul’s subversion of the convention is brilliant: rather than carrying paper credentials, his credential is a living community. Harris traces the OT allusions (Exod 24:12; 31:18; 34:1; Jer 31:33; Ezek 11:19; 36:26) with meticulous care, arguing that Paul weaves them into a composite typology of covenant transition."
             }
           ]
+        },
+        "hist": {
+          "context": "The super-apostles apparently carried ‘letters of recommendation’ (v. 1) to bolster their credentials. Paul’s response is audacious: the Corinthian community itself is his letter of recommendation, ‘written not with ink but with the Spirit of the living God, not on tablets of stone but on tablets of human hearts’ (v. 3). This bold allusion to Exodus 31:18 and Ezekiel 36:26 transforms an ecclesial observation into a covenant-theological claim: the new covenant promised by Jeremiah and Ezekiel has arrived, and its evidence is the Spirit-transformed lives of the Corinthian believers."
         }
       }
     },
@@ -111,17 +115,18 @@
             "paragraph": "The noun doxa (glory) appears ten times in vv. 7–11, creating the chapter’s most concentrated theological cluster. Paul constructs a series of qal wahomer (lesser-to-greater) arguments: if the ministry of death came with glory, how much more the ministry of the Spirit? If the ministry of condemnation was glorious, how much more the ministry of righteousness? If the transitory was glorious, how much more the permanent? The argument does not deny the Sinai covenant’s glory but declares it eclipsed by a surpassing glory."
           }
         ],
-        "ctx": "Paul’s argument draws on the Exodus 34 narrative of Moses’ radiant face after encountering God on Sinai. The glory of the old covenant was real but transitory—it was ‘passing away’ (katargoumenon, vv. 7, 11, 13). The new covenant’s glory, by contrast, is permanent and surpassing. Three comparative pairs structure the argument: death/Spirit (vv. 7–8), condemnation/righteousness (v. 9), transitory/permanent (v. 11). Each comparison concedes glory to the old covenant while affirming the incomparably greater glory of the new.",
-        "cross": [
-          {
-            "ref": "Exod 34:29–35",
-            "note": "The narrative of Moses’ shining face after receiving the law on Sinai provides the scriptural basis for Paul’s entire argument. Paul’s interpretation (vv. 13–16) will add a layer of typological significance."
-          },
-          {
-            "ref": "Heb 8:6–13",
-            "note": "The author of Hebrews develops a parallel argument for the superiority of the new covenant, citing Jer 31:31–34 at length. Both authors use covenant comparison as a rhetorical strategy."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 34:29–35",
+              "note": "The narrative of Moses’ shining face after receiving the law on Sinai provides the scriptural basis for Paul’s entire argument. Paul’s interpretation (vv. 13–16) will add a layer of typological significance."
+            },
+            {
+              "ref": "Heb 8:6–13",
+              "note": "The author of Hebrews develops a parallel argument for the superiority of the new covenant, citing Jer 31:31–34 at length. Both authors use covenant comparison as a rhetorical strategy."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -170,6 +175,9 @@
               "note": "Harris provides the most detailed structural analysis of the three a fortiori arguments, noting that each comparison operates on a different axis: agency (death vs. Spirit), function (condemnation vs. righteousness), and duration (transitory vs. permanent). Harris argues that the verb katargeo (‘to render inoperative,’ vv. 7, 11, 13, 14) is a key term in Paul’s covenant theology: the old covenant has been ‘set aside’ not by annihilation but by fulfilment—as a chrysalis is ‘set aside’ when the butterfly emerges."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul’s argument draws on the Exodus 34 narrative of Moses’ radiant face after encountering God on Sinai. The glory of the old covenant was real but transitory—it was ‘passing away’ (katargoumenon, vv. 7, 11, 13). The new covenant’s glory, by contrast, is permanent and surpassing. Three comparative pairs structure the argument: death/Spirit (vv. 7–8), condemnation/righteousness (v. 9), transitory/permanent (v. 11). Each comparison concedes glory to the old covenant while affirming the incomparably greater glory of the new."
         }
       }
     },
@@ -193,21 +201,22 @@
             "paragraph": "The verb metamorphoō (to transform) in v. 18 describes the progressive transformation of believers ‘from one degree of glory to another’ (apo doxēs eis doxan). The same verb appears in Rom 12:2 (‘be transformed by the renewing of your mind’) and in the Transfiguration narratives (Matt 17:2; Mark 9:2). The transformation is ongoing (present tense: metamorphoumetha) and Spirit-empowered (‘from the Lord, who is the Spirit’). Unlike Moses’ fading glory, the believer’s transformation increases."
           }
         ],
-        "ctx": "Paul’s typological interpretation of the Mosaic veil is one of the boldest hermeneutical moves in the NT. He argues that Moses veiled his face not to shield the Israelites from unbearable brightness but to prevent them from seeing that the glory was fading (v. 13). The veil thus becomes a symbol of the old covenant’s concealment of its own obsolescence. Paul then extends the metaphor: the same veil remains ‘when the old covenant is read’ (v. 14)—unbelieving Jews cannot perceive that the old covenant has been fulfilled in Christ. The removal of the veil occurs ‘whenever anyone turns to the Lord’ (v. 16). The climactic verse (v. 18) shifts from Moses to all believers: with unveiled faces, they contemplate the Lord’s glory and are progressively transformed into his image.",
-        "cross": [
-          {
-            "ref": "Exod 34:33–35",
-            "note": "The Exodus narrative of Moses’ veil is Paul’s primary text. Paul’s interpretation innovates by identifying the veil’s purpose as concealing the fading of glory rather than shielding from glory’s intensity."
-          },
-          {
-            "ref": "Rom 12:2",
-            "note": "The call to be ‘transformed by the renewing of your mind’ uses the same verb (metamorphoō) as 2 Cor 3:18, linking ethical transformation to the glory-beholding process described here."
-          },
-          {
-            "ref": "1 Cor 13:12",
-            "note": "Paul’s mirror-and-face-to-face imagery in 1 Cor 13 anticipates the unveiled-face imagery of 2 Cor 3:18: both passages describe the progressive clarification of the believer’s perception of God."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 34:33–35",
+              "note": "The Exodus narrative of Moses’ veil is Paul’s primary text. Paul’s interpretation innovates by identifying the veil’s purpose as concealing the fading of glory rather than shielding from glory’s intensity."
+            },
+            {
+              "ref": "Rom 12:2",
+              "note": "The call to be ‘transformed by the renewing of your mind’ uses the same verb (metamorphoō) as 2 Cor 3:18, linking ethical transformation to the glory-beholding process described here."
+            },
+            {
+              "ref": "1 Cor 13:12",
+              "note": "Paul’s mirror-and-face-to-face imagery in 1 Cor 13 anticipates the unveiled-face imagery of 2 Cor 3:18: both passages describe the progressive clarification of the believer’s perception of God."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -264,6 +273,9 @@
               "note": "Harris provides the most meticulous exegesis of vv. 12–18, addressing the multiple interpretive cruxes: (1) the purpose of Moses’ veil (concealment of fading glory, not protection from brightness); (2) the referent of ‘the Lord’ in v. 16 (Christ, identified with the Yahweh of Exod 34:34); (3) the meaning of ‘the Lord is the Spirit’ (functional, not ontological identification); (4) the sense of katoptrizomenoi in v. 18 (beholding, not reflecting). Harris argues that v. 18 is the theological summit of chs. 3–4: the new-covenant community is defined by unveiled, transformative encounter with divine glory through the Spirit."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul’s typological interpretation of the Mosaic veil is one of the boldest hermeneutical moves in the NT. He argues that Moses veiled his face not to shield the Israelites from unbearable brightness but to prevent them from seeing that the glory was fading (v. 13). The veil thus becomes a symbol of the old covenant’s concealment of its own obsolescence. Paul then extends the metaphor: the same veil remains ‘when the old covenant is read’ (v. 14)—unbelieving Jews cannot perceive that the old covenant has been fulfilled in Christ. The removal of the veil occurs ‘whenever anyone turns to the Lord’ (v. 16). The climactic verse (v. 18) shifts from Moses to all believers: with unveiled faces, they contemplate the Lord’s glory and are progressively transformed into his image."
         }
       }
     }

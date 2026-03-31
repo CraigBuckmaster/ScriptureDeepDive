@@ -37,25 +37,26 @@
             "paragraph": "Partakers of the divine nature - a striking phrase. Believers share in God's nature, escaping the corruption of the world."
           }
         ],
-        "ctx": "Peter, servant and apostle, writes to those who have obtained a faith of equal value through the righteousness of our God and Savior Jesus Christ. Grace and peace are multiplied through knowledge. His divine power has granted everything for life and godliness through knowledge of him who called us by his glory and excellence. Through these he has granted precious promises, that believers may become partakers of the divine nature, escaping worldly corruption.",
-        "cross": [
-          {
-            "ref": "Titus 2:13",
-            "note": "Our great God and Savior Jesus Christ."
-          },
-          {
-            "ref": "2 Corinthians 1:20",
-            "note": "All the promises of God find their Yes in him."
-          },
-          {
-            "ref": "Romans 8:29",
-            "note": "Conformed to the image of his Son."
-          },
-          {
-            "ref": "Colossians 1:27",
-            "note": "Christ in you, the hope of glory."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Titus 2:13",
+              "note": "Our great God and Savior Jesus Christ."
+            },
+            {
+              "ref": "2 Corinthians 1:20",
+              "note": "All the promises of God find their Yes in him."
+            },
+            {
+              "ref": "Romans 8:29",
+              "note": "Conformed to the image of his Son."
+            },
+            {
+              "ref": "Colossians 1:27",
+              "note": "Christ in you, the hope of glory."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -113,7 +114,10 @@
             }
           ]
         },
-        "hist": "Second Peter addresses the threat of false teachers who deny Christ's return (parousia) and promote moral license. The author presents himself as the apostle Peter writing shortly before his death (1:14), though many scholars date the letter later due to its developed theology, reference to Paul's letters as 'Scripture' (3:16), and literary dependence on Jude. The false teachers mock the delay of Christ's return ('Where is the promise of his coming?' 3:4) and use this skepticism to justify immoral living. The letter defends apostolic eyewitness testimony (1:16-18), warns of judgment using Old Testament examples (2:4-10), and explains that God's patience allows time for repentance (3:9)."
+        "hist": {
+          "historical": "Second Peter addresses the threat of false teachers who deny Christ's return (parousia) and promote moral license. The author presents himself as the apostle Peter writing shortly before his death (1:14), though many scholars date the letter later due to its developed theology, reference to Paul's letters as 'Scripture' (3:16), and literary dependence on Jude. The false teachers mock the delay of Christ's return ('Where is the promise of his coming?' 3:4) and use this skepticism to justify immoral living. The letter defends apostolic eyewitness testimony (1:16-18), warns of judgment using Old Testament examples (2:4-10), and explains that God's patience allows time for repentance (3:9).",
+          "context": "Peter, servant and apostle, writes to those who have obtained a faith of equal value through the righteousness of our God and Savior Jesus Christ. Grace and peace are multiplied through knowledge. His divine power has granted everything for life and godliness through knowledge of him who called us by his glory and excellence. Through these he has granted precious promises, that believers may become partakers of the divine nature, escaping worldly corruption."
+        }
       }
     },
     {
@@ -142,25 +146,26 @@
             "paragraph": "Make your calling and election sure (bebaios) - not that election is uncertain but that assurance comes through diligent pursuit of virtue."
           }
         ],
-        "ctx": "For this reason, believers must make every effort to supplement faith with virtue, knowledge, self-control, steadfastness, godliness, brotherly affection, and love. If these qualities are present and increasing, they prevent ineffectiveness and unfruitfulness in knowing Christ. Whoever lacks them is blind, having forgotten cleansing from past sins. Therefore be diligent to confirm calling and election, for those who practice these things will never fall. Entry into the eternal kingdom will be richly provided.",
-        "cross": [
-          {
-            "ref": "Galatians 5:22-23",
-            "note": "The fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control."
-          },
-          {
-            "ref": "Philippians 2:12",
-            "note": "Work out your own salvation with fear and trembling."
-          },
-          {
-            "ref": "Hebrews 6:11",
-            "note": "Show the same earnestness to have the full assurance of hope."
-          },
-          {
-            "ref": "James 2:17",
-            "note": "Faith by itself, if it does not have works, is dead."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Galatians 5:22-23",
+              "note": "The fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control."
+            },
+            {
+              "ref": "Philippians 2:12",
+              "note": "Work out your own salvation with fear and trembling."
+            },
+            {
+              "ref": "Hebrews 6:11",
+              "note": "Show the same earnestness to have the full assurance of hope."
+            },
+            {
+              "ref": "James 2:17",
+              "note": "Faith by itself, if it does not have works, is dead."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -221,6 +226,9 @@
               "note": "Davids notes that the virtue list resembles Stoic catalogs but is reoriented around faith and love. Greek form serves Christian content."
             }
           ]
+        },
+        "hist": {
+          "context": "For this reason, believers must make every effort to supplement faith with virtue, knowledge, self-control, steadfastness, godliness, brotherly affection, and love. If these qualities are present and increasing, they prevent ineffectiveness and unfruitfulness in knowing Christ. Whoever lacks them is blind, having forgotten cleansing from past sins. Therefore be diligent to confirm calling and election, for those who practice these things will never fall. Entry into the eternal kingdom will be richly provided."
         }
       }
     },
@@ -250,25 +258,26 @@
             "paragraph": "Until the day dawns and the morning star rises in your hearts - the second coming brings full illumination."
           }
         ],
-        "ctx": "Peter intends to remind them of these things repeatedly, knowing that his departure is imminent as Christ revealed. He wants them to recall these truths after his death. The apostles did not follow cleverly devised myths but were eyewitnesses of Christ's majesty at the Transfiguration. They heard the voice from heaven: This is my beloved Son. They have the prophetic word more fully confirmed. Prophecy did not come by human will but by the Holy Spirit speaking through men.",
-        "cross": [
-          {
-            "ref": "Matthew 17:1-5",
-            "note": "The Transfiguration on the mountain."
-          },
-          {
-            "ref": "John 21:18-19",
-            "note": "Jesus foretells Peter's death."
-          },
-          {
-            "ref": "2 Timothy 3:16",
-            "note": "All Scripture is breathed out by God."
-          },
-          {
-            "ref": "Luke 9:31",
-            "note": "Moses and Elijah spoke of his departure (exodus)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matthew 17:1-5",
+              "note": "The Transfiguration on the mountain."
+            },
+            {
+              "ref": "John 21:18-19",
+              "note": "Jesus foretells Peter's death."
+            },
+            {
+              "ref": "2 Timothy 3:16",
+              "note": "All Scripture is breathed out by God."
+            },
+            {
+              "ref": "Luke 9:31",
+              "note": "Moses and Elijah spoke of his departure (exodus)."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -333,6 +342,9 @@
               "note": "Davids emphasizes that Peter's testimony is not myth (mythos) but history (epoptai). The Transfiguration was real."
             }
           ]
+        },
+        "hist": {
+          "context": "Peter intends to remind them of these things repeatedly, knowing that his departure is imminent as Christ revealed. He wants them to recall these truths after his death. The apostles did not follow cleverly devised myths but were eyewitnesses of Christ's majesty at the Transfiguration. They heard the voice from heaven: This is my beloved Son. They have the prophetic word more fully confirmed. Prophecy did not come by human will but by the Holy Spirit speaking through men."
         }
       }
     }

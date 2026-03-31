@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 12,
       "panels": {
-        "ctx": "The Queen of Sheba visits to test Solomon’s wisdom. She is overwhelmed: “Not even half the greatness of your wisdom was told me.” She gives 120 talents of gold, enormous quantities of spices, and precious stones. Solomon gives her “more than she had brought to him.” The exchange demonstrates Solomon’s kingdom as a magnet for the world’s wealth and wisdom — the ideal king whose splendour draws international pilgrimage.",
-        "cross": [
-          {
-            "ref": "1 Kgs 10:1‐13",
-            "note": "The parallel, nearly identical. Both traditions preserve the Sheba visit as the pinnacle of Solomon’s reputation."
-          },
-          {
-            "ref": "Matt 12:42",
-            "note": "“The Queen of the South came from the ends of the earth to hear Solomon’s wisdom, and now something greater than Solomon is here.” Jesus cites this episode."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 10:1‐13",
+              "note": "The parallel, nearly identical. Both traditions preserve the Sheba visit as the pinnacle of Solomon’s reputation."
+            },
+            {
+              "ref": "Matt 12:42",
+              "note": "“The Queen of the South came from the ends of the earth to hear Solomon’s wisdom, and now something greater than Solomon is here.” Jesus cites this episode."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "Sheba is most likely Saba in southwestern Arabia (modern Yemen). Arabian trade routes brought spices, gold, and precious stones — exactly the gifts the queen brings."
             }
           ]
+        },
+        "hist": {
+          "context": "The Queen of Sheba visits to test Solomon’s wisdom. She is overwhelmed: “Not even half the greatness of your wisdom was told me.” She gives 120 talents of gold, enormous quantities of spices, and precious stones. Solomon gives her “more than she had brought to him.” The exchange demonstrates Solomon’s kingdom as a magnet for the world’s wealth and wisdom — the ideal king whose splendour draws international pilgrimage."
         }
       }
     },
@@ -54,13 +58,14 @@
       "verse_start": 13,
       "verse_end": 31,
       "panels": {
-        "ctx": "Solomon receives 666 talents of gold annually. His throne of ivory and gold has six steps and twelve lions. “Nothing was made of silver, because silver was considered of little value.” The Chronicler omits Solomon’s apostasy (1 Kgs 11:1–13): no foreign wives leading him to worship other gods, no Ashtoreth or Molek, no divine anger. The Chronicler’s Solomon dies in glory without a single moral blemish. “He rested with his ancestors... and Rehoboam succeeded him.”",
-        "cross": [
-          {
-            "ref": "1 Kgs 10:14‐29; 11:1–43",
-            "note": "Kings includes Solomon’s apostasy and God’s anger. The Chronicler omits all of chapter 11’s negative material."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 10:14‐29; 11:1–43",
+              "note": "Kings includes Solomon’s apostasy and God’s anger. The Chronicler omits all of chapter 11’s negative material."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -78,6 +83,9 @@
               "note": "The 4,000 stalls (vs. 1 Kgs 4:26’s 40,000) is likely a more historically plausible figure. Archaeological findings at Megiddo suggest capacity for several hundred horses, not thousands."
             }
           ]
+        },
+        "hist": {
+          "context": "Solomon receives 666 talents of gold annually. His throne of ivory and gold has six steps and twelve lions. “Nothing was made of silver, because silver was considered of little value.” The Chronicler omits Solomon’s apostasy (1 Kgs 11:1–13): no foreign wives leading him to worship other gods, no Ashtoreth or Molek, no divine anger. The Chronicler’s Solomon dies in glory without a single moral blemish. “He rested with his ancestors... and Rehoboam succeeded him.”"
         }
       }
     }

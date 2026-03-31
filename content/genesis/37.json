@@ -40,22 +40,26 @@
             "paragraph": "The brothers' jealousy (qin'āh) is the same root as God's own jealousy for his covenant people (Exod 20:5). Misdirected passion for honor drives them to sell their own brother."
           }
         ],
-        "hist": "The Joseph cycle (ch.37-50) is the longest sustained narrative in Genesis, with many features of a novella: psychological complexity, plot reversals, ironic symmetry, and a theological argument built through accumulated plot events rather than explicit divine speech. Joseph is the pivotal figure who bridges the patriarchal era and the Egyptian era of Israel's history. His dreams and their fulfillment drive the plot; his character — capable, faithful, wronged, and ultimately forgiving — is the moral centre of the cycle.",
-        "ctx": "The Joseph narrative opens with the same family dynamics that structured the Jacob narrative: parental favoritism (Isaac preferred Esau; Jacob prefers Joseph), sibling rivalry, and the younger son's elevation. But where Jacob stole his position through deception, Joseph's elevation comes through divine dreams and providential suffering. The two dreams (sheaves bowing, heavenly bodies bowing) frame the entire narrative — they will not be fulfilled until 42:6 and 43:26 when the brothers bow before Joseph in Egypt.",
-        "cross": [
-          {
-            "ref": "Gen 42:6; 43:26",
-            "note": "The dream fulfillments: brothers bow before Joseph the governor."
-          },
-          {
-            "ref": "Psalm 105:17–19",
-            "note": "The Psalm retrospectively identifies Joseph's suffering as God's testing: \"He had sent a man before them — Joseph, sold as a slave... until what he foretold came to pass.\""
-          },
-          {
-            "ref": "Acts 7:9–10",
-            "note": "Stephen's sermon: \"The patriarchs, jealous of Joseph, sold him into Egypt. But God was with him.\""
-          }
-        ],
+        "hist": {
+          "historical": "The Joseph cycle (ch.37-50) is the longest sustained narrative in Genesis, with many features of a novella: psychological complexity, plot reversals, ironic symmetry, and a theological argument built through accumulated plot events rather than explicit divine speech. Joseph is the pivotal figure who bridges the patriarchal era and the Egyptian era of Israel's history. His dreams and their fulfillment drive the plot; his character — capable, faithful, wronged, and ultimately forgiving — is the moral centre of the cycle.",
+          "context": "The Joseph narrative opens with the same family dynamics that structured the Jacob narrative: parental favoritism (Isaac preferred Esau; Jacob prefers Joseph), sibling rivalry, and the younger son's elevation. But where Jacob stole his position through deception, Joseph's elevation comes through divine dreams and providential suffering. The two dreams (sheaves bowing, heavenly bodies bowing) frame the entire narrative — they will not be fulfilled until 42:6 and 43:26 when the brothers bow before Joseph in Egypt."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 42:6; 43:26",
+              "note": "The dream fulfillments: brothers bow before Joseph the governor."
+            },
+            {
+              "ref": "Psalm 105:17–19",
+              "note": "The Psalm retrospectively identifies Joseph's suffering as God's testing: \"He had sent a man before them — Joseph, sold as a slave... until what he foretold came to pass.\""
+            },
+            {
+              "ref": "Acts 7:9–10",
+              "note": "Stephen's sermon: \"The patriarchs, jealous of Joseph, sold him into Egypt. But God was with him.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -151,26 +155,30 @@
             "paragraph": "The price of a slave aged 5–20 according to Leviticus 27:5. Joseph was seventeen — the brothers received the legal minimum for a young male slave. This price is later echoed in Zechariah's thirty pieces (Zech 11:12–13) and Judas's betrayal."
           }
         ],
-        "hist": "The plot to kill Joseph and its modification into sale is a carefully constructed scene of moral deterioration and partial restraint. Reuben's plan to rescue Joseph (v.22) and Judah's alternative of selling rather than killing (v.26-27) both represent partial virtue — they cannot save Joseph from harm but they save him from death. The Ishmaelite/Midianite traders who carry Joseph to Egypt are themselves descendants of Abraham — the irony that the covenant people is sold into slavery through Abraham's descendants is one of Genesis's most pointed.",
-        "ctx": "The pit scene is layered with irony: the dreamer is thrown into an empty pit — the same Hebrew word (bōr) used for the grave. The brothers sit down to eat while Joseph is in the pit (v.25) — an echo of Esau's selling his birthright for food. Reuben's plan to rescue Joseph (v.21) is frustrated by his absence (v.29) — he bears the guilt of failing to act decisively. Judah's compromise (sell him rather than kill him, v.26) is presented as the \"better\" option, but it still amounts to betrayal. No brother emerges with moral credit.",
-        "cross": [
-          {
-            "ref": "Gen 50:20",
-            "note": "Joseph's definitive theological interpretation: \"You intended to harm me, but God intended it for good.\""
-          },
-          {
-            "ref": "Psalm 105:17",
-            "note": "God \"sent a man before them — Joseph, sold as a slave.\" The Psalm reads the sale as divine sending."
-          },
-          {
-            "ref": "Matt 27:3–10",
-            "note": "Judas's thirty pieces of silver echo Joseph's twenty — both are betrayals of the innocent for money."
-          },
-          {
-            "ref": "Acts 7:9",
-            "note": "Stephen cites the brothers' jealousy as the mechanism of God's providential plan for Israel's salvation."
-          }
-        ],
+        "hist": {
+          "historical": "The plot to kill Joseph and its modification into sale is a carefully constructed scene of moral deterioration and partial restraint. Reuben's plan to rescue Joseph (v.22) and Judah's alternative of selling rather than killing (v.26-27) both represent partial virtue — they cannot save Joseph from harm but they save him from death. The Ishmaelite/Midianite traders who carry Joseph to Egypt are themselves descendants of Abraham — the irony that the covenant people is sold into slavery through Abraham's descendants is one of Genesis's most pointed.",
+          "context": "The pit scene is layered with irony: the dreamer is thrown into an empty pit — the same Hebrew word (bōr) used for the grave. The brothers sit down to eat while Joseph is in the pit (v.25) — an echo of Esau's selling his birthright for food. Reuben's plan to rescue Joseph (v.21) is frustrated by his absence (v.29) — he bears the guilt of failing to act decisively. Judah's compromise (sell him rather than kill him, v.26) is presented as the \"better\" option, but it still amounts to betrayal. No brother emerges with moral credit."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 50:20",
+              "note": "Joseph's definitive theological interpretation: \"You intended to harm me, but God intended it for good.\""
+            },
+            {
+              "ref": "Psalm 105:17",
+              "note": "God \"sent a man before them — Joseph, sold as a slave.\" The Psalm reads the sale as divine sending."
+            },
+            {
+              "ref": "Matt 27:3–10",
+              "note": "Judas's thirty pieces of silver echo Joseph's twenty — both are betrayals of the innocent for money."
+            },
+            {
+              "ref": "Acts 7:9",
+              "note": "Stephen cites the brothers' jealousy as the mechanism of God's providential plan for Israel's salvation."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Dothan",
@@ -273,26 +281,30 @@
             "paragraph": "The price of a slave aged 5–20 according to Leviticus 27:5. Joseph was seventeen — the brothers received the legal minimum for a young male slave. This price is later echoed in Zechariah's thirty pieces (Zech 11:12–13) and Judas's betrayal."
           }
         ],
-        "hist": "The double deception at the end of Genesis 37 — the goat's blood on the coat presented to Jacob, and Potiphar buying Joseph in Egypt — is the chapter's final irony. Jacob, who deceived his father with goat skins (27:16), is now deceived by his sons with goat's blood. The same animal, the same father-son relationship, the same mechanism of deception. The coat that was the symbol of Jacob's unjust favouritism is now the instrument of the retribution.",
-        "ctx": "The pit scene is layered with irony: the dreamer is thrown into an empty pit — the same Hebrew word (bōr) used for the grave. The brothers sit down to eat while Joseph is in the pit (v.25) — an echo of Esau's selling his birthright for food. Reuben's plan to rescue Joseph (v.21) is frustrated by his absence (v.29) — he bears the guilt of failing to act decisively. Judah's compromise (sell him rather than kill him, v.26) is presented as the \"better\" option, but it still amounts to betrayal. No brother emerges with moral credit.",
-        "cross": [
-          {
-            "ref": "Gen 50:20",
-            "note": "Joseph's definitive theological interpretation: \"You intended to harm me, but God intended it for good.\""
-          },
-          {
-            "ref": "Psalm 105:17",
-            "note": "God \"sent a man before them — Joseph, sold as a slave.\" The Psalm reads the sale as divine sending."
-          },
-          {
-            "ref": "Matt 27:3–10",
-            "note": "Judas's thirty pieces of silver echo Joseph's twenty — both are betrayals of the innocent for money."
-          },
-          {
-            "ref": "Acts 7:9",
-            "note": "Stephen cites the brothers' jealousy as the mechanism of God's providential plan for Israel's salvation."
-          }
-        ],
+        "hist": {
+          "historical": "The double deception at the end of Genesis 37 — the goat's blood on the coat presented to Jacob, and Potiphar buying Joseph in Egypt — is the chapter's final irony. Jacob, who deceived his father with goat skins (27:16), is now deceived by his sons with goat's blood. The same animal, the same father-son relationship, the same mechanism of deception. The coat that was the symbol of Jacob's unjust favouritism is now the instrument of the retribution.",
+          "context": "The pit scene is layered with irony: the dreamer is thrown into an empty pit — the same Hebrew word (bōr) used for the grave. The brothers sit down to eat while Joseph is in the pit (v.25) — an echo of Esau's selling his birthright for food. Reuben's plan to rescue Joseph (v.21) is frustrated by his absence (v.29) — he bears the guilt of failing to act decisively. Judah's compromise (sell him rather than kill him, v.26) is presented as the \"better\" option, but it still amounts to betrayal. No brother emerges with moral credit."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 50:20",
+              "note": "Joseph's definitive theological interpretation: \"You intended to harm me, but God intended it for good.\""
+            },
+            {
+              "ref": "Psalm 105:17",
+              "note": "God \"sent a man before them — Joseph, sold as a slave.\" The Psalm reads the sale as divine sending."
+            },
+            {
+              "ref": "Matt 27:3–10",
+              "note": "Judas's thirty pieces of silver echo Joseph's twenty — both are betrayals of the innocent for money."
+            },
+            {
+              "ref": "Acts 7:9",
+              "note": "Stephen cites the brothers' jealousy as the mechanism of God's providential plan for Israel's salvation."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [

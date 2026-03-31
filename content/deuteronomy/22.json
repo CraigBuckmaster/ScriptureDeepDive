@@ -31,17 +31,18 @@
             "paragraph": "The prohibition of mixed kinds -- sha'atnez (wool and linen mixed), different seeds in one vineyard, ox and donkey ploughing together -- enforces categorical distinctions that are part of creation's structure. The laws embody a theology of categories: God created by distinguishing, and his people must respect those distinctions."
           }
         ],
-        "ctx": "Chapter 22 covers a wide range of laws. The opening section addresses: returning lost property (vv.1-4), prohibition of cross-dressing (v.5), not taking a mother bird with eggs (vv.6-7), roof parapets for safety (v.8), and mixed-kinds laws (vv.9-12). These laws share a common principle: respect the distinctions God has built into creation and protect life wherever it appears -- lost animals, birds' nests, human lives on flat rooftops.",
-        "cross": [
-          {
-            "ref": "Matt 10:29-31",
-            "note": "\"Are not two sparrows sold for a penny? Yet not one of them will fall to the ground outside your Father's care.\" Jesus' statement about sparrows echoes the mother-bird law's concern for even small creatures."
-          },
-          {
-            "ref": "Rom 13:10",
-            "note": "\"Love does no harm to a neighbour. Therefore love is the fulfilment of the law.\" Paul's summary of love-as-law-fulfilment captures the principle behind Deuteronomy 22's practical love-for-neighbour legislation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 10:29-31",
+              "note": "\"Are not two sparrows sold for a penny? Yet not one of them will fall to the ground outside your Father's care.\" Jesus' statement about sparrows echoes the mother-bird law's concern for even small creatures."
+            },
+            {
+              "ref": "Rom 13:10",
+              "note": "\"Love does no harm to a neighbour. Therefore love is the fulfilment of the law.\" Paul's summary of love-as-law-fulfilment captures the principle behind Deuteronomy 22's practical love-for-neighbour legislation."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 22 covers a wide range of laws. The opening section addresses: returning lost property (vv.1-4), prohibition of cross-dressing (v.5), not taking a mother bird with eggs (vv.6-7), roof parapets for safety (v.8), and mixed-kinds laws (vv.9-12). These laws share a common principle: respect the distinctions God has built into creation and protect life wherever it appears -- lost animals, birds' nests, human lives on flat rooftops."
         }
       }
     },
@@ -131,17 +135,18 @@
             "paragraph": "The sexual dignity laws use \"Israel\" -- defiling a woman is not merely a private wrong but a communal and covenantal offence. Sexual integrity is a corporate covenant matter. The phrase \"a disgraceful thing in Israel\" appears repeatedly as the covenant community's verdict on sexual violation."
           }
         ],
-        "ctx": "The sexual laws address: a husband's false accusation of his wife (vv.13-21), adultery (v.22), sexual assault in city and field (vv.23-27), rape of an unmarried woman (vv.28-29), and sex with a father's wife (v.30). The laws consistently protect women's dignity and sexual integrity while imposing severe penalties on violators. The distinction between city assault (presumed complicit) and field assault (presumed non-complicit) reflects a presumption of innocence for the party who could not have been heard if she cried out.",
-        "cross": [
-          {
-            "ref": "Matt 5:27-28",
-            "note": "\"You have heard that it was said, 'You shall not commit adultery.' But I tell you that anyone who looks at a woman lustfully has already committed adultery with her in his heart.\" Jesus deepens the Deuteronomy 22 sexual ethics from the act to the intent."
-          },
-          {
-            "ref": "1 Cor 6:18-20",
-            "note": "\"Flee from sexual immorality... your bodies are temples of the Holy Spirit.\" Paul's sexual ethics are grounded in the same corporate-body theology as Deuteronomy 22 -- sexual sin affects the covenant community, not just the individual."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 5:27-28",
+              "note": "\"You have heard that it was said, 'You shall not commit adultery.' But I tell you that anyone who looks at a woman lustfully has already committed adultery with her in his heart.\" Jesus deepens the Deuteronomy 22 sexual ethics from the act to the intent."
+            },
+            {
+              "ref": "1 Cor 6:18-20",
+              "note": "\"Flee from sexual immorality... your bodies are temples of the Holy Spirit.\" Paul's sexual ethics are grounded in the same corporate-body theology as Deuteronomy 22 -- sexual sin affects the covenant community, not just the individual."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -210,6 +215,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "The sexual laws address: a husband's false accusation of his wife (vv.13-21), adultery (v.22), sexual assault in city and field (vv.23-27), rape of an unmarried woman (vv.28-29), and sex with a father's wife (v.30). The laws consistently protect women's dignity and sexual integrity while imposing severe penalties on violators. The distinction between city assault (presumed complicit) and field assault (presumed non-complicit) reflects a presumption of innocence for the party who could not have been heard if she cried out."
         }
       }
     }

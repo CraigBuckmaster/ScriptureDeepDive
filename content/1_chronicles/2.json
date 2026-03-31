@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 17,
       "panels": {
-        "ctx": "The twelve sons of Israel are listed, then the focus narrows sharply to Judah. The line runs through Perez (born from Judah and Tamar) to Hezron to Ram to Jesse to David. The Chronicler is building a genealogical highway from Israel to the throne. Judah receives more genealogical attention than any other tribe — 55 verses in this chapter alone — because Judah carries the royal promise (Gen 49:10).",
-        "cross": [
-          {
-            "ref": "Gen 49:10",
-            "note": "“The sceptre will not depart from Judah.” The Chronicler’s emphasis on Judah’s genealogy reflects this patriarchal blessing."
-          },
-          {
-            "ref": "Ruth 4:18–22",
-            "note": "The Perez-to-David genealogy at the end of Ruth matches 1 Chr 2:5–16 exactly. Both texts establish the Davidic line through Perez."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 49:10",
+              "note": "“The sceptre will not depart from Judah.” The Chronicler’s emphasis on Judah’s genealogy reflects this patriarchal blessing."
+            },
+            {
+              "ref": "Ruth 4:18–22",
+              "note": "The Perez-to-David genealogy at the end of Ruth matches 1 Chr 2:5–16 exactly. Both texts establish the Davidic line through Perez."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "The numbering of David as the “seventh” differs from 1 Sam 16:10–11 and 17:12 (which imply eight sons of Jesse). Various explanations include an early death of one brother or different counting traditions."
             }
           ]
+        },
+        "hist": {
+          "context": "The twelve sons of Israel are listed, then the focus narrows sharply to Judah. The line runs through Perez (born from Judah and Tamar) to Hezron to Ram to Jesse to David. The Chronicler is building a genealogical highway from Israel to the throne. Judah receives more genealogical attention than any other tribe — 55 verses in this chapter alone — because Judah carries the royal promise (Gen 49:10)."
         }
       }
     },
@@ -54,13 +58,14 @@
       "verse_start": 18,
       "verse_end": 55,
       "panels": {
-        "ctx": "The genealogy expands into the sub-clans of Hezron — Caleb, Jerahmeel, and others — tracing the settlement patterns of Judahite families in the hill country. These verses read like a tribal land registry: family names are attached to towns and territories. For the post-exilic community, this material answers the practical question: which families belong to which territories? The genealogy is a property deed dressed as a family tree.",
-        "cross": [
-          {
-            "ref": "Josh 15:13–19",
-            "note": "Caleb’s allotment in Judah’s territory. The Chronicler traces Caleb’s descendants through their settlements, connecting people to places."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 15:13–19",
+              "note": "Caleb’s allotment in Judah’s territory. The Chronicler traces Caleb’s descendants through their settlements, connecting people to places."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -78,6 +83,9 @@
               "note": "The “Kenites who came from Hammath” are linked to Recab, ancestor of the Recabites (Jer 35). Their inclusion within Judah’s genealogy reflects long-standing alliance and assimilation."
             }
           ]
+        },
+        "hist": {
+          "context": "The genealogy expands into the sub-clans of Hezron — Caleb, Jerahmeel, and others — tracing the settlement patterns of Judahite families in the hill country. These verses read like a tribal land registry: family names are attached to towns and territories. For the post-exilic community, this material answers the practical question: which families belong to which territories? The genealogy is a property deed dressed as a family tree."
         }
       }
     }

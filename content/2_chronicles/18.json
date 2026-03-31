@@ -17,17 +17,18 @@
       "verse_start": 1,
       "verse_end": 17,
       "panels": {
-        "ctx": "Jehoshaphat allies with Ahab through marriage and joins him to attack Ramoth Gilead. 400 prophets say “Go!” Jehoshaphat asks: “Is there no longer a prophet of the LORD?” Micaiah is summoned. The messenger tells Micaiah to agree with the majority; Micaiah refuses: “As surely as the LORD lives, I can tell him only what my God says.” The Chronicler follows 1 Kings 22 closely — Micaiah’s integrity is too important to modify.",
-        "cross": [
-          {
-            "ref": "1 Kgs 22:1–18",
-            "note": "Nearly word-for-word parallel with the Kings account of Micaiah versus the 400 prophets. The Chronicler follows Kings closely here because the story already illustrates his themes: true vs. false prophecy."
-          },
-          {
-            "ref": "Jer 23:16–22",
-            "note": "Jeremiah's condemnation of prophets who 'speak visions from their own minds, not from the mouth of the LORD' provides the theological framework for understanding the 400 false prophets."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 22:1–18",
+              "note": "Nearly word-for-word parallel with the Kings account of Micaiah versus the 400 prophets. The Chronicler follows Kings closely here because the story already illustrates his themes: true vs. false prophecy."
+            },
+            {
+              "ref": "Jer 23:16–22",
+              "note": "Jeremiah's condemnation of prophets who 'speak visions from their own minds, not from the mouth of the LORD' provides the theological framework for understanding the 400 false prophets."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -45,6 +46,9 @@
               "note": "The Chronicler’s characteristic vocabulary and theological framework shape the presentation of these events."
             }
           ]
+        },
+        "hist": {
+          "context": "Jehoshaphat allies with Ahab through marriage and joins him to attack Ramoth Gilead. 400 prophets say “Go!” Jehoshaphat asks: “Is there no longer a prophet of the LORD?” Micaiah is summoned. The messenger tells Micaiah to agree with the majority; Micaiah refuses: “As surely as the LORD lives, I can tell him only what my God says.” The Chronicler follows 1 Kings 22 closely — Micaiah’s integrity is too important to modify."
         }
       }
     },
@@ -54,17 +58,18 @@
       "verse_start": 18,
       "verse_end": 34,
       "panels": {
-        "ctx": "Micaiah reveals a vision: a lying spirit in the mouths of Ahab’s prophets. Ahab disguises himself; a random arrow kills him. Jehoshaphat escapes — “the LORD helped him, and God drew them away from him.” The Chronicler adds this theological note absent from Kings: Jehoshaphat cried out and God intervened. Even in the consequences of a bad alliance, the seeker of God receives protection.",
-        "cross": [
-          {
-            "ref": "1 Kgs 22:19–38",
-            "note": "The Kings parallel includes Ahab's death in identical detail. Chronicles omits the dogs licking his blood (1 Kgs 22:38), keeping focus on divine sovereignty rather than gruesome aftermath."
-          },
-          {
-            "ref": "Job 1:6–12",
-            "note": "The heavenly council scene — where a spirit volunteers to be a lying spirit — parallels Job's divine council, where the satan receives permission to test Job. Both passages reveal unseen spiritual dynamics behind earthly events."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 22:19–38",
+              "note": "The Kings parallel includes Ahab's death in identical detail. Chronicles omits the dogs licking his blood (1 Kgs 22:38), keeping focus on divine sovereignty rather than gruesome aftermath."
+            },
+            {
+              "ref": "Job 1:6–12",
+              "note": "The heavenly council scene — where a spirit volunteers to be a lying spirit — parallels Job's divine council, where the satan receives permission to test Job. Both passages reveal unseen spiritual dynamics behind earthly events."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -82,6 +87,9 @@
               "note": "The Chronicler’s characteristic vocabulary and theological framework shape the presentation of these events."
             }
           ]
+        },
+        "hist": {
+          "context": "Micaiah reveals a vision: a lying spirit in the mouths of Ahab’s prophets. Ahab disguises himself; a random arrow kills him. Jehoshaphat escapes — “the LORD helped him, and God drew them away from him.” The Chronicler adds this theological note absent from Kings: Jehoshaphat cried out and God intervened. Even in the consequences of a bad alliance, the seeker of God receives protection."
         }
       }
     }

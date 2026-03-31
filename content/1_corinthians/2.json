@@ -31,21 +31,22 @@
             "paragraph": "The noun apodeixis (demonstration) in v. 4 is a technical term from Greek rhetoric and logic, designating the highest form of proof — a compelling, irrefutable demonstration. Paul’s irony is sharp: his preaching lacked the rhetorical apodeixis the Corinthians valued, yet it came with a superior demonstration — that of the Spirit’s power (pneumatos kai dynameōs). The proof of the gospel is not persuasive eloquence but transformed lives."
           }
         ],
-        "ctx": "Paul now illustrates the cross-centred epistemology of chapter 1 from his own missionary practice. When he first arrived in Corinth from Athens (Acts 17:15–18:1), he came ‘in weakness with great fear and trembling’ (v. 3). This autobiographical detail may reflect the aftermath of his apparently underwhelming reception in Athens (Acts 17:32–34) or the physical and emotional toll of his missionary travels. Corinth’s rhetorical culture would have made Paul’s lack of polish especially conspicuous; his opponents later mocked his bodily presence as ‘weak’ and his speech as ‘contemptible’ (2 Cor 10:10).",
-        "cross": [
-          {
-            "ref": "2 Cor 10:10",
-            "note": "Paul’s opponents in Corinth later used his unimpressive appearance and speech as evidence against his apostolic authority."
-          },
-          {
-            "ref": "Gal 4:13–14",
-            "note": "Paul reminds the Galatians that he first preached to them ‘because of an illness,’ another instance of the gospel mediated through bodily weakness."
-          },
-          {
-            "ref": "Acts 18:1–4",
-            "note": "The narrative of Paul’s arrival in Corinth, where he worked as a tentmaker with Aquila and Priscilla before beginning his preaching ministry."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Cor 10:10",
+              "note": "Paul’s opponents in Corinth later used his unimpressive appearance and speech as evidence against his apostolic authority."
+            },
+            {
+              "ref": "Gal 4:13–14",
+              "note": "Paul reminds the Galatians that he first preached to them ‘because of an illness,’ another instance of the gospel mediated through bodily weakness."
+            },
+            {
+              "ref": "Acts 18:1–4",
+              "note": "The narrative of Paul’s arrival in Corinth, where he worked as a tentmaker with Aquila and Priscilla before beginning his preaching ministry."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Thiselton observes that apodeixis in Aristotelian rhetoric denotes demonstrative proof from accepted premises. Paul co-opts the term to argue that the Spirit provides a superior form of demonstration — one that bypasses rational premises and operates directly on the hearer through divine power."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul now illustrates the cross-centred epistemology of chapter 1 from his own missionary practice. When he first arrived in Corinth from Athens (Acts 17:15–18:1), he came ‘in weakness with great fear and trembling’ (v. 3). This autobiographical detail may reflect the aftermath of his apparently underwhelming reception in Athens (Acts 17:32–34) or the physical and emotional toll of his missionary travels. Corinth’s rhetorical culture would have made Paul’s lack of polish especially conspicuous; his opponents later mocked his bodily presence as ‘weak’ and his speech as ‘contemptible’ (2 Cor 10:10)."
         }
       }
     },
@@ -137,25 +141,26 @@
             "paragraph": "The adjective psychikos (natural/unspiritual) in v. 14 derives from psychē (soul/life) and designates the person operating solely on the level of natural human capacity, without the illumination of God’s Spirit. It does not mean ‘soulish’ in a Platonic sense but ‘merely human.’ The psychikos person can appreciate human wisdom but cannot receive (dechomai) the things of God’s Spirit because they are spiritually discerned (pneumatikōs anakrinetai)."
           }
         ],
-        "ctx": "Paul now reveals that there is a genuine divine wisdom — but it is accessible only through the Spirit, not through human philosophical inquiry. The language of ‘rulers of this age’ (vv. 6, 8) may refer to human political authorities (Pilate, Caiaphas) who crucified Jesus in ignorance, or to demonic powers operating behind human rulers, or both. The quotation in v. 9 (‘What no eye has seen, what no ear has heard’) draws on Isa 64:4 and Isa 65:17 but is freely adapted, possibly through an intermediate source. Paul’s point is that the content of the gospel exceeds the capacity of unaided human cognition; it must be revealed by the Spirit.",
-        "cross": [
-          {
-            "ref": "Isa 64:4",
-            "note": "The primary source behind Paul’s quotation in v. 9, describing things beyond human perception that God has prepared for those who love him."
-          },
-          {
-            "ref": "John 14:26",
-            "note": "Jesus’ promise that the Holy Spirit will teach the disciples ‘all things’ parallels Paul’s teaching on the Spirit’s revelatory function."
-          },
-          {
-            "ref": "Rom 8:26–27",
-            "note": "The Spirit’s intercession for believers, searching hearts and minds, parallels the Spirit’s searching of the deep things of God described here."
-          },
-          {
-            "ref": "Isa 40:13",
-            "note": "Quoted in v. 16: ‘Who has known the mind of the Lord?’ Paul answers: those who have the Spirit, for ‘we have the mind of Christ.’"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 64:4",
+              "note": "The primary source behind Paul’s quotation in v. 9, describing things beyond human perception that God has prepared for those who love him."
+            },
+            {
+              "ref": "John 14:26",
+              "note": "Jesus’ promise that the Holy Spirit will teach the disciples ‘all things’ parallels Paul’s teaching on the Spirit’s revelatory function."
+            },
+            {
+              "ref": "Rom 8:26–27",
+              "note": "The Spirit’s intercession for believers, searching hearts and minds, parallels the Spirit’s searching of the deep things of God described here."
+            },
+            {
+              "ref": "Isa 40:13",
+              "note": "Quoted in v. 16: ‘Who has known the mind of the Lord?’ Paul answers: those who have the Spirit, for ‘we have the mind of Christ.’"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -228,6 +233,9 @@
               "note": "Thiselton draws on speech-act theory to argue that ‘the person without the Spirit does not accept the things of the Spirit’ describes an illocutionary failure: the words of the gospel reach the unspiritual hearer, but the transformative speech-act misfires because the conditions for reception (the Spirit) are absent."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul now reveals that there is a genuine divine wisdom — but it is accessible only through the Spirit, not through human philosophical inquiry. The language of ‘rulers of this age’ (vv. 6, 8) may refer to human political authorities (Pilate, Caiaphas) who crucified Jesus in ignorance, or to demonic powers operating behind human rulers, or both. The quotation in v. 9 (‘What no eye has seen, what no ear has heard’) draws on Isa 64:4 and Isa 65:17 but is freely adapted, possibly through an intermediate source. Paul’s point is that the content of the gospel exceeds the capacity of unaided human cognition; it must be revealed by the Spirit."
         }
       }
     }

@@ -25,17 +25,18 @@
             "paragraph": "\"Call to me and I will answer you and tell you great and unsearchable things (betsurот) you do not know\" (v.3). The root btsr means \"to fortify / make inaccessible.\" God promises to reveal things that are fortified against human discovery -- truths that cannot be reached by human effort but only by divine disclosure. This is revelation theology: truth comes from God, not from human investigation."
           }
         ],
-        "ctx": "Chapter 33 continues the consolation while Jeremiah is still confined in the courtyard of the guard. The famous call-and-answer promise (v.3) is followed by healing imagery: God will \"heal\" Jerusalem, \"let them enjoy abundant peace and security\" (v.6), and \"cleanse them from all the sin they have committed\" (v.8). The sounds of joy -- gladness, bride and bridegroom, thanksgiving -- will return to the desolate streets (v.11).",
-        "cross": [
-          {
-            "ref": "Jer 29:12",
-            "note": "\"You will call upon me and come and pray to me, and I will listen\" -- the same call-response dynamic from the letter to the exiles."
-          },
-          {
-            "ref": "Jas 1:5",
-            "note": "\"If any of you lacks wisdom, let him ask God\" -- the NT invitation to seek divine revelation through prayer."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 29:12",
+              "note": "\"You will call upon me and come and pray to me, and I will listen\" -- the same call-response dynamic from the letter to the exiles."
+            },
+            {
+              "ref": "Jas 1:5",
+              "note": "\"If any of you lacks wisdom, let him ask God\" -- the NT invitation to seek divine revelation through prayer."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -88,6 +89,9 @@
               "note": "Brueggemann identifies this as \"the epistemological charter of prophetic faith.\" Knowledge of the future does not come from analysis or prediction but from prayer. The hidden things are revealed to those who call."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 33 continues the consolation while Jeremiah is still confined in the courtyard of the guard. The famous call-and-answer promise (v.3) is followed by healing imagery: God will \"heal\" Jerusalem, \"let them enjoy abundant peace and security\" (v.6), and \"cleanse them from all the sin they have committed\" (v.8). The sounds of joy -- gladness, bride and bridegroom, thanksgiving -- will return to the desolate streets (v.11)."
         }
       }
     },
@@ -105,17 +109,18 @@
             "paragraph": "God will cause \"a righteous Branch (tsemakh tsedaqa) to sprout from David's line\" (v.15). This rephrases 23:5-6 with the addition of a double covenant guarantee: the Davidic dynasty and the Levitical priesthood will endure as long as the natural order (vv.20-21). The Branch is not merely a king but a royal-priestly figure."
           }
         ],
-        "ctx": "Verses 14-26 are absent from the LXX, suggesting they may be a later addition to the Hebrew text. Regardless of composition history, they serve a clear theological function: anchoring the messianic promise in creation theology. Just as God's covenant with day and night cannot be broken (v.20), so his covenant with David and the Levites cannot be broken. The permanence of the natural order guarantees the permanence of the messianic promise.",
-        "cross": [
-          {
-            "ref": "2 Sam 7:12-16",
-            "note": "The Davidic covenant -- \"your house and your kingdom will endure forever.\" Jeremiah reaffirms this promise during the dynasty's apparent collapse."
-          },
-          {
-            "ref": "Heb 7:11-17",
-            "note": "Jesus as priest in the order of Melchizedek fulfills both the Davidic (royal) and Levitical (priestly) strands that Jeremiah holds together."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 7:12-16",
+              "note": "The Davidic covenant -- \"your house and your kingdom will endure forever.\" Jeremiah reaffirms this promise during the dynasty's apparent collapse."
+            },
+            {
+              "ref": "Heb 7:11-17",
+              "note": "Jesus as priest in the order of Melchizedek fulfills both the Davidic (royal) and Levitical (priestly) strands that Jeremiah holds together."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -168,6 +173,9 @@
               "note": "Brueggemann reads the creation-covenant argument as \"the most audacious theological claim in the book.\" At the moment when the Davidic dynasty is about to end, the prophet declares it more permanent than the stars."
             }
           ]
+        },
+        "hist": {
+          "context": "Verses 14-26 are absent from the LXX, suggesting they may be a later addition to the Hebrew text. Regardless of composition history, they serve a clear theological function: anchoring the messianic promise in creation theology. Just as God's covenant with day and night cannot be broken (v.20), so his covenant with David and the Levites cannot be broken. The permanence of the natural order guarantees the permanence of the messianic promise."
         }
       }
     }

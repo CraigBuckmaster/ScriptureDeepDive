@@ -31,21 +31,22 @@
             "paragraph": "The verb τελειόω (teleioō, to make complete, to perfect) is central to Hebrews’ vocabulary. Applied to Christ (v. 9; cf. 2:10), it does not imply moral imperfection but vocational completion: through suffering and obedience, Christ was fully qualified as the source of eternal salvation. The same verb will describe what the Levitical system could never achieve (7:11, 19; 9:9; 10:1, 14)."
           }
         ],
-        "ctx": "The author first establishes the general principles of high priesthood (vv. 1–4): taken from among humans, appointed by God, able to deal gently with the ignorant because of his own weakness, obligated to offer sacrifice for his own sins as well as the people’s. Then he applies these criteria to Christ (vv. 5–10): Christ did not appoint himself but was designated by God (Ps 2:7; Ps 110:4), offered prayers with loud cries and tears (a probable reference to Gethsemane, though the garden is not named), learned obedience through suffering, and was made perfect to become the source of eternal salvation for all who obey him.",
-        "cross": [
-          {
-            "ref": "Psalm 110:4",
-            "note": "The divine oath that establishes an eternal priesthood after Melchizedek’s order is the single most important OT text for the letter’s argument, quoted here and developed extensively in ch. 7."
-          },
-          {
-            "ref": "Psalm 2:7",
-            "note": "Already used in 1:5, the sonship declaration reappears to ground Christ’s priestly appointment in divine decree rather than human lineage."
-          },
-          {
-            "ref": "Mark 14:32–42",
-            "note": "The Gethsemane scene—prayers, anguish, submission to the Father’s will—is the probable historical referent for ‘loud cries and tears’ in v. 7, though Hebrews never names the location."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Psalm 110:4",
+              "note": "The divine oath that establishes an eternal priesthood after Melchizedek’s order is the single most important OT text for the letter’s argument, quoted here and developed extensively in ch. 7."
+            },
+            {
+              "ref": "Psalm 2:7",
+              "note": "Already used in 1:5, the sonship declaration reappears to ground Christ’s priestly appointment in divine decree rather than human lineage."
+            },
+            {
+              "ref": "Mark 14:32–42",
+              "note": "The Gethsemane scene—prayers, anguish, submission to the Father’s will—is the probable historical referent for ‘loud cries and tears’ in v. 7, though Hebrews never names the location."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -103,7 +104,10 @@
             }
           ]
         },
-        "hist": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24)."
+        "hist": {
+          "historical": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24).",
+          "context": "The author first establishes the general principles of high priesthood (vv. 1–4): taken from among humans, appointed by God, able to deal gently with the ignorant because of his own weakness, obligated to offer sacrifice for his own sins as well as the people’s. Then he applies these criteria to Christ (vv. 5–10): Christ did not appoint himself but was designated by God (Ps 2:7; Ps 110:4), offered prayers with loud cries and tears (a probable reference to Gethsemane, though the garden is not named), learned obedience through suffering, and was made perfect to become the source of eternal salvation for all who obey him."
+        }
       }
     },
     {
@@ -120,17 +124,18 @@
             "paragraph": "The adjective νωθρός (nōthros, sluggish) appears only here and in 6:12 in the NT. It describes not intellectual incapacity but willful indolence—a spiritual laziness that prevents the audience from digesting the solid food of Melchizedek theology. The rebuke is sharp: they should be teachers by now but instead need someone to re-teach them the elementary truths."
           }
         ],
-        "ctx": "The rebuke transitions the letter from exposition to exhortation and prepares for the most severe warning passage (6:1–12). The audience’s spiritual immaturity is not a matter of chronological newness (they have been believers long enough to be teachers) but of arrested development. The milk/solid-food metaphor was common in Greco-Roman philosophical and Jewish educational traditions (cf. 1 Cor 3:1–3; 1 Pet 2:2). The ‘elementary truths’ (τὰ στοιχεῖα τῆς ἀρχῆς) are the foundational teachings listed in 6:1–2.",
-        "cross": [
-          {
-            "ref": "1 Corinthians 3:1–3",
-            "note": "Paul’s parallel rebuke of the Corinthians as infants needing milk rather than solid food shares the same pedagogical metaphor and the same frustration with arrested spiritual growth."
-          },
-          {
-            "ref": "1 Peter 2:2–3",
-            "note": "Peter uses the milk metaphor positively: newborn believers should crave spiritual milk. Hebrews inverts the image: milk is appropriate for infants but not for those who should have matured."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Corinthians 3:1–3",
+              "note": "Paul’s parallel rebuke of the Corinthians as infants needing milk rather than solid food shares the same pedagogical metaphor and the same frustration with arrested spiritual growth."
+            },
+            {
+              "ref": "1 Peter 2:2–3",
+              "note": "Peter uses the milk metaphor positively: newborn believers should crave spiritual milk. Hebrews inverts the image: milk is appropriate for infants but not for those who should have matured."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -179,6 +184,9 @@
               "note": "The immaturity rebuke serves a double function: it explains why the Melchizedek exposition has been delayed (the audience is not ready for it) and motivates them to press forward. The milk/meat distinction is not content-based (simple truths vs. complex ones) but capacity-based: the mature have ‘trained their faculties’ (τὰ αἰσθητήρια γεγυμνασμένα, lit. ‘exercised their perception organs’) to discern good from evil—an athletic metaphor for spiritual discipline."
             }
           ]
+        },
+        "hist": {
+          "context": "The rebuke transitions the letter from exposition to exhortation and prepares for the most severe warning passage (6:1–12). The audience’s spiritual immaturity is not a matter of chronological newness (they have been believers long enough to be teachers) but of arrested development. The milk/solid-food metaphor was common in Greco-Roman philosophical and Jewish educational traditions (cf. 1 Cor 3:1–3; 1 Pet 2:2). The ‘elementary truths’ (τὰ στοιχεῖα τῆς ἀρχῆς) are the foundational teachings listed in 6:1–2."
         }
       }
     }

@@ -31,21 +31,22 @@
             "paragraph": "The trade catalogue in vv.12-25 is the most detailed inventory of ancient Near Eastern commerce in the Bible. Over 20 nations and their products are listed."
           }
         ],
-        "ctx": "Chapter 27 is a remarkable literary achievement: a funeral dirge for a city portrayed as a magnificent ship. The first section describes the ship’s construction from the finest materials of the known world, and the trade catalogue reads like a customs manifest of the ancient world.",
-        "cross": [
-          {
-            "ref": "1 Kgs 5:1-12",
-            "note": "Solomon’s alliance with Hiram of Tyre for temple construction."
-          },
-          {
-            "ref": "Rev 18:11-13",
-            "note": "Revelation’s list of trade goods is modelled directly on Ezekiel 27."
-          },
-          {
-            "ref": "Isa 23:1-4",
-            "note": "Isaiah’s Tyre oracle also focuses on maritime commerce."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kgs 5:1-12",
+              "note": "Solomon’s alliance with Hiram of Tyre for temple construction."
+            },
+            {
+              "ref": "Rev 18:11-13",
+              "note": "Revelation’s list of trade goods is modelled directly on Ezekiel 27."
+            },
+            {
+              "ref": "Isa 23:1-4",
+              "note": "Isaiah’s Tyre oracle also focuses on maritime commerce."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Zimmerli identifies two originally separate literary pieces — the ship allegory and the prose trade catalogue — combined into a single lament."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 27 is a remarkable literary achievement: a funeral dirge for a city portrayed as a magnificent ship. The first section describes the ship’s construction from the finest materials of the known world, and the trade catalogue reads like a customs manifest of the ancient world."
         }
       }
     },
@@ -127,21 +131,22 @@
             "paragraph": "The nations 'hiss' (sharaq) at Tyre’s fall — an expression of horror and contempt. The same word describes the reaction to Jerusalem’s destruction in Jeremiah 19:8."
           }
         ],
-        "ctx": "The magnificent ship encounters the east wind and sinks in the heart of the seas. The drowning inverts Tyre’s maritime mastery: the sea that carried her wealth becomes her grave.",
-        "cross": [
-          {
-            "ref": "Ps 48:7",
-            "note": "God shatters the ships of Tarshish with an east wind."
-          },
-          {
-            "ref": "Jonah 1:4",
-            "note": "The storm that wrecks Jonah’s ship uses similar imagery."
-          },
-          {
-            "ref": "Rev 18:17-19",
-            "note": "Revelation’s merchants 'stand far off' and weep directly echoing Tyre’s mourners."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 48:7",
+              "note": "God shatters the ships of Tarshish with an east wind."
+            },
+            {
+              "ref": "Jonah 1:4",
+              "note": "The storm that wrecks Jonah’s ship uses similar imagery."
+            },
+            {
+              "ref": "Rev 18:17-19",
+              "note": "Revelation’s merchants 'stand far off' and weep directly echoing Tyre’s mourners."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -198,6 +203,9 @@
               "note": "Zimmerli reads the shipwreck as a cosmic event: the collapse of an entire world economic order."
             }
           ]
+        },
+        "hist": {
+          "context": "The magnificent ship encounters the east wind and sinks in the heart of the seas. The drowning inverts Tyre’s maritime mastery: the sea that carried her wealth becomes her grave."
         }
       }
     }

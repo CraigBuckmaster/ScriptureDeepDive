@@ -25,17 +25,18 @@
             "paragraph": "\"Do not deceive yourselves (tashshi'u naphshotekem)\" (v.9). The reflexive form emphasizes self-deception: \"do not lift up your own souls\" with false hope. When the Egyptian army approaches and the Babylonians temporarily withdraw, the people assume the siege is over. Jeremiah warns: the Babylonians will return and burn the city."
           }
         ],
-        "ctx": "The Egyptian army under Pharaoh Hophra (Apries) marches north, causing the Babylonians to lift the siege temporarily (v.5). Hope surges in Jerusalem. Zedekiah secretly asks Jeremiah for a word from God. The answer shatters the optimism: the Egyptians will retreat, and the Babylonians will return. \"Even if you were to defeat the entire Babylonian army ... the wounded men left in their tents would come out and burn this city\" (v.10).",
-        "cross": [
-          {
-            "ref": "Isa 30:1-3",
-            "note": "Isaiah warned against Egyptian alliances a century earlier: \"Woe to those who go down to Egypt for help.\" The pattern repeats."
-          },
-          {
-            "ref": "Ezek 17:15-17",
-            "note": "Ezekiel condemns Zedekiah's Egyptian alliance as covenant betrayal -- breaking his oath to Nebuchadnezzar and to God."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 30:1-3",
+              "note": "Isaiah warned against Egyptian alliances a century earlier: \"Woe to those who go down to Egypt for help.\" The pattern repeats."
+            },
+            {
+              "ref": "Ezek 17:15-17",
+              "note": "Ezekiel condemns Zedekiah's Egyptian alliance as covenant betrayal -- breaking his oath to Nebuchadnezzar and to God."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -88,6 +89,9 @@
               "note": "Brueggemann reads the hyperbole as \"theological assertion disguised as military analysis.\" The issue is not whether Babylon can be defeated but whether God has decreed the city's destruction. Military calculation is irrelevant to divine decree."
             }
           ]
+        },
+        "hist": {
+          "context": "The Egyptian army under Pharaoh Hophra (Apries) marches north, causing the Babylonians to lift the siege temporarily (v.5). Hope surges in Jerusalem. Zedekiah secretly asks Jeremiah for a word from God. The answer shatters the optimism: the Egyptians will retreat, and the Babylonians will return. \"Even if you were to defeat the entire Babylonian army ... the wounded men left in their tents would come out and burn this city\" (v.10)."
         }
       }
     },
@@ -105,17 +109,18 @@
             "paragraph": "Jeremiah is thrown into a vaulted cell (bor) in the house of Jonathan the secretary (v.16). The bor -- a dry cistern converted to a prison cell -- is a recurring image of unjust suffering in the Hebrew Bible (cf. Joseph in Gen 37:24, the psalmist in Ps 40:2). The prophet who proclaimed the word of God now sits in a hole in the ground."
           }
         ],
-        "ctx": "When the siege lifts temporarily, Jeremiah tries to leave Jerusalem to attend to property in Benjamin (possibly related to the field purchase of ch. 32). He is arrested at the Benjamin Gate, accused of defecting to the Babylonians (v.13), beaten, and thrown into a dungeon. Zedekiah secretly retrieves him and asks again: \"Is there a word from the LORD?\" The answer is unchanged: \"You will be delivered into the hands of the king of Babylon\" (v.17). Jeremiah negotiates better conditions and is transferred to the courtyard of the guard.",
-        "cross": [
-          {
-            "ref": "Gen 37:24",
-            "note": "Joseph thrown into a cistern by his brothers -- innocent suffering at the hands of kinsmen."
-          },
-          {
-            "ref": "Acts 16:23-25",
-            "note": "Paul and Silas imprisoned for preaching -- the NT parallel of prophetic imprisonment."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 37:24",
+              "note": "Joseph thrown into a cistern by his brothers -- innocent suffering at the hands of kinsmen."
+            },
+            {
+              "ref": "Acts 16:23-25",
+              "note": "Paul and Silas imprisoned for preaching -- the NT parallel of prophetic imprisonment."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -168,6 +173,9 @@
               "note": "Brueggemann calls Zedekiah \"the most tragic figure in Jeremiah -- a man who recognizes truth but cannot act on it because he fears his own officials more than he fears God.\""
             }
           ]
+        },
+        "hist": {
+          "context": "When the siege lifts temporarily, Jeremiah tries to leave Jerusalem to attend to property in Benjamin (possibly related to the field purchase of ch. 32). He is arrested at the Benjamin Gate, accused of defecting to the Babylonians (v.13), beaten, and thrown into a dungeon. Zedekiah secretly retrieves him and asks again: \"Is there a word from the LORD?\" The answer is unchanged: \"You will be delivered into the hands of the king of Babylon\" (v.17). Jeremiah negotiates better conditions and is transferred to the courtyard of the guard."
         }
       }
     }

@@ -25,21 +25,22 @@
             "paragraph": "The qinah is a formal funeral poem with a distinctive 3:2 meter — a longer line followed by a shorter line, creating a limping, falling rhythm that mimics the sound of weeping. Ezekiel composes a funeral dirge for the Davidic dynasty while it is still technically alive — the monarchy is being mourned before its final death."
           }
         ],
-        "ctx": "The lament uses two images: a lioness with cubs (vv.1-9) and a vine (vv.10-14). The lioness is the Davidic dynasty (or Judah as a nation). The first cub is likely Jehoahaz, who was deported to Egypt by Pharaoh Necho in 609 BC. The second cub is likely Jehoiachin (or Zedekiah), taken to Babylon. Both kings were captured and caged — the lion of Judah reduced to a zoo exhibit in foreign empires.",
-        "cross": [
-          {
-            "ref": "Gen 49:9",
-            "note": "Judah is a lion's cub — Jacob's blessing that Ezekiel's lament transforms into a dirge. The royal lion is now caged."
-          },
-          {
-            "ref": "2 Kgs 23:31-34",
-            "note": "Pharaoh Necho deported Jehoahaz to Egypt — the first cub taken to a foreign land."
-          },
-          {
-            "ref": "Rev 5:5",
-            "note": "The Lion of the tribe of Judah has conquered — the caged lion is ultimately vindicated in Christ."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 49:9",
+              "note": "Judah is a lion's cub — Jacob's blessing that Ezekiel's lament transforms into a dirge. The royal lion is now caged."
+            },
+            {
+              "ref": "2 Kgs 23:31-34",
+              "note": "Pharaoh Necho deported Jehoahaz to Egypt — the first cub taken to a foreign land."
+            },
+            {
+              "ref": "Rev 5:5",
+              "note": "The Lion of the tribe of Judah has conquered — the caged lion is ultimately vindicated in Christ."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -96,6 +97,9 @@
               "note": "Zimmerli debates the identity of the cubs: the first is clearly Jehoahaz (Egypt), but the second could be Jehoiachin (597 BC to Babylon) or Zedekiah (586 BC). The ambiguity may be intentional — the lament mourns the entire dynasty, not one specific king."
             }
           ]
+        },
+        "hist": {
+          "context": "The lament uses two images: a lioness with cubs (vv.1-9) and a vine (vv.10-14). The lioness is the Davidic dynasty (or Judah as a nation). The first cub is likely Jehoahaz, who was deported to Egypt by Pharaoh Necho in 609 BC. The second cub is likely Jehoiachin (or Zedekiah), taken to Babylon. Both kings were captured and caged — the lion of Judah reduced to a zoo exhibit in foreign empires."
         }
       }
     },
@@ -113,17 +117,18 @@
             "paragraph": "The vine had strong branches fit for a ruler's scepter — but now they are consumed by fire from within. The fire comes from the vine's own branch (v.14), suggesting the destruction is self-inflicted. Zedekiah's rebellion against Babylon brought the fire upon his own house."
           }
         ],
-        "ctx": "The second image shifts from lion to vine — connecting to chapter 15 and the broader vine tradition. The vine was planted by abundant waters (prosperity), produced strong branches (kings), and towered above the clouds (international prominence). But it was uprooted in fury, withered by the east wind (Babylon), and transplanted to the desert. Now fire from its own branch has consumed it — no strong branch remains for a ruler's scepter. The lament ends with monarchy extinct.",
-        "cross": [
-          {
-            "ref": "Ps 80:8-16",
-            "note": "God brought a vine from Egypt and planted it — now the vine is cut down and burned. The psalm's prayer becomes Ezekiel's dirge."
-          },
-          {
-            "ref": "Ezek 15:1-8",
-            "note": "The useless vine destined for fire — the same imagery applied to the dynasty rather than the city."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 80:8-16",
+              "note": "God brought a vine from Egypt and planted it — now the vine is cut down and burned. The psalm's prayer becomes Ezekiel's dirge."
+            },
+            {
+              "ref": "Ezek 15:1-8",
+              "note": "The useless vine destined for fire — the same imagery applied to the dynasty rather than the city."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -180,6 +185,9 @@
               "note": "Zimmerli reads the transition from lion to vine as a diminishment: the dynasty that began as a lion (powerful, predatory) ends as a vine (passive, dependent, burned). The genre shift from heroic to horticultural mirrors the dynasty's decline from martial glory to helpless destruction."
             }
           ]
+        },
+        "hist": {
+          "context": "The second image shifts from lion to vine — connecting to chapter 15 and the broader vine tradition. The vine was planted by abundant waters (prosperity), produced strong branches (kings), and towered above the clouds (international prominence). But it was uprooted in fury, withered by the east wind (Babylon), and transplanted to the desert. Now fire from its own branch has consumed it — no strong branch remains for a ruler's scepter. The lament ends with monarchy extinct."
         }
       }
     }

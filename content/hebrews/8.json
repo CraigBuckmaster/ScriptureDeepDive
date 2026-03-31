@@ -37,21 +37,22 @@
             "paragraph": "A key term in Hebrews (appearing 13 times), κρείττων establishes the comparative framework of the entire epistle. Christ holds a \"more excellent ministry\" (διαφορωτέρας λειτουργίας), mediates a \"better covenant\" (κρείττονός διαθήκης), and that covenant is \"enacted on better promises\" (ἐπὶ κρείττοσιν ἐπαγγελίαις). The triple use of the comparative in v. 6 alone emphasizes the comprehensive superiority of the new order."
           }
         ],
-        "ctx": "The author now transitions from establishing Christ's Melchizedekian priesthood (chapters 5–7) to demonstrating its practical implications: where does this priest serve, and what covenant does He mediate? The answer involves a careful exegesis of the tabernacle traditions. The reference to Christ \"seated at the right hand of the throne of the Majesty in heaven\" (v. 1) echoes Psalm 110:1, which has already been cited in 1:3, 13 and underlies the entire Christological argument. The seated posture, contrasted with the standing priests of the earthly sanctuary (10:11), signals completed work.",
-        "cross": [
-          {
-            "ref": "Exodus 25:9, 40",
-            "note": "God commands Moses to build the tabernacle \"according to the pattern\" (τύπον) shown on the mountain—the same terminology the author uses in v. 5 to argue that the earthly sanctuary was always derivative."
-          },
-          {
-            "ref": "Psalm 110:1",
-            "note": "The foundational text for Christ's heavenly session: \"Sit at my right hand.\" The author has structured the entire epistle around this royal-priestly enthronement."
-          },
-          {
-            "ref": "Colossians 2:17",
-            "note": "Paul uses the same shadow/reality contrast: the old covenant regulations \"are a shadow of the things to come, but the substance belongs to Christ.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exodus 25:9, 40",
+              "note": "God commands Moses to build the tabernacle \"according to the pattern\" (τύπον) shown on the mountain—the same terminology the author uses in v. 5 to argue that the earthly sanctuary was always derivative."
+            },
+            {
+              "ref": "Psalm 110:1",
+              "note": "The foundational text for Christ's heavenly session: \"Sit at my right hand.\" The author has structured the entire epistle around this royal-priestly enthronement."
+            },
+            {
+              "ref": "Colossians 2:17",
+              "note": "Paul uses the same shadow/reality contrast: the old covenant regulations \"are a shadow of the things to come, but the substance belongs to Christ.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -133,7 +134,10 @@
             }
           ]
         },
-        "hist": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24)."
+        "hist": {
+          "historical": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24).",
+          "context": "The author now transitions from establishing Christ's Melchizedekian priesthood (chapters 5–7) to demonstrating its practical implications: where does this priest serve, and what covenant does He mediate? The answer involves a careful exegesis of the tabernacle traditions. The reference to Christ \"seated at the right hand of the throne of the Majesty in heaven\" (v. 1) echoes Psalm 110:1, which has already been cited in 1:3, 13 and underlies the entire Christological argument. The seated posture, contrasted with the standing priests of the earthly sanctuary (10:11), signals completed work."
+        }
       }
     },
     {
@@ -162,25 +166,26 @@
             "paragraph": "The verb in v. 8 (\"finding fault with them\") is significant: the problem was not merely the covenant's administration but the people's inability to keep it. The new covenant addresses this by writing the law on hearts rather than tablets. Some manuscripts read \"finding fault with it\" (the covenant), but the harder reading \"with them\" (the people) is likely original and theologically richer."
           }
         ],
-        "ctx": "The quotation of Jeremiah 31:31–34 is the interpretive key to the entire central section of Hebrews. Jeremiah prophesied during the final years of Judah's kingdom (c. 627–586 BC), when the nation's persistent covenant-breaking had exhausted divine patience. His \"new covenant\" oracle looked beyond the coming exile to a future restoration when God would internalize the Torah, establish direct knowledge of Himself, and provide complete forgiveness. The author of Hebrews reads this prophecy christologically: the new covenant has now been inaugurated through Christ's death and heavenly ministry. The old covenant, by prophetic decree, has been declared \"obsolete.\"",
-        "cross": [
-          {
-            "ref": "Jeremiah 31:31–34",
-            "note": "The source text for the longest OT quotation in the NT. The author follows the LXX closely, interpreting Jeremiah's eschatological promise as fulfilled in Christ."
-          },
-          {
-            "ref": "Ezekiel 36:26–27",
-            "note": "A parallel new-covenant promise: God will give a new heart, put His Spirit within, and cause obedience. Together with Jeremiah 31, this forms the prophetic foundation for new covenant theology."
-          },
-          {
-            "ref": "2 Corinthians 3:6–11",
-            "note": "Paul contrasts the \"ministry of death, carved in letters on stone\" with the \"ministry of the Spirit.\" The letter/Spirit contrast parallels Hebrews' shadow/reality framework."
-          },
-          {
-            "ref": "Luke 22:20",
-            "note": "At the Last Supper, Jesus declares the cup \"the new covenant in my blood\"—the moment of inauguration that Hebrews' author assumes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jeremiah 31:31–34",
+              "note": "The source text for the longest OT quotation in the NT. The author follows the LXX closely, interpreting Jeremiah's eschatological promise as fulfilled in Christ."
+            },
+            {
+              "ref": "Ezekiel 36:26–27",
+              "note": "A parallel new-covenant promise: God will give a new heart, put His Spirit within, and cause obedience. Together with Jeremiah 31, this forms the prophetic foundation for new covenant theology."
+            },
+            {
+              "ref": "2 Corinthians 3:6–11",
+              "note": "Paul contrasts the \"ministry of death, carved in letters on stone\" with the \"ministry of the Spirit.\" The letter/Spirit contrast parallels Hebrews' shadow/reality framework."
+            },
+            {
+              "ref": "Luke 22:20",
+              "note": "At the Last Supper, Jesus declares the cup \"the new covenant in my blood\"—the moment of inauguration that Hebrews' author assumes."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -269,6 +274,9 @@
               "note": "The four new-covenant promises correspond to the four deficiencies of the old: external law → internal law; national election → personal relationship; mediated knowledge → direct knowledge; repeated sacrifice → complete forgiveness. Each promise finds its fulfillment in what Christ has accomplished and continues to do as heavenly high priest."
             }
           ]
+        },
+        "hist": {
+          "context": "The quotation of Jeremiah 31:31–34 is the interpretive key to the entire central section of Hebrews. Jeremiah prophesied during the final years of Judah's kingdom (c. 627–586 BC), when the nation's persistent covenant-breaking had exhausted divine patience. His \"new covenant\" oracle looked beyond the coming exile to a future restoration when God would internalize the Torah, establish direct knowledge of Himself, and provide complete forgiveness. The author of Hebrews reads this prophecy christologically: the new covenant has now been inaugurated through Christ's death and heavenly ministry. The old covenant, by prophetic decree, has been declared \"obsolete.\""
         }
       }
     }

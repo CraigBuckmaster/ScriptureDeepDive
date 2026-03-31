@@ -28,21 +28,22 @@
             "paragraph": "The Aramaic loanword (vv.9, 11, 13) personifies wealth as a rival lord. Jesus does not say money is evil in itself but that it has the character of a master — it demands loyalty, shapes priorities, and competes with God for the allegiance of the heart."
           }
         ],
-        "ctx": "[(\"The Steward's Debt Reduction\", 'The manager\\'s reduction of debts may have involved removing his own commission from the bills (commissions on agricultural transactions were standard in antiquity). If so, the \"dishonesty\" may lie in how he originally inflated the bills, not in the reduction. Alternatively, the reduction is straightforwardly fraudulent. Either way, Jesus commends not the ethics but the shrewdness — the decisive use of available resources before the window closes.'), ('The Transition of Epochs (16:16)', 'Verse 16 is among the most debated in Luke: \"The Law and the Prophets were proclaimed until John. Since that time, the good news of the kingdom of God is being preached.\" The epoch of preparation has ended; the epoch of fulfilment has begun. This does not abolish the Law (v.17 insists the opposite) but establishes Jesus\\'s ministry as the hinge of redemptive history.')]",
-        "cross": [
-          {
-            "ref": "Matt 6:24",
-            "note": "\"No one can serve two masters... You cannot serve both God and money\" — the parallel saying in the Sermon on the Mount."
-          },
-          {
-            "ref": "Matt 11:12-13",
-            "note": "Matthew's parallel to the Law-and-Prophets saying in 16:16 — the same epochal transition, slightly differently expressed."
-          },
-          {
-            "ref": "Matt 5:32",
-            "note": "Matthew's parallel divorce saying in the Sermon on the Mount, part of the antitheses."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 6:24",
+              "note": "\"No one can serve two masters... You cannot serve both God and money\" — the parallel saying in the Sermon on the Mount."
+            },
+            {
+              "ref": "Matt 11:12-13",
+              "note": "Matthew's parallel to the Law-and-Prophets saying in 16:16 — the same epochal transition, slightly differently expressed."
+            },
+            {
+              "ref": "Matt 5:32",
+              "note": "Matthew's parallel divorce saying in the Sermon on the Mount, part of the antitheses."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -115,6 +116,9 @@
               "note": "Basil of Caesarea: \"It is not possible to serve two masters whose commands are in direct opposition. God commands: despise earthly things, seek eternal ones. Money commands: seek earthly things, despise eternal ones. Where money rules, the love of God finds no place.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[(\"The Steward's Debt Reduction\", 'The manager\\'s reduction of debts may have involved removing his own commission from the bills (commissions on agricultural transactions were standard in antiquity). If so, the \"dishonesty\" may lie in how he originally inflated the bills, not in the reduction. Alternatively, the reduction is straightforwardly fraudulent. Either way, Jesus commends not the ethics but the shrewdness — the decisive use of available resources before the window closes.'), ('The Transition of Epochs (16:16)', 'Verse 16 is among the most debated in Luke: \"The Law and the Prophets were proclaimed until John. Since that time, the good news of the kingdom of God is being preached.\" The epoch of preparation has ended; the epoch of fulfilment has begun. This does not abolish the Law (v.17 insists the opposite) but establishes Jesus\\'s ministry as the hinge of redemptive history.')]"
         }
       }
     },
@@ -138,21 +142,22 @@
             "paragraph": "The metaphor (v.22) is of reclining at a banquet in the place of honour next to the host — the position of the most honoured guest. Lazarus, who had no place at any table in his lifetime, now reclines in the most honoured place at the eternal feast."
           }
         ],
-        "ctx": "[('Hades in Jewish Thought', \"First-century Jewish understanding of the afterlife was varied. The Pharisees believed in resurrection; the Sadducees did not. The parable's picture of Hades — a place of the dead with different compartments for the righteous and the wicked, separated by an impassable chasm — draws on the apocalyptic tradition visible in 1 Enoch 22. Jesus uses the categories his audience recognised without necessarily making ontological claims about the precise geography of the afterlife.\"), ('\"Someone Rising from the Dead\"', 'The parable\\'s closing punch — \"they will not be convinced even if someone rises from the dead\" (v.31) — is both Jesus\\'s commentary on the unresponsive heart and Luke\\'s retrospective commentary on the resurrection. The Pharisees who refused to believe in Jesus were not convinced even when he rose. The parable ends as both prediction and indictment.')]",
-        "cross": [
-          {
-            "ref": "Amos 6:1-7",
-            "note": "\"Woe to you who are complacent in Zion... you feast and lounge... but you do not grieve over the ruin of Joseph\" — the OT prophetic indictment of wealthy indifference that the rich man embodies."
-          },
-          {
-            "ref": "1 Enoch 22",
-            "note": "The apocalyptic text that provides the closest parallel to the parable's geography of the afterlife: different compartments for the righteous and wicked, separated before the final judgment."
-          },
-          {
-            "ref": "John 11:1-44",
-            "note": "The raising of Lazarus of Bethany — a different Lazarus but the same name. Luke may be playing on the irony: a man named Lazarus did rise from the dead, and many still did not believe."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Amos 6:1-7",
+              "note": "\"Woe to you who are complacent in Zion... you feast and lounge... but you do not grieve over the ruin of Joseph\" — the OT prophetic indictment of wealthy indifference that the rich man embodies."
+            },
+            {
+              "ref": "1 Enoch 22",
+              "note": "The apocalyptic text that provides the closest parallel to the parable's geography of the afterlife: different compartments for the righteous and wicked, separated before the final judgment."
+            },
+            {
+              "ref": "John 11:1-44",
+              "note": "The raising of Lazarus of Bethany — a different Lazarus but the same name. Luke may be playing on the irony: a man named Lazarus did rise from the dead, and many still did not believe."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -225,6 +230,9 @@
               "note": "Augustine: \"Even if one rose from the dead, they would not believe — and so it proved. Christ rose, and many did not believe. The resurrection does not produce faith in those who have hardened themselves against the scriptures. Faith comes by hearing the word of God.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('Hades in Jewish Thought', \"First-century Jewish understanding of the afterlife was varied. The Pharisees believed in resurrection; the Sadducees did not. The parable's picture of Hades — a place of the dead with different compartments for the righteous and the wicked, separated by an impassable chasm — draws on the apocalyptic tradition visible in 1 Enoch 22. Jesus uses the categories his audience recognised without necessarily making ontological claims about the precise geography of the afterlife.\"), ('\"Someone Rising from the Dead\"', 'The parable\\'s closing punch — \"they will not be convinced even if someone rises from the dead\" (v.31) — is both Jesus\\'s commentary on the unresponsive heart and Luke\\'s retrospective commentary on the resurrection. The Pharisees who refused to believe in Jesus were not convinced even when he rose. The parable ends as both prediction and indictment.')]"
         }
       }
     },
@@ -248,21 +256,22 @@
             "paragraph": "The Aramaic loanword (vv.9, 11, 13) personifies wealth as a rival lord. Jesus does not say money is evil in itself but that it has the character of a master — it demands loyalty, shapes priorities, and competes with God for the allegiance of the heart."
           }
         ],
-        "ctx": "[(\"The Steward's Debt Reduction\", 'The manager\\'s reduction of debts may have involved removing his own commission from the bills (commissions on agricultural transactions were standard in antiquity). If so, the \"dishonesty\" may lie in how he originally inflated the bills, not in the reduction. Alternatively, the reduction is straightforwardly fraudulent. Either way, Jesus commends not the ethics but the shrewdness — the decisive use of available resources before the window closes.'), ('The Transition of Epochs (16:16)', 'Verse 16 is among the most debated in Luke: \"The Law and the Prophets were proclaimed until John. Since that time, the good news of the kingdom of God is being preached.\" The epoch of preparation has ended; the epoch of fulfilment has begun. This does not abolish the Law (v.17 insists the opposite) but establishes Jesus\\'s ministry as the hinge of redemptive history.')]",
-        "cross": [
-          {
-            "ref": "Matt 6:24",
-            "note": "\"No one can serve two masters... You cannot serve both God and money\" — the parallel saying in the Sermon on the Mount."
-          },
-          {
-            "ref": "Matt 11:12-13",
-            "note": "Matthew's parallel to the Law-and-Prophets saying in 16:16 — the same epochal transition, slightly differently expressed."
-          },
-          {
-            "ref": "Matt 5:32",
-            "note": "Matthew's parallel divorce saying in the Sermon on the Mount, part of the antitheses."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 6:24",
+              "note": "\"No one can serve two masters... You cannot serve both God and money\" — the parallel saying in the Sermon on the Mount."
+            },
+            {
+              "ref": "Matt 11:12-13",
+              "note": "Matthew's parallel to the Law-and-Prophets saying in 16:16 — the same epochal transition, slightly differently expressed."
+            },
+            {
+              "ref": "Matt 5:32",
+              "note": "Matthew's parallel divorce saying in the Sermon on the Mount, part of the antitheses."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -335,6 +344,9 @@
               "note": "Basil of Caesarea: \"It is not possible to serve two masters whose commands are in direct opposition. God commands: despise earthly things, seek eternal ones. Money commands: seek earthly things, despise eternal ones. Where money rules, the love of God finds no place.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[(\"The Steward's Debt Reduction\", 'The manager\\'s reduction of debts may have involved removing his own commission from the bills (commissions on agricultural transactions were standard in antiquity). If so, the \"dishonesty\" may lie in how he originally inflated the bills, not in the reduction. Alternatively, the reduction is straightforwardly fraudulent. Either way, Jesus commends not the ethics but the shrewdness — the decisive use of available resources before the window closes.'), ('The Transition of Epochs (16:16)', 'Verse 16 is among the most debated in Luke: \"The Law and the Prophets were proclaimed until John. Since that time, the good news of the kingdom of God is being preached.\" The epoch of preparation has ended; the epoch of fulfilment has begun. This does not abolish the Law (v.17 insists the opposite) but establishes Jesus\\'s ministry as the hinge of redemptive history.')]"
         }
       }
     }

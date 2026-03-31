@@ -50,18 +50,22 @@
             "paragraph": "Once Hagar conceived, \"she began to despise (watteqal) her mistress\" (v.4). The verb qālal (the root of the noun \"curse\") is used of treating something as of no weight or worth — the opposite of kābēd (to honour/give weight). The same root appears in the Noahic curse on Canaan (9:25). Hagar's contempt for Sarai reverses the social order — the šiplāh now looks down on her owner — and triggers the conflict that will run through the rest of the chapter."
           }
         ],
-        "hist": "The practice of using a servant as a surrogate mother for a barren wife is well-documented in ANE law codes. The Nuzi tablets (15th c. BC) contain a marriage contract stipulating that if a wife is barren, she must provide her husband with a servant-wife. The Code of Hammurabi also addresses the legal status of children born to servant-wives. Sarai's suggestion, though morally problematic from a later biblical perspective, was standard ANE legal procedure.",
-        "ctx": "Sarai's plan is a \"help\" that creates catastrophic complications — a human attempt to fulfill the divine promise through human wisdom. The parallel with Eden (3:6) is strong: both involve a human shortcut that bypasses trust in God. Yet Genesis does not simply condemn Sarai — her anguish is understandable, the cultural context makes her solution reasonable. The narrative is compassionate to all parties while showing the cost of bypassing divine timing.",
-        "cross": [
-          {
-            "ref": "Gen 21:8–21",
-            "note": "The Hagar-Ishmael story has two episodes: this initial flight (ch. 16) and the later expulsion (ch. 21). Together they form a diptych exploring the tensions of surrogate motherhood, divine promise, and human impatience."
-          },
-          {
-            "ref": "Gal 4:22–31",
-            "note": "Paul allegorises Hagar and Sarah as two covenants: Sinai (slavery) and the Jerusalem above (freedom). However complex Paul's reading, it confirms the theological weight the early church placed on this narrative."
-          }
-        ],
+        "hist": {
+          "historical": "The practice of using a servant as a surrogate mother for a barren wife is well-documented in ANE law codes. The Nuzi tablets (15th c. BC) contain a marriage contract stipulating that if a wife is barren, she must provide her husband with a servant-wife. The Code of Hammurabi also addresses the legal status of children born to servant-wives. Sarai's suggestion, though morally problematic from a later biblical perspective, was standard ANE legal procedure.",
+          "context": "Sarai's plan is a \"help\" that creates catastrophic complications — a human attempt to fulfill the divine promise through human wisdom. The parallel with Eden (3:6) is strong: both involve a human shortcut that bypasses trust in God. Yet Genesis does not simply condemn Sarai — her anguish is understandable, the cultural context makes her solution reasonable. The narrative is compassionate to all parties while showing the cost of bypassing divine timing."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 21:8–21",
+              "note": "The Hagar-Ishmael story has two episodes: this initial flight (ch. 16) and the later expulsion (ch. 21). Together they form a diptych exploring the tensions of surrogate motherhood, divine promise, and human impatience."
+            },
+            {
+              "ref": "Gal 4:22–31",
+              "note": "Paul allegorises Hagar and Sarah as two covenants: Sinai (slavery) and the Jerusalem above (freedom). However complex Paul's reading, it confirms the theological weight the early church placed on this narrative."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -167,22 +171,26 @@
             "paragraph": "Hagar names the spring \"Beer Lahai Roi\" — \"the well of the Living One who sees me\" (v.14), asking: \"Have I truly seen the One who sees me?\" The divine title El Roi (\"God who sees me,\" v.13) is one of the OT's most intimate — used by a foreign slave woman who has been used, abandoned, and found by God in the wilderness. Her theology of divine seeing anticipates Psalm 139's \"you perceive my thoughts from afar... you are familiar with all my ways.\""
           }
         ],
-        "hist": "None",
-        "ctx": "The Hagar theophany is one of the Bible's most moving passages. A pregnant runaway slave encounters the Angel of the LORD, who calls her by name, acknowledges her pain, and gives her son a promise rivaling Abraham's own. She is the first person in Scripture to receive a divine messenger, the first to give God a name, and the first to receive a birth announcement. None of this is incidental — Genesis is making a theological statement about divine care for the marginalized.",
-        "cross": [
-          {
-            "ref": "Gen 21:17–19",
-            "note": "In ch.21 Hagar is again in the wilderness, again heard by God, again given a promise for Ishmael. The pattern repeats: human rejection, divine encounter, divine provision."
-          },
-          {
-            "ref": "Gal 4:21–31",
-            "note": "Paul uses Hagar and Sarah allegorically: Hagar represents the Sinai covenant (law-based slavery), Sarah the new covenant (promise-based freedom). The allegory has been controversial in its effect on Hagar's legacy."
-          },
-          {
-            "ref": "Luke 1:31",
-            "note": "The birth announcement to Hagar (\"you shall call his name…\") uses exactly the same formula as Gabriel's announcement to Mary: \"You shall call his name Jesus.\" Hagar's encounter is a prototype of the annunciation."
-          }
-        ],
+        "hist": {
+          "historical": "None",
+          "context": "The Hagar theophany is one of the Bible's most moving passages. A pregnant runaway slave encounters the Angel of the LORD, who calls her by name, acknowledges her pain, and gives her son a promise rivaling Abraham's own. She is the first person in Scripture to receive a divine messenger, the first to give God a name, and the first to receive a birth announcement. None of this is incidental — Genesis is making a theological statement about divine care for the marginalized."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 21:17–19",
+              "note": "In ch.21 Hagar is again in the wilderness, again heard by God, again given a promise for Ishmael. The pattern repeats: human rejection, divine encounter, divine provision."
+            },
+            {
+              "ref": "Gal 4:21–31",
+              "note": "Paul uses Hagar and Sarah allegorically: Hagar represents the Sinai covenant (law-based slavery), Sarah the new covenant (promise-based freedom). The allegory has been controversial in its effect on Hagar's legacy."
+            },
+            {
+              "ref": "Luke 1:31",
+              "note": "The birth announcement to Hagar (\"you shall call his name…\") uses exactly the same formula as Gabriel's announcement to Mary: \"You shall call his name Jesus.\" Hagar's encounter is a prototype of the annunciation."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

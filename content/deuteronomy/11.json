@@ -31,17 +31,18 @@
             "paragraph": "The formula captures the land's superabundance in two representative products: milk (pastoral) and honey (agricultural or wild). It appears repeatedly as shorthand for covenant blessing in material form."
           }
         ],
-        "ctx": "Chapter 11 closes the Shema section with a final call to love and obey. Moses appeals to the personal memories of those present: you yourselves saw what God did in Egypt, what he did to Dathan and Abiram, how the earth swallowed them (v.7). The land ahead responds to covenant faithfulness: rain in its seasons, grass for cattle, grain and wine and oil. But the land also responds to apostasy — its rains stop when Israel worships other gods (vv.16–17). The ecology of Canaan is covenant-shaped.",
-        "cross": [
-          {
-            "ref": "John 14:15",
-            "note": "\"If you love me, keep my commandments.\" Jesus uses the Deuteronomic pattern — love expressed through obedience — as the summary of discipleship."
-          },
-          {
-            "ref": "Lev 26:3–5",
-            "note": "\"If you follow my decrees... I will send you rain in its season.\" Leviticus 26 provides the covenant blessing/curse framework that Deuteronomy 11 summarises."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 14:15",
+              "note": "\"If you love me, keep my commandments.\" Jesus uses the Deuteronomic pattern — love expressed through obedience — as the summary of discipleship."
+            },
+            {
+              "ref": "Lev 26:3–5",
+              "note": "\"If you follow my decrees... I will send you rain in its season.\" Leviticus 26 provides the covenant blessing/curse framework that Deuteronomy 11 summarises."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 11 closes the Shema section with a final call to love and obey. Moses appeals to the personal memories of those present: you yourselves saw what God did in Egypt, what he did to Dathan and Abiram, how the earth swallowed them (v.7). The land ahead responds to covenant faithfulness: rain in its seasons, grass for cattle, grain and wine and oil. But the land also responds to apostasy — its rains stop when Israel worships other gods (vv.16–17). The ecology of Canaan is covenant-shaped."
         }
       }
     },
@@ -131,17 +135,18 @@
             "paragraph": "The two-way structure of Deuteronomy's covenant is explicit here and elaborated fully in chs.27–28. The blessing/curse pattern is not arbitrariness but structure: the universe is designed with consequences built into its moral fabric."
           }
         ],
-        "ctx": "The first discourse closes with a preview of the covenant ceremony that will take place after crossing the Jordan (detailed in ch.27): the blessings pronounced from Mount Gerizim, the curses from Mount Ebal. The two mountains facing each other across the valley of Shechem become the physical embodiment of the covenant's binary character. The whole land is arranged around this choice: blessing on one side, curse on the other, Israel standing between — called to choose.",
-        "cross": [
-          {
-            "ref": "Josh 8:30–35",
-            "note": "\"Then Joshua built on Mount Ebal an altar to the LORD... Afterward, Joshua read all the words of the law — the blessings and the curses.\" Joshua's faithful implementation shows the covenant ceremony taking place exactly as Moses commanded."
-          },
-          {
-            "ref": "Gal 3:13",
-            "note": "\"Christ redeemed us from the curse of the law by becoming a curse for us.\" Paul reads the Deuteronomic curse structure through the cross: Christ absorbed the covenant curse that Israel's disobedience incurred."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 8:30–35",
+              "note": "\"Then Joshua built on Mount Ebal an altar to the LORD... Afterward, Joshua read all the words of the law — the blessings and the curses.\" Joshua's faithful implementation shows the covenant ceremony taking place exactly as Moses commanded."
+            },
+            {
+              "ref": "Gal 3:13",
+              "note": "\"Christ redeemed us from the curse of the law by becoming a curse for us.\" Paul reads the Deuteronomic curse structure through the cross: Christ absorbed the covenant curse that Israel's disobedience incurred."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -206,6 +211,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "The first discourse closes with a preview of the covenant ceremony that will take place after crossing the Jordan (detailed in ch.27): the blessings pronounced from Mount Gerizim, the curses from Mount Ebal. The two mountains facing each other across the valley of Shechem become the physical embodiment of the covenant's binary character. The whole land is arranged around this choice: blessing on one side, curse on the other, Israel standing between — called to choose."
         }
       }
     }

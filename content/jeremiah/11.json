@@ -31,21 +31,22 @@
             "paragraph": "The word ʾārûr (\"cursed,\" v.3) echoes the covenant curses of Deuteronomy 27:15–26, where twelve curses are pronounced for specific violations. Jeremiah invokes these curses as now operative — the covenant has been broken, and the curses are in effect."
           }
         ],
-        "ctx": "Chapter 11 explicitly invokes the Sinai/Deuteronomic covenant for the first time in Jeremiah. The \"terms of this covenant\" (v.2) likely refers to the Book of the Law discovered during Josiah's reforms (2 Kgs 22). The chapter reveals that despite Josiah's revival, the covenant was still being broken — not merely by individuals but by a \"conspiracy\" (qešer, v.9) among the people of Judah and Jerusalem. The olive tree metaphor (vv.16–17) anticipates Paul's olive tree allegory in Romans 11.",
-        "cross": [
-          {
-            "ref": "Deut 27:26",
-            "note": "\"Cursed is anyone who does not uphold the words of this law.\" Jeremiah invokes the formal covenant curse structure."
-          },
-          {
-            "ref": "Rom 11:17–24",
-            "note": "Paul's olive tree allegory — branches broken off for unbelief — develops the same image Jeremiah introduces."
-          },
-          {
-            "ref": "Gal 3:10",
-            "note": "Paul cites the Deuteronomic curse: \"Cursed is everyone who does not continue to do everything written in the Book of the Law.\" The same covenant theology."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 27:26",
+              "note": "\"Cursed is anyone who does not uphold the words of this law.\" Jeremiah invokes the formal covenant curse structure."
+            },
+            {
+              "ref": "Rom 11:17–24",
+              "note": "Paul's olive tree allegory — branches broken off for unbelief — develops the same image Jeremiah introduces."
+            },
+            {
+              "ref": "Gal 3:10",
+              "note": "Paul cites the Deuteronomic curse: \"Cursed is everyone who does not continue to do everything written in the Book of the Law.\" The same covenant theology."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Brueggemann reads the covenant oracle as a confrontation with Judah's \"contractual theology\" — the belief that God owes protection regardless of behavior. Jeremiah insists that covenant is bilateral: obligations bind both parties, and Israel has defaulted."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 11 explicitly invokes the Sinai/Deuteronomic covenant for the first time in Jeremiah. The \"terms of this covenant\" (v.2) likely refers to the Book of the Law discovered during Josiah's reforms (2 Kgs 22). The chapter reveals that despite Josiah's revival, the covenant was still being broken — not merely by individuals but by a \"conspiracy\" (qešer, v.9) among the people of Judah and Jerusalem. The olive tree metaphor (vv.16–17) anticipates Paul's olive tree allegory in Romans 11."
         }
       }
     },
@@ -127,17 +131,18 @@
             "paragraph": "Jeremiah describes himself as \"a gentle lamb (kebeś) led to the slaughter\" (v.19), unaware of the plots against his life. The image prefigures Isaiah 53:7 — the Suffering Servant \"led like a lamb to the slaughter.\" Jeremiah's innocent suffering at the hands of his own townspeople becomes a type of Christ's passion."
           }
         ],
-        "ctx": "The Anathoth plot reveals that Jeremiah's own relatives and neighbors are conspiring to kill him. This is the first of Jeremiah's \"confessions\" — personal laments addressed to God about the cost of prophetic ministry. The men of Anathoth threaten: \"Do not prophesy in the name of the LORD or you will die by our hands\" (v.21). God's response is judgment on Anathoth itself — the assassins will be punished.",
-        "cross": [
-          {
-            "ref": "Isa 53:7",
-            "note": "\"Like a lamb led to the slaughter\" — Isaiah's Suffering Servant language echoes Jeremiah's self-description."
-          },
-          {
-            "ref": "Matt 13:57",
-            "note": "\"A prophet is not without honor except in his hometown\" — Jesus' experience mirrors Jeremiah's rejection at Anathoth."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 53:7",
+              "note": "\"Like a lamb led to the slaughter\" — Isaiah's Suffering Servant language echoes Jeremiah's self-description."
+            },
+            {
+              "ref": "Matt 13:57",
+              "note": "\"A prophet is not without honor except in his hometown\" — Jesus' experience mirrors Jeremiah's rejection at Anathoth."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -186,6 +191,9 @@
               "note": "Brueggemann identifies a pattern that will recur throughout the confessions: (1) the prophet discovers a plot, (2) the prophet appeals to God, (3) God pronounces judgment on the plotters. The pattern reveals that prophetic authority is authenticated not by success but by suffering."
             }
           ]
+        },
+        "hist": {
+          "context": "The Anathoth plot reveals that Jeremiah's own relatives and neighbors are conspiring to kill him. This is the first of Jeremiah's \"confessions\" — personal laments addressed to God about the cost of prophetic ministry. The men of Anathoth threaten: \"Do not prophesy in the name of the LORD or you will die by our hands\" (v.21). God's response is judgment on Anathoth itself — the assassins will be punished."
         }
       }
     }

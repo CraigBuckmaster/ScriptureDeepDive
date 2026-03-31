@@ -54,21 +54,22 @@
             "current": false
           }
         ],
-        "ctx": "The structural irony of Acts 8:1–4 is one of Luke's most important narrative moves: the persecution intended to silence the Gospel scatters its bearers, who then preach wherever they land. Luke makes this explicit in v4: 'those who had been scattered preached the word wherever they went.' Opposition becomes the mechanism of expansion — a principle that recurs throughout Acts. Simon Magus's desire to purchase the Spirit's power (vv.18–19) is the precise inversion of the Gospel's economics: the Spirit is given (v20: 'the gift of God'), not purchased. His name gives us the word 'simony' — the buying and selling of church offices.",
-        "cross": [
-          {
-            "ref": "Acts 1:8",
-            "note": "\"You will be my witnesses in Jerusalem, and in all Judea and Samaria\" — the Samaritan mission of Acts 8 is the explicit fulfilment of the second stage of the commission."
-          },
-          {
-            "ref": "John 4:4–42",
-            "note": "Jesus's own mission in Samaria — the theological preparation for Philip's harvest. Jesus planted; Philip and Peter/John watered; the Spirit gave growth."
-          },
-          {
-            "ref": "2 Kings 17:24–41",
-            "note": "The origin of the Samaritans — the mixed population resettled after the Assyrian conquest. Stephen's historical survey (ch.7) contextualizes why Samaritan evangelism was theologically significant."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 1:8",
+              "note": "\"You will be my witnesses in Jerusalem, and in all Judea and Samaria\" — the Samaritan mission of Acts 8 is the explicit fulfilment of the second stage of the commission."
+            },
+            {
+              "ref": "John 4:4–42",
+              "note": "Jesus's own mission in Samaria — the theological preparation for Philip's harvest. Jesus planted; Philip and Peter/John watered; the Spirit gave growth."
+            },
+            {
+              "ref": "2 Kings 17:24–41",
+              "note": "The origin of the Samaritans — the mixed population resettled after the Assyrian conquest. Stephen's historical survey (ch.7) contextualizes why Samaritan evangelism was theologically significant."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -133,6 +134,9 @@
               "note": "\"The Holy Spirit had not yet come on any of them\" — Keener suggests the delay served to prevent the Samaritan church from developing as an independent movement. The apostolic confirmation in vv.14–17 united the Samaritan community to the Jerusalem church structurally before the two could diverge."
             }
           ]
+        },
+        "hist": {
+          "context": "The structural irony of Acts 8:1–4 is one of Luke's most important narrative moves: the persecution intended to silence the Gospel scatters its bearers, who then preach wherever they land. Luke makes this explicit in v4: 'those who had been scattered preached the word wherever they went.' Opposition becomes the mechanism of expansion — a principle that recurs throughout Acts. Simon Magus's desire to purchase the Spirit's power (vv.18–19) is the precise inversion of the Gospel's economics: the Spirit is given (v20: 'the gift of God'), not purchased. His name gives us the word 'simony' — the buying and selling of church offices."
         }
       }
     },
@@ -179,21 +183,22 @@
             "current": false
           }
         ],
-        "ctx": "The Ethiopian eunuch represents two convergences: (1) geographically, he is from the 'ends of the earth' (Ethiopia was the edge of the known world — the implicit fulfilment of 1:8's final horizon); (2) theologically, he is one excluded from the assembly of Israel who is now included in the new covenant community (fulfilling Isaiah 56:3–5). That he was reading Isaiah 53 when Philip arrived is Luke's theological statement: the Scripture was already asking the question the Gospel answers. Philip does not impose the Gospel onto an unrelated text — he starts where the man is and shows how Isaiah 53 points to Jesus.",
-        "cross": [
-          {
-            "ref": "Isaiah 53:7–8",
-            "note": "The direct quotation (vv.32–33) — the Fourth Servant Song's description of vicarious suffering. Philip begins with this passage and proclaims \"the good news about Jesus\" — the apostolic hermeneutic in miniature."
-          },
-          {
-            "ref": "Isaiah 56:3–5",
-            "note": "The promise to eunuchs of \"a memorial and a name better than sons and daughters\" — directly applicable to the Ethiopian eunuch's baptism. Philip enacted this promise without citing it."
-          },
-          {
-            "ref": "Acts 1:8",
-            "note": "\"To the ends of the earth\" — the Ethiopian represents the geographic fulfilment of the commission's final horizon. Africa is reached before Europe."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isaiah 53:7–8",
+              "note": "The direct quotation (vv.32–33) — the Fourth Servant Song's description of vicarious suffering. Philip begins with this passage and proclaims \"the good news about Jesus\" — the apostolic hermeneutic in miniature."
+            },
+            {
+              "ref": "Isaiah 56:3–5",
+              "note": "The promise to eunuchs of \"a memorial and a name better than sons and daughters\" — directly applicable to the Ethiopian eunuch's baptism. Philip enacted this promise without citing it."
+            },
+            {
+              "ref": "Acts 1:8",
+              "note": "\"To the ends of the earth\" — the Ethiopian represents the geographic fulfilment of the commission's final horizon. Africa is reached before Europe."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -258,6 +263,9 @@
               "note": "The Spirit's transportation of Philip (v39) parallels Elijah's translation by the Spirit in 1 Kings 18:12 and 2 Kings 2:16. Luke presents this as a factual account of miraculous transportation, consistent with his historiographical method throughout Acts."
             }
           ]
+        },
+        "hist": {
+          "context": "The Ethiopian eunuch represents two convergences: (1) geographically, he is from the 'ends of the earth' (Ethiopia was the edge of the known world — the implicit fulfilment of 1:8's final horizon); (2) theologically, he is one excluded from the assembly of Israel who is now included in the new covenant community (fulfilling Isaiah 56:3–5). That he was reading Isaiah 53 when Philip arrived is Luke's theological statement: the Scripture was already asking the question the Gospel answers. Philip does not impose the Gospel onto an unrelated text — he starts where the man is and shows how Isaiah 53 points to Jesus."
         }
       }
     }

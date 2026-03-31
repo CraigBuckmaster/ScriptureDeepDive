@@ -31,21 +31,22 @@
             "paragraph": "The term apostolos (apostle, one who is sent) carries two distinct senses in the Pauline corpus: the broad sense of a commissioned messenger (as in Phil 2:25) and the narrow sense of one who has seen the risen Lord and been directly commissioned by him (Gal 1:1). Paul's rhetorical question 'Am I not an apostle?' (v. 1) appeals to the narrow sense: his Damascus-road encounter with the risen Christ (v. 1b; cf. 15:8) constitutes the authenticating credential. The Corinthians themselves are the 'seal' (sphragis) of this apostleship (v. 2)."
           }
         ],
-        "ctx": "Paul's defence of his apostolic rights (ch. 9) functions as the central exhibit in the idol-food argument of chs. 8–10. Having urged the 'knowledgeable' Corinthians to surrender their right to eat idol-meat for the sake of weaker believers (8:9–13), Paul now demonstrates that he himself practises what he preaches. The cultural background is significant: in Graeco-Roman society, travelling philosophers and rhetoricians typically charged fees or accepted patronage. Paul's refusal to do so would have puzzled the Corinthians and perhaps suggested inferior status. His appeal to the Torah (Deut 25:4), the temple system (v. 13), and the Lord's command (v. 14; cf. Luke 10:7) establishes a threefold warrant for apostolic support, making his voluntary renunciation all the more striking.",
-        "cross": [
-          {
-            "ref": "Deut 25:4",
-            "note": "Paul cites the Mosaic prohibition against muzzling the threshing ox as a principle that extends beyond animals to human workers. His a fortiori reasoning—'Is it about oxen that God is concerned?'—draws on a recognised rabbinic hermeneutical move (qal wahomer)."
-          },
-          {
-            "ref": "Luke 10:7",
-            "note": "The Lord's instruction that 'the worker deserves his wages' (cf. Matt 10:10) is the dominical command Paul references in v. 14. This saying circulated as an authoritative word of Jesus in the early church (1 Tim 5:18)."
-          },
-          {
-            "ref": "1 Tim 5:17–18",
-            "note": "The Pastoral Epistles combine both Paul's OT citation (Deut 25:4) and the Lord's saying (Luke 10:7) into a single proof-text pair for elder compensation, confirming that this argumentative chain became a standard tradition."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 25:4",
+              "note": "Paul cites the Mosaic prohibition against muzzling the threshing ox as a principle that extends beyond animals to human workers. His a fortiori reasoning—'Is it about oxen that God is concerned?'—draws on a recognised rabbinic hermeneutical move (qal wahomer)."
+            },
+            {
+              "ref": "Luke 10:7",
+              "note": "The Lord's instruction that 'the worker deserves his wages' (cf. Matt 10:10) is the dominical command Paul references in v. 14. This saying circulated as an authoritative word of Jesus in the early church (1 Tim 5:18)."
+            },
+            {
+              "ref": "1 Tim 5:17–18",
+              "note": "The Pastoral Epistles combine both Paul's OT citation (Deut 25:4) and the Lord's saying (Luke 10:7) into a single proof-text pair for elder compensation, confirming that this argumentative chain became a standard tradition."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -118,6 +119,9 @@
               "note": "Thiselton notes that the hermeneutical principle underlying Paul's use of Deut 25:4 has generated extensive debate. The question 'Is it about oxen that God is concerned?' (v. 9) has been read as (a) an allegorical dismissal of the literal sense, (b) a qal wahomer (lesser-to-greater) argument, or (c) a typological extension. Thiselton favours the qal wahomer reading: God's concern for oxen is not denied but transcended by the greater principle of sustaining human labourers. The interpretive move is thus analogical, not allegorical."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul's defence of his apostolic rights (ch. 9) functions as the central exhibit in the idol-food argument of chs. 8–10. Having urged the 'knowledgeable' Corinthians to surrender their right to eat idol-meat for the sake of weaker believers (8:9–13), Paul now demonstrates that he himself practises what he preaches. The cultural background is significant: in Graeco-Roman society, travelling philosophers and rhetoricians typically charged fees or accepted patronage. Paul's refusal to do so would have puzzled the Corinthians and perhaps suggested inferior status. His appeal to the Torah (Deut 25:4), the temple system (v. 13), and the Lord's command (v. 14; cf. Luke 10:7) establishes a threefold warrant for apostolic support, making his voluntary renunciation all the more striking."
         }
       }
     },
@@ -141,17 +145,18 @@
             "paragraph": "The noun misthos (reward, wages) creates a deliberate paradox in vv. 17–18. If Paul preaches voluntarily, he has a reward; if involuntarily, he is merely discharging a trust (oikonomia). His 'reward' turns out to be the act of preaching without charge—a self-referential irony. The same term is used of eschatological reward in 3:8, 14, tying this passage to the broader theme of divine assessment."
           }
         ],
-        "ctx": "Paul's refusal of financial support from the Corinthians was counter-cultural in a society where patronage networks defined social relationships. Accepting support would have placed Paul in a client-patron relationship with wealthy Corinthians, potentially compromising his freedom to correct them. His language of 'compulsion' (anankē, v. 16) and 'stewardship' (oikonomia, v. 17) places his preaching in the category of a divine commission rather than a professional career. The Stoic overtones of voluntary renunciation would have resonated with the philosophically educated in Corinth, while the content of his 'reward'—preaching without charge—subverts their expectations entirely.",
-        "cross": [
-          {
-            "ref": "Acts 18:1–3",
-            "note": "Luke's narrative confirms that Paul worked as a tentmaker in Corinth alongside Aquila and Priscilla, providing the historical backdrop for his claim to have supported himself financially rather than accepting patronage from the congregation."
-          },
-          {
-            "ref": "2 Cor 11:7–9",
-            "note": "In the later letter Paul returns to this theme, asking rhetorically whether he sinned by preaching the gospel 'free of charge' and receiving support from other churches (specifically Macedonia) instead. The ongoing tension confirms that his financial policy remained controversial in Corinth."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 18:1–3",
+              "note": "Luke's narrative confirms that Paul worked as a tentmaker in Corinth alongside Aquila and Priscilla, providing the historical backdrop for his claim to have supported himself financially rather than accepting patronage from the congregation."
+            },
+            {
+              "ref": "2 Cor 11:7–9",
+              "note": "In the later letter Paul returns to this theme, asking rhetorically whether he sinned by preaching the gospel 'free of charge' and receiving support from other churches (specifically Macedonia) instead. The ongoing tension confirms that his financial policy remained controversial in Corinth."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -204,6 +209,9 @@
               "note": "Thiselton offers an extensive analysis of the syntactical difficulty in v. 15, where Paul's sentence breaks off mid-thought (an anacoluthon). The emotional intensity overwhelms the grammar: Paul begins to say 'I would rather die than—' and then interrupts himself, as if the very thought of losing his 'boast' is unbearable. Thiselton argues that this stylistic feature is evidence of genuine dictation rather than careful literary composition, offering a rare window into Paul's emotional state."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul's refusal of financial support from the Corinthians was counter-cultural in a society where patronage networks defined social relationships. Accepting support would have placed Paul in a client-patron relationship with wealthy Corinthians, potentially compromising his freedom to correct them. His language of 'compulsion' (anankē, v. 16) and 'stewardship' (oikonomia, v. 17) places his preaching in the category of a divine commission rather than a professional career. The Stoic overtones of voluntary renunciation would have resonated with the philosophically educated in Corinth, while the content of his 'reward'—preaching without charge—subverts their expectations entirely."
         }
       }
     },
@@ -227,17 +235,18 @@
             "paragraph": "The adjective eleutheros (free) in v. 19 links the chapter back to the freedom-and-rights theme of ch. 8. Paul's freedom is paradoxical: he is free from all (eleutheros ek pantōn) yet has made himself a slave (edoulōsa) to all. This voluntary self-enslavement mirrors the Christ-hymn of Phil 2:7 (morphēn doulou labōn). Freedom in Paul's theology is never autonomy but always freedom-for-service."
           }
         ],
-        "ctx": "Paul's declaration that he 'became all things to all people' (v. 22) has generated extensive discussion about the nature and limits of missionary accommodation. In the first-century Mediterranean world, social identity was relatively fixed: Jews maintained dietary laws and Sabbath observance; Gentiles participated in civic religion. Paul's willingness to cross these boundaries—living as a Jew among Jews and as one without the Law among Gentiles—was radical. Crucially, his accommodation is never syncretism: he specifies that he is 'not free from God's law but under Christ's law' (v. 21). The qualifier 'ennomos Christou' (under Christ's law) establishes the boundary within which cultural flexibility operates.",
-        "cross": [
-          {
-            "ref": "Rom 14:1–6",
-            "note": "Paul's principle of accommodation for the sake of others finds its fullest theoretical treatment in Romans 14, where the 'strong' are instructed to welcome the 'weak' without passing judgment on disputable matters. Both passages subordinate personal freedom to communal love."
-          },
-          {
-            "ref": "Phil 3:7–8",
-            "note": "Paul's language of 'gain' (kerdos/kerdainō) recurs in Philippians, where everything formerly counted as gain is now reckoned as loss for the surpassing worth of knowing Christ. The same calculus underlies 1 Cor 9: personal advantage is surrendered for a greater gain."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 14:1–6",
+              "note": "Paul's principle of accommodation for the sake of others finds its fullest theoretical treatment in Romans 14, where the 'strong' are instructed to welcome the 'weak' without passing judgment on disputable matters. Both passages subordinate personal freedom to communal love."
+            },
+            {
+              "ref": "Phil 3:7–8",
+              "note": "Paul's language of 'gain' (kerdos/kerdainō) recurs in Philippians, where everything formerly counted as gain is now reckoned as loss for the surpassing worth of knowing Christ. The same calculus underlies 1 Cor 9: personal advantage is surrendered for a greater gain."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -286,6 +295,9 @@
               "note": "Thiselton provides extensive discussion of the sociolinguistic concept of 'code-switching,' arguing that Paul's accommodation is analogous to a bilingual speaker adapting register to context. The key insight is that code-switching does not entail a change of identity but a strategic deployment of communicative resources. Paul's identity remains constant (ennomos Christou), but his social performance varies according to audience. Thiselton warns against both a rigid refusal to accommodate (legalism) and an unprincipled accommodation (syncretism); Paul navigates between these by anchoring his flexibility in christological purpose."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul's declaration that he 'became all things to all people' (v. 22) has generated extensive discussion about the nature and limits of missionary accommodation. In the first-century Mediterranean world, social identity was relatively fixed: Jews maintained dietary laws and Sabbath observance; Gentiles participated in civic religion. Paul's willingness to cross these boundaries—living as a Jew among Jews and as one without the Law among Gentiles—was radical. Crucially, his accommodation is never syncretism: he specifies that he is 'not free from God's law but under Christ's law' (v. 21). The qualifier 'ennomos Christou' (under Christ's law) establishes the boundary within which cultural flexibility operates."
         }
       }
     },
@@ -309,21 +321,22 @@
             "paragraph": "The noun enkrateia (self-control) was a cardinal virtue in Stoic and athletic ethics. The verb form enkrateuomai (v. 25, 'goes into strict training') describes the ten-month regimen required of competitors in the Isthmian Games: regulated diet, sexual abstinence, and rigorous physical training. Paul applies this athletic discipline to the Christian life: the goal is not mere participation but victory. The term reappears in Gal 5:23 as a fruit of the Spirit, suggesting that for Paul genuine self-control is Spirit-empowered, not merely willpower."
           }
         ],
-        "ctx": "The Isthmian Games, held at the sanctuary of Poseidon near Corinth, were second only to the Olympic Games in prestige. Corinthian Christians would have been intimately familiar with the athletic imagery Paul employs. Archaeological evidence from the Isthmian sanctuary—starting blocks, practice tracks, and victor inscriptions—confirms the pervasive presence of competitive athletics in the Corinthian cultural milieu. Paul's metaphor is carefully chosen: the athlete's discipline is self-imposed and goal-directed, not externally coerced. The shift from third person ('everyone who competes') to first person ('I do not run aimlessly') in vv. 25–27 personalises the analogy: Paul himself is the model of disciplined self-renunciation.",
-        "cross": [
-          {
-            "ref": "Phil 3:13–14",
-            "note": "Paul reuses the athletic metaphor in Philippians: 'I press on toward the goal for the prize of the upward call of God in Christ Jesus.' The language of straining forward (epekteinomenos) conveys the intensity of focused effort."
-          },
-          {
-            "ref": "2 Tim 4:7–8",
-            "note": "Paul's final letter echoes the same imagery: 'I have fought the good fight, I have finished the race, I have kept the faith.' The 'crown of righteousness' awaiting him corresponds to the 'imperishable crown' of 1 Cor 9:25."
-          },
-          {
-            "ref": "Heb 12:1",
-            "note": "The author of Hebrews employs the stadium metaphor: 'Let us run with perseverance the race marked out for us,' surrounded by a 'great cloud of witnesses'—spectators in the heavenly stadium."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Phil 3:13–14",
+              "note": "Paul reuses the athletic metaphor in Philippians: 'I press on toward the goal for the prize of the upward call of God in Christ Jesus.' The language of straining forward (epekteinomenos) conveys the intensity of focused effort."
+            },
+            {
+              "ref": "2 Tim 4:7–8",
+              "note": "Paul's final letter echoes the same imagery: 'I have fought the good fight, I have finished the race, I have kept the faith.' The 'crown of righteousness' awaiting him corresponds to the 'imperishable crown' of 1 Cor 9:25."
+            },
+            {
+              "ref": "Heb 12:1",
+              "note": "The author of Hebrews employs the stadium metaphor: 'Let us run with perseverance the race marked out for us,' surrounded by a 'great cloud of witnesses'—spectators in the heavenly stadium."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -376,6 +389,9 @@
               "note": "Thiselton provides detailed archaeological and literary background on the Isthmian Games, noting that competitors swore an oath to have trained for ten months before a panel of judges (Hellanodikai). The verb hypōpiazō (v. 27) is a boxing term meaning to strike under the eye; Thiselton argues that Paul's use is metaphorical but retains the element of controlled violence—the apostle subjugates his own bodily desires to prevent them from undermining his ministry. The fear of being adokimos is not soteriological anxiety but apostolic vigilance: the preacher who fails to practice what he preaches forfeits his credibility and, in that sense, is 'disqualified.'"
             }
           ]
+        },
+        "hist": {
+          "context": "The Isthmian Games, held at the sanctuary of Poseidon near Corinth, were second only to the Olympic Games in prestige. Corinthian Christians would have been intimately familiar with the athletic imagery Paul employs. Archaeological evidence from the Isthmian sanctuary—starting blocks, practice tracks, and victor inscriptions—confirms the pervasive presence of competitive athletics in the Corinthian cultural milieu. Paul's metaphor is carefully chosen: the athlete's discipline is self-imposed and goal-directed, not externally coerced. The shift from third person ('everyone who competes') to first person ('I do not run aimlessly') in vv. 25–27 personalises the analogy: Paul himself is the model of disciplined self-renunciation."
         }
       }
     }

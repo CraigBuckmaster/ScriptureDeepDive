@@ -25,17 +25,18 @@
             "paragraph": "Nebuzaradan the commander releases Jeremiah from chains at Ramah (v.1) and gives him a choice: come to Babylon under protection or stay in the land. A Babylonian official grants the prophet the freedom (deror) that his own people denied. Jeremiah chooses to stay with Gedaliah and the remnant -- identifying with the poorest who remain rather than accepting Babylonian comfort."
           }
         ],
-        "ctx": "After the fall, Jeremiah is found in chains among the captives at Ramah -- the staging area for deportation. Nebuzaradan, the Babylonian commander, releases him with a remarkable speech acknowledging that the LORD fulfilled his word of judgment (vv.2-3). A pagan military officer articulates the theology Judah refused to accept. Jeremiah goes to Gedaliah at Mizpah, beginning the final phase of his ministry among the remnant.",
-        "cross": [
-          {
-            "ref": "Jer 39:11-14",
-            "note": "Nebuchadnezzar had already ordered Jeremiah's protection -- the release at Ramah fulfills that order."
-          },
-          {
-            "ref": "2 Kgs 25:22-24",
-            "note": "The parallel account of Gedaliah's appointment as governor over the remnant."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 39:11-14",
+              "note": "Nebuchadnezzar had already ordered Jeremiah's protection -- the release at Ramah fulfills that order."
+            },
+            {
+              "ref": "2 Kgs 25:22-24",
+              "note": "The parallel account of Gedaliah's appointment as governor over the remnant."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -84,6 +85,9 @@
               "note": "Brueggemann reads Nebuzaradan's speech as \"the ultimate irony of the book.\" The Babylonian destroyer interprets the fall more accurately than any Judean leader. Truth finds its voice in the most unexpected mouth."
             }
           ]
+        },
+        "hist": {
+          "context": "After the fall, Jeremiah is found in chains among the captives at Ramah -- the staging area for deportation. Nebuzaradan, the Babylonian commander, releases him with a remarkable speech acknowledging that the LORD fulfilled his word of judgment (vv.2-3). A pagan military officer articulates the theology Judah refused to accept. Jeremiah goes to Gedaliah at Mizpah, beginning the final phase of his ministry among the remnant."
         }
       }
     },
@@ -101,17 +105,18 @@
             "paragraph": "Gedaliah counsels the remnant: \"Do not be afraid to serve the Babylonians. Settle down in the land and serve the king of Babylon, and it will go well (yitab) with you\" (v.9). His advice echoes Jeremiah's letter to the exiles (29:5-7): settle, build, and seek shalom within the Babylonian system. Gedaliah implements the policy Jeremiah preached."
           }
         ],
-        "ctx": "Gedaliah establishes a fragile peace at Mizpah. Scattered Judean fighters and refugees return, and the remnant community harvests \"a great amount of wine and summer fruit\" (v.12) -- a brief glimpse of normalcy. But Johanan warns Gedaliah that Ishmael son of Nethaniah, backed by the king of Ammon, plans to assassinate him. Gedaliah refuses to believe it -- fatally.",
-        "cross": [
-          {
-            "ref": "Jer 29:5-7",
-            "note": "The letter to the exiles counseled the same policy Gedaliah now implements: settle, build, serve."
-          },
-          {
-            "ref": "Prov 14:15",
-            "note": "\"The simple believe anything, but the prudent give thought to their steps\" -- Gedaliah's fatal credulity."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 29:5-7",
+              "note": "The letter to the exiles counseled the same policy Gedaliah now implements: settle, build, serve."
+            },
+            {
+              "ref": "Prov 14:15",
+              "note": "\"The simple believe anything, but the prudent give thought to their steps\" -- Gedaliah's fatal credulity."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -160,6 +165,9 @@
               "note": "Brueggemann identifies Gedaliah's refusal to act on intelligence as \"the fatal weakness of moderate leadership.\" Gedaliah cannot imagine that his own people would betray the fragile peace."
             }
           ]
+        },
+        "hist": {
+          "context": "Gedaliah establishes a fragile peace at Mizpah. Scattered Judean fighters and refugees return, and the remnant community harvests \"a great amount of wine and summer fruit\" (v.12) -- a brief glimpse of normalcy. But Johanan warns Gedaliah that Ishmael son of Nethaniah, backed by the king of Ammon, plans to assassinate him. Gedaliah refuses to believe it -- fatally."
         }
       }
     }

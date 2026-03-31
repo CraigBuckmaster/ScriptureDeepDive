@@ -22,21 +22,22 @@
             "paragraph": "\"Trust (bāṭaḥ) in the LORD and do good; dwell in the land and enjoy safe pasture\" (v.3). An acrostic wisdom psalm. David counsels: do not fret about the wicked (v.1), trust God (v.3), delight in the LORD and he will give you the desires of your heart (v.4), commit your way to him (v.5), be still and wait (v.7). \"The meek will inherit the land\" (v.11) — Jesus quotes this in the Beatitudes (Matt 5:5)."
           }
         ],
-        "ctx": "",
-        "cross": [
-          {
-            "ref": "Prov 24:19–20",
-            "note": "Proverbs 24 shares the psalm's opening injunction almost verbatim: 'Do not fret because of evildoers … for the evildoer has no future hope.' Wisdom and worship traditions converge on the same counsel."
-          },
-          {
-            "ref": "Matt 5:5",
-            "note": "Jesus' beatitude 'Blessed are the meek, for they will inherit the earth' quotes Psalm 37:11 directly. The psalm's promise to the ʿănāwîm becomes the charter of the kingdom of heaven."
-          },
-          {
-            "ref": "Heb 10:36–37",
-            "note": "Hebrews' call to patient endurance — 'in just a little while, he who is coming will come and will not delay' — draws on the psalm's repeated counsel to wait patiently for the LORD (vv. 7, 9, 34)."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 24:19–20",
+              "note": "Proverbs 24 shares the psalm's opening injunction almost verbatim: 'Do not fret because of evildoers … for the evildoer has no future hope.' Wisdom and worship traditions converge on the same counsel."
+            },
+            {
+              "ref": "Matt 5:5",
+              "note": "Jesus' beatitude 'Blessed are the meek, for they will inherit the earth' quotes Psalm 37:11 directly. The psalm's promise to the ʿănāwîm becomes the charter of the kingdom of heaven."
+            },
+            {
+              "ref": "Heb 10:36–37",
+              "note": "Hebrews' call to patient endurance — 'in just a little while, he who is coming will come and will not delay' — draws on the psalm's repeated counsel to wait patiently for the LORD (vv. 7, 9, 34)."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -127,6 +128,9 @@
               "note": "Goldingay: 'Be still' (dōm) means literally 'be silent.' The counsel is not merely emotional calm but verbal restraint — stop arguing the case, stop protesting the injustice, and let God be judge."
             }
           ]
+        },
+        "hist": {
+          "context": ""
         }
       }
     },
@@ -144,17 +148,18 @@
             "paragraph": "\"I was young and now I am old, yet I have never seen the righteous (ṣaddîq) forsaken or their children begging bread\" (v.25). David’s lifetime testimony. The righteous are sustained through all seasons. The wicked flourish briefly and vanish like smoke (v.20). \"The salvation of the righteous comes from the LORD; he is their stronghold in time of trouble\" (v.39)."
           }
         ],
-        "ctx": "",
-        "cross": [
-          {
-            "ref": "Ps 73:1–28",
-            "note": "Psalm 73 wrestles with the same problem — the prosperity of the wicked — but from an experiential rather than instructional angle. Together, Psalms 37 and 73 form the most sustained biblical reflection on theodicy."
-          },
-          {
-            "ref": "2 Pet 3:8–9",
-            "note": "Peter's assurance that 'the Lord is not slow in keeping his promise' addresses the same tension: apparent divine inaction in the face of evil. The psalm's counsel to wait patiently finds its eschatological answer in Peter."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 73:1–28",
+              "note": "Psalm 73 wrestles with the same problem — the prosperity of the wicked — but from an experiential rather than instructional angle. Together, Psalms 37 and 73 form the most sustained biblical reflection on theodicy."
+            },
+            {
+              "ref": "2 Pet 3:8–9",
+              "note": "Peter's assurance that 'the Lord is not slow in keeping his promise' addresses the same tension: apparent divine inaction in the face of evil. The psalm's counsel to wait patiently finds its eschatological answer in Peter."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -245,6 +250,9 @@
               "note": "Goldingay: the tree metaphor is the psalm's emotional climax. The Hebrew 'I passed by' (wā'e'ebōr) is devastatingly casual. The wicked's disappearance is so complete that even looking for them yields nothing."
             }
           ]
+        },
+        "hist": {
+          "context": ""
         }
       }
     }

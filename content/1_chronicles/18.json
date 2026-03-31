@@ -17,13 +17,14 @@
       "verse_start": 1,
       "verse_end": 8,
       "panels": {
-        "ctx": "David defeats the Philistines, Moabites, Hadadezer of Zobah, and the Arameans of Damascus. The Chronicler compresses 2 Samuel 8’s military narrative, preserving the victories but reducing the violence. Notable omission: Samuel says David “made the Moabites lie down on the ground and measured them off with a cord; every two lengths were put to death” (2 Sam 8:2). The Chronicler simply says: “David defeated the Moabites, and they became subject to him.” The brutality is edited out.",
-        "cross": [
-          {
-            "ref": "2 Sam 8:1–14",
-            "note": "The parallel. The Chronicler condenses and softens the military details."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 8:1–14",
+              "note": "The parallel. The Chronicler condenses and softens the military details."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -41,6 +42,9 @@
               "note": "The bronze from Tibhath and Kun (Betah and Berothai in Samuel) — the name differences reflect textual variants between the Chronicler’s source and the MT of Samuel."
             }
           ]
+        },
+        "hist": {
+          "context": "David defeats the Philistines, Moabites, Hadadezer of Zobah, and the Arameans of Damascus. The Chronicler compresses 2 Samuel 8’s military narrative, preserving the victories but reducing the violence. Notable omission: Samuel says David “made the Moabites lie down on the ground and measured them off with a cord; every two lengths were put to death” (2 Sam 8:2). The Chronicler simply says: “David defeated the Moabites, and they became subject to him.” The brutality is edited out."
         }
       }
     },
@@ -50,13 +54,14 @@
       "verse_start": 9,
       "verse_end": 17,
       "panels": {
-        "ctx": "Tou king of Hamath sends tribute; David dedicates all captured silver, gold, and bronze to the LORD. The chapter closes with David’s cabinet list: Joab over the army, Jehoshaphat as recorder, Zadok and Ahimelek as priests, Shavsha as secretary, Benaiah over the Kerethites and Pelethites. “David reigned over all Israel, doing what was just and right for all his people.” The final verse is the Chronicler’s summary: David’s reign is characterised by justice.",
-        "cross": [
-          {
-            "ref": "2 Sam 8:15–18",
-            "note": "The parallel cabinet list. Minor name variations between the two texts."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Sam 8:15–18",
+              "note": "The parallel cabinet list. Minor name variations between the two texts."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -74,6 +79,9 @@
               "note": "The substitution of “chief officials” (hāriʾishōnîm lĕyad hammelek) for “priests” (kōhănîm) in Samuel is one of the clearest examples of the Chronicler’s theological editing."
             }
           ]
+        },
+        "hist": {
+          "context": "Tou king of Hamath sends tribute; David dedicates all captured silver, gold, and bronze to the LORD. The chapter closes with David’s cabinet list: Joab over the army, Jehoshaphat as recorder, Zadok and Ahimelek as priests, Shavsha as secretary, Benaiah over the Kerethites and Pelethites. “David reigned over all Israel, doing what was just and right for all his people.” The final verse is the Chronicler’s summary: David’s reign is characterised by justice."
         }
       }
     }

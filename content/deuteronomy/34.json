@@ -31,17 +31,18 @@
             "paragraph": "The phrase \"at the mouth of the LORD\" (v.5) is used for Moses's death -- literally, God's breath. This is the most intimate death description in the OT. Rabbinic tradition reads it as \"by the kiss of God\" -- Moses died in the direct encounter with the divine."
           }
         ],
-        "ctx": "Deuteronomy concludes with the death of Moses. He ascends Mount Nebo, sees the whole land spread out before him -- from Gilead to Dan, Naphtali to the Mediterranean, Negev to Jericho -- and dies there in Moab, buried by God himself in an unknown grave. He is 120 years old, eyes undimmed, strength unabated. The whole nation mourns for thirty days. The unknown grave is a mercy: no shrine, no cult, no successor-worship. Moses points beyond himself to the One greater than Moses.",
-        "cross": [
-          {
-            "ref": "Matt 17:1-3",
-            "note": "\"Just then there appeared before them Moses and Elijah, talking with Jesus.\" Moses's Transfiguration appearance is the NT's answer to his Pisgah exclusion: the one barred from entering the land by Sinai's law enters the land in the company of the law's Fulfiller."
-          },
-          {
-            "ref": "Jude 9",
-            "note": "\"But even the archangel Michael, when he was disputing with the devil about the body of Moses, did not himself dare to condemn him but said, 'The Lord rebuke you!'\" The dispute over Moses's body shows the extraordinary significance attached to Moses's death even in tradition outside the canon."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 17:1-3",
+              "note": "\"Just then there appeared before them Moses and Elijah, talking with Jesus.\" Moses's Transfiguration appearance is the NT's answer to his Pisgah exclusion: the one barred from entering the land by Sinai's law enters the land in the company of the law's Fulfiller."
+            },
+            {
+              "ref": "Jude 9",
+              "note": "\"But even the archangel Michael, when he was disputing with the devil about the body of Moses, did not himself dare to condemn him but said, 'The Lord rebuke you!'\" The dispute over Moses's body shows the extraordinary significance attached to Moses's death even in tradition outside the canon."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "Deuteronomy concludes with the death of Moses. He ascends Mount Nebo, sees the whole land spread out before him -- from Gilead to Dan, Naphtali to the Mediterranean, Negev to Jericho -- and dies there in Moab, buried by God himself in an unknown grave. He is 120 years old, eyes undimmed, strength unabated. The whole nation mourns for thirty days. The unknown grave is a mercy: no shrine, no cult, no successor-worship. Moses points beyond himself to the One greater than Moses."
         }
       }
     },
@@ -133,17 +137,18 @@
             "paragraph": "The \"face to face\" knowledge between God and Moses is the OT's highest description of prophetic intimacy. No other prophet received this designation. The NT's answer: in Christ, the \"face to face\" relationship is extended to all -- \"now I know in part; then I shall know fully, even as I am fully known\" (1 Cor 13:12)."
           }
         ],
-        "ctx": "The final verses describe the transition: Joshua, full of the spirit of wisdom because Moses had laid hands on him, assumes leadership. The Israelites listen to Joshua and do what the LORD commanded Moses. And then the final word: no prophet has since arisen in Israel like Moses, whom the LORD knew face to face. The OT ends with an unfilled expectation -- Moses is unequalled, but a prophet like Moses was promised (18:15). The gap waits for its answer in the Word made flesh.",
-        "cross": [
-          {
-            "ref": "Heb 3:5-6",
-            "note": "\"Moses was faithful as a servant in all God's house... But Christ is faithful as the Son over God's house.\" The author of Hebrews ends the OT's Moses-comparison exactly where Deuteronomy 34 ends: Moses was the greatest prophet, but Christ is greater -- not servant but Son."
-          },
-          {
-            "ref": "John 1:17-18",
-            "note": "\"For the law was given through Moses; grace and truth came through Jesus Christ. No one has ever seen God, but the one and only Son... has made him known.\" John's prologue resolves the Deuteronomy 34 \"face to face\" question: what Moses had partially, Christ gives fully."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 3:5-6",
+              "note": "\"Moses was faithful as a servant in all God's house... But Christ is faithful as the Son over God's house.\" The author of Hebrews ends the OT's Moses-comparison exactly where Deuteronomy 34 ends: Moses was the greatest prophet, but Christ is greater -- not servant but Son."
+            },
+            {
+              "ref": "John 1:17-18",
+              "note": "\"For the law was given through Moses; grace and truth came through Jesus Christ. No one has ever seen God, but the one and only Son... has made him known.\" John's prologue resolves the Deuteronomy 34 \"face to face\" question: what Moses had partially, Christ gives fully."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -208,6 +213,9 @@
               "note": "Calvin: The application extends to the church in every age. What Moses commands Israel in historical particularity, the Spirit applies to believers in principle. The form changes; the underlying demand for covenant faithfulness does not."
             }
           ]
+        },
+        "hist": {
+          "context": "The final verses describe the transition: Joshua, full of the spirit of wisdom because Moses had laid hands on him, assumes leadership. The Israelites listen to Joshua and do what the LORD commanded Moses. And then the final word: no prophet has since arisen in Israel like Moses, whom the LORD knew face to face. The OT ends with an unfilled expectation -- Moses is unequalled, but a prophet like Moses was promised (18:15). The gap waits for its answer in the Word made flesh."
         }
       }
     }

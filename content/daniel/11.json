@@ -25,21 +25,22 @@
             "paragraph": "The most detailed predictive prophecy in the Bible. The angel traces kings from Persia (v.2: three more kings then Xerxes), through Alexander (v.3: divided to the four winds), to the Ptolemies (south) and Seleucids (north) warring over Israel for two centuries. Every verse corresponds to documented history."
           }
         ],
-        "ctx": "This chapter contains more historically verifiable predictions than any other passage in the Bible. The Ptolemaic-Seleucid wars (vv.5–20) can be mapped verse by verse onto the historical record from 323 to 175 BC. The \"beautiful land\" (v.16) is Israel, caught between the two rival Hellenistic kingdoms. The marriage alliance of v.6 is the union of Berenice (Ptolemy II’s daughter) and Antiochus II (c.250 BC). The invasion of v.7–8 is Ptolemy III’s retaliatory campaign.",
-        "cross": [
-          {
-            "ref": "Dan 8:3–8",
-            "note": "The ram and goat vision — the same empires described with different imagery."
-          },
-          {
-            "ref": "Dan 2:39–40",
-            "note": "The bronze and iron kingdoms of the statue — Greece and its successors."
-          },
-          {
-            "ref": "1 Macc 1–6",
-            "note": "The Maccabean narrative that documents the events Daniel 11 prophesies."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Dan 8:3–8",
+              "note": "The ram and goat vision — the same empires described with different imagery."
+            },
+            {
+              "ref": "Dan 2:39–40",
+              "note": "The bronze and iron kingdoms of the statue — Greece and its successors."
+            },
+            {
+              "ref": "1 Macc 1–6",
+              "note": "The Maccabean narrative that documents the events Daniel 11 prophesies."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -121,6 +122,9 @@
               "note": "Collins identifies \"the beautiful land\" (eret-hatstsevi) as Israel, the same term as 8:9. The land’s beauty is theological, not merely geographical: it is the place of God’s dwelling."
             }
           ]
+        },
+        "hist": {
+          "context": "This chapter contains more historically verifiable predictions than any other passage in the Bible. The Ptolemaic-Seleucid wars (vv.5–20) can be mapped verse by verse onto the historical record from 323 to 175 BC. The \"beautiful land\" (v.16) is Israel, caught between the two rival Hellenistic kingdoms. The marriage alliance of v.6 is the union of Berenice (Ptolemy II’s daughter) and Antiochus II (c.250 BC). The invasion of v.7–8 is Ptolemy III’s retaliatory campaign."
         }
       }
     },
@@ -138,25 +142,26 @@
             "paragraph": "\"They will set up the abomination (shiqquts) that causes desolation\" (v.31). Antiochus IV Epiphanes: the \"contemptible person\" (v.21) who seizes power through intrigue. He invades Egypt, is humiliated by Rome (v.30, \"ships of Kittim\"), takes out his rage on Jerusalem. He abolishes the daily sacrifice and sets up the abomination — an altar to Zeus in the temple. \"Those who know their God will firmly resist\" (v.32). Verses 36–45 may shift to a future antichrist: \"the king who exalts himself above every god\" (v.36)."
           }
         ],
-        "ctx": "Antiochus IV Epiphanes (175–164 BC) is the \"contemptible person\" of v.21. His desecration of the Jerusalem temple in December 167 BC is the historical event behind \"the abomination of desolation\" (v.31). Jesus references this in the Olivet Discourse (Matt 24:15), applying it to a future event (possibly the Roman destruction of AD 70 or an end-times desecration). The transition at v.36 is debated: many scholars see the description exceeding Antiochus and pointing to a future eschatological figure.",
-        "cross": [
-          {
-            "ref": "Matt 24:15",
-            "note": "Jesus: \"When you see the abomination of desolation spoken through Daniel\" — applying this text to the future."
-          },
-          {
-            "ref": "2 Thess 2:3–4",
-            "note": "The man of lawlessness who sets himself up in God’s temple — developing Daniel 11:36."
-          },
-          {
-            "ref": "1 Macc 1:54–59",
-            "note": "The historical account: they set up the abomination of desolation on the altar and built altars in the surrounding towns."
-          },
-          {
-            "ref": "Rev 13:5–8",
-            "note": "The beast who speaks blasphemies and is given authority over every tribe — developing the horn/king of Daniel 11."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 24:15",
+              "note": "Jesus: \"When you see the abomination of desolation spoken through Daniel\" — applying this text to the future."
+            },
+            {
+              "ref": "2 Thess 2:3–4",
+              "note": "The man of lawlessness who sets himself up in God’s temple — developing Daniel 11:36."
+            },
+            {
+              "ref": "1 Macc 1:54–59",
+              "note": "The historical account: they set up the abomination of desolation on the altar and built altars in the surrounding towns."
+            },
+            {
+              "ref": "Rev 13:5–8",
+              "note": "The beast who speaks blasphemies and is given authority over every tribe — developing the horn/king of Daniel 11."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -242,6 +247,9 @@
               "note": "Collins reads the \"wise\" (maskilim) as the forerunners of the apocalyptic community, possibly proto-Essenes. Their response to persecution is not military (unlike the Maccabees) but instructional and martyrological."
             }
           ]
+        },
+        "hist": {
+          "context": "Antiochus IV Epiphanes (175–164 BC) is the \"contemptible person\" of v.21. His desecration of the Jerusalem temple in December 167 BC is the historical event behind \"the abomination of desolation\" (v.31). Jesus references this in the Olivet Discourse (Matt 24:15), applying it to a future event (possibly the Roman destruction of AD 70 or an end-times desecration). The transition at v.36 is debated: many scholars see the description exceeding Antiochus and pointing to a future eschatological figure."
         }
       }
     }

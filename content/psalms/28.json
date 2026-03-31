@@ -22,13 +22,14 @@
             "paragraph": "\"To you, LORD, I call; you are my rock (ṣūrî), do not turn a deaf ear to me\" (v.1). David cries to God as rock — solid, immovable, reliable. Without God’s response, David is like those going down to the pit (v.1). He lifts his hands toward God’s inner sanctuary (v.2) and asks not to be dragged away with the wicked (vv.3–4)."
           }
         ],
-        "ctx": "A lament that pivots to praise. David cries out (vv.1–2), asks for separation from the wicked (vv.3–4), and declares that God will repay the wicked for their deeds (v.5).",
-        "cross": [
-          {
-            "ref": "Ps 18:2",
-            "note": "\"The LORD is my rock\" — the same ṣūr imagery."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ps 18:2",
+              "note": "\"The LORD is my rock\" — the same ṣūr imagery."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -119,6 +120,9 @@
               "note": "Goldingay: 'speak cordially but harbor malice' — the Hebrew is literally 'speak peace (šālôm) but evil (rā'āh) is in their heart.' The very word for peace is weaponised. Language becomes a tool of betrayal."
             }
           ]
+        },
+        "hist": {
+          "context": "A lament that pivots to praise. David cries out (vv.1–2), asks for separation from the wicked (vv.3–4), and declares that God will repay the wicked for their deeds (v.5)."
         }
       }
     },
@@ -136,13 +140,14 @@
             "paragraph": "\"The LORD is my strength and my shield (māgēn); my heart trusts in him, and he helps me\" (v.7). The pivot: God heard, God helped, David’s heart leaps with joy. The personal becomes national: \"save your people and bless your inheritance; be their shepherd and carry them forever\" (v.9)."
           }
         ],
-        "ctx": "Thanksgiving erupts: \"Praise be to the LORD, for he has heard my cry\" (v.6). David’s heart trusts, and he is helped (v.7). The psalm expands: save your people, bless your inheritance, shepherd and carry them forever (v.9).",
-        "cross": [
-          {
-            "ref": "Isa 40:11",
-            "note": "\"He tends his flock like a shepherd; he gathers the lambs in his arms\" — the shepherd-carrying image."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 40:11",
+              "note": "\"He tends his flock like a shepherd; he gathers the lambs in his arms\" — the shepherd-carrying image."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -233,6 +238,9 @@
               "note": "Goldingay: the final verse broadens from 'I' to 'your people.' Goldingay notes this is characteristic of royal psalms — the king's personal prayer carries national significance."
             }
           ]
+        },
+        "hist": {
+          "context": "Thanksgiving erupts: \"Praise be to the LORD, for he has heard my cry\" (v.6). David’s heart trusts, and he is helped (v.7). The psalm expands: save your people, bless your inheritance, shepherd and carry them forever (v.9)."
         }
       }
     }

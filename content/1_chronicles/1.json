@@ -25,17 +25,18 @@
             "paragraph": "The Chronicler begins with a single word: “Adam” (v.1). No creation narrative, no garden, no fall — just the name. By starting at Adam rather than Abraham, the Chronicler stakes a universal claim: Israel’s story is humanity’s story. The genealogy that follows compresses Genesis 1–11 into 27 verses."
           }
         ],
-        "ctx": "The opening genealogy races from Adam through Seth to Noah, then through Shem to Abraham in 27 verses. This is not history but theology in list form. The Chronicler’s audience — a small post-exilic community — needs to know that their identity stretches back to the beginning of humanity. The selectivity is deliberate: the line runs through Seth (not Cain), Shem (not Ham or Japheth), and Abraham (not his brothers). Election narrows with each generation, but the starting point is all humanity.",
-        "cross": [
-          {
-            "ref": "Gen 5:1–32",
-            "note": "The genealogy from Adam to Noah. The Chronicler compresses ten generations of Genesis 5 into nine verses, omitting birth/death ages — only the line of descent matters."
-          },
-          {
-            "ref": "Luke 3:23–38",
-            "note": "Luke’s genealogy of Jesus also runs back to Adam. Both Chronicles and Luke make the same universal claim: the story of God’s people begins with all people."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 5:1–32",
+              "note": "The genealogy from Adam to Noah. The Chronicler compresses ten generations of Genesis 5 into nine verses, omitting birth/death ages — only the line of descent matters."
+            },
+            {
+              "ref": "Luke 3:23–38",
+              "note": "Luke’s genealogy of Jesus also runs back to Adam. Both Chronicles and Luke make the same universal claim: the story of God’s people begins with all people."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -53,6 +54,9 @@
               "note": "The genealogy compresses Gen 5:1–32 into a bare name list. The Chronicler assumes Torah knowledge and provides a reference framework, not a standalone narrative."
             }
           ]
+        },
+        "hist": {
+          "context": "The opening genealogy races from Adam through Seth to Noah, then through Shem to Abraham in 27 verses. This is not history but theology in list form. The Chronicler’s audience — a small post-exilic community — needs to know that their identity stretches back to the beginning of humanity. The selectivity is deliberate: the line runs through Seth (not Cain), Shem (not Ham or Japheth), and Abraham (not his brothers). Election narrows with each generation, but the starting point is all humanity."
         }
       }
     },
@@ -62,17 +66,18 @@
       "verse_start": 28,
       "verse_end": 54,
       "panels": {
-        "ctx": "The genealogy branches from Abraham through Isaac and Ishmael, then expands into the Edomite kings and chiefs — an unexpectedly detailed treatment of Esau’s line. Why does a post-exilic Israelite author devote 27 verses to Edom? Because in the 5th century BC, Edomites (Idumeans) were Israel’s immediate neighbours and rivals. By tracing Edom’s ancestry, the Chronicler places them within the Abrahamic family — acknowledging their legitimacy while establishing Israel’s priority through Isaac and Jacob.",
-        "cross": [
-          {
-            "ref": "Gen 25:12–18",
-            "note": "Ishmael’s genealogy. The Chronicler reproduces it faithfully — Ishmael is Abraham’s son and receives genealogical recognition."
-          },
-          {
-            "ref": "Gen 36:1–43",
-            "note": "The Edomite genealogy. The Chronicler’s version closely follows Genesis 36, confirming shared source material."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 25:12–18",
+              "note": "Ishmael’s genealogy. The Chronicler reproduces it faithfully — Ishmael is Abraham’s son and receives genealogical recognition."
+            },
+            {
+              "ref": "Gen 36:1–43",
+              "note": "The Edomite genealogy. The Chronicler’s version closely follows Genesis 36, confirming shared source material."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -90,6 +95,9 @@
               "note": "The phrase “before any Israelite king reigned” is identical to Gen 36:31. This cross-reference is significant for dating discussions — it presupposes knowledge of the Israelite monarchy."
             }
           ]
+        },
+        "hist": {
+          "context": "The genealogy branches from Abraham through Isaac and Ishmael, then expands into the Edomite kings and chiefs — an unexpectedly detailed treatment of Esau’s line. Why does a post-exilic Israelite author devote 27 verses to Edom? Because in the 5th century BC, Edomites (Idumeans) were Israel’s immediate neighbours and rivals. By tracing Edom’s ancestry, the Chronicler places them within the Abrahamic family — acknowledging their legitimacy while establishing Israel’s priority through Isaac and Jacob."
         }
       }
     }

@@ -31,21 +31,22 @@
             "paragraph": "The lowest category of creatures — those that swarm on the earth (land and water). They generate the highest level of impurity: contact defiles immediately. The category maps roughly to creatures associated with death and decay."
           }
         ],
-        "ctx": "The food laws of Lev 11 are not primarily about hygiene (though some unclean animals do carry pathogens) but about boundary maintenance — both theological (Israel distinct from the nations) and ontological (the clean world ordered, complete, whole). Milgrom's influential analysis: clean animals are those fully adapted to their habitat (land animals with cloven hooves that chew the cud; sea creatures with fins AND scales; birds that are not birds of prey). Animals that cross boundaries or occupy ambiguous niches (pigs: hooves but no cud; shellfish: water but no fins-and-scales) are unclean. The dietary laws enact the creation order at every meal.",
-        "cross": [
-          {
-            "ref": "Acts 10:9–16",
-            "note": "Peter's vision — the sheet lowered from heaven, the voice: \"Do not call anything impure that God has made clean.\" The food laws are declared fulfilled in Christ; the barrier between clean and unclean Jew and Gentile is dismantled."
-          },
-          {
-            "ref": "Mark 7:18–19",
-            "note": "\"Don't you see that nothing that enters a person from the outside can defile them?… In saying this, Jesus declared all foods clean.\" The food laws served their pedagogical purpose; their dissolution signals the arrival of the new covenant."
-          },
-          {
-            "ref": "Col 2:16–17",
-            "note": "\"Do not let anyone judge you by what you eat or drink… These are a shadow of the things that were to come; the reality, however, is found in Christ.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Acts 10:9–16",
+              "note": "Peter's vision — the sheet lowered from heaven, the voice: \"Do not call anything impure that God has made clean.\" The food laws are declared fulfilled in Christ; the barrier between clean and unclean Jew and Gentile is dismantled."
+            },
+            {
+              "ref": "Mark 7:18–19",
+              "note": "\"Don't you see that nothing that enters a person from the outside can defile them?… In saying this, Jesus declared all foods clean.\" The food laws served their pedagogical purpose; their dissolution signals the arrival of the new covenant."
+            },
+            {
+              "ref": "Col 2:16–17",
+              "note": "\"Do not let anyone judge you by what you eat or drink… These are a shadow of the things that were to come; the reality, however, is found in Christ.\""
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -97,6 +98,9 @@
               "note": "Milgrom: The dietary laws' theological rationale is stated explicitly: \"Be holy because I, the Lord your God, am holy.\" The clean/unclean distinction is not merely practical but participatory — Israel's diet enacts the divine distinction between holy and common."
             }
           ]
+        },
+        "hist": {
+          "context": "The food laws of Lev 11 are not primarily about hygiene (though some unclean animals do carry pathogens) but about boundary maintenance — both theological (Israel distinct from the nations) and ontological (the clean world ordered, complete, whole). Milgrom's influential analysis: clean animals are those fully adapted to their habitat (land animals with cloven hooves that chew the cud; sea creatures with fins AND scales; birds that are not birds of prey). Animals that cross boundaries or occupy ambiguous niches (pigs: hooves but no cud; shellfish: water but no fins-and-scales) are unclean. The dietary laws enact the creation order at every meal."
         }
       }
     },
@@ -120,17 +124,18 @@
             "paragraph": "Hithpael reflexive of qādaš — to make oneself holy. The food laws are not merely prohibitions but positive acts of self-consecration. Every compliant meal is a minor liturgical act."
           }
         ],
-        "ctx": "The chapter's second half (vv.24–47) addresses carcass-defilement — touching the carcass of any unclean animal, or even of clean animals that died naturally, generates impurity until evening and requires washing. Vessels that are touched must be cleaned or broken (earthenware). The principle: death is the domain of impurity; holiness is the domain of life. The chapter closes with the explicit theological rationale (vv.44–45): \"Be holy, because I am holy.\" The dietary laws are not arbitrary — they are participatory in God's own holiness.",
-        "cross": [
-          {
-            "ref": "Heb 9:14",
-            "note": "\"How much more, then, will the blood of Christ, who through the eternal Spirit offered himself unblemished to God, cleanse our consciences from acts that lead to death.\" The NT's language of purification from \"dead works\" draws directly on Levitical categories."
-          },
-          {
-            "ref": "1 Pet 1:15–16",
-            "note": "\"Just as he who called you is holy, so be holy in all you do; for it is written: 'Be holy, because I am holy.'\" Peter quotes Lev 11:44–45 as a living NT imperative. The theological core of the dietary laws survives their abrogation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 9:14",
+              "note": "\"How much more, then, will the blood of Christ, who through the eternal Spirit offered himself unblemished to God, cleanse our consciences from acts that lead to death.\" The NT's language of purification from \"dead works\" draws directly on Levitical categories."
+            },
+            {
+              "ref": "1 Pet 1:15–16",
+              "note": "\"Just as he who called you is holy, so be holy in all you do; for it is written: 'Be holy, because I am holy.'\" Peter quotes Lev 11:44–45 as a living NT imperative. The theological core of the dietary laws survives their abrogation."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -190,6 +195,9 @@
               "note": "Milgrom: The ritual prescriptions for clean and unclean animals reflect a coherent priestly symbolic system. The gradations of holiness and offering type form an internally consistent theology of sacred space and divine access."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter's second half (vv.24–47) addresses carcass-defilement — touching the carcass of any unclean animal, or even of clean animals that died naturally, generates impurity until evening and requires washing. Vessels that are touched must be cleaned or broken (earthenware). The principle: death is the domain of impurity; holiness is the domain of life. The chapter closes with the explicit theological rationale (vv.44–45): \"Be holy, because I am holy.\" The dietary laws are not arbitrary — they are participatory in God's own holiness."
         }
       }
     }

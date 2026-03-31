@@ -37,21 +37,22 @@
             "paragraph": "The wages of the laborers which you kept back by fraud cry out."
           }
         ],
-        "ctx": "James turns to rich landowners who oppress workers. This is the harshest passage in the letter. The rich have hoarded wealth while defrauding laborers.",
-        "cross": [
-          {
-            "ref": "Amos 5:11-12",
-            "note": "You trample on the poor and take from him exactions of wheat."
-          },
-          {
-            "ref": "Deuteronomy 24:14-15",
-            "note": "You shall not oppress a hired worker."
-          },
-          {
-            "ref": "Luke 6:24-25",
-            "note": "Woe to you who are rich, for you have received your consolation."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Amos 5:11-12",
+              "note": "You trample on the poor and take from him exactions of wheat."
+            },
+            {
+              "ref": "Deuteronomy 24:14-15",
+              "note": "You shall not oppress a hired worker."
+            },
+            {
+              "ref": "Luke 6:24-25",
+              "note": "Woe to you who are rich, for you have received your consolation."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -109,7 +110,10 @@
             }
           ]
         },
-        "hist": "James writes to 'the twelve tribes in the Dispersion' — Jewish Christians scattered throughout the Roman Empire after persecution in Jerusalem (Acts 8:1; 11:19). The letter reflects the earliest stage of Christianity when believers still gathered in synagogues (2:2, Greek synagōgē). James, the brother of Jesus, led the Jerusalem church (Acts 15; Gal 2:9) until his martyrdom in AD 62. His letter addresses practical concerns: economic disparity between rich and poor, the relationship between faith and works, and the power of the tongue. The wisdom tradition of Judaism pervades the letter, echoing Proverbs and Jesus' Sermon on the Mount. The agricultural imagery (1:11; 3:12; 5:7) and references to early and late rains reflect the Palestinian context."
+        "hist": {
+          "historical": "James writes to 'the twelve tribes in the Dispersion' — Jewish Christians scattered throughout the Roman Empire after persecution in Jerusalem (Acts 8:1; 11:19). The letter reflects the earliest stage of Christianity when believers still gathered in synagogues (2:2, Greek synagōgē). James, the brother of Jesus, led the Jerusalem church (Acts 15; Gal 2:9) until his martyrdom in AD 62. His letter addresses practical concerns: economic disparity between rich and poor, the relationship between faith and works, and the power of the tongue. The wisdom tradition of Judaism pervades the letter, echoing Proverbs and Jesus' Sermon on the Mount. The agricultural imagery (1:11; 3:12; 5:7) and references to early and late rains reflect the Palestinian context.",
+          "context": "James turns to rich landowners who oppress workers. This is the harshest passage in the letter. The rich have hoarded wealth while defrauding laborers."
+        }
       }
     },
     {
@@ -138,21 +142,22 @@
             "paragraph": "You have heard of the steadfastness of Job."
           }
         ],
-        "ctx": "James turns from the oppressors to the oppressed. Be patient until the Lord comes. The farmer illustrates patience. Job is an example of steadfastness.",
-        "cross": [
-          {
-            "ref": "Job 1:21-22",
-            "note": "The LORD gave, and the LORD has taken away; blessed be the name of the LORD."
-          },
-          {
-            "ref": "Matthew 5:33-37",
-            "note": "Let your yes be yes and your no be no."
-          },
-          {
-            "ref": "Hebrews 10:36-37",
-            "note": "You have need of endurance."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Job 1:21-22",
+              "note": "The LORD gave, and the LORD has taken away; blessed be the name of the LORD."
+            },
+            {
+              "ref": "Matthew 5:33-37",
+              "note": "Let your yes be yes and your no be no."
+            },
+            {
+              "ref": "Hebrews 10:36-37",
+              "note": "You have need of endurance."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -217,6 +222,9 @@
               "note": "McCartney emphasizes eschatological patience."
             }
           ]
+        },
+        "hist": {
+          "context": "James turns from the oppressors to the oppressed. Be patient until the Lord comes. The farmer illustrates patience. Job is an example of steadfastness."
         }
       }
     },
@@ -246,21 +254,22 @@
             "paragraph": "Confess your sins to one another and pray for one another."
           }
         ],
-        "ctx": "The letter concludes with practical instructions on prayer. Suffering? Pray. Cheerful? Sing. Sick? Call the elders. Confess sins to one another.",
-        "cross": [
-          {
-            "ref": "1 Kings 17:1; 18:1, 41-45",
-            "note": "Elijah prayed and it did not rain; he prayed again and the heavens gave rain."
-          },
-          {
-            "ref": "Mark 6:13",
-            "note": "The disciples anointed with oil many who were sick."
-          },
-          {
-            "ref": "1 Peter 4:8",
-            "note": "Love covers a multitude of sins."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Kings 17:1; 18:1, 41-45",
+              "note": "Elijah prayed and it did not rain; he prayed again and the heavens gave rain."
+            },
+            {
+              "ref": "Mark 6:13",
+              "note": "The disciples anointed with oil many who were sick."
+            },
+            {
+              "ref": "1 Peter 4:8",
+              "note": "Love covers a multitude of sins."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -325,6 +334,9 @@
               "note": "McCartney emphasizes that James ends with community. Faith works through love."
             }
           ]
+        },
+        "hist": {
+          "context": "The letter concludes with practical instructions on prayer. Suffering? Pray. Cheerful? Sing. Sick? Call the elders. Confess sins to one another."
         }
       }
     }

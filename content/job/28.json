@@ -25,17 +25,18 @@
             "paragraph": "\"There is a mine (māqōm) for silver and a place where gold is refined\" (v.1). The chapter opens with human technological achievement: mining, smelting, tunnelling. We can find silver, gold, iron, copper, sapphires — we can dig through rock and overturn mountains. Human ingenuity is extraordinary."
           }
         ],
-        "ctx": "The voice shifts from Job to the narrator (or to a poetic interlude). The wisdom hymn stands between the dialogue (ch 3–27) and Job’s final defence (ch 29–31). It asks the book’s deepest question: where is wisdom found? The mining imagery establishes the premise: humans can find anything hidden in the earth. But wisdom is more hidden than any mineral.",
-        "cross": [
-          {
-            "ref": "Prov 2:4–5",
-            "note": "\"Search for it as for hidden treasure... then you will understand the fear of the LORD\" — the same search metaphor."
-          },
-          {
-            "ref": "Prov 8:10–11",
-            "note": "\"Choose my instruction instead of silver\" — wisdom valued above precious metals."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 2:4–5",
+              "note": "\"Search for it as for hidden treasure... then you will understand the fear of the LORD\" — the same search metaphor."
+            },
+            {
+              "ref": "Prov 8:10–11",
+              "note": "\"Choose my instruction instead of silver\" — wisdom valued above precious metals."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Habel: the wisdom hymn is the narrator’s commentary on the entire dialogue. The friends sought wisdom through tradition; Job sought it through experience. Both failed. The chapter explains why."
             }
           ]
+        },
+        "hist": {
+          "context": "The voice shifts from Job to the narrator (or to a poetic interlude). The wisdom hymn stands between the dialogue (ch 3–27) and Job’s final defence (ch 29–31). It asks the book’s deepest question: where is wisdom found? The mining imagery establishes the premise: humans can find anything hidden in the earth. But wisdom is more hidden than any mineral."
         }
       }
     },
@@ -123,21 +127,22 @@
             "paragraph": "\"The fear (yirʾāṭ) of the Lord — that is wisdom, and to shun evil is understanding\" (v.28). The chapter’s conclusion. After exhaustive searching, the answer: wisdom belongs to God, and the human path to wisdom is reverence. This is not anti-intellectual; it is the recognition that the deepest questions require relationship, not just research."
           }
         ],
-        "ctx": "The refrain \"where can wisdom be found?\" (vv.12, 20) structures the second half. Wisdom is not in the land of the living (v.13), not in the deep (v.14), cannot be purchased (vv.15–19), is hidden from every living thing (v.21), and even Death has only heard a rumour (v.22). Only God understands it (v.23). The conclusion (v.28) is the theological key to the entire book: the fear of the LORD is wisdom. Job’s friends had knowledge. Job himself had experience. Neither is wisdom. Wisdom is reverence before the God whose ways are beyond tracing.",
-        "cross": [
-          {
-            "ref": "Prov 1:7",
-            "note": "\"The fear of the LORD is the beginning of knowledge\" — the foundational wisdom principle, now confirmed."
-          },
-          {
-            "ref": "Prov 9:10",
-            "note": "\"The fear of the LORD is the beginning of wisdom\" — the Proverbs parallel to Job 28:28."
-          },
-          {
-            "ref": "1 Cor 1:30",
-            "note": "\"Christ Jesus, who has become for us wisdom from God\" — the NT identification of wisdom with a person."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Prov 1:7",
+              "note": "\"The fear of the LORD is the beginning of knowledge\" — the foundational wisdom principle, now confirmed."
+            },
+            {
+              "ref": "Prov 9:10",
+              "note": "\"The fear of the LORD is the beginning of wisdom\" — the Proverbs parallel to Job 28:28."
+            },
+            {
+              "ref": "1 Cor 1:30",
+              "note": "\"Christ Jesus, who has become for us wisdom from God\" — the NT identification of wisdom with a person."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -206,6 +211,9 @@
               "note": "Habel: the narrator declares what neither the friends nor Job could discover through argument: wisdom belongs to God alone. The human path to wisdom is not debate but reverence. This reframes the entire dialogue as a pursuit that, however brilliant, could never reach its goal."
             }
           ]
+        },
+        "hist": {
+          "context": "The refrain \"where can wisdom be found?\" (vv.12, 20) structures the second half. Wisdom is not in the land of the living (v.13), not in the deep (v.14), cannot be purchased (vv.15–19), is hidden from every living thing (v.21), and even Death has only heard a rumour (v.22). Only God understands it (v.23). The conclusion (v.28) is the theological key to the entire book: the fear of the LORD is wisdom. Job’s friends had knowledge. Job himself had experience. Neither is wisdom. Wisdom is reverence before the God whose ways are beyond tracing."
         }
       }
     }

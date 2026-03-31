@@ -31,21 +31,22 @@
             "paragraph": "The verb hpk can mean either 'overturn/destroy' (as with Sodom, Gen 19:21, 25) or 'transform/change.' Jonah means destruction; God may intend transformation. The ambiguity is theologically deliberate: Nineveh is indeed 'overturned' — not by destruction but by repentance."
           }
         ],
-        "ctx": "The recommission in 3:1-2 closely parallels the original commission in 1:1-2, creating a structural restart. The phrase 'a second time' (shenit) emphasizes divine persistence: God does not abandon his purpose or his prophet. Jonah's five-word sermon ('Forty more days and Nineveh will be overturned') is the shortest prophetic oracle in the Hebrew Bible. Its brevity may reflect Jonah's reluctance: he delivers the minimum possible message with no call to repentance. Yet this bare oracle achieves what no other prophetic preaching in the OT accomplishes — the total repentance of an entire city.",
-        "cross": [
-          {
-            "ref": "Gen 19:21, 25",
-            "note": "The 'overturning' of Sodom uses the same Hebrew verb (hpk). Nineveh faces the same threat but receives a different outcome."
-          },
-          {
-            "ref": "Jer 18:7-8",
-            "note": "The prophetic principle: if a nation repents, God will relent from the disaster he planned. This is the theological framework behind Nineveh's reprieve."
-          },
-          {
-            "ref": "Matt 12:41",
-            "note": "Jesus declares that the men of Nineveh will rise at the judgment and condemn 'this generation' because they repented at Jonah's preaching."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 19:21, 25",
+              "note": "The 'overturning' of Sodom uses the same Hebrew verb (hpk). Nineveh faces the same threat but receives a different outcome."
+            },
+            {
+              "ref": "Jer 18:7-8",
+              "note": "The prophetic principle: if a nation repents, God will relent from the disaster he planned. This is the theological framework behind Nineveh's reprieve."
+            },
+            {
+              "ref": "Matt 12:41",
+              "note": "Jesus declares that the men of Nineveh will rise at the judgment and condemn 'this generation' because they repented at Jonah's preaching."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -101,6 +102,9 @@
               "note": "Stuart analyzes the five-word oracle (arbaʿim yom weninewe nehpakhet) as deliberately ambiguous. The verb hpk ('overturn') functions as the pivot of the entire book: will Nineveh be overturned like Sodom or transformed like a penitent? The forty-day period provides the narrative space for the Ninevites to decide."
             }
           ]
+        },
+        "hist": {
+          "context": "The recommission in 3:1-2 closely parallels the original commission in 1:1-2, creating a structural restart. The phrase 'a second time' (shenit) emphasizes divine persistence: God does not abandon his purpose or his prophet. Jonah's five-word sermon ('Forty more days and Nineveh will be overturned') is the shortest prophetic oracle in the Hebrew Bible. Its brevity may reflect Jonah's reluctance: he delivers the minimum possible message with no call to repentance. Yet this bare oracle achieves what no other prophetic preaching in the OT accomplishes — the total repentance of an entire city."
         }
       }
     },
@@ -124,21 +128,22 @@
             "paragraph": "The king's question 'Who knows?' (v. 9) expresses genuine uncertainty about divine response. It is not presumption but humble hope. The same phrase appears in Joel 2:14 and 2 Sam 12:22 — each time as an act of faith in the face of judgment."
           }
         ],
-        "ctx": "The Ninevite response is without parallel in the Hebrew Bible. An entire city — from king to commoner to animals — repents in sackcloth and fasting. The king's decree mandates universal mourning and the cessation of violence and evil. The narrator then states that God 'saw what they did and how they turned from their evil ways' and relented from the disaster he had threatened. This is the largest scale conversion event in the OT, achieved by the shortest sermon, preached by the most reluctant prophet. The theological implications are enormous: if YHWH's mercy extends to the worst of the pagan world, no one is beyond its reach.",
-        "cross": [
-          {
-            "ref": "Joel 2:13-14",
-            "note": "'Who knows? He may turn and relent' — the same theological logic and nearly identical phrasing as the king of Nineveh's hope."
-          },
-          {
-            "ref": "2 Sam 12:22",
-            "note": "David's 'Who knows? The LORD may be gracious to me' after the death sentence on his child — the same posture of humble hope before sovereign mercy."
-          },
-          {
-            "ref": "Luke 11:32",
-            "note": "Jesus contrasts Nineveh's repentance with Israel's hardness: 'The men of Nineveh will stand up at the judgment with this generation and condemn it.'"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Joel 2:13-14",
+              "note": "'Who knows? He may turn and relent' — the same theological logic and nearly identical phrasing as the king of Nineveh's hope."
+            },
+            {
+              "ref": "2 Sam 12:22",
+              "note": "David's 'Who knows? The LORD may be gracious to me' after the death sentence on his child — the same posture of humble hope before sovereign mercy."
+            },
+            {
+              "ref": "Luke 11:32",
+              "note": "Jesus contrasts Nineveh's repentance with Israel's hardness: 'The men of Nineveh will stand up at the judgment with this generation and condemn it.'"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -194,6 +199,9 @@
               "note": "Stuart reads God's relenting as the fulfillment of the Jeremiah 18 principle: prophetic threats of judgment are implicitly conditional. When the condition changes (repentance), the consequence changes (mercy). This is not divine inconsistency but divine integrity — God is faithful to his own character, which is merciful."
             }
           ]
+        },
+        "hist": {
+          "context": "The Ninevite response is without parallel in the Hebrew Bible. An entire city — from king to commoner to animals — repents in sackcloth and fasting. The king's decree mandates universal mourning and the cessation of violence and evil. The narrator then states that God 'saw what they did and how they turned from their evil ways' and relented from the disaster he had threatened. This is the largest scale conversion event in the OT, achieved by the shortest sermon, preached by the most reluctant prophet. The theological implications are enormous: if YHWH's mercy extends to the worst of the pagan world, no one is beyond its reach."
         }
       }
     }

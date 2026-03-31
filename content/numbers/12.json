@@ -31,17 +31,18 @@
             "paragraph": "God's description of his unique relationship with Moses — not through visions or dreams (as with other prophets) but directly, clearly, \"mouth to mouth.\" The intimacy of Moses's prophetic access is unparalleled in Israel's history (cf. Deut 34:10)."
           }
         ],
-        "ctx": "Miriam and Aaron challenge Moses on two grounds: his Cushite wife (ethnicity objection) and their own prophetic status (\"Has the Lord spoken only through Moses?\"). The narrator notes the first objection but God addresses only the second — the prophetic-authority challenge. God summons all three to the tent of meeting, distinguishes Moses's prophetic access from all others (not through visions but \"face to face\"), and strikes Miriam with ṣāraʿat. Aaron pleads; Moses intercedes. Miriam is confined outside the camp for seven days. The entire community waits for her.",
-        "cross": [
-          {
-            "ref": "Deut 34:10",
-            "note": "\"Since then, no prophet has risen in Israel like Moses, whom the Lord knew face to face.\" The claim of Num 12:6–8 is confirmed at Moses's death: the \"mouth to mouth\" relationship was unique and unrepeated."
-          },
-          {
-            "ref": "Matt 17:5",
-            "note": "\"This is my Son, whom I love; with him I am well pleased. Listen to him!\" At the Transfiguration, God's voice distinguishes Jesus from Moses and Elijah — the ultimate \"face to face\" relationship surpassing even Moses's unique access."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 34:10",
+              "note": "\"Since then, no prophet has risen in Israel like Moses, whom the Lord knew face to face.\" The claim of Num 12:6–8 is confirmed at Moses's death: the \"mouth to mouth\" relationship was unique and unrepeated."
+            },
+            {
+              "ref": "Matt 17:5",
+              "note": "\"This is my Son, whom I love; with him I am well pleased. Listen to him!\" At the Transfiguration, God's voice distinguishes Jesus from Moses and Elijah — the ultimate \"face to face\" relationship surpassing even Moses's unique access."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -106,6 +107,9 @@
               "note": "Ashley: The narrative context of Miriam challenges Moses in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "Miriam and Aaron challenge Moses on two grounds: his Cushite wife (ethnicity objection) and their own prophetic status (\"Has the Lord spoken only through Moses?\"). The narrator notes the first objection but God addresses only the second — the prophetic-authority challenge. God summons all three to the tent of meeting, distinguishes Moses's prophetic access from all others (not through visions but \"face to face\"), and strikes Miriam with ṣāraʿat. Aaron pleads; Moses intercedes. Miriam is confined outside the camp for seven days. The entire community waits for her."
         }
       }
     },
@@ -123,17 +127,18 @@
             "paragraph": "Moses's intercession for Miriam is brief and urgent — seven Hebrew words. The \"please\" (naʾ) signals urgent entreaty; the comparison to \"the dead\" (who emerge from the womb already half-decayed, v.12) shows the severity of her condition. Moses prays for the sister who just challenged him."
           }
         ],
-        "ctx": "When the cloud lifts from the tent of meeting, Miriam is suddenly covered with ṣāraʿat. Aaron turns and sees — her skin is white as snow. He immediately confesses (\"we have sinned\") and pleads with Moses, who immediately intercedes for her. God's response: she will be confined outside the camp for seven days, as if her father had spit in her face (a shaming gesture). The entire camp waits for Miriam's seven days before moving. The combination of judgment (confinement), mercy (healing), and community solidarity (waiting) is characteristic of Numbers at its most pastorally complex.",
-        "cross": [
-          {
-            "ref": "Luke 17:14",
-            "note": "\"Go, show yourselves to the priests.\" Jesus sends healed lepers to the priests in fulfilment of the Levitical procedure — the same process that will declare Miriam clean after her seven days outside the camp."
-          },
-          {
-            "ref": "Matt 5:44",
-            "note": "\"Pray for those who persecute you.\" Moses intercedes immediately for the sister who just challenged his authority — the pattern Jesus commands is first enacted by Moses."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 17:14",
+              "note": "\"Go, show yourselves to the priests.\" Jesus sends healed lepers to the priests in fulfilment of the Levitical procedure — the same process that will declare Miriam clean after her seven days outside the camp."
+            },
+            {
+              "ref": "Matt 5:44",
+              "note": "\"Pray for those who persecute you.\" Moses intercedes immediately for the sister who just challenged his authority — the pattern Jesus commands is first enacted by Moses."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -198,6 +203,9 @@
               "note": "Ashley: The narrative context of Miriam challenges Moses in Numbers illustrates the tension between divine provision and human complaint. Each episode advances the theological argument that faithlessness delays but cannot ultimately defeat God's purposes."
             }
           ]
+        },
+        "hist": {
+          "context": "When the cloud lifts from the tent of meeting, Miriam is suddenly covered with ṣāraʿat. Aaron turns and sees — her skin is white as snow. He immediately confesses (\"we have sinned\") and pleads with Moses, who immediately intercedes for her. God's response: she will be confined outside the camp for seven days, as if her father had spit in her face (a shaming gesture). The entire camp waits for Miriam's seven days before moving. The combination of judgment (confinement), mercy (healing), and community solidarity (waiting) is characteristic of Numbers at its most pastorally complex."
         }
       }
     }

@@ -44,22 +44,26 @@
             "paragraph": "V.9: The feast days and the physical signs (frontlets between the eyes, signs on the hand) are zikkārōn — memorial objects that carry memory into the body and the daily rhythm. The Hebrew concept of memorial (zākar) is always embodied and enacted, not merely cognitive. This is why Israel's worship is calendrical and physical: redemption must be re-experienced, not just remembered."
           }
         ],
-        "hist": "The consecration of firstborn males connects to the Passover theology — because God spared Israel's firstborn, all firstborn belong to him. This 'redemption' principle has parallels in Mesopotamian temple-dedication texts, where objects or persons could be devoted to a deity and later 'redeemed' with a substitute. The phylacteries ('sign on your hand, symbol on your forehead,' v. 16) were later literalised in Jewish practice as tefillin — small leather boxes containing Scripture, worn during prayer. The Festival of Unleavened Bread incorporates the agricultural calendar into the historical narrative.",
-        "ctx": "The \"when your son asks you\" instruction (vv.8,14) establishes the first pedagogy of faith — the Exodus is to be transmitted generationally through catechism. The observance is designed to provoke the question; the question is designed to produce the confession. The Passover Seder's structure (\"Why is this night different?\") traces directly to this command. Memory is not passive; it is institutionalised in practice that makes the past present for every generation.",
-        "cross": [
-          {
-            "ref": "Deut 6:6–9",
-            "note": "The shema's instruction to bind words on hands and foreheads is the expansion of this verse — the phylactery tradition originates here."
-          },
-          {
-            "ref": "Num 3:12–13",
-            "note": "The Levites are given to God as substitutes for the firstborn — the consecration of ch.13 is resolved institutionally by the tribe of Levi."
-          },
-          {
-            "ref": "Luke 2:23",
-            "note": "Jesus is presented at the Temple as the firstborn — \"Every male who first opens the womb shall be called holy to the Lord\" — citing Exod 13:2 directly."
-          }
-        ],
+        "hist": {
+          "historical": "The consecration of firstborn males connects to the Passover theology — because God spared Israel's firstborn, all firstborn belong to him. This 'redemption' principle has parallels in Mesopotamian temple-dedication texts, where objects or persons could be devoted to a deity and later 'redeemed' with a substitute. The phylacteries ('sign on your hand, symbol on your forehead,' v. 16) were later literalised in Jewish practice as tefillin — small leather boxes containing Scripture, worn during prayer. The Festival of Unleavened Bread incorporates the agricultural calendar into the historical narrative.",
+          "context": "The \"when your son asks you\" instruction (vv.8,14) establishes the first pedagogy of faith — the Exodus is to be transmitted generationally through catechism. The observance is designed to provoke the question; the question is designed to produce the confession. The Passover Seder's structure (\"Why is this night different?\") traces directly to this command. Memory is not passive; it is institutionalised in practice that makes the past present for every generation."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 6:6–9",
+              "note": "The shema's instruction to bind words on hands and foreheads is the expansion of this verse — the phylactery tradition originates here."
+            },
+            {
+              "ref": "Num 3:12–13",
+              "note": "The Levites are given to God as substitutes for the firstborn — the consecration of ch.13 is resolved institutionally by the tribe of Levi."
+            },
+            {
+              "ref": "Luke 2:23",
+              "note": "Jesus is presented at the Temple as the firstborn — \"Every male who first opens the womb shall be called holy to the Lord\" — citing Exod 13:2 directly."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -197,22 +201,26 @@
             "paragraph": "V.19: Moses took Joseph's bones (ʿatsmôt Yōsēf). This single verse connects Exodus to Genesis: Joseph's dying request (Gen 50:25) was an act of faith that the Exodus would happen. Moses's carrying of the bones is a pledge that the promise to Abraham, confirmed through Joseph, is being kept. Heb 11:22 honors Joseph for this: faith projects its confidence onto an event centuries away."
           }
         ],
-        "hist": "The route 'by way of the wilderness toward the Red Sea' avoids the heavily fortified 'Way of Horus' (the coastal road to Canaan), which was guarded by a chain of Egyptian military fortresses documented in reliefs at Karnak. The 'Red Sea' (yam sûp, literally 'Sea of Reeds') likely refers to one of the marshy lakes in the Isthmus of Suez region — the Bitter Lakes or Lake Timsah — rather than the modern Red Sea. Joseph's bones (v. 19) fulfil the oath of Genesis 50:25, connecting the Exodus to the patriarchal narrative.",
-        "ctx": "God's route decision (v.17) is a window into divine pastoral care — he leads around the danger because the people are not ready for war. Providence does not always take the shortest route; it takes the route that the people can survive spiritually. The pillar of cloud and fire is the constant visible sign that this routing is not abandonment but shepherding. Every step in the wilderness is a step beside the presence of God.",
-        "cross": [
-          {
-            "ref": "Gen 50:25",
-            "note": "Joseph made the Israelites swear an oath: 'God will surely come to your aid, and then you must carry my bones up from this place.' Moses honours this 400-year-old promise (v. 19)."
-          },
-          {
-            "ref": "Neh 9:12, 19",
-            "note": "Nehemiah's prayer recounts the pillar of cloud and fire as evidence of God's faithful guidance. The pillar becomes a permanent symbol of divine presence leading through wilderness."
-          },
-          {
-            "ref": "1 Cor 10:1–2",
-            "note": "Paul interprets the cloud as a baptismal type: 'They were all baptised into Moses in the cloud and in the sea.' The pillar imagery carries sacramental significance in the New Testament."
-          }
-        ],
+        "hist": {
+          "historical": "The route 'by way of the wilderness toward the Red Sea' avoids the heavily fortified 'Way of Horus' (the coastal road to Canaan), which was guarded by a chain of Egyptian military fortresses documented in reliefs at Karnak. The 'Red Sea' (yam sûp, literally 'Sea of Reeds') likely refers to one of the marshy lakes in the Isthmus of Suez region — the Bitter Lakes or Lake Timsah — rather than the modern Red Sea. Joseph's bones (v. 19) fulfil the oath of Genesis 50:25, connecting the Exodus to the patriarchal narrative.",
+          "context": "God's route decision (v.17) is a window into divine pastoral care — he leads around the danger because the people are not ready for war. Providence does not always take the shortest route; it takes the route that the people can survive spiritually. The pillar of cloud and fire is the constant visible sign that this routing is not abandonment but shepherding. Every step in the wilderness is a step beside the presence of God."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 50:25",
+              "note": "Joseph made the Israelites swear an oath: 'God will surely come to your aid, and then you must carry my bones up from this place.' Moses honours this 400-year-old promise (v. 19)."
+            },
+            {
+              "ref": "Neh 9:12, 19",
+              "note": "Nehemiah's prayer recounts the pillar of cloud and fire as evidence of God's faithful guidance. The pillar becomes a permanent symbol of divine presence leading through wilderness."
+            },
+            {
+              "ref": "1 Cor 10:1–2",
+              "note": "Paul interprets the cloud as a baptismal type: 'They were all baptised into Moses in the cloud and in the sea.' The pillar imagery carries sacramental significance in the New Testament."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

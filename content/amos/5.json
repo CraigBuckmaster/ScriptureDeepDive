@@ -31,17 +31,18 @@
             "paragraph": "The imperative 'seek the LORD and live' (v. 6) is the book's central positive command. The verb darash means to inquire, investigate, pursue — not passive waiting but active pursuit of God. It stands in contrast to the empty ritual of 'seeking Bethel' (v. 5), which produces death rather than life."
           }
         ],
-        "ctx": "Chapter 5 opens the third 'Hear this word' speech and is the theological center of the book. It begins with a funeral lament for Israel (vv. 1-3), pivots to the central command 'Seek the LORD and live' (vv. 4-6), and includes the second doxology (vv. 8-9) as a reminder of who this God is. The passage sets up the fundamental choice: seek YHWH (life) or seek Bethel/Gilgal/Beersheba (death). The decimation statistics (v. 3: a city that sends a thousand will have only a hundred left) make the stakes concrete.",
-        "cross": [
-          {
-            "ref": "Deut 30:15-20",
-            "note": "'I have set before you life and death, blessings and curses. Now choose life' — the Mosaic framework Amos invokes with 'seek the LORD and live.'"
-          },
-          {
-            "ref": "Hos 10:12",
-            "note": "'Seek the LORD until he comes and showers his righteousness on you' — Hosea's parallel command, sharing Amos' vocabulary."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 30:15-20",
+              "note": "'I have set before you life and death, blessings and curses. Now choose life' — the Mosaic framework Amos invokes with 'seek the LORD and live.'"
+            },
+            {
+              "ref": "Hos 10:12",
+              "note": "'Seek the LORD until he comes and showers his righteousness on you' — Hosea's parallel command, sharing Amos' vocabulary."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -102,6 +103,9 @@
               "note": "Andersen and Freedman argue that the qinah dirge (vv. 1-3), the call to seek YHWH (vv. 4-6), and the doxology (vv. 8-9) form a triptych: death, life, and divine power. The audience is confronted with the reality of death, offered an alternative, and reminded of the power of the God who makes the offer."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 5 opens the third 'Hear this word' speech and is the theological center of the book. It begins with a funeral lament for Israel (vv. 1-3), pivots to the central command 'Seek the LORD and live' (vv. 4-6), and includes the second doxology (vv. 8-9) as a reminder of who this God is. The passage sets up the fundamental choice: seek YHWH (life) or seek Bethel/Gilgal/Beersheba (death). The decimation statistics (v. 3: a city that sends a thousand will have only a hundred left) make the stakes concrete."
         }
       }
     },
@@ -119,17 +123,18 @@
             "paragraph": "Together with tsedaqah ('righteousness'), mishpat forms the most important word pair in prophetic ethics. Justice (mishpat) is the proper functioning of the legal system; righteousness (tsedaqah) is the right ordering of social relationships. Amos demands both, and both are absent."
           }
         ],
-        "ctx": "This section targets the judicial system directly. The 'gate' was the place of legal proceedings in Israelite cities, where elders heard cases and rendered verdicts. Amos accuses the powerful of hating anyone who speaks honestly at the gate, trampling the poor with excessive grain taxes, and building stone mansions they will never enjoy. The 'perhaps' of v. 15 ('Perhaps the LORD God Almighty will have mercy on the remnant of Joseph') is striking: even the prophet cannot guarantee mercy. It depends on genuine justice.",
-        "cross": [
-          {
-            "ref": "Isa 5:7",
-            "note": "'He looked for justice (mishpat) but saw bloodshed (mispah), for righteousness (tsedaqah) but heard cries of distress (tseʿaqah)' — Isaiah's parallel indictment using identical vocabulary and devastating wordplay."
-          },
-          {
-            "ref": "Mic 3:1-3",
-            "note": "Micah's parallel condemnation of leaders who should 'know justice' but instead devour the people."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isa 5:7",
+              "note": "'He looked for justice (mishpat) but saw bloodshed (mispah), for righteousness (tsedaqah) but heard cries of distress (tseʿaqah)' — Isaiah's parallel indictment using identical vocabulary and devastating wordplay."
+            },
+            {
+              "ref": "Mic 3:1-3",
+              "note": "Micah's parallel condemnation of leaders who should 'know justice' but instead devour the people."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -186,6 +191,9 @@
               "note": "Andersen and Freedman identify a chiastic structure: vv. 10-12 (accusation) frame v. 13 (the prudent silence), which is then answered by vv. 14-15 (exhortation) and vv. 16-17 (wailing). The chiasm places the silence of the wise at the center, emphasizing how thoroughly corruption has intimidated truth-telling."
             }
           ]
+        },
+        "hist": {
+          "context": "This section targets the judicial system directly. The 'gate' was the place of legal proceedings in Israelite cities, where elders heard cases and rendered verdicts. Amos accuses the powerful of hating anyone who speaks honestly at the gate, trampling the poor with excessive grain taxes, and building stone mansions they will never enjoy. The 'perhaps' of v. 15 ('Perhaps the LORD God Almighty will have mercy on the remnant of Joseph') is striking: even the prophet cannot guarantee mercy. It depends on genuine justice."
         }
       }
     },
@@ -203,21 +211,22 @@
             "paragraph": "Amos provides the earliest datable use of this concept. Popular expectation saw the Day of the LORD as a day of Israel's triumph over enemies. Amos reverses the concept entirely: it will be darkness, not light — judgment on Israel, not salvation."
           }
         ],
-        "ctx": "This section contains two of Amos' most famous passages. First, the reversal of the Day of the LORD concept (vv. 18-20): Israel expected a day of triumph, but Amos declares it will be darkness, like escaping a lion only to meet a bear. Second, the rejection of worship without justice (vv. 21-24), climaxing in the iconic verse: 'Let justice roll on like a river, righteousness like a never-failing stream.' The chapter concludes with a historical question (vv. 25-27) suggesting that even in the wilderness, Israel's worship was compromised.",
-        "cross": [
-          {
-            "ref": "Joel 2:1-2",
-            "note": "'The day of the LORD is coming — a day of darkness and gloom' — Joel's development of the Day of the LORD tradition that Amos inaugurated."
-          },
-          {
-            "ref": "Isa 1:11-17",
-            "note": "Isaiah's parallel rejection of worship without justice: 'Stop bringing meaningless offerings! ... Learn to do right; seek justice.'"
-          },
-          {
-            "ref": "Matt 25:31-46",
-            "note": "Jesus' judgment scene, where the criterion is treatment of 'the least of these' — the ethical principle Amos championed."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Joel 2:1-2",
+              "note": "'The day of the LORD is coming — a day of darkness and gloom' — Joel's development of the Day of the LORD tradition that Amos inaugurated."
+            },
+            {
+              "ref": "Isa 1:11-17",
+              "note": "Isaiah's parallel rejection of worship without justice: 'Stop bringing meaningless offerings! ... Learn to do right; seek justice.'"
+            },
+            {
+              "ref": "Matt 25:31-46",
+              "note": "Jesus' judgment scene, where the criterion is treatment of 'the least of these' — the ethical principle Amos championed."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -286,6 +295,9 @@
               "note": "Andersen and Freedman read the entire section as a three-part argument: (1) The Day of the LORD will be darkness (vv. 18-20); (2) worship without justice is rejected (vv. 21-24); (3) idolatry has been a chronic problem since the wilderness (vv. 25-27). The three parts correspond to three failures: eschatological presumption, ethical hypocrisy, and religious syncretism."
             }
           ]
+        },
+        "hist": {
+          "context": "This section contains two of Amos' most famous passages. First, the reversal of the Day of the LORD concept (vv. 18-20): Israel expected a day of triumph, but Amos declares it will be darkness, like escaping a lion only to meet a bear. Second, the rejection of worship without justice (vv. 21-24), climaxing in the iconic verse: 'Let justice roll on like a river, righteousness like a never-failing stream.' The chapter concludes with a historical question (vv. 25-27) suggesting that even in the wilderness, Israel's worship was compromised."
         }
       }
     }

@@ -25,21 +25,22 @@
             "paragraph": "Josiah is praised because he \"did what was right (mišpāṭ) and just (ṣĕdāqâ) ... he defended the cause of the poor and needy\" (vv.15-16). Then the devastating definition: \"Is that not what it means to know me?\" (v.16). Knowing God is not mystical experience or doctrinal mastery but the practice of justice for the vulnerable. This verse is one of the most important in the Hebrew Bible for defining the relationship between theology and ethics."
           }
         ],
-        "ctx": "Chapter 22 reviews three kings: Shallum/Jehoahaz (vv.10-12), Jehoiakim (vv.13-19), and Jehoiachin/Coniah (vv.24-30). The review follows Josiah's death at Megiddo (609 BC) and traces the rapid decline of the Davidic dynasty. Josiah is the standard by which his sons and grandson are measured — and all are found wanting. Jehoiakim's indictment is particularly severe: he built a lavish palace using unpaid forced labor while his father practiced justice.",
-        "cross": [
-          {
-            "ref": "2 Kgs 23:34-24:6",
-            "note": "The historical account of Jehoiakim's reign — Egyptian vassal, then Babylonian vassal, then rebel. His miscalculations sealed Judah's fate."
-          },
-          {
-            "ref": "1 John 4:8",
-            "note": "\"Whoever does not love does not know God\" — the NT formulation of Jeremiah's principle: knowing God is demonstrated in ethical practice."
-          },
-          {
-            "ref": "Mic 3:1-3",
-            "note": "Micah's indictment of rulers who \"tear the skin from my people\" — the same prophetic critique of exploitative leadership."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 23:34-24:6",
+              "note": "The historical account of Jehoiakim's reign — Egyptian vassal, then Babylonian vassal, then rebel. His miscalculations sealed Judah's fate."
+            },
+            {
+              "ref": "1 John 4:8",
+              "note": "\"Whoever does not love does not know God\" — the NT formulation of Jeremiah's principle: knowing God is demonstrated in ethical practice."
+            },
+            {
+              "ref": "Mic 3:1-3",
+              "note": "Micah's indictment of rulers who \"tear the skin from my people\" — the same prophetic critique of exploitative leadership."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Brueggemann calls this \"the most important ethical statement in the Hebrew Bible.\" To know God IS to do justice. The equation is not metaphorical but definitional. This verse demolishes every form of religion that separates worship from social responsibility."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 22 reviews three kings: Shallum/Jehoahaz (vv.10-12), Jehoiakim (vv.13-19), and Jehoiachin/Coniah (vv.24-30). The review follows Josiah's death at Megiddo (609 BC) and traces the rapid decline of the Davidic dynasty. Josiah is the standard by which his sons and grandson are measured — and all are found wanting. Jehoiakim's indictment is particularly severe: he built a lavish palace using unpaid forced labor while his father practiced justice."
         }
       }
     },
@@ -117,21 +121,22 @@
             "paragraph": "\"Even if Coniah (Jehoiachin) were a signet ring (ḥôtām) on my right hand, I would still pull you off\" (v.24). The signet ring was the most precious personal possession — the instrument of royal authority and identity. For God to remove even a signet ring signals total rejection. The image is later reversed in Haggai 2:23, where Zerubbabel (a descendant of Coniah) is restored as God's signet ring — redemption overturning the curse."
           }
         ],
-        "ctx": "Coniah (Jehoiachin) reigned only three months (597 BC) before surrendering to Nebuchadnezzar and being deported to Babylon, where he remained in exile for 37 years. The oracle against him is severe: \"Record this man as if childless\" (v.30) — not literally childless (he had sons, 1 Chr 3:17) but dynastically childless. None of his descendants will \"sit on the throne of David.\" This creates a theological problem for the messianic line, which Matthew's genealogy resolves through Joseph's legal fatherhood and Mary's physical descent.",
-        "cross": [
-          {
-            "ref": "Hag 2:23",
-            "note": "God reverses the signet ring curse: \"I will make you like my signet ring, Zerubbabel.\" The descendant of Coniah is restored — grace overturns the curse."
-          },
-          {
-            "ref": "Matt 1:11-12",
-            "note": "Matthew traces Jesus's legal lineage through Jeconiah (Coniah) to Joseph — navigating the curse by distinguishing legal succession from biological descent."
-          },
-          {
-            "ref": "2 Kgs 25:27-30",
-            "note": "Jehoiachin's eventual release from prison in Babylon — a hint of grace within the exile."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Hag 2:23",
+              "note": "God reverses the signet ring curse: \"I will make you like my signet ring, Zerubbabel.\" The descendant of Coniah is restored — grace overturns the curse."
+            },
+            {
+              "ref": "Matt 1:11-12",
+              "note": "Matthew traces Jesus's legal lineage through Jeconiah (Coniah) to Joseph — navigating the curse by distinguishing legal succession from biological descent."
+            },
+            {
+              "ref": "2 Kgs 25:27-30",
+              "note": "Jehoiachin's eventual release from prison in Babylon — a hint of grace within the exile."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -184,6 +189,9 @@
               "note": "Brueggemann reads the signet ring oracle as \"the dismantling of royal theology.\" The Davidic covenant, which promised an eternal dynasty, appears to be voided. The tension between unconditional promise and conditional judgment is left unresolved until the messianic oracles."
             }
           ]
+        },
+        "hist": {
+          "context": "Coniah (Jehoiachin) reigned only three months (597 BC) before surrendering to Nebuchadnezzar and being deported to Babylon, where he remained in exile for 37 years. The oracle against him is severe: \"Record this man as if childless\" (v.30) — not literally childless (he had sons, 1 Chr 3:17) but dynastically childless. None of his descendants will \"sit on the throne of David.\" This creates a theological problem for the messianic line, which Matthew's genealogy resolves through Joseph's legal fatherhood and Mary's physical descent."
         }
       }
     }

@@ -25,21 +25,22 @@
             "paragraph": "A NT hapax legomenon appearing only here (v. 9). It is formed from σαββατίζω (sabbatizō, to keep Sabbath) and denotes not merely cessation from work but the eschatological rest that God’s creation-Sabbath prefigures. The author distinguishes this from κατάπαυσις (katapausis, rest/cessation, used throughout the passage) by introducing σαββατισμός at the climactic point: the rest that remains is not merely Canaan or even earthly peace but God’s own Sabbath—participation in divine rest."
           }
         ],
-        "ctx": "The Sabbath-rest exposition continues the Psalm 95 midrash from chapter 3, extending it with two additional OT texts: Gen 2:2 (God rested on the seventh day) and Josh 21:44/22:4 (Joshua gave Israel rest). The argument proceeds by elimination: if Joshua had given them the promised rest, David would not have spoken of another ‘today’ centuries later (v. 8). Therefore the Sabbath-rest remains available and unfulfilled. The hermeneutical move is brilliant: Canaan was never the ultimate rest; it was a type pointing to the eschatological reality. The exhortation to ‘make every effort’ (v. 11) paradoxically demands strenuous effort to enter rest.",
-        "cross": [
-          {
-            "ref": "Genesis 2:2",
-            "note": "God’s creation-Sabbath is the ultimate paradigm: the rest promised to believers is participation in God’s own rest from his completed works."
-          },
-          {
-            "ref": "Joshua 21:44",
-            "note": "Joshua’s giving of rest in Canaan is acknowledged but shown to be incomplete—a type rather than the reality, since the psalm speaks of another ‘today’ long after the conquest."
-          },
-          {
-            "ref": "Matthew 11:28–29",
-            "note": "Jesus’ invitation (‘Come to me, all who are weary, and I will give you rest’) provides the christological fulfillment of the rest-promise that Hebrews develops typologically."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Genesis 2:2",
+              "note": "God’s creation-Sabbath is the ultimate paradigm: the rest promised to believers is participation in God’s own rest from his completed works."
+            },
+            {
+              "ref": "Joshua 21:44",
+              "note": "Joshua’s giving of rest in Canaan is acknowledged but shown to be incomplete—a type rather than the reality, since the psalm speaks of another ‘today’ long after the conquest."
+            },
+            {
+              "ref": "Matthew 11:28–29",
+              "note": "Jesus’ invitation (‘Come to me, all who are weary, and I will give you rest’) provides the christological fulfillment of the rest-promise that Hebrews develops typologically."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -97,7 +98,10 @@
             }
           ]
         },
-        "hist": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24)."
+        "hist": {
+          "historical": "Hebrews was written to Jewish Christians facing pressure to abandon their faith and return to Judaism. The destruction of the Jerusalem temple (AD 70) loomed or had just occurred, removing the visible center of Jewish worship. The author argues that Christ fulfills and supersedes all Old Testament institutions — priesthood, sacrifice, covenant, and tabernacle. The recipients faced persecution (10:32-34), some were drifting away (2:1), and the letter urges perseverance by demonstrating Christ's superiority to angels, Moses, Joshua, and the Levitical priesthood. The sophisticated Greek style and extensive use of the Septuagint suggest a Hellenistic Jewish-Christian author addressing a similarly educated audience, possibly in Rome (13:24).",
+          "context": "The Sabbath-rest exposition continues the Psalm 95 midrash from chapter 3, extending it with two additional OT texts: Gen 2:2 (God rested on the seventh day) and Josh 21:44/22:4 (Joshua gave Israel rest). The argument proceeds by elimination: if Joshua had given them the promised rest, David would not have spoken of another ‘today’ centuries later (v. 8). Therefore the Sabbath-rest remains available and unfulfilled. The hermeneutical move is brilliant: Canaan was never the ultimate rest; it was a type pointing to the eschatological reality. The exhortation to ‘make every effort’ (v. 11) paradoxically demands strenuous effort to enter rest."
+        }
       }
     },
     {
@@ -120,21 +124,22 @@
             "paragraph": "The comparative of τομός (tomos, cutting, sharp). God’s word is sharper than any μάχαιρα δίστομος (two-edged sword)—a weapon that cuts on both the forward and backward stroke, leaving no defense. The surgical imagery (dividing soul/spirit, joints/marrow) depicts forensic precision: God’s word dissects human motivation with an accuracy no human self-knowledge can achieve."
           }
         ],
-        "ctx": "Verses 12–13 form one of the most quoted passages in Hebrews and serve as a theological hinge between the warning section (3:7–4:11) and the high-priestly exposition (4:14–10:18). The word of God that offered rest also threatens judgment: it penetrates every pretense and lays bare every heart. The transition to the great high-priest declaration (vv. 14–16) is abrupt but logical: the same God whose word exposes has also provided a sympathetic mediator who understands human weakness. The combination of divine judgment (vv. 12–13) and priestly compassion (vv. 14–16) creates the letter’s characteristic oscillation between warning and encouragement.",
-        "cross": [
-          {
-            "ref": "Isaiah 55:10–11",
-            "note": "The OT’s most developed statement of the word’s efficacy—it will not return empty but accomplish its purpose—provides the theological background for the Hebrews declaration."
-          },
-          {
-            "ref": "Ephesians 6:17",
-            "note": "Paul’s identification of the ‘sword of the Spirit’ as the word of God shares the weaponry metaphor, though with a different application (offensive spiritual warfare vs. penetrating judgment)."
-          },
-          {
-            "ref": "Hebrews 7:25; 9:24",
-            "note": "The high priest who lives to intercede and who appears in heaven on our behalf develops the compassionate-mediator theme introduced here in vv. 14–16."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Isaiah 55:10–11",
+              "note": "The OT’s most developed statement of the word’s efficacy—it will not return empty but accomplish its purpose—provides the theological background for the Hebrews declaration."
+            },
+            {
+              "ref": "Ephesians 6:17",
+              "note": "Paul’s identification of the ‘sword of the Spirit’ as the word of God shares the weaponry metaphor, though with a different application (offensive spiritual warfare vs. penetrating judgment)."
+            },
+            {
+              "ref": "Hebrews 7:25; 9:24",
+              "note": "The high priest who lives to intercede and who appears in heaven on our behalf develops the compassionate-mediator theme introduced here in vv. 14–16."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -187,6 +192,9 @@
               "note": "These five verses are the letter’s structural pivot. The word of God that exposed the wilderness generation’s unbelief now exposes the present community’s hearts—no one can hide from it (v. 13). But the same God who judges also provides access: the great high priest who has passed through the heavens (v. 14) enables confident approach to the throne of grace (v. 16). The phrase θρόνος τῆς χάριτος (throne of grace) transforms the Mosaic mercy seat into a permanent source of help: what was annual and restricted is now continuous and universally accessible through Christ."
             }
           ]
+        },
+        "hist": {
+          "context": "Verses 12–13 form one of the most quoted passages in Hebrews and serve as a theological hinge between the warning section (3:7–4:11) and the high-priestly exposition (4:14–10:18). The word of God that offered rest also threatens judgment: it penetrates every pretense and lays bare every heart. The transition to the great high-priest declaration (vv. 14–16) is abrupt but logical: the same God whose word exposes has also provided a sympathetic mediator who understands human weakness. The combination of divine judgment (vv. 12–13) and priestly compassion (vv. 14–16) creates the letter’s characteristic oscillation between warning and encouragement."
         }
       }
     }

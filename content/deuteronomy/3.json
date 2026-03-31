@@ -31,17 +31,18 @@
             "paragraph": "The Rephaim were pre-Israelite giant peoples. Og was the last of them (v.11). For Israel, defeating the last Rephaite giant carried both military and theological freight: God's strength surpasses all human mythology of power."
           }
         ],
-        "ctx": "The victory over Og follows immediately after Sihon's defeat. Og commands sixty fortified cities with \"high walls, gates and bars\" — the kind of fortifications that had terrified the spy generation at Kadesh. But God's word comes: \"Do not be afraid of him\" (v.2). Og is defeated entirely, his territory divided between Reuben, Gad, and half-Manasseh. Moses then addresses Joshua directly (v.21): \"You have seen with your own eyes all that the LORD your God has done to these two kings. The LORD will do the same to all the kingdoms over there.\" The pattern of Sihon and Og becomes the template of faith for the conquest.",
-        "cross": [
-          {
-            "ref": "Josh 12:4–5",
-            "note": "\"He was the last of the Rephaim. He reigned in Ashtaroth and Edrei.\" Joshua's victory list confirms the completion of what Deuteronomy anticipates."
-          },
-          {
-            "ref": "Ps 136:19–21",
-            "note": "\"Sihon king of the Amorites… Og king of Bashan.\" The paired names become a liturgical formula — a recurring testimony to God's power in Israel's worship."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 12:4–5",
+              "note": "\"He was the last of the Rephaim. He reigned in Ashtaroth and Edrei.\" Joshua's victory list confirms the completion of what Deuteronomy anticipates."
+            },
+            {
+              "ref": "Ps 136:19–21",
+              "note": "\"Sihon king of the Amorites… Og king of Bashan.\" The paired names become a liturgical formula — a recurring testimony to God's power in Israel's worship."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -114,6 +115,9 @@
               "note": "Calvin: Og's iron bed — nine cubits long — testifies to his extraordinary stature. What Og's bed measured physically, God's power exceeded infinitely."
             }
           ]
+        },
+        "hist": {
+          "context": "The victory over Og follows immediately after Sihon's defeat. Og commands sixty fortified cities with \"high walls, gates and bars\" — the kind of fortifications that had terrified the spy generation at Kadesh. But God's word comes: \"Do not be afraid of him\" (v.2). Og is defeated entirely, his territory divided between Reuben, Gad, and half-Manasseh. Moses then addresses Joshua directly (v.21): \"You have seen with your own eyes all that the LORD your God has done to these two kings. The LORD will do the same to all the kingdoms over there.\" The pattern of Sihon and Og becomes the template of faith for the conquest."
         }
       }
     },
@@ -137,17 +141,18 @@
             "paragraph": "The Jordan crossing is Deuteronomy's horizon — the event Moses will not experience but which every word of his addresses. To cross the Jordan is to enter the inheritance."
           }
         ],
-        "ctx": "Moses recounts his personal prayer to enter the land — and God's refusal. The refusal is blunt: \"That is enough. Do not speak to me anymore about this matter\" (v.26). Moses is permitted to see the land from Mount Pisgah — a sight granted but not an entry achieved. Then God turns to the future: Joshua will lead them across. The Pisgah view is the most poignant scene in Deuteronomy — the greatest leader in Israel's history at the boundary of his own calling, seeing but not entering what God had prepared. Yet Moses speaks no bitterness.",
-        "cross": [
-          {
-            "ref": "Heb 11:13",
-            "note": "\"All these people were still living by faith when they died. They did not receive the things promised; they only saw them and welcomed them from a distance.\" Moses' Pisgah view is the paradigm for faith's partial vision."
-          },
-          {
-            "ref": "Matt 17:3",
-            "note": "\"Just then there appeared before them Moses and Elijah, talking with Jesus.\" The Transfiguration is the theological answer to Moses' Pisgah prayer — he does finally enter the Promised Land, in the company of its Lord."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Heb 11:13",
+              "note": "\"All these people were still living by faith when they died. They did not receive the things promised; they only saw them and welcomed them from a distance.\" Moses' Pisgah view is the paradigm for faith's partial vision."
+            },
+            {
+              "ref": "Matt 17:3",
+              "note": "\"Just then there appeared before them Moses and Elijah, talking with Jesus.\" The Transfiguration is the theological answer to Moses' Pisgah prayer — he does finally enter the Promised Land, in the company of its Lord."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -220,6 +225,9 @@
               "note": "Calvin: \"On your account\" ties Moses' exclusion to the people's sin. Leaders bear consequences for those they serve — a cost Christ bore ultimately."
             }
           ]
+        },
+        "hist": {
+          "context": "Moses recounts his personal prayer to enter the land — and God's refusal. The refusal is blunt: \"That is enough. Do not speak to me anymore about this matter\" (v.26). Moses is permitted to see the land from Mount Pisgah — a sight granted but not an entry achieved. Then God turns to the future: Joshua will lead them across. The Pisgah view is the most poignant scene in Deuteronomy — the greatest leader in Israel's history at the boundary of his own calling, seeing but not entering what God had prepared. Yet Moses speaks no bitterness."
         }
       }
     }

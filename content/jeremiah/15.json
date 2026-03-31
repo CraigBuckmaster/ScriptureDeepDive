@@ -25,21 +25,22 @@
             "paragraph": "God says he will \"send away\" (šillaḥ) the people from his presence (v.1). The same verb is used for divorce (Deut 24:1) and for sending away Hagar (Gen 21:14). The covenant relationship is being formally terminated — God is divorcing his people."
           }
         ],
-        "ctx": "The chapter opens with one of the most severe declarations in prophetic literature: \"Even if Moses and Samuel were to stand before me, my heart would not go out to this people\" (v.1). Moses and Samuel were Israel's greatest intercessors (Exod 32:11–14; 1 Sam 7:5–9). If even their prayers would be ineffective, all intercession is closed. The \"four kinds of destroyers\" (v.3) — sword, dogs, birds, beasts — represent total annihilation: death, desecration, exposure, consumption. Manasseh's sins (v.4, cf. 2 Kgs 21) have sealed Judah's fate.",
-        "cross": [
-          {
-            "ref": "Exod 32:11–14",
-            "note": "Moses' successful intercession after the golden calf — the paradigmatic prayer of prophetic mediation that is now declared insufficient."
-          },
-          {
-            "ref": "1 Sam 7:5–9",
-            "note": "Samuel's intercession at Mizpah — another model of effective prophetic prayer now declared powerless."
-          },
-          {
-            "ref": "Ezek 14:14",
-            "note": "Ezekiel makes the same point with different names: \"Even if Noah, Daniel, and Job were in it, they could save only themselves.\""
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 32:11–14",
+              "note": "Moses' successful intercession after the golden calf — the paradigmatic prayer of prophetic mediation that is now declared insufficient."
+            },
+            {
+              "ref": "1 Sam 7:5–9",
+              "note": "Samuel's intercession at Mizpah — another model of effective prophetic prayer now declared powerless."
+            },
+            {
+              "ref": "Ezek 14:14",
+              "note": "Ezekiel makes the same point with different names: \"Even if Noah, Daniel, and Job were in it, they could save only themselves.\""
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -96,6 +97,9 @@
               "note": "Brueggemann calls this \"the closure of prophetic mediation.\" The intercessory tradition — Israel's primary mechanism for averting divine wrath — is declared bankrupt. What remains is not negotiation but endurance."
             }
           ]
+        },
+        "hist": {
+          "context": "The chapter opens with one of the most severe declarations in prophetic literature: \"Even if Moses and Samuel were to stand before me, my heart would not go out to this people\" (v.1). Moses and Samuel were Israel's greatest intercessors (Exod 32:11–14; 1 Sam 7:5–9). If even their prayers would be ineffective, all intercession is closed. The \"four kinds of destroyers\" (v.3) — sword, dogs, birds, beasts — represent total annihilation: death, desecration, exposure, consumption. Manasseh's sins (v.4, cf. 2 Kgs 21) have sealed Judah's fate."
         }
       }
     },
@@ -113,21 +117,22 @@
             "paragraph": "Jeremiah testifies: \"When your words (dĕbāreykā) came, I ate them; they were my joy and my heart's delight\" (v.16). The metaphor of eating God's word combines Ezekiel 3:1–3 (eating the scroll) with the psalmist's \"sweeter than honey\" (Ps 119:103). But the delight has become a burden: the word that brought joy now brings isolation, suffering, and rejection."
           }
         ],
-        "ctx": "Verses 10–21 constitute Jeremiah's third and most intense \"confession.\" The prophet curses the day of his birth (v.10, anticipating 20:14–18), complains of loneliness (v.17), accuses God of being \"a deceptive brook\" (v.18), and receives a conditional recommission: \"If you repent, I will restore you, and you will stand before me\" (v.19). The prophet who called others to repent must himself repent. God's response is not comfort but renewal of commission — with the same \"fortified wall\" language from chapter 1.",
-        "cross": [
-          {
-            "ref": "Ezek 3:1–3",
-            "note": "Ezekiel eats the scroll that is \"sweet as honey\" — the same metaphor of consuming God's word."
-          },
-          {
-            "ref": "Rev 10:9–10",
-            "note": "John eats the little scroll: \"sweet in my mouth but sour in my stomach.\" The pattern — delightful reception, painful proclamation — runs from Jeremiah to Revelation."
-          },
-          {
-            "ref": "Jer 1:18–19",
-            "note": "The recommission (v.20) repeats the language of chapter 1: \"I will make you a wall of bronze.\" The original call is renewed after the crisis."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 3:1–3",
+              "note": "Ezekiel eats the scroll that is \"sweet as honey\" — the same metaphor of consuming God's word."
+            },
+            {
+              "ref": "Rev 10:9–10",
+              "note": "John eats the little scroll: \"sweet in my mouth but sour in my stomach.\" The pattern — delightful reception, painful proclamation — runs from Jeremiah to Revelation."
+            },
+            {
+              "ref": "Jer 1:18–19",
+              "note": "The recommission (v.20) repeats the language of chapter 1: \"I will make you a wall of bronze.\" The original call is renewed after the crisis."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -192,6 +197,9 @@
               "note": "Brueggemann identifies the \"deceptive brook\" accusation as the most daring speech in the book. The prophet accuses God of unreliability — and God responds not with rebuke but with conditional restoration. The relationship survives the accusation because it is honest."
             }
           ]
+        },
+        "hist": {
+          "context": "Verses 10–21 constitute Jeremiah's third and most intense \"confession.\" The prophet curses the day of his birth (v.10, anticipating 20:14–18), complains of loneliness (v.17), accuses God of being \"a deceptive brook\" (v.18), and receives a conditional recommission: \"If you repent, I will restore you, and you will stand before me\" (v.19). The prophet who called others to repent must himself repent. God's response is not comfort but renewal of commission — with the same \"fortified wall\" language from chapter 1."
         }
       }
     }

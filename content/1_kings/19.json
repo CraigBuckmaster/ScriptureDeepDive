@@ -31,21 +31,22 @@
             "paragraph": "\"Enough, LORD!\" (rab, v.4) — Elijah's prayer of exhaustion. One day after the greatest prophetic triumph in history, Elijah is suicidal. The wordrabmeans \"much, enough, sufficient.\" He has had enough — enough of the fight, enough of the isolation, enough of being the only one."
           }
         ],
-        "ctx": "The juxtaposition is staggering. Chapter 18: Elijah calls fire from heaven and outruns a chariot. Chapter 19: Elijah collapses under a bush and asks to die. Jezebel's death threat — \"May the gods deal with me, be it ever so severely, if by this time tomorrow I do not make your life like that of one of them\" — undoes everything Carmel accomplished. Elijah flees south through Judah, into the Negev, and collapses. An angel feeds him twice — a 40-day journey to Horeb (Sinai), where Moses met God. At Horeb, God asks: \"What are you doing here, Elijah?\" The prophet pours out his complaint: \"I alone am left.\" Then the theophany: wind, earthquake, fire — God is in none of them. Then the still small voice. God asks the same question. Elijah gives the same answer. Nothing has changed externally — but God has revealed something: he is not always in the spectacular. Sometimes he is in the whisper.",
-        "cross": [
-          {
-            "ref": "Exod 19:16–18",
-            "note": "The Sinai theophany: \"thunder and lightning, a thick cloud, a very loud trumpet blast, fire and smoke.\" At Horeb, God reverses the Sinai pattern: the spectacular phenomena appear but God is not in them."
-          },
-          {
-            "ref": "Matt 17:3",
-            "note": "Moses and Elijah appear with Jesus at the Transfiguration — both Horeb-visitors now meeting the one who is greater than Horeb."
-          },
-          {
-            "ref": "Rom 11:2–4",
-            "note": "Paul cites Elijah's \"I alone am left\" and God's response about the 7,000 to demonstrate that God always preserves a remnant."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 19:16–18",
+              "note": "The Sinai theophany: \"thunder and lightning, a thick cloud, a very loud trumpet blast, fire and smoke.\" At Horeb, God reverses the Sinai pattern: the spectacular phenomena appear but God is not in them."
+            },
+            {
+              "ref": "Matt 17:3",
+              "note": "Moses and Elijah appear with Jesus at the Transfiguration — both Horeb-visitors now meeting the one who is greater than Horeb."
+            },
+            {
+              "ref": "Rom 11:2–4",
+              "note": "Paul cites Elijah's \"I alone am left\" and God's response about the 7,000 to demonstrate that God always preserves a remnant."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -97,6 +98,9 @@
               "note": "Provan: The still small voice is the theological centre of the Elijah cycle. It redefines what it means for God to be present. Carmel was spectacular but temporary. The whisper is ordinary but permanent. God's ongoing work in the world is more whisper than fire — and the whisper sustains what the fire only demonstrates."
             }
           ]
+        },
+        "hist": {
+          "context": "The juxtaposition is staggering. Chapter 18: Elijah calls fire from heaven and outruns a chariot. Chapter 19: Elijah collapses under a bush and asks to die. Jezebel's death threat — \"May the gods deal with me, be it ever so severely, if by this time tomorrow I do not make your life like that of one of them\" — undoes everything Carmel accomplished. Elijah flees south through Judah, into the Negev, and collapses. An angel feeds him twice — a 40-day journey to Horeb (Sinai), where Moses met God. At Horeb, God asks: \"What are you doing here, Elijah?\" The prophet pours out his complaint: \"I alone am left.\" Then the theophany: wind, earthquake, fire — God is in none of them. Then the still small voice. God asks the same question. Elijah gives the same answer. Nothing has changed externally — but God has revealed something: he is not always in the spectacular. Sometimes he is in the whisper."
         }
       }
     },
@@ -120,21 +124,22 @@
             "paragraph": "Elijah throws his cloak (ʾadderet) over Elisha (v.19) — a symbolic act of prophetic commissioning. The cloak represents prophetic authority (cf. 2 Kgs 2:8, 13–14). Elisha will literally inherit Elijah's mantle."
           }
         ],
-        "ctx": "God's response to Elijah's despair is not comfort but commission: go anoint Hazael king of Aram, Jehu king of Israel, and Elisha as your successor. Three agents of judgment — two political, one prophetic — will execute what Elijah cannot accomplish alone. The 7,000 who have not bowed to Baal remind Elijah that God's work is vastly larger than his individual ministry. Elisha's call follows immediately: Elijah throws his cloak over him, Elisha slaughters his oxen, burns his ploughing equipment, and follows. The burning of the equipment is total — there is no going back. Discipleship costs everything.",
-        "cross": [
-          {
-            "ref": "Rom 11:4",
-            "note": "Paul quotes the 7,000 passage to prove that God always preserves a faithful remnant: \"So too, at the present time there is a remnant chosen by grace.\""
-          },
-          {
-            "ref": "2 Kgs 2:13–14",
-            "note": "Elisha picks up Elijah's fallen cloak after the chariot of fire and strikes the Jordan — the mantle-transfer prophecied here is completed there."
-          },
-          {
-            "ref": "Luke 9:62",
-            "note": "\"No one who puts a hand to the plough and looks back is fit for service in the kingdom of God.\" Jesus echoes the radical commitment of Elisha's plough-burning."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 11:4",
+              "note": "Paul quotes the 7,000 passage to prove that God always preserves a faithful remnant: \"So too, at the present time there is a remnant chosen by grace.\""
+            },
+            {
+              "ref": "2 Kgs 2:13–14",
+              "note": "Elisha picks up Elijah's fallen cloak after the chariot of fire and strikes the Jordan — the mantle-transfer prophecied here is completed there."
+            },
+            {
+              "ref": "Luke 9:62",
+              "note": "\"No one who puts a hand to the plough and looks back is fit for service in the kingdom of God.\" Jesus echoes the radical commitment of Elisha's plough-burning."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -186,6 +191,9 @@
               "note": "Provan: Elisha's radical response — killing the oxen, burning the plough, hosting a farewell feast — marks the most complete prophetic call narrative in Kings. Every tie to the old life is severed publicly. The community witnesses the break. There is no ambiguity about Elisha's commitment."
             }
           ]
+        },
+        "hist": {
+          "context": "God's response to Elijah's despair is not comfort but commission: go anoint Hazael king of Aram, Jehu king of Israel, and Elisha as your successor. Three agents of judgment — two political, one prophetic — will execute what Elijah cannot accomplish alone. The 7,000 who have not bowed to Baal remind Elijah that God's work is vastly larger than his individual ministry. Elisha's call follows immediately: Elijah throws his cloak over him, Elisha slaughters his oxen, burns his ploughing equipment, and follows. The burning of the equipment is total — there is no going back. Discipleship costs everything."
         }
       }
     }

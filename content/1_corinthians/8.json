@@ -31,21 +31,22 @@
             "paragraph": "The noun syneidēsis (conscience) appears eight times in chapters 8–10, becoming the ethical centre of the idol-food discussion. In Greco-Roman moral philosophy, syneidēsis denoted the inner moral witness that either accuses or approves one’s conduct. Paul recognises that consciences differ: the ‘strong’ have knowledge and eat freely; the ‘weak’ lack this knowledge and eat with a defiled conscience. The ethical question is not ‘what do I know?’ but ‘what does my action do to my brother’s or sister’s conscience?’"
           }
         ],
-        "ctx": "Paul introduces another topic from the Corinthians’ letter (peri de, ‘now about,’ v. 1): food sacrificed to idols (eidōlothyta). In Roman Corinth, virtually all meat available in the marketplace (macellum) had been offered to pagan deities in temple rituals before being sold. Social life — guild meetings, civic celebrations, family occasions — routinely took place in temple dining rooms. For Corinthian Christians, avoiding idol-food entirely would mean near-total social isolation and economic disadvantage. The ‘knowledgeable’ faction argued that since idols are nothing and there is only one God, eating such food was harmless. Paul agrees with the theological premise but challenges its ethical application.",
-        "cross": [
-          {
-            "ref": "Rom 14:1–23",
-            "note": "Paul addresses a parallel dispute in Rome over food and observance of days, using the same strong/weak framework and concluding that love must constrain liberty."
-          },
-          {
-            "ref": "Acts 15:28–29",
-            "note": "The Jerusalem Council’s prohibition of food offered to idols provides the earlier apostolic ruling that forms the backdrop to Paul’s discussion."
-          },
-          {
-            "ref": "Deut 6:4",
-            "note": "The Shema (‘Hear, O Israel: the Lord our God, the Lord is one’) stands behind the monotheistic confession of v. 6 that Paul shares with the ‘knowledgeable.’"
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Rom 14:1–23",
+              "note": "Paul addresses a parallel dispute in Rome over food and observance of days, using the same strong/weak framework and concluding that love must constrain liberty."
+            },
+            {
+              "ref": "Acts 15:28–29",
+              "note": "The Jerusalem Council’s prohibition of food offered to idols provides the earlier apostolic ruling that forms the backdrop to Paul’s discussion."
+            },
+            {
+              "ref": "Deut 6:4",
+              "note": "The Shema (‘Hear, O Israel: the Lord our God, the Lord is one’) stands behind the monotheistic confession of v. 6 that Paul shares with the ‘knowledgeable.’"
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Thiselton identifies v. 6 as a ‘christological redefinition of monotheism’: the inclusion of Christ within the divine identity marked by the Shema is among the earliest and most significant developments in NT Christology. The verse is both confessional and polemical, positioning Christian monotheism over against the ‘many gods and many lords’ of Corinthian paganism."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul introduces another topic from the Corinthians’ letter (peri de, ‘now about,’ v. 1): food sacrificed to idols (eidōlothyta). In Roman Corinth, virtually all meat available in the marketplace (macellum) had been offered to pagan deities in temple rituals before being sold. Social life — guild meetings, civic celebrations, family occasions — routinely took place in temple dining rooms. For Corinthian Christians, avoiding idol-food entirely would mean near-total social isolation and economic disadvantage. The ‘knowledgeable’ faction argued that since idols are nothing and there is only one God, eating such food was harmless. Paul agrees with the theological premise but challenges its ethical application."
         }
       }
     },
@@ -127,21 +131,22 @@
             "paragraph": "The noun proskomma (stumbling block) in v. 9 denotes an obstacle placed in someone’s path that causes them to trip. Paul warns the ‘knowledgeable’ that their exercise of liberty (exousia) could become a proskomma for the ‘weak’ — not merely offending their sensibilities but actively causing them to act against their conscience (v. 10), which Paul regards as spiritual destruction. The concept echoes Jesus’ warning about causing ‘little ones’ to stumble (Matt 18:6) and will be developed further in Rom 14:13."
           }
         ],
-        "ctx": "Paul now addresses the practical problem: not everyone in the church possesses the same theological knowledge. Some believers, recently converted from paganism, still associate idol-food with actual demonic worship. If they see a ‘knowledgeable’ fellow believer eating in a temple dining room (v. 10), they may be emboldened to eat despite a conflicted conscience — and this, Paul argues, constitutes their destruction. The archaeological evidence from Corinth confirms the prevalence of temple dining: the Asclepion, the Demeter sanctuary, and other temples had dining rooms where worshippers ate meals after sacrifices. For the ‘weak’ Corinthian, these spaces were saturated with spiritual significance that could not simply be overridden by theological knowledge.",
-        "cross": [
-          {
-            "ref": "Matt 18:6–7",
-            "note": "Jesus’ severe warning about causing ‘little ones’ to stumble provides the dominical background for Paul’s argument about the weak brother."
-          },
-          {
-            "ref": "Rom 14:13–21",
-            "note": "Paul’s parallel discussion of food scruples in Rome concludes with the same principle: do not destroy your brother or sister for the sake of food."
-          },
-          {
-            "ref": "Rom 14:15",
-            "note": "Paul’s direct statement: ‘if your brother or sister is distressed because of what you eat, you are no longer acting in love’ parallels the ethical logic of 1 Cor 8."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Matt 18:6–7",
+              "note": "Jesus’ severe warning about causing ‘little ones’ to stumble provides the dominical background for Paul’s argument about the weak brother."
+            },
+            {
+              "ref": "Rom 14:13–21",
+              "note": "Paul’s parallel discussion of food scruples in Rome concludes with the same principle: do not destroy your brother or sister for the sake of food."
+            },
+            {
+              "ref": "Rom 14:15",
+              "note": "Paul’s direct statement: ‘if your brother or sister is distressed because of what you eat, you are no longer acting in love’ parallels the ethical logic of 1 Cor 8."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -210,6 +215,9 @@
               "note": "Thiselton highlights the christological grounding of Paul’s ethic: the weak person is defined not by their weakness but by Christ’s death for them. The strong person’s liberty is bounded by the same cross that liberated them. Paul’s voluntary renunciation (v. 13) embodies the cruciform pattern of chapters 1–4."
             }
           ]
+        },
+        "hist": {
+          "context": "Paul now addresses the practical problem: not everyone in the church possesses the same theological knowledge. Some believers, recently converted from paganism, still associate idol-food with actual demonic worship. If they see a ‘knowledgeable’ fellow believer eating in a temple dining room (v. 10), they may be emboldened to eat despite a conflicted conscience — and this, Paul argues, constitutes their destruction. The archaeological evidence from Corinth confirms the prevalence of temple dining: the Asclepion, the Demeter sanctuary, and other temples had dining rooms where worshippers ate meals after sacrifices. For the ‘weak’ Corinthian, these spaces were saturated with spiritual significance that could not simply be overridden by theological knowledge."
         }
       }
     }

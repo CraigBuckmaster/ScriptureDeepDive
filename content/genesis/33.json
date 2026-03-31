@@ -37,18 +37,22 @@
             "paragraph": "From the same root as \"find favor\" (ḥānan). Jacob's explanation for his prosperity: \"God has dealt graciously (ḥānannî) with me.\" Grace explains everything."
           }
         ],
-        "hist": "The meeting of Jacob and Esau after twenty years is the most emotionally charged reconciliation scene in Genesis. Esau's running to meet Jacob, his embrace, his kissing and weeping (v.4) mirrors the father's reception of the prodigal son in Luke 15:20. The elaborate protocol Jacob had prepared — bowing seven times, the gift procession — is swept aside by Esau's immediate embrace. The grace of the encounter far exceeds the strategy Jacob had deployed.",
-        "ctx": "The reconciliation scene inverts chapter 27: Jacob now voluntarily bows seven times (the sign of royal homage, attested in Amarna letters) before Esau, addressing him as \"my lord.\" The stolen blessing is symbolically returned via the gift. Esau's \"I have enough\" (v.9) and Jacob's \"I have enough\" (v.11) — same Hebrew word — suggest that God has blessed both brothers. The fearful meeting Jacob anticipated (ch.32) becomes a tearful embrace. \"I have seen your face, which is like seeing the face of God\" (v.10) — Jacob connects the Esau meeting with Peniel: both encounters could have been lethal, both resulted in grace.",
-        "cross": [
-          {
-            "ref": "Luke 15:20",
-            "note": "The prodigal son's father \"ran to meet him, fell on his neck and kissed him\" — the same actions as Esau toward Jacob (v.4). The reconciliation with Esau shapes the parable."
-          },
-          {
-            "ref": "Gen 27:29",
-            "note": "Isaac's blessing: \"Your brothers will bow down to you.\" Jacob fulfills this by bowing — the blessing is real but its direction is reversed by grace."
-          }
-        ],
+        "hist": {
+          "historical": "The meeting of Jacob and Esau after twenty years is the most emotionally charged reconciliation scene in Genesis. Esau's running to meet Jacob, his embrace, his kissing and weeping (v.4) mirrors the father's reception of the prodigal son in Luke 15:20. The elaborate protocol Jacob had prepared — bowing seven times, the gift procession — is swept aside by Esau's immediate embrace. The grace of the encounter far exceeds the strategy Jacob had deployed.",
+          "context": "The reconciliation scene inverts chapter 27: Jacob now voluntarily bows seven times (the sign of royal homage, attested in Amarna letters) before Esau, addressing him as \"my lord.\" The stolen blessing is symbolically returned via the gift. Esau's \"I have enough\" (v.9) and Jacob's \"I have enough\" (v.11) — same Hebrew word — suggest that God has blessed both brothers. The fearful meeting Jacob anticipated (ch.32) becomes a tearful embrace. \"I have seen your face, which is like seeing the face of God\" (v.10) — Jacob connects the Esau meeting with Peniel: both encounters could have been lethal, both resulted in grace."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Luke 15:20",
+              "note": "The prodigal son's father \"ran to meet him, fell on his neck and kissed him\" — the same actions as Esau toward Jacob (v.4). The reconciliation with Esau shapes the parable."
+            },
+            {
+              "ref": "Gen 27:29",
+              "note": "Isaac's blessing: \"Your brothers will bow down to you.\" Jacob fulfills this by bowing — the blessing is real but its direction is reversed by grace."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -144,18 +148,22 @@
             "paragraph": "Jacob's altar name — \"El [is] the God of Israel\" — the first time the name Israel is used of the people rather than just the patriarch. Jacob names God in relation to his new identity."
           }
         ],
-        "hist": "Jacob's decision not to follow Esau to Seir but to go to Succoth and then Shechem has generated debate: is this faithfulness (he is going toward Canaan as commanded) or diplomatic evasion of Esau's companionship? The excuse given — his children and flocks are weak — may be genuine or may be a polite way of separating from Esau without confrontation. Either way, the outcome is that Jacob establishes himself at Shechem in Canaan proper, erects an altar, and names it \"God, the God of Israel\" — the first act of formal worship on Canaanite soil with his new name.",
-        "ctx": "Jacob does not follow Esau to Seir — his direction is Canaan, not Edom. His polite deflection (v.14: \"I will come to my lord in Seir\") was apparently unfulfilled; Esau and Jacob next meet at Isaac's death (35:29). Jacob's settlement at Shechem is theologically significant: Shechem is where Abram first camped in Canaan and received the land promise (12:6). Jacob buys the land legally (echoing Abraham's purchase of Machpelah in ch.23) and builds an altar — the same sequence as Abraham. The land claim is established by purchase and worship.",
-        "cross": [
-          {
-            "ref": "Josh 24:32",
-            "note": "Joseph's bones buried at Shechem in the plot of ground Jacob bought — the purchase of land at Shechem foreshadows Israel's future there."
-          },
-          {
-            "ref": "John 4:5-6",
-            "note": "Jesus meets the Samaritan woman at Jacob's well near Shechem — the land of Genesis 33 becomes the setting of a major NT encounter."
-          }
-        ],
+        "hist": {
+          "historical": "Jacob's decision not to follow Esau to Seir but to go to Succoth and then Shechem has generated debate: is this faithfulness (he is going toward Canaan as commanded) or diplomatic evasion of Esau's companionship? The excuse given — his children and flocks are weak — may be genuine or may be a polite way of separating from Esau without confrontation. Either way, the outcome is that Jacob establishes himself at Shechem in Canaan proper, erects an altar, and names it \"God, the God of Israel\" — the first act of formal worship on Canaanite soil with his new name.",
+          "context": "Jacob does not follow Esau to Seir — his direction is Canaan, not Edom. His polite deflection (v.14: \"I will come to my lord in Seir\") was apparently unfulfilled; Esau and Jacob next meet at Isaac's death (35:29). Jacob's settlement at Shechem is theologically significant: Shechem is where Abram first camped in Canaan and received the land promise (12:6). Jacob buys the land legally (echoing Abraham's purchase of Machpelah in ch.23) and builds an altar — the same sequence as Abraham. The land claim is established by purchase and worship."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Josh 24:32",
+              "note": "Joseph's bones buried at Shechem in the plot of ground Jacob bought — the purchase of land at Shechem foreshadows Israel's future there."
+            },
+            {
+              "ref": "John 4:5-6",
+              "note": "Jesus meets the Samaritan woman at Jacob's well near Shechem — the land of Genesis 33 becomes the setting of a major NT encounter."
+            }
+          ]
+        },
         "poi": [
           {
             "name": "Shechem",

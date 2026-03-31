@@ -17,21 +17,22 @@
       "verse_start": 1,
       "verse_end": 6,
       "panels": {
-        "ctx": "Hoshea, Israel’s last king, does evil “but not like the kings of Israel who preceded him” — a faint praise that changes nothing. He becomes Shalmaneser V’s vassal, then conspires with Egypt’s So (Osorkon IV or Tefnakht). Shalmaneser besieges Samaria for three years. In 722 BC the city falls and its population is deported to Halah, Gozan, and the towns of the Medes. The northern kingdom of Israel ceases to exist after roughly 200 years. Ten tribes scattered across the Assyrian Empire — never to return as a political entity.",
-        "cross": [
-          {
-            "ref": "Deut 28:36",
-            "note": "“The LORD will drive you and the king you set over you to a nation unknown to you or your ancestors.” The exile was prophesied by Moses before Israel entered the land."
-          },
-          {
-            "ref": "Hos 13:16",
-            "note": "“Samaria must bear her guilt, because she has rebelled against her God.” Hosea, prophesying during this period, saw exactly what was coming."
-          },
-          {
-            "ref": "Amos 5:27",
-            "note": "“I will send you into exile beyond Damascus.” Amos, a generation earlier, specified the direction of exile."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 28:36",
+              "note": "“The LORD will drive you and the king you set over you to a nation unknown to you or your ancestors.” The exile was prophesied by Moses before Israel entered the land."
+            },
+            {
+              "ref": "Hos 13:16",
+              "note": "“Samaria must bear her guilt, because she has rebelled against her God.” Hosea, prophesying during this period, saw exactly what was coming."
+            },
+            {
+              "ref": "Amos 5:27",
+              "note": "“I will send you into exile beyond Damascus.” Amos, a generation earlier, specified the direction of exile."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -71,6 +72,9 @@
               "note": "The narrator records the deportation with devastating brevity: one verse to end a kingdom. The compression is itself a theological statement — 200 years of history collapses into a single sentence of exile."
             }
           ]
+        },
+        "hist": {
+          "context": "Hoshea, Israel’s last king, does evil “but not like the kings of Israel who preceded him” — a faint praise that changes nothing. He becomes Shalmaneser V’s vassal, then conspires with Egypt’s So (Osorkon IV or Tefnakht). Shalmaneser besieges Samaria for three years. In 722 BC the city falls and its population is deported to Halah, Gozan, and the towns of the Medes. The northern kingdom of Israel ceases to exist after roughly 200 years. Ten tribes scattered across the Assyrian Empire — never to return as a political entity."
         }
       }
     },
@@ -94,21 +98,22 @@
             "paragraph": "“They rejected his decrees and the covenant” (v.15) — the verb sûr means to turn aside, remove, depart. The same verb used for removing high places is now used for removing oneself from God. Israel’s departure from YHWH is described with the same vocabulary as the reforms they refused to make."
           }
         ],
-        "ctx": "This is the theological centre of 2 Kings — and arguably of the entire Deuteronomistic History. The narrator steps back from the chronicle of events and delivers a comprehensive indictment: Israel fell because they sinned against YHWH who brought them out of Egypt. The charges are systematic: they worshipped other gods, followed the practices of the nations God drove out, built high places, set up sacred stones and Asherah poles, burned incense, served idols, sacrificed their sons and daughters in the fire, practised divination and sought omens. God warned them through every prophet, but “they would not listen and were as stiff-necked as their ancestors.” The verdict: “They followed worthless idols and themselves became worthless.”",
-        "cross": [
-          {
-            "ref": "Deut 4:25–28",
-            "note": "Moses predicted exactly this outcome: “If you then become corrupt and make any kind of idol... you will quickly perish from the land... The LORD will scatter you among the peoples.”"
-          },
-          {
-            "ref": "Deut 28:15–68",
-            "note": "The covenant curses: invasion, siege, famine, exile. Every element of chapter 17 was foretold in Deuteronomy."
-          },
-          {
-            "ref": "Jer 2:5",
-            "note": "“What fault did your ancestors find in me, that they strayed so far from me? They followed worthless idols and became worthless themselves.” Jeremiah echoes this passage exactly."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 4:25–28",
+              "note": "Moses predicted exactly this outcome: “If you then become corrupt and make any kind of idol... you will quickly perish from the land... The LORD will scatter you among the peoples.”"
+            },
+            {
+              "ref": "Deut 28:15–68",
+              "note": "The covenant curses: invasion, siege, famine, exile. Every element of chapter 17 was foretold in Deuteronomy."
+            },
+            {
+              "ref": "Jer 2:5",
+              "note": "“What fault did your ancestors find in me, that they strayed so far from me? They followed worthless idols and became worthless themselves.” Jeremiah echoes this passage exactly."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -156,6 +161,9 @@
               "note": "The phrase “they became worthless” is the narrator’s most important anthropological claim: idolatry is not merely a religious error but a process of dehumanisation. To worship what is less than human is to become less than human."
             }
           ]
+        },
+        "hist": {
+          "context": "This is the theological centre of 2 Kings — and arguably of the entire Deuteronomistic History. The narrator steps back from the chronicle of events and delivers a comprehensive indictment: Israel fell because they sinned against YHWH who brought them out of Egypt. The charges are systematic: they worshipped other gods, followed the practices of the nations God drove out, built high places, set up sacred stones and Asherah poles, burned incense, served idols, sacrificed their sons and daughters in the fire, practised divination and sought omens. God warned them through every prophet, but “they would not listen and were as stiff-necked as their ancestors.” The verdict: “They followed worthless idols and themselves became worthless.”"
         }
       }
     },
@@ -165,17 +173,18 @@
       "verse_start": 24,
       "verse_end": 41,
       "panels": {
-        "ctx": "The Assyrian king resettles foreigners from Babylon, Cuthah, Avva, Hamath, and Sepharvaim in the cities of Samaria. Lions kill some of them, so the king sends an Israelite priest back to teach the worship of “the god of that land.” The result is syncretism: “They worshipped the LORD, but they also served their own gods.” Each group makes its own idols while theoretically acknowledging YHWH. The narrator’s verdict: “To this day they persist in their former practices.” This passage explains the origin of the Samaritans and the deep hostility between Jews and Samaritans that persists into the NT.",
-        "cross": [
-          {
-            "ref": "John 4:19–22",
-            "note": "The Samaritan woman tells Jesus, “Our ancestors worshipped on this mountain.” Jesus responds: “You Samaritans worship what you do not know.” The theological critique of this passage echoes through the NT."
-          },
-          {
-            "ref": "Ezra 4:1–3",
-            "note": "The returned exiles refuse Samaritan help in rebuilding the temple, citing their mixed worship. The roots of this conflict are in 2 Kings 17."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 4:19–22",
+              "note": "The Samaritan woman tells Jesus, “Our ancestors worshipped on this mountain.” Jesus responds: “You Samaritans worship what you do not know.” The theological critique of this passage echoes through the NT."
+            },
+            {
+              "ref": "Ezra 4:1–3",
+              "note": "The returned exiles refuse Samaritan help in rebuilding the temple, citing their mixed worship. The roots of this conflict are in 2 Kings 17."
+            }
+          ]
+        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -223,6 +232,9 @@
               "note": "The concluding “to this day” transforms the chapter from history into ongoing reality. The narrator writes for an audience that can verify the claim by visiting Samaria. The past is not past; its consequences are present."
             }
           ]
+        },
+        "hist": {
+          "context": "The Assyrian king resettles foreigners from Babylon, Cuthah, Avva, Hamath, and Sepharvaim in the cities of Samaria. Lions kill some of them, so the king sends an Israelite priest back to teach the worship of “the god of that land.” The result is syncretism: “They worshipped the LORD, but they also served their own gods.” Each group makes its own idols while theoretically acknowledging YHWH. The narrator’s verdict: “To this day they persist in their former practices.” This passage explains the origin of the Samaritans and the deep hostility between Jews and Samaritans that persists into the NT."
         }
       }
     }

@@ -25,21 +25,22 @@
             "paragraph": "The vision of two baskets of figs (te'enim) placed before the temple (v.1) is a divine object lesson. The good figs represent the exiles deported with Jehoiachin in 597 BC; the bad figs represent those who remained in Jerusalem under Zedekiah. The reversal is shocking: those who went into exile are the hope of the nation, while those who \"survived\" in the land are destined for destruction. God's purposes often invert human expectations."
           }
         ],
-        "ctx": "The date is after 597 BC -- Jehoiachin and the cream of Jerusalem's leadership have been deported to Babylon. Those left behind under Zedekiah assumed they were the fortunate survivors. God demolishes that assumption: the exiles are the \"good figs\" whom God will watch over, restore, and give \"a heart to know me\" (v.7). This anticipates the new covenant promise of 31:33 -- God will transform hearts. The theology is subversive: exile is not punishment but the seedbed of renewal.",
-        "cross": [
-          {
-            "ref": "Ezek 11:16-20",
-            "note": "Ezekiel, himself an exile, receives a parallel promise: God will give the exiles \"an undivided heart and a new spirit\" -- the same heart-transformation theology."
-          },
-          {
-            "ref": "Rom 11:5-6",
-            "note": "Paul's \"remnant chosen by grace\" echoes the good-figs theology: God preserves a faithful core through apparent catastrophe."
-          },
-          {
-            "ref": "Jer 31:33",
-            "note": "The promise of a heart \"to know me\" in 24:7 directly anticipates the new covenant where God writes his law on hearts."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Ezek 11:16-20",
+              "note": "Ezekiel, himself an exile, receives a parallel promise: God will give the exiles \"an undivided heart and a new spirit\" -- the same heart-transformation theology."
+            },
+            {
+              "ref": "Rom 11:5-6",
+              "note": "Paul's \"remnant chosen by grace\" echoes the good-figs theology: God preserves a faithful core through apparent catastrophe."
+            },
+            {
+              "ref": "Jer 31:33",
+              "note": "The promise of a heart \"to know me\" in 24:7 directly anticipates the new covenant where God writes his law on hearts."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -100,6 +101,9 @@
               "note": "Brueggemann identifies a \"theology of loss\" -- God works through dispossession, not possession. The exiles who lost everything are the ones who receive the promise of restoration. The pattern anticipates the cross."
             }
           ]
+        },
+        "hist": {
+          "context": "The date is after 597 BC -- Jehoiachin and the cream of Jerusalem's leadership have been deported to Babylon. Those left behind under Zedekiah assumed they were the fortunate survivors. God demolishes that assumption: the exiles are the \"good figs\" whom God will watch over, restore, and give \"a heart to know me\" (v.7). This anticipates the new covenant promise of 31:33 -- God will transform hearts. The theology is subversive: exile is not punishment but the seedbed of renewal."
         }
       }
     },
@@ -117,17 +121,18 @@
             "paragraph": "Those who remain will become \"a horror (shemama) and an offense to all the kingdoms of the earth\" (v.9). The word shemama connotes not just destruction but the reaction of horror it provokes in onlookers. Judah will become a cautionary tale -- a living illustration of covenant curse."
           }
         ],
-        "ctx": "The bad figs -- Zedekiah and those remaining in Jerusalem and Egypt -- will experience the full triad of covenant curses: sword, famine, and plague (v.10). They will be \"completely destroyed from the land I gave to them and their ancestors.\" The finality is absolute for this group, while the exile group receives unconditional promise.",
-        "cross": [
-          {
-            "ref": "Deut 28:37",
-            "note": "\"You will become a horror, a byword and an object of ridicule among all the peoples\" -- the covenant curse language that Jeremiah invokes."
-          },
-          {
-            "ref": "Jer 29:17-19",
-            "note": "The bad-figs verdict is repeated in the letter to the exiles -- those in Jerusalem are still under the curse while the exiles receive the promise."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Deut 28:37",
+              "note": "\"You will become a horror, a byword and an object of ridicule among all the peoples\" -- the covenant curse language that Jeremiah invokes."
+            },
+            {
+              "ref": "Jer 29:17-19",
+              "note": "The bad-figs verdict is repeated in the letter to the exiles -- those in Jerusalem are still under the curse while the exiles receive the promise."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -176,6 +181,9 @@
               "note": "Brueggemann reads the two-figs vision as a \"critical assessment of power.\" Those who retained political power and territory are judged; those stripped of everything receive the promise. Power and divine favor operate on different logics."
             }
           ]
+        },
+        "hist": {
+          "context": "The bad figs -- Zedekiah and those remaining in Jerusalem and Egypt -- will experience the full triad of covenant curses: sword, famine, and plague (v.10). They will be \"completely destroyed from the land I gave to them and their ancestors.\" The finality is absolute for this group, while the exile group receives unconditional promise."
         }
       }
     }

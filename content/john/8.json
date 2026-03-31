@@ -28,21 +28,22 @@
             "paragraph": "In v.24 and v.28, egō eimi appears without a predicate — the absolute form. \"If you do not believe that I am he...\" — the \"he\" is added by translators; the Greek is simply \"I am.\" Jesus is using the divine name of Exod 3:14 and especially Isa 43:10 (\"you are my witnesses that I am he\"). The context and the opponents' reaction (v.59 — they try to stone him) confirm this is a divine name claim."
           }
         ],
-        "ctx": "[('The Pericope Adulterae (7:53–8:11)', \"The story of the woman caught in adultery is absent from all the earliest and best manuscripts of John (P66, P75, Sinaiticus, Vaticanus). It appears in different locations in different manuscripts — some after John 7:36, some after John 21:25, some in Luke after 21:38. The style differs from John's. Most NT scholars regard it as an ancient tradition about Jesus (probably authentic in substance) that circulated independently and was eventually inserted here. It is included in the canon and carries pastoral authority, but its textual status means it should not bear the weight of unique doctrines.\"), ('The Lampstand Ceremony', 'During the Feast of Tabernacles, four golden lampstands (menorot) in the Court of Women were lit each evening, illuminating all Jerusalem according to the Talmud. The ceremony commemorated the pillar of fire in the wilderness. Jesus\\'s declaration \"I am the light of the world\" (v.12) is spoken in this setting, claiming to be what the ceremony symbolises.')]",
-        "cross": [
-          {
-            "ref": "Exod 3:14",
-            "note": "\"I am who I am\" — the divine name whose absolute form (egō eimi) Jesus claims in vv.24, 28, 58."
-          },
-          {
-            "ref": "Isa 43:10",
-            "note": "\"You are my witnesses... that you may know and believe me and understand that I am he\" — the specific I am context from Isaiah that v.24 echoes."
-          },
-          {
-            "ref": "Ps 36:9",
-            "note": "\"For with you is the fountain of life; in your light we see light\" — the OT background for light as a divine attribute."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 3:14",
+              "note": "\"I am who I am\" — the divine name whose absolute form (egō eimi) Jesus claims in vv.24, 28, 58."
+            },
+            {
+              "ref": "Isa 43:10",
+              "note": "\"You are my witnesses... that you may know and believe me and understand that I am he\" — the specific I am context from Isaiah that v.24 echoes."
+            },
+            {
+              "ref": "Ps 36:9",
+              "note": "\"For with you is the fountain of life; in your light we see light\" — the OT background for light as a divine attribute."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -102,6 +103,9 @@
               "note": "Chrysostom: \"I am the light of the world. Not of one nation, not of one people, but of the whole world. And what is the light? The sun illumines the body; I illuminate the soul. The sun makes visible the things of earth; I reveal the things of heaven.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Pericope Adulterae (7:53–8:11)', \"The story of the woman caught in adultery is absent from all the earliest and best manuscripts of John (P66, P75, Sinaiticus, Vaticanus). It appears in different locations in different manuscripts — some after John 7:36, some after John 21:25, some in Luke after 21:38. The style differs from John's. Most NT scholars regard it as an ancient tradition about Jesus (probably authentic in substance) that circulated independently and was eventually inserted here. It is included in the canon and carries pastoral authority, but its textual status means it should not bear the weight of unique doctrines.\"), ('The Lampstand Ceremony', 'During the Feast of Tabernacles, four golden lampstands (menorot) in the Court of Women were lit each evening, illuminating all Jerusalem according to the Talmud. The ceremony commemorated the pillar of fire in the wilderness. Jesus\\'s declaration \"I am the light of the world\" (v.12) is spoken in this setting, claiming to be what the ceremony symbolises.')]"
         }
       }
     },
@@ -125,21 +129,22 @@
             "paragraph": "Jesus's characterisation of the devil (v.44) as the father of lies and a murderer from the beginning is the most direct statement in the NT about the devil's nature and activity. The \"murder from the beginning\" connects to the Fall (death entering through the devil's deception, Gen 3) and possibly Cain's murder of Abel (1 John 3:12). Lying is not incidental to the devil's character — it is his \"native language\" (en tois idiois)."
           }
         ],
-        "ctx": "[('\"The Truth Will Set You Free\"', \"One of the most quoted statements of Jesus, usually detached from its context. The freedom Jesus offers is freedom from slavery to sin (v.34), not freedom as general autonomy or self-realisation. The context is a debate about whether Abraham's physical descendants are spiritually free — Jesus insists that ethnic or religious heritage provides no exemption from sin's bondage. Only the Son can grant genuine freedom (v.36).\"), ('\"Abraham Rejoiced to See My Day\"', 'Jesus\\'s claim in v.56 — that Abraham saw and rejoiced at \"my day\" — is one of the most provocative statements in ch.8. The Jewish tradition included various accounts of Abraham being shown the future (cf. Gen 15 Covenant of the Pieces; the Apocalypse of Abraham). Jesus claims Abraham\\'s joy was specifically anticipatory joy at the Messiah\\'s coming. The \"day\" he saw was the day of Jesus.')]",
-        "cross": [
-          {
-            "ref": "Gen 3:4-5",
-            "note": "The serpent's lie (\"you will not certainly die\") — the first lie in Scripture, which Jesus connects to the devil being a \"murderer from the beginning\" and \"the father of lies.\""
-          },
-          {
-            "ref": "Gen 15:6-21",
-            "note": "The covenant ceremony in which God showed Abraham the future — possibly the occasion Jesus refers to in \"Abraham rejoiced at the thought of seeing my day.\""
-          },
-          {
-            "ref": "Exod 3:14",
-            "note": "\"God said to Moses, 'I am who I am'\" — the divine name that \"before Abraham was, I am\" explicitly invokes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 3:4-5",
+              "note": "The serpent's lie (\"you will not certainly die\") — the first lie in Scripture, which Jesus connects to the devil being a \"murderer from the beginning\" and \"the father of lies.\""
+            },
+            {
+              "ref": "Gen 15:6-21",
+              "note": "The covenant ceremony in which God showed Abraham the future — possibly the occasion Jesus refers to in \"Abraham rejoiced at the thought of seeing my day.\""
+            },
+            {
+              "ref": "Exod 3:14",
+              "note": "\"God said to Moses, 'I am who I am'\" — the divine name that \"before Abraham was, I am\" explicitly invokes."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -199,6 +204,9 @@
               "note": "Chrysostom: \"Before Abraham was born, I am. Not 'I was' but 'I am' — the present that has no beginning and no end. He does not say 'before Abraham was born, I was' as if describing a prior time, but 'I am' — always existing, without beginning, the eternal present. This is why they took up stones: they understood the claim perfectly.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('\"The Truth Will Set You Free\"', \"One of the most quoted statements of Jesus, usually detached from its context. The freedom Jesus offers is freedom from slavery to sin (v.34), not freedom as general autonomy or self-realisation. The context is a debate about whether Abraham's physical descendants are spiritually free — Jesus insists that ethnic or religious heritage provides no exemption from sin's bondage. Only the Son can grant genuine freedom (v.36).\"), ('\"Abraham Rejoiced to See My Day\"', 'Jesus\\'s claim in v.56 — that Abraham saw and rejoiced at \"my day\" — is one of the most provocative statements in ch.8. The Jewish tradition included various accounts of Abraham being shown the future (cf. Gen 15 Covenant of the Pieces; the Apocalypse of Abraham). Jesus claims Abraham\\'s joy was specifically anticipatory joy at the Messiah\\'s coming. The \"day\" he saw was the day of Jesus.')]"
         }
       }
     },
@@ -222,21 +230,22 @@
             "paragraph": "In v.24 and v.28, egō eimi appears without a predicate — the absolute form. \"If you do not believe that I am he...\" — the \"he\" is added by translators; the Greek is simply \"I am.\" Jesus is using the divine name of Exod 3:14 and especially Isa 43:10 (\"you are my witnesses that I am he\"). The context and the opponents' reaction (v.59 — they try to stone him) confirm this is a divine name claim."
           }
         ],
-        "ctx": "[('The Pericope Adulterae (7:53–8:11)', \"The story of the woman caught in adultery is absent from all the earliest and best manuscripts of John (P66, P75, Sinaiticus, Vaticanus). It appears in different locations in different manuscripts — some after John 7:36, some after John 21:25, some in Luke after 21:38. The style differs from John's. Most NT scholars regard it as an ancient tradition about Jesus (probably authentic in substance) that circulated independently and was eventually inserted here. It is included in the canon and carries pastoral authority, but its textual status means it should not bear the weight of unique doctrines.\"), ('The Lampstand Ceremony', 'During the Feast of Tabernacles, four golden lampstands (menorot) in the Court of Women were lit each evening, illuminating all Jerusalem according to the Talmud. The ceremony commemorated the pillar of fire in the wilderness. Jesus\\'s declaration \"I am the light of the world\" (v.12) is spoken in this setting, claiming to be what the ceremony symbolises.')]",
-        "cross": [
-          {
-            "ref": "Exod 3:14",
-            "note": "\"I am who I am\" — the divine name whose absolute form (egō eimi) Jesus claims in vv.24, 28, 58."
-          },
-          {
-            "ref": "Isa 43:10",
-            "note": "\"You are my witnesses... that you may know and believe me and understand that I am he\" — the specific I am context from Isaiah that v.24 echoes."
-          },
-          {
-            "ref": "Ps 36:9",
-            "note": "\"For with you is the fountain of life; in your light we see light\" — the OT background for light as a divine attribute."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Exod 3:14",
+              "note": "\"I am who I am\" — the divine name whose absolute form (egō eimi) Jesus claims in vv.24, 28, 58."
+            },
+            {
+              "ref": "Isa 43:10",
+              "note": "\"You are my witnesses... that you may know and believe me and understand that I am he\" — the specific I am context from Isaiah that v.24 echoes."
+            },
+            {
+              "ref": "Ps 36:9",
+              "note": "\"For with you is the fountain of life; in your light we see light\" — the OT background for light as a divine attribute."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -296,6 +305,9 @@
               "note": "Chrysostom: \"I am the light of the world. Not of one nation, not of one people, but of the whole world. And what is the light? The sun illumines the body; I illuminate the soul. The sun makes visible the things of earth; I reveal the things of heaven.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('The Pericope Adulterae (7:53–8:11)', \"The story of the woman caught in adultery is absent from all the earliest and best manuscripts of John (P66, P75, Sinaiticus, Vaticanus). It appears in different locations in different manuscripts — some after John 7:36, some after John 21:25, some in Luke after 21:38. The style differs from John's. Most NT scholars regard it as an ancient tradition about Jesus (probably authentic in substance) that circulated independently and was eventually inserted here. It is included in the canon and carries pastoral authority, but its textual status means it should not bear the weight of unique doctrines.\"), ('The Lampstand Ceremony', 'During the Feast of Tabernacles, four golden lampstands (menorot) in the Court of Women were lit each evening, illuminating all Jerusalem according to the Talmud. The ceremony commemorated the pillar of fire in the wilderness. Jesus\\'s declaration \"I am the light of the world\" (v.12) is spoken in this setting, claiming to be what the ceremony symbolises.')]"
         }
       }
     },
@@ -319,21 +331,22 @@
             "paragraph": "Jesus's characterisation of the devil (v.44) as the father of lies and a murderer from the beginning is the most direct statement in the NT about the devil's nature and activity. The \"murder from the beginning\" connects to the Fall (death entering through the devil's deception, Gen 3) and possibly Cain's murder of Abel (1 John 3:12). Lying is not incidental to the devil's character — it is his \"native language\" (en tois idiois)."
           }
         ],
-        "ctx": "[('\"The Truth Will Set You Free\"', \"One of the most quoted statements of Jesus, usually detached from its context. The freedom Jesus offers is freedom from slavery to sin (v.34), not freedom as general autonomy or self-realisation. The context is a debate about whether Abraham's physical descendants are spiritually free — Jesus insists that ethnic or religious heritage provides no exemption from sin's bondage. Only the Son can grant genuine freedom (v.36).\"), ('\"Abraham Rejoiced to See My Day\"', 'Jesus\\'s claim in v.56 — that Abraham saw and rejoiced at \"my day\" — is one of the most provocative statements in ch.8. The Jewish tradition included various accounts of Abraham being shown the future (cf. Gen 15 Covenant of the Pieces; the Apocalypse of Abraham). Jesus claims Abraham\\'s joy was specifically anticipatory joy at the Messiah\\'s coming. The \"day\" he saw was the day of Jesus.')]",
-        "cross": [
-          {
-            "ref": "Gen 3:4-5",
-            "note": "The serpent's lie (\"you will not certainly die\") — the first lie in Scripture, which Jesus connects to the devil being a \"murderer from the beginning\" and \"the father of lies.\""
-          },
-          {
-            "ref": "Gen 15:6-21",
-            "note": "The covenant ceremony in which God showed Abraham the future — possibly the occasion Jesus refers to in \"Abraham rejoiced at the thought of seeing my day.\""
-          },
-          {
-            "ref": "Exod 3:14",
-            "note": "\"God said to Moses, 'I am who I am'\" — the divine name that \"before Abraham was, I am\" explicitly invokes."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 3:4-5",
+              "note": "The serpent's lie (\"you will not certainly die\") — the first lie in Scripture, which Jesus connects to the devil being a \"murderer from the beginning\" and \"the father of lies.\""
+            },
+            {
+              "ref": "Gen 15:6-21",
+              "note": "The covenant ceremony in which God showed Abraham the future — possibly the occasion Jesus refers to in \"Abraham rejoiced at the thought of seeing my day.\""
+            },
+            {
+              "ref": "Exod 3:14",
+              "note": "\"God said to Moses, 'I am who I am'\" — the divine name that \"before Abraham was, I am\" explicitly invokes."
+            }
+          ]
+        },
         "mac": {
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
@@ -393,6 +406,9 @@
               "note": "Chrysostom: \"Before Abraham was born, I am. Not 'I was' but 'I am' — the present that has no beginning and no end. He does not say 'before Abraham was born, I was' as if describing a prior time, but 'I am' — always existing, without beginning, the eternal present. This is why they took up stones: they understood the claim perfectly.\""
             }
           ]
+        },
+        "hist": {
+          "context": "[('\"The Truth Will Set You Free\"', \"One of the most quoted statements of Jesus, usually detached from its context. The freedom Jesus offers is freedom from slavery to sin (v.34), not freedom as general autonomy or self-realisation. The context is a debate about whether Abraham's physical descendants are spiritually free — Jesus insists that ethnic or religious heritage provides no exemption from sin's bondage. Only the Son can grant genuine freedom (v.36).\"), ('\"Abraham Rejoiced to See My Day\"', 'Jesus\\'s claim in v.56 — that Abraham saw and rejoiced at \"my day\" — is one of the most provocative statements in ch.8. The Jewish tradition included various accounts of Abraham being shown the future (cf. Gen 15 Covenant of the Pieces; the Apocalypse of Abraham). Jesus claims Abraham\\'s joy was specifically anticipatory joy at the Messiah\\'s coming. The \"day\" he saw was the day of Jesus.')]"
         }
       }
     }

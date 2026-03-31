@@ -85,22 +85,26 @@
             "paragraph": "V.7,13: \"The blood will be a sign for you on the houses where you are; and when I see the blood, I will pass over you.\" The blood applied to the doorposts is not magic but covenant sign — visible marker of identity and protection. The outer application of blood is matched by the inner eating of the lamb: complete identification with the sacrifice. Heb 11:28 calls Moses's Passover observance an act of faith: he saw the invisible in the visible sign."
           }
         ],
-        "hist": "The Passover was Israel's foundational calendrical institution — everything in the Jewish liturgical year orbits this night. The lamb selection on Nisan 10, slaughter on Nisan 14, and the night of Nisan 15 are the precise dates the NT gospels use for Jesus' final week. The blood-on-doorposts ritual has no Egyptian parallel — it is wholly distinctive, a new sign-act for a new people being constituted as a nation.",
-        "ctx": "The Passover institution precedes the plague's execution — Israel is not rescued after the fact but prepared before it. The blood must be applied before midnight; faith acts before seeing. The lamb is killed at twilight (v.6: \"between the two evenings\"), the blood applied, the household inside, the meal eaten in haste with sandals on (v.11) — everything about the ritual encodes urgency and readiness for departure. This is not a comfortable memorial; it is a mobilisation.",
-        "cross": [
-          {
-            "ref": "John 1:29",
-            "note": "\"Behold, the Lamb of God, who takes away the sin of the world!\" — John the Baptist identifies Jesus as the Passover lamb."
-          },
-          {
-            "ref": "1 Cor 5:7",
-            "note": "\"Christ, our Passover lamb, has been sacrificed\" — Paul's definitive identification."
-          },
-          {
-            "ref": "1 Pet 1:18–19",
-            "note": "Redeemed \"with the precious blood of Christ, like a lamb without blemish or spot\" — the tāmîm requirement fulfilled."
-          }
-        ],
+        "hist": {
+          "historical": "The Passover was Israel's foundational calendrical institution — everything in the Jewish liturgical year orbits this night. The lamb selection on Nisan 10, slaughter on Nisan 14, and the night of Nisan 15 are the precise dates the NT gospels use for Jesus' final week. The blood-on-doorposts ritual has no Egyptian parallel — it is wholly distinctive, a new sign-act for a new people being constituted as a nation.",
+          "context": "The Passover institution precedes the plague's execution — Israel is not rescued after the fact but prepared before it. The blood must be applied before midnight; faith acts before seeing. The lamb is killed at twilight (v.6: \"between the two evenings\"), the blood applied, the household inside, the meal eaten in haste with sandals on (v.11) — everything about the ritual encodes urgency and readiness for departure. This is not a comfortable memorial; it is a mobilisation."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "John 1:29",
+              "note": "\"Behold, the Lamb of God, who takes away the sin of the world!\" — John the Baptist identifies Jesus as the Passover lamb."
+            },
+            {
+              "ref": "1 Cor 5:7",
+              "note": "\"Christ, our Passover lamb, has been sacrificed\" — Paul's definitive identification."
+            },
+            {
+              "ref": "1 Pet 1:18–19",
+              "note": "Redeemed \"with the precious blood of Christ, like a lamb without blemish or spot\" — the tāmîm requirement fulfilled."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -192,22 +196,26 @@
             "paragraph": "V.15-20: The seven days of unleavened bread (matstsōt) are commanded alongside the Passover. Leaven (ḥāmēts) is to be completely removed. Paul reads this allegorically in 1 Cor 5:7-8: \"Get rid of the old yeast... For Christ, our Passover lamb, has been sacrificed. Therefore let us keep the Festival, not with the old bread leavened with malice and wickedness, but with the unleavened bread of sincerity and truth.\""
           }
         ],
-        "hist": "The Passover instructions combine elements of two ancient practices: a nomadic spring festival involving the sacrifice of a young animal to protect flocks (attested among pre-Islamic Arabian pastoral groups) and the Mesopotamian apotropaic ritual of smearing blood on doorposts to ward off demons. Israel radically reinterprets both within a historical-covenant framework. The hyssop plant (ēzōb, probably Syrian marjoram) was used across the ancient Near East in purification rituals. The instruction to eat in haste, with sandals on and staff in hand, reflects the urgency of departure — a liturgical re-enactment of the historical moment.",
-        "ctx": "Pharaoh's command — \"Up, go out from among my people\" — is the complete reversal of his earlier defiance. Every \"I will not let Israel go\" is cancelled in a single midnight sentence. He does not just permit; he drives them out (v.33: \"the Egyptians were urgent with the people to send them out of the land in haste\"). The departure that Pharaoh refused for ten plagues he now begs for. The Exodus is not Israel escaping; it is Israel being expelled — pushed out by the very power that held them.",
-        "cross": [
-          {
-            "ref": "Gen 15:13–14",
-            "note": "\"Your offspring will be sojourners in a land that is not theirs... they shall come out with great possessions.\" Fulfilled precisely."
-          },
-          {
-            "ref": "Acts 7:36",
-            "note": "Stephen: \"This man led them out, performing wonders and signs in Egypt and at the Red Sea.\""
-          },
-          {
-            "ref": "Rom 9:17",
-            "note": "\"For this purpose I have raised you up, that I might show my power in you.\" Pharaoh as the instrument of God's self-revelation."
-          }
-        ],
+        "hist": {
+          "historical": "The Passover instructions combine elements of two ancient practices: a nomadic spring festival involving the sacrifice of a young animal to protect flocks (attested among pre-Islamic Arabian pastoral groups) and the Mesopotamian apotropaic ritual of smearing blood on doorposts to ward off demons. Israel radically reinterprets both within a historical-covenant framework. The hyssop plant (ēzōb, probably Syrian marjoram) was used across the ancient Near East in purification rituals. The instruction to eat in haste, with sandals on and staff in hand, reflects the urgency of departure — a liturgical re-enactment of the historical moment.",
+          "context": "Pharaoh's command — \"Up, go out from among my people\" — is the complete reversal of his earlier defiance. Every \"I will not let Israel go\" is cancelled in a single midnight sentence. He does not just permit; he drives them out (v.33: \"the Egyptians were urgent with the people to send them out of the land in haste\"). The departure that Pharaoh refused for ten plagues he now begs for. The Exodus is not Israel escaping; it is Israel being expelled — pushed out by the very power that held them."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 15:13–14",
+              "note": "\"Your offspring will be sojourners in a land that is not theirs... they shall come out with great possessions.\" Fulfilled precisely."
+            },
+            {
+              "ref": "Acts 7:36",
+              "note": "Stephen: \"This man led them out, performing wonders and signs in Egypt and at the Red Sea.\""
+            },
+            {
+              "ref": "Rom 9:17",
+              "note": "\"For this purpose I have raised you up, that I might show my power in you.\" Pharaoh as the instrument of God's self-revelation."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [
@@ -345,22 +353,26 @@
             "paragraph": "V.48-49: A foreigner (gēr) who wishes to participate in the Passover must be circumcised — \"the same law applies to the native-born and to the foreigner residing among you.\" This provision anticipates the radical inclusion that would characterize the new covenant: participation in the covenant community is not ethnic but covenantal, available to any who identify with God's people and their founding story."
           }
         ],
-        "hist": "The departure from Rameses (Pi-Ramesse, modern Qantir in the eastern Delta) toward Succoth (Tell el-Maskhuta in the Wadi Tumilat) follows an established route. The figure of 600,000 men on foot (v. 37) has been extensively debated — the Hebrew ʾelep can mean 'thousand' or 'clan/military unit,' and the latter reading yields a much smaller but militarily coherent number. The 430-year sojourn matches one reading of the chronology in Genesis 15:13. The prohibition against foreigners eating the Passover unless circumcised establishes covenant membership as the boundary of community.",
-        "ctx": "Pharaoh's command — \"Up, go out from among my people\" — is the complete reversal of his earlier defiance. Every \"I will not let Israel go\" is cancelled in a single midnight sentence. He does not just permit; he drives them out (v.33: \"the Egyptians were urgent with the people to send them out of the land in haste\"). The departure that Pharaoh refused for ten plagues he now begs for. The Exodus is not Israel escaping; it is Israel being expelled — pushed out by the very power that held them.",
-        "cross": [
-          {
-            "ref": "Gen 15:13–14",
-            "note": "\"Your offspring will be sojourners in a land that is not theirs... they shall come out with great possessions.\" Fulfilled precisely."
-          },
-          {
-            "ref": "Acts 7:36",
-            "note": "Stephen: \"This man led them out, performing wonders and signs in Egypt and at the Red Sea.\""
-          },
-          {
-            "ref": "Rom 9:17",
-            "note": "\"For this purpose I have raised you up, that I might show my power in you.\" Pharaoh as the instrument of God's self-revelation."
-          }
-        ],
+        "hist": {
+          "historical": "The departure from Rameses (Pi-Ramesse, modern Qantir in the eastern Delta) toward Succoth (Tell el-Maskhuta in the Wadi Tumilat) follows an established route. The figure of 600,000 men on foot (v. 37) has been extensively debated — the Hebrew ʾelep can mean 'thousand' or 'clan/military unit,' and the latter reading yields a much smaller but militarily coherent number. The 430-year sojourn matches one reading of the chronology in Genesis 15:13. The prohibition against foreigners eating the Passover unless circumcised establishes covenant membership as the boundary of community.",
+          "context": "Pharaoh's command — \"Up, go out from among my people\" — is the complete reversal of his earlier defiance. Every \"I will not let Israel go\" is cancelled in a single midnight sentence. He does not just permit; he drives them out (v.33: \"the Egyptians were urgent with the people to send them out of the land in haste\"). The departure that Pharaoh refused for ten plagues he now begs for. The Exodus is not Israel escaping; it is Israel being expelled — pushed out by the very power that held them."
+        },
+        "cross": {
+          "refs": [
+            {
+              "ref": "Gen 15:13–14",
+              "note": "\"Your offspring will be sojourners in a land that is not theirs... they shall come out with great possessions.\" Fulfilled precisely."
+            },
+            {
+              "ref": "Acts 7:36",
+              "note": "Stephen: \"This man led them out, performing wonders and signs in Egypt and at the Red Sea.\""
+            },
+            {
+              "ref": "Rom 9:17",
+              "note": "\"For this purpose I have raised you up, that I might show my power in you.\" Pharaoh as the instrument of God's self-revelation."
+            }
+          ]
+        },
         "sarna": {
           "source": "Nahum Sarna, JPS Torah Commentary — Scholarly Paraphrase",
           "notes": [

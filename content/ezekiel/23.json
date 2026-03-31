@@ -31,21 +31,22 @@
             "paragraph": "The name Oholibah means 'my tent is in her' — God’s tent (the temple) was in Jerusalem. Unlike Samaria, Jerusalem had the legitimate sanctuary. This makes her adultery worse."
           }
         ],
-        "ctx": "Chapter 23 is the longest and most explicit allegory in Ezekiel, depicting Samaria and Jerusalem as two sisters who become prostitutes in Egypt and continue their unfaithfulness with Assyria and Babylon. The allegory parallels chapter 16 but focuses on political alliances rather than religious idolatry.",
-        "cross": [
-          {
-            "ref": "2 Kgs 17:6-8",
-            "note": "The fall of Samaria (722 BC) is the historical fulfilment of Oholah’s judgment."
-          },
-          {
-            "ref": "Jer 3:6-11",
-            "note": "Jeremiah uses the same 'two sisters' motif: faithless Israel and treacherous Judah."
-          },
-          {
-            "ref": "Rev 17:1-6",
-            "note": "The 'great prostitute' of Revelation draws on Ezekiel’s imagery."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "2 Kgs 17:6-8",
+              "note": "The fall of Samaria (722 BC) is the historical fulfilment of Oholah’s judgment."
+            },
+            {
+              "ref": "Jer 3:6-11",
+              "note": "Jeremiah uses the same 'two sisters' motif: faithless Israel and treacherous Judah."
+            },
+            {
+              "ref": "Rev 17:1-6",
+              "note": "The 'great prostitute' of Revelation draws on Ezekiel’s imagery."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -110,6 +111,9 @@
               "note": "Zimmerli reads the chapter as Ezekiel’s most sustained engagement with the theology of political history."
             }
           ]
+        },
+        "hist": {
+          "context": "Chapter 23 is the longest and most explicit allegory in Ezekiel, depicting Samaria and Jerusalem as two sisters who become prostitutes in Egypt and continue their unfaithfulness with Assyria and Babylon. The allegory parallels chapter 16 but focuses on political alliances rather than religious idolatry."
         }
       }
     },
@@ -127,21 +131,22 @@
             "paragraph": "The 'cup' of judgment is a major prophetic metaphor. The cup tradition runs from Jeremiah 25:15 through to Jesus in Gethsemane (Matt 26:39), where Christ drinks the cup of wrath so that his people need not."
           }
         ],
-        "ctx": "The 'cup of horror and desolation' (vv.32-34) is one of the most vivid images of divine judgment in the prophets. Oholibah must drink the same cup her sister Samaria drank. The image combines divine sovereignty with poetic justice.",
-        "cross": [
-          {
-            "ref": "Jer 25:15-29",
-            "note": "Jeremiah’s cup of wrath is given to all nations, beginning with Jerusalem."
-          },
-          {
-            "ref": "Ps 75:8",
-            "note": "The Lord holds a cup of foaming wine mixed with spices; all the wicked drink it down to its dregs."
-          },
-          {
-            "ref": "Matt 26:39",
-            "note": "Jesus in Gethsemane asks if 'this cup' might pass from him."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Jer 25:15-29",
+              "note": "Jeremiah’s cup of wrath is given to all nations, beginning with Jerusalem."
+            },
+            {
+              "ref": "Ps 75:8",
+              "note": "The Lord holds a cup of foaming wine mixed with spices; all the wicked drink it down to its dregs."
+            },
+            {
+              "ref": "Matt 26:39",
+              "note": "Jesus in Gethsemane asks if 'this cup' might pass from him."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -194,6 +199,9 @@
               "note": "Zimmerli suggests the cup poem may be an independent literary unit that Ezekiel has incorporated."
             }
           ]
+        },
+        "hist": {
+          "context": "The 'cup of horror and desolation' (vv.32-34) is one of the most vivid images of divine judgment in the prophets. Oholibah must drink the same cup her sister Samaria drank. The image combines divine sovereignty with poetic justice."
         }
       }
     },
@@ -211,17 +219,18 @@
             "paragraph": "The verdict uses formal legal language: the sisters are 'adulteresses' and 'blood is on their hands.' Adultery in covenant law carries the death penalty (Lev 20:10)."
           }
         ],
-        "ctx": "The final section combines the verdicts on both sisters into a single pronouncement. The language shifts from allegory to legal sentencing.",
-        "cross": [
-          {
-            "ref": "Lev 20:10",
-            "note": "Adultery carries the death penalty under the Holiness Code."
-          },
-          {
-            "ref": "Deut 22:22-24",
-            "note": "The stoning of adulterers prescribed in Deuteronomy."
-          }
-        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Lev 20:10",
+              "note": "Adultery carries the death penalty under the Holiness Code."
+            },
+            {
+              "ref": "Deut 22:22-24",
+              "note": "The stoning of adulterers prescribed in Deuteronomy."
+            }
+          ]
+        },
         "mac": {
           "source": "",
           "notes": [
@@ -274,6 +283,9 @@
               "note": "Zimmerli argues this section was added as a later editorial summary drawing together the chapter’s themes."
             }
           ]
+        },
+        "hist": {
+          "context": "The final section combines the verdicts on both sisters into a single pronouncement. The language shifts from allegory to legal sentencing."
         }
       }
     }
