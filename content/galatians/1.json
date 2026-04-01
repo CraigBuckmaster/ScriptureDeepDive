@@ -585,7 +585,68 @@
         "type": "Connection",
         "text": "Luke’s account of the Damascus road experience provides the narrative framework for the revelation Paul describes in Gal 1:12, 15–16."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Paul defends the divine origin of his gospel and his apostleship against those who would distort the gospel of Christ.",
+      "nodes": [
+        {
+          "id": "gal1-1",
+          "type": "thesis",
+          "verse_range": "1:1-5",
+          "text": "Salutation asserting Paul's apostolic authority: his apostleship is not from men but through Jesus Christ and God the Father who raised him. The gospel grounds grace and peace — not law-keeping."
+        },
+        {
+          "id": "gal1-2",
+          "type": "contrast",
+          "verse_range": "1:6-9",
+          "marker": "I am astonished (θαυμάζω)",
+          "text": "Paul expresses shock — not praise — that the Galatians are deserting so quickly. Any other gospel, even from an angel, is anathema (ἀνάθεμα). The double curse underscores the stakes.",
+          "children": [
+            {
+              "id": "gal1-2a",
+              "type": "ground",
+              "verse_range": "1:8-9",
+              "text": "The double anathema: Paul repeats the curse verbatim, which in Greek rhetoric signals deadly seriousness — this is not rhetorical hyperbole but an apostolic declaration."
+            }
+          ]
+        },
+        {
+          "id": "gal1-3",
+          "type": "inference",
+          "verse_range": "1:10",
+          "marker": "For (γάρ)",
+          "text": "Rhetorical question: Am I seeking approval of men or of God? If Paul were pleasing men, he would not be a servant of Christ. This preempts the charge that he adapted his message to win favor."
+        },
+        {
+          "id": "gal1-4",
+          "type": "ground",
+          "verse_range": "1:11-12",
+          "marker": "For (γάρ)",
+          "text": "The gospel Paul preached is not according to man (κατὰ ἄνθρωπον) — he did not receive it from a human source, nor was he taught it. He received it through a revelation of Jesus Christ.",
+          "children": [
+            {
+              "id": "gal1-4a",
+              "type": "support",
+              "verse_range": "1:13-14",
+              "text": "His former life in Judaism as a zealous persecutor of the church proves he would never have invented this gospel. No human influence could account for his transformation."
+            },
+            {
+              "id": "gal1-4b",
+              "type": "result",
+              "verse_range": "1:15-17",
+              "text": "God set him apart before birth and called him by grace, choosing to reveal his Son in Paul for the purpose of preaching among the Gentiles. Paul's immediate response bypassed Jerusalem entirely — he went to Arabia, then Damascus."
+            },
+            {
+              "id": "gal1-4c",
+              "type": "conclusion",
+              "verse_range": "1:18-24",
+              "text": "Three years later Paul visited Cephas (15 days) and saw James. He did not consult the Jerusalem apostles before beginning his mission. The churches of Judea who heard his transformation report glorified God — confirming, not authorizing, his calling."
+            }
+          ]
+        }
+      ],
+      "note": "Galatians 1 uses the Greek epistolary form but subverts it: the expected thanksgiving is replaced by an astonished rebuke (vv. 6-9). Paul's autobiographical defense (vv. 11-24) establishes the independence and divine origin of his gospel — the foundation for the entire letter's argument."
+    }
   },
   "vhl_groups": []
 }

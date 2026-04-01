@@ -550,7 +550,83 @@
         "type": "Echo",
         "text": "Paul’s testimony of renouncing law-righteousness echoes Gal 2:19–20. In both passages, the old identity grounded in Torah is replaced by a new identity grounded in Christ."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Paul's gospel and apostleship were affirmed by the Jerusalem pillars and confirmed when he publicly rebuked Peter for conduct that compromised the truth of the gospel.",
+      "nodes": [
+        {
+          "id": "gal2-1",
+          "type": "support",
+          "verse_range": "2:1-2",
+          "text": "Fourteen years later Paul went up to Jerusalem with Barnabas and Titus. He laid out his gospel privately before the leaders — not to receive approval, but to ensure his efforts were not in vain (οὐκ εἰς κενόν)."
+        },
+        {
+          "id": "gal2-2",
+          "type": "contrast",
+          "verse_range": "2:3-5",
+          "marker": "But (ἀλλά)",
+          "text": "Titus, a Gentile, was not compelled to be circumcised — proof that the Jerusalem leaders affirmed Gentile inclusion without circumcision. False brothers infiltrated to spy out freedom and enslave — Paul did not yield (εἴξαμεν) for a moment so the truth of the gospel would remain (μείνῃ)."
+        },
+        {
+          "id": "gal2-3",
+          "type": "concession",
+          "verse_range": "2:6-9",
+          "marker": "And from those who seemed to be something (ἀπό δὲ τῶν δοκούντων)",
+          "text": "The Jerusalem pillars — James, Cephas, John — added nothing to Paul's gospel. They recognized the grace given to him and extended the right hand of fellowship: Paul to Gentiles, they to the circumcised.",
+          "children": [
+            {
+              "id": "gal2-3a",
+              "type": "ground",
+              "verse_range": "2:8",
+              "text": "God worked through Peter for the circumcised and through Paul for the Gentiles — parallel apostolic missions, equal divine authorization."
+            }
+          ]
+        },
+        {
+          "id": "gal2-4",
+          "type": "contrast",
+          "verse_range": "2:11-14",
+          "marker": "But when Cephas came to Antioch (ὅτε δὲ ἦλθεν Κηφᾶς)",
+          "text": "The Antioch incident: Paul opposed Peter to his face because he was self-condemned (κατεγνωσμένος ἦν). Peter had eaten with Gentiles, then withdrew when 'the circumcision party' arrived — fearing them. His hypocrisy led others astray, even Barnabas.",
+          "children": [
+            {
+              "id": "gal2-4a",
+              "type": "inference",
+              "verse_range": "2:14",
+              "text": "Paul's rebuke: If you, a Jew, live like a Gentile and not like a Jew, how can you force Gentiles to live like Jews? This exposes the logical contradiction in Peter's conduct."
+            }
+          ]
+        },
+        {
+          "id": "gal2-5",
+          "type": "thesis",
+          "verse_range": "2:15-16",
+          "marker": "Yet we know (εἰδότες)",
+          "text": "THE PIVOT — from narrative to theology: even Jewish believers know that a person is not justified (δικαιοῦται) by works of the law but through faith in Christ Jesus. The citation form and the 'we' shift signals the letter's doctrinal core beginning.",
+          "children": [
+            {
+              "id": "gal2-5a",
+              "type": "ground",
+              "verse_range": "2:16c",
+              "text": "Scripture confirms: 'by works of the law no flesh will be justified' (Ps 143:2 adapted). The term 'no flesh' universalizes — no human being, Jew or Gentile."
+            },
+            {
+              "id": "gal2-5b",
+              "type": "inference",
+              "verse_range": "2:17-19",
+              "text": "If seeking justification in Christ means we are found sinners, is Christ a servant of sin? By no means! The logic: to rebuild what was torn down is to prove oneself a transgressor. Paul died to the law through the law so he might live to God."
+            },
+            {
+              "id": "gal2-5c",
+              "type": "conclusion",
+              "verse_range": "2:20-21",
+              "text": "The crucifixion summary: I have been crucified with Christ (συνεσταύρωμαι). The life now lived is by faith in the Son of God who loved me and gave himself for me. To accept law-justification is to nullify grace and make Christ's death purposeless."
+            }
+          ]
+        }
+      ],
+      "note": "Galatians 2 moves from autobiography (vv. 1-14) to theology (vv. 15-21), with the Antioch incident (vv. 11-14) serving as the hinge. The rebuke of Peter is not a tangent — it is Paul demonstrating that even the recognized pillars must submit to the truth of the gospel. The chapter ends with one of Paul's densest theological statements on union with Christ."
+    }
   },
   "vhl_groups": []
 }

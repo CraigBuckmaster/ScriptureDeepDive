@@ -419,7 +419,62 @@
         "type": "Connection",
         "text": "Paul’s redefinition of circumcision resonates with Gal 6:14–15, where the cross replaces circumcision as the marker of covenant identity."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Bear one another's burdens in community, sow to the Spirit rather than the flesh, and boast only in the cross — in which the only thing that matters is the new creation.",
+      "nodes": [
+        {
+          "id": "gal6-1",
+          "type": "application",
+          "verse_range": "6:1-5",
+          "text": "Community responsibility for restoration: if anyone is caught in a transgression, you who are spiritual (πνευματικοί) restore him in a spirit of gentleness — watching yourself lest you too be tempted. Bear one another's burdens and so fulfill the law of Christ.",
+          "children": [
+            {
+              "id": "gal6-1a",
+              "type": "contrast",
+              "verse_range": "6:3-5",
+              "text": "If anyone thinks himself something when he is nothing, he deceives himself. Each is to test his own work — then his boast will be in himself alone and not in his neighbor. For each will bear his own load. The apparent contradiction (v. 2 bear one another's, v. 5 bear your own) resolves: v. 2 = heavy moral burdens; v. 5 = personal accountability."
+            }
+          ]
+        },
+        {
+          "id": "gal6-2",
+          "type": "application",
+          "verse_range": "6:6-10",
+          "text": "Share with the teacher in all good things. Do not be deceived — God is not mocked. Whatever one sows, he will reap. He who sows to his flesh will reap corruption; he who sows to the Spirit will reap eternal life. Do not grow weary in doing good — in due season we will reap if we do not give up.",
+          "children": [
+            {
+              "id": "gal6-2a",
+              "type": "inference",
+              "verse_range": "6:10",
+              "text": "Therefore (ἄρα οὖν) — as we have opportunity let us do good to everyone, especially to the household of faith. The eschatological harvest (v. 8) grounds the present ethical imperative."
+            }
+          ]
+        },
+        {
+          "id": "gal6-3",
+          "type": "contrast",
+          "verse_range": "6:12-16",
+          "marker": "As many as desire to look good in the flesh (ὅσοι θέλουσιν εὐπροσωπῆσαι)",
+          "text": "The agitators' true motive: to avoid persecution for the cross of Christ. They do not keep the law themselves — they want to boast in the Galatians' flesh. Paul boasts only in the cross, by which the world has been crucified to him and he to the world.",
+          "children": [
+            {
+              "id": "gal6-3a",
+              "type": "conclusion",
+              "verse_range": "6:15-16",
+              "text": "Neither circumcision nor uncircumcision counts for anything — only the new creation (καινὴ κτίσις). Peace and mercy upon the Israel of God. The 'Israel of God' most likely refers to Jewish believers — Paul pronounces blessing on the full covenant community of faith."
+            }
+          ]
+        },
+        {
+          "id": "gal6-4",
+          "type": "conclusion",
+          "verse_range": "6:17-18",
+          "text": "Let no one cause trouble for Paul — he bears the marks of Jesus (τὰ στίγματα τοῦ Ἰησοῦ) on his body. The τὰ στίγματα are the scars of his apostolic suffering — the visible evidence that he does not avoid the offense of the cross. The grace benediction closes the letter with the same gospel word with which it opened (1:3)."
+        }
+      ],
+      "note": "Galatians 6 brings the letter's ethics to ground level: restoring the fallen, supporting teachers, sowing to the Spirit. The postscript (vv. 11-18), written in Paul's own hand, returns to the letter's opening polemic — exposing the agitators' motives as social/political (avoiding persecution) rather than theological. The letter ends on the cross and the new creation — the two realities that have made circumcision irrelevant."
+    }
   },
   "vhl_groups": []
 }

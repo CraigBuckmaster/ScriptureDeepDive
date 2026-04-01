@@ -490,7 +490,84 @@
         "type": "Connection",
         "text": "The love chapter’s description provides a detailed expansion of the first quality in the fruit list."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Stand firm in the freedom Christ purchased — do not submit again to slavery. The Spirit enables the life that the law could never produce.",
+      "nodes": [
+        {
+          "id": "gal5-1",
+          "type": "thesis",
+          "verse_range": "5:1",
+          "text": "For freedom Christ has set us free. Stand firm (στήκετε) — present imperative of persistence — and do not submit again to a yoke of slavery. This single verse is the letter's ethical hinge, joining the theological argument (chs. 1-4) to the ethical application (chs. 5-6)."
+        },
+        {
+          "id": "gal5-2",
+          "type": "ground",
+          "verse_range": "5:2-6",
+          "marker": "Look (Ἴδε)",
+          "text": "Consequences of accepting circumcision: Christ is of no benefit; you are severed from Christ; you have fallen from grace. Those who rely on law are obligated to keep the whole law. In Christ Jesus neither circumcision nor uncircumcision counts for anything — what counts is faith working through love.",
+          "children": [
+            {
+              "id": "gal5-2a",
+              "type": "contrast",
+              "verse_range": "5:5-6",
+              "text": "We, by the Spirit, by faith, eagerly wait for the hope of righteousness. This verse draws the pneumatological and eschatological dimensions together — the Spirit sustains faith-hope until righteousness is finally and fully revealed."
+            }
+          ]
+        },
+        {
+          "id": "gal5-3",
+          "type": "application",
+          "verse_range": "5:7-12",
+          "text": "You were running well — who cut in (ἐνέκοψεν) to hinder you? The persuasion does not come from God who called you. A little leaven leavens the whole lump. Paul expresses confidence they will take no other view — the one troubling them will bear judgment, whoever he is.",
+          "children": [
+            {
+              "id": "gal5-3a",
+              "type": "ground",
+              "verse_range": "5:11",
+              "text": "If Paul still preaches circumcision, the offense of the cross would be removed. That the agitators still oppose him proves he does not — the cross remains a stumbling block precisely because it excludes human religious achievement."
+            }
+          ]
+        },
+        {
+          "id": "gal5-4",
+          "type": "contrast",
+          "verse_range": "5:13-15",
+          "marker": "For you were called to freedom (ὑμεῖς γὰρ ἐπ᾽ ἐλευθερίᾳ ἐκλήθητε)",
+          "text": "Freedom is not a license for the flesh — use it to serve one another through love. The whole law is fulfilled in one word: love your neighbor as yourself. If you bite and devour one another, beware — you will consume one another.",
+          "children": [
+            {
+              "id": "gal5-4a",
+              "type": "ground",
+              "verse_range": "5:14",
+              "text": "The Leviticus 19:18 citation is programmatic: the love command summarizes the law. Paul is not abolishing the law's moral content — he is showing that love, not circumcision, fulfills it."
+            }
+          ]
+        },
+        {
+          "id": "gal5-5",
+          "type": "contrast",
+          "verse_range": "5:16-26",
+          "marker": "But I say (λέγω δέ)",
+          "text": "Walk by the Spirit and you will not carry out the desire of the flesh. The flesh and Spirit are in irreconcilable conflict — each opposing the other. The works of the flesh (15 vices) are evident: sexual immorality, strife, envy, drunkenness, etc. The fruit of the Spirit (9 virtues) is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control — against these there is no law.",
+          "children": [
+            {
+              "id": "gal5-5a",
+              "type": "inference",
+              "verse_range": "5:18",
+              "text": "If you are led by the Spirit, you are not under the law. This is the key to the Spirit/law relationship: Spirit-led life fulfills what the law requires without being 'under' the law as a system of obligation and curse."
+            },
+            {
+              "id": "gal5-5b",
+              "type": "conclusion",
+              "verse_range": "5:24-26",
+              "text": "Those who belong to Christ have crucified the flesh with its passions and desires. Since we live by the Spirit, let us keep in step with (στοιχῶμεν) the Spirit. No conceit, no provoking, no envy."
+            }
+          ]
+        }
+      ],
+      "note": "Galatians 5 pivots from doctrine to ethics but the logic is continuous: the freedom purchased by Christ (v. 1) is threatened by circumcision from one side (vv. 2-12) and by fleshly self-indulgence from the other (vv. 13-26). The Spirit — not the law — is the power for ethical living. The fruit list (vv. 22-23) is notably singular ('fruit' not 'fruits') — a unified character, not a checklist."
+    }
   },
   "vhl_groups": []
 }

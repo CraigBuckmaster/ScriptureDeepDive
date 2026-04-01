@@ -504,7 +504,83 @@
         "type": "Fulfilment",
         "text": "Paul quotes Isaiah’s barren-woman oracle in v. 27, applying it to the Jerusalem above: the barren Sarah will have more children than Hagar."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "The Galatians' return to law-observance is a regression from sonship to slavery — they must stand in the freedom that is theirs as full heirs through the Spirit.",
+      "nodes": [
+        {
+          "id": "gal4-1",
+          "type": "support",
+          "verse_range": "4:1-7",
+          "text": "The heir/slave analogy: An heir who is a child is no different from a slave despite owning everything. So we, when we were children, were enslaved under the elemental principles (στοιχεῖα) of the world. But when the fullness of time (τὸ πλήρωμα τοῦ χρόνου) came, God sent his Son — born of woman, born under the law — to redeem those under the law so we might receive adoption as sons (υἱοθεσία).",
+          "children": [
+            {
+              "id": "gal4-1a",
+              "type": "result",
+              "verse_range": "4:6-7",
+              "text": "Because you are sons, God sent the Spirit of his Son into our hearts, crying 'Abba! Father!' So you are no longer a slave but a son — and if a son, an heir through God. The argument from present spiritual experience confirms the theological conclusion."
+            }
+          ]
+        },
+        {
+          "id": "gal4-2",
+          "type": "application",
+          "verse_range": "4:8-11",
+          "text": "Formerly the Galatians were enslaved to gods that by nature are not gods. Now, having known God (or rather, been known by God), how can they turn back to the weak and worthless elemental principles to be enslaved all over again? Paul fears his labor among them was wasted.",
+          "children": [
+            {
+              "id": "gal4-2a",
+              "type": "ground",
+              "verse_range": "4:10",
+              "text": "They are observing days and months and seasons and years — Jewish calendar observances that signal a reversion to pre-Christ religious bondage."
+            }
+          ]
+        },
+        {
+          "id": "gal4-3",
+          "type": "appeal",
+          "verse_range": "4:12-20",
+          "marker": "Brothers, I beg you (Γίνεσθε ὡς ἐγώ)",
+          "text": "Paul's personal appeal: Become as I am, for I became as you are. He reminds them of their original reception of him despite his physical affliction — they would have given their eyes for him. What happened? Has Paul become their enemy by telling the truth? The agitators court the Galatians for bad motives — they want to shut them out.",
+          "children": [
+            {
+              "id": "gal4-3a",
+              "type": "contrast",
+              "verse_range": "4:17-18",
+              "text": "It is good to be zealously sought after in a good purpose — not only when Paul is present. The agitators' zeal is not good: they want to exclude the Galatians so that they will seek the agitators."
+            },
+            {
+              "id": "gal4-3b",
+              "type": "result",
+              "verse_range": "4:19-20",
+              "text": "Paul is in anguish like a mother in labor until Christ is formed (μορφωθῇ) in them. He wishes he could change his tone — his perplexity is genuine."
+            }
+          ]
+        },
+        {
+          "id": "gal4-4",
+          "type": "ground",
+          "verse_range": "4:21-31",
+          "marker": "Tell me (Λέγετέ μοι)",
+          "text": "The Sarah/Hagar allegory: those who want to be under the law, do they not hear the law? Abraham had two sons — one by the slave woman (Hagar/Sinai/present Jerusalem/bondage) and one by the free woman (Sarah/covenant of promise/Jerusalem above/freedom). The allegory maps: Ishmael = the agitators; Isaac = the Galatian believers.",
+          "children": [
+            {
+              "id": "gal4-4a",
+              "type": "inference",
+              "verse_range": "4:29-30",
+              "text": "As then the son born according to the flesh persecuted the son born according to the Spirit — so it is now. But what does Scripture say? Cast out the slave woman and her son. The heir of the free woman does not share inheritance with the son of the slave."
+            },
+            {
+              "id": "gal4-4b",
+              "type": "conclusion",
+              "verse_range": "4:31",
+              "text": "Therefore, brothers, we are not children of the slave woman but of the free woman. This single sentence prepares the transition to Chapter 5's call to freedom."
+            }
+          ]
+        }
+      ],
+      "note": "Galatians 4 moves through three modes of persuasion: theological argument (vv. 1-11), emotional appeal (vv. 12-20), and allegorical exegesis (vv. 21-31). Paul's anguish in vv. 19-20 is the emotional heart of the letter — the only place where he abandons argument and pleads as a mother. The Hagar/Sarah allegory is typological rather than allegorical in the modern sense — Paul reads Israel's history as pointing forward to its fulfillment in Christ."
+    }
   },
   "vhl_groups": []
 }

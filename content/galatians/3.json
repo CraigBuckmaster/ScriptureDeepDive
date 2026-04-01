@@ -654,7 +654,100 @@
         "type": "Echo",
         "text": "Paul’s statement that the law was brought in ‘so that the trespass might increase’ parallels Gal 3:19: the law’s function was to make sin visible."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "The Galatians received the Spirit by faith, not law — and Scripture itself proves that justification has always been by faith, that the law cannot give life, and that in Christ all are Abraham's offspring.",
+      "nodes": [
+        {
+          "id": "gal3-1",
+          "type": "thesis",
+          "verse_range": "3:1-5",
+          "text": "The argument from experience: You foolish Galatians! Before whose eyes was Christ publicly portrayed as crucified? Did you receive the Spirit by works of the law or by hearing with faith? Five rhetorical questions force the Galatians to answer from their own spiritual history.",
+          "children": [
+            {
+              "id": "gal3-1a",
+              "type": "inference",
+              "verse_range": "3:3",
+              "text": "Having begun by the Spirit, are you now being perfected by the flesh? The contrast Spirit/flesh (πνεῦμα/σάρξ) will structure the rest of the letter."
+            }
+          ]
+        },
+        {
+          "id": "gal3-2",
+          "type": "ground",
+          "verse_range": "3:6-9",
+          "marker": "Just as (καθὼς)",
+          "text": "The argument from Abraham: 'Abraham believed God and it was counted to him as righteousness' (Gen 15:6). Therefore those who are of faith (οἱ ἐκ πίστεως) are sons of Abraham. The gospel was announced beforehand to Abraham — in you shall all nations be blessed.",
+          "children": [
+            {
+              "id": "gal3-2a",
+              "type": "conclusion",
+              "verse_range": "3:9",
+              "text": "Those of faith are blessed along with believing Abraham — the Gentile mission is not a novelty but the fulfillment of the Abrahamic promise."
+            }
+          ]
+        },
+        {
+          "id": "gal3-3",
+          "type": "contrast",
+          "verse_range": "3:10-12",
+          "marker": "For (γάρ)",
+          "text": "The curse of the law: All who rely on works of the law are under a curse (Deut 27:26 — 'everyone who does not abide by all things written'). The law is not of faith — it is based on doing (Lev 18:5). Faith-righteousness and law-righteousness operate on incompatible logics."
+        },
+        {
+          "id": "gal3-4",
+          "type": "contrast",
+          "verse_range": "3:13-14",
+          "marker": "Christ redeemed us (Χριστὸς ἡμᾶς ἐξηγόρασεν)",
+          "text": "Christ became a curse for us (Deut 21:23 — 'cursed is everyone who hangs on a tree') to redeem those under the curse. Purpose: so that the blessing of Abraham might come to the Gentiles in Christ Jesus, so that we might receive the promised Spirit through faith."
+        },
+        {
+          "id": "gal3-5",
+          "type": "support",
+          "verse_range": "3:15-18",
+          "text": "The argument from covenant sequence: Even a human covenant, once ratified, cannot be annulled. God's covenant with Abraham was a promise (ἐπαγγελία). The law came 430 years later and cannot annul a prior ratified covenant. If inheritance were by law, it would be no longer by promise — but God gave it to Abraham by promise.",
+          "children": [
+            {
+              "id": "gal3-5a",
+              "type": "ground",
+              "verse_range": "3:16",
+              "text": "Paul's exegesis of 'seed' (singular): the promise was not to 'seeds' (many) but to 'your seed' (one) — referring to Christ. This is not careless grammar but a typological reading rooted in the singular form."
+            }
+          ]
+        },
+        {
+          "id": "gal3-6",
+          "type": "objection",
+          "verse_range": "3:19-22",
+          "marker": "Why then the law? (τί οὖν ὁ νόμος)",
+          "text": "Anticipated objection: If the law does not justify, why was it given? Answer: It was added because of transgressions (τῶν παραβάσεων χάριν), until the Seed came. It was ordained through angels by a mediator — implying inferiority to the direct promise to Abraham. The law imprisons under sin so that the promise by faith in Jesus Christ might be given to those who believe.",
+          "children": [
+            {
+              "id": "gal3-6a",
+              "type": "contrast",
+              "verse_range": "3:21",
+              "text": "Is the law then contrary to the promises? By no means! But the law cannot give life. If it could, righteousness would indeed be by the law."
+            }
+          ]
+        },
+        {
+          "id": "gal3-7",
+          "type": "conclusion",
+          "verse_range": "3:23-29",
+          "marker": "Before faith came (Πρὸ τοῦ δὲ ἐλθεῖν τὴν πίστιν)",
+          "text": "The law as παιδαγωγός (guardian/tutor): we were held captive under the law, imprisoned until the coming faith would be revealed. The law's custody was temporary and preparatory. Now that faith has come we are no longer under the guardian.",
+          "children": [
+            {
+              "id": "gal3-7a",
+              "type": "result",
+              "verse_range": "3:26-29",
+              "text": "In Christ Jesus you are all sons of God through faith. Baptism into Christ means being clothed with Christ. There is neither Jew nor Greek, slave nor free, male nor female — all are one in Christ Jesus, and if Christ's then Abraham's offspring, heirs according to promise. The social leveling is a corollary of the theological argument."
+            }
+          ]
+        }
+      ],
+      "note": "Galatians 3 is Paul's most concentrated biblical argument, drawing on Genesis 15, Deuteronomy 27 and 21, Leviticus 18, and Habakkuk 2 to demonstrate that faith-righteousness antedates the Mosaic law and cannot be displaced by it. The chapter uses three distinct argument types: experiential (vv. 1-5), exegetical (vv. 6-18), and logical (vv. 19-29)."
+    }
   },
   "vhl_groups": []
 }
