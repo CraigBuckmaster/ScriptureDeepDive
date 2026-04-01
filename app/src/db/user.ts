@@ -280,8 +280,7 @@ export async function startPlan(planId: string): Promise<void> {
   );
   if (!plan) return;
 
-  await getUserDb().execAsync('BEGIN TRANSACTION');
-  try {
+  await getUserDb().withTransactionAsync(async () => {
     await getUserDb().runAsync("DELETE FROM plan_progress WHERE plan_id = ?", [planId]);
 
     // Batch insert — single statement instead of N individual inserts
@@ -308,11 +307,7 @@ export async function startPlan(planId: string): Promise<void> {
       "INSERT OR REPLACE INTO user_preferences (key, value) VALUES ('plan_start_date', ?)",
       [new Date().toISOString().slice(0, 10)]
     );
-    await getUserDb().execAsync('COMMIT');
-  } catch (err) {
-    await getUserDb().execAsync('ROLLBACK');
-    throw err;
-  }
+  });
 }
 
 export async function completePlanDay(planId: string, dayNum: number): Promise<void> {
@@ -330,17 +325,12 @@ export async function getPlanProgress(planId: string): Promise<PlanProgress[]> {
 }
 
 export async function abandonPlan(planId: string): Promise<void> {
-  await getUserDb().execAsync('BEGIN TRANSACTION');
-  try {
+  await getUserDb().withTransactionAsync(async () => {
     await getUserDb().runAsync("DELETE FROM plan_progress WHERE plan_id = ?", [planId]);
     await getUserDb().runAsync(
       "INSERT OR REPLACE INTO user_preferences (key, value) VALUES ('active_plan', '')"
     );
-    await getUserDb().execAsync('COMMIT');
-  } catch (err) {
-    await getUserDb().execAsync('ROLLBACK');
-    throw err;
-  }
+  });
 }
 
 export async function getActivePlanId(): Promise<string | null> {
