@@ -2,14 +2,14 @@
  * ChapterNavBar — Sticky top bar for the chapter reading screen.
  *
  * Layout:
- *   NIV ▾         ‹ Genesis 2 ›         🔊 ⓘ
- *   (translation)  (prev/qnav/next)   (TTS/intro)
+ *   ←             ‹ Genesis 2 ›        NIV ▾  🔊 ⓘ
+ *   (back)         (prev/qnav/next)   (trans/TTS/intro)
  */
 
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ChevronLeft, ChevronRight, Info, Volume2 } from 'lucide-react-native';
+import { ArrowLeft, ChevronLeft, ChevronRight, Info, Volume2 } from 'lucide-react-native';
 import { CompactDropdown, type DropdownOption } from './CompactDropdown';
 import { lightImpact } from '../utils/haptics';
 import { base, useTheme, spacing, fontFamily, MIN_TOUCH_TARGET } from '../theme';
@@ -28,6 +28,7 @@ interface Props {
   onPrev: () => void;
   onNext: () => void;
   onQnav: () => void;
+  onBack?: () => void;
   onIntroPress?: () => void;
   onTTSPress?: () => void;
   ttsActive?: boolean;
@@ -37,7 +38,7 @@ interface Props {
 
 export function ChapterNavBar({
   bookName, chapterNum, hasPrev, hasNext,
-  onPrev, onNext, onQnav, onIntroPress, onTTSPress, ttsActive,
+  onPrev, onNext, onQnav, onBack, onIntroPress, onTTSPress, ttsActive,
   translation, onTranslationChange,
 }: Props) {
   const { base } = useTheme();
@@ -45,13 +46,18 @@ export function ChapterNavBar({
   return (
     <SafeAreaView edges={['top']} style={[styles.safeArea, { backgroundColor: base.bg }]}>
       <View style={[styles.bar, { borderBottomColor: base.border }]}>
-        {/* Left: Translation dropdown */}
+        {/* Left: Back button */}
         <View style={styles.leftSection}>
-          <CompactDropdown
-            value={translation}
-            options={TRANSLATION_OPTIONS}
-            onSelect={onTranslationChange}
-          />
+          {onBack ? (
+            <TouchableOpacity
+              onPress={onBack}
+              accessibilityLabel="Go back"
+              accessibilityRole="button"
+              style={styles.actionButton}
+            >
+              <ArrowLeft size={20} color={base.gold} />
+            </TouchableOpacity>
+          ) : null}
         </View>
 
         {/* Center: ‹ Genesis 2 › */}
@@ -87,8 +93,13 @@ export function ChapterNavBar({
           </TouchableOpacity>
         </View>
 
-        {/* Right: TTS + ⓘ */}
+        {/* Right: Translation + TTS + ⓘ */}
         <View style={styles.rightActions}>
+          <CompactDropdown
+            value={translation}
+            options={TRANSLATION_OPTIONS}
+            onSelect={onTranslationChange}
+          />
           {onTTSPress ? (
             <TouchableOpacity
               onPress={onTTSPress}
@@ -126,7 +137,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
   leftSection: {
-    minWidth: 56,
+    minWidth: MIN_TOUCH_TARGET,
     alignItems: 'flex-start',
   },
   chapterNav: {
@@ -155,7 +166,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-end',
-    minWidth: 56,
     gap: spacing.xs,
   },
   actionButton: {
