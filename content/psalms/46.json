@@ -108,7 +108,28 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Psalm 46 — God Our Refuge: A Mighty Fortress",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "God is our refuge and strength, an ever-present help in trouble. Therefore we will not fear, though the earth give way and the mountains fall into the heart of the sea (vv.1–3)",
+            "bottom": "The LORD Almighty is with us; the God of Jacob is our fortress. Come and see what the LORD has done, the desolations he has brought on the earth (vv.8–11)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "Though the waters roar and foam and the mountains quake with their surging — cosmic chaos threatens but cannot prevail (vv.3–4a)",
+            "bottom": "He makes wars cease to the ends of the earth; he breaks the bow and shatters the spear; he burns the shields with fire — human chaos is ended (v.9)",
+            "color": "#5b8fb9"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "There is a river whose streams make glad the city of God, the holy place where the Most High dwells. God is within her, she will not fall; God will help her at break of day. Nations are in uproar, kingdoms fall; he lifts his voice, the earth melts (vv.4b–7). The center contrasts the river of God’s peace with the uproar of the nations. While chaos rages outside, the city of God has a quiet river — and when God speaks, it is the earth itself that melts."
+        }
+      }
     },
     "hebtext": [
       {

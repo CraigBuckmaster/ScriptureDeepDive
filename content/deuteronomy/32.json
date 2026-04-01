@@ -284,7 +284,40 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Deuteronomy 32 — The Song of Moses",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "Listen, you heavens, and I will speak; hear, you earth, the words of my mouth. Let my teaching fall like rain; let my words descend like dew (vv.1–3)",
+            "bottom": "Rejoice, you nations, with his people, for he will avenge the blood of his servants; he will take vengeance on his enemies and make atonement for his land and people (v.43)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "He is the Rock, his works are perfect, and all his ways are just. A faithful God who does no wrong, upright and just is he (v.4)",
+            "bottom": "See now that I myself am he! There is no god besides me. I put to death and I bring to life, I have wounded and I will heal (vv.39–42)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "They are corrupt and not his children; they are a warped and crooked generation. Is this the way you repay the LORD? Is he not your Father, your Creator? (vv.5–6)",
+            "bottom": "They made him jealous with foreign gods; they sacrificed to false gods. They abandoned the God who made them and rejected the Rock their Savior (vv.15–18)",
+            "color": "#5fa87a"
+          },
+          {
+            "label": "D",
+            "top": "He found Jacob in a desert land, in a howling wilderness. He shielded him and cared for him; he guarded him as the apple of his eye (vv.10–14)",
+            "bottom": "The LORD will vindicate his people and relent concerning his servants when he sees their strength is gone (vv.36–38)",
+            "color": "#c47a6a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "I will hide my face from them and see what their end will be, for they are a perverse generation, children who are unfaithful. I will heap calamities on them and spend my arrows against them (vv.20–25). Yet: ‘I dreaded the taunt of the enemy, lest the adversary misunderstand and say: Our hand has triumphed; the LORD has not done all this’ (vv.26–27). The center holds judgment AND the reason God does not annihilate: not Israel’s merit, but God’s refusal to let the nations misread his actions."
+        }
+      }
     },
     "hebtext": [
       {

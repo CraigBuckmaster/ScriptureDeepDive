@@ -276,7 +276,28 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Psalm 3 — Morning Prayer Under Siege",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "Lament: enemies multiply — ‘many are rising against me,’ many say there is no help for him in God (vv.1–2)",
+            "bottom": "Confidence: ‘I will not fear though tens of thousands assail me on every side’ — the many enemies are answered by unshaken trust (v.6)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "Declaration of trust: ‘But you, LORD, are a shield around me, my glory, the One who lifts my head’ (v.3)",
+            "bottom": "Declaration of victory: ‘Strike all my enemies on the jaw; break the teeth of the wicked’ — the shield-God acts decisively (v.7)",
+            "color": "#5b8fb9"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "I call out to the LORD and he answers me from his holy hill. I lie down and sleep; I wake again, because the LORD sustains me (vv.4–5). The center is the act of sleeping — an extraordinary display of trust. In the midst of siege, David sleeps. The chiasm moves from fear through trust to rest to trust to courage."
+        }
+      }
     },
     "hebtext": [
       {

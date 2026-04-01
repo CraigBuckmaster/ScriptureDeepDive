@@ -284,7 +284,34 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Psalm 30 — Thanksgiving: From Weeping to Joy",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "I will exalt you, LORD, for you lifted me out of the depths and did not let my enemies gloat over me (vv.1–3)",
+            "bottom": "You turned my wailing into dancing; you removed my sackcloth and clothed me with joy, that my heart may sing your praises and not be silent (vv.11–12)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "Sing the praises of the LORD, you his faithful people; praise his holy name. For his anger lasts only a moment, but his favor lasts a lifetime; weeping may stay for the night, but rejoicing comes in the morning (vv.4–5)",
+            "bottom": "You have turned my mourning into dancing — LORD my God, I will praise you forever (vv.11–12)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "When I felt secure, I said, ‘I will never be shaken.’ LORD, when you favored me, you made my royal mountain stand firm (vv.6–7a)",
+            "bottom": "To you, LORD, I called; to the Lord I cried for mercy: ‘What is gained if I am silenced, if I go down to the pit?’ (vv.8–9)",
+            "color": "#5fa87a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "But when you hid your face, I was dismayed (v.7b). The single devastating turn: the moment God withdraws is the moment everything collapses. The entire psalm revolves around the terrifying brevity of divine hiddenness and the joy that follows when God’s face returns."
+        }
+      }
     },
     "hebtext": [
       {

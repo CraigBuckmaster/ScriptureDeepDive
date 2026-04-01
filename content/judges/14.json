@@ -265,7 +265,28 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Judges 14–16 — The Samson Cycle",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "Samson desires a Philistine woman from Timnah; his parents object but God is working through it. He goes down to the Philistines (14:1–4)",
+            "bottom": "Samson is brought down by Delilah, a Philistine woman. His strength leaves him; the Philistines seize him, gouge out his eyes, and bind him in Gaza (16:4–21)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "Samson poses a riddle at his wedding feast: ‘Out of the eater, something to eat; out of the strong, something sweet.’ The Philistines solve it through his wife’s tears (14:10–18)",
+            "bottom": "Delilah presses Samson for the secret of his strength. Three times he lies; the fourth time he reveals the truth. His riddle is solved again through a woman’s persistence (16:4–17)",
+            "color": "#5b8fb9"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "Samson’s solo exploits: he kills a thousand Philistines with a donkey’s jawbone at Lehi, then cries out in thirst and God opens a spring (15:1–20). He visits a prostitute in Gaza, then carries away the city gates on his shoulders (16:1–3). The center shows Samson at his most powerful and most undisciplined — a man of staggering strength and no self-control. The pattern of the frame (woman → riddle/secret → betrayal) will repeat until it destroys him."
+        }
+      }
     },
     "hebtext": [
       {

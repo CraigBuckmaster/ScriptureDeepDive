@@ -104,7 +104,28 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Psalm 110 — The Royal-Priestly Oracle",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "The LORD says to my lord: Sit at my right hand until I make your enemies a footstool for your feet (v.1)",
+            "bottom": "The Lord is at your right hand; he will crush kings on the day of his wrath. He will judge the nations (vv.5–6)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "The LORD will extend your mighty scepter from Zion, saying: Rule in the midst of your enemies (v.2)",
+            "bottom": "He will drink from a brook along the way and so will lift his head high — the victorious warrior refreshed after battle (v.7)",
+            "color": "#5b8fb9"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "The LORD has sworn and will not change his mind: You are a priest forever, in the order of Melchizedek (v.4). The center is the oath that binds kingship and priesthood together in one figure — something the Mosaic law kept strictly separate (kings from Judah, priests from Levi). This fusion is why Hebrews builds its entire Christology on this single verse. Your people will volunteer freely on the day of your power, arrayed in holy splendor from the womb of the dawn (v.3)."
+        }
+      }
     },
     "hebtext": [
       {

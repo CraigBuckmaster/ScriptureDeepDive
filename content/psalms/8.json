@@ -268,7 +268,28 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Psalm 8 — The Majesty of the Creator and the Dignity of Humanity",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "O LORD, our Lord, how majestic is your name in all the earth — your glory is set above the heavens (v.1)",
+            "bottom": "O LORD, our Lord, how majestic is your name in all the earth (v.9) — exact repetition frames the entire psalm",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "From the lips of children and infants you have ordained praise, to silence the foe and the avenger (v.2)",
+            "bottom": "You made humanity ruler over the works of your hands; you put everything under their feet (vv.6–8)",
+            "color": "#5b8fb9"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "When I consider your heavens, the work of your fingers, the moon and the stars which you have set in place — what is mankind that you are mindful of them, human beings that you care for them? You have made them a little lower than the heavenly beings and crowned them with glory and honor (vv.3–5). The center holds the psalm’s astonishing paradox: the God whose name fills all the earth stoops to crown fragile humans with royal dignity."
+        }
+      }
     },
     "hebtext": [
       {

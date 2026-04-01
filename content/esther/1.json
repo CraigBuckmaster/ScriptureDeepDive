@@ -267,7 +267,34 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Esther 1–10 — The Great Reversal",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "Opening banquets: Xerxes hosts lavish feasts displaying his wealth and power; Queen Vashti is deposed for defying the king (chs. 1–2)",
+            "bottom": "Closing banquets: Esther hosts two banquets that expose Haman and save her people; Purim feast instituted as permanent celebration (chs. 8–10)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "Haman elevated: promoted above all nobles, everyone bows — except Mordecai. Haman’s fury leads him to plot the destruction of all Jews (ch. 3)",
+            "bottom": "Mordecai elevated: given Haman’s position, dressed in royal robes. The decree is reversed — Jews are authorized to defend themselves (chs. 8–9)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "Esther’s risk: she must approach the king unsummoned, knowing it could cost her life. ‘If I perish, I perish’ (chs. 4–5)",
+            "bottom": "Haman’s downfall: he falls on Esther’s couch pleading for his life and is hanged on the very gallows he built for Mordecai (ch. 7)",
+            "color": "#5fa87a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "The king’s sleepless night (6:1–14). Unable to sleep, Xerxes has the court chronicles read to him and discovers that Mordecai was never honored for saving his life. Haman arrives to request Mordecai’s execution and is instead forced to honor him publicly. This single scene — the pivot of the entire book — turns entirely on insomnia. The unnamed providence that governs Esther operates through the smallest of means."
+        }
+      }
     },
     "hebtext": [
       {
