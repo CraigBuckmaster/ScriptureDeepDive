@@ -364,7 +364,34 @@
           "is_key": true
         }
       ],
-      "note": "Chapter 1 moves from prophetic summons (vv.1-6) to apocalyptic vision (vv.7-21), establishing the dual mode that characterizes Zechariah 1-8: prophetic speech grounded in the earlier tradition, and visionary revelation mediated by an interpreting angel."
+      "note": "Chapter 1 moves from prophetic summons (vv.1-6) to apocalyptic vision (vv.7-21), establishing the dual mode that characterizes Zechariah 1-8: prophetic speech grounded in the earlier tradition, and visionary revelation mediated by an interpreting angel.",
+      "chiasm": {
+        "title": "Zechariah 1–8 — The Night Visions",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "First vision: the horseman among the myrtle trees — divine patrol reports the whole world is at rest while Jerusalem lies in ruins (1:7–17)",
+            "bottom": "Eighth vision: four chariots patrol the earth from between two bronze mountains — God’s Spirit is now at rest in the north country where judgment fell (6:1–8)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "Second vision: four horns (nations that scattered Judah) and four craftsmen who come to terrify them — judgment on the oppressors (1:18–21)",
+            "bottom": "Seventh vision: a flying scroll of curses over the whole land, and a woman called Wickedness carried to Babylon in a basket — evil is expelled (5:1–11)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "Third vision: a man with a measuring line for Jerusalem, but God says the city will be unwalled because he himself will be a wall of fire around it (2:1–13)",
+            "bottom": "Sixth vision: four chariots going out to the four winds, agents of divine sovereignty over the whole earth (6:1–8)",
+            "color": "#5fa87a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "Fourth vision: Joshua the high priest stands before the angel of the LORD with Satan accusing him. His filthy garments are removed and replaced with rich robes: ‘See, I have taken away your sin.’ Fifth vision: the golden lampstand flanked by two olive trees — ‘Not by might, nor by power, but by my Spirit, says the LORD Almighty’ (chs. 3–4). The center of the visions is priestly purification and Spirit-empowered restoration. Everything else radiates from this: Israel’s future depends not on political power but on divine cleansing and the Spirit’s work."
+        }
+      }
     },
     "hebtext": [
       {

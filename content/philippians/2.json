@@ -336,7 +336,34 @@
           "is_key": false
         }
       ],
-      "note": "Philippians 2 is the theological heart of the letter, centred on the Christ-hymn (vv. 5–11) and its ethical application (vv. 12–18). The descent-ascent pattern of the hymn provides the paradigm for community life, illustrated by Timothy and Epaphroditus."
+      "note": "Philippians 2 is the theological heart of the letter, centred on the Christ-hymn (vv. 5–11) and its ethical application (vv. 12–18). The descent-ascent pattern of the hymn provides the paradigm for community life, illustrated by Timothy and Epaphroditus.",
+      "chiasm": {
+        "title": "Philippians 2:6–11 — The Christ Hymn",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "Who, being in very nature God, did not consider equality with God something to be grasped (v.6)",
+            "bottom": "Therefore God exalted him to the highest place and gave him the name that is above every name (v.9)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "Rather, he made himself nothing by taking the very nature of a servant, being made in human likeness (v.7)",
+            "bottom": "That at the name of Jesus every knee should bow, in heaven and on earth and under the earth (v.10)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "And being found in appearance as a man, he humbled himself (v.8a)",
+            "bottom": "And every tongue acknowledge that Jesus Christ is Lord, to the glory of God the Father (v.11)",
+            "color": "#5fa87a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "By becoming obedient to death — even death on a cross (v.8b). The two words ‘even death on a cross’ (thanatou de staurou) are the nadir, the lowest point of the descent. Everything before moves downward: from divine nature to servant to human to obedient to death. Everything after moves upward: exaltation, the name above all names, universal worship. The cross is the hinge of cosmic history."
+        }
+      }
     },
     "themes": {
       "scores": [

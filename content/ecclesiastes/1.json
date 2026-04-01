@@ -277,7 +277,28 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Ecclesiastes — The Envelope of Hebel",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "The words of the Teacher, son of David, king in Jerusalem: ‘Meaningless! Meaningless! Utterly meaningless! Everything is meaningless!’ (1:1–2)",
+            "bottom": "‘Meaningless! Meaningless!’ says the Teacher. ‘Everything is meaningless!’ The conclusion: Fear God and keep his commandments, for this is the duty of all mankind (12:8–14)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "What has been will be again; what has been done will be done again. There is nothing new under the sun. No one remembers the former generations (1:3–11)",
+            "bottom": "Remember your Creator in the days of your youth, before the days of trouble come. The dust returns to the ground and the spirit returns to God who gave it (12:1–7)",
+            "color": "#5b8fb9"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "The ten chapters of investigation (1:12–11:10): Qoheleth tests wisdom, pleasure, toil, wealth, justice, and death — and finds them all hebel. Yet within this relentless critique, he repeatedly affirms that eating, drinking, and finding satisfaction in work are gifts from the hand of God (2:24, 3:12–13, 5:18–19, 8:15, 9:7–9). The envelope frames the paradox: everything is vapor, AND life under the sun can be enjoyed. Both are true simultaneously."
+        }
+      }
     },
     "hebtext": [
       {

@@ -482,7 +482,34 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "John 6 — The Bread of Life Discourse",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "The sign: Jesus feeds five thousand with five loaves and two fish on the mountain. The crowd wants to make him king by force (vv.1–15)",
+            "bottom": "The crisis: many disciples turn back and no longer follow him. Jesus asks the Twelve: ‘You do not want to leave too, do you?’ Peter: ‘Lord, to whom shall we go?’ (vv.60–71)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "Jesus walks on the sea at night; the disciples are terrified. ‘It is I (ego eimi); do not be afraid’ (vv.16–21)",
+            "bottom": "Jesus teaches that no one can come to him unless drawn by the Father, and he will raise them up at the last day (vv.43–59)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "The crowd follows Jesus across the lake seeking more bread. Jesus challenges them: ‘You are looking for me because you ate the loaves, not because you saw signs’ (vv.22–27)",
+            "bottom": "The Jews grumble: ‘Is this not Jesus, the son of Joseph? How can he say he came down from heaven?’ The offense is not the miracle but the identity claim (vv.41–42)",
+            "color": "#5fa87a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "I am the bread of life. Whoever comes to me will never go hungry, and whoever believes in me will never be thirsty. Your ancestors ate manna in the wilderness, yet they died. But here is the bread that comes down from heaven, which anyone may eat and not die. I am the living bread that came down from heaven (vv.28–40). The center is the ego eimi declaration that reinterprets the entire Exodus manna tradition: the bread God gives is not a substance but a person. The discourse spirals outward from this identity claim into offense, division, and the Twelve’s fragile faith."
+        }
+      }
     },
     "hebtext": [
       {

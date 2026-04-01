@@ -355,7 +355,34 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Job 1–42 — The Prose Frame and the Poetic Core",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "Prologue: Job is blameless and upright; he possesses vast wealth, seven sons and three daughters. He is the greatest man among all the peoples of the East (1:1–5)",
+            "bottom": "Epilogue: the LORD restores Job’s fortunes, giving him twice as much as before. He has seven more sons and three more daughters. He lives 140 years and sees four generations (42:10–17)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "The heavenly council: the Accuser challenges Job’s motives. ‘Does Job fear God for nothing?’ God permits the test — first possessions, then health (1:6–2:10)",
+            "bottom": "God’s verdict: ‘You have not spoken the truth about me, as my servant Job has.’ The friends must offer sacrifice; Job intercedes for them (42:7–9)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "Job’s wife and three friends arrive. Job’s wife: ‘Curse God and die!’ The friends sit in silence for seven days, stunned by his suffering (2:11–13)",
+            "bottom": "Job’s response to God from the whirlwind: ‘My ears had heard of you but now my eyes have seen you. Therefore I despise myself and repent in dust and ashes’ (42:1–6)",
+            "color": "#5fa87a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "The 35 chapters of poetic dialogue (3:1–41:34): Job’s lament, three cycles of debate with friends, Elihu’s speeches, and God’s answer from the whirlwind. The entire poetic core sits inside the prose frame — and the astonishing thing is that the prose frame never answers the question the poetry raises. The reader knows about the heavenly wager; Job never does. The resolution is encounter, not explanation."
+        }
+      }
     },
     "hebtext": [
       {

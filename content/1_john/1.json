@@ -286,7 +286,28 @@
           "is_key": true
         }
       ],
-      "note": "Chapter 1 establishes the foundation: eyewitness testimony to the incarnate Word, fellowship through truth, and ongoing cleansing through confession."
+      "note": "Chapter 1 establishes the foundation: eyewitness testimony to the incarnate Word, fellowship through truth, and ongoing cleansing through confession.",
+      "chiasm": {
+        "title": "1 John — The Spiral of Love, Truth, and Sin",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "First cycle: walking in the light means confessing sin, not claiming to be without sin. If we walk in the light, the blood of Jesus purifies us (1:5–2:2)",
+            "bottom": "Third cycle: love one another — this is the message you heard from the beginning. Whoever does not love remains in death. We know what love is: Jesus laid down his life for us (3:11–4:6)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "Second cycle: the new/old commandment of love. Do not love the world. Whoever does the will of God lives forever. Antichrists have gone out from us (2:3–27)",
+            "bottom": "Fourth cycle: God is love. Whoever lives in love lives in God. Perfect love drives out fear. We love because he first loved us (4:7–5:12)",
+            "color": "#5b8fb9"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "See what great love the Father has lavished on us, that we should be called children of God! And that is what we are! Dear friends, now we are children of God, and what we will be has not yet been made known (2:28–3:10). The center of the spiral is identity: we are God’s children NOW, not yet fully revealed. The spiral structure means the same themes (sin, love, belief, assurance) keep returning but at deeper levels each time — John does not build a linear argument but circles the mystery, coming closer with each pass."
+        }
+      }
     }
   },
   "vhl_groups": []

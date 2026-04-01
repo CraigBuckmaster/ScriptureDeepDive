@@ -102,7 +102,34 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Psalm 103 — Praise for the Compassionate God",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "Praise the LORD, my soul; all my inmost being, praise his holy name. Praise the LORD, my soul, and forget not all his benefits (vv.1–2)",
+            "bottom": "Praise the LORD, you his angels, you mighty ones who do his bidding. Praise the LORD, all his heavenly hosts. Praise the LORD, all his works. Praise the LORD, my soul (vv.20–22)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "He forgives all your sins and heals all your diseases; he redeems your life from the pit and crowns you with love and compassion (vv.3–5)",
+            "bottom": "For as high as the heavens are above the earth, so great is his love for those who fear him; as far as the east is from the west, so far has he removed our transgressions (vv.11–12)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "He satisfies your desires with good things so that your youth is renewed like the eagle’s. The LORD works righteousness and justice for all the oppressed (vv.5–6)",
+            "bottom": "As a father has compassion on his children, so the LORD has compassion on those who fear him; for he knows how we are formed, he remembers that we are dust (vv.13–14)",
+            "color": "#5fa87a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "The LORD is compassionate and gracious, slow to anger, abounding in love. He will not always accuse, nor will he harbor his anger forever; he does not treat us as our sins deserve or repay us according to our iniquities (vv.8–10). The center is God’s character statement — echoing the self-revelation at Sinai (Exodus 34:6–7). Everything in the psalm radiates outward from this identity: God is compassionate. Period."
+        }
+      }
     },
     "hebtext": [
       {

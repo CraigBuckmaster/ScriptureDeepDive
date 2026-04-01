@@ -369,7 +369,28 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "2 Samuel 11–12 — David, Bathsheba, and Nathan",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "David sees Bathsheba from the roof and takes her; she conceives. The king uses his royal power to summon another man’s wife (11:1–5)",
+            "bottom": "Nathan tells David a parable: a rich man with many flocks takes the only lamb of a poor man. David’s fury at the injustice condemns himself: ‘You are the man!’ (12:1–7)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "David summons Uriah from the front, tries to make him go home to cover the pregnancy. Uriah refuses out of loyalty to his fellow soldiers (11:6–13)",
+            "bottom": "God’s judgment through Nathan: the sword will never depart from David’s house; what David did in secret will be done to him openly. David confesses: ‘I have sinned against the LORD’ (12:7–14)",
+            "color": "#5b8fb9"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "David’s letter to Joab, carried by Uriah himself: ‘Put Uriah out in front where the fighting is fiercest. Then withdraw from him so he will be struck down and die’ (11:14–27). The center is the murder — and the devastating detail that Uriah carries his own death sentence. The narrative makes the reader complicit in watching the cover-up unfold, so that Nathan’s parable hits the reader as hard as it hits David."
+        }
+      }
     },
     "hebtext": [
       {

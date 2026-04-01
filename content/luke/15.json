@@ -408,7 +408,22 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Luke 15 — The Three Parables of the Lost",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "The Lost Sheep: a man with a hundred sheep loses one, leaves the ninety-nine, searches until he finds it, carries it home on his shoulders, and calls his friends to rejoice (vv.3–7)",
+            "bottom": "The Lost Coin: a woman with ten coins loses one, lights a lamp, sweeps the house, searches carefully until she finds it, and calls her friends to rejoice (vv.8–10)",
+            "color": "#8B7CB8"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "The Lost Son (vv.11–32): the longest and most complex of the three, with its own internal structure. The younger son’s departure, degradation, and return mirrors the elder son’s revelation as equally lost. The father’s response to each son is identical in character — extravagant, undignified love. The sheep and coin parables bracket the prodigal to establish the pattern (search → find → rejoice), then the center explodes the pattern: the father does not search — he waits, watches, and runs."
+        }
+      }
     },
     "hebtext": [
       {

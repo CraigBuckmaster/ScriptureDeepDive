@@ -374,7 +374,34 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Luke 1–2 — The Infancy Narrative",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "Annunciation to Zechariah in the temple: an angel announces John’s birth. Zechariah doubts and is struck mute (1:5–25)",
+            "bottom": "Annunciation to the shepherds in the field: an angel announces Jesus’ birth. The shepherds believe immediately and go to see (2:8–20)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "Annunciation to Mary: Gabriel announces the virgin conception. Mary asks how, then submits: ‘I am the Lord’s servant’ (1:26–38)",
+            "bottom": "Presentation at the temple: Simeon and Anna recognize the infant Jesus as the fulfillment of Israel’s hope. Simeon’s prophecy to Mary: a sword will pierce your own soul (2:22–40)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "Mary visits Elizabeth. Elizabeth’s baby leaps; Mary sings the Magnificat — God scatters the proud, lifts the humble, fills the hungry (1:39–56)",
+            "bottom": "Birth of Jesus in Bethlehem. No room at the inn; the Lord of all is laid in a manger. Angels declare peace on earth (2:1–21)",
+            "color": "#5fa87a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "The birth of John, his circumcision, and the Benedictus (1:57–80). Zechariah’s tongue is loosed and he prophesies: ‘Praise be to the Lord, the God of Israel, because he has come to his people and redeemed them.’ The center of Luke’s infancy narrative is the forerunner’s birth — the hinge between promise and fulfillment, between silence and song."
+        }
+      }
     },
     "hebtext": [
       {
