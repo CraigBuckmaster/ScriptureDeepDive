@@ -12,7 +12,7 @@ describe('settingsStore', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     useSettingsStore.setState({
-      translation: 'niv',
+      translation: 'kjv',
       fontSize: 16,
       vhlEnabled: true,
       bookListMode: 'canonical',
@@ -24,7 +24,7 @@ describe('settingsStore', () => {
 
   it('starts with default state', () => {
     const state = useSettingsStore.getState();
-    expect(state.translation).toBe('niv');
+    expect(state.translation).toBe('kjv');
     expect(state.fontSize).toBe(16);
     expect(state.theme).toBe('dark');
     expect(state.isHydrated).toBe(false);
@@ -32,9 +32,9 @@ describe('settingsStore', () => {
 
   describe('setTranslation', () => {
     it('updates translation and persists', async () => {
-      await useSettingsStore.getState().setTranslation('esv');
-      expect(useSettingsStore.getState().translation).toBe('esv');
-      expect(setPreference).toHaveBeenCalledWith('translation', 'esv');
+      await useSettingsStore.getState().setTranslation('asv');
+      expect(useSettingsStore.getState().translation).toBe('asv');
+      expect(setPreference).toHaveBeenCalledWith('translation', 'asv');
     });
   });
 
@@ -78,7 +78,7 @@ describe('settingsStore', () => {
     it('loads values from preferences', async () => {
       getPreference.mockImplementation((key: string) => {
         const map: Record<string, string> = {
-          translation: 'esv',
+          translation: 'asv',
           fontSize: '18',
           vhlEnabled: '1',
           bookListMode: 'canonical',
@@ -90,7 +90,7 @@ describe('settingsStore', () => {
 
       await useSettingsStore.getState().hydrate();
       const state = useSettingsStore.getState();
-      expect(state.translation).toBe('esv');
+      expect(state.translation).toBe('asv');
       expect(state.fontSize).toBe(18);
       expect(state.vhlEnabled).toBe(true);
       expect(state.studyCoachEnabled).toBe(false);
@@ -110,7 +110,7 @@ describe('settingsStore', () => {
 
       await useSettingsStore.getState().hydrate();
       const state = useSettingsStore.getState();
-      expect(state.translation).toBe('niv');
+      expect(state.translation).toBe('kjv');
       expect(state.fontSize).toBe(16);
       expect(state.theme).toBe('dark');
     });

@@ -23,7 +23,7 @@ jest.mock('@/db/user', () => ({
 }));
 
 jest.mock('@/stores', () => ({
-  useSettingsStore: (selector: any) => selector({ translation: 'niv' }),
+  useSettingsStore: (selector: any) => selector({ translation: 'kjv' }),
   useReaderStore: (selector: any) => selector({ currentBook: null, currentChapter: 1, activePanel: null }),
 }));
 

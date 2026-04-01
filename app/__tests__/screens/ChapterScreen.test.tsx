@@ -105,7 +105,7 @@ jest.mock('@/hooks/useStudyDepth', () => ({
 
 jest.mock('@/stores', () => ({
   useSettingsStore: (sel: any) => sel({
-    translation: 'niv',
+    translation: 'kjv',
     fontSize: 16,
     studyCoachEnabled: false,
     setTranslation: jest.fn(),

@@ -21,6 +21,7 @@ const sharedMockDb = createMockDb();
 export function mockDatabaseModule() {
   return {
     getDb: () => sharedMockDb,
+    getVerseDb: jest.fn().mockResolvedValue(sharedMockDb),
     initDatabase: jest.fn().mockResolvedValue(sharedMockDb),
   };
 }

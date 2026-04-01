@@ -50,6 +50,17 @@ describe('verse file completeness', () => {
     expect(missing).toEqual([]);
   });
 
+  it('every live book has a verse file in content/verses/asv/', () => {
+    const missing: string[] = [];
+    for (const book of liveBooks) {
+      const filePath = path.join(CONTENT_DIR, 'verses', 'asv', `${book.id}.json`);
+      if (!fs.existsSync(filePath)) {
+        missing.push(book.id);
+      }
+    }
+    expect(missing).toEqual([]);
+  });
+
   it('every live book has a verse file in content/verses/kjv/', () => {
     const missing: string[] = [];
     for (const book of liveBooks) {

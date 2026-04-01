@@ -19,7 +19,7 @@ const defaultProps = {
   onPrev: jest.fn(),
   onNext: jest.fn(),
   onQnav: jest.fn(),
-  translation: 'niv',
+  translation: 'kjv',
   onTranslationChange: jest.fn(),
 };
 

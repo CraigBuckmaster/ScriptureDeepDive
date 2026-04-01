@@ -13,9 +13,9 @@ describe('shareVerse', () => {
 
   describe('copyVerse', () => {
     it('copies formatted text to clipboard', async () => {
-      await copyVerse('In the beginning', 'Genesis 1:1', 'niv');
+      await copyVerse('In the beginning', 'Genesis 1:1', 'kjv');
       expect(Clipboard.setStringAsync).toHaveBeenCalledWith(
-        '"In the beginning" — Genesis 1:1 (NIV)\n\nCompanion Study',
+        '"In the beginning" — Genesis 1:1 (KJV)\n\nCompanion Study',
       );
     });
 
@@ -29,9 +29,9 @@ describe('shareVerse', () => {
 
   describe('shareVerse', () => {
     it('calls Share.share with formatted message', async () => {
-      await shareVerse('In the beginning', 'Genesis 1:1', 'esv');
+      await shareVerse('In the beginning', 'Genesis 1:1', 'asv');
       expect(Share.share).toHaveBeenCalledWith({
-        message: '"In the beginning" — Genesis 1:1 (ESV)\n\nCompanion Study',
+        message: '"In the beginning" — Genesis 1:1 (ASV)\n\nCompanion Study',
       });
     });
   });

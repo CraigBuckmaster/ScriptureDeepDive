@@ -57,7 +57,7 @@ jest.mock('@/hooks/useRecommendations', () => ({
 
 jest.mock('@/stores', () => ({
   useSettingsStore: (sel: any) => sel({
-    translation: 'niv',
+    translation: 'kjv',
     fontSize: 16,
     bookListMode: 'canonical',
     studyCoachEnabled: true,
