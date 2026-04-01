@@ -1,3 +1,4 @@
+jest.unmock('@/utils/logger');
 import { logger, safeParse } from '@/utils/logger';
 
 describe('logger', () => {
