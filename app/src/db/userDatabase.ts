@@ -351,6 +351,23 @@ const MIGRATIONS: Migration[] = [
       ])}');
     `,
   },
+  {
+    version: 7,
+    description: 'Auth profiles — links Supabase UID to local user data',
+    sql: `
+      CREATE TABLE IF NOT EXISTS auth_profiles (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        supabase_uid TEXT NOT NULL UNIQUE,
+        email TEXT,
+        display_name TEXT,
+        avatar_url TEXT,
+        provider TEXT NOT NULL,
+        created_at TEXT DEFAULT (datetime('now')),
+        last_sign_in TEXT DEFAULT (datetime('now'))
+      );
+      CREATE INDEX IF NOT EXISTS idx_auth_profiles_uid ON auth_profiles(supabase_uid);
+    `,
+  },
 ];
 
 /**

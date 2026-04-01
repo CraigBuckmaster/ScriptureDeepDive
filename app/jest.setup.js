@@ -85,6 +85,43 @@ jest.mock('expo-screen-orientation', () => ({
   Orientation: { PORTRAIT_UP: 1, LANDSCAPE_LEFT: 3 },
 }));
 
+// Mock @react-native-async-storage/async-storage
+jest.mock('@react-native-async-storage/async-storage', () =>
+  require('@react-native-async-storage/async-storage/jest/async-storage-mock')
+);
+
+// Mock Supabase client
+jest.mock('@/lib/supabase', () => ({
+  supabase: {
+    auth: {
+      getSession: jest.fn().mockResolvedValue({ data: { session: null } }),
+      onAuthStateChange: jest.fn().mockReturnValue({ data: { subscription: { unsubscribe: jest.fn() } } }),
+      signInWithPassword: jest.fn().mockResolvedValue({ error: null }),
+      signUp: jest.fn().mockResolvedValue({ error: null }),
+      signInWithOAuth: jest.fn().mockResolvedValue({ data: { url: null }, error: null }),
+      signOut: jest.fn().mockResolvedValue({ error: null }),
+      resetPasswordForEmail: jest.fn().mockResolvedValue({ error: null }),
+      exchangeCodeForSession: jest.fn().mockResolvedValue({ error: null }),
+    },
+  },
+}));
+
+// Mock OAuth helpers
+jest.mock('@/lib/oauthHelpers', () => ({
+  signInWithProvider: jest.fn().mockResolvedValue({}),
+}));
+
+// Mock expo-auth-session
+jest.mock('expo-auth-session', () => ({
+  makeRedirectUri: jest.fn().mockReturnValue('scripture://auth/callback'),
+}));
+
+// Mock expo-web-browser
+jest.mock('expo-web-browser', () => ({
+  maybeCompleteAuthSession: jest.fn(),
+  openAuthSessionAsync: jest.fn().mockResolvedValue({ type: 'cancel' }),
+}));
+
 // ── React Native library mocks ────────────────────────────────────
 
 // Mock react-native-reanimated

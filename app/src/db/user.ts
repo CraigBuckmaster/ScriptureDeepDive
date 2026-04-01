@@ -565,3 +565,43 @@ export async function searchNotesFTS(query: string): Promise<UserNote[]> {
     [sanitized]
   );
 }
+
+// ── Auth Profile ────────────────────────────────────────────────────
+
+export interface AuthProfile {
+  supabase_uid: string;
+  email: string;
+  display_name: string;
+  avatar_url: string;
+  provider: string;
+}
+
+export async function upsertAuthProfile(
+  uid: string,
+  email: string,
+  displayName: string,
+  avatarUrl: string,
+  provider: string,
+): Promise<void> {
+  await getUserDb().runAsync(
+    `INSERT INTO auth_profiles (supabase_uid, email, display_name, avatar_url, provider, last_sign_in)
+     VALUES (?, ?, ?, ?, ?, datetime('now'))
+     ON CONFLICT(supabase_uid) DO UPDATE SET
+       email = excluded.email,
+       display_name = excluded.display_name,
+       avatar_url = excluded.avatar_url,
+       provider = excluded.provider,
+       last_sign_in = datetime('now')`,
+    [uid, email, displayName, avatarUrl, provider],
+  );
+}
+
+export async function getAuthProfile(): Promise<AuthProfile | null> {
+  return getUserDb().getFirstAsync<AuthProfile>(
+    'SELECT supabase_uid, email, display_name, avatar_url, provider FROM auth_profiles LIMIT 1',
+  );
+}
+
+export async function clearAuthProfile(): Promise<void> {
+  await getUserDb().runAsync('DELETE FROM auth_profiles');
+}

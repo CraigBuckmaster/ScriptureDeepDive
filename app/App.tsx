@@ -10,7 +10,7 @@ import { NavigationContainer, DarkTheme, DefaultTheme } from '@react-navigation/
 import { FONT_MAP, base, ThemeProvider, useTheme } from './src/theme';
 import { initDatabase } from './src/db/database';
 import { initUserDatabase } from './src/db/userDatabase';
-import { useSettingsStore } from './src/stores';
+import { useSettingsStore, useAuthStore } from './src/stores';
 import { RootNavigator } from './src/navigation';
 import { ErrorBoundary } from './src/components/ErrorBoundary';
 
@@ -60,6 +60,7 @@ export default function App() {
         await initDatabase();        // Content DB (scripture.db) — replaced on updates
         await initUserDatabase();    // User DB (user.db) — never replaced, migrated
         await useSettingsStore.getState().hydrate();
+        await useAuthStore.getState().hydrate();
       } catch (e) {
         console.error('Init error:', e);
       } finally {
