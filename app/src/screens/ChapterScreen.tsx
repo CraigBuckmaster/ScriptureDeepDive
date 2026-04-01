@@ -470,7 +470,7 @@ export default function ChapterScreen() {
         onClose={() => setInterlinearVerse(null)}
         onWordStudyPress={(wsId) => {
           setInterlinearVerse(null);
-          navigation.navigate('ExploreTab', { screen: 'WordStudyDetail', params: { id: wsId } });
+          navigation.navigate('ExploreTab', { screen: 'WordStudyDetail', params: { wordId: wsId } });
         }}
         onConcordancePress={(params) => {
           setInterlinearVerse(null);

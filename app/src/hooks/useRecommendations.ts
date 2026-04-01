@@ -58,7 +58,7 @@ async function generateRecommendations(): Promise<Recommendation[]> {
           title: 'Explore the Covenant',
           subtitle: "Trace the theme from Genesis through Revelation",
           screen: 'ExploreTab',
-          params: { screen: 'ConceptDetail', params: { id: 'covenant' } },
+          params: { screen: 'ConceptDetail', params: { conceptId: 'covenant' } },
           priority: 80,
         });
       }
