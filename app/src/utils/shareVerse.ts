@@ -7,6 +7,7 @@
 import { Share } from 'react-native';
 import * as Clipboard from 'expo-clipboard';
 import { logger } from './logger';
+import { logEvent } from '../services/analytics';
 
 function formatVerseMessage(text: string, ref: string, translation?: string): string {
   const translationTag = translation ? ` (${translation.toUpperCase()})` : '';
@@ -16,6 +17,7 @@ function formatVerseMessage(text: string, ref: string, translation?: string): st
 export async function copyVerse(text: string, ref: string, translation?: string): Promise<void> {
   try {
     await Clipboard.setStringAsync(formatVerseMessage(text, ref, translation));
+    logEvent('share_verse', { ref, action: 'copy' });
   } catch (err) {
     logger.warn('shareVerse', 'Copy failed', err);
     throw err;

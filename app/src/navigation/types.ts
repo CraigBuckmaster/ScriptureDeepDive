@@ -73,6 +73,9 @@ export type MoreStackParamList = {
   PlanDetail: { planId: string };
   Chapter: { bookId: string; chapterNum: number; openPanel?: OpenPanelParam };
   BookIntro: { bookId: string };
+  Login: undefined;
+  SignUp: undefined;
+  ForgotPassword: undefined;
 };
 
 export type SearchStackParamList = {

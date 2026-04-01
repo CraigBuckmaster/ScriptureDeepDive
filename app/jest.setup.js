@@ -85,6 +85,61 @@ jest.mock('expo-screen-orientation', () => ({
   Orientation: { PORTRAIT_UP: 1, LANDSCAPE_LEFT: 3 },
 }));
 
+// Mock @react-native-async-storage/async-storage
+jest.mock('@react-native-async-storage/async-storage', () => {
+  const store = {};
+  return {
+    setItem: jest.fn((key, val) => { store[key] = val; return Promise.resolve(); }),
+    getItem: jest.fn((key) => Promise.resolve(store[key] ?? null)),
+    removeItem: jest.fn((key) => { delete store[key]; return Promise.resolve(); }),
+    clear: jest.fn(() => { Object.keys(store).forEach(k => delete store[k]); return Promise.resolve(); }),
+    getAllKeys: jest.fn(() => Promise.resolve(Object.keys(store))),
+  };
+});
+
+// Mock Supabase client
+jest.mock('@/lib/supabase', () => ({
+  supabase: {
+    auth: {
+      getSession: jest.fn().mockResolvedValue({ data: { session: null } }),
+      onAuthStateChange: jest.fn().mockReturnValue({ data: { subscription: { unsubscribe: jest.fn() } } }),
+      signInWithPassword: jest.fn().mockResolvedValue({ error: null }),
+      signUp: jest.fn().mockResolvedValue({ error: null }),
+      signInWithOAuth: jest.fn().mockResolvedValue({ data: { url: null }, error: null }),
+      signOut: jest.fn().mockResolvedValue({ error: null }),
+      resetPasswordForEmail: jest.fn().mockResolvedValue({ error: null }),
+      exchangeCodeForSession: jest.fn().mockResolvedValue({ error: null }),
+    },
+  },
+}));
+
+// Mock OAuth helpers
+jest.mock('@/lib/oauthHelpers', () => ({
+  signInWithProvider: jest.fn().mockResolvedValue({}),
+}));
+
+// Mock expo-store-review
+jest.mock('expo-store-review', () => ({
+  isAvailableAsync: jest.fn().mockResolvedValue(false),
+  requestReview: jest.fn().mockResolvedValue(undefined),
+}));
+
+// Mock expo-constants
+jest.mock('expo-constants', () => ({
+  expoConfig: { version: '1.0.0' },
+}));
+
+// Mock expo-auth-session
+jest.mock('expo-auth-session', () => ({
+  makeRedirectUri: jest.fn().mockReturnValue('scripture://auth/callback'),
+}));
+
+// Mock expo-web-browser
+jest.mock('expo-web-browser', () => ({
+  maybeCompleteAuthSession: jest.fn(),
+  openAuthSessionAsync: jest.fn().mockResolvedValue({ type: 'cancel' }),
+}));
+
 // ── React Native library mocks ────────────────────────────────────
 
 // Mock react-native-reanimated
@@ -181,6 +236,20 @@ jest.mock('lucide-react-native', () => {
 jest.mock('@/utils/haptics', () => ({
   lightImpact: jest.fn(),
   mediumImpact: jest.fn(),
+}));
+
+// Mock analytics service (fire-and-forget, should never break tests)
+jest.mock('@/services/analytics', () => ({
+  logEvent: jest.fn(),
+  getEventCounts: jest.fn().mockResolvedValue([]),
+  pruneEvents: jest.fn().mockResolvedValue(undefined),
+}));
+
+// Mock reengagement service
+jest.mock('@/services/reengagement', () => ({
+  updateLastActive: jest.fn().mockResolvedValue(undefined),
+  checkAndScheduleReengagement: jest.fn().mockResolvedValue(undefined),
+  cancelReengagement: jest.fn().mockResolvedValue(undefined),
 }));
 
 // Silence the app logger in tests (console.warn noise).

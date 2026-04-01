@@ -17,7 +17,7 @@ import type { WordStudy } from '../types';
 import { logger } from '../utils/logger';
 
 export default function WordStudyDetailScreen() {
-  const { base } = useTheme();
+  const { base, panels } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'WordStudyDetail'>>();
   const route = useRoute<ScreenRouteProp<'Explore', 'WordStudyDetail'>>();
   const { wordId } = route.params ?? {};
@@ -35,7 +35,7 @@ export default function WordStudyDetailScreen() {
     );
   }
 
-  const accentColor = word.language === 'hebrew' ? '#e890b8' : '#70b8e8';
+  const accentColor = word.language === 'hebrew' ? panels.heb.accent : panels.hist.accent;
   let glosses: string[] = [];
   try { glosses = JSON.parse(word.glosses_json); } catch (err) { logger.warn('WordStudyDetailScreen', 'Operation failed', err); }
   type Occurrence = { ref: string; gloss: string; ctx: string };

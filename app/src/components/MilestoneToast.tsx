@@ -66,6 +66,9 @@ export function MilestoneToast({ message, onDismiss }: Props) {
           opacity,
         },
       ]}
+      accessibilityRole="alert"
+      accessibilityLabel={message}
+      accessibilityLiveRegion="polite"
     >
       <Text style={[styles.text, { color: base.gold }]}>{message}</Text>
     </Animated.View>

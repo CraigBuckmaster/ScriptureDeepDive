@@ -26,7 +26,11 @@ export function WeeklySummary({ chapters, bookNames }: Props) {
     : `This week: ${chapters} ${chapterWord}`;
 
   return (
-    <View style={[styles.container, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
+    <View
+      style={[styles.container, { backgroundColor: base.bgElevated, borderColor: base.border }]}
+      accessibilityRole="text"
+      accessibilityLabel={summary}
+    >
       <Text style={[styles.text, { color: base.textDim }]}>{summary}</Text>
     </View>
   );

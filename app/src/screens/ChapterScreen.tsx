@@ -22,6 +22,9 @@ import { GenreBanner } from '../components/GenreBanner';
 import { StudyCoachCard } from '../components/StudyCoachCard';
 import { useStudyDepth } from '../hooks/useStudyDepth';
 import { useTranslationSwitch } from '../hooks/useTranslationSwitch';
+import { useStoreReview } from '../hooks/useStoreReview';
+import { logEvent } from '../services/analytics';
+import { updateLastActive, cancelReengagement } from '../services/reengagement';
 import { getBook } from '../db/content';
 
 import { ChapterNavBar } from '../components/ChapterNavBar';
@@ -56,6 +59,7 @@ export default function ChapterScreen() {
   const fontSize = useSettingsStore((s) => s.fontSize);
   const translation = useSettingsStore((s) => s.translation);
   const { switchTranslation } = useTranslationSwitch();
+  const { checkAndPrompt } = useStoreReview();
   const studyCoachEnabled = useSettingsStore((s) => s.studyCoachEnabled);
   const activePanel = useReaderStore((s) => s.activePanel);
   const setActivePanel = useReaderStore((s) => s.setActivePanel);
@@ -131,8 +135,14 @@ export default function ChapterScreen() {
 
   // Record visit
   useEffect(() => {
-    if (bookId && chapterNum) recordVisit(bookId, chapterNum);
-  }, [bookId, chapterNum]);
+    if (bookId && chapterNum) {
+      recordVisit(bookId, chapterNum);
+      logEvent('chapter_open', { bookId, chapterNum });
+      updateLastActive();
+      cancelReengagement();
+      checkAndPrompt();
+    }
+  }, [bookId, chapterNum, checkAndPrompt]);
 
   // Load highlights
   const loadHighlights = useCallback(() => {

@@ -10,8 +10,9 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
-import { Bookmark, Clock, Calendar, Settings, ArrowRight, StickyNote } from 'lucide-react-native';
+import { Bookmark, Clock, Calendar, Settings, ArrowRight, StickyNote, LogIn, LogOut, User } from 'lucide-react-native';
 import { base, useTheme, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
+import { useAuthStore } from '../stores';
 
 interface MenuItem {
   icon: React.ElementType;
@@ -30,10 +31,43 @@ const MENU_ITEMS: MenuItem[] = [
 export default function MoreMenuScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'MoreMenu'>>();
+  const user = useAuthStore((s) => s.user);
+  const signOut = useAuthStore((s) => s.signOut);
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       <Text style={[styles.title, { color: base.gold }]} accessibilityRole="header">More</Text>
+
+      {/* Auth section */}
+      <View style={[styles.authCard, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
+        {user ? (
+          <View style={styles.authRow}>
+            <User size={20} color={base.gold} />
+            <View style={{ flex: 1, marginLeft: spacing.sm }}>
+              <Text style={[styles.menuLabel, { color: base.text }]}>{user.email}</Text>
+              <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: fontFamily.ui }}>Signed in</Text>
+            </View>
+            <TouchableOpacity onPress={signOut} accessibilityLabel="Sign out" accessibilityRole="button">
+              <LogOut size={18} color={base.textMuted} />
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Login')}
+            activeOpacity={0.6}
+            style={styles.authRow}
+            accessibilityLabel="Sign in to your account"
+            accessibilityRole="button"
+          >
+            <LogIn size={20} color={base.gold} />
+            <View style={{ flex: 1, marginLeft: spacing.sm }}>
+              <Text style={[styles.menuLabel, { color: base.text }]}>Sign In</Text>
+              <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: fontFamily.ui }}>Unlock premium features and sync</Text>
+            </View>
+            <ArrowRight size={14} color={base.textMuted} />
+          </TouchableOpacity>
+        )}
+      </View>
 
       <View style={[styles.menuList, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
         {MENU_ITEMS.map((item, idx) => (
@@ -66,6 +100,19 @@ const styles = StyleSheet.create({
     fontSize: 22,
     marginTop: spacing.lg,
     marginBottom: spacing.lg,
+  },
+  authCard: {
+    borderRadius: radii.lg,
+    borderWidth: 1,
+    overflow: 'hidden',
+    marginBottom: spacing.md,
+  },
+  authRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    minHeight: MIN_TOUCH_TARGET,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm + 2,
   },
   menuList: {
     borderRadius: radii.lg,

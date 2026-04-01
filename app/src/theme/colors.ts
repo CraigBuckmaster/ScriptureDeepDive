@@ -28,6 +28,8 @@ export const base = {
   borderLight: '#2a2010',
   verseNum: '#9a8a6a',
   navText: '#d8ccb0',
+  danger: '#e05a6a',
+  success: '#81C784',
 } as const;
 
 // ── Panel Accent Colors ─────────────────────────────────────────────
@@ -190,4 +192,68 @@ export const categoryColors = {
   book: '#7a6b5a',
   person: '#6a9fb5',
   world: '#b07d4f',
+} as const;
+
+// ── Difficult Passage / Browse Categories ──────────────────────────
+
+export const categories = {
+  ethical: '#E57373',
+  contradiction: '#FFB74D',
+  theological: '#64B5F6',
+  historical: '#81C784',
+  textual: '#BA68C8',
+} as const;
+
+// ── Severity Colors ────────────────────────────────────────────────
+
+export const severity = {
+  minor: '#4CAF50',
+  moderate: '#FFC107',
+  major: '#F44336',
+} as const;
+
+// ── Tradition Family Colors ────────────────────────────────────────
+
+export const families = {
+  evangelical: '#64B5F6',
+  critical: '#FFB74D',
+  jewish: '#81C784',
+  patristic: '#BA68C8',
+  reformed: '#4FC3F7',
+  catholic: '#E57373',
+} as const;
+
+// ── Prophecy Category Colors ───────────────────────────────────────
+
+export const prophecyCategories = {
+  messianic: '#e8a070',
+  covenant: '#70b8e8',
+  judgment: '#e07070',
+  restoration: '#70d098',
+  typological: '#c090e0',
+} as const;
+
+// ── Prophecy Role Colors ───────────────────────────────────────────
+
+export const roles = {
+  origin: '#8a8040',
+  prophecy: '#a08840',
+  development: '#b09050',
+  type: '#c09858',
+  fulfillment: '#d4b060',
+  consummation: '#e0c878',
+} as const;
+
+// ── Testament Dot Colors (prophecy timeline) ───────────────────────
+
+export const testament = {
+  ot: '#c8a040',
+  nt: '#a0c8e0',
+} as const;
+
+// ── Timeline SVG Colors ────────────────────────────────────────────
+
+export const timelineSvg = {
+  axis: '#3a2808',
+  tick: '#5a4a28',
 } as const;

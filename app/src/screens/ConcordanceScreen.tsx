@@ -25,7 +25,7 @@ import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme
 import type { ConcordanceResult } from '../types';
 
 export default function ConcordanceScreen() {
-  const { base } = useTheme();
+  const { base, panels } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'Concordance'>>();
   const route = useRoute<ScreenRouteProp<'Explore', 'Concordance'>>();
   const { strongs: initialStrongs, original, transliteration, gloss } = route.params ?? {};
@@ -69,7 +69,7 @@ export default function ConcordanceScreen() {
 
   // Determine the accent color (Hebrew = pink, Greek = blue)
   const isHebrew = strongs.startsWith('H');
-  const accentColor = isHebrew ? '#e890b8' : '#70b8e8';
+  const accentColor = isHebrew ? panels.heb.accent : panels.hist.accent;
 
   const headerTitle = original
     ? `${original} (${strongs})`

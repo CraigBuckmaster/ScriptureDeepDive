@@ -78,7 +78,7 @@ export default function HomeScreen() {
 
         {/* ── 1. Greeting ──────────────────────────────── */}
         <View style={styles.greetingSection}>
-          <Text style={[styles.greetingText, { color: base.text }]}>{greeting}</Text>
+          <Text style={[styles.greetingText, { color: base.text }]} accessibilityRole="header">{greeting}</Text>
           <Text style={[styles.greetingSubtitle, { color: base.textDim }]}>{subtitle}</Text>
           <StreakBadge streak={currentStreak} />
         </View>
@@ -92,6 +92,8 @@ export default function HomeScreen() {
               chapterNum: mostRecent.chapter_num,
             })}
             style={[styles.continueCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}
+            accessibilityRole="button"
+            accessibilityLabel={`Continue reading ${mostRecent.book_name} chapter ${mostRecent.chapter_num}`}
           >
             <View style={styles.continueCardContent}>
               <Text style={[styles.continueBookName, { color: base.text }]}>
@@ -114,6 +116,8 @@ export default function HomeScreen() {
               chapterNum: 1,
             })}
             style={[styles.continueCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}
+            accessibilityRole="button"
+            accessibilityLabel="Begin your journey, start reading Genesis 1"
           >
             <View style={styles.continueCardContent}>
               <Text style={[styles.continueBookName, { color: base.text }]}>Begin Your Journey</Text>
@@ -134,12 +138,16 @@ export default function HomeScreen() {
             chapterNum: verse.chapter,
           })}
           style={[styles.verseCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
+          accessibilityRole="button"
+          accessibilityLabel={`Verse of the day: ${verse.ref}. ${verse.text}. Tap to read in context`}
         >
           <View style={styles.verseCardHeader}>
             <Text style={[styles.verseCardLabel, { color: base.textMuted }]}>VERSE OF THE DAY</Text>
             <TouchableOpacity
               onPress={(e) => { e.stopPropagation(); shareVerse(verse.text, verse.ref, translation); }}
               hitSlop={{ top: 8, right: 8, bottom: 8, left: 8 }}
+              accessibilityRole="button"
+              accessibilityLabel="Share verse of the day"
             >
               <Share2 size={15} color={base.textMuted} />
             </TouchableOpacity>
@@ -153,7 +161,10 @@ export default function HomeScreen() {
 
         {/* ── 5. Contextual Suggestions ─────────────────── */}
         <View style={styles.suggestionsSection}>
-          <Text style={[styles.sectionLabel, { color: base.textMuted }]}>
+          <Text
+            style={[styles.sectionLabel, { color: base.textMuted }]}
+            accessibilityRole="header"
+          >
             {recommendations.length > 0 ? 'FROM YOUR STUDY' : 'EXPLORE'}
           </Text>
           {recommendations.length > 0 ? (
@@ -165,6 +176,8 @@ export default function HomeScreen() {
                     style={[styles.suggestionCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
                     activeOpacity={0.7}
                     onPress={() => navigation.navigate(rec.screen as any, rec.params as any)}
+                    accessibilityRole="button"
+                    accessibilityLabel={`${rec.title}: ${rec.subtitle}`}
                   >
                     <Text style={[styles.suggestionTitle, { color: base.gold }]}>{rec.title}</Text>
                     <Text style={[styles.suggestionSubtitle, { color: base.textDim }]}>{rec.subtitle}</Text>
@@ -179,6 +192,8 @@ export default function HomeScreen() {
                       style={[styles.suggestionCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
                       activeOpacity={0.7}
                       onPress={() => navigation.navigate(rec.screen as any, rec.params as any)}
+                      accessibilityRole="button"
+                      accessibilityLabel={`${rec.title}: ${rec.subtitle}`}
                     >
                       <Text style={[styles.suggestionTitle, { color: base.gold }]}>{rec.title}</Text>
                       <Text style={[styles.suggestionSubtitle, { color: base.textDim }]}>{rec.subtitle}</Text>
@@ -194,6 +209,8 @@ export default function HomeScreen() {
                   style={[styles.suggestionCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
                   activeOpacity={0.7}
                   onPress={() => navigation.navigate('ExploreTab' as any, { screen: 'GenealogyTree' })}
+                  accessibilityRole="button"
+                  accessibilityLabel="Explore people: Lives that shaped sacred history"
                 >
                   <Text style={[styles.suggestionTitle, { color: base.gold }]}>People</Text>
                   <Text style={[styles.suggestionSubtitle, { color: base.textDim }]}>Lives that shaped sacred history</Text>
@@ -202,6 +219,8 @@ export default function HomeScreen() {
                   style={[styles.suggestionCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
                   activeOpacity={0.7}
                   onPress={() => navigation.navigate('ExploreTab' as any, { screen: 'Timeline' })}
+                  accessibilityRole="button"
+                  accessibilityLabel="Explore timeline: The arc of redemption"
                 >
                   <Text style={[styles.suggestionTitle, { color: base.gold }]}>Timeline</Text>
                   <Text style={[styles.suggestionSubtitle, { color: base.textDim }]}>The arc of redemption</Text>
@@ -212,6 +231,8 @@ export default function HomeScreen() {
                   style={[styles.suggestionCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
                   activeOpacity={0.7}
                   onPress={() => navigation.navigate('ExploreTab' as any, { screen: 'ScholarBrowse' })}
+                  accessibilityRole="button"
+                  accessibilityLabel="Explore scholars: Centuries of scholarship"
                 >
                   <Text style={[styles.suggestionTitle, { color: base.gold }]}>Scholars</Text>
                   <Text style={[styles.suggestionSubtitle, { color: base.textDim }]}>Centuries of scholarship</Text>
@@ -220,6 +241,8 @@ export default function HomeScreen() {
                   style={[styles.suggestionCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
                   activeOpacity={0.7}
                   onPress={() => navigation.navigate('ExploreTab' as any, { screen: 'WordStudyBrowse' })}
+                  accessibilityRole="button"
+                  accessibilityLabel="Explore word studies: Meaning in the original languages"
                 >
                   <Text style={[styles.suggestionTitle, { color: base.gold }]}>Word Studies</Text>
                   <Text style={[styles.suggestionSubtitle, { color: base.textDim }]}>Meaning in the original languages</Text>

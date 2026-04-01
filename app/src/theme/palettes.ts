@@ -6,7 +6,7 @@
  * Panel, scholar, and era colors are generated via transforms.ts.
  */
 
-import { base, panels, scholars, eras, categoryColors } from './colors';
+import { base, panels, scholars, eras, categoryColors, categories, severity, families, prophecyCategories, roles, testament, timelineSvg } from './colors';
 import type { PanelColors } from './colors';
 import { transformPanelColors, transformAccentColor } from './transforms';
 
@@ -28,6 +28,8 @@ export interface BaseColors {
   borderLight: string;
   verseNum: string;
   navText: string;
+  danger: string;
+  success: string;
 }
 
 export interface ThemePalette {
@@ -37,6 +39,13 @@ export interface ThemePalette {
   scholars: Record<string, string>;
   eras: Record<string, string>;
   categoryColors: { event: string; book: string; person: string; world: string };
+  categories: Record<string, string>;
+  severity: Record<string, string>;
+  families: Record<string, string>;
+  prophecyCategories: Record<string, string>;
+  roles: Record<string, string>;
+  testament: Record<string, string>;
+  timelineSvg: Record<string, string>;
   statusBarStyle: 'light-content' | 'dark-content';
 }
 
@@ -57,6 +66,8 @@ const sepiaBase: BaseColors = {
   borderLight: '#d8ccb0',
   verseNum: '#8a7a5a',
   navText: '#4a3e2c',
+  danger: '#c04848',
+  success: '#4a8a4a',
 };
 
 const lightBase: BaseColors = {
@@ -74,6 +85,8 @@ const lightBase: BaseColors = {
   borderLight: '#eeeeee',
   verseNum: '#999999',
   navText: '#333333',
+  danger: '#d04040',
+  success: '#388e38',
 };
 
 // ── Palette builder ───────────────────────────────────────────────────
@@ -129,6 +142,13 @@ export function buildPalette(mode: ThemeMode): ThemePalette {
       person: transformAccentColor(categoryColors.person, mode),
       world: transformAccentColor(categoryColors.world, mode),
     },
+    categories: transformRecord(categories as unknown as Record<string, string>, mode),
+    severity: transformRecord(severity as unknown as Record<string, string>, mode),
+    families: transformRecord(families as unknown as Record<string, string>, mode),
+    prophecyCategories: transformRecord(prophecyCategories as unknown as Record<string, string>, mode),
+    roles: transformRecord(roles as unknown as Record<string, string>, mode),
+    testament: transformRecord(testament as unknown as Record<string, string>, mode),
+    timelineSvg: transformRecord(timelineSvg as unknown as Record<string, string>, mode),
     statusBarStyle: mode === 'dark' ? 'light-content' : 'dark-content',
   };
 }

@@ -11,16 +11,8 @@ import { useProphecyChains } from '../hooks/useProphecyChains';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { BadgeChip } from '../components/BadgeChip';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { ProphecyChain, ProphecyChainLink } from '../types';
-
-const CATEGORY_COLORS: Record<string, string> = {
-  messianic: '#e8a070',
-  covenant: '#70b8e8',
-  judgment: '#e07070',
-  restoration: '#70d098',
-  typological: '#c090e0',
-};
 
 const CATEGORY_LABELS: Record<string, string> = {
   messianic: 'Messianic',
@@ -58,7 +50,7 @@ function getRefRange(links: ProphecyChainLink[]): string {
 }
 
 export default function ProphecyBrowseScreen() {
-  const { base } = useTheme();
+  const { base, prophecyCategories } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ProphecyBrowse'>>();
   const { chains, isLoading } = useProphecyChains();
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
@@ -120,7 +112,7 @@ export default function ProphecyBrowseScreen() {
         renderItem={({ item }) => {
           const links = parseLinks(item.links_json);
           const refRange = getRefRange(links);
-          const catColor = CATEGORY_COLORS[item.category] || base.gold;
+          const catColor = prophecyCategories[item.category] || base.gold;
 
           return (
             <TouchableOpacity

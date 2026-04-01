@@ -1,0 +1,306 @@
+/**
+ * OnboardingScreen — 3-page carousel shown on first launch only.
+ *
+ * Page 1: App thesis
+ * Page 2: Chapter reading experience (panel buttons demo)
+ * Page 3: Explore tools overview
+ *
+ * After completing or skipping, marks onboarding done and navigates
+ * to Genesis 1 to start the user's reading journey.
+ */
+
+import React, { useState, useRef, useCallback } from 'react';
+import {
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  Dimensions,
+  StyleSheet,
+  type ViewToken,
+} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { BookOpen, Layers, Map, Clock, Users, Search } from 'lucide-react-native';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
+
+const { width: SCREEN_WIDTH } = Dimensions.get('window');
+
+interface Props {
+  onComplete: () => void;
+}
+
+interface PageData {
+  key: string;
+  title: string;
+  subtitle: string;
+  body: string;
+  renderContent: (base: any) => React.ReactNode;
+}
+
+function ToolIcon({ Icon, label, base }: { Icon: React.ElementType; label: string; base: any }) {
+  return (
+    <View style={styles.toolItem}>
+      <View style={[styles.toolIconBg, { backgroundColor: base.gold + '15', borderColor: base.gold + '30' }]}>
+        <Icon size={22} color={base.gold} />
+      </View>
+      <Text style={[styles.toolLabel, { color: base.textDim }]}>{label}</Text>
+    </View>
+  );
+}
+
+const PAGES: PageData[] = [
+  {
+    key: 'thesis',
+    title: 'Companion Study',
+    subtitle: 'Learn to read it the way\nit was written.',
+    body: 'Every chapter pairs the biblical text with scholarly commentary from 45+ commentators — evangelical, reformed, Jewish, critical, and patristic — placing multiple perspectives side by side.',
+    renderContent: (base) => (
+      <View style={styles.thesisContent}>
+        <BookOpen size={48} color={base.gold} style={{ marginBottom: spacing.lg }} />
+      </View>
+    ),
+  },
+  {
+    key: 'panels',
+    title: 'Study Panels',
+    subtitle: 'Tap any button to explore.',
+    body: 'Each section of Scripture comes with Hebrew word studies, historical context, cross-references, and commentary from scholars across traditions. Everything is one tap away.',
+    renderContent: (base) => (
+      <View style={styles.panelDemo}>
+        {['Hebrew', 'History', 'Cross-Refs', 'MacArthur', 'Calvin', 'NET'].map((label) => (
+          <View
+            key={label}
+            style={[styles.panelPill, { backgroundColor: base.bgElevated, borderColor: base.border }]}
+          >
+            <Text style={[styles.panelPillText, { color: base.textDim }]}>{label}</Text>
+          </View>
+        ))}
+      </View>
+    ),
+  },
+  {
+    key: 'explore',
+    title: 'Explore Tools',
+    subtitle: '8 features no other app offers.',
+    body: 'Genealogy trees, biblical maps, timelines, word studies, prophecy chains, and more — all offline, all free.',
+    renderContent: (base) => (
+      <View style={styles.toolGrid}>
+        <ToolIcon Icon={Users} label="People" base={base} />
+        <ToolIcon Icon={Map} label="Map" base={base} />
+        <ToolIcon Icon={Clock} label="Timeline" base={base} />
+        <ToolIcon Icon={Search} label="Word Study" base={base} />
+        <ToolIcon Icon={Layers} label="Prophecy" base={base} />
+        <ToolIcon Icon={BookOpen} label="Concepts" base={base} />
+      </View>
+    ),
+  },
+];
+
+export default function OnboardingScreen({ onComplete }: Props) {
+  const { base } = useTheme();
+  const [currentPage, setCurrentPage] = useState(0);
+  const flatListRef = useRef<FlatList>(null);
+  const isLastPage = currentPage === PAGES.length - 1;
+
+  const onViewableItemsChanged = useCallback(
+    ({ viewableItems }: { viewableItems: ViewToken[] }) => {
+      if (viewableItems.length > 0 && viewableItems[0].index != null) {
+        setCurrentPage(viewableItems[0].index);
+      }
+    },
+    [],
+  );
+
+  const viewabilityConfig = useRef({ viewAreaCoveragePercentThreshold: 50 }).current;
+
+  const handleNext = () => {
+    if (isLastPage) {
+      onComplete();
+    } else {
+      flatListRef.current?.scrollToIndex({ index: currentPage + 1, animated: true });
+    }
+  };
+
+  const renderPage = ({ item }: { item: PageData }) => (
+    <View style={[styles.page, { width: SCREEN_WIDTH }]}>
+      {item.renderContent(base)}
+      <Text style={[styles.pageTitle, { color: base.gold }]}>{item.title}</Text>
+      <Text style={[styles.pageSubtitle, { color: base.text }]}>{item.subtitle}</Text>
+      <Text style={[styles.pageBody, { color: base.textDim }]}>{item.body}</Text>
+    </View>
+  );
+
+  return (
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
+      {/* Skip button */}
+      <View style={styles.skipRow}>
+        <TouchableOpacity
+          onPress={onComplete}
+          hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}
+          accessibilityLabel="Skip onboarding"
+          accessibilityRole="button"
+        >
+          <Text style={[styles.skipText, { color: base.textMuted }]}>Skip</Text>
+        </TouchableOpacity>
+      </View>
+
+      {/* Carousel */}
+      <FlatList
+        ref={flatListRef}
+        data={PAGES}
+        renderItem={renderPage}
+        keyExtractor={(item) => item.key}
+        horizontal
+        pagingEnabled
+        showsHorizontalScrollIndicator={false}
+        onViewableItemsChanged={onViewableItemsChanged}
+        viewabilityConfig={viewabilityConfig}
+        getItemLayout={(_, index) => ({
+          length: SCREEN_WIDTH,
+          offset: SCREEN_WIDTH * index,
+          index,
+        })}
+      />
+
+      {/* Dots + CTA */}
+      <View style={styles.footer}>
+        <View style={styles.dots}>
+          {PAGES.map((_, i) => (
+            <View
+              key={i}
+              style={[
+                styles.dot,
+                { backgroundColor: i === currentPage ? base.gold : base.textMuted + '40' },
+              ]}
+            />
+          ))}
+        </View>
+
+        <TouchableOpacity
+          onPress={handleNext}
+          style={[styles.ctaButton, { backgroundColor: base.gold }]}
+          accessibilityLabel={isLastPage ? 'Get Started' : 'Next'}
+          accessibilityRole="button"
+        >
+          <Text style={[styles.ctaText, { color: base.bg }]}>
+            {isLastPage ? 'Get Started' : 'Next'}
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  skipRow: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.sm,
+  },
+  skipText: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 14,
+  },
+  page: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: spacing.xl,
+  },
+  pageTitle: {
+    fontFamily: fontFamily.displaySemiBold,
+    fontSize: 24,
+    textAlign: 'center',
+    marginTop: spacing.lg,
+  },
+  pageSubtitle: {
+    fontFamily: fontFamily.display,
+    fontSize: 16,
+    textAlign: 'center',
+    marginTop: spacing.sm,
+    lineHeight: 24,
+  },
+  pageBody: {
+    fontFamily: fontFamily.ui,
+    fontSize: 14,
+    textAlign: 'center',
+    lineHeight: 22,
+    marginTop: spacing.md,
+    paddingHorizontal: spacing.md,
+  },
+  thesisContent: {
+    alignItems: 'center',
+  },
+  panelDemo: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: spacing.xs,
+    marginBottom: spacing.sm,
+  },
+  panelPill: {
+    borderWidth: 1,
+    borderRadius: radii.pill,
+    paddingHorizontal: spacing.sm + 2,
+    paddingVertical: 6,
+  },
+  panelPillText: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 11,
+  },
+  toolGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: spacing.md,
+    marginBottom: spacing.sm,
+  },
+  toolItem: {
+    alignItems: 'center',
+    width: 72,
+  },
+  toolIconBg: {
+    width: 48,
+    height: 48,
+    borderRadius: 12,
+    borderWidth: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: spacing.xs,
+  },
+  toolLabel: {
+    fontFamily: fontFamily.ui,
+    fontSize: 10,
+    textAlign: 'center',
+  },
+  footer: {
+    alignItems: 'center',
+    paddingBottom: spacing.xl,
+    paddingHorizontal: spacing.xl,
+  },
+  dots: {
+    flexDirection: 'row',
+    gap: spacing.xs,
+    marginBottom: spacing.lg,
+  },
+  dot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+  },
+  ctaButton: {
+    width: '100%',
+    height: 48,
+    borderRadius: radii.lg,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  ctaText: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 16,
+  },
+});

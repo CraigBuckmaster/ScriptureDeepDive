@@ -351,6 +351,37 @@ const MIGRATIONS: Migration[] = [
       ])}');
     `,
   },
+  {
+    version: 7,
+    description: 'Auth profiles — links Supabase UID to local user data',
+    sql: `
+      CREATE TABLE IF NOT EXISTS auth_profiles (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        supabase_uid TEXT NOT NULL UNIQUE,
+        email TEXT,
+        display_name TEXT,
+        avatar_url TEXT,
+        provider TEXT NOT NULL,
+        created_at TEXT DEFAULT (datetime('now')),
+        last_sign_in TEXT DEFAULT (datetime('now'))
+      );
+      CREATE INDEX IF NOT EXISTS idx_auth_profiles_uid ON auth_profiles(supabase_uid);
+    `,
+  },
+  {
+    version: 8,
+    description: 'Analytics events — local event logging for usage insights',
+    sql: `
+      CREATE TABLE IF NOT EXISTS analytics_events (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        event_name TEXT NOT NULL,
+        params_json TEXT,
+        created_at TEXT DEFAULT (datetime('now'))
+      );
+      CREATE INDEX IF NOT EXISTS idx_analytics_event_name ON analytics_events(event_name);
+      CREATE INDEX IF NOT EXISTS idx_analytics_created_at ON analytics_events(created_at);
+    `,
+  },
 ];
 
 /**

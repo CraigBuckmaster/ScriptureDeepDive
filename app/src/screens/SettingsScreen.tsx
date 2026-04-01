@@ -542,7 +542,7 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.sm + 2,
   },
   dangerText: {
-    color: '#e05a6a',
+    color: base.danger,
     fontFamily: fontFamily.uiMedium,
     fontSize: 14,
   },

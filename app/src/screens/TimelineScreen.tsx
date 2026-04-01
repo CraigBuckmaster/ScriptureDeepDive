@@ -20,7 +20,7 @@ import {
   ERA_RANGES, TOTAL_WIDTH, AXIS_Y, ERA_BAR_Y, ERA_BAR_H,
   type PositionedEvent,
 } from '../utils/timelineLayout';
-import { base, useTheme, spacing, radii, eraNames, fontFamily } from '../theme';
+import { useTheme, spacing, radii, eraNames, fontFamily } from '../theme';
 import type { TimelineEntry } from '../types';
 
 interface CategoryFilters {
@@ -39,7 +39,7 @@ function filterReducer(state: CategoryFilters, action: FilterAction): CategoryFi
 const INITIAL_FILTERS: CategoryFilters = { event: true, book: true, person: true, world: true };
 
 export default function TimelineScreen() {
-  const { base, eras, categoryColors } = useTheme();
+  const { base, eras, categoryColors, timelineSvg } = useTheme();
   useLandscapeUnlock();
   const route = useRoute<ScreenRouteProp<'Explore', 'Timeline'>>();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'Timeline'>>();
@@ -159,7 +159,7 @@ export default function TimelineScreen() {
                 <Rect x={x1} y={ERA_BAR_Y} width={x2 - x1} height={ERA_BAR_H}
                   fill={eras[era] ?? base.bgSurface} opacity={0.75} />
                 <SvgText x={(x1 + x2) / 2} y={ERA_BAR_Y + 26} textAnchor="middle"
-                  fontSize={11} fill="#f0e8d8" fontFamily="Cinzel_400Regular">
+                  fontSize={11} fill={base.text} fontFamily="Cinzel_400Regular">
                   {(eraNames[era] ?? era).toUpperCase()}
                 </SvgText>
               </G>
@@ -167,13 +167,13 @@ export default function TimelineScreen() {
           })}
 
           {/* Axis line */}
-          <Line x1={0} y1={AXIS_Y} x2={TOTAL_WIDTH} y2={AXIS_Y} stroke="#3a2808" strokeWidth={1} />
+          <Line x1={0} y1={AXIS_Y} x2={TOTAL_WIDTH} y2={AXIS_Y} stroke={timelineSvg.axis} strokeWidth={1} />
 
           {/* Tick marks */}
           {ticks.map((tick, i) => (
             <G key={i}>
               <Line x1={tick.x} y1={AXIS_Y - (tick.major ? 7 : 4)} x2={tick.x} y2={AXIS_Y + (tick.major ? 7 : 4)}
-                stroke="#5a4a28" strokeWidth={tick.major ? 1.5 : 0.5} />
+                stroke={timelineSvg.tick} strokeWidth={tick.major ? 1.5 : 0.5} />
               {tick.major && (
                 <SvgText x={tick.x} y={AXIS_Y + 20} textAnchor="middle" fontSize={8} fill={base.textMuted}
                   fontFamily="SourceSans3_400Regular">

@@ -88,7 +88,12 @@ export function ButtonRow({ panels, activePanel, onToggle, isChapterLevel, categ
         categorizedGroups.map((group) => (
           <View key={group.label || '_uncategorized'} style={styles.categoryGroup}>
             {group.label.length > 0 && (
-              <Text style={[styles.categoryLabel, { color: base.textMuted }]}>{group.label}</Text>
+              <Text
+                style={[styles.categoryLabel, { color: base.textMuted }]}
+                accessibilityRole="header"
+              >
+                {group.label}
+              </Text>
             )}
             <View style={styles.categoryButtons}>
               {group.types.map((type) => (

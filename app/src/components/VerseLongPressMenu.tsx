@@ -77,33 +77,57 @@ export function VerseLongPressMenu({
           <TouchableWithoutFeedback>
             <View style={[styles.sheet, { backgroundColor: base.bgElevated }]}>
               {/* Verse preview */}
-              <Text style={[styles.refLabel, { color: base.gold }]}>{verseRef}</Text>
+              <Text style={[styles.refLabel, { color: base.gold }]} accessibilityRole="header">{verseRef}</Text>
               <Text style={[styles.preview, { color: base.textDim }]} numberOfLines={3}>{verseText}</Text>
 
               <View style={[styles.divider, { backgroundColor: base.border }]} />
 
               {/* Actions */}
-              <TouchableOpacity style={styles.action} onPress={handleCopy} activeOpacity={0.7}>
+              <TouchableOpacity
+                style={styles.action}
+                onPress={handleCopy}
+                activeOpacity={0.7}
+                accessibilityRole="button"
+                accessibilityLabel={copyFeedback ? 'Copied to clipboard' : 'Copy verse to clipboard'}
+              >
                 <Copy size={18} color={copyFeedback ? base.gold : base.textDim} />
                 <Text style={[styles.actionText, { color: base.text }, copyFeedback && { color: base.gold }]}>
                   {copyFeedback ? 'Copied!' : 'Copy'}
                 </Text>
               </TouchableOpacity>
 
-              <TouchableOpacity style={styles.action} onPress={handleShare} activeOpacity={0.7}>
+              <TouchableOpacity
+                style={styles.action}
+                onPress={handleShare}
+                activeOpacity={0.7}
+                accessibilityRole="button"
+                accessibilityLabel="Share verse"
+              >
                 <Share2 size={18} color={base.textDim} />
                 <Text style={[styles.actionText, { color: base.text }]}>Share</Text>
               </TouchableOpacity>
 
               {onHighlight && (
-                <TouchableOpacity style={styles.action} onPress={() => { onClose(); onHighlight(); }} activeOpacity={0.7}>
+                <TouchableOpacity
+                  style={styles.action}
+                  onPress={() => { onClose(); onHighlight(); }}
+                  activeOpacity={0.7}
+                  accessibilityRole="button"
+                  accessibilityLabel={highlightColor ? 'Change verse highlight color' : 'Highlight verse'}
+                >
                   <Highlighter size={18} color={highlightColor ? highlightColor : base.textDim} />
                   <Text style={styles.actionText}>{highlightColor ? 'Change Highlight' : 'Highlight'}</Text>
                 </TouchableOpacity>
               )}
 
               {onAddNote && (
-                <TouchableOpacity style={styles.action} onPress={handleNote} activeOpacity={0.7}>
+                <TouchableOpacity
+                  style={styles.action}
+                  onPress={handleNote}
+                  activeOpacity={0.7}
+                  accessibilityRole="button"
+                  accessibilityLabel="Add a note to this verse"
+                >
                   <BookOpen size={18} color={base.textDim} />
                   <Text style={[styles.actionText, { color: base.text }]}>Add Note</Text>
                 </TouchableOpacity>
