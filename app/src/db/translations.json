@@ -1,22 +1,10 @@
 [
   {
     "id": "asv",
-    "bundled": false,
-    "file": "asv.db",
-    "sizeBytes": 8458240
-  },
-  {
-    "id": "esv",
-    "bundled": false,
-    "file": "esv.db",
-    "sizeBytes": 7917568
-  },
-  {
-    "id": "kjv",
     "bundled": true
   },
   {
-    "id": "niv",
+    "id": "kjv",
     "bundled": true
   }
 ]

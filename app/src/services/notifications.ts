@@ -32,7 +32,7 @@ export async function scheduleDailyVerse(hour: number, minute: number): Promise<
   await Notifications.cancelAllScheduledNotificationsAsync();
   try {
     const verse = await getDb().getFirstAsync<{ book_id: string; chapter_num: number; verse_num: number; text: string }>(
-      "SELECT * FROM verses WHERE translation='niv' ORDER BY RANDOM() LIMIT 1"
+      "SELECT * FROM verses WHERE translation='kjv' ORDER BY RANDOM() LIMIT 1"
     );
     if (!verse) return;
     const body = verse.text.length > 150 ? verse.text.slice(0, 147) + '...' : verse.text;

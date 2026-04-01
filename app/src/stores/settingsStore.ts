@@ -40,7 +40,7 @@ interface SettingsState {
 }
 
 export const useSettingsStore = create<SettingsState>((set) => ({
-  translation: 'niv',
+  translation: 'kjv',
   fontSize: 16,
   vhlEnabled: true,
   bookListMode: 'canonical',
@@ -89,7 +89,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
       const th = await getPreference('theme');
 
       set({
-        translation: (t && TRANSLATION_MAP.has(t) ? t : 'niv'),
+        translation: (t && TRANSLATION_MAP.has(t) ? t : 'kjv'),
         fontSize: f ? Math.min(24, Math.max(12, parseInt(f, 10) || 16)) : 16,
         vhlEnabled: v !== '0',
         bookListMode: blm === 'canonical' ? 'canonical' : 'thematic',

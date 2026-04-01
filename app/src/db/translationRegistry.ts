@@ -24,9 +24,7 @@ export interface TranslationInfo {
 
 /** Display metadata keyed by translation ID. */
 const LABELS: Record<string, { label: string; fullName: string }> = {
-  niv: { label: 'NIV', fullName: 'New International Version' },
   kjv: { label: 'KJV', fullName: 'King James Version' },
-  esv: { label: 'ESV', fullName: 'English Standard Version' },
   asv: { label: 'ASV', fullName: 'American Standard Version' },
 };
 

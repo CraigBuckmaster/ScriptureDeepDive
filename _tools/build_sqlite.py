@@ -32,7 +32,13 @@ VERSION_FILE = ROOT / '_tools' / 'db_version.json'
 # Translations bundled directly into scripture.db (shipped with the app binary).
 # All other translations in content/verses/ are built as separate downloadable
 # SQLite files in app/assets/translations/.
-BUNDLED_TRANSLATIONS = {'niv', 'kjv'}
+# Translations exposed in the app. Only these appear in the manifest and UI.
+# Verse data for unlicensed translations stays in content/verses/ but is not
+# built into any DB or shown to users until added here.
+AVAILABLE_TRANSLATIONS = {'kjv', 'asv'}
+
+# Of those, which are baked into scripture.db (the rest are separate .db files).
+BUNDLED_TRANSLATIONS = {'kjv', 'asv'}
 
 # Read from db_version.json — the single source of truth for the DB version.
 # Auto-incremented on every build by bump_db_version(). Triggers a full DB
@@ -535,8 +541,7 @@ def build_supplemental_translations() -> list[dict]:
     Returns a list of {id, file, size_bytes} for the manifest.
     """
     TRANSLATIONS_DIR.mkdir(parents=True, exist_ok=True)
-    all_translations = sorted(d.name for d in VERSES_DIR.iterdir() if d.is_dir())
-    supplemental = [t for t in all_translations if t not in BUNDLED_TRANSLATIONS]
+    supplemental = sorted(AVAILABLE_TRANSLATIONS - BUNDLED_TRANSLATIONS)
     built = []
 
     for trans_id in supplemental:
@@ -1197,10 +1202,9 @@ def main():
     print(f"\n--- Supplemental Translations ---")
     supplemental = build_supplemental_translations()
 
-    # Write translations manifest
-    all_translations = sorted(d.name for d in VERSES_DIR.iterdir() if d.is_dir())
+    # Write translations manifest (only AVAILABLE_TRANSLATIONS)
     manifest = []
-    for t in all_translations:
+    for t in sorted(AVAILABLE_TRANSLATIONS):
         is_bundled = t in BUNDLED_TRANSLATIONS
         entry = {'id': t, 'bundled': is_bundled}
         if not is_bundled:

@@ -61,7 +61,7 @@ export async function getChapterPanelByType(
 }
 
 export async function getVerses(
-  bookId: string, ch: number, translation: string = 'niv'
+  bookId: string, ch: number, translation: string = 'kjv'
 ): Promise<Verse[]> {
   const db = await getVerseDb(translation);
   return db.getAllAsync<Verse>(
@@ -71,7 +71,7 @@ export async function getVerses(
 }
 
 export async function getVerse(
-  bookId: string, ch: number, verse: number, translation: string = 'niv'
+  bookId: string, ch: number, verse: number, translation: string = 'kjv'
 ): Promise<Verse | null> {
   const db = await getVerseDb(translation);
   return db.getFirstAsync<Verse>(
@@ -107,7 +107,7 @@ export async function getConcordanceResults(strongs: string): Promise<Concordanc
      JOIN verses v ON v.book_id = iw.book_id
        AND v.chapter_num = iw.chapter_num
        AND v.verse_num = iw.verse_num
-       AND v.translation = 'niv'
+       AND v.translation = 'kjv'
      JOIN books b ON b.id = iw.book_id
      WHERE iw.strongs = ?
      GROUP BY iw.book_id, iw.chapter_num, iw.verse_num

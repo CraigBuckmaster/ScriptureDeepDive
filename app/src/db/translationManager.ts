@@ -55,11 +55,12 @@ export async function getInstalledSize(translationId: string): Promise<number> {
   return fileInfo.exists ? (fileInfo.size ?? 0) : 0;
 }
 
-// Asset map for bundled translation DB files.
+// Asset map for downloadable translation DB files.
 // require() calls must be static for Metro bundler, so we enumerate them here.
+// Add entries here when new licensed translations are ready.
 const TRANSLATION_ASSETS: Record<string, number> = {
-  esv: require('../../assets/translations/esv.db'),
-  asv: require('../../assets/translations/asv.db'),
+  // Future: esv: require('../../assets/translations/esv.db'),
+  // Future: niv: require('../../assets/translations/niv.db'),
 };
 
 /**
