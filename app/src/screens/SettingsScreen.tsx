@@ -25,15 +25,22 @@ import type { ScreenNavProp } from '../navigation/types';
 import { Download } from 'lucide-react-native';
 import { useSettingsStore } from '../stores';
 import { ScreenHeader } from '../components/ScreenHeader';
+import { CompactDropdown, type DropdownOption } from '../components/CompactDropdown';
 import { NotificationSettings } from '../components/NotificationSettings';
 import { ThemePicker } from '../components/ThemePicker';
 import { getContentStats, type ContentStats } from '../db/content';
 import { getUserDb } from '../db/userDatabase';
 import { exportStudyData, ExportError } from '../utils/exportData';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
+import { base, useTheme, spacing, fontFamily } from '../theme';
 import { logger } from '../utils/logger';
 
 const APP_VERSION = require('../../app.json').expo.version ?? '1.0.0';
+
+const TRANSLATION_OPTIONS: DropdownOption[] = [
+  { key: 'niv', label: 'NIV' },
+  { key: 'esv', label: 'ESV' },
+  { key: 'kjv', label: 'KJV' },
+];
 
 /* ── About copy ─────────────────────────────────────────────────── */
 
@@ -125,28 +132,11 @@ export default function SettingsScreen() {
 
         {/* Translation */}
         <Row label="Default Translation" base={base}>
-          <View style={[styles.pillToggle, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
-            {(['niv', 'esv'] as const).map((t) => (
-              <TouchableOpacity
-                key={t}
-                onPress={() => setTranslation(t)}
-                style={[
-                  styles.pillOption,
-                  translation === t && [styles.pillOptionActive, { backgroundColor: base.gold + '30' }],
-                ]}
-              >
-                <Text
-                  style={[
-                    styles.pillLabel,
-                    { color: base.textMuted },
-                    translation === t && { color: base.gold },
-                  ]}
-                >
-                  {t.toUpperCase()}
-                </Text>
-              </TouchableOpacity>
-            ))}
-          </View>
+          <CompactDropdown
+            value={translation}
+            options={TRANSLATION_OPTIONS}
+            onSelect={setTranslation}
+          />
         </Row>
 
         {/* Appearance */}
@@ -373,26 +363,6 @@ const styles = StyleSheet.create({
   rowLabel: {
     fontFamily: fontFamily.uiMedium,
     fontSize: 14,
-  },
-
-  /* Translation pill toggle */
-  pillToggle: {
-    flexDirection: 'row',
-    borderRadius: radii.pill,
-    borderWidth: 1,
-  },
-  pillOption: {
-    paddingHorizontal: 16,
-    paddingVertical: 6,
-    borderRadius: radii.pill,
-  },
-  pillOptionActive: {
-  },
-  pillLabel: {
-    fontFamily: fontFamily.uiSemiBold,
-    fontSize: 12,
-  },
-  pillLabelActive: {
   },
 
   /* Font size controls */
