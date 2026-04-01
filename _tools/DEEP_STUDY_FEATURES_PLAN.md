@@ -2333,15 +2333,7 @@ Composite panels (`CompositeContextPanel`, `CompositeConnectionsPanel`, `Textual
 
 ### Content enrichment dependency
 
-The 3 empty categories require separate content enrichment sessions (standard enrichment script pattern):
-
-| Category | Scope | Effort |
-|----------|-------|--------|
-| Echoes & Allusions | ~50 high-priority NT→OT allusions (Romans 9-11, Hebrews, Revelation, Matthew fulfillment formulas) | 1-2 sessions |
-| ANE Parallels | Genesis 1-11 + Exodus 1-20 parallels (Enuma Elish, Atrahasis, Code of Hammurabi, etc.) | 1 session |
-| Chiasm Structures | ~20 widely-accepted chiasms (Genesis 1, 6-9, Daniel 2-7, Psalm 23, major Gospel passages) | 1 session |
-
-These are independent of the Content Library code — they follow the standard enrichment script pattern. The library picks them up automatically on next `build_sqlite.py` run.
+Full enrichment plan with copyright guardrails: **`_tools/CONTENT_LIBRARY_ENRICHMENT_PLAN.md`** (Phase 24E). Initial seed data (16 chiasms, 19 ANE parallels, 26 echoes) is already committed. Phase 24E expands all 5 categories from 128 to ~270 entries across 9 batches in ~5 enrichment sessions (R1–R5).
 
 ### Effort: ~2 sessions
 
@@ -2385,9 +2377,15 @@ PART 3 — Enhancement Features (Sessions L-O)
 
 PART 4 — Content Discovery (Sessions P-Q)
   Phase 24 (Content Library)      — Session P (pipeline + screen) + Session Q (deep-link + polish)
+  Phase 24E (Content Enrichment)  — Sessions R1-R5 (see _tools/CONTENT_LIBRARY_ENRICHMENT_PLAN.md)
+    R1: Batches 1-2 (chiasms: Psalms + OT + NT)
+    R2: Batches 3-4 (ANE: wisdom lit + law/prophecy/Daniel)
+    R3: Batches 5-6 (echoes: Isaiah/Passion + Exodus/Luke-Acts)
+    R4: Batches 7-8 (manuscripts + discourse: 2 Cor/Phil/Col/1 Pet)
+    R5: Batch 9 (discourse: 1 Thess/James/1 John/Titus)
 ```
 
-**Total: ~17 sessions across 24 phases.**
+**Total: ~22 sessions across 24 phases + enrichment.**
 
 ---
 
@@ -2402,6 +2400,7 @@ feat(concordance): Phase 21 — Strong's concordance search
 feat(content): Phase 22 — discourse analysis for Galatians, Ephesians, Hebrews, 1 Cor
 feat(plans): Phase 23 — 10 curated study plans seeded into reading_plans
 feat(explore): Phase 24 — Content Library screen with deep-link panel navigation
+feat(content): Phase 24E Batch N — [see _tools/CONTENT_LIBRARY_ENRICHMENT_PLAN.md for full list]
 ```
 
 ---
