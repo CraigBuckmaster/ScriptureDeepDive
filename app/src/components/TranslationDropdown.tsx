@@ -11,7 +11,8 @@ import { CompactDropdown, type DropdownOption } from './CompactDropdown';
 const TRANSLATION_OPTIONS: DropdownOption[] = [
   { key: 'niv', label: 'NIV' },
   { key: 'esv', label: 'ESV' },
-  // Future: { key: 'kjv', label: 'KJV' },
+  { key: 'kjv', label: 'KJV' },
+  { key: 'asv', label: 'ASV' },
 ];
 
 interface Props {
