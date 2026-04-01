@@ -214,6 +214,26 @@ def main():
               f"{len(bad_resp)} passages with empty responses")
     print(f"  difficult_passages: {dp_count or 0}")
 
+    # Content Library
+    cl_count = q1(cur, "SELECT COUNT(*) FROM content_library")
+    check("content_library table exists", cl_count is not None, "table missing")
+    if cl_count:
+        # Category counts
+        for cat in ('manuscripts', 'discourse', 'echoes', 'ane', 'chiasms'):
+            cat_count = q1(cur, "SELECT COUNT(*) FROM content_library WHERE category=?", (cat,))
+            print(f"  content_library[{cat}]: {cat_count or 0}")
+        # All entries have title
+        empty_title = q1(cur, "SELECT COUNT(*) FROM content_library WHERE title IS NULL OR title = ''")
+        check("All content_library entries have title", empty_title == 0,
+              f"{empty_title} entries missing title")
+        # All entries reference valid books
+        orphan_cl = q1(cur,
+            "SELECT COUNT(*) FROM content_library cl "
+            "LEFT JOIN books b ON b.id = cl.book_id WHERE b.id IS NULL")
+        check("All content_library entries reference valid books", orphan_cl == 0,
+              f"{orphan_cl} orphaned")
+    print(f"  content_library: {cl_count or 0}")
+
     # =========================================================
     # 2. REFERENTIAL INTEGRITY
     # =========================================================

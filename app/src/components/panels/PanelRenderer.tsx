@@ -45,12 +45,15 @@ interface Props {
   onPersonPress?: (name: string) => void;
   onPlacePress?: (name: string) => void;
   onEventPress?: (name: string) => void;
+  /** Override the initial tab for composite panels (deep-link). */
+  defaultTab?: string;
 }
 
 export function PanelRenderer({
   panelType, contentJson,
   onRefPress, onWordStudyPress, onScholarPress,
   onPersonPress, onPlacePress, onEventPress,
+  defaultTab,
 }: Props) {
   const { base } = useTheme();
 
@@ -102,14 +105,14 @@ export function PanelRenderer({
     case 'hist':
       // Composite detection: object with historical/context keys → tabbed panel
       if (data && typeof data === 'object' && !Array.isArray(data) && (data.historical || data.context)) {
-        return <CompositeContextPanel data={data} onRefPress={onRefPress} />;
+        return <CompositeContextPanel data={data} onRefPress={onRefPress} defaultTab={defaultTab} />;
       }
       // Legacy: plain string → single-view
       return <HistoricalContextPanel text={typeof data === 'string' ? data : JSON.stringify(data)} onRefPress={onRefPress} />;
     case 'cross':
       // Composite detection: object with refs key → tabbed panel
       if (data && typeof data === 'object' && !Array.isArray(data) && data.refs) {
-        return <CompositeConnectionsPanel data={data} onRefPress={onRefPress} />;
+        return <CompositeConnectionsPanel data={data} onRefPress={onRefPress} defaultTab={defaultTab} />;
       }
       // Legacy: plain array → single-view
       return <CrossRefPanel entries={data} onRefPress={onRefPress} />;
@@ -121,7 +124,7 @@ export function PanelRenderer({
 
     // ── Chapter-level panels ──
     case 'lit':
-      return <LiteraryStructurePanel data={data} />;
+      return <LiteraryStructurePanel data={data} defaultTab={defaultTab} />;
     case 'hebtext':
       return <HebrewReadingPanel entries={Array.isArray(data) ? data : []} />;
     case 'themes':
@@ -140,7 +143,7 @@ export function PanelRenderer({
     case 'textual':
       // Shape detection: array → legacy. {notes, stories} → composite with Manuscript Stories tab.
       if (data && !Array.isArray(data) && data.notes !== undefined) {
-        return <CompositeTextualPanel data={data} />;
+        return <CompositeTextualPanel data={data} defaultTab={defaultTab} />;
       }
       return <TextualPanel entries={Array.isArray(data) ? data : []} />;
     case 'debate':

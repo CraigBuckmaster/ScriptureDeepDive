@@ -21,11 +21,14 @@ interface Props {
   onWordStudyPress?: (word: string) => void;
   onScholarPress?: (scholarId: string) => void;
   onPersonPress?: (name: string) => void;
+  /** Override the initial tab for composite panels (deep-link). */
+  defaultTab?: string;
 }
 
 export function ScholarlyBlock({
   chapterPanels, activePanel, onToggle, onClose,
   onRefPress, onWordStudyPress, onScholarPress, onPersonPress,
+  defaultTab,
 }: Props) {
   const { base } = useTheme();
 
@@ -64,6 +67,11 @@ export function ScholarlyBlock({
           onWordStudyPress={onWordStudyPress}
           onScholarPress={onScholarPress}
           onPersonPress={onPersonPress}
+          defaultTab={
+            defaultTab && activeChapterPanel.panel_type === activePanel
+              ? defaultTab
+              : undefined
+          }
         />
       )}
     </View>

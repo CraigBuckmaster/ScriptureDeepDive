@@ -8,9 +8,9 @@
  */
 
 import React, { useCallback, useMemo, useRef, useEffect, useState } from 'react';
-import { View, ScrollView, LayoutAnimation, Platform, UIManager, StyleSheet, type NativeSyntheticEvent, type NativeScrollEvent } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, LayoutAnimation, Platform, UIManager, StyleSheet, type NativeSyntheticEvent, type NativeScrollEvent } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
+import type { ScreenNavProp, ScreenRouteProp, OpenPanelParam } from '../navigation/types';
 import type { Book, CoachingTip } from '../types';
 
 import { useChapterData } from '../hooks/useChapterData';
@@ -39,7 +39,7 @@ import { InterlinearSheet } from '../components/InterlinearSheet';
 import { TTSControls } from '../components/TTSControls';
 import { useTTS } from '../hooks/useTTS';
 
-import { base, useTheme, spacing } from '../theme';
+import { base, useTheme, spacing, radii, fontFamily } from '../theme';
 
 // Enable LayoutAnimation on Android
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
@@ -50,7 +50,7 @@ export default function ChapterScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Read', 'Chapter'>>();
   const route = useRoute<ScreenRouteProp<'Read', 'Chapter'>>();
-  const { bookId, chapterNum } = route.params ?? {};
+  const { bookId, chapterNum, openPanel } = route.params ?? {};
 
   const fontSize = useSettingsStore((s) => s.fontSize);
   const translation = useSettingsStore((s) => s.translation);
@@ -139,11 +139,15 @@ export default function ChapterScreen() {
   }, [bookId, chapterNum]);
   useEffect(() => { loadHighlights(); }, [loadHighlights]);
 
+  // Breadcrumb state — show when openPanel is present, hide on chapter swipe
+  const [showBreadcrumb, setShowBreadcrumb] = useState(!!openPanel);
+
   // Scroll to top on chapter change + reset progress + stop TTS
   useEffect(() => {
     scrollRef.current?.scrollTo({ y: 0, animated: false });
     clearActivePanel();
     setScrollProgress(0);
+    setShowBreadcrumb(false);
     tts.stop();
     setTtsActive(false);
   }, [bookId, chapterNum]);
@@ -195,6 +199,29 @@ export default function ChapterScreen() {
     [setActivePanel]
   );
 
+  // Auto-open panel from deep-link (Content Library)
+  const [openPanelApplied, setOpenPanelApplied] = useState(false);
+  useEffect(() => {
+    if (!openPanel || openPanelApplied || isLoading || !chapter) return;
+    if (openPanel.sectionNum != null) {
+      const sec = sections.find((s) => s.section_num === openPanel.sectionNum);
+      if (sec) {
+        handleSectionPanelToggle(sec.id, openPanel.panelType);
+      }
+    } else {
+      handleChapterPanelToggle(openPanel.panelType);
+      setTimeout(() => {
+        scrollRef.current?.scrollToEnd({ animated: true });
+      }, 300);
+    }
+    setOpenPanelApplied(true);
+  }, [openPanel, openPanelApplied, isLoading, chapter, sections, handleSectionPanelToggle, handleChapterPanelToggle]);
+
+  // Reset openPanel applied state on chapter change
+  useEffect(() => {
+    setOpenPanelApplied(false);
+  }, [bookId, chapterNum]);
+
   const activeSectionPanelType =
     activePanel && activePanel.sectionId !== '__chapter__'
       ? activePanel
@@ -245,6 +272,17 @@ export default function ChapterScreen() {
         translation={translation}
         onTranslationChange={setTranslation}
       />
+
+      {/* Breadcrumb pill — visible when navigated from Content Library */}
+      {showBreadcrumb && openPanel && (
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          activeOpacity={0.7}
+          style={[styles.breadcrumb, { backgroundColor: base.gold + '18', borderColor: base.gold + '40' }]}
+        >
+          <Text style={[styles.breadcrumbText, { color: base.gold }]}>← Content Library</Text>
+        </TouchableOpacity>
+      )}
 
       {/* Reading progress bar */}
       <View style={[styles.progressTrack, { backgroundColor: base.border }]}>
@@ -334,6 +372,11 @@ export default function ChapterScreen() {
                   onRefPress={(ref) => {
                     navigation.push('Chapter', { bookId: ref.bookId, chapterNum: ref.chapter });
                   }}
+                  defaultTab={
+                    openPanel?.tabKey && openPanel.panelType === panel.panel_type
+                      ? openPanel.tabKey
+                      : undefined
+                  }
                 />
               )}
             />
@@ -366,6 +409,11 @@ export default function ChapterScreen() {
           onRefPress={(ref) => {
             navigation.push('Chapter', { bookId: ref.bookId, chapterNum: ref.chapter });
           }}
+          defaultTab={
+            openPanel && !openPanel.sectionNum && openPanel.tabKey
+              ? openPanel.tabKey
+              : undefined
+          }
         />
       </ScrollView>
 
@@ -468,6 +516,19 @@ export default function ChapterScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  breadcrumb: {
+    alignSelf: 'flex-start',
+    marginLeft: spacing.md,
+    marginVertical: spacing.xs,
+    borderWidth: 1,
+    borderRadius: radii.pill,
+    paddingHorizontal: spacing.sm,
+    paddingVertical: 3,
+  },
+  breadcrumbText: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 11,
   },
   progressTrack: {
     height: 2,

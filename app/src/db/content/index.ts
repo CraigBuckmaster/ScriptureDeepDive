@@ -31,3 +31,6 @@ export {
 export { searchVerses, searchPeople } from './search';
 export { getContentStats } from './stats';
 export type { ContentStats } from './stats';
+export {
+  getContentLibraryCounts, getContentLibrary, searchContentLibrary,
+} from './contentLibrary';

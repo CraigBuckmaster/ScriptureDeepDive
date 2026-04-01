@@ -35,15 +35,18 @@ export interface CompositeTxData {
 
 interface CompositeProps {
   data: CompositeTxData;
+  defaultTab?: string;
 }
 
-export function CompositeTextualPanel({ data }: CompositeProps) {
+export function CompositeTextualPanel({ data, defaultTab }: CompositeProps) {
   const { base } = useTheme();
   const hasNotes = data.notes && data.notes.length > 0;
   const hasStories = data.stories && data.stories.length > 0;
   const showTabs = hasNotes && hasStories;
 
-  const [activeTab, setActiveTab] = useState<'notes' | 'stories'>('notes');
+  const [activeTab, setActiveTab] = useState<'notes' | 'stories'>(
+    () => (defaultTab === 'stories' && hasStories) ? 'stories' : 'notes'
+  );
 
   if (!showTabs) {
     // Only one type of data — render without tab bar

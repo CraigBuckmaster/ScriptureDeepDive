@@ -63,6 +63,21 @@ export interface ChapterPanel {
   content_json: string;
 }
 
+export interface ContentLibraryEntry {
+  id: number;
+  category: string;
+  title: string;
+  preview: string | null;
+  book_id: string;
+  book_name: string;
+  chapter_num: number;
+  section_num: number | null;
+  panel_type: string;
+  tab_key: string | null;
+  testament: 'ot' | 'nt';
+  sort_order: number;
+}
+
 export interface Verse {
   id: number;
   book_id: string;

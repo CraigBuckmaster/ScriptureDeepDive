@@ -73,6 +73,11 @@ const GRID_FEATURES: Feature[] = [
     subtitle: 'Every occurrence of a word in Scripture',
     screen: 'Concordance',
   },
+  {
+    title: 'Content Library',
+    subtitle: 'Browse manuscripts, discourse, and more',
+    screen: 'ContentLibrary',
+  },
 ];
 
 export default function ExploreMenuScreen() {
