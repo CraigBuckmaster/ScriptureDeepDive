@@ -442,7 +442,48 @@
         "type": "Type→Antitype",
         "text": "Paul’s typological reading of the wilderness narrative as a warning to the Corinthian church employs the same hermeneutical strategy: Israel’s past is a type of the church’s present danger."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Jesus, as the faithful Son over God's household, surpasses Moses who was faithful as a servant — therefore do not harden your hearts as Israel did, lest you fall away from the living God.",
+      "nodes": [
+        {
+          "id": "heb3-1",
+          "type": "thesis",
+          "verse_range": "3:1-6",
+          "text": "Moses comparison: Moses was faithful in God's house as a servant (θεράπων) — a testimony to things that would be spoken later. Christ is faithful over God's house as a Son (υἱός). The distinction: a servant in the household vs. the Son who is over it. We are his house — if we hold firm.",
+          "children": [
+            {
+              "id": "heb3-1a",
+              "type": "contrast",
+              "verse_range": "3:5-6",
+              "text": "Moses' faithfulness pointed forward — it was prophetic testimony. Christ's faithfulness is the fulfillment. The honor differential: the builder of a house has more honor than the house itself; Christ built it, Moses was part of it."
+            }
+          ]
+        },
+        {
+          "id": "heb3-2",
+          "type": "application",
+          "verse_range": "3:7-19",
+          "marker": "Therefore (Διό)",
+          "text": "Second warning passage — extended midrash on Psalm 95:7-11 ('Today, if you hear his voice, do not harden your hearts as in the rebellion, on the day of testing in the wilderness'). The wilderness generation heard and hardened — they tested God for 40 years, saw his works, and still went astray. God swore in his wrath: 'They shall not enter my rest.'",
+          "children": [
+            {
+              "id": "heb3-2a",
+              "type": "application",
+              "verse_range": "3:12-14",
+              "text": "Take care, brothers — see to it that none of you has an evil, unbelieving heart leading to apostasy from the living God. Exhort one another every day, as long as it is called 'today,' so that none is hardened by sin's deceitfulness. We have become partners of Christ if we hold firmly to the beginning of our assurance to the end."
+            },
+            {
+              "id": "heb3-2b",
+              "type": "conclusion",
+              "verse_range": "3:18-19",
+              "text": "Who were those who rebelled? Those who heard and yet rebelled. And to whom did God swear that they would not enter his rest, if not to those who were disobedient? They were unable to enter because of unbelief (ἀπιστίαν). The three-term equation: disobedience = rebellion = unbelief. Unbelief is active, not passive."
+            }
+          ]
+        }
+      ],
+      "note": "Hebrews 3 develops the Moses/Christ comparison to make an urgent pastoral application. The wilderness narrative in Psalm 95 is treated as directly relevant to the letter's recipients — 'Today' is still open. The rhetorical move is typological warning: the first generation's failure is a pattern that can be repeated. Community accountability ('exhort one another daily') is the pastoral remedy."
+    }
   },
   "vhl_groups": []
 }

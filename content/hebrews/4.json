@@ -415,7 +415,61 @@
         "type": "Connection",
         "text": "The high priest who lives to intercede and who appears in heaven on our behalf develops the compassionate-mediator theme introduced here in vv. 14–16."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "God's rest remains available — the gospel promise holds for those who believe — and the word of God, piercing all pretense, leaves every soul exposed before the high priest who has passed through the heavens.",
+      "nodes": [
+        {
+          "id": "heb4-1",
+          "type": "ground",
+          "verse_range": "4:1-10",
+          "text": "The rest argument: since the promise of entering God's rest still stands, let us fear lest any fall short. The gospel was preached to both Israel in the wilderness and to us — but the word did not profit them because they did not combine it with faith. Those who believe enter the rest.",
+          "children": [
+            {
+              "id": "heb4-1a",
+              "type": "support",
+              "verse_range": "4:3-5",
+              "text": "Proof that the rest was not exhausted by Canaan: God said 'As I swore in my wrath, they shall not enter my rest' — yet his works were finished from the foundation of the world (Gen 2:2, God's Sabbath rest). The rest existed before Canaan; Joshua's conquest did not fully provide it."
+            },
+            {
+              "id": "heb4-1b",
+              "type": "inference",
+              "verse_range": "4:8-10",
+              "text": "If Joshua had given them rest, God would not have spoken later of another day (Ps 95 — 'today'). Therefore a Sabbath rest (σαββατισμός) remains for the people of God. The one who enters his rest has himself rested from his works as God rested from his. Eschatological rest is participation in God's own Sabbath."
+            }
+          ]
+        },
+        {
+          "id": "heb4-2",
+          "type": "application",
+          "verse_range": "4:11-13",
+          "text": "Let us therefore strive to enter that rest, so that no one falls after the same pattern of disobedience. The word of God is living and active, sharper than any two-edged sword — piercing to the division of soul and spirit, joints and marrow, discerning the thoughts and intentions of the heart. No creature is hidden from his sight — all are naked and exposed to the eyes of him to whom we must give account.",
+          "children": [
+            {
+              "id": "heb4-2a",
+              "type": "ground",
+              "verse_range": "4:13",
+              "text": "The divine word's complete penetration means the warning cannot be evaded by self-deception. The word that offers rest also exposes all resistance to it. The rhetorical function: the reader cannot hide behind religious performance — the high priest to whom we give account knows everything."
+            }
+          ]
+        },
+        {
+          "id": "heb4-3",
+          "type": "transition",
+          "verse_range": "4:14-16",
+          "text": "Transitional summary introducing the high priest argument: since we have a great high priest (ἀρχιερέα μέγαν) who has passed through the heavens — Jesus, the Son of God — let us hold fast our confession. He was tempted in every way as we are, yet without sin.",
+          "children": [
+            {
+              "id": "heb4-3a",
+              "type": "conclusion",
+              "verse_range": "4:16",
+              "text": "Therefore let us draw near with confidence (μετὰ παρρησίας) to the throne of grace, so that we may receive mercy and find grace to help in time of need. The 'therefore' pivots the entire doctrinal section into an approach to God — the goal of all the high priest argument is access, not merely information."
+            }
+          ]
+        }
+      ],
+      "note": "Hebrews 4 completes the 'rest' argument (begun in 3:7) and transitions to the central doctrinal section on the high priesthood. The two paragraphs on the penetrating word (vv. 12-13) and the sympathetic high priest (vv. 14-16) are deliberately juxtaposed: the same God whose word strips away pretense is the one who invites us to approach with boldness. Judgment and mercy meet at the throne of grace."
+    }
   },
   "vhl_groups": []
 }

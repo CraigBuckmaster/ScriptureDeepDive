@@ -477,7 +477,53 @@
         "type": "Connection",
         "text": "The royal wedding psalm addressed to the king as ‘God’ (‘Your throne, O God, will last for ever’) is applied directly to the Son—one of the strongest OT christological proof-texts."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "God's final word in the Son surpasses all prior revelation — and the Son himself, as the radiance of God's glory and heir of all things, is shown by Scripture to be superior to every angel.",
+      "nodes": [
+        {
+          "id": "heb1-1",
+          "type": "thesis",
+          "verse_range": "1:1-4",
+          "text": "The prologue — seven descriptors of the Son in a single sentence: heir of all things, agent of creation, radiance of God's glory, exact imprint of his nature, upholder of the universe by his word of power, purifier of sins, seated at the right hand of the Majesty on high. Each descriptor builds the argument: this is the one who spoke — not a prophet but the divine Son.",
+          "children": [
+            {
+              "id": "heb1-1a",
+              "type": "contrast",
+              "verse_range": "1:1-2",
+              "text": "Contrast of modes: formerly (πολυμερῶς καὶ πολυτρόπως — in many portions and in many ways) God spoke by the prophets; in these last days he has spoken by his Son. The contrast is not between law and gospel but between fragmented revelation and its final, complete embodiment."
+            }
+          ]
+        },
+        {
+          "id": "heb1-2",
+          "type": "ground",
+          "verse_range": "1:5-14",
+          "text": "Seven OT texts (Ps 2:7; 2 Sam 7:14; Ps 97:7; Ps 104:4; Ps 45:6-7; Ps 102:25-27; Ps 110:1) demonstrate that the Son's name/status is categorically superior to the angels. The angels are ministering spirits; the Son is enthroned Lord whom angels worship.",
+          "children": [
+            {
+              "id": "heb1-2a",
+              "type": "support",
+              "verse_range": "1:5",
+              "text": "Psalm 2:7 ('You are my Son, today I have begotten you') and 2 Samuel 7:14 ('I will be to him a father, and he shall be to me a son') — both royal/Davidic texts applied to the resurrected/exalted Son. 'Today' in Ps 2:7 signals the moment of enthronement, not eternal generation."
+            },
+            {
+              "id": "heb1-2b",
+              "type": "support",
+              "verse_range": "1:8-12",
+              "text": "Psalm 45:6-7 (addressed to a king as 'God,' with a throne forever and a scepter of righteousness) and Psalm 102:25-27 (the LORD as creator who endures while creation wears out) are read as addressed to the Son. The Son's eternity contrasts with the created order's transience."
+            },
+            {
+              "id": "heb1-2c",
+              "type": "conclusion",
+              "verse_range": "1:13-14",
+              "text": "The climactic citation: Psalm 110:1 — 'Sit at my right hand until I make your enemies a footstool for your feet.' This text will anchor the high priest argument throughout the letter. To which angel was this ever said? None. Angels serve; the Son reigns."
+            }
+          ]
+        }
+      ],
+      "note": "Hebrews 1 opens with the most dense and theologically rich prologue in the NT (vv. 1-4), followed by a carefully constructed catena of OT texts. The structure is comparison/contrast — not to disparage angels, but to establish the absolute uniqueness of the Son's revelatory authority. The sermon's exhortatory purpose begins in 2:1: 'Therefore we must pay much closer attention.'"
+    }
   },
   "vhl_groups": []
 }

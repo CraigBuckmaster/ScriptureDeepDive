@@ -483,6 +483,60 @@
         }
       ],
       "note": "Covenant is central in the benediction (eternal covenant). Worship appears in the sacrifice of praise. Holiness runs through the ethical exhortations. Mission is implicit in the outside the camp call."
+    },
+    "discourse": {
+      "thesis": "Love, hospitality, faithfulness, contentment, and following Jesus outside the camp — the practical ethics of the new covenant community, held together by the grace that alone establishes the heart.",
+      "nodes": [
+        {
+          "id": "heb13-1",
+          "type": "application",
+          "verse_range": "13:1-6",
+          "text": "Ethics of community and contentment: let brotherly love continue; show hospitality to strangers (for some have entertained angels unawares); remember those in prison; honor marriage; keep your life free from love of money — be content with what you have, for God has said 'I will never leave you nor forsake you' (Deut 31:6). So we confidently say: 'The Lord is my helper; I will not fear. What can man do to me?' (Ps 118:6)"
+        },
+        {
+          "id": "heb13-2",
+          "type": "application",
+          "verse_range": "13:7-9",
+          "text": "Remember your leaders — consider the outcome of their way of life and imitate their faith. Jesus Christ is the same yesterday and today and forever. Do not be led away by diverse and strange teachings — the heart is strengthened by grace, not by food regulations. Those who walk by food rules have not benefited.",
+          "children": [
+            {
+              "id": "heb13-2a",
+              "type": "ground",
+              "verse_range": "13:8",
+              "text": "The immutability of Christ (v. 8) is the theological anchor for resisting false teaching: precisely because Christ is unchanging, novel doctrines that contradict the apostolic gospel are impossible improvements. The unchanging Lord validates the original message."
+            }
+          ]
+        },
+        {
+          "id": "heb13-3",
+          "type": "application",
+          "verse_range": "13:10-16",
+          "text": "We have an altar from which those who serve the tent have no right to eat. For the bodies of those animals were burned outside the camp (Lev 16) — so Jesus also suffered outside the gate in order to sanctify the people through his own blood. Therefore let us go to him outside the camp (ἔξω τῆς παρεμβολῆς) and bear the reproach he endured. For here we have no lasting city — we seek the city that is to come.",
+          "children": [
+            {
+              "id": "heb13-3a",
+              "type": "application",
+              "verse_range": "13:15-16",
+              "text": "Through him let us continually offer up a sacrifice of praise (θυσίαν αἰνέσεως) — the fruit of lips that acknowledge his name. Do not neglect to do good and to share what you have, for such sacrifices are pleasing to God. The new covenant sacrifices are praise and generosity — not animal blood."
+            }
+          ]
+        },
+        {
+          "id": "heb13-4",
+          "type": "conclusion",
+          "verse_range": "13:17-25",
+          "text": "Obey and submit to your leaders — they are keeping watch over your souls and will give account. Pray for us — we are confident we have a clear conscience. Personal greetings. Benediction: the God of peace who brought again from the dead our Lord Jesus — the great shepherd of the sheep — by the blood of the eternal covenant — equip you with everything good that you may do his will, working in us that which is pleasing in his sight, through Jesus Christ, to whom be glory forever and ever.",
+          "children": [
+            {
+              "id": "heb13-4a",
+              "type": "ground",
+              "verse_range": "13:20-21",
+              "text": "The closing benediction recapitulates the entire letter: resurrection, high priesthood (the great shepherd as priest-king), blood, eternal covenant — and the goal of all of it: equipping the community to do God's will. The benediction is also a prayer — the entire argument of Hebrews is poured into intercession for its readers."
+            }
+          ]
+        }
+      ],
+      "note": "Hebrews 13 grounds the letter's elevated theology in ordinary community life: money, sex, hospitality, leadership, worship. The 'outside the camp' command (v. 13) is the ethical equivalent of the whole letter's argument — as Jesus stepped outside the religious system to accomplish redemption, so believers must be willing to bear social reproach rather than retreat to religious security. The magnificent benediction (vv. 20-21) is the liturgical seal of the entire argument."
     }
   },
   "vhl_groups": []

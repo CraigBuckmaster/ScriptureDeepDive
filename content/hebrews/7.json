@@ -524,7 +524,61 @@
         "type": "Echo",
         "text": "Paul’s parallel assertion that Christ Jesus is at God’s right hand interceding for us confirms the early Christian belief in Christ’s ongoing heavenly advocacy."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "The Melchizedek priesthood — eternal, royal, without genealogical limit — is the order to which Christ belongs, replacing the Levitical priesthood which was temporary, weak, and unable to perfect.",
+      "nodes": [
+        {
+          "id": "heb7-1",
+          "type": "ground",
+          "verse_range": "7:1-10",
+          "text": "Melchizedek profile: king of Salem, priest of God Most High, met Abraham returning from battle, blessed him, received a tithe. His name means king of righteousness, his title means king of peace. Without father, mother, genealogy, beginning of days or end of life — he resembles (ἀφωμοιωμένος) the Son of God and remains a priest continually.",
+          "children": [
+            {
+              "id": "heb7-1a",
+              "type": "inference",
+              "verse_range": "7:4-10",
+              "text": "The greatness of Melchizedek is proven by what Abraham (and through him, Levi) did: Abraham paid tithes to him and received his blessing. The greater blesses the lesser; the lesser pays tithes to the greater. Levi, still in Abraham's loins, paid tithes through Abraham — the Levitical priesthood is subordinate to the Melchizedek order by its very origin."
+            }
+          ]
+        },
+        {
+          "id": "heb7-2",
+          "type": "conclusion",
+          "verse_range": "7:11-19",
+          "text": "If perfection (τελείωσις) were attainable through the Levitical priesthood — under which the people received the law — what further need was there for another priest after the order of Melchizedek? A change of priesthood necessarily involves a change of law. The old commandment is set aside because of its weakness and uselessness — the law made nothing perfect — but a better hope is introduced through which we draw near to God.",
+          "children": [
+            {
+              "id": "heb7-2a",
+              "type": "ground",
+              "verse_range": "7:13-14",
+              "text": "The priest of Psalm 110:4 belongs to a different tribe than Levi — specifically Judah, from which no one ever served at the altar. This is the exegetical proof that the Levitical system is being superseded: the priest of Psalm 110 cannot be a Levite."
+            }
+          ]
+        },
+        {
+          "id": "heb7-3",
+          "type": "contrast",
+          "verse_range": "7:20-28",
+          "text": "Jesus became a priest by oath (Ps 110:4 — 'The Lord has sworn and will not change his mind'); the Levitical priests served without oath. The oath makes Jesus the guarantor (ἔγγυος) of a better covenant. The previous priests were many because death prevented their continuation — Jesus holds his priesthood permanently (ἀπαράβατον) because he continues forever.",
+          "children": [
+            {
+              "id": "heb7-3a",
+              "type": "result",
+              "verse_range": "7:25",
+              "text": "He is able to save to the uttermost (εἰς τὸ παντελές) those who draw near to God through him — since he always lives to make intercession for them. The permanent intercession is the practical corollary of the permanent priesthood."
+            },
+            {
+              "id": "heb7-3b",
+              "type": "conclusion",
+              "verse_range": "7:26-28",
+              "text": "The fitting high priest: holy, innocent, unstained, separated from sinners, exalted above the heavens — who has no need to offer sacrifices daily for his own sins first, then for the people. He offered himself once for all (ἐφάπαξ). The law appoints weak men; the oath appoints the Son made perfect forever."
+            }
+          ]
+        }
+      ],
+      "note": "Hebrews 7 is the exegetical heart of the letter — the Melchizedek typology that has been built since 5:6 is fully developed. The argument's logic: (1) Melchizedek's silence on genealogy/death points to an eternal priesthood; (2) Abraham's tithe to Melchizedek establishes the latter's superiority to Levi; (3) Psalm 110:4's oath establishes Christ's priesthood as permanent and superior to anything the Levitical system offered."
+    }
   },
   "vhl_groups": []
 }

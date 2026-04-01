@@ -418,7 +418,54 @@
         "type": "Connection",
         "text": "The author attributes Isa 8:17–18 to Jesus (‘Here am I, and the children God has given me’), identifying Jesus with the prophet’s trust in God and solidarity with his people."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Because the Son became fully human — sharing flesh, blood, suffering, and death — he is able to be the merciful and faithful high priest who delivers those in bondage to the fear of death.",
+      "nodes": [
+        {
+          "id": "heb2-1",
+          "type": "application",
+          "verse_range": "2:1-4",
+          "marker": "Therefore (Διὰ τοῦτο)",
+          "text": "First warning passage: we must pay closer attention lest we drift away (παραρρυῶμεν). The argument from lesser to greater: if the word spoken through angels was reliable and every transgression received punishment, how shall we escape if we neglect so great a salvation — confirmed by signs, wonders, and gifts of the Spirit?"
+        },
+        {
+          "id": "heb2-2",
+          "type": "contrast",
+          "verse_range": "2:5-9",
+          "text": "The world to come was not subjected to angels but to the Son of Man (Ps 8:4-6 cited). Psalm 8 speaks of humanity as crowned with glory, everything under its feet — but we do not yet see everything subjected. What we do see: Jesus, made lower than the angels for a little while, now crowned with glory and honor because of the suffering of death.",
+          "children": [
+            {
+              "id": "heb2-2a",
+              "type": "purpose",
+              "verse_range": "2:9",
+              "text": "The purpose of his tasting death: 'so that by the grace of God he might taste death for everyone.' The humiliation (lower than angels) was not failure — it was the path to the redemption that brings many sons to glory."
+            }
+          ]
+        },
+        {
+          "id": "heb2-3",
+          "type": "ground",
+          "verse_range": "2:10-18",
+          "text": "The logic of incarnation and solidarity: it was fitting (ἔπρεπεν) for God to perfect the founder (ἀρχηγόν) of salvation through suffering. He who sanctifies and those being sanctified are all of one — the Son is not ashamed to call them brothers (Ps 22:22; Isa 8:17-18).",
+          "children": [
+            {
+              "id": "heb2-3a",
+              "type": "purpose",
+              "verse_range": "2:14-15",
+              "text": "Since the children share flesh and blood, he himself partook of the same — so that through death he might destroy (καταργήσῃ) the one who has the power of death (the devil) and deliver those who through fear of death were subject to lifelong slavery. The incarnation's purpose is liberation from death-fear."
+            },
+            {
+              "id": "heb2-3b",
+              "type": "conclusion",
+              "verse_range": "2:17-18",
+              "text": "The key inference: he had to be made like his brothers in every respect (κατὰ πάντα) so that he might become a merciful and faithful high priest in service to God, making propitiation (ἱλάσκεσθαι) for the sins of the people. Because he suffered when tempted, he is able to help those who are being tempted. The high priest theme is formally introduced here."
+            }
+          ]
+        }
+      ],
+      "note": "Hebrews 2 makes the incarnation theologically necessary (not merely historical): the Son had to share human nature completely to accomplish redemption from the inside. The Psalm 8 citation is typological — humanity was meant for dominion; fallen humanity does not achieve it; Jesus as the true human achieves it and brings many sons with him."
+    }
   },
   "vhl_groups": []
 }

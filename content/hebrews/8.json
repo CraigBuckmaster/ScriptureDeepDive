@@ -367,6 +367,46 @@
         }
       ],
       "note": "Covenant theology dominates: the chapter announces the replacement of Sinai with the new covenant. Prophecy scores high because of the Jeremiah quotation. Sovereignty and mercy are evident in God's initiative to establish a better covenant despite Israel's failure."
+    },
+    "discourse": {
+      "thesis": "Christ ministers as high priest in the true heavenly sanctuary — not a copy — and he mediates a new and better covenant that supersedes the Sinai covenant, whose obsolescence Scripture itself announced.",
+      "nodes": [
+        {
+          "id": "heb8-1",
+          "type": "thesis",
+          "verse_range": "8:1-2",
+          "text": "The main point (κεφάλαιον): we have such a high priest, one who is seated at the right hand of the throne of the Majesty in heaven, a minister (λειτουργός) in the holy places, in the true tent (τῆς σκηνῆς τῆς ἀληθινῆς) that the Lord set up, not man."
+        },
+        {
+          "id": "heb8-2",
+          "type": "contrast",
+          "verse_range": "8:3-6",
+          "text": "Every high priest is appointed to offer gifts and sacrifices — so it is necessary for this priest also to have something to offer. They serve a copy (ὑπόδειγμα) and shadow (σκιά) of the heavenly things — as Moses was instructed to make the tabernacle according to the pattern shown on the mountain (Exod 25:40). But Christ has obtained a ministry more excellent than theirs, as the covenant he mediates is better, enacted on better promises.",
+          "children": [
+            {
+              "id": "heb8-2a",
+              "type": "ground",
+              "verse_range": "8:5",
+              "text": "The Exodus citation proves the pattern-copy relationship: if the Mosaic sanctuary was made according to a heavenly model, the model is the reality and the tabernacle is the shadow. Christ ministers in the original; the Levitical priests ministered in the reproduction."
+            }
+          ]
+        },
+        {
+          "id": "heb8-3",
+          "type": "ground",
+          "verse_range": "8:7-13",
+          "text": "If the first covenant had been faultless, there would have been no occasion to look for a second. God himself found fault with the people: 'Behold, the days are coming when I will establish a new covenant with the house of Israel and the house of Judah' (Jer 31:31-34). The new covenant: I will put my laws into their minds, write them on their hearts, be their God, they shall be my people, all shall know me, I will remember their sins no more.",
+          "children": [
+            {
+              "id": "heb8-3a",
+              "type": "conclusion",
+              "verse_range": "8:13",
+              "text": "In speaking of a new (καινήν) covenant, he makes the first one old (πεπαλαίωκεν). And what is becoming old and growing obsolete is ready to vanish away. The author's argument: Jeremiah's own prophecy declared the first covenant obsolete — this is not Christian innovation but Israel's own Scripture."
+            }
+          ]
+        }
+      ],
+      "note": "Hebrews 8 pivots from the person of the priest (chs. 5-7) to his ministry. The Platonic-sounding language of 'copy and shadow' is actually rooted in Exodus 25:40 — the contrast is biblical, not philosophical. The Jeremiah 31 citation (the longest OT quotation in the NT) is devastating to any covenant-continuity argument: the new covenant's superiority is announced within the Old Testament itself."
     }
   },
   "vhl_groups": []

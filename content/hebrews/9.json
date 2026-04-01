@@ -611,6 +611,61 @@
         }
       ],
       "note": "Worship dominates through the tabernacle and sacrifice imagery. Covenant continues from chapter 8. Judgment and holiness are prominent in the blood-atonement logic. The \"once for all\" finality reflects divine sovereignty over redemptive history."
+    },
+    "discourse": {
+      "thesis": "The old tabernacle and its sacrifices were external symbols pointing to Christ's once-for-all entrance into the heavenly sanctuary — where his own blood secured eternal redemption and a better inheritance.",
+      "nodes": [
+        {
+          "id": "heb9-1",
+          "type": "ground",
+          "verse_range": "9:1-10",
+          "text": "The first covenant's regulations for worship and earthly sanctuary: the outer tent with lampstand, table, and bread of the Presence (the Holy Place); behind the second curtain the inner tent (the Most Holy Place) with the golden altar of incense, the ark of the covenant covered with gold, containing the golden urn of manna, Aaron's staff, and the tablets — overshadowed by the cherubim of glory.",
+          "children": [
+            {
+              "id": "heb9-1a",
+              "type": "inference",
+              "verse_range": "9:6-10",
+              "text": "The priests entered the outer tent regularly; into the inner tent only the high priest once a year, not without blood for himself and for the people's unintentional sins. The Holy Spirit was indicating (σημαίνοντος) that the way into the holy place was not yet opened while the outer tent still stood. The entire system was a parable for the present age — gifts and sacrifices cannot perfect the conscience of the worshiper."
+            }
+          ]
+        },
+        {
+          "id": "heb9-2",
+          "type": "contrast",
+          "verse_range": "9:11-14",
+          "marker": "But when Christ appeared (Χριστὸς δὲ παραγενόμενος)",
+          "text": "Christ appeared as a high priest of the good things that have come, through the greater and more perfect tent — not made with hands (οὐ χειροποιήτου), not of this creation. He entered once for all (ἐφάπαξ) into the holy places, not by means of the blood of goats and calves but by means of his own blood, thus securing (εὑράμενος) an eternal redemption.",
+          "children": [
+            {
+              "id": "heb9-2a",
+              "type": "inference",
+              "verse_range": "9:13-14",
+              "text": "If the blood of goats and bulls, and the sprinkling of a heifer's ashes, sanctify the flesh — how much more will the blood of Christ, who through the eternal Spirit offered himself without blemish to God, purify our conscience from dead works to serve the living God? The argument moves from the lesser (ceremonial cleansing) to the greater (conscience-purifying)."
+            }
+          ]
+        },
+        {
+          "id": "heb9-3",
+          "type": "ground",
+          "verse_range": "9:15-22",
+          "text": "Christ is the mediator of a new covenant — so that those who are called may receive the promised eternal inheritance. A covenant is validated by death (a will/covenant requires the death of the testator). The first covenant was inaugurated with blood (Exod 24:8 — Moses sprinkled blood saying 'This is the blood of the covenant'). Under the law almost everything is purified with blood, and without shedding of blood there is no forgiveness (ἄφεσις)."
+        },
+        {
+          "id": "heb9-4",
+          "type": "conclusion",
+          "verse_range": "9:23-28",
+          "text": "The heavenly things themselves needed better sacrifices than the earthly copies. Christ entered heaven itself, now to appear before the face of God for us — not to offer himself repeatedly (as the high priest enters the Most Holy Place yearly), but he appeared once for all (ἐφάπαξ) to put away sin by the sacrifice of himself. And just as it is appointed for man to die once and then judgment — so Christ, offered once to bear the sins of many, will appear a second time, not to deal with sin but to save those who eagerly wait for him.",
+          "children": [
+            {
+              "id": "heb9-4a",
+              "type": "contrast",
+              "verse_range": "9:25-26",
+              "text": "The 'once vs. repeatedly' contrast is the theological axis: if repeated, Christ would have had to suffer repeatedly since the foundation of the world. That he appeared once shows that his sacrifice is complete and unrepeatable — unlike the annual Day of Atonement which implied ongoing insufficiency."
+            }
+          ]
+        }
+      ],
+      "note": "Hebrews 9 is the architectural center of the letter's argument — both physically (middle of 13 chapters) and theologically. The tabernacle, the Day of Atonement ritual, and the covenant inauguration sacrifice are all read as typological pointers to Christ's once-for-all sacrifice. The Yom Kippur liturgy was designed to teach the people that access to God required blood — and what it taught in shadow, Christ accomplished in reality."
     }
   },
   "vhl_groups": []

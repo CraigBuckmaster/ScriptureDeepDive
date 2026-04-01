@@ -683,6 +683,80 @@
         }
       ],
       "note": "Judgment and faith dominate: the warning against apostasy and the call to persevere. Holiness is implicit in the access language. Worship continues through sanctuary and sacrifice imagery."
+    },
+    "discourse": {
+      "thesis": "The law's repeated sacrifices proved their inadequacy; Christ's single offering perfects those being sanctified — therefore hold fast, draw near, and do not abandon the assembly, for willful rejection invites terrifying judgment.",
+      "nodes": [
+        {
+          "id": "heb10-1",
+          "type": "ground",
+          "verse_range": "10:1-10",
+          "text": "The law, having only a shadow of good things to come — not the true form — can never perfect (τελειῶσαι) those who draw near by the same sacrifices offered year after year. If it could, the worshipers would have been cleansed once and the sacrifices would have ceased. Instead they are a reminder (ἀνάμνησις) of sins every year — impossible for the blood of bulls and goats to take away sins.",
+          "children": [
+            {
+              "id": "heb10-1a",
+              "type": "ground",
+              "verse_range": "10:5-7",
+              "text": "The Psalm 40:6-8 citation (LXX): 'Sacrifices and offerings you have not desired, but a body you have prepared for me... I have come to do your will, O God.' Christ's coming replaces the Levitical system not by abolishing sacrifice but by offering what the system always demanded — perfect obedience, embodied in the prepared body."
+            },
+            {
+              "id": "heb10-1b",
+              "type": "conclusion",
+              "verse_range": "10:9-10",
+              "text": "He takes away the first to establish the second. By that will we have been sanctified through the offering of the body of Jesus Christ once for all (ἐφάπαξ). The three-fold 'once for all' across chs. 7-10 is the letter's theological drumbeat."
+            }
+          ]
+        },
+        {
+          "id": "heb10-2",
+          "type": "contrast",
+          "verse_range": "10:11-18",
+          "text": "Every priest stands daily offering repeatedly the same sacrifices that can never take away sins. But when Christ had offered a single sacrifice for sins, he sat down at the right hand of God — waiting until his enemies are made a footstool. By a single offering he has perfected (τετελείωκεν) for all time those who are being sanctified.",
+          "children": [
+            {
+              "id": "heb10-2a",
+              "type": "ground",
+              "verse_range": "10:15-18",
+              "text": "Jeremiah 31 cited again: 'I will remember their sins and lawless deeds no more.' Where there is forgiveness (ἄφεσις) of these, there is no longer any offering for sin. The new covenant promise — divine forgetting of sin — is the grounds for discontinuing sacrifice. A completed forgiveness requires no further atonement."
+            }
+          ]
+        },
+        {
+          "id": "heb10-3",
+          "type": "application",
+          "verse_range": "10:19-25",
+          "text": "The practical response to 10:1-18: since we have confidence (παρρησίαν) to enter the holy places by the blood of Jesus — by the new and living way he opened through the curtain (his flesh) — and since we have a great priest over the house of God, let us draw near, hold fast our confession, and consider how to stir one another up to love and good works, not neglecting assembly.",
+          "children": [
+            {
+              "id": "heb10-3a",
+              "type": "ground",
+              "verse_range": "10:23",
+              "text": "Hold fast — because he who promised is faithful. The warrant for perseverance is not internal willpower but the character of God. The 'Day drawing near' (v. 25) gives eschatological urgency to the community's gathering."
+            }
+          ]
+        },
+        {
+          "id": "heb10-4",
+          "type": "ground",
+          "verse_range": "10:26-39",
+          "text": "Fourth warning: if we go on sinning willfully (ἑκουσίως) after receiving the knowledge of the truth, there no longer remains a sacrifice for sins — only a fearful expectation of judgment and a fury of fire. It is a fearful thing to fall into the hands of the living God.",
+          "children": [
+            {
+              "id": "heb10-4a",
+              "type": "contrast",
+              "verse_range": "10:32-36",
+              "text": "But recall the former days when you endured hard struggle with sufferings — publicly exposed, plundered. Do not throw away your confidence (παρρησίαν) which has a great reward. You need endurance (ὑπομονῆς) so that when you have done the will of God you may receive what is promised."
+            },
+            {
+              "id": "heb10-4b",
+              "type": "conclusion",
+              "verse_range": "10:38-39",
+              "text": "Habakkuk 2:4 cited: 'My righteous one shall live by faith.' But the author adds: we are not among those who shrink back (ὑποστολῆς) and are destroyed, but among those who have faith and preserve their souls. The communal 'we' is the pastoral resolution — the author places himself with his audience in the community of faith."
+            }
+          ]
+        }
+      ],
+      "note": "Hebrews 10 closes the doctrinal argument (chs. 1-10) and opens the ethical response. The chapter's structure mirrors the letter as a whole: doctrine (vv. 1-18) → application (vv. 19-25) → warning (vv. 26-39). The 'curtain as his flesh' (v. 20) is a striking image — access to God was opened by the tearing of Christ's body, as the temple curtain was torn at the crucifixion."
     }
   },
   "vhl_groups": []

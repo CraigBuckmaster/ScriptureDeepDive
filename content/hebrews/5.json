@@ -400,7 +400,47 @@
         "type": "Connection",
         "text": "Peter uses the milk metaphor positively: newborn believers should crave spiritual milk. Hebrews inverts the image: milk is appropriate for infants but not for those who should have matured."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Jesus, appointed as high priest by God's own oath, was qualified through suffering and obedience — but his audience risks not being mature enough to grasp this teaching.",
+      "nodes": [
+        {
+          "id": "heb5-1",
+          "type": "ground",
+          "verse_range": "5:1-4",
+          "text": "Every high priest is taken from among men, appointed to act on behalf of men in relation to God — offering gifts and sacrifices for sins. He is able to deal gently (μετριοπαθεῖν) with the ignorant and wayward since he himself is subject to weakness. No one takes this honor for himself — he must be called by God, as Aaron was."
+        },
+        {
+          "id": "heb5-2",
+          "type": "application",
+          "verse_range": "5:5-10",
+          "text": "So also Christ did not exalt himself to be made high priest — it was God who said to him, 'You are my Son, today I have begotten you' (Ps 2:7) and 'You are a priest forever after the order of Melchizedek' (Ps 110:4). In the days of his flesh he offered prayers with loud cries and tears — and was heard because of his reverence. Though a Son, he learned obedience through what he suffered, and being made perfect he became the source of eternal salvation for those who obey him.",
+          "children": [
+            {
+              "id": "heb5-2a",
+              "type": "ground",
+              "verse_range": "5:8-9",
+              "text": "The paradox: the eternal Son learned obedience (ἔμαθεν ... ὑπακοήν) through suffering. This is not deficiency remedied but capacity developed — the Son enters the human experience of costly obedience so that his priestly solidarity is complete. 'Made perfect' (τελειωθείς) is a priestly term (LXX) — completion of the qualifications for office."
+            }
+          ]
+        },
+        {
+          "id": "heb5-3",
+          "type": "application",
+          "verse_range": "5:11-14",
+          "text": "Third warning (embedded): About Melchizedek there is much to say but it is hard to explain since the audience has become dull of hearing (νωθροὶ ... ταῖς ἀκοαῖς). By this time they should be teachers but they need someone to teach them again the basic elements. Solid food is for the mature — those who have their powers of discernment trained to distinguish good from evil.",
+          "children": [
+            {
+              "id": "heb5-3a",
+              "type": "contrast",
+              "verse_range": "5:12-14",
+              "text": "The milk/solid food contrast is not about simple vs. complex doctrine — it is about spiritual maturation that allows the hearer to receive and apply complex theological argument. The warning implies the letter itself requires mature engagement: what follows (Melchizedek typology, ch. 7) is precisely the solid food."
+            }
+          ]
+        }
+      ],
+      "note": "Hebrews 5 introduces the Melchizedek priesthood and then interrupts the argument with a pastoral warning (vv. 11-14). This is a masterful rhetorical move: the author signals that what is coming requires effort, and challenges the audience to rise to the occasion. The warning is not pessimistic — it is a call to maturity that assumes the audience can respond."
+    }
   },
   "vhl_groups": []
 }

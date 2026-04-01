@@ -498,7 +498,62 @@
         "type": "Connection",
         "text": "God’s oath to Abraham after the binding of Isaac is the historical referent: because Abraham did not withhold his son, God swore by himself to bless and multiply his descendants."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Press on to maturity — falling away from the fundamentals is dangerous, but God's faithfulness, confirmed by oath, provides unshakeable hope anchored in Christ's high priesthood.",
+      "nodes": [
+        {
+          "id": "heb6-1",
+          "type": "application",
+          "verse_range": "6:1-3",
+          "text": "Leave (ἀφέντες) the elementary doctrine of Christ and go on to maturity (τελειότητα). Not laying again: repentance from dead works, faith toward God, instructions about washings, laying on of hands, resurrection of the dead, and eternal judgment. These six basics are not wrong — they are the foundation, not the destination."
+        },
+        {
+          "id": "heb6-2",
+          "type": "ground",
+          "verse_range": "6:4-8",
+          "text": "The most severe warning in the letter: those who have been enlightened, tasted the heavenly gift, shared in the Holy Spirit, tasted the goodness of the word and powers of the age to come — and then fallen away (παραπεσόντας) — it is impossible to restore them again to repentance, since they are crucifying the Son of God afresh and holding him up to contempt.",
+          "children": [
+            {
+              "id": "heb6-2a",
+              "type": "support",
+              "verse_range": "6:7-8",
+              "text": "Agricultural analogy: land that drinks in rain and produces a crop receives a blessing; land that produces thorns and thistles is worthless and near a curse — to be burned. The analogy clarifies the severity: apostasy is productive capacity turned to destruction."
+            }
+          ]
+        },
+        {
+          "id": "heb6-3",
+          "type": "contrast",
+          "verse_range": "6:9-12",
+          "marker": "Though we speak thus (εἰ καὶ οὕτως λαλοῦμεν)",
+          "text": "The pastoral turn: we are persuaded of better things for you — things that belong to salvation. God is not unjust to overlook your work and love you showed for his name. The author wants each one to show the same earnestness to the full assurance of hope until the end — not sluggish but imitators of those who through faith and patience inherit the promises.",
+          "children": [
+            {
+              "id": "heb6-3a",
+              "type": "ground",
+              "verse_range": "6:10",
+              "text": "God's justice is pastoral security: the audience's love and service is not forgotten. The warning does not negate their standing — it guards it. The pastor warns the flock precisely because the flock is real."
+            }
+          ]
+        },
+        {
+          "id": "heb6-4",
+          "type": "ground",
+          "verse_range": "6:13-20",
+          "text": "The anchor of hope: when God made a promise to Abraham he swore by himself — two unchangeable things (promise + oath) in which it is impossible for God to lie. We have this as a sure and steadfast anchor of the soul, a hope that enters the inner place behind the curtain where Jesus has gone as a forerunner on our behalf, having become a high priest forever after the order of Melchizedek.",
+          "children": [
+            {
+              "id": "heb6-4a",
+              "type": "conclusion",
+              "verse_range": "6:19-20",
+              "text": "The anchor metaphor: hope anchors the soul not to something below (earthly security) but to something above — the inner sanctuary where Christ has already entered. The forerunner (πρόδρομος) language signals: where the forerunner has gone, others will follow."
+            }
+          ]
+        }
+      ],
+      "note": "Hebrews 6 contains the NT's most contested warning about apostasy (vv. 4-8). The passage's severity is counterbalanced by the double divine guarantee that follows (vv. 13-20). The structure is intentional: the warning reveals the stakes; the oath-promise reveals the security. The Melchizedek thread is picked up again at v. 20, resuming the interrupted argument from 5:10."
+    }
   },
   "vhl_groups": []
 }

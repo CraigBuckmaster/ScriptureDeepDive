@@ -935,6 +935,52 @@
         }
       ],
       "note": "Faith dominates as the explicit theme. Sovereignty is strong: God directs outcomes. Prophecy appears in patriarchal blessings. Covenant underlies the promises that faith grasps."
+    },
+    "discourse": {
+      "thesis": "Faith is the substance of what is hoped for — and the great cloud of witnesses, who lived and died trusting a promise they did not receive, are the models for enduring faith in the present.",
+      "nodes": [
+        {
+          "id": "heb11-1",
+          "type": "thesis",
+          "verse_range": "11:1-3",
+          "text": "Faith is the assurance (ὑπόστασις — substance/reality) of things hoped for, the conviction (ἔλεγχος — proof/evidence) of things not seen. By faith the elders received their commendation. By faith we understand that the universe was created by the word of God, so that what is seen was not made out of things that are visible."
+        },
+        {
+          "id": "heb11-2",
+          "type": "support",
+          "verse_range": "11:4-38",
+          "text": "The parade of faith: Abel (right worship by faith), Enoch (pleasing God), Noah (ark, condemning the world), Abraham (obeying to go out, sojourning in tents, offering Isaac), Sarah (receiving power to conceive), Isaac (blessing the future), Jacob (worshiping at his staff's end), Joseph (mentioning the exodus), Moses (refusing Pharaoh's court, choosing affliction with God's people), Israel (Red Sea, walls of Jericho), Rahab. And more — Gideon, Barak, Samson, Jephthah, David, Samuel, the prophets.",
+          "children": [
+            {
+              "id": "heb11-2a",
+              "type": "ground",
+              "verse_range": "11:13-16",
+              "text": "These all died in faith, not having received the things promised, but having seen them and greeted them from afar — acknowledging that they were strangers and exiles on the earth. Those who say such things make it clear they are seeking a homeland — a better country, a heavenly one. Therefore God is not ashamed to be called their God, for he has prepared for them a city."
+            },
+            {
+              "id": "heb11-2b",
+              "type": "ground",
+              "verse_range": "11:35-38",
+              "text": "The second list — those who suffered rather than accepted deliverance: tortured, mocked, stoned, sawn in two, killed with the sword — of whom the world was not worthy — wandering in deserts, hiding in caves. Faith is not triumphalism — it is the capacity to suffer on the basis of unseen reality."
+            }
+          ]
+        },
+        {
+          "id": "heb11-3",
+          "type": "conclusion",
+          "verse_range": "11:39-40",
+          "text": "And all these, though commended through their faith, did not receive what was promised — since God had provided something better for us so that apart from us they would not be made perfect. The cloud of witnesses needed the fulfillment that came in Christ — their faith was structurally incomplete without the recipients of this letter. The OT saints and NT believers together form one completed people.",
+          "children": [
+            {
+              "id": "heb11-3a",
+              "type": "ground",
+              "verse_range": "11:39-40",
+              "text": "The 'something better' is the Christological fulfillment. All the faith of Abel through the prophets reached forward to what the recipients of Hebrews have received. To abandon faith is to abandon what the entire OT story was reaching toward."
+            }
+          ]
+        }
+      ],
+      "note": "Hebrews 11 is a masterpiece of rhetorical epideixis (demonstrating virtue through examples). The repeated 'by faith... by faith' anaphora builds to a crescendo. The chapter's critical pastoral move is vv. 39-40: the OT saints are not merely models but participants — they remain incomplete until the completion of the community that includes the letter's recipients. This creates profound obligation: to abandon faith is to let down the whole cloud of witnesses."
     }
   },
   "vhl_groups": []
