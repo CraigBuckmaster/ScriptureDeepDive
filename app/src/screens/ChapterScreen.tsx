@@ -35,7 +35,6 @@ import { ChapterSkeleton } from '../components/ChapterSkeleton';
 import { VerseLongPressMenu } from '../components/VerseLongPressMenu';
 import { HighlightColorPicker, HIGHLIGHT_COLORS } from '../components/HighlightColorPicker';
 import { setHighlight, removeHighlight, getHighlightsForChapter, type VerseHighlight } from '../db/user';
-import { TranslationPicker } from '../components/TranslationPicker';
 import { InterlinearSheet } from '../components/InterlinearSheet';
 import { TTSControls } from '../components/TTSControls';
 import { useTTS } from '../hooks/useTTS';
@@ -243,15 +242,14 @@ export default function ChapterScreen() {
           else { setTtsActive(true); tts.play(); }
         }}
         ttsActive={ttsActive}
+        translation={translation}
+        onTranslationChange={setTranslation}
       />
 
       {/* Reading progress bar */}
       <View style={[styles.progressTrack, { backgroundColor: base.border }]}>
         <View style={[styles.progressFill, { width: `${scrollProgress * 100}%`, backgroundColor: base.gold }]} />
       </View>
-
-      {/* Translation picker */}
-      <TranslationPicker selected={translation} onSelect={setTranslation} />
 
       <ScrollView
         ref={scrollRef}
