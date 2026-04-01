@@ -308,6 +308,11 @@ CREATE TABLE difficult_passages (
   tags_json TEXT
 );
 
+CREATE TABLE interlinear_glosses (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  gloss TEXT NOT NULL UNIQUE
+);
+
 CREATE TABLE interlinear_words (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   book_id TEXT NOT NULL,
@@ -318,10 +323,11 @@ CREATE TABLE interlinear_words (
   transliteration TEXT NOT NULL,
   strongs TEXT,
   morphology TEXT,
-  gloss TEXT,
+  gloss_id INTEGER REFERENCES interlinear_glosses(id),
   word_study_id TEXT
 );
 CREATE INDEX idx_interlinear_verse ON interlinear_words(book_id, chapter_num, verse_num);
+CREATE INDEX idx_interlinear_gloss ON interlinear_words(gloss_id);
 
 -- Full-text search indexes
 CREATE VIRTUAL TABLE verses_fts USING fts5(text, content=verses, content_rowid=id);
@@ -485,7 +491,7 @@ def populate_interlinear(cur):
     interlinear_dir = ROOT / 'content' / 'interlinear'
     if not interlinear_dir.is_dir():
         return 0
-    count = 0
+    
     # Map Strong's H/G numbers to existing word_study IDs
     cur.execute('SELECT id, strongs FROM word_studies WHERE strongs IS NOT NULL')
     strongs_to_ws = {}
@@ -493,21 +499,39 @@ def populate_interlinear(cur):
         if row[1]:
             strongs_to_ws[row[1]] = row[0]
 
+    # First pass: collect all unique glosses
+    all_glosses = set()
+    all_words = []
     for json_file in sorted(interlinear_dir.glob('*.json')):
         book_id = json_file.stem
         words = _load_json(json_file)
         for w in words:
-            ws_id = strongs_to_ws.get(w.get('strongs', ''))
-            cur.execute(
-                'INSERT INTO interlinear_words '
-                '(book_id, chapter_num, verse_num, word_position, original, '
-                'transliteration, strongs, morphology, gloss, word_study_id) '
-                'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-                (book_id, w['ch'], w['v'], w['pos'], w['original'],
-                 w.get('transliteration', ''), w.get('strongs', ''),
-                 w.get('morphology', ''), w.get('gloss', ''), ws_id)
-            )
-            count += 1
+            gloss = w.get('gloss', '')
+            if gloss:
+                all_glosses.add(gloss)
+            all_words.append((book_id, w))
+    
+    # Insert glosses and build lookup
+    gloss_to_id = {}
+    for gloss in sorted(all_glosses):
+        cur.execute('INSERT INTO interlinear_glosses (gloss) VALUES (?)', (gloss,))
+        gloss_to_id[gloss] = cur.lastrowid
+    
+    # Second pass: insert words with gloss_id
+    count = 0
+    for book_id, w in all_words:
+        ws_id = strongs_to_ws.get(w.get('strongs', ''))
+        gloss_id = gloss_to_id.get(w.get('gloss', ''))
+        cur.execute(
+            'INSERT INTO interlinear_words '
+            '(book_id, chapter_num, verse_num, word_position, original, '
+            'transliteration, strongs, morphology, gloss_id, word_study_id) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            (book_id, w['ch'], w['v'], w['pos'], w['original'],
+             w.get('transliteration', ''), w.get('strongs', ''),
+             w.get('morphology', ''), gloss_id, ws_id)
+        )
+        count += 1
     return count
 
 

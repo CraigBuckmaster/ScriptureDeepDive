@@ -82,7 +82,13 @@ export async function getInterlinearWords(
   bookId: string, ch: number, verse: number
 ): Promise<InterlinearWord[]> {
   return getDb().getAllAsync<InterlinearWord>(
-    'SELECT * FROM interlinear_words WHERE book_id = ? AND chapter_num = ? AND verse_num = ? ORDER BY word_position',
+    `SELECT iw.id, iw.book_id, iw.chapter_num, iw.verse_num, iw.word_position,
+       iw.original, iw.transliteration, iw.strongs, iw.morphology,
+       ig.gloss, iw.word_study_id
+     FROM interlinear_words iw
+     LEFT JOIN interlinear_glosses ig ON ig.id = iw.gloss_id
+     WHERE iw.book_id = ? AND iw.chapter_num = ? AND iw.verse_num = ?
+     ORDER BY iw.word_position`,
     [bookId, ch, verse]
   );
 }
@@ -90,9 +96,10 @@ export async function getInterlinearWords(
 export async function getConcordanceResults(strongs: string): Promise<ConcordanceResult[]> {
   return getDb().getAllAsync<ConcordanceResult>(
     `SELECT DISTINCT iw.book_id, iw.chapter_num, iw.verse_num,
-       iw.original, iw.transliteration, iw.gloss,
+       iw.original, iw.transliteration, ig.gloss,
        v.text, b.name as book_name
      FROM interlinear_words iw
+     LEFT JOIN interlinear_glosses ig ON ig.id = iw.gloss_id
      JOIN verses v ON v.book_id = iw.book_id
        AND v.chapter_num = iw.chapter_num
        AND v.verse_num = iw.verse_num

@@ -93,6 +93,35 @@ BOOKS = [
 ]
 
 
+import re
+
+
+def clean_kjv_text(text: str) -> str:
+    """
+    Clean KJV text from thiagobodruk source:
+    1. Remove marginal notes: {word...: Heb. explanation} or {Heb. word}
+    2. Remove braces from italicized words: {was} → was
+    3. Normalize whitespace
+    """
+    # Remove marginal notes (contain colon with Heb./Gr. or start with Heb./Gr.)
+    # Pattern: {anything: Heb. anything} or {Heb. anything}
+    text = re.sub(r'\s*\{[^}]*:\s*Heb\.[^}]*\}', '', text)
+    text = re.sub(r'\s*\{Heb\.[^}]*\}', '', text)
+    text = re.sub(r'\s*\{[^}]*:\s*Gr\.[^}]*\}', '', text)
+    text = re.sub(r'\s*\{Gr\.[^}]*\}', '', text)
+    # Remove any remaining notes with colons (catch-all for other marginal notes)
+    text = re.sub(r'\s*\{[^}]*:[^}]*\}', '', text)
+    
+    # Remove braces from italicized words (words added by translators)
+    # These are simple {word} or {word word} without colons
+    text = re.sub(r'\{([^}:]+)\}', r'\1', text)
+    
+    # Normalize whitespace
+    text = re.sub(r'\s+', ' ', text).strip()
+    
+    return text
+
+
 def fetch_source() -> list:
     print(f'Fetching KJV from {SOURCE_URL} ...')
     with urllib.request.urlopen(SOURCE_URL, timeout=30) as resp:
@@ -116,7 +145,8 @@ def build_book_verses(raw: list) -> dict:
         verses = []
         for ch_idx, chapter_verses in enumerate(book.get('chapters', []), start=1):
             for v_idx, text in enumerate(chapter_verses, start=1):
-                verses.append({'ch': ch_idx, 'v': v_idx, 'text': str(text)})
+                cleaned = clean_kjv_text(str(text))
+                verses.append({'ch': ch_idx, 'v': v_idx, 'text': cleaned})
         books[book_num] = verses
     return books
 
