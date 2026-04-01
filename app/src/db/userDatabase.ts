@@ -200,6 +200,157 @@ const MIGRATIONS: Migration[] = [
       ALTER TABLE verse_highlights ADD COLUMN note TEXT;
     `,
   },
+  {
+    version: 6,
+    description: 'Seed 10 curated reading plans',
+    sql: `
+      INSERT OR IGNORE INTO reading_plans (id, name, description, total_days, chapters_json) VALUES
+      ('genesis_deep_dive', 'Genesis Deep Dive', 'Explore Genesis one chapter at a time — each day pairs a reading with a specific study tool to build your skills across the app.', 14, '${JSON.stringify([
+        { day: 1, chapters: ["genesis_1"] },
+        { day: 2, chapters: ["genesis_2"] },
+        { day: 3, chapters: ["genesis_3"] },
+        { day: 4, chapters: ["genesis_4", "genesis_5"] },
+        { day: 5, chapters: ["genesis_6", "genesis_7"] },
+        { day: 6, chapters: ["genesis_8", "genesis_9"] },
+        { day: 7, chapters: ["genesis_11", "genesis_12"] },
+        { day: 8, chapters: ["genesis_15", "genesis_17"] },
+        { day: 9, chapters: ["genesis_18", "genesis_19"] },
+        { day: 10, chapters: ["genesis_22"] },
+        { day: 11, chapters: ["genesis_27", "genesis_28"] },
+        { day: 12, chapters: ["genesis_32", "genesis_33"] },
+        { day: 13, chapters: ["genesis_37", "genesis_39"] },
+        { day: 14, chapters: ["genesis_45", "genesis_50"] }
+      ])}'),
+
+      ('covenant_journey', 'Covenant Journey', 'Trace the covenant concept from Noah to the New Covenant — each day pairs a key passage with cross-references and scholarly commentary.', 10, '${JSON.stringify([
+        { day: 1, chapters: ["genesis_9"] },
+        { day: 2, chapters: ["genesis_15"] },
+        { day: 3, chapters: ["genesis_17"] },
+        { day: 4, chapters: ["exodus_19", "exodus_20"] },
+        { day: 5, chapters: ["exodus_24"] },
+        { day: 6, chapters: ["deuteronomy_29", "deuteronomy_30"] },
+        { day: 7, chapters: ["2_samuel_7"] },
+        { day: 8, chapters: ["jeremiah_31"] },
+        { day: 9, chapters: ["ezekiel_36", "ezekiel_37"] },
+        { day: 10, chapters: ["hebrews_8", "hebrews_9"] }
+      ])}'),
+
+      ('psalms_of_lament', 'Psalms of Lament', 'Seven lament psalms that teach honest prayer — read each with its literary structure and historical context panels.', 7, '${JSON.stringify([
+        { day: 1, chapters: ["psalms_13"] },
+        { day: 2, chapters: ["psalms_22"] },
+        { day: 3, chapters: ["psalms_42"] },
+        { day: 4, chapters: ["psalms_44"] },
+        { day: 5, chapters: ["psalms_74"] },
+        { day: 6, chapters: ["psalms_88"] },
+        { day: 7, chapters: ["psalms_137"] }
+      ])}'),
+
+      ('life_of_david', 'The Life of David', 'Follow David from shepherd boy to king through 1-2 Samuel — with people bios, maps, and timeline connections.', 10, '${JSON.stringify([
+        { day: 1, chapters: ["1_samuel_16", "1_samuel_17"] },
+        { day: 2, chapters: ["1_samuel_18", "1_samuel_19"] },
+        { day: 3, chapters: ["1_samuel_24"] },
+        { day: 4, chapters: ["2_samuel_1", "2_samuel_2"] },
+        { day: 5, chapters: ["2_samuel_5", "2_samuel_6"] },
+        { day: 6, chapters: ["2_samuel_7"] },
+        { day: 7, chapters: ["2_samuel_11", "2_samuel_12"] },
+        { day: 8, chapters: ["2_samuel_15", "2_samuel_16"] },
+        { day: 9, chapters: ["2_samuel_18", "2_samuel_19"] },
+        { day: 10, chapters: ["2_samuel_22", "2_samuel_23"] }
+      ])}'),
+
+      ('creation_to_covenant', 'Creation to Covenant', 'Read through Genesis in 21 days at about 2-3 chapters per day — the foundational story from creation to the patriarchs.', 21, '${JSON.stringify([
+        { day: 1, chapters: ["genesis_1", "genesis_2"] },
+        { day: 2, chapters: ["genesis_3", "genesis_4"] },
+        { day: 3, chapters: ["genesis_5", "genesis_6"] },
+        { day: 4, chapters: ["genesis_7", "genesis_8"] },
+        { day: 5, chapters: ["genesis_9", "genesis_10", "genesis_11"] },
+        { day: 6, chapters: ["genesis_12", "genesis_13"] },
+        { day: 7, chapters: ["genesis_14", "genesis_15"] },
+        { day: 8, chapters: ["genesis_16", "genesis_17", "genesis_18"] },
+        { day: 9, chapters: ["genesis_19", "genesis_20"] },
+        { day: 10, chapters: ["genesis_21", "genesis_22"] },
+        { day: 11, chapters: ["genesis_23", "genesis_24"] },
+        { day: 12, chapters: ["genesis_25", "genesis_26"] },
+        { day: 13, chapters: ["genesis_27", "genesis_28"] },
+        { day: 14, chapters: ["genesis_29", "genesis_30"] },
+        { day: 15, chapters: ["genesis_31", "genesis_32", "genesis_33"] },
+        { day: 16, chapters: ["genesis_34", "genesis_35", "genesis_36"] },
+        { day: 17, chapters: ["genesis_37", "genesis_38", "genesis_39"] },
+        { day: 18, chapters: ["genesis_40", "genesis_41"] },
+        { day: 19, chapters: ["genesis_42", "genesis_43"] },
+        { day: 20, chapters: ["genesis_44", "genesis_45", "genesis_46"] },
+        { day: 21, chapters: ["genesis_47", "genesis_48", "genesis_49", "genesis_50"] }
+      ])}'),
+
+      ('prophecy_fulfilled', 'Prophecy Fulfilled', 'Follow 12 prophecy chains from OT promise to NT fulfillment — each day pairs an origin passage with its fulfillment and cross-references.', 12, '${JSON.stringify([
+        { day: 1, chapters: ["genesis_3"] },
+        { day: 2, chapters: ["genesis_22"] },
+        { day: 3, chapters: ["isaiah_7"] },
+        { day: 4, chapters: ["micah_5"] },
+        { day: 5, chapters: ["isaiah_9"] },
+        { day: 6, chapters: ["isaiah_40"] },
+        { day: 7, chapters: ["isaiah_53"] },
+        { day: 8, chapters: ["daniel_7"] },
+        { day: 9, chapters: ["zechariah_9"] },
+        { day: 10, chapters: ["psalms_22"] },
+        { day: 11, chapters: ["jeremiah_31"] },
+        { day: 12, chapters: ["malachi_3", "malachi_4"] }
+      ])}'),
+
+      ('difficult_questions', 'The Difficult Questions', 'Ten of the Bible''s hardest passages — read the text, then explore the scholarly perspectives and historical context around each one.', 10, '${JSON.stringify([
+        { day: 1, chapters: ["genesis_1"] },
+        { day: 2, chapters: ["genesis_6"] },
+        { day: 3, chapters: ["genesis_22"] },
+        { day: 4, chapters: ["exodus_11", "exodus_12"] },
+        { day: 5, chapters: ["joshua_6"] },
+        { day: 6, chapters: ["judges_11"] },
+        { day: 7, chapters: ["2_samuel_24"] },
+        { day: 8, chapters: ["job_1", "job_2"] },
+        { day: 9, chapters: ["jonah_1", "jonah_2"] },
+        { day: 10, chapters: ["matthew_27"] }
+      ])}'),
+
+      ('pauls_arguments', 'Paul''s Arguments', 'Read Romans and Galatians with the discourse analysis panels — follow Paul''s logic step by step through his most important letters.', 14, '${JSON.stringify([
+        { day: 1, chapters: ["romans_1", "romans_2"] },
+        { day: 2, chapters: ["romans_3", "romans_4"] },
+        { day: 3, chapters: ["romans_5", "romans_6"] },
+        { day: 4, chapters: ["romans_7", "romans_8"] },
+        { day: 5, chapters: ["romans_9", "romans_10"] },
+        { day: 6, chapters: ["romans_11", "romans_12"] },
+        { day: 7, chapters: ["romans_13", "romans_14"] },
+        { day: 8, chapters: ["romans_15", "romans_16"] },
+        { day: 9, chapters: ["galatians_1", "galatians_2"] },
+        { day: 10, chapters: ["galatians_3"] },
+        { day: 11, chapters: ["galatians_4"] },
+        { day: 12, chapters: ["galatians_5"] },
+        { day: 13, chapters: ["galatians_6"] },
+        { day: 14, chapters: ["ephesians_1", "ephesians_2"] }
+      ])}'),
+
+      ('meet_the_scholars', 'Meet the Scholars', 'Seven chapters, each featuring a different scholar tradition — discover how evangelicals, Catholics, Jewish scholars, and church fathers read the same texts differently.', 7, '${JSON.stringify([
+        { day: 1, chapters: ["genesis_1"] },
+        { day: 2, chapters: ["exodus_20"] },
+        { day: 3, chapters: ["psalms_23"] },
+        { day: 4, chapters: ["isaiah_53"] },
+        { day: 5, chapters: ["john_1"] },
+        { day: 6, chapters: ["romans_8"] },
+        { day: 7, chapters: ["revelation_1"] }
+      ])}'),
+
+      ('hebrew_word_treasures', 'Hebrew Word Treasures', 'Ten chapters paired with deep word studies and the interlinear viewer — discover the richness hidden in the original Hebrew and Greek.', 10, '${JSON.stringify([
+        { day: 1, chapters: ["genesis_1"] },
+        { day: 2, chapters: ["genesis_15"] },
+        { day: 3, chapters: ["exodus_34"] },
+        { day: 4, chapters: ["deuteronomy_6"] },
+        { day: 5, chapters: ["psalms_23"] },
+        { day: 6, chapters: ["psalms_51"] },
+        { day: 7, chapters: ["isaiah_6"] },
+        { day: 8, chapters: ["isaiah_53"] },
+        { day: 9, chapters: ["john_1"] },
+        { day: 10, chapters: ["romans_3"] }
+      ])}');
+    `,
+  },
 ];
 
 /**
