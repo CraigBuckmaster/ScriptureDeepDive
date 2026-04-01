@@ -45,18 +45,48 @@ All 66 books live. All 23 deep study feature phases shipped. Theme system (Dark/
 
 | Debt | Scope |
 |------|-------|
-| Isaiah 23–66 thin panels | 44 chapters |
+| **Isaiah 23–66 thin panels** | 44 chapters, 88 sections (see plan below) |
 | Kings/Chronicles MacArthur enrichment | ~112 chapters |
 | ~134 Psalms without timeline links | No natural narrative anchors |
 | Thin panel enrichment (Batch 6) | ~259 panels |
 
 ---
 
+## Isaiah 23–66 Enrichment Plan
+
+**Problem:** Isaiah 1-22 has full panel coverage (heb, cross, hist, mac, calvin, net, oswalt, childs). Isaiah 23-66 only has heb + mac. Missing 6 panel types across 88 sections = 528 panels to write.
+
+**Breakdown by theological section:**
+
+| Section | Chapters | Sections | Priority |
+|---------|----------|----------|----------|
+| Oracles against nations | 23-35 | 26 | Medium |
+| Historical (Hezekiah) | 36-39 | 8 | Low (narrative, less commentary-heavy) |
+| **Book of Comfort** | **40-55** | **32** | **HIGH** (Servant Songs, most NT-quoted) |
+| Restoration | 56-66 | 22 | Medium |
+
+**Recommended execution order:**
+
+1. **Isaiah 40-55 first** — Servant Songs (42, 49, 50, 52-53), "Comfort my people," Cyrus oracles. Most theologically impactful, most NT cross-references.
+2. **Isaiah 56-66 second** — Restoration themes, eschatological hope.
+3. **Isaiah 23-35 third** — Oracles against nations (Tyre, Egypt, Babylon, etc.).
+4. **Isaiah 36-39 last** — Historical narrative (parallels 2 Kings 18-20).
+
+**Panel priority within each batch:**
+1. `cross` — NT connections (critical for Servant Songs)
+2. `hist` — exile context, historical background
+3. `oswalt` + `childs` — major Isaiah commentators
+4. `calvin` + `net` — supplementary
+
+**Per-session scope:** ~32 sections with cross + hist = 64 panels. Or ~16 sections with all 6 panel types = 96 panels.
+
+---
+
 ## What's Next
 
-**If doing code work (Claude Code):** Phase 24 — Content Library. See `_tools/DEEP_STUDY_FEATURES_PLAN.md`.
+**If doing content work (Isaiah enrichment):** Start with Isaiah 40-55 (Book of Comfort). Add cross + hist panels to 32 sections. See Isaiah Enrichment Plan above. Use standard enrichment script pattern: write generator to /tmp/, run, build, validate, commit, push.
 
-**If doing content work:** Phase 24E complete. Next content priorities: Isaiah 23-66 thin panel enrichment (44 chapters), Kings/Chronicles MacArthur enrichment (~112 chapters), thin panel enrichment Batch 6 (~259 panels).
+**If doing code work (Claude Code):** Phase 24 — Content Library screen. See `_tools/DEEP_STUDY_FEATURES_PLAN.md`.
 
 **If doing architecture:** Theme Batch T6 (small) or Arch Batch 7 (inline styles, medium).
 
