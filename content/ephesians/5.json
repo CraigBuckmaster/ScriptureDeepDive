@@ -510,7 +510,80 @@
         "type": "Connection",
         "text": "The creation ordinance of one-flesh union is quoted in Eph 5:31 and interpreted typologically: the original marriage institution points beyond itself to the ultimate union of Christ and the church."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Imitate God as beloved children — walking in love, light, and wisdom — and submit to one another in the fear of Christ, as modeled in the marriage relationship that mirrors Christ and the church.",
+      "nodes": [
+        {
+          "id": "eph5-1",
+          "type": "thesis",
+          "verse_range": "5:1-2",
+          "text": "Imitate (μιμηταί) God as beloved children and walk in love (ἐν ἀγάπῃ) as Christ loved us and gave himself up for us, a fragrant offering and sacrifice to God. The model for Christian ethics is theomorphic — shaped by the character of God and the self-giving love of Christ."
+        },
+        {
+          "id": "eph5-2",
+          "type": "contrast",
+          "verse_range": "5:3-14",
+          "text": "Sexual immorality, impurity, covetousness must not even be named among you — as befits saints. No filthiness or foolish talk. Warnings about inheriting the kingdom. Walk as children of light (τέκνα φωτός) — the fruit of light is goodness, righteousness, and truth. Expose the fruitless works of darkness — light makes everything visible.",
+          "children": [
+            {
+              "id": "eph5-2a",
+              "type": "ground",
+              "verse_range": "5:8-10",
+              "text": "Identity grounds ethics: you were darkness (σκότος), but now you are light (φῶς) in the Lord — therefore walk as children of light. The imperative is rooted in the indicative: be what you are. The ethical demand flows from ontological transformation."
+            },
+            {
+              "id": "eph5-2b",
+              "type": "inference",
+              "verse_range": "5:13-14",
+              "text": "When anything is exposed by the light, it becomes visible — everything exposed is light. The early Christian hymn (v. 14): Awake, O sleeper, and arise from the dead, and Christ will shine on you. Possibly a baptismal hymn, calling the newly baptized out of spiritual death into Christ's light."
+            }
+          ]
+        },
+        {
+          "id": "eph5-3",
+          "type": "application",
+          "verse_range": "5:15-21",
+          "marker": "Look carefully then (Βλέπετε οὖν)",
+          "text": "Walk wisely, not unwisely — making the best use of the time (ἐξαγοραζόμενοι τὸν καιρόν) because the days are evil. Understand the Lord's will. Be filled with the Spirit (πληροῦσθε ἐν πνεύματι) — present imperative, continuous action — as expressed in community: singing psalms and hymns, giving thanks, submitting to one another out of reverence for Christ.",
+          "children": [
+            {
+              "id": "eph5-3a",
+              "type": "contrast",
+              "verse_range": "5:18",
+              "text": "Do not get drunk with wine (in which is debauchery) but be filled with the Spirit. The contrast is striking: both drunkenness and Spirit-filling alter behavior and community character. The grammar is crucial — 'be filled' is passive (receive filling) and plural (a community action), not solo performance."
+            },
+            {
+              "id": "eph5-3b",
+              "type": "result",
+              "verse_range": "5:19-21",
+              "text": "The five participles (singing, making melody, giving thanks, submitting) describe the Spirit-filled community life. Mutual submission (v. 21) is the hinge connecting Spirit-filling to the household code — it is not merely an add-on but the governing principle of all that follows."
+            }
+          ]
+        },
+        {
+          "id": "eph5-4",
+          "type": "application",
+          "verse_range": "5:22-33",
+          "text": "The household code — wives to husbands as to the Lord (v. 22), husbands love wives as Christ loved the church and gave himself up for her (v. 25). The marriage analogy: the husband is head (κεφαλή) as Christ is head of the church his body. Christ's love for the church is sacrificial, sanctifying, and presenting — the model for the husband's love.",
+          "children": [
+            {
+              "id": "eph5-4a",
+              "type": "ground",
+              "verse_range": "5:26-27",
+              "text": "Christ's purpose for the church: to sanctify her, having cleansed her by the washing of water with the word, so that he might present the church to himself in splendor — no spot or wrinkle or blemish, holy and blameless. This is eschatological vision: the church's final glorification is the goal of Christ's present, sacrificial love."
+            },
+            {
+              "id": "eph5-4b",
+              "type": "conclusion",
+              "verse_range": "5:31-33",
+              "text": "Genesis 2:24 ('the two shall become one flesh') is cited as the great mystery (μυστήριον μέγα) — which Paul refers to Christ and the church. Human marriage is not merely an analogy for Christ/church — it is its sacramental embodiment. The practical summary: husband love your wife; wife respect your husband."
+            }
+          ]
+        }
+      ],
+      "note": "Ephesians 5 weaves together imitation ethics (vv. 1-2), purity ethics (vv. 3-14), wisdom ethics (vv. 15-21), and relational ethics (vv. 22-33). The household code is not a concession to Roman social order but a transformation of it: the husband's love is defined by Christ's self-giving, not Roman paterfamilias authority. The mutual submission of v. 21 governs the entire code."
+    }
   },
   "vhl_groups": []
 }

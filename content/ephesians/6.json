@@ -529,7 +529,76 @@
         "type": "Connection",
         "text": "Paul’s statement that ‘the weapons we fight with are not the weapons of the world’ but have divine power to demolish strongholds provides the conceptual framework for the spiritual warfare of Eph 6:10–20."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Live out the household relationships in the Lord; take up the full armor of God to stand against spiritual opposition — and keep praying for one another and for boldness to make the gospel known.",
+      "nodes": [
+        {
+          "id": "eph6-1",
+          "type": "application",
+          "verse_range": "6:1-9",
+          "text": "The household code continues: children obey parents in the Lord (first commandment with a promise, Exod 20:12); fathers do not provoke children to anger but bring them up in the discipline and instruction of the Lord; slaves obey earthly masters as to Christ, not by way of eye-service but as servants of Christ doing the will of God from the heart; masters treat slaves the same way, knowing that the Master of both is in heaven.",
+          "children": [
+            {
+              "id": "eph6-1a",
+              "type": "ground",
+              "verse_range": "6:7-8",
+              "text": "The motivation for work: rendering service with good will as to the Lord and not to men, knowing that whatever good anyone does, this he will receive back from the Lord. The eschatological reward transforms the character of even the most menial labor — every worker is accountable to the same Lord."
+            }
+          ]
+        },
+        {
+          "id": "eph6-2",
+          "type": "application",
+          "verse_range": "6:10-17",
+          "marker": "Finally (Τοῦ λοιποῦ)",
+          "text": "The armor of God: be strong in the Lord and in the strength of his might. Put on (ἐνδύσασθε) the full armor (πανοπλία) of God — not Roman armor reimagined, but the armor God himself wears in Isaiah 59:17. The opponents are not flesh and blood but rulers (ἀρχάς), authorities (ἐξουσίας), cosmic powers (κοσμοκράτορας) of this present darkness, spiritual forces of evil in the heavenly places.",
+          "children": [
+            {
+              "id": "eph6-2a",
+              "type": "support",
+              "verse_range": "6:14-17",
+              "text": "The six pieces of armor: belt of truth, breastplate of righteousness, shoes of the gospel of peace, shield of faith (to extinguish the devil's flaming darts), helmet of salvation, sword of the Spirit (which is the word of God). Five are defensive; the sword is the one offensive weapon — the spoken word of God."
+            },
+            {
+              "id": "eph6-2b",
+              "type": "ground",
+              "verse_range": "6:12",
+              "text": "The battle is spiritual, not political or social: 'not against flesh and blood.' This does not dematerialize the conflict — the spiritual powers express themselves through political, social, and material structures. The armor equips the church to stand firm (στῆναι, three times in vv. 11-14) rather than attack."
+            }
+          ]
+        },
+        {
+          "id": "eph6-3",
+          "type": "application",
+          "verse_range": "6:18-20",
+          "text": "Praying at all times in the Spirit (ἐν πνεύματι) — with all prayer and supplication, keeping alert with all perseverance for all the saints. And specifically: for Paul, that words may be given to him to open his mouth boldly (ἐν παρρησίᾳ) to proclaim the mystery of the gospel for which he is an ambassador in chains.",
+          "children": [
+            {
+              "id": "eph6-3a",
+              "type": "ground",
+              "verse_range": "6:19-20",
+              "text": "Paul's self-description as 'ambassador in chains' (πρεσβεύω ἐν ἁλύσει) is deliberately paradoxical — an ambassador represents the sovereign power of his sender, yet Paul is imprisoned. His boldness would demonstrate that the gospel's power is not limited by his circumstance."
+            }
+          ]
+        },
+        {
+          "id": "eph6-4",
+          "type": "conclusion",
+          "verse_range": "6:21-24",
+          "text": "Tychicus the beloved brother will inform them of Paul's situation and encourage their hearts. Final benediction: peace, love, and faith from God the Father and the Lord Jesus Christ, and grace to all who love our Lord Jesus Christ with love incorruptible (ἐν ἀφθαρσίᾳ).",
+          "children": [
+            {
+              "id": "eph6-4a",
+              "type": "ground",
+              "verse_range": "6:24",
+              "text": "The closing benediction mirrors the opening: the letter began with grace and peace (1:2) and ends with grace, love, and incorruptibility. The circular structure envelops the entire letter in the same divine gift — grace that is inexhaustible."
+            }
+          ]
+        }
+      ],
+      "note": "Ephesians 6 completes the household code (vv. 1-9) and then dramatically reframes the entire ethical section by revealing its ultimate context: the battle is cosmic, not merely domestic. The armor passage (vv. 10-17) is the eschatological frame for all the preceding ethics — the virtues Paul has urged (humility, love, truth-speaking, forgiveness) are the very armor of God. The letter ends with prayer as the capstone of the armor, and with Tychicus as the living letter alongside the written one."
+    }
   },
   "vhl_groups": []
 }

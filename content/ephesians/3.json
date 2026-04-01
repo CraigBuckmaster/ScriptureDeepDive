@@ -401,7 +401,77 @@
         "type": "Echo",
         "text": "Paul’s conviction that nothing can separate believers from God’s love parallels the prayer’s focus on comprehending the dimensions of Christ’s love (Eph 3:18–19)."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "The mystery of Christ — that Gentiles are fellow heirs and members of the same body — was hidden for ages but is now revealed through Paul's ministry, to display the wisdom of God to the cosmic powers.",
+      "nodes": [
+        {
+          "id": "eph3-1",
+          "type": "ground",
+          "verse_range": "3:1-7",
+          "marker": "For this reason (Τούτου χάριν)",
+          "text": "Paul begins an intercession (completed only in v. 14 — a long parenthetical), first explaining his role. He is a prisoner of Christ Jesus on behalf of the Gentiles — his imprisonment is not failure but the shape of apostolic vocation. The mystery (μυστήριον) was made known to him by revelation: Gentiles are fellow heirs, members of the same body, and partakers of the promise in Christ Jesus through the gospel.",
+          "children": [
+            {
+              "id": "eph3-1a",
+              "type": "contrast",
+              "verse_range": "3:5",
+              "text": "This mystery was not made known to the sons of men in other generations as it has now been revealed to the apostles and prophets by the Spirit. The 'as' (ὡς) is comparative — not that it was totally unknown in the OT, but the full inclusion of Gentiles as co-heirs was not disclosed with this clarity."
+            }
+          ]
+        },
+        {
+          "id": "eph3-2",
+          "type": "purpose",
+          "verse_range": "3:8-13",
+          "text": "Paul's commission: to preach to the Gentiles the unsearchable riches of Christ, and to make everyone see the plan of the mystery hidden for ages in God. The purpose: so that through the church the manifold wisdom (πολυποίκιλος σοφία) of God might now be made known to the rulers and authorities in the heavenly places.",
+          "children": [
+            {
+              "id": "eph3-2a",
+              "type": "ground",
+              "verse_range": "3:10",
+              "text": "The church's existence is a cosmic announcement — the rulers and authorities in heavenly places (including hostile powers) learn of God's wisdom by witnessing the multi-ethnic, reconciled community. The church is not merely the beneficiary of the gospel but its cosmic demonstration."
+            },
+            {
+              "id": "eph3-2b",
+              "type": "conclusion",
+              "verse_range": "3:12-13",
+              "text": "In Christ we have boldness and access with confidence through our faith in him. Paul's sufferings are not cause for discouragement — they are the Ephesians' glory. Apostolic suffering participates in the pattern of Christ's cross that produces the church's life."
+            }
+          ]
+        },
+        {
+          "id": "eph3-3",
+          "type": "application",
+          "verse_range": "3:14-19",
+          "marker": "For this reason (Τούτου χάριν)",
+          "text": "The intercession resumes (picking up from v. 1). Paul bows before the Father — from whom every family in heaven and on earth is named — with four petitions: (1) strength in the inner being through the Spirit; (2) Christ dwelling (κατοικεῖν) in their hearts through faith; (3) being rooted and grounded in love to comprehend with all the saints the dimensions of Christ's love; (4) being filled with all the fullness of God (πλήρωμα τοῦ θεοῦ).",
+          "children": [
+            {
+              "id": "eph3-3a",
+              "type": "ground",
+              "verse_range": "3:18-19",
+              "text": "The four dimensions (breadth, length, height, depth) of Christ's love — which surpasses knowledge. The paradox 'know the love that surpasses knowledge' is intentional: only experiential, Spirit-empowered knowledge of love is adequate. This is not mere doctrinal understanding but transformative encounter."
+            }
+          ]
+        },
+        {
+          "id": "eph3-4",
+          "type": "conclusion",
+          "verse_range": "3:20-21",
+          "text": "Doxology closing the letter's first half: to him who is able to do far more abundantly than all we ask or think, according to the power at work within us — to him be glory in the church and in Christ Jesus throughout all generations. The 'power at work within us' echoes 1:20 — the resurrection power is the same power now operative in the community of faith.",
+          "children": [
+            {
+              "id": "eph3-4a",
+              "type": "ground",
+              "verse_range": "3:21",
+              "text": "Glory in the church and in Christ Jesus: the two loci of divine glory are parallel. The church is not merely a vehicle for Christ's glory — it is, together with Christ, the sphere in which God's glory is displayed."
+            }
+          ]
+        }
+      ],
+      "note": "Ephesians 3 is one sustained movement from mystery revealed (vv. 1-13) to prayer for its internalization (vv. 14-19) to doxology for the power that accomplishes it (vv. 20-21). The 'manifold wisdom' (πολυποίκιλος — many-colored, multi-faceted) is language used in the LXX of Joseph's coat and in Greek literature for elaborate embroidery — God's wisdom displayed through the church is breathtakingly complex and beautiful."
+    }
   },
   "vhl_groups": []
 }

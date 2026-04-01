@@ -553,7 +553,83 @@
         "type": "Fulfilment",
         "text": "The quotation in Eph 4:25—‘speak truthfully to your neighbour’—is drawn from Zechariah’s vision of the restored community, applying the prophetic ethic to the new covenant community."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Walk worthy of your calling — in unity, maturity, and transformed character — putting off the old self and putting on the new self created after God's likeness.",
+      "nodes": [
+        {
+          "id": "eph4-1",
+          "type": "thesis",
+          "verse_range": "4:1-3",
+          "marker": "I therefore urge you (Παρακαλῶ οὖν ὑμᾶς)",
+          "text": "The ethical pivot of the letter: walk worthy (ἀξίως περιπατῆσαι) of the calling to which you have been called. The 'therefore' (οὖν) bridges the doctrinal (chs. 1-3) and ethical (chs. 4-6) halves — the imperative is grounded in the indicative. The character virtues: humility, gentleness, patience, bearing with one another in love. The aim: maintaining the unity of the Spirit in the bond of peace."
+        },
+        {
+          "id": "eph4-2",
+          "type": "ground",
+          "verse_range": "4:4-6",
+          "text": "The sevenfold foundation of Christian unity: one body, one Spirit, one hope, one Lord, one faith, one baptism, one God and Father of all who is over all and through all and in all. The theological basis for ethical unity — not organizational conformity but participation in one trinitarian reality.",
+          "children": [
+            {
+              "id": "eph4-2a",
+              "type": "inference",
+              "verse_range": "4:4-6",
+              "text": "The Trinitarian structure: Spirit (v. 4), Lord/Son (v. 5), Father (v. 6). The sevenfold unity is a liturgical creed — likely echoing early Christian catechesis. To fragment the church is to act against the grain of the Triune God's own nature."
+            }
+          ]
+        },
+        {
+          "id": "eph4-3",
+          "type": "support",
+          "verse_range": "4:7-16",
+          "text": "Grace was given to each according to Christ's measure (Ps 68:18 cited to establish Christ's authority to distribute gifts). Christ gave gifts: apostles, prophets, evangelists, shepherds and teachers — all for equipping the saints for the work of ministry, building up the body of Christ.",
+          "children": [
+            {
+              "id": "eph4-3a",
+              "type": "purpose",
+              "verse_range": "4:13-14",
+              "text": "The goal of the gifts: until we attain to the unity of the faith and the knowledge of the Son of God, to mature manhood, the measure of the stature of the fullness of Christ — no longer children tossed by waves, carried about by every wind of doctrine."
+            },
+            {
+              "id": "eph4-3b",
+              "type": "result",
+              "verse_range": "4:15-16",
+              "text": "Speaking truth in love, we are to grow up into Christ the head — from whom the whole body is joined and held together, each part working properly, making the body grow in love. Growth is simultaneously individual (each part) and corporate (the whole body)."
+            }
+          ]
+        },
+        {
+          "id": "eph4-4",
+          "type": "application",
+          "verse_range": "4:17-24",
+          "marker": "Now this I say and testify (Τοῦτο οὖν λέγω)",
+          "text": "Negatively: no longer walk as the Gentiles walk — futile minds, darkened understanding, alienated from God's life, hardened hearts, callous. Positively: learn Christ — if you have heard him and been taught in him, put off the old self (τὸν παλαιὸν ἄνθρωπον) corrupted by deceitful desires, be renewed in the spirit of your minds, put on the new self (τὸν καινὸν ἄνθρωπον) created after the likeness of God in true righteousness and holiness.",
+          "children": [
+            {
+              "id": "eph4-4a",
+              "type": "contrast",
+              "verse_range": "4:22-24",
+              "text": "The three-stage structure (put off / be renewed / put on) is likely baptismal catechesis — clothing imagery (remove old garments, wash, receive new garments) and the new self 'created after the likeness of God' echoes the Genesis creation of humanity in the divine image."
+            }
+          ]
+        },
+        {
+          "id": "eph4-5",
+          "type": "application",
+          "verse_range": "4:25-32",
+          "text": "Specific ethical commands flow from the put off/put on framework: speak truth (because we are members of one body); anger without sin (Ps 4:4 — resolve before sundown, give no opportunity to the devil); steal no more but work and give; no corrupting talk but what builds up; do not grieve the Holy Spirit; put away bitterness, wrath, malice. Be kind to one another, tenderhearted, forgiving as God in Christ forgave you.",
+          "children": [
+            {
+              "id": "eph4-5a",
+              "type": "ground",
+              "verse_range": "4:30",
+              "text": "Grieving the Spirit: the Spirit who sealed believers for the day of redemption can be grieved by the community's conduct. This gives the ethics a pneumatological gravity — ethical failure is not merely social disruption but an affront to the divine person dwelling within."
+            }
+          ]
+        }
+      ],
+      "note": "Ephesians 4 is the structural pivot of the letter, transitioning from 'you are' to 'therefore walk.' The chapter is unified by the motif of growth — from immature children (v. 14) to the full measure of Christ (v. 13). The five-fold ministry (v. 11) is given not for the leaders' authority but for the equipping of all the saints — leadership as gift to the whole, not position over the whole."
+    }
   },
   "vhl_groups": []
 }
