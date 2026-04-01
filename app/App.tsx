@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback, useMemo } from 'react';
-import { View, Text, ActivityIndicator } from 'react-native';
+import { View, Text, ActivityIndicator, AppState } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import { useFonts } from 'expo-font';
@@ -11,6 +11,8 @@ import { FONT_MAP, base, ThemeProvider, useTheme } from './src/theme';
 import { initDatabase } from './src/db/database';
 import { initUserDatabase } from './src/db/userDatabase';
 import { useSettingsStore, useAuthStore } from './src/stores';
+import { pruneEvents } from './src/services/analytics';
+import { checkAndScheduleReengagement } from './src/services/reengagement';
 import { RootNavigator } from './src/navigation';
 import { ErrorBoundary } from './src/components/ErrorBoundary';
 
@@ -61,6 +63,7 @@ export default function App() {
         await initUserDatabase();    // User DB (user.db) — never replaced, migrated
         await useSettingsStore.getState().hydrate();
         await useAuthStore.getState().hydrate();
+        pruneEvents(90); // Clean up old analytics (fire-and-forget)
       } catch (e) {
         console.error('Init error:', e);
       } finally {
@@ -69,6 +72,14 @@ export default function App() {
     }
     init();
   }, []);
+
+  // Re-engagement: check on app foreground
+  useEffect(() => {
+    const sub = AppState.addEventListener('change', (state) => {
+      if (state === 'active' && dbReady) checkAndScheduleReengagement();
+    });
+    return () => sub.remove();
+  }, [dbReady]);
 
   const onLayoutReady = useCallback(async () => {
     if (fontsLoaded && dbReady) {

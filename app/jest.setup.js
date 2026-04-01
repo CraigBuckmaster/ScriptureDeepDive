@@ -86,9 +86,16 @@ jest.mock('expo-screen-orientation', () => ({
 }));
 
 // Mock @react-native-async-storage/async-storage
-jest.mock('@react-native-async-storage/async-storage', () =>
-  require('@react-native-async-storage/async-storage/jest/async-storage-mock')
-);
+jest.mock('@react-native-async-storage/async-storage', () => {
+  const store = {};
+  return {
+    setItem: jest.fn((key, val) => { store[key] = val; return Promise.resolve(); }),
+    getItem: jest.fn((key) => Promise.resolve(store[key] ?? null)),
+    removeItem: jest.fn((key) => { delete store[key]; return Promise.resolve(); }),
+    clear: jest.fn(() => { Object.keys(store).forEach(k => delete store[k]); return Promise.resolve(); }),
+    getAllKeys: jest.fn(() => Promise.resolve(Object.keys(store))),
+  };
+});
 
 // Mock Supabase client
 jest.mock('@/lib/supabase', () => ({
@@ -109,6 +116,17 @@ jest.mock('@/lib/supabase', () => ({
 // Mock OAuth helpers
 jest.mock('@/lib/oauthHelpers', () => ({
   signInWithProvider: jest.fn().mockResolvedValue({}),
+}));
+
+// Mock expo-store-review
+jest.mock('expo-store-review', () => ({
+  isAvailableAsync: jest.fn().mockResolvedValue(false),
+  requestReview: jest.fn().mockResolvedValue(undefined),
+}));
+
+// Mock expo-constants
+jest.mock('expo-constants', () => ({
+  expoConfig: { version: '1.0.0' },
 }));
 
 // Mock expo-auth-session
@@ -218,6 +236,20 @@ jest.mock('lucide-react-native', () => {
 jest.mock('@/utils/haptics', () => ({
   lightImpact: jest.fn(),
   mediumImpact: jest.fn(),
+}));
+
+// Mock analytics service (fire-and-forget, should never break tests)
+jest.mock('@/services/analytics', () => ({
+  logEvent: jest.fn(),
+  getEventCounts: jest.fn().mockResolvedValue([]),
+  pruneEvents: jest.fn().mockResolvedValue(undefined),
+}));
+
+// Mock reengagement service
+jest.mock('@/services/reengagement', () => ({
+  updateLastActive: jest.fn().mockResolvedValue(undefined),
+  checkAndScheduleReengagement: jest.fn().mockResolvedValue(undefined),
+  cancelReengagement: jest.fn().mockResolvedValue(undefined),
 }));
 
 // Silence the app logger in tests (console.warn noise).
