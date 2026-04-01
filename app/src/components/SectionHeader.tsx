@@ -18,9 +18,11 @@ export function SectionHeader({ header, explored, total }: Props) {
   const { base } = useTheme();
   return (
     <View style={[styles.container, { borderBottomColor: base.border }]} accessibilityRole="header">
-      <Text style={[styles.text, { color: base.gold }]}>{header}</Text>
+      <Text style={[styles.text, { color: base.gold }]} numberOfLines={2}>{header}</Text>
       {total != null && total > 0 ? (
-        <DepthDots explored={explored ?? 0} total={total} />
+        <View style={styles.depthWrap}>
+          <DepthDots explored={explored ?? 0} total={total} />
+        </View>
       ) : null}
     </View>
   );
@@ -41,5 +43,10 @@ const styles = StyleSheet.create({
     fontSize: 13,
     lineHeight: 20,
     letterSpacing: 0.3,
+    flex: 1,
+    marginRight: spacing.sm,
+  },
+  depthWrap: {
+    flexShrink: 0,
   },
 });
