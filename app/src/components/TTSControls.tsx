@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { Play, Pause, SkipBack, SkipForward, Square } from 'lucide-react-native';
 import { base, useTheme, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
 
 const SPEEDS = [0.5, 0.75, 1.0, 1.25, 1.5];
@@ -26,45 +27,74 @@ export function TTSControls({
   onPlay, onPause, onStop, onSkipNext, onSkipPrev, onSetSpeed,
 }: Props) {
   const { base } = useTheme();
+
   return (
     <View style={[styles.container, { backgroundColor: base.bgElevated, borderTopColor: base.border }]}>
-      {/* Verse counter */}
-      <Text style={[styles.counter, { color: base.textMuted }]}>
-        Verse {currentVerse + 1} of {totalVerses}
-      </Text>
-
-      {/* Controls row */}
-      <View style={styles.controls}>
-        <TouchableOpacity onPress={onSkipPrev} style={styles.skipButton}>
-          <Text style={[styles.skipIcon, { color: base.gold }]}>⏮</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={isPlaying ? onPause : onPlay}
-          style={[styles.playButton, { backgroundColor: base.gold + '30' }]}
-        >
-          <Text style={[styles.playIcon, { color: base.gold }]}>{isPlaying ? '⏸' : '▶'}</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={onSkipNext} style={styles.skipButton}>
-          <Text style={[styles.skipIcon, { color: base.gold }]}>⏭</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={onStop} style={styles.skipButton}>
-          <Text style={[styles.stopIcon, { color: base.textMuted }]}>⏹</Text>
-        </TouchableOpacity>
+      {/* Progress indicator */}
+      <View style={styles.progressRow}>
+        <View style={[styles.progressTrack, { backgroundColor: base.border }]}>
+          <View style={[
+            styles.progressFill,
+            { backgroundColor: base.gold, width: `${((currentVerse + 1) / totalVerses) * 100}%` },
+          ]} />
+        </View>
+        <Text style={[styles.counter, { color: base.textMuted }]}>
+          {currentVerse + 1}/{totalVerses}
+        </Text>
       </View>
 
-      {/* Speed selector */}
-      <View style={styles.speedRow}>
-        {SPEEDS.map((s) => (
-          <TouchableOpacity
-            key={s}
-            onPress={() => onSetSpeed(s)}
-            style={[styles.speedPill, speed === s && { backgroundColor: base.gold + '30' }]}
-          >
-            <Text style={[styles.speedLabel, { color: base.textMuted }, speed === s && { color: base.gold }]}>
-              {s}x
-            </Text>
+      {/* Controls + speed in one row */}
+      <View style={styles.mainRow}>
+        {/* Speed selector */}
+        <View style={styles.speedRow}>
+          {SPEEDS.map((s) => (
+            <TouchableOpacity
+              key={s}
+              onPress={() => onSetSpeed(s)}
+              style={[
+                styles.speedPill,
+                { borderColor: base.border },
+                speed === s && { backgroundColor: base.gold + '25', borderColor: base.gold + '50' },
+              ]}
+            >
+              <Text style={[
+                styles.speedLabel,
+                { color: base.textMuted },
+                speed === s && { color: base.gold },
+              ]}>
+                {s}x
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+
+        {/* Transport controls */}
+        <View style={styles.controls}>
+          <TouchableOpacity onPress={onSkipPrev} style={styles.controlButton}>
+            <SkipBack size={18} color={base.gold} fill={base.gold} />
           </TouchableOpacity>
-        ))}
+
+          <TouchableOpacity
+            onPress={isPlaying ? onPause : onPlay}
+            style={[styles.playButton, { backgroundColor: base.gold + '20', borderColor: base.gold + '40' }]}
+          >
+            {isPlaying
+              ? <Pause size={20} color={base.gold} fill={base.gold} />
+              : <Play size={20} color={base.gold} fill={base.gold} style={{ marginLeft: 2 }} />
+            }
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={onSkipNext} style={styles.controlButton}>
+            <SkipForward size={18} color={base.gold} fill={base.gold} />
+          </TouchableOpacity>
+        </View>
+
+        {/* Stop button */}
+        <View style={styles.stopSection}>
+          <TouchableOpacity onPress={onStop} style={styles.controlButton}>
+            <Square size={14} color={base.textMuted} fill={base.textMuted} />
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -74,55 +104,72 @@ const styles = StyleSheet.create({
   container: {
     borderTopWidth: 1,
     paddingHorizontal: spacing.md,
-    paddingVertical: spacing.xs,
+    paddingTop: spacing.sm,
+    paddingBottom: spacing.sm,
+  },
+  progressRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
+    marginBottom: spacing.sm,
+  },
+  progressTrack: {
+    flex: 1,
+    height: 3,
+    borderRadius: 2,
+    overflow: 'hidden',
+  },
+  progressFill: {
+    height: 3,
+    borderRadius: 2,
   },
   counter: {
-    fontFamily: fontFamily.ui,
+    fontFamily: fontFamily.uiMedium,
     fontSize: 10,
-    textAlign: 'center',
-    marginBottom: 4,
+    minWidth: 32,
+    textAlign: 'right',
+  },
+  mainRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  speedRow: {
+    flexDirection: 'row',
+    gap: 4,
+    flex: 1,
+  },
+  speedPill: {
+    paddingHorizontal: 7,
+    paddingVertical: 3,
+    borderRadius: radii.pill,
+    borderWidth: 1,
+  },
+  speedLabel: {
+    fontSize: 10,
+    fontFamily: fontFamily.uiMedium,
   },
   controls: {
     flexDirection: 'row',
-    justifyContent: 'center',
     alignItems: 'center',
-    gap: spacing.md,
+    gap: spacing.sm,
   },
-  skipButton: {
+  controlButton: {
     minWidth: MIN_TOUCH_TARGET,
     minHeight: MIN_TOUCH_TARGET,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  skipIcon: {
-    fontSize: 18,
-  },
   playButton: {
-    width: 44,
-    height: 44,
-    borderRadius: 22,
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    borderWidth: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  playIcon: {
-    fontSize: 20,
-  },
-  stopIcon: {
-    fontSize: 16,
-  },
-  speedRow: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    gap: 6,
-    marginTop: 4,
-  },
-  speedPill: {
-    paddingHorizontal: 8,
-    paddingVertical: 2,
-    borderRadius: radii.pill,
-  },
-  speedLabel: {
-    fontSize: 10,
-    fontFamily: fontFamily.uiMedium,
+  stopSection: {
+    flex: 1,
+    alignItems: 'flex-end',
   },
 });
