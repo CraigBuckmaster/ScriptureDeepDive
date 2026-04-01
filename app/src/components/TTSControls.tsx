@@ -43,58 +43,52 @@ export function TTSControls({
         </Text>
       </View>
 
-      {/* Controls + speed in one row */}
-      <View style={styles.mainRow}>
-        {/* Speed selector */}
-        <View style={styles.speedRow}>
-          {SPEEDS.map((s) => (
-            <TouchableOpacity
-              key={s}
-              onPress={() => onSetSpeed(s)}
-              style={[
-                styles.speedPill,
-                { borderColor: base.border },
-                speed === s && { backgroundColor: base.gold + '25', borderColor: base.gold + '50' },
-              ]}
-            >
-              <Text style={[
-                styles.speedLabel,
-                { color: base.textMuted },
-                speed === s && { color: base.gold },
-              ]}>
-                {s}x
-              </Text>
-            </TouchableOpacity>
-          ))}
-        </View>
+      {/* Transport controls */}
+      <View style={styles.controlsRow}>
+        <TouchableOpacity onPress={onSkipPrev} style={styles.controlButton}>
+          <SkipBack size={18} color={base.gold} fill={base.gold} />
+        </TouchableOpacity>
 
-        {/* Transport controls */}
-        <View style={styles.controls}>
-          <TouchableOpacity onPress={onSkipPrev} style={styles.controlButton}>
-            <SkipBack size={18} color={base.gold} fill={base.gold} />
-          </TouchableOpacity>
+        <TouchableOpacity
+          onPress={isPlaying ? onPause : onPlay}
+          style={[styles.playButton, { backgroundColor: base.gold + '20', borderColor: base.gold + '40' }]}
+        >
+          {isPlaying
+            ? <Pause size={20} color={base.gold} fill={base.gold} />
+            : <Play size={20} color={base.gold} fill={base.gold} style={{ marginLeft: 2 }} />
+          }
+        </TouchableOpacity>
 
+        <TouchableOpacity onPress={onSkipNext} style={styles.controlButton}>
+          <SkipForward size={18} color={base.gold} fill={base.gold} />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={onStop} style={styles.controlButton}>
+          <Square size={14} color={base.textMuted} fill={base.textMuted} />
+        </TouchableOpacity>
+      </View>
+
+      {/* Speed selector */}
+      <View style={styles.speedRow}>
+        {SPEEDS.map((s) => (
           <TouchableOpacity
-            onPress={isPlaying ? onPause : onPlay}
-            style={[styles.playButton, { backgroundColor: base.gold + '20', borderColor: base.gold + '40' }]}
+            key={s}
+            onPress={() => onSetSpeed(s)}
+            style={[
+              styles.speedPill,
+              { borderColor: base.border },
+              speed === s && { backgroundColor: base.gold + '25', borderColor: base.gold + '50' },
+            ]}
           >
-            {isPlaying
-              ? <Pause size={20} color={base.gold} fill={base.gold} />
-              : <Play size={20} color={base.gold} fill={base.gold} style={{ marginLeft: 2 }} />
-            }
+            <Text style={[
+              styles.speedLabel,
+              { color: base.textMuted },
+              speed === s && { color: base.gold },
+            ]}>
+              {s}x
+            </Text>
           </TouchableOpacity>
-
-          <TouchableOpacity onPress={onSkipNext} style={styles.controlButton}>
-            <SkipForward size={18} color={base.gold} fill={base.gold} />
-          </TouchableOpacity>
-        </View>
-
-        {/* Stop button */}
-        <View style={styles.stopSection}>
-          <TouchableOpacity onPress={onStop} style={styles.controlButton}>
-            <Square size={14} color={base.textMuted} fill={base.textMuted} />
-          </TouchableOpacity>
-        </View>
+        ))}
       </View>
     </View>
   );
@@ -129,15 +123,17 @@ const styles = StyleSheet.create({
     minWidth: 32,
     textAlign: 'right',
   },
-  mainRow: {
+  controlsRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+    gap: spacing.sm,
+    marginBottom: spacing.sm,
   },
   speedRow: {
     flexDirection: 'row',
-    gap: 4,
-    flex: 1,
+    justifyContent: 'center',
+    gap: 6,
   },
   speedPill: {
     paddingHorizontal: 7,
@@ -148,11 +144,6 @@ const styles = StyleSheet.create({
   speedLabel: {
     fontSize: 10,
     fontFamily: fontFamily.uiMedium,
-  },
-  controls: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: spacing.sm,
   },
   controlButton: {
     minWidth: MIN_TOUCH_TARGET,
@@ -167,9 +158,5 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  stopSection: {
-    flex: 1,
-    alignItems: 'flex-end',
   },
 });
