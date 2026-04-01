@@ -1115,7 +1115,14 @@ def main():
     cur.execute('PRAGMA foreign_keys=ON')
 
     conn.commit()
+    conn.execute('VACUUM')
     conn.close()
+
+    # Copy to app assets
+    import shutil
+    assets_db = ROOT / 'app' / 'assets' / 'scripture.db'
+    assets_db.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(DB_PATH, assets_db)
 
     # File size
     size = DB_PATH.stat().st_size
