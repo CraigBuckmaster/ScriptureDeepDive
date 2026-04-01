@@ -130,8 +130,8 @@ export function NoteCard({
 
           {noteTags.length > 0 && (
             <View style={styles.tagRow}>
-              {noteTags.map((t) => (
-                <Text key={t} style={[styles.tagLabel, { color: base.goldDim }]}>
+              {noteTags.map((t, i) => (
+                <Text key={`${i}-${t}`} style={[styles.tagLabel, { color: base.goldDim }]}>
                   #{t}
                 </Text>
               ))}

@@ -96,8 +96,9 @@ export async function getInterlinearWords(
 
 export async function getConcordanceResults(strongs: string): Promise<ConcordanceResult[]> {
   return getDb().getAllAsync<ConcordanceResult>(
-    `SELECT DISTINCT iw.book_id, iw.chapter_num, iw.verse_num,
-       iw.original, iw.transliteration, ig.gloss,
+    `SELECT iw.book_id, iw.chapter_num, iw.verse_num,
+       iw.original, iw.transliteration,
+       MIN(ig.gloss) as gloss,
        v.text, b.name as book_name
      FROM interlinear_words iw
      LEFT JOIN interlinear_glosses ig ON ig.id = iw.gloss_id
@@ -107,6 +108,7 @@ export async function getConcordanceResults(strongs: string): Promise<Concordanc
        AND v.translation = 'niv'
      JOIN books b ON b.id = iw.book_id
      WHERE iw.strongs = ?
+     GROUP BY iw.book_id, iw.chapter_num, iw.verse_num
      ORDER BY b.book_order, iw.chapter_num, iw.verse_num`,
     [strongs]
   );
