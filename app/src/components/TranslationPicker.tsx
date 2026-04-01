@@ -49,6 +49,8 @@ export function TranslationPicker({ selected, onSelect }: Props) {
 const styles = StyleSheet.create({
   scroll: {
     borderBottomWidth: 1,
+    flexGrow: 0,
+    flexShrink: 0,
   },
   row: {
     flexDirection: 'row',
