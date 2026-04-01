@@ -8,7 +8,6 @@ __pycache__/
 *.db-shm
 *.db-wal
 scripture.db
-app/assets/scripture.db
 -e 
 # Quality evaluation artifacts
 _tools/.quality_cache.json
