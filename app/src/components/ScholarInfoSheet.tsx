@@ -70,6 +70,10 @@ export function ScholarInfoSheet({ visible, onClose, scholarId, onGoToFullBio }:
                   <Text style={{ color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 13 }}>See full bio →</Text>
                 </TouchableOpacity>
               )}
+
+              <Text style={{ color: base.textMuted, fontFamily: fontFamily.ui, fontSize: 10, marginTop: spacing.lg, lineHeight: 15, opacity: 0.7 }}>
+                Commentary reflects paraphrased summaries of positions found in published works, not direct quotations. For exact wording, consult the original sources cited.
+              </Text>
             </>
           ) : (
             <Text style={{ color: base.textMuted }}>Loading...</Text>

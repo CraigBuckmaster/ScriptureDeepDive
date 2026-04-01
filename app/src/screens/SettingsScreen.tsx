@@ -236,6 +236,10 @@ export default function SettingsScreen() {
           )}
 
           <Text style={[styles.version, { color: base.textMuted }]}>Version {APP_VERSION}</Text>
+
+          <Text style={[styles.disclaimerText, { color: base.textMuted }]}>
+            Scholar commentary panels present paraphrased summaries of positions found in published works and are not direct quotations. For exact wording, consult the original sources cited.
+          </Text>
         </View>
 
         {/* ── DATA ─────────────────────────────────────────────── */}
@@ -438,6 +442,14 @@ const styles = StyleSheet.create({
     fontSize: 11,
     marginTop: spacing.sm,
     textAlign: 'center',
+  },
+  disclaimerText: {
+    fontFamily: fontFamily.ui,
+    fontSize: 10,
+    lineHeight: 15,
+    marginTop: spacing.lg,
+    textAlign: 'center',
+    opacity: 0.7,
   },
 
   /* Export */
