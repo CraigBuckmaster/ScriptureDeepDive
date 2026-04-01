@@ -99,7 +99,7 @@ export function PanelRenderer({
   // ── Section-level panels ──
   switch (panelType) {
     case 'heb':
-      return <HebrewPanel entries={data} onWordStudyPress={onWordStudyPress} onRefPress={onRefPress} />;
+      return <HebrewPanel entries={Array.isArray(data) ? data : []} onWordStudyPress={onWordStudyPress} onRefPress={onRefPress} />;
     case 'ctx':
       return <ContextPanel text={typeof data === 'string' ? data : JSON.stringify(data)} onRefPress={onRefPress} />;
     case 'hist':
@@ -115,10 +115,10 @@ export function PanelRenderer({
         return <CompositeConnectionsPanel data={data} onRefPress={onRefPress} defaultTab={defaultTab} />;
       }
       // Legacy: plain array → single-view
-      return <CrossRefPanel entries={data} onRefPress={onRefPress} />;
+      return <CrossRefPanel entries={Array.isArray(data) ? data : []} onRefPress={onRefPress} />;
     case 'poi':
     case 'places':
-      return <PlacesPanel entries={data} onPlacePress={onPlacePress} onRefPress={onRefPress} />;
+      return <PlacesPanel entries={Array.isArray(data) ? data : []} onPlacePress={onPlacePress} onRefPress={onRefPress} />;
     case 'tl':
       return <TimelinePanel events={data} onEventPress={onEventPress} onRefPress={onRefPress} />;
 
@@ -134,11 +134,11 @@ export function PanelRenderer({
     case 'trans':
       return <TranslationPanel data={data} />;
     case 'src':
-      return <SourcesPanel entries={data} onRefPress={onRefPress} />;
+      return <SourcesPanel entries={Array.isArray(data) ? data : []} onRefPress={onRefPress} />;
     case 'rec':
-      return <ReceptionPanel entries={data} onRefPress={onRefPress} />;
+      return <ReceptionPanel entries={Array.isArray(data) ? data : []} onRefPress={onRefPress} />;
     case 'thread':
-      return <ThreadingPanel entries={data} onRefPress={onRefPress} />;
+      return <ThreadingPanel entries={Array.isArray(data) ? data : []} onRefPress={onRefPress} />;
     case 'tx':
     case 'textual':
       // Shape detection: array → legacy. {notes, stories} → composite with Manuscript Stories tab.
