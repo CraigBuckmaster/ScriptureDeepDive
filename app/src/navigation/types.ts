@@ -11,17 +11,24 @@ import type { RouteProp } from '@react-navigation/native';
 
 // ── Stack Param Lists ─────────────────────────────────────────────
 
+/** Deep-link param to auto-open a specific panel on the Chapter screen. */
+export interface OpenPanelParam {
+  sectionNum?: number;
+  panelType: string;
+  tabKey?: string;
+}
+
 export type ReadStackParamList = {
   BookList: undefined;
   ChapterList: { bookId: string };
   BookIntro: { bookId: string };
-  Chapter: { bookId: string; chapterNum: number };
+  Chapter: { bookId: string; chapterNum: number; openPanel?: OpenPanelParam };
   ParallelPassage: { entryId: string };
 };
 
 export type HomeStackParamList = {
   HomeMain: undefined;
-  Chapter: { bookId: string; chapterNum: number };
+  Chapter: { bookId: string; chapterNum: number; openPanel?: OpenPanelParam };
   ChapterList: { bookId: string };
   BookList: undefined;
   BookIntro: { bookId: string };
@@ -45,13 +52,14 @@ export type ExploreStackParamList = {
   ConceptDetail: { conceptId: string };
   DifficultPassagesBrowse: undefined;
   DifficultPassageDetail: { passageId: string };
+  ContentLibrary: undefined;
   Concordance: {
     strongs?: string;
     original?: string;
     transliteration?: string;
     gloss?: string;
   } | undefined;
-  Chapter: { bookId: string; chapterNum: number };
+  Chapter: { bookId: string; chapterNum: number; openPanel?: OpenPanelParam };
 };
 
 export type MoreStackParamList = {
@@ -63,7 +71,7 @@ export type MoreStackParamList = {
   CollectionDetail: { collectionId: number };
   PlanList: undefined;
   PlanDetail: { planId: string };
-  Chapter: { bookId: string; chapterNum: number };
+  Chapter: { bookId: string; chapterNum: number; openPanel?: OpenPanelParam };
   BookIntro: { bookId: string };
 };
 

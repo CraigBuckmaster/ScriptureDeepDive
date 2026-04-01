@@ -334,6 +334,24 @@ CREATE TABLE interlinear_words (
 CREATE INDEX idx_interlinear_verse ON interlinear_words(book_id, chapter_num, verse_num);
 CREATE INDEX idx_interlinear_gloss ON interlinear_words(gloss_id);
 
+-- Content Library (build-time index for cross-chapter content browsing)
+CREATE TABLE content_library (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  category TEXT NOT NULL,
+  title TEXT NOT NULL,
+  preview TEXT,
+  book_id TEXT NOT NULL,
+  book_name TEXT NOT NULL,
+  chapter_num INTEGER NOT NULL,
+  section_num INTEGER,
+  panel_type TEXT NOT NULL,
+  tab_key TEXT,
+  testament TEXT NOT NULL,
+  sort_order INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX idx_cl_category ON content_library(category);
+CREATE INDEX idx_cl_book ON content_library(book_id);
+
 -- Full-text search indexes
 CREATE VIRTUAL TABLE verses_fts USING fts5(text, content=verses, content_rowid=id);
 CREATE VIRTUAL TABLE people_fts USING fts5(name, role, bio, content=people, content_rowid=rowid);
@@ -860,6 +878,137 @@ def populate_difficult_passages(cur):
     return len(passages)
 
 
+def populate_content_library(cur):
+    """Extract content library entries from chapter JSONs.
+
+    Walks all chapter JSONs and extracts entries for 5 categories:
+    - manuscripts: tx.stories (chapter-level)
+    - discourse: chapter_panels.discourse (chapter-level)
+    - echoes: cross.echoes (section-level)
+    - ane: hist.ane (section-level)
+    - chiasms: lit.chiasm (chapter-level)
+    """
+    # Build book lookup for name and testament
+    cur.execute('SELECT id, name, testament, book_order FROM books')
+    book_info = {}
+    for row in cur.fetchall():
+        book_info[row[0]] = {'name': row[1], 'testament': row[2], 'order': row[3]}
+
+    count = 0
+    content_dir = ROOT / 'content'
+    for book_dir in sorted(content_dir.iterdir()):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
+            continue
+        book_id = book_dir.name
+        info = book_info.get(book_id)
+        if not info:
+            continue
+        book_name = info['name']
+        testament = info['testament']
+        book_order = info['order']
+
+        for json_file in sorted(book_dir.glob('*.json')):
+            data = _load_json(json_file)
+            ch_num = data['chapter_num']
+            sort_order = book_order * 1000 + ch_num
+            cp = data.get('chapter_panels', {})
+
+            # --- Discourse ---
+            disc = cp.get('discourse')
+            if disc and isinstance(disc, dict):
+                thesis = disc.get('thesis', '')
+                nodes = disc.get('nodes', [])
+                title = f"{book_name} {ch_num} — Argument Flow"
+                preview = thesis[:200] if thesis else (nodes[0]['text'][:200] if nodes else '')
+                cur.execute(
+                    'INSERT INTO content_library '
+                    '(category, title, preview, book_id, book_name, chapter_num, '
+                    'section_num, panel_type, tab_key, testament, sort_order) '
+                    'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                    ('discourse', title, preview, book_id, book_name, ch_num,
+                     None, 'discourse', None, testament, sort_order)
+                )
+                count += 1
+
+            # --- Manuscript Stories ---
+            tx = cp.get('tx')
+            if tx and isinstance(tx, dict):
+                for story in tx.get('stories', []):
+                    title = story.get('title', 'Untitled')
+                    summary = story.get('summary', '')
+                    cur.execute(
+                        'INSERT INTO content_library '
+                        '(category, title, preview, book_id, book_name, chapter_num, '
+                        'section_num, panel_type, tab_key, testament, sort_order) '
+                        'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                        ('manuscripts', title, summary[:200], book_id, book_name, ch_num,
+                         None, 'tx', 'stories', testament, sort_order)
+                    )
+                    count += 1
+
+            # --- Chiasms ---
+            lit = cp.get('lit')
+            if lit and isinstance(lit, dict) and lit.get('chiasm'):
+                chiasm = lit['chiasm']
+                title = chiasm.get('title', f'{book_name} {ch_num} Chiasm')
+                pairs = chiasm.get('pairs', [])
+                center = chiasm.get('center', '')
+                if pairs:
+                    preview = pairs[0].get('label', '') + ' … ' + (center if center else '')
+                else:
+                    preview = center or ''
+                cur.execute(
+                    'INSERT INTO content_library '
+                    '(category, title, preview, book_id, book_name, chapter_num, '
+                    'section_num, panel_type, tab_key, testament, sort_order) '
+                    'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                    ('chiasms', title, preview[:200], book_id, book_name, ch_num,
+                     None, 'lit', 'chiasm', testament, sort_order)
+                )
+                count += 1
+
+            # --- Section-level panels ---
+            for sec in data.get('sections', []):
+                sn = sec['section_num']
+                panels = sec.get('panels', {})
+
+                # Echoes
+                cross = panels.get('cross')
+                if cross and isinstance(cross, dict):
+                    for echo in cross.get('echoes', []):
+                        src = echo.get('source_ref', '')
+                        tgt = echo.get('target_ref', '')
+                        title = f"{src} → {tgt}" if src and tgt else echo.get('title', 'Echo')
+                        preview = echo.get('connection', '')[:200]
+                        cur.execute(
+                            'INSERT INTO content_library '
+                            '(category, title, preview, book_id, book_name, chapter_num, '
+                            'section_num, panel_type, tab_key, testament, sort_order) '
+                            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                            ('echoes', title, preview, book_id, book_name, ch_num,
+                             sn, 'cross', 'echoes', testament, sort_order)
+                        )
+                        count += 1
+
+                # ANE Parallels
+                hist = panels.get('hist')
+                if hist and isinstance(hist, dict):
+                    for ane in hist.get('ane', []):
+                        title = ane.get('parallel', ane.get('title', 'ANE Parallel'))
+                        preview = ane.get('similarity', '')[:200]
+                        cur.execute(
+                            'INSERT INTO content_library '
+                            '(category, title, preview, book_id, book_name, chapter_num, '
+                            'section_num, panel_type, tab_key, testament, sort_order) '
+                            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                            ('ane', title, preview, book_id, book_name, ch_num,
+                             sn, 'hist', 'ane', testament, sort_order)
+                        )
+                        count += 1
+
+    return count
+
+
 def build_fts(cur):
     """Populate FTS5 indexes."""
     cur.execute('INSERT INTO verses_fts(verses_fts) VALUES("rebuild")')
@@ -950,6 +1099,9 @@ def main():
     n = populate_interlinear(cur)
     print(f"  [OK] interlinear_words: {n} rows")
 
+    n = populate_content_library(cur)
+    print(f"  [OK] content_library: {n} rows")
+
     # Build FTS
     build_fts(cur)
     print(f"  [OK] FTS5 indexes built")
@@ -981,6 +1133,7 @@ def main():
         'verses', 'book_intros', 'people', 'scholars', 'places',
         'map_stories', 'word_studies', 'synoptic_map', 'vhl_groups',
         'genealogy_config', 'cross_ref_threads', 'cross_ref_pairs', 'timelines',
+        'content_library',
     ]
     for t in tables:
         cur.execute(f'SELECT COUNT(*) FROM {t}')

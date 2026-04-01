@@ -16,6 +16,7 @@ import ConceptDetailScreen from '../screens/ConceptDetailScreen';
 import DifficultPassagesBrowseScreen from '../screens/DifficultPassagesBrowseScreen';
 import DifficultPassageDetailScreen from '../screens/DifficultPassageDetailScreen';
 import ConcordanceScreen from '../screens/ConcordanceScreen';
+import ContentLibraryScreen from '../screens/ContentLibraryScreen';
 import ChapterScreen from '../screens/ChapterScreen';
 import { useTheme } from '../theme';
 import type { ExploreStackParamList } from './types';
@@ -50,6 +51,7 @@ export function ExploreStack() {
       <Stack.Screen name="DifficultPassagesBrowse" component={DifficultPassagesBrowseScreen} />
       <Stack.Screen name="DifficultPassageDetail" component={DifficultPassageDetailScreen} />
       <Stack.Screen name="Concordance" component={ConcordanceScreen} />
+      <Stack.Screen name="ContentLibrary" component={ContentLibraryScreen} />
       <Stack.Screen name="Chapter" component={ChapterScreen} />
     </Stack.Navigator>
   );

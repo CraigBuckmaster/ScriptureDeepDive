@@ -14,16 +14,16 @@ import { ChiasmView } from './ChiasmView';
 import { useTheme, spacing, fontFamily } from '../../theme';
 import type { LitPanel } from '../../types';
 
-interface Props { data: LitPanel; }
+interface Props { data: LitPanel; defaultTab?: string; }
 
-export function LiteraryStructurePanel({ data }: Props) {
+export function LiteraryStructurePanel({ data, defaultTab }: Props) {
   const tabs: TabConfig[] = useMemo(() => [
     { key: 'structure', label: 'Structure', hasData: data.rows.length > 0 },
     { key: 'chiasm', label: 'Chiasm View', hasData: !!data.chiasm },
   ], [data]);
 
   return (
-    <TabbedPanelRenderer tabs={tabs}>
+    <TabbedPanelRenderer tabs={tabs} defaultTab={defaultTab}>
       {(activeKey) => {
         if (activeKey === 'chiasm' && data.chiasm) {
           return <ChiasmView data={data.chiasm} />;

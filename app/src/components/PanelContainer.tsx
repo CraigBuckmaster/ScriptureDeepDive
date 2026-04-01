@@ -27,12 +27,15 @@ interface Props {
   onPersonPress?: (name: string) => void;
   onPlacePress?: (name: string) => void;
   onEventPress?: (name: string) => void;
+  /** Override the initial tab for composite panels (deep-link). */
+  defaultTab?: string;
 }
 
 export function PanelContainer({
   panelType, contentJson, isOpen, onClose,
   onRefPress, onWordStudyPress, onScholarPress,
   onPersonPress, onPlacePress, onEventPress,
+  defaultTab,
 }: Props) {
   const { base, getPanelColors } = useTheme();
 
@@ -71,6 +74,7 @@ export function PanelContainer({
         onPersonPress={onPersonPress}
         onPlacePress={onPlacePress}
         onEventPress={onEventPress}
+        defaultTab={defaultTab}
       />
     </View>
   );

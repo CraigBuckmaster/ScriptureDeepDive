@@ -17,9 +17,10 @@ import type { CompositeContextData, ParsedRef } from '../../types';
 interface Props {
   data: CompositeContextData;
   onRefPress?: (ref: ParsedRef) => void;
+  defaultTab?: string;
 }
 
-export function CompositeContextPanel({ data, onRefPress }: Props) {
+export function CompositeContextPanel({ data, onRefPress, defaultTab }: Props) {
   const tabs: TabConfig[] = useMemo(() => [
     { key: 'context', label: 'Context', hasData: !!data.context },
     { key: 'historical', label: 'Historical', hasData: !!data.historical },
@@ -28,7 +29,7 @@ export function CompositeContextPanel({ data, onRefPress }: Props) {
   ], [data]);
 
   return (
-    <TabbedPanelRenderer tabs={tabs}>
+    <TabbedPanelRenderer tabs={tabs} defaultTab={defaultTab}>
       {(activeKey) => {
         switch (activeKey) {
           case 'context':

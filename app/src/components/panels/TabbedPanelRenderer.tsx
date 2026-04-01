@@ -25,10 +25,12 @@ export interface TabConfig {
 
 interface TabbedPanelRendererProps {
   tabs: TabConfig[];
+  /** If provided, override the initial active tab selection. */
+  defaultTab?: string;
   children: (activeTabKey: string) => React.ReactNode;
 }
 
-export function TabbedPanelRenderer({ tabs, children }: TabbedPanelRendererProps) {
+export function TabbedPanelRenderer({ tabs, defaultTab, children }: TabbedPanelRendererProps) {
   const { base } = useTheme();
 
   const visibleTabs = useMemo(
@@ -36,9 +38,13 @@ export function TabbedPanelRenderer({ tabs, children }: TabbedPanelRendererProps
     [tabs],
   );
 
-  const [activeKey, setActiveKey] = useState<string>(
-    () => visibleTabs[0]?.key ?? '',
-  );
+  const [activeKey, setActiveKey] = useState<string>(() => {
+    if (defaultTab) {
+      const match = visibleTabs.find((t) => t.key === defaultTab);
+      if (match) return match.key;
+    }
+    return visibleTabs[0]?.key ?? '';
+  });
 
   // If no tabs have data, render nothing
   if (visibleTabs.length === 0) return null;
