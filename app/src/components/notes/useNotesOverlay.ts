@@ -59,6 +59,9 @@ export interface NotesOverlayState {
   newText: string;
   addRef: string;
   newTextRef: React.RefObject<TextInput | null>;
+  newTags: string[];
+  newCollection: StudyCollection | null;
+  newLinkedNotes: UserNote[];
 
   /* Sub-modals */
   showCollectionPicker: boolean;
@@ -78,9 +81,11 @@ export interface NotesOverlayState {
   handleUpdate: (id: number) => Promise<void>;
   handleDelete: (id: number) => void;
   handleTagsChange: (newTags: string[]) => Promise<void>;
+  handleNewTagsChange: (newTags: string[]) => void;
   handleCollectionSelect: (collectionId: number | null) => Promise<void>;
   handleLinkNote: (toNoteId: number) => Promise<void>;
   handleUnlink: (toNoteId: number) => Promise<void>;
+  handleNewUnlink: (toNoteId: number) => void;
   setShowCollectionPicker: (v: boolean) => void;
   setShowLinkSheet: (v: boolean) => void;
   setEditText: (text: string) => void;
@@ -107,6 +112,10 @@ export function useNotesOverlay({
   const [addRef, setAddRef] = useState('');
   const newTextRef = useRef<TextInput>(null);
   const pendingNewText = useRef('');
+  const [newTags, setNewTags] = useState<string[]>([]);
+  const [newCollectionId, setNewCollectionId] = useState<number | null>(null);
+  const [newCollection, setNewCollection] = useState<StudyCollection | null>(null);
+  const [newLinkedNotes, setNewLinkedNotes] = useState<UserNote[]>([]);
 
   const [showCollectionPicker, setShowCollectionPicker] = useState(false);
   const [showLinkSheet, setShowLinkSheet] = useState(false);
@@ -203,6 +212,10 @@ export function useNotesOverlay({
     setNewText('');
     setShowAdd(false);
     setAddRef('');
+    setNewTags([]);
+    setNewCollectionId(null);
+    setNewCollection(null);
+    setNewLinkedNotes([]);
   }, []);
 
   const handleNewTextChange = useCallback((text: string) => {
@@ -214,15 +227,23 @@ export function useNotesOverlay({
     if (pendingNewText.current.trim()) {
       const savedText = pendingNewText.current.trim();
       const newId = await saveNote(addRef || makeRef(), savedText);
+      // Apply tags, collection, and linked notes gathered during creation
+      if (newTags.length > 0) await updateNoteTags(newId, newTags);
+      if (newCollectionId !== null) await setNoteCollection(newId, newCollectionId);
+      for (const linked of newLinkedNotes) await linkNotes(newId, linked.id);
       pendingNewText.current = '';
       setNewText('');
       setShowAdd(false);
       setAddRef('');
+      setNewTags([]);
+      setNewCollectionId(null);
+      setNewCollection(null);
+      setNewLinkedNotes([]);
       await reload();
       setEditingId(newId);
       setEditText(savedText);
     }
-  }, [addRef, bookId, chapterNum, reload]);
+  }, [addRef, bookId, chapterNum, reload, newTags, newCollectionId, newLinkedNotes]);
 
   const startEditing = useCallback((note: UserNote) => {
     setEditingId(note.id);
@@ -268,6 +289,17 @@ export function useNotesOverlay({
 
   const handleCollectionSelect = useCallback(
     async (collectionId: number | null) => {
+      if (showAdd) {
+        // New note mode — store temporarily
+        setNewCollectionId(collectionId);
+        if (collectionId) {
+          const col = await getCollection(collectionId);
+          setNewCollection(col);
+        } else {
+          setNewCollection(null);
+        }
+        return;
+      }
       if (editingId === null) return;
       setEditCollectionId(collectionId);
       await setNoteCollection(editingId, collectionId);
@@ -279,18 +311,28 @@ export function useNotesOverlay({
       }
       reload();
     },
-    [editingId, reload],
+    [editingId, showAdd, reload],
   );
 
   const handleLinkNote = useCallback(
     async (toNoteId: number) => {
+      if (showAdd) {
+        // New note mode — store temporarily (need to fetch the note object)
+        const allNotes = await getNotesForChapter(bookId, chapterNum);
+        const linkedNote = allNotes.find((n) => n.id === toNoteId);
+        if (linkedNote && !newLinkedNotes.some((n) => n.id === toNoteId)) {
+          setNewLinkedNotes((prev) => [...prev, linkedNote]);
+        }
+        setShowLinkSheet(false);
+        return;
+      }
       if (editingId === null) return;
       await linkNotes(editingId, toNoteId);
       const linked = await getLinkedNotes(editingId);
       setEditLinkedNotes(linked);
       setShowLinkSheet(false);
     },
-    [editingId],
+    [editingId, showAdd, bookId, chapterNum, newLinkedNotes],
   );
 
   const handleUnlink = useCallback(
@@ -301,6 +343,20 @@ export function useNotesOverlay({
       setEditLinkedNotes(linked);
     },
     [editingId],
+  );
+
+  const handleNewUnlink = useCallback(
+    (toNoteId: number) => {
+      setNewLinkedNotes((prev) => prev.filter((n) => n.id !== toNoteId));
+    },
+    [],
+  );
+
+  const handleNewTagsChange = useCallback(
+    (tags: string[]) => {
+      setNewTags(tags);
+    },
+    [],
   );
 
   return {
@@ -315,6 +371,9 @@ export function useNotesOverlay({
     newText,
     addRef,
     newTextRef,
+    newTags,
+    newCollection,
+    newLinkedNotes,
     showCollectionPicker,
     showLinkSheet,
     formatNoteRef,
@@ -328,9 +387,11 @@ export function useNotesOverlay({
     handleUpdate,
     handleDelete,
     handleTagsChange,
+    handleNewTagsChange,
     handleCollectionSelect,
     handleLinkNote,
     handleUnlink,
+    handleNewUnlink,
     setShowCollectionPicker,
     setShowLinkSheet,
     setEditText,

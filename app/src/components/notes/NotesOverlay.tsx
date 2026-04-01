@@ -94,6 +94,13 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
                 onTextChange={state.handleNewTextChange}
                 onBlur={state.handleNewNoteBlur}
                 onCancel={state.handleCancelAdd}
+                newTags={state.newTags}
+                onNewTagsChange={state.handleNewTagsChange}
+                newCollection={state.newCollection}
+                onOpenCollectionPicker={() => state.setShowCollectionPicker(true)}
+                newLinkedNotes={state.newLinkedNotes}
+                onOpenLinkSheet={() => state.setShowLinkSheet(true)}
+                onUnlink={state.handleNewUnlink}
               />
             )}
 
@@ -115,16 +122,16 @@ export function NotesOverlay({ visible, onClose, bookId, bookName, chapterNum, i
           <CollectionPicker
             visible={state.showCollectionPicker}
             onClose={() => state.setShowCollectionPicker(false)}
-            currentCollectionId={state.editCollection?.id ?? null}
+            currentCollectionId={state.showAdd ? (state.newCollection?.id ?? null) : (state.editCollection?.id ?? null)}
             onSelect={state.handleCollectionSelect}
           />
 
-          {state.editingId !== null && (
+          {(state.editingId !== null || state.showAdd) && (
             <NoteLinkSheet
               visible={state.showLinkSheet}
               onClose={() => state.setShowLinkSheet(false)}
-              currentNoteId={state.editingId}
-              linkedNoteIds={state.editLinkedNotes.map((n) => n.id)}
+              currentNoteId={state.editingId ?? -1}
+              linkedNoteIds={state.showAdd ? state.newLinkedNotes.map((n) => n.id) : state.editLinkedNotes.map((n) => n.id)}
               onLink={state.handleLinkNote}
             />
           )}

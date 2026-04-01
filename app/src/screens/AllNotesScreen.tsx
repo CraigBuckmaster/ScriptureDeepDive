@@ -20,8 +20,11 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
-import { Search, X, Plus, Folder, Tag, FileText } from 'lucide-react-native';
+import { Search, X, Plus, Folder, Tag, FileText, ChevronRight, Link } from 'lucide-react-native';
 import { ScreenHeader } from '../components/ScreenHeader';
+import { TagChips } from '../components/TagChips';
+import { CollectionPicker } from '../components/CollectionPicker';
+import { NoteLinkSheet } from '../components/NoteLinkSheet';
 import {
   getAllNotes,
   searchNotesFTS,
@@ -32,6 +35,12 @@ import {
   getAllTags,
   getNotesByTag,
   createCollection,
+  updateNoteTags,
+  setNoteCollection,
+  getCollection,
+  getLinkedNotes,
+  linkNotes,
+  unlinkNotes,
 } from '../db/user';
 import { parseVerseRef, displayRef } from '../utils/verseRef';
 import { base, useTheme, spacing, radii, fontFamily } from '../theme';
@@ -74,6 +83,11 @@ export default function AllNotesScreen() {
   const [searchQuery, setSearchQuery] = useState('');
   const [editingId, setEditingId] = useState<number | null>(null);
   const [editText, setEditText] = useState('');
+  const [editTags, setEditTags] = useState<string[]>([]);
+  const [editCollection, setEditCollection] = useState<StudyCollection | null>(null);
+  const [editLinkedNotes, setEditLinkedNotes] = useState<UserNote[]>([]);
+  const [showCollectionPicker, setShowCollectionPicker] = useState(false);
+  const [showLinkSheet, setShowLinkSheet] = useState(false);
 
   // Collections tab state
   const [collections, setCollections] = useState<StudyCollection[]>([]);
@@ -124,12 +138,59 @@ export default function AllNotesScreen() {
     if (selectedTag) loadTagNotes(selectedTag);
   }, [selectedTag, loadTagNotes]);
 
+  const startEditing = useCallback(async (note: UserNote) => {
+    setEditingId(note.id);
+    setEditText(note.note_text);
+    setEditTags(parseTags(note.tags_json));
+    if (note.collection_id) {
+      const col = await getCollection(note.collection_id);
+      setEditCollection(col);
+    } else {
+      setEditCollection(null);
+    }
+    const linked = await getLinkedNotes(note.id);
+    setEditLinkedNotes(linked);
+  }, []);
+
   const handleUpdate = async (id: number) => {
     if (!editText.trim()) return;
     await updateNote(id, editText.trim());
     setEditingId(null);
     reloadNotes();
   };
+
+  const handleEditTagsChange = useCallback(async (newTags: string[]) => {
+    if (editingId === null) return;
+    setEditTags(newTags);
+    await updateNoteTags(editingId, newTags);
+  }, [editingId]);
+
+  const handleEditCollectionSelect = useCallback(async (collectionId: number | null) => {
+    if (editingId === null) return;
+    await setNoteCollection(editingId, collectionId);
+    if (collectionId) {
+      const col = await getCollection(collectionId);
+      setEditCollection(col);
+    } else {
+      setEditCollection(null);
+    }
+    reloadNotes();
+  }, [editingId, reloadNotes]);
+
+  const handleEditLinkNote = useCallback(async (toNoteId: number) => {
+    if (editingId === null) return;
+    await linkNotes(editingId, toNoteId);
+    const linked = await getLinkedNotes(editingId);
+    setEditLinkedNotes(linked);
+    setShowLinkSheet(false);
+  }, [editingId]);
+
+  const handleEditUnlink = useCallback(async (toNoteId: number) => {
+    if (editingId === null) return;
+    await unlinkNotes(editingId, toNoteId);
+    const linked = await getLinkedNotes(editingId);
+    setEditLinkedNotes(linked);
+  }, [editingId]);
 
   const handleDelete = (id: number) => {
     Alert.alert('Delete Note', 'Are you sure?', [
@@ -292,40 +353,98 @@ export default function AllNotesScreen() {
             {group.notes.map((note) => {
               const noteTags = parseTags(note.tags_json);
               return (
-                <View key={note.id} style={[styles.noteCard, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
+                <View key={note.id} style={[styles.noteCard, { backgroundColor: base.bgElevated, borderColor: editingId === note.id ? base.gold : base.border }]}>
                   <TouchableOpacity onPress={() => handleRefPress(note.verse_ref)}>
                     <Text style={[styles.noteRef, { color: base.gold }]}>{displayRef(note.verse_ref)}</Text>
                   </TouchableOpacity>
 
                   {editingId === note.id ? (
-                    <TextInput
-                      value={editText}
-                      onChangeText={setEditText}
-                      multiline
-                      autoFocus
-                      onBlur={() => handleUpdate(note.id)}
-                      style={[styles.editInput, { color: base.text }]}
-                    />
+                    <>
+                      <TextInput
+                        value={editText}
+                        onChangeText={setEditText}
+                        multiline
+                        autoFocus
+                        style={[styles.editInput, { color: base.text, backgroundColor: base.bg, borderColor: base.border }]}
+                      />
+
+                      {/* Tags */}
+                      <View style={[styles.metaSection, { borderTopColor: base.border }]}>
+                        <Text style={[styles.metaLabel, { color: base.textMuted }]}>TAGS</Text>
+                        <TagChips tags={editTags} onTagsChange={handleEditTagsChange} />
+                      </View>
+
+                      {/* Collection */}
+                      <View style={[styles.metaSection, { borderTopColor: base.border }]}>
+                        <Text style={[styles.metaLabel, { color: base.textMuted }]}>COLLECTION</Text>
+                        <TouchableOpacity style={[styles.collectionButton, { backgroundColor: base.bg }]} onPress={() => setShowCollectionPicker(true)}>
+                          {editCollection ? (
+                            <View style={styles.collectionRow}>
+                              <View style={[styles.colorDot, { backgroundColor: editCollection.color }]} />
+                              <Text style={[styles.collectionName, { color: base.text }]}>{editCollection.name}</Text>
+                            </View>
+                          ) : (
+                            <Text style={[styles.collectionPlaceholder, { color: base.textMuted }]}>None</Text>
+                          )}
+                          <ChevronRight size={16} color={base.textMuted} />
+                        </TouchableOpacity>
+                      </View>
+
+                      {/* Linked notes */}
+                      <View style={[styles.metaSection, { borderTopColor: base.border }]}>
+                        <View style={styles.metaHeader}>
+                          <Text style={[styles.metaLabel, { color: base.textMuted }]}>LINKED NOTES</Text>
+                          <TouchableOpacity onPress={() => setShowLinkSheet(true)}>
+                            <Text style={[styles.addLinkText, { color: base.gold }]}>+ Link</Text>
+                          </TouchableOpacity>
+                        </View>
+                        {editLinkedNotes.length > 0 ? (
+                          editLinkedNotes.map((linked) => (
+                            <View key={linked.id} style={styles.linkedNoteRow}>
+                              <Link size={12} color={base.goldDim} />
+                              <Text style={[styles.linkedNoteRef, { color: base.goldDim }]}>{displayRef(linked.verse_ref)}</Text>
+                              <TouchableOpacity onPress={() => handleEditUnlink(linked.id)}>
+                                <X size={14} color={base.textMuted} />
+                              </TouchableOpacity>
+                            </View>
+                          ))
+                        ) : (
+                          <Text style={[styles.noLinksText, { color: base.textMuted }]}>No linked notes</Text>
+                        )}
+                      </View>
+
+                      {/* Actions */}
+                      <View style={styles.noteFooter}>
+                        <TouchableOpacity onPress={() => handleUpdate(note.id)}>
+                          <Text style={[styles.doneText, { color: base.gold }]}>Done</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => handleDelete(note.id)}>
+                          <Text style={styles.deleteText}>Delete</Text>
+                        </TouchableOpacity>
+                      </View>
+                    </>
                   ) : (
-                    <TouchableOpacity onPress={() => { setEditingId(note.id); setEditText(note.note_text); }}>
-                      <Text style={[styles.noteText, { color: base.textDim }]}>{note.note_text}</Text>
-                    </TouchableOpacity>
-                  )}
+                    <>
+                      <TouchableOpacity onPress={() => startEditing(note)}>
+                        <Text style={[styles.noteText, { color: base.textDim }]}>{note.note_text}</Text>
+                      </TouchableOpacity>
 
-                  {noteTags.length > 0 && (
-                    <View style={styles.noteTagRow}>
-                      {noteTags.map((t, i) => (
-                        <Text key={`${i}-${t}`} style={[styles.noteTag, { color: base.goldDim }]}>#{t}</Text>
-                      ))}
-                    </View>
-                  )}
+                      {noteTags.length > 0 && (
+                        <View style={styles.noteTagRow}>
+                          {noteTags.map((t, i) => (
+                            <Text key={`${i}-${t}`} style={[styles.noteTag, { color: base.goldDim }]}>#{t}</Text>
+                          ))}
+                        </View>
+                      )}
 
-                  <View style={styles.noteFooter}>
-                    <Text style={[styles.noteDate, { color: base.textMuted }]}>{note.updated_at?.slice(0, 10)}</Text>
-                    <TouchableOpacity onPress={() => handleDelete(note.id)}>
-                      <Text style={styles.deleteText}>Delete</Text>
-                    </TouchableOpacity>
-                  </View>
+                      <View style={styles.noteFooter}>
+                        <Text style={[styles.noteDate, { color: base.textMuted }]}>{note.updated_at?.slice(0, 10)}</Text>
+                        <TouchableOpacity onPress={() => handleDelete(note.id)}>
+                          <Text style={styles.deleteText}>Delete</Text>
+                        </TouchableOpacity>
+                      </View>
+                    </>
+                  )}
                 </View>
               );
             })}
@@ -348,6 +467,22 @@ export default function AllNotesScreen() {
       {activeTab === 'collections' && renderCollectionsTab()}
       {activeTab === 'tags' && renderTagsTab()}
       {activeTab === 'all' && renderAllTab()}
+      <CollectionPicker
+        visible={showCollectionPicker}
+        onClose={() => setShowCollectionPicker(false)}
+        currentCollectionId={editCollection?.id ?? null}
+        onSelect={handleEditCollectionSelect}
+      />
+
+      {editingId !== null && (
+        <NoteLinkSheet
+          visible={showLinkSheet}
+          onClose={() => setShowLinkSheet(false)}
+          currentNoteId={editingId}
+          linkedNoteIds={editLinkedNotes.map((n) => n.id)}
+          onLink={handleEditLinkNote}
+        />
+      )}
     </SafeAreaView>
   );
 }
@@ -500,8 +635,11 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.body,
     fontSize: 14,
     marginTop: 4,
-    minHeight: 40,
+    minHeight: 60,
     textAlignVertical: 'top',
+    borderRadius: radii.sm,
+    padding: spacing.xs,
+    borderWidth: 1,
   },
   noteText: {
     fontFamily: fontFamily.body,
@@ -529,5 +667,69 @@ const styles = StyleSheet.create({
   deleteText: {
     color: '#e05a6a',
     fontSize: 11,
+  },
+  doneText: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 13,
+  },
+  metaSection: {
+    marginTop: spacing.md,
+    paddingTop: spacing.sm,
+    borderTopWidth: StyleSheet.hairlineWidth,
+  },
+  metaHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  metaLabel: {
+    fontFamily: fontFamily.ui,
+    fontSize: 10,
+    letterSpacing: 0.3,
+    marginBottom: spacing.xs,
+  },
+  addLinkText: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 11,
+  },
+  collectionButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    borderRadius: radii.sm,
+    padding: spacing.xs,
+  },
+  collectionRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.xs,
+  },
+  colorDot: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+  },
+  collectionName: {
+    fontFamily: fontFamily.ui,
+    fontSize: 13,
+  },
+  collectionPlaceholder: {
+    fontFamily: fontFamily.ui,
+    fontSize: 13,
+  },
+  linkedNoteRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.xs,
+    paddingVertical: 4,
+  },
+  linkedNoteRef: {
+    flex: 1,
+    fontFamily: fontFamily.ui,
+    fontSize: 12,
+  },
+  noLinksText: {
+    fontFamily: fontFamily.bodyItalic,
+    fontSize: 12,
   },
 });
