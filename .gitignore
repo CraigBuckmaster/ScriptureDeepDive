@@ -4,7 +4,7 @@ __pycache__/
 *.swp
 *.swo
 *~
-.github/
+# .github/ — CI workflows are now tracked
 *.db-shm
 *.db-wal
 scripture.db
