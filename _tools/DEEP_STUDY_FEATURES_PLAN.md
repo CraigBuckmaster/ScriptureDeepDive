@@ -2175,6 +2175,181 @@ INSERT OR IGNORE INTO reading_plans (id, name, description, total_days, chapters
 
 ---
 
+## Phase 24 — Content Library
+
+**Goal:** A single searchable screen in Explore with category tabs that aggregates panel content from across all chapters. Deep-link navigation auto-opens the source panel and preserves back-navigation state.
+
+**Current content inventory (as of March 2026):**
+
+| Category | Entries | Source panel | Level |
+|----------|---------|-------------|-------|
+| Manuscript Stories | 10 | `tx` (chapter) | chapter |
+| Discourse / Argument Flow | 57 | `discourse` (chapter) | chapter |
+| Echoes & Allusions | 0 (needs enrichment) | `cross.echoes` (section) | section |
+| ANE Parallels | 0 (needs enrichment) | `hist.ane` (section) | section |
+| Chiasm Structures | 0 (needs enrichment) | `lit.chiasm` (chapter) | chapter |
+
+Empty categories are hidden automatically — tabs appear as content enrichment fills them in, no code change needed.
+
+### Architecture overview
+
+```
+ExploreMenu → ContentLibrary (push onto stack)
+  ├── Category tabs: Manuscripts | Discourse | Echoes | ANE | Chiasms
+  │   (only tabs with entries > 0 are rendered)
+  ├── Search bar (client-side filter within active category)
+  ├── Optional OT/NT filter chips
+  └── Entry cards grouped by book
+        └── tap → Chapter screen (push, with openPanel param)
+                    ├── Panel auto-opens to correct section/tab
+                    ├── Auto-scrolls to the opened panel
+                    ├── "← Content Library" breadcrumb below nav bar
+                    └── Back button/swipe → ContentLibrary (scroll + tab + search preserved)
+```
+
+### Database — new table in scripture.db (build-time index)
+
+All 5 content types are stored as JSON blobs inside `section_panels` and `chapter_panels`. Rather than parsing JSON at runtime, `build_sqlite.py` extracts entries into a flat `content_library` table during the build — fast queries, automatic sync with content.
+
+```sql
+CREATE TABLE content_library (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  category TEXT NOT NULL,        -- 'echoes' | 'ane' | 'manuscripts' | 'chiasms' | 'discourse'
+  title TEXT NOT NULL,           -- display title for the card
+  preview TEXT,                  -- 1-2 sentence preview for the card
+  book_id TEXT NOT NULL,
+  book_name TEXT NOT NULL,       -- denormalized for display without JOIN
+  chapter_num INTEGER NOT NULL,
+  section_num INTEGER,           -- NULL for chapter-level panels
+  panel_type TEXT NOT NULL,      -- 'cross' | 'hist' | 'tx' | 'lit' | 'discourse'
+  tab_key TEXT,                  -- 'echoes' | 'ane' | 'stories' | 'chiasm' | NULL
+  testament TEXT NOT NULL,       -- 'ot' | 'nt' for filtering
+  sort_order INTEGER NOT NULL DEFAULT 0  -- book_order * 1000 + chapter_num for canonical ordering
+);
+CREATE INDEX idx_cl_category ON content_library(category);
+CREATE INDEX idx_cl_book ON content_library(book_id);
+```
+
+**Build-time extraction logic** (in `build_sqlite.py`):
+
+Walk all chapter JSONs. For each chapter:
+
+- **Echoes:** For each section with `cross.echoes[]`, emit one row per echo. Title = `"{source_ref} → {target_ref}"`. Preview = truncated `connection` field.
+- **ANE Parallels:** For each section with `hist.ane[]`, emit one row per entry. Title = `parallel` name. Preview = truncated `similarity`.
+- **Manuscript Stories:** For each chapter with `tx.stories[]`, emit one row per story. Title = story `title`. Preview = truncated `summary`.
+- **Chiasms:** For each chapter with `lit.chiasm`, emit one row. Title = chiasm `title`. Preview = first pair label + " … " + center label.
+- **Discourse:** For each chapter with `discourse`, emit one row. Title = discourse `title`. Preview = first step's text truncated.
+
+### Deep-link: auto-open panel on arrival
+
+**Route param change** — add `openPanel` to `Chapter` params in ALL stacks (ReadStack, HomeStack, ExploreStack, MoreStack):
+
+```typescript
+// navigation/types.ts
+Chapter: {
+  bookId: string;
+  chapterNum: number;
+  openPanel?: {
+    sectionNum?: number;   // undefined = chapter-level panel
+    panelType: string;     // 'cross' | 'hist' | 'tx' | 'lit' | 'discourse'
+    tabKey?: string;       // 'echoes' | 'ane' | 'stories' | 'chiasm'
+  };
+};
+```
+
+**Flow:**
+
+1. `ChapterScreen` reads `route.params.openPanel`, passes it as a prop to child components
+2. **Section-level panels** (echoes, ANE): `SectionBlock` receives `openPanel`. If `openPanel.sectionNum === this section's section_num`, it sets initial `activePanel` state to `openPanel.panelType`. The composite panel receives `defaultTab={openPanel.tabKey}`.
+3. **Chapter-level panels** (manuscripts, chiasm, discourse): `ScholarlyBlock` receives `openPanel`. If `openPanel.sectionNum` is undefined, it sets initial `activePanel` to `openPanel.panelType` with `defaultTab`.
+4. **Auto-scroll:** After the target panel renders, `ChapterScreen` scrolls to it using `scrollViewRef` + `measureLayout`. Small delay (~300ms) to let layout settle.
+5. **Breadcrumb:** When `openPanel` is present, render a small `"← Content Library"` pill below `ChapterNavBar` that calls `navigation.goBack()`. Disappears on chapter swipe navigation (since `openPanel` context no longer applies).
+
+### TabbedPanelRenderer — `defaultTab` prop
+
+```typescript
+// Add to TabbedPanelRenderer props:
+interface Props {
+  tabs: TabConfig[];
+  activeTab: string;
+  onTabChange: (key: string) => void;
+  defaultTab?: string;      // NEW — if provided, override initial activeTab
+  children: React.ReactNode;
+}
+```
+
+Composite panels (`CompositeContextPanel`, `CompositeConnectionsPanel`, `TextualPanel`, `LiteraryStructurePanel`) pass `defaultTab` through from their parent's `openPanel.tabKey`.
+
+### Content Library screen design
+
+**Category tabs:** Horizontal scrollable pills below header. Only categories with `COUNT(*) > 0` are rendered. Query category counts on mount.
+
+**Search:** Client-side filtering on `title` and `preview` fields. Sufficient for expected volume (< 500 entries per category).
+
+**Filter chips:** "All" / "OT" / "NT" — reuse same pattern as `SearchFilterChips.tsx` from Phase 18.
+
+**Entry cards:**
+- Title: gold, 13pt, fontFamily.heading for chiasms/discourse, fontFamily.uiMedium for others
+- Reference pill: book name + chapter (+ section if section-level), muted background, 10pt
+- Preview: textMuted, 11pt, 2-line numberOfLines clamp
+- Tap → `navigation.push('Chapter', { bookId, chapterNum, openPanel: { sectionNum, panelType, tabKey } })`
+
+**Grouping:** Entries grouped by book within each category, with book name section headers (SectionList). Canonical book order via `sort_order`.
+
+**Empty state:** Categories with zero entries are hidden (tab not rendered). No "coming soon" placeholders.
+
+### Files to create
+
+| File | Purpose |
+|------|---------|
+| `app/src/screens/ContentLibraryScreen.tsx` | Main screen: category tabs + search + OT/NT chips + grouped SectionList |
+| `app/src/components/ContentLibraryCard.tsx` | Entry card: title, reference pill, preview, onPress |
+| `app/src/hooks/useContentLibrary.ts` | Queries `content_library` table, handles category/testament filtering + search |
+
+### Files to modify
+
+| File | Change |
+|------|--------|
+| `_tools/build_sqlite.py` | Add `content_library` table creation + population from chapter JSONs |
+| `_tools/validate_sqlite.py` | Add `content_library` to table validation |
+| `app/src/navigation/types.ts` | Add `ContentLibrary` route to `ExploreStackParamList`; add optional `openPanel` to `Chapter` params in ALL stacks |
+| `app/src/screens/ExploreMenuScreen.tsx` | Add "Content Library" entry to explore grid |
+| `app/src/screens/ChapterScreen.tsx` | Read `openPanel` param, pass to SectionBlock/ScholarlyBlock, render breadcrumb, auto-scroll |
+| `app/src/components/SectionBlock.tsx` | Accept `openPanel` prop, set initial `activePanel` when section matches |
+| `app/src/components/ScholarlyBlock.tsx` | Accept `openPanel` prop, set initial `activePanel` for chapter-level panels |
+| `app/src/components/panels/TabbedPanelRenderer.tsx` | Accept `defaultTab` prop for initial tab selection |
+| `app/src/components/ChapterNavBar.tsx` | Render "← Content Library" breadcrumb when `fromLibrary` |
+| `app/src/db/database.ts` | Add `getContentLibraryCounts()`, `getContentLibrary(category, testament?)`, `searchContentLibrary(query, category)` |
+| `app/src/types/index.ts` | Add `ContentLibraryEntry` interface |
+
+### Implementation steps
+
+1. **Build pipeline** — Add `content_library` table to `build_sqlite.py` with extraction logic for all 5 categories. Run build, verify counts (10 manuscripts, 57 discourse, 0 for the rest). Add to `validate_sqlite.py`.
+2. **Database queries + hook** — Add queries to `database.ts`. Create `useContentLibrary.ts`. Test queries return correct data.
+3. **Screen + card** — Build `ContentLibraryScreen.tsx` (category tabs, search, SectionList) and `ContentLibraryCard.tsx`. Add to ExploreMenuScreen grid and navigation types.
+4. **Deep-link plumbing** — Add `openPanel` to Chapter route params in all stacks. Wire `ChapterScreen` → `SectionBlock` / `ScholarlyBlock` → panel auto-open. Add `defaultTab` to `TabbedPanelRenderer`. Test: tap discourse entry → chapter opens with discourse panel visible.
+5. **Auto-scroll + breadcrumb** — Add scroll-to-panel behavior in ChapterScreen. Add "← Content Library" breadcrumb to ChapterNavBar. Test full round-trip: Library → Chapter (panel opens, scrolls) → Back (library state preserved).
+6. **Validate + commit** — `validate.py` → `build_sqlite.py` → `validate_sqlite.py` → `npx tsc --noEmit` → commit.
+
+### Content enrichment dependency
+
+The 3 empty categories require separate content enrichment sessions (standard enrichment script pattern):
+
+| Category | Scope | Effort |
+|----------|-------|--------|
+| Echoes & Allusions | ~50 high-priority NT→OT allusions (Romans 9-11, Hebrews, Revelation, Matthew fulfillment formulas) | 1-2 sessions |
+| ANE Parallels | Genesis 1-11 + Exodus 1-20 parallels (Enuma Elish, Atrahasis, Code of Hammurabi, etc.) | 1 session |
+| Chiasm Structures | ~20 widely-accepted chiasms (Genesis 1, 6-9, Daniel 2-7, Psalm 23, major Gospel passages) | 1 session |
+
+These are independent of the Content Library code — they follow the standard enrichment script pattern. The library picks them up automatically on next `build_sqlite.py` run.
+
+### Effort: ~2 sessions
+
+Session P: Steps 1-3 (build pipeline + screen UI)
+Session Q: Steps 4-6 (deep-link plumbing + polish)
+
+---
+
 ## Updated Execution Order (Full)
 
 ```
@@ -2207,9 +2382,12 @@ PART 3 — Enhancement Features (Sessions L-O)
   Phase 21 (Concordance)          — Session N (depends on Phase 13)
   Phase 22 (Discourse Expansion)  — Session N (content-only)
   Phase 23 (Reading Plans)        — Session O (content + seed migration)
+
+PART 4 — Content Discovery (Sessions P-Q)
+  Phase 24 (Content Library)      — Session P (pipeline + screen) + Session Q (deep-link + polish)
 ```
 
-**Total: ~15 sessions across 23 phases.**
+**Total: ~17 sessions across 24 phases.**
 
 ---
 
@@ -2223,6 +2401,7 @@ feat(home): Phase 20 — personalized study recommendations
 feat(concordance): Phase 21 — Strong's concordance search
 feat(content): Phase 22 — discourse analysis for Galatians, Ephesians, Hebrews, 1 Cor
 feat(plans): Phase 23 — 10 curated study plans seeded into reading_plans
+feat(explore): Phase 24 — Content Library screen with deep-link panel navigation
 ```
 
 ---
