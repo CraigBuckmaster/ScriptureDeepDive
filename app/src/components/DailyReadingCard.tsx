@@ -23,7 +23,12 @@ export function DailyReadingCard({ planName, dayNum, chapters, onStartReading }:
       <Text style={{ color: base.text, fontFamily: fontFamily.uiMedium, fontSize: 13, marginTop: 4 }}>
         {chapters.map((c) => c.replace('_', ' ')).join(', ')}
       </Text>
-      <TouchableOpacity onPress={() => chapters[0] && onStartReading(chapters[0])} style={{ marginTop: spacing.sm }}>
+      <TouchableOpacity
+        onPress={() => chapters[0] && onStartReading(chapters[0])}
+        style={{ marginTop: spacing.sm }}
+        accessibilityRole="button"
+        accessibilityLabel={`Start reading ${planName} day ${dayNum}`}
+      >
         <Text style={{ color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 12 }}>
           Start reading →
         </Text>

@@ -18,7 +18,11 @@ export function StreakBadge({ streak }: Props) {
   if (streak < 1) return null;
 
   return (
-    <View style={styles.container}>
+    <View
+      style={styles.container}
+      accessibilityRole="text"
+      accessibilityLabel={`${streak}-day reading streak`}
+    >
       <Flame size={13} color={base.gold} />
       <Text style={[styles.label, { color: base.gold }]}>
         {streak}-day streak

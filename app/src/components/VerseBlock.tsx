@@ -43,6 +43,9 @@ export const VerseBlock = React.memo(function VerseBlock({
           onLongPress={onVerseLongPress ? () => onVerseLongPress(verse.verse_num, verse.text) : undefined}
           activeOpacity={onVerseLongPress ? 0.7 : 1}
           delayLongPress={400}
+          accessibilityRole="button"
+          accessibilityLabel={`Verse ${verse.verse_num}. Long press for options`}
+          accessibilityHint="Long press to copy, share, or add a note"
         >
           {/* Verse number (tap for interlinear) */}
           <Text

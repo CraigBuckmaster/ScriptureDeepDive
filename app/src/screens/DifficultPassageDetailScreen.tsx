@@ -37,7 +37,7 @@ import {
   DifficultPassageCategory,
   DifficultPassageResponse,
 } from '../hooks/useDifficultPassages';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { ExploreStackParamList } from '../navigation/types';
 
@@ -48,27 +48,10 @@ if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental
 type Nav = NativeStackNavigationProp<ExploreStackParamList, 'DifficultPassageDetail'>;
 type Route = RouteProp<ExploreStackParamList, 'DifficultPassageDetail'>;
 
-const CATEGORY_COLORS: Record<DifficultPassageCategory, string> = {
-  ethical: '#E57373',
-  contradiction: '#FFB74D',
-  theological: '#64B5F6',
-  historical: '#81C784',
-  textual: '#BA68C8',
-};
-
-const SEVERITY_INFO: Record<string, { color: string; label: string }> = {
-  minor: { color: '#4CAF50', label: 'Minor' },
-  moderate: { color: '#FFC107', label: 'Moderate' },
-  major: { color: '#F44336', label: 'Major' },
-};
-
-const FAMILY_COLORS: Record<string, string> = {
-  evangelical: '#64B5F6',
-  critical: '#FFB74D',
-  jewish: '#81C784',
-  patristic: '#BA68C8',
-  reformed: '#4FC3F7',
-  catholic: '#E57373',
+const SEVERITY_LABELS: Record<string, string> = {
+  minor: 'Minor',
+  moderate: 'Moderate',
+  major: 'Major',
 };
 
 /* ── Response Card with expandable analysis ── */
@@ -84,7 +67,7 @@ function ResponseCard({
   defaultExpanded: boolean;
   onScholarPress: (id: string) => void;
 }) {
-  const { base } = useTheme();
+  const { base, families } = useTheme();
   const [expanded, setExpanded] = useState(defaultExpanded);
 
   const toggleExpanded = useCallback(() => {
@@ -92,7 +75,7 @@ function ResponseCard({
     setExpanded((prev) => !prev);
   }, []);
 
-  const familyColor = FAMILY_COLORS[response.tradition_family ?? ''] ?? base.textMuted;
+  const familyColor = families[response.tradition_family ?? ''] ?? base.textMuted;
   const hasAnalysis = response.strengths || response.weaknesses ||
     (response.key_verses && response.key_verses.length > 0);
 
@@ -171,14 +154,14 @@ function ResponseCard({
 
           {response.strengths && (
             <View style={styles.analysisBlock}>
-              <Text style={[styles.analysisLabel, { color: '#81C784' }]}>Strengths</Text>
+              <Text style={[styles.analysisLabel, { color: base.success }]}>Strengths</Text>
               <Text style={[styles.analysisBody, { color: base.textDim }]}>{response.strengths}</Text>
             </View>
           )}
 
           {response.weaknesses && (
             <View style={styles.analysisBlock}>
-              <Text style={[styles.analysisLabel, { color: '#E57373' }]}>Weaknesses</Text>
+              <Text style={[styles.analysisLabel, { color: base.danger }]}>Weaknesses</Text>
               <Text style={[styles.analysisBody, { color: base.textDim }]}>{response.weaknesses}</Text>
             </View>
           )}
@@ -191,7 +174,7 @@ function ResponseCard({
 /* ── Main Screen ── */
 
 export default function DifficultPassageDetailScreen() {
-  const { base } = useTheme();
+  const { base, categories: catColors, severity: sevColors } = useTheme();
   const navigation = useNavigation<Nav>();
   const route = useRoute<Route>();
   const { passageId } = route.params;
@@ -239,7 +222,8 @@ export default function DifficultPassageDetailScreen() {
     );
   }
 
-  const severityInfo = SEVERITY_INFO[passage.severity];
+  const severityColor = sevColors[passage.severity] ?? base.textMuted;
+  const severityLabel = SEVERITY_LABELS[passage.severity] ?? passage.severity;
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]} edges={['top']}>
@@ -265,17 +249,17 @@ export default function DifficultPassageDetailScreen() {
             <View
               style={[
                 styles.categoryBadge,
-                { backgroundColor: CATEGORY_COLORS[passage.category] + '30' },
+                { backgroundColor: (catColors[passage.category] ?? base.textMuted) + '30' },
               ]}
             >
-              <Text style={[styles.categoryText, { color: CATEGORY_COLORS[passage.category] }]}>
+              <Text style={[styles.categoryText, { color: catColors[passage.category] ?? base.textMuted }]}>
                 {passage.category}
               </Text>
             </View>
-            <View style={[styles.severityBadge, { backgroundColor: severityInfo.color + '20' }]}>
-              <View style={[styles.severityDot, { backgroundColor: severityInfo.color }]} />
-              <Text style={[styles.severityText, { color: severityInfo.color }]}>
-                {severityInfo.label}
+            <View style={[styles.severityBadge, { backgroundColor: severityColor + '20' }]}>
+              <View style={[styles.severityDot, { backgroundColor: severityColor }]} />
+              <Text style={[styles.severityText, { color: severityColor }]}>
+                {severityLabel}
               </Text>
             </View>
           </View>

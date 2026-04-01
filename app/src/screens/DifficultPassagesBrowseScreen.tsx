@@ -27,7 +27,7 @@ import {
   DifficultPassage,
   DifficultPassageCategory,
 } from '../hooks/useDifficultPassages';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { ExploreStackParamList } from '../navigation/types';
 
@@ -49,22 +49,8 @@ const CATEGORIES: CategoryChip[] = [
   { key: 'textual', label: 'Textual' },
 ];
 
-const CATEGORY_COLORS: Record<DifficultPassageCategory, string> = {
-  ethical: '#E57373',
-  contradiction: '#FFB74D',
-  theological: '#64B5F6',
-  historical: '#81C784',
-  textual: '#BA68C8',
-};
-
-const SEVERITY_DOT: Record<string, string> = {
-  minor: '#4CAF50',
-  moderate: '#FFC107',
-  major: '#F44336',
-};
-
 export default function DifficultPassagesBrowseScreen() {
-  const { base } = useTheme();
+  const { base, categories: catColors, severity: sevColors } = useTheme();
   const navigation = useNavigation<Nav>();
   const { passages, loading, error } = useDifficultPassages();
   const [search, setSearch] = useState('');
@@ -105,12 +91,12 @@ export default function DifficultPassagesBrowseScreen() {
         <Text style={[styles.cardTitle, { color: base.text }]} numberOfLines={1}>
           {item.title}
         </Text>
-        <View style={[styles.severityDot, { backgroundColor: SEVERITY_DOT[item.severity] }]} />
+        <View style={[styles.severityDot, { backgroundColor: sevColors[item.severity] }]} />
       </View>
 
       {/* Category badge */}
-      <View style={[styles.categoryBadge, { backgroundColor: CATEGORY_COLORS[item.category] + '30' }]}>
-        <Text style={[styles.categoryText, { color: CATEGORY_COLORS[item.category] }]}>
+      <View style={[styles.categoryBadge, { backgroundColor: (catColors[item.category] ?? base.textMuted) + '30' }]}>
+        <Text style={[styles.categoryText, { color: catColors[item.category] ?? base.textMuted }]}>
           {item.category}
         </Text>
       </View>

@@ -88,6 +88,8 @@ export function CompactDropdown({ value, options, onSelect, direction = 'down' }
                       key={opt.key}
                       onPress={() => handleSelect(opt.key)}
                       style={styles.menuItem}
+                      accessibilityRole="button"
+                      accessibilityLabel={`Select ${opt.label}`}
                       accessibilityState={{ selected: isActive }}
                     >
                       <Text style={[

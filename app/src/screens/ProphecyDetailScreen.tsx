@@ -21,31 +21,14 @@ import { useProphecyChainDetail } from '../hooks/useProphecyChains';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { BadgeChip } from '../components/BadgeChip';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { ProphecyChainLink } from '../types';
 import { logger } from '../utils/logger';
-
-const CATEGORY_COLORS: Record<string, string> = {
-  messianic: '#e8a070',
-  covenant: '#70b8e8',
-  judgment: '#e07070',
-  restoration: '#70d098',
-  typological: '#c090e0',
-};
 
 const TYPE_LABELS: Record<string, string> = {
   direct_fulfillment: 'Direct Fulfillment',
   typological_fulfillment: 'Typological',
   progressive_revelation: 'Progressive',
-};
-
-const ROLE_COLORS: Record<string, string> = {
-  origin: '#8a8040',
-  prophecy: '#a08840',
-  development: '#b09050',
-  type: '#c09858',
-  fulfillment: '#d4b060',
-  consummation: '#e0c878',
 };
 
 // Book IDs for OT books (to determine OT vs NT tint)
@@ -90,7 +73,7 @@ function formatLinkRef(link: ProphecyChainLink): string {
 }
 
 export default function ProphecyDetailScreen() {
-  const { base } = useTheme();
+  const { base, prophecyCategories, roles: roleColors, testament } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ProphecyDetail'>>();
   const route = useRoute<ScreenRouteProp<'Explore', 'ProphecyDetail'>>();
   const { chainId } = route.params ?? {};
@@ -121,7 +104,7 @@ export default function ProphecyDetailScreen() {
 
   const links = parseLinks(chain.links_json);
   const tags = parseTags(chain.tags_json);
-  const categoryColor = CATEGORY_COLORS[chain.category] || base.gold;
+  const categoryColor = prophecyCategories[chain.category] || base.gold;
   const typeLabel = TYPE_LABELS[chain.chain_type] || chain.chain_type;
 
   return (
@@ -163,8 +146,8 @@ export default function ProphecyDetailScreen() {
           <View style={styles.rail}>
             {links.map((link, idx) => {
               const isOT = OT_BOOKS.has(link.book_dir);
-              const dotColor = isOT ? '#c8a040' : '#a0c8e0';
-              const roleColor = link.role ? (ROLE_COLORS[link.role] || base.gold) : base.gold;
+              const dotColor = isOT ? testament.ot : testament.nt;
+              const roleColor = link.role ? (roleColors[link.role] || base.gold) : base.gold;
               const isLast = idx === links.length - 1;
               // Use note as fallback for summary (legacy data)
               const displaySummary = link.summary || link.note;
