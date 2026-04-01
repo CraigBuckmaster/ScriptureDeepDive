@@ -139,11 +139,13 @@ const styles = StyleSheet.create({
   bottomRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
   },
   speedRow: {
     flexDirection: 'row',
+    justifyContent: 'center',
     gap: 6,
+    flex: 1,
   },
   speedPill: {
     paddingHorizontal: 7,
@@ -170,12 +172,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   closeButton: {
+    position: 'absolute',
+    right: 0,
     width: 32,
     height: 32,
     borderRadius: 16,
     borderWidth: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: spacing.xs,
   },
 });
