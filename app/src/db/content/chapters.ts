@@ -83,10 +83,11 @@ export async function getInterlinearWords(
 ): Promise<InterlinearWord[]> {
   return getDb().getAllAsync<InterlinearWord>(
     `SELECT iw.id, iw.book_id, iw.chapter_num, iw.verse_num, iw.word_position,
-       iw.original, iw.transliteration, iw.strongs, iw.morphology,
-       ig.gloss, iw.word_study_id
+       iw.original, iw.transliteration, iw.strongs,
+       im.code as morphology, ig.gloss, iw.word_study_id
      FROM interlinear_words iw
      LEFT JOIN interlinear_glosses ig ON ig.id = iw.gloss_id
+     LEFT JOIN interlinear_morphology im ON im.id = iw.morphology_id
      WHERE iw.book_id = ? AND iw.chapter_num = ? AND iw.verse_num = ?
      ORDER BY iw.word_position`,
     [bookId, ch, verse]

@@ -313,6 +313,11 @@ CREATE TABLE interlinear_glosses (
   gloss TEXT NOT NULL UNIQUE
 );
 
+CREATE TABLE interlinear_morphology (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  code TEXT NOT NULL UNIQUE
+);
+
 CREATE TABLE interlinear_words (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   book_id TEXT NOT NULL,
@@ -322,7 +327,7 @@ CREATE TABLE interlinear_words (
   original TEXT NOT NULL,
   transliteration TEXT NOT NULL,
   strongs TEXT,
-  morphology TEXT,
+  morphology_id INTEGER REFERENCES interlinear_morphology(id),
   gloss_id INTEGER REFERENCES interlinear_glosses(id),
   word_study_id TEXT
 );
@@ -499,16 +504,20 @@ def populate_interlinear(cur):
         if row[1]:
             strongs_to_ws[row[1]] = row[0]
 
-    # First pass: collect all unique glosses
+    # First pass: collect all unique glosses and morphology codes
     all_glosses = set()
+    all_morphology = set()
     all_words = []
     for json_file in sorted(interlinear_dir.glob('*.json')):
         book_id = json_file.stem
         words = _load_json(json_file)
         for w in words:
             gloss = w.get('gloss', '')
+            morph = w.get('morphology', '')
             if gloss:
                 all_glosses.add(gloss)
+            if morph:
+                all_morphology.add(morph)
             all_words.append((book_id, w))
     
     # Insert glosses and build lookup
@@ -517,19 +526,26 @@ def populate_interlinear(cur):
         cur.execute('INSERT INTO interlinear_glosses (gloss) VALUES (?)', (gloss,))
         gloss_to_id[gloss] = cur.lastrowid
     
-    # Second pass: insert words with gloss_id
+    # Insert morphology codes and build lookup
+    morph_to_id = {}
+    for morph in sorted(all_morphology):
+        cur.execute('INSERT INTO interlinear_morphology (code) VALUES (?)', (morph,))
+        morph_to_id[morph] = cur.lastrowid
+    
+    # Second pass: insert words with gloss_id and morphology_id
     count = 0
     for book_id, w in all_words:
         ws_id = strongs_to_ws.get(w.get('strongs', ''))
         gloss_id = gloss_to_id.get(w.get('gloss', ''))
+        morph_id = morph_to_id.get(w.get('morphology', ''))
         cur.execute(
             'INSERT INTO interlinear_words '
             '(book_id, chapter_num, verse_num, word_position, original, '
-            'transliteration, strongs, morphology, gloss_id, word_study_id) '
+            'transliteration, strongs, morphology_id, gloss_id, word_study_id) '
             'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
             (book_id, w['ch'], w['v'], w['pos'], w['original'],
              w.get('transliteration', ''), w.get('strongs', ''),
-             w.get('morphology', ''), gloss_id, ws_id)
+             morph_id, gloss_id, ws_id)
         )
         count += 1
     return count
