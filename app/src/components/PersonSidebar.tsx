@@ -61,7 +61,8 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
         backgroundColor: base.bgElevated, borderTopLeftRadius: radii.lg, borderTopRightRadius: radii.lg,
         borderTopWidth: 1, borderColor: base.border, maxHeight: '85%',
       }}>
-        <ScrollView contentContainerStyle={{ padding: spacing.md }}>
+        {/* Sticky header — stays fixed above the scroll */}
+        <View style={{ paddingHorizontal: spacing.md, paddingTop: spacing.md }}>
           {/* Grab handle + close button */}
           <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: spacing.md }}>
             <View style={{ flex: 1 }} />
@@ -92,8 +93,10 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
             </Text>
           ) : null}
 
-          <View style={{ height: 1, backgroundColor: base.border, marginVertical: spacing.md }} />
+          <View style={{ height: 1, backgroundColor: base.border, marginTop: spacing.md }} />
+        </View>
 
+        <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.md, paddingBottom: spacing.md }}>
           {/* Role */}
           <Text style={{ color: base.gold, fontFamily: fontFamily.bodyMedium, fontSize: 15 }}>
             {person.role}
