@@ -31,9 +31,18 @@
             "paragraph": "the iron gate opened 'automatically' (v.10) — the only NT use of this word, giving us our English 'automatic.' Luke uses the precise Greek term for self-acting mechanisms to describe what is clearly a divine act — the language of mechanism describing the act of God."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Mary's House — Jerusalem</div><div class=\"poi-coords\">31.7705° N, 35.2294° E</div><div class=\"poi-text\">The house of Mary the mother of John Mark (v.12) was large enough to host a significant prayer gathering — possibly the same upper room (1:13; Luke 22:12). It was a known community gathering point; Peter goes there instinctively on his release. John Mark's family home is the Jerusalem church's recurring meeting place.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">The Iron Gate</div><div class=\"poi-coords\">31.7730° N, 35.2300° E</div><div class=\"poi-text\">The gate leading from the prison area into the city (v.10) — likely the northern gate of the Antonia fortress adjacent to the Temple Mount. Its 'opening by itself' is the chapter's most dramatic detail: maximum security yields to divine purpose.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Mary's House — Jerusalem",
+            "coords": "31.7705° N, 35.2294° E",
+            "text": "The house of Mary the mother of John Mark (v.12) was large enough to host a significant prayer gathering — possibly the same upper room (1:13; Luke 22:12). It was a known community gathering point; Peter goes there instinctively on his release. John Mark's family home is the Jerusalem church's recurring meeting place."
+          },
+          {
+            "name": "The Iron Gate",
+            "coords": "31.7730° N, 35.2300° E",
+            "text": "The gate leading from the prison area into the city (v.10) — likely the northern gate of the Antonia fortress adjacent to the Temple Mount. Its 'opening by itself' is the chapter's most dramatic detail: maximum security yields to divine purpose."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 44",
@@ -164,9 +173,18 @@
             "paragraph": "two imperfect verbs — ēuxanen (was growing, like a plant) and eplēthyneto (was multiplying). The growth is organic and ongoing: every attempt to stop the word ends with the word advancing further. This is Luke's theological refrain throughout Acts."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Caesarea Maritima — Herod's Court</div><div class=\"poi-coords\">32.5000° N, 34.9000° E</div><div class=\"poi-text\">Herod Agrippa's death in Caesarea is confirmed by Josephus (Antiquities 19.8.2), who describes the same event — a public address in a gleaming silver robe at a festival in honour of Caesar, followed by sudden illness and death five days later. Luke's account and Josephus's are independent and broadly consistent.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Tyre and Sidon</div><div class=\"poi-coords\">33.2728° N, 35.2033° E</div><div class=\"poi-text\">The great Phoenician port cities north of Caesarea — economically dependent on Galilee's food supply. Their delegation to Herod reflects the normal diplomatic relationships of the region. The occasion of their audience becomes the occasion of Herod's judgment.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Caesarea Maritima — Herod's Court",
+            "coords": "32.5000° N, 34.9000° E",
+            "text": "Herod Agrippa's death in Caesarea is confirmed by Josephus (Antiquities 19.8.2), who describes the same event — a public address in a gleaming silver robe at a festival in honour of Caesar, followed by sudden illness and death five days later. Luke's account and Josephus's are independent and broadly consistent."
+          },
+          {
+            "name": "Tyre and Sidon",
+            "coords": "33.2728° N, 35.2033° E",
+            "text": "The great Phoenician port cities north of Caesarea — economically dependent on Galilee's food supply. Their delegation to Herod reflects the normal diplomatic relationships of the region. The occasion of their audience becomes the occasion of Herod's judgment."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 44",

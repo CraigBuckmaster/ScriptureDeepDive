@@ -34,9 +34,18 @@
             "paragraph": "the charge against Paul in v.7 — claiming allegiance to a basileus other than Caesar was potentially treasonous in the Roman world. The charge is technically accurate: Paul does proclaim Jesus as Lord of lords, though the kingdom he announces is not the political revolution the charge implies."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Thessalonica</div><div class=\"poi-coords\">40.6401° N, 22.9444° E</div><div class=\"poi-text\">Capital of the Roman province of Macedonia — a major port city on the Via Egnatia, the main east-west road of northern Greece. Paul's three-Sabbath ministry plants a church that receives two of his most urgent letters (1 &amp; 2 Thessalonians) within months of his departure.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Berea (Veria)</div><div class=\"poi-coords\">40.5236° N, 22.2027° E</div><div class=\"poi-text\">A smaller Macedonian city c.80 km southwest of Thessalonica. Its Jewish community's response — receiving with eagerness while examining the Scriptures — has made 'Berean' a byword for commendable biblical discernment in Christian vocabulary ever since.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Thessalonica",
+            "coords": "40.6401° N, 22.9444° E",
+            "text": "Capital of the Roman province of Macedonia — a major port city on the Via Egnatia, the main east-west road of northern Greece. Paul's three-Sabbath ministry plants a church that receives two of his most urgent letters (1 &amp; 2 Thessalonians) within months of his departure."
+          },
+          {
+            "name": "Berea (Veria)",
+            "coords": "40.5236° N, 22.2027° E",
+            "text": "A smaller Macedonian city c.80 km southwest of Thessalonica. Its Jewish community's response — receiving with eagerness while examining the Scriptures — has made 'Berean' a byword for commendable biblical discernment in Christian vocabulary ever since."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 50",
@@ -163,9 +172,18 @@
             "paragraph": "the 'unknown God' altar (v.23) represents what Paul calls ignorance — agnoountes. The Athenians' religious thoroughness led them to hedge with an altar to any god they might have missed. Paul takes their unknowing and turns it into an introduction: the God you don't know is the one I'm here to declare."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">The Areopagus — Athens</div><div class=\"poi-coords\">37.9722° N, 23.7233° E</div><div class=\"poi-text\">The Areopagus ('Hill of Ares/Mars') was both a rocky hill northwest of the Acropolis and the ancient Athenian council that met there. Paul addresses this institution — the most prestigious intellectual and civic body in Athens. The setting is the equivalent of a modern nation's supreme philosophical forum.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Athens — The Agora</div><div class=\"poi-coords\">37.9752° N, 23.7219° E</div><div class=\"poi-text\">The Athenian agora (marketplace) was the commercial, civic, and philosophical heart of Athens — where Socrates had debated. Paul debates 'day by day' in this same space, engaging Epicureans (pleasure/tranquility; no divine providence) and Stoics (reason/virtue; divine logos in all things).</div></div>"
-        },
+        "places": [
+          {
+            "name": "The Areopagus — Athens",
+            "coords": "37.9722° N, 23.7233° E",
+            "text": "The Areopagus ('Hill of Ares/Mars') was both a rocky hill northwest of the Acropolis and the ancient Athenian council that met there. Paul addresses this institution — the most prestigious intellectual and civic body in Athens. The setting is the equivalent of a modern nation's supreme philosophical forum."
+          },
+          {
+            "name": "Athens — The Agora",
+            "coords": "37.9752° N, 23.7219° E",
+            "text": "The Athenian agora (marketplace) was the commercial, civic, and philosophical heart of Athens — where Socrates had debated. Paul debates 'day by day' in this same space, engaging Epicureans (pleasure/tranquility; no divine providence) and Stoics (reason/virtue; divine logos in all things)."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 50",

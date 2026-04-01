@@ -34,9 +34,18 @@
             "paragraph": "Paul's identification in v.23 — 'the God whose I am and whom I serve.' The double claim of belonging and service is one of the most compact expressions of discipleship in the NT. Ownership precedes service; identity precedes activity."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Fair Havens — Crete</div><div class=\"poi-coords\">34.9333° N, 24.9833° E</div><div class=\"poi-text\">The small harbour on Crete's south coast where Paul warns against continuing (vv.9–10). The Day of Atonement (Yom Kippur) falling in late September/early October places the scene in the dangerous late sailing season. Paul's maritime warning is ignored — which makes his subsequent angelic assurance all the more dramatic.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">The Mediterranean — Open Sea</div><div class=\"poi-coords\">35.0000° N, 14.5000° E</div><div class=\"poi-text\">Acts 27 is one of antiquity's most detailed nautical narratives. The storm drives them from Crete toward Malta — roughly 900 km before the wind. Luke's precise technical vocabulary (frapping the hull, the sea anchor, soundings) confirms personal presence as an eyewitness.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Fair Havens — Crete",
+            "coords": "34.9333° N, 24.9833° E",
+            "text": "The small harbour on Crete's south coast where Paul warns against continuing (vv.9–10). The Day of Atonement (Yom Kippur) falling in late September/early October places the scene in the dangerous late sailing season. Paul's maritime warning is ignored — which makes his subsequent angelic assurance all the more dramatic."
+          },
+          {
+            "name": "The Mediterranean — Open Sea",
+            "coords": "35.0000° N, 14.5000° E",
+            "text": "Acts 27 is one of antiquity's most detailed nautical narratives. The storm drives them from Crete toward Malta — roughly 900 km before the wind. Luke's precise technical vocabulary (frapping the hull, the sea anchor, soundings) confirms personal presence as an eyewitness."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 60",
@@ -163,9 +172,18 @@
             "paragraph": "v.44 — the fulfilment of the angel's promise (v.24). The passive 'were saved' (diesōthēsan) is Luke's theological signal: this was God's act. Every one of the 276 people on board survived — not one was lost."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Malta</div><div class=\"poi-coords\">35.9375° N, 14.3754° E</div><div class=\"poi-text\">The island of Melita (Malta) — identified by ancient sources and modern geography as the shipwreck location. St. Paul's Bay on Malta's northeastern coast is the traditional site. Archaeological and navigational studies confirm that the ship's drift from Crete is consistent with Malta as the landfall.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">St. Paul's Bay — Malta</div><div class=\"poi-coords\">35.9500° N, 14.3950° E</div><div class=\"poi-text\">The 'bay with a sandy beach' (v.39) where the ship ran aground. The description is consistent with Malta's northern coast. The centurion Julius — who protected Paul throughout the voyage (v.43) — here again uses his authority to ensure Paul's survival.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Malta",
+            "coords": "35.9375° N, 14.3754° E",
+            "text": "The island of Melita (Malta) — identified by ancient sources and modern geography as the shipwreck location. St. Paul's Bay on Malta's northeastern coast is the traditional site. Archaeological and navigational studies confirm that the ship's drift from Crete is consistent with Malta as the landfall."
+          },
+          {
+            "name": "St. Paul's Bay — Malta",
+            "coords": "35.9500° N, 14.3950° E",
+            "text": "The 'bay with a sandy beach' (v.39) where the ship ran aground. The description is consistent with Malta's northern coast. The centurion Julius — who protected Paul throughout the voyage (v.43) — here again uses his authority to ensure Paul's survival."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 60",

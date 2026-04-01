@@ -31,9 +31,18 @@
             "paragraph": "Ananias's description of Jesus in v.14 — ton Dikaion (the Righteous One). This is one of the most concentrated Christological titles in Acts, linking Jesus to the OT figure of the Righteous Sufferer (Isaiah 53:11; Wisdom of Solomon 2:12–20). Paul's encounter with the Righteous One is his conversion's theological centre."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Steps of Antonia — Jerusalem</div><div class=\"poi-coords\">31.7820° N, 35.2344° E</div><div class=\"poi-text\">Paul's unlikely pulpit: the staircase of the Roman military headquarters. From these steps he addresses the mob that tried to kill him moments before. The visual drama — bound, beaten, rescued by soldiers, now addressing thousands — is Luke's most vivid picture of bold witness under duress.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Damascus — Road</div><div class=\"poi-coords\">33.5138° N, 36.2765° E</div><div class=\"poi-text\">Paul rehearses the Damascus encounter for his Jerusalem audience — the event that transformed the persecutor into the preacher. The second account of the Damascus road (after ch.9) adds details appropriate to a Jewish audience: Ananias is described as 'a devout observer of the law and highly respected by all the Jews' (v.12) — his credentials establish Paul's conversion's Jewish legitimacy.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Steps of Antonia — Jerusalem",
+            "coords": "31.7820° N, 35.2344° E",
+            "text": "Paul's unlikely pulpit: the staircase of the Roman military headquarters. From these steps he addresses the mob that tried to kill him moments before. The visual drama — bound, beaten, rescued by soldiers, now addressing thousands — is Luke's most vivid picture of bold witness under duress."
+          },
+          {
+            "name": "Damascus — Road",
+            "coords": "33.5138° N, 36.2765° E",
+            "text": "Paul rehearses the Damascus encounter for his Jerusalem audience — the event that transformed the persecutor into the preacher. The second account of the Damascus road (after ch.9) adds details appropriate to a Jewish audience: Ananias is described as 'a devout observer of the law and highly respected by all the Jews' (v.12) — his credentials establish Paul's conversion's Jewish legitimacy."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 33–35",
@@ -160,9 +169,18 @@
             "paragraph": "Paul's reply to the commander's purchased citizenship (v.28). Born citizenship was more prestigious than purchased citizenship in Roman society. Paul's birth citizenship in Tarsus (a Roman citizen city) gives him legal standing the commander had to buy. The contrast is Paul's quiet counter-punch."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">The Barracks — Antonia Fortress</div><div class=\"poi-coords\">31.7820° N, 35.2344° E</div><div class=\"poi-text\">The Roman military barracks where Paul is taken for interrogation. The Antonia fortress is the same complex from which soldiers responded to the Temple riot (21:31–32). Paul will spend the night here before his Sanhedrin hearing (22:30–23:11).</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Before the Sanhedrin</div><div class=\"poi-coords\">31.7776° N, 35.2349° E</div><div class=\"poi-text\">The commander assembles the Sanhedrin to hear Paul's case — the fifth Sanhedrin confrontation in Acts (after chs 4, 5, 6, 7). But unlike the previous four, Paul is now in Roman custody rather than Jewish. The legal context has changed: Rome controls the proceedings.</div></div>"
-        },
+        "places": [
+          {
+            "name": "The Barracks — Antonia Fortress",
+            "coords": "31.7820° N, 35.2344° E",
+            "text": "The Roman military barracks where Paul is taken for interrogation. The Antonia fortress is the same complex from which soldiers responded to the Temple riot (21:31–32). Paul will spend the night here before his Sanhedrin hearing (22:30–23:11)."
+          },
+          {
+            "name": "Before the Sanhedrin",
+            "coords": "31.7776° N, 35.2349° E",
+            "text": "The commander assembles the Sanhedrin to hear Paul's case — the fifth Sanhedrin confrontation in Acts (after chs 4, 5, 6, 7). But unlike the previous four, Paul is now in Roman custody rather than Jewish. The legal context has changed: Rome controls the proceedings."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 57",

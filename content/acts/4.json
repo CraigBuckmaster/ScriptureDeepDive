@@ -31,9 +31,18 @@
             "paragraph": "literally \"unlettered and lay-persons\" — without formal rabbinic training. The Sanhedrin's category for men who had no Torah certification. Their authority, exercised without credentials, is explicable only by the phrase that follows: \"they had been with Jesus.\""
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">The Sanhedrin</div><div class=\"poi-coords\">31.7776° N, 35.2349° E</div><div class=\"poi-text\">The supreme Jewish council of 71 members — high priests, elders, and scribes — meeting in the Hall of Hewn Stone on the Temple Mount. Peter and John's examination marks the church's formal confrontation with Israel's highest authority.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem — Prison</div><div class=\"poi-coords\">31.7705° N, 35.2294° E</div><div class=\"poi-text\">The apostles are held overnight — the first imprisonment of the church. The overnight detention produces the growth report of v4 (five thousand men) before the examination even begins, demonstrating that imprisonment cannot stop the word.</div></div>"
-        },
+        "places": [
+          {
+            "name": "The Sanhedrin",
+            "coords": "31.7776° N, 35.2349° E",
+            "text": "The supreme Jewish council of 71 members — high priests, elders, and scribes — meeting in the Hall of Hewn Stone on the Temple Mount. Peter and John's examination marks the church's formal confrontation with Israel's highest authority."
+          },
+          {
+            "name": "Jerusalem — Prison",
+            "coords": "31.7705° N, 35.2294° E",
+            "text": "The apostles are held overnight — the first imprisonment of the church. The overnight detention produces the growth report of v4 (five thousand men) before the examination even begins, demonstrating that imprisonment cannot stop the word."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 30",
@@ -170,9 +179,18 @@
             "paragraph": "the community does not pray for safety or for their opponents to be silenced — they pray for boldness. This is the apostolic church's prayer: everything oriented toward witness. The Spirit's response (v31: the place shook; they were filled) answers precisely what was asked."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">The Gathering Place</div><div class=\"poi-coords\">31.7705° N, 35.2294° E</div><div class=\"poi-text\">After release, Peter and John return to \"their own people\" (v23) — the broader community. The specific venue is not named (possibly the upper room of 1:13 or a larger house). The physical shaking of the place (v31) is a theophanic response to corporate prayer.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Cyprus (Barnabas)</div><div class=\"poi-coords\">35.1264° N, 33.4299° E</div><div class=\"poi-text\">Barnabas is identified as a Levite from Cyprus — one of the Diaspora islands with a substantial Jewish community. His Cypriot origin will matter later: unnamed men from Cyprus are the first to preach to Gentiles in Antioch (Acts 11:20).</div></div>"
-        },
+        "places": [
+          {
+            "name": "The Gathering Place",
+            "coords": "31.7705° N, 35.2294° E",
+            "text": "After release, Peter and John return to \"their own people\" (v23) — the broader community. The specific venue is not named (possibly the upper room of 1:13 or a larger house). The physical shaking of the place (v31) is a theophanic response to corporate prayer."
+          },
+          {
+            "name": "Cyprus (Barnabas)",
+            "coords": "35.1264° N, 33.4299° E",
+            "text": "Barnabas is identified as a Levite from Cyprus — one of the Diaspora islands with a substantial Jewish community. His Cypriot origin will matter later: unnamed men from Cyprus are the first to preach to Gentiles in Antioch (Acts 11:20)."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 30",

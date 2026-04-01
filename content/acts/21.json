@@ -31,9 +31,18 @@
             "paragraph": "the community's surrender in v.14 echoes Gethsemane (Luke 22:42: 'not my will, but yours be done'). The phrase marks the moment of acceptance: when Paul cannot be dissuaded, they commit the situation to God's will. This is the model for accepting what cannot be changed."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Caesarea</div><div class=\"poi-coords\">32.5000° N, 34.9000° E</div><div class=\"poi-text\">Philip the evangelist's home — where Paul stays several days and receives Agabus's acted prophecy. The same Caesarea where Cornelius was converted (Acts 10); where Paul will be imprisoned for two years (Acts 24:27). The city is the hinge between Paul's free ministry and his coming custody.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem</div><div class=\"poi-coords\">31.7683° N, 35.2137° E</div><div class=\"poi-text\">Paul's goal — and his prison. He arrives warmly received by James and the elders (v.17), makes his report, and follows the purification advice. Despite his compliance, the riot will happen (v.27). Jerusalem is the city where both the Gospel originated and where Paul's imprisonment begins.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Caesarea",
+            "coords": "32.5000° N, 34.9000° E",
+            "text": "Philip the evangelist's home — where Paul stays several days and receives Agabus's acted prophecy. The same Caesarea where Cornelius was converted (Acts 10); where Paul will be imprisoned for two years (Acts 24:27). The city is the hinge between Paul's free ministry and his coming custody."
+          },
+          {
+            "name": "Jerusalem",
+            "coords": "31.7683° N, 35.2137° E",
+            "text": "Paul's goal — and his prison. He arrives warmly received by James and the elders (v.17), makes his report, and follows the purification advice. Despite his compliance, the riot will happen (v.27). Jerusalem is the city where both the Gospel originated and where Paul's imprisonment begins."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 57",
@@ -160,9 +169,18 @@
             "paragraph": "the chiliarchos (literally 'commander of a thousand' — a tribune) of the Antonia fortress. Claudius Lysias (named in 23:26) will be Paul's unwitting protector throughout the Jerusalem period — a Roman officer whose self-interest repeatedly serves Paul's survival."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">The Temple Courts</div><div class=\"poi-coords\">31.7779° N, 35.2354° E</div><div class=\"poi-text\">The Temple's outer courts were accessible to Gentiles up to the Court of the Gentiles; the inner courts were forbidden to non-Jews on pain of death. The charge that Paul brought Trophimus into the forbidden area (v.28–29) was false — but the misidentification triggered one of the most violent scenes in Acts.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">The Antonia Fortress</div><div class=\"poi-coords\">31.7820° N, 35.2344° E</div><div class=\"poi-text\">The Roman military headquarters adjacent to the Temple Mount — from which soldiers could see into the Temple courts and respond immediately to disorder (v.31–32). The stairs connecting the fortress to the Temple courts are where Paul stands to address the crowd (v.40). Paul is literally rescued from the mob by Rome.</div></div>"
-        },
+        "places": [
+          {
+            "name": "The Temple Courts",
+            "coords": "31.7779° N, 35.2354° E",
+            "text": "The Temple's outer courts were accessible to Gentiles up to the Court of the Gentiles; the inner courts were forbidden to non-Jews on pain of death. The charge that Paul brought Trophimus into the forbidden area (v.28–29) was false — but the misidentification triggered one of the most violent scenes in Acts."
+          },
+          {
+            "name": "The Antonia Fortress",
+            "coords": "31.7820° N, 35.2344° E",
+            "text": "The Roman military headquarters adjacent to the Temple Mount — from which soldiers could see into the Temple courts and respond immediately to disorder (v.31–32). The stairs connecting the fortress to the Temple courts are where Paul stands to address the crowd (v.40). Paul is literally rescued from the mob by Rome."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 57",
@@ -289,9 +307,18 @@
             "paragraph": "the community's surrender in v.14 echoes Gethsemane (Luke 22:42: 'not my will, but yours be done'). The phrase marks the moment of acceptance: when Paul cannot be dissuaded, they commit the situation to God's will. This is the model for accepting what cannot be changed."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Caesarea</div><div class=\"poi-coords\">32.5000° N, 34.9000° E</div><div class=\"poi-text\">Philip the evangelist's home — where Paul stays several days and receives Agabus's acted prophecy. The same Caesarea where Cornelius was converted (Acts 10); where Paul will be imprisoned for two years (Acts 24:27). The city is the hinge between Paul's free ministry and his coming custody.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem</div><div class=\"poi-coords\">31.7683° N, 35.2137° E</div><div class=\"poi-text\">Paul's goal — and his prison. He arrives warmly received by James and the elders (v.17), makes his report, and follows the purification advice. Despite his compliance, the riot will happen (v.27). Jerusalem is the city where both the Gospel originated and where Paul's imprisonment begins.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Caesarea",
+            "coords": "32.5000° N, 34.9000° E",
+            "text": "Philip the evangelist's home — where Paul stays several days and receives Agabus's acted prophecy. The same Caesarea where Cornelius was converted (Acts 10); where Paul will be imprisoned for two years (Acts 24:27). The city is the hinge between Paul's free ministry and his coming custody."
+          },
+          {
+            "name": "Jerusalem",
+            "coords": "31.7683° N, 35.2137° E",
+            "text": "Paul's goal — and his prison. He arrives warmly received by James and the elders (v.17), makes his report, and follows the purification advice. Despite his compliance, the riot will happen (v.27). Jerusalem is the city where both the Gospel originated and where Paul's imprisonment begins."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 57",

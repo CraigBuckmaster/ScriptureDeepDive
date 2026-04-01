@@ -25,9 +25,13 @@
             "paragraph": "At the beginning of creation — Jesus grounds the marriage ethic not in Mosaic law but in creation order. The appeal to Genesis 1 goes behind the Mosaic concession to the original divine design. The creation ethic is prior to and normative over all subsequent law."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Region of Judea and across the Jordan (Perea)</div><div class=\"poi-coords\">East of the Jordan, common route from Galilee to Jerusalem</div><div class=\"poi-text\">The journey through Perea marks the deliberate turn toward the Passion. Jesus’s movement into Judean territory begins the geographic arc that will end at Golgotha.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Region of Judea and across the Jordan (Perea)",
+            "coords": "East of the Jordan, common route from Galilee to Jerusalem",
+            "text": "The journey through Perea marks the deliberate turn toward the Passion. Jesus’s movement into Judean territory begins the geographic arc that will end at Golgotha."
+          }
+        ],
         "cross": {
           "refs": [
             {
@@ -264,9 +268,13 @@
             "paragraph": "Son of David, have mercy on me — the first use of this messianic title by a human being in Mark. The blind beggar uses it twice, insistently. Where the religious authorities demanded silence and the disciples argued about greatness, a blind beggar sees clearly who Jesus is."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jericho</div><div class=\"poi-coords\">Jordan Valley; 250m below sea level; last city before Jerusalem</div><div class=\"poi-text\">Jericho is the gateway to Jerusalem on the eastern approach. After Jericho the road climbs steeply through the Judean wilderness to Jerusalem (from 250m below sea level to 750m above). Bartimaeus is healed at the foot of the final ascent.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Jericho",
+            "coords": "Jordan Valley; 250m below sea level; last city before Jerusalem",
+            "text": "Jericho is the gateway to Jerusalem on the eastern approach. After Jericho the road climbs steeply through the Judean wilderness to Jerusalem (from 250m below sea level to 750m above). Bartimaeus is healed at the foot of the final ascent."
+          }
+        ],
         "cross": {
           "refs": [
             {

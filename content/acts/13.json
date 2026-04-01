@@ -34,9 +34,18 @@
             "paragraph": "verse 9 marks the transition from 'Saul' to 'Paul' — the Roman name he will use throughout his Gentile mission. This is not a conversion name change but the practical adoption of his Roman cognomen for a Roman world. The shift also marks the narrative transition: from here Paul leads; Barnabas follows."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Antioch on the Orontes</div><div class=\"poi-coords\">36.2021° N, 36.1603° E</div><div class=\"poi-text\">The launching base for all three Pauline missionary journeys. A diverse, cosmopolitan city with a large Jewish community and a thriving Gentile population. The church's diversity (v.1: Barnabas from Cyprus, Simeon from Africa, Lucius from Cyrene, Manaen from Herod's court, Saul from Tarsus) mirrors the world it is about to reach.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Pisidian Antioch</div><div class=\"poi-coords\">38.3167° N, 31.2000° E</div><div class=\"poi-text\">A Roman colony in the Phrygian highlands (not the Syrian Antioch of v.1 but a different city — named for the same Seleucid founder). A significant Roman administrative centre with a large Jewish community. Paul's sermon here is the most detailed account of synagogue preaching in Acts.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Antioch on the Orontes",
+            "coords": "36.2021° N, 36.1603° E",
+            "text": "The launching base for all three Pauline missionary journeys. A diverse, cosmopolitan city with a large Jewish community and a thriving Gentile population. The church's diversity (v.1: Barnabas from Cyprus, Simeon from Africa, Lucius from Cyrene, Manaen from Herod's court, Saul from Tarsus) mirrors the world it is about to reach."
+          },
+          {
+            "name": "Pisidian Antioch",
+            "coords": "38.3167° N, 31.2000° E",
+            "text": "A Roman colony in the Phrygian highlands (not the Syrian Antioch of v.1 but a different city — named for the same Seleucid founder). A significant Roman administrative centre with a large Jewish community. Paul's sermon here is the most detailed account of synagogue preaching in Acts."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 46–48",
@@ -163,9 +172,18 @@
             "paragraph": "v.48 — a crucial phrase. The passive participle 'appointed' (hōrismenoi) indicates divine action: those who believed were those whom God had previously appointed. Luke presents the correlation between divine appointment and human faith without explaining their relationship — the mystery Luke preserves intact."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Pisidian Antioch — Synagogue</div><div class=\"poi-coords\">38.3167° N, 31.2000° E</div><div class=\"poi-text\">The synagogue invitation (v.15) gives Paul his first major preaching platform: 'if you have a word of exhortation for the people, please speak.' The formal synagogue service has just included Torah and Prophets readings; Paul builds on them. The sermon structure mirrors the service's own movement from history to contemporary application.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Iconium</div><div class=\"poi-coords\">37.8740° N, 32.4846° E</div><div class=\"poi-text\">Modern Konya in central Turkey — Paul and Barnabas's next stop after expulsion from Pisidian Antioch. A major city on the road network connecting western and eastern Asia Minor. The pattern of synagogue preaching → Jewish opposition → turning to Gentiles → expulsion → moving on will repeat at each city.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Pisidian Antioch — Synagogue",
+            "coords": "38.3167° N, 31.2000° E",
+            "text": "The synagogue invitation (v.15) gives Paul his first major preaching platform: 'if you have a word of exhortation for the people, please speak.' The formal synagogue service has just included Torah and Prophets readings; Paul builds on them. The sermon structure mirrors the service's own movement from history to contemporary application."
+          },
+          {
+            "name": "Iconium",
+            "coords": "37.8740° N, 32.4846° E",
+            "text": "Modern Konya in central Turkey — Paul and Barnabas's next stop after expulsion from Pisidian Antioch. A major city on the road network connecting western and eastern Asia Minor. The pattern of synagogue preaching → Jewish opposition → turning to Gentiles → expulsion → moving on will repeat at each city."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 47",
@@ -310,9 +328,18 @@
             "paragraph": "verse 9 marks the transition from 'Saul' to 'Paul' — the Roman name he will use throughout his Gentile mission. This is not a conversion name change but the practical adoption of his Roman cognomen for a Roman world. The shift also marks the narrative transition: from here Paul leads; Barnabas follows."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Antioch on the Orontes</div><div class=\"poi-coords\">36.2021° N, 36.1603° E</div><div class=\"poi-text\">The launching base for all three Pauline missionary journeys. A diverse, cosmopolitan city with a large Jewish community and a thriving Gentile population. The church's diversity (v.1: Barnabas from Cyprus, Simeon from Africa, Lucius from Cyrene, Manaen from Herod's court, Saul from Tarsus) mirrors the world it is about to reach.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Pisidian Antioch</div><div class=\"poi-coords\">38.3167° N, 31.2000° E</div><div class=\"poi-text\">A Roman colony in the Phrygian highlands (not the Syrian Antioch of v.1 but a different city — named for the same Seleucid founder). A significant Roman administrative centre with a large Jewish community. Paul's sermon here is the most detailed account of synagogue preaching in Acts.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Antioch on the Orontes",
+            "coords": "36.2021° N, 36.1603° E",
+            "text": "The launching base for all three Pauline missionary journeys. A diverse, cosmopolitan city with a large Jewish community and a thriving Gentile population. The church's diversity (v.1: Barnabas from Cyprus, Simeon from Africa, Lucius from Cyrene, Manaen from Herod's court, Saul from Tarsus) mirrors the world it is about to reach."
+          },
+          {
+            "name": "Pisidian Antioch",
+            "coords": "38.3167° N, 31.2000° E",
+            "text": "A Roman colony in the Phrygian highlands (not the Syrian Antioch of v.1 but a different city — named for the same Seleucid founder). A significant Roman administrative centre with a large Jewish community. Paul's sermon here is the most detailed account of synagogue preaching in Acts."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 46–48",

@@ -31,9 +31,13 @@
             "paragraph": "The word of divine necessity (v.26: \"Did not the Messiah have to suffer?\") that runs through Luke's Gospel (4:43; 9:22; 13:33; 17:25; 22:37). The resurrection proves that the \"must\" was fulfilled, not defeated. What seemed like catastrophe was divine necessity; what seemed like the end was the predetermined path to glory."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Emmaus</div><div class=\"poi-coords\">31.8347° N, 35.1078° E</div><div class=\"poi-text\">The exact location of Emmaus is disputed; the strongest candidate for the 60-stadia tradition is Moza (Qoloniyya), about 4 miles (60 stadia) west-northwest of Jerusalem. The road from Jerusalem to Emmaus passed through the Judean foothills, a beautiful route for a conversation that changed the history of Christian interpretation.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Emmaus",
+            "coords": "31.8347° N, 35.1078° E",
+            "text": "The exact location of Emmaus is disputed; the strongest candidate for the 60-stadia tradition is Moza (Qoloniyya), about 4 miles (60 stadia) west-northwest of Jerusalem. The road from Jerusalem to Emmaus passed through the Judean foothills, a beautiful route for a conversation that changed the history of Christian interpretation."
+          }
+        ],
         "tl": [
           {
             "date": "Fri — Good Friday",
@@ -168,9 +172,23 @@
             "paragraph": "The \"promise\" of the Father (v.49) that the disciples are to wait for is the Holy Spirit — explicitly identified in Acts 1:4-5 as the content of this promise. Luke ends his Gospel pointing toward the Spirit; Acts begins with the Spirit's arrival (Pentecost). The ascension is the pivot between the two volumes."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem -- Upper Room</div><div class=\"poi-coords\">31.7726 N, 35.2290 E</div><div class=\"poi-text\">The assembled disciples in Jerusalem (24:33, 36) -- most likely the same upper room used for the Last Supper (22:12) in the upper city. Here the risen Jesus appeared suddenly among them, showed his hands and feet, ate broiled fish, opened the Scriptures, and commissioned them as witnesses to all nations beginning at Jerusalem.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Bethany / Mount of Olives -- Ascension Site</div><div class=\"poi-coords\">31.7764 N, 35.2590 E</div><div class=\"poi-text\">Jesus led the disciples to the vicinity of Bethany (24:50) on the eastern slope of the Mount of Olives, approximately 2km from Jerusalem. Here, while blessing them with upraised hands, he was taken up into heaven. Acts 1:9-12 locates the Ascension on the Mount of Olives. The ridge from which Jesus wept over Jerusalem (19:41) and delivered the Olivet Discourse (21:37) is also the site of his departure -- and promised return.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Temple -- Conclusion</div><div class=\"poi-coords\">31.7781 N, 35.2354 E</div><div class=\"poi-text\">The disciples returned to Jerusalem and \"stayed continually at the temple, praising God\" (24:52-53). The Gospel that opened in the Temple with Zechariah's vision (1:5-23) closes in the Temple with sustained praise. Between those brackets, Jesus has replaced the Temple as the locus of divine presence; the disciples now inhabit that space as the Spirit-filled community he is building.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Jerusalem -- Upper Room",
+            "coords": "31.7726 N, 35.2290 E",
+            "text": "The assembled disciples in Jerusalem (24:33, 36) -- most likely the same upper room used for the Last Supper (22:12) in the upper city. Here the risen Jesus appeared suddenly among them, showed his hands and feet, ate broiled fish, opened the Scriptures, and commissioned them as witnesses to all nations beginning at Jerusalem."
+          },
+          {
+            "name": "Bethany / Mount of Olives -- Ascension Site",
+            "coords": "31.7764 N, 35.2590 E",
+            "text": "Jesus led the disciples to the vicinity of Bethany (24:50) on the eastern slope of the Mount of Olives, approximately 2km from Jerusalem. Here, while blessing them with upraised hands, he was taken up into heaven. Acts 1:9-12 locates the Ascension on the Mount of Olives. The ridge from which Jesus wept over Jerusalem (19:41) and delivered the Olivet Discourse (21:37) is also the site of his departure -- and promised return."
+          },
+          {
+            "name": "Temple -- Conclusion",
+            "coords": "31.7781 N, 35.2354 E",
+            "text": "The disciples returned to Jerusalem and \"stayed continually at the temple, praising God\" (24:52-53). The Gospel that opened in the Temple with Zechariah's vision (1:5-23) closes in the Temple with sustained praise. Between those brackets, Jesus has replaced the Temple as the locus of divine presence; the disciples now inhabit that space as the Spirit-filled community he is building."
+          }
+        ],
         "tl": [
           {
             "date": "Fri — Good Friday",
@@ -305,9 +323,13 @@
             "paragraph": "The word of divine necessity (v.26: \"Did not the Messiah have to suffer?\") that runs through Luke's Gospel (4:43; 9:22; 13:33; 17:25; 22:37). The resurrection proves that the \"must\" was fulfilled, not defeated. What seemed like catastrophe was divine necessity; what seemed like the end was the predetermined path to glory."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Emmaus</div><div class=\"poi-coords\">31.8347° N, 35.1078° E</div><div class=\"poi-text\">The exact location of Emmaus is disputed; the strongest candidate for the 60-stadia tradition is Moza (Qoloniyya), about 4 miles (60 stadia) west-northwest of Jerusalem. The road from Jerusalem to Emmaus passed through the Judean foothills, a beautiful route for a conversation that changed the history of Christian interpretation.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Emmaus",
+            "coords": "31.8347° N, 35.1078° E",
+            "text": "The exact location of Emmaus is disputed; the strongest candidate for the 60-stadia tradition is Moza (Qoloniyya), about 4 miles (60 stadia) west-northwest of Jerusalem. The road from Jerusalem to Emmaus passed through the Judean foothills, a beautiful route for a conversation that changed the history of Christian interpretation."
+          }
+        ],
         "tl": [
           {
             "date": "Fri — Good Friday",

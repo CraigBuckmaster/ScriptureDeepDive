@@ -31,9 +31,18 @@
             "paragraph": "Peter's trance (ekstasis — a going-out of oneself) is distinct from Cornelius's vision (horama). Together they show divine orchestration converging from two directions on a single moment — neither man initiates; both respond to heaven's direction."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Caesarea Maritima</div><div class=\"poi-coords\">32.5000° N, 34.9000° E</div><div class=\"poi-text\">The Roman administrative capital of Judea, built by Herod the Great as a showcase Greco-Roman port city named for Caesar Augustus. Home of the Roman prefect and military garrison. Cornelius's presence as a centurion is historically plausible — Caesarea was the Roman military headquarters for the region.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Rooftop at Joppa</div><div class=\"poi-coords\">32.0543° N, 34.7510° E</div><div class=\"poi-text\">Peter's trance occurs on a housetop (dōma — flat roof). Mediterranean houses commonly had flat rooftops used for prayer and rest. Peter's elevation — above street level — mirrors the vision's upward movement: the sheet comes down from heaven while Peter is raised above the ground.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Caesarea Maritima",
+            "coords": "32.5000° N, 34.9000° E",
+            "text": "The Roman administrative capital of Judea, built by Herod the Great as a showcase Greco-Roman port city named for Caesar Augustus. Home of the Roman prefect and military garrison. Cornelius's presence as a centurion is historically plausible — Caesarea was the Roman military headquarters for the region."
+          },
+          {
+            "name": "Rooftop at Joppa",
+            "coords": "32.0543° N, 34.7510° E",
+            "text": "Peter's trance occurs on a housetop (dōma — flat roof). Mediterranean houses commonly had flat rooftops used for prayer and rest. Peter's elevation — above street level — mirrors the vision's upward movement: the sheet comes down from heaven while Peter is raised above the ground."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 37–40",
@@ -160,9 +169,18 @@
             "paragraph": "this absolute title for Christ appears only here in Acts. Not Lord of Israel, not Lord of believers, but Lord of all peoples — the theological foundation for the universal Gentile mission. If Christ is Lord of all, the Gospel must reach all."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Cornelius's House — Caesarea</div><div class=\"poi-coords\">32.5000° N, 34.9000° E</div><div class=\"poi-text\">A substantial dwelling capable of hosting 'relatives and close friends' (v.24). Luke's precision about the gathering — family, friends, possibly servants — suggests a significant household of social standing. The Gospel's first formal Gentile reception is not a private meeting but a community event.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Caesarea — Roman Capital</div><div class=\"poi-coords\">32.5000° N, 34.9000° E</div><div class=\"poi-text\">Caesarea Maritima was the seat of Roman power in Judea — home to the prefect and the military headquarters. That the Gentile Pentecost occurs here (in the Roman administrative centre) rather than in the Jewish capital carries programmatic significance for the mission's direction toward Rome.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Cornelius's House — Caesarea",
+            "coords": "32.5000° N, 34.9000° E",
+            "text": "A substantial dwelling capable of hosting 'relatives and close friends' (v.24). Luke's precision about the gathering — family, friends, possibly servants — suggests a significant household of social standing. The Gospel's first formal Gentile reception is not a private meeting but a community event."
+          },
+          {
+            "name": "Caesarea — Roman Capital",
+            "coords": "32.5000° N, 34.9000° E",
+            "text": "Caesarea Maritima was the seat of Roman power in Judea — home to the prefect and the military headquarters. That the Gentile Pentecost occurs here (in the Roman administrative centre) rather than in the Jewish capital carries programmatic significance for the mission's direction toward Rome."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 37–40",

@@ -251,9 +251,13 @@
             "paragraph": "Quiet! Be still! — siōpa, pephimōso. The first word is the same used to silence the demon in 1:25. Jesus commands the storm with the same authority he commands unclean spirits. The word “pephimōso” (be muzzled) is a strong restraining command. The sea is treated as a hostile power that submits to the word of the Creator."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Sea of Galilee — crossing to eastern shore</div><div class=\"poi-coords\">The lake itself; heading toward Gerasene/Gentile territory</div><div class=\"poi-text\">The crossing is not incidental: it is the first deliberate movement from Jewish to Gentile territory. The storm that must be overcome to reach the other side may carry symbolic freight — the opposition to the kingdom’s Gentile expansion.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Sea of Galilee — crossing to eastern shore",
+            "coords": "The lake itself; heading toward Gerasene/Gentile territory",
+            "text": "The crossing is not incidental: it is the first deliberate movement from Jewish to Gentile territory. The storm that must be overcome to reach the other side may carry symbolic freight — the opposition to the kingdom’s Gentile expansion."
+          }
+        ],
         "cross": {
           "refs": [
             {

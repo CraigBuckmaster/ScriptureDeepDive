@@ -31,9 +31,18 @@
             "paragraph": "The commission in vv.17–18 is the most comprehensive statement of the Gentile mission's theological content in Acts: open eyes, turn from darkness to light, from Satan's power to God, receive forgiveness, receive inheritance among the sanctified, by faith in Christ — six dimensions of salvation in a single commission clause."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">The Audience Room — Caesarea</div><div class=\"poi-coords\">32.5000° N, 34.9000° E</div><div class=\"poi-text\">The most impressive human audience Paul has addressed in Acts: King Agrippa II, Bernice, Festus, high-ranking military officers, prominent citizens. Paul addresses each by name, deploying rhetorical skill appropriate to the audience while delivering the same Gospel he preached in synagogues and on street corners.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Damascus — Third Account</div><div class=\"poi-coords\">33.5138° N, 36.2765° E</div><div class=\"poi-text\">The third and fullest Damascus road account. This version uniquely includes: 'kicking against the goads' (v.14 — inner conflict); the most comprehensive commission statement (vv.16–18); and Paul's immediate obedience (v.19: 'I was not disobedient'). Each account adds what the audience most needs.</div></div>"
-        },
+        "places": [
+          {
+            "name": "The Audience Room — Caesarea",
+            "coords": "32.5000° N, 34.9000° E",
+            "text": "The most impressive human audience Paul has addressed in Acts: King Agrippa II, Bernice, Festus, high-ranking military officers, prominent citizens. Paul addresses each by name, deploying rhetorical skill appropriate to the audience while delivering the same Gospel he preached in synagogues and on street corners."
+          },
+          {
+            "name": "Damascus — Third Account",
+            "coords": "33.5138° N, 36.2765° E",
+            "text": "The third and fullest Damascus road account. This version uniquely includes: 'kicking against the goads' (v.14 — inner conflict); the most comprehensive commission statement (vv.16–18); and Paul's immediate obedience (v.19: 'I was not disobedient'). Each account adds what the audience most needs."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 60",
@@ -160,9 +169,18 @@
             "paragraph": "Paul's closing appeal in v.29 — the most daring close of any speech in Acts. He invites the king, the governor, and the entire audience to become what he is — minus the physical restraints. The chains are the measure of what he has paid for his faith; he would pay it again."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Caesarea — Final Verdicts</div><div class=\"poi-coords\">32.5000° N, 34.9000° E</div><div class=\"poi-text\">The room where the hearing concludes: Festus shouts 'you are out of your mind!'; Agrippa deflects; Paul invites everyone present to become Christians. Then the dignitaries retire — and deliver the fifth and final Roman innocence declaration.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Rome — The Unavoidable Destination</div><div class=\"poi-coords\">41.9028° N, 12.4964° E</div><div class=\"poi-text\">Agrippa's final verdict (v.32: 'This man could have been set free if he had not appealed to Caesar') identifies the double irony: Paul's legal freedom was available, but freedom would mean not reaching Rome. His chains become the mechanism of his mission's climax.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Caesarea — Final Verdicts",
+            "coords": "32.5000° N, 34.9000° E",
+            "text": "The room where the hearing concludes: Festus shouts 'you are out of your mind!'; Agrippa deflects; Paul invites everyone present to become Christians. Then the dignitaries retire — and deliver the fifth and final Roman innocence declaration."
+          },
+          {
+            "name": "Rome — The Unavoidable Destination",
+            "coords": "41.9028° N, 12.4964° E",
+            "text": "Agrippa's final verdict (v.32: 'This man could have been set free if he had not appealed to Caesar') identifies the double irony: Paul's legal freedom was available, but freedom would mean not reaching Rome. His chains become the mechanism of his mission's climax."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 60",

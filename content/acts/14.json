@@ -34,9 +34,18 @@
             "paragraph": "Paul's address to pagans at Lystra (v.15) does not begin with Scripture (his Gentile audience has no Jewish background) but with natural theology: the living God who made everything and has shown his kindness through rain and harvests. This is Paul's first recorded sermon to a fully pagan audience — the template for the Athens speech (ch.17)."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Lystra</div><div class=\"poi-coords\">37.5833° N, 32.4833° E</div><div class=\"poi-text\">A Roman colony in Lycaonia (southern Galatia), c.29 km south of Iconium. Its largely rural, Lycaonian-speaking population had little synagogue background — hence the misidentification of Paul and Barnabas as Hermes and Zeus. The local Zeus cult (v.13) was prominent enough to have a dedicated priest and temple outside the city.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Derbe</div><div class=\"poi-coords\">37.3500° N, 33.3833° E</div><div class=\"poi-text\">The easternmost city of Paul's first journey — modern Kerti Hüyük in Turkey. A Roman colony on the border of Lycaonia and Cappadocia. Luke notes only that Paul and Barnabas 'won a large number of disciples' (v.21) — the lack of opposition suggests a more peaceful reception than the earlier cities.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Lystra",
+            "coords": "37.5833° N, 32.4833° E",
+            "text": "A Roman colony in Lycaonia (southern Galatia), c.29 km south of Iconium. Its largely rural, Lycaonian-speaking population had little synagogue background — hence the misidentification of Paul and Barnabas as Hermes and Zeus. The local Zeus cult (v.13) was prominent enough to have a dedicated priest and temple outside the city."
+          },
+          {
+            "name": "Derbe",
+            "coords": "37.3500° N, 33.3833° E",
+            "text": "The easternmost city of Paul's first journey — modern Kerti Hüyük in Turkey. A Roman colony on the border of Lycaonia and Cappadocia. Luke notes only that Paul and Barnabas 'won a large number of disciples' (v.21) — the lack of opposition suggests a more peaceful reception than the earlier cities."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 47–48",
@@ -163,9 +172,18 @@
             "paragraph": "from thlibō — to press, to constrict, to afflict. The suffering Paul and Barnabas describe as the path to the kingdom (v.22) is not incidental but structural: the community must walk the same road as their Lord — through cross to crown, through suffering to glory (Rom 8:17)."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Attalia (Antalya)</div><div class=\"poi-coords\">36.8841° N, 30.7056° E</div><div class=\"poi-text\">The main port city on the Pamphylian coast, from which Paul and Barnabas sailed back to Syrian Antioch to complete their report. Modern Antalya is Turkey's major resort city. The return by sea was the fastest route home.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Syrian Antioch — Home Base</div><div class=\"poi-coords\">36.2021° N, 36.1603° E</div><div class=\"poi-text\">The church that commissioned the journey (13:1–3) receives the full report: 'all that God had done through them' (v.27). The mission is bookended by the sending community — the Antioch church is not just a launching pad but a receiving community that learns from and celebrates the mission's fruit.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Attalia (Antalya)",
+            "coords": "36.8841° N, 30.7056° E",
+            "text": "The main port city on the Pamphylian coast, from which Paul and Barnabas sailed back to Syrian Antioch to complete their report. Modern Antalya is Turkey's major resort city. The return by sea was the fastest route home."
+          },
+          {
+            "name": "Syrian Antioch — Home Base",
+            "coords": "36.2021° N, 36.1603° E",
+            "text": "The church that commissioned the journey (13:1–3) receives the full report: 'all that God had done through them' (v.27). The mission is bookended by the sending community — the Antioch church is not just a launching pad but a receiving community that learns from and celebrates the mission's fruit."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 48",

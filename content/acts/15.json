@@ -31,9 +31,18 @@
             "paragraph": "James uses a significant word in v.14: God 'epestrepsen' (turned his attention, visited, intervened) to take a people from the Gentiles. The verb is used of divine eschatological action — God's decisive turning toward the Gentiles is not a historical accident but a purposeful divine intervention."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem — Council Setting</div><div class=\"poi-coords\">31.7683° N, 35.2137° E</div><div class=\"poi-text\">The Jerusalem church is the theological centre of gravity for the entire early church. The apostles and elders — including Peter, James, John (the 'pillars', Gal 2:9), and Paul and Barnabas — constitute the first formal ecumenical gathering. Jerusalem is the appropriate venue: the Gospel went out from here; the question about the Gospel's requirements returns here for resolution.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Antioch — The Controversy Origin</div><div class=\"poi-coords\">36.2021° N, 36.1603° E</div><div class=\"poi-text\">The controversy begins in Antioch when Judean teachers arrive and require circumcision for salvation. Antioch — the Gentile mission's base — is the logical flashpoint: here is where the practical consequences of the theological question are most acute. The mixed Jewish-Gentile community cannot survive the Judaizers' requirement without fracturing.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Jerusalem — Council Setting",
+            "coords": "31.7683° N, 35.2137° E",
+            "text": "The Jerusalem church is the theological centre of gravity for the entire early church. The apostles and elders — including Peter, James, John (the 'pillars', Gal 2:9), and Paul and Barnabas — constitute the first formal ecumenical gathering. Jerusalem is the appropriate venue: the Gospel went out from here; the question about the Gospel's requirements returns here for resolution."
+          },
+          {
+            "name": "Antioch — The Controversy Origin",
+            "coords": "36.2021° N, 36.1603° E",
+            "text": "The controversy begins in Antioch when Judean teachers arrive and require circumcision for salvation. Antioch — the Gentile mission's base — is the logical flashpoint: here is where the practical consequences of the theological question are most acute. The mixed Jewish-Gentile community cannot survive the Judaizers' requirement without fracturing."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 49",
@@ -170,9 +179,18 @@
             "paragraph": "from paroxynō — to sharpen, to provoke. The disagreement between Paul and Barnabas is described with a medical/physical term for a sharp pain or spasm. Luke does not soften the conflict: two Spirit-filled, proven missionaries have an irreconcilable dispute. The honesty is itself instructive — the Bible's heroes are fully human."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Cyprus — Barnabas and Mark</div><div class=\"poi-coords\">35.1264° N, 33.4299° E</div><div class=\"poi-text\">Barnabas takes John Mark back to Cyprus — his homeland (4:36). The rift with Paul opens a second front in the mission: Cyprus receives renewed attention under Barnabas and Mark. What appears to be failure (the split) actually multiplies the mission's reach. God works even through conflict.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Syria and Cilicia</div><div class=\"poi-coords\">36.8000° N, 36.1500° E</div><div class=\"poi-text\">Paul takes Silas through Syria and Cilicia (v.41) — the region he had evangelised during the hidden years after his Damascus conversion (Gal 1:21). He is revisiting and strengthening churches he had founded years earlier, before the Antioch-based mission began.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Cyprus — Barnabas and Mark",
+            "coords": "35.1264° N, 33.4299° E",
+            "text": "Barnabas takes John Mark back to Cyprus — his homeland (4:36). The rift with Paul opens a second front in the mission: Cyprus receives renewed attention under Barnabas and Mark. What appears to be failure (the split) actually multiplies the mission's reach. God works even through conflict."
+          },
+          {
+            "name": "Syria and Cilicia",
+            "coords": "36.8000° N, 36.1500° E",
+            "text": "Paul takes Silas through Syria and Cilicia (v.41) — the region he had evangelised during the hidden years after his Damascus conversion (Gal 1:21). He is revisiting and strengthening churches he had founded years earlier, before the Antioch-based mission began."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 49",
@@ -299,9 +317,18 @@
             "paragraph": "James uses a significant word in v.14: God 'epestrepsen' (turned his attention, visited, intervened) to take a people from the Gentiles. The verb is used of divine eschatological action — God's decisive turning toward the Gentiles is not a historical accident but a purposeful divine intervention."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem — Council Setting</div><div class=\"poi-coords\">31.7683° N, 35.2137° E</div><div class=\"poi-text\">The Jerusalem church is the theological centre of gravity for the entire early church. The apostles and elders — including Peter, James, John (the 'pillars', Gal 2:9), and Paul and Barnabas — constitute the first formal ecumenical gathering. Jerusalem is the appropriate venue: the Gospel went out from here; the question about the Gospel's requirements returns here for resolution.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Antioch — The Controversy Origin</div><div class=\"poi-coords\">36.2021° N, 36.1603° E</div><div class=\"poi-text\">The controversy begins in Antioch when Judean teachers arrive and require circumcision for salvation. Antioch — the Gentile mission's base — is the logical flashpoint: here is where the practical consequences of the theological question are most acute. The mixed Jewish-Gentile community cannot survive the Judaizers' requirement without fracturing.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Jerusalem — Council Setting",
+            "coords": "31.7683° N, 35.2137° E",
+            "text": "The Jerusalem church is the theological centre of gravity for the entire early church. The apostles and elders — including Peter, James, John (the 'pillars', Gal 2:9), and Paul and Barnabas — constitute the first formal ecumenical gathering. Jerusalem is the appropriate venue: the Gospel went out from here; the question about the Gospel's requirements returns here for resolution."
+          },
+          {
+            "name": "Antioch — The Controversy Origin",
+            "coords": "36.2021° N, 36.1603° E",
+            "text": "The controversy begins in Antioch when Judean teachers arrive and require circumcision for salvation. Antioch — the Gentile mission's base — is the logical flashpoint: here is where the practical consequences of the theological question are most acute. The mixed Jewish-Gentile community cannot survive the Judaizers' requirement without fracturing."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 49",

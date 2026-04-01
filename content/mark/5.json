@@ -25,9 +25,18 @@
             "paragraph": "My name is Legion — a Roman military unit of 3,000–6,000 soldiers. The name is both descriptive (many demons) and politically charged: Rome’s military power and demonic oppression use the same vocabulary. The exorcism in Gentile territory that destroys the pigs reads, for Mark’s Roman audience, as a cosmic challenge to Roman imperial power."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Region of the Gerasenes</div><div class=\"poi-coords\">Eastern shore of the Sea of Galilee; Decapolis territory</div><div class=\"poi-text\">This is Gentile land — the pigs confirm it. The Decapolis (ten Greek cities) was a region of Hellenistic culture east of the Jordan. Jesus’s first extended Gentile engagement happens at the far edge of Jewish geography, in a cemetery, among unclean animals.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">The Sea / Steep Bank</div><div class=\"poi-coords\">Sea of Galilee eastern shore</div><div class=\"poi-text\">The herd of 2,000 pigs rushing down the steep bank into the sea dramatizes the exorcism’s scale and irrevocability. The sea, which Jesus crossed in the storm, now becomes the grave of Legion.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Region of the Gerasenes",
+            "coords": "Eastern shore of the Sea of Galilee; Decapolis territory",
+            "text": "This is Gentile land — the pigs confirm it. The Decapolis (ten Greek cities) was a region of Hellenistic culture east of the Jordan. Jesus’s first extended Gentile engagement happens at the far edge of Jewish geography, in a cemetery, among unclean animals."
+          },
+          {
+            "name": "The Sea / Steep Bank",
+            "coords": "Sea of Galilee eastern shore",
+            "text": "The herd of 2,000 pigs rushing down the steep bank into the sea dramatizes the exorcism’s scale and irrevocability. The sea, which Jesus crossed in the storm, now becomes the grave of Legion."
+          }
+        ],
         "cross": {
           "refs": [
             {
@@ -141,9 +150,18 @@
             "paragraph": "Talitha koum is one of the few places where Mark preserves Jesus’s actual Aramaic words, untranslated — then immediately translates them. The preservation of the original Aramaic is a mark of eyewitness transmission. Peter would have remembered the exact words in the room."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Region of the Gerasenes</div><div class=\"poi-coords\">Eastern shore of the Sea of Galilee; Decapolis territory</div><div class=\"poi-text\">This is Gentile land — the pigs confirm it. The Decapolis (ten Greek cities) was a region of Hellenistic culture east of the Jordan. Jesus’s first extended Gentile engagement happens at the far edge of Jewish geography, in a cemetery, among unclean animals.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">The Sea / Steep Bank</div><div class=\"poi-coords\">Sea of Galilee eastern shore</div><div class=\"poi-text\">The herd of 2,000 pigs rushing down the steep bank into the sea dramatizes the exorcism’s scale and irrevocability. The sea, which Jesus crossed in the storm, now becomes the grave of Legion.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Region of the Gerasenes",
+            "coords": "Eastern shore of the Sea of Galilee; Decapolis territory",
+            "text": "This is Gentile land — the pigs confirm it. The Decapolis (ten Greek cities) was a region of Hellenistic culture east of the Jordan. Jesus’s first extended Gentile engagement happens at the far edge of Jewish geography, in a cemetery, among unclean animals."
+          },
+          {
+            "name": "The Sea / Steep Bank",
+            "coords": "Sea of Galilee eastern shore",
+            "text": "The herd of 2,000 pigs rushing down the steep bank into the sea dramatizes the exorcism’s scale and irrevocability. The sea, which Jesus crossed in the storm, now becomes the grave of Legion."
+          }
+        ],
         "cross": {
           "refs": [
             {
@@ -257,9 +275,18 @@
             "paragraph": "My name is Legion — a Roman military unit of 3,000–6,000 soldiers. The name is both descriptive (many demons) and politically charged: Rome’s military power and demonic oppression use the same vocabulary. The exorcism in Gentile territory that destroys the pigs reads, for Mark’s Roman audience, as a cosmic challenge to Roman imperial power."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Region of the Gerasenes</div><div class=\"poi-coords\">Eastern shore of the Sea of Galilee; Decapolis territory</div><div class=\"poi-text\">This is Gentile land — the pigs confirm it. The Decapolis (ten Greek cities) was a region of Hellenistic culture east of the Jordan. Jesus’s first extended Gentile engagement happens at the far edge of Jewish geography, in a cemetery, among unclean animals.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">The Sea / Steep Bank</div><div class=\"poi-coords\">Sea of Galilee eastern shore</div><div class=\"poi-text\">The herd of 2,000 pigs rushing down the steep bank into the sea dramatizes the exorcism’s scale and irrevocability. The sea, which Jesus crossed in the storm, now becomes the grave of Legion.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Region of the Gerasenes",
+            "coords": "Eastern shore of the Sea of Galilee; Decapolis territory",
+            "text": "This is Gentile land — the pigs confirm it. The Decapolis (ten Greek cities) was a region of Hellenistic culture east of the Jordan. Jesus’s first extended Gentile engagement happens at the far edge of Jewish geography, in a cemetery, among unclean animals."
+          },
+          {
+            "name": "The Sea / Steep Bank",
+            "coords": "Sea of Galilee eastern shore",
+            "text": "The herd of 2,000 pigs rushing down the steep bank into the sea dramatizes the exorcism’s scale and irrevocability. The sea, which Jesus crossed in the storm, now becomes the grave of Legion."
+          }
+        ],
         "cross": {
           "refs": [
             {

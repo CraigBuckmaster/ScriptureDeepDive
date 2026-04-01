@@ -25,9 +25,18 @@
             "paragraph": "Full of the Holy Spirit, Jesus was led by the Spirit into the wilderness where for forty days he was tempted by the devil (diabolos). Luke’s sequence is Spirit-filled (3:22) → Spirit-led into trial (4:1) → returning in the power of the Spirit (4:14). The Spirit does not protect from testing but leads through it. The devil’s three temptations test the three things declared at the baptism: sonship, mission method, and relationship to the Father."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Wilderness of Judea</div><div class=\"poi-coords\">Barren terrain west and south of the Jordan; forty days’ trial</div><div class=\"poi-text\">The wilderness is Israel’s formation-ground: Moses’ forty years, Elijah’s forty days, Israel’s forty years. Jesus’ forty days recapitulates and fulfils this tradition.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem — the Temple pinnacle</div><div class=\"poi-coords\">The highest point of the Temple complex, overlooking the Kidron Valley</div><div class=\"poi-text\">Luke’s climax temptation is located at the Temple in Jerusalem — the city that is Luke’s narrative destination throughout the Gospel. The devil’s final offer is a shortcut to the acclaim that the cross is the real path to.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Wilderness of Judea",
+            "coords": "Barren terrain west and south of the Jordan; forty days’ trial",
+            "text": "The wilderness is Israel’s formation-ground: Moses’ forty years, Elijah’s forty days, Israel’s forty years. Jesus’ forty days recapitulates and fulfils this tradition."
+          },
+          {
+            "name": "Jerusalem — the Temple pinnacle",
+            "coords": "The highest point of the Temple complex, overlooking the Kidron Valley",
+            "text": "Luke’s climax temptation is located at the Temple in Jerusalem — the city that is Luke’s narrative destination throughout the Gospel. The devil’s final offer is a shortcut to the acclaim that the cross is the real path to."
+          }
+        ],
         "cross": {
           "refs": [
             {
@@ -128,9 +137,18 @@
             "paragraph": "The Spirit of the Lord is on me because he has anointed me — Jesus reads Isa 61:1-2 and then declares: Today this scripture is fulfilled in your hearing (4:21). The word today (sēmeron) is a Lukan signature — it appears at the decisive moment of salvation (2:11; 19:9; 23:43). The Isa 61 programme — good news to the poor, freedom for prisoners, sight for the blind, release for the oppressed — is Luke’s definition of Jesus’s entire mission."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Nazareth</div><div class=\"poi-coords\">Lower Galilee; Jesus’s hometown; the site of the programmatic rejection</div><div class=\"poi-text\">Nazareth is the launching point and the first rejection. Luke’s placement here (before Capernaum) makes Nazareth the mission’s thematic context: rejected by his own, sent to others.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Capernaum</div><div class=\"poi-coords\">Northwest shore of the Sea of Galilee; ministry base</div><div class=\"poi-text\">Capernaum receives what Nazareth rejects. The Capernaum synagogue is the scene of the first exorcism and Peter’s mother-in-law’s healing. The contrast between the two towns maps the Lukan theology of reception and rejection.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Nazareth",
+            "coords": "Lower Galilee; Jesus’s hometown; the site of the programmatic rejection",
+            "text": "Nazareth is the launching point and the first rejection. Luke’s placement here (before Capernaum) makes Nazareth the mission’s thematic context: rejected by his own, sent to others."
+          },
+          {
+            "name": "Capernaum",
+            "coords": "Northwest shore of the Sea of Galilee; ministry base",
+            "text": "Capernaum receives what Nazareth rejects. The Capernaum synagogue is the scene of the first exorcism and Peter’s mother-in-law’s healing. The contrast between the two towns maps the Lukan theology of reception and rejection."
+          }
+        ],
         "cross": {
           "refs": [
             {
@@ -257,9 +275,18 @@
             "paragraph": "Full of the Holy Spirit, Jesus was led by the Spirit into the wilderness where for forty days he was tempted by the devil (diabolos). Luke’s sequence is Spirit-filled (3:22) → Spirit-led into trial (4:1) → returning in the power of the Spirit (4:14). The Spirit does not protect from testing but leads through it. The devil’s three temptations test the three things declared at the baptism: sonship, mission method, and relationship to the Father."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Wilderness of Judea</div><div class=\"poi-coords\">Barren terrain west and south of the Jordan; forty days’ trial</div><div class=\"poi-text\">The wilderness is Israel’s formation-ground: Moses’ forty years, Elijah’s forty days, Israel’s forty years. Jesus’ forty days recapitulates and fulfils this tradition.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem — the Temple pinnacle</div><div class=\"poi-coords\">The highest point of the Temple complex, overlooking the Kidron Valley</div><div class=\"poi-text\">Luke’s climax temptation is located at the Temple in Jerusalem — the city that is Luke’s narrative destination throughout the Gospel. The devil’s final offer is a shortcut to the acclaim that the cross is the real path to.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Wilderness of Judea",
+            "coords": "Barren terrain west and south of the Jordan; forty days’ trial",
+            "text": "The wilderness is Israel’s formation-ground: Moses’ forty years, Elijah’s forty days, Israel’s forty years. Jesus’ forty days recapitulates and fulfils this tradition."
+          },
+          {
+            "name": "Jerusalem — the Temple pinnacle",
+            "coords": "The highest point of the Temple complex, overlooking the Kidron Valley",
+            "text": "Luke’s climax temptation is located at the Temple in Jerusalem — the city that is Luke’s narrative destination throughout the Gospel. The devil’s final offer is a shortcut to the acclaim that the cross is the real path to."
+          }
+        ],
         "cross": {
           "refs": [
             {

@@ -31,9 +31,18 @@
             "paragraph": "the Jerusalem church's summary of what God has done: repentance is not merely moral reform but the gateway to life itself — the eschatological life of the new age. That God grants this to Gentiles is the chapter's theological climax."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem — Apostolic Community</div><div class=\"poi-coords\">31.7683° N, 35.2137° E</div><div class=\"poi-text\">The Jerusalem church is still the theological centre of gravity in Acts 11 — the community whose approval of the Gentile mission is theologically necessary. Peter's report transforms potential controversy into corporate praise (v.18). The Jerusalem community's acceptance is the foundation for what Antioch will become.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Joppa — Peter's Lodging</div><div class=\"poi-coords\">32.0543° N, 34.7510° E</div><div class=\"poi-text\">Peter retells the Joppa rooftop trance as the starting point of his defence. The specific detail of the six brothers who accompanied him (v.12) functions as legal corroboration — he is not making a solo claim but presenting witnessed testimony.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Jerusalem — Apostolic Community",
+            "coords": "31.7683° N, 35.2137° E",
+            "text": "The Jerusalem church is still the theological centre of gravity in Acts 11 — the community whose approval of the Gentile mission is theologically necessary. Peter's report transforms potential controversy into corporate praise (v.18). The Jerusalem community's acceptance is the foundation for what Antioch will become."
+          },
+          {
+            "name": "Joppa — Peter's Lodging",
+            "coords": "32.0543° N, 34.7510° E",
+            "text": "Peter retells the Joppa rooftop trance as the starting point of his defence. The specific detail of the six brothers who accompanied him (v.12) functions as legal corroboration — he is not making a solo claim but presenting witnessed testimony."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 40",
@@ -160,9 +169,18 @@
             "paragraph": "a recurring OT phrase for divine power in action (Exod 9:3; Isa 59:1; Ezek 1:3). Luke uses it to attribute the Antioch conversions directly to God: unnamed, unofficial men from Cyprus and Cyrene achieved something remarkable not by their credentials but by the Lord's active presence."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Antioch on the Orontes</div><div class=\"poi-coords\">36.2021° N, 36.1603° E</div><div class=\"poi-text\">The third largest city of the Roman Empire after Rome and Alexandria — population c.500,000. Located in Syria, it became the headquarters for the Gentile mission and the base from which all three of Paul's missionary journeys were launched. The church 'first called Christians' here will become the dominant expression of the faith outside Judea.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Tarsus</div><div class=\"poi-coords\">36.9145° N, 34.8936° E</div><div class=\"poi-text\">Paul's home city in Cilicia (southeastern Turkey) — a major Hellenistic city, seat of philosophy and rhetoric, and a Roman citizen city. Barnabas retrieves Paul from here (v.25) — possibly 8–10 years after his Damascus conversion. The years in Tarsus were not wasted: they were Paul's hidden preparation for global mission.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Antioch on the Orontes",
+            "coords": "36.2021° N, 36.1603° E",
+            "text": "The third largest city of the Roman Empire after Rome and Alexandria — population c.500,000. Located in Syria, it became the headquarters for the Gentile mission and the base from which all three of Paul's missionary journeys were launched. The church 'first called Christians' here will become the dominant expression of the faith outside Judea."
+          },
+          {
+            "name": "Tarsus",
+            "coords": "36.9145° N, 34.8936° E",
+            "text": "Paul's home city in Cilicia (southeastern Turkey) — a major Hellenistic city, seat of philosophy and rhetoric, and a Roman citizen city. Barnabas retrieves Paul from here (v.25) — possibly 8–10 years after his Damascus conversion. The years in Tarsus were not wasted: they were Paul's hidden preparation for global mission."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 40–43",

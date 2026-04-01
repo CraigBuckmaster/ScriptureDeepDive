@@ -31,9 +31,18 @@
             "paragraph": "the accusation identifies the Spirit as a person who can be lied to — establishing the Spirit's full personhood and, implicitly, his full deity (v4 equates lying to the Spirit with lying to God)."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Solomon's Colonnade</div><div class=\"poi-coords\">31.7767° N, 35.2354° E</div><div class=\"poi-text\">The Eastern Portico — the church's regular public gathering place (v12). \"No one else dared join them\" (v13) likely refers to uncommitted observers who respected the community's distinctiveness. The space combines public visibility with the community's evident holiness.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem Streets</div><div class=\"poi-coords\">31.7683° N, 35.2137° E</div><div class=\"poi-text\">Peter's shadow healing the sick (v15) places the apostolic ministry in Jerusalem's public streets. The city's streets become mission territory — the church is not confined to private spaces but present in the city's daily life.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Solomon's Colonnade",
+            "coords": "31.7767° N, 35.2354° E",
+            "text": "The Eastern Portico — the church's regular public gathering place (v12). \"No one else dared join them\" (v13) likely refers to uncommitted observers who respected the community's distinctiveness. The space combines public visibility with the community's evident holiness."
+          },
+          {
+            "name": "Jerusalem Streets",
+            "coords": "31.7683° N, 35.2137° E",
+            "text": "Peter's shadow healing the sick (v15) places the apostolic ministry in Jerusalem's public streets. The city's streets become mission territory — the church is not confined to private spaces but present in the city's daily life."
+          }
+        ],
         "tl": [
           {
             "date": "c. 1406 BC",
@@ -164,9 +173,18 @@
             "paragraph": "the aorist passive implies divine action — God counted them worthy, not they themselves. The joy is therefore not stoicism but theological gratitude: the Lord himself has honoured them by calling them to share his pattern of suffering."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">The Public Jail — Jerusalem</div><div class=\"poi-coords\">31.7705° N, 35.2294° E</div><div class=\"poi-text\">The public jail (tērēsis dēmosia, v18) was officially designated, not a private holding. The apostles' miraculous escape — guards present, doors locked — was therefore publicly verifiable and undeniable.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">House to House</div><div class=\"poi-coords\">31.7705° N, 35.2294° E</div><div class=\"poi-text\">The closing summary (v42) reiterates the dual-venue pattern of 2:46: temple courts (public proclamation) and house to house (community formation). The Jerusalem church's model combines bold public presence with intimate discipleship.</div></div>"
-        },
+        "places": [
+          {
+            "name": "The Public Jail — Jerusalem",
+            "coords": "31.7705° N, 35.2294° E",
+            "text": "The public jail (tērēsis dēmosia, v18) was officially designated, not a private holding. The apostles' miraculous escape — guards present, doors locked — was therefore publicly verifiable and undeniable."
+          },
+          {
+            "name": "House to House",
+            "coords": "31.7705° N, 35.2294° E",
+            "text": "The closing summary (v42) reiterates the dual-venue pattern of 2:46: temple courts (public proclamation) and house to house (community formation). The Jerusalem church's model combines bold public presence with intimate discipleship."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 30",
@@ -293,9 +311,18 @@
             "paragraph": "the accusation identifies the Spirit as a person who can be lied to — establishing the Spirit's full personhood and, implicitly, his full deity (v4 equates lying to the Spirit with lying to God)."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Solomon's Colonnade</div><div class=\"poi-coords\">31.7767° N, 35.2354° E</div><div class=\"poi-text\">The Eastern Portico — the church's regular public gathering place (v12). \"No one else dared join them\" (v13) likely refers to uncommitted observers who respected the community's distinctiveness. The space combines public visibility with the community's evident holiness.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem Streets</div><div class=\"poi-coords\">31.7683° N, 35.2137° E</div><div class=\"poi-text\">Peter's shadow healing the sick (v15) places the apostolic ministry in Jerusalem's public streets. The city's streets become mission territory — the church is not confined to private spaces but present in the city's daily life.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Solomon's Colonnade",
+            "coords": "31.7767° N, 35.2354° E",
+            "text": "The Eastern Portico — the church's regular public gathering place (v12). \"No one else dared join them\" (v13) likely refers to uncommitted observers who respected the community's distinctiveness. The space combines public visibility with the community's evident holiness."
+          },
+          {
+            "name": "Jerusalem Streets",
+            "coords": "31.7683° N, 35.2137° E",
+            "text": "Peter's shadow healing the sick (v15) places the apostolic ministry in Jerusalem's public streets. The city's streets become mission territory — the church is not confined to private spaces but present in the city's daily life."
+          }
+        ],
         "tl": [
           {
             "date": "c. 1406 BC",

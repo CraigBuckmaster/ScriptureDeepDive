@@ -31,9 +31,18 @@
             "paragraph": "an aorist participle indicating the commission was fully given before the Ascension. The disciples carry a complete mandate forward, not a partial one."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Mount of Olives</div><div class=\"poi-coords\">31.7793° N, 35.2437° E</div><div class=\"poi-text\">The site of the Ascension — a Sabbath day's walk (c.1 km) east of Jerusalem. Jesus descended this same hill on Palm Sunday. Here the heavenly departure takes place, and angels promise a return in like manner (v11).</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem</div><div class=\"poi-coords\">31.7683° N, 35.2137° E</div><div class=\"poi-text\">The geographic anchor of Acts 1–7. The disciples are commanded to wait here until Pentecost. The city where the resurrection occurred is the required starting point for witness that spreads outward.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Mount of Olives",
+            "coords": "31.7793° N, 35.2437° E",
+            "text": "The site of the Ascension — a Sabbath day's walk (c.1 km) east of Jerusalem. Jesus descended this same hill on Palm Sunday. Here the heavenly departure takes place, and angels promise a return in like manner (v11)."
+          },
+          {
+            "name": "Jerusalem",
+            "coords": "31.7683° N, 35.2137° E",
+            "text": "The geographic anchor of Acts 1–7. The disciples are commanded to wait here until Pentecost. The city where the resurrection occurred is the required starting point for witness that spreads outward."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 30",
@@ -164,9 +173,18 @@
             "paragraph": "the last use of the OT lot-casting method in the NT. After Pentecost, the Spirit guides through spiritual discernment (Acts 13:2; 15:28). This is a transitional moment: the old and new eras overlap in Acts 1."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Upper Room</div><div class=\"poi-coords\">31.7705° N, 35.2294° E</div><div class=\"poi-text\">The room (hyperōon) where the disciples gathered — most likely the same large upper room as the Last Supper (Luke 22:12). The first gathering place of the Christian community, in the upper city of Jerusalem.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Field of Blood (Akeldama)</div><div class=\"poi-coords\">31.7635° N, 35.2282° E</div><div class=\"poi-text\">Located south of Jerusalem in the Hinnom Valley, identifiable since Byzantine times. The field purchased with Judas's betrayal money became a permanent marker in Jerusalem's geography.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Upper Room",
+            "coords": "31.7705° N, 35.2294° E",
+            "text": "The room (hyperōon) where the disciples gathered — most likely the same large upper room as the Last Supper (Luke 22:12). The first gathering place of the Christian community, in the upper city of Jerusalem."
+          },
+          {
+            "name": "Field of Blood (Akeldama)",
+            "coords": "31.7635° N, 35.2282° E",
+            "text": "Located south of Jerusalem in the Hinnom Valley, identifiable since Byzantine times. The field purchased with Judas's betrayal money became a permanent marker in Jerusalem's geography."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 30",

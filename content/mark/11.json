@@ -25,9 +25,23 @@
             "paragraph": "Hosanna — from the Hebrew hoshiʻa-na: “save now!” It is a cry from Psalm 118:25. What began as a liturgical plea for divine rescue became a shout of messianic welcome. The crowd is greeting the one they believe will bring salvation — but their understanding of what salvation means will be exposed within a week."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Bethphage and Bethany</div><div class=\"poi-coords\">Villages on the eastern slope of the Mount of Olives, c.3km from Jerusalem</div><div class=\"poi-text\">The entry begins on the eastern slope of the Mount of Olives — the traditional approach to Jerusalem from Jericho. Zechariah 14:4 locates the Messiah’s coming on the Mount of Olives. Jesus’s deliberate use of this route is a geographical claim.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Mount of Olives</div><div class=\"poi-coords\">Hill east of Jerusalem, overlooking the Temple mount across the Kidron Valley</div><div class=\"poi-text\">The Mount of Olives commands a view of the Temple courts. Jesus’s approach from the east, down the olive-covered slope, into the Kidron Valley and up to the Temple, is the route of royal processional. The geography makes the claim visible.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem — Temple courts</div><div class=\"poi-coords\">The city and its central sanctuary</div><div class=\"poi-text\">Jesus enters the city and goes directly to the Temple — not to Herod’s palace, not to Pilate’s praetorium, but to the house of prayer. The Temple is his destination and his challenge.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Bethphage and Bethany",
+            "coords": "Villages on the eastern slope of the Mount of Olives, c.3km from Jerusalem",
+            "text": "The entry begins on the eastern slope of the Mount of Olives — the traditional approach to Jerusalem from Jericho. Zechariah 14:4 locates the Messiah’s coming on the Mount of Olives. Jesus’s deliberate use of this route is a geographical claim."
+          },
+          {
+            "name": "Mount of Olives",
+            "coords": "Hill east of Jerusalem, overlooking the Temple mount across the Kidron Valley",
+            "text": "The Mount of Olives commands a view of the Temple courts. Jesus’s approach from the east, down the olive-covered slope, into the Kidron Valley and up to the Temple, is the route of royal processional. The geography makes the claim visible."
+          },
+          {
+            "name": "Jerusalem — Temple courts",
+            "coords": "The city and its central sanctuary",
+            "text": "Jesus enters the city and goes directly to the Temple — not to Herod’s palace, not to Pilate’s praetorium, but to the house of prayer. The Temple is his destination and his challenge."
+          }
+        ],
         "tl": [
           {
             "date": "Sun — Palm Sunday",
@@ -185,9 +199,18 @@
             "paragraph": "My house will be called a house of prayer for all nations — oikos proseukhs. The Temple’s primary purpose — prayer for all nations, not just Israel — is being subverted by the commercial activity in the court of the Gentiles. Jesus’s action restores the space where Gentiles were supposed to pray."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Bethany</div><div class=\"poi-coords\">Eastern slope of the Mount of Olives; Jesus’s Passion Week base</div><div class=\"poi-text\">Jesus leaves Bethany each morning and returns each evening. The Mount of Olives is both his sleeping ground and the vantage point from which he approaches Jerusalem. The geography of withdrawal and return structures the entire week.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">The Temple courts</div><div class=\"poi-coords\">Jerusalem Temple; specifically the Court of the Gentiles</div><div class=\"poi-text\">The Court of the Gentiles — the outermost court where Gentiles were permitted to pray — had become occupied by the money-changing and dove-selling operations. Jesus’s act restores the Gentile prayer space that the commercial activity had colonized.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Bethany",
+            "coords": "Eastern slope of the Mount of Olives; Jesus’s Passion Week base",
+            "text": "Jesus leaves Bethany each morning and returns each evening. The Mount of Olives is both his sleeping ground and the vantage point from which he approaches Jerusalem. The geography of withdrawal and return structures the entire week."
+          },
+          {
+            "name": "The Temple courts",
+            "coords": "Jerusalem Temple; specifically the Court of the Gentiles",
+            "text": "The Court of the Gentiles — the outermost court where Gentiles were permitted to pray — had become occupied by the money-changing and dove-selling operations. Jesus’s act restores the Gentile prayer space that the commercial activity had colonized."
+          }
+        ],
         "tl": [
           {
             "date": "Sun — Palm Sunday",
@@ -345,9 +368,23 @@
             "paragraph": "Hosanna — from the Hebrew hoshiʻa-na: “save now!” It is a cry from Psalm 118:25. What began as a liturgical plea for divine rescue became a shout of messianic welcome. The crowd is greeting the one they believe will bring salvation — but their understanding of what salvation means will be exposed within a week."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Bethphage and Bethany</div><div class=\"poi-coords\">Villages on the eastern slope of the Mount of Olives, c.3km from Jerusalem</div><div class=\"poi-text\">The entry begins on the eastern slope of the Mount of Olives — the traditional approach to Jerusalem from Jericho. Zechariah 14:4 locates the Messiah’s coming on the Mount of Olives. Jesus’s deliberate use of this route is a geographical claim.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Mount of Olives</div><div class=\"poi-coords\">Hill east of Jerusalem, overlooking the Temple mount across the Kidron Valley</div><div class=\"poi-text\">The Mount of Olives commands a view of the Temple courts. Jesus’s approach from the east, down the olive-covered slope, into the Kidron Valley and up to the Temple, is the route of royal processional. The geography makes the claim visible.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem — Temple courts</div><div class=\"poi-coords\">The city and its central sanctuary</div><div class=\"poi-text\">Jesus enters the city and goes directly to the Temple — not to Herod’s palace, not to Pilate’s praetorium, but to the house of prayer. The Temple is his destination and his challenge.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Bethphage and Bethany",
+            "coords": "Villages on the eastern slope of the Mount of Olives, c.3km from Jerusalem",
+            "text": "The entry begins on the eastern slope of the Mount of Olives — the traditional approach to Jerusalem from Jericho. Zechariah 14:4 locates the Messiah’s coming on the Mount of Olives. Jesus’s deliberate use of this route is a geographical claim."
+          },
+          {
+            "name": "Mount of Olives",
+            "coords": "Hill east of Jerusalem, overlooking the Temple mount across the Kidron Valley",
+            "text": "The Mount of Olives commands a view of the Temple courts. Jesus’s approach from the east, down the olive-covered slope, into the Kidron Valley and up to the Temple, is the route of royal processional. The geography makes the claim visible."
+          },
+          {
+            "name": "Jerusalem — Temple courts",
+            "coords": "The city and its central sanctuary",
+            "text": "Jesus enters the city and goes directly to the Temple — not to Herod’s palace, not to Pilate’s praetorium, but to the house of prayer. The Temple is his destination and his challenge."
+          }
+        ],
         "tl": [
           {
             "date": "Sun — Palm Sunday",

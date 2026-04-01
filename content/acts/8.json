@@ -31,9 +31,18 @@
             "paragraph": "used in v4 and v12. The scattered believers are not passive refugees but active evangelists. Luke's verb choice is deliberate: scattering produces not silence but speech."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Samaria</div><div class=\"poi-coords\">32.2718° N, 35.1947° E</div><div class=\"poi-text\">The central region of Palestine between Judea and Galilee — territory of the ancient Northern Kingdom, later resettled with mixed populations (2 Kings 17). Samaritanism was despised by mainstream Judaism. Philip's mission here is the direct fulfilment of the \"Samaria\" stage of the 1:8 commission.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Samaria — City</div><div class=\"poi-coords\">32.2718° N, 35.1947° E</div><div class=\"poi-text\">Philip goes to \"a city in Samaria\" (v5) — likely the Samaritan capital (Sebaste/Samaria, rebuilt by Herod) or Shechem near Mt Gerizim, the Samaritan holy site. The city's joy (v8) is the first recorded community-wide response to the Gospel outside Jerusalem.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Samaria",
+            "coords": "32.2718° N, 35.1947° E",
+            "text": "The central region of Palestine between Judea and Galilee — territory of the ancient Northern Kingdom, later resettled with mixed populations (2 Kings 17). Samaritanism was despised by mainstream Judaism. Philip's mission here is the direct fulfilment of the \"Samaria\" stage of the 1:8 commission."
+          },
+          {
+            "name": "Samaria — City",
+            "coords": "32.2718° N, 35.1947° E",
+            "text": "Philip goes to \"a city in Samaria\" (v5) — likely the Samaritan capital (Sebaste/Samaria, rebuilt by Herod) or Shechem near Mt Gerizim, the Samaritan holy site. The city's joy (v8) is the first recorded community-wide response to the Gospel outside Jerusalem."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 34",
@@ -160,9 +169,18 @@
             "paragraph": "the same verb (harpazō) used for Paul's heavenly vision (2 Cor 12:2) and for the eschatological gathering (1 Thess 4:17). Philip's transportation echoes Elijah's (1 Kings 18:12; 2 Kings 2:16) — the prophetic tradition of Spirit-directed movement."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Gaza (Desert Road)</div><div class=\"poi-coords\">31.5017° N, 34.4667° E</div><div class=\"poi-text\">The ancient city at the southern edge of Palestine, gateway to Egypt. The \"desert road\" (erēmos) was the less-travelled route — making the encounter all the more providential. Part of the ancient international trade route connecting the Mediterranean world with sub-Saharan Africa.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Azotus (Ashdod)</div><div class=\"poi-coords\">31.8028° N, 34.6499° E</div><div class=\"poi-text\">Philip's arrival point after the Spirit's transportation (v40). The ancient Ashdod on the Philistine coastal plain. Philip preaches northward through the coastal towns to Caesarea, where he will later settle and raise a family of prophet-daughters (Acts 21:8–9).</div></div>"
-        },
+        "places": [
+          {
+            "name": "Gaza (Desert Road)",
+            "coords": "31.5017° N, 34.4667° E",
+            "text": "The ancient city at the southern edge of Palestine, gateway to Egypt. The \"desert road\" (erēmos) was the less-travelled route — making the encounter all the more providential. Part of the ancient international trade route connecting the Mediterranean world with sub-Saharan Africa."
+          },
+          {
+            "name": "Azotus (Ashdod)",
+            "coords": "31.8028° N, 34.6499° E",
+            "text": "Philip's arrival point after the Spirit's transportation (v40). The ancient Ashdod on the Philistine coastal plain. Philip preaches northward through the coastal towns to Caesarea, where he will later settle and raise a family of prophet-daughters (Acts 21:8–9)."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 34",

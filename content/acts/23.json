@@ -31,9 +31,18 @@
             "paragraph": "Paul's rebuke of Ananias (v.3) — 'you whitewashed wall' — alludes to Ezekiel 13:10–16 (prophets who whitewash a dangerous wall) and anticipates Jesus's 'whitewashed tombs' (Matt 23:27). The image is of something that looks solid but is rotten inside. Paul recognises the high priest's judgment-seat hypocrisy."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">The Sanhedrin</div><div class=\"poi-coords\">31.7776° N, 35.2349° E</div><div class=\"poi-text\">Paul's fifth Sanhedrin appearance in Acts — but now under Roman auspices, not Jewish authority. The commander assembles the council (22:30) to understand the charges. The Sanhedrin's self-destruction (the Pharisee/Sadducee split, v.7–10) makes a fair hearing impossible and providentially ensures Paul's removal to Caesarea.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">The Barracks — Paul's Prison</div><div class=\"poi-coords\">31.7820° N, 35.2344° E</div><div class=\"poi-text\">Paul receives the Lord's vision here (v.11) — 'you must also testify in Rome.' The barracks of the Antonia fortress become the place of divine reassurance. The Lord appears in the night, as he did at Corinth (18:9) — the pattern of direct divine communication at moments of maximum danger.</div></div>"
-        },
+        "places": [
+          {
+            "name": "The Sanhedrin",
+            "coords": "31.7776° N, 35.2349° E",
+            "text": "Paul's fifth Sanhedrin appearance in Acts — but now under Roman auspices, not Jewish authority. The commander assembles the council (22:30) to understand the charges. The Sanhedrin's self-destruction (the Pharisee/Sadducee split, v.7–10) makes a fair hearing impossible and providentially ensures Paul's removal to Caesarea."
+          },
+          {
+            "name": "The Barracks — Paul's Prison",
+            "coords": "31.7820° N, 35.2344° E",
+            "text": "Paul receives the Lord's vision here (v.11) — 'you must also testify in Rome.' The barracks of the Antonia fortress become the place of divine reassurance. The Lord appears in the night, as he did at Corinth (18:9) — the pattern of direct divine communication at moments of maximum danger."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 57",
@@ -164,9 +173,18 @@
             "paragraph": "Claudius Lysias's verdict in the letter (v.29) is the Roman legal assessment of Paul's case: no capital crime. This is the third Roman innocence declaration in Acts (Gallio at Corinth, 18:14–15; Lysias here; Festus later, 25:25). Luke's cumulative legal argument: Roman authorities consistently found Paul innocent."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Antipatris</div><div class=\"poi-coords\">32.1000° N, 34.9167° E</div><div class=\"poi-text\">A city on the road from Jerusalem to Caesarea — roughly the midpoint of the 96 km journey. The infantry escort (400 soldiers) returns from Antipatris while the cavalry (70 horsemen) continues with Paul to Caesarea. The massive escort (470 soldiers for one prisoner!) reflects both Paul's Roman legal status and the seriousness of the assassination threat.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Caesarea — Herod's Palace</div><div class=\"poi-coords\">32.5000° N, 34.9000° E</div><div class=\"poi-text\">The Roman governor's official residence in Caesarea — the praetorium (v.35). Paul will be imprisoned here for two years (24:27), under successive governors Felix and Festus. Caesarea is the administrative capital; here Paul's legal hearings will take place before eventually being appealed to Rome.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Antipatris",
+            "coords": "32.1000° N, 34.9167° E",
+            "text": "A city on the road from Jerusalem to Caesarea — roughly the midpoint of the 96 km journey. The infantry escort (400 soldiers) returns from Antipatris while the cavalry (70 horsemen) continues with Paul to Caesarea. The massive escort (470 soldiers for one prisoner!) reflects both Paul's Roman legal status and the seriousness of the assassination threat."
+          },
+          {
+            "name": "Caesarea — Herod's Palace",
+            "coords": "32.5000° N, 34.9000° E",
+            "text": "The Roman governor's official residence in Caesarea — the praetorium (v.35). Paul will be imprisoned here for two years (24:27), under successive governors Felix and Festus. Caesarea is the administrative capital; here Paul's legal hearings will take place before eventually being appealed to Rome."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 57",

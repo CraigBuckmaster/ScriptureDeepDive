@@ -31,9 +31,23 @@
             "paragraph": "The word (v.25) that summarises the passion: Pilate \"surrendered Jesus to their will.\" The same word is used of divine handing-over in Paul (Rom 4:25; 8:32) — God handed him over for us. The human handing-over by Pilate is simultaneously the divine handing-over for redemption."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Pilate's Praetorium</div><div class=\"poi-coords\">31.7781 N, 35.2297 E</div><div class=\"poi-text\">Pontius Pilate's Jerusalem residence and judgment hall -- probably Herod's Palace in the upper city rather than the Antonia Fortress. Pilate pronounced his triple declaration of innocence (23:4, 14, 22) from the judgment seat here. The most consequential miscarriage of justice in history: the innocent condemned, the guilty (Barabbas) released.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Herod Antipas's Jerusalem Residence</div><div class=\"poi-coords\">31.7760 N, 35.2300 E</div><div class=\"poi-text\">Herod Antipas maintained a Jerusalem residence for festival seasons. Luke alone records the transfer of Jesus to Herod for examination (23:7-11) -- possible because Herod was in Jerusalem for Passover. His mocking and dressing Jesus in a splendid robe before returning him to Pilate reconciled their prior enmity (23:12).</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Road to Golgotha</div><div class=\"poi-coords\">31.7802 N, 35.2296 E</div><div class=\"poi-text\">The route from the Praetorium to the execution site outside the city wall. Simon of Cyrene was seized on this road and compelled to carry the cross (23:26). Jesus addressed the mourning women of Jerusalem along the way (23:28-31) -- his last public words before the crucifixion, redirecting their grief toward the coming destruction of the city.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Pilate's Praetorium",
+            "coords": "31.7781 N, 35.2297 E",
+            "text": "Pontius Pilate's Jerusalem residence and judgment hall -- probably Herod's Palace in the upper city rather than the Antonia Fortress. Pilate pronounced his triple declaration of innocence (23:4, 14, 22) from the judgment seat here. The most consequential miscarriage of justice in history: the innocent condemned, the guilty (Barabbas) released."
+          },
+          {
+            "name": "Herod Antipas's Jerusalem Residence",
+            "coords": "31.7760 N, 35.2300 E",
+            "text": "Herod Antipas maintained a Jerusalem residence for festival seasons. Luke alone records the transfer of Jesus to Herod for examination (23:7-11) -- possible because Herod was in Jerusalem for Passover. His mocking and dressing Jesus in a splendid robe before returning him to Pilate reconciled their prior enmity (23:12)."
+          },
+          {
+            "name": "Road to Golgotha",
+            "coords": "31.7802 N, 35.2296 E",
+            "text": "The route from the Praetorium to the execution site outside the city wall. Simon of Cyrene was seized on this road and compelled to carry the cross (23:26). Jesus addressed the mourning women of Jerusalem along the way (23:28-31) -- his last public words before the crucifixion, redirecting their grief toward the coming destruction of the city."
+          }
+        ],
         "cross": {
           "refs": [
             {
@@ -174,9 +188,18 @@
             "paragraph": "The word (v.43) is Persian in origin (pardes, a royal enclosed garden), borrowed into Greek. It entered Jewish apocalyptic literature as a term for the blessed abode of the righteous dead (2 Cor 12:4; Rev 2:7). Jesus promises the penitent criminal immediate, personal, companionable presence in paradise: \"today you will be with me in paradise.\""
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Golgotha / Calvary</div><div class=\"poi-coords\">31.7784 N, 35.2296 E</div><div class=\"poi-text\">The \"Place of the Skull\" -- the crucifixion site traditionally identified with the Church of the Holy Sepulchre (established by Constantine c.AD 325), just outside the first-century city wall. Here Jesus spoke his three words from the cross (Father, forgive them; today you will be in paradise; Father, into your hands I commit my spirit), the sun darkened for three hours, and the Temple veil tore from top to bottom.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Joseph of Arimathea's Tomb</div><div class=\"poi-coords\">31.7784 N, 35.2297 E</div><div class=\"poi-text\">A newly hewn rock tomb near Golgotha (23:53 -- \"one in which no one had yet been laid\"). The proximity to the crucifixion site was providential: the Sabbath was imminent, allowing only enough time to wrap the body in linen before sunset. The women who watched the burial (23:55) would return to the same location on the first day of the week to find the stone rolled away.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Golgotha / Calvary",
+            "coords": "31.7784 N, 35.2296 E",
+            "text": "The \"Place of the Skull\" -- the crucifixion site traditionally identified with the Church of the Holy Sepulchre (established by Constantine c.AD 325), just outside the first-century city wall. Here Jesus spoke his three words from the cross (Father, forgive them; today you will be in paradise; Father, into your hands I commit my spirit), the sun darkened for three hours, and the Temple veil tore from top to bottom."
+          },
+          {
+            "name": "Joseph of Arimathea's Tomb",
+            "coords": "31.7784 N, 35.2297 E",
+            "text": "A newly hewn rock tomb near Golgotha (23:53 -- \"one in which no one had yet been laid\"). The proximity to the crucifixion site was providential: the Sabbath was imminent, allowing only enough time to wrap the body in linen before sunset. The women who watched the burial (23:55) would return to the same location on the first day of the week to find the stone rolled away."
+          }
+        ],
         "cross": {
           "refs": [
             {
@@ -317,9 +340,23 @@
             "paragraph": "The word (v.25) that summarises the passion: Pilate \"surrendered Jesus to their will.\" The same word is used of divine handing-over in Paul (Rom 4:25; 8:32) — God handed him over for us. The human handing-over by Pilate is simultaneously the divine handing-over for redemption."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Pilate's Praetorium</div><div class=\"poi-coords\">31.7781 N, 35.2297 E</div><div class=\"poi-text\">Pontius Pilate's Jerusalem residence and judgment hall -- probably Herod's Palace in the upper city rather than the Antonia Fortress. Pilate pronounced his triple declaration of innocence (23:4, 14, 22) from the judgment seat here. The most consequential miscarriage of justice in history: the innocent condemned, the guilty (Barabbas) released.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Herod Antipas's Jerusalem Residence</div><div class=\"poi-coords\">31.7760 N, 35.2300 E</div><div class=\"poi-text\">Herod Antipas maintained a Jerusalem residence for festival seasons. Luke alone records the transfer of Jesus to Herod for examination (23:7-11) -- possible because Herod was in Jerusalem for Passover. His mocking and dressing Jesus in a splendid robe before returning him to Pilate reconciled their prior enmity (23:12).</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Road to Golgotha</div><div class=\"poi-coords\">31.7802 N, 35.2296 E</div><div class=\"poi-text\">The route from the Praetorium to the execution site outside the city wall. Simon of Cyrene was seized on this road and compelled to carry the cross (23:26). Jesus addressed the mourning women of Jerusalem along the way (23:28-31) -- his last public words before the crucifixion, redirecting their grief toward the coming destruction of the city.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Pilate's Praetorium",
+            "coords": "31.7781 N, 35.2297 E",
+            "text": "Pontius Pilate's Jerusalem residence and judgment hall -- probably Herod's Palace in the upper city rather than the Antonia Fortress. Pilate pronounced his triple declaration of innocence (23:4, 14, 22) from the judgment seat here. The most consequential miscarriage of justice in history: the innocent condemned, the guilty (Barabbas) released."
+          },
+          {
+            "name": "Herod Antipas's Jerusalem Residence",
+            "coords": "31.7760 N, 35.2300 E",
+            "text": "Herod Antipas maintained a Jerusalem residence for festival seasons. Luke alone records the transfer of Jesus to Herod for examination (23:7-11) -- possible because Herod was in Jerusalem for Passover. His mocking and dressing Jesus in a splendid robe before returning him to Pilate reconciled their prior enmity (23:12)."
+          },
+          {
+            "name": "Road to Golgotha",
+            "coords": "31.7802 N, 35.2296 E",
+            "text": "The route from the Praetorium to the execution site outside the city wall. Simon of Cyrene was seized on this road and compelled to carry the cross (23:26). Jesus addressed the mourning women of Jerusalem along the way (23:28-31) -- his last public words before the crucifixion, redirecting their grief toward the coming destruction of the city."
+          }
+        ],
         "cross": {
           "refs": [
             {
