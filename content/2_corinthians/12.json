@@ -460,7 +460,36 @@
         "type": "Connection",
         "text": "Paul’s earlier confrontation with sexual immorality in Corinth provides the background for his continuing concern about ‘impurity, sexual sin, and debauchery’ (v. 21)."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Paul's thorn in the flesh and God's sufficient grace — power is made perfect in weakness.",
+      "nodes": [
+        {
+          "id": "2c12-1",
+          "type": "vision",
+          "verse_range": "12:1-6",
+          "text": "Paul knows a man caught up to the third heaven, to paradise — whether in body or out, God knows. He heard inexpressible things. But he will not boast except in weakness."
+        },
+        {
+          "id": "2c12-2",
+          "type": "thorn",
+          "verse_range": "12:7-10",
+          "text": "A thorn in the flesh was given — a messenger of Satan to keep Paul from being conceited. Three times he pleaded for removal. God's answer: 'My grace is sufficient; my power is made perfect in weakness.' So Paul boasts in weaknesses."
+        },
+        {
+          "id": "2c12-3",
+          "type": "rebuke",
+          "verse_range": "12:11-13",
+          "text": "Paul has been a fool — the Corinthians forced him. He is not inferior to the super-apostles. The signs of an apostle were performed among them."
+        },
+        {
+          "id": "2c12-4",
+          "type": "warning",
+          "verse_range": "12:14-21",
+          "text": "Paul prepares to visit a third time. He seeks them, not their possessions. He fears finding quarreling, jealousy, disorder — and having to mourn over those who have not repented."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }

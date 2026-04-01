@@ -579,7 +579,36 @@
         "type": "Echo",
         "text": "Paul’s commendation of Timothy to the Corinthians parallels Phil 2:19–24, presenting Timothy as a trusted delegate who carries Paul’s apostolic authority."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Have the mind of Christ, who emptied himself and was exalted — work out your salvation with fear and trembling.",
+      "nodes": [
+        {
+          "id": "ph2-1",
+          "type": "appeal",
+          "verse_range": "2:1-4",
+          "text": "If there is any encouragement in Christ — complete Paul's joy by being of one mind. Do nothing from rivalry; count others more significant."
+        },
+        {
+          "id": "ph2-2",
+          "type": "hymn",
+          "verse_range": "2:5-11",
+          "text": "Have this mind: Christ, though in the form of God, emptied himself, taking the form of a servant, becoming obedient to death on a cross. Therefore God highly exalted him — every knee will bow, every tongue confess."
+        },
+        {
+          "id": "ph2-3",
+          "type": "application",
+          "verse_range": "2:12-18",
+          "text": "Work out your salvation with fear and trembling — God works in you. Do all things without grumbling, that you may be blameless, children of God in a crooked generation."
+        },
+        {
+          "id": "ph2-4",
+          "type": "commendation",
+          "verse_range": "2:19-30",
+          "text": "Paul hopes to send Timothy, who genuinely cares for them. He sends Epaphroditus back — he nearly died for the work of Christ. Honor such men."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }

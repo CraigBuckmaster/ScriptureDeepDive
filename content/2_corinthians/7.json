@@ -463,7 +463,42 @@
         "type": "Echo",
         "text": "Paul’s language of being ‘refreshed’ (anapauo) by a fellow believer parallels Titus’s refreshment by the Corinthians (7:13)."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Titus brought good news — the Corinthians' godly grief produced repentance, and Paul rejoices in their response.",
+      "nodes": [
+        {
+          "id": "2c7-1",
+          "type": "exhortation",
+          "verse_range": "7:1",
+          "text": "Since we have these promises, let us cleanse ourselves from every defilement of body and spirit."
+        },
+        {
+          "id": "2c7-2",
+          "type": "appeal",
+          "verse_range": "7:2-4",
+          "text": "Make room for us in your hearts. We have wronged no one. You are in our hearts — I have great confidence and pride in you."
+        },
+        {
+          "id": "2c7-3",
+          "type": "narrative",
+          "verse_range": "7:5-7",
+          "text": "When we came to Macedonia, we had no rest. But God comforted us by the coming of Titus and by your longing for Paul."
+        },
+        {
+          "id": "2c7-4",
+          "type": "explanation",
+          "verse_range": "7:8-12",
+          "text": "Paul's letter grieved them, but he rejoices — not at the grief, but because it led to repentance. Godly grief produces repentance leading to salvation; worldly grief produces death."
+        },
+        {
+          "id": "2c7-5",
+          "type": "conclusion",
+          "verse_range": "7:13-16",
+          "text": "We were comforted by Titus's joy. Paul's boasting about them proved true. Titus's affection grows as he remembers their obedience."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }

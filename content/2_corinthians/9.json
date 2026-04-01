@@ -464,7 +464,36 @@
         "type": "Echo",
         "text": "Paul’s declaration that ‘the gift of God is eternal life in Christ Jesus our Lord’ provides a parallel to the ‘indescribable gift’ of 2 Cor 9:15."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "God loves a cheerful giver — whoever sows bountifully will reap bountifully.",
+      "nodes": [
+        {
+          "id": "2c9-1",
+          "type": "explanation",
+          "verse_range": "9:1-5",
+          "text": "It's unnecessary to write about the collection — Paul boasted about your readiness. But he sends brothers ahead so the gift is ready as a willing gift, not an exaction."
+        },
+        {
+          "id": "2c9-2",
+          "type": "principle",
+          "verse_range": "9:6-9",
+          "text": "Whoever sows sparingly reaps sparingly; whoever sows bountifully reaps bountifully. Each one should give as decided in heart — God loves a cheerful giver."
+        },
+        {
+          "id": "2c9-3",
+          "type": "promise",
+          "verse_range": "9:10-11",
+          "text": "God who supplies seed to the sower will supply and multiply your seed for sowing and increase the harvest of your righteousness."
+        },
+        {
+          "id": "2c9-4",
+          "type": "result",
+          "verse_range": "9:12-15",
+          "text": "This ministry supplies the needs of the saints and overflows in thanksgiving to God. They glorify God for your obedience and generosity. Thanks be to God for his inexpressible gift!"
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }

@@ -506,7 +506,36 @@
         "type": "Echo",
         "text": "The Ephesian household code provides the fuller parallel, with extensive theological rationale (especially for the husband-wife relationship). Colossians offers the concise version."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Since you were raised with Christ, put on the new self — let the peace of Christ rule and the word of Christ dwell richly.",
+      "nodes": [
+        {
+          "id": "col3-1",
+          "type": "indicative",
+          "verse_range": "3:1-4",
+          "text": "If you were raised with Christ, seek the things above where Christ is seated. Your life is hidden with Christ in God. When Christ appears, you will appear with him in glory."
+        },
+        {
+          "id": "col3-2",
+          "type": "put_off",
+          "verse_range": "3:5-11",
+          "text": "Put to death what is earthly: sexual immorality, passion, evil desire, covetousness, anger, malice, slander, obscene talk, lying. You have put off the old self and put on the new self — there is no Greek and Jew, barbarian, Scythian, slave, free; Christ is all."
+        },
+        {
+          "id": "col3-3",
+          "type": "put_on",
+          "verse_range": "3:12-17",
+          "text": "As God's chosen, put on compassion, kindness, humility, meekness, patience. Bear with one another; forgive as the Lord forgave. Above all, put on love. Let Christ's peace rule, his word dwell richly. Do everything in the name of the Lord Jesus."
+        },
+        {
+          "id": "col3-4",
+          "type": "household",
+          "verse_range": "3:18-4:1",
+          "text": "Wives, submit to husbands. Husbands, love your wives. Children, obey parents. Fathers, do not provoke children. Bondservants, obey in everything — work heartily as for the Lord. Masters, treat bondservants justly."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }

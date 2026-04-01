@@ -469,7 +469,36 @@
         "type": "Connection",
         "text": "The Philippian imprisonment and flogging provide another data point for Paul’s ‘beaten with rods’ (v. 25) and ‘in prison more frequently’ (v. 23)."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Paul's 'fool's boast' — he reluctantly catalogs his sufferings to match the super-apostles' self-promotion.",
+      "nodes": [
+        {
+          "id": "2c11-1",
+          "type": "irony",
+          "verse_range": "11:1-6",
+          "text": "Bear with my folly! Paul is jealous — he betrothed the Corinthians to Christ. But a serpent deceived Eve, and false apostles preach another Jesus."
+        },
+        {
+          "id": "2c11-2",
+          "type": "contrast",
+          "verse_range": "11:7-15",
+          "text": "Did Paul sin by preaching free of charge? He robbed other churches to serve Corinth. These false apostles disguise themselves — even Satan disguises himself as an angel of light."
+        },
+        {
+          "id": "2c11-3",
+          "type": "catalog",
+          "verse_range": "11:16-29",
+          "text": "Speaking as a fool: Paul is a Hebrew, Israelite, servant of Christ. Far more labors, imprisonments, beatings, shipwrecks, dangers from every source, sleeplessness, hunger, cold — and the daily pressure of anxiety for all the churches."
+        },
+        {
+          "id": "2c11-4",
+          "type": "climax",
+          "verse_range": "11:30-33",
+          "text": "If Paul must boast, he boasts of his weaknesses. In Damascus, the governor tried to seize him; he escaped in a basket through a window in the wall."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }

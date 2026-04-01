@@ -481,7 +481,36 @@
         "type": "Connection",
         "text": "The promise ‘My dwelling place will be with them; I will be their God, and they will be my people’ is part of the composite OT citation in v. 16, establishing the covenantal basis for holiness."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Paul appeals not to receive God's grace in vain — the time of salvation is now.",
+      "nodes": [
+        {
+          "id": "2c6-1",
+          "type": "appeal",
+          "verse_range": "6:1-2",
+          "text": "Working together with God, we urge you not to receive grace in vain. Now is the favorable time; now is the day of salvation."
+        },
+        {
+          "id": "2c6-2",
+          "type": "defense",
+          "verse_range": "6:3-10",
+          "text": "We put no obstacle in anyone's way. In everything we commend ourselves as servants of God: afflictions, hardships, patience, purity, knowledge, love — as dying yet alive, as poor yet enriching many."
+        },
+        {
+          "id": "2c6-3",
+          "type": "appeal",
+          "verse_range": "6:11-13",
+          "text": "Corinthians, our heart is wide open to you! You are not restricted by us but by your own affections. Widen your hearts also."
+        },
+        {
+          "id": "2c6-4",
+          "type": "exhortation",
+          "verse_range": "6:14-18",
+          "text": "Do not be unequally yoked with unbelievers. What partnership has light with darkness? Come out and be separate. I will be your Father."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }

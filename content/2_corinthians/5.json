@@ -531,7 +531,36 @@
         "type": "Connection",
         "text": "Isaiah’s prophecy of ‘new heavens and a new earth’ provides the OT background for Paul’s ‘new creation’ language. Paul applies the cosmic promise to the individual believer’s transformation in Christ."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "We are ambassadors for Christ, carrying the ministry of reconciliation — God made him who knew no sin to be sin for us.",
+      "nodes": [
+        {
+          "id": "2c5-1",
+          "type": "confidence",
+          "verse_range": "5:1-5",
+          "text": "If our earthly tent is destroyed, we have a building from God, eternal in the heavens. We groan, longing to be clothed with our heavenly dwelling."
+        },
+        {
+          "id": "2c5-2",
+          "type": "motivation",
+          "verse_range": "5:6-10",
+          "text": "We walk by faith, not sight. We would rather be away from the body and at home with the Lord. We make it our aim to please him, for we must all appear before Christ's judgment seat."
+        },
+        {
+          "id": "2c5-3",
+          "type": "explanation",
+          "verse_range": "5:11-15",
+          "text": "We persuade others knowing the fear of the Lord. Christ's love controls us — if one died for all, then all died, so that the living might live for him."
+        },
+        {
+          "id": "2c5-4",
+          "type": "thesis",
+          "verse_range": "5:16-21",
+          "text": "If anyone is in Christ — new creation! God reconciled us through Christ and gave us the ministry of reconciliation. We are ambassadors. God made him who knew no sin to be sin for us."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }

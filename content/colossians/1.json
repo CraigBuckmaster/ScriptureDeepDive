@@ -606,7 +606,42 @@
         "type": "Echo",
         "text": "The author of Hebrews describes the Son as ‘the radiance of God’s glory and the exact representation of his being’ and through whom God ‘made the universe’—closely paralleling Col 1:15–17."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Christ is the image of the invisible God, in whom all things hold together — the head of the body, the church.",
+      "nodes": [
+        {
+          "id": "col1-1",
+          "type": "thanksgiving",
+          "verse_range": "1:3-8",
+          "text": "Paul thanks God for their faith and love, which spring from the hope stored up in heaven. The gospel is bearing fruit and growing all over the world."
+        },
+        {
+          "id": "col1-2",
+          "type": "prayer",
+          "verse_range": "1:9-14",
+          "text": "Paul prays they be filled with knowledge of God's will — walking worthy, bearing fruit, being strengthened, giving thanks. The Father delivered us from darkness into the kingdom of his beloved Son."
+        },
+        {
+          "id": "col1-3",
+          "type": "hymn",
+          "verse_range": "1:15-20",
+          "text": "Christ is the image of the invisible God, firstborn of all creation. All things were created through him and for him. He is before all things; in him all things hold together. He is the head of the body, the firstborn from the dead — that in everything he might be preeminent."
+        },
+        {
+          "id": "col1-4",
+          "type": "application",
+          "verse_range": "1:21-23",
+          "text": "You who were alienated and hostile, Christ has now reconciled by his death to present you holy — if you continue in the faith, stable and steadfast."
+        },
+        {
+          "id": "col1-5",
+          "type": "commission",
+          "verse_range": "1:24-29",
+          "text": "Paul rejoices in his sufferings for their sake — filling up what is lacking in Christ's afflictions. He was made a minister to make known the mystery: Christ in you, the hope of glory."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }

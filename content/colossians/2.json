@@ -545,7 +545,42 @@
         "type": "Echo",
         "text": "The shadow-reality contrast in Hebrews—‘the law is only a shadow of the good things that are coming, not the realities themselves’—provides the closest parallel to Col 2:17."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "In Christ the fullness of deity dwells bodily — do not be captivated by empty philosophy or human tradition.",
+      "nodes": [
+        {
+          "id": "col2-1",
+          "type": "concern",
+          "verse_range": "2:1-5",
+          "text": "Paul strives for them and Laodicea — that their hearts be encouraged, united in love, reaching all the riches of understanding. Their faith is firm."
+        },
+        {
+          "id": "col2-2",
+          "type": "exhortation",
+          "verse_range": "2:6-7",
+          "text": "As you received Christ Jesus the Lord, so walk in him — rooted, built up, established, abounding in thanksgiving."
+        },
+        {
+          "id": "col2-3",
+          "type": "warning",
+          "verse_range": "2:8-10",
+          "text": "See that no one takes you captive by philosophy and empty deceit, according to human tradition. In Christ the whole fullness of deity dwells bodily, and you have been filled in him."
+        },
+        {
+          "id": "col2-4",
+          "type": "theology",
+          "verse_range": "2:11-15",
+          "text": "In him you were circumcised spiritually, buried with him in baptism, raised through faith. God made you alive together with him, canceling the record of debt, nailing it to the cross, disarming rulers and authorities."
+        },
+        {
+          "id": "col2-5",
+          "type": "application",
+          "verse_range": "2:16-23",
+          "text": "Let no one pass judgment on you regarding food, drink, festivals, new moons, or Sabbaths — these are shadows; the substance belongs to Christ. Do not submit to regulations of the elemental spirits — they have no value against indulgence of the flesh."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }

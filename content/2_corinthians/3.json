@@ -547,7 +547,37 @@
         "type": "Connection",
         "text": "The call to be ‘transformed by the renewing of your mind’ uses the same verb (metamorphoō) as 2 Cor 3:18, linking ethical transformation to the glory-beholding process described here."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "The new covenant ministry of the Spirit surpasses the old covenant ministry of the letter.",
+      "nodes": [
+        {
+          "id": "2c3-1",
+          "type": "question",
+          "verse_range": "3:1-3",
+          "text": "Do we need letters of recommendation? You are our letter — written on hearts by the Spirit, not on stone tablets."
+        },
+        {
+          "id": "2c3-2",
+          "type": "contrast",
+          "verse_range": "3:4-6",
+          "text": "Our competence is from God, who made us ministers of a new covenant — not of letter but of Spirit. The letter kills; the Spirit gives life."
+        },
+        {
+          "id": "2c3-3",
+          "type": "argument",
+          "verse_range": "3:7-11",
+          "marker": "If... how much more",
+          "text": "If the ministry of death carved in stone came with glory (Moses' face shone), how much more will the ministry of the Spirit be glorious?"
+        },
+        {
+          "id": "2c3-4",
+          "type": "application",
+          "verse_range": "3:12-18",
+          "text": "Since we have such hope, we act boldly. Moses veiled his face; the veil remains over Israel's hearts. But when one turns to the Lord, the veil is removed. We behold the Lord's glory with unveiled faces and are transformed."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }

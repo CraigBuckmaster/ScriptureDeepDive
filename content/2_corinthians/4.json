@@ -498,7 +498,36 @@
         "type": "Echo",
         "text": "The faith that fixes on ‘what is unseen’ (v. 18) parallels the Hebrews definition: ‘faith is confidence in what we hope for and assurance about what we do not see.’"
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Though our bodies waste away, we carry the treasure of the gospel in jars of clay — outwardly perishing, inwardly renewed.",
+      "nodes": [
+        {
+          "id": "2c4-1",
+          "type": "declaration",
+          "verse_range": "4:1-6",
+          "text": "We do not lose heart. We renounce shameful hidden things and commend ourselves by truth. If our gospel is veiled, it's veiled to the perishing."
+        },
+        {
+          "id": "2c4-2",
+          "type": "thesis",
+          "verse_range": "4:7-12",
+          "text": "We have this treasure in jars of clay — afflicted but not crushed, struck down but not destroyed. Death works in us, life in you."
+        },
+        {
+          "id": "2c4-3",
+          "type": "ground",
+          "verse_range": "4:13-15",
+          "text": "We believe, so we speak. He who raised Jesus will raise us also and present us with you. It's all for your sake."
+        },
+        {
+          "id": "2c4-4",
+          "type": "conclusion",
+          "verse_range": "4:16-18",
+          "text": "We do not lose heart. Our outer self wastes away; our inner self is renewed daily. Momentary affliction produces eternal weight of glory. We look to the unseen, which is eternal."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }
