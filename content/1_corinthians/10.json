@@ -559,7 +559,55 @@
         "type": "Connection",
         "text": "Paul's fullest treatment of the conscience principle appears in Romans 14, where the 'strong' must not despise the 'weak' and the 'weak' must not judge the 'strong.' Both passages prioritise love over liberty and communal edification over individual …"
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Israel's wilderness failures are warnings to the overconfident — participation in the Lord's table is incompatible with participation in idol feasts, for it is the same logic of spiritual communion that makes both dangerous.",
+      "nodes": [
+        {
+          "id": "1co10-1",
+          "type": "ground",
+          "verse_range": "10:1-13",
+          "text": "Israel's typological warning: all were under the cloud, all passed through the sea, all ate spiritual food, all drank from the spiritual rock that followed them (the Rock was Christ) — nevertheless God was not pleased with most of them. These things happened as examples (τύποι) for us — they craved evil, worshiped idols, committed sexual immorality, tested Christ, grumbled — and were destroyed.",
+          "children": [
+            {
+              "id": "1co10-1a",
+              "type": "application",
+              "verse_range": "10:11-13",
+              "text": "These things were written for our instruction on whom the end of the ages has come. Let anyone who thinks he stands take heed lest he fall. No temptation has overtaken you that is not common to man — God is faithful and will not let you be tempted beyond your ability, but will provide the way of escape."
+            }
+          ]
+        },
+        {
+          "id": "1co10-2",
+          "type": "application",
+          "verse_range": "10:14-22",
+          "text": "Therefore flee from idolatry. The cup of blessing — a participation (κοινωνία) in the blood of Christ; the bread — a participation in the body of Christ. Because there is one bread, we who are many are one body. Consider Israel: those who eat the sacrifices participate in the altar. What do I imply — that idols are something? No. But what pagans sacrifice they offer to demons. You cannot drink the cup of the Lord and the cup of demons.",
+          "children": [
+            {
+              "id": "1co10-2a",
+              "type": "ground",
+              "verse_range": "10:20-22",
+              "text": "The real problem with idol feasts is not the idol (which is nothing) but the demonic power behind it. Participation creates a genuine spiritual bond — not with a non-existent god but with the demonic realm. The logic: communion creates solidarity; two incompatible solidarities cannot coexist."
+            }
+          ]
+        },
+        {
+          "id": "1co10-3",
+          "type": "application",
+          "verse_range": "10:23-33",
+          "text": "'All things are lawful' — but not all things are helpful, not all things build up. Let no one seek his own good but the good of his neighbor. Eat whatever is sold in the market without raising a question. If an unbeliever invites you, eat whatever is set before you. But if someone says 'This has been offered in sacrifice,' do not eat — for the sake of the one who informed you, and for the sake of conscience.",
+          "children": [
+            {
+              "id": "1co10-3a",
+              "type": "conclusion",
+              "verse_range": "10:31-33",
+              "text": "The governing rule: whatever you do, do all to the glory of God. Give no offense to Jews or Greeks or the church of God — just as Paul tries to please everyone in everything, not seeking his own advantage but that of many, so that they may be saved."
+            }
+          ]
+        }
+      ],
+      "note": "1 Corinthians 10 completes the idol-food argument (chs. 8-10) with a typological reading of Israel's history and a theology of communion. The argument's logic: the Eucharist creates real participation in Christ; idol feasts create real participation in the demonic. The 'strong' theology (idols are nothing) was correct but incomplete — it missed the participatory dimension of religious eating."
+    }
   },
   "vhl_groups": []
 }

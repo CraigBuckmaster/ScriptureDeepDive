@@ -519,7 +519,47 @@
         "type": "Echo",
         "text": "John's eschatological promise parallels Paul's 'then we shall see face to face' and provides an additional witness to the eschatological transition."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Love is the only mode in which spiritual gifts have eternal value — it is not one gift among others but the essential character of all genuine ministry, which outlasts prophecy, tongues, and knowledge themselves.",
+      "nodes": [
+        {
+          "id": "1co13-1",
+          "type": "thesis",
+          "verse_range": "13:1-3",
+          "text": "If I speak in tongues of men and angels but have not love, I am a noisy gong. If I have prophetic powers and understand all mysteries and have all knowledge and all faith — but have not love, I am nothing. If I give away all I have and deliver my body to be burned — but have not love, I gain nothing. Three gifts (tongues, prophecy, self-giving) reduced to nothing without love."
+        },
+        {
+          "id": "1co13-2",
+          "type": "ground",
+          "verse_range": "13:4-7",
+          "text": "The profile of love — 15 verbs and adjectives: patient, kind, not envious, not boastful, not arrogant, not rude, not self-seeking, not irritable, not resentful, does not rejoice at wrongdoing, rejoices with truth, bears all things, believes all things, hopes all things, endures all things. Paul does not define love abstractly — he characterizes it behaviorally, each trait implicitly indicting its opposite in the Corinthian community.",
+          "children": [
+            {
+              "id": "1co13-2a",
+              "type": "application",
+              "verse_range": "13:4-6",
+              "text": "The negative list is a mirror for the Corinthians: 'not envious' (3:3 — there is jealousy among you), 'not boastful' and 'not arrogant' (4:6 — puffed up), 'not self-seeking' (10:33), 'rejoices in wrongdoing' (5:2 — they were tolerating gross sin). Love is defined against their concrete failures."
+            }
+          ]
+        },
+        {
+          "id": "1co13-3",
+          "type": "contrast",
+          "verse_range": "13:8-13",
+          "text": "Love never ends. As for prophecies — they will pass away. Tongues — they will cease. Knowledge — it will pass away. Now we know in part and prophecy in part — but when the perfect (τέλειον) comes, the partial will pass away. Now I see in a mirror dimly; then face to face. Now I know in part; then I will know fully even as I have been fully known. So now faith, hope, and love abide — but the greatest of these is love.",
+          "children": [
+            {
+              "id": "1co13-3a",
+              "type": "ground",
+              "verse_range": "13:11-12",
+              "text": "The child/adult analogy: when I was a child I reasoned as a child; when I became a man I gave up childish things. The Corinthians' infatuation with dramatic gifts is childish — appropriate in an earlier stage but not the mark of maturity. The mature thing is love, which survives eschatological transformation."
+            }
+          ]
+        }
+      ],
+      "note": "1 Corinthians 13 is not a hymn inserted into a practical letter — it is the theological center of the gifts argument (chs. 12-14). Love is not a 13th spiritual gift but the quality without which all gifts are meaningless. The eschatological framework (vv. 8-13) grounds love's priority: when the partial gives way to the complete, what was merely instrumental will be obsolete; what was constitutive (love, faith, hope) will remain."
+    }
   },
   "vhl_groups": []
 }

@@ -546,7 +546,61 @@
         "type": "Connection",
         "text": "Peter applies the building/stone imagery to Christ as the living stone and believers as living stones being built into a spiritual house."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "The Corinthians' factions reveal spiritual immaturity — the builders of God's community will be judged by the quality of their work, and all human boasting in leaders misunderstands that leaders are merely God's servants.",
+      "nodes": [
+        {
+          "id": "1co3-1",
+          "type": "ground",
+          "verse_range": "3:1-4",
+          "text": "The spiritual immaturity diagnosis: Paul could not address them as spiritual (πνευματικοῖς) but as people of the flesh (σαρκίνοις), infants in Christ. He gave them milk, not solid food. Even now they are still not ready — there is jealousy and strife among you. Walking according to the flesh is proved by the faction-loyalty: 'I follow Paul... I follow Apollos.'"
+        },
+        {
+          "id": "1co3-2",
+          "type": "contrast",
+          "verse_range": "3:5-9",
+          "text": "What then is Apollos? What is Paul? Servants (διάκονοι) through whom you believed — as the Lord assigned to each. Paul planted, Apollos watered, but God gave the growth. The planter and waterer are nothing — God who gives growth is everything. Each will receive wages according to their labor. We are God's fellow workers; you are God's field, God's building.",
+          "children": [
+            {
+              "id": "1co3-2a",
+              "type": "inference",
+              "verse_range": "3:8",
+              "text": "The planter and waterer are one (ἕν εἰσιν) — they share a common identity as servants. The faction model (I follow Paul, I follow Apollos) imposes a rivalry on people who see themselves as teammates. The Corinthians' divisions are not merely sociological but theologically incoherent."
+            }
+          ]
+        },
+        {
+          "id": "1co3-3",
+          "type": "application",
+          "verse_range": "3:10-17",
+          "text": "Building metaphor: Paul laid the foundation (Christ Jesus) as a skilled master builder. Others build on it. Each is to take care how they build — gold, silver, precious stones or wood, hay, straw. Each one's work will be revealed by fire — tested, though the builder may escape 'as through fire.' You are God's temple (ναός) — the Spirit dwells in you. If anyone destroys God's temple, God will destroy him.",
+          "children": [
+            {
+              "id": "1co3-3a",
+              "type": "ground",
+              "verse_range": "3:16-17",
+              "text": "The temple identity — 'you are God's temple' — is plural: the community together is the dwelling place of the Spirit. Division is therefore a form of temple desecration. The warning is serious: God will destroy those who destroy his temple."
+            }
+          ]
+        },
+        {
+          "id": "1co3-4",
+          "type": "conclusion",
+          "verse_range": "3:18-23",
+          "text": "Let no one deceive himself — if anyone thinks he is wise in this age, let him become a fool so he may become wise. The wisdom of this world is folly with God. Therefore let no one boast in men — for all things are yours, whether Paul or Apollos or Cephas or the world or life or death or the present or the future — all are yours, and you are Christ's, and Christ is God's.",
+          "children": [
+            {
+              "id": "1co3-4a",
+              "type": "contrast",
+              "verse_range": "3:22-23",
+              "text": "The ironic reversal: the Corinthians say 'I belong to Paul/Apollos/Cephas.' Paul says: Paul/Apollos/Cephas belong to YOU. And you belong to Christ. The leaders are gifts given to the whole community, not competing loyalties demanding allegiance."
+            }
+          ]
+        }
+      ],
+      "note": "1 Corinthians 3 uses three overlapping metaphors for the church — field (v. 9), building (vv. 10-15), and temple (vv. 16-17) — all pointing to the same conclusion: the church is God's, not the leaders'. The agricultural metaphor establishes servant-identity; the building metaphor establishes accountability; the temple metaphor establishes holiness."
+    }
   },
   "vhl_groups": []
 }

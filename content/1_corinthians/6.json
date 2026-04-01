@@ -467,7 +467,47 @@
         "type": "Connection",
         "text": "The resurrection of the body (ch. 15) is the eschatological ground for the body’s present significance (ch. 6). The two passages are theologically inseparable."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Lawsuits between believers expose a failure of wisdom and a misunderstanding of the body — your bodies belong to the Lord, temples of the Holy Spirit, purchased at a price; therefore glorify God in your body.",
+      "nodes": [
+        {
+          "id": "1co6-1",
+          "type": "application",
+          "verse_range": "6:1-8",
+          "text": "Dare any of you take a grievance before unrighteous judges rather than before the saints? Do you not know that the saints will judge the world — and even angels? If you judge the world, are you incompetent for trivial cases? To have lawsuits at all is a failure — why not rather be wronged? Why not rather be defrauded?"
+        },
+        {
+          "id": "1co6-2",
+          "type": "ground",
+          "verse_range": "6:9-11",
+          "text": "The list of those who will not inherit the kingdom: sexually immoral, idolaters, adulterers, men who practice homosexuality, thieves, greedy, drunkards, revilers, swindlers. And such were some of you — but you were washed, sanctified, justified in the name of the Lord Jesus Christ and in the Spirit of our God.",
+          "children": [
+            {
+              "id": "1co6-2a",
+              "type": "contrast",
+              "verse_range": "6:11",
+              "text": "The 'but you were washed' is the ethical foundation: identity change precedes behavioral change. The three passive verbs (washed, sanctified, justified) describe what has been done to them — the imperative rests on the indicative."
+            }
+          ]
+        },
+        {
+          "id": "1co6-3",
+          "type": "application",
+          "verse_range": "6:12-20",
+          "text": "On sexual morality: 'All things are lawful' (a Corinthian slogan Paul quotes back) — but not all things are helpful. The body is not for sexual immorality but for the Lord. Joining oneself to a prostitute makes one body with her (Gen 2:24 — 'the two will become one flesh'). Flee (φεύγετε) sexual immorality — every other sin is outside the body, but sexual immorality is against one's own body.",
+          "children": [
+            {
+              "id": "1co6-3a",
+              "type": "ground",
+              "verse_range": "6:19-20",
+              "text": "Do you not know that your body is a temple (ναός) of the Holy Spirit within you, whom you have from God? You are not your own — you were bought with a price. Therefore glorify God in your body. The three grounds: Spirit-inhabitation, purchased ownership, divine design — all point to bodily holiness."
+            }
+          ]
+        }
+      ],
+      "note": "1 Corinthians 6 addresses two apparently unrelated issues (lawsuits, sexual morality) that share a common root: misunderstanding of the body and the believer's new identity. Paul's 'do you not know' formula (vv. 2, 3, 9, 15, 16, 19) is pedagogical — he is not providing new information but awakening the community to implications of what they already know."
+    }
   },
   "vhl_groups": []
 }

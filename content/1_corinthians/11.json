@@ -559,7 +559,61 @@
         "type": "Echo",
         "text": "Moses ratified the Sinai covenant by sprinkling blood on the people, saying 'This is the blood of the covenant.' Jesus' cup-word deliberately echoes and transforms this: the new covenant is ratified by His own blood, not the blood of animals."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Worship assemblies must reflect the unity of the body — disorder in head coverings and the Lord's Supper violate the equality of the new creation and make a mockery of Christ's sacrifice.",
+      "nodes": [
+        {
+          "id": "1co11-1",
+          "type": "application",
+          "verse_range": "11:2-16",
+          "text": "On head coverings in worship: a man praying or prophesying with his head covered dishonors his head; a woman praying or prophesying with her head uncovered dishonors her head. The theological ground: man is the image and glory of God; woman is the glory of man. The created order and angelic observation are invoked as grounds for the practice."
+        },
+        {
+          "id": "1co11-2",
+          "type": "contrast",
+          "verse_range": "11:17-22",
+          "text": "On the Lord's Supper — I do not commend you because you come together not for the better but for the worse. When you come together as a church there are divisions among you. When you eat, each one goes ahead with his own meal — one goes hungry, another gets drunk. Do you not have houses to eat and drink in? Or do you despise the church of God and humiliate those who have nothing?",
+          "children": [
+            {
+              "id": "1co11-2a",
+              "type": "ground",
+              "verse_range": "11:22",
+              "text": "The social analysis: wealthy members bring full meals and eat privately; poor members have nothing and are humiliated. The Corinthian Lord's Supper has replicated the Greco-Roman patron-client dinner structure, where social status determined portions. This inverts the Supper's meaning entirely."
+            }
+          ]
+        },
+        {
+          "id": "1co11-3",
+          "type": "ground",
+          "verse_range": "11:23-26",
+          "text": "The institution narrative (the earliest written account of the Last Supper — predating the Gospels): Paul received from the Lord what he also delivered. The cup is the new covenant in Christ's blood — do this in remembrance of me. For as often as you eat this bread and drink the cup, you proclaim (καταγγέλλετε) the Lord's death until he comes.",
+          "children": [
+            {
+              "id": "1co11-3a",
+              "type": "application",
+              "verse_range": "11:26",
+              "text": "The Supper is eschatological proclamation — 'until he comes.' It is not merely memorial (looking backward) or mystical (present-only) but eschatological (looking forward). Every Supper announces the death that inaugurated the new covenant and anticipates the return that will consummate it."
+            }
+          ]
+        },
+        {
+          "id": "1co11-4",
+          "type": "application",
+          "verse_range": "11:27-34",
+          "text": "Whoever eats or drinks in an unworthy manner (ἀναξίως) is guilty of profaning the body and blood of the Lord. Let a person examine himself (δοκιμαζέτω). For anyone who eats without discerning (διακρίνων) the body eats and drinks judgment on himself. This is why many of you are weak and ill, and some have died.",
+          "children": [
+            {
+              "id": "1co11-4a",
+              "type": "conclusion",
+              "verse_range": "11:33-34",
+              "text": "Practical remedy: wait for one another at the Supper. If anyone is hungry, eat at home — so that when you come together it will not be for judgment. The 'discerning the body' (v. 29) refers to recognizing the church as Christ's body — the social humiliation of poor members is a failure to discern the corporate body."
+            }
+          ]
+        }
+      ],
+      "note": "1 Corinthians 11 addresses two worship disorders. The head covering passage (vv. 2-16) is the most debated in the letter — the theological principle (order, glory, creation) is clear even if the specific practice is culturally conditioned. The Lord's Supper passage (vv. 17-34) is foundational for Christian worship — Paul's institution narrative is the earliest eucharistic text in the NT, and the pastoral problem it addresses (social stratification) remains a live issue."
+    }
   },
   "vhl_groups": []
 }

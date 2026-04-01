@@ -427,7 +427,47 @@
         "type": "Connection",
         "text": "Paul instructs the Thessalonians to ‘take special note’ of the disobedient and not associate with them, while still warning them as brothers."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Sexual immorality in the community must be judged and expelled — Paul's pastoral authority extends to expelling the unrepentant because the church's holiness is its distinguishing mark before the world.",
+      "nodes": [
+        {
+          "id": "1co5-1",
+          "type": "application",
+          "verse_range": "5:1-2",
+          "text": "The presenting case: a man is living with his father's wife — a sexual immorality (πορνεία) not even found among pagans. And the Corinthians are arrogant (πεφυσιωμένοι — puffed up)! They should have mourned and removed (ἀρθῇ) this person from their fellowship."
+        },
+        {
+          "id": "1co5-2",
+          "type": "application",
+          "verse_range": "5:3-8",
+          "text": "Paul's apostolic judgment (though absent in body): deliver (παραδοῦναι) this man to Satan for the destruction of the flesh so that his spirit may be saved in the day of the Lord. Your boasting is not good — do you not know that a little leaven leavens the whole lump? Cleanse out the old leaven that you may be a new lump, unleavened as you are. For Christ our Passover lamb has been sacrificed.",
+          "children": [
+            {
+              "id": "1co5-2a",
+              "type": "ground",
+              "verse_range": "5:7",
+              "text": "The Passover metaphor: Israel removed leaven from their homes before Passover. The church is to remove moral corruption, since Christ (the true Passover lamb) has already been sacrificed. The ethical action flows from the theological reality — 'cleanse out... for Christ has been sacrificed.'"
+            }
+          ]
+        },
+        {
+          "id": "1co5-3",
+          "type": "application",
+          "verse_range": "5:9-13",
+          "text": "Clarification: Paul's earlier letter said not to associate with the sexually immoral — he did not mean the sexually immoral of the world (then you'd have to leave the world), but with any so-called brother who is guilty of these sins. Do not even eat with such a person. Those outside God will judge; remove the evil person from among you (Deut 17:7 — an OT purging formula applied to the church).",
+          "children": [
+            {
+              "id": "1co5-3a",
+              "type": "contrast",
+              "verse_range": "5:12-13",
+              "text": "The distinction: judge insiders vs. leave outsiders to God. The church has no mandate to police the surrounding culture — it does have a mandate to maintain its own holiness. Confusing the two leads either to withdrawal from the world or to tolerance of sin within."
+            }
+          ]
+        }
+      ],
+      "note": "1 Corinthians 5 addresses the church's failure to exercise discipline — which is itself a symptom of the wisdom-arrogance Paul has been diagnosing since chapter 1. The community's tolerance of sexual immorality is not open-mindedness but a failure of identity: they have forgotten that they are unleavened, because Christ the Passover lamb has been sacrificed."
+    }
   },
   "vhl_groups": []
 }

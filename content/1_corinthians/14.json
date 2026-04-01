@@ -574,6 +574,60 @@
           "significance": "The textual debate is entangled with questions of Pauline authorship, the tension with 11:5 (which assumes women pray and prophesy in church), and the historical situation of Corinth. The displacement data is real but insufficient to establish interpolation; it may reflect liturgical annotation rather than scribal insertion."
         }
       ]
+    },
+    "discourse": {
+      "thesis": "Prophecy is greater than tongues in the assembled church because it builds up others — intelligibility is the criterion for corporate worship, so that even outsiders may be drawn to worship God.",
+      "nodes": [
+        {
+          "id": "1co14-1",
+          "type": "thesis",
+          "verse_range": "14:1-5",
+          "text": "Pursue love (διώκετε τὴν ἀγάπην) and earnestly desire spiritual gifts — especially that you may prophesy. The one who speaks in a tongue speaks to God (not men) — but the one who prophesies speaks to people for their upbuilding, encouragement, and consolation. The tongue-speaker builds himself up; the prophet builds up the church."
+        },
+        {
+          "id": "1co14-2",
+          "type": "ground",
+          "verse_range": "14:6-19",
+          "text": "The intelligibility argument: if Paul came speaking in tongues — what benefit? Musical instruments without distinct notes produce unintelligible sound; a battle trumpet with an unclear signal leaves soldiers unprepared. In the church I would rather speak five words with my mind to instruct others than ten thousand words in a tongue.",
+          "children": [
+            {
+              "id": "1co14-2a",
+              "type": "support",
+              "verse_range": "14:13-19",
+              "text": "If I pray in a tongue, my spirit prays but my mind is unfruitful. I will pray with my spirit and with my mind also; I will sing with my spirit and with my mind also. The 'Amen' response requires understanding — otherwise the outsider cannot say amen to the thanksgiving. You may be giving thanks excellently, but the other person is not built up."
+            }
+          ]
+        },
+        {
+          "id": "1co14-3",
+          "type": "application",
+          "verse_range": "14:20-25",
+          "text": "Do not be children in your thinking — be infants in evil but mature in thinking. Isaiah 28:11-12 cited: strange tongues and lips of foreigners will not gain a hearing in Israel — tongues are a sign for unbelievers (in the judgment sense of Isa 28), but prophecy is for believers. If an outsider enters and all are speaking in tongues, he will say you are out of your minds. But if all prophesy, the outsider is convicted, worships God.",
+          "children": [
+            {
+              "id": "1co14-3a",
+              "type": "conclusion",
+              "verse_range": "14:24-25",
+              "text": "The ideal outcome of corporate prophecy: the outsider 'falls on his face and worships God, declaring that God is truly among you.' The gathered assembly is not only for insiders — its intelligibility and truthfulness is itself an evangelistic event."
+            }
+          ]
+        },
+        {
+          "id": "1co14-4",
+          "type": "application",
+          "verse_range": "14:26-40",
+          "text": "Practical order: when you come together, each has a hymn, lesson, tongue, revelation, interpretation — let all things be done for building up (πρὸς οἰκοδομήν). Two or three may speak in tongues if there is an interpreter; two or three prophets speak and the others weigh it. God is not a God of confusion but of peace. All things should be done decently and in order.",
+          "children": [
+            {
+              "id": "1co14-4a",
+              "type": "ground",
+              "verse_range": "14:33",
+              "text": "The principle: God is not a God of confusion (ἀκαταστασίας) but of peace. Corporate worship is to embody the character of the God being worshiped. Chaotic self-expression contradicts the nature of the orderly Creator."
+            }
+          ]
+        }
+      ],
+      "note": "1 Corinthians 14 applies the love-principle of ch. 13 to the specific question of tongues vs. prophecy. The criterion is not which gift is more impressive but which builds up the community. The chapter's practical regulations (vv. 26-40) show Paul as a pastor: he does not forbid tongues (v. 39) but orders them for the community's benefit."
     }
   },
   "vhl_groups": []

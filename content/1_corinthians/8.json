@@ -427,7 +427,39 @@
         "type": "Echo",
         "text": "Paul’s direct statement: ‘if your brother or sister is distressed because of what you eat, you are no longer acting in love’ parallels the ethical logic of 1 Cor 8."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Knowledge without love destroys — those who know that idols are nothing must limit their freedom out of love for weaker brothers whose conscience would be wounded by seeing them eat at idol feasts.",
+      "nodes": [
+        {
+          "id": "1co8-1",
+          "type": "thesis",
+          "verse_range": "8:1-3",
+          "text": "On food offered to idols — 'we all possess knowledge.' Knowledge (γνῶσις) puffs up (φυσιοῖ); love builds up (οἰκοδομεῖ). If anyone imagines he knows something, he has not yet known as he ought to know. But if anyone loves God, this person is known by God. The knowledge/love contrast will govern the entire argument."
+        },
+        {
+          "id": "1co8-2",
+          "type": "ground",
+          "verse_range": "8:4-6",
+          "text": "The 'strong' position: an idol has no real existence; there is no God but one. Although there are 'gods' and 'lords' — yet for us there is one God, the Father, from whom are all things and for whom we exist, and one Lord Jesus Christ, through whom are all things and through whom we exist. Theologically correct — but not the end of the argument."
+        },
+        {
+          "id": "1co8-3",
+          "type": "contrast",
+          "verse_range": "8:7-13",
+          "text": "Not everyone has this knowledge. Some, accustomed to idols until now, eat this food as really offered to an idol — and their conscience, being weak (ἀσθενής), is defiled. Food will not commend us to God — but take care that this right (ἐξουσία) of yours does not somehow become a stumbling block to the weak.",
+          "children": [
+            {
+              "id": "1co8-3a",
+              "type": "conclusion",
+              "verse_range": "8:11-13",
+              "text": "The person of weak conscience is a brother for whom Christ died — by wounding their conscience you sin against Christ. Therefore if food makes my brother stumble, I will never eat meat (οὐ μὴ φάγω κρέα εἰς τὸν αἰῶνα), lest I cause my brother to stumble. The infinite scope of the sacrifice: knowledge that could justify eating is surrendered permanently for the sake of a brother."
+            }
+          ]
+        }
+      ],
+      "note": "1 Corinthians 8 introduces the principle that governs chs. 8-10: the 'strong' are not wrong about their theology — idols are nothing — but they are wrong about their responsibility. Freedom is real but must be exercised with love for the weaker sibling. Paul will illustrate this principle with his own apostolic example in ch. 9 before returning to the idol-food question in ch. 10."
+    }
   },
   "vhl_groups": []
 }

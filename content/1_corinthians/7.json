@@ -663,7 +663,61 @@
         "type": "Connection",
         "text": "Paul’s household code addresses slaves and masters within the framework of serving Christ."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Singleness and marriage are both gifts from God — each has its proper expression, neither is required, and the presenting circumstance is to be received from the Lord rather than anxiously changed.",
+      "nodes": [
+        {
+          "id": "1co7-1",
+          "type": "thesis",
+          "verse_range": "7:1-7",
+          "text": "Paul responds to their letter: 'it is good for a man not to have sexual relations with a woman' — but because of sexual immorality, each man should have his own wife and each woman her own husband. Do not deprive each other except by agreement for a limited time for prayer, then come together again. Each has his own gift (χάρισμα) from God — one of one kind, one of another."
+        },
+        {
+          "id": "1co7-2",
+          "type": "application",
+          "verse_range": "7:8-16",
+          "text": "To the unmarried and widows: good to remain as Paul is — but if they cannot exercise self-control, let them marry (better to marry than to be aflame with passion). To the married: not I but the Lord — wife should not separate from husband; husband should not divorce wife. To those with unbelieving spouses: if the unbeliever consents to stay, do not separate. But if the unbeliever leaves, let it be so — the believer is not bound in such cases.",
+          "children": [
+            {
+              "id": "1co7-2a",
+              "type": "ground",
+              "verse_range": "7:14",
+              "text": "The sanctification argument: the unbelieving spouse is sanctified (ἡγίασται) through the believer — and the children are holy. The believer's presence brings a sphere of holiness into the mixed household. The mixed marriage is not contaminating; it is sanctifying."
+            }
+          ]
+        },
+        {
+          "id": "1co7-3",
+          "type": "thesis",
+          "verse_range": "7:17-24",
+          "text": "The governing principle: let each person lead the life the Lord has assigned, and to which God has called. Circumcision/uncircumcision does not matter — keeping God's commandments does. Slave or free — use whatever state you are in for the Lord. You were bought with a price — do not become a slave of men.",
+          "children": [
+            {
+              "id": "1co7-3a",
+              "type": "inference",
+              "verse_range": "7:20",
+              "text": "Each one should remain in the condition in which he was called — this is not a prohibition on social mobility but a statement about the sufficiency of the present calling. The Corinthian anxious pursuit of status-change is reoriented: find your calling's fullness where you are."
+            }
+          ]
+        },
+        {
+          "id": "1co7-4",
+          "type": "application",
+          "verse_range": "7:25-40",
+          "text": "On virgins (παρθένων): Paul has no command from the Lord but gives his judgment. In view of the present distress (ἐνεστῶσαν ἀνάγκην) it is good for a person to remain as he is. The married man is divided — anxious about worldly things and how to please his wife; the unmarried man is anxious about the Lord's things. He says this for your benefit, not to lay any restraint on you, but to promote good order and undivided devotion to the Lord.",
+          "children": [
+            {
+              "id": "1co7-4a",
+              "type": "ground",
+              "verse_range": "7:31",
+              "text": "The eschatological frame: the present form of this world is passing away (παράγει γὰρ τὸ σχῆμα τοῦ κόσμου τούτου). All relational decisions are made under this horizon — not with anxiety but with eschatological realism. Neither marriage nor singleness is ultimate."
+            }
+          ]
+        }
+      ],
+      "note": "1 Corinthians 7 is Paul's most extensive treatment of marriage and singleness. The key interpretive frame is the 'present distress' (v. 26) and the eschatological horizon (v. 31) — Paul is not denigrating marriage but arguing that in light of the age's urgency and brevity, singleness allows more undivided devotion to the Lord. Both states are charismatic gifts; neither is morally superior."
+    }
   },
   "vhl_groups": []
 }

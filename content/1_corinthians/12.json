@@ -529,7 +529,55 @@
         "type": "Connection",
         "text": "Paul's command to 'eagerly desire gifts of the Spirit, especially prophecy' (14:1) clarifies the ambiguous v. 31: the 'greater gifts' Paul commends are those that edify the community, with prophecy as the exemplar."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "The Spirit distributes diverse gifts to one body for the common good — no gift is superior, and no member is dispensable; the body needs all its parts, especially those that seem least honorable.",
+      "nodes": [
+        {
+          "id": "1co12-1",
+          "type": "ground",
+          "verse_range": "12:1-11",
+          "text": "On spiritual gifts: the Spirit-inspired confession 'Jesus is Lord' marks the one from the idol-world ('Jesus is cursed'). There are varieties of gifts (χαρισμάτων), service (διακονιῶν), and activities — but the same Spirit, Lord, and God who works all in all. To each is given the manifestation of the Spirit for the common good (πρὸς τὸ συμφέρον). The Spirit apportions gifts as he wills.",
+          "children": [
+            {
+              "id": "1co12-1a",
+              "type": "support",
+              "verse_range": "12:8-10",
+              "text": "The nine gifts listed: word of wisdom, word of knowledge, faith, gifts of healing, working of miracles, prophecy, discernment of spirits, kinds of tongues, interpretation of tongues. The list is illustrative, not exhaustive — 'all these' suggests more than listed."
+            }
+          ]
+        },
+        {
+          "id": "1co12-2",
+          "type": "ground",
+          "verse_range": "12:12-26",
+          "text": "The body analogy: the body is one and has many members — so also is Christ. We were all baptized by one Spirit into one body — Jews or Greeks, slave or free — and all were made to drink of one Spirit. The body is not one member but many. The eye cannot say to the hand 'I have no need of you,' nor the head to the feet.",
+          "children": [
+            {
+              "id": "1co12-2a",
+              "type": "application",
+              "verse_range": "12:22-26",
+              "text": "The weaker-seeming parts are indispensable; the parts we think less honorable we clothe with more honor. God arranged the body to give more honor to the inferior part — that there may be no division in the body but that the members may have mutual care for one another. If one member suffers, all suffer; if one is honored, all rejoice."
+            }
+          ]
+        },
+        {
+          "id": "1co12-3",
+          "type": "application",
+          "verse_range": "12:27-31",
+          "text": "You are the body of Christ, and individually members of it. God appointed in the church: first apostles, second prophets, third teachers, then miracles, then gifts of healing, administration, various kinds of tongues. Are all apostles? All prophets? All teachers? No — but earnestly desire the higher gifts.",
+          "children": [
+            {
+              "id": "1co12-3a",
+              "type": "transition",
+              "verse_range": "12:31b",
+              "text": "And I will show you a more excellent way (ὑπερβολὴν ὁδόν). The transition to ch. 13 — love is not itself a gift (contra the list) but the mode in which all gifts are to operate. Chapter 13 is not a detour but the resolution of the gifts question."
+            }
+          ]
+        }
+      ],
+      "note": "1 Corinthians 12 addresses the pneumatic hierarchy problem: some Corinthians apparently valued tongues above other gifts, creating a new status division within the church. Paul's body metaphor (vv. 12-26) is the antidote — every member is necessary, and the apparently lesser members receive more honor. The three-fold 'same Spirit/Lord/God' in vv. 4-6 grounds the diversity of gifts in Trinitarian unity."
+    }
   },
   "vhl_groups": []
 }

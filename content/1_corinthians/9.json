@@ -676,7 +676,55 @@
         "type": "Connection",
         "text": "Paul's principle of accommodation for the sake of others finds its fullest theoretical treatment in Romans 14, where the 'strong' are instructed to welcome the 'weak' without passing judgment on disputable matters. Both passages subordinate personal …"
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Paul voluntarily foregoes his apostolic rights — to be a model of the principle stated in ch. 8 and to run the gospel race unhindered, becoming all things to all people so that some might be saved.",
+      "nodes": [
+        {
+          "id": "1co9-1",
+          "type": "ground",
+          "verse_range": "9:1-14",
+          "text": "Paul's apostolic rights: he has seen the Lord, the Corinthians are the seal of his apostleship. He has the right (ἐξουσία) to eat and drink, to take a believing wife along, to refrain from earning a living. Does a soldier serve at his own expense? Does a farmer not eat the fruit? The Lord commanded that those who proclaim the gospel should get their living by the gospel.",
+          "children": [
+            {
+              "id": "1co9-1a",
+              "type": "support",
+              "verse_range": "9:9-11",
+              "text": "Deuteronomy 25:4 — 'You shall not muzzle an ox when it treads out the grain.' Is God concerned about oxen? This was written for our sake: the one who plows should plow in hope of sharing in the crop. We have sown spiritual things among you — is it too much if we reap material things from you?"
+            }
+          ]
+        },
+        {
+          "id": "1co9-2",
+          "type": "contrast",
+          "verse_range": "9:15-18",
+          "text": "But Paul has made no use of any of these rights. He does not write to establish a claim — he would rather die than have his boast nullified. His boasting: that he preaches the gospel free of charge (ἀδάπανον). He was entrusted with a stewardship — woe to him if he does not preach. His reward is this: that he may present the gospel free of charge.",
+          "children": [
+            {
+              "id": "1co9-2a",
+              "type": "ground",
+              "verse_range": "9:17-18",
+              "text": "The right-and-reward inversion: precisely by not using his right, Paul gains his reward. The vocational calling removes the merit from the basic act of preaching; the voluntary sacrifice of income creates the boast-worthy dimension of his ministry."
+            }
+          ]
+        },
+        {
+          "id": "1co9-3",
+          "type": "application",
+          "verse_range": "9:19-27",
+          "text": "Free from all, Paul made himself a servant (δοῦλος) to all to win more. To Jews he became like a Jew; to those under the law, like one under the law; to the weak, he became weak. He becomes all things to all people so that by all means he might save some. He does everything for the gospel's sake.",
+          "children": [
+            {
+              "id": "1co9-3a",
+              "type": "application",
+              "verse_range": "9:24-27",
+              "text": "The athletic metaphors: runners in a race — only one receives the prize, but run to win. Athletes exercise self-control in everything. Paul beats his body and keeps it under control (ὑπωπιάζω), lest after preaching to others he himself should be disqualified (ἀδόκιμος γένωμαι). The apostle who urges the Corinthians toward discipline applies it to himself first."
+            }
+          ]
+        }
+      ],
+      "note": "1 Corinthians 9 is Paul's autobiography in service of the argument from ch. 8: if the 'strong' question is whether to use rights, Paul offers himself as the exemplar of not using rights. His voluntary poverty of income is the athletic model for the Corinthians' voluntary limitation of food freedom. The chapter also reveals the missionary logic behind the 'all things to all people' principle — it is not relativism but contextual gospel access."
+    }
   },
   "vhl_groups": []
 }

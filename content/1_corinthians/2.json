@@ -451,7 +451,47 @@
         "type": "Echo",
         "text": "The Spirit’s intercession for believers, searching hearts and minds, parallels the Spirit’s searching of the deep things of God described here."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Paul's preaching was deliberately in weakness, not rhetoric — because true spiritual wisdom is revealed by the Spirit and can only be received by those who are spiritual.",
+      "nodes": [
+        {
+          "id": "1co2-1",
+          "type": "ground",
+          "verse_range": "2:1-5",
+          "text": "Paul's deliberate rhetorical choice: he did not come with lofty speech (ὑπεροχὴν λόγου) or wisdom, deciding to know nothing except Jesus Christ and him crucified. He came in weakness and fear and much trembling. His speech was not in persuasive words of wisdom (πειθοῖς σοφίας λόγοις) but in demonstration of Spirit and power — so that faith would rest on God's power, not human wisdom."
+        },
+        {
+          "id": "1co2-2",
+          "type": "contrast",
+          "verse_range": "2:6-10",
+          "text": "But we do speak wisdom — among the mature (τελείοις). A wisdom not of this age or of its rulers who are passing away. We speak a hidden wisdom of God, decreed before the ages for our glory. None of the rulers of this age understood it — if they had, they would not have crucified the Lord of glory.",
+          "children": [
+            {
+              "id": "1co2-2a",
+              "type": "ground",
+              "verse_range": "2:9-10",
+              "text": "Isaiah 64:4 adapted: 'What no eye has seen, nor ear heard, nor heart of man imagined — what God has prepared for those who love him — these things God has revealed to us through the Spirit.' The Spirit searches everything, even the depths (βάθη) of God."
+            }
+          ]
+        },
+        {
+          "id": "1co2-3",
+          "type": "ground",
+          "verse_range": "2:11-16",
+          "text": "The epistemological argument: no one comprehends the thoughts of God except the Spirit of God. We have received not the spirit of the world but the Spirit who is from God, so that we might understand the things freely given to us by God. The natural person (ψυχικὸς ἄνθρωπος) does not accept things of the Spirit — they are folly to him because they are spiritually discerned. But we have the mind of Christ (νοῦν Χριστοῦ).",
+          "children": [
+            {
+              "id": "1co2-3a",
+              "type": "inference",
+              "verse_range": "2:14-15",
+              "text": "The 'natural person' is not condemned — they simply lack the epistemological equipment to receive spiritual truth. The argument is not anti-intellectual but trans-intellectual: reason alone cannot access divine revelation; the Spirit must open the mind."
+            }
+          ]
+        }
+      ],
+      "note": "1 Corinthians 2 is Paul's philosophy of knowledge (epistemology) rooted in pneumatology. The Spirit is not merely the agent of sanctification but the agent of revelation and comprehension. The chapter explains why Paul's cross-focused, non-rhetorical preaching was not intellectual cowardice but theological consistency: the medium must match the message."
+    }
   },
   "vhl_groups": []
 }

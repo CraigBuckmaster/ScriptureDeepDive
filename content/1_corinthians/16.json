@@ -534,7 +534,61 @@
         "type": "Echo",
         "text": "Paul's autograph parallels 1 Cor 16:21, confirming his use of an amanuensis with a closing greeting in his own hand."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "The collection for Jerusalem, travel plans, and commendations of co-workers are the concrete expressions of the gospel's power to create one trans-ethnic, mutually caring community.",
+      "nodes": [
+        {
+          "id": "1co16-1",
+          "type": "application",
+          "verse_range": "16:1-4",
+          "text": "The collection for the saints: as I directed the churches of Galatia, so you also are to do. On the first day of every week, each of you is to put something aside and store it up, as he may prosper — so that there will be no collecting when I come. Those the Corinthians approve, Paul will send with letters to carry their gift to Jerusalem."
+        },
+        {
+          "id": "1co16-2",
+          "type": "application",
+          "verse_range": "16:5-12",
+          "text": "Paul's travel plans: he will visit them after passing through Macedonia. He wants to spend time with them — perhaps winter there so they can help him on his journey. He will stay in Ephesus until Pentecost because a wide door has opened to him (θύρα μεγάλη ... ἀνέῳγεν), though there are many adversaries. Timothy is coming — receive him without causing him fear. Apollos will come later when opportunity arises.",
+          "children": [
+            {
+              "id": "1co16-2a",
+              "type": "ground",
+              "verse_range": "16:9",
+              "text": "The open door metaphor: effective ministry creates opposition, not the absence of it. Paul stays in Ephesus precisely because of both the opportunity and the adversaries — both are signs of fruitful ground. The Corinthians would do well to understand their own conflicts as signs of serious engagement, not reasons to retreat."
+            }
+          ]
+        },
+        {
+          "id": "1co16-3",
+          "type": "application",
+          "verse_range": "16:13-18",
+          "text": "Final exhortations: be watchful, stand firm in the faith, act like men, be strong. Let all that you do be done in love (ἐν ἀγάπῃ — the same love that has governed the whole letter's argument). Commendation of the house of Stephanas — the firstfruits of Achaia, who devoted themselves to service. Be subject to such people and to every fellow worker and laborer.",
+          "children": [
+            {
+              "id": "1co16-3a",
+              "type": "conclusion",
+              "verse_range": "16:14",
+              "text": "The single governing instruction — 'let all that you do be done in love' — is the letter's ethical summary. After 15 chapters of instruction, correction, and argument, the last word is love. The letter ends where ch. 13 is centered."
+            }
+          ]
+        },
+        {
+          "id": "1co16-4",
+          "type": "conclusion",
+          "verse_range": "16:19-24",
+          "text": "Greetings from the churches of Asia, Aquila and Prisca. Greet one another with a holy kiss. Paul writes the greeting in his own hand. The anathema on anyone who does not love the Lord (if anyone does not love the Lord, let him be accursed). Marana tha (Our Lord, come). The grace of the Lord Jesus be with you. My love be with you all in Christ Jesus.",
+          "children": [
+            {
+              "id": "1co16-4a",
+              "type": "ground",
+              "verse_range": "16:22",
+              "text": "Marana tha (Aramaic: 'Our Lord, come') is one of the earliest preserved Christian prayers — preserved in Aramaic in a Greek letter written to a Greek-speaking community. It places the Corinthian congregation within the stream of Jewish Christianity and the universal early church, praying together for the return of the same Lord."
+            }
+          ]
+        }
+      ],
+      "note": "1 Corinthians 16 grounds the letter's theology in practical generosity, relational planning, and community commendation. The collection for Jerusalem (v. 1-4) is not administrative detail but the practical expression of the one-body argument: Gentile churches support Jewish believers, embodying the reconciliation Paul has argued throughout. The letter ends with love (v. 14, v. 24) — the word that encompasses the entire letter's purpose."
+    }
   },
   "vhl_groups": []
 }

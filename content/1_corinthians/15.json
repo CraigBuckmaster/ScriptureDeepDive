@@ -853,7 +853,76 @@
         "type": "Connection",
         "text": "Death as a consequence of Adam's sin provides the negative background for the Adam-Christ contrast."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "The resurrection of Christ is the factual basis and logical foundation of the entire gospel — without it faith is empty, sin is unforgiven, and the dead are lost; but since Christ rose, all in him will be made alive.",
+      "nodes": [
+        {
+          "id": "1co15-1",
+          "type": "thesis",
+          "verse_range": "15:1-11",
+          "text": "The gospel Paul preached and they received: Christ died for our sins according to the Scriptures, was buried, was raised on the third day according to the Scriptures, and appeared to Cephas, then the Twelve, then 500+ brothers, then James, then all the apostles, then to Paul himself. Whether Paul or the other apostles, this is what we preach and what you believed."
+        },
+        {
+          "id": "1co15-2",
+          "type": "contrast",
+          "verse_range": "15:12-19",
+          "text": "The logical consequence of resurrection denial: if there is no resurrection, Christ has not been raised; if Christ has not been raised, our preaching is empty and your faith is in vain; we are misrepresenting God; your sins are still unforgiven; those who fell asleep in Christ have perished. If only for this life we have hoped in Christ, we are most to be pitied (ἐλεεινότεροι πάντων ἀνθρώπων).",
+          "children": [
+            {
+              "id": "1co15-2a",
+              "type": "ground",
+              "verse_range": "15:12",
+              "text": "The Corinthian problem was not denial of Christ's resurrection but a denial that dead humans would be resurrected (v. 12 — 'some of you say there is no resurrection of the dead'). This Hellenistic view saw the body as prison; Paul insists the body's resurrection is essential to salvation, not incidental to it."
+            }
+          ]
+        },
+        {
+          "id": "1co15-3",
+          "type": "contrast",
+          "verse_range": "15:20-28",
+          "marker": "But now (Νυνὶ δέ)",
+          "text": "Christ has been raised — the firstfruits (ἀπαρχή) of those who have fallen asleep. As in Adam all die, so in Christ all will be made alive. Each in his own order: Christ the firstfruits, then at his coming those who belong to Christ, then the end when he hands the kingdom to God the Father after destroying every ruler and authority and power. The last enemy to be destroyed is death.",
+          "children": [
+            {
+              "id": "1co15-3a",
+              "type": "ground",
+              "verse_range": "15:25-28",
+              "text": "Psalm 110:1 and Psalm 8:6 woven together: all enemies under Christ's feet, including death. When all things are subjected to the Son, then the Son himself will be subjected to the Father who put all things in subjection under him — that God may be all in all (πάντα ἐν πᾶσιν). The eschatological Telos: complete divine sovereignty, death abolished."
+            }
+          ]
+        },
+        {
+          "id": "1co15-4",
+          "type": "ground",
+          "verse_range": "15:35-49",
+          "text": "On the resurrection body: the 'how' question — a seed is sown and a different kind of body arises. There are earthly bodies and heavenly bodies, each with its own glory. So with the resurrection: sown perishable, raised imperishable; sown in dishonor, raised in glory; sown in weakness, raised in power; sown a natural body (ψυχικόν), raised a spiritual body (πνευματικόν). As we bore the image of the man of dust, we will also bear the image of the man of heaven.",
+          "children": [
+            {
+              "id": "1co15-4a",
+              "type": "ground",
+              "verse_range": "15:44-46",
+              "text": "The two-Adam typology: the first man Adam became a living being (Gen 2:7); the last Adam became a life-giving spirit. The spiritual was not first — the natural first, then the spiritual. The resurrection body is not the soul escaping the body but the body transformed by the Spirit into its final, glorious form."
+            }
+          ]
+        },
+        {
+          "id": "1co15-5",
+          "type": "conclusion",
+          "verse_range": "15:50-58",
+          "text": "The mystery: we shall not all sleep, but we shall all be changed — in a moment, in the twinkling of an eye, at the last trumpet. The dead will be raised imperishable and we shall be changed. When the perishable puts on the imperishable, death is swallowed up in victory (Isa 25:8). 'O Death, where is your sting? O Grave, where is your victory?' (Hos 13:14). Therefore, be steadfast, immovable, always abounding in the work of the Lord — because your labor in the Lord is not in vain.",
+          "children": [
+            {
+              "id": "1co15-5a",
+              "type": "application",
+              "verse_range": "15:58",
+              "text": "The practical conclusion of the resurrection argument: 'your labor is not in vain.' The resurrection is not just cosmic eschatology — it is the ground of every present act of faithfulness. Work done in Christ has resurrection-permanence; it is not swept away with death."
+            }
+          ]
+        }
+      ],
+      "note": "1 Corinthians 15 is the longest chapter in the letter and one of the most sustained theological arguments in the NT. It moves from historical evidence (vv. 1-11) to logical necessity (vv. 12-19) to cosmic scope (vv. 20-28) to practical implication (v. 58). The resurrection is not an add-on to Paul's theology but its foundation: without it, the cross achieves nothing and death wins."
+    }
   },
   "vhl_groups": []
 }

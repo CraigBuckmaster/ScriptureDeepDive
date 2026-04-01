@@ -705,7 +705,61 @@
         "type": "Connection",
         "text": "Baptism into Christ erases the social distinctions — Jew/Gentile, slave/free, male/female — that fuel factionalism."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "The message of the cross exposes the bankruptcy of worldly wisdom and human division — God chose the foolish and weak to shame the wise, so that no one may boast before him.",
+      "nodes": [
+        {
+          "id": "1co1-1",
+          "type": "thesis",
+          "verse_range": "1:1-9",
+          "text": "Salutation and thanksgiving: Paul, called as apostle by God's will, gives thanks for the Corinthians' enrichment in speech and knowledge, confirming the testimony of Christ, as they wait for the revelation of Jesus Christ. Despite what follows, the opening thanksgiving is genuine — it establishes common ground before the rebukes."
+        },
+        {
+          "id": "1co1-2",
+          "type": "application",
+          "verse_range": "1:10-17",
+          "text": "The presenting problem: there are quarrels (ἔριδες) among you — 'I follow Paul,' 'I follow Apollos,' 'I follow Cephas,' 'I follow Christ.' Was Paul crucified for you? Were you baptized in Paul's name? Christ sent him to preach the gospel — not with cleverness of speech (σοφίᾳ λόγου), lest the cross of Christ be emptied of its power.",
+          "children": [
+            {
+              "id": "1co1-2a",
+              "type": "ground",
+              "verse_range": "1:13",
+              "text": "Three rhetorical questions expose the absurdity of the factions: Is Christ divided? Was Paul crucified for you? Were you baptized in Paul's name? The answer to each is obvious — the factions are therefore incoherent."
+            }
+          ]
+        },
+        {
+          "id": "1co1-3",
+          "type": "contrast",
+          "verse_range": "1:18-25",
+          "text": "The word of the cross: to those perishing (ἀπολλυμένοις) it is foolishness; to us being saved (σῳζομένοις) it is the power of God. God has made foolish (ἐμώρανεν) the wisdom of the world — wisdom, scribes, philosophers. Jews demand signs, Greeks seek wisdom; we preach Christ crucified — a stumbling block to Jews and foolishness to Gentiles, but to the called, both Jews and Greeks, Christ the power of God and wisdom of God.",
+          "children": [
+            {
+              "id": "1co1-3a",
+              "type": "ground",
+              "verse_range": "1:19",
+              "text": "Isaiah 29:14 cited: 'I will destroy the wisdom of the wise and the discernment of the discerning I will thwart.' Human wisdom-systems are not neutral ground — they are under divine judgment. The cross is not one option among many but the point at which all human wisdom-systems are exposed as inadequate."
+            }
+          ]
+        },
+        {
+          "id": "1co1-4",
+          "type": "ground",
+          "verse_range": "1:26-31",
+          "text": "The divine selection strategy: not many wise, not many powerful, not many noble were called. God chose the foolish, the weak, the low and despised — the things that are not — to nullify the things that are. Purpose: so that no flesh (πᾶσα σάρξ) might boast before God. Christ Jesus is our wisdom, righteousness, sanctification, and redemption — therefore, as it is written, 'Let him who boasts boast in the Lord.'",
+          "children": [
+            {
+              "id": "1co1-4a",
+              "type": "conclusion",
+              "verse_range": "1:29-31",
+              "text": "The sociological composition of the Corinthian church is itself a theological argument: God's choices within the community embody the logic of the cross. The factions' status-claims contradict the very basis of their membership in Christ."
+            }
+          ]
+        }
+      ],
+      "note": "1 Corinthians 1 establishes the letter's central counter-cultural claim: the cross inverts all human valuation systems. The division problem (vv. 10-17) and the wisdom problem (vv. 18-31) are connected — the factions are a symptom of importing the world's status-via-wisdom framework into the church. Paul will return to wisdom, status, and boasting repeatedly throughout the letter."
+    }
   },
   "vhl_groups": []
 }
