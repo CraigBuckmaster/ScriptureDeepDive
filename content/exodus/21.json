@@ -46,7 +46,21 @@
         ],
         "hist": {
           "historical": "The Book of the Covenant contains the closest parallels in the Pentateuch to ancient Near Eastern law codes: Code of Hammurabi (c.1750 BC), Laws of Eshnunna, and Hittite Laws. The parallels demonstrate shared legal culture while the differences are theologically significant — Israelite law uniquely protects slaves' rights (vv.2–11), limits punishments more strictly, and grounds all law in the character of the covenant God.",
-          "context": "Hebrew slavery in these laws is not chattel slavery — it is debt servitude with a six-year maximum and a jubilee mechanism. The slave who chooses to remain (vv.5–6) does so out of love, not compulsion. The ear-boring ceremony expresses voluntary permanent commitment. The laws for female slaves (vv.7–11) provide protections far exceeding ANE norms — they cannot be sold to foreigners and must be freed if their rights are violated."
+          "context": "Hebrew slavery in these laws is not chattel slavery — it is debt servitude with a six-year maximum and a jubilee mechanism. The slave who chooses to remain (vv.5–6) does so out of love, not compulsion. The ear-boring ceremony expresses voluntary permanent commitment. The laws for female slaves (vv.7–11) provide protections far exceeding ANE norms — they cannot be sold to foreigners and must be freed if their rights are violated.",
+          "ane": [
+            {
+              "parallel": "Code of Hammurabi (Babylon, c. 1754 BCE)",
+              "similarity": "Both texts use casuistic legal form — 'if a man does X, then Y' — to address bodily injury, slave laws, property damage, and personal liability. The goring-ox case appears in both: if an ox has a history of goring and kills someone, the owner bears responsibility.",
+              "difference": "Hammurabi's code applies different penalties based on social class — injuring a nobleman requires different compensation than injuring a slave. Israelite law moves toward equal treatment: the lex talionis applies regardless of victim's status, and slaves who suffer permanent injury go free.",
+              "significance": "The parallel demonstrates that ancient Israel participated in widespread Near Eastern legal traditions while introducing distinctive ethical modifications. The shift toward equal justice and slave protections reflects covenant theology's vision of all people as created in God's image."
+            },
+            {
+              "parallel": "Laws of Eshnunna (Babylon, c. 1930 BCE)",
+              "similarity": "Both texts address the goring-ox scenario with nearly identical structure: a first offense versus a known dangerous animal whose owner failed to control it. Both also cover bride-price regulations and personal injury cases. Eshnunna predates Hammurabi by nearly two centuries.",
+              "difference": "Eshnunna prescribes monetary fines for the goring-ox case; Exodus 21:28-32 requires the ox to be stoned and its flesh not eaten, adding ritual purity concerns absent from Mesopotamian law. The owner's life may also be forfeit unless ransomed.",
+              "significance": "The close parallels with a pre-Hammurabi code suggest these legal principles were widespread in the ancient Near East. Israel's distinctive additions — ritual stoning, prohibition on eating the flesh, potential capital liability — reflect integration of law with Yahwistic holiness concerns."
+            }
+          ]
         },
         "cross": {
           "refs": [
