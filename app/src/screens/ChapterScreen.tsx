@@ -263,6 +263,7 @@ export default function ChapterScreen() {
         onPrev={goPrev}
         onNext={goNext}
         onQnav={toggleQnav}
+        onBack={navigation.canGoBack() ? () => navigation.goBack() : undefined}
         onIntroPress={() => navigation.navigate('BookIntro', { bookId })}
         onTTSPress={() => {
           if (ttsActive) { tts.stop(); setTtsActive(false); }
