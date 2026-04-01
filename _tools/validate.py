@@ -95,7 +95,7 @@ def main():
     books_found = Counter()
 
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             total_files += 1
@@ -180,7 +180,7 @@ def main():
     valid_css = {'vhl-divine', 'vhl-place', 'vhl-person', 'vhl-time', 'vhl-key'}
     bad_css = set()
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             with open(json_file) as f:
