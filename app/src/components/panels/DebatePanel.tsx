@@ -12,10 +12,8 @@ export function DebatePanel({ entries, onScholarPress }: Props) {
 
   return (
     <View style={{ gap: spacing.lg }}>
-      {entries.map((d, i) => {
-        // Handle both shapes: { topic, positions: [{scholar, position}] }
-        // and legacy: { title, positions: [{name, proponents, argument}] }
-        const heading = d.topic ?? 'Debate';
+      {entries.map((d: any, i) => {
+        const heading = d.topic ?? d.title ?? 'Debate';
         const positions = d.positions ?? [];
 
         return (
@@ -23,18 +21,27 @@ export function DebatePanel({ entries, onScholarPress }: Props) {
             <Text style={{ color: colors.accent, fontFamily: fontFamily.displayMedium, fontSize: 13 }}>
               {heading}
             </Text>
-            {positions.map((p, j: number) => {
-              const label = p.scholar ?? 'Scholar';
-              const body = p.position ?? '';
+            {positions.map((p: any, j: number) => {
+              // Current shape: { scholar, position }
+              // Legacy shape: { name, proponents, argument }
+              const isLegacy = 'argument' in p;
+              const label = isLegacy ? (p.name ?? 'Position') : (p.scholar ?? 'Scholar');
+              const sublabel = isLegacy ? (p.proponents ?? '') : '';
+              const body = isLegacy ? (p.argument ?? '') : (p.position ?? '');
 
               return (
                 <View key={j} style={{ gap: 4, paddingLeft: spacing.sm }}>
                   <Text
                     style={{ color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 12 }}
-                    onPress={() => onScholarPress?.(label.toLowerCase())}
+                    onPress={() => !isLegacy && onScholarPress?.(label.toLowerCase())}
                   >
                     {label}
                   </Text>
+                  {sublabel ? (
+                    <Text style={{ color: base.textMuted, fontFamily: fontFamily.bodyItalic, fontSize: 11 }}>
+                      {sublabel}
+                    </Text>
+                  ) : null}
                   <Text style={{ color: base.textDim, fontFamily: fontFamily.body, fontSize: 14, lineHeight: 22 }}>
                     {body}
                   </Text>

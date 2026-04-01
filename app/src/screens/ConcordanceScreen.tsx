@@ -140,7 +140,7 @@ export default function ConcordanceScreen() {
       ) : results.length > 0 ? (
         <FlatList
           data={results}
-          keyExtractor={(item) => `${item.book_id}-${item.chapter_num}-${item.verse_num}`}
+          keyExtractor={(item, i) => `${item.book_id}-${item.chapter_num}-${item.verse_num}-${i}`}
           renderItem={({ item }) => (
             <ConcordanceEntry
               result={item}
