@@ -22,7 +22,7 @@ import { logger } from '../utils/logger';
  * Bump this when build_sqlite.py's DB_VERSION changes.
  * Must match the value written into db_meta by the build script.
  */
-const EXPECTED_DB_VERSION = '0.64';
+const EXPECTED_DB_VERSION = '0.65';
 
 let db: SQLite.SQLiteDatabase | null = null;
 

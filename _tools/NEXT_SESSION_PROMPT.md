@@ -52,6 +52,12 @@ All 66 books live. All 23 deep study feature phases shipped. Theme system (Dark/
 | ~134 Psalms without timeline links | No natural narrative anchors |
 | Thin panel enrichment (Batch 6) | ~259 panels |
 
+### Recently Completed
+
+| Item | Date | Scope |
+|------|------|-------|
+| **Psalms 116-150 enrichment** | April 2026 | 35 psalms, 70 sections — cross + hist panels added |
+
 ---
 
 ## Isaiah Enrichment Status
