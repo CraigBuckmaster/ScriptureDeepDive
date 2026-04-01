@@ -34,9 +34,18 @@
             "paragraph": "the Lord opened Lydia's heart (v.14) — a divine-passive construction: God is the agent of her conversion, not merely the occasion for it. 'Opened' (diēnoigen) implies a sealed container being unsealed — Lydia's heart was closed to this message until God opened it. This is Luke's most explicit statement of divine action in individual conversion."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Troas</div><div class=\"poi-coords\">39.7500° N, 26.1333° E</div><div class=\"poi-text\">The port city of Alexandria Troas on the Aegean coast of Asia Minor — the point where Paul crosses from Asia to Europe. The Macedonian vision (v.9) comes here; the 'we' sections begin here (v.10), indicating Luke joined the party. Troas is the hinge between the Asian and European missions.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Philippi</div><div class=\"poi-coords\">41.0167° N, 24.2833° E</div><div class=\"poi-text\">A Roman colony in Macedonia (northern Greece), founded in 42 BC by Octavian and Antony after the Battle of Philippi. As a Roman colony, it had Roman law, Roman magistrates (stratēgoi), and a Latin-speaking upper class. The church Paul plants here will be the recipient of his most affectionate letter (Philippians).</div></div>"
-        },
+        "places": [
+          {
+            "name": "Troas",
+            "coords": "39.7500° N, 26.1333° E",
+            "text": "The port city of Alexandria Troas on the Aegean coast of Asia Minor — the point where Paul crosses from Asia to Europe. The Macedonian vision (v.9) comes here; the 'we' sections begin here (v.10), indicating Luke joined the party. Troas is the hinge between the Asian and European missions."
+          },
+          {
+            "name": "Philippi",
+            "coords": "41.0167° N, 24.2833° E",
+            "text": "A Roman colony in Macedonia (northern Greece), founded in 42 BC by Octavian and Antony after the Battle of Philippi. As a Roman colony, it had Roman law, Roman magistrates (stratēgoi), and a Latin-speaking upper class. The church Paul plants here will be the recipient of his most affectionate letter (Philippians)."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 49–50",
@@ -163,9 +172,18 @@
             "paragraph": "v.37 — Paul's assertion of Roman citizenship is not a contradiction of his willingness to suffer but a strategic use of legal rights for the church's protection. As Roman citizens, Paul and Silas were entitled to a proper trial before punishment — their beating without trial (v.37: akatakritous) was illegal. Paul insists on public exoneration to protect the Philippi church from accusations of harbouring criminals."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">The Philippian Prison</div><div class=\"poi-coords\">41.0167° N, 24.2833° E</div><div class=\"poi-text\">The inner cell and stocks (v.24) represent maximum security — the same pattern as Peter's prison in Jerusalem (Acts 12:4). The earthquake that opens all doors and loosens all chains mirrors the angelic deliverance of Acts 5 and 12, establishing the pattern: God delivers from maximum-security imprisonment when it serves his purposes.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Lydia's House</div><div class=\"poi-coords\">41.0167° N, 24.2833° E</div><div class=\"poi-text\">The church in Philippi gathers in Lydia's house (v.40) — the first Christian meeting place in Europe. That the church is rooted in the home of a wealthy businesswoman reflects the social diversity of the early church: economic resources put at the community's service without hierarchy.</div></div>"
-        },
+        "places": [
+          {
+            "name": "The Philippian Prison",
+            "coords": "41.0167° N, 24.2833° E",
+            "text": "The inner cell and stocks (v.24) represent maximum security — the same pattern as Peter's prison in Jerusalem (Acts 12:4). The earthquake that opens all doors and loosens all chains mirrors the angelic deliverance of Acts 5 and 12, establishing the pattern: God delivers from maximum-security imprisonment when it serves his purposes."
+          },
+          {
+            "name": "Lydia's House",
+            "coords": "41.0167° N, 24.2833° E",
+            "text": "The church in Philippi gathers in Lydia's house (v.40) — the first Christian meeting place in Europe. That the church is rooted in the home of a wealthy businesswoman reflects the social diversity of the early church: economic resources put at the community's service without hierarchy."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 50",
@@ -292,9 +310,18 @@
             "paragraph": "the Lord opened Lydia's heart (v.14) — a divine-passive construction: God is the agent of her conversion, not merely the occasion for it. 'Opened' (diēnoigen) implies a sealed container being unsealed — Lydia's heart was closed to this message until God opened it. This is Luke's most explicit statement of divine action in individual conversion."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Troas</div><div class=\"poi-coords\">39.7500° N, 26.1333° E</div><div class=\"poi-text\">The port city of Alexandria Troas on the Aegean coast of Asia Minor — the point where Paul crosses from Asia to Europe. The Macedonian vision (v.9) comes here; the 'we' sections begin here (v.10), indicating Luke joined the party. Troas is the hinge between the Asian and European missions.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Philippi</div><div class=\"poi-coords\">41.0167° N, 24.2833° E</div><div class=\"poi-text\">A Roman colony in Macedonia (northern Greece), founded in 42 BC by Octavian and Antony after the Battle of Philippi. As a Roman colony, it had Roman law, Roman magistrates (stratēgoi), and a Latin-speaking upper class. The church Paul plants here will be the recipient of his most affectionate letter (Philippians).</div></div>"
-        },
+        "places": [
+          {
+            "name": "Troas",
+            "coords": "39.7500° N, 26.1333° E",
+            "text": "The port city of Alexandria Troas on the Aegean coast of Asia Minor — the point where Paul crosses from Asia to Europe. The Macedonian vision (v.9) comes here; the 'we' sections begin here (v.10), indicating Luke joined the party. Troas is the hinge between the Asian and European missions."
+          },
+          {
+            "name": "Philippi",
+            "coords": "41.0167° N, 24.2833° E",
+            "text": "A Roman colony in Macedonia (northern Greece), founded in 42 BC by Octavian and Antony after the Battle of Philippi. As a Roman colony, it had Roman law, Roman magistrates (stratēgoi), and a Latin-speaking upper class. The church Paul plants here will be the recipient of his most affectionate letter (Philippians)."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 49–50",

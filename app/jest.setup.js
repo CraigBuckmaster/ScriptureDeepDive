@@ -1,3 +1,13 @@
+// ── Silence noisy test warnings ──────────────────────────────────
+
+// Suppress React "not wrapped in act(...)" warnings from async state
+// updates that fire after render (e.g., useEffect fetches).
+const originalConsoleError = console.error;
+console.error = (...args) => {
+  if (typeof args[0] === 'string' && args[0].includes('not wrapped in act(')) return;
+  originalConsoleError(...args);
+};
+
 // ── Expo module mocks ──────────────────────────────────────────────
 
 // Mock expo-font
@@ -172,6 +182,21 @@ jest.mock('@/utils/haptics', () => ({
   lightImpact: jest.fn(),
   mediumImpact: jest.fn(),
 }));
+
+// Silence the app logger in tests (console.warn noise).
+// The logger.test.ts file unmocks this to test the real implementation.
+jest.mock('@/utils/logger', () => {
+  const actual = jest.requireActual('@/utils/logger');
+  return {
+    ...actual,
+    logger: {
+      info: jest.fn(),
+      warn: jest.fn(),
+      error: jest.fn(),
+      debug: jest.fn(),
+    },
+  };
+});
 
 // ── Bottom Sheet mock ─────────────────────────────────────────────
 

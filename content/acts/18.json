@@ -31,9 +31,18 @@
             "paragraph": "the Lord's reassurance in v.10 — 'I have many people in this city.' The Greek polys laos is OT covenant language for God's elect people. The Lord is telling Paul that Corinth has many elect still to be gathered — divine sovereignty in salvation grounds apostolic boldness in proclamation."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Corinth</div><div class=\"poi-coords\">37.9080° N, 22.8785° E</div><div class=\"poi-text\">The commercial capital of Roman Greece — a rebuilt Roman colony on the narrow isthmus connecting central Greece to the Peloponnese, controlling two ports. One of the wealthiest and most cosmopolitan cities in the Empire. Paul's eighteen months here plant one of his most complex and fruitful churches.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">The Tribunal (Bema)</div><div class=\"poi-coords\">37.9080° N, 22.8785° E</div><div class=\"poi-text\">The bema (judgment seat) at Corinth has been archaeologically confirmed — a large marble rostrum in the agora where the proconsul held court. This is the very place where Gallio dismisses the Jewish charges. The bema where Paul appeared before Gallio is the same word Paul uses for Christ's judgment seat (2 Cor 5:10).</div></div>"
-        },
+        "places": [
+          {
+            "name": "Corinth",
+            "coords": "37.9080° N, 22.8785° E",
+            "text": "The commercial capital of Roman Greece — a rebuilt Roman colony on the narrow isthmus connecting central Greece to the Peloponnese, controlling two ports. One of the wealthiest and most cosmopolitan cities in the Empire. Paul's eighteen months here plant one of his most complex and fruitful churches."
+          },
+          {
+            "name": "The Tribunal (Bema)",
+            "coords": "37.9080° N, 22.8785° E",
+            "text": "The bema (judgment seat) at Corinth has been archaeologically confirmed — a large marble rostrum in the agora where the proconsul held court. This is the very place where Gallio dismisses the Jewish charges. The bema where Paul appeared before Gallio is the same word Paul uses for Christ's judgment seat (2 Cor 5:10)."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 51–52",
@@ -160,9 +169,18 @@
             "paragraph": "used in v.26 for Priscilla and Aquila's additional instruction. Akribesteron is the comparative of akribēs (precise, accurate) — they did not correct errors but completed what was incomplete. Apollos had accurate truth; they gave him more complete truth. Constructive supplementation, not hostile correction."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Cenchreae</div><div class=\"poi-coords\">37.8833° N, 23.0000° E</div><div class=\"poi-text\">The eastern port of Corinth — where Paul's ship departed for Syria. The vow he completes here (cutting his hair — a Nazirite-style vow) shows Paul maintaining Jewish practice even as he ministers to Gentiles.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Alexandria — Apollos's Origin</div><div class=\"poi-coords\">31.2001° N, 29.9187° E</div><div class=\"poi-text\">The great Egyptian city — home to the largest Jewish Diaspora community, the Septuagint translation, and the philosophical tradition that produced Philo. Apollos's 'thorough knowledge of the Scriptures' and eloquence reflect the Alexandrian Jewish intellectual tradition.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Cenchreae",
+            "coords": "37.8833° N, 23.0000° E",
+            "text": "The eastern port of Corinth — where Paul's ship departed for Syria. The vow he completes here (cutting his hair — a Nazirite-style vow) shows Paul maintaining Jewish practice even as he ministers to Gentiles."
+          },
+          {
+            "name": "Alexandria — Apollos's Origin",
+            "coords": "31.2001° N, 29.9187° E",
+            "text": "The great Egyptian city — home to the largest Jewish Diaspora community, the Septuagint translation, and the philosophical tradition that produced Philo. Apollos's 'thorough knowledge of the Scriptures' and eloquence reflect the Alexandrian Jewish intellectual tradition."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 52",

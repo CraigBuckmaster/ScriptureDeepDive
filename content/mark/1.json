@@ -28,9 +28,18 @@
             "paragraph": "Mark’s single-word opening echoes Genesis 1:1 in the Septuagint (LXX). He is announcing a new creation, not merely a biography."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Wilderness of Judea</div><div class=\"poi-coords\">Barren region between Jerusalem and the Dead Sea</div><div class=\"poi-text\">The wilderness is both geographical and theological — the space of the new exodus. Isaiah promised that the divine highway home would cut through the wilderness (Isa 40:3). John’s location signals that something at the scale of the Exodus is beginning.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jordan River</div><div class=\"poi-coords\">Jordan Valley; traditional baptism site at Qasr el-Yahud</div><div class=\"poi-text\">The Jordan is Israel’s entry river into the Promised Land under Joshua. Being baptized in the Jordan re-enacts the covenant crossing — confessing that Israel needs to enter the land again, renewed.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Wilderness of Judea",
+            "coords": "Barren region between Jerusalem and the Dead Sea",
+            "text": "The wilderness is both geographical and theological — the space of the new exodus. Isaiah promised that the divine highway home would cut through the wilderness (Isa 40:3). John’s location signals that something at the scale of the Exodus is beginning."
+          },
+          {
+            "name": "Jordan River",
+            "coords": "Jordan Valley; traditional baptism site at Qasr el-Yahud",
+            "text": "The Jordan is Israel’s entry river into the Promised Land under Joshua. Being baptized in the Jordan re-enacts the covenant crossing — confessing that Israel needs to enter the land again, renewed."
+          }
+        ],
         "cross": {
           "refs": [
             {
@@ -154,9 +163,23 @@
             "paragraph": "Mark uses schizomenous — “torn open” — for the heavens here (1:10) and the same root for the Temple veil at the crucifixion (15:38). Two tearings frame the Gospel: heaven opens to commission the Son; the veil tears to grant access at his death."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Nazareth</div><div class=\"poi-coords\">Lower Galilee, c.100km north of the Jordan baptism site</div><div class=\"poi-text\">Jesus comes from Nazareth — the obscure village of his upbringing — to the Jordan for public commissioning. The ministry will begin in Galilee (1:14) and end in Jerusalem (11:1). The geographical arc mirrors the theological movement.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jordan River</div><div class=\"poi-coords\">Traditional baptism site; Jordan Valley</div><div class=\"poi-text\">The Jordan is Israel’s covenant crossing point. Jesus’s identification with Israel at the Jordan grounds his representative role.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Wilderness</div><div class=\"poi-coords\">Desert of Judea; forty-day retreat</div><div class=\"poi-text\">Forty days echo Israel’s forty years (Num 14) and Moses’s forty days on Sinai (Exod 24). Jesus recapitulates and completes what Israel failed to do.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Nazareth",
+            "coords": "Lower Galilee, c.100km north of the Jordan baptism site",
+            "text": "Jesus comes from Nazareth — the obscure village of his upbringing — to the Jordan for public commissioning. The ministry will begin in Galilee (1:14) and end in Jerusalem (11:1). The geographical arc mirrors the theological movement."
+          },
+          {
+            "name": "Jordan River",
+            "coords": "Traditional baptism site; Jordan Valley",
+            "text": "The Jordan is Israel’s covenant crossing point. Jesus’s identification with Israel at the Jordan grounds his representative role."
+          },
+          {
+            "name": "Wilderness",
+            "coords": "Desert of Judea; forty-day retreat",
+            "text": "Forty days echo Israel’s forty years (Num 14) and Moses’s forty days on Sinai (Exod 24). Jesus recapitulates and completes what Israel failed to do."
+          }
+        ],
         "cross": {
           "refs": [
             {
@@ -270,9 +293,18 @@
             "paragraph": "The time has come — ho kairos peplerōtai. Kairos is not chronological time (chronos) but the decisive moment in God’s redemptive calendar. The perfect tense: the appointed season has reached its completion-point."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Galilee</div><div class=\"poi-coords\">Northern Israel region; “Galilee of the Gentiles” (Isa 9:1)</div><div class=\"poi-text\">Jesus deliberately begins in the marginal north, not Jerusalem. The geographical choice is theological: the kingdom comes first to the periphery, fulfilling Isaiah’s promise of light in the land of Zebulun and Naphtali.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Sea of Galilee</div><div class=\"poi-coords\">Freshwater lake, 21km x 13km; working fishing economy</div><div class=\"poi-text\">The first disciples are called in their actual working environment. The Sea of Galilee’s fishing industry was substantial. Their immediate abandonment of nets and boat measures the authority of the call.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Galilee",
+            "coords": "Northern Israel region; “Galilee of the Gentiles” (Isa 9:1)",
+            "text": "Jesus deliberately begins in the marginal north, not Jerusalem. The geographical choice is theological: the kingdom comes first to the periphery, fulfilling Isaiah’s promise of light in the land of Zebulun and Naphtali."
+          },
+          {
+            "name": "Sea of Galilee",
+            "coords": "Freshwater lake, 21km x 13km; working fishing economy",
+            "text": "The first disciples are called in their actual working environment. The Sea of Galilee’s fishing industry was substantial. Their immediate abandonment of nets and boat measures the authority of the call."
+          }
+        ],
         "cross": {
           "refs": [
             {
@@ -386,9 +418,23 @@
             "paragraph": "He taught as one who had exousia. The same word covers his authority over unclean spirits (v.27), over sickness, and later over sins (2:10). Exousia is the signature of the kingdom’s presence. Scribes had derived authority from tradition; Jesus has intrinsic authority from himself."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Capernaum synagogue</div><div class=\"poi-coords\">Fishing town on northwest shore of Sea of Galilee; synagogue site excavated</div><div class=\"poi-text\">Capernaum is Jesus’s ministry base — Mark calls it “his own town” (2:1). The synagogue is the first public venue: Jesus enters the heart of Jewish communal life. The basalt and limestone synagogue remains at Capernaum preserve the site.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Simon’s house, Capernaum</div><div class=\"poi-coords\">Domestic space near the synagogue</div><div class=\"poi-text\">The kingdom enters the home as naturally as the synagogue. Archaeological work at Capernaum has identified a first-century domestic structure beneath the later octagonal church as a plausible candidate for Peter’s house.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Solitary place outside Capernaum</div><div class=\"poi-coords\">Hillside or desert area north of the town</div><div class=\"poi-text\">Jesus retreats before dawn to pray alone — the pattern of withdrawal and return that runs through Mark. The solitary place is the space of renewal between public ministry episodes.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Capernaum synagogue",
+            "coords": "Fishing town on northwest shore of Sea of Galilee; synagogue site excavated",
+            "text": "Capernaum is Jesus’s ministry base — Mark calls it “his own town” (2:1). The synagogue is the first public venue: Jesus enters the heart of Jewish communal life. The basalt and limestone synagogue remains at Capernaum preserve the site."
+          },
+          {
+            "name": "Simon’s house, Capernaum",
+            "coords": "Domestic space near the synagogue",
+            "text": "The kingdom enters the home as naturally as the synagogue. Archaeological work at Capernaum has identified a first-century domestic structure beneath the later octagonal church as a plausible candidate for Peter’s house."
+          },
+          {
+            "name": "Solitary place outside Capernaum",
+            "coords": "Hillside or desert area north of the town",
+            "text": "Jesus retreats before dawn to pray alone — the pattern of withdrawal and return that runs through Mark. The solitary place is the space of renewal between public ministry episodes."
+          }
+        ],
         "cross": {
           "refs": [
             {

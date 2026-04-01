@@ -31,9 +31,18 @@
             "paragraph": "one of the earliest self-designations of the Christian movement (Acts 19:9, 23; 22:4; 24:14, 22). Reflecting the Deuteronomic 'two ways' tradition and Jesus's 'I am the way' (John 14:6) — Christianity is a whole orientation of life, not merely a belief system."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Damascus</div><div class=\"poi-coords\">33.5138° N, 36.2765° E</div><div class=\"poi-text\">Capital of Syria, c.240 km north of Jerusalem — one of the oldest continuously inhabited cities in the world. A large Jewish community made it a natural extension of Jerusalem's religious authority. Paul's encounter with Christ happens on this public road, not in private — a verifiable, historical event.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Straight Street — Damascus</div><div class=\"poi-coords\">33.5100° N, 36.3070° E</div><div class=\"poi-text\">The main east-west thoroughfare of Damascus (v11, still identifiable today as the Via Recta). The house of Judas where Saul stayed was on this specific street — a verifiable address that Luke records with the precision of reliable history.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Damascus",
+            "coords": "33.5138° N, 36.2765° E",
+            "text": "Capital of Syria, c.240 km north of Jerusalem — one of the oldest continuously inhabited cities in the world. A large Jewish community made it a natural extension of Jerusalem's religious authority. Paul's encounter with Christ happens on this public road, not in private — a verifiable, historical event."
+          },
+          {
+            "name": "Straight Street — Damascus",
+            "coords": "33.5100° N, 36.3070° E",
+            "text": "The main east-west thoroughfare of Damascus (v11, still identifiable today as the Via Recta). The house of Judas where Saul stayed was on this specific street — a verifiable address that Luke records with the precision of reliable history."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 33–35",
@@ -164,9 +173,18 @@
             "paragraph": "the only occurrence of the feminine form of mathētēs (disciple) in the NT. Tabitha is unambiguously presented as a full disciple, not merely a supporting character — Luke's vocabulary makes her standing explicit."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Lydda (Lod)</div><div class=\"poi-coords\">31.9531° N, 34.8951° E</div><div class=\"poi-text\">A town on the main road from Jerusalem to Joppa, in the fertile Shephelah. Modern Lod, near Tel Aviv's airport. Peter's healing of Aeneas made the Gospel known throughout the Plain of Sharon — the entire coastal corridor.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Joppa (Yafo)</div><div class=\"poi-coords\">32.0543° N, 34.7510° E</div><div class=\"poi-text\">The ancient Mediterranean port city — where Jonah tried to flee (Jon 1:3) and where cedar for Solomon's Temple was shipped (2 Chr 2:16). Modern Yafo, now part of Tel Aviv. Peter's lodging with a tanner (ritually marginal occupation) already anticipates the boundary-crossing of ch.10.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Lydda (Lod)",
+            "coords": "31.9531° N, 34.8951° E",
+            "text": "A town on the main road from Jerusalem to Joppa, in the fertile Shephelah. Modern Lod, near Tel Aviv's airport. Peter's healing of Aeneas made the Gospel known throughout the Plain of Sharon — the entire coastal corridor."
+          },
+          {
+            "name": "Joppa (Yafo)",
+            "coords": "32.0543° N, 34.7510° E",
+            "text": "The ancient Mediterranean port city — where Jonah tried to flee (Jon 1:3) and where cedar for Solomon's Temple was shipped (2 Chr 2:16). Modern Yafo, now part of Tel Aviv. Peter's lodging with a tanner (ritually marginal occupation) already anticipates the boundary-crossing of ch.10."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 35–38",
@@ -293,9 +311,18 @@
             "paragraph": "one of the earliest self-designations of the Christian movement (Acts 19:9, 23; 22:4; 24:14, 22). Reflecting the Deuteronomic 'two ways' tradition and Jesus's 'I am the way' (John 14:6) — Christianity is a whole orientation of life, not merely a belief system."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Damascus</div><div class=\"poi-coords\">33.5138° N, 36.2765° E</div><div class=\"poi-text\">Capital of Syria, c.240 km north of Jerusalem — one of the oldest continuously inhabited cities in the world. A large Jewish community made it a natural extension of Jerusalem's religious authority. Paul's encounter with Christ happens on this public road, not in private — a verifiable, historical event.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Straight Street — Damascus</div><div class=\"poi-coords\">33.5100° N, 36.3070° E</div><div class=\"poi-text\">The main east-west thoroughfare of Damascus (v11, still identifiable today as the Via Recta). The house of Judas where Saul stayed was on this specific street — a verifiable address that Luke records with the precision of reliable history.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Damascus",
+            "coords": "33.5138° N, 36.2765° E",
+            "text": "Capital of Syria, c.240 km north of Jerusalem — one of the oldest continuously inhabited cities in the world. A large Jewish community made it a natural extension of Jerusalem's religious authority. Paul's encounter with Christ happens on this public road, not in private — a verifiable, historical event."
+          },
+          {
+            "name": "Straight Street — Damascus",
+            "coords": "33.5100° N, 36.3070° E",
+            "text": "The main east-west thoroughfare of Damascus (v11, still identifiable today as the Via Recta). The house of Judas where Saul stayed was on this specific street — a verifiable address that Luke records with the precision of reliable history."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 33–35",

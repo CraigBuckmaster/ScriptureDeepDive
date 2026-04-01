@@ -31,9 +31,18 @@
             "paragraph": "Jesus's response (v.4) introduces one of John's most significant recurring themes: \"my hour\" or \"the hour.\" Throughout John, the hour has not yet come (2:4; 7:30; 8:20) until the passion, when it arrives (12:23; 13:1; 17:1). The \"hour\" is the cross-and-resurrection event that the entire Gospel is structured toward."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Cana of Galilee</div><div class=\"poi-coords\">32.8461° N, 35.3521° E</div><div class=\"poi-text\">The site of Jesus's first sign, identified with modern Khirbet Qana north of Nazareth, though Kafr Kanna (on the road from Nazareth to Tiberias) has been the traditional pilgrimage site since the Byzantine period. Nathanael was from Cana (John 21:2), making it likely he was present at the wedding. The village is in the heart of lower Galilee, about 5 miles north of Nazareth.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Capernaum</div><div class=\"poi-coords\">32.8807° N, 35.5743° E</div><div class=\"poi-text\">Jesus's base of operations during his Galilean ministry (Matt 4:13 calls it \"his own town\"). After the Cana wedding, Jesus went to Capernaum with his family and disciples (v.12). The excavated remains of an ancient synagogue (on top of which a later 4th-century synagogue was built) and a house traditionally identified as Peter's house are visible today on the north shore of the Sea of Galilee.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Cana of Galilee",
+            "coords": "32.8461° N, 35.3521° E",
+            "text": "The site of Jesus's first sign, identified with modern Khirbet Qana north of Nazareth, though Kafr Kanna (on the road from Nazareth to Tiberias) has been the traditional pilgrimage site since the Byzantine period. Nathanael was from Cana (John 21:2), making it likely he was present at the wedding. The village is in the heart of lower Galilee, about 5 miles north of Nazareth."
+          },
+          {
+            "name": "Capernaum",
+            "coords": "32.8807° N, 35.5743° E",
+            "text": "Jesus's base of operations during his Galilean ministry (Matt 4:13 calls it \"his own town\"). After the Cana wedding, Jesus went to Capernaum with his family and disciples (v.12). The excavated remains of an ancient synagogue (on top of which a later 4th-century synagogue was built) and a house traditionally identified as Peter's house are visible today on the north shore of the Sea of Galilee."
+          }
+        ],
         "cross": {
           "refs": [
             {
@@ -135,9 +144,13 @@
             "paragraph": "The verb (v.19) is deliberately ambiguous: it can mean to rebuild a demolished building or to raise someone from the dead. The hearers take it architecturally; John's editorial comment (v.21) reveals the resurrection meaning. The ambiguity is characteristic of Johannine double meaning."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem Temple Mount</div><div class=\"poi-coords\">31.7781° N, 35.2354° E</div><div class=\"poi-text\">The Herodian Temple complex — rebuilt by Herod the Great beginning c. 20 BC and still under construction 46 years later at Jesus's first Passover visit. The Temple Mount platform covered 35 acres; the outer Court of the Gentiles was surrounded by colonnaded porticos. The money changers and animal sellers operated in the outer court, particularly in the Royal Portico on the south side. Jesus enters this space and claims it as \"my Father's house\" — the first of several Passover visits in John.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Jerusalem Temple Mount",
+            "coords": "31.7781° N, 35.2354° E",
+            "text": "The Herodian Temple complex — rebuilt by Herod the Great beginning c. 20 BC and still under construction 46 years later at Jesus's first Passover visit. The Temple Mount platform covered 35 acres; the outer Court of the Gentiles was surrounded by colonnaded porticos. The money changers and animal sellers operated in the outer court, particularly in the Royal Portico on the south side. Jesus enters this space and claims it as \"my Father's house\" — the first of several Passover visits in John."
+          }
+        ],
         "cross": {
           "refs": [
             {
@@ -249,9 +262,18 @@
             "paragraph": "Jesus's response (v.4) introduces one of John's most significant recurring themes: \"my hour\" or \"the hour.\" Throughout John, the hour has not yet come (2:4; 7:30; 8:20) until the passion, when it arrives (12:23; 13:1; 17:1). The \"hour\" is the cross-and-resurrection event that the entire Gospel is structured toward."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Cana of Galilee</div><div class=\"poi-coords\">32.8461° N, 35.3521° E</div><div class=\"poi-text\">The site of Jesus's first sign, identified with modern Khirbet Qana north of Nazareth, though Kafr Kanna (on the road from Nazareth to Tiberias) has been the traditional pilgrimage site since the Byzantine period. Nathanael was from Cana (John 21:2), making it likely he was present at the wedding. The village is in the heart of lower Galilee, about 5 miles north of Nazareth.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Capernaum</div><div class=\"poi-coords\">32.8807° N, 35.5743° E</div><div class=\"poi-text\">Jesus's base of operations during his Galilean ministry (Matt 4:13 calls it \"his own town\"). After the Cana wedding, Jesus went to Capernaum with his family and disciples (v.12). The excavated remains of an ancient synagogue (on top of which a later 4th-century synagogue was built) and a house traditionally identified as Peter's house are visible today on the north shore of the Sea of Galilee.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Cana of Galilee",
+            "coords": "32.8461° N, 35.3521° E",
+            "text": "The site of Jesus's first sign, identified with modern Khirbet Qana north of Nazareth, though Kafr Kanna (on the road from Nazareth to Tiberias) has been the traditional pilgrimage site since the Byzantine period. Nathanael was from Cana (John 21:2), making it likely he was present at the wedding. The village is in the heart of lower Galilee, about 5 miles north of Nazareth."
+          },
+          {
+            "name": "Capernaum",
+            "coords": "32.8807° N, 35.5743° E",
+            "text": "Jesus's base of operations during his Galilean ministry (Matt 4:13 calls it \"his own town\"). After the Cana wedding, Jesus went to Capernaum with his family and disciples (v.12). The excavated remains of an ancient synagogue (on top of which a later 4th-century synagogue was built) and a house traditionally identified as Peter's house are visible today on the north shore of the Sea of Galilee."
+          }
+        ],
         "cross": {
           "refs": [
             {

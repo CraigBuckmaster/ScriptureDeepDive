@@ -31,9 +31,18 @@
             "paragraph": "Stephen traces Abraham's journey through multiple geographies — Mesopotamia, Harran, Canaan. At each stage God is present and active. The God of the Bible is the God of the journey before he is the God of any destination."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Mesopotamia (Ur)</div><div class=\"poi-coords\">30.9626° N, 46.1025° E</div><div class=\"poi-text\">Abraham's origin — modern southern Iraq. God appeared to Abraham here, before he left for Harran (Gen 11:31–12:1). The first divine appearance in Israel's covenant history occurs entirely outside the promised land — Stephen's geographic opening argument.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Harran</div><div class=\"poi-coords\">36.8631° N, 39.0283° E</div><div class=\"poi-text\">The city in northern Mesopotamia where Terah settled with Abraham and family. God's call to leave was given in Mesopotamia; Abraham completes the departure after Terah's death. Stephen tracks the movement precisely to show God's initiative operating across multiple geographies.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Mesopotamia (Ur)",
+            "coords": "30.9626° N, 46.1025° E",
+            "text": "Abraham's origin — modern southern Iraq. God appeared to Abraham here, before he left for Harran (Gen 11:31–12:1). The first divine appearance in Israel's covenant history occurs entirely outside the promised land — Stephen's geographic opening argument."
+          },
+          {
+            "name": "Harran",
+            "coords": "36.8631° N, 39.0283° E",
+            "text": "The city in northern Mesopotamia where Terah settled with Abraham and family. God's call to leave was given in Mesopotamia; Abraham completes the departure after Terah's death. Stephen tracks the movement precisely to show God's initiative operating across multiple geographies."
+          }
+        ],
         "tl": [
           {
             "date": "c. 2100 BC",
@@ -160,9 +169,18 @@
             "paragraph": "Circumcision of the heart is the Deuteronomic ideal (Deut 10:16; 30:6; Jer 4:4). Stephen accuses the circumcised defenders of the law of being uncircumcised where it actually matters — in heart and ear."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Outside the City — Stoning Site</div><div class=\"poi-coords\">31.7820° N, 35.2354° E</div><div class=\"poi-text\">Stoning required taking the condemned outside the city walls (Lev 24:14; cf. Heb 13:12). Stephen was dragged \"out of the city\" (v58). The witnesses laid their coats at Saul's feet — witnesses were required to throw the first stones, divesting themselves of outer garments for ease of movement.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Heaven Open</div><div class=\"poi-coords\">0° N, 0° E</div><div class=\"poi-text\">\"I see heaven open and the Son of Man standing at the right hand of God\" (v56). Stephen's vision is the most explicit post-resurrection appearance of Jesus in Acts. The \"standing\" rather than sitting is often noted: the risen Lord stands in honour of his first martyr.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Outside the City — Stoning Site",
+            "coords": "31.7820° N, 35.2354° E",
+            "text": "Stoning required taking the condemned outside the city walls (Lev 24:14; cf. Heb 13:12). Stephen was dragged \"out of the city\" (v58). The witnesses laid their coats at Saul's feet — witnesses were required to throw the first stones, divesting themselves of outer garments for ease of movement."
+          },
+          {
+            "name": "Heaven Open",
+            "coords": "0° N, 0° E",
+            "text": "\"I see heaven open and the Son of Man standing at the right hand of God\" (v56). Stephen's vision is the most explicit post-resurrection appearance of Jesus in Acts. The \"standing\" rather than sitting is often noted: the risen Lord stands in honour of his first martyr."
+          }
+        ],
         "tl": [
           {
             "date": "c. 959 BC",
@@ -289,9 +307,18 @@
             "paragraph": "Stephen traces Abraham's journey through multiple geographies — Mesopotamia, Harran, Canaan. At each stage God is present and active. The God of the Bible is the God of the journey before he is the God of any destination."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Mesopotamia (Ur)</div><div class=\"poi-coords\">30.9626° N, 46.1025° E</div><div class=\"poi-text\">Abraham's origin — modern southern Iraq. God appeared to Abraham here, before he left for Harran (Gen 11:31–12:1). The first divine appearance in Israel's covenant history occurs entirely outside the promised land — Stephen's geographic opening argument.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Harran</div><div class=\"poi-coords\">36.8631° N, 39.0283° E</div><div class=\"poi-text\">The city in northern Mesopotamia where Terah settled with Abraham and family. God's call to leave was given in Mesopotamia; Abraham completes the departure after Terah's death. Stephen tracks the movement precisely to show God's initiative operating across multiple geographies.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Mesopotamia (Ur)",
+            "coords": "30.9626° N, 46.1025° E",
+            "text": "Abraham's origin — modern southern Iraq. God appeared to Abraham here, before he left for Harran (Gen 11:31–12:1). The first divine appearance in Israel's covenant history occurs entirely outside the promised land — Stephen's geographic opening argument."
+          },
+          {
+            "name": "Harran",
+            "coords": "36.8631° N, 39.0283° E",
+            "text": "The city in northern Mesopotamia where Terah settled with Abraham and family. God's call to leave was given in Mesopotamia; Abraham completes the departure after Terah's death. Stephen tracks the movement precisely to show God's initiative operating across multiple geographies."
+          }
+        ],
         "tl": [
           {
             "date": "c. 2100 BC",

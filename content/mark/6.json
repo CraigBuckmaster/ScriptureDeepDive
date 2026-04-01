@@ -25,9 +25,13 @@
             "paragraph": "They took offense at him — eskandalizonto. The verb shares its root with “scandal.” Familiarity breeds contempt: the neighbors of Jesus’s family cannot reconcile his evident authority with his known origins. Their offense is a form of category error — they know the container (carpenter’s son) and so reject the content (Messiah)."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Nazareth</div><div class=\"poi-coords\">Lower Galilee; Jesus’s hometown, c.6km from Sepphoris</div><div class=\"poi-text\">Nazareth was a small village in Lower Galilee, probably 200–400 inhabitants. Its insignificance relative to nearby Sepphoris made the neighbors’ familiarity with Jesus’s family even more complete. The place that should have been most receptive proves most resistant.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Nazareth",
+            "coords": "Lower Galilee; Jesus’s hometown, c.6km from Sepphoris",
+            "text": "Nazareth was a small village in Lower Galilee, probably 200–400 inhabitants. Its insignificance relative to nearby Sepphoris made the neighbors’ familiarity with Jesus’s family even more complete. The place that should have been most receptive proves most resistant."
+          }
+        ],
         "cross": {
           "refs": [
             {

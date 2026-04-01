@@ -31,9 +31,18 @@
             "paragraph": "Paul accepts the description of Christianity as 'the Way' (v.14) — the term his opponents use as a derogatory label. He neither apologises for the designation nor rejects it. His defence is that the Way is not a sect opposed to Judaism but its legitimate fulfilment: 'I believe everything that is in accordance with the Law and that is written in the Prophets.'"
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Caesarea — Governor's Court</div><div class=\"poi-coords\">32.5000° N, 34.9000° E</div><div class=\"poi-text\">Felix's official court in the praetorium. The formal hearing has the full apparatus of Roman legal procedure: advocates (Tertullus), governor as judge, defendant, witnesses. Luke presents Paul's defence as a formal legal speech — evidence that he is writing for an audience familiar with Roman legal process.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem — Paul's Reason for Being There</div><div class=\"poi-coords\">31.7683° N, 35.2137° E</div><div class=\"poi-text\">Paul's defence specifies the purpose of his Jerusalem visit: 'to bring my people gifts for the poor and to present offerings' (v.17). The collection for Jerusalem (Rom 15:25–28; 1 Cor 16:1–4) was the concrete expression of Gentile-Jewish solidarity. Paul's imprisonment comes in the course of a mission of solidarity.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Caesarea — Governor's Court",
+            "coords": "32.5000° N, 34.9000° E",
+            "text": "Felix's official court in the praetorium. The formal hearing has the full apparatus of Roman legal procedure: advocates (Tertullus), governor as judge, defendant, witnesses. Luke presents Paul's defence as a formal legal speech — evidence that he is writing for an audience familiar with Roman legal process."
+          },
+          {
+            "name": "Jerusalem — Paul's Reason for Being There",
+            "coords": "31.7683° N, 35.2137° E",
+            "text": "Paul's defence specifies the purpose of his Jerusalem visit: 'to bring my people gifts for the poor and to present offerings' (v.17). The collection for Jerusalem (Rom 15:25–28; 1 Cor 16:1–4) was the concrete expression of Gentile-Jewish solidarity. Paul's imprisonment comes in the course of a mission of solidarity."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 57",
@@ -160,9 +169,18 @@
             "paragraph": "the three topics that trouble Felix (v.25). Paul does not preach what would make Felix comfortable; he preaches what Felix most needs to hear. Righteousness (the standard before God), self-control (the Stoic virtue Felix spectacularly lacked), and coming judgment (the consequence of failing both) — each topic cuts at Felix's actual life."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Caesarea — Felix's Court</div><div class=\"poi-coords\">32.5000° N, 34.9000° E</div><div class=\"poi-text\">Paul is held in Caesarea under relatively comfortable custody (v.23: 'some freedom... permit his friends to take care of his needs') for two years. The captivity is not the end of Paul's ministry: Luke implies he preached to Felix repeatedly, reaching the highest political level in the province.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Herod's Palace — Paul's Prison</div><div class=\"poi-coords\">32.5000° N, 34.9000° E</div><div class=\"poi-text\">The praetorium that housed Paul also housed Felix's court. The proximity meant Felix could summon Paul easily (v.26: 'he sent for him frequently'). Paul's two years of imprisonment in Herod's palace is the period during which scholars believe he wrote the Prison Epistles.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Caesarea — Felix's Court",
+            "coords": "32.5000° N, 34.9000° E",
+            "text": "Paul is held in Caesarea under relatively comfortable custody (v.23: 'some freedom... permit his friends to take care of his needs') for two years. The captivity is not the end of Paul's ministry: Luke implies he preached to Felix repeatedly, reaching the highest political level in the province."
+          },
+          {
+            "name": "Herod's Palace — Paul's Prison",
+            "coords": "32.5000° N, 34.9000° E",
+            "text": "The praetorium that housed Paul also housed Felix's court. The proximity meant Felix could summon Paul easily (v.26: 'he sent for him frequently'). Paul's two years of imprisonment in Herod's palace is the period during which scholars believe he wrote the Prison Epistles."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 57–59",

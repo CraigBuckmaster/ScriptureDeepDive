@@ -75,9 +75,18 @@
             "current": false
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Temple Mount (Second Temple)</div><div class=\"poi-coords\">31.7781 N, 35.2354 E</div><div class=\"poi-text\">The Herodian Temple complex begun c.20 BC and still under construction in AD 70. Jesus taught daily in the outer courts (19:47) during Passion Week. The Temple debates of Luke 20 (authority, vineyard, taxes, resurrection) all take place here, making the complex simultaneously his pulpit and the seat of the authority that will condemn him.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Court of the Gentiles / Solomon's Colonnade</div><div class=\"poi-coords\">31.7776 N, 35.2356 E</div><div class=\"poi-text\">The colonnaded outer court where public teaching and debate took place. The Sanhedrin coalition confronts Jesus here (20:1-2). This space combined market, public forum, and sacred precinct -- the setting of every Passion Week controversy in Luke 20.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Temple Mount (Second Temple)",
+            "coords": "31.7781 N, 35.2354 E",
+            "text": "The Herodian Temple complex begun c.20 BC and still under construction in AD 70. Jesus taught daily in the outer courts (19:47) during Passion Week. The Temple debates of Luke 20 (authority, vineyard, taxes, resurrection) all take place here, making the complex simultaneously his pulpit and the seat of the authority that will condemn him."
+          },
+          {
+            "name": "Court of the Gentiles / Solomon's Colonnade",
+            "coords": "31.7776 N, 35.2356 E",
+            "text": "The colonnaded outer court where public teaching and debate took place. The Sanhedrin coalition confronts Jesus here (20:1-2). This space combined market, public forum, and sacred precinct -- the setting of every Passion Week controversy in Luke 20."
+          }
+        ],
         "cross": {
           "refs": [
             {
@@ -236,9 +245,18 @@
             "current": false
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Temple Mount (Second Temple)</div><div class=\"poi-coords\">31.7781 N, 35.2354 E</div><div class=\"poi-text\">The Herodian Temple complex begun c.20 BC and still under construction in AD 70. Jesus taught daily in the outer courts (19:47) during Passion Week. The Temple debates of Luke 20 (authority, vineyard, taxes, resurrection) all take place here, making the complex simultaneously his pulpit and the seat of the authority that will condemn him.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Court of the Gentiles / Solomon's Colonnade</div><div class=\"poi-coords\">31.7776 N, 35.2356 E</div><div class=\"poi-text\">The colonnaded outer court where public teaching and debate took place. The Sanhedrin coalition confronts Jesus here (20:1-2). This space combined market, public forum, and sacred precinct -- the setting of every Passion Week controversy in Luke 20.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Temple Mount (Second Temple)",
+            "coords": "31.7781 N, 35.2354 E",
+            "text": "The Herodian Temple complex begun c.20 BC and still under construction in AD 70. Jesus taught daily in the outer courts (19:47) during Passion Week. The Temple debates of Luke 20 (authority, vineyard, taxes, resurrection) all take place here, making the complex simultaneously his pulpit and the seat of the authority that will condemn him."
+          },
+          {
+            "name": "Court of the Gentiles / Solomon's Colonnade",
+            "coords": "31.7776 N, 35.2356 E",
+            "text": "The colonnaded outer court where public teaching and debate took place. The Sanhedrin coalition confronts Jesus here (20:1-2). This space combined market, public forum, and sacred precinct -- the setting of every Passion Week controversy in Luke 20."
+          }
+        ],
         "cross": {
           "refs": [
             {
@@ -397,9 +415,18 @@
             "current": false
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Temple Mount (Second Temple)</div><div class=\"poi-coords\">31.7781 N, 35.2354 E</div><div class=\"poi-text\">The Herodian Temple complex begun c.20 BC and still under construction in AD 70. Jesus taught daily in the outer courts (19:47) during Passion Week. The Temple debates of Luke 20 (authority, vineyard, taxes, resurrection) all take place here, making the complex simultaneously his pulpit and the seat of the authority that will condemn him.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Court of the Gentiles / Solomon's Colonnade</div><div class=\"poi-coords\">31.7776 N, 35.2356 E</div><div class=\"poi-text\">The colonnaded outer court where public teaching and debate took place. The Sanhedrin coalition confronts Jesus here (20:1-2). This space combined market, public forum, and sacred precinct -- the setting of every Passion Week controversy in Luke 20.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Temple Mount (Second Temple)",
+            "coords": "31.7781 N, 35.2354 E",
+            "text": "The Herodian Temple complex begun c.20 BC and still under construction in AD 70. Jesus taught daily in the outer courts (19:47) during Passion Week. The Temple debates of Luke 20 (authority, vineyard, taxes, resurrection) all take place here, making the complex simultaneously his pulpit and the seat of the authority that will condemn him."
+          },
+          {
+            "name": "Court of the Gentiles / Solomon's Colonnade",
+            "coords": "31.7776 N, 35.2356 E",
+            "text": "The colonnaded outer court where public teaching and debate took place. The Sanhedrin coalition confronts Jesus here (20:1-2). This space combined market, public forum, and sacred precinct -- the setting of every Passion Week controversy in Luke 20."
+          }
+        ],
         "cross": {
           "refs": [
             {

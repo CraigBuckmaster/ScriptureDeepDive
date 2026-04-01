@@ -125,9 +125,18 @@
             "paragraph": "My soul magnifies (megalynei) the Lord — the opening of the Magnificat. The verb means to make great or to declare greatness — not to increase God’s greatness but to proclaim it. Mary’s song is modelled on Hannah’s prayer (1 Sam 2:1-10) which itself stood within the whole tradition of Israel’s songs of reversal: the lowly exalted, the proud brought down, the hungry filled."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Nazareth</div><div class=\"poi-coords\">Lower Galilee; modern Nazareth, c.25km from the Sea of Galilee</div><div class=\"poi-text\">The Annunciation takes place in the obscure Galilean village of Nazareth — a town mentioned nowhere in the OT. Luke’s emphasis on Nazareth as the origin point (1:26; 2:4; 2:39; 2:51; 4:16) consistently works against the grain of messianic expectation. The Messiah comes from the margins.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Hill country of Judea — Zechariah’s home</div><div class=\"poi-coords\">Traditionally identified with Ein Karem, c.7km west of Jerusalem</div><div class=\"poi-text\">Mary’s journey from Galilee to the hill country of Judea (c.130km) is the first movement narrative in Luke. It joins the two miraculous pregnancies in a single household encounter. The visitation is the first Gospel meeting of the two cousins whose lives are permanently intertwined.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Nazareth",
+            "coords": "Lower Galilee; modern Nazareth, c.25km from the Sea of Galilee",
+            "text": "The Annunciation takes place in the obscure Galilean village of Nazareth — a town mentioned nowhere in the OT. Luke’s emphasis on Nazareth as the origin point (1:26; 2:4; 2:39; 2:51; 4:16) consistently works against the grain of messianic expectation. The Messiah comes from the margins."
+          },
+          {
+            "name": "Hill country of Judea — Zechariah’s home",
+            "coords": "Traditionally identified with Ein Karem, c.7km west of Jerusalem",
+            "text": "Mary’s journey from Galilee to the hill country of Judea (c.130km) is the first movement narrative in Luke. It joins the two miraculous pregnancies in a single household encounter. The visitation is the first Gospel meeting of the two cousins whose lives are permanently intertwined."
+          }
+        ],
         "cross": {
           "refs": [
             {

@@ -34,9 +34,18 @@
             "paragraph": "Eutychus is a neanias — a young man in the prime of life (unlike the diminutive neaniskos). His death from a fall while listening to Paul is historically vivid and theologically instructive: even the most earnest teaching cannot always keep sleep at bay. Luke's honesty about the scene is characteristic."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Troas</div><div class=\"poi-coords\">39.7500° N, 26.1333° E</div><div class=\"poi-text\">The coastal city where Paul first received the Macedonian call (16:9). His return visit (vv.6–12) includes the Eutychus episode and the first explicit Sunday gathering in Acts. Troas bookends the European mission — the call to go west, and now the gathering before the journey back east.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Miletus</div><div class=\"poi-coords\">37.5333° N, 27.2667° E</div><div class=\"poi-text\">The major port city at the mouth of the Maeander river in Asia Minor — 48 km south of Ephesus. By bypassing Ephesus and stopping at Miletus, Paul avoids being delayed by the Ephesian church while still summoning its elders for his farewell address.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Troas",
+            "coords": "39.7500° N, 26.1333° E",
+            "text": "The coastal city where Paul first received the Macedonian call (16:9). His return visit (vv.6–12) includes the Eutychus episode and the first explicit Sunday gathering in Acts. Troas bookends the European mission — the call to go west, and now the gathering before the journey back east."
+          },
+          {
+            "name": "Miletus",
+            "coords": "37.5333° N, 27.2667° E",
+            "text": "The major port city at the mouth of the Maeander river in Asia Minor — 48 km south of Ephesus. By bypassing Ephesus and stopping at Miletus, Paul avoids being delayed by the Ephesian church while still summoning its elders for his farewell address."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 56–57",
@@ -163,9 +172,18 @@
             "paragraph": "v.27 — Paul's defence of his ministry: 'I have not hesitated to proclaim to you the whole will of God' (boulē — the determinate counsel, plan, purpose of God). This is not merely 'what God wants' in a general sense but the complete redemptive purpose revealed in Scripture. Paul's ministry is defined by comprehensiveness: nothing held back, nothing added."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Miletus</div><div class=\"poi-coords\">37.5333° N, 27.2667° E</div><div class=\"poi-text\">The setting of Paul's most personal address in Acts — his farewell to the leaders of his most significant church. By summoning the Ephesian elders to Miletus rather than going to Ephesus, Paul avoids the city's distractions while still maintaining pastoral responsibility for the community he is leaving.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Ephesus — The Church</div><div class=\"poi-coords\">37.9500° N, 27.3667° E</div><div class=\"poi-text\">The elders of the Ephesian church walk the 48 km to Miletus to receive Paul's farewell. The depth of relationship behind this journey — three years of daily ministry — is the context for the speech's emotional weight. The weeping at departure (v.37) is the measure of what Paul and the community mean to each other.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Miletus",
+            "coords": "37.5333° N, 27.2667° E",
+            "text": "The setting of Paul's most personal address in Acts — his farewell to the leaders of his most significant church. By summoning the Ephesian elders to Miletus rather than going to Ephesus, Paul avoids the city's distractions while still maintaining pastoral responsibility for the community he is leaving."
+          },
+          {
+            "name": "Ephesus — The Church",
+            "coords": "37.9500° N, 27.3667° E",
+            "text": "The elders of the Ephesian church walk the 48 km to Miletus to receive Paul's farewell. The depth of relationship behind this journey — three years of daily ministry — is the context for the speech's emotional weight. The weeping at departure (v.37) is the measure of what Paul and the community mean to each other."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 57",

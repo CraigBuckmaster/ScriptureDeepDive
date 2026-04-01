@@ -9,7 +9,7 @@
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import BottomSheet, { BottomSheetFlatList } from '@gorhom/bottom-sheet';
-import { useBooks } from '../hooks/useBooks';
+import { useBooks, type BookWithProgress } from '../hooks/useBooks';
 import { SearchInput } from './SearchInput';
 import { base, useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 
@@ -105,9 +105,9 @@ export function QnavOverlay({
       {/* Book list */}
       <BottomSheetFlatList
         data={filteredBooks}
-        keyExtractor={(b) => b.id}
+        keyExtractor={(b: BookWithProgress) => b.id}
         contentContainerStyle={styles.listContent}
-        renderItem={({ item: book }) => (
+        renderItem={({ item: book }: { item: BookWithProgress }) => (
           <View>
             <TouchableOpacity
               onPress={() => setExpandedBook(expandedBook === book.id ? null : book.id)}

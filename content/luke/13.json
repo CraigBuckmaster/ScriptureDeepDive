@@ -117,9 +117,13 @@
             }
           ]
         },
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem</div><div class=\"poi-coords\">31.7767° N, 35.2345° E</div><div class=\"poi-text\">The destination of the entire Lukan journey narrative (9:51-19:28). Jerusalem is simultaneously the city of the prophets' martyrdom, the site of the Temple, and the place of Jesus's own passion. The lament of 13:34-35 names all of these dimensions — the city's grandeur and its tragedy converge in the address \"Jerusalem, Jerusalem.\"</div></div>"
-        },
+        "places": [
+          {
+            "name": "Jerusalem",
+            "coords": "31.7767° N, 35.2345° E",
+            "text": "The destination of the entire Lukan journey narrative (9:51-19:28). Jerusalem is simultaneously the city of the prophets' martyrdom, the site of the Temple, and the place of Jesus's own passion. The lament of 13:34-35 names all of these dimensions — the city's grandeur and its tragedy converge in the address \"Jerusalem, Jerusalem.\""
+          }
+        ],
         "hist": {
           "context": "Pilate's Massacre of Galileans\nThe incident of Galileans whose blood Pilate \"mixed with their sacrifices\" is not recorded elsewhere but is consistent with Pilate's documented brutality (Josephus, Ant. 18.3.2; 18.4.1). The victims may have been Zealots or pilgrims at the Temple. Jesus's refusal to interpret their deaths as divine punishment challenges the common theological assumption that catastrophe signals divine displeasure.\n\nThe Tower of Siloam\nThe collapse of a tower in the Siloam district (south of the Temple, near the pool of Siloam) killing eighteen people is unknown from external sources. Both incidents — human atrocity and natural disaster — are treated identically: neither implies exceptional guilt in the victims, and both serve as occasions for the general call to repentance."
         }
@@ -234,9 +238,13 @@
             }
           ]
         },
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem</div><div class=\"poi-coords\">31.7767° N, 35.2345° E</div><div class=\"poi-text\">The destination of the entire Lukan journey narrative (9:51-19:28). Jerusalem is simultaneously the city of the prophets' martyrdom, the site of the Temple, and the place of Jesus's own passion. The lament of 13:34-35 names all of these dimensions — the city's grandeur and its tragedy converge in the address \"Jerusalem, Jerusalem.\"</div></div>"
-        },
+        "places": [
+          {
+            "name": "Jerusalem",
+            "coords": "31.7767° N, 35.2345° E",
+            "text": "The destination of the entire Lukan journey narrative (9:51-19:28). Jerusalem is simultaneously the city of the prophets' martyrdom, the site of the Temple, and the place of Jesus's own passion. The lament of 13:34-35 names all of these dimensions — the city's grandeur and its tragedy converge in the address \"Jerusalem, Jerusalem.\""
+          }
+        ],
         "hist": {
           "context": "The Journey to Jerusalem\nLuke periodically reminds the reader that Jesus is travelling toward Jerusalem (9:51; 13:22; 17:11; 18:31; 19:28). The journey is both geographical and theological — it is the via crucis, and every teaching along the way is coloured by its destination.\n\nThe Jerusalem Lament\nThe lament over Jerusalem (13:34-35) is one of the most emotionally charged passages in Luke. The maternal image — a hen gathering chicks — is remarkable for its vulnerability: Jesus does not describe his desire to protect Jerusalem through power but through sheltering tenderness. Jerusalem's desolation is not God's preference but the consequence of her refusal."
         }
@@ -351,9 +359,13 @@
             }
           ]
         },
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem</div><div class=\"poi-coords\">31.7767° N, 35.2345° E</div><div class=\"poi-text\">The destination of the entire Lukan journey narrative (9:51-19:28). Jerusalem is simultaneously the city of the prophets' martyrdom, the site of the Temple, and the place of Jesus's own passion. The lament of 13:34-35 names all of these dimensions — the city's grandeur and its tragedy converge in the address \"Jerusalem, Jerusalem.\"</div></div>"
-        },
+        "places": [
+          {
+            "name": "Jerusalem",
+            "coords": "31.7767° N, 35.2345° E",
+            "text": "The destination of the entire Lukan journey narrative (9:51-19:28). Jerusalem is simultaneously the city of the prophets' martyrdom, the site of the Temple, and the place of Jesus's own passion. The lament of 13:34-35 names all of these dimensions — the city's grandeur and its tragedy converge in the address \"Jerusalem, Jerusalem.\""
+          }
+        ],
         "hist": {
           "context": "Pilate's Massacre of Galileans\nThe incident of Galileans whose blood Pilate \"mixed with their sacrifices\" is not recorded elsewhere but is consistent with Pilate's documented brutality (Josephus, Ant. 18.3.2; 18.4.1). The victims may have been Zealots or pilgrims at the Temple. Jesus's refusal to interpret their deaths as divine punishment challenges the common theological assumption that catastrophe signals divine displeasure.\n\nThe Tower of Siloam\nThe collapse of a tower in the Siloam district (south of the Temple, near the pool of Siloam) killing eighteen people is unknown from external sources. Both incidents — human atrocity and natural disaster — are treated identically: neither implies exceptional guilt in the victims, and both serve as occasions for the general call to repentance."
         }

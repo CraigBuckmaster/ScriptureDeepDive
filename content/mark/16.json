@@ -25,9 +25,13 @@
             "paragraph": "He has risen — ēgerthē: the divine passive. God raised Jesus from the dead. The passive voice is the NT’s consistent grammar for the resurrection: not that Jesus raised himself but that the Father raised the Son (Acts 2:24; Rom 8:11). The resurrection is the Father’s vindication of the Son."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">The tomb</div><div class=\"poi-coords\">Near Golgotha; Joseph of Arimathea’s newly cut rock tomb</div><div class=\"poi-text\">The same tomb where the women watched the burial (15:47) is where they return at dawn. The tomb’s location near Golgotha and the specific large stone make confusion impossible: they are at the right place. The stone is rolled away; the linen lies there; the angel is seated where the body was.</div></div>"
-        },
+        "places": [
+          {
+            "name": "The tomb",
+            "coords": "Near Golgotha; Joseph of Arimathea’s newly cut rock tomb",
+            "text": "The same tomb where the women watched the burial (15:47) is where they return at dawn. The tomb’s location near Golgotha and the specific large stone make confusion impossible: they are at the right place. The stone is rolled away; the linen lies there; the angel is seated where the body was."
+          }
+        ],
         "tl": [
           {
             "date": "Sun — Palm Sunday",

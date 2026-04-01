@@ -25,9 +25,18 @@
             "paragraph": "He looked around at them in anger — meta orgēs. This is one of the few places where Mark describes an emotion in Jesus without softening it. Combined with “deeply distressed” (syllypoumenos), the passage reveals both the righteous anger of God at hardness of heart and the grief of a God who loves those who reject him."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Synagogue (location unspecified, likely Capernaum)</div><div class=\"poi-coords\">Galilean synagogue; the regular Sabbath venue</div><div class=\"poi-text\">The synagogue is the recurring stage for Sabbath controversy. Jesus’s choice to heal there on the Sabbath is deliberate and public — not hidden compassion but prophetic challenge to the synagogue authorities.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">The Sea of Galilee (withdrawal)</div><div class=\"poi-coords\">Northwest shore; Jesus’s boat as mobile pulpit</div><div class=\"poi-text\">Jesus withdraws from the synagogue to the sea — from institutional religion to open-air ministry. The boat becomes a platform and escape mechanism (3:9). The sea geography is both practical and symbolic: the kingdom cannot be contained by the synagogue.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Synagogue (location unspecified, likely Capernaum)",
+            "coords": "Galilean synagogue; the regular Sabbath venue",
+            "text": "The synagogue is the recurring stage for Sabbath controversy. Jesus’s choice to heal there on the Sabbath is deliberate and public — not hidden compassion but prophetic challenge to the synagogue authorities."
+          },
+          {
+            "name": "The Sea of Galilee (withdrawal)",
+            "coords": "Northwest shore; Jesus’s boat as mobile pulpit",
+            "text": "Jesus withdraws from the synagogue to the sea — from institutional religion to open-air ministry. The boat becomes a platform and escape mechanism (3:9). The sea geography is both practical and symbolic: the kingdom cannot be contained by the synagogue."
+          }
+        ],
         "cross": {
           "refs": [
             {
@@ -141,9 +150,13 @@
             "paragraph": "He appointed twelve that he might send them out — apostellō, the root of apostolos. The Twelve are defined by two purposes: to be with him (identity) and to be sent by him (mission). The order is deliberate: communion precedes commission. They are not sent because they are capable; they are sent because they are his."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Mountain (location unspecified, likely above the Sea of Galilee)</div><div class=\"poi-coords\">Elevated ground in Galilee; possibly the Horns of Hattin area</div><div class=\"poi-text\">The mountain appointment echoes Sinai — Moses received the law and appointed covenant representatives on the mountain. Jesus appoints the new Israel’s twelve representatives on the same kind of elevated covenant ground.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Mountain (location unspecified, likely above the Sea of Galilee)",
+            "coords": "Elevated ground in Galilee; possibly the Horns of Hattin area",
+            "text": "The mountain appointment echoes Sinai — Moses received the law and appointed covenant representatives on the mountain. Jesus appoints the new Israel’s twelve representatives on the same kind of elevated covenant ground."
+          }
+        ],
         "cross": {
           "refs": [
             {
@@ -257,9 +270,18 @@
             "paragraph": "He looked around at them in anger — meta orgēs. This is one of the few places where Mark describes an emotion in Jesus without softening it. Combined with “deeply distressed” (syllypoumenos), the passage reveals both the righteous anger of God at hardness of heart and the grief of a God who loves those who reject him."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Synagogue (location unspecified, likely Capernaum)</div><div class=\"poi-coords\">Galilean synagogue; the regular Sabbath venue</div><div class=\"poi-text\">The synagogue is the recurring stage for Sabbath controversy. Jesus’s choice to heal there on the Sabbath is deliberate and public — not hidden compassion but prophetic challenge to the synagogue authorities.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">The Sea of Galilee (withdrawal)</div><div class=\"poi-coords\">Northwest shore; Jesus’s boat as mobile pulpit</div><div class=\"poi-text\">Jesus withdraws from the synagogue to the sea — from institutional religion to open-air ministry. The boat becomes a platform and escape mechanism (3:9). The sea geography is both practical and symbolic: the kingdom cannot be contained by the synagogue.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Synagogue (location unspecified, likely Capernaum)",
+            "coords": "Galilean synagogue; the regular Sabbath venue",
+            "text": "The synagogue is the recurring stage for Sabbath controversy. Jesus’s choice to heal there on the Sabbath is deliberate and public — not hidden compassion but prophetic challenge to the synagogue authorities."
+          },
+          {
+            "name": "The Sea of Galilee (withdrawal)",
+            "coords": "Northwest shore; Jesus’s boat as mobile pulpit",
+            "text": "Jesus withdraws from the synagogue to the sea — from institutional religion to open-air ministry. The boat becomes a platform and escape mechanism (3:9). The sea geography is both practical and symbolic: the kingdom cannot be contained by the synagogue."
+          }
+        ],
         "cross": {
           "refs": [
             {

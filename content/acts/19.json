@@ -34,9 +34,18 @@
             "paragraph": "two imperfect verbs in v.20 — ēuxanen (was growing, like a plant) and eplēthyneto (was multiplying). The growth is organic and ongoing. Every attempt to stop the word ends with the word advancing further — Luke's theological refrain throughout Acts."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Ephesus</div><div class=\"poi-coords\">37.9500° N, 27.3667° E</div><div class=\"poi-text\">The largest city in Roman Asia Minor — a major port city and capital of the province of Asia. Home to the Temple of Artemis (one of the Seven Wonders of the ancient world), a centre of commerce, magic, and religious tourism. Paul's three-year ministry here is his longest recorded stay, and from it 'all the Jews and Greeks who lived in the province of Asia heard the word of the Lord.'</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Hall of Tyrannus</div><div class=\"poi-coords\">37.9500° N, 27.3667° E</div><div class=\"poi-text\">The lecture hall of Tyrannus — probably a philosopher or rhetoric teacher. Paul uses it for daily discussions for two years, likely during the midday hours when Tyrannus himself was not using it. The move from synagogue to hired lecture hall is Paul's standard pattern when synagogue doors close.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Ephesus",
+            "coords": "37.9500° N, 27.3667° E",
+            "text": "The largest city in Roman Asia Minor — a major port city and capital of the province of Asia. Home to the Temple of Artemis (one of the Seven Wonders of the ancient world), a centre of commerce, magic, and religious tourism. Paul's three-year ministry here is his longest recorded stay, and from it 'all the Jews and Greeks who lived in the province of Asia heard the word of the Lord.'"
+          },
+          {
+            "name": "Hall of Tyrannus",
+            "coords": "37.9500° N, 27.3667° E",
+            "text": "The lecture hall of Tyrannus — probably a philosopher or rhetoric teacher. Paul uses it for daily discussions for two years, likely during the midday hours when Tyrannus himself was not using it. The move from synagogue to hired lecture hall is Paul's standard pattern when synagogue doors close."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 53–56",
@@ -163,9 +172,18 @@
             "paragraph": "the grammateus (v.35) was the most important civic official in an Ephesian city — keeper of official records and liaison between the city and Rome. His intervention — legally precise, politically shrewd, theologically neutral — dismisses the assembly and protects Paul without endorsing him. Providential civic protection."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Theatre of Ephesus</div><div class=\"poi-coords\">37.9500° N, 27.3567° E</div><div class=\"poi-text\">The Ephesian theatre — one of the largest in the ancient world, seating c.25,000 — has been archaeologically confirmed. The mob rushes here instinctively (theatres were the standard assembly point for civic emergencies). Paul's desire to enter (v.30) would have been suicidal.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Temple of Artemis</div><div class=\"poi-coords\">37.9500° N, 27.3639° E</div><div class=\"poi-text\">One of the Seven Wonders of the ancient world — a centre of religious tourism, banking, and commerce. Demetrius's 'silver shrines' were among the commercial offerings available to pilgrims. The Gospel's direct attack on idolatry strikes at the economic foundation of the entire city.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Theatre of Ephesus",
+            "coords": "37.9500° N, 27.3567° E",
+            "text": "The Ephesian theatre — one of the largest in the ancient world, seating c.25,000 — has been archaeologically confirmed. The mob rushes here instinctively (theatres were the standard assembly point for civic emergencies). Paul's desire to enter (v.30) would have been suicidal."
+          },
+          {
+            "name": "Temple of Artemis",
+            "coords": "37.9500° N, 27.3639° E",
+            "text": "One of the Seven Wonders of the ancient world — a centre of religious tourism, banking, and commerce. Demetrius's 'silver shrines' were among the commercial offerings available to pilgrims. The Gospel's direct attack on idolatry strikes at the economic foundation of the entire city."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 55–56",

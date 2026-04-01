@@ -34,9 +34,13 @@
             "paragraph": "Unique in the NT (v.2). Zacchaeus was not merely a tax collector but the head of the local tax-collection bureau — a contractor who subcontracted collection to others, taking a percentage at each level. He was wealthy because others were paying his commission as well as Rome's demands. His wealth was built on a system of extraction."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jericho</div><div class=\"poi-coords\">31.8561° N, 35.4614° E</div><div class=\"poi-text\">Jesus enters Jericho proper for the Zacchaeus encounter after the blind beggar on the approach (18:35). Jericho was a major trading city and tax collection centre — an ideal location for a chief tax collector. The sycamore-fig tree Zacchaeus climbed would have been a common street tree in this warm Jordan Valley city.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Jericho",
+            "coords": "31.8561° N, 35.4614° E",
+            "text": "Jesus enters Jericho proper for the Zacchaeus encounter after the blind beggar on the approach (18:35). Jericho was a major trading city and tax collection centre — an ideal location for a chief tax collector. The sycamore-fig tree Zacchaeus climbed would have been a common street tree in this warm Jordan Valley city."
+          }
+        ],
         "cross": {
           "refs": [
             {
@@ -195,9 +199,23 @@
             "paragraph": "The conditional (v.42) — \"if you, even you, had only known\" — uses a second-person singular address to the city as a person. The knowing that Jerusalem failed is not intellectual information but the recognition of God's visitation (episkopēn, v.44), the moment of kairos — the time when salvation was on offer."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Mount of Olives</div><div class=\"poi-coords\">31.7781° N, 35.2437° E</div><div class=\"poi-text\">The ridge east of Jerusalem across the Kidron Valley, from which the city is dramatically visible. Zechariah 14:4 associated the Mount of Olives with the final divine intervention. Jesus's weeping over Jerusalem (19:41) was triggered by seeing the city from this vantage point.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Bethphage and Bethany</div><div class=\"poi-coords\">31.7764° N, 35.2590° E</div><div class=\"poi-text\">Two villages on the eastern slope of the Mount of Olives, approximately 2km from Jerusalem. Bethany was the home of Mary, Martha, and Lazarus (John 11). The colt was found in these villages; the entry procession began from here.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem Temple Mount</div><div class=\"poi-coords\">31.7781° N, 35.2354° E</div><div class=\"poi-text\">The Herodian Temple complex — massive, gleaming, and recently completed (begun 20 BC, still under construction in AD 70). Jesus's weeping anticipates its destruction; his cleansing claims it as his own. \"Every day he was teaching at the temple\" (v.47) makes the Temple Jesus's base of operations for the Jerusalem ministry.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Mount of Olives",
+            "coords": "31.7781° N, 35.2437° E",
+            "text": "The ridge east of Jerusalem across the Kidron Valley, from which the city is dramatically visible. Zechariah 14:4 associated the Mount of Olives with the final divine intervention. Jesus's weeping over Jerusalem (19:41) was triggered by seeing the city from this vantage point."
+          },
+          {
+            "name": "Bethphage and Bethany",
+            "coords": "31.7764° N, 35.2590° E",
+            "text": "Two villages on the eastern slope of the Mount of Olives, approximately 2km from Jerusalem. Bethany was the home of Mary, Martha, and Lazarus (John 11). The colt was found in these villages; the entry procession began from here."
+          },
+          {
+            "name": "Jerusalem Temple Mount",
+            "coords": "31.7781° N, 35.2354° E",
+            "text": "The Herodian Temple complex — massive, gleaming, and recently completed (begun 20 BC, still under construction in AD 70). Jesus's weeping anticipates its destruction; his cleansing claims it as his own. \"Every day he was teaching at the temple\" (v.47) makes the Temple Jesus's base of operations for the Jerusalem ministry."
+          }
+        ],
         "cross": {
           "refs": [
             {
@@ -356,9 +374,13 @@
             "paragraph": "Unique in the NT (v.2). Zacchaeus was not merely a tax collector but the head of the local tax-collection bureau — a contractor who subcontracted collection to others, taking a percentage at each level. He was wealthy because others were paying his commission as well as Rome's demands. His wealth was built on a system of extraction."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jericho</div><div class=\"poi-coords\">31.8561° N, 35.4614° E</div><div class=\"poi-text\">Jesus enters Jericho proper for the Zacchaeus encounter after the blind beggar on the approach (18:35). Jericho was a major trading city and tax collection centre — an ideal location for a chief tax collector. The sycamore-fig tree Zacchaeus climbed would have been a common street tree in this warm Jordan Valley city.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Jericho",
+            "coords": "31.8561° N, 35.4614° E",
+            "text": "Jesus enters Jericho proper for the Zacchaeus encounter after the blind beggar on the approach (18:35). Jericho was a major trading city and tax collection centre — an ideal location for a chief tax collector. The sycamore-fig tree Zacchaeus climbed would have been a common street tree in this warm Jordan Valley city."
+          }
+        ],
         "cross": {
           "refs": [
             {
@@ -517,9 +539,23 @@
             "paragraph": "The conditional (v.42) — \"if you, even you, had only known\" — uses a second-person singular address to the city as a person. The knowing that Jerusalem failed is not intellectual information but the recognition of God's visitation (episkopēn, v.44), the moment of kairos — the time when salvation was on offer."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Mount of Olives</div><div class=\"poi-coords\">31.7781° N, 35.2437° E</div><div class=\"poi-text\">The ridge east of Jerusalem across the Kidron Valley, from which the city is dramatically visible. Zechariah 14:4 associated the Mount of Olives with the final divine intervention. Jesus's weeping over Jerusalem (19:41) was triggered by seeing the city from this vantage point.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Bethphage and Bethany</div><div class=\"poi-coords\">31.7764° N, 35.2590° E</div><div class=\"poi-text\">Two villages on the eastern slope of the Mount of Olives, approximately 2km from Jerusalem. Bethany was the home of Mary, Martha, and Lazarus (John 11). The colt was found in these villages; the entry procession began from here.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem Temple Mount</div><div class=\"poi-coords\">31.7781° N, 35.2354° E</div><div class=\"poi-text\">The Herodian Temple complex — massive, gleaming, and recently completed (begun 20 BC, still under construction in AD 70). Jesus's weeping anticipates its destruction; his cleansing claims it as his own. \"Every day he was teaching at the temple\" (v.47) makes the Temple Jesus's base of operations for the Jerusalem ministry.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Mount of Olives",
+            "coords": "31.7781° N, 35.2437° E",
+            "text": "The ridge east of Jerusalem across the Kidron Valley, from which the city is dramatically visible. Zechariah 14:4 associated the Mount of Olives with the final divine intervention. Jesus's weeping over Jerusalem (19:41) was triggered by seeing the city from this vantage point."
+          },
+          {
+            "name": "Bethphage and Bethany",
+            "coords": "31.7764° N, 35.2590° E",
+            "text": "Two villages on the eastern slope of the Mount of Olives, approximately 2km from Jerusalem. Bethany was the home of Mary, Martha, and Lazarus (John 11). The colt was found in these villages; the entry procession began from here."
+          },
+          {
+            "name": "Jerusalem Temple Mount",
+            "coords": "31.7781° N, 35.2354° E",
+            "text": "The Herodian Temple complex — massive, gleaming, and recently completed (begun 20 BC, still under construction in AD 70). Jesus's weeping anticipates its destruction; his cleansing claims it as his own. \"Every day he was teaching at the temple\" (v.47) makes the Temple Jesus's base of operations for the Jerusalem ministry."
+          }
+        ],
         "cross": {
           "refs": [
             {

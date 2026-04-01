@@ -31,9 +31,18 @@
             "paragraph": "literally \"complete strength.\" The man's restoration is total — not partial mobility but full strength in feet and ankles that had never functioned. Luke's medical precision (as a physician) is evident throughout."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Gate Beautiful (Nicanor Gate)</div><div class=\"poi-coords\">31.7779° N, 35.2354° E</div><div class=\"poi-text\">The grand entrance between the Court of Women and the Court of Israel — reportedly made of Corinthian bronze requiring twenty men to open (Josephus, Jewish War 5.5.3). The most trafficked gate of the Temple complex, maximising the healing's witness value.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Solomon's Colonnade</div><div class=\"poi-coords\">31.7767° N, 35.2354° E</div><div class=\"poi-text\">The covered eastern portico where Peter delivers his second sermon. A recognised public meeting space used by Jesus himself (John 10:23) and the early church (5:12). The location combines shelter, visibility, and regular audience.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Gate Beautiful (Nicanor Gate)",
+            "coords": "31.7779° N, 35.2354° E",
+            "text": "The grand entrance between the Court of Women and the Court of Israel — reportedly made of Corinthian bronze requiring twenty men to open (Josephus, Jewish War 5.5.3). The most trafficked gate of the Temple complex, maximising the healing's witness value."
+          },
+          {
+            "name": "Solomon's Colonnade",
+            "coords": "31.7767° N, 35.2354° E",
+            "text": "The covered eastern portico where Peter delivers his second sermon. A recognised public meeting space used by Jesus himself (John 10:23) and the early church (5:12). The location combines shelter, visibility, and regular audience."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 30",
@@ -164,9 +173,18 @@
             "paragraph": "designated beforehand — the appointment was before history, not merely after the resurrection. Jesus was divinely designated for this role from eternity; the Ascension publicly declares what was always true."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Gate Beautiful (Nicanor Gate)</div><div class=\"poi-coords\">31.7779° N, 35.2354° E</div><div class=\"poi-text\">The grand entrance between the Court of Women and the Court of Israel — reportedly made of Corinthian bronze requiring twenty men to open (Josephus, Jewish War 5.5.3). The most trafficked gate of the Temple complex, maximising the healing's witness value.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Solomon's Colonnade</div><div class=\"poi-coords\">31.7767° N, 35.2354° E</div><div class=\"poi-text\">The covered eastern portico where Peter delivers his second sermon. A recognised public meeting space used by Jesus himself (John 10:23) and the early church (5:12). The location combines shelter, visibility, and regular audience.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Gate Beautiful (Nicanor Gate)",
+            "coords": "31.7779° N, 35.2354° E",
+            "text": "The grand entrance between the Court of Women and the Court of Israel — reportedly made of Corinthian bronze requiring twenty men to open (Josephus, Jewish War 5.5.3). The most trafficked gate of the Temple complex, maximising the healing's witness value."
+          },
+          {
+            "name": "Solomon's Colonnade",
+            "coords": "31.7767° N, 35.2354° E",
+            "text": "The covered eastern portico where Peter delivers his second sermon. A recognised public meeting space used by Jesus himself (John 10:23) and the early church (5:12). The location combines shelter, visibility, and regular audience."
+          }
+        ],
         "tl": [
           {
             "date": "c. 2100 BC",

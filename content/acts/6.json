@@ -31,9 +31,18 @@
             "paragraph": "used both for the daily food distribution (v1) and the apostles' ministry of the word (v4). Luke deliberately uses the same word for both, showing that both are genuine ministries. The distinction is one of calling, not dignity."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem Synagogues</div><div class=\"poi-coords\">31.7683° N, 35.2137° E</div><div class=\"poi-text\">The \"Synagogue of the Freedmen\" (v9) was one of hundreds in Jerusalem — this one drawing Diaspora Jews from Cyrene, Alexandria, Cilicia, and Asia who had returned to the holy city. Stephen would have worshipped here before his conversion, making the subsequent dispute both theological and personal.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">Before the Sanhedrin</div><div class=\"poi-coords\">31.7776° N, 35.2349° E</div><div class=\"poi-text\">The third apostolic hearing in Acts — but the first that will end not in flogging and release but in death. Luke marks the escalation with the unprecedented detail of Stephen's angelic face.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Jerusalem Synagogues",
+            "coords": "31.7683° N, 35.2137° E",
+            "text": "The \"Synagogue of the Freedmen\" (v9) was one of hundreds in Jerusalem — this one drawing Diaspora Jews from Cyrene, Alexandria, Cilicia, and Asia who had returned to the holy city. Stephen would have worshipped here before his conversion, making the subsequent dispute both theological and personal."
+          },
+          {
+            "name": "Before the Sanhedrin",
+            "coords": "31.7776° N, 35.2349° E",
+            "text": "The third apostolic hearing in Acts — but the first that will end not in flogging and release but in death. Luke marks the escalation with the unprecedented detail of Stephen's angelic face."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 32",
@@ -160,9 +169,18 @@
             "paragraph": "deliberately echoes Moses's shining face (Exod 34:29–35) and anticipates Stephen's vision of heaven open (7:55–56). His face reflects divine approval before he speaks a word — the heavenly court has already rendered its verdict."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Synagogue of the Freedmen</div><div class=\"poi-coords\">31.7683° N, 35.2137° E</div><div class=\"poi-text\">\"Freedmen\" (libertinoi — Latin loanword) were Jews or their descendants who had been enslaved and freed, probably from the Roman wars of 63 BC. Their synagogue drew Diaspora Jews who had returned to Jerusalem as a mark of piety — making them especially sensitive to perceived threats to Jewish identity.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">The Sanhedrin Hall</div><div class=\"poi-coords\">31.7776° N, 35.2349° E</div><div class=\"poi-text\">The Sanhedrin's Hall of Hewn Stone on the Temple Mount. For the fourth time in Acts the Sanhedrin is the venue for confrontation — but now the confrontation is capital: Stephen will not be released.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Synagogue of the Freedmen",
+            "coords": "31.7683° N, 35.2137° E",
+            "text": "\"Freedmen\" (libertinoi — Latin loanword) were Jews or their descendants who had been enslaved and freed, probably from the Roman wars of 63 BC. Their synagogue drew Diaspora Jews who had returned to Jerusalem as a mark of piety — making them especially sensitive to perceived threats to Jewish identity."
+          },
+          {
+            "name": "The Sanhedrin Hall",
+            "coords": "31.7776° N, 35.2349° E",
+            "text": "The Sanhedrin's Hall of Hewn Stone on the Temple Mount. For the fourth time in Acts the Sanhedrin is the venue for confrontation — but now the confrontation is capital: Stephen will not be released."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 33–34",

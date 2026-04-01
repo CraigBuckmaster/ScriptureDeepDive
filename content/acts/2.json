@@ -31,9 +31,18 @@
             "paragraph": "Luke emphasises the community's gathered unity as the vessel for the outpouring. Some manuscripts read homothymadon (\"with one accord\") — either way, corporate oneness precedes corporate blessing."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem — Upper City</div><div class=\"poi-coords\">31.7705° N, 35.2294° E</div><div class=\"poi-text\">The house (oikos, v2) was likely in the upper city residential district, possibly the same upper room of 1:13. The sound \"filled the whole house\" — a private dwelling, not the Temple, which had not yet opened for the day.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">The Nations of v9–11</div><div class=\"poi-coords\">0° N, 0° E</div><div class=\"poi-text\">The geographic sweep of the Diaspora crowd — from Parthia (east) to Rome (west) to Libya and Crete (south) — represents the inhabited world. Luke's list is the reverse of Babel: languages scattered at judgment, language barriers crossed at Pentecost.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Jerusalem — Upper City",
+            "coords": "31.7705° N, 35.2294° E",
+            "text": "The house (oikos, v2) was likely in the upper city residential district, possibly the same upper room of 1:13. The sound \"filled the whole house\" — a private dwelling, not the Temple, which had not yet opened for the day."
+          },
+          {
+            "name": "The Nations of v9–11",
+            "coords": "0° N, 0° E",
+            "text": "The geographic sweep of the Diaspora crowd — from Parthia (east) to Rome (west) to Libya and Crete (south) — represents the inhabited world. Luke's list is the reverse of Babel: languages scattered at judgment, language barriers crossed at Pentecost."
+          }
+        ],
         "tl": [
           {
             "date": "c. 1446 BC",
@@ -160,9 +169,18 @@
             "paragraph": "aorist imperative — urgent, decisive. Not emotional remorse alone but a fundamental reorientation of mind and life toward God. Peter's use echoes Jesus's own inaugural proclamation (Mark 1:15)."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Solomon's Colonnade</div><div class=\"poi-coords\">31.7767° N, 35.2354° E</div><div class=\"poi-text\">The covered eastern portico of the Temple Mount — the early church's regular public gathering place (2:46; 3:11; 5:12). A sheltered, visible space where teaching could reach the entire Jerusalem population.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">House to House</div><div class=\"poi-coords\">31.7705° N, 35.2294° E</div><div class=\"poi-text\">The breaking of bread \"home by home\" (kat' oikon, v46) indicates a network of household communities, not one central meeting place. The earliest church structure was the household — intimate community alongside public proclamation.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Solomon's Colonnade",
+            "coords": "31.7767° N, 35.2354° E",
+            "text": "The covered eastern portico of the Temple Mount — the early church's regular public gathering place (2:46; 3:11; 5:12). A sheltered, visible space where teaching could reach the entire Jerusalem population."
+          },
+          {
+            "name": "House to House",
+            "coords": "31.7705° N, 35.2294° E",
+            "text": "The breaking of bread \"home by home\" (kat' oikon, v46) indicates a network of household communities, not one central meeting place. The earliest church structure was the household — intimate community alongside public proclamation."
+          }
+        ],
         "tl": [
           {
             "date": "c. AD 30",
@@ -319,9 +337,18 @@
             "paragraph": "Luke emphasises the community's gathered unity as the vessel for the outpouring. Some manuscripts read homothymadon (\"with one accord\") — either way, corporate oneness precedes corporate blessing."
           }
         ],
-        "places": {
-          "_raw_html": "<h4>Places</h4><div class=\"poi-entry\"><div class=\"poi-name\">Jerusalem — Upper City</div><div class=\"poi-coords\">31.7705° N, 35.2294° E</div><div class=\"poi-text\">The house (oikos, v2) was likely in the upper city residential district, possibly the same upper room of 1:13. The sound \"filled the whole house\" — a private dwelling, not the Temple, which had not yet opened for the day.</div></div><div class=\"poi-entry\"><div class=\"poi-name\">The Nations of v9–11</div><div class=\"poi-coords\">0° N, 0° E</div><div class=\"poi-text\">The geographic sweep of the Diaspora crowd — from Parthia (east) to Rome (west) to Libya and Crete (south) — represents the inhabited world. Luke's list is the reverse of Babel: languages scattered at judgment, language barriers crossed at Pentecost.</div></div>"
-        },
+        "places": [
+          {
+            "name": "Jerusalem — Upper City",
+            "coords": "31.7705° N, 35.2294° E",
+            "text": "The house (oikos, v2) was likely in the upper city residential district, possibly the same upper room of 1:13. The sound \"filled the whole house\" — a private dwelling, not the Temple, which had not yet opened for the day."
+          },
+          {
+            "name": "The Nations of v9–11",
+            "coords": "0° N, 0° E",
+            "text": "The geographic sweep of the Diaspora crowd — from Parthia (east) to Rome (west) to Libya and Crete (south) — represents the inhabited world. Luke's list is the reverse of Babel: languages scattered at judgment, language barriers crossed at Pentecost."
+          }
+        ],
         "tl": [
           {
             "date": "c. 1446 BC",
