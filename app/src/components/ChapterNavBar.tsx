@@ -2,8 +2,8 @@
  * ChapterNavBar — Sticky top bar for the chapter reading screen.
  *
  * Layout:
- *   ←             ‹ Genesis 2 ›        NIV ▾  🔊 ⓘ
- *   (back)         (prev/qnav/next)   (trans/TTS/intro)
+ *   ← NIV ▾       ‹ Genesis 2 ›          🔊 ⓘ
+ *   (back/trans)    (prev/qnav/next)    (TTS/intro)
  */
 
 import React from 'react';
@@ -46,8 +46,8 @@ export function ChapterNavBar({
   return (
     <SafeAreaView edges={['top']} style={[styles.safeArea, { backgroundColor: base.bg }]}>
       <View style={[styles.bar, { borderBottomColor: base.border }]}>
-        {/* Left: Back button */}
-        <View style={styles.leftSection}>
+        {/* Left: Back + Translation */}
+        <View style={styles.sideSection}>
           {onBack ? (
             <TouchableOpacity
               onPress={onBack}
@@ -58,6 +58,11 @@ export function ChapterNavBar({
               <ArrowLeft size={20} color={base.gold} />
             </TouchableOpacity>
           ) : null}
+          <CompactDropdown
+            value={translation}
+            options={TRANSLATION_OPTIONS}
+            onSelect={onTranslationChange}
+          />
         </View>
 
         {/* Center: ‹ Genesis 2 › */}
@@ -93,13 +98,8 @@ export function ChapterNavBar({
           </TouchableOpacity>
         </View>
 
-        {/* Right: Translation + TTS + ⓘ */}
-        <View style={styles.rightActions}>
-          <CompactDropdown
-            value={translation}
-            options={TRANSLATION_OPTIONS}
-            onSelect={onTranslationChange}
-          />
+        {/* Right: TTS + ⓘ */}
+        <View style={[styles.sideSection, styles.sideSectionRight]}>
           {onTTSPress ? (
             <TouchableOpacity
               onPress={onTTSPress}
@@ -131,14 +131,18 @@ const styles = StyleSheet.create({
   bar: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
     paddingHorizontal: spacing.sm,
     height: 48,
     borderBottomWidth: 1,
   },
-  leftSection: {
-    minWidth: MIN_TOUCH_TARGET,
-    alignItems: 'flex-start',
+  sideSection: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: 90,
+    gap: 2,
+  },
+  sideSectionRight: {
+    justifyContent: 'flex-end',
   },
   chapterNav: {
     flexDirection: 'row',
@@ -161,12 +165,6 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.displayMedium,
     fontSize: 15,
     textAlign: 'center',
-  },
-  rightActions: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    gap: spacing.xs,
   },
   actionButton: {
     minWidth: MIN_TOUCH_TARGET,
