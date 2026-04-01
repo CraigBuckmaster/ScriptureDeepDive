@@ -31,7 +31,7 @@ jobs:
         continue-on-error: true
 
       - name: Run tests with coverage
-        run: npx jest --coverage --ci --reporters=default
+        run: npx jest --coverage --ci --verbose
 
       - name: Upload coverage report
         if: always()
