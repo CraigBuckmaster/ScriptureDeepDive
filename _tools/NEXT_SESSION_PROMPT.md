@@ -56,7 +56,8 @@ Prophecy chains (50 chains, 283 links, browse + detail screens) · Enhanced note
 | 19 | Highlight UX Polish (6 colors, collections, migration 5) | **Complete** |
 | 20 | Personalized Recommendations (heuristic engine) | **Complete** |
 | 21 | Concordance Search (Strong's number lookup) | **Complete** |
-| 22-23 | See `_tools/DEEP_STUDY_FEATURES_PLAN.md` | Planned |
+| 22 | Discourse Expansion (Gal, Eph, Heb, 1Cor — 41 chapters) | **Complete** |
+| 23 | Curated Reading Plans (10 plans seeded via migration 6) | **Complete** |
 
 ### Content Remediation
 
