@@ -15,7 +15,7 @@ import { SearchInput } from '../components/SearchInput';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { DiffAnnotationList } from '../components/DiffAnnotation';
 import type { DiffAnnotationData } from '../components/DiffAnnotation';
-import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { base, useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { SynopticEntry } from '../types';
 import { logger } from '../utils/logger';
 

@@ -6,7 +6,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { DepthDots } from './DepthDots';
-import { useTheme, spacing, fontFamily } from '../theme';
+import { base, useTheme, spacing, fontFamily } from '../theme';
 
 interface Props {
   header: string;

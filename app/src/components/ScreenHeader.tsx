@@ -13,7 +13,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, type ViewStyle } from 'react-native';
 import { ArrowLeft } from 'lucide-react-native';
-import { useTheme, spacing, MIN_TOUCH_TARGET, fontFamily } from '../theme';
+import { base, useTheme, spacing, MIN_TOUCH_TARGET, fontFamily } from '../theme';
 
 interface Props {
   title: string;

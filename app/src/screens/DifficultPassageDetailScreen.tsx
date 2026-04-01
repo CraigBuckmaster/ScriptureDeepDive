@@ -37,7 +37,7 @@ import {
   DifficultPassageCategory,
   DifficultPassageResponse,
 } from '../hooks/useDifficultPassages';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { base, useTheme, spacing, radii, fontFamily } from '../theme';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { ExploreStackParamList } from '../navigation/types';
 

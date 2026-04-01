@@ -7,7 +7,7 @@ import { getPlans, getActivePlanId, getPlanProgress } from '../db/user';
 import { PlanProgressBar } from '../components/PlanProgressBar';
 import { BadgeChip } from '../components/BadgeChip';
 import { ScreenHeader } from '../components/ScreenHeader';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { base, useTheme, spacing, radii, fontFamily } from '../theme';
 import type { ReadingPlan, PlanProgress } from '../db/user';
 
 export default function PlanListScreen() {

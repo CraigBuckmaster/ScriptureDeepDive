@@ -15,7 +15,7 @@ import { getBook } from '../db/content';
 import { getProgressForBook } from '../db/user';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { ArrowRight } from 'lucide-react-native';
-import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { base, useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { Book } from '../types';
 
 export default function ChapterListScreen() {

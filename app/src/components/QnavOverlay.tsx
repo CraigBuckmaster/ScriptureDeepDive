@@ -13,7 +13,7 @@ import { useBooks } from '../hooks/useBooks';
 import { useSettingsStore } from '../stores';
 import { SearchInput } from './SearchInput';
 import { selectionFeedback } from '../utils/haptics';
-import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { base, useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 
 interface Props {
   visible: boolean;

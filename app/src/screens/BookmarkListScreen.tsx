@@ -10,7 +10,7 @@ import type { ScreenNavProp } from '../navigation/types';
 import { getBookmarks, removeBookmark } from '../db/user';
 import { parseVerseRef, displayRef } from '../utils/verseRef';
 import { ScreenHeader } from '../components/ScreenHeader';
-import { useTheme, spacing, fontFamily } from '../theme';
+import { base, useTheme, spacing, fontFamily } from '../theme';
 import type { Bookmark } from '../types';
 
 export default function BookmarkListScreen() {

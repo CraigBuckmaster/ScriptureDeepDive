@@ -34,7 +34,7 @@ import {
   createCollection,
 } from '../db/user';
 import { parseVerseRef, displayRef } from '../utils/verseRef';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { base, useTheme, spacing, radii, fontFamily } from '../theme';
 import type { UserNote, StudyCollection } from '../types';
 
 type TabKey = 'collections' | 'tags' | 'all';

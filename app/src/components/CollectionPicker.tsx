@@ -17,7 +17,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { X, Plus, Check, Folder } from 'lucide-react-native';
 import { getCollections, createCollection } from '../db/user';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { base, useTheme, spacing, radii, fontFamily } from '../theme';
 import type { StudyCollection } from '../types';
 
 const PRESET_COLORS = [

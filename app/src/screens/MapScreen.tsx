@@ -33,7 +33,7 @@ import { StoryPanel } from '../components/map/StoryPanel';
 import { FloatingControls } from '../components/map/FloatingControls';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 
-import { useTheme, spacing } from '../theme';
+import { base, useTheme, spacing } from '../theme';
 import type { MapStory, Place } from '../types';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { logger } from '../utils/logger';

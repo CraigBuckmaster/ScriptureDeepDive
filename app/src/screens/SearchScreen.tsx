@@ -17,7 +17,7 @@ import { Search as SearchIcon } from 'lucide-react-native';
 import { useSearch } from '../hooks/useSearch';
 import { SearchInput } from '../components/SearchInput';
 import { SearchFilterChips, type SearchFilter } from '../components/SearchFilterChips';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { base, useTheme, spacing, radii, fontFamily } from '../theme';
 import type { Person, WordStudy, Verse } from '../types';
 
 const INITIAL_VERSE_LIMIT = 20;

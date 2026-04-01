@@ -6,7 +6,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Flame } from 'lucide-react-native';
-import { useTheme, spacing, fontFamily } from '../theme';
+import { base, useTheme, spacing, fontFamily } from '../theme';
 
 interface Props {
   streak: number;

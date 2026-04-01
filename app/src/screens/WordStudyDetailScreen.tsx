@@ -12,7 +12,7 @@ import { getWordStudy } from '../db/content';
 import { BadgeChip } from '../components/BadgeChip';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { useTheme, spacing, fontFamily } from '../theme';
+import { base, useTheme, spacing, fontFamily } from '../theme';
 import type { WordStudy } from '../types';
 import { logger } from '../utils/logger';
 
