@@ -447,7 +447,34 @@
         "type": "Echo",
         "text": "Paul's confident thanksgiving for the Philippians echoes this passage: 'he who began a good work in you will bring it to completion.'"
       }
-    ]
+    ],
+    "discourse": {
+      "title": "1 Thessalonians 3 — Timothy's Mission and Report",
+      "thesis": "Unable to bear separation, Paul sent Timothy to strengthen the Thessalonians; Timothy's positive report now brings profound relief and joy.",
+      "nodes": [
+        {
+          "label": "Timothy sent (3:1-5)",
+          "text": "When Paul could bear it no longer, he sent Timothy from Athens to establish and exhort them, lest the tempter had tempted them and Paul's labor proved in vain.",
+          "type": "evidence"
+        },
+        {
+          "label": "Good news (3:6-8)",
+          "text": "Timothy returned with good news of their faith and love, and their affectionate longing for Paul. This news brought life: 'Now we live, if you are standing firm in the Lord.'",
+          "type": "evidence"
+        },
+        {
+          "label": "Thanksgiving overflow (3:9-10)",
+          "text": "What thanksgiving can return to God for all the joy Paul feels? Night and day he prays earnestly to see them and supply what is lacking in their faith.",
+          "type": "conclusion"
+        },
+        {
+          "label": "Prayer-wish (3:11-13)",
+          "text": "May God the Father and the Lord Jesus direct Paul's way to them. May the Lord make them increase in love for one another and for all, establishing hearts blameless at Christ's coming.",
+          "type": "transition"
+        }
+      ],
+      "note": "The chapter transitions from narrative (Timothy's mission) to prayer, setting up the ethical instruction of chapters 4-5."
+    }
   },
   "vhl_groups": []
 }

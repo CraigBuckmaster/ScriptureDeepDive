@@ -592,7 +592,34 @@
         "type": "Connection",
         "text": "Jude's benediction similarly celebrates God's power 'to keep you from stumbling and to present you before his glorious presence without fault.'"
       }
-    ]
+    ],
+    "discourse": {
+      "title": "1 Thessalonians 5 — The Day of the Lord and Final Exhortations",
+      "thesis": "The Day of the Lord will come suddenly, but believers are children of light prepared for it. Paul closes with rapid-fire exhortations.",
+      "nodes": [
+        {
+          "label": "Times and seasons (5:1-3)",
+          "text": "About times and seasons, they need nothing written. They know well that the Day of the Lord comes like a thief in the night. When they say 'peace and safety,' sudden destruction comes.",
+          "type": "thesis"
+        },
+        {
+          "label": "Children of light (5:4-11)",
+          "text": "But you are not in darkness for that day to surprise you like a thief. You are children of light. Be sober, putting on faith and love as breastplate, hope of salvation as helmet. God destined us not for wrath but for salvation through Christ — whether awake or asleep, we live with him.",
+          "type": "evidence"
+        },
+        {
+          "label": "Community exhortations (5:12-22)",
+          "text": "Respect leaders, live in peace, admonish the idle, encourage the fainthearted, help the weak, be patient. Rejoice always, pray constantly, give thanks. Do not quench the Spirit or despise prophecy. Test everything, hold fast to good, abstain from evil.",
+          "type": "conclusion"
+        },
+        {
+          "label": "Closing prayer (5:23-28)",
+          "text": "May the God of peace sanctify you completely — spirit, soul, and body — kept blameless at Christ's coming. He who calls is faithful; he will do it. Greet all with a holy kiss. Read this letter to all. Grace be with you.",
+          "type": "transition"
+        }
+      ],
+      "note": "The rapid-fire exhortations (5:16-22) are among the most quoted ethical summaries in Paul."
+    }
   },
   "vhl_groups": []
 }

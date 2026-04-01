@@ -441,7 +441,34 @@
         "type": "Connection",
         "text": "Paul uses similar light-in-darkness imagery for the Philippians, who also received the gospel 'in the midst of a crooked and twisted generation.'"
       }
-    ]
+    ],
+    "discourse": {
+      "title": "1 Thessalonians 1 — Thanksgiving for the Thessalonians' Faith",
+      "thesis": "The Thessalonians' conversion is exemplary: they received the gospel with joy despite suffering and became a model for believers throughout the region.",
+      "nodes": [
+        {
+          "label": "Address (1:1)",
+          "text": "Paul, Silvanus, and Timothy greet the church, invoking grace and peace from God the Father and the Lord Jesus Christ.",
+          "type": "transition"
+        },
+        {
+          "label": "Thanksgiving (1:2-4)",
+          "text": "Paul thanks God constantly, remembering their work of faith, labor of love, and steadfastness of hope — the triad that defines Christian existence.",
+          "type": "thesis"
+        },
+        {
+          "label": "Gospel reception (1:5-6)",
+          "text": "The gospel came not in word only but in power, the Holy Spirit, and full conviction. They received it with joy despite affliction, imitating Paul and the Lord.",
+          "type": "evidence"
+        },
+        {
+          "label": "Model status (1:7-10)",
+          "text": "They became an example to all believers in Macedonia and Achaia. Their faith sounded forth everywhere — they turned from idols to serve the living God and await his Son from heaven.",
+          "type": "conclusion"
+        }
+      ],
+      "note": "The thanksgiving section is unusually long (most of chapter 1), setting the affectionate tone for Paul's most personal letter."
+    }
   },
   "vhl_groups": []
 }

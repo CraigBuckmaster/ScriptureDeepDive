@@ -638,7 +638,34 @@
         "type": "Connection",
         "text": "Jesus's declaration to Martha: 'I am the resurrection and the life. The one who believes in me will live, even though they die.'"
       }
-    ]
+    ],
+    "discourse": {
+      "title": "1 Thessalonians 4 — Sanctification and the Parousia",
+      "thesis": "Paul instructs on sexual purity and brotherly love, then addresses anxiety about believers who have died before Christ's return.",
+      "nodes": [
+        {
+          "label": "Exhortation frame (4:1-2)",
+          "text": "Paul urges and exhorts in the Lord Jesus: they received instruction on how to walk and please God — now excel still more.",
+          "type": "transition"
+        },
+        {
+          "label": "Sexual purity (4:3-8)",
+          "text": "God's will is sanctification: abstain from sexual immorality, control your own body in holiness, do not transgress against a brother. God called us to holiness, not impurity.",
+          "type": "thesis"
+        },
+        {
+          "label": "Brotherly love (4:9-12)",
+          "text": "Concerning love of the brothers, they need no instruction — God himself taught them. But excel still more: aspire to live quietly, work with your hands, be dependent on no one.",
+          "type": "evidence"
+        },
+        {
+          "label": "The dead in Christ (4:13-18)",
+          "text": "Do not grieve like those without hope. Since Jesus died and rose, so God will bring with him those who have fallen asleep. At the Lord's descent, the dead in Christ will rise first; then the living will be caught up together with them. Comfort one another with these words.",
+          "type": "conclusion"
+        }
+      ],
+      "note": "The 'dead in Christ' passage (4:13-18) is the earliest written Parousia teaching in the NT, responding to pastoral crisis."
+    }
   },
   "vhl_groups": []
 }

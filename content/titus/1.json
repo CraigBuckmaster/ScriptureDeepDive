@@ -490,7 +490,34 @@
         "type": "Echo",
         "text": "The parallel description of the Ephesian false teachers—devoted to myths, genealogies, and law-teaching—confirms similar false teaching across multiple Pauline churches."
       }
-    ]
+    ],
+    "discourse": {
+      "title": "Titus 1 — Elder Qualifications and Rebuking False Teachers",
+      "thesis": "Elders must be blameless in character and doctrine. Crete's false teachers must be silenced because they are ruining households.",
+      "nodes": [
+        {
+          "label": "Salutation (1:1-4)",
+          "text": "Paul, a servant of God and apostle of Jesus Christ, for the faith of God's elect and knowledge of the truth that accords with godliness, in hope of eternal life promised by the God who does not lie — to Titus, my true child in a common faith: grace and peace.",
+          "type": "transition"
+        },
+        {
+          "label": "Appointment purpose (1:5)",
+          "text": "I left you in Crete to put in order what remained and appoint elders in every town as I directed.",
+          "type": "thesis"
+        },
+        {
+          "label": "Elder qualifications (1:6-9)",
+          "text": "An elder must be above reproach: husband of one wife, with believing children not open to the charge of debauchery. As God's steward: not arrogant, quick-tempered, drunkard, violent, or greedy. Rather hospitable, lover of good, self-controlled, upright, holy, disciplined. He must hold firm to the trustworthy word so that he can give instruction in sound doctrine and rebuke those who contradict it.",
+          "type": "evidence"
+        },
+        {
+          "label": "False teachers described (1:10-16)",
+          "text": "There are many insubordinate, empty talkers and deceivers, especially the circumcision party. They must be silenced — they are upsetting whole families for shameful gain. One of their own prophets said, 'Cretans are always liars, evil beasts, lazy gluttons' — this testimony is true! Rebuke them sharply that they may be sound in faith. They profess to know God but deny him by their works — detestable, disobedient, unfit for any good work.",
+          "type": "conclusion"
+        }
+      ],
+      "note": "The Cretan prophet Paul quotes is Epimenides. Paul uses the pagan testimony rhetorically to underscore the urgency of pastoral intervention."
+    }
   },
   "vhl_groups": []
 }
