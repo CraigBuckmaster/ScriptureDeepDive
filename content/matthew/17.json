@@ -509,14 +509,55 @@
       ],
       "note": ""
     },
-    "tx": [
-      {
-        "ref": "17:21",
-        "title": "This kind only comes out by prayer (and fasting)",
-        "content": "Many manuscripts omit v.21. The shorter text (omitting v.21) is supported by the best manuscripts (Sinaiticus, Vaticanus). The verse appears to have been added from Mark 9:29.",
-        "note": "Even if v.21 is secondary, the principle it articulates is consistent with Jesus's teaching on prayer throughout Matthew."
-      }
-    ],
+    "tx": {
+      "notes": [
+        {
+          "ref": "17:21",
+          "title": "This kind only comes out by prayer (and fasting)",
+          "content": "Many manuscripts omit v.21. The shorter text (omitting v.21) is supported by the best manuscripts (Sinaiticus, Vaticanus). The verse appears to have been added from Mark 9:29.",
+          "note": "Even if v.21 is secondary, the principle it articulates is consistent with Jesus's teaching on prayer throughout Matthew."
+        }
+      ],
+      "stories": [
+        {
+          "title": "The Verse That Disappeared: Prayer and Fasting",
+          "passage": "Matthew 17:21",
+          "summary": "The verse 'But this kind does not go out except by prayer and fasting' is absent from the earliest and best manuscripts of Matthew. It appears to have been imported from Mark 9:29, where it has better attestation.",
+          "evidence": [
+            {
+              "manuscript": "Codex Sinaiticus (ℵ, 4th c.)",
+              "reading": "Omits verse 21 entirely"
+            },
+            {
+              "manuscript": "Codex Vaticanus (B, 4th c.)",
+              "reading": "Omits verse 21"
+            },
+            {
+              "manuscript": "Theta (Θ, 9th c.)",
+              "reading": "Omits verse 21"
+            },
+            {
+              "manuscript": "Minuscule 33 (9th c.)",
+              "reading": "Omits verse 21"
+            },
+            {
+              "manuscript": "Some Old Latin, Sahidic Coptic",
+              "reading": "Omit verse 21"
+            },
+            {
+              "manuscript": "Majority of Byzantine manuscripts",
+              "reading": "Include verse 21"
+            },
+            {
+              "manuscript": "KJV and older translations",
+              "reading": "Include verse 21"
+            }
+          ],
+          "consensus": "The verse is almost certainly not original to Matthew. Scribes harmonized Matthew with Mark 9:29, adding the explanation for why the disciples failed to cast out the demon. Modern translations either omit it or relegate it to a footnote.",
+          "significance": "This variant illustrates scribal tendency toward harmonization — making parallel Gospel accounts match. The KJV's verse 21 led generations to believe Matthew included teaching on fasting that was actually imported from Mark."
+        }
+      ]
+    },
     "debate": [
       {
         "title": "What Caused the Disciples' Failure? (17:19-21)",

@@ -538,6 +538,47 @@
         }
       ],
       "note": "The Adam-Christ typology (5:12-21) is Paul's most developed statement on original sin and corporate solidarity. The five 'much more' (πολλῷ μᾶλλον) arguments amplify the superiority of grace over sin."
+    },
+    "tx": {
+      "stories": [
+        {
+          "title": "Peace with God: Fact or Exhortation?",
+          "passage": "Romans 5:1",
+          "summary": "A single Greek letter changes the meaning entirely. With omicron (ἔχομεν, echomen), the verb is indicative: 'we have peace with God.' With omega (ἔχωμεν, echōmen), it is subjunctive: 'let us have peace with God.' The former states a fact about justification; the latter urges the reader to appropriate that peace.",
+          "evidence": [
+            {
+              "manuscript": "Codex Sinaiticus (ℵ, 4th c.)",
+              "reading": "Subjunctive (echōmen) — 'let us have'"
+            },
+            {
+              "manuscript": "Codex Vaticanus (B, 4th c.)",
+              "reading": "Subjunctive (echōmen)"
+            },
+            {
+              "manuscript": "Codex Alexandrinus (A, 5th c.)",
+              "reading": "Subjunctive (echōmen)"
+            },
+            {
+              "manuscript": "Codex Claromontanus (D, 6th c.)",
+              "reading": "Subjunctive (echōmen)"
+            },
+            {
+              "manuscript": "P46 (c. 200)",
+              "reading": "Subjunctive (echōmen) — our earliest witness"
+            },
+            {
+              "manuscript": "Vulgate, Peshitta",
+              "reading": "Indicative sense in translation"
+            },
+            {
+              "manuscript": "Church Fathers (Origen, Chrysostom)",
+              "reading": "Generally support indicative sense"
+            }
+          ],
+          "consensus": "External evidence overwhelmingly favors the subjunctive, but transcriptional and contextual arguments favor the indicative. In rapid dictation, omicron and omega sounded identical. Paul's argument in Romans 5 states consequences of justification (facts), not exhortations. Most scholars accept the indicative as original despite the manuscript evidence.",
+          "significance": "This is one of the most famous cases where internal evidence overrides external. The indicative fits Paul's flow: since we are justified, we have peace. The subjunctive would be an odd exhortation in a passage stating the results of justification."
+        }
+      ]
     }
   },
   "vhl_groups": []

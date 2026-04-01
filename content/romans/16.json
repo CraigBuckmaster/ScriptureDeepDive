@@ -491,6 +491,47 @@
         }
       ],
       "note": "Romans 16 is the most extensive list of greetings in Paul's letters, including 26 individuals. Phoebe likely carried the letter to Rome. The warning against divisive teachers (vv. 17-20) is unexpectedly sharp. The final doxology (vv. 25-27) echoes 1:5 ('obedience of faith') and 11:33-36, framing the entire letter."
+    },
+    "tx": {
+      "stories": [
+        {
+          "title": "The Wandering Doxology",
+          "passage": "Romans 16:25-27",
+          "summary": "The closing doxology of Romans appears in different positions across the manuscript tradition: after 14:23, after 15:33, after 16:23, in multiple positions, or entirely absent. No other NT doxology shows this instability.",
+          "evidence": [
+            {
+              "manuscript": "P46 (c. 200)",
+              "reading": "Doxology after 15:33"
+            },
+            {
+              "manuscript": "Codex Vaticanus (B, 4th c.)",
+              "reading": "Doxology after 16:23 only"
+            },
+            {
+              "manuscript": "Codex Sinaiticus (ℵ, 4th c.)",
+              "reading": "Doxology after 16:23 only"
+            },
+            {
+              "manuscript": "Codex Alexandrinus (A, 5th c.)",
+              "reading": "Doxology after 14:23 and after 16:23"
+            },
+            {
+              "manuscript": "Most Byzantine manuscripts",
+              "reading": "Doxology after 14:23 only"
+            },
+            {
+              "manuscript": "Codex Boernerianus (G, 9th c.)",
+              "reading": "Omits doxology entirely"
+            },
+            {
+              "manuscript": "Marcion (2nd c., per Origen)",
+              "reading": "Romans ended at 14:23 in his edition"
+            }
+          ],
+          "consensus": "The doxology is likely Pauline but its placement shifted as shortened versions of Romans circulated. Marcion's 14-chapter edition and liturgical use may explain the 14:23 position. The 16:23 placement fits the letter's epistolary conclusion best.",
+          "significance": "The wandering doxology provides a window into how Paul's letters were edited for different communities. Some churches used a shorter Romans (perhaps without chapters 15-16), and the doxology migrated to mark the end of whatever version they had."
+        }
+      ]
     }
   },
   "vhl_groups": []
