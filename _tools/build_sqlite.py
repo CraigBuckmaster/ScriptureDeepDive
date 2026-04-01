@@ -25,8 +25,20 @@ ROOT = Path(__file__).resolve().parent.parent
 META = ROOT / 'content' / 'meta'
 VERSES_DIR = ROOT / 'content' / 'verses'
 DB_PATH = ROOT / 'scripture.db'
+TRANSLATIONS_DIR = ROOT / 'app' / 'assets' / 'translations'
 APP_DB_TS = ROOT / 'app' / 'src' / 'db' / 'database.ts'
 VERSION_FILE = ROOT / '_tools' / 'db_version.json'
+
+# Translations bundled directly into scripture.db (shipped with the app binary).
+# All other translations in content/verses/ are built as separate downloadable
+# SQLite files in app/assets/translations/.
+# Translations exposed in the app. Only these appear in the manifest and UI.
+# Verse data for unlicensed translations stays in content/verses/ but is not
+# built into any DB or shown to users until added here.
+AVAILABLE_TRANSLATIONS = {'kjv', 'asv'}
+
+# Of those, which are baked into scripture.db (the rest are separate .db files).
+BUNDLED_TRANSLATIONS = {'kjv', 'asv'}
 
 # Read from db_version.json — the single source of truth for the DB version.
 # Auto-incremented on every build by bump_db_version(). Triggers a full DB
@@ -490,24 +502,80 @@ def populate_chapters(cur):
     return chapter_count, section_count, sec_panel_count, ch_panel_count, vhl_count
 
 
-def populate_verses(cur):
+def _insert_verses(cur, translation: str) -> int:
+    """Insert all verses for a single translation. Returns row count."""
+    trans_dir = VERSES_DIR / translation
     count = 0
-    translations = sorted(d.name for d in VERSES_DIR.iterdir() if d.is_dir())
-    for translation in translations:
+    for json_file in sorted(trans_dir.glob('*.json')):
+        book_id = json_file.stem
+        verses = _load_json(json_file)
+        for v in verses:
+            cur.execute(
+                'INSERT INTO verses (book_id, chapter_num, verse_num, translation, text) '
+                'VALUES (?, ?, ?, ?, ?)',
+                (book_id, v['ch'], v['v'], translation, v['text'])
+            )
+            count += 1
+    return count
+
+
+def populate_verses(cur):
+    """Insert only BUNDLED_TRANSLATIONS into the core scripture.db."""
+    count = 0
+    for translation in sorted(BUNDLED_TRANSLATIONS):
         trans_dir = VERSES_DIR / translation
         if not trans_dir.is_dir():
+            print(f"  WARNING: bundled translation '{translation}' not found", file=sys.stderr)
             continue
-        for json_file in sorted(trans_dir.glob('*.json')):
-            book_id = json_file.stem
-            verses = _load_json(json_file)
-            for v in verses:
-                cur.execute(
-                    'INSERT INTO verses (book_id, chapter_num, verse_num, translation, text) '
-                    'VALUES (?, ?, ?, ?, ?)',
-                    (book_id, v['ch'], v['v'], translation, v['text'])
-                )
-                count += 1
+        count += _insert_verses(cur, translation)
     return count
+
+
+def build_supplemental_translations() -> list[dict]:
+    """Build a separate .db file for each non-bundled translation.
+
+    Each file goes into app/assets/translations/{id}.db and contains:
+      - verses table (same schema as core)
+      - verses_fts (FTS5 index for search)
+
+    Returns a list of {id, file, size_bytes} for the manifest.
+    """
+    TRANSLATIONS_DIR.mkdir(parents=True, exist_ok=True)
+    supplemental = sorted(AVAILABLE_TRANSLATIONS - BUNDLED_TRANSLATIONS)
+    built = []
+
+    for trans_id in supplemental:
+        db_path = TRANSLATIONS_DIR / f'{trans_id}.db'
+        if db_path.exists():
+            db_path.unlink()
+
+        conn = sqlite3.connect(str(db_path))
+        cur = conn.cursor()
+        cur.execute('PRAGMA journal_mode=WAL')
+        cur.executescript("""
+            CREATE TABLE verses (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                book_id TEXT NOT NULL,
+                chapter_num INTEGER NOT NULL,
+                verse_num INTEGER NOT NULL,
+                translation TEXT NOT NULL,
+                text TEXT NOT NULL
+            );
+            CREATE INDEX idx_verses ON verses(book_id, chapter_num, verse_num, translation);
+            CREATE VIRTUAL TABLE verses_fts USING fts5(text, content=verses, content_rowid=id);
+        """)
+
+        count = _insert_verses(cur, trans_id)
+        cur.execute('INSERT INTO verses_fts(verses_fts) VALUES("rebuild")')
+        conn.commit()
+        conn.execute('VACUUM')
+        conn.close()
+
+        size = db_path.stat().st_size
+        built.append({'id': trans_id, 'file': f'{trans_id}.db', 'size_bytes': size})
+        print(f"  [OK] translation {trans_id}.db: {count} verses, {size / 1024 / 1024:.1f}MB")
+
+    return built
 
 
 def populate_interlinear(cur):
@@ -1128,6 +1196,27 @@ def main():
     size = DB_PATH.stat().st_size
     print(f"\n{'='*60}")
     print(f"scripture.db: {size // 1024 // 1024}MB ({size // 1024}KB)")
+    print(f"  (bundled translations: {', '.join(sorted(BUNDLED_TRANSLATIONS))})")
+
+    # Build supplemental translation DBs
+    print(f"\n--- Supplemental Translations ---")
+    supplemental = build_supplemental_translations()
+
+    # Write translations manifest (only AVAILABLE_TRANSLATIONS)
+    manifest = []
+    for t in sorted(AVAILABLE_TRANSLATIONS):
+        is_bundled = t in BUNDLED_TRANSLATIONS
+        entry = {'id': t, 'bundled': is_bundled}
+        if not is_bundled:
+            sup = next((s for s in supplemental if s['id'] == t), None)
+            if sup:
+                entry['file'] = sup['file']
+                entry['sizeBytes'] = sup['size_bytes']
+        manifest.append(entry)
+
+    manifest_path = ROOT / 'app' / 'src' / 'db' / 'translations.json'
+    manifest_path.write_text(json.dumps(manifest, indent=2), encoding='utf-8')
+    print(f"  [OK] translations.json: {len(manifest)} translations")
 
     # Verification queries
     conn = sqlite3.connect(str(DB_PATH))

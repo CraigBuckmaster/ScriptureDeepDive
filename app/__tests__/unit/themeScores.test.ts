@@ -33,7 +33,7 @@ function getAllChapterFiles(): { filePath: string; label: string }[] {
     const entryPath = path.join(CONTENT_DIR, entry);
     if (!fs.statSync(entryPath).isDirectory()) continue;
     // Skip non-book directories
-    if (['meta', 'verses', 'interlinear', 'esv', 'niv', 'kjv'].includes(entry)) continue;
+    if (['meta', 'verses', 'interlinear', 'esv', 'niv', 'kjv', 'asv'].includes(entry)) continue;
     for (const file of fs.readdirSync(entryPath)) {
       if (/^\d+\.json$/.test(file)) {
         files.push({

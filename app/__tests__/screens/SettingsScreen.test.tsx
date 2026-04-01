@@ -44,6 +44,6 @@ describe('SettingsScreen', () => {
 
   it('shows translation options', () => {
     const { getByText } = render(<SettingsScreen />);
-    expect(getByText('NIV')).toBeTruthy();
+    expect(getByText('KJV')).toBeTruthy();
   });
 });

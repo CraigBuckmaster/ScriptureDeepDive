@@ -22,12 +22,15 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
-import { Download } from 'lucide-react-native';
+import { Download, Trash2 } from 'lucide-react-native';
 import { useSettingsStore } from '../stores';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { CompactDropdown, type DropdownOption } from '../components/CompactDropdown';
 import { NotificationSettings } from '../components/NotificationSettings';
 import { ThemePicker } from '../components/ThemePicker';
+import { TRANSLATIONS, DOWNLOADABLE_TRANSLATIONS } from '../db/translationRegistry';
+import { isTranslationInstalled, downloadTranslation, deleteTranslation, getInstalledSize } from '../db/translationManager';
+import { useTranslationSwitch } from '../hooks/useTranslationSwitch';
 import { getContentStats, type ContentStats } from '../db/content';
 import { getUserDb } from '../db/userDatabase';
 import { exportStudyData, ExportError } from '../utils/exportData';
@@ -36,12 +39,10 @@ import { logger } from '../utils/logger';
 
 const APP_VERSION = require('../../app.json').expo.version ?? '1.0.0';
 
-const TRANSLATION_OPTIONS: DropdownOption[] = [
-  { key: 'niv', label: 'NIV' },
-  { key: 'esv', label: 'ESV' },
-  { key: 'kjv', label: 'KJV' },
-  { key: 'asv', label: 'ASV' },
-];
+const TRANSLATION_OPTIONS: DropdownOption[] = TRANSLATIONS.map((t) => ({
+  key: t.id,
+  label: t.label,
+}));
 
 /* ── About copy ─────────────────────────────────────────────────── */
 
@@ -60,7 +61,7 @@ export default function SettingsScreen() {
   const translation = useSettingsStore((s) => s.translation);
   const fontSize = useSettingsStore((s) => s.fontSize);
   const vhlEnabled = useSettingsStore((s) => s.vhlEnabled);
-  const setTranslation = useSettingsStore((s) => s.setTranslation);
+  const { switchTranslation } = useTranslationSwitch();
   const setFontSize = useSettingsStore((s) => s.setFontSize);
   const setVhlEnabled = useSettingsStore((s) => s.setVhlEnabled);
   const studyCoachEnabled = useSettingsStore((s) => s.studyCoachEnabled);
@@ -136,7 +137,7 @@ export default function SettingsScreen() {
           <CompactDropdown
             value={translation}
             options={TRANSLATION_OPTIONS}
-            onSelect={setTranslation}
+            onSelect={switchTranslation}
           />
         </Row>
 
@@ -192,6 +193,9 @@ export default function SettingsScreen() {
             thumbColor={studyCoachEnabled ? base.gold : base.textMuted}
           />
         </Row>
+
+        {/* ── TRANSLATIONS ─────────────────────────────────────── */}
+        <TranslationManager base={base} />
 
         {/* ── NOTIFICATIONS ────────────────────────────────────── */}
         <NotificationSettings />
@@ -318,6 +322,93 @@ function confirmClear(
 }
 
 /* ── Sub-components ─────────────────────────────────────────────── */
+
+function TranslationManager({ base }: { base: ReturnType<typeof useTheme>['base'] }) {
+  const [statuses, setStatuses] = useState<Record<string, { installed: boolean; size: number }>>({});
+  const [busy, setBusy] = useState<string | null>(null);
+
+  const refresh = async () => {
+    const result: Record<string, { installed: boolean; size: number }> = {};
+    for (const t of DOWNLOADABLE_TRANSLATIONS) {
+      const installed = await isTranslationInstalled(t.id);
+      const size = installed ? await getInstalledSize(t.id) : t.sizeBytes;
+      result[t.id] = { installed, size };
+    }
+    setStatuses(result);
+  };
+
+  useEffect(() => { refresh(); }, [busy]);
+
+  const handleDownload = async (id: string) => {
+    setBusy(id);
+    try {
+      await downloadTranslation(id);
+    } catch {
+      Alert.alert('Download Failed', 'Please try again.');
+    }
+    setBusy(null);
+  };
+
+  const handleDelete = (id: string, label: string) => {
+    Alert.alert(
+      `Remove ${label}?`,
+      'You can re-download it anytime.',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Remove', style: 'destructive',
+          onPress: async () => {
+            setBusy(id);
+            await deleteTranslation(id);
+            setBusy(null);
+          },
+        },
+      ],
+    );
+  };
+
+  if (DOWNLOADABLE_TRANSLATIONS.length === 0) return null;
+
+  return (
+    <View style={styles.section}>
+      <SectionLabel text="TRANSLATIONS" base={base} />
+      <Text style={[styles.translationHint, { color: base.textMuted }]}>
+        NIV and KJV are built in. Others can be downloaded on demand.
+      </Text>
+      {DOWNLOADABLE_TRANSLATIONS.map((t) => {
+        const status = statuses[t.id];
+        const isInstalled = status?.installed ?? false;
+        const isBusy = busy === t.id;
+        const sizeMB = ((status?.size ?? t.sizeBytes) / 1024 / 1024).toFixed(1);
+
+        return (
+          <View key={t.id} style={[styles.translationRow, { borderBottomColor: base.border + '40' }]}>
+            <View style={{ flex: 1 }}>
+              <Text style={[styles.rowLabel, { color: base.text }]}>{t.label}</Text>
+              <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: fontFamily.ui }}>
+                {t.fullName}{isInstalled ? ` · ${sizeMB} MB` : ''}
+              </Text>
+            </View>
+            {isBusy ? (
+              <ActivityIndicator size="small" color={base.gold} />
+            ) : isInstalled ? (
+              <TouchableOpacity onPress={() => handleDelete(t.id, t.label)} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
+                <Trash2 size={16} color={base.textMuted} />
+              </TouchableOpacity>
+            ) : (
+              <TouchableOpacity onPress={() => handleDownload(t.id)} style={styles.downloadButton}>
+                <Download size={14} color={base.gold} />
+                <Text style={{ color: base.gold, fontSize: 12, fontFamily: fontFamily.uiSemiBold, marginLeft: 4 }}>
+                  {Number(sizeMB) > 0 ? `${sizeMB} MB` : 'Install'}
+                </Text>
+              </TouchableOpacity>
+            )}
+          </View>
+        );
+      })}
+    </View>
+  );
+}
 
 function SectionLabel({ text, base }: { text: string; base: ReturnType<typeof useTheme>['base'] }) {
   return <Text style={[styles.sectionLabel, { color: base.textMuted }]}>{text}</Text>;
@@ -454,5 +545,23 @@ const styles = StyleSheet.create({
     color: '#e05a6a',
     fontFamily: fontFamily.uiMedium,
     fontSize: 14,
+  },
+
+  /* Translation manager */
+  translationHint: {
+    fontFamily: fontFamily.ui,
+    fontSize: 11,
+    marginBottom: spacing.sm,
+  },
+  translationRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: spacing.md,
+    borderBottomWidth: 1,
+  },
+  downloadButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });

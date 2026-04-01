@@ -150,7 +150,7 @@ export function parseReference(refString: string): ParsedRef | null {
  */
 export async function resolveVerseText(
   ref: ParsedRef,
-  translation: string = 'niv'
+  translation: string = 'kjv'
 ): Promise<string[]> {
   const verses = await getVerses(ref.bookId, ref.chapter, translation);
   if (!ref.verseStart) return verses.map((v) => v.text);

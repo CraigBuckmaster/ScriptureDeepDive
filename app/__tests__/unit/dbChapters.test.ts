@@ -124,9 +124,9 @@ describe('getChapterPanelByType', () => {
 });
 
 describe('getVerses', () => {
-  it('returns verses with default translation niv', async () => {
+  it('returns verses with default translation kjv', async () => {
     const verses = [
-      { id: 'v1', book_id: 'gen', chapter_num: 1, verse_num: 1, translation: 'niv', text: 'In the beginning...' },
+      { id: 'v1', book_id: 'gen', chapter_num: 1, verse_num: 1, translation: 'kjv', text: 'In the beginning...' },
     ];
     getMockDb().getAllAsync.mockResolvedValue(verses);
 
@@ -134,31 +134,31 @@ describe('getVerses', () => {
     expect(result).toEqual(verses);
     expect(getMockDb().getAllAsync).toHaveBeenCalledWith(
       expect.stringContaining('translation'),
-      ['gen', 1, 'niv'],
+      ['gen', 1, 'kjv'],
     );
   });
 
   it('accepts a custom translation parameter', async () => {
     getMockDb().getAllAsync.mockResolvedValue([]);
 
-    await getVerses('gen', 1, 'esv');
+    await getVerses('gen', 1, 'asv');
     expect(getMockDb().getAllAsync).toHaveBeenCalledWith(
       expect.any(String),
-      ['gen', 1, 'esv'],
+      ['gen', 1, 'asv'],
     );
   });
 });
 
 describe('getVerse', () => {
   it('returns a single verse', async () => {
-    const verse = { id: 'v42', book_id: 'gen', chapter_num: 1, verse_num: 1, translation: 'niv', text: 'In the beginning...' };
+    const verse = { id: 'v42', book_id: 'gen', chapter_num: 1, verse_num: 1, translation: 'kjv', text: 'In the beginning...' };
     getMockDb().getFirstAsync.mockResolvedValue(verse);
 
     const result = await getVerse('gen', 1, 1);
     expect(result).toEqual(verse);
     expect(getMockDb().getFirstAsync).toHaveBeenCalledWith(
       expect.stringContaining('verse_num'),
-      ['gen', 1, 1, 'niv'],
+      ['gen', 1, 1, 'kjv'],
     );
   });
 });

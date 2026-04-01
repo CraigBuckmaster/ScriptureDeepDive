@@ -13,13 +13,12 @@ import { ArrowLeft, ChevronLeft, ChevronRight, Info, Volume2 } from 'lucide-reac
 import { CompactDropdown, type DropdownOption } from './CompactDropdown';
 import { lightImpact } from '../utils/haptics';
 import { base, useTheme, spacing, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { TRANSLATIONS } from '../db/translationRegistry';
 
-const TRANSLATION_OPTIONS: DropdownOption[] = [
-  { key: 'niv', label: 'NIV' },
-  { key: 'esv', label: 'ESV' },
-  { key: 'kjv', label: 'KJV' },
-  { key: 'asv', label: 'ASV' },
-];
+const TRANSLATION_OPTIONS: DropdownOption[] = TRANSLATIONS.map((t) => ({
+  key: t.id,
+  label: t.label,
+}));
 
 interface Props {
   bookName: string;

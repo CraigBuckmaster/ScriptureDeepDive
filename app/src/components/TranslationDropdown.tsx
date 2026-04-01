@@ -1,19 +1,19 @@
 /**
  * TranslationDropdown — Compact translation picker for the chapter nav bar.
  *
- * Thin wrapper around CompactDropdown. Adding a new translation is a
- * one-line addition to TRANSLATION_OPTIONS.
+ * Thin wrapper around CompactDropdown. Translation list is driven by the
+ * central registry — adding a new translation only requires updating the
+ * build pipeline and translationRegistry.ts.
  */
 
 import React from 'react';
 import { CompactDropdown, type DropdownOption } from './CompactDropdown';
+import { TRANSLATIONS } from '../db/translationRegistry';
 
-const TRANSLATION_OPTIONS: DropdownOption[] = [
-  { key: 'niv', label: 'NIV' },
-  { key: 'esv', label: 'ESV' },
-  { key: 'kjv', label: 'KJV' },
-  { key: 'asv', label: 'ASV' },
-];
+const TRANSLATION_OPTIONS: DropdownOption[] = TRANSLATIONS.map((t) => ({
+  key: t.id,
+  label: t.label,
+}));
 
 interface Props {
   active: string;
