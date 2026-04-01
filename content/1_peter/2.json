@@ -284,6 +284,16 @@
               "ref": "John 10:11",
               "note": "I am the good shepherd. The good shepherd lays down his life for the sheep."
             }
+          ],
+          "echoes": [
+            {
+              "source_ref": "Isaiah 53:5–6, 9",
+              "target_ref": "1 Peter 2:22–25",
+              "type": "direct_quote",
+              "source_context": "The Servant committed no violence, no deceit was in his mouth. By his wounds we are healed. We all like sheep have gone astray.",
+              "connection": "Peter weaves multiple Isaiah 53 phrases together: no deceit, bearing sins, wounds that heal, sheep going astray. He applies the Servant's suffering directly to Christ's passion.",
+              "significance": "Peter's extended quotation shows Isaiah 53 was central to early Christian reflection on the cross. The Servant's innocence, substitution, and healing work all find fulfillment in Jesus."
+            }
           ]
         },
         "mac": {
@@ -425,6 +435,41 @@
         }
       ],
       "note": "Covenant is strong in the royal priesthood language. Mission appears in the apologetic purpose of good conduct."
+    },
+    "discourse": {
+      "thesis": "You are a chosen race, a royal priesthood — living stones being built into a spiritual house.",
+      "nodes": [
+        {
+          "id": "1p2-1",
+          "type": "exhortation",
+          "verse_range": "2:1-3",
+          "text": "Put away all malice, deceit, hypocrisy, envy, slander. Like newborn infants, long for the pure spiritual milk so that you may grow up into salvation."
+        },
+        {
+          "id": "1p2-2",
+          "type": "identity",
+          "verse_range": "2:4-10",
+          "text": "Coming to Christ the living stone, you yourselves as living stones are being built into a spiritual house, a holy priesthood. You are a chosen race, a royal priesthood, a holy nation — called out of darkness into his marvelous light."
+        },
+        {
+          "id": "1p2-3",
+          "type": "conduct",
+          "verse_range": "2:11-12",
+          "text": "As sojourners and exiles, abstain from passions of the flesh that wage war against the soul. Keep your conduct honorable among the Gentiles, so that they may glorify God."
+        },
+        {
+          "id": "1p2-4",
+          "type": "submission",
+          "verse_range": "2:13-17",
+          "text": "Be subject to every human institution for the Lord's sake — emperor, governors. Live as free people, but not using freedom as a cover-up for evil. Honor everyone; love the brotherhood; fear God; honor the emperor."
+        },
+        {
+          "id": "1p2-5",
+          "type": "servants",
+          "verse_range": "2:18-25",
+          "text": "Servants, be subject to masters with all respect — even the unjust. For to this you were called: Christ suffered for you, leaving an example. When he was reviled, he did not revile in return. He bore our sins in his body on the tree. By his wounds you have been healed."
+        }
+      ]
     }
   },
   "vhl_groups": []

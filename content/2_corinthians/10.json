@@ -438,7 +438,36 @@
         "type": "Echo",
         "text": "Paul’s commitment to preaching ‘where Christ was not known’ and not building ‘on someone else’s foundation’ parallels the sphere-of-activity argument here."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Paul defends his apostolic authority against those who accuse him of being bold in letters but weak in person.",
+      "nodes": [
+        {
+          "id": "2c10-1",
+          "type": "appeal",
+          "verse_range": "10:1-2",
+          "text": "Paul appeals by the meekness and gentleness of Christ — accused of being humble in person but bold when away. He begs not to be bold when present."
+        },
+        {
+          "id": "2c10-2",
+          "type": "declaration",
+          "verse_range": "10:3-6",
+          "text": "We walk in the flesh but do not wage war according to the flesh. Our weapons have divine power to destroy strongholds and every lofty opinion raised against knowledge of God."
+        },
+        {
+          "id": "2c10-3",
+          "type": "challenge",
+          "verse_range": "10:7-11",
+          "text": "Look at what is before your eyes. If anyone is confident he belongs to Christ, so do we. Paul's letters are weighty, but in person he is weak? Let such people know: what we say by letter, we will do when present."
+        },
+        {
+          "id": "2c10-4",
+          "type": "boundary",
+          "verse_range": "10:12-18",
+          "text": "We do not compare ourselves with those who commend themselves. We boast within limits — the field God assigned. Let the one who boasts, boast in the Lord."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }

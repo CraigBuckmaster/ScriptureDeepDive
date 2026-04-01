@@ -520,7 +520,44 @@
         "type": "Connection",
         "text": "The Christ hymn in Philippians shares the incarnation–exaltation pattern and pre-Pauline liturgical origin, making these two passages the most important windows into early Christian worship and christology."
       }
-    ]
+    ],
+    "tx": {
+      "stories": [
+        {
+          "title": "God Manifested or Who Was Manifested?",
+          "passage": "1 Timothy 3:16",
+          "summary": "Did the original text say 'God was manifested in the flesh' (theos) or 'who was manifested in the flesh' (hos)? The difference in Greek is tiny — ΘC (abbreviation for theos) versus OC (hos) — a single stroke distinguishes them.",
+          "evidence": [
+            {
+              "manuscript": "Codex Sinaiticus (original hand, ℵ*, 4th c.)",
+              "reading": "'Who' (hos)"
+            },
+            {
+              "manuscript": "Codex Alexandrinus (original hand, A*, 5th c.)",
+              "reading": "'Who' (hos) — later corrected to 'God'"
+            },
+            {
+              "manuscript": "Codex Ephraemi (C*, 5th c.)",
+              "reading": "'Who' (hos)"
+            },
+            {
+              "manuscript": "Codex Claromontanus (D, 6th c.)",
+              "reading": "'Which' (ho, neuter)"
+            },
+            {
+              "manuscript": "Later Byzantine manuscripts",
+              "reading": "'God' (theos)"
+            },
+            {
+              "manuscript": "Latin, Syriac, Coptic versions",
+              "reading": "'Who' or 'which'"
+            }
+          ],
+          "consensus": "The reading 'who' (hos) is almost certainly original. 'God' arose when a corrector added a horizontal stroke to omicron (O→Θ) and an extra stroke to produce the abbreviation. The KJV's 'God was manifest in the flesh' reflects the later Byzantine reading.",
+          "significance": "This variant illustrates how theology could shape textual transmission. 'God manifested in the flesh' makes a stronger christological statement. Scribes — consciously or unconsciously — clarified an ambiguous relative pronoun into an explicit affirmation of Christ's deity."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }

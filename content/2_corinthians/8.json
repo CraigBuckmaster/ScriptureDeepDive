@@ -465,7 +465,42 @@
         "type": "Connection",
         "text": "Paul’s allusion to Proverbs 3:4 LXX grounds his concern for financial transparency in wisdom tradition: the wise person takes thought for what is honourable before both God and human observers."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "The Macedonians' generosity models how the Corinthians should complete their collection for Jerusalem.",
+      "nodes": [
+        {
+          "id": "2c8-1",
+          "type": "example",
+          "verse_range": "8:1-5",
+          "text": "The Macedonian churches, in severe affliction and extreme poverty, gave beyond their means — first giving themselves to the Lord."
+        },
+        {
+          "id": "2c8-2",
+          "type": "appeal",
+          "verse_range": "8:6-7",
+          "text": "We urged Titus to complete this act of grace among you. As you excel in everything, excel also in this grace."
+        },
+        {
+          "id": "2c8-3",
+          "type": "ground",
+          "verse_range": "8:8-9",
+          "text": "This is not a command but a test of genuineness. You know the grace of our Lord Jesus Christ — though rich, he became poor for your sake."
+        },
+        {
+          "id": "2c8-4",
+          "type": "advice",
+          "verse_range": "8:10-15",
+          "text": "Complete what you began a year ago. Give according to what you have. There should be equality — your abundance supplies their need now, their abundance will supply yours later."
+        },
+        {
+          "id": "2c8-5",
+          "type": "commendation",
+          "verse_range": "8:16-24",
+          "text": "Titus is eager to come. The brother sent with him is famous for preaching. We are taking care to be honorable in the Lord's sight and in human sight."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }

@@ -434,7 +434,36 @@
         "type": "Connection",
         "text": "The baptismal formula (‘in the name of the Father and of the Son and of the Holy Spirit’) provides the other major trinitarian formula in the NT, complementing Paul’s experiential trinitarian benediction."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Final warnings and appeal — examine yourselves to see whether you are in the faith.",
+      "nodes": [
+        {
+          "id": "2c13-1",
+          "type": "warning",
+          "verse_range": "13:1-4",
+          "text": "This is Paul's third visit. Every charge must be established by witnesses. He will not spare those who sinned earlier. Christ is not weak in dealing with you — crucified in weakness, he lives by God's power."
+        },
+        {
+          "id": "2c13-2",
+          "type": "challenge",
+          "verse_range": "13:5-6",
+          "text": "Examine yourselves. Test yourselves. Do you not realize Christ is in you? — unless you fail the test. Paul hopes they will find that he has not failed."
+        },
+        {
+          "id": "2c13-3",
+          "type": "purpose",
+          "verse_range": "13:7-10",
+          "text": "Paul prays they do no wrong — not to prove himself approved, but for their improvement. He writes while absent so that when present he need not use severity."
+        },
+        {
+          "id": "2c13-4",
+          "type": "benediction",
+          "verse_range": "13:11-14",
+          "text": "Final greetings: aim for restoration, comfort one another, agree, live in peace. The grace of the Lord Jesus Christ, the love of God, and the fellowship of the Holy Spirit be with you all."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }

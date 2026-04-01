@@ -525,7 +525,42 @@
         "type": "Echo",
         "text": "Peter’s teaching that believers should ‘rejoice inasmuch as you participate in the sufferings of Christ’ provides a parallel to Paul’s theology of suffering as a gift in Phil 1:29."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Paul's imprisonment has advanced the gospel — to live is Christ, to die is gain.",
+      "nodes": [
+        {
+          "id": "ph1-1",
+          "type": "thanksgiving",
+          "verse_range": "1:3-8",
+          "text": "Paul thanks God for their partnership in the gospel from the first day until now. He holds them in his heart; they share in grace with him."
+        },
+        {
+          "id": "ph1-2",
+          "type": "prayer",
+          "verse_range": "1:9-11",
+          "text": "Paul prays their love may abound more and more — approving what is excellent, filled with the fruit of righteousness."
+        },
+        {
+          "id": "ph1-3",
+          "type": "update",
+          "verse_range": "1:12-18",
+          "text": "Paul's imprisonment has advanced the gospel. Most brothers have become bold to speak. Some preach from envy, some from love — either way, Christ is proclaimed."
+        },
+        {
+          "id": "ph1-4",
+          "type": "dilemma",
+          "verse_range": "1:19-26",
+          "text": "Whether by life or death, Christ will be honored in Paul's body. To live is Christ; to die is gain. He is hard pressed between the two — but to remain is more necessary for them."
+        },
+        {
+          "id": "ph1-5",
+          "type": "exhortation",
+          "verse_range": "1:27-30",
+          "text": "Let your manner of life be worthy of the gospel. Stand firm in one spirit, striving side by side for the faith. Suffering for Christ is granted to you."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }

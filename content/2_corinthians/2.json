@@ -497,7 +497,36 @@
         "type": "Echo",
         "text": "Christ as a ‘fragrant offering and sacrifice to God’ parallels the aroma-of-Christ imagery: Paul’s ministry emits the fragrance of Christ’s self-offering."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Paul's painful letter was written out of love — now it's time to forgive the offender.",
+      "nodes": [
+        {
+          "id": "2c2-1",
+          "type": "reason",
+          "verse_range": "2:1-4",
+          "text": "Paul decided not to come in sorrow again. His painful letter was written through tears, not to grieve but to show his love."
+        },
+        {
+          "id": "2c2-2",
+          "type": "appeal",
+          "verse_range": "2:5-11",
+          "text": "The offender has been punished enough. Now forgive and comfort him, lest he be overwhelmed by excessive sorrow. Paul forgives for their sake."
+        },
+        {
+          "id": "2c2-3",
+          "type": "narrative",
+          "verse_range": "2:12-13",
+          "text": "Paul went to Troas for the gospel but found no rest because Titus wasn't there. He moved on to Macedonia."
+        },
+        {
+          "id": "2c2-4",
+          "type": "thanksgiving",
+          "verse_range": "2:14-17",
+          "text": "Thanks be to God who leads us in triumphal procession! We are the aroma of Christ — life to some, death to others. We speak sincerely, not peddling God's word."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }

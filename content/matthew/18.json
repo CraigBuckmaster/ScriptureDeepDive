@@ -386,14 +386,55 @@
       ],
       "note": ""
     },
-    "tx": [
-      {
-        "ref": "18:11",
-        "title": "For the Son of Man came to save the lost",
-        "content": "Many manuscripts omit v.11. The verse appears to have been imported from Luke 19:10. The shorter text is supported by the best manuscripts.",
-        "note": "The verse is probably secondary in Matthew but the principle is entirely consistent with Matthew's theology and the lost sheep parable that immediately precedes it."
-      }
-    ],
+    "tx": {
+      "notes": [
+        {
+          "ref": "18:11",
+          "title": "For the Son of Man came to save the lost",
+          "content": "Many manuscripts omit v.11. The verse appears to have been imported from Luke 19:10. The shorter text is supported by the best manuscripts.",
+          "note": "The verse is probably secondary in Matthew but the principle is entirely consistent with Matthew's theology and the lost sheep parable that immediately precedes it."
+        }
+      ],
+      "stories": [
+        {
+          "title": "The Lost Sheep Saying in Matthew",
+          "passage": "Matthew 18:11",
+          "summary": "The verse 'For the Son of Man came to save the lost' is absent from the earliest manuscripts of Matthew but appears in Luke 19:10 with excellent attestation. Scribes likely imported it to Matthew to create a smoother transition to the parable of the lost sheep.",
+          "evidence": [
+            {
+              "manuscript": "Codex Sinaiticus (ℵ, 4th c.)",
+              "reading": "Omits verse 11"
+            },
+            {
+              "manuscript": "Codex Vaticanus (B, 4th c.)",
+              "reading": "Omits verse 11"
+            },
+            {
+              "manuscript": "Minuscule family f1",
+              "reading": "Omits verse 11"
+            },
+            {
+              "manuscript": "Some Old Latin, Sahidic, Syriac",
+              "reading": "Omit verse 11"
+            },
+            {
+              "manuscript": "Codex Bezae (D, 5th c.)",
+              "reading": "Includes verse 11"
+            },
+            {
+              "manuscript": "Majority of Byzantine manuscripts",
+              "reading": "Include verse 11"
+            },
+            {
+              "manuscript": "Luke 19:10",
+              "reading": "Contains identical saying with strong attestation"
+            }
+          ],
+          "consensus": "The verse was imported from Luke 19:10 (Zacchaeus story) to introduce Matthew's lost sheep parable. It is not original to Matthew. Modern translations omit it or footnote it.",
+          "significance": "The saying itself is authentic Jesus tradition — it's firmly in Luke. But Matthew apparently did not include it here. This shows how beloved sayings migrated across Gospels in the scribal process."
+        }
+      ]
+    },
     "debate": [
       {
         "title": "Does Matthew 18:15-20 Describe Church Discipline or Conflict Resolution?",

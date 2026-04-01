@@ -45,6 +45,16 @@
               "ref": "John 1:6-8",
               "note": "John came as a witness to testify — the Fourth Gospel confirms John’s role as witness, not the light."
             }
+          ],
+          "echoes": [
+            {
+              "source_ref": "Isaiah 40:3",
+              "target_ref": "Mark 1:2–3",
+              "type": "direct_quote",
+              "source_context": "A voice cries in the wilderness to prepare the way of the LORD, make straight a highway for our God. This introduces the return from exile as a new exodus.",
+              "connection": "Mark opens his Gospel by applying this to John the Baptist: John is the wilderness voice preparing the way for Jesus. The LORD whose way is prepared is identified with Jesus.",
+              "significance": "Mark's use implies a staggering christological claim: the way prepared for YHWH in Isaiah is the way prepared for Jesus. The return-from-exile hopes find fulfillment in Christ."
+            }
           ]
         },
         "mar": {
@@ -561,20 +571,65 @@
         "note": "He taught as one who had exousia. The same word covers his authority over unclean spirits (v.27), over sickness, and later over sins (2:10). Exousia is the signature of the kingdom’s presence. Scribes had derived authority from tradition; Jesus has intrinsic authority from himself."
       }
     ],
-    "tx": [
-      {
-        "ref": "1:1",
-        "title": "Inclusion of \"Son of God\"",
-        "content": "Sinaiticus (corrected), Alexandrinusinclude \"the Son of God\" (huiou theou);Sinaiticus (original), a few early MSSomit it.",
-        "note": "External evidence favours inclusion; the phrase is programmatic for Mark's entire Gospel and is almost certainly original."
-      },
-      {
-        "ref": "1:2",
-        "title": "\"In Isaiah the prophet\" vs \"in the prophets\"",
-        "content": "NA28/UBS5reads \"in Isaiah the prophet\" (en tō Ēsaia tō prophētē);some MSSread \"in the prophets\" (en tois prophētais), correcting the attribution since Mal 3:1 is also quoted.",
-        "note": "\"In Isaiah the prophet\" is the harder reading and almost certainly original — a scribe would more likely soften the attribution than introduce an apparent error. Mark deliberately attributes the composite citation to its most significant source."
-      }
-    ],
+    "tx": {
+      "notes": [
+        {
+          "ref": "1:1",
+          "title": "Inclusion of \"Son of God\"",
+          "content": "Sinaiticus (corrected), Alexandrinusinclude \"the Son of God\" (huiou theou);Sinaiticus (original), a few early MSSomit it.",
+          "note": "External evidence favours inclusion; the phrase is programmatic for Mark's entire Gospel and is almost certainly original."
+        },
+        {
+          "ref": "1:2",
+          "title": "\"In Isaiah the prophet\" vs \"in the prophets\"",
+          "content": "NA28/UBS5reads \"in Isaiah the prophet\" (en tō Ēsaia tō prophētē);some MSSread \"in the prophets\" (en tois prophētais), correcting the attribution since Mal 3:1 is also quoted.",
+          "note": "\"In Isaiah the prophet\" is the harder reading and almost certainly original — a scribe would more likely soften the attribution than introduce an apparent error. Mark deliberately attributes the composite citation to its most significant source."
+        }
+      ],
+      "stories": [
+        {
+          "title": "Son of God in Mark's Opening",
+          "passage": "Mark 1:1",
+          "summary": "The phrase 'the Son of God' at the end of Mark 1:1 is absent from some early witnesses. The question is whether Mark originally identified Jesus as 'Son of God' in his very first verse, or whether this title was added by later copyists.",
+          "evidence": [
+            {
+              "manuscript": "Codex Sinaiticus (original hand, ℵ*, 4th c.)",
+              "reading": "Omits 'Son of God'"
+            },
+            {
+              "manuscript": "Codex Sinaiticus (corrector, ℵ¹)",
+              "reading": "Adds 'Son of God'"
+            },
+            {
+              "manuscript": "Codex Vaticanus (B, 4th c.)",
+              "reading": "Includes 'Son of God'"
+            },
+            {
+              "manuscript": "Codex Bezae (D, 5th c.)",
+              "reading": "Includes 'Son of God'"
+            },
+            {
+              "manuscript": "Codex Washingtonianus (W, 5th c.)",
+              "reading": "Includes 'Son of God'"
+            },
+            {
+              "manuscript": "Theta (Θ, 9th c.)",
+              "reading": "Omits 'Son of God'"
+            },
+            {
+              "manuscript": "Some Old Latin manuscripts",
+              "reading": "Omit 'Son of God'"
+            },
+            {
+              "manuscript": "Origen (3rd c.)",
+              "reading": "Quotes with 'Son of God'"
+            }
+          ],
+          "consensus": "Scholarly opinion is divided. The majority of manuscripts include the phrase, and scribes were more likely to accidentally skip words than add them. However, the omission in the original hand of Sinaiticus and Theta is significant. Many critical editions include it but bracket it as uncertain.",
+          "significance": "If original, Mark announces Jesus' divine sonship from the very first verse — a title the demons know but humans only discover at the cross (15:39). If secondary, the gospel builds to the centurion's confession without the reader being told in advance. Either reading creates a powerful narrative."
+        }
+      ]
+    },
     "debate": [
       {
         "title": "Was Mark written before or after AD 70?",

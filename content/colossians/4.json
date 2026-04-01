@@ -386,7 +386,36 @@
         "type": "Connection",
         "text": "The later reference to Demas’s desertion and Mark’s faithfulness provides the biographical sequel to Col 4:10, 14."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Continue in prayer; walk wisely toward outsiders — final greetings and instructions.",
+      "nodes": [
+        {
+          "id": "col4-1",
+          "type": "exhortation",
+          "verse_range": "4:2-6",
+          "text": "Continue steadfastly in prayer, being watchful. Pray that God may open a door for the word. Walk in wisdom toward outsiders. Let your speech be gracious, seasoned with salt."
+        },
+        {
+          "id": "col4-2",
+          "type": "commendation",
+          "verse_range": "4:7-9",
+          "text": "Tychicus will tell them everything — a beloved brother and faithful minister. Paul sends him for this purpose, along with Onesimus, the faithful brother from Colossae."
+        },
+        {
+          "id": "col4-3",
+          "type": "greetings",
+          "verse_range": "4:10-14",
+          "text": "Greetings from Aristarchus, Mark (receive him if he comes), Jesus Justus — the only Jews among Paul's co-workers. Epaphras greets them, always wrestling in prayers for their maturity. Luke the beloved physician greets them, and Demas."
+        },
+        {
+          "id": "col4-4",
+          "type": "instructions",
+          "verse_range": "4:15-18",
+          "text": "Greet the brothers at Laodicea and Nympha's house church. Have this letter read in Laodicea; read the Laodicean letter also. Tell Archippus: fulfill the ministry you received. Paul's greeting by his own hand — remember his chains. Grace be with you."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }

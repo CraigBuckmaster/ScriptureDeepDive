@@ -472,7 +472,36 @@
         "type": "Echo",
         "text": "John’s affirmation that ‘when Christ appears, we shall be like him, for we shall see him as he is’ parallels the transformation promise of Phil 3:21."
       }
-    ]
+    ],
+    "discourse": {
+      "thesis": "Paul counts all as loss compared to knowing Christ — press on toward the goal for the prize.",
+      "nodes": [
+        {
+          "id": "ph3-1",
+          "type": "warning",
+          "verse_range": "3:1-3",
+          "text": "Rejoice in the Lord! Beware of dogs, evil workers, those who mutilate the flesh. We are the true circumcision — we worship by the Spirit."
+        },
+        {
+          "id": "ph3-2",
+          "type": "testimony",
+          "verse_range": "3:4-11",
+          "text": "Paul had confidence in the flesh: circumcised, tribe of Benjamin, Pharisee, zealous, blameless under law. But he counts it all loss for the surpassing worth of knowing Christ."
+        },
+        {
+          "id": "ph3-3",
+          "type": "pursuit",
+          "verse_range": "3:12-16",
+          "text": "Not that Paul has obtained this or is perfect — but he presses on because Christ Jesus made him his own. Forgetting what lies behind, straining forward, he presses toward the goal."
+        },
+        {
+          "id": "ph3-4",
+          "type": "contrast",
+          "verse_range": "3:17-21",
+          "text": "Join in imitating Paul. Many walk as enemies of the cross — their god is their belly. But our citizenship is in heaven, from which we await a Savior who will transform our lowly bodies."
+        }
+      ]
+    }
   },
   "vhl_groups": []
 }
