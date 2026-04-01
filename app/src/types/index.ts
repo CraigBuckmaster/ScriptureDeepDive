@@ -570,3 +570,6 @@ export interface ParsedBookIntro {
   sections?: BookIntroSection[];
   text?: string;
 }
+
+// Re-export ParsedRef so panel components can import from types
+export type { ParsedRef } from '../utils/verseResolver';

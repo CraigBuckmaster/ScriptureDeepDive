@@ -381,7 +381,7 @@ export default function AllNotesScreen() {
                           {editCollection ? (
                             <View style={styles.collectionRow}>
                               <View style={[styles.colorDot, { backgroundColor: editCollection.color }]} />
-                              <Text style={[styles.collectionName, { color: base.text }]}>{editCollection.name}</Text>
+                              <Text style={[styles.editCollectionName, { color: base.text }]}>{editCollection.name}</Text>
                             </View>
                           ) : (
                             <Text style={[styles.collectionPlaceholder, { color: base.textMuted }]}>None</Text>
@@ -709,7 +709,7 @@ const styles = StyleSheet.create({
     height: 10,
     borderRadius: 5,
   },
-  collectionName: {
+  editCollectionName: {
     fontFamily: fontFamily.ui,
     fontSize: 13,
   },

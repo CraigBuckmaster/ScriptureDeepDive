@@ -92,7 +92,7 @@ describe('PanelRenderer array guards', () => {
     (panelType) => {
       expect(() => {
         renderWithProviders(
-          <PanelRenderer panelType={panelType} contentJson="null" scholarId="" />
+          <PanelRenderer panelType={panelType} contentJson="null"  />
         );
       }).not.toThrow();
     },
@@ -103,7 +103,7 @@ describe('PanelRenderer array guards', () => {
     (panelType) => {
       expect(() => {
         renderWithProviders(
-          <PanelRenderer panelType={panelType} contentJson="" scholarId="" />
+          <PanelRenderer panelType={panelType} contentJson=""  />
         );
       }).not.toThrow();
     },
@@ -114,7 +114,7 @@ describe('PanelRenderer array guards', () => {
     (panelType) => {
       expect(() => {
         renderWithProviders(
-          <PanelRenderer panelType={panelType} contentJson='{"key": "value"}' scholarId="" />
+          <PanelRenderer panelType={panelType} contentJson='{"key": "value"}'  />
         );
       }).not.toThrow();
     },
