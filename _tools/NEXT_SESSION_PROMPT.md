@@ -16,93 +16,49 @@ git config user.name "Craig Buckmaster"
 
 ## Current State
 
-All books are live. Content work is enrichment, accuracy auditing, and feature development only.
+All 66 books live. All 23 deep study feature phases shipped. Theme system (Dark/Sepia/Light/System) live across all files.
 
-### Architecture Remediation
+### Active Work
 
-Batches 1–6 complete (ghost deps, git history purge, DB version externalization, type safety, content layer decomposition, NotesOverlay decomposition).
+| Item | Status |
+|------|--------|
+| Phase 24 — Content Library screen | **In progress** (Claude Code building pipeline + screen) |
+| Phase 24E — Content Library enrichment | Seed data committed (128 entries: 16 chiasms, 19 ANE, 26 echoes, 10 manuscripts, 57 discourse). 9 batches planned to reach ~270. See `_tools/CONTENT_LIBRARY_ENRICHMENT_PLAN.md` |
 
-| Batch | Description | Status |
-|-------|-------------|--------|
-| 7 | Inline style migration | Planned |
-| 8A-C | Test foundation, CI/CD, branch protection | Planned |
+### Remaining Feature Work
 
-### Feature Work Complete
+| Item | Description | Blocked by |
+|------|-------------|------------|
+| Phase P1 | Premium store (RevenueCat, UpgradePrompt, SubscriptionScreen) | Translation licensing |
+| Phase P2 | Gate wiring (scholar locks, feature gates, explore depth) | Phase P1 |
+| Phase 15 | AI-Powered Q&A | DEFERRED |
 
-Prophecy chains (50 chains, 283 links, browse + detail screens) · Enhanced notes (3-tab AllNotes, collections, FTS) · Discourse panels (Romans 1-16) · Concept Explorer (20 concepts) · Difficult Passages (53 entries, all enriched, browse + detail screens) · Word Studies (43 studies) · Timeline system (543 entries, 87% chapter deep-link coverage, full UI)
-
-### Deep Study Features (In Progress)
-
-| Phase | Description | Status |
-|-------|-------------|--------|
-| 0 | Chapter panel button categorization (3 groups) | **Complete** |
-| 1 | TabbedPanelRenderer composite infrastructure | **Complete** |
-| 2 | Context Hub (hist+ctx merge → tabbed composite) | **Complete** |
-| 3 | Connections Hub (cross → tabbed with echoes slot) | **Complete** |
-| 4 | Literary Structure upgrade (chiasm view) | **Complete** |
-| 5 | Genre Guidance Banner | **Complete** |
-| 6 | Depth Indicator Dots | **Complete** |
-| 7 | Study Coach Mode | **Complete** |
-| 8 | Textual Notes Enrichment (tx panel upgrade) | **Complete** |
-| 9 | Progressive Revelation (Concept Journey) | **Complete** |
-| 10 | Synoptic Diff Highlighting (ParallelPassage upgrade) | **Complete** |
-| 11 | Verse Sharing & Copy (VerseLongPressMenu + VOTD share) | **Complete** |
-| 16 | Reading Streaks & Engagement Hooks | **Complete** |
-| 12 | Multi-Translation Support (KJV added, TranslationPicker) | **Complete** |
-| 13 | Interlinear Viewer (444K words, Hebrew + Greek) | **Complete** |
-| 14 | User Accounts & Cloud Sync (architecture doc) | **Complete** |
-| 17 | TTS Controls Integration | **Complete** |
-| 18 | Search Filters (OT/NT/Book) | **Complete** |
-| 19 | Highlight UX Polish (6 colors, collections, migration 5) | **Complete** |
-| 20 | Personalized Recommendations (heuristic engine) | **Complete** |
-| 21 | Concordance Search (Strong's number lookup) | **Complete** |
-| 22 | Discourse Expansion (Gal, Eph, Heb, 1Cor — 41 chapters) | **Complete** |
-| 23 | Curated Reading Plans (10 plans seeded via migration 6) | **Complete** |
-
-### Content Remediation
-
-Batches 0–5 complete (word study bugfix, scholar bios, ghost panels, people enrichment, parallel passages, new word studies). Difficult Passages enrichment 15A-E all complete — 53/53 passages fully enriched with 243 responses across 35+ scholars, no scholar >10%.
+### Architecture Debt
 
 | Batch | Description | Status |
 |-------|-------------|--------|
-| 6 | Thin panel enrichment (~259 panels) | Planned |
+| T6 | Theme legacy cleanup (remove static base export) | Planned |
+| 7 | Inline style migration (~318 instances) | Planned |
+| 8A-C | Test foundation → CI/CD → branch protection | Planned (sequential) |
 
----
+### Content Debt
 
-### Theme System
-
-| Batch | Description | Status |
-|-------|-------------|--------|
-| T1 | Infrastructure (provider, hook, palettes, transforms) | **Complete** |
-| T2 | Navigation + chrome migration (~8 files) | **Complete** |
-| T3 | Screens migration (~30 files) | **Complete** |
-| T4 | Components migration (~82 files) | **Complete** |
-| T5 | Settings UI (ThemePicker) | **Complete** |
-| T6 | Legacy cleanup | Planned |
-
-**T1–T5 complete.** Full theme system is live. All 128+ files migrated to `useTheme()`. ThemePicker in Settings allows switching between Dark/Sepia/Light/System. Next: T6 (remove legacy static `base` export, internalize `colors.ts`).
+| Debt | Scope |
+|------|-------|
+| Isaiah 23–66 thin panels | 44 chapters |
+| Kings/Chronicles MacArthur enrichment | ~112 chapters |
+| ~134 Psalms without timeline links | No natural narrative anchors |
+| Thin panel enrichment (Batch 6) | ~259 panels |
 
 ---
 
 ## What's Next
 
-1. **Deep Study Features Phase 22** — Discourse Analysis Expansion (Galatians, Ephesians, Hebrews, 1 Corinthians)
-2. **Theme Batch T6** — Legacy cleanup (remove static base export, internalize colors.ts)
-3. **Thin Panel Enrichment** (~259 panels) — 138 section panels (mostly thin cross-refs in Chronicles/Nehemiah/Esther) + 121 chapter panels (mostly thin ppl/rec in prophets)
-4. **Inline Style Migration** (Arch Batch 7) — 318 inline `style={{ }}` objects, migrate to `StyleSheet.create()`
-5. **Cross-reference thread expansion** (Batch 13)
-6. **Map story enhancements** (Batch 14)
-7. **Isaiah 23-66 enrichment debt** (44 chapters, thin panels)
-8. **Kings/Chronicles MacArthur enrichment debt** (112 chapters)
-9. **Test foundation → CI/CD → branch protection** (Arch 8A-C)
+**If doing code work (Claude Code):** Phase 24 — Content Library. See `_tools/DEEP_STUDY_FEATURES_PLAN.md`.
 
----
+**If doing content work:** Phase 24E enrichment batches. See `_tools/CONTENT_LIBRARY_ENRICHMENT_PLAN.md`. Start with Batch 1 (chiasms: Psalms + OT narrative).
 
-## Standing Enrichment Debt
-
-- Isaiah 23-66 (44 chapters) — thin panels
-- Kings/Chronicles MacArthur panels (112 chapters)
-- ~134 Psalms without timeline links (no natural narrative anchors)
+**If doing architecture:** Theme Batch T6 (small) or Arch Batch 7 (inline styles, medium).
 
 ---
 
@@ -110,11 +66,15 @@ Batches 0–5 complete (word study bugfix, scholar bios, ghost panels, people en
 
 | File | Purpose |
 |------|---------|
-| `_tools/ARCH_PLAN.md` | Full architectural remediation plan |
-| `_tools/DEV_GUIDE.md` | Conventions, pipeline, content standards, gotchas |
+| `_tools/DEEP_STUDY_FEATURES_PLAN.md` | Active phases (24, P1, P2) + completed phase summary |
+| `_tools/COMPLETED_PHASES_REFERENCE.md` | Data shapes for all shipped phases (0–23) |
+| `_tools/CONTENT_LIBRARY_ENRICHMENT_PLAN.md` | Phase 24E: 9 enrichment batches with copyright guardrails |
+| `_tools/ARCH_PLAN.md` | Architecture batches 7, 8A-C (remaining) |
+| `_tools/THEME_PLAN.md` | Theme architecture reference + T6 remaining |
+| `_tools/PREMIUM_TIER_SPEC.md` | Premium tier pricing, gating, wireframes |
+| `_tools/SYNC_ARCHITECTURE.md` | User accounts & cloud sync architecture |
+| `_tools/DEV_GUIDE.md` | Conventions, pipeline, content standards |
 | `_tools/db_version.json` | Single source of truth for DB version |
-| `_tools/build_sqlite.py` | JSON→SQLite compiler |
-| `content/meta/difficult-passages.json` | Difficult passages source of truth |
 
 ---
 
@@ -127,6 +87,6 @@ git add -A && git commit -m "..." && git push
 cd app && eas update --branch production
 ```
 
-DB version: 0.32 · 54 scholars · 3 translations (NIV, ESV, KJV) · 444K interlinear words
+DB version: 0.32 · 54 scholars · 3 translations (NIV, ESV, KJV) · 444K interlinear words · 128 content library entries
 
-**Note:** scripture.db is now ~107MB (interlinear data). DB files excluded from git (exceed 100MB limit). Rebuild locally before deploy: `python _tools/build_sqlite.py && cp scripture.db app/assets/scripture.db`
+**Note:** scripture.db is ~107MB (interlinear data). Rebuild locally before deploy.
