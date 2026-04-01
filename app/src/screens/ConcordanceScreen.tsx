@@ -21,10 +21,11 @@ import { getConcordanceResults, getConcordanceCount } from '../db/content';
 import { ConcordanceEntry } from '../components/ConcordanceEntry';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { base, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { ConcordanceResult } from '../types';
 
 export default function ConcordanceScreen() {
+  const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'Concordance'>>();
   const route = useRoute<ScreenRouteProp<'Explore', 'Concordance'>>();
   const { strongs: initialStrongs, original, transliteration, gloss } = route.params ?? {};
@@ -77,7 +78,7 @@ export default function ConcordanceScreen() {
     : 'Concordance';
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       <ScreenHeader
         title="Concordance"
         onBack={() => navigation.goBack()}
@@ -89,11 +90,11 @@ export default function ConcordanceScreen() {
         <View style={styles.wordInfo}>
           <Text style={[styles.originalWord, { color: accentColor }]}>{original}</Text>
           {transliteration ? (
-            <Text style={styles.transliteration}>{transliteration}</Text>
+            <Text style={[styles.transliteration, { color: base.goldDim }]}>{transliteration}</Text>
           ) : null}
           <View style={styles.metaRow}>
-            <Text style={styles.strongsBadge}>{strongs}</Text>
-            {gloss ? <Text style={styles.glossText}>{gloss}</Text> : null}
+            <Text style={[styles.strongsBadge, { color: base.textMuted }]}>{strongs}</Text>
+            {gloss ? <Text style={[styles.glossText, { color: base.textDim }]}>{gloss}</Text> : null}
             {count > 0 ? (
               <View style={[styles.countBadge, { backgroundColor: accentColor + '22' }]}>
                 <Text style={[styles.countText, { color: accentColor }]}>
@@ -107,11 +108,11 @@ export default function ConcordanceScreen() {
 
       {/* Search bar (always visible, especially for manual entry) */}
       <View style={styles.searchRow}>
-        <View style={styles.searchInputWrap}>
+        <View style={[styles.searchInputWrap, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
           <Search size={16} color={base.textMuted} />
           <TextInput
             ref={inputRef}
-            style={styles.searchInput}
+            style={[styles.searchInput, { color: base.text }]}
             placeholder="Enter Strong's number (e.g. H2617)"
             placeholderTextColor={base.textMuted}
             value={searchInput}
@@ -127,8 +128,8 @@ export default function ConcordanceScreen() {
             </TouchableOpacity>
           ) : null}
         </View>
-        <TouchableOpacity style={styles.searchBtn} onPress={handleSubmit}>
-          <Text style={styles.searchBtnText}>Search</Text>
+        <TouchableOpacity style={[styles.searchBtn, { backgroundColor: base.gold + '22' }]} onPress={handleSubmit}>
+          <Text style={[styles.searchBtnText, { color: base.gold }]}>Search</Text>
         </TouchableOpacity>
       </View>
 
@@ -153,19 +154,19 @@ export default function ConcordanceScreen() {
         />
       ) : searched ? (
         <View style={styles.emptyWrap}>
-          <Text style={styles.emptyText}>
+          <Text style={[styles.emptyText, { color: base.textDim }]}>
             No results found for {strongs}.
           </Text>
-          <Text style={styles.emptyHint}>
+          <Text style={[styles.emptyHint, { color: base.textMuted }]}>
             Make sure the Strong's number is correct (e.g. H2617 for Hebrew, G26 for Greek).
           </Text>
         </View>
       ) : (
         <View style={styles.emptyWrap}>
-          <Text style={styles.emptyText}>
+          <Text style={[styles.emptyText, { color: base.textDim }]}>
             Find every verse where a Hebrew or Greek word appears across the entire Bible.
           </Text>
-          <Text style={styles.emptyHint}>
+          <Text style={[styles.emptyHint, { color: base.textMuted }]}>
             Enter a Strong's number above, or tap a word in the Interlinear view to see all its occurrences.
           </Text>
         </View>
@@ -177,7 +178,6 @@ export default function ConcordanceScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: base.bg,
   },
   header: {
     marginBottom: 0,
@@ -194,7 +194,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   transliteration: {
-    color: base.goldDim,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 14,
     marginTop: 2,
@@ -206,12 +205,10 @@ const styles = StyleSheet.create({
     marginTop: spacing.xs,
   },
   strongsBadge: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 11,
   },
   glossText: {
-    color: base.textDim,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 13,
   },
@@ -235,9 +232,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.border,
     borderRadius: radii.md,
     paddingHorizontal: spacing.sm,
     height: MIN_TOUCH_TARGET,
@@ -245,20 +240,17 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     flex: 1,
-    color: base.text,
     fontFamily: fontFamily.ui,
     fontSize: 14,
     paddingVertical: 0,
   },
   searchBtn: {
-    backgroundColor: base.gold + '22',
     borderRadius: radii.md,
     paddingHorizontal: spacing.md,
     height: MIN_TOUCH_TARGET,
     justifyContent: 'center',
   },
   searchBtnText: {
-    color: base.gold,
     fontFamily: fontFamily.uiMedium,
     fontSize: 13,
   },
@@ -276,14 +268,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.xl,
   },
   emptyText: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 15,
     textAlign: 'center',
     lineHeight: 24,
   },
   emptyHint: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 12,
     textAlign: 'center',

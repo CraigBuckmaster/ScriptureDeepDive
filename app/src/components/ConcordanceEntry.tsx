@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { base, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { ConcordanceResult } from '../types';
 
 interface Props {
@@ -17,12 +17,13 @@ interface Props {
 }
 
 export function ConcordanceEntry({ result, gloss, onPress }: Props) {
+  const { base } = useTheme();
   const ref = `${result.book_name} ${result.chapter_num}:${result.verse_num}`;
 
   // Highlight the gloss word within the verse text
   const renderText = () => {
     if (!gloss || !result.text) {
-      return <Text style={styles.verseText}>{result.text}</Text>;
+      return <Text style={[styles.verseText, { color: base.textDim }]}>{result.text}</Text>;
     }
 
     // Case-insensitive split on the gloss word
@@ -31,10 +32,10 @@ export function ConcordanceEntry({ result, gloss, onPress }: Props) {
     const parts = result.text.split(splitRegex);
 
     return (
-      <Text style={styles.verseText}>
+      <Text style={[styles.verseText, { color: base.textDim }]}>
         {parts.map((part, i) =>
           testRegex.test(part) ? (
-            <Text key={i} style={styles.highlighted}>{part}</Text>
+            <Text key={i} style={{ color: base.gold, fontFamily: fontFamily.bodyMedium }}>{part}</Text>
           ) : (
             <Text key={i}>{part}</Text>
           )
@@ -44,11 +45,15 @@ export function ConcordanceEntry({ result, gloss, onPress }: Props) {
   };
 
   return (
-    <TouchableOpacity style={styles.card} onPress={onPress} activeOpacity={0.7}>
+    <TouchableOpacity
+      style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.border }]}
+      onPress={onPress}
+      activeOpacity={0.7}
+    >
       <View style={styles.refRow}>
-        <Text style={styles.ref}>{ref}</Text>
+        <Text style={[styles.ref, { color: base.gold }]}>{ref}</Text>
         {result.gloss ? (
-          <Text style={styles.gloss}>{result.gloss}</Text>
+          <Text style={[styles.gloss, { color: base.textMuted }]}>{result.gloss}</Text>
         ) : null}
       </View>
       {renderText()}
@@ -62,9 +67,7 @@ function escapeRegex(str: string): string {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: base.bgElevated,
     borderWidth: 1,
-    borderColor: base.border,
     borderRadius: radii.md,
     padding: spacing.md,
     marginBottom: spacing.sm,
@@ -76,23 +79,16 @@ const styles = StyleSheet.create({
     marginBottom: spacing.xs,
   },
   ref: {
-    color: base.gold,
     fontFamily: fontFamily.displayMedium,
     fontSize: 13,
   },
   gloss: {
-    color: base.textMuted,
     fontFamily: fontFamily.bodyItalic,
     fontSize: 12,
   },
   verseText: {
-    color: base.textDim,
     fontFamily: fontFamily.body,
     fontSize: 14,
     lineHeight: 22,
-  },
-  highlighted: {
-    color: base.gold,
-    fontFamily: fontFamily.bodyMedium,
   },
 });
