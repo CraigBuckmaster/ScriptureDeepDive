@@ -14,6 +14,7 @@
 
 import { create } from 'zustand';
 import { getPreference, setPreference } from '../db/user';
+import { TRANSLATION_MAP } from '../db/translationRegistry';
 import { logger } from '../utils/logger';
 
 type ThemePreference = 'dark' | 'sepia' | 'light' | 'system';
@@ -88,7 +89,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
       const th = await getPreference('theme');
 
       set({
-        translation: (t === 'esv' || t === 'kjv' || t === 'asv' ? t : 'niv'),
+        translation: (t && TRANSLATION_MAP.has(t) ? t : 'niv'),
         fontSize: f ? Math.min(24, Math.max(12, parseInt(f, 10) || 16)) : 16,
         vhlEnabled: v !== '0',
         bookListMode: blm === 'canonical' ? 'canonical' : 'thematic',

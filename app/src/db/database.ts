@@ -14,13 +14,15 @@ import { Platform } from 'react-native';
 import * as SQLite from 'expo-sqlite';
 import { Asset } from 'expo-asset';
 import * as FileSystem from 'expo-file-system/legacy';
+import { isBundled } from './translationRegistry';
+import { openTranslationDb } from './translationManager';
 import { logger } from '../utils/logger';
 
 /**
  * Bump this when build_sqlite.py's DB_VERSION changes.
  * Must match the value written into db_meta by the build script.
  */
-const EXPECTED_DB_VERSION = '0.61';
+const EXPECTED_DB_VERSION = '0.62';
 
 let db: SQLite.SQLiteDatabase | null = null;
 
@@ -129,9 +131,21 @@ async function copyAssetDatabaseIfNeeded(): Promise<void> {
 }
 
 /**
- * Get the database instance. Throws if not yet initialized.
+ * Get the core database instance. Throws if not yet initialized.
  */
 export function getDb(): SQLite.SQLiteDatabase {
   if (!db) throw new Error('Database not initialized — call initDatabase() first');
   return db;
+}
+
+/**
+ * Get the database that contains verses for the given translation.
+ * - Bundled translations (NIV, KJV) → core scripture.db
+ * - Downloaded translations (ESV, ASV, etc.) → separate translation_*.db
+ */
+export async function getVerseDb(translationId: string): Promise<SQLite.SQLiteDatabase> {
+  if (isBundled(translationId)) {
+    return getDb();
+  }
+  return openTranslationDb(translationId);
 }

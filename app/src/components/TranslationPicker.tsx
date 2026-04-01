@@ -1,18 +1,14 @@
 /**
  * TranslationPicker — Compact pill row for switching Bible translation.
- * Available options: NIV · ESV · KJV
+ * Bundled translations show normally; downloadable ones show a download
+ * arrow until installed, then behave identically.
  */
 
-import React from 'react';
-import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
-
-const TRANSLATIONS: { id: string; label: string }[] = [
-  { id: 'niv', label: 'NIV' },
-  { id: 'esv', label: 'ESV' },
-  { id: 'kjv', label: 'KJV' },
-  { id: 'asv', label: 'ASV' },
-];
+import React, { useState, useEffect } from 'react';
+import { View, Text, TouchableOpacity, ScrollView, StyleSheet, ActivityIndicator } from 'react-native';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { TRANSLATIONS } from '../db/translationRegistry';
+import { isTranslationInstalled, downloadTranslation } from '../db/translationManager';
 
 interface Props {
   selected: string;
@@ -21,6 +17,38 @@ interface Props {
 
 export function TranslationPicker({ selected, onSelect }: Props) {
   const { base } = useTheme();
+  const [installed, setInstalled] = useState<Record<string, boolean>>({});
+  const [downloading, setDownloading] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    async function check() {
+      const status: Record<string, boolean> = {};
+      for (const t of TRANSLATIONS) {
+        status[t.id] = t.bundled || await isTranslationInstalled(t.id);
+      }
+      if (!cancelled) setInstalled(status);
+    }
+    check();
+    return () => { cancelled = true; };
+  }, [downloading]); // re-check after downloads
+
+  const handlePress = async (translationId: string) => {
+    if (installed[translationId]) {
+      onSelect(translationId);
+      return;
+    }
+    // Not installed — download first
+    setDownloading(translationId);
+    try {
+      await downloadTranslation(translationId);
+      setDownloading(null);
+      onSelect(translationId);
+    } catch {
+      setDownloading(null);
+    }
+  };
+
   return (
     <ScrollView
       horizontal
@@ -30,14 +58,32 @@ export function TranslationPicker({ selected, onSelect }: Props) {
     >
       {TRANSLATIONS.map((t) => {
         const isActive = t.id === selected;
+        const isInstalled = t.bundled || installed[t.id];
+        const isDownloading = downloading === t.id;
+
         return (
           <TouchableOpacity
             key={t.id}
-            onPress={() => onSelect(t.id)}
-            style={[styles.pill, { borderColor: base.border }, isActive && { borderColor: base.gold, backgroundColor: base.gold + '20' }]}
+            onPress={() => handlePress(t.id)}
+            disabled={isDownloading}
+            style={[
+              styles.pill,
+              { borderColor: base.border },
+              isActive && { borderColor: base.gold, backgroundColor: base.gold + '20' },
+            ]}
             activeOpacity={0.7}
           >
-            <Text style={[styles.pillLabel, { color: base.textMuted }, isActive && { color: base.gold }]}>
+            {isDownloading ? (
+              <ActivityIndicator size={10} color={base.gold} style={{ marginRight: 4 }} />
+            ) : !isInstalled ? (
+              <Text style={[styles.downloadIcon, { color: base.textMuted }]}>↓ </Text>
+            ) : null}
+            <Text style={[
+              styles.pillLabel,
+              { color: base.textMuted },
+              isActive && { color: base.gold },
+              !isInstalled && !isDownloading && { opacity: 0.7 },
+            ]}>
               {t.label}
             </Text>
           </TouchableOpacity>
@@ -61,6 +107,8 @@ const styles = StyleSheet.create({
     gap: spacing.xs,
   },
   pill: {
+    flexDirection: 'row',
+    alignItems: 'center',
     borderWidth: 1,
     borderRadius: radii.pill,
     paddingHorizontal: spacing.sm + 2,
@@ -69,5 +117,9 @@ const styles = StyleSheet.create({
   pillLabel: {
     fontFamily: fontFamily.uiMedium,
     fontSize: 11,
+  },
+  downloadIcon: {
+    fontSize: 10,
+    fontFamily: fontFamily.uiMedium,
   },
 });

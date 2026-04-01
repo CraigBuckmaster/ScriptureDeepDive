@@ -2,7 +2,8 @@
  * db/content/search.ts — Full-text search across verses and people.
  */
 
-import { getDb } from '../database';
+import { getDb, getVerseDb } from '../database';
+import { isBundled } from '../translationRegistry';
 import type { Verse, Person } from '../../types';
 
 /**
@@ -24,10 +25,32 @@ export async function searchVerses(
   limit: number = 50,
   testament?: 'ot' | 'nt' | null,
   bookId?: string | null,
+  translation?: string,
 ): Promise<Verse[]> {
   const ftsQuery = sanitizeFtsQuery(query);
   if (!ftsQuery) return [];
 
+  // Supplemental translations have their own DB with FTS but no books table,
+  // so we use a simpler query and join books from the core DB after.
+  if (translation && !isBundled(translation)) {
+    const db = await getVerseDb(translation);
+    let sql = `SELECT v.* FROM verses_fts f
+       JOIN verses v ON v.id = f.rowid
+       WHERE f.text MATCH ?`;
+    const params: (string | number)[] = [ftsQuery];
+
+    if (bookId) {
+      sql += ' AND v.book_id = ?';
+      params.push(bookId);
+    }
+
+    sql += ' LIMIT ?';
+    params.push(limit);
+
+    return db.getAllAsync<Verse>(sql, params);
+  }
+
+  // Bundled translations: use core DB with books join for testament filter
   let sql = `SELECT v.*, b.name as book_name FROM verses_fts f
      JOIN verses v ON v.id = f.rowid
      JOIN books b ON b.id = v.book_id

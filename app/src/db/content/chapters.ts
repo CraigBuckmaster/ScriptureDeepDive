@@ -2,7 +2,7 @@
  * db/content/chapters.ts — Chapter, section, panel, verse, and VHL queries.
  */
 
-import { getDb } from '../database';
+import { getDb, getVerseDb } from '../database';
 import type {
   Chapter, Section, SectionPanel, ChapterPanel, Verse, VHLGroup, InterlinearWord,
   ConcordanceResult,
@@ -63,7 +63,8 @@ export async function getChapterPanelByType(
 export async function getVerses(
   bookId: string, ch: number, translation: string = 'niv'
 ): Promise<Verse[]> {
-  return getDb().getAllAsync<Verse>(
+  const db = await getVerseDb(translation);
+  return db.getAllAsync<Verse>(
     'SELECT * FROM verses WHERE book_id = ? AND chapter_num = ? AND translation = ? ORDER BY verse_num',
     [bookId, ch, translation]
   );
@@ -72,7 +73,8 @@ export async function getVerses(
 export async function getVerse(
   bookId: string, ch: number, verse: number, translation: string = 'niv'
 ): Promise<Verse | null> {
-  return getDb().getFirstAsync<Verse>(
+  const db = await getVerseDb(translation);
+  return db.getFirstAsync<Verse>(
     'SELECT * FROM verses WHERE book_id = ? AND chapter_num = ? AND verse_num = ? AND translation = ?',
     [bookId, ch, verse, translation]
   );

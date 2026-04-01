@@ -21,6 +21,7 @@ import { recordVisit } from '../db/user';
 import { GenreBanner } from '../components/GenreBanner';
 import { StudyCoachCard } from '../components/StudyCoachCard';
 import { useStudyDepth } from '../hooks/useStudyDepth';
+import { useTranslationSwitch } from '../hooks/useTranslationSwitch';
 import { getBook } from '../db/content';
 
 import { ChapterNavBar } from '../components/ChapterNavBar';
@@ -54,7 +55,7 @@ export default function ChapterScreen() {
 
   const fontSize = useSettingsStore((s) => s.fontSize);
   const translation = useSettingsStore((s) => s.translation);
-  const setTranslation = useSettingsStore((s) => s.setTranslation);
+  const { switchTranslation } = useTranslationSwitch();
   const studyCoachEnabled = useSettingsStore((s) => s.studyCoachEnabled);
   const activePanel = useReaderStore((s) => s.activePanel);
   const setActivePanel = useReaderStore((s) => s.setActivePanel);
@@ -297,7 +298,7 @@ export default function ChapterScreen() {
         }}
         ttsActive={ttsActive}
         translation={translation}
-        onTranslationChange={setTranslation}
+        onTranslationChange={switchTranslation}
       />
 
       {/* Breadcrumb pill — visible when navigated from Content Library */}
