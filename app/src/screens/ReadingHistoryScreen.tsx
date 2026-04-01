@@ -51,7 +51,7 @@ export default function ReadingHistoryScreen() {
 
       <FlatList
         data={history}
-        keyExtractor={(_, i) => String(i)}
+        keyExtractor={(item, i) => `${item.book_id}-${item.chapter_num}-${i}`}
         contentContainerStyle={styles.listContent}
         ListEmptyComponent={
           <View style={styles.emptyWrap}>

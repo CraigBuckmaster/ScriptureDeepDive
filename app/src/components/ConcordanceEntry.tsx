@@ -26,13 +26,14 @@ export function ConcordanceEntry({ result, gloss, onPress }: Props) {
     }
 
     // Case-insensitive split on the gloss word
-    const regex = new RegExp(`(${escapeRegex(gloss)})`, 'gi');
-    const parts = result.text.split(regex);
+    const splitRegex = new RegExp(`(${escapeRegex(gloss)})`, 'gi');
+    const testRegex = new RegExp(`^${escapeRegex(gloss)}$`, 'i');
+    const parts = result.text.split(splitRegex);
 
     return (
       <Text style={styles.verseText}>
         {parts.map((part, i) =>
-          regex.test(part) ? (
+          testRegex.test(part) ? (
             <Text key={i} style={styles.highlighted}>{part}</Text>
           ) : (
             <Text key={i}>{part}</Text>

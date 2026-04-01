@@ -314,8 +314,8 @@ export default function AllNotesScreen() {
 
                   {noteTags.length > 0 && (
                     <View style={styles.noteTagRow}>
-                      {noteTags.map((t) => (
-                        <Text key={t} style={[styles.noteTag, { color: base.goldDim }]}>#{t}</Text>
+                      {noteTags.map((t, i) => (
+                        <Text key={`${i}-${t}`} style={[styles.noteTag, { color: base.goldDim }]}>#{t}</Text>
                       ))}
                     </View>
                   )}

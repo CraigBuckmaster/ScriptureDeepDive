@@ -170,8 +170,8 @@ export default function CollectionDetailScreen() {
               <Text style={[styles.noteText, { color: base.textDim }]}>{note.note_text}</Text>
               {tags.length > 0 && (
                 <View style={styles.tagRow}>
-                  {tags.map((t) => (
-                    <Text key={t} style={[styles.tag, { color: base.goldDim }]}>#{t}</Text>
+                  {tags.map((t, i) => (
+                    <Text key={`${i}-${t}`} style={[styles.tag, { color: base.goldDim }]}>#{t}</Text>
                   ))}
                 </View>
               )}
