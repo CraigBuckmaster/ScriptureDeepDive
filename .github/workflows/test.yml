@@ -6,6 +6,10 @@ on:
   push:
     branches: [master]
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -31,7 +35,90 @@ jobs:
         continue-on-error: true
 
       - name: Run tests with coverage
-        run: npx jest --coverage --ci --verbose
+        id: tests
+        run: |
+          npx jest --coverage --ci --verbose --json --outputFile=test-results.json 2>&1 | tail -20
+          echo "TESTS_EXIT_CODE=${PIPESTATUS[0]:-$?}" >> $GITHUB_ENV
+        continue-on-error: true
+
+      - name: Generate test summary
+        if: always()
+        id: summary
+        working-directory: app
+        run: |
+          if [ ! -f test-results.json ]; then
+            echo "body=⚠️ **Tests**: Could not parse results" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          PASSED=$(node -e "const r=require('./test-results.json'); console.log(r.numPassedTests)")
+          FAILED=$(node -e "const r=require('./test-results.json'); console.log(r.numFailedTests)")
+          TOTAL=$(node -e "const r=require('./test-results.json'); console.log(r.numTotalTests)")
+          SUITES_PASSED=$(node -e "const r=require('./test-results.json'); console.log(r.numPassedTestSuites)")
+          SUITES_FAILED=$(node -e "const r=require('./test-results.json'); console.log(r.numFailedTestSuites)")
+          SUITES_TOTAL=$(node -e "const r=require('./test-results.json'); console.log(r.numTotalTestSuites)")
+          DURATION=$(node -e "const r=require('./test-results.json'); const s=((Date.now()-r.startTime)/1000).toFixed(1); console.log(s+'s')")
+
+          # Build the summary body
+          if [ "$FAILED" = "0" ]; then
+            STATUS="✅ All tests passed"
+          else
+            STATUS="❌ $FAILED test(s) failed"
+          fi
+
+          BODY="## Test Results
+
+          ${STATUS}
+
+          | | Passed | Failed | Total |
+          |---|---|---|---|
+          | **Tests** | ✅ ${PASSED} | ❌ ${FAILED} | ${TOTAL} |
+          | **Suites** | ✅ ${SUITES_PASSED} | ❌ ${SUITES_FAILED} | ${SUITES_TOTAL} |
+
+          ⏱️ Duration: ${DURATION}"
+
+          # Also write to GitHub Actions job summary
+          echo "$BODY" >> $GITHUB_STEP_SUMMARY
+
+          # Save for PR comment (use delimiter for multiline)
+          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          echo "body<<$EOF" >> $GITHUB_OUTPUT
+          echo "$BODY" >> $GITHUB_OUTPUT
+          echo "$EOF" >> $GITHUB_OUTPUT
+
+      - name: Post results to PR
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = `${{ steps.summary.outputs.body }}`;
+            if (!body) return;
+
+            // Find existing bot comment to update (avoid spam)
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const botComment = comments.find(c =>
+              c.user.type === 'Bot' && c.body.includes('## Test Results')
+            );
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
 
       - name: Upload coverage report
         if: always()
@@ -40,3 +127,7 @@ jobs:
           name: coverage-report
           path: app/coverage/
           retention-days: 14
+
+      - name: Fail if tests failed
+        if: env.TESTS_EXIT_CODE != '0'
+        run: exit 1
