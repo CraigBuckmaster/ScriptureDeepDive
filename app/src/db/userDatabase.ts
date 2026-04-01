@@ -227,17 +227,16 @@ async function runMigrations(db: SQLite.SQLiteDatabase): Promise<void> {
 
     logger.info('UserDB', `Running migration v${migration.version}: ${migration.description}`);
 
-    await db.execAsync('BEGIN TRANSACTION');
     try {
-      await db.execAsync(migration.sql);
-      await db.runAsync(
-        'INSERT INTO _migrations (version, description) VALUES (?, ?)',
-        [migration.version, migration.description]
-      );
-      await db.execAsync('COMMIT');
+      await db.withTransactionAsync(async () => {
+        await db.execAsync(migration.sql);
+        await db.runAsync(
+          'INSERT INTO _migrations (version, description) VALUES (?, ?)',
+          [migration.version, migration.description]
+        );
+      });
       logger.info('UserDB', `Migration v${migration.version} applied`);
     } catch (err) {
-      await db.execAsync('ROLLBACK');
       logger.error('UserDB', `Migration v${migration.version} failed`, err);
       throw err; // Halt startup — don't leave user in a half-migrated state
     }
