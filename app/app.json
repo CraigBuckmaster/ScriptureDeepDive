@@ -27,7 +27,7 @@
         ]
       },
       "config": {
-        "googleMapsApiKey": "AIzaSyBIAraIZ1bAOGPpE0_BMX1QJ0CvTRdtiVI"
+        "googleMapsApiKey": "GOOGLE_MAPS_API_KEY"
       }
     },
     "android": {
@@ -39,7 +39,7 @@
       "versionCode": 1,
       "config": {
         "googleMaps": {
-          "apiKey": "AIzaSyBIAraIZ1bAOGPpE0_BMX1QJ0CvTRdtiVI"
+          "apiKey": "GOOGLE_MAPS_API_KEY"
         }
       }
     },
