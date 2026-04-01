@@ -290,7 +290,28 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Psalm 1 — The Two Ways",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "Blessed is the one who does not walk in step with the wicked (v.1)",
+            "bottom": "The LORD watches over the way of the righteous, but the way of the wicked leads to destruction (v.6)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "The righteous delight in the law of the LORD, meditating day and night (v.2)",
+            "bottom": "Not so the wicked — they are like chaff that the wind blows away (v.4)",
+            "color": "#5b8fb9"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "That person is like a tree planted by streams of water, which yields its fruit in season and whose leaf does not wither — whatever they do prospers (v.3). The center is the image that defines the entire Psalter: rootedness in Torah produces life."
+        }
+      }
     },
     "hebtext": [
       {

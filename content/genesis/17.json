@@ -446,7 +446,34 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Genesis 17 — The Covenant of Circumcision",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "God appears to Abram: “I am God Almighty; walk before me faithfully” (vv.1–2)",
+            "bottom": "Abraham falls facedown; God finishes speaking and goes up from him (vv.22–27)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "Abram falls facedown; God speaks the covenant promises (vv.3–6)",
+            "bottom": "Abraham falls facedown laughing; questions about Ishmael (vv.17–21)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "Covenant established: “I will be their God” — land promised (vv.7–8)",
+            "bottom": "Covenant through Isaac specifically, to be born to Sarah (vv.15–16)",
+            "color": "#5fa87a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "The sign of the covenant: circumcision commanded for every male — the physical mark that binds Abraham’s household to God’s promise across generations (vv.9–14). The center is obligation, flanked by promise."
+        }
+      }
     },
     "hebtext": [
       {

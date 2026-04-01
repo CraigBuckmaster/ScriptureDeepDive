@@ -64,7 +64,21 @@
         ],
         "hist": {
           "historical": "The Babel narrative reflects Mesopotamian ziggurat culture. The Etemenanki (\"house of the foundation of heaven and earth\") in Babylon may be the specific referent — a massive 7-stage ziggurat dedicated to Marduk. Cuneiform texts describe these structures as cosmic mountains connecting heaven and earth. The use of fired brick and bitumen (rather than stone and mortar, as in Canaan) is archaeologically accurate for the Mesopotamian plain, confirmed by excavations at Ur and Uruk.",
-          "context": "The Babel story concludes the primeval history (Gen 1–11) by explaining the origin of language diversity. It stands in ironic contrast to Pentecost (Acts 2), where the Spirit reverses the confusion. The \"one language\" echoes the pre-fall unity of creation; the tower project is humanity's corporate attempt at self-deification — a societal Adam-and-Eve rebellion."
+          "context": "The Babel story concludes the primeval history (Gen 1–11) by explaining the origin of language diversity. It stands in ironic contrast to Pentecost (Acts 2), where the Spirit reverses the confusion. The \"one language\" echoes the pre-fall unity of creation; the tower project is humanity's corporate attempt at self-deification — a societal Adam-and-Eve rebellion.",
+          "ane": [
+            {
+              "parallel": "Mesopotamian Ziggurat Tradition",
+              "similarity": "The tower 'with its top reaching to heaven' directly evokes the Mesopotamian ziggurat — a stepped temple tower whose summit was a meeting place between heaven and earth. Ziggurats bore names like 'Temple of the Foundation of Heaven and Earth' (Etemenanki in Babylon).",
+              "difference": "Ziggurats were built to invite the gods down. In Genesis, the builders want to 'make a name for ourselves' — the motivation is human pride, not worship. And God does 'come down,' but in judgment, not in the fellowship the builders presumed.",
+              "significance": "Genesis transforms Babylon's proudest religious achievement — the great ziggurat — into a cautionary tale. The very city whose name means 'gate of the gods' (Bab-ilu) is reinterpreted as the place of 'confusion' (balal). This is polemical wordplay aimed at Babylonian imperial theology."
+            },
+            {
+              "parallel": "Enmerkar and the Lord of Aratta (Sumerian, c. 21st cent. BCE)",
+              "similarity": "This Sumerian text contains a passage describing a time when 'the whole universe, the well-guarded people, could address Enlil in a single language' — a tradition of original linguistic unity before languages were divided.",
+              "difference": "In the Sumerian text, the confusion of languages is presented without moral cause — it simply happens. Genesis ties it directly to human pride and divine judgment, making it an ethical narrative rather than an etiological myth.",
+              "significance": "The existence of a Sumerian single-language tradition suggests this was a widespread ANE memory, not a uniquely Israelite invention. Genesis provides the theological explanation that the Sumerian tradition lacks."
+            }
+          ]
         },
         "cross": {
           "refs": [
@@ -519,7 +533,40 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Genesis 11:1–9 — The Tower of Babel Chiasm",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "All the earth had one language and a common speech (v.1)",
+            "bottom": "It was called Babel because there the LORD confused the language of the whole earth (v.9)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "The people settle together in the plain of Shinar (v.2)",
+            "bottom": "From there the LORD scattered them over the face of the whole earth (v.8)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "“Come, let us make bricks” — human initiative, building materials (v.3)",
+            "bottom": "“Come, let us go down and confuse their language” — divine counter-initiative (v.7)",
+            "color": "#5fa87a"
+          },
+          {
+            "label": "D",
+            "top": "“Let us build ourselves a city and a tower” — human ambition to reach heaven (v.4)",
+            "bottom": "“If this is what they have begun to do, nothing will be impossible” — divine assessment (v.6)",
+            "color": "#c47a6a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "But the LORD came down to see the city and the tower the people were building (v.5). The devastating irony: humanity builds upward to reach heaven, but God must come down even to see it. The center exposes the futility of human self-exaltation."
+        }
+      }
     },
     "hebtext": [
       {

@@ -95,7 +95,34 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Psalm 67 — Concentric Praise of the Nations",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "May God be gracious to us and bless us and make his face shine on us (v.1)",
+            "bottom": "May God bless us still, so that all the ends of the earth will fear him (v.7)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "So that your ways may be known on earth, your salvation among all nations (v.2)",
+            "bottom": "The land yields its harvest; God, our God, blesses us (v.6)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "May the peoples praise you, God; may all the peoples praise you (v.3)",
+            "bottom": "May the peoples praise you, God; may all the peoples praise you (v.5)",
+            "color": "#5fa87a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "May the nations be glad and sing for joy, for you rule the peoples with equity and guide the nations of the earth (v.4). The exact center of seven verses: God’s just rule over all nations is the ground of universal joy."
+        }
+      }
     },
     "hebtext": [
       {

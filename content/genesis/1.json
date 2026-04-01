@@ -51,7 +51,21 @@
         ],
         "hist": {
           "historical": "The Babylonian Enuma Elish (c. 1100 BCE in written form, possibly older orally) opens with primeval waters — Apsu (fresh water) and Tiamat (salt water) — whose mingling produces the gods. Creation emerges from divine conflict: Marduk slays Tiamat and forms the heavens and earth from her body. Genesis 1 is a deliberate counter-narrative: no divine conflict, no theogony, no chaos-monster. God speaks and it is done. The Sumerian King List opens with \"When kingship descended from heaven\" — Genesis opens earlier: before kingship, before humanity, before the earth itself, God creates. The Egyptian Memphite Theology (c. 700 BCE) has Ptah creating by divine speech — the closest ANE parallel to the \"God said\" formula of Genesis 1.",
-          "context": "Verse 1 functions as a theological prologue, not merely the first step of a sequence. \"In the beginning God created the heavens and the earth\" is the thesis statement of all Scripture — before anything else existed, God acted. Verse 2 then describes the earth's initial state before the six days of forming and filling begin. The structure of days 1–6 follows a pattern of formation (days 1–3) and filling (days 4–6): day 1 creates light / day 4 creates light-bearers; day 2 separates waters / day 5 fills the waters and sky; day 3 creates land and plants / day 6 fills the land with animals and humans."
+          "context": "Verse 1 functions as a theological prologue, not merely the first step of a sequence. \"In the beginning God created the heavens and the earth\" is the thesis statement of all Scripture — before anything else existed, God acted. Verse 2 then describes the earth's initial state before the six days of forming and filling begin. The structure of days 1–6 follows a pattern of formation (days 1–3) and filling (days 4–6): day 1 creates light / day 4 creates light-bearers; day 2 separates waters / day 5 fills the waters and sky; day 3 creates land and plants / day 6 fills the land with animals and humans.",
+          "ane": [
+            {
+              "parallel": "Enuma Elish (Babylon, c. 12th cent. BCE)",
+              "similarity": "Both begin with a watery, formless pre-creation state. Enuma Elish opens with the mingling of Apsu (freshwater) and Tiamat (saltwater) before any land exists; Genesis opens with the earth 'formless and void' with darkness over the deep (tehom, linguistically related to Tiamat).",
+              "difference": "In Enuma Elish, creation results from violent divine conflict — Marduk slays Tiamat and splits her corpse to form heaven and earth. In Genesis, creation is effortless speech by a single sovereign God. There is no battle, no rival deity, no violence.",
+              "significance": "Genesis appears to deliberately echo and subvert Babylonian cosmology. The same raw materials (watery chaos) produce a radically different theology: creation by word rather than warfare, order from divine will rather than divine conflict."
+            },
+            {
+              "parallel": "Memphis Theology (Egypt, c. 25th dynasty copy)",
+              "similarity": "Ptah creates by conceiving in his heart and speaking with his tongue — creation through divine thought and speech, remarkably close to Genesis's 'God said.'",
+              "difference": "Ptah is one god among many in the Egyptian pantheon and creates the other gods. Genesis presents one God who creates everything, including the celestial bodies that Egypt worshiped as deities.",
+              "significance": "The Memphis parallel shows that creation-by-speech was not unique to Israel, but Genesis radicalizes it by removing all polytheistic context and making speech the sole mechanism of a sole God."
+            }
+          ]
         },
         "cross": {
           "refs": [
@@ -70,6 +84,32 @@
             {
               "ref": "Ps 33:6,9",
               "note": "By the word of the LORD the heavens were made — the creation-by-speech motif confirmed in the Psalms."
+            }
+          ],
+          "echoes": [
+            {
+              "source_ref": "Genesis 1:1",
+              "target_ref": "John 1:1–3",
+              "type": "echo",
+              "source_context": "Genesis opens with 'In the beginning God created the heavens and the earth' — establishing God as the sole agent of creation through his word.",
+              "connection": "John opens with identical words ('In the beginning') but identifies the creative Word as a personal agent — the Logos who 'was with God and was God.' Everything made through him echoes the Genesis creation-by-speech pattern.",
+              "significance": "John's prologue is a deliberate re-reading of Genesis 1. The evangelist claims that the Word who spoke creation into being is the same Word who 'became flesh and dwelt among us.' The new creation begins where the first one did."
+            },
+            {
+              "source_ref": "Genesis 1:3",
+              "target_ref": "2 Corinthians 4:6",
+              "type": "allusion",
+              "source_context": "God's first creative act: 'Let there be light' — light called into being by divine speech from the midst of darkness.",
+              "connection": "Paul writes: 'For God, who said, \"Let light shine out of darkness,\" made his light shine in our hearts to give us the light of the knowledge of God's glory displayed in the face of Christ.'",
+              "significance": "Paul treats conversion as a new creation event — the same God who commanded physical light now commands spiritual illumination. The face of Christ becomes the new locus of divine glory that once filled creation."
+            },
+            {
+              "source_ref": "Genesis 1:1",
+              "target_ref": "Hebrews 11:3",
+              "type": "allusion",
+              "source_context": "The opening verse presupposes creation ex nihilo — God creates without pre-existing materials, by his word alone.",
+              "connection": "Hebrews states: 'By faith we understand that the universe was formed at God's command, so that what is seen was not made out of what was visible.'",
+              "significance": "Hebrews makes explicit what Genesis implies: the visible world originated from the invisible word of God. Faith in creation is the foundation of all other faith — trusting the unseen God who speaks things into existence."
             }
           ]
         },
@@ -557,7 +597,15 @@
         ],
         "hist": {
           "historical": "The Egyptian concept of the king as the \"image of god\" (selem in Akkadian, twt in Egyptian) placed the image-of-god status in a single royal individual. Genesis 1:26–27 is a radical democratization: every human being — not just the pharaoh — is made in God's image. Every person has royal dignity. This would have been a staggering claim in the ancient world. The Atrahasis Epic (Babylonian flood story) creates humans from the blood of a slain rebel god to be laborers for the gods — no image, no dignity, just servants. Genesis creates humanity in God's image to be stewards, not slaves.",
-          "context": "The creation of humanity is the apex and goal of the six days. The shift from \"let there be\" to \"let us make\" marks a unique act. The dominion mandate (v.28) is not a license for exploitation but a royal commission for stewardship — humanity rules on behalf of the King. The image of God is the foundation of: human dignity (all people deserve respect regardless of utility), gender (male and female are equally image-bearers and equally differentiated), work (stewardship is a pre-fall vocation), and ethics (harming an image-bearer is an assault on the God whose image they bear, Gen 9:6)."
+          "context": "The creation of humanity is the apex and goal of the six days. The shift from \"let there be\" to \"let us make\" marks a unique act. The dominion mandate (v.28) is not a license for exploitation but a royal commission for stewardship — humanity rules on behalf of the King. The image of God is the foundation of: human dignity (all people deserve respect regardless of utility), gender (male and female are equally image-bearers and equally differentiated), work (stewardship is a pre-fall vocation), and ethics (harming an image-bearer is an assault on the God whose image they bear, Gen 9:6).",
+          "ane": [
+            {
+              "parallel": "ANE Royal Ideology (Egypt and Mesopotamia)",
+              "similarity": "In Egypt, pharaoh is the 'image of God' (tselem) — the divine representative who rules on behalf of the gods. Akkadian texts use tsalmu for royal statues placed in conquered territories to represent the king's authority.",
+              "difference": "Genesis democratizes the concept: every human being, not just the king, bears the divine image. Male and female alike carry this status. This is a revolutionary claim in the ancient world.",
+              "significance": "By applying royal-image language to all humanity, Genesis simultaneously affirms human dignity and subverts the political theology of Israel's neighbors, where only rulers were divine image-bearers."
+            }
+          ]
         },
         "cross": {
           "refs": [
@@ -776,7 +824,34 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Genesis 1:1–2:3 — Creation Week Parallel Structure",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "Creation of heavens and earth — merism encompassing all reality (1:1–2)",
+            "bottom": "God rests from all creation — heavens and earth complete, blessed and sanctified (2:1–3)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "Day 1 — Light separated from darkness; time begins (1:3–5)",
+            "bottom": "Day 4 — Luminaries placed to govern the light and darkness of Day 1 (1:14–19)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "Day 2 — Waters separated; sky and sea formed as distinct realms (1:6–8)",
+            "bottom": "Day 5 — Birds and sea creatures fill the sky and sea of Day 2 (1:20–23)",
+            "color": "#5fa87a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "Day 3 / Day 6 — Land appears and produces vegetation (1:9–13); land animals and humanity fill the earth, given vegetation for food (1:24–31). Land is both the last realm formed and the stage for God’s image-bearers."
+        }
+      }
     },
     "hebtext": [
       {

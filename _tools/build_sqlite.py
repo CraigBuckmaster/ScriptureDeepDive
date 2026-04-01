@@ -952,11 +952,12 @@ def populate_content_library(cur):
                 chiasm = lit['chiasm']
                 title = chiasm.get('title', f'{book_name} {ch_num} Chiasm')
                 pairs = chiasm.get('pairs', [])
-                center = chiasm.get('center', '')
+                center_obj = chiasm.get('center', {})
+                center_text = center_obj.get('text', '') if isinstance(center_obj, dict) else str(center_obj)
                 if pairs:
-                    preview = pairs[0].get('label', '') + ' … ' + (center if center else '')
+                    preview = pairs[0].get('label', '') + ' … ' + center_text
                 else:
-                    preview = center or ''
+                    preview = center_text or ''
                 cur.execute(
                     'INSERT INTO content_library '
                     '(category, title, preview, book_id, book_name, chapter_num, '

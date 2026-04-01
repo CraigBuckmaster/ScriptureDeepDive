@@ -45,6 +45,32 @@
               "ref": "Psalm 110:1",
               "note": "The most-quoted OT text in the NT, Ps 110:1 (‘Sit at my right hand’) is the foundation for Hebrews’ enthronement christology and appears already in the prologue."
             }
+          ],
+          "echoes": [
+            {
+              "source_ref": "Psalm 2:7",
+              "target_ref": "Hebrews 1:5",
+              "type": "direct_quote",
+              "source_context": "A royal psalm where God declares to the Davidic king: 'You are my Son; today I have begotten you.' Originally spoken at the king's enthronement.",
+              "connection": "Hebrews quotes this as the Father's declaration to the Son — a statement never made to any angel, proving the Son's superiority to the angelic realm.",
+              "significance": "Hebrews reads the royal psalm christologically: the enthronement oracle that once applied to David's heir now reveals the eternal relationship between Father and Son. The 'today' of Psalm 2 becomes the timeless declaration of divine sonship."
+            },
+            {
+              "source_ref": "2 Samuel 7:14",
+              "target_ref": "Hebrews 1:5",
+              "type": "direct_quote",
+              "source_context": "God's covenant promise to David through Nathan: 'I will be his father, and he will be my son.' The promise that establishes the Davidic dynasty as God's chosen line.",
+              "connection": "Hebrews pairs this with Psalm 2:7 as a second witness to the Son's unique status. The Davidic covenant promise becomes a christological declaration.",
+              "significance": "The author of Hebrews builds a chain-of-quotation argument: each OT text was always pointing beyond its immediate referent to the ultimate Son. The Davidic promise finds its final fulfillment not in Solomon but in Christ."
+            },
+            {
+              "source_ref": "Psalm 110:1",
+              "target_ref": "Hebrews 1:13",
+              "type": "direct_quote",
+              "source_context": "The LORD says to my lord: 'Sit at my right hand until I make your enemies a footstool for your feet.' The most-quoted OT verse in the NT.",
+              "connection": "Hebrews uses this as the climax of its Psalm chain: God never said to any angel 'Sit at my right hand.' The Son's session at God's right hand proves his superiority to the entire angelic order.",
+              "significance": "Psalm 110 is the structural backbone of Hebrews — the author returns to it repeatedly. The Son who sits at God's right hand is also the priest 'in the order of Melchizedek' (Psalm 110:4), which drives the entire argument of chapters 5–10."
+            }
           ]
         },
         "mac": {
@@ -296,7 +322,34 @@
           "is_key": true
         }
       ],
-      "note": "Chapter 1 establishes the Son’s absolute supremacy through a majestic prologue (vv. 1–4) and a seven-quotation OT catena (vv. 5–14) demonstrating his superiority to angels in sonship, sovereignty, eternality, and enthronement."
+      "note": "Chapter 1 establishes the Son’s absolute supremacy through a majestic prologue (vv. 1–4) and a seven-quotation OT catena (vv. 5–14) demonstrating his superiority to angels in sonship, sovereignty, eternality, and enthronement.",
+      "chiasm": {
+        "title": "Hebrews 1–13 — The Epistle’s Macro Structure",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "Christ superior to the prophets and angels — God’s final word through the Son (1:1–2:18)",
+            "bottom": "Exhortation to faithful endurance: the great cloud of witnesses, looking to Jesus the pioneer and perfecter (11:1–12:29)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "Christ superior to Moses and Joshua — a greater rest remains for God’s people (3:1–4:13)",
+            "bottom": "Christ’s sacrifice superior to Levitical offerings — he entered the greater and more perfect tabernacle once for all (9:1–10:39)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "Christ as high priest introduced: called by God like Melchizedek, a priest forever (4:14–5:10)",
+            "bottom": "Christ as high priest fulfilled: Melchizedek’s order is permanent, superseding the Levitical priesthood (7:1–28)",
+            "color": "#5fa87a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "The author’s urgent warning and encouragement: move beyond elementary teachings to maturity. “It is impossible for those who have once been enlightened… to be brought back to repentance” (5:11–6:20). The center is the pastoral crisis that drives the entire letter — the audience is in danger of drifting from a salvation they once embraced."
+        }
+      }
     },
     "hebtext": [
       {

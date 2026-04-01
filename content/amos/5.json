@@ -369,7 +369,34 @@
           "is_key": false
         }
       ],
-      "note": "Chapter 5 is the theological center of the book, structured around three movements: lament (vv. 1-3), call to seek God (vv. 4-9), indictment of injustice (vv. 10-17), and the Day of the LORD reversal (vv. 18-27). The central command 'Seek the LORD and live' is flanked by judgment on every side."
+      "note": "Chapter 5 is the theological center of the book, structured around three movements: lament (vv. 1-3), call to seek God (vv. 4-9), indictment of injustice (vv. 10-17), and the Day of the LORD reversal (vv. 18-27). The central command 'Seek the LORD and live' is flanked by judgment on every side.",
+      "chiasm": {
+        "title": "Amos 5:1–17 — Prophetic Judgment Chiasm",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "Lament for fallen Israel: “Fallen! Virgin Israel will rise no more” — funeral language for a nation still alive (vv.1–3)",
+            "bottom": "Wailing in every street and vineyard, lamentation everywhere — “for I will pass through your midst,” says the LORD (vv.16–17)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "“Seek me and live” — do not seek Bethel, Gilgal, or Beersheba; the sanctuaries will come to nothing (vv.4–6)",
+            "bottom": "“Seek good, not evil, that you may live” — perhaps the LORD will have mercy on the remnant of Joseph (vv.14–15)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "You who turn justice to bitterness and cast righteousness to the ground (v.7)",
+            "bottom": "Doxology: He who made the Pleiades and Orion, who turns midnight into dawn and day into night (vv.8–9)",
+            "color": "#5fa87a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "You hate the one who reproves in court and despise the one who tells the truth. You levy a straw tax on the poor and impose a tax on their grain. You have built stone mansions but will not live in them. I know how many are your offenses and how great your sins (vv.10–13). The center is the bill of indictment — the specific sins that make the surrounding lament inevitable."
+        }
+      }
     },
     "hebtext": [
       {

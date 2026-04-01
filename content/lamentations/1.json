@@ -281,7 +281,28 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Lamentations 1–5 — The Five Poems Structure",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "Chapter 1 — Jerusalem personified as a weeping widow; she cries out but no one comforts her (22 verses, acrostic)",
+            "bottom": "Chapter 5 — The community cries out to God for restoration; “Restore us to yourself, LORD” (22 verses, non-acrostic)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "Chapter 2 — God as warrior against his own people; the destruction is his doing, not merely Babylon’s (22 verses, acrostic)",
+            "bottom": "Chapter 4 — The consequences described in gruesome detail; gold has lost its luster, the siege’s horrors recounted (22 verses, acrostic)",
+            "color": "#5b8fb9"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "Chapter 3 — The individual sufferer speaks: “I am the man who has seen affliction” (3:1). Yet at the exact center of the center poem: “Because of the LORD’s great love we are not consumed, for his compassions never fail. They are new every morning; great is your faithfulness” (3:22–24). The 66 verses (3× the other poems) mark this as the theological heart: the deepest despair contains the highest hope."
+        }
+      }
     },
     "hebtext": [
       {

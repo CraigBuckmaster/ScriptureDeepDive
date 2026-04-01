@@ -39,7 +39,15 @@
         ],
         "hist": {
           "historical": "The serpent's strategy — questioning God's word, then denying its consequence, then appealing to the desire for autonomy — is the paradigm of temptation throughout Scripture. The offer of being \"like God, knowing good and evil\" (v.5) appeals to the image-bearing dignity already possessed by humanity (1:26) but promises a counterfeit version: self-determination rather than God-given authority. What is offered is not something new but a distorted version of something already given.",
-          "context": "The temptation narrative is a masterpiece of compressed dramatic irony. The woman already possesses the image of God; the serpent offers a counterfeit. She already has everything in the garden; the one prohibited thing becomes the focal point of desire. The structure of the temptation — seeing, desiring, taking — becomes the paradigm for the progression of sin throughout Scripture (cf. Achan, Josh 7:21; David, 2 Sam 11:2-4)."
+          "context": "The temptation narrative is a masterpiece of compressed dramatic irony. The woman already possesses the image of God; the serpent offers a counterfeit. She already has everything in the garden; the one prohibited thing becomes the focal point of desire. The structure of the temptation — seeing, desiring, taking — becomes the paradigm for the progression of sin throughout Scripture (cf. Achan, Josh 7:21; David, 2 Sam 11:2-4).",
+          "ane": [
+            {
+              "parallel": "Adapa Myth (Babylon, c. 14th cent. BCE)",
+              "similarity": "Adapa, a sage created by the god Ea, is offered the 'bread of life' and 'water of life' by Anu but refuses them on Ea's advice, losing his chance at immortality. Like Adam, a human figure loses immortality through a choice involving food and divine instruction.",
+              "difference": "Adapa obeys his god's instructions (Ea told him to refuse) and loses immortality because of divine trickery. Adam disobeys his God's instruction (not to eat) and loses access to the tree of life. The moral logic is reversed.",
+              "significance": "The Adapa myth presents a world where the gods deceive humans and withhold good things. Genesis presents a God who gives freely and warns honestly — the loss comes from human choice, not divine manipulation."
+            }
+          ]
         },
         "cross": {
           "refs": [
@@ -275,7 +283,15 @@
         ],
         "hist": {
           "historical": "The three curses in Genesis 3 follow the order of the temptation narrative in reverse: serpent (who initiated), woman (who acted second), man (who acted last). The asymmetry of the judgments is significant: the serpent is cursed directly; the ground is cursed for the man's sake; the woman is not cursed but receives consequences. The protoevangelium of v.15 — the first gospel announcement — is embedded within the curse on the serpent, transforming judgment into the first promise of redemption.",
-          "context": "The curses are not arbitrary punishments but the natural consequences of the fallen condition, described in terms of the three relationships the fall has broken: humanity's relationship with the spiritual realm (serpent/enmity), woman's relationship with her body and her husband (pain in childbirth, relationship distortion), and man's relationship with the ground (the adamah he was formed from now resists him). Everything that was gift becomes struggle."
+          "context": "The curses are not arbitrary punishments but the natural consequences of the fallen condition, described in terms of the three relationships the fall has broken: humanity's relationship with the spiritual realm (serpent/enmity), woman's relationship with her body and her husband (pain in childbirth, relationship distortion), and man's relationship with the ground (the adamah he was formed from now resists him). Everything that was gift becomes struggle.",
+          "ane": [
+            {
+              "parallel": "ANE Serpent Symbolism (Canaan, Egypt, Mesopotamia)",
+              "similarity": "Serpents in ANE cultures represent wisdom, fertility, healing, and chaos. The uraeus (cobra) symbolizes divine authority in Egypt. Ningishzida is the serpent deity of the underworld in Mesopotamia. The Canaanite serpent was associated with fertility cults.",
+              "difference": "Genesis strips the serpent of its divine or semi-divine status. It is 'more crafty than any beast of the field that the LORD God had made' — a creature, not a deity. Its wisdom is cunning, not divine knowledge.",
+              "significance": "By reducing the serpent to a creature — clever but created — Genesis demythologizes the serpent cults that surrounded Israel. The text simultaneously explains the origin of evil's power (real craftiness) and its limits (a creature under judgment)."
+            }
+          ]
         },
         "cross": {
           "refs": [
@@ -298,6 +314,24 @@
             {
               "ref": "Rev 12:17",
               "note": "The dragon wages war against the woman’s offspring — Revelation frames the entire spiritual conflict in Gen 3:15 terms."
+            }
+          ],
+          "echoes": [
+            {
+              "source_ref": "Genesis 3:15",
+              "target_ref": "Romans 16:20",
+              "type": "allusion",
+              "source_context": "God tells the serpent: 'I will put enmity between you and the woman, and between your offspring and hers; he will crush your head, and you will strike his heel.'",
+              "connection": "Paul writes: 'The God of peace will soon crush Satan under your feet.' The vocabulary of crushing and the serpent imagery directly echo the protoevangelium.",
+              "significance": "Paul applies the Genesis 3:15 promise to the church's present experience. The ancient enmity between the serpent and the woman's seed is being resolved — not by a single hero but by God acting through his people."
+            },
+            {
+              "source_ref": "Genesis 3:15",
+              "target_ref": "Revelation 12:9, 17",
+              "type": "typological",
+              "source_context": "The enmity between the serpent and the woman's offspring — a conflict that will span all of human history.",
+              "connection": "Revelation identifies 'that ancient serpent called the devil, or Satan, who leads the whole world astray' and shows the dragon pursuing the woman and 'making war against the rest of her offspring — those who keep God's commands and hold fast their testimony about Jesus.'",
+              "significance": "Revelation explicitly connects the Eden serpent with the cosmic enemy of God's people. The 'offspring of the woman' becomes both Christ and the church. The ancient prophecy frames the entire biblical drama as one continuous conflict moving toward resolution."
             }
           ]
         },

@@ -363,7 +363,28 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Ruth 1–4 — The Whole Book Chiasm",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "Naomi loses family in Moab — emptied of husband and sons; returns to Bethlehem bereft (1:1–22)",
+            "bottom": "Naomi gains family in Bethlehem — filled by Boaz’s redemption and the birth of Obed; the women declare “Naomi has a son” (4:13–17)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "Ruth gleans in Boaz’s field — Boaz notices her loyalty and provides protection and food (2:1–23)",
+            "bottom": "Boaz at the gate — redeems the land and acquires Ruth as wife before the elders (4:1–12)",
+            "color": "#5b8fb9"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "Ruth goes to the threshing floor at night and asks Boaz to spread his garment over her — “you are a guardian-redeemer of our family” (3:1–18). The center is the turning point: Ruth’s bold initiative transforms the story from survival to redemption. The Hebrew word for “garment” (kanaph) echoes Boaz’s earlier prayer that she find refuge under God’s “wings” (2:12) — now Boaz himself becomes the answer to his own prayer."
+        }
+      }
     },
     "hebtext": [
       {

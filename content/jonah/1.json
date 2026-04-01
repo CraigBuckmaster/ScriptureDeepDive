@@ -321,7 +321,34 @@
           "is_key": false
         }
       ],
-      "note": "Chapter 1 follows a descent pattern: Jonah goes down to Joppa, down into the ship, down into the hold, and will descend into the sea and the fish. Each step downward corresponds to increasing distance from his calling and increasing proximity to death."
+      "note": "Chapter 1 follows a descent pattern: Jonah goes down to Joppa, down into the ship, down into the hold, and will descend into the sea and the fish. Each step downward corresponds to increasing distance from his calling and increasing proximity to death.",
+      "chiasm": {
+        "title": "Jonah 1–4 — The Prophet’s Two Flights",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "God commissions Jonah to go to Nineveh; Jonah flees in the opposite direction (1:1–3)",
+            "bottom": "God commissions Jonah a second time; Jonah obeys and goes to Nineveh (3:1–3)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "Pagan sailors fear, pray, and sacrifice — they turn to the LORD (1:4–16)",
+            "bottom": "Pagan Ninevites fear, fast, and repent — they turn from violence (3:4–10)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "Jonah in the belly of the fish — gives thanks for deliverance from death (2:1–10)",
+            "bottom": "Jonah outside the city — angry about God’s mercy and wishes for death (4:1–4)",
+            "color": "#5fa87a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "The mirror’s hinge: pagans consistently respond rightly to God while the prophet consistently responds wrongly. In the first half, Jonah sinks and is saved; in the second half, Jonah is right-side-up but spiritually upside-down. The book’s question is God’s final question: “Should I not have concern for Nineveh?” (4:5–11)."
+        }
+      }
     },
     "themes": {
       "scores": [

@@ -337,7 +337,34 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Matthew 13 — The Parables Discourse",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "Parable of the Sower — seed falls on four types of soil; only good soil produces a crop (vv.1–9, 18–23)",
+            "bottom": "Parable of the Dragnet — net catches fish of every kind; angels separate the wicked from the righteous (vv.47–50)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "Parable of the Weeds — enemy sows weeds among wheat; both grow together until the harvest (vv.24–30, 36–43)",
+            "bottom": "Parable of the Hidden Treasure and the Pearl — the kingdom is worth selling everything to possess (vv.44–46)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "Parable of the Mustard Seed — smallest seed becomes the largest garden plant; birds perch in its branches (vv.31–32)",
+            "bottom": "Parable of the Yeast — a woman mixes yeast into flour until the whole batch is leavened (v.33)",
+            "color": "#5fa87a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "Jesus spoke all these things to the crowd in parables; he did not say anything to them without using a parable. So was fulfilled what was spoken through the prophet: “I will open my mouth in parables, I will utter things hidden since the creation of the world” (vv.34–35). The center is the reason for parables: revelation and concealment are simultaneous — the kingdom is hidden in plain sight."
+        }
+      }
     },
     "tx": [
       {

@@ -279,7 +279,34 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Psalm 23 — The Shepherd Psalm",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "The LORD is my shepherd, I lack nothing (v.1)",
+            "bottom": "Surely goodness and love will follow me all the days of my life, and I will dwell in the house of the LORD forever (v.6)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "He makes me lie down in green pastures, he leads me beside quiet waters (v.2)",
+            "bottom": "You anoint my head with oil; my cup overflows (v.5b)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "He refreshes my soul; he guides me along the right paths for his name’s sake (v.3)",
+            "bottom": "You prepare a table before me in the presence of my enemies (v.5a)",
+            "color": "#5fa87a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "Even though I walk through the darkest valley, I will fear no evil, for you are with me; your rod and your staff, they comfort me (v.4). The center is the crisis — and the turning point from third person (‘he’) to second person (‘you’). Intimacy deepens in the valley."
+        }
+      }
     },
     "hebtext": [
       {

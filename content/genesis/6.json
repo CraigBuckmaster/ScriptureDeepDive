@@ -39,7 +39,15 @@
         ],
         "hist": {
           "historical": "The pre-flood corruption narrative has close parallels in Mesopotamian flood literature (Atrahasis, Gilgamesh) where the gods also become distressed by the noise or corruption of humanity and decide to destroy it. Genesis's account inverts the Mesopotamian logic: the gods in Atrahasis are disturbed by the clamour of an overpopulated humanity; God in Genesis is grieved by the moral corruption — violence and wickedness. The difference is fundamental: the flood in Genesis is moral judgment, not divine irritation.",
-          "context": "The contrast between Genesis 5's closing hope (Noah) and Genesis 6's opening darkness is stark. The world that chapter 5's genealogy traversed in rapid summary was, it turns out, a world sliding toward catastrophe. The filling of the earth with humanity (5:4) has become the filling of the earth with violence (6:11). The divine image has not prevented the spread of evil; if anything, the multiplication of image-bearers has multiplied the capacity for harm."
+          "context": "The contrast between Genesis 5's closing hope (Noah) and Genesis 6's opening darkness is stark. The world that chapter 5's genealogy traversed in rapid summary was, it turns out, a world sliding toward catastrophe. The filling of the earth with humanity (5:4) has become the filling of the earth with violence (6:11). The divine image has not prevented the spread of evil; if anything, the multiplication of image-bearers has multiplied the capacity for harm.",
+          "ane": [
+            {
+              "parallel": "Atrahasis Epic — Divine Overpopulation Crisis",
+              "similarity": "In Atrahasis, the gods decide to destroy humanity because humans have multiplied and their noise disturbs the gods' sleep. Genesis 6 opens with humanity multiplying on the earth, followed by God's grief over human wickedness and his decision to destroy.",
+              "difference": "Atrahasis presents petty, irritated gods who can't sleep. Genesis presents a God grieved by moral corruption — 'every inclination of the thoughts of the human heart was only evil all the time.' The motivation is ethical, not selfish.",
+              "significance": "The contrast is theologically loaded: Atrahasis's gods destroy out of annoyance; Genesis's God judges out of righteousness while grieving the necessity. The same plot structure carries a radically different portrait of the divine character."
+            }
+          ]
         },
         "cross": {
           "refs": [
@@ -321,7 +329,15 @@
         ],
         "hist": {
           "historical": "The ark's dimensions (300 × 50 × 30 cubits) give it a displacement tonnage and volume sufficient to carry the stated cargo — approximately 1.5 million cubic feet. Naval architects have noted that the 6:1 length-to-width ratio is optimal for stability in rough seas. Whether read literally or theologically, the ark's design reflects practical maritime wisdom. God provides blueprints for the salvation he commands.",
-          "context": "God's detailed instructions for the ark are a theological statement: salvation is God's initiative, God's design, and God's provision. Noah does not design the ark; he builds what God specifies. The covenant announced in v.18 frames the entire construction project: the ark is not merely a survival vehicle but the physical embodiment of God's covenant faithfulness. What God covenants, he provides the means to fulfill."
+          "context": "God's detailed instructions for the ark are a theological statement: salvation is God's initiative, God's design, and God's provision. Noah does not design the ark; he builds what God specifies. The covenant announced in v.18 frames the entire construction project: the ark is not merely a survival vehicle but the physical embodiment of God's covenant faithfulness. What God covenants, he provides the means to fulfill.",
+          "ane": [
+            {
+              "parallel": "Atrahasis and Gilgamesh — Flood Boat Instructions",
+              "similarity": "In Atrahasis, Enki instructs Atrahasis to build a boat with specific dimensions. In Gilgamesh XI, Ea tells Utnapishtim to build a cube-shaped vessel. Genesis gives Noah detailed ark dimensions (300 × 50 × 30 cubits) with three decks.",
+              "difference": "The Gilgamesh boat is a perfect cube (120 cubits per side) — geometrically impossible to sail. The Atrahasis boat is round. Noah's ark has a realistic 6:1 length-to-width ratio, similar to modern cargo vessels.",
+              "significance": "The ark's proportions suggest a vessel designed for stability in rough water, not a mythological symbol. Whether intentional or not, Genesis's dimensions produce a seaworthy craft, while the Mesopotamian boats are literary constructions."
+            }
+          ]
         },
         "cross": {
           "refs": [
@@ -515,7 +531,52 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Genesis 6:10–9:19 — The Flood Narrative Chiasm",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "Noah’s three sons: Shem, Ham, Japheth (6:10)",
+            "bottom": "Noah’s three sons: Shem, Ham, Japheth — from these the earth was repopulated (9:18–19)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "Corruption and violence fill the earth; God resolves to destroy (6:11–13)",
+            "bottom": "God establishes covenant: never again to destroy all life by flood (9:1–17)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "God commands the ark; Noah obeys — covenant announced (6:14–22)",
+            "bottom": "God blesses Noah; sacrifice accepted, promise given (8:20–22)",
+            "color": "#5fa87a"
+          },
+          {
+            "label": "D",
+            "top": "Enter the ark — Noah, family, and animals by pairs (7:1–9)",
+            "bottom": "Exit the ark — Noah, family, and animals sent out (8:15–19)",
+            "color": "#c47a6a"
+          },
+          {
+            "label": "E",
+            "top": "Seven days waiting; the flood begins — the LORD shuts them in (7:10–16)",
+            "bottom": "Raven and dove sent out; seven-day intervals of waiting (8:6–14)",
+            "color": "#5ba8a0"
+          },
+          {
+            "label": "F",
+            "top": "Floodwaters rise for 150 days — all life destroyed (7:17–24)",
+            "bottom": "Floodwaters recede for 150 days — the earth dries (8:1b–5)",
+            "color": "#CD853F"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "God remembered Noah (8:1a). The theological pivot of the entire narrative — divine memory is not mere recall but active intervention. God’s remembering initiates the reversal of the flood."
+        }
+      }
     },
     "hebtext": [
       {
