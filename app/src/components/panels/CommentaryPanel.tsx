@@ -26,6 +26,14 @@ export function CommentaryPanel({ notes, scholarId, onScholarPress, onRefPress }
   return (
     <View style={{ gap: spacing.sm }}>
       <ScholarTag scholarId={scholarId} onPress={onScholarPress} />
+      <Text style={{
+        color: base.textMuted,
+        fontFamily: fontFamily.bodyItalic,
+        fontSize: 11,
+        marginTop: -spacing.xs,
+      }}>
+        Faithful Paraphrase
+      </Text>
 
       {notes.map((note, i) => (
         <View key={i} style={{ gap: 2 }}>

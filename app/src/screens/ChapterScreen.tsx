@@ -415,6 +415,11 @@ export default function ChapterScreen() {
               : undefined
           }
         />
+
+        {/* Scholar disclaimer */}
+        <Text style={[styles.scholarDisclaimer, { color: base.textMuted }]}>
+          Scholar commentary panels present paraphrased summaries of positions found in published works and are not direct quotations. For exact wording, consult the original sources cited.
+        </Text>
       </ScrollView>
 
       {ttsActive && (
@@ -541,5 +546,14 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     paddingBottom: 80,
+  },
+  scholarDisclaimer: {
+    fontFamily: fontFamily.bodyItalic,
+    fontSize: 10,
+    lineHeight: 15,
+    textAlign: 'center',
+    paddingHorizontal: spacing.xl,
+    paddingTop: spacing.lg,
+    paddingBottom: spacing.sm,
   },
 });

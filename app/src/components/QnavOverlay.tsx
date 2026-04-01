@@ -2,7 +2,7 @@
  * QnavOverlay — Bottom-sheet quick navigation.
  *
  * 65%/90% snap points. Drag handle replaces close button.
- * Search bar + OT/NT toggle + translation toggle (moved from nav bar).
+ * Search bar + OT/NT toggle.
  * Book list with expandable chapter grids.
  */
 
@@ -10,9 +10,7 @@ import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import BottomSheet, { BottomSheetFlatList } from '@gorhom/bottom-sheet';
 import { useBooks } from '../hooks/useBooks';
-import { useSettingsStore } from '../stores';
 import { SearchInput } from './SearchInput';
-import { selectionFeedback } from '../utils/haptics';
 import { base, useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 
 interface Props {
@@ -30,8 +28,6 @@ export function QnavOverlay({
   const { base } = useTheme();
   const sheetRef = useRef<BottomSheet>(null);
   const { books } = useBooks();
-  const translation = useSettingsStore((s) => s.translation);
-  const setTranslation = useSettingsStore((s) => s.setTranslation);
   const [testament, setTestament] = useState<'ot' | 'nt'>('ot');
   const [expandedBook, setExpandedBook] = useState<string | null>(null);
   const [search, setSearch] = useState('');
@@ -69,11 +65,6 @@ export function QnavOverlay({
     onClose();
   }, [onSelectChapter, onClose]);
 
-  const handleTranslation = useCallback((t: string) => {
-    selectionFeedback();
-    setTranslation(t);
-  }, [setTranslation]);
-
   if (!visible) return null;
 
   return (
@@ -109,20 +100,6 @@ export function QnavOverlay({
           </View>
         )}
 
-        {/* Translation toggle */}
-        <View style={styles.translationRow}>
-          {(['niv', 'esv'] as const).map((t) => (
-            <TouchableOpacity
-              key={t}
-              onPress={() => handleTranslation(t)}
-              style={[styles.translationPill, { backgroundColor: base.bgElevated, borderColor: base.border }, translation === t && { backgroundColor: base.gold + '30', borderColor: base.gold + '60' }]}
-            >
-              <Text style={[styles.translationLabel, { color: base.textMuted }, translation === t && { color: base.gold }]}>
-                {t.toUpperCase()}
-              </Text>
-            </TouchableOpacity>
-          ))}
-        </View>
       </View>
 
       {/* Book list */}
@@ -196,20 +173,6 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.displayMedium,
     fontSize: 13,
     paddingBottom: 4,
-  },
-  translationRow: {
-    flexDirection: 'row',
-    gap: spacing.sm,
-  },
-  translationPill: {
-    borderRadius: radii.pill,
-    paddingHorizontal: 14,
-    paddingVertical: 4,
-    borderWidth: 1,
-  },
-  translationLabel: {
-    fontFamily: fontFamily.uiSemiBold,
-    fontSize: 11,
   },
   listContent: {
     paddingBottom: spacing.xxl,
