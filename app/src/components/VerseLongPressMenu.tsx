@@ -15,7 +15,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import { Copy, Share2, BookOpen, Highlighter } from 'lucide-react-native';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { base, useTheme, spacing, radii, fontFamily } from '../theme';
 import { copyVerse, shareVerse } from '../utils/shareVerse';
 import { logger } from '../utils/logger';
 

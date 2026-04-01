@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { base, useTheme, spacing, radii, fontFamily } from '../theme';
 
 const TRANSLATIONS: { id: string; label: string }[] = [
   { id: 'niv', label: 'NIV' },

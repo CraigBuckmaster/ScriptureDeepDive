@@ -7,7 +7,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { HighlightedText } from './HighlightedText';
 import { NoteIndicator } from './NoteIndicator';
-import { useTheme, spacing, fontFamily } from '../theme';
+import { base, useTheme, spacing, fontFamily } from '../theme';
 import type { Verse, VHLGroup } from '../types';
 
 interface Props {

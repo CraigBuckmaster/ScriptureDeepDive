@@ -11,7 +11,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { Bookmark, Clock, Calendar, Settings, ArrowRight, StickyNote } from 'lucide-react-native';
-import { useTheme, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
+import { base, useTheme, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
 
 interface MenuItem {
   icon: React.ElementType;

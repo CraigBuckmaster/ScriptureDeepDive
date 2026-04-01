@@ -8,7 +8,7 @@
 import React, { useMemo } from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, LayoutAnimation, Platform, UIManager } from 'react-native';
 import { PanelRenderer } from './panels/PanelRenderer';
-import { useTheme, spacing } from '../theme';
+import { base, useTheme, spacing } from '../theme';
 import { lightImpact } from '../utils/haptics';
 import type { ParsedRef } from '../types';
 

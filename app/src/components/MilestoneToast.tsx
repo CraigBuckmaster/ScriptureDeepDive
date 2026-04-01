@@ -5,7 +5,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Animated, Text, StyleSheet } from 'react-native';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { base, useTheme, spacing, radii, fontFamily } from '../theme';
 
 interface Props {
   message: string | null;

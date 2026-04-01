@@ -40,7 +40,7 @@ import { InterlinearSheet } from '../components/InterlinearSheet';
 import { TTSControls } from '../components/TTSControls';
 import { useTTS } from '../hooks/useTTS';
 
-import { useTheme, spacing } from '../theme';
+import { base, useTheme, spacing } from '../theme';
 
 // Enable LayoutAnimation on Android
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {

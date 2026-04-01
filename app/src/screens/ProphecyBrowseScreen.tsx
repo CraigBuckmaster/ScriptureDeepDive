@@ -11,7 +11,7 @@ import { useProphecyChains } from '../hooks/useProphecyChains';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { BadgeChip } from '../components/BadgeChip';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { base, useTheme, spacing, radii, fontFamily } from '../theme';
 import type { ProphecyChain, ProphecyChainLink } from '../types';
 
 const CATEGORY_COLORS: Record<string, string> = {

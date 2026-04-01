@@ -13,7 +13,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft, ArrowRight, ChevronDown, Info, Volume2 } from 'lucide-react-native';
 import { lightImpact } from '../utils/haptics';
-import { useTheme, spacing, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { base, useTheme, spacing, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 
 interface Props {
   bookName: string;

@@ -17,7 +17,7 @@ import { useScrollToTop } from '@react-navigation/native';
 import { useBooks, type BookWithProgress } from '../hooks/useBooks';
 import { useSettingsStore } from '../stores';
 import { SearchInput } from '../components/SearchInput';
-import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { base, useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 
 // ── Tradition groupings (by book_order index) ────────────────────
 

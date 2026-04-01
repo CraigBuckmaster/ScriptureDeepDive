@@ -6,7 +6,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { X } from 'lucide-react-native';
-import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { base, useTheme, spacing, radii, fontFamily } from '../theme';
 
 export interface SearchFilter {
   testament: 'all' | 'ot' | 'nt';

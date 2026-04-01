@@ -9,7 +9,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { BadgeChip } from './BadgeChip';
-import { useTheme, spacing, fontFamily } from '../theme';
+import { base, useTheme, spacing, fontFamily } from '../theme';
 import type { Chapter } from '../types';
 
 interface Props {

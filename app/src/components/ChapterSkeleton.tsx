@@ -14,7 +14,7 @@ import Animated, {
   withRepeat,
   withTiming,
 } from 'react-native-reanimated';
-import { useTheme, spacing, radii } from '../theme';
+import { base, useTheme, spacing, radii } from '../theme';
 
 function Bone({ width, height = 14, style, bgColor }: {
   width: DimensionValue;

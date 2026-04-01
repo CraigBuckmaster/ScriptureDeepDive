@@ -20,7 +20,7 @@ import {
   ERA_RANGES, TOTAL_WIDTH, AXIS_Y, ERA_BAR_Y, ERA_BAR_H,
   type PositionedEvent,
 } from '../utils/timelineLayout';
-import { useTheme, spacing, radii, eraNames, fontFamily } from '../theme';
+import { base, useTheme, spacing, radii, eraNames, fontFamily } from '../theme';
 import type { TimelineEntry } from '../types';
 
 interface CategoryFilters {
