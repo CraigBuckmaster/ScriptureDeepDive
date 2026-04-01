@@ -23,7 +23,7 @@ All 66 books live. All 23 deep study feature phases shipped. Theme system (Dark/
 | Item | Status |
 |------|--------|
 | Phase 24 — Content Library screen | **In progress** (Claude Code building pipeline + screen) |
-| Phase 24E — Content Library enrichment | Seed data committed (128 entries: 16 chiasms, 19 ANE, 26 echoes, 10 manuscripts, 57 discourse). 9 batches planned to reach ~270. See `_tools/CONTENT_LIBRARY_ENRICHMENT_PLAN.md` |
+| Phase 24E — Content Library enrichment | **COMPLETE** (269 entries: 39 chiasms, 46 ANE, 65 echoes, 18 manuscripts, 101 discourse). All 9 batches shipped. |
 
 ### Remaining Feature Work
 
@@ -56,7 +56,7 @@ All 66 books live. All 23 deep study feature phases shipped. Theme system (Dark/
 
 **If doing code work (Claude Code):** Phase 24 — Content Library. See `_tools/DEEP_STUDY_FEATURES_PLAN.md`.
 
-**If doing content work:** Phase 24E enrichment batches. See `_tools/CONTENT_LIBRARY_ENRICHMENT_PLAN.md`. Start with Batch 1 (chiasms: Psalms + OT narrative).
+**If doing content work:** Phase 24E complete. Next content priorities: Isaiah 23-66 thin panel enrichment (44 chapters), Kings/Chronicles MacArthur enrichment (~112 chapters), thin panel enrichment Batch 6 (~259 panels).
 
 **If doing architecture:** Theme Batch T6 (small) or Arch Batch 7 (inline styles, medium).
 
@@ -87,6 +87,6 @@ git add -A && git commit -m "..." && git push
 cd app && eas update --branch production
 ```
 
-DB version: 0.32 · 54 scholars · 3 translations (NIV, ESV, KJV) · 444K interlinear words · 128 content library entries
+DB version: 0.51 · 54 scholars · 3 translations (NIV, ESV, KJV) · 444K interlinear words · 269 content library entries
 
 **Note:** scripture.db is ~107MB (interlinear data). Rebuild locally before deploy.
