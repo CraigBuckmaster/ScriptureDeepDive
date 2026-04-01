@@ -6,7 +6,7 @@
 
 ## Features
 
-- **Dual translation** — NIV and ESV with instant toggle
+- **KJV & ASV translations** — both public domain, with on-demand translation architecture ready for licensed translations
 - **54 scholar commentaries** — evangelical, reformed, Jewish, critical, patristic, Pentecostal
 - **Hebrew & Greek word studies** — original-language roots with glosses, semantic range, and key occurrences
 - **Interactive genealogy tree** — pinch-to-zoom family tree with era filtering and search-to-node
@@ -32,6 +32,7 @@
 | Map | react-native-maps 1.20 |
 | Gestures | react-native-gesture-handler 2.28 + react-native-reanimated 4.1 |
 | State | Zustand 5 |
+| Testing | Jest (jest-expo) — 198 suites, 1100+ tests |
 | Deployment | EAS Build + EAS Update (OTA) |
 
 ## Quick Start
@@ -40,10 +41,11 @@
 git clone https://github.com/CraigBuckmaster/ScriptureDeepDive.git
 cd ScriptureDeepDive/app
 npm install
+python3 ../_tools/build_sqlite.py   # builds scripture.db from content JSON
 npx expo start
 ```
 
-Scan the QR code with Expo Go on your phone. See [app/SETUP.md](app/SETUP.md) for detailed setup including building the content database.
+Scan the QR code with Expo Go on your phone. See [app/SETUP.md](app/SETUP.md) for detailed setup.
 
 ## Running on iPhone
 
@@ -57,7 +59,7 @@ Scan the QR code with Expo Go on your phone. See [app/SETUP.md](app/SETUP.md) fo
 
 ### iOS Accessibility: Reduce Motion Workaround
 
-If **Settings → Accessibility → Motion → Reduce Motion** is enabled, Reanimated silently breaks programmatic `useAnimatedStyle` updates. Gesture-driven updates still work fine.
+If **Settings > Accessibility > Motion > Reduce Motion** is enabled, Reanimated silently breaks programmatic `useAnimatedStyle` updates. Gesture-driven updates still work fine.
 
 **Solution:** Two-layer transform architecture — outer `Animated.View` for gesture deltas (worklets, always works), inner `View` for base position (React state, always works). See `app/src/hooks/useTreeGestures.ts` for full details.
 
@@ -70,27 +72,35 @@ ScriptureDeepDive/
 │   │   ├── screens/              All screens
 │   │   ├── components/           Panels, tree, map, modals, primitives
 │   │   ├── hooks/                Data loading, state, TTS, gestures
-│   │   ├── db/                   SQLite queries (content + user modules)
+│   │   ├── db/                   SQLite queries (content + user + translation manager)
 │   │   ├── theme/                Color tokens, type presets, spacing
 │   │   ├── stores/               Settings + reader state (Zustand)
 │   │   ├── utils/                Verse resolver, tree builder, geo math
 │   │   ├── navigation/           Stacks + tab navigator
 │   │   └── types/                TypeScript interfaces
 │   ├── __tests__/                Unit + integration + component tests
-│   └── maestro/                  E2E test flows
+│   └── assets/                   Bundled scripture.db
 ├── content/                      Source-of-truth JSON
 │   ├── {book_id}/{ch}.json       One file per chapter
 │   ├── meta/                     Reference data (books, scholars, people, places, etc.)
-│   └── verses/                   NIV + ESV verse files per book
+│   └── verses/                   KJV, ASV (+ NIV, ESV verse data preserved for future licensing)
 ├── _tools/                       Build system + content pipeline
 │   ├── shared.py                 save_chapter(), REGISTRY
 │   ├── config.py                 Scholar config, book metadata, people bios
-│   ├── build_sqlite.py           JSON → SQLite compiler
+│   ├── build_sqlite.py           JSON → SQLite compiler (bundled + supplemental translations)
 │   ├── validate.py               Content JSON schema validator
-│   ├── validate_sqlite.py        SQLite integrity checker
-│   └── GENERATOR_TEMPLATE.py     Template for chapter generator scripts
-└── scripture.db                  SQLite database (built from content/)
+│   └── validate_sqlite.py        SQLite integrity checker
+└── .github/workflows/test.yml    CI — tests + coverage on every PR
 ```
+
+## Translations Architecture
+
+Translations are split into **bundled** and **on-demand** to keep the app binary small:
+
+- **Bundled** (KJV, ASV) — baked into `scripture.db`, available instantly
+- **On-demand** (future licensed translations) — separate small `.db` files downloaded when the user first selects them
+
+Controlled by `AVAILABLE_TRANSLATIONS` and `BUNDLED_TRANSLATIONS` in `build_sqlite.py`. The app-side registry (`translationRegistry.ts`) and download manager (`translationManager.ts`) handle the rest. Adding a new translation is a config change + rebuild.
 
 ## Content Pipeline
 
@@ -99,7 +109,7 @@ Generator script (/tmp/gen_{book}.py)
   → save_chapter(book_dir, ch, data_dict)
     → content/{book}/{ch}.json
       → build_sqlite.py
-        → scripture.db
+        → app/assets/scripture.db
           → validate.py + validate_sqlite.py
             → eas update --branch production
 ```
@@ -110,28 +120,38 @@ Generator scripts are ephemeral — created in `/tmp/`, never committed.
 
 Two separate SQLite databases:
 
-- **`scripture.db`** — read-only content, replaced on updates. FTS5 on verses and people.
+- **`scripture.db`** — read-only content, replaced on updates. Bundled translations + FTS5 on verses and people.
 - **`user.db`** — notes, bookmarks, highlights, preferences. Never replaced, migrated in-place.
 
-DB version tracked in `_tools/db_version.json`. See `_tools/DEV_GUIDE.md` for conventions.
+DB version tracked in `_tools/db_version.json`. The build script auto-increments the version and syncs it to the app's `database.ts`.
+
+## Testing
+
+```bash
+cd app
+npx jest              # run all tests
+npx jest --coverage   # run with coverage report
+```
+
+CI runs on every pull request and posts test results + coverage percentages directly to the PR.
 
 ## Deploy
 
 ```bash
-python3 _tools/build_sqlite.py
-cp scripture.db app/assets/scripture.db
-git add -A && git commit -m "..." && git push
+python3 _tools/build_sqlite.py       # builds scripture.db + supplemental translations
+git add -A && git commit -m "..."
+git push
 cd app && eas update --branch production
 ```
 
 ## Conventions
 
-- **Verse text:** Word-for-word NIV. No paraphrasing, no skipping verses.
 - **Book IDs:** Underscores for multi-word names (`1_samuel`, `song_of_solomon`).
 - **Generators:** Always in `/tmp/`, never committed.
 - **Scholars:** Data-driven via `config.py` SCHOLAR_REGISTRY + COMMENTATOR_SCOPE.
 - **Meta data:** All in `content/meta/*.json`.
+- **Translations:** Controlled by `AVAILABLE_TRANSLATIONS` in `build_sqlite.py`. Verse data for unlicensed translations stays in the repo but isn't exposed in the app.
 
 ## License
 
-© Companion Study. All rights reserved.
+All rights reserved.
