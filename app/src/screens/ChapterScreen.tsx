@@ -142,6 +142,32 @@ export default function ChapterScreen() {
   // Breadcrumb state — show when openPanel is present, hide on chapter swipe
   const [showBreadcrumb, setShowBreadcrumb] = useState(!!openPanel);
 
+  // Auto-scroll to active verse during TTS playback
+  useEffect(() => {
+    if (!ttsActive || verses.length === 0) return;
+    const verseNum = verses[tts.currentVerse]?.verse_num;
+    if (verseNum == null) return;
+
+    // Find which section contains this verse and estimate Y position
+    const sec = sections.find(
+      (s) => verseNum >= s.verse_start && verseNum <= s.verse_end
+    );
+    if (!sec) return;
+    const sectionY = sectionYMap.current[sec.id];
+    if (sectionY == null) return;
+
+    // Estimate verse position within section (header ~52px, then verses)
+    const sectionVerseCount = sec.verse_end - sec.verse_start + 1;
+    const verseIndex = verseNum - sec.verse_start;
+    const estimatedVerseHeight = (fontSize * 1.6) + 16; // lineHeight + margin
+    const verseOffsetY = 52 + verseIndex * estimatedVerseHeight;
+
+    scrollRef.current?.scrollTo({
+      y: Math.max(0, sectionY + verseOffsetY - 120),
+      animated: true,
+    });
+  }, [ttsActive, tts.currentVerse, verses, sections, fontSize]);
+
   // Scroll to top on chapter change + reset progress + stop TTS
   useEffect(() => {
     scrollRef.current?.scrollTo({ y: 0, animated: false });

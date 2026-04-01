@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { Play, Pause, SkipBack, SkipForward, Square } from 'lucide-react-native';
+import { Play, Pause, SkipBack, SkipForward, X } from 'lucide-react-native';
 import { base, useTheme, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
 
 const SPEEDS = [0.5, 0.75, 1.0, 1.25, 1.5];
@@ -62,33 +62,39 @@ export function TTSControls({
         <TouchableOpacity onPress={onSkipNext} style={styles.controlButton}>
           <SkipForward size={18} color={base.gold} fill={base.gold} />
         </TouchableOpacity>
-
-        <TouchableOpacity onPress={onStop} style={styles.controlButton}>
-          <Square size={14} color={base.textMuted} fill={base.textMuted} />
-        </TouchableOpacity>
       </View>
 
-      {/* Speed selector */}
-      <View style={styles.speedRow}>
-        {SPEEDS.map((s) => (
-          <TouchableOpacity
-            key={s}
-            onPress={() => onSetSpeed(s)}
-            style={[
-              styles.speedPill,
-              { borderColor: base.border },
-              speed === s && { backgroundColor: base.gold + '25', borderColor: base.gold + '50' },
-            ]}
-          >
-            <Text style={[
-              styles.speedLabel,
-              { color: base.textMuted },
-              speed === s && { color: base.gold },
-            ]}>
-              {s}x
-            </Text>
-          </TouchableOpacity>
-        ))}
+      {/* Speed selector + close button */}
+      <View style={styles.bottomRow}>
+        <View style={styles.speedRow}>
+          {SPEEDS.map((s) => (
+            <TouchableOpacity
+              key={s}
+              onPress={() => onSetSpeed(s)}
+              style={[
+                styles.speedPill,
+                { borderColor: base.border },
+                speed === s && { backgroundColor: base.gold + '25', borderColor: base.gold + '50' },
+              ]}
+            >
+              <Text style={[
+                styles.speedLabel,
+                { color: base.textMuted },
+                speed === s && { color: base.gold },
+              ]}>
+                {s}x
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+
+        <TouchableOpacity
+          onPress={onStop}
+          style={[styles.closeButton, { borderColor: base.border }]}
+          accessibilityLabel="Close TTS"
+        >
+          <X size={16} color={base.textMuted} />
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -127,12 +133,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: spacing.sm,
+    gap: spacing.md,
     marginBottom: spacing.sm,
+  },
+  bottomRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   speedRow: {
     flexDirection: 'row',
-    justifyContent: 'center',
     gap: 6,
   },
   speedPill: {
@@ -158,5 +168,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  closeButton: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    borderWidth: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: spacing.xs,
   },
 });
