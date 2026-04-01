@@ -279,5 +279,44 @@ def main():
 
 
 if __name__ == '__main__':
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Content validation + quality scoring")
+    parser.add_argument("--quality", action="store_true",
+                        help="Run quality scoring after validation")
+    parser.add_argument("--book", type=str, default=None,
+                        help="Quality: evaluate a single book (e.g. genesis)")
+    parser.add_argument("--chapter", type=str, default=None,
+                        help="Quality: evaluate a single chapter (e.g. gen1)")
+    parser.add_argument("--deep", action="store_true",
+                        help="Quality: use LLM for relevance scoring")
+    parser.add_argument("--worst", type=int, default=10,
+                        help="Quality: show N lowest-scoring chapters (default: 10)")
+    parser.add_argument("--json", action="store_true",
+                        help="Quality: save report to _tools/quality_report.json")
+    parser.add_argument("--verbose", action="store_true",
+                        help="Quality: show findings for all chapters")
+    parser.add_argument("--api-key", type=str, default=None,
+                        help="Quality: Anthropic API key for --deep mode")
+
+    args = parser.parse_args()
     os.chdir(ROOT)
-    sys.exit(main())
+
+    # Always run structural validation
+    result = main()
+
+    # Optionally run quality scoring
+    if args.quality:
+        from quality import QualityEvaluator
+        evaluator = QualityEvaluator(
+            content_dir="content",
+            verse_dir="content/verses",
+            deep=args.deep,
+            api_key=args.api_key,
+        )
+        report = evaluator.run(book=args.book, chapter=args.chapter)
+        report.print_terminal(worst_n=args.worst, verbose=args.verbose)
+        if args.json:
+            report.save_json("_tools/quality_report.json")
+
+    sys.exit(result)
