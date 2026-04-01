@@ -397,7 +397,34 @@
           "is_key": true
         }
       ],
-      "note": "Colossians 1 moves from thanksgiving (vv. 1–8) through prayer (vv. 9–14) to the Christ-hymn (vv. 15–20) and its application (vv. 21–29). The hymn’s twofold affirmation—Christ’s supremacy over creation and over the church—provides the theological foundation for the letter’s polemic against the Colossian heresy."
+      "note": "Colossians 1 moves from thanksgiving (vv. 1–8) through prayer (vv. 9–14) to the Christ-hymn (vv. 15–20) and its application (vv. 21–29). The hymn’s twofold affirmation—Christ’s supremacy over creation and over the church—provides the theological foundation for the letter’s polemic against the Colossian heresy.",
+      "chiasm": {
+        "title": "Colossians 1:15–20 — The Cosmic Christ Hymn",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "He is the image of the invisible God, the firstborn over all creation (v.15)",
+            "bottom": "He is the beginning, the firstborn from among the dead, so that in everything he might have the supremacy (v.18b)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "For in him all things were created: things in heaven and on earth, visible and invisible, whether thrones or powers or rulers or authorities (v.16a)",
+            "bottom": "For God was pleased to have all his fullness dwell in him, and through him to reconcile to himself all things, whether things on earth or things in heaven (vv.19–20a)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "All things have been created through him and for him. He is before all things, and in him all things hold together (vv.16b–17)",
+            "bottom": "Making peace through his blood, shed on the cross (v.20b)",
+            "color": "#5fa87a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "And he is the head of the body, the church (v.18a). Between the two stanzas — creation and reconciliation — stands the church. The one who made the cosmos now leads a community. The hymn moves from cosmic scope to intimate body, then back to cosmic scope. The church is where creation and redemption meet."
+        }
+      }
     },
     "hebtext": [
       {

@@ -301,7 +301,34 @@
           "is_key": true
         }
       ],
-      "note": "Revelation 4 is a unified throne room theophany moving from spatial description (vv. 1-6a) to doxological response (vv. 6b-11). The literary structure is concentric: the throne at the center, surrounded by increasingly wider circles of worshipers—living creatures, elders, and (in ch. 5) all creation. The chapter establishes divine sovereignty as the theological foundation for every subsequent judgment."
+      "note": "Revelation 4 is a unified throne room theophany moving from spatial description (vv. 1-6a) to doxological response (vv. 6b-11). The literary structure is concentric: the throne at the center, surrounded by increasingly wider circles of worshipers—living creatures, elders, and (in ch. 5) all creation. The chapter establishes divine sovereignty as the theological foundation for every subsequent judgment.",
+      "chiasm": {
+        "title": "Revelation 4–5 — The Throne Room Vision",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "A throne in heaven with one seated on it, surrounded by emerald radiance. Twenty-four elders on twenty-four thrones, dressed in white with golden crowns (4:1–4)",
+            "bottom": "The Lamb takes the scroll. Every creature in heaven and on earth and under the earth sings: ‘To him who sits on the throne and to the Lamb be praise and honor and glory and power’ (5:11–14)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "Four living creatures, covered with eyes, never stop saying: ‘Holy, holy, holy is the Lord God Almighty, who was and is and is to come’ (4:6–8)",
+            "bottom": "The four living creatures and twenty-four elders fall before the Lamb. Each has a harp and golden bowls full of incense, which are the prayers of the saints (5:8–10)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "The twenty-four elders fall down before the throne, cast their crowns, and worship: ‘You are worthy, our Lord and God, to receive glory and honor and power, for you created all things’ (4:9–11)",
+            "bottom": "The Lamb is declared worthy because he was slain and with his blood purchased people for God from every tribe and language and people and nation (5:6–7, 9–10)",
+            "color": "#5fa87a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "A scroll in the right hand of him who sits on the throne, sealed with seven seals. A mighty angel proclaims: ‘Who is worthy to break the seals and open the scroll?’ No one in heaven or on earth or under the earth can open it. John weeps (5:1–4). Then: ‘See, the Lion of the tribe of Judah has triumphed.’ John looks and sees not a lion but a Lamb, looking as if it had been slain (5:5–6). The center is the great reversal: the conquering Lion IS the slaughtered Lamb. Power is redefined as sacrificial love. This image governs all of Revelation."
+        }
+      }
     },
     "hebtext": [
       {

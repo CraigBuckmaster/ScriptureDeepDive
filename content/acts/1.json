@@ -352,7 +352,34 @@
           "is_key": false
         }
       ],
-      "note": ""
+      "note": "",
+      "chiasm": {
+        "title": "Acts 1–15 — The Peter-Paul Parallel",
+        "pairs": [
+          {
+            "label": "A",
+            "top": "Peter’s Pentecost sermon: the Spirit falls on the Jews in Jerusalem. Three thousand are added. Peter explains what God is doing through Joel and the Psalms (chs. 1–2)",
+            "bottom": "Paul’s Pisidian Antioch sermon: the gospel goes to the Gentiles. Paul explains what God is doing through the Psalms and the prophets. The word spreads through the whole region (ch. 13)",
+            "color": "#8B7CB8"
+          },
+          {
+            "label": "B",
+            "top": "Peter heals a lame man at the temple gate. The healing provokes a sermon and opposition from the Sanhedrin (chs. 3–4)",
+            "bottom": "Paul heals a lame man at Lystra. The healing provokes a response — but pagan worship instead of Jewish opposition. Paul is stoned (ch. 14)",
+            "color": "#5b8fb9"
+          },
+          {
+            "label": "C",
+            "top": "Peter’s shadow heals the sick; apostles arrested, beaten, released with joy. The gospel cannot be stopped by the religious establishment (ch. 5)",
+            "bottom": "Paul and Barnabas return to Antioch, reporting that God opened a door of faith for the Gentiles. The Jerusalem Council meets to resolve the question of Gentile inclusion (ch. 15)",
+            "color": "#5fa87a"
+          }
+        ],
+        "center": {
+          "label": "X",
+          "text": "The conversion of Cornelius (chs. 10–11) and the surrounding narrative of the gospel crossing boundaries: Philip and the Ethiopian eunuch, Saul’s conversion on the Damascus road, the Antioch church (chs. 8–12). The center of Acts’ first half is the theological crisis that drives the entire book: God is doing something new with the Gentiles, and the church must decide whether to follow. Peter’s vision of the unclean animals and Cornelius’s household baptism are the pivot."
+        }
+      }
     },
     "hebtext": [
       {
