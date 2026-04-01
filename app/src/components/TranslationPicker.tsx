@@ -11,6 +11,7 @@ const TRANSLATIONS: { id: string; label: string }[] = [
   { id: 'niv', label: 'NIV' },
   { id: 'esv', label: 'ESV' },
   { id: 'kjv', label: 'KJV' },
+  { id: 'asv', label: 'ASV' },
 ];
 
 interface Props {

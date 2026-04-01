@@ -18,6 +18,7 @@ const TRANSLATION_OPTIONS: DropdownOption[] = [
   { key: 'niv', label: 'NIV' },
   { key: 'esv', label: 'ESV' },
   { key: 'kjv', label: 'KJV' },
+  { key: 'asv', label: 'ASV' },
 ];
 
 interface Props {
