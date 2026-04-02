@@ -28,6 +28,7 @@ interface SettingsState {
   bookListMode: string;
   studyCoachEnabled: boolean;
   theme: ThemePreference;
+  ttsVoice: string;
   isHydrated: boolean;
 
   setTranslation: (t: string) => void;
@@ -36,6 +37,7 @@ interface SettingsState {
   setBookListMode: (m: string) => void;
   setStudyCoachEnabled: (v: boolean) => void;
   setTheme: (t: ThemePreference) => void;
+  setTtsVoice: (v: string) => void;
   hydrate: () => Promise<void>;
 }
 
@@ -46,6 +48,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
   bookListMode: 'canonical',
   studyCoachEnabled: true,
   theme: 'dark' as ThemePreference,
+  ttsVoice: '',
   isHydrated: false,
 
   setTranslation: async (t) => {
@@ -79,6 +82,11 @@ export const useSettingsStore = create<SettingsState>((set) => ({
     await setPreference('theme', t);
   },
 
+  setTtsVoice: async (v) => {
+    set({ ttsVoice: v });
+    await setPreference('ttsVoice', v);
+  },
+
   hydrate: async () => {
     try {
       const t = await getPreference('translation');
@@ -87,6 +95,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
       const blm = await getPreference('bookListMode');
       const sc = await getPreference('studyCoachEnabled');
       const th = await getPreference('theme');
+      const voice = await getPreference('ttsVoice');
 
       set({
         translation: (t && TRANSLATION_MAP.has(t) ? t : 'kjv'),
@@ -95,6 +104,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
         bookListMode: blm === 'canonical' ? 'canonical' : 'thematic',
         studyCoachEnabled: sc !== '0',
         theme: (VALID_THEMES.includes(th as ThemePreference) ? th : 'dark') as ThemePreference,
+        ttsVoice: voice ?? '',
         isHydrated: true,
       });
     } catch (err) {
