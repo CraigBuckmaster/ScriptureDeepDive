@@ -48,6 +48,8 @@ export default function ConceptBrowseScreen() {
       style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
       activeOpacity={0.7}
       onPress={() => navigation.navigate('ConceptDetail', { conceptId: item.id })}
+      accessibilityRole="button"
+      accessibilityLabel={`View concept: ${item.title}`}
     >
       <Text style={[styles.cardTitle, { color: base.text }]}>{item.title}</Text>
       <Text style={[styles.cardDesc, { color: base.textDim }]} numberOfLines={3}>
@@ -67,10 +69,10 @@ export default function ConceptBrowseScreen() {
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]} edges={['top']}>
       {/* Header */}
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()} hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}>
+        <TouchableOpacity onPress={() => navigation.goBack()} hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }} accessibilityRole="button" accessibilityLabel="Go back">
           <ChevronLeft size={24} color={base.gold} />
         </TouchableOpacity>
-        <Text style={[styles.title, { color: base.gold }]}>Concepts</Text>
+        <Text style={[styles.title, { color: base.gold }]} accessibilityRole="header">Concepts</Text>
         <View style={{ width: 24 }} />
       </View>
 
@@ -89,7 +91,7 @@ export default function ConceptBrowseScreen() {
             autoCapitalize="none"
           />
           {search.length > 0 && (
-            <TouchableOpacity onPress={() => setSearch('')}>
+            <TouchableOpacity onPress={() => setSearch('')} accessibilityRole="button" accessibilityLabel="Clear search">
               <X size={16} color={base.textMuted} />
             </TouchableOpacity>
           )}

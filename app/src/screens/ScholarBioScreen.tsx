@@ -88,6 +88,8 @@ export default function ScholarBioScreen() {
                   key={bookId}
                   onPress={() => navigation.navigate('ReadTab', { screen: 'ChapterList', params: { bookId } })}
                   style={[styles.scopeChip, { backgroundColor: color + '1A', borderColor: color + '40' }]}
+                  accessibilityRole="button"
+                  accessibilityLabel={`Go to ${bookId}`}
                 >
                   <Text style={[styles.scopeChipText, { color }]}>{bookId}</Text>
                 </TouchableOpacity>
@@ -106,6 +108,8 @@ export default function ScholarBioScreen() {
                 key={s.id}
                 onPress={() => navigation.setParams({ scholarId: s.id })}
                 style={[styles.otherCard, { backgroundColor: sColor + '14', borderLeftColor: sColor }]}
+                accessibilityRole="button"
+                accessibilityLabel={`View scholar: ${s.name}`}
               >
                 <Text style={[styles.otherName, { color: sColor }]}>{s.name}</Text>
                 {s.tradition && (

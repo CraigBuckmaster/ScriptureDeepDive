@@ -35,6 +35,8 @@ export function PlacesPanel({ entries, onPlacePress, onRefPress }: Props) {
           <TouchableOpacity
             onPress={() => onPlacePress?.(entry.name)}
             disabled={!onPlacePress}
+            accessibilityRole="button"
+            accessibilityLabel={`View ${entry.name} on map`}
           >
             <Text style={{
               color: colors.accent,

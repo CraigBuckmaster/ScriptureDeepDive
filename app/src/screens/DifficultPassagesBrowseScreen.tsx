@@ -85,6 +85,8 @@ export default function DifficultPassagesBrowseScreen() {
       style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
       activeOpacity={0.7}
       onPress={() => navigation.navigate('DifficultPassageDetail', { passageId: item.id })}
+      accessibilityRole="button"
+      accessibilityLabel={`View passage: ${item.title}`}
     >
       {/* Header row: title + severity dot */}
       <View style={styles.cardHeader}>
@@ -120,10 +122,12 @@ export default function DifficultPassagesBrowseScreen() {
         <TouchableOpacity
           onPress={() => navigation.goBack()}
           hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}
+          accessibilityRole="button"
+          accessibilityLabel="Go back"
         >
           <ChevronLeft size={24} color={base.gold} />
         </TouchableOpacity>
-        <Text style={[styles.title, { color: base.gold }]}>Difficult Passages</Text>
+        <Text style={[styles.title, { color: base.gold }]} accessibilityRole="header">Difficult Passages</Text>
         <View style={{ width: 24 }} />
       </View>
 
@@ -142,7 +146,7 @@ export default function DifficultPassagesBrowseScreen() {
             autoCapitalize="none"
           />
           {search.length > 0 && (
-            <TouchableOpacity onPress={() => setSearch('')}>
+            <TouchableOpacity onPress={() => setSearch('')} accessibilityRole="button" accessibilityLabel="Clear search">
               <X size={16} color={base.textMuted} />
             </TouchableOpacity>
           )}
@@ -167,6 +171,9 @@ export default function DifficultPassagesBrowseScreen() {
               ]}
               onPress={() => setActiveCategory(cat.key)}
               activeOpacity={0.7}
+              accessibilityRole="button"
+              accessibilityLabel={`Filter by ${cat.label}`}
+              accessibilityState={{ selected: isActive }}
             >
               <Text style={[
                 styles.chipText,

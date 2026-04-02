@@ -122,6 +122,8 @@ export default function SearchScreen() {
                 <TouchableOpacity
                   onPress={() => setVerseLimit((prev) => prev + LOAD_MORE_INCREMENT)}
                   style={styles.loadMoreButton}
+                  accessibilityRole="button"
+                  accessibilityLabel="Load more verses"
                 >
                   <Text style={[styles.loadMoreText, { color: base.gold }]}>Load more verses</Text>
                 </TouchableOpacity>
@@ -136,6 +138,8 @@ export default function SearchScreen() {
                     params: { personId: p.id },
                   })}
                   style={styles.personRow}
+                  accessibilityRole="button"
+                  accessibilityLabel={`View person: ${p.name}`}
                 >
                   <View style={[
                     styles.eraDot,

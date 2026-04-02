@@ -57,13 +57,21 @@ export function EchoesView({ entries, onRefPress }: Props) {
 
             {/* Source → Target refs */}
             <View style={styles.refRow}>
-              <TouchableOpacity onPress={() => handleRefPress(entry.source_ref)}>
+              <TouchableOpacity
+                onPress={() => handleRefPress(entry.source_ref)}
+                accessibilityRole="button"
+                accessibilityLabel={`Go to ${entry.source_ref}`}
+              >
                 <Text style={[styles.refText, { color: colors.accent }]}>
                   {entry.source_ref}
                 </Text>
               </TouchableOpacity>
               <Text style={[styles.arrow, { color: base.textMuted }]}>→</Text>
-              <TouchableOpacity onPress={() => handleRefPress(entry.target_ref)}>
+              <TouchableOpacity
+                onPress={() => handleRefPress(entry.target_ref)}
+                accessibilityRole="button"
+                accessibilityLabel={`Go to ${entry.target_ref}`}
+              >
                 <Text style={[styles.refText, { color: colors.accent }]}>
                   {entry.target_ref}
                 </Text>

@@ -104,7 +104,12 @@ function NodeCard({ node, depth }: NodeCardProps) {
         <View style={styles.nodeHeader}>
           <View style={styles.nodeHeaderLeft}>
             {hasChildren && (
-              <TouchableOpacity onPress={toggleExpand} style={styles.expandButton}>
+              <TouchableOpacity
+                onPress={toggleExpand}
+                style={styles.expandButton}
+                accessibilityRole="button"
+                accessibilityLabel={expanded ? `Collapse ${label} node` : `Expand ${label} node`}
+              >
                 {expanded ? (
                   <ChevronDown size={14} color={base.textMuted} />
                 ) : (

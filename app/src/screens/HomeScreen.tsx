@@ -17,6 +17,7 @@ import type { ScreenNavProp } from '../navigation/types';
 import { useScrollToTop } from '@react-navigation/native';
 import { ArrowRight, Share2 } from 'lucide-react-native';
 import { useHomeData } from '../hooks/useHomeData';
+import { getTestamentProgress, type TestamentProgress } from '../db/user';
 import { useStreakData } from '../hooks/useStreakData';
 import { useRecommendations, type Recommendation } from '../hooks/useRecommendations';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
@@ -37,14 +38,27 @@ export default function HomeScreen() {
   const { currentStreak, weeklyChapters, weeklyBookNames, pendingMilestone, markMilestoneSeen } = useStreakData();
   const recommendations = useRecommendations();
   const [refreshing, setRefreshing] = useState(false);
+  const [testamentProgress, setTestamentProgress] = useState<TestamentProgress[]>([]);
   const scrollRef = useRef<ScrollView>(null);
   useScrollToTop(scrollRef);
+
+  // Load testament progress when home screen is focused
+  const loadTestamentProgress = useCallback(() => {
+    getTestamentProgress().then(setTestamentProgress).catch(() => {});
+  }, []);
+  // Re-load on focus (useFocusEffect not available here, piggyback on refresh)
 
   const handleRefresh = useCallback(async () => {
     setRefreshing(true);
     await refresh();
+    loadTestamentProgress();
     setRefreshing(false);
   }, [refresh]);
+
+  // Load testament progress when data is ready
+  React.useEffect(() => {
+    if (!isLoading) loadTestamentProgress();
+  }, [isLoading, loadTestamentProgress]);
 
   if (isLoading) {
     return (
@@ -275,6 +289,32 @@ export default function HomeScreen() {
           </View>
         )}
 
+        {/* ── 7. Testament Progress ─────────────────────── */}
+        {testamentProgress.length > 0 && chaptersRead > 0 && (
+          <View style={{ gap: spacing.xs }}>
+            {testamentProgress.map((tp) => {
+              const tpPct = tp.totalChapters > 0
+                ? ((tp.chaptersRead / tp.totalChapters) * 100).toFixed(0)
+                : '0';
+              if (tp.chaptersRead === 0) return null;
+              return (
+                <View
+                  key={tp.testament}
+                  style={[styles.testamentRow, { backgroundColor: base.bgElevated, borderColor: base.border }]}
+                >
+                  <View style={styles.progressHeader}>
+                    <Text style={[styles.testamentLabel, { color: base.textDim }]}>{tp.testament}</Text>
+                    <Text style={[styles.testamentPct, { color: base.textMuted }]}>{tp.chaptersRead}/{tp.totalChapters} ({tpPct}%)</Text>
+                  </View>
+                  <View style={[styles.progressTrack, { backgroundColor: base.border }]}>
+                    <View style={[styles.progressFill, { width: `${Math.max(1, parseFloat(tpPct))}%`, backgroundColor: base.gold + '80' }]} />
+                  </View>
+                </View>
+              );
+            })}
+          </View>
+        )}
+
       </ScrollView>
 
       <MilestoneToast message={pendingMilestone} onDismiss={markMilestoneSeen} />
@@ -427,5 +467,18 @@ const styles = StyleSheet.create({
     height: 4,
     borderRadius: 2,
     minWidth: 8,
+  },
+  testamentRow: {
+    borderRadius: radii.md,
+    borderWidth: 1,
+    padding: spacing.sm + 2,
+  },
+  testamentLabel: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 12,
+  },
+  testamentPct: {
+    fontFamily: fontFamily.ui,
+    fontSize: 11,
   },
 });

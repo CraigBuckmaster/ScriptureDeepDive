@@ -38,6 +38,8 @@ export function TimelinePanel({ events, onEventPress, onRefPress }: Props) {
             <TouchableOpacity
               onPress={() => onEventPress?.(event.name)}
               disabled={!onEventPress}
+              accessibilityRole="button"
+              accessibilityLabel={`View event: ${event.name}`}
               style={{ flex: 1 }}
             >
               <Text style={{

@@ -99,6 +99,8 @@ function ResponseCard({
           style={[styles.scholarRow, { backgroundColor: base.bg }]}
           onPress={() => onScholarPress(scholar.id)}
           activeOpacity={0.7}
+          accessibilityRole="button"
+          accessibilityLabel={`View scholar: ${scholar.name}`}
         >
           <View style={[styles.scholarAvatar, { backgroundColor: base.gold + '20' }]}>
             <User size={14} color={base.gold} />
@@ -124,6 +126,8 @@ function ResponseCard({
           onPress={toggleExpanded}
           style={styles.expandToggle}
           activeOpacity={0.7}
+          accessibilityRole="button"
+          accessibilityLabel={expanded ? 'Hide analysis' : 'Show analysis'}
         >
           {expanded ? (
             <ChevronUp size={14} color={base.gold} />
@@ -209,7 +213,7 @@ export default function DifficultPassageDetailScreen() {
     return (
       <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]} edges={['top']}>
         <View style={styles.header}>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
+          <TouchableOpacity onPress={() => navigation.goBack()} accessibilityRole="button" accessibilityLabel="Go back">
             <ChevronLeft size={24} color={base.gold} />
           </TouchableOpacity>
           <Text style={[styles.headerTitle, { color: base.gold }]}>Difficult Passage</Text>
@@ -232,10 +236,12 @@ export default function DifficultPassageDetailScreen() {
         <TouchableOpacity
           onPress={() => navigation.goBack()}
           hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}
+          accessibilityRole="button"
+          accessibilityLabel="Go back"
         >
           <ChevronLeft size={24} color={base.gold} />
         </TouchableOpacity>
-        <Text style={[styles.headerTitle, { color: base.gold }]} numberOfLines={1}>
+        <Text style={[styles.headerTitle, { color: base.gold }]} numberOfLines={1} accessibilityRole="header">
           {passage.title}
         </Text>
         <View style={{ width: 24 }} />
@@ -354,6 +360,8 @@ export default function DifficultPassageDetailScreen() {
                   style={[styles.chapterPill, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}
                   onPress={() => handleChapterPress(ch.book_dir, ch.chapter_num)}
                   activeOpacity={0.7}
+                  accessibilityRole="button"
+                  accessibilityLabel={`Go to ${ch.book_name} ${ch.chapter_num}`}
                 >
                   <Text style={[styles.chapterText, { color: base.text }]}>
                     {ch.book_name} {ch.chapter_num}

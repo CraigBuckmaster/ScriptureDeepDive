@@ -46,6 +46,8 @@ export function PersonSearchBar({ people, onSelect }: Props) {
             <TouchableOpacity
               key={p.id}
               onPress={() => handleSelect(p.id)}
+              accessibilityRole="button"
+              accessibilityLabel={`Select ${p.name}`}
               style={{
                 flexDirection: 'row', alignItems: 'center', gap: spacing.sm,
                 paddingHorizontal: spacing.md, minHeight: MIN_TOUCH_TARGET,
