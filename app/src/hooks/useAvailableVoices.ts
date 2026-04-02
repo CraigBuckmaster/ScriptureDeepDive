@@ -14,7 +14,16 @@ export interface VoiceOption {
   name: string;
   language: string;
   quality: string;
+  recommended?: boolean;
 }
+
+/** Voices we recommend for scripture reading (if available on device). */
+const RECOMMENDED_VOICES = new Set([
+  'com.apple.voice.enhanced.en-US.Nathan',
+  'com.apple.voice.enhanced.en-GB.Daniel',
+  'com.apple.voice.enhanced.en-US.Samantha',
+  'com.apple.voice.enhanced.en-US.Aaron',
+]);
 
 export function useAvailableVoices() {
   const [voices, setVoices] = useState<VoiceOption[]>([]);
@@ -28,8 +37,14 @@ export function useAvailableVoices() {
           name: v.name ?? v.identifier,
           language: v.language,
           quality: (v as any).quality ?? 'Default',
+          recommended: RECOMMENDED_VOICES.has(v.identifier),
         }))
-        .sort((a, b) => a.name.localeCompare(b.name));
+        // Sort: recommended first, then alphabetical
+        .sort((a, b) => {
+          if (a.recommended && !b.recommended) return -1;
+          if (!a.recommended && b.recommended) return 1;
+          return a.name.localeCompare(b.name);
+        });
       setVoices(english);
     }).catch(() => {});
   }, []);

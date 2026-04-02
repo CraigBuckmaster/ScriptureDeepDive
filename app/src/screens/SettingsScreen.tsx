@@ -454,9 +454,16 @@ function VoicePicker({ base }: { base: ReturnType<typeof useTheme>['base'] }) {
               onPress={() => { setTtsVoice(v.identifier); setExpanded(false); }}
               style={[styles.voiceOption, ttsVoice === v.identifier && { backgroundColor: base.gold + '15' }]}
             >
-              <Text style={[styles.voiceOptionText, { color: ttsVoice === v.identifier ? base.gold : base.text }]}>
-                {v.name}
-              </Text>
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.xs }}>
+                <Text style={[styles.voiceOptionText, { color: ttsVoice === v.identifier ? base.gold : base.text }]}>
+                  {v.name}
+                </Text>
+                {v.recommended && (
+                  <Text style={{ color: base.gold, fontSize: 9, fontFamily: fontFamily.uiSemiBold, opacity: 0.8 }}>
+                    RECOMMENDED
+                  </Text>
+                )}
+              </View>
               <Text style={{ color: base.textMuted, fontSize: 10, fontFamily: fontFamily.ui }}>
                 {v.quality !== 'Default' ? v.quality : v.language}
               </Text>
