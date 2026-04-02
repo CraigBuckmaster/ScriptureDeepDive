@@ -39,9 +39,9 @@ const GRID_FEATURES: Feature[] = [
     screen: 'Map',
   },
   {
-    title: 'Parallel Passages',
-    subtitle: 'Compare accounts side by side',
-    screen: 'ParallelPassage',
+    title: 'Gospel Harmony',
+    subtitle: 'The life of Jesus across four Gospels',
+    screen: 'HarmonyBrowse',
   },
   {
     title: 'Word Studies',

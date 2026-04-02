@@ -9,20 +9,38 @@
  *   wording         -> gold
  *   theological_emphasis -> gold
  *
- * When passageLabels are provided, the "A"/"B" labels are replaced with
- * actual Gospel names derived from the annotation's location field.
+ * Supports flexible `texts` map keyed by book ID (e.g. { matthew: "...", luke: "..." }).
+ * Legacy flat matthew/luke fields are normalized via normalizeDiffAnnotation().
  */
 
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { gospelColor, GOSPEL_SHORT } from './GospelColors';
 
 export interface DiffAnnotationData {
   location: string;
   diff_type: 'addition' | 'omission' | 'reordering' | 'wording' | 'theological_emphasis';
-  matthew: string;
-  luke: string;
+  texts: Record<string, string>;
   explanation: string;
+}
+
+/**
+ * Normalize a diff annotation from either new `texts` map format or
+ * legacy flat `matthew`/`luke`/`mark`/`john` fields.
+ */
+export function normalizeDiffAnnotation(raw: any): DiffAnnotationData {
+  if (raw.texts) return raw as DiffAnnotationData;
+  const texts: Record<string, string> = {};
+  for (const key of ['matthew', 'mark', 'luke', 'john']) {
+    if (raw[key]) texts[key] = raw[key];
+  }
+  return {
+    location: raw.location,
+    diff_type: raw.diff_type,
+    texts,
+    explanation: raw.explanation,
+  };
 }
 
 const DIFF_TYPE_LABELS: Record<string, string> = {
@@ -49,43 +67,18 @@ const DIFF_TYPE_BG: Record<string, string> = {
   theological_emphasis: '#bfa05022',
 };
 
-/** Gospel name -> color lookup for label circles. */
-const LABEL_COLORS: Record<string, string> = {
-  Matthew: '#70b8e8',
-  Mark: '#e86040',
-  Luke: '#81C784',
-  John: '#b090d0',
-};
-
 interface Props {
   annotation: DiffAnnotationData;
-  labelA?: string;
-  labelB?: string;
 }
 
-/** Extract Gospel names from a location string like "Matthew 3:13-17 / Luke 3:21-22". */
-function extractLabelsFromLocation(location: string): [string | null, string | null] {
-  const parts = location.split('/').map(s => s.trim());
-  const extractName = (s: string) => {
-    const m = s.match(/^(\d?\s*[A-Za-z]+)/);
-    return m ? m[1].trim() : null;
-  };
-  return [extractName(parts[0] ?? ''), extractName(parts[1] ?? '')];
-}
-
-export function DiffAnnotation({ annotation, labelA, labelB }: Props) {
+export function DiffAnnotation({ annotation }: Props) {
   const { base } = useTheme();
   const [expanded, setExpanded] = useState(false);
   const color = DIFF_TYPE_COLORS[annotation.diff_type] ?? DIFF_TYPE_COLORS.wording;
   const bg = DIFF_TYPE_BG[annotation.diff_type] ?? DIFF_TYPE_BG.wording;
   const label = DIFF_TYPE_LABELS[annotation.diff_type] ?? annotation.diff_type;
 
-  // Resolve labels: explicit props > location parsing > fallback A/B
-  const [locA, locB] = useMemo(() => extractLabelsFromLocation(annotation.location), [annotation.location]);
-  const displayA = labelA ?? locA ?? 'A';
-  const displayB = labelB ?? locB ?? 'B';
-  const colorA = LABEL_COLORS[displayA] ?? base.gold;
-  const colorB = LABEL_COLORS[displayB] ?? base.gold;
+  const normalized = normalizeDiffAnnotation(annotation);
 
   return (
     <TouchableOpacity
@@ -112,21 +105,18 @@ export function DiffAnnotation({ annotation, labelA, labelB }: Props) {
       {/* Expanded: comparison + explanation */}
       {expanded && (
         <View style={styles.expandedContent}>
-          {/* Side A */}
-          <View style={styles.textRow}>
-            <View style={[styles.textLabelBox, { backgroundColor: colorA + '25' }]}>
-              <Text style={[styles.textLabel, { color: colorA }]}>{displayA.slice(0, 2)}</Text>
-            </View>
-            <Text style={[styles.textContent, { color: base.text }]}>{annotation.matthew}</Text>
-          </View>
-
-          {/* Side B */}
-          <View style={styles.textRow}>
-            <View style={[styles.textLabelBox, { backgroundColor: colorB + '25' }]}>
-              <Text style={[styles.textLabel, { color: colorB }]}>{displayB.slice(0, 2)}</Text>
-            </View>
-            <Text style={[styles.textContent, { color: base.text }]}>{annotation.luke}</Text>
-          </View>
+          {Object.entries(normalized.texts).map(([bookId, text]) => {
+            const bookColor = gospelColor(bookId);
+            const shortLabel = GOSPEL_SHORT[bookId] ?? bookId.slice(0, 2).toUpperCase();
+            return (
+              <View key={bookId} style={styles.textRow}>
+                <View style={[styles.textLabelBox, { backgroundColor: bookColor + '25' }]}>
+                  <Text style={[styles.textLabel, { color: bookColor }]}>{shortLabel}</Text>
+                </View>
+                <Text style={[styles.textContent, { color: base.text }]}>{text}</Text>
+              </View>
+            );
+          })}
 
           {/* Explanation */}
           <View style={[styles.explanationBox, { backgroundColor: base.gold + '08' }]}>
@@ -140,30 +130,18 @@ export function DiffAnnotation({ annotation, labelA, labelB }: Props) {
 
 interface ListProps {
   annotations: DiffAnnotationData[];
-  /** Map of book ID -> Gospel display name. Used to resolve A/B labels. */
-  passageLabels?: Map<string, string>;
 }
 
-export function DiffAnnotationList({ annotations, passageLabels }: ListProps) {
+export function DiffAnnotationList({ annotations }: ListProps) {
   const { base } = useTheme();
 
   if (!annotations || annotations.length === 0) return null;
-
-  // Try to derive A/B labels from passage labels if available
-  const labelEntries = passageLabels ? Array.from(passageLabels.values()) : [];
-  const defaultA = labelEntries[0];
-  const defaultB = labelEntries[1];
 
   return (
     <View style={styles.listContainer}>
       <Text style={[styles.listHeader, { color: base.gold }]}>Textual Differences</Text>
       {annotations.map((a, i) => (
-        <DiffAnnotation
-          key={i}
-          annotation={a}
-          labelA={defaultA}
-          labelB={defaultB}
-        />
+        <DiffAnnotation key={i} annotation={normalizeDiffAnnotation(a)} />
       ))}
     </View>
   );

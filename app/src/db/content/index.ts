@@ -18,6 +18,7 @@ export { getAllPeople, getPerson, getPersonChildren, getSpousesOf } from './peop
 export { getPlaces, getPlace, getMapStories, getMapStory } from './places';
 export {
   getAllWordStudies, getWordStudy, getSynopticEntries, getSynopticEntry,
+  getHarmonyEntries, getHarmonyEntry, getOTParallelEntries,
   getCrossRefThreads, getCrossRefThread, getCrossRefPairsForVerse,
   getTimelineEvents, getTimelinePeople, getAllTimelineEntries,
   getGenealogyConfig, getTimelineEraConfig,

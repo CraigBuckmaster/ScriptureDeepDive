@@ -1,13 +1,12 @@
 import React from 'react';
 import { fireEvent } from '@testing-library/react-native';
 import { renderWithProviders } from '../helpers/renderWithProviders';
-import { DiffAnnotation, DiffAnnotationList, type DiffAnnotationData } from '@/components/DiffAnnotation';
+import { DiffAnnotation, DiffAnnotationList, normalizeDiffAnnotation, type DiffAnnotationData } from '@/components/DiffAnnotation';
 
 const makeAnnotation = (overrides?: Partial<DiffAnnotationData>): DiffAnnotationData => ({
   location: 'Matt 5:3 / Luke 6:20',
   diff_type: 'wording',
-  matthew: 'Blessed are the poor in spirit',
-  luke: 'Blessed are you who are poor',
+  texts: { matthew: 'Blessed are the poor in spirit', luke: 'Blessed are you who are poor' },
   explanation: 'Matthew spiritualizes the poverty; Luke keeps it literal.',
   ...overrides,
 });
@@ -46,24 +45,24 @@ describe('DiffAnnotation', () => {
     expect(getByText('Blessed are you who are poor')).toBeTruthy();
   });
 
-  it('uses custom labelA and labelB when provided', () => {
-    const { getByText } = renderWithProviders(
-      <DiffAnnotation annotation={makeAnnotation()} labelA="Matthew" labelB="Luke" />,
-    );
-    fireEvent.press(getByText('Wording'));
-    // Label circles show first 2 chars of the label
-    expect(getByText('Ma')).toBeTruthy();
-    expect(getByText('Lu')).toBeTruthy();
-  });
-
-  it('extracts labels from location when no explicit labels', () => {
+  it('renders Gospel-colored labels instead of A/B', () => {
     const { getByText } = renderWithProviders(
       <DiffAnnotation annotation={makeAnnotation()} />,
     );
     fireEvent.press(getByText('Wording'));
-    // Extracts "Matt" and "Luke" from "Matt 5:3 / Luke 6:20"
-    expect(getByText('Ma')).toBeTruthy();
-    expect(getByText('Lu')).toBeTruthy();
+    expect(getByText('M')).toBeTruthy();
+    expect(getByText('L')).toBeTruthy();
+  });
+
+  it('handles 3-way comparison', () => {
+    const annotation = makeAnnotation({
+      texts: { matthew: 'A', mark: 'B', luke: 'C' },
+    });
+    const { getByText } = renderWithProviders(
+      <DiffAnnotation annotation={annotation} />,
+    );
+    fireEvent.press(getByText('Wording'));
+    expect(getByText('Mk')).toBeTruthy();
   });
 });
 
@@ -85,12 +84,23 @@ describe('DiffAnnotationList', () => {
     expect(getByText('Textual Differences')).toBeTruthy();
     expect(getByText('Omission')).toBeTruthy();
   });
+});
 
-  it('accepts passageLabels prop', () => {
-    const labels = new Map([['matthew', 'Matthew'], ['luke', 'Luke']]);
-    const { getByText } = renderWithProviders(
-      <DiffAnnotationList annotations={[makeAnnotation()]} passageLabels={labels} />,
-    );
-    expect(getByText('Textual Differences')).toBeTruthy();
+describe('normalizeDiffAnnotation', () => {
+  it('passes through new format unchanged', () => {
+    const input = makeAnnotation();
+    expect(normalizeDiffAnnotation(input)).toEqual(input);
+  });
+
+  it('converts legacy flat fields', () => {
+    const legacy = {
+      location: 'Matt / Luke',
+      diff_type: 'wording',
+      matthew: 'Text A',
+      luke: 'Text B',
+      explanation: 'Explanation',
+    };
+    const result = normalizeDiffAnnotation(legacy);
+    expect(result.texts).toEqual({ matthew: 'Text A', luke: 'Text B' });
   });
 });

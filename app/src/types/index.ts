@@ -159,9 +159,13 @@ export interface SynopticEntry {
   title: string;
   category: string | null;
   period: string | null;
+  sort_order: number;
   passages_json: string;
   diff_annotations_json: string | null;
 }
+
+/** Alias for SynopticEntry used in Harmony of the Gospels screens. */
+export type HarmonyEntry = SynopticEntry;
 
 export interface InterlinearWord {
   id: number;

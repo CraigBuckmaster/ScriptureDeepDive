@@ -54,44 +54,34 @@ jest.mock('@/stores', () => ({
 }));
 
 // ── Mock db/content ─────────────────────────────────────────────
-const mockSampleEntries = [
+const mockOTEntries = [
   {
-    id: 'syn-1',
-    title: 'The Baptism of Jesus',
-    category: 'gospel',
-    period: 'early_ministry',
+    id: 'chr-census',
+    title: "David's Census",
+    category: 'ot-parallel',
+    period: 'ot',
+    sort_order: 1060,
     passages_json: JSON.stringify([
-      { book: 'matthew', ref: 'Matt 3:13-17' },
-      { book: 'mark', ref: 'Mark 1:9-11' },
-      { book: 'luke', ref: 'Luke 3:21-22' },
+      { book: '2_samuel', ref: '2 Sam 24' },
+      { book: '1_chronicles', ref: '1 Chr 21' },
     ]),
     diff_annotations_json: '[]',
   },
   {
-    id: 'syn-2',
-    title: 'The Temptation',
-    category: 'gospel',
-    period: 'early_ministry',
+    id: 'solomons-temple',
+    title: 'Solomon Builds the Temple',
+    category: 'ot-parallel',
+    period: 'ot',
+    sort_order: 1070,
     passages_json: JSON.stringify([
-      { book: 'matthew', ref: 'Matt 4:1-11' },
-      { book: 'luke', ref: 'Luke 4:1-13' },
-    ]),
-    diff_annotations_json: '[]',
-  },
-  {
-    id: 'syn-3',
-    title: 'The Good Samaritan',
-    category: 'gospel-luke',
-    period: 'later_judean',
-    passages_json: JSON.stringify([
-      { book: 'luke', ref: 'Luke 10:25-37' },
+      { book: '1_kings', ref: '1 Kgs 6:1-38' },
     ]),
     diff_annotations_json: '[]',
   },
 ];
 
 jest.mock('@/db/content', () => ({
-  getSynopticEntries: jest.fn(() => Promise.resolve(mockSampleEntries)),
+  getOTParallelEntries: jest.fn(() => Promise.resolve(mockOTEntries)),
 }));
 
 jest.mock('@/utils/logger', () => ({
@@ -106,7 +96,7 @@ describe('ParallelPassageScreen', () => {
   it('renders without crashing', async () => {
     const { getByText } = renderWithProviders(<ParallelPassageScreen />);
     await waitFor(() => {
-      expect(getByText('Parallel Passages')).toBeTruthy();
+      expect(getByText('OT Parallels')).toBeTruthy();
     });
   });
 
@@ -115,50 +105,26 @@ describe('ParallelPassageScreen', () => {
     expect(getByText('Loading...')).toBeTruthy();
   });
 
-  it('renders entry titles after loading', async () => {
+  it('renders OT entry titles after loading', async () => {
     const { getByText } = renderWithProviders(<ParallelPassageScreen />);
     await waitFor(() => {
-      expect(getByText('The Baptism of Jesus')).toBeTruthy();
-      expect(getByText('The Temptation')).toBeTruthy();
-      expect(getByText('The Good Samaritan')).toBeTruthy();
+      expect(getByText("David's Census")).toBeTruthy();
+      expect(getByText('Solomon Builds the Temple')).toBeTruthy();
     });
   });
 
   it('renders period section headers', async () => {
     const { getByText } = renderWithProviders(<ParallelPassageScreen />);
     await waitFor(() => {
-      expect(getByText('John the Baptist & Early Ministry')).toBeTruthy();
-      expect(getByText('Later Judean Ministry')).toBeTruthy();
-    });
-  });
-
-  it('renders category filter pills', async () => {
-    const { getByText } = renderWithProviders(<ParallelPassageScreen />);
-    await waitFor(() => {
-      expect(getByText('All')).toBeTruthy();
-      expect(getByText('Gospels')).toBeTruthy();
-      expect(getByText('Luke')).toBeTruthy();
-    });
-  });
-
-  it('filters entries by category', async () => {
-    const { getByText, queryByText } = renderWithProviders(<ParallelPassageScreen />);
-    await waitFor(() => expect(getByText('The Baptism of Jesus')).toBeTruthy());
-
-    fireEvent.press(getByText('Luke'));
-
-    await waitFor(() => {
-      expect(getByText('The Good Samaritan')).toBeTruthy();
-      expect(queryByText('The Baptism of Jesus')).toBeNull();
-      expect(queryByText('The Temptation')).toBeNull();
+      expect(getByText('Old Testament Parallels')).toBeTruthy();
     });
   });
 
   it('navigates to detail screen on entry press', async () => {
     const { getByText } = renderWithProviders(<ParallelPassageScreen />);
-    await waitFor(() => expect(getByText('The Baptism of Jesus')).toBeTruthy());
+    await waitFor(() => expect(getByText("David's Census")).toBeTruthy());
 
-    fireEvent.press(getByText('The Baptism of Jesus'));
-    expect(mockNavigate).toHaveBeenCalledWith('ParallelDetail', { entryId: 'syn-1' });
+    fireEvent.press(getByText("David's Census"));
+    expect(mockNavigate).toHaveBeenCalledWith('ParallelDetail', { entryId: 'chr-census' });
   });
 });

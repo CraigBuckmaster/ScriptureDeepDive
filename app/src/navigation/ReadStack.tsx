@@ -5,6 +5,8 @@ import BookIntroScreen from '../screens/BookIntroScreen';
 import ChapterScreen from '../screens/ChapterScreen';
 import ParallelPassageScreen from '../screens/ParallelPassageScreen';
 import ParallelDetailScreen from '../screens/ParallelDetailScreen';
+import HarmonyBrowseScreen from '../screens/HarmonyBrowseScreen';
+import HarmonyDetailScreen from '../screens/HarmonyDetailScreen';
 import { useTheme } from '../theme';
 import type { ReadStackParamList } from './types';
 
@@ -27,6 +29,8 @@ export function ReadStack() {
       <Stack.Screen name="Chapter" component={ChapterScreen} />
       <Stack.Screen name="ParallelPassage" component={ParallelPassageScreen} />
       <Stack.Screen name="ParallelDetail" component={ParallelDetailScreen} />
+      <Stack.Screen name="HarmonyBrowse" component={HarmonyBrowseScreen} />
+      <Stack.Screen name="HarmonyDetail" component={HarmonyDetailScreen} />
     </Stack.Navigator>
   );
 }
