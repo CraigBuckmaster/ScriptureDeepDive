@@ -45,6 +45,8 @@ const BookRow = React.memo(function BookRow({ book, onPress, base }: {
     <TouchableOpacity
       onPress={() => onPress(book.id)}
       style={[styles.bookRow, { borderBottomColor: base.border + '40' }]}
+      accessibilityRole="button"
+      accessibilityLabel={`${book.name}, ${book.chaptersRead > 0 ? `${book.chaptersRead} of ${book.total_chapters} chapters read` : `${book.total_chapters} chapters`}`}
     >
       <View style={styles.bookRowContent}>
         <View style={styles.bookRowHeader}>
@@ -119,10 +121,10 @@ export default function BookListScreen() {
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       {/* Title + segment toggle on same row */}
       <View style={styles.titleRow}>
-        <Text style={[styles.title, { color: base.gold }]}>Library</Text>
+        <Text style={[styles.title, { color: base.gold }]} accessibilityRole="header">Library</Text>
         <View style={styles.segmentRow}>
           {([['canonical', 'Canonical'], ['thematic', 'By Genre']] as const).map(([key, label]) => (
-            <TouchableOpacity key={key} onPress={() => setMode(key)}>
+            <TouchableOpacity key={key} onPress={() => setMode(key)} accessibilityRole="button" accessibilityLabel={`${label} view`} accessibilityState={{ selected: mode === key }}>
               <Text style={[styles.segmentLabel, { color: base.textMuted }, mode === key && [styles.segmentActive, { color: base.gold, borderBottomColor: base.gold }]]}>
                 {label}
               </Text>
@@ -135,7 +137,7 @@ export default function BookListScreen() {
       {mode === 'canonical' && !searchResults && (
         <View style={styles.testamentRow}>
           {(['ot', 'nt'] as const).map((t) => (
-            <TouchableOpacity key={t} onPress={() => setTestament(t)}>
+            <TouchableOpacity key={t} onPress={() => setTestament(t)} accessibilityRole="button" accessibilityLabel={t === 'ot' ? 'Old Testament' : 'New Testament'} accessibilityState={{ selected: testament === t }}>
               <Text style={[styles.testamentLabel, { color: base.textMuted }, testament === t && [styles.testamentActive, { color: base.gold, borderBottomColor: base.gold }]]}>
                 {t === 'ot' ? 'Old Testament' : 'New Testament'}
               </Text>

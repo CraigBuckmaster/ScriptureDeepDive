@@ -232,6 +232,9 @@ export default function AllNotesScreen() {
           key={key}
           style={[styles.tab, activeTab === key && [styles.tabActive, { borderBottomColor: base.gold }]]}
           onPress={() => { setActiveTab(key); setSelectedTag(null); }}
+          accessibilityRole="button"
+          accessibilityLabel={`${label} tab`}
+          accessibilityState={{ selected: activeTab === key }}
         >
           <Icon size={14} color={activeTab === key ? base.gold : base.textMuted} />
           <Text style={[styles.tabLabel, { color: base.textMuted }, activeTab === key && { color: base.gold }]}>
@@ -255,6 +258,8 @@ export default function AllNotesScreen() {
             key={col.id}
             style={[styles.collectionCard, { backgroundColor: base.bgElevated, borderColor: base.border }]}
             onPress={() => handleCollectionPress(col.id)}
+            accessibilityRole="button"
+            accessibilityLabel={`Open collection: ${col.name}`}
           >
             <View style={[styles.colorBar, { backgroundColor: col.color }]} />
             <View style={styles.collectionInfo}>
@@ -281,7 +286,7 @@ export default function AllNotesScreen() {
         </View>
       ) : selectedTag ? (
         <>
-          <TouchableOpacity style={styles.backRow} onPress={() => setSelectedTag(null)}>
+          <TouchableOpacity style={styles.backRow} onPress={() => setSelectedTag(null)} accessibilityRole="button" accessibilityLabel="Back to all tags">
             <Text style={[styles.backText, { color: base.gold }]}>← All Tags</Text>
           </TouchableOpacity>
           <Text style={[styles.selectedTagHeader, { color: base.gold }]}>#{selectedTag}</Text>
@@ -290,6 +295,8 @@ export default function AllNotesScreen() {
               key={note.id}
               style={[styles.noteCard, { backgroundColor: base.bgElevated, borderColor: base.border }]}
               onPress={() => handleRefPress(note.verse_ref)}
+              accessibilityRole="button"
+              accessibilityLabel={`Go to note at ${displayRef(note.verse_ref)}`}
             >
               <Text style={[styles.noteRef, { color: base.gold }]}>{displayRef(note.verse_ref)}</Text>
               <Text style={[styles.noteText, { color: base.textDim }]} numberOfLines={2}>{note.note_text}</Text>
