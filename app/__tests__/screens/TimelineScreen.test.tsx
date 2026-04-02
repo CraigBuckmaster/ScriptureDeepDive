@@ -121,6 +121,7 @@ jest.mock('@/utils/timelineLayout', () => ({
     y: 80 + i * 40,
     lane: i,
     labelWidth: 120,
+    significance: e.chapter_link || e.summary || e.category === 'book' ? 'major' : 'minor',
   })),
   computeTickMarks: () => [
     { x: 100, label: '4000 BC', major: true },
@@ -173,7 +174,7 @@ jest.mock('@/components/LoadingSkeleton', () => ({
   },
 }));
 
-// Stub SVG components
+// Stub SVG components (including Defs/LinearGradient/Stop for modernized timeline)
 jest.mock('react-native-svg', () => {
   const React = require('react');
   const { View, Text } = require('react-native');
@@ -187,12 +188,33 @@ jest.mock('react-native-svg', () => {
     Circle: createSvgMock('Circle'),
     G: (props: any) => React.createElement(View, props, props.children),
     Text: (props: any) => React.createElement(Text, props, props.children),
+    Defs: (props: any) => React.createElement(View, props, props.children),
+    LinearGradient: (props: any) => React.createElement(View, props, props.children),
+    Stop: (props: any) => React.createElement(View, props),
   };
 });
 
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 44, bottom: 34, left: 0, right: 0 }),
 }));
+
+// Bottom sheet mock (replaces Modal in modernized timeline)
+jest.mock('@gorhom/bottom-sheet', () => {
+  const React = require('react');
+  const { View } = require('react-native');
+  return {
+    __esModule: true,
+    default: React.forwardRef(({ children }: any, ref: any) => {
+      React.useImperativeHandle(ref, () => ({
+        snapToIndex: jest.fn(),
+        close: jest.fn(),
+        expand: jest.fn(),
+      }));
+      return React.createElement(View, { testID: 'bottom-sheet' }, children);
+    }),
+    BottomSheetScrollView: ({ children }: any) => React.createElement(View, null, children),
+  };
+});
 
 // ── Tests ─────────────────────────────────────────────────────────
 

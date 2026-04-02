@@ -2,36 +2,22 @@
  * useTTS — Text-to-speech hook wrapping expo-speech.
  * Auto-advances through verses, supports speed control and voice selection.
  *
- * Uses expo-av to set audio mode so speech plays through the MEDIA channel
- * and ignores the iOS mute switch. Without this, expo-speech uses the
- * ringtone channel which is silenced by the hardware mute toggle.
+ * Note: On iOS, AVSpeechSynthesizer always respects the hardware mute
+ * switch. This is an Apple platform limitation. The hook shows a one-time
+ * tip on first play reminding users to unmute if they can't hear audio.
  *
  * Note: expo-speech has no native pause/resume. "Pause" stops the current
  * utterance and remembers the verse index. "Play" restarts from that verse.
  */
 
 import { useState, useCallback, useRef, useEffect } from 'react';
-import { Platform } from 'react-native';
+import { Platform, Alert } from 'react-native';
 import * as Speech from 'expo-speech';
-import { Audio } from 'expo-av';
 import { logger } from '../utils/logger';
 import type { Verse } from '../types';
 
-/**
- * Configure audio session to play through the media channel.
- * This makes expo-speech ignore the iOS mute switch.
- */
-async function enableMediaAudio(): Promise<void> {
-  try {
-    await Audio.setAudioModeAsync({
-      playsInSilentModeIOS: true,
-      staysActiveInBackground: false,
-      shouldDuckAndroid: true,
-    });
-  } catch (err) {
-    logger.warn('TTS', 'Failed to set audio mode', err);
-  }
-}
+/** Track whether we've shown the silent mode warning this session. */
+let silentModeWarningShown = false;
 
 export function useTTS(verses: Verse[], voiceId?: string) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -41,6 +27,8 @@ export function useTTS(verses: Verse[], voiceId?: string) {
   const voiceRef = useRef(voiceId);
   // Guard: when we call Speech.stop(), onDone fires — this flag prevents auto-advance
   const stoppedManually = useRef(false);
+  /** Index where the current audio session started (play/resume). */
+  const sessionStartIndex = useRef(0);
 
   useEffect(() => { versesRef.current = verses; }, [verses]);
   useEffect(() => { voiceRef.current = voiceId; }, [voiceId]);
@@ -60,7 +48,10 @@ export function useTTS(verses: Verse[], voiceId?: string) {
     }
     stoppedManually.current = false;
     setCurrentVerse(index);
-    const text = `Verse ${vv[index].verse_num}. ${vv[index].text}`;
+    // Only announce the verse number at the start of an audio session
+    const text = index === sessionStartIndex.current
+      ? `Verse ${vv[index].verse_num}. ${vv[index].text}`
+      : vv[index].text;
     logger.info('TTS', `Speaking verse ${index + 1}/${vv.length}`);
     Speech.speak(text, {
       language: 'en-US',
@@ -85,8 +76,19 @@ export function useTTS(verses: Verse[], voiceId?: string) {
       logger.warn('TTS', 'No verses to speak');
       return;
     }
-    // Enable media audio so speech plays even with mute switch on
-    await enableMediaAudio();
+    // Warn about silent mode on iOS (AVSpeechSynthesizer always respects the mute switch)
+    if (Platform.OS === 'ios' && !silentModeWarningShown) {
+      silentModeWarningShown = true;
+      try {
+        Alert.alert(
+          'Audio Tip',
+          'If you can\'t hear the reading, make sure your iPhone\'s mute switch (on the side) is turned off. Text-to-speech uses the phone\'s speaker channel.',
+        );
+      } catch {
+        // Alert may not be available in test environments
+      }
+    }
+    sessionStartIndex.current = currentVerse;
     setIsPlaying(true);
     speakVerse(currentVerse);
   }, [currentVerse, speakVerse]);
@@ -108,6 +110,7 @@ export function useTTS(verses: Verse[], voiceId?: string) {
     stoppedManually.current = true;
     Speech.stop();
     const next = Math.min(currentVerse + 1, versesRef.current.length - 1);
+    sessionStartIndex.current = next;
     speakVerse(next);
   }, [currentVerse, speakVerse]);
 
@@ -115,6 +118,7 @@ export function useTTS(verses: Verse[], voiceId?: string) {
     stoppedManually.current = true;
     Speech.stop();
     const prev = Math.max(0, currentVerse - 1);
+    sessionStartIndex.current = prev;
     speakVerse(prev);
   }, [currentVerse, speakVerse]);
 

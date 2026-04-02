@@ -91,6 +91,8 @@ export interface PositionedEvent {
   chapter_link: string | null;
   summary: string | null;
   people_json: string | null;
+  /** Major events (have chapter_link/summary or are books) show labels. Minor events show marker only. */
+  significance: 'major' | 'minor';
 }
 
 /**
@@ -132,7 +134,10 @@ export function assignLanes(events: { id: string; category: string; name: string
       laneRightEdges[bestLane] = x + labelWidth / 2;
       const y = laneTop + bestLane * LANE_HEIGHT;
 
-      return { ...evt, x, y, labelWidth };
+      const significance: 'major' | 'minor' =
+        evt.category === 'book' || evt.chapter_link || evt.summary ? 'major' : 'minor';
+
+      return { ...evt, x, y, labelWidth, significance };
     });
   };
 

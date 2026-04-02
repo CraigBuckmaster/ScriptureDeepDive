@@ -54,6 +54,6 @@ describe('SpouseConnectorSvg', () => {
       <SpouseConnectorSvg connector={makeConnector({ dimmed: false })} />,
     );
     const line = UNSAFE_getByType('Line' as any);
-    expect(line.props.opacity).toBe(0.5);
+    expect(line.props.opacity).toBe(0.4);
   });
 });

@@ -184,6 +184,10 @@ jest.mock('react-native-svg', () => ({
   G: 'G',
   Text: 'SvgText',
   Polygon: 'Polygon',
+  Defs: 'Defs',
+  LinearGradient: 'LinearGradient',
+  RadialGradient: 'RadialGradient',
+  Stop: 'Stop',
 }));
 
 // Mock react-native-safe-area-context
