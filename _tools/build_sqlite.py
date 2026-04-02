@@ -226,6 +226,7 @@ CREATE TABLE synoptic_map (
   id TEXT PRIMARY KEY,
   title TEXT NOT NULL,
   category TEXT,
+  period TEXT,
   passages_json TEXT NOT NULL,
   diff_annotations_json TEXT
 );
@@ -766,9 +767,9 @@ def populate_synoptic(cur):
     count = 0
     for s in entries:
         cur.execute(
-            'INSERT INTO synoptic_map (id, title, category, passages_json, diff_annotations_json) '
-            'VALUES (?, ?, ?, ?, ?)',
-            (s['id'], s['title'], s.get('category'),
+            'INSERT INTO synoptic_map (id, title, category, period, passages_json, diff_annotations_json) '
+            'VALUES (?, ?, ?, ?, ?, ?)',
+            (s['id'], s['title'], s.get('category'), s.get('period'),
              _json_str(s.get('passages', [])),
              _json_str(s.get('diff_annotations', [])))
         )

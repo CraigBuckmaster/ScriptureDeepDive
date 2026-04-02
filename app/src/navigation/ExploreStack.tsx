@@ -9,6 +9,7 @@ import WordStudyDetailScreen from '../screens/WordStudyDetailScreen';
 import ScholarBrowseScreen from '../screens/ScholarBrowseScreen';
 import ScholarBioScreen from '../screens/ScholarBioScreen';
 import ParallelPassageScreen from '../screens/ParallelPassageScreen';
+import ParallelDetailScreen from '../screens/ParallelDetailScreen';
 import ProphecyBrowseScreen from '../screens/ProphecyBrowseScreen';
 import ProphecyDetailScreen from '../screens/ProphecyDetailScreen';
 import ConceptBrowseScreen from '../screens/ConceptBrowseScreen';
@@ -44,6 +45,7 @@ export function ExploreStack() {
       <Stack.Screen name="ScholarBrowse" component={ScholarBrowseScreen} />
       <Stack.Screen name="ScholarBio" component={ScholarBioScreen} />
       <Stack.Screen name="ParallelPassage" component={ParallelPassageScreen} />
+      <Stack.Screen name="ParallelDetail" component={ParallelDetailScreen} />
       <Stack.Screen name="ProphecyBrowse" component={ProphecyBrowseScreen} />
       <Stack.Screen name="ProphecyDetail" component={ProphecyDetailScreen} />
       <Stack.Screen name="ConceptBrowse" component={ConceptBrowseScreen} />

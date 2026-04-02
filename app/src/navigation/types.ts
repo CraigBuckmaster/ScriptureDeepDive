@@ -24,6 +24,7 @@ export type ReadStackParamList = {
   BookIntro: { bookId: string };
   Chapter: { bookId: string; chapterNum: number; openPanel?: OpenPanelParam };
   ParallelPassage: { entryId: string };
+  ParallelDetail: { entryId: string };
 };
 
 export type HomeStackParamList = {
@@ -33,6 +34,7 @@ export type HomeStackParamList = {
   BookList: undefined;
   BookIntro: { bookId: string };
   ParallelPassage: { entryId: string };
+  ParallelDetail: { entryId: string };
 };
 
 export type ExploreStackParamList = {
@@ -46,6 +48,7 @@ export type ExploreStackParamList = {
   ScholarBrowse: undefined;
   ScholarBio: { scholarId: string };
   ParallelPassage: { entryId: string };
+  ParallelDetail: { entryId: string };
   ProphecyBrowse: undefined;
   ProphecyDetail: { chainId: string };
   ConceptBrowse: undefined;

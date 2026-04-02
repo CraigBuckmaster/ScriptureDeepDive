@@ -158,6 +158,7 @@ export interface SynopticEntry {
   id: string;
   title: string;
   category: string | null;
+  period: string | null;
   passages_json: string;
   diff_annotations_json: string | null;
 }

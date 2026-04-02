@@ -1,42 +1,54 @@
 /**
- * ParallelPassageScreen — 45 synoptic entries: browse + tabbed compare.
+ * ParallelPassageScreen — Browse mode for 53 synoptic entries.
+ *
+ * SectionList grouped by period (chronological harmony).
+ * Category filter pills + search. Tap entry → ParallelDetailScreen.
  */
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { View, Text, TouchableOpacity, FlatList, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, SectionList, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { getSynopticEntries } from '../db/content';
-import { resolveVerseText, parseReference } from '../utils/verseResolver';
-import { useSettingsStore } from '../stores';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { SearchInput } from '../components/SearchInput';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { DiffAnnotationList } from '../components/DiffAnnotation';
-import type { DiffAnnotationData } from '../components/DiffAnnotation';
-import { base, useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { GospelDots } from '../components/GospelDots';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { SynopticEntry } from '../types';
 import { logger } from '../utils/logger';
 
 const CATEGORY_LABELS: Record<string, string> = {
-  'gospel': 'Synoptic Gospels',
-  'gospel-luke': 'Luke Special',
-  'gospel-john': 'John Special',
+  all: 'All',
+  gospel: 'Gospels',
+  'gospel-john': 'John',
+  'gospel-luke': 'Luke',
   'ot-parallel': 'OT Parallels',
+};
+
+const PERIOD_ORDER = [
+  'early_ministry', 'galilean', 'later_judean', 'journey',
+  'passion', 'resurrection', 'ot',
+];
+
+const PERIOD_LABELS: Record<string, string> = {
+  early_ministry: 'John the Baptist & Early Ministry',
+  galilean: 'Galilean Ministry',
+  later_judean: 'Later Judean Ministry',
+  journey: 'Journey to Jerusalem',
+  passion: 'Passion Week',
+  resurrection: 'Resurrection & Ascension',
+  ot: 'Old Testament Parallels',
 };
 
 export default function ParallelPassageScreen() {
   const { base } = useTheme();
-  const navigation = useNavigation<ScreenNavProp<'Read', 'ParallelPassage'>>();
+  const navigation = useNavigation<ScreenNavProp<'Explore', 'ParallelPassage'>>();
   const [entries, setEntries] = useState<SynopticEntry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [catFilter, setCatFilter] = useState<string>('all');
   const [search, setSearch] = useState('');
-  const [compareEntry, setCompareEntry] = useState<SynopticEntry | null>(null);
-  const [activeTab, setActiveTab] = useState(0);
-  const [resolvedTexts, setResolvedTexts] = useState<Record<string, string[]>>({});
-  const translation = useSettingsStore((s) => s.translation);
 
   useEffect(() => {
     getSynopticEntries().then((e) => { setEntries(e); setIsLoading(false); });
@@ -52,30 +64,27 @@ export default function ParallelPassageScreen() {
     return list;
   }, [entries, catFilter, search]);
 
-  // Load verse texts when comparing
-  useEffect(() => {
-    if (!compareEntry) return;
-    let passages: { book: string; ref: string }[] = [];
-    try { passages = JSON.parse(compareEntry.passages_json); } catch (err) { logger.warn('ParallelPassageScreen', 'Operation failed', err); }
+  const sections = useMemo(() => {
+    const groups = new Map<string, SynopticEntry[]>();
+    for (const entry of filtered) {
+      const period = entry.period ?? 'ot';
+      if (!groups.has(period)) groups.set(period, []);
+      groups.get(period)!.push(entry);
+    }
+    return PERIOD_ORDER
+      .filter((p) => groups.has(p))
+      .map((p) => ({ title: PERIOD_LABELS[p] ?? p, data: groups.get(p)! }));
+  }, [filtered]);
 
-    const loadAll = async () => {
-      const texts: Record<string, string[]> = {};
-      for (const p of passages) {
-        const parsed = parseReference(`${p.book} ${p.ref}`);
-        if (parsed) {
-          texts[p.book] = await resolveVerseText(parsed, translation);
-        }
-      }
-      setResolvedTexts(texts);
-    };
-    loadAll();
-  }, [compareEntry, translation]);
+  const categories = useMemo(() => {
+    const cats = new Set(entries.map((e) => e.category).filter(Boolean));
+    return ['all', ...cats];
+  }, [entries]);
 
-  // LOADING
   if (isLoading) {
     return (
       <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-        <View style={styles.browseHeader}>
+        <View style={styles.headerPad}>
           <ScreenHeader title="Parallel Passages" onBack={() => navigation.goBack()} />
         </View>
         <View style={{ padding: spacing.lg }}><LoadingSkeleton lines={6} /></View>
@@ -83,147 +92,105 @@ export default function ParallelPassageScreen() {
     );
   }
 
-  // BROWSE MODE
-  if (!compareEntry) {
-    const categories = ['all', ...new Set(entries.map((e) => e.category).filter(Boolean))];
-
-    return (
-      <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-        <View style={styles.browseHeader}>
-          <ScreenHeader
-            title="Parallel Passages"
-            onBack={() => navigation.goBack()}
-            style={styles.headerSpacing}
-          />
-
-          <View style={{ marginBottom: spacing.sm }}>
-            <SearchInput
-              value={search}
-              onChangeText={setSearch}
-              placeholder="Search passages..."
-            />
-          </View>
-
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.filterRow}>
-            {categories.map((cat) => (
-              <TouchableOpacity key={cat ?? 'all'} onPress={() => setCatFilter(cat ?? 'all')}>
-                <Text style={[
-                  styles.filterLabel,
-                  { color: base.textMuted },
-                  catFilter === cat && { color: base.gold, borderBottomColor: base.gold },
-                  catFilter === cat && styles.filterLabelActive,
-                ]}>
-                  {cat === 'all' ? 'All' : (CATEGORY_LABELS[cat!] ?? cat)}
-                </Text>
-              </TouchableOpacity>
-            ))}
-          </ScrollView>
+  return (
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
+      <View style={styles.headerPad}>
+        <ScreenHeader title="Parallel Passages" onBack={() => navigation.goBack()} style={styles.headerSpacing} />
+        <View style={{ marginBottom: spacing.sm }}>
+          <SearchInput value={search} onChangeText={setSearch} placeholder="Search passages..." />
         </View>
 
-        <FlatList
-          data={filtered}
-          keyExtractor={(e) => e.id}
-          contentContainerStyle={styles.listPadding}
-          renderItem={({ item }) => {
-            let passages: { book: string; ref: string }[] = [];
-            try { passages = JSON.parse(item.passages_json); } catch (err) { logger.warn('ParallelPassageScreen', 'Operation failed', err); }
-
+        {/* Category filter pills */}
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.pillRow}>
+          {categories.map((cat) => {
+            const active = catFilter === cat;
             return (
               <TouchableOpacity
-                onPress={() => { setCompareEntry(item); setActiveTab(0); }}
-                style={[styles.entryRow, { borderBottomColor: base.border + '40' }]}
+                key={cat ?? 'all'}
+                onPress={() => setCatFilter(cat ?? 'all')}
+                style={[styles.pill, { borderColor: base.border }, active && { borderColor: base.gold + '55', backgroundColor: base.gold + '12' }]}
               >
-                <Text style={[styles.entryTitle, { color: base.text }]}>{item.title}</Text>
-                <Text style={[styles.entryRefs, { color: base.textMuted }]}>
-                  {passages.map((p) => `${p.book} ${p.ref}`).join(' · ')}
+                <Text style={[styles.pillText, { color: base.textMuted }, active && { color: base.gold }]}>
+                  {CATEGORY_LABELS[cat!] ?? cat}
                 </Text>
               </TouchableOpacity>
             );
-          }}
-        />
-      </SafeAreaView>
-    );
-  }
-
-  // COMPARE MODE (tabbed)
-  let passages: { book: string; ref: string }[] = [];
-  try { passages = JSON.parse(compareEntry.passages_json); } catch (err) { logger.warn('ParallelPassageScreen', 'Operation failed', err); }
-
-  let diffAnnotations: DiffAnnotationData[] = [];
-  try { diffAnnotations = JSON.parse(compareEntry.diff_annotations_json || '[]'); } catch (err) { logger.warn('ParallelPassageScreen', 'Failed to parse diff_annotations_json', err); }
-
-  return (
-    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      {/* Header */}
-      <View style={styles.compareHeader}>
-        <ScreenHeader
-          title={compareEntry.title}
-          onBack={() => setCompareEntry(null)}
-          backLabel="Back to list"
-        />
+          })}
+        </ScrollView>
       </View>
 
-      {/* Tabs */}
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.tabRow}>
-        {passages.map((p, i) => (
-          <TouchableOpacity
-            key={i}
-            onPress={() => setActiveTab(i)}
-            style={[styles.tab, { borderColor: base.border }, activeTab === i && { backgroundColor: base.gold + '30', borderColor: base.gold }]}
-          >
-            <Text style={[styles.tabLabel, { color: base.textMuted }, activeTab === i && { color: base.gold }]}>
-              {p.book}
+      <SectionList
+        sections={sections}
+        keyExtractor={(item) => item.id}
+        contentContainerStyle={styles.listPad}
+        renderSectionHeader={({ section }) => (
+          <View style={[styles.sectionHeader, { borderBottomColor: base.gold + '25' }]}>
+            <Text style={[styles.sectionHeaderText, { color: base.gold }]}>
+              {section.title}
             </Text>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
-
-      {/* Verse text + diff annotations */}
-      <ScrollView style={styles.verseScroll} contentContainerStyle={styles.verseContent}>
-        <Text style={[styles.verseRef, { color: base.gold }]}>
-          {passages[activeTab]?.book} {passages[activeTab]?.ref}
-        </Text>
-        {(resolvedTexts[passages[activeTab]?.book] ?? []).map((text, i) => (
-          <Text key={i} style={[styles.verseText, { color: base.text }]}>{text}</Text>
-        ))}
-        {!resolvedTexts[passages[activeTab]?.book] && (
-          <Text style={[styles.versePlaceholder, { color: base.textMuted }]}>
-            Loading or not available in current content...
-          </Text>
+          </View>
         )}
-        <DiffAnnotationList annotations={diffAnnotations} />
-      </ScrollView>
+        renderItem={({ item }) => {
+          let passages: { book: string; ref: string }[] = [];
+          try { passages = JSON.parse(item.passages_json); } catch { /* */ }
+          const books = passages.map((p) => p.book);
+          const isOT = item.category === 'ot-parallel';
+          const refSummary = passages.map((p) => p.ref).join(' \u00b7 ');
+
+          return (
+            <TouchableOpacity
+              onPress={() => navigation.navigate('ParallelDetail', { entryId: item.id })}
+              activeOpacity={0.7}
+              style={[styles.entryRow, { borderBottomColor: base.border + '40' }]}
+            >
+              <Text style={[styles.entryTitle, { color: base.text }]}>{item.title}</Text>
+              <GospelDots books={books} isOT={isOT} />
+              <Text style={[styles.entryRefs, { color: base.textMuted }]} numberOfLines={1}>
+                {refSummary}
+              </Text>
+            </TouchableOpacity>
+          );
+        }}
+        ListEmptyComponent={
+          <View style={styles.emptyState}>
+            <Text style={[styles.emptyText, { color: base.textMuted }]}>
+              No passages found
+            </Text>
+          </View>
+        }
+      />
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  container: { flex: 1 },
+  headerPad: { paddingHorizontal: spacing.md, paddingTop: spacing.lg },
+  headerSpacing: { marginBottom: spacing.md },
+  pillRow: { gap: spacing.xs, marginBottom: spacing.md },
+  pill: {
+    borderWidth: 1,
+    borderRadius: radii.pill,
+    paddingHorizontal: 10,
+    paddingVertical: 4,
   },
-  browseHeader: {
-    paddingHorizontal: spacing.md,
-    paddingTop: spacing.lg,
-  },
-  headerSpacing: {
-    marginBottom: spacing.md,
-  },
-  filterRow: {
-    gap: spacing.xs,
-    marginBottom: spacing.md,
-  },
-  filterLabel: {
+  pillText: {
     fontFamily: fontFamily.display,
     fontSize: 10,
-    paddingBottom: 4,
-    paddingHorizontal: 4,
+    letterSpacing: 0.3,
   },
-  filterLabelActive: {
-    borderBottomWidth: 2,
+  listPad: { paddingHorizontal: spacing.md },
+  sectionHeader: {
+    paddingTop: spacing.lg,
+    paddingBottom: spacing.xs,
+    borderBottomWidth: 1,
+    marginBottom: spacing.xs,
   },
-  listPadding: {
-    paddingHorizontal: spacing.md,
+  sectionHeaderText: {
+    fontFamily: fontFamily.display,
+    fontSize: 10,
+    letterSpacing: 1,
+    textTransform: 'uppercase',
   },
   entryRow: {
     paddingVertical: spacing.md,
@@ -238,45 +205,12 @@ const styles = StyleSheet.create({
     fontSize: 11,
     marginTop: 4,
   },
-  compareHeader: {
-    paddingHorizontal: spacing.md,
-    paddingTop: spacing.md,
+  emptyState: {
+    padding: spacing.xl,
+    alignItems: 'center',
   },
-  tabRow: {
-    paddingHorizontal: spacing.md,
-    gap: spacing.xs,
-    paddingVertical: spacing.sm,
-  },
-  tab: {
-    borderWidth: 1,
-    borderRadius: radii.sm,
-    paddingHorizontal: 12,
-    minHeight: MIN_TOUCH_TARGET,
-    justifyContent: 'center',
-  },
-  tabLabel: {
-    fontFamily: fontFamily.display,
-    fontSize: 11,
-  },
-  verseScroll: {
-    flex: 1,
-  },
-  verseContent: {
-    padding: spacing.md,
-  },
-  verseRef: {
-    fontFamily: fontFamily.uiSemiBold,
-    fontSize: 12,
-    marginBottom: spacing.sm,
-  },
-  verseText: {
-    fontFamily: fontFamily.body,
-    fontSize: 16,
-    lineHeight: 26,
-    marginBottom: 4,
-  },
-  versePlaceholder: {
-    fontFamily: fontFamily.bodyItalic,
+  emptyText: {
+    fontFamily: fontFamily.ui,
     fontSize: 14,
   },
 });
