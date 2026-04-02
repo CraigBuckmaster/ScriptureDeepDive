@@ -4,14 +4,14 @@
  * Auth is optional — the app works fully without signing in.
  * Premium features require sign-in (gate checked elsewhere).
  *
- * All Supabase/native module access is deferred to function call time
- * so the store can be imported safely in Expo Go (where native modules
- * like AsyncStorage and expo-crypto are unavailable).
+ * IMPORTANT: This file must NOT import @supabase/supabase-js,
+ * AsyncStorage, expo-crypto, expo-auth-session, or expo-web-browser
+ * at the top level. These native modules crash Expo Go. All access
+ * is deferred to function bodies via ../lib/supabase (which also
+ * uses dynamic require).
  */
 
 import { create } from 'zustand';
-import { getSupabase, isSupabaseAvailable } from '../lib/supabase';
-import { signInWithProvider } from '../lib/oauthHelpers';
 import { upsertAuthProfile, clearAuthProfile } from '../db/user';
 import { logger } from '../utils/logger';
 
@@ -36,6 +36,12 @@ interface AuthState {
   resetPassword: (email: string) => Promise<{ error?: string }>;
 }
 
+/** Lazy-load supabase helpers (avoids top-level native module imports). */
+function getAuth() {
+  const { getSupabase, isSupabaseAvailable } = require('../lib/supabase');
+  return { getSupabase, isSupabaseAvailable };
+}
+
 export const useAuthStore = create<AuthState>((set) => ({
   user: null,
   isLoading: false,
@@ -43,19 +49,22 @@ export const useAuthStore = create<AuthState>((set) => ({
 
   hydrate: async () => {
     try {
+      const { getSupabase, isSupabaseAvailable } = getAuth();
       if (!isSupabaseAvailable()) {
         logger.info('authStore', 'Supabase not available (Expo Go) — skipping auth hydration');
         return;
       }
 
       const supabase = getSupabase();
+      if (!supabase) return;
+
       const { data: { session } } = await supabase.auth.getSession();
       if (session?.user) {
         set({ user: session.user });
         syncProfile(session.user);
       }
 
-      supabase.auth.onAuthStateChange((_event, newSession) => {
+      supabase.auth.onAuthStateChange((_event: string, newSession: any) => {
         set({ user: newSession?.user ?? null });
         if (newSession?.user) syncProfile(newSession.user);
       });
@@ -69,7 +78,9 @@ export const useAuthStore = create<AuthState>((set) => ({
   signInWithEmail: async (email, password) => {
     set({ isLoading: true });
     try {
-      const { error } = await getSupabase().auth.signInWithPassword({ email, password });
+      const supabase = getAuth().getSupabase();
+      if (!supabase) return { error: 'Auth not available in this environment' };
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) return { error: error.message };
       return {};
     } finally {
@@ -80,7 +91,9 @@ export const useAuthStore = create<AuthState>((set) => ({
   signUpWithEmail: async (email, password) => {
     set({ isLoading: true });
     try {
-      const { error } = await getSupabase().auth.signUp({ email, password });
+      const supabase = getAuth().getSupabase();
+      if (!supabase) return { error: 'Auth not available in this environment' };
+      const { error } = await supabase.auth.signUp({ email, password });
       if (error) return { error: error.message };
       return {};
     } finally {
@@ -91,6 +104,7 @@ export const useAuthStore = create<AuthState>((set) => ({
   signInWithGoogle: async () => {
     set({ isLoading: true });
     try {
+      const { signInWithProvider } = require('../lib/oauthHelpers');
       return await signInWithProvider('google');
     } finally {
       set({ isLoading: false });
@@ -100,6 +114,7 @@ export const useAuthStore = create<AuthState>((set) => ({
   signInWithFacebook: async () => {
     set({ isLoading: true });
     try {
+      const { signInWithProvider } = require('../lib/oauthHelpers');
       return await signInWithProvider('facebook');
     } finally {
       set({ isLoading: false });
@@ -109,7 +124,8 @@ export const useAuthStore = create<AuthState>((set) => ({
   signOut: async () => {
     set({ isLoading: true });
     try {
-      await getSupabase().auth.signOut();
+      const supabase = getAuth().getSupabase();
+      if (supabase) await supabase.auth.signOut();
       await clearAuthProfile();
       set({ user: null });
     } catch (err) {
@@ -122,7 +138,9 @@ export const useAuthStore = create<AuthState>((set) => ({
   resetPassword: async (email) => {
     set({ isLoading: true });
     try {
-      const { error } = await getSupabase().auth.resetPasswordForEmail(email);
+      const supabase = getAuth().getSupabase();
+      if (!supabase) return { error: 'Auth not available in this environment' };
+      const { error } = await supabase.auth.resetPasswordForEmail(email);
       if (error) return { error: error.message };
       return {};
     } finally {

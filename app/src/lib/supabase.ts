@@ -1,30 +1,50 @@
 /**
  * lib/supabase.ts — Lazy-initialized Supabase client singleton.
  *
- * The client is NOT created at import time because expo-crypto and
- * AsyncStorage require native modules that are unavailable in Expo Go.
- * Instead, getSupabase() creates the client on first call — which only
- * happens when the user actually interacts with auth features.
- *
- * Configure SUPABASE_URL and SUPABASE_ANON_KEY before first use.
+ * IMPORTANT: This module must NOT import @supabase/supabase-js or
+ * AsyncStorage at the top level. These packages load native modules
+ * (expo-crypto, AsyncStorage) that crash in Expo Go. All imports
+ * are deferred to the first actual auth action via dynamic require().
  */
-
-import type { SupabaseClient } from '@supabase/supabase-js';
 
 // TODO: Replace with your Supabase project credentials
 const SUPABASE_URL = 'https://your-project.supabase.co';
 const SUPABASE_ANON_KEY = 'your-anon-key';
 
-let _client: SupabaseClient | null = null;
+let _client: any = null;
+let _available: boolean | null = null;
+
+/**
+ * Check if Supabase native modules are available in this environment.
+ * Returns false in Expo Go where AsyncStorage native module is null.
+ */
+export function isSupabaseAvailable(): boolean {
+  if (_available !== null) return _available;
+  try {
+    const AsyncStorage = require('@react-native-async-storage/async-storage').default;
+    // The JS module loads fine, but the native module may be null
+    // Try a no-op operation to detect if the native bridge works
+    if (!AsyncStorage || typeof AsyncStorage.getItem !== 'function') {
+      _available = false;
+      return false;
+    }
+    _available = true;
+    return true;
+  } catch {
+    _available = false;
+    return false;
+  }
+}
 
 /**
  * Get the Supabase client, creating it on first call.
- * Deferred so that native modules (AsyncStorage, expo-crypto)
- * are only loaded when auth is actually used.
+ * Returns null if native modules aren't available (Expo Go).
  */
-export function getSupabase(): SupabaseClient {
-  if (!_client) {
-    // Dynamic require to avoid loading native modules at import time
+export function getSupabase(): any | null {
+  if (_client) return _client;
+  if (!isSupabaseAvailable()) return null;
+
+  try {
     require('react-native-url-polyfill/auto');
     const { createClient } = require('@supabase/supabase-js');
     const AsyncStorage = require('@react-native-async-storage/async-storage').default;
@@ -38,28 +58,9 @@ export function getSupabase(): SupabaseClient {
         flowType: 'pkce',
       },
     });
-  }
-  return _client;
-}
-
-/**
- * Check if the Supabase client can be created in this environment.
- * Returns false in Expo Go where native modules aren't available.
- *
- * We test the actual native module, not just the JS wrapper — the JS
- * import succeeds in Expo Go but the underlying native module is null,
- * which causes AsyncStorage operations to throw at runtime.
- */
-export function isSupabaseAvailable(): boolean {
-  try {
-    const { NativeModules } = require('react-native');
-    // AsyncStorage's native module name varies by version
-    return !!(
-      NativeModules.RNCAsyncStorage ||
-      NativeModules.AsyncStorageModule ||
-      NativeModules.AsyncSQLiteDBStorage
-    );
+    return _client;
   } catch {
-    return false;
+    _available = false;
+    return null;
   }
 }
