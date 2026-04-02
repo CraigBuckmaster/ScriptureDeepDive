@@ -47,7 +47,6 @@ All 66 books live. All 23 deep study feature phases shipped. Theme system (Dark/
 
 | Debt | Scope |
 |------|-------|
-| **Isaiah 23–35 thin panels** | 13 chapters, 26 sections (oracles against nations) |
 | Kings/Chronicles MacArthur enrichment | ~112 chapters |
 | ~134 Psalms without timeline links | No natural narrative anchors |
 | Thin panel enrichment (Batch 6) | ~259 panels |
@@ -56,30 +55,20 @@ All 66 books live. All 23 deep study feature phases shipped. Theme system (Dark/
 
 | Item | Date | Scope |
 |------|------|-------|
+| **Isaiah fully enriched** | April 2026 | All 66 chapters, 132 sections, 756 section panels — cross, hist, oswalt, childs verified |
 | **Psalms 116-150 enrichment** | April 2026 | 35 psalms, 70 sections — cross + hist panels added |
 
 ---
 
 ## Isaiah Enrichment Status
 
-**Completed:**
-- Isaiah 1-22: Full panel coverage (heb, cross, hist, mac, calvin, net, oswalt, childs)
-- Isaiah 36-66: cross + hist panels added (April 2026)
-
-**Remaining:**
-- Isaiah 23-35 (Oracles Against Nations): 13 chapters, 26 sections — only has heb + mac
-- Need: cross, hist, oswalt, childs panels
-
-**Panel priority for remaining chapters:**
-1. `cross` — NT connections
-2. `hist` — ANE context, historical background
-3. `oswalt` + `childs` — major Isaiah commentators
+**COMPLETE** — All 66 chapters fully enriched (132 sections, 756 section panels). Every section has heb, mac, cross, hist, oswalt, and childs panels with substantive content.
 
 ---
 
 ## What's Next
 
-**If doing content work:** Isaiah 23-35 (Oracles Against Nations) still needs cross + hist panels — 13 chapters, 26 sections. Use standard enrichment script pattern.
+**If doing content work:** Kings/Chronicles MacArthur enrichment (~112 chapters), thin panel enrichment (Batch 6, ~259 panels), or ~134 Psalms without timeline links.
 
 **If doing code work (Claude Code):** Phase 24 — Content Library screen. See `_tools/DEEP_STUDY_FEATURES_PLAN.md`.
 
