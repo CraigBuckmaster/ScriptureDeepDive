@@ -81,7 +81,7 @@ export function InterlinearSheet({
                   <Text style={[styles.label, { color: base.textMuted }]}>INTERLINEAR</Text>
                   <Text style={[styles.verseRef, { color: base.gold }]}>{verseRef}</Text>
                 </View>
-                <TouchableOpacity onPress={onClose} hitSlop={{ top: 8, right: 8, bottom: 8, left: 8 }}>
+                <TouchableOpacity onPress={onClose} hitSlop={{ top: 8, right: 8, bottom: 8, left: 8 }} accessibilityRole="button" accessibilityLabel="Close interlinear view">
                   <X size={20} color={base.textMuted} />
                 </TouchableOpacity>
               </View>
@@ -112,6 +112,8 @@ export function InterlinearSheet({
                       onPress={w.word_study_id && onWordStudyPress
                         ? () => onWordStudyPress(w.word_study_id!)
                         : undefined}
+                      accessibilityRole="button"
+                      accessibilityLabel={`${w.original}, ${w.transliteration}${w.gloss ? `, ${w.gloss}` : ''}`}
                     >
                       {/* Original text (large) */}
                       <Text style={[styles.original, { color: base.text }, isOT && styles.originalHebrew]}>
@@ -124,6 +126,8 @@ export function InterlinearSheet({
                       {/* Strong's number + concordance link */}
                       {w.strongs ? (
                         <TouchableOpacity
+                          accessibilityRole="button"
+                          accessibilityLabel={`View all occurrences of ${w.strongs}`}
                           onPress={onConcordancePress
                             ? () => onConcordancePress({
                                 strongs: w.strongs!,

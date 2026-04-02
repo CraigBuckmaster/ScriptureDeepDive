@@ -20,7 +20,7 @@ export function PeoplePanel({ entries, onPersonPress, onRefPress }: Props) {
           width: '48%', backgroundColor: colors.bg, borderWidth: 1,
           borderColor: colors.border + '60', borderRadius: radii.md, padding: spacing.sm,
         }}>
-          <TouchableOpacity onPress={() => onPersonPress?.(p.name)} disabled={!onPersonPress}>
+          <TouchableOpacity onPress={() => onPersonPress?.(p.name)} disabled={!onPersonPress} accessibilityRole="button" accessibilityLabel={`View details for ${p.name}`}>
             <Text style={{ color: colors.accent, fontFamily: fontFamily.displayMedium, fontSize: 12 }}>
               {p.name}
             </Text>

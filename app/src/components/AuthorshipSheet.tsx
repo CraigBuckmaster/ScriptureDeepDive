@@ -16,7 +16,7 @@ export function AuthorshipSheet({ visible, onClose }: Props) {
   const { base } = useTheme();
   return (
     <Modal visible={visible} transparent animationType="slide">
-      <TouchableOpacity style={{ flex: 1 }} activeOpacity={1} onPress={onClose} />
+      <TouchableOpacity style={{ flex: 1 }} activeOpacity={1} onPress={onClose} accessibilityRole="button" accessibilityLabel="Close about content" />
       <SafeAreaView style={{
         backgroundColor: base.bgElevated, borderTopLeftRadius: radii.lg, borderTopRightRadius: radii.lg,
         borderTopWidth: 1, borderColor: base.border, maxHeight: '50%',

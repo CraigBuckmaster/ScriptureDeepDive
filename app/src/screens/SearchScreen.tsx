@@ -122,6 +122,8 @@ export default function SearchScreen() {
                 <TouchableOpacity
                   onPress={() => setVerseLimit((prev) => prev + LOAD_MORE_INCREMENT)}
                   style={styles.loadMoreButton}
+                  accessibilityRole="button"
+                  accessibilityLabel="Load more verses"
                 >
                   <Text style={[styles.loadMoreText, { color: base.gold }]}>Load more verses</Text>
                 </TouchableOpacity>
@@ -136,6 +138,8 @@ export default function SearchScreen() {
                     params: { personId: p.id },
                   })}
                   style={styles.personRow}
+                  accessibilityRole="button"
+                  accessibilityLabel={`View person: ${p.name}`}
                 >
                   <View style={[
                     styles.eraDot,
@@ -157,6 +161,8 @@ export default function SearchScreen() {
                     params: { wordId: w.id },
                   })}
                   style={styles.wordRow}
+                  accessibilityRole="button"
+                  accessibilityLabel={`Word study: ${w.transliteration}`}
                 >
                   <Text style={styles.wordOriginal}>{w.original}</Text>
                   <Text style={[styles.wordTranslit, { color: base.goldDim }]}>{w.transliteration}</Text>
@@ -173,6 +179,8 @@ export default function SearchScreen() {
                   params: { bookId: v.book_id, chapterNum: v.chapter_num },
                 })}
                 style={styles.verseRow}
+                accessibilityRole="button"
+                accessibilityLabel={`Go to ${displayName} ${v.chapter_num}:${v.verse_num}`}
               >
                 <Text style={[styles.verseRef, { color: base.gold }]}>
                   {displayName} {v.chapter_num}:{v.verse_num}

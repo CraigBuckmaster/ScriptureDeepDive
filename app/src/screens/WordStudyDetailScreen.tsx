@@ -69,6 +69,8 @@ export default function WordStudyDetailScreen() {
         {word.strongs && (
           <TouchableOpacity
             style={styles.concordanceBtn}
+            accessibilityRole="button"
+            accessibilityLabel="See every occurrence in Scripture"
             onPress={() => navigation.navigate('Concordance', {
               strongs: word.strongs!,
               original: word.original,

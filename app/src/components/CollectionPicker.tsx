@@ -69,13 +69,13 @@ export function CollectionPicker({ visible, onClose, currentCollectionId, onSele
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={styles.overlay}
       >
-        <TouchableOpacity style={styles.backdrop} onPress={onClose} activeOpacity={1} />
+        <TouchableOpacity style={styles.backdrop} onPress={onClose} activeOpacity={1} accessibilityRole="button" accessibilityLabel="Close picker" />
 
         <SafeAreaView edges={['bottom']} style={[styles.sheet, { backgroundColor: base.bgElevated }]}>
           {/* Header */}
           <View style={[styles.header, { borderBottomColor: base.border }]}>
             <Text style={[styles.headerTitle, { color: base.text }]}>Select Collection</Text>
-            <TouchableOpacity onPress={onClose}>
+            <TouchableOpacity onPress={onClose} accessibilityRole="button" accessibilityLabel="Close">
               <X size={20} color={base.textMuted} />
             </TouchableOpacity>
           </View>
@@ -96,6 +96,9 @@ export function CollectionPicker({ visible, onClose, currentCollectionId, onSele
                   <TouchableOpacity
                     key={color}
                     onPress={() => setNewColor(color)}
+                    accessibilityRole="button"
+                    accessibilityLabel={`Select color ${color}`}
+                    accessibilityState={{ selected: newColor === color }}
                     style={[
                       styles.colorSwatch,
                       { backgroundColor: color },
@@ -105,10 +108,10 @@ export function CollectionPicker({ visible, onClose, currentCollectionId, onSele
                 ))}
               </View>
               <View style={styles.createActions}>
-                <TouchableOpacity onPress={() => setShowCreate(false)}>
+                <TouchableOpacity onPress={() => setShowCreate(false)} accessibilityRole="button" accessibilityLabel="Cancel creating collection">
                   <Text style={[styles.cancelText, { color: base.textMuted }]}>Cancel</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={handleCreate} style={[styles.createButton, { backgroundColor: base.gold }]}>
+                <TouchableOpacity onPress={handleCreate} style={[styles.createButton, { backgroundColor: base.gold }]} accessibilityRole="button" accessibilityLabel="Create collection">
                   <Text style={[styles.createButtonText, { color: base.bg }]}>Create</Text>
                 </TouchableOpacity>
               </View>
@@ -116,7 +119,7 @@ export function CollectionPicker({ visible, onClose, currentCollectionId, onSele
           ) : (
             <>
               {/* Add new button */}
-              <TouchableOpacity style={[styles.addRow, { borderBottomColor: base.border }]} onPress={() => setShowCreate(true)}>
+              <TouchableOpacity style={[styles.addRow, { borderBottomColor: base.border }]} onPress={() => setShowCreate(true)} accessibilityRole="button" accessibilityLabel="Create new collection">
                 <Plus size={16} color={base.gold} />
                 <Text style={[styles.addText, { color: base.gold }]}>New Collection</Text>
               </TouchableOpacity>
@@ -125,6 +128,8 @@ export function CollectionPicker({ visible, onClose, currentCollectionId, onSele
               <TouchableOpacity
                 style={[styles.collectionRow, { borderBottomColor: base.border }]}
                 onPress={() => handleSelect(null)}
+                accessibilityRole="button"
+                accessibilityLabel="Remove from collection"
               >
                 <View style={styles.collectionInfo}>
                   <Text style={[styles.collectionName, { color: base.text }]}>None</Text>
@@ -144,6 +149,8 @@ export function CollectionPicker({ visible, onClose, currentCollectionId, onSele
                   <TouchableOpacity
                     style={[styles.collectionRow, { borderBottomColor: base.border }]}
                     onPress={() => handleSelect(item.id)}
+                    accessibilityRole="button"
+                    accessibilityLabel={`Select collection: ${item.name}`}
                   >
                     <View style={[styles.colorBar, { backgroundColor: item.color }]} />
                     <View style={styles.collectionInfo}>

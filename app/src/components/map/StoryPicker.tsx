@@ -43,6 +43,8 @@ export function StoryPicker({ stories, activeStoryId, onSelect }: Props) {
             key={story.id}
             onPress={() => { lightImpact(); onSelect(story.id); }}
             hitSlop={{ top: 6, bottom: 6, left: 2, right: 2 }}
+            accessibilityRole="button"
+            accessibilityLabel={`${isActive ? 'Selected story: ' : 'Select story: '}${story.name}`}
             style={{
               backgroundColor: isActive ? color + '33' : base.bg + 'EE',
               borderWidth: 1,

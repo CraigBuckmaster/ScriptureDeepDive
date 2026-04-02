@@ -34,7 +34,8 @@ import { useTranslationSwitch } from '../hooks/useTranslationSwitch';
 import { getContentStats, type ContentStats } from '../db/content';
 import { getUserDb } from '../db/userDatabase';
 import { exportStudyData, ExportError } from '../utils/exportData';
-import { base, useTheme, spacing, fontFamily } from '../theme';
+import { useAvailableVoices } from '../hooks/useAvailableVoices';
+import { base, useTheme, spacing, radii, fontFamily } from '../theme';
 import { logger } from '../utils/logger';
 
 const APP_VERSION = require('../../app.json').expo.version ?? '1.0.0';
@@ -193,6 +194,9 @@ export default function SettingsScreen() {
             thumbColor={studyCoachEnabled ? base.gold : base.textMuted}
           />
         </Row>
+
+        {/* ── TTS VOICE ─────────────────────────────────────────── */}
+        <VoicePicker base={base} />
 
         {/* ── TRANSLATIONS ─────────────────────────────────────── */}
         <TranslationManager base={base} />
@@ -410,6 +414,70 @@ function TranslationManager({ base }: { base: ReturnType<typeof useTheme>['base'
   );
 }
 
+function VoicePicker({ base }: { base: ReturnType<typeof useTheme>['base'] }) {
+  const voices = useAvailableVoices();
+  const ttsVoice = useSettingsStore((s) => s.ttsVoice);
+  const setTtsVoice = useSettingsStore((s) => s.setTtsVoice);
+  const [expanded, setExpanded] = useState(false);
+
+  if (voices.length === 0) return null;
+
+  const currentName = voices.find((v) => v.identifier === ttsVoice)?.name ?? 'System Default';
+
+  return (
+    <View style={styles.section}>
+      <SectionLabel text="TEXT-TO-SPEECH" base={base} />
+      <TouchableOpacity
+        onPress={() => setExpanded(!expanded)}
+        style={[styles.voiceRow, { borderBottomColor: base.border + '40' }]}
+        accessibilityRole="button"
+        accessibilityLabel={`TTS voice: ${currentName}. Tap to change.`}
+      >
+        <Text style={[styles.rowLabel, { color: base.text }]}>Voice</Text>
+        <Text style={{ color: base.gold, fontFamily: fontFamily.uiMedium, fontSize: 13 }}>
+          {currentName} {expanded ? '▲' : '▼'}
+        </Text>
+      </TouchableOpacity>
+      {expanded && (
+        <View style={[styles.voiceList, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
+          <TouchableOpacity
+            onPress={() => { setTtsVoice(''); setExpanded(false); }}
+            style={[styles.voiceOption, !ttsVoice && { backgroundColor: base.gold + '15' }]}
+          >
+            <Text style={[styles.voiceOptionText, { color: !ttsVoice ? base.gold : base.text }]}>
+              System Default
+            </Text>
+          </TouchableOpacity>
+          {voices.map((v) => (
+            <TouchableOpacity
+              key={v.identifier}
+              onPress={() => { setTtsVoice(v.identifier); setExpanded(false); }}
+              style={[styles.voiceOption, ttsVoice === v.identifier && { backgroundColor: base.gold + '15' }]}
+            >
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.xs }}>
+                <Text style={[styles.voiceOptionText, { color: ttsVoice === v.identifier ? base.gold : base.text }]}>
+                  {v.name}
+                </Text>
+                {v.recommended && (
+                  <Text style={{ color: base.gold, fontSize: 9, fontFamily: fontFamily.uiSemiBold, opacity: 0.8 }}>
+                    RECOMMENDED
+                  </Text>
+                )}
+              </View>
+              <Text style={{ color: base.textMuted, fontSize: 10, fontFamily: fontFamily.ui }}>
+                {v.quality !== 'Default' ? v.quality : v.language}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+      )}
+      <Text style={[styles.translationHint, { color: base.textMuted }]}>
+        For better voices, go to iPhone Settings → Accessibility → Spoken Content → Voices → English and download enhanced voices.
+      </Text>
+    </View>
+  );
+}
+
 function SectionLabel({ text, base }: { text: string; base: ReturnType<typeof useTheme>['base'] }) {
   return <Text style={[styles.sectionLabel, { color: base.textMuted }]}>{text}</Text>;
 }
@@ -563,5 +631,33 @@ const styles = StyleSheet.create({
   downloadButton: {
     flexDirection: 'row',
     alignItems: 'center',
+  },
+
+  /* Voice picker */
+  voiceRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: spacing.md,
+    borderBottomWidth: 1,
+  },
+  voiceList: {
+    borderRadius: radii.md,
+    borderWidth: 1,
+    marginTop: spacing.xs,
+    marginBottom: spacing.sm,
+    maxHeight: 280,
+    overflow: 'hidden',
+  },
+  voiceOption: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: spacing.sm + 2,
+    paddingHorizontal: spacing.md,
+  },
+  voiceOptionText: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 13,
   },
 });

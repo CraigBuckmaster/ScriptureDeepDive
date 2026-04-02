@@ -392,6 +392,57 @@ export async function getReadingStats(): Promise<ReadingStats> {
   };
 }
 
+// ── Testament Progress ────────────────────────────────────────────
+
+export interface TestamentProgress {
+  testament: string;
+  chaptersRead: number;
+  totalChapters: number;
+}
+
+/**
+ * Get reading progress broken down by testament (OT/NT).
+ * Joins reading_progress with the content DB's books table.
+ */
+export async function getTestamentProgress(): Promise<TestamentProgress[]> {
+  // We can't join across DBs, so query reading_progress then match against known totals
+  const otBooks = 39;   // Genesis-Malachi
+  const ntBooks = 27;   // Matthew-Revelation
+  const otChapters = 929;
+  const ntChapters = 260;
+
+  // OT book IDs are order 1-39, NT are 40-66
+  // reading_progress stores book_id — we need to classify each
+  const rows = await getUserDb().getAllAsync<{ book_id: string; cnt: number }>(
+    `SELECT book_id, COUNT(DISTINCT chapter_num) as cnt FROM reading_progress GROUP BY book_id`,
+  );
+
+  // Known NT book IDs
+  const ntBookIds = new Set([
+    'matthew', 'mark', 'luke', 'john', 'acts', 'romans',
+    '1_corinthians', '2_corinthians', 'galatians', 'ephesians',
+    'philippians', 'colossians', '1_thessalonians', '2_thessalonians',
+    '1_timothy', '2_timothy', 'titus', 'philemon', 'hebrews',
+    'james', '1_peter', '2_peter', '1_john', '2_john', '3_john',
+    'jude', 'revelation',
+  ]);
+
+  let otRead = 0;
+  let ntRead = 0;
+  for (const row of rows) {
+    if (ntBookIds.has(row.book_id)) {
+      ntRead += row.cnt;
+    } else {
+      otRead += row.cnt;
+    }
+  }
+
+  return [
+    { testament: 'Old Testament', chaptersRead: otRead, totalChapters: otChapters },
+    { testament: 'New Testament', chaptersRead: ntRead, totalChapters: ntChapters },
+  ];
+}
+
 // ── Study Collections ──────────────────────────────────────────────
 
 export async function getCollections(): Promise<StudyCollection[]> {

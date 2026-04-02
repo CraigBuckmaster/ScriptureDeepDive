@@ -79,7 +79,8 @@ export default function ChapterScreen() {
     chapterPanels, noteCount, isLoading,
   } = useChapterData(bookId, chapterNum);
 
-  const tts = useTTS(verses);
+  const ttsVoice = useSettingsStore((s) => s.ttsVoice);
+  const tts = useTTS(verses, ttsVoice || undefined);
   const [ttsActive, setTtsActive] = useState(false);
 
   const scrollRef = useRef<ScrollView>(null);

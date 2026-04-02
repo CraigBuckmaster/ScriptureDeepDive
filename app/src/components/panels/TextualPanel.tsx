@@ -61,6 +61,9 @@ export function CompositeTextualPanel({ data, defaultTab }: CompositeProps) {
         <TouchableOpacity
           style={[styles.tab, activeTab === 'notes' && [styles.tabActive, { backgroundColor: base.gold + '25' }]]}
           onPress={() => setActiveTab('notes')}
+          accessibilityRole="button"
+          accessibilityLabel="Notes tab"
+          accessibilityState={{ selected: activeTab === 'notes' }}
         >
           <Text style={[styles.tabText, { color: base.textMuted }, activeTab === 'notes' && { color: base.gold }]}>
             Notes
@@ -69,6 +72,9 @@ export function CompositeTextualPanel({ data, defaultTab }: CompositeProps) {
         <TouchableOpacity
           style={[styles.tab, activeTab === 'stories' && [styles.tabActive, { backgroundColor: base.gold + '25' }]]}
           onPress={() => setActiveTab('stories')}
+          accessibilityRole="button"
+          accessibilityLabel="Manuscript Stories tab"
+          accessibilityState={{ selected: activeTab === 'stories' }}
         >
           <Text style={[styles.tabText, { color: base.textMuted }, activeTab === 'stories' && { color: base.gold }]}>
             Manuscript Stories

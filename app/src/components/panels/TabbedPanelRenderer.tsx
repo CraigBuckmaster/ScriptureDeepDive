@@ -65,6 +65,9 @@ export function TabbedPanelRenderer({ tabs, defaultTab, children }: TabbedPanelR
               key={tab.key}
               onPress={() => setActiveKey(tab.key)}
               activeOpacity={0.7}
+              accessibilityRole="button"
+              accessibilityLabel={`${tab.label} tab`}
+              accessibilityState={{ selected: isActive }}
               style={[styles.tab, isActive && [styles.tabActive, { borderBottomColor: base.gold, backgroundColor: base.gold + '12' }]]}
             >
               <Text style={[styles.tabLabel, { color: base.textMuted }, isActive && { color: base.gold, fontWeight: '700' }]}>

@@ -61,7 +61,7 @@ export default function ConceptDetailScreen() {
     return (
       <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
         <View style={styles.header}>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
+          <TouchableOpacity onPress={() => navigation.goBack()} accessibilityRole="button" accessibilityLabel="Go back">
             <ChevronLeft size={24} color={base.gold} />
           </TouchableOpacity>
           <Text style={[styles.title, { color: base.gold }]}>Concept</Text>
@@ -78,10 +78,10 @@ export default function ConceptDetailScreen() {
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]} edges={['top']}>
       {/* Header */}
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()} hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}>
+        <TouchableOpacity onPress={() => navigation.goBack()} hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }} accessibilityRole="button" accessibilityLabel="Go back">
           <ChevronLeft size={24} color={base.gold} />
         </TouchableOpacity>
-        <Text style={[styles.title, { color: base.gold }]} numberOfLines={1}>{concept.title}</Text>
+        <Text style={[styles.title, { color: base.gold }]} numberOfLines={1} accessibilityRole="header">{concept.title}</Text>
         <View style={styles.headerSpacer} />
       </View>
 
@@ -91,6 +91,9 @@ export default function ConceptDetailScreen() {
           <TouchableOpacity
             style={[styles.tab, activeTab === 'overview' && [styles.tabActive, { backgroundColor: base.gold + '25' }]]}
             onPress={() => setActiveTab('overview')}
+            accessibilityRole="button"
+            accessibilityLabel="Overview tab"
+            accessibilityState={{ selected: activeTab === 'overview' }}
           >
             <Text style={[styles.tabText, { color: base.textMuted }, activeTab === 'overview' && { color: base.gold }]}>
               Overview
@@ -99,6 +102,9 @@ export default function ConceptDetailScreen() {
           <TouchableOpacity
             style={[styles.tab, activeTab === 'journey' && [styles.tabActive, { backgroundColor: base.gold + '25' }]]}
             onPress={() => setActiveTab('journey')}
+            accessibilityRole="button"
+            accessibilityLabel="Journey tab"
+            accessibilityState={{ selected: activeTab === 'journey' }}
           >
             <Text style={[styles.tabText, { color: base.textMuted }, activeTab === 'journey' && { color: base.gold }]}>
               Journey
@@ -139,6 +145,8 @@ export default function ConceptDetailScreen() {
                   style={[styles.wordCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
                   activeOpacity={0.7}
                   onPress={() => navigation.navigate('WordStudyDetail', { wordId: ws.id })}
+                  accessibilityRole="button"
+                  accessibilityLabel={`Word study: ${ws.transliteration}`}
                 >
                   <Text style={[styles.wordOriginal, { color: base.gold }]}>{ws.original}</Text>
                   <Text style={[styles.wordTranslit, { color: base.text }]}>{ws.transliteration}</Text>
@@ -164,6 +172,8 @@ export default function ConceptDetailScreen() {
                 style={[styles.chapterRow, { backgroundColor: base.bgElevated }]}
                 activeOpacity={0.7}
                 onPress={() => navigation.navigate('Chapter', { bookId: ch.book_dir, chapterNum: ch.chapter_num })}
+                accessibilityRole="button"
+                accessibilityLabel={`Go to ${ch.book_name} ${ch.chapter_num}`}
               >
                 <Text style={[styles.chapterText, { color: base.text }]}>
                   {ch.book_name} {ch.chapter_num}
@@ -189,6 +199,8 @@ export default function ConceptDetailScreen() {
                 style={[styles.chainCard, { backgroundColor: base.bgElevated }]}
                 activeOpacity={0.7}
                 onPress={() => navigation.navigate('ProphecyDetail', { chainId: pc.id })}
+                accessibilityRole="button"
+                accessibilityLabel={`View prophecy chain: ${pc.title}`}
               >
                 <Text style={[styles.chainTitle, { color: base.text }]}>{pc.title}</Text>
                 <Text style={[styles.chainSummary, { color: base.textMuted }]} numberOfLines={2}>{pc.summary}</Text>
@@ -238,6 +250,8 @@ export default function ConceptDetailScreen() {
                   style={[styles.personCard, { backgroundColor: base.bgElevated }]}
                   activeOpacity={0.7}
                   onPress={() => navigation.navigate('PersonDetail', { personId: p.id })}
+                  accessibilityRole="button"
+                  accessibilityLabel={`View person: ${p.name}`}
                 >
                   <Text style={[styles.personName, { color: base.text }]}>{p.name}</Text>
                   {p.role && <Text style={[styles.personRole, { color: base.textMuted }]} numberOfLines={1}>{p.role}</Text>}

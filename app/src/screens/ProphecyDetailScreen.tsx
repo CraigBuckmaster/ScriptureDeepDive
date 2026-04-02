@@ -163,7 +163,7 @@ export default function ProphecyDetailScreen() {
                   {/* Card */}
                   <View style={[styles.railCard, { backgroundColor: base.bgElevated, borderColor: base.border + '40' }]}>
                     <View style={styles.railCardHeader}>
-                      <TouchableOpacity onPress={() => handleVersePress(link)}>
+                      <TouchableOpacity onPress={() => handleVersePress(link)} accessibilityRole="button" accessibilityLabel={`Go to ${formatLinkRef(link)}`}>
                         <Text style={[styles.verseRef, { color: dotColor }]}>
                           {formatLinkRef(link)}
                         </Text>
