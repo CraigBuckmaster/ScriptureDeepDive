@@ -44,8 +44,8 @@ export default function MoreMenuScreen() {
           <View style={styles.authRow}>
             <User size={20} color={base.gold} />
             <View style={{ flex: 1, marginLeft: spacing.sm }}>
-              <Text style={[styles.menuLabel, { color: base.text }]}>{user.email}</Text>
-              <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: fontFamily.ui }}>Signed in</Text>
+              <Text style={[styles.authLabel, { color: base.text }]}>{user.email}</Text>
+              <Text style={[styles.authSubtitle, { color: base.textMuted }]}>Signed in</Text>
             </View>
             <TouchableOpacity onPress={signOut} accessibilityLabel="Sign out" accessibilityRole="button">
               <LogOut size={18} color={base.textMuted} />
@@ -61,8 +61,8 @@ export default function MoreMenuScreen() {
           >
             <LogIn size={20} color={base.gold} />
             <View style={{ flex: 1, marginLeft: spacing.sm }}>
-              <Text style={[styles.menuLabel, { color: base.text }]}>Sign In</Text>
-              <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: fontFamily.ui }}>Unlock premium features and sync</Text>
+              <Text style={[styles.authLabel, { color: base.text }]}>Sign In</Text>
+              <Text style={[styles.authSubtitle, { color: base.textMuted }]}>Unlock premium features and sync</Text>
             </View>
             <ArrowRight size={14} color={base.textMuted} />
           </TouchableOpacity>
@@ -134,5 +134,14 @@ const styles = StyleSheet.create({
     flex: 1,
     fontFamily: fontFamily.uiMedium,
     fontSize: 15,
+  },
+  authLabel: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 15,
+  },
+  authSubtitle: {
+    fontFamily: fontFamily.ui,
+    fontSize: 11,
+    marginTop: 2,
   },
 });
