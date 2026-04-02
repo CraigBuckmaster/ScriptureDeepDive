@@ -102,6 +102,8 @@ export const useAuthStore = create<AuthState>((set) => ({
   },
 
   signInWithGoogle: async () => {
+    const { isSupabaseAvailable } = getAuth();
+    if (!isSupabaseAvailable()) return { error: 'Sign-in requires a development build. It is not available in Expo Go.' };
     set({ isLoading: true });
     try {
       const { signInWithProvider } = require('../lib/oauthHelpers');
@@ -112,6 +114,8 @@ export const useAuthStore = create<AuthState>((set) => ({
   },
 
   signInWithFacebook: async () => {
+    const { isSupabaseAvailable } = getAuth();
+    if (!isSupabaseAvailable()) return { error: 'Sign-in requires a development build. It is not available in Expo Go.' };
     set({ isLoading: true });
     try {
       const { signInWithProvider } = require('../lib/oauthHelpers');
