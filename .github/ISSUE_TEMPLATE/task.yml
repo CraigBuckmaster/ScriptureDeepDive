@@ -1,0 +1,128 @@
+name: Task
+description: A scoped task for Code (Claude Code) or Content (Claude Chat) work.
+labels: []
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## New Task
+        Fill out the fields below. Keep tasks atomic — one feature, one screen, one enrichment batch.
+        Prefix your title with **[Code]** or **[Content]** to match your Type selection.
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      description: |
+        Code = TypeScript/React Native changes, tests, tooling (Claude Code session).
+        Content = JSON chapter enrichment, commentary, scholar references (Claude Chat session).
+      options:
+        - "Code"
+        - "Content"
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope Summary
+      description: |
+        1–3 sentences describing what this task accomplishes.
+        Keep it atomic: one feature, one screen, one bug fix, or one content enrichment batch.
+      placeholder: |
+        Code example: Add pull-to-refresh on the BookListScreen. Calls existing getBooks() query, shows RefreshControl spinner.
+        Content example: Enrich Psalms 1–25 with chiastic structure panels. ~15 chiasm entries following the content library schema.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: |
+        Checklist of concrete, verifiable conditions for "done."
+        Code: observable behavior, test expectations, no regressions.
+        Content: schema compliance, validate.py passes, entry count targets.
+      placeholder: |
+        - [ ] RefreshControl visible when pulling down on BookListScreen
+        - [ ] Data refreshes from scripture.db query
+        - [ ] Existing tests pass, new test covers refresh callback
+      value: |
+        - [ ]
+    validations:
+      required: true
+
+  - type: textarea
+    id: files-touched
+    attributes:
+      label: Files Likely Touched
+      description: |
+        List the files or directories this task will modify.
+        Code: paths under app/src/, app/__tests__/, _tools/.
+        Content: paths under content/<book>/, _tools/validate.py output.
+        If you're listing 10+ files, consider splitting into multiple issues.
+      placeholder: |
+        - app/src/screens/BookListScreen.tsx
+        - app/__tests__/BookListScreen.test.tsx
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies / Blockers
+      description: |
+        Other issues, PRs, or preconditions that must be resolved first.
+        Leave blank if none.
+      placeholder: |
+        - Depends on #42 (new content library schema)
+        - Requires validate.py update for new panel type
+    validations:
+      required: false
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification / Testing
+      description: |
+        How to verify this task is complete.
+        Code: which test suites to run, manual checks, CI expectations.
+        Content: validate.py command, build_sqlite.py build, spot-check instructions.
+      placeholder: |
+        Code example:
+          - npm test -- --testPathPattern=BookListScreen
+          - CI green on PR
+        Content example:
+          - python _tools/validate.py content/psalms/
+          - python _tools/build_sqlite.py (no errors)
+          - Spot-check: open psalms/3.json, confirm chiasm panel exists
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context / Notes
+      description: |
+        Design rationale, links to planning docs, screenshots, relevant dev guide sections.
+        For Content tasks: copyright guardrails reminders, scholar attribution notes.
+      placeholder: |
+        See _tools/CONTENT_LIBRARY_ENRICHMENT_PLAN.md for batch structure.
+        Follow copyright guardrails — no ANE translation quotes.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: scope-check
+    attributes:
+      label: Scope Check
+      description: |
+        Confirm this issue is well-scoped. If you can't check these boxes, split the issue.
+      options:
+        - label: "This task targets a single feature, screen, bug fix, or content batch"
+          required: true
+        - label: "The files-touched list has fewer than 10 entries"
+          required: true
+        - label: "A single session can complete this without exceeding context limits"
+          required: false
