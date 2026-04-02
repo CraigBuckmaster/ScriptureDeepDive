@@ -27,6 +27,8 @@ export function useTTS(verses: Verse[], voiceId?: string) {
   const voiceRef = useRef(voiceId);
   // Guard: when we call Speech.stop(), onDone fires — this flag prevents auto-advance
   const stoppedManually = useRef(false);
+  /** Index where the current audio session started (play/resume). */
+  const sessionStartIndex = useRef(0);
 
   useEffect(() => { versesRef.current = verses; }, [verses]);
   useEffect(() => { voiceRef.current = voiceId; }, [voiceId]);
@@ -46,7 +48,10 @@ export function useTTS(verses: Verse[], voiceId?: string) {
     }
     stoppedManually.current = false;
     setCurrentVerse(index);
-    const text = `Verse ${vv[index].verse_num}. ${vv[index].text}`;
+    // Only announce the verse number at the start of an audio session
+    const text = index === sessionStartIndex.current
+      ? `Verse ${vv[index].verse_num}. ${vv[index].text}`
+      : vv[index].text;
     logger.info('TTS', `Speaking verse ${index + 1}/${vv.length}`);
     Speech.speak(text, {
       language: 'en-US',
@@ -83,6 +88,7 @@ export function useTTS(verses: Verse[], voiceId?: string) {
         // Alert may not be available in test environments
       }
     }
+    sessionStartIndex.current = currentVerse;
     setIsPlaying(true);
     speakVerse(currentVerse);
   }, [currentVerse, speakVerse]);
@@ -104,6 +110,7 @@ export function useTTS(verses: Verse[], voiceId?: string) {
     stoppedManually.current = true;
     Speech.stop();
     const next = Math.min(currentVerse + 1, versesRef.current.length - 1);
+    sessionStartIndex.current = next;
     speakVerse(next);
   }, [currentVerse, speakVerse]);
 
@@ -111,6 +118,7 @@ export function useTTS(verses: Verse[], voiceId?: string) {
     stoppedManually.current = true;
     Speech.stop();
     const prev = Math.max(0, currentVerse - 1);
+    sessionStartIndex.current = prev;
     speakVerse(prev);
   }, [currentVerse, speakVerse]);
 
