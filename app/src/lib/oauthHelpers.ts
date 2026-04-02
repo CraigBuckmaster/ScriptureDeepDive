@@ -3,14 +3,12 @@
  *
  * Uses expo-auth-session + expo-web-browser to open the OAuth provider
  * in the system browser, then handles the redirect back to the app.
+ *
+ * All native module imports are deferred to function call time so
+ * this module can be safely imported in Expo Go.
  */
 
-import * as AuthSession from 'expo-auth-session';
-import * as WebBrowser from 'expo-web-browser';
-import { supabase } from './supabase';
-
-// Required for closing the browser after OAuth callback
-WebBrowser.maybeCompleteAuthSession();
+import { getSupabase } from './supabase';
 
 /**
  * Perform OAuth sign-in with the given provider.
@@ -19,6 +17,11 @@ WebBrowser.maybeCompleteAuthSession();
 export async function signInWithProvider(
   provider: 'google' | 'facebook',
 ): Promise<{ error?: string }> {
+  // Dynamic imports — these require native modules not available in Expo Go
+  const AuthSession = require('expo-auth-session');
+  const WebBrowser = require('expo-web-browser');
+
+  const supabase = getSupabase();
   const redirectTo = AuthSession.makeRedirectUri({ scheme: 'scripture' });
 
   const { data, error } = await supabase.auth.signInWithOAuth({
@@ -33,14 +36,12 @@ export async function signInWithProvider(
     return { error: error?.message ?? 'Failed to start sign-in' };
   }
 
-  // Open the OAuth URL in the system browser
   const result = await WebBrowser.openAuthSessionAsync(data.url, redirectTo);
 
   if (result.type !== 'success' || !result.url) {
     return { error: 'Sign-in was cancelled' };
   }
 
-  // Extract the auth code/tokens from the redirect URL
   const url = new URL(result.url);
   const code = url.searchParams.get('code');
 

@@ -97,9 +97,9 @@ jest.mock('@react-native-async-storage/async-storage', () => {
   };
 });
 
-// Mock Supabase client
+// Mock Supabase client (lazy-initialized)
 jest.mock('@/lib/supabase', () => ({
-  supabase: {
+  getSupabase: jest.fn().mockReturnValue({
     auth: {
       getSession: jest.fn().mockResolvedValue({ data: { session: null } }),
       onAuthStateChange: jest.fn().mockReturnValue({ data: { subscription: { unsubscribe: jest.fn() } } }),
@@ -110,7 +110,8 @@ jest.mock('@/lib/supabase', () => ({
       resetPasswordForEmail: jest.fn().mockResolvedValue({ error: null }),
       exchangeCodeForSession: jest.fn().mockResolvedValue({ error: null }),
     },
-  },
+  }),
+  isSupabaseAvailable: jest.fn().mockReturnValue(false),
 }));
 
 // Mock OAuth helpers

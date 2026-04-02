@@ -4,19 +4,26 @@
  * Auth is optional — the app works fully without signing in.
  * Premium features require sign-in (gate checked elsewhere).
  *
- * Follows the same Zustand pattern as settingsStore.ts.
+ * All Supabase/native module access is deferred to function call time
+ * so the store can be imported safely in Expo Go (where native modules
+ * like AsyncStorage and expo-crypto are unavailable).
  */
 
 import { create } from 'zustand';
-import { supabase } from '../lib/supabase';
+import { getSupabase, isSupabaseAvailable } from '../lib/supabase';
 import { signInWithProvider } from '../lib/oauthHelpers';
 import { upsertAuthProfile, clearAuthProfile } from '../db/user';
 import { logger } from '../utils/logger';
-import type { Session, User } from '@supabase/supabase-js';
+
+interface AuthUser {
+  id: string;
+  email?: string;
+  user_metadata?: Record<string, any>;
+  app_metadata?: Record<string, any>;
+}
 
 interface AuthState {
-  user: User | null;
-  session: Session | null;
+  user: AuthUser | null;
   isLoading: boolean;
   isHydrated: boolean;
 
@@ -29,23 +36,27 @@ interface AuthState {
   resetPassword: (email: string) => Promise<{ error?: string }>;
 }
 
-export const useAuthStore = create<AuthState>((set, get) => ({
+export const useAuthStore = create<AuthState>((set) => ({
   user: null,
-  session: null,
   isLoading: false,
   isHydrated: false,
 
   hydrate: async () => {
     try {
+      if (!isSupabaseAvailable()) {
+        logger.info('authStore', 'Supabase not available (Expo Go) — skipping auth hydration');
+        return;
+      }
+
+      const supabase = getSupabase();
       const { data: { session } } = await supabase.auth.getSession();
       if (session?.user) {
-        set({ user: session.user, session });
+        set({ user: session.user });
         syncProfile(session.user);
       }
 
-      // Listen for auth state changes (token refresh, sign-out, etc.)
       supabase.auth.onAuthStateChange((_event, newSession) => {
-        set({ user: newSession?.user ?? null, session: newSession });
+        set({ user: newSession?.user ?? null });
         if (newSession?.user) syncProfile(newSession.user);
       });
     } catch (err) {
@@ -58,7 +69,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   signInWithEmail: async (email, password) => {
     set({ isLoading: true });
     try {
-      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      const { error } = await getSupabase().auth.signInWithPassword({ email, password });
       if (error) return { error: error.message };
       return {};
     } finally {
@@ -69,7 +80,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   signUpWithEmail: async (email, password) => {
     set({ isLoading: true });
     try {
-      const { error } = await supabase.auth.signUp({ email, password });
+      const { error } = await getSupabase().auth.signUp({ email, password });
       if (error) return { error: error.message };
       return {};
     } finally {
@@ -98,9 +109,9 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   signOut: async () => {
     set({ isLoading: true });
     try {
-      await supabase.auth.signOut();
+      await getSupabase().auth.signOut();
       await clearAuthProfile();
-      set({ user: null, session: null });
+      set({ user: null });
     } catch (err) {
       logger.error('authStore', 'Sign out failed', err);
     } finally {
@@ -111,7 +122,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   resetPassword: async (email) => {
     set({ isLoading: true });
     try {
-      const { error } = await supabase.auth.resetPasswordForEmail(email);
+      const { error } = await getSupabase().auth.resetPasswordForEmail(email);
       if (error) return { error: error.message };
       return {};
     } finally {
@@ -121,7 +132,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
 }));
 
 /** Sync Supabase user info to local SQLite profile. */
-async function syncProfile(user: User) {
+async function syncProfile(user: AuthUser) {
   try {
     await upsertAuthProfile(
       user.id,
