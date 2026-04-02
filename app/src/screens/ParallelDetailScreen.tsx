@@ -108,7 +108,7 @@ export default function ParallelDetailScreen() {
 
       <ScrollView style={styles.scroll} contentContainerStyle={styles.scrollContent}>
         {/* Gospel passage cards */}
-        {passages.map((p) => {
+        {passages.map((p, idx) => {
           const cfg = GOSPEL_CONFIG[p.book];
           const gospelName = cfg?.name ?? p.book.charAt(0).toUpperCase() + p.book.slice(1);
           const color = cfg?.color ?? base.gold;
@@ -116,7 +116,7 @@ export default function ParallelDetailScreen() {
 
           return (
             <GospelPassageCard
-              key={p.book}
+              key={`${p.book}-${idx}`}
               gospelName={gospelName}
               ref={p.ref}
               verses={passageTexts[p.book] ?? []}

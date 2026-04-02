@@ -35,8 +35,8 @@ export function GospelDots({ books, isOT }: Props) {
   if (isOT) {
     return (
       <View style={styles.row}>
-        {books.map((b) => (
-          <View key={b} style={[styles.dot, { backgroundColor: base.gold + '20' }]}>
+        {books.map((b, idx) => (
+          <View key={`${b}-${idx}`} style={[styles.dot, { backgroundColor: base.gold + '20' }]}>
             <Text style={[styles.dotText, { color: base.gold }]}>
               {OT_ABBREV[b] ?? b.slice(0, 3)}
             </Text>
