@@ -43,8 +43,9 @@ jest.mock('@/components/LoadingSkeleton', () => ({
   },
 }));
 
-jest.mock('@/components/DiffAnnotation', () => ({
-  DiffAnnotationList: () => null,
+jest.mock('@/components/GospelDots', () => ({
+  GospelDots: () => null,
+  GOSPEL_CONFIG: {},
 }));
 
 // ── Mock stores ─────────────────────────────────────────────────
@@ -58,10 +59,11 @@ const mockSampleEntries = [
     id: 'syn-1',
     title: 'The Baptism of Jesus',
     category: 'gospel',
+    period: 'early_ministry',
     passages_json: JSON.stringify([
-      { book: 'Matthew', ref: '3:13-17' },
-      { book: 'Mark', ref: '1:9-11' },
-      { book: 'Luke', ref: '3:21-22' },
+      { book: 'matthew', ref: 'Matt 3:13-17' },
+      { book: 'mark', ref: 'Mark 1:9-11' },
+      { book: 'luke', ref: 'Luke 3:21-22' },
     ]),
     diff_annotations_json: '[]',
   },
@@ -69,9 +71,10 @@ const mockSampleEntries = [
     id: 'syn-2',
     title: 'The Temptation',
     category: 'gospel',
+    period: 'early_ministry',
     passages_json: JSON.stringify([
-      { book: 'Matthew', ref: '4:1-11' },
-      { book: 'Luke', ref: '4:1-13' },
+      { book: 'matthew', ref: 'Matt 4:1-11' },
+      { book: 'luke', ref: 'Luke 4:1-13' },
     ]),
     diff_annotations_json: '[]',
   },
@@ -79,8 +82,9 @@ const mockSampleEntries = [
     id: 'syn-3',
     title: 'The Good Samaritan',
     category: 'gospel-luke',
+    period: 'later_judean',
     passages_json: JSON.stringify([
-      { book: 'Luke', ref: '10:25-37' },
+      { book: 'luke', ref: 'Luke 10:25-37' },
     ]),
     diff_annotations_json: '[]',
   },
@@ -88,11 +92,6 @@ const mockSampleEntries = [
 
 jest.mock('@/db/content', () => ({
   getSynopticEntries: jest.fn(() => Promise.resolve(mockSampleEntries)),
-}));
-
-jest.mock('@/utils/verseResolver', () => ({
-  resolveVerseText: jest.fn(() => Promise.resolve(['Sample verse text.'])),
-  parseReference: jest.fn((ref: string) => ({ book: ref, ch: 1, vs: 1 })),
 }));
 
 jest.mock('@/utils/logger', () => ({
@@ -125,19 +124,20 @@ describe('ParallelPassageScreen', () => {
     });
   });
 
-  it('displays passage references on entries', async () => {
+  it('renders period section headers', async () => {
     const { getByText } = renderWithProviders(<ParallelPassageScreen />);
     await waitFor(() => {
-      expect(getByText('Matthew 3:13-17 · Mark 1:9-11 · Luke 3:21-22')).toBeTruthy();
+      expect(getByText('John the Baptist & Early Ministry')).toBeTruthy();
+      expect(getByText('Later Judean Ministry')).toBeTruthy();
     });
   });
 
-  it('renders category filter tabs', async () => {
+  it('renders category filter pills', async () => {
     const { getByText } = renderWithProviders(<ParallelPassageScreen />);
     await waitFor(() => {
       expect(getByText('All')).toBeTruthy();
-      expect(getByText('Synoptic Gospels')).toBeTruthy();
-      expect(getByText('Luke Special')).toBeTruthy();
+      expect(getByText('Gospels')).toBeTruthy();
+      expect(getByText('Luke')).toBeTruthy();
     });
   });
 
@@ -145,12 +145,20 @@ describe('ParallelPassageScreen', () => {
     const { getByText, queryByText } = renderWithProviders(<ParallelPassageScreen />);
     await waitFor(() => expect(getByText('The Baptism of Jesus')).toBeTruthy());
 
-    fireEvent.press(getByText('Luke Special'));
+    fireEvent.press(getByText('Luke'));
 
     await waitFor(() => {
       expect(getByText('The Good Samaritan')).toBeTruthy();
       expect(queryByText('The Baptism of Jesus')).toBeNull();
       expect(queryByText('The Temptation')).toBeNull();
     });
+  });
+
+  it('navigates to detail screen on entry press', async () => {
+    const { getByText } = renderWithProviders(<ParallelPassageScreen />);
+    await waitFor(() => expect(getByText('The Baptism of Jesus')).toBeTruthy());
+
+    fireEvent.press(getByText('The Baptism of Jesus'));
+    expect(mockNavigate).toHaveBeenCalledWith('ParallelDetail', { entryId: 'syn-1' });
   });
 });

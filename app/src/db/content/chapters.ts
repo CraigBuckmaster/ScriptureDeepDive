@@ -131,3 +131,13 @@ export async function getVHLGroups(chapterId: string): Promise<VHLGroup[]> {
     [chapterId]
   );
 }
+
+export async function getRedLetterVerses(
+  bookId: string, chapterNum: number
+): Promise<number[]> {
+  const rows = await getDb().getAllAsync<{ verse_num: number }>(
+    'SELECT verse_num FROM red_letter_verses WHERE book_id = ? AND chapter_num = ?',
+    [bookId, chapterNum]
+  );
+  return rows.map(r => r.verse_num);
+}

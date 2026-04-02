@@ -234,6 +234,15 @@ def main():
               f"{orphan_cl} orphaned")
     print(f"  content_library: {cl_count or 0}")
 
+    # Red letter verses
+    rl_count = q1(cur, "SELECT COUNT(*) FROM red_letter_verses")
+    if rl_count is not None:
+        check("Red letter verses populated", rl_count >= 1000,
+              f"only {rl_count} rows (expected ~1200+)")
+        print(f"  red_letter_verses: {rl_count}")
+    else:
+        print("  red_letter_verses: table not found (optional)")
+
     # =========================================================
     # 2. REFERENTIAL INTEGRITY
     # =========================================================

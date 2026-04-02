@@ -178,4 +178,20 @@ export function isLiveBook(bookId: string): boolean {
   return !!book; // actual live check done via DB; this is a fast existence check
 }
 
+export interface ResolvedVerse {
+  verseNum: number;
+  text: string;
+}
+
+export async function resolveVersesWithNumbers(
+  ref: ParsedRef,
+  translation: string = 'kjv'
+): Promise<ResolvedVerse[]> {
+  const verses = await getVerses(ref.bookId, ref.chapter, translation);
+  if (!ref.verseStart) return verses.map(v => ({ verseNum: v.verse_num, text: v.text }));
+  return verses
+    .filter(v => v.verse_num >= ref.verseStart! && v.verse_num <= (ref.verseEnd ?? ref.verseStart!))
+    .map(v => ({ verseNum: v.verse_num, text: v.text }));
+}
+
 export { BOOK_TABLE };

@@ -11,12 +11,13 @@ export {
   getSectionPanelsByType, getChapterPanels, getChapterPanelByType,
   getVerses, getVerse, getInterlinearWords, getVHLGroups,
   getConcordanceResults, getConcordanceCount,
+  getRedLetterVerses,
 } from './chapters';
 export { getAllScholars, getScholar, getScholarsForBook } from './scholars';
 export { getAllPeople, getPerson, getPersonChildren, getSpousesOf } from './people';
 export { getPlaces, getPlace, getMapStories, getMapStory } from './places';
 export {
-  getAllWordStudies, getWordStudy, getSynopticEntries,
+  getAllWordStudies, getWordStudy, getSynopticEntries, getSynopticEntry,
   getCrossRefThreads, getCrossRefThread, getCrossRefPairsForVerse,
   getTimelineEvents, getTimelinePeople, getAllTimelineEntries,
   getGenealogyConfig, getTimelineEraConfig,

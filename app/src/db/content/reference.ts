@@ -30,6 +30,13 @@ export async function getSynopticEntries(): Promise<SynopticEntry[]> {
   );
 }
 
+export async function getSynopticEntry(id: string): Promise<SynopticEntry | null> {
+  return getDb().getFirstAsync<SynopticEntry>(
+    'SELECT * FROM synoptic_map WHERE id = ?',
+    [id]
+  );
+}
+
 // ── Cross-Reference Threads ────────────────────────────────────────
 
 export async function getCrossRefThreads(): Promise<CrossRefThread[]> {

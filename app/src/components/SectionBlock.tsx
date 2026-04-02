@@ -40,6 +40,7 @@ interface Props {
   comparisonVerses?: Verse[];
   comparisonLabel?: string;
   primaryLabel?: string;
+  redLetterVerses?: Set<number>;
 }
 
 export function SectionBlock({
@@ -49,6 +50,7 @@ export function SectionBlock({
   renderButtonRow, renderPanel,
   depthExplored, depthTotal, onDepthRecord,
   comparisonVerses, comparisonLabel, primaryLabel,
+  redLetterVerses,
 }: Props) {
   const { base } = useTheme();
 
@@ -100,6 +102,7 @@ export function SectionBlock({
         comparisonVerses={sectionCompVerses}
         comparisonLabel={comparisonLabel}
         primaryLabel={primaryLabel}
+        redLetterVerses={redLetterVerses}
       />
 
       {/* Panel button row after verses */}

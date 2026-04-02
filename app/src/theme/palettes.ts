@@ -30,6 +30,7 @@ export interface BaseColors {
   navText: string;
   danger: string;
   success: string;
+  redLetter: string;
 }
 
 export interface ThemePalette {
@@ -68,6 +69,7 @@ const sepiaBase: BaseColors = {
   navText: '#4a3e2c',
   danger: '#c04848',
   success: '#4a8a4a',
+  redLetter: '#b05040',
 };
 
 const lightBase: BaseColors = {
@@ -87,6 +89,7 @@ const lightBase: BaseColors = {
   navText: '#333333',
   danger: '#d04040',
   success: '#388e38',
+  redLetter: '#9e3a30',
 };
 
 // ── Palette builder ───────────────────────────────────────────────────
