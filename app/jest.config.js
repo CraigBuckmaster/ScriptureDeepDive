@@ -5,6 +5,9 @@ module.exports = {
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^@react-native-async-storage/async-storage$': '<rootDir>/__tests__/helpers/asyncStorageMock.js',
+    '^@supabase/supabase-js$': '<rootDir>/__tests__/helpers/supabaseMock.js',
+    '^react-native-url-polyfill/auto$': '<rootDir>/__tests__/helpers/noop.js',
   },
   setupFiles: ['<rootDir>/jest.setup.js'],
   testMatch: [

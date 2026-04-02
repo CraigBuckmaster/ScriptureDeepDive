@@ -1,46 +1,46 @@
 /**
- * lib/supabase.ts — Lazy-initialized Supabase client singleton.
+ * lib/supabase.ts — Supabase client singleton (stub until configured).
  *
- * IMPORTANT: This module must NOT import @supabase/supabase-js or
- * AsyncStorage at the top level. These packages load native modules
- * (expo-crypto, AsyncStorage) that crash in Expo Go. All imports
- * are deferred to the first actual auth action via dynamic require().
+ * The Supabase packages (@supabase/supabase-js, AsyncStorage) require
+ * native modules that are NOT available in Expo Go. They must be
+ * installed and configured when building a development/production build.
+ *
+ * To activate auth:
+ *   1. Create a Supabase project at supabase.com
+ *   2. npm install @supabase/supabase-js react-native-url-polyfill @react-native-async-storage/async-storage
+ *   3. Set SUPABASE_URL and SUPABASE_ANON_KEY below
+ *   4. Build a dev client: npx expo run:ios (or eas build)
+ *   5. Set CONFIGURED = true
  */
 
-// TODO: Replace with your Supabase project credentials
+// ── Configuration ──────────────────────────────────────────────
+const CONFIGURED = false;
 const SUPABASE_URL = 'https://your-project.supabase.co';
 const SUPABASE_ANON_KEY = 'your-anon-key';
+// ───────────────────────────────────────────────────────────────
 
 let _client: any = null;
-let _available: boolean | null = null;
 
 /**
- * Check if Supabase native modules are available in this environment.
- * Returns false in Expo Go where AsyncStorage native module is null.
+ * Check if Supabase is configured and native modules are available.
  */
 export function isSupabaseAvailable(): boolean {
-  if (_available !== null) return _available;
+  if (!CONFIGURED) return false;
   try {
-    const AsyncStorage = require('@react-native-async-storage/async-storage').default;
-    // The JS module loads fine, but the native module may be null
-    // Try a no-op operation to detect if the native bridge works
-    if (!AsyncStorage || typeof AsyncStorage.getItem !== 'function') {
-      _available = false;
-      return false;
-    }
-    _available = true;
+    require('@supabase/supabase-js');
+    require('@react-native-async-storage/async-storage');
     return true;
   } catch {
-    _available = false;
     return false;
   }
 }
 
 /**
- * Get the Supabase client, creating it on first call.
- * Returns null if native modules aren't available (Expo Go).
+ * Get the Supabase client. Returns null if not configured or
+ * native modules are unavailable.
  */
 export function getSupabase(): any | null {
+  if (!CONFIGURED) return null;
   if (_client) return _client;
   if (!isSupabaseAvailable()) return null;
 
@@ -60,7 +60,6 @@ export function getSupabase(): any | null {
     });
     return _client;
   } catch {
-    _available = false;
     return null;
   }
 }

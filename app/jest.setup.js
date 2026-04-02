@@ -85,17 +85,8 @@ jest.mock('expo-screen-orientation', () => ({
   Orientation: { PORTRAIT_UP: 1, LANDSCAPE_LEFT: 3 },
 }));
 
-// Mock @react-native-async-storage/async-storage
-jest.mock('@react-native-async-storage/async-storage', () => {
-  const store = {};
-  return {
-    setItem: jest.fn((key, val) => { store[key] = val; return Promise.resolve(); }),
-    getItem: jest.fn((key) => Promise.resolve(store[key] ?? null)),
-    removeItem: jest.fn((key) => { delete store[key]; return Promise.resolve(); }),
-    clear: jest.fn(() => { Object.keys(store).forEach(k => delete store[k]); return Promise.resolve(); }),
-    getAllKeys: jest.fn(() => Promise.resolve(Object.keys(store))),
-  };
-});
+// Note: @react-native-async-storage/async-storage is mapped to a stub
+// via moduleNameMapper in jest.config.js (package not installed in Expo Go)
 
 // Mock Supabase client (lazy-initialized)
 jest.mock('@/lib/supabase', () => ({
