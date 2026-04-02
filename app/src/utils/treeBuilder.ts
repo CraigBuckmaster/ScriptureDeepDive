@@ -30,6 +30,9 @@ export const TREE_CONSTANTS = {
   initialScaleTablet: 0.75,
   marriageTickHeight: 10,
   marriageTickGap: 6,
+  /** Approximate card half-width for marriage bar endpoint math. */
+  spineCardHalfW: 37,
+  satCardHalfW: 31,
 } as const;
 
 // ── Types ───────────────────────────────────────────────────────────
@@ -262,8 +265,12 @@ export function computeMarriageBars(
     const partner = nodeMap.get(node.data.spouse_of);
     if (!partner) continue;
 
-    const x1 = partner.x + TREE_CONSTANTS.spineRadius + 2;
-    const x2 = node.x - TREE_CONSTANTS.satelliteRadius - 2;
+    const partnerHalfW = partner.data.nodeType === 'spine'
+      ? TREE_CONSTANTS.spineCardHalfW : TREE_CONSTANTS.satCardHalfW;
+    const spouseHalfW = node.data.nodeType === 'spine'
+      ? TREE_CONSTANTS.spineCardHalfW : TREE_CONSTANTS.satCardHalfW;
+    const x1 = partner.x + partnerHalfW + 2;
+    const x2 = node.x - spouseHalfW - 2;
     const y = (partner.y + node.y) / 2;
     const midX = (x1 + x2) / 2;
     const dimmed = filterEra !== null
