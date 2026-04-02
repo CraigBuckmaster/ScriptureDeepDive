@@ -234,6 +234,21 @@ CREATE TABLE synoptic_map (
 
 CREATE INDEX idx_synoptic_period ON synoptic_map(period, sort_order);
 
+CREATE TABLE topics (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  category TEXT NOT NULL,
+  description TEXT NOT NULL,
+  tags_json TEXT NOT NULL,
+  subtopics_json TEXT NOT NULL,
+  related_concept_ids_json TEXT,
+  related_thread_ids_json TEXT,
+  related_prophecy_ids_json TEXT,
+  relevant_chapters_json TEXT
+);
+
+CREATE INDEX idx_topics_category ON topics(category);
+
 CREATE TABLE vhl_groups (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   chapter_id TEXT NOT NULL REFERENCES chapters(id),
@@ -796,6 +811,45 @@ def populate_synoptic(cur):
     return count
 
 
+def populate_topics(cur):
+    path = META / 'topics.json'
+    if not path.exists():
+        return 0
+    entries = _load_json(path)
+    count = 0
+    for t in entries:
+        cur.execute(
+            'INSERT INTO topics (id, title, category, description, tags_json, subtopics_json, '
+            'related_concept_ids_json, related_thread_ids_json, related_prophecy_ids_json, '
+            'relevant_chapters_json) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            (t['id'], t['title'], t['category'], t['description'],
+             _json_str(t.get('tags', [])),
+             _json_str(t.get('subtopics', [])),
+             _json_str(t.get('related_concept_ids', [])),
+             _json_str(t.get('related_thread_ids', [])),
+             _json_str(t.get('related_prophecy_ids', [])),
+             _json_str(t.get('relevant_chapters', [])))
+        )
+        count += 1
+
+    # Build FTS5 index
+    cur.execute("""
+        CREATE VIRTUAL TABLE IF NOT EXISTS topics_fts USING fts5(
+            title, description, tags,
+            content=topics,
+            content_rowid=rowid,
+            tokenize='porter unicode61'
+        )
+    """)
+    cur.execute("""
+        INSERT INTO topics_fts(rowid, title, description, tags)
+        SELECT rowid, title, description,
+               REPLACE(REPLACE(tags_json, '[', ''), ']', '')
+        FROM topics
+    """)
+    return count
+
+
 def populate_genealogy_config(cur):
     gc = _load_json(META / 'genealogy-config.json')
     count = 0
@@ -1222,6 +1276,9 @@ def main():
     n = populate_synoptic(cur)
     print(f"  [OK] synoptic_map: {n} rows")
 
+    n = populate_topics(cur)
+    print(f"  [OK] topics: {n} rows")
+
     n = populate_genealogy_config(cur)
     print(f"  [OK] genealogy_config: {n} rows")
 
@@ -1310,7 +1367,7 @@ def main():
     tables = [
         'books', 'chapters', 'sections', 'section_panels', 'chapter_panels',
         'verses', 'book_intros', 'people', 'scholars', 'places',
-        'map_stories', 'word_studies', 'synoptic_map', 'vhl_groups',
+        'map_stories', 'word_studies', 'synoptic_map', 'topics', 'vhl_groups',
         'genealogy_config', 'cross_ref_threads', 'cross_ref_pairs', 'timelines',
         'content_library',
         'red_letter_verses',

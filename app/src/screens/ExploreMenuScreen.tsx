@@ -59,6 +59,11 @@ const GRID_FEATURES: Feature[] = [
     screen: 'ProphecyBrowse',
   },
   {
+    title: 'Topical Index',
+    subtitle: 'What does the Bible say about...?',
+    screen: 'TopicBrowse',
+  },
+  {
     title: 'Concepts',
     subtitle: 'Explore the grand themes of Scripture',
     screen: 'ConceptBrowse',

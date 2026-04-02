@@ -23,6 +23,7 @@ export {
   getTimelineEvents, getTimelinePeople, getAllTimelineEntries,
   getGenealogyConfig, getTimelineEraConfig,
   getLexiconEntry, getLexiconEntries,
+  getTopics, getTopic, searchTopics,
 } from './reference';
 export type { EraConfig } from './reference';
 export {
