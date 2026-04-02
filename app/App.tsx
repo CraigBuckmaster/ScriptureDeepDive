@@ -19,6 +19,27 @@ import { ErrorBoundary } from './src/components/ErrorBoundary';
 // Keep splash visible while we load
 SplashScreen.preventAutoHideAsync();
 
+/** Deep linking configuration for scripture:// URLs. */
+const linking = {
+  prefixes: ['scripture://'],
+  config: {
+    screens: {
+      HomeTab: {
+        screens: {
+          Chapter: 'book/:bookId/:chapterNum',
+        },
+      },
+      ExploreTab: {
+        screens: {
+          GenealogyTree: 'people/:personId',
+          Map: 'map',
+          Timeline: 'timeline',
+        },
+      },
+    },
+  },
+};
+
 /** Inner app shell — consumes theme context for nav theme + status bar. */
 function AppShell() {
   const { base: themeBase, mode, statusBarStyle } = useTheme();
@@ -40,7 +61,7 @@ function AppShell() {
 
   return (
     <>
-      <NavigationContainer theme={navTheme}>
+      <NavigationContainer theme={navTheme} linking={linking}>
         <ErrorBoundary>
           <RootNavigator />
         </ErrorBoundary>

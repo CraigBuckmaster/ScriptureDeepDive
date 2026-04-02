@@ -1,12 +1,13 @@
 /**
  * StreakBadge — Understated reading streak counter for HomeScreen.
- * Renders only when streak > 0.
+ * Renders only when streak > 0. Tap to share your streak.
  */
 
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { Flame } from 'lucide-react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { Flame, Share2 } from 'lucide-react-native';
 import { base, useTheme, spacing, fontFamily } from '../theme';
+import { shareStreak } from '../utils/shareVerse';
 
 interface Props {
   streak: number;
@@ -18,16 +19,19 @@ export function StreakBadge({ streak }: Props) {
   if (streak < 1) return null;
 
   return (
-    <View
+    <TouchableOpacity
+      onPress={() => shareStreak(streak)}
+      activeOpacity={0.7}
       style={styles.container}
-      accessibilityRole="text"
-      accessibilityLabel={`${streak}-day reading streak`}
+      accessibilityRole="button"
+      accessibilityLabel={`${streak}-day reading streak. Tap to share.`}
     >
       <Flame size={13} color={base.gold} />
       <Text style={[styles.label, { color: base.gold }]}>
         {streak}-day streak
       </Text>
-    </View>
+      <Share2 size={10} color={base.gold} style={{ opacity: 0.6 }} />
+    </TouchableOpacity>
   );
 }
 

@@ -24,7 +24,7 @@ import { StreakBadge } from '../components/StreakBadge';
 import { WeeklySummary } from '../components/WeeklySummary';
 import { MilestoneToast } from '../components/MilestoneToast';
 import { useSettingsStore } from '../stores';
-import { shareVerse } from '../utils/shareVerse';
+import { shareVerse, shareProgress } from '../utils/shareVerse';
 import { base, useTheme, spacing, radii, fontFamily } from '../theme';
 
 const TOTAL_BIBLE_CHAPTERS = 1189;
@@ -257,7 +257,17 @@ export default function HomeScreen() {
           <View style={[styles.progressCard, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
             <View style={styles.progressHeader}>
               <Text style={[styles.progressText, { color: base.text }]}>{chaptersRead} of {TOTAL_BIBLE_CHAPTERS} chapters</Text>
-              <Text style={[styles.progressPct, { color: base.gold }]}>{pct}%</Text>
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.sm }}>
+                <Text style={[styles.progressPct, { color: base.gold }]}>{pct}%</Text>
+                <TouchableOpacity
+                  onPress={() => shareProgress(pct!, chaptersRead)}
+                  hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+                  accessibilityRole="button"
+                  accessibilityLabel="Share your reading progress"
+                >
+                  <Share2 size={14} color={base.gold} style={{ opacity: 0.6 }} />
+                </TouchableOpacity>
+              </View>
             </View>
             <View style={[styles.progressTrack, { backgroundColor: base.border }]}>
               <View style={[styles.progressFill, { width: `${Math.max(1, parseFloat(pct))}%`, backgroundColor: base.gold }]} />
