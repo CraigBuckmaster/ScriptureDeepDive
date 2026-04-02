@@ -24,18 +24,23 @@ export interface DropdownOption {
 
 interface Props {
   value: string;
+  /** Optional secondary label shown after a pipe in the pill (e.g. "KJV | ASV"). */
+  secondaryLabel?: string;
   options: DropdownOption[];
   onSelect: (key: string) => void;
   direction?: 'down' | 'up';
+  /** Render slot below the options list (e.g. Compare + button). Receives close callback. */
+  renderFooter?: (close: () => void) => React.ReactNode;
 }
 
-export function CompactDropdown({ value, options, onSelect, direction = 'down' }: Props) {
+export function CompactDropdown({ value, secondaryLabel, options, onSelect, direction = 'down', renderFooter }: Props) {
   const { base } = useTheme();
   const [open, setOpen] = useState(false);
   const [pillLayout, setPillLayout] = useState<LayoutRectangle | null>(null);
   const pillRef = useRef<View>(null);
 
-  const activeLabel = options.find((o) => o.key === value)?.label ?? value.toUpperCase();
+  const primaryLabel = options.find((o) => o.key === value)?.label ?? value.toUpperCase();
+  const activeLabel = secondaryLabel ? `${primaryLabel} | ${secondaryLabel}` : primaryLabel;
 
   const handleOpen = useCallback(() => {
     pillRef.current?.measureInWindow((x, y, width, height) => {
@@ -103,6 +108,12 @@ export function CompactDropdown({ value, options, onSelect, direction = 'down' }
                     </TouchableOpacity>
                   );
                 })}
+                {renderFooter && (
+                  <>
+                    <View style={[styles.footerDivider, { backgroundColor: base.border }]} />
+                    {renderFooter(() => setOpen(false))}
+                  </>
+                )}
               </View>
             </TouchableWithoutFeedback>
           </View>
@@ -149,5 +160,9 @@ const styles = StyleSheet.create({
   menuLabel: {
     fontFamily: fontFamily.uiMedium,
     fontSize: 14,
+  },
+  footerDivider: {
+    height: 1,
+    marginHorizontal: spacing.sm,
   },
 });

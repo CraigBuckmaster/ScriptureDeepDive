@@ -36,6 +36,10 @@ interface Props {
   depthExplored?: number;
   depthTotal?: number;
   onDepthRecord?: (sectionId: string, panelType: string) => void;
+  /** Comparison verses for parallel translation view. */
+  comparisonVerses?: Verse[];
+  comparisonLabel?: string;
+  primaryLabel?: string;
 }
 
 export function SectionBlock({
@@ -44,11 +48,17 @@ export function SectionBlock({
   onPanelToggle, onNotePress, onRefPress, onVerseLongPress, onVerseNumPress, activeVerseNum,
   renderButtonRow, renderPanel,
   depthExplored, depthTotal, onDepthRecord,
+  comparisonVerses, comparisonLabel, primaryLabel,
 }: Props) {
   const { base } = useTheme();
 
   // Filter verses for this section
   const sectionVerses = verses.filter(
+    (v) => v.verse_num >= section.verse_start && v.verse_num <= section.verse_end
+  );
+
+  // Filter comparison verses for this section
+  const sectionCompVerses = comparisonVerses?.filter(
     (v) => v.verse_num >= section.verse_start && v.verse_num <= section.verse_end
   );
 
@@ -87,6 +97,9 @@ export function SectionBlock({
         onVerseLongPress={onVerseLongPress}
         onVerseNumPress={onVerseNumPress}
         activeVerseNum={activeVerseNum}
+        comparisonVerses={sectionCompVerses}
+        comparisonLabel={comparisonLabel}
+        primaryLabel={primaryLabel}
       />
 
       {/* Panel button row after verses */}

@@ -21,6 +21,9 @@ const defaultProps = {
   onQnav: jest.fn(),
   translation: 'kjv',
   onTranslationChange: jest.fn(),
+  comparisonTranslation: null,
+  onCompareStart: jest.fn(),
+  onCompareEnd: jest.fn(),
 };
 
 describe('ChapterNavBar', () => {

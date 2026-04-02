@@ -29,6 +29,7 @@ interface SettingsState {
   studyCoachEnabled: boolean;
   theme: ThemePreference;
   ttsVoice: string;
+  comparisonTranslation: string | null;
   isHydrated: boolean;
 
   setTranslation: (t: string) => void;
@@ -38,6 +39,7 @@ interface SettingsState {
   setStudyCoachEnabled: (v: boolean) => void;
   setTheme: (t: ThemePreference) => void;
   setTtsVoice: (v: string) => void;
+  setComparisonTranslation: (t: string | null) => void;
   hydrate: () => Promise<void>;
 }
 
@@ -49,6 +51,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
   studyCoachEnabled: true,
   theme: 'dark' as ThemePreference,
   ttsVoice: '',
+  comparisonTranslation: null,
   isHydrated: false,
 
   setTranslation: async (t) => {
@@ -87,6 +90,11 @@ export const useSettingsStore = create<SettingsState>((set) => ({
     await setPreference('ttsVoice', v);
   },
 
+  setComparisonTranslation: async (t) => {
+    set({ comparisonTranslation: t });
+    await setPreference('comparisonTranslation', t ?? '');
+  },
+
   hydrate: async () => {
     try {
       const t = await getPreference('translation');
@@ -96,6 +104,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
       const sc = await getPreference('studyCoachEnabled');
       const th = await getPreference('theme');
       const voice = await getPreference('ttsVoice');
+      const comp = await getPreference('comparisonTranslation');
 
       set({
         translation: (t && TRANSLATION_MAP.has(t) ? t : 'kjv'),
@@ -105,6 +114,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
         studyCoachEnabled: sc !== '0',
         theme: (VALID_THEMES.includes(th as ThemePreference) ? th : 'dark') as ThemePreference,
         ttsVoice: voice ?? '',
+        comparisonTranslation: (comp && TRANSLATION_MAP.has(comp)) ? comp : null,
         isHydrated: true,
       });
     } catch (err) {

@@ -4,15 +4,18 @@
  * Layout:
  *   ← NIV ▾       ‹ Genesis 2 ›          🔊 ⓘ
  *   (back/trans)    (prev/qnav/next)    (TTS/intro)
+ *
+ * When compare mode is active, the translation pill shows "KJV | ASV"
+ * and the dropdown footer shows "Exit Compare" instead of "Compare +".
  */
 
-import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import React, { useCallback, useState } from 'react';
+import { View, Text, TouchableOpacity, Modal, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ArrowLeft, ChevronLeft, ChevronRight, Info, Volume2 } from 'lucide-react-native';
+import { ArrowLeft, ChevronLeft, ChevronRight, Info, Volume2, Check } from 'lucide-react-native';
 import { CompactDropdown, type DropdownOption } from './CompactDropdown';
-import { lightImpact } from '../utils/haptics';
-import { base, useTheme, spacing, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { lightImpact, selectionFeedback } from '../utils/haptics';
+import { base, useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import { TRANSLATIONS } from '../db/translationRegistry';
 
 const TRANSLATION_OPTIONS: DropdownOption[] = TRANSLATIONS.map((t) => ({
@@ -34,14 +37,54 @@ interface Props {
   ttsActive?: boolean;
   translation: string;
   onTranslationChange: (t: string) => void;
+  comparisonTranslation: string | null;
+  onCompareStart: (t: string) => void;
+  onCompareEnd: () => void;
 }
 
 export function ChapterNavBar({
   bookName, chapterNum, hasPrev, hasNext,
   onPrev, onNext, onQnav, onBack, onIntroPress, onTTSPress, ttsActive,
   translation, onTranslationChange,
+  comparisonTranslation, onCompareStart, onCompareEnd,
 }: Props) {
   const { base } = useTheme();
+  const [comparePicker, setComparePicker] = useState(false);
+
+  const compLabel = comparisonTranslation
+    ? (TRANSLATIONS.find(t => t.id === comparisonTranslation)?.label ?? comparisonTranslation.toUpperCase())
+    : undefined;
+
+  const handleCompareFooter = useCallback((close: () => void) => {
+    if (comparisonTranslation) {
+      return (
+        <TouchableOpacity
+          onPress={() => { onCompareEnd(); close(); }}
+          style={styles.compareFooterBtn}
+          accessibilityLabel="Exit translation comparison"
+          accessibilityRole="button"
+        >
+          <Text style={[styles.compareFooterText, { color: base.danger ?? base.textMuted }]}>Exit Compare</Text>
+        </TouchableOpacity>
+      );
+    }
+    return (
+      <TouchableOpacity
+        onPress={() => { close(); setComparePicker(true); }}
+        style={styles.compareFooterBtn}
+        accessibilityLabel="Compare with another translation"
+        accessibilityRole="button"
+      >
+        <Text style={[styles.compareFooterText, { color: base.gold }]}>Compare +</Text>
+      </TouchableOpacity>
+    );
+  }, [comparisonTranslation, onCompareEnd, base]);
+
+  const handleCompareSelect = useCallback((key: string) => {
+    selectionFeedback();
+    onCompareStart(key);
+    setComparePicker(false);
+  }, [onCompareStart]);
 
   return (
     <SafeAreaView edges={['top']} style={[styles.safeArea, { backgroundColor: base.bg }]}>
@@ -60,8 +103,10 @@ export function ChapterNavBar({
           ) : null}
           <CompactDropdown
             value={translation}
+            secondaryLabel={compLabel}
             options={TRANSLATION_OPTIONS}
             onSelect={onTranslationChange}
+            renderFooter={handleCompareFooter}
           />
         </View>
 
@@ -122,6 +167,31 @@ export function ChapterNavBar({
           ) : null}
         </View>
       </View>
+
+      {/* Comparison translation picker modal */}
+      <Modal visible={comparePicker} transparent animationType="fade">
+        <TouchableWithoutFeedback onPress={() => setComparePicker(false)}>
+          <View style={styles.pickerBackdrop}>
+            <TouchableWithoutFeedback>
+              <View style={[styles.pickerMenu, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
+                <Text style={[styles.pickerTitle, { color: base.text }]}>Compare with:</Text>
+                {TRANSLATION_OPTIONS.filter(o => o.key !== translation).map((opt) => (
+                  <TouchableOpacity
+                    key={opt.key}
+                    onPress={() => handleCompareSelect(opt.key)}
+                    style={styles.pickerItem}
+                    accessibilityRole="button"
+                    accessibilityLabel={`Compare with ${opt.label}`}
+                  >
+                    <Text style={[styles.pickerLabel, { color: base.text }]}>{opt.label}</Text>
+                    {opt.key === comparisonTranslation && <Check size={14} color={base.gold} />}
+                  </TouchableOpacity>
+                ))}
+              </View>
+            </TouchableWithoutFeedback>
+          </View>
+        </TouchableWithoutFeedback>
+      </Modal>
     </SafeAreaView>
   );
 }
@@ -138,7 +208,7 @@ const styles = StyleSheet.create({
   sideSection: {
     flexDirection: 'row',
     alignItems: 'center',
-    width: 90,
+    width: 100,
     gap: 2,
   },
   sideSectionRight: {
@@ -171,5 +241,50 @@ const styles = StyleSheet.create({
     minHeight: MIN_TOUCH_TARGET,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  compareFooterBtn: {
+    minHeight: MIN_TOUCH_TARGET,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: spacing.md,
+  },
+  compareFooterText: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 13,
+  },
+  pickerBackdrop: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0.4)',
+  },
+  pickerMenu: {
+    borderWidth: 1,
+    borderRadius: radii.md,
+    minWidth: 200,
+    overflow: 'hidden',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 8,
+  },
+  pickerTitle: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 13,
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.sm,
+    paddingBottom: spacing.xs,
+  },
+  pickerItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    minHeight: MIN_TOUCH_TARGET,
+    paddingHorizontal: spacing.md,
+  },
+  pickerLabel: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 14,
   },
 });
