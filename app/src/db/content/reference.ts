@@ -27,7 +27,7 @@ export async function getWordStudy(id: string): Promise<WordStudy | null> {
 
 export async function getSynopticEntries(): Promise<SynopticEntry[]> {
   return getDb().getAllAsync<SynopticEntry>(
-    'SELECT * FROM synoptic_map ORDER BY title'
+    'SELECT * FROM synoptic_map ORDER BY sort_order ASC, title'
   );
 }
 
@@ -35,6 +35,29 @@ export async function getSynopticEntry(id: string): Promise<SynopticEntry | null
   return getDb().getFirstAsync<SynopticEntry>(
     'SELECT * FROM synoptic_map WHERE id = ?',
     [id]
+  );
+}
+
+export async function getHarmonyEntries(): Promise<SynopticEntry[]> {
+  return getDb().getAllAsync<SynopticEntry>(
+    `SELECT * FROM synoptic_map
+     WHERE category IN ('gospel', 'gospel-luke', 'gospel-john')
+     ORDER BY sort_order ASC`
+  );
+}
+
+export async function getHarmonyEntry(id: string): Promise<SynopticEntry | null> {
+  return getDb().getFirstAsync<SynopticEntry>(
+    'SELECT * FROM synoptic_map WHERE id = ?',
+    [id]
+  );
+}
+
+export async function getOTParallelEntries(): Promise<SynopticEntry[]> {
+  return getDb().getAllAsync<SynopticEntry>(
+    `SELECT * FROM synoptic_map
+     WHERE category = 'ot-parallel'
+     ORDER BY sort_order ASC`
   );
 }
 

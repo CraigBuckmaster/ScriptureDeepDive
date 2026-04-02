@@ -227,9 +227,12 @@ CREATE TABLE synoptic_map (
   title TEXT NOT NULL,
   category TEXT,
   period TEXT,
+  sort_order INTEGER DEFAULT 0,
   passages_json TEXT NOT NULL,
   diff_annotations_json TEXT
 );
+
+CREATE INDEX idx_synoptic_period ON synoptic_map(period, sort_order);
 
 CREATE TABLE vhl_groups (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -782,9 +785,10 @@ def populate_synoptic(cur):
     count = 0
     for s in entries:
         cur.execute(
-            'INSERT INTO synoptic_map (id, title, category, period, passages_json, diff_annotations_json) '
-            'VALUES (?, ?, ?, ?, ?, ?)',
+            'INSERT INTO synoptic_map (id, title, category, period, sort_order, passages_json, diff_annotations_json) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?)',
             (s['id'], s['title'], s.get('category'), s.get('period'),
+             s.get('sort_order', 0),
              _json_str(s.get('passages', [])),
              _json_str(s.get('diff_annotations', [])))
         )
