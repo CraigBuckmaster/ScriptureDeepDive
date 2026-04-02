@@ -1,12 +1,23 @@
 /**
- * TimelineScreen — 216 events on a horizontally scrollable SVG canvas.
- * Era-colored bands, swim-lane labels, pan+pinch gestures, detail panel.
+ * TimelineScreen — 203+ events on a horizontally scrollable SVG canvas.
+ *
+ * Modernized visual design:
+ *   - Gradient era bands with depth and bottom accent borders
+ *   - Polished axis with edge fade and gold-glow tick marks
+ *   - Smart label density (major events labeled, minor markers only)
+ *   - Visual marker hierarchy (3 sizes + glow rings for major events)
+ *   - Dashed/solid stem lines with category gradient opacity
+ *   - Bottom sheet detail panel (replaces Modal)
  */
 
 import React, { useState, useCallback, useMemo, useEffect, useRef, useReducer } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, Modal, StyleSheet, useWindowDimensions } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, StyleSheet, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import Svg, { Rect, Line, Circle, G, Text as SvgText } from 'react-native-svg';
+import Svg, {
+  Defs, LinearGradient, Stop,
+  Rect, Line, Circle, G, Text as SvgText,
+} from 'react-native-svg';
+import BottomSheet, { BottomSheetScrollView } from '@gorhom/bottom-sheet';
 
 import { useRoute, useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
@@ -38,6 +49,17 @@ function filterReducer(state: CategoryFilters, action: FilterAction): CategoryFi
 
 const INITIAL_FILTERS: CategoryFilters = { event: true, book: true, person: true, world: true };
 
+/** Lighten a hex color by blending toward white. */
+function lighten(hex: string, amount: number = 0.3): string {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  const lr = Math.round(r + (255 - r) * amount);
+  const lg = Math.round(g + (255 - g) * amount);
+  const lb = Math.round(b + (255 - b) * amount);
+  return `#${lr.toString(16).padStart(2, '0')}${lg.toString(16).padStart(2, '0')}${lb.toString(16).padStart(2, '0')}`;
+}
+
 export default function TimelineScreen() {
   const { base, eras, categoryColors, timelineSvg } = useTheme();
   useLandscapeUnlock();
@@ -51,6 +73,7 @@ export default function TimelineScreen() {
   const [filters, dispatchFilter] = useReducer(filterReducer, INITIAL_FILTERS);
   const [selectedEvent, setSelectedEvent] = useState<PositionedEvent | null>(null);
   const timelineScrollRef = useRef<ScrollView>(null);
+  const sheetRef = useRef<BottomSheet>(null);
   const { width: screenWidth } = useWindowDimensions();
   const insets = useSafeAreaInsets();
 
@@ -65,7 +88,7 @@ export default function TimelineScreen() {
     if (filters.book) cats.add('book');
     if (filters.person) cats.add('person');
     if (filters.world) cats.add('world');
-    if (cats.size === 0) { cats.add('event'); cats.add('book'); } // fallback
+    if (cats.size === 0) { cats.add('event'); cats.add('book'); }
     return events.filter((e) => cats.has(e.category));
   }, [events, filters]);
 
@@ -76,7 +99,6 @@ export default function TimelineScreen() {
     return positioned.filter((e) => e.era === filterEra);
   }, [positioned, filterEra]);
 
-  /** Select era filter and scroll the timeline to centre on that era's band. */
   const handleEraChange = useCallback((era: string) => {
     setFilterEra(era);
     if (era === 'all') {
@@ -88,16 +110,25 @@ export default function TimelineScreen() {
       const x1 = yearToX(range[0]);
       const x2 = yearToX(range[1]);
       const centreX = (x1 + x2) / 2;
-      // Scroll so the era midpoint is centred on screen
       const scrollTarget = Math.max(0, centreX - screenWidth / 2);
       timelineScrollRef.current?.scrollTo({ x: scrollTarget, animated: true });
     }
   }, [screenWidth]);
 
   const ticks = useMemo(() => computeTickMarks(), []);
+  const snapPoints = useMemo(() => ['35%', '60%'], []);
 
-  // Deep-link — chapter JSON stores raw IDs (e.g. "creation") while
-  // the timelines table uses prefixed IDs (e.g. "evt_creation", "bk_book-genesis").
+  // Handle event selection → open bottom sheet
+  const handleSelectEvent = useCallback((evt: PositionedEvent) => {
+    setSelectedEvent(evt);
+    sheetRef.current?.snapToIndex(0);
+  }, []);
+
+  const handleCloseSheet = useCallback(() => {
+    setSelectedEvent(null);
+  }, []);
+
+  // Deep-link
   useEffect(() => {
     if (initialEventId && positioned.length) {
       const evt = positioned.find((e) =>
@@ -105,9 +136,9 @@ export default function TimelineScreen() {
         e.id === `evt_${initialEventId}` ||
         e.id === `bk_${initialEventId}`
       );
-      if (evt) setSelectedEvent(evt);
+      if (evt) handleSelectEvent(evt);
     }
-  }, [initialEventId, positioned.length]);
+  }, [initialEventId, positioned.length, handleSelectEvent]);
 
   if (isLoading) {
     return (
@@ -140,6 +171,9 @@ export default function TimelineScreen() {
               onPress={() => dispatchFilter({ type: 'toggle', category: key })}
               hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
               style={[styles.categoryChip, { borderColor: base.border, backgroundColor: base.bg + 'EE' }, filters[key] && [styles.categoryChipActive, { borderColor: base.gold + '55' }]]}
+              accessibilityRole="button"
+              accessibilityLabel={`${label} filter: ${filters[key] ? 'on' : 'off'}`}
+              accessibilityState={{ selected: filters[key] }}
             >
               <View style={[styles.categoryDot, { backgroundColor: color }]} />
               <Text style={[styles.categoryLabel, { color: base.textMuted }, filters[key] && { color }]}>{label}</Text>
@@ -150,14 +184,45 @@ export default function TimelineScreen() {
 
       <ScrollView ref={timelineScrollRef} horizontal showsHorizontalScrollIndicator style={{ flex: 1 }} accessible accessibilityLabel="Timeline" accessibilityHint="Scroll horizontally to explore events">
         <Svg width={TOTAL_WIDTH} height={SVG_HEIGHT}>
-          {/* Era bands */}
+          {/* ── Gradient definitions ────────────────────── */}
+          <Defs>
+            {/* Era band gradients — vertical fade for depth */}
+            {Object.keys(ERA_RANGES).map((era) => {
+              const color = eras[era] ?? base.bgSurface;
+              return (
+                <LinearGradient key={`grad-${era}`} id={`grad-${era}`} x1="0" y1="0" x2="0" y2="1">
+                  <Stop offset="0" stopColor={lighten(color, 0.15)} stopOpacity={0.85} />
+                  <Stop offset="1" stopColor={color} stopOpacity={0.4} />
+                </LinearGradient>
+              );
+            })}
+            {/* Axis fade — transparent at edges */}
+            <LinearGradient id="axis-grad" x1="0" y1="0" x2={TOTAL_WIDTH} y2="0" gradientUnits="userSpaceOnUse">
+              <Stop offset="0%" stopColor={timelineSvg.axis} stopOpacity={0} />
+              <Stop offset="3%" stopColor={timelineSvg.axis} stopOpacity={1} />
+              <Stop offset="97%" stopColor={timelineSvg.axis} stopOpacity={1} />
+              <Stop offset="100%" stopColor={timelineSvg.axis} stopOpacity={0} />
+            </LinearGradient>
+          </Defs>
+
+          {/* ── Era bands with gradient depth ──────────── */}
           {Object.entries(ERA_RANGES).map(([era, [start, end]]) => {
             const x1 = yearToX(start);
             const x2 = yearToX(end);
+            const eraColor = eras[era] ?? base.bgSurface;
             return (
               <G key={era}>
                 <Rect x={x1} y={ERA_BAR_Y} width={x2 - x1} height={ERA_BAR_H}
-                  fill={eras[era] ?? base.bgSurface} opacity={0.75} />
+                  fill={`url(#grad-${era})`} />
+                {/* Bottom accent border */}
+                <Line x1={x1} y1={ERA_BAR_Y + ERA_BAR_H} x2={x2} y2={ERA_BAR_Y + ERA_BAR_H}
+                  stroke={lighten(eraColor, 0.4)} strokeWidth={1} opacity={0.5} />
+                {/* Text shadow */}
+                <SvgText x={(x1 + x2) / 2 + 1} y={ERA_BAR_Y + 27} textAnchor="middle"
+                  fontSize={11} fill="#000" opacity={0.5} fontFamily="Cinzel_400Regular">
+                  {(eraNames[era] ?? era).toUpperCase()}
+                </SvgText>
+                {/* Era label */}
                 <SvgText x={(x1 + x2) / 2} y={ERA_BAR_Y + 26} textAnchor="middle"
                   fontSize={11} fill={base.text} fontFamily="Cinzel_400Regular">
                   {(eraNames[era] ?? era).toUpperCase()}
@@ -166,16 +231,22 @@ export default function TimelineScreen() {
             );
           })}
 
-          {/* Axis line */}
-          <Line x1={0} y1={AXIS_Y} x2={TOTAL_WIDTH} y2={AXIS_Y} stroke={timelineSvg.axis} strokeWidth={1} />
+          {/* ── Polished axis line ─────────────────────── */}
+          <Line x1={0} y1={AXIS_Y} x2={TOTAL_WIDTH} y2={AXIS_Y}
+            stroke="url(#axis-grad)" strokeWidth={1.5} />
 
-          {/* Tick marks */}
+          {/* ── Tick marks with gold glow ──────────────── */}
           {ticks.map((tick, i) => (
             <G key={i}>
+              {/* Gold glow behind major ticks */}
+              {tick.major && (
+                <Line x1={tick.x} y1={AXIS_Y - 8} x2={tick.x} y2={AXIS_Y + 8}
+                  stroke={base.gold} strokeWidth={3} opacity={0.12} />
+              )}
               <Line x1={tick.x} y1={AXIS_Y - (tick.major ? 7 : 4)} x2={tick.x} y2={AXIS_Y + (tick.major ? 7 : 4)}
                 stroke={timelineSvg.tick} strokeWidth={tick.major ? 1.5 : 0.5} />
               {tick.major && (
-                <SvgText x={tick.x} y={AXIS_Y + 20} textAnchor="middle" fontSize={8} fill={base.textMuted}
+                <SvgText x={tick.x} y={AXIS_Y + 22} textAnchor="middle" fontSize={10} fill={base.gold}
                   fontFamily="SourceSans3_400Regular">
                   {tick.label}
                 </SvgText>
@@ -183,51 +254,110 @@ export default function TimelineScreen() {
             </G>
           ))}
 
-          {/* Events */}
+          {/* ── Events with visual hierarchy ───────────── */}
           {filtered.map((evt) => {
-            // Color by category: events use era color, people are teal, world is amber
             const catColor = evt.category === 'world' ? categoryColors.world
               : evt.category === 'person' ? categoryColors.person
               : evt.category === 'book' ? categoryColors.book
               : evt.era ? (eras[evt.era] ?? categoryColors.event) : categoryColors.event;
             const isSelected = selectedEvent?.id === evt.id;
             const isBook = evt.category === 'book';
+            const isMajor = evt.significance === 'major';
+            const markerR = isMajor ? 6 : 3.5;
 
             return (
-              <G key={evt.id} onPress={() => setSelectedEvent(evt)}>
-                {/* Invisible hit rect — makes the entire label area tappable */}
-                <Rect x={evt.x - 10} y={evt.y - 14} width={evt.labelWidth} height={28}
+              <G key={evt.id} onPress={() => handleSelectEvent(evt)}>
+                {/* Hit area */}
+                <Rect x={evt.x - 15} y={evt.y - 15} width={isMajor ? evt.labelWidth : 30} height={30}
                   fill="transparent" />
-                {/* Stem line — connects event dot to axis */}
-                <Line x1={evt.x} y1={evt.y} x2={evt.x} y2={AXIS_Y} stroke={catColor} strokeWidth={0.5} opacity={0.4} />
-                {/* Marker — square for books, circle for everything else */}
-                {isSelected && (
-                  isBook
-                    ? <Rect x={evt.x - 10} y={evt.y - 10} width={20} height={20} rx={3} fill={catColor} opacity={0.3} />
-                    : <Circle cx={evt.x} cy={evt.y} r={10} fill={base.gold} opacity={0.3} />
+
+                {/* Stem — dashed upper, solid lower */}
+                {evt.y < AXIS_Y ? (
+                  <>
+                    <Line x1={evt.x} y1={evt.y + markerR} x2={evt.x} y2={(evt.y + AXIS_Y) / 2}
+                      stroke={catColor} strokeWidth={0.6} opacity={0.25} strokeDasharray="3,2" />
+                    <Line x1={evt.x} y1={(evt.y + AXIS_Y) / 2} x2={evt.x} y2={AXIS_Y}
+                      stroke={catColor} strokeWidth={0.6} opacity={0.5} />
+                  </>
+                ) : (
+                  <>
+                    <Line x1={evt.x} y1={AXIS_Y} x2={evt.x} y2={(evt.y + AXIS_Y) / 2}
+                      stroke={catColor} strokeWidth={0.6} opacity={0.5} />
+                    <Line x1={evt.x} y1={(evt.y + AXIS_Y) / 2} x2={evt.x} y2={evt.y - markerR}
+                      stroke={catColor} strokeWidth={0.6} opacity={0.25} strokeDasharray="3,2" />
+                  </>
                 )}
-                {isBook
-                  ? <Rect x={evt.x - 5} y={evt.y - 5} width={10} height={10} rx={2} fill={catColor} />
-                  : <Circle cx={evt.x} cy={evt.y} r={6} fill={catColor} />
-                }
-                {/* Label */}
-                <SvgText x={evt.x + 10} y={evt.y + 5} fontSize={11} fill={catColor}
-                  fontFamily="SourceSans3_400Regular">
-                  {evt.name} · {formatYear(evt.year)}
-                </SvgText>
+
+                {/* Selection glow */}
+                {isSelected && (
+                  <Circle cx={evt.x} cy={evt.y} r={markerR + 6} fill={base.gold} opacity={0.25} />
+                )}
+
+                {/* Outer glow ring for major events */}
+                {isMajor && !isBook && (
+                  <Circle cx={evt.x} cy={evt.y} r={markerR + 3}
+                    stroke={catColor} strokeWidth={1} fill="none" opacity={0.25} />
+                )}
+
+                {/* Marker */}
+                {isBook ? (
+                  <G>
+                    <Rect x={evt.x - 6} y={evt.y - 7} width={12} height={14} rx={2}
+                      fill={catColor} stroke={lighten(catColor, 0.3)} strokeWidth={0.5} />
+                    {/* Book spine */}
+                    <Line x1={evt.x - 4} y1={evt.y - 6} x2={evt.x - 4} y2={evt.y + 6}
+                      stroke={lighten(catColor, 0.5)} strokeWidth={0.5} opacity={0.6} />
+                  </G>
+                ) : (
+                  <Circle cx={evt.x} cy={evt.y} r={markerR}
+                    fill={catColor} stroke={lighten(catColor, 0.3)} strokeWidth={0.5} />
+                )}
+
+                {/* Label — only for major events or selected */}
+                {(isMajor || isSelected) && (
+                  <SvgText x={evt.x + (isBook ? 10 : markerR + 5)} y={evt.y + 4} fontSize={11}
+                    fill={isSelected ? base.gold : catColor}
+                    fontFamily="SourceSans3_400Regular"
+                    fontWeight={isSelected ? '600' : '400'}>
+                    {evt.name} · {formatYear(evt.year)}
+                  </SvgText>
+                )}
               </G>
             );
           })}
         </Svg>
       </ScrollView>
 
-      {/* Detail panel */}
-      {selectedEvent && (
-        <Modal visible transparent animationType="slide">
-          <TouchableOpacity style={styles.modalBackdrop} activeOpacity={1} onPress={() => setSelectedEvent(null)} />
-          <View style={[styles.detailSheet, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
-            <ScrollView contentContainerStyle={styles.detailContent}>
-              <View style={[styles.grabHandle, { backgroundColor: base.textMuted }]} />
+      {/* ── Bottom sheet detail panel ──────────────── */}
+      <BottomSheet
+        ref={sheetRef}
+        index={-1}
+        snapPoints={snapPoints}
+        enablePanDownToClose
+        onClose={handleCloseSheet}
+        backgroundStyle={{
+          backgroundColor: base.bgElevated,
+          borderTopLeftRadius: 16,
+          borderTopRightRadius: 16,
+          borderTopWidth: 1,
+          borderColor: base.border,
+        }}
+        handleIndicatorStyle={{ backgroundColor: base.textMuted, width: 36 }}
+      >
+        <BottomSheetScrollView contentContainerStyle={styles.detailContent}>
+          {selectedEvent && (
+            <>
+              {/* Era accent bar */}
+              {selectedEvent.era && (
+                <View style={{
+                  height: 3,
+                  backgroundColor: eras[selectedEvent.era] ?? base.gold,
+                  borderRadius: 1.5,
+                  marginBottom: spacing.md,
+                  width: '30%',
+                  alignSelf: 'center',
+                }} />
+              )}
               {selectedEvent.era && <BadgeChip label={eraNames[selectedEvent.era] ?? selectedEvent.era} color={eras[selectedEvent.era] ?? base.gold} />}
               <Text style={[styles.detailTitle, { color: base.text }]}>
                 {selectedEvent.name}
@@ -254,21 +384,24 @@ export default function TimelineScreen() {
                   <TouchableOpacity
                     style={[styles.chapterButton, { backgroundColor: base.gold + '22', borderColor: base.gold + '55' }]}
                     onPress={() => {
+                      sheetRef.current?.close();
                       setSelectedEvent(null);
                       navigation.navigate('ReadTab', {
                         screen: 'Chapter',
                         params: { bookId, chapterNum },
                       });
                     }}
+                    accessibilityRole="button"
+                    accessibilityLabel={`Go to chapter ${chapterNum}`}
                   >
                     <Text style={[styles.chapterButtonText, { color: base.gold }]}>Go to Chapter →</Text>
                   </TouchableOpacity>
                 );
               })()}
-            </ScrollView>
-          </View>
-        </Modal>
-      )}
+            </>
+          )}
+        </BottomSheetScrollView>
+      </BottomSheet>
     </View>
   );
 }
@@ -280,24 +413,8 @@ const styles = StyleSheet.create({
   loadingPad: {
     padding: spacing.lg,
   },
-  modalBackdrop: {
-    flex: 1,
-  },
-  detailSheet: {
-    borderTopLeftRadius: radii.lg,
-    borderTopRightRadius: radii.lg,
-    borderTopWidth: 1,
-    maxHeight: '50%',
-  },
   detailContent: {
     padding: spacing.md,
-  },
-  grabHandle: {
-    alignSelf: 'center',
-    width: 40,
-    height: 4,
-    borderRadius: 2,
-    marginBottom: spacing.md,
   },
   detailTitle: {
     fontFamily: fontFamily.displaySemiBold,
