@@ -39,6 +39,8 @@ interface Props {
   sectionId: string;
   onVhlWordPress?: (panelTypes: string[], sectionId: string) => void;
   style?: TextStyle;
+  /** Override default text color (e.g. for red letter verses). */
+  baseColor?: string;
 }
 
 interface WordMatch {
@@ -48,7 +50,7 @@ interface WordMatch {
 }
 
 export function HighlightedText({
-  text, groups, activeGroups, sectionId, onVhlWordPress, style,
+  text, groups, activeGroups, sectionId, onVhlWordPress, style, baseColor,
 }: Props) {
   const { base } = useTheme();
 
@@ -62,11 +64,11 @@ export function HighlightedText({
   }), [base.gold]);
 
   const defaultStyle: TextStyle = useMemo(() => ({
-    color: base.text,
+    color: baseColor ?? base.text,
     fontFamily: fontFamily.body,
     fontSize: 16,
     lineHeight: 26,
-  }), [base.text]);
+  }), [base.text, baseColor]);
 
   // Build word → match lookup from all active VHL groups
   const wordMap = useMemo(() => {

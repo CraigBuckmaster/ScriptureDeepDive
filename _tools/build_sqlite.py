@@ -364,6 +364,15 @@ CREATE TABLE content_library (
 CREATE INDEX idx_cl_category ON content_library(category);
 CREATE INDEX idx_cl_book ON content_library(book_id);
 
+-- Red letter verses (Jesus speaking)
+CREATE TABLE red_letter_verses (
+  book_id TEXT NOT NULL,
+  chapter_num INTEGER NOT NULL,
+  verse_num INTEGER NOT NULL,
+  PRIMARY KEY (book_id, chapter_num, verse_num)
+);
+CREATE INDEX idx_red_letter_chapter ON red_letter_verses(book_id, chapter_num);
+
 -- Full-text search indexes
 CREATE VIRTUAL TABLE verses_fts USING fts5(text, content=verses, content_rowid=id);
 CREATE VIRTUAL TABLE people_fts USING fts5(name, role, bio, content=people, content_rowid=rowid);
@@ -946,6 +955,27 @@ def populate_difficult_passages(cur):
     return len(passages)
 
 
+def populate_red_letter(cur):
+    """Populate red_letter_verses from content/meta/red-letter.json."""
+    path = CONTENT / 'meta' / 'red-letter.json'
+    if not path.exists():
+        print("  [SKIP] red-letter.json not found")
+        return 0
+    data = _load_json(path)
+    n = 0
+    for entry in data:
+        book = entry['book_id']
+        ch = entry['chapter']
+        for v in entry['verses']:
+            cur.execute(
+                'INSERT INTO red_letter_verses (book_id, chapter_num, verse_num) '
+                'VALUES (?, ?, ?)',
+                (book, ch, v)
+            )
+            n += 1
+    return n
+
+
 def populate_content_library(cur):
     """Extract content library entries from chapter JSONs.
 
@@ -1168,6 +1198,9 @@ def main():
     n = populate_interlinear(cur)
     print(f"  [OK] interlinear_words: {n} rows")
 
+    n = populate_red_letter(cur)
+    print(f"  [OK] red_letter_verses: {n} rows")
+
     n = populate_content_library(cur)
     print(f"  [OK] content_library: {n} rows")
 
@@ -1231,6 +1264,7 @@ def main():
         'map_stories', 'word_studies', 'synoptic_map', 'vhl_groups',
         'genealogy_config', 'cross_ref_threads', 'cross_ref_pairs', 'timelines',
         'content_library',
+        'red_letter_verses',
     ]
     for t in tables:
         cur.execute(f'SELECT COUNT(*) FROM {t}')

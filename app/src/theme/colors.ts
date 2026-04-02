@@ -30,6 +30,7 @@ export const base = {
   navText: '#d8ccb0',
   danger: '#e05a6a',
   success: '#81C784',
+  redLetter: '#d4847a',
 } as const;
 
 // ── Panel Accent Colors ─────────────────────────────────────────────

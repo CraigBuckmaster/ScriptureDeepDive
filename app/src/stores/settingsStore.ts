@@ -30,6 +30,7 @@ interface SettingsState {
   theme: ThemePreference;
   ttsVoice: string;
   comparisonTranslation: string | null;
+  redLetterEnabled: boolean;
   isHydrated: boolean;
 
   setTranslation: (t: string) => void;
@@ -40,6 +41,7 @@ interface SettingsState {
   setTheme: (t: ThemePreference) => void;
   setTtsVoice: (v: string) => void;
   setComparisonTranslation: (t: string | null) => void;
+  setRedLetterEnabled: (v: boolean) => void;
   hydrate: () => Promise<void>;
 }
 
@@ -52,6 +54,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
   theme: 'dark' as ThemePreference,
   ttsVoice: '',
   comparisonTranslation: null,
+  redLetterEnabled: true,
   isHydrated: false,
 
   setTranslation: async (t) => {
@@ -90,6 +93,11 @@ export const useSettingsStore = create<SettingsState>((set) => ({
     await setPreference('ttsVoice', v);
   },
 
+  setRedLetterEnabled: async (v) => {
+    set({ redLetterEnabled: v });
+    await setPreference('redLetterEnabled', v ? '1' : '0');
+  },
+
   setComparisonTranslation: async (t) => {
     set({ comparisonTranslation: t });
     await setPreference('comparisonTranslation', t ?? '');
@@ -105,6 +113,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
       const th = await getPreference('theme');
       const voice = await getPreference('ttsVoice');
       const comp = await getPreference('comparisonTranslation');
+      const rl = await getPreference('redLetterEnabled');
 
       set({
         translation: (t && TRANSLATION_MAP.has(t) ? t : 'kjv'),
@@ -115,6 +124,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
         theme: (VALID_THEMES.includes(th as ThemePreference) ? th : 'dark') as ThemePreference,
         ttsVoice: voice ?? '',
         comparisonTranslation: (comp && TRANSLATION_MAP.has(comp)) ? comp : null,
+        redLetterEnabled: rl !== '0',
         isHydrated: true,
       });
     } catch (err) {

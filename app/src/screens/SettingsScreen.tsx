@@ -65,6 +65,8 @@ export default function SettingsScreen() {
   const { switchTranslation } = useTranslationSwitch();
   const setFontSize = useSettingsStore((s) => s.setFontSize);
   const setVhlEnabled = useSettingsStore((s) => s.setVhlEnabled);
+  const redLetterEnabled = useSettingsStore((s) => s.redLetterEnabled);
+  const setRedLetterEnabled = useSettingsStore((s) => s.setRedLetterEnabled);
   const studyCoachEnabled = useSettingsStore((s) => s.studyCoachEnabled);
   const setStudyCoachEnabled = useSettingsStore((s) => s.setStudyCoachEnabled);
   const theme = useSettingsStore((s) => s.theme);
@@ -182,6 +184,16 @@ export default function SettingsScreen() {
             onValueChange={setVhlEnabled}
             trackColor={{ false: base.bgSurface, true: base.gold + '60' }}
             thumbColor={vhlEnabled ? base.gold : base.textMuted}
+          />
+        </Row>
+
+        {/* Red Letter Toggle */}
+        <Row label="Words of Christ in Red" base={base}>
+          <Switch
+            value={redLetterEnabled}
+            onValueChange={setRedLetterEnabled}
+            trackColor={{ false: base.bgSurface, true: base.redLetter + '60' }}
+            thumbColor={redLetterEnabled ? base.redLetter : base.textMuted}
           />
         </Row>
 

@@ -29,12 +29,15 @@ interface Props {
   comparisonLabel?: string;
   /** Label for the primary translation (e.g. "KJV"). Shown only when comparing. */
   primaryLabel?: string;
+  /** Red-letter verse numbers (Jesus speaking). */
+  redLetterVerses?: Set<number>;
 }
 
 export const VerseBlock = React.memo(function VerseBlock({
   verses, vhlGroups, activeVhlGroups, notedVerses, sectionId,
   fontSize = 16, onVhlWordPress, onNotePress, onVerseLongPress, onVerseNumPress, activeVerseNum,
   comparisonVerses, comparisonLabel, primaryLabel,
+  redLetterVerses,
 }: Props) {
   const { base } = useTheme();
   if (!verses.length) return null;
@@ -79,6 +82,7 @@ export const VerseBlock = React.memo(function VerseBlock({
                   sectionId={sectionId}
                   onVhlWordPress={onVhlWordPress}
                   style={{ fontSize, lineHeight }}
+                  baseColor={redLetterVerses?.has(verse.verse_num) ? base.redLetter : undefined}
                 />
                 {/* Primary translation label (only in compare mode) */}
                 {isComparing && primaryLabel && (

@@ -27,6 +27,7 @@ import { logEvent } from '../services/analytics';
 import { updateLastActive, cancelReengagement } from '../services/reengagement';
 import { getBook } from '../db/content';
 
+import { useRedLetter } from '../hooks/useRedLetter';
 import { ChapterNavBar } from '../components/ChapterNavBar';
 import { CompareBar } from '../components/CompareBar';
 import { ChapterHeader } from '../components/ChapterHeader';
@@ -82,6 +83,8 @@ export default function ChapterScreen() {
     chapter, sections, verses, comparisonVerses, vhlGroups,
     chapterPanels, noteCount, isLoading,
   } = useChapterData(bookId, chapterNum);
+
+  const redLetterVerses = useRedLetter(bookId, chapterNum);
 
   const ttsVoice = useSettingsStore((s) => s.ttsVoice);
   const tts = useTTS(verses, ttsVoice || undefined);
@@ -405,6 +408,7 @@ export default function ChapterScreen() {
               comparisonVerses={comparisonTranslation ? comparisonVerses : undefined}
               comparisonLabel={comparisonTranslation ? (TRANSLATION_MAP.get(comparisonTranslation)?.label ?? comparisonTranslation.toUpperCase()) : undefined}
               primaryLabel={comparisonTranslation ? (TRANSLATION_MAP.get(translation)?.label ?? translation.toUpperCase()) : undefined}
+              redLetterVerses={redLetterVerses}
               renderButtonRow={(panels, sectionId) => (
                 <View onLayout={(e) => {
                   const sectionY = sectionYMap.current[sectionId] ?? 0;
