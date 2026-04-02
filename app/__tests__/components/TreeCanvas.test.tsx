@@ -2,7 +2,11 @@ import React from 'react';
 
 jest.mock('react-native-svg', () => {
   const React = require('react');
-  return { Svg: 'Svg', G: 'G', Line: 'Line', Path: 'Path', Rect: 'Rect', Text: 'Text', Circle: 'Circle' };
+  return {
+    Svg: 'Svg', G: 'G', Line: 'Line', Path: 'Path', Rect: 'Rect', Text: 'Text', Circle: 'Circle',
+    Defs: 'Defs', RadialGradient: 'RadialGradient', Stop: 'Stop', Pattern: 'Pattern',
+    LinearGradient: 'LinearGradient',
+  };
 });
 
 jest.mock('@/components/tree/TreeNode', () => ({
@@ -68,6 +72,7 @@ describe('TreeCanvas', () => {
     spouseConnectors: [] as SpouseConnector[],
     filterEra: null,
     spineIds: new Set<string>(),
+    selectedPersonId: null,
     onNodePress: jest.fn(),
   };
 
@@ -125,7 +130,10 @@ describe('TreeCanvas', () => {
       <TreeCanvas {...defaultProps} offsetX={50} offsetY={75} />,
     );
     const json = tree.toJSON() as any;
-    expect(json.props?.transform).toBe('translate(50, 75)');
+    // TreeCanvas renders Fragment children: [Defs, Rect, Rect, G(transform)]
+    const children = Array.isArray(json) ? json : [json];
+    const gWithTransform = children.find((c: any) => c?.props?.transform);
+    expect(gWithTransform?.props?.transform).toBe('translate(50, 75)');
   });
 });
 

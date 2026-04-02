@@ -15,12 +15,14 @@ jest.mock('react-native-svg', () => {
   };
 });
 
-const makeBar = (overrides?: Partial<{ x1: number; x2: number; y: number; midX: number; dimmed: boolean }>) => ({
+const makeBar = (overrides?: Partial<{ x1: number; x2: number; y: number; midX: number; dimmed: boolean; partnerId: string; spouseId: string }>) => ({
   x1: 100,
   x2: 200,
   y: 50,
   midX: 150,
   dimmed: false,
+  partnerId: 'abraham',
+  spouseId: 'sarah',
   ...overrides,
 });
 
@@ -32,11 +34,13 @@ describe('MarriageBarSvg', () => {
     expect(toJSON()).not.toBeNull();
   });
 
-  it('renders a G group with three Line elements', () => {
+  it('renders glow line, main line, and two ring circles', () => {
     const { UNSAFE_getAllByType } = renderWithProviders(<MarriageBarSvg bar={makeBar()} />);
-    // G wrapper + 3 lines (horizontal bar + 2 ticks)
+    // 2 Lines (glow + main bar) + 2 Circles (interlocking rings)
     const lines = UNSAFE_getAllByType('Line' as any);
-    expect(lines).toHaveLength(3);
+    expect(lines).toHaveLength(2);
+    const circles = UNSAFE_getAllByType('Circle' as any);
+    expect(circles).toHaveLength(2);
   });
 
   it('applies reduced opacity when dimmed', () => {

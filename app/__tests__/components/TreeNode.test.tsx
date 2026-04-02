@@ -13,6 +13,7 @@ jest.mock('@/theme', () => ({
       goldDim: '#B8960C',
       textMuted: '#888888',
       textDim: '#666666',
+      border: '#3a2e18',
     },
   }),
   eras: {
@@ -68,7 +69,7 @@ describe('TreeNode', () => {
   it('renders the person name', () => {
     const node = makeNode({ name: 'Abraham' });
     const { getByText } = renderWithProviders(
-      <TreeNode node={node} dimmed={false} filterEra={null} onPress={jest.fn()} />,
+      <TreeNode node={node} dimmed={false} filterEra={null} selected={false} onPress={jest.fn()} />,
     );
     expect(getByText('Abraham')).toBeTruthy();
   });
@@ -76,7 +77,7 @@ describe('TreeNode', () => {
   it('renders a satellite node with era color', () => {
     const node = makeNode({ name: 'Hagar', nodeType: 'satellite', era: 'patriarchs' });
     const { getByText } = renderWithProviders(
-      <TreeNode node={node} dimmed={false} filterEra={null} onPress={jest.fn()} />,
+      <TreeNode node={node} dimmed={false} filterEra={null} selected={false} onPress={jest.fn()} />,
     );
     expect(getByText('Hagar')).toBeTruthy();
   });
@@ -84,7 +85,7 @@ describe('TreeNode', () => {
   it('applies dimmed opacity', () => {
     const node = makeNode({ name: 'Seth' });
     const tree = renderWithProviders(
-      <TreeNode node={node} dimmed={true} filterEra={null} onPress={jest.fn()} />,
+      <TreeNode node={node} dimmed={true} filterEra={null} selected={false} onPress={jest.fn()} />,
     );
     // Component renders — dimmed does not hide the node
     expect(tree.getByText('Seth')).toBeTruthy();
@@ -94,7 +95,7 @@ describe('TreeNode', () => {
     const onPress = jest.fn();
     const node = makeNode({ name: 'Noah' });
     const { getByText } = renderWithProviders(
-      <TreeNode node={node} dimmed={false} filterEra={null} onPress={onPress} />,
+      <TreeNode node={node} dimmed={false} filterEra={null} selected={false} onPress={onPress} />,
     );
     // The G element has onPress — simulate by finding the text and pressing
     const text = getByText('Noah');
