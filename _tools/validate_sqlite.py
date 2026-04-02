@@ -234,6 +234,17 @@ def main():
               f"{orphan_cl} orphaned")
     print(f"  content_library: {cl_count or 0}")
 
+    # Lexicon entries
+    lex_count = q1(cur, "SELECT COUNT(*) FROM lexicon_entries")
+    if lex_count is not None:
+        lex_greek = q1(cur, "SELECT COUNT(*) FROM lexicon_entries WHERE language='greek'")
+        lex_hebrew = q1(cur, "SELECT COUNT(*) FROM lexicon_entries WHERE language='hebrew'")
+        check("Lexicon entries populated", lex_count >= 10000,
+              f"only {lex_count} rows (expected ~14000)")
+        print(f"  lexicon_entries: {lex_count} (greek={lex_greek}, hebrew={lex_hebrew})")
+    else:
+        print("  lexicon_entries: table not found (optional)")
+
     # Red letter verses
     rl_count = q1(cur, "SELECT COUNT(*) FROM red_letter_verses")
     if rl_count is not None:

@@ -21,6 +21,7 @@ export {
   getCrossRefThreads, getCrossRefThread, getCrossRefPairsForVerse,
   getTimelineEvents, getTimelinePeople, getAllTimelineEntries,
   getGenealogyConfig, getTimelineEraConfig,
+  getLexiconEntry, getLexiconEntries,
 } from './reference';
 export type { EraConfig } from './reference';
 export {

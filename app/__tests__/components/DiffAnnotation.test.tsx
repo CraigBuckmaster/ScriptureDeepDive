@@ -44,7 +44,26 @@ describe('DiffAnnotation', () => {
     fireEvent.press(getByText('Wording'));
     expect(getByText('Blessed are the poor in spirit')).toBeTruthy();
     expect(getByText('Blessed are you who are poor')).toBeTruthy();
-    expect(getByText('▲')).toBeTruthy();
+  });
+
+  it('uses custom labelA and labelB when provided', () => {
+    const { getByText } = renderWithProviders(
+      <DiffAnnotation annotation={makeAnnotation()} labelA="Matthew" labelB="Luke" />,
+    );
+    fireEvent.press(getByText('Wording'));
+    // Label circles show first 2 chars of the label
+    expect(getByText('Ma')).toBeTruthy();
+    expect(getByText('Lu')).toBeTruthy();
+  });
+
+  it('extracts labels from location when no explicit labels', () => {
+    const { getByText } = renderWithProviders(
+      <DiffAnnotation annotation={makeAnnotation()} />,
+    );
+    fireEvent.press(getByText('Wording'));
+    // Extracts "Matt" and "Luke" from "Matt 5:3 / Luke 6:20"
+    expect(getByText('Ma')).toBeTruthy();
+    expect(getByText('Lu')).toBeTruthy();
   });
 });
 
@@ -65,5 +84,13 @@ describe('DiffAnnotationList', () => {
     );
     expect(getByText('Textual Differences')).toBeTruthy();
     expect(getByText('Omission')).toBeTruthy();
+  });
+
+  it('accepts passageLabels prop', () => {
+    const labels = new Map([['matthew', 'Matthew'], ['luke', 'Luke']]);
+    const { getByText } = renderWithProviders(
+      <DiffAnnotationList annotations={[makeAnnotation()]} passageLabels={labels} />,
+    );
+    expect(getByText('Textual Differences')).toBeTruthy();
   });
 });

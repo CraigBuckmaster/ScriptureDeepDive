@@ -7,6 +7,7 @@ import type {
   WordStudy, SynopticEntry, CrossRefThread, CrossRefPair,
   TimelineEntry, GenealogyConfig,
 } from '../../types';
+import type { LexiconEntry } from '../../types/lexicon';
 
 // ── Word Studies ────────────────────────────────────────────────────
 
@@ -106,4 +107,22 @@ export async function getTimelineEraConfig(): Promise<Record<string, EraConfig> 
   } catch {
     return null;
   }
+}
+
+// ── Lexicon ────────────────────────────────────────────────────────
+
+export async function getLexiconEntry(strongs: string): Promise<LexiconEntry | null> {
+  return getDb().getFirstAsync<LexiconEntry>(
+    'SELECT * FROM lexicon_entries WHERE strongs = ?',
+    [strongs]
+  );
+}
+
+export async function getLexiconEntries(strongsList: string[]): Promise<LexiconEntry[]> {
+  if (strongsList.length === 0) return [];
+  const placeholders = strongsList.map(() => '?').join(',');
+  return getDb().getAllAsync<LexiconEntry>(
+    `SELECT * FROM lexicon_entries WHERE strongs IN (${placeholders})`,
+    strongsList
+  );
 }
