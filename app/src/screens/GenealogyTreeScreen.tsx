@@ -196,7 +196,9 @@ export default function GenealogyTreeScreen({ route, navigation }: {
         <EraFilterBar activeEra={filterEra} onSelect={handleEraChange} />
       </View>
 
-      <View style={styles.viewport} accessible accessibilityLabel="Family tree" accessibilityHint="Pinch to zoom, drag to pan">
+      <View style={[styles.viewport, { backgroundColor: base.bg }]} accessible accessibilityLabel="Family tree" accessibilityHint="Pinch to zoom, drag to pan">
+        {/* Top edge fade overlay */}
+        <View style={[styles.edgeFadeTop, { backgroundColor: base.bg }]} pointerEvents="none" />
         <GestureDetector gesture={gesture}>
           {/* Two-layer transform — see useTreeGestures.ts header for why.
               DO NOT collapse into a single Animated.View. Reduce Motion breaks it.
@@ -214,9 +216,12 @@ export default function GenealogyTreeScreen({ route, navigation }: {
                   spouseConnectors={spouseConnectors}
                   filterEra={filterEra === 'all' ? null : filterEra}
                   spineIds={spineIds}
+                  selectedPersonId={selectedPerson?.id ?? null}
                   onNodePress={handleNodePress}
                   offsetX={-bounds.minX}
                   offsetY={-bounds.minY}
+                  canvasWidth={Math.max(bounds.width, 2000)}
+                  canvasHeight={Math.max(bounds.height, 2000)}
                 />
               </Svg>
             </View>
@@ -253,6 +258,15 @@ const styles = StyleSheet.create({
   viewport: {
     flex: 1,
     overflow: 'hidden',
+  },
+  edgeFadeTop: {
+    position: 'absolute' as const,
+    top: 0,
+    left: 0,
+    right: 0,
+    height: 12,
+    opacity: 0.6,
+    zIndex: 5,
   },
   transformLayer: {
     overflow: 'visible' as const,
