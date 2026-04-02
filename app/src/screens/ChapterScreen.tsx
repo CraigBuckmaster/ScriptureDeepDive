@@ -28,6 +28,7 @@ import { updateLastActive, cancelReengagement } from '../services/reengagement';
 import { getBook } from '../db/content';
 
 import { ChapterNavBar } from '../components/ChapterNavBar';
+import { CompareBar } from '../components/CompareBar';
 import { ChapterHeader } from '../components/ChapterHeader';
 import { SectionBlock } from '../components/SectionBlock';
 import { ButtonRow } from '../components/ButtonRow';
@@ -43,6 +44,7 @@ import { InterlinearSheet } from '../components/InterlinearSheet';
 import { TTSControls } from '../components/TTSControls';
 import { useTTS } from '../hooks/useTTS';
 
+import { TRANSLATION_MAP } from '../db/translationRegistry';
 import { base, useTheme, spacing, radii, fontFamily } from '../theme';
 
 // Enable LayoutAnimation on Android
@@ -58,6 +60,8 @@ export default function ChapterScreen() {
 
   const fontSize = useSettingsStore((s) => s.fontSize);
   const translation = useSettingsStore((s) => s.translation);
+  const comparisonTranslation = useSettingsStore((s) => s.comparisonTranslation);
+  const setComparisonTranslation = useSettingsStore((s) => s.setComparisonTranslation);
   const { switchTranslation } = useTranslationSwitch();
   const { checkAndPrompt } = useStoreReview();
   const studyCoachEnabled = useSettingsStore((s) => s.studyCoachEnabled);
@@ -75,7 +79,7 @@ export default function ChapterScreen() {
   const [highlights, setHighlights] = useState<VerseHighlight[]>([]);
 
   const {
-    chapter, sections, verses, vhlGroups,
+    chapter, sections, verses, comparisonVerses, vhlGroups,
     chapterPanels, noteCount, isLoading,
   } = useChapterData(bookId, chapterNum);
 
@@ -310,6 +314,9 @@ export default function ChapterScreen() {
         ttsActive={ttsActive}
         translation={translation}
         onTranslationChange={switchTranslation}
+        comparisonTranslation={comparisonTranslation}
+        onCompareStart={setComparisonTranslation}
+        onCompareEnd={() => setComparisonTranslation(null)}
       />
 
       {/* Breadcrumb pill — visible when navigated from Content Library */}
@@ -321,6 +328,15 @@ export default function ChapterScreen() {
         >
           <Text style={[styles.breadcrumbText, { color: base.gold }]}>← Content Library</Text>
         </TouchableOpacity>
+      )}
+
+      {/* Compare bar — shown when parallel translation is active */}
+      {comparisonTranslation && (
+        <CompareBar
+          primaryLabel={TRANSLATION_MAP.get(translation)?.label ?? translation.toUpperCase()}
+          comparisonLabel={TRANSLATION_MAP.get(comparisonTranslation)?.label ?? comparisonTranslation.toUpperCase()}
+          onDismiss={() => setComparisonTranslation(null)}
+        />
       )}
 
       {/* Reading progress bar */}
@@ -386,6 +402,9 @@ export default function ChapterScreen() {
               depthExplored={depthMap.get(sec.id)?.explored}
               depthTotal={depthMap.get(sec.id)?.total}
               onDepthRecord={recordOpen}
+              comparisonVerses={comparisonTranslation ? comparisonVerses : undefined}
+              comparisonLabel={comparisonTranslation ? (TRANSLATION_MAP.get(comparisonTranslation)?.label ?? comparisonTranslation.toUpperCase()) : undefined}
+              primaryLabel={comparisonTranslation ? (TRANSLATION_MAP.get(translation)?.label ?? translation.toUpperCase()) : undefined}
               renderButtonRow={(panels, sectionId) => (
                 <View onLayout={(e) => {
                   const sectionY = sectionYMap.current[sectionId] ?? 0;
