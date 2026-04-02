@@ -374,6 +374,21 @@ CREATE TABLE red_letter_verses (
 );
 CREATE INDEX idx_red_letter_chapter ON red_letter_verses(book_id, chapter_num);
 
+-- Lexicon entries (Thayer's Greek + BDB Hebrew)
+CREATE TABLE lexicon_entries (
+  strongs TEXT PRIMARY KEY,
+  language TEXT NOT NULL,
+  lemma TEXT NOT NULL,
+  transliteration TEXT NOT NULL,
+  pronunciation TEXT,
+  pos TEXT,
+  definition_json TEXT NOT NULL,
+  etymology TEXT,
+  related_strongs_json TEXT,
+  source TEXT NOT NULL DEFAULT 'thayer'
+);
+CREATE INDEX idx_lexicon_language ON lexicon_entries(language);
+
 -- Full-text search indexes
 CREATE VIRTUAL TABLE verses_fts USING fts5(text, content=verses, content_rowid=id);
 CREATE VIRTUAL TABLE people_fts USING fts5(name, role, bio, content=people, content_rowid=rowid);
@@ -956,6 +971,32 @@ def populate_difficult_passages(cur):
     return len(passages)
 
 
+def populate_lexicon(cur):
+    """Populate lexicon_entries from content/meta/lexicon-greek.json and lexicon-hebrew.json."""
+    n = 0
+    for fname in ['lexicon-greek.json', 'lexicon-hebrew.json']:
+        path = CONTENT / 'meta' / fname
+        if not path.exists():
+            print(f"  [SKIP] {fname} not found")
+            continue
+        data = _load_json(path)
+        for entry in data:
+            cur.execute(
+                'INSERT OR IGNORE INTO lexicon_entries '
+                '(strongs, language, lemma, transliteration, pronunciation, pos, '
+                'definition_json, etymology, related_strongs_json, source) '
+                'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                (entry['strongs'], entry['language'], entry['lemma'],
+                 entry['transliteration'], entry.get('pronunciation'),
+                 entry.get('pos'), _json_str(entry['definition']),
+                 entry.get('etymology'),
+                 _json_str(entry.get('related_strongs', [])) if entry.get('related_strongs') else None,
+                 entry.get('source', 'thayer' if entry['language'] == 'greek' else 'bdb'))
+            )
+            n += 1
+    return n
+
+
 def populate_red_letter(cur):
     """Populate red_letter_verses from content/meta/red-letter.json."""
     path = CONTENT / 'meta' / 'red-letter.json'
@@ -1199,6 +1240,9 @@ def main():
     n = populate_interlinear(cur)
     print(f"  [OK] interlinear_words: {n} rows")
 
+    n = populate_lexicon(cur)
+    print(f"  [OK] lexicon_entries: {n} rows")
+
     n = populate_red_letter(cur)
     print(f"  [OK] red_letter_verses: {n} rows")
 
@@ -1266,6 +1310,7 @@ def main():
         'genealogy_config', 'cross_ref_threads', 'cross_ref_pairs', 'timelines',
         'content_library',
         'red_letter_verses',
+        'lexicon_entries',
     ]
     for t in tables:
         cur.execute(f'SELECT COUNT(*) FROM {t}')

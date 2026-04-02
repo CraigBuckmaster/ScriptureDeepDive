@@ -28,6 +28,7 @@ import { updateLastActive, cancelReengagement } from '../services/reengagement';
 import { getBook } from '../db/content';
 
 import { useRedLetter } from '../hooks/useRedLetter';
+import { LexiconSheet } from '../components/LexiconSheet';
 import { ChapterNavBar } from '../components/ChapterNavBar';
 import { CompareBar } from '../components/CompareBar';
 import { ChapterHeader } from '../components/ChapterHeader';
@@ -76,6 +77,8 @@ export default function ChapterScreen() {
   const [noteVerseNum, setNoteVerseNum] = useState<number | null>(null);
   const [longPress, setLongPress] = useState<{ verseNum: number; text: string } | null>(null);
   const [interlinearVerse, setInterlinearVerse] = useState<number | null>(null);
+  const [lexiconStrongs, setLexiconStrongs] = useState<string | null>(null);
+  const [lexiconWordStudyId, setLexiconWordStudyId] = useState<string | null>(null);
   const [colorPickerOpen, setColorPickerOpen] = useState(false);
   const [highlights, setHighlights] = useState<VerseHighlight[]>([]);
 
@@ -535,6 +538,28 @@ export default function ChapterScreen() {
         }}
         onConcordancePress={(params) => {
           setInterlinearVerse(null);
+          navigation.navigate('ExploreTab', { screen: 'Concordance', params });
+        }}
+        onLexiconPress={(strongs, wsId) => {
+          setInterlinearVerse(null);
+          setLexiconStrongs(strongs);
+          setLexiconWordStudyId(wsId);
+        }}
+      />
+
+      <LexiconSheet
+        visible={lexiconStrongs !== null}
+        strongs={lexiconStrongs}
+        wordStudyId={lexiconWordStudyId}
+        onClose={() => { setLexiconStrongs(null); setLexiconWordStudyId(null); }}
+        onWordStudyPress={(wsId) => {
+          setLexiconStrongs(null);
+          setLexiconWordStudyId(null);
+          navigation.navigate('ExploreTab', { screen: 'WordStudyDetail', params: { wordId: wsId } });
+        }}
+        onConcordancePress={(params) => {
+          setLexiconStrongs(null);
+          setLexiconWordStudyId(null);
           navigation.navigate('ExploreTab', { screen: 'Concordance', params });
         }}
       />

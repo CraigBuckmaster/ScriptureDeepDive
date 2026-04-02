@@ -33,11 +33,12 @@ interface Props {
   onClose: () => void;
   onWordStudyPress?: (wordStudyId: string) => void;
   onConcordancePress?: (params: ConcordanceParams) => void;
+  onLexiconPress?: (strongs: string, wordStudyId: string | null) => void;
 }
 
 export function InterlinearSheet({
   visible, bookId, chapter, verse, verseRef,
-  onClose, onWordStudyPress, onConcordancePress,
+  onClose, onWordStudyPress, onConcordancePress, onLexiconPress,
 }: Props) {
   const { base } = useTheme();
   const [words, setWords] = useState<InterlinearWord[]>([]);
@@ -108,10 +109,14 @@ export function InterlinearSheet({
                     <TouchableOpacity
                       key={w.id}
                       style={[styles.wordCard, { backgroundColor: base.bg, borderColor: base.border }]}
-                      activeOpacity={w.word_study_id ? 0.7 : 1}
-                      onPress={w.word_study_id && onWordStudyPress
-                        ? () => onWordStudyPress(w.word_study_id!)
-                        : undefined}
+                      activeOpacity={w.strongs || w.word_study_id ? 0.7 : 1}
+                      onPress={
+                        w.strongs && onLexiconPress
+                          ? () => onLexiconPress(w.strongs!, w.word_study_id ?? null)
+                          : (w.word_study_id && onWordStudyPress
+                            ? () => onWordStudyPress(w.word_study_id!)
+                            : undefined)
+                      }
                       accessibilityRole="button"
                       accessibilityLabel={`${w.original}, ${w.transliteration}${w.gloss ? `, ${w.gloss}` : ''}`}
                     >
