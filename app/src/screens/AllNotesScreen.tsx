@@ -310,6 +310,8 @@ export default function AllNotesScreen() {
               key={tag}
               style={[styles.tagChip, { backgroundColor: base.bgElevated, borderColor: base.border }]}
               onPress={() => setSelectedTag(tag)}
+              accessibilityRole="button"
+              accessibilityLabel={`Filter by tag: ${tag}`}
             >
               <Text style={[styles.tagChipText, { color: base.goldDim }]}>#{tag}</Text>
             </TouchableOpacity>
@@ -334,7 +336,7 @@ export default function AllNotesScreen() {
           returnKeyType="search"
         />
         {searchQuery.length > 0 && (
-          <TouchableOpacity onPress={() => setSearchQuery('')} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}>
+          <TouchableOpacity onPress={() => setSearchQuery('')} hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }} accessibilityRole="button" accessibilityLabel="Clear search">
             <X size={16} color={base.textMuted} />
           </TouchableOpacity>
         )}
@@ -353,7 +355,7 @@ export default function AllNotesScreen() {
         }
         renderItem={({ item: group }) => (
           <View style={styles.group}>
-            <TouchableOpacity onPress={() => handleRefPress(group.key)}>
+            <TouchableOpacity onPress={() => handleRefPress(group.key)} accessibilityRole="button" accessibilityLabel={`Go to ${group.label}`}>
               <Text style={[styles.groupHeader, { color: base.gold, borderBottomColor: base.border + '60' }]}>{group.label}</Text>
             </TouchableOpacity>
 
@@ -361,7 +363,7 @@ export default function AllNotesScreen() {
               const noteTags = parseTags(note.tags_json);
               return (
                 <View key={note.id} style={[styles.noteCard, { backgroundColor: base.bgElevated, borderColor: editingId === note.id ? base.gold : base.border }]}>
-                  <TouchableOpacity onPress={() => handleRefPress(note.verse_ref)}>
+                  <TouchableOpacity onPress={() => handleRefPress(note.verse_ref)} accessibilityRole="button" accessibilityLabel={`Go to ${displayRef(note.verse_ref)}`}>
                     <Text style={[styles.noteRef, { color: base.gold }]}>{displayRef(note.verse_ref)}</Text>
                   </TouchableOpacity>
 
@@ -384,7 +386,7 @@ export default function AllNotesScreen() {
                       {/* Collection */}
                       <View style={[styles.metaSection, { borderTopColor: base.border }]}>
                         <Text style={[styles.metaLabel, { color: base.textMuted }]}>COLLECTION</Text>
-                        <TouchableOpacity style={[styles.collectionButton, { backgroundColor: base.bg }]} onPress={() => setShowCollectionPicker(true)}>
+                        <TouchableOpacity style={[styles.collectionButton, { backgroundColor: base.bg }]} onPress={() => setShowCollectionPicker(true)} accessibilityRole="button" accessibilityLabel="Choose collection">
                           {editCollection ? (
                             <View style={styles.collectionRow}>
                               <View style={[styles.colorDot, { backgroundColor: editCollection.color }]} />
@@ -401,7 +403,7 @@ export default function AllNotesScreen() {
                       <View style={[styles.metaSection, { borderTopColor: base.border }]}>
                         <View style={styles.metaHeader}>
                           <Text style={[styles.metaLabel, { color: base.textMuted }]}>LINKED NOTES</Text>
-                          <TouchableOpacity onPress={() => setShowLinkSheet(true)}>
+                          <TouchableOpacity onPress={() => setShowLinkSheet(true)} accessibilityRole="button" accessibilityLabel="Link another note">
                             <Text style={[styles.addLinkText, { color: base.gold }]}>+ Link</Text>
                           </TouchableOpacity>
                         </View>
@@ -410,7 +412,7 @@ export default function AllNotesScreen() {
                             <View key={linked.id} style={styles.linkedNoteRow}>
                               <Link size={12} color={base.goldDim} />
                               <Text style={[styles.linkedNoteRef, { color: base.goldDim }]}>{displayRef(linked.verse_ref)}</Text>
-                              <TouchableOpacity onPress={() => handleEditUnlink(linked.id)}>
+                              <TouchableOpacity onPress={() => handleEditUnlink(linked.id)} accessibilityRole="button" accessibilityLabel={`Unlink note ${displayRef(linked.verse_ref)}`}>
                                 <X size={14} color={base.textMuted} />
                               </TouchableOpacity>
                             </View>
@@ -422,17 +424,17 @@ export default function AllNotesScreen() {
 
                       {/* Actions */}
                       <View style={styles.noteFooter}>
-                        <TouchableOpacity onPress={() => handleUpdate(note.id)}>
+                        <TouchableOpacity onPress={() => handleUpdate(note.id)} accessibilityRole="button" accessibilityLabel="Save changes">
                           <Text style={[styles.doneText, { color: base.gold }]}>Done</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => handleDelete(note.id)}>
+                        <TouchableOpacity onPress={() => handleDelete(note.id)} accessibilityRole="button" accessibilityLabel="Delete note">
                           <Text style={styles.deleteText}>Delete</Text>
                         </TouchableOpacity>
                       </View>
                     </>
                   ) : (
                     <>
-                      <TouchableOpacity onPress={() => startEditing(note)}>
+                      <TouchableOpacity onPress={() => startEditing(note)} accessibilityRole="button" accessibilityLabel="Edit note">
                         <Text style={[styles.noteText, { color: base.textDim }]}>{note.note_text}</Text>
                       </TouchableOpacity>
 

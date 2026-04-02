@@ -37,7 +37,7 @@ export function ScholarInfoSheet({ visible, onClose, scholarId, onGoToFullBio }:
 
   return (
     <Modal visible={visible} transparent animationType="slide">
-      <TouchableOpacity style={{ flex: 1 }} activeOpacity={1} onPress={onClose} />
+      <TouchableOpacity style={{ flex: 1 }} activeOpacity={1} onPress={onClose} accessibilityRole="button" accessibilityLabel="Close scholar info" />
       <SafeAreaView style={{
         backgroundColor: base.bgElevated, borderTopLeftRadius: radii.lg, borderTopRightRadius: radii.lg,
         borderTopWidth: 1, borderColor: base.border, maxHeight: '60%',
@@ -66,7 +66,7 @@ export function ScholarInfoSheet({ visible, onClose, scholarId, onGoToFullBio }:
                 </Text>
               )}
               {onGoToFullBio && (
-                <TouchableOpacity onPress={() => { onGoToFullBio(scholarId!); onClose(); }} style={{ marginTop: spacing.md }}>
+                <TouchableOpacity onPress={() => { onGoToFullBio(scholarId!); onClose(); }} style={{ marginTop: spacing.md }} accessibilityRole="button" accessibilityLabel="See full biography">
                   <Text style={{ color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 13 }}>See full bio →</Text>
                 </TouchableOpacity>
               )}

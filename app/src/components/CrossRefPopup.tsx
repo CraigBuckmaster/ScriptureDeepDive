@@ -39,7 +39,7 @@ export function CrossRefPopup({ visible, onClose, reference, onGoToChapter }: Pr
 
   return (
     <Modal visible={visible} transparent animationType="fade">
-      <TouchableOpacity style={{ flex: 1, backgroundColor: '#00000088', justifyContent: 'center', alignItems: 'center' }} activeOpacity={1} onPress={onClose}>
+      <TouchableOpacity style={{ flex: 1, backgroundColor: '#00000088', justifyContent: 'center', alignItems: 'center' }} activeOpacity={1} onPress={onClose} accessibilityRole="button" accessibilityLabel="Close reference popup">
         <View style={{
           width: '85%', maxHeight: '60%', backgroundColor: base.bgElevated,
           borderRadius: radii.lg, borderWidth: 1, borderColor: base.border,
@@ -70,13 +70,13 @@ export function CrossRefPopup({ visible, onClose, reference, onGoToChapter }: Pr
           {/* Actions */}
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: spacing.md }}>
             {onGoToChapter && (
-              <TouchableOpacity onPress={() => { onGoToChapter(reference.bookId, reference.chapter); onClose(); }}>
+              <TouchableOpacity onPress={() => { onGoToChapter(reference.bookId, reference.chapter); onClose(); }} accessibilityRole="button" accessibilityLabel={`Go to ${refLabel} chapter`}>
                 <Text style={{ color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 13 }}>
                   Go to chapter →
                 </Text>
               </TouchableOpacity>
             )}
-            <TouchableOpacity onPress={onClose}>
+            <TouchableOpacity onPress={onClose} accessibilityRole="button" accessibilityLabel="Close">
               <Text style={{ color: base.textMuted, fontSize: 13 }}>Close</Text>
             </TouchableOpacity>
           </View>

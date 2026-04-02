@@ -91,7 +91,7 @@ export function QnavOverlay({
         {!search.trim() && (
           <View style={styles.toggleRow}>
             {(['ot', 'nt'] as const).map((t) => (
-              <TouchableOpacity key={t} onPress={() => setTestament(t)}>
+              <TouchableOpacity key={t} onPress={() => setTestament(t)} accessibilityRole="button" accessibilityLabel={t === 'ot' ? 'Old Testament' : 'New Testament'} accessibilityState={{ selected: testament === t }}>
                 <Text style={[styles.toggleLabel, { color: base.textMuted }, testament === t && { color: base.gold, borderBottomWidth: 2, borderBottomColor: base.gold }]}>
                   {t === 'ot' ? 'Old Testament' : 'New Testament'}
                 </Text>
@@ -112,6 +112,8 @@ export function QnavOverlay({
             <TouchableOpacity
               onPress={() => setExpandedBook(expandedBook === book.id ? null : book.id)}
               style={styles.bookRow}
+              accessibilityRole="button"
+              accessibilityLabel={`${book.name}, ${book.total_chapters} chapters${expandedBook === book.id ? ', expanded' : ''}`}
             >
               <Text style={[styles.bookName, { color: base.text }, !book.is_live && { color: base.textMuted }]}>
                 {book.name}
@@ -128,6 +130,8 @@ export function QnavOverlay({
                       key={ch}
                       onPress={() => book.is_live && handleSelect(book.id, ch)}
                       disabled={!book.is_live}
+                      accessibilityRole="button"
+                      accessibilityLabel={`Chapter ${ch}`}
                       style={[styles.chapterCell, { backgroundColor: base.bgElevated }, isCurrent && { backgroundColor: base.gold + '30', borderWidth: 1, borderColor: base.gold + '60' }]}
                     >
                       <Text style={[
