@@ -32,6 +32,10 @@ export {
   getAllDifficultPassages, getDifficultPassage, getDifficultPassagesByCategory,
   getDifficultPassagesForChapter,
 } from './features';
+export {
+  getDebateTopics, getDebateTopic, getDebateTopicsForChapter,
+  searchDebateTopics, getDebateTopicScholars,
+} from './debates';
 export { searchVerses, searchPeople } from './search';
 export { getContentStats } from './stats';
 export type { ContentStats } from './stats';
