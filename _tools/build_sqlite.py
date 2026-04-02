@@ -811,24 +811,88 @@ def populate_synoptic(cur):
     return count
 
 
+def _load_all_theme_scores():
+    """Load themes panel data from all chapter JSON files.
+
+    Returns dict: chapter_id -> [{label, score}, ...]
+    Handles both {label, score} and {name, value} key variants.
+    """
+    content_dir = ROOT / 'content'
+    themes = {}
+    for book_dir in sorted(content_dir.iterdir()):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'interlinear'):
+            continue
+        for ch_file in sorted(book_dir.glob('*.json')):
+            try:
+                data = json.loads(ch_file.read_text(encoding='utf-8'))
+            except Exception:
+                continue
+            if not isinstance(data, dict):
+                continue
+            theme_panel = data.get('chapter_panels', {}).get('themes')
+            if not theme_panel or not isinstance(theme_panel, dict):
+                continue
+            scores = theme_panel.get('scores', [])
+            chapter_id = f"{book_dir.name}_{ch_file.stem}"
+            normalized = []
+            for s in scores:
+                if not isinstance(s, dict):
+                    continue
+                label = s.get('label') or s.get('name', '')
+                score = s.get('score') or s.get('value', 0)
+                if label and score:
+                    normalized.append({'label': label.lower(), 'score': score})
+            if normalized:
+                themes[chapter_id] = normalized
+    return themes
+
+
+def _generate_relevant_chapters(topic_tags, all_themes, limit=10):
+    """Match topic tags against chapter theme labels, return top chapters by score."""
+    scores = {}
+    tags_lower = [t.lower() for t in topic_tags]
+    for chapter_id, theme_scores in all_themes.items():
+        for ts in theme_scores:
+            label = ts['label']
+            for tag in tags_lower:
+                if tag in label or label in tag:
+                    scores[chapter_id] = scores.get(chapter_id, 0) + ts['score']
+                    break  # avoid double-counting same label for multiple matching tags
+    return sorted(scores, key=scores.get, reverse=True)[:limit]
+
+
 def populate_topics(cur):
     path = META / 'topics.json'
     if not path.exists():
         return 0
     entries = _load_json(path)
+
+    # Load all theme scores for relevant chapter auto-generation
+    all_themes = _load_all_theme_scores()
+
     count = 0
     for t in entries:
+        # Auto-generate relevant_chapters if not manually specified
+        tags = t.get('tags', [])
+        manual_chapters = t.get('relevant_chapters', [])
+        if manual_chapters:
+            relevant = manual_chapters
+        elif tags and all_themes:
+            relevant = _generate_relevant_chapters(tags, all_themes)
+        else:
+            relevant = []
+
         cur.execute(
             'INSERT INTO topics (id, title, category, description, tags_json, subtopics_json, '
             'related_concept_ids_json, related_thread_ids_json, related_prophecy_ids_json, '
             'relevant_chapters_json) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
             (t['id'], t['title'], t['category'], t['description'],
-             _json_str(t.get('tags', [])),
+             _json_str(tags),
              _json_str(t.get('subtopics', [])),
              _json_str(t.get('related_concept_ids', [])),
              _json_str(t.get('related_thread_ids', [])),
              _json_str(t.get('related_prophecy_ids', [])),
-             _json_str(t.get('relevant_chapters', [])))
+             _json_str(relevant))
         )
         count += 1
 
