@@ -22,6 +22,11 @@ jest.mock('expo-splash-screen', () => ({
   hideAsync: jest.fn(),
 }));
 
+// Mock useAvailableVoices (depends on expo-speech native)
+jest.mock('@/hooks/useAvailableVoices', () => ({
+  useAvailableVoices: jest.fn().mockReturnValue([]),
+}));
+
 // Mock expo-av
 jest.mock('expo-av', () => ({
   Audio: {
