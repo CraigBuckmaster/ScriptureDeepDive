@@ -2,14 +2,36 @@
  * useTTS — Text-to-speech hook wrapping expo-speech.
  * Auto-advances through verses, supports speed control and voice selection.
  *
+ * Uses expo-av to set audio mode so speech plays through the MEDIA channel
+ * and ignores the iOS mute switch. Without this, expo-speech uses the
+ * ringtone channel which is silenced by the hardware mute toggle.
+ *
  * Note: expo-speech has no native pause/resume. "Pause" stops the current
  * utterance and remembers the verse index. "Play" restarts from that verse.
  */
 
 import { useState, useCallback, useRef, useEffect } from 'react';
+import { Platform } from 'react-native';
 import * as Speech from 'expo-speech';
+import { Audio } from 'expo-av';
 import { logger } from '../utils/logger';
 import type { Verse } from '../types';
+
+/**
+ * Configure audio session to play through the media channel.
+ * This makes expo-speech ignore the iOS mute switch.
+ */
+async function enableMediaAudio(): Promise<void> {
+  try {
+    await Audio.setAudioModeAsync({
+      playsInSilentModeIOS: true,
+      staysActiveInBackground: false,
+      shouldDuckAndroid: true,
+    });
+  } catch (err) {
+    logger.warn('TTS', 'Failed to set audio mode', err);
+  }
+}
 
 export function useTTS(verses: Verse[], voiceId?: string) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -58,11 +80,13 @@ export function useTTS(verses: Verse[], voiceId?: string) {
     });
   }, [speed]);
 
-  const play = useCallback(() => {
+  const play = useCallback(async () => {
     if (versesRef.current.length === 0) {
       logger.warn('TTS', 'No verses to speak');
       return;
     }
+    // Enable media audio so speech plays even with mute switch on
+    await enableMediaAudio();
     setIsPlaying(true);
     speakVerse(currentVerse);
   }, [currentVerse, speakVerse]);

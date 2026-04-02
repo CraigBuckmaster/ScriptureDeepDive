@@ -22,6 +22,13 @@ jest.mock('expo-splash-screen', () => ({
   hideAsync: jest.fn(),
 }));
 
+// Mock expo-av
+jest.mock('expo-av', () => ({
+  Audio: {
+    setAudioModeAsync: jest.fn().mockResolvedValue(undefined),
+  },
+}));
+
 // Mock expo-speech
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),

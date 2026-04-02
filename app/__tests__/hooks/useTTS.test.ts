@@ -22,19 +22,19 @@ describe('useTTS', () => {
     expect(result.current.speed).toBe(1.0);
   });
 
-  it('play sets isPlaying to true', () => {
+  it('play sets isPlaying to true', async () => {
     const { result } = renderHook(() => useTTS(mockVerses));
-    act(() => {
-      result.current.play();
+    await act(async () => {
+      await result.current.play();
     });
     expect(result.current.isPlaying).toBe(true);
     expect(Speech.speak).toHaveBeenCalled();
   });
 
-  it('pause sets isPlaying to false and stops speech', () => {
+  it('pause sets isPlaying to false and stops speech', async () => {
     const { result } = renderHook(() => useTTS(mockVerses));
-    act(() => {
-      result.current.play();
+    await act(async () => {
+      await result.current.play();
     });
     act(() => {
       result.current.pause();
