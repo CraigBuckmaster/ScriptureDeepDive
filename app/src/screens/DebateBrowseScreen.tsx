@@ -5,23 +5,13 @@
  * Card shows title, book/chapter, position count, and tradition dots.
  */
 
-import React, { useCallback, useMemo, useRef } from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  FlatList,
-  ScrollView,
-  StyleSheet,
-  ActivityIndicator,
-} from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React, { useCallback } from 'react';
+import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { ChevronLeft, Search, X } from 'lucide-react-native';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { families } from '../theme/colors';
 import { useDebateTopics, DEBATE_CATEGORY_LABELS } from '../hooks/useDebateTopics';
+import { BrowseScreenTemplate } from '../components/BrowseScreenTemplate';
 import type { DebateTopicSummary } from '../types';
 import type { ScreenNavProp } from '../navigation/types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
@@ -61,7 +51,6 @@ function DebateBrowseScreen() {
     setCategoryFilter,
     categories,
   } = useDebateTopics();
-  const inputRef = useRef<TextInput>(null);
 
   const handleTopicPress = useCallback(
     (topic: DebateTopicSummary) => {
@@ -115,142 +104,72 @@ function DebateBrowseScreen() {
     [base, handleTopicPress]
   );
 
-  return (
-    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      {/* Header */}
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backBtn}>
-          <ChevronLeft size={22} color={base.gold} />
-        </TouchableOpacity>
-        <Text style={[styles.title, { color: base.gold }]}>Scholar Debates</Text>
-      </View>
-
-      {/* Search */}
-      <View style={[styles.searchRow, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
-        <Search size={16} color={base.textMuted} />
-        <TextInput
-          ref={inputRef}
-          value={search}
-          onChangeText={setSearch}
-          placeholder="Search debates..."
-          placeholderTextColor={base.textMuted}
-          style={[styles.searchInput, { color: base.text }]}
-          autoCorrect={false}
-          returnKeyType="search"
-        />
-        {search.length > 0 && (
-          <TouchableOpacity onPress={() => setSearch('')}>
-            <X size={16} color={base.textMuted} />
-          </TouchableOpacity>
-        )}
-      </View>
-
-      {/* Category filter chips */}
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.chipRow}
+  const filterBar = (
+    <ScrollView
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      contentContainerStyle={styles.chipRow}
+    >
+      <TouchableOpacity
+        onPress={() => setCategoryFilter('all')}
+        style={[
+          styles.chip,
+          {
+            backgroundColor: categoryFilter === 'all' ? base.gold : base.gold + '15',
+            borderColor: base.gold + '40',
+          },
+        ]}
       >
-        <TouchableOpacity
-          onPress={() => setCategoryFilter('all')}
-          style={[
-            styles.chip,
-            {
-              backgroundColor: categoryFilter === 'all' ? base.gold : base.gold + '15',
-              borderColor: base.gold + '40',
-            },
-          ]}
-        >
-          <Text style={[styles.chipText, { color: categoryFilter === 'all' ? base.bg : base.gold }]}>
-            All
-          </Text>
-        </TouchableOpacity>
-        {categories.map((cat) => {
-          const active = categoryFilter === cat;
-          const color = CATEGORY_COLORS[cat] || base.gold;
-          return (
-            <TouchableOpacity
-              key={cat}
-              onPress={() => setCategoryFilter(cat)}
-              style={[
-                styles.chip,
-                {
-                  backgroundColor: active ? color : color + '15',
-                  borderColor: color + '40',
-                },
-              ]}
-            >
-              <Text style={[styles.chipText, { color: active ? '#fff' : color }]}>
-                {DEBATE_CATEGORY_LABELS[cat] || cat}
-              </Text>
-            </TouchableOpacity>
-          );
-        })}
-      </ScrollView>
+        <Text style={[styles.chipText, { color: categoryFilter === 'all' ? base.bg : base.gold }]}>
+          All
+        </Text>
+      </TouchableOpacity>
+      {categories.map((cat) => {
+        const active = categoryFilter === cat;
+        const color = CATEGORY_COLORS[cat] || base.gold;
+        return (
+          <TouchableOpacity
+            key={cat}
+            onPress={() => setCategoryFilter(cat)}
+            style={[
+              styles.chip,
+              {
+                backgroundColor: active ? color : color + '15',
+                borderColor: color + '40',
+              },
+            ]}
+          >
+            <Text style={[styles.chipText, { color: active ? '#fff' : color }]}>
+              {DEBATE_CATEGORY_LABELS[cat] || cat}
+            </Text>
+          </TouchableOpacity>
+        );
+      })}
+    </ScrollView>
+  );
 
-      {/* Content */}
-      {loading ? (
-        <View style={styles.center}>
-          <ActivityIndicator color={base.gold} />
-        </View>
-      ) : topics.length === 0 ? (
-        <View style={styles.center}>
-          <Text style={[styles.emptyText, { color: base.textDim }]}>
-            No debates found.
-          </Text>
-        </View>
-      ) : (
-        <FlatList
-          data={topics}
-          keyExtractor={(item) => item.id}
-          renderItem={renderCard}
-          contentContainerStyle={styles.list}
-        />
-      )}
-    </SafeAreaView>
+  return (
+    <BrowseScreenTemplate<DebateTopicSummary>
+      title="Scholar Debates"
+      loading={loading}
+      search={search}
+      onSearchChange={setSearch}
+      searchPlaceholder="Search debates..."
+      filterBar={filterBar}
+      data={topics}
+      renderItem={renderCard}
+      keyExtractor={(item) => item.id}
+      emptyMessage="No debates found."
+      contentContainerStyle={styles.list}
+    />
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: spacing.sm,
-    paddingVertical: spacing.sm,
-  },
-  backBtn: {
-    padding: spacing.xs,
-    marginRight: spacing.xs,
-  },
-  title: {
-    fontFamily: fontFamily.displaySemiBold,
-    fontSize: 20,
-  },
-  searchRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginHorizontal: spacing.md,
-    marginBottom: spacing.xs,
-    paddingHorizontal: spacing.sm,
-    paddingVertical: 8,
-    borderRadius: radii.md,
-    borderWidth: 1,
-    gap: 8,
-  },
-  searchInput: {
-    flex: 1,
-    fontFamily: fontFamily.ui,
-    fontSize: 14,
-    padding: 0,
-  },
   chipRow: {
     flexDirection: 'row',
     gap: 8,
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.xs,
+    paddingBottom: spacing.xs,
   },
   chip: {
     paddingHorizontal: 12,
@@ -305,17 +224,6 @@ const styles = StyleSheet.create({
     width: 8,
     height: 8,
     borderRadius: 4,
-  },
-  center: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: spacing.xl,
-  },
-  emptyText: {
-    fontFamily: fontFamily.ui,
-    fontSize: 14,
-    textAlign: 'center',
   },
 });
 

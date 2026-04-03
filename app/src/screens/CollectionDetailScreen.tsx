@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
   FlatList,
   Alert,
+  ActivityIndicator,
   StyleSheet,
   Share,
 } from 'react-native';
@@ -38,6 +39,7 @@ function CollectionDetailScreen() {
 
   const [collection, setCollection] = useState<StudyCollection | null>(null);
   const [notes, setNotes] = useState<UserNote[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const reload = useCallback(async () => {
     if (!collectionId) return;
@@ -47,6 +49,7 @@ function CollectionDetailScreen() {
     ]);
     setCollection(col);
     setNotes(noteList);
+    setLoading(false);
   }, [collectionId]);
 
   useEffect(() => {
@@ -113,6 +116,8 @@ function CollectionDetailScreen() {
       return [];
     }
   };
+
+  if (loading) return <View style={[styles.container, { backgroundColor: base.bg, justifyContent: 'center', alignItems: 'center' }]}><ActivityIndicator color={base.gold} /></View>;
 
   if (!collection) {
     return (

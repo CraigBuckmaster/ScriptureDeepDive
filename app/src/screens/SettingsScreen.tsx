@@ -80,7 +80,7 @@ function SettingsScreen() {
   const [exporting, setExporting] = useState(false);
 
   useEffect(() => {
-    getContentStats().then(setStats).catch(() => {});
+    getContentStats().then(setStats).catch((err) => { logger.warn('SettingsScreen', 'Failed to load content stats', err); });
   }, []);
 
   /* ── Data actions ───────────────────────────────────────────── */

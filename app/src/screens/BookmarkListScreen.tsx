@@ -3,7 +3,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, FlatList, Alert, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, Alert, ActivityIndicator, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
@@ -18,8 +18,9 @@ function BookmarkListScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'Bookmarks'>>();
   const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const reload = () => getBookmarks().then(setBookmarks);
+  const reload = () => getBookmarks().then(setBookmarks).finally(() => setLoading(false));
   useEffect(() => { reload(); }, []);
 
   const handleDelete = (id: number) => {
@@ -28,6 +29,8 @@ function BookmarkListScreen() {
       { text: 'Remove', style: 'destructive', onPress: async () => { await removeBookmark(id); reload(); } },
     ]);
   };
+
+  if (loading) return <View style={[styles.container, { backgroundColor: base.bg, justifyContent: 'center', alignItems: 'center' }]}><ActivityIndicator color={base.gold} /></View>;
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>

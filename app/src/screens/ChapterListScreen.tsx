@@ -7,7 +7,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, ActivityIndicator, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
@@ -39,7 +39,7 @@ function ChapterListScreen() {
     }
   }, [bookId]);
 
-  if (!book) return <View style={[styles.container, { backgroundColor: base.bg }]} />;
+  if (!book) return <View style={[styles.container, { backgroundColor: base.bg, justifyContent: 'center', alignItems: 'center' }]}><ActivityIndicator color={base.gold} /></View>;
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>

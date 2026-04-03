@@ -4,27 +4,24 @@
  * ~3,900 entries from Easton's Bible Dictionary (1897). Search by term or
  * definition text via FTS5. Cross-link badges show when an entry overlaps
  * with People, Places, Word Studies, or Concepts.
+ *
+ * NOTE: This screen has a dual-mode layout (SectionList for browsing,
+ * FlatList for search results) with an AlphabetBar, so it uses
+ * BrowseScreenTemplate in a more customized way via the renderItem-only
+ * approach, keeping the AlphabetBar as a filter bar.
  */
 
 import React, { useState, useCallback, useRef } from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  SectionList,
-  FlatList,
-  StyleSheet,
-  ActivityIndicator,
-} from 'react-native';
+import { View, Text, TouchableOpacity, SectionList, FlatList, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
-import { ChevronLeft, Search, X } from 'lucide-react-native';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { AlphabetBar } from '../components/AlphabetBar';
+import { ScreenHeader } from '../components/ScreenHeader';
+import { SearchInput } from '../components/SearchInput';
+import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { useDictionaryBrowse, type DictionarySection } from '../hooks/useDictionary';
 import type { DictionaryEntryParsed } from '../types/dictionary';
-import { CATEGORY_LABELS, type DictionaryCategory } from '../types/dictionary';
 import type { ScreenNavProp } from '../navigation/types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
@@ -44,7 +41,6 @@ function DictionaryBrowseScreen() {
 
   const [activeLetter, setActiveLetter] = useState<string | null>(null);
   const sectionListRef = useRef<SectionList>(null);
-  const inputRef = useRef<TextInput>(null);
 
   const handleLetterSelect = useCallback(
     (letter: string) => {
@@ -110,34 +106,24 @@ function DictionaryBrowseScreen() {
 
   const isSearching = searchQuery.length >= 2;
 
+  // Dictionary has a unique dual-mode layout (SectionList + AlphabetBar vs FlatList search)
+  // that doesn't cleanly fit the generic template, so we keep a lightweight custom shell
+  // but still use ScreenHeader + SearchInput for consistency.
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      {/* Header */}
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backBtn}>
-          <ChevronLeft size={22} color={base.gold} />
-        </TouchableOpacity>
-        <Text style={[styles.title, { color: base.gold }]}>Bible Dictionary</Text>
-      </View>
-
-      {/* Search */}
-      <View style={[styles.searchRow, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
-        <Search size={16} color={base.textMuted} />
-        <TextInput
-          ref={inputRef}
-          value={searchQuery}
-          onChangeText={setSearchQuery}
-          placeholder="Search dictionary..."
-          placeholderTextColor={base.textMuted}
-          style={[styles.searchInput, { color: base.text }]}
-          autoCorrect={false}
-          returnKeyType="search"
+      <View style={styles.topSection}>
+        <ScreenHeader
+          title="Bible Dictionary"
+          onBack={() => navigation.goBack()}
+          style={styles.headerSpacing}
         />
-        {searchQuery.length > 0 && (
-          <TouchableOpacity onPress={() => setSearchQuery('')}>
-            <X size={16} color={base.textMuted} />
-          </TouchableOpacity>
-        )}
+        <View style={styles.searchWrap}>
+          <SearchInput
+            value={searchQuery}
+            onChangeText={setSearchQuery}
+            placeholder="Search dictionary..."
+          />
+        </View>
       </View>
 
       {/* Alphabet bar (hidden during search) */}
@@ -151,8 +137,8 @@ function DictionaryBrowseScreen() {
 
       {/* Content */}
       {isLoading ? (
-        <View style={styles.center}>
-          <ActivityIndicator color={base.gold} />
+        <View style={styles.loadingPad}>
+          <LoadingSkeleton lines={6} />
         </View>
       ) : isSearching ? (
         searchResults && searchResults.length > 0 ? (
@@ -192,36 +178,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: spacing.sm,
-    paddingVertical: spacing.sm,
+  topSection: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.lg,
   },
-  backBtn: {
-    padding: spacing.xs,
-    marginRight: spacing.xs,
+  headerSpacing: {
+    marginBottom: spacing.md,
   },
-  title: {
-    fontFamily: fontFamily.displaySemiBold,
-    fontSize: 20,
+  searchWrap: {
+    marginBottom: spacing.sm,
   },
-  searchRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginHorizontal: spacing.md,
-    marginBottom: spacing.xs,
-    paddingHorizontal: spacing.sm,
-    paddingVertical: 8,
-    borderRadius: radii.md,
-    borderWidth: 1,
-    gap: 8,
-  },
-  searchInput: {
-    flex: 1,
-    fontFamily: fontFamily.ui,
-    fontSize: 14,
-    padding: 0,
+  loadingPad: {
+    padding: spacing.lg,
   },
   sectionHeader: {
     paddingHorizontal: spacing.md,
