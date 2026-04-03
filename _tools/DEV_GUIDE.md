@@ -380,13 +380,13 @@ Hard-won lessons from building 66 books. Still relevant for enrichment scripts.
 
 ## Known Debt & Future Work
 
-Items deferred from completed audits. Not bugs — polish for when bandwidth allows.
+All work items are tracked as GitHub issues on the **Companion Study Kanban**. Check the board for current priorities.
 
 **Accessibility:**
 - Dynamic type integration — font scaling is manual via Settings slider, not linked to system accessibility font size. To fix: read the system font scale from `PixelRatio.getFontScale()` and apply it as a multiplier to `fontSize` values.
 - Screen reader navigation order — not explicitly defined for complex screens like `ChapterScreen` with multiple expandable panels. To fix: add `accessibilityOrder` or manual `accessible` grouping so VoiceOver/TalkBack reads in a logical sequence.
 
-**Styling (Phase 4 — ongoing):**
-- 297 inline `style={{ }}` objects remain across components. Migrate to `StyleSheet.create()` opportunistically when editing files.
+**Styling:**
+- ~277 inline `style={{ }}` objects remain across components ([#111](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/111)). Migrate to `StyleSheet.create()` opportunistically when editing files.
 - 13 `useNavigation<any>` remain in nav-only screens (no route params to mistype — low risk).
 - 16 explicit `: any` types remain (e.g., `SectionWithPanels.panels`, `PanelRenderer.data`). Type properly when touching those files.
