@@ -118,6 +118,11 @@ const GRID_FEATURES: Feature[] = [
     subtitle: 'Discoveries that illuminate the biblical world',
     screen: 'ArchaeologyBrowse',
   },
+  {
+    title: 'Time-Travel Reader',
+    subtitle: 'How passages were understood across church history',
+    screen: 'TimeTravelBrowse',
+  },
 ];
 
 function ExploreMenuScreen() {
