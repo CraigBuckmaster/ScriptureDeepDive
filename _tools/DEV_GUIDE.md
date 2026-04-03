@@ -148,16 +148,20 @@ const { bookId, chapterNum } = route.params ?? {}; // compiles but may crash
 
 ## 5. Theming
 
-**Rule:** Never hardcode color hex values. Use `base.*` tokens from `app/src/theme/colors.ts`.
+**Rule:** Never hardcode color hex values. Access `base.*` tokens via the `useTheme()` hook.
 
-**Why:** The gold color swap touched 6 files and cascaded to 100+ usages because everything uses tokens. Hardcoded hex values get left behind and create visual inconsistencies.
+**Why:** The gold color swap touched 6 files and cascaded to 100+ usages because everything uses tokens. Hardcoded hex values get left behind and create visual inconsistencies. The static `base` export was removed from `theme/index.ts` (T6) — all colors must come from the hook so they respond to Dark/Sepia/Light mode.
 
 ```typescript
-// Do
-import { base } from '../theme';
+// Do — theme-aware colors via hook
+import { useTheme } from '../theme';
+const { base } = useTheme();
 color: base.gold
 
-// Don't
+// Don't — static import (removed)
+import { base } from '../theme';
+
+// Don't — hardcoded hex
 color: '#bfa050'
 color: '#c9a84c'
 ```
