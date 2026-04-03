@@ -138,6 +138,9 @@ jest.mock('@/db/user', () => ({
   setHighlight: jest.fn(),
   removeHighlight: jest.fn(),
   getHighlightsForChapter: jest.fn().mockResolvedValue([]),
+  getBookmarks: jest.fn().mockResolvedValue([]),
+  addBookmark: jest.fn().mockResolvedValue(undefined),
+  removeBookmark: jest.fn().mockResolvedValue(undefined),
 }));
 
 // Stub all child components to avoid deep dependency trees
