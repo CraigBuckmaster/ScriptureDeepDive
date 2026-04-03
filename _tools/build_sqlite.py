@@ -924,8 +924,7 @@ def populate_topics(cur):
     cur.execute("""
         CREATE VIRTUAL TABLE IF NOT EXISTS topics_fts USING fts5(
             title, description, tags,
-            content=topics,
-            content_rowid=rowid,
+            content='',
             tokenize='porter unicode61'
         )
     """)
