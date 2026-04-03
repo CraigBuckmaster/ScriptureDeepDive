@@ -12,6 +12,7 @@
 import { getUserDb } from './userDatabase';
 import { getDb } from './database';
 import { chapterPrefix, formatVerseRef } from '../utils/verseRef';
+import { escapeLike } from '../utils/escapeLike';
 import type { UserNote, ReadingProgress, Bookmark, RecentChapter, StudyCollection, NoteLink } from '../types';
 
 // ── Notes ───────────────────────────────────────────────────────────
@@ -76,8 +77,8 @@ export async function getAllNotes(): Promise<UserNote[]> {
 
 export async function searchNotes(query: string): Promise<UserNote[]> {
   return getUserDb().getAllAsync<UserNote>(
-    "SELECT * FROM user_notes WHERE note_text LIKE ? OR verse_ref LIKE ? ORDER BY verse_ref",
-    [`%${query}%`, `%${query}%`]
+    "SELECT * FROM user_notes WHERE note_text LIKE ? ESCAPE '\\' OR verse_ref LIKE ? ESCAPE '\\' ORDER BY verse_ref",
+    [`%${escapeLike(query)}%`, `%${escapeLike(query)}%`]
   );
 }
 
@@ -537,8 +538,8 @@ export async function updateNoteTags(noteId: number, tags: string[]): Promise<vo
 export async function getNotesByTag(tag: string): Promise<UserNote[]> {
   // Use JSON LIKE search — fine for small datasets
   return getUserDb().getAllAsync<UserNote>(
-    "SELECT * FROM user_notes WHERE tags_json LIKE ? ORDER BY verse_ref",
-    [`%"${tag}"%`]
+    "SELECT * FROM user_notes WHERE tags_json LIKE ? ESCAPE '\\' ORDER BY verse_ref",
+    [`%"${escapeLike(tag)}"%`]
   );
 }
 

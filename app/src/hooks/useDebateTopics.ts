@@ -61,12 +61,16 @@ export function useDebateTopics(): UseDebateTopicsResult {
       setSearchResults([]);
       return;
     }
+    let cancelled = false;
     if (debounceRef.current) clearTimeout(debounceRef.current);
     debounceRef.current = setTimeout(async () => {
       const results = await searchDebateTopics(search);
-      setSearchResults(results);
+      if (!cancelled) setSearchResults(results);
     }, 200);
-    return () => { if (debounceRef.current) clearTimeout(debounceRef.current); };
+    return () => {
+      cancelled = true;
+      if (debounceRef.current) clearTimeout(debounceRef.current);
+    };
   }, [search]);
 
   const topics = useMemo(() => {
@@ -139,7 +143,11 @@ export function useChapterDebateTopics(
       setTopics([]);
       return;
     }
-    getDebateTopicsForChapter(bookId, chapterNum).then(setTopics);
+    let cancelled = false;
+    getDebateTopicsForChapter(bookId, chapterNum).then((t) => {
+      if (!cancelled) setTopics(t);
+    });
+    return () => { cancelled = true; };
   }, [bookId, chapterNum]);
 
   return topics;

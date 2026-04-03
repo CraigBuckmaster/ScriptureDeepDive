@@ -14,9 +14,9 @@
  */
 
 // ── Configuration ──────────────────────────────────────────────
-const CONFIGURED = false;
-const SUPABASE_URL = 'https://your-project.supabase.co';
-const SUPABASE_ANON_KEY = 'your-anon-key';
+const CONFIGURED = !!process.env.SUPABASE_URL;
+const SUPABASE_URL = process.env.SUPABASE_URL ?? '';
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY ?? '';
 // ───────────────────────────────────────────────────────────────
 
 let _client: any = null;

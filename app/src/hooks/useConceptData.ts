@@ -5,7 +5,7 @@
  * and top chapters by theme score in parallel.
  */
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { getDb } from '../db/database';
 import { logger } from '../utils/logger';
 
@@ -91,8 +91,10 @@ export function useConceptData(conceptId: string | undefined): ConceptData {
   const [topChapters, setTopChapters] = useState<ChapterThemeMatch[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const cancelRef = useRef(false);
 
   const loadData = useCallback(async () => {
+    cancelRef.current = false;
     if (!conceptId) {
       setLoading(false);
       return;
@@ -142,6 +144,7 @@ export function useConceptData(conceptId: string | undefined): ConceptData {
         tags: JSON.parse(conceptRow.tags_json || '[]'),
         journey_stops: JSON.parse(conceptRow.journey_stops_json || '[]'),
       };
+      if (cancelRef.current) return;
       setConcept(conceptData);
 
       // 2. Parallel queries for linked data
@@ -264,6 +267,7 @@ export function useConceptData(conceptId: string | undefined): ConceptData {
       }
 
       await Promise.all(queries);
+      if (cancelRef.current) return;
       setLoading(false);
     } catch (err) {
       logger.error('useConceptData', 'Failed to load concept data', err);
@@ -273,7 +277,9 @@ export function useConceptData(conceptId: string | undefined): ConceptData {
   }, [conceptId]);
 
   useEffect(() => {
+    cancelRef.current = false;
     loadData();
+    return () => { cancelRef.current = true; };
   }, [loadData]);
 
   return {
