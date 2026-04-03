@@ -35,7 +35,7 @@ import { getContentStats, type ContentStats } from '../db/content';
 import { getUserDb } from '../db/userDatabase';
 import { exportStudyData, ExportError } from '../utils/exportData';
 import { useAvailableVoices } from '../hooks/useAvailableVoices';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { logger } from '../utils/logger';
 
 const APP_VERSION = require('../../app.json').expo.version ?? '1.0.0';
@@ -280,13 +280,13 @@ export default function SettingsScreen() {
           {/* Destructive actions */}
           <View style={[styles.dangerZone, { borderTopColor: base.border + '40' }]}>
             <TouchableOpacity onPress={handleClearHistory} style={styles.dangerRow}>
-              <Text style={styles.dangerText}>Clear Reading History</Text>
+              <Text style={[styles.dangerText, { color: base.danger }]}>Clear Reading History</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={handleClearNotes} style={styles.dangerRow}>
-              <Text style={styles.dangerText}>Clear All Notes</Text>
+              <Text style={[styles.dangerText, { color: base.danger }]}>Clear All Notes</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={handleClearBookmarks} style={styles.dangerRow}>
-              <Text style={styles.dangerText}>Clear All Bookmarks</Text>
+              <Text style={[styles.dangerText, { color: base.danger }]}>Clear All Bookmarks</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -622,7 +622,6 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.sm + 2,
   },
   dangerText: {
-    color: base.danger,
     fontFamily: fontFamily.uiMedium,
     fontSize: 14,
   },

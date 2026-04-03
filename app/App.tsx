@@ -7,7 +7,8 @@ import * as SplashScreen from 'expo-splash-screen';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { NavigationContainer, DarkTheme, DefaultTheme } from '@react-navigation/native';
 
-import { FONT_MAP, base, ThemeProvider, useTheme } from './src/theme';
+import { FONT_MAP, ThemeProvider, useTheme } from './src/theme';
+import { base } from './src/theme/colors';
 import { initDatabase } from './src/db/database';
 import { initUserDatabase } from './src/db/userDatabase';
 import { useSettingsStore, useAuthStore } from './src/stores';

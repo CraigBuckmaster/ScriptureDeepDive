@@ -9,7 +9,7 @@ import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { getRecentChapters, getReadingStats } from '../db/user';
 import { ScreenHeader } from '../components/ScreenHeader';
-import { base, useTheme, spacing, fontFamily } from '../theme';
+import { useTheme, spacing, fontFamily } from '../theme';
 import type { RecentChapter } from '../types';
 import type { ReadingStats } from '../db/user';
 

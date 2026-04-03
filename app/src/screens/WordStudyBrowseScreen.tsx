@@ -11,7 +11,7 @@ import { useWordStudies } from '../hooks/useWordStudies';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { SearchInput } from '../components/SearchInput';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { logger } from '../utils/logger';
 
 export default function WordStudyBrowseScreen() {

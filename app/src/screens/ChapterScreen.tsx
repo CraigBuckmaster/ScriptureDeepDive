@@ -47,7 +47,7 @@ import { TTSControls } from '../components/TTSControls';
 import { useTTS } from '../hooks/useTTS';
 
 import { TRANSLATION_MAP } from '../db/translationRegistry';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 // Enable LayoutAnimation on Android
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {

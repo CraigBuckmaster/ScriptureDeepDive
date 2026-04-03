@@ -5,7 +5,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Play, Pause, SkipBack, SkipForward, X } from 'lucide-react-native';
-import { base, useTheme, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
+import { useTheme, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
 
 const SPEEDS = [0.5, 0.75, 1.0, 1.25, 1.5];
 

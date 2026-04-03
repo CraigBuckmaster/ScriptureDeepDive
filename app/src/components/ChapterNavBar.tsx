@@ -15,7 +15,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft, ChevronLeft, ChevronRight, Info, Volume2, Check } from 'lucide-react-native';
 import { CompactDropdown, type DropdownOption } from './CompactDropdown';
 import { lightImpact, selectionFeedback } from '../utils/haptics';
-import { base, useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import { TRANSLATIONS } from '../db/translationRegistry';
 
 const TRANSLATION_OPTIONS: DropdownOption[] = TRANSLATIONS.map((t) => ({

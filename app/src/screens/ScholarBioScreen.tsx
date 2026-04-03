@@ -10,7 +10,7 @@ import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { getScholar, getAllScholars } from '../db/content';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { Scholar, ScholarBio } from '../types';
 import { logger } from '../utils/logger';
 

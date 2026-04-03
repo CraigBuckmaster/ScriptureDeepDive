@@ -26,7 +26,7 @@ import {
   updateNoteTags,
 } from '../db/user';
 import { displayRef, parseVerseRef } from '../utils/verseRef';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { StudyCollection, UserNote } from '../types';
 
 export default function CollectionDetailScreen() {
