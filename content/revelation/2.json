@@ -660,5 +660,17 @@
       }
     ]
   },
-  "vhl_groups": []
+  "vhl_groups": [],
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Each letter follows a pattern: 'I know' (commendation or critique), 'But I have this against you' (if applicable), 'Repent' (command), 'To the one who conquers' (promise). Christ knows each church intimately — their works, their struggles, their failures. The ascended Lord hasn't stopped noticing.",
+      "genre_tag": "literary_pattern"
+    },
+    {
+      "after_section": 2,
+      "tip": "Ephesus abandoned first love (v. 4), Smyrna faces suffering, Pergamum tolerates false teaching, Thyatira tolerates a false prophetess. The critiques vary: some churches face external pressure (Smyrna), others internal compromise (Pergamum, Thyatira). Christ diagnoses differently because situations differ. One prescription doesn't fit all.",
+      "genre_tag": "close_reading"
+    }
+  ]
 }

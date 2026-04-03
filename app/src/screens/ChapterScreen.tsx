@@ -17,7 +17,7 @@ import { useChapterData } from '../hooks/useChapterData';
 import { useSwipeNavigation } from '../hooks/useSwipeNavigation';
 import { useNotedVerses } from '../hooks/useNotedVerses';
 import { useReaderStore, useSettingsStore } from '../stores';
-import { recordVisit } from '../db/user';
+import { recordVisit, completePlanDay } from '../db/user';
 import { GenreBanner } from '../components/GenreBanner';
 import { useStudyDepth } from '../hooks/useStudyDepth';
 import { useStudyRecorder } from '../hooks/useStudyRecorder';
@@ -61,7 +61,7 @@ function ChapterScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Read', 'Chapter'>>();
   const route = useRoute<ScreenRouteProp<'Read', 'Chapter'>>();
-  const { bookId, chapterNum, openPanel } = route.params ?? {};
+  const { bookId, chapterNum, openPanel, planId, planDayNum } = route.params ?? {};
 
   const fontSize = useSettingsStore((s) => s.fontSize);
   const translation = useSettingsStore((s) => s.translation);
@@ -132,6 +132,20 @@ function ChapterScreen() {
   const [bookData, setBookData] = React.useState<Book | null>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [dismissedTips, setDismissedTips] = useState<Set<number>>(new Set());
+  const planDayCompletedRef = useRef(false);
+
+  // Mark plan day complete when scrolled past 80%
+  useEffect(() => {
+    if (planId && planDayNum && scrollProgress >= 0.80 && !planDayCompletedRef.current) {
+      planDayCompletedRef.current = true;
+      completePlanDay(planId, planDayNum);
+    }
+  }, [planId, planDayNum, scrollProgress]);
+
+  // Reset plan completion tracking when chapter changes
+  useEffect(() => {
+    planDayCompletedRef.current = false;
+  }, [bookId, chapterNum]);
 
   // Parse coaching tips from chapter data
   const coachingTips = useMemo<CoachingTip[]>(() => {

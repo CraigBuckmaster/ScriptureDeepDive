@@ -648,5 +648,22 @@
       "note": "Galatians 1 uses the Greek epistolary form but subverts it: the expected thanksgiving is replaced by an astonished rebuke (vv. 6-9). Paul's autobiographical defense (vv. 11-24) establishes the independence and divine origin of his gospel — the foundation for the entire letter's argument."
     }
   },
-  "vhl_groups": []
+  "vhl_groups": [],
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "No thanksgiving, no compliments — Paul skips the conventional letter opening and goes straight to rebuke: 'I am astonished that you are so quickly deserting' (v. 6). The Galatians have accepted a 'different gospel' (v. 6), which Paul clarifies is no gospel at all (v. 7). The crisis is too urgent for pleasantries.",
+      "genre_tag": "close_reading"
+    },
+    {
+      "after_section": 2,
+      "tip": "'Even if we or an angel from heaven should preach to you a gospel contrary to the one we preached to you, let him be accursed' (v. 8). Paul includes himself in the potential curse. The gospel transcends its messengers. No authority — apostolic, angelic, or ecclesial — can modify the message of grace. The gospel judges its preachers, not vice versa.",
+      "genre_tag": "theological_insight"
+    },
+    {
+      "after_section": 3,
+      "tip": "Paul insists his gospel came 'through a revelation of Jesus Christ' (v. 12), not human tradition. He didn't consult Jerusalem for three years after his conversion (v. 17). This isn't arrogance but authentication: if opponents claim he got it wrong from human teachers, Paul counters that his source was Christ himself. The dispute is about authority.",
+      "genre_tag": "canonical_thread"
+    }
+  ]
 }

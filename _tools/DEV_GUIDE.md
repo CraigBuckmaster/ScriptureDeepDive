@@ -191,6 +191,81 @@ const styles = StyleSheet.create({
 
 **Convention:** If you need to parse a JSON column from SQLite elsewhere (e.g., `bio_json`, `glosses_json`), do it in the data-loading hook, not in the render function.
 
+### Panel Detection Pattern
+
+Panel type stays the same. Data **shape** determines rendering: `typeof data === 'string'` → legacy string. `data && data.historical` → composite object. Both must render. Use `TabbedPanelRenderer` for all composite panels.
+
+### Section Panel Data Shapes
+
+**hist** (Context Hub):
+```python
+panels['hist'] = {
+    "context": "Verse 1 functions as...",
+    "historical": "The Babylonian Enuma Elish...",
+    "audience": "Moses' original audience...",       # optional
+    "ane": [{"parallel":"...","similarity":"...","difference":"...","significance":"..."}]  # optional
+}
+```
+
+**cross** (Connections Hub):
+```python
+panels['cross'] = {
+    "refs": [{"ref": "John 1:1-3", "note": "..."}],
+    "echoes": [{"source_ref":"...","target_ref":"...","type":"echo","source_context":"...","connection":"...","significance":"..."}]  # optional
+}
+# echo types: "direct_quote" | "allusion" | "echo" | "typological"
+```
+
+**heb** (Hebrew/Greek): string content. **mac** and scholar panels: string content.
+
+### Chapter Panel Data Shapes
+
+**lit** (Literary):
+```python
+chapter_panels['lit'] = {
+    "rows": [{"label":"...", "elements":"...", "function":"..."}],
+    "note": "...",
+    "chiasm": {"title":"...","pairs":[{"label":"A","top":"...","bottom":"...","color":"#hex"}],"center":{"label":"X","text":"..."}}  # optional
+}
+```
+
+**tx** (Textual Notes):
+```python
+chapter_panels['tx'] = {
+    "notes": [{"verse":"16:9","issue":"..."}],
+    "stories": [{"title":"...","passage":"...","summary":"...","evidence":[{"manuscript":"...","reading":"..."}],"consensus":"...","significance":"..."}]  # optional
+}
+```
+
+**discourse**:
+```python
+chapter_panels['discourse'] = {
+    "title": "Paul's Argument in Romans 3",
+    "steps": [{"label":"Thesis (v1-2)","text":"...","type":"thesis"}],  # thesis|evidence|objection|rebuttal|conclusion|transition
+    "note": "..."
+}
+```
+
+**debate**: `[{"id":"...","title":"...","positions":[{"label":"...","argument":"..."}]}]`
+
+**rec** (Recommendations): string or `{"recommendations":"...","resources":[{"title":"...","author":"...","note":"..."}]}`
+
+**ppl** (People): string. **trans** (Translation): string. **src** (Sources): string. **thread**: string. **themes**: string. **hebtext**: string.
+
+### Meta Data Shapes
+
+**books.json** includes: `genre`, `genre_label`, `genre_guidance` (displayed as genre banner).
+
+**coaching** (optional chapter-level key): `[{"after_section":1,"tip":"...","genre_tag":"..."}]`
+
+### User DB Tables
+
+`study_depth(chapter_id, section_id, panel_type, first_opened_at)` — tracks panel opens.
+`reading_streaks(date, chapters_read, books_touched)` — daily reading log.
+`highlight_collections(id, name, color, sort_order)` — named highlight groups.
+`verse_highlights` has `collection_id` and `note` columns.
+`reading_plans` seeded via migration — 5 free + 5 premium.
+
 ---
 
 ## 8. Database Query Patterns
@@ -387,3 +462,26 @@ All work items are tracked as GitHub issues on the **Companion Study Kanban**. C
 **Styling:**
 - ~307 inline `style={{ }}` objects remain across components ([#111](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/111)). Migrate to `StyleSheet.create()` opportunistically when editing files.
 - ~10 explicit `: any` types remain (e.g., `SectionWithPanels.panels`, `PanelRenderer.data`). Type properly when touching those files.
+
+---
+
+## Kanban Integration
+
+The **Companion Study Kanban** is the single source of truth for all work items.
+
+**Project ID:** `PVT_kwHOAQG2984BTkG9`
+
+### Field IDs (for GraphQL mutations)
+
+| Field | ID | Options |
+|-------|----|---------| 
+| Status | `PVTSSF_lAHOAQG2984BTkG9zhAyQPM` | Backlog=`f75ad846`, Ready=`61e4505c`, In progress=`47fc9ee4`, In review=`df73e18b`, Done=`98236657` |
+| Priority | `PVTSSF_lAHOAQG2984BTkG9zhAyRLc` | P0=`79628723`, P1=`0a877460`, P2=`da944a9c` |
+| Size | `PVTSSF_lAHOAQG2984BTkG9zhAyRLg` | XS=`6c6483d2`, S=`f784b110`, M=`7515a9f1`, L=`817d0097`, XL=`db339eb2` |
+
+### Workflow
+1. Read the issue body for full context
+2. Move the issue to **In Progress** via GraphQL mutation
+3. Do the work
+4. Commit with `Closes #N` in the message
+5. Move to **Done**, post a completion comment, close the issue

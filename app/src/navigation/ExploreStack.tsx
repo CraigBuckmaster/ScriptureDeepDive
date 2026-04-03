@@ -35,6 +35,8 @@ import TimeTravelBrowseScreen from '../screens/TimeTravelBrowseScreen';
 import TimeTravelDetailScreen from '../screens/TimeTravelDetailScreen';
 import GrammarBrowseScreen from '../screens/GrammarBrowseScreen';
 import GrammarArticleScreen from '../screens/GrammarArticleScreen';
+import ThreadBrowseScreen from '../screens/ThreadBrowseScreen';
+import ThreadDetailScreen from '../screens/ThreadDetailScreen';
 import ChapterScreen from '../screens/ChapterScreen';
 import { useTheme } from '../theme';
 import type { ExploreStackParamList } from './types';
@@ -88,6 +90,8 @@ export function ExploreStack() {
       <Stack.Screen name="TimeTravelDetail" component={TimeTravelDetailScreen} />
       <Stack.Screen name="GrammarBrowse" component={GrammarBrowseScreen} />
       <Stack.Screen name="GrammarArticle" component={GrammarArticleScreen} />
+      <Stack.Screen name="ThreadBrowse" component={ThreadBrowseScreen} />
+      <Stack.Screen name="ThreadDetail" component={ThreadDetailScreen} />
       <Stack.Screen name="Chapter" component={ChapterScreen} />
     </Stack.Navigator>
   );

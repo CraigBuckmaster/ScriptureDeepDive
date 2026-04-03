@@ -85,6 +85,10 @@ jest.mock('@/utils/shareVerse', () => ({
   shareVerse: jest.fn(),
 }));
 
+jest.mock('@/components/ActivePlanCard', () => ({
+  ActivePlanCard: () => null,
+}));
+
 // ── Tests ─────────────────────────────────────────────────────────
 
 describe('HomeScreen', () => {
