@@ -48,6 +48,8 @@ import { useTTS } from '../hooks/useTTS';
 
 import { TRANSLATION_MAP } from '../db/translationRegistry';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useChapterFingerprint } from '../hooks/useChapterFingerprint';
+import { ChapterFingerprint } from '../components/ChapterFingerprint';
 
 // Enable LayoutAnimation on Android
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
@@ -86,6 +88,17 @@ export default function ChapterScreen() {
     chapter, sections, verses, comparisonVerses, vhlGroups,
     chapterPanels, noteCount, isLoading,
   } = useChapterData(bookId, chapterNum);
+
+  const sectionPanelsForFingerprint = useMemo(
+    () => sections.map((s) => s.panels),
+    [sections],
+  );
+  const fingerprintScores = useChapterFingerprint(
+    sectionPanelsForFingerprint,
+    chapterPanels,
+    !!chapter?.timeline_link_event,
+    !!chapter?.map_story_link_id,
+  );
 
   const redLetterVerses = useRedLetter(bookId, chapterNum);
 
@@ -374,6 +387,8 @@ export default function ChapterScreen() {
               })
             : undefined}
         />
+
+        {fingerprintScores && <ChapterFingerprint scores={fingerprintScores} />}
 
         {bookData?.genre_label && bookData?.genre_guidance ? (
           <GenreBanner
