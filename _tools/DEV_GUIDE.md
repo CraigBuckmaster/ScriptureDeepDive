@@ -7,7 +7,7 @@
 > All 66 books are live. No new books or chapters will be added.
 > Content work is now enrichment, accuracy auditing, and feature development.
 
-Last updated: 2026-03-28
+Last updated: 2026-04-03
 
 ---
 
@@ -47,12 +47,9 @@ Last updated: 2026-03-28
 
 ### Bumping the content DB version
 
-When `build_sqlite.py` schema changes (new content table, new column, etc.):
+**Automatic:** `build_sqlite.py` auto-increments the version in `_tools/db_version.json` and syncs it to `EXPECTED_DB_VERSION` in `app/src/db/database.ts` on every build. No manual version bumping required.
 
-1. Bump `DB_VERSION` in `_tools/build_sqlite.py`
-2. Bump `EXPECTED_DB_VERSION` in `app/src/db/database.ts` to match
-3. Both values **must** be identical strings
-4. This triggers a full replace of `scripture.db` on user devices — which is safe because user data lives in `user.db`
+This triggers a full replace of `scripture.db` on user devices — which is safe because user data lives in `user.db`.
 
 ---
 
@@ -150,7 +147,7 @@ const { bookId, chapterNum } = route.params ?? {}; // compiles but may crash
 
 **Rule:** Never hardcode color hex values. Access `base.*` tokens via the `useTheme()` hook.
 
-**Why:** The gold color swap touched 6 files and cascaded to 100+ usages because everything uses tokens. Hardcoded hex values get left behind and create visual inconsistencies. The static `base` export was removed from `theme/index.ts` (T6) — all colors must come from the hook so they respond to Dark/Sepia/Light mode.
+**Why:** The app supports Dark, Sepia, Light, and System themes. The static `base` export was removed from `theme/index.ts` (T6) — all colors must come from the hook so they respond to theme changes. Hardcoded hex values break when switching themes.
 
 ```typescript
 // Do — theme-aware colors via hook
@@ -158,15 +155,11 @@ import { useTheme } from '../theme';
 const { base } = useTheme();
 color: base.gold
 
-// Don't — static import (removed)
-import { base } from '../theme';
-
 // Don't — hardcoded hex
 color: '#bfa050'
-color: '#c9a84c'
 ```
 
-**Exception:** Scholar colors in `colors.ts` itself, and panel accent colors, are defined as hex values in the token file — that's the one place where hex literals belong.
+**Exception:** Scholar colors, era colors, and panel accent colors are defined as hex values in `colors.ts` — that's the one place where hex literals belong.
 
 ---
 
@@ -174,7 +167,7 @@ color: '#c9a84c'
 
 **Rule:** Use `StyleSheet.create()` for styles. Avoid inline `style={{ }}` objects.
 
-**Why:** Inline style objects create new references on every render, bypassing React Native's style caching. 297 inline styles were identified in the audit.
+**Why:** Inline style objects create new references on every render, bypassing React Native's style caching. ~307 inline styles remain ([#111](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/111)).
 
 ```typescript
 // Do
@@ -260,10 +253,11 @@ All content lives as JSON in `content/`, is compiled to SQLite by `build_sqlite.
 3. Run the script
 4. `python3 _tools/validate.py`
 5. `python3 _tools/build_sqlite.py`
-6. `python3 _tools/validate_sqlite.py`
-7. `rm /tmp/gen_*.py`
-8. `git add -A && git commit && git push`
-9. `cd app && eas update --branch production`
+6. `cp scripture.db app/assets/scripture.db`
+7. `python3 _tools/validate_sqlite.py`
+8. `rm /tmp/gen_*.py`
+9. `git add -A && git commit && git push`
+10. `cd app && eas update --branch production` (Craig runs manually — requires Expo credentials)
 
 ### Adding a New Scholar
 
@@ -282,7 +276,7 @@ All content lives as JSON in `content/`, is compiled to SQLite by `build_sqlite.
 | `auto_scholarly_json(data, book, ch)` | Auto-generate missing chapter panels |
 | `validate.py` | Check all content JSON for schema/completeness |
 | `build_sqlite.py` | Assemble content/ -> scripture.db |
-| `validate_sqlite.py` | Verify database integrity (51 checks) |
+| `validate_sqlite.py` | Verify database integrity (65 checks) |
 
 ### Data Format Quick Reference
 
@@ -349,7 +343,7 @@ Hard-won lessons from building 66 books. Still relevant for enrichment scripts.
 - Parent refs (`father`, `mother`, `spouseOf`) must use IDs (lowercase, underscored), not display names. Set to `null` if parent not in database.
 
 **shared.py:**
-- ~1,350 lines — never `cat` in full. Read only REGISTRY and BOOK_PREFIX sections via `sed -n`.
+- ~770 lines — never `cat` in full. Read only REGISTRY and BOOK_PREFIX sections via `sed -n`.
 
 **Git / merge conflicts:**
 - `scripture.db` conflicts: `git checkout --theirs scripture.db` -> rebuild via `build_sqlite.py` -> `git add scripture.db` -> `GIT_EDITOR="true" git rebase --continue`
@@ -374,23 +368,22 @@ Hard-won lessons from building 66 books. Still relevant for enrichment scripts.
 | Add a new screen | `navigation/types.ts` + stack file + screen file |
 | Add a new panel type | `PanelRenderer.tsx` (new case) + new panel component |
 | Add a new scholar | `config.py` + `meta/*.json` + `colors.ts` |
-| Add a new color token | `theme/colors.ts` |
+| Add a new color token | `theme/colors.ts` + palette definitions in `ThemeContext` |
 | Construct a verse reference | `utils/verseRef.ts` |
 | Log an error | `utils/logger.ts` |
 | Safely parse a JSON column | `safeParse()` from `utils/logger.ts` |
-| Change the gold color | `theme/colors.ts` -> `base.gold` (one place) |
+| Use themed colors in a component | `useTheme()` from `theme/ThemeContext` |
 
 ---
 
 ## Known Debt & Future Work
 
-Items deferred from completed audits. Not bugs — polish for when bandwidth allows.
+All work items are tracked as GitHub issues on the **Companion Study Kanban**. Check the board for current priorities.
 
 **Accessibility:**
 - Dynamic type integration — font scaling is manual via Settings slider, not linked to system accessibility font size. To fix: read the system font scale from `PixelRatio.getFontScale()` and apply it as a multiplier to `fontSize` values.
 - Screen reader navigation order — not explicitly defined for complex screens like `ChapterScreen` with multiple expandable panels. To fix: add `accessibilityOrder` or manual `accessible` grouping so VoiceOver/TalkBack reads in a logical sequence.
 
-**Styling (Phase 4 — ongoing):**
-- 297 inline `style={{ }}` objects remain across components. Migrate to `StyleSheet.create()` opportunistically when editing files.
-- 13 `useNavigation<any>` remain in nav-only screens (no route params to mistype — low risk).
-- 16 explicit `: any` types remain (e.g., `SectionWithPanels.panels`, `PanelRenderer.data`). Type properly when touching those files.
+**Styling:**
+- ~307 inline `style={{ }}` objects remain across components ([#111](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/111)). Migrate to `StyleSheet.create()` opportunistically when editing files.
+- ~10 explicit `: any` types remain (e.g., `SectionWithPanels.panels`, `PanelRenderer.data`). Type properly when touching those files.
