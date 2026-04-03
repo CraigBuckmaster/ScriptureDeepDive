@@ -1,0 +1,328 @@
+/**
+ * LifeTopicsScreen — Browse life topics by category with search.
+ *
+ * Shows a 2-column category grid by default. Tapping a category filters
+ * to show topics in that category. Search uses FTS via searchLifeTopics.
+ * Premium gate: shows UpgradePrompt for non-premium users with a teaser.
+ */
+
+import React, { useCallback, useState, useMemo } from 'react';
+import {
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  ScrollView,
+  StyleSheet,
+} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useNavigation } from '@react-navigation/native';
+import type { ScreenNavProp } from '../navigation/types';
+import { ScreenHeader } from '../components/ScreenHeader';
+import { SearchInput } from '../components/SearchInput';
+import { LoadingSkeleton } from '../components/LoadingSkeleton';
+import { UpgradePrompt } from '../components/UpgradePrompt';
+import { CategoryCard, TopicListItem } from '../components/lifetopics';
+import {
+  useLifeTopicCategories,
+  useLifeTopics,
+  useLifeTopicSearch,
+} from '../hooks/useLifeTopics';
+import { usePremium } from '../hooks/usePremium';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
+import type { LifeTopic, LifeTopicCategory } from '../types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+
+function LifeTopicsScreen() {
+  const { base } = useTheme();
+  const navigation = useNavigation<ScreenNavProp<'Explore', 'LifeTopics'>>();
+  const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
+
+  const { data: categories, loading: catLoading } = useLifeTopicCategories();
+  const [selectedCategory, setSelectedCategory] = useState<string | undefined>(undefined);
+  const { data: topics, loading: topicsLoading } = useLifeTopics(selectedCategory);
+  const { search, setSearch, results: searchResults, searching } = useLifeTopicSearch();
+
+  const isSearching = search.length >= 2;
+
+  // Build a map of category id -> name for badges
+  const categoryMap = useMemo(() => {
+    const map: Record<string, string> = {};
+    categories.forEach((c) => { map[c.id] = c.name; });
+    return map;
+  }, [categories]);
+
+  // Count topics per category
+  const categoriesWithCounts = useMemo(() => {
+    if (!selectedCategory) return categories;
+    return categories;
+  }, [categories, selectedCategory]);
+
+  const handleTopicPress = useCallback(
+    (topicId: string) => {
+      if (!isPremium) {
+        showUpgrade('explore', 'Life Topics');
+        return;
+      }
+      navigation.push('LifeTopicDetail', { topicId });
+    },
+    [navigation, isPremium, showUpgrade],
+  );
+
+  const handleCategoryPress = useCallback(
+    (categoryId: string) => {
+      setSelectedCategory((prev) => (prev === categoryId ? undefined : categoryId));
+      setSearch('');
+    },
+    [setSearch],
+  );
+
+  const renderCategoryItem = useCallback(
+    ({ item }: { item: LifeTopicCategory }) => (
+      <CategoryCard
+        name={item.name}
+        icon={item.icon}
+        topicCount={0}
+        onPress={() => handleCategoryPress(item.id)}
+      />
+    ),
+    [handleCategoryPress],
+  );
+
+  const renderTopicItem = useCallback(
+    ({ item }: { item: LifeTopic }) => (
+      <TopicListItem
+        title={item.title}
+        subtitle={item.subtitle ?? item.summary}
+        categoryName={categoryMap[item.category_id]}
+        onPress={() => handleTopicPress(item.id)}
+      />
+    ),
+    [categoryMap, handleTopicPress],
+  );
+
+  const loading = catLoading || topicsLoading;
+
+  if (loading && !isSearching) {
+    return (
+      <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
+        <View style={styles.headerPad}>
+          <ScreenHeader title="Life Topics" onBack={() => navigation.goBack()} />
+        </View>
+        <View style={styles.loadingPad}><LoadingSkeleton lines={6} /></View>
+      </SafeAreaView>
+    );
+  }
+
+  // Search mode
+  if (isSearching) {
+    return (
+      <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
+        <View style={styles.headerPad}>
+          <ScreenHeader title="Life Topics" onBack={() => navigation.goBack()} />
+          <View style={styles.searchWrap}>
+            <SearchInput
+              value={search}
+              onChangeText={setSearch}
+              placeholder="Search life topics..."
+            />
+          </View>
+        </View>
+        {searching ? (
+          <View style={styles.loadingPad}><LoadingSkeleton lines={4} /></View>
+        ) : (
+          <FlatList
+            data={searchResults}
+            keyExtractor={(item) => item.id}
+            renderItem={renderTopicItem}
+            contentContainerStyle={styles.listPad}
+            ListEmptyComponent={
+              <View style={styles.emptyState}>
+                <Text style={[styles.emptyText, { color: base.textMuted }]}>
+                  {`No topics found for "${search}"`}
+                </Text>
+              </View>
+            }
+          />
+        )}
+
+        {upgradeRequest && (
+          <UpgradePrompt
+            visible
+            variant={upgradeRequest.variant}
+            featureName={upgradeRequest.featureName}
+            onClose={dismissUpgrade}
+          />
+        )}
+      </SafeAreaView>
+    );
+  }
+
+  // Category browse mode (no category selected) — show grid
+  // Topic list mode (category selected) — show list
+  const showTopicsList = !!selectedCategory;
+
+  return (
+    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
+      <View style={styles.headerPad}>
+        <ScreenHeader title="Life Topics" onBack={() => navigation.goBack()} />
+        <View style={styles.searchWrap}>
+          <SearchInput
+            value={search}
+            onChangeText={setSearch}
+            placeholder="Search life topics..."
+          />
+        </View>
+
+        {/* Category filter pills */}
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.pillRow}
+        >
+          <TouchableOpacity
+            onPress={() => setSelectedCategory(undefined)}
+            style={[
+              styles.pill,
+              { borderColor: base.border },
+              !selectedCategory && {
+                borderColor: base.gold + '55',
+                backgroundColor: base.gold + '12',
+              },
+            ]}
+          >
+            <Text
+              style={[
+                styles.pillText,
+                { color: base.textMuted },
+                !selectedCategory && { color: base.gold },
+              ]}
+            >
+              All
+            </Text>
+          </TouchableOpacity>
+          {categories.map((cat) => {
+            const active = selectedCategory === cat.id;
+            return (
+              <TouchableOpacity
+                key={cat.id}
+                onPress={() => handleCategoryPress(cat.id)}
+                style={[
+                  styles.pill,
+                  { borderColor: base.border },
+                  active && {
+                    borderColor: base.gold + '55',
+                    backgroundColor: base.gold + '12',
+                  },
+                ]}
+              >
+                <Text
+                  style={[
+                    styles.pillText,
+                    { color: base.textMuted },
+                    active && { color: base.gold },
+                  ]}
+                >
+                  {cat.name}
+                </Text>
+              </TouchableOpacity>
+            );
+          })}
+        </ScrollView>
+      </View>
+
+      {!showTopicsList ? (
+        /* Category grid */
+        <FlatList
+          data={categoriesWithCounts}
+          keyExtractor={(item) => item.id}
+          renderItem={renderCategoryItem}
+          numColumns={2}
+          columnWrapperStyle={styles.columnWrapper}
+          contentContainerStyle={styles.listPad}
+          showsVerticalScrollIndicator={false}
+        />
+      ) : (
+        /* Topic list */
+        <FlatList
+          data={topics}
+          keyExtractor={(item) => item.id}
+          renderItem={renderTopicItem}
+          contentContainerStyle={styles.listPad}
+          showsVerticalScrollIndicator={false}
+          ListEmptyComponent={
+            <View style={styles.emptyState}>
+              <Text style={[styles.emptyText, { color: base.textMuted }]}>
+                No topics in this category
+              </Text>
+            </View>
+          }
+        />
+      )}
+
+      {/* Premium teaser for non-premium users */}
+      {!isPremium && (
+        <View style={[styles.teaser, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}>
+          <Text style={[styles.teaserText, { color: base.textDim }]}>
+            Preview mode — upgrade to unlock full topic guides
+          </Text>
+          <TouchableOpacity onPress={() => showUpgrade('explore', 'Life Topics')}>
+            <Text style={[styles.teaserCta, { color: base.gold }]}>Learn More</Text>
+          </TouchableOpacity>
+        </View>
+      )}
+
+      {upgradeRequest && (
+        <UpgradePrompt
+          visible
+          variant={upgradeRequest.variant}
+          featureName={upgradeRequest.featureName}
+          onClose={dismissUpgrade}
+        />
+      )}
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1 },
+  headerPad: { paddingHorizontal: spacing.md, paddingTop: spacing.lg },
+  searchWrap: { marginBottom: spacing.sm },
+  pillRow: { gap: spacing.xs, marginBottom: spacing.md },
+  pill: {
+    borderWidth: 1,
+    borderRadius: radii.pill,
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+  },
+  pillText: {
+    fontFamily: fontFamily.display,
+    fontSize: 10,
+    letterSpacing: 0.3,
+  },
+  listPad: { paddingHorizontal: spacing.md, paddingBottom: spacing.xxl },
+  columnWrapper: { gap: spacing.sm },
+  loadingPad: { padding: spacing.lg },
+  emptyState: { padding: spacing.xl, alignItems: 'center' },
+  emptyText: { fontFamily: fontFamily.ui, fontSize: 14 },
+  teaser: {
+    borderTopWidth: 1,
+    paddingVertical: spacing.sm,
+    paddingHorizontal: spacing.md,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  teaserText: {
+    fontFamily: fontFamily.ui,
+    fontSize: 11,
+    flex: 1,
+  },
+  teaserCta: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 12,
+    marginLeft: spacing.sm,
+  },
+});
+
+export default withErrorBoundary(LifeTopicsScreen);
