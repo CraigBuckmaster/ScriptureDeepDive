@@ -16,7 +16,13 @@ interface Props { data: string | TransPanel; }
  * Rows with empty version + <strong> content become verse_ref headers.
  */
 function stripHtml(html: string): string {
-  return html.replace(/<[^>]*>/g, '').trim();
+  let result = html;
+  let prev: string;
+  do {
+    prev = result;
+    result = result.replace(/<[^>]*>/g, '');
+  } while (result !== prev);
+  return result.trim();
 }
 
 function parseHtmlTable(html: string): TransRow[] {
