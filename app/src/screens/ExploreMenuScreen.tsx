@@ -26,6 +26,7 @@ interface Feature {
 const PREMIUM_SCREENS: Record<string, string> = {
   Concordance: 'Concordance Search',
   ContentLibrary: 'Content Library',
+  ThreadBrowse: 'Cross-Reference Threading',
 };
 
 const HERO_FEATURES: Feature[] = [
@@ -96,6 +97,11 @@ const GRID_FEATURES: Feature[] = [
     title: 'Bible Dictionary',
     subtitle: 'Definitions for every biblical term',
     screen: 'DictionaryBrowse',
+  },
+  {
+    title: 'Threads',
+    subtitle: '31 thematic chains across Scripture',
+    screen: 'ThreadBrowse',
   },
   {
     title: 'Content Library',

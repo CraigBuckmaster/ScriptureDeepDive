@@ -26,6 +26,8 @@ import DictionaryBrowseScreen from '../screens/DictionaryBrowseScreen';
 import DictionaryDetailScreen from '../screens/DictionaryDetailScreen';
 import DebateBrowseScreen from '../screens/DebateBrowseScreen';
 import DebateDetailScreen from '../screens/DebateDetailScreen';
+import ThreadBrowseScreen from '../screens/ThreadBrowseScreen';
+import ThreadDetailScreen from '../screens/ThreadDetailScreen';
 import ChapterScreen from '../screens/ChapterScreen';
 import { useTheme } from '../theme';
 import type { ExploreStackParamList } from './types';
@@ -70,6 +72,8 @@ export function ExploreStack() {
       <Stack.Screen name="DictionaryDetail" component={DictionaryDetailScreen} />
       <Stack.Screen name="DebateBrowse" component={DebateBrowseScreen} />
       <Stack.Screen name="DebateDetail" component={DebateDetailScreen} />
+      <Stack.Screen name="ThreadBrowse" component={ThreadBrowseScreen} />
+      <Stack.Screen name="ThreadDetail" component={ThreadDetailScreen} />
       <Stack.Screen name="Chapter" component={ChapterScreen} />
     </Stack.Navigator>
   );
