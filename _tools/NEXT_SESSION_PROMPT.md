@@ -55,14 +55,14 @@ Each issue contains a **complete dev plan** with session breakdowns, file invent
 |-------|------|--------|
 | [#50](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/50) | Theology + End Times topics (~41 entries) | **DONE** (In Review) |
 | [#51](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/51) | Character + Sin + Identity topics (~57 entries) | **DONE** |
-| [#52](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/52) | Relationships + Worship + Church topics (~55 entries) | Backlog — **NEXT** |
-| [#53](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/53) | Christian Living + Creation topics (~40 entries) | Backlog |
+| [#52](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/52) | Relationships + Worship + Church topics (~52 entries) | **DONE** |
+| [#53](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/53) | Christian Living + Creation topics (~40 entries) | Backlog — **NEXT** |
 | [#54](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/54) | validate_sqlite.py topics count validation | Backlog |
 | [#55](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/55) | Auto-generate relevant_chapters_json from theme panel data | Backlog |
 
 ### Topical Index Content Status
 
-`content/meta/topics.json` exists with **41 topics** (27 theology + 14 eschatology, 343 KJV verses). No DB table or UI infrastructure yet — the A9 screens/hooks/components have not been built. Content generation is proceeding ahead of infrastructure.
+`content/meta/topics.json` exists with **160 topics** (28 theology + 14 eschatology + 25 character + 20 sin + 15 identity + 20 relationships + 15 worship + 20 church + 3 other). No DB table or UI infrastructure yet — the A9 screens/hooks/components have not been built. Content generation is proceeding ahead of infrastructure.
 
 **Next content story (#51)** adds ~60 entries across Character, Sin, and Identity categories. Read the issue body for the full topic list and format spec.
 
@@ -103,6 +103,8 @@ Each issue contains a **complete dev plan** with session breakdowns, file invent
 
 | Item | Date | Scope |
 |------|------|-------|
+| **Topical Index: Relationships + Worship + Church** | April 2026 | 52 topics, 19+14+19 per category, cumulative 160 topics |
+| **Topical Index: Character + Sin + Identity** | April 2026 | 57 topics, 24+19+14 per category, fixed topics_fts bug |
 | **Topical Index: Theology + Eschatology** | April 2026 | 41 topics, 109 subtopics, 343 KJV verses in `topics.json` |
 | **Feature plans created** | April 2026 | Premium TTS, Cross-Device Sync, Scholar Debate Mode — full dev plans in GitHub issues |
 | **Kanban board integrated** | April 2026 | All feature plans + content stories on Companion Study Kanban with status/priority/size |
@@ -113,7 +115,7 @@ Each issue contains a **complete dev plan** with session breakdowns, file invent
 
 ## What's Next
 
-**If doing content work:** Pick up **#51** (Character + Sin + Identity topics, ~60 entries). Move it to In Progress on the kanban, generate topics into `content/meta/topics.json` (append to existing 41), commit, push, move to In Review. Then #52, #53.
+**If doing content work:** Pick up **#53** (Christian Living + Creation topics, ~40 entries). Move it to In Progress on the kanban, generate topics into `content/meta/topics.json` (append to existing 160), commit, push, move to In Review. This is the final topical index content story.
 
 **If doing feature code:** Read the full dev plan in the issue body for whichever feature is being started (#56 Scholar Debate Mode, #65 Cross-Device Sync, or #66 Premium TTS). Move the issue to In Progress. Follow the session breakdown in the plan.
 
