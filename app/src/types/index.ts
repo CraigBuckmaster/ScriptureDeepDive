@@ -533,6 +533,65 @@ export interface DifficultPassage {
   tags_json: string | null;
 }
 
+// ── Debate Topics (Scholar Debate Mode) ─────────────────────
+
+export type DebateTopicCategory =
+  | 'theological'
+  | 'ethical'
+  | 'historical'
+  | 'textual'
+  | 'interpretive';
+
+/** Raw DB row — JSON columns are unparsed strings */
+export interface DebateTopicRow {
+  id: string;
+  title: string;
+  category: string;
+  book_id: string;
+  chapters_json: string;
+  passage: string | null;
+  question: string;
+  context: string | null;
+  positions_json: string;
+  synthesis: string | null;
+  related_passages_json: string | null;
+  tags_json: string | null;
+}
+
+/** Summary shape returned by browse queries (position_count computed). */
+export interface DebateTopicSummary extends DebateTopicRow {
+  position_count: number;
+}
+
+/** Parsed position within a debate topic. */
+export interface DebatePosition {
+  id: string;
+  label: string;
+  tradition_family: string;
+  scholar_ids: string[];
+  proponents: string;
+  argument: string;
+  strengths: string;
+  weaknesses: string;
+  key_verses: string[];
+}
+
+/** Fully parsed debate topic. */
+export interface DebateTopic {
+  id: string;
+  title: string;
+  category: DebateTopicCategory;
+  book_id: string;
+  chapters: number[];
+  passage: string;
+  question: string;
+  context: string;
+  positions: DebatePosition[];
+  synthesis: string;
+  related_passages: string[];
+  tags: string[];
+}
+
 // ══════════════════════════════════════════════════════════════
 // PARSED BIO / INTRO TYPES
 // ══════════════════════════════════════════════════════════════

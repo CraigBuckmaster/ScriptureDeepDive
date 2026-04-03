@@ -234,6 +234,45 @@ CREATE TABLE synoptic_map (
 
 CREATE INDEX idx_synoptic_period ON synoptic_map(period, sort_order);
 
+CREATE TABLE topics (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  category TEXT NOT NULL,
+  description TEXT NOT NULL,
+  tags_json TEXT NOT NULL,
+  subtopics_json TEXT NOT NULL,
+  related_concept_ids_json TEXT,
+  related_thread_ids_json TEXT,
+  related_prophecy_ids_json TEXT,
+  relevant_chapters_json TEXT
+);
+
+CREATE INDEX idx_topics_category ON topics(category);
+
+CREATE TABLE debate_topics (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  category TEXT NOT NULL,
+  book_id TEXT NOT NULL,
+  chapters_json TEXT NOT NULL,
+  passage TEXT,
+  question TEXT NOT NULL,
+  context TEXT,
+  positions_json TEXT NOT NULL,
+  synthesis TEXT,
+  related_passages_json TEXT DEFAULT '[]',
+  tags_json TEXT DEFAULT '[]'
+);
+
+CREATE INDEX idx_debate_topics_book ON debate_topics(book_id);
+CREATE INDEX idx_debate_topics_category ON debate_topics(category);
+
+CREATE TABLE debate_topic_scholars (
+  topic_id TEXT NOT NULL REFERENCES debate_topics(id),
+  scholar_id TEXT NOT NULL,
+  PRIMARY KEY (topic_id, scholar_id)
+);
+
 CREATE TABLE vhl_groups (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   chapter_id TEXT NOT NULL REFERENCES chapters(id),
@@ -796,6 +835,147 @@ def populate_synoptic(cur):
     return count
 
 
+def _load_all_theme_scores():
+    """Load themes panel data from all chapter JSON files.
+
+    Returns dict: chapter_id -> [{label, score}, ...]
+    Handles both {label, score} and {name, value} key variants.
+    """
+    content_dir = ROOT / 'content'
+    themes = {}
+    for book_dir in sorted(content_dir.iterdir()):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'interlinear'):
+            continue
+        for ch_file in sorted(book_dir.glob('*.json')):
+            try:
+                data = json.loads(ch_file.read_text(encoding='utf-8'))
+            except Exception:
+                continue
+            if not isinstance(data, dict):
+                continue
+            theme_panel = data.get('chapter_panels', {}).get('themes')
+            if not theme_panel or not isinstance(theme_panel, dict):
+                continue
+            scores = theme_panel.get('scores', [])
+            chapter_id = f"{book_dir.name}_{ch_file.stem}"
+            normalized = []
+            for s in scores:
+                if not isinstance(s, dict):
+                    continue
+                label = s.get('label') or s.get('name', '')
+                score = s.get('score') or s.get('value', 0)
+                if label and score:
+                    normalized.append({'label': label.lower(), 'score': score})
+            if normalized:
+                themes[chapter_id] = normalized
+    return themes
+
+
+def _generate_relevant_chapters(topic_tags, all_themes, limit=10):
+    """Match topic tags against chapter theme labels, return top chapters by score."""
+    scores = {}
+    tags_lower = [t.lower() for t in topic_tags]
+    for chapter_id, theme_scores in all_themes.items():
+        for ts in theme_scores:
+            label = ts['label']
+            for tag in tags_lower:
+                if tag in label or label in tag:
+                    scores[chapter_id] = scores.get(chapter_id, 0) + ts['score']
+                    break  # avoid double-counting same label for multiple matching tags
+    return sorted(scores, key=scores.get, reverse=True)[:limit]
+
+
+def populate_topics(cur):
+    path = META / 'topics.json'
+    if not path.exists():
+        return 0
+    entries = _load_json(path)
+
+    # Load all theme scores for relevant chapter auto-generation
+    all_themes = _load_all_theme_scores()
+
+    count = 0
+    for t in entries:
+        # Auto-generate relevant_chapters if not manually specified
+        tags = t.get('tags', [])
+        manual_chapters = t.get('relevant_chapters', [])
+        if manual_chapters:
+            relevant = manual_chapters
+        elif tags and all_themes:
+            relevant = _generate_relevant_chapters(tags, all_themes)
+        else:
+            relevant = []
+
+        cur.execute(
+            'INSERT INTO topics (id, title, category, description, tags_json, subtopics_json, '
+            'related_concept_ids_json, related_thread_ids_json, related_prophecy_ids_json, '
+            'relevant_chapters_json) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            (t['id'], t['title'], t['category'], t['description'],
+             _json_str(tags),
+             _json_str(t.get('subtopics', [])),
+             _json_str(t.get('related_concept_ids', [])),
+             _json_str(t.get('related_thread_ids', [])),
+             _json_str(t.get('related_prophecy_ids', [])),
+             _json_str(relevant))
+        )
+        count += 1
+
+    # Build FTS5 index
+    cur.execute("""
+        CREATE VIRTUAL TABLE IF NOT EXISTS topics_fts USING fts5(
+            title, description, tags,
+            content=topics,
+            content_rowid=rowid,
+            tokenize='porter unicode61'
+        )
+    """)
+    cur.execute("""
+        INSERT INTO topics_fts(rowid, title, description, tags)
+        SELECT rowid, title, description,
+               REPLACE(REPLACE(tags_json, '[', ''), ']', '')
+        FROM topics
+    """)
+    return count
+
+
+def populate_debate_topics(cur):
+    path = META / 'debate-topics.json'
+    if not path.exists():
+        return 0
+    entries = _load_json(path)
+    count = 0
+    scholar_links = 0
+    for t in entries:
+        cur.execute(
+            'INSERT INTO debate_topics (id, title, category, book_id, chapters_json, '
+            'passage, question, context, positions_json, synthesis, '
+            'related_passages_json, tags_json) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            (t['id'], t['title'], t['category'], t['book_id'],
+             _json_str(t.get('chapters', [])),
+             t.get('passage', ''),
+             t.get('question', t['title']),
+             t.get('context', ''),
+             _json_str(t.get('positions', [])),
+             t.get('synthesis', ''),
+             _json_str(t.get('related_passages', [])),
+             _json_str(t.get('tags', [])))
+        )
+        # Insert scholar links from position scholar_ids
+        for pos in t.get('positions', []):
+            for sid in pos.get('scholar_ids', []):
+                try:
+                    cur.execute(
+                        'INSERT OR IGNORE INTO debate_topic_scholars (topic_id, scholar_id) '
+                        'VALUES (?, ?)',
+                        (t['id'], sid)
+                    )
+                    scholar_links += 1
+                except Exception:
+                    pass
+        count += 1
+    return count
+
+
 def populate_genealogy_config(cur):
     gc = _load_json(META / 'genealogy-config.json')
     count = 0
@@ -1222,6 +1402,12 @@ def main():
     n = populate_synoptic(cur)
     print(f"  [OK] synoptic_map: {n} rows")
 
+    n = populate_topics(cur)
+    print(f"  [OK] topics: {n} rows")
+
+    n = populate_debate_topics(cur)
+    print(f"  [OK] debate_topics: {n} rows")
+
     n = populate_genealogy_config(cur)
     print(f"  [OK] genealogy_config: {n} rows")
 
@@ -1310,7 +1496,7 @@ def main():
     tables = [
         'books', 'chapters', 'sections', 'section_panels', 'chapter_panels',
         'verses', 'book_intros', 'people', 'scholars', 'places',
-        'map_stories', 'word_studies', 'synoptic_map', 'vhl_groups',
+        'map_stories', 'word_studies', 'synoptic_map', 'topics', 'debate_topics', 'vhl_groups',
         'genealogy_config', 'cross_ref_threads', 'cross_ref_pairs', 'timelines',
         'content_library',
         'red_letter_verses',

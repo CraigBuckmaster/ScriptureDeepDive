@@ -7,6 +7,8 @@ import ParallelPassageScreen from '../screens/ParallelPassageScreen';
 import ParallelDetailScreen from '../screens/ParallelDetailScreen';
 import HarmonyBrowseScreen from '../screens/HarmonyBrowseScreen';
 import HarmonyDetailScreen from '../screens/HarmonyDetailScreen';
+import TopicBrowseScreen from '../screens/TopicBrowseScreen';
+import TopicDetailScreen from '../screens/TopicDetailScreen';
 import { useTheme } from '../theme';
 import type { ReadStackParamList } from './types';
 
@@ -31,6 +33,8 @@ export function ReadStack() {
       <Stack.Screen name="ParallelDetail" component={ParallelDetailScreen} />
       <Stack.Screen name="HarmonyBrowse" component={HarmonyBrowseScreen} />
       <Stack.Screen name="HarmonyDetail" component={HarmonyDetailScreen} />
+      <Stack.Screen name="TopicBrowse" component={TopicBrowseScreen} />
+      <Stack.Screen name="TopicDetail" component={TopicDetailScreen} />
     </Stack.Navigator>
   );
 }

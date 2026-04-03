@@ -254,6 +254,35 @@ def main():
     else:
         print("  red_letter_verses: table not found (optional)")
 
+    # Topics (Topical Index)
+    topics_count = q1(cur, "SELECT COUNT(*) FROM topics")
+    if topics_count is not None:
+        check("Topics table populated", topics_count >= 5,
+              f"only {topics_count} rows (expected 5+)")
+        # All topics have required fields
+        empty_fields = q1(cur,
+            "SELECT COUNT(*) FROM topics WHERE title IS NULL OR title = '' "
+            "OR category IS NULL OR category = '' OR description IS NULL OR description = ''")
+        check("All topics have title, category, description", empty_fields == 0,
+              f"{empty_fields} topics missing required fields")
+        # Check categories are valid
+        bad_cats = q(cur,
+            "SELECT id, category FROM topics WHERE category NOT IN "
+            "('theology','character','sin','relationships','worship',"
+            "'living','church','eschatology','creation','identity')")
+        check("All topics have valid category", len(bad_cats) == 0,
+              f"{len(bad_cats)} topics with invalid category")
+        # Check FTS table exists
+        fts_ok = q1(cur, "SELECT COUNT(*) FROM topics_fts")
+        check("topics_fts virtual table exists", fts_ok is not None, "FTS table missing")
+        # Count topics with relevant chapters
+        with_chapters = q1(cur,
+            "SELECT COUNT(*) FROM topics WHERE relevant_chapters_json IS NOT NULL "
+            "AND relevant_chapters_json != '[]'")
+        print(f"  topics: {topics_count} ({with_chapters} with relevant chapters)")
+    else:
+        print("  topics: table not found (optional)")
+
     # =========================================================
     # 2. REFERENTIAL INTEGRITY
     # =========================================================

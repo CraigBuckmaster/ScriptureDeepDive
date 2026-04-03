@@ -27,6 +27,8 @@ export type ReadStackParamList = {
   ParallelDetail: { entryId: string };
   HarmonyBrowse: undefined;
   HarmonyDetail: { entryId: string };
+  TopicBrowse: undefined;
+  TopicDetail: { topicId: string };
 };
 
 export type HomeStackParamList = {
@@ -39,6 +41,8 @@ export type HomeStackParamList = {
   ParallelDetail: { entryId: string };
   HarmonyBrowse: undefined;
   HarmonyDetail: { entryId: string };
+  TopicBrowse: undefined;
+  TopicDetail: { topicId: string };
 };
 
 export type ExploreStackParamList = {
@@ -55,6 +59,8 @@ export type ExploreStackParamList = {
   ParallelDetail: { entryId: string };
   HarmonyBrowse: undefined;
   HarmonyDetail: { entryId: string };
+  TopicBrowse: undefined;
+  TopicDetail: { topicId: string };
   ProphecyBrowse: undefined;
   ProphecyDetail: { chainId: string };
   ConceptBrowse: undefined;

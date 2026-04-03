@@ -8,6 +8,7 @@ import type {
   TimelineEntry, GenealogyConfig,
 } from '../../types';
 import type { LexiconEntry } from '../../types/lexicon';
+import type { Topic } from '../../types/topic';
 
 // ── Word Studies ────────────────────────────────────────────────────
 
@@ -147,5 +148,31 @@ export async function getLexiconEntries(strongsList: string[]): Promise<LexiconE
   return getDb().getAllAsync<LexiconEntry>(
     `SELECT * FROM lexicon_entries WHERE strongs IN (${placeholders})`,
     strongsList
+  );
+}
+
+// ── Topics ────────────────────────────────────────────────────────
+
+export async function getTopics(): Promise<Topic[]> {
+  return getDb().getAllAsync<Topic>(
+    'SELECT * FROM topics ORDER BY category, title'
+  );
+}
+
+export async function getTopic(topicId: string): Promise<Topic | null> {
+  return getDb().getFirstAsync<Topic>(
+    'SELECT * FROM topics WHERE id = ?',
+    [topicId]
+  );
+}
+
+export async function searchTopics(query: string): Promise<Topic[]> {
+  return getDb().getAllAsync<Topic>(
+    `SELECT t.* FROM topics t
+     JOIN topics_fts fts ON t.rowid = fts.rowid
+     WHERE topics_fts MATCH ?
+     ORDER BY rank
+     LIMIT 30`,
+    [query + '*']
   );
 }
