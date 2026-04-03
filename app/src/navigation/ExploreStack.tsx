@@ -22,6 +22,10 @@ import DifficultPassagesBrowseScreen from '../screens/DifficultPassagesBrowseScr
 import DifficultPassageDetailScreen from '../screens/DifficultPassageDetailScreen';
 import ConcordanceScreen from '../screens/ConcordanceScreen';
 import ContentLibraryScreen from '../screens/ContentLibraryScreen';
+import DictionaryBrowseScreen from '../screens/DictionaryBrowseScreen';
+import DictionaryDetailScreen from '../screens/DictionaryDetailScreen';
+import DebateBrowseScreen from '../screens/DebateBrowseScreen';
+import DebateDetailScreen from '../screens/DebateDetailScreen';
 import ChapterScreen from '../screens/ChapterScreen';
 import { useTheme } from '../theme';
 import type { ExploreStackParamList } from './types';
@@ -62,6 +66,10 @@ export function ExploreStack() {
       <Stack.Screen name="DifficultPassageDetail" component={DifficultPassageDetailScreen} />
       <Stack.Screen name="Concordance" component={ConcordanceScreen} />
       <Stack.Screen name="ContentLibrary" component={ContentLibraryScreen} />
+      <Stack.Screen name="DictionaryBrowse" component={DictionaryBrowseScreen} />
+      <Stack.Screen name="DictionaryDetail" component={DictionaryDetailScreen} />
+      <Stack.Screen name="DebateBrowse" component={DebateBrowseScreen} />
+      <Stack.Screen name="DebateDetail" component={DebateDetailScreen} />
       <Stack.Screen name="Chapter" component={ChapterScreen} />
     </Stack.Navigator>
   );

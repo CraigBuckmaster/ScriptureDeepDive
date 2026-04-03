@@ -283,6 +283,33 @@ def main():
     else:
         print("  topics: table not found (optional)")
 
+    # Dictionary entries (Easton's)
+    dict_count = q1(cur, "SELECT COUNT(*) FROM dictionary_entries")
+    if dict_count is not None:
+        check("Dictionary entries populated", dict_count >= 3500,
+              f"only {dict_count} rows (expected ~3963)")
+        # All entries have term and definition
+        empty_dict = q1(cur,
+            "SELECT COUNT(*) FROM dictionary_entries WHERE term IS NULL OR term = '' "
+            "OR definition IS NULL OR definition = ''")
+        check("All dictionary entries have term + definition", empty_dict == 0,
+              f"{empty_dict} entries missing required fields")
+        # Category distribution
+        cat_count = q1(cur, "SELECT COUNT(DISTINCT category) FROM dictionary_entries")
+        check("Dictionary has multiple categories", cat_count and cat_count >= 5,
+              f"only {cat_count} categories")
+        # Cross-links present
+        cross_count = q1(cur,
+            "SELECT COUNT(*) FROM dictionary_entries WHERE "
+            "cross_person_id IS NOT NULL OR cross_place_id IS NOT NULL "
+            "OR cross_word_study_id IS NOT NULL OR cross_concept_id IS NOT NULL")
+        # FTS table exists
+        dict_fts_ok = q1(cur, "SELECT COUNT(*) FROM dictionary_fts")
+        check("dictionary_fts virtual table exists", dict_fts_ok is not None, "FTS table missing")
+        print(f"  dictionary_entries: {dict_count} ({cross_count} with cross-links)")
+    else:
+        print("  dictionary_entries: table not found (optional)")
+
     # =========================================================
     # 2. REFERENTIAL INTEGRITY
     # =========================================================
@@ -414,6 +441,19 @@ def main():
     """)
     check("FTS 'covenant' → multiple results", covenant_count and covenant_count > 10,
           f"got {covenant_count}")
+
+    # Search dictionary: "baptism"
+    try:
+        cur.execute("""
+            SELECT de.id FROM dictionary_fts f
+            JOIN dictionary_entries de ON de.rowid = f.rowid
+            WHERE f.term MATCH 'baptism' LIMIT 5
+        """)
+        dict_results = [r[0] for r in cur.fetchall()]
+        check("FTS dictionary 'baptism' → returns results", len(dict_results) > 0,
+              f"got {dict_results}")
+    except Exception:
+        warn("dictionary_fts search failed (table may not exist)")
 
     # =========================================================
     # 5. CROSS-BOOK SPOT CHECKS

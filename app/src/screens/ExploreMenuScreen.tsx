@@ -88,6 +88,16 @@ const GRID_FEATURES: Feature[] = [
     screen: 'Concordance',
   },
   {
+    title: 'Scholar Debates',
+    subtitle: 'Explore where scholars disagree',
+    screen: 'DebateBrowse',
+  },
+  {
+    title: 'Bible Dictionary',
+    subtitle: 'Definitions for every biblical term',
+    screen: 'DictionaryBrowse',
+  },
+  {
     title: 'Content Library',
     subtitle: 'Browse manuscripts, discourse, and more',
     screen: 'ContentLibrary',

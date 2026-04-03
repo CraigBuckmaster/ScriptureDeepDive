@@ -29,6 +29,8 @@ export type ReadStackParamList = {
   HarmonyDetail: { entryId: string };
   TopicBrowse: undefined;
   TopicDetail: { topicId: string };
+  DictionaryBrowse: undefined;
+  DictionaryDetail: { entryId: string };
 };
 
 export type HomeStackParamList = {
@@ -43,6 +45,8 @@ export type HomeStackParamList = {
   HarmonyDetail: { entryId: string };
   TopicBrowse: undefined;
   TopicDetail: { topicId: string };
+  DictionaryBrowse: undefined;
+  DictionaryDetail: { entryId: string };
 };
 
 export type ExploreStackParamList = {
@@ -67,6 +71,10 @@ export type ExploreStackParamList = {
   ConceptDetail: { conceptId: string };
   DifficultPassagesBrowse: undefined;
   DifficultPassageDetail: { passageId: string };
+  DictionaryBrowse: undefined;
+  DictionaryDetail: { entryId: string };
+  DebateBrowse: undefined;
+  DebateDetail: { topicId: string };
   ContentLibrary: undefined;
   Concordance: {
     strongs?: string;

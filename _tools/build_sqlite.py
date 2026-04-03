@@ -432,9 +432,28 @@ CREATE TABLE lexicon_entries (
 );
 CREATE INDEX idx_lexicon_language ON lexicon_entries(language);
 
+-- Dictionary entries (Easton's Bible Dictionary)
+CREATE TABLE dictionary_entries (
+  id TEXT PRIMARY KEY,
+  term TEXT NOT NULL,
+  definition TEXT NOT NULL,
+  refs_json TEXT,
+  related_json TEXT,
+  category TEXT,
+  cross_person_id TEXT,
+  cross_place_id TEXT,
+  cross_word_study_id TEXT,
+  cross_concept_id TEXT,
+  source TEXT NOT NULL DEFAULT 'easton'
+);
+
+CREATE INDEX idx_dictionary_category ON dictionary_entries(category);
+CREATE INDEX idx_dictionary_term ON dictionary_entries(term);
+
 -- Full-text search indexes
 CREATE VIRTUAL TABLE verses_fts USING fts5(text, content=verses, content_rowid=id);
 CREATE VIRTUAL TABLE people_fts USING fts5(name, role, bio, content=people, content_rowid=rowid);
+CREATE VIRTUAL TABLE dictionary_fts USING fts5(term, definition, content=dictionary_entries, content_rowid=rowid);
 
 -- ══════════════════════════════════════════════════════════════
 -- NOTE: User tables (notes, bookmarks, preferences, highlights,
@@ -1181,6 +1200,32 @@ def populate_lexicon(cur):
     return n
 
 
+def populate_dictionary(cur):
+    """Populate dictionary_entries from content/meta/dictionary-easton.json."""
+    path = META / 'dictionary-easton.json'
+    if not path.exists():
+        print("  [SKIP] dictionary-easton.json not found")
+        return 0
+    entries = _load_json(path)
+    for e in entries:
+        cross = e.get('cross_links', {})
+        cur.execute(
+            'INSERT INTO dictionary_entries (id, term, definition, refs_json, related_json, '
+            'category, cross_person_id, cross_place_id, cross_word_study_id, cross_concept_id, source) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            (e['id'], e['term'], e['definition'],
+             _json_str(e.get('refs', [])),
+             _json_str(e.get('related', [])),
+             e.get('category', 'general'),
+             cross.get('person_id'),
+             cross.get('place_id'),
+             cross.get('word_study_id'),
+             cross.get('concept_id'),
+             'easton')
+        )
+    return len(entries)
+
+
 def populate_red_letter(cur):
     """Populate red_letter_verses from content/meta/red-letter.json."""
     path = META / 'red-letter.json'
@@ -1338,6 +1383,7 @@ def build_fts(cur):
     """Populate FTS5 indexes."""
     cur.execute('INSERT INTO verses_fts(verses_fts) VALUES("rebuild")')
     cur.execute('INSERT INTO people_fts(people_fts) VALUES("rebuild")')
+    cur.execute('INSERT INTO dictionary_fts(dictionary_fts) VALUES("rebuild")')
 
 
 # ---------------------------------------------------------------------------
@@ -1551,6 +1597,9 @@ def main():
     n = populate_lexicon(cur)
     print(f"  [OK] lexicon_entries: {n} rows")
 
+    n = populate_dictionary(cur)
+    print(f"  [OK] dictionary_entries: {n} rows")
+
     n = populate_red_letter(cur)
     print(f"  [OK] red_letter_verses: {n} rows")
 
@@ -1620,6 +1669,7 @@ def main():
         'map_stories', 'word_studies', 'synoptic_map', 'topics', 'debate_topics', 'vhl_groups',
         'genealogy_config', 'cross_ref_threads', 'cross_ref_pairs', 'timelines',
         'content_library',
+        'dictionary_entries',
         'red_letter_verses',
         'lexicon_entries',
     ]

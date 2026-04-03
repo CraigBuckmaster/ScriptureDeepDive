@@ -9,6 +9,8 @@ import HarmonyBrowseScreen from '../screens/HarmonyBrowseScreen';
 import HarmonyDetailScreen from '../screens/HarmonyDetailScreen';
 import TopicBrowseScreen from '../screens/TopicBrowseScreen';
 import TopicDetailScreen from '../screens/TopicDetailScreen';
+import DictionaryBrowseScreen from '../screens/DictionaryBrowseScreen';
+import DictionaryDetailScreen from '../screens/DictionaryDetailScreen';
 import { useTheme } from '../theme';
 import type { ReadStackParamList } from './types';
 
@@ -35,6 +37,8 @@ export function ReadStack() {
       <Stack.Screen name="HarmonyDetail" component={HarmonyDetailScreen} />
       <Stack.Screen name="TopicBrowse" component={TopicBrowseScreen} />
       <Stack.Screen name="TopicDetail" component={TopicDetailScreen} />
+      <Stack.Screen name="DictionaryBrowse" component={DictionaryBrowseScreen} />
+      <Stack.Screen name="DictionaryDetail" component={DictionaryDetailScreen} />
     </Stack.Navigator>
   );
 }
