@@ -6,7 +6,7 @@
  */
 
 import React, { memo } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { maxPriorityForZoom, labelScale, labelOffset } from '../../utils/geoMath';
 import type { Place } from '../../types';
 import { fontFamily } from '../../theme';
@@ -47,30 +47,39 @@ export const PlaceLabel = memo(function PlaceLabel({ place, showModern, zoomLeve
   const offset = labelOffset(place.label_dir, fontSize);
 
   return (
-    <View style={{
-      alignItems: 'center',
+    <View style={[styles.labelContainer, {
       transform: [{ translateX: offset.x }, { translateY: offset.y }],
-    }}>
+    }]}>
       {symbol && (
-        <Text style={{
+        <Text style={[styles.symbolText, {
           color,
           fontSize: Math.max(4, fontSize * 0.6),
-          opacity: 0.8,
-        }}>
+        }]}>
           {symbol}
         </Text>
       )}
-      <Text style={{
+      <Text style={[styles.nameText, {
         color,
-        fontFamily: fontFamily.display,
         fontSize,
         fontStyle: isItalic ? 'italic' : 'normal',
-        textShadowColor: '#000',
-        textShadowOffset: { width: 0, height: 1 },
-        textShadowRadius: 2,
-      }}>
+      }]}>
         {name}
       </Text>
     </View>
   );
+});
+
+const styles = StyleSheet.create({
+  labelContainer: {
+    alignItems: 'center',
+  },
+  symbolText: {
+    opacity: 0.8,
+  },
+  nameText: {
+    fontFamily: fontFamily.display,
+    textShadowColor: '#000',
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 2,
+  },
 });

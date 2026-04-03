@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 interface Props { completed: number; total: number; }
@@ -8,13 +8,32 @@ export function PlanProgressBar({ completed, total }: Props) {
   const { base } = useTheme();
   const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
   return (
-    <View style={{ gap: 4 }}>
-      <View style={{ height: 6, backgroundColor: base.bgSurface, borderRadius: 3, overflow: 'hidden' }}>
-        <View style={{ height: 6, width: `${pct}%`, backgroundColor: base.gold, borderRadius: 3 }} />
+    <View style={styles.container}>
+      <View style={[styles.trackBar, { backgroundColor: base.bgSurface }]}>
+        <View style={[styles.fillBar, { width: `${pct}%`, backgroundColor: base.gold }]} />
       </View>
-      <Text style={{ color: base.textMuted, fontFamily: fontFamily.ui, fontSize: 11 }}>
+      <Text style={[styles.progressText, { color: base.textMuted }]}>
         {pct}% · Day {completed} of {total}
       </Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    gap: 4,
+  },
+  trackBar: {
+    height: 6,
+    borderRadius: 3,
+    overflow: 'hidden',
+  },
+  fillBar: {
+    height: 6,
+    borderRadius: 3,
+  },
+  progressText: {
+    fontFamily: fontFamily.ui,
+    fontSize: 11,
+  },
+});

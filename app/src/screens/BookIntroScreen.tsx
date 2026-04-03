@@ -49,7 +49,7 @@ export default function BookIntroScreen() {
             {typeof intro.authorship === 'string' ? (
               <Text style={[styles.bodyText, { color: base.textDim }]}>{intro.authorship}</Text>
             ) : (
-              <View style={{ gap: spacing.sm }}>
+              <View style={styles.authorshipDetails}>
                 {intro.authorship.author && (
                   <View>
                     <Text style={[styles.authorshipSubLabel, { color: base.gold }]}>Author</Text>
@@ -164,6 +164,9 @@ const styles = StyleSheet.create({
     fontSize: 10,
     letterSpacing: 0.5,
     marginBottom: spacing.xs,
+  },
+  authorshipDetails: {
+    gap: spacing.sm,
   },
   authorshipSubLabel: {
     fontFamily: fontFamily.uiSemiBold,

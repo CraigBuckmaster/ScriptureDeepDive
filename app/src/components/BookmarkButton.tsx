@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { useTheme, MIN_TOUCH_TARGET } from '../theme';
 import { mediumImpact } from '../utils/haptics';
 
@@ -22,11 +22,23 @@ export function BookmarkButton({ isBookmarked, onToggle, verseNum }: Props) {
       hitSlop={{ top: 8, bottom: 8, left: 4, right: 4 }}
       accessibilityRole="button"
       accessibilityLabel={`${isBookmarked ? 'Remove' : 'Add'} bookmark for verse ${verseNum}`}
-      style={{ width: 20, minHeight: MIN_TOUCH_TARGET, alignItems: 'center', justifyContent: 'center' }}
+      style={styles.container}
     >
-      <Text style={{ fontSize: 14, color: isBookmarked ? base.gold : base.textMuted + '40' }}>
+      <Text style={[styles.icon, { color: isBookmarked ? base.gold : base.textMuted + '40' }]}>
         {isBookmarked ? '★' : '☆'}
       </Text>
     </TouchableOpacity>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    width: 20,
+    minHeight: MIN_TOUCH_TARGET,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  icon: {
+    fontSize: 14,
+  },
+});

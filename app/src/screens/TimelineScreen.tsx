@@ -182,7 +182,7 @@ export default function TimelineScreen() {
         </View>
       </View>
 
-      <ScrollView ref={timelineScrollRef} horizontal showsHorizontalScrollIndicator style={{ flex: 1 }} accessible accessibilityLabel="Timeline" accessibilityHint="Scroll horizontally to explore events">
+      <ScrollView ref={timelineScrollRef} horizontal showsHorizontalScrollIndicator style={styles.timelineScroll} accessible accessibilityLabel="Timeline" accessibilityHint="Scroll horizontally to explore events">
         <Svg width={TOTAL_WIDTH} height={SVG_HEIGHT}>
           {/* ── Gradient definitions ────────────────────── */}
           <Defs>
@@ -349,14 +349,7 @@ export default function TimelineScreen() {
             <>
               {/* Era accent bar */}
               {selectedEvent.era && (
-                <View style={{
-                  height: 3,
-                  backgroundColor: eras[selectedEvent.era] ?? base.gold,
-                  borderRadius: 1.5,
-                  marginBottom: spacing.md,
-                  width: '30%',
-                  alignSelf: 'center',
-                }} />
+                <View style={[styles.eraAccentBar, { backgroundColor: eras[selectedEvent.era] ?? base.gold }]} />
               )}
               {selectedEvent.era && <BadgeChip label={eraNames[selectedEvent.era] ?? selectedEvent.era} color={eras[selectedEvent.era] ?? base.gold} />}
               <Text style={[styles.detailTitle, { color: base.text }]}>
@@ -477,5 +470,15 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.display,
     fontSize: 10,
     letterSpacing: 0.3,
+  },
+  timelineScroll: {
+    flex: 1,
+  },
+  eraAccentBar: {
+    height: 3,
+    borderRadius: 1.5,
+    marginBottom: spacing.md,
+    width: '30%',
+    alignSelf: 'center',
   },
 });

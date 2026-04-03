@@ -73,7 +73,7 @@ export default function ConceptBrowseScreen() {
           <ChevronLeft size={24} color={base.gold} />
         </TouchableOpacity>
         <Text style={[styles.title, { color: base.gold }]} accessibilityRole="header">Concepts</Text>
-        <View style={{ width: 24 }} />
+        <View style={styles.headerSpacer} />
       </View>
 
       {/* Search */}
@@ -134,6 +134,9 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: fontFamily.displaySemiBold,
     fontSize: 18,
+  },
+  headerSpacer: {
+    width: 24,
   },
   searchRow: {
     paddingHorizontal: spacing.md,

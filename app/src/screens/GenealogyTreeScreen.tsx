@@ -191,7 +191,7 @@ export default function GenealogyTreeScreen({ route, navigation }: {
 
   return (
     <View style={styles.container}>
-      <View style={{ paddingTop: insets.top, zIndex: 10 }}>
+      <View style={[styles.topBar, { paddingTop: insets.top }]}>
         <PersonSearchBar people={people} onSelect={handleSearchSelect} />
         <EraFilterBar activeEra={filterEra} onSelect={handleEraChange} />
       </View>
@@ -254,6 +254,9 @@ const styles = StyleSheet.create({
   },
   loadingPad: {
     padding: spacing.lg,
+  },
+  topBar: {
+    zIndex: 10,
   },
   viewport: {
     flex: 1,

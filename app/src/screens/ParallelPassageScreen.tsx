@@ -84,7 +84,7 @@ export default function ParallelPassageScreen() {
         <View style={styles.headerPad}>
           <ScreenHeader title="OT Parallels" onBack={() => navigation.goBack()} />
         </View>
-        <View style={{ padding: spacing.lg }}><LoadingSkeleton lines={6} /></View>
+        <View style={styles.loadingPad}><LoadingSkeleton lines={6} /></View>
       </SafeAreaView>
     );
   }
@@ -93,7 +93,7 @@ export default function ParallelPassageScreen() {
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       <View style={styles.headerPad}>
         <ScreenHeader title="OT Parallels" onBack={() => navigation.goBack()} style={styles.headerSpacing} />
-        <View style={{ marginBottom: spacing.sm }}>
+        <View style={styles.searchWrap}>
           <SearchInput value={search} onChangeText={setSearch} placeholder="Search passages..." />
         </View>
 
@@ -209,5 +209,11 @@ const styles = StyleSheet.create({
   emptyText: {
     fontFamily: fontFamily.ui,
     fontSize: 14,
+  },
+  loadingPad: {
+    padding: spacing.lg,
+  },
+  searchWrap: {
+    marginBottom: spacing.sm,
   },
 });

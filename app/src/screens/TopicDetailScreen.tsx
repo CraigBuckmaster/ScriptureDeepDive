@@ -43,7 +43,7 @@ export default function TopicDetailScreen() {
         <View style={styles.headerPad}>
           <ScreenHeader title="Topic" onBack={() => navigation.goBack()} />
         </View>
-        <View style={{ padding: spacing.lg }}>
+        <View style={styles.loadingPad}>
           {loading ? <LoadingSkeleton lines={8} /> : (
             <Text style={[styles.notFound, { color: base.textMuted }]}>Topic not found</Text>
           )}
@@ -124,6 +124,7 @@ export default function TopicDetailScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
+  loadingPad: { padding: spacing.lg },
   headerPad: { paddingHorizontal: spacing.md, paddingTop: spacing.md },
   categorySubtitle: {
     fontFamily: fontFamily.ui,

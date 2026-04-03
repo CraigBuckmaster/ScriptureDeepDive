@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { useTheme, MIN_TOUCH_TARGET } from '../theme';
 
 interface Props {
@@ -21,19 +21,23 @@ export function NoteIndicator({ verseNum, hasNote, onPress }: Props) {
       hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
       accessibilityRole="button"
       accessibilityLabel={`${hasNote ? 'Edit' : 'Add'} note for verse ${verseNum}`}
-      style={{
-        width: 24,
-        minHeight: MIN_TOUCH_TARGET,
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
+      style={styles.container}
     >
-      <Text style={{
-        fontSize: 14,
-        color: hasNote ? base.gold : base.textMuted + '40',
-      }}>
+      <Text style={[styles.icon, { color: hasNote ? base.gold : base.textMuted + '40' }]}>
         ✎
       </Text>
     </TouchableOpacity>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    width: 24,
+    minHeight: MIN_TOUCH_TARGET,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  icon: {
+    fontSize: 14,
+  },
+});

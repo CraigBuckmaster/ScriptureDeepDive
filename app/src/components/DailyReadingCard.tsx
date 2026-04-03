@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 interface Props {
@@ -13,26 +13,50 @@ export function DailyReadingCard({ planName, dayNum, chapters, onStartReading }:
   const { base } = useTheme();
 
   return (
-    <View style={{
-      backgroundColor: base.bgElevated, borderWidth: 1, borderColor: base.gold + '40',
-      borderRadius: radii.md, padding: spacing.md, marginHorizontal: spacing.md, marginBottom: spacing.md,
-    }}>
-      <Text style={{ color: base.textMuted, fontFamily: fontFamily.uiMedium, fontSize: 9, letterSpacing: 0.5 }}>
+    <View style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.gold + '40' }]}>
+      <Text style={[styles.planLabel, { color: base.textMuted }]}>
         {planName.toUpperCase()} · DAY {dayNum}
       </Text>
-      <Text style={{ color: base.text, fontFamily: fontFamily.uiMedium, fontSize: 13, marginTop: 4 }}>
+      <Text style={[styles.chaptersText, { color: base.text }]}>
         {chapters.map((c) => c.replace('_', ' ')).join(', ')}
       </Text>
       <TouchableOpacity
         onPress={() => chapters[0] && onStartReading(chapters[0])}
-        style={{ marginTop: spacing.sm }}
+        style={styles.startButton}
         accessibilityRole="button"
         accessibilityLabel={`Start reading ${planName} day ${dayNum}`}
       >
-        <Text style={{ color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 12 }}>
+        <Text style={[styles.startButtonText, { color: base.gold }]}>
           Start reading →
         </Text>
       </TouchableOpacity>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  card: {
+    borderWidth: 1,
+    borderRadius: radii.md,
+    padding: spacing.md,
+    marginHorizontal: spacing.md,
+    marginBottom: spacing.md,
+  },
+  planLabel: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 9,
+    letterSpacing: 0.5,
+  },
+  chaptersText: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 13,
+    marginTop: 4,
+  },
+  startButton: {
+    marginTop: spacing.sm,
+  },
+  startButtonText: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 12,
+  },
+});

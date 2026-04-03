@@ -49,7 +49,7 @@ export default function ChapterListScreen() {
           subtitle={`${book.total_chapters} chapters`}
           onBack={() => navigation.goBack()}
           backLabel="Back to library"
-          style={{ marginBottom: spacing.xs }}
+          style={styles.headerSpacing}
         />
 
         {/* About This Book */}
@@ -102,6 +102,9 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: spacing.md,
+  },
+  headerSpacing: {
+    marginBottom: spacing.xs,
   },
   introLink: {
     flexDirection: 'row',

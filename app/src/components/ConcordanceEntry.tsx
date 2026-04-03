@@ -35,7 +35,7 @@ export function ConcordanceEntry({ result, gloss, onPress }: Props) {
       <Text style={[styles.verseText, { color: base.textDim }]}>
         {parts.map((part, i) =>
           testRegex.test(part) ? (
-            <Text key={i} style={{ color: base.gold, fontFamily: fontFamily.bodyMedium }}>{part}</Text>
+            <Text key={i} style={[styles.glossHighlight, { color: base.gold }]}>{part}</Text>
           ) : (
             <Text key={i}>{part}</Text>
           )
@@ -90,5 +90,8 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.body,
     fontSize: 14,
     lineHeight: 22,
+  },
+  glossHighlight: {
+    fontFamily: fontFamily.bodyMedium,
   },
 });

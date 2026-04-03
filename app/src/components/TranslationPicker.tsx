@@ -74,7 +74,7 @@ export function TranslationPicker({ selected, onSelect }: Props) {
             activeOpacity={0.7}
           >
             {isDownloading ? (
-              <ActivityIndicator size={10} color={base.gold} style={{ marginRight: 4 }} />
+              <ActivityIndicator size={10} color={base.gold} style={styles.downloadSpinner} />
             ) : !isInstalled ? (
               <Text style={[styles.downloadIcon, { color: base.textMuted }]}>↓ </Text>
             ) : null}
@@ -121,5 +121,8 @@ const styles = StyleSheet.create({
   downloadIcon: {
     fontSize: 10,
     fontFamily: fontFamily.uiMedium,
+  },
+  downloadSpinner: {
+    marginRight: 4,
   },
 });

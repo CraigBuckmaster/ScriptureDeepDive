@@ -55,7 +55,7 @@ export function TTSControls({
         >
           {isPlaying
             ? <Pause size={20} color={base.gold} fill={base.gold} />
-            : <Play size={20} color={base.gold} fill={base.gold} style={{ marginLeft: 2 }} />
+            : <Play size={20} color={base.gold} fill={base.gold} style={styles.playIcon} />
           }
         </TouchableOpacity>
 
@@ -180,5 +180,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  playIcon: {
+    marginLeft: 2,
   },
 });

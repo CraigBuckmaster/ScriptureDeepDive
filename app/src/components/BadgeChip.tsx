@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
 import { useTheme, radii, spacing, fontFamily } from '../theme';
 
 interface Props {
@@ -19,25 +19,16 @@ export function BadgeChip({ label, icon, color, onPress }: Props) {
 
   const content = (
     <View
-      style={{
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: accent + '1A', // 10% opacity
-        borderWidth: 1,
-        borderColor: accent + '40', // 25% opacity
-        borderRadius: radii.pill,
-        paddingHorizontal: spacing.sm + 2,
-        paddingVertical: 3,
-        gap: 4,
-      }}
+      style={[
+        styles.chip,
+        {
+          backgroundColor: accent + '1A', // 10% opacity
+          borderColor: accent + '40', // 25% opacity
+        },
+      ]}
     >
       {icon}
-      <Text style={{
-        color: accent,
-        fontFamily: fontFamily.uiMedium,
-        fontSize: 11,
-        letterSpacing: 0.2,
-      }}>
+      <Text style={[styles.label, { color: accent }]}>
         {label}
       </Text>
     </View>
@@ -58,3 +49,20 @@ export function BadgeChip({ label, icon, color, onPress }: Props) {
 
   return content;
 }
+
+const styles = StyleSheet.create({
+  chip: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderRadius: radii.pill,
+    paddingHorizontal: spacing.sm + 2,
+    paddingVertical: 3,
+    gap: 4,
+  },
+  label: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 11,
+    letterSpacing: 0.2,
+  },
+});

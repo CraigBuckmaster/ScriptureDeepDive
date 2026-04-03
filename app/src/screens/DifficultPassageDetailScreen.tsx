@@ -112,7 +112,7 @@ function ResponseCard({
           <ChevronLeft
             size={14}
             color={base.textMuted}
-            style={{ transform: [{ rotate: '180deg' }] }}
+            style={styles.chevronFlipped}
           />
         </TouchableOpacity>
       )}
@@ -217,7 +217,7 @@ export default function DifficultPassageDetailScreen() {
             <ChevronLeft size={24} color={base.gold} />
           </TouchableOpacity>
           <Text style={[styles.headerTitle, { color: base.gold }]}>Difficult Passage</Text>
-          <View style={{ width: 24 }} />
+          <View style={styles.headerSpacer} />
         </View>
         <View style={styles.center}>
           <Text style={[styles.errorText, { color: base.textMuted }]}>{error || 'Passage not found'}</Text>
@@ -244,7 +244,7 @@ export default function DifficultPassageDetailScreen() {
         <Text style={[styles.headerTitle, { color: base.gold }]} numberOfLines={1} accessibilityRole="header">
           {passage.title}
         </Text>
-        <View style={{ width: 24 }} />
+        <View style={styles.headerSpacer} />
       </View>
 
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
@@ -399,7 +399,7 @@ export default function DifficultPassageDetailScreen() {
           </View>
         )}
 
-        <View style={{ height: spacing.xxl }} />
+        <View style={styles.bottomSpacer} />
       </ScrollView>
     </SafeAreaView>
   );
@@ -721,5 +721,14 @@ const styles = StyleSheet.create({
   tagText: {
     fontFamily: fontFamily.ui,
     fontSize: 12,
+  },
+  headerSpacer: {
+    width: 24,
+  },
+  chevronFlipped: {
+    transform: [{ rotate: '180deg' }],
+  },
+  bottomSpacer: {
+    height: spacing.xxl,
   },
 });

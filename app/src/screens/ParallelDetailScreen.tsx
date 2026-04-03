@@ -78,7 +78,7 @@ export default function ParallelDetailScreen() {
         <View style={styles.headerPad}>
           <ScreenHeader title="Parallel Passage" onBack={() => navigation.goBack()} />
         </View>
-        <View style={{ padding: spacing.lg }}>
+        <View style={styles.loadingPad}>
           {isLoading ? <LoadingSkeleton lines={8} /> : (
             <Text style={[styles.notFound, { color: base.textMuted }]}>Passage not found</Text>
           )}
@@ -141,6 +141,7 @@ export default function ParallelDetailScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1 },
   headerPad: { paddingHorizontal: spacing.md, paddingTop: spacing.md },
+  loadingPad: { padding: spacing.lg },
   scroll: { flex: 1 },
   scrollContent: { padding: spacing.md },
   notFound: {

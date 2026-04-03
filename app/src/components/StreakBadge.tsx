@@ -30,7 +30,7 @@ export function StreakBadge({ streak }: Props) {
       <Text style={[styles.label, { color: base.gold }]}>
         {streak}-day streak
       </Text>
-      <Share2 size={10} color={base.gold} style={{ opacity: 0.6 }} />
+      <Share2 size={10} color={base.gold} style={styles.shareIcon} />
     </TouchableOpacity>
   );
 }
@@ -47,5 +47,8 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.uiMedium,
     fontSize: 12,
     opacity: 0.85,
+  },
+  shareIcon: {
+    opacity: 0.6,
   },
 });

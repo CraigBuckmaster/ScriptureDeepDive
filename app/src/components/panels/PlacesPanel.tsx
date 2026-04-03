@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { TappableReference } from '../TappableReference';
 import { useTheme, spacing, radii, fontFamily } from '../../theme';
 import type { PlaceEntry, ParsedRef } from '../../types';
@@ -20,17 +20,14 @@ export function PlacesPanel({ entries, onPlacePress, onRefPress }: Props) {
   const colors = getPanelColors('poi');
 
   return (
-    <View style={{ gap: spacing.sm }}>
+    <View style={styles.container}>
       {entries.map((entry, i) => (
         <View
           key={i}
-          style={{
+          style={[styles.entryCard, {
             backgroundColor: colors.bg,
-            borderWidth: 1,
             borderColor: colors.border + '60',
-            borderRadius: radii.md,
-            padding: spacing.sm,
-          }}
+          }]}
         >
           <TouchableOpacity
             onPress={() => onPlacePress?.(entry.name)}
@@ -38,23 +35,19 @@ export function PlacesPanel({ entries, onPlacePress, onRefPress }: Props) {
             accessibilityRole="button"
             accessibilityLabel={`View ${entry.name} on map`}
           >
-            <Text style={{
-              color: colors.accent,
-              fontFamily: fontFamily.displayMedium,
-              fontSize: 13,
-            }}>
+            <Text style={[styles.entryName, { color: colors.accent }]}>
               {entry.name}
             </Text>
           </TouchableOpacity>
           {entry.role ? (
-            <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: fontFamily.ui, marginTop: 2 }}>
+            <Text style={[styles.entryRole, { color: base.textMuted }]}>
               {entry.role}
             </Text>
           ) : null}
           {entry.text ? (
             <TappableReference
               text={entry.text}
-              style={{ color: base.textDim, fontSize: 13, lineHeight: 20, marginTop: 4 }}
+              style={[styles.entryText, { color: base.textDim }]}
               onRefPress={onRefPress}
             />
           ) : null}
@@ -63,3 +56,28 @@ export function PlacesPanel({ entries, onPlacePress, onRefPress }: Props) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    gap: spacing.sm,
+  },
+  entryCard: {
+    borderWidth: 1,
+    borderRadius: radii.md,
+    padding: spacing.sm,
+  },
+  entryName: {
+    fontFamily: fontFamily.displayMedium,
+    fontSize: 13,
+  },
+  entryRole: {
+    fontSize: 11,
+    fontFamily: fontFamily.ui,
+    marginTop: 2,
+  },
+  entryText: {
+    fontSize: 13,
+    lineHeight: 20,
+    marginTop: 4,
+  },
+});

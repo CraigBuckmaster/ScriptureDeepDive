@@ -128,7 +128,7 @@ export default function DifficultPassagesBrowseScreen() {
           <ChevronLeft size={24} color={base.gold} />
         </TouchableOpacity>
         <Text style={[styles.title, { color: base.gold }]} accessibilityRole="header">Difficult Passages</Text>
-        <View style={{ width: 24 }} />
+        <View style={styles.headerSpacer} />
       </View>
 
       {/* Search */}
@@ -227,6 +227,9 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: fontFamily.displaySemiBold,
     fontSize: 18,
+  },
+  headerSpacer: {
+    width: 24,
   },
   searchRow: {
     paddingHorizontal: spacing.md,

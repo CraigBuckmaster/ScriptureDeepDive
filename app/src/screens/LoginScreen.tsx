@@ -76,7 +76,7 @@ export default function LoginScreen() {
         <ScreenHeader
           title="Sign In"
           onBack={() => navigation.goBack()}
-          style={{ marginBottom: spacing.lg }}
+          style={styles.headerSpacing}
         />
 
         {/* Subtitle */}
@@ -273,5 +273,8 @@ const styles = StyleSheet.create({
   bottomLinkText: {
     fontFamily: fontFamily.ui,
     fontSize: 14,
+  },
+  headerSpacing: {
+    marginBottom: spacing.lg,
   },
 });
