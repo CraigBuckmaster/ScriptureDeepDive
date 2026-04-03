@@ -1159,7 +1159,7 @@ def populate_lexicon(cur):
     """Populate lexicon_entries from content/meta/lexicon-greek.json and lexicon-hebrew.json."""
     n = 0
     for fname in ['lexicon-greek.json', 'lexicon-hebrew.json']:
-        path = CONTENT / 'meta' / fname
+        path = META / fname
         if not path.exists():
             print(f"  [SKIP] {fname} not found")
             continue
@@ -1183,7 +1183,7 @@ def populate_lexicon(cur):
 
 def populate_red_letter(cur):
     """Populate red_letter_verses from content/meta/red-letter.json."""
-    path = CONTENT / 'meta' / 'red-letter.json'
+    path = META / 'red-letter.json'
     if not path.exists():
         print("  [SKIP] red-letter.json not found")
         return 0
