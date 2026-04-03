@@ -187,6 +187,20 @@ export default function ChapterScreen() {
   }, [bookId, chapterNum]);
   useEffect(() => { loadHighlights(); }, [loadHighlights]);
 
+  // Build verseNum → highlight hex color map for rendering
+  const highlightMap = useMemo(() => {
+    const map = new Map<number, string>();
+    for (const h of highlights) {
+      const parts = h.verse_ref.split(':');
+      const num = parts[1] ? parseInt(parts[1], 10) : NaN;
+      if (!isNaN(num)) {
+        const entry = HIGHLIGHT_COLORS.find((c) => c.name === h.color);
+        if (entry) map.set(num, entry.hex);
+      }
+    }
+    return map;
+  }, [highlights]);
+
   // Breadcrumb state — show when openPanel is present, hide on chapter swipe
   const [showBreadcrumb, setShowBreadcrumb] = useState(!!openPanel);
 
@@ -451,6 +465,7 @@ export default function ChapterScreen() {
               comparisonLabel={comparisonTranslation ? (TRANSLATION_MAP.get(comparisonTranslation)?.label ?? comparisonTranslation.toUpperCase()) : undefined}
               primaryLabel={comparisonTranslation ? (TRANSLATION_MAP.get(translation)?.label ?? translation.toUpperCase()) : undefined}
               redLetterVerses={redLetterVerses}
+              highlightMap={highlightMap}
               onVerseLayout={(verseNum, y, sectionId) => {
                 const sectionY = sectionYMap.current[sectionId] ?? 0;
                 verseYMap.current[verseNum] = sectionY + y;
