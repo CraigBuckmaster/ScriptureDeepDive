@@ -293,6 +293,31 @@ def main():
                       f"{strongs} missing definition.short")
         print(f"  Greek lexicon entries: {len(gl_data)}")
 
+    # Hebrew lexicon
+    hl_path = META / 'lexicon-hebrew.json'
+    if hl_path.exists():
+        hl_data = json.loads(hl_path.read_text())
+        check("lexicon-hebrew.json is list", isinstance(hl_data, list))
+        seen_strongs = set()
+        for i, e in enumerate(hl_data):
+            strongs = e.get('strongs', '')
+            for key in ('strongs', 'language', 'lemma', 'transliteration', 'definition'):
+                check(f"hebrew lexicon entry [{i}] has '{key}'", key in e,
+                      f"entry {strongs or f'index {i}'} missing '{key}'")
+            if strongs:
+                check(f"hebrew lexicon entry {strongs} valid format",
+                      re.match(r'^H\d{4}$', strongs) is not None,
+                      f"invalid strongs format: {strongs}")
+                check(f"hebrew lexicon entry {strongs} not duplicate",
+                      strongs not in seen_strongs,
+                      f"duplicate strongs: {strongs}")
+                seen_strongs.add(strongs)
+            if 'definition' in e:
+                check(f"hebrew lexicon entry {strongs} has definition.short",
+                      'short' in e['definition'] and e['definition']['short'],
+                      f"{strongs} missing definition.short")
+        print(f"  Hebrew lexicon entries: {len(hl_data)}")
+
     # ── Summary ──
     print(f"\n{'='*60}")
     print(f"RESULTS: {passed} passed, {failed} failed")
