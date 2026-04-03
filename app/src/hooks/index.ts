@@ -40,3 +40,4 @@ export { usePremium } from './usePremium';
 export { useConceptData, useConcepts } from './useConceptData';
 export { useStudyDepth } from './useStudyDepth';
 export { useDebateTopics, useDebateTopic, useChapterDebateTopics, DEBATE_CATEGORY_LABELS } from './useDebateTopics';
+export { useLifeTopicCategories, useLifeTopics, useLifeTopicSearch, useLifeTopicDetail } from './useLifeTopics';
