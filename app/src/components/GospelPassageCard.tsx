@@ -11,13 +11,13 @@ import type { ResolvedVerse } from '../utils/verseResolver';
 
 interface Props {
   gospelName: string;
-  ref: string;
+  passageRef: string;
   verses: ResolvedVerse[];
   color: string;
   onNavigate: () => void;
 }
 
-export function GospelPassageCard({ gospelName, ref: refStr, verses, color, onNavigate }: Props) {
+export function GospelPassageCard({ gospelName, passageRef: refStr, verses, color, onNavigate }: Props) {
   const { base } = useTheme();
 
   return (

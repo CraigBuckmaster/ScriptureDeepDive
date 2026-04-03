@@ -114,7 +114,7 @@ export default function ParallelDetailScreen() {
             <GospelPassageCard
               key={`${p.book}-${idx}`}
               gospelName={gospelName}
-              ref={p.ref}
+              passageRef={p.ref}
               verses={passageTexts[p.book] ?? []}
               color={color}
               onNavigate={() => {
