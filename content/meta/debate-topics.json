@@ -9778,8 +9778,8 @@
       1
     ],
     "passage": "Matthew 1",
-    "question": "Is Matthew's genealogy of Jesus a historical record, a theological construct, or a midrashic composition?",
-    "context": "Matthew opens his Gospel with a genealogy structured in three groups of 14 generations (Abraham to David, David to exile, exile to Christ). The genealogy omits known kings (Ahaziah, Joash, Amaziah), includes four unexpected women (Tamar, Rahab, Ruth, Bathsheba), and the third section appears to contain only 13 names. These features raise questions: is Matthew working from historical records, constructing a theological argument through selective genealogy, or composing a midrash on Israel's history? The number 14 may be a gematria of David's name (D=4, V=6, D=4).",
+    "question": "Is Matthew's genealogy of Jesus historically reliable, or is it a theological construction shaped to fit a 14-14-14 pattern?",
+    "context": "Matthew 1:1-17 traces Jesus' lineage from Abraham through David to Joseph in three sets of fourteen generations. The genealogy omits several known kings (Ahaziah, Joash, Amaziah between Joram and Uzziah), includes four Gentile women (Tamar, Rahab, Ruth, Bathsheba), and differs significantly from Luke's genealogy. The symmetrical 14-14-14 structure appears to be the organizing principle, which some scholars see as evidence of theological shaping over historical accuracy. The number 14 may encode David's name (D=4, V=6, D=4 in Hebrew).",
     "positions": [
       {
         "id": "theological-construct-not-historical-rec",
@@ -9788,8 +9788,8 @@
         "scholar_ids": [],
         "proponents": "Raymond Brown, John Meier, most historical-critical scholars",
         "argument": "Matthew's genealogy contains arithmetical irregularities (the third group has only thirteen names by most counts), includes women not found in the OT genealogies, and is irreconcilable with Luke's genealogy at the post-Davidic level. The three-fourteen structure is clearly artificial. Matthew is constructing a theological argument, not transcribing a registry.",
-        "strengths": "The deliberate omissions and 3×14 structure demonstrate editorial shaping; the inclusion of the four women serves a theological purpose (gentile and irregular unions in the Messianic line); the third group has only 13 names, suggesting the pattern drives the content.",
-        "weaknesses": "Theological shaping does not preclude historical foundations; ancient genealogies commonly selected from larger lists; dismissing all historical value may be an overcorrection.",
+        "strengths": "The deliberate omission of kings to achieve the 14-14-14 pattern shows literary shaping; the differences with Luke are irreconcilable if both claim biological descent; ancient genealogies regularly served political-theological rather than biological purposes.",
+        "weaknesses": "The genealogy contains verifiable historical names that match OT records; dismissing it as 'construct' understates the genuine historical tradition behind it; ancient readers would have checked available records.",
         "key_verses": [
           "Matthew 1:1",
           "Matthew 1:17"
@@ -9804,11 +9804,12 @@
         ],
         "proponents": "Richard Bauckham, Craig Keener, N.T. Wright",
         "argument": "Genealogical records were kept and consulted in Second Temple Judaism; Josephus mentions his own. Matthew may have had access to Joseph's family records and arranged them theologically. The discrepancy with Luke reflects two different lines of descent (one through Solomon, one through Nathan) and/or two different purposes (legal vs biological). The artificiality of the structure does not require historical invention.",
-        "strengths": "Matthew likely had access to genealogical records (temple or family archives); the names that can be checked against OT sources are accurate; ancient historians regularly shaped material without fabricating it; the genealogy serves both as historical anchor and theological argument.",
-        "weaknesses": "The omissions are difficult to explain if the primary intent is historical accuracy; the discrepancies with Luke's genealogy suggest one or both are not strictly historical; the 3×14 structure appears contrived.",
+        "strengths": "The genealogy follows known OT lineages accurately where it can be checked; the selective omissions are a recognized literary technique, not falsification; ancient historiography regularly shaped data for theological purposes without abandoning historical intent.",
+        "weaknesses": "The omissions are significant enough to question strict historicity; the 14-14-14 pattern drives the selection; the relationship between Matthew's and Luke's genealogies remains unresolved.",
         "key_verses": [
           "Matthew 1:1-17",
-          "1 Chronicles 3:10-16"
+          "1 Chronicles 3:10-16",
+          "Ruth 4:18-22"
         ]
       },
       {
@@ -9818,25 +9819,27 @@
         "scholar_ids": [],
         "proponents": "Some Jewish-Christian scholars",
         "argument": "Matthew is composing in the manner of Jewish midrash — using biblical materials and genealogical conventions to make theological points. Historical accuracy in the modern sense is not the genre's concern. What matters is that the theological claims (Davidic descent, Abrahamic fulfilment) are established, not that every name can be verified in an archive.",
-        "strengths": "Matthew employs recognizable midrashic techniques — gematria (David=14), typological structuring, inclusion of unexpected figures; the genealogy functions as a compressed retelling of Israel's history, not a family tree; this approach was normal and respected in Jewish literary culture.",
-        "weaknesses": "Calling it 'midrash' may imply fabrication to modern readers, though that is not what the term means in Jewish literary tradition; Matthew's audience may have expected more historical grounding; the midrashic label can be over-applied.",
+        "strengths": "Matthew's genealogy follows midrashic conventions — reinterpreting OT data for a new theological purpose; the inclusion of the four women follows a midrashic pattern of unexpected grace; the 14=David gematria is a recognized Jewish literary device.",
+        "weaknesses": "Calling it 'midrashic' may imply fiction to modern readers, which is not what midrash means; the genealogy contains too much verifiable data to be pure midrash; Matthew's audience would have expected historical grounding for a Messianic claim.",
         "key_verses": [
-          "Matthew 1:1-17",
+          "Matthew 1:3",
+          "Matthew 1:5-6",
           "Matthew 1:17"
         ]
       }
     ],
-    "synthesis": "Most scholars recognize that Matthew's genealogy is theologically shaped — the 3×14 structure, the omissions, and the inclusion of the four women all serve Matthew's argument that Jesus is the promised Davidic Messiah. This does not necessarily negate historical foundations; ancient genealogies routinely combined real ancestry with purposeful selection and arrangement. The key question is whether Matthew had access to reliable genealogical records or constructed the genealogy from OT texts alone.",
+    "synthesis": "Most scholars agree the genealogy combines genuine historical tradition with deliberate theological structuring. The omissions are selective, not random — they serve the 14-generation pattern and may also reflect judgments about particular kings. The inclusion of Gentile women prefigures the Gospel's universal scope. Whether the genealogy traces a biological line or a legal-dynastic line is debated, especially given the virgin birth claim. The theological message is clear: Jesus is the legitimate Davidic Messiah in whom Israel's story reaches its climax.",
     "related_passages": [
       "Matthew 1:1-17",
       "Luke 3:23-38",
-      "1 Chronicles 1-3",
-      "Ruth 4:18-22"
+      "Ruth 4:18-22",
+      "1 Chronicles 3:10-16"
     ],
     "tags": [
       "genealogy",
-      "matthew",
-      "davidic-messiah",
+      "matthew-1",
+      "david",
+      "messiah",
       "historicity"
     ]
   },
@@ -10161,8 +10164,8 @@
       10
     ],
     "passage": "Matthew 10",
-    "question": "What did Jesus mean by 'you will not finish going through the cities of Israel before the Son of Man comes'?",
-    "context": "In Matthew 10:23, during the mission discourse, Jesus tells the Twelve they will not finish going through Israel's cities 'before the Son of Man comes.' This saying is notoriously difficult. If it refers to the Second Coming, Jesus appears to have been wrong — the disciples completed their mission and Christ has not returned. If it refers to AD 70, it requires 'the coming of the Son of Man' to mean something other than the Parousia. If it refers only to the immediate mission, 'the Son of Man comes' needs a non-eschatological referent. The verse is a crux for any theory of Jesus' eschatological expectations.",
+    "question": "What does Jesus mean by 'you will not finish going through the towns of Israel before the Son of Man comes'?",
+    "context": "In the context of commissioning the Twelve for a mission to Israel, Jesus warns of persecution and then says: 'When you are persecuted in one place, flee to another. Truly I tell you, you will not finish going through the towns of Israel before the Son of Man comes' (Matt 10:23). This is one of the most difficult sayings in the Gospels. If 'the Son of Man comes' means the Second Coming, Jesus appears to have predicted it would happen within the disciples' lifetime — an apparently failed prophecy. The verse has generated multiple interpretive solutions.",
     "positions": [
       {
         "id": "fulfilled-in-ad-70-with-the-destruction-",
@@ -10171,11 +10174,11 @@
         "scholar_ids": [],
         "proponents": "Preterist interpretation",
         "argument": "The coming of the Son of Man refers to the judgment on Jerusalem in AD 70, not the Second Coming.",
-        "strengths": "The destruction of Jerusalem in AD 70 was a 'coming' of the Son of Man in judgment (cf. Dan 7:13 as vindication/enthronement); Matthew 24 closely parallels this saying and is widely interpreted as referring to AD 70; avoids the failed-prophecy problem.",
-        "weaknesses": "'The coming of the Son of Man' is typically associated with the Parousia in Matthew (24:30, 25:31); the AD 70 reading requires redefining a well-known eschatological phrase; the mission to Israel continued well past AD 70.",
+        "strengths": "The destruction of Jerusalem was understood by early Christians as divine judgment — a 'coming' of the Son of Man in judgment; Daniel 7:13-14 describes the Son of Man coming to the Ancient of Days (vindication), not to earth; consistent with Matthew 24's blending of AD 70 and Parousia language.",
+        "weaknesses": "'The Son of Man comes' most naturally refers to the Parousia, not to a judgment event; AD 70 did not visibly manifest the Son of Man; the identification of destruction with 'coming' requires a specialized reading.",
         "key_verses": [
           "Matthew 10:23",
-          "Matthew 24:30-34",
+          "Matthew 24:30",
           "Daniel 7:13-14"
         ]
       },
@@ -10188,12 +10191,12 @@
         ],
         "proponents": "Futurist interpretation",
         "argument": "The verse establishes the continuing urgency of the Jewish mission until the end of history.",
-        "strengths": "Preserves the natural meaning of 'the Son of Man comes'; establishes the urgency of mission — there is always more to do before Christ returns; the ongoing incompleteness of Jewish evangelism gives the saying perennial relevance.",
-        "weaknesses": "Seems to predict Christ's return within the disciples' lifetime, which did not occur; the 'delay of the Parousia' is a well-documented early church problem (2 Pet 3:3-4); risks making Jesus a false prophet.",
+        "strengths": "Preserves the eschatological meaning of 'the Son of Man comes'; the mission to Israel continues until the Parousia — every generation of Christians faces the urgency; fits the NT's expectation of imminent return.",
+        "weaknesses": "Appears to predict the Second Coming within the disciples' lifetime, which did not occur; requires explaining the apparent delay; critics cite this as evidence of a failed prophecy.",
         "key_verses": [
           "Matthew 10:23",
-          "Matthew 25:31",
-          "2 Peter 3:3-4"
+          "Matthew 16:28",
+          "1 Thessalonians 4:15-17"
         ]
       },
       {
@@ -10203,14 +10206,15 @@
         "scholar_ids": [],
         "proponents": "Most commentators",
         "argument": "The verse applies specifically to the first missionary journey -- they will not finish visiting all Israel before Jesus himself arrives to advance the mission.",
-        "strengths": "The mission discourse addresses the Twelve's immediate journey; 'the Son of Man comes' may refer to Jesus catching up with the disciples or to the end of this specific mission phase; the simplest contextual reading.",
-        "weaknesses": "'The coming of the Son of Man' is far too weighty a phrase for a simple travel itinerary; no other NT passage uses this language for a non-eschatological event; trivializes the saying.",
+        "strengths": "The simplest contextual reading — Jesus is saying the disciples will not complete their immediate mission tour before he rejoins them; 'the Son of Man comes' means Jesus' own arrival to meet them; avoids all eschatological difficulties.",
+        "weaknesses": "Dramatically under-reads the eschatological language; 'the Son of Man comes' is a loaded phrase in Matthew that always carries eschatological weight; trivializes the solemnity of the saying.",
         "key_verses": [
-          "Matthew 10:5-23"
+          "Matthew 10:5-6",
+          "Matthew 10:23"
         ]
       }
     ],
-    "synthesis": "No interpretation is free of difficulty. The AD 70 reading has gained ground since the recognition that 'the coming of the Son of Man' in Daniel 7:13 describes enthronement before God, not necessarily descent to earth. The Parousia reading preserves eschatological urgency but raises the 'delay of the Parousia' problem. The immediate-mission reading avoids both issues but gives 'the Son of Man comes' an unusually weak referent. Most scholars treat this as a deliberately multivalent saying that addresses both the immediate mission and the eschatological horizon.",
+    "synthesis": "No consensus exists. The AD 70 reading is popular among preterists and many mainstream scholars, but it requires 'coming of the Son of Man' to mean judgment rather than Parousia. The Second Coming reading preserves the eschatological meaning but faces the problem of apparent non-fulfillment. The limited-mission reading avoids the difficulty but may under-read Jesus' eschatological language. Most scholars agree the verse reflects the tension between 'already' and 'not yet' that characterizes NT eschatology.",
     "related_passages": [
       "Matthew 10:23",
       "Matthew 16:28",
@@ -10221,7 +10225,7 @@
     "tags": [
       "eschatology",
       "son-of-man",
-      "parousia",
+      "mission",
       "matthew-10"
     ]
   },
@@ -10429,22 +10433,22 @@
       16
     ],
     "passage": "Matthew 16",
-    "question": "When Jesus says 'on this rock I will build my church,' does 'the rock' refer to Peter, his confession, or Christ himself?",
-    "context": "Matthew 16:18 — 'You are Peter (Petros), and on this rock (petra) I will build my church' — is arguably the most ecclesiologically consequential verse in the NT. Roman Catholic tradition identifies the rock as Peter and his apostolic office, grounding papal authority. Protestant tradition has generally identified the rock as Peter's confession ('You are the Christ') or as Christ himself. The Greek word play (Petros/petra) and the Aramaic substratum (Kepha for both) are central to the debate.",
+    "question": "When Jesus says 'on this rock I will build my church,' does the rock refer to Peter, his confession, or Christ himself?",
+    "context": "After Peter confesses Jesus as 'the Messiah, the Son of the living God' (Matt 16:16), Jesus responds: 'You are Peter (Petros), and on this rock (petra) I will build my church' (16:18). The wordplay between Petros (masculine, 'stone') and petra (feminine, 'bedrock') is central to the debate. Roman Catholic tradition identifies Peter himself as the rock, grounding papal authority. Protestant Reformers identified the confession or Christ as the rock. The Greek grammatical distinction (Petros/petra) is significant in some readings but dismissed in others, since in Aramaic both would be Kepha.",
     "positions": [
       {
         "id": "peter-himself",
         "label": "Peter himself",
         "tradition_family": "evangelical",
         "scholar_ids": [
-          "catena"
+          "keener"
         ],
         "proponents": "Roman Catholic tradition",
         "argument": "Peter is the rock; his successors (popes) inherit his authority. The Aramaic background (kepha) supports identifying Peter directly.",
-        "strengths": "The Aramaic Kepha is used for both 'Peter' and 'rock,' making the identification natural; the immediate context is about Peter — he is named, blessed, and given the keys; the early church fathers (Origen, Cyprian) often identify Peter as the rock; Ephesians 2:20 says the church is built on 'apostles and prophets.'",
-        "weaknesses": "Peter's role does not automatically establish papal succession; Peter himself errs immediately after (16:22-23 — 'Get behind me, Satan'); the NT presents Peter as first among equals, not as a monarchical authority; 1 Corinthians 3:11 says Christ is the only foundation.",
+        "strengths": "The Aramaic wordplay is direct: 'You are Kepha and on this kepha...'; the context is about Peter specifically — he is named, blessed, and given the keys; Ephesians 2:20 says the church is built on the apostles; earliest patristic interpretation (Tertullian, Cyprian).",
+        "weaknesses": "Does not necessarily establish papal succession — Peter's role as foundation apostle is unique and non-transferable; Peter himself calls Christ the cornerstone (1 Pet 2:4-8); the keys are later given to all disciples (Matt 18:18).",
         "key_verses": [
-          "Matthew 16:17-19",
+          "Matthew 16:18-19",
           "Ephesians 2:20",
           "John 1:42"
         ]
@@ -10459,12 +10463,11 @@
         ],
         "proponents": "Most Protestant and Eastern Orthodox interpreters",
         "argument": "The church is built on the truth Peter confessed. Peter is the representative confessor, not the exclusive foundation.",
-        "strengths": "The petra ('rock') may refer to the confessional content ('You are the Christ') rather than to Peter personally; the church is built on christological confession, not on a fallible individual; this reading is dominant in Reformed tradition and avoids papalist implications; the shift from Petros to petra in Greek may signal a distinction.",
-        "weaknesses": "The Aramaic Kepha-Kepha wordplay makes a distinction between Peter and the rock unlikely in the original language; the immediate context is personal — Jesus addresses Peter by name; this reading may be motivated more by anti-papal polemic than by exegesis.",
+        "strengths": "The confession ('You are the Messiah') is what prompts Jesus' response; the church is built on the truth Peter proclaimed, not on Peter's person; explains why the church survives Peter's failures (denial, Antioch incident); dominant Reformed interpretation.",
+        "weaknesses": "Separating the confessor from the confession is artificial — Jesus addresses Peter directly ('you are Peter'); the wordplay loses its force if the rock is an abstraction; the keys are given to Peter personally.",
         "key_verses": [
           "Matthew 16:16-18",
-          "1 Corinthians 12:3",
-          "Romans 10:9"
+          "1 Corinthians 3:11"
         ]
       },
       {
@@ -10474,20 +10477,20 @@
         "scholar_ids": [],
         "proponents": "Some Reformed interpreters",
         "argument": "1 Cor 3:11: no one can lay any foundation other than Jesus Christ.",
-        "strengths": "Paul explicitly says 'no one can lay any foundation other than the one already laid, which is Jesus Christ' (1 Cor 3:11); 1 Peter 2:4-8 identifies Christ as the cornerstone and living stone; Isaiah 28:16 and Psalm 118:22 use 'rock/stone' for God/Messiah, not for humans.",
-        "weaknesses": "The immediate context is about Peter, not Christ; Jesus says 'you are Peter, and on this rock' — the demonstrative 'this' points to Peter, not to a third party; reading Christ as the rock requires ignoring the wordplay entirely.",
+        "strengths": "Paul says 'no one can lay any foundation other than the one already laid, which is Jesus Christ' (1 Cor 3:11); Christ is the cornerstone in multiple NT texts (Eph 2:20; 1 Pet 2:6); the Petros/petra distinction in Greek could support a different referent.",
+        "weaknesses": "The context clearly addresses Peter — Jesus is responding to Peter's confession with a statement about Peter; the Petros/petra distinction is a Greek artifact, not present in the Aramaic original; most patristic writers understood Peter as the referent.",
         "key_verses": [
           "1 Corinthians 3:11",
           "1 Peter 2:4-8",
-          "Isaiah 28:16"
+          "Ephesians 2:20"
         ]
       }
     ],
-    "synthesis": "The Aramaic behind the Greek almost certainly used Kepha ('rock') for both — making the wordplay a clear identification of Peter as the rock. However, even many Catholic scholars acknowledge that 'the rock' is Peter-confessing-Christ, not Peter as an isolated individual. Most Protestants now accept that Peter is the rock in some sense (the foundational apostolic witness) while denying that this establishes a perpetual papal office. The key exegetical question has shifted from 'Is Peter the rock?' (probably yes) to 'Does this establish papal succession?' (contested).",
+    "synthesis": "The Petros/petra distinction is less significant than often claimed — in Aramaic, Jesus likely said 'You are Kepha, and on this kepha...' making the identification direct. Most contemporary scholarship (including many Protestant scholars) acknowledges that Peter is the rock in some sense — he is the first confessor and the foundation apostle. However, this does not necessarily entail papal succession, which is a separate ecclesiological argument. The confession and the confessor are inseparable in context.",
     "related_passages": [
       "Matthew 16:13-20",
-      "1 Corinthians 3:11",
       "Ephesians 2:20",
+      "1 Corinthians 3:11",
       "1 Peter 2:4-8",
       "John 1:42"
     ],
@@ -10495,8 +10498,8 @@
       "peter",
       "church",
       "papacy",
-      "ecclesiology",
-      "matthew-16"
+      "matthew-16",
+      "ecclesiology"
     ]
   },
   {
@@ -10586,8 +10589,8 @@
       19
     ],
     "passage": "Matthew 19",
-    "question": "Does the 'exception clause' in Matthew 5:32 and 19:9 permit divorce and remarriage, divorce only, or does it refer solely to betrothal unfaithfulness?",
-    "context": "Matthew's version of Jesus' teaching on divorce includes the phrase 'except for sexual immorality' (porneia) — absent from Mark 10:11-12 and Luke 16:18. This 'exception clause' (also called the Matthean exception) has generated enormous debate. Does porneia permit both divorce and remarriage? Does it permit separation without the right to remarry? Or does it refer only to sexual unfaithfulness discovered during the betrothal period (as in Joseph's situation with Mary, Matt 1:19)? The practical and pastoral stakes are enormous.",
+    "question": "Does Jesus' exception clause ('except for sexual immorality') permit divorce and remarriage, or only separation?",
+    "context": "In Matthew 5:32 and 19:9, Jesus prohibits divorce 'except for porneia' (sexual immorality). This exception clause is unique to Matthew — Mark 10:11-12 and Luke 16:18 have no exception. The meaning of porneia is debated (adultery? premarital sex? any sexual sin?), as is the scope of the exception (does it permit remarriage, or only divorce?). The question has enormous practical implications for Christian ethics and pastoral care. Catholic, Orthodox, and Protestant traditions have reached different conclusions.",
     "positions": [
       {
         "id": "divorce-and-remarriage-permitted-for-sex",
@@ -10598,31 +10601,28 @@
         ],
         "proponents": "Evangelical consensus, most Protestant interpreters",
         "argument": "Porneia = sexual immorality; the innocent party may divorce and remarry. This is the standard evangelical position, consistent with the plain reading of the Greek.",
-        "strengths": "The most natural reading of the exception clause — 'except for porneia' creates a genuine exception to the prohibition; aligns with Deuteronomy 24:1-4 which permitted divorce and assumed remarriage; 1 Corinthians 7:15 may add abandonment as a second ground; dominant Protestant reading.",
-        "weaknesses": "Mark and Luke contain no exception clause — is Matthew adding to Jesus' teaching? The early church almost unanimously opposed remarriage after divorce; a too-broad definition of porneia can become a loophole; Jesus' teaching in context is restrictive, not permissive.",
+        "strengths": "In Jewish law, divorce always implied the right to remarry — the audience would have understood it this way; porneia broadly means sexual immorality (adultery, fornication); Paul extends the principle to desertion (1 Cor 7:15); dominant Protestant reading.",
+        "weaknesses": "Mark and Luke omit the exception entirely, suggesting Jesus taught absolute indissolubility; the exception may be Matthew's addition reflecting his Jewish-Christian audience; permitting remarriage after divorce tensions with the 'one flesh' theology of Gen 2:24.",
         "key_verses": [
           "Matthew 19:9",
-          "Matthew 5:32",
-          "Deuteronomy 24:1-4",
-          "1 Corinthians 7:15"
+          "1 Corinthians 7:15",
+          "Deuteronomy 24:1-4"
         ]
       },
       {
         "id": "divorce-permitted-but-not-remarriage",
         "label": "Divorce permitted but not remarriage",
         "tradition_family": "evangelical",
-        "scholar_ids": [
-          "catena"
-        ],
+        "scholar_ids": [],
         "proponents": "Many early church fathers, some Catholic scholars",
         "argument": "The exception permits divorce (separation) but remarriage is not explicitly authorized. The 'no adultery' clause in v.9b applies to the divorced person who remarries.",
-        "strengths": "The early church fathers (Hermas, Origen, Augustine) permitted separation but not remarriage; marriage is a permanent covenant ('what God has joined together,' 19:6); the exception clause permits divorce (separation) but 'whoever marries a divorced woman commits adultery' (5:32b) prohibits remarriage; dominant Catholic and Orthodox reading.",
-        "weaknesses": "In Jewish law, divorce always implied the right to remarry — a 'divorce without remarriage' would have been conceptually foreign; the Greek apolysē ('divorce') carries legal force implying full dissolution; may impose an unrealistic burden on the innocent party.",
+        "strengths": "The 'one flesh' bond (Gen 2:24) is ontological and cannot be dissolved by human action; Paul says a divorced woman should remain unmarried or be reconciled (1 Cor 7:10-11); the Catholic and Orthodox traditions preserve the strongest reading of indissolubility.",
+        "weaknesses": "In Jewish context, divorce without the right to remarry would be meaningless — it is separation, not divorce; the Greek apolyō ('release/divorce') implies full dissolution; this reading imposes later Catholic sacramental theology on a 1st-century Jewish debate.",
         "key_verses": [
           "Matthew 19:6",
-          "Matthew 5:32",
-          "Mark 10:11-12",
-          "Romans 7:2-3"
+          "Matthew 19:9",
+          "1 Corinthians 7:10-11",
+          "Genesis 2:24"
         ]
       },
       {
@@ -10632,17 +10632,16 @@
         "scholar_ids": [],
         "proponents": "Some scholars, explains Matt-only occurrence",
         "argument": "Porneia refers to unchastity discovered during the betrothal period (Joseph's situation in 1:18-19). After consummation, there is no exception.",
-        "strengths": "Porneia may refer specifically to sexual infidelity during the betrothal period (cf. Matt 1:18-19 where Joseph considers 'divorcing' Mary); explains why only Matthew includes the exception — his Jewish audience understood betrothal law; preserves the absolute prohibition on divorce within consummated marriage.",
-        "weaknesses": "Porneia has a broad semantic range in the NT (fornication, sexual immorality generally) and is not restricted to betrothal; this reading makes the exception clause irrelevant to most married Christians; betrothal practices were fading by the time Matthew wrote.",
+        "strengths": "Porneia may refer specifically to premarital unchastity discovered during the betrothal period (cf. Matt 1:18-19 — Joseph's dilemma); this would explain why Matthew's Jewish audience needed the exception while Mark's Gentile audience did not; harmonizes with the absolute statements in Mark and Luke.",
+        "weaknesses": "Porneia has a broader semantic range than just betrothal unchastity; the Pharisaic debate (Matt 19:3) was about married couples, not betrothed ones; this reading is too narrow for the context.",
         "key_verses": [
           "Matthew 1:18-19",
           "Matthew 5:32",
-          "Matthew 19:9",
-          "Deuteronomy 22:13-21"
+          "Matthew 19:9"
         ]
       }
     ],
-    "synthesis": "The divorce-and-remarriage reading is dominant in Protestant tradition and reflects the majority evangelical position. The no-remarriage view (early church, Catholic tradition) treats marriage as ontologically indissoluble. The betrothal view is a minority position but explains why only Matthew includes the exception — his Jewish audience understood betrothal infidelity as a distinct category. No consensus exists, and pastoral practice varies widely even within denominations that share the same theological position.",
+    "synthesis": "Three main positions have persisted since the patristic era. The majority Protestant view permits both divorce and remarriage for porneia. The Catholic view permits separation but not remarriage (indissolubility). The betrothal view limits porneia to premarital unchastity discovered after betrothal. Most evangelical scholars favor the divorce-and-remarriage reading, noting that in Jewish law divorce always implied the right to remarry. The absence of the exception in Mark and Luke may reflect those authors' audiences rather than a different teaching.",
     "related_passages": [
       "Matthew 5:31-32",
       "Matthew 19:3-12",
@@ -10654,9 +10653,9 @@
     "tags": [
       "divorce",
       "marriage",
-      "porneia",
       "ethics",
-      "matthew-19"
+      "matthew-19",
+      "porneia"
     ]
   },
   {
@@ -10924,24 +10923,22 @@
       26
     ],
     "passage": "Matthew 26",
-    "question": "Is Christ bodily present in the Lord's Supper, spiritually present, or is it purely a memorial?",
-    "context": "Jesus' words at the Last Supper — 'This is my body' (Matt 26:26) — have generated the deepest and most consequential division in Christian history. The four major interpretations (transubstantiation, consubstantiation, spiritual presence, memorial) each claim strong exegetical and theological support. The debate shaped the Reformation and continues to divide Catholic, Lutheran, Reformed, and Baptist traditions. The question is not merely academic — it determines whether the Eucharist is a sacrifice, a sacrament, or an ordinance.",
+    "question": "Are the bread and wine the actual body and blood of Christ, or a memorial pointing to his sacrifice?",
+    "context": "Jesus' words at the Last Supper — 'This is my body... This is my blood' (Matt 26:26-28) — have generated one of Christianity's most divisive theological debates. The Catholic doctrine of transubstantiation holds that the substance of bread and wine becomes Christ's body and blood while retaining the appearance of bread and wine. Luther affirmed a real bodily presence 'in, with, and under' the elements (consubstantiation). Calvin taught a spiritual real presence received by faith. Zwingli and the Baptist tradition interpret the supper as a memorial only. Each position claims NT support.",
     "positions": [
       {
         "id": "transubstantiation-substance-becomes-bod",
         "label": "Transubstantiation: substance becomes body and blood",
         "tradition_family": "evangelical",
-        "scholar_ids": [
-          "catena"
-        ],
+        "scholar_ids": [],
         "proponents": "Roman Catholic",
         "argument": "This is my body is a literal identity statement; the substance of the elements is changed.",
-        "strengths": "Takes 'this is my body' with maximum seriousness; supported by the early church fathers (Ignatius, Cyril, Ambrose); John 6:51-58 ('unless you eat the flesh of the Son of Man') seems to require physical eating; the dominant view for the first 1,500 years of Christianity.",
-        "weaknesses": "Relies on Aristotelian substance/accidents distinction foreign to the biblical text; the institution narrative uses symbolic language throughout ('this cup is the new covenant'); 'is' (estin) can mean 'represents' in Greek and Aramaic.",
+        "strengths": "'This is my body' is a direct statement of identity; John 6:51-58 ('unless you eat the flesh of the Son of Man') supports literal consumption; the early church fathers (Ignatius, Cyril) speak of the bread as truly Christ's body; defined dogmatically at the Fourth Lateran Council (1215).",
+        "weaknesses": "Jesus was physically present when he said 'this is my body' — the bread was not literally his body at that moment; 'is' can mean 'represents' in Semitic idiom (cf. 'this cup is the new covenant,' Luke 22:20); relies on Aristotelian substance/accident categories foreign to the NT.",
         "key_verses": [
-          "Matthew 26:26-28",
+          "Matthew 26:26",
           "John 6:53-56",
-          "1 Corinthians 11:27-29"
+          "1 Corinthians 11:24"
         ]
       },
       {
@@ -10951,12 +10948,11 @@
         "scholar_ids": [],
         "proponents": "Lutheran",
         "argument": "The body and blood are truly present alongside the bread and wine.",
-        "strengths": "Takes 'this is my body' literally without requiring Aristotelian metaphysics; Christ is truly present in, with, and under the bread — no transformation occurs; Luther's analogy: as iron glows with fire but remains iron, the bread bears Christ's body while remaining bread.",
-        "weaknesses": "The 'in, with, and under' formula has no direct biblical basis; the ubiquity of Christ's body (required for this view) is theologically debated; Scripture does not explain the mechanism of presence.",
+        "strengths": "Takes 'this is my body' seriously without requiring a substance change; Christ is truly present in the elements; Luther's analogy: as fire pervades a heated iron, so Christ's body pervades the bread; avoids the philosophical difficulties of transubstantiation.",
+        "weaknesses": "Luther's formulation still requires a miraculous bodily presence in every celebration worldwide simultaneously; the concept of ubiquity (Christ's body being everywhere) is contested; the term 'consubstantiation' was not Luther's own.",
         "key_verses": [
-          "Matthew 26:26",
-          "1 Corinthians 10:16",
-          "1 Corinthians 11:27"
+          "Matthew 26:26-28",
+          "1 Corinthians 10:16"
         ]
       },
       {
@@ -10968,10 +10964,10 @@
         ],
         "proponents": "Reformed / Calvinist",
         "argument": "Christ is truly present but spiritually -- received by faith. The bread and wine are signs and pledges.",
-        "strengths": "Affirms real presence without physical transformation; Christ is received spiritually by faith through the Holy Spirit; Calvin's view mediates between Luther's physicalism and Zwingli's bare memorialism; honors the sursum corda ('lift up your hearts') tradition — believers are lifted to Christ, not Christ brought down.",
-        "weaknesses": "The mechanism of 'spiritual presence' is difficult to define precisely; 'this is my body' seems stronger than a merely spiritual reading; the Reformed position can appear as an unstable compromise.",
+        "strengths": "Affirms a genuine encounter with Christ in the supper without requiring physical presence in the elements; the Spirit makes Christ present to faith; Calvin: 'we are lifted up to Christ' rather than Christ being brought down to the bread; preserves both the reality of the presence and the distinction between sign and thing signified.",
+        "weaknesses": "May seem abstract compared to the visceral language of 'eat my flesh, drink my blood'; the mechanism of spiritual presence is difficult to define; occupies a middle position that satisfies neither Catholic realists nor memorialists.",
         "key_verses": [
-          "Matthew 26:26-29",
+          "Matthew 26:26-28",
           "1 Corinthians 10:16-17",
           "John 6:63"
         ]
@@ -10985,28 +10981,29 @@
         ],
         "proponents": "Zwinglian",
         "argument": "This is my body means this represents my body. The Supper is a commemoration.",
-        "strengths": "'Do this in remembrance of me' (Luke 22:19; 1 Cor 11:24-25) defines the meal's primary purpose; 'this is my body' is clearly figurative — Jesus was physically present when he said it, making literal identification impossible; avoids all metaphysical speculation; the simplest reading.",
-        "weaknesses": "May underestimate the force of 'this is my body'; Paul's warning about eating 'unworthily' (1 Cor 11:27-29) implies something more than mere remembrance; strips the meal of sacramental power; historically a minority view until the 16th century.",
+        "strengths": "'Do this in remembrance of me' (Luke 22:19; 1 Cor 11:24-25) defines the supper's purpose as memorial; 'is' means 'represents' (as in 'I am the door,' John 10:9); the supper proclaims the Lord's death 'until he comes' (1 Cor 11:26) — pointing backward to the cross and forward to the return.",
+        "weaknesses": "Paul says those who eat unworthily are 'guilty of the body and blood of the Lord' (1 Cor 11:27), implying more than a memorial; the early church clearly treated the supper as participatory, not merely commemorative; may understate the NT's sacramental language.",
         "key_verses": [
           "Luke 22:19",
-          "1 Corinthians 11:24-25",
-          "Matthew 26:26"
+          "1 Corinthians 11:24-26",
+          "John 10:9"
         ]
       }
     ],
-    "synthesis": "Each tradition has developed sophisticated theological arguments. Roman Catholic transubstantiation rests on Aristotelian metaphysics and patristic tradition. Lutheran consubstantiation takes 'This is my body' as literally as possible without transubstantiation. Calvin's spiritual presence mediates between Luther and Zwingli. The memorial view appeals to 'do this in remembrance of me' (Luke 22:19). Ecumenical dialogue has narrowed some gaps, but fundamental differences about the nature of Christ's presence remain the primary barrier to Christian unity.",
+    "synthesis": "The debate turns on how literally to read 'This is my body.' Catholics and Lutherans read it as a statement of identity; Calvinists and Zwinglians read 'is' as 'signifies' or 'represents,' noting that Jesus was physically present when he said it (so the bread was not literally his body at that moment). The early church clearly treated the supper as more than a bare memorial — Justin Martyr, Ignatius, and Irenaeus speak of real participation. The question remains whether 'real presence' requires a metaphysical transformation of the elements or a spiritual encounter through them.",
     "related_passages": [
-      "Matthew 26:26-29",
-      "Mark 14:22-25",
-      "Luke 22:14-23",
-      "1 Corinthians 11:23-29",
-      "John 6:51-58"
+      "Matthew 26:26-28",
+      "1 Corinthians 11:23-26",
+      "John 6:51-58",
+      "1 Corinthians 10:16-17",
+      "Acts 2:42"
     ],
     "tags": [
       "eucharist",
       "sacrament",
-      "lord-s-supper",
-      "christology"
+      "lord-supper",
+      "matthew-26",
+      "ecclesiology"
     ]
   },
   {
@@ -11107,8 +11104,8 @@
       1
     ],
     "passage": "Mark 1",
-    "question": "Was the Gospel of Mark written before the destruction of the temple in AD 70, or after it?",
-    "context": "The dating of Mark's Gospel is crucial for understanding its Olivet Discourse (Mark 13) and the development of early Christianity. Pre-70 dating (c. 65-68) places Mark during Nero's persecution and before the temple's destruction, meaning Mark 13 is genuine prophecy. Post-70 dating (c. 70-75) allows Mark 13 to be shaped by knowledge of the temple's fall, meaning the discourse reflects vaticinium ex eventu (prophecy after the event). The debate affects how we read Mark's eschatology and his reliability as a historical source.",
+    "question": "Was the Gospel of Mark composed before or after the destruction of Jerusalem in AD 70?",
+    "context": "The dating of Mark is foundational to Gospel studies because Mark is widely considered the earliest written Gospel (Markan priority). A pre-70 date (commonly 65-68 AD) places it in the Neronian persecution period and before the fall of Jerusalem. A post-70 date (commonly 70-75 AD) argues that Mark 13 (the Olivet Discourse) reflects knowledge of the temple's destruction. The date affects how we read the apocalyptic discourse — as genuine prophecy or as vaticinium ex eventu (prophecy after the fact).",
     "positions": [
       {
         "id": "before-ad-70",
@@ -11119,12 +11116,11 @@
         ],
         "proponents": "Papias, Irenaeus; most conservative scholars. Mark 13 predicts the Temple’s destruction; if written after 70, fulfilment would be noted more explicitly. Composition c.AD 50–65.",
         "argument": "Pre-70 date",
-        "strengths": "Mark 13's predictions do not closely match the actual events of AD 70 (no mention of fire, Titus, or the specific circumstances); early church tradition (Irenaeus, Clement of Alexandria) associates Mark with Peter in Rome, likely during Nero's persecution (c. 64-68); the abrupt ending at 16:8 suggests urgency consistent with a crisis period.",
-        "weaknesses": "Mark 13:14 ('the abomination that causes desolation standing where it does not belong') could reflect knowledge of the temple's desecration; the urgency of the discourse may indicate a recent catastrophe; dating based on internal evidence is inherently uncertain.",
+        "strengths": "Early church tradition (Papias, Irenaeus) associates Mark with Peter and dates the Gospel to the 60s; Mark 13 is notably vague about the siege's details — Luke 21:20 ('armies surrounding Jerusalem') is more specific, suggesting Luke wrote after the event while Mark did not; takes Jesus' prophetic ability seriously.",
+        "weaknesses": "The 'abomination of desolation' (13:14) may reflect knowledge of the temple's desecration; tradition is not unanimous on the date; the parenthetical 'let the reader understand' (13:14) could indicate a post-event editorial comment.",
         "key_verses": [
-          "Mark 13:1-2",
           "Mark 13:14",
-          "Mark 13:30"
+          "Mark 13:2"
         ]
       },
       {
@@ -11136,26 +11132,27 @@
         ],
         "proponents": "Some critical scholars. The specificity of Mark 13 and its use as a source by Matthew and Luke (both post-70) may indicate Mark itself is c.AD 70–75.",
         "argument": "Post-70 date",
-        "strengths": "Mark 13's warnings to flee Judea and the detailed apocalyptic language may reflect awareness of the Jewish War (AD 66-70); the discourse's structure (temple prediction → persecution → cosmic signs → Son of Man) could be shaped by recent events; most critical scholars favor a date around AD 70.",
-        "weaknesses": "The prophecy's details do not closely match the actual destruction — genuine vaticinium ex eventu would be more specific; Mark contains no clear 'post-destruction' theological reflection (unlike Matthew and Luke); the argument risks circular reasoning — dating the text by its prophecy and then judging the prophecy by the dating.",
+        "strengths": "Mark 13 reads more naturally as retrospective prophecy shaped by the events of 70; 'let the reader understand' (13:14) suggests the community is currently experiencing the events described; the discourse's urgent tone reflects a community that has recently witnessed or is witnessing the siege.",
+        "weaknesses": "If Mark wrote after AD 70, the discourse's vagueness about the actual siege is surprising — Luke, writing later, adds specific details Mark omits; the assumption that prophecy requires post-event composition reflects a philosophical bias; early tradition supports a pre-70 date.",
         "key_verses": [
-          "Mark 13:1-4",
-          "Mark 13:14-20"
+          "Mark 13:14",
+          "Mark 13:30"
         ]
       }
     ],
-    "synthesis": "The majority scholarly view places Mark around AD 65-75, with the precise date hinging on whether Mark 13 presupposes knowledge of the temple's destruction. Pre-70 scholars note that Mark 13's details do not closely match what actually happened in AD 70 (no mention of fire, for instance), suggesting genuine prediction. Post-70 scholars argue the discourse's urgency and detail reflect awareness of recent events. The truth may be that Mark was written close enough to AD 70 that the question cannot be definitively resolved.",
+    "synthesis": "The majority of scholars date Mark to approximately 65-75 AD, with the disagreement centering on whether Mark 13 was written before or after AD 70. The pre-70 dating has strong support from the tradition of Mark writing during or shortly after Peter's lifetime (Papias, Irenaeus) and from the discourse's vagueness about the actual details of the siege. The post-70 dating rests on the assumption that specific predictions require the event to have already occurred. The difference of a few years may seem minor, but the theological implications (prophecy vs. retrospective narration) are significant.",
     "related_passages": [
       "Mark 13:1-37",
       "Mark 13:14",
-      "1 Peter 5:13"
+      "Luke 21:20-24",
+      "Daniel 9:27"
     ],
     "tags": [
       "mark",
       "dating",
       "ad-70",
       "temple",
-      "synoptic-problem"
+      "gospel-composition"
     ]
   },
   {
@@ -11167,20 +11164,18 @@
       2
     ],
     "passage": "Mark 2",
-    "question": "Did Jesus abolish the Sabbath, or did he reinterpret it while affirming its ongoing validity?",
-    "context": "Mark records multiple Sabbath controversies (2:23-28; 3:1-6) in which Jesus challenges Pharisaic Sabbath restrictions. His declaration that 'the Sabbath was made for man, not man for the Sabbath' (2:27) and 'the Son of Man is Lord even of the Sabbath' (2:28) have been read either as abolishing the Sabbath or as reclaiming its original purpose. The question has practical implications for whether Christians are obligated to observe a Sabbath day and for the relationship between the Old and New Covenants.",
+    "question": "Did Jesus abolish the Sabbath or transform its observance from regulation to restoration?",
+    "context": "Multiple controversies in Mark's Gospel center on Jesus' Sabbath practice — his disciples pluck grain (2:23-28), he heals the man with the withered hand (3:1-6), and he declares 'the Sabbath was made for man, not man for the Sabbath' (2:27). These episodes climax with 'So the Son of Man is Lord even of the Sabbath' (2:28). The question is whether Jesus is abrogating the fourth commandment or restoring its original purpose. The answer shapes Christian ethics regarding Sunday observance and the relationship between law and gospel.",
     "positions": [
       {
         "id": "abolition-view",
         "label": "Abolition view",
         "tradition_family": "evangelical",
-        "scholar_ids": [
-          "macarthur"
-        ],
+        "scholar_ids": [],
         "proponents": "Some Reformation and modern interpreters read 2:27-28 as annulling the Sabbath command entirely for Christians.",
         "argument": "Abolition",
-        "strengths": "Colossians 2:16-17 warns against judging others regarding 'a Sabbath day' — the Sabbath was a 'shadow' whose reality is found in Christ; Romans 14:5 relativizes sacred days; the early church shifted worship to Sunday (the Lord's Day); the new covenant supersedes Sabbath obligation.",
-        "weaknesses": "Jesus never explicitly abolishes the Sabbath in Mark — he challenges misinterpretation, not the institution; 'Lord of the Sabbath' implies authority over it, not negation of it; Jesus regularly observed the Sabbath; the abolition reading may reflect later Pauline theology projected back onto the Synoptics.",
+        "strengths": "Paul declares the Sabbath a 'shadow' fulfilled in Christ (Col 2:16-17); Romans 14:5 treats sacred days as matters of individual conscience; the early church moved worship to Sunday; the new covenant supersedes Mosaic ceremonial law.",
+        "weaknesses": "Jesus never explicitly abolishes the Sabbath; 'Lord of the Sabbath' claims authority over it, not against it; the fourth commandment is part of the moral law (Decalogue), not merely ceremonial; Jesus practiced Sabbath observance throughout his ministry.",
         "key_verses": [
           "Mark 2:28",
           "Colossians 2:16-17",
@@ -11192,25 +11187,26 @@
         "label": "Transformation view",
         "tradition_family": "evangelical",
         "scholar_ids": [
-          "marcus"
+          "macarthur",
+          "keener"
         ],
         "proponents": "Jesus restores the Sabbath’s original purpose rather than abolishing it. The Son of Man as Sabbath Lord re-establishes the Sabbath under new covenant terms.",
         "argument": "Transformation",
-        "strengths": "Jesus reclaims the Sabbath's original humanitarian purpose ('made for man'); he does not abolish it but reinterprets it around himself — he is Lord of the Sabbath; the Sabbath is transformed, not eliminated; 'the Sabbath was made for man' presupposes its ongoing value; healing on the Sabbath shows what the day is for.",
-        "weaknesses": "If the Sabbath is merely transformed, Christians should still observe a weekly day of rest — which many do not; the boundary between 'transformation' and 'abolition' can be unclear in practice; some argue this reading keeps Christians under Torah obligation.",
+        "strengths": "Jesus restores the Sabbath's original purpose — rest and restoration for humanity ('made for man'); 'Lord of the Sabbath' claims interpretive authority, not abolition; healing on the Sabbath demonstrates that mercy fulfills the law (Matt 12:7); the Sabbath principle (rhythmic rest) continues in the Christian week.",
+        "weaknesses": "If the Sabbath is merely transformed, which regulations persist? The boundary between transformation and practical abolition is unclear; Christians overwhelmingly do not observe Sabbath rest as prescribed in the OT.",
         "key_verses": [
           "Mark 2:27-28",
           "Mark 3:4",
-          "Isaiah 58:13-14"
+          "Matthew 12:7",
+          "Hebrews 4:9-10"
         ]
       }
     ],
-    "synthesis": "Jesus did not abolish the Sabbath in Mark's narrative — he observed it (attending synagogue, Luke 4:16) while challenging human additions to it. His claim to be 'Lord of the Sabbath' asserts authority over the institution, not its elimination. Whether the Sabbath continues for Christians is a separate question answered differently across traditions. Most scholars agree that Jesus' Sabbath conflicts are about authority and interpretation, not about abolition.",
+    "synthesis": "Most scholars agree Jesus did not abolish the Sabbath wholesale — he kept it, taught in synagogues on it, and never explicitly revoked the fourth commandment. Rather, he claimed authority over its interpretation ('Lord of the Sabbath') and prioritized its humanitarian purpose ('made for man') over its regulatory function. The early church's shift from Saturday to Sunday worship developed later, based on the resurrection and apostolic practice (Acts 20:7; 1 Cor 16:2), not on a dominical command. Whether this constitutes transformation or abolition depends on how one defines the Sabbath's essence.",
     "related_passages": [
       "Mark 2:23-28",
       "Mark 3:1-6",
-      "Matthew 12:1-14",
-      "Luke 6:1-11",
+      "Exodus 20:8-11",
       "Colossians 2:16-17",
       "Romans 14:5-6"
     ],
@@ -11218,8 +11214,8 @@
       "sabbath",
       "law",
       "mark-2",
-      "torah",
-      "rest"
+      "ethics",
+      "lord-of-sabbath"
     ]
   },
   {
@@ -11231,8 +11227,8 @@
       3
     ],
     "passage": "Mark 3",
-    "question": "What is the 'blasphemy against the Holy Spirit' that will never be forgiven?",
-    "context": "In Mark 3:28-30, Jesus declares that 'whoever blasphemes against the Holy Spirit will never be forgiven; they are guilty of an eternal sin.' Mark explains: 'He said this because they were saying, \"He has an impure spirit\"' (3:30). The scribes attributed Jesus' exorcisms — works of the Holy Spirit — to Beelzebul. This passage has caused enormous pastoral anxiety: countless Christians have feared they have committed the unforgivable sin. The two main interpretive traditions differ on whether the sin is a specific historical act or a persistent spiritual state.",
+    "question": "What is the 'blasphemy against the Holy Spirit' that will never be forgiven (Mark 3:29)?",
+    "context": "After the scribes from Jerusalem accuse Jesus of casting out demons by the power of Beelzebul (Mark 3:22), Jesus warns: 'Whoever blasphemes against the Holy Spirit will never be forgiven; they are guilty of an eternal sin' (3:29). Mark adds the explanatory note: 'He said this because they were saying, \"He has an impure spirit\"' (3:30). The passage has caused immense anxiety among Christians who fear they may have committed this sin. The specific nature of the sin — and whether it can be committed today — is debated.",
     "positions": [
       {
         "id": "specific-blasphemy-view",
@@ -11243,8 +11239,8 @@
         ],
         "proponents": "The sin is unique to those who witnessed Jesus’s exorcisms and attributed them to Satan — a historically bounded sin not available to later generations.",
         "argument": "Historically bounded",
-        "strengths": "Mark 3:30 explicitly identifies the occasion — attributing the Spirit's work to Satan; this is a specific, observable, historical act; the sin requires full knowledge (the scribes knew Jesus' works were genuine) combined with willful rejection; limits the sin to a defined category rather than creating existential anxiety.",
-        "weaknesses": "If the sin is only the specific historical act of the scribes, it may no longer be committable today; does not address the broader pattern of persistent rejection that Hebrews 6 and 10 describe; may seem to restrict the warning to a past context.",
+        "strengths": "The context defines the sin precisely: attributing Jesus' Spirit-empowered works to Satan (3:30); this was a specific historical situation — scribes who witnessed Jesus' power and deliberately called it demonic; the sin requires full knowledge and willful rejection; most Christians who fear committing it have not.",
+        "weaknesses": "If the sin is limited to a specific historical situation (witnessing Jesus' miracles and attributing them to Satan), it cannot be committed today; this may seem to neutralize the warning; Hebrews 6:4-6 suggests a similar sin is possible in the post-apostolic era.",
         "key_verses": [
           "Mark 3:28-30",
           "Matthew 12:31-32"
@@ -11255,33 +11251,31 @@
         "label": "Persistent state view",
         "tradition_family": "evangelical",
         "scholar_ids": [
-          "marcus"
+          "keener"
         ],
         "proponents": "The sin is a permanent hardening against the Spirit’s testimony that can occur in any generation, whenever someone persistently and finally rejects the clear evidence of the Spirit’s work.",
         "argument": "Persistent hardening",
-        "strengths": "The scribes' response represents a pattern — sustained, deliberate rejection of the Spirit's testimony to Christ; Hebrews 6:4-6 and 10:26-29 describe a similar state of irrevocable apostasy; the sin is not a single act but a settled disposition of heart; explains why it is unforgivable — not because God's grace is insufficient, but because the person has permanently closed themselves to it.",
-        "weaknesses": "May create pastoral anxiety — how does one know if their rejection is 'persistent enough'? The boundary between serious doubt and permanent apostasy is unclear; may seem to limit God's grace.",
+        "strengths": "The sin is not a single utterance but a settled condition — persistent, deliberate rejection of the Spirit's testimony to Christ; Hebrews 6:4-6 describes a similar state of 'impossibility of being renewed to repentance'; the present tense in Mark 3:30 ('they were saying') suggests ongoing, not momentary, blasphemy.",
+        "weaknesses": "If the sin is a persistent state, the line between it and ordinary unbelief becomes unclear; may cause unnecessary anxiety among struggling believers; the text seems to describe a specific act ('whoever blasphemes'), not a gradual process.",
         "key_verses": [
-          "Mark 3:28-30",
+          "Mark 3:29-30",
           "Hebrews 6:4-6",
-          "Hebrews 10:26-29",
           "1 John 5:16"
         ]
       }
     ],
-    "synthesis": "Most scholars agree that the 'specific blasphemy' and 'persistent state' views are not mutually exclusive. The historical occasion was the scribes' deliberate attribution of the Spirit's work to Satan — a calculated, informed rejection, not an impulsive mistake. The very fact that someone is anxious about having committed this sin is strong evidence they have not — the unforgivable sin involves a hardened, deliberate, and sustained rejection of the Spirit's testimony to Christ. Jesus' point is not to terrify the faithful but to warn the willfully blind.",
+    "synthesis": "The immediate context is clear: the scribes attribute the Holy Spirit's work (Jesus' exorcisms) to Satan. The unforgivable sin is the deliberate, informed, persistent attribution of God's work to the devil. Most scholars emphasize that the very fear of having committed this sin is evidence that one has not — the blasphemy involves a hardened, willful rejection that precludes repentance. Whether this specific sin is possible after Jesus' earthly ministry (when the Spirit's work through Jesus was directly visible) or whether it describes a persistent state of unbelief is the main contemporary debate.",
     "related_passages": [
       "Mark 3:22-30",
       "Matthew 12:31-32",
       "Luke 12:10",
       "Hebrews 6:4-6",
-      "Hebrews 10:26-29",
-      "1 John 5:16-17"
+      "1 John 5:16"
     ],
     "tags": [
       "blasphemy",
-      "holy-spirit",
       "unforgivable-sin",
+      "holy-spirit",
       "mark-3"
     ]
   },
@@ -11801,23 +11795,21 @@
       1
     ],
     "passage": "Luke 1",
-    "question": "Was Mary's 'Let it be to me' a necessary condition for the Incarnation, or was it a faithful response to a divine fait accompli?",
-    "context": "When the angel Gabriel announces that Mary will conceive the Son of God, Mary responds: 'I am the Lord's servant. Let it be to me according to your word' (Luke 1:38). Catholic and Orthodox theology has given this response enormous significance — Mary's fiat is her free consent to cooperate with God's saving plan, making her the 'New Eve' whose obedience reverses Eve's disobedience. Protestant theology generally views Mary's response as faithful acceptance but not as a necessary condition — God's sovereign plan would have proceeded regardless.",
+    "question": "Was Mary's 'yes' to the angel essential for the Incarnation, or would God have accomplished it regardless?",
+    "context": "When Gabriel announces that Mary will conceive the Messiah, she responds: 'I am the Lord's servant. May your word to me be fulfilled' (Luke 1:38). Catholic and Orthodox theology emphasizes Mary's fiat ('let it be done') as a free act of consent that cooperated with divine grace — the 'new Eve' whose obedience reverses the first Eve's disobedience. Reformed theology emphasizes divine sovereignty — God's plan cannot be contingent on human cooperation. The question touches the nature of grace, free will, and the relationship between divine sovereignty and human agency.",
     "positions": [
       {
         "id": "necessary-consent-view",
         "label": "Necessary consent view",
         "tradition_family": "evangelical",
-        "scholar_ids": [
-          "catena"
-        ],
+        "scholar_ids": [],
         "proponents": "Mary’s \"may your word to me be fulfilled\" (1:38) is a genuine consent without which the Incarnation would not proceed. The Incarnation required a human yes.",
         "argument": "Consent as condition",
-        "strengths": "God consistently works through free human response throughout Scripture (Abraham's faith, Moses' obedience); Mary's fiat is the hinge of salvation history — the New Eve's obedience answering the Old Eve's disobedience (Irenaeus, Justin); God respects human freedom even in the most decisive moment of history; the annunciation narrative is structured as a dialogue, not a decree.",
-        "weaknesses": "Makes the Incarnation contingent on a human decision — what if Mary had said no? God's sovereign plan for salvation cannot depend on a creature's consent; Protestant theology insists that grace is effectual, not merely offered; the concept of 'necessary consent' risks elevating Mary above her role.",
+        "strengths": "The narrative presents a genuine dialogue — Gabriel explains, Mary questions, then consents; God consistently works through willing human agents in Scripture (Abraham, Moses, the prophets); the Eve/Mary typology (Irenaeus, Justin) requires genuine free consent to reverse Eve's free disobedience; honors Mary's agency.",
+        "weaknesses": "Makes the Incarnation contingent on a human decision — what if Mary had said no? Seems to limit divine sovereignty; God's eternal plan cannot depend on human cooperation; the analogy with Eve is typological, not strictly causal.",
         "key_verses": [
           "Luke 1:38",
-          "Luke 1:46-55",
+          "Luke 1:34",
           "Genesis 3:6"
         ]
       },
@@ -11831,19 +11823,18 @@
         ],
         "proponents": "God’s election of Mary was unconditional; her consent is the gracious response to what God was already doing, not a condition of its occurrence.",
         "argument": "Election precedes consent",
-        "strengths": "God's eternal plan of salvation is not contingent on any human decision (Eph 1:4-5; Gal 4:4); Mary's response is faithful but not causative — God would have accomplished the Incarnation regardless; the sovereignty of God ensures that his purposes cannot be frustrated; Mary is a model of obedient faith, not a co-agent of redemption.",
-        "weaknesses": "May reduce Mary to a passive vessel rather than a willing participant; the annunciation narrative structures the encounter as a genuine dialogue with a genuine response; if consent is irrelevant, the narrative loses dramatic and theological weight; risks making God coercive.",
+        "strengths": "The Incarnation is God's eternal decree (Gal 4:4: 'when the fullness of time had come, God sent his Son'); Mary's response is genuine but enabled by grace — she could not have refused because God's purposes are irresistible; 'I am the Lord's servant' is a statement of submission, not negotiation.",
+        "weaknesses": "If Mary could not have refused, the dialogue with Gabriel is pro forma — reducing the narrative's drama and Mary's agency; the text presents Mary's response as a decision, not a compelled reaction; may seem to instrumentalize Mary.",
         "key_verses": [
           "Galatians 4:4",
-          "Ephesians 1:4-5",
-          "Luke 1:38"
+          "Luke 1:38",
+          "Ephesians 1:4-5"
         ]
       }
     ],
-    "synthesis": "The theological divide reflects broader differences about the relationship between divine sovereignty and human cooperation. The Catholic emphasis on Mary's consent reflects a synergistic theology of grace — God works through free human response. The Protestant emphasis on divine sovereignty reflects a monergistic theology — God's plan does not depend on human consent. Both affirm Mary as a model of faith; they differ on whether her consent was constitutive of the Incarnation or responsive to it.",
+    "synthesis": "The debate mirrors the broader sovereignty/free-will question. Catholic Mariology sees Mary's consent as genuinely free and genuinely necessary — God chose to work through willing human cooperation. Reformed theology sees Mary's consent as a response enabled by prevenient grace — she could not have refused because God's purposes are irresistible. Both traditions honor Mary; they differ on the nature of her agency. The text itself presents the exchange as a genuine dialogue (Mary questions, Gabriel explains, Mary consents), which at minimum suggests the narrator values Mary's willing response.",
     "related_passages": [
       "Luke 1:26-38",
-      "Luke 1:46-55",
       "Genesis 3:6",
       "Romans 5:19",
       "Galatians 4:4"
@@ -11852,8 +11843,8 @@
       "mary",
       "incarnation",
       "consent",
-      "mariology",
-      "luke-1"
+      "luke-1",
+      "mariology"
     ]
   },
   {
@@ -11865,23 +11856,23 @@
       2
     ],
     "passage": "Luke 2",
-    "question": "Did the census described in Luke 2:1-3 actually occur, or is it a Lukan theological construction?",
-    "context": "Luke 2:1-3 states that Caesar Augustus ordered a census of 'the entire Roman world' and that this was 'the first census taken while Quirinius was governing Syria.' The historical problems are significant: Josephus dates Quirinius' census to AD 6/7, but Jesus' birth under Herod the Great (died 4 BC) would predate this by a decade. No Roman source records an empire-wide census under Augustus. The requirement to travel to an ancestral town has no known Roman parallel. These difficulties have led some scholars to question the historicity of Luke's account.",
+    "question": "Was there a historical census under Quirinius that brought Joseph and Mary to Bethlehem?",
+    "context": "Luke 2:1-5 states that Caesar Augustus issued a decree for a census of 'the entire Roman world' and that 'this was the first census that took place while Quirinius was governor of Syria.' The known census under Quirinius occurred in AD 6-7, a decade after Herod's death (4 BC) — the time frame required by Matthew's nativity. This apparent anachronism has been debated for centuries. Defenders of historicity propose an earlier census under Quirinius, a different translation of prōtē ('before Quirinius'), or an administrative arrangement we lack records for.",
     "positions": [
       {
         "id": "historical-view",
         "label": "Historical view",
         "tradition_family": "evangelical",
         "scholar_ids": [
-          "macarthur"
+          "keener"
         ],
         "proponents": "Luke’s census fits within the Augustan census programme (documented by Josephus and papyri). An earlier Quirinius census or a different official is possible.",
         "argument": "Historical",
-        "strengths": "Luke is a careful historian (Luke 1:1-4; his accuracy in Acts is repeatedly confirmed by archaeology); Quirinius may have served in Syria twice — an earlier military role and the later census role; Roman provincial census administration is poorly documented for this period; Egyptian papyri confirm 14-year census cycles.",
-        "weaknesses": "No evidence for a double tenure by Quirinius survives; no Roman source records an empire-wide census under Augustus; the return-to-ancestral-town requirement is unparalleled in Roman practice; the chronological gap between Herod's death (4 BC) and Quirinius' known census (AD 6/7) is substantial.",
+        "strengths": "Luke is demonstrably accurate on other historical details (Acts officials, geographical references); Quirinius may have served in an earlier administrative capacity before his known governorship; the decree may have been regional, not empire-wide; papyrus evidence from Egypt shows periodic censuses every 14 years.",
+        "weaknesses": "No direct evidence of a census under Quirinius before AD 6; the known census (AD 6-7) postdates Herod's death by a decade; requiring people to travel to ancestral cities for a Roman census is historically unusual.",
         "key_verses": [
           "Luke 2:1-5",
-          "Luke 1:1-4"
+          "Acts 5:37"
         ]
       },
       {
@@ -11891,26 +11882,26 @@
         "scholar_ids": [],
         "proponents": "Luke may have confused a later AD 6 Quirinius census with Herod’s reign. The historical difficulty is acknowledged even among conservative scholars.",
         "argument": "Possible error in attribution",
-        "strengths": "The historical problems are real — Josephus and Roman records do not corroborate Luke's claims; Luke may have conflated the AD 6/7 census with Jesus' birth narrative; the theological motive is clear — getting Jesus to Bethlehem fulfills Micah 5:2; ancient historians regularly used historical frameworks for theological purposes.",
-        "weaknesses": "Absence of evidence is not evidence of absence; Luke's track record of accuracy in Acts should extend some credibility; dismissing the account as fabrication assumes Luke was either ignorant or dishonest; the theological motive does not preclude historical foundations.",
+        "strengths": "The known Quirinius census (AD 6-7, recorded by Josephus) does not align with Herod's reign (d. 4 BC); no evidence of an empire-wide census under Augustus; Luke may have combined a theological purpose (connecting Jesus' birth to world events) with imprecise historical detail; ancient historians were less concerned with chronological precision than modern readers expect.",
+        "weaknesses": "Luke demonstrates remarkable accuracy elsewhere — attributing error here is inconsistent; absence of evidence for an earlier census is not evidence of absence; Luke may have had access to sources Josephus did not.",
         "key_verses": [
-          "Luke 2:1-3",
-          "Acts 5:37"
+          "Luke 2:1-2",
+          "Matthew 2:1"
         ]
       }
     ],
-    "synthesis": "Defenders of historicity propose various solutions: Quirinius may have served twice in Syria, the census may have been conducted in stages, or the Greek prōtē ('first') may mean 'before' (i.e., 'before the census under Quirinius'). Critics argue Luke constructed the census to get Jesus from Nazareth to Bethlehem for theological reasons (Micah 5:2). The evidence is genuinely ambiguous — neither strong enough to confirm nor to definitively refute Luke's account. Luke's general historical reliability elsewhere (confirmed by archaeology for Acts) provides a basis for extending benefit of the doubt.",
+    "synthesis": "The chronological difficulty is real and has not been definitively resolved. The historical-accuracy proposals are plausible but speculative — no direct evidence confirms a census under Quirinius before AD 6. The anachronism view explains the difficulty but attributes historical error to Luke, whom the same scholars often praise for accuracy elsewhere (Acts itineraries, titles of officials). Most evangelical scholars hold that Luke, generally reliable in historical details, likely had access to information we lack, while acknowledging that the specific mechanism remains unclear.",
     "related_passages": [
-      "Luke 2:1-7",
+      "Luke 2:1-5",
       "Matthew 2:1",
-      "Micah 5:2",
-      "Acts 5:37"
+      "Acts 5:37",
+      "Micah 5:2"
     ],
     "tags": [
       "census",
-      "historicity",
       "quirinius",
       "bethlehem",
+      "historicity",
       "luke-2"
     ]
   },
@@ -12586,8 +12577,8 @@
       18
     ],
     "passage": "Luke 18",
-    "question": "Is Jesus denying his own goodness, testing the ruler's theology, or correcting flattery?",
-    "context": "When the rich ruler addresses Jesus as 'Good Teacher,' Jesus responds: 'Why do you call me good? No one is good except God alone' (Luke 18:19; cf. Mark 10:18). This response has been used by unitarians to deny Jesus' deity (he distinguishes himself from God) and by trinitarians to affirm it (he implies that calling him 'good' logically requires acknowledging his deity). The question is whether Jesus is making a christological point, a pastoral point, or a polemical point.",
+    "question": "Is Jesus denying his own goodness, affirming his deity, or correcting flattery?",
+    "context": "When a ruler addresses Jesus as 'Good Teacher,' Jesus responds: 'Why do you call me good? No one is good — except God alone' (Luke 18:19; cf. Mark 10:17-18). Skeptics have cited this as Jesus denying his own divinity. Orthodox interpreters see it as an implicit claim to deity — if only God is good and Jesus is good, then Jesus is God. Others see Jesus simply redirecting the ruler's superficial compliment toward the substance of his question about eternal life.",
     "positions": [
       {
         "id": "jesus-denies-his-own-goodness",
@@ -12596,8 +12587,8 @@
         "scholar_ids": [],
         "proponents": "Liberal interpreters",
         "argument": "Jesus is deflecting the title \"good teacher\" because he does not consider himself divine. This reading uses the saying to argue against early high Christology.",
-        "strengths": "The plain reading — Jesus distinguishes himself from the 'one who is good' (God); consistent with Jesus' subordination to the Father in the Synoptics; avoids reading later high Christology back into the historical Jesus.",
-        "weaknesses": "Contradicts the broader NT witness to Jesus' sinlessness (2 Cor 5:21; Heb 4:15; 1 Pet 2:22); Luke-Acts presents Jesus as uniquely righteous; if Jesus is not good, the gospel's soteriology collapses; the Synoptic Jesus elsewhere claims divine prerogatives.",
+        "strengths": "The surface reading is a denial — 'Don't call me good; only God is good'; if Jesus is not God, this is a straightforward correction; consistent with a purely human Jesus who defers to God's unique goodness.",
+        "weaknesses": "Contradicts the Gospels' own claims about Jesus (John 10:11, 'the good shepherd'; the sinlessness claim in Heb 4:15); the early church would not have preserved a verse that denied Jesus' deity/goodness if that were its meaning; ignores the pedagogical context.",
         "key_verses": [
           "Luke 18:19",
           "Mark 10:18"
@@ -12608,15 +12599,14 @@
         "label": "Jesus is testing the ruler's theology",
         "tradition_family": "evangelical",
         "scholar_ids": [
-          "macarthur",
-          "calvin"
+          "macarthur"
         ],
         "proponents": "MacArthur, Calvin, most evangelicals",
         "argument": "Jesus is not denying his own goodness but pressing the ruler: do you understand what you're saying? \"Good\" belongs to God alone — so who do you think I am? The question is an invitation to Christological recognition, not a denial of divinity.",
-        "strengths": "Jesus is asking whether the ruler understands what calling him good implies — an implicit deity claim; the question forces the ruler to think about the relationship between Jesus and God; consistent with Jesus' Socratic teaching style; does not deny Jesus' goodness but challenges superficial usage.",
-        "weaknesses": "This reading may be motivated by dogmatic concerns rather than the text's surface meaning; the ruler's response shows no awareness of a christological test; the reading requires inferring an unstated implication.",
+        "strengths": "Jesus' question is diagnostic: 'Do you know what you're saying?' If only God is good, and you call me good, what does that imply about who I am? This is Jesus' typical indirect method of self-revelation; the ruler used 'good' as flattery without considering its theological implications.",
+        "weaknesses": "The implicit deity claim is so subtle that the ruler (and many readers) miss it; if Jesus wanted to claim deity, he could have been more direct; the interpretation requires reading between the lines.",
         "key_verses": [
-          "Luke 18:19",
+          "Luke 18:18-19",
           "John 10:30",
           "John 14:9"
         ]
@@ -12625,32 +12615,29 @@
         "id": "jesus-is-correcting-flattery",
         "label": "Jesus is correcting flattery",
         "tradition_family": "evangelical",
-        "scholar_ids": [
-          "keener"
-        ],
+        "scholar_ids": [],
         "proponents": "Fitzmyer, Green",
         "argument": "The ruler is using \"Good teacher\" as a social honorific. Jesus redirects: goodness is a divine attribute, not a teaching compliment. The saying is about theological seriousness, not Christology.",
-        "strengths": "The ruler uses 'Good Teacher' as a conventional flattering address; Jesus deflects human praise toward God, consistent with his teaching elsewhere; the point is ethical — don't call me good, obey the commandments; the simplest pastoral reading.",
-        "weaknesses": "Calling a rabbi 'good' was unusual, not mere flattery — it signals genuine respect; Jesus may be making a deeper point than correcting manners; the flattery reading underestimates the christological significance.",
+        "strengths": "The ruler uses 'Good Teacher' as a respectful but superficial address; Jesus redirects from compliment to content — 'stop flattering me and engage with the commandments'; the parallel in Matthew 19:17 ('Why do you ask me about what is good?') softens the christological edge; the point is pedagogical, not theological.",
+        "weaknesses": "Reduces a theologically rich statement to mere social correction; Jesus' invocation of God's unique goodness is too weighty for simple anti-flattery; misses the christological implications that the wider Gospel context supports.",
         "key_verses": [
           "Luke 18:18-19",
-          "Matthew 23:8-10"
+          "Matthew 19:17"
         ]
       }
     ],
-    "synthesis": "Jesus is almost certainly not denying his own goodness — the broader context of Luke-Acts presents Jesus as sinless and divine. The most likely reading is that Jesus is challenging the ruler's casual use of 'good' — if you call me good, do you realize what that implies? The question functions as an implicit christological claim: only God is good, and you are right to call me good, but do you understand the full weight of what you are saying? The ruler's subsequent failure to follow Jesus suggests he did not.",
+    "synthesis": "The verse is a masterful pedagogical response rather than a theological self-disclosure. Jesus is not denying his goodness (which would contradict the Gospels' broader Christology) or making an explicit deity claim (which would be out of character for his indirect self-revelation). He is redirecting the ruler's attention: 'Do you realize what you are saying by calling me good? Only God is good. Are you prepared to follow that logic?' The question is diagnostic, not definitional.",
     "related_passages": [
       "Luke 18:18-23",
       "Mark 10:17-22",
       "Matthew 19:16-22",
-      "John 10:11",
-      "John 10:30"
+      "John 10:11"
     ],
     "tags": [
       "christology",
       "goodness",
-      "deity-of-christ",
-      "luke-18"
+      "luke-18",
+      "rich-ruler"
     ]
   },
   {
@@ -12740,8 +12727,8 @@
       21
     ],
     "passage": "Luke 21",
-    "question": "Does 'this generation will not pass away' in Luke 21:32 refer to AD 70, the end times, or something else?",
-    "context": "In Luke's Olivet Discourse, Jesus says 'this generation will not pass away until all these things have happened' (21:32). The 'things' include the destruction of Jerusalem, cosmic signs, and the coming of the Son of Man. If 'this generation' means Jesus' contemporaries, then either all predictions were fulfilled by AD 70, or Jesus was wrong about the timeframe. If 'generation' means something broader (the Jewish people, humanity, the type of people who reject God), the temporal urgency is removed but the word's normal meaning is stretched.",
+    "question": "Does 'this generation will not pass away' (Luke 21:32) refer to the AD 70 destruction, the end times, or the Jewish people as a whole?",
+    "context": "In the Olivet Discourse, Jesus describes signs of the end and then declares: 'Truly I tell you, this generation will not pass away until all these things have happened' (Luke 21:32). The difficulty is that 'all these things' seems to include both the destruction of Jerusalem (which happened in AD 70) and cosmic-eschatological events (Son of Man coming in glory, 21:27). If 'this generation' means Jesus' contemporaries, then either everything was fulfilled in AD 70 (preterism) or Jesus was wrong about the timing (a position most Christians reject). The verse is central to debates about eschatology.",
     "positions": [
       {
         "id": "entirely-fulfilled-in-ad-70",
@@ -12750,11 +12737,12 @@
         "scholar_ids": [],
         "proponents": "Preterist interpreters: N.T. Wright, R.C. Sproul",
         "argument": "\"This generation\" refers to the generation alive in AD 30; \"all these things\" refers to the Jerusalem destruction of AD 70. Luke 21:20-24 describes the siege; the Parousia language (21:25-27) is cosmic imagery for a historical event.",
-        "strengths": "Luke's redaction emphasizes Jerusalem's fall (21:20-24 — 'when you see Jerusalem surrounded by armies'); 'all these things' can refer to the destruction and its precursors; Jesus' contemporaries (genea) lived to see AD 70; avoids the failed-prophecy problem entirely.",
-        "weaknesses": "The cosmic signs (21:25-27) and the Son of Man's coming (21:27) do not have obvious AD 70 fulfillments; requires reading 'the Son of Man coming in a cloud with power and great glory' as a non-physical event; the discourse seems to anticipate the end of history, not just the end of the temple.",
+        "strengths": "The destruction of Jerusalem occurred within one generation (c. 40 years); Luke's version of the discourse focuses more on the fall of Jerusalem than Matthew or Mark; the cosmic language (sun darkened, stars falling) is standard OT judgment imagery (Isa 13:10; Joel 2:31), not literal astronomical events.",
+        "weaknesses": "The 'Son of Man coming in a cloud with power and great glory' (21:27) was not visibly fulfilled in AD 70; full preterism requires the Second Coming to have already occurred, which contradicts the church's consistent expectation of a future return; the 'redemption drawing near' (21:28) was not experienced by the AD 70 generation.",
         "key_verses": [
           "Luke 21:20-24",
-          "Luke 21:32"
+          "Luke 21:32",
+          "Isaiah 13:10"
         ]
       },
       {
@@ -12766,12 +12754,12 @@
         ],
         "proponents": "Many evangelical scholars: Bock, Marshall",
         "argument": "The near events (AD 70) and far events (Parousia) are both in view; \"this generation\" may extend beyond a single human lifetime. A double fulfilment, with AD 70 as a type of the final end.",
-        "strengths": "The discourse has two horizons — near (Jerusalem's fall) and far (Parousia); 'this generation' refers to those who would witness the beginning of fulfillment (AD 70); the pattern of prophetic double fulfillment is well-attested in the OT; the most common evangelical reading.",
-        "weaknesses": "'All these things' (panta) is comprehensive — it is difficult to split fulfillment across two events separated by millennia; the double-fulfillment model can seem like a convenient escape from the text's apparent meaning; Luke 21 does not clearly signal a two-horizon structure.",
+        "strengths": "Prophetic discourse characteristically blends near and far horizons (cf. Isa 7:14 — immediate and messianic fulfillments); the fall of Jerusalem is a 'type' of the final judgment; 'this generation' refers to Jesus' contemporaries who will see the beginning (AD 70) of what culminates at the Parousia.",
+        "weaknesses": "'All these things' is comprehensive — partial fulfillment seems to dodge the text's force; the blended-horizon approach can become an interpretive escape hatch for any difficult prophecy; the audience would have heard 'this generation' as their generation.",
         "key_verses": [
           "Luke 21:27-28",
           "Luke 21:32",
-          "Luke 21:36"
+          "Matthew 24:34"
         ]
       },
       {
@@ -12781,28 +12769,28 @@
         "scholar_ids": [],
         "proponents": "Calvin, some Reformed interpreters",
         "argument": "\"This generation\" (genea) means the Jewish people as an enduring race — they will persist until the final eschatological fulfilment.",
-        "strengths": "Genea can mean 'race' or 'kind' in some contexts; Jesus may be promising that the Jewish people will survive until the end — a remarkable prophecy given the diaspora; avoids the failed-prophecy problem while preserving an eschatological reading.",
-        "weaknesses": "Genea overwhelmingly means 'contemporaneous generation' in the Synoptics (Luke 7:31; 11:29-32; 17:25); this reading stretches the word beyond its normal range; appears motivated by the need to solve a theological problem rather than by lexical evidence.",
+        "strengths": "genea can mean 'kind' or 'race' (cf. Ps 12:7 LXX; Phil 2:15); the promise becomes: 'the Jewish people will not pass away until all is fulfilled' — a remarkable and verifiable statement; avoids the timing problem entirely.",
+        "weaknesses": "The primary meaning of genea is 'generation' (contemporaries), not 'race'; this reading is motivated by theological difficulty rather than lexical evidence; the audience would not have heard 'race' when Jesus said genea in this context.",
         "key_verses": [
           "Luke 21:32",
-          "Luke 11:29-32",
-          "Matthew 23:36"
+          "Philippians 2:15"
         ]
       }
     ],
-    "synthesis": "The AD 70 reading has strong support — Luke's version of the discourse is widely recognized as shaped by awareness of Jerusalem's destruction. The partial-fulfillment view (AD 70 + Parousia) is the most common evangelical position, treating the discourse as having a 'near' and 'far' horizon. The 'generation = race/type' reading avoids the failed-prophecy problem but lacks lexical support — genea almost always means a contemporaneous generation in the Synoptics.",
+    "synthesis": "The debate remains unresolved. The AD 70 reading works well for Luke 21:20-24 (siege of Jerusalem) but struggles with 21:25-28 (cosmic signs, Son of Man coming). The 'generation' = 'race' reading avoids the timing problem but stretches the normal meaning of genea. The partial-fulfillment reading acknowledges that prophetic discourse characteristically blends near and far horizons — a feature of OT prophecy as well (Isaiah's Servant Songs, Daniel's kingdoms). Most scholars agree that Jesus' language deliberately maintains an eschatological tension between 'soon' and 'not yet.'",
     "related_passages": [
       "Luke 21:5-36",
       "Matthew 24:34",
       "Mark 13:30",
-      "Luke 11:29-32"
+      "Daniel 7:13-14",
+      "2 Peter 3:8-9"
     ],
     "tags": [
       "eschatology",
       "olivet-discourse",
-      "ad-70",
       "generation",
-      "luke-21"
+      "luke-21",
+      "ad-70"
     ]
   },
   {
@@ -13009,22 +12997,21 @@
       3
     ],
     "passage": "John 3",
-    "question": "When Jesus says one must be 'born of water and the Spirit' (John 3:5), does 'water' refer to baptism, spiritual cleansing, or physical birth?",
-    "context": "Jesus tells Nicodemus, 'Unless someone is born of water and the Spirit, he cannot enter the kingdom of God.' The meaning of 'water' is debated. Sacramental traditions identify it with baptism. Others read 'water and Spirit' as a hendiadys (one concept expressed in two words) meaning 'spiritual cleansing' (cf. Ezek 36:25-27). A third view takes 'water' as referring to physical birth ('breaking of waters') — supported by the context where Nicodemus asks about entering 'a second time into his mother's womb' (3:4).",
+    "question": "When Jesus says one must be 'born of water and the Spirit' (John 3:5), does 'water' refer to baptism, the Spirit's cleansing, or physical birth?",
+    "context": "In Jesus' conversation with Nicodemus, he declares: 'No one can enter the kingdom of God unless they are born of water and the Spirit' (John 3:5). The meaning of 'water' has divided interpreters since the patristic era. Sacramental traditions (Catholic, Orthodox, Lutheran) identify water with baptism. Reformed and evangelical interpreters variously identify it with the Spirit's cleansing work (hendiadys: 'water, even the Spirit'), physical birth (amniotic fluid), or the Word of God. The interpretation affects baptismal theology and the necessity of sacraments for salvation.",
     "positions": [
       {
         "id": "water-baptism",
         "label": "Water = baptism",
         "tradition_family": "evangelical",
-        "scholar_ids": [
-          "catena"
-        ],
+        "scholar_ids": [],
         "proponents": "Catholic and many patristic interpreters, Luther",
         "argument": "The natural reading of \"water\" in a baptism context (John 3 follows John's baptising ministry) is Christian baptism. The new birth is sacramentally enacted in baptism. Augustine, Chrysostom, and Luther all hold this view.",
-        "strengths": "The early church universally connected this verse with baptism; Titus 3:5 links 'washing of regeneration' with renewal by the Holy Spirit; John's Gospel emphasizes baptism (1:26-33; 3:22-26; 4:1-2); the most straightforward sacramental reading.",
-        "weaknesses": "Jesus is speaking to Nicodemus before Christian baptism exists; the OT background (Ezek 36:25-27) uses 'water' as a metaphor for cleansing, not as a reference to a rite; making baptism necessary for salvation creates theological difficulties with sola fide.",
+        "strengths": "The immediate context involves John's baptism (1:26-33) and Jesus' own baptizing ministry (3:22); Ezekiel 36:25-27 combines water sprinkling with spiritual renewal; early church unanimously connected this verse to baptism; Titus 3:5 links washing/regeneration.",
+        "weaknesses": "Making baptism necessary for salvation raises difficult questions about the thief on the cross and unbaptized believers; John's Gospel elsewhere emphasizes faith, not sacraments, as the means of receiving life (3:16, 5:24, 6:47).",
         "key_verses": [
           "John 3:5",
+          "Ezekiel 36:25-27",
           "Titus 3:5",
           "Acts 2:38"
         ]
@@ -13039,12 +13026,12 @@
         ],
         "proponents": "Calvin, most Reformed interpreters",
         "argument": "Water and Spirit describe the same event — the Spirit's purifying regenerative work promised in Ezek 36:25-27. The OT background and the immediate context (Nicodemus doesn't know baptism yet) favour this reading.",
-        "strengths": "Ezekiel 36:25-27 promises God will 'sprinkle clean water' and give a 'new Spirit' — a single act of eschatological renewal, not two separate events; 'water and Spirit' is a hendiadys meaning 'the Spirit's cleansing work'; avoids making a ritual prerequisite for salvation.",
-        "weaknesses": "Hendiadys readings can be difficult to demonstrate conclusively; the two nouns ('water and Spirit') separated by 'and' (kai) are more naturally read as two distinct elements; may seem motivated by anti-sacramental theology.",
+        "strengths": "'Water and Spirit' may be hendiadys — one concept expressed with two words: 'water-Spirit' = the Spirit's cleansing work; Ezekiel 36:25-27 uses water imagery for spiritual purification; avoids making a physical rite essential for salvation; consistent with John's emphasis on faith (3:16).",
+        "weaknesses": "Hendiadys is possible but not the most natural reading of kai ('and'); the early church did not read it this way; requires a specialized grammatical argument.",
         "key_verses": [
-          "John 3:5",
+          "John 3:5-8",
           "Ezekiel 36:25-27",
-          "Isaiah 44:3"
+          "John 7:38-39"
         ]
       },
       {
@@ -13054,27 +13041,27 @@
         "scholar_ids": [],
         "proponents": "Some modern interpreters",
         "argument": "\"Born of water\" = amniotic fluid (natural birth); \"born of Spirit\" = spiritual birth. Jesus is distinguishing natural from spiritual birth.",
-        "strengths": "Fits Nicodemus' question about physical birth (3:4); 'born of water' = natural birth, 'born of Spirit' = spiritual birth; the contrast between flesh and Spirit (3:6) supports two types of birth; amniotic fluid ('waters breaking') is a natural metaphor for birth.",
-        "weaknesses": "'Born of water' for physical birth has no parallel in ancient Jewish or Greek literature; the amniotic-fluid interpretation is a modern reading unknown to ancient commentators; reduces 'water' to a trivial reference when Jesus is making a profound theological point.",
+        "strengths": "Creates a clear parallelism: born of water (physical) and Spirit (spiritual); Nicodemus's confusion about 'entering the womb' (3:4) sets up the physical-spiritual contrast; Jesus distinguishes 'flesh' from 'Spirit' in 3:6.",
+        "weaknesses": "'Water' is not used for amniotic fluid or physical birth in any Jewish text; the flesh/Spirit distinction in 3:6 is Jesus' explanation of 3:5, not a restatement of water/Spirit; the physical-birth reading is a modern proposal with no ancient support.",
         "key_verses": [
           "John 3:4-6"
         ]
       }
     ],
-    "synthesis": "Each reading has strong advocates. The baptismal reading dominated the early church and remains standard in Catholic, Orthodox, and many Protestant traditions. The hendiadys reading is favored by Reformed scholars who emphasize regeneration over sacrament. The physical-birth reading fits the immediate context (Nicodemus' question about physical birth) but has less support in the broader Johannine theology. Many scholars now see a deliberate polysemy — John's Gospel frequently uses words with multiple levels of meaning.",
+    "synthesis": "The baptismal reading has the strongest patristic support and fits the immediate context (John's water baptism, 1:26-33; 3:22-23). The hendiadys reading avoids making baptism essential for salvation. The physical-birth reading creates a neat parallelism (physical birth + spiritual birth) but lacks lexical support — 'water' is not used for amniotic fluid in Jewish literature. Most scholars favor either the baptismal or hendiadys reading, with the recognition that John's Gospel regularly uses physical symbols (water, bread, light) with spiritual double meanings.",
     "related_passages": [
       "John 3:3-8",
+      "John 1:26-33",
       "Ezekiel 36:25-27",
       "Titus 3:5",
-      "1 Peter 1:3",
       "1 Peter 1:23"
     ],
     "tags": [
       "baptism",
       "regeneration",
-      "spirit",
+      "john-3",
       "nicodemus",
-      "john-3"
+      "sacrament"
     ]
   },
   {
@@ -13164,23 +13151,21 @@
       6
     ],
     "passage": "John 6",
-    "question": "Is Jesus' discourse about 'eating my flesh and drinking my blood' in John 6 a reference to the Eucharist?",
-    "context": "In John 6:51-58, Jesus declares, 'Unless you eat the flesh of the Son of Man and drink his blood, you have no life in you.' The language is strikingly physical. Catholic and Orthodox tradition reads this as a clear eucharistic reference — the most explicit NT teaching on the Real Presence. Protestant interpreters typically read it as a metaphor for believing in Jesus, supported by 6:35 ('whoever believes in me will never be thirsty') and 6:63 ('the flesh counts for nothing; the words I have spoken to you are spirit and life'). The Fourth Gospel notably omits the institution of the Lord's Supper at the Last Supper.",
+    "question": "Does Jesus' language about eating his flesh and drinking his blood in John 6 refer to the Eucharist or to faith?",
+    "context": "In the Bread of Life discourse, Jesus declares: 'Unless you eat the flesh of the Son of Man and drink his blood, you have no life in you' (John 6:53). Sacramental traditions read this as institution of or reference to the Eucharist. Non-sacramental traditions read it as a vivid metaphor for believing in Christ — 'eating' = 'coming to' and 'believing in' Jesus (cf. 6:35). Notably, John's Gospel does not narrate the institution of the Lord's Supper at the Last Supper, which some see as supporting a eucharistic reading here and others as arguing against one.",
     "positions": [
       {
         "id": "yes-reference-to-the-eucharist",
         "label": "Yes: reference to the Eucharist",
         "tradition_family": "evangelical",
-        "scholar_ids": [
-          "catena"
-        ],
+        "scholar_ids": [],
         "proponents": "Catholic, Orthodox, many Protestant scholars (Brown, Hoskyns)",
         "argument": "The language shifts to the physical trōgō; the flesh/blood pairing is the eucharistic formula; the synagogue setting doesn't preclude post-resurrection sacramental reference. John deliberately replaces the Last Supper institution with this discourse.",
-        "strengths": "The language is unmistakably physical — 'eat' (trōgō = 'chew/munch,' not just metaphorical eating); 'flesh and blood' echoes the institution words; John omits the Last Supper institution, suggesting the eucharistic teaching is placed here instead; the early church read it eucharistically.",
-        "weaknesses": "John 6:63 ('the flesh counts for nothing; the words I have spoken to you are spirit') seems to deflate a purely physical reading; Jesus is speaking to a crowd unfamiliar with the Eucharist; making the Eucharist necessary for eternal life creates soteriological difficulties.",
+        "strengths": "The language becomes increasingly physical — trōgō ('chew/munch,' 6:54) is visceral, not metaphorical; John omits the Last Supper institution narrative, possibly because he placed the eucharistic teaching here; patristic consensus strongly favors this reading.",
+        "weaknesses": "Jesus explains his words spiritually in 6:63 ('the flesh counts for nothing'); the discourse precedes the Last Supper chronologically; if eucharistic, it makes the sacrament essential for salvation, which tensions with John's faith emphasis.",
         "key_verses": [
           "John 6:53-56",
-          "John 6:51"
+          "John 6:54"
         ]
       },
       {
@@ -13188,17 +13173,16 @@
         "label": "No: metaphorical reference to faith",
         "tradition_family": "evangelical",
         "scholar_ids": [
-          "macarthur",
-          "calvin"
+          "macarthur"
         ],
         "proponents": "Calvin, Zwingli, most Reformed scholars",
         "argument": "Verse 63 (\"the flesh counts for nothing; the Spirit gives life\") interprets the eating as spiritual. The discourse is about faith (v.29, 35, 40, 47) throughout; the \"flesh and blood\" intensification is a figure for complete appropriation of Christ.",
-        "strengths": "John 6:35 defines the metaphor: 'whoever comes to me will never go hungry, and whoever believes in me will never be thirsty' — eating/drinking = coming/believing; 6:63 explicitly says 'the flesh counts for nothing'; the discourse is about Christological faith, not a sacramental rite.",
-        "weaknesses": "The shift to trōgō ('chew') in 6:54 seems deliberately physical, going beyond metaphor; the discourse caused disciples to leave (6:66), suggesting Jesus was saying something more shocking than 'believe in me'; the metaphorical reading may domesticate the text's scandal.",
+        "strengths": "Jesus explicitly interprets his words spiritually (6:63); 'eating' parallels 'coming' and 'believing' (6:35); the discourse's context is belief, not sacrament; the crowd's misunderstanding is about taking literal what Jesus means spiritually — exactly John's literary technique throughout.",
+        "weaknesses": "The shift from phagō to trōgō (raw physical eating) is hard to explain if purely metaphorical; ignores the eucharistic overtones that the early church heard in these words; the bread/flesh/blood language is more specific than a general faith metaphor.",
         "key_verses": [
           "John 6:35",
-          "John 6:47",
-          "John 6:63"
+          "John 6:63",
+          "John 6:47"
         ]
       },
       {
@@ -13210,16 +13194,16 @@
         ],
         "proponents": "Lutheran, many Anglican scholars",
         "argument": "The discourse addresses faith in Christ; the Eucharist is the visible enactment of that faith. The sacrament is the appointed means of the spiritual eating the discourse describes.",
-        "strengths": "The discourse operates on multiple levels — primarily about faith in Christ, but shaped by eucharistic language familiar to John's community; this is consistent with John's layered symbolism throughout the Gospel; honors both the christological and sacramental dimensions.",
-        "weaknesses": "The 'both' reading can appear evasive; may not satisfy either sacramentalists or memorialists; the two levels of meaning are difficult to hold in tension without privileging one.",
+        "strengths": "John characteristically operates on multiple levels — water is both physical and spiritual (ch. 3-4), sight is both physical and spiritual (ch. 9); the discourse is primarily about faith, which the Eucharist later embodies sacramentally; honors both the spiritual explanation (6:63) and the physical language.",
+        "weaknesses": "The 'both' reading can seem like a convenient harmonization; if faith is the primary referent, the eucharistic layer is secondary and perhaps unnecessary; both Catholic and Baptist interpreters find this position unsatisfying.",
         "key_verses": [
           "John 6:35",
-          "John 6:51-58",
+          "John 6:53-56",
           "John 6:63"
         ]
       }
     ],
-    "synthesis": "The debate hinges on genre and context. The sacramental reading notes that John replaces the institution narrative with this discourse — the eucharistic theology is placed earlier in the narrative rather than at the Last Supper. The metaphorical reading observes that John consistently interprets physical images spiritually (water=Spirit, bread=belief, light=revelation). The both/and approach is gaining ground: the discourse is fundamentally about faith in Christ, but the language is shaped by eucharistic practice in the Johannine community.",
+    "synthesis": "The eucharistic reading has strong patristic support (Ignatius, Cyril of Alexandria) and fits the escalating physicality of Jesus' language (from 'bread' to 'flesh' to 'eat/chew'). The metaphorical-faith reading notes that Jesus himself explains his words spiritually (6:63: 'the Spirit gives life; the flesh counts for nothing') and that the discourse culminates in faith language (6:69). The 'both' reading recognizes that John's Gospel characteristically operates on multiple levels — the discourse is about faith, which the Eucharist later enacts sacramentally.",
     "related_passages": [
       "John 6:35-58",
       "John 6:63",
@@ -13228,10 +13212,10 @@
     ],
     "tags": [
       "eucharist",
-      "real-presence",
-      "faith",
+      "bread-of-life",
       "john-6",
-      "sacrament"
+      "sacrament",
+      "faith"
     ]
   },
   {
@@ -13321,8 +13305,8 @@
       9
     ],
     "passage": "John 9",
-    "question": "Does John 9:3 teach that God caused a man's blindness from birth to display divine power?",
-    "context": "The disciples ask Jesus whether the man was born blind because of his own sin or his parents' sin (John 9:2). Jesus answers, 'Neither this man nor his parents sinned, but this happened so that the works of God might be displayed in him' (9:3). The 'so that' (hina) clause has troubled readers: does it mean God caused the blindness for the purpose of later healing it? This raises acute theodicy questions about divine causation of suffering. Alternative readings propose that Jesus is redirecting the question — not explaining the cause of blindness but pointing to its redemptive potential.",
+    "question": "Does God cause suffering to display his glory, or does Jesus reject the premise of retributive theology?",
+    "context": "When the disciples ask about a man born blind — 'who sinned, this man or his parents?' (John 9:2) — Jesus responds: 'Neither this man nor his parents sinned, but this happened so that the works of God might be displayed in him' (9:3). The answer is theologically explosive. Does Jesus mean God caused the blindness specifically so it could be healed (instrumental suffering)? Or is he rejecting the sin-suffering connection entirely and reframing the situation (not 'this happened so that' but 'but let the works of God be displayed')? The Greek hina clause is ambiguous.",
     "positions": [
       {
         "id": "divine-purpose-revelation",
@@ -13334,12 +13318,12 @@
         ],
         "proponents": "Calvin, most orthodox interpreters",
         "argument": "God ordained the blindness for this purpose: that the works of God might be displayed. This does not make God the author of evil but means that God in his sovereignty uses suffering for redemptive ends.",
-        "strengths": "Takes the hina ('so that') clause at face value as a purpose clause; parallels John 11:4 ('this sickness is for the glory of God'); God's sovereignty over all things — including suffering — is a consistent biblical theme (Exod 4:11); the healing reveals Jesus as the light of the world.",
-        "weaknesses": "Implies God caused decades of blindness merely to stage a healing; raises acute theodicy problems — does God deliberately inflict suffering to display power? May be pastorally harmful if applied to all suffering.",
+        "strengths": "The grammar supports a purpose clause: 'so that' (hina) the works of God might be displayed; parallels John 11:4 where Lazarus's illness is 'for God's glory'; consistent with John's theology that everything serves the revelation of Jesus' identity; God's sovereignty encompasses suffering.",
+        "weaknesses": "Implies God caused decades of blindness for a single healing moment; creates a troubling theodicy; can be read as instrumentalizing human suffering for divine display; most disabled people are not healed.",
         "key_verses": [
           "John 9:3",
           "John 11:4",
-          "Exodus 4:11"
+          "Romans 8:28"
         ]
       },
       {
@@ -13351,11 +13335,11 @@
         ],
         "proponents": "Some liberal interpreters",
         "argument": "Jesus is not saying God caused the blindness but that God can use the blindness. The \"so that\" is consequential rather than purposive: given the blindness, the works of God will be displayed. This reading softens the providential claim.",
-        "strengths": "Jesus may be redirecting the question, not answering it causally — 'but rather [let us focus on the fact] that the works of God might be displayed'; the blindness is not God-caused but God-redeemed; avoids making God the author of suffering; the Greek allows a result clause rather than a purpose clause.",
-        "weaknesses": "The hina clause most naturally reads as purpose, not result; this interpretation may be motivated by discomfort with divine sovereignty over suffering rather than by the grammar; John typically uses hina as a purpose clause.",
+        "strengths": "Jesus rejects the causal question entirely ('neither this man nor his parents sinned'); the blindness has natural causes, but Jesus repurposes the situation for revelation; separates God's response to suffering from God's causation of it; avoids the instrumental theodicy.",
+        "weaknesses": "The hina clause grammatically supports purpose, not merely result; this reading softens what the text appears to say; Jesus does not explicitly deny divine involvement in the man's condition.",
         "key_verses": [
-          "John 9:3",
-          "Romans 8:28"
+          "John 9:2-3",
+          "John 9:39"
         ]
       },
       {
@@ -13365,29 +13349,27 @@
         "scholar_ids": [],
         "proponents": "Bultmann",
         "argument": "The man represents \"the world\" generically; the healing represents the eschatological restoration. The narrative is primarily symbolic rather than historical.",
-        "strengths": "The healing is a messianic sign — Isaiah 35:5 promises 'then will the eyes of the blind be opened'; the purpose is not to explain past suffering but to reveal the eschatological present; 'the works of God' point to the dawning kingdom, not to a theodicy.",
-        "weaknesses": "Does not fully address the cause of the blindness; the eschatological reading is theologically elegant but may sidestep the text's harder implications; the disciples' question demands some kind of answer.",
+        "strengths": "The healing is a sign of God's kingdom breaking into the present age; the man's condition represents the spiritual blindness Jesus came to heal (9:39); the purpose is eschatological — the revelation of Jesus as 'the light of the world' (9:5) — not a commentary on individual suffering.",
+        "weaknesses": "Does not fully address the individual theodicy question; the man's actual physical suffering is not merely a symbol; risks spiritualizing a real person's real disability.",
         "key_verses": [
           "John 9:3-5",
-          "Isaiah 35:5",
-          "Isaiah 29:18"
+          "John 9:39-41"
         ]
       }
     ],
-    "synthesis": "The divine-purpose reading takes the hina clause at face value but need not imply that God cruelly imposed blindness — God's sovereignty encompasses suffering and redemption together. The repurposing reading avoids making God the direct cause of suffering while affirming that God can bring good from it. The eschatological reading emphasizes that the healing is a sign of the messianic age. Most Johannine scholars recognize that the narrative's primary function is christological (Jesus as light of the world, 9:5) rather than philosophical (explaining the origin of suffering).",
+    "synthesis": "The divine-purpose reading is the traditional interpretation and has strong grammatical support (hina as purpose clause). However, it creates a difficult theodicy — God deliberately causing blindness for a future healing. The repurposing reading avoids this problem by separating causation from response. The eschatological reading shifts focus from individual suffering to the in-breaking of God's kingdom. Most scholars acknowledge the tension: Jesus clearly rejects the retributive theology ('who sinned?') while affirming that God's purposes operate through suffering — without fully resolving how.",
     "related_passages": [
       "John 9:1-7",
-      "John 9:39-41",
       "John 11:4",
-      "Romans 8:28",
-      "Exodus 4:11"
+      "Job 2:3-10",
+      "Romans 8:28"
     ],
     "tags": [
       "theodicy",
       "suffering",
-      "healing",
+      "blindness",
       "john-9",
-      "blindness"
+      "healing"
     ]
   },
   {
@@ -13399,8 +13381,8 @@
       10
     ],
     "passage": "John 10",
-    "question": "Does Jesus' claim 'I and the Father are one' (John 10:30) assert ontological unity or functional agreement?",
-    "context": "John 10:30 is one of the clearest christological declarations in the Gospels. The Jewish audience understands it as a claim to deity and takes up stones (10:31). The verse was central to the Arian controversy — Arius argued for unity of will, while Athanasius argued for unity of essence (homoousios). The neuter hen ('one thing') rather than masculine heis ('one person') has been parsed both ways: it either indicates a shared divine nature without collapsing the persons, or it indicates agreement in purpose while preserving the Father's superiority.",
+    "question": "Does 'I and the Father are one' (John 10:30) assert ontological unity (same divine essence) or functional unity (shared purpose)?",
+    "context": "Jesus' declaration 'I and the Father are one' (hen, neuter — 'one thing,' not heis, masculine — 'one person') provokes an immediate attempt to stone him for blasphemy (10:31-33). The verse became central to the Trinitarian debates of the 4th century. Arians argued the neuter 'one' proves mere functional agreement. Nicene orthodoxy argued the immediate context (Jesus claims divine works and divine protection of his sheep, 10:28-29) requires ontological unity. The verse remains the primary battlefield between orthodox Trinitarianism and various forms of subordinationism.",
     "positions": [
       {
         "id": "unity-of-essence-nature-orthodox-trinita",
@@ -13408,18 +13390,17 @@
         "tradition_family": "evangelical",
         "scholar_ids": [
           "macarthur",
-          "calvin",
-          "catena"
+          "calvin"
         ],
         "proponents": "Athanasius, Calvin, MacArthur, most orthodox interpreters",
         "argument": "The neuter hen asserts a unity of divine substance. The opponents' immediate response (stoning for blasphemy, \"you claim to be God,\" v.33) confirms a divine nature claim. Jesus does not deny the charge; he defends the claim's consistency with Scripture.",
-        "strengths": "The Jewish audience understood it as a deity claim and attempted stoning for blasphemy (10:31-33); John 5:17-18 confirms that 'making himself equal with God' is the charge; the neuter hen ('one thing') indicates shared nature without personal identity; affirmed by Nicea, Chalcedon, and virtually all Christian traditions.",
-        "weaknesses": "The neuter hen could indicate agreement rather than identity; John 17:21-22 uses similar 'one' language for believers' unity with God, which cannot be ontological; the subordination texts (14:28 — 'the Father is greater than I') create tension.",
+        "strengths": "The Jewish audience understands Jesus as claiming to be God (10:33 — 'you, a mere man, claim to be God'); John's Gospel consistently ascribes divine prerogatives to Jesus (creating, judging, giving life); the broader Johannine context (1:1; 20:28) supports ontological unity; Nicene orthodoxy.",
+        "weaknesses": "The neuter hen ('one thing') rather than masculine heis ('one person') may indicate unity of action rather than identity; John 17:21-22 uses the same language for the disciples' unity with God, which is clearly not ontological.",
         "key_verses": [
-          "John 10:30-33",
-          "John 5:17-18",
+          "John 10:30",
           "John 1:1",
-          "Colossians 1:15-20"
+          "John 20:28",
+          "John 5:18"
         ]
       },
       {
@@ -13429,12 +13410,11 @@
         "scholar_ids": [],
         "proponents": "Arianism, Jehovah's Witnesses, some liberal scholars",
         "argument": "Hen refers to unity of purpose and mission, not ontological identity. The Father and Son work together as one. This reading cannot account for the stoning response or for John's prologue (\"the Word was God\").",
-        "strengths": "The neuter hen ('one') rather than masculine heis ('one person') suggests unity of purpose, not identity; John 17:21-22 uses the same language for believers' unity — clearly not ontological; the Son always acts in obedience to the Father (5:19, 8:28), suggesting functional subordination, not essential equality.",
-        "weaknesses": "Does not adequately explain why the Jews attempt to stone Jesus for blasphemy — functional agreement would not be blasphemous; John 1:1 ('the Word was God'), 5:18 ('making himself equal with God'), and 20:28 ('My Lord and my God') collectively demand more than purpose-unity; this was Arius's position, condemned at Nicea.",
+        "strengths": "hen (neuter) grammatically means 'one thing' — agreement, not identity; Jesus uses the same language for the disciples' unity (17:21-22), which is functional; the context is about Jesus and the Father cooperating in protecting the sheep (10:28-29); preserves the distinction between Father and Son.",
+        "weaknesses": "The Jewish response (attempted stoning for blasphemy) indicates they understood an ontological claim; John's Gospel makes ontological claims elsewhere (1:1; 8:58; 20:28); reducing the statement to mere functional unity fails to account for the text's high Christology.",
         "key_verses": [
           "John 10:30",
-          "John 17:21-22",
-          "John 14:28"
+          "John 17:21-22"
         ]
       },
       {
@@ -13446,30 +13426,30 @@
         ],
         "proponents": "Most mainstream NT scholars",
         "argument": "The unity of purpose (everything the Son does the Father does, ch.5) and the unity of essence are not separable in John's theology. The hen statement encompasses both, grounded in the ontological.",
-        "strengths": "Unity of essence grounds unity of purpose — the Son does what the Father does because the Son shares the Father's nature; the Johannine Father-Son relationship encompasses both ontological and functional dimensions; this is the classical trinitarian reading that avoids reducing the claim to either pure ontology or mere agreement.",
-        "weaknesses": "The 'both' reading is theologically sophisticated but may seem to collapse a genuine exegetical question into a systematic-theological synthesis; the text itself may be making a specific claim rather than a comprehensive trinitarian statement.",
+        "strengths": "In Johannine theology, functional unity reveals ontological unity — Jesus does the Father's works (5:19-20) because he shares the Father's nature (1:1); the neuter hen encompasses both agreement and essential connection; the two dimensions cannot be separated in John's thought.",
+        "weaknesses": "Saying 'both' may seem evasive; the historical debate required choosing between Arian and Nicene positions; the church needed a definitive answer, and the 'both' reading may obscure the ontological priority that Nicaea affirmed.",
         "key_verses": [
           "John 10:30",
-          "John 5:19",
+          "John 5:19-20",
           "John 14:9-11"
         ]
       }
     ],
-    "synthesis": "The Nicene consensus, affirmed by the vast majority of Christian traditions, reads John 10:30 as asserting unity of essence — the Son shares the Father's divine nature. The Jewish audience's reaction (attempting to stone Jesus for blasphemy) confirms they understood the claim as more than functional agreement. The unity-of-purpose reading, championed by Arius and modern unitarians, does not adequately explain the blasphemy charge. However, the Nicene reading also affirms that the Son is not the Father — the neuter hen preserves personal distinction within essential unity.",
+    "synthesis": "The Nicene reading has been the dominant Christian interpretation since the 4th century, supported by John's broader Christology (1:1, 'the Word was God'; 20:28, Thomas's 'My Lord and my God'). The functional-unity reading has merit linguistically (hen is neuter) but struggles with the Jewish audience's response — they understood Jesus as claiming equality with God (10:33). The 'both' reading recognizes that in John's theology, functional unity (doing the Father's works) flows from and reveals ontological unity (sharing the Father's nature). The two are inseparable in Johannine thought.",
     "related_passages": [
-      "John 10:30-39",
-      "John 5:17-18",
+      "John 10:30-33",
+      "John 1:1",
+      "John 5:18-23",
       "John 14:9-11",
-      "John 17:11",
       "John 17:21-22",
-      "Colossians 1:15-20"
+      "John 20:28"
     ],
     "tags": [
       "trinity",
       "christology",
-      "deity-of-christ",
       "john-10",
-      "homoousios"
+      "deity-of-christ",
+      "nicaea"
     ]
   },
   {
@@ -13481,8 +13461,8 @@
       11
     ],
     "passage": "John 11",
-    "question": "Why does Jesus weep at Lazarus' tomb if he knows he is about to raise him from the dead?",
-    "context": "John 11:35 — 'Jesus wept' — is the shortest verse in the English Bible but one of the most theologically significant. Jesus has already told the disciples that Lazarus' sickness 'will not end in death' (11:4) and that he will 'wake him up' (11:11). Yet when he arrives and sees Mary weeping, he is 'deeply moved' (enebrimēsato — literally 'snorted with indignation') and weeps. The Greek embrimaomai suggests anger or agitation more than sorrow. Why does Jesus display such emotion when the resurrection is minutes away?",
+    "question": "Why does Jesus weep at Lazarus's tomb if he knows he will raise Lazarus from the dead?",
+    "context": "John 11:35 — 'Jesus wept' — is the shortest verse in the English Bible but raises a profound Christological question. Jesus has already told the disciples that Lazarus's illness 'will not end in death' (11:4) and that he will 'wake him up' (11:11). He delays his arrival deliberately (11:6). Yet at the tomb, he is 'deeply moved in spirit and troubled' (enebrimēsato, 11:33) and weeps (edakrysen, 11:35). The verb embrimaomai implies strong emotion — possibly anger, not just sorrow. What provokes such intense emotion in someone who knows the outcome?",
     "positions": [
       {
         "id": "genuine-solidarity-with-human-grief",
@@ -13493,11 +13473,10 @@
         ],
         "proponents": "Augustine, Calvin, most orthodox interpreters",
         "argument": "Jesus wept because death is genuinely grievous. His foreknowledge of the resurrection does not negate the real grief of the moment; it contextualises it. He weeps for Mary and Martha and for the condition of humanity under death, even as he is about to overcome it.",
-        "strengths": "Demonstrates the full humanity of Jesus — he does not merely simulate emotion; Hebrews 4:15 affirms Jesus was 'tempted in every way, just as we are'; the incarnation means truly sharing human experience including grief; 'Jesus wept' reveals God's compassion for human suffering.",
-        "weaknesses": "If Jesus knows the resurrection is imminent, the grief seems performative; the Greek embrimaomai in 11:33 suggests anger more than sadness; the tears may be about something deeper than simple grief.",
+        "strengths": "The Incarnation means Jesus fully enters human experience, including grief; Hebrews 4:15 affirms Jesus was 'tempted in every way, just as we are'; the tears demonstrate that Jesus' divine knowledge does not eliminate his human emotion; profoundly pastoral — Jesus grieves with those who grieve.",
+        "weaknesses": "If Jesus knows Lazarus will be raised in minutes, his grief seems performative; mere solidarity does not explain the intensity of embrimaomai ('deeply moved/angry'); foreknowledge should mitigate sorrow, not intensify it.",
         "key_verses": [
-          "John 11:35",
-          "John 11:33",
+          "John 11:33-35",
           "Hebrews 4:15",
           "Romans 12:15"
         ]
@@ -13507,51 +13486,47 @@
         "label": "Anger at death's power",
         "tradition_family": "evangelical",
         "scholar_ids": [
+          "macarthur",
           "calvin"
         ],
         "proponents": "Some scholars reading embrimaomai as indignation",
         "argument": "The groaning in v.33 (embrimaomai) is an expression of righteous anger at death and the evil that produces it. The tears are the overflow of that anger. Jesus weeps not as a victim of grief but as the conqueror of death who is angry at its domain.",
-        "strengths": "embrimaomai ('deeply moved') carries connotations of anger or indignation in classical Greek; Jesus is angry at death itself — the enemy he came to destroy; the weeping is not sentimental but combative; this explains why the emotion precedes the miracle — the anger fuels the command 'Lazarus, come out!'",
-        "weaknesses": "Anger at death does not fully explain the tears; the bystanders interpret the weeping as love for Lazarus (11:36), not as anger; may read too much into the lexical range of embrimaomai.",
+        "strengths": "embrimaomai (11:33, 38) implies anger or indignation, not just sorrow; Jesus is furious at death's power over the world he created; the tears express rage at the enemy he came to destroy (1 Cor 15:26: 'the last enemy'); explains the intensity of the emotion better than simple grief.",
+        "weaknesses": "The onlookers interpret the tears as love, not anger (11:36); anger at death seems theologically abstract for such a personal moment; the grieving context makes sorrow more natural than anger.",
         "key_verses": [
           "John 11:33",
           "John 11:38",
-          "1 Corinthians 15:26",
-          "Hebrews 2:14-15"
+          "1 Corinthians 15:26"
         ]
       },
       {
         "id": "both",
         "label": "Both",
         "tradition_family": "evangelical",
-        "scholar_ids": [
-          "macarthur"
-        ],
+        "scholar_ids": [],
         "proponents": "N.T. Wright and others",
         "argument": "The weeping is both genuine grief (solidarity with the sisters) and something harder to name — perhaps the weight of what is being asked of him, the shadow of his own coming death over the scene.",
-        "strengths": "Human emotions are complex — grief and anger coexist naturally; Jesus weeps with Mary (solidarity) and is indignant at death (cosmic combat); the incarnation means experiencing the full range of human emotion; this reading honors the text's emotional complexity.",
-        "weaknesses": "The 'both' reading can appear evasive; the narrative may intend to foreground one emotion over the other; systematic readings risk flattening the text's dramatic tension.",
+        "strengths": "The two verbs (dakryō = weep, embrimaomai = deeply moved/angry) may describe different emotions — sorrow and anger coexist; Jesus grieves with the mourners and rages against death simultaneously; the Incarnation does not separate grief from righteous anger; the passage is intentionally multivalent.",
+        "weaknesses": "Saying 'both' can seem evasive; the text may have a single dominant emotion that scholars should identify.",
         "key_verses": [
-          "John 11:33-38",
-          "Hebrews 4:15",
-          "Isaiah 53:3"
+          "John 11:33-35",
+          "John 11:38"
         ]
       }
     ],
-    "synthesis": "The two emotions (grief and anger) likely coexist. Jesus grieves with genuine human solidarity — the incarnation means truly entering human suffering. He is also indignant at death's power over those he loves. The tears are not a sign of doubt or helplessness but of the Incarnate God's full engagement with the world's brokenness. John presents a Jesus who is both the sovereign Lord who will raise Lazarus and the compassionate friend who weeps with those who mourn.",
+    "synthesis": "The three readings are not mutually exclusive. Jesus' tears may simultaneously express genuine grief at the ravages of death (even temporary ones), righteous anger at death's power over the world he created, and solidarity with the mourners. The text uses two different emotional verbs — the weeping (dakryō) expresses sorrow, while the 'deeply moved' (embrimaomai) may express anger. The passage is ultimately a window into the Incarnation: the Son of God genuinely enters human grief while possessing the power to overcome its cause.",
     "related_passages": [
       "John 11:1-44",
-      "John 11:33-38",
       "Hebrews 4:15",
-      "Romans 12:15",
-      "Isaiah 53:3-4"
+      "Romans 8:22-23",
+      "Isaiah 53:3"
     ],
     "tags": [
-      "incarnation",
+      "christology",
       "emotion",
       "lazarus",
-      "grief",
-      "john-11"
+      "john-11",
+      "incarnation"
     ]
   },
   {
