@@ -9,33 +9,6 @@ import { getUserDb } from './userDatabase';
 import type { UserNote } from '../types';
 import { getPreference } from './userQueries';
 
-// ── Shared interfaces (owned here, re-exported by userQueries) ────
-
-export interface VerseHighlight {
-  id: number;
-  verse_ref: string;
-  color: string;
-  created_at: string;
-  collection_id: string | null;
-  note: string | null;
-}
-
-export interface HighlightCollection {
-  id: string;
-  name: string;
-  color: string;
-  created_at: string;
-  sort_order: number;
-}
-
-export interface AuthProfile {
-  supabase_uid: string;
-  email: string;
-  display_name: string;
-  avatar_url: string;
-  provider: string;
-}
-
 // ── Notes (write) ─────────────────────────────────────────────────
 
 export async function saveNote(verseRef: string, text: string): Promise<number> {

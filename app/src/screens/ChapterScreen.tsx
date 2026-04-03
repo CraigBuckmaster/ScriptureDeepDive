@@ -10,7 +10,7 @@
 import React, { useCallback, useMemo, useRef, useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, LayoutAnimation, Platform, UIManager, StyleSheet, type NativeSyntheticEvent, type NativeScrollEvent } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import type { ScreenNavProp, ScreenRouteProp, OpenPanelParam } from '../navigation/types';
+import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import type { Book, CoachingTip } from '../types';
 
 import { useChapterData } from '../hooks/useChapterData';
@@ -19,7 +19,6 @@ import { useNotedVerses } from '../hooks/useNotedVerses';
 import { useReaderStore, useSettingsStore } from '../stores';
 import { recordVisit } from '../db/user';
 import { GenreBanner } from '../components/GenreBanner';
-import { StudyCoachCard } from '../components/StudyCoachCard';
 import { useStudyDepth } from '../hooks/useStudyDepth';
 import { useTranslationSwitch } from '../hooks/useTranslationSwitch';
 import { useStoreReview } from '../hooks/useStoreReview';
@@ -28,21 +27,14 @@ import { updateLastActive, cancelReengagement } from '../services/reengagement';
 import { getBook } from '../db/content';
 
 import { useRedLetter } from '../hooks/useRedLetter';
-import { LexiconSheet } from '../components/LexiconSheet';
 import { ChapterNavBar } from '../components/ChapterNavBar';
 import { CompareBar } from '../components/CompareBar';
 import { ChapterHeader } from '../components/ChapterHeader';
-import { SectionBlock } from '../components/SectionBlock';
-import { ButtonRow } from '../components/ButtonRow';
-import { PanelContainer } from '../components/PanelContainer';
-import { ScholarlyBlock } from '../components/ScholarlyBlock';
 import { QnavOverlay } from '../components/QnavOverlay';
 import { NotesOverlay } from '../components/notes';
 import { ChapterSkeleton } from '../components/ChapterSkeleton';
-import { VerseLongPressMenu } from '../components/VerseLongPressMenu';
-import { HighlightColorPicker, HIGHLIGHT_COLORS } from '../components/HighlightColorPicker';
-import { setHighlight, removeHighlight, getHighlightsForChapter, type VerseHighlight } from '../db/user';
-import { InterlinearSheet } from '../components/InterlinearSheet';
+import { HIGHLIGHT_COLORS } from '../components/HighlightColorPicker';
+import { getHighlightsForChapter, type VerseHighlight } from '../db/user';
 import { TTSControls } from '../components/TTSControls';
 import { useTTS } from '../hooks/useTTS';
 import { useBookmarkedVerses } from '../hooks/useBookmarkedVerses';
@@ -52,8 +44,10 @@ import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { useChapterFingerprint } from '../hooks/useChapterFingerprint';
 import { ChapterFingerprint } from '../components/ChapterFingerprint';
 import { usePremium } from '../hooks/usePremium';
-import { UpgradePrompt } from '../components/UpgradePrompt';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+
+import { ChapterVerseList } from '../components/ChapterVerseList';
+import { ChapterPanelSheet } from '../components/ChapterPanelSheet';
 
 // Enable LayoutAnimation on Android
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
@@ -92,9 +86,6 @@ function ChapterScreen() {
     }
     setInterlinearVerse(verseNum);
   }, [isPremium, showUpgrade]);
-  const [lexiconStrongs, setLexiconStrongs] = useState<string | null>(null);
-  const [lexiconWordStudyId, setLexiconWordStudyId] = useState<string | null>(null);
-  const [colorPickerOpen, setColorPickerOpen] = useState(false);
   const [highlights, setHighlights] = useState<VerseHighlight[]>([]);
 
   const {
@@ -154,7 +145,6 @@ function ChapterScreen() {
   // Auto-scroll to button row when a panel opens
   useEffect(() => {
     if (activePanel && activePanel.sectionId !== '__chapter__') {
-      // Prefer button row Y (puts buttons + panel in view), fall back to section top
       const btnY = btnRowYMap.current[activePanel.sectionId];
       const secY = sectionYMap.current[activePanel.sectionId];
       const y = btnY ?? secY;
@@ -211,7 +201,6 @@ function ChapterScreen() {
     const verseNum = verses[tts.currentVerse]?.verse_num;
     if (verseNum == null) return;
 
-    // Use measured verse Y position (populated via onLayout in VerseBlock)
     const verseY = verseYMap.current[verseNum];
     if (verseY != null) {
       scrollRef.current?.scrollTo({
@@ -345,6 +334,56 @@ function ChapterScreen() {
     [vhlGroups]
   );
 
+  // Layout callbacks for ChapterVerseList
+  const handleSectionLayout = useCallback((sectionId: string, y: number) => {
+    sectionYMap.current[sectionId] = y;
+  }, []);
+
+  const handleVerseLayout = useCallback((verseNum: number, y: number, sectionId: string) => {
+    const sectionY = sectionYMap.current[sectionId] ?? 0;
+    verseYMap.current[verseNum] = sectionY + y;
+  }, []);
+
+  const handleBtnRowLayout = useCallback((sectionId: string, _sectionY: number, rowY: number) => {
+    const secY = sectionYMap.current[sectionId] ?? 0;
+    btnRowYMap.current[sectionId] = secY + rowY;
+  }, []);
+
+  const handleNotePress = useCallback((v: number) => {
+    setNoteVerseNum(v);
+    toggleNotes();
+  }, [toggleNotes]);
+
+  const handleDismissTip = useCallback((afterSection: number) => {
+    setDismissedTips((prev) => new Set(prev).add(afterSection));
+  }, []);
+
+  const handleRefPress = useCallback((ref: { bookId: string; chapter: number }) => {
+    navigation.push('Chapter', { bookId: ref.bookId, chapterNum: ref.chapter });
+  }, [navigation]);
+
+  // Comparison labels
+  const comparisonLabel = comparisonTranslation
+    ? (TRANSLATION_MAP.get(comparisonTranslation)?.label ?? comparisonTranslation.toUpperCase())
+    : undefined;
+  const primaryLabel = comparisonTranslation
+    ? (TRANSLATION_MAP.get(translation)?.label ?? translation.toUpperCase())
+    : undefined;
+
+  // Panel sheet callbacks
+  const handleWordStudyPress = useCallback((wsId: string) => {
+    (navigation as any).navigate('ExploreTab', { screen: 'WordStudyDetail', params: { wordId: wsId } });
+  }, [navigation]);
+
+  const handleConcordancePress = useCallback((params: any) => {
+    (navigation as any).navigate('ExploreTab', { screen: 'Concordance', params });
+  }, [navigation]);
+
+  const handleAddNote = useCallback((verseNum: number) => {
+    setNoteVerseNum(verseNum);
+    toggleNotes();
+  }, [toggleNotes]);
+
   if (isLoading) {
     return <ChapterSkeleton />;
   }
@@ -436,114 +475,40 @@ function ChapterScreen() {
           />
         ) : null}
 
-        {/* Sections (with coaching cards interleaved) */}
-        {sections.flatMap((sec) => {
-          const elements: React.ReactNode[] = [
-            <View
-              key={sec.id}
-              onLayout={(e) => {
-                sectionYMap.current[sec.id] = e.nativeEvent.layout.y;
-              }}
-            >
-            <SectionBlock
-              section={sec}
-              panels={sec.panels}
-              verses={verses}
-              vhlGroups={vhlGroups}
-              activeVhlGroups={activeVhlGroups}
-              notedVerses={notedVerses}
-              activePanel={activeSectionPanelType}
-              fontSize={fontSize}
-              onPanelToggle={handleSectionPanelToggle}
-              onNotePress={(v) => { setNoteVerseNum(v); toggleNotes(); }}
-              onVerseLongPress={handleVerseLongPress}
-              onVerseNumPress={handleInterlinearPress}
-              activeVerseNum={ttsActive ? verses[tts.currentVerse]?.verse_num : undefined}
-              depthExplored={depthMap.get(sec.id)?.explored}
-              depthTotal={depthMap.get(sec.id)?.total}
-              onDepthRecord={recordOpen}
-              comparisonVerses={comparisonTranslation ? comparisonVerses : undefined}
-              comparisonLabel={comparisonTranslation ? (TRANSLATION_MAP.get(comparisonTranslation)?.label ?? comparisonTranslation.toUpperCase()) : undefined}
-              primaryLabel={comparisonTranslation ? (TRANSLATION_MAP.get(translation)?.label ?? translation.toUpperCase()) : undefined}
-              redLetterVerses={redLetterVerses}
-              highlightMap={highlightMap}
-              onVerseLayout={(verseNum, y, sectionId) => {
-                const sectionY = sectionYMap.current[sectionId] ?? 0;
-                verseYMap.current[verseNum] = sectionY + y;
-              }}
-              renderButtonRow={(panels, sectionId) => (
-                <View onLayout={(e) => {
-                  const sectionY = sectionYMap.current[sectionId] ?? 0;
-                  btnRowYMap.current[sectionId] = sectionY + e.nativeEvent.layout.y;
-                }}>
-                  <ButtonRow
-                    panels={panels}
-                    activePanel={
-                      activeSectionPanelType?.sectionId === sectionId
-                        ? activeSectionPanelType.panelType
-                        : null
-                    }
-                    onToggle={(type) => handleSectionPanelToggle(sectionId, type)}
-                  />
-                </View>
-              )}
-              renderPanel={(panel) => (
-                <PanelContainer
-                  panelType={panel.panel_type}
-                  contentJson={panel.content_json}
-                  isOpen
-                  onClose={clearActivePanel}
-                  onRefPress={(ref) => {
-                    navigation.push('Chapter', { bookId: ref.bookId, chapterNum: ref.chapter });
-                  }}
-                  defaultTab={
-                    openPanel?.tabKey && openPanel.panelType === panel.panel_type
-                      ? openPanel.tabKey
-                      : undefined
-                  }
-                />
-              )}
-            />
-            </View>,
-          ];
-
-          // Inject coaching card after this section if applicable
-          if (studyCoachEnabled && coachingTips.length > 0) {
-            const tip = coachingTips.find((t) => t.after_section === sec.section_num);
-            if (tip && !dismissedTips.has(tip.after_section)) {
-              elements.push(
-                <StudyCoachCard
-                  key={`coach-${tip.after_section}`}
-                  tip={tip.tip}
-                  onDismiss={() => setDismissedTips((prev) => new Set(prev).add(tip.after_section))}
-                />,
-              );
-            }
-          }
-
-          return elements;
-        })}
-
-        {/* Chapter-level scholarly block */}
-        <ScholarlyBlock
+        <ChapterVerseList
+          sections={sections}
+          verses={verses}
+          vhlGroups={vhlGroups}
+          activeVhlGroups={activeVhlGroups}
+          notedVerses={notedVerses}
+          activeSectionPanel={activeSectionPanelType}
+          fontSize={fontSize}
+          handleSectionPanelToggle={handleSectionPanelToggle}
+          onNotePress={handleNotePress}
+          onVerseLongPress={handleVerseLongPress}
+          onInterlinearPress={handleInterlinearPress}
+          activeVerseNum={ttsActive ? verses[tts.currentVerse]?.verse_num : undefined}
+          depthMap={depthMap}
+          recordOpen={recordOpen}
+          comparisonVerses={comparisonTranslation ? comparisonVerses : undefined}
+          comparisonLabel={comparisonLabel}
+          primaryLabel={primaryLabel}
+          redLetterVerses={redLetterVerses}
+          highlightMap={highlightMap}
+          clearActivePanel={clearActivePanel}
+          onRefPress={handleRefPress}
+          openPanel={openPanel}
+          onSectionLayout={handleSectionLayout}
+          onVerseLayout={handleVerseLayout}
+          onBtnRowLayout={handleBtnRowLayout}
+          studyCoachEnabled={studyCoachEnabled}
+          coachingTips={coachingTips}
+          dismissedTips={dismissedTips}
+          onDismissTip={handleDismissTip}
           chapterPanels={chapterPanels}
-          activePanel={activeChapterPanelType}
-          onToggle={handleChapterPanelToggle}
-          onClose={clearActivePanel}
-          onRefPress={(ref) => {
-            navigation.push('Chapter', { bookId: ref.bookId, chapterNum: ref.chapter });
-          }}
-          defaultTab={
-            openPanel && !openPanel.sectionNum && openPanel.tabKey
-              ? openPanel.tabKey
-              : undefined
-          }
+          activeChapterPanelType={activeChapterPanelType}
+          handleChapterPanelToggle={handleChapterPanelToggle}
         />
-
-        {/* Scholar disclaimer */}
-        <Text style={[styles.scholarDisclaimer, { color: base.textMuted }]}>
-          Scholar commentary panels present paraphrased summaries of positions found in published works and are not direct quotations. For exact wording, consult the original sources cited.
-        </Text>
       </ScrollView>
 
       {ttsActive && (
@@ -584,93 +549,24 @@ function ChapterScreen() {
         initialVerseNum={noteVerseNum}
       />
 
-      <InterlinearSheet
-        visible={interlinearVerse !== null}
+      <ChapterPanelSheet
         bookId={bookId}
-        chapter={chapterNum}
-        verse={interlinearVerse ?? 1}
-        verseRef={interlinearVerse ? `${bookData?.name ?? bookId} ${chapterNum}:${interlinearVerse}` : ''}
-        onClose={() => setInterlinearVerse(null)}
-        onWordStudyPress={(wsId) => {
-          setInterlinearVerse(null);
-          (navigation as any).navigate('ExploreTab', { screen: 'WordStudyDetail', params: { wordId: wsId } });
-        }}
-        onConcordancePress={(params) => {
-          setInterlinearVerse(null);
-          (navigation as any).navigate('ExploreTab', { screen: 'Concordance', params });
-        }}
-        onLexiconPress={(strongs, wsId) => {
-          setInterlinearVerse(null);
-          setLexiconStrongs(strongs);
-          setLexiconWordStudyId(wsId);
-        }}
+        chapterNum={chapterNum}
+        bookName={bookData?.name ?? bookId}
+        longPress={longPress}
+        setLongPress={setLongPress}
+        interlinearVerse={interlinearVerse}
+        setInterlinearVerse={setInterlinearVerse}
+        onWordStudyPress={handleWordStudyPress}
+        onConcordancePress={handleConcordancePress}
+        onAddNote={handleAddNote}
+        toggleBookmark={toggleBookmark}
+        bookmarked={bookmarked}
+        highlights={highlights}
+        loadHighlights={loadHighlights}
+        upgradeRequest={upgradeRequest}
+        dismissUpgrade={dismissUpgrade}
       />
-
-      <LexiconSheet
-        visible={lexiconStrongs !== null}
-        strongs={lexiconStrongs}
-        wordStudyId={lexiconWordStudyId}
-        onClose={() => { setLexiconStrongs(null); setLexiconWordStudyId(null); }}
-        onWordStudyPress={(wsId) => {
-          setLexiconStrongs(null);
-          setLexiconWordStudyId(null);
-          (navigation as any).navigate('ExploreTab', { screen: 'WordStudyDetail', params: { wordId: wsId } });
-        }}
-        onConcordancePress={(params) => {
-          setLexiconStrongs(null);
-          setLexiconWordStudyId(null);
-          (navigation as any).navigate('ExploreTab', { screen: 'Concordance', params });
-        }}
-      />
-
-      <VerseLongPressMenu
-        visible={longPress !== null}
-        verseText={longPress?.text ?? ''}
-        verseRef={longPress ? `${bookData?.name ?? bookId} ${chapterNum}:${longPress.verseNum}` : ''}
-        onClose={() => setLongPress(null)}
-        onAddNote={longPress ? () => {
-          setNoteVerseNum(longPress.verseNum);
-          toggleNotes();
-        } : undefined}
-        onHighlight={() => setColorPickerOpen(true)}
-        highlightColor={longPress
-          ? HIGHLIGHT_COLORS.find((c) => c.name === highlights.find(
-              (h) => h.verse_ref === `${bookId}_${chapterNum}:${longPress.verseNum}`
-            )?.color)?.hex ?? null
-          : null}
-        onBookmark={longPress ? () => toggleBookmark(longPress.verseNum) : undefined}
-        isBookmarked={longPress ? bookmarked.has(longPress.verseNum) : false}
-      />
-
-      <HighlightColorPicker
-        visible={colorPickerOpen}
-        currentColor={longPress
-          ? highlights.find(
-              (h) => h.verse_ref === `${bookId}_${chapterNum}:${longPress.verseNum}`
-            )?.color ?? null
-          : null}
-        onSelect={async (color) => {
-          if (!longPress) return;
-          const ref = `${bookId}_${chapterNum}:${longPress.verseNum}`;
-          if (color) {
-            await setHighlight(ref, color);
-          } else {
-            await removeHighlight(ref);
-          }
-          loadHighlights();
-          setLongPress(null);
-        }}
-        onClose={() => setColorPickerOpen(false)}
-      />
-
-      {upgradeRequest && (
-        <UpgradePrompt
-          visible
-          variant={upgradeRequest.variant}
-          featureName={upgradeRequest.featureName}
-          onClose={dismissUpgrade}
-        />
-      )}
     </View>
   );
 }
@@ -703,15 +599,6 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     paddingBottom: 80,
-  },
-  scholarDisclaimer: {
-    fontFamily: fontFamily.bodyItalic,
-    fontSize: 10,
-    lineHeight: 15,
-    textAlign: 'center',
-    paddingHorizontal: spacing.xl,
-    paddingTop: spacing.lg,
-    paddingBottom: spacing.sm,
   },
 });
 

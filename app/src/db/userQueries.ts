@@ -11,8 +11,32 @@ import { chapterPrefix, formatVerseRef } from '../utils/verseRef';
 import { escapeLike } from '../utils/escapeLike';
 import type { UserNote, ReadingProgress, Bookmark, RecentChapter, StudyCollection } from '../types';
 
-// Re-export shared interfaces that live alongside query code
-export type { VerseHighlight, HighlightCollection } from './userMutations';
+// ── Shared interfaces ─────────────────────────────────────────────
+
+export interface VerseHighlight {
+  id: number;
+  verse_ref: string;
+  color: string;
+  created_at: string;
+  collection_id: string | null;
+  note: string | null;
+}
+
+export interface HighlightCollection {
+  id: string;
+  name: string;
+  color: string;
+  created_at: string;
+  sort_order: number;
+}
+
+export interface AuthProfile {
+  supabase_uid: string;
+  email: string;
+  display_name: string;
+  avatar_url: string;
+  provider: string;
+}
 
 // ── Notes (read) ───────────────────────────────────────────────────
 
@@ -125,8 +149,6 @@ export async function getPreference(key: string): Promise<string | null> {
 }
 
 // ── Highlights (read) ─────────────────────────────────────────────
-
-import type { VerseHighlight, HighlightCollection } from './userMutations';
 
 export async function getHighlightsForChapter(bookId: string, ch: number): Promise<VerseHighlight[]> {
   return getUserDb().getAllAsync<VerseHighlight>(
@@ -399,10 +421,8 @@ export async function searchNotesFTS(query: string): Promise<UserNote[]> {
 
 // ── Auth Profile (read) ──────────────────────────────────────────
 
-export type { AuthProfile } from './userMutations';
-
-export async function getAuthProfile(): Promise<import('./userMutations').AuthProfile | null> {
-  return getUserDb().getFirstAsync<import('./userMutations').AuthProfile>(
+export async function getAuthProfile(): Promise<AuthProfile | null> {
+  return getUserDb().getFirstAsync<AuthProfile>(
     'SELECT supabase_uid, email, display_name, avatar_url, provider FROM auth_profiles LIMIT 1',
   );
 }
