@@ -58,7 +58,9 @@ function GospelPassageCard({ gospelName, passageRef: refStr, verses, color, onNa
   );
 }
 
-export default React.memo(GospelPassageCard);
+const MemoizedGospelPassageCard = React.memo(GospelPassageCard);
+export { MemoizedGospelPassageCard as GospelPassageCard };
+export default MemoizedGospelPassageCard;
 
 const styles = StyleSheet.create({
   card: {

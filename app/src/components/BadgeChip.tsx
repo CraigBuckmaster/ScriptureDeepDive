@@ -50,7 +50,9 @@ function BadgeChip({ label, icon, color, onPress }: Props) {
   return content;
 }
 
-export default React.memo(BadgeChip);
+const MemoizedBadgeChip = React.memo(BadgeChip);
+export { MemoizedBadgeChip as BadgeChip };
+export default MemoizedBadgeChip;
 
 const styles = StyleSheet.create({
   chip: {

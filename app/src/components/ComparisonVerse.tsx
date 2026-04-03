@@ -31,7 +31,9 @@ function ComparisonVerse({ text, translationLabel }: Props) {
   );
 }
 
-export default React.memo(ComparisonVerse);
+const MemoizedComparisonVerse = React.memo(ComparisonVerse);
+export { MemoizedComparisonVerse as ComparisonVerse };
+export default MemoizedComparisonVerse;
 
 const styles = StyleSheet.create({
   container: {

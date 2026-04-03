@@ -28,7 +28,9 @@ function SectionHeader({ header, explored, total }: Props) {
   );
 }
 
-export default React.memo(SectionHeader);
+const MemoizedSectionHeader = React.memo(SectionHeader);
+export { MemoizedSectionHeader as SectionHeader };
+export default MemoizedSectionHeader;
 
 const styles = StyleSheet.create({
   container: {

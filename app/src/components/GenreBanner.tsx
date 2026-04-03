@@ -36,7 +36,9 @@ function GenreBanner({ genreLabel, genreGuidance }: Props) {
   );
 }
 
-export default React.memo(GenreBanner);
+const MemoizedGenreBanner = React.memo(GenreBanner);
+export { MemoizedGenreBanner as GenreBanner };
+export default MemoizedGenreBanner;
 
 const styles = StyleSheet.create({
   container: {

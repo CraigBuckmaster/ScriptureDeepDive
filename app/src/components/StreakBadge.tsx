@@ -35,7 +35,9 @@ function StreakBadge({ streak }: Props) {
   );
 }
 
-export default React.memo(StreakBadge);
+const MemoizedStreakBadge = React.memo(StreakBadge);
+export { MemoizedStreakBadge as StreakBadge };
+export default MemoizedStreakBadge;
 
 const styles = StyleSheet.create({
   container: {

@@ -44,7 +44,7 @@ function ScreenFallback({ error, onRetry }: { error: Error | null; onRetry: () =
           onPress={() => {
             if (navigation.canGoBack()) navigation.goBack();
           }}
-          style={[styles.button, { backgroundColor: base.card }]}
+          style={[styles.button, { backgroundColor: base.bgElevated }]}
           accessibilityRole="button"
         >
           <Text style={[styles.buttonText, { color: base.text }]}>Go Back</Text>

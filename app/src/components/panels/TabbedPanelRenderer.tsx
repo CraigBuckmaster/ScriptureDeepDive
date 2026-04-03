@@ -27,7 +27,7 @@ interface TabbedPanelRendererProps {
   tabs: TabConfig[];
   /** If provided, override the initial active tab selection. */
   defaultTab?: string;
-  children: (activeTabKey: string) => React.ReactNode;
+  children?: (activeTabKey: string) => React.ReactNode;
 }
 
 export function TabbedPanelRenderer({ tabs, defaultTab, children }: TabbedPanelRendererProps) {

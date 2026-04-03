@@ -74,7 +74,9 @@ function TagChips({ tags, onTagsChange, editable = true }: Props) {
   );
 }
 
-export default React.memo(TagChips);
+const MemoizedTagChips = React.memo(TagChips);
+export { MemoizedTagChips as TagChips };
+export default MemoizedTagChips;
 
 const styles = StyleSheet.create({
   container: {
