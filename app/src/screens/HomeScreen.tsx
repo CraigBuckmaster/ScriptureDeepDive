@@ -22,7 +22,7 @@ import { useStreakData } from '../hooks/useStreakData';
 import { useRecommendations, type Recommendation } from '../hooks/useRecommendations';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { StreakBadge } from '../components/StreakBadge';
-import { WeeklySummary } from '../components/WeeklySummary';
+import { ActivePlanCard } from '../components/ActivePlanCard';
 import { MilestoneToast } from '../components/MilestoneToast';
 import { useSettingsStore } from '../stores';
 import { shareVerse, shareProgress } from '../utils/shareVerse';
@@ -37,7 +37,7 @@ function HomeScreen() {
   const navigation = useNavigation<ScreenNavProp<'Home', 'HomeMain'>>();
   const { greeting, subtitle, verse, recentChapters, readingStats, isLoading, refresh } = useHomeData();
   const translation = useSettingsStore((s) => s.translation);
-  const { currentStreak, weeklyChapters, weeklyBookNames, pendingMilestone, markMilestoneSeen } = useStreakData();
+  const { currentStreak, pendingMilestone, markMilestoneSeen } = useStreakData();
   const recommendations = useRecommendations();
   const [refreshing, setRefreshing] = useState(false);
   const [testamentProgress, setTestamentProgress] = useState<TestamentProgress[]>([]);
@@ -179,8 +179,8 @@ function HomeScreen() {
           <Text style={[styles.verseCardText, { color: base.text }]}>{verse.text}</Text>
         </TouchableOpacity>
 
-        {/* ── 4. Weekly Summary ────────────────────────── */}
-        <WeeklySummary chapters={weeklyChapters} bookNames={weeklyBookNames} />
+        {/* ── 4. Active Reading Plan ─────────────────── */}
+        <ActivePlanCard />
 
         {/* ── 5. Contextual Suggestions ─────────────────── */}
         <View style={styles.suggestionsSection}>
