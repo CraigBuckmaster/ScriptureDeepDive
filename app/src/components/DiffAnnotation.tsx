@@ -71,7 +71,7 @@ interface Props {
   annotation: DiffAnnotationData;
 }
 
-export function DiffAnnotation({ annotation }: Props) {
+function DiffAnnotation({ annotation }: Props) {
   const { base } = useTheme();
   const [expanded, setExpanded] = useState(false);
   const color = DIFF_TYPE_COLORS[annotation.diff_type] ?? DIFF_TYPE_COLORS.wording;
@@ -127,6 +127,10 @@ export function DiffAnnotation({ annotation }: Props) {
     </TouchableOpacity>
   );
 }
+
+const MemoizedDiffAnnotation = React.memo(DiffAnnotation);
+export { MemoizedDiffAnnotation as DiffAnnotation };
+export default MemoizedDiffAnnotation;
 
 interface ListProps {
   annotations: DiffAnnotationData[];

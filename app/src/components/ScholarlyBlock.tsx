@@ -25,7 +25,7 @@ interface Props {
   defaultTab?: string;
 }
 
-export function ScholarlyBlock({
+function ScholarlyBlock({
   chapterPanels, activePanel, onToggle, onClose,
   onRefPress, onWordStudyPress, onScholarPress, onPersonPress,
   defaultTab,
@@ -77,6 +77,10 @@ export function ScholarlyBlock({
     </View>
   );
 }
+
+const MemoizedScholarlyBlock = React.memo(ScholarlyBlock);
+export { MemoizedScholarlyBlock as ScholarlyBlock };
+export default MemoizedScholarlyBlock;
 
 const styles = StyleSheet.create({
   container: {

@@ -15,8 +15,9 @@ import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { useTheme, spacing, fontFamily } from '../theme';
 import type { WordStudy } from '../types';
 import { logger } from '../utils/logger';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function WordStudyDetailScreen() {
+function WordStudyDetailScreen() {
   const { base, panels } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'WordStudyDetail'>>();
   const route = useRoute<ScreenRouteProp<'Explore', 'WordStudyDetail'>>();
@@ -215,3 +216,5 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
 });
+
+export default withErrorBoundary(WordStudyDetailScreen);

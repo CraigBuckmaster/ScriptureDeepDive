@@ -4,6 +4,7 @@
 
 import { getDb } from '../database';
 import type { DebateTopicRow, DebateTopicSummary, DebateTopic, DebatePosition, Scholar } from '../../types';
+import { escapeLike } from '../../utils/escapeLike';
 
 // ── Browse: all topics with summary info ──────────────────────
 
@@ -46,20 +47,20 @@ export async function getDebateTopicsForChapter(
     `SELECT id, title, category, passage, question, positions_json,
             json_array_length(positions_json) as position_count
      FROM debate_topics
-     WHERE book_id = ? AND chapters_json LIKE ?`,
-    [bookId, `%${chapterNum}%`]
+     WHERE book_id = ? AND chapters_json LIKE ? ESCAPE '\\'`,
+    [bookId, `%${escapeLike(String(chapterNum))}%`]
   );
 }
 
 // ── Search across topics ──────────────────────────────────────
 
 export async function searchDebateTopics(query: string): Promise<DebateTopicSummary[]> {
-  const q = `%${query}%`;
+  const q = `%${escapeLike(query)}%`;
   return getDb().getAllAsync<DebateTopicSummary>(
     `SELECT id, title, category, book_id, passage, question, positions_json,
             json_array_length(positions_json) as position_count
      FROM debate_topics
-     WHERE title LIKE ? OR question LIKE ? OR tags_json LIKE ?
+     WHERE title LIKE ? ESCAPE '\\' OR question LIKE ? ESCAPE '\\' OR tags_json LIKE ? ESCAPE '\\'
      ORDER BY book_id
      LIMIT 30`,
     [q, q, q]

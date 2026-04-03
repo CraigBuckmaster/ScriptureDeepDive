@@ -2,19 +2,16 @@
  * WordStudyBrowseScreen — 15 lexicon entries with Hebrew/Greek filter + search.
  */
 
-import React, { useState, useMemo } from 'react';
-import { View, Text, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React, { useState, useMemo, useCallback } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { useWordStudies } from '../hooks/useWordStudies';
-import { ScreenHeader } from '../components/ScreenHeader';
-import { SearchInput } from '../components/SearchInput';
-import { LoadingSkeleton } from '../components/LoadingSkeleton';
+import { BrowseScreenTemplate } from '../components/BrowseScreenTemplate';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
-import { logger } from '../utils/logger';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function WordStudyBrowseScreen() {
+function WordStudyBrowseScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'WordStudyBrowse'>>();
   const { studies, isLoading } = useWordStudies();
@@ -35,94 +32,65 @@ export default function WordStudyBrowseScreen() {
     return list;
   }, [studies, langFilter, search]);
 
-  if (isLoading) {
-    return (
-      <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-        <View style={styles.loadingPad}><LoadingSkeleton lines={6} /></View>
-      </SafeAreaView>
-    );
-  }
+  const renderItem = useCallback(
+    ({ item: w }: { item: any }) => {
+      const accentColor = w.language === 'hebrew' ? '#e890b8' : '#70b8e8';
+      let glosses = '';
+      try { glosses = JSON.parse(w.glosses_json).join(', '); } catch { glosses = w.glosses_json; }
+
+      return (
+        <TouchableOpacity
+          onPress={() => navigation.navigate('WordStudyDetail', { wordId: w.id })}
+          style={[styles.row, { borderBottomColor: base.border + '40' }]}
+          accessibilityLabel={`${w.transliteration}, ${w.language}`}
+          accessibilityRole="button"
+        >
+          <View style={styles.wordRow}>
+            <Text style={[styles.original, { color: accentColor }]}>{w.original}</Text>
+            <Text style={[styles.transliteration, { color: base.goldDim }]}>{w.transliteration}</Text>
+          </View>
+          <Text style={[styles.glosses, { color: base.gold }]}>{glosses}</Text>
+          {w.strongs && <Text style={[styles.strongs, { color: base.textMuted }]}>Strong's: {w.strongs}</Text>}
+        </TouchableOpacity>
+      );
+    },
+    [base, navigation]
+  );
+
+  const filterBar = (
+    <View style={styles.langRow}>
+      {(['all', 'hebrew', 'greek'] as const).map((l) => (
+        <TouchableOpacity key={l} onPress={() => setLangFilter(l)}>
+          <Text style={[
+            styles.langLabel,
+            { color: base.textMuted },
+            langFilter === l && { color: base.gold, borderBottomColor: base.gold },
+            langFilter === l && styles.langLabelActive,
+          ]}>
+            {l === 'all' ? 'All' : l.charAt(0).toUpperCase() + l.slice(1)}
+          </Text>
+        </TouchableOpacity>
+      ))}
+    </View>
+  );
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <View style={styles.topSection}>
-        <ScreenHeader
-          title="Word Studies"
-          onBack={() => navigation.goBack()}
-          style={styles.headerSpacing}
-        />
-
-        <View style={styles.searchWrap}>
-          <SearchInput
-            value={search}
-            onChangeText={setSearch}
-            placeholder="Search by word or gloss..."
-          />
-        </View>
-
-        <View style={styles.langRow}>
-          {(['all', 'hebrew', 'greek'] as const).map((l) => (
-            <TouchableOpacity key={l} onPress={() => setLangFilter(l)}>
-              <Text style={[
-                styles.langLabel,
-                { color: base.textMuted },
-                langFilter === l && { color: base.gold, borderBottomColor: base.gold },
-                langFilter === l && styles.langLabelActive,
-              ]}>
-                {l === 'all' ? 'All' : l.charAt(0).toUpperCase() + l.slice(1)}
-              </Text>
-            </TouchableOpacity>
-          ))}
-        </View>
-      </View>
-
-      <FlatList
-        data={filtered}
-        keyExtractor={(w) => w.id}
-        contentContainerStyle={styles.listContent}
-        renderItem={({ item: w }) => {
-          const accentColor = w.language === 'hebrew' ? '#e890b8' : '#70b8e8';
-          let glosses = '';
-          try { glosses = JSON.parse(w.glosses_json).join(', '); } catch (err) { glosses = w.glosses_json; }
-
-          return (
-            <TouchableOpacity
-              onPress={() => navigation.navigate('WordStudyDetail', { wordId: w.id })}
-              style={[styles.row, { borderBottomColor: base.border + '40' }]}
-              accessibilityLabel={`${w.transliteration}, ${w.language}`}
-              accessibilityRole="button"
-            >
-              <View style={styles.wordRow}>
-                <Text style={[styles.original, { color: accentColor }]}>{w.original}</Text>
-                <Text style={[styles.transliteration, { color: base.goldDim }]}>{w.transliteration}</Text>
-              </View>
-              <Text style={[styles.glosses, { color: base.gold }]}>{glosses}</Text>
-              {w.strongs && <Text style={[styles.strongs, { color: base.textMuted }]}>Strong's: {w.strongs}</Text>}
-            </TouchableOpacity>
-          );
-        }}
-      />
-    </SafeAreaView>
+    <BrowseScreenTemplate
+      title="Word Studies"
+      loading={isLoading}
+      search={search}
+      onSearchChange={setSearch}
+      searchPlaceholder="Search by word or gloss..."
+      filterBar={filterBar}
+      data={filtered}
+      renderItem={renderItem}
+      keyExtractor={(w: any) => w.id}
+      contentContainerStyle={styles.listContent}
+    />
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  loadingPad: {
-    padding: spacing.lg,
-  },
-  topSection: {
-    paddingHorizontal: spacing.md,
-    paddingTop: spacing.lg,
-  },
-  headerSpacing: {
-    marginBottom: spacing.md,
-  },
-  searchWrap: {
-    marginBottom: spacing.sm,
-  },
   langRow: {
     flexDirection: 'row',
     gap: spacing.sm,
@@ -167,3 +135,5 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
 });
+
+export default withErrorBoundary(WordStudyBrowseScreen);

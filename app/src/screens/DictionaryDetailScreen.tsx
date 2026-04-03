@@ -25,11 +25,12 @@ import { TappableRefs } from '../components/TappableRefs';
 import { splitTextWithRefs } from '../utils/refDetector';
 import { CATEGORY_LABELS, type DictionaryCategory } from '../types/dictionary';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 type Nav = ScreenNavProp<'Explore', 'DictionaryDetail'>;
 type Route = ScreenRouteProp<'Explore', 'DictionaryDetail'>;
 
-export default function DictionaryDetailScreen() {
+function DictionaryDetailScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<Nav>();
   const route = useRoute<Route>();
@@ -286,3 +287,5 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 });
+
+export default withErrorBoundary(DictionaryDetailScreen);

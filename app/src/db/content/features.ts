@@ -4,6 +4,7 @@
 
 import { getDb } from '../database';
 import type { ProphecyChain, Concept, DifficultPassage } from '../../types';
+import { escapeLike } from '../../utils/escapeLike';
 
 // ── Prophecy Chains ────────────────────────────────────────────────
 
@@ -34,10 +35,11 @@ export async function getProphecyChainsByCategory(category: string): Promise<Pro
 export async function getProphecyChainsForChapter(
   bookDir: string, chapterNum: number
 ): Promise<ProphecyChain[]> {
+  const safeBook = escapeLike(bookDir);
   return getDb().getAllAsync<ProphecyChain>(
     `SELECT * FROM prophecy_chains
-     WHERE links_json LIKE ? AND links_json LIKE ?`,
-    [`%"book_dir":"${bookDir}"%`, `%"chapter_num":${chapterNum}%`]
+     WHERE links_json LIKE ? ESCAPE '\\' AND links_json LIKE ? ESCAPE '\\'`,
+    [`%"book_dir":"${safeBook}"%`, `%"chapter_num":${Number(chapterNum)}%`]
   );
 }
 
@@ -85,9 +87,10 @@ export async function getDifficultPassagesByCategory(category: string): Promise<
 export async function getDifficultPassagesForChapter(
   bookDir: string, chapterNum: number
 ): Promise<DifficultPassage[]> {
+  const safeBook = escapeLike(bookDir);
   return getDb().getAllAsync<DifficultPassage>(
     `SELECT * FROM difficult_passages
-     WHERE related_chapters_json LIKE ? AND related_chapters_json LIKE ?`,
-    [`%"book_dir":"${bookDir}"%`, `%"chapter_num":${chapterNum}%`]
+     WHERE related_chapters_json LIKE ? ESCAPE '\\' AND related_chapters_json LIKE ? ESCAPE '\\'`,
+    [`%"book_dir":"${safeBook}"%`, `%"chapter_num":${Number(chapterNum)}%`]
   );
 }

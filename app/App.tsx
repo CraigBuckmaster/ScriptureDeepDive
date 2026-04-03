@@ -15,6 +15,7 @@ import { pruneEvents } from './src/services/analytics';
 import { checkAndScheduleReengagement } from './src/services/reengagement';
 import { RootNavigator } from './src/navigation';
 import { ErrorBoundary } from './src/components/ErrorBoundary';
+import { closeAllTranslationDbs } from './src/db/translationManager';
 
 // Keep splash visible while we load
 SplashScreen.preventAutoHideAsync();
@@ -102,6 +103,14 @@ export default function App() {
     });
     return () => sub.remove();
   }, [dbReady]);
+
+  // Close supplemental translation DB connections when app goes to background
+  useEffect(() => {
+    const sub = AppState.addEventListener('change', (state) => {
+      if (state === 'background') closeAllTranslationDbs();
+    });
+    return () => sub.remove();
+  }, []);
 
   const onLayoutReady = useCallback(async () => {
     if (fontsLoaded && dbReady) {

@@ -8,6 +8,7 @@
 
 import { useState, useEffect } from 'react';
 import * as Speech from 'expo-speech';
+import { logger } from '../utils/logger';
 
 export interface VoiceOption {
   identifier: string;
@@ -46,7 +47,7 @@ export function useAvailableVoices() {
           return a.name.localeCompare(b.name);
         });
       setVoices(english);
-    }).catch(() => {});
+    }).catch((err) => { logger.warn('useAvailableVoices', 'Failed to load voices', err); });
   }, []);
 
   return voices;

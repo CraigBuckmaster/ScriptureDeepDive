@@ -16,7 +16,7 @@ interface Props {
   onPress: () => void;
 }
 
-export function ConcordanceEntry({ result, gloss, onPress }: Props) {
+function ConcordanceEntry({ result, gloss, onPress }: Props) {
   const { base } = useTheme();
   const ref = `${result.book_name} ${result.chapter_num}:${result.verse_num}`;
 
@@ -60,6 +60,10 @@ export function ConcordanceEntry({ result, gloss, onPress }: Props) {
     </TouchableOpacity>
   );
 }
+
+const MemoizedConcordanceEntry = React.memo(ConcordanceEntry);
+export { MemoizedConcordanceEntry as ConcordanceEntry };
+export default MemoizedConcordanceEntry;
 
 function escapeRegex(str: string): string {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

@@ -9,8 +9,9 @@ import { BadgeChip } from '../components/BadgeChip';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { ReadingPlan, PlanProgress } from '../db/user';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function PlanListScreen() {
+function PlanListScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'PlanList'>>();
   const [plans, setPlans] = useState<ReadingPlan[]>([]);
@@ -130,3 +131,5 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
 });
+
+export default withErrorBoundary(PlanListScreen);

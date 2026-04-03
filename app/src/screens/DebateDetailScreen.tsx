@@ -25,11 +25,12 @@ import { UpgradePrompt } from '../components/UpgradePrompt';
 import { DebatePositionCard } from '../components/DebatePositionCard';
 import { DebateTraditionFilter } from '../components/DebateTraditionFilter';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 type Nav = ScreenNavProp<'Explore', 'DebateDetail'>;
 type Route = ScreenRouteProp<'Explore', 'DebateDetail'>;
 
-export default function DebateDetailScreen() {
+function DebateDetailScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<Nav>();
   const route = useRoute<Route>();
@@ -344,3 +345,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+export default withErrorBoundary(DebateDetailScreen);

@@ -20,8 +20,9 @@ import type { ScreenNavProp } from '../navigation/types';
 import { useAuthStore } from '../stores';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { useTheme, spacing, fontFamily, radii } from '../theme';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function ForgotPasswordScreen() {
+function ForgotPasswordScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'Settings'>>();
   const resetPassword = useAuthStore((s) => s.resetPassword);
@@ -179,3 +180,5 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 });
+
+export default withErrorBoundary(ForgotPasswordScreen);

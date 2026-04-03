@@ -12,7 +12,7 @@ interface Props {
   bookNames: string[];
 }
 
-export function WeeklySummary({ chapters, bookNames }: Props) {
+function WeeklySummary({ chapters, bookNames }: Props) {
   const { base } = useTheme();
   if (chapters < 1) return null;
 
@@ -35,6 +35,10 @@ export function WeeklySummary({ chapters, bookNames }: Props) {
     </View>
   );
 }
+
+const MemoizedWeeklySummary = React.memo(WeeklySummary);
+export { MemoizedWeeklySummary as WeeklySummary };
+export default MemoizedWeeklySummary;
 
 const styles = StyleSheet.create({
   container: {

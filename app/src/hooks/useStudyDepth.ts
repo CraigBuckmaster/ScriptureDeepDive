@@ -24,41 +24,16 @@ export function useStudyDepth(
 ) {
   const [depthMap, setDepthMap] = useState<Map<string, DepthInfo>>(new Map());
   const openedRef = useRef<Set<string>>(new Set());
-
-  // Load existing depth data when chapter changes
-  useEffect(() => {
-    if (!chapterId) return;
-    openedRef.current = new Set();
-
-    (async () => {
-      try {
-        const db = getUserDb();
-        const rows = await db.getAllAsync<{ section_id: string; panel_type: string }>(
-          'SELECT section_id, panel_type FROM study_depth WHERE chapter_id = ?',
-          [chapterId]
-        );
-
-        const openedSet = new Set(rows.map((r) => `${r.section_id}::${r.panel_type}`));
-        openedRef.current = openedSet;
-
-        buildMap(openedSet);
-      } catch (err) {
-        logger.error('useStudyDepth', 'Failed to load depth data', err);
-      }
-    })();
-  }, [chapterId]);
-
-  // Rebuild map when sectionPanels changes (e.g. initial load)
-  useEffect(() => {
-    buildMap(openedRef.current);
-  }, [sectionPanels]);
+  const sectionPanelsRef = useRef(sectionPanels);
+  sectionPanelsRef.current = sectionPanels;
 
   const buildMap = useCallback(
     (openedSet: Set<string>) => {
+      const panels = sectionPanelsRef.current;
       const map = new Map<string, DepthInfo>();
 
-      sectionPanels.forEach((panels, sectionId) => {
-        const tracked = panels.filter((p) => TRACKED_TYPES.has(p.panel_type));
+      panels.forEach((panelList, sectionId) => {
+        const tracked = panelList.filter((p) => TRACKED_TYPES.has(p.panel_type));
         const total = tracked.length;
         if (total === 0) return;
 
@@ -71,8 +46,39 @@ export function useStudyDepth(
 
       setDepthMap(map);
     },
-    [sectionPanels]
+    []
   );
+
+  // Load existing depth data when chapter changes
+  useEffect(() => {
+    if (!chapterId) return;
+    let cancelled = false;
+    openedRef.current = new Set();
+
+    (async () => {
+      try {
+        const db = getUserDb();
+        const rows = await db.getAllAsync<{ section_id: string; panel_type: string }>(
+          'SELECT section_id, panel_type FROM study_depth WHERE chapter_id = ?',
+          [chapterId]
+        );
+        if (cancelled) return;
+
+        const openedSet = new Set(rows.map((r) => `${r.section_id}::${r.panel_type}`));
+        openedRef.current = openedSet;
+
+        buildMap(openedSet);
+      } catch (err) {
+        logger.error('useStudyDepth', 'Failed to load depth data', err);
+      }
+    })();
+    return () => { cancelled = true; };
+  }, [chapterId, buildMap]);
+
+  // Rebuild map when sectionPanels changes (e.g. initial load)
+  useEffect(() => {
+    buildMap(openedRef.current);
+  }, [sectionPanels, buildMap]);
 
   const recordOpen = useCallback(
     async (sectionId: string, panelType: string) => {

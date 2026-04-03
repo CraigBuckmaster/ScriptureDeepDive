@@ -1,14 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useAsyncData } from './useAsyncData';
 import { getMapStories } from '../db/content';
-import type { MapStory } from '../types';
 
 export function useMapStories(era?: string) {
-  const [stories, setStories] = useState<MapStory[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    getMapStories(era).then((s) => { setStories(s); setIsLoading(false); });
-  }, [era]);
-
+  const { data: stories, loading: isLoading } = useAsyncData(() => getMapStories(era), [era], []);
   return { stories, isLoading };
 }

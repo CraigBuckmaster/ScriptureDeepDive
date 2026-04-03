@@ -15,6 +15,7 @@ import { ScreenHeader } from '../components/ScreenHeader';
 import { usePremiumStore } from '../stores/premiumStore';
 import { PLANS, purchasePlan, restorePurchases, type PlanInfo } from '../services/purchases';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const FEATURES = [
   'Interlinear Hebrew & Greek',
@@ -32,7 +33,7 @@ const FEATURES = [
   'PDF study export',
 ];
 
-export default function SubscriptionScreen() {
+function SubscriptionScreen() {
   const { base } = useTheme();
   const navigation = useNavigation();
   const isPremium = usePremiumStore((s) => s.isPremium);
@@ -310,3 +311,5 @@ const styles = StyleSheet.create({
     height: spacing.xxl,
   },
 });
+
+export default withErrorBoundary(SubscriptionScreen);

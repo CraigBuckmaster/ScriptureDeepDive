@@ -9,7 +9,7 @@ import { Marker } from 'react-native-maps';
 import { PlaceLabel } from './PlaceLabel';
 import { maxPriorityForZoom } from '../../utils/geoMath';
 import type { Place, MapStory } from '../../types';
-import { logger } from '../../utils/logger';
+import { parseJSON } from '../../utils/parseJSON';
 
 interface Props {
   places: Place[];
@@ -25,13 +25,13 @@ export const PlaceMarkerList = memo(function PlaceMarkerList({
     const maxPriority = maxPriorityForZoom(zoomLevel);
 
     if (activeStory?.places_json) {
-      try {
-        const storyPlaceIds = new Set<string>(JSON.parse(activeStory.places_json));
+      const storyPlaceIds = new Set<string>(parseJSON<string[]>(activeStory.places_json, []));
+      if (storyPlaceIds.size > 0) {
         // Show story places regardless of priority + other places by priority
         return places.filter((p) =>
           storyPlaceIds.has(p.id) || p.priority <= maxPriority
         );
-      } catch (err) { logger.warn('PlaceMarkerList', 'Operation failed', err); }
+      }
     }
 
     return places.filter((p) => p.priority <= maxPriority);

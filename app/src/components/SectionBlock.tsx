@@ -47,7 +47,7 @@ interface Props {
   highlightMap?: Map<number, string>;
 }
 
-export function SectionBlock({
+function SectionBlock({
   section, panels, verses, vhlGroups, activeVhlGroups,
   notedVerses, activePanel, fontSize,
   onPanelToggle, onNotePress, onRefPress, onVerseLongPress, onVerseNumPress, activeVerseNum,
@@ -119,6 +119,10 @@ export function SectionBlock({
     </View>
   );
 }
+
+const MemoizedSectionBlock = React.memo(SectionBlock);
+export { MemoizedSectionBlock as SectionBlock };
+export default MemoizedSectionBlock;
 
 const styles = StyleSheet.create({
   container: {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent } from '@testing-library/react-native';
+import { fireEvent, waitFor } from '@testing-library/react-native';
 import { renderWithProviders } from '../helpers/renderWithProviders';
 import ReadingHistoryScreen from '@/screens/ReadingHistoryScreen';
 
@@ -56,9 +56,9 @@ describe('ReadingHistoryScreen', () => {
     expect(toJSON()).toBeTruthy();
   });
 
-  it('renders the Reading History header', () => {
+  it('renders the Reading History header', async () => {
     const { getByText } = renderWithProviders(<ReadingHistoryScreen />);
-    expect(getByText('Reading History')).toBeTruthy();
+    await waitFor(() => expect(getByText('Reading History')).toBeTruthy());
   });
 
   it('shows empty state when no history', async () => {

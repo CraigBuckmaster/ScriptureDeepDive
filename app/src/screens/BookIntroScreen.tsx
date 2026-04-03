@@ -16,8 +16,9 @@ import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { BadgeChip } from '../components/BadgeChip';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function BookIntroScreen() {
+function BookIntroScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Read', 'BookIntro'>>();
   const route = useRoute<ScreenRouteProp<'Read', 'BookIntro'>>();
@@ -240,3 +241,5 @@ const styles = StyleSheet.create({
     lineHeight: 18,
   },
 });
+
+export default withErrorBoundary(BookIntroScreen);

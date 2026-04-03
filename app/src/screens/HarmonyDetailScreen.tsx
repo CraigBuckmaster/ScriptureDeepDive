@@ -22,13 +22,14 @@ import { PERIOD_LABELS } from '../hooks/useHarmonyData';
 import { GOSPEL_ORDER } from '../components/GospelColors';
 import { useTheme, spacing, fontFamily } from '../theme';
 import type { SynopticEntry } from '../types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 interface Passage {
   book: string;
   ref: string;
 }
 
-export default function HarmonyDetailScreen() {
+function HarmonyDetailScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'HarmonyDetail'>>();
   const route = useRoute<ScreenRouteProp<'Explore', 'HarmonyDetail'>>();
@@ -168,3 +169,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
+
+export default withErrorBoundary(HarmonyDetailScreen);

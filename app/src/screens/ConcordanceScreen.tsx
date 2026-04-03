@@ -23,8 +23,9 @@ import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { ConcordanceResult } from '../types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function ConcordanceScreen() {
+function ConcordanceScreen() {
   const { base, panels } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'Concordance'>>();
   const route = useRoute<ScreenRouteProp<'Explore', 'Concordance'>>();
@@ -281,3 +282,5 @@ const styles = StyleSheet.create({
     lineHeight: 18,
   },
 });
+
+export default withErrorBoundary(ConcordanceScreen);

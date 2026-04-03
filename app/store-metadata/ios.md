@@ -4,7 +4,7 @@
 Companion Study
 
 ## Subtitle (30 chars)
-Logos & Letters, verse by verse
+Logos & Letters, Deep Study
 
 ## Promotional Text (170 chars)
 Don't just read the Bible. Learn to read it the way it was written. 45+ scholars, Hebrew & Greek interlinear, and 8 features no other app offers. Free.

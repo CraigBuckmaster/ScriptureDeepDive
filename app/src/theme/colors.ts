@@ -53,7 +53,7 @@ export const panels: Record<string, PanelColors> = {
   src:     { bg: '#201020', border: '#603058', accent: '#a05890' },
   rec:     { bg: '#240e18', border: '#882040', accent: '#e04080' },
   lit:     { bg: '#1a1e08', border: '#485010', accent: '#b8c858' },
-  hebText: { bg: '#141008', border: '#4a3800', accent: '#d4aa40' },
+  hebtext: { bg: '#141008', border: '#4a3800', accent: '#d4aa40' },
   thread:  { bg: '#101028', border: '#303070', accent: '#9090e0' },
   com:     { bg: '#1c0810', border: '#6a1828', accent: '#c04050' },
   tx:      { bg: '#101020', border: '#303060', accent: '#8888d0' },
@@ -208,7 +208,6 @@ export const categories = {
 // ── Severity Colors ────────────────────────────────────────────────
 
 export const severity = {
-  minor: '#4CAF50',
   moderate: '#FFC107',
   major: '#F44336',
 } as const;

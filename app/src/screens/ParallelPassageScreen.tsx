@@ -18,6 +18,7 @@ import { GospelDots } from '../components/GospelDots';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { SynopticEntry } from '../types';
 import { logger } from '../utils/logger';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const CATEGORY_LABELS: Record<string, string> = {
   all: 'All',
@@ -39,7 +40,7 @@ const PERIOD_LABELS: Record<string, string> = {
   ot: 'Old Testament Parallels',
 };
 
-export default function ParallelPassageScreen() {
+function ParallelPassageScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ParallelPassage'>>();
   const [entries, setEntries] = useState<SynopticEntry[]>([]);
@@ -217,3 +218,5 @@ const styles = StyleSheet.create({
     marginBottom: spacing.sm,
   },
 });
+
+export default withErrorBoundary(ParallelPassageScreen);

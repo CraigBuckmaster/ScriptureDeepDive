@@ -15,7 +15,7 @@ interface Props {
   onPress?: () => void;
 }
 
-export function ScholarTag({ scholarId, onPress }: Props) {
+function ScholarTag({ scholarId, onPress }: Props) {
   const { getScholarColor } = useTheme();
   const color = getScholarColor(scholarId);
   const label = getPanelLabel(scholarId);
@@ -35,6 +35,10 @@ export function ScholarTag({ scholarId, onPress }: Props) {
     </TouchableOpacity>
   );
 }
+
+const MemoizedScholarTag = React.memo(ScholarTag);
+export { MemoizedScholarTag as ScholarTag };
+export default MemoizedScholarTag;
 
 const styles = StyleSheet.create({
   tagContainer: {

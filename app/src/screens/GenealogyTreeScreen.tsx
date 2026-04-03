@@ -48,8 +48,9 @@ import type { Person } from '../types';
 import type { TreePerson } from '../utils/treeBuilder';
 import { logger } from '../utils/logger';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function GenealogyTreeScreen({ route, navigation }: {
+function GenealogyTreeScreen({ route, navigation }: {
   route: ScreenRouteProp<'Explore', 'GenealogyTree'>;
   navigation: ScreenNavProp<'Explore', 'GenealogyTree'>;
 }) {
@@ -276,3 +277,5 @@ const styles = StyleSheet.create({
     transformOrigin: '0% 0%',
   },
 });
+
+export default withErrorBoundary(GenealogyTreeScreen);

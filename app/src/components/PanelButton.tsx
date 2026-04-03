@@ -24,7 +24,7 @@ interface Props {
   onPress: () => void;
 }
 
-export function PanelButton({ panelType, isActive, onPress }: Props) {
+function PanelButton({ panelType, isActive, onPress }: Props) {
   const { base } = useTheme();
   const isScholar = isScholarPanel(panelType);
   const label = getPanelLabel(panelType);
@@ -52,6 +52,10 @@ export function PanelButton({ panelType, isActive, onPress }: Props) {
     </TouchableOpacity>
   );
 }
+
+const MemoizedPanelButton = React.memo(PanelButton);
+export { MemoizedPanelButton as PanelButton };
+export default MemoizedPanelButton;
 
 const styles = StyleSheet.create({
   button: {

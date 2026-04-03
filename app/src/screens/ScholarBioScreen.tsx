@@ -13,8 +13,9 @@ import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { Scholar, ScholarBio } from '../types';
 import { logger } from '../utils/logger';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function ScholarBioScreen() {
+function ScholarBioScreen() {
   const { base, getScholarColor } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ScholarBio'>>();
   const route = useRoute<ScreenRouteProp<'Explore', 'ScholarBio'>>();
@@ -201,3 +202,5 @@ const styles = StyleSheet.create({
     fontSize: 9,
   },
 });
+
+export default withErrorBoundary(ScholarBioScreen);

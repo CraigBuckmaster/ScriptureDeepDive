@@ -22,6 +22,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { BookOpen, Layers, Map, Clock, Users, Search } from 'lucide-react-native';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -96,7 +97,7 @@ const PAGES: PageData[] = [
   },
 ];
 
-export default function OnboardingScreen({ onComplete }: Props) {
+function OnboardingScreen({ onComplete }: Props) {
   const { base } = useTheme();
   const [currentPage, setCurrentPage] = useState(0);
   const flatListRef = useRef<FlatList>(null);
@@ -307,3 +308,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
+
+export default withErrorBoundary(OnboardingScreen);

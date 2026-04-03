@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
   FlatList,
   Alert,
+  ActivityIndicator,
   StyleSheet,
   Share,
 } from 'react-native';
@@ -27,9 +28,11 @@ import {
 } from '../db/user';
 import { displayRef, parseVerseRef } from '../utils/verseRef';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { parseJSON } from '../utils/parseJSON';
 import type { StudyCollection, UserNote } from '../types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function CollectionDetailScreen() {
+function CollectionDetailScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'CollectionDetail'>>();
   const route = useRoute<ScreenRouteProp<'More', 'CollectionDetail'>>();
@@ -37,6 +40,7 @@ export default function CollectionDetailScreen() {
 
   const [collection, setCollection] = useState<StudyCollection | null>(null);
   const [notes, setNotes] = useState<UserNote[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const reload = useCallback(async () => {
     if (!collectionId) return;
@@ -46,6 +50,7 @@ export default function CollectionDetailScreen() {
     ]);
     setCollection(col);
     setNotes(noteList);
+    setLoading(false);
   }, [collectionId]);
 
   useEffect(() => {
@@ -105,13 +110,9 @@ export default function CollectionDetailScreen() {
     }
   };
 
-  const parseTags = (json: string): string[] => {
-    try {
-      return JSON.parse(json);
-    } catch {
-      return [];
-    }
-  };
+  const parseTags = (json: string): string[] => parseJSON<string[]>(json, []);
+
+  if (loading) return <View style={[styles.container, { backgroundColor: base.bg, justifyContent: 'center', alignItems: 'center' }]}><ActivityIndicator color={base.gold} /></View>;
 
   if (!collection) {
     return (
@@ -267,3 +268,5 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
 });
+
+export default withErrorBoundary(CollectionDetailScreen);

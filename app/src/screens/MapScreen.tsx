@@ -37,6 +37,7 @@ import { useTheme, spacing } from '../theme';
 import type { MapStory, Place } from '../types';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { logger } from '../utils/logger';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const INITIAL_REGION = {
   latitude: 30,
@@ -45,7 +46,7 @@ const INITIAL_REGION = {
   longitudeDelta: 30,
 };
 
-export default function MapScreen({ route, navigation }: {
+function MapScreen({ route, navigation }: {
   route: ScreenRouteProp<'Explore', 'Map'>;
   navigation: ScreenNavProp<'Explore', 'Map'>;
 }) {
@@ -282,3 +283,5 @@ const styles = StyleSheet.create({
     zIndex: 20,
   },
 });
+
+export default withErrorBoundary(MapScreen);

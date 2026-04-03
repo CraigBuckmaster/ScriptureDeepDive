@@ -16,7 +16,7 @@ interface Props {
   onDismiss: () => void;
 }
 
-export function StudyCoachCard({ tip, onDismiss }: Props) {
+function StudyCoachCard({ tip, onDismiss }: Props) {
   const { base } = useTheme();
   return (
     <View style={[styles.container, { borderLeftColor: base.gold, backgroundColor: base.gold + '08' }]}>
@@ -36,6 +36,10 @@ export function StudyCoachCard({ tip, onDismiss }: Props) {
     </View>
   );
 }
+
+const MemoizedStudyCoachCard = React.memo(StudyCoachCard);
+export { MemoizedStudyCoachCard as StudyCoachCard };
+export default MemoizedStudyCoachCard;
 
 const styles = StyleSheet.create({
   container: {

@@ -273,10 +273,12 @@ describe('Reading', () => {
       { book_id: 'genesis', chapter_num: 1, completed_at: '2026-01-01' },
     ];
     mockUserDb.getAllAsync.mockResolvedValueOnce(progressRows);
-    mockContentDb.getFirstAsync.mockResolvedValueOnce({
+    mockContentDb.getAllAsync.mockResolvedValueOnce([{
+      book_id: 'genesis',
+      chapter_num: 1,
       title: 'Creation',
       book_name: 'Genesis',
-    });
+    }]);
 
     const result = await getRecentChapters(5);
 

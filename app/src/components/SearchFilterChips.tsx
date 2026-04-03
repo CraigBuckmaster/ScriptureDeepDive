@@ -26,7 +26,7 @@ const TESTAMENT_OPTIONS: { id: 'all' | 'ot' | 'nt'; label: string }[] = [
   { id: 'nt', label: 'NT' },
 ];
 
-export function SearchFilterChips({ filter, onFilterChange, onBookPickerOpen }: Props) {
+function SearchFilterChips({ filter, onFilterChange, onBookPickerOpen }: Props) {
   const { base } = useTheme();
   return (
     <ScrollView
@@ -74,6 +74,10 @@ export function SearchFilterChips({ filter, onFilterChange, onBookPickerOpen }: 
     </ScrollView>
   );
 }
+
+const MemoizedSearchFilterChips = React.memo(SearchFilterChips);
+export { MemoizedSearchFilterChips as SearchFilterChips };
+export default MemoizedSearchFilterChips;
 
 const styles = StyleSheet.create({
   row: {

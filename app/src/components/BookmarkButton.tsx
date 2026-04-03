@@ -13,7 +13,7 @@ interface Props {
   verseNum: number;
 }
 
-export function BookmarkButton({ isBookmarked, onToggle, verseNum }: Props) {
+function BookmarkButton({ isBookmarked, onToggle, verseNum }: Props) {
   const { base } = useTheme();
 
   return (
@@ -30,6 +30,10 @@ export function BookmarkButton({ isBookmarked, onToggle, verseNum }: Props) {
     </TouchableOpacity>
   );
 }
+
+const MemoizedBookmarkButton = React.memo(BookmarkButton);
+export { MemoizedBookmarkButton as BookmarkButton };
+export default MemoizedBookmarkButton;
 
 const styles = StyleSheet.create({
   container: {

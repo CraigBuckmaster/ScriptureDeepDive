@@ -40,6 +40,7 @@ import {
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import type { ExploreStackParamList } from '../navigation/types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
   UIManager.setLayoutAnimationEnabledExperimental(true);
@@ -177,7 +178,7 @@ function ResponseCard({
 
 /* ── Main Screen ── */
 
-export default function DifficultPassageDetailScreen() {
+function DifficultPassageDetailScreen() {
   const { base, categories: catColors, severity: sevColors } = useTheme();
   const navigation = useNavigation<Nav>();
   const route = useRoute<Route>();
@@ -732,3 +733,5 @@ const styles = StyleSheet.create({
     height: spacing.xxl,
   },
 });
+
+export default withErrorBoundary(DifficultPassageDetailScreen);

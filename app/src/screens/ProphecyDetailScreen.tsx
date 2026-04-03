@@ -24,6 +24,7 @@ import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { ProphecyChainLink } from '../types';
 import { logger } from '../utils/logger';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const TYPE_LABELS: Record<string, string> = {
   direct_fulfillment: 'Direct Fulfillment',
@@ -72,7 +73,7 @@ function formatLinkRef(link: ProphecyChainLink): string {
   return `${formatBookName(link.book_dir)} ${link.verse_ref}`;
 }
 
-export default function ProphecyDetailScreen() {
+function ProphecyDetailScreen() {
   const { base, prophecyCategories, roles: roleColors, testament } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ProphecyDetail'>>();
   const route = useRoute<ScreenRouteProp<'Explore', 'ProphecyDetail'>>();
@@ -301,3 +302,5 @@ const styles = StyleSheet.create({
     lineHeight: 18,
   },
 });
+
+export default withErrorBoundary(ProphecyDetailScreen);

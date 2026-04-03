@@ -3,7 +3,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, ActivityIndicator, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
@@ -12,17 +12,23 @@ import { ScreenHeader } from '../components/ScreenHeader';
 import { useTheme, spacing, fontFamily } from '../theme';
 import type { RecentChapter } from '../types';
 import type { ReadingStats } from '../db/user';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function ReadingHistoryScreen() {
+function ReadingHistoryScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'ReadingHistory'>>();
   const [history, setHistory] = useState<RecentChapter[]>([]);
   const [stats, setStats] = useState<ReadingStats | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getRecentChapters(100).then(setHistory);
-    getReadingStats().then(setStats);
+    Promise.all([
+      getRecentChapters(100).then(setHistory),
+      getReadingStats().then(setStats),
+    ]).finally(() => setLoading(false));
   }, []);
+
+  if (loading) return <View style={[styles.container, { backgroundColor: base.bg, justifyContent: 'center', alignItems: 'center' }]}><ActivityIndicator color={base.gold} /></View>;
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
@@ -132,3 +138,5 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
 });
+
+export default withErrorBoundary(ReadingHistoryScreen);

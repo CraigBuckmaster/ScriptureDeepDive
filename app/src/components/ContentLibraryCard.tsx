@@ -15,7 +15,7 @@ interface Props {
   onPress: (entry: ContentLibraryEntry) => void;
 }
 
-export function ContentLibraryCard({ entry, onPress }: Props) {
+function ContentLibraryCard({ entry, onPress }: Props) {
   const { base } = useTheme();
 
   const refLabel = entry.section_num
@@ -53,6 +53,10 @@ export function ContentLibraryCard({ entry, onPress }: Props) {
     </TouchableOpacity>
   );
 }
+
+const MemoizedContentLibraryCard = React.memo(ContentLibraryCard);
+export { MemoizedContentLibraryCard as ContentLibraryCard };
+export default MemoizedContentLibraryCard;
 
 const styles = StyleSheet.create({
   card: {

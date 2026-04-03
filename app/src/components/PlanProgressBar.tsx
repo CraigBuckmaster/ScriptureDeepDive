@@ -4,7 +4,7 @@ import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 interface Props { completed: number; total: number; }
 
-export function PlanProgressBar({ completed, total }: Props) {
+function PlanProgressBar({ completed, total }: Props) {
   const { base } = useTheme();
   const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
   return (
@@ -18,6 +18,10 @@ export function PlanProgressBar({ completed, total }: Props) {
     </View>
   );
 }
+
+const MemoizedPlanProgressBar = React.memo(PlanProgressBar);
+export { MemoizedPlanProgressBar as PlanProgressBar };
+export default MemoizedPlanProgressBar;
 
 const styles = StyleSheet.create({
   container: {

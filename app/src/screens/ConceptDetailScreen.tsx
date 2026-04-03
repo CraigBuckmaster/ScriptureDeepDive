@@ -25,11 +25,12 @@ import { UpgradePrompt } from '../components/UpgradePrompt';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import type { ExploreStackParamList } from '../navigation/types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 type Nav = StackNavigationProp<ExploreStackParamList, 'ConceptDetail'>;
 type Route = RouteProp<ExploreStackParamList, 'ConceptDetail'>;
 
-export default function ConceptDetailScreen() {
+function ConceptDetailScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<Nav>();
   const route = useRoute<Route>();
@@ -533,3 +534,5 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
 });
+
+export default withErrorBoundary(ConceptDetailScreen);

@@ -22,13 +22,13 @@ async function loadHaptics() {
 loadHaptics();
 
 export function lightImpact() {
-  if (Haptics) Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {});
+  if (Haptics) Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch((err: unknown) => { logger.warn('haptics', 'Light impact failed', err); });
 }
 
 export function mediumImpact() {
-  if (Haptics) Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {});
+  if (Haptics) Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch((err: unknown) => { logger.warn('haptics', 'Medium impact failed', err); });
 }
 
 export function selectionFeedback() {
-  if (Haptics) Haptics.selectionAsync().catch(() => {});
+  if (Haptics) Haptics.selectionAsync().catch((err: unknown) => { logger.warn('haptics', 'Selection feedback failed', err); });
 }

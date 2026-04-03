@@ -9,3 +9,5 @@ export type { TreePerson, LayoutNode, MarriageBar, SpouseConnector, TreeLink, Tr
 export { toLatLng, computeBearing, computeBounds, midpoint, zoomFromDelta, maxPriorityForZoom, labelScale, labelOffset } from './geoMath';
 export { yearToX, formatYear, assignLanes, computeTickMarks, ERA_RANGES, TOTAL_WIDTH, SCALE_BREAKPOINTS } from './timelineLayout';
 export type { PositionedEvent } from './timelineLayout';
+export { parseJSON } from './parseJSON';
+export { escapeLike } from './escapeLike';

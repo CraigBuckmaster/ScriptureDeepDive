@@ -9,7 +9,7 @@
  *   5. Overall progress bar
  */
 
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState, useCallback, useMemo, useRef } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, RefreshControl, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
@@ -27,10 +27,12 @@ import { MilestoneToast } from '../components/MilestoneToast';
 import { useSettingsStore } from '../stores';
 import { shareVerse, shareProgress } from '../utils/shareVerse';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { logger } from '../utils/logger';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const TOTAL_BIBLE_CHAPTERS = 1189;
 
-export default function HomeScreen() {
+function HomeScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Home', 'HomeMain'>>();
   const { greeting, subtitle, verse, recentChapters, readingStats, isLoading, refresh } = useHomeData();
@@ -44,8 +46,12 @@ export default function HomeScreen() {
 
   // Load testament progress when home screen is focused
   const loadTestamentProgress = useCallback(() => {
-    getTestamentProgress().then(setTestamentProgress).catch(() => {});
+    getTestamentProgress().then(setTestamentProgress).catch((err) => { logger.warn('HomeScreen', 'Failed to load testament progress', err); });
   }, []);
+
+  const handleRecPress = useCallback((rec: Recommendation) => {
+    navigation.navigate(rec.screen as any, rec.params as any);
+  }, [navigation]);
   // Re-load on focus (useFocusEffect not available here, piggyback on refresh)
 
   const handleRefresh = useCallback(async () => {
@@ -74,6 +80,18 @@ export default function HomeScreen() {
   const chaptersRead = readingStats?.totalChapters ?? 0;
   const pct = chaptersRead > 0 ? ((chaptersRead / TOTAL_BIBLE_CHAPTERS) * 100).toFixed(1) : null;
 
+  const handleContinuePress = () => {
+    if (mostRecent) {
+      navigation.navigate('Chapter', { bookId: mostRecent.book_id, chapterNum: mostRecent.chapter_num });
+    } else {
+      navigation.navigate('Chapter', { bookId: 'genesis', chapterNum: 1 });
+    }
+  };
+
+  const handleVersePress = () => {
+    navigation.navigate('Chapter', { bookId: verse.bookId, chapterNum: verse.chapter });
+  };
+
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       <ScrollView
@@ -101,10 +119,7 @@ export default function HomeScreen() {
         {mostRecent ? (
           <TouchableOpacity
             activeOpacity={0.7}
-            onPress={() => navigation.navigate('Chapter', {
-              bookId: mostRecent.book_id,
-              chapterNum: mostRecent.chapter_num,
-            })}
+            onPress={handleContinuePress}
             style={[styles.continueCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}
             accessibilityRole="button"
             accessibilityLabel={`Continue reading ${mostRecent.book_name} chapter ${mostRecent.chapter_num}`}
@@ -125,10 +140,7 @@ export default function HomeScreen() {
         ) : (
           <TouchableOpacity
             activeOpacity={0.7}
-            onPress={() => navigation.navigate('Chapter', {
-              bookId: 'genesis',
-              chapterNum: 1,
-            })}
+            onPress={handleContinuePress}
             style={[styles.continueCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}
             accessibilityRole="button"
             accessibilityLabel="Begin your journey, start reading Genesis 1"
@@ -147,10 +159,7 @@ export default function HomeScreen() {
         {/* ── 3. Verse of the Day ──────────────────────── */}
         <TouchableOpacity
           activeOpacity={0.7}
-          onPress={() => navigation.navigate('Chapter', {
-            bookId: verse.bookId,
-            chapterNum: verse.chapter,
-          })}
+          onPress={handleVersePress}
           style={[styles.verseCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
           accessibilityRole="button"
           accessibilityLabel={`Verse of the day: ${verse.ref}. ${verse.text}. Tap to read in context`}
@@ -189,7 +198,7 @@ export default function HomeScreen() {
                     key={rec.id}
                     style={[styles.suggestionCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
                     activeOpacity={0.7}
-                    onPress={() => navigation.navigate(rec.screen as any, rec.params as any)}
+                    onPress={() => handleRecPress(rec)}
                     accessibilityRole="button"
                     accessibilityLabel={`${rec.title}: ${rec.subtitle}`}
                   >
@@ -205,7 +214,7 @@ export default function HomeScreen() {
                       key={rec.id}
                       style={[styles.suggestionCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
                       activeOpacity={0.7}
-                      onPress={() => navigation.navigate(rec.screen as any, rec.params as any)}
+                      onPress={() => handleRecPress(rec)}
                       accessibilityRole="button"
                       accessibilityLabel={`${rec.title}: ${rec.subtitle}`}
                     >
@@ -493,3 +502,5 @@ const styles = StyleSheet.create({
     marginTop: spacing.sm,
   },
 });
+
+export default withErrorBoundary(HomeScreen);
