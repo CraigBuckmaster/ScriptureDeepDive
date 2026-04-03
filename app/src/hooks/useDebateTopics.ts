@@ -8,6 +8,7 @@ import {
   searchDebateTopics, getDebateTopicScholars,
 } from '../db/content';
 import type { DebateTopicSummary, DebateTopic, Scholar } from '../types';
+import { logger } from '../utils/logger';
 
 // ── Category constants ────────────────────────────────────────
 
@@ -43,10 +44,15 @@ export function useDebateTopics(): UseDebateTopicsResult {
   const debounceRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   useEffect(() => {
-    getDebateTopics().then((t) => {
-      setAllTopics(t);
-      setLoading(false);
-    });
+    getDebateTopics()
+      .then((t) => {
+        setAllTopics(t);
+        setLoading(false);
+      })
+      .catch((err) => {
+        logger.error('useDebateTopics', 'Failed to load debate topics', err);
+        setLoading(false);
+      });
   }, []);
 
   // Debounced search
