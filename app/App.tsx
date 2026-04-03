@@ -8,7 +8,6 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { NavigationContainer, DarkTheme, DefaultTheme } from '@react-navigation/native';
 
 import { FONT_MAP, ThemeProvider, useTheme } from './src/theme';
-import { base } from './src/theme/colors';
 import { initDatabase } from './src/db/database';
 import { initUserDatabase } from './src/db/userDatabase';
 import { useSettingsStore, useAuthStore, usePremiumStore } from './src/stores';
@@ -112,9 +111,9 @@ export default function App() {
 
   if (!fontsLoaded || !dbReady) {
     return (
-      <View style={{ flex: 1, backgroundColor: base.bg, alignItems: 'center', justifyContent: 'center' }}>
-        <ActivityIndicator color={base.gold} size="large" />
-        <Text style={{ color: base.textDim, marginTop: 12, fontSize: 12 }}>Loading...</Text>
+      <View style={{ flex: 1, backgroundColor: '#0c0a07', alignItems: 'center', justifyContent: 'center' }}>
+        <ActivityIndicator color="#bfa050" size="large" />
+        <Text style={{ color: '#b8a888', marginTop: 12, fontSize: 12 }}>Loading...</Text>
       </View>
     );
   }

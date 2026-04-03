@@ -13,7 +13,7 @@
 
 // ── Base UI Colors ──────────────────────────────────────────────────
 
-export const base = {
+const base = {
   bg: '#0c0a07',
   bgElevated: '#252015',
   bgSurface: '#1f1b14',
@@ -189,7 +189,7 @@ export const eraPillLabels: Record<string, string> = {
 // ── Category Colors (timeline, browse screens) ─────────────────────
 
 export const categoryColors = {
-  event: base.gold,
+  event: '#bfa050',
   book: '#7a6b5a',
   person: '#6a9fb5',
   world: '#b07d4f',

@@ -6,7 +6,7 @@
  * Panel, scholar, and era colors are generated via transforms.ts.
  */
 
-import { base, panels, scholars, eras, categoryColors, categories, severity, families, prophecyCategories, roles, testament, timelineSvg } from './colors';
+import { panels, scholars, eras, categoryColors, categories, severity, families, prophecyCategories, roles, testament, timelineSvg } from './colors';
 import type { PanelColors } from './colors';
 import { transformPanelColors, transformAccentColor } from './transforms';
 
@@ -50,7 +50,28 @@ export interface ThemePalette {
   statusBarStyle: 'light-content' | 'dark-content';
 }
 
-// ── Hand-tuned base palettes for sepia and light ──────────────────────
+// ── Base palettes ────────────────────────────────────────────────────
+
+/** Dark palette — values extracted from the PWA CSS variables. */
+const darkBase: BaseColors = {
+  bg: '#0c0a07',
+  bgElevated: '#252015',
+  bgSurface: '#1f1b14',
+  bg3: '#1a1508',
+  text: '#f0e8d8',
+  textDim: '#b8a888',
+  textMuted: '#a09888',
+  gold: '#bfa050',
+  goldDim: '#8a6e1a',
+  goldBright: '#d4b868',
+  border: '#3a2e18',
+  borderLight: '#2a2010',
+  verseNum: '#9a8a6a',
+  navText: '#d8ccb0',
+  danger: '#e05a6a',
+  success: '#81C784',
+  redLetter: '#d4847a',
+};
 
 const sepiaBase: BaseColors = {
   bg: '#f0e8d8',
@@ -120,7 +141,7 @@ function transformPanels(
 
 function getBaseForMode(mode: ThemeMode): BaseColors {
   switch (mode) {
-    case 'dark': return base;
+    case 'dark': return darkBase;
     case 'sepia': return sepiaBase;
     case 'light': return lightBase;
   }
