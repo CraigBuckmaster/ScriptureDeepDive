@@ -119,7 +119,8 @@ CREATE TABLE chapters (
   timeline_link_text TEXT,
   map_story_link_id TEXT,
   map_story_link_text TEXT,
-  coaching_json TEXT
+  coaching_json TEXT,
+  difficulty INTEGER
 );
 
 CREATE TABLE sections (
@@ -924,8 +925,7 @@ def populate_topics(cur):
     cur.execute("""
         CREATE VIRTUAL TABLE IF NOT EXISTS topics_fts USING fts5(
             title, description, tags,
-            content=topics,
-            content_rowid=rowid,
+            content='',
             tokenize='porter unicode61'
         )
     """)
@@ -1341,6 +1341,124 @@ def build_fts(cur):
 
 
 # ---------------------------------------------------------------------------
+# Difficulty scoring
+# ---------------------------------------------------------------------------
+
+# Genre base weights (higher = harder to interpret)
+_GENRE_WEIGHT = {
+    'apocalyptic': 2.0,
+    'prophecy': 1.0,
+    'law': 1.0,
+    'wisdom': 0.5,
+    'lament': 0.5,
+    'poetry': 0.3,
+}
+
+
+def compute_difficulty(cur):
+    """Compute 1-5 difficulty rating for each chapter.
+
+    Produces a continuous raw score from genre weight, structural complexity,
+    scholarly density, difficult passage overlap, and literary devices, then
+    assigns 1-5 via percentile bucketing for a natural distribution.
+    """
+    # Build genre lookup
+    genre_by_book = {}
+    for row in cur.execute('SELECT id, genre FROM books').fetchall():
+        genre_by_book[row[0]] = row[1]
+
+    # Difficult passage chapters: (book_id, chapter_num) -> severity weight
+    diff_severity = {}
+    severity_score = {'major': 2.0, 'moderate': 1.0, 'minor': 0.5}
+    for row in cur.execute(
+            'SELECT related_chapters_json, severity FROM difficult_passages').fetchall():
+        try:
+            chapters = json.loads(row[0]) if row[0] else []
+            sev = severity_score.get(row[1], 0.5)
+            for ch in chapters:
+                key = (ch.get('book_dir', ''), ch.get('chapter_num', 0))
+                diff_severity[key] = max(diff_severity.get(key, 0), sev)
+        except (json.JSONDecodeError, TypeError):
+            pass
+
+    # Content library chapters with chiasms or discourse
+    literary_chapters = set()
+    for row in cur.execute(
+            "SELECT book_id, chapter_num FROM content_library "
+            "WHERE category IN ('chiasms', 'discourse')").fetchall():
+        literary_chapters.add((row[0], row[1]))
+
+    # Pass 1: compute raw scores
+    scores = []  # [(chapter_id, raw_score)]
+    for row in cur.execute(
+            'SELECT c.id, c.book_id, c.chapter_num FROM chapters c').fetchall():
+        ch_id, book_id, ch_num = row
+        genre = genre_by_book.get(book_id, '')
+        score = 0.0
+
+        # 1. Genre weight (0-2)
+        score += _GENRE_WEIGHT.get(genre, 0)
+
+        # 2. Section count — continuous (median ~2, max ~7)
+        sec_count = cur.execute(
+            'SELECT COUNT(*) FROM sections WHERE chapter_id=?', (ch_id,)
+        ).fetchone()[0]
+        score += min(sec_count / 3.0, 2.0)
+
+        # 3. Scholar panel density — continuous (median ~3.5, max ~8)
+        panel_count = cur.execute(
+            'SELECT COUNT(DISTINCT sp.panel_type) FROM section_panels sp '
+            'JOIN sections s ON s.id = sp.section_id '
+            'WHERE s.chapter_id=?', (ch_id,)
+        ).fetchone()[0]
+        avg_panels = panel_count / max(sec_count, 1)
+        score += min(avg_panels / 4.0, 2.0)
+
+        # 4. Difficult passages (0-2)
+        key = (book_id, ch_num)
+        score += diff_severity.get(key, 0)
+
+        # 5. Literary complexity: chiasm/discourse (0-0.5)
+        if key in literary_chapters:
+            score += 0.5
+
+        scores.append((ch_id, score))
+
+    # Pass 2: percentile-based bucketing
+    sorted_scores = sorted(s[1] for s in scores)
+    n = len(sorted_scores)
+
+    def percentile(p):
+        idx = int(n * p / 100)
+        return sorted_scores[min(idx, n - 1)]
+
+    # Target distribution: ~30% 1, ~30% 2, ~22% 3, ~12% 4, ~6% 5
+    p30 = percentile(30)
+    p60 = percentile(60)
+    p82 = percentile(82)
+    p94 = percentile(94)
+
+    updated = 0
+    for ch_id, score in scores:
+        if score <= p30:
+            difficulty = 1
+        elif score <= p60:
+            difficulty = 2
+        elif score <= p82:
+            difficulty = 3
+        elif score <= p94:
+            difficulty = 4
+        else:
+            difficulty = 5
+
+        cur.execute('UPDATE chapters SET difficulty=? WHERE id=?',
+                    (difficulty, ch_id))
+        updated += 1
+
+    return updated
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 def main():
@@ -1438,6 +1556,9 @@ def main():
 
     n = populate_content_library(cur)
     print(f"  [OK] content_library: {n} rows")
+
+    n = compute_difficulty(cur)
+    print(f"  [OK] difficulty scores: {n} chapters rated")
 
     # Build FTS
     build_fts(cur)

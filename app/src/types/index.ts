@@ -32,6 +32,7 @@ export interface Chapter {
   map_story_link_id: string | null;
   map_story_link_text: string | null;
   coaching_json: string | null;
+  difficulty: number | null;
 }
 
 export interface CoachingTip {

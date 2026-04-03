@@ -21,6 +21,16 @@ export async function getChapterById(id: string): Promise<Chapter | null> {
   );
 }
 
+export async function getDifficultyForBook(
+  bookId: string
+): Promise<Map<number, number>> {
+  const rows = await getDb().getAllAsync<{ chapter_num: number; difficulty: number }>(
+    'SELECT chapter_num, difficulty FROM chapters WHERE book_id = ? AND difficulty IS NOT NULL',
+    [bookId]
+  );
+  return new Map(rows.map(r => [r.chapter_num, r.difficulty]));
+}
+
 export async function getSections(chapterId: string): Promise<Section[]> {
   return getDb().getAllAsync<Section>(
     'SELECT * FROM sections WHERE chapter_id = ? ORDER BY section_num',
