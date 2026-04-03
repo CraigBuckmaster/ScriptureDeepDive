@@ -147,13 +147,22 @@ function ChapterScreen() {
     planDayCompletedRef.current = false;
   }, [bookId, chapterNum]);
 
-  // Parse coaching tips from chapter data
-  const coachingTips = useMemo<CoachingTip[]>(() => {
-    if (!chapter?.coaching_json) return [];
+  // Parse coaching data — supports both old array format and new CoachingData format
+  const { coachingTips, chapterCoaching } = useMemo(() => {
+    if (!chapter?.coaching_json) return { coachingTips: [] as CoachingTip[], chapterCoaching: null };
     try {
-      return JSON.parse(chapter.coaching_json);
+      const parsed = JSON.parse(chapter.coaching_json);
+      // New format: { section_tips, chapter_coaching, genre_tag }
+      if (parsed && !Array.isArray(parsed) && (parsed.section_tips || parsed.chapter_coaching)) {
+        return {
+          coachingTips: (parsed.section_tips ?? []) as CoachingTip[],
+          chapterCoaching: parsed.chapter_coaching ?? null,
+        };
+      }
+      // Legacy format: CoachingTip[]
+      return { coachingTips: Array.isArray(parsed) ? parsed as CoachingTip[] : [], chapterCoaching: null };
     } catch {
-      return [];
+      return { coachingTips: [] as CoachingTip[], chapterCoaching: null };
     }
   }, [chapter?.coaching_json]);
 
@@ -561,6 +570,7 @@ function ChapterScreen() {
           onBtnRowLayout={handleBtnRowLayout}
           studyCoachEnabled={studyCoachEnabled}
           coachingTips={coachingTips}
+          chapterCoaching={chapterCoaching}
           dismissedTips={dismissedTips}
           onDismissTip={handleDismissTip}
           chapterPanels={chapterPanels}
