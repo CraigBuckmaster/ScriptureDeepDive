@@ -23,11 +23,11 @@ export const MarriageBarSvg = memo(function MarriageBarSvg({ bar }: Props) {
     <G opacity={opacity}>
       {/* Soft glow behind bar */}
       <Line x1={x1} y1={y} x2={x2} y2={y}
-        stroke={base.gold} strokeWidth={4} opacity={0.08}
+        stroke={base.gold} strokeWidth={6} opacity={0.07}
         strokeLinecap="round" />
       {/* Main bar */}
       <Line x1={x1} y1={y} x2={x2} y2={y}
-        stroke={color} strokeWidth={1.5}
+        stroke={color} strokeWidth={2}
         strokeLinecap="round" />
       {/* Interlocking rings */}
       <Circle cx={midX - RING_GAP} cy={y} r={RING_R}
