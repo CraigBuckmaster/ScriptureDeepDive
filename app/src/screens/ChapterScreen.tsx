@@ -45,6 +45,7 @@ import { setHighlight, removeHighlight, getHighlightsForChapter, type VerseHighl
 import { InterlinearSheet } from '../components/InterlinearSheet';
 import { TTSControls } from '../components/TTSControls';
 import { useTTS } from '../hooks/useTTS';
+import { useBookmarkedVerses } from '../hooks/useBookmarkedVerses';
 
 import { TRANSLATION_MAP } from '../db/translationRegistry';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
@@ -319,6 +320,9 @@ export default function ChapterScreen() {
 
   // Noted verses for note indicators
   const notedVerses = useNotedVerses(bookId, chapterNum);
+
+  // Bookmarked verses
+  const { bookmarked, toggleBookmark } = useBookmarkedVerses(bookId, chapterNum);
 
   // All VHL group names active by default
   const activeVhlGroups = useMemo(
@@ -618,6 +622,8 @@ export default function ChapterScreen() {
               (h) => h.verse_ref === `${bookId}_${chapterNum}:${longPress.verseNum}`
             )?.color)?.hex ?? null
           : null}
+        onBookmark={longPress ? () => toggleBookmark(longPress.verseNum) : undefined}
+        isBookmarked={longPress ? bookmarked.has(longPress.verseNum) : false}
       />
 
       <HighlightColorPicker

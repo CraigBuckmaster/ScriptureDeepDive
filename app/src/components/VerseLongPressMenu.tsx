@@ -14,7 +14,7 @@ import {
   TouchableWithoutFeedback,
   StyleSheet,
 } from 'react-native';
-import { Copy, Share2, BookOpen, Highlighter } from 'lucide-react-native';
+import { Copy, Share2, BookOpen, Highlighter, Bookmark } from 'lucide-react-native';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { copyVerse, shareVerse } from '../utils/shareVerse';
 import { logger } from '../utils/logger';
@@ -28,10 +28,13 @@ interface Props {
   onAddNote?: () => void;
   onHighlight?: () => void;
   highlightColor?: string | null;
+  onBookmark?: () => void;
+  isBookmarked?: boolean;
 }
 
 export function VerseLongPressMenu({
   visible, verseText, verseRef, translation, onClose, onAddNote, onHighlight, highlightColor,
+  onBookmark, isBookmarked,
 }: Props) {
   const { base } = useTheme();
   const [copyFeedback, setCopyFeedback] = useState(false);
@@ -106,6 +109,21 @@ export function VerseLongPressMenu({
                 <Share2 size={18} color={base.textDim} />
                 <Text style={[styles.actionText, { color: base.text }]}>Share</Text>
               </TouchableOpacity>
+
+              {onBookmark && (
+                <TouchableOpacity
+                  style={styles.action}
+                  onPress={() => { onClose(); onBookmark(); }}
+                  activeOpacity={0.7}
+                  accessibilityRole="button"
+                  accessibilityLabel={isBookmarked ? 'Remove bookmark' : 'Bookmark verse'}
+                >
+                  <Bookmark size={18} color={isBookmarked ? base.gold : base.textDim} fill={isBookmarked ? base.gold : 'none'} />
+                  <Text style={[styles.actionText, { color: base.text }, isBookmarked && { color: base.gold }]}>
+                    {isBookmarked ? 'Bookmarked' : 'Bookmark'}
+                  </Text>
+                </TouchableOpacity>
+              )}
 
               {onHighlight && (
                 <TouchableOpacity
