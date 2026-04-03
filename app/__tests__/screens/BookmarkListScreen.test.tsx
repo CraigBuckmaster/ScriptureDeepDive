@@ -40,7 +40,7 @@ jest.mock('@/utils/verseRef', () => ({
     if (!match) return null;
     return { bookId: match[1], ch: parseInt(match[2]), v: parseInt(match[3]) };
   },
-  displayRef: (ref: string) => ref.replace(/_/g, ' ').replace(/:/, ':'),
+  displayRef: (ref: string) => ref.replace(/_/g, ' '),
 }));
 
 jest.mock('@/components/ScreenHeader', () => ({
