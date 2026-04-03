@@ -19,6 +19,8 @@ import { TopicCrossLinks } from '../components/TopicCrossLinks';
 import { BadgeChip } from '../components/BadgeChip';
 import { useTopicDetail } from '../hooks/useTopicDetail';
 import { CATEGORY_LABELS } from '../hooks/useTopicData';
+import { usePremium } from '../hooks/usePremium';
+import { UpgradePrompt } from '../components/UpgradePrompt';
 import { useTheme, spacing, fontFamily } from '../theme';
 import type { Subtopic } from '../types/topic';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
@@ -28,8 +30,17 @@ function TopicDetailScreen() {
   const navigation = useNavigation<ScreenNavProp<'Explore', 'TopicDetail'>>();
   const route = useRoute<ScreenRouteProp<'Explore', 'TopicDetail'>>();
   const { topicId } = route.params;
+  const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
 
   const { topic, relatedConcepts, relatedThreads, relatedProphecyChains, loading } = useTopicDetail(topicId);
+
+  const handleThreadPress = (threadId: string) => {
+    if (!isPremium) {
+      showUpgrade('feature', 'Cross-Reference Threading');
+      return;
+    }
+    navigation.push('ThreadDetail', { threadId });
+  };
 
   const handleVersePress = (ref: string) => {
     const parsed = parseReference(ref);
@@ -78,7 +89,7 @@ function TopicDetailScreen() {
           threads={relatedThreads}
           prophecyChains={relatedProphecyChains}
           onConceptPress={(id) => navigation.push('ConceptDetail', { conceptId: id })}
-          onThreadPress={() => { /* ThreadViewerSheet is a modal, would need different handling */ }}
+          onThreadPress={handleThreadPress}
           onProphecyPress={(id) => navigation.push('ProphecyDetail', { chainId: id })}
         />
 
@@ -119,6 +130,15 @@ function TopicDetailScreen() {
           </CollapsibleSection>
         )}
       </ScrollView>
+
+      {upgradeRequest && (
+        <UpgradePrompt
+          visible
+          variant={upgradeRequest.variant}
+          featureName={upgradeRequest.featureName}
+          onClose={dismissUpgrade}
+        />
+      )}
     </SafeAreaView>
   );
 }

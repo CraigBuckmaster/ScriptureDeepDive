@@ -100,6 +100,8 @@ function PlanDetailScreen() {
                       const match = ch.match(/^(\w+)_(\d+)$/);
                       if (match) navigation.push('Chapter', {
                         bookId: match[1], chapterNum: parseInt(match[2], 10),
+                        planId: isActive ? planId : undefined,
+                        planDayNum: isActive ? dayData.day : undefined,
                       });
                     }}
                   >

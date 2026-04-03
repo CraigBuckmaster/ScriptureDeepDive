@@ -14,6 +14,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
   validate-and-build:
@@ -32,10 +33,114 @@ jobs:
         run: rm -f scripture.db
 
       - name: Validate content JSON
-        run: python3 _tools/validate.py
+        id: validate_json
+        run: |
+          python3 _tools/validate.py 2>&1 | tee validate_json.log
+          echo "EXIT_CODE=${PIPESTATUS[0]}" >> $GITHUB_ENV
+        continue-on-error: true
 
       - name: Build scripture.db
-        run: python3 _tools/build_sqlite.py
+        id: build_db
+        run: |
+          python3 _tools/build_sqlite.py 2>&1 | tee build_db.log
+        continue-on-error: true
 
       - name: Validate scripture.db integrity
-        run: python3 _tools/validate_sqlite.py
+        id: validate_db
+        run: |
+          python3 _tools/validate_sqlite.py 2>&1 | tee validate_db.log
+        continue-on-error: true
+
+      - name: Generate pipeline summary
+        if: always()
+        id: summary
+        run: |
+          # Parse results from each step
+          JSON_STATUS="${{ steps.validate_json.outcome }}"
+          BUILD_STATUS="${{ steps.build_db.outcome }}"
+          DB_STATUS="${{ steps.validate_db.outcome }}"
+
+          # Extract pass/fail counts from validate.py output
+          JSON_RESULTS=""
+          if [ -f validate_json.log ]; then
+            JSON_RESULTS=$(grep -oP 'RESULTS: \K\d+ passed, \d+ failed' validate_json.log || echo "unknown")
+          fi
+
+          DB_RESULTS=""
+          if [ -f validate_db.log ]; then
+            DB_RESULTS=$(grep -oP 'RESULTS: \K\d+ passed, \d+ failed' validate_db.log || echo "unknown")
+          fi
+
+          # Status emoji helper
+          status_icon() {
+            if [ "$1" = "success" ]; then echo "✅"; else echo "❌"; fi
+          }
+
+          # Overall status
+          if [ "$JSON_STATUS" = "success" ] && [ "$BUILD_STATUS" = "success" ] && [ "$DB_STATUS" = "success" ]; then
+            OVERALL="✅ All pipeline checks passed"
+          else
+            OVERALL="❌ Pipeline has failures"
+          fi
+
+          BODY="## Content Pipeline Results
+
+          ${OVERALL}
+
+          | Step | Status | Details |
+          |---|---|---|
+          | **JSON Validation** | $(status_icon $JSON_STATUS) | ${JSON_RESULTS:-—} |
+          | **Build DB** | $(status_icon $BUILD_STATUS) | — |
+          | **DB Integrity** | $(status_icon $DB_STATUS) | ${DB_RESULTS:-—} |"
+
+          # Write to job summary
+          echo "$BODY" >> $GITHUB_STEP_SUMMARY
+
+          # Save for PR comment
+          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          echo "body<<$EOF" >> $GITHUB_OUTPUT
+          echo "$BODY" >> $GITHUB_OUTPUT
+          echo "$EOF" >> $GITHUB_OUTPUT
+
+      - name: Post results to PR
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = `${{ steps.summary.outputs.body }}`;
+            if (!body) return;
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const botComment = comments.find(c =>
+              c.user.type === 'Bot' && c.body.includes('## Content Pipeline Results')
+            );
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
+      - name: Fail if any step failed
+        if: always()
+        run: |
+          if [ "${{ steps.validate_json.outcome }}" != "success" ] || \
+             [ "${{ steps.build_db.outcome }}" != "success" ] || \
+             [ "${{ steps.validate_db.outcome }}" != "success" ]; then
+            echo "One or more pipeline steps failed"
+            exit 1
+          fi

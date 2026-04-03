@@ -23,6 +23,19 @@ jest.mock('@react-navigation/native', () => {
   };
 });
 
+jest.mock('lucide-react-native', () => ({
+  ArrowRight: () => null,
+}));
+
+jest.mock('react-native-safe-area-context', () => ({
+  SafeAreaView: ({ children }: any) => children,
+  useSafeAreaInsets: () => ({ top: 44, bottom: 34, left: 0, right: 0 }),
+}));
+
+jest.mock('@/components/DifficultyBadge', () => ({
+  DifficultyBadge: () => null,
+}));
+
 // ── Mock child components ────────────────────────────────────────
 jest.mock('@/components/ScreenHeader', () => ({
   ScreenHeader: ({ title, subtitle }: { title: string; subtitle?: string }) => {

@@ -28,6 +28,8 @@ import DebateBrowseScreen from '../screens/DebateBrowseScreen';
 import DebateDetailScreen from '../screens/DebateDetailScreen';
 import LifeTopicsScreen from '../screens/LifeTopicsScreen';
 import LifeTopicDetailScreen from '../screens/LifeTopicDetailScreen';
+import ThreadBrowseScreen from '../screens/ThreadBrowseScreen';
+import ThreadDetailScreen from '../screens/ThreadDetailScreen';
 import ChapterScreen from '../screens/ChapterScreen';
 import { useTheme } from '../theme';
 import type { ExploreStackParamList } from './types';
@@ -74,6 +76,8 @@ export function ExploreStack() {
       <Stack.Screen name="DebateDetail" component={DebateDetailScreen} />
       <Stack.Screen name="LifeTopics" component={LifeTopicsScreen} />
       <Stack.Screen name="LifeTopicDetail" component={LifeTopicDetailScreen} />
+      <Stack.Screen name="ThreadBrowse" component={ThreadBrowseScreen} />
+      <Stack.Screen name="ThreadDetail" component={ThreadDetailScreen} />
       <Stack.Screen name="Chapter" component={ChapterScreen} />
     </Stack.Navigator>
   );

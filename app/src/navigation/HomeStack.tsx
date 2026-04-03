@@ -12,6 +12,7 @@ import TopicBrowseScreen from '../screens/TopicBrowseScreen';
 import TopicDetailScreen from '../screens/TopicDetailScreen';
 import DictionaryBrowseScreen from '../screens/DictionaryBrowseScreen';
 import DictionaryDetailScreen from '../screens/DictionaryDetailScreen';
+import PlanDetailScreen from '../screens/PlanDetailScreen';
 import { useTheme } from '../theme';
 import type { HomeStackParamList } from './types';
 
@@ -35,6 +36,7 @@ export function HomeStack() {
       <Stack.Screen name="TopicDetail" component={TopicDetailScreen} />
       <Stack.Screen name="DictionaryBrowse" component={DictionaryBrowseScreen} />
       <Stack.Screen name="DictionaryDetail" component={DictionaryDetailScreen} />
+      <Stack.Screen name="PlanDetail" component={PlanDetailScreen} />
     </Stack.Navigator>
   );
 }
