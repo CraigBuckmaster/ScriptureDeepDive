@@ -266,6 +266,82 @@ def main():
                               rk in r, f"missing '{rk}'")
         print(f"  difficult passages: {len(dp_data)}")
 
+    # ── 6. Life Topics ──
+    life_topics_dir = CONTENT / 'life_topics'
+    if life_topics_dir.is_dir():
+        print("\n--- 6. LIFE TOPICS ---")
+
+        # Load categories
+        cat_path = life_topics_dir / 'categories.json'
+        categories = []
+        if cat_path.exists():
+            categories = json.loads(cat_path.read_text())
+            check("life_topics categories.json is list", isinstance(categories, list))
+            category_ids = set()
+            for i, cat in enumerate(categories):
+                for key in ('id', 'name', 'display_order'):
+                    check(f"category [{i}] has '{key}'", key in cat,
+                          f"category {cat.get('id', f'index {i}')} missing '{key}'")
+                if 'id' in cat:
+                    category_ids.add(cat['id'])
+            print(f"  categories: {len(categories)}")
+        else:
+            category_ids = set()
+            check("life_topics categories.json exists", False, "file not found")
+
+        # Load topic files
+        topics_dir = life_topics_dir / 'topics'
+        topic_files = sorted(topics_dir.glob('*.json')) if topics_dir.is_dir() else []
+        topic_ids = set()
+        for json_file in topic_files:
+            try:
+                t = json.loads(json_file.read_text())
+            except json.JSONDecodeError as e:
+                check(f"{json_file.name} valid JSON", False, str(e))
+                continue
+
+            for key in ('id', 'category_id', 'title', 'summary', 'body', 'display_order'):
+                check(f"topic {json_file.stem} has '{key}'", key in t,
+                      f"missing '{key}'")
+
+            tid = t.get('id', json_file.stem)
+            topic_ids.add(tid)
+
+            # Referential integrity: category_id
+            cat_id = t.get('category_id')
+            if cat_id:
+                check(f"topic {tid} category_id references valid category",
+                      cat_id in category_ids,
+                      f"'{cat_id}' not in categories.json")
+
+            # Referential integrity: scholar_id
+            for j, s in enumerate(t.get('scholars', [])):
+                sid = s.get('scholar_id')
+                if sid:
+                    check(f"topic {tid} scholar [{j}] references valid scholar",
+                          sid in scholar_ids,
+                          f"'{sid}' not in scholars.json")
+
+            # Verse entries have required fields
+            for j, v in enumerate(t.get('verses', [])):
+                for vk in ('verse_ref', 'verse_order'):
+                    check(f"topic {tid} verse [{j}] has '{vk}'", vk in v,
+                          f"missing '{vk}'")
+
+        # Related topic refs point to known topic IDs
+        for json_file in topic_files:
+            try:
+                t = json.loads(json_file.read_text())
+            except json.JSONDecodeError:
+                continue
+            tid = t.get('id', json_file.stem)
+            for rel in t.get('related', []):
+                check(f"topic {tid} related '{rel}' references valid topic",
+                      rel in topic_ids,
+                      f"'{rel}' not found among topic files")
+
+        print(f"  topics: {len(topic_files)}")
+
     # ── Summary ──
     print(f"\n{'='*60}")
     print(f"RESULTS: {passed} passed, {failed} failed")

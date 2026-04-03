@@ -1299,6 +1299,95 @@ def populate_red_letter(cur):
     return n
 
 
+def populate_life_topics(cur):
+    """Populate life topic tables from content/life_topics/ JSON files.
+
+    Expected directory structure:
+        content/life_topics/
+        ├── categories.json       # Array of {id, name, display_order, icon}
+        └── topics/
+            ├── anxiety.json      # Single topic file
+            └── ...
+
+    Gracefully skips if the directory does not exist.
+    """
+    life_topics_dir = ROOT / 'content' / 'life_topics'
+    if not life_topics_dir.is_dir():
+        return None  # signal: directory not present
+
+    from datetime import datetime, timezone
+    now = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+
+    cat_count = 0
+    topic_count = 0
+    verse_count = 0
+    scholar_count = 0
+    related_count = 0
+
+    # 1. Load categories
+    cat_path = life_topics_dir / 'categories.json'
+    if cat_path.exists():
+        categories = _load_json(cat_path)
+        for cat in categories:
+            cur.execute(
+                'INSERT INTO life_topic_categories (id, name, display_order, icon) '
+                'VALUES (?, ?, ?, ?)',
+                (cat['id'], cat['name'], cat['display_order'], cat.get('icon'))
+            )
+            cat_count += 1
+
+    # 2. Load individual topic files
+    topics_dir = life_topics_dir / 'topics'
+    if topics_dir.is_dir():
+        for json_file in sorted(topics_dir.glob('*.json')):
+            t = _load_json(json_file)
+
+            cur.execute(
+                'INSERT INTO life_topics_official '
+                '(id, category_id, title, subtitle, summary, body, display_order, '
+                'created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                (t['id'], t['category_id'], t['title'], t.get('subtitle'),
+                 t['summary'], t['body'], t['display_order'], now, now)
+            )
+            topic_count += 1
+
+            # Verses
+            for v in t.get('verses', []):
+                cur.execute(
+                    'INSERT INTO life_topic_verses '
+                    '(topic_id, verse_ref, verse_order, annotation, is_primary) '
+                    'VALUES (?, ?, ?, ?, ?)',
+                    (t['id'], v['verse_ref'], v['verse_order'],
+                     v.get('annotation'), 1 if v.get('is_primary') else 0)
+                )
+                verse_count += 1
+
+            # Scholars
+            for s in t.get('scholars', []):
+                cur.execute(
+                    'INSERT INTO life_topic_scholars '
+                    '(topic_id, scholar_id, quote, source, display_order) '
+                    'VALUES (?, ?, ?, ?, ?)',
+                    (t['id'], s['scholar_id'], s['quote'],
+                     s.get('source'), s['display_order'])
+                )
+                scholar_count += 1
+
+            # Related topics
+            for rel_id in t.get('related', []):
+                cur.execute(
+                    'INSERT OR IGNORE INTO life_topic_related (topic_id, related_id) '
+                    'VALUES (?, ?)',
+                    (t['id'], rel_id)
+                )
+                related_count += 1
+
+    # 3. Rebuild FTS index
+    cur.execute("INSERT INTO life_topics_fts(life_topics_fts) VALUES('rebuild')")
+
+    return cat_count, topic_count, verse_count, scholar_count, related_count
+
+
 def populate_content_library(cur):
     """Extract content library entries from chapter JSONs.
 
@@ -1657,6 +1746,17 @@ def main():
 
     n = populate_content_library(cur)
     print(f"  [OK] content_library: {n} rows")
+
+    result = populate_life_topics(cur)
+    if result is None:
+        print("  [SKIP] life_topics: content/life_topics/ not found")
+    else:
+        cats, topics, verses, scholars, related = result
+        print(f"  [OK] life_topic_categories: {cats} rows")
+        print(f"  [OK] life_topics_official: {topics} rows")
+        print(f"  [OK] life_topic_verses: {verses} rows")
+        print(f"  [OK] life_topic_scholars: {scholars} rows")
+        print(f"  [OK] life_topic_related: {related} rows")
 
     n = compute_difficulty(cur)
     print(f"  [OK] difficulty scores: {n} chapters rated")
