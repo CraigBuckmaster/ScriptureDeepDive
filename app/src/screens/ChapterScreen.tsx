@@ -39,6 +39,8 @@ import { getHighlightsForChapter, type VerseHighlight } from '../db/user';
 import { TTSControls } from '../components/TTSControls';
 import { useTTS } from '../hooks/useTTS';
 import { useBookmarkedVerses } from '../hooks/useBookmarkedVerses';
+import { useAvailableLenses, useChapterLensContent } from '../hooks/useHermeneuticLens';
+import { LensToggleBar } from '../components/LensToggleBar';
 
 import { TRANSLATION_MAP } from '../db/translationRegistry';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
@@ -88,11 +90,23 @@ function ChapterScreen() {
     setInterlinearVerse(verseNum);
   }, [isPremium, showUpgrade]);
   const [highlights, setHighlights] = useState<VerseHighlight[]>([]);
+  const [activeLens, setActiveLens] = useState<string | null>(null);
 
   const {
     chapter, sections, verses, comparisonVerses, vhlGroups,
     chapterPanels, noteCount, isLoading,
   } = useChapterData(bookId, chapterNum);
+
+  const { data: availableLenses } = useAvailableLenses(chapter?.id);
+  const { data: lensContent } = useChapterLensContent(chapter?.id, activeLens);
+
+  const handleLensSelect = useCallback((lensId: string | null) => {
+    if (lensId !== null && !isPremium) {
+      showUpgrade('feature', 'Hermeneutic Lenses');
+      return;
+    }
+    setActiveLens(lensId);
+  }, [isPremium, showUpgrade]);
 
   const sectionPanelsForFingerprint = useMemo(
     () => sections.map((s) => s.panels),
@@ -237,6 +251,7 @@ function ChapterScreen() {
     verseYMap.current = {};
     tts.stop();
     setTtsActive(false);
+    setActiveLens(null);
   }, [bookId, chapterNum]);
 
   const totalChapters = bookData?.total_chapters ?? 1;
@@ -435,6 +450,15 @@ function ChapterScreen() {
         </TouchableOpacity>
       )}
 
+      {/* Hermeneutic lens toggle — shown when lenses are available */}
+      {availableLenses.length > 0 && (
+        <LensToggleBar
+          lenses={availableLenses}
+          activeLensId={activeLens}
+          onSelect={handleLensSelect}
+        />
+      )}
+
       {/* Compare bar — shown when parallel translation is active */}
       {comparisonTranslation && (
         <CompareBar
@@ -458,6 +482,18 @@ function ChapterScreen() {
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
+        {/* Lens guidance — shown when a hermeneutic lens is active */}
+        {activeLens && lensContent?.guidance ? (
+          <View style={[styles.lensGuidance, { backgroundColor: base.gold + '10', borderColor: base.gold + '30' }]}>
+            <Text style={[styles.lensGuidanceLabel, { color: base.gold }]}>
+              {availableLenses.find(l => l.id === activeLens)?.name ?? 'Lens'} Guidance
+            </Text>
+            <Text style={[styles.lensGuidanceText, { color: base.textDim }]}>
+              {lensContent.guidance}
+            </Text>
+          </View>
+        ) : null}
+
         <ChapterHeader
           chapter={chapter}
           noteCount={noteCount}
@@ -608,6 +644,25 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     paddingBottom: 80,
+  },
+  lensGuidance: {
+    marginHorizontal: spacing.md,
+    marginTop: spacing.sm,
+    padding: spacing.md,
+    borderWidth: 1,
+    borderRadius: radii.md,
+  },
+  lensGuidanceLabel: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 11,
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+    marginBottom: spacing.xs,
+  },
+  lensGuidanceText: {
+    fontFamily: fontFamily.ui,
+    fontSize: 13,
+    lineHeight: 20,
   },
 });
 
