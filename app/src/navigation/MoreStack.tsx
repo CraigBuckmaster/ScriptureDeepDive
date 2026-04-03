@@ -9,6 +9,7 @@ import PlanListScreen from '../screens/PlanListScreen';
 import PlanDetailScreen from '../screens/PlanDetailScreen';
 import ChapterScreen from '../screens/ChapterScreen';
 import BookIntroScreen from '../screens/BookIntroScreen';
+import SubscriptionScreen from '../screens/SubscriptionScreen';
 import LoginScreen from '../screens/LoginScreen';
 import SignUpScreen from '../screens/SignUpScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
@@ -32,6 +33,7 @@ export function MoreStack() {
       <Stack.Screen name="PlanDetail" component={PlanDetailScreen} />
       <Stack.Screen name="Chapter" component={ChapterScreen} />
       <Stack.Screen name="BookIntro" component={BookIntroScreen} />
+      <Stack.Screen name="Subscription" component={SubscriptionScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="SignUp" component={SignUpScreen} />
       <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />

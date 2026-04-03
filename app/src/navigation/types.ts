@@ -88,6 +88,7 @@ export type MoreStackParamList = {
   PlanDetail: { planId: string };
   Chapter: { bookId: string; chapterNum: number; openPanel?: OpenPanelParam };
   BookIntro: { bookId: string };
+  Subscription: undefined;
   Login: undefined;
   SignUp: undefined;
   ForgotPassword: undefined;

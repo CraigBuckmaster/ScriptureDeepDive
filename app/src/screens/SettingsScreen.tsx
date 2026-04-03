@@ -36,6 +36,7 @@ import { getUserDb } from '../db/userDatabase';
 import { exportStudyData, ExportError } from '../utils/exportData';
 import { useAvailableVoices } from '../hooks/useAvailableVoices';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { usePremiumStore } from '../stores/premiumStore';
 import { logger } from '../utils/logger';
 
 const APP_VERSION = require('../../app.json').expo.version ?? '1.0.0';
@@ -71,6 +72,8 @@ export default function SettingsScreen() {
   const setStudyCoachEnabled = useSettingsStore((s) => s.setStudyCoachEnabled);
   const theme = useSettingsStore((s) => s.theme);
   const setTheme = useSettingsStore((s) => s.setTheme);
+  const isPremium = usePremiumStore((s) => s.isPremium);
+  const purchaseType = usePremiumStore((s) => s.purchaseType);
 
   const [stats, setStats] = useState<ContentStats | null>(null);
   const [exporting, setExporting] = useState(false);
@@ -131,6 +134,24 @@ export default function SettingsScreen() {
           onBack={() => navigation.goBack()}
           style={{ marginBottom: spacing.lg }}
         />
+
+        {/* ── COMPANION+ ────────────────────────────────────────── */}
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Subscription' as any)}
+          style={[styles.premiumRow, { borderColor: base.gold + '30' }]}
+          accessibilityRole="button"
+          accessibilityLabel={isPremium ? 'Companion+ active' : 'Subscribe to Companion+'}
+        >
+          <View>
+            <Text style={[styles.premiumLabel, { color: base.gold }]}>✦ Companion+</Text>
+            <Text style={[styles.premiumHint, { color: base.textDim }]}>
+              {isPremium
+                ? `Active — ${purchaseType === 'lifetime' ? 'Lifetime' : purchaseType === 'annual' ? 'Annual' : 'Monthly'}`
+                : 'Unlock all premium study tools'}
+            </Text>
+          </View>
+          <Text style={[styles.premiumArrow, { color: base.gold }]}>›</Text>
+        </TouchableOpacity>
 
         {/* ── PREFERENCES ──────────────────────────────────────── */}
         <SectionLabel text="PREFERENCES" base={base} />
@@ -703,5 +724,27 @@ const styles = StyleSheet.create({
   },
   bottomSpacer: {
     height: spacing.xxl,
+  },
+  premiumRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    borderWidth: 1,
+    borderRadius: radii.md,
+    padding: spacing.md,
+    marginBottom: spacing.lg,
+  },
+  premiumLabel: {
+    fontFamily: fontFamily.displaySemiBold,
+    fontSize: 16,
+  },
+  premiumHint: {
+    fontFamily: fontFamily.ui,
+    fontSize: 12,
+    marginTop: 2,
+  },
+  premiumArrow: {
+    fontSize: 24,
+    fontFamily: fontFamily.ui,
   },
 });

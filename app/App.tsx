@@ -11,7 +11,7 @@ import { FONT_MAP, ThemeProvider, useTheme } from './src/theme';
 import { base } from './src/theme/colors';
 import { initDatabase } from './src/db/database';
 import { initUserDatabase } from './src/db/userDatabase';
-import { useSettingsStore, useAuthStore } from './src/stores';
+import { useSettingsStore, useAuthStore, usePremiumStore } from './src/stores';
 import { pruneEvents } from './src/services/analytics';
 import { checkAndScheduleReengagement } from './src/services/reengagement';
 import { RootNavigator } from './src/navigation';
@@ -85,6 +85,7 @@ export default function App() {
         await initUserDatabase();    // User DB (user.db) — never replaced, migrated
         await useSettingsStore.getState().hydrate();
         await useAuthStore.getState().hydrate();
+        await usePremiumStore.getState().hydrate();
         pruneEvents(90); // Clean up old analytics (fire-and-forget)
       } catch (e) {
         console.error('Init error:', e);
