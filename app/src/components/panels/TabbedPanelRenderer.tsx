@@ -51,7 +51,7 @@ export function TabbedPanelRenderer({ tabs, defaultTab, children }: TabbedPanelR
 
   // Single tab — skip tab bar, render content directly
   if (visibleTabs.length === 1) {
-    return <>{children(visibleTabs[0].key)}</>;
+    return <>{children?.(visibleTabs[0].key)}</>;
   }
 
   return (
@@ -79,7 +79,7 @@ export function TabbedPanelRenderer({ tabs, defaultTab, children }: TabbedPanelR
       </View>
 
       {/* Active tab content */}
-      {children(activeKey)}
+      {children?.(activeKey)}
     </View>
   );
 }

@@ -39,7 +39,7 @@ interface Props {
   highlights: VerseHighlight[];
   loadHighlights: () => void;
   /** Premium/upgrade */
-  upgradeRequest: { variant: string; featureName: string } | null;
+  upgradeRequest: { variant: 'feature' | 'personal' | 'explore'; featureName: string } | null;
   dismissUpgrade: () => void;
 }
 
@@ -65,7 +65,7 @@ const ChapterPanelSheet = React.memo(function ChapterPanelSheet({
   const [lexiconWordStudyId, setLexiconWordStudyId] = useState<string | null>(null);
   const [colorPickerOpen, setColorPickerOpen] = useState(false);
 
-  const handleLexiconPress = useCallback((strongs: string, wsId: string) => {
+  const handleLexiconPress = useCallback((strongs: string, wsId: string | null) => {
     setInterlinearVerse(null);
     setLexiconStrongs(strongs);
     setLexiconWordStudyId(wsId);

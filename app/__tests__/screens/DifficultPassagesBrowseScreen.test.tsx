@@ -23,6 +23,7 @@ jest.mock('@react-navigation/native', () => {
 });
 
 jest.mock('lucide-react-native', () => ({
+  ArrowLeft: () => null,
   ChevronLeft: () => null,
   Search: () => null,
   X: () => null,

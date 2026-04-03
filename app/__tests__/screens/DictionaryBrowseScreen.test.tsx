@@ -56,6 +56,7 @@ jest.mock('@/hooks/useDictionary', () => ({
 
 // ── Icon mock ────────────────────────────────────────────────────
 jest.mock('lucide-react-native', () => ({
+  ArrowLeft: () => null,
   ChevronLeft: () => null,
   Search: () => null,
   X: () => null,

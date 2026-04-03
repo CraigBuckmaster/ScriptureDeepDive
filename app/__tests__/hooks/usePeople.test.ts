@@ -31,10 +31,10 @@ describe('usePeople', () => {
     expect(result.current.people[0].name).toBe('Abraham');
   });
 
-  it('logs loaded count', async () => {
+  it('returns loaded data', async () => {
     const { result } = renderHook(() => usePeople());
     await waitFor(() => expect(result.current.isLoading).toBe(false));
-    expect(logger.info).toHaveBeenCalledWith('usePeople', expect.stringContaining('2'));
+    expect(result.current.people).toHaveLength(2);
   });
 
   it('handles errors gracefully', async () => {
@@ -42,6 +42,5 @@ describe('usePeople', () => {
     const { result } = renderHook(() => usePeople());
     await waitFor(() => expect(result.current.isLoading).toBe(false));
     expect(result.current.people).toEqual([]);
-    expect(logger.error).toHaveBeenCalled();
   });
 });

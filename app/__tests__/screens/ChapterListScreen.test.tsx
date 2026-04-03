@@ -45,6 +45,7 @@ jest.mock('@/db/content', () => ({
     book_order: 1,
     is_live: true,
   }),
+  getDifficultyForBook: jest.fn().mockResolvedValue(new Map()),
 }));
 
 jest.mock('@/db/user', () => ({

@@ -64,9 +64,9 @@ describe('BookmarkListScreen', () => {
     expect(toJSON()).toBeTruthy();
   });
 
-  it('renders the Bookmarks header', () => {
+  it('renders the Bookmarks header', async () => {
     const { getByText } = renderWithProviders(<BookmarkListScreen />);
-    expect(getByText('Bookmarks')).toBeTruthy();
+    await waitFor(() => expect(getByText('Bookmarks')).toBeTruthy());
   });
 
   it('shows empty state when no bookmarks', async () => {

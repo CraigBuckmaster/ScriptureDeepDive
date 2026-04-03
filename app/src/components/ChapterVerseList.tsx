@@ -134,7 +134,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
                   panels={panels}
                   activePanel={
                     activeSectionPanel?.sectionId === sectionId
-                      ? activeSectionPanel.panelType
+                      ? activeSectionPanel?.panelType ?? null
                       : null
                   }
                   onToggle={(type) => handleSectionPanelToggle(sectionId, type)}

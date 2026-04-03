@@ -32,6 +32,7 @@ jest.mock('@/components/ScreenHeader', () => ({
 }));
 
 jest.mock('lucide-react-native', () => ({
+  ArrowLeft: () => null,
   Share: () => null,
   Trash2: () => null,
 }));
@@ -92,8 +93,7 @@ describe('CollectionDetailScreen', () => {
     mockGetCollection.mockResolvedValueOnce(null as any);
     mockGetNotesInCollection.mockResolvedValueOnce([]);
     const { getByText } = renderWithProviders(<CollectionDetailScreen />);
-    // Initially renders with null collection
-    expect(getByText('Collection not found')).toBeTruthy();
+    await waitFor(() => expect(getByText('Collection not found')).toBeTruthy());
   });
 
   it('displays collection description', async () => {
