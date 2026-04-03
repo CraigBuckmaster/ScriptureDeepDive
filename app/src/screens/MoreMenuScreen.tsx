@@ -11,7 +11,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { Bookmark, Clock, Calendar, Settings, ArrowRight, StickyNote, LogIn, LogOut, User } from 'lucide-react-native';
-import { base, useTheme, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
+import { useTheme, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
 import { useAuthStore } from '../stores';
 
 interface MenuItem {
@@ -73,7 +73,7 @@ export default function MoreMenuScreen() {
         {MENU_ITEMS.map((item, idx) => (
           <TouchableOpacity
             key={item.screen}
-            onPress={() => navigation.navigate(item.screen)}
+            onPress={() => navigation.navigate(item.screen as any)}
             activeOpacity={0.6}
             style={[
               styles.menuRow,

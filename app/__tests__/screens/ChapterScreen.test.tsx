@@ -255,7 +255,7 @@ describe('ChapterScreen', () => {
   });
 
   it('renders loading skeleton when chapter is null', () => {
-    mockChapterData.chapter = null;
+    mockChapterData.chapter = null as any;
     const { getByTestId } = renderWithProviders(<ChapterScreen />);
     expect(getByTestId('chapter-skeleton')).toBeTruthy();
   });

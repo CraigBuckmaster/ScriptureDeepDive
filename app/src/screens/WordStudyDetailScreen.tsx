@@ -12,7 +12,7 @@ import { getWordStudy } from '../db/content';
 import { BadgeChip } from '../components/BadgeChip';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { base, useTheme, spacing, fontFamily } from '../theme';
+import { useTheme, spacing, fontFamily } from '../theme';
 import type { WordStudy } from '../types';
 import { logger } from '../utils/logger';
 
@@ -80,7 +80,7 @@ export default function WordStudyDetailScreen() {
             activeOpacity={0.7}
           >
             <BookOpen size={14} color={base.gold} />
-            <Text style={styles.concordanceBtnText}>
+            <Text style={[styles.concordanceBtnText, { color: base.gold }]}>
               See every occurrence in Scripture
             </Text>
           </TouchableOpacity>
@@ -171,7 +171,6 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.xs,
   },
   concordanceBtnText: {
-    color: base.gold,
     fontFamily: fontFamily.uiMedium,
     fontSize: 13,
   },

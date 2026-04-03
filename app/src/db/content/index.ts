@@ -7,7 +7,7 @@
 
 export { getBooks, getBook, getLiveBooks, getBookIntro } from './books';
 export {
-  getChapter, getChapterById, getSections, getSectionPanels,
+  getChapter, getChapterById, getDifficultyForBook, getSections, getSectionPanels,
   getSectionPanelsByType, getChapterPanels, getChapterPanelByType,
   getVerses, getVerse, getInterlinearWords, getVHLGroups,
   getConcordanceResults, getConcordanceCount,

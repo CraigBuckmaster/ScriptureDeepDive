@@ -33,7 +33,7 @@ import { StoryPanel } from '../components/map/StoryPanel';
 import { FloatingControls } from '../components/map/FloatingControls';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 
-import { base, useTheme, spacing } from '../theme';
+import { useTheme, spacing } from '../theme';
 import type { MapStory, Place } from '../types';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { logger } from '../utils/logger';
@@ -123,7 +123,7 @@ export default function MapScreen({ route, navigation }: {
     if (!story.chapter_link) return;
     const match = story.chapter_link.match(/(\w+)\/(\w+)_(\d+)\.html/);
     if (match) {
-      navigation.navigate('ReadTab', {
+      (navigation as any).navigate('ReadTab', {
         screen: 'Chapter',
         params: { bookId: match[2].toLowerCase(), chapterNum: parseInt(match[3], 10) },
       });

@@ -7,7 +7,7 @@ import { getPlans, getActivePlanId, getPlanProgress, startPlan, completePlanDay,
 import { PlanProgressBar } from '../components/PlanProgressBar';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { ReadingPlan, PlanProgress } from '../db/user';
 import { logger } from '../utils/logger';
 

@@ -386,7 +386,7 @@ export default function TimelineScreen() {
                     onPress={() => {
                       sheetRef.current?.close();
                       setSelectedEvent(null);
-                      navigation.navigate('ReadTab', {
+                      (navigation as any).navigate('ReadTab', {
                         screen: 'Chapter',
                         params: { bookId, chapterNum },
                       });

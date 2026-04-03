@@ -8,7 +8,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Monitor } from 'lucide-react-native';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { buildPalette, type ThemeMode } from '../theme/palettes';
 
 type ThemePreference = 'dark' | 'sepia' | 'light' | 'system';

@@ -47,7 +47,11 @@ import { TTSControls } from '../components/TTSControls';
 import { useTTS } from '../hooks/useTTS';
 
 import { TRANSLATION_MAP } from '../db/translationRegistry';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { useChapterFingerprint } from '../hooks/useChapterFingerprint';
+import { ChapterFingerprint } from '../components/ChapterFingerprint';
+import { usePremium } from '../hooks/usePremium';
+import { UpgradePrompt } from '../components/UpgradePrompt';
 
 // Enable LayoutAnimation on Android
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
@@ -77,6 +81,15 @@ export default function ChapterScreen() {
   const [noteVerseNum, setNoteVerseNum] = useState<number | null>(null);
   const [longPress, setLongPress] = useState<{ verseNum: number; text: string } | null>(null);
   const [interlinearVerse, setInterlinearVerse] = useState<number | null>(null);
+  const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
+
+  const handleInterlinearPress = useCallback((verseNum: number) => {
+    if (!isPremium) {
+      showUpgrade('feature', 'Interlinear Hebrew & Greek');
+      return;
+    }
+    setInterlinearVerse(verseNum);
+  }, [isPremium, showUpgrade]);
   const [lexiconStrongs, setLexiconStrongs] = useState<string | null>(null);
   const [lexiconWordStudyId, setLexiconWordStudyId] = useState<string | null>(null);
   const [colorPickerOpen, setColorPickerOpen] = useState(false);
@@ -86,6 +99,17 @@ export default function ChapterScreen() {
     chapter, sections, verses, comparisonVerses, vhlGroups,
     chapterPanels, noteCount, isLoading,
   } = useChapterData(bookId, chapterNum);
+
+  const sectionPanelsForFingerprint = useMemo(
+    () => sections.map((s) => s.panels),
+    [sections],
+  );
+  const fingerprintScores = useChapterFingerprint(
+    sectionPanelsForFingerprint,
+    chapterPanels,
+    !!chapter?.timeline_link_event,
+    !!chapter?.map_story_link_id,
+  );
 
   const redLetterVerses = useRedLetter(bookId, chapterNum);
 
@@ -364,16 +388,18 @@ export default function ChapterScreen() {
           noteCount={noteCount}
           onNotesPress={toggleNotes}
           onTimelinePress={chapter.timeline_link_event
-            ? () => navigation.navigate('ExploreTab', {
+            ? () => (navigation as any).navigate('ExploreTab', {
                 screen: 'Timeline', params: { eventId: chapter.timeline_link_event },
               })
             : undefined}
           onMapPress={chapter.map_story_link_id
-            ? () => navigation.navigate('ExploreTab', {
+            ? () => (navigation as any).navigate('ExploreTab', {
                 screen: 'Map', params: { storyId: chapter.map_story_link_id },
               })
             : undefined}
         />
+
+        {fingerprintScores && <ChapterFingerprint scores={fingerprintScores} />}
 
         {bookData?.genre_label && bookData?.genre_guidance ? (
           <GenreBanner
@@ -403,7 +429,7 @@ export default function ChapterScreen() {
               onPanelToggle={handleSectionPanelToggle}
               onNotePress={(v) => { setNoteVerseNum(v); toggleNotes(); }}
               onVerseLongPress={handleVerseLongPress}
-              onVerseNumPress={setInterlinearVerse}
+              onVerseNumPress={handleInterlinearPress}
               activeVerseNum={ttsActive ? verses[tts.currentVerse]?.verse_num : undefined}
               depthExplored={depthMap.get(sec.id)?.explored}
               depthTotal={depthMap.get(sec.id)?.total}
@@ -534,11 +560,11 @@ export default function ChapterScreen() {
         onClose={() => setInterlinearVerse(null)}
         onWordStudyPress={(wsId) => {
           setInterlinearVerse(null);
-          navigation.navigate('ExploreTab', { screen: 'WordStudyDetail', params: { wordId: wsId } });
+          (navigation as any).navigate('ExploreTab', { screen: 'WordStudyDetail', params: { wordId: wsId } });
         }}
         onConcordancePress={(params) => {
           setInterlinearVerse(null);
-          navigation.navigate('ExploreTab', { screen: 'Concordance', params });
+          (navigation as any).navigate('ExploreTab', { screen: 'Concordance', params });
         }}
         onLexiconPress={(strongs, wsId) => {
           setInterlinearVerse(null);
@@ -555,12 +581,12 @@ export default function ChapterScreen() {
         onWordStudyPress={(wsId) => {
           setLexiconStrongs(null);
           setLexiconWordStudyId(null);
-          navigation.navigate('ExploreTab', { screen: 'WordStudyDetail', params: { wordId: wsId } });
+          (navigation as any).navigate('ExploreTab', { screen: 'WordStudyDetail', params: { wordId: wsId } });
         }}
         onConcordancePress={(params) => {
           setLexiconStrongs(null);
           setLexiconWordStudyId(null);
-          navigation.navigate('ExploreTab', { screen: 'Concordance', params });
+          (navigation as any).navigate('ExploreTab', { screen: 'Concordance', params });
         }}
       />
 
@@ -601,6 +627,15 @@ export default function ChapterScreen() {
         }}
         onClose={() => setColorPickerOpen(false)}
       />
+
+      {upgradeRequest && (
+        <UpgradePrompt
+          visible
+          variant={upgradeRequest.variant}
+          featureName={upgradeRequest.featureName}
+          onClose={dismissUpgrade}
+        />
+      )}
     </View>
   );
 }

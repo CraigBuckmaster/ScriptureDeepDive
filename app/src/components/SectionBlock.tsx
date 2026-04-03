@@ -10,7 +10,7 @@ import React, { useCallback } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { SectionHeader } from './SectionHeader';
 import { VerseBlock } from './VerseBlock';
-import { base, useTheme, spacing } from '../theme';
+import { useTheme, spacing } from '../theme';
 import type { Section, SectionPanel, Verse, VHLGroup, ParsedRef } from '../types';
 
 interface Props {

@@ -13,7 +13,7 @@ jest.mock('@/utils/haptics', () => ({
 // Patch measureInWindow so handleOpen fires the callback in test env
 beforeAll(() => {
   jest.spyOn(View.prototype, 'measureInWindow' as any).mockImplementation(
-    function (this: any, cb: Function) { cb(0, 0, 100, 40); },
+    function (this: any, ...args: any[]) { const cb = args[0]; cb(0, 0, 100, 40); },
   );
 });
 

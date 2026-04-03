@@ -131,7 +131,7 @@ export function useDifficultPassages() {
 
         setPassages(parsed);
       } catch (err) {
-        logger.error('useDifficultPassages', err);
+        logger.error('useDifficultPassages', 'Failed to load difficult passages', err);
         setError('Failed to load difficult passages');
       } finally {
         setLoading(false);
@@ -266,7 +266,7 @@ export function useDifficultPassage(passageId: string | undefined): DifficultPas
 
       setLoading(false);
     } catch (err) {
-      logger.error('useDifficultPassage', err);
+      logger.error('useDifficultPassage', 'Failed to load passage data', err);
       setError('Failed to load passage data');
       setLoading(false);
     }

@@ -28,10 +28,10 @@ import {
   DifficultPassageCategory,
 } from '../hooks/useDifficultPassages';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import type { StackNavigationProp } from '@react-navigation/stack';
 import type { ExploreStackParamList } from '../navigation/types';
 
-type Nav = NativeStackNavigationProp<ExploreStackParamList, 'DifficultPassagesBrowse'>;
+type Nav = StackNavigationProp<ExploreStackParamList, 'DifficultPassagesBrowse'>;
 
 type FilterCategory = 'all' | DifficultPassageCategory;
 
@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
   chip: {
     paddingHorizontal: spacing.sm + 2,
     paddingVertical: spacing.xs + 2,
-    borderRadius: radii.full,
+    borderRadius: radii.pill,
     borderWidth: 1,
     marginRight: spacing.xs,
   },

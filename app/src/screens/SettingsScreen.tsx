@@ -35,7 +35,8 @@ import { getContentStats, type ContentStats } from '../db/content';
 import { getUserDb } from '../db/userDatabase';
 import { exportStudyData, ExportError } from '../utils/exportData';
 import { useAvailableVoices } from '../hooks/useAvailableVoices';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { usePremiumStore } from '../stores/premiumStore';
 import { logger } from '../utils/logger';
 
 const APP_VERSION = require('../../app.json').expo.version ?? '1.0.0';
@@ -71,6 +72,8 @@ export default function SettingsScreen() {
   const setStudyCoachEnabled = useSettingsStore((s) => s.setStudyCoachEnabled);
   const theme = useSettingsStore((s) => s.theme);
   const setTheme = useSettingsStore((s) => s.setTheme);
+  const isPremium = usePremiumStore((s) => s.isPremium);
+  const purchaseType = usePremiumStore((s) => s.purchaseType);
 
   const [stats, setStats] = useState<ContentStats | null>(null);
   const [exporting, setExporting] = useState(false);
@@ -131,6 +134,24 @@ export default function SettingsScreen() {
           onBack={() => navigation.goBack()}
           style={{ marginBottom: spacing.lg }}
         />
+
+        {/* ── COMPANION+ ────────────────────────────────────────── */}
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Subscription' as any)}
+          style={[styles.premiumRow, { borderColor: base.gold + '30' }]}
+          accessibilityRole="button"
+          accessibilityLabel={isPremium ? 'Companion+ active' : 'Subscribe to Companion+'}
+        >
+          <View>
+            <Text style={[styles.premiumLabel, { color: base.gold }]}>✦ Companion+</Text>
+            <Text style={[styles.premiumHint, { color: base.textDim }]}>
+              {isPremium
+                ? `Active — ${purchaseType === 'lifetime' ? 'Lifetime' : purchaseType === 'annual' ? 'Annual' : 'Monthly'}`
+                : 'Unlock all premium study tools'}
+            </Text>
+          </View>
+          <Text style={[styles.premiumArrow, { color: base.gold }]}>›</Text>
+        </TouchableOpacity>
 
         {/* ── PREFERENCES ──────────────────────────────────────── */}
         <SectionLabel text="PREFERENCES" base={base} />
@@ -280,19 +301,19 @@ export default function SettingsScreen() {
           {/* Destructive actions */}
           <View style={[styles.dangerZone, { borderTopColor: base.border + '40' }]}>
             <TouchableOpacity onPress={handleClearHistory} style={styles.dangerRow}>
-              <Text style={styles.dangerText}>Clear Reading History</Text>
+              <Text style={[styles.dangerText, { color: base.danger }]}>Clear Reading History</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={handleClearNotes} style={styles.dangerRow}>
-              <Text style={styles.dangerText}>Clear All Notes</Text>
+              <Text style={[styles.dangerText, { color: base.danger }]}>Clear All Notes</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={handleClearBookmarks} style={styles.dangerRow}>
-              <Text style={styles.dangerText}>Clear All Bookmarks</Text>
+              <Text style={[styles.dangerText, { color: base.danger }]}>Clear All Bookmarks</Text>
             </TouchableOpacity>
           </View>
         </View>
 
         {/* Bottom breathing room */}
-        <View style={{ height: spacing.xxl }} />
+        <View style={styles.bottomSpacer} />
       </ScrollView>
     </SafeAreaView>
   );
@@ -399,9 +420,9 @@ function TranslationManager({ base }: { base: ReturnType<typeof useTheme>['base'
 
         return (
           <View key={t.id} style={[styles.translationRow, { borderBottomColor: base.border + '40' }]}>
-            <View style={{ flex: 1 }}>
+            <View style={styles.translationInfo}>
               <Text style={[styles.rowLabel, { color: base.text }]}>{t.label}</Text>
-              <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: fontFamily.ui }}>
+              <Text style={[styles.translationDetail, { color: base.textMuted }]}>
                 {t.fullName}{isInstalled ? ` · ${sizeMB} MB` : ''}
               </Text>
             </View>
@@ -414,7 +435,7 @@ function TranslationManager({ base }: { base: ReturnType<typeof useTheme>['base'
             ) : (
               <TouchableOpacity onPress={() => handleDownload(t.id)} style={styles.downloadButton}>
                 <Download size={14} color={base.gold} />
-                <Text style={{ color: base.gold, fontSize: 12, fontFamily: fontFamily.uiSemiBold, marginLeft: 4 }}>
+                <Text style={[styles.downloadLabel, { color: base.gold }]}>
                   {Number(sizeMB) > 0 ? `${sizeMB} MB` : 'Install'}
                 </Text>
               </TouchableOpacity>
@@ -446,7 +467,7 @@ function VoicePicker({ base }: { base: ReturnType<typeof useTheme>['base'] }) {
         accessibilityLabel={`TTS voice: ${currentName}. Tap to change.`}
       >
         <Text style={[styles.rowLabel, { color: base.text }]}>Voice</Text>
-        <Text style={{ color: base.gold, fontFamily: fontFamily.uiMedium, fontSize: 13 }}>
+        <Text style={[styles.voiceValue, { color: base.gold }]}>
           {currentName} {expanded ? '▲' : '▼'}
         </Text>
       </TouchableOpacity>
@@ -466,17 +487,17 @@ function VoicePicker({ base }: { base: ReturnType<typeof useTheme>['base'] }) {
               onPress={() => { setTtsVoice(v.identifier); setExpanded(false); }}
               style={[styles.voiceOption, ttsVoice === v.identifier && { backgroundColor: base.gold + '15' }]}
             >
-              <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.xs }}>
+              <View style={styles.voiceNameRow}>
                 <Text style={[styles.voiceOptionText, { color: ttsVoice === v.identifier ? base.gold : base.text }]}>
                   {v.name}
                 </Text>
                 {v.recommended && (
-                  <Text style={{ color: base.gold, fontSize: 9, fontFamily: fontFamily.uiSemiBold, opacity: 0.8 }}>
+                  <Text style={[styles.recommendedBadge, { color: base.gold }]}>
                     RECOMMENDED
                   </Text>
                 )}
               </View>
-              <Text style={{ color: base.textMuted, fontSize: 10, fontFamily: fontFamily.ui }}>
+              <Text style={[styles.voiceQuality, { color: base.textMuted }]}>
                 {v.quality !== 'Default' ? v.quality : v.language}
               </Text>
             </TouchableOpacity>
@@ -622,7 +643,6 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.sm + 2,
   },
   dangerText: {
-    color: base.danger,
     fontFamily: fontFamily.uiMedium,
     fontSize: 14,
   },
@@ -671,5 +691,60 @@ const styles = StyleSheet.create({
   voiceOptionText: {
     fontFamily: fontFamily.uiMedium,
     fontSize: 13,
+  },
+  voiceValue: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 13,
+  },
+  voiceNameRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.xs,
+  },
+  recommendedBadge: {
+    fontSize: 9,
+    fontFamily: fontFamily.uiSemiBold,
+    opacity: 0.8,
+  },
+  voiceQuality: {
+    fontSize: 10,
+    fontFamily: fontFamily.ui,
+  },
+  translationInfo: {
+    flex: 1,
+  },
+  translationDetail: {
+    fontSize: 11,
+    fontFamily: fontFamily.ui,
+  },
+  downloadLabel: {
+    fontSize: 12,
+    fontFamily: fontFamily.uiSemiBold,
+    marginLeft: 4,
+  },
+  bottomSpacer: {
+    height: spacing.xxl,
+  },
+  premiumRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    borderWidth: 1,
+    borderRadius: radii.md,
+    padding: spacing.md,
+    marginBottom: spacing.lg,
+  },
+  premiumLabel: {
+    fontFamily: fontFamily.displaySemiBold,
+    fontSize: 16,
+  },
+  premiumHint: {
+    fontFamily: fontFamily.ui,
+    fontSize: 12,
+    marginTop: 2,
+  },
+  premiumArrow: {
+    fontSize: 24,
+    fontFamily: fontFamily.ui,
   },
 });

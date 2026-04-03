@@ -13,7 +13,7 @@ import { BadgeChip } from '../components/BadgeChip';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { ArrowRight } from 'lucide-react-native';
-import { base, useTheme, spacing, fontFamily, eraNames } from '../theme';
+import { useTheme, spacing, fontFamily, eraNames } from '../theme';
 import { logger } from '../utils/logger';
 
 export default function PersonDetailScreen() {

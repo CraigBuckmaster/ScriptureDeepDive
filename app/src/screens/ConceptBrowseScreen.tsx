@@ -19,11 +19,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { ChevronLeft, Search, X } from 'lucide-react-native';
 import { useConcepts, Concept } from '../hooks/useConceptData';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
+import type { StackNavigationProp } from '@react-navigation/stack';
 import type { ExploreStackParamList } from '../navigation/types';
 
-type Nav = NativeStackNavigationProp<ExploreStackParamList, 'ConceptBrowse'>;
+type Nav = StackNavigationProp<ExploreStackParamList, 'ConceptBrowse'>;
 
 export default function ConceptBrowseScreen() {
   const { base } = useTheme();

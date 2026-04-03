@@ -10,7 +10,7 @@ import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { getScholar, getAllScholars } from '../db/content';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { Scholar, ScholarBio } from '../types';
 import { logger } from '../utils/logger';
 
@@ -86,7 +86,7 @@ export default function ScholarBioScreen() {
               {(scope as string[]).map((bookId) => (
                 <TouchableOpacity
                   key={bookId}
-                  onPress={() => navigation.navigate('ReadTab', { screen: 'ChapterList', params: { bookId } })}
+                  onPress={() => (navigation as any).navigate('ReadTab', { screen: 'ChapterList', params: { bookId } })}
                   style={[styles.scopeChip, { backgroundColor: color + '1A', borderColor: color + '40' }]}
                   accessibilityRole="button"
                   accessibilityLabel={`Go to ${bookId}`}

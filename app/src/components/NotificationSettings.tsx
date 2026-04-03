@@ -77,17 +77,17 @@ export function NotificationSettings() {
   };
 
   return (
-    <View style={{ marginTop: spacing.xl }}>
-      <Text style={{ color: base.textMuted, fontFamily: fontFamily.uiMedium, fontSize: 11, letterSpacing: 0.5, marginBottom: spacing.sm }}>
+    <View style={styles.wrapper}>
+      <Text style={[styles.sectionLabel, { color: base.textMuted }]}>
         NOTIFICATIONS
       </Text>
 
       {!granted ? (
-        <TouchableOpacity onPress={handleRequestPermission} style={{ paddingVertical: spacing.sm }}>
-          <Text style={{ color: base.gold, fontFamily: fontFamily.uiMedium, fontSize: 14 }}>
+        <TouchableOpacity onPress={handleRequestPermission} style={styles.enableBtn}>
+          <Text style={[styles.enableText, { color: base.gold }]}>
             Enable Notifications
           </Text>
-          <Text style={{ color: base.textMuted, fontSize: 11, marginTop: 2 }}>
+          <Text style={[styles.permissionHint, { color: base.textMuted }]}>
             Permission not yet granted
           </Text>
         </TouchableOpacity>
@@ -96,10 +96,10 @@ export function NotificationSettings() {
           {/* Toggle row */}
           <View style={styles.toggleRow}>
             <View>
-              <Text style={{ color: base.text, fontFamily: fontFamily.uiMedium, fontSize: 14 }}>
+              <Text style={[styles.rowLabel, { color: base.text }]}>
                 Daily Verse
               </Text>
-              <Text style={{ color: base.textMuted, fontSize: 11 }}>{formatTime(hour, minute)} daily</Text>
+              <Text style={[styles.rowHint, { color: base.textMuted }]}>{formatTime(hour, minute)} daily</Text>
             </View>
             <Switch
               value={dailyVerse}
@@ -175,6 +175,33 @@ export function NotificationSettings() {
 }
 
 const styles = StyleSheet.create({
+  wrapper: {
+    marginTop: spacing.xl,
+  },
+  sectionLabel: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 11,
+    letterSpacing: 0.5,
+    marginBottom: spacing.sm,
+  },
+  enableBtn: {
+    paddingVertical: spacing.sm,
+  },
+  enableText: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 14,
+  },
+  permissionHint: {
+    fontSize: 11,
+    marginTop: 2,
+  },
+  rowLabel: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 14,
+  },
+  rowHint: {
+    fontSize: 11,
+  },
   toggleRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',

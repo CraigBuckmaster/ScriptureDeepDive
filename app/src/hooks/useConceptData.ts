@@ -266,7 +266,7 @@ export function useConceptData(conceptId: string | undefined): ConceptData {
       await Promise.all(queries);
       setLoading(false);
     } catch (err) {
-      logger.error('useConceptData', err);
+      logger.error('useConceptData', 'Failed to load concept data', err);
       setError('Failed to load concept data');
       setLoading(false);
     }
@@ -331,7 +331,7 @@ export function useConcepts() {
           }))
         );
       } catch (err) {
-        logger.error('useConcepts', err);
+        logger.error('useConcepts', 'Failed to load concepts', err);
       } finally {
         setLoading(false);
       }

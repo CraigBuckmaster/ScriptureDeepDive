@@ -26,7 +26,7 @@ import { WeeklySummary } from '../components/WeeklySummary';
 import { MilestoneToast } from '../components/MilestoneToast';
 import { useSettingsStore } from '../stores';
 import { shareVerse, shareProgress } from '../utils/shareVerse';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 const TOTAL_BIBLE_CHAPTERS = 1189;
 

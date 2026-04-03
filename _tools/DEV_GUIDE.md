@@ -145,25 +145,19 @@ const { bookId, chapterNum } = route.params ?? {}; // compiles but may crash
 
 ## 5. Theming
 
-**Rule:** Use the `useTheme()` hook for themed components. Never hardcode color hex values.
+**Rule:** Never hardcode color hex values. Access `base.*` tokens via the `useTheme()` hook.
 
-**Why:** The app supports Dark, Sepia, Light, and System themes. Components using `useTheme()` automatically respond to theme changes. Hardcoded hex values break when switching themes.
+**Why:** The app supports Dark, Sepia, Light, and System themes. The static `base` export was removed from `theme/index.ts` (T6) — all colors must come from the hook so they respond to theme changes. Hardcoded hex values break when switching themes.
 
 ```typescript
-// Do — dynamic theming (preferred)
-import { useTheme } from '../theme/ThemeContext';
-const { colors } = useTheme();
-color: colors.gold
-
-// Legacy — still works but doesn't respond to theme changes
-import { base } from '../theme';
+// Do — theme-aware colors via hook
+import { useTheme } from '../theme';
+const { base } = useTheme();
 color: base.gold
 
-// Don't
+// Don't — hardcoded hex
 color: '#bfa050'
 ```
-
-**`base.*` tokens** are still exported and used in ~145 files. These work but reference only the dark theme palette. New code should use `useTheme()`. The `base` export will be removed in [#110](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/110).
 
 **Exception:** Scholar colors, era colors, and panel accent colors are defined as hex values in `colors.ts` — that's the one place where hex literals belong.
 

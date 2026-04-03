@@ -3,7 +3,7 @@
  */
 
 import React, { useState, useMemo } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { SearchInput } from '../SearchInput';
 import { useTheme, spacing, radii, eras, MIN_TOUCH_TARGET, fontFamily } from '../../theme';
 import type { Person } from '../../types';
@@ -29,7 +29,7 @@ export function PersonSearchBar({ people, onSelect }: Props) {
   };
 
   return (
-    <View style={{ paddingHorizontal: spacing.md, zIndex: 10 }}>
+    <View style={styles.wrapper}>
       <SearchInput
         value={query}
         onChangeText={setQuery}
@@ -37,32 +37,25 @@ export function PersonSearchBar({ people, onSelect }: Props) {
         compact
       />
       {results.length > 0 && (
-        <View style={{
-          position: 'absolute', top: 36, left: spacing.md, right: spacing.md,
-          backgroundColor: base.bgElevated, borderWidth: 1, borderColor: base.border,
-          borderRadius: radii.md, maxHeight: 300,
-        }}>
+        <View style={[styles.dropdown, {
+          backgroundColor: base.bgElevated, borderColor: base.border,
+        }]}>
           {results.map((p) => (
             <TouchableOpacity
               key={p.id}
               onPress={() => handleSelect(p.id)}
               accessibilityRole="button"
               accessibilityLabel={`Select ${p.name}`}
-              style={{
-                flexDirection: 'row', alignItems: 'center', gap: spacing.sm,
-                paddingHorizontal: spacing.md, minHeight: MIN_TOUCH_TARGET,
-                borderBottomWidth: 1, borderBottomColor: base.border + '40',
-              }}
+              style={[styles.resultRow, { borderBottomColor: base.border + '40' }]}
             >
-              <View style={{
-                width: 8, height: 8, borderRadius: 4,
+              <View style={[styles.eraDot, {
                 backgroundColor: p.era ? (eras[p.era] ?? base.textMuted) : base.textMuted,
-              }} />
-              <View style={{ flex: 1 }}>
-                <Text style={{ color: base.text, fontFamily: fontFamily.uiMedium, fontSize: 13 }}>
+              }]} />
+              <View style={styles.resultInfo}>
+                <Text style={[styles.resultName, { color: base.text }]}>
                   {p.name}
                 </Text>
-                <Text style={{ color: base.textMuted, fontSize: 10 }} numberOfLines={1}>
+                <Text style={[styles.resultRole, { color: base.textMuted }]} numberOfLines={1}>
                   {p.role}
                 </Text>
               </View>
@@ -73,3 +66,42 @@ export function PersonSearchBar({ people, onSelect }: Props) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  wrapper: {
+    paddingHorizontal: spacing.md,
+    zIndex: 10,
+  },
+  dropdown: {
+    position: 'absolute',
+    top: 36,
+    left: spacing.md,
+    right: spacing.md,
+    borderWidth: 1,
+    borderRadius: radii.md,
+    maxHeight: 300,
+  },
+  resultRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
+    paddingHorizontal: spacing.md,
+    minHeight: MIN_TOUCH_TARGET,
+    borderBottomWidth: 1,
+  },
+  eraDot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+  },
+  resultInfo: {
+    flex: 1,
+  },
+  resultName: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 13,
+  },
+  resultRole: {
+    fontSize: 10,
+  },
+});

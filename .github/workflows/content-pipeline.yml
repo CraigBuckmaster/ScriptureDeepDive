@@ -1,0 +1,41 @@
+name: Content Pipeline
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - 'content/**'
+      - '_tools/**'
+  push:
+    branches: [master]
+    paths:
+      - 'content/**'
+      - '_tools/**'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Remove pre-built DB (build from scratch)
+        run: rm -f scripture.db
+
+      - name: Validate content JSON
+        run: python3 _tools/validate.py
+
+      - name: Build scripture.db
+        run: python3 _tools/build_sqlite.py
+
+      - name: Validate scripture.db integrity
+        run: python3 _tools/validate_sqlite.py

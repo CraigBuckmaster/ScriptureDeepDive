@@ -11,13 +11,22 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { useScrollToTop } from '@react-navigation/native';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { usePremium } from '../hooks/usePremium';
+import { UpgradePrompt } from '../components/UpgradePrompt';
 
 interface Feature {
   title: string;
   subtitle: string;
   screen: string;
+  premiumLabel?: string;
 }
+
+/** Screens that require Companion+ — key is screen name, value is UpgradePrompt featureName. */
+const PREMIUM_SCREENS: Record<string, string> = {
+  Concordance: 'Concordance Search',
+  ContentLibrary: 'Content Library',
+};
 
 const HERO_FEATURES: Feature[] = [
   {
@@ -79,6 +88,16 @@ const GRID_FEATURES: Feature[] = [
     screen: 'Concordance',
   },
   {
+    title: 'Scholar Debates',
+    subtitle: 'Explore where scholars disagree',
+    screen: 'DebateBrowse',
+  },
+  {
+    title: 'Bible Dictionary',
+    subtitle: 'Definitions for every biblical term',
+    screen: 'DictionaryBrowse',
+  },
+  {
     title: 'Content Library',
     subtitle: 'Browse manuscripts, discourse, and more',
     screen: 'ContentLibrary',
@@ -90,6 +109,16 @@ export default function ExploreMenuScreen() {
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ExploreMenu'>>();
   const scrollRef = useRef<ScrollView>(null);
   useScrollToTop(scrollRef);
+  const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
+
+  const handleNavigate = (screen: string) => {
+    const premiumLabel = PREMIUM_SCREENS[screen];
+    if (premiumLabel && !isPremium) {
+      showUpgrade('feature', premiumLabel);
+      return;
+    }
+    navigation.navigate(screen as any);
+  };
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
@@ -100,7 +129,7 @@ export default function ExploreMenuScreen() {
         {HERO_FEATURES.map((f) => (
           <TouchableOpacity
             key={f.screen}
-            onPress={() => navigation.navigate(f.screen)}
+            onPress={() => handleNavigate(f.screen)}
             activeOpacity={0.7}
             style={[styles.heroCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
           >
@@ -111,19 +140,34 @@ export default function ExploreMenuScreen() {
 
         {/* Grid cards — 2×2 */}
         <View style={styles.grid}>
-          {GRID_FEATURES.map((f) => (
-            <TouchableOpacity
-              key={f.screen}
-              onPress={() => navigation.navigate(f.screen)}
-              activeOpacity={0.7}
-              style={[styles.gridCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
-            >
-              <Text style={[styles.gridTitle, { color: base.text }]}>{f.title}</Text>
-              <Text style={[styles.gridSubtitle, { color: base.textMuted }]}>{f.subtitle}</Text>
-            </TouchableOpacity>
-          ))}
+          {GRID_FEATURES.map((f) => {
+            const isLocked = !isPremium && !!PREMIUM_SCREENS[f.screen];
+            return (
+              <TouchableOpacity
+                key={f.screen}
+                onPress={() => handleNavigate(f.screen)}
+                activeOpacity={0.7}
+                style={[styles.gridCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
+              >
+                <View style={styles.gridTitleRow}>
+                  <Text style={[styles.gridTitle, { color: base.text }]}>{f.title}</Text>
+                  {isLocked && <Text style={[styles.lockIcon, { color: base.gold }]}>✦</Text>}
+                </View>
+                <Text style={[styles.gridSubtitle, { color: base.textMuted }]}>{f.subtitle}</Text>
+              </TouchableOpacity>
+            );
+          })}
         </View>
       </ScrollView>
+
+      {upgradeRequest && (
+        <UpgradePrompt
+          visible
+          variant={upgradeRequest.variant}
+          featureName={upgradeRequest.featureName}
+          onClose={dismissUpgrade}
+        />
+      )}
     </SafeAreaView>
   );
 }
@@ -173,6 +217,14 @@ const styles = StyleSheet.create({
   gridTitle: {
     fontFamily: fontFamily.displayMedium,
     fontSize: 13,
+  },
+  gridTitleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  lockIcon: {
+    fontSize: 12,
   },
   gridSubtitle: {
     fontFamily: fontFamily.ui,

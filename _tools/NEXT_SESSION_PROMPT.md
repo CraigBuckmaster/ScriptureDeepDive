@@ -30,7 +30,6 @@ Token needs `repo` + `read:project` + `write:project` scopes.
 | Size | `PVTSSF_lAHOAQG2984BTkG9zhAyRLg` | XS=`6c6483d2`, S=`f784b110`, M=`7515a9f1`, L=`817d0097`, XL=`db339eb2` |
 
 ### Workflow
-
 1. Read the issue body for full context
 2. Move the issue to **In Progress** via GraphQL mutation
 3. Do the work

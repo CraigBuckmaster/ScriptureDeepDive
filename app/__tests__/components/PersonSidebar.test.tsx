@@ -13,6 +13,7 @@ jest.mock('@/db/content', () => ({
 const makePerson = (overrides?: Partial<Person>): Person => ({
   id: 'abraham',
   name: 'Abraham',
+  gender: null,
   role: 'Patriarch',
   era: 'patriarchs',
   dates: '2166–1991 BC',
@@ -21,6 +22,8 @@ const makePerson = (overrides?: Partial<Person>): Person => ({
   refs_json: '["Gen 12:1","Gen 22:2"]',
   father: null,
   mother: null,
+  spouse_of: null,
+  type: null,
   chapter_link: null,
   ...overrides,
 });

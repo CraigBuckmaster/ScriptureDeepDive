@@ -14,7 +14,7 @@ import {
   TouchableWithoutFeedback, type LayoutRectangle,
 } from 'react-native';
 import { Check } from 'lucide-react-native';
-import { base, useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import { selectionFeedback } from '../utils/haptics';
 
 export interface DropdownOption {

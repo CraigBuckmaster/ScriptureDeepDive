@@ -22,7 +22,7 @@ import { logger } from '../utils/logger';
  * Bump this when build_sqlite.py's DB_VERSION changes.
  * Must match the value written into db_meta by the build script.
  */
-const EXPECTED_DB_VERSION = '0.73';
+const EXPECTED_DB_VERSION = '0.74';
 
 let db: SQLite.SQLiteDatabase | null = null;
 
@@ -126,7 +126,7 @@ async function copyAssetDatabaseIfNeeded(): Promise<void> {
 
   const copied = await FileSystem.getInfoAsync(dbPath);
   logger.info('DB',
-    `Copied scripture.db v${EXPECTED_DB_VERSION} (${((copied.size || 0) / 1024 / 1024).toFixed(1)} MB)`
+    `Copied scripture.db v${EXPECTED_DB_VERSION} (${(((copied.exists && copied.size) || 0) / 1024 / 1024).toFixed(1)} MB)`
   );
 }
 

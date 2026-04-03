@@ -71,7 +71,7 @@ describe('interlinear data integrity', () => {
         const entry = entries[i];
         const missing: string[] = [];
         for (const field of requiredFields) {
-          if ((entry as Record<string, unknown>)[field] === undefined || (entry as Record<string, unknown>)[field] === null) {
+          if ((entry as unknown as Record<string, unknown>)[field] === undefined || (entry as unknown as Record<string, unknown>)[field] === null) {
             missing.push(field);
           }
         }

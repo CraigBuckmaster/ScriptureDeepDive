@@ -128,7 +128,6 @@ export default function ProphecyBrowseScreen() {
                 <BadgeChip
                   label={CATEGORY_LABELS[item.category] || item.category}
                   color={catColor}
-                  size="small"
                 />
               </View>
 

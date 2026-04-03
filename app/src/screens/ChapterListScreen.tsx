@@ -3,7 +3,7 @@
  *
  * Back button via ArrowLeft. No "· Live" label (dimmed chapters are
  * sufficient status indicator). Read progress shown as subtle background
- * tint on visited chapters.
+ * tint on visited chapters. Difficulty dots shown beneath chapter number.
  */
 
 import React, { useState, useEffect } from 'react';
@@ -11,11 +11,12 @@ import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-nati
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
-import { getBook } from '../db/content';
+import { getBook, getDifficultyForBook } from '../db/content';
 import { getProgressForBook } from '../db/user';
 import { ScreenHeader } from '../components/ScreenHeader';
+import { DifficultyBadge } from '../components/DifficultyBadge';
 import { ArrowRight } from 'lucide-react-native';
-import { base, useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { Book } from '../types';
 
 export default function ChapterListScreen() {
@@ -25,6 +26,7 @@ export default function ChapterListScreen() {
   const { bookId } = route.params ?? {};
   const [book, setBook] = useState<Book | null>(null);
   const [visited, setVisited] = useState<Set<number>>(new Set());
+  const [difficulty, setDifficulty] = useState<Map<number, number>>(new Map());
 
   useEffect(() => {
     if (bookId) {
@@ -32,6 +34,7 @@ export default function ChapterListScreen() {
       getProgressForBook(bookId).then((rows) =>
         setVisited(new Set(rows.map((r) => r.chapter_num)))
       );
+      getDifficultyForBook(bookId).then(setDifficulty);
     }
   }, [bookId]);
 
@@ -64,6 +67,7 @@ export default function ChapterListScreen() {
         <View style={styles.grid}>
           {Array.from({ length: book.total_chapters }, (_, i) => i + 1).map((ch) => {
             const isVisited = visited.has(ch);
+            const diff = difficulty.get(ch);
             return (
               <TouchableOpacity
                 key={ch}
@@ -82,6 +86,7 @@ export default function ChapterListScreen() {
                 ]}>
                   {ch}
                 </Text>
+                {diff != null && diff > 1 && <DifficultyBadge level={diff} />}
               </TouchableOpacity>
             );
           })}
@@ -115,7 +120,7 @@ const styles = StyleSheet.create({
   },
   cell: {
     width: MIN_TOUCH_TARGET,
-    height: MIN_TOUCH_TARGET,
+    height: MIN_TOUCH_TARGET + 6,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: radii.sm,

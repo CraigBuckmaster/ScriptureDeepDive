@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { selectionFeedback } from '../utils/haptics';
 
 export const HIGHLIGHT_COLORS = [
@@ -30,8 +30,8 @@ export function HighlightColorPicker({ visible, currentColor, onSelect, onClose 
   return (
     <Modal visible={visible} transparent animationType="fade">
       <TouchableOpacity style={styles.backdrop} activeOpacity={1} onPress={onClose}>
-        <View style={styles.card}>
-          <Text style={styles.label}>HIGHLIGHT COLOR</Text>
+        <View style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
+          <Text style={[styles.label, { color: base.textMuted }]}>HIGHLIGHT COLOR</Text>
 
           <View style={styles.colorRow}>
             {HIGHLIGHT_COLORS.map((c) => {
@@ -58,7 +58,7 @@ export function HighlightColorPicker({ visible, currentColor, onSelect, onClose 
               onPress={() => { onSelect(null); onClose(); }}
               style={styles.removeButton}
             >
-              <Text style={styles.removeLabel}>Remove highlight</Text>
+              <Text style={[styles.removeLabel, { color: base.textMuted }]}>Remove highlight</Text>
             </TouchableOpacity>
           )}
         </View>
@@ -75,15 +75,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   card: {
-    backgroundColor: base.bgElevated,
     borderRadius: radii.lg,
     padding: spacing.md,
     borderWidth: 1,
-    borderColor: base.border,
     width: 280,
   },
   label: {
-    color: base.textMuted,
     fontFamily: fontFamily.uiMedium,
     fontSize: 10,
     letterSpacing: 0.5,
@@ -115,7 +112,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   removeLabel: {
-    color: base.textMuted,
     fontFamily: fontFamily.ui,
     fontSize: 12,
   },

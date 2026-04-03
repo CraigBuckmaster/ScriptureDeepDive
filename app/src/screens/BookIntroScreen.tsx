@@ -15,7 +15,7 @@ import { useBookIntro } from '../hooks/useBookIntro';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { BadgeChip } from '../components/BadgeChip';
-import { base, useTheme, spacing, radii, fontFamily } from '../theme';
+import { useTheme, spacing, radii, fontFamily } from '../theme';
 
 export default function BookIntroScreen() {
   const { base } = useTheme();

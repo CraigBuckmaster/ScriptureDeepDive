@@ -8,7 +8,7 @@
 import React from 'react';
 import { View, TextInput, TouchableOpacity, StyleSheet, type TextInputProps } from 'react-native';
 import { X } from 'lucide-react-native';
-import { base, useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 
 interface Props extends Omit<TextInputProps, 'style'> {
   value: string;

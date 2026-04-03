@@ -7,10 +7,11 @@ import * as SplashScreen from 'expo-splash-screen';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { NavigationContainer, DarkTheme, DefaultTheme } from '@react-navigation/native';
 
-import { FONT_MAP, base, ThemeProvider, useTheme } from './src/theme';
+import { FONT_MAP, ThemeProvider, useTheme } from './src/theme';
+import { base } from './src/theme/colors';
 import { initDatabase } from './src/db/database';
 import { initUserDatabase } from './src/db/userDatabase';
-import { useSettingsStore, useAuthStore } from './src/stores';
+import { useSettingsStore, useAuthStore, usePremiumStore } from './src/stores';
 import { pruneEvents } from './src/services/analytics';
 import { checkAndScheduleReengagement } from './src/services/reengagement';
 import { RootNavigator } from './src/navigation';
@@ -20,7 +21,7 @@ import { ErrorBoundary } from './src/components/ErrorBoundary';
 SplashScreen.preventAutoHideAsync();
 
 /** Deep linking configuration for scripture:// URLs. */
-const linking = {
+const linking: any = {
   prefixes: ['scripture://'],
   config: {
     screens: {
@@ -84,6 +85,7 @@ export default function App() {
         await initUserDatabase();    // User DB (user.db) — never replaced, migrated
         await useSettingsStore.getState().hydrate();
         await useAuthStore.getState().hydrate();
+        await usePremiumStore.getState().hydrate();
         pruneEvents(90); // Clean up old analytics (fire-and-forget)
       } catch (e) {
         console.error('Init error:', e);

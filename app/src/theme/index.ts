@@ -2,10 +2,11 @@
  * theme/index.ts — Unified theme re-exports and helper functions.
  *
  * Usage:
- *   import { base, panels, getPanelColors, getScholarColor } from '@/theme';
+ *   import { useTheme, panels, getPanelColors, getScholarColor } from '@/theme';
+ *   const { base } = useTheme();  // theme-aware colors
  */
 
-export { base, panels, scholars, eras, eraNames, eraPillLabels, categoryColors, categories, severity, families, prophecyCategories, roles, testament, timelineSvg } from './colors';
+export { panels, scholars, eras, eraNames, eraPillLabels, categoryColors, categories, severity, families, prophecyCategories, roles, testament, timelineSvg } from './colors';
 export type { PanelColors } from './colors';
 export { fontFamily, typography, scaledTypography } from './typography';
 export type { TypographyPreset } from './typography';

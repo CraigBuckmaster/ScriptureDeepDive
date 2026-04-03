@@ -16,7 +16,8 @@ export const SpouseConnectorSvg = memo(function SpouseConnectorSvg({ connector }
       x1={connector.x} y1={connector.yTop}
       x2={connector.x} y2={connector.yBottom}
       stroke={base.goldDim} strokeWidth={1}
-      strokeDasharray="4,3"
+      strokeDasharray="4,4"
+      strokeLinecap="round"
       opacity={connector.dimmed ? 0.1 : 0.4}
     />
   );

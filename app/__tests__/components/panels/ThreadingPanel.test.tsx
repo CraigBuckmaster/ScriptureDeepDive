@@ -12,8 +12,8 @@ jest.mock('@/utils/referenceParser', () => ({
 }));
 
 const entries: ThreadEntry[] = [
-  { anchor: 'Gen 1:1', target: 'John 1:1', type: 'echo', text: 'Both passages open with "In the beginning."' },
-  { anchor: 'Gen 1:3', target: 'Ps 33:6', type: 'allusion', text: 'Creation by divine speech.' },
+  { anchor: 'Gen 1:1', target: 'John 1:1', direction: 'forward', type: 'echo', text: 'Both passages open with "In the beginning."' },
+  { anchor: 'Gen 1:3', target: 'Ps 33:6', direction: 'forward', type: 'allusion', text: 'Creation by divine speech.' },
 ];
 
 describe('ThreadingPanel', () => {

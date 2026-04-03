@@ -19,6 +19,7 @@ const baseChapter: Chapter = {
   map_story_link_id: null,
   map_story_link_text: null,
   coaching_json: null,
+  difficulty: null,
 };
 
 describe('ChapterHeader', () => {

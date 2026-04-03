@@ -25,20 +25,22 @@ export const TreeLink = memo(function TreeLink({ source, target, isSpine, dimmed
 
   if (dimmed) {
     return (
-      <Path d={d} stroke={color} strokeWidth={1} fill="none" opacity={0.1} />
+      <Path d={d} stroke={color} strokeWidth={1} fill="none" opacity={0.1}
+        strokeLinecap="round" />
     );
   }
 
   return isSpine ? (
     <>
       {/* Wide soft glow trail */}
-      <Path d={d} stroke={base.gold} strokeWidth={6} fill="none" opacity={0.08} />
-      {/* Medium glow */}
-      <Path d={d} stroke={base.gold} strokeWidth={3} fill="none" opacity={0.12} />
+      <Path d={d} stroke={base.gold} strokeWidth={5} fill="none" opacity={0.12}
+        strokeLinecap="round" />
       {/* Crisp spine line */}
-      <Path d={d} stroke={base.goldDim} strokeWidth={1.5} fill="none" opacity={0.7} />
+      <Path d={d} stroke={base.goldDim} strokeWidth={1.5} fill="none" opacity={0.7}
+        strokeLinecap="round" />
     </>
   ) : (
-    <Path d={d} stroke={color} strokeWidth={1} fill="none" opacity={0.4} />
+    <Path d={d} stroke={color} strokeWidth={1} fill="none" opacity={0.4}
+      strokeLinecap="round" />
   );
 });

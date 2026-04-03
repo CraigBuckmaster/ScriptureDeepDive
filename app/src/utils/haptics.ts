@@ -10,25 +10,25 @@
 import { Platform } from 'react-native';
 import { logger } from './logger';
 
-let Haptics: typeof import('expo-haptics') | null = null;
+let Haptics: any = null;
 
 async function loadHaptics() {
   if (Platform.OS !== 'ios') return;
   try {
-    Haptics = await import('expo-haptics');
+    Haptics = await import('expo-haptics' as any);
   } catch (err) { logger.warn('haptics', 'Operation failed', err); }
 }
 
 loadHaptics();
 
 export function lightImpact() {
-  Haptics?.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {});
+  if (Haptics) Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {});
 }
 
 export function mediumImpact() {
-  Haptics?.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {});
+  if (Haptics) Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {});
 }
 
 export function selectionFeedback() {
-  Haptics?.selectionAsync().catch(() => {});
+  if (Haptics) Haptics.selectionAsync().catch(() => {});
 }
