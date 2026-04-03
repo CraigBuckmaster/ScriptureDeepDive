@@ -18,10 +18,11 @@ import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { CollapsibleSection } from '../components/CollapsibleSection';
 import { UpgradePrompt } from '../components/UpgradePrompt';
-import { VerseCard, ScholarQuoteCard, RelatedTopics } from '../components/lifetopics';
+import { VerseCard, ScholarQuoteCard, RelatedTopics, CommunityPerspectives } from '../components/lifetopics';
 import { BadgeChip } from '../components/BadgeChip';
 import { useLifeTopicDetail } from '../hooks/useLifeTopics';
 import { useLifeTopicCategories } from '../hooks/useLifeTopics';
+import { useSubmissionFeed } from '../hooks/useSubmissionFeed';
 import { usePremium } from '../hooks/usePremium';
 import { useTheme, spacing, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
@@ -34,6 +35,7 @@ function LifeTopicDetailScreen() {
 
   const { topic, verses, scholars, related, loading } = useLifeTopicDetail(topicId);
   const { data: categories } = useLifeTopicCategories();
+  const { submissions: communitySubmissions } = useSubmissionFeed('newest', topicId);
   const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
 
   const categoryName = categories.find((c) => c.id === topic?.category_id)?.name;
@@ -44,6 +46,13 @@ function LifeTopicDetailScreen() {
       if (parsed) {
         navigation.push('Chapter', { bookId: parsed.bookId, chapterNum: parsed.chapter });
       }
+    },
+    [navigation],
+  );
+
+  const handleSubmissionPress = useCallback(
+    (submissionId: string) => {
+      navigation.push('SubmissionDetail' as any, { submissionId });
     },
     [navigation],
   );
@@ -139,6 +148,14 @@ function LifeTopicDetailScreen() {
               />
             ))}
           </CollapsibleSection>
+        )}
+
+        {/* Community Perspectives */}
+        {communitySubmissions.length > 0 && (
+          <CommunityPerspectives
+            submissions={communitySubmissions}
+            onSubmissionPress={handleSubmissionPress}
+          />
         )}
 
         {/* Related topics */}

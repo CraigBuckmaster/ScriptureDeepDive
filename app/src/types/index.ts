@@ -802,5 +802,18 @@ export interface Submission {
   updated_at: string;
 }
 
+// ── In-App Notifications ──────────────────────────────────────
+
+export interface AppNotification {
+  id: string;
+  type: 'new_submission' | 'submission_approved' | 'submission_rejected' | 'trust_upgraded';
+  title: string;
+  body: string;
+  target_id?: string;
+  target_type?: string;
+  is_read: boolean;
+  created_at: string;
+}
+
 // Re-export ParsedRef so panel components can import from types
 export type { ParsedRef } from '../utils/verseResolver';

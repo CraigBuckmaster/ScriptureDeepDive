@@ -24,12 +24,15 @@ import {
   Clock,
   LogOut,
   ChevronRight,
+  FileText,
 } from 'lucide-react-native';
 import { useAuthStore } from '../stores';
 import { getAuthProfile, type AuthProfile } from '../db/userQueries';
 import { upsertAuthProfile } from '../db/userMutations';
 import { ScreenHeader } from '../components/ScreenHeader';
+import { useMySubmissions } from '../hooks/useMySubmissions';
 import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import type { Submission, SubmissionStatus } from '../types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 import { logger } from '../utils/logger';
 
@@ -53,6 +56,7 @@ function UserProfileScreen() {
   const user = useAuthStore((s) => s.user);
   const signOut = useAuthStore((s) => s.signOut);
 
+  const { submissions: mySubmissions } = useMySubmissions();
   const [profile, setProfile] = useState<AuthProfile | null>(null);
   const [displayName, setDisplayName] = useState('');
   const [isEditingName, setIsEditingName] = useState(false);
@@ -196,6 +200,30 @@ function UserProfileScreen() {
           <NavRow icon={Clock} label="Reading History" onPress={() => navigation.navigate('ReadingHistory')} base={base} />
         </View>
 
+        {/* My Submissions */}
+        {mySubmissions.length > 0 && (
+          <View style={styles.section}>
+            <Text style={[styles.sectionLabel, { color: base.textMuted }]}>MY SUBMISSIONS</Text>
+            {mySubmissions.map((sub: Submission) => (
+              <TouchableOpacity
+                key={sub.id}
+                onPress={() => navigation.navigate('SubmissionDetail' as any, { submissionId: sub.id })}
+                style={[styles.navRow, { borderBottomColor: base.border + '40' }]}
+                activeOpacity={0.6}
+              >
+                <FileText size={18} color={base.textDim} />
+                <View style={styles.submissionInfo}>
+                  <Text style={[styles.navLabel, { color: base.text }]} numberOfLines={1}>
+                    {sub.title}
+                  </Text>
+                  <StatusBadge status={sub.status} base={base} />
+                </View>
+                <ChevronRight size={14} color={base.textMuted} />
+              </TouchableOpacity>
+            ))}
+          </View>
+        )}
+
         {/* Sign out */}
         <TouchableOpacity
           onPress={handleSignOut}
@@ -226,6 +254,31 @@ function getInitials(name: string): string {
 }
 
 /* ── Sub-components ───────────────────────────────────────────────── */
+
+const STATUS_COLORS: Record<SubmissionStatus, string> = {
+  draft: '#888',
+  pending: '#d4a843',
+  approved: '#50b060',
+  rejected: '#cc4444',
+  flagged: '#cc6633',
+};
+
+function StatusBadge({
+  status,
+  base,
+}: {
+  status: SubmissionStatus;
+  base: ReturnType<typeof useTheme>['base'];
+}) {
+  const color = STATUS_COLORS[status] ?? '#888';
+  return (
+    <View style={[styles.statusBadge, { backgroundColor: color + '20' }]}>
+      <Text style={[styles.statusText, { color }]}>
+        {status.charAt(0).toUpperCase() + status.slice(1)}
+      </Text>
+    </View>
+  );
+}
 
 function InfoRow({ label, value, base }: { label: string; value: string; base: ReturnType<typeof useTheme>['base'] }) {
   return (
@@ -411,6 +464,23 @@ const styles = StyleSheet.create({
   signInButtonText: {
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 15,
+  },
+
+  /* Submissions */
+  submissionInfo: {
+    flex: 1,
+    gap: 2,
+  },
+  statusBadge: {
+    alignSelf: 'flex-start',
+    paddingHorizontal: spacing.xs + 2,
+    paddingVertical: 2,
+    borderRadius: radii.pill,
+  },
+  statusText: {
+    fontFamily: fontFamily.ui,
+    fontSize: 10,
+    letterSpacing: 0.3,
   },
 
   bottomSpacer: {

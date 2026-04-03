@@ -87,6 +87,9 @@ export type ExploreStackParamList = {
   GrammarArticle: { articleId: string };
   ThreadBrowse: undefined;
   ThreadDetail: { threadId: string };
+  SubmissionFlow: undefined;
+  SubmissionDetail: { submissionId: string };
+  SubmissionFeed: undefined;
   ContentLibrary: undefined;
   Concordance: {
     strongs?: string;
@@ -113,6 +116,8 @@ export type MoreStackParamList = {
   SignUp: undefined;
   ForgotPassword: undefined;
   UserProfile: undefined;
+  NotificationPrefs: undefined;
+  NotificationFeed: undefined;
 };
 
 export type SearchStackParamList = {

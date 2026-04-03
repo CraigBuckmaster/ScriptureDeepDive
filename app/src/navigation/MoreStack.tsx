@@ -14,6 +14,8 @@ import LoginScreen from '../screens/LoginScreen';
 import SignUpScreen from '../screens/SignUpScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
 import UserProfileScreen from '../screens/UserProfileScreen';
+import NotificationPrefsScreen from '../screens/NotificationPrefsScreen';
+import NotificationFeedScreen from '../screens/NotificationFeedScreen';
 import { useTheme } from '../theme';
 import type { MoreStackParamList } from './types';
 
@@ -39,6 +41,8 @@ export function MoreStack() {
       <Stack.Screen name="SignUp" component={SignUpScreen} />
       <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
       <Stack.Screen name="UserProfile" component={UserProfileScreen} />
+      <Stack.Screen name="NotificationPrefs" component={NotificationPrefsScreen} />
+      <Stack.Screen name="NotificationFeed" component={NotificationFeedScreen} />
     </Stack.Navigator>
   );
 }

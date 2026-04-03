@@ -37,6 +37,9 @@ import GrammarBrowseScreen from '../screens/GrammarBrowseScreen';
 import GrammarArticleScreen from '../screens/GrammarArticleScreen';
 import ThreadBrowseScreen from '../screens/ThreadBrowseScreen';
 import ThreadDetailScreen from '../screens/ThreadDetailScreen';
+import SubmissionFlowScreen from '../screens/SubmissionFlowScreen';
+import SubmissionDetailScreen from '../screens/SubmissionDetailScreen';
+import SubmissionFeedScreen from '../screens/SubmissionFeedScreen';
 import ChapterScreen from '../screens/ChapterScreen';
 import { useTheme } from '../theme';
 import type { ExploreStackParamList } from './types';
@@ -92,6 +95,9 @@ export function ExploreStack() {
       <Stack.Screen name="GrammarArticle" component={GrammarArticleScreen} />
       <Stack.Screen name="ThreadBrowse" component={ThreadBrowseScreen} />
       <Stack.Screen name="ThreadDetail" component={ThreadDetailScreen} />
+      <Stack.Screen name="SubmissionFlow" component={SubmissionFlowScreen} />
+      <Stack.Screen name="SubmissionDetail" component={SubmissionDetailScreen} />
+      <Stack.Screen name="SubmissionFeed" component={SubmissionFeedScreen} />
       <Stack.Screen name="Chapter" component={ChapterScreen} />
     </Stack.Navigator>
   );

@@ -448,6 +448,24 @@ const MIGRATIONS: Migration[] = [
       CREATE INDEX IF NOT EXISTS idx_bookmarked_topics_id ON bookmarked_topics(topic_id);
     `,
   },
+  {
+    version: 13,
+    description: 'In-app notifications table for notification feed',
+    sql: `
+      CREATE TABLE IF NOT EXISTS app_notifications (
+        id TEXT PRIMARY KEY,
+        type TEXT NOT NULL,
+        title TEXT NOT NULL,
+        body TEXT NOT NULL,
+        target_id TEXT,
+        target_type TEXT,
+        is_read INTEGER NOT NULL DEFAULT 0,
+        created_at TEXT NOT NULL DEFAULT (datetime('now'))
+      );
+      CREATE INDEX IF NOT EXISTS idx_app_notifications_read ON app_notifications(is_read);
+      CREATE INDEX IF NOT EXISTS idx_app_notifications_created ON app_notifications(created_at);
+    `,
+  },
 ];
 
 /**
