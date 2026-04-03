@@ -53,18 +53,18 @@ Each issue contains a **complete dev plan** with session breakdowns, file invent
 
 | Issue | Task | Status |
 |-------|------|--------|
-| [#50](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/50) | Theology + End Times topics (~41 entries) | **DONE** (In Review) |
+| [#50](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/50) | Theology + End Times topics (~41 entries) | **DONE** |
 | [#51](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/51) | Character + Sin + Identity topics (~57 entries) | **DONE** |
 | [#52](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/52) | Relationships + Worship + Church topics (~52 entries) | **DONE** |
-| [#53](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/53) | Christian Living + Creation topics (~40 entries) | Backlog — **NEXT** |
+| [#53](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/53) | Christian Living + Creation topics (~37 entries) | **DONE** |
 | [#54](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/54) | validate_sqlite.py topics count validation | Backlog |
 | [#55](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/55) | Auto-generate relevant_chapters_json from theme panel data | Backlog |
 
 ### Topical Index Content Status
 
-`content/meta/topics.json` exists with **160 topics** (28 theology + 14 eschatology + 25 character + 20 sin + 15 identity + 20 relationships + 15 worship + 20 church + 3 other). No DB table or UI infrastructure yet — the A9 screens/hooks/components have not been built. Content generation is proceeding ahead of infrastructure.
+`content/meta/topics.json` has **197 topics** across 10 categories (theology: 28, eschatology: 14, character: 25, sin: 20, identity: 15, relationships: 20, worship: 15, church: 20, living: 30, creation: 10). All four content stories (#50–#53) are **COMPLETE**. No DB table or UI infrastructure yet — the A9 screens/hooks/components have not been built.
 
-**Next content story (#51)** adds ~60 entries across Character, Sin, and Identity categories. Read the issue body for the full topic list and format spec.
+**Next topical index work:** #54 (validate_sqlite.py topics count validation) or #55 (auto-generate relevant_chapters_json from theme panel data). Or begin A9 UI infrastructure.
 
 ### Other Active Work
 
@@ -103,6 +103,7 @@ Each issue contains a **complete dev plan** with session breakdowns, file invent
 
 | Item | Date | Scope |
 |------|------|-------|
+| **Topical Index: Christian Living + Creation** | April 2026 | 37 topics (28 living, 9 creation), cumulative 197 topics — all 4 content stories complete |
 | **Topical Index: Relationships + Worship + Church** | April 2026 | 52 topics, 19+14+19 per category, cumulative 160 topics |
 | **Topical Index: Character + Sin + Identity** | April 2026 | 57 topics, 24+19+14 per category, fixed topics_fts bug |
 | **Topical Index: Theology + Eschatology** | April 2026 | 41 topics, 109 subtopics, 343 KJV verses in `topics.json` |
@@ -115,7 +116,7 @@ Each issue contains a **complete dev plan** with session breakdowns, file invent
 
 ## What's Next
 
-**If doing content work:** Pick up **#53** (Christian Living + Creation topics, ~40 entries). Move it to In Progress on the kanban, generate topics into `content/meta/topics.json` (append to existing 160), commit, push, move to In Review. This is the final topical index content story.
+**If doing content work:** All four topical index content stories (#50–#53) are complete. Remaining content work: #54 (topics count validation in validate_sqlite.py), #55 (auto-generate relevant_chapters_json), Kings/Chronicles MacArthur enrichment (~112 chapters), or thin panel enrichment Batch 6 (~259 panels).
 
 **If doing feature code:** Read the full dev plan in the issue body for whichever feature is being started (#56 Scholar Debate Mode, #65 Cross-Device Sync, or #66 Premium TTS). Move the issue to In Progress. Follow the session breakdown in the plan.
 
@@ -127,7 +128,7 @@ Each issue contains a **complete dev plan** with session breakdowns, file invent
 
 | File | Purpose |
 |------|---------|
-| `content/meta/topics.json` | Topical index content (41 entries, growing) |
+| `content/meta/topics.json` | Topical index content (197 entries, all 4 stories complete) |
 | `_tools/DEEP_STUDY_FEATURES_PLAN.md` | Active phases (24, P1, P2) + completed phase summary |
 | `_tools/COMPLETED_PHASES_REFERENCE.md` | Data shapes for all shipped phases (0–23) |
 | `_tools/CONTENT_LIBRARY_ENRICHMENT_PLAN.md` | Phase 24E: 9 enrichment batches with copyright guardrails |
@@ -149,7 +150,7 @@ git add -A && git commit -m "..." && git push
 cd app && eas update --branch production
 ```
 
-DB version: 0.51 · 54 scholars · 3 translations (NIV, ESV, KJV) · 444K interlinear words · 269 content library entries
+DB version: 0.73 · 54 scholars · 3 translations (NIV, ESV, KJV) · 444K interlinear words · 269 content library entries · 197 topical index entries
 
 **Note:** scripture.db is ~107MB (interlinear data). Rebuild locally before deploy.
 
