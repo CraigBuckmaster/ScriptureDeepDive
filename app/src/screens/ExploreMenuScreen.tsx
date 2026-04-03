@@ -88,6 +88,17 @@ const SECTIONS: FeatureSection[] = [
       { title: 'Life Topics', subtitle: 'Biblical guidance for everyday life', screen: 'LifeTopics' },
     ],
   },
+  {
+    label: 'Deep Dive',
+    subtitle: 'Advanced study tools',
+    layout: 'grid',
+    features: [
+      { title: 'Hermeneutic Lenses', subtitle: 'Different interpretive frameworks', screen: 'LensBrowse' },
+      { title: 'Archaeological Evidence', subtitle: 'Discoveries that illuminate Scripture', screen: 'ArchaeologyBrowse' },
+      { title: 'Time-Travel Reader', subtitle: 'Interpretations across church history', screen: 'TimeTravelBrowse' },
+      { title: 'Grammar Reference', subtitle: 'Greek & Hebrew morphology decoded', screen: 'GrammarBrowse' },
+    ],
+  },
 ];
 
 function ExploreMenuScreen() {

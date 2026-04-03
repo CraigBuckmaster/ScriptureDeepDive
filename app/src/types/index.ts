@@ -254,6 +254,25 @@ export interface LifeTopicVerse {
   is_primary: boolean;
 }
 
+// ── Hermeneutic Lenses ──────────────────────────────────────
+
+export interface HermeneuticLens {
+  id: string;
+  name: string;
+  description: string;
+  icon?: string;
+  display_order: number;
+}
+
+export interface ChapterLensContent {
+  id: number;
+  chapter_id: string;
+  lens_id: string;
+  guidance: string;
+  panel_filter_json?: string;
+  panel_order_json?: string;
+}
+
 // ── Concordance (Phase 21) ───────────────────────────────────
 
 export interface ConcordanceResult {
@@ -684,6 +703,66 @@ export interface ParsedBookIntro {
   authorship?: string | BookIntroAuthorship;
   sections?: BookIntroSection[];
   text?: string;
+}
+
+// ── Archaeological Evidence ────────────────────────────────
+
+export interface ArchaeologicalDiscovery {
+  id: string;
+  name: string;
+  category: string;
+  date_range?: string;
+  location?: string;
+  significance: string;
+  description: string;
+  image_url?: string;
+  source?: string;
+  display_order: number;
+}
+
+export interface ArchaeologyVerseLink {
+  id: number;
+  discovery_id: string;
+  verse_ref: string;
+  relevance?: string;
+}
+
+// ── Historical Interpretations (Time-Travel Reader) ────────
+
+export interface HistoricalInterpretation {
+  id: string;
+  verse_ref: string;
+  era: string;
+  era_label: string;
+  author: string;
+  author_dates?: string;
+  source_title: string;
+  source_date?: string;
+  interpretation: string;
+  context?: string;
+  display_order: number;
+}
+
+export interface InterpretationEra {
+  id: string;
+  name: string;
+  date_range: string;
+  description: string;
+  display_order: number;
+}
+
+// ── Grammar Articles ──────────────────────────────────────────
+
+export interface GrammarArticle {
+  id: string;
+  title: string;
+  language: string;
+  category: string;
+  summary: string;
+  body: string;
+  examples_json?: string;
+  related_articles_json?: string;
+  display_order: number;
 }
 
 // Re-export ParsedRef so panel components can import from types

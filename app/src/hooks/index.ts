@@ -41,3 +41,7 @@ export { useConceptData, useConcepts } from './useConceptData';
 export { useStudyDepth } from './useStudyDepth';
 export { useDebateTopics, useDebateTopic, useChapterDebateTopics, DEBATE_CATEGORY_LABELS } from './useDebateTopics';
 export { useLifeTopicCategories, useLifeTopics, useLifeTopicSearch, useLifeTopicDetail } from './useLifeTopics';
+export { useAvailableLenses, useChapterLensContent } from './useHermeneuticLens';
+export { useArchaeologyBrowse, useArchaeologySearch, useArchaeologyDetail } from './useArchaeology';
+export { useInterpretationEras, useVerseInterpretations, useChapterInterpretations } from './useInterpretations';
+export { useGrammarArticle, useMorphologyDecode } from './useGrammar';

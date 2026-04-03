@@ -508,6 +508,107 @@ CREATE VIRTUAL TABLE IF NOT EXISTS life_topics_fts USING fts5(
 );
 
 -- ══════════════════════════════════════════════════════════════
+-- HERMENEUTIC LENSES (interpretive frameworks for reading)
+-- ══════════════════════════════════════════════════════════════
+
+CREATE TABLE IF NOT EXISTS hermeneutic_lenses (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  description TEXT NOT NULL,
+  icon TEXT,
+  display_order INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS chapter_lens_content (
+  id INTEGER PRIMARY KEY,
+  chapter_id TEXT NOT NULL,
+  lens_id TEXT NOT NULL REFERENCES hermeneutic_lenses(id),
+  guidance TEXT NOT NULL,
+  panel_filter_json TEXT,
+  panel_order_json TEXT,
+  UNIQUE(chapter_id, lens_id)
+);
+
+-- ══════════════════════════════════════════════════════════════
+-- ARCHAEOLOGICAL EVIDENCE
+-- ══════════════════════════════════════════════════════════════
+
+CREATE TABLE IF NOT EXISTS archaeological_discoveries (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  category TEXT NOT NULL,
+  date_range TEXT,
+  location TEXT,
+  significance TEXT NOT NULL,
+  description TEXT NOT NULL,
+  image_url TEXT,
+  source TEXT,
+  display_order INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS archaeology_verse_links (
+  id INTEGER PRIMARY KEY,
+  discovery_id TEXT NOT NULL REFERENCES archaeological_discoveries(id),
+  verse_ref TEXT NOT NULL,
+  relevance TEXT
+);
+
+CREATE VIRTUAL TABLE IF NOT EXISTS archaeology_fts USING fts5(
+  name, significance, description, content='archaeological_discoveries'
+);
+
+CREATE INDEX IF NOT EXISTS idx_archaeology_category ON archaeological_discoveries(category);
+CREATE INDEX IF NOT EXISTS idx_archaeology_verse_links ON archaeology_verse_links(discovery_id);
+
+-- ══════════════════════════════════════════════════════════════
+-- HISTORICAL INTERPRETATIONS (Time-Travel Reader)
+-- ══════════════════════════════════════════════════════════════
+
+CREATE TABLE IF NOT EXISTS historical_interpretations (
+  id TEXT PRIMARY KEY,
+  verse_ref TEXT NOT NULL,
+  era TEXT NOT NULL,
+  era_label TEXT NOT NULL,
+  author TEXT NOT NULL,
+  author_dates TEXT,
+  source_title TEXT NOT NULL,
+  source_date TEXT,
+  interpretation TEXT NOT NULL,
+  context TEXT,
+  display_order INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS interpretation_eras (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  date_range TEXT NOT NULL,
+  description TEXT NOT NULL,
+  display_order INTEGER NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_interp_verse ON historical_interpretations(verse_ref);
+CREATE INDEX IF NOT EXISTS idx_interp_era ON historical_interpretations(era);
+
+-- ══════════════════════════════════════════════════════════════
+-- GRAMMAR ARTICLES (morphology reference)
+-- ══════════════════════════════════════════════════════════════
+
+CREATE TABLE IF NOT EXISTS grammar_articles (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  language TEXT NOT NULL,
+  category TEXT NOT NULL,
+  summary TEXT NOT NULL,
+  body TEXT NOT NULL,
+  examples_json TEXT,
+  related_articles_json TEXT,
+  display_order INTEGER NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_grammar_language ON grammar_articles(language);
+CREATE INDEX IF NOT EXISTS idx_grammar_category ON grammar_articles(category);
+
+-- ══════════════════════════════════════════════════════════════
 -- NOTE: User tables (notes, bookmarks, preferences, highlights,
 -- reading progress, plans) live in a separate user.db managed by
 -- the app's userDatabase.ts migration system. They are NOT bundled
@@ -1388,6 +1489,210 @@ def populate_life_topics(cur):
     return cat_count, topic_count, verse_count, scholar_count, related_count
 
 
+def populate_hermeneutic_lenses(cur):
+    """Populate hermeneutic lens tables from content/hermeneutic_lenses/ JSON files.
+
+    Expected directory structure:
+        content/hermeneutic_lenses/
+        ├── lenses.json            # Array of {id, name, description, icon, display_order}
+        └── chapters/
+            └── <chapter_id>.json  # {lenses: [{lens_id, guidance, panel_filter, panel_order}]}
+
+    Gracefully skips if the directory does not exist.
+    """
+    lenses_dir = ROOT / 'content' / 'hermeneutic_lenses'
+    if not lenses_dir.is_dir():
+        return None  # signal: directory not present
+
+    lens_count = 0
+    content_count = 0
+
+    # 1. Load lens definitions
+    lenses_path = lenses_dir / 'lenses.json'
+    if lenses_path.exists():
+        lenses = _load_json(lenses_path)
+        for lens in lenses:
+            assert 'id' in lens and 'name' in lens and 'description' in lens, \
+                f"Lens missing required fields: {lens}"
+            cur.execute(
+                'INSERT INTO hermeneutic_lenses (id, name, description, icon, display_order) '
+                'VALUES (?, ?, ?, ?, ?)',
+                (lens['id'], lens['name'], lens['description'],
+                 lens.get('icon'), lens.get('display_order', 0))
+            )
+            lens_count += 1
+
+    # 2. Load chapter lens content
+    chapters_dir = lenses_dir / 'chapters'
+    if chapters_dir.is_dir():
+        # Build set of valid lens IDs for validation
+        valid_lenses = set()
+        cur.execute('SELECT id FROM hermeneutic_lenses')
+        for row in cur.fetchall():
+            valid_lenses.add(row[0])
+
+        for json_file in sorted(chapters_dir.glob('*.json')):
+            data = _load_json(json_file)
+            chapter_id = json_file.stem
+            for entry in data.get('lenses', []):
+                lens_id = entry['lens_id']
+                assert lens_id in valid_lenses, \
+                    f"Unknown lens_id '{lens_id}' in {json_file.name}"
+                assert 'guidance' in entry, \
+                    f"Missing guidance in {json_file.name} for lens {lens_id}"
+                cur.execute(
+                    'INSERT INTO chapter_lens_content '
+                    '(chapter_id, lens_id, guidance, panel_filter_json, panel_order_json) '
+                    'VALUES (?, ?, ?, ?, ?)',
+                    (chapter_id, lens_id, entry['guidance'],
+                     _json_str(entry['panel_filter']) if 'panel_filter' in entry else None,
+                     _json_str(entry['panel_order']) if 'panel_order' in entry else None)
+                )
+                content_count += 1
+
+    return lens_count, content_count
+
+
+def populate_archaeology(cur):
+    """Populate archaeological discovery tables from content/archaeology/discoveries.json.
+
+    Expected structure:
+        content/archaeology/
+        └── discoveries.json   # Array of discovery objects
+
+    Gracefully skips if the file does not exist.
+    """
+    arch_dir = ROOT / 'content' / 'archaeology'
+    path = arch_dir / 'discoveries.json'
+    if not path.exists():
+        return None  # signal: file not present
+
+    discoveries = _load_json(path)
+    disc_count = 0
+    link_count = 0
+
+    for d in discoveries:
+        cur.execute(
+            'INSERT INTO archaeological_discoveries '
+            '(id, name, category, date_range, location, significance, '
+            'description, image_url, source, display_order) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            (d['id'], d['name'], d['category'], d.get('date_range'),
+             d.get('location'), d['significance'], d['description'],
+             d.get('image_url'), d.get('source'),
+             d.get('display_order', 0))
+        )
+        disc_count += 1
+
+        # Verse links
+        for v in d.get('verse_links', []):
+            cur.execute(
+                'INSERT INTO archaeology_verse_links '
+                '(discovery_id, verse_ref, relevance) VALUES (?, ?, ?)',
+                (d['id'], v['verse_ref'], v.get('relevance'))
+            )
+            link_count += 1
+
+    # Rebuild FTS index
+    cur.execute("INSERT INTO archaeology_fts(archaeology_fts) VALUES('rebuild')")
+
+    return disc_count, link_count
+
+
+def populate_historical_interpretations(cur):
+    """Populate historical interpretations tables from content/historical_interpretations/.
+
+    Expected directory structure:
+        content/historical_interpretations/
+        ├── eras.json              # Array of {id, name, date_range, description, display_order}
+        └── interpretations/
+            ├── john_3_16.json     # Interpretations keyed by verse ref
+            └── ...
+
+    Gracefully skips if the directory does not exist.
+    """
+    interp_dir = ROOT / 'content' / 'historical_interpretations'
+    if not interp_dir.is_dir():
+        return None  # signal: directory not present
+
+    era_count = 0
+    interp_count = 0
+
+    # 1. Load eras
+    eras_path = interp_dir / 'eras.json'
+    if eras_path.exists():
+        eras_data = _load_json(eras_path)
+        for era in eras_data:
+            cur.execute(
+                'INSERT INTO interpretation_eras '
+                '(id, name, date_range, description, display_order) '
+                'VALUES (?, ?, ?, ?, ?)',
+                (era['id'], era['name'], era['date_range'],
+                 era['description'], era['display_order'])
+            )
+            era_count += 1
+
+    # 2. Load individual interpretation files
+    interps_dir = interp_dir / 'interpretations'
+    if interps_dir.is_dir():
+        for json_file in sorted(interps_dir.glob('*.json')):
+            entries = _load_json(json_file)
+            if isinstance(entries, dict):
+                entries = [entries]
+            for entry in entries:
+                cur.execute(
+                    'INSERT INTO historical_interpretations '
+                    '(id, verse_ref, era, era_label, author, author_dates, '
+                    'source_title, source_date, interpretation, context, '
+                    'display_order) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                    (entry['id'], entry['verse_ref'], entry['era'],
+                     entry['era_label'], entry['author'],
+                     entry.get('author_dates'), entry['source_title'],
+                     entry.get('source_date'), entry['interpretation'],
+                     entry.get('context'), entry.get('display_order', 0))
+                )
+                interp_count += 1
+
+    return era_count, interp_count
+
+
+def populate_grammar_articles(cur):
+    """Populate grammar_articles from content/grammar/articles.json.
+
+    Gracefully skips if the file does not exist yet (content will be
+    authored incrementally).
+    """
+    grammar_dir = ROOT / 'content' / 'grammar'
+    path = grammar_dir / 'articles.json'
+    if not path.exists():
+        print("  [SKIP] grammar/articles.json not found")
+        return 0
+    data = _load_json(path)
+    if not isinstance(data, list):
+        print("  [WARN] grammar/articles.json is not a list, skipping")
+        return 0
+    n = 0
+    for entry in data:
+        # Validate required fields
+        required = ('id', 'title', 'language', 'category', 'summary', 'body')
+        if not all(entry.get(k) for k in required):
+            print(f"  [WARN] grammar article missing required fields: {entry.get('id', '?')}")
+            continue
+        cur.execute(
+            'INSERT OR IGNORE INTO grammar_articles '
+            '(id, title, language, category, summary, body, '
+            'examples_json, related_articles_json, display_order) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            (entry['id'], entry['title'], entry['language'],
+             entry['category'], entry['summary'], entry['body'],
+             _json_str(entry['examples']) if entry.get('examples') else None,
+             _json_str(entry['related_articles']) if entry.get('related_articles') else None,
+             entry.get('display_order', 0))
+        )
+        n += 1
+    return n
+
+
 def populate_content_library(cur):
     """Extract content library entries from chapter JSONs.
 
@@ -1757,6 +2062,33 @@ def main():
         print(f"  [OK] life_topic_verses: {verses} rows")
         print(f"  [OK] life_topic_scholars: {scholars} rows")
         print(f"  [OK] life_topic_related: {related} rows")
+
+    result = populate_hermeneutic_lenses(cur)
+    if result is None:
+        print("  [SKIP] hermeneutic_lenses: content/hermeneutic_lenses/ not found")
+    else:
+        lenses, contents = result
+        print(f"  [OK] hermeneutic_lenses: {lenses} rows")
+        print(f"  [OK] chapter_lens_content: {contents} rows")
+
+    result = populate_archaeology(cur)
+    if result is None:
+        print("  [SKIP] archaeology: content/archaeology/discoveries.json not found")
+    else:
+        discs, links = result
+        print(f"  [OK] archaeological_discoveries: {discs} rows")
+        print(f"  [OK] archaeology_verse_links: {links} rows")
+
+    result = populate_historical_interpretations(cur)
+    if result is None:
+        print("  [SKIP] historical_interpretations: content/historical_interpretations/ not found")
+    else:
+        era_ct, interp_ct = result
+        print(f"  [OK] interpretation_eras: {era_ct} rows")
+        print(f"  [OK] historical_interpretations: {interp_ct} rows")
+
+    n = populate_grammar_articles(cur)
+    print(f"  [OK] grammar_articles: {n} rows")
 
     n = compute_difficulty(cur)
     print(f"  [OK] difficulty scores: {n} chapters rated")

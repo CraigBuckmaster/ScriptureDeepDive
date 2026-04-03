@@ -78,6 +78,13 @@ export type ExploreStackParamList = {
   DebateDetail: { topicId: string };
   LifeTopics: undefined;
   LifeTopicDetail: { topicId: string };
+  LensBrowse: undefined;
+  ArchaeologyBrowse: undefined;
+  ArchaeologyDetail: { discoveryId: string };
+  TimeTravelBrowse: undefined;
+  TimeTravelDetail: { verseRef: string };
+  GrammarBrowse: undefined;
+  GrammarArticle: { articleId: string };
   ThreadBrowse: undefined;
   ThreadDetail: { threadId: string };
   ContentLibrary: undefined;

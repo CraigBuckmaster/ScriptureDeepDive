@@ -6,7 +6,7 @@
  *   const { base } = useTheme();  // theme-aware colors
  */
 
-export { panels, scholars, eras, eraNames, eraPillLabels, categoryColors, categories, severity, families, prophecyCategories, roles, testament, timelineSvg } from './colors';
+export { panels, scholars, eras, eraNames, eraPillLabels, categoryColors, categories, severity, families, prophecyCategories, roles, testament, timelineSvg, churchEras, churchEraLabels } from './colors';
 export type { PanelColors } from './colors';
 export { fontFamily, typography, scaledTypography } from './typography';
 export type { TypographyPreset } from './typography';

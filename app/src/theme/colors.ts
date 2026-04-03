@@ -257,3 +257,19 @@ export const timelineSvg = {
   axis: '#3a2808',
   tick: '#5a4a28',
 } as const;
+
+// ── Church History Era Colors (Time-Travel Reader) ────────────
+
+export const churchEras: Record<string, string> = {
+  patristic: '#7a5c8a',
+  medieval: '#5a7a5a',
+  reformation: '#8a6a3a',
+  modern: '#4a6a8a',
+} as const;
+
+export const churchEraLabels: Record<string, string> = {
+  patristic: 'Patristic',
+  medieval: 'Medieval',
+  reformation: 'Reformation',
+  modern: 'Modern',
+} as const;

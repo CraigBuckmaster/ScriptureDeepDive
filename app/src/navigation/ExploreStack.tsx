@@ -28,6 +28,13 @@ import DebateBrowseScreen from '../screens/DebateBrowseScreen';
 import DebateDetailScreen from '../screens/DebateDetailScreen';
 import LifeTopicsScreen from '../screens/LifeTopicsScreen';
 import LifeTopicDetailScreen from '../screens/LifeTopicDetailScreen';
+import LensBrowseScreen from '../screens/LensBrowseScreen';
+import ArchaeologyBrowseScreen from '../screens/ArchaeologyBrowseScreen';
+import ArchaeologyDetailScreen from '../screens/ArchaeologyDetailScreen';
+import TimeTravelBrowseScreen from '../screens/TimeTravelBrowseScreen';
+import TimeTravelDetailScreen from '../screens/TimeTravelDetailScreen';
+import GrammarBrowseScreen from '../screens/GrammarBrowseScreen';
+import GrammarArticleScreen from '../screens/GrammarArticleScreen';
 import ThreadBrowseScreen from '../screens/ThreadBrowseScreen';
 import ThreadDetailScreen from '../screens/ThreadDetailScreen';
 import ChapterScreen from '../screens/ChapterScreen';
@@ -76,6 +83,13 @@ export function ExploreStack() {
       <Stack.Screen name="DebateDetail" component={DebateDetailScreen} />
       <Stack.Screen name="LifeTopics" component={LifeTopicsScreen} />
       <Stack.Screen name="LifeTopicDetail" component={LifeTopicDetailScreen} />
+      <Stack.Screen name="LensBrowse" component={LensBrowseScreen} />
+      <Stack.Screen name="ArchaeologyBrowse" component={ArchaeologyBrowseScreen} />
+      <Stack.Screen name="ArchaeologyDetail" component={ArchaeologyDetailScreen} />
+      <Stack.Screen name="TimeTravelBrowse" component={TimeTravelBrowseScreen} />
+      <Stack.Screen name="TimeTravelDetail" component={TimeTravelDetailScreen} />
+      <Stack.Screen name="GrammarBrowse" component={GrammarBrowseScreen} />
+      <Stack.Screen name="GrammarArticle" component={GrammarArticleScreen} />
       <Stack.Screen name="ThreadBrowse" component={ThreadBrowseScreen} />
       <Stack.Screen name="ThreadDetail" component={ThreadDetailScreen} />
       <Stack.Screen name="Chapter" component={ChapterScreen} />

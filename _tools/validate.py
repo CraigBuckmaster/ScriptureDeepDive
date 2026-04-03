@@ -342,6 +342,25 @@ def main():
 
         print(f"  topics: {len(topic_files)}")
 
+    # ── 7. Archaeological Evidence ──
+    arch_path = CONTENT / 'archaeology' / 'discoveries.json'
+    if arch_path.exists():
+        print("\n--- 7. ARCHAEOLOGICAL EVIDENCE ---")
+        arch_data = json.loads(arch_path.read_text())
+        check("archaeology discoveries.json is list", isinstance(arch_data, list))
+        discovery_ids = set()
+        for i, d in enumerate(arch_data):
+            for key in ('id', 'name', 'category', 'significance', 'description'):
+                check(f"discovery [{i}] has '{key}'", key in d,
+                      f"discovery {d.get('id', f'index {i}')} missing '{key}'")
+            if 'id' in d:
+                discovery_ids.add(d['id'])
+            # Verse links validation
+            for j, v in enumerate(d.get('verse_links', [])):
+                check(f"discovery {d.get('id','?')} verse_link [{j}] has 'verse_ref'",
+                      'verse_ref' in v, f"missing 'verse_ref'")
+        print(f"  discoveries: {len(arch_data)}")
+
     # Greek lexicon
     gl_path = META / 'lexicon-greek.json'
     if gl_path.exists():
