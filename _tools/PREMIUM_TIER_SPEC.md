@@ -2,9 +2,9 @@
 
 ## "Taste the Depth" Monetization Strategy
 
-> **Pricing:** $4.99/mo or $39.99/yr or $99.99 lifetime
+> **Pricing:** $4.99/mo or $39.99/yr or $149.99 lifetime
 > **Target conversion:** 5-8% at maturity
-> **Philosophy:** Every feature is discoverable. Depth is premium. The free tier is the best free Bible study app on the market. The premium tier is for users who want every perspective and every tool.
+> **Philosophy:** Gate tools, not content. Every scholar is free. Every feature is discoverable. Depth tools are premium. The free tier is the best free Bible study app on the market.
 > **No free trial.** The free tier sells itself. Users upgrade when they're ready.
 
 ---
@@ -25,7 +25,7 @@ Everything below is permanently free and unrestricted:
 - Historical context panel (`hist`) — always free
 - Hebrew/Greek summary panel (`heb`) — always free
 - Cross-references panel (`cross`) — basic panel, always free
-- **2 curated scholar panels** — selected per section for tradition diversity (see §3)
+- **ALL 54 scholar panels** — every commentator, every section, always free
 - All non-scholar panels: `ctx`, `trans`, `src`, `rec`, `lit`, `themes`
 
 **Chapter-Level Panels:**
@@ -39,12 +39,12 @@ Everything below is permanently free and unrestricted:
 - Word studies — browse all 43, see basic definition + transliteration + key verse
 - Prophecy chains — browse all 50, see chain overview + link count
 - Concept explorer — browse all 20 themes, see description + key verses
-- Difficult passages — browse all 53, see the question + consensus summary
+- Difficult passages — browse all 53, see question + consensus + full scholarly responses
 
 **Personal:**
 - Notes with tags (unlimited)
 - Bookmarks (unlimited)
-- 3 highlight colors
+- All highlight colors
 - Full-text search (FTS5)
 - 5 reading plans
 - Basic TTS with speed control
@@ -60,26 +60,21 @@ Everything below is permanently free and unrestricted:
 
 ### COMPANION+ — "Every Perspective, Every Tool"
 
-#### A. Scholar Unlocks (the conversion engine)
+#### A. Scholar Access (FREE — revised April 2026)
 
-**All 54 scholars unlocked** across every section in every chapter.
+**All 54 scholars are free** across every section in every chapter. This is a strategic
+decision: scholars are CS's #1 differentiator and the reason users stay. Locking them
+behind a paywall would reduce engagement and word-of-mouth growth. Instead, premium
+gates depth *tools* that power users want.
 
-This is the single highest-conversion gate because:
-- It's visible in every reading session (scholar buttons with lock icons)
-- It creates desire at the moment of engagement ("What does Sarna say about this?")
-- It monetizes CS's #1 differentiator
-- It scales automatically — every new scholar panel added to content is automatically premium
-
-Free users see: 2 unlocked scholar buttons + N locked buttons with 🔒 icon and tradition label.
-Tapping a locked button shows a contextual upgrade prompt (see §4).
-
-#### B. Deep Study Tools
+#### B. Deep Study Tools (the conversion engine)
 
 | Feature | Free Experience | Premium Experience |
 |---|---|---|
 | **Interlinear Hebrew/Greek** | Not available (Hebrew summary panel is free) | Tap any verse → word-level view with morphology, parsing, lemma, transliteration, linked to word studies |
 | **Concordance search** | Not available | Search by Strong's number across entire Bible |
 | **Cross-reference threading** | Basic cross-refs panel (free) | 31 thematic threads with full passage context and navigation |
+| **Content library** | Browse titles | Full article text for all 269 entries (chiasm, discourse, background) |
 | **Discourse analysis** | Not available | Argument flow visualization for Romans, Galatians, Ephesians, Hebrews, 1 Corinthians |
 
 #### C. Explorer Depth
@@ -107,7 +102,7 @@ Tapping a locked button shows a contextual upgrade prompt (see §4).
 
 | Feature | Free | Premium |
 |---|---|---|
-| Highlight colors | 3 colors | Unlimited colors + collections |
+| Highlight colors | All colors | Collections + organization tools |
 | Reading plans | 5 plans | All 10 plans |
 | TTS | Basic voice, speed control | Premium voices (AWS Polly / ElevenLabs) |
 | Cross-device sync | None (device-local) | Supabase-backed cloud sync, offline-first |
@@ -135,7 +130,7 @@ All figures net of Apple's 30% commission. Uses CloudFlare R2 hybrid infrastruct
 |---|---|---|---|
 | Monthly ($4.99) | $4.99 | $3.49 | $3.49 |
 | Annual ($39.99) | $39.99 | $27.99 | $2.33 |
-| Lifetime ($99.99) | $99.99 | $69.99 | one-time |
+| Lifetime ($149.99) | $149.99 | $104.99 | one-time |
 
 ### Year 1 Revenue (Moderate Scenario)
 
@@ -163,60 +158,15 @@ All figures net of Apple's 30% commission. Uses CloudFlare R2 hybrid infrastruct
 
 ---
 
-## 3. Scholar Selection Algorithm
+## 3. Scholar Access (Revised April 2026)
 
-### Goal
-Select 2 scholars per section for the free tier that maximize:
-1. **Tradition diversity** — always one evangelical + one from a different family
-2. **Relevance** — choose scholars who have substantive commentary for that specific section
-3. **Consistency** — users should see familiar scholar names within a book
+**All 54 scholars are free.** No scholar selection algorithm is needed.
 
-### Tradition Families
-
-| Family | Scholars (examples) | Priority |
-|---|---|---|
-| Evangelical | MacArthur, NET Bible | High (always one) |
-| Reformed | Calvin | Medium |
-| Jewish Academic | Sarna, Alter | High (diversity signal) |
-| Literary-Critical | Alter | High (diversity signal) |
-| Patristic | Chrysostom | Medium |
-| Pentecostal | Various | Lower |
-
-### Selection Logic
-
-```
-function selectFreeScholars(section):
-  available = section.panels.keys().filter(isScholarPanel)
-  
-  if available.length <= 2:
-    return available  // all free if only 1-2 scholars
-  
-  // Always include one evangelical
-  evangelical = pickFirst(available, ['mac', 'net', 'netbible'])
-  remaining = available.without(evangelical)
-  
-  // Pick the most diverse second scholar
-  diverse = pickFirst(remaining, ['sarna', 'alter', 'calvin', 'chrysostom', 'robertson'])
-  
-  return [evangelical, diverse]
-```
-
-### Data Implementation
-
-Two options:
-
-**Option A: Algorithmic (recommended)**
-- No content changes needed
-- Add `FREE_SCHOLAR_PRIORITY` config to `config.py`
-- PanelRenderer applies the algorithm at render time
-- Scholar selection is consistent per section but computed, not stored
-
-**Option B: Explicit per-section**
-- Add `free_scholars: ["mac", "sarna"]` to each section in chapter JSON
-- Total control over curation but requires updating all 2,764 sections
-- Better for hand-tuned quality, worse for maintainability
-
-**Recommendation:** Start with Option A (algorithmic). Override with Option B for specific high-traffic chapters (Genesis 1, John 1, Romans 8, Psalm 23, etc.) where hand-curation matters most. This gives you 95% coverage algorithmically and 5% hand-tuned for the chapters that matter.
+The original spec gated scholars (2 free per section, rest locked). This was revised because:
+1. Scholars are CS's #1 differentiator — locking them reduces engagement
+2. Word-of-mouth growth depends on users experiencing the full scholar breadth
+3. Premium revenue is better served by gating *depth tools* (interlinear, concordance, content library, threading) that power users want
+4. The free tier must be the best free Bible study app — that requires all scholars
 
 ---
 
@@ -230,27 +180,7 @@ Two options:
 
 ### Prompt Variants
 
-**A. Locked Scholar Tap**
-Trigger: User taps a locked scholar panel button.
-```
-┌─────────────────────────────────────────┐
-│  🔒  Unlock All 54 Scholars            │
-│                                         │
-│  See what [Scholar Name] and 52 other   │
-│  commentators say about this passage.   │
-│  Evangelical, Reformed, Jewish,         │
-│  Critical, and Patristic perspectives.  │
-│                                         │
-│  ┌─────────────────────────────────┐    │
-│  │  Companion+ · $4.99/mo          │    │
-│  └─────────────────────────────────┘    │
-│  $39.99/yr (save 33%) · $99.99 lifetime │
-│                                         │
-│  [Restore Purchase]         [Not Now]   │
-└─────────────────────────────────────────┘
-```
-
-**B. Premium Feature Tap (Interlinear, Chiasm, etc.)**
+**A. Premium Feature Tap (Interlinear, Concordance, Content Library, etc.)**
 Trigger: User taps a premium feature entry point.
 ```
 ┌─────────────────────────────────────────┐
@@ -308,7 +238,6 @@ Trigger: User tries to use a 4th highlight color, or taps sync/export.
 ```
 
 ### Upgrade Prompt Frequency Limits
-- **Scholar lock tap:** show every time (it's user-initiated)
 - **Feature lock tap:** show every time (user-initiated)
 - **Proactive prompt (no tap):** maximum once per session, only after 3+ chapters read. Shows as a subtle banner, not a modal.
 
@@ -326,20 +255,19 @@ Accessible from: Settings → "Companion+" row, any upgrade prompt "Learn more" 
 │                                         │
 │  ┌─────────┐ ┌─────────┐ ┌──────────┐  │
 │  │ Monthly  │ │ Annual  │ │ Lifetime │  │
-│  │ $4.99/mo │ │$39.99/yr│ │  $99.99  │  │
+│  │ $4.99/mo │ │$39.99/yr│ │ $149.99  │  │
 │  │          │ │SAVE 33% │ │ ONE TIME │  │
 │  └─────────┘ └─────────┘ └──────────┘  │
 │                                         │
-│  ✓ All 54 scholars unlocked             │
 │  ✓ Interlinear Hebrew & Greek           │
 │  ✓ Concordance search                   │
 │  ✓ Cross-reference threading            │
-│  ✓ Difficult passages (full responses)  │
+│  ✓ Content library (269 articles)       │
+│  ✓ Word study depth + lexicon           │
+│  ✓ Prophecy chain detail                │
+│  ✓ Concept explorer depth               │
 │  ✓ Chiasm visualization                 │
 │  ✓ Discourse analysis                   │
-│  ✓ Genre-aware study guidance           │
-│  ✓ Study coaching mode                  │
-│  ✓ Unlimited highlights + collections   │
 │  ✓ All 10 reading plans                 │
 │  ✓ Cross-device sync                    │
 │  ✓ Premium TTS voices                   │
@@ -378,15 +306,13 @@ Accessible from: Settings → "Companion+" row, any upgrade prompt "Learn more" 
 | `app/src/components/UpgradePrompt.tsx` | Reusable modal with variant props (scholar, feature, personal) |
 | `app/src/screens/SubscriptionScreen.tsx` | Full subscription screen with plan selection |
 | `app/src/hooks/usePremium.ts` | `const { isPremium, showUpgrade } = usePremium()` — used everywhere |
-| `app/src/utils/scholarSelection.ts` | `selectFreeScholars(sectionPanels)` algorithm |
 
 ### Modified Files
 
 | File | Change |
 |---|---|
-| `PanelRenderer.tsx` | Check `isPremium` before rendering scholar panels. Show lock icon on locked buttons. |
-| `PanelButton.tsx` | Add lock icon variant. Locked buttons tap → UpgradePrompt instead of panel toggle. |
-| `HighlightColorPicker.tsx` | Limit to 3 colors for free. 4th color tap → UpgradePrompt. |
+| `PanelRenderer.tsx` | Check `isPremium` before rendering premium depth features (interlinear, concordance, content library). |
+| `PanelButton.tsx` | Add lock icon variant for premium depth tools. |
 | `SettingsScreen.tsx` | Add "Companion+" row with subscription status. |
 | `ExploreMenuScreen.tsx` | Mark premium Explore features with subtle ✦ indicator. |
 | `DifficultPassageDetailScreen.tsx` | Gate scholarly responses behind premium check. |
@@ -421,7 +347,7 @@ If specific chapters need hand-curated scholar pairs later, add an optional `fre
 - Create 3 subscription products in a single subscription group:
   - `companion_plus_monthly` — $4.99/mo, auto-renewing
   - `companion_plus_annual` — $39.99/yr, auto-renewing
-  - `companion_plus_lifetime` — $99.99, non-consumable (one-time purchase)
+  - `companion_plus_lifetime` — $149.99, non-consumable (one-time purchase)
 - Set annual as the "featured" plan (Apple highlights this in the subscription sheet)
 - Enable "Offer Codes" for promotional distribution
 
@@ -449,7 +375,6 @@ Once analytics are implemented (from the App Analysis recommendations):
 | Overall free → premium rate | Top-line conversion | 5-8% at 90 days |
 | Churn rate (monthly) | Retention | <5% monthly |
 | Plan mix (monthly/annual/lifetime) | Revenue optimization | Target 25% monthly / 60% annual / 15% lifetime |
-| Most-tapped locked scholar | Content signal | Informs which scholars to prioritize in content |
 | Most-tapped premium feature | Feature signal | Informs development priority |
 | Cancellation reason | Retention improvement | Survey on cancel |
 
@@ -461,8 +386,7 @@ Once analytics are implemented (from the App Analysis recommendations):
 |---|---|---|
 | 1 | Before premium features ship | Build `premiumStore`, `usePremium`, `UpgradePrompt` infrastructure |
 | 2 | Before premium features ship | Integrate RevenueCat SDK, configure products in App Store Connect + Play Console |
-| 3 | Before premium features ship | Implement scholar selection algorithm in `scholarSelection.ts` |
-| 4 | With premium features | Add lock icons to PanelButton, gate scholars in PanelRenderer |
+| 3 | With premium features | Add lock icons to PanelButton for depth tools |
 | 5 | With premium features | Gate each premium feature (interlinear, concordance, etc.) as they ship |
 | 6 | With premium features | Build SubscriptionScreen |
 | 7 | With premium features | Add Companion+ row to SettingsScreen |

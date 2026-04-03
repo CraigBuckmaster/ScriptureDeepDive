@@ -38,58 +38,52 @@ Token needs `repo` + `read:project` + `write:project` scopes to manage the board
 
 All 66 books live. All 23 deep study feature phases shipped. Theme system (Dark/Sepia/Light/System) live across all files.
 
-### Kanban — Active Feature Plans (Backlog)
+### Feature Roadmap (19 features)
 
-| Issue | Feature | Status | Priority | Size |
-|-------|---------|--------|----------|------|
-| [#56](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/56) | Scholar Debate Mode | Backlog | P1 | L |
-| [#65](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/65) | Cross-Device Sync (A7) | Backlog | P1 | XL |
-| [#66](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/66) | Premium TTS | Backlog | P1 | L |
-| [#67](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/67) | Greek & Hebrew Grammar Reference (A10) | Backlog | P2 | L |
+The April 2026 strategy session produced a 19-feature roadmap in two tiers:
 
-Each issue contains a **complete dev plan** with session breakdowns, file inventories, schemas, and test plans. Read the issue body before starting work.
+**Gap Closure (A1–A10)** — features competitors have that CS doesn't:
+- A1. Full Lexicon Integration (Thayer/BDB) — #68
+- A2. Cross-Device Sync — #65
+- A3. Premium TTS — #66
+- A4. Bible Dictionaries (Easton's) — #69
+- A5. Greek & Hebrew Grammar Reference — #67
+- A6. PDF Study Export
+- A7. Verse Image Cards
+- A8. Expand Gospel Harmony to ~220 pericopes — #97
+- A9. Topical Index (topics.json + screens) — content in #50-55
+- A10. Scholar Debate Mode — #56, #58, #59
 
-### Kanban — Content Generation Stories (Backlog)
+**Blue Ocean (B1–B9)** — features no competitor has:
+- B1. Study Coaching Mode (shipped in Phase 22)
+- B2. Passage DNA Fingerprint — #98 (DONE)
+- B3. Prayer Prompts — #99 (content), #100 (UI)
+- B4. Chapter Difficulty Rating — #101 (DONE)
+- B5. Study Session Replay — #102
+- B6. Archaeological Evidence Layer — #103 (content), #104 (UI)
+- B7. Hermeneutic Lens Switcher — #105
+- B8. Time-Travel Reader — #106
+- B9. AI "What Would [Scholar] Say?" — #107
 
-| Issue | Task | Status |
-|-------|------|--------|
-| [#50](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/50) | Theology + End Times topics (~41 entries) | **DONE** (In Review) |
-| [#51](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/51) | Character + Sin + Identity topics (~60 entries) | Backlog — **NEXT** |
-| [#52](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/52) | Relationships + Worship + Church topics (~55 entries) | Backlog |
-| [#53](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/53) | Christian Living + Creation topics (~40 entries) | Backlog |
-| [#54](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/54) | validate_sqlite.py topics count validation | Backlog |
-| [#55](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/55) | Auto-generate relevant_chapters_json from theme panel data | Backlog |
+Dev plans exist as GitHub issues for A1-A5, A8-A10 with session breakdowns.
 
-### Topical Index Content Status
+### Pricing Strategy (Revised April 2026)
 
-`content/meta/topics.json` exists with **41 topics** (27 theology + 14 eschatology, 343 KJV verses). No DB table or UI infrastructure yet — the A9 screens/hooks/components have not been built. Content generation is proceeding ahead of infrastructure.
-
-**Next content story (#51)** adds ~60 entries across Character, Sin, and Identity categories. Read the issue body for the full topic list and format spec.
-
-### Other Active Work
-
-| Item | Status |
-|------|--------|
-| Phase 24 — Content Library screen | In progress (Claude Code) |
-| Phase 24E — Content Library enrichment | **COMPLETE** (269 entries) |
-
-### Remaining Feature Work
-
-| Item | Description | Blocked by |
-|------|-------------|------------|
-| Phase P1 | Premium store (RevenueCat, UpgradePrompt, SubscriptionScreen) | Translation licensing |
-| Phase P2 | Gate wiring (scholar locks, feature gates, explore depth) | Phase P1 |
-| Phase 15 | AI-Powered Q&A | DEFERRED |
+- **$4.99/mo · $39.99/yr · $149.99 lifetime**
+- **ALL 54 scholars are FREE** — gate tools, not content
+- All highlight colors FREE, difficult passage responses FREE
+- Premium gates: interlinear, concordance, content library depth, cross-ref threading, prophecy chain detail, concept explorer depth, word study depth, cloud sync, premium TTS, PDF export
+- Full spec: `_tools/PREMIUM_TIER_SPEC.md`
 
 ### Architecture Debt
 
 | Batch | Description | Status |
 |-------|-------------|--------|
-| T6 | Theme legacy cleanup (remove static base export) | Planned |
-| 7 | Inline style migration (~277 instances) | Planned |
-| 8A | Test foundation (111 suites, 711 tests) | **COMPLETE** |
-| 8B | CI/CD pipeline (GitHub Actions) | Planned |
-| 8C | Branch protection + PR workflow | Planned |
+| T6 | Theme legacy cleanup (remove static base export) | **DONE** |
+| 7 | Inline style migration (298→153 instances) | **DONE** (top 13 files migrated) |
+| 8A | Test foundation (111 suites, 711 tests) | **DONE** |
+| 8B | CI/CD content pipeline (GitHub Actions) | **DONE** |
+| 8C | Branch protection + PR workflow | Needs manual GitHub Settings config |
 
 ### Content Debt
 
@@ -98,26 +92,46 @@ Each issue contains a **complete dev plan** with session breakdowns, file invent
 | Kings/Chronicles MacArthur enrichment | ~112 chapters |
 | ~134 Psalms without timeline links | No natural narrative anchors |
 | Thin panel enrichment (Batch 6) | ~259 panels |
+| Study coaching content backfill | 0/1,189 chapters have coaching data |
 
 ### Recently Completed
 
 | Item | Date | Scope |
 |------|------|-------|
-| **Topical Index: Theology + Eschatology** | April 2026 | 41 topics, 109 subtopics, 343 KJV verses in `topics.json` |
-| **Feature plans created** | April 2026 | Premium TTS, Cross-Device Sync, Scholar Debate Mode — full dev plans in GitHub issues |
-| **Kanban board integrated** | April 2026 | All feature plans + content stories on Companion Study Kanban with status/priority/size |
-| **Isaiah fully enriched** | April 2026 | All 66 chapters, 132 sections, 756 section panels |
-| **Psalms 116-150 enrichment** | April 2026 | 35 psalms, 70 sections — cross + hist panels added |
+| **Passage DNA Fingerprint (#98)** | April 2026 | useChapterFingerprint hook + ChapterFingerprint SVG bar chart in ChapterScreen |
+| **Chapter Difficulty Rating (#101)** | April 2026 | Percentile-based scoring in build_sqlite.py + DifficultyBadge in ChapterListScreen |
+| **Inline style migration (#92)** | April 2026 | 13 files, 145 inline styles → StyleSheet.create() |
+| **Content pipeline CI (#96)** | April 2026 | content-pipeline.yml validates JSON + builds SQLite on PRs |
+| **Tree polish Phase 2 (#91)** | April 2026 | Link glow trails, round caps, dashed spouse connectors |
+| **Theme T6 cleanup (#89)** | April 2026 | Removed static base export, all files use useTheme() hook |
+| **Topics FTS fix** | April 2026 | Changed topics_fts to contentless FTS (`content=''`) |
 
 ---
 
 ## What's Next
 
-**If doing content work:** Pick up **#51** (Character + Sin + Identity topics, ~60 entries). Move it to In Progress on the kanban, generate topics into `content/meta/topics.json` (append to existing 41), commit, push, move to In Review. Then #52, #53.
+### If doing feature code
+Read the full dev plan in the GitHub issue body. Key features ready for development:
+- **#56 Scholar Debate Mode** (3 sessions — #58, #59 are session 2 & 3)
+- **#69 Bible Dictionaries** (Easton's ~3,900 entries)
+- **#68 Full Lexicon Integration** (Thayer/BDB, premium)
+- **#100 Prayer Prompt Card UI** (depends on #99 content existing)
 
-**If doing feature code:** Read the full dev plan in the issue body for whichever feature is being started (#56 Scholar Debate Mode, #65 Cross-Device Sync, or #66 Premium TTS). Move the issue to In Progress. Follow the session breakdown in the plan.
+### If doing content work
+- **#99** — Prayer prompt content for 66 book ch1s
+- **#97** — Expand Gospel Harmony from 91 to ~220 pericopes
+- **#94** — Kings/Chronicles MacArthur enrichment
+- **#60-64** — Debate enrichment batches (5 batches, ~200 topics total)
+- **#51-53** — Topical index content batches
 
-**If doing architecture:** Batch 8B (CI/CD via GitHub Actions) or Batch 7 (inline styles, 277 remaining).
+### If doing architecture
+- **Inline style migration** — 153 instances remain across smaller files
+- **#93 Branch protection** — needs manual GitHub Settings configuration (see issue comment for steps)
+
+### Blocked / Deferred
+- **#86/#87** — Premium store infrastructure (P1/P2) — blocked on translation licensing (#88)
+- **#105-107** — Blue ocean features — deferred, depend on other infrastructure
+- **#65** — Cross-device sync — depends on premium infrastructure
 
 ---
 
@@ -125,16 +139,16 @@ Each issue contains a **complete dev plan** with session breakdowns, file invent
 
 | File | Purpose |
 |------|---------|
-| `content/meta/topics.json` | Topical index content (41 entries, growing) |
+| `_tools/PREMIUM_TIER_SPEC.md` | Premium tier pricing ($149.99 lifetime), gating strategy, wireframes |
 | `_tools/DEEP_STUDY_FEATURES_PLAN.md` | Active phases (24, P1, P2) + completed phase summary |
 | `_tools/COMPLETED_PHASES_REFERENCE.md` | Data shapes for all shipped phases (0–23) |
 | `_tools/CONTENT_LIBRARY_ENRICHMENT_PLAN.md` | Phase 24E: 9 enrichment batches with copyright guardrails |
 | `_tools/SYNC_ARCHITECTURE.md` | User accounts & cloud sync architecture (predates the full plan in #65) |
 | `_tools/ARCH_PLAN.md` | Architecture batches 7, 8A-C (remaining) |
-| `_tools/THEME_PLAN.md` | Theme architecture reference + T6 remaining |
-| `_tools/PREMIUM_TIER_SPEC.md` | Premium tier pricing, gating, wireframes |
+| `_tools/THEME_PLAN.md` | Theme architecture reference |
 | `_tools/DEV_GUIDE.md` | Conventions, pipeline, content standards |
 | `_tools/db_version.json` | Single source of truth for DB version |
+| `content/meta/topics.json` | Topical index content (41 entries, growing) |
 
 ---
 
