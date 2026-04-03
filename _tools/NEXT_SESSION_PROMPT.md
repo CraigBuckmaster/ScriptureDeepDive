@@ -57,47 +57,45 @@ Each issue contains a **complete dev plan** with session breakdowns, file invent
 | [#51](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/51) | Character + Sin + Identity topics (~57 entries) | **DONE** |
 | [#52](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/52) | Relationships + Worship + Church topics (~52 entries) | **DONE** |
 | [#53](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/53) | Christian Living + Creation topics (~37 entries) | **DONE** |
-| [#54](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/54) | validate_sqlite.py topics count validation | Backlog |
-| [#55](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/55) | Auto-generate relevant_chapters_json from theme panel data | Backlog |
 
 ### Topical Index Content Status
 
 `content/meta/topics.json` has **197 topics** across 10 categories (theology: 28, eschatology: 14, character: 25, sin: 20, identity: 15, relationships: 20, worship: 15, church: 20, living: 30, creation: 10). All four content stories (#50–#53) are **COMPLETE**. No DB table or UI infrastructure yet — the A9 screens/hooks/components have not been built.
 
-**Next topical index work:** #54 (validate_sqlite.py topics count validation) or #55 (auto-generate relevant_chapters_json from theme panel data). Or begin A9 UI infrastructure.
+**Next topical index work:** A9 UI infrastructure (screens, hooks, components for browsing the 197 topics in-app).
 
 ### Other Active Work
 
-| Item | Status |
-|------|--------|
-| Phase 24 — Content Library screen | In progress (Claude Code) |
-| Phase 24E — Content Library enrichment | **COMPLETE** (269 entries) |
+| Item | Issue | Status |
+|------|-------|--------|
+| Phase 24 — Content Library screen | [#109](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/109) | In progress (Claude Code) |
+| Phase 24E — Content Library enrichment | — | **COMPLETE** (269 entries) |
 
 ### Remaining Feature Work
 
-| Item | Description | Blocked by |
-|------|-------------|------------|
-| Phase P1 | Premium store (RevenueCat, UpgradePrompt, SubscriptionScreen) | Translation licensing |
-| Phase P2 | Gate wiring (scholar locks, feature gates, explore depth) | Phase P1 |
-| Phase 15 | AI-Powered Q&A | DEFERRED |
+| Item | Issue | Description | Blocked by |
+|------|-------|-------------|------------|
+| Phase P1 | [#86](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/86) | Premium store (RevenueCat, UpgradePrompt, SubscriptionScreen) | Translation licensing ([#88](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/88)) |
+| Phase P2 | [#87](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/87) | Gate wiring (scholar locks, feature gates, explore depth) | Phase P1 |
+| Phase 15 | [#113](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/113) | AI-Powered Q&A | DEFERRED |
 
 ### Architecture Debt
 
-| Batch | Description | Status |
-|-------|-------------|--------|
-| T6 | Theme legacy cleanup (remove static base export) | Planned |
-| 7 | Inline style migration (~277 instances) | Planned |
-| 8A | Test foundation (111 suites, 711 tests) | **COMPLETE** |
-| 8B | CI/CD pipeline (GitHub Actions) | Planned |
-| 8C | Branch protection + PR workflow | Planned |
+| Batch | Issue | Description | Status |
+|-------|-------|-------------|--------|
+| T6 | [#110](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/110) | Theme legacy cleanup (remove static base export) | Backlog |
+| 7 | [#111](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/111) | Inline style migration (~277 instances) | Backlog |
+| 8A | — | Test foundation (111 suites, 711 tests) | **COMPLETE** |
+| 8B | [#112](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/112) | CI/CD pipeline (GitHub Actions) | Backlog |
+| 8C | [#93](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/93) | Branch protection + PR workflow | Backlog |
 
 ### Content Debt
 
-| Debt | Scope |
-|------|-------|
-| Kings/Chronicles MacArthur enrichment | ~112 chapters |
-| ~134 Psalms without timeline links | No natural narrative anchors |
-| Thin panel enrichment (Batch 6) | ~259 panels |
+| Debt | Issue | Scope |
+|------|-------|-------|
+| Kings/Chronicles MacArthur enrichment | [#94](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/94) | ~112 chapters |
+| Psalms without timeline links | [#114](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/114) | ~134 chapters, no natural narrative anchors |
+| Thin panel enrichment (Batch 6) | [#115](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/115) | ~259 panels |
 
 ### Recently Completed
 
@@ -116,11 +114,11 @@ Each issue contains a **complete dev plan** with session breakdowns, file invent
 
 ## What's Next
 
-**If doing content work:** All four topical index content stories (#50–#53) are complete. Remaining content work: #54 (topics count validation in validate_sqlite.py), #55 (auto-generate relevant_chapters_json), Kings/Chronicles MacArthur enrichment (~112 chapters), or thin panel enrichment Batch 6 (~259 panels).
+**If doing content work:** All four topical index content stories (#50–#53) are complete. Remaining content debt is tracked: #94 (Kings/Chronicles MacArthur, ~112ch), #114 (Psalms timeline links, ~134ch), #115 (thin panel enrichment Batch 6, ~259 panels).
 
 **If doing feature code:** Read the full dev plan in the issue body for whichever feature is being started (#56 Scholar Debate Mode, #65 Cross-Device Sync, or #66 Premium TTS). Move the issue to In Progress. Follow the session breakdown in the plan.
 
-**If doing architecture:** Batch 8B (CI/CD via GitHub Actions) or Batch 7 (inline styles, 277 remaining).
+**If doing architecture:** #112 (Batch 8B — CI/CD via GitHub Actions), #111 (Batch 7 — inline styles, ~277 remaining), or #110 (T6 — theme legacy cleanup).
 
 ---
 
