@@ -1461,8 +1461,8 @@
       10
     ],
     "passage": "Genesis 10",
-    "question": "Nimrod: Hero or Tyrant?",
-    "context": "",
+    "question": "Is Nimrod presented as a heroic founder or as a tyrannical empire-builder?",
+    "context": "Nimrod is described as 'a mighty hunter before the LORD' (Gen 10:9) whose kingdom begins at Babel, Erech, Akkad, and Calneh. The phrase 'before the LORD' is ambiguous — it could mean 'with God's approval' or 'in defiance of God.' His connection to Babel links him to the Tower narrative (Gen 11), casting a potentially negative shadow over his achievements. Jewish tradition (Targum, Midrash) consistently portrays Nimrod as a tyrant who led the rebellion at Babel.",
     "positions": [
       {
         "id": "heroic-figure",
@@ -1471,36 +1471,58 @@
         "scholar_ids": [],
         "proponents": "Cassuto, Sarna",
         "argument": "Nimrod is presented as the first great builder of civilisation — cities, hunting, the Mesopotamian empire. He is not explicitly condemned in the text; \"before the LORD\" is a positive assessment.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "'Mighty hunter before the LORD' sounds like divine approval; gibbōr ('mighty one') is used positively elsewhere (Judg 6:12); the city-founding role parallels other honored ANE figures; the text does not explicitly condemn him.",
+        "weaknesses": "The Babel connection (10:10) links him to the tower rebellion; empire-building in Genesis is consistently problematic; Jewish tradition unanimously views him negatively; 'before the LORD' may be ironic.",
+        "key_verses": [
+          "Genesis 10:8-9",
+          "Genesis 10:10-12"
+        ]
       },
       {
         "id": "proto-tyrant-prefiguring-babel",
         "label": "Proto-tyrant prefiguring Babel",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter"
+        ],
         "proponents": "Hamilton, Mathews, Waltke",
         "argument": "Nimrod's kingdom begins at Babel and extends to Nineveh — both later enemies of God's people. The \"mighty hunter\" may allude to hunting men (tyranny) rather than animals. The positive surface reading conceals a negative typological function: Nimrod is the first of a line of Babylonian-Assyrian oppressors.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "His kingdom 'begins at Babel' (10:10), directly connecting him to the judgment narrative of 11:1-9; gibbōr can mean 'warrior-tyrant'; Micah 5:6 calls Assyria 'the land of Nimrod' as a term of oppression; Jewish tradition consistently interprets him as a rebel against God.",
+        "weaknesses": "The text does not explicitly condemn Nimrod; reading tyranny into 'mighty hunter' may over-interpret; the negative Nimrod tradition develops in later Jewish literature, not in Genesis itself.",
+        "key_verses": [
+          "Genesis 10:8-10",
+          "Genesis 11:1-4",
+          "Micah 5:6"
+        ]
       },
       {
         "id": "ambiguous",
         "label": "Ambiguous",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Alter, Longman",
         "argument": "The text is deliberately ambiguous. Nimrod is impressive and powerful — the narrator admires his achievement while the reader familiar with Israel's history reads the Babel-Nineveh connection ominously.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The narrator deliberately withholds moral judgment; Hebrew narrative characteristically leaves evaluation to the reader; the ambiguity may be the point — power and achievement are morally complex; both positive and negative readings have ancient support.",
+        "weaknesses": "Readers want a clear verdict; some argue the narrator's silence is itself a form of judgment; ambiguity can seem like scholarly evasion.",
+        "key_verses": [
+          "Genesis 10:8-12"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The narrator's tone is genuinely ambiguous. The descriptors 'mighty hunter' and 'man of renown' sound admiring, but the Babel connection and the empire-building motif in Genesis carry negative freight. Most scholars see deliberate ambiguity — the narrator presents a figure who embodies the dangerous allure of imperial power. The name itself may derive from the Hebrew mārad ('to rebel'), though this etymology is disputed.",
+    "related_passages": [
+      "Genesis 10:8-12",
+      "Genesis 11:1-9",
+      "Micah 5:6"
+    ],
+    "tags": [
+      "nimrod",
+      "babel",
+      "empire",
+      "genesis-10"
+    ]
   },
   {
     "id": "genesis-1-11-primeval-history-and-historical-narrative",
@@ -1511,19 +1533,26 @@
       11
     ],
     "passage": "Genesis 11",
-    "question": "Genesis 1-11: Primeval History and Historical Narrative",
-    "context": "",
+    "question": "Should Genesis 1-11 be read as historical narrative, myth/legend, or theological narrative with a historical core?",
+    "context": "Genesis 1-11 (the 'Primeval History') covers creation, fall, flood, and Babel. Its genre has been debated since the patristic era. The material shares significant parallels with ANE creation and flood myths (Enuma Elish, Atrahasis, Gilgamesh), contains miraculous events, and uses literary patterns that differ from the patriarchal narratives of chapters 12-50. Yet the text presents itself as continuous with the historical narrative that follows — the same genealogical links connect Adam to Abraham.",
     "positions": [
       {
         "id": "historical-narrative-throughout",
         "label": "Historical narrative throughout",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Mathews, Collins, Wenham",
         "argument": "Genesis 1-11 is intended as historical narrative — the author presents these events as real history, which the genealogies (connecting Adam to Abraham) confirm. The genre is \"primeval history\" — history of a different kind than what follows, but still history.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The genealogies connect Adam to Abraham without a genre break; the NT treats Adam, Noah, and the flood as historical (Luke 3:34-38; Rom 5:12-21; 2 Pet 3:5-7); the text presents itself as continuous narrative; maintaining historicity preserves the foundation for original sin and redemption.",
+        "weaknesses": "The ANE parallels suggest a literary genre that ancient readers did not equate with modern 'history'; the talking serpent, tree of life, and cherubim with flaming swords suggest elevated prose, not reportage; archaeological and geological evidence creates tensions with a purely historical reading.",
+        "key_verses": [
+          "Genesis 1:1",
+          "Genesis 5:1",
+          "Luke 3:34-38",
+          "Romans 5:12"
+        ]
       },
       {
         "id": "myth-legend-in-chs-1-11-history-from-ch-",
@@ -1532,25 +1561,48 @@
         "scholar_ids": [],
         "proponents": "von Rad, Brueggemann",
         "argument": "Genesis 1-11 is \"primeval history\" in the form of myth/legend — theological reflection on universal human experience using ancient narrative conventions. Chapter 12 marks the transition to historical narrative with the call of Abraham.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The ANE parallels are extensive and demonstrate that Genesis 1-11 operates within a recognized literary tradition; the literary features (puns, symbolic numbers, chiastic structures) mark it as different from the patriarchal narratives; a genre shift at chapter 12 is widely recognized.",
+        "weaknesses": "Genesis provides no internal genre signal at 12:1; the genealogies (chs. 5, 10, 11) create seamless continuity; calling Genesis 1-11 'myth' in any sense is problematic for the NT's treatment of these events; the term 'myth' is loaded and misleading.",
+        "key_verses": [
+          "Genesis 1:1-2:3",
+          "Genesis 11:10-26",
+          "Genesis 12:1-3"
+        ]
       },
       {
         "id": "theological-narrative-with-historical-co",
         "label": "Theological narrative with historical core",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke",
+          "sarna"
+        ],
         "proponents": "Longman, Enns, Sparks",
         "argument": "Genesis 1-11 uses ancient Near Eastern literary conventions (similar to surrounding literature) to convey theological truths. Whether it is \"historical\" in the modern sense is less important than whether it is true.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Honors both the literary artistry and the historical claims; recognizes that ANE historiography used narrative conventions unfamiliar to modern readers; preserves the theological truth (creation, fall, judgment, grace) without requiring every detail to be literal; respects the text's own genre signals.",
+        "weaknesses": "The boundary between 'historical core' and 'theological elaboration' is subjective; may appear to pick and choose what is historical; both strict literalists and full mythologists find this position unsatisfying.",
+        "key_verses": [
+          "Genesis 1:1",
+          "Genesis 2:4",
+          "Genesis 12:1"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The sharp division between 'myth' (chs. 1-11) and 'history' (chs. 12-50) is increasingly questioned. Even scholars who emphasize the ANE parallels recognize that Genesis demythologizes its sources — removing polytheism, cosmic conflict, and capricious deities. The theological-narrative-with-historical-core view is gaining ground, acknowledging both the text's literary artistry and its claim to describe real events in the real world. The key insight is that ancient categories of 'history' and 'narrative' do not map neatly onto modern ones.",
+    "related_passages": [
+      "Genesis 1:1-11:26",
+      "Genesis 12:1-3",
+      "Luke 3:34-38",
+      "Romans 5:12-14",
+      "2 Peter 3:5-7"
+    ],
+    "tags": [
+      "primeval-history",
+      "genre",
+      "historicity",
+      "genesis-1-11",
+      "ane"
+    ]
   },
   {
     "id": "historical-and-literary-status-of-the-tower-narrative",
@@ -1561,46 +1613,73 @@
       11
     ],
     "passage": "Genesis 11",
-    "question": "Historical and Literary Status of the Tower Narrative",
-    "context": "",
+    "question": "Is the Tower of Babel narrative (Gen 11:1-9) a historical account, an etiological legend, or a theological polemic?",
+    "context": "The Tower of Babel narrative explains the origin of linguistic diversity and the dispersion of peoples. The tower is widely associated with Mesopotamian ziggurats, particularly the Etemenanki in Babylon. The narrative contains wordplay (Babel/bālal = 'confuse'), etiological function (explaining language diversity), and theological polemic (human hubris vs. divine authority). Whether the narrative reports a specific historical event or uses narrative art to convey theological truth is debated.",
     "positions": [
       {
         "id": "historical-geographical",
         "label": "Historical-geographical",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Speiser, Wenham, Sarna",
         "argument": "The city-tower description matches Mesopotamian ziggurats. Plausible historical memory of early Mesopotamian urbanisation and the cultural prestige of Babylon.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The Mesopotamian setting is archaeologically supported; ziggurats were real structures; the narrative's geographical references are accurate; the tower may refer to the historical Etemenanki; language diversity is a real phenomenon requiring explanation.",
+        "weaknesses": "Language diversity developed over millennia, not from a single event; the narrative contains wordplay and literary features suggesting artful composition; no archaeological evidence for a single language-confusion event.",
+        "key_verses": [
+          "Genesis 11:1-4",
+          "Genesis 11:8-9"
+        ]
       },
       {
         "id": "aetiological",
         "label": "Aetiological",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter"
+        ],
         "proponents": "Gunkel, von Rad",
         "argument": "An etiology explaining language diversity and the origins of Babel/Babylon. Historical kernel shaped as theological reflection on hubris.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The narrative explicitly explains the origin of language diversity (11:9); the name-etiology (Babel/bālal) is a recognized literary form; etiological narratives are common in Genesis (naming stories, origin of customs); the primary function is explanatory.",
+        "weaknesses": "Reducing the narrative to 'just' an etiology undervalues its theological content; the narrative makes claims about divine action, not merely about origins; ancient readers likely understood it as more than an origin story.",
+        "key_verses": [
+          "Genesis 11:7-9"
+        ]
       },
       {
         "id": "theological-polemic",
         "label": "Theological polemic",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Sarna, Hamilton, Walton",
         "argument": "Structured as counterpoint to Babylonian pride. Bab-il = \"gate of God\"; the narrator's bavel = \"confusion.\" Complete theological inversion.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The narrative critiques Mesopotamian tower-building culture from a Yahwistic perspective; the ironic reversal — God must 'come down' to see the puny tower — is brilliant theological commentary; the dispersion is not punishment but God's sovereign redistribution; the narrative prepares for Abraham's election.",
+        "weaknesses": "The polemic reading may overemphasize one dimension at the expense of historical and etiological elements; the narrative does seem to describe an event, not just make a theological argument; polemic readings can be reductive.",
+        "key_verses": [
+          "Genesis 11:4-7",
+          "Genesis 12:1-3",
+          "Deuteronomy 32:8"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Most scholars recognize multiple dimensions: the narrative contains genuine historical memory (ziggurats, Mesopotamian setting), etiological function (explaining language diversity), and theological polemic (human ambition vs. divine purpose). These functions are not mutually exclusive — ANE narratives regularly combined historical reference with theological commentary. The narrative functions as the climax of the primeval history, explaining why God must choose one family (Abraham) to bless all nations.",
+    "related_passages": [
+      "Genesis 11:1-9",
+      "Genesis 10:25",
+      "Genesis 10:32",
+      "Deuteronomy 32:8",
+      "Acts 2:1-11"
+    ],
+    "tags": [
+      "babel",
+      "language",
+      "ziggurat",
+      "genesis-11",
+      "etiology"
+    ]
   },
   {
     "id": "the-abrahamic-covenant-conditional-or-unconditional",
@@ -1611,19 +1690,25 @@
       12
     ],
     "passage": "Genesis 12",
-    "question": "The Abrahamic Covenant: Conditional or Unconditional?",
-    "context": "",
+    "question": "Is God's covenant with Abraham unconditional (based solely on divine promise) or conditional (requiring Abraham's obedience)?",
+    "context": "God's covenant with Abraham is foundational to biblical theology. In Genesis 15, God alone passes between the animal pieces — a self-maledictory oath making the covenant unilateral. Yet in Genesis 17, circumcision is required as a covenant sign, and in Genesis 22:16-18, God swears 'because you have done this.' The relationship between promise and obedience is central to Paul's argument in Galatians 3 and Romans 4. Covenant theology and dispensationalism differ significantly on this question.",
     "positions": [
       {
         "id": "unconditional",
         "label": "Unconditional",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Sarna, Wenham, Kaiser",
         "argument": "The covenant of Genesis 12 and 15 is made unilaterally by God — Abraham is asleep in 15:12-17 when God alone passes between the pieces. The promises do not depend on Abraham's performance but on divine fidelity.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "In Genesis 15, God alone passes between the pieces — Abraham is asleep; the promise precedes any obedience; Paul argues in Romans 4 and Galatians 3 that the promise was received by faith, not works; God's covenant faithfulness does not depend on human performance.",
+        "weaknesses": "Genesis 17:1 ('Walk before me faithfully') and 22:16-18 ('because you have done this') introduce conditional language; the covenant can be broken by individuals (17:14 — 'cut off'); purely unconditional reading may understate the role of obedience.",
+        "key_verses": [
+          "Genesis 15:7-21",
+          "Romans 4:1-5",
+          "Galatians 3:16-18"
+        ]
       },
       {
         "id": "conditional",
@@ -1632,25 +1717,51 @@
         "scholar_ids": [],
         "proponents": "Eichrodt, McCarthy",
         "argument": "Genesis 17 and 22 both add conditions (circumcision; obedience). The promise is confirmed through obedience (22:16-18: \"because you have obeyed me\"). The covenant has both unconditional and conditional dimensions.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Genesis 17:1 demands faithful living; 22:16-18 links blessings to obedience; circumcision is a required covenant sign (17:14 — failure means being 'cut off'); the covenant pattern in the ANE always involves stipulations; James 2:21 says Abraham was 'justified by works.'",
+        "weaknesses": "Paul explicitly argues against conditionality in Romans 4 and Galatians 3; the Genesis 15 ceremony makes God the sole oath-taker; if the covenant is conditional, Abraham's failures (lying about Sarah, Hagar) should have voided it.",
+        "key_verses": [
+          "Genesis 17:1-14",
+          "Genesis 22:16-18",
+          "James 2:21-24"
+        ]
       },
       {
         "id": "two-stage",
         "label": "Two-stage",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke",
+          "calvin"
+        ],
         "proponents": "Robertson, Dumbrell",
         "argument": "The 12/15 covenant establishes the promise unconditionally; the 17/22 passages add conditions for participation/realisation, not for the promise itself. The land will be given unconditionally; who enters it depends on covenant faithfulness.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Recognizes that the covenant is unconditional in its foundation (Gen 15) but includes conditional elements in its administration (Gen 17, 22); parallels the new covenant — salvation is unconditional gift, but sanctification involves obedience; holds together the Paul-James tension.",
+        "weaknesses": "May seem like a theological compromise rather than an exegetical conclusion; the text does not explicitly distinguish between foundational and administrative stages; both sides may find this position unsatisfying.",
+        "key_verses": [
+          "Genesis 15:6",
+          "Genesis 17:1-2",
+          "Genesis 22:16-18",
+          "Romans 4:3"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The covenant is fundamentally unconditional in its establishment (Gen 15 — God alone swears) but includes conditional elements in its administration (Gen 17 — circumcision required; Gen 22 — obedience invoked). The two-stage view captures this best: the promise is irrevocable (Rom 11:29), but participation in its blessings involves faithful response. Paul uses Abraham's faith (not works) as the paradigm for justification, while James uses Abraham's obedience as the paradigm for living faith.",
+    "related_passages": [
+      "Genesis 12:1-3",
+      "Genesis 15:1-21",
+      "Genesis 17:1-14",
+      "Genesis 22:15-18",
+      "Romans 4:1-25",
+      "Galatians 3:6-18",
+      "James 2:21-24"
+    ],
+    "tags": [
+      "covenant",
+      "abraham",
+      "unconditional",
+      "faith",
+      "obedience"
+    ]
   },
   {
     "id": "lot-righteous-or-compromised",
@@ -1700,19 +1811,23 @@
       14
     ],
     "passage": "Genesis 14",
-    "question": "Melchizedek: Historical Figure, Type, or Angel?",
-    "context": "",
+    "question": "Was Melchizedek a historical Canaanite king-priest, a pre-incarnate appearance of Christ, or a literary type?",
+    "context": "Melchizedek appears without genealogy in Genesis 14:18-20 as 'king of Salem' and 'priest of God Most High' (El Elyon). He blesses Abraham and receives a tithe. Psalm 110:4 declares the Messiah 'a priest forever in the order of Melchizedek.' Hebrews 7 extensively argues that Melchizedek's priesthood is superior to the Levitical order because it is without genealogical beginning or end. The mysterious absence of genealogy in Genesis has led some to propose a christophany, while others see deliberate literary technique.",
     "positions": [
       {
         "id": "historical-king-priest",
         "label": "Historical king-priest",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Sarna, Wenham, Waltke",
         "argument": "Melchizedek is a historical figure — the king-priest of pre-Israelite Jerusalem. The chapter is a historical narrative. His priesthood and blessing of Abraham are real historical events that have later theological significance.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The narrative presents him as a historical figure — king of Salem, priest of El Elyon; Jerusalem's pre-Israelite religious significance is archaeologically supported; El Elyon was a known Canaanite divine title; the simplest reading of Genesis 14.",
+        "weaknesses": "Does not explain the significance Hebrews 7 attaches to the absence of genealogy; a mere historical figure seems insufficient for the typological weight placed on him; the text's deliberate omission of genealogy suggests something more than ordinary biographical reporting.",
+        "key_verses": [
+          "Genesis 14:18-20"
+        ]
       },
       {
         "id": "christophany-pre-incarnate-christ",
@@ -1721,25 +1836,46 @@
         "scholar_ids": [],
         "proponents": "Some Church Fathers, Calvin partially",
         "argument": "The complete absence of genealogy and the exalted priestly role suggest a pre-incarnate appearance of Christ. Ambrose and others read the bread and wine as foreshadowing the Eucharist administered by Christ.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Explains the absence of genealogy, beginning, and end (Heb 7:3); some church fathers (Ambrose, Ephrem) proposed this; the combination of king and priest uniquely fits Christ; accounts for the mysterious dignity of the figure.",
+        "weaknesses": "Hebrews 7:3 says Melchizedek was 'made like' (aphomoiōmenos) the Son of God — the comparison goes from Melchizedek to Christ, implying they are distinct; if Melchizedek is Christ, the type-antitype argument of Hebrews collapses; Abraham's tithe to Christ incarnate creates theological difficulties.",
+        "key_verses": [
+          "Hebrews 7:3",
+          "Hebrews 7:15-17"
+        ]
       },
       {
         "id": "typological-figure",
         "label": "Typological figure",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "calvin"
+        ],
         "proponents": "Hebrews 5-7, most evangelical scholars",
         "argument": "Melchizedek is a historical figure whose particular features (priesthood, righteousness, peace, no recorded genealogy) make him a type of Christ's eternal priesthood. He is not Christ himself but the pattern Christ fulfils.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Hebrews explicitly uses Melchizedek as a type of Christ's eternal priesthood; the absence of genealogy is a literary device — the narrator deliberately omits it to create the typological portrait; Melchizedek was historical but is presented in a way that prefigures Christ; this is the dominant reading in Christian interpretation.",
+        "weaknesses": "Requires the narrator to have deliberately omitted genealogical information, which is unusual for Genesis; the typological reading depends on Hebrews — Genesis alone does not clearly establish the typology; some find the type-argument circular.",
+        "key_verses": [
+          "Genesis 14:18-20",
+          "Psalm 110:4",
+          "Hebrews 7:1-3"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The historical reading is the simplest: Melchizedek was a Canaanite priest-king of Jerusalem (Salem) who worshiped the true God under the name El Elyon. The typological reading (dominant in Hebrews) uses Melchizedek's literary portrayal — no genealogy mentioned — as a type of Christ's eternal priesthood. The christophany reading, while held by some church fathers, reads too much into the text's silence. Hebrews 7:3 says Melchizedek was 'made like' the Son of God — the comparison points from Melchizedek to Christ, not from Christ to Melchizedek.",
+    "related_passages": [
+      "Genesis 14:18-20",
+      "Psalm 110:4",
+      "Hebrews 5:6-10",
+      "Hebrews 7:1-28"
+    ],
+    "tags": [
+      "melchizedek",
+      "priesthood",
+      "christology",
+      "type",
+      "genesis-14"
+    ]
   },
   {
     "id": "the-400-years-of-oppression-15-13-chronology",
@@ -1828,30 +1964,42 @@
       17
     ],
     "passage": "Genesis 17",
-    "question": "Circumcision: Sign, Seal, or Sacrament?",
-    "context": "",
+    "question": "Is circumcision merely a physical covenant sign, a seal of righteousness analogous to baptism, or a physical requirement with no spiritual parallel?",
+    "context": "God commands Abraham to circumcise every male as a sign of the covenant (Gen 17:10-14). Paul calls circumcision 'a seal of the righteousness that [Abraham] had by faith' (Rom 4:11). This language has fueled the paedobaptist argument that baptism replaces circumcision as the covenant sign (Col 2:11-12). Credobaptists argue that circumcision and baptism are fundamentally different — one marks ethnic identity, the other marks personal faith.",
     "positions": [
       {
         "id": "covenant-sign",
         "label": "Covenant sign",
         "tradition_family": "reformed",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Wenham, Sarna, Waltke",
         "argument": "Circumcision is the covenant sign — the external mark in the flesh that identifies covenant membership. It does not confer salvation but marks those within the covenant community.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Genesis 17:11 explicitly calls circumcision 'the sign of the covenant'; it marks membership in the Abrahamic community; Deuteronomy 10:16 and Jeremiah 4:4 show circumcision had spiritual significance (circumcision of the heart); the sign points to a spiritual reality.",
+        "weaknesses": "If circumcision is merely a sign, it should have no intrinsic spiritual efficacy — yet Paul calls it a 'seal'; the relationship between physical sign and spiritual reality is left undefined; does not resolve the baptism question.",
+        "key_verses": [
+          "Genesis 17:11",
+          "Deuteronomy 10:16",
+          "Jeremiah 4:4"
+        ]
       },
       {
         "id": "covenant-seal-analogous-to-baptism",
         "label": "Covenant seal (analogous to baptism)",
         "tradition_family": "reformed",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "calvin"
+        ],
         "proponents": "Calvin, Westminster Confession, Rom 4:11",
         "argument": "Paul calls circumcision \"a seal of the righteousness that Abraham had by faith\" (Rom 4:11). Calvin and the Reformed tradition read it as analogous to NT baptism — sign and seal of the covenant of grace.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Paul calls circumcision 'a seal of the righteousness' Abraham had by faith (Rom 4:11); Colossians 2:11-12 explicitly links circumcision and baptism; covenant theology argues that baptism replaces circumcision as the sign of the new covenant; both are administered to the covenant community, including children.",
+        "weaknesses": "Abraham was circumcised after believing — but infants are baptized before believing; circumcision marked ethnic Israel, baptism marks the believing community; the NT never explicitly commands infant baptism; Galatians 5:6 and 1 Cor 7:19 relativize circumcision entirely.",
+        "key_verses": [
+          "Romans 4:11",
+          "Colossians 2:11-12",
+          "Acts 2:38-39"
+        ]
       },
       {
         "id": "physical-only-requirement",
@@ -1860,14 +2008,31 @@
         "scholar_ids": [],
         "proponents": "Dispensational readings",
         "argument": "Circumcision belongs to the Mosaic/Abrahamic covenant and has no direct continuity with the new covenant. Baptism is not the equivalent; circumcision was a national marker for ethnic Israel.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Circumcision was a physical marker of Abrahamic descent, not a sacrament; Paul argues in Galatians that circumcision is now irrelevant ('neither circumcision nor uncircumcision has any value,' Gal 5:6); the old covenant sign does not transfer to the new covenant; baptism is for believers, not infants.",
+        "weaknesses": "Paul still calls circumcision a 'seal' in Rom 4:11, indicating more than mere physical marking; Deuteronomy's 'circumcise your hearts' shows it always had spiritual significance; reducing it to 'physical only' may understate its theological depth.",
+        "key_verses": [
+          "Galatians 5:6",
+          "1 Corinthians 7:19",
+          "Philippians 3:3"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The debate is primarily between Reformed paedobaptists and Baptist credobaptists. Both agree that circumcision was a covenant sign with spiritual significance (Deut 10:16 — 'circumcise your hearts'). They disagree on whether the sign transfers to a new administration (baptism of infants) or is replaced by a fundamentally different sign (baptism of believers). The exegetical question is whether Paul's 'seal' language (Rom 4:11) and the Colossians 2:11-12 parallel establish a formal sign-succession.",
+    "related_passages": [
+      "Genesis 17:9-14",
+      "Romans 4:11",
+      "Colossians 2:11-12",
+      "Deuteronomy 10:16",
+      "Galatians 5:6",
+      "1 Corinthians 7:19"
+    ],
+    "tags": [
+      "circumcision",
+      "baptism",
+      "covenant",
+      "sacrament",
+      "genesis-17"
+    ]
   },
   {
     "id": "abraham-s-intercession-bargaining-with-god",
@@ -1917,19 +2082,25 @@
       19
     ],
     "passage": "Genesis 19",
-    "question": "The Sin of Sodom: Sexual or Social?",
-    "context": "",
+    "question": "Was the sin of Sodom primarily homosexual behavior, violent inhospitality, or a comprehensive catalogue of wickedness?",
+    "context": "The men of Sodom demand that Lot hand over his guests so they can 'know' them (Gen 19:5). The verb yāda' ('to know') can mean either sexual intercourse or social acquaintance, though the sexual meaning is strongly supported by the context (Lot offers his daughters as a substitute, 19:8). Later biblical references identify Sodom's sin variously: Ezekiel 16:49-50 emphasizes pride, excess, and neglect of the poor; Jude 7 cites 'sexual immorality and going after strange flesh.' The debate has intensified with modern discussions of homosexuality and biblical ethics.",
     "positions": [
       {
         "id": "sexual-homosexual",
         "label": "Sexual/homosexual",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Traditional interpretation, Wenham, Waltke",
         "argument": "The mob demands to \"know\" (yada) the men sexually (v.5). The same verb is used in v.8 for the daughters \"who have not known a man.\" The sexual connotation is explicit. The sin includes attempted homosexual gang rape.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The context makes the sexual meaning of yāda' clear — Lot offers his daughters as a substitute; Jude 7 explicitly cites 'sexual immorality and going after strange flesh'; the term 'sodomy' derives from this identification; the traditional reading across Jewish, Christian, and Islamic traditions.",
+        "weaknesses": "The sin is attempted gang rape, not consensual homosexuality — the violence is central; Ezekiel 16:49-50 does not mention sexual sin; reducing Sodom's sin to homosexuality oversimplifies a text about comprehensive wickedness; the text should not be weaponized against LGBT persons.",
+        "key_verses": [
+          "Genesis 19:5-8",
+          "Jude 1:7",
+          "2 Peter 2:6-7"
+        ]
       },
       {
         "id": "inhospitality-violence",
@@ -1938,25 +2109,50 @@
         "scholar_ids": [],
         "proponents": "Bailey (1955), some scholars",
         "argument": "The verb yada (know) can mean \"become acquainted with\" (Gen 29:5). The sin is violation of hospitality norms, not sexual. Ezekiel 16:49 identifies Sodom's sin as pride, gluttony, and neglect of the poor — with no sexual reference.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Ezekiel 16:49-50 identifies pride, excess, and neglect of the poor as Sodom's sins; hospitality was the supreme virtue in ANE culture — violating guests was the ultimate social crime; yāda' can mean 'to investigate' (wanting to interrogate the strangers); Jesus uses Sodom as a metaphor for inhospitality (Matt 10:14-15).",
+        "weaknesses": "The sexual meaning of yāda' is strongly supported by the context (Lot's offer of daughters); Jude 7 explicitly mentions sexual transgression; reducing the sin to mere inhospitality underreads the text's sexual violence; few ancient readers adopted the non-sexual reading.",
+        "key_verses": [
+          "Genesis 19:1-8",
+          "Ezekiel 16:49-50",
+          "Matthew 10:14-15"
+        ]
       },
       {
         "id": "both-comprehensive",
         "label": "Both/comprehensive",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke",
+          "sarna"
+        ],
         "proponents": "Sarna, Hamilton, Jude 7",
         "argument": "Jude 7 (\"gave themselves up to sexual immorality and perversion\") confirms a sexual element. But the broader prophetic condemnation (Ezek 16:49; Isa 1:10-17; Amos 4:11) emphasises social sins. Sodom's wickedness was comprehensive.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The biblical witness presents a cumulative portrait: sexual violence (Gen 19), social injustice (Ezek 16), sexual transgression (Jude 7), and general wickedness (Isa 1:10); Sodom represents total moral collapse, not a single sin; honors the full canonical testimony.",
+        "weaknesses": "The 'comprehensive' view can seem evasive on the specific question of what the Genesis 19 narrative depicts; pastoral and ethical applications require more precision; may satisfy no one in the contemporary debate.",
+        "key_verses": [
+          "Genesis 19:1-11",
+          "Ezekiel 16:49-50",
+          "Jude 1:7",
+          "Isaiah 1:10"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The Genesis narrative itself presents the Sodomites' sin as attempted gang rape of Lot's guests — a crime of sexual violence and extreme inhospitality. Ezekiel 16:49-50 broadens the picture to include systemic injustice. Jude 7 highlights sexual transgression. Most scholars now recognize a comprehensive portrait: Sodom's sin was not reducible to a single act but represented total moral collapse — pride, cruelty, injustice, and sexual violence. The debate about its implications for modern sexual ethics involves hermeneutical questions that go beyond the Genesis text itself.",
+    "related_passages": [
+      "Genesis 19:1-11",
+      "Ezekiel 16:49-50",
+      "Jude 1:7",
+      "2 Peter 2:6-7",
+      "Isaiah 1:10",
+      "Jeremiah 23:14"
+    ],
+    "tags": [
+      "sodom",
+      "sexual-ethics",
+      "hospitality",
+      "judgment",
+      "genesis-19"
+    ]
   },
   {
     "id": "the-wife-sister-narratives-12-20-26-one-event-or-three",
@@ -1967,19 +2163,25 @@
       20
     ],
     "passage": "Genesis 20",
-    "question": "The Wife-Sister Narratives (12, 20, 26): One Event or Three?",
-    "context": "",
+    "question": "Are the three wife-sister stories (Gen 12, 20, 26) separate historical events, three versions of one event, or intentional literary repetition?",
+    "context": "Three times in Genesis a patriarch passes off his wife as his sister to a foreign king: Abraham and Sarah in Egypt (ch. 12), Abraham and Sarah with Abimelech (ch. 20), and Isaac and Rebekah with Abimelech (ch. 26). Source critics (Wellhausen, Gunkel) argued these are three versions of one event from different sources (J, E, J). Literary scholars note the deliberate variations that create a theological progression. The repetition is either a historical pattern, a source-critical artifact, or a purposeful literary technique.",
     "positions": [
       {
         "id": "three-separate-events",
         "label": "Three separate events",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Traditional, Sarna, Wenham",
         "argument": "Three separate incidents with different details (Egypt/Gerar; Abraham twice; Isaac once) involving different pharaohs/kings. Repetition of the pattern reflects the real danger of the patriarchal world for covenant women.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The text presents them as distinct events with different details (different Pharaoh/Abimelech, different locations); similar situations can recur in family patterns; Abraham's half-truth in ch. 20 (Sarah was his half-sister) adds specificity; Isaac could have repeated his father's behavior.",
+        "weaknesses": "The coincidence of three nearly identical scenarios strains credulity; the same name 'Abimelech' appears in chs. 20 and 26; the pattern is suspiciously repetitive for independent historical events.",
+        "key_verses": [
+          "Genesis 12:10-20",
+          "Genesis 20:1-18",
+          "Genesis 26:1-11"
+        ]
       },
       {
         "id": "three-versions-of-one-event",
@@ -1988,25 +2190,44 @@
         "scholar_ids": [],
         "proponents": "Source-critical (J, E, J)",
         "argument": "Classic source criticism assigns the three to different documents (J=ch.12, E=ch.20, J=ch.26). They are variants of a single event preserved in different traditions.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Source criticism identifies J (ch. 12, 26) and E (ch. 20) as parallel accounts; the basic plot is identical; this explains the repetition economically; the doublet/triplet pattern is a recognized feature of composite texts.",
+        "weaknesses": "A competent redactor would not preserve three versions of the same event without explanation; the details differ significantly (Egypt vs. Gerar, Pharaoh vs. Abimelech, Abraham vs. Isaac); source criticism is increasingly questioned as a method.",
+        "key_verses": [
+          "Genesis 12:10-20",
+          "Genesis 20:1-18"
+        ]
       },
       {
         "id": "literary-theological-repetition",
         "label": "Literary-theological repetition",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter",
+          "sarna"
+        ],
         "proponents": "Alter, Fokkelman",
         "argument": "The repetition is deliberate literary technique: the same narrative type recurs three times to establish a pattern (God protects the covenant line through human cowardice) and to show character development (or its absence).",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The repetition creates a theological pattern: each episode explores divine protection of the covenant promise despite human failure; the variations are deliberate — the progression from no rebuke (12) to divine intervention (20) to minimal danger (26) shows growing faith; Hebrew narrative uses repetition as a literary technique.",
+        "weaknesses": "This reading may over-theologize what are simply repeated traditions; the literary approach can seem to dissolve historical events into narrative patterns; some variations may be accidents of transmission, not intentional artistry.",
+        "key_verses": [
+          "Genesis 12:10-20",
+          "Genesis 20:1-18",
+          "Genesis 26:1-11"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The three-event reading struggles with the coincidence of essentially the same scenario occurring three times. The one-event reading has source-critical support but does not explain why a redactor would preserve three contradictory versions. The literary-theological reading notes a deliberate progression: in ch. 12 Abraham lies with no rebuke; in ch. 20 God intervenes and Abraham is reproved; in ch. 26 the deception is discovered before harm occurs. The repetition teaches that God protects the promise despite patriarchal failure.",
+    "related_passages": [
+      "Genesis 12:10-20",
+      "Genesis 20:1-18",
+      "Genesis 26:1-11"
+    ],
+    "tags": [
+      "wife-sister",
+      "source-criticism",
+      "literary-repetition",
+      "genesis-12"
+    ]
   },
   {
     "id": "hagar-s-expulsion-moral-problem-or-providential-design",
@@ -2056,46 +2277,83 @@
       22
     ],
     "passage": "Genesis 22",
-    "question": "The Akedah as Polemic Against Child Sacrifice",
-    "context": "",
+    "question": "Is the binding of Isaac primarily a test of Abraham's faith, a polemic against child sacrifice, or a type of Christ's sacrifice?",
+    "context": "Genesis 22 — the Akedah ('binding') — is one of the most theologically rich and emotionally intense narratives in Scripture. God commands Abraham to sacrifice Isaac, his 'only son, whom you love' (22:2). Abraham obeys, but God provides a ram as a substitute at the last moment. The narrative has been read as a supreme test of faith (Heb 11:17-19), as Israel's rejection of the Canaanite practice of child sacrifice (common in the ANE), and as a prophetic type of God offering his own Son. The three readings are not mutually exclusive.",
     "positions": [
       {
         "id": "anti-sacrifice-polemic",
         "label": "Anti-sacrifice polemic",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "von Rad, Westermann, many moderns",
         "argument": "The story's primary purpose is to establish that YHWH, unlike Molech, does not require child sacrifice. The near-sacrifice is the test; the ram-substitution is the theological conclusion: God provides a substitute.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Child sacrifice was practiced in Canaan (Lev 18:21; 2 Kgs 23:10); the narrative demonstrates that YHWH does not require child sacrifice — he provides a substitute; the ram replaces the child, establishing the substitutionary principle; the Akedah may be Israel's foundational rejection of Molech worship.",
+        "weaknesses": "The narrative's explicit purpose is testing Abraham's faith (22:1), not making a cultural polemic; the anti-sacrifice reading may reflect modern concerns more than the narrator's intent; if the primary point is anti-sacrifice, why does God command it in the first place?",
+        "key_verses": [
+          "Genesis 22:2",
+          "Genesis 22:13",
+          "Leviticus 18:21",
+          "Micah 6:7"
+        ]
       },
       {
         "id": "test-of-faith",
         "label": "Test of faith",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "calvin"
+        ],
         "proponents": "Calvin, Wenham, Hamilton, NT witness",
         "argument": "Hebrews 11:17-19 reads the Akedah as a test of resurrection faith: Abraham believed God could raise Isaac. The anti-sacrifice polemic may be a secondary function; the primary meaning is the testing and vindicating of Abrahamic faith.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The text explicitly states 'God tested Abraham' (22:1); Hebrews 11:17-19 interprets the event as Abraham's supreme act of faith; Abraham's response ('God will provide,' 22:8) demonstrates trust in God's promise; James 2:21-23 cites the Akedah as the paradigm of living faith.",
+        "weaknesses": "A God who tests faith by commanding child sacrifice raises severe moral questions; the faith reading alone does not account for the cultural context of child sacrifice; the substitutionary ram suggests more is happening than a mere test.",
+        "key_verses": [
+          "Genesis 22:1",
+          "Genesis 22:8",
+          "Hebrews 11:17-19",
+          "James 2:21-23"
+        ]
       },
       {
         "id": "typological-messianic",
         "label": "Typological/messianic",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke"
+        ],
         "proponents": "Church Fathers, Irenaeus, Origen",
         "argument": "The ram as substitute, the father-son relationship, the wood, the mountain, the three-day journey — all point forward to the cross. The Akedah is the most developed Christological type in Genesis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The echoes between Genesis 22 and the gospel are striking: 'your only son, whom you love' (cf. John 3:16); the hill of Moriah = the Temple Mount (2 Chr 3:1); Abraham says 'God himself will provide the lamb' (22:8); Romans 8:32 ('did not spare his own Son') echoes the Akedah; Isaac carries the wood as Christ carries the cross.",
+        "weaknesses": "The typological reading is theologically powerful but may not reflect the narrator's original intent; Isaac does not actually die, limiting the typological parallel; reading the NT back into Genesis risks anachronism.",
+        "key_verses": [
+          "Genesis 22:2",
+          "Genesis 22:8",
+          "Genesis 22:14",
+          "Romans 8:32",
+          "John 3:16"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "All three readings have strong support and are not mutually exclusive. The faith-test reading is the narrative's explicit framework (22:1 — 'God tested Abraham'). The anti-sacrifice polemic is supported by the cultural context (child sacrifice was practiced in Canaan and Phoenicia) and the substitutionary ram. The christological type is developed in the NT (John 3:16 echoes 'your only son'; Rom 8:32 — 'did not spare his own Son'). The narrative functions on all three levels simultaneously — personal, cultural, and prophetic.",
+    "related_passages": [
+      "Genesis 22:1-19",
+      "Hebrews 11:17-19",
+      "Romans 8:32",
+      "John 3:16",
+      "James 2:21-23",
+      "2 Chronicles 3:1"
+    ],
+    "tags": [
+      "akedah",
+      "sacrifice",
+      "faith",
+      "isaac",
+      "genesis-22",
+      "christology"
+    ]
   },
   {
     "id": "hittites-in-canaan-historical-problem",
@@ -2184,19 +2442,26 @@
       25
     ],
     "passage": "Genesis 25",
-    "question": "Romans 9 and the Jacob-Esau Election: Corporate or Individual?",
-    "context": "",
+    "question": "Does God's choice of Jacob over Esau (Rom 9:10-13) demonstrate individual predestination or corporate/national election?",
+    "context": "Paul cites Genesis 25:23 ('the older will serve the younger') and Malachi 1:2-3 ('Jacob I loved, but Esau I hated') in Romans 9:10-13 to argue that God's purposes in election stand firm. Calvinists read this as individual election to salvation — God chose Jacob and rejected Esau before birth. Arminians argue Paul is discussing national election — God chose Israel's role in redemptive history, not individuals' eternal destinies. The debate mirrors the broader Calvinist-Arminian divide on predestination.",
     "positions": [
       {
         "id": "individual-election-to-salvation",
         "label": "Individual election to salvation",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "calvin"
+        ],
         "proponents": "Augustine, Calvin, Reformed tradition",
         "argument": "Paul's use of Jacob/Esau in Rom 9:10-13 is about individual predestination to salvation. The prenatal choice establishes God's sovereign freedom in election apart from works.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Paul's language is about individuals — 'not yet born nor having done anything good or bad' (9:11); 'loved/hated' in biblical idiom means 'chosen/not chosen'; the vessels of wrath/mercy (9:22-23) describe individual destinies; the entire argument (9:6-24) concerns why some Israelites are saved and others are not.",
+        "weaknesses": "Genesis 25:23 explicitly says 'two nations...two peoples,' not two individuals; Malachi 1:2-3 addresses Israel and Edom as nations; 'the older will serve the younger' was fulfilled nationally (Israel/Edom), not in Jacob/Esau personally — Esau never served Jacob; Romans 11:25-32 envisions a corporate salvation of 'all Israel.'",
+        "key_verses": [
+          "Romans 9:10-13",
+          "Romans 9:22-23",
+          "Ephesians 1:4-5"
+        ]
       },
       {
         "id": "corporate-national-election",
@@ -2205,25 +2470,47 @@
         "scholar_ids": [],
         "proponents": "Cranfield, Dunn, Wright, many NT scholars",
         "argument": "Paul's primary reference is to the corporate election of Israel-over-Edom — the choice of Jacob's line as the covenant people. Election in Genesis 25 is about covenant headship, not necessarily eternal destiny.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The OT texts are explicitly about nations (Gen 25:23; Mal 1:2-3); Paul's argument in Romans 9-11 concerns Israel's corporate role in salvation history; the conclusion (11:25-32) is corporate — 'all Israel will be saved'; 'election' in the OT is primarily about national vocation, not individual salvation.",
+        "weaknesses": "Paul individualizes the argument — 'not yet born' (9:11) is about two specific people; the vessels-of-wrath language (9:22) is hard to read corporately; if election is only corporate, Paul's argument does not address why individual Israelites are lost.",
+        "key_verses": [
+          "Genesis 25:23",
+          "Malachi 1:2-3",
+          "Romans 11:25-32"
+        ]
       },
       {
         "id": "historical-then-typological",
         "label": "Historical then typological",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "keener"
+        ],
         "proponents": "Wenham, Hamilton, Sarna",
         "argument": "The Genesis narrative is about covenant succession, not eternal salvation. Paul draws on it for a broader argument about God's sovereign freedom in the new covenant. Both the historical and theological applications are valid.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The OT texts are historically about national election; Paul draws typological implications for individual salvation; the principle of divine sovereignty established in national election extends to individual salvation; holds together the OT context and Paul's rhetorical use.",
+        "weaknesses": "The distinction between 'historical' and 'typological' may be imposed on the text; Paul may not be making a two-level argument; this reading can appear as a compromise that satisfies neither side.",
+        "key_verses": [
+          "Romans 9:10-13",
+          "Genesis 25:23",
+          "Romans 9:19-24"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The OT contexts support a corporate reading: Genesis 25:23 is about 'two nations' and 'two peoples,' and Malachi 1:2-3 addresses Israel and Edom as nations. However, Paul's argument in Romans 9 uses individual figures (Jacob, Esau, Pharaoh) to make a point about God's sovereign freedom. The historical-then-typological reading may offer the best synthesis: the OT texts are about national destiny, but Paul draws individual implications from the principle of divine sovereignty they establish.",
+    "related_passages": [
+      "Romans 9:6-18",
+      "Genesis 25:23",
+      "Malachi 1:2-3",
+      "Romans 9:19-24",
+      "Romans 11:1-5"
+    ],
+    "tags": [
+      "election",
+      "predestination",
+      "jacob-esau",
+      "romans-9",
+      "sovereignty"
+    ]
   },
   {
     "id": "isaac-character-or-cipher",
@@ -2273,46 +2560,76 @@
       27
     ],
     "passage": "Genesis 27",
-    "question": "The Deception in Genesis 27: Moral Evaluation",
-    "context": "",
+    "question": "Is Jacob and Rebekah's deception of Isaac in Genesis 27 providentially guided, prophetically justified, or simply sinful?",
+    "context": "Rebekah and Jacob conspire to deceive the blind Isaac into giving Jacob the firstborn blessing intended for Esau. The deception involves disguise, lies ('I am Esau your firstborn,' 27:19), and manipulation. Yet the result — Jacob receiving the blessing — fulfills God's prenatal oracle ('the older will serve the younger,' 25:23). The narrative raises sharp questions about whether the end (fulfilling God's purpose) justifies the means (deception), and whether God's sovereignty encompasses human sin.",
     "positions": [
       {
         "id": "providence-through-sin",
         "label": "Providence through sin",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "calvin"
+        ],
         "proponents": "Calvin, Wenham",
         "argument": "God's purpose (the oracle of 25:23) would have been fulfilled eventually without deception. The deception was sinful; God worked through it despite, not because of, Jacob's sin. Providence uses flawed instruments.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "God's purposes are accomplished despite (not because of) the deception; Genesis 50:20 establishes the pattern — human evil, divine good; the blessing cannot be revoked, confirming God's sovereign will; the story demonstrates God working through broken vessels.",
+        "weaknesses": "May seem to minimize the sin — 'God used it' does not make it right; the narrative's consequences (exile, family destruction) suggest the deception was unnecessary; if God's will is irresistible, the deception was both sinful and superfluous.",
+        "key_verses": [
+          "Genesis 27:1-40",
+          "Genesis 50:20",
+          "Romans 8:28"
+        ]
       },
       {
         "id": "rebekah-s-prophetic-insight",
         "label": "Rebekah's prophetic insight",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter"
+        ],
         "proponents": "Some traditional readings",
         "argument": "Rebekah knew from the oracle (25:23) that Jacob was to receive the blessing. Her deception was a misguided attempt to implement divine will. The end was right; the means were wrong.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Rebekah received the oracle directly (25:23) — she knows God's will and acts to fulfill it; Isaac's attempt to bless Esau contradicts the divine word; Rebekah's initiative can be seen as faithful obedience to revelation, even if the method is flawed.",
+        "weaknesses": "Faithful ends do not justify deceitful means; Rebekah could have confronted Isaac directly with the oracle; the narrative does not present her as heroic — she uses manipulation, not prophecy.",
+        "key_verses": [
+          "Genesis 25:23",
+          "Genesis 27:5-17"
+        ]
       },
       {
         "id": "ironic-reversal",
         "label": "Ironic reversal",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Alter, Sarna",
         "argument": "The chapter is structured as a conscious reversal of Genesis 25: Esau cooking (27:5,17), a father deceived by sense rather than sight. The literary irony points to a narrative judgment without explicit authorial condemnation.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Jacob the deceiver is later deceived by Laban (29:25 — 'isn't this Rachel?' echoes 'are you really my son Esau?'); the narrative structure creates poetic justice; the wrestler at Peniel (32:22-32) transforms the deceiver into Israel; the text is morally serious about deception while affirming God's redemptive purpose.",
+        "weaknesses": "The ironic reading is literarily elegant but may understate the moral gravity; not all readers see the Laban episode as divine retribution; irony is a literary observation, not a moral evaluation.",
+        "key_verses": [
+          "Genesis 27:18-24",
+          "Genesis 29:25",
+          "Genesis 32:27-28"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Genesis presents the deception without explicit moral commentary — a characteristic of Hebrew narrative that invites reader reflection. The consequences, however, are severe: family fracture, Jacob's 20-year exile, and Laban's deception of Jacob (measure for measure). Most scholars agree that the narrative affirms God's sovereignty working through flawed human agents (cf. Gen 50:20) without endorsing the deception itself. The narrator's silence is not approval — the consequences speak volumes.",
+    "related_passages": [
+      "Genesis 25:23",
+      "Genesis 27:1-40",
+      "Genesis 29:25",
+      "Genesis 50:20",
+      "Hosea 12:3-4"
+    ],
+    "tags": [
+      "jacob",
+      "deception",
+      "blessing",
+      "ethics",
+      "genesis-27"
+    ]
   },
   {
     "id": "jacob-s-vow-28-20-22-conditional-faith-or-genuine-commitment",
@@ -2479,46 +2796,77 @@
       32
     ],
     "passage": "Genesis 32",
-    "question": "The Peniel Wrestler: Who Is He?",
-    "context": "",
+    "question": "Who is the mysterious figure who wrestles with Jacob at Peniel — an angel, a pre-incarnate Christ, or God himself?",
+    "context": "Genesis 32:22-32 describes Jacob wrestling with 'a man' through the night at the Jabbok ford. The figure cannot overpower Jacob, touches his hip socket (dislocating it), and renames him Israel ('he struggles with God'). Jacob names the place Peniel ('face of God') saying 'I saw God face to face, and yet my life was spared' (32:30). Hosea 12:3-4 identifies the opponent as both 'God' and 'the angel.' The identity of the wrestler has implications for theophany, christology, and the nature of divine encounter.",
     "positions": [
       {
         "id": "an-angel",
         "label": "An angel",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Hosea 12:4, most OT scholars",
         "argument": "Hosea identifies the wrestler as an angel (malakh). The mysterious figure is the \"angel of the LORD\" — the divine representative.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Hosea 12:4 explicitly identifies the opponent as 'the angel'; angels appear in human form throughout Genesis (18:2; 19:1); the wrestler's inability to overpower Jacob is easier to explain if he is angelic rather than divine; Jewish tradition generally identifies the figure as an angel (sometimes the angel of Esau).",
+        "weaknesses": "Jacob says he saw 'God face to face' (32:30), not an angel; the renaming to Israel ('struggles with God') implies a divine opponent; the 'angel of the LORD' in the OT often functions as a divine manifestation, blurring the angel/God distinction.",
+        "key_verses": [
+          "Genesis 32:24-30",
+          "Hosea 12:4"
+        ]
       },
       {
         "id": "pre-incarnate-christ-christophany",
         "label": "Pre-incarnate Christ / Christophany",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Most Church Fathers, Calvin, many evangelicals",
         "argument": "The wrestler has divine authority (gives a name, blesses), is called God by Jacob (v.30), and the encounter produces a permanent mark. The combination suggests the second person of the Trinity appearing before the incarnation.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The 'angel of the LORD' in OT theophanies is widely identified with the pre-incarnate Son in Christian tradition; the figure blesses and renames — divine prerogatives; the incarnation (God in human form, wrestling with humanity) finds its OT precedent here; the NT identifies Christ as the agent of OT theophanies (1 Cor 10:4; John 12:41).",
+        "weaknesses": "The text does not identify the figure as Christ; the christological reading is theological inference, not exegesis; Jewish readers saw no christophany; Hosea's 'angel' language does not necessitate a pre-incarnate Christ.",
+        "key_verses": [
+          "Genesis 32:24-30",
+          "Hosea 12:3-4",
+          "1 Corinthians 10:4"
+        ]
       },
       {
         "id": "god-himself",
         "label": "God himself",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter",
+          "calvin"
+        ],
         "proponents": "Sarna, Hamilton (possible)",
         "argument": "Jacob says \"I have seen God face to face\" and Hosea adds \"he wept and begged for his favour.\" The narrative presents this as a direct divine encounter, not merely angelic.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Jacob explicitly says 'I saw God face to face' (32:30); the name Israel means 'he struggles with God' (not 'with an angel'); the theophany tradition in Genesis regularly presents God appearing in human form (18:1); the most natural reading of the narrator's intent.",
+        "weaknesses": "The figure is initially called 'a man' (32:24), not God; the wrestler cannot overpower Jacob, which is puzzling if he is omnipotent God; 'no one has seen God and lived' (Exod 33:20) creates tension with Jacob's survival.",
+        "key_verses": [
+          "Genesis 32:28-30",
+          "Genesis 18:1-2",
+          "Judges 13:22"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The text deliberately blurs the boundaries between human, angelic, and divine. The wrestler is called 'a man' (32:24), but Jacob says he saw 'God face to face' (32:30), and the new name Israel means 'he struggles with God.' Hosea 12:3-4 calls the opponent both 'God' and 'the angel.' Most scholars recognize a theophany — God encountered in a form that is simultaneously limited (cannot overpower Jacob) and divine (renames, blesses, is identified as God). Whether this is an angel, a pre-incarnate Christ, or God in human form reflects broader theological commitments.",
+    "related_passages": [
+      "Genesis 32:22-32",
+      "Hosea 12:3-4",
+      "Genesis 16:7-13",
+      "Genesis 18:1-2",
+      "Judges 13:22"
+    ],
+    "tags": [
+      "jacob",
+      "theophany",
+      "angel",
+      "peniel",
+      "genesis-32",
+      "christophany"
+    ]
   },
   {
     "id": "is-the-jacob-esau-reconciliation-genuine",
@@ -2685,19 +3033,25 @@
       37
     ],
     "passage": "Genesis 37",
-    "question": "The Joseph Cycle: History or Novella?",
-    "context": "",
+    "question": "Is the Joseph narrative (Genesis 37-50) historical biography, a literary novella, or historically grounded literary art?",
+    "context": "The Joseph narrative is widely recognized as the most literarily sophisticated section of Genesis — extended dialogue, psychological depth, dramatic irony, and a complex multi-chapter plot. Unlike the episodic patriarchal narratives, the Joseph cycle reads like a sustained narrative. Source critics struggled to divide it into J and E strands. Literary scholars (Alter, Sternberg) have highlighted its artistry. Some Egyptologists note accurate details (titles, customs, names) supporting historicity, while others argue the Egyptian coloring is vague and could be added by a later writer.",
     "positions": [
       {
         "id": "historical-narrative",
         "label": "Historical narrative",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Kitchen, Hoffmeier, Wenham",
         "argument": "The Egyptian details (names, titles, practices) are accurate to the Second Intermediate Period or New Kingdom. The slave price (20 shekels), the titles (sar hatabbachim), the social customs — all are historically verified. The narrative has the texture of historical memory.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Egyptian details are accurate (titles like 'chief of the butlers,' embalming practices, Semitic names in Egyptian records); Psalm 105 and Acts 7 treat Joseph as historical; the genealogical framework connects Joseph to the patriarchal and Exodus narratives; no ancient reader questioned Joseph's historicity.",
+        "weaknesses": "The Egyptian details could be added by a knowledgeable later writer; the literary sophistication is unusual for historical narrative; no Egyptian record mentions Joseph by name; the narrative structure (two dreams, two imprisonments, two throne scenes) is suspiciously symmetrical.",
+        "key_verses": [
+          "Genesis 37:2",
+          "Psalm 105:16-22",
+          "Acts 7:9-16"
+        ]
       },
       {
         "id": "theological-novella",
@@ -2706,25 +3060,44 @@
         "scholar_ids": [],
         "proponents": "von Rad, Westermann, Coats",
         "argument": "The Joseph story has the literary characteristics of a Wisdom narrative or novella: psychological complexity, ironic reversals, a clear moral thesis. It may have been composed as theological literature rather than historical chronicle.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The literary artistry is exceptional — extended plot, psychological depth, dramatic irony, chiastic structure; the genre shares features with ANE wisdom novellas (Ahiqar, the Story of Sinuhe); the didactic purpose (divine providence through human suffering) is characteristic of wisdom literature; the symmetrical structure suggests composition, not reportage.",
+        "weaknesses": "Calling it a 'novella' implies fiction, which goes beyond what the literary evidence supports; the Egyptian details suggest genuine historical memory; the NT treats Joseph as historical; the term 'novella' is anachronistic for ancient literature.",
+        "key_verses": [
+          "Genesis 37:1-2",
+          "Genesis 50:20"
+        ]
       },
       {
         "id": "historically-grounded-literary-art",
         "label": "Historically grounded literary art",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter",
+          "sarna"
+        ],
         "proponents": "Sarna, Alter, Hamilton",
         "argument": "The two options are not mutually exclusive. The narrative is historically grounded (accurate Egyptian details) and literarily sophisticated. Ancient historiography was not opposed to literary artistry.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Holds together the historical and literary evidence; ancient historiography was always literary — artistry does not negate historicity; the Egyptian coloring supports historical memory while the narrative structure reflects skilled composition; this is how all ancient Near Eastern narrative works.",
+        "weaknesses": "May seem like a compromise that avoids committing to either position; the boundary between 'historically grounded' and 'literary creation' is impossible to determine precisely; both strict historicists and full novelists may find this position unsatisfying.",
+        "key_verses": [
+          "Genesis 37-50",
+          "Genesis 50:20"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The either/or framing (history or novella) is probably false. The Joseph narrative is best understood as historically grounded literary art — a real family tradition shaped by a master narrator into a theological masterpiece about divine providence. The Egyptian details (Potiphar's title, embalming practices, the famine administration) suggest genuine historical memory, while the literary artistry (the robe motif, the reversal pattern, the recognition scenes) reflects sophisticated composition. Ancient historiography was always literary art.",
+    "related_passages": [
+      "Genesis 37-50",
+      "Psalm 105:16-22",
+      "Acts 7:9-16"
+    ],
+    "tags": [
+      "joseph",
+      "genre",
+      "novella",
+      "historicity",
+      "genesis-37-50"
+    ]
   },
   {
     "id": "tamar-s-method-justified-deception-or-sin",
@@ -2891,8 +3264,8 @@
       42
     ],
     "passage": "Genesis 42",
-    "question": "Joseph's Testing: Revenge, Righteousness, or Redemption?",
-    "context": "",
+    "question": "Why does Joseph test his brothers so elaborately — is it revenge, moral testing, or providential orchestration?",
+    "context": "When Joseph's brothers come to Egypt seeking grain, Joseph recognizes them but conceals his identity. He accuses them of spying, imprisons Simeon, demands they bring Benjamin, plants his silver cup in Benjamin's sack, and threatens to enslave Benjamin. The extended testing (chs. 42-44) has puzzled readers: is Joseph taking revenge on the brothers who sold him? Is he testing whether they have repented? Or is he orchestrating a dramatic redemptive reunion? Judah's speech offering himself in Benjamin's place (44:33-34) is the climactic moment.",
     "positions": [
       {
         "id": "revenge",
@@ -2901,36 +3274,64 @@
         "scholar_ids": [],
         "proponents": "Some popular readings",
         "argument": "Joseph, now powerful, makes his brothers suffer as they made him suffer. The tests are payback dressed up as official procedure.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Joseph's actions cause real suffering to his brothers — imprisonment, anxiety, accusation; the power differential mirrors (and reverses) the original betrayal; human psychology makes revenge a natural motive; the brothers themselves interpret his actions as payback (42:21-22).",
+        "weaknesses": "Joseph weeps repeatedly (42:24; 43:30; 45:2), indicating compassion, not malice; his stated theology ('God sent me ahead of you,' 45:5-7) is incompatible with revenge; the elaborate plan makes no sense as revenge — why bring Benjamin if the goal is to punish the brothers?",
+        "key_verses": [
+          "Genesis 42:7-17",
+          "Genesis 42:21-22"
+        ]
       },
       {
         "id": "moral-testing-for-repentance",
         "label": "Moral testing for repentance",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter",
+          "sarna"
+        ],
         "proponents": "Wenham, Hamilton, Sarna, most scholars",
         "argument": "Joseph designs the tests to determine whether his brothers have changed. The cup-in-sack tests whether they will abandon Benjamin as they abandoned him. Only when Judah offers himself as substitute does Joseph know the transformation is complete.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The test is whether the brothers will abandon Benjamin (Rachel's other son) as they abandoned Joseph; Judah's self-sacrificial offer (44:33-34) proves their transformation; Joseph's plan systematically recreates the original scenario to test whether the brothers have changed; the narrative arc requires this testing for genuine reconciliation.",
+        "weaknesses": "The testing causes significant suffering to Jacob (who is not being tested); Joseph could have revealed himself earlier and spared everyone pain; the testing borders on manipulation rather than love.",
+        "key_verses": [
+          "Genesis 42:15-16",
+          "Genesis 44:33-34",
+          "Genesis 45:1-3"
+        ]
       },
       {
         "id": "providential-orchestration",
         "label": "Providential orchestration",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "waltke"
+        ],
         "proponents": "Calvin",
         "argument": "Joseph is not acting from personal revenge or even primarily from moral pedagogy — he is an instrument of God's design to bring his family to Egypt and fulfil the covenant promise. The tests are the means by which God's purpose is accomplished.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Joseph explicitly interprets the entire sequence as divine providence (45:5-8; 50:20); God's purpose — preserving the covenant family during famine — drives the narrative; the elaborate testing is part of God's plan to bring the whole family to Egypt; the reunion is staged for maximum dramatic and theological impact.",
+        "weaknesses": "The providential reading operates at the macro level but does not explain Joseph's specific choices (why frame Benjamin? why withhold identity?); attributing Joseph's psychological strategy entirely to providence may flatten his humanity; Joseph makes choices, not just enacts a divine script.",
+        "key_verses": [
+          "Genesis 45:5-8",
+          "Genesis 50:20",
+          "Psalm 105:16-22"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The narrative most likely presents moral testing — Joseph needs to know whether his brothers have changed. The key evidence: when Benjamin is threatened with slavery, will the brothers abandon him as they abandoned Joseph? Judah's self-sacrificial offer (44:33-34) proves their transformation. The revenge reading underestimates Joseph's tears (42:24; 43:30) and his stated theology (50:20). The providential reading is true at the macro level but does not explain Joseph's specific actions. The testing interpretation best accounts for both Joseph's strategy and the brothers' arc.",
+    "related_passages": [
+      "Genesis 42-44",
+      "Genesis 44:33-34",
+      "Genesis 45:1-8",
+      "Genesis 50:20"
+    ],
+    "tags": [
+      "joseph",
+      "testing",
+      "reconciliation",
+      "repentance",
+      "genesis-42-44"
+    ]
   },
   {
     "id": "the-egyptian-separation-at-table-43-32-historical-accuracy",
@@ -3175,19 +3576,24 @@
       49
     ],
     "passage": "Genesis 49",
-    "question": "Genesis 49 as the Oldest Hebrew Poetry: Form and Date",
-    "context": "",
+    "question": "Is the Blessing of Jacob (Genesis 49) ancient tribal poetry or a later composition in archaic style?",
+    "context": "Genesis 49 contains Jacob's deathbed blessings over his twelve sons, widely regarded as some of the oldest poetry in the Hebrew Bible. The language is archaic, the imagery is tribal, and many phrases are obscure. Some scholars date the core oracles to the pre-monarchic period (12th-11th century BCE) based on linguistic evidence and the tribal situation they reflect. Others argue the blessings reflect the monarchic period (Judah's prominence, Dan's role) and were composed in deliberately archaic style.",
     "positions": [
       {
         "id": "ancient-tribal-poetry-12th-11th-c-bce",
         "label": "Ancient tribal poetry (12th-11th c. BCE)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter"
+        ],
         "proponents": "Albright, Cross, Freedman",
         "argument": "The archaic grammar, poetic features, and tribal character suggest Genesis 49 preserves genuinely ancient poetry, possibly the oldest extant Hebrew poem. Comparable to Judges 5 (Deborah's song) and Deuteronomy 33 (Moses' blessing).",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The archaic Hebrew forms are linguistically consistent with early biblical poetry (cf. Judges 5); the tribal perspective predates the monarchy; several blessings reflect pre-Davidic realities (Simeon and Levi scattered, Reuben diminished); the obscurity of many phrases suggests antiquity rather than invention.",
+        "weaknesses": "The Judah oracle (49:8-12) may reflect Davidic-era theology; archaic style can be imitated; linguistic dating of Hebrew poetry is methodologically contested; some blessings may reflect knowledge of events (e.g., Dan and the Danite migration).",
+        "key_verses": [
+          "Genesis 49:1-28",
+          "Judges 5:1-31"
+        ]
       },
       {
         "id": "late-composition-in-archaic-style",
@@ -3196,25 +3602,43 @@
         "scholar_ids": [],
         "proponents": "Westermann, Gunkel",
         "argument": "The poem may have been composed later in archaic style. The content reflects tribal realities of the monarchy period rather than the pre-settlement period.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The Judah blessing (49:10 — 'the scepter shall not depart from Judah') presupposes the Davidic monarchy; deliberate archaizing is a recognized literary technique; the final form reflects a unified theological vision consistent with later composition; a later writer could gather tribal traditions and compose the collection.",
+        "weaknesses": "The linguistic archaisms are genuine, not easily imitated; many blessings do not reflect monarchic realities; the obscurity of the text argues against late composition (a later writer would be clearer); Deuteronomy 33 provides a genuine parallel of ancient tribal poetry.",
+        "key_verses": [
+          "Genesis 49:8-12",
+          "Genesis 49:10"
+        ]
       },
       {
         "id": "mosaic-era-composition",
         "label": "Mosaic-era composition",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Wenham, Hamilton, Sarna",
         "argument": "The poem is consistent with a patriarchal context in its tribal names, literary forms, and lack of reference to later historical events. The predictions are prospective, not retrospective.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The narrative places the blessings at Jacob's deathbed, and the text presents them as genuine prophecy; Moses could have transmitted or recorded the oracles; the archaic language is consistent with the Mosaic period; the traditional dating preserves the prophetic character of the blessings.",
+        "weaknesses": "The tribal situations described (Simeon and Levi scattered, Judah dominant) postdate the wilderness period; the Mosaic attribution relies on the Genesis framework rather than internal evidence; critical scholarship finds no linguistic reason to date the collection to Moses specifically.",
+        "key_verses": [
+          "Genesis 49:1-2",
+          "Genesis 49:28"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Most scholars agree that Genesis 49 contains genuinely ancient material, though the final form may incorporate later additions (especially the Judah oracle, which some date to the Davidic monarchy). The archaic language, tribal focus, and obscure imagery support an early date for at least some of the oracles. The chapter functions as both historical poetry and prophetic blessing — looking backward at tribal character and forward to tribal destiny.",
+    "related_passages": [
+      "Genesis 49:1-28",
+      "Deuteronomy 33:1-29",
+      "Judges 5:1-31"
+    ],
+    "tags": [
+      "poetry",
+      "tribal",
+      "jacob",
+      "genesis-49",
+      "dating"
+    ]
   },
   {
     "id": "genesis-50-20-and-the-theology-of-providence-a-comparison-wi",
@@ -3225,46 +3649,77 @@
       50
     ],
     "passage": "Genesis 50",
-    "question": "Genesis 50:20 and the Theology of Providence: A Comparison with the Cross",
-    "context": "",
+    "question": "Is Genesis 50:20 a paradigmatic statement of divine providence, limited to the Joseph story, or a christological pattern?",
+    "context": "Joseph's declaration — 'You intended to harm me, but God intended it for good, to accomplish what is now being done, the saving of many lives' (Gen 50:20) — is one of the most frequently cited verses on divine providence. The verse affirms both human responsibility ('you intended') and divine sovereignty ('God intended'), holding them in tension without resolving it. The question is whether this statement applies universally (Romans 8:28), only to the Joseph narrative, or specifically anticipates the cross.",
     "positions": [
       {
         "id": "paradigmatic-statement-of-providence",
         "label": "Paradigmatic statement of providence",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "calvin"
+        ],
         "proponents": "Calvin, Wenham, Hamilton",
         "argument": "Genesis 50:20 is the OT's fullest statement of the principle that God's sovereign purpose comprehends and overrules human evil without excusing it. The same principle applied to Pharaoh (Rom 9:17), to the cross (Acts 2:23), and to all of redemptive history.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The verse perfectly encapsulates the biblical theology of providence — dual causation (human and divine), evil repurposed for good; Romans 8:28 generalizes the principle ('all things work together for good'); Isaiah 10:5-7 shows the same pattern (Assyria as God's unwitting instrument); the verse has universal applicability.",
+        "weaknesses": "Universal application may flatten the specific context — Joseph's situation was unique; not all suffering is 'intended for good' in the same way; generalizing the verse may create false comfort in situations of genuine evil.",
+        "key_verses": [
+          "Genesis 50:20",
+          "Romans 8:28",
+          "Isaiah 10:5-7"
+        ]
       },
       {
         "id": "limited-to-the-joseph-narrative",
         "label": "Limited to the Joseph narrative",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Some critical scholars",
         "argument": "The statement is Joseph's personal theological reflection on his own story, not a general doctrine. Generalising from Joseph's specific situation to a universal doctrine of providence requires a theological leap the text does not make.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The verse is Joseph's specific theological interpretation of his own story; extracting it as a universal principle risks over-application; the Joseph story has unique features (dream revelation, position in Egypt) that may not generalize; other biblical sufferers do not always receive this kind of resolution.",
+        "weaknesses": "The canonical placement at the end of Genesis gives the verse summary force; the principle of divine sovereignty over evil recurs throughout Scripture (Exod 4:21; Isa 10:5-7; Acts 2:23); limiting the verse to one narrative underestimates its theological reach.",
+        "key_verses": [
+          "Genesis 50:20",
+          "Genesis 45:5-8"
+        ]
       },
       {
         "id": "pattern-fulfilled-in-christ",
         "label": "Pattern fulfilled in Christ",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke"
+        ],
         "proponents": "Church Fathers, NT theology",
         "argument": "The cross is the supreme instance of the Genesis 50:20 pattern: human beings intended evil (murder, betrayal); God intended good (redemption of many). Peter's Pentecost sermon (Acts 2:23) explicitly applies the double-agency pattern to the crucifixion.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Acts 2:23 and 4:27-28 explicitly apply the 'human evil, divine purpose' pattern to the cross; the Joseph cycle is widely recognized as typological of Christ (betrayed by brothers, exalted after suffering, saves his family); 'the saving of many lives' (50:20) anticipates 'the many' language of Isaiah 53 and Mark 10:45.",
+        "weaknesses": "The christological reading is theologically compelling but not exegetically required; Joseph is not a conscious type — the parallel is retrospective; reading Christ into every OT narrative risks allegory; the verse's meaning within Genesis should be established first.",
+        "key_verses": [
+          "Genesis 50:20",
+          "Acts 2:23",
+          "Acts 4:27-28",
+          "Mark 10:45"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Genesis 50:20 functions on all three levels. Within the narrative, it is Joseph's theological interpretation of his own story. Within the canon, it establishes a pattern that recurs throughout Scripture — God bringing good from evil. The christological reading sees the ultimate fulfillment at the cross — human sin (the crucifixion) accomplishing divine purpose (salvation). Most scholars treat the verse as both a specific statement about Joseph and a paradigmatic expression of biblical providence theology.",
+    "related_passages": [
+      "Genesis 50:20",
+      "Romans 8:28",
+      "Acts 2:23",
+      "Acts 4:27-28",
+      "Isaiah 10:5-7"
+    ],
+    "tags": [
+      "providence",
+      "sovereignty",
+      "joseph",
+      "genesis-50",
+      "cross"
+    ]
   },
   {
     "id": "the-date-of-the-exodus",
@@ -12919,8 +13374,8 @@
       1
     ],
     "passage": "John 1",
-    "question": "Is the Prologue a Pre-existing Hymn?",
-    "context": "",
+    "question": "Is John's Prologue (1:1-18) an adaptation of a pre-existing hymn, or an original composition by the evangelist?",
+    "context": "John 1:1-18 is among the most theologically dense passages in the NT. Its poetic structure, elevated language, and Logos theology have led many scholars to propose that it was originally an independent hymn — perhaps from a Johannine community or adapted from a Jewish Wisdom hymn — that the evangelist incorporated and edited (adding the prose insertions about John the Baptist, vv. 6-8, 15). The alternative view holds that the Prologue was composed by the evangelist as an introduction, its poetic quality reflecting deliberate theological rhetoric.",
     "positions": [
       {
         "id": "yes-hymnic-adaptation",
@@ -12929,25 +13384,46 @@
         "scholar_ids": [],
         "proponents": "Bultmann, Brown, Schnackenburg",
         "argument": "The prologue has a poetic, rhythmic structure distinct from the surrounding narrative, with prose insertions about John the Baptist (vv.6-8, 15). The original hymn may have been a Johannine community hymn to the Logos that the evangelist adapted.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The poetic structure is recognizable and can be reconstructed by removing prose insertions (vv. 6-8, 15); other NT christological passages are widely considered pre-existing hymns (Phil 2:6-11; Col 1:15-20); the Logos theology draws on Jewish Wisdom traditions that predate the Gospel; the Baptist insertions disrupt the poem's flow, suggesting editorial addition.",
+        "weaknesses": "The reconstructed hymn varies by scholar — no consensus exists on its exact form; the vocabulary is thoroughly Johannine, making an external origin less certain; the 'insertions' could be intentional narrative asides rather than editorial additions.",
+        "key_verses": [
+          "John 1:1-5",
+          "John 1:6-8",
+          "John 1:14"
+        ]
       },
       {
         "id": "no-unified-composition",
         "label": "No: unified composition",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "keener"
+        ],
         "proponents": "Carson, Keener, Bauckham",
         "argument": "The supposed hymnic structure is not consistent enough to identify a discrete pre-existing hymn. The prologue is the evangelist's own introduction, written in elevated prose that reflects the content's grandeur.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The vocabulary and theology are continuous with the rest of the Gospel; the evangelist was capable of writing elevated theological prose; the 'insertions' about the Baptist serve the Gospel's polemic against Baptist sect claims; the poetic quality reflects deliberate rhetorical crafting, not necessarily a pre-existing source.",
+        "weaknesses": "The structural parallels with other NT hymns (Phil 2; Col 1) suggest a recognized hymnic genre; the tonal shift between the poetic sections and the Baptist prose is difficult to explain as unified composition; the Wisdom parallels suggest the evangelist drew on an existing tradition.",
+        "key_verses": [
+          "John 1:1-18"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The hymnic hypothesis has strong support — the rhythmic structure, the Baptist insertions, and the parallel with Philippians 2:6-11 and Colossians 1:15-20 (other NT passages widely considered pre-existing hymns). However, the vocabulary and theology of the Prologue are deeply Johannine, suggesting at minimum heavy editorial shaping. Whether the evangelist adapted an existing hymn or composed an original poetic introduction, the final form is fully integrated into the Gospel's theology.",
+    "related_passages": [
+      "John 1:1-18",
+      "Proverbs 8:22-31",
+      "Wisdom 7:22-30",
+      "Philippians 2:6-11",
+      "Colossians 1:15-20"
+    ],
+    "tags": [
+      "prologue",
+      "logos",
+      "hymn",
+      "john-1",
+      "christology"
+    ]
   },
   {
     "id": "one-temple-cleansing-or-two",
@@ -12958,35 +13434,57 @@
       2
     ],
     "passage": "John 2",
-    "question": "One Temple Cleansing or Two?",
-    "context": "",
+    "question": "Did Jesus cleanse the temple once (with John or the Synoptics relocating it) or twice (once at the start and once at the end of his ministry)?",
+    "context": "John places the temple cleansing at the beginning of Jesus' ministry (John 2:13-22), while the Synoptics place it during the final week (Matt 21:12-13; Mark 11:15-17; Luke 19:45-46). The two-cleansing theory holds that Jesus drove out money-changers twice — once early and once late. The one-cleansing theory holds that there was a single event which John relocated for theological reasons (programmatic opening) or which the Synoptics placed at the end as the trigger for the arrest. The details differ significantly between John and the Synoptics.",
     "positions": [
       {
         "id": "two-cleansings-one-at-start-one-at-end",
         "label": "Two cleansings: one at start, one at end",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Carson, Morris, most evangelical scholars",
         "argument": "The differences between John and the Synoptics (timing, details, context) are best explained by two separate events. Jesus's prophetic action would naturally provoke escalating hostility over three years.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Takes both John and the Synoptics at face value without requiring relocation; the details differ (John mentions a whip, quotes Psalm 69; Synoptics quote Isaiah 56 and Jeremiah 7); Jesus' prophetic authority could warrant two confrontations; the traditional harmonization preserves historical accuracy of all four Gospels.",
+        "weaknesses": "It is implausible that temple authorities would permit a second cleansing after the first; the Synoptics show no awareness of an earlier cleansing; the two-event theory multiplies entities beyond what the evidence requires.",
+        "key_verses": [
+          "John 2:13-17",
+          "Mark 11:15-17"
+        ]
       },
       {
         "id": "one-cleansing-john-moved-it-for-theologi",
         "label": "One cleansing: John moved it for theological reasons",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "keener"
+        ],
         "proponents": "Brown, Schnackenburg, Bultmann",
         "argument": "John deliberately placed the cleansing at the beginning to introduce the temple-body theme early. Historical-critical scholarship generally prefers the Synoptic timing as more historically plausible and sees John's placement as theological redaction.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The simplest explanation — one event, two placements; John regularly arranges material thematically rather than chronologically; the temple cleansing at the Gospel's opening programmatically establishes Jesus as the replacement of the temple (2:19-21); the Synoptic placement as the trigger for arrest makes historical sense.",
+        "weaknesses": "Requires John to have deliberately moved a historical event, raising questions about historical reliability; John's Gospel claims eyewitness testimony (21:24); some readers are uncomfortable with the implication that any Gospel rearranges chronology.",
+        "key_verses": [
+          "John 2:13-22",
+          "John 2:19-21",
+          "Matthew 21:12-13"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The two-cleansing view is the traditional harmonization but struggles with the implausibility of the temple authorities permitting a second disruption. The one-cleansing view is simpler and widely held, but requires either John or the Synoptics to have relocated the event. Most scholars favor a single cleansing, noting that John frequently rearranges chronology for theological purposes (e.g., the Last Supper timing). The event's placement in each Gospel serves the respective narrative theology — in John it reveals Jesus as the new temple; in the Synoptics it precipitates the passion.",
+    "related_passages": [
+      "John 2:13-22",
+      "Matthew 21:12-13",
+      "Mark 11:15-17",
+      "Luke 19:45-46"
+    ],
+    "tags": [
+      "temple",
+      "cleansing",
+      "chronology",
+      "synoptic-john",
+      "john-2"
+    ]
   },
   {
     "id": "water-and-spirit-in-3-5-baptism-or-regeneration",
@@ -13073,19 +13571,24 @@
       4
     ],
     "passage": "John 4",
-    "question": "Is the Samaritan Woman a Historical Figure or a Symbol?",
-    "context": "",
+    "question": "Is the Samaritan woman at the well a historical person, a symbolic representative, or both?",
+    "context": "John 4:1-42 presents Jesus' encounter with a Samaritan woman at Jacob's well. The narrative is rich in symbolism: the well (cf. OT betrothal scenes at wells), the 'five husbands' (the five foreign gods of 2 Kings 17:24-33?), the worship question (Gerizim vs. Jerusalem), and the woman's role as the first Samaritan evangelist. The symbolic density has led some to read her as a representative of Samaria rather than a historical individual. The 'five husbands' have been read as the five pagan deities imposed on Samaria after the Assyrian conquest.",
     "positions": [
       {
         "id": "historical-and-symbolic",
         "label": "Historical and symbolic",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "keener"
+        ],
         "proponents": "Most mainstream scholars",
         "argument": "The encounter is historical (specific geographical details, personal details about the woman's life) but also carries symbolic resonance (five husbands = five foreign nations of 2 Kgs 17; the woman = Samaria as bride). Both levels operate simultaneously.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "John's narrative art operates on multiple levels simultaneously; the woman's personality (her wit, evasion, eventual testimony) is too vivid for a pure symbol; the geographical and cultural details are accurate; the symbolic resonance (well, husbands, worship) enriches a historical encounter without replacing it.",
+        "weaknesses": "The 'both' reading can seem evasive; if the husbands are symbolic, the historical basis may be thinner than assumed; maintaining both levels requires sophisticated reading that may exceed the narrator's intent.",
+        "key_verses": [
+          "John 4:7-26",
+          "John 4:39-42"
+        ]
       },
       {
         "id": "primarily-symbolic",
@@ -13094,14 +13597,27 @@
         "scholar_ids": [],
         "proponents": "Some literary-critical readers",
         "argument": "The woman represents Samaria seeking its true husband (God); the five husbands are the five gods imported by the five nations. The personal details are allegorical rather than biographical.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The five husbands correspond to the five foreign nations (and their gods) imported by Assyria (2 Kgs 17:24-33); the well scene echoes OT betrothal type-scenes (Gen 24; Gen 29; Exod 2); the worship question (Gerizim vs. Jerusalem) is the central Samaritan-Jewish theological divide; the narrative is a theological portrait of Samaria's encounter with the Messiah.",
+        "weaknesses": "2 Kings 17 actually lists seven nations, not five; the woman's vivid personality argues against a mere symbol; reducing her to allegory diminishes the narrative's power; the five-husbands-as-gods reading is creative but forced.",
+        "key_verses": [
+          "John 4:16-18",
+          "2 Kings 17:24-33"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The most satisfying reading is 'both' — John presents historical encounters with rich symbolic layering. The Samaritan woman is a real person whose specific situation (five husbands, living with a man outside marriage) carries additional resonance as a portrait of Samaria's religious history. John's Gospel consistently operates on multiple levels — literal and symbolic readings are not mutually exclusive but mutually enriching. The woman's individuality (her wit, her questions, her evangelistic testimony) argues against a purely symbolic reading.",
+    "related_passages": [
+      "John 4:1-42",
+      "2 Kings 17:24-33",
+      "Genesis 24:10-27",
+      "Genesis 29:1-12"
+    ],
+    "tags": [
+      "samaritan-woman",
+      "symbolism",
+      "historicity",
+      "john-4"
+    ]
   },
   {
     "id": "realised-vs-future-eschatology-in-john-5",
@@ -13112,8 +13628,8 @@
       5
     ],
     "passage": "John 5",
-    "question": "Realised vs. Future Eschatology in John 5",
-    "context": "",
+    "question": "Does John's Gospel teach primarily realized eschatology (salvation is now) or does it also affirm future bodily resurrection?",
+    "context": "John 5:24-29 contains a striking juxtaposition: 'whoever hears my word and believes has eternal life and has crossed over from death to life' (5:24 — realized eschatology) alongside 'a time is coming when all who are in their graves will hear his voice and come out' (5:28-29 — future eschatology). Bultmann famously argued that the future-eschatology passages were later additions by an ecclesiastical redactor who corrected John's pure realized eschatology. Most scholars now reject this but the tension between present and future in John remains significant.",
     "positions": [
       {
         "id": "primarily-realised",
@@ -13122,25 +13638,48 @@
         "scholar_ids": [],
         "proponents": "Dodd, Bultmann",
         "argument": "The emphasis in John is on present possession: \"has eternal life,\" \"has crossed over from death to life\" (v.24). Future resurrection language (vv.28-29) may be a later ecclesiastical addition to John's original text.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "John's distinctive emphasis is present salvation — 'has eternal life' (5:24), 'has crossed over from death to life' (5:24), 'I am the resurrection and the life' (11:25); the judgment is now (3:18-19; 12:31); Bultmann rightly identified this emphasis as John's unique contribution; the believer's experience of salvation begins at the moment of faith.",
+        "weaknesses": "John 5:28-29, 6:39-40, 6:44, and 6:54 explicitly affirm future bodily resurrection; Bultmann's redaction theory is rejected by most scholars; stripping the future dimension from John's eschatology distorts it; the 'last day' references are integral to the Gospel's theology.",
+        "key_verses": [
+          "John 5:24",
+          "John 3:18-19",
+          "John 11:25-26"
+        ]
       },
       {
         "id": "both-present-and-future-complementary",
         "label": "Both present and future, complementary",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "keener"
+        ],
         "proponents": "Carson, Ridderbos, Keener",
         "argument": "Both dimensions are authentically Johannine and authentically dominical. Present realisation of eternal life (v.24-25) and future bodily resurrection (v.28-29) are both affirmed; they describe different aspects of the same salvation. The Gospel maintains this both/and throughout.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "John 5:24-29 holds both dimensions together within a single discourse; 'the hour is coming and now is' (5:25) explicitly combines present and future; the 'last day' references (6:39-40, 44, 54) are too numerous to be editorial additions; the two eschatologies are complementary, not contradictory — present participation anticipates future consummation.",
+        "weaknesses": "The tension between the two eschatologies remains: if the believer 'has' eternal life now (5:24), what does the future resurrection add? The relationship between present experience and future hope is stated but not fully explained; some scholars find the juxtaposition awkward.",
+        "key_verses": [
+          "John 5:24-29",
+          "John 6:39-40",
+          "John 11:25-26"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "John holds both dimensions together. Eternal life begins now through faith (5:24; 11:25-26) and will be consummated at the future resurrection (5:28-29; 6:39-40). This is not a contradiction but a both/and: the believer already participates in the eschatological reality that will be fully revealed at the last day. John's distinctive contribution is the emphasis on present realization — a theological complement to, not replacement of, the future hope shared with the Synoptics and Paul.",
+    "related_passages": [
+      "John 5:24-29",
+      "John 6:39-40",
+      "John 11:25-26",
+      "John 14:19",
+      "1 Corinthians 15:42-44"
+    ],
+    "tags": [
+      "eschatology",
+      "resurrection",
+      "eternal-life",
+      "john-5",
+      "realized-eschatology"
+    ]
   },
   {
     "id": "is-john-6-51-58-eucharistic",
