@@ -26,10 +26,11 @@ import { useDictionaryBrowse, type DictionarySection } from '../hooks/useDiction
 import type { DictionaryEntryParsed } from '../types/dictionary';
 import { CATEGORY_LABELS, type DictionaryCategory } from '../types/dictionary';
 import type { ScreenNavProp } from '../navigation/types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 type Nav = ScreenNavProp<'Explore', 'DictionaryBrowse'>;
 
-export default function DictionaryBrowseScreen() {
+function DictionaryBrowseScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<Nav>();
   const {
@@ -273,3 +274,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
+
+export default withErrorBoundary(DictionaryBrowseScreen);

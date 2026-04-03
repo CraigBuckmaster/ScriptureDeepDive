@@ -13,8 +13,9 @@ import { SearchInput } from '../components/SearchInput';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { logger } from '../utils/logger';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function ScholarBrowseScreen() {
+function ScholarBrowseScreen() {
   const { base, getScholarColor } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ScholarBrowse'>>();
   const { scholars, isLoading } = useScholars();
@@ -180,3 +181,5 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
 });
+
+export default withErrorBoundary(ScholarBrowseScreen);

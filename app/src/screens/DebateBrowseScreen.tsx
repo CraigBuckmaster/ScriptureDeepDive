@@ -24,6 +24,7 @@ import { families } from '../theme/colors';
 import { useDebateTopics, DEBATE_CATEGORY_LABELS } from '../hooks/useDebateTopics';
 import type { DebateTopicSummary } from '../types';
 import type { ScreenNavProp } from '../navigation/types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 type Nav = ScreenNavProp<'Explore', 'DebateBrowse'>;
 
@@ -48,7 +49,7 @@ function getPositionTraditions(topic: DebateTopicSummary): string[] {
   }
 }
 
-export default function DebateBrowseScreen() {
+function DebateBrowseScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<Nav>();
   const {
@@ -317,3 +318,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
+
+export default withErrorBoundary(DebateBrowseScreen);

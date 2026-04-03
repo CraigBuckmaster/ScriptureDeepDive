@@ -13,7 +13,7 @@ interface Props {
   onPress: () => void;
 }
 
-export function RelatedWordCard({ lemma, transliteration, gloss, onPress }: Props) {
+function RelatedWordCard({ lemma, transliteration, gloss, onPress }: Props) {
   const { base } = useTheme();
 
   return (
@@ -30,6 +30,10 @@ export function RelatedWordCard({ lemma, transliteration, gloss, onPress }: Prop
     </TouchableOpacity>
   );
 }
+
+const MemoizedRelatedWordCard = React.memo(RelatedWordCard);
+export { MemoizedRelatedWordCard as RelatedWordCard };
+export default MemoizedRelatedWordCard;
 
 const styles = StyleSheet.create({
   card: {

@@ -16,8 +16,9 @@ import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { GospelDots } from '../components/GospelDots';
 import { useHarmonyData, PERIOD_LABELS } from '../hooks/useHarmonyData';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function HarmonyBrowseScreen() {
+function HarmonyBrowseScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'HarmonyBrowse'>>();
   const {
@@ -185,3 +186,5 @@ const styles = StyleSheet.create({
     marginBottom: spacing.sm,
   },
 });
+
+export default withErrorBoundary(HarmonyBrowseScreen);

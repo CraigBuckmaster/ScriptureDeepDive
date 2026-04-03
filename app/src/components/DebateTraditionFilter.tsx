@@ -25,7 +25,7 @@ const TRADITION_LABELS: Record<string, string> = {
   catholic: 'Catholic',
 };
 
-export function DebateTraditionFilter({ traditions, activeFilter, onSelect }: Props) {
+function DebateTraditionFilter({ traditions, activeFilter, onSelect }: Props) {
   const { base } = useTheme();
 
   return (
@@ -84,6 +84,10 @@ export function DebateTraditionFilter({ traditions, activeFilter, onSelect }: Pr
     </ScrollView>
   );
 }
+
+const MemoizedDebateTraditionFilter = React.memo(DebateTraditionFilter);
+export { MemoizedDebateTraditionFilter as DebateTraditionFilter };
+export default MemoizedDebateTraditionFilter;
 
 const styles = StyleSheet.create({
   container: {

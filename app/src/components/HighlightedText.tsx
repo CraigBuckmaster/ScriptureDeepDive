@@ -49,7 +49,7 @@ interface WordMatch {
   btnTypes: string[];
 }
 
-export function HighlightedText({
+function HighlightedText({
   text, groups, activeGroups, sectionId, onVhlWordPress, style, baseColor,
 }: Props) {
   const { base } = useTheme();
@@ -157,3 +157,7 @@ export function HighlightedText({
 
   return <>{rendered}</>;
 }
+
+const MemoizedHighlightedText = React.memo(HighlightedText);
+export { MemoizedHighlightedText as HighlightedText };
+export default MemoizedHighlightedText;

@@ -13,7 +13,7 @@ interface Props {
   editable?: boolean;
 }
 
-export function TagChips({ tags, onTagsChange, editable = true }: Props) {
+function TagChips({ tags, onTagsChange, editable = true }: Props) {
   const { base } = useTheme();
   const [showInput, setShowInput] = useState(false);
   const [inputValue, setInputValue] = useState('');
@@ -73,6 +73,8 @@ export function TagChips({ tags, onTagsChange, editable = true }: Props) {
     </View>
   );
 }
+
+export default React.memo(TagChips);
 
 const styles = StyleSheet.create({
   container: {

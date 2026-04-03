@@ -14,7 +14,7 @@ interface Props {
   onDismiss: () => void;
 }
 
-export function CompareBar({ primaryLabel, comparisonLabel, onDismiss }: Props) {
+function CompareBar({ primaryLabel, comparisonLabel, onDismiss }: Props) {
   const { base } = useTheme();
 
   return (
@@ -37,6 +37,10 @@ export function CompareBar({ primaryLabel, comparisonLabel, onDismiss }: Props) 
     </View>
   );
 }
+
+const MemoizedCompareBar = React.memo(CompareBar);
+export { MemoizedCompareBar as CompareBar };
+export default MemoizedCompareBar;
 
 const styles = StyleSheet.create({
   bar: {

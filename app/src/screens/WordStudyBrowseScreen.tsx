@@ -13,8 +13,9 @@ import { SearchInput } from '../components/SearchInput';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { logger } from '../utils/logger';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function WordStudyBrowseScreen() {
+function WordStudyBrowseScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'WordStudyBrowse'>>();
   const { studies, isLoading } = useWordStudies();
@@ -167,3 +168,5 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
 });
+
+export default withErrorBoundary(WordStudyBrowseScreen);

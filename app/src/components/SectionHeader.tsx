@@ -14,7 +14,7 @@ interface Props {
   total?: number;
 }
 
-export function SectionHeader({ header, explored, total }: Props) {
+function SectionHeader({ header, explored, total }: Props) {
   const { base } = useTheme();
   return (
     <View style={[styles.container, { borderBottomColor: base.border }]} accessibilityRole="header">
@@ -27,6 +27,8 @@ export function SectionHeader({ header, explored, total }: Props) {
     </View>
   );
 }
+
+export default React.memo(SectionHeader);
 
 const styles = StyleSheet.create({
   container: {

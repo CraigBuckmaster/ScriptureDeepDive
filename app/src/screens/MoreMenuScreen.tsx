@@ -13,6 +13,7 @@ import type { ScreenNavProp } from '../navigation/types';
 import { Bookmark, Clock, Calendar, Settings, ArrowRight, StickyNote, LogIn, LogOut, User } from 'lucide-react-native';
 import { useTheme, spacing, radii, MIN_TOUCH_TARGET, fontFamily } from '../theme';
 import { useAuthStore } from '../stores';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 interface MenuItem {
   icon: React.ElementType;
@@ -28,7 +29,7 @@ const MENU_ITEMS: MenuItem[] = [
   { icon: Settings,   label: 'Settings',           screen: 'Settings' },
 ];
 
-export default function MoreMenuScreen() {
+function MoreMenuScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'MoreMenu'>>();
   const user = useAuthStore((s) => s.user);
@@ -149,3 +150,5 @@ const styles = StyleSheet.create({
     marginLeft: spacing.sm,
   },
 });
+
+export default withErrorBoundary(MoreMenuScreen);

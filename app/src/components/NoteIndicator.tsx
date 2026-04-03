@@ -13,7 +13,7 @@ interface Props {
   onPress: (verseNum: number) => void;
 }
 
-export function NoteIndicator({ verseNum, hasNote, onPress }: Props) {
+function NoteIndicator({ verseNum, hasNote, onPress }: Props) {
   const { base } = useTheme();
   return (
     <TouchableOpacity
@@ -29,6 +29,10 @@ export function NoteIndicator({ verseNum, hasNote, onPress }: Props) {
     </TouchableOpacity>
   );
 }
+
+const MemoizedNoteIndicator = React.memo(NoteIndicator);
+export { MemoizedNoteIndicator as NoteIndicator };
+export default MemoizedNoteIndicator;
 
 const styles = StyleSheet.create({
   container: {

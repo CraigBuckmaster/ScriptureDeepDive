@@ -18,8 +18,9 @@ import { DifficultyBadge } from '../components/DifficultyBadge';
 import { ArrowRight } from 'lucide-react-native';
 import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { Book } from '../types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function ChapterListScreen() {
+function ChapterListScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Read', 'ChapterList'>>();
   const route = useRoute<ScreenRouteProp<'Read', 'ChapterList'>>();
@@ -133,3 +134,5 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 });
+
+export default withErrorBoundary(ChapterListScreen);

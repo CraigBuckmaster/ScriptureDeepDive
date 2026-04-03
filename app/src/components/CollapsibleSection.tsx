@@ -21,7 +21,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export function CollapsibleSection({ title, initiallyCollapsed = true, accentColor, children }: Props) {
+function CollapsibleSection({ title, initiallyCollapsed = true, accentColor, children }: Props) {
   const { base } = useTheme();
   const [collapsed, setCollapsed] = useState(initiallyCollapsed);
   const accent = accentColor ?? base.gold;
@@ -57,6 +57,10 @@ export function CollapsibleSection({ title, initiallyCollapsed = true, accentCol
     </View>
   );
 }
+
+const MemoizedCollapsibleSection = React.memo(CollapsibleSection);
+export { MemoizedCollapsibleSection as CollapsibleSection };
+export default MemoizedCollapsibleSection;
 
 const styles = StyleSheet.create({
   headerButton: {

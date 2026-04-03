@@ -28,7 +28,7 @@ interface Props {
   isOT?: boolean;
 }
 
-export function GospelDots({ books, isOT }: Props) {
+function GospelDots({ books, isOT }: Props) {
   const { base } = useTheme();
   const bookSet = new Set(books);
 
@@ -62,6 +62,10 @@ export function GospelDots({ books, isOT }: Props) {
     </View>
   );
 }
+
+const MemoizedGospelDots = React.memo(GospelDots);
+export { MemoizedGospelDots as GospelDots };
+export default MemoizedGospelDots;
 
 const styles = StyleSheet.create({
   row: {

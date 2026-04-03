@@ -18,6 +18,7 @@ import { useBooks, type BookWithProgress } from '../hooks/useBooks';
 import { useSettingsStore } from '../stores';
 import { SearchInput } from '../components/SearchInput';
 import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 // ── Tradition groupings (by book_order index) ────────────────────
 
@@ -72,7 +73,7 @@ const BookRow = React.memo(function BookRow({ book, onPress, base }: {
   );
 });
 
-export default function BookListScreen() {
+function BookListScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Read', 'BookList'>>();
   const scrollRef = useRef<FlatList>(null);
@@ -299,3 +300,5 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 });
+
+export default withErrorBoundary(BookListScreen);

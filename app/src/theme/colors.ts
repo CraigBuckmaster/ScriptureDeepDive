@@ -208,7 +208,6 @@ export const categories = {
 // ── Severity Colors ────────────────────────────────────────────────
 
 export const severity = {
-  minor: '#4CAF50',
   moderate: '#FFC107',
   major: '#F44336',
 } as const;

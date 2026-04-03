@@ -382,6 +382,14 @@ const MIGRATIONS: Migration[] = [
       CREATE INDEX IF NOT EXISTS idx_analytics_created_at ON analytics_events(created_at);
     `,
   },
+  {
+    version: 9,
+    description: 'Add indexes on verse_highlights and bookmarks for verse_ref lookups',
+    sql: `
+      CREATE INDEX IF NOT EXISTS idx_verse_highlights_ref ON verse_highlights(verse_ref);
+      CREATE INDEX IF NOT EXISTS idx_bookmarks_ref ON bookmarks(verse_ref);
+    `,
+  },
 ];
 
 /**

@@ -21,8 +21,9 @@ import { useTopicDetail } from '../hooks/useTopicDetail';
 import { CATEGORY_LABELS } from '../hooks/useTopicData';
 import { useTheme, spacing, fontFamily } from '../theme';
 import type { Subtopic } from '../types/topic';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function TopicDetailScreen() {
+function TopicDetailScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'TopicDetail'>>();
   const route = useRoute<ScreenRouteProp<'Explore', 'TopicDetail'>>();
@@ -151,3 +152,5 @@ const styles = StyleSheet.create({
     gap: spacing.xs,
   },
 });
+
+export default withErrorBoundary(TopicDetailScreen);

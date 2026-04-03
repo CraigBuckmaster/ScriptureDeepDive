@@ -53,13 +53,14 @@ import { useChapterFingerprint } from '../hooks/useChapterFingerprint';
 import { ChapterFingerprint } from '../components/ChapterFingerprint';
 import { usePremium } from '../hooks/usePremium';
 import { UpgradePrompt } from '../components/UpgradePrompt';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 // Enable LayoutAnimation on Android
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
   UIManager.setLayoutAnimationEnabledExperimental(true);
 }
 
-export default function ChapterScreen() {
+function ChapterScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Read', 'Chapter'>>();
   const route = useRoute<ScreenRouteProp<'Read', 'Chapter'>>();
@@ -713,3 +714,5 @@ const styles = StyleSheet.create({
     paddingBottom: spacing.sm,
   },
 });
+
+export default withErrorBoundary(ChapterScreen);

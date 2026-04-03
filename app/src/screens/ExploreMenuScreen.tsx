@@ -14,6 +14,7 @@ import { useScrollToTop } from '@react-navigation/native';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { usePremium } from '../hooks/usePremium';
 import { UpgradePrompt } from '../components/UpgradePrompt';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 interface Feature {
   title: string;
@@ -104,7 +105,7 @@ const GRID_FEATURES: Feature[] = [
   },
 ];
 
-export default function ExploreMenuScreen() {
+function ExploreMenuScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ExploreMenu'>>();
   const scrollRef = useRef<ScrollView>(null);
@@ -232,3 +233,5 @@ const styles = StyleSheet.create({
     marginTop: 3,
   },
 });
+
+export default withErrorBoundary(ExploreMenuScreen);

@@ -108,23 +108,30 @@ export async function getRecentChapters(limit: number = 10): Promise<RecentChapt
 
   if (rows.length === 0) return [];
 
-  // Step 2: Enrich with book/chapter names from content.db (scripture.db)
-  const enriched: RecentChapter[] = [];
-  for (const rp of rows) {
-    const info = await getDb().getFirstAsync<{ title: string | null; book_name: string }>(
-      `SELECT c.title, b.name as book_name
-       FROM chapters c
-       JOIN books b ON b.id = c.book_id
-       WHERE c.book_id = ? AND c.chapter_num = ?`,
-      [rp.book_id, rp.chapter_num]
-    );
+  // Step 2: Batch-enrich with book/chapter names from content.db (scripture.db)
+  // Build a single IN query instead of N+1 individual queries
+  const pairs = rows.map((rp) => `(${JSON.stringify(rp.book_id)}, ${rp.chapter_num})`);
+  const placeholders = rows.map(() => '(?, ?)').join(', ');
+  const params = rows.flatMap((rp) => [rp.book_id, rp.chapter_num]);
 
-    enriched.push({
+  const infos = await getDb().getAllAsync<{ book_id: string; chapter_num: number; title: string | null; book_name: string }>(
+    `SELECT c.book_id, c.chapter_num, c.title, b.name as book_name
+     FROM chapters c
+     JOIN books b ON b.id = c.book_id
+     WHERE (c.book_id, c.chapter_num) IN (VALUES ${placeholders})`,
+    params
+  );
+
+  const infoMap = new Map(infos.map((i) => [`${i.book_id}:${i.chapter_num}`, i]));
+
+  const enriched: RecentChapter[] = rows.map((rp) => {
+    const info = infoMap.get(`${rp.book_id}:${rp.chapter_num}`);
+    return {
       ...rp,
       title: info?.title ?? null,
       book_name: info?.book_name ?? rp.book_id,
-    });
-  }
+    };
+  });
 
   return enriched;
 }

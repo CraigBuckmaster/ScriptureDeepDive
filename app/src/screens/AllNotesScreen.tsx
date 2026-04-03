@@ -45,6 +45,7 @@ import {
 import { parseVerseRef, displayRef } from '../utils/verseRef';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { UserNote, StudyCollection } from '../types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 type TabKey = 'collections' | 'tags' | 'all';
 
@@ -73,7 +74,7 @@ function parseTags(json: string): string[] {
   }
 }
 
-export default function AllNotesScreen() {
+function AllNotesScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'AllNotes'>>();
   const [activeTab, setActiveTab] = useState<TabKey>('all');
@@ -742,3 +743,5 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
 });
+
+export default withErrorBoundary(AllNotesScreen);

@@ -22,13 +22,14 @@ import type { DiffAnnotationData } from '../components/DiffAnnotation';
 import { useTheme, spacing, fontFamily } from '../theme';
 import type { SynopticEntry } from '../types';
 import { logger } from '../utils/logger';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 interface Passage {
   book: string;
   ref: string;
 }
 
-export default function ParallelDetailScreen() {
+function ParallelDetailScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ParallelDetail'>>();
   const route = useRoute<ScreenRouteProp<'Explore', 'ParallelDetail'>>();
@@ -150,3 +151,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
+
+export default withErrorBoundary(ParallelDetailScreen);

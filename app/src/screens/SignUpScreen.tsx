@@ -21,8 +21,9 @@ import type { ScreenNavProp } from '../navigation/types';
 import { useAuthStore } from '../stores';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { useTheme, spacing, fontFamily, radii } from '../theme';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function SignUpScreen() {
+function SignUpScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'Settings'>>();
   const signUpWithEmail = useAuthStore((s) => s.signUpWithEmail);
@@ -290,3 +291,5 @@ const styles = StyleSheet.create({
     marginBottom: spacing.lg,
   },
 });
+
+export default withErrorBoundary(SignUpScreen);

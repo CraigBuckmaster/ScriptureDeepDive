@@ -19,7 +19,7 @@ interface Props {
   onVersePress?: (ref: string) => void;
 }
 
-export function DebatePositionCard({
+function DebatePositionCard({
   position,
   defaultExpanded = false,
   onScholarPress,
@@ -126,6 +126,10 @@ export function DebatePositionCard({
     </View>
   );
 }
+
+const MemoizedDebatePositionCard = React.memo(DebatePositionCard);
+export { MemoizedDebatePositionCard as DebatePositionCard };
+export default MemoizedDebatePositionCard;
 
 const styles = StyleSheet.create({
   card: {

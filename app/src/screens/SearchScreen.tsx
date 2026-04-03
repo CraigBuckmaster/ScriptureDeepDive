@@ -19,11 +19,12 @@ import { SearchInput } from '../components/SearchInput';
 import { SearchFilterChips, type SearchFilter } from '../components/SearchFilterChips';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { Person, WordStudy, Verse } from '../types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const INITIAL_VERSE_LIMIT = 20;
 const LOAD_MORE_INCREMENT = 30;
 
-export default function SearchScreen() {
+function SearchScreen() {
   const { base, eras } = useTheme();
   const navigation = useNavigation<any>();
   const [query, setQuery] = useState('');
@@ -284,3 +285,5 @@ const styles = StyleSheet.create({
     fontSize: 13,
   },
 });
+
+export default withErrorBoundary(SearchScreen);

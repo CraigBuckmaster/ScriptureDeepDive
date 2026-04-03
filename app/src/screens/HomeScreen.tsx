@@ -27,10 +27,11 @@ import { MilestoneToast } from '../components/MilestoneToast';
 import { useSettingsStore } from '../stores';
 import { shareVerse, shareProgress } from '../utils/shareVerse';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const TOTAL_BIBLE_CHAPTERS = 1189;
 
-export default function HomeScreen() {
+function HomeScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Home', 'HomeMain'>>();
   const { greeting, subtitle, verse, recentChapters, readingStats, isLoading, refresh } = useHomeData();
@@ -493,3 +494,5 @@ const styles = StyleSheet.create({
     marginTop: spacing.sm,
   },
 });
+
+export default withErrorBoundary(HomeScreen);

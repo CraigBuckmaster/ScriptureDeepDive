@@ -147,7 +147,10 @@ export function assignLanes(events: { id: string; category: string; name: string
   ];
 }
 
+let _cachedTicks: { x: number; label: string; major: boolean }[] | null = null;
+
 export function computeTickMarks(): { x: number; label: string; major: boolean }[] {
+  if (_cachedTicks) return _cachedTicks;
   const ticks: { x: number; label: string; major: boolean }[] = [];
   for (let year = -4000; year <= 100; year += 100) {
     const x = yearToX(year);
@@ -156,5 +159,6 @@ export function computeTickMarks(): { x: number; label: string; major: boolean }
       ticks.push({ x, label: formatYear(year), major });
     }
   }
+  _cachedTicks = ticks;
   return ticks;
 }

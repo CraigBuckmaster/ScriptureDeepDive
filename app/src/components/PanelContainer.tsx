@@ -8,6 +8,7 @@
 import React, { useMemo } from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, LayoutAnimation, Platform, UIManager } from 'react-native';
 import { PanelRenderer } from './panels/PanelRenderer';
+import { PanelCallbacksProvider } from './panels/PanelCallbacksContext';
 import { useTheme, spacing } from '../theme';
 import { lightImpact } from '../utils/haptics';
 import type { ParsedRef } from '../types';
@@ -39,6 +40,11 @@ export function PanelContainer({
 }: Props) {
   const { base, getPanelColors } = useTheme();
 
+  const callbacks = useMemo(() => ({
+    onRefPress, onWordStudyPress, onScholarPress,
+    onPersonPress, onPlacePress, onEventPress,
+  }), [onRefPress, onWordStudyPress, onScholarPress, onPersonPress, onPlacePress, onEventPress]);
+
   if (!isOpen) return null;
 
   const colors = getPanelColors(panelType);
@@ -65,17 +71,19 @@ export function PanelContainer({
         </TouchableOpacity>
       )}
 
-      <PanelRenderer
-        panelType={panelType}
-        contentJson={contentJson}
-        onRefPress={onRefPress}
-        onWordStudyPress={onWordStudyPress}
-        onScholarPress={onScholarPress}
-        onPersonPress={onPersonPress}
-        onPlacePress={onPlacePress}
-        onEventPress={onEventPress}
-        defaultTab={defaultTab}
-      />
+      <PanelCallbacksProvider value={callbacks}>
+        <PanelRenderer
+          panelType={panelType}
+          contentJson={contentJson}
+          onRefPress={onRefPress}
+          onWordStudyPress={onWordStudyPress}
+          onScholarPress={onScholarPress}
+          onPersonPress={onPersonPress}
+          onPlacePress={onPlacePress}
+          onEventPress={onEventPress}
+          defaultTab={defaultTab}
+        />
+      </PanelCallbacksProvider>
     </View>
   );
 }

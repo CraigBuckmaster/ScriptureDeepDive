@@ -13,7 +13,7 @@ interface Props {
   streak: number;
 }
 
-export function StreakBadge({ streak }: Props) {
+function StreakBadge({ streak }: Props) {
   const { base } = useTheme();
 
   if (streak < 1) return null;
@@ -34,6 +34,8 @@ export function StreakBadge({ streak }: Props) {
     </TouchableOpacity>
   );
 }
+
+export default React.memo(StreakBadge);
 
 const styles = StyleSheet.create({
   container: {

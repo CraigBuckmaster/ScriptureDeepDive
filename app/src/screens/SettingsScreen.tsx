@@ -38,6 +38,7 @@ import { useAvailableVoices } from '../hooks/useAvailableVoices';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { usePremiumStore } from '../stores/premiumStore';
 import { logger } from '../utils/logger';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const APP_VERSION = require('../../app.json').expo.version ?? '1.0.0';
 
@@ -57,7 +58,7 @@ const ABOUT_PARAGRAPHS = [
 
 /* ── Component ──────────────────────────────────────────────────── */
 
-export default function SettingsScreen() {
+function SettingsScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'Settings'>>();
   const translation = useSettingsStore((s) => s.translation);
@@ -751,3 +752,5 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.ui,
   },
 });
+
+export default withErrorBoundary(SettingsScreen);

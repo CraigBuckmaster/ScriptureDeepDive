@@ -1,14 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useAsyncData } from './useAsyncData';
 import { getAllScholars } from '../db/content';
-import type { Scholar } from '../types';
 
 export function useScholars() {
-  const [scholars, setScholars] = useState<Scholar[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    getAllScholars().then((s) => { setScholars(s); setIsLoading(false); });
-  }, []);
-
+  const { data: scholars, loading: isLoading } = useAsyncData(() => getAllScholars(), [], []);
   return { scholars, isLoading };
 }

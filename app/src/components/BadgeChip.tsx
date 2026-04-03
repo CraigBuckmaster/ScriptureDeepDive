@@ -13,7 +13,7 @@ interface Props {
   onPress?: () => void;
 }
 
-export function BadgeChip({ label, icon, color, onPress }: Props) {
+function BadgeChip({ label, icon, color, onPress }: Props) {
   const { base } = useTheme();
   const accent = color ?? base.gold;
 
@@ -49,6 +49,8 @@ export function BadgeChip({ label, icon, color, onPress }: Props) {
 
   return content;
 }
+
+export default React.memo(BadgeChip);
 
 const styles = StyleSheet.create({
   chip: {

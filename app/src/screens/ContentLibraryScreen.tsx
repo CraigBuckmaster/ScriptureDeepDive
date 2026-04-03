@@ -18,6 +18,7 @@ import { useContentLibrary, type ContentCategory } from '../hooks/useContentLibr
 import { ContentLibraryCard } from '../components/ContentLibraryCard';
 import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { ContentLibraryEntry } from '../types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const CATEGORY_LABELS: Record<ContentCategory, string> = {
   manuscripts: 'Manuscripts',
@@ -29,7 +30,7 @@ const CATEGORY_LABELS: Record<ContentCategory, string> = {
 
 type TestamentFilter = 'all' | 'ot' | 'nt';
 
-export default function ContentLibraryScreen() {
+function ContentLibraryScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ContentLibrary'>>();
   const {
@@ -269,3 +270,5 @@ const styles = StyleSheet.create({
     marginTop: spacing.xl,
   },
 });
+
+export default withErrorBoundary(ContentLibraryScreen);

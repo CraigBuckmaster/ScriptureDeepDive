@@ -17,7 +17,7 @@ interface Props {
   onNavigate: () => void;
 }
 
-export function GospelPassageCard({ gospelName, passageRef: refStr, verses, color, onNavigate }: Props) {
+function GospelPassageCard({ gospelName, passageRef: refStr, verses, color, onNavigate }: Props) {
   const { base } = useTheme();
 
   return (
@@ -57,6 +57,8 @@ export function GospelPassageCard({ gospelName, passageRef: refStr, verses, colo
     </View>
   );
 }
+
+export default React.memo(GospelPassageCard);
 
 const styles = StyleSheet.create({
   card: {

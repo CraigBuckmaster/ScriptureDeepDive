@@ -10,8 +10,9 @@ import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { ReadingPlan, PlanProgress } from '../db/user';
 import { logger } from '../utils/logger';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function PlanDetailScreen() {
+function PlanDetailScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'PlanDetail'>>();
   const route = useRoute<ScreenRouteProp<'More', 'PlanDetail'>>();
@@ -177,3 +178,5 @@ const styles = StyleSheet.create({
     fontSize: 13,
   },
 });
+
+export default withErrorBoundary(PlanDetailScreen);

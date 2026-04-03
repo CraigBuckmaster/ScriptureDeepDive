@@ -15,8 +15,9 @@ import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { ArrowRight } from 'lucide-react-native';
 import { useTheme, spacing, fontFamily, eraNames } from '../theme';
 import { logger } from '../utils/logger';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function PersonDetailScreen() {
+function PersonDetailScreen() {
   const { base, eras } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'PersonDetail'>>();
   const route = useRoute<ScreenRouteProp<'Explore', 'PersonDetail'>>();
@@ -195,3 +196,5 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 });
+
+export default withErrorBoundary(PersonDetailScreen);

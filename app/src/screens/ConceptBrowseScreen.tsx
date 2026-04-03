@@ -22,10 +22,11 @@ import { useConcepts, Concept } from '../hooks/useConceptData';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import type { ExploreStackParamList } from '../navigation/types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 type Nav = StackNavigationProp<ExploreStackParamList, 'ConceptBrowse'>;
 
-export default function ConceptBrowseScreen() {
+function ConceptBrowseScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<Nav>();
   const { concepts, loading } = useConcepts();
@@ -201,3 +202,5 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 });
+
+export default withErrorBoundary(ConceptBrowseScreen);

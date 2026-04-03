@@ -28,8 +28,9 @@ import {
 import { displayRef, parseVerseRef } from '../utils/verseRef';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { StudyCollection, UserNote } from '../types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function CollectionDetailScreen() {
+function CollectionDetailScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'CollectionDetail'>>();
   const route = useRoute<ScreenRouteProp<'More', 'CollectionDetail'>>();
@@ -267,3 +268,5 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
 });
+
+export default withErrorBoundary(CollectionDetailScreen);

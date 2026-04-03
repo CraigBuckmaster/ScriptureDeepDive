@@ -30,6 +30,7 @@ import {
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import type { ExploreStackParamList } from '../navigation/types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 type Nav = StackNavigationProp<ExploreStackParamList, 'DifficultPassagesBrowse'>;
 
@@ -49,7 +50,7 @@ const CATEGORIES: CategoryChip[] = [
   { key: 'textual', label: 'Textual' },
 ];
 
-export default function DifficultPassagesBrowseScreen() {
+function DifficultPassagesBrowseScreen() {
   const { base, categories: catColors, severity: sevColors } = useTheme();
   const navigation = useNavigation<Nav>();
   const { passages, loading, error } = useDifficultPassages();
@@ -324,3 +325,5 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 });
+
+export default withErrorBoundary(DifficultPassagesBrowseScreen);

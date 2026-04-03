@@ -9,7 +9,7 @@ interface Props {
   onStartReading: (chapter: string) => void;
 }
 
-export function DailyReadingCard({ planName, dayNum, chapters, onStartReading }: Props) {
+function DailyReadingCard({ planName, dayNum, chapters, onStartReading }: Props) {
   const { base } = useTheme();
 
   return (
@@ -33,6 +33,10 @@ export function DailyReadingCard({ planName, dayNum, chapters, onStartReading }:
     </View>
   );
 }
+
+const MemoizedDailyReadingCard = React.memo(DailyReadingCard);
+export { MemoizedDailyReadingCard as DailyReadingCard };
+export default MemoizedDailyReadingCard;
 
 const styles = StyleSheet.create({
   card: {

@@ -5,8 +5,9 @@
  * Screens import typed helpers from here instead of using <any>.
  */
 
-import type { NavigatorScreenParams } from '@react-navigation/native';
+import type { NavigatorScreenParams, CompositeNavigationProp } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
+import type { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import type { RouteProp } from '@react-navigation/native';
 
 // ── Stack Param Lists ─────────────────────────────────────────────
@@ -137,3 +138,16 @@ export type ScreenRouteProp<
   S extends keyof StackMap,
   T extends keyof StackMap[S],
 > = RouteProp<StackMap[S], T>;
+
+/**
+ * Composite navigation prop for cross-tab navigation.
+ * Usage: const nav = useNavigation<CrossTabNavProp<'Read', 'Chapter'>>();
+ *        nav.navigate('ExploreTab', { screen: 'PersonDetail', params: { personId: 'moses' } });
+ */
+export type CrossTabNavProp<
+  S extends keyof StackMap,
+  T extends keyof StackMap[S],
+> = CompositeNavigationProp<
+  StackNavigationProp<StackMap[S], T>,
+  BottomTabNavigationProp<TabParamList>
+>;

@@ -8,7 +8,6 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Modal, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getCrossRefThread } from '../db/content';
-import { BadgeChip } from './BadgeChip';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { CrossRefThread } from '../types';
 
@@ -17,8 +16,6 @@ interface CrossRefStep {
   note?: string;
   text?: string;
 }
-import { logger } from '../utils/logger';
-
 interface Props {
   visible: boolean;
   onClose: () => void;

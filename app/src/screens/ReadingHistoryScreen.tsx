@@ -12,8 +12,9 @@ import { ScreenHeader } from '../components/ScreenHeader';
 import { useTheme, spacing, fontFamily } from '../theme';
 import type { RecentChapter } from '../types';
 import type { ReadingStats } from '../db/user';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function ReadingHistoryScreen() {
+function ReadingHistoryScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'ReadingHistory'>>();
   const [history, setHistory] = useState<RecentChapter[]>([]);
@@ -132,3 +133,5 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
 });
+
+export default withErrorBoundary(ReadingHistoryScreen);

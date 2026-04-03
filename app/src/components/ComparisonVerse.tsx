@@ -12,7 +12,7 @@ interface Props {
   translationLabel: string;
 }
 
-export function ComparisonVerse({ text, translationLabel }: Props) {
+function ComparisonVerse({ text, translationLabel }: Props) {
   const { base } = useTheme();
 
   if (text === null) {
@@ -30,6 +30,8 @@ export function ComparisonVerse({ text, translationLabel }: Props) {
     </View>
   );
 }
+
+export default React.memo(ComparisonVerse);
 
 const styles = StyleSheet.create({
   container: {

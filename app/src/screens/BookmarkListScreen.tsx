@@ -12,8 +12,9 @@ import { parseVerseRef, displayRef } from '../utils/verseRef';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { useTheme, spacing, fontFamily } from '../theme';
 import type { Bookmark } from '../types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
-export default function BookmarkListScreen() {
+function BookmarkListScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'Bookmarks'>>();
   const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
@@ -105,3 +106,5 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
 });
+
+export default withErrorBoundary(BookmarkListScreen);

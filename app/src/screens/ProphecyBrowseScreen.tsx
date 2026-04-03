@@ -13,6 +13,7 @@ import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { BadgeChip } from '../components/BadgeChip';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { ProphecyChain, ProphecyChainLink } from '../types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const CATEGORY_LABELS: Record<string, string> = {
   messianic: 'Messianic',
@@ -49,7 +50,7 @@ function getRefRange(links: ProphecyChainLink[]): string {
   return `${formatLinkRef(first)} → ${formatLinkRef(last)}`;
 }
 
-export default function ProphecyBrowseScreen() {
+function ProphecyBrowseScreen() {
   const { base, prophecyCategories } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'ProphecyBrowse'>>();
   const { chains, isLoading } = useProphecyChains();
@@ -219,3 +220,5 @@ const styles = StyleSheet.create({
     fontSize: 11,
   },
 });
+
+export default withErrorBoundary(ProphecyBrowseScreen);

@@ -28,7 +28,7 @@ interface Props {
   categories?: PanelCategory[];
 }
 
-export function ButtonRow({ panels, activePanel, onToggle, isChapterLevel, categories }: Props) {
+function ButtonRow({ panels, activePanel, onToggle, isChapterLevel, categories }: Props) {
   const { base } = useTheme();
 
   const { contentTypes, scholarTypes } = useMemo(() => {
@@ -136,6 +136,10 @@ export function ButtonRow({ panels, activePanel, onToggle, isChapterLevel, categ
     </View>
   );
 }
+
+const MemoizedButtonRow = React.memo(ButtonRow);
+export { MemoizedButtonRow as ButtonRow };
+export default MemoizedButtonRow;
 
 const styles = StyleSheet.create({
   container: {

@@ -13,7 +13,7 @@ interface Props {
   total: number;
 }
 
-export function DepthDots({ explored, total }: Props) {
+function DepthDots({ explored, total }: Props) {
   const { base } = useTheme();
 
   if (total === 0) return null;
@@ -34,6 +34,10 @@ export function DepthDots({ explored, total }: Props) {
     </View>
   );
 }
+
+const MemoizedDepthDots = React.memo(DepthDots);
+export { MemoizedDepthDots as DepthDots };
+export default MemoizedDepthDots;
 
 const styles = StyleSheet.create({
   container: {

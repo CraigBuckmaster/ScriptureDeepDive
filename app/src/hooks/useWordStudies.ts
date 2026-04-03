@@ -1,14 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useAsyncData } from './useAsyncData';
 import { getAllWordStudies } from '../db/content';
-import type { WordStudy } from '../types';
 
 export function useWordStudies() {
-  const [studies, setStudies] = useState<WordStudy[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    getAllWordStudies().then((s) => { setStudies(s); setIsLoading(false); });
-  }, []);
-
+  const { data: studies, loading: isLoading } = useAsyncData(() => getAllWordStudies(), [], []);
   return { studies, isLoading };
 }

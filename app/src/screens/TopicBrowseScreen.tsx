@@ -16,6 +16,7 @@ import { useTopicData, CATEGORY_LABELS } from '../hooks/useTopicData';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { Topic } from '../types/topic';
 import type { Subtopic } from '../types/topic';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 function getTopicMeta(topic: Topic): { verseCount: number; subtopicCount: number } {
   let subtopics: Subtopic[] = [];
@@ -63,7 +64,7 @@ function TopicRow({ topic, onPress, base }: TopicRowProps) {
   );
 }
 
-export default function TopicBrowseScreen() {
+function TopicBrowseScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'TopicBrowse'>>();
   const {
@@ -245,3 +246,5 @@ const styles = StyleSheet.create({
     marginBottom: spacing.sm,
   },
 });
+
+export default withErrorBoundary(TopicBrowseScreen);

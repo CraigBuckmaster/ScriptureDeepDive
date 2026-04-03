@@ -14,7 +14,7 @@ interface Props {
   genreGuidance: string;
 }
 
-export function GenreBanner({ genreLabel, genreGuidance }: Props) {
+function GenreBanner({ genreLabel, genreGuidance }: Props) {
   const { base } = useTheme();
   const [dismissed, setDismissed] = useState(false);
 
@@ -35,6 +35,8 @@ export function GenreBanner({ genreLabel, genreGuidance }: Props) {
     </View>
   );
 }
+
+export default React.memo(GenreBanner);
 
 const styles = StyleSheet.create({
   container: {

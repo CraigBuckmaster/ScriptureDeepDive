@@ -33,6 +33,7 @@ import {
 } from '../utils/timelineLayout';
 import { useTheme, spacing, radii, eraNames, fontFamily } from '../theme';
 import type { TimelineEntry } from '../types';
+import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 interface CategoryFilters {
   event: boolean;
@@ -60,7 +61,7 @@ function lighten(hex: string, amount: number = 0.3): string {
   return `#${lr.toString(16).padStart(2, '0')}${lg.toString(16).padStart(2, '0')}${lb.toString(16).padStart(2, '0')}`;
 }
 
-export default function TimelineScreen() {
+function TimelineScreen() {
   const { base, eras, categoryColors, timelineSvg } = useTheme();
   useLandscapeUnlock();
   const route = useRoute<ScreenRouteProp<'Explore', 'Timeline'>>();
@@ -482,3 +483,5 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
 });
+
+export default withErrorBoundary(TimelineScreen);
