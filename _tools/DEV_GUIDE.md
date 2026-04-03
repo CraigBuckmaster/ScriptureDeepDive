@@ -387,3 +387,26 @@ All work items are tracked as GitHub issues on the **Companion Study Kanban**. C
 **Styling:**
 - ~307 inline `style={{ }}` objects remain across components ([#111](https://github.com/CraigBuckmaster/ScriptureDeepDive/issues/111)). Migrate to `StyleSheet.create()` opportunistically when editing files.
 - ~10 explicit `: any` types remain (e.g., `SectionWithPanels.panels`, `PanelRenderer.data`). Type properly when touching those files.
+
+---
+
+## Kanban Integration
+
+The **Companion Study Kanban** is the single source of truth for all work items.
+
+**Project ID:** `PVT_kwHOAQG2984BTkG9`
+
+### Field IDs (for GraphQL mutations)
+
+| Field | ID | Options |
+|-------|----|---------| 
+| Status | `PVTSSF_lAHOAQG2984BTkG9zhAyQPM` | Backlog=`f75ad846`, Ready=`61e4505c`, In progress=`47fc9ee4`, In review=`df73e18b`, Done=`98236657` |
+| Priority | `PVTSSF_lAHOAQG2984BTkG9zhAyRLc` | P0=`79628723`, P1=`0a877460`, P2=`da944a9c` |
+| Size | `PVTSSF_lAHOAQG2984BTkG9zhAyRLg` | XS=`6c6483d2`, S=`f784b110`, M=`7515a9f1`, L=`817d0097`, XL=`db339eb2` |
+
+### Workflow
+1. Read the issue body for full context
+2. Move the issue to **In Progress** via GraphQL mutation
+3. Do the work
+4. Commit with `Closes #N` in the message
+5. Move to **Done**, post a completion comment, close the issue
