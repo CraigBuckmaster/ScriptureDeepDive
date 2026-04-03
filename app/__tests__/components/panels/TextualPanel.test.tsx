@@ -9,7 +9,7 @@ import type { TextualEntry } from '@/types';
 
 const entries: TextualEntry[] = [
   { ref: 'v. 1', title: 'Masoretic vs LXX', content: 'The MT reads bereshit while LXX has en arche.', note: 'Minor semantic difference.' },
-  { ref: 'v. 2', title: 'Dead Sea Scrolls', content: 'Fragment 4Q supports MT reading.' },
+  { ref: 'v. 2', title: 'Dead Sea Scrolls', content: 'Fragment 4Q supports MT reading.', note: '' },
 ];
 
 describe('TextualPanel', () => {

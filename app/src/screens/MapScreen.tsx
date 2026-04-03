@@ -123,7 +123,7 @@ export default function MapScreen({ route, navigation }: {
     if (!story.chapter_link) return;
     const match = story.chapter_link.match(/(\w+)\/(\w+)_(\d+)\.html/);
     if (match) {
-      navigation.navigate('ReadTab', {
+      (navigation as any).navigate('ReadTab', {
         screen: 'Chapter',
         params: { bookId: match[2].toLowerCase(), chapterNum: parseInt(match[3], 10) },
       });

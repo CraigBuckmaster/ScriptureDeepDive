@@ -61,7 +61,7 @@ export { presets as typography };
 
 export function scaledTypography(scale: number): Record<keyof typeof presets, TypographyPreset> {
   const result = {} as Record<keyof typeof presets, TypographyPreset>;
-  for (const [key, preset] of Object.entries(presets)) {
+  for (const [key, preset] of Object.entries(presets) as [keyof typeof presets, TypographyPreset][]) {
     result[key] = {
       ...preset,
       fontSize: Math.round(preset.fontSize * scale),

@@ -13,7 +13,7 @@ jest.mock('@/utils/referenceParser', () => ({
 
 const entries: RecEntry[] = [
   { title: 'Augustine', quote: 'God created all things simultaneously.', note: 'See De Genesi ad Litteram.' },
-  { title: 'Basil of Caesarea', quote: 'The creation account teaches order and purpose.' },
+  { title: 'Basil of Caesarea', quote: 'The creation account teaches order and purpose.', note: '' },
 ];
 
 describe('ReceptionPanel', () => {

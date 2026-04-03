@@ -21,7 +21,7 @@ export function logEvent(name: string, params?: Record<string, string | number>)
     )
     .catch((err) => {
       // Silently drop — analytics should never break the app
-      logger.debug?.('analytics', `Failed to log event: ${name}`, err);
+      logger.info('analytics', `Failed to log event: ${name}`, err);
     });
 }
 

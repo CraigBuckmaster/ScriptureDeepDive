@@ -21,10 +21,10 @@ import { ChevronLeft, BookOpen, Users, Scroll, Link2, MapPin } from 'lucide-reac
 import { useConceptData } from '../hooks/useConceptData';
 import ConceptJourney from '../components/ConceptJourney';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import type { StackNavigationProp } from '@react-navigation/stack';
 import type { ExploreStackParamList } from '../navigation/types';
 
-type Nav = NativeStackNavigationProp<ExploreStackParamList, 'ConceptDetail'>;
+type Nav = StackNavigationProp<ExploreStackParamList, 'ConceptDetail'>;
 type Route = RouteProp<ExploreStackParamList, 'ConceptDetail'>;
 
 export default function ConceptDetailScreen() {

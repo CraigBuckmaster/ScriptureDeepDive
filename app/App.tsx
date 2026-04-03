@@ -21,7 +21,7 @@ import { ErrorBoundary } from './src/components/ErrorBoundary';
 SplashScreen.preventAutoHideAsync();
 
 /** Deep linking configuration for scripture:// URLs. */
-const linking = {
+const linking: any = {
   prefixes: ['scripture://'],
   config: {
     screens: {

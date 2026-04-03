@@ -237,7 +237,7 @@ export default function GenealogyTreeScreen({ route, navigation }: {
         onChapterPress={(link) => {
           const match = link.match(/(\w+)_(\d+)\.html/);
           if (match) {
-            navigation.navigate('ReadTab', {
+            (navigation as any).navigate('ReadTab', {
               screen: 'Chapter',
               params: { bookId: match[1].toLowerCase(), chapterNum: parseInt(match[2], 10) },
             });

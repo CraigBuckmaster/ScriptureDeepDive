@@ -38,14 +38,14 @@ import {
   DifficultPassageResponse,
 } from '../hooks/useDifficultPassages';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import type { StackNavigationProp } from '@react-navigation/stack';
 import type { ExploreStackParamList } from '../navigation/types';
 
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
   UIManager.setLayoutAnimationEnabledExperimental(true);
 }
 
-type Nav = NativeStackNavigationProp<ExploreStackParamList, 'DifficultPassageDetail'>;
+type Nav = StackNavigationProp<ExploreStackParamList, 'DifficultPassageDetail'>;
 type Route = RouteProp<ExploreStackParamList, 'DifficultPassageDetail'>;
 
 const SEVERITY_LABELS: Record<string, string> = {
@@ -589,7 +589,7 @@ const styles = StyleSheet.create({
   familyBadge: {
     paddingHorizontal: spacing.sm,
     paddingVertical: 2,
-    borderRadius: radii.full,
+    borderRadius: radii.pill,
   },
   familyText: {
     fontFamily: fontFamily.ui,
@@ -667,7 +667,7 @@ const styles = StyleSheet.create({
   verseChip: {
     paddingHorizontal: spacing.sm,
     paddingVertical: 3,
-    borderRadius: radii.full,
+    borderRadius: radii.pill,
   },
   verseChipText: {
     fontFamily: fontFamily.ui,
@@ -681,7 +681,7 @@ const styles = StyleSheet.create({
   },
   chapterPill: {
     borderWidth: 1,
-    borderRadius: radii.full,
+    borderRadius: radii.pill,
     paddingHorizontal: spacing.sm + 2,
     paddingVertical: spacing.xs + 2,
     marginRight: spacing.xs,

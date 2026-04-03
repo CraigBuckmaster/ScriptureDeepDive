@@ -11,7 +11,7 @@ import React, { useState, useRef, useMemo } from 'react';
 import { View, Text, TextInput, TouchableOpacity, SectionList, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
-import type { ScreenNavProp } from '../navigation/types';
+// Navigation types imported from types but using any for cross-tab navigation
 import { useScrollToTop } from '@react-navigation/native';
 import { Search as SearchIcon } from 'lucide-react-native';
 import { useSearch } from '../hooks/useSearch';
@@ -25,7 +25,7 @@ const LOAD_MORE_INCREMENT = 30;
 
 export default function SearchScreen() {
   const { base, eras } = useTheme();
-  const navigation = useNavigation<ScreenNavProp<'Search', 'SearchMain'>>();
+  const navigation = useNavigation<any>();
   const [query, setQuery] = useState('');
   const [verseLimit, setVerseLimit] = useState(INITIAL_VERSE_LIMIT);
   const [filter, setFilter] = useState<SearchFilter>({ testament: 'all', bookId: null, bookName: null });
@@ -171,7 +171,7 @@ export default function SearchScreen() {
             }
             // Verse
             const v = item as Verse;
-            const displayName = v.book_name ?? v.book_id;
+            const displayName = (v as any).book_name ?? v.book_id;
             return (
               <TouchableOpacity
                 onPress={() => navigation.navigate('ReadTab', {

@@ -5,8 +5,9 @@ import { ScholarlyBlock } from '@/components/ScholarlyBlock';
 import type { ChapterPanel } from '@/types';
 
 const makePanels = (...types: string[]): ChapterPanel[] =>
-  types.map((t) => ({
-    id: t,
+  types.map((t, i) => ({
+    id: i,
+    chapter_id: 'ch-1',
     panel_type: t,
     content_json: '{}',
   }));

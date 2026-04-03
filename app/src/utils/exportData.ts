@@ -5,7 +5,7 @@
  * All dependencies (expo-file-system, expo-sharing) are OTA-safe.
  */
 
-import * as FileSystem from 'expo-file-system';
+import * as FileSystem from 'expo-file-system/legacy';
 import * as Sharing from 'expo-sharing';
 import { getUserDb } from '../db/userDatabase';
 import { logger } from './logger';
@@ -52,7 +52,8 @@ interface ExportPayload {
   collections: ExportedCollection[];
 }
 
-const APP_VERSION: string = require('../../app.json').expo.version ?? '1.0.0';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const APP_VERSION: string = (require('../../app.json') as any).expo.version ?? '1.0.0';
 
 /**
  * Export all user study data to a JSON file and open the system share sheet.

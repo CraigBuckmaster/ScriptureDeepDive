@@ -61,7 +61,7 @@
 
 import { useState, useCallback, useMemo, useRef } from 'react';
 import { useWindowDimensions, type ViewStyle } from 'react-native';
-import { Gesture, type GestureType } from 'react-native-gesture-handler';
+import { Gesture } from 'react-native-gesture-handler';
 import {
   useSharedValue,
   useAnimatedStyle,
@@ -74,7 +74,7 @@ import { TREE_CONSTANTS } from '../utils/treeBuilder';
 import { logger } from '../utils/logger';
 
 interface TreeGestureResult {
-  gesture: GestureType;
+  gesture: ReturnType<typeof Gesture.Simultaneous>;
   baseStyle: ViewStyle;
   gestureStyle: ReturnType<typeof useAnimatedStyle>;
   centreOnNode: (nodeX: number, nodeY: number) => void;
@@ -96,7 +96,7 @@ export function useTreeGestures(): TreeGestureResult {
   // Reduce Motion. React state → View style is the ONLY reliable way to
   // programmatically move the tree viewport. See header comment for the
   // full list of things we tried.
-  const [base, setBase] = useState({ tx: 0, ty: 0, s: initialScale });
+  const [base, setBase] = useState<{ tx: number; ty: number; s: number }>({ tx: 0, ty: 0, s: initialScale });
   const baseRef = useRef(base);
   baseRef.current = base;
 

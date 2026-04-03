@@ -80,10 +80,10 @@ export interface TreeLink {
 export function computeSpineIds(people: Person[]): Set<string> {
   const byId = new Map(people.map((p) => [p.id, p]));
   const spine = new Set<string>();
-  let current = byId.get('jesus');
+  let current: Person | undefined = byId.get('jesus');
   while (current) {
     spine.add(current.id);
-    current = current.father ? byId.get(current.father) ?? null : null;
+    current = current.father ? byId.get(current.father) : undefined;
   }
   return spine;
 }
@@ -152,11 +152,11 @@ export function layoutTree(root: HierNode): LayoutNode[] {
   const treeLayout = tree<HierNode>()
     .nodeSize(TREE_CONSTANTS.nodeSize);
 
-  treeLayout(d3Root);
+  const pointRoot = treeLayout(d3Root);
 
   // Flatten to array
   const nodes: LayoutNode[] = [];
-  d3Root.each((d: HierarchyPointNode<HierNode>) => {
+  pointRoot.each((d: HierarchyPointNode<HierNode>) => {
     nodes.push({
       data: d.data.data,
       x: d.x,

@@ -34,7 +34,7 @@ describe('useMapStories', () => {
 
   it('reloads when era changes', async () => {
     const { result, rerender } = renderHook(
-      ({ era }) => useMapStories(era),
+      ({ era }: { era: string }) => useMapStories(era),
       { initialProps: { era: 'exodus' } },
     );
     await waitFor(() => expect(result.current.isLoading).toBe(false));

@@ -126,7 +126,7 @@ async function _doDownload(
 
   const copied = await FileSystem.getInfoAsync(dbPath);
   logger.info('TranslationManager',
-    `Installed ${translationId}.db (${((copied.size || 0) / 1024 / 1024).toFixed(1)} MB)`
+    `Installed ${translationId}.db (${(((copied.exists && copied.size) || 0) / 1024 / 1024).toFixed(1)} MB)`
   );
   onProgress?.(1.0);
 }

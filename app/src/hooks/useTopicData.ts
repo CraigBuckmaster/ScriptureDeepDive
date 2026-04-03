@@ -47,7 +47,7 @@ export function useTopicData(): UseTopicDataResult {
   const [search, setSearch] = useState('');
   const [searchResults, setSearchResults] = useState<Topic[]>([]);
   const [categoryFilter, setCategoryFilter] = useState('all');
-  const debounceRef = useRef<ReturnType<typeof setTimeout>>();
+  const debounceRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   useEffect(() => {
     getTopics().then((t) => {

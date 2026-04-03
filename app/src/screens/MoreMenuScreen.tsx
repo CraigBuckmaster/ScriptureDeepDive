@@ -73,7 +73,7 @@ export default function MoreMenuScreen() {
         {MENU_ITEMS.map((item, idx) => (
           <TouchableOpacity
             key={item.screen}
-            onPress={() => navigation.navigate(item.screen)}
+            onPress={() => navigation.navigate(item.screen as any)}
             activeOpacity={0.6}
             style={[
               styles.menuRow,

@@ -58,7 +58,7 @@ describe('useNotedVerses', () => {
       .mockResolvedValueOnce([{ verse_ref: 'genesis 2:5', note_text: 'Day' }]);
 
     const { result, rerender } = renderHook(
-      ({ bookId, ch }) => useNotedVerses(bookId, ch),
+      ({ bookId, ch }: { bookId: string; ch: number }) => useNotedVerses(bookId, ch),
       { initialProps: { bookId: 'genesis', ch: 1 } }
     );
 

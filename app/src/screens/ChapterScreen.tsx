@@ -388,12 +388,12 @@ export default function ChapterScreen() {
           noteCount={noteCount}
           onNotesPress={toggleNotes}
           onTimelinePress={chapter.timeline_link_event
-            ? () => navigation.navigate('ExploreTab', {
+            ? () => (navigation as any).navigate('ExploreTab', {
                 screen: 'Timeline', params: { eventId: chapter.timeline_link_event },
               })
             : undefined}
           onMapPress={chapter.map_story_link_id
-            ? () => navigation.navigate('ExploreTab', {
+            ? () => (navigation as any).navigate('ExploreTab', {
                 screen: 'Map', params: { storyId: chapter.map_story_link_id },
               })
             : undefined}
@@ -560,11 +560,11 @@ export default function ChapterScreen() {
         onClose={() => setInterlinearVerse(null)}
         onWordStudyPress={(wsId) => {
           setInterlinearVerse(null);
-          navigation.navigate('ExploreTab', { screen: 'WordStudyDetail', params: { wordId: wsId } });
+          (navigation as any).navigate('ExploreTab', { screen: 'WordStudyDetail', params: { wordId: wsId } });
         }}
         onConcordancePress={(params) => {
           setInterlinearVerse(null);
-          navigation.navigate('ExploreTab', { screen: 'Concordance', params });
+          (navigation as any).navigate('ExploreTab', { screen: 'Concordance', params });
         }}
         onLexiconPress={(strongs, wsId) => {
           setInterlinearVerse(null);
@@ -581,12 +581,12 @@ export default function ChapterScreen() {
         onWordStudyPress={(wsId) => {
           setLexiconStrongs(null);
           setLexiconWordStudyId(null);
-          navigation.navigate('ExploreTab', { screen: 'WordStudyDetail', params: { wordId: wsId } });
+          (navigation as any).navigate('ExploreTab', { screen: 'WordStudyDetail', params: { wordId: wsId } });
         }}
         onConcordancePress={(params) => {
           setLexiconStrongs(null);
           setLexiconWordStudyId(null);
-          navigation.navigate('ExploreTab', { screen: 'Concordance', params });
+          (navigation as any).navigate('ExploreTab', { screen: 'Concordance', params });
         }}
       />
 

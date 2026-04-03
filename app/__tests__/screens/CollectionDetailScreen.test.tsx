@@ -65,9 +65,9 @@ const mockGetCollection = jest.fn(() => Promise.resolve(sampleCollection));
 const mockGetNotesInCollection = jest.fn(() => Promise.resolve(sampleNotes));
 const mockDeleteCollection = jest.fn(() => Promise.resolve());
 jest.mock('@/db/user', () => ({
-  getCollection: (...args: unknown[]) => mockGetCollection(...args),
-  getNotesInCollection: (...args: unknown[]) => mockGetNotesInCollection(...args),
-  deleteCollection: (...args: unknown[]) => mockDeleteCollection(...args),
+  getCollection: (..._args: any[]) => mockGetCollection(),
+  getNotesInCollection: (..._args: any[]) => mockGetNotesInCollection(),
+  deleteCollection: (..._args: any[]) => mockDeleteCollection(),
   updateNoteTags: jest.fn(),
 }));
 
@@ -89,7 +89,7 @@ describe('CollectionDetailScreen', () => {
   });
 
   it('shows "Collection not found" when collection is null', async () => {
-    mockGetCollection.mockResolvedValueOnce(null);
+    mockGetCollection.mockResolvedValueOnce(null as any);
     mockGetNotesInCollection.mockResolvedValueOnce([]);
     const { getByText } = renderWithProviders(<CollectionDetailScreen />);
     // Initially renders with null collection

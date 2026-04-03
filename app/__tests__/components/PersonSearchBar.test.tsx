@@ -11,6 +11,7 @@ jest.mock('lucide-react-native', () => ({
 const makePerson = (overrides?: Partial<Person>): Person => ({
   id: 'abraham',
   name: 'Abraham',
+  gender: null,
   role: 'Patriarch',
   era: 'patriarchs',
   dates: '2166–1991 BC',
@@ -19,6 +20,8 @@ const makePerson = (overrides?: Partial<Person>): Person => ({
   refs_json: '["Gen 12:1"]',
   father: null,
   mother: null,
+  spouse_of: null,
+  type: null,
   chapter_link: null,
   ...overrides,
 });

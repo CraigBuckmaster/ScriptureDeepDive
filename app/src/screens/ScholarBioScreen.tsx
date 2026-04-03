@@ -86,7 +86,7 @@ export default function ScholarBioScreen() {
               {(scope as string[]).map((bookId) => (
                 <TouchableOpacity
                   key={bookId}
-                  onPress={() => navigation.navigate('ReadTab', { screen: 'ChapterList', params: { bookId } })}
+                  onPress={() => (navigation as any).navigate('ReadTab', { screen: 'ChapterList', params: { bookId } })}
                   style={[styles.scopeChip, { backgroundColor: color + '1A', borderColor: color + '40' }]}
                   accessibilityRole="button"
                   accessibilityLabel={`Go to ${bookId}`}

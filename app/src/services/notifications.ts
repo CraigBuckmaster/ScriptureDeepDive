@@ -12,7 +12,7 @@ Notifications.setNotificationHandler({
     shouldShowAlert: true,
     shouldPlaySound: false,
     shouldSetBadge: false,
-  }),
+  } as any),
 });
 
 export async function requestPermission(): Promise<boolean> {
@@ -43,7 +43,7 @@ export async function scheduleDailyVerse(hour: number, minute: number): Promise<
         title: 'Verse of the Day',
         body: `${body}\n— ${verse.book_id} ${verse.chapter_num}:${verse.verse_num}`,
         data: { type: 'daily_verse', bookId: verse.book_id, chapterNum: verse.chapter_num },
-        ...(Platform.OS === 'android' ? { icon: iconAsset } : {}),
+        ...(Platform.OS === 'android' ? { icon: iconAsset } : {}) as any,
       },
       trigger: { type: Notifications.SchedulableTriggerInputTypes.DAILY, hour, minute },
     });
