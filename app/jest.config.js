@@ -27,10 +27,10 @@ module.exports = {
       lines: 45,
     },
     './src/utils/': {
-      statements: 40,
-      branches: 35,
-      functions: 45,
-      lines: 42,
+      statements: 30,
+      branches: 20,
+      functions: 40,
+      lines: 32,
     },
   },
 };

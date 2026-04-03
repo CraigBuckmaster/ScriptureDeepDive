@@ -89,24 +89,15 @@ const SECTIONS: FeatureSection[] = [
     ],
   },
   {
-    title: 'Hermeneutic Lenses',
-    subtitle: 'Read through different interpretive frameworks',
-    screen: 'LensBrowse',
-  },
-  {
-    title: 'Archaeological Evidence',
-    subtitle: 'Discoveries that illuminate the biblical world',
-    screen: 'ArchaeologyBrowse',
-  },
-  {
-    title: 'Time-Travel Reader',
-    subtitle: 'How passages were understood across church history',
-    screen: 'TimeTravelBrowse',
-  },
-  {
-    title: 'Grammar Reference',
-    subtitle: 'Greek and Hebrew morphology decoded',
-    screen: 'GrammarBrowse',
+    label: 'Deep Dive',
+    subtitle: 'Advanced study tools',
+    layout: 'grid',
+    features: [
+      { title: 'Hermeneutic Lenses', subtitle: 'Different interpretive frameworks', screen: 'LensBrowse' },
+      { title: 'Archaeological Evidence', subtitle: 'Discoveries that illuminate Scripture', screen: 'ArchaeologyBrowse' },
+      { title: 'Time-Travel Reader', subtitle: 'Interpretations across church history', screen: 'TimeTravelBrowse' },
+      { title: 'Grammar Reference', subtitle: 'Greek & Hebrew morphology decoded', screen: 'GrammarBrowse' },
+    ],
   },
 ];
 
