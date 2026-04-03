@@ -103,8 +103,12 @@ function SettingsScreen() {
   const handleClearHistory = () => {
     confirmClear(
       'Clear Reading History',
-      'This will clear all reading history and streak data. This cannot be undone.',
-      'DELETE FROM reading_progress',
+      'This will clear all reading history, streak data, and reading plan progress. This cannot be undone.',
+      [
+        'DELETE FROM reading_progress',
+        'DELETE FROM plan_progress',
+        "INSERT OR REPLACE INTO user_preferences (key, value) VALUES ('active_plan', '')",
+      ],
       'Reading history cleared.',
     );
   };
