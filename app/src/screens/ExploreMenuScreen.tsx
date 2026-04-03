@@ -113,6 +113,11 @@ const GRID_FEATURES: Feature[] = [
     subtitle: 'Read through different interpretive frameworks',
     screen: 'LensBrowse',
   },
+  {
+    title: 'Archaeological Evidence',
+    subtitle: 'Discoveries that illuminate the biblical world',
+    screen: 'ArchaeologyBrowse',
+  },
 ];
 
 function ExploreMenuScreen() {

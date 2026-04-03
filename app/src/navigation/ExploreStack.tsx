@@ -29,6 +29,8 @@ import DebateDetailScreen from '../screens/DebateDetailScreen';
 import LifeTopicsScreen from '../screens/LifeTopicsScreen';
 import LifeTopicDetailScreen from '../screens/LifeTopicDetailScreen';
 import LensBrowseScreen from '../screens/LensBrowseScreen';
+import ArchaeologyBrowseScreen from '../screens/ArchaeologyBrowseScreen';
+import ArchaeologyDetailScreen from '../screens/ArchaeologyDetailScreen';
 import ChapterScreen from '../screens/ChapterScreen';
 import { useTheme } from '../theme';
 import type { ExploreStackParamList } from './types';
@@ -76,6 +78,8 @@ export function ExploreStack() {
       <Stack.Screen name="LifeTopics" component={LifeTopicsScreen} />
       <Stack.Screen name="LifeTopicDetail" component={LifeTopicDetailScreen} />
       <Stack.Screen name="LensBrowse" component={LensBrowseScreen} />
+      <Stack.Screen name="ArchaeologyBrowse" component={ArchaeologyBrowseScreen} />
+      <Stack.Screen name="ArchaeologyDetail" component={ArchaeologyDetailScreen} />
       <Stack.Screen name="Chapter" component={ChapterScreen} />
     </Stack.Navigator>
   );

@@ -78,6 +78,10 @@ export type ExploreStackParamList = {
   LifeTopics: undefined;
   LifeTopicDetail: { topicId: string };
   LensBrowse: undefined;
+  ArchaeologyBrowse: undefined;
+  ArchaeologyDetail: { discoveryId: string };
+  TimeTravelBrowse: undefined;
+  TimeTravelDetail: { verseRef: string };
   ContentLibrary: undefined;
   Concordance: {
     strongs?: string;
