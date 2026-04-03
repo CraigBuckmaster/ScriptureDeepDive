@@ -8,22 +8,35 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { Lightbulb } from 'lucide-react-native';
+import { Lightbulb, HelpCircle, Heart } from 'lucide-react-native';
 import { useTheme, spacing, fontFamily } from '../theme';
+
+type Tone = 'observation' | 'question' | 'devotional';
 
 interface Props {
   tip: string;
+  tone?: Tone;
   onDismiss: () => void;
 }
 
-function StudyCoachCard({ tip, onDismiss }: Props) {
+const TONE_CONFIG: Record<Tone, { label: string; Icon: typeof Lightbulb }> = {
+  observation: { label: 'NOTICE', Icon: Lightbulb },
+  question: { label: 'CONSIDER', Icon: HelpCircle },
+  devotional: { label: 'REFLECT', Icon: Heart },
+};
+
+function StudyCoachCard({ tip, tone, onDismiss }: Props) {
   const { base } = useTheme();
+  const config = tone ? TONE_CONFIG[tone] : null;
+  const ToneIcon = config?.Icon ?? Lightbulb;
+  const toneLabel = config?.label ?? 'STUDY COACH';
+
   return (
     <View style={[styles.container, { borderLeftColor: base.gold, backgroundColor: base.gold + '08' }]}>
       <View style={styles.header}>
         <View style={styles.headerLeft}>
-          <Lightbulb size={12} color={base.gold} />
-          <Text style={[styles.label, { color: base.gold }]}>STUDY COACH</Text>
+          <ToneIcon size={12} color={base.gold} />
+          <Text style={[styles.label, { color: base.gold }]}>{toneLabel}</Text>
         </View>
         <TouchableOpacity
           onPress={onDismiss}

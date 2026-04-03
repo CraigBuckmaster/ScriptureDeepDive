@@ -8,7 +8,7 @@
 
 import React, { useMemo } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import type { Section, SectionPanel, Verse, VHLGroup, ChapterPanel, CoachingTip } from '../types';
+import type { Section, SectionPanel, Verse, VHLGroup, ChapterPanel, CoachingTip, ChapterCoaching } from '../types';
 import type { OpenPanelParam } from '../navigation/types';
 
 import { SectionBlock } from './SectionBlock';
@@ -16,6 +16,7 @@ import { ButtonRow } from './ButtonRow';
 import { PanelContainer } from './PanelContainer';
 import { ScholarlyBlock } from './ScholarlyBlock';
 import { StudyCoachCard } from './StudyCoachCard';
+import { ChapterCoachingCard } from './ChapterCoachingCard';
 import { PrayerPromptCard } from './PrayerPromptCard';
 import { useTheme, spacing, fontFamily } from '../theme';
 
@@ -49,6 +50,7 @@ interface Props {
   /** Coaching */
   studyCoachEnabled: boolean;
   coachingTips: CoachingTip[];
+  chapterCoaching?: ChapterCoaching | null;
   dismissedTips: Set<number>;
   onDismissTip: (afterSection: number) => void;
   /** Chapter-level scholarly */
@@ -87,6 +89,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
   onBtnRowLayout,
   studyCoachEnabled,
   coachingTips,
+  chapterCoaching,
   dismissedTips,
   onDismissTip,
   chapterPanels,
@@ -171,6 +174,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
             <StudyCoachCard
               key={`coach-${tip.after_section}`}
               tip={tip.tip}
+              tone={tip.tone}
               onDismiss={() => onDismissTip(tip.after_section)}
             />,
           );
@@ -211,6 +215,11 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
       <Text style={[styles.scholarDisclaimer, { color: base.textMuted }]}>
         Scholar commentary panels present paraphrased summaries of positions found in published works and are not direct quotations. For exact wording, consult the original sources cited.
       </Text>
+
+      {/* Chapter-level coaching (study guide) */}
+      {studyCoachEnabled && chapterCoaching ? (
+        <ChapterCoachingCard coaching={chapterCoaching} />
+      ) : null}
 
       {/* Prayer prompt card */}
       {prayerPrompt ? <PrayerPromptCard prompt={prayerPrompt} /> : null}

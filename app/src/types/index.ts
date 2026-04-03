@@ -40,6 +40,20 @@ export interface CoachingTip {
   after_section: number;
   tip: string;
   genre_tag: string;
+  tone?: 'observation' | 'question' | 'devotional';
+}
+
+export interface ChapterCoaching {
+  questions: string[];
+  observations: string[];
+  reflections: string[];
+  cross_refs?: string[];
+}
+
+export interface CoachingData {
+  section_tips?: CoachingTip[];
+  chapter_coaching?: ChapterCoaching;
+  genre_tag: string;
 }
 
 export interface Section {
