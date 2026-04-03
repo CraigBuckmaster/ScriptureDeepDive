@@ -9,7 +9,7 @@ import { getUserDb } from './userDatabase';
 import { getDb } from './database';
 import { chapterPrefix, formatVerseRef } from '../utils/verseRef';
 import { escapeLike } from '../utils/escapeLike';
-import type { UserNote, ReadingProgress, Bookmark, RecentChapter, StudyCollection } from '../types';
+import type { UserNote, ReadingProgress, Bookmark, RecentChapter, StudyCollection, StudySession, StudySessionEvent } from '../types';
 
 // ── Shared interfaces ─────────────────────────────────────────────
 
@@ -362,6 +362,36 @@ export async function getNotesByTag(tag: string): Promise<UserNote[]> {
   return getUserDb().getAllAsync<UserNote>(
     "SELECT * FROM user_notes WHERE tags_json LIKE ? ESCAPE '\\' ORDER BY verse_ref",
     [`%"${escapeLike(tag)}"%`]
+  );
+}
+
+// ── Study Sessions (read) ───────────────────────────────────────
+
+export async function getStudySessions(limit?: number): Promise<StudySession[]> {
+  return getUserDb().getAllAsync<StudySession>(
+    `SELECT * FROM study_sessions ORDER BY started_at DESC${limit ? ' LIMIT ?' : ''}`,
+    limit ? [limit] : []
+  );
+}
+
+export async function getStudySession(id: number): Promise<StudySession | null> {
+  return getUserDb().getFirstAsync<StudySession>(
+    'SELECT * FROM study_sessions WHERE id = ?',
+    [id]
+  );
+}
+
+export async function getSessionEvents(sessionId: number): Promise<StudySessionEvent[]> {
+  return getUserDb().getAllAsync<StudySessionEvent>(
+    'SELECT * FROM study_session_events WHERE session_id = ? ORDER BY timestamp_ms',
+    [sessionId]
+  );
+}
+
+export async function getStudySessionsForChapter(chapterId: string): Promise<StudySession[]> {
+  return getUserDb().getAllAsync<StudySession>(
+    'SELECT * FROM study_sessions WHERE chapter_id = ? ORDER BY started_at DESC',
+    [chapterId]
   );
 }
 

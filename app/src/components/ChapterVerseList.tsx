@@ -16,6 +16,7 @@ import { ButtonRow } from './ButtonRow';
 import { PanelContainer } from './PanelContainer';
 import { ScholarlyBlock } from './ScholarlyBlock';
 import { StudyCoachCard } from './StudyCoachCard';
+import { PrayerPromptCard } from './PrayerPromptCard';
 import { useTheme, spacing, fontFamily } from '../theme';
 
 interface Props {
@@ -54,6 +55,8 @@ interface Props {
   chapterPanels: ChapterPanel[];
   activeChapterPanelType: string | null;
   handleChapterPanelToggle: (panelType: string) => void;
+  /** Prayer prompt */
+  prayerPrompt?: string | null;
 }
 
 const ChapterVerseList = React.memo(function ChapterVerseList({
@@ -89,6 +92,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
   chapterPanels,
   activeChapterPanelType,
   handleChapterPanelToggle,
+  prayerPrompt,
 }: Props) {
   const { base } = useTheme();
 
@@ -207,6 +211,9 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
       <Text style={[styles.scholarDisclaimer, { color: base.textMuted }]}>
         Scholar commentary panels present paraphrased summaries of positions found in published works and are not direct quotations. For exact wording, consult the original sources cited.
       </Text>
+
+      {/* Prayer prompt card */}
+      {prayerPrompt ? <PrayerPromptCard prompt={prayerPrompt} /> : null}
     </>
   );
 });

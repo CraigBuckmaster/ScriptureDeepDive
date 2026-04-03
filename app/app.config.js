@@ -10,11 +10,15 @@
 const baseConfig = require('./app.json');
 
 const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY || '';
-if (!GOOGLE_MAPS_API_KEY) {
-  console.warn('app.config.js: GOOGLE_MAPS_API_KEY env var is not set — maps will not work');
-}
+
+let _warnedMapsKey = false;
 
 module.exports = ({ config }) => {
+  if (!GOOGLE_MAPS_API_KEY && !_warnedMapsKey) {
+    _warnedMapsKey = true;
+    console.warn('app.config.js: GOOGLE_MAPS_API_KEY env var is not set — maps will not work');
+  }
+
   return {
     ...config,
     ios: {

@@ -269,6 +269,15 @@ def main():
     else:
         print("  topics: table not found (optional)")
 
+    # Life Topics
+    lt_cat_count = q1(cur, "SELECT COUNT(*) FROM life_topic_categories")
+    check("life_topic_categories table exists", lt_cat_count is not None, "table missing")
+    print(f"  life_topic_categories: {lt_cat_count or 0}")
+
+    lt_off_count = q1(cur, "SELECT COUNT(*) FROM life_topics_official")
+    check("life_topics_official table exists", lt_off_count is not None, "table missing")
+    print(f"  life_topics_official: {lt_off_count or 0}")
+
     # Dictionary entries (Easton's)
     dict_count = q1(cur, "SELECT COUNT(*) FROM dictionary_entries")
     if dict_count is not None:

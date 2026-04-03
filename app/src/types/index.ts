@@ -33,6 +33,7 @@ export interface Chapter {
   map_story_link_text: string | null;
   coaching_json: string | null;
   difficulty: number | null;
+  prayer_prompt?: string | null;
 }
 
 export interface CoachingTip {
@@ -223,6 +224,36 @@ export interface TimelineEntry {
   region: string | null;
 }
 
+// ── Life Topics ─────────────────────────────────────────────
+
+export interface LifeTopicCategory {
+  id: string;
+  name: string;
+  display_order: number;
+  icon?: string;
+}
+
+export interface LifeTopic {
+  id: string;
+  category_id: string;
+  title: string;
+  subtitle?: string;
+  summary: string;
+  body: string;
+  display_order: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface LifeTopicVerse {
+  id: number;
+  topic_id: string;
+  verse_ref: string;
+  verse_order: number;
+  annotation?: string;
+  is_primary: boolean;
+}
+
 // ── Concordance (Phase 21) ───────────────────────────────────
 
 export interface ConcordanceResult {
@@ -264,6 +295,25 @@ export interface NoteLink {
   from_note_id: number;
   to_note_id: number;
   created_at: string;
+}
+
+export interface StudySession {
+  id: number;
+  chapter_id: string;
+  started_at: string;
+  ended_at?: string;
+  duration_ms: number;
+}
+
+export interface StudySessionEvent {
+  id: number;
+  session_id: number;
+  event_type: string;
+  panel_type?: string;
+  scholar_id?: string;
+  section_id?: string;
+  timestamp_ms: number;
+  metadata_json?: string;
 }
 
 export interface ReadingProgress {

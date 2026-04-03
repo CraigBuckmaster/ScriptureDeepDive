@@ -80,6 +80,14 @@ const SECTIONS: FeatureSection[] = [
       { title: 'Content Library', subtitle: 'Browse manuscripts, discourse, and more', screen: 'ContentLibrary' },
     ],
   },
+  {
+    label: 'Life & Faith',
+    subtitle: 'Biblical guidance for everyday life',
+    layout: 'grid',
+    features: [
+      { title: 'Life Topics', subtitle: 'Biblical guidance for everyday life', screen: 'LifeTopics' },
+    ],
+  },
 ];
 
 function ExploreMenuScreen() {

@@ -36,6 +36,11 @@ export {
   getDebateTopics, getDebateTopic, getDebateTopicsForChapter,
   searchDebateTopics, getDebateTopicScholars,
 } from './debates';
+export {
+  getLifeTopicCategories, getLifeTopics, getLifeTopic,
+  searchLifeTopics, getLifeTopicVerses, getLifeTopicScholars,
+  getRelatedLifeTopics,
+} from './lifeTopics';
 export { searchVerses, searchPeople } from './search';
 export { getContentStats } from './stats';
 export type { ContentStats } from './stats';

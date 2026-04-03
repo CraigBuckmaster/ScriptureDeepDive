@@ -76,6 +76,8 @@ export type ExploreStackParamList = {
   DictionaryDetail: { entryId: string };
   DebateBrowse: undefined;
   DebateDetail: { topicId: string };
+  LifeTopics: undefined;
+  LifeTopicDetail: { topicId: string };
   ThreadBrowse: undefined;
   ThreadDetail: { threadId: string };
   ContentLibrary: undefined;

@@ -261,3 +261,46 @@ export async function upsertAuthProfile(
 export async function clearAuthProfile(): Promise<void> {
   await getUserDb().runAsync('DELETE FROM auth_profiles');
 }
+
+// ── Study Sessions (write) ─────────────────────────────────────
+
+export async function startStudySession(chapterId: string): Promise<number> {
+  const result = await getUserDb().runAsync(
+    "INSERT INTO study_sessions (chapter_id) VALUES (?)",
+    [chapterId]
+  );
+  return result.lastInsertRowId;
+}
+
+export async function endStudySession(sessionId: number, durationMs: number): Promise<void> {
+  await getUserDb().runAsync(
+    "UPDATE study_sessions SET ended_at = datetime('now'), duration_ms = ? WHERE id = ?",
+    [durationMs, sessionId]
+  );
+}
+
+export async function recordSessionEvent(
+  sessionId: number,
+  event: {
+    event_type: string;
+    panel_type?: string;
+    scholar_id?: string;
+    section_id?: string;
+    timestamp_ms: number;
+    metadata_json?: string;
+  }
+): Promise<void> {
+  await getUserDb().runAsync(
+    `INSERT INTO study_session_events (session_id, event_type, panel_type, scholar_id, section_id, timestamp_ms, metadata_json)
+     VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    [
+      sessionId,
+      event.event_type,
+      event.panel_type ?? null,
+      event.scholar_id ?? null,
+      event.section_id ?? null,
+      event.timestamp_ms,
+      event.metadata_json ?? null,
+    ]
+  );
+}
