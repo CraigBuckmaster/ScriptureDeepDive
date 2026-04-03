@@ -20,6 +20,7 @@ import { useReaderStore, useSettingsStore } from '../stores';
 import { recordVisit } from '../db/user';
 import { GenreBanner } from '../components/GenreBanner';
 import { useStudyDepth } from '../hooks/useStudyDepth';
+import { useStudyRecorder } from '../hooks/useStudyRecorder';
 import { useTranslationSwitch } from '../hooks/useTranslationSwitch';
 import { useStoreReview } from '../hooks/useStoreReview';
 import { logEvent } from '../services/analytics';
@@ -267,22 +268,29 @@ function ChapterScreen() {
 
   const { depthMap, recordOpen } = useStudyDepth(chapter?.id, sectionPanelMap);
 
+  // Study session recording (premium only)
+  const { recordEvent } = useStudyRecorder(chapter?.id, isPremium);
+
   // Panel toggle — single-open policy with animation
   const handleSectionPanelToggle = useCallback(
     (sectionId: string, panelType: string) => {
       LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+      const isOpen = activePanel?.sectionId === sectionId && activePanel?.panelType === panelType;
       setActivePanel(sectionId, panelType);
       recordOpen(sectionId, panelType);
+      recordEvent(isOpen ? 'panel_close' : 'panel_open', { section_id: sectionId, panel_type: panelType });
     },
-    [setActivePanel, recordOpen]
+    [setActivePanel, recordOpen, activePanel, recordEvent]
   );
 
   const handleChapterPanelToggle = useCallback(
     (panelType: string) => {
       LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+      const isOpen = activePanel?.sectionId === '__chapter__' && activePanel?.panelType === panelType;
       setActivePanel('__chapter__', panelType);
+      recordEvent(isOpen ? 'panel_close' : 'panel_open', { section_id: '__chapter__', panel_type: panelType });
     },
-    [setActivePanel]
+    [setActivePanel, activePanel, recordEvent]
   );
 
   // Auto-open panel from deep-link (Content Library)

@@ -297,6 +297,25 @@ export interface NoteLink {
   created_at: string;
 }
 
+export interface StudySession {
+  id: number;
+  chapter_id: string;
+  started_at: string;
+  ended_at?: string;
+  duration_ms: number;
+}
+
+export interface StudySessionEvent {
+  id: number;
+  session_id: number;
+  event_type: string;
+  panel_type?: string;
+  scholar_id?: string;
+  section_id?: string;
+  timestamp_ms: number;
+  metadata_json?: string;
+}
+
 export interface ReadingProgress {
   book_id: string;
   chapter_num: number;

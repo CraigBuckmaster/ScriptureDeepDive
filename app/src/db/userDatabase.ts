@@ -390,6 +390,33 @@ const MIGRATIONS: Migration[] = [
       CREATE INDEX IF NOT EXISTS idx_bookmarks_ref ON bookmarks(verse_ref);
     `,
   },
+  {
+    version: 10,
+    description: 'Study session replay — sessions and events tables for premium session recording',
+    sql: `
+      CREATE TABLE IF NOT EXISTS study_sessions (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        chapter_id TEXT NOT NULL,
+        started_at TEXT NOT NULL DEFAULT (datetime('now')),
+        ended_at TEXT,
+        duration_ms INTEGER DEFAULT 0
+      );
+
+      CREATE TABLE IF NOT EXISTS study_session_events (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        session_id INTEGER NOT NULL REFERENCES study_sessions(id),
+        event_type TEXT NOT NULL,
+        panel_type TEXT,
+        scholar_id TEXT,
+        section_id TEXT,
+        timestamp_ms INTEGER NOT NULL,
+        metadata_json TEXT
+      );
+
+      CREATE INDEX IF NOT EXISTS idx_study_sessions_chapter ON study_sessions(chapter_id);
+      CREATE INDEX IF NOT EXISTS idx_session_events_session ON study_session_events(session_id);
+    `,
+  },
 ];
 
 /**
