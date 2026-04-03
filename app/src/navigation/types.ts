@@ -47,6 +47,7 @@ export type HomeStackParamList = {
   TopicDetail: { topicId: string };
   DictionaryBrowse: undefined;
   DictionaryDetail: { entryId: string };
+  PlanDetail: { planId: string };
 };
 
 export type ExploreStackParamList = {
