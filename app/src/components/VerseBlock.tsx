@@ -33,13 +33,15 @@ interface Props {
   redLetterVerses?: Set<number>;
   /** Called with (verseNum, yRelativeToBlock) when a verse wrapper lays out. */
   onVerseLayout?: (verseNum: number, y: number) => void;
+  /** User-applied verse highlight colors: verseNum → hex color string. */
+  highlightMap?: Map<number, string>;
 }
 
 export const VerseBlock = React.memo(function VerseBlock({
   verses, vhlGroups, activeVhlGroups, notedVerses, sectionId,
   fontSize = 16, onVhlWordPress, onNotePress, onVerseLongPress, onVerseNumPress, activeVerseNum,
   comparisonVerses, comparisonLabel, primaryLabel,
-  redLetterVerses, onVerseLayout,
+  redLetterVerses, onVerseLayout, highlightMap,
 }: Props) {
   const { base } = useTheme();
   if (!verses.length) return null;
@@ -54,6 +56,7 @@ export const VerseBlock = React.memo(function VerseBlock({
         const comp = isComparing
           ? comparisonVerses!.find(cv => cv.verse_num === verse.verse_num)
           : null;
+        const highlightHex = highlightMap?.get(verse.verse_num);
 
         return (
           <View
@@ -61,7 +64,11 @@ export const VerseBlock = React.memo(function VerseBlock({
             onLayout={onVerseLayout ? (e) => onVerseLayout(verse.verse_num, e.nativeEvent.layout.y) : undefined}
           >
             <TouchableOpacity
-              style={[styles.verseRow, activeVerseNum === verse.verse_num && { backgroundColor: base.gold + '15', borderRadius: 4, marginHorizontal: -4, paddingHorizontal: 4 }]}
+              style={[
+                styles.verseRow,
+                highlightHex && { backgroundColor: highlightHex + '20', borderRadius: 4, marginHorizontal: -4, paddingHorizontal: 4 },
+                activeVerseNum === verse.verse_num && { backgroundColor: base.gold + '15', borderRadius: 4, marginHorizontal: -4, paddingHorizontal: 4 },
+              ]}
               onLongPress={onVerseLongPress ? () => onVerseLongPress(verse.verse_num, verse.text) : undefined}
               activeOpacity={onVerseLongPress ? 0.7 : 1}
               delayLongPress={400}

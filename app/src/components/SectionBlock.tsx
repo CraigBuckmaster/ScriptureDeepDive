@@ -43,6 +43,8 @@ interface Props {
   redLetterVerses?: Set<number>;
   /** Called with (verseNum, yRelativeToSection, sectionId) when a verse lays out. */
   onVerseLayout?: (verseNum: number, y: number, sectionId: string) => void;
+  /** User-applied verse highlight colors: verseNum → hex color string. */
+  highlightMap?: Map<number, string>;
 }
 
 export function SectionBlock({
@@ -52,7 +54,7 @@ export function SectionBlock({
   renderButtonRow, renderPanel,
   depthExplored, depthTotal, onDepthRecord,
   comparisonVerses, comparisonLabel, primaryLabel,
-  redLetterVerses, onVerseLayout,
+  redLetterVerses, onVerseLayout, highlightMap,
 }: Props) {
   const { base } = useTheme();
 
@@ -106,6 +108,7 @@ export function SectionBlock({
         primaryLabel={primaryLabel}
         redLetterVerses={redLetterVerses}
         onVerseLayout={onVerseLayout ? (verseNum, y) => onVerseLayout(verseNum, y, section.id) : undefined}
+        highlightMap={highlightMap}
       />
 
       {/* Panel button row after verses */}

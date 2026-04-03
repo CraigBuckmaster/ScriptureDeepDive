@@ -45,6 +45,7 @@ import { setHighlight, removeHighlight, getHighlightsForChapter, type VerseHighl
 import { InterlinearSheet } from '../components/InterlinearSheet';
 import { TTSControls } from '../components/TTSControls';
 import { useTTS } from '../hooks/useTTS';
+import { useBookmarkedVerses } from '../hooks/useBookmarkedVerses';
 
 import { TRANSLATION_MAP } from '../db/translationRegistry';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
@@ -186,6 +187,20 @@ export default function ChapterScreen() {
   }, [bookId, chapterNum]);
   useEffect(() => { loadHighlights(); }, [loadHighlights]);
 
+  // Build verseNum → highlight hex color map for rendering
+  const highlightMap = useMemo(() => {
+    const map = new Map<number, string>();
+    for (const h of highlights) {
+      const parts = h.verse_ref.split(':');
+      const num = parts[1] ? parseInt(parts[1], 10) : NaN;
+      if (!isNaN(num)) {
+        const entry = HIGHLIGHT_COLORS.find((c) => c.name === h.color);
+        if (entry) map.set(num, entry.hex);
+      }
+    }
+    return map;
+  }, [highlights]);
+
   // Breadcrumb state — show when openPanel is present, hide on chapter swipe
   const [showBreadcrumb, setShowBreadcrumb] = useState(!!openPanel);
 
@@ -320,6 +335,9 @@ export default function ChapterScreen() {
   // Noted verses for note indicators
   const notedVerses = useNotedVerses(bookId, chapterNum);
 
+  // Bookmarked verses
+  const { bookmarked, toggleBookmark } = useBookmarkedVerses(bookId, chapterNum);
+
   // All VHL group names active by default
   const activeVhlGroups = useMemo(
     () => vhlGroups.map((g) => g.group_name),
@@ -447,6 +465,7 @@ export default function ChapterScreen() {
               comparisonLabel={comparisonTranslation ? (TRANSLATION_MAP.get(comparisonTranslation)?.label ?? comparisonTranslation.toUpperCase()) : undefined}
               primaryLabel={comparisonTranslation ? (TRANSLATION_MAP.get(translation)?.label ?? translation.toUpperCase()) : undefined}
               redLetterVerses={redLetterVerses}
+              highlightMap={highlightMap}
               onVerseLayout={(verseNum, y, sectionId) => {
                 const sectionY = sectionYMap.current[sectionId] ?? 0;
                 verseYMap.current[verseNum] = sectionY + y;
@@ -618,6 +637,8 @@ export default function ChapterScreen() {
               (h) => h.verse_ref === `${bookId}_${chapterNum}:${longPress.verseNum}`
             )?.color)?.hex ?? null
           : null}
+        onBookmark={longPress ? () => toggleBookmark(longPress.verseNum) : undefined}
+        isBookmarked={longPress ? bookmarked.has(longPress.verseNum) : false}
       />
 
       <HighlightColorPicker
