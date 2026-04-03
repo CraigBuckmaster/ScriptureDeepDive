@@ -18,6 +18,7 @@ import { ScholarlyBlock } from './ScholarlyBlock';
 import { StudyCoachCard } from './StudyCoachCard';
 import { ChapterCoachingCard } from './ChapterCoachingCard';
 import { PrayerPromptCard } from './PrayerPromptCard';
+import RelatedLifeTopics from './RelatedLifeTopics';
 import { useTheme, spacing, fontFamily } from '../theme';
 
 interface Props {
@@ -59,6 +60,8 @@ interface Props {
   handleChapterPanelToggle: (panelType: string) => void;
   /** Prayer prompt */
   prayerPrompt?: string | null;
+  /** Related life topics JSON */
+  relatedLifeTopicsJson?: string | null;
 }
 
 const ChapterVerseList = React.memo(function ChapterVerseList({
@@ -96,6 +99,7 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
   activeChapterPanelType,
   handleChapterPanelToggle,
   prayerPrompt,
+  relatedLifeTopicsJson,
 }: Props) {
   const { base } = useTheme();
 
@@ -220,6 +224,9 @@ const ChapterVerseList = React.memo(function ChapterVerseList({
       {studyCoachEnabled && chapterCoaching ? (
         <ChapterCoachingCard coaching={chapterCoaching} />
       ) : null}
+
+      {/* Related life topics */}
+      <RelatedLifeTopics relatedLifeTopicsJson={relatedLifeTopicsJson} />
 
       {/* Prayer prompt card */}
       {prayerPrompt ? <PrayerPromptCard prompt={prayerPrompt} /> : null}

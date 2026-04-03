@@ -15,6 +15,7 @@ import {
   ScrollView,
   StyleSheet,
 } from 'react-native';
+import { UserPlus } from 'lucide-react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
@@ -29,19 +30,24 @@ import {
   useLifeTopicSearch,
 } from '../hooks/useLifeTopics';
 import { usePremium } from '../hooks/usePremium';
+import { useFollowingFeed, type FeedItem } from '../hooks/useFollowingFeed';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { LifeTopic, LifeTopicCategory } from '../types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+
+type TabMode = 'browse' | 'following';
 
 function LifeTopicsScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Explore', 'LifeTopics'>>();
   const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
 
+  const [activeTab, setActiveTab] = useState<TabMode>('browse');
   const { data: categories, loading: catLoading } = useLifeTopicCategories();
   const [selectedCategory, setSelectedCategory] = useState<string | undefined>(undefined);
   const { data: topics, loading: topicsLoading } = useLifeTopics(selectedCategory);
   const { search, setSearch, results: searchResults, searching } = useLifeTopicSearch();
+  const { feed, loading: feedLoading, hasFollows } = useFollowingFeed();
 
   const isSearching = search.length >= 2;
 
@@ -101,13 +107,59 @@ function LifeTopicsScreen() {
     [categoryMap, handleTopicPress],
   );
 
+  const renderFeedItem = useCallback(
+    ({ item }: { item: FeedItem }) => (
+      <TouchableOpacity
+        onPress={() => item.target_id && handleTopicPress(item.target_id)}
+        style={[styles.feedCard, { backgroundColor: base.bgElevated, borderColor: base.border + '40' }]}
+        activeOpacity={0.7}
+      >
+        <Text style={[styles.feedTitle, { color: base.text }]} numberOfLines={1}>{item.title}</Text>
+        <Text style={[styles.feedBody, { color: base.textDim }]} numberOfLines={2}>{item.body}</Text>
+        {item.author_name && (
+          <Text style={[styles.feedAuthor, { color: base.textMuted }]}>by {item.author_name}</Text>
+        )}
+      </TouchableOpacity>
+    ),
+    [base, handleTopicPress],
+  );
+
+  // Tab bar component
+  const tabBar = (
+    <View style={styles.tabBar}>
+      {(['browse', 'following'] as TabMode[]).map((tab) => {
+        const active = activeTab === tab;
+        return (
+          <TouchableOpacity
+            key={tab}
+            onPress={() => setActiveTab(tab)}
+            style={[
+              styles.tab,
+              { borderColor: active ? base.gold : 'transparent' },
+            ]}
+          >
+            <Text
+              style={[
+                styles.tabText,
+                { color: active ? base.gold : base.textMuted },
+              ]}
+            >
+              {tab === 'browse' ? 'Browse' : 'Following'}
+            </Text>
+          </TouchableOpacity>
+        );
+      })}
+    </View>
+  );
+
   const loading = catLoading || topicsLoading;
 
-  if (loading && !isSearching) {
+  if (loading && !isSearching && activeTab === 'browse') {
     return (
       <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
         <View style={styles.headerPad}>
           <ScreenHeader title="Life Topics" onBack={() => navigation.goBack()} />
+          {tabBar}
         </View>
         <View style={styles.loadingPad}><LoadingSkeleton lines={6} /></View>
       </SafeAreaView>
@@ -166,51 +218,30 @@ function LifeTopicsScreen() {
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       <View style={styles.headerPad}>
         <ScreenHeader title="Life Topics" onBack={() => navigation.goBack()} />
-        <View style={styles.searchWrap}>
-          <SearchInput
-            value={search}
-            onChangeText={setSearch}
-            placeholder="Search life topics..."
-          />
-        </View>
+        {tabBar}
 
-        {/* Category filter pills */}
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.pillRow}
-        >
-          <TouchableOpacity
-            onPress={() => setSelectedCategory(undefined)}
-            style={[
-              styles.pill,
-              { borderColor: base.border },
-              !selectedCategory && {
-                borderColor: base.gold + '55',
-                backgroundColor: base.gold + '12',
-              },
-            ]}
-          >
-            <Text
-              style={[
-                styles.pillText,
-                { color: base.textMuted },
-                !selectedCategory && { color: base.gold },
-              ]}
+        {activeTab === 'browse' && (
+          <>
+            <View style={styles.searchWrap}>
+              <SearchInput
+                value={search}
+                onChangeText={setSearch}
+                placeholder="Search life topics..."
+              />
+            </View>
+
+            {/* Category filter pills */}
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.pillRow}
             >
-              All
-            </Text>
-          </TouchableOpacity>
-          {categories.map((cat) => {
-            const active = selectedCategory === cat.id;
-            return (
               <TouchableOpacity
-                key={cat.id}
-                onPress={() => handleCategoryPress(cat.id)}
+                onPress={() => setSelectedCategory(undefined)}
                 style={[
                   styles.pill,
                   { borderColor: base.border },
-                  active && {
+                  !selectedCategory && {
                     borderColor: base.gold + '55',
                     backgroundColor: base.gold + '12',
                   },
@@ -220,48 +251,116 @@ function LifeTopicsScreen() {
                   style={[
                     styles.pillText,
                     { color: base.textMuted },
-                    active && { color: base.gold },
+                    !selectedCategory && { color: base.gold },
                   ]}
                 >
-                  {cat.name}
+                  All
                 </Text>
               </TouchableOpacity>
-            );
-          })}
-        </ScrollView>
+              {categories.map((cat) => {
+                const active = selectedCategory === cat.id;
+                return (
+                  <TouchableOpacity
+                    key={cat.id}
+                    onPress={() => handleCategoryPress(cat.id)}
+                    style={[
+                      styles.pill,
+                      { borderColor: base.border },
+                      active && {
+                        borderColor: base.gold + '55',
+                        backgroundColor: base.gold + '12',
+                      },
+                    ]}
+                  >
+                    <Text
+                      style={[
+                        styles.pillText,
+                        { color: base.textMuted },
+                        active && { color: base.gold },
+                      ]}
+                    >
+                      {cat.name}
+                    </Text>
+                  </TouchableOpacity>
+                );
+              })}
+            </ScrollView>
+          </>
+        )}
       </View>
 
-      {!showTopicsList ? (
-        /* Category grid */
-        <FlatList
-          data={categoriesWithCounts}
-          keyExtractor={(item) => item.id}
-          renderItem={renderCategoryItem}
-          numColumns={2}
-          columnWrapperStyle={styles.columnWrapper}
-          contentContainerStyle={styles.listPad}
-          showsVerticalScrollIndicator={false}
-        />
+      {activeTab === 'browse' ? (
+        <>
+          {!showTopicsList ? (
+            /* Category grid */
+            <FlatList
+              data={categoriesWithCounts}
+              keyExtractor={(item) => item.id}
+              renderItem={renderCategoryItem}
+              numColumns={2}
+              columnWrapperStyle={styles.columnWrapper}
+              contentContainerStyle={styles.listPad}
+              showsVerticalScrollIndicator={false}
+            />
+          ) : (
+            /* Topic list */
+            <FlatList
+              data={topics}
+              keyExtractor={(item) => item.id}
+              renderItem={renderTopicItem}
+              contentContainerStyle={styles.listPad}
+              showsVerticalScrollIndicator={false}
+              ListEmptyComponent={
+                <View style={styles.emptyState}>
+                  <Text style={[styles.emptyText, { color: base.textMuted }]}>
+                    No topics in this category
+                  </Text>
+                </View>
+              }
+            />
+          )}
+        </>
       ) : (
-        /* Topic list */
-        <FlatList
-          data={topics}
-          keyExtractor={(item) => item.id}
-          renderItem={renderTopicItem}
-          contentContainerStyle={styles.listPad}
-          showsVerticalScrollIndicator={false}
-          ListEmptyComponent={
-            <View style={styles.emptyState}>
-              <Text style={[styles.emptyText, { color: base.textMuted }]}>
-                No topics in this category
-              </Text>
-            </View>
-          }
-        />
+        /* Following tab */
+        feedLoading ? (
+          <View style={styles.loadingPad}><LoadingSkeleton lines={4} /></View>
+        ) : !hasFollows ? (
+          /* Empty state with follow suggestions */
+          <View style={styles.followEmptyState}>
+            <UserPlus size={36} color={base.textMuted} />
+            <Text style={[styles.followEmptyTitle, { color: base.text }]}>
+              Follow topics to see updates here
+            </Text>
+            <Text style={[styles.followEmptyBody, { color: base.textMuted }]}>
+              Browse life topics and tap the Follow button to get personalized updates from topics that matter to you.
+            </Text>
+            <TouchableOpacity
+              onPress={() => setActiveTab('browse')}
+              style={[styles.followEmptyCta, { borderColor: base.gold }]}
+            >
+              <Text style={[styles.followEmptyCtaText, { color: base.gold }]}>Browse Topics</Text>
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <FlatList
+            data={feed}
+            keyExtractor={(item) => item.id}
+            renderItem={renderFeedItem}
+            contentContainerStyle={styles.listPad}
+            showsVerticalScrollIndicator={false}
+            ListEmptyComponent={
+              <View style={styles.emptyState}>
+                <Text style={[styles.emptyText, { color: base.textMuted }]}>
+                  No recent activity from topics you follow
+                </Text>
+              </View>
+            }
+          />
+        )
       )}
 
       {/* Premium teaser for non-premium users */}
-      {!isPremium && (
+      {!isPremium && activeTab === 'browse' && (
         <View style={[styles.teaser, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}>
           <Text style={[styles.teaserText, { color: base.textDim }]}>
             Preview mode — upgrade to unlock full topic guides
@@ -322,6 +421,70 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.uiMedium,
     fontSize: 12,
     marginLeft: spacing.sm,
+  },
+  tabBar: {
+    flexDirection: 'row',
+    marginBottom: spacing.sm,
+    gap: spacing.md,
+  },
+  tab: {
+    paddingVertical: spacing.xs,
+    borderBottomWidth: 2,
+  },
+  tabText: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 14,
+    letterSpacing: 0.3,
+  },
+  feedCard: {
+    borderWidth: 1,
+    borderRadius: radii.md,
+    padding: spacing.md,
+    marginBottom: spacing.sm,
+  },
+  feedTitle: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 14,
+    marginBottom: 2,
+  },
+  feedBody: {
+    fontFamily: fontFamily.ui,
+    fontSize: 13,
+    lineHeight: 18,
+  },
+  feedAuthor: {
+    fontFamily: fontFamily.ui,
+    fontSize: 11,
+    marginTop: 4,
+  },
+  followEmptyState: {
+    padding: spacing.xxl,
+    alignItems: 'center',
+  },
+  followEmptyTitle: {
+    fontFamily: fontFamily.displaySemiBold,
+    fontSize: 16,
+    marginTop: spacing.md,
+    textAlign: 'center',
+  },
+  followEmptyBody: {
+    fontFamily: fontFamily.ui,
+    fontSize: 13,
+    textAlign: 'center',
+    marginTop: spacing.xs,
+    lineHeight: 18,
+    paddingHorizontal: spacing.lg,
+  },
+  followEmptyCta: {
+    marginTop: spacing.lg,
+    borderWidth: 1,
+    borderRadius: radii.pill,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.sm,
+  },
+  followEmptyCtaText: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 13,
   },
 });
 

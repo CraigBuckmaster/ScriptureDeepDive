@@ -8,6 +8,7 @@
 import { getUserDb } from './userDatabase';
 import type { UserNote } from '../types';
 import { getPreference } from './userQueries';
+import { logger } from '../utils/logger';
 
 // ── Notes (write) ─────────────────────────────────────────────────
 
@@ -302,5 +303,54 @@ export async function recordSessionEvent(
       event.timestamp_ms,
       event.metadata_json ?? null,
     ]
+  );
+}
+
+// ── Flagged Content (write) ──────────────────────────────────────
+
+/**
+ * Flag a piece of content for moderation review.
+ * Uses INSERT OR REPLACE so re-flagging the same content updates the reason.
+ */
+export async function flagContent(
+  contentId: string,
+  contentType: string,
+  reason: string,
+  details?: string,
+): Promise<void> {
+  try {
+    await getUserDb().runAsync(
+      `INSERT OR REPLACE INTO flagged_content (content_id, content_type, reason, details, flagged_at)
+       VALUES (?, ?, ?, ?, datetime('now'))`,
+      [contentId, contentType, reason, details ?? null],
+    );
+  } catch (err) {
+    logger.warn('flagContent', 'Failed to store flag locally', err);
+  }
+}
+
+// ── Bookmarked Topics (write) ──────────────────────────────────────
+
+export async function bookmarkTopic(
+  topicId: string,
+  type: string = 'official',
+  title?: string,
+  summary?: string,
+): Promise<number> {
+  const result = await getUserDb().runAsync(
+    `INSERT INTO bookmarked_topics (topic_id, topic_type, cached_title, cached_summary)
+     VALUES (?, ?, ?, ?)
+     ON CONFLICT(topic_id, topic_type) DO UPDATE SET
+       cached_title = COALESCE(excluded.cached_title, cached_title),
+       cached_summary = COALESCE(excluded.cached_summary, cached_summary)`,
+    [topicId, type, title ?? null, summary ?? null],
+  );
+  return result.lastInsertRowId;
+}
+
+export async function unbookmarkTopic(topicId: string): Promise<void> {
+  await getUserDb().runAsync(
+    'DELETE FROM bookmarked_topics WHERE topic_id = ?',
+    [topicId],
   );
 }

@@ -456,3 +456,41 @@ export async function getAuthProfile(): Promise<AuthProfile | null> {
     'SELECT supabase_uid, email, display_name, avatar_url, provider FROM auth_profiles LIMIT 1',
   );
 }
+
+// ── Flagged Content (read) ──────────────────────────────────────
+
+/**
+ * Check whether a piece of content has been flagged by the current user.
+ */
+export async function isFlagged(contentId: string): Promise<boolean> {
+  const row = await getUserDb().getFirstAsync<{ id: number }>(
+    'SELECT id FROM flagged_content WHERE content_id = ? LIMIT 1',
+    [contentId],
+  );
+  return row != null;
+}
+
+// ── Bookmarked Topics (read) ────────────────────────────────────────
+
+export interface BookmarkedTopic {
+  id: number;
+  topic_id: string;
+  topic_type: string;
+  bookmarked_at: string;
+  cached_title: string | null;
+  cached_summary: string | null;
+}
+
+export async function getBookmarkedTopics(): Promise<BookmarkedTopic[]> {
+  return getUserDb().getAllAsync<BookmarkedTopic>(
+    'SELECT * FROM bookmarked_topics ORDER BY bookmarked_at DESC',
+  );
+}
+
+export async function isTopicBookmarked(topicId: string): Promise<boolean> {
+  const row = await getUserDb().getFirstAsync<{ count: number }>(
+    'SELECT COUNT(*) as count FROM bookmarked_topics WHERE topic_id = ?',
+    [topicId],
+  );
+  return (row?.count ?? 0) > 0;
+}

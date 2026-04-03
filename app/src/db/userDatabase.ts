@@ -417,6 +417,55 @@ const MIGRATIONS: Migration[] = [
       CREATE INDEX IF NOT EXISTS idx_session_events_session ON study_session_events(session_id);
     `,
   },
+  {
+    version: 11,
+    description: 'Flagged content — local moderation flags for user-reported content',
+    sql: `
+      CREATE TABLE IF NOT EXISTS flagged_content (
+        id INTEGER PRIMARY KEY,
+        content_id TEXT NOT NULL,
+        content_type TEXT NOT NULL,
+        reason TEXT NOT NULL,
+        details TEXT,
+        flagged_at TEXT NOT NULL DEFAULT (datetime('now')),
+        UNIQUE(content_id, content_type)
+      );
+    `,
+  },
+  {
+    version: 12,
+    description: 'Bookmarked topics — topic-level bookmarks with cached metadata',
+    sql: `
+      CREATE TABLE IF NOT EXISTS bookmarked_topics (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        topic_id TEXT NOT NULL,
+        topic_type TEXT NOT NULL DEFAULT 'official',
+        bookmarked_at TEXT NOT NULL DEFAULT (datetime('now')),
+        cached_title TEXT,
+        cached_summary TEXT,
+        UNIQUE(topic_id, topic_type)
+      );
+      CREATE INDEX IF NOT EXISTS idx_bookmarked_topics_id ON bookmarked_topics(topic_id);
+    `,
+  },
+  {
+    version: 13,
+    description: 'In-app notifications table for notification feed',
+    sql: `
+      CREATE TABLE IF NOT EXISTS app_notifications (
+        id TEXT PRIMARY KEY,
+        type TEXT NOT NULL,
+        title TEXT NOT NULL,
+        body TEXT NOT NULL,
+        target_id TEXT,
+        target_type TEXT,
+        is_read INTEGER NOT NULL DEFAULT 0,
+        created_at TEXT NOT NULL DEFAULT (datetime('now'))
+      );
+      CREATE INDEX IF NOT EXISTS idx_app_notifications_read ON app_notifications(is_read);
+      CREATE INDEX IF NOT EXISTS idx_app_notifications_created ON app_notifications(created_at);
+    `,
+  },
 ];
 
 /**

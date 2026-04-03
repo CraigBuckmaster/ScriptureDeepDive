@@ -34,6 +34,7 @@ export interface Chapter {
   coaching_json: string | null;
   difficulty: number | null;
   prayer_prompt?: string | null;
+  related_life_topics_json?: string | null;
 }
 
 export interface CoachingTip {
@@ -777,6 +778,41 @@ export interface GrammarArticle {
   examples_json?: string;
   related_articles_json?: string;
   display_order: number;
+}
+
+// ── Community Submissions ────────────────────────────────────
+
+export type SubmissionType = 'verse_collection' | 'personal_reflection' | 'topical_study';
+export type SubmissionStatus = 'draft' | 'pending' | 'approved' | 'rejected' | 'flagged';
+
+export interface Submission {
+  id: string;
+  type: SubmissionType;
+  topic_id: string;
+  title: string;
+  body: string;
+  status: SubmissionStatus;
+  verses_json: string;
+  scholars_json?: string;
+  author_id: string;
+  author_name: string;
+  upvote_count: number;
+  star_avg: number;
+  created_at: string;
+  updated_at: string;
+}
+
+// ── In-App Notifications ──────────────────────────────────────
+
+export interface AppNotification {
+  id: string;
+  type: 'new_submission' | 'submission_approved' | 'submission_rejected' | 'trust_upgraded';
+  title: string;
+  body: string;
+  target_id?: string;
+  target_type?: string;
+  is_read: boolean;
+  created_at: string;
 }
 
 // Re-export ParsedRef so panel components can import from types

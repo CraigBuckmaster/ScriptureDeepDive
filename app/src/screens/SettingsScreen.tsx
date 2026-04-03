@@ -242,6 +242,17 @@ function SettingsScreen() {
         {/* ── NOTIFICATIONS ────────────────────────────────────── */}
         <NotificationSettings />
 
+        {/* Notification preferences link */}
+        <TouchableOpacity
+          onPress={() => navigation.navigate('NotificationPrefs' as any)}
+          style={[styles.row, { borderBottomColor: base.border + '40' }]}
+          accessibilityRole="button"
+          accessibilityLabel="Notification Preferences"
+        >
+          <Text style={[styles.rowLabel, { color: base.text }]}>Notification Preferences</Text>
+          <Text style={[styles.premiumArrow, { color: base.textMuted }]}>{'\u203A'}</Text>
+        </TouchableOpacity>
+
         {/* ── ABOUT ────────────────────────────────────────────── */}
         <View style={styles.section}>
           <SectionLabel text="ABOUT" base={base} />
