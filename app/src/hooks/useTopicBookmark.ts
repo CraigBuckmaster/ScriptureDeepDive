@@ -6,7 +6,8 @@
  */
 
 import { useState, useEffect, useCallback } from 'react';
-import { isTopicBookmarked, bookmarkTopic, unbookmarkTopic } from '../db/userQueries';
+import { isTopicBookmarked } from '../db/userQueries';
+import { bookmarkTopic, unbookmarkTopic } from '../db/userMutations';
 import { logger } from '../utils/logger';
 
 interface TopicBookmarkResult {

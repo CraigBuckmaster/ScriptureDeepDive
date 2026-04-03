@@ -47,3 +47,4 @@ export { useInterpretationEras, useVerseInterpretations, useChapterInterpretatio
 export { useGrammarArticle, useMorphologyDecode } from './useGrammar';
 export { useAuth } from './useAuth';
 export { useEngagement } from './useEngagement';
+export { useTopicBookmark } from './useTopicBookmark';

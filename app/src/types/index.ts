@@ -780,5 +780,27 @@ export interface GrammarArticle {
   display_order: number;
 }
 
+// ── Community Submissions ────────────────────────────────────
+
+export type SubmissionType = 'verse_collection' | 'personal_reflection' | 'topical_study';
+export type SubmissionStatus = 'draft' | 'pending' | 'approved' | 'rejected' | 'flagged';
+
+export interface Submission {
+  id: string;
+  type: SubmissionType;
+  topic_id: string;
+  title: string;
+  body: string;
+  status: SubmissionStatus;
+  verses_json: string;
+  scholars_json?: string;
+  author_id: string;
+  author_name: string;
+  upvote_count: number;
+  star_avg: number;
+  created_at: string;
+  updated_at: string;
+}
+
 // Re-export ParsedRef so panel components can import from types
 export type { ParsedRef } from '../utils/verseResolver';

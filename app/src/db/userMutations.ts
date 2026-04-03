@@ -328,3 +328,29 @@ export async function flagContent(
     logger.warn('flagContent', 'Failed to store flag locally', err);
   }
 }
+
+// ── Bookmarked Topics (write) ──────────────────────────────────────
+
+export async function bookmarkTopic(
+  topicId: string,
+  type: string = 'official',
+  title?: string,
+  summary?: string,
+): Promise<number> {
+  const result = await getUserDb().runAsync(
+    `INSERT INTO bookmarked_topics (topic_id, topic_type, cached_title, cached_summary)
+     VALUES (?, ?, ?, ?)
+     ON CONFLICT(topic_id, topic_type) DO UPDATE SET
+       cached_title = COALESCE(excluded.cached_title, cached_title),
+       cached_summary = COALESCE(excluded.cached_summary, cached_summary)`,
+    [topicId, type, title ?? null, summary ?? null],
+  );
+  return result.lastInsertRowId;
+}
+
+export async function unbookmarkTopic(topicId: string): Promise<void> {
+  await getUserDb().runAsync(
+    'DELETE FROM bookmarked_topics WHERE topic_id = ?',
+    [topicId],
+  );
+}
