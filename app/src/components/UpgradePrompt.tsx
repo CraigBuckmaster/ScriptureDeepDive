@@ -16,7 +16,8 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
-import type { ScreenNavProp } from '../navigation/types';
+import type { NavigationProp } from '@react-navigation/native';
+import type { TabParamList } from '../navigation/types';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { UpgradeVariant } from '../hooks/usePremium';
 
@@ -48,13 +49,13 @@ const FEATURE_DESCRIPTIONS: Record<string, string> = {
 
 export function UpgradePrompt({ visible, onClose, variant, featureName }: Props) {
   const { base } = useTheme();
-  const navigation = useNavigation<ScreenNavProp<'More', 'MoreMenu'>>();
+  const navigation = useNavigation<NavigationProp<TabParamList>>();
   const config = VARIANT_CONFIG[variant];
   const description = FEATURE_DESCRIPTIONS[featureName] ?? `Unlock ${featureName} and other premium study tools.`;
 
   const handleLearnMore = () => {
     onClose();
-    navigation.navigate('Subscription' as any);
+    navigation.navigate('MoreTab', { screen: 'Subscription' });
   };
 
   return (
