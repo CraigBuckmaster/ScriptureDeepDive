@@ -50,6 +50,8 @@ import { TRANSLATION_MAP } from '../db/translationRegistry';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { useChapterFingerprint } from '../hooks/useChapterFingerprint';
 import { ChapterFingerprint } from '../components/ChapterFingerprint';
+import { usePremium } from '../hooks/usePremium';
+import { UpgradePrompt } from '../components/UpgradePrompt';
 
 // Enable LayoutAnimation on Android
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
@@ -79,6 +81,15 @@ export default function ChapterScreen() {
   const [noteVerseNum, setNoteVerseNum] = useState<number | null>(null);
   const [longPress, setLongPress] = useState<{ verseNum: number; text: string } | null>(null);
   const [interlinearVerse, setInterlinearVerse] = useState<number | null>(null);
+  const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
+
+  const handleInterlinearPress = useCallback((verseNum: number) => {
+    if (!isPremium) {
+      showUpgrade('feature', 'Interlinear Hebrew & Greek');
+      return;
+    }
+    setInterlinearVerse(verseNum);
+  }, [isPremium, showUpgrade]);
   const [lexiconStrongs, setLexiconStrongs] = useState<string | null>(null);
   const [lexiconWordStudyId, setLexiconWordStudyId] = useState<string | null>(null);
   const [colorPickerOpen, setColorPickerOpen] = useState(false);
@@ -418,7 +429,7 @@ export default function ChapterScreen() {
               onPanelToggle={handleSectionPanelToggle}
               onNotePress={(v) => { setNoteVerseNum(v); toggleNotes(); }}
               onVerseLongPress={handleVerseLongPress}
-              onVerseNumPress={setInterlinearVerse}
+              onVerseNumPress={handleInterlinearPress}
               activeVerseNum={ttsActive ? verses[tts.currentVerse]?.verse_num : undefined}
               depthExplored={depthMap.get(sec.id)?.explored}
               depthTotal={depthMap.get(sec.id)?.total}
@@ -616,6 +627,15 @@ export default function ChapterScreen() {
         }}
         onClose={() => setColorPickerOpen(false)}
       />
+
+      {upgradeRequest && (
+        <UpgradePrompt
+          visible
+          variant={upgradeRequest.variant}
+          featureName={upgradeRequest.featureName}
+          onClose={dismissUpgrade}
+        />
+      )}
     </View>
   );
 }
