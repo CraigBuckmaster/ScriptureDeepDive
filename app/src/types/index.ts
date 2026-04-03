@@ -34,6 +34,7 @@ export interface Chapter {
   coaching_json: string | null;
   difficulty: number | null;
   prayer_prompt?: string | null;
+  related_life_topics_json?: string | null;
 }
 
 export interface CoachingTip {

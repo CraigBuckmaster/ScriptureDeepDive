@@ -45,3 +45,5 @@ export { useAvailableLenses, useChapterLensContent } from './useHermeneuticLens'
 export { useArchaeologyBrowse, useArchaeologySearch, useArchaeologyDetail } from './useArchaeology';
 export { useInterpretationEras, useVerseInterpretations, useChapterInterpretations } from './useInterpretations';
 export { useGrammarArticle, useMorphologyDecode } from './useGrammar';
+export { useAuth } from './useAuth';
+export { useEngagement } from './useEngagement';

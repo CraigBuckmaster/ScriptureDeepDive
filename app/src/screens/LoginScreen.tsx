@@ -19,6 +19,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { useAuthStore } from '../stores';
+import { useAuth } from '../hooks/useAuth';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { useTheme, spacing, fontFamily, radii } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
@@ -26,22 +27,38 @@ import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 function LoginScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'More', 'Settings'>>();
-  const signInWithEmail = useAuthStore((s) => s.signInWithEmail);
+  const { signIn, signInWithMagicLink, isLoading } = useAuth();
   const signInWithGoogle = useAuthStore((s) => s.signInWithGoogle);
   const signInWithFacebook = useAuthStore((s) => s.signInWithFacebook);
-  const isLoading = useAuthStore((s) => s.isLoading);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [authError, setAuthError] = useState('');
+  const [magicLinkSent, setMagicLinkSent] = useState(false);
 
   const handleEmailSignIn = async () => {
     setAuthError('');
-    const result = await signInWithEmail(email.trim(), password);
+    setMagicLinkSent(false);
+    const result = await signIn(email.trim(), password);
     if (result.error) {
       setAuthError(result.error);
     } else {
       navigation.goBack();
+    }
+  };
+
+  const handleMagicLink = async () => {
+    setAuthError('');
+    setMagicLinkSent(false);
+    if (!email.trim()) {
+      setAuthError('Please enter your email address first.');
+      return;
+    }
+    const result = await signInWithMagicLink(email.trim());
+    if (result.error) {
+      setAuthError(result.error);
+    } else {
+      setMagicLinkSent(true);
     }
   };
 
@@ -165,6 +182,24 @@ function LoginScreen() {
           <Text style={styles.primaryButtonText}>Sign In</Text>
         </TouchableOpacity>
 
+        {/* Magic link option */}
+        <TouchableOpacity
+          onPress={handleMagicLink}
+          style={[styles.magicLinkButton, { borderColor: base.gold }]}
+          activeOpacity={0.7}
+        >
+          <Text style={[styles.magicLinkButtonText, { color: base.gold }]}>
+            Sign in with email link
+          </Text>
+        </TouchableOpacity>
+
+        {/* Magic link sent confirmation */}
+        {magicLinkSent ? (
+          <Text style={[styles.successText, { color: base.gold }]}>
+            Check your email for a sign-in link.
+          </Text>
+        ) : null}
+
         {/* Error */}
         {authError ? (
           <Text style={styles.errorText}>{authError}</Text>
@@ -259,6 +294,24 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.uiSemiBold,
     fontSize: 16,
     color: '#1a1a1a',
+  },
+  magicLinkButton: {
+    height: 48,
+    borderRadius: radii.md,
+    borderWidth: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: spacing.sm,
+  },
+  magicLinkButtonText: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 15,
+  },
+  successText: {
+    fontFamily: fontFamily.ui,
+    fontSize: 14,
+    textAlign: 'center',
+    marginTop: spacing.md,
   },
   errorText: {
     fontFamily: fontFamily.ui,

@@ -121,7 +121,8 @@ CREATE TABLE chapters (
   map_story_link_text TEXT,
   coaching_json TEXT,
   difficulty INTEGER,
-  prayer_prompt TEXT
+  prayer_prompt TEXT,
+  related_life_topics TEXT
 );
 
 CREATE TABLE sections (
