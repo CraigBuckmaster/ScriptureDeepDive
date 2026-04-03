@@ -17,9 +17,11 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
-import { ChevronLeft, BookOpen, Users, Scroll, Link2, MapPin } from 'lucide-react-native';
+import { ChevronLeft, BookOpen, Users, Scroll, Link2, MapPin, ChevronRight } from 'lucide-react-native';
 import { useConceptData } from '../hooks/useConceptData';
+import { usePremium } from '../hooks/usePremium';
 import ConceptJourney from '../components/ConceptJourney';
+import { UpgradePrompt } from '../components/UpgradePrompt';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import type { ExploreStackParamList } from '../navigation/types';
@@ -33,6 +35,8 @@ export default function ConceptDetailScreen() {
   const route = useRoute<Route>();
   const { conceptId } = route.params;
 
+  const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
+
   const {
     concept,
     wordStudies,
@@ -43,6 +47,14 @@ export default function ConceptDetailScreen() {
     loading,
     error,
   } = useConceptData(conceptId);
+
+  const handleThreadPress = (threadId: string) => {
+    if (!isPremium) {
+      showUpgrade('feature', 'Cross-Reference Threading');
+      return;
+    }
+    navigation.navigate('ThreadDetail', { threadId });
+  };
 
   const hasJourney = (concept?.journey_stops?.length ?? 0) > 0;
   const [activeTab, setActiveTab] = useState<'overview' | 'journey'>('overview');
@@ -219,8 +231,18 @@ export default function ConceptDetailScreen() {
             {threads.map((t) => {
               const tags = JSON.parse(t.tags_json || '[]');
               return (
-                <View key={t.id} style={[styles.threadCard, { backgroundColor: base.bgElevated }]}>
-                  <Text style={[styles.threadTheme, { color: base.text }]}>{t.theme}</Text>
+                <TouchableOpacity
+                  key={t.id}
+                  style={[styles.threadCard, { backgroundColor: base.bgElevated }]}
+                  activeOpacity={0.7}
+                  onPress={() => handleThreadPress(t.id)}
+                  accessibilityRole="button"
+                  accessibilityLabel={`View thread: ${t.theme}`}
+                >
+                  <View style={styles.threadCardHeader}>
+                    <Text style={[styles.threadTheme, { color: base.text }]}>{t.theme}</Text>
+                    <ChevronRight size={14} color={base.gold} />
+                  </View>
                   {tags.length > 0 && (
                     <View style={styles.threadTags}>
                       {tags.slice(0, 4).map((tag: string) => (
@@ -230,7 +252,7 @@ export default function ConceptDetailScreen() {
                       ))}
                     </View>
                   )}
-                </View>
+                </TouchableOpacity>
               );
             })}
           </View>
@@ -274,6 +296,15 @@ export default function ConceptDetailScreen() {
 
         <View style={styles.bottomSpacer} />
       </ScrollView>
+      )}
+
+      {upgradeRequest && (
+        <UpgradePrompt
+          visible
+          variant={upgradeRequest.variant}
+          featureName={upgradeRequest.featureName}
+          onClose={dismissUpgrade}
+        />
       )}
     </SafeAreaView>
   );
@@ -437,6 +468,11 @@ const styles = StyleSheet.create({
     borderRadius: radii.md,
     padding: spacing.sm,
     marginBottom: spacing.xs,
+  },
+  threadCardHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   threadTheme: {
     fontFamily: fontFamily.displayMedium,

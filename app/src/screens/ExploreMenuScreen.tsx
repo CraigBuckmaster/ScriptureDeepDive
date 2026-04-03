@@ -1,8 +1,8 @@
 /**
- * ExploreMenuScreen — Hero cards for top features + grid for the rest.
+ * ExploreMenuScreen — Grouped feature sections for Explore tab.
  *
- * People and Timeline get full-width hero cards. Map, Parallel Passages,
- * Word Studies, Scholars in a 2×2 grid. All gold borders, no icon squares.
+ * Features organized into labeled sections: The Biblical World (hero cards),
+ * Themes & Connections, Language & Reference, Scholarly Analysis (grid cards).
  */
 
 import React, { useRef } from 'react';
@@ -19,88 +19,65 @@ interface Feature {
   title: string;
   subtitle: string;
   screen: string;
-  premiumLabel?: string;
+}
+
+interface FeatureSection {
+  label: string;
+  subtitle: string;
+  layout: 'hero' | 'grid';
+  features: Feature[];
 }
 
 /** Screens that require Companion+ — key is screen name, value is UpgradePrompt featureName. */
 const PREMIUM_SCREENS: Record<string, string> = {
   Concordance: 'Concordance Search',
   ContentLibrary: 'Content Library',
+  ThreadBrowse: 'Cross-Reference Threading',
 };
 
-const HERO_FEATURES: Feature[] = [
+const SECTIONS: FeatureSection[] = [
   {
-    title: 'People',
-    subtitle: 'Lives that shaped sacred history',
-    screen: 'GenealogyTree',
+    label: 'The Biblical World',
+    subtitle: 'Where, when, and who',
+    layout: 'hero',
+    features: [
+      { title: 'People', subtitle: 'Lives that shaped sacred history', screen: 'GenealogyTree' },
+      { title: 'Timeline', subtitle: 'The arc of redemption through the ages', screen: 'Timeline' },
+      { title: 'Map', subtitle: 'Walk the lands of the Bible', screen: 'Map' },
+    ],
   },
   {
-    title: 'Timeline',
-    subtitle: 'The arc of redemption through the ages',
-    screen: 'Timeline',
-  },
-];
-
-const GRID_FEATURES: Feature[] = [
-  {
-    title: 'Map',
-    subtitle: 'Walk the lands of the Bible',
-    screen: 'Map',
-  },
-  {
-    title: 'Gospel Harmony',
-    subtitle: 'The life of Jesus across four Gospels',
-    screen: 'HarmonyBrowse',
+    label: 'Themes & Connections',
+    subtitle: 'Trace ideas across Scripture',
+    layout: 'grid',
+    features: [
+      { title: 'Concepts', subtitle: 'Explore the grand themes of Scripture', screen: 'ConceptBrowse' },
+      { title: 'Topical Index', subtitle: 'What does the Bible say about...?', screen: 'TopicBrowse' },
+      { title: 'Prophecy & Typology', subtitle: 'Trace fulfillment from promise to completion', screen: 'ProphecyBrowse' },
+      { title: 'Threads', subtitle: '31 thematic chains across Scripture', screen: 'ThreadBrowse' },
+      { title: 'Gospel Harmony', subtitle: 'The life of Jesus across four Gospels', screen: 'HarmonyBrowse' },
+    ],
   },
   {
-    title: 'Word Studies',
-    subtitle: 'Meaning in the original languages',
-    screen: 'WordStudyBrowse',
+    label: 'Language & Reference',
+    subtitle: 'Original words and definitions',
+    layout: 'grid',
+    features: [
+      { title: 'Word Studies', subtitle: 'Meaning in the original languages', screen: 'WordStudyBrowse' },
+      { title: 'Concordance', subtitle: 'Every occurrence of a word in Scripture', screen: 'Concordance' },
+      { title: 'Bible Dictionary', subtitle: 'Definitions for every biblical term', screen: 'DictionaryBrowse' },
+    ],
   },
   {
-    title: 'Scholars',
-    subtitle: 'Insights from centuries of scholarship',
-    screen: 'ScholarBrowse',
-  },
-  {
-    title: 'Prophecy & Typology',
-    subtitle: 'Trace fulfillment from promise to completion',
-    screen: 'ProphecyBrowse',
-  },
-  {
-    title: 'Topical Index',
-    subtitle: 'What does the Bible say about...?',
-    screen: 'TopicBrowse',
-  },
-  {
-    title: 'Concepts',
-    subtitle: 'Explore the grand themes of Scripture',
-    screen: 'ConceptBrowse',
-  },
-  {
-    title: 'Difficult Passages',
-    subtitle: 'Wrestling with hard texts',
-    screen: 'DifficultPassagesBrowse',
-  },
-  {
-    title: 'Concordance',
-    subtitle: 'Every occurrence of a word in Scripture',
-    screen: 'Concordance',
-  },
-  {
-    title: 'Scholar Debates',
-    subtitle: 'Explore where scholars disagree',
-    screen: 'DebateBrowse',
-  },
-  {
-    title: 'Bible Dictionary',
-    subtitle: 'Definitions for every biblical term',
-    screen: 'DictionaryBrowse',
-  },
-  {
-    title: 'Content Library',
-    subtitle: 'Browse manuscripts, discourse, and more',
-    screen: 'ContentLibrary',
+    label: 'Scholarly Analysis',
+    subtitle: 'Academic perspectives and debate',
+    layout: 'grid',
+    features: [
+      { title: 'Scholars', subtitle: 'Insights from centuries of scholarship', screen: 'ScholarBrowse' },
+      { title: 'Scholar Debates', subtitle: 'Explore where scholars disagree', screen: 'DebateBrowse' },
+      { title: 'Difficult Passages', subtitle: 'Wrestling with hard texts', screen: 'DifficultPassagesBrowse' },
+      { title: 'Content Library', subtitle: 'Browse manuscripts, discourse, and more', screen: 'ContentLibrary' },
+    ],
   },
 ];
 
@@ -125,39 +102,46 @@ export default function ExploreMenuScreen() {
       <ScrollView ref={scrollRef} contentContainerStyle={styles.content}>
         <Text style={[styles.title, { color: base.gold }]} accessibilityRole="header">Explore</Text>
 
-        {/* Hero cards — full width */}
-        {HERO_FEATURES.map((f) => (
-          <TouchableOpacity
-            key={f.screen}
-            onPress={() => handleNavigate(f.screen)}
-            activeOpacity={0.7}
-            style={[styles.heroCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
-          >
-            <Text style={[styles.heroTitle, { color: base.text }]}>{f.title}</Text>
-            <Text style={[styles.heroSubtitle, { color: base.textDim }]}>{f.subtitle}</Text>
-          </TouchableOpacity>
-        ))}
+        {SECTIONS.map((section) => (
+          <View key={section.label} style={styles.section}>
+            <Text style={[styles.sectionLabel, { color: base.gold }]}>{section.label}</Text>
+            <Text style={[styles.sectionSubtitle, { color: base.textMuted }]}>{section.subtitle}</Text>
 
-        {/* Grid cards — 2×2 */}
-        <View style={styles.grid}>
-          {GRID_FEATURES.map((f) => {
-            const isLocked = !isPremium && !!PREMIUM_SCREENS[f.screen];
-            return (
-              <TouchableOpacity
-                key={f.screen}
-                onPress={() => handleNavigate(f.screen)}
-                activeOpacity={0.7}
-                style={[styles.gridCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
-              >
-                <View style={styles.gridTitleRow}>
-                  <Text style={[styles.gridTitle, { color: base.text }]}>{f.title}</Text>
-                  {isLocked && <Text style={[styles.lockIcon, { color: base.gold }]}>✦</Text>}
-                </View>
-                <Text style={[styles.gridSubtitle, { color: base.textMuted }]}>{f.subtitle}</Text>
-              </TouchableOpacity>
-            );
-          })}
-        </View>
+            {section.layout === 'hero' ? (
+              section.features.map((f) => (
+                <TouchableOpacity
+                  key={f.screen}
+                  onPress={() => handleNavigate(f.screen)}
+                  activeOpacity={0.7}
+                  style={[styles.heroCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
+                >
+                  <Text style={[styles.heroTitle, { color: base.text }]}>{f.title}</Text>
+                  <Text style={[styles.heroSubtitle, { color: base.textDim }]}>{f.subtitle}</Text>
+                </TouchableOpacity>
+              ))
+            ) : (
+              <View style={styles.grid}>
+                {section.features.map((f) => {
+                  const isLocked = !isPremium && !!PREMIUM_SCREENS[f.screen];
+                  return (
+                    <TouchableOpacity
+                      key={f.screen}
+                      onPress={() => handleNavigate(f.screen)}
+                      activeOpacity={0.7}
+                      style={[styles.gridCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
+                    >
+                      <View style={styles.gridTitleRow}>
+                        <Text style={[styles.gridTitle, { color: base.text }]}>{f.title}</Text>
+                        {isLocked && <Text style={[styles.lockIcon, { color: base.gold }]}>✦</Text>}
+                      </View>
+                      <Text style={[styles.gridSubtitle, { color: base.textMuted }]}>{f.subtitle}</Text>
+                    </TouchableOpacity>
+                  );
+                })}
+              </View>
+            )}
+          </View>
+        ))}
       </ScrollView>
 
       {upgradeRequest && (
@@ -185,6 +169,20 @@ const styles = StyleSheet.create({
     fontSize: 22,
     marginBottom: spacing.lg,
   },
+  section: {
+    marginBottom: spacing.lg,
+  },
+  sectionLabel: {
+    fontFamily: fontFamily.displayMedium,
+    fontSize: 13,
+    letterSpacing: 0.5,
+    marginBottom: 2,
+  },
+  sectionSubtitle: {
+    fontFamily: fontFamily.ui,
+    fontSize: 11,
+    marginBottom: spacing.sm,
+  },
   heroCard: {
     borderWidth: 1,
     borderRadius: radii.lg,
@@ -204,7 +202,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: spacing.sm,
-    marginTop: spacing.xs,
   },
   gridCard: {
     width: '48%',
