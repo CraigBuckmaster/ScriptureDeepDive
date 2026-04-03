@@ -224,6 +224,36 @@ export interface TimelineEntry {
   region: string | null;
 }
 
+// ── Life Topics ─────────────────────────────────────────────
+
+export interface LifeTopicCategory {
+  id: string;
+  name: string;
+  display_order: number;
+  icon?: string;
+}
+
+export interface LifeTopic {
+  id: string;
+  category_id: string;
+  title: string;
+  subtitle?: string;
+  summary: string;
+  body: string;
+  display_order: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface LifeTopicVerse {
+  id: number;
+  topic_id: string;
+  verse_ref: string;
+  verse_order: number;
+  annotation?: string;
+  is_primary: boolean;
+}
+
 // ── Concordance (Phase 21) ───────────────────────────────────
 
 export interface ConcordanceResult {
