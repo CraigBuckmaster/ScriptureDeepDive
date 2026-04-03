@@ -8,6 +8,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Modal, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getCrossRefThread } from '../db/content';
+import { parseJSON } from '../utils/parseJSON';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { CrossRefThread } from '../types';
 
@@ -35,7 +36,7 @@ export function ThreadViewerSheet({ visible, onClose, threadId, currentBookId, c
     getCrossRefThread(threadId).then((t) => {
       setThread(t);
       if (t?.steps_json) {
-        try { setSteps(JSON.parse(t.steps_json)); } catch (err) { setSteps([]); }
+        setSteps(parseJSON<CrossRefStep[]>(t.steps_json, []));
       }
     });
   }, [threadId, visible]);

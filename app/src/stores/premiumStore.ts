@@ -60,7 +60,7 @@ export const usePremiumStore = create<PremiumState>((set) => ({
           // Subscription expired — clear premium locally.
           // RevenueCat will confirm on next sync.
           set({ isPremium: false, purchaseType: null, expiresAt: null, isHydrated: true });
-          setPreference('premium_status', '0').catch(() => {});
+          setPreference('premium_status', '0').catch((err) => { logger.warn('premiumStore', 'Failed to persist premium_status', err); });
           return;
         }
       }
@@ -74,16 +74,16 @@ export const usePremiumStore = create<PremiumState>((set) => ({
 
   setPremiumStatus: (isPremium, purchaseType, expiresAt) => {
     set({ isPremium, purchaseType, expiresAt });
-    setPreference('premium_status', isPremium ? '1' : '0').catch(() => {});
-    setPreference('premium_purchase_type', purchaseType ?? '').catch(() => {});
-    setPreference('premium_expires_at', expiresAt ?? '').catch(() => {});
+    setPreference('premium_status', isPremium ? '1' : '0').catch((err) => { logger.warn('premiumStore', 'Failed to persist premium_status', err); });
+    setPreference('premium_purchase_type', purchaseType ?? '').catch((err) => { logger.warn('premiumStore', 'Failed to persist premium_purchase_type', err); });
+    setPreference('premium_expires_at', expiresAt ?? '').catch((err) => { logger.warn('premiumStore', 'Failed to persist premium_expires_at', err); });
   },
 
   clearPremium: () => {
     set({ isPremium: false, purchaseType: null, expiresAt: null });
-    setPreference('premium_status', '0').catch(() => {});
-    setPreference('premium_purchase_type', '').catch(() => {});
-    setPreference('premium_expires_at', '').catch(() => {});
+    setPreference('premium_status', '0').catch((err) => { logger.warn('premiumStore', 'Failed to persist premium_status', err); });
+    setPreference('premium_purchase_type', '').catch((err) => { logger.warn('premiumStore', 'Failed to persist premium_purchase_type', err); });
+    setPreference('premium_expires_at', '').catch((err) => { logger.warn('premiumStore', 'Failed to persist premium_expires_at', err); });
   },
 
   __devSetPremium: (enabled) => {
@@ -92,6 +92,6 @@ export const usePremiumStore = create<PremiumState>((set) => ({
       purchaseType: enabled ? 'lifetime' : null,
       expiresAt: null,
     });
-    setPreference('premium_status', enabled ? '1' : '0').catch(() => {});
+    setPreference('premium_status', enabled ? '1' : '0').catch((err) => { logger.warn('premiumStore', 'Failed to persist premium_status', err); });
   },
 }));

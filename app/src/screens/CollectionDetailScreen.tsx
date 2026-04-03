@@ -28,6 +28,7 @@ import {
 } from '../db/user';
 import { displayRef, parseVerseRef } from '../utils/verseRef';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { parseJSON } from '../utils/parseJSON';
 import type { StudyCollection, UserNote } from '../types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
@@ -109,13 +110,7 @@ function CollectionDetailScreen() {
     }
   };
 
-  const parseTags = (json: string): string[] => {
-    try {
-      return JSON.parse(json);
-    } catch {
-      return [];
-    }
-  };
+  const parseTags = (json: string): string[] => parseJSON<string[]>(json, []);
 
   if (loading) return <View style={[styles.container, { backgroundColor: base.bg, justifyContent: 'center', alignItems: 'center' }]}><ActivityIndicator color={base.gold} /></View>;
 

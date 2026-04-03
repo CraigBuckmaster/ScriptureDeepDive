@@ -11,7 +11,7 @@ import { BadgeChip } from './BadgeChip';
 import { getPersonChildren, getSpousesOf, getPerson } from '../db/content';
 import { useTheme, spacing, radii, eras, eraNames, fontFamily } from '../theme';
 import type { Person } from '../types';
-import { logger } from '../utils/logger';
+import { parseJSON } from '../utils/parseJSON';
 
 interface Props {
   visible: boolean;
@@ -40,8 +40,7 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
 
   const eraColor = person.era ? (eras[person.era] ?? base.gold) : base.gold;
   const eraLabel = person.era ? (eraNames[person.era] ?? person.era) : '';
-  let refs: string[] = [];
-  try { refs = person.refs_json ? JSON.parse(person.refs_json) : []; } catch (err) { logger.warn('PersonSidebar', 'Operation failed', err); }
+  const refs = parseJSON<string[]>(person.refs_json, []);
 
   const FamilyLink = ({ p }: { p: Person }) => {
     const linkColor = p.era ? (eras[p.era] ?? base.gold) : base.gold;

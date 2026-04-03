@@ -2,15 +2,12 @@
  * ScholarBrowseScreen — Grid of 43 scholar cards, filterable by tradition.
  */
 
-import React, { useState, useMemo } from 'react';
-import { View, Text, TouchableOpacity, FlatList, ScrollView, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React, { useState, useMemo, useCallback } from 'react';
+import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { useScholars } from '../hooks/useScholars';
-import { ScreenHeader } from '../components/ScreenHeader';
-import { SearchInput } from '../components/SearchInput';
-import { LoadingSkeleton } from '../components/LoadingSkeleton';
+import { BrowseScreenTemplate } from '../components/BrowseScreenTemplate';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { logger } from '../utils/logger';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
@@ -22,10 +19,8 @@ function ScholarBrowseScreen() {
   const [search, setSearch] = useState('');
   const [tradition, setTradition] = useState<string>('all');
 
-  /** Extract broadest tradition category (first word before any delimiter). */
   const broadTradition = (t: string | null | undefined): string => {
     if (!t) return '';
-    // Split on common delimiters: dash, en-dash, em-dash, comma, parenthetical
     const first = t.split(/\s*[–—\-,:(]\s*/)[0].trim();
     return first;
   };
@@ -49,97 +44,68 @@ function ScholarBrowseScreen() {
     return list;
   }, [scholars, tradition, search]);
 
-  if (isLoading) {
-    return (
-      <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-        <View style={styles.loadingPad}><LoadingSkeleton lines={6} /></View>
-      </SafeAreaView>
-    );
-  }
+  const renderItem = useCallback(
+    ({ item: s }: { item: any }) => {
+      const color = getScholarColor(s.id);
+      let scope = 'All books';
+      try {
+        const parsed = JSON.parse(s.scope_json);
+        if (Array.isArray(parsed)) scope = `${parsed.length} books`;
+      } catch (err) { logger.warn('ScholarBrowseScreen', 'Operation failed', err); }
+
+      return (
+        <TouchableOpacity
+          onPress={() => navigation.navigate('ScholarBio', { scholarId: s.id })}
+          style={[styles.card, { backgroundColor: color + '14', borderLeftColor: color }]}
+          accessibilityLabel={`${s.name}${s.tradition ? ", " + s.tradition : ""}`}
+          accessibilityRole="button"
+        >
+          <Text style={[styles.cardName, { color }]}>{s.name}</Text>
+          {s.tradition && <Text style={[styles.cardTradition, { color: base.textMuted }]}>{s.tradition}</Text>}
+          <Text style={[styles.cardScope, { color: base.textDim }]}>{scope}</Text>
+        </TouchableOpacity>
+      );
+    },
+    [base, getScholarColor, navigation]
+  );
+
+  const filterBar = (
+    <ScrollView horizontal showsHorizontalScrollIndicator={false}
+      contentContainerStyle={styles.filterRow}>
+      {traditions.map((t) => (
+        <TouchableOpacity key={t} onPress={() => setTradition(t)}>
+          <Text style={[
+            styles.filterLabel,
+            { color: base.textMuted },
+            tradition === t && { color: base.gold, borderBottomColor: base.gold },
+            tradition === t && styles.filterLabelActive,
+          ]}>
+            {t === 'all' ? 'All' : t}
+          </Text>
+        </TouchableOpacity>
+      ))}
+    </ScrollView>
+  );
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <View style={styles.topSection}>
-        <ScreenHeader
-          title="Scholars"
-          onBack={() => navigation.goBack()}
-          style={styles.headerSpacing}
-        />
-
-        <View style={styles.searchWrap}>
-          <SearchInput
-            value={search}
-            onChangeText={setSearch}
-            placeholder="Search scholars..."
-          />
-        </View>
-
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.filterRow}>
-          {traditions.map((t) => (
-            <TouchableOpacity key={t} onPress={() => setTradition(t)}>
-              <Text style={[
-                styles.filterLabel,
-                { color: base.textMuted },
-                tradition === t && { color: base.gold, borderBottomColor: base.gold },
-                tradition === t && styles.filterLabelActive,
-              ]}>
-                {t === 'all' ? 'All' : t}
-              </Text>
-            </TouchableOpacity>
-          ))}
-        </ScrollView>
-      </View>
-
-      <FlatList
-        data={filtered}
-        keyExtractor={(s) => s.id}
-        numColumns={2}
-        contentContainerStyle={styles.gridContent}
-        columnWrapperStyle={styles.gridRow}
-        renderItem={({ item: s }) => {
-          const color = getScholarColor(s.id);
-          let scope = 'All books';
-          try {
-            const parsed = JSON.parse(s.scope_json);
-            if (Array.isArray(parsed)) scope = `${parsed.length} books`;
-          } catch (err) { logger.warn('ScholarBrowseScreen', 'Operation failed', err); }
-
-          return (
-            <TouchableOpacity
-              onPress={() => navigation.navigate('ScholarBio', { scholarId: s.id })}
-              style={[styles.card, { backgroundColor: color + '14', borderLeftColor: color }]}
-              accessibilityLabel={`${s.name}${s.tradition ? ", " + s.tradition : ""}`}
-              accessibilityRole="button"
-            >
-              <Text style={[styles.cardName, { color }]}>{s.name}</Text>
-              {s.tradition && <Text style={[styles.cardTradition, { color: base.textMuted }]}>{s.tradition}</Text>}
-              <Text style={[styles.cardScope, { color: base.textDim }]}>{scope}</Text>
-            </TouchableOpacity>
-          );
-        }}
-      />
-    </SafeAreaView>
+    <BrowseScreenTemplate
+      title="Scholars"
+      loading={isLoading}
+      search={search}
+      onSearchChange={setSearch}
+      searchPlaceholder="Search scholars..."
+      filterBar={filterBar}
+      data={filtered}
+      renderItem={renderItem}
+      keyExtractor={(s: any) => s.id}
+      numColumns={2}
+      columnWrapperStyle={styles.gridRow}
+      contentContainerStyle={styles.gridContent}
+    />
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  loadingPad: {
-    padding: spacing.lg,
-  },
-  topSection: {
-    paddingHorizontal: spacing.md,
-    paddingTop: spacing.lg,
-  },
-  headerSpacing: {
-    marginBottom: spacing.md,
-  },
-  searchWrap: {
-    marginBottom: spacing.sm,
-  },
   filterRow: {
     gap: spacing.xs,
     marginBottom: spacing.md,

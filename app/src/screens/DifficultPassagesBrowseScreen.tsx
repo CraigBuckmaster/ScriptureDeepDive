@@ -8,26 +8,16 @@
  * - Tap navigates to detail
  */
 
-import React, { useState, useMemo, useRef } from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  FlatList,
-  StyleSheet,
-  ActivityIndicator,
-  ScrollView,
-} from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React, { useState, useMemo, useCallback } from 'react';
+import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { ChevronLeft, Search, X } from 'lucide-react-native';
 import {
   useDifficultPassages,
   DifficultPassage,
   DifficultPassageCategory,
 } from '../hooks/useDifficultPassages';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { BrowseScreenTemplate } from '../components/BrowseScreenTemplate';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import type { ExploreStackParamList } from '../navigation/types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
@@ -56,17 +46,12 @@ function DifficultPassagesBrowseScreen() {
   const { passages, loading, error } = useDifficultPassages();
   const [search, setSearch] = useState('');
   const [activeCategory, setActiveCategory] = useState<FilterCategory>('all');
-  const inputRef = useRef<TextInput>(null);
 
   const filtered = useMemo(() => {
     let result = passages;
-
-    // Filter by category
     if (activeCategory !== 'all') {
       result = result.filter((p) => p.category === activeCategory);
     }
-
-    // Filter by search
     if (search.trim()) {
       const q = search.toLowerCase();
       result = result.filter(
@@ -77,181 +62,94 @@ function DifficultPassagesBrowseScreen() {
           p.tags.some((t) => t.toLowerCase().includes(q))
       );
     }
-
     return result;
   }, [passages, activeCategory, search]);
 
-  const renderItem = ({ item }: { item: DifficultPassage }) => (
-    <TouchableOpacity
-      style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
-      activeOpacity={0.7}
-      onPress={() => navigation.navigate('DifficultPassageDetail', { passageId: item.id })}
-      accessibilityRole="button"
-      accessibilityLabel={`View passage: ${item.title}`}
+  const renderItem = useCallback(
+    ({ item }: { item: DifficultPassage }) => (
+      <TouchableOpacity
+        style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
+        activeOpacity={0.7}
+        onPress={() => navigation.navigate('DifficultPassageDetail', { passageId: item.id })}
+        accessibilityRole="button"
+        accessibilityLabel={`View passage: ${item.title}`}
+      >
+        <View style={styles.cardHeader}>
+          <Text style={[styles.cardTitle, { color: base.text }]} numberOfLines={1}>
+            {item.title}
+          </Text>
+          <View style={[styles.severityDot, { backgroundColor: sevColors[item.severity] }]} />
+        </View>
+        <View style={[styles.categoryBadge, { backgroundColor: (catColors[item.category] ?? base.textMuted) + '30' }]}>
+          <Text style={[styles.categoryText, { color: catColors[item.category] ?? base.textMuted }]}>
+            {item.category}
+          </Text>
+        </View>
+        <Text style={[styles.passage, { color: base.gold }]} numberOfLines={1}>
+          {item.passage}
+        </Text>
+        <Text style={[styles.question, { color: base.textDim }]} numberOfLines={2}>
+          {item.question}
+        </Text>
+      </TouchableOpacity>
+    ),
+    [base, catColors, sevColors, navigation]
+  );
+
+  const filterBar = (
+    <ScrollView
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      contentContainerStyle={styles.chipRow}
     >
-      {/* Header row: title + severity dot */}
-      <View style={styles.cardHeader}>
-        <Text style={[styles.cardTitle, { color: base.text }]} numberOfLines={1}>
-          {item.title}
-        </Text>
-        <View style={[styles.severityDot, { backgroundColor: sevColors[item.severity] }]} />
-      </View>
-
-      {/* Category badge */}
-      <View style={[styles.categoryBadge, { backgroundColor: (catColors[item.category] ?? base.textMuted) + '30' }]}>
-        <Text style={[styles.categoryText, { color: catColors[item.category] ?? base.textMuted }]}>
-          {item.category}
-        </Text>
-      </View>
-
-      {/* Passage reference */}
-      <Text style={[styles.passage, { color: base.gold }]} numberOfLines={1}>
-        {item.passage}
-      </Text>
-
-      {/* Question preview */}
-      <Text style={[styles.question, { color: base.textDim }]} numberOfLines={2}>
-        {item.question}
-      </Text>
-    </TouchableOpacity>
+      {CATEGORIES.map((cat) => {
+        const isActive = activeCategory === cat.key;
+        return (
+          <TouchableOpacity
+            key={cat.key}
+            style={[
+              styles.chip,
+              { backgroundColor: base.bgElevated, borderColor: base.gold + '20' },
+              isActive && { backgroundColor: base.gold, borderColor: base.gold },
+            ]}
+            onPress={() => setActiveCategory(cat.key)}
+            activeOpacity={0.7}
+            accessibilityRole="button"
+            accessibilityLabel={`Filter by ${cat.label}`}
+            accessibilityState={{ selected: isActive }}
+          >
+            <Text style={[
+              styles.chipText,
+              { color: base.textMuted },
+              isActive && { color: base.bg, fontFamily: fontFamily.uiMedium },
+            ]}>
+              {cat.label}
+            </Text>
+          </TouchableOpacity>
+        );
+      })}
+    </ScrollView>
   );
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]} edges={['top']}>
-      {/* Header */}
-      <View style={styles.header}>
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}
-          accessibilityRole="button"
-          accessibilityLabel="Go back"
-        >
-          <ChevronLeft size={24} color={base.gold} />
-        </TouchableOpacity>
-        <Text style={[styles.title, { color: base.gold }]} accessibilityRole="header">Difficult Passages</Text>
-        <View style={styles.headerSpacer} />
-      </View>
-
-      {/* Search */}
-      <View style={styles.searchRow}>
-        <View style={[styles.searchBox, { backgroundColor: base.bgElevated }]}>
-          <Search size={16} color={base.textMuted} />
-          <TextInput
-            ref={inputRef}
-            style={[styles.searchInput, { color: base.text }]}
-            placeholder="Search passages…"
-            placeholderTextColor={base.textMuted}
-            value={search}
-            onChangeText={setSearch}
-            autoCorrect={false}
-            autoCapitalize="none"
-          />
-          {search.length > 0 && (
-            <TouchableOpacity onPress={() => setSearch('')} accessibilityRole="button" accessibilityLabel="Clear search">
-              <X size={16} color={base.textMuted} />
-            </TouchableOpacity>
-          )}
-        </View>
-      </View>
-
-      {/* Category filter chips */}
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.chipRow}
-      >
-        {CATEGORIES.map((cat) => {
-          const isActive = activeCategory === cat.key;
-          return (
-            <TouchableOpacity
-              key={cat.key}
-              style={[
-                styles.chip,
-                { backgroundColor: base.bgElevated, borderColor: base.gold + '20' },
-                isActive && { backgroundColor: base.gold, borderColor: base.gold },
-              ]}
-              onPress={() => setActiveCategory(cat.key)}
-              activeOpacity={0.7}
-              accessibilityRole="button"
-              accessibilityLabel={`Filter by ${cat.label}`}
-              accessibilityState={{ selected: isActive }}
-            >
-              <Text style={[
-                styles.chipText,
-                { color: base.textMuted },
-                isActive && { color: base.bg, fontFamily: fontFamily.uiMedium },
-              ]}>
-                {cat.label}
-              </Text>
-            </TouchableOpacity>
-          );
-        })}
-      </ScrollView>
-
-      {/* Content */}
-      {loading ? (
-        <View style={styles.center}>
-          <ActivityIndicator color={base.gold} />
-        </View>
-      ) : error ? (
-        <View style={styles.center}>
-          <Text style={[styles.emptyText, { color: base.textMuted }]}>{error}</Text>
-        </View>
-      ) : filtered.length === 0 ? (
-        <View style={styles.center}>
-          <Text style={[styles.emptyText, { color: base.textMuted }]}>No passages found</Text>
-        </View>
-      ) : (
-        <FlatList
-          data={filtered}
-          keyExtractor={(item) => item.id}
-          renderItem={renderItem}
-          contentContainerStyle={styles.list}
-          showsVerticalScrollIndicator={false}
-        />
-      )}
-    </SafeAreaView>
+    <BrowseScreenTemplate<DifficultPassage>
+      title="Difficult Passages"
+      loading={loading}
+      search={search}
+      onSearchChange={setSearch}
+      searchPlaceholder="Search passages..."
+      filterBar={filterBar}
+      data={filtered}
+      renderItem={renderItem}
+      keyExtractor={(item) => item.id}
+      emptyMessage={error || 'No passages found'}
+      contentContainerStyle={styles.list}
+    />
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm,
-  },
-  title: {
-    fontFamily: fontFamily.displaySemiBold,
-    fontSize: 18,
-  },
-  headerSpacer: {
-    width: 24,
-  },
-  searchRow: {
-    paddingHorizontal: spacing.md,
-    paddingBottom: spacing.sm,
-  },
-  searchBox: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderRadius: radii.md,
-    paddingHorizontal: spacing.sm,
-    height: 40,
-    gap: spacing.xs,
-  },
-  searchInput: {
-    flex: 1,
-    fontFamily: fontFamily.ui,
-    fontSize: 14,
-    paddingVertical: 0,
-  },
   chipRow: {
-    paddingHorizontal: spacing.md,
     paddingBottom: spacing.sm,
     gap: spacing.xs,
   },
@@ -314,15 +212,6 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.ui,
     fontSize: 13,
     lineHeight: 18,
-  },
-  center: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  emptyText: {
-    fontFamily: fontFamily.ui,
-    fontSize: 14,
   },
 });
 

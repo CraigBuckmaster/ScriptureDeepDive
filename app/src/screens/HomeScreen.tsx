@@ -27,6 +27,7 @@ import { MilestoneToast } from '../components/MilestoneToast';
 import { useSettingsStore } from '../stores';
 import { shareVerse, shareProgress } from '../utils/shareVerse';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
+import { logger } from '../utils/logger';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const TOTAL_BIBLE_CHAPTERS = 1189;
@@ -45,9 +46,7 @@ function HomeScreen() {
 
   // Load testament progress when home screen is focused
   const loadTestamentProgress = useCallback(() => {
-    getTestamentProgress().then(setTestamentProgress).catch((err) => {
-      // Ignore — non-critical display data
-    });
+    getTestamentProgress().then(setTestamentProgress).catch((err) => { logger.warn('HomeScreen', 'Failed to load testament progress', err); });
   }, []);
 
   const handleRecPress = useCallback((rec: Recommendation) => {

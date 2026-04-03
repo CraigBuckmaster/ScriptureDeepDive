@@ -2,15 +2,13 @@
  * ProphecyBrowseScreen — Browse all prophecy chains with category filter.
  */
 
-import React, { useState, useMemo } from 'react';
-import { View, Text, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React, { useState, useMemo, useCallback } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
 import { useProphecyChains } from '../hooks/useProphecyChains';
-import { ScreenHeader } from '../components/ScreenHeader';
-import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { BadgeChip } from '../components/BadgeChip';
+import { BrowseScreenTemplate } from '../components/BrowseScreenTemplate';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import type { ProphecyChain, ProphecyChainLink } from '../types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
@@ -31,14 +29,12 @@ function parseLinks(json: string): ProphecyChainLink[] {
   }
 }
 
-/** Format book_dir to display name: "1_samuel" → "1 Samuel" */
 function formatBookName(bookDir: string): string {
   return bookDir
     .replace(/_/g, ' ')
     .replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
-/** Format link to full ref: "Genesis 3:15" */
 function formatLinkRef(link: ProphecyChainLink): string {
   return `${formatBookName(link.book_dir)} ${link.verse_ref}`;
 }
@@ -56,7 +52,6 @@ function ProphecyBrowseScreen() {
   const { chains, isLoading } = useProphecyChains();
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
 
-  // Derive distinct categories from data
   const categories = useMemo(() => {
     const cats = new Set<string>();
     chains.forEach((c) => cats.add(c.category));
@@ -68,102 +63,78 @@ function ProphecyBrowseScreen() {
     return chains.filter((c) => c.category === categoryFilter);
   }, [chains, categoryFilter]);
 
-  if (isLoading) {
-    return (
-      <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-        <View style={styles.loadingPad}>
-          <LoadingSkeleton lines={6} />
-        </View>
-      </SafeAreaView>
-    );
-  }
+  const renderItem = useCallback(
+    ({ item }: { item: ProphecyChain }) => {
+      const links = parseLinks(item.links_json);
+      const refRange = getRefRange(links);
+      const catColor = prophecyCategories[item.category] || base.gold;
+
+      return (
+        <TouchableOpacity
+          onPress={() => navigation.navigate('ProphecyDetail', { chainId: item.id })}
+          style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.gold + '25' }]}
+          accessibilityLabel={item.title}
+          accessibilityRole="button"
+        >
+          <View style={styles.cardHeader}>
+            <Text style={[styles.cardTitle, { color: base.text }]} numberOfLines={2}>
+              {item.title}
+            </Text>
+            <BadgeChip
+              label={CATEGORY_LABELS[item.category] || item.category}
+              color={catColor}
+            />
+          </View>
+
+          {item.summary && (
+            <Text style={[styles.cardSummary, { color: base.textDim }]} numberOfLines={2}>
+              {item.summary}
+            </Text>
+          )}
+
+          <View style={styles.cardFooter}>
+            <Text style={[styles.refRange, { color: base.goldDim }]}>{refRange}</Text>
+            <Text style={[styles.linkCount, { color: base.textMuted }]}>{links.length} links</Text>
+          </View>
+        </TouchableOpacity>
+      );
+    },
+    [base, prophecyCategories, navigation]
+  );
+
+  const filterBar = (
+    <View style={styles.filterRow}>
+      {categories.map((cat) => (
+        <TouchableOpacity key={cat} onPress={() => setCategoryFilter(cat)}>
+          <Text
+            style={[
+              styles.filterLabel,
+              { color: base.textMuted },
+              categoryFilter === cat && { color: base.gold, borderBottomColor: base.gold },
+              categoryFilter === cat && styles.filterLabelActive,
+            ]}
+          >
+            {cat === 'all' ? 'All' : CATEGORY_LABELS[cat] || cat}
+          </Text>
+        </TouchableOpacity>
+      ))}
+    </View>
+  );
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
-      <View style={styles.topSection}>
-        <ScreenHeader
-          title="Prophecy & Typology"
-          onBack={() => navigation.goBack()}
-          style={styles.headerSpacing}
-        />
-
-        {/* Category filter chips */}
-        <View style={styles.filterRow}>
-          {categories.map((cat) => (
-            <TouchableOpacity key={cat} onPress={() => setCategoryFilter(cat)}>
-              <Text
-                style={[
-                  styles.filterLabel,
-                  { color: base.textMuted },
-                  categoryFilter === cat && { color: base.gold, borderBottomColor: base.gold },
-                  categoryFilter === cat && styles.filterLabelActive,
-                ]}
-              >
-                {cat === 'all' ? 'All' : CATEGORY_LABELS[cat] || cat}
-              </Text>
-            </TouchableOpacity>
-          ))}
-        </View>
-      </View>
-
-      <FlatList
-        data={filtered}
-        keyExtractor={(c) => c.id}
-        contentContainerStyle={styles.listContent}
-        renderItem={({ item }) => {
-          const links = parseLinks(item.links_json);
-          const refRange = getRefRange(links);
-          const catColor = prophecyCategories[item.category] || base.gold;
-
-          return (
-            <TouchableOpacity
-              onPress={() => navigation.navigate('ProphecyDetail', { chainId: item.id })}
-              style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.gold + '25' }]}
-              accessibilityLabel={item.title}
-              accessibilityRole="button"
-            >
-              <View style={styles.cardHeader}>
-                <Text style={[styles.cardTitle, { color: base.text }]} numberOfLines={2}>
-                  {item.title}
-                </Text>
-                <BadgeChip
-                  label={CATEGORY_LABELS[item.category] || item.category}
-                  color={catColor}
-                />
-              </View>
-
-              {item.summary && (
-                <Text style={[styles.cardSummary, { color: base.textDim }]} numberOfLines={2}>
-                  {item.summary}
-                </Text>
-              )}
-
-              <View style={styles.cardFooter}>
-                <Text style={[styles.refRange, { color: base.goldDim }]}>{refRange}</Text>
-                <Text style={[styles.linkCount, { color: base.textMuted }]}>{links.length} links</Text>
-              </View>
-            </TouchableOpacity>
-          );
-        }}
-      />
-    </SafeAreaView>
+    <BrowseScreenTemplate<ProphecyChain>
+      title="Prophecy & Typology"
+      loading={isLoading}
+      filterBar={filterBar}
+      data={filtered}
+      renderItem={renderItem}
+      keyExtractor={(c) => c.id}
+      contentContainerStyle={styles.listContent}
+    />
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  loadingPad: {
-    padding: spacing.lg,
-  },
-  topSection: {
-    paddingHorizontal: spacing.md,
-    paddingTop: spacing.lg,
-  },
-  headerSpacing: {
-    marginBottom: spacing.md,
-  },
   filterRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
