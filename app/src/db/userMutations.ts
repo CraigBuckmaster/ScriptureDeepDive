@@ -8,6 +8,7 @@
 import { getUserDb } from './userDatabase';
 import type { UserNote } from '../types';
 import { getPreference } from './userQueries';
+import { logger } from '../utils/logger';
 
 // ── Notes (write) ─────────────────────────────────────────────────
 
@@ -303,4 +304,27 @@ export async function recordSessionEvent(
       event.metadata_json ?? null,
     ]
   );
+}
+
+// ── Flagged Content (write) ──────────────────────────────────────
+
+/**
+ * Flag a piece of content for moderation review.
+ * Uses INSERT OR REPLACE so re-flagging the same content updates the reason.
+ */
+export async function flagContent(
+  contentId: string,
+  contentType: string,
+  reason: string,
+  details?: string,
+): Promise<void> {
+  try {
+    await getUserDb().runAsync(
+      `INSERT OR REPLACE INTO flagged_content (content_id, content_type, reason, details, flagged_at)
+       VALUES (?, ?, ?, ?, datetime('now'))`,
+      [contentId, contentType, reason, details ?? null],
+    );
+  } catch (err) {
+    logger.warn('flagContent', 'Failed to store flag locally', err);
+  }
 }

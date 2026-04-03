@@ -456,3 +456,16 @@ export async function getAuthProfile(): Promise<AuthProfile | null> {
     'SELECT supabase_uid, email, display_name, avatar_url, provider FROM auth_profiles LIMIT 1',
   );
 }
+
+// ── Flagged Content (read) ──────────────────────────────────────
+
+/**
+ * Check whether a piece of content has been flagged by the current user.
+ */
+export async function isFlagged(contentId: string): Promise<boolean> {
+  const row = await getUserDb().getFirstAsync<{ id: number }>(
+    'SELECT id FROM flagged_content WHERE content_id = ? LIMIT 1',
+    [contentId],
+  );
+  return row != null;
+}

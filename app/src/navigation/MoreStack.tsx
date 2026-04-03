@@ -13,6 +13,7 @@ import SubscriptionScreen from '../screens/SubscriptionScreen';
 import LoginScreen from '../screens/LoginScreen';
 import SignUpScreen from '../screens/SignUpScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
+import UserProfileScreen from '../screens/UserProfileScreen';
 import { useTheme } from '../theme';
 import type { MoreStackParamList } from './types';
 
@@ -37,6 +38,7 @@ export function MoreStack() {
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="SignUp" component={SignUpScreen} />
       <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
+      <Stack.Screen name="UserProfile" component={UserProfileScreen} />
     </Stack.Navigator>
   );
 }

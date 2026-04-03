@@ -417,6 +417,37 @@ const MIGRATIONS: Migration[] = [
       CREATE INDEX IF NOT EXISTS idx_session_events_session ON study_session_events(session_id);
     `,
   },
+  {
+    version: 11,
+    description: 'Flagged content — local moderation flags for user-reported content',
+    sql: `
+      CREATE TABLE IF NOT EXISTS flagged_content (
+        id INTEGER PRIMARY KEY,
+        content_id TEXT NOT NULL,
+        content_type TEXT NOT NULL,
+        reason TEXT NOT NULL,
+        details TEXT,
+        flagged_at TEXT NOT NULL DEFAULT (datetime('now')),
+        UNIQUE(content_id, content_type)
+      );
+    `,
+  },
+  {
+    version: 12,
+    description: 'Bookmarked topics — topic-level bookmarks with cached metadata',
+    sql: `
+      CREATE TABLE IF NOT EXISTS bookmarked_topics (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        topic_id TEXT NOT NULL,
+        topic_type TEXT NOT NULL DEFAULT 'official',
+        bookmarked_at TEXT NOT NULL DEFAULT (datetime('now')),
+        cached_title TEXT,
+        cached_summary TEXT,
+        UNIQUE(topic_id, topic_type)
+      );
+      CREATE INDEX IF NOT EXISTS idx_bookmarked_topics_id ON bookmarked_topics(topic_id);
+    `,
+  },
 ];
 
 /**

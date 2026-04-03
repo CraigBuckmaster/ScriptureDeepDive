@@ -112,6 +112,7 @@ export type MoreStackParamList = {
   Login: undefined;
   SignUp: undefined;
   ForgotPassword: undefined;
+  UserProfile: undefined;
 };
 
 export type SearchStackParamList = {

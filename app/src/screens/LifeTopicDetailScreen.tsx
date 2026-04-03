@@ -7,11 +7,13 @@
  */
 
 import React, { useCallback } from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Share as ShareIcon } from 'lucide-react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { parseReference } from '../utils/verseResolver';
+import { shareLifeTopic } from '../utils/shareLifeTopic';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { CollapsibleSection } from '../components/CollapsibleSection';
@@ -21,7 +23,7 @@ import { BadgeChip } from '../components/BadgeChip';
 import { useLifeTopicDetail } from '../hooks/useLifeTopics';
 import { useLifeTopicCategories } from '../hooks/useLifeTopics';
 import { usePremium } from '../hooks/usePremium';
-import { useTheme, spacing, fontFamily } from '../theme';
+import { useTheme, spacing, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 function LifeTopicDetailScreen() {
@@ -53,6 +55,12 @@ function LifeTopicDetailScreen() {
     [navigation],
   );
 
+  const handleShare = useCallback(() => {
+    if (topic) {
+      shareLifeTopic(topic.title, topic.summary, topicId);
+    }
+  }, [topic, topicId]);
+
   if (loading || !topic) {
     return (
       <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
@@ -71,7 +79,19 @@ function LifeTopicDetailScreen() {
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       <View style={styles.headerPad}>
-        <ScreenHeader title={topic.title} onBack={() => navigation.goBack()} />
+        <View style={styles.headerRow}>
+          <View style={styles.headerLeft}>
+            <ScreenHeader title={topic.title} onBack={() => navigation.goBack()} />
+          </View>
+          <TouchableOpacity
+            onPress={handleShare}
+            style={styles.shareButton}
+            accessibilityRole="button"
+            accessibilityLabel="Share this topic"
+          >
+            <ShareIcon size={20} color={base.gold} />
+          </TouchableOpacity>
+        </View>
         {categoryName ? (
           <View style={styles.badgeRow}>
             <BadgeChip label={categoryName} />
@@ -161,6 +181,19 @@ function LifeTopicDetailScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1 },
   headerPad: { paddingHorizontal: spacing.md, paddingTop: spacing.md },
+  headerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  headerLeft: {
+    flex: 1,
+  },
+  shareButton: {
+    minWidth: MIN_TOUCH_TARGET,
+    minHeight: MIN_TOUCH_TARGET,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   badgeRow: {
     flexDirection: 'row',
     marginTop: spacing.xs,
