@@ -23,7 +23,7 @@ parent-ref failures indicate real problems.
 Usage:
     python3 _tools/validate.py
 """
-import os, sys, json
+import os, sys, json, re
 from pathlib import Path
 from collections import Counter
 
@@ -265,6 +265,33 @@ def main():
                         check(f"passage {p.get('id','?')} response [{j}] has '{rk}'",
                               rk in r, f"missing '{rk}'")
         print(f"  difficult passages: {len(dp_data)}")
+
+    # Greek lexicon
+    gl_path = META / 'lexicon-greek.json'
+    if gl_path.exists():
+        gl_data = json.loads(gl_path.read_text())
+        check("lexicon-greek.json is list", isinstance(gl_data, list))
+        seen_strongs = set()
+        for i, e in enumerate(gl_data):
+            strongs = e.get('strongs', '')
+            for key in ('strongs', 'language', 'lemma', 'transliteration', 'definition'):
+                check(f"lexicon entry [{i}] has '{key}'", key in e,
+                      f"entry {strongs or f'index {i}'} missing '{key}'")
+            # Validate strongs format
+            if strongs:
+                check(f"lexicon entry {strongs} valid format",
+                      re.match(r'^G\d{4}$', strongs) is not None,
+                      f"invalid strongs format: {strongs}")
+                check(f"lexicon entry {strongs} not duplicate",
+                      strongs not in seen_strongs,
+                      f"duplicate strongs: {strongs}")
+                seen_strongs.add(strongs)
+            # Check definition structure
+            if 'definition' in e:
+                check(f"lexicon entry {strongs} has definition.short",
+                      'short' in e['definition'] and e['definition']['short'],
+                      f"{strongs} missing definition.short")
+        print(f"  Greek lexicon entries: {len(gl_data)}")
 
     # ── Summary ──
     print(f"\n{'='*60}")
