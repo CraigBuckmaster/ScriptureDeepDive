@@ -5,7 +5,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, Modal, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, Modal, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getCrossRefThread } from '../db/content';
 import { BadgeChip } from './BadgeChip';
@@ -45,38 +45,36 @@ export function ThreadViewerSheet({ visible, onClose, threadId, currentBookId, c
 
   return (
     <Modal visible={visible} transparent animationType="slide">
-      <TouchableOpacity style={{ flex: 1 }} activeOpacity={1} onPress={onClose} />
-      <SafeAreaView style={{
-        backgroundColor: base.bgElevated, borderTopLeftRadius: radii.lg, borderTopRightRadius: radii.lg,
-        borderTopWidth: 1, borderColor: base.border, maxHeight: '85%',
-      }}>
-        <ScrollView contentContainerStyle={{ padding: spacing.md }}>
-          <View style={{ alignSelf: 'center', width: 40, height: 4, backgroundColor: base.textMuted, borderRadius: 2, marginBottom: spacing.md }} />
+      <TouchableOpacity style={styles.backdrop} activeOpacity={1} onPress={onClose} />
+      <SafeAreaView style={[styles.sheet, {
+        backgroundColor: base.bgElevated, borderColor: base.border,
+      }]}>
+        <ScrollView contentContainerStyle={styles.scrollContent}>
+          <View style={[styles.handle, { backgroundColor: base.textMuted }]} />
 
           {thread ? (
             <>
-              <Text style={{ color: '#9090e0', fontFamily: fontFamily.displayMedium, fontSize: 16, marginBottom: spacing.md }}>
+              <Text style={styles.theme}>
                 {thread.theme}
               </Text>
 
               {steps.map((step, i) => (
-                <View key={i} style={{ flexDirection: 'row', gap: spacing.sm, marginBottom: spacing.md }}>
+                <View key={i} style={styles.stepRow}>
                   {/* Step indicator */}
-                  <View style={{ alignItems: 'center', width: 20 }}>
-                    <View style={{
-                      width: 12, height: 12, borderRadius: 6,
-                      backgroundColor: base.gold + '40', borderWidth: 2, borderColor: base.gold,
-                    }} />
+                  <View style={styles.stepIndicator}>
+                    <View style={[styles.stepDot, {
+                      backgroundColor: base.gold + '40', borderColor: base.gold,
+                    }]} />
                     {i < steps.length - 1 && (
-                      <View style={{ width: 2, flex: 1, backgroundColor: base.border, marginTop: 2 }} />
+                      <View style={[styles.stepLine, { backgroundColor: base.border }]} />
                     )}
                   </View>
                   {/* Content */}
-                  <View style={{ flex: 1 }}>
-                    <Text style={{ color: '#9090e0', fontFamily: fontFamily.uiSemiBold, fontSize: 13 }}>
+                  <View style={styles.stepContent}>
+                    <Text style={styles.stepRef}>
                       {step.ref}
                     </Text>
-                    <Text style={{ color: base.textDim, fontFamily: fontFamily.body, fontSize: 14, lineHeight: 22, marginTop: 2 }}>
+                    <Text style={[styles.stepNote, { color: base.textDim }]}>
                       {step.note || step.text || ''}
                     </Text>
                   </View>
@@ -84,10 +82,73 @@ export function ThreadViewerSheet({ visible, onClose, threadId, currentBookId, c
               ))}
             </>
           ) : (
-            <Text style={{ color: base.textMuted }}>Loading thread...</Text>
+            <Text style={[styles.loadingText, { color: base.textMuted }]}>Loading thread...</Text>
           )}
         </ScrollView>
       </SafeAreaView>
     </Modal>
   );
 }
+
+const styles = StyleSheet.create({
+  backdrop: {
+    flex: 1,
+  },
+  sheet: {
+    borderTopLeftRadius: radii.lg,
+    borderTopRightRadius: radii.lg,
+    borderTopWidth: 1,
+    maxHeight: '85%',
+  },
+  scrollContent: {
+    padding: spacing.md,
+  },
+  handle: {
+    alignSelf: 'center',
+    width: 40,
+    height: 4,
+    borderRadius: 2,
+    marginBottom: spacing.md,
+  },
+  theme: {
+    color: '#9090e0',
+    fontFamily: fontFamily.displayMedium,
+    fontSize: 16,
+    marginBottom: spacing.md,
+  },
+  stepRow: {
+    flexDirection: 'row',
+    gap: spacing.sm,
+    marginBottom: spacing.md,
+  },
+  stepIndicator: {
+    alignItems: 'center',
+    width: 20,
+  },
+  stepDot: {
+    width: 12,
+    height: 12,
+    borderRadius: 6,
+    borderWidth: 2,
+  },
+  stepLine: {
+    width: 2,
+    flex: 1,
+    marginTop: 2,
+  },
+  stepContent: {
+    flex: 1,
+  },
+  stepRef: {
+    color: '#9090e0',
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 13,
+  },
+  stepNote: {
+    fontFamily: fontFamily.body,
+    fontSize: 14,
+    lineHeight: 22,
+    marginTop: 2,
+  },
+  loadingText: {},
+});

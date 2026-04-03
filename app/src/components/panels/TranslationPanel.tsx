@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { useTheme, spacing, fontFamily } from '../../theme';
 import type { TransPanel } from '../../types';
 
@@ -81,7 +81,7 @@ export function TranslationPanel({ data }: Props) {
     rows = data.rows;
   } else {
     return (
-      <Text style={{ color: base.textMuted, fontSize: 12, fontFamily: fontFamily.ui }}>
+      <Text style={[styles.emptyText, { color: base.textMuted }]}>
         No translation comparisons available.
       </Text>
     );
@@ -89,32 +89,32 @@ export function TranslationPanel({ data }: Props) {
 
   if (rows.length === 0) {
     return (
-      <Text style={{ color: base.textMuted, fontSize: 12, fontFamily: fontFamily.ui }}>
+      <Text style={[styles.emptyText, { color: base.textMuted }]}>
         No translation comparisons available.
       </Text>
     );
   }
 
   return (
-    <View style={{ gap: spacing.md }}>
+    <View style={styles.container}>
       {title ? (
-        <Text style={{ color: colors.accent, fontFamily: fontFamily.display, fontSize: 11, letterSpacing: 0.3 }}>
+        <Text style={[styles.title, { color: colors.accent }]}>
           {title}
         </Text>
       ) : null}
       {rows.map((row, i) => (
-        <View key={i} style={{ gap: spacing.xs }}>
+        <View key={i} style={styles.rowGroup}>
           {row.verse_ref ? (
-            <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: fontFamily.uiSemiBold }}>
+            <Text style={[styles.verseRef, { color: base.textMuted }]}>
               {row.verse_ref}
             </Text>
           ) : null}
           {row.translations.map((t, j) => (
-            <View key={j} style={{ flexDirection: 'row', gap: spacing.sm }}>
-              <Text style={{ color: colors.accent, fontFamily: fontFamily.uiSemiBold, fontSize: 12, minWidth: 32 }}>
+            <View key={j} style={styles.transRow}>
+              <Text style={[styles.versionLabel, { color: colors.accent }]}>
                 {t.version}
               </Text>
-              <Text style={{ color: base.textDim, fontFamily: fontFamily.body, fontSize: 14, flex: 1 }}>
+              <Text style={[styles.transText, { color: base.textDim }]}>
                 {t.text}
               </Text>
             </View>
@@ -124,3 +124,39 @@ export function TranslationPanel({ data }: Props) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    gap: spacing.md,
+  },
+  emptyText: {
+    fontSize: 12,
+    fontFamily: fontFamily.ui,
+  },
+  title: {
+    fontFamily: fontFamily.display,
+    fontSize: 11,
+    letterSpacing: 0.3,
+  },
+  rowGroup: {
+    gap: spacing.xs,
+  },
+  verseRef: {
+    fontSize: 11,
+    fontFamily: fontFamily.uiSemiBold,
+  },
+  transRow: {
+    flexDirection: 'row',
+    gap: spacing.sm,
+  },
+  versionLabel: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 12,
+    minWidth: 32,
+  },
+  transText: {
+    fontFamily: fontFamily.body,
+    fontSize: 14,
+    flex: 1,
+  },
+});

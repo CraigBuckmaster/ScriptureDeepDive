@@ -7,7 +7,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, Modal, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, Modal, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getAllWordStudies } from '../db/content';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
@@ -38,69 +38,68 @@ export function WordStudyPopup({ visible, onClose, word, onGoToFullStudy }: Prop
 
   return (
     <Modal visible={visible} transparent animationType="slide">
-      <TouchableOpacity style={{ flex: 1 }} activeOpacity={1} onPress={onClose} accessibilityRole="button" accessibilityLabel="Close word study" />
-      <SafeAreaView style={{
-        backgroundColor: base.bgElevated, borderTopLeftRadius: radii.lg, borderTopRightRadius: radii.lg,
-        borderTopWidth: 1, borderColor: base.border, maxHeight: '70%',
-      }}>
-        <ScrollView contentContainerStyle={{ padding: spacing.md }}>
+      <TouchableOpacity style={styles.backdrop} activeOpacity={1} onPress={onClose} accessibilityRole="button" accessibilityLabel="Close word study" />
+      <SafeAreaView style={[styles.sheet, {
+        backgroundColor: base.bgElevated, borderColor: base.border,
+      }]}>
+        <ScrollView contentContainerStyle={styles.scrollContent}>
           {/* Handle bar */}
-          <View style={{ alignSelf: 'center', width: 40, height: 4, backgroundColor: base.textMuted, borderRadius: 2, marginBottom: spacing.md }} />
+          <View style={[styles.handle, { backgroundColor: base.textMuted }]} />
 
           {study ? (
             <>
-              <Text style={{ color: '#e890b8', fontSize: 28, fontFamily: fontFamily.bodyMedium, textAlign: 'center' }}>
+              <Text style={styles.original}>
                 {study.original}
               </Text>
-              <Text style={{ color: base.goldDim, fontSize: 14, fontFamily: fontFamily.bodyItalic, textAlign: 'center', marginTop: 4 }}>
+              <Text style={[styles.transliteration, { color: base.goldDim }]}>
                 {study.transliteration}
               </Text>
               {study.strongs && (
-                <Text style={{ color: base.textMuted, fontSize: 11, textAlign: 'center', marginTop: 2 }}>
+                <Text style={[styles.strongs, { color: base.textMuted }]}>
                   Strong's: {study.strongs}
                 </Text>
               )}
 
               {/* Glosses */}
               {study.glosses_json && (
-                <View style={{ marginTop: spacing.md }}>
-                  <Text style={{ color: base.gold, fontFamily: fontFamily.display, fontSize: 11, letterSpacing: 0.4 }}>
+                <View style={styles.sectionBlock}>
+                  <Text style={[styles.sectionLabel, { color: base.gold }]}>
                     GLOSSES
                   </Text>
-                  <Text style={{ color: base.text, fontFamily: fontFamily.body, fontSize: 15, marginTop: 4 }}>
+                  <Text style={[styles.glossText, { color: base.text }]}>
                     {(() => { try { return JSON.parse(study.glosses_json).join(', '); } catch (err) { return study.glosses_json; } })()}
                   </Text>
                 </View>
               )}
 
               {study.semantic_range && (
-                <View style={{ marginTop: spacing.md }}>
-                  <Text style={{ color: base.gold, fontFamily: fontFamily.display, fontSize: 11, letterSpacing: 0.4 }}>
+                <View style={styles.sectionBlock}>
+                  <Text style={[styles.sectionLabel, { color: base.gold }]}>
                     SEMANTIC RANGE
                   </Text>
-                  <Text style={{ color: base.textDim, fontFamily: fontFamily.body, fontSize: 14, marginTop: 4 }}>
+                  <Text style={[styles.bodyText, { color: base.textDim }]}>
                     {study.semantic_range}
                   </Text>
                 </View>
               )}
 
               {study.note && (
-                <Text style={{ color: base.textDim, fontFamily: fontFamily.body, fontSize: 14, marginTop: spacing.md, lineHeight: 22 }}>
+                <Text style={[styles.note, { color: base.textDim }]}>
                   {study.note}
                 </Text>
               )}
 
               {onGoToFullStudy && (
-                <TouchableOpacity onPress={() => { onGoToFullStudy(study.id); onClose(); }} style={{ marginTop: spacing.md }} accessibilityRole="button" accessibilityLabel="See full word study">
-                  <Text style={{ color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 13 }}>
+                <TouchableOpacity onPress={() => { onGoToFullStudy(study.id); onClose(); }} style={styles.fullStudyLink} accessibilityRole="button" accessibilityLabel="See full word study">
+                  <Text style={[styles.fullStudyText, { color: base.gold }]}>
                     See full study →
                   </Text>
                 </TouchableOpacity>
               )}
             </>
           ) : (
-            <View style={{ alignItems: 'center', paddingVertical: spacing.lg }}>
-              <Text style={{ color: base.textMuted, fontFamily: fontFamily.bodyItalic, fontSize: 15 }}>
+            <View style={styles.emptyState}>
+              <Text style={[styles.emptyText, { color: base.textMuted }]}>
                 {word ? `No lexicon entry found for "${word}"` : 'No word selected'}
               </Text>
             </View>
@@ -110,3 +109,81 @@ export function WordStudyPopup({ visible, onClose, word, onGoToFullStudy }: Prop
     </Modal>
   );
 }
+
+const styles = StyleSheet.create({
+  backdrop: {
+    flex: 1,
+  },
+  sheet: {
+    borderTopLeftRadius: radii.lg,
+    borderTopRightRadius: radii.lg,
+    borderTopWidth: 1,
+    maxHeight: '70%',
+  },
+  scrollContent: {
+    padding: spacing.md,
+  },
+  handle: {
+    alignSelf: 'center',
+    width: 40,
+    height: 4,
+    borderRadius: 2,
+    marginBottom: spacing.md,
+  },
+  original: {
+    color: '#e890b8',
+    fontSize: 28,
+    fontFamily: fontFamily.bodyMedium,
+    textAlign: 'center',
+  },
+  transliteration: {
+    fontSize: 14,
+    fontFamily: fontFamily.bodyItalic,
+    textAlign: 'center',
+    marginTop: 4,
+  },
+  strongs: {
+    fontSize: 11,
+    textAlign: 'center',
+    marginTop: 2,
+  },
+  sectionBlock: {
+    marginTop: spacing.md,
+  },
+  sectionLabel: {
+    fontFamily: fontFamily.display,
+    fontSize: 11,
+    letterSpacing: 0.4,
+  },
+  glossText: {
+    fontFamily: fontFamily.body,
+    fontSize: 15,
+    marginTop: 4,
+  },
+  bodyText: {
+    fontFamily: fontFamily.body,
+    fontSize: 14,
+    marginTop: 4,
+  },
+  note: {
+    fontFamily: fontFamily.body,
+    fontSize: 14,
+    marginTop: spacing.md,
+    lineHeight: 22,
+  },
+  fullStudyLink: {
+    marginTop: spacing.md,
+  },
+  fullStudyText: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 13,
+  },
+  emptyState: {
+    alignItems: 'center',
+    paddingVertical: spacing.lg,
+  },
+  emptyText: {
+    fontFamily: fontFamily.bodyItalic,
+    fontSize: 15,
+  },
+});

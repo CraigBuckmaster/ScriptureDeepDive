@@ -292,7 +292,7 @@ export default function SettingsScreen() {
         </View>
 
         {/* Bottom breathing room */}
-        <View style={{ height: spacing.xxl }} />
+        <View style={styles.bottomSpacer} />
       </ScrollView>
     </SafeAreaView>
   );
@@ -399,9 +399,9 @@ function TranslationManager({ base }: { base: ReturnType<typeof useTheme>['base'
 
         return (
           <View key={t.id} style={[styles.translationRow, { borderBottomColor: base.border + '40' }]}>
-            <View style={{ flex: 1 }}>
+            <View style={styles.translationInfo}>
               <Text style={[styles.rowLabel, { color: base.text }]}>{t.label}</Text>
-              <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: fontFamily.ui }}>
+              <Text style={[styles.translationDetail, { color: base.textMuted }]}>
                 {t.fullName}{isInstalled ? ` · ${sizeMB} MB` : ''}
               </Text>
             </View>
@@ -414,7 +414,7 @@ function TranslationManager({ base }: { base: ReturnType<typeof useTheme>['base'
             ) : (
               <TouchableOpacity onPress={() => handleDownload(t.id)} style={styles.downloadButton}>
                 <Download size={14} color={base.gold} />
-                <Text style={{ color: base.gold, fontSize: 12, fontFamily: fontFamily.uiSemiBold, marginLeft: 4 }}>
+                <Text style={[styles.downloadLabel, { color: base.gold }]}>
                   {Number(sizeMB) > 0 ? `${sizeMB} MB` : 'Install'}
                 </Text>
               </TouchableOpacity>
@@ -446,7 +446,7 @@ function VoicePicker({ base }: { base: ReturnType<typeof useTheme>['base'] }) {
         accessibilityLabel={`TTS voice: ${currentName}. Tap to change.`}
       >
         <Text style={[styles.rowLabel, { color: base.text }]}>Voice</Text>
-        <Text style={{ color: base.gold, fontFamily: fontFamily.uiMedium, fontSize: 13 }}>
+        <Text style={[styles.voiceValue, { color: base.gold }]}>
           {currentName} {expanded ? '▲' : '▼'}
         </Text>
       </TouchableOpacity>
@@ -466,17 +466,17 @@ function VoicePicker({ base }: { base: ReturnType<typeof useTheme>['base'] }) {
               onPress={() => { setTtsVoice(v.identifier); setExpanded(false); }}
               style={[styles.voiceOption, ttsVoice === v.identifier && { backgroundColor: base.gold + '15' }]}
             >
-              <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.xs }}>
+              <View style={styles.voiceNameRow}>
                 <Text style={[styles.voiceOptionText, { color: ttsVoice === v.identifier ? base.gold : base.text }]}>
                   {v.name}
                 </Text>
                 {v.recommended && (
-                  <Text style={{ color: base.gold, fontSize: 9, fontFamily: fontFamily.uiSemiBold, opacity: 0.8 }}>
+                  <Text style={[styles.recommendedBadge, { color: base.gold }]}>
                     RECOMMENDED
                   </Text>
                 )}
               </View>
-              <Text style={{ color: base.textMuted, fontSize: 10, fontFamily: fontFamily.ui }}>
+              <Text style={[styles.voiceQuality, { color: base.textMuted }]}>
                 {v.quality !== 'Default' ? v.quality : v.language}
               </Text>
             </TouchableOpacity>
@@ -670,5 +670,38 @@ const styles = StyleSheet.create({
   voiceOptionText: {
     fontFamily: fontFamily.uiMedium,
     fontSize: 13,
+  },
+  voiceValue: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 13,
+  },
+  voiceNameRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.xs,
+  },
+  recommendedBadge: {
+    fontSize: 9,
+    fontFamily: fontFamily.uiSemiBold,
+    opacity: 0.8,
+  },
+  voiceQuality: {
+    fontSize: 10,
+    fontFamily: fontFamily.ui,
+  },
+  translationInfo: {
+    flex: 1,
+  },
+  translationDetail: {
+    fontSize: 11,
+    fontFamily: fontFamily.ui,
+  },
+  downloadLabel: {
+    fontSize: 12,
+    fontFamily: fontFamily.uiSemiBold,
+    marginLeft: 4,
+  },
+  bottomSpacer: {
+    height: spacing.xxl,
   },
 });

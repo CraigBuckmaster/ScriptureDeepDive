@@ -5,7 +5,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, Modal, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, Modal, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { BadgeChip } from './BadgeChip';
 import { getPersonChildren, getSpousesOf, getPerson } from '../db/content';
@@ -43,38 +43,39 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
   let refs: string[] = [];
   try { refs = person.refs_json ? JSON.parse(person.refs_json) : []; } catch (err) { logger.warn('PersonSidebar', 'Operation failed', err); }
 
-  const FamilyLink = ({ p }: { p: Person }) => (
-    <TouchableOpacity onPress={() => onNavigate(p.id)} style={{ marginRight: 8, marginBottom: 4 }}>
-      <Text style={{ color: p.era ? (eras[p.era] ?? base.gold) : base.gold,
-        fontFamily: fontFamily.uiMedium, fontSize: 13,
-        borderBottomWidth: 1, borderBottomColor: (p.era ? (eras[p.era] ?? base.gold) : base.gold) + '40',
-      }}>
-        {p.name}
-      </Text>
-    </TouchableOpacity>
-  );
+  const FamilyLink = ({ p }: { p: Person }) => {
+    const linkColor = p.era ? (eras[p.era] ?? base.gold) : base.gold;
+    return (
+      <TouchableOpacity onPress={() => onNavigate(p.id)} style={styles.familyLink}>
+        <Text style={[styles.familyLinkText, {
+          color: linkColor, borderBottomColor: linkColor + '40',
+        }]}>
+          {p.name}
+        </Text>
+      </TouchableOpacity>
+    );
+  };
 
   return (
     <Modal visible={visible} transparent animationType="slide">
-      <TouchableOpacity style={{ flex: 1 }} activeOpacity={1} onPress={onClose} />
-      <SafeAreaView style={{
-        backgroundColor: base.bgElevated, borderTopLeftRadius: radii.lg, borderTopRightRadius: radii.lg,
-        borderTopWidth: 1, borderColor: base.border, maxHeight: '85%',
-      }}>
+      <TouchableOpacity style={styles.backdrop} activeOpacity={1} onPress={onClose} />
+      <SafeAreaView style={[styles.sheet, {
+        backgroundColor: base.bgElevated, borderColor: base.border,
+      }]}>
         {/* Sticky header — stays fixed above the scroll */}
-        <View style={{ paddingHorizontal: spacing.md, paddingTop: spacing.md }}>
+        <View style={styles.headerPad}>
           {/* Grab handle + close button */}
-          <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: spacing.md }}>
-            <View style={{ flex: 1 }} />
-            <View style={{ width: 40, height: 4, backgroundColor: base.textMuted, borderRadius: 2 }} />
+          <View style={styles.grabRow}>
+            <View style={styles.grabSpacer} />
+            <View style={[styles.grabHandle, { backgroundColor: base.textMuted }]} />
             <TouchableOpacity
               onPress={onClose}
               hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
               accessibilityLabel="Close bio panel"
               accessibilityRole="button"
-              style={{ flex: 1, alignItems: 'flex-end' }}
+              style={styles.closeBtn}
             >
-              <Text style={{ color: base.textMuted, fontSize: 18 }}>✕</Text>
+              <Text style={[styles.closeIcon, { color: base.textMuted }]}>✕</Text>
             </TouchableOpacity>
           </View>
 
@@ -82,31 +83,31 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
           {eraLabel ? <BadgeChip label={eraLabel} color={eraColor} /> : null}
 
           {/* Name */}
-          <Text style={{ color: base.text, fontFamily: fontFamily.displaySemiBold, fontSize: 20, marginTop: spacing.sm }}>
+          <Text style={[styles.name, { color: base.text }]}>
             {person.name}
           </Text>
 
           {/* Dates */}
           {person.dates ? (
-            <Text style={{ color: base.textDim, fontFamily: fontFamily.ui, fontSize: 13, marginTop: 2 }}>
+            <Text style={[styles.dates, { color: base.textDim }]}>
               {person.dates}
             </Text>
           ) : null}
 
-          <View style={{ height: 1, backgroundColor: base.border, marginTop: spacing.md }} />
+          <View style={[styles.divider, { backgroundColor: base.border }]} />
         </View>
 
-        <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.md, paddingBottom: spacing.md }}>
+        <ScrollView contentContainerStyle={styles.scrollContent}>
           {/* Role */}
-          <Text style={{ color: base.gold, fontFamily: fontFamily.bodyMedium, fontSize: 15 }}>
+          <Text style={[styles.role, { color: base.gold }]}>
             {person.role}
           </Text>
 
           {/* Family block */}
-          <View style={{ marginTop: spacing.md, gap: spacing.sm }}>
+          <View style={styles.familyBlock}>
             {(father || mother) && (
-              <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' }}>
-                <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: fontFamily.uiSemiBold, minWidth: 60 }}>
+              <View style={styles.familyRow}>
+                <Text style={[styles.familyLabel, { color: base.textMuted }]}>
                   {father && mother ? 'Parents' : 'Father'}
                 </Text>
                 {father && <FamilyLink p={father} />}
@@ -114,38 +115,38 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
               </View>
             )}
             {spouses.length > 0 && (
-              <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' }}>
-                <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: fontFamily.uiSemiBold, minWidth: 60 }}>
+              <View style={styles.familyRow}>
+                <Text style={[styles.familyLabel, { color: base.textMuted }]}>
                   {spouses.length > 1 ? 'Spouses' : 'Spouse'}
                 </Text>
                 {spouses.map((s) => <FamilyLink key={s.id} p={s} />)}
               </View>
             )}
             {children.length > 0 && (
-              <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' }}>
-                <Text style={{ color: base.textMuted, fontSize: 11, fontFamily: fontFamily.uiSemiBold, minWidth: 60 }}>
+              <View style={styles.familyRow}>
+                <Text style={[styles.familyLabel, { color: base.textMuted }]}>
                   {children.length > 1 ? 'Children' : 'Child'}
                 </Text>
                 {children.slice(0, 12).map((c) => <FamilyLink key={c.id} p={c} />)}
-                {children.length > 12 && <Text style={{ color: base.textMuted, fontSize: 11 }}>+{children.length - 12} more</Text>}
+                {children.length > 12 && <Text style={[styles.moreText, { color: base.textMuted }]}>+{children.length - 12} more</Text>}
               </View>
             )}
           </View>
 
           {/* Bio */}
           {person.bio ? (
-            <Text style={{ color: base.textDim, fontFamily: fontFamily.body, fontSize: 14, lineHeight: 22, marginTop: spacing.md }}>
+            <Text style={[styles.bio, { color: base.textDim }]}>
               {person.bio}
             </Text>
           ) : null}
 
           {/* Scripture Role */}
           {person.scripture_role ? (
-            <View style={{ marginTop: spacing.md }}>
-              <Text style={{ color: base.gold, fontFamily: fontFamily.display, fontSize: 11, letterSpacing: 0.4 }}>
+            <View style={styles.sectionBlock}>
+              <Text style={[styles.sectionLabel, { color: base.gold }]}>
                 ROLE IN SCRIPTURE
               </Text>
-              <Text style={{ color: base.textDim, fontFamily: fontFamily.body, fontSize: 14, marginTop: 4 }}>
+              <Text style={[styles.sectionBody, { color: base.textDim }]}>
                 {person.scripture_role}
               </Text>
             </View>
@@ -153,15 +154,15 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
 
           {/* Key References */}
           {refs.length > 0 && (
-            <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginTop: spacing.md }}>
+            <View style={styles.refsRow}>
               {refs.map((r, i) => <BadgeChip key={i} label={r} color={base.textMuted} />)}
             </View>
           )}
 
           {/* Chapter link */}
           {person.chapter_link && onChapterPress && (
-            <TouchableOpacity onPress={() => onChapterPress(person.chapter_link!)} style={{ marginTop: spacing.md }}>
-              <Text style={{ color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 13 }}>
+            <TouchableOpacity onPress={() => onChapterPress(person.chapter_link!)} style={styles.chapterLink}>
+              <Text style={[styles.chapterLinkText, { color: base.gold }]}>
                 Read in Companion Study →
               </Text>
             </TouchableOpacity>
@@ -171,3 +172,119 @@ export function PersonSidebar({ visible, onClose, person, onNavigate, onChapterP
     </Modal>
   );
 }
+
+const styles = StyleSheet.create({
+  backdrop: {
+    flex: 1,
+  },
+  sheet: {
+    borderTopLeftRadius: radii.lg,
+    borderTopRightRadius: radii.lg,
+    borderTopWidth: 1,
+    maxHeight: '85%',
+  },
+  headerPad: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.md,
+  },
+  grabRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: spacing.md,
+  },
+  grabSpacer: {
+    flex: 1,
+  },
+  grabHandle: {
+    width: 40,
+    height: 4,
+    borderRadius: 2,
+  },
+  closeBtn: {
+    flex: 1,
+    alignItems: 'flex-end',
+  },
+  closeIcon: {
+    fontSize: 18,
+  },
+  name: {
+    fontFamily: fontFamily.displaySemiBold,
+    fontSize: 20,
+    marginTop: spacing.sm,
+  },
+  dates: {
+    fontFamily: fontFamily.ui,
+    fontSize: 13,
+    marginTop: 2,
+  },
+  divider: {
+    height: 1,
+    marginTop: spacing.md,
+  },
+  scrollContent: {
+    paddingHorizontal: spacing.md,
+    paddingBottom: spacing.md,
+  },
+  role: {
+    fontFamily: fontFamily.bodyMedium,
+    fontSize: 15,
+  },
+  familyBlock: {
+    marginTop: spacing.md,
+    gap: spacing.sm,
+  },
+  familyRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+  },
+  familyLabel: {
+    fontSize: 11,
+    fontFamily: fontFamily.uiSemiBold,
+    minWidth: 60,
+  },
+  familyLink: {
+    marginRight: 8,
+    marginBottom: 4,
+  },
+  familyLinkText: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 13,
+    borderBottomWidth: 1,
+  },
+  moreText: {
+    fontSize: 11,
+  },
+  bio: {
+    fontFamily: fontFamily.body,
+    fontSize: 14,
+    lineHeight: 22,
+    marginTop: spacing.md,
+  },
+  sectionBlock: {
+    marginTop: spacing.md,
+  },
+  sectionLabel: {
+    fontFamily: fontFamily.display,
+    fontSize: 11,
+    letterSpacing: 0.4,
+  },
+  sectionBody: {
+    fontFamily: fontFamily.body,
+    fontSize: 14,
+    marginTop: 4,
+  },
+  refsRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 6,
+    marginTop: spacing.md,
+  },
+  chapterLink: {
+    marginTop: spacing.md,
+  },
+  chapterLinkText: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 13,
+  },
+});
