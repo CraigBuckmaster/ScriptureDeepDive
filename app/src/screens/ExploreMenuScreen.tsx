@@ -103,6 +103,11 @@ const GRID_FEATURES: Feature[] = [
     subtitle: 'Browse manuscripts, discourse, and more',
     screen: 'ContentLibrary',
   },
+  {
+    title: 'Life Topics',
+    subtitle: 'Biblical guidance for everyday life',
+    screen: 'LifeTopics',
+  },
 ];
 
 function ExploreMenuScreen() {
