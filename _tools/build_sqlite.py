@@ -590,6 +590,25 @@ CREATE INDEX IF NOT EXISTS idx_interp_verse ON historical_interpretations(verse_
 CREATE INDEX IF NOT EXISTS idx_interp_era ON historical_interpretations(era);
 
 -- ══════════════════════════════════════════════════════════════
+-- GRAMMAR ARTICLES (morphology reference)
+-- ══════════════════════════════════════════════════════════════
+
+CREATE TABLE IF NOT EXISTS grammar_articles (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  language TEXT NOT NULL,
+  category TEXT NOT NULL,
+  summary TEXT NOT NULL,
+  body TEXT NOT NULL,
+  examples_json TEXT,
+  related_articles_json TEXT,
+  display_order INTEGER NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_grammar_language ON grammar_articles(language);
+CREATE INDEX IF NOT EXISTS idx_grammar_category ON grammar_articles(category);
+
+-- ══════════════════════════════════════════════════════════════
 -- NOTE: User tables (notes, bookmarks, preferences, highlights,
 -- reading progress, plans) live in a separate user.db managed by
 -- the app's userDatabase.ts migration system. They are NOT bundled
@@ -1637,6 +1656,43 @@ def populate_historical_interpretations(cur):
     return era_count, interp_count
 
 
+def populate_grammar_articles(cur):
+    """Populate grammar_articles from content/grammar/articles.json.
+
+    Gracefully skips if the file does not exist yet (content will be
+    authored incrementally).
+    """
+    grammar_dir = ROOT / 'content' / 'grammar'
+    path = grammar_dir / 'articles.json'
+    if not path.exists():
+        print("  [SKIP] grammar/articles.json not found")
+        return 0
+    data = _load_json(path)
+    if not isinstance(data, list):
+        print("  [WARN] grammar/articles.json is not a list, skipping")
+        return 0
+    n = 0
+    for entry in data:
+        # Validate required fields
+        required = ('id', 'title', 'language', 'category', 'summary', 'body')
+        if not all(entry.get(k) for k in required):
+            print(f"  [WARN] grammar article missing required fields: {entry.get('id', '?')}")
+            continue
+        cur.execute(
+            'INSERT OR IGNORE INTO grammar_articles '
+            '(id, title, language, category, summary, body, '
+            'examples_json, related_articles_json, display_order) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            (entry['id'], entry['title'], entry['language'],
+             entry['category'], entry['summary'], entry['body'],
+             _json_str(entry['examples']) if entry.get('examples') else None,
+             _json_str(entry['related_articles']) if entry.get('related_articles') else None,
+             entry.get('display_order', 0))
+        )
+        n += 1
+    return n
+
+
 def populate_content_library(cur):
     """Extract content library entries from chapter JSONs.
 
@@ -2030,6 +2086,9 @@ def main():
         era_ct, interp_ct = result
         print(f"  [OK] interpretation_eras: {era_ct} rows")
         print(f"  [OK] historical_interpretations: {interp_ct} rows")
+
+    n = populate_grammar_articles(cur)
+    print(f"  [OK] grammar_articles: {n} rows")
 
     n = compute_difficulty(cur)
     print(f"  [OK] difficulty scores: {n} chapters rated")

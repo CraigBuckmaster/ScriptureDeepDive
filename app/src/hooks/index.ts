@@ -44,3 +44,4 @@ export { useLifeTopicCategories, useLifeTopics, useLifeTopicSearch, useLifeTopic
 export { useAvailableLenses, useChapterLensContent } from './useHermeneuticLens';
 export { useArchaeologyBrowse, useArchaeologySearch, useArchaeologyDetail } from './useArchaeology';
 export { useInterpretationEras, useVerseInterpretations, useChapterInterpretations } from './useInterpretations';
+export { useGrammarArticle, useMorphologyDecode } from './useGrammar';

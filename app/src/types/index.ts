@@ -751,5 +751,19 @@ export interface InterpretationEra {
   display_order: number;
 }
 
+// ── Grammar Articles ──────────────────────────────────────────
+
+export interface GrammarArticle {
+  id: string;
+  title: string;
+  language: string;
+  category: string;
+  summary: string;
+  body: string;
+  examples_json?: string;
+  related_articles_json?: string;
+  display_order: number;
+}
+
 // Re-export ParsedRef so panel components can import from types
 export type { ParsedRef } from '../utils/verseResolver';

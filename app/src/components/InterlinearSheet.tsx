@@ -14,6 +14,7 @@ import {
 import { X } from 'lucide-react-native';
 import { getInterlinearWords } from '../db/content';
 import { LoadingSkeleton } from './LoadingSkeleton';
+import { GrammarSheet } from './GrammarSheet';
 import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
 import type { InterlinearWord } from '../types';
 
@@ -34,15 +35,17 @@ interface Props {
   onWordStudyPress?: (wordStudyId: string) => void;
   onConcordancePress?: (params: ConcordanceParams) => void;
   onLexiconPress?: (strongs: string, wordStudyId: string | null) => void;
+  onGrammarArticlePress?: (articleId: string) => void;
 }
 
 export function InterlinearSheet({
   visible, bookId, chapter, verse, verseRef,
-  onClose, onWordStudyPress, onConcordancePress, onLexiconPress,
+  onClose, onWordStudyPress, onConcordancePress, onLexiconPress, onGrammarArticlePress,
 }: Props) {
   const { base } = useTheme();
   const [words, setWords] = useState<InterlinearWord[]>([]);
   const [loading, setLoading] = useState(true);
+  const [grammarCode, setGrammarCode] = useState<string | null>(null);
 
   // Detect OT vs NT for text direction
   const isOT = [
@@ -156,9 +159,16 @@ export function InterlinearSheet({
                         </TouchableOpacity>
                       ) : null}
 
-                      {/* Morphology */}
+                      {/* Morphology (tappable — opens GrammarSheet) */}
                       {w.morphology ? (
-                        <Text style={[styles.morphology, { color: base.textMuted }]}>{w.morphology}</Text>
+                        <TouchableOpacity
+                          onPress={() => setGrammarCode(w.morphology!)}
+                          activeOpacity={0.6}
+                          accessibilityRole="button"
+                          accessibilityLabel={`View grammar for ${w.morphology}`}
+                        >
+                          <Text style={[styles.morphology, { color: base.gold }]}>{w.morphology}</Text>
+                        </TouchableOpacity>
                       ) : null}
 
                       {/* Gloss */}
@@ -178,6 +188,14 @@ export function InterlinearSheet({
           </TouchableWithoutFeedback>
         </View>
       </TouchableWithoutFeedback>
+
+      {/* Grammar bottom sheet — opens over InterlinearSheet */}
+      <GrammarSheet
+        visible={grammarCode !== null}
+        morphologyCode={grammarCode}
+        onClose={() => setGrammarCode(null)}
+        onArticlePress={onGrammarArticlePress}
+      />
     </Modal>
   );
 }

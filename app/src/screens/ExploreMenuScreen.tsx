@@ -123,6 +123,11 @@ const GRID_FEATURES: Feature[] = [
     subtitle: 'How passages were understood across church history',
     screen: 'TimeTravelBrowse',
   },
+  {
+    title: 'Grammar Reference',
+    subtitle: 'Greek and Hebrew morphology decoded',
+    screen: 'GrammarBrowse',
+  },
 ];
 
 function ExploreMenuScreen() {

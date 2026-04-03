@@ -82,6 +82,8 @@ export type ExploreStackParamList = {
   ArchaeologyDetail: { discoveryId: string };
   TimeTravelBrowse: undefined;
   TimeTravelDetail: { verseRef: string };
+  GrammarBrowse: undefined;
+  GrammarArticle: { articleId: string };
   ContentLibrary: undefined;
   Concordance: {
     strongs?: string;

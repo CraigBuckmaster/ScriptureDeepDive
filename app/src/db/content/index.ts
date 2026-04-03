@@ -52,6 +52,9 @@ export {
   getAllDiscoveries, getDiscovery, getDiscoveriesForChapter,
   getDiscoveriesByCategory, searchDiscoveries, getDiscoveryVerseLinks,
 } from './archaeology';
+export {
+  getGrammarArticle, getGrammarArticles, searchGrammarArticles,
+} from './grammar';
 export { searchVerses, searchPeople } from './search';
 export { getContentStats } from './stats';
 export type { ContentStats } from './stats';
