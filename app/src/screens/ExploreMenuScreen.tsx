@@ -108,6 +108,11 @@ const GRID_FEATURES: Feature[] = [
     subtitle: 'Biblical guidance for everyday life',
     screen: 'LifeTopics',
   },
+  {
+    title: 'Hermeneutic Lenses',
+    subtitle: 'Read through different interpretive frameworks',
+    screen: 'LensBrowse',
+  },
 ];
 
 function ExploreMenuScreen() {

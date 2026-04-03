@@ -41,6 +41,17 @@ export {
   searchLifeTopics, getLifeTopicVerses, getLifeTopicScholars,
   getRelatedLifeTopics,
 } from './lifeTopics';
+export {
+  getAllLenses, getLensesForChapter, getChapterLensContent,
+} from './hermeneutics';
+export {
+  getAllEras, getInterpretationsForVerse, getInterpretationsForChapter,
+  getInterpretationsByEra, getInterpretation,
+} from './interpretations';
+export {
+  getAllDiscoveries, getDiscovery, getDiscoveriesForChapter,
+  getDiscoveriesByCategory, searchDiscoveries, getDiscoveryVerseLinks,
+} from './archaeology';
 export { searchVerses, searchPeople } from './search';
 export { getContentStats } from './stats';
 export type { ContentStats } from './stats';

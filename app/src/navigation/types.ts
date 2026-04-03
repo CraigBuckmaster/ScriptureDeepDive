@@ -77,6 +77,7 @@ export type ExploreStackParamList = {
   DebateDetail: { topicId: string };
   LifeTopics: undefined;
   LifeTopicDetail: { topicId: string };
+  LensBrowse: undefined;
   ContentLibrary: undefined;
   Concordance: {
     strongs?: string;
