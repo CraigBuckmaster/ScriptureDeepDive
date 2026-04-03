@@ -9,7 +9,7 @@
  *   5. Overall progress bar
  */
 
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState, useCallback, useMemo, useRef } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, RefreshControl, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
@@ -45,8 +45,14 @@ function HomeScreen() {
 
   // Load testament progress when home screen is focused
   const loadTestamentProgress = useCallback(() => {
-    getTestamentProgress().then(setTestamentProgress).catch(() => {});
+    getTestamentProgress().then(setTestamentProgress).catch((err) => {
+      // Ignore — non-critical display data
+    });
   }, []);
+
+  const handleRecPress = useCallback((rec: Recommendation) => {
+    navigation.navigate(rec.screen as any, rec.params as any);
+  }, [navigation]);
   // Re-load on focus (useFocusEffect not available here, piggyback on refresh)
 
   const handleRefresh = useCallback(async () => {
@@ -75,6 +81,18 @@ function HomeScreen() {
   const chaptersRead = readingStats?.totalChapters ?? 0;
   const pct = chaptersRead > 0 ? ((chaptersRead / TOTAL_BIBLE_CHAPTERS) * 100).toFixed(1) : null;
 
+  const handleContinuePress = () => {
+    if (mostRecent) {
+      navigation.navigate('Chapter', { bookId: mostRecent.book_id, chapterNum: mostRecent.chapter_num });
+    } else {
+      navigation.navigate('Chapter', { bookId: 'genesis', chapterNum: 1 });
+    }
+  };
+
+  const handleVersePress = () => {
+    navigation.navigate('Chapter', { bookId: verse.bookId, chapterNum: verse.chapter });
+  };
+
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       <ScrollView
@@ -102,10 +120,7 @@ function HomeScreen() {
         {mostRecent ? (
           <TouchableOpacity
             activeOpacity={0.7}
-            onPress={() => navigation.navigate('Chapter', {
-              bookId: mostRecent.book_id,
-              chapterNum: mostRecent.chapter_num,
-            })}
+            onPress={handleContinuePress}
             style={[styles.continueCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}
             accessibilityRole="button"
             accessibilityLabel={`Continue reading ${mostRecent.book_name} chapter ${mostRecent.chapter_num}`}
@@ -126,10 +141,7 @@ function HomeScreen() {
         ) : (
           <TouchableOpacity
             activeOpacity={0.7}
-            onPress={() => navigation.navigate('Chapter', {
-              bookId: 'genesis',
-              chapterNum: 1,
-            })}
+            onPress={handleContinuePress}
             style={[styles.continueCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}
             accessibilityRole="button"
             accessibilityLabel="Begin your journey, start reading Genesis 1"
@@ -148,10 +160,7 @@ function HomeScreen() {
         {/* ── 3. Verse of the Day ──────────────────────── */}
         <TouchableOpacity
           activeOpacity={0.7}
-          onPress={() => navigation.navigate('Chapter', {
-            bookId: verse.bookId,
-            chapterNum: verse.chapter,
-          })}
+          onPress={handleVersePress}
           style={[styles.verseCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
           accessibilityRole="button"
           accessibilityLabel={`Verse of the day: ${verse.ref}. ${verse.text}. Tap to read in context`}
@@ -190,7 +199,7 @@ function HomeScreen() {
                     key={rec.id}
                     style={[styles.suggestionCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
                     activeOpacity={0.7}
-                    onPress={() => navigation.navigate(rec.screen as any, rec.params as any)}
+                    onPress={() => handleRecPress(rec)}
                     accessibilityRole="button"
                     accessibilityLabel={`${rec.title}: ${rec.subtitle}`}
                   >
@@ -206,7 +215,7 @@ function HomeScreen() {
                       key={rec.id}
                       style={[styles.suggestionCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
                       activeOpacity={0.7}
-                      onPress={() => navigation.navigate(rec.screen as any, rec.params as any)}
+                      onPress={() => handleRecPress(rec)}
                       accessibilityRole="button"
                       accessibilityLabel={`${rec.title}: ${rec.subtitle}`}
                     >
