@@ -508,6 +508,7 @@ function ChapterScreen() {
           chapterPanels={chapterPanels}
           activeChapterPanelType={activeChapterPanelType}
           handleChapterPanelToggle={handleChapterPanelToggle}
+          prayerPrompt={chapter?.prayer_prompt}
         />
       </ScrollView>
 

@@ -33,6 +33,7 @@ export interface Chapter {
   map_story_link_text: string | null;
   coaching_json: string | null;
   difficulty: number | null;
+  prayer_prompt?: string | null;
 }
 
 export interface CoachingTip {

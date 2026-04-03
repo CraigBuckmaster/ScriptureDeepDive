@@ -120,7 +120,8 @@ CREATE TABLE chapters (
   map_story_link_id TEXT,
   map_story_link_text TEXT,
   coaching_json TEXT,
-  difficulty INTEGER
+  difficulty INTEGER,
+  prayer_prompt TEXT
 );
 
 CREATE TABLE sections (
@@ -454,6 +455,57 @@ CREATE INDEX idx_dictionary_term ON dictionary_entries(term);
 CREATE VIRTUAL TABLE verses_fts USING fts5(text, content=verses, content_rowid=id);
 CREATE VIRTUAL TABLE people_fts USING fts5(name, role, bio, content=people, content_rowid=rowid);
 CREATE VIRTUAL TABLE dictionary_fts USING fts5(term, definition, content=dictionary_entries, content_rowid=rowid);
+
+-- ══════════════════════════════════════════════════════════════
+-- LIFE TOPICS (curated topical guides with scholar quotes)
+-- ══════════════════════════════════════════════════════════════
+
+CREATE TABLE IF NOT EXISTS life_topic_categories (
+    id TEXT PRIMARY KEY,
+    name TEXT NOT NULL,
+    display_order INTEGER NOT NULL,
+    icon TEXT
+);
+
+CREATE TABLE IF NOT EXISTS life_topics_official (
+    id TEXT PRIMARY KEY,
+    category_id TEXT NOT NULL REFERENCES life_topic_categories(id),
+    title TEXT NOT NULL,
+    subtitle TEXT,
+    summary TEXT NOT NULL,
+    body TEXT NOT NULL,
+    display_order INTEGER NOT NULL,
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS life_topic_verses (
+    id INTEGER PRIMARY KEY,
+    topic_id TEXT NOT NULL REFERENCES life_topics_official(id),
+    verse_ref TEXT NOT NULL,
+    verse_order INTEGER NOT NULL,
+    annotation TEXT,
+    is_primary INTEGER DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS life_topic_scholars (
+    id INTEGER PRIMARY KEY,
+    topic_id TEXT NOT NULL REFERENCES life_topics_official(id),
+    scholar_id TEXT NOT NULL,
+    quote TEXT NOT NULL,
+    source TEXT,
+    display_order INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS life_topic_related (
+    topic_id TEXT NOT NULL,
+    related_id TEXT NOT NULL,
+    PRIMARY KEY (topic_id, related_id)
+);
+
+CREATE VIRTUAL TABLE IF NOT EXISTS life_topics_fts USING fts5(
+    title, summary, body, content='life_topics_official'
+);
 
 -- ══════════════════════════════════════════════════════════════
 -- NOTE: User tables (notes, bookmarks, preferences, highlights,
