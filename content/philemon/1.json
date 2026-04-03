@@ -546,5 +546,22 @@
       }
     ]
   },
-  "vhl_groups": []
+  "vhl_groups": [],
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Philemon is the only preserved letter from Paul to an individual about a personal matter. Yet it made it into the canon. The church saw theological weight in what looks like a personal favor: reconciliation between slave and master. How Christians handle mundane relationships embodies the gospel they preach.",
+      "genre_tag": "canonical_thread"
+    },
+    {
+      "after_section": 2,
+      "tip": "Paul could 'command' what Philemon should do but prefers to 'appeal' (vv. 8-9). Apostolic authority gives way to relationship. Onesimus is now 'my child... my very heart' (vv. 10, 12). Paul identifies so closely with the slave that rejecting Onesimus means rejecting Paul. This rhetorical strategy makes refusal nearly impossible.",
+      "genre_tag": "literary_pattern"
+    },
+    {
+      "after_section": 3,
+      "tip": "'Perhaps this is why he was separated from you for a while, that you might have him back forever, no longer as a slave but... as a beloved brother' (vv. 15-16). Paul reframes providence: what looked like loss ('separated') becomes eternal gain ('forever'). The letter models how Christians should process apparent setbacks — not denial but redemptive interpretation.",
+      "genre_tag": "theological_insight"
+    }
+  ]
 }
