@@ -41,6 +41,8 @@ interface Props {
   comparisonLabel?: string;
   primaryLabel?: string;
   redLetterVerses?: Set<number>;
+  /** Called with (verseNum, yRelativeToSection, sectionId) when a verse lays out. */
+  onVerseLayout?: (verseNum: number, y: number, sectionId: string) => void;
 }
 
 export function SectionBlock({
@@ -50,7 +52,7 @@ export function SectionBlock({
   renderButtonRow, renderPanel,
   depthExplored, depthTotal, onDepthRecord,
   comparisonVerses, comparisonLabel, primaryLabel,
-  redLetterVerses,
+  redLetterVerses, onVerseLayout,
 }: Props) {
   const { base } = useTheme();
 
@@ -103,6 +105,7 @@ export function SectionBlock({
         comparisonLabel={comparisonLabel}
         primaryLabel={primaryLabel}
         redLetterVerses={redLetterVerses}
+        onVerseLayout={onVerseLayout ? (verseNum, y) => onVerseLayout(verseNum, y, section.id) : undefined}
       />
 
       {/* Panel button row after verses */}

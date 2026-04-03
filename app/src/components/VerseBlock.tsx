@@ -31,13 +31,15 @@ interface Props {
   primaryLabel?: string;
   /** Red-letter verse numbers (Jesus speaking). */
   redLetterVerses?: Set<number>;
+  /** Called with (verseNum, yRelativeToBlock) when a verse wrapper lays out. */
+  onVerseLayout?: (verseNum: number, y: number) => void;
 }
 
 export const VerseBlock = React.memo(function VerseBlock({
   verses, vhlGroups, activeVhlGroups, notedVerses, sectionId,
   fontSize = 16, onVhlWordPress, onNotePress, onVerseLongPress, onVerseNumPress, activeVerseNum,
   comparisonVerses, comparisonLabel, primaryLabel,
-  redLetterVerses,
+  redLetterVerses, onVerseLayout,
 }: Props) {
   const { base } = useTheme();
   if (!verses.length) return null;
@@ -54,7 +56,10 @@ export const VerseBlock = React.memo(function VerseBlock({
           : null;
 
         return (
-          <View key={verse.verse_num}>
+          <View
+            key={verse.verse_num}
+            onLayout={onVerseLayout ? (e) => onVerseLayout(verse.verse_num, e.nativeEvent.layout.y) : undefined}
+          >
             <TouchableOpacity
               style={[styles.verseRow, activeVerseNum === verse.verse_num && { backgroundColor: base.gold + '15', borderRadius: 4, marginHorizontal: -4, paddingHorizontal: 4 }]}
               onLongPress={onVerseLongPress ? () => onVerseLongPress(verse.verse_num, verse.text) : undefined}

@@ -119,6 +119,7 @@ export default function ChapterScreen() {
 
   const scrollRef = useRef<ScrollView>(null);
   const sectionYMap = useRef<Record<string, number>>({});
+  const verseYMap = useRef<Record<number, number>>({});
   const btnRowYMap = useRef<Record<string, number>>({});
   const [bookData, setBookData] = React.useState<Book | null>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -194,18 +195,25 @@ export default function ChapterScreen() {
     const verseNum = verses[tts.currentVerse]?.verse_num;
     if (verseNum == null) return;
 
-    // Find which section contains this verse and estimate Y position
+    // Use measured verse Y position (populated via onLayout in VerseBlock)
+    const verseY = verseYMap.current[verseNum];
+    if (verseY != null) {
+      scrollRef.current?.scrollTo({
+        y: Math.max(0, verseY - 120),
+        animated: true,
+      });
+      return;
+    }
+
+    // Fallback: estimate position if layout hasn't fired yet
     const sec = sections.find(
       (s) => verseNum >= s.verse_start && verseNum <= s.verse_end
     );
     if (!sec) return;
     const sectionY = sectionYMap.current[sec.id];
     if (sectionY == null) return;
-
-    // Estimate verse position within section (header ~52px, then verses)
-    const sectionVerseCount = sec.verse_end - sec.verse_start + 1;
     const verseIndex = verseNum - sec.verse_start;
-    const estimatedVerseHeight = (fontSize * 1.6) + 16; // lineHeight + margin
+    const estimatedVerseHeight = (fontSize * 1.6) + 16;
     const verseOffsetY = 52 + verseIndex * estimatedVerseHeight;
 
     scrollRef.current?.scrollTo({
@@ -220,6 +228,7 @@ export default function ChapterScreen() {
     clearActivePanel();
     setScrollProgress(0);
     setShowBreadcrumb(false);
+    verseYMap.current = {};
     tts.stop();
     setTtsActive(false);
   }, [bookId, chapterNum]);
@@ -438,6 +447,10 @@ export default function ChapterScreen() {
               comparisonLabel={comparisonTranslation ? (TRANSLATION_MAP.get(comparisonTranslation)?.label ?? comparisonTranslation.toUpperCase()) : undefined}
               primaryLabel={comparisonTranslation ? (TRANSLATION_MAP.get(translation)?.label ?? translation.toUpperCase()) : undefined}
               redLetterVerses={redLetterVerses}
+              onVerseLayout={(verseNum, y, sectionId) => {
+                const sectionY = sectionYMap.current[sectionId] ?? 0;
+                verseYMap.current[verseNum] = sectionY + y;
+              }}
               renderButtonRow={(panels, sectionId) => (
                 <View onLayout={(e) => {
                   const sectionY = sectionYMap.current[sectionId] ?? 0;
