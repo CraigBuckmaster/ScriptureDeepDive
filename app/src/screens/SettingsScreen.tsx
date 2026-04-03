@@ -132,7 +132,7 @@ export default function SettingsScreen() {
         <ScreenHeader
           title="Settings"
           onBack={() => navigation.goBack()}
-          style={{ marginBottom: spacing.lg }}
+          style={styles.headerSpacing}
         />
 
         {/* ── COMPANION+ ────────────────────────────────────────── */}
@@ -532,6 +532,9 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: spacing.md,
+  },
+  headerSpacing: {
+    marginBottom: spacing.lg,
   },
 
   /* Section label */

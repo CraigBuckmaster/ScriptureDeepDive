@@ -13,7 +13,7 @@
  */
 
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, radii, fontFamily } from '../theme';
 import { getPanelLabel, isScholarPanel } from '../utils/panelLabels';
 import { lightImpact } from '../utils/haptics';
@@ -37,24 +37,32 @@ export function PanelButton({ panelType, isActive, onPress }: Props) {
       accessibilityRole="button"
       accessibilityState={{ selected: isActive }}
       accessibilityLabel={`${label} panel${isActive ? ', open' : ''}`}
-      style={{
-        backgroundColor: isActive ? base.gold + '25' : base.bg + 'EE',
-        borderWidth: 1,
-        borderColor: isActive ? base.gold : base.gold + '30',
-        borderRadius: isScholar ? 16 : radii.md,
-        paddingHorizontal: 12,
-        height: 40,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
+      style={[
+        styles.button,
+        {
+          backgroundColor: isActive ? base.gold + '25' : base.bg + 'EE',
+          borderColor: isActive ? base.gold : base.gold + '30',
+          borderRadius: isScholar ? 16 : radii.md,
+        },
+      ]}
     >
-      <Text style={{
-        color: isActive ? base.gold : base.textDim,
-        fontFamily: fontFamily.uiMedium,
-        fontSize: 12,
-      }}>
+      <Text style={[styles.label, { color: isActive ? base.gold : base.textDim }]}>
         {label}
       </Text>
     </TouchableOpacity>
   );
 }
+
+const styles = StyleSheet.create({
+  button: {
+    borderWidth: 1,
+    paddingHorizontal: 12,
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  label: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 12,
+  },
+});

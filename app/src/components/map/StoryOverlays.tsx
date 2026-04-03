@@ -6,7 +6,7 @@
  */
 
 import React, { memo, useMemo } from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { Polygon, Polyline, Marker } from 'react-native-maps';
 import { toLatLng, computeBearing } from '../../utils/geoMath';
 import { eras } from '../../theme';
@@ -99,16 +99,24 @@ export const StoryOverlays = memo(function StoryOverlays({ story, zoomLevel }: P
 /** Small directional arrow triangle */
 function ArrowTriangle({ color, angle }: { color: string; angle: number }) {
   return (
-    <View style={{
-      transform: [{ rotate: `${angle}deg` }],
-      width: 0,
-      height: 0,
-      borderLeftWidth: 5,
-      borderRightWidth: 5,
-      borderBottomWidth: 10,
-      borderLeftColor: 'transparent',
-      borderRightColor: 'transparent',
-      borderBottomColor: color,
-    }} />
+    <View style={[
+      styles.arrowTriangle,
+      {
+        transform: [{ rotate: `${angle}deg` }],
+        borderBottomColor: color,
+      },
+    ]} />
   );
 }
+
+const styles = StyleSheet.create({
+  arrowTriangle: {
+    width: 0,
+    height: 0,
+    borderLeftWidth: 5,
+    borderRightWidth: 5,
+    borderBottomWidth: 10,
+    borderLeftColor: 'transparent',
+    borderRightColor: 'transparent',
+  },
+});

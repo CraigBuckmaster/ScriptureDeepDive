@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import Svg, { Circle, Line, Polygon, Text as SvgText } from 'react-native-svg';
 import { useTheme, spacing, fontFamily } from '../../theme';
 
@@ -36,7 +36,7 @@ export function ThemesRadarPanel({ data }: Props) {
     .join(' ');
 
   return (
-    <View style={{ alignItems: 'center', gap: spacing.sm }}>
+    <View style={styles.container}>
       <Svg width={SIZE} height={SIZE} viewBox={`0 0 ${SIZE} ${SIZE}`}>
         {/* Concentric circles */}
         {[2, 4, 6, 8, 10].map((v) => (
@@ -64,11 +64,23 @@ export function ThemesRadarPanel({ data }: Props) {
           fill={colors.accent + '30'} stroke={colors.accent} strokeWidth={1.5} />
       </Svg>
       {data.note ? (
-        <Text style={{ color: base.textMuted, fontFamily: fontFamily.bodyItalic,
-          fontSize: 13, textAlign: 'center', paddingHorizontal: spacing.md }}>
+        <Text style={[styles.noteText, { color: base.textMuted }]}>
           {data.note}
         </Text>
       ) : null}
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    gap: spacing.sm,
+  },
+  noteText: {
+    fontFamily: fontFamily.bodyItalic,
+    fontSize: 13,
+    textAlign: 'center',
+    paddingHorizontal: spacing.md,
+  },
+});

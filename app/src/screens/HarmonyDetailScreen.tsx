@@ -78,7 +78,7 @@ export default function HarmonyDetailScreen() {
         <View style={styles.headerPad}>
           <ScreenHeader title="Gospel Harmony" onBack={() => navigation.goBack()} />
         </View>
-        <View style={{ padding: spacing.lg }}>
+        <View style={styles.loadingPad}>
           {isLoading ? <LoadingSkeleton lines={8} /> : (
             <Text style={[styles.notFound, { color: base.textMuted }]}>Entry not found</Text>
           )}
@@ -153,6 +153,7 @@ export default function HarmonyDetailScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1 },
   headerPad: { paddingHorizontal: spacing.md, paddingTop: spacing.md },
+  loadingPad: { padding: spacing.lg },
   periodSubtitle: {
     fontFamily: fontFamily.ui,
     fontSize: 11,

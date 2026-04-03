@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { TappableReference } from '../TappableReference';
 import { spacing } from '../../theme';
 import type { ParsedRef } from '../../types';
@@ -16,8 +16,14 @@ interface Props {
 
 export function HistoricalContextPanel({ text, onRefPress }: Props) {
   return (
-    <View style={{ paddingVertical: spacing.xs }}>
+    <View style={styles.container}>
       <TappableReference text={text} onRefPress={onRefPress} />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    paddingVertical: spacing.xs,
+  },
+});

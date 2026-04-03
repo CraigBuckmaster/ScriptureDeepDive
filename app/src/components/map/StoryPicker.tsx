@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import { ScrollView, Text, TouchableOpacity } from 'react-native';
+import { ScrollView, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, spacing, radii, eras, fontFamily } from '../../theme';
 import { lightImpact } from '../../utils/haptics';
 import type { MapStory } from '../../types';
@@ -20,10 +20,7 @@ export function StoryPicker({ stories, activeStoryId, onSelect }: Props) {
   const { base } = useTheme();
   if (stories.length === 0) {
     return (
-      <Text style={{
-        color: base.textMuted, fontSize: 12, fontFamily: fontFamily.ui,
-        textAlign: 'center', paddingVertical: spacing.xs,
-      }}>
+      <Text style={[styles.emptyText, { color: base.textMuted }]}>
         No stories for this era
       </Text>
     );
@@ -45,20 +42,12 @@ export function StoryPicker({ stories, activeStoryId, onSelect }: Props) {
             hitSlop={{ top: 6, bottom: 6, left: 2, right: 2 }}
             accessibilityRole="button"
             accessibilityLabel={`${isActive ? 'Selected story: ' : 'Select story: '}${story.name}`}
-            style={{
+            style={[styles.storyChip, {
               backgroundColor: isActive ? color + '33' : base.bg + 'EE',
-              borderWidth: 1,
               borderColor: isActive ? color : base.gold + '55',
-              borderRadius: radii.sm,
-              paddingHorizontal: 8,
-              height: CHIP_HEIGHT,
-              justifyContent: 'center',
-            }}
+            }]}
           >
-            <Text style={{
-              color: isActive ? color : base.gold,
-              fontFamily: fontFamily.uiMedium, fontSize: 10, letterSpacing: 0.3,
-            }}>
+            <Text style={[styles.storyChipText, { color: isActive ? color : base.gold }]}>
               {story.name}
             </Text>
           </TouchableOpacity>
@@ -67,3 +56,24 @@ export function StoryPicker({ stories, activeStoryId, onSelect }: Props) {
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  emptyText: {
+    fontSize: 12,
+    fontFamily: fontFamily.ui,
+    textAlign: 'center',
+    paddingVertical: spacing.xs,
+  },
+  storyChip: {
+    borderWidth: 1,
+    borderRadius: radii.sm,
+    paddingHorizontal: 8,
+    height: CHIP_HEIGHT,
+    justifyContent: 'center',
+  },
+  storyChipText: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 10,
+    letterSpacing: 0.3,
+  },
+});

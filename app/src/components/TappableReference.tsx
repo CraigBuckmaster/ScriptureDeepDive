@@ -6,14 +6,14 @@
  */
 
 import React, { useMemo } from 'react';
-import { Text, type TextStyle } from 'react-native';
+import { Text, StyleSheet, type StyleProp, type TextStyle } from 'react-native';
 import { extractReferences } from '../utils/referenceParser';
 import { parseReference, type ParsedRef } from '../utils/verseResolver';
 import { useTheme, fontFamily } from '../theme';
 
 interface Props {
   text: string;
-  style?: TextStyle;
+  style?: StyleProp<TextStyle>;
   onRefPress?: (ref: ParsedRef) => void;
 }
 
@@ -62,7 +62,7 @@ export function TappableReference({ text, style, onRefPress }: Props) {
         return (
           <Text
             key={i}
-            style={{ color: base.gold, textDecorationLine: 'underline' }}
+            style={[styles.refLink, { color: base.gold }]}
             onPress={() => {
               const parsed = parseReference(seg.value);
               if (parsed && onRefPress) onRefPress(parsed);
@@ -77,4 +77,10 @@ export function TappableReference({ text, style, onRefPress }: Props) {
     </Text>
   );
 }
+
+const styles = StyleSheet.create({
+  refLink: {
+    textDecorationLine: 'underline',
+  },
+});
 

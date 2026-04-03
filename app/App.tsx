@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback, useMemo } from 'react';
-import { View, Text, ActivityIndicator, AppState } from 'react-native';
+import { StyleSheet, View, Text, ActivityIndicator, AppState } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import { useFonts } from 'expo-font';
@@ -111,18 +111,35 @@ export default function App() {
 
   if (!fontsLoaded || !dbReady) {
     return (
-      <View style={{ flex: 1, backgroundColor: '#0c0a07', alignItems: 'center', justifyContent: 'center' }}>
+      <View style={appStyles.splashContainer}>
         <ActivityIndicator color="#bfa050" size="large" />
-        <Text style={{ color: '#b8a888', marginTop: 12, fontSize: 12 }}>Loading...</Text>
+        <Text style={appStyles.splashText}>Loading...</Text>
       </View>
     );
   }
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }} onLayout={onLayoutReady}>
+    <GestureHandlerRootView style={appStyles.rootView} onLayout={onLayoutReady}>
       <ThemeProvider>
         <AppShell />
       </ThemeProvider>
     </GestureHandlerRootView>
   );
 }
+
+const appStyles = StyleSheet.create({
+  splashContainer: {
+    flex: 1,
+    backgroundColor: '#0c0a07',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  splashText: {
+    color: '#b8a888',
+    marginTop: 12,
+    fontSize: 12,
+  },
+  rootView: {
+    flex: 1,
+  },
+});

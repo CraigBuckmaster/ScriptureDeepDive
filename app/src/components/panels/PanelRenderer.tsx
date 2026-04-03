@@ -6,7 +6,7 @@
  */
 
 import React, { useMemo } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { useTheme, spacing, fontFamily } from '../../theme';
 import { isScholarPanel } from '../../utils/panelLabels';
 import { logger } from '../../utils/logger';
@@ -68,7 +68,7 @@ export function PanelRenderer({
 
   if (data === null) {
     return (
-      <Text style={{ color: base.textMuted, fontSize: 12, fontFamily: fontFamily.ui }}>
+      <Text style={[styles.fallbackText, { color: base.textMuted }]}>
         Unable to load panel content.
       </Text>
     );
@@ -160,11 +160,21 @@ export function PanelRenderer({
 
       // True unknown — render raw
       return (
-        <View style={{ padding: spacing.sm }}>
-          <Text style={{ color: base.textMuted, fontSize: 12, fontFamily: fontFamily.ui }}>
+        <View style={styles.unknownPanelContainer}>
+          <Text style={[styles.fallbackText, { color: base.textMuted }]}>
             Panel type: {panelType}
           </Text>
         </View>
       );
   }
 }
+
+const styles = StyleSheet.create({
+  fallbackText: {
+    fontSize: 12,
+    fontFamily: fontFamily.ui,
+  },
+  unknownPanelContainer: {
+    padding: spacing.sm,
+  },
+});

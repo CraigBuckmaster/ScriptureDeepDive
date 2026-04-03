@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { TappableReference } from '../TappableReference';
 import { useTheme, spacing, fontFamily } from '../../theme';
 import { parseReference } from '../../utils/verseResolver';
@@ -20,9 +20,9 @@ export function CrossRefPanel({ entries, onRefPress }: Props) {
   const colors = getPanelColors('cross');
 
   return (
-    <View style={{ gap: spacing.sm }}>
+    <View style={styles.container}>
       {entries.map((entry, i) => (
-        <View key={i} style={{ flexDirection: 'row', gap: spacing.sm }}>
+        <View key={i} style={styles.entryRow}>
           <TouchableOpacity
             onPress={() => {
               const parsed = parseReference(entry.ref);
@@ -31,19 +31,14 @@ export function CrossRefPanel({ entries, onRefPress }: Props) {
             accessibilityRole="link"
             accessibilityLabel={`Reference: ${entry.ref}`}
           >
-            <Text style={{
-              color: colors.accent,
-              fontFamily: fontFamily.uiSemiBold,
-              fontSize: 13,
-              minWidth: 70,
-            }}>
+            <Text style={[styles.refLabel, { color: colors.accent }]}>
               {entry.ref}
             </Text>
           </TouchableOpacity>
-          <View style={{ flex: 1 }}>
+          <View style={styles.noteWrapper}>
             <TappableReference
               text={entry.note}
-              style={{ color: base.textDim, fontSize: 14, lineHeight: 22 }}
+              style={[styles.noteText, { color: base.textDim }]}
               onRefPress={onRefPress}
             />
           </View>
@@ -52,3 +47,25 @@ export function CrossRefPanel({ entries, onRefPress }: Props) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    gap: spacing.sm,
+  },
+  entryRow: {
+    flexDirection: 'row',
+    gap: spacing.sm,
+  },
+  refLabel: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 13,
+    minWidth: 70,
+  },
+  noteWrapper: {
+    flex: 1,
+  },
+  noteText: {
+    fontSize: 14,
+    lineHeight: 22,
+  },
+});

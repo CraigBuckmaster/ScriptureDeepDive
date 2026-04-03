@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { TappableReference } from '../TappableReference';
 import { BadgeChip } from '../BadgeChip';
 import { useTheme, spacing, radii, fontFamily } from '../../theme';
@@ -21,32 +21,27 @@ export function TimelinePanel({ events, onEventPress, onRefPress }: Props) {
   const colors = getPanelColors('tl');
 
   return (
-    <View style={{ gap: spacing.sm }}>
+    <View style={[styles.container, { gap: spacing.sm }]}>
       {events.map((event, i) => (
         <View
           key={i}
-          style={{
+          style={[styles.eventCard, {
             backgroundColor: event.current ? colors.bg : 'transparent',
             borderWidth: event.current ? 1 : 0,
             borderColor: colors.border + '60',
-            borderRadius: radii.md,
             padding: spacing.sm,
-          }}
+          }]}
         >
-          <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.sm }}>
+          <View style={[styles.eventHeader, { gap: spacing.sm }]}>
             <BadgeChip label={event.date} color={colors.accent} />
             <TouchableOpacity
               onPress={() => onEventPress?.(event.name)}
               disabled={!onEventPress}
               accessibilityRole="button"
               accessibilityLabel={`View event: ${event.name}`}
-              style={{ flex: 1 }}
+              style={styles.eventNameButton}
             >
-              <Text style={{
-                color: colors.accent,
-                fontFamily: fontFamily.display,
-                fontSize: 12,
-              }}>
+              <Text style={[styles.eventNameText, { color: colors.accent }]}>
                 {event.name}
               </Text>
             </TouchableOpacity>
@@ -54,7 +49,7 @@ export function TimelinePanel({ events, onEventPress, onRefPress }: Props) {
           {event.text ? (
             <TappableReference
               text={event.text}
-              style={{ color: base.textDim, fontSize: 13, lineHeight: 20, marginTop: 4 }}
+              style={[styles.eventBodyText, { color: base.textDim }]}
               onRefPress={onRefPress}
             />
           ) : null}
@@ -63,3 +58,26 @@ export function TimelinePanel({ events, onEventPress, onRefPress }: Props) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {},
+  eventCard: {
+    borderRadius: radii.md,
+  },
+  eventHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  eventNameButton: {
+    flex: 1,
+  },
+  eventNameText: {
+    fontFamily: fontFamily.display,
+    fontSize: 12,
+  },
+  eventBodyText: {
+    fontSize: 13,
+    lineHeight: 20,
+    marginTop: 4,
+  },
+});

@@ -3,7 +3,7 @@
  */
 
 import React, { Component, type ErrorInfo, type ReactNode } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, spacing, fontFamily } from '../theme';
 import { logger } from '../utils/logger';
 
@@ -25,35 +25,23 @@ function ErrorFallback({ error, fallbackMessage, onRetry }: {
   const { base } = useTheme();
 
   return (
-    <View style={{
-      flex: 1, backgroundColor: base.bg, alignItems: 'center', justifyContent: 'center',
-      padding: spacing.xl,
-    }}>
-      <Text style={{
-        color: base.gold, fontFamily: fontFamily.displayMedium, fontSize: 18, textAlign: 'center',
-      }}>
+    <View style={[styles.fallbackContainer, { backgroundColor: base.bg }]}>
+      <Text style={[styles.fallbackTitle, { color: base.gold }]}>
         Something went wrong
       </Text>
-      <Text style={{
-        color: base.textDim, fontFamily: fontFamily.body, fontSize: 14,
-        textAlign: 'center', marginTop: spacing.md, lineHeight: 22,
-      }}>
+      <Text style={[styles.fallbackMessage, { color: base.textDim }]}>
         {fallbackMessage ?? 'An unexpected error occurred. Please try again.'}
       </Text>
       {__DEV__ && error && (
-        <Text style={{ color: base.textMuted, fontSize: 10, marginTop: spacing.md, maxWidth: '90%' }}>
+        <Text style={[styles.fallbackError, { color: base.textMuted }]}>
           {error.message}
         </Text>
       )}
       <TouchableOpacity
         onPress={onRetry}
-        style={{
-          marginTop: spacing.lg, backgroundColor: base.gold + '30',
-          paddingHorizontal: spacing.lg, paddingVertical: spacing.sm,
-          borderRadius: 8,
-        }}
+        style={[styles.retryButton, { backgroundColor: base.gold + '30' }]}
       >
-        <Text style={{ color: base.gold, fontFamily: fontFamily.uiSemiBold, fontSize: 14 }}>
+        <Text style={[styles.retryButtonText, { color: base.gold }]}>
           Retry
         </Text>
       </TouchableOpacity>
@@ -90,3 +78,39 @@ export class ErrorBoundary extends Component<Props, State> {
     return this.props.children;
   }
 }
+
+const styles = StyleSheet.create({
+  fallbackContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: spacing.xl,
+  },
+  fallbackTitle: {
+    fontFamily: fontFamily.displayMedium,
+    fontSize: 18,
+    textAlign: 'center',
+  },
+  fallbackMessage: {
+    fontFamily: fontFamily.body,
+    fontSize: 14,
+    textAlign: 'center',
+    marginTop: spacing.md,
+    lineHeight: 22,
+  },
+  fallbackError: {
+    fontSize: 10,
+    marginTop: spacing.md,
+    maxWidth: '90%',
+  },
+  retryButton: {
+    marginTop: spacing.lg,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.sm,
+    borderRadius: 8,
+  },
+  retryButtonText: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 14,
+  },
+});

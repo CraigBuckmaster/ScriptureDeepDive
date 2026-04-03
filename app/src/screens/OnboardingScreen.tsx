@@ -56,7 +56,7 @@ const PAGES: PageData[] = [
     body: 'Every chapter pairs the biblical text with scholarly commentary from 45+ commentators — evangelical, reformed, Jewish, critical, and patristic — placing multiple perspectives side by side.',
     renderContent: (base) => (
       <View style={styles.thesisContent}>
-        <BookOpen size={48} color={base.gold} style={{ marginBottom: spacing.lg }} />
+        <BookOpen size={48} color={base.gold} style={styles.thesisIcon} />
       </View>
     ),
   },
@@ -234,6 +234,9 @@ const styles = StyleSheet.create({
   },
   thesisContent: {
     alignItems: 'center',
+  },
+  thesisIcon: {
+    marginBottom: spacing.lg,
   },
   panelDemo: {
     flexDirection: 'row',

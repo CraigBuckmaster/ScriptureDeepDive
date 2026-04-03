@@ -43,7 +43,7 @@ export default function MoreMenuScreen() {
         {user ? (
           <View style={styles.authRow}>
             <User size={20} color={base.gold} />
-            <View style={{ flex: 1, marginLeft: spacing.sm }}>
+            <View style={styles.authInfo}>
               <Text style={[styles.authLabel, { color: base.text }]}>{user.email}</Text>
               <Text style={[styles.authSubtitle, { color: base.textMuted }]}>Signed in</Text>
             </View>
@@ -60,7 +60,7 @@ export default function MoreMenuScreen() {
             accessibilityRole="button"
           >
             <LogIn size={20} color={base.gold} />
-            <View style={{ flex: 1, marginLeft: spacing.sm }}>
+            <View style={styles.authInfo}>
               <Text style={[styles.authLabel, { color: base.text }]}>Sign In</Text>
               <Text style={[styles.authSubtitle, { color: base.textMuted }]}>Unlock premium features and sync</Text>
             </View>
@@ -143,5 +143,9 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.ui,
     fontSize: 11,
     marginTop: 2,
+  },
+  authInfo: {
+    flex: 1,
+    marginLeft: spacing.sm,
   },
 });

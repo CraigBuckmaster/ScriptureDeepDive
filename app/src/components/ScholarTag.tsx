@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, fontFamily, radii, spacing } from '../theme';
 import { getPanelLabel } from '../utils/panelLabels';
 
@@ -27,24 +27,26 @@ export function ScholarTag({ scholarId, onPress }: Props) {
       disabled={!onPress}
       accessibilityRole="button"
       accessibilityLabel={`Scholar: ${label}`}
-      style={{
-        backgroundColor: color + '26', // 15% opacity
-        borderWidth: 1,
-        borderColor: color + '66', // 40% opacity
-        borderRadius: radii.sm,
-        paddingHorizontal: spacing.sm,
-        paddingVertical: 3,
-        alignSelf: 'flex-start',
-      }}
+      style={[styles.tagContainer, { backgroundColor: color + '26', borderColor: color + '66' }]}
     >
-      <Text style={{
-        color,
-        fontFamily: fontFamily.display,
-        fontSize: 10,
-        letterSpacing: 0.3,
-      }}>
+      <Text style={[styles.tagLabel, { color }]}>
         {label}
       </Text>
     </TouchableOpacity>
   );
 }
+
+const styles = StyleSheet.create({
+  tagContainer: {
+    borderWidth: 1,
+    borderRadius: radii.sm,
+    paddingHorizontal: spacing.sm,
+    paddingVertical: 3,
+    alignSelf: 'flex-start',
+  },
+  tagLabel: {
+    fontFamily: fontFamily.display,
+    fontSize: 10,
+    letterSpacing: 0.3,
+  },
+});

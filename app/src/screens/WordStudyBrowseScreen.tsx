@@ -52,7 +52,7 @@ export default function WordStudyBrowseScreen() {
           style={styles.headerSpacing}
         />
 
-        <View style={{ marginBottom: spacing.sm }}>
+        <View style={styles.searchWrap}>
           <SearchInput
             value={search}
             onChangeText={setSearch}
@@ -119,6 +119,9 @@ const styles = StyleSheet.create({
   },
   headerSpacing: {
     marginBottom: spacing.md,
+  },
+  searchWrap: {
+    marginBottom: spacing.sm,
   },
   langRow: {
     flexDirection: 'row',

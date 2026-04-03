@@ -3,7 +3,7 @@
  */
 
 import React, { useEffect } from 'react';
-import { View, type DimensionValue } from 'react-native';
+import { View, StyleSheet, type DimensionValue } from 'react-native';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -35,16 +35,16 @@ export function LoadingSkeleton({ lines = 3, width = '100%', height = 14 }: Prop
   }));
 
   return (
-    <View style={{ gap: spacing.sm }}>
+    <View style={styles.container}>
       {Array.from({ length: lines }).map((_, i) => (
         <Animated.View
           key={i}
           style={[
+            styles.bone,
             {
               width: i === lines - 1 ? '60%' : width,
               height,
               backgroundColor: base.bgSurface,
-              borderRadius: radii.sm,
             },
             animStyle,
           ]}
@@ -53,3 +53,12 @@ export function LoadingSkeleton({ lines = 3, width = '100%', height = 14 }: Prop
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    gap: spacing.sm,
+  },
+  bone: {
+    borderRadius: radii.sm,
+  },
+});

@@ -199,7 +199,7 @@ export default function HomeScreen() {
                 ))}
               </View>
               {recommendations.length > 2 && (
-                <View style={[styles.suggestionsRow, { marginTop: spacing.sm }]}>
+                <View style={[styles.suggestionsRow, styles.suggestionsRowSpaced]}>
                   {recommendations.slice(2, 4).map((rec) => (
                     <TouchableOpacity
                       key={rec.id}
@@ -240,7 +240,7 @@ export default function HomeScreen() {
                   <Text style={[styles.suggestionSubtitle, { color: base.textDim }]}>The arc of redemption</Text>
                 </TouchableOpacity>
               </View>
-              <View style={[styles.suggestionsRow, { marginTop: spacing.sm }]}>
+              <View style={[styles.suggestionsRow, styles.suggestionsRowSpaced]}>
                 <TouchableOpacity
                   style={[styles.suggestionCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
                   activeOpacity={0.7}
@@ -271,7 +271,7 @@ export default function HomeScreen() {
           <View style={[styles.progressCard, { backgroundColor: base.bgElevated, borderColor: base.border }]}>
             <View style={styles.progressHeader}>
               <Text style={[styles.progressText, { color: base.text }]}>{chaptersRead} of {TOTAL_BIBLE_CHAPTERS} chapters</Text>
-              <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.sm }}>
+              <View style={styles.progressPctRow}>
                 <Text style={[styles.progressPct, { color: base.gold }]}>{pct}%</Text>
                 <TouchableOpacity
                   onPress={() => shareProgress(pct!, chaptersRead)}
@@ -291,7 +291,7 @@ export default function HomeScreen() {
 
         {/* ── 7. Testament Progress ─────────────────────── */}
         {testamentProgress.length > 0 && chaptersRead > 0 && (
-          <View style={{ gap: spacing.xs }}>
+          <View style={styles.testamentList}>
             {testamentProgress.map((tp) => {
               const tpPct = tp.totalChapters > 0
                 ? ((tp.chaptersRead / tp.totalChapters) * 100).toFixed(0)
@@ -480,5 +480,16 @@ const styles = StyleSheet.create({
   testamentPct: {
     fontFamily: fontFamily.ui,
     fontSize: 11,
+  },
+  progressPctRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
+  },
+  testamentList: {
+    gap: spacing.xs,
+  },
+  suggestionsRowSpaced: {
+    marginTop: spacing.sm,
   },
 });

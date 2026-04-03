@@ -87,7 +87,7 @@ export default function SignUpScreen() {
         <ScreenHeader
           title="Create Account"
           onBack={() => navigation.goBack()}
-          style={{ marginBottom: spacing.lg }}
+          style={styles.headerSpacing}
         />
 
         {/* Social buttons */}
@@ -285,5 +285,8 @@ const styles = StyleSheet.create({
   bottomLinkText: {
     fontFamily: fontFamily.ui,
     fontSize: 14,
+  },
+  headerSpacing: {
+    marginBottom: spacing.lg,
   },
 });

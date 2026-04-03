@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { TappableReference } from '../TappableReference';
 import { ScholarTag } from '../ScholarTag';
 import { useTheme, spacing, fontFamily } from '../../theme';
@@ -24,29 +24,20 @@ export function CommentaryPanel({ notes, scholarId, onScholarPress, onRefPress }
   const color = getScholarColor(scholarId);
 
   return (
-    <View style={{ gap: spacing.sm }}>
+    <View style={styles.container}>
       <ScholarTag scholarId={scholarId} onPress={onScholarPress} />
-      <Text style={{
-        color: base.textMuted,
-        fontFamily: fontFamily.bodyItalic,
-        fontSize: 11,
-        marginTop: -spacing.xs,
-      }}>
+      <Text style={[styles.subtitle, { color: base.textMuted }]}>
         Faithful Paraphrase
       </Text>
 
       {notes.map((note, i) => (
-        <View key={i} style={{ gap: 2 }}>
-          <Text style={{
-            color,
-            fontFamily: fontFamily.uiSemiBold,
-            fontSize: 12,
-          }}>
+        <View key={i} style={styles.noteWrapper}>
+          <Text style={[styles.noteRef, { color }]}>
             {note.ref}
           </Text>
           <TappableReference
             text={note.note}
-            style={{ color: base.textDim, fontSize: 14, lineHeight: 22 }}
+            style={[styles.noteText, { color: base.textDim }]}
             onRefPress={onRefPress}
           />
         </View>
@@ -54,3 +45,25 @@ export function CommentaryPanel({ notes, scholarId, onScholarPress, onRefPress }
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    gap: spacing.sm,
+  },
+  subtitle: {
+    fontFamily: fontFamily.bodyItalic,
+    fontSize: 11,
+    marginTop: -spacing.xs,
+  },
+  noteWrapper: {
+    gap: 2,
+  },
+  noteRef: {
+    fontFamily: fontFamily.uiSemiBold,
+    fontSize: 12,
+  },
+  noteText: {
+    fontSize: 14,
+    lineHeight: 22,
+  },
+});

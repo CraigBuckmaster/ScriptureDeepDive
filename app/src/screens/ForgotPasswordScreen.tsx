@@ -54,7 +54,7 @@ export default function ForgotPasswordScreen() {
         <ScreenHeader
           title="Reset Password"
           onBack={() => navigation.goBack()}
-          style={{ marginBottom: spacing.lg }}
+          style={styles.headerSpacing}
         />
 
         {/* Explanatory text */}
@@ -121,6 +121,9 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: spacing.md,
+  },
+  headerSpacing: {
+    marginBottom: spacing.lg,
   },
   loadingOverlay: {
     ...StyleSheet.absoluteFillObject,

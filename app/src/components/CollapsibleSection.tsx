@@ -5,7 +5,7 @@
  */
 
 import React, { useState, useCallback } from 'react';
-import { View, Text, TouchableOpacity, LayoutAnimation, Platform, UIManager } from 'react-native';
+import { View, Text, TouchableOpacity, LayoutAnimation, Platform, UIManager, StyleSheet } from 'react-native';
 import { Plus, Minus } from 'lucide-react-native';
 import { useTheme, spacing, fontFamily } from '../theme';
 
@@ -39,21 +39,9 @@ export function CollapsibleSection({ title, initiallyCollapsed = true, accentCol
         accessibilityRole="button"
         accessibilityState={{ expanded: !collapsed }}
         accessibilityLabel={`${title}, ${collapsed ? 'collapsed' : 'expanded'}`}
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          paddingVertical: spacing.sm,
-          paddingHorizontal: spacing.md,
-          minHeight: 44,
-        }}
+        style={styles.headerButton}
       >
-        <Text style={{
-          color: accent,
-          fontFamily: fontFamily.uiMedium,
-          fontSize: 12,
-          letterSpacing: 0.4,
-        }}>
+        <Text style={[styles.headerTitle, { color: accent }]}>
           {title}
         </Text>
         {collapsed
@@ -62,10 +50,30 @@ export function CollapsibleSection({ title, initiallyCollapsed = true, accentCol
         }
       </TouchableOpacity>
       {!collapsed && (
-        <View style={{ paddingHorizontal: spacing.md, paddingBottom: spacing.md }}>
+        <View style={styles.contentContainer}>
           {children}
         </View>
       )}
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  headerButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: spacing.sm,
+    paddingHorizontal: spacing.md,
+    minHeight: 44,
+  },
+  headerTitle: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 12,
+    letterSpacing: 0.4,
+  },
+  contentContainer: {
+    paddingHorizontal: spacing.md,
+    paddingBottom: spacing.md,
+  },
+});
