@@ -26,10 +26,10 @@ interface Props {
   shareBody: string;
   shareUrl?: string;
 
-  /** Bookmark state */
-  isBookmarked: boolean;
-  onBookmarkToggle: () => void;
-  verseNum: number;
+  /** Bookmark state (optional — omit if not applicable) */
+  isBookmarked?: boolean;
+  onBookmarkToggle?: () => void;
+  verseNum?: number;
 }
 
 function EngagementBar({
@@ -51,7 +51,9 @@ function EngagementBar({
       <StarRating rating={rating} onRate={onRate} />
       <View style={styles.spacer} />
       <ShareButton title={shareTitle} body={shareBody} url={shareUrl} />
-      <BookmarkButton isBookmarked={isBookmarked} onToggle={onBookmarkToggle} verseNum={verseNum} />
+      {onBookmarkToggle != null && (
+        <BookmarkButton isBookmarked={isBookmarked ?? false} onToggle={onBookmarkToggle} verseNum={verseNum ?? 0} />
+      )}
     </View>
   );
 }

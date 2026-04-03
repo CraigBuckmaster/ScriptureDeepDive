@@ -116,8 +116,6 @@ function SubmissionDetailScreen() {
           onRate={engagement.setRating}
           shareTitle={submission.title}
           shareBody={submission.body.slice(0, 200)}
-          isBookmarked={engagement.isBookmarked}
-          onBookmarkToggle={engagement.toggleBookmark}
           verseNum={0}
         />
       </ScrollView>
