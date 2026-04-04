@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-validate.py — Content JSON validator for Companion Study.
+schema_validator.py — Content JSON validator for Companion Study.
 
 Checks all content/{book}/{ch}.json files and content/meta/*.json reference
 data for schema conformance, cross-referential integrity, and completeness.
@@ -21,7 +21,7 @@ when counts drift from hardcoded values. Only schema, panel, cross-ref, and
 parent-ref failures indicate real problems.
 
 Usage:
-    python3 _tools/validate.py
+    python3 _tools/schema_validator.py
 """
 import os, sys, json, re
 from pathlib import Path
@@ -454,7 +454,7 @@ if __name__ == '__main__':
 
     # Optionally run quality scoring
     if args.quality:
-        from quality import QualityEvaluator
+        from quality_scorer import QualityEvaluator
         evaluator = QualityEvaluator(
             content_dir="content",
             verse_dir="content/verses",

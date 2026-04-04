@@ -29,16 +29,16 @@ claim with citations.
 
 | Tool | What It Checks | Overlap |
 |------|---------------|---------|
-| `validate.py` | JSON schema, structural integrity, cross-ref format | None — structural only |
-| `quality.py` | Panel density, verse coverage, completeness, basic relevance | Minimal — quality scores content richness, not factual accuracy |
-| `accuracy.py` *(new)* | Factual accuracy of content claims against external sources | Separate score, separate output |
+| `schema_validator.py` | JSON schema, structural integrity, cross-ref format | None — structural only |
+| `quality_scorer.py` | Panel density, verse coverage, completeness, basic relevance | Minimal — quality scores content richness, not factual accuracy |
+| `accuracy_auditor.py` *(new)* | Factual accuracy of content claims against external sources | Separate score, separate output |
 
-`accuracy.py` is **independent** of quality.py. A chapter can score 98 on
+`accuracy_auditor.py` is **independent** of quality_scorer.py. A chapter can score 98 on
 quality (rich, complete, well-structured) and 60 on accuracy (several
 misattributed scholar positions). The two tools answer different questions.
 
-**Pipeline integration:** `validate.py --accuracy` runs Tier 0+1 checks (free,
-local) as a gate. `validate.py --accuracy --deep` runs full Tier 0–3 (requires
+**Pipeline integration:** `schema_validator.py --accuracy` runs Tier 0+1 checks (free,
+local) as a gate. `schema_validator.py --accuracy --deep` runs full Tier 0–3 (requires
 API key, costs money).
 
 ---
@@ -134,7 +134,7 @@ Checks:
 
 ```
 _tools/
-├── accuracy.py              # CLI entry point + orchestrator
+├── accuracy_auditor.py              # CLI entry point + orchestrator
 ├── accuracy_extractors.py   # Claim extraction from chapter JSON
 ├── accuracy_verifiers.py    # Tiered verification engine + API client
 ├── accuracy_config.py       # Weights, thresholds, prompt templates
@@ -479,29 +479,29 @@ changes, and the claim is re-verified automatically.
 ## 10. CLI Interface
 
 ```
-accuracy.py — Content accuracy auditor for Companion Study
+accuracy_auditor.py — Content accuracy auditor for Companion Study
 
 Usage:
-  python3 _tools/accuracy.py                        # Full baseline (all books, all tiers available)
-  python3 _tools/accuracy.py --book genesis          # Audit one book
-  python3 _tools/accuracy.py --chapter gen1          # Audit one chapter
-  python3 _tools/accuracy.py --tier 0                # Tier 0 only (free, instant)
-  python3 _tools/accuracy.py --tier 1                # Tier 0+1 (free, local data)
-  python3 _tools/accuracy.py --tier 2                # Tier 0+1+2 (API, no web search)
-  python3 _tools/accuracy.py --tier 3                # All tiers (API + web search, full cost)
-  python3 _tools/accuracy.py --scholar sarna         # Audit one scholar across all books
-  python3 _tools/accuracy.py --type historical       # Audit one claim type only
-  python3 _tools/accuracy.py --report                # Regenerate markdown reports from matrix
-  python3 _tools/accuracy.py --worst 20              # Show 20 lowest-scoring chapters
-  python3 _tools/accuracy.py --flagged               # List all FLAGGED + REFUTED claims
-  python3 _tools/accuracy.py --stats                 # Corpus-wide statistics
-  python3 _tools/accuracy.py --cost-estimate          # Estimate API cost without running
-  python3 _tools/accuracy.py --dry-run               # Extract claims, show counts, no verification
-  python3 _tools/accuracy.py --json                  # Machine-readable output
+  python3 _tools/accuracy_auditor.py                        # Full baseline (all books, all tiers available)
+  python3 _tools/accuracy_auditor.py --book genesis          # Audit one book
+  python3 _tools/accuracy_auditor.py --chapter gen1          # Audit one chapter
+  python3 _tools/accuracy_auditor.py --tier 0                # Tier 0 only (free, instant)
+  python3 _tools/accuracy_auditor.py --tier 1                # Tier 0+1 (free, local data)
+  python3 _tools/accuracy_auditor.py --tier 2                # Tier 0+1+2 (API, no web search)
+  python3 _tools/accuracy_auditor.py --tier 3                # All tiers (API + web search, full cost)
+  python3 _tools/accuracy_auditor.py --scholar sarna         # Audit one scholar across all books
+  python3 _tools/accuracy_auditor.py --type historical       # Audit one claim type only
+  python3 _tools/accuracy_auditor.py --report                # Regenerate markdown reports from matrix
+  python3 _tools/accuracy_auditor.py --worst 20              # Show 20 lowest-scoring chapters
+  python3 _tools/accuracy_auditor.py --flagged               # List all FLAGGED + REFUTED claims
+  python3 _tools/accuracy_auditor.py --stats                 # Corpus-wide statistics
+  python3 _tools/accuracy_auditor.py --cost-estimate          # Estimate API cost without running
+  python3 _tools/accuracy_auditor.py --dry-run               # Extract claims, show counts, no verification
+  python3 _tools/accuracy_auditor.py --json                  # Machine-readable output
 
 Validate.py integration:
-  python3 _tools/validate.py --accuracy              # Tier 0+1 gate (free)
-  python3 _tools/validate.py --accuracy --deep       # Full Tier 0–3 (requires API key)
+  python3 _tools/schema_validator.py --accuracy              # Tier 0+1 gate (free)
+  python3 _tools/schema_validator.py --accuracy --deep       # Full Tier 0–3 (requires API key)
 ```
 
 ---
@@ -641,7 +641,7 @@ These are stored in the reference matrix and surfaced in reports.
 ### Fix Workflow
 1. Audit detects REFUTED claim with fix_suggestion
 2. Report shows the original claim, the evidence, and the fix
-3. Developer reviews and applies fix manually (or via a future `accuracy.py --apply-fixes` command)
+3. Developer reviews and applies fix manually (or via a future `accuracy_auditor.py --apply-fixes` command)
 4. On next audit run, the changed claim gets a new hash → re-verified
 5. If the fix is correct → status changes to VERIFIED
 
@@ -656,11 +656,11 @@ fixes involve theological judgment.
 
 | Phase | Scope | Files | Cost | Session Est. |
 |-------|-------|-------|------|-------------|
-| **1** | Claim extraction + Tier 0 checks | `accuracy.py`, `accuracy_extractors.py`, `accuracy_config.py` | $0 | 1 session |
+| **1** | Claim extraction + Tier 0 checks | `accuracy_auditor.py`, `accuracy_extractors.py`, `accuracy_config.py` | $0 | 1 session |
 | **2** | Tier 1 + Strong's bundle | `accuracy_verifiers.py` (local), `build_strongs.py`, `strongs_ot.json`, `strongs_nt.json` | $0 | 1 session |
 | **3** | Tier 2 + API integration | `accuracy_verifiers.py` (API), batch manager, caching, checkpointing | ~$15 | 1 session |
 | **4** | Tier 3 + scholar verification | Web search integration, reference matrix population, fix suggestions | ~$145 | 2–3 sessions (rate-limited) |
-| **5** | Reports + pipeline gate | Markdown reports, `validate.py --accuracy` integration, summary.json | $0 | 1 session |
+| **5** | Reports + pipeline gate | Markdown reports, `schema_validator.py --accuracy` integration, summary.json | $0 | 1 session |
 
 **Phase 1–2 can ship in a single session.** These provide immediate value with
 zero cost: structural checks, cross-ref validation, Hebrew gloss verification
@@ -693,7 +693,7 @@ The baseline run can be done incrementally (one book per session if preferred).
 - [ ] Every REFUTED claim has a fix_suggestion
 - [ ] Reference matrix is committed and browsable
 - [ ] Per-book markdown reports show clear pass/fail with sources
-- [ ] `validate.py --accuracy` gates deploy pipeline (Tier 0+1)
+- [ ] `schema_validator.py --accuracy` gates deploy pipeline (Tier 0+1)
 - [ ] Corpus accuracy score baseline established
 - [ ] Top 10 worst chapters identified for remediation
 - [ ] Scholar accuracy leaderboard shows per-scholar reliability
@@ -707,4 +707,4 @@ The baseline run can be done incrementally (one book per session if preferred).
 - Scheduled re-audit (weekly cron) to catch regression
 - Export reference matrix as appendix/bibliography for the app itself
 - User-facing "verified" badges on scholar panels
-- Integration with quality.py for composite content health score
+- Integration with quality_scorer.py for composite content health score

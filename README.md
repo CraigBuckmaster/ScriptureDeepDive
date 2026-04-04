@@ -156,10 +156,10 @@ ScriptureDeepDive/
 │   ├── meta/                     Reference data (books, scholars, people, places, etc.)
 │   └── verses/                   KJV, ASV (+ NIV, ESV preserved for future licensing)
 ├── _tools/                       Build system + content pipeline
-│   ├── shared.py                 save_chapter(), REGISTRY
+│   ├── content_writer.py            save_chapter(), REGISTRY
 │   ├── config.py                 Scholar config, book metadata, people bios
 │   ├── build_sqlite.py           JSON → SQLite compiler (bundled + supplemental translations)
-│   ├── validate.py               Content JSON schema validator
+│   ├── schema_validator.py        Content JSON schema validator
 │   └── validate_sqlite.py        SQLite integrity checker
 └── .github/workflows/test.yml    CI — tests + coverage on every PR
 ```

@@ -1,26 +1,26 @@
 #!/usr/bin/env python3
 """
-accuracy.py — Content accuracy auditor for Companion Study.
+accuracy_auditor.py — Content accuracy auditor for Companion Study.
 
 Extracts verifiable claims from chapter JSON, checks them against trusted
 sources (Strong's lexicon, verse DB, Scholar registry, Claude API), and
 produces a reference matrix with per-claim verdicts and source citations.
 
 Usage:
-    python3 _tools/accuracy.py                        # Full audit (all books, Tier 0+1)
-    python3 _tools/accuracy.py --book genesis          # Audit one book
-    python3 _tools/accuracy.py --chapter gen1          # Audit one chapter
-    python3 _tools/accuracy.py --tier 0                # Tier 0 only (free, instant)
-    python3 _tools/accuracy.py --tier 1                # Tier 0+1 (free, local data)
-    python3 _tools/accuracy.py --scholar sarna         # Audit one scholar across all books
-    python3 _tools/accuracy.py --type historical       # Audit one claim type only
-    python3 _tools/accuracy.py --report                # Regenerate markdown reports
-    python3 _tools/accuracy.py --worst 20              # Show 20 lowest-scoring chapters
-    python3 _tools/accuracy.py --flagged               # List all FLAGGED + REFUTED claims
-    python3 _tools/accuracy.py --stats                 # Corpus-wide statistics
-    python3 _tools/accuracy.py --cost-estimate         # Estimate API cost without running
-    python3 _tools/accuracy.py --dry-run               # Extract claims, show counts only
-    python3 _tools/accuracy.py --json                  # Machine-readable output
+    python3 _tools/accuracy_auditor.py                        # Full audit (all books, Tier 0+1)
+    python3 _tools/accuracy_auditor.py --book genesis          # Audit one book
+    python3 _tools/accuracy_auditor.py --chapter gen1          # Audit one chapter
+    python3 _tools/accuracy_auditor.py --tier 0                # Tier 0 only (free, instant)
+    python3 _tools/accuracy_auditor.py --tier 1                # Tier 0+1 (free, local data)
+    python3 _tools/accuracy_auditor.py --scholar sarna         # Audit one scholar across all books
+    python3 _tools/accuracy_auditor.py --type historical       # Audit one claim type only
+    python3 _tools/accuracy_auditor.py --report                # Regenerate markdown reports
+    python3 _tools/accuracy_auditor.py --worst 20              # Show 20 lowest-scoring chapters
+    python3 _tools/accuracy_auditor.py --flagged               # List all FLAGGED + REFUTED claims
+    python3 _tools/accuracy_auditor.py --stats                 # Corpus-wide statistics
+    python3 _tools/accuracy_auditor.py --cost-estimate         # Estimate API cost without running
+    python3 _tools/accuracy_auditor.py --dry-run               # Extract claims, show counts only
+    python3 _tools/accuracy_auditor.py --json                  # Machine-readable output
 """
 
 import argparse

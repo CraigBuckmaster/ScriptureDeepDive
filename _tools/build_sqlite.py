@@ -7,7 +7,7 @@ data, then builds a single SQLite database that the React Native app bundles.
 
 This script is run after every content change (enrichment, new scholars,
 timeline updates, etc.) as part of the standard pipeline:
-    python3 _tools/validate.py       # Check JSON integrity
+    python3 _tools/schema_validator.py       # Check JSON integrity
     python3 _tools/build_sqlite.py   # ← This script
     python3 _tools/validate_sqlite.py  # Verify DB integrity
 

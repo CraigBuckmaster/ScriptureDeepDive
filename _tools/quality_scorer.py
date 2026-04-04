@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-quality.py — Content quality scoring engine for Companion Study.
+quality_scorer.py — Content quality scoring engine for Companion Study.
 
 Scores every chapter 0–100 across four categories (25 pts each):
   1. DENSITY     — Panel content richness (char counts, stub detection)
@@ -8,14 +8,14 @@ Scores every chapter 0–100 across four categories (25 pts each):
   3. COMPLETENESS — Structural element presence (core panels, scholars, etc.)
   4. RELEVANCE   — Content relevance/accuracy (heuristic or LLM-based)
 
-Usage (called from validate.py --quality):
-    from quality import QualityEvaluator
+Usage (called from schema_validator.py --quality):
+    from quality_scorer import QualityEvaluator
     evaluator = QualityEvaluator(content_dir, verse_dir)
     report = evaluator.run(book="genesis")
     report.print_terminal()
 
 Direct usage:
-    python3 _tools/quality.py [--book genesis] [--chapter gen1] [--deep] [--worst 20] [--json]
+    python3 _tools/quality_scorer.py [--book genesis] [--chapter gen1] [--deep] [--worst 20] [--json]
 """
 
 import json

@@ -315,7 +315,7 @@ try {
 Enrichment script (/tmp/) -> read existing JSON -> modify target panels
   -> save_chapter() -> content/{book}/{ch}.json
     -> build_sqlite.py -> scripture.db
-      -> validate.py + validate_sqlite.py
+      -> schema_validator.py + validate_sqlite.py
         -> eas update --branch production
 ```
 
@@ -326,7 +326,7 @@ All content lives as JSON in `content/`, is compiled to SQLite by `build_sqlite.
 1. Write enrichment script to `/tmp/` — read existing JSON, populate target panels, write back via `save_chapter()`
 2. Syntax-check: `python3 -c "compile(open('/tmp/gen_....py').read(), 'test', 'exec'); print('Syntax OK')"`
 3. Run the script
-4. `python3 _tools/validate.py`
+4. `python3 _tools/schema_validator.py`
 5. `python3 _tools/build_sqlite.py`
 6. `cp scripture.db app/assets/scripture.db`
 7. `python3 _tools/validate_sqlite.py`
@@ -349,7 +349,7 @@ All content lives as JSON in `content/`, is compiled to SQLite by `build_sqlite.
 | `save_chapter(book, ch, data)` | Write chapter JSON from generator data |
 | `verse_range(start, end)` | Generate verse number list for sections |
 | `auto_scholarly_json(data, book, ch)` | Auto-generate missing chapter panels |
-| `validate.py` | Check all content JSON for schema/completeness |
+| `schema_validator.py` | Check all content JSON for schema/completeness |
 | `build_sqlite.py` | Assemble content/ -> scripture.db |
 | `validate_sqlite.py` | Verify database integrity (65 checks) |
 
@@ -412,12 +412,12 @@ Hard-won lessons from building 66 books. Still relevant for enrichment scripts.
 - Enrichment is a MERGE operation: read existing JSON -> modify only target panels -> write back. Never regenerate full chapters.
 
 **Validation:**
-- `validate.py` checks against hardcoded expected counts that drift. Count-mismatch failures are expected and non-blocking. Only schema, panel, cross-ref, and parent-ref failures indicate real problems.
+- `schema_validator.py` checks against hardcoded expected counts that drift. Count-mismatch failures are expected and non-blocking. Only schema, panel, cross-ref, and parent-ref failures indicate real problems.
 
 **People entries:**
 - Parent refs (`father`, `mother`, `spouseOf`) must use IDs (lowercase, underscored), not display names. Set to `null` if parent not in database.
 
-**shared.py:**
+**content_writer.py:**
 - ~770 lines — never `cat` in full. Read only REGISTRY and BOOK_PREFIX sections via `sed -n`.
 
 **Git / merge conflicts:**

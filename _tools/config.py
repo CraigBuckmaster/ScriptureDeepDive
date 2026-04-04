@@ -7,8 +7,8 @@ This file contains pure data (no functions, no side effects). It defines:
   - SCHOLAR_REGISTRY: Master list of all scholars (controls buttons/panels in the app)
 
 Used by:
-  - shared.py (save_chapter reads COMMENTATOR_SCOPE to filter scholar panels)
-  - build_sqlite.py (indirectly, via shared.py)
+  - content_writer.py (save_chapter reads COMMENTATOR_SCOPE to filter scholar panels)
+  - build_sqlite.py (indirectly, via content_writer.py)
   - Generator/enrichment scripts (import BOOK_META for VHL words)
 """
 

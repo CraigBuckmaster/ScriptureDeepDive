@@ -49,7 +49,7 @@ python3 _tools/migrate_content.py
 python3 _tools/build_sqlite.py
 
 # Validate (optional but recommended)
-python3 _tools/validate.py
+python3 _tools/schema_validator.py
 python3 _tools/validate_sqlite.py
 ```
 

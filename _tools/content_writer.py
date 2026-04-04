@@ -29,7 +29,7 @@ import glob
 import re, json, math, os, sys
 from pathlib import Path
 
-# Dynamically resolve the repo root from this file's location (_tools/shared.py → repo root).
+# Dynamically resolve the repo root from this file's location (_tools/content_writer.py → repo root).
 # This allows the script to work in any directory, not just a specific container path.
 _REPO = str(Path(__file__).resolve().parent.parent)
 
