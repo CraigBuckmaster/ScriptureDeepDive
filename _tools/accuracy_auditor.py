@@ -605,12 +605,29 @@ def main():
     verifier = AccuracyVerifier(max_tier=args.tier)
     all_results = []
     results_by_chapter = {}
+    ch_total = len(claims_by_chapter)
 
-    for (book_dir, ch_num), claims in claims_by_chapter.items():
+    for ch_idx, ((book_dir, ch_num), claims) in enumerate(claims_by_chapter.items(), 1):
         testament = _get_testament(book_dir)
-        results = verifier.verify_claims(claims, testament)
+        book_name = book_dir.replace("_", " ").title()
+        if not args.json and args.tier >= 2 and ch_total > 1:
+            t2_calls = verifier.tier2.call_count if verifier.tier2 else 0
+            print(f"\r  [{ch_idx}/{ch_total}] {book_dir} {ch_num} "
+                  f"(T2 calls: {t2_calls})", end="", flush=True)
+        results = verifier.verify_claims(
+            claims, testament, book_name=book_name, chapter_num=ch_num
+        )
         all_results.extend(results)
         results_by_chapter[(book_dir, ch_num)] = results
+
+    if not args.json and args.tier >= 2 and ch_total > 1:
+        print()  # Clear progress line
+
+    # Report Tier 2 usage
+    if verifier.tier2 and verifier.tier2.call_count > 0 and not args.json:
+        t2_calls = verifier.tier2.call_count
+        t2_cost = t2_calls * COST_PER_TIER2_CALL
+        print(f"  Tier 2: {t2_calls} API calls (~${t2_cost:.2f})")
 
     # ── Score chapters ───────────────────────────────────────
     chapter_scores = {}

@@ -1,0 +1,74 @@
+# Accuracy Audit — Job
+
+Generated: 2026-04-04
+
+| Chapter | Scholar | Hebrew | Cross | Hist | Time | Ppl | TOTAL | Grade |
+|---------|---------|--------|-------|------|------|-----|-------|-------|
+| 1 | 0 | 10 | 50 | 0 | 100 | 0 | **20** | D |
+| 2 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 3 | 0 | 38 | 50 | 0 | 100 | 0 | **25** | D |
+| 4 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 5 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 6 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 7 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 8 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 9 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 10 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 11 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 12 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 13 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 14 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 15 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 16 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 17 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 18 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 19 | 0 | 17 | 50 | 0 | 100 | 0 | **21** | D |
+| 20 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 21 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 22 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 23 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 24 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 25 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 26 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 27 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 28 | 0 | 17 | 50 | 0 | 100 | 0 | **21** | D |
+| 29 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 30 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 31 | 0 | 17 | 50 | 0 | 100 | 0 | **21** | D |
+| 32 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 33 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 34 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 35 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 36 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 37 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 38 | 0 | 17 | 50 | 0 | 100 | 0 | **21** | D |
+| 39 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 40 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 41 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 42 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+
+**Book Average: 18.8/100 (D)**
+
+## Flagged Claims (259)
+
+- `job-1-s1-clines-000` [scholar_attribution]: Non-standard source format: 'clines'
+- `job-1-s1-clines-001` [scholar_attribution]: Non-standard source format: 'clines'
+- `job-1-s1-habel-000` [scholar_attribution]: Non-standard source format: 'habel'
+- `job-1-s2-clines-000` [scholar_attribution]: Non-standard source format: 'clines'
+- `job-1-s2-clines-001` [scholar_attribution]: Non-standard source format: 'clines'
+- `job-1-s2-habel-000` [scholar_attribution]: Non-standard source format: 'habel'
+- `job-1-s3-clines-000` [scholar_attribution]: Non-standard source format: 'clines'
+- `job-1-s3-clines-001` [scholar_attribution]: Non-standard source format: 'clines'
+- `job-1-s3-habel-000` [scholar_attribution]: Non-standard source format: 'habel'
+- `job-10-s1-clines-000` [scholar_attribution]: Non-standard source format: 'clines'
+- `job-10-s1-clines-001` [scholar_attribution]: Non-standard source format: 'clines'
+- `job-10-s1-habel-000` [scholar_attribution]: Non-standard source format: 'habel'
+- `job-10-s2-clines-000` [scholar_attribution]: Non-standard source format: 'clines'
+- `job-10-s2-clines-001` [scholar_attribution]: Non-standard source format: 'clines'
+- `job-10-s2-habel-000` [scholar_attribution]: Non-standard source format: 'habel'
+- `job-11-s1-clines-000` [scholar_attribution]: Non-standard source format: 'clines'
+- `job-11-s1-clines-001` [scholar_attribution]: Non-standard source format: 'clines'
+- `job-11-s1-habel-000` [scholar_attribution]: Non-standard source format: 'habel'
+- `job-11-s2-clines-000` [scholar_attribution]: Non-standard source format: 'clines'
+- `job-11-s2-clines-001` [scholar_attribution]: Non-standard source format: 'clines'
+- ... and 239 more

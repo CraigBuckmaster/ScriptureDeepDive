@@ -1,0 +1,98 @@
+# Accuracy Audit — Isaiah
+
+Generated: 2026-04-04
+
+| Chapter | Scholar | Hebrew | Cross | Hist | Time | Ppl | TOTAL | Grade |
+|---------|---------|--------|-------|------|------|-----|-------|-------|
+| 1 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 2 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 3 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 4 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 5 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 6 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 7 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 8 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 9 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 10 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 11 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 12 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 13 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 14 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 15 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 16 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 17 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 18 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 19 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 20 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 21 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 22 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 23 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 24 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 25 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 26 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 27 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 28 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 29 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 30 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 31 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 32 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 33 | 0 | 0 | 44 | 0 | 100 | 0 | **17** | D |
+| 34 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 35 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 36 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 37 | 0 | 0 | 42 | 0 | 100 | 0 | **16** | D |
+| 38 | 0 | 50 | 50 | 0 | 100 | 0 | **28** | D |
+| 39 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 40 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 41 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 42 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 43 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 44 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 45 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 46 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 47 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 48 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 49 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 50 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 51 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 52 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 53 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 54 | 0 | 0 | 44 | 0 | 100 | 0 | **17** | D |
+| 55 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 56 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 57 | 0 | 25 | 42 | 0 | 100 | 0 | **21** | D |
+| 58 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 59 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 60 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 61 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 62 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 63 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 64 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
+| 65 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+| 66 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
+
+**Book Average: 19.6/100 (D)**
+
+## Flagged Claims (277)
+
+- `isaiah-1-s1-oswalt-000` [scholar_attribution]: Non-standard source format: 'oswalt'
+- `isaiah-1-s1-oswalt-001` [scholar_attribution]: Non-standard source format: 'oswalt'
+- `isaiah-1-s1-childs-000` [scholar_attribution]: Non-standard source format: 'childs'
+- `isaiah-1-s1-childs-001` [scholar_attribution]: Non-standard source format: 'childs'
+- `isaiah-1-s2-oswalt-000` [scholar_attribution]: Non-standard source format: 'oswalt'
+- `isaiah-1-s2-oswalt-001` [scholar_attribution]: Non-standard source format: 'oswalt'
+- `isaiah-1-s2-childs-000` [scholar_attribution]: Non-standard source format: 'childs'
+- `isaiah-1-s2-childs-001` [scholar_attribution]: Non-standard source format: 'childs'
+- `isaiah-10-s1-oswalt-000` [scholar_attribution]: Non-standard source format: 'oswalt'
+- `isaiah-10-s1-oswalt-001` [scholar_attribution]: Non-standard source format: 'oswalt'
+- `isaiah-10-s1-childs-000` [scholar_attribution]: Non-standard source format: 'childs'
+- `isaiah-10-s1-childs-001` [scholar_attribution]: Non-standard source format: 'childs'
+- `isaiah-10-s2-oswalt-000` [scholar_attribution]: Non-standard source format: 'oswalt'
+- `isaiah-10-s2-oswalt-001` [scholar_attribution]: Non-standard source format: 'oswalt'
+- `isaiah-10-s2-childs-000` [scholar_attribution]: Non-standard source format: 'childs'
+- `isaiah-10-s2-childs-001` [scholar_attribution]: Non-standard source format: 'childs'
+- `isaiah-11-s1-oswalt-000` [scholar_attribution]: Non-standard source format: 'oswalt'
+- `isaiah-11-s1-oswalt-001` [scholar_attribution]: Non-standard source format: 'oswalt'
+- `isaiah-11-s1-childs-000` [scholar_attribution]: Non-standard source format: 'childs'
+- `isaiah-11-s1-childs-001` [scholar_attribution]: Non-standard source format: 'childs'
+- ... and 257 more

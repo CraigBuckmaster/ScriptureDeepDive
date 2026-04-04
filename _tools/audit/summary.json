@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-04-04T03:49:09.864134+00:00",
- "corpus_average": 18.0,
+ "generated_at": "2026-04-04T12:45:40.895261+00:00",
+ "corpus_average": 19.7,
  "books": {
   "genesis": {
    "score": 18.0,
@@ -249,9 +249,9 @@
      "score": 18.5,
      "grade": "D",
      "claims": 114,
-     "UNVERIFIED": 94,
+     "UNVERIFIED": 95,
      "SKIPPED": 16,
-     "FLAGGED": 2,
+     "FLAGGED": 1,
      "VERIFIED": 2
     },
     "40": {
@@ -273,9 +273,8 @@
      "score": 17.5,
      "grade": "D",
      "claims": 65,
-     "UNVERIFIED": 59,
-     "SKIPPED": 5,
-     "FLAGGED": 1
+     "UNVERIFIED": 60,
+     "SKIPPED": 5
     },
     "43": {
      "score": 17.5,
@@ -304,10 +303,9 @@
      "score": 20.8,
      "grade": "D",
      "claims": 55,
-     "UNVERIFIED": 48,
+     "UNVERIFIED": 49,
      "SKIPPED": 4,
-     "VERIFIED": 2,
-     "FLAGGED": 1
+     "VERIFIED": 2
     },
     "47": {
      "score": 17.5,
@@ -320,9 +318,8 @@
      "score": 17.5,
      "grade": "D",
      "claims": 60,
-     "UNVERIFIED": 55,
-     "SKIPPED": 4,
-     "FLAGGED": 1
+     "UNVERIFIED": 56,
+     "SKIPPED": 4
     },
     "49": {
      "score": 17.5,
@@ -378,158 +375,9840 @@
     }
    },
    "by_type": {
-    "people_places": 0.0,
-    "timeline": 100.0,
+    "hebrew_greek": 3.0,
     "historical": 0.0,
     "scholar_attribution": 0.0,
-    "hebrew_greek": 3.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
     "cross_reference": 49.5
+   }
+  },
+  "exodus": {
+   "score": 18.5,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 107,
+     "UNVERIFIED": 93,
+     "SKIPPED": 14
+    },
+    "10": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 58,
+     "SKIPPED": 12,
+     "VERIFIED": 2
+    },
+    "11": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 58,
+     "VERIFIED": 2,
+     "SKIPPED": 8
+    },
+    "12": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 102,
+     "UNVERIFIED": 85,
+     "VERIFIED": 2,
+     "SKIPPED": 15
+    },
+    "13": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 63,
+     "SKIPPED": 9
+    },
+    "14": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 76,
+     "UNVERIFIED": 64,
+     "SKIPPED": 12
+    },
+    "15": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 59,
+     "SKIPPED": 12,
+     "VERIFIED": 2
+    },
+    "16": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 60,
+     "SKIPPED": 12
+    },
+    "17": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 76,
+     "UNVERIFIED": 62,
+     "VERIFIED": 2,
+     "SKIPPED": 12
+    },
+    "18": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 75,
+     "UNVERIFIED": 63,
+     "SKIPPED": 12
+    },
+    "19": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 61,
+     "SKIPPED": 12
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 134,
+     "UNVERIFIED": 119,
+     "SKIPPED": 15
+    },
+    "20": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 100,
+     "UNVERIFIED": 83,
+     "SKIPPED": 15,
+     "VERIFIED": 2
+    },
+    "21": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 103,
+     "UNVERIFIED": 88,
+     "SKIPPED": 15
+    },
+    "22": {
+     "score": 16.2,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 60,
+     "SKIPPED": 10,
+     "FLAGGED": 2
+    },
+    "23": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 58,
+     "SKIPPED": 12,
+     "VERIFIED": 2
+    },
+    "24": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 60,
+     "SKIPPED": 12
+    },
+    "25": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 100,
+     "UNVERIFIED": 85,
+     "SKIPPED": 15
+    },
+    "26": {
+     "score": 19.3,
+     "grade": "D",
+     "claims": 86,
+     "UNVERIFIED": 74,
+     "VERIFIED": 2,
+     "SKIPPED": 10
+    },
+    "27": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 61,
+     "VERIFIED": 2,
+     "SKIPPED": 10
+    },
+    "28": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 93,
+     "UNVERIFIED": 80,
+     "SKIPPED": 11,
+     "VERIFIED": 2
+    },
+    "29": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 103,
+     "UNVERIFIED": 86,
+     "VERIFIED": 2,
+     "SKIPPED": 15
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 178,
+     "UNVERIFIED": 166,
+     "SKIPPED": 12
+    },
+    "30": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 103,
+     "UNVERIFIED": 86,
+     "VERIFIED": 2,
+     "SKIPPED": 15
+    },
+    "31": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 62,
+     "SKIPPED": 12
+    },
+    "32": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 102,
+     "UNVERIFIED": 85,
+     "SKIPPED": 15,
+     "VERIFIED": 2
+    },
+    "33": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 97,
+     "UNVERIFIED": 81,
+     "SKIPPED": 14,
+     "VERIFIED": 2
+    },
+    "34": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 110,
+     "UNVERIFIED": 93,
+     "SKIPPED": 15,
+     "VERIFIED": 2
+    },
+    "35": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 85,
+     "UNVERIFIED": 77,
+     "SKIPPED": 8
+    },
+    "36": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 64,
+     "UNVERIFIED": 58,
+     "SKIPPED": 6
+    },
+    "37": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 70,
+     "UNVERIFIED": 61,
+     "SKIPPED": 9
+    },
+    "38": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 62,
+     "SKIPPED": 6
+    },
+    "39": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 61,
+     "SKIPPED": 8
+    },
+    "4": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 57,
+     "VERIFIED": 2,
+     "SKIPPED": 10
+    },
+    "40": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 104,
+     "UNVERIFIED": 87,
+     "VERIFIED": 2,
+     "SKIPPED": 15
+    },
+    "5": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 58,
+     "VERIFIED": 2,
+     "SKIPPED": 8
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 75,
+     "UNVERIFIED": 63,
+     "SKIPPED": 12
+    },
+    "7": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 62,
+     "VERIFIED": 2,
+     "UNVERIFIED": 54,
+     "SKIPPED": 6
+    },
+    "8": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 59,
+     "SKIPPED": 8
+    },
+    "9": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 57,
+     "SKIPPED": 8,
+     "VERIFIED": 2
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 5.2,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 49.8
+   }
+  },
+  "psalms": {
+   "score": 19.8,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 65,
+     "UNVERIFIED": 41,
+     "SKIPPED": 10,
+     "FLAGGED": 12,
+     "VERIFIED": 2
+    },
+    "10": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 50,
+     "UNVERIFIED": 36,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "100": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 28,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6
+    },
+    "101": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 33,
+     "UNVERIFIED": 27,
+     "SKIPPED": 6
+    },
+    "102": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 30,
+     "UNVERIFIED": 24,
+     "SKIPPED": 6
+    },
+    "103": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 31,
+     "UNVERIFIED": 25,
+     "SKIPPED": 6
+    },
+    "104": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 30,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "105": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 31,
+     "UNVERIFIED": 25,
+     "SKIPPED": 6
+    },
+    "106": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 31,
+     "UNVERIFIED": 25,
+     "SKIPPED": 6
+    },
+    "107": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 31,
+     "UNVERIFIED": 25,
+     "SKIPPED": 6
+    },
+    "108": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 27,
+     "UNVERIFIED": 21,
+     "SKIPPED": 6
+    },
+    "109": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 31,
+     "UNVERIFIED": 25,
+     "SKIPPED": 6
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 42,
+     "UNVERIFIED": 30,
+     "SKIPPED": 6,
+     "FLAGGED": 6
+    },
+    "110": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 31,
+     "UNVERIFIED": 25,
+     "SKIPPED": 6
+    },
+    "111": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 28,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6
+    },
+    "112": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 33,
+     "UNVERIFIED": 27,
+     "SKIPPED": 6
+    },
+    "113": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 28,
+     "VERIFIED": 2,
+     "UNVERIFIED": 20,
+     "SKIPPED": 6
+    },
+    "114": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 28,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6
+    },
+    "115": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 23,
+     "SKIPPED": 6
+    },
+    "116": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 23,
+     "SKIPPED": 6
+    },
+    "117": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 26,
+     "UNVERIFIED": 20,
+     "SKIPPED": 6
+    },
+    "118": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 36,
+     "UNVERIFIED": 30,
+     "SKIPPED": 6
+    },
+    "119": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 34,
+     "UNVERIFIED": 26,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "12": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 45,
+     "UNVERIFIED": 31,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "120": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 33,
+     "UNVERIFIED": 27,
+     "SKIPPED": 6
+    },
+    "121": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 28,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6
+    },
+    "122": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 28,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6
+    },
+    "123": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 26,
+     "UNVERIFIED": 20,
+     "SKIPPED": 6
+    },
+    "124": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 28,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6
+    },
+    "125": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 32,
+     "VERIFIED": 2,
+     "UNVERIFIED": 24,
+     "SKIPPED": 6
+    },
+    "126": {
+     "score": 27.5,
+     "grade": "D",
+     "claims": 28,
+     "VERIFIED": 4,
+     "UNVERIFIED": 18,
+     "SKIPPED": 6
+    },
+    "127": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 28,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6
+    },
+    "128": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 32,
+     "UNVERIFIED": 26,
+     "SKIPPED": 6
+    },
+    "129": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 33,
+     "UNVERIFIED": 25,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "13": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 45,
+     "UNVERIFIED": 31,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "130": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 33,
+     "UNVERIFIED": 27,
+     "SKIPPED": 6
+    },
+    "131": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 27,
+     "UNVERIFIED": 19,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "132": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 30,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "133": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 27,
+     "UNVERIFIED": 21,
+     "SKIPPED": 6
+    },
+    "134": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 26,
+     "UNVERIFIED": 20,
+     "SKIPPED": 6
+    },
+    "135": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 21,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "136": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 23,
+     "SKIPPED": 6
+    },
+    "137": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 33,
+     "VERIFIED": 2,
+     "UNVERIFIED": 25,
+     "SKIPPED": 6
+    },
+    "138": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 23,
+     "SKIPPED": 6
+    },
+    "139": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 30,
+     "UNVERIFIED": 24,
+     "SKIPPED": 6
+    },
+    "14": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 46,
+     "UNVERIFIED": 32,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "140": {
+     "score": 27.5,
+     "grade": "D",
+     "claims": 28,
+     "VERIFIED": 4,
+     "UNVERIFIED": 18,
+     "SKIPPED": 6
+    },
+    "141": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 29,
+     "VERIFIED": 2,
+     "UNVERIFIED": 21,
+     "SKIPPED": 6
+    },
+    "142": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 28,
+     "VERIFIED": 2,
+     "UNVERIFIED": 20,
+     "SKIPPED": 6
+    },
+    "143": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 29,
+     "VERIFIED": 2,
+     "UNVERIFIED": 21,
+     "SKIPPED": 6
+    },
+    "144": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 23,
+     "SKIPPED": 6
+    },
+    "145": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 31,
+     "UNVERIFIED": 25,
+     "SKIPPED": 6
+    },
+    "146": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 23,
+     "SKIPPED": 6
+    },
+    "147": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 23,
+     "SKIPPED": 6
+    },
+    "148": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 23,
+     "SKIPPED": 6
+    },
+    "149": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 28,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6
+    },
+    "15": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 45,
+     "UNVERIFIED": 31,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "150": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 28,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6
+    },
+    "16": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 55,
+     "UNVERIFIED": 37,
+     "SKIPPED": 10,
+     "FLAGGED": 6,
+     "VERIFIED": 2
+    },
+    "17": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 50,
+     "UNVERIFIED": 34,
+     "SKIPPED": 10,
+     "FLAGGED": 6
+    },
+    "18": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 56,
+     "UNVERIFIED": 40,
+     "SKIPPED": 10,
+     "FLAGGED": 6
+    },
+    "19": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 37,
+     "SKIPPED": 8,
+     "FLAGGED": 6,
+     "VERIFIED": 2
+    },
+    "2": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 69,
+     "VERIFIED": 2,
+     "UNVERIFIED": 43,
+     "SKIPPED": 12,
+     "FLAGGED": 12
+    },
+    "20": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 47,
+     "UNVERIFIED": 31,
+     "SKIPPED": 8,
+     "FLAGGED": 6,
+     "VERIFIED": 2
+    },
+    "21": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 46,
+     "UNVERIFIED": 32,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "22": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 47,
+     "SKIPPED": 15,
+     "FLAGGED": 7
+    },
+    "23": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 42,
+     "VERIFIED": 2,
+     "SKIPPED": 10,
+     "FLAGGED": 8
+    },
+    "24": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 54,
+     "UNVERIFIED": 36,
+     "SKIPPED": 6,
+     "FLAGGED": 12
+    },
+    "25": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 35,
+     "SKIPPED": 6,
+     "FLAGGED": 12
+    },
+    "26": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 35,
+     "SKIPPED": 6,
+     "FLAGGED": 12
+    },
+    "27": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 57,
+     "UNVERIFIED": 37,
+     "SKIPPED": 8,
+     "FLAGGED": 12
+    },
+    "28": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 49,
+     "UNVERIFIED": 31,
+     "SKIPPED": 4,
+     "FLAGGED": 12,
+     "VERIFIED": 2
+    },
+    "29": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 58,
+     "UNVERIFIED": 36,
+     "SKIPPED": 8,
+     "FLAGGED": 12,
+     "VERIFIED": 2
+    },
+    "3": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 55,
+     "VERIFIED": 2,
+     "UNVERIFIED": 35,
+     "SKIPPED": 8,
+     "FLAGGED": 10
+    },
+    "30": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 57,
+     "UNVERIFIED": 35,
+     "SKIPPED": 8,
+     "FLAGGED": 12,
+     "VERIFIED": 2
+    },
+    "31": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 55,
+     "UNVERIFIED": 41,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "32": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 59,
+     "UNVERIFIED": 43,
+     "SKIPPED": 10,
+     "FLAGGED": 6
+    },
+    "33": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 37,
+     "SKIPPED": 10,
+     "FLAGGED": 6
+    },
+    "34": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 37,
+     "SKIPPED": 10,
+     "FLAGGED": 6
+    },
+    "35": {
+     "score": 32.5,
+     "grade": "D",
+     "claims": 52,
+     "UNVERIFIED": 35,
+     "SKIPPED": 5,
+     "FLAGGED": 12
+    },
+    "36": {
+     "score": 32.5,
+     "grade": "D",
+     "claims": 48,
+     "UNVERIFIED": 31,
+     "SKIPPED": 5,
+     "FLAGGED": 12
+    },
+    "37": {
+     "score": 32.5,
+     "grade": "D",
+     "claims": 49,
+     "UNVERIFIED": 32,
+     "SKIPPED": 5,
+     "FLAGGED": 12
+    },
+    "38": {
+     "score": 32.5,
+     "grade": "D",
+     "claims": 49,
+     "UNVERIFIED": 32,
+     "SKIPPED": 5,
+     "FLAGGED": 12
+    },
+    "39": {
+     "score": 32.5,
+     "grade": "D",
+     "claims": 51,
+     "UNVERIFIED": 33,
+     "SKIPPED": 6,
+     "FLAGGED": 12
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 47,
+     "UNVERIFIED": 33,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "40": {
+     "score": 32.5,
+     "grade": "D",
+     "claims": 48,
+     "UNVERIFIED": 31,
+     "SKIPPED": 5,
+     "FLAGGED": 12
+    },
+    "41": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 23,
+     "SKIPPED": 6
+    },
+    "42": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 32,
+     "UNVERIFIED": 26,
+     "SKIPPED": 6
+    },
+    "43": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 27,
+     "UNVERIFIED": 19,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "44": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 23,
+     "SKIPPED": 6
+    },
+    "45": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 30,
+     "UNVERIFIED": 24,
+     "SKIPPED": 6
+    },
+    "46": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 32,
+     "UNVERIFIED": 26,
+     "SKIPPED": 6
+    },
+    "47": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 30,
+     "UNVERIFIED": 24,
+     "SKIPPED": 6
+    },
+    "48": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 30,
+     "VERIFIED": 2,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6
+    },
+    "49": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 28,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6
+    },
+    "5": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 48,
+     "VERIFIED": 2,
+     "UNVERIFIED": 32,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "50": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 32,
+     "UNVERIFIED": 26,
+     "SKIPPED": 6
+    },
+    "51": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 35,
+     "UNVERIFIED": 29,
+     "SKIPPED": 6
+    },
+    "52": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 21,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "53": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 23,
+     "SKIPPED": 6
+    },
+    "54": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 29,
+     "VERIFIED": 2,
+     "UNVERIFIED": 21,
+     "SKIPPED": 6
+    },
+    "55": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 31,
+     "UNVERIFIED": 25,
+     "SKIPPED": 6
+    },
+    "56": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 30,
+     "UNVERIFIED": 24,
+     "SKIPPED": 6
+    },
+    "57": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 31,
+     "UNVERIFIED": 25,
+     "SKIPPED": 6
+    },
+    "58": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 21,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "59": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 30,
+     "UNVERIFIED": 24,
+     "SKIPPED": 6
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 48,
+     "UNVERIFIED": 34,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "60": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 31,
+     "UNVERIFIED": 25,
+     "SKIPPED": 6
+    },
+    "61": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 23,
+     "SKIPPED": 6
+    },
+    "62": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 32,
+     "UNVERIFIED": 26,
+     "SKIPPED": 6
+    },
+    "63": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 30,
+     "UNVERIFIED": 24,
+     "SKIPPED": 6
+    },
+    "64": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 29,
+     "VERIFIED": 2,
+     "UNVERIFIED": 21,
+     "SKIPPED": 6
+    },
+    "65": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 30,
+     "UNVERIFIED": 24,
+     "SKIPPED": 6
+    },
+    "66": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 31,
+     "UNVERIFIED": 23,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "67": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 23,
+     "SKIPPED": 6
+    },
+    "68": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 32,
+     "VERIFIED": 2,
+     "UNVERIFIED": 24,
+     "SKIPPED": 6
+    },
+    "69": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 34,
+     "UNVERIFIED": 26,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "7": {
+     "score": 27.5,
+     "grade": "D",
+     "claims": 53,
+     "VERIFIED": 4,
+     "UNVERIFIED": 33,
+     "SKIPPED": 10,
+     "FLAGGED": 6
+    },
+    "70": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 29,
+     "VERIFIED": 2,
+     "UNVERIFIED": 21,
+     "SKIPPED": 6
+    },
+    "71": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 30,
+     "UNVERIFIED": 24,
+     "SKIPPED": 6
+    },
+    "72": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 33,
+     "UNVERIFIED": 25,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "73": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 31,
+     "VERIFIED": 2,
+     "UNVERIFIED": 23,
+     "SKIPPED": 6
+    },
+    "74": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 21,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "75": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 21,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "76": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 23,
+     "SKIPPED": 6
+    },
+    "77": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 30,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "78": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 32,
+     "UNVERIFIED": 26,
+     "SKIPPED": 6
+    },
+    "79": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 28,
+     "UNVERIFIED": 20,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "8": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 59,
+     "UNVERIFIED": 43,
+     "SKIPPED": 10,
+     "FLAGGED": 6
+    },
+    "80": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 30,
+     "UNVERIFIED": 24,
+     "SKIPPED": 6
+    },
+    "81": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 23,
+     "SKIPPED": 6
+    },
+    "82": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 28,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6
+    },
+    "83": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 27,
+     "UNVERIFIED": 21,
+     "SKIPPED": 6
+    },
+    "84": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 30,
+     "UNVERIFIED": 24,
+     "SKIPPED": 6
+    },
+    "85": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 30,
+     "UNVERIFIED": 24,
+     "SKIPPED": 6
+    },
+    "86": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 30,
+     "UNVERIFIED": 24,
+     "SKIPPED": 6
+    },
+    "87": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 27,
+     "VERIFIED": 2,
+     "UNVERIFIED": 19,
+     "SKIPPED": 6
+    },
+    "88": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 21,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "89": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 31,
+     "UNVERIFIED": 25,
+     "SKIPPED": 6
+    },
+    "9": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 50,
+     "UNVERIFIED": 36,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "90": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 32,
+     "UNVERIFIED": 24,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "91": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 30,
+     "UNVERIFIED": 24,
+     "SKIPPED": 6
+    },
+    "92": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 28,
+     "VERIFIED": 2,
+     "UNVERIFIED": 20,
+     "SKIPPED": 6
+    },
+    "93": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 28,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6
+    },
+    "94": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 30,
+     "UNVERIFIED": 24,
+     "SKIPPED": 6
+    },
+    "95": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 30,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "96": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 28,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6
+    },
+    "97": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 29,
+     "VERIFIED": 2,
+     "UNVERIFIED": 21,
+     "SKIPPED": 6
+    },
+    "98": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 27,
+     "UNVERIFIED": 21,
+     "SKIPPED": 6
+    },
+    "99": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 30,
+     "VERIFIED": 2,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 8.4,
+    "historical": 4.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "matthew": {
+   "score": 19.5,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 107,
+     "UNVERIFIED": 86,
+     "VERIFIED": 6,
+     "SKIPPED": 15
+    },
+    "10": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 71,
+     "UNVERIFIED": 62,
+     "SKIPPED": 8,
+     "VERIFIED": 1
+    },
+    "11": {
+     "score": 20.4,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 57,
+     "VERIFIED": 2,
+     "SKIPPED": 6,
+     "FLAGGED": 1
+    },
+    "12": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 59,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "13": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 60,
+     "UNVERIFIED": 54,
+     "SKIPPED": 6
+    },
+    "14": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 64,
+     "VERIFIED": 1,
+     "SKIPPED": 7
+    },
+    "15": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 61,
+     "SKIPPED": 6
+    },
+    "16": {
+     "score": 19.5,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 59,
+     "SKIPPED": 6,
+     "VERIFIED": 1
+    },
+    "17": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 64,
+     "VERIFIED": 1,
+     "UNVERIFIED": 57,
+     "SKIPPED": 6
+    },
+    "18": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 61,
+     "SKIPPED": 6,
+     "VERIFIED": 1
+    },
+    "19": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 64,
+     "VERIFIED": 1,
+     "UNVERIFIED": 57,
+     "SKIPPED": 6
+    },
+    "2": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 65,
+     "UNVERIFIED": 56,
+     "SKIPPED": 8,
+     "VERIFIED": 1
+    },
+    "20": {
+     "score": 19.5,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 59,
+     "SKIPPED": 6,
+     "VERIFIED": 1
+    },
+    "21": {
+     "score": 19.5,
+     "grade": "D",
+     "claims": 79,
+     "UNVERIFIED": 70,
+     "SKIPPED": 8,
+     "VERIFIED": 1
+    },
+    "22": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 86,
+     "UNVERIFIED": 74,
+     "SKIPPED": 10,
+     "VERIFIED": 2
+    },
+    "23": {
+     "score": 19.5,
+     "grade": "D",
+     "claims": 79,
+     "UNVERIFIED": 70,
+     "SKIPPED": 8,
+     "VERIFIED": 1
+    },
+    "24": {
+     "score": 18.9,
+     "grade": "D",
+     "claims": 84,
+     "UNVERIFIED": 75,
+     "SKIPPED": 8,
+     "VERIFIED": 1
+    },
+    "25": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 71,
+     "UNVERIFIED": 64,
+     "VERIFIED": 1,
+     "SKIPPED": 6
+    },
+    "26": {
+     "score": 18.9,
+     "grade": "D",
+     "claims": 91,
+     "UNVERIFIED": 82,
+     "SKIPPED": 8,
+     "VERIFIED": 1
+    },
+    "27": {
+     "score": 18.9,
+     "grade": "D",
+     "claims": 90,
+     "UNVERIFIED": 81,
+     "SKIPPED": 8,
+     "VERIFIED": 1
+    },
+    "28": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 51,
+     "UNVERIFIED": 45,
+     "VERIFIED": 1,
+     "SKIPPED": 5
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 48,
+     "UNVERIFIED": 42,
+     "SKIPPED": 6
+    },
+    "4": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 63,
+     "VERIFIED": 2,
+     "UNVERIFIED": 54,
+     "SKIPPED": 7
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 64,
+     "UNVERIFIED": 57,
+     "SKIPPED": 7
+    },
+    "6": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 45,
+     "UNVERIFIED": 40,
+     "SKIPPED": 4,
+     "VERIFIED": 1
+    },
+    "7": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 58,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "8": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 60,
+     "SKIPPED": 6,
+     "VERIFIED": 1
+    },
+    "9": {
+     "score": 18.9,
+     "grade": "D",
+     "claims": 85,
+     "UNVERIFIED": 76,
+     "SKIPPED": 8,
+     "VERIFIED": 1
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 10.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 49.7
+   }
+  },
+  "john": {
+   "score": 17.5,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 126,
+     "UNVERIFIED": 106,
+     "SKIPPED": 20
+    },
+    "10": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 61,
+     "UNVERIFIED": 51,
+     "SKIPPED": 10
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 107,
+     "UNVERIFIED": 91,
+     "SKIPPED": 16
+    },
+    "12": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 89,
+     "UNVERIFIED": 74,
+     "SKIPPED": 15
+    },
+    "13": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 95,
+     "UNVERIFIED": 80,
+     "SKIPPED": 15
+    },
+    "14": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 60,
+     "SKIPPED": 12
+    },
+    "15": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 55,
+     "SKIPPED": 12
+    },
+    "16": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 60,
+     "SKIPPED": 13
+    },
+    "17": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 92,
+     "UNVERIFIED": 77,
+     "SKIPPED": 15
+    },
+    "18": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 96,
+     "UNVERIFIED": 81,
+     "SKIPPED": 15
+    },
+    "19": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 103,
+     "UNVERIFIED": 87,
+     "SKIPPED": 16
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 95,
+     "UNVERIFIED": 80,
+     "SKIPPED": 15
+    },
+    "20": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 99,
+     "UNVERIFIED": 84,
+     "SKIPPED": 15
+    },
+    "21": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 61,
+     "SKIPPED": 12
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 122,
+     "UNVERIFIED": 104,
+     "SKIPPED": 18
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 87,
+     "UNVERIFIED": 73,
+     "SKIPPED": 14
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 95,
+     "UNVERIFIED": 80,
+     "SKIPPED": 15
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 123,
+     "UNVERIFIED": 105,
+     "SKIPPED": 18
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 90,
+     "UNVERIFIED": 75,
+     "SKIPPED": 15
+    },
+    "8": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 118,
+     "UNVERIFIED": 100,
+     "SKIPPED": 18
+    },
+    "9": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 90,
+     "UNVERIFIED": 76,
+     "SKIPPED": 14
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 0.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "romans": {
+   "score": 19.7,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 18.7,
+     "grade": "D",
+     "claims": 97,
+     "UNVERIFIED": 80,
+     "VERIFIED": 2,
+     "SKIPPED": 14,
+     "FLAGGED": 1
+    },
+    "10": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 64,
+     "UNVERIFIED": 52,
+     "SKIPPED": 12
+    },
+    "11": {
+     "score": 27.5,
+     "grade": "D",
+     "claims": 67,
+     "VERIFIED": 6,
+     "UNVERIFIED": 48,
+     "SKIPPED": 13
+    },
+    "12": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 59,
+     "UNVERIFIED": 45,
+     "VERIFIED": 2,
+     "SKIPPED": 12
+    },
+    "13": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 65,
+     "UNVERIFIED": 53,
+     "SKIPPED": 12
+    },
+    "14": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 57,
+     "UNVERIFIED": 45,
+     "SKIPPED": 12
+    },
+    "15": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 57,
+     "UNVERIFIED": 45,
+     "SKIPPED": 12
+    },
+    "16": {
+     "score": 19.6,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 48,
+     "SKIPPED": 10,
+     "VERIFIED": 2,
+     "FLAGGED": 2
+    },
+    "2": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 54,
+     "SKIPPED": 12,
+     "VERIFIED": 2
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 83,
+     "UNVERIFIED": 69,
+     "SKIPPED": 14
+    },
+    "4": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 59,
+     "SKIPPED": 13,
+     "VERIFIED": 2
+    },
+    "5": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 71,
+     "VERIFIED": 4,
+     "UNVERIFIED": 55,
+     "SKIPPED": 12
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 57,
+     "SKIPPED": 12
+    },
+    "7": {
+     "score": 19.5,
+     "grade": "D",
+     "claims": 84,
+     "UNVERIFIED": 68,
+     "SKIPPED": 14,
+     "VERIFIED": 2
+    },
+    "8": {
+     "score": 21.5,
+     "grade": "D",
+     "claims": 103,
+     "VERIFIED": 4,
+     "UNVERIFIED": 83,
+     "SKIPPED": 16
+    },
+    "9": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 79,
+     "UNVERIFIED": 63,
+     "SKIPPED": 14,
+     "VERIFIED": 2
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 11.5,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 49.3
+   }
+  },
+  "revelation": {
+   "score": 18.8,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 100,
+     "UNVERIFIED": 69,
+     "SKIPPED": 15,
+     "FLAGGED": 14,
+     "VERIFIED": 2
+    },
+    "10": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 50,
+     "UNVERIFIED": 34,
+     "VERIFIED": 2,
+     "SKIPPED": 10,
+     "FLAGGED": 4
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 52,
+     "SKIPPED": 15,
+     "FLAGGED": 6
+    },
+    "12": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 75,
+     "UNVERIFIED": 55,
+     "SKIPPED": 14,
+     "FLAGGED": 6
+    },
+    "13": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 64,
+     "UNVERIFIED": 48,
+     "SKIPPED": 12,
+     "FLAGGED": 4
+    },
+    "14": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 45,
+     "SKIPPED": 13,
+     "FLAGGED": 6,
+     "VERIFIED": 2
+    },
+    "15": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 48,
+     "UNVERIFIED": 32,
+     "SKIPPED": 12,
+     "FLAGGED": 4
+    },
+    "16": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 87,
+     "UNVERIFIED": 63,
+     "SKIPPED": 14,
+     "FLAGGED": 10
+    },
+    "17": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 59,
+     "UNVERIFIED": 41,
+     "VERIFIED": 2,
+     "SKIPPED": 10,
+     "FLAGGED": 6
+    },
+    "18": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 78,
+     "UNVERIFIED": 56,
+     "SKIPPED": 14,
+     "FLAGGED": 8
+    },
+    "19": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 83,
+     "UNVERIFIED": 60,
+     "SKIPPED": 15,
+     "FLAGGED": 8
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 95,
+     "UNVERIFIED": 69,
+     "SKIPPED": 14,
+     "FLAGGED": 12
+    },
+    "20": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 81,
+     "UNVERIFIED": 61,
+     "SKIPPED": 14,
+     "FLAGGED": 6
+    },
+    "21": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 83,
+     "UNVERIFIED": 59,
+     "SKIPPED": 16,
+     "FLAGGED": 8
+    },
+    "22": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 90,
+     "UNVERIFIED": 68,
+     "SKIPPED": 16,
+     "FLAGGED": 6
+    },
+    "3": {
+     "score": 24.2,
+     "grade": "D",
+     "claims": 76,
+     "VERIFIED": 4,
+     "UNVERIFIED": 52,
+     "SKIPPED": 13,
+     "FLAGGED": 7
+    },
+    "4": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 62,
+     "VERIFIED": 4,
+     "UNVERIFIED": 42,
+     "SKIPPED": 12,
+     "FLAGGED": 4
+    },
+    "5": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 49,
+     "VERIFIED": 2,
+     "SKIPPED": 14,
+     "FLAGGED": 7
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 53,
+     "SKIPPED": 14,
+     "FLAGGED": 6
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 54,
+     "UNVERIFIED": 40,
+     "SKIPPED": 10,
+     "FLAGGED": 4
+    },
+    "8": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 72,
+     "VERIFIED": 2,
+     "UNVERIFIED": 50,
+     "SKIPPED": 14,
+     "FLAGGED": 6
+    },
+    "9": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 58,
+     "UNVERIFIED": 42,
+     "SKIPPED": 12,
+     "FLAGGED": 4
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 6.6,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "isaiah": {
+   "score": 19.6,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 43,
+     "SKIPPED": 14,
+     "FLAGGED": 8,
+     "VERIFIED": 2
+    },
+    "10": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 70,
+     "UNVERIFIED": 48,
+     "SKIPPED": 14,
+     "FLAGGED": 8
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 50,
+     "SKIPPED": 16,
+     "FLAGGED": 8
+    },
+    "12": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 66,
+     "VERIFIED": 2,
+     "UNVERIFIED": 42,
+     "SKIPPED": 14,
+     "FLAGGED": 8
+    },
+    "13": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 45,
+     "SKIPPED": 14,
+     "FLAGGED": 8
+    },
+    "14": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 43,
+     "SKIPPED": 14,
+     "FLAGGED": 8,
+     "VERIFIED": 2
+    },
+    "15": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 64,
+     "UNVERIFIED": 41,
+     "SKIPPED": 13,
+     "FLAGGED": 8,
+     "VERIFIED": 2
+    },
+    "16": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 67,
+     "VERIFIED": 2,
+     "UNVERIFIED": 43,
+     "SKIPPED": 14,
+     "FLAGGED": 8
+    },
+    "17": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 46,
+     "SKIPPED": 14,
+     "FLAGGED": 8
+    },
+    "18": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 40,
+     "SKIPPED": 14,
+     "FLAGGED": 8
+    },
+    "19": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 70,
+     "UNVERIFIED": 48,
+     "SKIPPED": 14,
+     "FLAGGED": 8
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 45,
+     "SKIPPED": 14,
+     "FLAGGED": 8
+    },
+    "20": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 47,
+     "SKIPPED": 14,
+     "FLAGGED": 8
+    },
+    "21": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 44,
+     "SKIPPED": 14,
+     "FLAGGED": 8
+    },
+    "22": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 67,
+     "VERIFIED": 2,
+     "UNVERIFIED": 43,
+     "SKIPPED": 14,
+     "FLAGGED": 8
+    },
+    "23": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 37,
+     "UNVERIFIED": 23,
+     "SKIPPED": 7,
+     "FLAGGED": 7
+    },
+    "24": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 43,
+     "UNVERIFIED": 28,
+     "SKIPPED": 7,
+     "FLAGGED": 8
+    },
+    "25": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 40,
+     "UNVERIFIED": 26,
+     "SKIPPED": 7,
+     "FLAGGED": 7
+    },
+    "26": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 42,
+     "UNVERIFIED": 26,
+     "SKIPPED": 8,
+     "FLAGGED": 8
+    },
+    "27": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 43,
+     "UNVERIFIED": 27,
+     "SKIPPED": 8,
+     "FLAGGED": 8
+    },
+    "28": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 41,
+     "UNVERIFIED": 26,
+     "SKIPPED": 7,
+     "FLAGGED": 8
+    },
+    "29": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 44,
+     "UNVERIFIED": 28,
+     "SKIPPED": 8,
+     "FLAGGED": 8
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 65,
+     "UNVERIFIED": 43,
+     "SKIPPED": 14,
+     "FLAGGED": 8
+    },
+    "30": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 43,
+     "UNVERIFIED": 27,
+     "SKIPPED": 8,
+     "FLAGGED": 8
+    },
+    "31": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 38,
+     "VERIFIED": 2,
+     "UNVERIFIED": 22,
+     "SKIPPED": 7,
+     "FLAGGED": 7
+    },
+    "32": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 40,
+     "UNVERIFIED": 24,
+     "SKIPPED": 8,
+     "FLAGGED": 8
+    },
+    "33": {
+     "score": 16.6,
+     "grade": "D",
+     "claims": 44,
+     "UNVERIFIED": 28,
+     "SKIPPED": 7,
+     "FLAGGED": 9
+    },
+    "34": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 43,
+     "UNVERIFIED": 27,
+     "SKIPPED": 8,
+     "FLAGGED": 8
+    },
+    "35": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 41,
+     "UNVERIFIED": 25,
+     "SKIPPED": 8,
+     "FLAGGED": 8
+    },
+    "36": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 31,
+     "UNVERIFIED": 25,
+     "SKIPPED": 6
+    },
+    "37": {
+     "score": 16.2,
+     "grade": "D",
+     "claims": 34,
+     "UNVERIFIED": 28,
+     "SKIPPED": 5,
+     "FLAGGED": 1
+    },
+    "38": {
+     "score": 27.5,
+     "grade": "D",
+     "claims": 30,
+     "VERIFIED": 4,
+     "UNVERIFIED": 20,
+     "SKIPPED": 6
+    },
+    "39": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 30,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "4": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 45,
+     "VERIFIED": 2,
+     "UNVERIFIED": 31,
+     "SKIPPED": 8,
+     "FLAGGED": 4
+    },
+    "40": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 39,
+     "UNVERIFIED": 29,
+     "SKIPPED": 8,
+     "VERIFIED": 2
+    },
+    "41": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 37,
+     "UNVERIFIED": 29,
+     "SKIPPED": 8
+    },
+    "42": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 36,
+     "UNVERIFIED": 28,
+     "SKIPPED": 8
+    },
+    "43": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 35,
+     "UNVERIFIED": 27,
+     "SKIPPED": 8
+    },
+    "44": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 34,
+     "VERIFIED": 2,
+     "UNVERIFIED": 24,
+     "SKIPPED": 8
+    },
+    "45": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 36,
+     "VERIFIED": 2,
+     "UNVERIFIED": 26,
+     "SKIPPED": 8
+    },
+    "46": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 38,
+     "VERIFIED": 2,
+     "UNVERIFIED": 28,
+     "SKIPPED": 8
+    },
+    "47": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 38,
+     "VERIFIED": 2,
+     "UNVERIFIED": 28,
+     "SKIPPED": 8
+    },
+    "48": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 35,
+     "UNVERIFIED": 27,
+     "SKIPPED": 8
+    },
+    "49": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 37,
+     "UNVERIFIED": 29,
+     "SKIPPED": 8
+    },
+    "5": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 72,
+     "VERIFIED": 2,
+     "UNVERIFIED": 48,
+     "SKIPPED": 14,
+     "FLAGGED": 8
+    },
+    "50": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 36,
+     "UNVERIFIED": 28,
+     "SKIPPED": 8
+    },
+    "51": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 35,
+     "VERIFIED": 2,
+     "UNVERIFIED": 25,
+     "SKIPPED": 8
+    },
+    "52": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 39,
+     "UNVERIFIED": 31,
+     "SKIPPED": 8
+    },
+    "53": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 38,
+     "VERIFIED": 2,
+     "UNVERIFIED": 28,
+     "SKIPPED": 8
+    },
+    "54": {
+     "score": 16.6,
+     "grade": "D",
+     "claims": 37,
+     "UNVERIFIED": 29,
+     "SKIPPED": 7,
+     "FLAGGED": 1
+    },
+    "55": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 36,
+     "UNVERIFIED": 28,
+     "SKIPPED": 8
+    },
+    "56": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 31,
+     "VERIFIED": 2,
+     "UNVERIFIED": 23,
+     "SKIPPED": 6
+    },
+    "57": {
+     "score": 21.2,
+     "grade": "D",
+     "claims": 35,
+     "VERIFIED": 2,
+     "UNVERIFIED": 27,
+     "SKIPPED": 5,
+     "FLAGGED": 1
+    },
+    "58": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 23,
+     "SKIPPED": 6
+    },
+    "59": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 32,
+     "UNVERIFIED": 26,
+     "SKIPPED": 6
+    },
+    "6": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 69,
+     "VERIFIED": 2,
+     "UNVERIFIED": 45,
+     "SKIPPED": 14,
+     "FLAGGED": 8
+    },
+    "60": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 32,
+     "UNVERIFIED": 26,
+     "SKIPPED": 6
+    },
+    "61": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 33,
+     "UNVERIFIED": 25,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "62": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 32,
+     "VERIFIED": 2,
+     "UNVERIFIED": 24,
+     "SKIPPED": 6
+    },
+    "63": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 31,
+     "UNVERIFIED": 25,
+     "SKIPPED": 6
+    },
+    "64": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 35,
+     "UNVERIFIED": 29,
+     "SKIPPED": 6
+    },
+    "65": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 34,
+     "UNVERIFIED": 26,
+     "SKIPPED": 6,
+     "VERIFIED": 2
+    },
+    "66": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 31,
+     "VERIFIED": 2,
+     "UNVERIFIED": 23,
+     "SKIPPED": 6
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 46,
+     "SKIPPED": 14,
+     "FLAGGED": 8
+    },
+    "8": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 44,
+     "SKIPPED": 14,
+     "FLAGGED": 8,
+     "VERIFIED": 2
+    },
+    "9": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 43,
+     "SKIPPED": 14,
+     "FLAGGED": 8,
+     "VERIFIED": 2
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 10.6,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 49.6
+   }
+  },
+  "daniel": {
+   "score": 20.4,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 70,
+     "UNVERIFIED": 45,
+     "SKIPPED": 13,
+     "FLAGGED": 12
+    },
+    "10": {
+     "score": 21.3,
+     "grade": "D",
+     "claims": 69,
+     "VERIFIED": 2,
+     "UNVERIFIED": 42,
+     "SKIPPED": 11,
+     "FLAGGED": 14
+    },
+    "11": {
+     "score": 20.2,
+     "grade": "D",
+     "claims": 71,
+     "VERIFIED": 2,
+     "UNVERIFIED": 44,
+     "SKIPPED": 9,
+     "FLAGGED": 16
+    },
+    "12": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 45,
+     "SKIPPED": 14,
+     "FLAGGED": 12,
+     "VERIFIED": 2
+    },
+    "2": {
+     "score": 27.5,
+     "grade": "D",
+     "claims": 74,
+     "VERIFIED": 4,
+     "UNVERIFIED": 44,
+     "SKIPPED": 14,
+     "FLAGGED": 12
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 48,
+     "SKIPPED": 14,
+     "FLAGGED": 12
+    },
+    "4": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 69,
+     "VERIFIED": 2,
+     "UNVERIFIED": 43,
+     "SKIPPED": 12,
+     "FLAGGED": 12
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 43,
+     "SKIPPED": 12,
+     "FLAGGED": 12
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 47,
+     "SKIPPED": 14,
+     "FLAGGED": 12
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 76,
+     "UNVERIFIED": 50,
+     "SKIPPED": 14,
+     "FLAGGED": 12
+    },
+    "8": {
+     "score": 26.4,
+     "grade": "D",
+     "claims": 74,
+     "VERIFIED": 4,
+     "UNVERIFIED": 44,
+     "SKIPPED": 12,
+     "FLAGGED": 14
+    },
+    "9": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 71,
+     "UNVERIFIED": 45,
+     "SKIPPED": 14,
+     "FLAGGED": 12
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 16.7,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 47.5
+   }
+  },
+  "leviticus": {
+   "score": 17.4,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 62,
+     "SKIPPED": 10
+    },
+    "10": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 71,
+     "UNVERIFIED": 61,
+     "SKIPPED": 10
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 62,
+     "SKIPPED": 10
+    },
+    "12": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 58,
+     "SKIPPED": 10
+    },
+    "13": {
+     "score": 16.0,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 58,
+     "SKIPPED": 8,
+     "FLAGGED": 2
+    },
+    "14": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 59,
+     "UNVERIFIED": 51,
+     "SKIPPED": 8
+    },
+    "15": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 60,
+     "SKIPPED": 8
+    },
+    "16": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 60,
+     "SKIPPED": 12
+    },
+    "17": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 70,
+     "UNVERIFIED": 60,
+     "SKIPPED": 10
+    },
+    "18": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 70,
+     "UNVERIFIED": 60,
+     "SKIPPED": 10
+    },
+    "19": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 65,
+     "UNVERIFIED": 55,
+     "SKIPPED": 10
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 76,
+     "UNVERIFIED": 66,
+     "SKIPPED": 10
+    },
+    "20": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 60,
+     "SKIPPED": 8
+    },
+    "21": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 54,
+     "SKIPPED": 8
+    },
+    "22": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 58,
+     "SKIPPED": 8
+    },
+    "23": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 62,
+     "SKIPPED": 12
+    },
+    "24": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 65,
+     "UNVERIFIED": 55,
+     "SKIPPED": 10
+    },
+    "25": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 62,
+     "SKIPPED": 12
+    },
+    "26": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 62,
+     "SKIPPED": 12
+    },
+    "27": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 57,
+     "SKIPPED": 12
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 58,
+     "SKIPPED": 10
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 70,
+     "UNVERIFIED": 60,
+     "SKIPPED": 10
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 58,
+     "SKIPPED": 8
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 93,
+     "UNVERIFIED": 81,
+     "SKIPPED": 12
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 54,
+     "SKIPPED": 8
+    },
+    "8": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 59,
+     "SKIPPED": 10
+    },
+    "9": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 64,
+     "UNVERIFIED": 54,
+     "SKIPPED": 10
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 0.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 49.6
+   }
+  },
+  "numbers": {
+   "score": 17.4,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 61,
+     "SKIPPED": 8
+    },
+    "10": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 71,
+     "UNVERIFIED": 61,
+     "SKIPPED": 10
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 59,
+     "SKIPPED": 8
+    },
+    "12": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 64,
+     "UNVERIFIED": 56,
+     "SKIPPED": 8
+    },
+    "13": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 60,
+     "SKIPPED": 8
+    },
+    "14": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 60,
+     "SKIPPED": 8
+    },
+    "15": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 61,
+     "SKIPPED": 8
+    },
+    "16": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 70,
+     "UNVERIFIED": 62,
+     "FLAGGED": 2,
+     "SKIPPED": 6
+    },
+    "17": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 64,
+     "UNVERIFIED": 56,
+     "SKIPPED": 8
+    },
+    "18": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 64,
+     "UNVERIFIED": 56,
+     "SKIPPED": 8
+    },
+    "19": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 59,
+     "SKIPPED": 8
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 64,
+     "UNVERIFIED": 56,
+     "SKIPPED": 8
+    },
+    "20": {
+     "score": 16.0,
+     "grade": "D",
+     "claims": 70,
+     "UNVERIFIED": 60,
+     "SKIPPED": 8,
+     "FLAGGED": 2
+    },
+    "21": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 64,
+     "UNVERIFIED": 56,
+     "SKIPPED": 8
+    },
+    "22": {
+     "score": 16.0,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 59,
+     "SKIPPED": 8,
+     "FLAGGED": 2
+    },
+    "23": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 59,
+     "SKIPPED": 8
+    },
+    "24": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 57,
+     "SKIPPED": 10
+    },
+    "25": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 71,
+     "UNVERIFIED": 61,
+     "SKIPPED": 10
+    },
+    "26": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 54,
+     "SKIPPED": 8
+    },
+    "27": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 60,
+     "UNVERIFIED": 52,
+     "SKIPPED": 8
+    },
+    "28": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 63,
+     "UNVERIFIED": 55,
+     "SKIPPED": 8
+    },
+    "29": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 63,
+     "UNVERIFIED": 55,
+     "SKIPPED": 8
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 61,
+     "SKIPPED": 8
+    },
+    "30": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 61,
+     "SKIPPED": 8
+    },
+    "31": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 60,
+     "UNVERIFIED": 52,
+     "SKIPPED": 8
+    },
+    "32": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 60,
+     "UNVERIFIED": 52,
+     "SKIPPED": 8
+    },
+    "33": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 58,
+     "UNVERIFIED": 50,
+     "SKIPPED": 8
+    },
+    "34": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 59,
+     "UNVERIFIED": 51,
+     "SKIPPED": 8
+    },
+    "35": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 59,
+     "SKIPPED": 8
+    },
+    "36": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 59,
+     "UNVERIFIED": 51,
+     "SKIPPED": 8
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 63,
+     "UNVERIFIED": 55,
+     "SKIPPED": 8
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 71,
+     "UNVERIFIED": 63,
+     "SKIPPED": 8
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 78,
+     "UNVERIFIED": 66,
+     "SKIPPED": 12
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 54,
+     "SKIPPED": 8
+    },
+    "8": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 64,
+     "UNVERIFIED": 56,
+     "SKIPPED": 8
+    },
+    "9": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 60,
+     "SKIPPED": 8
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 0.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 49.1
+   }
+  },
+  "deuteronomy": {
+   "score": 17.4,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 81,
+     "UNVERIFIED": 69,
+     "SKIPPED": 12
+    },
+    "10": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 61,
+     "SKIPPED": 8
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 63,
+     "UNVERIFIED": 55,
+     "SKIPPED": 8
+    },
+    "12": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 63,
+     "UNVERIFIED": 55,
+     "SKIPPED": 8
+    },
+    "13": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 54,
+     "SKIPPED": 8
+    },
+    "14": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 58,
+     "UNVERIFIED": 52,
+     "SKIPPED": 6
+    },
+    "15": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 57,
+     "SKIPPED": 10
+    },
+    "16": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 75,
+     "UNVERIFIED": 65,
+     "SKIPPED": 10
+    },
+    "17": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 58,
+     "SKIPPED": 8
+    },
+    "18": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 75,
+     "UNVERIFIED": 63,
+     "SKIPPED": 12
+    },
+    "19": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 59,
+     "SKIPPED": 8
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 70,
+     "UNVERIFIED": 62,
+     "SKIPPED": 8
+    },
+    "20": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 65,
+     "UNVERIFIED": 57,
+     "SKIPPED": 8
+    },
+    "21": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 56,
+     "SKIPPED": 6
+    },
+    "22": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 63,
+     "UNVERIFIED": 55,
+     "SKIPPED": 8
+    },
+    "23": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 58,
+     "SKIPPED": 8
+    },
+    "24": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 58,
+     "SKIPPED": 8
+    },
+    "25": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 65,
+     "UNVERIFIED": 57,
+     "SKIPPED": 8
+    },
+    "26": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 58,
+     "SKIPPED": 8
+    },
+    "27": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 60,
+     "SKIPPED": 8
+    },
+    "28": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 60,
+     "SKIPPED": 8
+    },
+    "29": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 54,
+     "SKIPPED": 8
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 71,
+     "UNVERIFIED": 63,
+     "SKIPPED": 8
+    },
+    "30": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 70,
+     "UNVERIFIED": 60,
+     "SKIPPED": 10
+    },
+    "31": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 64,
+     "UNVERIFIED": 56,
+     "SKIPPED": 8
+    },
+    "32": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 75,
+     "UNVERIFIED": 63,
+     "SKIPPED": 12
+    },
+    "33": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 59,
+     "SKIPPED": 8
+    },
+    "34": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 58,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 61,
+     "SKIPPED": 12
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 57,
+     "SKIPPED": 10
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 57,
+     "SKIPPED": 10
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 61,
+     "UNVERIFIED": 55,
+     "SKIPPED": 6
+    },
+    "8": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 62,
+     "SKIPPED": 10
+    },
+    "9": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 60,
+     "SKIPPED": 8
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 0.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 49.6
+   }
+  },
+  "joshua": {
+   "score": 15.1,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 14.7,
+     "grade": "D",
+     "claims": 64,
+     "UNVERIFIED": 56,
+     "SKIPPED": 5,
+     "FLAGGED": 3
+    },
+    "10": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 66,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "11": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "12": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "13": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "14": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "15": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "16": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "17": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "18": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "19": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "2": {
+     "score": 14.7,
+     "grade": "D",
+     "claims": 63,
+     "UNVERIFIED": 55,
+     "SKIPPED": 5,
+     "FLAGGED": 3
+    },
+    "20": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "21": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "22": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 66,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "23": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "24": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 66,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "3": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "4": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "5": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 66,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "6": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 66,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "7": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "8": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 66,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "9": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 0.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 34.2
+   }
+  },
+  "judges": {
+   "score": 15.1,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "10": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "11": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 66,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "12": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "13": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "14": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "15": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "16": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 66,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "17": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "18": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "19": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "2": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "20": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "21": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "3": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 66,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "4": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "5": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "6": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 66,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "7": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "8": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "9": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 0.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 34.1
+   }
+  },
+  "ruth": {
+   "score": 17.5,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 98,
+     "UNVERIFIED": 87,
+     "SKIPPED": 11
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 93,
+     "UNVERIFIED": 85,
+     "SKIPPED": 8
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 97,
+     "UNVERIFIED": 86,
+     "SKIPPED": 11
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 100,
+     "UNVERIFIED": 88,
+     "SKIPPED": 12
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 0.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "1_samuel": {
+   "score": 15.1,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 66,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "10": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "11": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "12": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "13": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 66,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "14": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 66,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "15": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 66,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "16": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "17": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 66,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "18": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "19": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "2": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 66,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "20": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "21": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "22": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "23": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "24": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "25": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "26": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "27": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "28": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "29": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "3": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "30": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "31": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "4": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "5": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "6": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "7": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "8": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "9": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 0.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 34.1
+   }
+  },
+  "2_samuel": {
+   "score": 15.1,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "10": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "11": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 66,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "12": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 66,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "13": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "14": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "15": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "16": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "17": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "18": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "19": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "2": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "20": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "21": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "22": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "23": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "24": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 66,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "3": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "4": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "5": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 66,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "6": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "7": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "8": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    },
+    "9": {
+     "score": 15.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4,
+     "FLAGGED": 2
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 0.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 34.0
+   }
+  },
+  "1_kings": {
+   "score": 17.5,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 57,
+     "SKIPPED": 12
+    },
+    "10": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 49,
+     "UNVERIFIED": 41,
+     "SKIPPED": 8
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 50,
+     "SKIPPED": 12
+    },
+    "12": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 64,
+     "UNVERIFIED": 52,
+     "SKIPPED": 12
+    },
+    "13": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 48,
+     "UNVERIFIED": 40,
+     "SKIPPED": 8
+    },
+    "14": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 47,
+     "UNVERIFIED": 39,
+     "SKIPPED": 8
+    },
+    "15": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 45,
+     "UNVERIFIED": 37,
+     "SKIPPED": 8
+    },
+    "16": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 48,
+     "UNVERIFIED": 40,
+     "SKIPPED": 8
+    },
+    "17": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 59,
+     "UNVERIFIED": 47,
+     "SKIPPED": 12
+    },
+    "18": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 61,
+     "SKIPPED": 13
+    },
+    "19": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 63,
+     "UNVERIFIED": 51,
+     "SKIPPED": 12
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 65,
+     "UNVERIFIED": 53,
+     "SKIPPED": 12
+    },
+    "20": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 48,
+     "UNVERIFIED": 40,
+     "SKIPPED": 8
+    },
+    "21": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 59,
+     "UNVERIFIED": 47,
+     "SKIPPED": 12
+    },
+    "22": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 61,
+     "UNVERIFIED": 49,
+     "SKIPPED": 12
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 58,
+     "UNVERIFIED": 48,
+     "SKIPPED": 10
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 57,
+     "UNVERIFIED": 47,
+     "SKIPPED": 10
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 55,
+     "UNVERIFIED": 47,
+     "SKIPPED": 8
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 56,
+     "UNVERIFIED": 46,
+     "SKIPPED": 10
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 54,
+     "UNVERIFIED": 44,
+     "SKIPPED": 10
+    },
+    "8": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 84,
+     "UNVERIFIED": 70,
+     "SKIPPED": 14
+    },
+    "9": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 54,
+     "UNVERIFIED": 44,
+     "SKIPPED": 10
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 0.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "2_kings": {
+   "score": 25.5,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 50,
+     "SKIPPED": 12
+    },
+    "10": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 29,
+     "SKIPPED": 8,
+     "UNVERIFIED": 21
+    },
+    "11": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 31,
+     "SKIPPED": 8,
+     "UNVERIFIED": 23
+    },
+    "12": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 27,
+     "SKIPPED": 8,
+     "UNVERIFIED": 19
+    },
+    "13": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 38,
+     "SKIPPED": 8,
+     "UNVERIFIED": 30
+    },
+    "14": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 28,
+     "SKIPPED": 8,
+     "UNVERIFIED": 20
+    },
+    "15": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 29,
+     "SKIPPED": 8,
+     "UNVERIFIED": 21
+    },
+    "16": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 35,
+     "UNVERIFIED": 27,
+     "SKIPPED": 8
+    },
+    "17": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 61,
+     "SKIPPED": 14,
+     "UNVERIFIED": 47
+    },
+    "18": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 41,
+     "UNVERIFIED": 33,
+     "SKIPPED": 8
+    },
+    "19": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 38,
+     "SKIPPED": 10,
+     "UNVERIFIED": 28
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 61,
+     "UNVERIFIED": 49,
+     "SKIPPED": 12
+    },
+    "20": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 33,
+     "SKIPPED": 8,
+     "UNVERIFIED": 25
+    },
+    "21": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 36,
+     "UNVERIFIED": 28,
+     "SKIPPED": 8
+    },
+    "22": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 39,
+     "UNVERIFIED": 31,
+     "SKIPPED": 8
+    },
+    "23": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 34,
+     "SKIPPED": 8,
+     "UNVERIFIED": 26
+    },
+    "24": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 43,
+     "SKIPPED": 12,
+     "UNVERIFIED": 31
+    },
+    "25": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 60,
+     "UNVERIFIED": 45,
+     "SKIPPED": 15
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 50,
+     "UNVERIFIED": 40,
+     "SKIPPED": 10
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 52,
+     "SKIPPED": 14
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 51,
+     "UNVERIFIED": 43,
+     "SKIPPED": 8
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 51,
+     "SKIPPED": 13,
+     "UNVERIFIED": 38
+    },
+    "7": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 32,
+     "SKIPPED": 8,
+     "UNVERIFIED": 24
+    },
+    "8": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 39,
+     "UNVERIFIED": 31,
+     "SKIPPED": 8
+    },
+    "9": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 46,
+     "UNVERIFIED": 36,
+     "SKIPPED": 10
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 40.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "job": {
+   "score": 18.8,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 19.5,
+     "grade": "D",
+     "claims": 84,
+     "UNVERIFIED": 61,
+     "VERIFIED": 2,
+     "SKIPPED": 12,
+     "FLAGGED": 9
+    },
+    "10": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 50,
+     "UNVERIFIED": 36,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 39,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "12": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 51,
+     "UNVERIFIED": 37,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "13": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 54,
+     "UNVERIFIED": 40,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "14": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 52,
+     "UNVERIFIED": 37,
+     "SKIPPED": 8,
+     "FLAGGED": 7
+    },
+    "15": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 51,
+     "VERIFIED": 2,
+     "UNVERIFIED": 35,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "16": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 49,
+     "UNVERIFIED": 35,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "17": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 40,
+     "UNVERIFIED": 29,
+     "SKIPPED": 6,
+     "FLAGGED": 5
+    },
+    "18": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 47,
+     "UNVERIFIED": 36,
+     "SKIPPED": 6,
+     "FLAGGED": 5
+    },
+    "19": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 61,
+     "UNVERIFIED": 43,
+     "SKIPPED": 10,
+     "FLAGGED": 6,
+     "VERIFIED": 2
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 51,
+     "UNVERIFIED": 40,
+     "SKIPPED": 6,
+     "FLAGGED": 5
+    },
+    "20": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 50,
+     "UNVERIFIED": 36,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "21": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 55,
+     "UNVERIFIED": 39,
+     "SKIPPED": 10,
+     "FLAGGED": 6
+    },
+    "22": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 50,
+     "UNVERIFIED": 36,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "23": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 51,
+     "UNVERIFIED": 37,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "24": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 49,
+     "UNVERIFIED": 35,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "25": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 39,
+     "UNVERIFIED": 27,
+     "SKIPPED": 6,
+     "FLAGGED": 4,
+     "VERIFIED": 2
+    },
+    "26": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 50,
+     "UNVERIFIED": 37,
+     "SKIPPED": 8,
+     "FLAGGED": 5
+    },
+    "27": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 49,
+     "UNVERIFIED": 35,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "28": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 58,
+     "UNVERIFIED": 40,
+     "SKIPPED": 10,
+     "FLAGGED": 6,
+     "VERIFIED": 2
+    },
+    "29": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 51,
+     "UNVERIFIED": 37,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "3": {
+     "score": 25.0,
+     "grade": "D",
+     "claims": 58,
+     "VERIFIED": 6,
+     "UNVERIFIED": 39,
+     "SKIPPED": 8,
+     "FLAGGED": 5
+    },
+    "30": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 50,
+     "VERIFIED": 2,
+     "UNVERIFIED": 34,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "31": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 59,
+     "UNVERIFIED": 42,
+     "VERIFIED": 2,
+     "SKIPPED": 8,
+     "FLAGGED": 7
+    },
+    "32": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 45,
+     "UNVERIFIED": 33,
+     "SKIPPED": 6,
+     "FLAGGED": 6
+    },
+    "33": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 51,
+     "VERIFIED": 2,
+     "UNVERIFIED": 35,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "34": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 51,
+     "UNVERIFIED": 37,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "35": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 46,
+     "UNVERIFIED": 33,
+     "SKIPPED": 8,
+     "FLAGGED": 5
+    },
+    "36": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 50,
+     "UNVERIFIED": 34,
+     "SKIPPED": 8,
+     "FLAGGED": 6,
+     "VERIFIED": 2
+    },
+    "37": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 51,
+     "UNVERIFIED": 37,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "38": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 46,
+     "SKIPPED": 10,
+     "FLAGGED": 8,
+     "VERIFIED": 2
+    },
+    "39": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 51,
+     "UNVERIFIED": 36,
+     "SKIPPED": 8,
+     "FLAGGED": 7
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 55,
+     "UNVERIFIED": 41,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "40": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 49,
+     "UNVERIFIED": 35,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "41": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 35,
+     "SKIPPED": 10,
+     "FLAGGED": 6,
+     "VERIFIED": 2
+    },
+    "42": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 91,
+     "UNVERIFIED": 67,
+     "SKIPPED": 14,
+     "FLAGGED": 10
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 60,
+     "UNVERIFIED": 46,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 61,
+     "UNVERIFIED": 47,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 59,
+     "UNVERIFIED": 45,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "8": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 51,
+     "UNVERIFIED": 37,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "9": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 71,
+     "UNVERIFIED": 50,
+     "SKIPPED": 12,
+     "FLAGGED": 9
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 6.3,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "proverbs": {
+   "score": 19.1,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 20.6,
+     "grade": "D",
+     "claims": 112,
+     "UNVERIFIED": 100,
+     "VERIFIED": 4,
+     "SKIPPED": 8
+    },
+    "10": {
+     "score": 18.9,
+     "grade": "D",
+     "claims": 54,
+     "UNVERIFIED": 49,
+     "VERIFIED": 1,
+     "SKIPPED": 4
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 44,
+     "UNVERIFIED": 40,
+     "SKIPPED": 4
+    },
+    "12": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 43,
+     "UNVERIFIED": 37,
+     "VERIFIED": 2,
+     "SKIPPED": 4
+    },
+    "13": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 44,
+     "VERIFIED": 1,
+     "UNVERIFIED": 39,
+     "SKIPPED": 4
+    },
+    "14": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 45,
+     "UNVERIFIED": 40,
+     "VERIFIED": 1,
+     "SKIPPED": 4
+    },
+    "15": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 45,
+     "VERIFIED": 2,
+     "UNVERIFIED": 39,
+     "SKIPPED": 4
+    },
+    "16": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 45,
+     "UNVERIFIED": 40,
+     "VERIFIED": 1,
+     "SKIPPED": 4
+    },
+    "17": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 44,
+     "VERIFIED": 1,
+     "UNVERIFIED": 39,
+     "SKIPPED": 4
+    },
+    "18": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 58,
+     "UNVERIFIED": 54,
+     "SKIPPED": 4
+    },
+    "19": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 58,
+     "UNVERIFIED": 54,
+     "SKIPPED": 4
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 51,
+     "UNVERIFIED": 47,
+     "SKIPPED": 4
+    },
+    "20": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 58,
+     "UNVERIFIED": 54,
+     "SKIPPED": 4
+    },
+    "21": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 44,
+     "UNVERIFIED": 40,
+     "SKIPPED": 4
+    },
+    "22": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 43,
+     "UNVERIFIED": 39,
+     "SKIPPED": 4
+    },
+    "23": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 43,
+     "UNVERIFIED": 38,
+     "SKIPPED": 4,
+     "VERIFIED": 1
+    },
+    "24": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 43,
+     "UNVERIFIED": 37,
+     "VERIFIED": 2,
+     "SKIPPED": 4
+    },
+    "25": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 43,
+     "UNVERIFIED": 39,
+     "SKIPPED": 4
+    },
+    "26": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 43,
+     "UNVERIFIED": 39,
+     "SKIPPED": 4
+    },
+    "27": {
+     "score": 25.0,
+     "grade": "D",
+     "claims": 43,
+     "VERIFIED": 3,
+     "UNVERIFIED": 36,
+     "SKIPPED": 4
+    },
+    "28": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 43,
+     "UNVERIFIED": 39,
+     "SKIPPED": 4
+    },
+    "29": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 43,
+     "VERIFIED": 2,
+     "UNVERIFIED": 37,
+     "SKIPPED": 4
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 56,
+     "UNVERIFIED": 51,
+     "SKIPPED": 5
+    },
+    "30": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 44,
+     "VERIFIED": 2,
+     "UNVERIFIED": 38,
+     "SKIPPED": 4
+    },
+    "31": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 47,
+     "UNVERIFIED": 43,
+     "SKIPPED": 3,
+     "FLAGGED": 1
+    },
+    "4": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 55,
+     "UNVERIFIED": 49,
+     "SKIPPED": 4,
+     "VERIFIED": 2
+    },
+    "5": {
+     "score": 15.6,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 49,
+     "SKIPPED": 3,
+     "FLAGGED": 1
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 54,
+     "UNVERIFIED": 50,
+     "SKIPPED": 4
+    },
+    "7": {
+     "score": 19.5,
+     "grade": "D",
+     "claims": 48,
+     "UNVERIFIED": 42,
+     "SKIPPED": 5,
+     "VERIFIED": 1
+    },
+    "8": {
+     "score": 16.2,
+     "grade": "D",
+     "claims": 59,
+     "UNVERIFIED": 53,
+     "SKIPPED": 5,
+     "FLAGGED": 1
+    },
+    "9": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 56,
+     "UNVERIFIED": 52,
+     "SKIPPED": 4
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 8.7,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 48.9
+   }
+  },
+  "ecclesiastes": {
+   "score": 17.8,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 61,
+     "UNVERIFIED": 45,
+     "SKIPPED": 8,
+     "FLAGGED": 8
+    },
+    "10": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 54,
+     "UNVERIFIED": 38,
+     "SKIPPED": 8,
+     "FLAGGED": 8
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 55,
+     "UNVERIFIED": 39,
+     "SKIPPED": 8,
+     "FLAGGED": 8
+    },
+    "12": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 53,
+     "SKIPPED": 12,
+     "FLAGGED": 8
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 56,
+     "UNVERIFIED": 40,
+     "SKIPPED": 8,
+     "FLAGGED": 8
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 59,
+     "UNVERIFIED": 43,
+     "SKIPPED": 8,
+     "FLAGGED": 8
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 55,
+     "UNVERIFIED": 39,
+     "SKIPPED": 8,
+     "FLAGGED": 8
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 48,
+     "SKIPPED": 12,
+     "FLAGGED": 8
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 54,
+     "UNVERIFIED": 38,
+     "SKIPPED": 8,
+     "FLAGGED": 8
+    },
+    "7": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 65,
+     "UNVERIFIED": 44,
+     "SKIPPED": 10,
+     "FLAGGED": 9,
+     "VERIFIED": 2
+    },
+    "8": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 59,
+     "UNVERIFIED": 40,
+     "SKIPPED": 10,
+     "FLAGGED": 9
+    },
+    "9": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 58,
+     "UNVERIFIED": 42,
+     "SKIPPED": 8,
+     "FLAGGED": 8
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 1.4,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "song_of_solomon": {
+   "score": 18.5,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 46,
+     "SKIPPED": 8,
+     "FLAGGED": 8
+    },
+    "2": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 43,
+     "VERIFIED": 2,
+     "SKIPPED": 8,
+     "FLAGGED": 9
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 56,
+     "UNVERIFIED": 41,
+     "SKIPPED": 8,
+     "FLAGGED": 7
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 57,
+     "UNVERIFIED": 41,
+     "SKIPPED": 8,
+     "FLAGGED": 8
+    },
+    "5": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 56,
+     "VERIFIED": 2,
+     "UNVERIFIED": 38,
+     "SKIPPED": 8,
+     "FLAGGED": 8
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 50,
+     "UNVERIFIED": 36,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 57,
+     "UNVERIFIED": 39,
+     "SKIPPED": 10,
+     "FLAGGED": 8
+    },
+    "8": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 48,
+     "SKIPPED": 12,
+     "FLAGGED": 8
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 5.2,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "jeremiah": {
+   "score": 19.5,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 53,
+     "SKIPPED": 12,
+     "VERIFIED": 2
+    },
+    "10": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 51,
+     "UNVERIFIED": 41,
+     "SKIPPED": 10
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 52,
+     "UNVERIFIED": 42,
+     "SKIPPED": 10
+    },
+    "12": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 49,
+     "VERIFIED": 2,
+     "UNVERIFIED": 37,
+     "SKIPPED": 10
+    },
+    "13": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 45,
+     "UNVERIFIED": 37,
+     "SKIPPED": 8
+    },
+    "14": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 48,
+     "UNVERIFIED": 38,
+     "SKIPPED": 10
+    },
+    "15": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 54,
+     "UNVERIFIED": 42,
+     "SKIPPED": 12
+    },
+    "16": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 52,
+     "UNVERIFIED": 40,
+     "SKIPPED": 10,
+     "VERIFIED": 2
+    },
+    "17": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 41,
+     "VERIFIED": 2,
+     "SKIPPED": 10
+    },
+    "18": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 43,
+     "SKIPPED": 10
+    },
+    "19": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 41,
+     "UNVERIFIED": 33,
+     "SKIPPED": 8
+    },
+    "2": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 58,
+     "SKIPPED": 13,
+     "VERIFIED": 2
+    },
+    "20": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 55,
+     "UNVERIFIED": 45,
+     "SKIPPED": 10
+    },
+    "21": {
+     "score": 27.5,
+     "grade": "D",
+     "claims": 44,
+     "VERIFIED": 4,
+     "UNVERIFIED": 32,
+     "SKIPPED": 8
+    },
+    "22": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 55,
+     "VERIFIED": 2,
+     "UNVERIFIED": 41,
+     "SKIPPED": 12
+    },
+    "23": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 65,
+     "UNVERIFIED": 50,
+     "SKIPPED": 13,
+     "VERIFIED": 2
+    },
+    "24": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 48,
+     "UNVERIFIED": 38,
+     "SKIPPED": 10
+    },
+    "25": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 55,
+     "UNVERIFIED": 41,
+     "SKIPPED": 12,
+     "VERIFIED": 2
+    },
+    "26": {
+     "score": 27.5,
+     "grade": "D",
+     "claims": 44,
+     "VERIFIED": 4,
+     "UNVERIFIED": 32,
+     "SKIPPED": 8
+    },
+    "27": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 44,
+     "VERIFIED": 2,
+     "UNVERIFIED": 34,
+     "SKIPPED": 8
+    },
+    "28": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 44,
+     "UNVERIFIED": 34,
+     "SKIPPED": 8,
+     "VERIFIED": 2
+    },
+    "29": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 55,
+     "UNVERIFIED": 45,
+     "SKIPPED": 10
+    },
+    "3": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 68,
+     "VERIFIED": 4,
+     "UNVERIFIED": 51,
+     "SKIPPED": 13
+    },
+    "30": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 48,
+     "UNVERIFIED": 38,
+     "SKIPPED": 10
+    },
+    "31": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 50,
+     "VERIFIED": 4,
+     "SKIPPED": 13
+    },
+    "32": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 50,
+     "UNVERIFIED": 40,
+     "SKIPPED": 10
+    },
+    "33": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 42,
+     "UNVERIFIED": 34,
+     "SKIPPED": 8
+    },
+    "34": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 46,
+     "UNVERIFIED": 36,
+     "SKIPPED": 10
+    },
+    "35": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 42,
+     "VERIFIED": 2,
+     "UNVERIFIED": 32,
+     "SKIPPED": 8
+    },
+    "36": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 50,
+     "UNVERIFIED": 40,
+     "SKIPPED": 10
+    },
+    "37": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 43,
+     "UNVERIFIED": 35,
+     "SKIPPED": 8
+    },
+    "38": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 49,
+     "UNVERIFIED": 39,
+     "SKIPPED": 10
+    },
+    "39": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 50,
+     "UNVERIFIED": 40,
+     "SKIPPED": 10
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 55,
+     "SKIPPED": 14
+    },
+    "40": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 42,
+     "UNVERIFIED": 34,
+     "SKIPPED": 8
+    },
+    "41": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 43,
+     "UNVERIFIED": 35,
+     "SKIPPED": 8
+    },
+    "42": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 43,
+     "VERIFIED": 2,
+     "UNVERIFIED": 33,
+     "SKIPPED": 8
+    },
+    "43": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 42,
+     "UNVERIFIED": 32,
+     "SKIPPED": 8,
+     "VERIFIED": 2
+    },
+    "44": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 42,
+     "UNVERIFIED": 34,
+     "SKIPPED": 8
+    },
+    "45": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 28,
+     "UNVERIFIED": 22,
+     "SKIPPED": 6
+    },
+    "46": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 44,
+     "VERIFIED": 2,
+     "UNVERIFIED": 34,
+     "SKIPPED": 8
+    },
+    "47": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 36,
+     "UNVERIFIED": 30,
+     "SKIPPED": 6
+    },
+    "48": {
+     "score": 16.0,
+     "grade": "D",
+     "claims": 48,
+     "UNVERIFIED": 38,
+     "SKIPPED": 8,
+     "FLAGGED": 2
+    },
+    "49": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 55,
+     "UNVERIFIED": 43,
+     "SKIPPED": 10,
+     "VERIFIED": 2
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 71,
+     "UNVERIFIED": 57,
+     "SKIPPED": 14
+    },
+    "50": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 49,
+     "UNVERIFIED": 39,
+     "SKIPPED": 10
+    },
+    "51": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 48,
+     "UNVERIFIED": 40,
+     "SKIPPED": 8
+    },
+    "52": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 50,
+     "UNVERIFIED": 40,
+     "SKIPPED": 10
+    },
+    "6": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 76,
+     "UNVERIFIED": 60,
+     "SKIPPED": 14,
+     "VERIFIED": 2
+    },
+    "7": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 79,
+     "UNVERIFIED": 62,
+     "SKIPPED": 15,
+     "VERIFIED": 2
+    },
+    "8": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 41,
+     "VERIFIED": 2,
+     "SKIPPED": 10
+    },
+    "9": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 56,
+     "VERIFIED": 2,
+     "UNVERIFIED": 42,
+     "SKIPPED": 12
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 10.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 49.8
+   }
+  },
+  "lamentations": {
+   "score": 19.4,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 46,
+     "SKIPPED": 14,
+     "FLAGGED": 8
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 71,
+     "UNVERIFIED": 49,
+     "SKIPPED": 14,
+     "FLAGGED": 8
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 45,
+     "SKIPPED": 14,
+     "FLAGGED": 8
+    },
+    "4": {
+     "score": 22.0,
+     "grade": "D",
+     "claims": 70,
+     "UNVERIFIED": 46,
+     "SKIPPED": 13,
+     "FLAGGED": 9,
+     "VERIFIED": 2
+    },
+    "5": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 66,
+     "VERIFIED": 2,
+     "UNVERIFIED": 42,
+     "SKIPPED": 14,
+     "FLAGGED": 8
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 10.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 49.3
+   }
+  },
+  "ezekiel": {
+   "score": 18.8,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 81,
+     "UNVERIFIED": 67,
+     "SKIPPED": 14
+    },
+    "10": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 46,
+     "UNVERIFIED": 36,
+     "SKIPPED": 10
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 70,
+     "UNVERIFIED": 56,
+     "SKIPPED": 14
+    },
+    "12": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 49,
+     "UNVERIFIED": 39,
+     "SKIPPED": 10
+    },
+    "13": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 43,
+     "SKIPPED": 10
+    },
+    "14": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 49,
+     "SKIPPED": 13
+    },
+    "15": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 42,
+     "VERIFIED": 2,
+     "UNVERIFIED": 30,
+     "SKIPPED": 10
+    },
+    "16": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 78,
+     "UNVERIFIED": 63,
+     "SKIPPED": 15
+    },
+    "17": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 54,
+     "UNVERIFIED": 41,
+     "SKIPPED": 13
+    },
+    "18": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 54,
+     "UNVERIFIED": 42,
+     "SKIPPED": 12
+    },
+    "19": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 48,
+     "UNVERIFIED": 38,
+     "SKIPPED": 10
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 46,
+     "UNVERIFIED": 38,
+     "SKIPPED": 8
+    },
+    "20": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 55,
+     "UNVERIFIED": 43,
+     "SKIPPED": 12
+    },
+    "21": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 54,
+     "UNVERIFIED": 40,
+     "SKIPPED": 12,
+     "VERIFIED": 2
+    },
+    "22": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 81,
+     "UNVERIFIED": 66,
+     "SKIPPED": 15
+    },
+    "23": {
+     "score": 25.0,
+     "grade": "D",
+     "claims": 74,
+     "VERIFIED": 6,
+     "UNVERIFIED": 54,
+     "SKIPPED": 14
+    },
+    "24": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 60,
+     "UNVERIFIED": 46,
+     "SKIPPED": 12,
+     "VERIFIED": 2
+    },
+    "25": {
+     "score": 21.4,
+     "grade": "D",
+     "claims": 79,
+     "VERIFIED": 4,
+     "UNVERIFIED": 61,
+     "SKIPPED": 12,
+     "FLAGGED": 2
+    },
+    "26": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 66,
+     "VERIFIED": 2,
+     "UNVERIFIED": 52,
+     "SKIPPED": 12
+    },
+    "27": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 50,
+     "SKIPPED": 12
+    },
+    "28": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 80,
+     "UNVERIFIED": 62,
+     "SKIPPED": 16,
+     "VERIFIED": 2
+    },
+    "29": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 79,
+     "UNVERIFIED": 66,
+     "SKIPPED": 13
+    },
+    "3": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 63,
+     "VERIFIED": 2,
+     "UNVERIFIED": 48,
+     "SKIPPED": 13
+    },
+    "30": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 78,
+     "UNVERIFIED": 63,
+     "VERIFIED": 2,
+     "SKIPPED": 13
+    },
+    "31": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 57,
+     "VERIFIED": 2,
+     "UNVERIFIED": 45,
+     "SKIPPED": 10
+    },
+    "32": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 52,
+     "SKIPPED": 10
+    },
+    "33": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 76,
+     "UNVERIFIED": 61,
+     "SKIPPED": 15
+    },
+    "34": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 85,
+     "UNVERIFIED": 70,
+     "SKIPPED": 15
+    },
+    "35": {
+     "score": 19.3,
+     "grade": "D",
+     "claims": 60,
+     "VERIFIED": 2,
+     "UNVERIFIED": 48,
+     "FLAGGED": 2,
+     "SKIPPED": 8
+    },
+    "36": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 97,
+     "UNVERIFIED": 80,
+     "SKIPPED": 17
+    },
+    "37": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 70,
+     "UNVERIFIED": 56,
+     "SKIPPED": 14
+    },
+    "38": {
+     "score": 19.5,
+     "grade": "D",
+     "claims": 71,
+     "VERIFIED": 2,
+     "UNVERIFIED": 55,
+     "SKIPPED": 14
+    },
+    "39": {
+     "score": 19.5,
+     "grade": "D",
+     "claims": 79,
+     "VERIFIED": 2,
+     "UNVERIFIED": 62,
+     "SKIPPED": 15
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 43,
+     "SKIPPED": 10
+    },
+    "40": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 81,
+     "UNVERIFIED": 65,
+     "SKIPPED": 16
+    },
+    "41": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 52,
+     "UNVERIFIED": 40,
+     "SKIPPED": 12
+    },
+    "42": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 46,
+     "UNVERIFIED": 34,
+     "SKIPPED": 12
+    },
+    "43": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 92,
+     "UNVERIFIED": 77,
+     "SKIPPED": 15
+    },
+    "44": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 84,
+     "UNVERIFIED": 68,
+     "SKIPPED": 16
+    },
+    "45": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 76,
+     "UNVERIFIED": 61,
+     "SKIPPED": 15
+    },
+    "46": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 76,
+     "UNVERIFIED": 60,
+     "SKIPPED": 16
+    },
+    "47": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 53,
+     "SKIPPED": 15
+    },
+    "48": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 85,
+     "UNVERIFIED": 66,
+     "SKIPPED": 17,
+     "VERIFIED": 2
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 47,
+     "UNVERIFIED": 37,
+     "SKIPPED": 10
+    },
+    "6": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 52,
+     "UNVERIFIED": 40,
+     "SKIPPED": 10,
+     "VERIFIED": 2
+    },
+    "7": {
+     "score": 24.2,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 50,
+     "SKIPPED": 14,
+     "VERIFIED": 4
+    },
+    "8": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 53,
+     "SKIPPED": 12,
+     "VERIFIED": 2
+    },
+    "9": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 50,
+     "UNVERIFIED": 38,
+     "SKIPPED": 10,
+     "VERIFIED": 2
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 7.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 49.6
+   }
+  },
+  "hosea": {
+   "score": 19.3,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 86,
+     "UNVERIFIED": 72,
+     "SKIPPED": 14
+    },
+    "10": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 56,
+     "UNVERIFIED": 42,
+     "SKIPPED": 12,
+     "VERIFIED": 2
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 71,
+     "UNVERIFIED": 58,
+     "SKIPPED": 13
+    },
+    "12": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 59,
+     "UNVERIFIED": 47,
+     "SKIPPED": 12
+    },
+    "13": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 61,
+     "VERIFIED": 2,
+     "UNVERIFIED": 47,
+     "SKIPPED": 12
+    },
+    "14": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 76,
+     "UNVERIFIED": 58,
+     "SKIPPED": 16,
+     "VERIFIED": 2
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 99,
+     "UNVERIFIED": 82,
+     "SKIPPED": 17
+    },
+    "3": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 56,
+     "VERIFIED": 2,
+     "UNVERIFIED": 42,
+     "SKIPPED": 12
+    },
+    "4": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 81,
+     "UNVERIFIED": 64,
+     "SKIPPED": 15,
+     "VERIFIED": 2
+    },
+    "5": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 61,
+     "UNVERIFIED": 47,
+     "SKIPPED": 12,
+     "VERIFIED": 2
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 59,
+     "UNVERIFIED": 46,
+     "SKIPPED": 13
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 52,
+     "SKIPPED": 10
+    },
+    "8": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 60,
+     "UNVERIFIED": 48,
+     "SKIPPED": 12
+    },
+    "9": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 56,
+     "UNVERIFIED": 42,
+     "SKIPPED": 12,
+     "VERIFIED": 2
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 8.9,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "joel": {
+   "score": 17.1,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 54,
+     "UNVERIFIED": 44,
+     "SKIPPED": 10
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 86,
+     "UNVERIFIED": 70,
+     "SKIPPED": 16
+    },
+    "3": {
+     "score": 16.2,
+     "grade": "D",
+     "claims": 58,
+     "UNVERIFIED": 46,
+     "SKIPPED": 10,
+     "FLAGGED": 2
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 0.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 47.2
+   }
+  },
+  "amos": {
+   "score": 18.2,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 16.3,
+     "grade": "D",
+     "claims": 76,
+     "UNVERIFIED": 63,
+     "SKIPPED": 11,
+     "FLAGGED": 2
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 56,
+     "SKIPPED": 13
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 54,
+     "UNVERIFIED": 44,
+     "SKIPPED": 10
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 55,
+     "UNVERIFIED": 45,
+     "SKIPPED": 10
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 61,
+     "SKIPPED": 13
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 49,
+     "UNVERIFIED": 41,
+     "SKIPPED": 8
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 64,
+     "UNVERIFIED": 51,
+     "SKIPPED": 13
+    },
+    "8": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 45,
+     "UNVERIFIED": 35,
+     "SKIPPED": 8,
+     "VERIFIED": 2
+    },
+    "9": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 57,
+     "SKIPPED": 13,
+     "VERIFIED": 2
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 4.2,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 49.1
+   }
+  },
+  "obadiah": {
+   "score": 17.5,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 86,
+     "UNVERIFIED": 71,
+     "SKIPPED": 15
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 0.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "jonah": {
+   "score": 18.6,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 84,
+     "VERIFIED": 2,
+     "UNVERIFIED": 69,
+     "SKIPPED": 13
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 56,
+     "UNVERIFIED": 46,
+     "SKIPPED": 10
+    },
+    "3": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 62,
+     "VERIFIED": 2,
+     "UNVERIFIED": 48,
+     "SKIPPED": 12
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 50,
+     "SKIPPED": 12
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 5.2,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "micah": {
+   "score": 18.9,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 57,
+     "SKIPPED": 13,
+     "VERIFIED": 2
+    },
+    "2": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 54,
+     "UNVERIFIED": 40,
+     "SKIPPED": 12,
+     "VERIFIED": 2
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 52,
+     "UNVERIFIED": 40,
+     "SKIPPED": 12
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 57,
+     "UNVERIFIED": 45,
+     "SKIPPED": 12
+    },
+    "5": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 77,
+     "UNVERIFIED": 61,
+     "SKIPPED": 14,
+     "VERIFIED": 2
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 77,
+     "UNVERIFIED": 61,
+     "SKIPPED": 16
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 77,
+     "UNVERIFIED": 62,
+     "SKIPPED": 15
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 7.1,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "nahum": {
+   "score": 18.6,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 55,
+     "VERIFIED": 2,
+     "UNVERIFIED": 43,
+     "SKIPPED": 10
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 50,
+     "UNVERIFIED": 42,
+     "SKIPPED": 8
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 60,
+     "SKIPPED": 13
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 5.6,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "habakkuk": {
+   "score": 18.3,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 75,
+     "UNVERIFIED": 58,
+     "SKIPPED": 15,
+     "VERIFIED": 2
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 80,
+     "UNVERIFIED": 63,
+     "SKIPPED": 17
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 79,
+     "UNVERIFIED": 63,
+     "SKIPPED": 16
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 4.2,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "zephaniah": {
+   "score": 19.2,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 80,
+     "UNVERIFIED": 61,
+     "SKIPPED": 15,
+     "VERIFIED": 4
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 53,
+     "SKIPPED": 13
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 78,
+     "UNVERIFIED": 64,
+     "SKIPPED": 14
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 8.3,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "haggai": {
+   "score": 17.5,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 50,
+     "SKIPPED": 12
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 81,
+     "UNVERIFIED": 65,
+     "SKIPPED": 16
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 0.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "zechariah": {
+   "score": 18.3,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 23.5,
+     "grade": "D",
+     "claims": 81,
+     "VERIFIED": 6,
+     "UNVERIFIED": 61,
+     "SKIPPED": 14
+    },
+    "10": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 54,
+     "UNVERIFIED": 42,
+     "SKIPPED": 12
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 59,
+     "UNVERIFIED": 47,
+     "SKIPPED": 12
+    },
+    "12": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 58,
+     "UNVERIFIED": 46,
+     "SKIPPED": 12
+    },
+    "13": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 52,
+     "UNVERIFIED": 40,
+     "SKIPPED": 12
+    },
+    "14": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 76,
+     "UNVERIFIED": 61,
+     "SKIPPED": 15
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 60,
+     "UNVERIFIED": 48,
+     "SKIPPED": 12
+    },
+    "3": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 48,
+     "SKIPPED": 12,
+     "VERIFIED": 2
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 56,
+     "UNVERIFIED": 44,
+     "SKIPPED": 12
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 51,
+     "UNVERIFIED": 39,
+     "SKIPPED": 12
+    },
+    "6": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 59,
+     "UNVERIFIED": 45,
+     "SKIPPED": 12,
+     "VERIFIED": 2
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 60,
+     "UNVERIFIED": 48,
+     "SKIPPED": 12
+    },
+    "8": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 57,
+     "SKIPPED": 15
+    },
+    "9": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 75,
+     "UNVERIFIED": 61,
+     "SKIPPED": 14
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 3.9,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "malachi": {
+   "score": 19.4,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 55,
+     "SKIPPED": 12
+    },
+    "2": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 65,
+     "UNVERIFIED": 51,
+     "VERIFIED": 2,
+     "SKIPPED": 12
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 89,
+     "UNVERIFIED": 74,
+     "SKIPPED": 15
+    },
+    "4": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 42,
+     "UNVERIFIED": 32,
+     "VERIFIED": 2,
+     "SKIPPED": 8
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 9.4,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "acts": {
+   "score": 18.1,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 79,
+     "UNVERIFIED": 65,
+     "SKIPPED": 12,
+     "VERIFIED": 2
+    },
+    "10": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 62,
+     "SKIPPED": 12
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 62,
+     "SKIPPED": 12
+    },
+    "12": {
+     "score": 18.8,
+     "grade": "D",
+     "claims": 77,
+     "UNVERIFIED": 63,
+     "SKIPPED": 10,
+     "VERIFIED": 2,
+     "FLAGGED": 2
+    },
+    "13": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 97,
+     "UNVERIFIED": 78,
+     "VERIFIED": 4,
+     "SKIPPED": 15
+    },
+    "14": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 75,
+     "UNVERIFIED": 63,
+     "SKIPPED": 12
+    },
+    "15": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 102,
+     "UNVERIFIED": 87,
+     "SKIPPED": 15
+    },
+    "16": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 99,
+     "UNVERIFIED": 84,
+     "SKIPPED": 15
+    },
+    "17": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 60,
+     "SKIPPED": 12
+    },
+    "18": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 61,
+     "SKIPPED": 12
+    },
+    "19": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 61,
+     "SKIPPED": 12
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 98,
+     "UNVERIFIED": 83,
+     "SKIPPED": 15
+    },
+    "20": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 75,
+     "UNVERIFIED": 61,
+     "VERIFIED": 2,
+     "SKIPPED": 12
+    },
+    "21": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 97,
+     "UNVERIFIED": 80,
+     "SKIPPED": 15,
+     "VERIFIED": 2
+    },
+    "22": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 61,
+     "SKIPPED": 12
+    },
+    "23": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 62,
+     "SKIPPED": 12
+    },
+    "24": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 75,
+     "UNVERIFIED": 63,
+     "SKIPPED": 12
+    },
+    "25": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 62,
+     "SKIPPED": 12
+    },
+    "26": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 62,
+     "SKIPPED": 12
+    },
+    "27": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 60,
+     "SKIPPED": 12
+    },
+    "28": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 60,
+     "SKIPPED": 12
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 75,
+     "UNVERIFIED": 63,
+     "SKIPPED": 12
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 77,
+     "UNVERIFIED": 65,
+     "SKIPPED": 12
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 99,
+     "UNVERIFIED": 84,
+     "SKIPPED": 15
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 62,
+     "SKIPPED": 12
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 97,
+     "UNVERIFIED": 82,
+     "SKIPPED": 15
+    },
+    "8": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 71,
+     "UNVERIFIED": 57,
+     "SKIPPED": 12,
+     "VERIFIED": 2
+    },
+    "9": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 102,
+     "UNVERIFIED": 85,
+     "SKIPPED": 15,
+     "VERIFIED": 2
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 3.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 49.7
+   }
+  },
+  "1_corinthians": {
+   "score": 20.3,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 116,
+     "UNVERIFIED": 88,
+     "VERIFIED": 2,
+     "SKIPPED": 18,
+     "FLAGGED": 8
+    },
+    "10": {
+     "score": 24.2,
+     "grade": "D",
+     "claims": 84,
+     "UNVERIFIED": 58,
+     "SKIPPED": 14,
+     "FLAGGED": 4,
+     "VERIFIED": 8
+    },
+    "11": {
+     "score": 24.2,
+     "grade": "D",
+     "claims": 81,
+     "VERIFIED": 8,
+     "UNVERIFIED": 55,
+     "SKIPPED": 14,
+     "FLAGGED": 4
+    },
+    "12": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 55,
+     "SKIPPED": 12,
+     "FLAGGED": 3,
+     "VERIFIED": 4
+    },
+    "13": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 77,
+     "VERIFIED": 6,
+     "UNVERIFIED": 55,
+     "SKIPPED": 13,
+     "FLAGGED": 3
+    },
+    "14": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 78,
+     "UNVERIFIED": 58,
+     "SKIPPED": 13,
+     "FLAGGED": 3,
+     "VERIFIED": 4
+    },
+    "15": {
+     "score": 21.1,
+     "grade": "D",
+     "claims": 141,
+     "VERIFIED": 8,
+     "UNVERIFIED": 105,
+     "SKIPPED": 22,
+     "FLAGGED": 6
+    },
+    "16": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 82,
+     "UNVERIFIED": 63,
+     "SKIPPED": 14,
+     "FLAGGED": 3,
+     "VERIFIED": 2
+    },
+    "2": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 69,
+     "VERIFIED": 2,
+     "UNVERIFIED": 50,
+     "SKIPPED": 13,
+     "FLAGGED": 4
+    },
+    "3": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 82,
+     "UNVERIFIED": 59,
+     "SKIPPED": 15,
+     "FLAGGED": 6,
+     "VERIFIED": 2
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 84,
+     "UNVERIFIED": 63,
+     "SKIPPED": 15,
+     "FLAGGED": 6
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 61,
+     "UNVERIFIED": 45,
+     "SKIPPED": 12,
+     "FLAGGED": 4
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 68,
+     "UNVERIFIED": 52,
+     "SKIPPED": 12,
+     "FLAGGED": 4
+    },
+    "7": {
+     "score": 16.7,
+     "grade": "D",
+     "claims": 101,
+     "UNVERIFIED": 75,
+     "SKIPPED": 16,
+     "FLAGGED": 10
+    },
+    "8": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 61,
+     "UNVERIFIED": 43,
+     "VERIFIED": 2,
+     "SKIPPED": 12,
+     "FLAGGED": 4
+    },
+    "9": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 104,
+     "UNVERIFIED": 75,
+     "SKIPPED": 16,
+     "FLAGGED": 5,
+     "VERIFIED": 8
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 14.4,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 49.6
+   }
+  },
+  "2_corinthians": {
+   "score": 18.9,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 76,
+     "UNVERIFIED": 58,
+     "SKIPPED": 12,
+     "FLAGGED": 6
+    },
+    "10": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 63,
+     "UNVERIFIED": 46,
+     "VERIFIED": 2,
+     "SKIPPED": 12,
+     "FLAGGED": 3
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 70,
+     "UNVERIFIED": 54,
+     "SKIPPED": 13,
+     "FLAGGED": 3
+    },
+    "12": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 51,
+     "SKIPPED": 13,
+     "FLAGGED": 3,
+     "VERIFIED": 2
+    },
+    "13": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 63,
+     "VERIFIED": 2,
+     "UNVERIFIED": 44,
+     "SKIPPED": 14,
+     "FLAGGED": 3
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 65,
+     "UNVERIFIED": 50,
+     "SKIPPED": 12,
+     "FLAGGED": 3
+    },
+    "3": {
+     "score": 21.5,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 53,
+     "SKIPPED": 13,
+     "FLAGGED": 3,
+     "VERIFIED": 4
+    },
+    "4": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 64,
+     "VERIFIED": 4,
+     "UNVERIFIED": 45,
+     "SKIPPED": 12,
+     "FLAGGED": 3
+    },
+    "5": {
+     "score": 19.5,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 54,
+     "SKIPPED": 14,
+     "FLAGGED": 3,
+     "VERIFIED": 2
+    },
+    "6": {
+     "score": 19.5,
+     "grade": "D",
+     "claims": 67,
+     "VERIFIED": 2,
+     "UNVERIFIED": 50,
+     "SKIPPED": 12,
+     "FLAGGED": 3
+    },
+    "7": {
+     "score": 16.2,
+     "grade": "D",
+     "claims": 59,
+     "UNVERIFIED": 44,
+     "SKIPPED": 10,
+     "FLAGGED": 5
+    },
+    "8": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 50,
+     "SKIPPED": 13,
+     "FLAGGED": 3
+    },
+    "9": {
+     "score": 16.3,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 50,
+     "SKIPPED": 11,
+     "FLAGGED": 5
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 8.2,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 48.8
+   }
+  },
+  "galatians": {
+   "score": 19.8,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 84,
+     "UNVERIFIED": 68,
+     "SKIPPED": 13,
+     "FLAGGED": 3
+    },
+    "2": {
+     "score": 19.5,
+     "grade": "D",
+     "claims": 78,
+     "UNVERIFIED": 61,
+     "VERIFIED": 2,
+     "SKIPPED": 12,
+     "FLAGGED": 3
+    },
+    "3": {
+     "score": 19.2,
+     "grade": "D",
+     "claims": 91,
+     "UNVERIFIED": 70,
+     "SKIPPED": 15,
+     "FLAGGED": 4,
+     "VERIFIED": 2
+    },
+    "4": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 75,
+     "UNVERIFIED": 57,
+     "SKIPPED": 13,
+     "FLAGGED": 3,
+     "VERIFIED": 2
+    },
+    "5": {
+     "score": 25.0,
+     "grade": "D",
+     "claims": 71,
+     "VERIFIED": 6,
+     "UNVERIFIED": 50,
+     "SKIPPED": 12,
+     "FLAGGED": 3
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 63,
+     "UNVERIFIED": 49,
+     "SKIPPED": 12,
+     "FLAGGED": 2
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 11.4,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "ephesians": {
+   "score": 21.1,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 19.5,
+     "grade": "D",
+     "claims": 76,
+     "UNVERIFIED": 56,
+     "SKIPPED": 12,
+     "FLAGGED": 6,
+     "VERIFIED": 2
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 58,
+     "UNVERIFIED": 44,
+     "SKIPPED": 10,
+     "FLAGGED": 4
+    },
+    "3": {
+     "score": 24.2,
+     "grade": "D",
+     "claims": 49,
+     "VERIFIED": 4,
+     "UNVERIFIED": 33,
+     "SKIPPED": 8,
+     "FLAGGED": 4
+    },
+    "4": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 71,
+     "VERIFIED": 2,
+     "UNVERIFIED": 51,
+     "SKIPPED": 12,
+     "FLAGGED": 6
+    },
+    "5": {
+     "score": 25.0,
+     "grade": "D",
+     "claims": 73,
+     "VERIFIED": 6,
+     "UNVERIFIED": 48,
+     "SKIPPED": 13,
+     "FLAGGED": 6
+    },
+    "6": {
+     "score": 20.4,
+     "grade": "D",
+     "claims": 77,
+     "UNVERIFIED": 53,
+     "VERIFIED": 4,
+     "SKIPPED": 12,
+     "FLAGGED": 8
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 18.9,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 48.8
+   }
+  },
+  "philippians": {
+   "score": 20.8,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 71,
+     "VERIFIED": 4,
+     "UNVERIFIED": 52,
+     "SKIPPED": 12,
+     "FLAGGED": 3
+    },
+    "2": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 56,
+     "SKIPPED": 13,
+     "FLAGGED": 3,
+     "VERIFIED": 2
+    },
+    "3": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 50,
+     "VERIFIED": 2,
+     "SKIPPED": 12,
+     "FLAGGED": 3
+    },
+    "4": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 52,
+     "VERIFIED": 2,
+     "UNVERIFIED": 40,
+     "SKIPPED": 8,
+     "FLAGGED": 2
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 16.7,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "colossians": {
+   "score": 20.4,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 23.5,
+     "grade": "D",
+     "claims": 79,
+     "VERIFIED": 6,
+     "UNVERIFIED": 57,
+     "SKIPPED": 13,
+     "FLAGGED": 3
+    },
+    "2": {
+     "score": 19.5,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 57,
+     "SKIPPED": 12,
+     "FLAGGED": 3,
+     "VERIFIED": 2
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 57,
+     "SKIPPED": 13,
+     "FLAGGED": 3
+    },
+    "4": {
+     "score": 21.0,
+     "grade": "D",
+     "claims": 53,
+     "UNVERIFIED": 39,
+     "SKIPPED": 8,
+     "FLAGGED": 4,
+     "VERIFIED": 2
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 16.2,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 47.5
+   }
+  },
+  "1_thessalonians": {
+   "score": 17.2,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 54,
+     "SKIPPED": 8,
+     "FLAGGED": 4
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 93,
+     "UNVERIFIED": 75,
+     "SKIPPED": 12,
+     "FLAGGED": 6
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 57,
+     "SKIPPED": 8,
+     "FLAGGED": 4
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 110,
+     "UNVERIFIED": 92,
+     "SKIPPED": 12,
+     "FLAGGED": 6
+    },
+    "5": {
+     "score": 16.2,
+     "grade": "D",
+     "claims": 106,
+     "UNVERIFIED": 88,
+     "SKIPPED": 10,
+     "FLAGGED": 8
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 0.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 48.3
+   }
+  },
+  "2_thessalonians": {
+   "score": 17.5,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 62,
+     "SKIPPED": 8,
+     "FLAGGED": 4
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 112,
+     "UNVERIFIED": 94,
+     "SKIPPED": 12,
+     "FLAGGED": 6
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 111,
+     "UNVERIFIED": 93,
+     "SKIPPED": 12,
+     "FLAGGED": 6
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 0.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "1_timothy": {
+   "score": 19.6,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 19.5,
+     "grade": "D",
+     "claims": 91,
+     "UNVERIFIED": 62,
+     "VERIFIED": 2,
+     "SKIPPED": 14,
+     "FLAGGED": 13
+    },
+    "2": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 44,
+     "VERIFIED": 4,
+     "SKIPPED": 12,
+     "FLAGGED": 9
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 75,
+     "UNVERIFIED": 53,
+     "SKIPPED": 13,
+     "FLAGGED": 9
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 50,
+     "SKIPPED": 13,
+     "FLAGGED": 9
+    },
+    "5": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 75,
+     "VERIFIED": 2,
+     "UNVERIFIED": 49,
+     "SKIPPED": 14,
+     "FLAGGED": 10
+    },
+    "6": {
+     "score": 19.5,
+     "grade": "D",
+     "claims": 91,
+     "UNVERIFIED": 61,
+     "SKIPPED": 16,
+     "FLAGGED": 12,
+     "VERIFIED": 2
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 10.3,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "2_timothy": {
+   "score": 19.6,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 19.5,
+     "grade": "D",
+     "claims": 88,
+     "UNVERIFIED": 62,
+     "SKIPPED": 14,
+     "FLAGGED": 10,
+     "VERIFIED": 2
+    },
+    "2": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 70,
+     "VERIFIED": 4,
+     "UNVERIFIED": 46,
+     "SKIPPED": 12,
+     "FLAGGED": 8
+    },
+    "3": {
+     "score": 18.8,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 45,
+     "SKIPPED": 10,
+     "FLAGGED": 9,
+     "VERIFIED": 2
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 52,
+     "SKIPPED": 13,
+     "FLAGGED": 8
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 11.9,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 47.9
+   }
+  },
+  "titus": {
+   "score": 18.3,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 73,
+     "VERIFIED": 2,
+     "UNVERIFIED": 50,
+     "SKIPPED": 14,
+     "FLAGGED": 7
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 58,
+     "UNVERIFIED": 41,
+     "SKIPPED": 12,
+     "FLAGGED": 5
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 65,
+     "UNVERIFIED": 46,
+     "SKIPPED": 13,
+     "FLAGGED": 6
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 4.2,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "philemon": {
+   "score": 17.5,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 54,
+     "SKIPPED": 12,
+     "FLAGGED": 6
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 0.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "hebrews": {
+   "score": 24.4,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 64,
+     "UNVERIFIED": 45,
+     "VERIFIED": 2,
+     "SKIPPED": 13,
+     "FLAGGED": 4
+    },
+    "10": {
+     "score": 30.8,
+     "grade": "D",
+     "claims": 119,
+     "VERIFIED": 5,
+     "UNVERIFIED": 87,
+     "SKIPPED": 15,
+     "FLAGGED": 12
+    },
+    "11": {
+     "score": 32.3,
+     "grade": "D",
+     "claims": 176,
+     "UNVERIFIED": 119,
+     "VERIFIED": 8,
+     "SKIPPED": 34,
+     "FLAGGED": 15
+    },
+    "12": {
+     "score": 32.2,
+     "grade": "D",
+     "claims": 126,
+     "VERIFIED": 7,
+     "UNVERIFIED": 88,
+     "SKIPPED": 21,
+     "FLAGGED": 10
+    },
+    "13": {
+     "score": 33.1,
+     "grade": "D",
+     "claims": 87,
+     "VERIFIED": 5,
+     "UNVERIFIED": 62,
+     "SKIPPED": 14,
+     "FLAGGED": 6
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 57,
+     "UNVERIFIED": 41,
+     "SKIPPED": 12,
+     "FLAGGED": 4
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 57,
+     "UNVERIFIED": 41,
+     "SKIPPED": 12,
+     "FLAGGED": 4
+    },
+    "4": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 56,
+     "UNVERIFIED": 38,
+     "SKIPPED": 12,
+     "FLAGGED": 4,
+     "VERIFIED": 2
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 52,
+     "UNVERIFIED": 38,
+     "SKIPPED": 10,
+     "FLAGGED": 4
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 49,
+     "SKIPPED": 14,
+     "FLAGGED": 6
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 75,
+     "UNVERIFIED": 55,
+     "SKIPPED": 14,
+     "FLAGGED": 6
+    },
+    "8": {
+     "score": 27.5,
+     "grade": "D",
+     "claims": 59,
+     "UNVERIFIED": 44,
+     "SKIPPED": 7,
+     "FLAGGED": 8
+    },
+    "9": {
+     "score": 31.7,
+     "grade": "D",
+     "claims": 111,
+     "UNVERIFIED": 76,
+     "VERIFIED": 5,
+     "SKIPPED": 17,
+     "FLAGGED": 13
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 10.8,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 46.2,
+    "timeline": 100.0,
+    "cross_reference": 50.5
+   }
+  },
+  "james": {
+   "score": 32.0,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 32.4,
+     "grade": "D",
+     "claims": 83,
+     "VERIFIED": 5,
+     "UNVERIFIED": 62,
+     "SKIPPED": 11,
+     "FLAGGED": 5
+    },
+    "2": {
+     "score": 30.8,
+     "grade": "D",
+     "claims": 47,
+     "UNVERIFIED": 36,
+     "VERIFIED": 2,
+     "SKIPPED": 7,
+     "FLAGGED": 2
+    },
+    "3": {
+     "score": 31.5,
+     "grade": "D",
+     "claims": 43,
+     "UNVERIFIED": 33,
+     "SKIPPED": 6,
+     "FLAGGED": 2,
+     "VERIFIED": 2
+    },
+    "4": {
+     "score": 34.0,
+     "grade": "D",
+     "claims": 43,
+     "UNVERIFIED": 32,
+     "VERIFIED": 3,
+     "SKIPPED": 6,
+     "FLAGGED": 2
+    },
+    "5": {
+     "score": 31.5,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 51,
+     "SKIPPED": 9,
+     "FLAGGED": 3,
+     "VERIFIED": 3
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 19.7,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 100.0,
+    "timeline": 100.0,
+    "cross_reference": 54.0
+   }
+  },
+  "1_peter": {
+   "score": 31.6,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 31.7,
+     "grade": "D",
+     "claims": 94,
+     "VERIFIED": 5,
+     "UNVERIFIED": 73,
+     "SKIPPED": 16
+    },
+    "2": {
+     "score": 32.3,
+     "grade": "D",
+     "claims": 74,
+     "VERIFIED": 4,
+     "UNVERIFIED": 58,
+     "SKIPPED": 12
+    },
+    "3": {
+     "score": 31.9,
+     "grade": "D",
+     "claims": 75,
+     "VERIFIED": 4,
+     "UNVERIFIED": 59,
+     "SKIPPED": 12
+    },
+    "4": {
+     "score": 30.0,
+     "grade": "D",
+     "claims": 71,
+     "UNVERIFIED": 57,
+     "VERIFIED": 2,
+     "SKIPPED": 12
+    },
+    "5": {
+     "score": 31.9,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 57,
+     "VERIFIED": 4,
+     "SKIPPED": 12
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 19.7,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 100.0,
+    "timeline": 100.0,
+    "cross_reference": 50.9
+   }
+  },
+  "2_peter": {
+   "score": 31.4,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 31.2,
+     "grade": "D",
+     "claims": 72,
+     "VERIFIED": 3,
+     "UNVERIFIED": 54,
+     "SKIPPED": 12,
+     "FLAGGED": 3
+    },
+    "2": {
+     "score": 31.2,
+     "grade": "D",
+     "claims": 73,
+     "VERIFIED": 5,
+     "UNVERIFIED": 53,
+     "SKIPPED": 9,
+     "FLAGGED": 6
+    },
+    "3": {
+     "score": 31.8,
+     "grade": "D",
+     "claims": 74,
+     "VERIFIED": 5,
+     "UNVERIFIED": 54,
+     "FLAGGED": 5,
+     "SKIPPED": 10
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 24.1,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 100.0,
+    "timeline": 100.0,
+    "cross_reference": 43.8
+   }
+  },
+  "1_john": {
+   "score": 30.6,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 31.6,
+     "grade": "D",
+     "claims": 46,
+     "UNVERIFIED": 31,
+     "VERIFIED": 3,
+     "SKIPPED": 7,
+     "FLAGGED": 5
+    },
+    "2": {
+     "score": 29.8,
+     "grade": "D",
+     "claims": 115,
+     "UNVERIFIED": 81,
+     "SKIPPED": 19,
+     "FLAGGED": 11,
+     "VERIFIED": 4
+    },
+    "3": {
+     "score": 29.7,
+     "grade": "D",
+     "claims": 73,
+     "UNVERIFIED": 53,
+     "SKIPPED": 12,
+     "FLAGGED": 6,
+     "VERIFIED": 2
+    },
+    "4": {
+     "score": 31.9,
+     "grade": "D",
+     "claims": 70,
+     "UNVERIFIED": 48,
+     "VERIFIED": 4,
+     "SKIPPED": 11,
+     "FLAGGED": 7
+    },
+    "5": {
+     "score": 30.0,
+     "grade": "D",
+     "claims": 71,
+     "UNVERIFIED": 51,
+     "VERIFIED": 2,
+     "SKIPPED": 12,
+     "FLAGGED": 6
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 16.5,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 100.0,
+    "timeline": 100.0,
+    "cross_reference": 48.7
+   }
+  },
+  "2_john": {
+   "score": 28.0,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 28.0,
+     "grade": "D",
+     "claims": 63,
+     "UNVERIFIED": 44,
+     "VERIFIED": 2,
+     "SKIPPED": 8,
+     "FLAGGED": 9
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 12.5,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 100.0,
+    "timeline": 100.0,
+    "cross_reference": 36.4
+   }
+  },
+  "3_john": {
+   "score": 29.5,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 29.5,
+     "grade": "D",
+     "claims": 65,
+     "VERIFIED": 3,
+     "UNVERIFIED": 45,
+     "SKIPPED": 9,
+     "FLAGGED": 8
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 16.7,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 100.0,
+    "timeline": 100.0,
+    "cross_reference": 40.9
+   }
+  },
+  "jude": {
+   "score": 30.8,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 30.8,
+     "grade": "D",
+     "claims": 101,
+     "UNVERIFIED": 72,
+     "SKIPPED": 16,
+     "FLAGGED": 9,
+     "VERIFIED": 4
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 16.7,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 100.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "1_chronicles": {
+   "score": 29.9,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 31,
+     "UNVERIFIED": 23,
+     "SKIPPED": 8
+    },
+    "10": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 26,
+     "SKIPPED": 6,
+     "UNVERIFIED": 20
+    },
+    "11": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 23,
+     "SKIPPED": 6,
+     "UNVERIFIED": 17
+    },
+    "12": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 19,
+     "SKIPPED": 4,
+     "UNVERIFIED": 15
+    },
+    "13": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 26,
+     "SKIPPED": 8,
+     "UNVERIFIED": 18
+    },
+    "14": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 19,
+     "SKIPPED": 4,
+     "UNVERIFIED": 15
+    },
+    "15": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 28,
+     "SKIPPED": 8,
+     "UNVERIFIED": 20
+    },
+    "16": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 32,
+     "SKIPPED": 8,
+     "UNVERIFIED": 24
+    },
+    "17": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 23,
+     "SKIPPED": 6,
+     "UNVERIFIED": 17
+    },
+    "18": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 19,
+     "SKIPPED": 4,
+     "UNVERIFIED": 15
+    },
+    "19": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 18,
+     "SKIPPED": 4,
+     "UNVERIFIED": 14
+    },
+    "2": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 21,
+     "SKIPPED": 6,
+     "UNVERIFIED": 15
+    },
+    "20": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 25,
+     "SKIPPED": 8,
+     "UNVERIFIED": 17
+    },
+    "21": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 33,
+     "UNVERIFIED": 25,
+     "SKIPPED": 8
+    },
+    "22": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 27,
+     "UNVERIFIED": 21,
+     "SKIPPED": 6
+    },
+    "23": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 18,
+     "SKIPPED": 4,
+     "UNVERIFIED": 14
+    },
+    "24": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 24,
+     "SKIPPED": 6,
+     "UNVERIFIED": 18
+    },
+    "25": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 26,
+     "UNVERIFIED": 20,
+     "SKIPPED": 6
+    },
+    "26": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 16,
+     "SKIPPED": 4,
+     "UNVERIFIED": 12
+    },
+    "27": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 23,
+     "SKIPPED": 6,
+     "UNVERIFIED": 17
+    },
+    "28": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 31,
+     "SKIPPED": 8,
+     "UNVERIFIED": 23
+    },
+    "29": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 32,
+     "SKIPPED": 8,
+     "UNVERIFIED": 24
+    },
+    "3": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 29,
+     "SKIPPED": 10,
+     "UNVERIFIED": 19
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 21,
+     "SKIPPED": 8
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 30,
+     "SKIPPED": 8,
+     "UNVERIFIED": 22
+    },
+    "6": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 29,
+     "SKIPPED": 8,
+     "UNVERIFIED": 21
+    },
+    "7": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 15,
+     "SKIPPED": 4,
+     "UNVERIFIED": 11
+    },
+    "8": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 24,
+     "SKIPPED": 6,
+     "UNVERIFIED": 18
+    },
+    "9": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 32,
+     "UNVERIFIED": 24,
+     "SKIPPED": 8
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 62.1,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "2_chronicles": {
+   "score": 36.4,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 16,
+     "SKIPPED": 4,
+     "UNVERIFIED": 12
+    },
+    "10": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 15,
+     "SKIPPED": 4,
+     "UNVERIFIED": 11
+    },
+    "11": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 17,
+     "SKIPPED": 4,
+     "UNVERIFIED": 13
+    },
+    "12": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 19,
+     "SKIPPED": 4,
+     "UNVERIFIED": 15
+    },
+    "13": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 17,
+     "SKIPPED": 4,
+     "UNVERIFIED": 13
+    },
+    "14": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 17,
+     "SKIPPED": 4,
+     "UNVERIFIED": 13
+    },
+    "15": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 18,
+     "SKIPPED": 4,
+     "UNVERIFIED": 14
+    },
+    "16": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 17,
+     "SKIPPED": 4,
+     "UNVERIFIED": 13
+    },
+    "17": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 19,
+     "SKIPPED": 5,
+     "UNVERIFIED": 14
+    },
+    "18": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 17,
+     "SKIPPED": 4,
+     "UNVERIFIED": 13
+    },
+    "19": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 17,
+     "SKIPPED": 4,
+     "UNVERIFIED": 13
+    },
+    "2": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 17,
+     "SKIPPED": 4,
+     "UNVERIFIED": 13
+    },
+    "20": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 20,
+     "SKIPPED": 5,
+     "UNVERIFIED": 15
+    },
+    "21": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 18,
+     "SKIPPED": 4,
+     "UNVERIFIED": 14
+    },
+    "22": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 21,
+     "SKIPPED": 4,
+     "UNVERIFIED": 17
+    },
+    "23": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 18,
+     "SKIPPED": 4,
+     "UNVERIFIED": 14
+    },
+    "24": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 19,
+     "SKIPPED": 5,
+     "UNVERIFIED": 14
+    },
+    "25": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 17,
+     "SKIPPED": 4,
+     "UNVERIFIED": 13
+    },
+    "26": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 19,
+     "SKIPPED": 5,
+     "UNVERIFIED": 14
+    },
+    "27": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 19,
+     "SKIPPED": 4,
+     "UNVERIFIED": 15
+    },
+    "28": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 20,
+     "SKIPPED": 5,
+     "UNVERIFIED": 15
+    },
+    "29": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 19,
+     "SKIPPED": 4,
+     "UNVERIFIED": 15
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 29,
+     "UNVERIFIED": 21,
+     "SKIPPED": 8
+    },
+    "30": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 21,
+     "SKIPPED": 5,
+     "UNVERIFIED": 16
+    },
+    "31": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 20,
+     "SKIPPED": 5,
+     "UNVERIFIED": 15
+    },
+    "32": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 22,
+     "SKIPPED": 6,
+     "UNVERIFIED": 16
+    },
+    "33": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 19,
+     "SKIPPED": 5,
+     "UNVERIFIED": 14
+    },
+    "34": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 20,
+     "SKIPPED": 5,
+     "UNVERIFIED": 15
+    },
+    "35": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 21,
+     "SKIPPED": 6,
+     "UNVERIFIED": 15
+    },
+    "36": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 23,
+     "SKIPPED": 6,
+     "UNVERIFIED": 17
+    },
+    "4": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 20,
+     "SKIPPED": 6,
+     "UNVERIFIED": 14
+    },
+    "5": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 21,
+     "SKIPPED": 6,
+     "UNVERIFIED": 15
+    },
+    "6": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 21,
+     "SKIPPED": 6,
+     "UNVERIFIED": 15
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 29,
+     "SKIPPED": 8,
+     "UNVERIFIED": 21
+    },
+    "8": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 16,
+     "SKIPPED": 4,
+     "UNVERIFIED": 12
+    },
+    "9": {
+     "score": 37.5,
+     "grade": "D",
+     "claims": 21,
+     "SKIPPED": 6,
+     "UNVERIFIED": 15
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 94.4,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "ezra": {
+   "score": 20.5,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 19.5,
+     "grade": "D",
+     "claims": 81,
+     "UNVERIFIED": 58,
+     "SKIPPED": 13,
+     "FLAGGED": 8,
+     "VERIFIED": 2
+    },
+    "10": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 65,
+     "UNVERIFIED": 44,
+     "SKIPPED": 10,
+     "FLAGGED": 9,
+     "VERIFIED": 2
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 83,
+     "UNVERIFIED": 59,
+     "SKIPPED": 12,
+     "FLAGGED": 12
+    },
+    "3": {
+     "score": 25.0,
+     "grade": "D",
+     "claims": 71,
+     "VERIFIED": 6,
+     "UNVERIFIED": 45,
+     "SKIPPED": 12,
+     "FLAGGED": 8
+    },
+    "4": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 65,
+     "UNVERIFIED": 47,
+     "SKIPPED": 8,
+     "FLAGGED": 8,
+     "VERIFIED": 2
+    },
+    "5": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 64,
+     "VERIFIED": 2,
+     "UNVERIFIED": 44,
+     "SKIPPED": 10,
+     "FLAGGED": 8
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 70,
+     "UNVERIFIED": 50,
+     "SKIPPED": 12,
+     "FLAGGED": 8
+    },
+    "7": {
+     "score": 24.2,
+     "grade": "D",
+     "claims": 64,
+     "UNVERIFIED": 42,
+     "VERIFIED": 4,
+     "SKIPPED": 10,
+     "FLAGGED": 8
+    },
+    "8": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 44,
+     "SKIPPED": 10,
+     "FLAGGED": 8,
+     "VERIFIED": 4
+    },
+    "9": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 52,
+     "SKIPPED": 13,
+     "FLAGGED": 9
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 15.2,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "nehemiah": {
+   "score": 19.4,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 76,
+     "VERIFIED": 4,
+     "UNVERIFIED": 51,
+     "SKIPPED": 13,
+     "FLAGGED": 8
+    },
+    "10": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 40,
+     "UNVERIFIED": 29,
+     "SKIPPED": 6,
+     "FLAGGED": 5
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 40,
+     "UNVERIFIED": 29,
+     "SKIPPED": 6,
+     "FLAGGED": 5
+    },
+    "12": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 50,
+     "SKIPPED": 12,
+     "FLAGGED": 8,
+     "VERIFIED": 2
+    },
+    "13": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 99,
+     "UNVERIFIED": 71,
+     "SKIPPED": 16,
+     "FLAGGED": 12
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 77,
+     "UNVERIFIED": 57,
+     "SKIPPED": 8,
+     "FLAGGED": 12
+    },
+    "3": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 53,
+     "VERIFIED": 2,
+     "UNVERIFIED": 37,
+     "SKIPPED": 6,
+     "FLAGGED": 8
+    },
+    "4": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 80,
+     "UNVERIFIED": 54,
+     "SKIPPED": 10,
+     "FLAGGED": 12,
+     "VERIFIED": 4
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 84,
+     "UNVERIFIED": 59,
+     "SKIPPED": 13,
+     "FLAGGED": 12
+    },
+    "6": {
+     "score": 24.2,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 48,
+     "SKIPPED": 10,
+     "FLAGGED": 12,
+     "VERIFIED": 4
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 45,
+     "UNVERIFIED": 33,
+     "SKIPPED": 4,
+     "FLAGGED": 8
+    },
+    "8": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 76,
+     "UNVERIFIED": 54,
+     "SKIPPED": 13,
+     "FLAGGED": 9
+    },
+    "9": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 50,
+     "SKIPPED": 12,
+     "FLAGGED": 8,
+     "VERIFIED": 2
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 9.6,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "esther": {
+   "score": 19.3,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 63,
+     "UNVERIFIED": 45,
+     "SKIPPED": 8,
+     "FLAGGED": 8,
+     "VERIFIED": 2
+    },
+    "10": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 47,
+     "UNVERIFIED": 33,
+     "SKIPPED": 10,
+     "FLAGGED": 4
+    },
+    "2": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 50,
+     "SKIPPED": 12,
+     "FLAGGED": 8,
+     "VERIFIED": 2
+    },
+    "3": {
+     "score": 25.0,
+     "grade": "D",
+     "claims": 66,
+     "VERIFIED": 6,
+     "UNVERIFIED": 42,
+     "SKIPPED": 10,
+     "FLAGGED": 8
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 57,
+     "UNVERIFIED": 41,
+     "SKIPPED": 10,
+     "FLAGGED": 6
+    },
+    "5": {
+     "score": 22.5,
+     "grade": "D",
+     "claims": 52,
+     "VERIFIED": 2,
+     "UNVERIFIED": 35,
+     "SKIPPED": 8,
+     "FLAGGED": 7
+    },
+    "6": {
+     "score": 18.3,
+     "grade": "D",
+     "claims": 65,
+     "UNVERIFIED": 47,
+     "SKIPPED": 10,
+     "FLAGGED": 8
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 51,
+     "UNVERIFIED": 37,
+     "SKIPPED": 8,
+     "FLAGGED": 6
+    },
+    "8": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 57,
+     "UNVERIFIED": 42,
+     "SKIPPED": 8,
+     "FLAGGED": 7
+    },
+    "9": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 61,
+     "UNVERIFIED": 45,
+     "SKIPPED": 8,
+     "FLAGGED": 8
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 8.8,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.6
+   }
+  },
+  "mark": {
+   "score": 17.5,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 99,
+     "UNVERIFIED": 63,
+     "SKIPPED": 12,
+     "FLAGGED": 24
+    },
+    "10": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 76,
+     "UNVERIFIED": 49,
+     "SKIPPED": 9,
+     "FLAGGED": 18
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 76,
+     "UNVERIFIED": 49,
+     "SKIPPED": 9,
+     "FLAGGED": 18
+    },
+    "12": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 77,
+     "UNVERIFIED": 50,
+     "SKIPPED": 9,
+     "FLAGGED": 18
+    },
+    "13": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 77,
+     "UNVERIFIED": 50,
+     "SKIPPED": 9,
+     "FLAGGED": 18
+    },
+    "14": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 101,
+     "UNVERIFIED": 65,
+     "SKIPPED": 12,
+     "FLAGGED": 24
+    },
+    "15": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 77,
+     "UNVERIFIED": 50,
+     "SKIPPED": 9,
+     "FLAGGED": 18
+    },
+    "16": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 40,
+     "UNVERIFIED": 27,
+     "SKIPPED": 3,
+     "FLAGGED": 10
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 77,
+     "UNVERIFIED": 50,
+     "SKIPPED": 9,
+     "FLAGGED": 18
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 76,
+     "UNVERIFIED": 49,
+     "SKIPPED": 9,
+     "FLAGGED": 18
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 48,
+     "SKIPPED": 9,
+     "FLAGGED": 17
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 77,
+     "UNVERIFIED": 50,
+     "SKIPPED": 9,
+     "FLAGGED": 18
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 77,
+     "UNVERIFIED": 50,
+     "SKIPPED": 9,
+     "FLAGGED": 18
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 75,
+     "UNVERIFIED": 48,
+     "SKIPPED": 9,
+     "FLAGGED": 18
+    },
+    "8": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 75,
+     "UNVERIFIED": 48,
+     "SKIPPED": 9,
+     "FLAGGED": 18
+    },
+    "9": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 98,
+     "UNVERIFIED": 62,
+     "SKIPPED": 12,
+     "FLAGGED": 24
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 0.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 50.0
+   }
+  },
+  "luke": {
+   "score": 17.4,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 63,
+     "SKIPPED": 9
+    },
+    "10": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 70,
+     "UNVERIFIED": 61,
+     "SKIPPED": 9
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 122,
+     "UNVERIFIED": 110,
+     "SKIPPED": 12
+    },
+    "12": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 121,
+     "UNVERIFIED": 109,
+     "SKIPPED": 12
+    },
+    "13": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 92,
+     "UNVERIFIED": 83,
+     "SKIPPED": 9
+    },
+    "14": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 92,
+     "UNVERIFIED": 83,
+     "SKIPPED": 9
+    },
+    "15": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 92,
+     "UNVERIFIED": 83,
+     "SKIPPED": 9
+    },
+    "16": {
+     "score": 16.7,
+     "grade": "D",
+     "claims": 92,
+     "UNVERIFIED": 83,
+     "SKIPPED": 8,
+     "FLAGGED": 1
+    },
+    "17": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 92,
+     "UNVERIFIED": 83,
+     "SKIPPED": 9
+    },
+    "18": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 94,
+     "UNVERIFIED": 85,
+     "SKIPPED": 9
+    },
+    "19": {
+     "score": 16.2,
+     "grade": "D",
+     "claims": 118,
+     "UNVERIFIED": 106,
+     "SKIPPED": 10,
+     "FLAGGED": 2
+    },
+    "2": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 70,
+     "UNVERIFIED": 61,
+     "SKIPPED": 9
+    },
+    "20": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 92,
+     "UNVERIFIED": 83,
+     "SKIPPED": 9
+    },
+    "21": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 119,
+     "UNVERIFIED": 107,
+     "SKIPPED": 12
+    },
+    "22": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 118,
+     "UNVERIFIED": 106,
+     "SKIPPED": 12
+    },
+    "23": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 92,
+     "UNVERIFIED": 83,
+     "SKIPPED": 9
+    },
+    "24": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 92,
+     "UNVERIFIED": 83,
+     "SKIPPED": 9
+    },
+    "3": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 60,
+     "SKIPPED": 9
+    },
+    "4": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 60,
+     "SKIPPED": 9
+    },
+    "5": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 60,
+     "SKIPPED": 9
+    },
+    "6": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 60,
+     "SKIPPED": 9
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 91,
+     "UNVERIFIED": 79,
+     "SKIPPED": 12
+    },
+    "8": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 91,
+     "UNVERIFIED": 79,
+     "SKIPPED": 12
+    },
+    "9": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 90,
+     "UNVERIFIED": 78,
+     "SKIPPED": 12
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 0.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "cross_reference": 49.4
    }
   }
  },
  "worst_chapters": [
   {
-   "chapter_id": "genesis5",
-   "book": "genesis",
-   "score": 16.3,
-   "UNVERIFIED": 129,
-   "SKIPPED": 11,
+   "chapter_id": "joshua1",
+   "book": "joshua",
+   "score": 14.7,
+   "UNVERIFIED": 56,
+   "SKIPPED": 5,
+   "FLAGGED": 3
+  },
+  {
+   "chapter_id": "joshua2",
+   "book": "joshua",
+   "score": 14.7,
+   "UNVERIFIED": 55,
+   "SKIPPED": 5,
+   "FLAGGED": 3
+  },
+  {
+   "chapter_id": "joshua11",
+   "book": "joshua",
+   "score": 15.0,
+   "UNVERIFIED": 47,
+   "SKIPPED": 4,
    "FLAGGED": 2
   },
   {
-   "chapter_id": "genesis14",
-   "book": "genesis",
-   "score": 16.4,
-   "UNVERIFIED": 88,
-   "SKIPPED": 6,
-   "FLAGGED": 1
+   "chapter_id": "joshua12",
+   "book": "joshua",
+   "score": 15.0,
+   "UNVERIFIED": 47,
+   "SKIPPED": 4,
+   "FLAGGED": 2
   },
   {
-   "chapter_id": "genesis19",
-   "book": "genesis",
-   "score": 16.4,
-   "UNVERIFIED": 87,
-   "SKIPPED": 6,
-   "FLAGGED": 1
+   "chapter_id": "joshua13",
+   "book": "joshua",
+   "score": 15.0,
+   "UNVERIFIED": 47,
+   "SKIPPED": 4,
+   "FLAGGED": 2
   },
   {
-   "chapter_id": "genesis10",
-   "book": "genesis",
-   "score": 17.5,
-   "UNVERIFIED": 99,
-   "SKIPPED": 10
+   "chapter_id": "joshua14",
+   "book": "joshua",
+   "score": 15.0,
+   "UNVERIFIED": 47,
+   "SKIPPED": 4,
+   "FLAGGED": 2
   },
   {
-   "chapter_id": "genesis11",
-   "book": "genesis",
-   "score": 17.5,
-   "UNVERIFIED": 98,
-   "SKIPPED": 9
+   "chapter_id": "joshua15",
+   "book": "joshua",
+   "score": 15.0,
+   "UNVERIFIED": 47,
+   "SKIPPED": 4,
+   "FLAGGED": 2
   },
   {
-   "chapter_id": "genesis12",
-   "book": "genesis",
-   "score": 17.5,
-   "UNVERIFIED": 67,
-   "SKIPPED": 7
+   "chapter_id": "joshua16",
+   "book": "joshua",
+   "score": 15.0,
+   "UNVERIFIED": 47,
+   "SKIPPED": 4,
+   "FLAGGED": 2
   },
   {
-   "chapter_id": "genesis13",
-   "book": "genesis",
-   "score": 17.5,
-   "UNVERIFIED": 84,
-   "SKIPPED": 7
+   "chapter_id": "joshua17",
+   "book": "joshua",
+   "score": 15.0,
+   "UNVERIFIED": 47,
+   "SKIPPED": 4,
+   "FLAGGED": 2
   },
   {
-   "chapter_id": "genesis15",
-   "book": "genesis",
-   "score": 17.5,
-   "UNVERIFIED": 91,
-   "SKIPPED": 10
+   "chapter_id": "joshua18",
+   "book": "joshua",
+   "score": 15.0,
+   "UNVERIFIED": 47,
+   "SKIPPED": 4,
+   "FLAGGED": 2
   },
   {
-   "chapter_id": "genesis16",
-   "book": "genesis",
-   "score": 17.5,
-   "UNVERIFIED": 62,
-   "SKIPPED": 5
+   "chapter_id": "joshua19",
+   "book": "joshua",
+   "score": 15.0,
+   "UNVERIFIED": 47,
+   "SKIPPED": 4,
+   "FLAGGED": 2
   },
   {
-   "chapter_id": "genesis17",
-   "book": "genesis",
-   "score": 17.5,
-   "UNVERIFIED": 89,
-   "SKIPPED": 8
+   "chapter_id": "joshua20",
+   "book": "joshua",
+   "score": 15.0,
+   "UNVERIFIED": 47,
+   "SKIPPED": 4,
+   "FLAGGED": 2
   },
   {
-   "chapter_id": "genesis18",
-   "book": "genesis",
-   "score": 17.5,
-   "UNVERIFIED": 63,
-   "SKIPPED": 6
+   "chapter_id": "joshua21",
+   "book": "joshua",
+   "score": 15.0,
+   "UNVERIFIED": 47,
+   "SKIPPED": 4,
+   "FLAGGED": 2
   },
   {
-   "chapter_id": "genesis20",
-   "book": "genesis",
-   "score": 17.5,
-   "UNVERIFIED": 61,
-   "SKIPPED": 5
+   "chapter_id": "joshua23",
+   "book": "joshua",
+   "score": 15.0,
+   "UNVERIFIED": 47,
+   "SKIPPED": 4,
+   "FLAGGED": 2
   },
   {
-   "chapter_id": "genesis21",
-   "book": "genesis",
-   "score": 17.5,
-   "UNVERIFIED": 85,
-   "SKIPPED": 7
+   "chapter_id": "joshua3",
+   "book": "joshua",
+   "score": 15.0,
+   "UNVERIFIED": 47,
+   "SKIPPED": 4,
+   "FLAGGED": 2
   },
   {
-   "chapter_id": "genesis22",
-   "book": "genesis",
-   "score": 17.5,
-   "UNVERIFIED": 88,
-   "SKIPPED": 8
+   "chapter_id": "joshua4",
+   "book": "joshua",
+   "score": 15.0,
+   "UNVERIFIED": 47,
+   "SKIPPED": 4,
+   "FLAGGED": 2
   },
   {
-   "chapter_id": "genesis23",
-   "book": "genesis",
-   "score": 17.5,
-   "UNVERIFIED": 60,
-   "SKIPPED": 4
+   "chapter_id": "joshua7",
+   "book": "joshua",
+   "score": 15.0,
+   "UNVERIFIED": 47,
+   "SKIPPED": 4,
+   "FLAGGED": 2
   },
   {
-   "chapter_id": "genesis24",
-   "book": "genesis",
-   "score": 17.5,
-   "UNVERIFIED": 85,
-   "SKIPPED": 6
+   "chapter_id": "joshua9",
+   "book": "joshua",
+   "score": 15.0,
+   "UNVERIFIED": 47,
+   "SKIPPED": 4,
+   "FLAGGED": 2
   },
   {
-   "chapter_id": "genesis25",
-   "book": "genesis",
-   "score": 17.5,
-   "UNVERIFIED": 89,
-   "SKIPPED": 8
+   "chapter_id": "judges1",
+   "book": "judges",
+   "score": 15.0,
+   "UNVERIFIED": 47,
+   "SKIPPED": 4,
+   "FLAGGED": 2
   },
   {
-   "chapter_id": "genesis26",
-   "book": "genesis",
-   "score": 17.5,
-   "UNVERIFIED": 85,
-   "SKIPPED": 7
-  },
-  {
-   "chapter_id": "genesis27",
-   "book": "genesis",
-   "score": 17.5,
-   "UNVERIFIED": 89,
-   "SKIPPED": 7
-  },
-  {
-   "chapter_id": "genesis28",
-   "book": "genesis",
-   "score": 17.5,
-   "UNVERIFIED": 61,
-   "SKIPPED": 6
+   "chapter_id": "judges10",
+   "book": "judges",
+   "score": 15.0,
+   "UNVERIFIED": 47,
+   "SKIPPED": 4,
+   "FLAGGED": 2
   }
  ]
 }

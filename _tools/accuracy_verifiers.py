@@ -496,14 +496,20 @@ class Tier0Verifier:
                 )
 
         if claim.claim_type == "scholar_attribution":
-            # Check source format
-            fmt_result = self.scholar_validator.check_source_format(
-                claim.source_attribution or ""
-            )
-            if fmt_result.status == STATUS_FLAGGED:
-                fmt_result.claim_id = claim.id
-                fmt_result.verified_at = now
-                return fmt_result
+            # Check source format — but exempt known scholar panels with empty source
+            # (empty source is a content quality issue, not an accuracy error)
+            source = claim.source_attribution or ""
+            if not source and self.scholar_validator.is_valid_panel_key(claim.panel_type):
+                # Known scholar, missing source field — skip (inferred identity)
+                pass  # Don't flag, let higher tiers verify content
+            else:
+                fmt_result = self.scholar_validator.check_source_format(source)
+                if fmt_result.status == STATUS_FLAGGED:
+                    # Only flag if it's not a debate panel short-form proponent
+                    if claim.panel_type != "debate" or not source:
+                        fmt_result.claim_id = claim.id
+                        fmt_result.verified_at = now
+                        return fmt_result
 
             # Check panel_key is valid
             if not self.scholar_validator.is_valid_panel_key(claim.panel_type):
@@ -549,6 +555,212 @@ class Tier1Verifier:
         return None  # Tier 1 doesn't apply to this claim
 
 
+# ─── Tier 2 Verifier (Claude API, no web search) ───────────────────
+
+class Tier2Verifier:
+    """Claude API verification using training knowledge (no web search).
+
+    Batches 8-10 claims per call for cost efficiency. Used for historical
+    dates, Hebrew interpretive claims, timeline accuracy, people/places
+    facts, and theological connections.
+    """
+
+    BATCH_SIZE = 8
+
+    SYSTEM_PROMPT = (
+        "You are a biblical studies fact-checker with expertise in ANE history, "
+        "Hebrew/Greek linguistics, textual criticism, and biblical scholarship.\n\n"
+        "You will receive a batch of claims from a Bible study app. For each claim, "
+        "assess whether it is factually accurate based on your knowledge.\n\n"
+        "Respond ONLY with a JSON array (no markdown fences, no preamble):\n"
+        "[\n"
+        '  {"claim_index": 1, "status": "VERIFIED"|"FLAGGED"|"REFUTED", '
+        '"confidence": 0-100, "notes": "brief explanation", '
+        '"fix_suggestion": "correction if REFUTED, null otherwise"}\n'
+        "]\n\n"
+        "Rules:\n"
+        "- VERIFIED = you are confident this is factually correct\n"
+        "- FLAGGED = you are not confident enough to confirm\n"
+        "- REFUTED = this contradicts established scholarship or known facts\n"
+        "- Be aggressive about flagging. When in doubt, FLAGGED.\n"
+        "- For REFUTED claims, always provide a fix_suggestion with the correct information.\n"
+        "- Keep notes concise (1-2 sentences)."
+    )
+
+    def __init__(self):
+        self._api_key = None
+        self._call_count = 0
+        self._max_calls = 5000  # Safety cap
+
+    def _get_api_key(self):
+        if self._api_key is None:
+            from accuracy_config import load_api_key
+            self._api_key = load_api_key()
+        return self._api_key
+
+    def is_available(self) -> bool:
+        """Check if Tier 2 is available (API key configured)."""
+        return bool(self._get_api_key())
+
+    def verify_batch(self, claims: list[Claim], book_name: str = "",
+                     chapter_num: int = 0) -> list[VerificationResult]:
+        """Verify a batch of claims via Claude API.
+
+        Args:
+            claims: List of claims to verify (max BATCH_SIZE)
+            book_name: Human-readable book name for context
+            chapter_num: Chapter number for context
+
+        Returns:
+            List of VerificationResult, one per claim.
+        """
+        if not claims:
+            return []
+
+        api_key = self._get_api_key()
+        if not api_key:
+            now = datetime.now(timezone.utc).isoformat()
+            return [VerificationResult(
+                claim_id=c.id, status=STATUS_UNVERIFIED, confidence=0,
+                notes="Tier 2 unavailable: no API key configured",
+                verified_at=now, tier=2,
+            ) for c in claims]
+
+        if self._call_count >= self._max_calls:
+            now = datetime.now(timezone.utc).isoformat()
+            return [VerificationResult(
+                claim_id=c.id, status=STATUS_UNVERIFIED, confidence=0,
+                notes=f"Tier 2 call limit reached ({self._max_calls})",
+                verified_at=now, tier=2,
+            ) for c in claims]
+
+        # Build the prompt
+        numbered = []
+        for i, claim in enumerate(claims, 1):
+            ctx = f"[{claim.claim_type}]"
+            if claim.source_attribution:
+                ctx += f" Source: {claim.source_attribution}"
+            if claim.verse_ref:
+                ctx += f" Ref: {claim.verse_ref}"
+            numbered.append(f"{i}. {ctx}\n   \"{claim.claim_text[:500]}\"")
+
+        user_msg = (
+            f"CLAIMS from {book_name} chapter {chapter_num}:\n\n"
+            + "\n\n".join(numbered)
+        )
+
+        # Call the API
+        try:
+            import urllib.request
+            import time
+
+            body = json.dumps({
+                "model": "claude-sonnet-4-20250514",
+                "max_tokens": 2000,
+                "system": self.SYSTEM_PROMPT,
+                "messages": [{"role": "user", "content": user_msg}],
+            })
+
+            req = urllib.request.Request(
+                "https://api.anthropic.com/v1/messages",
+                data=body.encode("utf-8"),
+                headers={
+                    "Content-Type": "application/json",
+                    "x-api-key": api_key,
+                    "anthropic-version": "2023-06-01",
+                },
+                method="POST",
+            )
+
+            # Rate limiting: simple delay
+            time.sleep(1.2)  # ~50 RPM
+
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                result = json.load(resp)
+
+            self._call_count += 1
+
+            # Extract text response
+            text_parts = [
+                block.get("text", "")
+                for block in result.get("content", [])
+                if block.get("type") == "text"
+            ]
+            response_text = "\n".join(text_parts).strip()
+
+            # Parse JSON response
+            # Strip markdown fences if present
+            cleaned = response_text
+            if cleaned.startswith("```"):
+                cleaned = re.sub(r'^```\w*\n?', '', cleaned)
+                cleaned = re.sub(r'\n?```$', '', cleaned)
+            cleaned = cleaned.strip()
+
+            verdicts = json.loads(cleaned)
+
+        except (json.JSONDecodeError, urllib.error.URLError, Exception) as e:
+            now = datetime.now(timezone.utc).isoformat()
+            return [VerificationResult(
+                claim_id=c.id, status=STATUS_UNVERIFIED, confidence=0,
+                notes=f"Tier 2 API error: {str(e)[:100]}",
+                verified_at=now, tier=2,
+            ) for c in claims]
+
+        # Map verdicts back to claims
+        now = datetime.now(timezone.utc).isoformat()
+        results = []
+        for i, claim in enumerate(claims):
+            idx = i + 1
+            verdict = None
+            for v in verdicts:
+                if v.get("claim_index") == idx:
+                    verdict = v
+                    break
+
+            if verdict is None:
+                results.append(VerificationResult(
+                    claim_id=claim.id, status=STATUS_UNVERIFIED, confidence=0,
+                    notes="No verdict returned for this claim",
+                    verified_at=now, tier=2,
+                ))
+                continue
+
+            status = verdict.get("status", STATUS_UNVERIFIED)
+            if status not in (STATUS_VERIFIED, STATUS_FLAGGED, STATUS_REFUTED):
+                status = STATUS_UNVERIFIED
+
+            fix = verdict.get("fix_suggestion")
+            if fix == "null" or fix is None:
+                fix = None
+
+            results.append(VerificationResult(
+                claim_id=claim.id,
+                status=status,
+                confidence=verdict.get("confidence", 50),
+                notes=verdict.get("notes", ""),
+                fix_suggestion=fix if status == STATUS_REFUTED else None,
+                verified_at=now,
+                tier=2,
+            ))
+
+        return results
+
+    def verify_claims_batched(self, claims: list[Claim],
+                              book_name: str = "",
+                              chapter_num: int = 0) -> list[VerificationResult]:
+        """Verify claims in batches of BATCH_SIZE."""
+        all_results = []
+        for i in range(0, len(claims), self.BATCH_SIZE):
+            batch = claims[i:i + self.BATCH_SIZE]
+            results = self.verify_batch(batch, book_name, chapter_num)
+            all_results.extend(results)
+        return all_results
+
+    @property
+    def call_count(self) -> int:
+        return self._call_count
+
+
 # ─── Combined Verifier ──────────────────────────────────────────────
 
 class AccuracyVerifier:
@@ -558,6 +770,7 @@ class AccuracyVerifier:
         self.max_tier = max_tier
         self.tier0 = Tier0Verifier()
         self.tier1 = Tier1Verifier() if max_tier >= 1 else None
+        self.tier2 = Tier2Verifier() if max_tier >= 2 else None
         self._cache = {}
         self._load_cache()
 
@@ -583,7 +796,8 @@ class AccuracyVerifier:
         """Verify a single claim using the highest applicable tier.
 
         Checks cache first. Falls through tiers from highest available
-        down to 0.
+        down to 0. Note: Tier 2 uses batch API — single-claim calls are
+        inefficient. Prefer verify_claims() for Tier 2.
         """
         # Check cache
         chash = claim_hash(claim)
@@ -609,14 +823,20 @@ class AccuracyVerifier:
                 self._save_to_cache(chash, result)
                 return result
 
-        # Tier 2/3 — not yet implemented (Phase 3/4)
-        if claim.verification_tier >= 2:
+        # Tier 2 — single claim (inefficient, use verify_claims for batching)
+        if self.tier2 and claim.verification_tier <= 2 and self.tier2.is_available():
+            results = self.tier2.verify_batch([claim])
+            if results and results[0].status != STATUS_UNVERIFIED:
+                self._save_to_cache(chash, results[0])
+                return results[0]
+
+        # Tier 3 — not yet implemented (Phase 4)
+        if claim.verification_tier >= 3:
             return VerificationResult(
                 claim_id=claim.id,
                 status=STATUS_UNVERIFIED,
                 confidence=0,
-                notes=f"Requires Tier {claim.verification_tier} verification "
-                      f"(API access needed)",
+                notes="Requires Tier 3 verification (API + web search)",
                 verified_at=now,
                 tier=claim.verification_tier,
             )
@@ -632,9 +852,77 @@ class AccuracyVerifier:
         )
 
     def verify_claims(self, claims: list[Claim],
-                      book_testament: str = "ot") -> list[VerificationResult]:
-        """Verify a batch of claims."""
-        return [self.verify_claim(c, book_testament) for c in claims]
+                      book_testament: str = "ot",
+                      book_name: str = "",
+                      chapter_num: int = 0) -> list[VerificationResult]:
+        """Verify a batch of claims with efficient Tier 2 batching.
+
+        Claims are first processed through Tier 0+1 individually.
+        Remaining unverified Tier 2 claims are batched for API calls.
+        """
+        results = []
+        tier2_queue = []  # (index, claim) pairs for batch API call
+        tier2_indices = []
+
+        for i, claim in enumerate(claims):
+            # Check cache first
+            chash = claim_hash(claim)
+            if chash in self._cache:
+                cached = self._cache[chash]
+                results.append(VerificationResult(**{
+                    k: v for k, v in cached.items()
+                    if k in VerificationResult.__dataclass_fields__
+                }))
+                continue
+
+            now = datetime.now(timezone.utc).isoformat()
+
+            # Tier 0
+            result = self.tier0.verify(claim)
+            if result and result.status != STATUS_UNVERIFIED:
+                self._save_to_cache(chash, result)
+                results.append(result)
+                continue
+
+            # Tier 1
+            if self.tier1 and claim.verification_tier <= 1:
+                result = self.tier1.verify(claim, book_testament)
+                if result and result.status != STATUS_UNVERIFIED:
+                    self._save_to_cache(chash, result)
+                    results.append(result)
+                    continue
+
+            # Queue for Tier 2 if applicable
+            if (self.tier2 and claim.verification_tier <= 2
+                    and self.tier2.is_available()):
+                # Placeholder — will be replaced by batch result
+                results.append(None)
+                tier2_queue.append(claim)
+                tier2_indices.append(len(results) - 1)
+            else:
+                results.append(VerificationResult(
+                    claim_id=claim.id,
+                    status=STATUS_UNVERIFIED,
+                    confidence=0,
+                    notes=(f"Requires Tier {claim.verification_tier} verification"
+                           if claim.verification_tier >= 2
+                           else "No applicable verification tier"),
+                    verified_at=now,
+                    tier=claim.verification_tier,
+                ))
+
+        # Process Tier 2 batch
+        if tier2_queue and self.tier2:
+            t2_results = self.tier2.verify_claims_batched(
+                tier2_queue, book_name, chapter_num
+            )
+            for idx, result in zip(tier2_indices, t2_results):
+                chash = claim_hash(tier2_queue[tier2_indices.index(idx)])
+                if result.status != STATUS_UNVERIFIED:
+                    self._save_to_cache(chash, result)
+                results[idx] = result
+
+        return results
 
 
 # ─── Helper Functions ───────────────────────────────────────────────

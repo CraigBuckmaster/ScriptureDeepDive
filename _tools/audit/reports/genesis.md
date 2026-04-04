@@ -57,15 +57,11 @@ Generated: 2026-04-04
 
 **Book Average: 18.0/100 (D)**
 
-## Flagged Claims (10)
+## Flagged Claims (6)
 
 - `genesi-14-s1-cross-002` [cross_reference]: Invalid reference: Dan has 12 chapters, not 14
 - `genesi-19-s1-cross-002` [cross_reference]: Invalid reference: Jude has 1 chapters, not 7
 - `genesi-4-s2-cross-006` [cross_reference]: Invalid reference: Jude has 1 chapters, not 11
-- `genesi-4-ch-debate-011` [scholar_attribution]: Non-standard source format: 'Cassuto'
-- `genesi-42-ch-debate-002` [scholar_attribution]: Non-standard source format: 'Calvin'
-- `genesi-46-ch-debate-001` [scholar_attribution]: Non-standard source format: 'Alter'
-- `genesi-48-ch-debate-001` [scholar_attribution]: Non-standard source format: 'Wenham'
 - `genesi-5-s1-cross-004` [cross_reference]: Invalid reference: Jude has 1 chapters, not 14
 - `genesi-5-s3-cross-002` [cross_reference]: Invalid reference: Jude has 1 chapters, not 14
 - `genesi-6-s1-cross-000` [cross_reference]: Invalid reference: Jude has 1 chapters, not 6
