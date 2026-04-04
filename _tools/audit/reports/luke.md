@@ -31,8 +31,23 @@ Generated: 2026-04-04
 
 **Book Average: 17.4/100 (D)**
 
-## Flagged Claims (3)
+## Flagged Claims (18)
 
 - `luke-16-s2-cross-002` [cross_reference]: Invalid reference: Unknown book: 1 Enoch
 - `luke-19-s1-cross-004` [cross_reference]: Invalid reference: Cannot parse reference: Josephus, Ant. 17.299-314
 - `luke-19-s3-cross-004` [cross_reference]: Invalid reference: Cannot parse reference: Josephus, Ant. 17.299-314
+- `meta-prophecy-scepter_from_judah-020` [cross_reference]: Invalid reference: Cannot parse reference: 1:32-33
+- `meta-prophecy-davidic_covenant-024` [cross_reference]: Invalid reference: Cannot parse reference: 1:32-33
+- `meta-prophecy-suffering_servant-024` [cross_reference]: Invalid reference: Cannot parse reference: 22:37
+- `meta-prophecy-virgin_birth-016` [cross_reference]: Invalid reference: Cannot parse reference: 1:26-35
+- `meta-prophecy-wonderful_counselor-012` [cross_reference]: Invalid reference: Cannot parse reference: 1:32-33
+- `meta-prophecy-wonderful_counselor-014` [cross_reference]: Invalid reference: Cannot parse reference: 2:11
+- `meta-prophecy-bethlehem_ruler-014` [cross_reference]: Invalid reference: Cannot parse reference: 2:4-7
+- `meta-prophecy-king_on_donkey-016` [cross_reference]: Invalid reference: Cannot parse reference: 19:28-38
+- `meta-prophecy-seventy_weeks-012` [cross_reference]: Invalid reference: Cannot parse reference: 3:1-3
+- `meta-prophecy-prepare_the_way-022` [cross_reference]: Invalid reference: Cannot parse reference: 1:17,76
+- `meta-prophecy-prepare_the_way-024` [cross_reference]: Invalid reference: Cannot parse reference: 3:4-6
+- `meta-prophecy-anointed_to_preach-012` [cross_reference]: Invalid reference: Cannot parse reference: 4:16-21
+- `meta-prophecy-new_covenant-018` [cross_reference]: Invalid reference: Cannot parse reference: 22:20
+- `meta-prophecy-four_kingdoms-016` [cross_reference]: Invalid reference: Cannot parse reference: 2:1
+- `meta-prophecy-jonah_sign-018` [cross_reference]: Invalid reference: Cannot parse reference: 11:29-30

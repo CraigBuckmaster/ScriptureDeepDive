@@ -9,3 +9,7 @@ Generated: 2026-04-04
 | 3 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 
 **Book Average: 18.6/100 (D)**
+
+## Flagged Claims (1)
+
+- `meta-prophecy-judgment_on_nations-022` [cross_reference]: Invalid reference: Cannot parse reference: 1:1,14

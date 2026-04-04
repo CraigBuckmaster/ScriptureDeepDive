@@ -157,7 +157,7 @@ Generated: 2026-04-04
 
 **Book Average: 19.8/100 (D)**
 
-## Flagged Claims (337)
+## Flagged Claims (348)
 
 - `psalms-1-s1-kidner-000` [scholar_attribution]: Non-standard source format: 'kidner'
 - `psalms-1-s1-kidner-001` [scholar_attribution]: Non-standard source format: 'kidner'
@@ -179,4 +179,4 @@ Generated: 2026-04-04
 - `psalms-10-s2-goldingay-000` [scholar_attribution]: Non-standard source format: 'goldingay'
 - `psalms-11-s1-kidner-000` [scholar_attribution]: Non-standard source format: 'kidner'
 - `psalms-11-s1-vangemeren-000` [scholar_attribution]: Non-standard source format: 'vangemeren'
-- ... and 317 more
+- ... and 328 more

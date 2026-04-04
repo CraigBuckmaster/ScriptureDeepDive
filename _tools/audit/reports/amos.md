@@ -16,7 +16,10 @@ Generated: 2026-04-04
 
 **Book Average: 18.2/100 (D)**
 
-## Flagged Claims (2)
+## Flagged Claims (5)
 
 - `amos-1-s3-cross-002` [cross_reference]: Invalid reference: Obad has 1 chapters, not 10
 - `amos-1-ch-thread-010` [cross_reference]: Invalid reference: Obad has 1 chapters, not 10
+- `meta-prophecy-day_of_the_lord-018` [cross_reference]: Invalid reference: Cannot parse reference: 5:18-20
+- `meta-prophecy-northern_kingdom_fall-018` [cross_reference]: Invalid reference: Cannot parse reference: 5:27
+- `meta-prophecy-northern_kingdom_fall-020` [cross_reference]: Invalid reference: Cannot parse reference: 7:11,17

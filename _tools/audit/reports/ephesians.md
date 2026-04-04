@@ -13,7 +13,7 @@ Generated: 2026-04-04
 
 **Book Average: 21.1/100 (D)**
 
-## Flagged Claims (34)
+## Flagged Claims (37)
 
 - `ephesi-1-s1-lincoln-000` [scholar_attribution]: Missing source attribution field
 - `ephesi-1-s1-obrien-000` [scholar_attribution]: Missing source attribution field
@@ -35,4 +35,4 @@ Generated: 2026-04-04
 - `ephesi-4-s2-obrien-000` [scholar_attribution]: Missing source attribution field
 - `ephesi-4-s3-lincoln-000` [scholar_attribution]: Missing source attribution field
 - `ephesi-4-s3-obrien-000` [scholar_attribution]: Missing source attribution field
-- ... and 14 more
+- ... and 17 more

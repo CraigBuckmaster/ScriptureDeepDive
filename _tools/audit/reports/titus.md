@@ -10,7 +10,7 @@ Generated: 2026-04-04
 
 **Book Average: 18.3/100 (D)**
 
-## Flagged Claims (18)
+## Flagged Claims (19)
 
 - `titus-1-s1-mounce-000` [scholar_attribution]: Missing source attribution field
 - `titus-1-s1-towner-000` [scholar_attribution]: Missing source attribution field
@@ -30,3 +30,4 @@ Generated: 2026-04-04
 - `titus-3-s2-mounce-000` [scholar_attribution]: Missing source attribution field
 - `titus-3-s2-mounce-001` [scholar_attribution]: Missing source attribution field
 - `titus-3-s2-towner-000` [scholar_attribution]: Missing source attribution field
+- `meta-prophecy-new_heart-020` [cross_reference]: Invalid reference: Cannot parse reference: 3:5-6

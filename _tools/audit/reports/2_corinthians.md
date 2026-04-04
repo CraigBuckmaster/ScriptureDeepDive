@@ -20,7 +20,7 @@ Generated: 2026-04-04
 
 **Book Average: 18.9/100 (D)**
 
-## Flagged Claims (46)
+## Flagged Claims (48)
 
 - `2corin-1-s1-harris-000` [scholar_attribution]: Missing source attribution field
 - `2corin-1-s1-harris-001` [scholar_attribution]: Missing source attribution field
@@ -42,4 +42,4 @@ Generated: 2026-04-04
 - `2corin-13-s3-harris-000` [scholar_attribution]: Missing source attribution field
 - `2corin-2-s1-harris-000` [scholar_attribution]: Missing source attribution field
 - `2corin-2-s2-harris-000` [scholar_attribution]: Missing source attribution field
-- ... and 26 more
+- ... and 28 more

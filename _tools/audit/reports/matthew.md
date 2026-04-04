@@ -35,6 +35,26 @@ Generated: 2026-04-04
 
 **Book Average: 19.5/100 (D)**
 
-## Flagged Claims (1)
+## Flagged Claims (22)
 
 - `matthe-11-s2-cross-004` [cross_reference]: Invalid reference: Unknown book: Sir
+- `meta-prophecy-scepter_from_judah-018` [cross_reference]: Invalid reference: Cannot parse reference: 1:1-17
+- `meta-prophecy-suffering_servant-020` [cross_reference]: Invalid reference: Cannot parse reference: 8:17
+- `meta-prophecy-suffering_servant-022` [cross_reference]: Invalid reference: Cannot parse reference: 12:17-21
+- `meta-prophecy-virgin_birth-014` [cross_reference]: Invalid reference: Cannot parse reference: 1:22-23
+- `meta-prophecy-branch_of_jesse-020` [cross_reference]: Invalid reference: Cannot parse reference: 2:23
+- `meta-prophecy-bethlehem_ruler-012` [cross_reference]: Invalid reference: Cannot parse reference: 2:1-6
+- `meta-prophecy-king_on_donkey-012` [cross_reference]: Invalid reference: Cannot parse reference: 21:1-9
+- `meta-prophecy-pierced_one-014` [cross_reference]: Invalid reference: Cannot parse reference: 26:31
+- `meta-prophecy-priest_forever-014` [cross_reference]: Invalid reference: Cannot parse reference: 22:41-45
+- `meta-prophecy-son_of_man-012` [cross_reference]: Invalid reference: Cannot parse reference: 24:30
+- `meta-prophecy-son_of_man-014` [cross_reference]: Invalid reference: Cannot parse reference: 26:64
+- `meta-prophecy-out_of_egypt-014` [cross_reference]: Invalid reference: Cannot parse reference: 2:13-15
+- `meta-prophecy-prepare_the_way-016` [cross_reference]: Invalid reference: Cannot parse reference: 3:1-3
+- `meta-prophecy-prepare_the_way-018` [cross_reference]: Invalid reference: Cannot parse reference: 11:10,14
+- `meta-prophecy-psalm_22_suffering-016` [cross_reference]: Invalid reference: Cannot parse reference: 27:35,39,43,46
+- `meta-prophecy-new_covenant-014` [cross_reference]: Invalid reference: Cannot parse reference: 26:28
+- `meta-prophecy-moses_deliverer-018` [cross_reference]: Invalid reference: Cannot parse reference: 2:13-15
+- `meta-prophecy-jonah_sign-014` [cross_reference]: Invalid reference: Cannot parse reference: 12:39-41
+- `meta-prophecy-jonah_sign-016` [cross_reference]: Invalid reference: Cannot parse reference: 16:4
+- ... and 2 more

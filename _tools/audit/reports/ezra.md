@@ -17,7 +17,7 @@ Generated: 2026-04-04
 
 **Book Average: 20.5/100 (D)**
 
-## Flagged Claims (86)
+## Flagged Claims (89)
 
 - `ezra-1-s1-williamson-000` [scholar_attribution]: Non-standard source format: 'williamson'
 - `ezra-1-s1-williamson-001` [scholar_attribution]: Non-standard source format: 'williamson'
@@ -39,4 +39,4 @@ Generated: 2026-04-04
 - `ezra-2-s1-williamson-000` [scholar_attribution]: Non-standard source format: 'williamson'
 - `ezra-2-s1-williamson-001` [scholar_attribution]: Non-standard source format: 'williamson'
 - `ezra-2-s1-kidner-000` [scholar_attribution]: Non-standard source format: 'kidner'
-- ... and 66 more
+- ... and 69 more

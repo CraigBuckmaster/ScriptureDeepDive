@@ -511,25 +511,30 @@ class Tier0Verifier:
                 )
 
         if claim.claim_type == "scholar_attribution":
-            # Check source format — but exempt known scholar panels with empty source
-            # (empty source is a content quality issue, not an accuracy error)
+            # Meta panel types are not scholar panel_keys — exempt from structural checks
+            META_PANEL_TYPES = {
+                "debate", "scholar_bio", "debate_topic", "difficult_passage",
+                "book_intro", "prophecy_chain", "concept", "topic",
+                "word_study", "timeline", "synoptic", "place",
+                "map_story", "cross_ref_thread", "cross_ref_pair", "people",
+            }
+            is_meta = claim.panel_type in META_PANEL_TYPES
+
+            # Check source format — exempt known scholars and meta panels
             source = claim.source_attribution or ""
-            if not source and self.scholar_validator.is_valid_panel_key(claim.panel_type):
-                # Known scholar, missing source field — skip (inferred identity)
-                pass  # Don't flag, let higher tiers verify content
+            if not source and (self.scholar_validator.is_valid_panel_key(claim.panel_type) or is_meta):
+                pass  # Known scholar or meta panel — skip source check
+            elif is_meta and source and len(source) < 15:
+                pass  # Short-form proponent in meta (e.g., "Calvin", "macarthur")
             else:
                 fmt_result = self.scholar_validator.check_source_format(source)
                 if fmt_result.status == STATUS_FLAGGED:
-                    # Only flag if it's not a debate panel short-form proponent
-                    if claim.panel_type != "debate" or not source:
-                        fmt_result.claim_id = claim.id
-                        fmt_result.verified_at = now
-                        return fmt_result
+                    fmt_result.claim_id = claim.id
+                    fmt_result.verified_at = now
+                    return fmt_result
 
-            # Check panel_key is valid
-            if not self.scholar_validator.is_valid_panel_key(claim.panel_type):
-                # Might be a debate panel — those use "debate" as panel_type
-                if claim.panel_type not in ("debate",):
+            # Check panel_key is valid (skip for meta panel types)
+            if not is_meta and not self.scholar_validator.is_valid_panel_key(claim.panel_type):
                     return VerificationResult(
                         claim_id=claim.id,
                         status=STATUS_FLAGGED,

@@ -11,7 +11,7 @@ Generated: 2026-04-04
 
 **Book Average: 20.8/100 (D)**
 
-## Flagged Claims (11)
+## Flagged Claims (12)
 
 - `philip-1-s1-silva-000` [scholar_attribution]: Missing source attribution field
 - `philip-1-s2-silva-000` [scholar_attribution]: Missing source attribution field
@@ -24,3 +24,4 @@ Generated: 2026-04-04
 - `philip-3-s3-silva-000` [scholar_attribution]: Missing source attribution field
 - `philip-4-s1-silva-000` [scholar_attribution]: Missing source attribution field
 - `philip-4-s2-silva-000` [scholar_attribution]: Missing source attribution field
+- `meta-prophecy-joseph_type-022` [cross_reference]: Invalid reference: Cannot parse reference: 2:8-11

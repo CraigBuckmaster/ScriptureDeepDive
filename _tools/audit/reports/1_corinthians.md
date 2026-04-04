@@ -23,7 +23,7 @@ Generated: 2026-04-04
 
 **Book Average: 20.3/100 (D)**
 
-## Flagged Claims (77)
+## Flagged Claims (81)
 
 - `1corin-1-s1-thiselton-000` [scholar_attribution]: Missing source attribution field
 - `1corin-1-s1-thiselton-001` [scholar_attribution]: Missing source attribution field
@@ -45,4 +45,4 @@ Generated: 2026-04-04
 - `1corin-12-s2-thiselton-000` [scholar_attribution]: Missing source attribution field
 - `1corin-12-s3-thiselton-000` [scholar_attribution]: Missing source attribution field
 - `1corin-13-s1-thiselton-000` [scholar_attribution]: Missing source attribution field
-- ... and 57 more
+- ... and 61 more

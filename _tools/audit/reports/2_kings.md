@@ -31,3 +31,7 @@ Generated: 2026-04-04
 | 25 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 
 **Book Average: 25.5/100 (D)**
+
+## Flagged Claims (1)
+
+- `meta-prophecy-northern_kingdom_fall-012` [cross_reference]: Invalid reference: Cannot parse reference: 17:6-23

@@ -57,7 +57,7 @@ Generated: 2026-04-04
 
 **Book Average: 18.0/100 (D)**
 
-## Flagged Claims (6)
+## Flagged Claims (29)
 
 - `genesi-14-s1-cross-002` [cross_reference]: Invalid reference: Dan has 12 chapters, not 14
 - `genesi-19-s1-cross-002` [cross_reference]: Invalid reference: Jude has 1 chapters, not 7
@@ -65,3 +65,18 @@ Generated: 2026-04-04
 - `genesi-5-s1-cross-004` [cross_reference]: Invalid reference: Jude has 1 chapters, not 14
 - `genesi-5-s3-cross-002` [cross_reference]: Invalid reference: Jude has 1 chapters, not 14
 - `genesi-6-s1-cross-000` [cross_reference]: Invalid reference: Jude has 1 chapters, not 6
+- `meta-prophecy-seed_of_woman-010` [cross_reference]: Invalid reference: Cannot parse reference: 3:15
+- `meta-prophecy-seed_of_woman-012` [cross_reference]: Invalid reference: Cannot parse reference: 12:3
+- `meta-prophecy-seed_of_woman-014` [cross_reference]: Invalid reference: Cannot parse reference: 22:18
+- `meta-prophecy-scepter_from_judah-010` [cross_reference]: Invalid reference: Cannot parse reference: 49:10
+- `meta-prophecy-priest_forever-010` [cross_reference]: Invalid reference: Cannot parse reference: 14:18-20
+- `meta-prophecy-abrahamic_covenant-010` [cross_reference]: Invalid reference: Cannot parse reference: 12:1-3
+- `meta-prophecy-abrahamic_covenant-012` [cross_reference]: Invalid reference: Cannot parse reference: 15:1-6,18-21
+- `meta-prophecy-abrahamic_covenant-014` [cross_reference]: Invalid reference: Cannot parse reference: 17:1-8
+- `meta-prophecy-abrahamic_covenant-016` [cross_reference]: Invalid reference: Cannot parse reference: 22:16-18
+- `meta-prophecy-noahic_covenant-010` [cross_reference]: Invalid reference: Cannot parse reference: 8:21-22
+- `meta-prophecy-noahic_covenant-012` [cross_reference]: Invalid reference: Cannot parse reference: 9:8-17
+- `meta-prophecy-adam_type_of_christ-010` [cross_reference]: Invalid reference: Cannot parse reference: 1:26-28
+- `meta-prophecy-adam_type_of_christ-012` [cross_reference]: Invalid reference: Cannot parse reference: 2:7
+- `meta-prophecy-adam_type_of_christ-014` [cross_reference]: Invalid reference: Cannot parse reference: 3:17-19
+- ... and 9 more

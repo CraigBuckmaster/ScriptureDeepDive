@@ -35,7 +35,19 @@ Generated: 2026-04-04
 
 **Book Average: 18.1/100 (D)**
 
-## Flagged Claims (2)
+## Flagged Claims (14)
 
 - `acts-12-s2-cross-002` [cross_reference]: Invalid reference: Cannot parse reference: Josephus, Antiquities 19.8.2
 - `acts-12-ch-thread-008` [cross_reference]: Invalid reference: Cannot parse reference: Josephus, Antiquities 19.8.2
+- `meta-prophecy-prophet_like_moses-016` [cross_reference]: Invalid reference: Cannot parse reference: 3:22-23
+- `meta-prophecy-prophet_like_moses-018` [cross_reference]: Invalid reference: Cannot parse reference: 7:37
+- `meta-prophecy-davidic_covenant-026` [cross_reference]: Invalid reference: Cannot parse reference: 2:30-31
+- `meta-prophecy-suffering_servant-026` [cross_reference]: Invalid reference: Cannot parse reference: 8:32-35
+- `meta-prophecy-son_of_man-018` [cross_reference]: Invalid reference: Cannot parse reference: 7:56
+- `meta-prophecy-resurrection_foretold-012` [cross_reference]: Invalid reference: Cannot parse reference: 2:25-31
+- `meta-prophecy-resurrection_foretold-014` [cross_reference]: Invalid reference: Cannot parse reference: 13:35-37
+- `meta-prophecy-day_of_the_lord-024` [cross_reference]: Invalid reference: Cannot parse reference: 2:17-21
+- `meta-prophecy-spirit_poured_out-018` [cross_reference]: Invalid reference: Cannot parse reference: 2:1-4,16-21
+- `meta-prophecy-spirit_poured_out-020` [cross_reference]: Invalid reference: Cannot parse reference: 10:44-47
+- `meta-prophecy-joseph_type-020` [cross_reference]: Invalid reference: Cannot parse reference: 7:9-10
+- `meta-prophecy-moses_deliverer-022` [cross_reference]: Invalid reference: Cannot parse reference: 7:35-37

@@ -13,7 +13,7 @@ Generated: 2026-04-04
 
 **Book Average: 19.8/100 (D)**
 
-## Flagged Claims (18)
+## Flagged Claims (24)
 
 - `galati-1-s1-bruce-000` [scholar_attribution]: Missing source attribution field
 - `galati-1-s2-bruce-000` [scholar_attribution]: Missing source attribution field
@@ -33,3 +33,6 @@ Generated: 2026-04-04
 - `galati-5-s3-bruce-000` [scholar_attribution]: Missing source attribution field
 - `galati-6-s1-bruce-000` [scholar_attribution]: Missing source attribution field
 - `galati-6-s2-bruce-000` [scholar_attribution]: Missing source attribution field
+- `meta-prophecy-seed_of_woman-016` [cross_reference]: Invalid reference: Cannot parse reference: 3:16
+- `meta-prophecy-seed_of_woman-018` [cross_reference]: Invalid reference: Cannot parse reference: 4:4
+- ... and 4 more

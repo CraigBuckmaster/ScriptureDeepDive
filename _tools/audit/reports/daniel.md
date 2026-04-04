@@ -19,7 +19,7 @@ Generated: 2026-04-04
 
 **Book Average: 20.4/100 (D)**
 
-## Flagged Claims (152)
+## Flagged Claims (159)
 
 - `daniel-1-s1-longman-000` [scholar_attribution]: Non-standard source format: 'longman'
 - `daniel-1-s1-longman-001` [scholar_attribution]: Non-standard source format: 'longman'
@@ -41,4 +41,4 @@ Generated: 2026-04-04
 - `daniel-10-s1-collins-001` [scholar_attribution]: Non-standard source format: 'collins'
 - `daniel-10-s2-cross-002` [cross_reference]: Invalid reference: Jude has 1 chapters, not 9
 - `daniel-10-s2-longman-000` [scholar_attribution]: Non-standard source format: 'longman'
-- ... and 132 more
+- ... and 139 more

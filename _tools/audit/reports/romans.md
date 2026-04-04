@@ -23,8 +23,19 @@ Generated: 2026-04-04
 
 **Book Average: 19.7/100 (D)**
 
-## Flagged Claims (3)
+## Flagged Claims (14)
 
 - `romans-1-s3-cross-002` [cross_reference]: Invalid reference: Unknown book: Wis
 - `romans-16-s2-cross-004` [cross_reference]: Invalid reference: Jude has 1 chapters, not 24
 - `romans-16-ch-thread-010` [cross_reference]: Invalid reference: Jude has 1 chapters, not 24
+- `meta-prophecy-suffering_servant-028` [cross_reference]: Invalid reference: Cannot parse reference: 10:16
+- `meta-prophecy-branch_of_jesse-022` [cross_reference]: Invalid reference: Cannot parse reference: 15:12
+- `meta-prophecy-abrahamic_covenant-018` [cross_reference]: Invalid reference: Cannot parse reference: 4:13-17
+- `meta-prophecy-mosaic_covenant-018` [cross_reference]: Invalid reference: Cannot parse reference: 10:4
+- `meta-prophecy-new_heart-016` [cross_reference]: Invalid reference: Cannot parse reference: 8:9-11
+- `meta-prophecy-dry_bones-012` [cross_reference]: Invalid reference: Cannot parse reference: 6:4-5
+- `meta-prophecy-adam_type_of_christ-016` [cross_reference]: Invalid reference: Cannot parse reference: 5:12-14
+- `meta-prophecy-adam_type_of_christ-018` [cross_reference]: Invalid reference: Cannot parse reference: 5:15-19
+- `meta-prophecy-isaac_sacrifice-020` [cross_reference]: Invalid reference: Cannot parse reference: 8:32
+- `meta-prophecy-day_of_atonement-016` [cross_reference]: Invalid reference: Cannot parse reference: 3:25
+- `meta-prophecy-cities_of_refuge-018` [cross_reference]: Invalid reference: Cannot parse reference: 8:1

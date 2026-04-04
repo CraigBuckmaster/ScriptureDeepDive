@@ -12,7 +12,7 @@ Generated: 2026-04-04
 
 **Book Average: 17.2/100 (D)**
 
-## Flagged Claims (28)
+## Flagged Claims (29)
 
 - `1thess-1-s1-wanamaker-000` [scholar_attribution]: Missing source attribution field
 - `1thess-1-s1-wanamaker-001` [scholar_attribution]: Missing source attribution field
@@ -34,4 +34,4 @@ Generated: 2026-04-04
 - `1thess-4-s2-wanamaker-001` [scholar_attribution]: Missing source attribution field
 - `1thess-4-s3-wanamaker-000` [scholar_attribution]: Missing source attribution field
 - `1thess-4-s3-wanamaker-001` [scholar_attribution]: Missing source attribution field
-- ... and 8 more
+- ... and 9 more

@@ -35,3 +35,7 @@ Generated: 2026-04-04
 | 29 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 
 **Book Average: 29.9/100 (D)**
+
+## Flagged Claims (1)
+
+- `meta-prophecy-davidic_covenant-012` [cross_reference]: Invalid reference: Cannot parse reference: 17:11-14

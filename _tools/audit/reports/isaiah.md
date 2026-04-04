@@ -73,7 +73,7 @@ Generated: 2026-04-04
 
 **Book Average: 19.6/100 (D)**
 
-## Flagged Claims (277)
+## Flagged Claims (306)
 
 - `isaiah-1-s1-oswalt-000` [scholar_attribution]: Non-standard source format: 'oswalt'
 - `isaiah-1-s1-oswalt-001` [scholar_attribution]: Non-standard source format: 'oswalt'
@@ -95,4 +95,4 @@ Generated: 2026-04-04
 - `isaiah-11-s1-oswalt-001` [scholar_attribution]: Non-standard source format: 'oswalt'
 - `isaiah-11-s1-childs-000` [scholar_attribution]: Non-standard source format: 'childs'
 - `isaiah-11-s1-childs-001` [scholar_attribution]: Non-standard source format: 'childs'
-- ... and 257 more
+- ... and 286 more

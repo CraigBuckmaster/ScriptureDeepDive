@@ -31,7 +31,7 @@ Generated: 2026-04-04
 
 **Book Average: 15.1/100 (D)**
 
-## Flagged Claims (48)
+## Flagged Claims (51)
 
 - `2samue-1-ch-thread-000` [cross_reference]: Invalid reference: Cannot parse reference: The LORD looks at the heart
 - `2samue-1-ch-thread-002` [cross_reference]: Invalid reference: Cannot parse reference: Son of David
@@ -53,4 +53,4 @@ Generated: 2026-04-04
 - `2samue-17-ch-thread-002` [cross_reference]: Invalid reference: Cannot parse reference: Son of David
 - `2samue-18-ch-thread-000` [cross_reference]: Invalid reference: Cannot parse reference: The LORD looks at the heart
 - `2samue-18-ch-thread-002` [cross_reference]: Invalid reference: Cannot parse reference: Son of David
-- ... and 28 more
+- ... and 31 more

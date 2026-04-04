@@ -43,7 +43,7 @@ Generated: 2026-04-04
 
 **Book Average: 17.4/100 (D)**
 
-## Flagged Claims (6)
+## Flagged Claims (9)
 
 - `number-16-s1-cross-000` [cross_reference]: Invalid reference: Jude has 1 chapters, not 11
 - `number-16-ch-thread-000` [cross_reference]: Invalid reference: Jude has 1 chapters, not 11
@@ -51,3 +51,6 @@ Generated: 2026-04-04
 - `number-20-ch-thread-006` [cross_reference]: Invalid reference: Obad has 1 chapters, not 10
 - `number-22-s1-cross-002` [cross_reference]: Invalid reference: Jude has 1 chapters, not 11
 - `number-22-ch-thread-002` [cross_reference]: Invalid reference: Jude has 1 chapters, not 11
+- `meta-prophecy-bronze_serpent-010` [cross_reference]: Invalid reference: Cannot parse reference: 21:4-9
+- `meta-prophecy-rock_that_followed-012` [cross_reference]: Invalid reference: Cannot parse reference: 20:7-11
+- `meta-prophecy-cities_of_refuge-010` [cross_reference]: Invalid reference: Cannot parse reference: 35:9-15

@@ -47,7 +47,25 @@ Generated: 2026-04-04
 
 **Book Average: 18.5/100 (D)**
 
-## Flagged Claims (2)
+## Flagged Claims (20)
 
 - `exodus-22-s2-cross-004` [cross_reference]: Invalid reference: Cannot parse reference: "Rom 12:19
 - `exodus-22-ch-thread-010` [cross_reference]: Invalid reference: Cannot parse reference: "Rom 12:19
+- `meta-prophecy-out_of_egypt-010` [cross_reference]: Invalid reference: Cannot parse reference: 4:22-23
+- `meta-prophecy-mosaic_covenant-010` [cross_reference]: Invalid reference: Cannot parse reference: 19:3-6
+- `meta-prophecy-mosaic_covenant-012` [cross_reference]: Invalid reference: Cannot parse reference: 20:1-17
+- `meta-prophecy-mosaic_covenant-014` [cross_reference]: Invalid reference: Cannot parse reference: 24:3-8
+- `meta-prophecy-mosaic_covenant-016` [cross_reference]: Invalid reference: Cannot parse reference: 25:8-9
+- `meta-prophecy-moses_deliverer-010` [cross_reference]: Invalid reference: Cannot parse reference: 2:1-10
+- `meta-prophecy-moses_deliverer-012` [cross_reference]: Invalid reference: Cannot parse reference: 3:7-10
+- `meta-prophecy-moses_deliverer-014` [cross_reference]: Invalid reference: Cannot parse reference: 14:21-22
+- `meta-prophecy-passover_lamb-010` [cross_reference]: Invalid reference: Cannot parse reference: 12:3-7
+- `meta-prophecy-passover_lamb-012` [cross_reference]: Invalid reference: Cannot parse reference: 12:12-13
+- `meta-prophecy-passover_lamb-014` [cross_reference]: Invalid reference: Cannot parse reference: 12:46
+- `meta-prophecy-tabernacle_temple-010` [cross_reference]: Invalid reference: Cannot parse reference: 25:8-9
+- `meta-prophecy-tabernacle_temple-012` [cross_reference]: Invalid reference: Cannot parse reference: 40:34-35
+- `meta-prophecy-manna_from_heaven-010` [cross_reference]: Invalid reference: Cannot parse reference: 16:4,14-15
+- `meta-prophecy-manna_from_heaven-012` [cross_reference]: Invalid reference: Cannot parse reference: 16:31,35
+- `meta-prophecy-sabbath_rest-012` [cross_reference]: Invalid reference: Cannot parse reference: 20:8-11
+- `meta-prophecy-rock_that_followed-010` [cross_reference]: Invalid reference: Cannot parse reference: 17:5-6
+- `meta-prophecy-firstfruits-012` [cross_reference]: Invalid reference: Cannot parse reference: 23:19

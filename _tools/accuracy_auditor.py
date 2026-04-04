@@ -45,6 +45,7 @@ from accuracy_config import (
     BASELINE_ORDER, score_to_grade,
 )
 from accuracy_extractors import ClaimExtractor, Claim
+from accuracy_meta_extractors import MetaClaimExtractor
 from accuracy_verifiers import (
     AccuracyVerifier, VerificationResult, claim_hash,
 )
@@ -530,6 +531,10 @@ def main():
                         help="Machine-readable JSON output")
     parser.add_argument("--no-save", action="store_true",
                         help="Don't save matrix or reports")
+    parser.add_argument("--no-meta", action="store_true",
+                        help="Skip meta content (people, debates, etc.)")
+    parser.add_argument("--meta-only", action="store_true",
+                        help="Audit meta content only, skip chapters")
 
     args = parser.parse_args()
 
@@ -539,20 +544,24 @@ def main():
     start_time = time.time()
 
     # ── Load chapters ────────────────────────────────────────
-    chapters = iter_chapters(
-        book_filter=args.book,
-        chapter_filter=args.chapter,
-    )
+    if not args.meta_only:
+        chapters = iter_chapters(
+            book_filter=args.book,
+            chapter_filter=args.chapter,
+        )
+    else:
+        chapters = []
 
-    if not chapters and not args.json:
+    if not chapters and not args.meta_only and not args.json:
         print("  No chapters found.")
         sys.exit(1)
 
     if not args.json:
-        books_seen = set(bd for bd, _, _ in chapters)
-        print(f"  Scope: {len(chapters)} chapters across {len(books_seen)} books")
+        if chapters:
+            books_seen = set(bd for bd, _, _ in chapters)
+            print(f"  Scope: {len(chapters)} chapters across {len(books_seen)} books")
 
-    # ── Extract claims ───────────────────────────────────────
+    # ── Extract chapter claims ────────────────────────────────
     extractor = ClaimExtractor()
     all_claims = []
     claims_by_chapter = {}
@@ -571,10 +580,37 @@ def main():
         all_claims.extend(claims)
         claims_by_chapter[(book_dir, ch_num)] = claims
 
+    # ── Extract meta claims ───────────────────────────────────
+    meta_claims = []
+    include_meta = (not args.no_meta and not args.book and not args.chapter
+                    ) or args.meta_only
+
+    if include_meta:
+        meta_extractor = MetaClaimExtractor()
+        meta_claims = meta_extractor.extract_all()
+
+        # Apply filters
+        if args.scholar:
+            meta_claims = [c for c in meta_claims if c.panel_type == args.scholar]
+        if args.claim_type:
+            meta_claims = [c for c in meta_claims if c.claim_type == args.claim_type]
+
+        all_claims.extend(meta_claims)
+        # Group meta claims under a synthetic chapter key
+        if meta_claims:
+            claims_by_chapter[("meta", 0)] = meta_claims
+
     if not args.json:
         type_counts = Counter(c.claim_type for c in all_claims)
         tier_counts = Counter(c.verification_tier for c in all_claims)
-        print(f"  Extracted: {len(all_claims):,} claims")
+        ch_count = len([k for k in claims_by_chapter if k[0] != "meta"])
+        meta_count = len(meta_claims)
+        scope_parts = []
+        if ch_count:
+            scope_parts.append(f"{ch_count} chapters")
+        if meta_count:
+            scope_parts.append(f"{meta_count} meta claims")
+        print(f"  Extracted: {len(all_claims):,} claims ({', '.join(scope_parts)})")
         print(f"  By type: " + ", ".join(
             f"{t}={n}" for t, n in sorted(type_counts.items())))
         print(f"  By tier: " + ", ".join(

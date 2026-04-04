@@ -31,7 +31,7 @@ Generated: 2026-04-04
 
 **Book Average: 15.1/100 (D)**
 
-## Flagged Claims (50)
+## Flagged Claims (51)
 
 - `joshua-1-ch-thread-000` [cross_reference]: Invalid reference: Cannot parse reference: Moses' farewell charge
 - `joshua-1-ch-thread-002` [cross_reference]: Invalid reference: Cannot parse reference: A better rest remains
@@ -53,4 +53,4 @@ Generated: 2026-04-04
 - `joshua-17-ch-thread-000` [cross_reference]: Invalid reference: Cannot parse reference: Moses' farewell charge
 - `joshua-17-ch-thread-002` [cross_reference]: Invalid reference: Cannot parse reference: A better rest remains
 - `joshua-18-ch-thread-000` [cross_reference]: Invalid reference: Cannot parse reference: Moses' farewell charge
-- ... and 30 more
+- ... and 31 more

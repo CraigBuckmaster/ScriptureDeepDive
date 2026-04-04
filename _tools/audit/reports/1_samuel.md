@@ -38,7 +38,7 @@ Generated: 2026-04-04
 
 **Book Average: 15.1/100 (D)**
 
-## Flagged Claims (62)
+## Flagged Claims (63)
 
 - `1samue-1-ch-thread-000` [cross_reference]: Invalid reference: Cannot parse reference: No king in Israel
 - `1samue-1-ch-thread-002` [cross_reference]: Invalid reference: Cannot parse reference: David, a man after God's heart
@@ -60,4 +60,4 @@ Generated: 2026-04-04
 - `1samue-17-ch-thread-002` [cross_reference]: Invalid reference: Cannot parse reference: David, a man after God's heart
 - `1samue-18-ch-thread-000` [cross_reference]: Invalid reference: Cannot parse reference: No king in Israel
 - `1samue-18-ch-thread-002` [cross_reference]: Invalid reference: Cannot parse reference: David, a man after God's heart
-- ... and 42 more
+- ... and 43 more

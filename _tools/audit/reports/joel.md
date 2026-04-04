@@ -10,7 +10,10 @@ Generated: 2026-04-04
 
 **Book Average: 17.1/100 (D)**
 
-## Flagged Claims (2)
+## Flagged Claims (5)
 
 - `joel-3-s1-cross-004` [cross_reference]: Invalid reference: Obad has 1 chapters, not 15
 - `joel-3-ch-thread-004` [cross_reference]: Invalid reference: Obad has 1 chapters, not 15
+- `meta-prophecy-day_of_the_lord-014` [cross_reference]: Invalid reference: Cannot parse reference: 1:15
+- `meta-prophecy-day_of_the_lord-016` [cross_reference]: Invalid reference: Cannot parse reference: 2:1-2,31
+- `meta-prophecy-spirit_poured_out-010` [cross_reference]: Invalid reference: Cannot parse reference: 2:28-32
