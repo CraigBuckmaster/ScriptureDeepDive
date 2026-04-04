@@ -648,8 +648,12 @@ def main():
         book_name = book_dir.replace("_", " ").title()
         if not args.json and args.tier >= 2 and ch_total > 1:
             t2_calls = verifier.tier2.call_count if verifier.tier2 else 0
+            t3_calls = verifier.tier3.call_count if verifier.tier3 else 0
+            api_info = f"T2:{t2_calls}"
+            if t3_calls:
+                api_info += f" T3:{t3_calls}"
             print(f"\r  [{ch_idx}/{ch_total}] {book_dir} {ch_num} "
-                  f"(T2 calls: {t2_calls})", end="", flush=True)
+                  f"({api_info})", end="", flush=True)
         results = verifier.verify_claims(
             claims, testament, book_name=book_name, chapter_num=ch_num
         )
@@ -659,11 +663,16 @@ def main():
     if not args.json and args.tier >= 2 and ch_total > 1:
         print()  # Clear progress line
 
-    # Report Tier 2 usage
-    if verifier.tier2 and verifier.tier2.call_count > 0 and not args.json:
-        t2_calls = verifier.tier2.call_count
-        t2_cost = t2_calls * COST_PER_TIER2_CALL
-        print(f"  Tier 2: {t2_calls} API calls (~${t2_cost:.2f})")
+    # Report API usage
+    if not args.json:
+        if verifier.tier2 and verifier.tier2.call_count > 0:
+            t2_calls = verifier.tier2.call_count
+            t2_cost = t2_calls * COST_PER_TIER2_CALL
+            print(f"  Tier 2: {t2_calls} API calls (~${t2_cost:.2f})")
+        if verifier.tier3 and verifier.tier3.call_count > 0:
+            t3_calls = verifier.tier3.call_count
+            t3_cost = t3_calls * COST_PER_TIER3_CALL
+            print(f"  Tier 3: {t3_calls} API calls (~${t3_cost:.2f})")
 
     # ── Score chapters ───────────────────────────────────────
     chapter_scores = {}

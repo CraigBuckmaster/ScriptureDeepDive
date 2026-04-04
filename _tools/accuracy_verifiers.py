@@ -854,6 +854,215 @@ class Tier2Verifier:
         return self._call_count
 
 
+# ─── Tier 3 Verifier (Claude API + Web Search) ─────────────────────
+
+class Tier3Verifier:
+    """Claude API with web search for scholar attribution verification.
+
+    Verifies claimed scholar positions against published works using
+    web search to find corroborating sources. One API call per scholar
+    panel (all notes for one scholar grouped together).
+    """
+
+    SYSTEM_PROMPT = (
+        "You are a biblical scholarship fact-checker with access to web search.\n\n"
+        "I will provide a scholar attribution from a Bible study app — a specific "
+        "claim about what a named scholar argues in their published work. Your job "
+        "is to verify whether this accurately represents the scholar's position.\n\n"
+        "Instructions:\n"
+        "1. Search for the scholar's actual published position on this passage.\n"
+        "2. Compare the claimed position to what the scholar actually wrote.\n"
+        "3. Provide specific source references (book title, page numbers, edition).\n\n"
+        "Respond ONLY with a JSON array (no markdown fences, no preamble). "
+        "One object per claim:\n"
+        "[\n"
+        '  {"claim_index": 1, "status": "VERIFIED"|"FLAGGED"|"REFUTED", '
+        '"confidence": 0-100, '
+        '"sources": [{"title": "...", "author": "...", "reference": "page/section", '
+        '"url": "...", "note": "how this supports the verdict"}], '
+        '"notes": "explanation", '
+        '"fix_suggestion": "if REFUTED, what should the claim say instead"}\n'
+        "]\n\n"
+        "Rules:\n"
+        "- VERIFIED: You found corroborating evidence in the scholar's published work.\n"
+        "- FLAGGED: You cannot confirm. Do NOT assume accuracy.\n"
+        "- REFUTED: The claim contradicts the scholar's known, published position.\n"
+        "- Be aggressive about flagging. When in doubt, FLAGGED.\n"
+        "- Always provide at least one source with a specific reference.\n"
+        "- For REFUTED claims, always provide a fix_suggestion."
+    )
+
+    def __init__(self):
+        self._api_key = None
+        self._call_count = 0
+        self._max_calls = 2000
+
+    def _get_api_key(self):
+        if self._api_key is None:
+            from accuracy_config import load_api_key
+            self._api_key = load_api_key()
+        return self._api_key
+
+    def is_available(self) -> bool:
+        return bool(self._get_api_key())
+
+    def verify_scholar_panel(self, claims: list[Claim],
+                             source_attribution: str = "",
+                             book_name: str = "",
+                             chapter_num: int = 0) -> list[VerificationResult]:
+        """Verify a batch of claims from one scholar panel via API + web search.
+
+        All claims should be from the same scholar/source for optimal batching.
+        """
+        if not claims:
+            return []
+
+        api_key = self._get_api_key()
+        now = datetime.now(timezone.utc).isoformat()
+
+        if not api_key:
+            return [VerificationResult(
+                claim_id=c.id, status=STATUS_UNVERIFIED, confidence=0,
+                notes="Tier 3 unavailable: no API key",
+                verified_at=now, tier=3,
+            ) for c in claims]
+
+        if self._call_count >= self._max_calls:
+            return [VerificationResult(
+                claim_id=c.id, status=STATUS_UNVERIFIED, confidence=0,
+                notes=f"Tier 3 call limit reached ({self._max_calls})",
+                verified_at=now, tier=3,
+            ) for c in claims]
+
+        # Build prompt with all notes from this scholar panel
+        numbered = []
+        for i, claim in enumerate(claims, 1):
+            ref_ctx = f" (verse {claim.verse_ref})" if claim.verse_ref else ""
+            numbered.append(f"{i}. {claim.claim_text[:500]}{ref_ctx}")
+
+        user_msg = (
+            f"SCHOLAR: {source_attribution}\n"
+            f"BOOK/CHAPTER: {book_name} {chapter_num}\n\n"
+            f"CLAIMED POSITIONS ({len(claims)} claims):\n\n"
+            + "\n\n".join(numbered)
+        )
+
+        try:
+            import urllib.request
+            import time
+
+            body = json.dumps({
+                "model": "claude-sonnet-4-20250514",
+                "max_tokens": 4000,
+                "system": self.SYSTEM_PROMPT,
+                "messages": [{"role": "user", "content": user_msg}],
+                "tools": [{"type": "web_search_20250305", "name": "web_search"}],
+            })
+
+            req = urllib.request.Request(
+                "https://api.anthropic.com/v1/messages",
+                data=body.encode("utf-8"),
+                headers={
+                    "Content-Type": "application/json",
+                    "x-api-key": api_key,
+                    "anthropic-version": "2023-06-01",
+                },
+                method="POST",
+            )
+
+            time.sleep(2.0)  # ~30 RPM for web search calls
+
+            with urllib.request.urlopen(req, timeout=120) as resp:
+                result = json.load(resp)
+
+            self._call_count += 1
+
+            # Extract text response (may include tool_use blocks)
+            text_parts = [
+                block.get("text", "")
+                for block in result.get("content", [])
+                if block.get("type") == "text"
+            ]
+            response_text = "\n".join(text_parts).strip()
+
+            # Parse JSON response
+            cleaned = response_text
+            if cleaned.startswith("```"):
+                cleaned = re.sub(r'^```\w*\n?', '', cleaned)
+                cleaned = re.sub(r'\n?```$', '', cleaned)
+            cleaned = cleaned.strip()
+
+            # Find the JSON array in the response
+            json_start = cleaned.find('[')
+            json_end = cleaned.rfind(']') + 1
+            if json_start >= 0 and json_end > json_start:
+                cleaned = cleaned[json_start:json_end]
+
+            verdicts = json.loads(cleaned)
+
+        except (json.JSONDecodeError, urllib.error.URLError, Exception) as e:
+            return [VerificationResult(
+                claim_id=c.id, status=STATUS_UNVERIFIED, confidence=0,
+                notes=f"Tier 3 API error: {str(e)[:100]}",
+                verified_at=now, tier=3,
+            ) for c in claims]
+
+        # Map verdicts to claims
+        results = []
+        for i, claim in enumerate(claims):
+            idx = i + 1
+            verdict = None
+            for v in verdicts:
+                if v.get("claim_index") == idx:
+                    verdict = v
+                    break
+
+            if verdict is None:
+                results.append(VerificationResult(
+                    claim_id=claim.id, status=STATUS_UNVERIFIED, confidence=0,
+                    notes="No verdict returned", verified_at=now, tier=3,
+                ))
+                continue
+
+            status = verdict.get("status", STATUS_UNVERIFIED)
+            if status not in (STATUS_VERIFIED, STATUS_FLAGGED, STATUS_REFUTED):
+                status = STATUS_UNVERIFIED
+
+            # Parse sources
+            sources = []
+            for src in verdict.get("sources", []):
+                if isinstance(src, dict):
+                    sources.append(Source(
+                        title=src.get("title", ""),
+                        author=src.get("author", ""),
+                        type="web" if src.get("url") else "primary_work",
+                        reference=src.get("reference", ""),
+                        url=src.get("url", ""),
+                        verification_note=src.get("note", ""),
+                    ))
+
+            fix = verdict.get("fix_suggestion")
+            if fix in ("null", None, ""):
+                fix = None
+
+            results.append(VerificationResult(
+                claim_id=claim.id,
+                status=status,
+                confidence=verdict.get("confidence", 50),
+                sources=sources,
+                notes=verdict.get("notes", ""),
+                fix_suggestion=fix if status == STATUS_REFUTED else None,
+                verified_at=now,
+                tier=3,
+            ))
+
+        return results
+
+    @property
+    def call_count(self) -> int:
+        return self._call_count
+
+
 # ─── Combined Verifier ──────────────────────────────────────────────
 
 class AccuracyVerifier:
@@ -864,6 +1073,7 @@ class AccuracyVerifier:
         self.tier0 = Tier0Verifier()
         self.tier1 = Tier1Verifier() if max_tier >= 1 else None
         self.tier2 = Tier2Verifier() if max_tier >= 2 else None
+        self.tier3 = Tier3Verifier() if max_tier >= 3 else None
         self._cache = {}
         self._load_cache()
 
@@ -923,13 +1133,20 @@ class AccuracyVerifier:
                 self._save_to_cache(chash, results[0])
                 return results[0]
 
-        # Tier 3 — not yet implemented (Phase 4)
-        if claim.verification_tier >= 3:
+        # Tier 3 — scholar attribution via web search
+        if self.tier3 and claim.verification_tier <= 3 and self.tier3.is_available():
+            results = self.tier3.verify_scholar_panel([claim], claim.source_attribution or "")
+            if results and results[0].status != STATUS_UNVERIFIED:
+                self._save_to_cache(chash, results[0])
+                return results[0]
+
+        # Claims that need higher tiers than available
+        if claim.verification_tier > self.max_tier:
             return VerificationResult(
                 claim_id=claim.id,
                 status=STATUS_UNVERIFIED,
                 confidence=0,
-                notes="Requires Tier 3 verification (API + web search)",
+                notes=f"Requires Tier {claim.verification_tier} (max available: {self.max_tier})",
                 verified_at=now,
                 tier=claim.verification_tier,
             )
@@ -954,8 +1171,10 @@ class AccuracyVerifier:
         Remaining unverified Tier 2 claims are batched for API calls.
         """
         results = []
-        tier2_queue = []  # (index, claim) pairs for batch API call
+        tier2_queue = []
         tier2_indices = []
+        tier3_queue = []
+        tier3_indices = []
 
         for i, claim in enumerate(claims):
             # Check cache first
@@ -988,17 +1207,23 @@ class AccuracyVerifier:
             # Queue for Tier 2 if applicable
             if (self.tier2 and claim.verification_tier <= 2
                     and self.tier2.is_available()):
-                # Placeholder — will be replaced by batch result
-                results.append(None)
+                results.append(None)  # Placeholder
                 tier2_queue.append(claim)
                 tier2_indices.append(len(results) - 1)
+            # Queue for Tier 3 if applicable
+            elif (self.tier3 and claim.verification_tier <= 3
+                    and self.tier3.is_available()):
+                results.append(None)  # Placeholder
+                tier3_queue.append(claim)
+                tier3_indices.append(len(results) - 1)
             else:
                 results.append(VerificationResult(
                     claim_id=claim.id,
                     status=STATUS_UNVERIFIED,
                     confidence=0,
-                    notes=(f"Requires Tier {claim.verification_tier} verification"
-                           if claim.verification_tier >= 2
+                    notes=(f"Requires Tier {claim.verification_tier} "
+                           f"(max available: {self.max_tier})"
+                           if claim.verification_tier > self.max_tier
                            else "No applicable verification tier"),
                     verified_at=now,
                     tier=claim.verification_tier,
@@ -1014,6 +1239,28 @@ class AccuracyVerifier:
                 if result.status != STATUS_UNVERIFIED:
                     self._save_to_cache(chash, result)
                 results[idx] = result
+
+        # Process Tier 3 batch — group by source for efficient API calls
+        if tier3_queue and self.tier3:
+            # Group by source_attribution
+            source_groups = {}
+            for idx, claim in zip(tier3_indices, tier3_queue):
+                source = claim.source_attribution or claim.panel_type
+                if source not in source_groups:
+                    source_groups[source] = ([], [])
+                source_groups[source][0].append(claim)
+                source_groups[source][1].append(idx)
+
+            for source, (group_claims, group_indices) in source_groups.items():
+                t3_results = self.tier3.verify_scholar_panel(
+                    group_claims, source, book_name, chapter_num
+                )
+                for idx, result in zip(group_indices, t3_results):
+                    q_idx = tier3_indices.index(idx)
+                    chash = claim_hash(tier3_queue[q_idx])
+                    if result.status != STATUS_UNVERIFIED:
+                        self._save_to_cache(chash, result)
+                    results[idx] = result
 
         return results
 

@@ -445,6 +445,10 @@ if __name__ == '__main__':
                         help="Quality: show findings for all chapters")
     parser.add_argument("--api-key", type=str, default=None,
                         help="Quality: Anthropic API key for --deep mode")
+    parser.add_argument("--accuracy", action="store_true",
+                        help="Run accuracy audit (Tier 0+1, free)")
+    parser.add_argument("--accuracy-deep", action="store_true",
+                        help="Run accuracy audit with API (Tier 0-2, costs money)")
 
     args = parser.parse_args()
     os.chdir(ROOT)
@@ -465,5 +469,21 @@ if __name__ == '__main__':
         report.print_terminal(worst_n=args.worst, verbose=args.verbose)
         if args.json:
             report.save_json("_tools/quality_report.json")
+
+    # Optionally run accuracy audit
+    if args.accuracy or args.accuracy_deep:
+        import subprocess
+        tier = "2" if args.accuracy_deep else "1"
+        cmd = ["python3", "_tools/accuracy_auditor.py", "--tier", tier]
+        if args.book:
+            cmd.extend(["--book", args.book])
+        if args.chapter:
+            cmd.extend(["--chapter", args.chapter])
+        print(f"\n{'═' * 60}")
+        print(f"  Running accuracy audit (Tier {tier})...")
+        print(f"{'═' * 60}\n")
+        audit_result = subprocess.run(cmd)
+        if audit_result.returncode != 0:
+            result = 1
 
     sys.exit(result)
