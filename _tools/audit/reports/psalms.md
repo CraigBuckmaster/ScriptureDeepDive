@@ -156,27 +156,3 @@ Generated: 2026-04-04
 | 150 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 
 **Book Average: 19.8/100 (D)**
-
-## Flagged Claims (348)
-
-- `psalms-1-s1-kidner-000` [scholar_attribution]: Non-standard source format: 'kidner'
-- `psalms-1-s1-kidner-001` [scholar_attribution]: Non-standard source format: 'kidner'
-- `psalms-1-s1-vangemeren-000` [scholar_attribution]: Non-standard source format: 'vangemeren'
-- `psalms-1-s1-vangemeren-001` [scholar_attribution]: Non-standard source format: 'vangemeren'
-- `psalms-1-s1-goldingay-000` [scholar_attribution]: Non-standard source format: 'goldingay'
-- `psalms-1-s1-goldingay-001` [scholar_attribution]: Non-standard source format: 'goldingay'
-- `psalms-1-s2-kidner-000` [scholar_attribution]: Non-standard source format: 'kidner'
-- `psalms-1-s2-kidner-001` [scholar_attribution]: Non-standard source format: 'kidner'
-- `psalms-1-s2-vangemeren-000` [scholar_attribution]: Non-standard source format: 'vangemeren'
-- `psalms-1-s2-vangemeren-001` [scholar_attribution]: Non-standard source format: 'vangemeren'
-- `psalms-1-s2-goldingay-000` [scholar_attribution]: Non-standard source format: 'goldingay'
-- `psalms-1-s2-goldingay-001` [scholar_attribution]: Non-standard source format: 'goldingay'
-- `psalms-10-s1-kidner-000` [scholar_attribution]: Non-standard source format: 'kidner'
-- `psalms-10-s1-vangemeren-000` [scholar_attribution]: Non-standard source format: 'vangemeren'
-- `psalms-10-s1-goldingay-000` [scholar_attribution]: Non-standard source format: 'goldingay'
-- `psalms-10-s2-kidner-000` [scholar_attribution]: Non-standard source format: 'kidner'
-- `psalms-10-s2-vangemeren-000` [scholar_attribution]: Non-standard source format: 'vangemeren'
-- `psalms-10-s2-goldingay-000` [scholar_attribution]: Non-standard source format: 'goldingay'
-- `psalms-11-s1-kidner-000` [scholar_attribution]: Non-standard source format: 'kidner'
-- `psalms-11-s1-vangemeren-000` [scholar_attribution]: Non-standard source format: 'vangemeren'
-- ... and 328 more

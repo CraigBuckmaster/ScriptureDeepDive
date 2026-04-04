@@ -8,10 +8,10 @@ Generated: 2026-04-04
 | 2 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 3 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 4 | 0 | 12 | 50 | 0 | 100 | 0 | **20** | D |
-| 5 | 0 | 0 | 38 | 0 | 100 | 0 | **16** | D |
+| 5 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 6 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 7 | 0 | 10 | 50 | 0 | 100 | 0 | **20** | D |
-| 8 | 0 | 0 | 42 | 0 | 100 | 0 | **16** | D |
+| 8 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 9 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 10 | 0 | 7 | 50 | 0 | 100 | 0 | **19** | D |
 | 11 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
@@ -34,12 +34,6 @@ Generated: 2026-04-04
 | 28 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 29 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
 | 30 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
-| 31 | 0 | 0 | 38 | 0 | 100 | 0 | **16** | D |
+| 31 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 
-**Book Average: 19.1/100 (D)**
-
-## Flagged Claims (3)
-
-- `prover-31-s2-cross-002` [cross_reference]: Invalid reference: Cannot parse reference: Ruth
-- `prover-5-s2-cross-000` [cross_reference]: Invalid reference: Cannot parse reference: Song of Songs
-- `prover-8-s1-cross-004` [cross_reference]: Invalid reference: Unknown book: Sir
+**Book Average: 19.2/100 (D)**

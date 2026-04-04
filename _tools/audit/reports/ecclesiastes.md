@@ -18,27 +18,3 @@ Generated: 2026-04-04
 | 12 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 
 **Book Average: 17.8/100 (D)**
-
-## Flagged Claims (98)
-
-- `eccles-1-s1-longman-000` [scholar_attribution]: Non-standard source format: 'longman'
-- `eccles-1-s1-longman-001` [scholar_attribution]: Non-standard source format: 'longman'
-- `eccles-1-s1-fox-000` [scholar_attribution]: Non-standard source format: 'fox'
-- `eccles-1-s1-fox-001` [scholar_attribution]: Non-standard source format: 'fox'
-- `eccles-1-s2-longman-000` [scholar_attribution]: Non-standard source format: 'longman'
-- `eccles-1-s2-longman-001` [scholar_attribution]: Non-standard source format: 'longman'
-- `eccles-1-s2-fox-000` [scholar_attribution]: Non-standard source format: 'fox'
-- `eccles-1-s2-fox-001` [scholar_attribution]: Non-standard source format: 'fox'
-- `eccles-10-s1-longman-000` [scholar_attribution]: Non-standard source format: 'longman'
-- `eccles-10-s1-longman-001` [scholar_attribution]: Non-standard source format: 'longman'
-- `eccles-10-s1-fox-000` [scholar_attribution]: Non-standard source format: 'fox'
-- `eccles-10-s1-fox-001` [scholar_attribution]: Non-standard source format: 'fox'
-- `eccles-10-s2-longman-000` [scholar_attribution]: Non-standard source format: 'longman'
-- `eccles-10-s2-longman-001` [scholar_attribution]: Non-standard source format: 'longman'
-- `eccles-10-s2-fox-000` [scholar_attribution]: Non-standard source format: 'fox'
-- `eccles-10-s2-fox-001` [scholar_attribution]: Non-standard source format: 'fox'
-- `eccles-11-s1-longman-000` [scholar_attribution]: Non-standard source format: 'longman'
-- `eccles-11-s1-longman-001` [scholar_attribution]: Non-standard source format: 'longman'
-- `eccles-11-s1-fox-000` [scholar_attribution]: Non-standard source format: 'fox'
-- `eccles-11-s1-fox-001` [scholar_attribution]: Non-standard source format: 'fox'
-- ... and 78 more

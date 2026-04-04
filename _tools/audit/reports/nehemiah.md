@@ -19,27 +19,3 @@ Generated: 2026-04-04
 | 13 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 
 **Book Average: 19.4/100 (D)**
-
-## Flagged Claims (119)
-
-- `nehemi-1-s1-williamson-000` [scholar_attribution]: Non-standard source format: 'williamson'
-- `nehemi-1-s1-williamson-001` [scholar_attribution]: Non-standard source format: 'williamson'
-- `nehemi-1-s1-kidner-000` [scholar_attribution]: Non-standard source format: 'kidner'
-- `nehemi-1-s1-kidner-001` [scholar_attribution]: Non-standard source format: 'kidner'
-- `nehemi-1-s2-williamson-000` [scholar_attribution]: Non-standard source format: 'williamson'
-- `nehemi-1-s2-williamson-001` [scholar_attribution]: Non-standard source format: 'williamson'
-- `nehemi-1-s2-kidner-000` [scholar_attribution]: Non-standard source format: 'kidner'
-- `nehemi-1-s2-kidner-001` [scholar_attribution]: Non-standard source format: 'kidner'
-- `nehemi-10-s1-williamson-000` [scholar_attribution]: Non-standard source format: 'williamson'
-- `nehemi-10-s1-kidner-000` [scholar_attribution]: Non-standard source format: 'kidner'
-- `nehemi-10-s2-williamson-000` [scholar_attribution]: Non-standard source format: 'williamson'
-- `nehemi-10-s2-kidner-000` [scholar_attribution]: Non-standard source format: 'kidner'
-- `nehemi-10-s2-kidner-001` [scholar_attribution]: Non-standard source format: 'kidner'
-- `nehemi-11-s1-williamson-000` [scholar_attribution]: Non-standard source format: 'williamson'
-- `nehemi-11-s1-kidner-000` [scholar_attribution]: Non-standard source format: 'kidner'
-- `nehemi-11-s2-williamson-000` [scholar_attribution]: Non-standard source format: 'williamson'
-- `nehemi-11-s2-williamson-001` [scholar_attribution]: Non-standard source format: 'williamson'
-- `nehemi-11-s2-kidner-000` [scholar_attribution]: Non-standard source format: 'kidner'
-- `nehemi-12-s1-williamson-000` [scholar_attribution]: Non-standard source format: 'williamson'
-- `nehemi-12-s1-kidner-000` [scholar_attribution]: Non-standard source format: 'kidner'
-- ... and 99 more

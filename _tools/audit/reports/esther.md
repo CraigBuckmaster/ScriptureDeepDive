@@ -16,27 +16,3 @@ Generated: 2026-04-04
 | 10 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 
 **Book Average: 19.3/100 (D)**
-
-## Flagged Claims (70)
-
-- `esther-1-s1-levenson-000` [scholar_attribution]: Non-standard source format: 'levenson'
-- `esther-1-s1-levenson-001` [scholar_attribution]: Non-standard source format: 'levenson'
-- `esther-1-s1-jobes-000` [scholar_attribution]: Non-standard source format: 'jobes'
-- `esther-1-s1-jobes-001` [scholar_attribution]: Non-standard source format: 'jobes'
-- `esther-1-s2-levenson-000` [scholar_attribution]: Non-standard source format: 'levenson'
-- `esther-1-s2-levenson-001` [scholar_attribution]: Non-standard source format: 'levenson'
-- `esther-1-s2-jobes-000` [scholar_attribution]: Non-standard source format: 'jobes'
-- `esther-1-s2-jobes-001` [scholar_attribution]: Non-standard source format: 'jobes'
-- `esther-10-s1-levenson-000` [scholar_attribution]: Non-standard source format: 'levenson'
-- `esther-10-s1-jobes-000` [scholar_attribution]: Non-standard source format: 'jobes'
-- `esther-10-s2-levenson-000` [scholar_attribution]: Non-standard source format: 'levenson'
-- `esther-10-s2-jobes-000` [scholar_attribution]: Non-standard source format: 'jobes'
-- `esther-2-s1-levenson-000` [scholar_attribution]: Non-standard source format: 'levenson'
-- `esther-2-s1-levenson-001` [scholar_attribution]: Non-standard source format: 'levenson'
-- `esther-2-s1-jobes-000` [scholar_attribution]: Non-standard source format: 'jobes'
-- `esther-2-s1-jobes-001` [scholar_attribution]: Non-standard source format: 'jobes'
-- `esther-2-s2-levenson-000` [scholar_attribution]: Non-standard source format: 'levenson'
-- `esther-2-s2-jobes-000` [scholar_attribution]: Non-standard source format: 'jobes'
-- `esther-2-s3-levenson-000` [scholar_attribution]: Non-standard source format: 'levenson'
-- `esther-2-s3-jobes-000` [scholar_attribution]: Non-standard source format: 'jobes'
-- ... and 50 more

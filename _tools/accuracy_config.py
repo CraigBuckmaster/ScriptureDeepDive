@@ -201,6 +201,15 @@ def load_book_aliases() -> dict:
         "1 peter": "1_peter", "2 peter": "2_peter",
         "1 john": "1_john", "2 john": "2_john", "3 john": "3_john",
         "song of solomon": "song_of_solomon", "song of songs": "song_of_solomon",
+        # Non-canonical / deuterocanonical (recognized but not in verse DB)
+        "1 macc": "_noncanon", "1 maccabees": "_noncanon",
+        "2 macc": "_noncanon", "2 maccabees": "_noncanon",
+        "sir": "_noncanon", "sirach": "_noncanon", "ecclesiasticus": "_noncanon",
+        "wis": "_noncanon", "wisdom": "_noncanon", "wisdom of solomon": "_noncanon",
+        "1 enoch": "_noncanon", "enoch": "_noncanon",
+        "bar": "_noncanon", "baruch": "_noncanon",
+        "tob": "_noncanon", "tobit": "_noncanon",
+        "jdt": "_noncanon", "judith": "_noncanon",
     }
     aliases.update(ABBREVIATIONS)
 

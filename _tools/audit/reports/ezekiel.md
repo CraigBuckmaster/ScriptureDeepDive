@@ -28,7 +28,7 @@ Generated: 2026-04-04
 | 22 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 23 | 0 | 38 | 50 | 0 | 100 | 0 | **25** | D |
 | 24 | 0 | 17 | 50 | 0 | 100 | 0 | **21** | D |
-| 25 | 0 | 25 | 43 | 0 | 100 | 0 | **21** | D |
+| 25 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
 | 26 | 0 | 17 | 50 | 0 | 100 | 0 | **21** | D |
 | 27 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 28 | 0 | 12 | 50 | 0 | 100 | 0 | **20** | D |
@@ -38,7 +38,7 @@ Generated: 2026-04-04
 | 32 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 33 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 34 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
-| 35 | 0 | 17 | 40 | 0 | 100 | 0 | **19** | D |
+| 35 | 0 | 17 | 50 | 0 | 100 | 0 | **21** | D |
 | 36 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 37 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 38 | 0 | 10 | 50 | 0 | 100 | 0 | **20** | D |
@@ -53,22 +53,4 @@ Generated: 2026-04-04
 | 47 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 48 | 0 | 12 | 50 | 0 | 100 | 0 | **20** | D |
 
-**Book Average: 18.8/100 (D)**
-
-## Flagged Claims (15)
-
-- `ezekie-25-s3-cross-000` [cross_reference]: Invalid reference: Obad has 1 chapters, not 10
-- `ezekie-25-ch-thread-008` [cross_reference]: Invalid reference: Obad has 1 chapters, not 10
-- `ezekie-35-s1-cross-000` [cross_reference]: Invalid reference: Obad has 1 chapters, not 10
-- `ezekie-35-ch-thread-000` [cross_reference]: Invalid reference: Obad has 1 chapters, not 10
-- `meta-prophecy-davidic_covenant-022` [cross_reference]: Invalid reference: Cannot parse reference: 37:24-25
-- `meta-prophecy-new_covenant-012` [cross_reference]: Invalid reference: Cannot parse reference: 36:25-27
-- `meta-prophecy-judgment_on_nations-018` [cross_reference]: Invalid reference: Cannot parse reference: 25:12-14
-- `meta-prophecy-judgment_on_nations-020` [cross_reference]: Invalid reference: Cannot parse reference: 26:3-6
-- `meta-prophecy-restoration_of_israel-020` [cross_reference]: Invalid reference: Cannot parse reference: 37:21-22
-- `meta-prophecy-new_heart-010` [cross_reference]: Invalid reference: Cannot parse reference: 11:19-20
-- `meta-prophecy-new_heart-012` [cross_reference]: Invalid reference: Cannot parse reference: 36:25-27
-- `meta-prophecy-dry_bones-010` [cross_reference]: Invalid reference: Cannot parse reference: 37:1-14
-- `meta-prophecy-temple_rebuilt-014` [cross_reference]: Invalid reference: Cannot parse reference: 40:1-5
-- `meta-prophecy-spirit_poured_out-016` [cross_reference]: Invalid reference: Cannot parse reference: 39:29
-- `meta-prophecy-david_shepherd_king-016` [cross_reference]: Invalid reference: Cannot parse reference: 34:23-24
+**Book Average: 18.9/100 (D)**

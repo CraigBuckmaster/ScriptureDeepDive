@@ -9,25 +9,3 @@ Generated: 2026-04-04
 | 3 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 
 **Book Average: 18.3/100 (D)**
-
-## Flagged Claims (19)
-
-- `titus-1-s1-mounce-000` [scholar_attribution]: Missing source attribution field
-- `titus-1-s1-towner-000` [scholar_attribution]: Missing source attribution field
-- `titus-1-s2-mounce-000` [scholar_attribution]: Missing source attribution field
-- `titus-1-s2-towner-000` [scholar_attribution]: Missing source attribution field
-- `titus-1-s3-mounce-000` [scholar_attribution]: Missing source attribution field
-- `titus-1-s3-mounce-001` [scholar_attribution]: Missing source attribution field
-- `titus-1-s3-towner-000` [scholar_attribution]: Missing source attribution field
-- `titus-2-s1-mounce-000` [scholar_attribution]: Missing source attribution field
-- `titus-2-s1-towner-000` [scholar_attribution]: Missing source attribution field
-- `titus-2-s2-mounce-000` [scholar_attribution]: Missing source attribution field
-- `titus-2-s2-mounce-001` [scholar_attribution]: Missing source attribution field
-- `titus-2-s2-towner-000` [scholar_attribution]: Missing source attribution field
-- `titus-3-s1-mounce-000` [scholar_attribution]: Missing source attribution field
-- `titus-3-s1-mounce-001` [scholar_attribution]: Missing source attribution field
-- `titus-3-s1-towner-000` [scholar_attribution]: Missing source attribution field
-- `titus-3-s2-mounce-000` [scholar_attribution]: Missing source attribution field
-- `titus-3-s2-mounce-001` [scholar_attribution]: Missing source attribution field
-- `titus-3-s2-towner-000` [scholar_attribution]: Missing source attribution field
-- `meta-prophecy-new_heart-020` [cross_reference]: Invalid reference: Cannot parse reference: 3:5-6

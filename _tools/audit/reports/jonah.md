@@ -10,8 +10,3 @@ Generated: 2026-04-04
 | 4 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 
 **Book Average: 18.6/100 (D)**
-
-## Flagged Claims (2)
-
-- `meta-prophecy-jonah_sign-010` [cross_reference]: Invalid reference: Cannot parse reference: 1:17
-- `meta-prophecy-jonah_sign-012` [cross_reference]: Invalid reference: Cannot parse reference: 2:10

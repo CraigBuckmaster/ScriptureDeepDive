@@ -28,8 +28,3 @@ Generated: 2026-04-04
 | 22 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 
 **Book Average: 17.5/100 (D)**
-
-## Flagged Claims (2)
-
-- `meta-prophecy-northern_kingdom_fall-010` [cross_reference]: Invalid reference: Cannot parse reference: 14:15-16
-- `meta-prophecy-tabernacle_temple-014` [cross_reference]: Invalid reference: Cannot parse reference: 8:10-11

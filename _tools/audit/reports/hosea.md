@@ -20,9 +20,3 @@ Generated: 2026-04-04
 | 14 | 0 | 12 | 50 | 0 | 100 | 0 | **20** | D |
 
 **Book Average: 19.3/100 (D)**
-
-## Flagged Claims (3)
-
-- `meta-prophecy-out_of_egypt-012` [cross_reference]: Invalid reference: Cannot parse reference: 11:1
-- `meta-prophecy-northern_kingdom_fall-014` [cross_reference]: Invalid reference: Cannot parse reference: 1:4-5
-- `meta-prophecy-northern_kingdom_fall-016` [cross_reference]: Invalid reference: Cannot parse reference: 9:3,17

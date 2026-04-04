@@ -51,26 +51,10 @@ Generated: 2026-04-04
 | 45 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 46 | 0 | 25 | 50 | 0 | 100 | 0 | **22** | D |
 | 47 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
-| 48 | 0 | 0 | 40 | 0 | 100 | 0 | **16** | D |
+| 48 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 49 | 0 | 17 | 50 | 0 | 100 | 0 | **21** | D |
 | 50 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 51 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 52 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 
 **Book Average: 19.5/100 (D)**
-
-## Flagged Claims (13)
-
-- `jeremi-48-s2-cross-002` [cross_reference]: Invalid reference: Obad has 1 chapters, not 3
-- `jeremi-48-ch-thread-008` [cross_reference]: Invalid reference: Obad has 1 chapters, not 3
-- `meta-prophecy-davidic_covenant-020` [cross_reference]: Invalid reference: Cannot parse reference: 33:17-21
-- `meta-prophecy-branch_of_jesse-012` [cross_reference]: Invalid reference: Cannot parse reference: 23:5-6
-- `meta-prophecy-branch_of_jesse-014` [cross_reference]: Invalid reference: Cannot parse reference: 33:15-16
-- `meta-prophecy-new_covenant-010` [cross_reference]: Invalid reference: Cannot parse reference: 31:31-34
-- `meta-prophecy-exile_and_return-016` [cross_reference]: Invalid reference: Cannot parse reference: 25:11-12
-- `meta-prophecy-exile_and_return-018` [cross_reference]: Invalid reference: Cannot parse reference: 29:10-14
-- `meta-prophecy-judgment_on_nations-016` [cross_reference]: Invalid reference: Cannot parse reference: 50:1-3
-- `meta-prophecy-babylon_judgment-018` [cross_reference]: Invalid reference: Cannot parse reference: 51:11,28
-- `meta-prophecy-restoration_of_israel-016` [cross_reference]: Invalid reference: Cannot parse reference: 29:14
-- `meta-prophecy-restoration_of_israel-018` [cross_reference]: Invalid reference: Cannot parse reference: 31:8-10
-- `meta-prophecy-temple_rebuilt-012` [cross_reference]: Invalid reference: Cannot parse reference: 30:18

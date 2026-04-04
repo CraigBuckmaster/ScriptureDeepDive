@@ -37,19 +37,6 @@ Generated: 2026-04-04
 | 31 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 32 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 33 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
-| 34 | 0 | 0 | 38 | 0 | 100 | 0 | **16** | D |
+| 34 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 
-**Book Average: 17.4/100 (D)**
-
-## Flagged Claims (10)
-
-- `deuter-34-s1-cross-002` [cross_reference]: Invalid reference: Jude has 1 chapters, not 9
-- `deuter-34-ch-thread-002` [cross_reference]: Invalid reference: Jude has 1 chapters, not 9
-- `meta-prophecy-prophet_like_moses-010` [cross_reference]: Invalid reference: Cannot parse reference: 18:15-19
-- `meta-prophecy-exile_and_return-010` [cross_reference]: Invalid reference: Cannot parse reference: 28:36-37,64-68
-- `meta-prophecy-exile_and_return-012` [cross_reference]: Invalid reference: Cannot parse reference: 30:1-5
-- `meta-prophecy-restoration_of_israel-010` [cross_reference]: Invalid reference: Cannot parse reference: 30:3-5
-- `meta-prophecy-moses_deliverer-016` [cross_reference]: Invalid reference: Cannot parse reference: 18:15
-- `meta-prophecy-manna_from_heaven-014` [cross_reference]: Invalid reference: Cannot parse reference: 8:3
-- `meta-prophecy-sabbath_rest-014` [cross_reference]: Invalid reference: Cannot parse reference: 5:12-15
-- `meta-prophecy-cities_of_refuge-012` [cross_reference]: Invalid reference: Cannot parse reference: 19:2-6
+**Book Average: 17.5/100 (D)**

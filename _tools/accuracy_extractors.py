@@ -388,17 +388,19 @@ class ClaimExtractor:
             thread_type = entry.get("type", "")
 
             if target:
-                # Claim 1: target ref exists (Tier 0)
-                claims.append(Claim(
-                    id=_make_id(book_dir, ch_num, None, "thread", i * 2),
-                    chapter_id=ch_id, book_dir=book_dir,
-                    section_num=None, panel_type="thread",
-                    claim_type="cross_reference",
-                    claim_text=target,
-                    source_attribution=None,
-                    verse_ref=target,
-                    verification_tier=0,
-                ))
+                if _looks_like_verse_ref(target):
+                    # Claim 1: target ref exists (Tier 0)
+                    claims.append(Claim(
+                        id=_make_id(book_dir, ch_num, None, "thread", i * 2),
+                        chapter_id=ch_id, book_dir=book_dir,
+                        section_num=None, panel_type="thread",
+                        claim_type="cross_reference",
+                        claim_text=target,
+                        source_attribution=None,
+                        verse_ref=target,
+                        verification_tier=0,
+                    ))
+                # else: thematic label (e.g., "No king in Israel") — skip ref validation
 
             if text and len(text) > 30:
                 # Claim 2: theological connection (Tier 2)
@@ -518,6 +520,24 @@ class ClaimExtractor:
 
 
 # ─── Helpers ────────────────────────────────────────────────────────
+
+def _looks_like_verse_ref(text: str) -> bool:
+    """Check if a string looks like a Bible verse reference.
+
+    Returns True for patterns like "Gen 1:1", "1 John 3:16", "Ps 33:6,9".
+    Returns False for thematic labels like "No king in Israel", "Son of David".
+    """
+    if not text or len(text) > 80:
+        return False
+    # Must contain at least one digit
+    if not re.search(r'\d', text):
+        return False
+    # Must match: optional_number? BookName number(:number)?
+    return bool(re.match(
+        r'^(\d\s+)?[A-Za-z]+(?:\s+[A-Za-z]+)*\s+\d+(?::\d+)?',
+        text.strip()
+    ))
+
 
 def _parse_source_attribution(source_field: str) -> str:
     """Parse a source field like 'Author, Work — Type' into a clean attribution.

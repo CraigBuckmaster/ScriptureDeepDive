@@ -28,27 +28,3 @@ Generated: 2026-04-04
 | 22 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 
 **Book Average: 18.8/100 (D)**
-
-## Flagged Claims (146)
-
-- `revela-1-s1-beale-000` [scholar_attribution]: Missing source attribution field
-- `revela-1-s1-beale-001` [scholar_attribution]: Missing source attribution field
-- `revela-1-s1-osborne-000` [scholar_attribution]: Missing source attribution field
-- `revela-1-s1-osborne-001` [scholar_attribution]: Missing source attribution field
-- `revela-1-s2-beale-000` [scholar_attribution]: Missing source attribution field
-- `revela-1-s2-beale-001` [scholar_attribution]: Missing source attribution field
-- `revela-1-s2-osborne-000` [scholar_attribution]: Missing source attribution field
-- `revela-1-s2-osborne-001` [scholar_attribution]: Missing source attribution field
-- `revela-1-s3-beale-000` [scholar_attribution]: Missing source attribution field
-- `revela-1-s3-beale-001` [scholar_attribution]: Missing source attribution field
-- `revela-1-s3-beale-002` [scholar_attribution]: Missing source attribution field
-- `revela-1-s3-osborne-000` [scholar_attribution]: Missing source attribution field
-- `revela-1-s3-osborne-001` [scholar_attribution]: Missing source attribution field
-- `revela-1-s3-osborne-002` [scholar_attribution]: Missing source attribution field
-- `revela-10-s1-beale-000` [scholar_attribution]: Missing source attribution field
-- `revela-10-s1-osborne-000` [scholar_attribution]: Missing source attribution field
-- `revela-10-s2-beale-000` [scholar_attribution]: Missing source attribution field
-- `revela-10-s2-osborne-000` [scholar_attribution]: Missing source attribution field
-- `revela-11-s1-beale-000` [scholar_attribution]: Missing source attribution field
-- `revela-11-s1-osborne-000` [scholar_attribution]: Missing source attribution field
-- ... and 126 more

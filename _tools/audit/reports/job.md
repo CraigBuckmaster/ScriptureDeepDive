@@ -48,27 +48,3 @@ Generated: 2026-04-04
 | 42 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 
 **Book Average: 18.8/100 (D)**
-
-## Flagged Claims (259)
-
-- `job-1-s1-clines-000` [scholar_attribution]: Non-standard source format: 'clines'
-- `job-1-s1-clines-001` [scholar_attribution]: Non-standard source format: 'clines'
-- `job-1-s1-habel-000` [scholar_attribution]: Non-standard source format: 'habel'
-- `job-1-s2-clines-000` [scholar_attribution]: Non-standard source format: 'clines'
-- `job-1-s2-clines-001` [scholar_attribution]: Non-standard source format: 'clines'
-- `job-1-s2-habel-000` [scholar_attribution]: Non-standard source format: 'habel'
-- `job-1-s3-clines-000` [scholar_attribution]: Non-standard source format: 'clines'
-- `job-1-s3-clines-001` [scholar_attribution]: Non-standard source format: 'clines'
-- `job-1-s3-habel-000` [scholar_attribution]: Non-standard source format: 'habel'
-- `job-10-s1-clines-000` [scholar_attribution]: Non-standard source format: 'clines'
-- `job-10-s1-clines-001` [scholar_attribution]: Non-standard source format: 'clines'
-- `job-10-s1-habel-000` [scholar_attribution]: Non-standard source format: 'habel'
-- `job-10-s2-clines-000` [scholar_attribution]: Non-standard source format: 'clines'
-- `job-10-s2-clines-001` [scholar_attribution]: Non-standard source format: 'clines'
-- `job-10-s2-habel-000` [scholar_attribution]: Non-standard source format: 'habel'
-- `job-11-s1-clines-000` [scholar_attribution]: Non-standard source format: 'clines'
-- `job-11-s1-clines-001` [scholar_attribution]: Non-standard source format: 'clines'
-- `job-11-s1-habel-000` [scholar_attribution]: Non-standard source format: 'habel'
-- `job-11-s2-clines-000` [scholar_attribution]: Non-standard source format: 'clines'
-- `job-11-s2-clines-001` [scholar_attribution]: Non-standard source format: 'clines'
-- ... and 239 more

@@ -394,6 +394,12 @@ class MetaClaimExtractor:
         if not data or not isinstance(data, list):
             return []
 
+        # Load book names for qualifying bare refs
+        books_data = self._load("books.json")
+        book_names = {}
+        if books_data and isinstance(books_data, list):
+            book_names = {b["id"]: b["name"] for b in books_data}
+
         claims = []
         for chain in data:
             cid = chain.get("id", "unknown")
@@ -419,12 +425,18 @@ class MetaClaimExtractor:
             for j, link in enumerate(chain.get("links", [])):
                 ref = link.get("verse_ref", "")
                 note = link.get("note", "")
+                link_book = link.get("book_dir", "")
+
+                # Qualify bare refs (e.g., "3:15" → "Genesis 3:15")
+                if ref and not any(c.isalpha() for c in ref) and link_book:
+                    book_name = book_names.get(link_book, link_book.replace("_", " ").title())
+                    ref = f"{book_name} {ref}"
 
                 if ref:
                     claims.append(Claim(
                         id=_meta_id("prophecy", cid, 10 + j * 2),
                         chapter_id="meta_prophecy",
-                        book_dir=link.get("book_dir", "meta"),
+                        book_dir=link_book or "meta",
                         section_num=None,
                         panel_type="prophecy_chain",
                         claim_type="cross_reference",

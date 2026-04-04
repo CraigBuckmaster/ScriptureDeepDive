@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-04-04T14:29:27.703533+00:00",
- "corpus_average": 19.7,
+ "generated_at": "2026-04-04T15:09:05.053774+00:00",
+ "corpus_average": 19.9,
  "books": {
   "genesis": {
-   "score": 18.0,
+   "score": 18.1,
    "grade": "D",
    "chapters": {
     "1": {
@@ -43,12 +43,11 @@
      "SKIPPED": 7
     },
     "14": {
-     "score": 16.4,
+     "score": 17.5,
      "grade": "D",
      "claims": 95,
      "UNVERIFIED": 88,
-     "SKIPPED": 6,
-     "FLAGGED": 1
+     "SKIPPED": 7
     },
     "15": {
      "score": 17.5,
@@ -79,12 +78,11 @@
      "SKIPPED": 6
     },
     "19": {
-     "score": 16.4,
+     "score": 17.5,
      "grade": "D",
      "claims": 94,
      "UNVERIFIED": 87,
-     "SKIPPED": 6,
-     "FLAGGED": 1
+     "SKIPPED": 7
     },
     "2": {
      "score": 17.7,
@@ -246,12 +244,11 @@
      "SKIPPED": 5
     },
     "4": {
-     "score": 18.5,
+     "score": 18.9,
      "grade": "D",
      "claims": 114,
      "UNVERIFIED": 95,
-     "SKIPPED": 16,
-     "FLAGGED": 1,
+     "SKIPPED": 17,
      "VERIFIED": 2
     },
     "40": {
@@ -329,12 +326,11 @@
      "SKIPPED": 4
     },
     "5": {
-     "score": 16.3,
+     "score": 17.5,
      "grade": "D",
      "claims": 142,
      "UNVERIFIED": 129,
-     "SKIPPED": 11,
-     "FLAGGED": 2
+     "SKIPPED": 13
     },
     "50": {
      "score": 17.5,
@@ -344,13 +340,12 @@
      "SKIPPED": 9
     },
     "6": {
-     "score": 20.1,
+     "score": 20.6,
      "grade": "D",
      "claims": 134,
      "UNVERIFIED": 115,
      "VERIFIED": 4,
-     "FLAGGED": 1,
-     "SKIPPED": 14
+     "SKIPPED": 15
     },
     "7": {
      "score": 17.5,
@@ -375,12 +370,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 49.5,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 3.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.1,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "exodus": {
@@ -492,12 +487,11 @@
      "SKIPPED": 15
     },
     "22": {
-     "score": 16.2,
+     "score": 17.2,
      "grade": "D",
-     "claims": 72,
+     "claims": 71,
      "UNVERIFIED": 60,
-     "SKIPPED": 10,
-     "FLAGGED": 2
+     "SKIPPED": 11
     },
     "23": {
      "score": 20.0,
@@ -690,12 +684,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 49.8,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 5.2,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 49.9,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "psalms": {
@@ -706,18 +700,16 @@
      "score": 20.8,
      "grade": "D",
      "claims": 65,
-     "UNVERIFIED": 41,
+     "UNVERIFIED": 53,
      "SKIPPED": 10,
-     "FLAGGED": 12,
      "VERIFIED": 2
     },
     "10": {
      "score": 17.5,
      "grade": "D",
      "claims": 50,
-     "UNVERIFIED": 36,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 42,
+     "SKIPPED": 8
     },
     "100": {
      "score": 17.5,
@@ -794,9 +786,8 @@
      "score": 17.5,
      "grade": "D",
      "claims": 42,
-     "UNVERIFIED": 30,
-     "SKIPPED": 6,
-     "FLAGGED": 6
+     "UNVERIFIED": 36,
+     "SKIPPED": 6
     },
     "110": {
      "score": 17.5,
@@ -874,9 +865,8 @@
      "score": 17.5,
      "grade": "D",
      "claims": 45,
-     "UNVERIFIED": 31,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 37,
+     "SKIPPED": 8
     },
     "120": {
      "score": 17.5,
@@ -955,9 +945,8 @@
      "score": 17.5,
      "grade": "D",
      "claims": 45,
-     "UNVERIFIED": 31,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 37,
+     "SKIPPED": 8
     },
     "130": {
      "score": 17.5,
@@ -1037,9 +1026,8 @@
      "score": 17.5,
      "grade": "D",
      "claims": 46,
-     "UNVERIFIED": 32,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 38,
+     "SKIPPED": 8
     },
     "140": {
      "score": 27.5,
@@ -1119,9 +1107,8 @@
      "score": 17.5,
      "grade": "D",
      "claims": 45,
-     "UNVERIFIED": 31,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 37,
+     "SKIPPED": 8
     },
     "150": {
      "score": 17.5,
@@ -1134,34 +1121,30 @@
      "score": 20.8,
      "grade": "D",
      "claims": 55,
-     "UNVERIFIED": 37,
+     "UNVERIFIED": 43,
      "SKIPPED": 10,
-     "FLAGGED": 6,
      "VERIFIED": 2
     },
     "17": {
      "score": 17.5,
      "grade": "D",
      "claims": 50,
-     "UNVERIFIED": 34,
-     "SKIPPED": 10,
-     "FLAGGED": 6
+     "UNVERIFIED": 40,
+     "SKIPPED": 10
     },
     "18": {
      "score": 17.5,
      "grade": "D",
      "claims": 56,
-     "UNVERIFIED": 40,
-     "SKIPPED": 10,
-     "FLAGGED": 6
+     "UNVERIFIED": 46,
+     "SKIPPED": 10
     },
     "19": {
      "score": 20.8,
      "grade": "D",
      "claims": 53,
-     "UNVERIFIED": 37,
+     "UNVERIFIED": 43,
      "SKIPPED": 8,
-     "FLAGGED": 6,
      "VERIFIED": 2
     },
     "2": {
@@ -1169,92 +1152,81 @@
      "grade": "D",
      "claims": 69,
      "VERIFIED": 2,
-     "UNVERIFIED": 43,
-     "SKIPPED": 12,
-     "FLAGGED": 12
+     "UNVERIFIED": 55,
+     "SKIPPED": 12
     },
     "20": {
      "score": 22.5,
      "grade": "D",
      "claims": 47,
-     "UNVERIFIED": 31,
+     "UNVERIFIED": 37,
      "SKIPPED": 8,
-     "FLAGGED": 6,
      "VERIFIED": 2
     },
     "21": {
      "score": 17.5,
      "grade": "D",
      "claims": 46,
-     "UNVERIFIED": 32,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 38,
+     "SKIPPED": 8
     },
     "22": {
      "score": 17.5,
      "grade": "D",
      "claims": 69,
-     "UNVERIFIED": 47,
-     "SKIPPED": 15,
-     "FLAGGED": 7
+     "UNVERIFIED": 54,
+     "SKIPPED": 15
     },
     "23": {
      "score": 20.8,
      "grade": "D",
      "claims": 62,
-     "UNVERIFIED": 42,
+     "UNVERIFIED": 50,
      "VERIFIED": 2,
-     "SKIPPED": 10,
-     "FLAGGED": 8
+     "SKIPPED": 10
     },
     "24": {
      "score": 17.5,
      "grade": "D",
      "claims": 54,
-     "UNVERIFIED": 36,
-     "SKIPPED": 6,
-     "FLAGGED": 12
+     "UNVERIFIED": 48,
+     "SKIPPED": 6
     },
     "25": {
      "score": 17.5,
      "grade": "D",
      "claims": 53,
-     "UNVERIFIED": 35,
-     "SKIPPED": 6,
-     "FLAGGED": 12
+     "UNVERIFIED": 47,
+     "SKIPPED": 6
     },
     "26": {
      "score": 17.5,
      "grade": "D",
      "claims": 53,
-     "UNVERIFIED": 35,
-     "SKIPPED": 6,
-     "FLAGGED": 12
+     "UNVERIFIED": 47,
+     "SKIPPED": 6
     },
     "27": {
      "score": 17.5,
      "grade": "D",
      "claims": 57,
-     "UNVERIFIED": 37,
-     "SKIPPED": 8,
-     "FLAGGED": 12
+     "UNVERIFIED": 49,
+     "SKIPPED": 8
     },
     "28": {
      "score": 22.5,
      "grade": "D",
      "claims": 49,
-     "UNVERIFIED": 31,
+     "UNVERIFIED": 43,
      "SKIPPED": 4,
-     "FLAGGED": 12,
      "VERIFIED": 2
     },
     "29": {
      "score": 22.5,
      "grade": "D",
      "claims": 58,
-     "UNVERIFIED": 36,
+     "UNVERIFIED": 48,
      "SKIPPED": 8,
-     "FLAGGED": 12,
      "VERIFIED": 2
     },
     "3": {
@@ -1262,106 +1234,93 @@
      "grade": "D",
      "claims": 55,
      "VERIFIED": 2,
-     "UNVERIFIED": 35,
-     "SKIPPED": 8,
-     "FLAGGED": 10
+     "UNVERIFIED": 45,
+     "SKIPPED": 8
     },
     "30": {
      "score": 22.5,
      "grade": "D",
      "claims": 57,
-     "UNVERIFIED": 35,
+     "UNVERIFIED": 47,
      "SKIPPED": 8,
-     "FLAGGED": 12,
      "VERIFIED": 2
     },
     "31": {
      "score": 17.5,
      "grade": "D",
      "claims": 55,
-     "UNVERIFIED": 41,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 47,
+     "SKIPPED": 8
     },
     "32": {
      "score": 17.5,
      "grade": "D",
      "claims": 59,
-     "UNVERIFIED": 43,
-     "SKIPPED": 10,
-     "FLAGGED": 6
+     "UNVERIFIED": 49,
+     "SKIPPED": 10
     },
     "33": {
      "score": 17.5,
      "grade": "D",
      "claims": 53,
-     "UNVERIFIED": 37,
-     "SKIPPED": 10,
-     "FLAGGED": 6
+     "UNVERIFIED": 43,
+     "SKIPPED": 10
     },
     "34": {
      "score": 17.5,
      "grade": "D",
      "claims": 53,
-     "UNVERIFIED": 37,
-     "SKIPPED": 10,
-     "FLAGGED": 6
+     "UNVERIFIED": 43,
+     "SKIPPED": 10
     },
     "35": {
      "score": 32.5,
      "grade": "D",
      "claims": 52,
-     "UNVERIFIED": 35,
-     "SKIPPED": 5,
-     "FLAGGED": 12
+     "UNVERIFIED": 47,
+     "SKIPPED": 5
     },
     "36": {
      "score": 32.5,
      "grade": "D",
      "claims": 48,
-     "UNVERIFIED": 31,
-     "SKIPPED": 5,
-     "FLAGGED": 12
+     "UNVERIFIED": 43,
+     "SKIPPED": 5
     },
     "37": {
      "score": 32.5,
      "grade": "D",
      "claims": 49,
-     "UNVERIFIED": 32,
-     "SKIPPED": 5,
-     "FLAGGED": 12
+     "UNVERIFIED": 44,
+     "SKIPPED": 5
     },
     "38": {
      "score": 32.5,
      "grade": "D",
      "claims": 49,
-     "UNVERIFIED": 32,
-     "SKIPPED": 5,
-     "FLAGGED": 12
+     "UNVERIFIED": 44,
+     "SKIPPED": 5
     },
     "39": {
      "score": 32.5,
      "grade": "D",
      "claims": 51,
-     "UNVERIFIED": 33,
-     "SKIPPED": 6,
-     "FLAGGED": 12
+     "UNVERIFIED": 45,
+     "SKIPPED": 6
     },
     "4": {
      "score": 17.5,
      "grade": "D",
      "claims": 47,
-     "UNVERIFIED": 33,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 39,
+     "SKIPPED": 8
     },
     "40": {
      "score": 32.5,
      "grade": "D",
      "claims": 48,
-     "UNVERIFIED": 31,
-     "SKIPPED": 5,
-     "FLAGGED": 12
+     "UNVERIFIED": 43,
+     "SKIPPED": 5
     },
     "41": {
      "score": 17.5,
@@ -1433,9 +1392,8 @@
      "grade": "D",
      "claims": 48,
      "VERIFIED": 2,
-     "UNVERIFIED": 32,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 38,
+     "SKIPPED": 8
     },
     "50": {
      "score": 17.5,
@@ -1514,9 +1472,8 @@
      "score": 17.5,
      "grade": "D",
      "claims": 48,
-     "UNVERIFIED": 34,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 40,
+     "SKIPPED": 8
     },
     "60": {
      "score": 17.5,
@@ -1597,9 +1554,8 @@
      "grade": "D",
      "claims": 53,
      "VERIFIED": 4,
-     "UNVERIFIED": 33,
-     "SKIPPED": 10,
-     "FLAGGED": 6
+     "UNVERIFIED": 39,
+     "SKIPPED": 10
     },
     "70": {
      "score": 22.5,
@@ -1682,9 +1638,8 @@
      "score": 17.5,
      "grade": "D",
      "claims": 59,
-     "UNVERIFIED": 43,
-     "SKIPPED": 10,
-     "FLAGGED": 6
+     "UNVERIFIED": 49,
+     "SKIPPED": 10
     },
     "80": {
      "score": 17.5,
@@ -1762,9 +1717,8 @@
      "score": 17.5,
      "grade": "D",
      "claims": 50,
-     "UNVERIFIED": 36,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 42,
+     "SKIPPED": 8
     },
     "90": {
      "score": 22.5,
@@ -1843,12 +1797,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 4.0,
-    "timeline": 100.0,
     "hebrew_greek": 8.4,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 4.0,
+    "timeline": 100.0
    }
   },
   "matthew": {
@@ -1872,13 +1826,12 @@
      "VERIFIED": 1
     },
     "11": {
-     "score": 20.4,
+     "score": 21.5,
      "grade": "D",
      "claims": 66,
      "UNVERIFIED": 57,
      "VERIFIED": 2,
-     "SKIPPED": 6,
-     "FLAGGED": 1
+     "SKIPPED": 7
     },
     "12": {
      "score": 20.8,
@@ -2078,12 +2031,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 49.7,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 10.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "john": {
@@ -2239,26 +2192,25 @@
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 0.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "romans": {
-   "score": 19.7,
+   "score": 19.8,
    "grade": "D",
    "chapters": {
     "1": {
-     "score": 18.7,
+     "score": 19.2,
      "grade": "D",
      "claims": 97,
      "UNVERIFIED": 80,
      "VERIFIED": 2,
-     "SKIPPED": 14,
-     "FLAGGED": 1
+     "SKIPPED": 15
     },
     "10": {
      "score": 17.5,
@@ -2305,13 +2257,12 @@
      "SKIPPED": 12
     },
     "16": {
-     "score": 19.6,
+     "score": 20.8,
      "grade": "D",
      "claims": 62,
      "UNVERIFIED": 48,
-     "SKIPPED": 10,
-     "VERIFIED": 2,
-     "FLAGGED": 2
+     "SKIPPED": 12,
+     "VERIFIED": 2
     },
     "2": {
      "score": 20.0,
@@ -2377,12 +2328,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 49.3,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 11.5,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "revelation": {
@@ -2393,194 +2344,172 @@
      "score": 19.2,
      "grade": "D",
      "claims": 100,
-     "UNVERIFIED": 69,
+     "UNVERIFIED": 83,
      "SKIPPED": 15,
-     "FLAGGED": 14,
      "VERIFIED": 2
     },
     "10": {
      "score": 20.8,
      "grade": "D",
      "claims": 50,
-     "UNVERIFIED": 34,
+     "UNVERIFIED": 38,
      "VERIFIED": 2,
-     "SKIPPED": 10,
-     "FLAGGED": 4
+     "SKIPPED": 10
     },
     "11": {
      "score": 17.5,
      "grade": "D",
      "claims": 73,
-     "UNVERIFIED": 52,
-     "SKIPPED": 15,
-     "FLAGGED": 6
+     "UNVERIFIED": 58,
+     "SKIPPED": 15
     },
     "12": {
      "score": 17.5,
      "grade": "D",
      "claims": 75,
-     "UNVERIFIED": 55,
-     "SKIPPED": 14,
-     "FLAGGED": 6
+     "UNVERIFIED": 61,
+     "SKIPPED": 14
     },
     "13": {
      "score": 17.5,
      "grade": "D",
      "claims": 64,
-     "UNVERIFIED": 48,
-     "SKIPPED": 12,
-     "FLAGGED": 4
+     "UNVERIFIED": 52,
+     "SKIPPED": 12
     },
     "14": {
      "score": 20.8,
      "grade": "D",
      "claims": 66,
-     "UNVERIFIED": 45,
+     "UNVERIFIED": 51,
      "SKIPPED": 13,
-     "FLAGGED": 6,
      "VERIFIED": 2
     },
     "15": {
      "score": 17.5,
      "grade": "D",
      "claims": 48,
-     "UNVERIFIED": 32,
-     "SKIPPED": 12,
-     "FLAGGED": 4
+     "UNVERIFIED": 36,
+     "SKIPPED": 12
     },
     "16": {
      "score": 17.5,
      "grade": "D",
      "claims": 87,
-     "UNVERIFIED": 63,
-     "SKIPPED": 14,
-     "FLAGGED": 10
+     "UNVERIFIED": 73,
+     "SKIPPED": 14
     },
     "17": {
      "score": 20.8,
      "grade": "D",
      "claims": 59,
-     "UNVERIFIED": 41,
+     "UNVERIFIED": 47,
      "VERIFIED": 2,
-     "SKIPPED": 10,
-     "FLAGGED": 6
+     "SKIPPED": 10
     },
     "18": {
      "score": 17.5,
      "grade": "D",
      "claims": 78,
-     "UNVERIFIED": 56,
-     "SKIPPED": 14,
-     "FLAGGED": 8
+     "UNVERIFIED": 64,
+     "SKIPPED": 14
     },
     "19": {
      "score": 17.5,
      "grade": "D",
      "claims": 83,
-     "UNVERIFIED": 60,
-     "SKIPPED": 15,
-     "FLAGGED": 8
+     "UNVERIFIED": 68,
+     "SKIPPED": 15
     },
     "2": {
      "score": 17.5,
      "grade": "D",
      "claims": 95,
-     "UNVERIFIED": 69,
-     "SKIPPED": 14,
-     "FLAGGED": 12
+     "UNVERIFIED": 81,
+     "SKIPPED": 14
     },
     "20": {
      "score": 17.5,
      "grade": "D",
      "claims": 81,
-     "UNVERIFIED": 61,
-     "SKIPPED": 14,
-     "FLAGGED": 6
+     "UNVERIFIED": 67,
+     "SKIPPED": 14
     },
     "21": {
      "score": 17.5,
      "grade": "D",
      "claims": 83,
-     "UNVERIFIED": 59,
-     "SKIPPED": 16,
-     "FLAGGED": 8
+     "UNVERIFIED": 67,
+     "SKIPPED": 16
     },
     "22": {
      "score": 17.5,
      "grade": "D",
      "claims": 90,
-     "UNVERIFIED": 68,
-     "SKIPPED": 16,
-     "FLAGGED": 6
+     "UNVERIFIED": 74,
+     "SKIPPED": 16
     },
     "3": {
      "score": 24.2,
      "grade": "D",
      "claims": 76,
      "VERIFIED": 4,
-     "UNVERIFIED": 52,
-     "SKIPPED": 13,
-     "FLAGGED": 7
+     "UNVERIFIED": 59,
+     "SKIPPED": 13
     },
     "4": {
      "score": 22.5,
      "grade": "D",
      "claims": 62,
      "VERIFIED": 4,
-     "UNVERIFIED": 42,
-     "SKIPPED": 12,
-     "FLAGGED": 4
+     "UNVERIFIED": 46,
+     "SKIPPED": 12
     },
     "5": {
      "score": 20.0,
      "grade": "D",
      "claims": 72,
-     "UNVERIFIED": 49,
+     "UNVERIFIED": 56,
      "VERIFIED": 2,
-     "SKIPPED": 14,
-     "FLAGGED": 7
+     "SKIPPED": 14
     },
     "6": {
      "score": 17.5,
      "grade": "D",
      "claims": 73,
-     "UNVERIFIED": 53,
-     "SKIPPED": 14,
-     "FLAGGED": 6
+     "UNVERIFIED": 59,
+     "SKIPPED": 14
     },
     "7": {
      "score": 17.5,
      "grade": "D",
      "claims": 54,
-     "UNVERIFIED": 40,
-     "SKIPPED": 10,
-     "FLAGGED": 4
+     "UNVERIFIED": 44,
+     "SKIPPED": 10
     },
     "8": {
      "score": 20.8,
      "grade": "D",
      "claims": 72,
      "VERIFIED": 2,
-     "UNVERIFIED": 50,
-     "SKIPPED": 14,
-     "FLAGGED": 6
+     "UNVERIFIED": 56,
+     "SKIPPED": 14
     },
     "9": {
      "score": 17.5,
      "grade": "D",
      "claims": 58,
-     "UNVERIFIED": 42,
-     "SKIPPED": 12,
-     "FLAGGED": 4
+     "UNVERIFIED": 46,
+     "SKIPPED": 12
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 6.6,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "isaiah": {
@@ -2591,60 +2520,53 @@
      "score": 22.5,
      "grade": "D",
      "claims": 67,
-     "UNVERIFIED": 43,
+     "UNVERIFIED": 51,
      "SKIPPED": 14,
-     "FLAGGED": 8,
      "VERIFIED": 2
     },
     "10": {
      "score": 17.5,
      "grade": "D",
      "claims": 70,
-     "UNVERIFIED": 48,
-     "SKIPPED": 14,
-     "FLAGGED": 8
+     "UNVERIFIED": 56,
+     "SKIPPED": 14
     },
     "11": {
      "score": 17.5,
      "grade": "D",
      "claims": 74,
-     "UNVERIFIED": 50,
-     "SKIPPED": 16,
-     "FLAGGED": 8
+     "UNVERIFIED": 58,
+     "SKIPPED": 16
     },
     "12": {
      "score": 22.5,
      "grade": "D",
      "claims": 66,
      "VERIFIED": 2,
-     "UNVERIFIED": 42,
-     "SKIPPED": 14,
-     "FLAGGED": 8
+     "UNVERIFIED": 50,
+     "SKIPPED": 14
     },
     "13": {
      "score": 17.5,
      "grade": "D",
      "claims": 67,
-     "UNVERIFIED": 45,
-     "SKIPPED": 14,
-     "FLAGGED": 8
+     "UNVERIFIED": 53,
+     "SKIPPED": 14
     },
     "14": {
      "score": 22.5,
      "grade": "D",
      "claims": 67,
-     "UNVERIFIED": 43,
+     "UNVERIFIED": 51,
      "SKIPPED": 14,
-     "FLAGGED": 8,
      "VERIFIED": 2
     },
     "15": {
      "score": 22.5,
      "grade": "D",
      "claims": 64,
-     "UNVERIFIED": 41,
+     "UNVERIFIED": 49,
      "SKIPPED": 13,
-     "FLAGGED": 8,
      "VERIFIED": 2
     },
     "16": {
@@ -2652,179 +2574,157 @@
      "grade": "D",
      "claims": 67,
      "VERIFIED": 2,
-     "UNVERIFIED": 43,
-     "SKIPPED": 14,
-     "FLAGGED": 8
+     "UNVERIFIED": 51,
+     "SKIPPED": 14
     },
     "17": {
      "score": 17.5,
      "grade": "D",
      "claims": 68,
-     "UNVERIFIED": 46,
-     "SKIPPED": 14,
-     "FLAGGED": 8
+     "UNVERIFIED": 54,
+     "SKIPPED": 14
     },
     "18": {
      "score": 17.5,
      "grade": "D",
      "claims": 62,
-     "UNVERIFIED": 40,
-     "SKIPPED": 14,
-     "FLAGGED": 8
+     "UNVERIFIED": 48,
+     "SKIPPED": 14
     },
     "19": {
      "score": 17.5,
      "grade": "D",
      "claims": 70,
-     "UNVERIFIED": 48,
-     "SKIPPED": 14,
-     "FLAGGED": 8
+     "UNVERIFIED": 56,
+     "SKIPPED": 14
     },
     "2": {
      "score": 17.5,
      "grade": "D",
      "claims": 67,
-     "UNVERIFIED": 45,
-     "SKIPPED": 14,
-     "FLAGGED": 8
+     "UNVERIFIED": 53,
+     "SKIPPED": 14
     },
     "20": {
      "score": 17.5,
      "grade": "D",
      "claims": 69,
-     "UNVERIFIED": 47,
-     "SKIPPED": 14,
-     "FLAGGED": 8
+     "UNVERIFIED": 55,
+     "SKIPPED": 14
     },
     "21": {
      "score": 17.5,
      "grade": "D",
      "claims": 66,
-     "UNVERIFIED": 44,
-     "SKIPPED": 14,
-     "FLAGGED": 8
+     "UNVERIFIED": 52,
+     "SKIPPED": 14
     },
     "22": {
      "score": 22.5,
      "grade": "D",
      "claims": 67,
      "VERIFIED": 2,
-     "UNVERIFIED": 43,
-     "SKIPPED": 14,
-     "FLAGGED": 8
+     "UNVERIFIED": 51,
+     "SKIPPED": 14
     },
     "23": {
      "score": 17.5,
      "grade": "D",
      "claims": 37,
-     "UNVERIFIED": 23,
-     "SKIPPED": 7,
-     "FLAGGED": 7
+     "UNVERIFIED": 30,
+     "SKIPPED": 7
     },
     "24": {
      "score": 17.5,
      "grade": "D",
      "claims": 43,
-     "UNVERIFIED": 28,
-     "SKIPPED": 7,
-     "FLAGGED": 8
+     "UNVERIFIED": 36,
+     "SKIPPED": 7
     },
     "25": {
      "score": 17.5,
      "grade": "D",
      "claims": 40,
-     "UNVERIFIED": 26,
-     "SKIPPED": 7,
-     "FLAGGED": 7
+     "UNVERIFIED": 33,
+     "SKIPPED": 7
     },
     "26": {
      "score": 17.5,
      "grade": "D",
      "claims": 42,
-     "UNVERIFIED": 26,
-     "SKIPPED": 8,
-     "FLAGGED": 8
+     "UNVERIFIED": 34,
+     "SKIPPED": 8
     },
     "27": {
      "score": 17.5,
      "grade": "D",
      "claims": 43,
-     "UNVERIFIED": 27,
-     "SKIPPED": 8,
-     "FLAGGED": 8
+     "UNVERIFIED": 35,
+     "SKIPPED": 8
     },
     "28": {
      "score": 17.5,
      "grade": "D",
      "claims": 41,
-     "UNVERIFIED": 26,
-     "SKIPPED": 7,
-     "FLAGGED": 8
+     "UNVERIFIED": 34,
+     "SKIPPED": 7
     },
     "29": {
      "score": 17.5,
      "grade": "D",
      "claims": 44,
-     "UNVERIFIED": 28,
-     "SKIPPED": 8,
-     "FLAGGED": 8
+     "UNVERIFIED": 36,
+     "SKIPPED": 8
     },
     "3": {
      "score": 17.5,
      "grade": "D",
      "claims": 65,
-     "UNVERIFIED": 43,
-     "SKIPPED": 14,
-     "FLAGGED": 8
+     "UNVERIFIED": 51,
+     "SKIPPED": 14
     },
     "30": {
      "score": 17.5,
      "grade": "D",
      "claims": 43,
-     "UNVERIFIED": 27,
-     "SKIPPED": 8,
-     "FLAGGED": 8
+     "UNVERIFIED": 35,
+     "SKIPPED": 8
     },
     "31": {
      "score": 22.5,
      "grade": "D",
      "claims": 38,
      "VERIFIED": 2,
-     "UNVERIFIED": 22,
-     "SKIPPED": 7,
-     "FLAGGED": 7
+     "UNVERIFIED": 29,
+     "SKIPPED": 7
     },
     "32": {
      "score": 17.5,
      "grade": "D",
      "claims": 40,
-     "UNVERIFIED": 24,
-     "SKIPPED": 8,
-     "FLAGGED": 8
+     "UNVERIFIED": 32,
+     "SKIPPED": 8
     },
     "33": {
-     "score": 16.6,
+     "score": 17.5,
      "grade": "D",
      "claims": 44,
-     "UNVERIFIED": 28,
-     "SKIPPED": 7,
-     "FLAGGED": 9
+     "UNVERIFIED": 36,
+     "SKIPPED": 8
     },
     "34": {
      "score": 17.5,
      "grade": "D",
      "claims": 43,
-     "UNVERIFIED": 27,
-     "SKIPPED": 8,
-     "FLAGGED": 8
+     "UNVERIFIED": 35,
+     "SKIPPED": 8
     },
     "35": {
      "score": 17.5,
      "grade": "D",
      "claims": 41,
-     "UNVERIFIED": 25,
-     "SKIPPED": 8,
-     "FLAGGED": 8
+     "UNVERIFIED": 33,
+     "SKIPPED": 8
     },
     "36": {
      "score": 17.5,
@@ -2834,12 +2734,11 @@
      "SKIPPED": 6
     },
     "37": {
-     "score": 16.2,
+     "score": 17.5,
      "grade": "D",
      "claims": 34,
      "UNVERIFIED": 28,
-     "SKIPPED": 5,
-     "FLAGGED": 1
+     "SKIPPED": 6
     },
     "38": {
      "score": 27.5,
@@ -2862,9 +2761,8 @@
      "grade": "D",
      "claims": 45,
      "VERIFIED": 2,
-     "UNVERIFIED": 31,
-     "SKIPPED": 8,
-     "FLAGGED": 4
+     "UNVERIFIED": 35,
+     "SKIPPED": 8
     },
     "40": {
      "score": 22.5,
@@ -2946,9 +2844,8 @@
      "grade": "D",
      "claims": 72,
      "VERIFIED": 2,
-     "UNVERIFIED": 48,
-     "SKIPPED": 14,
-     "FLAGGED": 8
+     "UNVERIFIED": 56,
+     "SKIPPED": 14
     },
     "50": {
      "score": 17.5,
@@ -2981,12 +2878,11 @@
      "SKIPPED": 8
     },
     "54": {
-     "score": 16.6,
+     "score": 17.5,
      "grade": "D",
      "claims": 37,
      "UNVERIFIED": 29,
-     "SKIPPED": 7,
-     "FLAGGED": 1
+     "SKIPPED": 8
     },
     "55": {
      "score": 17.5,
@@ -3004,13 +2900,12 @@
      "SKIPPED": 6
     },
     "57": {
-     "score": 21.2,
+     "score": 22.5,
      "grade": "D",
      "claims": 35,
      "VERIFIED": 2,
      "UNVERIFIED": 27,
-     "SKIPPED": 5,
-     "FLAGGED": 1
+     "SKIPPED": 6
     },
     "58": {
      "score": 17.5,
@@ -3031,9 +2926,8 @@
      "grade": "D",
      "claims": 69,
      "VERIFIED": 2,
-     "UNVERIFIED": 45,
-     "SKIPPED": 14,
-     "FLAGGED": 8
+     "UNVERIFIED": 53,
+     "SKIPPED": 14
     },
     "60": {
      "score": 17.5,
@@ -3092,75 +2986,68 @@
      "score": 17.5,
      "grade": "D",
      "claims": 68,
-     "UNVERIFIED": 46,
-     "SKIPPED": 14,
-     "FLAGGED": 8
+     "UNVERIFIED": 54,
+     "SKIPPED": 14
     },
     "8": {
      "score": 22.5,
      "grade": "D",
      "claims": 68,
-     "UNVERIFIED": 44,
+     "UNVERIFIED": 52,
      "SKIPPED": 14,
-     "FLAGGED": 8,
      "VERIFIED": 2
     },
     "9": {
      "score": 22.5,
      "grade": "D",
      "claims": 67,
-     "UNVERIFIED": 43,
+     "UNVERIFIED": 51,
      "SKIPPED": 14,
-     "FLAGGED": 8,
      "VERIFIED": 2
     }
    },
    "by_type": {
-    "cross_reference": 49.6,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 10.6,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "daniel": {
-   "score": 20.4,
+   "score": 20.8,
    "grade": "D",
    "chapters": {
     "1": {
      "score": 17.5,
      "grade": "D",
      "claims": 70,
-     "UNVERIFIED": 45,
-     "SKIPPED": 13,
-     "FLAGGED": 12
+     "UNVERIFIED": 57,
+     "SKIPPED": 13
     },
     "10": {
-     "score": 21.3,
+     "score": 22.5,
      "grade": "D",
      "claims": 69,
      "VERIFIED": 2,
-     "UNVERIFIED": 42,
-     "SKIPPED": 11,
-     "FLAGGED": 14
+     "UNVERIFIED": 54,
+     "SKIPPED": 13
     },
     "11": {
-     "score": 20.2,
+     "score": 22.5,
      "grade": "D",
      "claims": 71,
      "VERIFIED": 2,
-     "UNVERIFIED": 44,
-     "SKIPPED": 9,
-     "FLAGGED": 16
+     "UNVERIFIED": 56,
+     "SKIPPED": 13
     },
     "12": {
      "score": 22.5,
      "grade": "D",
      "claims": 73,
-     "UNVERIFIED": 45,
+     "UNVERIFIED": 57,
      "SKIPPED": 14,
-     "FLAGGED": 12,
      "VERIFIED": 2
     },
     "2": {
@@ -3168,80 +3055,72 @@
      "grade": "D",
      "claims": 74,
      "VERIFIED": 4,
-     "UNVERIFIED": 44,
-     "SKIPPED": 14,
-     "FLAGGED": 12
+     "UNVERIFIED": 56,
+     "SKIPPED": 14
     },
     "3": {
      "score": 17.5,
      "grade": "D",
      "claims": 74,
-     "UNVERIFIED": 48,
-     "SKIPPED": 14,
-     "FLAGGED": 12
+     "UNVERIFIED": 60,
+     "SKIPPED": 14
     },
     "4": {
      "score": 22.5,
      "grade": "D",
      "claims": 69,
      "VERIFIED": 2,
-     "UNVERIFIED": 43,
-     "SKIPPED": 12,
-     "FLAGGED": 12
+     "UNVERIFIED": 55,
+     "SKIPPED": 12
     },
     "5": {
      "score": 17.5,
      "grade": "D",
      "claims": 67,
-     "UNVERIFIED": 43,
-     "SKIPPED": 12,
-     "FLAGGED": 12
+     "UNVERIFIED": 55,
+     "SKIPPED": 12
     },
     "6": {
      "score": 17.5,
      "grade": "D",
      "claims": 73,
-     "UNVERIFIED": 47,
-     "SKIPPED": 14,
-     "FLAGGED": 12
+     "UNVERIFIED": 59,
+     "SKIPPED": 14
     },
     "7": {
      "score": 17.5,
      "grade": "D",
      "claims": 76,
-     "UNVERIFIED": 50,
-     "SKIPPED": 14,
-     "FLAGGED": 12
+     "UNVERIFIED": 62,
+     "SKIPPED": 14
     },
     "8": {
-     "score": 26.4,
+     "score": 27.5,
      "grade": "D",
      "claims": 74,
      "VERIFIED": 4,
-     "UNVERIFIED": 44,
-     "SKIPPED": 12,
-     "FLAGGED": 14
+     "UNVERIFIED": 56,
+     "SKIPPED": 14
     },
     "9": {
      "score": 17.5,
      "grade": "D",
      "claims": 71,
-     "UNVERIFIED": 45,
-     "SKIPPED": 14,
-     "FLAGGED": 12
+     "UNVERIFIED": 57,
+     "SKIPPED": 14
     }
    },
    "by_type": {
-    "cross_reference": 47.5,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 16.7,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "leviticus": {
-   "score": 17.4,
+   "score": 17.5,
    "grade": "D",
    "chapters": {
     "1": {
@@ -3273,12 +3152,11 @@
      "SKIPPED": 10
     },
     "13": {
-     "score": 16.0,
+     "score": 17.5,
      "grade": "D",
      "claims": 68,
      "UNVERIFIED": 58,
-     "SKIPPED": 8,
-     "FLAGGED": 2
+     "SKIPPED": 10
     },
     "14": {
      "score": 17.5,
@@ -3436,16 +3314,16 @@
     }
    },
    "by_type": {
-    "cross_reference": 49.6,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 0.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "numbers": {
-   "score": 17.4,
+   "score": 17.5,
    "grade": "D",
    "chapters": {
     "1": {
@@ -3498,12 +3376,11 @@
      "SKIPPED": 8
     },
     "16": {
-     "score": 15.6,
+     "score": 17.5,
      "grade": "D",
      "claims": 70,
      "UNVERIFIED": 62,
-     "FLAGGED": 2,
-     "SKIPPED": 6
+     "SKIPPED": 8
     },
     "17": {
      "score": 17.5,
@@ -3534,12 +3411,11 @@
      "SKIPPED": 8
     },
     "20": {
-     "score": 16.0,
+     "score": 17.5,
      "grade": "D",
      "claims": 70,
      "UNVERIFIED": 60,
-     "SKIPPED": 8,
-     "FLAGGED": 2
+     "SKIPPED": 10
     },
     "21": {
      "score": 17.5,
@@ -3549,12 +3425,11 @@
      "SKIPPED": 8
     },
     "22": {
-     "score": 16.0,
+     "score": 17.5,
      "grade": "D",
      "claims": 69,
      "UNVERIFIED": 59,
-     "SKIPPED": 8,
-     "FLAGGED": 2
+     "SKIPPED": 10
     },
     "23": {
      "score": 17.5,
@@ -3705,16 +3580,16 @@
     }
    },
    "by_type": {
-    "cross_reference": 49.1,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 0.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "deuteronomy": {
-   "score": 17.4,
+   "score": 17.5,
    "grade": "D",
    "chapters": {
     "1": {
@@ -3907,12 +3782,11 @@
      "SKIPPED": 8
     },
     "34": {
-     "score": 15.6,
+     "score": 17.5,
      "grade": "D",
      "claims": 66,
      "UNVERIFIED": 58,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 8
     },
     "4": {
      "score": 17.5,
@@ -3958,400 +3832,355 @@
     }
    },
    "by_type": {
-    "cross_reference": 49.6,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 0.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "joshua": {
-   "score": 15.1,
+   "score": 16.1,
    "grade": "D",
    "chapters": {
     "1": {
-     "score": 14.7,
+     "score": 15.8,
      "grade": "D",
-     "claims": 64,
+     "claims": 61,
      "UNVERIFIED": 56,
-     "SKIPPED": 5,
-     "FLAGGED": 3
+     "SKIPPED": 5
     },
     "10": {
-     "score": 15.6,
+     "score": 16.4,
      "grade": "D",
-     "claims": 74,
+     "claims": 72,
      "UNVERIFIED": 66,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 6
     },
     "11": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "12": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "13": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "14": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "15": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "16": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "17": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "18": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "19": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "2": {
-     "score": 14.7,
+     "score": 15.8,
      "grade": "D",
-     "claims": 63,
+     "claims": 60,
      "UNVERIFIED": 55,
-     "SKIPPED": 5,
-     "FLAGGED": 3
+     "SKIPPED": 5
     },
     "20": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "21": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "22": {
-     "score": 15.6,
+     "score": 16.4,
      "grade": "D",
-     "claims": 74,
+     "claims": 72,
      "UNVERIFIED": 66,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 6
     },
     "23": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "24": {
-     "score": 15.6,
+     "score": 16.4,
      "grade": "D",
-     "claims": 74,
+     "claims": 72,
      "UNVERIFIED": 66,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 6
     },
     "3": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "4": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "5": {
-     "score": 15.6,
+     "score": 16.4,
      "grade": "D",
-     "claims": 74,
+     "claims": 72,
      "UNVERIFIED": 66,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 6
     },
     "6": {
-     "score": 15.6,
+     "score": 16.4,
      "grade": "D",
-     "claims": 74,
+     "claims": 72,
      "UNVERIFIED": 66,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 6
     },
     "7": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "8": {
-     "score": 15.6,
+     "score": 16.4,
      "grade": "D",
-     "claims": 74,
+     "claims": 72,
      "UNVERIFIED": 66,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 6
     },
     "9": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     }
    },
    "by_type": {
-    "cross_reference": 34.2,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 0.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 40.6,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "judges": {
-   "score": 15.1,
+   "score": 16.1,
    "grade": "D",
    "chapters": {
     "1": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "10": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "11": {
-     "score": 15.6,
+     "score": 16.4,
      "grade": "D",
-     "claims": 74,
+     "claims": 72,
      "UNVERIFIED": 66,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 6
     },
     "12": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "13": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "14": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "15": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "16": {
-     "score": 15.6,
+     "score": 16.4,
      "grade": "D",
-     "claims": 74,
+     "claims": 72,
      "UNVERIFIED": 66,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 6
     },
     "17": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "18": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "19": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "2": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "20": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "21": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "3": {
-     "score": 15.6,
+     "score": 16.4,
      "grade": "D",
-     "claims": 74,
+     "claims": 72,
      "UNVERIFIED": 66,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 6
     },
     "4": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "5": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "6": {
-     "score": 15.6,
+     "score": 16.4,
      "grade": "D",
-     "claims": 74,
+     "claims": 72,
      "UNVERIFIED": 66,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 6
     },
     "7": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "8": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "9": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     }
    },
    "by_type": {
-    "cross_reference": 34.1,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 0.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 40.6,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "ruth": {
@@ -4388,480 +4217,425 @@
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 0.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "1_samuel": {
-   "score": 15.1,
+   "score": 16.1,
    "grade": "D",
    "chapters": {
     "1": {
-     "score": 15.6,
+     "score": 16.4,
      "grade": "D",
-     "claims": 74,
+     "claims": 72,
      "UNVERIFIED": 66,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 6
     },
     "10": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "11": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "12": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "13": {
-     "score": 15.6,
+     "score": 16.4,
      "grade": "D",
-     "claims": 74,
+     "claims": 72,
      "UNVERIFIED": 66,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 6
     },
     "14": {
-     "score": 15.6,
+     "score": 16.4,
      "grade": "D",
-     "claims": 74,
+     "claims": 72,
      "UNVERIFIED": 66,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 6
     },
     "15": {
-     "score": 15.6,
+     "score": 16.4,
      "grade": "D",
-     "claims": 74,
+     "claims": 72,
      "UNVERIFIED": 66,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 6
     },
     "16": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "17": {
-     "score": 15.6,
+     "score": 16.4,
      "grade": "D",
-     "claims": 74,
+     "claims": 72,
      "UNVERIFIED": 66,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 6
     },
     "18": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "19": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "2": {
-     "score": 15.6,
+     "score": 16.4,
      "grade": "D",
-     "claims": 74,
+     "claims": 72,
      "UNVERIFIED": 66,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 6
     },
     "20": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "21": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "22": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "23": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "24": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "25": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "26": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "27": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "28": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "29": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "3": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "30": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "31": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "4": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "5": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "6": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "7": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "8": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "9": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     }
    },
    "by_type": {
-    "cross_reference": 34.1,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 0.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 40.6,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "2_samuel": {
-   "score": 15.1,
+   "score": 16.1,
    "grade": "D",
    "chapters": {
     "1": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "10": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "11": {
-     "score": 15.6,
+     "score": 16.4,
      "grade": "D",
-     "claims": 74,
+     "claims": 72,
      "UNVERIFIED": 66,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 6
     },
     "12": {
-     "score": 15.6,
+     "score": 16.4,
      "grade": "D",
-     "claims": 74,
+     "claims": 72,
      "UNVERIFIED": 66,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 6
     },
     "13": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "14": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "15": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "16": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "17": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "18": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "19": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "2": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "20": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "21": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "22": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "23": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "24": {
-     "score": 15.6,
+     "score": 16.4,
      "grade": "D",
-     "claims": 74,
+     "claims": 72,
      "UNVERIFIED": 66,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 6
     },
     "3": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "4": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "5": {
-     "score": 15.6,
+     "score": 16.4,
      "grade": "D",
-     "claims": 74,
+     "claims": 72,
      "UNVERIFIED": 66,
-     "SKIPPED": 6,
-     "FLAGGED": 2
+     "SKIPPED": 6
     },
     "6": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "7": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "8": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     },
     "9": {
-     "score": 15.0,
+     "score": 16.0,
      "grade": "D",
-     "claims": 53,
+     "claims": 51,
      "UNVERIFIED": 47,
-     "SKIPPED": 4,
-     "FLAGGED": 2
+     "SKIPPED": 4
     }
    },
    "by_type": {
-    "cross_reference": 34.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 0.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 40.5,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "1_kings": {
@@ -5024,12 +4798,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 0.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "2_kings": {
@@ -5213,12 +4987,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 40.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "job": {
@@ -5229,362 +5003,320 @@
      "score": 19.5,
      "grade": "D",
      "claims": 84,
-     "UNVERIFIED": 61,
+     "UNVERIFIED": 70,
      "VERIFIED": 2,
-     "SKIPPED": 12,
-     "FLAGGED": 9
+     "SKIPPED": 12
     },
     "10": {
      "score": 17.5,
      "grade": "D",
      "claims": 50,
-     "UNVERIFIED": 36,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 42,
+     "SKIPPED": 8
     },
     "11": {
      "score": 17.5,
      "grade": "D",
      "claims": 53,
-     "UNVERIFIED": 39,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 45,
+     "SKIPPED": 8
     },
     "12": {
      "score": 17.5,
      "grade": "D",
      "claims": 51,
-     "UNVERIFIED": 37,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 43,
+     "SKIPPED": 8
     },
     "13": {
      "score": 17.5,
      "grade": "D",
      "claims": 54,
-     "UNVERIFIED": 40,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 46,
+     "SKIPPED": 8
     },
     "14": {
      "score": 17.5,
      "grade": "D",
      "claims": 52,
-     "UNVERIFIED": 37,
-     "SKIPPED": 8,
-     "FLAGGED": 7
+     "UNVERIFIED": 44,
+     "SKIPPED": 8
     },
     "15": {
      "score": 22.5,
      "grade": "D",
      "claims": 51,
      "VERIFIED": 2,
-     "UNVERIFIED": 35,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 41,
+     "SKIPPED": 8
     },
     "16": {
      "score": 17.5,
      "grade": "D",
      "claims": 49,
-     "UNVERIFIED": 35,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 41,
+     "SKIPPED": 8
     },
     "17": {
      "score": 17.5,
      "grade": "D",
      "claims": 40,
-     "UNVERIFIED": 29,
-     "SKIPPED": 6,
-     "FLAGGED": 5
+     "UNVERIFIED": 34,
+     "SKIPPED": 6
     },
     "18": {
      "score": 17.5,
      "grade": "D",
      "claims": 47,
-     "UNVERIFIED": 36,
-     "SKIPPED": 6,
-     "FLAGGED": 5
+     "UNVERIFIED": 41,
+     "SKIPPED": 6
     },
     "19": {
      "score": 20.8,
      "grade": "D",
      "claims": 61,
-     "UNVERIFIED": 43,
+     "UNVERIFIED": 49,
      "SKIPPED": 10,
-     "FLAGGED": 6,
      "VERIFIED": 2
     },
     "2": {
      "score": 17.5,
      "grade": "D",
      "claims": 51,
-     "UNVERIFIED": 40,
-     "SKIPPED": 6,
-     "FLAGGED": 5
+     "UNVERIFIED": 45,
+     "SKIPPED": 6
     },
     "20": {
      "score": 17.5,
      "grade": "D",
      "claims": 50,
-     "UNVERIFIED": 36,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 42,
+     "SKIPPED": 8
     },
     "21": {
      "score": 17.5,
      "grade": "D",
      "claims": 55,
-     "UNVERIFIED": 39,
-     "SKIPPED": 10,
-     "FLAGGED": 6
+     "UNVERIFIED": 45,
+     "SKIPPED": 10
     },
     "22": {
      "score": 17.5,
      "grade": "D",
      "claims": 50,
-     "UNVERIFIED": 36,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 42,
+     "SKIPPED": 8
     },
     "23": {
      "score": 17.5,
      "grade": "D",
      "claims": 51,
-     "UNVERIFIED": 37,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 43,
+     "SKIPPED": 8
     },
     "24": {
      "score": 17.5,
      "grade": "D",
      "claims": 49,
-     "UNVERIFIED": 35,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 41,
+     "SKIPPED": 8
     },
     "25": {
      "score": 22.5,
      "grade": "D",
      "claims": 39,
-     "UNVERIFIED": 27,
+     "UNVERIFIED": 31,
      "SKIPPED": 6,
-     "FLAGGED": 4,
      "VERIFIED": 2
     },
     "26": {
      "score": 17.5,
      "grade": "D",
      "claims": 50,
-     "UNVERIFIED": 37,
-     "SKIPPED": 8,
-     "FLAGGED": 5
+     "UNVERIFIED": 42,
+     "SKIPPED": 8
     },
     "27": {
      "score": 17.5,
      "grade": "D",
      "claims": 49,
-     "UNVERIFIED": 35,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 41,
+     "SKIPPED": 8
     },
     "28": {
      "score": 20.8,
      "grade": "D",
      "claims": 58,
-     "UNVERIFIED": 40,
+     "UNVERIFIED": 46,
      "SKIPPED": 10,
-     "FLAGGED": 6,
      "VERIFIED": 2
     },
     "29": {
      "score": 17.5,
      "grade": "D",
      "claims": 51,
-     "UNVERIFIED": 37,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 43,
+     "SKIPPED": 8
     },
     "3": {
      "score": 25.0,
      "grade": "D",
      "claims": 58,
      "VERIFIED": 6,
-     "UNVERIFIED": 39,
-     "SKIPPED": 8,
-     "FLAGGED": 5
+     "UNVERIFIED": 44,
+     "SKIPPED": 8
     },
     "30": {
      "score": 22.5,
      "grade": "D",
      "claims": 50,
      "VERIFIED": 2,
-     "UNVERIFIED": 34,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 40,
+     "SKIPPED": 8
     },
     "31": {
      "score": 20.8,
      "grade": "D",
      "claims": 59,
-     "UNVERIFIED": 42,
+     "UNVERIFIED": 49,
      "VERIFIED": 2,
-     "SKIPPED": 8,
-     "FLAGGED": 7
+     "SKIPPED": 8
     },
     "32": {
      "score": 17.5,
      "grade": "D",
      "claims": 45,
-     "UNVERIFIED": 33,
-     "SKIPPED": 6,
-     "FLAGGED": 6
+     "UNVERIFIED": 39,
+     "SKIPPED": 6
     },
     "33": {
      "score": 22.5,
      "grade": "D",
      "claims": 51,
      "VERIFIED": 2,
-     "UNVERIFIED": 35,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 41,
+     "SKIPPED": 8
     },
     "34": {
      "score": 17.5,
      "grade": "D",
      "claims": 51,
-     "UNVERIFIED": 37,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 43,
+     "SKIPPED": 8
     },
     "35": {
      "score": 17.5,
      "grade": "D",
      "claims": 46,
-     "UNVERIFIED": 33,
-     "SKIPPED": 8,
-     "FLAGGED": 5
+     "UNVERIFIED": 38,
+     "SKIPPED": 8
     },
     "36": {
      "score": 22.5,
      "grade": "D",
      "claims": 50,
-     "UNVERIFIED": 34,
+     "UNVERIFIED": 40,
      "SKIPPED": 8,
-     "FLAGGED": 6,
      "VERIFIED": 2
     },
     "37": {
      "score": 17.5,
      "grade": "D",
      "claims": 51,
-     "UNVERIFIED": 37,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 43,
+     "SKIPPED": 8
     },
     "38": {
      "score": 20.8,
      "grade": "D",
      "claims": 66,
-     "UNVERIFIED": 46,
+     "UNVERIFIED": 54,
      "SKIPPED": 10,
-     "FLAGGED": 8,
      "VERIFIED": 2
     },
     "39": {
      "score": 17.5,
      "grade": "D",
      "claims": 51,
-     "UNVERIFIED": 36,
-     "SKIPPED": 8,
-     "FLAGGED": 7
+     "UNVERIFIED": 43,
+     "SKIPPED": 8
     },
     "4": {
      "score": 17.5,
      "grade": "D",
      "claims": 55,
-     "UNVERIFIED": 41,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 47,
+     "SKIPPED": 8
     },
     "40": {
      "score": 17.5,
      "grade": "D",
      "claims": 49,
-     "UNVERIFIED": 35,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 41,
+     "SKIPPED": 8
     },
     "41": {
      "score": 22.5,
      "grade": "D",
      "claims": 53,
-     "UNVERIFIED": 35,
+     "UNVERIFIED": 41,
      "SKIPPED": 10,
-     "FLAGGED": 6,
      "VERIFIED": 2
     },
     "42": {
      "score": 17.5,
      "grade": "D",
      "claims": 91,
-     "UNVERIFIED": 67,
-     "SKIPPED": 14,
-     "FLAGGED": 10
+     "UNVERIFIED": 77,
+     "SKIPPED": 14
     },
     "5": {
      "score": 17.5,
      "grade": "D",
      "claims": 60,
-     "UNVERIFIED": 46,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 52,
+     "SKIPPED": 8
     },
     "6": {
      "score": 17.5,
      "grade": "D",
      "claims": 61,
-     "UNVERIFIED": 47,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 53,
+     "SKIPPED": 8
     },
     "7": {
      "score": 17.5,
      "grade": "D",
      "claims": 59,
-     "UNVERIFIED": 45,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 51,
+     "SKIPPED": 8
     },
     "8": {
      "score": 17.5,
      "grade": "D",
      "claims": 51,
-     "UNVERIFIED": 37,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 43,
+     "SKIPPED": 8
     },
     "9": {
      "score": 17.5,
      "grade": "D",
      "claims": 71,
-     "UNVERIFIED": 50,
-     "SKIPPED": 12,
-     "FLAGGED": 9
+     "UNVERIFIED": 59,
+     "SKIPPED": 12
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 6.3,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "proverbs": {
-   "score": 19.1,
+   "score": 19.2,
    "grade": "D",
    "chapters": {
     "1": {
@@ -5769,12 +5501,11 @@
      "SKIPPED": 4
     },
     "31": {
-     "score": 15.6,
+     "score": 17.5,
      "grade": "D",
      "claims": 47,
      "UNVERIFIED": 43,
-     "SKIPPED": 3,
-     "FLAGGED": 1
+     "SKIPPED": 4
     },
     "4": {
      "score": 20.0,
@@ -5785,12 +5516,11 @@
      "VERIFIED": 2
     },
     "5": {
-     "score": 15.6,
+     "score": 17.5,
      "grade": "D",
      "claims": 53,
      "UNVERIFIED": 49,
-     "SKIPPED": 3,
-     "FLAGGED": 1
+     "SKIPPED": 4
     },
     "6": {
      "score": 17.5,
@@ -5808,12 +5538,11 @@
      "VERIFIED": 1
     },
     "8": {
-     "score": 16.2,
+     "score": 17.5,
      "grade": "D",
      "claims": 59,
      "UNVERIFIED": 53,
-     "SKIPPED": 5,
-     "FLAGGED": 1
+     "SKIPPED": 6
     },
     "9": {
      "score": 17.5,
@@ -5824,12 +5553,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 48.9,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 8.7,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "ecclesiastes": {
@@ -5840,107 +5569,95 @@
      "score": 17.5,
      "grade": "D",
      "claims": 61,
-     "UNVERIFIED": 45,
-     "SKIPPED": 8,
-     "FLAGGED": 8
+     "UNVERIFIED": 53,
+     "SKIPPED": 8
     },
     "10": {
      "score": 17.5,
      "grade": "D",
      "claims": 54,
-     "UNVERIFIED": 38,
-     "SKIPPED": 8,
-     "FLAGGED": 8
+     "UNVERIFIED": 46,
+     "SKIPPED": 8
     },
     "11": {
      "score": 17.5,
      "grade": "D",
      "claims": 55,
-     "UNVERIFIED": 39,
-     "SKIPPED": 8,
-     "FLAGGED": 8
+     "UNVERIFIED": 47,
+     "SKIPPED": 8
     },
     "12": {
      "score": 17.5,
      "grade": "D",
      "claims": 73,
-     "UNVERIFIED": 53,
-     "SKIPPED": 12,
-     "FLAGGED": 8
+     "UNVERIFIED": 61,
+     "SKIPPED": 12
     },
     "2": {
      "score": 17.5,
      "grade": "D",
      "claims": 56,
-     "UNVERIFIED": 40,
-     "SKIPPED": 8,
-     "FLAGGED": 8
+     "UNVERIFIED": 48,
+     "SKIPPED": 8
     },
     "3": {
      "score": 17.5,
      "grade": "D",
      "claims": 59,
-     "UNVERIFIED": 43,
-     "SKIPPED": 8,
-     "FLAGGED": 8
+     "UNVERIFIED": 51,
+     "SKIPPED": 8
     },
     "4": {
      "score": 17.5,
      "grade": "D",
      "claims": 55,
-     "UNVERIFIED": 39,
-     "SKIPPED": 8,
-     "FLAGGED": 8
+     "UNVERIFIED": 47,
+     "SKIPPED": 8
     },
     "5": {
      "score": 17.5,
      "grade": "D",
      "claims": 68,
-     "UNVERIFIED": 48,
-     "SKIPPED": 12,
-     "FLAGGED": 8
+     "UNVERIFIED": 56,
+     "SKIPPED": 12
     },
     "6": {
      "score": 17.5,
      "grade": "D",
      "claims": 54,
-     "UNVERIFIED": 38,
-     "SKIPPED": 8,
-     "FLAGGED": 8
+     "UNVERIFIED": 46,
+     "SKIPPED": 8
     },
     "7": {
      "score": 20.8,
      "grade": "D",
      "claims": 65,
-     "UNVERIFIED": 44,
+     "UNVERIFIED": 53,
      "SKIPPED": 10,
-     "FLAGGED": 9,
      "VERIFIED": 2
     },
     "8": {
      "score": 17.5,
      "grade": "D",
      "claims": 59,
-     "UNVERIFIED": 40,
-     "SKIPPED": 10,
-     "FLAGGED": 9
+     "UNVERIFIED": 49,
+     "SKIPPED": 10
     },
     "9": {
      "score": 17.5,
      "grade": "D",
      "claims": 58,
-     "UNVERIFIED": 42,
-     "SKIPPED": 8,
-     "FLAGGED": 8
+     "UNVERIFIED": 50,
+     "SKIPPED": 8
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 1.4,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "song_of_solomon": {
@@ -5951,76 +5668,68 @@
      "score": 17.5,
      "grade": "D",
      "claims": 62,
-     "UNVERIFIED": 46,
-     "SKIPPED": 8,
-     "FLAGGED": 8
+     "UNVERIFIED": 54,
+     "SKIPPED": 8
     },
     "2": {
      "score": 20.8,
      "grade": "D",
      "claims": 62,
-     "UNVERIFIED": 43,
+     "UNVERIFIED": 52,
      "VERIFIED": 2,
-     "SKIPPED": 8,
-     "FLAGGED": 9
+     "SKIPPED": 8
     },
     "3": {
      "score": 17.5,
      "grade": "D",
      "claims": 56,
-     "UNVERIFIED": 41,
-     "SKIPPED": 8,
-     "FLAGGED": 7
+     "UNVERIFIED": 48,
+     "SKIPPED": 8
     },
     "4": {
      "score": 17.5,
      "grade": "D",
      "claims": 57,
-     "UNVERIFIED": 41,
-     "SKIPPED": 8,
-     "FLAGGED": 8
+     "UNVERIFIED": 49,
+     "SKIPPED": 8
     },
     "5": {
      "score": 22.5,
      "grade": "D",
      "claims": 56,
      "VERIFIED": 2,
-     "UNVERIFIED": 38,
-     "SKIPPED": 8,
-     "FLAGGED": 8
+     "UNVERIFIED": 46,
+     "SKIPPED": 8
     },
     "6": {
      "score": 17.5,
      "grade": "D",
      "claims": 50,
-     "UNVERIFIED": 36,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 42,
+     "SKIPPED": 8
     },
     "7": {
      "score": 17.5,
      "grade": "D",
      "claims": 57,
-     "UNVERIFIED": 39,
-     "SKIPPED": 10,
-     "FLAGGED": 8
+     "UNVERIFIED": 47,
+     "SKIPPED": 10
     },
     "8": {
      "score": 17.5,
      "grade": "D",
      "claims": 68,
-     "UNVERIFIED": 48,
-     "SKIPPED": 12,
-     "FLAGGED": 8
+     "UNVERIFIED": 56,
+     "SKIPPED": 12
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 5.2,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "jeremiah": {
@@ -6340,12 +6049,11 @@
      "SKIPPED": 6
     },
     "48": {
-     "score": 16.0,
+     "score": 17.5,
      "grade": "D",
      "claims": 48,
      "UNVERIFIED": 38,
-     "SKIPPED": 8,
-     "FLAGGED": 2
+     "SKIPPED": 10
     },
     "49": {
      "score": 20.8,
@@ -6417,49 +6125,45 @@
     }
    },
    "by_type": {
-    "cross_reference": 49.8,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 10.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "lamentations": {
-   "score": 19.4,
+   "score": 19.5,
    "grade": "D",
    "chapters": {
     "1": {
      "score": 17.5,
      "grade": "D",
      "claims": 68,
-     "UNVERIFIED": 46,
-     "SKIPPED": 14,
-     "FLAGGED": 8
+     "UNVERIFIED": 54,
+     "SKIPPED": 14
     },
     "2": {
      "score": 17.5,
      "grade": "D",
      "claims": 71,
-     "UNVERIFIED": 49,
-     "SKIPPED": 14,
-     "FLAGGED": 8
+     "UNVERIFIED": 57,
+     "SKIPPED": 14
     },
     "3": {
      "score": 17.5,
      "grade": "D",
      "claims": 67,
-     "UNVERIFIED": 45,
-     "SKIPPED": 14,
-     "FLAGGED": 8
+     "UNVERIFIED": 53,
+     "SKIPPED": 14
     },
     "4": {
-     "score": 22.0,
+     "score": 22.5,
      "grade": "D",
      "claims": 70,
-     "UNVERIFIED": 46,
-     "SKIPPED": 13,
-     "FLAGGED": 9,
+     "UNVERIFIED": 54,
+     "SKIPPED": 14,
      "VERIFIED": 2
     },
     "5": {
@@ -6467,22 +6171,21 @@
      "grade": "D",
      "claims": 66,
      "VERIFIED": 2,
-     "UNVERIFIED": 42,
-     "SKIPPED": 14,
-     "FLAGGED": 8
+     "UNVERIFIED": 50,
+     "SKIPPED": 14
     }
    },
    "by_type": {
-    "cross_reference": 49.3,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 10.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "ezekiel": {
-   "score": 18.8,
+   "score": 18.9,
    "grade": "D",
    "chapters": {
     "1": {
@@ -6609,13 +6312,12 @@
      "VERIFIED": 2
     },
     "25": {
-     "score": 21.4,
+     "score": 22.5,
      "grade": "D",
      "claims": 79,
      "VERIFIED": 4,
      "UNVERIFIED": 61,
-     "SKIPPED": 12,
-     "FLAGGED": 2
+     "SKIPPED": 14
     },
     "26": {
      "score": 20.8,
@@ -6693,13 +6395,12 @@
      "SKIPPED": 15
     },
     "35": {
-     "score": 19.3,
+     "score": 20.8,
      "grade": "D",
      "claims": 60,
      "VERIFIED": 2,
      "UNVERIFIED": 48,
-     "FLAGGED": 2,
-     "SKIPPED": 8
+     "SKIPPED": 10
     },
     "36": {
      "score": 17.5,
@@ -6843,12 +6544,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 49.6,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 7.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "hosea": {
@@ -6962,16 +6663,16 @@
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 8.9,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "joel": {
-   "score": 17.1,
+   "score": 17.5,
    "grade": "D",
    "chapters": {
     "1": {
@@ -6989,34 +6690,32 @@
      "SKIPPED": 16
     },
     "3": {
-     "score": 16.2,
+     "score": 17.5,
      "grade": "D",
      "claims": 58,
      "UNVERIFIED": 46,
-     "SKIPPED": 10,
-     "FLAGGED": 2
+     "SKIPPED": 12
     }
    },
    "by_type": {
-    "cross_reference": 47.2,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 0.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "amos": {
-   "score": 18.2,
+   "score": 18.3,
    "grade": "D",
    "chapters": {
     "1": {
-     "score": 16.3,
+     "score": 17.5,
      "grade": "D",
      "claims": 76,
      "UNVERIFIED": 63,
-     "SKIPPED": 11,
-     "FLAGGED": 2
+     "SKIPPED": 13
     },
     "2": {
      "score": 17.5,
@@ -7078,12 +6777,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 49.1,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 4.2,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "obadiah": {
@@ -7099,12 +6798,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 0.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "jonah": {
@@ -7143,12 +6842,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 5.2,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "micah": {
@@ -7209,12 +6908,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 7.1,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "nahum": {
@@ -7245,12 +6944,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 5.6,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "habakkuk": {
@@ -7281,12 +6980,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 4.2,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "zephaniah": {
@@ -7317,12 +7016,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 8.3,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "haggai": {
@@ -7345,12 +7044,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 0.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "zechariah": {
@@ -7460,12 +7159,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 3.9,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "malachi": {
@@ -7504,12 +7203,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 9.4,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "acts": {
@@ -7539,13 +7238,12 @@
      "SKIPPED": 12
     },
     "12": {
-     "score": 18.8,
+     "score": 19.7,
      "grade": "D",
-     "claims": 77,
+     "claims": 76,
      "UNVERIFIED": 63,
-     "SKIPPED": 10,
-     "VERIFIED": 2,
-     "FLAGGED": 2
+     "SKIPPED": 11,
+     "VERIFIED": 2
     },
     "13": {
      "score": 20.8,
@@ -7722,34 +7420,32 @@
     }
    },
    "by_type": {
-    "cross_reference": 49.7,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 3.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 49.9,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "1_corinthians": {
-   "score": 20.3,
+   "score": 20.4,
    "grade": "D",
    "chapters": {
     "1": {
      "score": 19.2,
      "grade": "D",
      "claims": 116,
-     "UNVERIFIED": 88,
+     "UNVERIFIED": 96,
      "VERIFIED": 2,
-     "SKIPPED": 18,
-     "FLAGGED": 8
+     "SKIPPED": 18
     },
     "10": {
      "score": 24.2,
      "grade": "D",
      "claims": 84,
-     "UNVERIFIED": 58,
+     "UNVERIFIED": 62,
      "SKIPPED": 14,
-     "FLAGGED": 4,
      "VERIFIED": 8
     },
     "11": {
@@ -7757,17 +7453,15 @@
      "grade": "D",
      "claims": 81,
      "VERIFIED": 8,
-     "UNVERIFIED": 55,
-     "SKIPPED": 14,
-     "FLAGGED": 4
+     "UNVERIFIED": 59,
+     "SKIPPED": 14
     },
     "12": {
      "score": 20.8,
      "grade": "D",
      "claims": 74,
-     "UNVERIFIED": 55,
+     "UNVERIFIED": 58,
      "SKIPPED": 12,
-     "FLAGGED": 3,
      "VERIFIED": 4
     },
     "13": {
@@ -7775,17 +7469,15 @@
      "grade": "D",
      "claims": 77,
      "VERIFIED": 6,
-     "UNVERIFIED": 55,
-     "SKIPPED": 13,
-     "FLAGGED": 3
+     "UNVERIFIED": 58,
+     "SKIPPED": 13
     },
     "14": {
      "score": 20.8,
      "grade": "D",
      "claims": 78,
-     "UNVERIFIED": 58,
+     "UNVERIFIED": 61,
      "SKIPPED": 13,
-     "FLAGGED": 3,
      "VERIFIED": 4
     },
     "15": {
@@ -7793,17 +7485,15 @@
      "grade": "D",
      "claims": 141,
      "VERIFIED": 8,
-     "UNVERIFIED": 105,
-     "SKIPPED": 22,
-     "FLAGGED": 6
+     "UNVERIFIED": 111,
+     "SKIPPED": 22
     },
     "16": {
      "score": 19.2,
      "grade": "D",
      "claims": 82,
-     "UNVERIFIED": 63,
+     "UNVERIFIED": 66,
      "SKIPPED": 14,
-     "FLAGGED": 3,
      "VERIFIED": 2
     },
     "2": {
@@ -7811,115 +7501,103 @@
      "grade": "D",
      "claims": 69,
      "VERIFIED": 2,
-     "UNVERIFIED": 50,
-     "SKIPPED": 13,
-     "FLAGGED": 4
+     "UNVERIFIED": 54,
+     "SKIPPED": 13
     },
     "3": {
      "score": 20.8,
      "grade": "D",
      "claims": 82,
-     "UNVERIFIED": 59,
+     "UNVERIFIED": 65,
      "SKIPPED": 15,
-     "FLAGGED": 6,
      "VERIFIED": 2
     },
     "4": {
      "score": 17.5,
      "grade": "D",
      "claims": 84,
-     "UNVERIFIED": 63,
-     "SKIPPED": 15,
-     "FLAGGED": 6
+     "UNVERIFIED": 69,
+     "SKIPPED": 15
     },
     "5": {
      "score": 17.5,
      "grade": "D",
      "claims": 61,
-     "UNVERIFIED": 45,
-     "SKIPPED": 12,
-     "FLAGGED": 4
+     "UNVERIFIED": 49,
+     "SKIPPED": 12
     },
     "6": {
      "score": 17.5,
      "grade": "D",
      "claims": 68,
-     "UNVERIFIED": 52,
-     "SKIPPED": 12,
-     "FLAGGED": 4
+     "UNVERIFIED": 56,
+     "SKIPPED": 12
     },
     "7": {
-     "score": 16.7,
+     "score": 17.5,
      "grade": "D",
      "claims": 101,
-     "UNVERIFIED": 75,
-     "SKIPPED": 16,
-     "FLAGGED": 10
+     "UNVERIFIED": 83,
+     "SKIPPED": 18
     },
     "8": {
      "score": 20.8,
      "grade": "D",
      "claims": 61,
-     "UNVERIFIED": 43,
+     "UNVERIFIED": 47,
      "VERIFIED": 2,
-     "SKIPPED": 12,
-     "FLAGGED": 4
+     "SKIPPED": 12
     },
     "9": {
      "score": 22.5,
      "grade": "D",
      "claims": 104,
-     "UNVERIFIED": 75,
+     "UNVERIFIED": 80,
      "SKIPPED": 16,
-     "FLAGGED": 5,
      "VERIFIED": 8
     }
    },
    "by_type": {
-    "cross_reference": 49.6,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 14.4,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "2_corinthians": {
-   "score": 18.9,
+   "score": 19.1,
    "grade": "D",
    "chapters": {
     "1": {
      "score": 17.5,
      "grade": "D",
      "claims": 76,
-     "UNVERIFIED": 58,
-     "SKIPPED": 12,
-     "FLAGGED": 6
+     "UNVERIFIED": 64,
+     "SKIPPED": 12
     },
     "10": {
      "score": 20.0,
      "grade": "D",
      "claims": 63,
-     "UNVERIFIED": 46,
+     "UNVERIFIED": 49,
      "VERIFIED": 2,
-     "SKIPPED": 12,
-     "FLAGGED": 3
+     "SKIPPED": 12
     },
     "11": {
      "score": 17.5,
      "grade": "D",
      "claims": 70,
-     "UNVERIFIED": 54,
-     "SKIPPED": 13,
-     "FLAGGED": 3
+     "UNVERIFIED": 57,
+     "SKIPPED": 13
     },
     "12": {
      "score": 20.0,
      "grade": "D",
      "claims": 69,
-     "UNVERIFIED": 51,
+     "UNVERIFIED": 54,
      "SKIPPED": 13,
-     "FLAGGED": 3,
      "VERIFIED": 2
     },
     "13": {
@@ -7927,25 +7605,22 @@
      "grade": "D",
      "claims": 63,
      "VERIFIED": 2,
-     "UNVERIFIED": 44,
-     "SKIPPED": 14,
-     "FLAGGED": 3
+     "UNVERIFIED": 47,
+     "SKIPPED": 14
     },
     "2": {
      "score": 17.5,
      "grade": "D",
      "claims": 65,
-     "UNVERIFIED": 50,
-     "SKIPPED": 12,
-     "FLAGGED": 3
+     "UNVERIFIED": 53,
+     "SKIPPED": 12
     },
     "3": {
      "score": 21.5,
      "grade": "D",
      "claims": 73,
-     "UNVERIFIED": 53,
+     "UNVERIFIED": 56,
      "SKIPPED": 13,
-     "FLAGGED": 3,
      "VERIFIED": 4
     },
     "4": {
@@ -7953,17 +7628,15 @@
      "grade": "D",
      "claims": 64,
      "VERIFIED": 4,
-     "UNVERIFIED": 45,
-     "SKIPPED": 12,
-     "FLAGGED": 3
+     "UNVERIFIED": 48,
+     "SKIPPED": 12
     },
     "5": {
      "score": 19.5,
      "grade": "D",
      "claims": 73,
-     "UNVERIFIED": 54,
+     "UNVERIFIED": 57,
      "SKIPPED": 14,
-     "FLAGGED": 3,
      "VERIFIED": 2
     },
     "6": {
@@ -7971,42 +7644,38 @@
      "grade": "D",
      "claims": 67,
      "VERIFIED": 2,
-     "UNVERIFIED": 50,
-     "SKIPPED": 12,
-     "FLAGGED": 3
+     "UNVERIFIED": 53,
+     "SKIPPED": 12
     },
     "7": {
-     "score": 16.2,
+     "score": 17.5,
      "grade": "D",
      "claims": 59,
-     "UNVERIFIED": 44,
-     "SKIPPED": 10,
-     "FLAGGED": 5
+     "UNVERIFIED": 47,
+     "SKIPPED": 12
     },
     "8": {
      "score": 17.5,
      "grade": "D",
      "claims": 66,
-     "UNVERIFIED": 50,
-     "SKIPPED": 13,
-     "FLAGGED": 3
+     "UNVERIFIED": 53,
+     "SKIPPED": 13
     },
     "9": {
-     "score": 16.3,
+     "score": 17.5,
      "grade": "D",
      "claims": 66,
-     "UNVERIFIED": 50,
-     "SKIPPED": 11,
-     "FLAGGED": 5
+     "UNVERIFIED": 53,
+     "SKIPPED": 13
     }
    },
    "by_type": {
-    "cross_reference": 48.8,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 8.2,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "galatians": {
@@ -8017,35 +7686,31 @@
      "score": 17.5,
      "grade": "D",
      "claims": 84,
-     "UNVERIFIED": 68,
-     "SKIPPED": 13,
-     "FLAGGED": 3
+     "UNVERIFIED": 71,
+     "SKIPPED": 13
     },
     "2": {
      "score": 19.5,
      "grade": "D",
      "claims": 78,
-     "UNVERIFIED": 61,
+     "UNVERIFIED": 64,
      "VERIFIED": 2,
-     "SKIPPED": 12,
-     "FLAGGED": 3
+     "SKIPPED": 12
     },
     "3": {
      "score": 19.2,
      "grade": "D",
      "claims": 91,
-     "UNVERIFIED": 70,
+     "UNVERIFIED": 74,
      "SKIPPED": 15,
-     "FLAGGED": 4,
      "VERIFIED": 2
     },
     "4": {
      "score": 20.0,
      "grade": "D",
      "claims": 75,
-     "UNVERIFIED": 57,
+     "UNVERIFIED": 60,
      "SKIPPED": 13,
-     "FLAGGED": 3,
      "VERIFIED": 2
     },
     "5": {
@@ -8053,93 +7718,85 @@
      "grade": "D",
      "claims": 71,
      "VERIFIED": 6,
-     "UNVERIFIED": 50,
-     "SKIPPED": 12,
-     "FLAGGED": 3
+     "UNVERIFIED": 53,
+     "SKIPPED": 12
     },
     "6": {
      "score": 17.5,
      "grade": "D",
      "claims": 63,
-     "UNVERIFIED": 49,
-     "SKIPPED": 12,
-     "FLAGGED": 2
+     "UNVERIFIED": 51,
+     "SKIPPED": 12
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 11.4,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "ephesians": {
-   "score": 21.1,
+   "score": 21.3,
    "grade": "D",
    "chapters": {
     "1": {
      "score": 19.5,
      "grade": "D",
      "claims": 76,
-     "UNVERIFIED": 56,
+     "UNVERIFIED": 62,
      "SKIPPED": 12,
-     "FLAGGED": 6,
      "VERIFIED": 2
     },
     "2": {
      "score": 17.5,
      "grade": "D",
      "claims": 58,
-     "UNVERIFIED": 44,
-     "SKIPPED": 10,
-     "FLAGGED": 4
+     "UNVERIFIED": 48,
+     "SKIPPED": 10
     },
     "3": {
      "score": 24.2,
      "grade": "D",
      "claims": 49,
      "VERIFIED": 4,
-     "UNVERIFIED": 33,
-     "SKIPPED": 8,
-     "FLAGGED": 4
+     "UNVERIFIED": 37,
+     "SKIPPED": 8
     },
     "4": {
      "score": 20.0,
      "grade": "D",
      "claims": 71,
      "VERIFIED": 2,
-     "UNVERIFIED": 51,
-     "SKIPPED": 12,
-     "FLAGGED": 6
+     "UNVERIFIED": 57,
+     "SKIPPED": 12
     },
     "5": {
      "score": 25.0,
      "grade": "D",
      "claims": 73,
      "VERIFIED": 6,
-     "UNVERIFIED": 48,
-     "SKIPPED": 13,
-     "FLAGGED": 6
+     "UNVERIFIED": 54,
+     "SKIPPED": 13
     },
     "6": {
-     "score": 20.4,
+     "score": 21.5,
      "grade": "D",
      "claims": 77,
-     "UNVERIFIED": 53,
+     "UNVERIFIED": 59,
      "VERIFIED": 4,
-     "SKIPPED": 12,
-     "FLAGGED": 8
+     "SKIPPED": 14
     }
    },
    "by_type": {
-    "cross_reference": 48.8,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 18.9,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "philippians": {
@@ -8151,49 +7808,45 @@
      "grade": "D",
      "claims": 71,
      "VERIFIED": 4,
-     "UNVERIFIED": 52,
-     "SKIPPED": 12,
-     "FLAGGED": 3
+     "UNVERIFIED": 55,
+     "SKIPPED": 12
     },
     "2": {
      "score": 20.0,
      "grade": "D",
      "claims": 74,
-     "UNVERIFIED": 56,
+     "UNVERIFIED": 59,
      "SKIPPED": 13,
-     "FLAGGED": 3,
      "VERIFIED": 2
     },
     "3": {
      "score": 20.0,
      "grade": "D",
      "claims": 67,
-     "UNVERIFIED": 50,
+     "UNVERIFIED": 53,
      "VERIFIED": 2,
-     "SKIPPED": 12,
-     "FLAGGED": 3
+     "SKIPPED": 12
     },
     "4": {
      "score": 20.8,
      "grade": "D",
      "claims": 52,
      "VERIFIED": 2,
-     "UNVERIFIED": 40,
-     "SKIPPED": 8,
-     "FLAGGED": 2
+     "UNVERIFIED": 42,
+     "SKIPPED": 8
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 16.7,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "colossians": {
-   "score": 20.4,
+   "score": 20.8,
    "grade": "D",
    "chapters": {
     "1": {
@@ -8201,98 +7854,89 @@
      "grade": "D",
      "claims": 79,
      "VERIFIED": 6,
-     "UNVERIFIED": 57,
-     "SKIPPED": 13,
-     "FLAGGED": 3
+     "UNVERIFIED": 60,
+     "SKIPPED": 13
     },
     "2": {
      "score": 19.5,
      "grade": "D",
      "claims": 74,
-     "UNVERIFIED": 57,
+     "UNVERIFIED": 60,
      "SKIPPED": 12,
-     "FLAGGED": 3,
      "VERIFIED": 2
     },
     "3": {
      "score": 17.5,
      "grade": "D",
      "claims": 73,
-     "UNVERIFIED": 57,
-     "SKIPPED": 13,
-     "FLAGGED": 3
+     "UNVERIFIED": 60,
+     "SKIPPED": 13
     },
     "4": {
-     "score": 21.0,
+     "score": 22.5,
      "grade": "D",
      "claims": 53,
-     "UNVERIFIED": 39,
-     "SKIPPED": 8,
-     "FLAGGED": 4,
+     "UNVERIFIED": 41,
+     "SKIPPED": 10,
      "VERIFIED": 2
     }
    },
    "by_type": {
-    "cross_reference": 47.5,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 16.2,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "1_thessalonians": {
-   "score": 17.2,
+   "score": 17.5,
    "grade": "D",
    "chapters": {
     "1": {
      "score": 17.5,
      "grade": "D",
      "claims": 66,
-     "UNVERIFIED": 54,
-     "SKIPPED": 8,
-     "FLAGGED": 4
+     "UNVERIFIED": 58,
+     "SKIPPED": 8
     },
     "2": {
      "score": 17.5,
      "grade": "D",
      "claims": 93,
-     "UNVERIFIED": 75,
-     "SKIPPED": 12,
-     "FLAGGED": 6
+     "UNVERIFIED": 81,
+     "SKIPPED": 12
     },
     "3": {
      "score": 17.5,
      "grade": "D",
      "claims": 69,
-     "UNVERIFIED": 57,
-     "SKIPPED": 8,
-     "FLAGGED": 4
+     "UNVERIFIED": 61,
+     "SKIPPED": 8
     },
     "4": {
      "score": 17.5,
      "grade": "D",
      "claims": 110,
-     "UNVERIFIED": 92,
-     "SKIPPED": 12,
-     "FLAGGED": 6
+     "UNVERIFIED": 98,
+     "SKIPPED": 12
     },
     "5": {
-     "score": 16.2,
+     "score": 17.5,
      "grade": "D",
      "claims": 106,
-     "UNVERIFIED": 88,
-     "SKIPPED": 10,
-     "FLAGGED": 8
+     "UNVERIFIED": 94,
+     "SKIPPED": 12
     }
    },
    "by_type": {
-    "cross_reference": 48.3,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 0.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "2_thessalonians": {
@@ -8303,34 +7947,31 @@
      "score": 17.5,
      "grade": "D",
      "claims": 74,
-     "UNVERIFIED": 62,
-     "SKIPPED": 8,
-     "FLAGGED": 4
+     "UNVERIFIED": 66,
+     "SKIPPED": 8
     },
     "2": {
      "score": 17.5,
      "grade": "D",
      "claims": 112,
-     "UNVERIFIED": 94,
-     "SKIPPED": 12,
-     "FLAGGED": 6
+     "UNVERIFIED": 100,
+     "SKIPPED": 12
     },
     "3": {
      "score": 17.5,
      "grade": "D",
      "claims": 111,
-     "UNVERIFIED": 93,
-     "SKIPPED": 12,
-     "FLAGGED": 6
+     "UNVERIFIED": 99,
+     "SKIPPED": 12
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 0.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "1_timothy": {
@@ -8341,75 +7982,68 @@
      "score": 19.5,
      "grade": "D",
      "claims": 91,
-     "UNVERIFIED": 62,
+     "UNVERIFIED": 75,
      "VERIFIED": 2,
-     "SKIPPED": 14,
-     "FLAGGED": 13
+     "SKIPPED": 14
     },
     "2": {
      "score": 22.5,
      "grade": "D",
      "claims": 69,
-     "UNVERIFIED": 44,
+     "UNVERIFIED": 53,
      "VERIFIED": 4,
-     "SKIPPED": 12,
-     "FLAGGED": 9
+     "SKIPPED": 12
     },
     "3": {
      "score": 17.5,
      "grade": "D",
      "claims": 75,
-     "UNVERIFIED": 53,
-     "SKIPPED": 13,
-     "FLAGGED": 9
+     "UNVERIFIED": 62,
+     "SKIPPED": 13
     },
     "4": {
      "score": 17.5,
      "grade": "D",
      "claims": 72,
-     "UNVERIFIED": 50,
-     "SKIPPED": 13,
-     "FLAGGED": 9
+     "UNVERIFIED": 59,
+     "SKIPPED": 13
     },
     "5": {
      "score": 20.8,
      "grade": "D",
      "claims": 75,
      "VERIFIED": 2,
-     "UNVERIFIED": 49,
-     "SKIPPED": 14,
-     "FLAGGED": 10
+     "UNVERIFIED": 59,
+     "SKIPPED": 14
     },
     "6": {
      "score": 19.5,
      "grade": "D",
      "claims": 91,
-     "UNVERIFIED": 61,
+     "UNVERIFIED": 73,
      "SKIPPED": 16,
-     "FLAGGED": 12,
      "VERIFIED": 2
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 10.3,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "2_timothy": {
-   "score": 19.6,
+   "score": 19.9,
    "grade": "D",
    "chapters": {
     "1": {
      "score": 19.5,
      "grade": "D",
      "claims": 88,
-     "UNVERIFIED": 62,
+     "UNVERIFIED": 72,
      "SKIPPED": 14,
-     "FLAGGED": 10,
      "VERIFIED": 2
     },
     "2": {
@@ -8417,35 +8051,32 @@
      "grade": "D",
      "claims": 70,
      "VERIFIED": 4,
-     "UNVERIFIED": 46,
-     "SKIPPED": 12,
-     "FLAGGED": 8
+     "UNVERIFIED": 54,
+     "SKIPPED": 12
     },
     "3": {
-     "score": 18.8,
+     "score": 20.0,
      "grade": "D",
      "claims": 66,
-     "UNVERIFIED": 45,
-     "SKIPPED": 10,
-     "FLAGGED": 9,
+     "UNVERIFIED": 52,
+     "SKIPPED": 12,
      "VERIFIED": 2
     },
     "4": {
      "score": 17.5,
      "grade": "D",
      "claims": 73,
-     "UNVERIFIED": 52,
-     "SKIPPED": 13,
-     "FLAGGED": 8
+     "UNVERIFIED": 60,
+     "SKIPPED": 13
     }
    },
    "by_type": {
-    "cross_reference": 47.9,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 11.9,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "titus": {
@@ -8457,34 +8088,31 @@
      "grade": "D",
      "claims": 73,
      "VERIFIED": 2,
-     "UNVERIFIED": 50,
-     "SKIPPED": 14,
-     "FLAGGED": 7
+     "UNVERIFIED": 57,
+     "SKIPPED": 14
     },
     "2": {
      "score": 17.5,
      "grade": "D",
      "claims": 58,
-     "UNVERIFIED": 41,
-     "SKIPPED": 12,
-     "FLAGGED": 5
+     "UNVERIFIED": 46,
+     "SKIPPED": 12
     },
     "3": {
      "score": 17.5,
      "grade": "D",
      "claims": 65,
-     "UNVERIFIED": 46,
-     "SKIPPED": 13,
-     "FLAGGED": 6
+     "UNVERIFIED": 52,
+     "SKIPPED": 13
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 4.2,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "philemon": {
@@ -8495,18 +8123,17 @@
      "score": 17.5,
      "grade": "D",
      "claims": 72,
-     "UNVERIFIED": 54,
-     "SKIPPED": 12,
-     "FLAGGED": 6
+     "UNVERIFIED": 60,
+     "SKIPPED": 12
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 0.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "hebrews": {
@@ -8530,13 +8157,12 @@
      "SKIPPED": 15
     },
     "11": {
-     "score": 32.3,
+     "score": 32.6,
      "grade": "D",
      "claims": 176,
      "UNVERIFIED": 133,
      "VERIFIED": 8,
-     "SKIPPED": 34,
-     "FLAGGED": 1
+     "SKIPPED": 35
     },
     "12": {
      "score": 32.2,
@@ -8614,12 +8240,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 50.5,
-    "people_places": 46.2,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 10.8,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 46.2,
+    "cross_reference": 50.6,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "james": {
@@ -8668,12 +8294,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 54.0,
-    "people_places": 100.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 19.7,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 100.0,
+    "cross_reference": 54.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "1_peter": {
@@ -8722,16 +8348,16 @@
     }
    },
    "by_type": {
-    "cross_reference": 50.9,
-    "people_places": 100.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 19.7,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 100.0,
+    "cross_reference": 50.9,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "2_peter": {
-   "score": 31.4,
+   "score": 32.5,
    "grade": "D",
    "chapters": {
     "1": {
@@ -8743,54 +8369,50 @@
      "SKIPPED": 12
     },
     "2": {
-     "score": 31.2,
+     "score": 33.1,
      "grade": "D",
      "claims": 73,
      "VERIFIED": 5,
      "UNVERIFIED": 56,
-     "SKIPPED": 9,
-     "FLAGGED": 3
+     "SKIPPED": 12
     },
     "3": {
-     "score": 31.8,
+     "score": 33.1,
      "grade": "D",
      "claims": 74,
      "VERIFIED": 5,
      "UNVERIFIED": 57,
-     "FLAGGED": 2,
-     "SKIPPED": 10
+     "SKIPPED": 12
     }
    },
    "by_type": {
-    "cross_reference": 43.8,
-    "people_places": 100.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 24.1,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 100.0,
+    "cross_reference": 50.7,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "1_john": {
-   "score": 30.6,
+   "score": 31.0,
    "grade": "D",
    "chapters": {
     "1": {
-     "score": 31.6,
+     "score": 32.5,
      "grade": "D",
      "claims": 46,
      "UNVERIFIED": 35,
      "VERIFIED": 3,
-     "SKIPPED": 7,
-     "FLAGGED": 1
+     "SKIPPED": 8
     },
     "2": {
-     "score": 29.8,
+     "score": 30.2,
      "grade": "D",
      "claims": 115,
      "UNVERIFIED": 91,
-     "SKIPPED": 19,
-     "VERIFIED": 4,
-     "FLAGGED": 1
+     "SKIPPED": 20,
+     "VERIFIED": 4
     },
     "3": {
      "score": 29.7,
@@ -8801,13 +8423,12 @@
      "VERIFIED": 2
     },
     "4": {
-     "score": 31.9,
+     "score": 32.6,
      "grade": "D",
      "claims": 70,
      "UNVERIFIED": 54,
      "VERIFIED": 4,
-     "SKIPPED": 11,
-     "FLAGGED": 1
+     "SKIPPED": 12
     },
     "5": {
      "score": 30.0,
@@ -8819,81 +8440,78 @@
     }
    },
    "by_type": {
-    "cross_reference": 48.7,
-    "people_places": 100.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 16.5,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 100.0,
+    "cross_reference": 51.3,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "2_john": {
-   "score": 28.0,
+   "score": 30.0,
    "grade": "D",
    "chapters": {
     "1": {
-     "score": 28.0,
+     "score": 30.0,
      "grade": "D",
      "claims": 63,
      "UNVERIFIED": 50,
      "VERIFIED": 2,
-     "SKIPPED": 8,
-     "FLAGGED": 3
+     "SKIPPED": 11
     }
    },
    "by_type": {
-    "cross_reference": 36.4,
-    "people_places": 100.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 12.5,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 100.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "3_john": {
-   "score": 29.5,
-   "grade": "D",
-   "chapters": {
-    "1": {
-     "score": 29.5,
-     "grade": "D",
-     "claims": 65,
-     "VERIFIED": 3,
-     "UNVERIFIED": 51,
-     "SKIPPED": 9,
-     "FLAGGED": 2
-    }
-   },
-   "by_type": {
-    "cross_reference": 40.9,
-    "people_places": 100.0,
-    "historical": 0.0,
-    "timeline": 100.0,
-    "hebrew_greek": 16.7,
-    "scholar_attribution": 0.0
-   }
-  },
-  "jude": {
    "score": 30.8,
    "grade": "D",
    "chapters": {
     "1": {
      "score": 30.8,
      "grade": "D",
-     "claims": 101,
-     "UNVERIFIED": 80,
-     "SKIPPED": 16,
-     "VERIFIED": 4,
-     "FLAGGED": 1
+     "claims": 65,
+     "VERIFIED": 3,
+     "UNVERIFIED": 51,
+     "SKIPPED": 11
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 100.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 16.7,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 100.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
+   }
+  },
+  "jude": {
+   "score": 31.3,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 31.3,
+     "grade": "D",
+     "claims": 101,
+     "UNVERIFIED": 80,
+     "SKIPPED": 17,
+     "VERIFIED": 4
+    }
+   },
+   "by_type": {
+    "hebrew_greek": 16.7,
+    "scholar_attribution": 0.0,
+    "people_places": 100.0,
+    "cross_reference": 53.1,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "1_chronicles": {
@@ -9105,12 +8723,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 62.1,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "2_chronicles": {
@@ -9371,12 +8989,12 @@
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 94.4,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "ezra": {
@@ -9387,44 +9005,39 @@
      "score": 19.5,
      "grade": "D",
      "claims": 81,
-     "UNVERIFIED": 58,
+     "UNVERIFIED": 66,
      "SKIPPED": 13,
-     "FLAGGED": 8,
      "VERIFIED": 2
     },
     "10": {
      "score": 20.8,
      "grade": "D",
      "claims": 65,
-     "UNVERIFIED": 44,
+     "UNVERIFIED": 53,
      "SKIPPED": 10,
-     "FLAGGED": 9,
      "VERIFIED": 2
     },
     "2": {
      "score": 17.5,
      "grade": "D",
      "claims": 83,
-     "UNVERIFIED": 59,
-     "SKIPPED": 12,
-     "FLAGGED": 12
+     "UNVERIFIED": 71,
+     "SKIPPED": 12
     },
     "3": {
      "score": 25.0,
      "grade": "D",
      "claims": 71,
      "VERIFIED": 6,
-     "UNVERIFIED": 45,
-     "SKIPPED": 12,
-     "FLAGGED": 8
+     "UNVERIFIED": 53,
+     "SKIPPED": 12
     },
     "4": {
      "score": 20.0,
      "grade": "D",
      "claims": 65,
-     "UNVERIFIED": 47,
+     "UNVERIFIED": 55,
      "SKIPPED": 8,
-     "FLAGGED": 8,
      "VERIFIED": 2
     },
     "5": {
@@ -9432,52 +9045,47 @@
      "grade": "D",
      "claims": 64,
      "VERIFIED": 2,
-     "UNVERIFIED": 44,
-     "SKIPPED": 10,
-     "FLAGGED": 8
+     "UNVERIFIED": 52,
+     "SKIPPED": 10
     },
     "6": {
      "score": 17.5,
      "grade": "D",
      "claims": 70,
-     "UNVERIFIED": 50,
-     "SKIPPED": 12,
-     "FLAGGED": 8
+     "UNVERIFIED": 58,
+     "SKIPPED": 12
     },
     "7": {
      "score": 24.2,
      "grade": "D",
      "claims": 64,
-     "UNVERIFIED": 42,
+     "UNVERIFIED": 50,
      "VERIFIED": 4,
-     "SKIPPED": 10,
-     "FLAGGED": 8
+     "SKIPPED": 10
     },
     "8": {
      "score": 22.5,
      "grade": "D",
      "claims": 66,
-     "UNVERIFIED": 44,
+     "UNVERIFIED": 52,
      "SKIPPED": 10,
-     "FLAGGED": 8,
      "VERIFIED": 4
     },
     "9": {
      "score": 17.5,
      "grade": "D",
      "claims": 74,
-     "UNVERIFIED": 52,
-     "SKIPPED": 13,
-     "FLAGGED": 9
+     "UNVERIFIED": 61,
+     "SKIPPED": 13
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 15.2,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "nehemiah": {
@@ -9489,119 +9097,106 @@
      "grade": "D",
      "claims": 76,
      "VERIFIED": 4,
-     "UNVERIFIED": 51,
-     "SKIPPED": 13,
-     "FLAGGED": 8
+     "UNVERIFIED": 59,
+     "SKIPPED": 13
     },
     "10": {
      "score": 17.5,
      "grade": "D",
      "claims": 40,
-     "UNVERIFIED": 29,
-     "SKIPPED": 6,
-     "FLAGGED": 5
+     "UNVERIFIED": 34,
+     "SKIPPED": 6
     },
     "11": {
      "score": 17.5,
      "grade": "D",
      "claims": 40,
-     "UNVERIFIED": 29,
-     "SKIPPED": 6,
-     "FLAGGED": 5
+     "UNVERIFIED": 34,
+     "SKIPPED": 6
     },
     "12": {
      "score": 20.0,
      "grade": "D",
      "claims": 72,
-     "UNVERIFIED": 50,
+     "UNVERIFIED": 58,
      "SKIPPED": 12,
-     "FLAGGED": 8,
      "VERIFIED": 2
     },
     "13": {
      "score": 17.5,
      "grade": "D",
      "claims": 99,
-     "UNVERIFIED": 71,
-     "SKIPPED": 16,
-     "FLAGGED": 12
+     "UNVERIFIED": 83,
+     "SKIPPED": 16
     },
     "2": {
      "score": 17.5,
      "grade": "D",
      "claims": 77,
-     "UNVERIFIED": 57,
-     "SKIPPED": 8,
-     "FLAGGED": 12
+     "UNVERIFIED": 69,
+     "SKIPPED": 8
     },
     "3": {
      "score": 20.8,
      "grade": "D",
      "claims": 53,
      "VERIFIED": 2,
-     "UNVERIFIED": 37,
-     "SKIPPED": 6,
-     "FLAGGED": 8
+     "UNVERIFIED": 45,
+     "SKIPPED": 6
     },
     "4": {
      "score": 22.5,
      "grade": "D",
      "claims": 80,
-     "UNVERIFIED": 54,
+     "UNVERIFIED": 66,
      "SKIPPED": 10,
-     "FLAGGED": 12,
      "VERIFIED": 4
     },
     "5": {
      "score": 17.5,
      "grade": "D",
      "claims": 84,
-     "UNVERIFIED": 59,
-     "SKIPPED": 13,
-     "FLAGGED": 12
+     "UNVERIFIED": 71,
+     "SKIPPED": 13
     },
     "6": {
      "score": 24.2,
      "grade": "D",
      "claims": 74,
-     "UNVERIFIED": 48,
+     "UNVERIFIED": 60,
      "SKIPPED": 10,
-     "FLAGGED": 12,
      "VERIFIED": 4
     },
     "7": {
      "score": 17.5,
      "grade": "D",
      "claims": 45,
-     "UNVERIFIED": 33,
-     "SKIPPED": 4,
-     "FLAGGED": 8
+     "UNVERIFIED": 41,
+     "SKIPPED": 4
     },
     "8": {
      "score": 17.5,
      "grade": "D",
      "claims": 76,
-     "UNVERIFIED": 54,
-     "SKIPPED": 13,
-     "FLAGGED": 9
+     "UNVERIFIED": 63,
+     "SKIPPED": 13
     },
     "9": {
      "score": 20.0,
      "grade": "D",
      "claims": 72,
-     "UNVERIFIED": 50,
+     "UNVERIFIED": 58,
      "SKIPPED": 12,
-     "FLAGGED": 8,
      "VERIFIED": 2
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 9.6,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "esther": {
@@ -9612,26 +9207,23 @@
      "score": 20.0,
      "grade": "D",
      "claims": 63,
-     "UNVERIFIED": 45,
+     "UNVERIFIED": 53,
      "SKIPPED": 8,
-     "FLAGGED": 8,
      "VERIFIED": 2
     },
     "10": {
      "score": 17.5,
      "grade": "D",
      "claims": 47,
-     "UNVERIFIED": 33,
-     "SKIPPED": 10,
-     "FLAGGED": 4
+     "UNVERIFIED": 37,
+     "SKIPPED": 10
     },
     "2": {
      "score": 20.0,
      "grade": "D",
      "claims": 72,
-     "UNVERIFIED": 50,
+     "UNVERIFIED": 58,
      "SKIPPED": 12,
-     "FLAGGED": 8,
      "VERIFIED": 2
     },
     "3": {
@@ -9639,67 +9231,60 @@
      "grade": "D",
      "claims": 66,
      "VERIFIED": 6,
-     "UNVERIFIED": 42,
-     "SKIPPED": 10,
-     "FLAGGED": 8
+     "UNVERIFIED": 50,
+     "SKIPPED": 10
     },
     "4": {
      "score": 17.5,
      "grade": "D",
      "claims": 57,
-     "UNVERIFIED": 41,
-     "SKIPPED": 10,
-     "FLAGGED": 6
+     "UNVERIFIED": 47,
+     "SKIPPED": 10
     },
     "5": {
      "score": 22.5,
      "grade": "D",
      "claims": 52,
      "VERIFIED": 2,
-     "UNVERIFIED": 35,
-     "SKIPPED": 8,
-     "FLAGGED": 7
+     "UNVERIFIED": 42,
+     "SKIPPED": 8
     },
     "6": {
      "score": 18.3,
      "grade": "D",
      "claims": 65,
-     "UNVERIFIED": 47,
-     "SKIPPED": 10,
-     "FLAGGED": 8
+     "UNVERIFIED": 55,
+     "SKIPPED": 10
     },
     "7": {
      "score": 17.5,
      "grade": "D",
      "claims": 51,
-     "UNVERIFIED": 37,
-     "SKIPPED": 8,
-     "FLAGGED": 6
+     "UNVERIFIED": 43,
+     "SKIPPED": 8
     },
     "8": {
      "score": 17.5,
      "grade": "D",
      "claims": 57,
-     "UNVERIFIED": 42,
-     "SKIPPED": 8,
-     "FLAGGED": 7
+     "UNVERIFIED": 49,
+     "SKIPPED": 8
     },
     "9": {
      "score": 17.5,
      "grade": "D",
      "claims": 61,
-     "UNVERIFIED": 45,
-     "SKIPPED": 8,
-     "FLAGGED": 8
+     "UNVERIFIED": 53,
+     "SKIPPED": 8
     }
    },
    "by_type": {
-    "cross_reference": 50.6,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 8.8,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.6,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "mark": {
@@ -9820,16 +9405,16 @@
     }
    },
    "by_type": {
-    "cross_reference": 50.0,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 0.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "luke": {
-   "score": 17.4,
+   "score": 17.5,
    "grade": "D",
    "chapters": {
     "1": {
@@ -9882,12 +9467,11 @@
      "SKIPPED": 9
     },
     "16": {
-     "score": 16.7,
+     "score": 17.5,
      "grade": "D",
      "claims": 92,
      "UNVERIFIED": 83,
-     "SKIPPED": 8,
-     "FLAGGED": 1
+     "SKIPPED": 9
     },
     "17": {
      "score": 17.5,
@@ -9904,12 +9488,11 @@
      "SKIPPED": 9
     },
     "19": {
-     "score": 16.2,
+     "score": 17.5,
      "grade": "D",
      "claims": 118,
      "UNVERIFIED": 106,
-     "SKIPPED": 10,
-     "FLAGGED": 2
+     "SKIPPED": 12
     },
     "2": {
      "score": 17.5,
@@ -10004,34 +9587,33 @@
     }
    },
    "by_type": {
-    "cross_reference": 49.4,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 100.0,
     "hebrew_greek": 0.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 50.0,
+    "historical": 0.0,
+    "timeline": 100.0
    }
   },
   "meta": {
-   "score": 9.5,
+   "score": 10.5,
    "grade": "D",
    "chapters": {
     "0": {
-     "score": 9.5,
+     "score": 10.5,
      "grade": "D",
      "claims": 8568,
      "UNVERIFIED": 5448,
-     "SKIPPED": 2824,
-     "FLAGGED": 296
+     "SKIPPED": 3120
     }
    },
    "by_type": {
-    "cross_reference": 63.4,
-    "people_places": 0.0,
-    "historical": 0.0,
-    "timeline": 0.0,
     "hebrew_greek": 0.0,
-    "scholar_attribution": 0.0
+    "scholar_attribution": 0.0,
+    "people_places": 0.0,
+    "cross_reference": 70.0,
+    "historical": 0.0,
+    "timeline": 0.0
    }
   }
  },
@@ -10039,162 +9621,142 @@
   {
    "chapter_id": "meta0",
    "book": "meta",
-   "score": 9.5,
+   "score": 10.5,
    "UNVERIFIED": 5448,
-   "SKIPPED": 2824,
-   "FLAGGED": 296
+   "SKIPPED": 3120
   },
   {
    "chapter_id": "joshua1",
    "book": "joshua",
-   "score": 14.7,
+   "score": 15.8,
    "UNVERIFIED": 56,
-   "SKIPPED": 5,
-   "FLAGGED": 3
+   "SKIPPED": 5
   },
   {
    "chapter_id": "joshua2",
    "book": "joshua",
-   "score": 14.7,
+   "score": 15.8,
    "UNVERIFIED": 55,
-   "SKIPPED": 5,
-   "FLAGGED": 3
+   "SKIPPED": 5
   },
   {
    "chapter_id": "joshua11",
    "book": "joshua",
-   "score": 15.0,
+   "score": 16.0,
    "UNVERIFIED": 47,
-   "SKIPPED": 4,
-   "FLAGGED": 2
+   "SKIPPED": 4
   },
   {
    "chapter_id": "joshua12",
    "book": "joshua",
-   "score": 15.0,
+   "score": 16.0,
    "UNVERIFIED": 47,
-   "SKIPPED": 4,
-   "FLAGGED": 2
+   "SKIPPED": 4
   },
   {
    "chapter_id": "joshua13",
    "book": "joshua",
-   "score": 15.0,
+   "score": 16.0,
    "UNVERIFIED": 47,
-   "SKIPPED": 4,
-   "FLAGGED": 2
+   "SKIPPED": 4
   },
   {
    "chapter_id": "joshua14",
    "book": "joshua",
-   "score": 15.0,
+   "score": 16.0,
    "UNVERIFIED": 47,
-   "SKIPPED": 4,
-   "FLAGGED": 2
+   "SKIPPED": 4
   },
   {
    "chapter_id": "joshua15",
    "book": "joshua",
-   "score": 15.0,
+   "score": 16.0,
    "UNVERIFIED": 47,
-   "SKIPPED": 4,
-   "FLAGGED": 2
+   "SKIPPED": 4
   },
   {
    "chapter_id": "joshua16",
    "book": "joshua",
-   "score": 15.0,
+   "score": 16.0,
    "UNVERIFIED": 47,
-   "SKIPPED": 4,
-   "FLAGGED": 2
+   "SKIPPED": 4
   },
   {
    "chapter_id": "joshua17",
    "book": "joshua",
-   "score": 15.0,
+   "score": 16.0,
    "UNVERIFIED": 47,
-   "SKIPPED": 4,
-   "FLAGGED": 2
+   "SKIPPED": 4
   },
   {
    "chapter_id": "joshua18",
    "book": "joshua",
-   "score": 15.0,
+   "score": 16.0,
    "UNVERIFIED": 47,
-   "SKIPPED": 4,
-   "FLAGGED": 2
+   "SKIPPED": 4
   },
   {
    "chapter_id": "joshua19",
    "book": "joshua",
-   "score": 15.0,
+   "score": 16.0,
    "UNVERIFIED": 47,
-   "SKIPPED": 4,
-   "FLAGGED": 2
+   "SKIPPED": 4
   },
   {
    "chapter_id": "joshua20",
    "book": "joshua",
-   "score": 15.0,
+   "score": 16.0,
    "UNVERIFIED": 47,
-   "SKIPPED": 4,
-   "FLAGGED": 2
+   "SKIPPED": 4
   },
   {
    "chapter_id": "joshua21",
    "book": "joshua",
-   "score": 15.0,
+   "score": 16.0,
    "UNVERIFIED": 47,
-   "SKIPPED": 4,
-   "FLAGGED": 2
+   "SKIPPED": 4
   },
   {
    "chapter_id": "joshua23",
    "book": "joshua",
-   "score": 15.0,
+   "score": 16.0,
    "UNVERIFIED": 47,
-   "SKIPPED": 4,
-   "FLAGGED": 2
+   "SKIPPED": 4
   },
   {
    "chapter_id": "joshua3",
    "book": "joshua",
-   "score": 15.0,
+   "score": 16.0,
    "UNVERIFIED": 47,
-   "SKIPPED": 4,
-   "FLAGGED": 2
+   "SKIPPED": 4
   },
   {
    "chapter_id": "joshua4",
    "book": "joshua",
-   "score": 15.0,
+   "score": 16.0,
    "UNVERIFIED": 47,
-   "SKIPPED": 4,
-   "FLAGGED": 2
+   "SKIPPED": 4
   },
   {
    "chapter_id": "joshua7",
    "book": "joshua",
-   "score": 15.0,
+   "score": 16.0,
    "UNVERIFIED": 47,
-   "SKIPPED": 4,
-   "FLAGGED": 2
+   "SKIPPED": 4
   },
   {
    "chapter_id": "joshua9",
    "book": "joshua",
-   "score": 15.0,
+   "score": 16.0,
    "UNVERIFIED": 47,
-   "SKIPPED": 4,
-   "FLAGGED": 2
+   "SKIPPED": 4
   },
   {
    "chapter_id": "judges1",
    "book": "judges",
-   "score": 15.0,
+   "score": 16.0,
    "UNVERIFIED": 47,
-   "SKIPPED": 4,
-   "FLAGGED": 2
+   "SKIPPED": 4
   }
  ]
 }

@@ -131,23 +131,55 @@ class VerseIndex:
                     "verse_start": None, "verse_end": None,
                     "error": "Empty reference"}
 
+        # Strip parenthetical suffixes like "(LXX)", "(cf. Gen 26:22)"
+        cleaned = re.sub(r'\s*\([^)]*\)\s*$', '', ref_str).strip()
+
+        # Skip non-biblical source references
+        NON_BIBLICAL_PREFIXES = (
+            "josephus", "philo", "tacitus", "pliny", "suetonius",
+            "eusebius", "mishnah", "talmud", "targum", "midrash",
+        )
+        if cleaned.lower().startswith(NON_BIBLICAL_PREFIXES):
+            return {"valid": True, "book_id": "_nonbiblical", "chapter": None,
+                    "verse_start": None, "verse_end": None, "error": None}
+
         # Parse patterns like "Gen 1:1", "1 John 3:16-18", "Ps 33:6,9",
         # "Gen 1:1–3", "Romans 8:28–30"
         # Pattern: optional_number? BookName chapter:verse(-verse)?
         match = re.match(
             r'^(\d\s+)?([A-Za-z]+(?:\s+[A-Za-z]+)*)\s+'
             r'(\d+)(?::(\d+)(?:\s*[–\-,]\s*(\d+))?)?',
-            ref_str
+            cleaned
         )
         if not match:
             # Try without chapter:verse (just "Genesis 1")
             match2 = re.match(r'^(\d\s+)?([A-Za-z]+(?:\s+[A-Za-z]+)*)\s+(\d+)$',
-                              ref_str)
+                              cleaned)
             if match2:
                 prefix = (match2.group(1) or "").strip()
                 book_name = ((prefix + " " if prefix else "") + match2.group(2)).strip()
                 chapter = int(match2.group(3))
                 return self._validate_book_chapter(book_name, chapter)
+
+            # Try book-only reference (e.g., "Ruth", "Song of Songs")
+            book_only = re.match(r'^(\d\s+)?([A-Za-z]+(?:\s+[A-Za-z]+)*)$', cleaned)
+            if book_only:
+                prefix = (book_only.group(1) or "").strip()
+                book_name = ((prefix + " " if prefix else "") + book_only.group(2)).strip()
+                book_id = self._resolve_book(book_name)
+                if book_id:
+                    return {"valid": True, "book_id": book_id, "chapter": None,
+                            "verse_start": None, "verse_end": None, "error": None}
+
+            # Try book range (e.g., "Matt-John")
+            range_match = re.match(r'^([A-Za-z]+)\s*[-–]\s*([A-Za-z]+)$', cleaned)
+            if range_match:
+                book_a = self._resolve_book(range_match.group(1))
+                book_b = self._resolve_book(range_match.group(2))
+                if book_a and book_b:
+                    return {"valid": True, "book_id": book_a, "chapter": None,
+                            "verse_start": None, "verse_end": None, "error": None}
+
             return {"valid": False, "book_id": None, "chapter": None,
                     "verse_start": None, "verse_end": None,
                     "error": f"Cannot parse reference: {ref_str}"}
@@ -165,12 +197,30 @@ class VerseIndex:
                     "verse_start": verse_start, "verse_end": verse_end,
                     "error": f"Unknown book: {book_name}"}
 
+        # Non-canonical books — recognized but not in our verse DB
+        if book_id == "_noncanon":
+            return {"valid": True, "book_id": book_id, "chapter": chapter,
+                    "verse_start": verse_start, "verse_end": verse_end,
+                    "error": None}
+
         # Check chapter bounds
         max_ch = self._books.get(book_id, 0)
+        has_variant_marker = ref_str != cleaned  # Had parenthetical like (LXX)
         if max_ch and chapter > max_ch:
-            return {"valid": False, "book_id": book_id, "chapter": chapter,
-                    "verse_start": verse_start, "verse_end": verse_end,
-                    "error": f"{book_name} has {max_ch} chapters, not {chapter}"}
+            # Auto-correct single-chapter books: "Jude 11" → Jude 1:11
+            if max_ch == 1 and verse_start is None:
+                verse_start = chapter
+                verse_end = chapter
+                chapter = 1
+            # LXX / variant text additions (e.g., Dan 14 = Bel and the Dragon)
+            elif has_variant_marker:
+                return {"valid": True, "book_id": book_id, "chapter": chapter,
+                        "verse_start": verse_start, "verse_end": verse_end,
+                        "error": None}
+            else:
+                return {"valid": False, "book_id": book_id, "chapter": chapter,
+                        "verse_start": verse_start, "verse_end": verse_end,
+                        "error": f"{book_name} has {max_ch} chapters, not {chapter}"}
 
         # Check verse bounds if we have verse data
         if verse_start and book_id in self._verses:
@@ -205,6 +255,10 @@ class VerseIndex:
                     "error": f"Unknown book: {book_name}"}
         max_ch = self._books.get(book_id, 0)
         if max_ch and chapter > max_ch:
+            # Auto-correct single-chapter books
+            if max_ch == 1:
+                return {"valid": True, "book_id": book_id, "chapter": 1,
+                        "verse_start": chapter, "verse_end": chapter, "error": None}
             return {"valid": False, "book_id": book_id, "chapter": chapter,
                     "verse_start": None, "verse_end": None,
                     "error": f"{book_name} has {max_ch} chapters, not {chapter}"}
@@ -415,6 +469,17 @@ class ScholarValidator:
             "mccartney": "mccartney",
             "davids": "davids",
             "green": "green",
+            "thiselton": "thiselton",
+            "beale": "beale",
+            "osborne": "osborne",
+            "mounce": "mounce",
+            "towner": "towner",
+            "harris": "harris",
+            "wanamaker": "wanamaker",
+            "obrien": "obrien",
+            "bruce": "bruce",
+            "lincoln": "lincoln",
+            "silva": "silva",
         }
         # Also add the existing panel_keys as self-aliases
         for pk in list(self._scholars.keys()):
@@ -522,11 +587,19 @@ class Tier0Verifier:
 
             # Check source format — exempt known scholars and meta panels
             source = claim.source_attribution or ""
-            if not source and (self.scholar_validator.is_valid_panel_key(claim.panel_type) or is_meta):
-                pass  # Known scholar or meta panel — skip source check
+            is_known_scholar = self.scholar_validator.is_valid_panel_key(claim.panel_type)
+
+            skip_source_check = False
+            if not source and (is_known_scholar or is_meta):
+                skip_source_check = True  # Known scholar or meta, empty source
             elif is_meta and source and len(source) < 15:
-                pass  # Short-form proponent in meta (e.g., "Calvin", "macarthur")
-            else:
+                skip_source_check = True  # Short-form proponent in meta
+            elif is_known_scholar and source == claim.panel_type:
+                skip_source_check = True  # Source is just the panel_key (data quality, not accuracy)
+            elif is_known_scholar and not source:
+                skip_source_check = True  # Known scholar, missing source
+
+            if not skip_source_check:
                 fmt_result = self.scholar_validator.check_source_format(source)
                 if fmt_result.status == STATUS_FLAGGED:
                     fmt_result.claim_id = claim.id

@@ -16,7 +16,7 @@ Generated: 2026-04-04
 | 10 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 11 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 12 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
-| 13 | 0 | 0 | 40 | 0 | 100 | 0 | **16** | D |
+| 13 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 14 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 15 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 16 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
@@ -32,14 +32,4 @@ Generated: 2026-04-04
 | 26 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 | 27 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 
-**Book Average: 17.4/100 (D)**
-
-## Flagged Claims (7)
-
-- `leviti-13-s2-cross-002` [cross_reference]: Invalid reference: Jude has 1 chapters, not 23
-- `leviti-13-ch-thread-008` [cross_reference]: Invalid reference: Jude has 1 chapters, not 23
-- `meta-prophecy-day_of_atonement-010` [cross_reference]: Invalid reference: Cannot parse reference: 16:2-6
-- `meta-prophecy-day_of_atonement-012` [cross_reference]: Invalid reference: Cannot parse reference: 16:15-16
-- `meta-prophecy-day_of_atonement-014` [cross_reference]: Invalid reference: Cannot parse reference: 16:20-22
-- `meta-prophecy-firstfruits-010` [cross_reference]: Invalid reference: Cannot parse reference: 23:9-14
-- `meta-prophecy-kinsman_redeemer-010` [cross_reference]: Invalid reference: Cannot parse reference: 25:25,47-49
+**Book Average: 17.5/100 (D)**
