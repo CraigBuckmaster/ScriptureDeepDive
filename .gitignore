@@ -12,3 +12,7 @@ scripture.db
 # Quality evaluation artifacts
 _tools/.quality_cache.json
 _tools/quality_report.json
+
+# Accuracy audit cache (API responses)
+_tools/audit/.cache/
+_tools/.env
