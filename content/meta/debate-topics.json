@@ -10307,35 +10307,63 @@
       2
     ],
     "passage": "Matthew 2",
-    "question": "How Does Matthew 2:23 Fulfil Prophecy?",
-    "context": "",
+    "question": "What prophetic text does Matthew 2:23 reference when it says 'He will be called a Nazarene,' given that no Old Testament verse contains this exact phrase?",
+    "context": "Matthew 2:23 is one of the most puzzling fulfillment citations in the New Testament. Matthew says the family's settlement in Nazareth fulfilled 'what was spoken through the prophets' (plural). No single Old Testament verse says 'he shall be called a Nazarene.' The two main proposals are: (1) a wordplay on nēṣer (branch/shoot) from Isaiah 11:1, connecting Nazareth to the messianic 'branch'; or (2) a collective reference to the prophetic pattern of the Messiah being despised — Nazareth was a backwater town, and 'Nazarene' carried connotations of insignificance ('Can anything good come from Nazareth?' John 1:46). The plural 'prophets' may favor the pattern reading over a single-text citation.",
     "positions": [
       {
         "id": "collective-reference-to-the-prophetic-pa",
         "label": "Collective reference to the prophetic pattern",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "keener",
+          "catena"
+        ],
         "proponents": "Most commentators",
         "argument": "No single OT text says 'he shall be called a Nazarene.' Matthew refers to the prophetic pattern of the despised servant.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Explains the plural 'prophets' — no single text is cited because the pattern spans multiple prophets; fits the social reality that Nazareth was despised (John 1:46), making Jesus's origin consistent with prophetic predictions of a rejected Messiah (Isa 53:2-3); avoids the problem of identifying a single verse that doesn't exist; consistent with Matthew's typological hermeneutic elsewhere (2:15, 2:18).",
+        "weaknesses": "Vague — if no specific text is in view, the fulfillment claim is unfalsifiable; the other fulfillment citations in Matthew 2 reference specific texts (Mic 5:2, Hos 11:1, Jer 31:15); 'Nazarene' was a geographic designation, not a prophetic title for the Messiah; the despised-origin reading requires the audience to know Nazareth's reputation.",
+        "key_verses": [
+          "Matthew 2:23",
+          "Isaiah 53:2-3",
+          "John 1:46",
+          "Isaiah 49:7"
+        ]
       },
       {
         "id": "reference-to-isa-11-1-specifically",
         "label": "Reference to Isa 11:1 specifically",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "calvin"
+        ],
         "proponents": "Some scholars",
         "argument": "The Hebrew netser (branch) in Isa 11:1 is the closest single-text connection to Nazareth.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The Hebrew nēṣer (branch/shoot) is the closest phonetic link to Nazareth (nāṣərat); Isaiah 11:1's messianic branch was a well-known prophecy; Jeremiah 23:5 and Zechariah 3:8 use similar 'branch' language, which could explain the plural 'prophets'; the wordplay operates at the level Matthew's Jewish audience would appreciate; the Targums and later rabbinic literature connect messianic expectation to the branch motif.",
+        "weaknesses": "The wordplay works in Hebrew but Matthew wrote in Greek for a primarily Greek-reading audience; the phonetic connection (nēṣer → Nazareth) is suggestive but not exact; if Isaiah 11:1 were the primary referent, Matthew could have cited it directly as he does other Isaiah texts; no ancient Jewish source connects 'Nazarene' to nēṣer before the patristic period.",
+        "key_verses": [
+          "Isaiah 11:1",
+          "Jeremiah 23:5",
+          "Zechariah 3:8",
+          "Zechariah 6:12"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Neither solution is fully satisfying, which is why the debate persists. The Isaiah 11:1 wordplay has strong linguistic support (nēṣer/Nazareth) but requires a Hebrew wordplay in a Greek Gospel read by Greek-speaking audiences. The prophetic-pattern reading explains the plural 'prophets' better but is vaguer exegetically. Most scholars acknowledge the wordplay at minimum and allow the possibility that Matthew intended multiple resonances simultaneously — branch, despised origin, and perhaps nazirite associations.",
+    "related_passages": [
+      "Matthew 2:23",
+      "Isaiah 11:1",
+      "Judges 13:5",
+      "Isaiah 53:2-3",
+      "John 1:46",
+      "Jeremiah 23:5"
+    ],
+    "tags": [
+      "fulfillment-citation",
+      "christology",
+      "hermeneutics",
+      "typology"
+    ]
   },
   {
     "id": "was-john-s-baptism-christian-baptism",
@@ -10346,35 +10374,63 @@
       3
     ],
     "passage": "Matthew 3",
-    "question": "Was John's Baptism Christian Baptism?",
-    "context": "",
+    "question": "Was John the Baptist's baptism essentially the same as Christian baptism, or was it a distinct preparatory rite superseded after Pentecost?",
+    "context": "The question arises because Jesus was baptized by John, yet Acts 19:1-7 shows Paul re-baptizing disciples who had received only John's baptism. If John's baptism were identical to Christian baptism, re-baptism would be unnecessary. The continuity position sees one covenant sign developing in fullness; the discontinuity position sees a break at Pentecost when baptism in the name of Jesus and the Spirit's indwelling became the norm. The debate matters for sacramental theology: does the baptism Christians practice today begin with John, with Jesus's baptism, or with Pentecost?",
     "positions": [
       {
         "id": "john-s-baptism-was-preparatory-christian",
         "label": "John's baptism was preparatory; Christian baptism is distinct",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "keener",
+          "macarthur"
+        ],
         "proponents": "Most Protestant commentators",
         "argument": "John baptized in water for repentance; Christian baptism is in the name of the Trinity and linked to the Spirit's work (Acts 2:38; 19:1-6).",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "John himself distinguished his baptism from the one to come ('he will baptize with the Holy Spirit,' Matt 3:11); Acts 19:1-7 explicitly shows Paul re-baptizing John's disciples in the name of Jesus; Acts 2:38 links Christian baptism to the Spirit's gift, which was not available during John's ministry; the early church consistently baptized 'in the name of Jesus,' a formula John never used.",
+        "weaknesses": "Overdraws the discontinuity — Jesus was baptized by John without any indication of inadequacy; the Gospels present John's baptism positively as 'from heaven' (Matt 21:25); risks implying John's ministry was deficient rather than preparatory; the re-baptism in Acts 19 may address the specific situation of those who hadn't heard about the Spirit, not a universal principle.",
+        "key_verses": [
+          "Matthew 3:11",
+          "Acts 19:1-7",
+          "Acts 2:38",
+          "Mark 1:8"
+        ]
       },
       {
         "id": "continuity-of-covenant-sign",
         "label": "Continuity of covenant sign",
         "tradition_family": "reformed",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "calvin",
+          "catena"
+        ],
         "proponents": "Some Reformed scholars",
         "argument": "Both point to cleansing and covenant membership; the difference is degree of fulfilment, not essential nature.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Both baptisms use water as a sign of repentance and covenant entry; Jesus's own baptism by John validates the rite; the early church did not invent baptism — they continued and reinterpreted an existing practice; Reformed covenant theology sees one sign developing in meaning as redemptive history progresses, just as circumcision developed from Abraham to Moses.",
+        "weaknesses": "Cannot easily explain the Acts 19 re-baptism if John's baptism was essentially the same rite; ignores John's own insistence on the qualitative difference between his baptism and the coming one; the discontinuity between water baptism and Spirit baptism is explicitly stated in all four Gospels; the covenant-sign framework may import systematic theology into a narrative text.",
+        "key_verses": [
+          "Matthew 3:13-17",
+          "Matthew 21:25",
+          "Acts 18:25",
+          "Colossians 2:11-12"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Most scholars distinguish John's baptism from Christian baptism while acknowledging continuity in symbolism (water, repentance, initiation). The decisive factor is Acts 19:1-7, where Paul treated John's baptism as insufficient. John himself announced the distinction: 'I baptize with water, but he will baptize with the Holy Spirit' (Matt 3:11). The baptisms overlap in form but differ in content — John's pointed forward to the coming one; Christian baptism celebrates the one who has come.",
+    "related_passages": [
+      "Matthew 3:11-17",
+      "Acts 2:38",
+      "Acts 19:1-7",
+      "Mark 1:4-8",
+      "John 1:26-33",
+      "Romans 6:3-4"
+    ],
+    "tags": [
+      "sacraments",
+      "baptism",
+      "covenant-theology",
+      "discontinuity"
+    ]
   },
   {
     "id": "the-temptation-real-or-staged",
@@ -10385,35 +10441,64 @@
       4
     ],
     "passage": "Matthew 4",
-    "question": "The Temptation: Real or Staged?",
-    "context": "",
+    "question": "Was Jesus's temptation in the wilderness genuinely possible — could he have sinned — or was it a representative trial demonstrating his covenant faithfulness where failure was ontologically impossible?",
+    "context": "The question engages the impeccability debate in Christology. If Jesus was fully God and God cannot sin (James 1:13), then the temptation was not genuinely possible and the narrative is a demonstration rather than a test. If Jesus was fully human and temptation requires genuine possibility, then the Chalcedonian two-natures doctrine demands that the human nature could have yielded. Hebrews 4:15 says Jesus was 'tempted in every way, just as we are — yet he did not sin,' which seems to require genuine possibility. The wilderness setting deliberately echoes Israel's forty-year wilderness failure, making Jesus's victory typologically significant regardless of the impeccability question.",
     "positions": [
       {
         "id": "genuinely-real-jesus-could-have-yielded",
         "label": "Genuinely real — Jesus could have yielded",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "keener"
+        ],
         "proponents": "Orthodox Christology",
         "argument": "If not genuinely possible to accept, it was not a real temptation. The fully human Jesus was genuinely tempted; the fully divine Son was incapable of sinning. The tension is the Christological mystery (Heb 4:15).",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Hebrews 4:15 is meaningless as pastoral comfort if the temptation was impossible; Hebrews 2:18 says he 'suffered when he was tempted,' implying genuine struggle; full humanity requires genuine moral agency, including the possibility of wrong choice; if Jesus could not have sinned, his obedience was determined and therefore not meritorious; the narrative reads as genuine conflict, not theatrical demonstration.",
+        "weaknesses": "If the divine nature cannot sin and Jesus is fully divine, then the person of Christ cannot sin — this is the classical argument from the communication of attributes; a Christ who could have sinned threatens the certainty of salvation (the plan of redemption depended on his not sinning); Scripture never says Jesus 'could have' sinned — only that he 'did not'; the strength of temptation does not require the possibility of succumbing.",
+        "key_verses": [
+          "Hebrews 4:15",
+          "Hebrews 2:18",
+          "Matthew 4:1-11",
+          "Matthew 26:39"
+        ]
       },
       {
         "id": "representative-trial-jesus-as-israel-s-c",
         "label": "Representative trial — Jesus as Israel's covenant head",
         "tradition_family": "reformed",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "calvin",
+          "macarthur"
+        ],
         "proponents": "Some biblical theologians",
         "argument": "Jesus as the true Israel faces and defeats the tests Israel failed in the wilderness. The typological significance gives the event its redemptive-historical meaning.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The three temptations correspond precisely to Israel's three wilderness failures (bread/manna, testing God/Massah, idolatry/golden calf); Jesus answered each temptation with Deuteronomy 6-8 — the very chapters addressing Israel's failures; the typological structure (40 days / 40 years, wilderness setting, hunger testing) is too precise to be coincidental; Jesus's victory as representative head reverses Adam's and Israel's failures regardless of whether he 'could have' sinned.",
+        "weaknesses": "The typological reading doesn't resolve the impeccability question — it sidesteps it; reducing the temptation to typology may diminish its personal, existential reality for Jesus; the representative trial framework is a theological construct imposed on the narrative rather than stated by it; Hebrews treats the temptation as personal experience, not merely representative action.",
+        "key_verses": [
+          "Matthew 4:1-11",
+          "Deuteronomy 8:3",
+          "Deuteronomy 6:16",
+          "Deuteronomy 6:13",
+          "Romans 5:18-19"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Both positions have strong theological warrant and the debate cannot be resolved by exegesis alone — it requires Christological commitments about the interaction of divine and human natures. The typological reading (Jesus as faithful Israel) is nearly universally accepted regardless of one's position on impeccability. The pastoral significance of Hebrews 4:15 — a high priest who sympathizes because he was tested — seems to require genuine engagement with temptation at minimum, even if one denies the possibility of yielding.",
+    "related_passages": [
+      "Matthew 4:1-11",
+      "Luke 4:1-13",
+      "Hebrews 2:18",
+      "Hebrews 4:15",
+      "James 1:13",
+      "Deuteronomy 6-8",
+      "Exodus 17:1-7"
+    ],
+    "tags": [
+      "christology",
+      "impeccability",
+      "typology",
+      "wilderness"
+    ]
   },
   {
     "id": "the-antitheses-contradiction-or-deepening-of-torah",
@@ -10424,35 +10509,63 @@
       5
     ],
     "passage": "Matthew 5",
-    "question": "The Antitheses: Contradiction or Deepening of Torah?",
-    "context": "",
+    "question": "Do Jesus's six antitheses in the Sermon on the Mount ('you have heard... but I tell you') deepen and complete Torah, or do some represent genuine modification or even abrogation of Mosaic law?",
+    "context": "The antitheses (Matt 5:21-48) follow Jesus's declaration that he came not to abolish the Law but to fulfill it (5:17). If 'fulfill' means 'deepen,' then the antitheses uncover Torah's original intent. If 'fulfill' means 'bring to eschatological completion,' some laws may be transcended. The murder and adultery antitheses clearly deepen existing commandments. The divorce and oath antitheses are more ambiguous — Jesus appears to restrict Deuteronomy 24's divorce permission and to prohibit oaths that Numbers 30 permits. The lex talionis antithesis ('eye for an eye') seems to reverse a legal principle. Whether all six antitheses operate the same way is itself debated.",
     "positions": [
       {
         "id": "deepening-and-completing-not-contradicti",
         "label": "Deepening and completing — not contradicting",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "calvin"
+        ],
         "proponents": "Most evangelical commentators",
         "argument": "Jesus brings out the fullest meaning of the OT. The six antitheses uncover internal demands that external commands always implied.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Consistent with 5:17 ('I did not come to abolish'); the murder and adultery antitheses clearly reveal internal dimensions of existing commands; Jesus deepened Torah by exposing the heart-disposition behind each command; the 'eye for an eye' antithesis addresses personal revenge, not judicial penalty — it deepens the principle by limiting its application; maintains continuity between testaments.",
+        "weaknesses": "The divorce antithesis genuinely restricts Deuteronomy 24's explicit permission — calling this 'deepening' strains the word; the oath antithesis says 'do not swear an oath at all' (5:34), which goes beyond Leviticus 19:12's 'do not break your oath'; if every antithesis merely deepens, Jesus is saying nothing Moses didn't already imply, which underplays the 'but I tell you' authority claim.",
+        "key_verses": [
+          "Matthew 5:17-18",
+          "Matthew 5:21-22",
+          "Matthew 5:27-28",
+          "Matthew 5:48"
+        ]
       },
       {
         "id": "some-antitheses-represent-genuine-modifi",
         "label": "Some antitheses represent genuine modification",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "keener",
+          "marcus"
+        ],
         "proponents": "Some NT scholars",
         "argument": "The divorce and oath antitheses represent genuine modifications of Mosaic permission (Deut 24:1-4; Num 30) rather than mere deepening.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Acknowledges that 'do not swear at all' and restricting divorce represent genuine changes to Mosaic practice; respects the unprecedented authority of 'but I tell you' — Jesus speaks with authority above Moses, not merely alongside him; explains why the early church understood some Torah regulations as fulfilled and therefore no longer binding (dietary laws, sacrificial system); avoids forcing all six antitheses into a single interpretive mold.",
+        "weaknesses": "Creates tension with 5:17-18 where Jesus explicitly says he does not abolish; if Jesus modified Torah, it becomes difficult to distinguish his position from the very 'abolishing' he denied; the modification reading can slide into Marcionite territory where the Old Testament is superseded rather than fulfilled; each antithesis must be evaluated individually, which makes the hermeneutical principle less clear.",
+        "key_verses": [
+          "Matthew 5:31-32",
+          "Matthew 5:33-37",
+          "Matthew 5:38-42",
+          "Deuteronomy 24:1-4"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Most scholars agree the murder and adultery antitheses deepen Torah. The debate concentrates on divorce (Matt 5:31-32), oaths (5:33-37), and retaliation (5:38-42). The 'deepening only' position must explain how restricting divorce permission doesn't modify Deuteronomy 24. The 'genuine modification' position must explain how this coheres with 'not one jot or tittle will pass.' The strongest consensus is that Jesus claimed an authority over Torah's interpretation that exceeded any rabbi's — whether that constitutes deepening or modification depends on one's framework for the relationship between the testaments.",
+    "related_passages": [
+      "Matthew 5:17-48",
+      "Deuteronomy 24:1-4",
+      "Numbers 30:2",
+      "Exodus 21:24",
+      "Leviticus 19:12",
+      "Romans 10:4"
+    ],
+    "tags": [
+      "law-gospel",
+      "hermeneutics",
+      "sermon-on-the-mount",
+      "torah"
+    ]
   },
   {
     "id": "the-lord-s-prayer-model-or-formula",
@@ -10463,35 +10576,62 @@
       6
     ],
     "passage": "Matthew 6",
-    "question": "The Lord's Prayer: Model or Formula?",
-    "context": "",
+    "question": "Did Jesus intend the Lord's Prayer as a model (pray 'like this') teaching prayer's structure and priorities, or as a specific formula (pray 'this') to be repeated verbatim in worship?",
+    "context": "Matthew's version uses 'pray like this' (houtōs, 6:9), which suggests a model. Luke's version uses 'when you pray, say' (legete, 11:2), which suggests a formula. The two versions differ in wording and length, which complicates the formula reading. The early church adopted the prayer for liturgical use (Didache 8:3 prescribes it three times daily), treating it as both model and formula. The debate touches broader questions about spontaneous versus liturgical prayer in Christian worship.",
     "positions": [
       {
         "id": "a-model-for-the-structure-and-content-of",
         "label": "A model for the structure and content of prayer",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "keener"
+        ],
         "proponents": "Most Protestants",
         "argument": "Pray like this indicates a model, not a verbatim formula. The prayer teaches priorities, posture, and petitions appropriate to kingdom citizens.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Matthew's 'pray like this' (houtōs) indicates manner, not verbatim repetition; Jesus had just warned against 'babbling like pagans' (6:7) — prescribing a fixed formula immediately after this warning would be self-contradicting; the two Gospel versions differ in wording, which makes a fixed formula problematic; the prayer teaches prayer priorities: adoration, submission, petition, confession, protection.",
+        "weaknesses": "Luke's 'when you pray, say' (legete) is a direct instruction to use these words; the early church immediately adopted it as a verbatim prayer (Didache 8:3, by late first century); the 'babbling' warning targets repetitive meaningless speech, not meaningful liturgical repetition; treating the prayer as only a model may discourage the rich tradition of corporate recitation that has united Christians for centuries.",
+        "key_verses": [
+          "Matthew 6:9",
+          "Matthew 6:7-8",
+          "Luke 11:2"
+        ]
       },
       {
         "id": "a-specific-formula-to-be-repeated",
         "label": "A specific formula to be repeated",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "catena",
+          "calvin"
+        ],
         "proponents": "Catholic and Anglican tradition",
         "argument": "Pray like this combined with Luke's parallel ('when you pray, say') supports regular verbatim use as a liturgical prayer.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Luke's 'say' (legete) is a direct imperative to speak these words; the Didache — within a generation of the apostles — prescribed the prayer three times daily, suggesting apostolic practice; the prayer's balanced, poetic structure (seven petitions in Matthew) is designed for recitation; Jesus gave his disciples a distinctive prayer just as John the Baptist taught his disciples to pray (Luke 11:1); corporate verbatim use creates unity across time, geography, and denomination.",
+        "weaknesses": "If it were a strict formula, the two Gospel versions should be identical — they are not; Matthew's 'pray like this' grammatically introduces a model, not a script; verbatim recitation can become the very 'vain repetition' Jesus warned against in the preceding verse; reducing the prayer to formula may undermine its function as a guide for all prayer.",
+        "key_verses": [
+          "Luke 11:2",
+          "Didache 8:2-3",
+          "Luke 11:1",
+          "Matthew 6:9-13"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The tension between Matthew's 'like this' and Luke's 'say' is real but may reflect different occasions rather than contradictory instructions. The overwhelming historical practice has been to use the prayer both ways — as a verbatim prayer in worship and as a template for personal prayer. Most scholars see the model reading as primary based on Matthew's framing, while acknowledging that early church practice of verbatim use was neither wrong nor contrary to Jesus's intent. The prayer teaches priorities (God's name, kingdom, will, provision, forgiveness, protection) that structure all prayer.",
+    "related_passages": [
+      "Matthew 6:9-13",
+      "Luke 11:1-4",
+      "Didache 8:2-3",
+      "Matthew 6:7-8",
+      "Romans 8:15",
+      "Galatians 4:6"
+    ],
+    "tags": [
+      "prayer",
+      "liturgy",
+      "sermon-on-the-mount",
+      "worship"
+    ]
   },
   {
     "id": "matthew-7-21-23-can-genuine-christians-be-rejected",
@@ -11278,46 +11418,80 @@
       24
     ],
     "passage": "Matthew 24",
-    "question": "Does the Olivet Discourse Refer to AD 70, the Future Parousia, or Both?",
-    "context": "",
+    "question": "Does the Olivet Discourse (Matthew 24) describe the fall of Jerusalem in AD 70, the future second coming, or both events in typological relationship?",
+    "context": "Jesus's longest prophetic discourse begins with the disciples' question about the temple's destruction and the 'sign of your coming and of the end of the age' (24:3). The disciples apparently assumed these were one event; the discourse may or may not separate them. The preterist reads everything through AD 70; the futurist through the parousia; the dual-fulfillment view sees AD 70 as a type of the eschatological judgment. The interpretive crux is 'this generation' (v. 34) — does it mean the generation alive in AD 30, or the generation alive when the end-time signs begin? The passage has generated centuries of disagreement because it blends near-horizon and far-horizon language without clear transition markers.",
     "positions": [
       {
         "id": "entirely-ad-70-preterist",
         "label": "Entirely AD 70 (preterist)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "marcus"
+        ],
         "proponents": "Some Reformed scholars",
         "argument": "All of vv.4-34 was fulfilled in AD 70. V.36 begins the discussion of the actual end-time parousia.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "'This generation' (v. 34) most naturally means Jesus's contemporaries; the 'abomination of desolation' fits Titus's armies surrounding Jerusalem; 'coming on clouds' is Old Testament theophanic language for divine judgment (Isa 19:1), not necessarily a literal visible return; the disciples' question concerned the temple, and Jesus answered about the temple.",
+        "weaknesses": "The cosmic language of vv. 29-31 (sun darkened, stars falling, Son of Man coming) strains metaphorical reading; 'the sign of the Son of Man appearing in heaven' is difficult to reduce to AD 70; 'they will see the Son of Man coming on the clouds' echoes Daniel 7:13 which is a universal, not local, event; the 'gathering of the elect from the four winds' exceeds anything that happened in AD 70.",
+        "key_verses": [
+          "Matthew 24:34",
+          "Matthew 24:15-16",
+          "Isaiah 19:1",
+          "Daniel 9:27"
+        ]
       },
       {
         "id": "entirely-future-dispensationalist",
         "label": "Entirely future (dispensationalist)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Dispensational tradition",
         "argument": "The discourse is entirely future-oriented. The Abomination of Desolation is still future. 'This generation' means the generation alive at the end.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Takes the cosmic language literally and consistently; avoids reducing Jesus's most dramatic prophetic statements to past events; 'this generation' can mean 'this kind' (genea as 'race' or 'type'); preserves the discourse as a guide for future believers watching for signs of the end; aligns with the Book of Revelation's future-oriented framework.",
+        "weaknesses": "'This generation' almost always means 'people alive now' in the Gospels (Matt 11:16, 12:39, 23:36); ignores the strong verbal parallels between the discourse and the historical events of AD 70 described by Josephus; the disciples' question was prompted by a visible temple — a purely future reading disconnects the answer from the question; requires the temple to be rebuilt, which is an interpretive addition to the text.",
+        "key_verses": [
+          "Matthew 24:30",
+          "Matthew 24:36",
+          "Daniel 7:13-14",
+          "Revelation 1:7"
+        ]
       },
       {
         "id": "double-reference-ad-70-future-parousia",
         "label": "Double reference: AD 70 + future parousia",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "keener",
+          "calvin"
+        ],
         "proponents": "Most evangelical commentators (France, Carson, Hagner)",
         "argument": "The discourse uses the near event (AD 70) as a type and first-stage fulfilment of the far event (the parousia). Vv.4-34 have both a near and a far referent; v.36 shifts exclusively to the end-time.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Accounts for both the near-horizon language (temple destruction, 'this generation') and the far-horizon language (cosmic signs, universal gathering); typological reading is consistent with how Old Testament prophecy works (near fulfillment as pattern for eschatological fulfillment); explains why the discourse seems to oscillate between imminent and distant events; 'this generation' applies to AD 70, cosmic language to the parousia.",
+        "weaknesses": "The text provides no explicit transition marker between the AD 70 and parousia sections, making the division somewhat subjective; different proponents place the transition at different points; risks becoming an unfalsifiable catch-all that accommodates any reading; the disciples' single question may not have anticipated a bifurcated answer.",
+        "key_verses": [
+          "Matthew 24:3",
+          "Matthew 24:15",
+          "Matthew 24:29-31",
+          "Matthew 24:34"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The double-reference reading commands the broadest scholarly support, though preterist and futurist scholars dispute the proportions. Most agree that vv. 4-14 describe the inter-advent period generally, vv. 15-28 have strong AD 70 resonance (the abomination, the siege), and vv. 29-31 use cosmic language that strains a purely AD 70 reading. 'This generation' (v. 34) remains the single most debated phrase, with no consensus resolution.",
+    "related_passages": [
+      "Matthew 24:1-51",
+      "Mark 13:1-37",
+      "Luke 21:5-36",
+      "Daniel 9:27",
+      "Daniel 12:1-2",
+      "2 Thessalonians 2:1-12"
+    ],
+    "tags": [
+      "eschatology",
+      "prophecy",
+      "temple-destruction",
+      "parousia"
+    ]
   },
   {
     "id": "who-are-the-least-of-these-in-matthew-25-40",
@@ -11328,46 +11502,82 @@
       25
     ],
     "passage": "Matthew 25",
-    "question": "Who Are 'the Least of These' in Matthew 25:40?",
-    "context": "",
+    "question": "Does 'the least of these my brothers' in Matthew 25:40 refer to all suffering people, specifically to Jesus's disciples and missionaries, or both in expanding circles?",
+    "context": "The Sheep and Goats judgment parable is unique to Matthew and has become one of the most influential texts in Christian social ethics. The identification of 'the least of these my brothers' determines whether the parable teaches universal charity toward all the poor or specifically rewards those who welcome Christian missionaries. In Matthew's usage, 'brothers' (adelphoi) typically refers to disciples (12:49-50, 18:15, 28:10), not humanity generally. However, the parable's universal judgment context ('all the nations,' v. 32) complicates a purely intra-community reading. Liberation theology and Catholic social teaching have championed the universal reading; Reformation exegesis generally favored the missionary reading.",
     "positions": [
       {
         "id": "all-the-poor-universally",
         "label": "All the poor universally",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "catena",
+          "calvin"
+        ],
         "proponents": "Patristic consensus (especially Chrysostom), most modern readers",
         "argument": "Christ is present in all suffering humanity. The judgment is on universal charity.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The judgment involves 'all the nations' (v. 32) — a universal scope suggesting universal criteria; Christ's identification with the suffering transcends group boundaries; consistent with the prophetic tradition's emphasis on justice for the poor (Isa 58, Amos 5); has driven centuries of Christian charitable work and hospital founding; 'I was hungry and you fed me' resonates with universal human experience.",
+        "weaknesses": "Matthew's use of 'brothers' (adelphoi) elsewhere consistently means disciples, not all people; the specifically Christian acts (welcoming strangers, visiting prisoners) fit a missionary context better than generic poverty; the universal reading emerged primarily in the patristic era and may reflect later ethical development rather than authorial intent.",
+        "key_verses": [
+          "Matthew 25:35-36",
+          "Matthew 25:40",
+          "Proverbs 19:17",
+          "Isaiah 58:6-7"
+        ]
       },
       {
         "id": "specifically-jesus-s-disciples-missionar",
         "label": "Specifically Jesus's disciples/missionaries",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "keener",
+          "macarthur"
+        ],
         "proponents": "Most modern exegetes (Davies, France, Nolland)",
         "argument": "Matthew's use of 'brothers' consistently refers to disciples. The vulnerable missionaries sent out in ch.10 are 'the least of these.'",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Matches Matthew's consistent use of 'brothers' for disciples (12:49-50, 28:10); the specific acts — welcoming, clothing, visiting in prison — fit the experience of itinerant missionaries who depended on hospitality; connects to Matthew 10:40-42 where receiving a disciple is receiving Christ; 'the least of these' (elachistōn) echoes 'least in the kingdom' (5:19, 11:11); nations are judged by how they received the gospel's messengers.",
+        "weaknesses": "Restricts Christ's identification with the suffering to Christians only, which seems theologically narrow; makes the parable about missionary hospitality rather than compassion, which reduces its ethical force; the 'nations' being judged presumably include people who never encountered Christian missionaries.",
+        "key_verses": [
+          "Matthew 10:40-42",
+          "Matthew 12:49-50",
+          "Matthew 28:10",
+          "Mark 9:41"
+        ]
       },
       {
         "id": "both-in-concentric-circles",
         "label": "Both, in concentric circles",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "netbible"
+        ],
         "proponents": "Some commentators",
         "argument": "The immediate reference is to disciples; the principle extends to all the vulnerable because the disciples represent them.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Honors Matthew's immediate linguistic referent (disciples) while acknowledging the universal ethical trajectory; the missionaries are sent to 'all nations' (28:19), so receiving them is already a universal encounter; avoids the false binary between social ethics and missionary hospitality; Christ's identification with the vulnerable can begin with his explicit representatives and extend outward.",
+        "weaknesses": "May be a modern harmonizing attempt that neither ancient reading intended; the 'concentric circles' framework is not explicit in the text; risks blurring a specific claim (how you treat my messengers reveals your heart) into a generic claim (be nice to everyone); both the universal and the specific readings have stronger exegetical grounding than the compromise.",
+        "key_verses": [
+          "Matthew 25:40",
+          "Matthew 28:19-20",
+          "Matthew 10:40",
+          "James 2:15-16"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The exegetical evidence slightly favors the 'disciples/missionaries' reading based on Matthew's consistent use of 'brothers,' but the universalist application has deeply shaped Christian ethical tradition and cannot be dismissed as mere eisegesis. The concentric circles position attempts to honor both — the immediate referent is disciples, but the principle extends because the disciples are sent to 'all nations.' The pastoral and ethical implications differ significantly depending on which reading is adopted.",
+    "related_passages": [
+      "Matthew 25:31-46",
+      "Matthew 10:40-42",
+      "Matthew 12:49-50",
+      "Matthew 18:5-6",
+      "Mark 9:41",
+      "Proverbs 19:17",
+      "James 2:15-16"
+    ],
+    "tags": [
+      "ethics",
+      "eschatology",
+      "social-justice",
+      "discipleship"
+    ]
   },
   {
     "id": "real-presence-or-memorial-in-the-lord-s-supper",
@@ -11470,46 +11680,80 @@
       27
     ],
     "passage": "Matthew 27",
-    "question": "What Happened to the Saints Raised at the Crucifixion? (27:52-53)",
-    "context": "",
+    "question": "Were the saints raised at the crucifixion (Matthew 27:52-53) literally resurrected, or is this apocalyptic symbolism describing the cross's cosmic significance?",
+    "context": "Matthew 27:52-53 is one of the most enigmatic passages in the Gospels. Only Matthew records it: tombs opened, bodies of saints were raised, and after Jesus's resurrection they entered Jerusalem and appeared to many. The passage raises questions on every level: Why does no other Gospel mention such a spectacular event? Were these saints permanently raised or temporarily? Why did they wait until after Jesus's resurrection to appear? The passage sits within Matthew's crucifixion narrative alongside other cosmic signs (darkness, torn curtain, earthquake), suggesting apocalyptic literary conventions. Yet the specificity of 'entering the holy city and appearing to many' resists pure symbolism.",
     "positions": [
       {
         "id": "literal-bodily-resurrection-appearing-af",
         "label": "Literal bodily resurrection, appearing after Easter",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Traditional evangelical reading",
         "argument": "The tombs opened at the crucifixion; the saints were raised and appeared in Jerusalem after the resurrection -- the first-fruits of Christ's resurrection.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Takes the text at face value as historical narrative; Matthew's crucifixion account is otherwise treated as historical (darkness, curtain, earthquake); the specificity of 'entered the holy city and appeared to many' goes beyond metaphor; connects to Daniel 12:2 and Ezekiel 37 as literal fulfillment; 1 Corinthians 15:20 calls Christ the 'firstfruits,' implying subsequent resurrections follow.",
+        "weaknesses": "No other Gospel, epistle, or historian (including Josephus) mentions this event despite its spectacular nature; if literal, the raised saints' fate is unresolved — did they die again, ascend, or remain?; the 'after his resurrection' timing creates an awkward chronological gap (tombs opened at crucifixion but appearances after resurrection); the event would be the most dramatic miracle in the Gospels yet receives only two verses.",
+        "key_verses": [
+          "Matthew 27:52-53",
+          "Daniel 12:2",
+          "Ezekiel 37:12-13",
+          "1 Corinthians 15:20"
+        ]
       },
       {
         "id": "symbolic-apocalyptic-sign",
         "label": "Symbolic/apocalyptic sign",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "marcus",
+          "keener"
+        ],
         "proponents": "Some commentators",
         "argument": "The event is Matthew's apocalyptic narration of the cross's cosmic significance -- the language is symbolic rather than describing a literal event.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Consistent with Matthew's use of apocalyptic imagery throughout the passion narrative (darkness, earthquake, torn curtain); Ezekiel 37's valley of dry bones is itself a metaphor for national restoration, not literal resurrection; the lack of corroboration in any other source suggests the passage functions as theological commentary rather than historical report; ancient Jewish apocalyptic literature regularly uses resurrection imagery symbolically.",
+        "weaknesses": "If symbolic, it is the only symbolic event in Matthew's crucifixion sequence — the darkness, earthquake, and curtain tearing are treated as real events; Matthew gives specific historical details ('entered the holy city, appeared to many') that resist metaphorical reading; the symbolic reading risks a slippery slope where any difficult miracle is reclassified as metaphor; 'bodies of the saints' is an unusually concrete detail for mere symbolism.",
+        "key_verses": [
+          "Matthew 27:51-54",
+          "Ezekiel 37:1-14",
+          "Isaiah 26:19",
+          "Zechariah 14:4-5"
+        ]
       },
       {
         "id": "proleptic-a-vision-of-what-the-resurrect",
         "label": "Proleptic: a vision of what the resurrection means",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "netbible",
+          "catena"
+        ],
         "proponents": "Some scholars",
         "argument": "The raising is real but its appearance is the Matthean way of connecting the cross to the resurrection as a unified redemptive event.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Explains the 'after his resurrection' delay — the event is theologicaly connected to Easter, not merely to Good Friday; treats the passage as a genuine event with eschatological significance rather than pure metaphor; the raising anticipates the general resurrection without requiring permanent bodily resurrection of individual saints; preserves Christ's primacy as 'firstfruits' (1 Cor 15:20).",
+        "weaknesses": "The category 'proleptic' is a modern theological construct not native to Matthew's thought world; the text says they 'appeared to many,' which implies real bodily encounters, not visions; the distinction between a 'proleptic vision' and 'it actually happened' is unclear; risks making the passage say something too sophisticated for Matthew's narrative style.",
+        "key_verses": [
+          "Matthew 27:52-53",
+          "1 Corinthians 15:20-23",
+          "Colossians 1:18",
+          "Revelation 1:5"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "No consensus exists. The literal reading faces the problem of historicity (no corroboration, no follow-up). The symbolic reading faces the problem of specificity (named details resist pure metaphor). The proleptic reading attempts a middle path but may import categories foreign to Matthew. Most scholars acknowledge the passage's uniqueness and resist confident conclusions. What is clear is Matthew's theological point: the cross unleashes resurrection power, connecting Jesus's death to the general resurrection.",
+    "related_passages": [
+      "Matthew 27:51-54",
+      "Ezekiel 37:1-14",
+      "Daniel 12:2",
+      "1 Corinthians 15:20-23",
+      "Revelation 1:5"
+    ],
+    "tags": [
+      "resurrection",
+      "apocalyptic",
+      "historicity",
+      "matthean-theology"
+    ]
   },
   {
     "id": "was-the-resurrected-christ-s-body-physical-or-spiritual",
@@ -12369,35 +12613,62 @@
       3
     ],
     "passage": "Luke 3",
-    "question": "Does Luke’s genealogy represent Mary’s or Joseph’s lineage?",
-    "context": "",
+    "question": "Does Luke's genealogy (Luke 3:23-38) trace Jesus's line through Joseph's legal ancestry or through Mary's biological ancestry?",
+    "context": "Matthew and Luke both provide genealogies but they diverge significantly after David. Matthew traces through Solomon; Luke traces through Nathan. Both claim to trace Joseph's line (Matt 1:16, Luke 3:23). The traditional harmonization says Luke actually traces Mary's line despite naming Joseph, arguing that 'son of Heli' means son-in-law. An alternative view holds that both are Joseph's — one legal, one biological — reflecting levirate marriage complications. The virgin birth accounts in both Gospels make Joseph's biological relationship to Jesus irrelevant, raising the question of why genealogies trace through him at all (answer: legal Davidic succession required male lineage).",
     "positions": [
       {
         "id": "joseph-s-legal-lineage",
         "label": "Joseph’s legal lineage",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "netbible",
+          "marcus"
+        ],
         "proponents": "Luke traces Joseph’s legal ancestry through Nathan; Matthew traces his biological ancestry through Solomon. Both are true of Joseph simultaneously.",
         "argument": "Both genealogies are Joseph’s",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Luke explicitly says 'Jesus... was the son, so it was thought, of Joseph, the son of Heli' — the text names Joseph, not Mary; both genealogies tracing through Joseph is consistent with ancient practice where legal succession passes through the father; the divergence from Matthew could reflect levirate marriage or legal adoption dynamics; avoids importing Mary into a text that doesn't name her.",
+        "weaknesses": "Requires a hypothetical levirate marriage or adoption scenario that no text records; doesn't explain why two genealogies of the same person (Joseph) diverge so dramatically after David; if both trace Joseph, one presumably tracks legal succession and the other biological descent, but neither text signals this distinction; the solution multiplies unverifiable assumptions.",
+        "key_verses": [
+          "Luke 3:23",
+          "Matthew 1:16",
+          "Deuteronomy 25:5-6",
+          "Ruth 4:17"
+        ]
       },
       {
         "id": "mary-s-biological-lineage",
         "label": "Mary’s biological lineage",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "keener"
+        ],
         "proponents": "Some propose that Luke’s “Heli” was Mary’s father, making this her lineage transmitted through Joseph’s legal adoption.",
         "argument": "Mary’s lineage",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Solves the divergence problem cleanly — Matthew traces Joseph's royal line, Luke traces Mary's biological line; explains why Luke's genealogy appears after the virgin birth narrative (3:23 notes 'as was supposed'); provides Jesus with actual Davidic blood descent through Mary, not just legal succession through Joseph; the Talmud may reference Mary as 'daughter of Heli' (though the identification is disputed).",
+        "weaknesses": "Luke names Joseph, not Mary — 'son of Heli' would have to mean 'son-in-law of Heli,' which is an unusual and unsupported use; ancient genealogies traced male lines; no early church father before the 5th century clearly articulated the Marian reading; the hypothesis requires reading Mary into a text that does not mention her; assumes Heli had no sons, which is unverifiable.",
+        "key_verses": [
+          "Luke 3:23",
+          "Luke 1:32",
+          "Romans 1:3",
+          "2 Timothy 2:8"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "No fully satisfying resolution exists. The Marian reading solves the divergence problem but creates a grammatical one (Luke names Joseph, not Mary). The dual-Joseph reading solves the grammar but requires complex levirate marriage hypotheses with no textual support. Most scholars acknowledge the problem and note that both genealogies serve theological purposes — Matthew shows Jesus as Abraham's and David's heir through the royal line; Luke shows Jesus as Adam's descendant through a non-royal Davidic line, emphasizing universal humanity.",
+    "related_passages": [
+      "Luke 3:23-38",
+      "Matthew 1:1-17",
+      "Ruth 4:18-22",
+      "1 Chronicles 3:1-24",
+      "Romans 1:3"
+    ],
+    "tags": [
+      "genealogy",
+      "christology",
+      "historicity",
+      "virgin-birth"
+    ]
   },
   {
     "id": "did-the-nazareth-rejection-precede-or-follow-early-galilean-",
@@ -12408,35 +12679,61 @@
       4
     ],
     "passage": "Luke 4",
-    "question": "Did the Nazareth rejection precede or follow early Galilean ministry?",
-    "context": "",
+    "question": "Did the Nazareth rejection (Luke 4:16-30) occur at the beginning of Jesus's ministry as Luke places it, or later as Mark/Matthew suggest — and did Luke relocate it for programmatic theological reasons?",
+    "context": "Luke places the Nazareth rejection at the very start of Jesus's public ministry, before any other Galilean activity. Mark (6:1-6) and Matthew (13:53-58) place it much later, after extensive Galilean teaching and miracles. The accounts share similarities (hometown rejection, prophet proverb) but differ in significant details. Luke's version is far more elaborate, with Jesus reading from Isaiah 61 and provoking a violent response. The question is whether Luke intentionally repositioned the event to serve as a programmatic introduction to Jesus's ministry — a thesis statement about acceptance, rejection, and Gentile inclusion.",
     "positions": [
       {
         "id": "luke-s-order-original",
         "label": "Luke’s order original",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Luke is following a topical arrangement, placing the Nazareth scene first as a programmatic statement of the mission.",
         "argument": "Programmatic placement",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Takes Luke's chronological placement at face value; Luke claims to have 'carefully investigated everything from the beginning' and to write 'an orderly account' (1:3); the elaborate detail in Luke's version (Isaiah scroll, specific reading, sermon content) suggests firsthand tradition rather than editorial invention; the Capernaum reference (4:23) could refer to events from Jesus's pre-public ministry period.",
+        "weaknesses": "Luke 4:23 ('what we heard you did in Capernaum') clearly presupposes prior Capernaum ministry that Luke hasn't yet narrated — an internal chronological contradiction if the Nazareth visit is truly first; Mark's placement (after extensive ministry) better fits the context where hometown people say 'isn't this the carpenter?' — they've heard reports; Luke's 'orderly' (kathexēs) may mean thematic order, not strict chronology.",
+        "key_verses": [
+          "Luke 1:3",
+          "Luke 4:16-30",
+          "Luke 4:23"
+        ]
       },
       {
         "id": "mark-matthew-order-original",
         "label": "Mark/Matthew order original",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "keener",
+          "marcus"
+        ],
         "proponents": "Mark 6 and Matthew 13 place the Nazareth rejection after substantial Galilean ministry. Luke has moved it forward for theological reasons.",
         "argument": "Topical rearrangement",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Mark and Matthew independently agree on later placement; Luke 4:23's reference to Capernaum ministry is a strong internal signal that prior ministry occurred; Luke's programmatic use of the event (Spirit-anointing, Isaiah fulfillment, Gentile outreach) explains the repositioning; ancient historians regularly arranged material thematically rather than chronologically; Luke's version is far more theologically developed than Mark's, suggesting editorial expansion.",
+        "weaknesses": "Requires accepting that Luke intentionally altered chronology, which some view as compromising historical reliability; the differences between Luke's and Mark's accounts are substantial enough that they may describe separate visits to Nazareth; assuming editorial relocation presupposes Markan priority, which not all scholars accept; Luke explicitly claims careful chronological investigation (1:3).",
+        "key_verses": [
+          "Mark 6:1-6",
+          "Matthew 13:53-58",
+          "Luke 4:23",
+          "Isaiah 61:1-2"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The majority of scholars favor Luke's theological repositioning of the event, noting that Luke 4:23 ('do here what we heard you did in Capernaum') presupposes prior ministry that Luke hasn't yet narrated — a strong internal signal that the event occurred later chronologically. Luke placed it first because it programmatically introduces his Gospel's key themes: Spirit-anointing, fulfillment of Isaiah, rejection by Israel, and outreach to Gentiles. Whether this constitutes a single event or combines elements of multiple visits remains debated.",
+    "related_passages": [
+      "Luke 4:16-30",
+      "Mark 6:1-6",
+      "Matthew 13:53-58",
+      "Isaiah 61:1-2",
+      "1 Kings 17:8-16",
+      "2 Kings 5:1-14"
+    ],
+    "tags": [
+      "synoptic-problem",
+      "historicity",
+      "redaction-criticism",
+      "programmatic-narrative"
+    ]
   },
   {
     "id": "is-the-miraculous-catch-in-luke-5-the-same-event-as-john-21",
@@ -12447,35 +12744,60 @@
       5
     ],
     "passage": "Luke 5",
-    "question": "Is the miraculous catch in Luke 5 the same event as John 21?",
-    "context": "",
+    "question": "Are the miraculous catch of fish in Luke 5:1-11 (at Jesus's call of the disciples) and John 21:1-14 (after the resurrection) the same event placed in different contexts, or two distinct events?",
+    "context": "Both accounts describe a miraculous catch of fish involving Peter and other disciples on the Sea of Galilee after a fruitless night of fishing. In Luke 5, it occasions Peter's call to discipleship; in John 21, it accompanies Peter's post-resurrection restoration. The structural parallels are striking (night failure, Jesus's instruction, overwhelming catch, Peter's response), but the narrative settings differ completely (pre-ministry vs. post-resurrection). The question matters for historical reliability: if one event, then either Luke or John relocated it; if two events, the parallels suggest deliberate literary echoing.",
     "positions": [
       {
         "id": "two-different-events",
         "label": "Two different events",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "keener",
+          "macarthur"
+        ],
         "proponents": "Luke 5 occurs at the beginning of Jesus’s ministry; John 21 occurs after the resurrection. Though structurally parallel, they are different events with different theological functions.",
         "argument": "Two events",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The settings are fundamentally different — one is a call narrative at ministry's start, the other a restoration scene after the resurrection; Peter's responses differ (Luke: 'depart from me, a sinful man'; John: throws himself into the water to reach Jesus); John 21 includes specific details absent from Luke (153 fish, charcoal fire, breakfast); the literary bookending of Peter's story (miraculous catch at beginning and end) is theologically powerful and intentional.",
+        "weaknesses": "The structural parallels are so close that independent occurrence seems unlikely — both involve night failure, Jesus's instruction to cast nets, overwhelming catch, and Peter's dramatic personal response; Occam's razor favors one event rather than two strikingly similar ones; the theological bookending argument could explain why one event was placed in two positions rather than why it happened twice.",
+        "key_verses": [
+          "Luke 5:4-8",
+          "John 21:3-7",
+          "John 21:11",
+          "Luke 5:10-11"
+        ]
       },
       {
         "id": "one-event-relocated",
         "label": "One event relocated",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "marcus"
+        ],
         "proponents": "Some argue John 21 was originally a pre-resurrection calling story that has been relocated. The similarities are too close to be coincidental.",
         "argument": "Possible relocation",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Explains the striking structural parallels without positing two near-identical miracles; ancient biographical writing regularly repositioned events for thematic purposes; either Luke moved a post-resurrection event to serve as a call narrative, or John used a pre-ministry tradition as a restoration framework; reduces the number of required historical events.",
+        "weaknesses": "Requires one evangelist to have significantly relocated a major event — either Luke placed a resurrection appearance before the ministry, or John placed a call narrative after the resurrection; the details that differ (Peter's reaction, fish count, meal) suggest distinct traditions rather than one relocated event; both Gospels integrate the event deeply into their surrounding narratives in ways that resist transplanting.",
+        "key_verses": [
+          "Luke 5:1-11",
+          "John 21:1-14",
+          "Mark 1:16-20"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The two-event reading is favored by the majority of scholars who note that the settings are irreconcilably different (call narrative vs. restoration narrative) and that deliberate literary echoing between the beginning and end of Jesus's ministry makes strong theological sense — Peter's story begins and ends with a miraculous catch. The single-event reading struggles to explain how the same event could function in such different narrative contexts. The structural parallels are best explained as intentional literary bookending rather than historical confusion.",
+    "related_passages": [
+      "Luke 5:1-11",
+      "John 21:1-14",
+      "Mark 1:16-20",
+      "Matthew 4:18-22",
+      "John 21:15-19"
+    ],
+    "tags": [
+      "synoptic-johannine",
+      "historicity",
+      "literary-structure",
+      "discipleship"
+    ]
   },
   {
     "id": "are-luke-s-beatitudes-and-matthew-s-from-the-same-sermon",
@@ -12486,35 +12808,61 @@
       6
     ],
     "passage": "Luke 6",
-    "question": "Are Luke’s beatitudes and Matthew’s from the same sermon?",
-    "context": "",
+    "question": "Are Luke's Beatitudes (Luke 6:20-26) and Matthew's (Matthew 5:3-12) two accounts of the same sermon, or records of similar teaching delivered on separate occasions?",
+    "context": "Matthew's Sermon on the Mount (Matt 5-7) and Luke's Sermon on the Plain (Luke 6:17-49) share extensive material but differ in setting (mountain vs. level place), audience (crowds vs. disciples), and content (Matthew has 9 beatitudes with spiritual qualifications — 'poor in spirit'; Luke has 4 beatitudes and 4 woes with material focus — 'you who are poor'). Itinerant teachers routinely repeated core material. The question is whether the Gospel writers drew on one event or two, and whether the differences reflect editorial shaping or distinct occasions.",
     "positions": [
       {
         "id": "one-sermon-two-accounts",
         "label": "One sermon, two accounts",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "keener",
+          "calvin"
+        ],
         "proponents": "Matthew and Luke preserve different aspects of the same teaching event. Matthew has expanded and arranged thematically; Luke has the more original form.",
         "argument": "Same sermon",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The overlap is extensive — not just the beatitudes but the core teaching on love of enemies, judging, and the house built on rock; the structural parallels are too close for independent sermons; Matthew's 'poor in spirit' and Luke's 'poor' may interpret the same Aramaic original differently; ancient historians regularly adapted speeches for their audiences while reporting the same event.",
+        "weaknesses": "The settings differ (mountain vs. level place); Luke has 4 woes that Matthew lacks entirely — if they heard the same sermon, Matthew's omission of woes is a significant editorial decision; Luke's beatitudes are addressed in second person ('blessed are you') while Matthew uses third person ('blessed are the poor in spirit'); the audience composition differs.",
+        "key_verses": [
+          "Matthew 5:1-2",
+          "Luke 6:17-20",
+          "Matthew 5:3",
+          "Luke 6:20"
+        ]
       },
       {
         "id": "two-different-sermons",
         "label": "Two different sermons",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "netbible"
+        ],
         "proponents": "Jesus taught similar material on multiple occasions. Luke and Matthew reflect different teaching events.",
         "argument": "Two occasions",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Itinerant teachers repeated core material — Jesus likely preached similar content many times; the different settings (mountain vs. plain) suggest different occasions; Luke's material focus ('poor,' 'hungry,' 'weeping') differs significantly from Matthew's spiritual focus ('poor in spirit,' 'hunger for righteousness'); the woes in Luke have no parallel in Matthew, suggesting different sermons with partially overlapping content; respects both evangelists as accurate reporters of distinct events.",
+        "weaknesses": "The structural parallels are unusually close for independent sermons — both end with the house-on-rock parable in nearly identical form; requires Jesus to have delivered strikingly similar sermons with the same structure, examples, and conclusion; Occam's razor favors one event adapted by two writers over two near-identical events; the two-sermon view multiplies entities beyond necessity.",
+        "key_verses": [
+          "Luke 6:20-26",
+          "Matthew 5:3-12",
+          "Matthew 7:24-27",
+          "Luke 6:47-49"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Both positions have strong supporters. The one-sermon view emphasizes the extensive overlap and argues the differences reflect each evangelist's theological emphasis. The two-sermon view emphasizes the different settings and the substantive differences in content. The question may be unanswerable with certainty. What scholars agree on is that both versions authentically represent Jesus's teaching, that itinerant rabbis repeated core themes, and that the evangelists shaped their material for their audiences.",
+    "related_passages": [
+      "Matthew 5:1-12",
+      "Luke 6:17-26",
+      "Matthew 7:28-29",
+      "Luke 6:49"
+    ],
+    "tags": [
+      "synoptic-problem",
+      "sermon-on-the-mount",
+      "redaction-criticism",
+      "beatitudes"
+    ]
   },
   {
     "id": "is-luke-7-s-anointing-the-same-as-john-12",
@@ -12525,35 +12873,61 @@
       7
     ],
     "passage": "Luke 7",
-    "question": "Is Luke 7's anointing the same as John 12?",
-    "context": "",
+    "question": "Is the anointing by a sinful woman in Luke 7:36-50 the same event as Mary of Bethany's anointing in John 12:1-8, or are these distinct incidents?",
+    "context": "Both accounts describe a woman anointing Jesus during a meal at a man named Simon's house. The parallels are obvious; the differences are significant. In Luke, the woman is unnamed, described as 'a sinner,' and anoints Jesus's feet with tears and perfume; the host is 'Simon the Pharisee'; and Jesus tells a parable about forgiveness. In John, the woman is Mary of Bethany (Lazarus's sister), the setting is Bethany near Jerusalem, and the objection comes from Judas about wasted money. Mark 14:3-9 and Matthew 26:6-13 describe yet another anointing at 'Simon the Leper's' house. The tradition that conflated these women into 'Mary Magdalene' has no textual basis.",
     "positions": [
       {
         "id": "different-events",
         "label": "Different events",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "keener",
+          "marcus"
+        ],
         "proponents": "Luke's anointing is earlier, by a sinful woman; John 12's is by Mary of Bethany before the Passion. The theological purposes are different.",
         "argument": "Two events",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The women are different — Luke's is unnamed and sinful; John identifies Mary of Bethany, a respected disciple; the settings differ (Galilee in Luke, Bethany in John); the hosts differ (Simon the Pharisee vs. Lazarus's household, though Mark has 'Simon the Leper'); the theological points differ entirely (forgiveness in Luke, burial preparation in John); Luke's placement is mid-ministry, John's is passion week; the early church distinguished the women before Gregory's conflation.",
+        "weaknesses": "The coincidence of shared elements (anointing, dinner, Simon, objection) is striking for independent events; the Fourth Gospel may have access to the same tradition Luke used and retold it in a Bethany context; Jesus was anointed at meals often enough to be remarkable, which itself suggests these may be one event retold differently.",
+        "key_verses": [
+          "Luke 7:37-38",
+          "John 12:1-3",
+          "Mark 14:3",
+          "John 11:2"
+        ]
       },
       {
         "id": "same-event-relocated",
         "label": "Same event, relocated",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "catena"
+        ],
         "proponents": "The structural parallels are close enough that some argue Luke has relocated the Bethany anointing.",
         "argument": "One relocated event",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The shared elements (woman, anointing, meal, host named Simon, objection) constitute a strong pattern; ancient narrators routinely adapted a single tradition for different narrative purposes; the differences may reflect theological shaping rather than historical distinctness; John 11:2 identifies Mary as 'the one who anointed the Lord,' which may reference a well-known single event tradition.",
+        "weaknesses": "Requires Luke or John to have substantially altered the woman's identity, setting, and theological significance — a level of editorial freedom that strains historical credibility; Luke's 'sinful woman' and John's 'Mary of Bethany' are not reconcilable without special pleading; the narrative functions are so different (forgiveness vs. burial) that treating them as one event requires one evangelist to have fundamentally misunderstood the occasion; Gregory the Great's conflation is now rejected by Catholic and Protestant scholars alike.",
+        "key_verses": [
+          "Luke 7:36-50",
+          "John 12:1-8",
+          "John 11:2",
+          "Mark 14:3-9"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Most scholars treat Luke 7 and John 12 as distinct events, noting the irreconcilable differences in the women's identities, the host's characterization, the narrative function, and the theological point. Luke's account is about forgiveness and gratitude; John's is about extravagant devotion anticipating burial. The shared elements (anointing, Simon, meal) likely reflect the commonality of such social settings rather than a single event reported differently. The conflation of these women in Western tradition (Gregory the Great, 591 AD) is now widely rejected.",
+    "related_passages": [
+      "Luke 7:36-50",
+      "John 12:1-8",
+      "Mark 14:3-9",
+      "Matthew 26:6-13",
+      "John 11:1-2"
+    ],
+    "tags": [
+      "synoptic-johannine",
+      "historicity",
+      "women-in-gospels",
+      "forgiveness"
+    ]
   },
   {
     "id": "did-the-women-travel-with-jesus-full-time-or-provide-financi",
@@ -12564,35 +12938,61 @@
       8
     ],
     "passage": "Luke 8",
-    "question": "Did the women travel with Jesus full-time or provide financial support from their homes?",
-    "context": "",
+    "question": "Did the women mentioned in Luke 8:1-3 travel with Jesus's itinerant group full-time, or did they provide financial support from their homes while remaining in their communities?",
+    "context": "Luke 8:1-3 uniquely mentions women who accompanied Jesus: Mary Magdalene, Joanna (wife of Chuza, Herod's steward), Susanna, and 'many others.' These women 'were helping to support them out of their own means.' The text says they traveled 'with him' (syn autō), which grammatically suggests physical accompaniment. However, in a first-century Palestinian context, women traveling with an unrelated male teacher was socially scandalous. The question intersects with debates about women's roles in early Christianity and the social dynamics of Jesus's movement.",
     "positions": [
       {
         "id": "full-time-travel",
         "label": "Full-time travel",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "keener",
+          "marcus"
+        ],
         "proponents": "8:1-3 implies they traveled with the Twelve — \"from one town and village to another... The Twelve were with him, and also some women.\"",
         "argument": "Itinerant",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Luke says they went 'with him' (syn autō) as he traveled through towns and villages — the grammar describes physical accompaniment; Mark 15:41 confirms that women 'followed him' (ēkolouthoun) and 'served him' (diēkonoun) in Galilee, using discipleship language; their presence at the cross and tomb (Luke 23:49, 55) presupposes they traveled with Jesus to Jerusalem; the verb 'accompany' (synoδeúō) in the broader passage implies physical presence, not remote support.",
+        "weaknesses": "Full-time travel by women with an unrelated male group would have been deeply scandalous in first-century Palestine; Joanna was wife of Herod's steward — her absence from home would have required extraordinary social permission; the economic logistics of supporting an itinerant group 'out of their own means' may favor home-based wealth management over personal travel; Luke may be telescoping periodic accompaniment into a summary statement.",
+        "key_verses": [
+          "Luke 8:1-3",
+          "Mark 15:40-41",
+          "Luke 23:49",
+          "Luke 23:55"
+        ]
       },
       {
         "id": "financial-supporters-from-home",
         "label": "Financial supporters from home",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "catena"
+        ],
         "proponents": "The women provided resources from their own means while primarily based at home, not necessarily on the full traveling circuit.",
         "argument": "Home-based",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The phrase 'helping to support them out of their own means' (diēkonoun autois ek tōn hyparchontōn autais) emphasizes financial provision, which could be managed remotely; first-century Jewish social norms made full-time mixed-gender travel nearly impossible for married women like Joanna; wealthy patronage of religious teachers was an established practice that did not require physical presence; preserves social plausibility within the historical context.",
+        "weaknesses": "The text explicitly says the women traveled 'with him' — the home-based reading must override or soften clear language; Mark 15:41 uses 'followed' (akoloutheō), the standard term for discipleship through physical accompaniment; the women's presence at crucifixion and burial in all four Gospels requires their presence in Jerusalem, implying they did travel; the reading may be motivated by discomfort with the social implications rather than by the text's plain meaning.",
+        "key_verses": [
+          "Luke 8:3",
+          "Luke 10:38-42",
+          "Acts 16:14-15"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The text's language ('with him,' traveling from 'one town and village to another') most naturally supports the full-time travel reading. Luke's specificity in naming these women and their financial role suggests a deliberate, historically grounded tradition. The social scandal of mixed-gender itinerancy was likely real and intentional — consistent with Jesus's pattern of transgressing social boundaries. Most scholars accept that at least some women traveled with the group, though the exact extent and consistency of their presence cannot be determined from the brief notice.",
+    "related_passages": [
+      "Luke 8:1-3",
+      "Luke 23:49",
+      "Luke 23:55-24:1",
+      "Mark 15:40-41",
+      "Matthew 27:55-56",
+      "Luke 10:38-42"
+    ],
+    "tags": [
+      "women-in-ministry",
+      "social-history",
+      "discipleship",
+      "patronage"
+    ]
   },
   {
     "id": "what-does-9-27-mean-some-standing-here-will-not-taste-death-",
@@ -14077,46 +14477,82 @@
       12
     ],
     "passage": "John 12",
-    "question": "Does \"I will draw all people\" teach universal salvation?",
-    "context": "",
+    "question": "Does Jesus's promise 'I, when I am lifted up, will draw all people to myself' (John 12:32) teach universal atonement or universal salvation?",
+    "context": "This verse sits at the climax of Jesus's public ministry in John, immediately after Greeks seek him and he announces 'the hour has come.' The 'lifting up' refers to the crucifixion (v. 33). The debate hinges on the scope of 'all people' (pantas): does it mean every individual without exception, every kind of person without distinction, or specifically the elect whom the Father gives? The question intersects with the Calvinist–Arminian debate on atonement scope and with universalist claims about the ultimate destiny of all humanity. John's Gospel contains both universal-sounding statements (3:16, 12:32) and particularist ones (6:37, 10:26, 17:9), creating a genuine tension.",
     "positions": [
       {
         "id": "no-all-means-all-kinds-all-the-elect",
         "label": "No: \"all\" means all kinds / all the elect",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "calvin"
+        ],
         "proponents": "Calvin, Owen, MacArthur",
         "argument": "\"All\" (pantas) in John often means \"all without distinction\" rather than \"all without exception\" (cf. 1:7; 3:26; 4:25; 11:48). The context (Gentiles as well as Jews) supports \"all peoples/all nations.\" The drawing is effective for those drawn.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Consistent with John's particularism elsewhere (6:37, 10:26, 17:9); 'drawing' in John 6:44 is effectual and selective; avoids tension with passages limiting salvation to believers; fits the immediate context where 'all' means Jews and Gentiles together.",
+        "weaknesses": "Requires reading a restriction into 'all people' that the Greek text does not contain; the immediate context (Greeks arriving) suggests ethnic expansion, not election narrowing; risks circularity — defining 'all' by a theological system rather than by context.",
+        "key_verses": [
+          "John 6:37",
+          "John 6:44",
+          "John 10:26-28",
+          "John 17:9"
+        ]
       },
       {
         "id": "yes-universal-atonement-scope-not-univer",
         "label": "Yes: universal atonement scope, not universal salvation",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "keener"
+        ],
         "proponents": "Arminian, Catholic, most Anglican scholars",
         "argument": "\"All people\" means every individual — the cross provides sufficient atonement for all. Whether all are saved depends on their response. The drawing is real but resistible (6:44 shows that drawing is necessary; it does not show it is irresistible).",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Takes 'all people' at face value; fits the immediate context of Gentile inclusion; consistent with 1 John 2:2 ('not for ours only but for the whole world'); distinguishes atonement's sufficiency from its application; avoids restricting clear universal language.",
+        "weaknesses": "Must explain why universal drawing does not produce universal salvation; creates tension with John 6:44 where drawing appears effectual; leaves ambiguity about the mechanism by which some resist the drawing.",
+        "key_verses": [
+          "John 12:32",
+          "John 3:16",
+          "1 John 2:2",
+          "1 Timothy 2:4-6"
+        ]
       },
       {
         "id": "universal-salvation-apokatastasis",
         "label": "Universal salvation (apokatastasis)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "catena"
+        ],
         "proponents": "Origen, some universalist theologians",
         "argument": "The universal drawing combined with the universal love (3:16) and Paul's \"all in all\" (1 Cor 15:28) teaches the eventual salvation of all. Most mainstream scholars regard this as reading too much into any single passage.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Takes both 'all people' and 'draw' at maximal scope; connects to Paul's 'God will be all in all' (1 Cor 15:28); resonates with early patristic voices (Origen, Gregory of Nyssa); avoids the problem of eternal punishment for finite sin.",
+        "weaknesses": "Contradicts explicit Johannine judgment passages (3:36, 5:28-29); requires ignoring conditional language throughout John ('whoever believes'); no major Johannine scholar treats this as the text's intended meaning; historically condemned as heresy by multiple councils.",
+        "key_verses": [
+          "John 12:32",
+          "1 Corinthians 15:28",
+          "Romans 5:18",
+          "Colossians 1:20"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Most scholars agree the verse teaches the universal scope of Christ's atoning work — extending beyond Israel to include Gentiles (the immediate context involves Greeks seeking Jesus). The classic Calvinist reading restricts 'all' to 'all kinds,' while Arminians take it as genuinely universal in offer though not universally effective. Universalist readings remain a minority position in mainstream scholarship. The strongest consensus point is that the verse primarily addresses ethnic scope (Jew and Gentile) rather than soteriological outcome.",
+    "related_passages": [
+      "John 3:16",
+      "John 6:37-44",
+      "John 10:16",
+      "John 10:26-28",
+      "John 17:9",
+      "1 John 2:2",
+      "1 Timothy 2:4",
+      "Romans 5:18"
+    ],
+    "tags": [
+      "soteriology",
+      "atonement",
+      "universalism",
+      "election"
+    ]
   },
   {
     "id": "is-the-foot-washing-in-john-13-a-sacrament",
@@ -14127,46 +14563,78 @@
       13
     ],
     "passage": "John 13",
-    "question": "Is the foot-washing in John 13 a sacrament?",
-    "context": "",
+    "question": "Is the foot-washing in John 13 intended as a sacramental ordinance, a moral example of humble service, or both?",
+    "context": "John's Gospel omits the institution of the Lord's Supper at the Last Supper and replaces it with the foot-washing. This substitution raises the question: did John intend the foot-washing to carry sacramental weight? Jesus's warning 'unless I wash you, you have no part with me' (v. 8) sounds sacramental, while his instruction 'you also should wash one another's feet' (v. 14) sounds exemplary. Some traditions (Anabaptist, some Adventist) practice foot-washing as a third ordinance alongside baptism and communion. The debate touches John's sacramental theology more broadly — whether the Gospel is anti-sacramental, crypto-sacramental, or deliberately ambiguous.",
     "positions": [
       {
         "id": "yes-an-ordinance-third-sacrament",
         "label": "Yes: an ordinance / third sacrament",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "catena"
+        ],
         "proponents": "Some Free Church traditions, Anabaptists, certain Pentecostals",
         "argument": "\"Unless I wash you, you have no part with me\" (v.8) gives the washing a necessity that parallels baptism. Some traditions practice foot-washing as a required ordinance alongside baptism and the Lord's Supper.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "'Unless I wash you, you have no part with me' (v. 8) uses language of necessity parallel to baptismal language; John's omission of eucharistic institution may indicate he intended foot-washing as the replacement ordinance; 1 Timothy 5:10 lists foot-washing among qualifications for enrolled widows, suggesting ongoing church practice.",
+        "weaknesses": "No early creed, council, or mainstream liturgical tradition treated foot-washing as a sacrament on par with baptism and eucharist; the necessity language in v. 8 may refer to accepting Christ's sacrificial service, not the physical act; the command 'wash one another's feet' (v. 14) is mutual, unlike baptism which is administered.",
+        "key_verses": [
+          "John 13:8",
+          "John 13:14-15",
+          "1 Timothy 5:10"
+        ]
       },
       {
         "id": "no-an-example-only",
         "label": "No: an example only",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "keener"
+        ],
         "proponents": "Most Protestant and Reformed traditions",
         "argument": "The command in v.14-15 is exemplary, not sacramental. The washing illustrates the principle of servant-love; it does not constitute a sacrament. John does not present it with the covenantal framework given to baptism or the Lord's Supper.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The explicit interpretation Jesus gives is exemplary: 'I have set you an example' (v. 15); the act illustrates the servant-leadership principle that dominates the farewell discourse; no New Testament text outside John 13 treats foot-washing as a required ritual; the Synoptic parallel (Luke 22:24-27) frames the same moment as a lesson in humility, not sacrament.",
+        "weaknesses": "Underplays the severity of 'you have no part with me' (v. 8), which exceeds normal moral exhortation; ignores the symbolic depth John typically layers into physical actions (water, bread, light); reduces the passage to ethics when John's Gospel consistently operates on multiple levels simultaneously.",
+        "key_verses": [
+          "John 13:14-15",
+          "Luke 22:24-27",
+          "Philippians 2:5-8"
+        ]
       },
       {
         "id": "both-exemplary-and-spiritually-significa",
         "label": "Both exemplary and spiritually significant",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "keener",
+          "calvin"
+        ],
         "proponents": "Catholic, Orthodox, Anglican",
         "argument": "The washing carries both moral (service) and spiritual (cleansing) dimensions without being a full sacrament in the technical sense. Its washing language (v.8: \"unless I wash you\") links it to baptism without identifying it with baptism.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Honors both the necessity language of v. 8 and the exemplary language of vv. 14-15; fits John's characteristic layered symbolism (physical act carrying spiritual meaning); the washing enacts what the cross accomplishes — cleansing through humble self-giving; avoids the false binary between sacrament and example.",
+        "weaknesses": "Risks being a compromise position that doesn't commit to either reading; the 'spiritual significance' component is harder to define precisely than either pure sacrament or pure example; may import systematic theology into a text that John left deliberately ambiguous.",
+        "key_verses": [
+          "John 13:8",
+          "John 13:10",
+          "John 13:14-15",
+          "John 15:3"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The majority of scholarship reads the foot-washing as primarily a moral example of servant leadership, with spiritual overtones pointing to the cross (the ultimate act of cleansing service). The sacramental reading has historical support but remains a minority view in mainstream exegesis. The 'both/and' position is gaining traction: the washing functions as an enacted parable — modeling humility while pointing to the deeper cleansing only Christ's death can provide.",
+    "related_passages": [
+      "John 13:1-17",
+      "John 15:12-13",
+      "Luke 22:24-27",
+      "Philippians 2:5-8",
+      "1 Timothy 5:10"
+    ],
+    "tags": [
+      "sacraments",
+      "christology",
+      "discipleship",
+      "johannine-theology"
+    ]
   },
   {
     "id": "the-father-is-greater-than-i-economic-or-ontological-subordi",
@@ -14177,46 +14645,80 @@
       14
     ],
     "passage": "John 14",
-    "question": "\"The Father is greater than I\" — economic or ontological subordination?",
-    "context": "",
+    "question": "Does Jesus's statement 'the Father is greater than I' (John 14:28) refer to a temporary subordination during the incarnation or to a permanent relational order within the Trinity?",
+    "context": "This verse has been contested since the Arian controversy. Arius cited it as proof the Son was a created being inferior to the Father. The Nicene response distinguished between the Son's equality in essence (homoousios) and his subordination in mission (economic Trinity). The modern EFS (Eternal Functional Subordination) debate reopened the question: does the Son's obedience to the Father reflect an eternal relational order or only the incarnational mission? The text sits in the farewell discourse where Jesus prepares disciples for his departure — 'if you loved me, you would be glad that I am going to the Father, for the Father is greater than I.'",
     "positions": [
       {
         "id": "economic-subordination-incarnation-only",
         "label": "Economic subordination (incarnation only)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "catena",
+          "calvin"
+        ],
         "proponents": "Athanasius, Calvin, most orthodox interpreters",
         "argument": "The Father's greatness refers to the Son's voluntary submission in the Incarnation. In the eternal relations, the Son is equal to the Father (1:1; 10:30); in the incarnate mission, the Son is functionally subordinate. The statement belongs to the economy, not the ontology.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Consistent with Nicene orthodoxy and the Chalcedonian definition; 'greater' refers to the Father's undiminished glory while the Son is in the form of a servant (Phil 2:7); the context is departure — Jesus going to the Father restores the pre-incarnate glory (17:5); avoids permanent hierarchy within the Godhead.",
+        "weaknesses": "Must explain why Jesus said 'the Father is greater' rather than 'the Father's position is temporarily greater'; some patristic voices (e.g., Hilary of Poitiers) read a permanent relational order without denying equality; the economic/immanent Trinity distinction may be too sharp for John's theology.",
+        "key_verses": [
+          "John 14:28",
+          "John 17:5",
+          "Philippians 2:6-9",
+          "John 10:30"
+        ]
       },
       {
         "id": "eternal-ontological-subordination",
         "label": "Eternal ontological subordination",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "netbible"
+        ],
         "proponents": "Arianism, contemporary Subordinationists",
         "argument": "The Father is ontologically greater — the Son is the first creation or a lesser divine being. The statement reflects the eternal order of being.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Takes the text at face value without qualification; explains why the Father is consistently the sender and the Son the sent throughout John; accounts for 1 Corinthians 15:28 where the Son subjects himself to the Father even after the eschaton.",
+        "weaknesses": "Condemned as Arian or semi-Arian by ecumenical councils; undermines homoousios (same substance) if 'greater' means 'superior in being'; no major creedal tradition supports ontological subordination; conflates functional role with essential nature.",
+        "key_verses": [
+          "John 14:28",
+          "1 Corinthians 15:28",
+          "Colossians 1:15"
+        ]
       },
       {
         "id": "relational-personal-subordination-within",
         "label": "Relational/personal subordination within equal essence",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Some modern evangelical scholars (Grudem, Ware)",
         "argument": "The eternal relations within the Trinity include a permanent relational order (Father-Son-Spirit) that involves authority/submission without ontological inequality. The Son eternally submits to the Father's authority while sharing the same divine nature.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Preserves full ontological equality while acknowledging a permanent Father-Son relational order; fits the consistent pattern in John where the Son does the Father's will; distinguishes between subordination of person (relational) and subordination of nature (ontological); supported by some contemporary evangelical theologians.",
+        "weaknesses": "The distinction between 'relational' and 'ontological' subordination is philosophically thin — critics argue that a permanent relational hierarchy entails ontological difference; drew sharp criticism in the 2016 EFS debate from scholars like Lewis Ayres and Scott Swain; risks importing complementarian gender theology into trinitarian doctrine.",
+        "key_verses": [
+          "John 14:28",
+          "John 5:19-20",
+          "John 8:28-29",
+          "1 Corinthians 11:3"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Orthodox trinitarian theology since Nicaea has consistently affirmed the Son's ontological equality with the Father while acknowledging some form of relational order. The economic subordination reading (incarnation only) commands the broadest scholarly support. The EFS position has vocal evangelical proponents but drew significant criticism from both Reformed and Catholic theologians in the 2016 trinitarian debate. The Arian reading is rejected by all mainstream Christian scholarship.",
+    "related_passages": [
+      "John 10:30",
+      "John 14:28",
+      "John 17:5",
+      "Philippians 2:5-11",
+      "1 Corinthians 11:3",
+      "1 Corinthians 15:28",
+      "Colossians 1:15-20"
+    ],
+    "tags": [
+      "christology",
+      "trinity",
+      "nicene-theology",
+      "subordination"
+    ]
   },
   {
     "id": "what-happens-to-branches-that-are-cut-off-in-15-2-6",
@@ -14227,46 +14729,80 @@
       15
     ],
     "passage": "John 15",
-    "question": "What happens to branches that are \"cut off\" in 15:2, 6?",
-    "context": "",
+    "question": "Do the branches 'cut off' and 'thrown into the fire' in John 15:2, 6 represent genuine believers who lose salvation, false professors, or believers who lose reward?",
+    "context": "The vine metaphor in John 15 is one of the most debated passages in the perseverance-apostasy discussion. The branches are described as 'in me' (v. 2), which Arminians take as genuine union with Christ. The fruitless branches are 'cut off' and 'thrown into the fire' (v. 6), which sounds like final judgment. Calvinists argue the branches were never truly 'in' Christ savingly — they had external, covenantal connection only (like Judas). The dispensationalist reading separates the believer's works from the believer's person. The passage's interpretation depends heavily on one's prior commitments about the security of the believer.",
     "positions": [
       {
         "id": "genuine-believers-who-fall-away-arminian",
         "label": "Genuine believers who fall away (arminian)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "keener"
+        ],
         "proponents": "Wesley, Arminius, many Pentecostals",
         "argument": "The branches are genuinely \"in\" Christ — truly saved — but can be cut off through persistent unfruitfulness or apostasy. The warning is genuine and addressed to real believers.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "'In me' (v. 2) uses the same union language John uses for genuine believers throughout the Gospel; the warning is meaningless if the branches were never truly connected; Hebrews 6:4-6 and 2 Peter 2:20-22 provide parallel warnings to those who genuinely participated in salvation benefits; takes the fire imagery as actual judgment, not metaphorical loss.",
+        "weaknesses": "Contradicts John 6:39 ('I shall lose none') and 10:28 ('no one will snatch them'); must explain how genuine union with Christ can be severed when John elsewhere treats it as permanent; the 'in me' language may describe visible membership in the covenant community rather than invisible saving union.",
+        "key_verses": [
+          "John 15:2",
+          "John 15:6",
+          "Hebrews 6:4-6",
+          "2 Peter 2:20-22"
+        ]
       },
       {
         "id": "false-professors-who-were-never-truly-sa",
         "label": "False professors who were never truly saved (calvinist)",
         "tradition_family": "reformed",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "calvin"
+        ],
         "proponents": "Calvin, MacArthur, most Reformed scholars",
         "argument": "The fruitless branches had an external connection to Jesus (in the covenant community, in the church) but were never genuinely regenerate. Their removal reveals that they were never truly his (cf. 1 John 2:19).",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Preserves John's clear teaching on the security of genuine believers (6:39, 10:28-29); Judas — present at this discourse — exemplifies someone 'in' the group but never truly saved; 1 John 2:19 explicitly says those who depart 'did not really belong to us'; the metaphor allows for branches with external but not vital connection to the vine.",
+        "weaknesses": "Strains the natural meaning of 'in me' — if the branches were never genuinely connected, the pruning/cutting metaphor loses force; risks making the warning purely hypothetical and therefore pastorally toothless; the text does not signal that some branches have a different quality of connection than others.",
+        "key_verses": [
+          "John 6:39",
+          "John 10:28-29",
+          "1 John 2:19",
+          "Matthew 7:21-23"
+        ]
       },
       {
         "id": "loss-of-reward-not-salvation-some-dispen",
         "label": "Loss of reward, not salvation (some dispensationalists)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "netbible"
+        ],
         "proponents": "Chafer, some Dallas Seminary theologians",
         "argument": "The branches represent the believer's works, not the believer's person. Unfruitful branches lose rewards at the judgment but not salvation.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Preserves eternal security absolutely; explains how a genuine believer can be 'in Christ' yet experience negative consequences for fruitlessness; Paul's fire imagery in 1 Corinthians 3:15 ('saved, yet so as through fire') provides a parallel where fire destroys works but not the person.",
+        "weaknesses": "The fire language in John 15:6 is more severe than reward-loss language — 'thrown into the fire and burned' echoes final judgment imagery (Matt 13:40-42); requires importing a works/person distinction foreign to John's thought; very few Johannine scholars adopt this reading.",
+        "key_verses": [
+          "John 15:6",
+          "1 Corinthians 3:15",
+          "2 Corinthians 5:10"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The debate remains genuinely unresolved and tracks closely with broader Calvinist-Arminian convictions. Calvinist scholars read the 'in me' language as covenantal rather than salvific; Arminian scholars insist the language of genuine union cannot be reduced to external association. Most commentators agree the passage primarily addresses fruitfulness as evidence of genuine relationship, with the fire imagery warning against complacency. The dispensationalist reward-loss reading has the least scholarly support.",
+    "related_passages": [
+      "John 15:1-8",
+      "John 6:39",
+      "John 10:28-29",
+      "Hebrews 6:4-6",
+      "2 Peter 2:20-22",
+      "Romans 11:17-24",
+      "Matthew 7:19"
+    ],
+    "tags": [
+      "soteriology",
+      "perseverance",
+      "apostasy",
+      "vine-metaphor"
+    ]
   },
   {
     "id": "what-does-i-have-overcome-the-world-mean",
@@ -14377,46 +14913,79 @@
       18
     ],
     "passage": "John 18",
-    "question": "Does \"my kingdom is not of this world\" teach political quietism?",
-    "context": "",
+    "question": "Does Jesus's declaration 'my kingdom is not of this world' (John 18:36) teach that Christians should withdraw from political engagement, or does it describe the kingdom's origin and method rather than its scope?",
+    "context": "Jesus spoke these words to Pilate during his trial — the most politically charged moment in the Gospels. The statement has been cited to justify both political withdrawal (the kingdom is spiritual, not earthly) and political engagement (the kingdom operates in the world by different means). The key interpretive question is whether 'not of this world' (ouk ek tou kosmou) describes the kingdom's origin (not derived from worldly power) or its realm (not concerned with worldly affairs). The debate connects to centuries of Christian political theology from Augustine's two cities to modern debates about church and state.",
     "positions": [
       {
         "id": "yes-the-church-should-not-engage-in-poli",
         "label": "Yes: the church should not engage in political power",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "catena"
+        ],
         "proponents": "Anabaptist, Mennonite, some Pietist traditions",
         "argument": "\"Not of this world\" means Jesus's kingdom operates by entirely different means than earthly kingdoms. The church that seeks political power has misunderstood its king.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Takes the 'not of this world' language seriously as a categorical distinction; consistent with the early church's apolitical posture under Roman persecution; prevents the church from being co-opted by political agendas; Jesus explicitly refused political kingship (John 6:15) and rejected violent means.",
+        "weaknesses": "Confuses method with scope — Jesus said his kingdom doesn't originate from the world, not that it has nothing to say to the world; ignores the prophetic tradition's consistent engagement with political justice (Amos, Isaiah, Jeremiah); 'not of this world' in John describes origin (ek = 'out of'), not irrelevance; the same logic would require Christians to withdraw from all cultural institutions.",
+        "key_verses": [
+          "John 18:36",
+          "John 6:15",
+          "2 Corinthians 10:3-4"
+        ]
       },
       {
         "id": "no-the-kingdom-engages-the-world-by-diff",
         "label": "No: the kingdom engages the world by different means",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "keener",
+          "marcus"
+        ],
         "proponents": "Most mainstream Catholic, Reformed, and evangelical scholars",
         "argument": "\"Not of this world\" refers to origin and method, not location or relevance. The kingdom is present in and working through the world — through truth-bearing, justice-seeking, mercy-giving — but by the Spirit's power rather than coercion. The church engages political life by Christ's means: truth, love, and service.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Correctly reads ek tou kosmou as 'derived from' rather than 'located in'; fits Jesus's prayer in John 17:15 — 'not that you take them out of the world but that you protect them'; the kingdom's alternative methods (truth, love, suffering) are themselves a political statement; consistent with the prophetic tradition's engagement with justice.",
+        "weaknesses": "Risks justifying any political engagement as 'kingdom work' without clear criteria for distinguishing legitimate engagement from worldly power-seeking; the boundary between 'engaging by different means' and 'engaging by worldly means' is difficult to maintain in practice; may underestimate the radical otherness Jesus intended.",
+        "key_verses": [
+          "John 18:36-37",
+          "John 17:15-18",
+          "Matthew 5:13-16",
+          "Jeremiah 29:7"
+        ]
       },
       {
         "id": "the-kingdom-will-eventually-transform-po",
         "label": "The kingdom will eventually transform political structures",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "calvin"
+        ],
         "proponents": "Post-millennial, Kuyperian Reformed, Catholic social teaching",
         "argument": "The kingdom's \"not-of-this-world\" character does not prevent it from reshaping earthly institutions over time through the Spirit's work in history.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Takes seriously the eschatological trajectory of Scripture where 'the kingdom of the world has become the kingdom of our Lord' (Rev 11:15); accounts for the already/not-yet tension — the kingdom is present but not yet fully realized; provides theological basis for working toward justice while acknowledging the kingdom's ultimate consummation is future.",
+        "weaknesses": "Risks conflating eschatological hope with political program; the transformationist vision has historically produced both genuine reform and dangerous theocratic overreach; John 18:36 specifically addresses the present age, not the eschaton; may impose Revelation's framework onto a Johannine text with different concerns.",
+        "key_verses": [
+          "Revelation 11:15",
+          "Romans 8:19-21",
+          "Isaiah 2:2-4",
+          "Daniel 2:44"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Most Johannine scholars read 'not of this world' as describing origin and method rather than location or relevance. Jesus's kingdom does not derive its authority from earthly power structures and does not advance by violence ('my servants would fight'). This does not mean the kingdom is irrelevant to politics — it means it engages political reality through different means: truth-telling, sacrificial love, justice. Neither full political quietism nor theocratic ambition accurately reflects the text.",
+    "related_passages": [
+      "John 18:36-37",
+      "John 17:14-18",
+      "Romans 13:1-7",
+      "1 Peter 2:13-17",
+      "Revelation 11:15",
+      "Matthew 22:21"
+    ],
+    "tags": [
+      "political-theology",
+      "kingdom",
+      "church-state",
+      "johannine-theology"
+    ]
   },
   {
     "id": "what-do-blood-and-water-symbolise-in-19-34",
@@ -14527,46 +15096,77 @@
       21
     ],
     "passage": "John 21",
-    "question": "Is John 21 original to the Gospel or a later addition?",
-    "context": "",
+    "question": "Is John 21 an integral part of the original Gospel or a later appendix added by the author, his community, or an editor?",
+    "context": "John 20:30-31 reads like a conclusion — 'these are written that you may believe.' Chapter 21 then follows with a Galilean appearance, Peter's restoration, and the Beloved Disciple's identification. No Greek manuscript of John lacks chapter 21, which means if it is an addition, it was added very early. The stylistic analysis is ambiguous: the vocabulary and syntax are recognizably Johannine, but the narrative structure (Galilee after Jerusalem appearances) creates a geographic tension. The chapter addresses two practical concerns: Peter's restoration after his denial and the rumor that the Beloved Disciple would not die (v. 23).",
     "positions": [
       {
         "id": "a-later-addition-by-the-same-author-or-a",
         "label": "A later addition by the same author or a disciple",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "marcus"
+        ],
         "proponents": "Many critical scholars (Bultmann, Brown)",
         "argument": "Chapter 20:30-31 reads as a conclusion; chapter 21 is an appendix. The different location (Galilee vs Jerusalem) and the note about the beloved disciple's death rumour (v.23) suggest it was added after the author's death, possibly by the Johannine community. The style is consistent with the rest of the Gospel.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "John 20:30-31 functions as a natural conclusion; the shift to Galilee creates narrative discontinuity after Jerusalem appearances; the Beloved Disciple identification (v. 24) reads like a third-party addition; the rumor about the Beloved Disciple's death (v. 23) suggests the chapter addresses a community crisis — his actual death.",
+        "weaknesses": "No manuscript evidence for a version of John without chapter 21; if a different author, the stylistic match is remarkably close; the assumption that 20:30-31 must be the 'real' ending imports modern literary expectations onto an ancient text; the Gospel of John already has multiple 'endings' within its structure.",
+        "key_verses": [
+          "John 20:30-31",
+          "John 21:24-25",
+          "John 21:23"
+        ]
       },
       {
         "id": "original-integral-part-of-the-gospel",
         "label": "Original, integral part of the Gospel",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "keener",
+          "macarthur"
+        ],
         "proponents": "Carson, Morris, Keener",
         "argument": "No manuscript of John lacks ch.21; it was always part of the Gospel. Chapter 20:30-31 is not a \"conclusion\" but a purpose statement that can appear at the end of a major section (as Paul puts purpose statements mid-letter). Chapter 21 provides the necessary rehabilitation of Peter and the identification of the author.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Universal manuscript attestation — every known copy includes chapter 21; the style is indistinguishable from the rest of the Gospel; Peter's restoration (21:15-19) resolves the denial narrative that would otherwise lack closure; the Prologue (1:1-18) and chapter 21 form an inclusio; the Gospel anticipates Galilean appearances (e.g., 'I am going ahead of you to Galilee' is the Synoptic expectation).",
+        "weaknesses": "The conclusion at 20:30-31 is difficult to explain if chapter 21 was always planned; the shift from 'the disciple whom Jesus loved' in third person to 'we know that his testimony is true' (21:24) suggests editorial hand; the chapter addresses community concerns (Peter's fate, Beloved Disciple's death) that feel occasional rather than integral.",
+        "key_verses": [
+          "John 21:1-14",
+          "John 21:15-19",
+          "John 21:24"
+        ]
       },
       {
         "id": "added-by-the-same-author-as-an-epilogue",
         "label": "Added by the same author as an epilogue",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "netbible",
+          "calvin"
+        ],
         "proponents": "Majority scholarly position",
         "argument": "The style is authentically Johannine; the content (Peter's restoration, author identification) is necessary for the Gospel's completeness. The author added it after the main body was complete, perhaps after the death of the beloved disciple prompted the clarification of v.23.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Explains both the conclusion at 20:30-31 and the Johannine style of chapter 21; the author added an epilogue to address emerging community issues (Peter's martyrdom, Beloved Disciple's death); literary epilogues are a known ancient convention; preserves single authorship while acknowledging compositional stages.",
+        "weaknesses": "The distinction between 'original' and 'same-author epilogue' may be a distinction without a difference — if the author added it, it is part of the Gospel; the 'we know' of 21:24 still suggests a community voice beyond the individual author; difficult to date the stages of composition with any precision.",
+        "key_verses": [
+          "John 20:30-31",
+          "John 21:24-25",
+          "John 21:23"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The scholarly consensus is that John 21 was added after the main body of the Gospel was composed, but the authorship question remains debated. The strongest evidence for addition is the clear conclusion at 20:30-31. The strongest evidence against late or foreign authorship is the consistent Johannine style and the universal manuscript attestation. Most scholars now favor either same-author epilogue or early community addition by someone deeply immersed in the Johannine tradition. The chapter's canonical status is undisputed regardless of compositional history.",
+    "related_passages": [
+      "John 20:30-31",
+      "John 21:1-25",
+      "John 1:1-18",
+      "Luke 5:1-11",
+      "Matthew 28:16-20"
+    ],
+    "tags": [
+      "composition",
+      "johannine-community",
+      "textual-criticism",
+      "canon"
+    ]
   },
   {
     "id": "authorship-and-historicity-of-scripture-walkthrough",
