@@ -1,5 +1,5 @@
 {
-  "chapter_id": null,
+  "chapter_id": "php2",
   "testament": null,
   "book_dir": "philippians",
   "chapter_num": 2,
@@ -7,49 +7,49 @@
   "subtitle": "The Mind of Christ and Working Out Salvation",
   "timeline_link": {
     "event_id": "book-philippians",
-    "text": "See on Timeline \u2014 Philippians Written"
+    "text": "See on Timeline — Philippians Written"
   },
   "map_story_link": null,
   "sections": [
     {
       "section_num": 1,
-      "header": "Verses 1\u201311 \u2014 \"He Made Himself Nothing\"",
+      "header": "Verses 1–11 — \"He Made Himself Nothing\"",
       "verse_start": 1,
       "verse_end": 11,
       "panels": {
         "heb": [
           {
-            "word": "\u03ba\u03ad\u03bd\u03c9\u03c3\u03b9\u03c2",
-            "transliteration": "ken\u014dsis",
+            "word": "κένωσις",
+            "transliteration": "kenōsis",
             "gloss": "emptying, self-emptying",
-            "paragraph": "The verb eken\u014dsen (v. 7, \u2018he emptied himself\u2019 or \u2018he made himself nothing\u2019) has generated centuries of christological debate. The \u2018kenosis\u2019 does not mean Christ divested himself of divine attributes but that he voluntarily declined to exploit his divine status (harpagmon, v. 6), taking instead the form of a servant (morph\u0113n doulou). The emptying is a voluntary self-limitation, not an ontological reduction."
+            "paragraph": "The verb ekenōsen (v. 7, ‘he emptied himself’ or ‘he made himself nothing’) has generated centuries of christological debate. The ‘kenosis’ does not mean Christ divested himself of divine attributes but that he voluntarily declined to exploit his divine status (harpagmon, v. 6), taking instead the form of a servant (morphēn doulou). The emptying is a voluntary self-limitation, not an ontological reduction."
           },
           {
-            "word": "\u03bc\u03bf\u03c1\u03c6\u03ae",
-            "transliteration": "morph\u0113",
+            "word": "μορφή",
+            "transliteration": "morphē",
             "gloss": "form, nature, essential character",
-            "paragraph": "The noun morph\u0113 appears twice in the hymn: Christ existed in the \u2018form of God\u2019 (morph\u0113 theou, v. 6) and took the \u2018form of a servant\u2019 (morph\u0113n doulou, v. 7). Morph\u0113 denotes the essential, defining characteristics of something\u2014not mere outward appearance (sch\u0113ma) but the inner reality. Christ possessed the essential nature of God yet assumed the essential nature of a servant."
+            "paragraph": "The noun morphē appears twice in the hymn: Christ existed in the ‘form of God’ (morphē theou, v. 6) and took the ‘form of a servant’ (morphēn doulou, v. 7). Morphē denotes the essential, defining characteristics of something—not mere outward appearance (schēma) but the inner reality. Christ possessed the essential nature of God yet assumed the essential nature of a servant."
           }
         ],
         "cross": {
           "refs": [
             {
               "ref": "Isa 45:23",
-              "note": "The OT background for vv. 10\u201311: \u2018every knee will bow ... every tongue will confess.\u2019 In Isaiah this is applied to YHWH; Paul applies it to Jesus, implying a divine-identity Christology."
+              "note": "The OT background for vv. 10–11: ‘every knee will bow ... every tongue will confess.’ In Isaiah this is applied to YHWH; Paul applies it to Jesus, implying a divine-identity Christology."
             },
             {
               "ref": "John 1:1, 14",
-              "note": "The Johannine prologue provides the closest parallel to the pre-existence and incarnation affirmed in Phil 2:6\u20137: the Word was with God, was God, and became flesh."
+              "note": "The Johannine prologue provides the closest parallel to the pre-existence and incarnation affirmed in Phil 2:6–7: the Word was with God, was God, and became flesh."
             },
             {
-              "ref": "Col 1:15\u201320",
-              "note": "The Colossian Christ-hymn provides the cosmological complement to the soteriological trajectory of Phil 2:6\u201311."
+              "ref": "Col 1:15–20",
+              "note": "The Colossian Christ-hymn provides the cosmological complement to the soteriological trajectory of Phil 2:6–11."
             }
           ],
           "echoes": [
             {
-              "source_ref": "Isaiah 52:13\u201353:12",
-              "target_ref": "Philippians 2:7\u20138",
+              "source_ref": "Isaiah 52:13–53:12",
+              "target_ref": "Philippians 2:7–8",
               "type": "echo",
               "source_context": "The Servant is exalted and lifted up, yet marred beyond human semblance, despised and rejected, before being vindicated. The pattern is descent into suffering followed by divine exaltation.",
               "connection": "The Christ hymn traces the same trajectory: Jesus empties himself, takes servant form, humbles himself to death on a cross, then is exalted to the highest place. The descent-ascent pattern mirrors the Servant.",
@@ -61,16 +61,16 @@
           "source": "",
           "notes": [
             {
-              "ref": "2:1\u20134",
-              "note": "The call to humility is grounded in four realities of Christian experience: encouragement in Christ, comfort from love, fellowship with the Spirit, tenderness and compassion. MacArthur notes that Paul\u2019s appeal addresses the specific problem of disunity (cf. 4:2\u20133): the cure for rivalry is other-centred humility."
+              "ref": "2:1–4",
+              "note": "The call to humility is grounded in four realities of Christian experience: encouragement in Christ, comfort from love, fellowship with the Spirit, tenderness and compassion. MacArthur notes that Paul’s appeal addresses the specific problem of disunity (cf. 4:2–3): the cure for rivalry is other-centred humility."
             },
             {
-              "ref": "2:5\u20138",
-              "note": "The Christ-hymn\u2019s downward trajectory\u2014from divine form to human form to slave form to death form\u2014is the supreme paradigm of self-sacrifice. MacArthur emphasises that the cross is not merely the lowest point but the point of maximum obedience: \u2018he humbled himself by becoming obedient to death\u2014even death on a cross.\u2019"
+              "ref": "2:5–8",
+              "note": "The Christ-hymn’s downward trajectory—from divine form to human form to slave form to death form—is the supreme paradigm of self-sacrifice. MacArthur emphasises that the cross is not merely the lowest point but the point of maximum obedience: ‘he humbled himself by becoming obedient to death—even death on a cross.’"
             },
             {
-              "ref": "2:9\u201311",
-              "note": "The exaltation is God\u2019s response to Christ\u2019s humiliation. The \u2018name above every name\u2019 is kyrios (Lord)\u2014the Greek equivalent of YHWH. MacArthur insists this is the highest possible Christology: Jesus receives the worship due to God alone, and every tongue will confess his lordship \u2018to the glory of God the Father.\u2019"
+              "ref": "2:9–11",
+              "note": "The exaltation is God’s response to Christ’s humiliation. The ‘name above every name’ is kyrios (Lord)—the Greek equivalent of YHWH. MacArthur insists this is the highest possible Christology: Jesus receives the worship due to God alone, and every tongue will confess his lordship ‘to the glory of God the Father.’"
             }
           ]
         },
@@ -78,11 +78,11 @@
           "source": "",
           "notes": [
             {
-              "ref": "2:5\u20138",
-              "note": "Calvin reads the hymn as the supreme demonstration of voluntary condescension: Christ did not grasp at divine prerogatives but laid them aside in service. Calvin insists that the \u2018emptying\u2019 does not imply loss of deity but concealment of glory. The human nature did not replace the divine nature; it veiled it. The cross is the nadir: the Creator submitted to the most shameful form of execution devised by his creatures."
+              "ref": "2:5–8",
+              "note": "Calvin reads the hymn as the supreme demonstration of voluntary condescension: Christ did not grasp at divine prerogatives but laid them aside in service. Calvin insists that the ‘emptying’ does not imply loss of deity but concealment of glory. The human nature did not replace the divine nature; it veiled it. The cross is the nadir: the Creator submitted to the most shameful form of execution devised by his creatures."
             },
             {
-              "ref": "2:9\u201311",
+              "ref": "2:9–11",
               "note": "Calvin emphasises that the exaltation follows from the humiliation as a divine reward: God exalted him because he humbled himself. This establishes the pattern for all believers: the path to glory passes through the cross. The universal confession of Christ as Lord fulfils Isaiah 45:23, applying to Christ what the OT applied exclusively to YHWH."
             }
           ]
@@ -92,11 +92,11 @@
           "notes": [
             {
               "ref": "2:6",
-              "note": "The phrase harpagmon h\u0113g\u0113sato (regarded as something to be grasped/exploited) is one of the most debated constructions in the NT. The NET translators read harpagmos as \u2018something to take advantage of\u2019: Christ did not regard his equality with God as something to be exploited for his own benefit."
+              "note": "The phrase harpagmon hēgēsato (regarded as something to be grasped/exploited) is one of the most debated constructions in the NT. The NET translators read harpagmos as ‘something to take advantage of’: Christ did not regard his equality with God as something to be exploited for his own benefit."
             },
             {
               "ref": "2:7",
-              "note": "The phrase heauton eken\u014dsen (he emptied himself) is followed by morph\u0113n doulou lab\u014dn (taking the form of a servant), which functions as a modal participle: the self-emptying was accomplished by taking the servant-form, not by subtraction from the divine nature."
+              "note": "The phrase heauton ekenōsen (he emptied himself) is followed by morphēn doulou labōn (taking the form of a servant), which functions as a modal participle: the self-emptying was accomplished by taking the servant-form, not by subtraction from the divine nature."
             }
           ]
         },
@@ -104,8 +104,8 @@
           "source": "",
           "notes": [
             {
-              "ref": "2:1\u201311",
-              "note": "Fee reads the Christ-hymn as both christological and ethical: it describes who Christ is (God incarnate) and how Christ acts (self-emptying service), providing the pattern for the community\u2019s life. Fee argues against reading the hymn as merely exemplarist: it is first a confession of Christ\u2019s divine identity, and only secondarily a model for imitation. The Pentecostal emphasis on the Spirit\u2019s role (v. 1, \u2018fellowship with the Spirit\u2019) undergirds the community\u2019s capacity to embody the Christlike pattern."
+              "ref": "2:1–11",
+              "note": "Fee reads the Christ-hymn as both christological and ethical: it describes who Christ is (God incarnate) and how Christ acts (self-emptying service), providing the pattern for the community’s life. Fee argues against reading the hymn as merely exemplarist: it is first a confession of Christ’s divine identity, and only secondarily a model for imitation. The Pentecostal emphasis on the Spirit’s role (v. 1, ‘fellowship with the Spirit’) undergirds the community’s capacity to embody the Christlike pattern."
             }
           ]
         },
@@ -113,39 +113,39 @@
           "source": "",
           "notes": [
             {
-              "ref": "2:1\u201311",
-              "note": "Silva identifies the hymn as the letter\u2019s theological centre of gravity. The ethical framework (vv. 1\u20134) is inseparable from the christological content (vv. 5\u201311): the call to humility is grounded not in abstract virtue but in the narrative of Christ\u2019s own journey from divine glory to the cross and back. Silva notes the chiastic structure: pre-existence (A), self-emptying (B), death on a cross (C, centre), exaltation (B\u2032), universal lordship (A\u2032). The centre is the cross\u2014the point where divine love and human obedience converge."
+              "ref": "2:1–11",
+              "note": "Silva identifies the hymn as the letter’s theological centre of gravity. The ethical framework (vv. 1–4) is inseparable from the christological content (vv. 5–11): the call to humility is grounded not in abstract virtue but in the narrative of Christ’s own journey from divine glory to the cross and back. Silva notes the chiastic structure: pre-existence (A), self-emptying (B), death on a cross (C, centre), exaltation (B′), universal lordship (A′). The centre is the cross—the point where divine love and human obedience converge."
             }
           ]
         },
         "hist": {
-          "context": "Philippians 2:5\u201311 is the most celebrated christological passage in the Pauline corpus\u2014the \u2018Christ-hymn\u2019 (Carmen Christi). Whether pre-Pauline or Pauline in composition, it functions in context as the supreme example of the self-emptying humility Paul calls for in vv. 1\u20134. The hymn traces a V-shaped trajectory: pre-existence in divine form (v. 6), voluntary self-emptying and incarnation as a servant (v. 7), obedient descent to death on a cross (v. 8), followed by divine exaltation to the highest place (v. 9), universal acclamation (vv. 10\u201311), and the conferral of the name \u2018Lord\u2019 (kyrios)\u2014the divine name of the LXX (Isa 45:23). The ethical implication is stated in v. 5: \u2018In your relationships with one another, have the same mindset as Christ Jesus.\u2019"
+          "context": "Philippians 2:5–11 is the most celebrated christological passage in the Pauline corpus—the ‘Christ-hymn’ (Carmen Christi). Whether pre-Pauline or Pauline in composition, it functions in context as the supreme example of the self-emptying humility Paul calls for in vv. 1–4. The hymn traces a V-shaped trajectory: pre-existence in divine form (v. 6), voluntary self-emptying and incarnation as a servant (v. 7), obedient descent to death on a cross (v. 8), followed by divine exaltation to the highest place (v. 9), universal acclamation (vv. 10–11), and the conferral of the name ‘Lord’ (kyrios)—the divine name of the LXX (Isa 45:23). The ethical implication is stated in v. 5: ‘In your relationships with one another, have the same mindset as Christ Jesus.’"
         }
       }
     },
     {
       "section_num": 2,
-      "header": "Verses 12\u201318 \u2014 \"Work Out Your Salvation\"",
+      "header": "Verses 12–18 — \"Work Out Your Salvation\"",
       "verse_start": 12,
       "verse_end": 18,
       "panels": {
         "heb": [
           {
-            "word": "\u03ba\u03b1\u03c4\u03b5\u03c1\u03b3\u03ac\u03b6\u03bf\u03bc\u03b1\u03b9",
+            "word": "κατεργάζομαι",
             "transliteration": "katergazomai",
             "gloss": "to work out, accomplish, bring about",
-            "paragraph": "The verb katergazesthe (v. 12) means to work out to completion or to bring to full expression. Paul\u2019s command to \u2018work out your salvation with fear and trembling\u2019 does not contradict salvation by grace but addresses the communal expression of the salvation God is already working within them (v. 13). The \u2018working out\u2019 is the visible manifestation of the invisible divine work."
+            "paragraph": "The verb katergazesthe (v. 12) means to work out to completion or to bring to full expression. Paul’s command to ‘work out your salvation with fear and trembling’ does not contradict salvation by grace but addresses the communal expression of the salvation God is already working within them (v. 13). The ‘working out’ is the visible manifestation of the invisible divine work."
           }
         ],
         "cross": {
           "refs": [
             {
-              "ref": "Rom 8:28\u201330",
-              "note": "Paul\u2019s golden chain of salvation provides the theological framework for Phil 2:13: God\u2019s working in believers encompasses the entire process from calling to glorification."
+              "ref": "Rom 8:28–30",
+              "note": "Paul’s golden chain of salvation provides the theological framework for Phil 2:13: God’s working in believers encompasses the entire process from calling to glorification."
             },
             {
               "ref": "Dan 12:3",
-              "note": "Daniel\u2019s vision of the righteous shining \u2018like the stars\u2019 provides the OT background for Phil 2:15: believers shine as lights in a dark world."
+              "note": "Daniel’s vision of the righteous shining ‘like the stars’ provides the OT background for Phil 2:15: believers shine as lights in a dark world."
             }
           ]
         },
@@ -153,12 +153,12 @@
           "source": "",
           "notes": [
             {
-              "ref": "2:12\u201313",
-              "note": "The apparent tension between human effort and divine sovereignty is resolved in the relation of cause and effect: God works in (v. 13), believers work out (v. 12). MacArthur insists that \u2018work out\u2019 means to bring to completion what God has already planted within, not to earn or produce salvation by human effort."
+              "ref": "2:12–13",
+              "note": "The apparent tension between human effort and divine sovereignty is resolved in the relation of cause and effect: God works in (v. 13), believers work out (v. 12). MacArthur insists that ‘work out’ means to bring to completion what God has already planted within, not to earn or produce salvation by human effort."
             },
             {
-              "ref": "2:14\u201318",
-              "note": "The practical markers of working out salvation: no grumbling, no arguing, blameless living, and word-holding. MacArthur notes the OT echoes: Israel grumbled in the wilderness (Exod 16; Num 14); the Philippians must not repeat that pattern. Paul\u2019s drink-offering imagery (v. 17) reveals his willingness to die for the gospel\u2014and his expectation that such death is not tragedy but worship."
+              "ref": "2:14–18",
+              "note": "The practical markers of working out salvation: no grumbling, no arguing, blameless living, and word-holding. MacArthur notes the OT echoes: Israel grumbled in the wilderness (Exod 16; Num 14); the Philippians must not repeat that pattern. Paul’s drink-offering imagery (v. 17) reveals his willingness to die for the gospel—and his expectation that such death is not tragedy but worship."
             }
           ]
         },
@@ -166,12 +166,12 @@
           "source": "",
           "notes": [
             {
-              "ref": "2:12\u201313",
-              "note": "Calvin resolves the paradox by distinguishing between the ground of salvation (God\u2019s work alone) and the expression of salvation (human obedience empowered by God). \u2018Fear and trembling\u2019 does not indicate doubt about salvation\u2019s security but reverence before the God who works within. Calvin notes that v. 13 removes all ground for boasting: even the will to obey is God\u2019s gift."
+              "ref": "2:12–13",
+              "note": "Calvin resolves the paradox by distinguishing between the ground of salvation (God’s work alone) and the expression of salvation (human obedience empowered by God). ‘Fear and trembling’ does not indicate doubt about salvation’s security but reverence before the God who works within. Calvin notes that v. 13 removes all ground for boasting: even the will to obey is God’s gift."
             },
             {
               "ref": "2:17",
-              "note": "Calvin reads the drink-offering metaphor as expressing Paul\u2019s readiness for martyrdom. The Philippians\u2019 faith is the main sacrifice; Paul\u2019s death would be merely the accompanying libation. Calvin notes the remarkable perspective: Paul views his potential execution as a reason for joy, not grief."
+              "note": "Calvin reads the drink-offering metaphor as expressing Paul’s readiness for martyrdom. The Philippians’ faith is the main sacrifice; Paul’s death would be merely the accompanying libation. Calvin notes the remarkable perspective: Paul views his potential execution as a reason for joy, not grief."
             }
           ]
         },
@@ -180,11 +180,11 @@
           "notes": [
             {
               "ref": "2:12",
-              "note": "The phrase meta phobou kai tromou (with fear and trembling) is Pauline (1 Cor 2:3; 2 Cor 7:15; Eph 6:5). The NET translators note it expresses not terror but reverent awe before God\u2019s work."
+              "note": "The phrase meta phobou kai tromou (with fear and trembling) is Pauline (1 Cor 2:3; 2 Cor 7:15; Eph 6:5). The NET translators note it expresses not terror but reverent awe before God’s work."
             },
             {
               "ref": "2:13",
-              "note": "The verb energe\u014d (to work, be active) appears twice: God energei both the willing (to thelein) and the working (to energein). The divine agency encompasses both the motivation and the execution of obedience."
+              "note": "The verb energeō (to work, be active) appears twice: God energei both the willing (to thelein) and the working (to energein). The divine agency encompasses both the motivation and the execution of obedience."
             }
           ]
         },
@@ -192,8 +192,8 @@
           "source": "",
           "notes": [
             {
-              "ref": "2:12\u201318",
-              "note": "Fee reads the section as the application of the Christ-hymn to community life. The \u2018working out\u2019 is corporate, not individualistic: the salvation being worked out is the community\u2019s life together. Fee emphasises the Spirit\u2019s role as the agent of God\u2019s internal working (v. 13), consistent with the pneumatological emphasis of 1:19 and 2:1."
+              "ref": "2:12–18",
+              "note": "Fee reads the section as the application of the Christ-hymn to community life. The ‘working out’ is corporate, not individualistic: the salvation being worked out is the community’s life together. Fee emphasises the Spirit’s role as the agent of God’s internal working (v. 13), consistent with the pneumatological emphasis of 1:19 and 2:1."
             }
           ]
         },
@@ -201,39 +201,39 @@
           "source": "",
           "notes": [
             {
-              "ref": "2:12\u201318",
-              "note": "Silva identifies vv. 12\u201318 as the ethical outworking of the Christ-hymn. The command to \u2018work out salvation\u2019 assumes the community\u2019s salvation is already secured (v. 13) and calls for its visible expression in unity, purity, and mission. Silva notes the parallel between Christ\u2019s obedience (v. 8) and the Philippians\u2019 obedience (v. 12): as Christ was obedient, so must they be."
+              "ref": "2:12–18",
+              "note": "Silva identifies vv. 12–18 as the ethical outworking of the Christ-hymn. The command to ‘work out salvation’ assumes the community’s salvation is already secured (v. 13) and calls for its visible expression in unity, purity, and mission. Silva notes the parallel between Christ’s obedience (v. 8) and the Philippians’ obedience (v. 12): as Christ was obedient, so must they be."
             }
           ]
         },
         "hist": {
-          "context": "The practical application of the Christ-hymn begins in v. 12: \u2018work out your salvation with fear and trembling.\u2019 The paradox of vv. 12\u201313 is one of the most important in Pauline theology: human responsibility (\u2018work out\u2019) and divine sovereignty (\u2018God works in you\u2019) are not competing but complementary. The context is corporate: the Philippians are to live as a community that reflects the kenotic pattern of Christ\u2014without grumbling or disputing (v. 14), blameless and pure in a crooked generation (v. 15), holding firmly to the word of life (v. 16). Paul\u2019s sacrificial imagery (v. 17)\u2014being \u2018poured out like a drink offering on the sacrifice and service coming from your faith\u2019\u2014presents his possible death as a liturgical act complementing the Philippians\u2019 own offering."
+          "context": "The practical application of the Christ-hymn begins in v. 12: ‘work out your salvation with fear and trembling.’ The paradox of vv. 12–13 is one of the most important in Pauline theology: human responsibility (‘work out’) and divine sovereignty (‘God works in you’) are not competing but complementary. The context is corporate: the Philippians are to live as a community that reflects the kenotic pattern of Christ—without grumbling or disputing (v. 14), blameless and pure in a crooked generation (v. 15), holding firmly to the word of life (v. 16). Paul’s sacrificial imagery (v. 17)—being ‘poured out like a drink offering on the sacrifice and service coming from your faith’—presents his possible death as a liturgical act complementing the Philippians’ own offering."
         }
       }
     },
     {
       "section_num": 3,
-      "header": "Verses 19\u201330 \u2014 \"Timothy and Epaphroditus: Models of Service\"",
+      "header": "Verses 19–30 — \"Timothy and Epaphroditus: Models of Service\"",
       "verse_start": 19,
       "verse_end": 30,
       "panels": {
         "heb": [
           {
-            "word": "\u03bb\u03b5\u03b9\u03c4\u03bf\u03c5\u03c1\u03b3\u03cc\u03c2",
+            "word": "λειτουργός",
             "transliteration": "leitourgos",
             "gloss": "minister, servant, public servant",
-            "paragraph": "The noun leitourgos (v. 25) describes Epaphroditus as a \u2018minister\u2019 (leitourgon) to Paul\u2019s needs. The term has both civic (public servant) and cultic (priestly minister) connotations. Paul\u2019s use elevates Epaphroditus\u2019s practical service\u2014delivering money, tending to Paul in prison\u2014to the level of sacred ministry."
+            "paragraph": "The noun leitourgos (v. 25) describes Epaphroditus as a ‘minister’ (leitourgon) to Paul’s needs. The term has both civic (public servant) and cultic (priestly minister) connotations. Paul’s use elevates Epaphroditus’s practical service—delivering money, tending to Paul in prison—to the level of sacred ministry."
           }
         ],
         "cross": {
           "refs": [
             {
-              "ref": "1 Cor 16:10\u201311",
-              "note": "Paul\u2019s commendation of Timothy to the Corinthians parallels Phil 2:19\u201324, presenting Timothy as a trusted delegate who carries Paul\u2019s apostolic authority."
+              "ref": "1 Cor 16:10–11",
+              "note": "Paul’s commendation of Timothy to the Corinthians parallels Phil 2:19–24, presenting Timothy as a trusted delegate who carries Paul’s apostolic authority."
             },
             {
-              "ref": "2 Cor 8:16\u201324",
-              "note": "Paul\u2019s commendation of Titus and the unnamed brother as delegates to Corinth follows the same pattern as the commendation of Timothy and Epaphroditus in Philippians."
+              "ref": "2 Cor 8:16–24",
+              "note": "Paul’s commendation of Titus and the unnamed brother as delegates to Corinth follows the same pattern as the commendation of Timothy and Epaphroditus in Philippians."
             }
           ]
         },
@@ -241,12 +241,12 @@
           "source": "",
           "notes": [
             {
-              "ref": "2:19\u201324",
-              "note": "Timothy is the living illustration of the Christ-hymn\u2019s ethic: he genuinely cares for others rather than seeking his own interests. MacArthur notes the implied rebuke: most believers, like \u2018everyone\u2019 Paul knows (v. 21), are self-absorbed. Timothy is the exception."
+              "ref": "2:19–24",
+              "note": "Timothy is the living illustration of the Christ-hymn’s ethic: he genuinely cares for others rather than seeking his own interests. MacArthur notes the implied rebuke: most believers, like ‘everyone’ Paul knows (v. 21), are self-absorbed. Timothy is the exception."
             },
             {
-              "ref": "2:25\u201330",
-              "note": "Epaphroditus risked his life in service (\u2018he almost died for the work of Christ\u2019, v. 30). His near-death experience in Paul\u2019s service makes him a living example of the self-sacrificial pattern Paul commends. The instruction to \u2018honour people like him\u2019 (v. 29) elevates sacrificial service as the community\u2019s highest value."
+              "ref": "2:25–30",
+              "note": "Epaphroditus risked his life in service (‘he almost died for the work of Christ’, v. 30). His near-death experience in Paul’s service makes him a living example of the self-sacrificial pattern Paul commends. The instruction to ‘honour people like him’ (v. 29) elevates sacrificial service as the community’s highest value."
             }
           ]
         },
@@ -254,12 +254,12 @@
           "source": "",
           "notes": [
             {
-              "ref": "2:19\u201324",
-              "note": "Calvin notes the rarity of Timothy\u2019s character: genuine concern for others is exceptional. Calvin uses this as evidence of human depravity: even among believers, self-interest is the norm. Timothy\u2019s selflessness is the fruit of grace, not nature."
+              "ref": "2:19–24",
+              "note": "Calvin notes the rarity of Timothy’s character: genuine concern for others is exceptional. Calvin uses this as evidence of human depravity: even among believers, self-interest is the norm. Timothy’s selflessness is the fruit of grace, not nature."
             },
             {
-              "ref": "2:25\u201330",
-              "note": "Calvin reads the commendation of Epaphroditus as a model of pastoral care: Paul is attentive to Epaphroditus\u2019s emotional state (homesick, distressed that the Philippians heard of his illness) and sends him back for the mutual comfort of both parties."
+              "ref": "2:25–30",
+              "note": "Calvin reads the commendation of Epaphroditus as a model of pastoral care: Paul is attentive to Epaphroditus’s emotional state (homesick, distressed that the Philippians heard of his illness) and sends him back for the mutual comfort of both parties."
             }
           ]
         },
@@ -272,7 +272,7 @@
             },
             {
               "ref": "2:30",
-              "note": "The phrase paraboleusamenos t\u0113 psych\u0113 (risking his life) uses a gambling term: Epaphroditus \u2018staked\u2019 his life. Some manuscripts read parabouleusamenos (disregarding), but the meaning is similar: reckless self-sacrifice."
+              "note": "The phrase paraboleusamenos tē psychē (risking his life) uses a gambling term: Epaphroditus ‘staked’ his life. Some manuscripts read parabouleusamenos (disregarding), but the meaning is similar: reckless self-sacrifice."
             }
           ]
         },
@@ -280,8 +280,8 @@
           "source": "",
           "notes": [
             {
-              "ref": "2:19\u201330",
-              "note": "Fee reads the commendations as concrete illustrations of the Christ-hymn\u2019s pattern. Timothy seeks Christ\u2019s interests, not his own (echoing 2:4\u20138); Epaphroditus nearly died in service (echoing 2:8). Fee notes the rhetorical function: Paul provides living examples, not just theological abstractions, to motivate the Philippians\u2019 own self-giving."
+              "ref": "2:19–30",
+              "note": "Fee reads the commendations as concrete illustrations of the Christ-hymn’s pattern. Timothy seeks Christ’s interests, not his own (echoing 2:4–8); Epaphroditus nearly died in service (echoing 2:8). Fee notes the rhetorical function: Paul provides living examples, not just theological abstractions, to motivate the Philippians’ own self-giving."
             }
           ]
         },
@@ -289,13 +289,13 @@
           "source": "",
           "notes": [
             {
-              "ref": "2:19\u201330",
-              "note": "Silva identifies Timothy and Epaphroditus as paradigmatic figures who embody the phronesis (mindset) of Christ (2:5). Silva notes the deliberate contrast between Timothy (\u2018everyone seeks their own interests\u2019, v. 21) and the Christ-hymn (\u2018he did not consider equality with God something to be exploited\u2019, v. 6): both reject self-interest in favour of others-oriented service."
+              "ref": "2:19–30",
+              "note": "Silva identifies Timothy and Epaphroditus as paradigmatic figures who embody the phronesis (mindset) of Christ (2:5). Silva notes the deliberate contrast between Timothy (‘everyone seeks their own interests’, v. 21) and the Christ-hymn (‘he did not consider equality with God something to be exploited’, v. 6): both reject self-interest in favour of others-oriented service."
             }
           ]
         },
         "hist": {
-          "context": "Paul commends two concrete examples of the Christ-like service he has described in vv. 1\u201311. Timothy (vv. 19\u201324) is presented as uniquely like-minded with Paul: \u2018I have no one else like him, who will show genuine concern for your welfare\u2019 (v. 20). While others seek their own interests, Timothy seeks Jesus Christ\u2019s (v. 21). Epaphroditus (vv. 25\u201330) is commended for his near-fatal illness contracted while serving Paul on behalf of the Philippians. Paul sends him back with this letter, urging the congregation to \u2018welcome him in the Lord with great joy, and honour people like him\u2019 (v. 29). Both portraits embody the kenotic pattern of the Christ-hymn: self-emptying service for the sake of others."
+          "context": "Paul commends two concrete examples of the Christ-like service he has described in vv. 1–11. Timothy (vv. 19–24) is presented as uniquely like-minded with Paul: ‘I have no one else like him, who will show genuine concern for your welfare’ (v. 20). While others seek their own interests, Timothy seeks Jesus Christ’s (v. 21). Epaphroditus (vv. 25–30) is commended for his near-fatal illness contracted while serving Paul on behalf of the Philippians. Paul sends him back with this letter, urging the congregation to ‘welcome him in the Lord with great joy, and honour people like him’ (v. 29). Both portraits embody the kenotic pattern of the Christ-hymn: self-emptying service for the sake of others."
         }
       }
     }
@@ -304,51 +304,51 @@
     "lit": {
       "rows": [
         {
-          "label": "vv.1\u20134",
+          "label": "vv.1–4",
           "range": "2:1-4",
           "text": "Appeal to unity: humility, others-centredness",
           "is_key": true
         },
         {
-          "label": "vv.5\u20138",
+          "label": "vv.5–8",
           "range": "2:5-8",
           "text": "Christ-hymn descent: form of God, emptied, servant, cross",
           "is_key": true
         },
         {
-          "label": "vv.9\u201311",
+          "label": "vv.9–11",
           "range": "2:9-11",
           "text": "Christ-hymn ascent: exalted, name above all, every knee bows",
           "is_key": true
         },
         {
-          "label": "vv.12\u201313",
+          "label": "vv.12–13",
           "range": "2:12-13",
           "text": "Work out salvation: God works in you to will and to act",
           "is_key": true
         },
         {
-          "label": "vv.14\u201318",
+          "label": "vv.14–18",
           "range": "2:14-18",
-          "text": "Shine like stars; Paul\u2019s drink offering",
+          "text": "Shine like stars; Paul’s drink offering",
           "is_key": false
         },
         {
-          "label": "vv.19\u201324",
+          "label": "vv.19–24",
           "range": "2:19-24",
-          "text": "Timothy: genuine concern; seeks Christ\u2019s interests",
+          "text": "Timothy: genuine concern; seeks Christ’s interests",
           "is_key": false
         },
         {
-          "label": "vv.25\u201330",
+          "label": "vv.25–30",
           "range": "2:25-30",
           "text": "Epaphroditus: risked his life; honour such people",
           "is_key": false
         }
       ],
-      "note": "Philippians 2 is the theological heart of the letter, centred on the Christ-hymn (vv. 5\u201311) and its ethical application (vv. 12\u201318). The descent-ascent pattern of the hymn provides the paradigm for community life, illustrated by Timothy and Epaphroditus.",
+      "note": "Philippians 2 is the theological heart of the letter, centred on the Christ-hymn (vv. 5–11) and its ethical application (vv. 12–18). The descent-ascent pattern of the hymn provides the paradigm for community life, illustrated by Timothy and Epaphroditus.",
       "chiasm": {
-        "title": "Philippians 2:6\u201311 \u2014 The Christ Hymn",
+        "title": "Philippians 2:6–11 — The Christ Hymn",
         "pairs": [
           {
             "label": "A",
@@ -371,7 +371,7 @@
         ],
         "center": {
           "label": "X",
-          "text": "By becoming obedient to death \u2014 even death on a cross (v.8b). The two words \u2018even death on a cross\u2019 (thanatou de staurou) are the nadir, the lowest point of the descent. Everything before moves downward: from divine nature to servant to human to obedient to death. Everything after moves upward: exaltation, the name above all names, universal worship. The cross is the hinge of cosmic history."
+          "text": "By becoming obedient to death — even death on a cross (v.8b). The two words ‘even death on a cross’ (thanatou de staurou) are the nadir, the lowest point of the descent. Everything before moves downward: from divine nature to servant to human to obedient to death. Everything after moves upward: exaltation, the name above all names, universal worship. The cross is the hinge of cosmic history."
         }
       }
     },
@@ -418,56 +418,56 @@
           "value": 7
         }
       ],
-      "note": "Sovereignty and Worship share the highest scores: the Christ-hymn affirms Christ\u2019s divine sovereignty and the universal confession of his lordship. Holiness is prominent through the call to blameless living. Mission appears through Paul\u2019s sacrificial ministry and the sending of Timothy and Epaphroditus."
+      "note": "Sovereignty and Worship share the highest scores: the Christ-hymn affirms Christ’s divine sovereignty and the universal confession of his lordship. Holiness is prominent through the call to blameless living. Mission appears through Paul’s sacrificial ministry and the sending of Timothy and Epaphroditus."
     },
     "hebtext": [
       {
-        "word": "\u03ba\u03ad\u03bd\u03c9\u03c3\u03b9\u03c2",
-        "tlit": "ken\u014dsis",
+        "word": "κένωσις",
+        "tlit": "kenōsis",
         "gloss": "emptying, self-emptying",
-        "note": "The verb eken\u014dsen (v. 7, \u2018he emptied himself\u2019 or \u2018he made himself nothing\u2019) has generated centuries of christological debate. The \u2018kenosis\u2019 does not mean Christ divested himself of divine attributes but that he voluntarily declined to exploit his divine status (harpagmon, v. 6), taking instead the form of a servant (morph\u0113n doulou). The emptying is a voluntary self-limitation, not an ontological reduction."
+        "note": "The verb ekenōsen (v. 7, ‘he emptied himself’ or ‘he made himself nothing’) has generated centuries of christological debate. The ‘kenosis’ does not mean Christ divested himself of divine attributes but that he voluntarily declined to exploit his divine status (harpagmon, v. 6), taking instead the form of a servant (morphēn doulou). The emptying is a voluntary self-limitation, not an ontological reduction."
       },
       {
-        "word": "\u03bc\u03bf\u03c1\u03c6\u03ae",
-        "tlit": "morph\u0113",
+        "word": "μορφή",
+        "tlit": "morphē",
         "gloss": "form, nature, essential character",
-        "note": "The noun morph\u0113 appears twice in the hymn: Christ existed in the \u2018form of God\u2019 (morph\u0113 theou, v. 6) and took the \u2018form of a servant\u2019 (morph\u0113n doulou, v. 7). Morph\u0113 denotes the essential, defining characteristics of something\u2014not mere outward appearance (sch\u0113ma) but the inner reality. Christ possessed the essential nature of God yet assumed the essential nature of a servant."
+        "note": "The noun morphē appears twice in the hymn: Christ existed in the ‘form of God’ (morphē theou, v. 6) and took the ‘form of a servant’ (morphēn doulou, v. 7). Morphē denotes the essential, defining characteristics of something—not mere outward appearance (schēma) but the inner reality. Christ possessed the essential nature of God yet assumed the essential nature of a servant."
       },
       {
-        "word": "\u03ba\u03b1\u03c4\u03b5\u03c1\u03b3\u03ac\u03b6\u03bf\u03bc\u03b1\u03b9",
+        "word": "κατεργάζομαι",
         "tlit": "katergazomai",
         "gloss": "to work out, accomplish, bring about",
-        "note": "The verb katergazesthe (v. 12) means to work out to completion or to bring to full expression. Paul\u2019s command to \u2018work out your salvation with fear and trembling\u2019 does not contradict salvation by grace but addresses the communal expression of the salvation God is already working within them (v. 13). The \u2018working out\u2019 is the visible manifestation of the invisible divine work."
+        "note": "The verb katergazesthe (v. 12) means to work out to completion or to bring to full expression. Paul’s command to ‘work out your salvation with fear and trembling’ does not contradict salvation by grace but addresses the communal expression of the salvation God is already working within them (v. 13). The ‘working out’ is the visible manifestation of the invisible divine work."
       },
       {
-        "word": "\u03bb\u03b5\u03b9\u03c4\u03bf\u03c5\u03c1\u03b3\u03cc\u03c2",
+        "word": "λειτουργός",
         "tlit": "leitourgos",
         "gloss": "minister, servant, public servant",
-        "note": "The noun leitourgos (v. 25) describes Epaphroditus as a \u2018minister\u2019 (leitourgon) to Paul\u2019s needs. The term has both civic (public servant) and cultic (priestly minister) connotations. Paul\u2019s use elevates Epaphroditus\u2019s practical service\u2014delivering money, tending to Paul in prison\u2014to the level of sacred ministry."
+        "note": "The noun leitourgos (v. 25) describes Epaphroditus as a ‘minister’ (leitourgon) to Paul’s needs. The term has both civic (public servant) and cultic (priestly minister) connotations. Paul’s use elevates Epaphroditus’s practical service—delivering money, tending to Paul in prison—to the level of sacred ministry."
       }
     ],
     "ppl": [
       {
         "name": "Paul",
         "role": "Apostle to the Gentiles; author of thirteen NT letters",
-        "text": "Paul (Saul of Tarsus) is introduced as a persecutor at Stephen\u2019s stoning (Acts 7:58) and is dramatically converted on the Damascus road (Acts 9). He dominates Acts 13\u201328 across three missionary journeys, planting churches from Cyprus to Greece to Rome. His final journey to Rome as a prisoner frames Acts\u2019 theological climax: the gospel reaching the empire\u2019s capital, \"boldly and without hindrance\" (Acts 28:31).",
+        "text": "Paul (Saul of Tarsus) is introduced as a persecutor at Stephen’s stoning (Acts 7:58) and is dramatically converted on the Damascus road (Acts 9). He dominates Acts 13–28 across three missionary journeys, planting churches from Cyprus to Greece to Rome. His final journey to Rome as a prisoner frames Acts’ theological climax: the gospel reaching the empire’s capital, \"boldly and without hindrance\" (Acts 28:31).",
         "timeline_id": "paul"
       },
       {
         "name": "Timothy",
-        "role": "Paul\u2019s young prot\u00e9g\u00e9; co-author of six NT letters",
-        "text": "Timothy is recruited at Lystra on the second journey (Acts 16:1\u20133) \u2014 the son of a Jewish mother and Greek father, circumcised by Paul to aid Jewish outreach. He becomes Paul\u2019s most trusted emissary, sent to troubled churches when Paul cannot go. Paul twice calls him \"my true son in the faith\" and addresses two personal letters to him. He is co-author of six Pauline letters and appears at the end of Hebrews.",
+        "role": "Paul’s young protégé; co-author of six NT letters",
+        "text": "Timothy is recruited at Lystra on the second journey (Acts 16:1–3) — the son of a Jewish mother and Greek father, circumcised by Paul to aid Jewish outreach. He becomes Paul’s most trusted emissary, sent to troubled churches when Paul cannot go. Paul twice calls him \"my true son in the faith\" and addresses two personal letters to him. He is co-author of six Pauline letters and appears at the end of Hebrews.",
         "timeline_id": "timothy"
       },
       {
         "name": "Epaphroditus",
         "role": "Key biblical figure",
-        "text": "Epaphroditus risked his life in service (\u2018he almost died for the work of Christ\u2019, v\u2026"
+        "text": "Epaphroditus risked his life in service (‘he almost died for the work of Christ’, v…"
       },
       {
         "name": "Christ",
         "role": "Key biblical figure",
-        "text": "Philippians 2:5\u201311 is the most celebrated christological passage in the Pauline corpus\u2014the \u2018Christ-hymn\u2019 (Carmen Christi)\u2026"
+        "text": "Philippians 2:5–11 is the most celebrated christological passage in the Pauline corpus—the ‘Christ-hymn’ (Carmen Christi)…"
       }
     ],
     "trans": {
@@ -504,18 +504,18 @@
     "rec": [
       {
         "title": "John MacArthur",
-        "quote": "\"The call to humility is grounded in four realities of Christian experience: encouragement in Christ, comfort from love, fellowship with the Spirit, tenderness and compassion. MacArthur notes that Paul\u2026\"",
-        "note": "Evangelical / Reformed \u2014 20th\u201321st c."
+        "quote": "\"The call to humility is grounded in four realities of Christian experience: encouragement in Christ, comfort from love, fellowship with the Spirit, tenderness and compassion. MacArthur notes that Paul…\"",
+        "note": "Evangelical / Reformed — 20th–21st c."
       },
       {
         "title": "John Calvin",
-        "quote": "\"Calvin reads the hymn as the supreme demonstration of voluntary condescension: Christ did not grasp at divine prerogatives but laid them aside in service. Calvin insists that the \u2018emptying\u2019 does not i\u2026\"",
-        "note": "Reformed / Reformation \u2014 16th c."
+        "quote": "\"Calvin reads the hymn as the supreme demonstration of voluntary condescension: Christ did not grasp at divine prerogatives but laid them aside in service. Calvin insists that the ‘emptying’ does not i…\"",
+        "note": "Reformed / Reformation — 16th c."
       },
       {
         "title": "NET Bible translators",
-        "quote": "\"The phrase harpagmon h\u0113g\u0113sato (regarded as something to be grasped/exploited) is one of the most debated constructions in the NT. The NET translators read harpagmos as \u2018something to take advantage of\u2019\u2026\"",
-        "note": "Text-critical evangelical \u2014 21st c."
+        "quote": "\"The phrase harpagmon hēgēsato (regarded as something to be grasped/exploited) is one of the most debated constructions in the NT. The NET translators read harpagmos as ‘something to take advantage of’…\"",
+        "note": "Text-critical evangelical — 21st c."
       }
     ],
     "debate": [
@@ -524,7 +524,7 @@
         [
           [
             "Critical/Analytical scholarship",
-            "The phrase harpagmon h\u0113g\u0113sato (regarded as something to be grasped/exploited) is one of the most debated constructions in the NT. The NET translators \u2026",
+            "The phrase harpagmon hēgēsato (regarded as something to be grasped/exploited) is one of the most debated constructions in the NT. The NET translators …",
             "Emphasises historical-critical, literary, or text-critical analysis."
           ],
           [
@@ -542,70 +542,70 @@
         "anchor": "The Mind of Christ and Working Out Salvation",
         "target": "Isa 45:23",
         "type": "Connection",
-        "text": "The OT background for vv. 10\u201311: \u2018every knee will bow ... every tongue will confess.\u2019 In Isaiah this is applied to YHWH; Paul applies it to Jesus, implying a divine-identity Christology."
+        "text": "The OT background for vv. 10–11: ‘every knee will bow ... every tongue will confess.’ In Isaiah this is applied to YHWH; Paul applies it to Jesus, implying a divine-identity Christology."
       },
       {
         "direction": "echo",
         "anchor": "The Mind of Christ and Working Out Salvation",
         "target": "John 1:1, 14",
         "type": "Echo",
-        "text": "The Johannine prologue provides the closest parallel to the pre-existence and incarnation affirmed in Phil 2:6\u20137: the Word was with God, was God, and became flesh."
+        "text": "The Johannine prologue provides the closest parallel to the pre-existence and incarnation affirmed in Phil 2:6–7: the Word was with God, was God, and became flesh."
       },
       {
         "direction": "connection",
         "anchor": "The Mind of Christ and Working Out Salvation",
-        "target": "Col 1:15\u201320",
+        "target": "Col 1:15–20",
         "type": "Connection",
-        "text": "The Colossian Christ-hymn provides the cosmological complement to the soteriological trajectory of Phil 2:6\u201311."
+        "text": "The Colossian Christ-hymn provides the cosmological complement to the soteriological trajectory of Phil 2:6–11."
       },
       {
         "direction": "connection",
         "anchor": "The Mind of Christ and Working Out Salvation",
-        "target": "Rom 8:28\u201330",
+        "target": "Rom 8:28–30",
         "type": "Connection",
-        "text": "Paul\u2019s golden chain of salvation provides the theological framework for Phil 2:13: God\u2019s working in believers encompasses the entire process from calling to glorification."
+        "text": "Paul’s golden chain of salvation provides the theological framework for Phil 2:13: God’s working in believers encompasses the entire process from calling to glorification."
       },
       {
         "direction": "connection",
         "anchor": "The Mind of Christ and Working Out Salvation",
         "target": "Dan 12:3",
         "type": "Connection",
-        "text": "Daniel\u2019s vision of the righteous shining \u2018like the stars\u2019 provides the OT background for Phil 2:15: believers shine as lights in a dark world."
+        "text": "Daniel’s vision of the righteous shining ‘like the stars’ provides the OT background for Phil 2:15: believers shine as lights in a dark world."
       },
       {
         "direction": "echo",
         "anchor": "The Mind of Christ and Working Out Salvation",
-        "target": "1 Cor 16:10\u201311",
+        "target": "1 Cor 16:10–11",
         "type": "Echo",
-        "text": "Paul\u2019s commendation of Timothy to the Corinthians parallels Phil 2:19\u201324, presenting Timothy as a trusted delegate who carries Paul\u2019s apostolic authority."
+        "text": "Paul’s commendation of Timothy to the Corinthians parallels Phil 2:19–24, presenting Timothy as a trusted delegate who carries Paul’s apostolic authority."
       }
     ],
     "discourse": {
-      "thesis": "Have the mind of Christ, who emptied himself and was exalted \u2014 work out your salvation with fear and trembling.",
+      "thesis": "Have the mind of Christ, who emptied himself and was exalted — work out your salvation with fear and trembling.",
       "nodes": [
         {
           "id": "ph2-1",
           "type": "appeal",
           "verse_range": "2:1-4",
-          "text": "If there is any encouragement in Christ \u2014 complete Paul's joy by being of one mind. Do nothing from rivalry; count others more significant."
+          "text": "If there is any encouragement in Christ — complete Paul's joy by being of one mind. Do nothing from rivalry; count others more significant."
         },
         {
           "id": "ph2-2",
           "type": "hymn",
           "verse_range": "2:5-11",
-          "text": "Have this mind: Christ, though in the form of God, emptied himself, taking the form of a servant, becoming obedient to death on a cross. Therefore God highly exalted him \u2014 every knee will bow, every tongue confess."
+          "text": "Have this mind: Christ, though in the form of God, emptied himself, taking the form of a servant, becoming obedient to death on a cross. Therefore God highly exalted him — every knee will bow, every tongue confess."
         },
         {
           "id": "ph2-3",
           "type": "application",
           "verse_range": "2:12-18",
-          "text": "Work out your salvation with fear and trembling \u2014 God works in you. Do all things without grumbling, that you may be blameless, children of God in a crooked generation."
+          "text": "Work out your salvation with fear and trembling — God works in you. Do all things without grumbling, that you may be blameless, children of God in a crooked generation."
         },
         {
           "id": "ph2-4",
           "type": "commendation",
           "verse_range": "2:19-30",
-          "text": "Paul hopes to send Timothy, who genuinely cares for them. He sends Epaphroditus back \u2014 he nearly died for the work of Christ. Honor such men."
+          "text": "Paul hopes to send Timothy, who genuinely cares for them. He sends Epaphroditus back — he nearly died for the work of Christ. Honor such men."
         }
       ]
     }
@@ -614,12 +614,12 @@
   "coaching": [
     {
       "after_section": 1,
-      "tip": "The Christ Hymn (vv. 6-11) moves from divine height to human depth to cosmic exaltation. 'He made himself nothing' (v. 7)\u2014kenosis, self-emptying. 'Every knee should bow' (v. 10) echoes Isaiah 45:23, a Yahweh text. Paul applies Israel's God-language to Jesus without apology.",
+      "tip": "The Christ Hymn (vv. 6-11) moves from divine height to human depth to cosmic exaltation. 'He made himself nothing' (v. 7)—kenosis, self-emptying. 'Every knee should bow' (v. 10) echoes Isaiah 45:23, a Yahweh text. Paul applies Israel's God-language to Jesus without apology.",
       "genre_tag": "theological_insight"
     },
     {
       "after_section": 2,
-      "tip": "'Work out your salvation with fear and trembling, for it is God who works in you' (vv. 12-13). Human effort and divine enabling aren't opposites\u2014they're partners. The 'fear' isn't terror but reverent awareness: God himself is at work within. Passivity insults the gift.",
+      "tip": "'Work out your salvation with fear and trembling, for it is God who works in you' (vv. 12-13). Human effort and divine enabling aren't opposites—they're partners. The 'fear' isn't terror but reverent awareness: God himself is at work within. Passivity insults the gift.",
       "genre_tag": "close_reading"
     }
   ]
