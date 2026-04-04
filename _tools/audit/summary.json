@@ -1,0 +1,535 @@
+{
+ "generated_at": "2026-04-04T03:49:09.864134+00:00",
+ "corpus_average": 18.0,
+ "books": {
+  "genesis": {
+   "score": 18.0,
+   "grade": "D",
+   "chapters": {
+    "1": {
+     "score": 18.6,
+     "grade": "D",
+     "claims": 223,
+     "UNVERIFIED": 193,
+     "VERIFIED": 4,
+     "SKIPPED": 26
+    },
+    "10": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 109,
+     "UNVERIFIED": 99,
+     "SKIPPED": 10
+    },
+    "11": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 107,
+     "UNVERIFIED": 98,
+     "SKIPPED": 9
+    },
+    "12": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 74,
+     "UNVERIFIED": 67,
+     "SKIPPED": 7
+    },
+    "13": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 91,
+     "UNVERIFIED": 84,
+     "SKIPPED": 7
+    },
+    "14": {
+     "score": 16.4,
+     "grade": "D",
+     "claims": 95,
+     "UNVERIFIED": 88,
+     "SKIPPED": 6,
+     "FLAGGED": 1
+    },
+    "15": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 101,
+     "UNVERIFIED": 91,
+     "SKIPPED": 10
+    },
+    "16": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 62,
+     "SKIPPED": 5
+    },
+    "17": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 97,
+     "UNVERIFIED": 89,
+     "SKIPPED": 8
+    },
+    "18": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 69,
+     "UNVERIFIED": 63,
+     "SKIPPED": 6
+    },
+    "19": {
+     "score": 16.4,
+     "grade": "D",
+     "claims": 94,
+     "UNVERIFIED": 87,
+     "SKIPPED": 6,
+     "FLAGGED": 1
+    },
+    "2": {
+     "score": 17.7,
+     "grade": "D",
+     "claims": 149,
+     "UNVERIFIED": 129,
+     "SKIPPED": 20
+    },
+    "20": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 66,
+     "UNVERIFIED": 61,
+     "SKIPPED": 5
+    },
+    "21": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 92,
+     "UNVERIFIED": 85,
+     "SKIPPED": 7
+    },
+    "22": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 96,
+     "UNVERIFIED": 88,
+     "SKIPPED": 8
+    },
+    "23": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 64,
+     "UNVERIFIED": 60,
+     "SKIPPED": 4
+    },
+    "24": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 91,
+     "UNVERIFIED": 85,
+     "SKIPPED": 6
+    },
+    "25": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 97,
+     "UNVERIFIED": 89,
+     "SKIPPED": 8
+    },
+    "26": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 92,
+     "UNVERIFIED": 85,
+     "SKIPPED": 7
+    },
+    "27": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 96,
+     "UNVERIFIED": 89,
+     "SKIPPED": 7
+    },
+    "28": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 61,
+     "SKIPPED": 6
+    },
+    "29": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 86,
+     "UNVERIFIED": 79,
+     "SKIPPED": 7
+    },
+    "3": {
+     "score": 19.7,
+     "grade": "D",
+     "claims": 150,
+     "UNVERIFIED": 124,
+     "SKIPPED": 22,
+     "VERIFIED": 4
+    },
+    "30": {
+     "score": 21.8,
+     "grade": "D",
+     "claims": 91,
+     "UNVERIFIED": 78,
+     "VERIFIED": 6,
+     "SKIPPED": 7
+    },
+    "31": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 97,
+     "UNVERIFIED": 86,
+     "VERIFIED": 4,
+     "SKIPPED": 7
+    },
+    "32": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 76,
+     "UNVERIFIED": 70,
+     "SKIPPED": 6
+    },
+    "33": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 63,
+     "UNVERIFIED": 59,
+     "SKIPPED": 4
+    },
+    "34": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 63,
+     "SKIPPED": 4
+    },
+    "35": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 71,
+     "UNVERIFIED": 65,
+     "SKIPPED": 6
+    },
+    "36": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 58,
+     "UNVERIFIED": 54,
+     "SKIPPED": 4
+    },
+    "37": {
+     "score": 18.9,
+     "grade": "D",
+     "claims": 104,
+     "UNVERIFIED": 91,
+     "VERIFIED": 2,
+     "SKIPPED": 11
+    },
+    "38": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 64,
+     "UNVERIFIED": 57,
+     "SKIPPED": 5,
+     "VERIFIED": 2
+    },
+    "39": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 72,
+     "UNVERIFIED": 67,
+     "SKIPPED": 5
+    },
+    "4": {
+     "score": 18.5,
+     "grade": "D",
+     "claims": 114,
+     "UNVERIFIED": 94,
+     "SKIPPED": 16,
+     "FLAGGED": 2,
+     "VERIFIED": 2
+    },
+    "40": {
+     "score": 19.5,
+     "grade": "D",
+     "claims": 67,
+     "UNVERIFIED": 60,
+     "SKIPPED": 5,
+     "VERIFIED": 2
+    },
+    "41": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 92,
+     "UNVERIFIED": 83,
+     "SKIPPED": 9
+    },
+    "42": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 65,
+     "UNVERIFIED": 59,
+     "SKIPPED": 5,
+     "FLAGGED": 1
+    },
+    "43": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 65,
+     "UNVERIFIED": 61,
+     "SKIPPED": 4
+    },
+    "44": {
+     "score": 20.0,
+     "grade": "D",
+     "claims": 62,
+     "UNVERIFIED": 56,
+     "VERIFIED": 2,
+     "SKIPPED": 4
+    },
+    "45": {
+     "score": 21.5,
+     "grade": "D",
+     "claims": 70,
+     "UNVERIFIED": 60,
+     "VERIFIED": 4,
+     "SKIPPED": 6
+    },
+    "46": {
+     "score": 20.8,
+     "grade": "D",
+     "claims": 55,
+     "UNVERIFIED": 48,
+     "SKIPPED": 4,
+     "VERIFIED": 2,
+     "FLAGGED": 1
+    },
+    "47": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 101,
+     "UNVERIFIED": 92,
+     "SKIPPED": 9
+    },
+    "48": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 60,
+     "UNVERIFIED": 55,
+     "SKIPPED": 4,
+     "FLAGGED": 1
+    },
+    "49": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 65,
+     "UNVERIFIED": 61,
+     "SKIPPED": 4
+    },
+    "5": {
+     "score": 16.3,
+     "grade": "D",
+     "claims": 142,
+     "UNVERIFIED": 129,
+     "SKIPPED": 11,
+     "FLAGGED": 2
+    },
+    "50": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 95,
+     "UNVERIFIED": 86,
+     "SKIPPED": 9
+    },
+    "6": {
+     "score": 20.1,
+     "grade": "D",
+     "claims": 134,
+     "UNVERIFIED": 115,
+     "VERIFIED": 4,
+     "FLAGGED": 1,
+     "SKIPPED": 14
+    },
+    "7": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 130,
+     "UNVERIFIED": 115,
+     "SKIPPED": 15
+    },
+    "8": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 138,
+     "UNVERIFIED": 124,
+     "SKIPPED": 14
+    },
+    "9": {
+     "score": 17.5,
+     "grade": "D",
+     "claims": 114,
+     "UNVERIFIED": 103,
+     "SKIPPED": 11
+    }
+   },
+   "by_type": {
+    "people_places": 0.0,
+    "timeline": 100.0,
+    "historical": 0.0,
+    "scholar_attribution": 0.0,
+    "hebrew_greek": 3.0,
+    "cross_reference": 49.5
+   }
+  }
+ },
+ "worst_chapters": [
+  {
+   "chapter_id": "genesis5",
+   "book": "genesis",
+   "score": 16.3,
+   "UNVERIFIED": 129,
+   "SKIPPED": 11,
+   "FLAGGED": 2
+  },
+  {
+   "chapter_id": "genesis14",
+   "book": "genesis",
+   "score": 16.4,
+   "UNVERIFIED": 88,
+   "SKIPPED": 6,
+   "FLAGGED": 1
+  },
+  {
+   "chapter_id": "genesis19",
+   "book": "genesis",
+   "score": 16.4,
+   "UNVERIFIED": 87,
+   "SKIPPED": 6,
+   "FLAGGED": 1
+  },
+  {
+   "chapter_id": "genesis10",
+   "book": "genesis",
+   "score": 17.5,
+   "UNVERIFIED": 99,
+   "SKIPPED": 10
+  },
+  {
+   "chapter_id": "genesis11",
+   "book": "genesis",
+   "score": 17.5,
+   "UNVERIFIED": 98,
+   "SKIPPED": 9
+  },
+  {
+   "chapter_id": "genesis12",
+   "book": "genesis",
+   "score": 17.5,
+   "UNVERIFIED": 67,
+   "SKIPPED": 7
+  },
+  {
+   "chapter_id": "genesis13",
+   "book": "genesis",
+   "score": 17.5,
+   "UNVERIFIED": 84,
+   "SKIPPED": 7
+  },
+  {
+   "chapter_id": "genesis15",
+   "book": "genesis",
+   "score": 17.5,
+   "UNVERIFIED": 91,
+   "SKIPPED": 10
+  },
+  {
+   "chapter_id": "genesis16",
+   "book": "genesis",
+   "score": 17.5,
+   "UNVERIFIED": 62,
+   "SKIPPED": 5
+  },
+  {
+   "chapter_id": "genesis17",
+   "book": "genesis",
+   "score": 17.5,
+   "UNVERIFIED": 89,
+   "SKIPPED": 8
+  },
+  {
+   "chapter_id": "genesis18",
+   "book": "genesis",
+   "score": 17.5,
+   "UNVERIFIED": 63,
+   "SKIPPED": 6
+  },
+  {
+   "chapter_id": "genesis20",
+   "book": "genesis",
+   "score": 17.5,
+   "UNVERIFIED": 61,
+   "SKIPPED": 5
+  },
+  {
+   "chapter_id": "genesis21",
+   "book": "genesis",
+   "score": 17.5,
+   "UNVERIFIED": 85,
+   "SKIPPED": 7
+  },
+  {
+   "chapter_id": "genesis22",
+   "book": "genesis",
+   "score": 17.5,
+   "UNVERIFIED": 88,
+   "SKIPPED": 8
+  },
+  {
+   "chapter_id": "genesis23",
+   "book": "genesis",
+   "score": 17.5,
+   "UNVERIFIED": 60,
+   "SKIPPED": 4
+  },
+  {
+   "chapter_id": "genesis24",
+   "book": "genesis",
+   "score": 17.5,
+   "UNVERIFIED": 85,
+   "SKIPPED": 6
+  },
+  {
+   "chapter_id": "genesis25",
+   "book": "genesis",
+   "score": 17.5,
+   "UNVERIFIED": 89,
+   "SKIPPED": 8
+  },
+  {
+   "chapter_id": "genesis26",
+   "book": "genesis",
+   "score": 17.5,
+   "UNVERIFIED": 85,
+   "SKIPPED": 7
+  },
+  {
+   "chapter_id": "genesis27",
+   "book": "genesis",
+   "score": 17.5,
+   "UNVERIFIED": 89,
+   "SKIPPED": 7
+  },
+  {
+   "chapter_id": "genesis28",
+   "book": "genesis",
+   "score": 17.5,
+   "UNVERIFIED": 61,
+   "SKIPPED": 6
+  }
+ ]
+}
