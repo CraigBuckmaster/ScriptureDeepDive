@@ -20,26 +20,6 @@ Generated: 2026-04-04
 
 **Book Average: 24.4/100 (D)**
 
-## Flagged Claims (96)
+## Flagged Claims (1)
 
-- `hebrew-1-s1-lane-000` [scholar_attribution]: Unknown scholar panel_key: lane
-- `hebrew-1-s1-cockerill-000` [scholar_attribution]: Unknown scholar panel_key: cockerill
-- `hebrew-1-s2-lane-000` [scholar_attribution]: Unknown scholar panel_key: lane
-- `hebrew-1-s2-cockerill-000` [scholar_attribution]: Unknown scholar panel_key: cockerill
-- `hebrew-10-s1-lane-000` [scholar_attribution]: Unknown scholar panel_key: lane
-- `hebrew-10-s1-lane-001` [scholar_attribution]: Unknown scholar panel_key: lane
-- `hebrew-10-s1-cockerill-000` [scholar_attribution]: Unknown scholar panel_key: cockerill
-- `hebrew-10-s2-lane-000` [scholar_attribution]: Unknown scholar panel_key: lane
-- `hebrew-10-s2-lane-001` [scholar_attribution]: Unknown scholar panel_key: lane
-- `hebrew-10-s2-cockerill-000` [scholar_attribution]: Unknown scholar panel_key: cockerill
-- `hebrew-10-s3-lane-000` [scholar_attribution]: Unknown scholar panel_key: lane
-- `hebrew-10-s3-cockerill-000` [scholar_attribution]: Unknown scholar panel_key: cockerill
-- `hebrew-10-s4-lane-000` [scholar_attribution]: Unknown scholar panel_key: lane
-- `hebrew-10-s4-cockerill-000` [scholar_attribution]: Unknown scholar panel_key: cockerill
-- `hebrew-10-s5-lane-000` [scholar_attribution]: Unknown scholar panel_key: lane
-- `hebrew-10-s5-cockerill-000` [scholar_attribution]: Unknown scholar panel_key: cockerill
-- `hebrew-11-s1-lane-000` [scholar_attribution]: Unknown scholar panel_key: lane
-- `hebrew-11-s1-cockerill-000` [scholar_attribution]: Unknown scholar panel_key: cockerill
-- `hebrew-11-s2-lane-000` [scholar_attribution]: Unknown scholar panel_key: lane
-- `hebrew-11-s2-cockerill-000` [scholar_attribution]: Unknown scholar panel_key: cockerill
-- ... and 76 more
+- `hebrew-11-s7-cross-014` [cross_reference]: Invalid reference: Unknown book: 2 Maccabees

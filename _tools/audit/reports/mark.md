@@ -22,27 +22,3 @@ Generated: 2026-04-04
 | 16 | 0 | 0 | 50 | 0 | 100 | 0 | **18** | D |
 
 **Book Average: 17.5/100 (D)**
-
-## Flagged Claims (297)
-
-- `mark-1-s1-mar-000` [scholar_attribution]: Unknown scholar panel_key: mar
-- `mark-1-s1-mar-001` [scholar_attribution]: Unknown scholar panel_key: mar
-- `mark-1-s1-rho-000` [scholar_attribution]: Unknown scholar panel_key: rho
-- `mark-1-s1-rho-001` [scholar_attribution]: Unknown scholar panel_key: rho
-- `mark-1-s1-cat-000` [scholar_attribution]: Unknown scholar panel_key: cat
-- `mark-1-s1-cat-001` [scholar_attribution]: Unknown scholar panel_key: cat
-- `mark-1-s2-mar-000` [scholar_attribution]: Unknown scholar panel_key: mar
-- `mark-1-s2-mar-001` [scholar_attribution]: Unknown scholar panel_key: mar
-- `mark-1-s2-rho-000` [scholar_attribution]: Unknown scholar panel_key: rho
-- `mark-1-s2-rho-001` [scholar_attribution]: Unknown scholar panel_key: rho
-- `mark-1-s2-cat-000` [scholar_attribution]: Unknown scholar panel_key: cat
-- `mark-1-s2-cat-001` [scholar_attribution]: Unknown scholar panel_key: cat
-- `mark-1-s3-mar-000` [scholar_attribution]: Unknown scholar panel_key: mar
-- `mark-1-s3-mar-001` [scholar_attribution]: Unknown scholar panel_key: mar
-- `mark-1-s3-rho-000` [scholar_attribution]: Unknown scholar panel_key: rho
-- `mark-1-s3-rho-001` [scholar_attribution]: Unknown scholar panel_key: rho
-- `mark-1-s3-cat-000` [scholar_attribution]: Unknown scholar panel_key: cat
-- `mark-1-s3-cat-001` [scholar_attribution]: Unknown scholar panel_key: cat
-- `mark-1-s4-mar-000` [scholar_attribution]: Unknown scholar panel_key: mar
-- `mark-1-s4-mar-001` [scholar_attribution]: Unknown scholar panel_key: mar
-- ... and 277 more

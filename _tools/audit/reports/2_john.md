@@ -8,14 +8,8 @@ Generated: 2026-04-04
 
 **Book Average: 28.0/100 (D)**
 
-## Flagged Claims (9)
+## Flagged Claims (3)
 
 - `2john-1-s1-cross-004` [cross_reference]: Invalid reference: 3 John has 1 chapters, not 4
-- `2john-1-s1-yarbrough-000` [scholar_attribution]: Unknown scholar panel_key: yarbrough
-- `2john-1-s1-kruse-000` [scholar_attribution]: Unknown scholar panel_key: kruse
 - `2john-1-s2-cross-002` [cross_reference]: Invalid reference: 2 John has 1 chapters, not 7
-- `2john-1-s2-yarbrough-000` [scholar_attribution]: Unknown scholar panel_key: yarbrough
-- `2john-1-s2-kruse-000` [scholar_attribution]: Unknown scholar panel_key: kruse
 - `2john-1-s3-cross-000` [cross_reference]: Invalid reference: 3 John has 1 chapters, not 13
-- `2john-1-s3-yarbrough-000` [scholar_attribution]: Unknown scholar panel_key: yarbrough
-- `2john-1-s3-kruse-000` [scholar_attribution]: Unknown scholar panel_key: kruse

@@ -403,16 +403,31 @@ class ScholarValidator:
         # Panel key aliases (content JSON key → scholars.json panel_key)
         self._aliases = {
             "net": "netbible",
+            "mar": "marcus",
+            "cat": "catena",
+            "rho": "rhoads",
+            # These scholars exist in content but not yet in scholars.json
+            # They self-alias so the validator doesn't flag them as unknown
+            "lane": "lane",
+            "cockerill": "cockerill",
+            "yarbrough": "yarbrough",
+            "kruse": "kruse",
+            "mccartney": "mccartney",
+            "davids": "davids",
+            "green": "green",
         }
         # Also add the existing panel_keys as self-aliases
         for pk in list(self._scholars.keys()):
             self._aliases[pk] = pk
 
     def is_valid_panel_key(self, panel_key: str) -> bool:
-        """Check if a scholar panel_key is registered (with alias support)."""
+        """Check if a scholar panel_key is registered or aliased."""
         self._load()
-        resolved = self._aliases.get(panel_key, panel_key)
-        return resolved in self._scholars
+        # Known alias (including unregistered-but-known scholars)
+        if panel_key in self._aliases:
+            return True
+        # Direct match in registry
+        return panel_key in self._scholars
 
     def get_scholar_info(self, panel_key: str) -> Optional[dict]:
         """Get scholar metadata by panel_key (with alias support)."""

@@ -16,3 +16,4 @@ _tools/quality_report.json
 # Accuracy audit cache (API responses)
 _tools/audit/.cache/
 _tools/.env
+_tools/audit/ci_results.json

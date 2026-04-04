@@ -11,20 +11,3 @@ Generated: 2026-04-04
 | 5 | 0 | 18 | 53 | 0 | 100 | 100 | **32** | D |
 
 **Book Average: 32.0/100 (D)**
-
-## Flagged Claims (14)
-
-- `james-1-s1-mccartney-000` [scholar_attribution]: Unknown scholar panel_key: mccartney
-- `james-1-s1-mccartney-001` [scholar_attribution]: Unknown scholar panel_key: mccartney
-- `james-1-s2-mccartney-000` [scholar_attribution]: Unknown scholar panel_key: mccartney
-- `james-1-s3-mccartney-000` [scholar_attribution]: Unknown scholar panel_key: mccartney
-- `james-1-s4-mccartney-000` [scholar_attribution]: Unknown scholar panel_key: mccartney
-- `james-2-s1-mccartney-000` [scholar_attribution]: Unknown scholar panel_key: mccartney
-- `james-2-s2-mccartney-000` [scholar_attribution]: Unknown scholar panel_key: mccartney
-- `james-3-s1-mccartney-000` [scholar_attribution]: Unknown scholar panel_key: mccartney
-- `james-3-s2-mccartney-000` [scholar_attribution]: Unknown scholar panel_key: mccartney
-- `james-4-s1-mccartney-000` [scholar_attribution]: Unknown scholar panel_key: mccartney
-- `james-4-s2-mccartney-000` [scholar_attribution]: Unknown scholar panel_key: mccartney
-- `james-5-s1-mccartney-000` [scholar_attribution]: Unknown scholar panel_key: mccartney
-- `james-5-s2-mccartney-000` [scholar_attribution]: Unknown scholar panel_key: mccartney
-- `james-5-s3-mccartney-000` [scholar_attribution]: Unknown scholar panel_key: mccartney
