@@ -45,6 +45,10 @@ SCORING_WEIGHTS = {
     "people_places":       0.10,
 }
 
+# ─── Content Quality Floor ───────────────────────────────────────
+
+QUALITY_FLOOR = 90  # Minimum quality_scorer score for content in CI gate
+
 # ─── Grade Mapping ──────────────────────────────────────────────────
 
 GRADE_THRESHOLDS = [
