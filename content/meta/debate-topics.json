@@ -181,7 +181,7 @@
     ],
     "passage": "Genesis 2",
     "question": "Two Creation Accounts: Complementary or Contradictory?",
-    "context": "",
+    "context": "Since Astruc's 1753 identification of two divine-name strands, the relationship between Genesis 1:1–2:3 and 2:4–25 has been a defining question in Pentateuchal studies. Source critics (Wellhausen, von Rad, Speiser) assign the accounts to P and J respectively, citing differences in divine name, creation order, literary style, and theological emphasis. Literary and canonical scholars (Alter, Wenham, Cassuto) counter that the accounts form a deliberate zoom structure — cosmic panorama followed by garden close-up — unified by careful editorial design. The question touches on methodology: whether apparent tensions are evidence of documentary seams or intentional narrative art.",
     "positions": [
       {
         "id": "source-critical-j-p",
@@ -190,25 +190,52 @@
         "scholar_ids": [],
         "proponents": "Wellhausen, von Rad, Speiser",
         "argument": "Gen 1 (Elohim) and Gen 2–3 (YHWH-Elohim) are independent documents combined by a redactor; minor contradictions (creation order, divine name) reflect distinct traditions.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Accounts for the abrupt shift in divine name (Elohim → YHWH-Elohim), differing creation orders (vegetation before humans in ch.1, humans before vegetation in ch.2), and contrasting literary styles (structured liturgical prose vs. narrative with dialogue). The documentary model has explanatory power for these textual features.",
+        "weaknesses": "Struggles to explain why a redactor would preserve obvious contradictions if they were merely combining sources; underestimates the literary sophistication of ancient editors; recent scholarship (Rendtorff, Blum) has challenged the classic documentary model's neat source divisions.",
+        "key_verses": [
+          "Genesis 1:1",
+          "Genesis 1:27",
+          "Genesis 2:4",
+          "Genesis 2:7",
+          "Genesis 2:19"
+        ]
       },
       {
         "id": "literary-canonical",
         "label": "Literary-canonical",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter",
+          "waltke"
+        ],
         "proponents": "Alter, Wenham, Sailhamer, Hamilton",
         "argument": "The two accounts form a unified composition: ch.1 provides the cosmic overview, ch.2 zooms into the human-garden focus. No contradiction, only change of perspective and narrative register.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Explains the cosmic-to-intimate zoom structure as intentional literary design; accounts for the thematic unity (both accounts climax with humanity's special status); respects the final canonical form without requiring hypothetical source documents that no longer exist independently.",
+        "weaknesses": "Must explain the divine-name shift as deliberate rather than accidental, which some find ad hoc; the apparent difference in creation order (Gen 2:19 — animals after humans?) requires careful exegesis of Hebrew verb forms (pluperfect reading) that not all grammarians accept.",
+        "key_verses": [
+          "Genesis 1:26-27",
+          "Genesis 2:4",
+          "Genesis 2:7",
+          "Genesis 2:18-22"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Scholarly consensus increasingly recognizes that even if distinct source traditions underlie the two accounts, the final form exhibits careful literary integration. The divine-name shift from Elohim to YHWH-Elohim is the strongest evidence for distinct origins, but the thematic progression from cosmic to intimate is widely acknowledged as deliberate. Most evangelical scholars read the accounts as complementary perspectives; most critical scholars see editorially harmonized but originally independent traditions. The key differentiator is whether one privileges diachronic reconstruction or synchronic reading of the canonical text.",
+    "related_passages": [
+      "Genesis 1:1-2:3",
+      "Genesis 2:4-25",
+      "Psalm 104:1-35",
+      "Job 38:1-41",
+      "Isaiah 45:18",
+      "John 1:1-3"
+    ],
+    "tags": [
+      "creation",
+      "source-criticism",
+      "documentary-hypothesis",
+      "literary-structure",
+      "divine-names"
+    ]
   },
   {
     "id": "the-nature-of-the-fall-historical-event-or-theological-narra",
@@ -452,34 +479,61 @@
     ],
     "passage": "Genesis 4",
     "question": "Lamech's Song (4:23-24): Escalating Violence and the Sevenfold Curse",
-    "context": "",
+    "context": "Lamech's boast in Genesis 4:23–24 is the earliest poem in the Bible attributed to a named speaker. Set within the Cainite genealogy, it escalates from Cain's sevenfold protection (4:15) to Lamech's self-proclaimed seventy-sevenfold vengeance. The poem's function in the narrative is debated: is it a raw expression of unchecked violence in the line of Cain, or a culturally intelligible warrior boast that ancient audiences would have recognized as a literary genre? The answer shapes how one reads the theological trajectory from Cain to the flood.",
     "positions": [
       {
         "id": "raw-boast-of-escalation",
         "label": "Raw boast of escalation",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna",
+          "waltke"
+        ],
         "proponents": "Most interpreters",
         "argument": "Lamech's song is a bragging, violent celebration of his own revenge — taking Cain's divine protection (sevenfold) and claiming seventy-sevenfold for himself. It represents the escalation of violence in the line of Cain.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reads naturally within the narrative arc from Cain's sin to the flood; the sevenfold-to-seventy-sevenfold escalation clearly signals unchecked violence; establishes the theological rationale for God's judgment in Genesis 6.",
+        "weaknesses": "May impose a modern moral framework on an ancient text; does not fully account for the poem's stylistic features as a recognizable ANE literary genre; risks flattening Lamech into a simple villain rather than a complex literary figure.",
+        "key_verses": [
+          "Genesis 4:15",
+          "Genesis 4:23-24",
+          "Genesis 6:5",
+          "Genesis 6:11"
+        ]
       },
       {
         "id": "cultural-heroic-boast",
         "label": "Cultural-heroic boast",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter"
+        ],
         "proponents": "Cassuto",
         "argument": "The poem is an example of ancient Near Eastern warrior poetry — culturally sanctioned bragging that doesn't reflect individual psychology so much as tribal identity.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Situates the poem within attested ANE warrior-boast conventions; recognizes the literary artistry (parallelism, numerical escalation) as a genre marker; avoids anachronistic moral readings while still acknowledging the narrative's critical stance toward Cainite culture.",
+        "weaknesses": "Can understate the theological judgment the narrator passes on Lamech's boast; the parallel to ANE heroic poetry is suggestive but not exact; risks neutralizing the text's moral force by treating it as merely conventional.",
+        "key_verses": [
+          "Genesis 4:23-24",
+          "Genesis 4:19-22",
+          "Judges 15:16"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Most scholars agree that Lamech's song functions narratively to demonstrate the escalation of violence in the pre-flood world, providing moral rationale for the flood judgment. The debate centers on whether Lamech is portrayed as uniquely wicked or as representative of a broader cultural pattern of honor-violence. The sevenfold-to-seventy-sevenfold escalation deliberately inverts the divine protection given to Cain, suggesting human presumption on divine prerogatives. Jesus's inversion in Matthew 18:22 (forgiving seventy-seven times) is widely seen as a deliberate echo.",
+    "related_passages": [
+      "Genesis 4:15",
+      "Genesis 4:23-24",
+      "Genesis 6:11-13",
+      "Matthew 18:21-22",
+      "Judges 15:7-8"
+    ],
+    "tags": [
+      "violence",
+      "poetry",
+      "cain-lineage",
+      "pre-flood",
+      "vengeance",
+      "forgiveness"
+    ]
   },
   {
     "id": "the-antediluvian-lifespans-literal-symbolic-or-alternative-c",
@@ -1095,34 +1149,63 @@
     ],
     "passage": "Genesis 8",
     "question": "The Flood's Relationship to De-Creation and New Creation",
-    "context": "",
+    "context": "The flood narrative in Genesis 6–9 contains extensive verbal and structural parallels to Genesis 1. The 'windows of heaven' and 'fountains of the deep' (7:11) reverse the separation of waters in Day 2; the wind over the waters (8:1) echoes 1:2; the command to 'be fruitful and multiply' (9:1) restates 1:28. Scholars debate whether these parallels indicate the flood was conceived as a full reversal of creation (de-creation) followed by a new creation, or whether the flood is better understood as a purification that does not fully undo the created order.",
     "positions": [
       {
         "id": "flood-as-reversal-of-creation",
         "label": "Flood as reversal of creation",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke"
+        ],
         "proponents": "Wenham, Anderson, Fretheim",
         "argument": "The flood narrative uses creation language in reverse: the separation of waters (1:6-10) is undone as the floodwaters return; dry land disappears; the wind that dries the waters (8:1) echoes the spirit hovering over the waters (1:2). The flood is a de-creation followed by a new creation with Noah as a new Adam.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Supported by extensive verbal echoes: the undoing of Day 2's water separation (7:11), the ruach over the waters (8:1 echoing 1:2), the renewed mandate (9:1 echoing 1:28); the chiastic structure of the flood narrative reinforces the creation-uncreation-recreation pattern.",
+        "weaknesses": "The earth is never described as returning to tohu wabohu; Noah and the animals survive, so the 'uncreation' is not total; the parallel can be overpressed — some verbal echoes may be conventional rather than deliberately structural.",
+        "key_verses": [
+          "Genesis 1:2",
+          "Genesis 7:11",
+          "Genesis 8:1",
+          "Genesis 9:1-3",
+          "Genesis 9:8-17"
+        ]
       },
       {
         "id": "flood-as-purification-not-reversal",
         "label": "Flood as purification, not reversal",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Sarna, Brueggemann",
         "argument": "The flood is not a reversal of creation but a purging of what creation had become. The new creation after the flood restores what was lost, with modifications reflecting the new post-flood conditions (9:2-3: animals now fear humans; 9:4: blood prohibition added).",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Accounts for the survival of Noah, animals, and plant life — elements that would not persist in true de-creation; reads the flood as consistent with God's commitment to the creation rather than its abandonment; avoids overstating the parallels to Genesis 1.",
+        "weaknesses": "Underplays the density of creation-reversal language in the text; struggles to explain why the narrator deploys so many Genesis 1 echoes if the intent is merely purification; the 'windows of heaven' and 'fountains of the deep' language specifically evokes the un-separation of Day 2.",
+        "key_verses": [
+          "Genesis 6:18",
+          "Genesis 7:1-3",
+          "Genesis 8:11",
+          "Genesis 8:22"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The de-creation/new-creation reading has become dominant in both critical and evangelical scholarship, supported by the dense verbal parallels between Genesis 1 and 6–9. The purification reading offers a useful corrective by noting that the earth is never returned to formless void — Noah, the animals, and the ark persist throughout. The most nuanced position recognizes intentional creation-reversal imagery deployed for theological effect (judgment as un-making) while acknowledging that the narrative stops short of total annihilation. The Noahic covenant (9:8–17) functions as a re-creation charter with significant continuities and discontinuities from the original.",
+    "related_passages": [
+      "Genesis 1:1-2",
+      "Genesis 1:6-8",
+      "Genesis 7:11",
+      "Genesis 8:1-3",
+      "Genesis 9:1-7",
+      "Isaiah 54:9-10",
+      "2 Peter 3:5-7"
+    ],
+    "tags": [
+      "flood",
+      "creation-theology",
+      "de-creation",
+      "noahic-covenant",
+      "judgment"
+    ]
   },
   {
     "id": "ham-s-sin-what-did-he-do",
@@ -1773,34 +1856,62 @@
     ],
     "passage": "Genesis 13",
     "question": "Lot: Righteous or Compromised?",
-    "context": "",
+    "context": "Lot's characterization in Genesis is ambiguous by design. He separates from Abraham by choosing the well-watered Jordan plain 'like the garden of the LORD' (13:10), progressively moves toward and into Sodom (13:12; 14:12; 19:1), yet offers hospitality to the angels and is rescued from judgment. The New Testament complicates the picture further: 2 Peter 2:7–8 calls Lot 'righteous' and describes him as 'tormented' by Sodomite wickedness. The question is whether the Genesis narrative presents Lot as a righteous man in a bad environment or as a figure of progressive moral compromise.",
     "positions": [
       {
         "id": "righteous-alien",
         "label": "Righteous alien",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "2 Pet 2:7-8, Wenham",
         "argument": "Peter explicitly calls Lot \"a righteous man who was distressed by the depraved conduct of the lawless.\" Lot's righteousness is apostolically attested even if his choices were unwise.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Supported by the explicit NT testimony of 2 Peter 2:7–8; Lot's hospitality to the angels mirrors Abraham's in chapter 18; his reluctance to leave (19:16) can be read as attachment to family and property rather than moral failure.",
+        "weaknesses": "Struggles to explain the offer of his daughters (19:8), his drunkenness and incest (19:30–38), and the narrative's structural positioning of Lot as Abraham's foil; the progressive movement toward Sodom (plain → near → in → sitting at the gate) reads as a cautionary trajectory.",
+        "key_verses": [
+          "Genesis 19:1-3",
+          "Genesis 19:16",
+          "2 Peter 2:7-8"
+        ]
       },
       {
         "id": "progressively-compromised",
         "label": "Progressively compromised",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter",
+          "waltke"
+        ],
         "proponents": "Hamilton, Sarna, Alter",
         "argument": "The narrative traces a downward trajectory: Lot chooses the Jordan plain (ch.13), moves near Sodom (13:12), lives in Sodom (14:12), is at the city gate (19:1 — a position of civic standing). Each step represents deeper integration.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reads the spatial movement toward Sodom as a deliberate narrative signal of moral decline; explains the offer of his daughters as evidence of Sodomite values internalized; the contrast with Abraham is structurally emphasized throughout Genesis 13–19.",
+        "weaknesses": "Must account for 2 Peter's explicit 'righteous' label; risks imposing a univocal reading on a deliberately ambiguous narrative; ancient hospitality obligations may explain the daughter offer as desperate adherence to guest-protection duty rather than moral corruption.",
+        "key_verses": [
+          "Genesis 13:10-12",
+          "Genesis 14:12",
+          "Genesis 19:1",
+          "Genesis 19:8",
+          "Genesis 19:30-38"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The Genesis narrative itself is deliberately ambiguous about Lot's moral status, presenting both his hospitality (a cardinal virtue in ANE culture) and his shocking offer of his daughters. The 2 Peter 2:7–8 designation of Lot as 'righteous' has led some interpreters to read the Genesis account more charitably, while others see Peter as making a limited point about relative righteousness in contrast to Sodom. Most scholars agree that the narrative structurally contrasts Lot with Abraham — both receive divine visitors, but their outcomes diverge sharply. The key interpretive question is whether Lot's progressive movement toward Sodom is presented as culpable choice or tragic circumstance.",
+    "related_passages": [
+      "Genesis 13:10-13",
+      "Genesis 14:12",
+      "Genesis 19:1-29",
+      "2 Peter 2:7-8",
+      "Luke 17:28-32"
+    ],
+    "tags": [
+      "lot",
+      "sodom",
+      "righteousness",
+      "compromise",
+      "hospitality",
+      "judgment"
+    ]
   },
   {
     "id": "melchizedek-historical-figure-type-or-angel",
@@ -1887,34 +1998,59 @@
     ],
     "passage": "Genesis 15",
     "question": "The \"400 Years\" of Oppression (15:13): Chronology",
-    "context": "",
+    "context": "In Genesis 15:13, God tells Abraham that his descendants will be 'strangers in a country not their own' and enslaved and mistreated for 400 years. Exodus 12:40 gives 430 years for the sojourn in Egypt, while the LXX and Samaritan Pentateuch add 'and in Canaan,' and Galatians 3:17 counts 430 years from Abraham's promise to Sinai. The question is whether the 400/430 years refers strictly to the Egyptian sojourn or includes the patriarchal period in Canaan, and whether the figure is a precise chronological datum or a round number for a prolonged period.",
     "positions": [
       {
         "id": "literal-400-years",
         "label": "Literal 400 years",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Sarna, Wenham",
         "argument": "Exod 12:40 gives 430 years from the entry into Egypt (or from Abraham's call, per LXX and Gal 3:17). The 400 years is approximate; the 430 is more precise.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Takes the text at face value; aligns with the emphasis on fulfillment precision in the exodus narrative (Exodus 12:41 — 'to the very day'); the 400-year figure in Genesis 15:13 and the 430-year figure in Exodus 12:40 can be harmonized as round vs. precise numbers for the same period.",
+        "weaknesses": "The genealogies in Exodus 6:16–20 (Levi → Kohath → Amram → Moses) appear to span only four generations, far too few for 400+ years; the LXX and Samaritan Pentateuch textual traditions suggest ancient interpreters already found the MT reading problematic.",
+        "key_verses": [
+          "Genesis 15:13",
+          "Exodus 12:40-41",
+          "Acts 7:6"
+        ]
       },
       {
         "id": "schematic-round-number",
         "label": "Schematic round number",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Kitchen, Hoffmeier",
         "argument": "400 is a schematic number in ancient Near Eastern texts for a very long but not precisely defined period. The theological point is \"four generations of affliction\" rather than a precise 400 solar years.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Accounts for the genealogical evidence (four generations ≠ 400 years); recognizes that round numbers are conventional in ANE chronographic texts; the variation between 400 (Gen 15:13) and 430 (Exod 12:40) itself suggests approximation rather than precision.",
+        "weaknesses": "If the number is merely schematic, it weakens the prophetic specificity of God's revelation to Abraham; Exodus 12:41's emphatic 'to the very day' language implies the author understood the timeframe as precise; does not clearly resolve whether the period includes the Canaan sojourn or not.",
+        "key_verses": [
+          "Genesis 15:13-16",
+          "Exodus 12:40",
+          "Galatians 3:17",
+          "Exodus 6:16-20"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "No single chronological reconstruction commands consensus. The literal reading faces the difficulty that actual Egyptian genealogies in the Pentateuch (e.g., Exodus 6:16–20) seem too short for 400+ years. The inclusive reading (Canaan + Egypt) harmonizes the biblical data but requires treating Genesis 15:13's 'a country not their own' as covering Canaan as well as Egypt. The round-number reading avoids the precision problem but raises questions about the specificity of prophetic speech. Most evangelical scholars adopt the inclusive reading; most critical scholars treat the figures as schematic rather than historical.",
+    "related_passages": [
+      "Genesis 15:13-16",
+      "Exodus 12:40-41",
+      "Acts 7:6",
+      "Galatians 3:17",
+      "Exodus 6:16-20"
+    ],
+    "tags": [
+      "chronology",
+      "covenant",
+      "sojourn",
+      "prophecy",
+      "patriarchs"
+    ]
   },
   {
     "id": "hagar-and-ishmael-the-status-of-the-rejected-line",
@@ -1926,34 +2062,63 @@
     ],
     "passage": "Genesis 16",
     "question": "Hagar and Ishmael: The Status of the Rejected Line",
-    "context": "",
+    "context": "Ishmael occupies a theologically liminal space in Genesis. He is Abraham's biological firstborn, receives circumcision (17:23–26), and is promised nationhood (17:20; 21:18), yet is explicitly excluded from the covenant line in favor of Isaac (17:19–21). God hears Hagar's cry in the wilderness (16:7–14; 21:17–19), raising questions about the scope of divine care beyond the elect line. The question carries weight in Jewish, Christian, and Islamic traditions, each of which evaluates Ishmael's status differently.",
     "positions": [
       {
         "id": "outside-the-covenant",
         "label": "Outside the covenant",
         "tradition_family": "reformed",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "calvin"
+        ],
         "proponents": "Traditional Reformed reading",
         "argument": "The Abrahamic covenant runs through Isaac (17:21; 21:12). Ishmael is blessed (17:20) but is not the covenant heir. Paul's allegory (Gal 4:21-31) uses Hagar/Ishmael as the figure of the law-covenant vs. the promise-covenant.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Supported by the explicit covenant exclusion in 17:19–21 and Paul's allegorical reading in Galatians 4:21–31; maintains the theological distinctiveness of the covenant line; Genesis 21:10–12 has God endorsing Sarah's demand to expel Hagar and Ishmael.",
+        "weaknesses": "Can understate the genuine divine promises to Ishmael (nationhood, twelve princes); risks reading Galatians 4 back into the Genesis narrative in ways that flatten the OT's own nuance; God's compassionate response to Hagar in both chapters 16 and 21 suggests more than mere rejection.",
+        "key_verses": [
+          "Genesis 17:19-21",
+          "Genesis 21:10-12",
+          "Galatians 4:22-31",
+          "Romans 9:7-9"
+        ]
       },
       {
         "id": "within-divine-care",
         "label": "Within divine care",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna",
+          "waltke"
+        ],
         "proponents": "Sarna, Trible, Alter",
         "argument": "The Genesis narrative gives Hagar and Ishmael extensive divine attention: two angelic appearances (16:7-12; 21:17-19), a personal divine name (El Roi), a promise for Ishmael (17:20; 21:18), and God hearing his cry (21:17). The rejected line is not abandoned.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Accounts for the positive Ishmael traditions: God hears (the name Ishmael means 'God hears'), provides water, promises nationhood and twelve princes; Hagar is the only person in Genesis to name God (El Roi, 16:13); Ishmael is circumcised alongside Abraham.",
+        "weaknesses": "Must still reckon with the narrative's clear subordination of Ishmael to Isaac in the covenant structure; risks conflating divine compassion with covenant inclusion, which the text distinguishes; the expulsion narrative (21:8–21) is presented as divinely sanctioned.",
+        "key_verses": [
+          "Genesis 16:11-13",
+          "Genesis 17:20",
+          "Genesis 17:23-26",
+          "Genesis 21:17-20",
+          "Genesis 25:12-18"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The narrative presents a clear distinction between covenant election (Isaac) and divine care (Ishmael) without equating the two. God's promises to Ishmael — nationhood, twelve princes, divine hearing — are genuine but categorically different from the Abrahamic covenant. Reformed interpreters tend to emphasize the covenant exclusion; broader evangelical and Jewish interpreters highlight the divine compassion extended to Hagar and Ishmael. The text resists both a dismissive reading of Ishmael and a symmetrical reading that erases the Isaac–Ishmael distinction.",
+    "related_passages": [
+      "Genesis 16:7-14",
+      "Genesis 17:18-21",
+      "Genesis 21:8-21",
+      "Genesis 25:12-18",
+      "Galatians 4:21-31",
+      "Romans 9:6-9"
+    ],
+    "tags": [
+      "ishmael",
+      "hagar",
+      "covenant-election",
+      "divine-care",
+      "patriarchs"
+    ]
   },
   {
     "id": "circumcision-sign-seal-or-sacrament",
@@ -2044,34 +2209,62 @@
     ],
     "passage": "Genesis 18",
     "question": "Abraham's Intercession: Bargaining with God?",
-    "context": "",
+    "context": "Abraham's dialogue with God in Genesis 18:22–33 is one of the most dramatic prayer scenes in the Hebrew Bible. Abraham negotiates the threshold for sparing Sodom from fifty righteous down to ten, using legal and covenantal language ('Will the Judge of all the earth not do right?'). The scene raises questions about the nature of intercessory prayer, divine justice, and the relationship between the righteous and the wicked in a community. Scholars debate whether Abraham is acting as a legal advocate, a prophetic intercessor, or a model for faithful prayer.",
     "positions": [
       {
         "id": "progressive-legal-argument",
         "label": "Progressive legal argument",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Sarna, Alter, Hamilton",
         "argument": "Abraham does not bargain — he argues from a legal principle: \"Will you sweep away the righteous with the wicked?\" He establishes the principle of divine justice (the Judge of all the earth must do right) and then tests its implications.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The language of 'judging' and 'doing right' fits ANE legal rhetoric; the descending numerical negotiation mirrors bargaining conventions; Abraham's appeal to the Judge of all the earth invokes a principle of distributive justice that transcends personal relationship.",
+        "weaknesses": "Purely legal readings can miss the covenant intimacy: God deliberately reveals his plans to Abraham (18:17–19) precisely because of their relationship; the bargaining metaphor can trivialize the scene into haggling rather than genuine moral reasoning.",
+        "key_verses": [
+          "Genesis 18:23-25",
+          "Genesis 18:27",
+          "Genesis 18:30-32"
+        ]
       },
       {
         "id": "model-for-intercessory-prayer",
         "label": "Model for intercessory prayer",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke",
+          "macarthur"
+        ],
         "proponents": "Calvin, MacArthur, Brueggemann",
         "argument": "The passage is the OT's paradigm for intercessory prayer: persistence, specificity, grounding in divine character, humility (\"I am but dust and ashes\"). God welcomes the argument; Abraham stops asking before God stops granting.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Rooted in God's prior decision to share his plans with Abraham (18:17–19); the progression from 50 to 10 models persistent, bold prayer; subsequent biblical intercession scenes (Moses, Amos) follow this paradigm, suggesting the text is meant to shape Israel's prayer practice.",
+        "weaknesses": "Can spiritualize the text at the expense of its legal and ethical dimensions; Abraham stops at ten rather than pressing further, which complicates a purely devotional reading; the intercession ultimately fails to save Sodom, raising questions about the efficacy of prayer.",
+        "key_verses": [
+          "Genesis 18:17-19",
+          "Genesis 18:23",
+          "Genesis 18:32-33",
+          "Genesis 19:29"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Both readings illuminate genuine aspects of the text. The legal-advocacy reading captures the forensic language and ANE covenant-lawsuit parallels, while the intercessory-prayer reading accounts for the relational intimacy between Abraham and God. Most scholars note that the two are not mutually exclusive — Abraham appeals to divine justice (legal) within a covenant relationship (prayer). The passage's influence on later biblical intercession (Moses in Exodus 32, Amos 7:1–6, Jeremiah's laments) suggests it functions paradigmatically for both.",
+    "related_passages": [
+      "Genesis 18:22-33",
+      "Exodus 32:11-14",
+      "Amos 7:1-6",
+      "Jeremiah 15:1",
+      "Ezekiel 22:30",
+      "James 5:16"
+    ],
+    "tags": [
+      "intercession",
+      "prayer",
+      "divine-justice",
+      "sodom",
+      "abraham",
+      "covenant"
+    ]
   },
   {
     "id": "the-sin-of-sodom-sexual-or-social",
@@ -2239,34 +2432,61 @@
     ],
     "passage": "Genesis 21",
     "question": "Hagar's Expulsion: Moral Problem or Providential Design?",
-    "context": "",
+    "context": "The expulsion of Hagar and Ishmael in Genesis 21:8–21 is one of the most morally uncomfortable episodes in the patriarchal narratives. Sarah demands their removal, Abraham is distressed, and God instructs Abraham to comply. The tension between Sarah's apparent cruelty, Abraham's passivity, and God's endorsement of the expulsion has generated extensive moral and theological reflection. The parallel earlier expulsion in chapter 16 — where Hagar flees Sarai's harsh treatment — compounds the ethical difficulty.",
     "positions": [
       {
         "id": "moral-problem",
         "label": "Moral problem",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter",
+          "brueggemann"
+        ],
         "proponents": "Trible (Texts of Terror), feminist readings",
         "argument": "The expulsion of Hagar and Ishmael is ethnic cleansing motivated by Sarah's jealousy. Abraham's compliance is morally culpable. The text records without approving.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Takes seriously the narrative's portrayal of Sarah's jealousy and cruelty; Abraham's distress (21:11) signals the ethical weight of the action; sending a mother and child into the desert with minimal provisions is presented starkly, without narrative approval of Sarah's motives.",
+        "weaknesses": "God explicitly endorses the expulsion (21:12), complicating a purely condemnatory reading; may overlook the narrator's sophisticated handling of multiple moral layers; Hagar and Ishmael are not abandoned — God provides water and promises.",
+        "key_verses": [
+          "Genesis 21:9-10",
+          "Genesis 21:11",
+          "Genesis 21:14-16"
+        ]
       },
       {
         "id": "providential-design",
         "label": "Providential design",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke",
+          "macarthur"
+        ],
         "proponents": "Sarna, Hamilton, Paul in Gal 4",
         "argument": "God explicitly authorises the expulsion (21:12: \"listen to whatever Sarah tells you\") and provides for Hagar in the wilderness (21:17-19). The separation is not cruelty but covenant necessity — and God cares for both lines.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "God's instructions to Abraham (21:12–13) frame the expulsion within the larger covenant plan; God's provision for Hagar in the wilderness (21:17–20) demonstrates care beyond the covenant line; Ishmael's subsequent prosperity (25:12–18) shows the divine promises fulfilled.",
+        "weaknesses": "Can too easily excuse Sarah's cruelty by subsuming it under divine sovereignty; risks instrumentalizing Hagar's suffering as merely a means to a divine end; the moral discomfort the narrative creates appears intentional and should not be prematurely resolved.",
+        "key_verses": [
+          "Genesis 21:12-13",
+          "Genesis 21:17-20",
+          "Genesis 25:12-18"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Neither reading fully resolves the moral tension the narrative deliberately creates. The moral-problem reading rightly identifies the human cost and Sarah's culpability, while the providential-design reading correctly notes God's provision for Hagar and the fulfillment of the Ishmael promises. The text holds both in tension: the expulsion is portrayed as painful and questionable at the human level, yet divinely overruled for good at the providential level. Most scholars agree that the narrator does not whitewash Sarah's motives but shows God working redemptively within morally complex human choices.",
+    "related_passages": [
+      "Genesis 16:1-16",
+      "Genesis 21:8-21",
+      "Genesis 25:12-18",
+      "Galatians 4:28-31",
+      "Romans 9:6-13"
+    ],
+    "tags": [
+      "hagar",
+      "sarah",
+      "expulsion",
+      "providence",
+      "divine-care",
+      "ethics"
+    ]
   },
   {
     "id": "the-akedah-as-polemic-against-child-sacrifice",
@@ -2365,7 +2585,7 @@
     ],
     "passage": "Genesis 23",
     "question": "Hittites in Canaan: Historical Problem?",
-    "context": "",
+    "context": "Genesis mentions 'Hittites' (bnê Ḥēt) in Canaan during the patriarchal period (23:3–20; 25:9–10; 26:34; 27:46), yet the Hittite empire was centered in Anatolia (modern Turkey) and did not control southern Canaan. Before archaeological discoveries in the 19th–20th centuries, critics cited the biblical Hittites as evidence of anachronism. The discovery of the Hittite empire at Hattusa and subsequent identification of Neo-Hittite city-states in Syria-Canaan reopened the question, but the relationship between the Anatolian Hittites and the biblical 'sons of Heth' remains debated.",
     "positions": [
       {
         "id": "anachronistic-literary",
@@ -2374,25 +2594,49 @@
         "scholar_ids": [],
         "proponents": "Gurney, some scholars",
         "argument": "The Hittite empire was centred in Anatolia; no evidence of Hittites in Hebron in the patriarchal period. \"Hittites\" (bene-het) may be a later retroactive designation.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The Anatolian Hittite empire did not extend to southern Canaan; the use of 'Hittite' may reflect later editorial updating of ethnic labels; the 'sons of Heth' in Genesis 23 behave as Canaanite city-dwellers, not as Anatolian imperialists.",
+        "weaknesses": "The discovery of the Hittite empire undermined the original skepticism about Hittites existing at all; Neo-Hittite city-states in Syria demonstrate Hittite-descended populations in the Levant; dismissing the label as anachronistic requires explaining why the author chose this particular ethnic designation.",
+        "key_verses": [
+          "Genesis 23:3-7",
+          "Genesis 26:34-35",
+          "Genesis 27:46"
+        ]
       },
       {
         "id": "local-hittites-neo-hittites",
         "label": "Local Hittites / Neo-Hittites",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Kitchen, Hoffmeier, Sarna",
         "argument": "The term \"Hittite\" is used broadly in the OT for Canaanite sub-groups (cf. Uriah the Hittite in Hebron's region). Smaller Hittite-related groups may have been present in Canaan earlier than the main empire. The legal procedures in ch.23 match Hittite land-purchase texts of the 2nd millennium BCE.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Archaeological evidence confirms Hittite-descended populations in Syria-Canaan after the empire's collapse; the biblical text may use 'Hittite' broadly for a local population with Hittite cultural connections; Uriah the Hittite (2 Sam 11:3) shows the label persisting into the monarchy, suggesting a known ethnic group.",
+        "weaknesses": "The chronological gap between the Neo-Hittite period (post-1180 BC) and the patriarchal period (possibly 2000–1800 BC) is significant; the biblical 'sons of Heth' may simply be a local Canaanite group with no actual Hittite connection; the identification remains conjectural.",
+        "key_verses": [
+          "Genesis 23:10-20",
+          "Genesis 25:9",
+          "Joshua 1:4",
+          "2 Samuel 11:3"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The identification of the biblical 'sons of Heth' with the Anatolian Hittite empire is now considered unlikely by most scholars. The Neo-Hittite hypothesis (local Hittite populations in Syria-Canaan after the empire's collapse c. 1180 BC) is plausible but faces chronological difficulties if the patriarchs are dated to the Middle Bronze Age. Some scholars propose that 'Hittite' in Genesis is an ethnic label for a local Canaanite group unrelated to the Anatolian Hittites. The question remains open, but the older critical charge that the biblical Hittites are pure fiction has been significantly weakened by archaeology.",
+    "related_passages": [
+      "Genesis 23:3-20",
+      "Genesis 25:9-10",
+      "Genesis 26:34",
+      "Genesis 27:46",
+      "Joshua 1:4",
+      "2 Samuel 11:3"
+    ],
+    "tags": [
+      "hittites",
+      "historicity",
+      "archaeology",
+      "patriarchs",
+      "ancient-near-east"
+    ]
   },
   {
     "id": "the-servant-s-prayer-model-for-providential-guidance",
@@ -2404,7 +2648,7 @@
     ],
     "passage": "Genesis 24",
     "question": "The Servant's Prayer: Model for Providential Guidance?",
-    "context": "",
+    "context": "In Genesis 24, Abraham's servant seeks a wife for Isaac and prays for a specific sign: the woman who offers water to him and his camels will be God's chosen bride. The prayer is answered immediately and precisely through Rebekah. The episode raises theological questions about whether requesting specific signs from God is a legitimate mode of divine guidance or a presumptuous attempt to constrain God's freedom. The servant's approach contrasts with later biblical warnings against testing God (Deut 6:16).",
     "positions": [
       {
         "id": "specific-sign-seeking-questionable",
@@ -2413,25 +2657,51 @@
         "scholar_ids": [],
         "proponents": "Some pastoral traditions",
         "argument": "The servant sets up a specific test (the girl who offers water to the camels). This is analogous to \"fleece\" requests (Judg 6:36-40). Such specific sign-seeking may reflect limited faith rather than mature trust.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Consistent with the broader biblical trajectory that discourages testing God (Deut 6:16; Matt 4:7); Gideon's fleece (Judg 6:36–40) is a partial parallel that many read as reflecting weak faith; avoids making the servant's unique historical situation into a universal prayer method.",
+        "weaknesses": "The narrative itself shows no disapproval — the sign is answered immediately and the servant worships; comparing this to 'testing God' may be anachronistic, as the servant is seeking guidance within a covenant commission from Abraham; the text's overwhelmingly positive tone undercuts the critique.",
+        "key_verses": [
+          "Deuteronomy 6:16",
+          "Judges 6:36-40",
+          "Matthew 4:7"
+        ]
       },
       {
         "id": "legitimate-prayer-for-wisdom",
         "label": "Legitimate prayer for wisdom",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke",
+          "macarthur"
+        ],
         "proponents": "Calvin, Wenham, Waltke",
         "argument": "The servant prays in complete dependence, gives God complete freedom to act, and responds with immediate worship when God answers. The prayer is a model of humble, specific, grateful intercession — not manipulative sign-seeking.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The servant prays within a specific covenant context (finding Isaac's wife to fulfill God's promises); the prayer is humble ('show kindness to my master'), specific, and immediately answered; the narrator presents the entire episode as a demonstration of God's faithful guidance.",
+        "weaknesses": "The specificity of the sign (water for camels) is a high bar that could be seen as constraining divine freedom; using this as a model risks encouraging sign-seeking prayer that ignores the unique covenantal context; the servant's approach is narrated but not explicitly commanded or commended as repeatable.",
+        "key_verses": [
+          "Genesis 24:12-14",
+          "Genesis 24:26-27",
+          "Genesis 24:42-48",
+          "Genesis 24:56"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The narrative presents the servant's prayer favorably — it is answered immediately, and the outcome is portrayed as providential. However, the text does not explicitly endorse sign-seeking as a universal model; it may function as a specific narrative of God's faithfulness to Abraham's covenant rather than a prescriptive template. Those who see it as questionable note that later Scripture discourages sign-seeking; those who see it as legitimate emphasize the servant's humility, specificity, and alignment with covenant purposes. Most interpreters agree the passage primarily illustrates God's sovereign guidance of covenant history rather than prescribing prayer method.",
+    "related_passages": [
+      "Genesis 24:12-27",
+      "Genesis 24:42-48",
+      "Judges 6:36-40",
+      "Deuteronomy 6:16",
+      "1 Samuel 14:8-10",
+      "Matthew 4:7"
+    ],
+    "tags": [
+      "prayer",
+      "providence",
+      "guidance",
+      "signs",
+      "rebekah",
+      "covenant"
+    ]
   },
   {
     "id": "romans-9-and-the-jacob-esau-election-corporate-or-individual",
@@ -2522,34 +2792,62 @@
     ],
     "passage": "Genesis 26",
     "question": "Isaac: Character or Cipher?",
-    "context": "",
+    "context": "Isaac is the least developed of the three patriarchs in terms of narrative attention. His major scenes — the binding (ch. 22), the bride quest (ch. 24), the blessing deception (ch. 27) — all feature him as a passive figure acted upon by others. He re-digs Abraham's wells (26:18) and repeats the wife-sister deception (26:7). Scholars debate whether Isaac's passivity is a literary deficit (he is merely a transitional figure) or a deliberate characterization that carries its own theological freight.",
     "positions": [
       {
         "id": "passive-secondary-figure",
         "label": "Passive/secondary figure",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter"
+        ],
         "proponents": "Alter, von Rad",
         "argument": "Isaac is the most passive of the patriarchs — he is nearly sacrificed, his wife is chosen for him, his sons deceive him, he is never called by God to go anywhere. He inherits and passes on the covenant but rarely acts.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Isaac's major scenes consistently position him as acted upon — bound by Abraham, matched by a servant, deceived by Jacob; his repetition of Abraham's actions (wife-sister, well-digging) suggests he is a literary echo rather than an independent character; the narrative devotes far less space to him than to Abraham or Jacob.",
+        "weaknesses": "May undervalue the theological significance of covenant continuity through a quiet figure; Isaac's blessing of Jacob (ch. 27) and Esau (27:39–40) shows prophetic authority; reading passivity as deficit may reflect modern narrative expectations rather than ancient storytelling conventions.",
+        "key_verses": [
+          "Genesis 22:9",
+          "Genesis 24:67",
+          "Genesis 26:18",
+          "Genesis 27:33"
+        ]
       },
       {
         "id": "sustained-covenant-faithfulness",
         "label": "Sustained covenant faithfulness",
         "tradition_family": "reformed",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke",
+          "calvin"
+        ],
         "proponents": "Wenham, Hamilton",
         "argument": "Isaac's passivity may reflect faithfulness: he stays where God sends him (26:2-3), he digs wells, he makes peace. His lack of dramatic narrative reflects steady covenant obedience rather than the crises of Abraham and Jacob.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Isaac's well-digging (ch. 26) demonstrates faithful persistence in the face of conflict; his meditative posture (24:63) and acquiescence at the binding suggest spiritual depth; Hebrews 11:20 credits Isaac with faith expressed through blessing, indicating NT authors saw substance in his character.",
+        "weaknesses": "Must acknowledge that the text genuinely gives Isaac less narrative development; the theological reading can over-interpret silences; his deception by Rebekah and Jacob (ch. 27) is difficult to frame as covenant faithfulness without special pleading.",
+        "key_verses": [
+          "Genesis 24:63",
+          "Genesis 26:22-25",
+          "Genesis 27:27-29",
+          "Hebrews 11:20"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The narrative's treatment of Isaac is sparse but not necessarily thin. His passivity after the binding (ch. 22) has been read psychologically (trauma) and theologically (acquiescence to God's will). His well-digging and conflict-avoidance in chapter 26 can be read as faithful persistence rather than weakness. Most scholars agree that Isaac functions primarily as a bridge between Abraham and Jacob, but disagree on whether this bridging role is theologically rich or merely structural. The key question is whether the narrator's reticence about Isaac is meaningful silence or narrative economy.",
+    "related_passages": [
+      "Genesis 22:1-19",
+      "Genesis 24:62-67",
+      "Genesis 25:19-28",
+      "Genesis 26:1-33",
+      "Genesis 27:1-40",
+      "Hebrews 11:20"
+    ],
+    "tags": [
+      "isaac",
+      "patriarchs",
+      "characterization",
+      "passivity",
+      "covenant-continuity"
+    ]
   },
   {
     "id": "the-deception-in-genesis-27-moral-evaluation",
@@ -2641,34 +2939,62 @@
     ],
     "passage": "Genesis 28",
     "question": "Jacob's Vow (28:20-22): Conditional Faith or Genuine Commitment?",
-    "context": "",
+    "context": "After the Bethel theophany in Genesis 28:10–19, Jacob makes a vow (28:20–22) that begins with 'If God will be with me...' The conditional phrasing — seemingly bargaining with God after receiving unconditional promises — has troubled interpreters. Is Jacob negotiating terms (consistent with his character as a supplanter), or is his 'if' a legitimate expression of faith that takes God at his word? The Hebrew 'im can function as 'if' (conditional) or 'since/when' (confident), making the grammar ambiguous.",
     "positions": [
       {
         "id": "conditional-bargaining",
         "label": "Conditional/bargaining",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter"
+        ],
         "proponents": "von Rad, some critics",
         "argument": "\"If God does these things for me, then the LORD will be my God.\" The conditional structure (im... vehayyah YHWH li le'Elohim) suggests Jacob is negotiating rather than committing — a commercially minded response to a divine gift.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Consistent with Jacob's established character as a schemer who negotiates for advantage (birthright, blessing); the 'if' naturally reads as conditional in context; Jacob's vow adds tithing as his contribution, suggesting quid pro quo thinking.",
+        "weaknesses": "Hebrew 'im can mean 'when/since,' making the conditional reading grammatically optional; may flatten Jacob's character by denying any genuine spiritual response to a theophany; the vow form itself is a recognized expression of worship in the Hebrew Bible, not inherently mercenary.",
+        "key_verses": [
+          "Genesis 28:20-22",
+          "Genesis 25:29-34",
+          "Genesis 27:35-36"
+        ]
       },
       {
         "id": "authentic-response-to-grace",
         "label": "Authentic response to grace",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke",
+          "macarthur"
+        ],
         "proponents": "Sarna, Wenham, Hamilton",
         "argument": "The vow follows the covenant promise (vv.13-15); it is a response to grace, not a precondition for it. The \"if\" clause restates the promise in Jacob's own words. The vow is the form in which ancient people expressed grateful commitment.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reading 'im as 'since/when' yields a confident declaration of faith; the vow responds to God's prior unconditional promises (28:13–15); Jacob's return to Bethel (35:1–7) and his fulfillment of the vow demonstrate genuine covenant commitment.",
+        "weaknesses": "The 'if' reading remains the more natural translation for most English readers; even if grammatically possible, the 'since' reading may be driven more by theological preference than by syntax; Jacob's subsequent deceptions of Laban complicate an early-faith reading.",
+        "key_verses": [
+          "Genesis 28:13-15",
+          "Genesis 28:20-22",
+          "Genesis 35:1-7",
+          "Genesis 35:14-15"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The grammatical ambiguity of 'im is real and prevents a definitive resolution from Hebrew alone. Jacob's character arc — from the supplanter who bargains with Esau and Laban to the transformed Israel who wrestles with God — supports both readings at different stages. At Bethel, Jacob may be at the 'bargaining' stage that will mature through Peniel (ch. 32). Most interpreters agree that regardless of Jacob's initial motives, the narrative shows God honoring the vow and Jacob eventually fulfilling it (35:1–7), suggesting genuine faith that deepens over time.",
+    "related_passages": [
+      "Genesis 28:10-22",
+      "Genesis 31:13",
+      "Genesis 35:1-7",
+      "Genesis 32:22-32",
+      "Judges 11:30-31",
+      "Psalm 66:13-14"
+    ],
+    "tags": [
+      "jacob",
+      "vow",
+      "faith",
+      "bethel",
+      "conditional-promise",
+      "character-development"
+    ]
   },
   {
     "id": "jacob-s-marriages-polygamy-and-the-ot-narrative",
@@ -2680,34 +3006,63 @@
     ],
     "passage": "Genesis 29",
     "question": "Jacob's Marriages: Polygamy and the OT Narrative",
-    "context": "",
+    "context": "Jacob's marriages to Leah and Rachel (and their servants Bilhah and Zilpah) result in the twelve tribes of Israel, making polygamy structurally integral to the covenant narrative. The text describes the arrangement without explicit condemnation, yet the resulting household is marked by rivalry, jealousy, and dysfunction (29:31–30:24). The question of whether the narrative merely describes or implicitly evaluates polygamy is central to how the passage functions ethically.",
     "positions": [
       {
         "id": "descriptive-not-prescriptive",
         "label": "Descriptive, not prescriptive",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke",
+          "macarthur"
+        ],
         "proponents": "Wenham, Hamilton, most evangelicals",
         "argument": "The OT records polygamy without endorsing it. The narrative consequences — rivalry, jealousy, suffering — constitute an implicit moral judgment. Genesis 2:24 (\"one flesh\") establishes the normative pattern.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The narrative clearly shows the negative consequences of polygamy — Leah's unloved status, Rachel's jealousy, competitive childbearing — without needing explicit editorial condemnation; Genesis 2:24's one-flesh ideal provides the implicit standard against which the dysfunction is measured.",
+        "weaknesses": "The narrative never states that polygamy itself is wrong; God blesses all four relationships with children who become the covenant nation; the implicit-disapproval reading may project later Christian ethics onto an ancient text that does not share them.",
+        "key_verses": [
+          "Genesis 2:24",
+          "Genesis 29:30-31",
+          "Genesis 30:1-2",
+          "Genesis 37:3-4"
+        ]
       },
       {
         "id": "regulated-permission",
         "label": "Regulated permission",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Some OT scholars",
         "argument": "Mosaic law regulates but does not prohibit polygamy (Exod 21:10; Deut 21:15-17), suggesting it was a tolerated accommodation to fallen human conditions rather than an ideal.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Takes seriously that the Torah regulates rather than prohibits polygamy (Deut 21:15–17); recognizes that the patriarchal world operated under different social norms; avoids anachronistic moral judgments while acknowledging that Scripture progressively reveals the marriage ideal.",
+        "weaknesses": "Can appear to endorse what the broader canonical trajectory clearly moves away from (Gen 2:24 → Jesus in Matt 19:4–6); regulation does not equal approval — the Torah also regulates divorce (Deut 24:1–4) while Jesus calls it a concession to hardness of heart.",
+        "key_verses": [
+          "Deuteronomy 21:15-17",
+          "Genesis 29:21-28",
+          "Genesis 30:3-13"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The majority of scholars agree that the Genesis narrative describes polygamy without explicitly condemning it, yet structures the story so that its negative consequences are unmistakable. The rivalry between Leah and Rachel, the competitive childbearing, and the favoritism that produces Joseph's later troubles all flow from the polygamous arrangement. The narrative's technique is showing rather than telling — the dysfunction speaks for itself. Whether this constitutes implicit disapproval or merely realistic portrayal remains the point of interpretive division.",
+    "related_passages": [
+      "Genesis 2:24",
+      "Genesis 29:15-30:24",
+      "Deuteronomy 21:15-17",
+      "1 Samuel 1:1-8",
+      "Matthew 19:4-6",
+      "1 Timothy 3:2"
+    ],
+    "tags": [
+      "polygamy",
+      "marriage",
+      "jacob",
+      "leah",
+      "rachel",
+      "ethics",
+      "patriarchs"
+    ]
   },
   {
     "id": "the-mandrakes-fertility-superstition-and-providence",
@@ -2719,34 +3074,61 @@
     ],
     "passage": "Genesis 30",
     "question": "The Mandrakes: Fertility, Superstition, and Providence",
-    "context": "",
+    "context": "In Genesis 30:14–18, Reuben finds mandrakes (dûdā'îm) during wheat harvest, sparking a negotiation between Leah and Rachel. Mandrakes were widely regarded in the ancient Near East as aphrodisiacs and fertility aids. Rachel trades a night with Jacob for the mandrakes, yet it is Leah — not Rachel — who conceives, and Rachel's own conception comes later through divine remembrance (30:22). The ironic structure raises questions about whether the narrator is subtly critiquing fertility superstition or simply recording cultural practice.",
     "positions": [
       {
         "id": "superstition-providentially-overruled",
         "label": "Superstition, providentially overruled",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke"
+        ],
         "proponents": "Calvin, Hamilton",
         "argument": "Rachel's mandrakes (believed to enhance fertility) did not cause Joseph's birth — God did (30:22: \"God remembered Rachel... and opened her womb\"). The text presents the mandrake episode as human grasping for fertility; God's action is the real cause.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The ironic outcome (Rachel gets mandrakes but does not conceive; Leah conceives without them) clearly demonstrates divine sovereignty over fertility; consistent with Genesis's broader pattern of God overruling human schemes; Rachel's eventual conception is attributed to God 'remembering' her (30:22), not to any natural means.",
+        "weaknesses": "May over-read the narrator's intent — the text does not explicitly critique the mandrakes as superstition; the cultural significance of dûdā'îm as love-plants may function as realistic narrative detail rather than theological commentary.",
+        "key_verses": [
+          "Genesis 30:14-18",
+          "Genesis 30:22-23",
+          "Genesis 29:31"
+        ]
       },
       {
         "id": "ironic-structure",
         "label": "Ironic structure",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter",
+          "sarna"
+        ],
         "proponents": "Alter, Sarna",
         "argument": "The mandrake episode is structured as irony: Leah buys Jacob's company with mandrakes; Rachel (who got the mandrakes) remains barren; Leah (who gave them away) conceives again. Providence inverts the expected outcome.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Recognizes the literary artistry: the narrator constructs the scene so that audience expectations (mandrakes → fertility) are systematically subverted; the double irony (Leah conceives through a purchased night, Rachel must wait for divine remembrance) is a sophisticated literary device, not an accident.",
+        "weaknesses": "Purely literary readings can underplay the theological claim about divine sovereignty that the irony serves; the ironic reading and the providential reading are not truly opposed — the distinction may be one of emphasis rather than substance.",
+        "key_verses": [
+          "Genesis 30:14-16",
+          "Genesis 30:17",
+          "Genesis 30:22"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The narrative's irony is widely recognized: the mandrakes do not produce the desired effect for Rachel, and Leah conceives through the night she purchased, not through any magical property. Both readings agree that the passage demonstrates God's sovereignty over fertility, but they differ on how deliberately the narrator critiques the underlying superstition. The mandrake episode fits within the larger pattern of Genesis showing human schemes (Jacob's speckled-sheep breeding, Rachel's stolen teraphim) that are either irrelevant to or overruled by divine providence.",
+    "related_passages": [
+      "Genesis 30:14-24",
+      "Genesis 29:31",
+      "Genesis 30:22",
+      "Song of Solomon 7:13",
+      "Genesis 31:19"
+    ],
+    "tags": [
+      "mandrakes",
+      "fertility",
+      "superstition",
+      "providence",
+      "irony",
+      "rachel",
+      "leah"
+    ]
   },
   {
     "id": "mizpah-covenant-31-44-55-boundary-or-blessing",
@@ -2758,18 +3140,25 @@
     ],
     "passage": "Genesis 31",
     "question": "Mizpah Covenant (31:44-55): Boundary or Blessing?",
-    "context": "",
+    "context": "After Jacob's flight from Laban, the two establish a covenant at Mizpah (Galeed/Jegar Sahadutha) with a heap of stones (31:44–55). Laban invokes God as witness: 'May the LORD keep watch between you and me when we are away from each other' (31:49). In popular devotion, the Mizpah benediction is used as a blessing; in context, it functions more like a surveillance clause — mutual distrust formalized in covenant language. Scholars debate whether the covenant represents genuine reconciliation or an armed truce.",
     "positions": [
       {
         "id": "mutual-surveillance-distrust",
         "label": "Mutual surveillance / distrust",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter",
+          "sarna"
+        ],
         "proponents": "Most modern readings",
         "argument": "\"The LORD watch between you and me when we are absent from one another\" (v.49) is a mutual accountability agreement between two parties who do not trust each other. The Mizpah benediction is a covenant of separation, not friendship.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The text's own framing supports this: Laban accuses Jacob of stealing his gods and mistreating his daughters (31:26–30, 43); the 'may the LORD watch' formula is a warning, not a blessing; the boundary pillar physically separates the parties; Laban's non-aggression clause (31:52) implies he would otherwise pursue Jacob.",
+        "weaknesses": "Overemphasizing distrust can miss the genuine resolution the covenant achieves; the shared meal (31:54) is a covenant-ratification act that implies at least formal goodwill; the scene ends with Laban kissing his grandchildren and blessing them (31:55), which is not pure hostility.",
+        "key_verses": [
+          "Genesis 31:49",
+          "Genesis 31:51-52",
+          "Genesis 31:43"
+        ]
       },
       {
         "id": "genuine-blessing",
@@ -2778,14 +3167,31 @@
         "scholar_ids": [],
         "proponents": "Traditional use in Christian practice",
         "argument": "Popularised as a farewell blessing, the Mizpah benediction is used by Christians departing from each other as a prayer for divine protection. The use is not illegitimate but the context (distrust between Jacob and Laban) should temper the sentiment.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The covenant includes a shared meal, divine witness, and Laban's blessing of his grandchildren — all genuine reconciliation elements; the popular devotional use, while decontextualized, picks up on real warmth in the farewell.",
+        "weaknesses": "Must contend with the clear distrust language throughout the passage; the 'blessing' reading requires selective attention to the farewell while ignoring the accusatory context; the boundary-marker function of the pillar is hard to reconcile with genuine mutual blessing.",
+        "key_verses": [
+          "Genesis 31:49",
+          "Genesis 31:54-55",
+          "Genesis 31:44"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The Mizpah covenant is a boundary treaty, not a friendship pact. Laban's invocation of divine surveillance (31:49) is protective rather than warm — 'God watch you because I cannot trust you.' However, the covenant does include genuine reconciliation elements: a shared meal (31:54), an oath in God's name, and a commitment to non-aggression. Most scholars read the popular 'Mizpah benediction' usage as a well-intentioned misreading of context. The narrative's point is that Jacob and Laban part peacefully but warily, and that the boundary stone marks the limit of Laban's patriarchal authority over Jacob's family.",
+    "related_passages": [
+      "Genesis 31:43-55",
+      "Genesis 31:49",
+      "Genesis 32:1-2",
+      "Joshua 24:26-27",
+      "1 Samuel 7:5-12"
+    ],
+    "tags": [
+      "covenant",
+      "mizpah",
+      "jacob",
+      "laban",
+      "boundary",
+      "reconciliation"
+    ]
   },
   {
     "id": "the-peniel-wrestler-who-is-he",
@@ -2878,34 +3284,61 @@
     ],
     "passage": "Genesis 33",
     "question": "Is the Jacob-Esau Reconciliation Genuine?",
-    "context": "",
+    "context": "The meeting of Jacob and Esau in Genesis 33 is one of the most emotionally charged scenes in the patriarchal narratives. Esau runs to Jacob, embraces him, falls on his neck, and kisses him, and they weep together (33:4). Yet Jacob subsequently declines Esau's offer to travel together (33:12–15), heads to Succoth instead of Seir, and the brothers never share sustained fellowship. The Masoretic tradition places dots above 'and he kissed him' (wayyishshāqēhû), which some rabbinic interpreters read as signaling ambiguity about Esau's sincerity.",
     "positions": [
       {
         "id": "genuine-reconciliation",
         "label": "Genuine reconciliation",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna",
+          "waltke"
+        ],
         "proponents": "Hamilton, Wenham",
         "argument": "Esau runs to meet Jacob, embraces him, weeps, and insists on accompanying him. The language mirrors the prodigal son parable (Luke 15:20). The reconciliation is real.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The physical description — running, embracing, falling on the neck, kissing, weeping together — uses language of deep emotion without narrative qualification; Esau's refusal of Jacob's gift (33:9 — 'I have enough, my brother') signals generosity; the scene resolves the enmity of Genesis 27:41.",
+        "weaknesses": "Jacob's immediate evasion of Esau's company (33:12–17) undercuts full reconciliation; the brothers never live together or share sustained fellowship afterward; the Masoretic dots over 'kissed' suggest early readers were uncertain about Esau's sincerity.",
+        "key_verses": [
+          "Genesis 33:4",
+          "Genesis 33:9",
+          "Genesis 33:10-11"
+        ]
       },
       {
         "id": "surface-diplomacy",
         "label": "Surface diplomacy",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter"
+        ],
         "proponents": "Alter, von Rad, some readings",
         "argument": "Jacob declines Esau's offer to travel together (v.14-15) and then goes in a different direction than he said he would (v.17: \"Esau returned to Seir; Jacob went to Succoth\"). Jacob's evasion suggests residual distrust and strategic self-protection rather than full reconciliation.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Jacob's elaborate gifts, bowing, and honorific language ('my lord... your servant') are diplomatic protocol, not spontaneous warmth; his refusal to travel with Esau and his detour to Succoth suggest he does not trust the reconciliation; the rabbinic tradition (Masoretic dots, Esau Rabbah) preserves longstanding suspicion about Esau's motives.",
+        "weaknesses": "The text's physical language is overwhelmingly positive and contains no narrative aside questioning Esau's sincerity; Jacob's caution may reflect prudence rather than distrust; reading the scene as purely diplomatic flattens its emotional power.",
+        "key_verses": [
+          "Genesis 33:3",
+          "Genesis 33:4",
+          "Genesis 33:12-17",
+          "Genesis 36:6-8"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The narrative presents the reconciliation as emotionally genuine in the moment — the physical descriptions (running, embracing, weeping) are unambiguous. However, the immediate geographical separation and Jacob's evasive response to Esau's travel offer suggest that trust has not been fully restored. The Masoretic dots over 'kissed' preserve an ancient tradition of reader uncertainty. Most scholars read the reconciliation as real but limited — the brothers make peace without making fellowship, and the narrative implies this is sufficient within the providence of God.",
+    "related_passages": [
+      "Genesis 27:41-45",
+      "Genesis 32:3-21",
+      "Genesis 33:1-17",
+      "Genesis 36:6-8",
+      "Obadiah 1:10-14",
+      "Hebrews 12:16-17"
+    ],
+    "tags": [
+      "jacob",
+      "esau",
+      "reconciliation",
+      "forgiveness",
+      "masoretic-dots"
+    ]
   },
   {
     "id": "simeon-and-levi-s-vengeance-disproportionate-or-just",
@@ -2917,34 +3350,62 @@
     ],
     "passage": "Genesis 34",
     "question": "Simeon and Levi's Vengeance: Disproportionate or Just?",
-    "context": "",
+    "context": "After Shechem rapes Dinah (Genesis 34), Simeon and Levi deceive the Shechemites into circumcision and then massacre the entire male population while they are incapacitated. Jacob condemns the action for endangering the family (34:30); the brothers counter, 'Should he have treated our sister like a prostitute?' (34:31). Jacob later curses their anger in his deathbed blessing (49:5–7). The narrator provides no explicit moral verdict, leaving readers to weigh the competing claims of justice and proportionality.",
     "positions": [
       {
         "id": "disproportionate-treacherous",
         "label": "Disproportionate / treacherous",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter",
+          "sarna"
+        ],
         "proponents": "Jacob (34:30; 49:5-7), most commentators",
         "argument": "Jacob condemns the massacre as treacherous (v.30) and cursed (49:5-7). The method (exploiting the circumcision agreement) is deception. The scope (all males) is disproportionate to Shechem's individual crime.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Jacob's condemnation (34:30) and deathbed curse (49:5–7) both come from authoritative voices within the narrative; the use of circumcision as a weapon of deception defiles a covenant sign; the massacre of an entire city for one man's crime is collective punishment that exceeds any plausible justice claim.",
+        "weaknesses": "Jacob's objection in 34:30 is pragmatic ('you have brought trouble on me') rather than moral, which weakens its ethical force; the narrative gives the brothers the last word (34:31) without rebuttal; Shechem's crime is real and the brothers are the only ones who act on Dinah's behalf.",
+        "key_verses": [
+          "Genesis 34:25-29",
+          "Genesis 34:30",
+          "Genesis 49:5-7"
+        ]
       },
       {
         "id": "justice-for-a-capital-crime",
         "label": "Justice for a capital crime",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Simeon and Levi's response (34:31)",
         "argument": "\"Should he have treated our sister like a prostitute?\" Their question is never rebutted in the text. Dinah's honour is a legitimate concern. The problem is not their motivation but their method and scope.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Rape is treated as a capital offense in later Torah law (Deut 22:25); the brothers act when Jacob does not — their response fills a justice vacuum; their final question (34:31) goes unanswered, suggesting the narrator grants it rhetorical force.",
+        "weaknesses": "Even if Shechem's crime warrants death, the massacre of all Shechemite males does not; the deceptive use of circumcision compounds the moral problem; Genesis 49:5–7 explicitly condemns the anger and cruelty, which is difficult to reconcile with a justice reading.",
+        "key_verses": [
+          "Genesis 34:2",
+          "Genesis 34:7",
+          "Genesis 34:31",
+          "Deuteronomy 22:25-27"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The narrative deliberately withholds a simple moral verdict, presenting both Jacob's pragmatic condemnation and the brothers' appeal to justice without endorsing either fully. Jacob's deathbed oracle (49:5–7) condemns their violence but not necessarily their motive. The text creates a genuine moral dilemma: Shechem's crime (rape) deserves justice, but Simeon and Levi's response (mass slaughter using covenant circumcision as a weapon) exceeds proportionality and defiles a sacred sign. Most scholars agree the narrative critiques the method while acknowledging the legitimacy of the underlying grievance.",
+    "related_passages": [
+      "Genesis 34:1-31",
+      "Genesis 49:5-7",
+      "Deuteronomy 22:25-29",
+      "Judges 19-20",
+      "2 Samuel 13:1-29"
+    ],
+    "tags": [
+      "dinah",
+      "simeon",
+      "levi",
+      "vengeance",
+      "justice",
+      "proportionality",
+      "circumcision"
+    ]
   },
   {
     "id": "rachel-s-death-and-tomb-historical-memory",
@@ -2956,34 +3417,60 @@
     ],
     "passage": "Genesis 35",
     "question": "Rachel's Death and Tomb: Historical Memory",
-    "context": "",
+    "context": "Genesis 35:16–20 records Rachel's death in childbirth near Ephrath, 'which is Bethlehem.' However, 1 Samuel 10:2 locates Rachel's tomb in the territory of Benjamin, near Ramah — a location north of Jerusalem, not south near Bethlehem. Jeremiah 31:15 places Rachel's weeping 'in Ramah,' further supporting a northern location. The gloss 'which is Bethlehem' in Genesis 35:19 may be a later editorial addition that conflated two different Ephraths, or it may preserve an accurate tradition that later sources relocated.",
     "positions": [
       {
         "id": "near-bethlehem",
         "label": "Near Bethlehem",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "MT and Jer 31:15",
         "argument": "Gen 35:19 locates the tomb \"on the road to Ephrath (that is, Bethlehem).\" Jeremiah 31:15 places Rachel weeping at Ramah for her children. The traditional site near Bethlehem has ancient attestation.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Preserves the plain reading of Genesis 35:19 with its explanatory gloss; a continuous tradition locating Rachel's tomb near Bethlehem persists to the present day; Matthew 2:17–18 connects Rachel's weeping to the Bethlehem massacre, reinforcing the southern identification.",
+        "weaknesses": "1 Samuel 10:2 places the tomb in Benjamin's territory, which is north of Jerusalem; Jeremiah 31:15 sets Rachel's weeping in Ramah, also north; the Genesis gloss may be a later editorial insertion that does not reflect the original geographical memory.",
+        "key_verses": [
+          "Genesis 35:19-20",
+          "Genesis 48:7",
+          "Matthew 2:17-18"
+        ]
       },
       {
         "id": "near-ramah-benjamin-s-territory",
         "label": "Near Ramah (Benjamin's territory)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "1 Sam 10:2; Jer 31:15",
         "argument": "1 Samuel 10:2 places Rachel's tomb \"in the territory of Benjamin\" — north of Jerusalem, near Ramah. Jeremiah 31:15 is consistent with this location. Some scholars argue the Bethlehem identification is secondary.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Supported by 1 Samuel 10:2 (explicitly in Benjamin's territory) and Jeremiah 31:15 (Ramah); Rachel is the mother of Benjamin, making a tomb in Benjaminite territory genealogically coherent; explains the Genesis gloss as a later editorial error or conflation of two Ephraths.",
+        "weaknesses": "Must argue that the Genesis 35:19 gloss ('which is Bethlehem') is secondary, which requires a text-critical judgment not all readers accept; the longstanding Bethlehem tomb tradition is difficult to dismiss as mere error; Matthew's use of the Bethlehem connection complicates a purely northern reading.",
+        "key_verses": [
+          "1 Samuel 10:2",
+          "Jeremiah 31:15",
+          "Genesis 35:16-20"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The evidence genuinely points in two directions. The Genesis gloss favors a southern (Bethlehem) location, while the 1 Samuel and Jeremiah references favor a northern (Benjamin/Ramah) location. Most critical scholars consider the Genesis gloss a secondary editorial addition that misidentified the original Ephrath. Evangelical scholars are divided: some defend the Bethlehem tradition, others accept a northern Ephrath distinct from the Judahite town. The question has limited theological significance but illustrates the complexity of harmonizing geographical references across biblical books.",
+    "related_passages": [
+      "Genesis 35:16-20",
+      "Genesis 48:7",
+      "1 Samuel 10:2",
+      "Jeremiah 31:15",
+      "Matthew 2:17-18",
+      "Ruth 1:2"
+    ],
+    "tags": [
+      "rachel",
+      "bethlehem",
+      "ramah",
+      "geography",
+      "editorial-gloss",
+      "tomb"
+    ]
   },
   {
     "id": "the-edomite-king-list-pre-dynastic-or-contemporaneous-record",
@@ -2995,34 +3482,61 @@
     ],
     "passage": "Genesis 36",
     "question": "The Edomite King List: Pre-dynastic or Contemporaneous Record?",
-    "context": "",
+    "context": "Genesis 36:31–39 lists eight kings who 'reigned in Edom before any Israelite king reigned.' The phrase 'before any Israelite king reigned' has been taken as evidence that the passage was written during or after the Israelite monarchy (post-Saul), making it a key text in debates about the dating and composition of Genesis. Alternatively, the phrase may reflect the divine promise that kings would come from Abraham (17:6, 16) and Jacob (35:11), anticipating rather than presupposing the monarchy.",
     "positions": [
       {
         "id": "ancient-source-incorporated",
         "label": "Ancient source incorporated",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Sarna, Kitchen",
         "argument": "The precision of the Edomite king list — eight successive kings with home cities — suggests incorporation of a genuine administrative record. The list has the character of a royal annals excerpt.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "ANE king lists are well-attested genres; the list could derive from an Edomite source incorporated into Genesis during the monarchy; the 'before any Israelite king reigned' clause makes best sense as a retrospective note from the monarchic period, consistent with standard editorial updating.",
+        "weaknesses": "If the king list is a late insertion, it raises questions about what other material may be similarly late, potentially undermining compositional unity claims; the identification of the specific Edomite kings with archaeological evidence remains tenuous.",
+        "key_verses": [
+          "Genesis 36:31",
+          "Genesis 14:14",
+          "Deuteronomy 34:5-12"
+        ]
       },
       {
         "id": "literary-theological-summary",
         "label": "Literary-theological summary",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "von Rad, Westermann",
         "argument": "The list serves a theological purpose (demonstrating covenant fulfilment for Esau) and need not be a direct historical source. The precision may be literary rather than archival.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The divine promises of kings from Abraham (17:6, 16) and Jacob (35:11) make the reference forward-looking rather than retrospective; the list functions theologically to show that Esau's line achieved kingship first while Jacob's waited for God's timing; maintains the literary integrity of the Genesis composition.",
+        "weaknesses": "The phrase 'before any Israelite king reigned' most naturally reads as knowledge of existing Israelite kings; the prophetic-anticipation reading requires assuming the original author/audience understood the reference as future — a reading that is possible but less obvious.",
+        "key_verses": [
+          "Genesis 36:31-39",
+          "Genesis 17:6",
+          "Genesis 35:11",
+          "Numbers 24:17"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The reference to Israelite kings is the most commonly cited internal evidence for post-Mosaic editing of Genesis. Evangelical scholars generally acknowledge the possibility of later editorial updating (as with the Dan reference in 14:14) while maintaining Mosaic authorship of the core material. Critical scholars see the king list as evidence of the text's monarchic-period composition. Both sides agree that king lists were a standard ANE genre; the real question is whether 'before any Israelite king reigned' is prophetic anticipation or retrospective notation.",
+    "related_passages": [
+      "Genesis 36:31-43",
+      "Genesis 17:6",
+      "Genesis 17:16",
+      "Genesis 35:11",
+      "Numbers 24:17-18",
+      "Deuteronomy 17:14-20"
+    ],
+    "tags": [
+      "edom",
+      "king-list",
+      "dating",
+      "authorship",
+      "monarchy",
+      "editorial-updating"
+    ]
   },
   {
     "id": "the-joseph-cycle-history-or-novella",
@@ -3109,34 +3623,61 @@
     ],
     "passage": "Genesis 38",
     "question": "Tamar's Method: Justified Deception or Sin?",
-    "context": "",
+    "context": "In Genesis 38, Tamar disguises herself as a prostitute to conceive by her father-in-law Judah after he fails to provide his third son Shelah for levirate marriage. When Judah discovers the truth, he declares, 'She is more righteous than I' (38:26). Tamar appears in the genealogy of David (Ruth 4:12) and of Jesus (Matthew 1:3). The moral evaluation of her method — deception and seduction — is complicated by the narrative's overall positive framing of her initiative.",
     "positions": [
       {
         "id": "justified-under-the-circumstances",
         "label": "Justified under the circumstances",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter"
+        ],
         "proponents": "Sarna, Wenham",
         "argument": "\"She is more righteous than I\" (38:26) is Judah's own verdict, which the narrative does not overturn. Tamar acted within her legal rights and used the only available means to enforce them. Her method was unconventional but her cause was just.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Judah's own verdict ('she is more righteous than I') validates Tamar's claim; her inclusion in the Davidic and Messianic genealogy signals divine approval; in the patriarchal context, Tamar had no legal recourse — Judah had all the power and was withholding Shelah.",
+        "weaknesses": "Judah's comparative statement ('more righteous than I') may indicate relative rather than absolute righteousness; the method involves deception and what amounts to incest, which Torah law later prohibits (Lev 18:15); genealogical inclusion does not necessarily imply moral endorsement of every ancestor's actions.",
+        "key_verses": [
+          "Genesis 38:14",
+          "Genesis 38:26",
+          "Ruth 4:12",
+          "Matthew 1:3"
+        ]
       },
       {
         "id": "sin-with-providential-consequences",
         "label": "Sin with providential consequences",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "calvin"
+        ],
         "proponents": "Calvin, Hamilton",
         "argument": "Calvin: \"I do not excuse the act of Tamar\" — but God used it. The same God who used Jacob's deception and the brothers' sale of Joseph uses Tamar's deception to preserve the Judahite line through which the Messiah will come. Providence redeems sin without endorsing it.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Maintains that deception and sexual immorality are never justified regardless of motive; God's ability to bring good from sin (Perez in the Davidic line) does not make the sin itself right; consistent with the Genesis pattern of showing how God works through flawed human actions without endorsing them.",
+        "weaknesses": "Judah's 'more righteous' verdict is hard to accommodate if Tamar's action is straightforwardly sinful; the narrative tone is sympathetic to Tamar throughout; the reading risks applying later Levitical categories to a pre-Sinai narrative.",
+        "key_verses": [
+          "Genesis 38:26",
+          "Leviticus 18:15",
+          "Genesis 50:20"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Judah's pronouncement ('She is more righteous than I') is the narrative's key moral signal, but interpreters disagree on its scope. It clearly condemns Judah's failure to fulfill levirate obligations and acknowledges Tamar's motive as legitimate. Whether it also justifies her method is less clear. The narrative shows Tamar acting within the only avenue available to her in a patriarchal society where Judah held all the power. Most scholars agree that the text presents Tamar sympathetically and Judah as the greater moral failure, without fully resolving the ethics of her deception.",
+    "related_passages": [
+      "Genesis 38:1-30",
+      "Deuteronomy 25:5-10",
+      "Ruth 4:12",
+      "Matthew 1:3",
+      "2 Samuel 13:1-22"
+    ],
+    "tags": [
+      "tamar",
+      "judah",
+      "levirate-marriage",
+      "deception",
+      "righteousness",
+      "genealogy"
+    ]
   },
   {
     "id": "potiphar-s-wife-ancient-near-eastern-parallels",
@@ -3148,34 +3689,59 @@
     ],
     "passage": "Genesis 39",
     "question": "Potiphar's Wife: Ancient Near Eastern Parallels",
-    "context": "",
+    "context": "The attempted seduction of Joseph by Potiphar's wife (Genesis 39) bears striking similarities to the Egyptian 'Tale of Two Brothers' (Papyrus d'Orbiney, c. 13th century BC), in which a married woman attempts to seduce her husband's younger brother and, when rejected, falsely accuses him. The question is whether the Genesis account draws on this Egyptian literary tradition or records an independent historical event that happens to share a common motif — the 'spurned-woman' type scene is widespread in Mediterranean and ANE literature (cf. Bellerophon in Homer, Phaedra in Greek tragedy).",
     "positions": [
       {
         "id": "tale-of-two-brothers-egypt-c-13th-c-bce",
         "label": "Tale of Two Brothers (Egypt, c.13th c. BCE)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Most OT scholars",
         "argument": "The Egyptian \"Tale of Two Brothers\" has the same basic plot: a wife propositions her husband's younger relative; he refuses; she accuses him falsely; he is punished. The parallel is widely cited.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The structural parallels are striking: attempted seduction by an authority figure's wife, rejection, false accusation, punishment of the innocent man; the Egyptian setting of the Joseph narrative makes direct cultural influence plausible; the Tale of Two Brothers was widely circulated in New Kingdom Egypt.",
+        "weaknesses": "Direct dependence is unprovable — the 'spurned woman' motif appears independently across many cultures; the Genesis account has distinctive theological and narrative features absent from the Egyptian tale; similarity of motif does not require literary borrowing.",
+        "key_verses": [
+          "Genesis 39:7-12",
+          "Genesis 39:13-18",
+          "Genesis 39:19-20"
+        ]
       },
       {
         "id": "independent-tradition",
         "label": "Independent tradition",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke",
+          "macarthur"
+        ],
         "proponents": "Kitchen, Sarna",
         "argument": "The parallel shows that this narrative type was known in the ancient world, but Genesis 39 is not dependent on the Egyptian tale. The theological content (God's presence, Joseph's God-centred refusal) is entirely distinctive. The parallel illuminates the cultural context without establishing literary dependence.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The 'spurned-woman' motif is a cross-cultural type scene, not evidence of specific borrowing; Genesis 39 integrates the episode into a larger theological narrative about divine providence that has no parallel in the Egyptian tale; Joseph's refusal is grounded in covenant theology ('sin against God'), not merely honor or loyalty.",
+        "weaknesses": "Cannot fully explain the density of parallels with the Tale of Two Brothers, which go beyond the basic motif; the Egyptian setting makes cultural influence at least possible; insisting on complete independence may be unnecessarily defensive.",
+        "key_verses": [
+          "Genesis 39:9",
+          "Genesis 39:21-23",
+          "Genesis 50:20"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The parallels between Genesis 39 and the Tale of Two Brothers are widely acknowledged, but their significance is assessed differently. The motif of a righteous man falsely accused by a spurned woman is so widespread across cultures that direct literary dependence is unprovable. Genesis 39 shows distinctive features — the theological framing ('How then could I do such a wicked thing and sin against God?'), the emphasis on Joseph's administrative competence, and the narrative's integration with the larger Joseph cycle — that go well beyond any single parallel. The question remains open but is less consequential than either side sometimes claims.",
+    "related_passages": [
+      "Genesis 39:1-23",
+      "Proverbs 5:1-23",
+      "Proverbs 7:1-27",
+      "2 Samuel 13:1-15"
+    ],
+    "tags": [
+      "joseph",
+      "potiphar",
+      "egypt",
+      "literary-parallels",
+      "ancient-near-east",
+      "false-accusation"
+    ]
   },
   {
     "id": "joseph-and-daniel-parallel-narratives",
@@ -3187,34 +3753,62 @@
     ],
     "passage": "Genesis 40",
     "question": "Joseph and Daniel: Parallel Narratives?",
-    "context": "",
+    "context": "Joseph and Daniel share a remarkable set of narrative parallels: both are Israelites in foreign courts, both interpret dreams/visions for pagan rulers, both rise to positions of extraordinary power, both maintain covenant faithfulness under pressure, and both demonstrate that Israel's God is sovereign over foreign empires. Scholars debate whether these parallels indicate deliberate typological patterning by the biblical authors or simply reflect that similar historical circumstances produce similar stories.",
     "positions": [
       {
         "id": "deliberate-typological-parallel",
         "label": "Deliberate typological parallel",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "longman"
+        ],
         "proponents": "Most commentators",
         "argument": "Both Joseph and Daniel are faithful Israelites in a foreign court; both interpret dreams for foreign kings; both are unjustly imprisoned and then exalted; both credit God as the true source of interpretation. The parallels are too numerous to be coincidental.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The parallels span multiple domains: foreign court, dream interpretation, divine wisdom, political rise, covenant faithfulness; the biblical authors demonstrably use typological patterning elsewhere (exodus/new exodus, David/Messiah); reading Daniel in light of Joseph enriches the theological message of both books about divine sovereignty over pagan empires.",
+        "weaknesses": "Typological readings can become over-determined — finding parallels where none are intended; if Daniel is merely modeled on Joseph, it may weaken claims for Daniel's historicity; some parallels (foreign court, wisdom, political rise) are generic enough to occur independently.",
+        "key_verses": [
+          "Genesis 41:16",
+          "Genesis 41:38-39",
+          "Daniel 2:27-28",
+          "Daniel 5:11-12"
+        ]
       },
       {
         "id": "independent-historical-events",
         "label": "Independent historical events",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Conservative scholars",
         "argument": "The parallels reflect the recurring pattern of God using faithful exiles in foreign courts — a real historical phenomenon. Both Joseph and Daniel are historical figures whose stories naturally share features because they faced similar situations.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Both accounts claim to narrate real events; similar circumstances (exile in a foreign court) naturally produce similar challenges and opportunities; the 'wise courtier' pattern is attested in ANE literature (Ahiqar, Esther) independently of any Joseph connection.",
+        "weaknesses": "The density of parallels goes beyond what coincidence easily explains; insisting on complete independence ignores how biblical authors deliberately pattern later narratives on earlier ones; historical independence and literary patterning are not mutually exclusive — both can be true simultaneously.",
+        "key_verses": [
+          "Genesis 39:2-6",
+          "Genesis 41:41-44",
+          "Daniel 1:17-20",
+          "Daniel 6:1-3"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The parallels are too numerous and specific to be accidental, but this does not resolve whether they result from Daniel being modeled on Joseph, Joseph being retold in light of Daniel, or both figures independently conforming to a 'wise courtier' paradigm. Most scholars recognize at least some degree of deliberate intertextual connection, with the Joseph narrative functioning as a literary and theological precedent for Daniel. The typological reading enriches both texts without requiring that either is fictional — real events can be narrated in typologically resonant patterns.",
+    "related_passages": [
+      "Genesis 37-50",
+      "Daniel 1-6",
+      "Genesis 41:1-45",
+      "Daniel 2:1-49",
+      "Daniel 5:1-31",
+      "Esther 2-10"
+    ],
+    "tags": [
+      "joseph",
+      "daniel",
+      "typology",
+      "court-narrative",
+      "dream-interpretation",
+      "exile"
+    ]
   },
   {
     "id": "joseph-s-rise-historical-plausibility",
@@ -3226,18 +3820,25 @@
     ],
     "passage": "Genesis 41",
     "question": "Joseph's Rise: Historical Plausibility",
-    "context": "",
+    "context": "Joseph's rise from slave to vizier of Egypt (Genesis 41) has been both defended and challenged on historical grounds. Defenders point to Egyptian records of Semitic officials in high positions (especially during the Hyksos period, c. 1650–1550 BC), the accurate Egyptian coloring of the narrative (titles, customs, embalming), and parallels to the 'Appointment of Vizier' texts. Critics note the lack of direct Egyptian attestation for Joseph, the idealized nature of the story, and the difficulty of pinning it to a specific pharaoh or period.",
     "positions": [
       {
         "id": "historically-plausible",
         "label": "Historically plausible",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna",
+          "macarthur"
+        ],
         "proponents": "Kitchen, Hoffmeier, Sarna",
         "argument": "The rise of a foreign-born official to high position in Egypt is attested in the Second Intermediate Period (Hyksos era) and the New Kingdom. The vizier Yuya (18th dynasty) was of Semitic origin. Egyptian administrative titles (sar hatabbachim, etc.) match the period.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Semitic officials held high positions in Egypt, especially during the Hyksos period; the narrative's Egyptian details (investiture ceremony, signet ring, gold chain, Egyptian name) match known practices; the famine-administration account (ch. 47) reflects plausible ANE economic policy.",
+        "weaknesses": "No Egyptian text mentions Joseph or a Hebrew vizier; the absence of evidence is not evidence of absence, but it prevents positive confirmation; the idealized narrative arc (slave → prisoner → vizier) follows literary conventions that may shape the account.",
+        "key_verses": [
+          "Genesis 41:41-45",
+          "Genesis 47:13-26",
+          "Psalm 105:16-22"
+        ]
       },
       {
         "id": "idealised-legendary",
@@ -3246,14 +3847,31 @@
         "scholar_ids": [],
         "proponents": "Some critical scholars",
         "argument": "The rags-to-riches trajectory and the providential perfection of the story suggest theological shaping that may outrun historical detail.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The rise from slave to second-in-command follows the 'rags to riches' narrative pattern common in ANE court tales; the lack of Egyptian attestation, combined with the story's literary artistry, suggests the account may be a theological narrative rather than strict history; the narrative functions primarily to explain Israel's presence in Egypt, not to record administrative history.",
+        "weaknesses": "The accurate Egyptian coloring is difficult to explain if the story is purely legendary — someone with genuine knowledge of Egyptian customs shaped the narrative; the 'legendary' label often functions as an argument from silence; other ANE figures attested only in their own traditions are not automatically dismissed.",
+        "key_verses": [
+          "Genesis 41:38-39",
+          "Genesis 41:41-44",
+          "Genesis 50:22-26"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "No direct Egyptian evidence for Joseph has been found, but this is unsurprising given the limited survival of records and the political incentive to suppress memory of foreign officials. The narrative's Egyptian coloring is widely acknowledged as accurate — titles, customs, and administrative procedures fit known Egyptian practice. The Hyksos period remains the most commonly proposed setting, as Semitic rulers would have been more receptive to a Semitic vizier. Most scholars treat the question as open: the story is plausible within Egyptian history but unverifiable by external evidence.",
+    "related_passages": [
+      "Genesis 41:1-57",
+      "Genesis 41:41-45",
+      "Genesis 47:13-26",
+      "Psalm 105:16-22",
+      "Acts 7:9-14"
+    ],
+    "tags": [
+      "joseph",
+      "egypt",
+      "historicity",
+      "hyksos",
+      "archaeology",
+      "vizier"
+    ]
   },
   {
     "id": "joseph-s-testing-revenge-righteousness-or-redemption",
@@ -3343,34 +3961,57 @@
     ],
     "passage": "Genesis 43",
     "question": "The Egyptian Separation at Table (43:32): Historical Accuracy",
-    "context": "",
+    "context": "Genesis 43:32 notes that the Egyptians could not eat with the Hebrews because 'that is detestable to Egyptians.' This detail has been evaluated both as evidence for historical authenticity (reflecting genuine Egyptian customs of ritual purity and ethnic separation at meals) and as a literary device that creates dramatic irony — Joseph eats separately from both groups, caught between his Egyptian identity and his Hebrew family.",
     "positions": [
       {
         "id": "historically-accurate",
         "label": "Historically accurate",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Kitchen, Sarna, Hoffmeier",
         "argument": "Egyptian texts and wall paintings confirm that Egyptians considered eating with foreigners (especially Semites/Asiatics) ritually defiling. The three-way separation (Egyptians / Hebrews / Joseph separately) reflects authentic Egyptian social customs of the period.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Egyptian ritual purity practices are well-attested; Herodotus confirms analogous food taboos between Egyptians and Greeks; Genesis 46:34 ('every shepherd is detestable to the Egyptians') provides a consistent picture of Egyptian ethnic boundaries; the detail is too specific and culturally apt to be invented by an author unfamiliar with Egypt.",
+        "weaknesses": "The specific prohibition on eating with Semites is not directly attested in surviving Egyptian texts; Herodotus wrote in the 5th century BC, well after the patriarchal period; the detail could reflect general knowledge of Egyptian customs rather than eyewitness accuracy.",
+        "key_verses": [
+          "Genesis 43:32",
+          "Genesis 46:34",
+          "Exodus 8:26"
+        ]
       },
       {
         "id": "literary-device",
         "label": "Literary device",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter"
+        ],
         "proponents": "Some scholars",
         "argument": "The separation functions literarily to heighten the irony: the administrator eating separately is the Hebrew brother they seek.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The three-table arrangement (Egyptians, Joseph alone, brothers) creates a powerful visual of Joseph's liminal identity; the seating order of the brothers by age (43:33) builds dramatic tension toward the revelation scene; the detail serves the narrative's themes of hiddenness and identity regardless of its historicity.",
+        "weaknesses": "Literary function does not exclude historical accuracy — both can be true simultaneously; treating the detail as purely literary ignores the consistency with other Egyptian-custom notices in Genesis; the specificity of the taboo claim argues against pure invention.",
+        "key_verses": [
+          "Genesis 43:32-34",
+          "Genesis 45:1-3"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Egyptian sources confirm that ritual purity concerns governed eating practices, though the specific prohibition on eating with Semites is not directly attested outside the Bible. Herodotus (Histories 2.41) reports that Egyptians would not use Greek utensils or eat Greek-slaughtered meat, suggesting analogous ethnic food taboos. The detail functions both historically (reflecting genuine Egyptian customs) and literarily (creating Joseph's identity tension). Most scholars see the notice as at least historically plausible and narratively significant regardless of its precise documentary basis.",
+    "related_passages": [
+      "Genesis 43:32-34",
+      "Genesis 46:34",
+      "Exodus 8:26",
+      "Genesis 41:45"
+    ],
+    "tags": [
+      "egypt",
+      "historicity",
+      "ritual-purity",
+      "table-fellowship",
+      "joseph",
+      "identity"
+    ]
   },
   {
     "id": "judah-s-speech-44-18-34-rhetoric-and-transformation",
@@ -3382,18 +4023,26 @@
     ],
     "passage": "Genesis 44",
     "question": "Judah's Speech (44:18-34): Rhetoric and Transformation",
-    "context": "",
+    "context": "Judah's speech in Genesis 44:18–34 is often regarded as the emotional and theological climax of the Joseph narrative. Judah — who had proposed selling Joseph into slavery (37:26–27) — now offers himself as a slave in Benjamin's place. The speech is masterfully constructed, recounting the family history from the Egyptian lord's perspective while subtly emphasizing Jacob's grief. Scholars debate whether the speech represents genuine moral transformation or a pragmatic calculation to avoid returning to Jacob without Benjamin.",
     "positions": [
       {
         "id": "genuine-moral-transformation",
         "label": "Genuine moral transformation",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter",
+          "waltke"
+        ],
         "proponents": "Most commentators",
         "argument": "The speech demonstrates that Judah has fundamentally changed since chapter 37. The man who proposed selling Joseph for profit now volunteers permanent slavery for his brother's freedom. This is not surface behaviour change but character transformation.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The structural reversal is unmistakable: the man who sold his brother into slavery offers himself as a slave to save a brother; Joseph's weeping response (45:1–2) is triggered by Judah's speech, indicating it achieved its moral purpose; Judah's later preeminence (49:8–12) is narratively grounded in this moment of self-sacrificial leadership.",
+        "weaknesses": "The speech is so rhetorically polished that some readers see calculation rather than spontaneity; Judah has a personal guarantee at stake (43:8–10), which could motivate the offer apart from moral transformation; the narrative does not include an explicit statement of repentance from Judah.",
+        "key_verses": [
+          "Genesis 44:33-34",
+          "Genesis 37:26-27",
+          "Genesis 45:1-2",
+          "Genesis 49:8-12"
+        ]
       },
       {
         "id": "pragmatic-self-interest",
@@ -3402,14 +4051,32 @@
         "scholar_ids": [],
         "proponents": "Cynical readings",
         "argument": "Judah is protecting himself from the consequences of the surety oath he made to his father (43:9). His offer is motivated by avoiding the shame of breaking his word rather than genuine altruism.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Judah has pledged surety for Benjamin (43:9) and faces Jacob's wrath if he returns empty-handed; the speech carefully avoids mentioning the brothers' treatment of Joseph, suggesting strategic omission; the rhetorical sophistication could indicate a calculated appeal rather than raw emotion.",
+        "weaknesses": "Offering oneself as a permanent slave to a foreign ruler is an extreme pragmatic cost that exceeds mere guarantee-fulfillment; the narrative context (Joseph's series of tests) is designed to reveal character, not pragmatism; this reading must explain why Joseph breaks down — if he reads Judah as merely strategic, why does the speech move him?",
+        "key_verses": [
+          "Genesis 43:8-10",
+          "Genesis 44:18-34",
+          "Genesis 44:30-31"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The narrative strongly signals genuine transformation: Judah's willingness to substitute himself for Benjamin directly reverses his earlier callousness toward Joseph. The speech's rhetorical sophistication does not undermine its sincerity — eloquence and genuine feeling are not opposed. Most scholars read the speech as the moment that resolves Joseph's test: he has been engineering situations to determine whether his brothers have changed, and Judah's self-sacrifice provides the answer. The pragmatic reading, while intellectually defensible, runs against the grain of the narrative's emotional logic.",
+    "related_passages": [
+      "Genesis 37:26-27",
+      "Genesis 42:21-22",
+      "Genesis 43:8-10",
+      "Genesis 44:18-34",
+      "Genesis 45:1-15",
+      "Genesis 49:8-12"
+    ],
+    "tags": [
+      "judah",
+      "transformation",
+      "rhetoric",
+      "joseph-cycle",
+      "self-sacrifice",
+      "repentance"
+    ]
   },
   {
     "id": "joseph-s-forgiveness-does-he-explicitly-forgive",
@@ -3421,34 +4088,62 @@
     ],
     "passage": "Genesis 45",
     "question": "Joseph's Forgiveness: Does He Explicitly Forgive?",
-    "context": "",
+    "context": "Joseph's response to his brothers' fear after Jacob's death (Genesis 50:15–21) includes the famous statement, 'You intended to harm me, but God intended it for good' (50:20). Notably, Joseph never says 'I forgive you' — he reframes the event theologically rather than granting explicit pardon. Similarly, in the initial revelation scene (45:1–15), Joseph weeps and embraces but does not use forgiveness language. Scholars debate whether this theological reframing constitutes forgiveness, transcends it, or deliberately avoids it.",
     "positions": [
       {
         "id": "implicit-but-not-explicit",
         "label": "Implicit but not explicit",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter",
+          "sarna"
+        ],
         "proponents": "Alter, some commentators",
         "argument": "Joseph never uses the Hebrew words for forgiveness (salach, nasa) in ch.45. He reinterprets the events theologically but does not pronounce explicit absolution. The explicit forgiveness comes only in ch.50:19-21 after Jacob's death — when the brothers fear renewed revenge.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Joseph never uses forgiveness language — he reframes rather than pardons; his question 'Am I in the place of God?' (50:19) deflects rather than resolves the forgiveness question; the Hebrew Bible reserves forgiveness language (sālakh, nāśā') primarily for God, suggesting Joseph may deliberately avoid usurping a divine prerogative.",
+        "weaknesses": "Joseph's actions (weeping, embracing, providing for the brothers) demonstrate the substance of forgiveness even without the label; insisting on explicit vocabulary may impose modern expectations on an ancient text; the brothers' fear (50:15) is resolved practically if not verbally.",
+        "key_verses": [
+          "Genesis 50:19-21",
+          "Genesis 45:4-8",
+          "Genesis 50:15-17"
+        ]
       },
       {
         "id": "complete-forgiveness-in-ch-45",
         "label": "Complete forgiveness in ch.45",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke",
+          "macarthur"
+        ],
         "proponents": "Hamilton, Wenham, MacArthur",
         "argument": "The embrace, weeping, kissing, and \"do not be distressed or angry with yourselves\" constitute complete forgiveness, even without using the word. The provision (food, wagons, gifts) demonstrates forgiveness in action.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Joseph's emotional response in 45:1–15 — weeping, self-revelation, embracing, kissing — constitutes enacted forgiveness regardless of verbal formula; his theological reframing ('God sent me ahead of you,' 45:5–7) removes blame rather than merely pardoning it; his ongoing provision for the brothers (45:11; 47:12; 50:21) demonstrates sustained reconciliation.",
+        "weaknesses": "The brothers remain afraid after Jacob's death (50:15), suggesting the reconciliation was not fully experienced as forgiveness; Joseph's prior testing of the brothers (silver cup scheme) is not obviously consistent with someone who has already forgiven; the absence of explicit forgiveness language may be theologically significant rather than merely stylistic.",
+        "key_verses": [
+          "Genesis 45:1-5",
+          "Genesis 45:14-15",
+          "Genesis 50:21"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Joseph's response in 50:19–21 combines three elements: a disclaimer of divine prerogative ('Am I in the place of God?'), a theological reinterpretation of the brothers' act, and a practical commitment to provide for them. Whether this constitutes 'forgiveness' depends on definition. It lacks the explicit relational language of pardon but exceeds it in some ways by offering a cosmic reframing. Most scholars note that the Hebrew Bible has limited vocabulary for interpersonal forgiveness (the concept is primarily divine) and that Joseph's response should be evaluated within that lexical reality rather than measured against later Christian forgiveness theology.",
+    "related_passages": [
+      "Genesis 45:1-15",
+      "Genesis 50:15-21",
+      "Genesis 50:19-20",
+      "Matthew 18:21-35",
+      "Romans 12:17-21",
+      "Psalm 130:3-4"
+    ],
+    "tags": [
+      "joseph",
+      "forgiveness",
+      "providence",
+      "theodicy",
+      "reconciliation",
+      "divine-sovereignty"
+    ]
   },
   {
     "id": "god-s-appearance-at-beersheba-the-last-patriarchal-theophany",
@@ -3460,34 +4155,61 @@
     ],
     "passage": "Genesis 46",
     "question": "God's Appearance at Beersheba: The Last Patriarchal Theophany",
-    "context": "",
+    "context": "In Genesis 46:1–4, God appears to Jacob/Israel at Beersheba as the family prepares to descend to Egypt. This is the last recorded theophany in the patriarchal narratives and the last time God speaks directly to an individual before the silence that precedes the burning bush (Exodus 3). The theophany reassures Jacob that going to Egypt is within God's plan and reaffirms the covenant promises. Its placement at the threshold between Canaan and Egypt gives it structural significance as a theological boundary marker.",
     "positions": [
       {
         "id": "covenant-boundary-moment",
         "label": "Covenant boundary moment",
         "tradition_family": "reformed",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke",
+          "macarthur"
+        ],
         "proponents": "Sarna, Wenham, Hamilton",
         "argument": "Beersheba is the last covenant site before the wilderness. God appears here to authorise a crossing that would otherwise seem to violate the covenant geography. The appearance is necessary because Jacob is crossing out of the promised land for the first time since his return from Haran.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The theophany explicitly reaffirms covenant promises ('I will make you into a great nation there,' 46:3); it addresses Jacob's likely anxiety about leaving the promised land; the 'I will go down with you' language echoes the patriarchal promise pattern (28:15; 31:3) and anticipates the exodus.",
+        "weaknesses": "The covenantal reading can overlook the literary and emotional dimensions — Jacob is an old man facing radical displacement; the promises here largely repeat earlier covenant formulations without significant new content.",
+        "key_verses": [
+          "Genesis 46:2-4",
+          "Genesis 15:13-14",
+          "Genesis 28:15"
+        ]
       },
       {
         "id": "narrative-closure",
         "label": "Narrative closure",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "alter"
+        ],
         "proponents": "Alter",
         "argument": "The appearance at Beersheba is the last direct divine speech to Jacob and the last patriarchal theophany in Genesis. It closes the series of Bethel/Peniel/Beersheba divine appearances that have defined Jacob's life. The covenant is complete; the patriarch can now rest.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The theophany provides structural bookending: the patriarchal era opens with God's call to Abraham to leave (12:1) and closes with God's permission for Jacob to leave; the night vision format (46:2) echoes earlier patriarchal encounters; the divine silence that follows (until Exodus 3) makes this the definitive end of an era.",
+        "weaknesses": "Purely literary readings can understate the theological content of the divine speech; the passage is doing more than providing structural closure — it carries genuine covenant substance; the narrative-closure framework may be a modern scholarly construct that ancient audiences would not have recognized.",
+        "key_verses": [
+          "Genesis 46:1-4",
+          "Genesis 12:1-3",
+          "Exodus 3:6"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Scholars across traditions agree on the passage's structural importance as the final patriarchal theophany, but they differ on whether its primary significance is covenantal (reaffirming promises at a critical juncture) or literary (providing narrative closure to the patriarchal era). The two readings are complementary: the covenantal reaffirmation functions as narrative closure, and the literary boundary marks a covenant transition. The divine promise 'I will go down to Egypt with you, and I will surely bring you back again' (46:4) encapsulates the entire exodus narrative in advance, making this theophany both retrospective and prospective.",
+    "related_passages": [
+      "Genesis 46:1-4",
+      "Genesis 26:23-25",
+      "Genesis 28:10-15",
+      "Exodus 3:1-12",
+      "Genesis 15:12-16",
+      "Acts 7:15-17"
+    ],
+    "tags": [
+      "theophany",
+      "beersheba",
+      "jacob",
+      "covenant",
+      "egypt",
+      "patriarchal-era"
+    ]
   },
   {
     "id": "joseph-s-famine-policy-economic-wisdom-or-oppression",
@@ -3499,34 +4221,61 @@
     ],
     "passage": "Genesis 47",
     "question": "Joseph's Famine Policy: Economic Wisdom or Oppression?",
-    "context": "",
+    "context": "Genesis 47:13–26 describes Joseph's administration during the famine: he collects all Egypt's money, livestock, and land in exchange for grain, reducing the population to serfdom. The Egyptians themselves say, 'You have saved our lives' (47:25), but modern readers often find the policy exploitative — Joseph centralizes all wealth under Pharaoh while the people become tenant farmers. The passage raises questions about whether the narrator views Joseph's policy approvingly, critically, or neutrally.",
     "positions": [
       {
         "id": "oppression-exploitation",
         "label": "Oppression / exploitation",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "brueggemann"
+        ],
         "proponents": "Some modern readings",
         "argument": "Joseph systematically strips the Egyptian population of money, livestock, land, and personal freedom in exchange for food during a crisis. This is a forced transfer of wealth from the people to the crown, exploiting the famine.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The policy systematically strips the population of every form of wealth and independence; the progression (money → livestock → land → persons) mirrors oppressive economic extraction; the irony that Israel's deliverer creates the very serfdom system that will later enslave Israel is structurally significant.",
+        "weaknesses": "The Egyptians explicitly express gratitude (47:25), which the narrator includes without ironic qualification; judging ANE economic administration by modern standards of distributive justice may be anachronistic; Joseph acts within Pharaoh's authority and during a genuine survival crisis.",
+        "key_verses": [
+          "Genesis 47:19-20",
+          "Genesis 47:23-25",
+          "Exodus 1:8-11"
+        ]
       },
       {
         "id": "salvation-and-reasonable-reorganisation",
         "label": "Salvation and reasonable reorganisation",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke",
+          "macarthur"
+        ],
         "proponents": "Sarna, Kitchen, Wenham",
         "argument": "The people voluntarily make the exchanges; they explicitly say \"you have saved our lives\" (v.25) and accept the 20% tax as fair. The policy created a stable agricultural economy that outlasted the crisis. No one died of famine in Egypt under Joseph's administration.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Joseph saves an entire civilization from starvation — the alternative to his policy is mass death; the 20% tax he institutes (47:26) is moderate by ANE standards; the priestly exemption (47:22) shows the policy has structural limits; the narrative frames Joseph's administration as an extension of divine providence.",
+        "weaknesses": "The fact that the people 'become slaves to Pharaoh' (47:21) cannot be entirely normalized; later biblical texts (Deut 15; Lev 25) establish land-redemption and debt-relief principles that stand in tension with Joseph's policy; the narrative's silence about the policy's morality is not the same as endorsement.",
+        "key_verses": [
+          "Genesis 47:25-26",
+          "Genesis 41:33-36",
+          "Genesis 50:20"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The narrative presents the policy without explicit moral commentary, leaving interpretation to the reader. The Egyptians' gratitude (47:25) and the note that priests retained their land (47:26) suggest the narrator sees the arrangement as orderly and fair within its context. However, the progressive dispossession — money, then livestock, then land, then freedom — reads uncomfortably to modern audiences attuned to economic justice. Most scholars note that the passage functions primarily to explain Egypt's land-tenure system and to position Joseph as a capable administrator, rather than to make a moral argument about economic policy.",
+    "related_passages": [
+      "Genesis 47:13-26",
+      "Genesis 41:33-36",
+      "Genesis 41:46-57",
+      "Deuteronomy 15:1-11",
+      "Leviticus 25:23-28",
+      "1 Samuel 8:10-18"
+    ],
+    "tags": [
+      "joseph",
+      "famine",
+      "economics",
+      "egypt",
+      "centralization",
+      "ethics"
+    ]
   },
   {
     "id": "the-double-tribe-status-of-joseph-legal-and-theological-sign",
@@ -3538,34 +4287,65 @@
     ],
     "passage": "Genesis 48",
     "question": "The Double-Tribe Status of Joseph: Legal and Theological Significance",
-    "context": "",
+    "context": "In Genesis 48, Jacob adopts Joseph's sons Ephraim and Manasseh as his own, effectively giving Joseph a double portion of the inheritance — the right of the firstborn (cf. Deut 21:17; 1 Chr 5:1–2). This creates the anomaly of 'twelve tribes' being sometimes thirteen, with Levi's landless priestly status compensating numerically. The double-tribe arrangement has legal (inheritance law), theological (covenant blessing), and political (northern kingdom dominance) dimensions.",
     "positions": [
       {
         "id": "compensation-for-the-firstborn-right",
         "label": "Compensation for the firstborn right",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna",
+          "macarthur"
+        ],
         "proponents": "Sarna, Hamilton",
         "argument": "Reuben forfeited the firstborn's double portion (49:3-4). By adopting Ephraim and Manasseh as equal to his own sons, Jacob effectively gives Joseph the firstborn's double portion — two tribal allotments in the land. 1 Chr 5:1-2 confirms this reading.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "1 Chronicles 5:1–2 explicitly states that Joseph received the birthright because Reuben defiled his father's bed; the double portion is the recognized legal entitlement of the firstborn (Deut 21:17); Jacob's adoption act has clear legal parallels in ANE adoption documents.",
+        "weaknesses": "The Genesis narrative does not explicitly frame the adoption as compensation for Reuben's disqualification — that connection is made later by the Chronicler; the emphasis in Genesis 48 falls on Jacob's crossed hands and the Ephraim-over-Manasseh reversal, not on inheritance law.",
+        "key_verses": [
+          "Genesis 48:5-6",
+          "Deuteronomy 21:17",
+          "1 Chronicles 5:1-2",
+          "Genesis 35:22"
+        ]
       },
       {
         "id": "fulfilment-of-joseph-s-destiny",
         "label": "Fulfilment of Joseph's destiny",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke",
+          "alter"
+        ],
         "proponents": "Wenham",
         "argument": "Joseph was the beloved son, the heir-apparent. The double portion gives him the inheritance commensurate with his role in the family and the covenant narrative.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The double portion completes the narrative arc from Joseph's youthful dreams (37:5–11) through his suffering and exaltation; the blessing language in 48:15–16 and 49:22–26 is among the richest in Genesis, signaling theological rather than merely legal significance; Ephraim's later prominence as the leading northern tribe fulfills the blessing prospectively.",
+        "weaknesses": "May over-spiritualize what is primarily a legal-inheritance act; the narrative's emphasis on the hand-crossing (younger over older) could simply extend the Genesis pattern without requiring a grand theological framework; Ephraim's later prominence could be coincidental rather than fulfillment.",
+        "key_verses": [
+          "Genesis 48:15-20",
+          "Genesis 49:22-26",
+          "Genesis 37:5-11",
+          "Joshua 17:14-18"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Jacob's adoption of Ephraim and Manasseh is widely recognized as conferring firstborn status on Joseph — an act consistent with his own experience of the younger supplanting the elder. The crossing of hands to bless Ephraim over Manasseh (48:13–20) reinforces this pattern. Historically, Ephraim's dominance in the northern kingdom fulfills the blessing; theologically, the double portion signals Joseph's favored status without disrupting the twelve-tribe structure. The key scholarly difference is whether the passage primarily explains an existing political reality (Ephraim's prominence) or records a genuine patriarchal act that later political realities fulfilled.",
+    "related_passages": [
+      "Genesis 48:1-22",
+      "Genesis 49:22-26",
+      "Deuteronomy 21:15-17",
+      "1 Chronicles 5:1-2",
+      "Joshua 14:4",
+      "Ezekiel 47:13"
+    ],
+    "tags": [
+      "joseph",
+      "ephraim",
+      "manasseh",
+      "firstborn",
+      "adoption",
+      "twelve-tribes",
+      "inheritance"
+    ]
   },
   {
     "id": "genesis-49-as-the-oldest-hebrew-poetry-form-and-date",
