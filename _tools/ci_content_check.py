@@ -270,7 +270,7 @@ def build_summary_markdown(
     quality_warnings: list,
     accuracy_warnings: list,
 ) -> str:
-    """Build the PR comment markdown."""
+    """Build the PR comment markdown with section-level detail."""
 
     lines = ["## Content Pipeline — Quality & Accuracy Report", ""]
 
@@ -289,7 +289,7 @@ def build_summary_markdown(
     lines.append(f"**Scope:** {total_chapters} chapter(s) across {total_books} book(s)")
     lines.append("")
 
-    # Quality table
+    # ── Quality: per-chapter scores with findings ──────────────
     all_quality = []
     for book, results in quality_results.items():
         all_quality.extend([(book, r) for r in results])
@@ -299,57 +299,96 @@ def build_summary_markdown(
         lines.append("")
         lines.append("| Chapter | Score | Grade | Status |")
         lines.append("|---------|-------|-------|--------|")
+        chapters_with_findings = []
         for book, qr in all_quality:
             score = qr["score"]
             grade = qr["grade"]
             if score < 0:
                 status = "⚠️ Error"
             elif score < QUALITY_FLOOR:
-                status = f"⚠️ Below {QUALITY_FLOOR} floor"
+                status = f"⚠️ Below {QUALITY_FLOOR}"
             else:
                 status = "✅"
             lines.append(f"| {book} {qr['chapter']} | {score} | {grade} | {status} |")
+            if qr.get("findings"):
+                chapters_with_findings.append((book, qr))
         lines.append("")
 
-    # Accuracy table
+        # Show findings per chapter in collapsible section
+        if chapters_with_findings:
+            lines.append("<details>")
+            lines.append("<summary>Quality findings detail</summary>")
+            lines.append("")
+            for book, qr in chapters_with_findings:
+                lines.append(f"**{book} {qr['chapter']}**")
+                for f in qr["findings"][:5]:
+                    lines.append(f"- {f}")
+                if len(qr["findings"]) > 5:
+                    lines.append(f"- *...and {len(qr['findings']) - 5} more*")
+                lines.append("")
+            lines.append("</details>")
+            lines.append("")
+
+    # ── Accuracy: section-level detail ─────────────────────────
+    total_claims = 0
+    total_verified = 0
+    total_flagged = 0
+    total_refuted = 0
+    issues_by_chapter = {}  # chapter_id -> [(panel, type, status, notes)]
+
     for book, ar in accuracy_results.items():
-        stats = ar["stats"]
-        total = ar["total"]
-        if total > 0:
-            lines.append(f"### Content Accuracy — {book.replace('_',' ').title()}")
-            lines.append("")
-            lines.append(f"| Metric | Count |")
-            lines.append(f"|--------|-------|")
-            lines.append(f"| Total claims | {total} |")
-            for status in [STATUS_VERIFIED, STATUS_SKIPPED, STATUS_FLAGGED,
-                           STATUS_REFUTED, STATUS_UNVERIFIED]:
-                count = stats.get(status, 0)
-                if count > 0:
-                    lines.append(f"| {status} | {count} |")
-            if ar["tier2_calls"] > 0:
-                lines.append(f"| Tier 2 API calls | {ar['tier2_calls']} (~${ar['tier2_cost']:.2f}) |")
-            lines.append("")
+        total_claims += ar["total"]
+        total_verified += ar["stats"].get(STATUS_VERIFIED, 0) + ar["stats"].get(STATUS_SKIPPED, 0)
+        total_flagged += ar["stats"].get(STATUS_FLAGGED, 0)
+        total_refuted += ar["stats"].get(STATUS_REFUTED, 0)
 
-    # Regression details
-    if regression["new_refuted"]:
-        lines.append("### ❌ New Refuted Claims")
-        lines.append("")
-        for c in regression["new_refuted"]:
-            lines.append(f"- **`{c['id']}`** [{c['claim_type']}]")
-            lines.append(f"  - {c['notes'][:200]}")
-            if c.get("fix_suggestion"):
-                lines.append(f"  - **Fix:** {c['fix_suggestion'][:200]}")
-        lines.append("")
+        for claim in ar["claims"]:
+            if claim["status"] not in PASSING_STATUSES:
+                ch_key = claim["chapter_id"]
+                if ch_key not in issues_by_chapter:
+                    issues_by_chapter[ch_key] = []
+                issues_by_chapter[ch_key].append(claim)
 
-    if regression["new_flagged"]:
-        lines.append(f"### ⚠️ New Flagged Claims ({len(regression['new_flagged'])})")
+    if total_claims > 0:
+        lines.append("### Content Accuracy")
         lines.append("")
-        for c in regression["new_flagged"][:10]:
-            lines.append(f"- **`{c['id']}`** [{c['claim_type']}]: {c['notes'][:150]}")
-        if len(regression["new_flagged"]) > 10:
-            lines.append(f"- ... and {len(regression['new_flagged']) - 10} more")
+        lines.append(f"**{total_claims}** claims checked — "
+                     f"**{total_verified}** verified, "
+                     f"**{total_flagged}** flagged, "
+                     f"**{total_refuted}** refuted")
+
+        # Tier 2 cost summary
+        t2_calls = sum(ar["tier2_calls"] for ar in accuracy_results.values())
+        if t2_calls > 0:
+            t2_cost = sum(ar["tier2_cost"] for ar in accuracy_results.values())
+            lines.append(f" ({t2_calls} Tier 2 API calls, ~${t2_cost:.2f})")
         lines.append("")
 
+        # Show non-passing claims grouped by chapter → panel
+        if issues_by_chapter:
+            for ch_id in sorted(issues_by_chapter.keys()):
+                claims = issues_by_chapter[ch_id]
+                lines.append(f"#### {ch_id}")
+                lines.append("")
+                lines.append("| Panel | Type | Status | Note |")
+                lines.append("|-------|------|--------|------|")
+                for c in claims:
+                    status_icon = "❌" if c["status"] == STATUS_REFUTED else "⚠️"
+                    note = c["notes"][:120] if c["notes"] else ""
+                    lines.append(
+                        f"| `{c['panel_type']}` | {c['claim_type']} "
+                        f"| {status_icon} {c['status']} | {note} |"
+                    )
+                lines.append("")
+
+                # Show fix suggestions for refuted claims
+                refuted = [c for c in claims if c["status"] == STATUS_REFUTED and c.get("fix_suggestion")]
+                if refuted:
+                    for c in refuted:
+                        lines.append(f"> **Fix `{c['panel_type']}`:** {c['fix_suggestion'][:200]}")
+                    lines.append("")
+
+    # ── Regression ─────────────────────────────────────────────
     if regression["resolved"]:
         lines.append(f"### ✅ Resolved ({len(regression['resolved'])} previously flagged claims now verified)")
         lines.append("")
@@ -360,18 +399,6 @@ def build_summary_markdown(
         lines.append("")
         for err in hard_errors:
             lines.append(f"- ❌ {err}")
-        lines.append("")
-
-    # Quality warnings detail
-    if quality_warnings:
-        lines.append("### Quality Warnings")
-        lines.append("")
-        for w in quality_warnings:
-            book, qr = w
-            lines.append(f"- ⚠️ **{book} {qr['chapter']}** scored {qr['score']}"
-                         f" (below floor of {QUALITY_FLOOR})")
-            for f in qr.get("findings", [])[:3]:
-                lines.append(f"  - {f}")
         lines.append("")
 
     lines.append("---")
