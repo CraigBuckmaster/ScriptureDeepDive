@@ -10,7 +10,7 @@ Validation sections:
   2. CROSS-REFERENCES  — Scholar scopes → valid books, people parent refs → valid IDs
   3. COMPLETENESS      — 66 live books, correct chapter counts
   4. PANEL DISTRIBUTION — Section/chapter panel type frequency counts
-  5. FEATURE META      — Prophecy chains, concepts, difficult passages schema
+  5. FEATURE META      — Prophecy chains, concepts, difficult passages, debate topics schema
 
 Exit codes:
   0 = all checks passed
@@ -265,6 +265,104 @@ def main():
                         check(f"passage {p.get('id','?')} response [{j}] has '{rk}'",
                               rk in r, f"missing '{rk}'")
         print(f"  difficult passages: {len(dp_data)}")
+
+    # ── Debate Topics ──
+    dt_path = META / 'debate-topics.json'
+    if dt_path.exists():
+        print("\n--- DEBATE TOPICS ---")
+        dt_data = json.loads(dt_path.read_text())
+        check("debate-topics.json is list", isinstance(dt_data, list))
+
+        all_book_ids = {b['id'] for b in books}
+        valid_categories = {'ethical', 'historical', 'interpretive', 'textual', 'theological'}
+        tag_re = re.compile(r'^[a-z0-9]+(-[a-z0-9]+)*$')
+        seen_topic_ids = set()
+        enriched_count = 0
+        unenriched_ids = []
+        tag_format_warnings = 0
+
+        for i, t in enumerate(dt_data):
+            tid = t.get('id', f'index_{i}')
+
+            # ── Structural: required skeleton fields ──
+            for key in ('id', 'title', 'category', 'book_id', 'chapters', 'passage', 'question'):
+                check(f"debate topic {tid} has '{key}'", key in t,
+                      f"missing '{key}'")
+
+            # Unique ID
+            if 'id' in t:
+                check(f"debate topic {tid} unique ID",
+                      t['id'] not in seen_topic_ids,
+                      f"duplicate ID: {t['id']}")
+                seen_topic_ids.add(t['id'])
+
+            # book_id referential integrity
+            book_id = t.get('book_id')
+            if book_id:
+                check(f"debate topic {tid} book_id valid",
+                      book_id in all_book_ids,
+                      f"'{book_id}' not in books.json")
+
+            # category membership
+            cat = t.get('category')
+            if cat:
+                check(f"debate topic {tid} category valid",
+                      cat in valid_categories,
+                      f"'{cat}' not in {sorted(valid_categories)}")
+
+            # positions non-empty list
+            positions = t.get('positions', [])
+            check(f"debate topic {tid} has positions",
+                  isinstance(positions, list) and len(positions) >= 1,
+                  f"got {len(positions) if isinstance(positions, list) else type(positions).__name__}")
+
+            # Position structural validation
+            for j, pos in enumerate(positions):
+                for pk in ('id', 'label', 'tradition_family', 'argument'):
+                    check(f"debate topic {tid} position [{j}] has '{pk}'",
+                          pk in pos,
+                          f"missing '{pk}'")
+
+                # scholar_ids referential integrity (if present)
+                for sid in pos.get('scholar_ids', []):
+                    check(f"debate topic {tid} pos [{j}] scholar '{sid}' valid",
+                          sid in scholar_ids,
+                          f"'{sid}' not in scholars.json")
+
+            # ── Enrichment completeness ──
+            has_context = bool(t.get('context'))
+            has_synthesis = bool(t.get('synthesis'))
+            has_related = isinstance(t.get('related_passages'), list) and len(t.get('related_passages', [])) > 0
+            has_tags = isinstance(t.get('tags'), list) and len(t.get('tags', [])) >= 3
+
+            # Check position-level enrichment
+            positions_enriched = True
+            for pos in positions:
+                if not (pos.get('strengths') and pos.get('weaknesses')):
+                    positions_enriched = False
+                if not (isinstance(pos.get('key_verses'), list) and len(pos.get('key_verses', [])) >= 2):
+                    positions_enriched = False
+
+            fully_enriched = all([has_context, has_synthesis, has_related, has_tags, positions_enriched])
+
+            if fully_enriched:
+                enriched_count += 1
+
+                # Tag format check (warning only — existing data has non-conforming tags)
+                for tag in t.get('tags', []):
+                    if not tag_re.match(tag):
+                        tag_format_warnings += 1
+            else:
+                unenriched_ids.append(tid)
+
+        # Summary stats
+        print(f"  Total topics: {len(dt_data)}")
+        print(f"  Fully enriched: {enriched_count}")
+        print(f"  Unenriched: {len(unenriched_ids)}")
+        if tag_format_warnings > 0:
+            print(f"  [WARN] {tag_format_warnings} tags have non-lowercase-hyphenated format (cleanup needed)")
+        if unenriched_ids and len(unenriched_ids) <= 20:
+            print(f"  Unenriched IDs: {unenriched_ids}")
 
     # ── 6. Life Topics ──
     life_topics_dir = CONTENT / 'life_topics'
