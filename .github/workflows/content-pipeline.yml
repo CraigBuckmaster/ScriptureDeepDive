@@ -63,12 +63,15 @@ jobs:
         id: changes
         if: github.event_name == 'pull_request'
         run: |
-          CHANGED=$(git diff --name-only ${{ github.event.pull_request.base.sha }} HEAD \
-            -- 'content/*/[0-9]*.json' 2>/dev/null | sort)
+          # Detect all changed content files, excluding code-only changes
+          ALL_CHANGED=$(git diff --name-only ${{ github.event.pull_request.base.sha }} HEAD 2>/dev/null)
+
+          # Filter to content files only (skip code: .ts .tsx .js .jsx .py .sh .yml .yaml .lock)
+          CHANGED=$(echo "$ALL_CHANGED" | grep -E '^content/' | sort)
 
           if [ -z "$CHANGED" ]; then
             echo "has_content_changes=false" >> $GITHUB_OUTPUT
-            echo "No chapter content changes detected"
+            echo "No content file changes detected (code-only PR)"
           else
             COUNT=$(echo "$CHANGED" | wc -l)
             echo "has_content_changes=true" >> $GITHUB_OUTPUT
@@ -76,7 +79,7 @@ jobs:
             echo "$CHANGED" >> $GITHUB_OUTPUT
             echo "ENDFILES" >> $GITHUB_OUTPUT
             echo "change_count=$COUNT" >> $GITHUB_OUTPUT
-            echo "Changed chapters: $COUNT"
+            echo "Changed content files: $COUNT"
             echo "$CHANGED"
           fi
 
@@ -90,13 +93,18 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          # Determine tier based on API key availability
-          if [ -n "$ANTHROPIC_API_KEY" ]; then
+          # Tier 2 requires BOTH the tier2 label AND a valid API key
+          HAS_LABEL=${{ contains(github.event.pull_request.labels.*.name, 'tier2') }}
+          if [ "$HAS_LABEL" = "true" ] && [ -n "$ANTHROPIC_API_KEY" ]; then
             TIER=2
-            echo "Tier 2 enabled (API key configured)"
+            echo "Tier 2 enabled (tier2 label + API key)"
           else
             TIER=1
-            echo "Tier 1 only (no API key — add ANTHROPIC_API_KEY secret for Tier 2)"
+            if [ "$HAS_LABEL" != "true" ]; then
+              echo "Tier 1 only (add 'tier2' label to enable accuracy checks)"
+            else
+              echo "Tier 1 only (tier2 label present but no ANTHROPIC_API_KEY secret)"
+            fi
           fi
 
           # Write .env for the accuracy auditor
