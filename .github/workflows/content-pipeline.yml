@@ -31,6 +31,9 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Install Python dependencies
+        run: pip install anthropic
+
       - name: Remove pre-built DB (build from scratch)
         run: rm -f scripture.db
 
