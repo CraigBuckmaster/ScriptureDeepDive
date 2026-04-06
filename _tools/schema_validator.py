@@ -28,6 +28,10 @@ from pathlib import Path
 from collections import Counter, defaultdict
 from difflib import SequenceMatcher
 
+# Ensure stdout can handle UTF-8 (needed on Windows where cp1252 is default)
+if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
+
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / 'content'
 META = CONTENT / 'meta'
