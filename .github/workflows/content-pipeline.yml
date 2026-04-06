@@ -119,34 +119,19 @@ jobs:
           CI_EXIT=$?
           echo "ci_exit_code=$CI_EXIT" >> $GITHUB_OUTPUT
 
-          # Extract summary markdown for PR comment
-          SUMMARY_MD=$(python3 -c "
+          # Extract results to files (avoids ARG_MAX limits on large summaries)
+          python3 -c "
           import json
           data = json.load(open('ci_output.json'))
-          print(data.get('summary_markdown', ''))
-          ")
+          with open('ci_summary.md', 'w') as f:
+              f.write(data.get('summary_markdown', ''))
+          with open('ci_issues.json', 'w') as f:
+              json.dump(data.get('issues_to_create', []), f)
+          with open('ci_status.txt', 'w') as f:
+              f.write(data.get('status', 'pass'))
+          "
 
-          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
-          echo "summary<<$EOF" >> $GITHUB_OUTPUT
-          echo "$SUMMARY_MD" >> $GITHUB_OUTPUT
-          echo "$EOF" >> $GITHUB_OUTPUT
-
-          # Extract issues to create
-          ISSUES=$(python3 -c "
-          import json
-          data = json.load(open('ci_output.json'))
-          issues = data.get('issues_to_create', [])
-          print(json.dumps(issues))
-          ")
-          echo "issues=$ISSUES" >> $GITHUB_OUTPUT
-
-          # Extract status
-          STATUS=$(python3 -c "
-          import json
-          data = json.load(open('ci_output.json'))
-          print(data.get('status', 'pass'))
-          ")
-          echo "status=$STATUS" >> $GITHUB_OUTPUT
+          echo "status=$(cat ci_status.txt)" >> $GITHUB_OUTPUT
 
           # Show stderr (progress messages)
           cat ci_stderr.log
@@ -159,8 +144,6 @@ jobs:
       - name: Generate pipeline summary
         if: always()
         id: summary
-        env:
-          CONTENT_SUMMARY: ${{ steps.content_check.outputs.summary }}
         run: |
           JSON_STATUS="${{ steps.validate_json.outcome }}"
           BUILD_STATUS="${{ steps.build_db.outcome }}"
@@ -203,20 +186,21 @@ jobs:
           | **Build DB** | $(status_icon $BUILD_STATUS) | — |
           | **DB Integrity** | $(status_icon $DB_STATUS) | ${DB_RESULTS:-—} |"
 
-          # Append content check summary if it ran (passed via env to avoid shell injection)
-          if [ -n "$CONTENT_SUMMARY" ]; then
-            BODY="$BODY
+          # Write body to file, then append content summary safely
+          echo "$BODY" > pipeline_body.md
 
-          ---
-
-          $CONTENT_SUMMARY"
+          if [ -f ci_summary.md ] && [ -s ci_summary.md ]; then
+            echo "" >> pipeline_body.md
+            echo "---" >> pipeline_body.md
+            echo "" >> pipeline_body.md
+            cat ci_summary.md >> pipeline_body.md
           fi
 
-          echo "$BODY" >> $GITHUB_STEP_SUMMARY
+          cat pipeline_body.md >> $GITHUB_STEP_SUMMARY
 
           EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
           echo "body<<$EOF" >> $GITHUB_OUTPUT
-          echo "$BODY" >> $GITHUB_OUTPUT
+          cat pipeline_body.md >> $GITHUB_OUTPUT
           echo "$EOF" >> $GITHUB_OUTPUT
 
       # ── Stage 5: Post PR comment ─────────────────────────────
@@ -258,13 +242,13 @@ jobs:
 
       - name: Create issues for content warnings
         if: >
-          always() && github.event_name == 'pull_request' &&
-          steps.content_check.outputs.issues != '[]' &&
-          steps.content_check.outputs.issues != ''
+          always() && github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
           script: |
-            const issuesJson = `${{ steps.content_check.outputs.issues }}`;
+            const fs = require('fs');
+            let issuesJson = '[]';
+            try { issuesJson = fs.readFileSync('ci_issues.json', 'utf8'); } catch { return; }
             if (!issuesJson || issuesJson === '[]') return;
 
             let issues;
