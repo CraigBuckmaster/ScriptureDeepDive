@@ -83,6 +83,26 @@ def parse_changed_files(file_paths: list[str]) -> dict:
     return dict(chapters)
 
 
+def parse_changed_meta_files(file_paths: list[str]) -> list[str]:
+    """Parse changed file paths to find modified meta files.
+
+    Args:
+        file_paths: List of paths like "content/meta/debate-topics.json"
+
+    Returns:
+        List of meta filenames that changed (e.g. ["debate-topics.json"])
+    """
+    meta_files = []
+    for fp in file_paths:
+        fp = fp.strip()
+        if not fp:
+            continue
+        parts = Path(fp).parts
+        if len(parts) >= 3 and parts[0] == "content" and parts[1] == "meta":
+            meta_files.append(parts[2])
+    return meta_files
+
+
 # ─── Quality Check ──────────────────────────────────────────────────
 
 def run_quality_check(book_dir: str, chapter_nums: list[int]) -> list[dict]:
@@ -193,6 +213,91 @@ def run_accuracy_check(book_dir: str, chapter_nums: list[int],
         claim_details.append({
             "id": claim.id,
             "chapter_id": claim.chapter_id,
+            "panel_type": claim.panel_type,
+            "claim_type": claim.claim_type,
+            "claim_text": claim.claim_text[:300],
+            "source_attribution": claim.source_attribution,
+            "status": result.status,
+            "confidence": result.confidence,
+            "notes": result.notes,
+            "fix_suggestion": result.fix_suggestion,
+            "tier": result.tier,
+        })
+
+    return {
+        "claims": claim_details,
+        "stats": dict(status_counts),
+        "total": len(all_claims),
+        "tier2_calls": t2_calls,
+        "tier2_cost": round(t2_cost, 2),
+    }
+
+
+# ─── Meta Accuracy Check ──────────────────────────────────────────
+
+# Map meta filenames to the MetaClaimExtractor methods that handle them
+META_FILE_EXTRACTORS = {
+    "debate-topics.json": "extract_debate_topics",
+    "difficult-passages.json": "extract_difficult_passages",
+    "prophecy-chains.json": "extract_prophecy_chains",
+    "concepts.json": "extract_concepts",
+    "people.json": "extract_people",
+}
+
+
+def run_meta_accuracy_check(meta_files: list[str],
+                            max_tier: int = 2) -> dict:
+    """Run accuracy auditing on changed meta files.
+
+    Uses MetaClaimExtractor to extract claims from the specified meta files,
+    then verifies them through the standard accuracy pipeline.
+
+    Returns same shape as run_accuracy_check().
+    """
+    try:
+        from accuracy_meta_extractors import MetaClaimExtractor
+    except ImportError:
+        return {
+            "claims": [], "stats": {}, "total": 0,
+            "tier2_calls": 0, "tier2_cost": 0,
+            "meta_note": "accuracy_meta_extractors import failed",
+        }
+
+    extractor = MetaClaimExtractor()
+    verifier = AccuracyVerifier(max_tier=max_tier)
+    all_claims = []
+
+    for meta_file in meta_files:
+        method_name = META_FILE_EXTRACTORS.get(meta_file)
+        if not method_name:
+            continue
+        method = getattr(extractor, method_name, None)
+        if not method:
+            continue
+        try:
+            claims = method()
+            all_claims.extend(claims)
+        except Exception as e:
+            print(f"  Meta extractor error ({meta_file}): {e}", file=sys.stderr)
+
+    if not all_claims:
+        return {
+            "claims": [], "stats": {}, "total": 0,
+            "tier2_calls": 0, "tier2_cost": 0,
+        }
+
+    # Verify extracted claims
+    all_results = verifier.verify_claims(all_claims, "ot")
+
+    status_counts = Counter(r.status for r in all_results)
+    t2_calls = verifier.tier2.call_count if verifier.tier2 else 0
+    t2_cost = t2_calls * 0.005
+
+    claim_details = []
+    for claim, result in zip(all_claims, all_results):
+        claim_details.append({
+            "id": claim.id,
+            "chapter_id": f"meta/{claim.chapter_id}",
             "panel_type": claim.panel_type,
             "claim_type": claim.claim_type,
             "claim_text": claim.claim_text[:300],
@@ -523,8 +628,9 @@ def main():
 
     # Parse into book/chapter pairs
     changed = parse_changed_files(file_paths)
+    changed_meta = parse_changed_meta_files(file_paths)
 
-    if not changed:
+    if not changed and not changed_meta:
         result = {
             "status": "skip",
             "message": "No chapter content changes detected",
@@ -541,6 +647,8 @@ def main():
           f"{len(changed)} book(s)", file=sys.stderr)
     for book, chapters in sorted(changed.items()):
         print(f"  {book}: chapters {sorted(chapters)}", file=sys.stderr)
+    if changed_meta:
+        print(f"Meta files changed: {changed_meta}", file=sys.stderr)
 
     if args.dry_run:
         print(json.dumps({"changed": {k: sorted(v) for k, v in changed.items()},
@@ -579,6 +687,22 @@ def main():
                     hard_errors.append(
                         f"REFUTED: {claim['id']} — {claim['notes'][:150]}"
                     )
+
+        # Meta accuracy checks (when meta files changed)
+        routable_meta = [f for f in changed_meta if f in META_FILE_EXTRACTORS]
+        if routable_meta:
+            print(f"Running meta accuracy checks for: {routable_meta}",
+                  file=sys.stderr)
+            meta_ar = run_meta_accuracy_check(
+                routable_meta, max_tier=args.tier
+            )
+            if meta_ar["total"] > 0:
+                accuracy_results["_meta"] = meta_ar
+                for claim in meta_ar["claims"]:
+                    if claim["status"] == STATUS_REFUTED:
+                        hard_errors.append(
+                            f"META REFUTED: {claim['id']} — {claim['notes'][:150]}"
+                        )
 
         # Baseline comparison
         all_claims = []
