@@ -17282,7 +17282,7 @@
   {
     "id": "historicity-of-the-resurrection",
     "title": "Did the Bodily Resurrection of Jesus Happen Historically?",
-    "category": "apologetics",
+    "category": "theological",
     "book_id": "1_corinthians",
     "chapters": [
       15
@@ -17306,7 +17306,10 @@
           "Luke 24:36-43",
           "Acts 2:22-36",
           "John 20:24-29"
-        ]
+        ],
+        "id": "historical-event",
+        "tradition_family": "evangelical",
+        "argument": "The resurrection is the best historical explanation for the convergent evidence: the empty tomb, the post-mortem appearances to individuals and groups, the radical transformation of the disciples from cowards to martyrs, and the emergence of resurrection belief in a Jewish context where it was not expected in this form. Alternative hypotheses (hallucination, conspiracy, legend) each fail to account for the full range of evidence. The early creed in 1 Cor 15:3-8 dates to within years of the event, ruling out legendary development."
       },
       {
         "label": "Theological Truth, Not Historical Fact",
@@ -17320,7 +17323,10 @@
           "1 Cor 15:35-44",
           "Rom 6:4-5",
           "2 Cor 5:17"
-        ]
+        ],
+        "id": "theological-truth-not-historical-fact",
+        "tradition_family": "critical",
+        "argument": "The resurrection is a powerful theological symbol expressing the conviction that Jesus' cause continues and that death does not have the final word. Historical method cannot verify a supernatural event; what history can study is the rise of resurrection belief, not the resurrection itself. The appearance narratives reflect the faith of the early community rather than reportorial accounts. The theological meaning of resurrection (new creation, hope, vindication) does not depend on whether a corpse was revivified."
       },
       {
         "label": "Visionary/Spiritual Experiences",
@@ -17335,7 +17341,10 @@
           "Acts 9:3-6",
           "2 Cor 12:1-4",
           "Gal 1:15-16"
-        ]
+        ],
+        "id": "visionary-spiritual-experiences",
+        "tradition_family": "critical",
+        "argument": "The disciples had genuine experiences they interpreted as encounters with the risen Jesus, but these were visionary or revelatory events rather than encounters with a physically resuscitated body. Paul's experience on the Damascus road — which he places on par with the other appearances (1 Cor 15:8) — was clearly visionary, suggesting the earlier appearances may have been similar. Grief visions, religious ecstasy, and cognitive dissonance after Jesus' death produced experiences that were real to the percipients but do not require a physical resurrection."
       }
     ],
     "synthesis": "The debate hinges on what counts as historical evidence and whether supernatural events are in principle accessible to historical investigation. All sides agree that something happened to produce resurrection belief; the disagreement is about the nature and cause of that something. Defenders argue the evidence is strong enough to warrant historical confidence; critics argue that historical method must remain agnostic about divine action. The earliest evidence (the creed, Paul's testimony) is remarkably close to the events, which distinguishes this claim from many ancient legends.",
@@ -17380,7 +17389,10 @@
           "Mark 16:1-8",
           "Luke 24:1-12",
           "John 20:1-10"
-        ]
+        ],
+        "id": "complementary-accounts",
+        "tradition_family": "evangelical",
+        "argument": "The differences reflect multiple perspectives on a complex, rapidly-unfolding event. No two witnesses to any event report identical details. Matthew and Mark mention one angel; Luke and John mention two — but mentioning one does not deny the presence of two. Mark's ending ('they said nothing to anyone') refers to their initial fear, not their permanent silence. A plausible sequence can be constructed that accommodates all four accounts, though some details require inference. The very messiness of the accounts argues against collusion."
       },
       {
         "label": "Theologically Shaped Narratives",
@@ -17395,7 +17407,10 @@
           "Matt 28:2-4",
           "Luke 24:13-35",
           "John 20:11-18"
-        ]
+        ],
+        "id": "theologically-shaped-narratives",
+        "tradition_family": "critical",
+        "argument": "Each evangelist shapes the resurrection narrative to serve his theological purposes. Mark ends abruptly with fear and silence to challenge the reader. Matthew emphasizes the earthquake and angelic descent for apocalyptic drama. Luke centers the action in Jerusalem to set up Acts. John spotlights Mary Magdalene and Thomas for Christological reasons. The differences are real but arise from literary-theological editing, not from factual error. The core tradition — empty tomb, appearances, commissioning — is consistent across all four."
       },
       {
         "label": "Contradictory Traditions",
@@ -17410,7 +17425,10 @@
           "Matt 28:8-10",
           "Luke 24:49",
           "John 21:1"
-        ]
+        ],
+        "id": "contradictory-traditions",
+        "tradition_family": "critical",
+        "argument": "The differences between the accounts are genuine contradictions that cannot be resolved without special pleading. Did the women tell the disciples or not (Mark vs Matthew)? Did Jesus appear in Galilee or Jerusalem first? Were there guards at the tomb or not? These contradictions reflect independent, evolving traditions rather than coordinated testimony. The attempt to harmonize them forces each text into a framework foreign to its own literary logic. Each Gospel should be read on its own terms."
       }
     ],
     "synthesis": "The debate illuminates how one approaches the Gospels as a genre. Strict harmonization preserves historical accuracy but can flatten each evangelist's theological voice. Reading each Gospel independently honors literary artistry but can obscure the shared tradition underneath. A mediating position recognizes both the theological shaping and the historical substrate: the evangelists were not fabricating events, but neither were they writing modern journalism. The persistence of the core elements (empty tomb, appearances, commissioning) across four independent narratives remains a remarkable convergence.",
@@ -17453,7 +17471,10 @@
           "John 20:27",
           "Phil 3:21",
           "Rom 8:11"
-        ]
+        ],
+        "id": "transformed-physical-body",
+        "tradition_family": "evangelical",
+        "argument": "The resurrection body is the present physical body transformed and glorified by the Spirit. Paul's sōma pneumatikon does not mean 'made of spirit' but 'animated by the Spirit' — just as sōma psychikon means 'animated by the soul,' not 'made of soul.' Jesus' resurrection body was physically continuous with his crucified body (the wounds remain) but radically upgraded — no longer subject to death, decay, or normal physical limitations. The empty tomb proves material continuity; the appearances prove transformation. This is not resuscitation (coming back to the same life) but resurrection (entering a new mode of bodily existence)."
       },
       {
         "label": "Spiritual Body (Discontinuity)",
@@ -17468,7 +17489,10 @@
           "1 Cor 15:8",
           "2 Cor 5:1-5",
           "1 Cor 15:35-38"
-        ]
+        ],
+        "id": "spiritual-body-discontinuity",
+        "tradition_family": "critical",
+        "argument": "Paul's language of sōma pneumatikon points to a body constituted by spirit rather than flesh. The seed analogy emphasizes discontinuity: what goes into the ground bears no resemblance to what comes up. Paul never mentions the empty tomb, and his list of appearances makes no distinction between the physical appearances to Peter and the visionary appearance to himself. The resurrection body belongs to a different order of existence entirely — 'flesh and blood cannot inherit the kingdom of God' (15:50). Physical continuity is less important than the eschatological newness of the resurrection body."
       },
       {
         "label": "Ontological Transformation",
@@ -17484,7 +17508,10 @@
           "Rev 21:1-5",
           "Col 1:18",
           "Rom 8:18-23"
-        ]
+        ],
+        "id": "ontological-transformation",
+        "tradition_family": "reformed",
+        "argument": "The resurrection body transcends the physical/spiritual binary. It represents a new mode of being in which matter itself is transformed by the divine. The categories of 'physical' and 'spiritual' are inadequate because they presuppose the old creation's ontology. The risen Christ is not less physical than before but more real — the prototype of the new creation in which God is 'all in all' (1 Cor 15:28). The question 'physical or spiritual?' imposes a false dilemma on a reality that exceeds both categories."
       }
     ],
     "synthesis": "All positions agree that the resurrection body is not simply the resuscitated corpse. The debate centers on how much continuity exists between the present body and the future one. Wright's emphasis on transformed physicality is the most influential current position, but the spiritual-body reading has deep roots in patristic theology. Pastorally, the question shapes how Christians think about death, embodiment, and hope: is the body a temporary container discarded at death, or the vehicle of identity that God intends to redeem?",
@@ -17506,7 +17533,7 @@
   {
     "id": "timing-of-the-general-resurrection",
     "title": "When Does the General Resurrection Occur?",
-    "category": "eschatological",
+    "category": "theological",
     "book_id": "revelation",
     "chapters": [
       20
@@ -17529,7 +17556,10 @@
           "1 Cor 15:23-24",
           "Rev 2:8",
           "Dan 12:2"
-        ]
+        ],
+        "id": "premillennial-two-bodily-resurrections",
+        "tradition_family": "evangelical",
+        "argument": "The first resurrection is a bodily resurrection of believers (or martyrs) at Christ's return, inaugurating a literal thousand-year reign on earth. The second resurrection, at the end of the millennium, is the general resurrection of all the dead for final judgment. The plain reading of 'came to life' (ezēsan) parallels its use for bodily resurrection elsewhere in Revelation (2:8, 13:14). Using the same word for two different meanings (spiritual then physical) in the same passage is linguistically unlikely. 1 Thessalonians 4:16 and 1 Corinthians 15:23 also point to a staged resurrection."
       },
       {
         "label": "Amillennial (Spiritual + Bodily)",
@@ -17546,7 +17576,10 @@
           "2 Thess 1:7-10",
           "John 11:25-26",
           "Rom 6:4-5"
-        ]
+        ],
+        "id": "amillennial-spiritual-bodily",
+        "tradition_family": "reformed",
+        "argument": "The first resurrection is spiritual — it refers to the new birth (John 5:24-25), the soul's entry into Christ's presence at death, or the martyr's vindication in heaven. The second resurrection is the general bodily resurrection at Christ's return. Revelation is highly symbolic throughout; reading 'a thousand years' literally while reading 'the beast' and 'the dragon' symbolically is inconsistent. The rest of the NT describes Christ's return, the resurrection, and the final judgment as a single complex event (John 5:28-29; 2 Thess 1:7-10), not separated by a millennium."
       },
       {
         "label": "Postmillennial (Corporate Resurrection)",
@@ -17562,7 +17595,10 @@
           "Ps 110:1",
           "1 Cor 15:25-26",
           "Matt 13:31-33"
-        ]
+        ],
+        "id": "postmillennial-corporate-resurrection",
+        "tradition_family": "reformed",
+        "argument": "The thousand years represent the church age in which the gospel progressively triumphs. The first resurrection symbolizes the spiritual vitality of the church — believers reign with Christ now through the advance of the kingdom. The general bodily resurrection occurs at Christ's return after the millennium, which is not a literal thousand years but a long period of gospel victory. This reading aligns with the Great Commission's expectation that all nations will be discipled before the end."
       }
     ],
     "synthesis": "The debate ultimately concerns how to read Revelation: as a timeline of future events (premillennial), as a symbolic depiction of present realities and final consummation (amillennial), or as a vision of progressive kingdom triumph (postmillennial). Each position has strong exegetical arguments for its reading of Revelation 20, and each must account for the rest of the NT's resurrection teaching. All agree on the essential point: the dead will be raised, Christ will return, and God will judge. The disagreement is about sequence and timing, not the reality of the hope.",
