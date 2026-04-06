@@ -104,7 +104,7 @@ def main():
     books_found = Counter()
 
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             total_files += 1
@@ -189,7 +189,7 @@ def main():
     valid_css = {'vhl-divine', 'vhl-place', 'vhl-person', 'vhl-time', 'vhl-key'}
     bad_css = set()
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             with open(json_file) as f:
@@ -536,7 +536,7 @@ def main():
         tl_checked = 0
         tl_invalid = 0
         for book_dir in sorted(CONTENT.iterdir()):
-            if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
+            if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
                 continue
             for json_file in sorted(book_dir.glob('*.json')):
                 try:
@@ -564,7 +564,7 @@ def main():
 
     dup_count = 0
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:
@@ -601,7 +601,7 @@ def main():
 
     oob_tips = 0
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:
@@ -627,7 +627,7 @@ def main():
     if scopes_path_11.exists():
         scopes_data = json.loads(scopes_path_11.read_text())
         for book_dir in sorted(CONTENT.iterdir()):
-            if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
+            if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
                 continue
             for json_file in sorted(book_dir.glob('*.json')):
                 try:
@@ -658,7 +658,7 @@ def main():
 
     word_glosses = defaultdict(set)
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:
