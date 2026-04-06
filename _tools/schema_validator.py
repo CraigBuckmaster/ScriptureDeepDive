@@ -79,11 +79,11 @@ def main():
     print("=" * 60)
 
     # ── Load reference data ──
-    books = json.loads((META / 'books.json').read_text()) if (META / 'books.json').exists() else []
+    books = json.loads((META / 'books.json').read_text(encoding='utf-8')) if (META / 'books.json').exists() else []
     live_books = {b['id']: b for b in books if b.get('is_live')}
-    people_data = json.loads((META / 'people.json').read_text()) if (META / 'people.json').exists() else {}
+    people_data = json.loads((META / 'people.json').read_text(encoding='utf-8')) if (META / 'people.json').exists() else {}
     people_ids = {p['id'] for p in people_data.get('people', [])}
-    scholars = json.loads((META / 'scholars.json').read_text()) if (META / 'scholars.json').exists() else []
+    scholars = json.loads((META / 'scholars.json').read_text(encoding='utf-8')) if (META / 'scholars.json').exists() else []
     scholar_ids = {s['id'] for s in scholars}
 
     known_chapter_types = {
@@ -111,7 +111,7 @@ def main():
             books_found[book_dir.name] += 1
 
             try:
-                with open(json_file) as f:
+                with open(json_file, encoding='utf-8') as f:
                     data = json.load(f)
             except json.JSONDecodeError as e:
                 check(f"{json_file.name} valid JSON", False, str(e))
@@ -163,7 +163,7 @@ def main():
     # Scholar scopes reference valid books
     scopes_path = META / 'scholar-scopes.json'
     if scopes_path.exists():
-        scopes = json.loads(scopes_path.read_text())
+        scopes = json.loads(scopes_path.read_text(encoding='utf-8'))
         all_book_ids = {b['id'] for b in books}
         bad_scope_refs = []
         for scholar_id, scope in scopes.items():
@@ -192,7 +192,7 @@ def main():
         if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
             continue
         for json_file in sorted(book_dir.glob('*.json')):
-            with open(json_file) as f:
+            with open(json_file, encoding='utf-8') as f:
                 data = json.load(f)
             for g in data.get('vhl_groups', []):
                 css = g.get('css_class', '')
@@ -235,7 +235,7 @@ def main():
     # Prophecy chains
     pc_path = META / 'prophecy-chains.json'
     if pc_path.exists():
-        pc_data = json.loads(pc_path.read_text())
+        pc_data = json.loads(pc_path.read_text(encoding='utf-8'))
         check("prophecy-chains.json is list", isinstance(pc_data, list))
         for i, c in enumerate(pc_data):
             for key in ('id', 'title', 'category', 'type', 'links'):
@@ -251,7 +251,7 @@ def main():
     # Concepts
     co_path = META / 'concepts.json'
     if co_path.exists():
-        co_data = json.loads(co_path.read_text())
+        co_data = json.loads(co_path.read_text(encoding='utf-8'))
         check("concepts.json is list", isinstance(co_data, list))
         for i, c in enumerate(co_data):
             for key in ('id', 'title'):
@@ -262,7 +262,7 @@ def main():
     # Difficult passages
     dp_path = META / 'difficult-passages.json'
     if dp_path.exists():
-        dp_data = json.loads(dp_path.read_text())
+        dp_data = json.loads(dp_path.read_text(encoding='utf-8'))
         check("difficult-passages.json is list", isinstance(dp_data, list))
         for i, p in enumerate(dp_data):
             for key in ('id', 'title', 'category', 'severity', 'passage', 'question', 'responses'):
@@ -279,7 +279,7 @@ def main():
     dt_path = META / 'debate-topics.json'
     if dt_path.exists():
         print("\n--- DEBATE TOPICS ---")
-        dt_data = json.loads(dt_path.read_text())
+        dt_data = json.loads(dt_path.read_text(encoding='utf-8'))
         check("debate-topics.json is list", isinstance(dt_data, list))
 
         all_book_ids = {b['id'] for b in books}
@@ -382,7 +382,7 @@ def main():
         cat_path = life_topics_dir / 'categories.json'
         categories = []
         if cat_path.exists():
-            categories = json.loads(cat_path.read_text())
+            categories = json.loads(cat_path.read_text(encoding='utf-8'))
             check("life_topics categories.json is list", isinstance(categories, list))
             category_ids = set()
             for i, cat in enumerate(categories):
@@ -402,7 +402,7 @@ def main():
         topic_ids = set()
         for json_file in topic_files:
             try:
-                t = json.loads(json_file.read_text())
+                t = json.loads(json_file.read_text(encoding='utf-8'))
             except json.JSONDecodeError as e:
                 check(f"{json_file.name} valid JSON", False, str(e))
                 continue
@@ -438,7 +438,7 @@ def main():
         # Related topic refs point to known topic IDs
         for json_file in topic_files:
             try:
-                t = json.loads(json_file.read_text())
+                t = json.loads(json_file.read_text(encoding='utf-8'))
             except json.JSONDecodeError:
                 continue
             tid = t.get('id', json_file.stem)
@@ -453,7 +453,7 @@ def main():
     arch_path = CONTENT / 'archaeology' / 'discoveries.json'
     if arch_path.exists():
         print("\n--- 7. ARCHAEOLOGICAL EVIDENCE ---")
-        arch_data = json.loads(arch_path.read_text())
+        arch_data = json.loads(arch_path.read_text(encoding='utf-8'))
         check("archaeology discoveries.json is list", isinstance(arch_data, list))
         discovery_ids = set()
         for i, d in enumerate(arch_data):
@@ -471,7 +471,7 @@ def main():
     # Greek lexicon
     gl_path = META / 'lexicon-greek.json'
     if gl_path.exists():
-        gl_data = json.loads(gl_path.read_text())
+        gl_data = json.loads(gl_path.read_text(encoding='utf-8'))
         check("lexicon-greek.json is list", isinstance(gl_data, list))
         seen_strongs = set()
         for i, e in enumerate(gl_data):
@@ -498,7 +498,7 @@ def main():
     # Hebrew lexicon
     hl_path = META / 'lexicon-hebrew.json'
     if hl_path.exists():
-        hl_data = json.loads(hl_path.read_text())
+        hl_data = json.loads(hl_path.read_text(encoding='utf-8'))
         check("lexicon-hebrew.json is list", isinstance(hl_data, list))
         seen_strongs = set()
         for i, e in enumerate(hl_data):
@@ -525,7 +525,7 @@ def main():
 
     tl_path = META / 'timelines.json'
     if tl_path.exists():
-        tl_data = json.loads(tl_path.read_text())
+        tl_data = json.loads(tl_path.read_text(encoding='utf-8'))
         valid_event_ids = set()
         for key, val in tl_data.items():
             if isinstance(val, list):
@@ -540,7 +540,7 @@ def main():
                 continue
             for json_file in sorted(book_dir.glob('*.json')):
                 try:
-                    with open(json_file) as f:
+                    with open(json_file, encoding='utf-8') as f:
                         data = json.load(f)
                 except json.JSONDecodeError:
                     continue
@@ -568,7 +568,7 @@ def main():
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:
-                with open(json_file) as f:
+                with open(json_file, encoding='utf-8') as f:
                     data = json.load(f)
             except json.JSONDecodeError:
                 continue
@@ -605,7 +605,7 @@ def main():
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:
-                with open(json_file) as f:
+                with open(json_file, encoding='utf-8') as f:
                     data = json.load(f)
             except json.JSONDecodeError:
                 continue
@@ -625,13 +625,13 @@ def main():
     scope_violations = 0
     scopes_path_11 = META / 'scholar-scopes.json'
     if scopes_path_11.exists():
-        scopes_data = json.loads(scopes_path_11.read_text())
+        scopes_data = json.loads(scopes_path_11.read_text(encoding='utf-8'))
         for book_dir in sorted(CONTENT.iterdir()):
             if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
                 continue
             for json_file in sorted(book_dir.glob('*.json')):
                 try:
-                    with open(json_file) as f:
+                    with open(json_file, encoding='utf-8') as f:
                         data = json.load(f)
                 except json.JSONDecodeError:
                     continue
@@ -662,7 +662,7 @@ def main():
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:
-                with open(json_file) as f:
+                with open(json_file, encoding='utf-8') as f:
                     data = json.load(f)
             except json.JSONDecodeError:
                 continue
@@ -689,7 +689,7 @@ def main():
 
     scholars_path = META / 'scholars.json'
     if scholars_path.exists():
-        scholars_data = json.loads(scholars_path.read_text())
+        scholars_data = json.loads(scholars_path.read_text(encoding='utf-8'))
         valid_scholar_keys = set()
         for s in scholars_data:
             valid_scholar_keys.add(s['id'])
@@ -706,7 +706,7 @@ def main():
                 continue
             for json_file in sorted(book_dir.glob('*.json')):
                 try:
-                    data = json.loads(json_file.read_text())
+                    data = json.loads(json_file.read_text(encoding='utf-8'))
                 except Exception:
                     continue
                 for i, sec in enumerate(data.get('sections', [])):
@@ -728,7 +728,7 @@ def main():
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:
-                data = json.loads(json_file.read_text())
+                data = json.loads(json_file.read_text(encoding='utf-8'))
             except Exception:
                 continue
             sections = data.get('sections', [])
@@ -756,7 +756,7 @@ def main():
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:
-                data = json.loads(json_file.read_text())
+                data = json.loads(json_file.read_text(encoding='utf-8'))
             except Exception:
                 continue
             sections = data.get('sections', [])
