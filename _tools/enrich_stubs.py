@@ -16,6 +16,11 @@ import sys
 from pathlib import Path
 from collections import defaultdict
 
+# Ensure stdout can handle UTF-8 (needed on Windows where cp1252 is default)
+if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
+
+
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 
@@ -45,7 +50,7 @@ def build_templates(book_dir):
 
     for json_file in sorted(book_dir.glob("*.json")):
         try:
-            data = json.load(open(json_file))
+            data = json.load(open(json_file, encoding='utf-8'))
         except (json.JSONDecodeError, FileNotFoundError):
             continue
 
@@ -214,7 +219,7 @@ def enrich_book(book_dir):
 
     for json_file in sorted(book_dir.glob("*.json")):
         try:
-            data = json.load(open(json_file))
+            data = json.load(open(json_file, encoding='utf-8'))
         except (json.JSONDecodeError, FileNotFoundError):
             continue
 

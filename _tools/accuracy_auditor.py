@@ -28,6 +28,10 @@ import json
 import os
 import sys
 import time
+
+# Ensure stdout can handle UTF-8 (needed on Windows where cp1252 is default)
+if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
 from collections import Counter, defaultdict
 from dataclasses import asdict
 from datetime import datetime, timezone
@@ -65,7 +69,7 @@ def load_chapter(book_dir: str, chapter_num: int) -> dict:
     path = CONTENT_DIR / book_dir / f"{chapter_num}.json"
     if not path.exists():
         return {}
-    return json.load(open(path))
+    return json.load(open(path, encoding='utf-8'))
 
 
 def iter_chapters(book_filter: str = None,
@@ -74,7 +78,7 @@ def iter_chapters(book_filter: str = None,
 
     Yields: (book_dir, chapter_num, chapter_data)
     """
-    books_meta = json.load(open(META_DIR / "books.json"))
+    books_meta = json.load(open(META_DIR / "books.json", encoding='utf-8'))
     chapters = []
 
     if chapter_filter:
@@ -105,7 +109,7 @@ def iter_chapters(book_filter: str = None,
                 ch_num = int(ch_file.stem)
             except ValueError:
                 continue
-            data = json.load(open(ch_file))
+            data = json.load(open(ch_file, encoding='utf-8'))
             if isinstance(data, dict):
                 chapters.append((book_id, ch_num, data))
 
@@ -134,7 +138,7 @@ def _parse_chapter_id(chapter_id: str, books_meta: list) -> tuple:
 
 def _get_testament(book_dir: str) -> str:
     """Get testament (ot/nt) for a book."""
-    books_meta = json.load(open(META_DIR / "books.json"))
+    books_meta = json.load(open(META_DIR / "books.json", encoding='utf-8'))
     for b in books_meta:
         if b["id"] == book_dir:
             return b.get("testament", "ot")
@@ -191,7 +195,7 @@ def score_chapter(results: list[VerificationResult],
 def load_matrix() -> dict:
     """Load existing reference matrix or create empty one."""
     if REFERENCE_MATRIX_PATH.exists():
-        return json.load(open(REFERENCE_MATRIX_PATH))
+        return json.load(open(REFERENCE_MATRIX_PATH, encoding='utf-8'))
     return {
         "metadata": {
             "version": "1.0",
