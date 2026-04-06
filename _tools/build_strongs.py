@@ -18,6 +18,10 @@ import os
 import re
 import sys
 import urllib.request
+
+# Ensure stdout can handle UTF-8 (needed on Windows where cp1252 is default)
+if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
 from html.parser import HTMLParser
 from pathlib import Path
 

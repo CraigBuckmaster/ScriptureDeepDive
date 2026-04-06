@@ -32,6 +32,10 @@ import json
 import os
 import sys
 import time
+
+# Ensure stdout can handle UTF-8 (needed on Windows where cp1252 is default)
+if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -177,7 +181,7 @@ def run_accuracy_check(book_dir: str, chapter_nums: list[int],
     all_results = []
 
     # Determine testament
-    books_meta = json.load(open(META_DIR / "books.json"))
+    books_meta = json.load(open(META_DIR / "books.json", encoding='utf-8'))
     testament = "ot"
     for b in books_meta:
         if b["id"] == book_dir:
@@ -190,7 +194,7 @@ def run_accuracy_check(book_dir: str, chapter_nums: list[int],
         if not ch_path.exists():
             continue
 
-        ch_data = json.load(open(ch_path))
+        ch_data = json.load(open(ch_path, encoding='utf-8'))
         if not isinstance(ch_data, dict):
             continue
 
@@ -331,7 +335,7 @@ def compare_baseline(current_claims: list[dict]) -> dict:
     """
     # Load baseline
     if REFERENCE_MATRIX_PATH.exists():
-        baseline = json.load(open(REFERENCE_MATRIX_PATH))
+        baseline = json.load(open(REFERENCE_MATRIX_PATH, encoding='utf-8'))
         baseline_claims = baseline.get("claims", {})
     else:
         baseline_claims = {}

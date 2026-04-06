@@ -23,6 +23,10 @@ import hashlib
 import os
 import re
 import sys
+
+# Ensure stdout can handle UTF-8 (needed on Windows where cp1252 is default)
+if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
 import time
 from dataclasses import dataclass, field, asdict
 from difflib import SequenceMatcher
@@ -942,7 +946,7 @@ class QualityEvaluator:
         # From scholars.json meta
         meta_path = self.content_dir / "meta" / "scholars.json"
         if meta_path.exists():
-            scholars = json.loads(meta_path.read_text())
+            scholars = json.loads(meta_path.read_text(encoding='utf-8'))
             for s in scholars:
                 keys.add(s.get("panel_key", ""))
                 keys.add(s.get("id", ""))
@@ -965,7 +969,7 @@ class QualityEvaluator:
         cache_path = Path(__file__).resolve().parent / ".quality_cache.json"
         if cache_path.exists():
             try:
-                return json.loads(cache_path.read_text())
+                return json.loads(cache_path.read_text(encoding='utf-8'))
             except (json.JSONDecodeError, Exception):
                 pass
         return {}
@@ -982,7 +986,7 @@ class QualityEvaluator:
 
         verse_path = self.verse_dir / "niv" / f"{book_dir}.json"
         if verse_path.exists():
-            data = json.loads(verse_path.read_text())
+            data = json.loads(verse_path.read_text(encoding='utf-8'))
             self.verse_cache[book_dir] = data
             return data
 
@@ -992,7 +996,7 @@ class QualityEvaluator:
     def evaluate_chapter(self, chapter_path):
         """Score a single chapter file."""
         try:
-            data = json.loads(chapter_path.read_text())
+            data = json.loads(chapter_path.read_text(encoding='utf-8'))
         except (json.JSONDecodeError, Exception) as e:
             # Return a zero-score chapter
             ch_id = chapter_path.stem
@@ -1061,7 +1065,7 @@ class QualityEvaluator:
                     continue
                 for json_file in sorted(book_dir.glob("*.json")):
                     try:
-                        data = json.loads(json_file.read_text())
+                        data = json.loads(json_file.read_text(encoding='utf-8'))
                         if isinstance(data, dict) and data.get("chapter_id") == chapter:
                             score = self.evaluate_chapter(json_file)
                             report.chapters.append(score)
@@ -1088,7 +1092,7 @@ class QualityEvaluator:
             meta_path = self.content_dir / "meta" / "books.json"
             live_books = set()
             if meta_path.exists():
-                books = json.loads(meta_path.read_text())
+                books = json.loads(meta_path.read_text(encoding='utf-8'))
                 live_books = {b["id"] for b in books if b.get("is_live")}
 
             for book_dir in sorted(self.content_dir.iterdir()):

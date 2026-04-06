@@ -21,6 +21,13 @@ Usage:
 import os, sys, json, sqlite3, glob, re
 from pathlib import Path
 
+# Ensure stdout can handle UTF-8 (needed on Windows where cp1252 is default)
+import sys as _sys
+if _sys.stdout.encoding and _sys.stdout.encoding.lower() != 'utf-8':
+    _sys.stdout.reconfigure(encoding='utf-8')
+del _sys
+
+
 ROOT = Path(__file__).resolve().parent.parent
 META = ROOT / 'content' / 'meta'
 VERSES_DIR = ROOT / 'content' / 'verses'
@@ -43,7 +50,7 @@ BUNDLED_TRANSLATIONS = {'kjv', 'asv'}
 # Read from db_version.json — the single source of truth for the DB version.
 # Auto-incremented on every build by bump_db_version(). Triggers a full DB
 # replacement on user devices when the app detects a version mismatch.
-DB_VERSION = json.loads(VERSION_FILE.read_text())['version']
+DB_VERSION = json.loads(VERSION_FILE.read_text(encoding='utf-8'))['version']
 
 
 def bump_db_version():
@@ -73,7 +80,7 @@ def bump_db_version():
 
     # Sync to app/src/db/database.ts so the app knows to replace the old DB
     if APP_DB_TS.exists():
-        ts_content = APP_DB_TS.read_text()
+        ts_content = APP_DB_TS.read_text(encoding='utf-8')
         ts_content = re.sub(
             r"const EXPECTED_DB_VERSION = '[^']+';",
             f"const EXPECTED_DB_VERSION = '{new_version}';",

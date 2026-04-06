@@ -135,7 +135,7 @@ def load_book_aliases() -> dict:
         return BOOK_NAME_ALIASES
 
     import json
-    books = json.load(open(META_DIR / "books.json"))
+    books = json.load(open(META_DIR / "books.json", encoding='utf-8'))
     aliases = {}
 
     for book in books:
@@ -222,7 +222,7 @@ def load_book_aliases() -> dict:
 def load_api_key() -> str | None:
     """Load Anthropic API key from .env file or environment."""
     if ENV_FILE.exists():
-        for line in ENV_FILE.read_text().splitlines():
+        for line in ENV_FILE.read_text(encoding='utf-8').splitlines():
             line = line.strip()
             if line.startswith("ANTHROPIC_API_KEY="):
                 return line.split("=", 1)[1].strip()
