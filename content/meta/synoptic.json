@@ -1,5 +1,298 @@
 [
   {
+    "id": "chr-saul-death",
+    "category": "ot-parallel",
+    "title": "Saul's Death",
+    "passages": [
+      {
+        "book": "1_samuel",
+        "ref": "1 Sam 31",
+        "label": "1 Sam 31"
+      },
+      {
+        "book": "1_chronicles",
+        "ref": "1 Chr 10",
+        "label": "1 Chr 10"
+      }
+    ],
+    "note": "The Chronicler adds a theological verdict: Saul died for unfaithfulness and consulting a medium.",
+    "diff_annotations": [],
+    "period": "ot",
+    "sort_order": 1000
+  },
+  {
+    "id": "david-anointed",
+    "title": "David Anointed King",
+    "category": "ot-parallel",
+    "passages": [
+      {
+        "book": "1_samuel",
+        "ref": "1 Sam 16:1-13"
+      },
+      {
+        "book": "2_samuel",
+        "ref": "2 Sam 2:4"
+      },
+      {
+        "book": "2_samuel",
+        "ref": "2 Sam 5:3"
+      }
+    ],
+    "diff_annotations": [],
+    "period": "ot",
+    "sort_order": 1010
+  },
+  {
+    "id": "chr-david-anointed",
+    "category": "ot-parallel",
+    "title": "David Anointed King",
+    "passages": [
+      {
+        "book": "2_samuel",
+        "ref": "2 Sam 5",
+        "label": "2 Sam 5"
+      },
+      {
+        "book": "1_chronicles",
+        "ref": "1 Chr 11",
+        "label": "1 Chr 11"
+      }
+    ],
+    "note": "Chronicles omits the 7-year civil war; 'all Israel' anoints David immediately.",
+    "diff_annotations": [],
+    "period": "ot",
+    "sort_order": 1020
+  },
+  {
+    "id": "chr-ark-procession",
+    "category": "ot-parallel",
+    "title": "The Ark Comes to Jerusalem",
+    "passages": [
+      {
+        "book": "2_samuel",
+        "ref": "2 Sam 6",
+        "label": "2 Sam 6"
+      },
+      {
+        "book": "1_chronicles",
+        "ref": "1 Chr 15",
+        "label": "1 Chr 15-16"
+      }
+    ],
+    "note": "Chronicles adds extensive Levitical detail and David's psalm of thanksgiving.",
+    "diff_annotations": [],
+    "period": "ot",
+    "sort_order": 1030
+  },
+  {
+    "id": "davidic-covenant",
+    "title": "The Davidic Covenant",
+    "category": "ot-parallel",
+    "passages": [
+      {
+        "book": "2_samuel",
+        "ref": "2 Sam 7:1-17"
+      },
+      {
+        "book": "1_kings",
+        "ref": "1 Kgs 8:22-26"
+      }
+    ],
+    "diff_annotations": [
+      {
+        "location": "2 Samuel 7:14 only",
+        "diff_type": "addition",
+        "explanation": "Samuel's version of the Davidic covenant includes a conditional clause about discipline for iniquity. The Chronicler omits this clause entirely, likely because it was historically fulfilled in the exile and the Chronicler is writing to a post-exilic community reestablishing identity without a Davidic king. The omission shapes the Davidic covenant toward pure promise — which intensifies messianic hope rather than past failure.",
+        "texts": {
+          "matthew": "When he commits iniquity, I will discipline him with the rod of men",
+          "luke": "(absent from 1 Chronicles 17:13 parallel)"
+        }
+      }
+    ],
+    "period": "ot",
+    "sort_order": 1040
+  },
+  {
+    "id": "chr-davidic-covenant",
+    "category": "ot-parallel",
+    "title": "The Davidic Covenant",
+    "passages": [
+      {
+        "book": "2_samuel",
+        "ref": "2 Sam 7",
+        "label": "2 Sam 7"
+      },
+      {
+        "book": "1_chronicles",
+        "ref": "1 Chr 17",
+        "label": "1 Chr 17"
+      }
+    ],
+    "note": "Nearly identical accounts — the covenant is too important to paraphrase.",
+    "diff_annotations": [
+      {
+        "location": "2 Samuel 7:14 only",
+        "diff_type": "omission",
+        "explanation": "The Chronicler omits the condition about discipline for iniquity that appears in 2 Samuel 7:14. Writing after the exile, the Chronicler reshapes the Davidic covenant as unconditional promise rather than a mixed promise-and-warning. This omission amplifies the messianic dimension of the Davidic line and explains why the Chronicler's David is an idealized figure never shown in moral failure.",
+        "texts": {
+          "matthew": "When he commits iniquity, I will discipline him with the rod of men",
+          "luke": "(absent from 1 Chronicles 17:13)"
+        }
+      }
+    ],
+    "period": "ot",
+    "sort_order": 1050
+  },
+  {
+    "id": "chr-census",
+    "category": "ot-parallel",
+    "title": "David's Census",
+    "passages": [
+      {
+        "book": "2_samuel",
+        "ref": "2 Sam 24",
+        "label": "2 Sam 24"
+      },
+      {
+        "book": "1_chronicles",
+        "ref": "1 Chr 21",
+        "label": "1 Chr 21"
+      }
+    ],
+    "note": "'The LORD' (2 Sam) vs 'Satan' (1 Chr) — the most famous divergence between the two histories.",
+    "diff_annotations": [
+      {
+        "location": "2 Samuel 24:1 / 1 Chronicles 21:1",
+        "diff_type": "theological_emphasis",
+        "explanation": "Samuel says YHWH incited David; Chronicles says Satan incited David. This is one of the most discussed theological tensions in biblical parallels. The Chronicler, writing later (post-exilic), uses the adversarial figure of 'the satan' (who appears also in Job 1-2 and Zechariah 3) to distance God from directly causing sin. The two accounts represent different ways of narrating divine sovereignty and human moral responsibility.",
+        "texts": {
+          "matthew": "The anger of the LORD was kindled against Israel, and he incited David against them",
+          "luke": "Then Satan stood against Israel and incited David to number Israel"
+        }
+      },
+      {
+        "location": "2 Samuel 24:9 / 1 Chronicles 21:5",
+        "diff_type": "wording",
+        "explanation": "The numbers differ significantly between the two accounts. The discrepancy likely reflects different counting methods (whether Levi and Benjamin were included, how military vs. civilian populations were tallied) or textual transmission variance. Ancient census numbers were often rounded and represent administrative categories rather than precise demographic totals.",
+        "texts": {
+          "matthew": "Israel: 800,000 valiant men; Judah: 500,000",
+          "luke": "Israel: 1,100,000; Judah: 470,000"
+        }
+      }
+    ],
+    "period": "ot",
+    "sort_order": 1060
+  },
+  {
+    "id": "solomons-temple",
+    "title": "Solomon Builds the Temple",
+    "category": "ot-parallel",
+    "passages": [
+      {
+        "book": "1_kings",
+        "ref": "1 Kgs 6:1-38"
+      },
+      {
+        "book": "1_kings",
+        "ref": "1 Kgs 7:13-51"
+      }
+    ],
+    "diff_annotations": [],
+    "period": "ot",
+    "sort_order": 1070
+  },
+  {
+    "id": "temple-dedication",
+    "title": "Temple Dedication Prayer",
+    "category": "ot-parallel",
+    "passages": [
+      {
+        "book": "1_kings",
+        "ref": "1 Kgs 8:22-53"
+      }
+    ],
+    "diff_annotations": [],
+    "period": "ot",
+    "sort_order": 1080
+  },
+  {
+    "id": "elijah-carmel",
+    "title": "Elijah on Mount Carmel",
+    "category": "ot-parallel",
+    "passages": [
+      {
+        "book": "1_kings",
+        "ref": "1 Kgs 18:20-46"
+      }
+    ],
+    "diff_annotations": [],
+    "period": "ot",
+    "sort_order": 1090
+  },
+  {
+    "id": "hezekiah-sennacherib",
+    "title": "Sennacherib's Invasion",
+    "category": "ot-parallel",
+    "passages": [
+      {
+        "ref": "2 Kgs 18:13–19:37",
+        "book": "2_kings",
+        "label": "Kings account"
+      },
+      {
+        "ref": "Isa 36:1–37:38",
+        "book": "isaiah",
+        "label": "Isaiah account"
+      }
+    ],
+    "note": "Nearly identical parallel accounts of Sennacherib's siege and the angel of the LORD's deliverance of Jerusalem.",
+    "diff_annotations": [],
+    "period": "ot",
+    "sort_order": 1100
+  },
+  {
+    "id": "hezekiah-illness",
+    "title": "Hezekiah's Illness and Recovery",
+    "category": "ot-parallel",
+    "passages": [
+      {
+        "ref": "2 Kgs 20:1–11",
+        "book": "2_kings",
+        "label": "Kings account"
+      },
+      {
+        "ref": "Isa 38:1–22",
+        "book": "isaiah",
+        "label": "Isaiah account"
+      }
+    ],
+    "note": "Isaiah's version includes Hezekiah's psalm of thanksgiving (Isa 38:9–20), absent from Kings.",
+    "diff_annotations": [],
+    "period": "ot",
+    "sort_order": 1110
+  },
+  {
+    "id": "fall-of-jerusalem",
+    "title": "The Fall of Jerusalem",
+    "category": "ot-parallel",
+    "passages": [
+      {
+        "ref": "2 Kgs 25:1–30",
+        "book": "2_kings",
+        "label": "Kings account"
+      },
+      {
+        "ref": "Jer 52:1–34",
+        "book": "jeremiah",
+        "label": "Jeremiah account"
+      }
+    ],
+    "note": "Jeremiah 52 is nearly a verbatim copy of 2 Kings 25 — the destruction of Jerusalem, temple, and exile to Babylon.",
+    "diff_annotations": [],
+    "period": "ot",
+    "sort_order": 1120
+  },
+  {
     "id": "genealogy",
     "title": "The Genealogy of Jesus",
     "category": "gospel",
@@ -28,6 +321,20 @@
     ]
   },
   {
+    "id": "zechariah-announcement",
+    "title": "The Announcement to Zechariah",
+    "category": "gospel-luke",
+    "period": "birth",
+    "sort_order": 12,
+    "passages": [
+      {
+        "book": "luke",
+        "ref": "Luke 1:5-25"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
     "id": "annunciation",
     "title": "The Annunciation to Mary",
     "category": "gospel-luke",
@@ -37,6 +344,34 @@
       {
         "book": "luke",
         "ref": "Luke 1:26-38"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "marys-visit-elizabeth",
+    "title": "Mary Visits Elizabeth (The Magnificat)",
+    "category": "gospel-luke",
+    "period": "birth",
+    "sort_order": 25,
+    "passages": [
+      {
+        "book": "luke",
+        "ref": "Luke 1:39-56"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "birth-john-baptist",
+    "title": "The Birth of John the Baptist",
+    "category": "gospel-luke",
+    "period": "birth",
+    "sort_order": 28,
+    "passages": [
+      {
+        "book": "luke",
+        "ref": "Luke 1:57-80"
       }
     ],
     "diff_annotations": []
@@ -70,6 +405,20 @@
     ]
   },
   {
+    "id": "josephs-dream",
+    "title": "Joseph's Dream",
+    "category": "gospel-matthew",
+    "period": "birth",
+    "sort_order": 32,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 1:18-25"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
     "id": "shepherds",
     "title": "The Shepherds",
     "category": "gospel-luke",
@@ -79,6 +428,20 @@
       {
         "book": "luke",
         "ref": "Luke 2:8-20"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "circumcision-naming",
+    "title": "The Circumcision and Naming of Jesus",
+    "category": "gospel-luke",
+    "period": "birth",
+    "sort_order": 42,
+    "passages": [
+      {
+        "book": "luke",
+        "ref": "Luke 2:21"
       }
     ],
     "diff_annotations": []
@@ -220,6 +583,20 @@
     "sort_order": 110
   },
   {
+    "id": "philip-nathanael",
+    "title": "The Call of Philip and Nathanael",
+    "category": "gospel-john",
+    "period": "early_ministry",
+    "sort_order": 118,
+    "passages": [
+      {
+        "book": "john",
+        "ref": "John 1:43-51"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
     "id": "temptation",
     "title": "The Temptation",
     "category": "gospel",
@@ -261,6 +638,26 @@
     "sort_order": 120
   },
   {
+    "id": "temple-cleansing-early",
+    "title": "First Cleansing of the Temple",
+    "category": "gospel-john",
+    "period": "early_ministry",
+    "sort_order": 128,
+    "passages": [
+      {
+        "book": "john",
+        "ref": "John 2:13-22"
+      }
+    ],
+    "diff_annotations": [
+      {
+        "location": "John 2:13-22 / Matt 21:12-13",
+        "diff_type": "chronological",
+        "explanation": "John places a temple cleansing at the beginning of Jesus' ministry; the Synoptics describe one during Passion Week. Scholars debate whether these are two separate events or one event placed differently for theological purposes."
+      }
+    ]
+  },
+  {
     "id": "wedding-cana",
     "title": "The Wedding at Cana",
     "category": "gospel-john",
@@ -273,6 +670,20 @@
     "diff_annotations": [],
     "period": "early_ministry",
     "sort_order": 130
+  },
+  {
+    "id": "pool-bethesda-healing",
+    "title": "Healing at the Pool of Bethesda",
+    "category": "gospel-john",
+    "period": "early_ministry",
+    "sort_order": 135,
+    "passages": [
+      {
+        "book": "john",
+        "ref": "John 5:1-15"
+      }
+    ],
+    "diff_annotations": []
   },
   {
     "id": "nicodemus",
@@ -289,6 +700,74 @@
     "sort_order": 140
   },
   {
+    "id": "rejection-nazareth",
+    "title": "Jesus Rejected at Nazareth",
+    "category": "gospel",
+    "period": "early_ministry",
+    "sort_order": 140,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 13:53-58"
+      },
+      {
+        "book": "mark",
+        "ref": "Mark 6:1-6"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 4:16-30"
+      }
+    ],
+    "diff_annotations": [
+      {
+        "location": "Luke 4:16-30 / Mark 6:1-6",
+        "diff_type": "chronological",
+        "explanation": "Luke places the Nazareth rejection at the very start of Jesus' public ministry as a programmatic event; Mark and Matthew place it later during the Galilean ministry. Luke's account includes the sermon content (Isaiah 61) and the attempt to throw Jesus off a cliff, details absent from the other Gospels."
+      }
+    ]
+  },
+  {
+    "id": "capernaum-demoniac",
+    "title": "Healing a Demoniac in the Synagogue",
+    "category": "gospel",
+    "period": "early_ministry",
+    "sort_order": 145,
+    "passages": [
+      {
+        "book": "mark",
+        "ref": "Mark 1:21-28"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 4:31-37"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "peters-mother-in-law",
+    "title": "Healing Peter's Mother-in-Law",
+    "category": "gospel",
+    "period": "early_ministry",
+    "sort_order": 148,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 8:14-15"
+      },
+      {
+        "book": "mark",
+        "ref": "Mark 1:29-31"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 4:38-39"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
     "id": "samaritan-woman",
     "title": "The Woman at the Well",
     "category": "gospel-john",
@@ -303,6 +782,20 @@
     "sort_order": 150
   },
   {
+    "id": "great-catch-fish",
+    "title": "The Great Catch of Fish",
+    "category": "gospel-luke",
+    "period": "early_ministry",
+    "sort_order": 150,
+    "passages": [
+      {
+        "book": "luke",
+        "ref": "Luke 5:1-11"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
     "id": "first-disciples-john",
     "title": "The First Disciples (John)",
     "category": "gospel-john",
@@ -312,6 +805,128 @@
       {
         "book": "john",
         "ref": "John 1:35-51"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "appointing-twelve",
+    "title": "Appointing the Twelve Apostles",
+    "category": "gospel",
+    "period": "galilean",
+    "sort_order": 175,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 10:1-4"
+      },
+      {
+        "book": "mark",
+        "ref": "Mark 3:13-19"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 6:12-16"
+      }
+    ],
+    "diff_annotations": [
+      {
+        "location": "Matt 10:1-4 / Mark 3:13-19 / Luke 6:12-16",
+        "diff_type": "detail",
+        "explanation": "The lists of the Twelve vary slightly across the Gospels. Matthew and Mark list 'Thaddaeus' where Luke has 'Judas son of James.' Luke alone mentions Jesus spending the night in prayer before selecting them."
+      }
+    ]
+  },
+  {
+    "id": "beelzebub-controversy",
+    "title": "Jesus and Beelzebul",
+    "category": "gospel",
+    "period": "galilean",
+    "sort_order": 185,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 12:22-37"
+      },
+      {
+        "book": "mark",
+        "ref": "Mark 3:20-30"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 11:14-23"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "true-family",
+    "title": "Jesus' True Family",
+    "category": "gospel",
+    "period": "galilean",
+    "sort_order": 188,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 12:46-50"
+      },
+      {
+        "book": "mark",
+        "ref": "Mark 3:31-35"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 8:19-21"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "sign-jonah",
+    "title": "The Sign of Jonah",
+    "category": "gospel",
+    "period": "galilean",
+    "sort_order": 192,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 12:38-42"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 11:29-32"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "woes-unrepentant",
+    "title": "Woes on Unrepentant Cities",
+    "category": "gospel",
+    "period": "galilean",
+    "sort_order": 193,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 11:20-24"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 10:13-15"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "come-to-me-weary",
+    "title": "Come to Me, All Who Are Weary",
+    "category": "gospel-matthew",
+    "period": "galilean",
+    "sort_order": 195,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 11:25-30"
       }
     ],
     "diff_annotations": []
@@ -423,6 +1038,24 @@
     "sort_order": 220
   },
   {
+    "id": "parable-leaven",
+    "title": "The Parable of the Leaven",
+    "category": "gospel",
+    "period": "galilean",
+    "sort_order": 228,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 13:33"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 13:20-21"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
     "id": "beatitudes",
     "title": "The Beatitudes",
     "category": "gospel",
@@ -467,6 +1100,34 @@
     ],
     "period": "galilean",
     "sort_order": 230
+  },
+  {
+    "id": "parable-hidden-treasure",
+    "title": "The Parable of the Hidden Treasure",
+    "category": "gospel-matthew",
+    "period": "galilean",
+    "sort_order": 230,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 13:44"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "parable-pearl",
+    "title": "The Parable of the Pearl of Great Price",
+    "category": "gospel-matthew",
+    "period": "galilean",
+    "sort_order": 232,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 13:45-46"
+      }
+    ],
+    "diff_annotations": []
   },
   {
     "id": "lords-prayer",
@@ -787,6 +1448,20 @@
     "sort_order": 290
   },
   {
+    "id": "healing-deaf-mute",
+    "title": "Healing a Deaf Mute",
+    "category": "gospel-mark",
+    "period": "galilean",
+    "sort_order": 290,
+    "passages": [
+      {
+        "book": "mark",
+        "ref": "Mark 7:31-37"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
     "id": "bread-of-life",
     "title": "The Bread of Life Discourse",
     "category": "gospel-john",
@@ -859,6 +1534,28 @@
     "sort_order": 310
   },
   {
+    "id": "take-up-cross",
+    "title": "Take Up Your Cross",
+    "category": "gospel",
+    "period": "galilean",
+    "sort_order": 318,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 16:24-28"
+      },
+      {
+        "book": "mark",
+        "ref": "Mark 8:34-9:1"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 9:23-27"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
     "id": "peter-confession",
     "title": "Peter’s Confession",
     "category": "gospel",
@@ -900,6 +1597,48 @@
     "sort_order": 320
   },
   {
+    "id": "healing-epileptic-boy",
+    "title": "Healing the Epileptic Boy",
+    "category": "gospel",
+    "period": "galilean",
+    "sort_order": 325,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 17:14-21"
+      },
+      {
+        "book": "mark",
+        "ref": "Mark 9:14-29"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 9:37-43"
+      }
+    ],
+    "diff_annotations": [
+      {
+        "location": "Mark 9:14-29 / Matt 17:14-21",
+        "diff_type": "detail",
+        "explanation": "Mark provides the most vivid and detailed account, including the father's poignant cry 'I believe; help my unbelief!' (absent from Matthew and Luke) and the disciples' private question about why they could not cast it out."
+      }
+    ]
+  },
+  {
+    "id": "temple-tax",
+    "title": "The Temple Tax",
+    "category": "gospel-matthew",
+    "period": "galilean",
+    "sort_order": 328,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 17:24-27"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
     "id": "transfiguration",
     "title": "The Transfiguration",
     "category": "gospel",
@@ -920,6 +1659,34 @@
     "diff_annotations": [],
     "period": "galilean",
     "sort_order": 330
+  },
+  {
+    "id": "brother-sins",
+    "title": "If Your Brother Sins Against You",
+    "category": "gospel-matthew",
+    "period": "galilean",
+    "sort_order": 333,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 18:15-20"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "unforgiving-servant",
+    "title": "The Parable of the Unforgiving Servant",
+    "category": "gospel-matthew",
+    "period": "galilean",
+    "sort_order": 335,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 18:21-35"
+      }
+    ],
+    "diff_annotations": []
   },
   {
     "id": "greatest-servant",
@@ -1032,6 +1799,40 @@
     "diff_annotations": []
   },
   {
+    "id": "feast-tabernacles",
+    "title": "Jesus at the Feast of Tabernacles",
+    "category": "gospel-john",
+    "period": "later_judean",
+    "sort_order": 445,
+    "passages": [
+      {
+        "book": "john",
+        "ref": "John 7:1-52"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "woman-adultery",
+    "title": "The Woman Caught in Adultery",
+    "category": "gospel-john",
+    "period": "later_judean",
+    "sort_order": 448,
+    "passages": [
+      {
+        "book": "john",
+        "ref": "John 7:53-8:11"
+      }
+    ],
+    "diff_annotations": [
+      {
+        "location": "John 7:53-8:11",
+        "diff_type": "textual",
+        "explanation": "This passage (the Pericope Adulterae) is absent from the earliest and most reliable Greek manuscripts. Most modern scholars consider it a later addition, though possibly preserving an authentic tradition about Jesus. It is typically retained in translations with a note about its textual status."
+      }
+    ]
+  },
+  {
     "id": "good-shepherd",
     "title": "The Good Shepherd",
     "category": "gospel-john",
@@ -1041,6 +1842,20 @@
       {
         "book": "john",
         "ref": "John 10:1-21"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "before-abraham",
+    "title": "'Before Abraham Was, I Am'",
+    "category": "gospel-john",
+    "period": "later_judean",
+    "sort_order": 452,
+    "passages": [
+      {
+        "book": "john",
+        "ref": "John 8:48-59"
       }
     ],
     "diff_annotations": []
@@ -1074,6 +1889,184 @@
     ]
   },
   {
+    "id": "sending-seventy-two",
+    "title": "The Sending of the Seventy-Two",
+    "category": "gospel-luke",
+    "period": "later_judean",
+    "sort_order": 465,
+    "passages": [
+      {
+        "book": "luke",
+        "ref": "Luke 10:1-24"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "mary-martha",
+    "title": "Mary and Martha",
+    "category": "gospel-luke",
+    "period": "later_judean",
+    "sort_order": 470,
+    "passages": [
+      {
+        "book": "luke",
+        "ref": "Luke 10:38-42"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "parable-rich-fool",
+    "title": "The Parable of the Rich Fool",
+    "category": "gospel-luke",
+    "period": "later_judean",
+    "sort_order": 475,
+    "passages": [
+      {
+        "book": "luke",
+        "ref": "Luke 12:13-21"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "do-not-worry",
+    "title": "Do Not Worry",
+    "category": "gospel",
+    "period": "later_judean",
+    "sort_order": 478,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 6:25-34"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 12:22-34"
+      }
+    ],
+    "diff_annotations": [
+      {
+        "location": "Matt 6:25-34 / Luke 12:22-34",
+        "diff_type": "chronological",
+        "explanation": "Matthew includes this teaching in the Sermon on the Mount; Luke places it during the journey to Jerusalem. This likely reflects the same core teaching delivered on multiple occasions."
+      }
+    ]
+  },
+  {
+    "id": "healing-crippled-woman",
+    "title": "Healing the Crippled Woman on the Sabbath",
+    "category": "gospel-luke",
+    "period": "later_judean",
+    "sort_order": 479,
+    "passages": [
+      {
+        "book": "luke",
+        "ref": "Luke 13:10-17"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "narrow-door",
+    "title": "The Narrow Door",
+    "category": "gospel-luke",
+    "period": "later_judean",
+    "sort_order": 480,
+    "passages": [
+      {
+        "book": "luke",
+        "ref": "Luke 13:22-30"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "lament-jerusalem",
+    "title": "Jesus' Lament over Jerusalem",
+    "category": "gospel",
+    "period": "later_judean",
+    "sort_order": 482,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 23:37-39"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 13:34-35"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "great-banquet",
+    "title": "The Parable of the Great Banquet",
+    "category": "gospel",
+    "period": "later_judean",
+    "sort_order": 484,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 22:1-14"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 14:15-24"
+      }
+    ],
+    "diff_annotations": [
+      {
+        "location": "Matt 22:1-14 / Luke 14:15-24",
+        "diff_type": "detail",
+        "explanation": "Matthew's version is a royal wedding feast with violent consequences for refusal; Luke's is a great supper with polite excuses. Matthew adds the man without a wedding garment. Scholars debate whether these are variants of one parable or two distinct teachings."
+      }
+    ]
+  },
+  {
+    "id": "cost-discipleship",
+    "title": "The Cost of Discipleship",
+    "category": "gospel-luke",
+    "period": "later_judean",
+    "sort_order": 486,
+    "passages": [
+      {
+        "book": "luke",
+        "ref": "Luke 14:25-35"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "parable-lost-coin",
+    "title": "The Parable of the Lost Coin",
+    "category": "gospel-luke",
+    "period": "later_judean",
+    "sort_order": 490,
+    "passages": [
+      {
+        "book": "luke",
+        "ref": "Luke 15:8-10"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "shrewd-manager",
+    "title": "The Parable of the Shrewd Manager",
+    "category": "gospel-luke",
+    "period": "later_judean",
+    "sort_order": 495,
+    "passages": [
+      {
+        "book": "luke",
+        "ref": "Luke 16:1-13"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
     "id": "rich-young-ruler",
     "title": "The Rich Young Ruler",
     "category": "gospel",
@@ -1096,6 +2089,58 @@
     "sort_order": 500
   },
   {
+    "id": "divorce-question",
+    "title": "Teaching on Divorce",
+    "category": "gospel",
+    "period": "journey",
+    "sort_order": 502,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 19:1-12"
+      },
+      {
+        "book": "mark",
+        "ref": "Mark 10:1-12"
+      }
+    ],
+    "diff_annotations": [
+      {
+        "location": "Matt 19:1-12 / Mark 10:1-12",
+        "diff_type": "detail",
+        "explanation": "Matthew includes the 'exception clause' for sexual immorality (porneia) as grounds for divorce; Mark's account has no exception. This difference has generated centuries of theological debate about the absoluteness of Jesus' prohibition."
+      }
+    ]
+  },
+  {
+    "id": "ten-lepers",
+    "title": "The Healing of Ten Lepers",
+    "category": "gospel-luke",
+    "period": "journey",
+    "sort_order": 505,
+    "passages": [
+      {
+        "book": "luke",
+        "ref": "Luke 17:11-19"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "persistent-widow",
+    "title": "The Parable of the Persistent Widow",
+    "category": "gospel-luke",
+    "period": "journey",
+    "sort_order": 508,
+    "passages": [
+      {
+        "book": "luke",
+        "ref": "Luke 18:1-8"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
     "id": "blind-bartimaeus",
     "title": "Blind Bartimaeus",
     "category": "gospel",
@@ -1113,6 +2158,42 @@
       {
         "book": "luke",
         "ref": "Luke 18:35-43"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "pharisee-tax-collector",
+    "title": "The Pharisee and the Tax Collector",
+    "category": "gospel-luke",
+    "period": "journey",
+    "sort_order": 510,
+    "passages": [
+      {
+        "book": "luke",
+        "ref": "Luke 18:9-14"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "blessing-children",
+    "title": "Jesus Blesses the Children",
+    "category": "gospel",
+    "period": "journey",
+    "sort_order": 512,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 19:13-15"
+      },
+      {
+        "book": "mark",
+        "ref": "Mark 10:13-16"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 18:15-17"
       }
     ],
     "diff_annotations": []
@@ -1325,6 +2406,50 @@
     "diff_annotations": []
   },
   {
+    "id": "taxes-caesar",
+    "title": "Paying Taxes to Caesar",
+    "category": "gospel",
+    "period": "passion",
+    "sort_order": 625,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 22:15-22"
+      },
+      {
+        "book": "mark",
+        "ref": "Mark 12:13-17"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 20:20-26"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "sadducees-resurrection",
+    "title": "The Sadducees and the Resurrection",
+    "category": "gospel",
+    "period": "passion",
+    "sort_order": 628,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 22:23-33"
+      },
+      {
+        "book": "mark",
+        "ref": "Mark 12:18-27"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 20:27-40"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
     "id": "olivet-discourse",
     "title": "The Olivet Discourse",
     "category": "gospel",
@@ -1345,6 +2470,20 @@
     "diff_annotations": [],
     "period": "passion",
     "sort_order": 630
+  },
+  {
+    "id": "woes-pharisees",
+    "title": "Seven Woes Against the Pharisees",
+    "category": "gospel-matthew",
+    "period": "passion",
+    "sort_order": 632,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 23:1-36"
+      }
+    ],
+    "diff_annotations": []
   },
   {
     "id": "farewell-discourse",
@@ -1520,6 +2659,34 @@
     "sort_order": 660
   },
   {
+    "id": "ten-virgins",
+    "title": "The Parable of the Ten Virgins",
+    "category": "gospel-matthew",
+    "period": "passion",
+    "sort_order": 660,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 25:1-13"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "sheep-goats",
+    "title": "The Sheep and the Goats",
+    "category": "gospel-matthew",
+    "period": "passion",
+    "sort_order": 665,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 25:31-46"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
     "id": "arrest",
     "title": "The Arrest",
     "category": "gospel",
@@ -1608,6 +2775,20 @@
     ]
   },
   {
+    "id": "jesus-before-herod",
+    "title": "Jesus Before Herod Antipas",
+    "category": "gospel-luke",
+    "period": "passion",
+    "sort_order": 688,
+    "passages": [
+      {
+        "book": "luke",
+        "ref": "Luke 23:6-12"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
     "id": "crucifixion",
     "title": "The Crucifixion",
     "category": "gospel",
@@ -1632,6 +2813,54 @@
     "diff_annotations": [],
     "period": "passion",
     "sort_order": 690
+  },
+  {
+    "id": "barabbas",
+    "title": "The Release of Barabbas",
+    "category": "gospel",
+    "period": "passion",
+    "sort_order": 690,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 27:15-26"
+      },
+      {
+        "book": "mark",
+        "ref": "Mark 15:6-15"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 23:18-25"
+      },
+      {
+        "book": "john",
+        "ref": "John 18:39-40"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "simon-cyrene",
+    "title": "Simon of Cyrene",
+    "category": "gospel",
+    "period": "passion",
+    "sort_order": 693,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 27:32"
+      },
+      {
+        "book": "mark",
+        "ref": "Mark 15:21"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 23:26"
+      }
+    ],
+    "diff_annotations": []
   },
   {
     "id": "last-words-cross",
@@ -1667,6 +2896,90 @@
           "john": "It is finished"
         },
         "explanation": "The seven last words of Christ are distributed across the four Gospels. Matthew/Mark record only the cry of dereliction (Psalm 22:1). Luke records three sayings: forgiveness for the executioners, promise to the thief, and the commendation of his spirit (Psalm 31:5). John records three: care for his mother, the cry of thirst, and 'It is finished' (tetelestai). Each Gospel's selection reflects its theological portrait of Jesus's death."
+      }
+    ]
+  },
+  {
+    "id": "two-thieves",
+    "title": "The Two Thieves on the Cross",
+    "category": "gospel",
+    "period": "passion",
+    "sort_order": 696,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 27:38-44"
+      },
+      {
+        "book": "mark",
+        "ref": "Mark 15:27-32"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 23:39-43"
+      }
+    ],
+    "diff_annotations": [
+      {
+        "location": "Luke 23:39-43 / Matt 27:44",
+        "diff_type": "detail",
+        "explanation": "Matthew and Mark state both criminals reviled Jesus; Luke alone records that one thief repented and received Jesus' promise of paradise. This is not necessarily contradictory — Matthew and Mark may have summarized, while Luke preserved the detailed exchange."
+      }
+    ]
+  },
+  {
+    "id": "temple-curtain",
+    "title": "The Temple Curtain Torn",
+    "category": "gospel",
+    "period": "passion",
+    "sort_order": 698,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 27:51"
+      },
+      {
+        "book": "mark",
+        "ref": "Mark 15:38"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 23:45"
+      }
+    ],
+    "diff_annotations": [
+      {
+        "location": "Matt 27:51 / Mark 15:38 / Luke 23:45",
+        "diff_type": "chronological",
+        "explanation": "Luke places the tearing of the curtain before Jesus' death; Matthew and Mark place it immediately after. Luke also attributes the darkness to a solar eclipse, while Matthew adds an earthquake and the resurrection of saints — details unique to his account."
+      }
+    ]
+  },
+  {
+    "id": "centurions-confession",
+    "title": "The Centurion's Confession",
+    "category": "gospel",
+    "period": "passion",
+    "sort_order": 699,
+    "passages": [
+      {
+        "book": "matthew",
+        "ref": "Matt 27:54"
+      },
+      {
+        "book": "mark",
+        "ref": "Mark 15:39"
+      },
+      {
+        "book": "luke",
+        "ref": "Luke 23:47"
+      }
+    ],
+    "diff_annotations": [
+      {
+        "location": "Matt 27:54 / Mark 15:39 / Luke 23:47",
+        "diff_type": "theological_emphasis",
+        "explanation": "Matthew and Mark record the centurion saying 'Truly this was the Son of God,' a christological confession. Luke has 'Certainly this man was innocent (dikaios)' — emphasizing Jesus' righteousness rather than divine identity, consistent with Luke's broader theme of Jesus as the righteous sufferer."
       }
     ]
   },
@@ -1763,6 +3076,24 @@
     "sort_order": 810
   },
   {
+    "id": "mary-magdalene-garden",
+    "title": "Jesus Appears to Mary Magdalene",
+    "category": "gospel",
+    "period": "resurrection",
+    "sort_order": 810,
+    "passages": [
+      {
+        "book": "mark",
+        "ref": "Mark 16:9-11"
+      },
+      {
+        "book": "john",
+        "ref": "John 20:11-18"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
     "id": "doubting-thomas",
     "title": "Doubting Thomas",
     "category": "gospel-john",
@@ -1772,6 +3103,24 @@
       {
         "book": "john",
         "ref": "John 20:24-29"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "appearance-disciples",
+    "title": "Jesus Appears to the Disciples",
+    "category": "gospel",
+    "period": "resurrection",
+    "sort_order": 815,
+    "passages": [
+      {
+        "book": "luke",
+        "ref": "Luke 24:36-43"
+      },
+      {
+        "book": "john",
+        "ref": "John 20:19-23"
       }
     ],
     "diff_annotations": []
@@ -1822,6 +3171,34 @@
     "sort_order": 820
   },
   {
+    "id": "sea-galilee-appearance",
+    "title": "Jesus Appears at the Sea of Galilee",
+    "category": "gospel-john",
+    "period": "resurrection",
+    "sort_order": 822,
+    "passages": [
+      {
+        "book": "john",
+        "ref": "John 21:1-14"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
+    "id": "peter-restored",
+    "title": "The Restoration of Peter",
+    "category": "gospel-john",
+    "period": "resurrection",
+    "sort_order": 825,
+    "passages": [
+      {
+        "book": "john",
+        "ref": "John 21:15-19"
+      }
+    ],
+    "diff_annotations": []
+  },
+  {
     "id": "ascension",
     "title": "The Ascension",
     "category": "gospel",
@@ -1842,298 +3219,5 @@
       }
     ],
     "diff_annotations": []
-  },
-  {
-    "id": "chr-saul-death",
-    "category": "ot-parallel",
-    "title": "Saul's Death",
-    "passages": [
-      {
-        "book": "1_samuel",
-        "ref": "1 Sam 31",
-        "label": "1 Sam 31"
-      },
-      {
-        "book": "1_chronicles",
-        "ref": "1 Chr 10",
-        "label": "1 Chr 10"
-      }
-    ],
-    "note": "The Chronicler adds a theological verdict: Saul died for unfaithfulness and consulting a medium.",
-    "diff_annotations": [],
-    "period": "ot",
-    "sort_order": 1000
-  },
-  {
-    "id": "david-anointed",
-    "title": "David Anointed King",
-    "category": "ot-parallel",
-    "passages": [
-      {
-        "book": "1_samuel",
-        "ref": "1 Sam 16:1-13"
-      },
-      {
-        "book": "2_samuel",
-        "ref": "2 Sam 2:4"
-      },
-      {
-        "book": "2_samuel",
-        "ref": "2 Sam 5:3"
-      }
-    ],
-    "diff_annotations": [],
-    "period": "ot",
-    "sort_order": 1010
-  },
-  {
-    "id": "chr-david-anointed",
-    "category": "ot-parallel",
-    "title": "David Anointed King",
-    "passages": [
-      {
-        "book": "2_samuel",
-        "ref": "2 Sam 5",
-        "label": "2 Sam 5"
-      },
-      {
-        "book": "1_chronicles",
-        "ref": "1 Chr 11",
-        "label": "1 Chr 11"
-      }
-    ],
-    "note": "Chronicles omits the 7-year civil war; 'all Israel' anoints David immediately.",
-    "diff_annotations": [],
-    "period": "ot",
-    "sort_order": 1020
-  },
-  {
-    "id": "chr-ark-procession",
-    "category": "ot-parallel",
-    "title": "The Ark Comes to Jerusalem",
-    "passages": [
-      {
-        "book": "2_samuel",
-        "ref": "2 Sam 6",
-        "label": "2 Sam 6"
-      },
-      {
-        "book": "1_chronicles",
-        "ref": "1 Chr 15",
-        "label": "1 Chr 15-16"
-      }
-    ],
-    "note": "Chronicles adds extensive Levitical detail and David's psalm of thanksgiving.",
-    "diff_annotations": [],
-    "period": "ot",
-    "sort_order": 1030
-  },
-  {
-    "id": "davidic-covenant",
-    "title": "The Davidic Covenant",
-    "category": "ot-parallel",
-    "passages": [
-      {
-        "book": "2_samuel",
-        "ref": "2 Sam 7:1-17"
-      },
-      {
-        "book": "1_kings",
-        "ref": "1 Kgs 8:22-26"
-      }
-    ],
-    "diff_annotations": [
-      {
-        "location": "2 Samuel 7:14 only",
-        "diff_type": "addition",
-        "explanation": "Samuel's version of the Davidic covenant includes a conditional clause about discipline for iniquity. The Chronicler omits this clause entirely, likely because it was historically fulfilled in the exile and the Chronicler is writing to a post-exilic community reestablishing identity without a Davidic king. The omission shapes the Davidic covenant toward pure promise — which intensifies messianic hope rather than past failure.",
-        "texts": {
-          "matthew": "When he commits iniquity, I will discipline him with the rod of men",
-          "luke": "(absent from 1 Chronicles 17:13 parallel)"
-        }
-      }
-    ],
-    "period": "ot",
-    "sort_order": 1040
-  },
-  {
-    "id": "chr-davidic-covenant",
-    "category": "ot-parallel",
-    "title": "The Davidic Covenant",
-    "passages": [
-      {
-        "book": "2_samuel",
-        "ref": "2 Sam 7",
-        "label": "2 Sam 7"
-      },
-      {
-        "book": "1_chronicles",
-        "ref": "1 Chr 17",
-        "label": "1 Chr 17"
-      }
-    ],
-    "note": "Nearly identical accounts — the covenant is too important to paraphrase.",
-    "diff_annotations": [
-      {
-        "location": "2 Samuel 7:14 only",
-        "diff_type": "omission",
-        "explanation": "The Chronicler omits the condition about discipline for iniquity that appears in 2 Samuel 7:14. Writing after the exile, the Chronicler reshapes the Davidic covenant as unconditional promise rather than a mixed promise-and-warning. This omission amplifies the messianic dimension of the Davidic line and explains why the Chronicler's David is an idealized figure never shown in moral failure.",
-        "texts": {
-          "matthew": "When he commits iniquity, I will discipline him with the rod of men",
-          "luke": "(absent from 1 Chronicles 17:13)"
-        }
-      }
-    ],
-    "period": "ot",
-    "sort_order": 1050
-  },
-  {
-    "id": "chr-census",
-    "category": "ot-parallel",
-    "title": "David's Census",
-    "passages": [
-      {
-        "book": "2_samuel",
-        "ref": "2 Sam 24",
-        "label": "2 Sam 24"
-      },
-      {
-        "book": "1_chronicles",
-        "ref": "1 Chr 21",
-        "label": "1 Chr 21"
-      }
-    ],
-    "note": "'The LORD' (2 Sam) vs 'Satan' (1 Chr) — the most famous divergence between the two histories.",
-    "diff_annotations": [
-      {
-        "location": "2 Samuel 24:1 / 1 Chronicles 21:1",
-        "diff_type": "theological_emphasis",
-        "explanation": "Samuel says YHWH incited David; Chronicles says Satan incited David. This is one of the most discussed theological tensions in biblical parallels. The Chronicler, writing later (post-exilic), uses the adversarial figure of 'the satan' (who appears also in Job 1-2 and Zechariah 3) to distance God from directly causing sin. The two accounts represent different ways of narrating divine sovereignty and human moral responsibility.",
-        "texts": {
-          "matthew": "The anger of the LORD was kindled against Israel, and he incited David against them",
-          "luke": "Then Satan stood against Israel and incited David to number Israel"
-        }
-      },
-      {
-        "location": "2 Samuel 24:9 / 1 Chronicles 21:5",
-        "diff_type": "wording",
-        "explanation": "The numbers differ significantly between the two accounts. The discrepancy likely reflects different counting methods (whether Levi and Benjamin were included, how military vs. civilian populations were tallied) or textual transmission variance. Ancient census numbers were often rounded and represent administrative categories rather than precise demographic totals.",
-        "texts": {
-          "matthew": "Israel: 800,000 valiant men; Judah: 500,000",
-          "luke": "Israel: 1,100,000; Judah: 470,000"
-        }
-      }
-    ],
-    "period": "ot",
-    "sort_order": 1060
-  },
-  {
-    "id": "solomons-temple",
-    "title": "Solomon Builds the Temple",
-    "category": "ot-parallel",
-    "passages": [
-      {
-        "book": "1_kings",
-        "ref": "1 Kgs 6:1-38"
-      },
-      {
-        "book": "1_kings",
-        "ref": "1 Kgs 7:13-51"
-      }
-    ],
-    "diff_annotations": [],
-    "period": "ot",
-    "sort_order": 1070
-  },
-  {
-    "id": "temple-dedication",
-    "title": "Temple Dedication Prayer",
-    "category": "ot-parallel",
-    "passages": [
-      {
-        "book": "1_kings",
-        "ref": "1 Kgs 8:22-53"
-      }
-    ],
-    "diff_annotations": [],
-    "period": "ot",
-    "sort_order": 1080
-  },
-  {
-    "id": "elijah-carmel",
-    "title": "Elijah on Mount Carmel",
-    "category": "ot-parallel",
-    "passages": [
-      {
-        "book": "1_kings",
-        "ref": "1 Kgs 18:20-46"
-      }
-    ],
-    "diff_annotations": [],
-    "period": "ot",
-    "sort_order": 1090
-  },
-  {
-    "id": "hezekiah-sennacherib",
-    "title": "Sennacherib's Invasion",
-    "category": "ot-parallel",
-    "passages": [
-      {
-        "ref": "2 Kgs 18:13–19:37",
-        "book": "2_kings",
-        "label": "Kings account"
-      },
-      {
-        "ref": "Isa 36:1–37:38",
-        "book": "isaiah",
-        "label": "Isaiah account"
-      }
-    ],
-    "note": "Nearly identical parallel accounts of Sennacherib's siege and the angel of the LORD's deliverance of Jerusalem.",
-    "diff_annotations": [],
-    "period": "ot",
-    "sort_order": 1100
-  },
-  {
-    "id": "hezekiah-illness",
-    "title": "Hezekiah's Illness and Recovery",
-    "category": "ot-parallel",
-    "passages": [
-      {
-        "ref": "2 Kgs 20:1–11",
-        "book": "2_kings",
-        "label": "Kings account"
-      },
-      {
-        "ref": "Isa 38:1–22",
-        "book": "isaiah",
-        "label": "Isaiah account"
-      }
-    ],
-    "note": "Isaiah's version includes Hezekiah's psalm of thanksgiving (Isa 38:9–20), absent from Kings.",
-    "diff_annotations": [],
-    "period": "ot",
-    "sort_order": 1110
-  },
-  {
-    "id": "fall-of-jerusalem",
-    "title": "The Fall of Jerusalem",
-    "category": "ot-parallel",
-    "passages": [
-      {
-        "ref": "2 Kgs 25:1–30",
-        "book": "2_kings",
-        "label": "Kings account"
-      },
-      {
-        "ref": "Jer 52:1–34",
-        "book": "jeremiah",
-        "label": "Jeremiah account"
-      }
-    ],
-    "note": "Jeremiah 52 is nearly a verbatim copy of 2 Kings 25 — the destruction of Jerusalem, temple, and exile to Babylon.",
-    "diff_annotations": [],
-    "period": "ot",
-    "sort_order": 1120
   }
 ]
