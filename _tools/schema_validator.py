@@ -706,7 +706,7 @@ def main():
         }
         unregistered = []
         for book_dir in sorted(CONTENT.iterdir()):
-            if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
+            if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
                 continue
             for json_file in sorted(book_dir.glob('*.json')):
                 try:
@@ -728,12 +728,14 @@ def main():
 
     overlaps = []
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:
                 data = json.loads(json_file.read_text(encoding='utf-8'))
             except Exception:
+                continue
+            if not isinstance(data, dict):
                 continue
             sections = data.get('sections', [])
             prev_end = -1
@@ -756,12 +758,14 @@ def main():
 
     gaps = []
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:
                 data = json.loads(json_file.read_text(encoding='utf-8'))
             except Exception:
+                continue
+            if not isinstance(data, dict):
                 continue
             sections = data.get('sections', [])
             prev_end = 0

@@ -742,6 +742,15 @@ export interface ArchaeologyVerseLink {
   relevance?: string;
 }
 
+export interface ArchaeologyImage {
+  id: number;
+  discovery_id: string;
+  url: string;
+  caption?: string;
+  credit?: string;
+  display_order: number;
+}
+
 // ── Historical Interpretations (Time-Travel Reader) ────────
 
 export interface HistoricalInterpretation {

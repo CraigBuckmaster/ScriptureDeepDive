@@ -561,6 +561,17 @@ CREATE VIRTUAL TABLE IF NOT EXISTS archaeology_fts USING fts5(
 CREATE INDEX IF NOT EXISTS idx_archaeology_category ON archaeological_discoveries(category);
 CREATE INDEX IF NOT EXISTS idx_archaeology_verse_links ON archaeology_verse_links(discovery_id);
 
+CREATE TABLE IF NOT EXISTS archaeology_images (
+  id INTEGER PRIMARY KEY,
+  discovery_id TEXT NOT NULL REFERENCES archaeological_discoveries(id),
+  url TEXT NOT NULL,
+  caption TEXT,
+  credit TEXT,
+  display_order INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE INDEX IF NOT EXISTS idx_archaeology_images ON archaeology_images(discovery_id);
+
 -- ══════════════════════════════════════════════════════════════
 -- HISTORICAL INTERPRETATIONS (Time-Travel Reader)
 -- ══════════════════════════════════════════════════════════════
@@ -1571,6 +1582,7 @@ def populate_archaeology(cur):
     discoveries = _load_json(path)
     disc_count = 0
     link_count = 0
+    img_count = 0
 
     for d in discoveries:
         cur.execute(
@@ -1594,10 +1606,21 @@ def populate_archaeology(cur):
             )
             link_count += 1
 
+        # Images
+        for idx, img in enumerate(d.get('images', [])):
+            cur.execute(
+                'INSERT INTO archaeology_images '
+                '(discovery_id, url, caption, credit, display_order) '
+                'VALUES (?, ?, ?, ?, ?)',
+                (d['id'], img['url'], img.get('caption'),
+                 img.get('credit'), idx)
+            )
+            img_count += 1
+
     # Rebuild FTS index
     cur.execute("INSERT INTO archaeology_fts(archaeology_fts) VALUES('rebuild')")
 
-    return disc_count, link_count
+    return disc_count, link_count, img_count
 
 
 def populate_historical_interpretations(cur):
@@ -2076,9 +2099,10 @@ def main():
     if result is None:
         print("  [SKIP] archaeology: content/archaeology/discoveries.json not found")
     else:
-        discs, links = result
+        discs, links, imgs = result
         print(f"  [OK] archaeological_discoveries: {discs} rows")
         print(f"  [OK] archaeology_verse_links: {links} rows")
+        print(f"  [OK] archaeology_images: {imgs} rows")
 
     result = populate_historical_interpretations(cur)
     if result is None:

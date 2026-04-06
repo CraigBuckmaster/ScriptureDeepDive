@@ -4,7 +4,7 @@
  * Queries for archaeological discoveries with verse links and FTS search.
  */
 import { getDb } from '../database';
-import type { ArchaeologicalDiscovery, ArchaeologyVerseLink } from '../../types';
+import type { ArchaeologicalDiscovery, ArchaeologyVerseLink, ArchaeologyImage } from '../../types';
 
 export async function getAllDiscoveries(): Promise<ArchaeologicalDiscovery[]> {
   return getDb().getAllAsync<ArchaeologicalDiscovery>(
@@ -59,6 +59,15 @@ export async function getDiscoveryVerseLinks(
 ): Promise<ArchaeologyVerseLink[]> {
   return getDb().getAllAsync<ArchaeologyVerseLink>(
     'SELECT * FROM archaeology_verse_links WHERE discovery_id = ?',
+    [discoveryId]
+  );
+}
+
+export async function getDiscoveryImages(
+  discoveryId: string,
+): Promise<ArchaeologyImage[]> {
+  return getDb().getAllAsync<ArchaeologyImage>(
+    'SELECT * FROM archaeology_images WHERE discovery_id = ? ORDER BY display_order',
     [discoveryId]
   );
 }

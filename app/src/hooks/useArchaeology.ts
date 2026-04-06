@@ -13,8 +13,9 @@ import {
   getDiscoveriesByCategory,
   searchDiscoveries,
   getDiscoveryVerseLinks,
+  getDiscoveryImages,
 } from '../db/content/archaeology';
-import type { ArchaeologicalDiscovery, ArchaeologyVerseLink } from '../types';
+import type { ArchaeologicalDiscovery, ArchaeologyVerseLink, ArchaeologyImage } from '../types';
 
 export function useArchaeologyBrowse(category?: string) {
   return useAsyncData<ArchaeologicalDiscovery[]>(
@@ -63,12 +64,14 @@ export function useArchaeologySearch() {
 export interface ArchaeologyDetailData {
   discovery: ArchaeologicalDiscovery | null;
   verseLinks: ArchaeologyVerseLink[];
+  images: ArchaeologyImage[];
   loading: boolean;
 }
 
 export function useArchaeologyDetail(discoveryId: string): ArchaeologyDetailData {
   const [discovery, setDiscovery] = useState<ArchaeologicalDiscovery | null>(null);
   const [verseLinks, setVerseLinks] = useState<ArchaeologyVerseLink[]>([]);
+  const [images, setImages] = useState<ArchaeologyImage[]>([]);
   const [loading, setLoading] = useState(true);
   const mountedRef = useRef(true);
 
@@ -82,11 +85,13 @@ export function useArchaeologyDetail(discoveryId: string): ArchaeologyDetailData
     Promise.all([
       getDiscovery(discoveryId),
       getDiscoveryVerseLinks(discoveryId),
+      getDiscoveryImages(discoveryId),
     ])
-      .then(([d, vl]) => {
+      .then(([d, vl, imgs]) => {
         if (mountedRef.current) {
           setDiscovery(d);
           setVerseLinks(vl);
+          setImages(imgs);
           setLoading(false);
         }
       })
@@ -95,5 +100,5 @@ export function useArchaeologyDetail(discoveryId: string): ArchaeologyDetailData
       });
   }, [discoveryId]);
 
-  return { discovery, verseLinks, loading };
+  return { discovery, verseLinks, images, loading };
 }

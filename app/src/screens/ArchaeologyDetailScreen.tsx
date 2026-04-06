@@ -16,6 +16,7 @@ import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { CollapsibleSection } from '../components/CollapsibleSection';
 import { UpgradePrompt } from '../components/UpgradePrompt';
+import { DiscoveryImageGallery } from '../components/DiscoveryImageGallery';
 import { BadgeChip } from '../components/BadgeChip';
 import { useArchaeologyDetail } from '../hooks/useArchaeology';
 import { usePremium } from '../hooks/usePremium';
@@ -29,7 +30,7 @@ function ArchaeologyDetailScreen() {
   const route = useRoute<ScreenRouteProp<'Explore', 'ArchaeologyDetail'>>();
   const { discoveryId } = route.params;
 
-  const { discovery, verseLinks, loading } = useArchaeologyDetail(discoveryId);
+  const { discovery, verseLinks, images, loading } = useArchaeologyDetail(discoveryId);
   const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
 
   const handleVersePress = useCallback(
@@ -81,6 +82,11 @@ function ArchaeologyDetailScreen() {
             </Text>
           )}
         </View>
+
+        {/* Image gallery */}
+        {images.length > 0 && (
+          <DiscoveryImageGallery images={images} />
+        )}
 
         {/* Significance — always visible */}
         <View style={[styles.significanceCard, { backgroundColor: base.bgElevated, borderColor: base.gold + '30' }]}>
