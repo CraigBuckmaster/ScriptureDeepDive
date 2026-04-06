@@ -735,6 +735,8 @@ def main():
                 data = json.loads(json_file.read_text(encoding='utf-8'))
             except Exception:
                 continue
+            if not isinstance(data, dict):
+                continue
             sections = data.get('sections', [])
             prev_end = -1
             for i, sec in enumerate(sections):
@@ -762,6 +764,8 @@ def main():
             try:
                 data = json.loads(json_file.read_text(encoding='utf-8'))
             except Exception:
+                continue
+            if not isinstance(data, dict):
                 continue
             sections = data.get('sections', [])
             prev_end = 0
