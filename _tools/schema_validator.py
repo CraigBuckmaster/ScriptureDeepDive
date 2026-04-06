@@ -684,6 +684,98 @@ def main():
 
     print(f"  Divergent words (>3 glosses): {divergent_count}")
 
+    # ── 13. Unregistered scholar check (#559) ──
+    print("\n--- 13. UNREGISTERED SCHOLARS ---")
+
+    scholars_path = META / 'scholars.json'
+    if scholars_path.exists():
+        scholars_data = json.loads(scholars_path.read_text())
+        valid_scholar_keys = set()
+        for s in scholars_data:
+            valid_scholar_keys.add(s['id'])
+            if s.get('panel_key'):
+                valid_scholar_keys.add(s['panel_key'])
+        non_scholar_panels = {
+            'heb', 'hist', 'ctx', 'cross', 'greek', 'hebtext', 'interlinear',
+            'tl', 'places', 'poi', 'themes', 'lit', 'trans', 'src', 'rec',
+            'thread', 'tx', 'textual', 'debate', 'discourse', 'ppl', 'com',
+        }
+        unregistered = []
+        for book_dir in sorted(CONTENT.iterdir()):
+            if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
+                continue
+            for json_file in sorted(book_dir.glob('*.json')):
+                try:
+                    data = json.loads(json_file.read_text())
+                except Exception:
+                    continue
+                for i, sec in enumerate(data.get('sections', [])):
+                    for ptype in sec.get('panels', {}):
+                        if ptype not in non_scholar_panels and ptype not in valid_scholar_keys:
+                            unregistered.append(f"{book_dir.name}/{json_file.stem} S{i+1}: {ptype}")
+        check("No unregistered scholars in panels", len(unregistered) == 0,
+              f"{len(unregistered)} unregistered: {unregistered[:5]}")
+        print(f"  Unregistered scholars: {len(unregistered)}")
+    else:
+        print("  [SKIP] scholars.json not found")
+
+    # ── 14. Verse overlap check (#560) ──
+    print("\n--- 14. VERSE OVERLAPS ---")
+
+    overlaps = []
+    for book_dir in sorted(CONTENT.iterdir()):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
+            continue
+        for json_file in sorted(book_dir.glob('*.json')):
+            try:
+                data = json.loads(json_file.read_text())
+            except Exception:
+                continue
+            sections = data.get('sections', [])
+            prev_end = -1
+            for i, sec in enumerate(sections):
+                vs = sec.get('verse_start')
+                ve = sec.get('verse_end')
+                if vs is None or ve is None:
+                    continue
+                if i > 0 and vs <= prev_end:
+                    overlaps.append(f"{book_dir.name}/{json_file.stem} S{i+1}: v{vs}-{ve} overlaps prev end v{prev_end}")
+                prev_end = ve
+    # Warning until content fix #558 lands, then promote to check()
+    if overlaps:
+        for o in overlaps[:10]:
+            warn("Verse overlap", o)
+    print(f"  Verse overlaps (warning until #558): {len(overlaps)}")
+
+    # ── 15. Verse gap warning (#562) ──
+    print("\n--- 15. VERSE GAPS ---")
+
+    gaps = []
+    for book_dir in sorted(CONTENT.iterdir()):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
+            continue
+        for json_file in sorted(book_dir.glob('*.json')):
+            try:
+                data = json.loads(json_file.read_text())
+            except Exception:
+                continue
+            sections = data.get('sections', [])
+            prev_end = 0
+            for i, sec in enumerate(sections):
+                vs = sec.get('verse_start')
+                ve = sec.get('verse_end')
+                if vs is None or ve is None:
+                    continue
+                if i > 0 and vs > prev_end + 1:
+                    gaps.append(f"{book_dir.name}/{json_file.stem} S{i+1}: gap v{prev_end+1}-{vs-1}")
+                prev_end = ve
+    if gaps:
+        for g in gaps[:20]:
+            warn("Verse gap", g)
+        if len(gaps) > 20:
+            warn(f"...and {len(gaps) - 20} more verse gaps")
+    print(f"  Verse gaps (warning only): {len(gaps)}")
+
     # ── Summary ──
     print(f"\n{'='*60}")
     print(f"RESULTS: {passed} passed, {failed} failed, {warnings} warnings")
