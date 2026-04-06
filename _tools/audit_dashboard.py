@@ -14,6 +14,10 @@ import argparse
 import json
 import os
 import sys
+
+# Ensure stdout can handle UTF-8 (needed on Windows where cp1252 is default)
+if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
 import webbrowser
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from pathlib import Path
@@ -28,7 +32,7 @@ SUMMARY_PATH = AUDIT_DIR / "summary.json"
 
 def load_json(path):
     if path.exists():
-        return json.load(open(path))
+        return json.load(open(path, encoding='utf-8'))
     return {}
 
 
