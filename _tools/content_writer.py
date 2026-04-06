@@ -29,6 +29,13 @@ import glob
 import re, json, math, os, sys
 from pathlib import Path
 
+# Ensure stdout can handle UTF-8 (needed on Windows where cp1252 is default)
+import sys as _sys
+if _sys.stdout.encoding and _sys.stdout.encoding.lower() != 'utf-8':
+    _sys.stdout.reconfigure(encoding='utf-8')
+del _sys
+
+
 # Dynamically resolve the repo root from this file's location (_tools/content_writer.py → repo root).
 # This allows the script to work in any directory, not just a specific container path.
 _REPO = str(Path(__file__).resolve().parent.parent)

@@ -59,7 +59,7 @@ class MetaClaimExtractor:
         path = self.meta_dir / filename
         if not path.exists():
             return None
-        return json.load(open(path))
+        return json.load(open(path, encoding='utf-8'))
 
     # ── Book Intros ─────────────────────────────────────────────
 

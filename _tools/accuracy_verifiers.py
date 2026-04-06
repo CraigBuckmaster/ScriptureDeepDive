@@ -86,7 +86,7 @@ class VerseIndex:
             return
 
         # Load book metadata
-        books = json.load(open(META_DIR / "books.json"))
+        books = json.load(open(META_DIR / "books.json", encoding='utf-8'))
         for book in books:
             bid = book["id"]
             self._books[bid] = book.get("total_chapters", 0)
@@ -96,7 +96,7 @@ class VerseIndex:
         if niv_dir.exists():
             for vf in niv_dir.glob("*.json"):
                 bid = vf.stem
-                verses = json.load(open(vf))
+                verses = json.load(open(vf, encoding='utf-8'))
                 ch_verses = {}
                 for v in verses:
                     ch = v.get("ch", 0)
@@ -279,11 +279,11 @@ class StrongsLookup:
         if self._ot is not None:
             return
         if STRONGS_OT_PATH.exists():
-            self._ot = json.load(open(STRONGS_OT_PATH))
+            self._ot = json.load(open(STRONGS_OT_PATH, encoding='utf-8'))
         else:
             self._ot = {}
         if STRONGS_NT_PATH.exists():
-            self._nt = json.load(open(STRONGS_NT_PATH))
+            self._nt = json.load(open(STRONGS_NT_PATH, encoding='utf-8'))
         else:
             self._nt = {}
         # Build reverse lookup: normalized word → Strong's number
@@ -449,7 +449,7 @@ class ScholarValidator:
             return
         scholars_path = META_DIR / "scholars.json"
         if scholars_path.exists():
-            data = json.load(open(scholars_path))
+            data = json.load(open(scholars_path, encoding='utf-8'))
             self._scholars = {s["panel_key"]: s for s in data}
         else:
             self._scholars = {}
@@ -1083,7 +1083,7 @@ class AccuracyVerifier:
             return
         for cache_file in CACHE_DIR.glob("*.json"):
             try:
-                data = json.load(open(cache_file))
+                data = json.load(open(cache_file, encoding='utf-8'))
                 self._cache[cache_file.stem] = data
             except (json.JSONDecodeError, IOError):
                 continue

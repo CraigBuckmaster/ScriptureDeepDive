@@ -29,6 +29,13 @@ Usage:
 import os, sys, json, sqlite3
 from pathlib import Path
 
+# Ensure stdout can handle UTF-8 (needed on Windows where cp1252 is default)
+import sys as _sys
+if _sys.stdout.encoding and _sys.stdout.encoding.lower() != 'utf-8':
+    _sys.stdout.reconfigure(encoding='utf-8')
+del _sys
+
+
 ROOT = Path(__file__).resolve().parent.parent
 DB_PATH = ROOT / 'scripture.db'
 
