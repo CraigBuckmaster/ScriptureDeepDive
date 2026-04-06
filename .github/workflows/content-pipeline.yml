@@ -159,6 +159,8 @@ jobs:
       - name: Generate pipeline summary
         if: always()
         id: summary
+        env:
+          CONTENT_SUMMARY: ${{ steps.content_check.outputs.summary }}
         run: |
           JSON_STATUS="${{ steps.validate_json.outcome }}"
           BUILD_STATUS="${{ steps.build_db.outcome }}"
@@ -201,8 +203,7 @@ jobs:
           | **Build DB** | $(status_icon $BUILD_STATUS) | — |
           | **DB Integrity** | $(status_icon $DB_STATUS) | ${DB_RESULTS:-—} |"
 
-          # Append content check summary if it ran
-          CONTENT_SUMMARY="${{ steps.content_check.outputs.summary }}"
+          # Append content check summary if it ran (passed via env to avoid shell injection)
           if [ -n "$CONTENT_SUMMARY" ]; then
             BODY="$BODY
 
