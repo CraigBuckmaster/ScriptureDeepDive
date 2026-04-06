@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 validate_sqlite.py — Integrity checker for scripture.db.
 
