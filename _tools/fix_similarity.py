@@ -9,6 +9,13 @@ import json
 import re
 from pathlib import Path
 
+# Ensure stdout can handle UTF-8 (needed on Windows where cp1252 is default)
+import sys as _sys
+if _sys.stdout.encoding and _sys.stdout.encoding.lower() != 'utf-8':
+    _sys.stdout.reconfigure(encoding='utf-8')
+del _sys
+
+
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 
@@ -284,7 +291,7 @@ def main():
         book_fixed = 0
         for json_file in sorted(book_dir.glob("*.json")):
             try:
-                data = json.load(open(json_file))
+                data = json.load(open(json_file, encoding='utf-8'))
             except (json.JSONDecodeError, FileNotFoundError):
                 continue
 

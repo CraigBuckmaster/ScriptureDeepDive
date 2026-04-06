@@ -29,6 +29,13 @@ Usage:
 import os, sys, json, sqlite3
 from pathlib import Path
 
+# Ensure stdout can handle UTF-8 (needed on Windows where cp1252 is default)
+import sys as _sys
+if _sys.stdout.encoding and _sys.stdout.encoding.lower() != 'utf-8':
+    _sys.stdout.reconfigure(encoding='utf-8')
+del _sys
+
+
 ROOT = Path(__file__).resolve().parent.parent
 DB_PATH = ROOT / 'scripture.db'
 
@@ -144,16 +151,16 @@ def main():
 
     # Meta tables — these counts drift as content is enriched. Update after changes.
     check("282 people", q1(cur, "SELECT COUNT(*) FROM people") == 282)
-    check("54 scholars", q1(cur, "SELECT COUNT(*) FROM scholars") == 54)
+    check("72 scholars", q1(cur, "SELECT COUNT(*) FROM scholars") == 72)
     check("71+ places", q1(cur, "SELECT COUNT(*) FROM places") >= 60)
     check("28+ map stories", q1(cur, "SELECT COUNT(*) FROM map_stories") >= 15)
     check("14+ word studies", q1(cur, "SELECT COUNT(*) FROM word_studies") >= 14)
     check("53+ synoptic entries", q1(cur, "SELECT COUNT(*) FROM synoptic_map") >= 53)
 
-    # VHL groups: 5 groups per chapter (places, people, time, key, divine) × 879 chapters
-    # This count changes only if chapters are added/removed, which shouldn't happen now.
+    # VHL groups: 5 groups per chapter (places, people, time, key, divine) × 1189 chapters
+    # Count increased from 4395→5945 after content enrichment added VHL to more chapters.
     vhl_count = q1(cur, "SELECT COUNT(*) FROM vhl_groups")
-    check("4395 VHL groups", vhl_count == 4395, f"got {vhl_count}")
+    check("5945 VHL groups", vhl_count == 5945, f"got {vhl_count}")
 
     # Deep links
     dl_count = q1(cur,
