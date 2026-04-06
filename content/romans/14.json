@@ -93,7 +93,7 @@
           "notes": [
             {
               "ref": "14:1–12",
-              "note": "Moo argues that Paul’s principle is broader than the specific issues of food and days: wherever Christians disagree on matters of adiaphora (things indifferent), the governing principle is mutual acceptance and accountability to Christ as Lord."
+              "note": "Moo argues that Paul’s principle is broader than the specific issues of food and days: wherever Christians disagree on matters of adiaphora (things indifferent), the governing principle is mutual acceptance and accountability to Christ as Lord. Moo's exegesis situates James within the broader wisdom tradition, noting how the author draws on Proverbs, Sirach, and Jesus's own teaching to construct a practical theology of faithful living. The epistle's imperatives are grounded not in legalism but in the transformative reality of the 'implanted word' (1:21)."
             }
           ]
         },
@@ -102,7 +102,7 @@
           "notes": [
             {
               "ref": "14:1–12",
-              "note": "Schreiner emphasises that Paul’s resolution is theocentric: Christ is Lord of both the living and the dead (v. 9), and every knee will bow to God (v. 11). This lordship of Christ over all believers makes mutual judgment inappropriate."
+              "note": "Schreiner emphasises that Paul’s resolution is theocentric: Christ is Lord of both the living and the dead (v. 9), and every knee will bow to God (v. 11). This lordship of Christ over all believers makes mutual judgment inappropriate. Schreiner's exegesis emphasizes the eschatological dimension of the passage. The author writes with the end in view — present suffering and ethical obligation are framed by the certainty of Christ's return and the final vindication of God's people. This already-not-yet tension shapes every imperative in the text."
             }
           ]
         },
@@ -193,7 +193,7 @@
           "notes": [
             {
               "ref": "14:13–23",
-              "note": "Moo argues that Paul’s ethic here demonstrates the ‘other-directed’ character of Christian freedom. Freedom is real but must be exercised in the service of love. The strong are called to bear the burden of self-limitation for the sake of the weak."
+              "note": "Moo argues that Paul’s ethic here demonstrates the ‘other-directed’ character of Christian freedom. Freedom is real but must be exercised in the service of love. The strong are called to bear the burden of self-limitation for the sake of the weak. Moo's exegesis situates James within the broader wisdom tradition, noting how the author draws on Proverbs, Sirach, and Jesus's own teaching to construct a practical theology of faithful living. The epistle's imperatives are grounded not in legalism but in the transformative reality of the 'implanted word' (1:21)."
             }
           ]
         },
@@ -474,7 +474,80 @@
       "note": "Romans 14 addresses disputes over food laws and holy days in the mixed Jewish-Gentile Roman church. Paul's principle: freedom of conscience is limited by love for the weaker brother. The 'judgment seat of God' (βῆμα τοῦ θεοῦ) shifts evaluation from horizontal (brother-to-brother) to vertical (each before God)."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Christ"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Brother",
+        "Cause",
+        "Else",
+        "Judge",
+        "Someone",
+        "Your"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

@@ -117,7 +117,7 @@
           "notes": [
             {
               "ref": "13:1–6",
-              "note": "Lane observes that the ethical exhortations are community-focused. Love, hospitality, compassion, fidelity, and contentment build the corporate life that sustains perseverance."
+              "note": "Lane observes that the ethical exhortations are community-focused. Love, hospitality, compassion, fidelity, and contentment build the corporate life that sustains perseverance. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -126,7 +126,7 @@
           "notes": [
             {
               "ref": "13:1–6",
-              "note": "Cockerill emphasizes that the exhortations are not random but address the temptations of persecuted communities: withdrawal from fellowship, neglect of others' needs, compromise under pressure. Each exhortation counters a specific danger."
+              "note": "Cockerill emphasizes that the exhortations are not random but address the temptations of persecuted communities: withdrawal from fellowship, neglect of others' needs, compromise under pressure. Each exhortation counters a specific danger. Cockerill's exegesis emphasizes the high-priestly christology that structures the entire epistle. This passage contributes to the author's sustained argument that Christ's mediatorial work surpasses and fulfills every prior arrangement — the tabernacle, the Levitical priesthood, and the old covenant sacrificial system."
             }
           ]
         },
@@ -259,7 +259,7 @@
           "notes": [
             {
               "ref": "13:7–17",
-              "note": "Cockerill emphasizes that the outside the camp theme is the practical application of the entire epistle. Returning to Judaism means staying in the camp; following Jesus means bearing His reproach. The choice is between security and faithfulness."
+              "note": "Cockerill emphasizes that the outside the camp theme is the practical application of the entire epistle. Returning to Judaism means staying in the camp; following Jesus means bearing His reproach. The choice is between security and faithfulness. Cockerill's exegesis emphasizes the high-priestly christology that structures the entire epistle. This passage contributes to the author's sustained argument that Christ's mediatorial work surpasses and fulfills every prior arrangement — the tabernacle, the Levitical priesthood, and the old covenant sacrificial system."
             }
           ]
         },
@@ -378,7 +378,7 @@
           "notes": [
             {
               "ref": "13:18–25",
-              "note": "Lane sees the closing as warmly pastoral. The benediction is the epistle's theological summary: peace, resurrection, shepherd, blood, covenant, equipping, glory. The personal notes humanize the author."
+              "note": "Lane sees the closing as warmly pastoral. The benediction is the epistle's theological summary: peace, resurrection, shepherd, blood, covenant, equipping, glory. The personal notes humanize the author. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -387,7 +387,7 @@
           "notes": [
             {
               "ref": "13:18–25",
-              "note": "Cockerill emphasizes that the benediction encapsulates the epistle: the God who raised the shepherd (resurrection), by eternal covenant blood (atonement), equips for faithfulness (perseverance). The readers are sent with grace for the journey."
+              "note": "Cockerill emphasizes that the benediction encapsulates the epistle: the God who raised the shepherd (resurrection), by eternal covenant blood (atonement), equips for faithfulness (perseverance). The readers are sent with grace for the journey. Cockerill's exegesis emphasizes the high-priestly christology that structures the entire epistle. This passage contributes to the author's sustained argument that Christ's mediatorial work surpasses and fulfills every prior arrangement — the tabernacle, the Levitical priesthood, and the old covenant sacrificial system."
             }
           ]
         },
@@ -539,7 +539,80 @@
       "note": "Hebrews 13 grounds the letter's elevated theology in ordinary community life: money, sex, hospitality, leadership, worship. The 'outside the camp' command (v. 13) is the ethical equivalent of the whole letter's argument — as Jesus stepped outside the religious system to accomplish redemption, so believers must be willing to bear social reproach rather than retreat to religious security. The magnificent benediction (vv. 20-21) is the liturgical seal of the entire argument."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Benediction",
+        "Brotherly",
+        "Closing",
+        "Doctrine",
+        "Going",
+        "Hospitality",
+        "Leaders",
+        "Love",
+        "Prayer"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

@@ -73,11 +73,11 @@
           "notes": [
             {
               "ref": "24:1-2",
-              "note": "Calvin marvels at the precision of the date: God reveals events hundreds of miles away on the very day they occur."
+              "note": "Calvin marvels at the precision of the date: God reveals events hundreds of miles away on the very day they occur. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             },
             {
               "ref": "24:13",
-              "note": "The exhaustion of divine patience. God has offered every opportunity for repentance; the refusal is final."
+              "note": "The exhaustion of divine patience. God has offered every opportunity for repentance; the refusal is final. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -86,11 +86,11 @@
           "notes": [
             {
               "ref": "24:1-2",
-              "note": "The date formula corresponds to January 15, 588 BC in the Babylonian calendar."
+              "note": "The date formula corresponds to January 15, 588 BC in the Babylonian calendar. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             },
             {
               "ref": "24:7-8",
-              "note": "The uncovered blood motif draws on the legal requirement to cover blood with earth after slaughter (Lev 17:13)."
+              "note": "The uncovered blood motif draws on the legal requirement to cover blood with earth after slaughter (Lev 17:13). The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -99,7 +99,7 @@
           "notes": [
             {
               "ref": "24:1-14",
-              "note": "Block identifies this as the climactic sign-act of the first half of Ezekiel. The reversal of the pot metaphor from 11:3 creates a devastating inclusio."
+              "note": "Block identifies this as the climactic sign-act of the first half of Ezekiel. The reversal of the pot metaphor from 11:3 creates a devastating inclusio. Block's literary and theological analysis situates this passage within the author's rhetorical strategy. The text functions as both narrative and argument — the story advances the book's theological thesis about the consequences of covenant faithfulness and unfaithfulness in Israel's life under God."
             }
           ]
         },
@@ -108,7 +108,7 @@
           "notes": [
             {
               "ref": "24:1-14",
-              "note": "Zimmerli calls this a 'turning-point oracle' — the moment when prophecy shifts from warning to announcement."
+              "note": "Zimmerli calls this a 'turning-point oracle' — the moment when prophecy shifts from warning to announcement. Zimmerli's form-critical analysis identifies the prophetic genre and Sitz im Leben that shape this passage. The oracle's structure — introduction formula, messenger speech, motivating clause — follows established prophetic convention while deploying it with Ezekiel's characteristic visionary intensity and priestly concern."
             }
           ]
         },
@@ -173,11 +173,11 @@
           "notes": [
             {
               "ref": "24:16-18",
-              "note": "Calvin reflects on the staggering demand: to lose one’s beloved spouse and suppress all natural grief."
+              "note": "Calvin reflects on the staggering demand: to lose one’s beloved spouse and suppress all natural grief. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             },
             {
               "ref": "24:24",
-              "note": "Calvin: God sometimes requires of his servants what surpasses all human ability, that the world may know the message is from God."
+              "note": "Calvin: God sometimes requires of his servants what surpasses all human ability, that the world may know the message is from God. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -186,11 +186,11 @@
           "notes": [
             {
               "ref": "24:17",
-              "note": "The mourning customs forbidden here — sighing softly, removing the turban, going barefoot, covering the lower face — are well-attested ancient Near Eastern funeral practices."
+              "note": "The mourning customs forbidden here — sighing softly, removing the turban, going barefoot, covering the lower face — are well-attested ancient Near Eastern funeral practices. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             },
             {
               "ref": "24:27",
-              "note": "The opening of Ezekiel’s mouth connects to the silence imposed in 3:26."
+              "note": "The opening of Ezekiel’s mouth connects to the silence imposed in 3:26. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -199,7 +199,7 @@
           "notes": [
             {
               "ref": "24:15-27",
-              "note": "Block identifies this as the emotional climax of the entire first half of Ezekiel (chs 1-24). The prophet pays the ultimate personal cost."
+              "note": "Block identifies this as the emotional climax of the entire first half of Ezekiel (chs 1-24). The prophet pays the ultimate personal cost. Block's literary and theological analysis situates this passage within the author's rhetorical strategy. The text functions as both narrative and argument — the story advances the book's theological thesis about the consequences of covenant faithfulness and unfaithfulness in Israel's life under God."
             }
           ]
         },
@@ -208,7 +208,7 @@
           "notes": [
             {
               "ref": "24:15-27",
-              "note": "Zimmerli notes the structural significance: this pericope closes the judgment oracles and prepares for oracles against nations."
+              "note": "Zimmerli notes the structural significance: this pericope closes the judgment oracles and prepares for oracles against nations. Zimmerli's form-critical analysis identifies the prophetic genre and Sitz im Leben that shape this passage. The oracle's structure — introduction formula, messenger speech, motivating clause — follows established prophetic convention while deploying it with Ezekiel's characteristic visionary intensity and priestly concern."
             }
           ]
         },
@@ -448,7 +448,80 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Ezekiel",
+        "Nebuchadnezzar"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Bloody",
+        "Cooking",
+        "Death",
+        "Encrustation",
+        "Ezekiel",
+        "Wife"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

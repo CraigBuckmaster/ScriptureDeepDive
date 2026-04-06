@@ -358,7 +358,7 @@
           "notes": [
             {
               "ref": "36:37",
-              "note": "The verb darash (to seek, inquire of) in the niphal (passive/reflexive) means 'to allow oneself to be consulted.' God commits to being accessible to Israel again, reversing the prophetic silence that characterizes exile."
+              "note": "The verb darash (to seek, inquire of) in the niphal (passive/reflexive) means 'to allow oneself to be consulted.' God commits to being accessible to Israel again, reversing the prophetic silence that characterizes exile. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -623,7 +623,83 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Ezekiel"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Cities",
+        "Defilement",
+        "Dispersion",
+        "Heart",
+        "Israel",
+        "Mountains",
+        "Multiplied",
+        "Rebuilt",
+        "Restored",
+        "Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

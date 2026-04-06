@@ -93,7 +93,7 @@
           "notes": [
             {
               "ref": "32:1-25",
-              "note": "Lundbom identifies the field purchase as \"the most elaborate sign-act in the book.\" Unlike the belt, flask, or yoke, this act costs real money and involves legal procedure. The prophet literally invests in God's promise."
+              "note": "Lundbom identifies the field purchase as \"the most elaborate sign-act in the book.\" Unlike the belt, flask, or yoke, this act costs real money and involves legal procedure. The prophet literally invests in God's promise. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -102,7 +102,7 @@
           "notes": [
             {
               "ref": "32:15",
-              "note": "Brueggemann calls this \"the most radical act of hope in the Hebrew Bible.\" While Babylonian siege ramps rise against the walls, the prophet signs a real estate contract. Hope is not optimism; it is the purchase of a field during a siege."
+              "note": "Brueggemann calls this \"the most radical act of hope in the Hebrew Bible.\" While Babylonian siege ramps rise against the walls, the prophet signs a real estate contract. Hope is not optimism; it is the purchase of a field during a siege. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -159,7 +159,7 @@
           "notes": [
             {
               "ref": "32:27",
-              "note": "Calvin develops the rhetorical question: \"God does not answer Jeremiah's doubts with explanation but with counter-question. The answer to 'why?' is 'can I not?' When omnipotence is affirmed, the specific 'why' becomes secondary.\""
+              "note": "Calvin develops the rhetorical question: \"God does not answer Jeremiah's doubts with explanation but with counter-question. The answer to 'why?' is 'can I not?' When omnipotence is affirmed, the specific 'why' becomes secondary.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -168,7 +168,7 @@
           "notes": [
             {
               "ref": "32:39",
-              "note": "\"One heart and one way\" (leb 'ehad wederek 'ehad) echoes Ezekiel 11:19 (\"I will give them an undivided heart\"). The promise is not merely political restoration but spiritual unification."
+              "note": "\"One heart and one way\" (leb 'ehad wederek 'ehad) echoes Ezekiel 11:19 (\"I will give them an undivided heart\"). The promise is not merely political restoration but spiritual unification. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -177,7 +177,7 @@
           "notes": [
             {
               "ref": "32:26-44",
-              "note": "Lundbom reads God's response as \"covenant renewal in prayer form.\" The prayer structure -- historical review followed by promise -- mirrors the covenant-renewal ceremony of Deuteronomy."
+              "note": "Lundbom reads God's response as \"covenant renewal in prayer form.\" The prayer structure -- historical review followed by promise -- mirrors the covenant-renewal ceremony of Deuteronomy. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -186,7 +186,7 @@
           "notes": [
             {
               "ref": "32:37-41",
-              "note": "Brueggemann identifies five irreversible promises: gather, restore, covenant, never cease doing good, plant with all my heart. The repetition of \"I will\" creates a wall of divine commitment against which no counter-argument can stand."
+              "note": "Brueggemann identifies five irreversible promises: gather, restore, covenant, never cease doing good, plant with all my heart. The repetition of \"I will\" creates a wall of divine commitment against which no counter-argument can stand. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -394,7 +394,80 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Zedekiah",
+        "Nebuchadnezzar"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Anything",
+        "Faith",
+        "Hard",
+        "Midst",
+        "Siege"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

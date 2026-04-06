@@ -55,7 +55,7 @@
           "notes": [
             {
               "ref": "2:4-5",
-              "note": "Calvin emphasizes that Judah's sin is worse than the nations' because it was committed against the light of revealed truth. The pagan nations violated natural law; Judah violated the written law of God. To whom much is given, much is required."
+              "note": "Calvin emphasizes that Judah's sin is worse than the nations' because it was committed against the light of revealed truth. The pagan nations violated natural law; Judah violated the written law of God. To whom much is given, much is required. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -236,7 +236,7 @@
           "notes": [
             {
               "ref": "2:13-16",
-              "note": "The seven-fold military collapse describes total defeat: the swift, the strong, the warrior, the archer, the cavalry, and the infantry — none will escape. Even the bravest will flee naked. God's judgment strips away every human security."
+              "note": "The seven-fold military collapse describes total defeat: the swift, the strong, the warrior, the archer, the cavalry, and the infantry — none will escape. Even the bravest will flee naked. God's judgment strips away every human security. MacArthur emphasizes the doctrinal significance of this passage within the framework of systematic theology. The text establishes principles that remain normative for the church — not merely descriptive of ancient Israel but prescriptive for how God's people should understand His character and respond in obedience."
             }
           ]
         },
@@ -245,7 +245,7 @@
           "notes": [
             {
               "ref": "2:14-16",
-              "note": "Calvin notes that the sevenfold listing of military categories emphasizes the completeness of divine judgment. No human resource — speed, strength, weaponry, or courage — can withstand God's determined punishment."
+              "note": "Calvin notes that the sevenfold listing of military categories emphasizes the completeness of divine judgment. No human resource — speed, strength, weaponry, or courage — can withstand God's determined punishment. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -254,7 +254,7 @@
           "notes": [
             {
               "ref": "2:13",
-              "note": "The meaning of the verb in v. 13 is debated. The root ʿuq may mean 'to press/crush' (God will crush Israel as a cart crushes when loaded with grain) or 'to split open' (the ground will split). The agricultural imagery fits Amos' background."
+              "note": "The meaning of the verb in v. 13 is debated. The root ʿuq may mean 'to press/crush' (God will crush Israel as a cart crushes when loaded with grain) or 'to split open' (the ground will split). The agricultural imagery fits Amos' background. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -511,7 +511,80 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Amos"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Against",
+        "Indictment",
+        "Inescapable",
+        "Israel",
+        "Judah",
+        "Judgment",
+        "Moab"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

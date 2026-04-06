@@ -104,7 +104,7 @@
           "notes": [
             {
               "ref": "4:1-8",
-              "note": "Zimmerli identifies three originally independent sign-acts that have been combined: the siege model (vv.1-3), the lying on the side (vv.4-6), and the binding (vv.7-8). Each makes a distinct theological point about Jerusalem's coming destruction."
+              "note": "Zimmerli identifies three originally independent sign-acts that have been combined: the siege model (vv.1-3), the lying on the side (vv.4-6), and the binding (vv.7-8). Each makes a distinct theological point about Jerusalem's coming destruction. Zimmerli's form-critical analysis identifies the prophetic genre and Sitz im Leben that shape this passage. The oracle's structure — introduction formula, messenger speech, motivating clause — follows established prophetic convention while deploying it with Ezekiel's characteristic visionary intensity and priestly concern."
             }
           ]
         },
@@ -161,7 +161,7 @@
           "notes": [
             {
               "ref": "4:12-15",
-              "note": "Calvin admires Ezekiel's appeal: the prophet does not refuse the mission but appeals to God's own law. God honors this principled objection by adjusting the method while maintaining the message."
+              "note": "Calvin admires Ezekiel's appeal: the prophet does not refuse the mission but appeals to God's own law. God honors this principled objection by adjusting the method while maintaining the message. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -192,7 +192,7 @@
           "notes": [
             {
               "ref": "4:14-15",
-              "note": "Zimmerli sees Ezekiel's protest as a key moment of characterization: unlike other prophets, Ezekiel does not argue about his mission but about ritual purity. His priestly formation shapes even his objections to God."
+              "note": "Zimmerli sees Ezekiel's protest as a key moment of characterization: unlike other prophets, Ezekiel does not argue about his mission but about ritual purity. His priestly formation shapes even his objections to God. Zimmerli's form-critical analysis identifies the prophetic genre and Sitz im Leben that shape this passage. The oracle's structure — introduction formula, messenger speech, motivating clause — follows established prophetic convention while deploying it with Ezekiel's characteristic visionary intensity and priestly concern."
             }
           ]
         },
@@ -389,7 +389,79 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Ezekiel",
+        "Nebuchadnezzar"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Brick",
+        "Defiled",
+        "Prophet",
+        "Rations",
+        "Siege"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

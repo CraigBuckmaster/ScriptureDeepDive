@@ -88,11 +88,11 @@
           "notes": [
             {
               "ref": "5:1",
-              "note": "Has been born (gegenneetai) is perfect tense - prior completed action. Faith reveals what God has already done."
+              "note": "Has been born (gegenneetai) is perfect tense - prior completed action. Faith reveals what God has already done. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             },
             {
               "ref": "5:4",
-              "note": "Has overcome (nikesasa) is aorist - victory viewed as accomplished fact. Believers share Christ decisive victory."
+              "note": "Has overcome (nikesasa) is aorist - victory viewed as accomplished fact. Believers share Christ decisive victory. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -101,7 +101,7 @@
           "notes": [
             {
               "ref": "5:1-5",
-              "note": "Yarbrough emphasizes that faith is not self-generated power but connection to Christ power. We overcome by believing in the Overcomer."
+              "note": "Yarbrough emphasizes that faith is not self-generated power but connection to Christ power. We overcome by believing in the Overcomer. Yarbrough traces the epistle's logic through its characteristic contrasts: light and darkness, truth and falsehood, love and hate. The author's binary rhetoric is not simplistic but diagnostic — it exposes the fundamental orientation of the heart and calls readers to genuine self-examination in the light of God's revealed character."
             }
           ]
         },
@@ -110,7 +110,7 @@
           "notes": [
             {
               "ref": "5:1-5",
-              "note": "Kruse notes that commandments are not burdensome because the Spirit enables obedience. Love transforms duty into delight."
+              "note": "Kruse notes that commandments are not burdensome because the Spirit enables obedience. Love transforms duty into delight. Kruse's analysis focuses on the letter's pastoral function within its historical context. The author addresses concrete community concerns — false teaching, relational fracture, assurance of salvation — with theological precision that grounds pastoral care in the foundational realities of the incarnation and atonement."
             }
           ]
         },
@@ -210,7 +210,7 @@
           "notes": [
             {
               "ref": "5:6-12",
-              "note": "Yarbrough emphasizes the christological focus: the whole passage concerns the identity and work of Jesus. Eternal life is knowing him."
+              "note": "Yarbrough emphasizes the christological focus: the whole passage concerns the identity and work of Jesus. Eternal life is knowing him. Yarbrough traces the epistle's logic through its characteristic contrasts: light and darkness, truth and falsehood, love and hate. The author's binary rhetoric is not simplistic but diagnostic — it exposes the fundamental orientation of the heart and calls readers to genuine self-examination in the light of God's revealed character."
             }
           ]
         },
@@ -219,7 +219,7 @@
           "notes": [
             {
               "ref": "5:6-12",
-              "note": "Kruse notes that the three witnesses converge on one truth: Jesus is the Christ, the Son of God. Multiple testimony confirms the gospel."
+              "note": "Kruse notes that the three witnesses converge on one truth: Jesus is the Christ, the Son of God. Multiple testimony confirms the gospel. Kruse's analysis focuses on the letter's pastoral function within its historical context. The author addresses concrete community concerns — false teaching, relational fracture, assurance of salvation — with theological precision that grounds pastoral care in the foundational realities of the incarnation and atonement."
             }
           ]
         },
@@ -326,7 +326,7 @@
           "notes": [
             {
               "ref": "5:13-21",
-              "note": "Yarbrough notes the threefold we know (vv. 18, 19, 20) - John wants certainty, not doubt. Knowledge is both possible and intended."
+              "note": "Yarbrough notes the threefold we know (vv. 18, 19, 20) - John wants certainty, not doubt. Knowledge is both possible and intended. Yarbrough traces the epistle's logic through its characteristic contrasts: light and darkness, truth and falsehood, love and hate. The author's binary rhetoric is not simplistic but diagnostic — it exposes the fundamental orientation of the heart and calls readers to genuine self-examination in the light of God's revealed character."
             }
           ]
         },
@@ -335,7 +335,7 @@
           "notes": [
             {
               "ref": "5:13-21",
-              "note": "Kruse emphasizes that the closing warnings balance assurance. Confidence is not complacency; vigilance against idols is still required."
+              "note": "Kruse emphasizes that the closing warnings balance assurance. Confidence is not complacency; vigilance against idols is still required. Kruse's analysis focuses on the letter's pastoral function within its historical context. The author addresses concrete community concerns — false teaching, relational fracture, assurance of salvation — with theological precision that grounds pastoral care in the foundational realities of the incarnation and atonement."
             }
           ]
         },
@@ -488,7 +488,78 @@
       "note": "The letter ends abruptly with 'keep yourselves from idols' — possibly referencing the secessionists' Christology as idolatrous distortion."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Assurance",
+        "Confidence",
+        "Faith",
+        "Overcomes",
+        "Three",
+        "Witnesses",
+        "World"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

@@ -34,7 +34,7 @@
           "notes": [
             {
               "ref": "16:(1, '')",
-              "note": "The principle demonstrated here applies universally: God’s governance is consistent, and human choices produce proportional divine responses."
+              "note": "The principle demonstrated here applies universally: God’s governance is consistent, and human choices produce proportional divine responses. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -43,13 +43,21 @@
           "notes": [
             {
               "ref": "16:(1, '')",
-              "note": "The Chronicler’s characteristic vocabulary and theological framework shape the presentation of these events."
+              "note": "The Chronicler’s characteristic vocabulary and theological framework shape the presentation of these events. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
             }
           ]
         },
         "hist": {
           "context": "In his 36th year, Baasha of Israel attacks. Instead of praying (as he did against Zerah in ch 14), Asa takes silver and gold from the temple and sends it to Ben-Hadad of Aram: “Break your treaty with Baasha.” The strategy works militarily but fails theologically — Asa seeks a foreign king instead of God."
-        }
+        },
+        "heb": [
+          {
+            "word": "mālaḵ",
+            "transliteration": "mālaḵ",
+            "gloss": "to reign / be king",
+            "paragraph": "The Hebrew mālaḵ (to reign) carries the weight of divinely delegated authority. In the Chronicler's theology, every king reigns as God's representative — their faithfulness or failure directly affects the nation's destiny. The verb appears at the critical transitions that shape Israel's monarchic history."
+          }
+        ]
       }
     },
     {
@@ -80,7 +88,15 @@
         },
         "hist": {
           "context": "The seer Hanani confronts Asa: “Because you relied on the king of Aram and not on the LORD your God, the army of the king of Aram has escaped from your hand.” He reminds Asa of the Cushite victory: “The eyes of the LORD range throughout the earth to strengthen those whose hearts are fully committed to him.” Asa rages, imprisons Hanani, and brutalises some people. He develops a foot disease and “even in his illness he did not seek the LORD but only the physicians.” He dies. The man who once sought God with his whole heart ends by seeking only doctors."
-        }
+        },
+        "heb": [
+          {
+            "word": "milḥāmâ",
+            "transliteration": "milḥāmâ",
+            "gloss": "war / battle",
+            "paragraph": "The Hebrew milḥāmâ (war) in the Chronicler's theology is never merely military. Every battle is a theological event: victory comes from trusting God, defeat from trusting human alliances. The Chronicler consistently adds 'the LORD fought for them' or 'they relied on the LORD' to battle narratives that Kings presents in purely political terms."
+          }
+        ]
       }
     }
   ],

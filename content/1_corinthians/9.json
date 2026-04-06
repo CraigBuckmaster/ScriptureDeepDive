@@ -726,7 +726,86 @@
       "note": "1 Corinthians 9 is Paul's autobiography in service of the argument from ch. 8: if the 'strong' question is whether to use rights, Paul offers himself as the exemplar of not using rights. His voluntary poverty of income is the athletic model for the Corinthians' voluntary limitation of food freedom. The chapter also reveals the missionary logic behind the 'all things to all people' principle — it is not relativism but contextual gospel access."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Cephas",
+        "Christ",
+        "Moses"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Athlete",
+        "Becoming",
+        "Discipline",
+        "Free",
+        "Lord",
+        "People",
+        "Preaching",
+        "Reward",
+        "Right",
+        "Things"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

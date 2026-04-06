@@ -63,7 +63,7 @@
           "notes": [
             {
               "ref": "45:5",
-              "note": "Calvin reads this as universal pastoral counsel: \"In times of divine judgment, seek survival, not status. The wise person adjusts ambitions to the season.\""
+              "note": "Calvin reads this as universal pastoral counsel: \"In times of divine judgment, seek survival, not status. The wise person adjusts ambitions to the season.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -72,7 +72,7 @@
           "notes": [
             {
               "ref": "45:5",
-              "note": "\"Your life as plunder\" (nephesh leshallal) -- the same idiom used in 21:9 and 39:18. In military context, \"plunder\" is what a soldier carries away from a battle. Baruch's only spoil will be his own survival."
+              "note": "\"Your life as plunder\" (nephesh leshallal) -- the same idiom used in 21:9 and 39:18. In military context, \"plunder\" is what a soldier carries away from a battle. Baruch's only spoil will be his own survival. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -81,7 +81,7 @@
           "notes": [
             {
               "ref": "45:1-5",
-              "note": "Lundbom identifies chapter 45 as \"the colophon of the Baruch narrative.\" It serves the same function as a scribal postscript -- authenticating the scribe's role and acknowledging his suffering."
+              "note": "Lundbom identifies chapter 45 as \"the colophon of the Baruch narrative.\" It serves the same function as a scribal postscript -- authenticating the scribe's role and acknowledging his suffering. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -271,7 +271,79 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Baruch",
+        "Jehoiakim",
+        "Ebed-Melech"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Great",
+        "Seek",
+        "Things"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 0,

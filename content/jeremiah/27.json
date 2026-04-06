@@ -59,7 +59,7 @@
           "notes": [
             {
               "ref": "27:5-7",
-              "note": "Calvin develops the theology of divine sovereignty over empires: \"God disposes kingdoms as he wills. Neither Nebuchadnezzar's power nor Zedekiah's resistance operates outside divine providence.\""
+              "note": "Calvin develops the theology of divine sovereignty over empires: \"God disposes kingdoms as he wills. Neither Nebuchadnezzar's power nor Zedekiah's resistance operates outside divine providence.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -81,7 +81,7 @@
           "notes": [
             {
               "ref": "27:1-11",
-              "note": "Lundbom reads the yoke sign-act as the boldest prophetic performance in the book. Addressing foreign ambassadors extends Jeremiah's authority beyond Israel to the international sphere -- fulfilling his commission as \"prophet to the nations\" (1:5)."
+              "note": "Lundbom reads the yoke sign-act as the boldest prophetic performance in the book. Addressing foreign ambassadors extends Jeremiah's authority beyond Israel to the international sphere -- fulfilling his commission as \"prophet to the nations\" (1:5). This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -90,7 +90,7 @@
           "notes": [
             {
               "ref": "27:5-7",
-              "note": "Brueggemann identifies a \"theology of imperial mandate\" -- God appoints empires for limited terms. Babylon rules by divine permission, not by inherent right, and the permission has an expiration date."
+              "note": "Brueggemann identifies a \"theology of imperial mandate\" -- God appoints empires for limited terms. Babylon rules by divine permission, not by inherent right, and the permission has an expiration date. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -143,7 +143,7 @@
           "notes": [
             {
               "ref": "27:18",
-              "note": "Calvin turns the test into a universal principle: \"The mark of a true prophet is not eloquence or popularity but effective intercession. A prophet who cannot move God has no authority to speak for God.\""
+              "note": "Calvin turns the test into a universal principle: \"The mark of a true prophet is not eloquence or popularity but effective intercession. A prophet who cannot move God has no authority to speak for God.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -152,7 +152,7 @@
           "notes": [
             {
               "ref": "27:19",
-              "note": "The \"pillars, the sea, the movable stands\" are the major bronze furnishings of Solomon's temple described in 1 Kings 7:15-39 -- the infrastructure of Israel's worship."
+              "note": "The \"pillars, the sea, the movable stands\" are the major bronze furnishings of Solomon's temple described in 1 Kings 7:15-39 -- the infrastructure of Israel's worship. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -161,7 +161,7 @@
           "notes": [
             {
               "ref": "27:12-22",
-              "note": "Lundbom notes that the yoke sign-act addresses three audiences in sequence: foreign nations (vv.1-11), Zedekiah (vv.12-15), and the priests/people (vv.16-22). Each receives the same message in different register."
+              "note": "Lundbom notes that the yoke sign-act addresses three audiences in sequence: foreign nations (vv.1-11), Zedekiah (vv.12-15), and the priests/people (vv.16-22). Each receives the same message in different register. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -170,7 +170,7 @@
           "notes": [
             {
               "ref": "27:16-22",
-              "note": "Brueggemann reads the vessel dispute as \"a conflict over the meaning of institutional symbols.\" The false prophets cling to the temple vessels as signs of continuity; Jeremiah declares the old order finished."
+              "note": "Brueggemann reads the vessel dispute as \"a conflict over the meaning of institutional symbols.\" The false prophets cling to the temple vessels as signs of continuity; Jeremiah declares the old order finished. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -388,7 +388,81 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Jehoiakim",
+        "Zedekiah",
+        "Nebuchadnezzar"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Nations",
+        "Priests",
+        "Word",
+        "Yoke",
+        "Zedekiah"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

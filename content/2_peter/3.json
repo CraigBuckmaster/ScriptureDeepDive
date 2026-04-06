@@ -79,7 +79,7 @@
           "notes": [
             {
               "ref": "3:3-7",
-              "note": "Calvin notes that uniformitarianism (all continues as always) is not a new argument. The flood refutes it; fire awaits."
+              "note": "Calvin notes that uniformitarianism (all continues as always) is not a new argument. The flood refutes it; fire awaits. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -105,7 +105,7 @@
           "notes": [
             {
               "ref": "3:1-7",
-              "note": "Schreiner emphasizes that the scoffers are not neutral skeptics but morally compromised. Their mockery serves their lifestyle."
+              "note": "Schreiner emphasizes that the scoffers are not neutral skeptics but morally compromised. Their mockery serves their lifestyle. Schreiner's exegesis emphasizes the eschatological dimension of the passage. The author writes with the end in view — present suffering and ethical obligation are framed by the certainty of Christ's return and the final vindication of God's people. This already-not-yet tension shapes every imperative in the text."
             }
           ]
         },
@@ -114,7 +114,7 @@
           "notes": [
             {
               "ref": "3:1-7",
-              "note": "Davids notes that Peter uses the flood as precedent. If God intervened once, he can and will intervene again."
+              "note": "Davids notes that Peter uses the flood as precedent. If God intervened once, he can and will intervene again. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -192,11 +192,11 @@
           "notes": [
             {
               "ref": "3:8-9",
-              "note": "Calvin sees the delay as mercy. God gives time for repentance. The offer remains open; patience is not indifference."
+              "note": "Calvin sees the delay as mercy. God gives time for repentance. The offer remains open; patience is not indifference. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             },
             {
               "ref": "3:10-13",
-              "note": "The dissolution of all things should produce holiness, not despair. New creation is the goal; present conduct prepares for it."
+              "note": "The dissolution of all things should produce holiness, not despair. New creation is the goal; present conduct prepares for it. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -222,7 +222,7 @@
           "notes": [
             {
               "ref": "3:8-13",
-              "note": "Schreiner emphasizes eschatological ethics. The certainty of cosmic dissolution should produce holiness, not nihilism."
+              "note": "Schreiner emphasizes eschatological ethics. The certainty of cosmic dissolution should produce holiness, not nihilism. Schreiner's exegesis emphasizes the eschatological dimension of the passage. The author writes with the end in view — present suffering and ethical obligation are framed by the certainty of Christ's return and the final vindication of God's people. This already-not-yet tension shapes every imperative in the text."
             }
           ]
         },
@@ -231,7 +231,7 @@
           "notes": [
             {
               "ref": "3:8-13",
-              "note": "Davids notes the tension between divine sovereignty (the day will come) and human responsibility (hastening). Both are affirmed."
+              "note": "Davids notes the tension between divine sovereignty (the day will come) and human responsibility (hastening). Both are affirmed. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -308,7 +308,7 @@
           "notes": [
             {
               "ref": "3:14-18",
-              "note": "Calvin notes that Peter acknowledges Paul's letters as Scripture. The ignorant twist them, but the letters themselves are authoritative."
+              "note": "Calvin notes that Peter acknowledges Paul's letters as Scripture. The ignorant twist them, but the letters themselves are authoritative. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -334,7 +334,7 @@
           "notes": [
             {
               "ref": "3:14-18",
-              "note": "Schreiner emphasizes the canonical significance: Peter treats Paul's letters as Scripture. The NT is recognizing itself."
+              "note": "Schreiner emphasizes the canonical significance: Peter treats Paul's letters as Scripture. The NT is recognizing itself. Schreiner's exegesis emphasizes the eschatological dimension of the passage. The author writes with the end in view — present suffering and ethical obligation are framed by the certainty of Christ's return and the final vindication of God's people. This already-not-yet tension shapes every imperative in the text."
             }
           ]
         },
@@ -343,7 +343,7 @@
           "notes": [
             {
               "ref": "3:14-18",
-              "note": "Davids notes that the doxology is Christological. Glory belongs to Jesus Christ now and forever. The letter ends as it began - focused on Christ."
+              "note": "Davids notes that the doxology is Christological. Glory belongs to Jesus Christ now and forever. The letter ends as it began - focused on Christ. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -423,7 +423,79 @@
       "note": "Sovereignty dominates: God controls time and will fulfill his promise. Judgment appears in fire reserved for the ungodly. Mercy in divine patience."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Coming",
+        "Creation",
+        "Divine",
+        "Doxology",
+        "Exhortation",
+        "Final",
+        "Patience",
+        "Scoffers"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

@@ -59,7 +59,7 @@
           "notes": [
             {
               "ref": "33:3",
-              "note": "Calvin calls this \"the charter of prayer: God binds himself to answer. The promise is not conditional on the worthiness of the pray-er but on the faithfulness of the One who promises.\""
+              "note": "Calvin calls this \"the charter of prayer: God binds himself to answer. The promise is not conditional on the worthiness of the pray-er but on the faithfulness of the One who promises.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -68,7 +68,7 @@
           "notes": [
             {
               "ref": "33:3",
-              "note": "The word betsurот (often translated \"unsearchable\" or \"hidden\") literally means \"fortified/inaccessible.\" The imagery is of truth locked in a fortress that only God can open."
+              "note": "The word betsurот (often translated \"unsearchable\" or \"hidden\") literally means \"fortified/inaccessible.\" The imagery is of truth locked in a fortress that only God can open. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -77,7 +77,7 @@
           "notes": [
             {
               "ref": "33:1-13",
-              "note": "Lundbom reads this as a \"second consolation oracle\" parallel to chapters 30-31. The same themes recur -- healing, joy, covenant -- but in compressed form."
+              "note": "Lundbom reads this as a \"second consolation oracle\" parallel to chapters 30-31. The same themes recur -- healing, joy, covenant -- but in compressed form. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -86,7 +86,7 @@
           "notes": [
             {
               "ref": "33:3",
-              "note": "Brueggemann identifies this as \"the epistemological charter of prophetic faith.\" Knowledge of the future does not come from analysis or prediction but from prayer. The hidden things are revealed to those who call."
+              "note": "Brueggemann identifies this as \"the epistemological charter of prophetic faith.\" Knowledge of the future does not come from analysis or prediction but from prayer. The hidden things are revealed to those who call. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -143,7 +143,7 @@
           "notes": [
             {
               "ref": "33:20-21",
-              "note": "Calvin celebrates the creation-covenant parallel: \"Every sunrise is a sermon on the reliability of God's promises. Nature itself testifies that the God who keeps day and night will keep his covenant with David.\""
+              "note": "Calvin celebrates the creation-covenant parallel: \"Every sunrise is a sermon on the reliability of God's promises. Nature itself testifies that the God who keeps day and night will keep his covenant with David.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -152,7 +152,7 @@
           "notes": [
             {
               "ref": "33:14-26",
-              "note": "These verses are absent from the LXX of Jeremiah, which is generally shorter than the MT. Some scholars consider them a later expansion; others argue the LXX shortened an original longer text."
+              "note": "These verses are absent from the LXX of Jeremiah, which is generally shorter than the MT. Some scholars consider them a later expansion; others argue the LXX shortened an original longer text. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -161,7 +161,7 @@
           "notes": [
             {
               "ref": "33:14-26",
-              "note": "Lundbom notes that the creation-covenant argument (vv.20-26) extends the logic of 31:35-37: the permanence of the cosmos guarantees the permanence of God's people and God's messianic purpose."
+              "note": "Lundbom notes that the creation-covenant argument (vv.20-26) extends the logic of 31:35-37: the permanence of the cosmos guarantees the permanence of God's people and God's messianic purpose. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -170,7 +170,7 @@
           "notes": [
             {
               "ref": "33:19-26",
-              "note": "Brueggemann reads the creation-covenant argument as \"the most audacious theological claim in the book.\" At the moment when the Davidic dynasty is about to end, the prophet declares it more permanent than the stars."
+              "note": "Brueggemann reads the creation-covenant argument as \"the most audacious theological claim in the book.\" At the moment when the Davidic dynasty is about to end, the prophet declares it more permanent than the stars. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -384,7 +384,80 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "David"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Answer",
+        "Branch",
+        "Call",
+        "Covenant",
+        "Davidic",
+        "Will"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

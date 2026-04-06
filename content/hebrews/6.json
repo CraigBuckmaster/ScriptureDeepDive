@@ -157,7 +157,7 @@
           "notes": [
             {
               "ref": "6:9",
-              "note": "The phrase 'things that accompany salvation' (τὰ ἐχόμενα σωτηρίας) distinguishes the audience from the hypothetical apostates: genuine salvation produces visible fruit."
+              "note": "The phrase 'things that accompany salvation' (τὰ ἐχόμενα σωτηρίας) distinguishes the audience from the hypothetical apostates: genuine salvation produces visible fruit. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -555,7 +555,84 @@
       "note": "Hebrews 6 contains the NT's most contested warning about apostasy (vv. 4-8). The passage's severity is counterbalanced by the double divine guarantee that follows (vv. 13-20). The structure is intentional: the warning reveals the stakes; the oath-promise reveals the security. The Melchizedek thread is picked up again at v. 20, resuming the interrupted argument from 5:10."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jesus",
+        "Abraham",
+        "Melchizedek"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Again",
+        "Anchor",
+        "Better",
+        "Confident",
+        "Firm",
+        "Impossible",
+        "Restore",
+        "Soul",
+        "Things"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

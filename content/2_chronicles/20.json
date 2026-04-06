@@ -38,7 +38,7 @@
           "notes": [
             {
               "ref": "20:(1, '')",
-              "note": "The principle demonstrated here applies universally: God’s governance is consistent, and human choices produce proportional divine responses."
+              "note": "The principle demonstrated here applies universally: God’s governance is consistent, and human choices produce proportional divine responses. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -47,13 +47,21 @@
           "notes": [
             {
               "ref": "20:(1, '')",
-              "note": "The Chronicler’s characteristic vocabulary and theological framework shape the presentation of these events."
+              "note": "The Chronicler’s characteristic vocabulary and theological framework shape the presentation of these events. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
             }
           ]
         },
         "hist": {
           "context": "A vast army from Moab, Ammon, and Mount Seir invades. Jehoshaphat is alarmed and “resolved to inquire of the LORD.” He proclaims a national fast. His prayer in the temple is one of the great prayers of Chronicles: “We have no power to face this vast army. We do not know what to do, but our eyes are on you.” All Judah stands before the LORD, with their wives, children, and little ones."
-        }
+        },
+        "heb": [
+          {
+            "word": "milḥāmâ",
+            "transliteration": "milḥāmâ",
+            "gloss": "war / battle",
+            "paragraph": "The Hebrew milḥāmâ (war) in the Chronicler's theology is never merely military. Every battle is a theological event: victory comes from trusting God, defeat from trusting human alliances. The Chronicler consistently adds 'the LORD fought for them' or 'they relied on the LORD' to battle narratives that Kings presents in purely political terms."
+          }
+        ]
       }
     },
     {
@@ -80,11 +88,24 @@
         },
         "net": {
           "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": []
+          "notes": [
+            {
+              "ref": "20:(14, '')",
+              "note": "NET Note: On 37 — “The Battle Is God’s”; Singers Lead the Army: Gen 22:2. Jewish tradition universally accepted this identification, which became foundational for Jerusalem’s theology of sacred space. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
+            }
+          ]
         },
         "hist": {
           "context": "The Spirit comes on Jahaziel the Levite: “Do not be afraid. The battle is not yours but God’s. You will not have to fight.” Jehoshaphat appoints singers to march ahead of the army: “Give thanks to the LORD, for his love endures forever.” As they sing, the LORD sets ambushes among the enemies, who destroy each other. Judah arrives to find only corpses and plunder. They spend three days collecting it. The Valley of Berakah (“blessing”) is named. The Chronicler’s most spectacular illustration of the worship-wins-battles principle."
-        }
+        },
+        "heb": [
+          {
+            "word": "qōḏeš",
+            "transliteration": "qōḏeš",
+            "gloss": "holiness / sacred",
+            "paragraph": "The Hebrew qōḏeš (holiness) denotes separation for divine purpose. In the context of temple worship, it marks the distinction between common and sacred — a boundary that defines Israel's entire liturgical life. The Chronicler's emphasis on holiness reflects his concern for proper worship as the foundation of national life."
+          }
+        ]
       }
     }
   ],

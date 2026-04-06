@@ -111,7 +111,7 @@
           "notes": [
             {
               "ref": "11:1–16",
-              "note": "Moo reads this section as establishing two complementary truths: God has preserved a remnant within Israel (vv. 1 6), and Israel’s hardening serves a redemptive purpose for the Gentiles (vv. 7–16). Neither truth negates the other."
+              "note": "Moo reads this section as establishing two complementary truths: God has preserved a remnant within Israel (vv. 1 6), and Israel’s hardening serves a redemptive purpose for the Gentiles (vv. 7–16). Neither truth negates the other. Moo's exegesis situates James within the broader wisdom tradition, noting how the author draws on Proverbs, Sirach, and Jesus's own teaching to construct a practical theology of faithful living. The epistle's imperatives are grounded not in legalism but in the transformative reality of the 'implanted word' (1:21)."
             }
           ]
         },
@@ -561,7 +561,80 @@
       "note": "Romans 11 brings the Israel section to its climax with the mystery of 'all Israel' (v. 26). The olive tree metaphor (vv. 17-24) warns Gentile believers against supersessionism. The doxology (vv. 33-36) marks a hinge between doctrine (chs. 1-11) and exhortation (chs. 12-16)."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Christ",
+        "Isaiah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Israel",
+        "People",
+        "Reject",
+        "Saved",
+        "Will"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

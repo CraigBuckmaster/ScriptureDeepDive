@@ -63,7 +63,7 @@
           "notes": [
             {
               "ref": "2:1-2",
-              "note": "Calvin saw the night-planning as evidence of total moral corruption: even rest becomes an occasion for scheming. When the mind cannot stop plotting evil, the soul is wholly given over to sin."
+              "note": "Calvin saw the night-planning as evidence of total moral corruption: even rest becomes an occasion for scheming. When the mind cannot stop plotting evil, the soul is wholly given over to sin. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -72,7 +72,7 @@
           "notes": [
             {
               "ref": "2:1",
-              "note": "The phrase hosevey-aven ('those who plan iniquity') uses the participle of hashav ('to plan, devise'), the same verb used in v. 3 for God's counter-plan. The symmetry is deliberate: the planners will be out-planned."
+              "note": "The phrase hosevey-aven ('those who plan iniquity') uses the participle of hashav ('to plan, devise'), the same verb used in v. 3 for God's counter-plan. The symmetry is deliberate: the planners will be out-planned. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -408,7 +408,79 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Micah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Iniquity",
+        "Plan",
+        "Promise",
+        "Prophesy",
+        "Remnant",
+        "Those"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

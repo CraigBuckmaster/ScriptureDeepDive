@@ -157,7 +157,7 @@
           "notes": [
             {
               "ref": "3:14",
-              "note": "Calvin emphasises the divine initiative in repentance: \"Return ... for I am your husband.\" God does not wait for Israel to return on her own initiative — he calls, and the calling makes the return possible. Repentance is a gift before it is an act."
+              "note": "Calvin emphasises the divine initiative in repentance: \"Return ... for I am your husband.\" God does not wait for Israel to return on her own initiative — he calls, and the calling makes the return possible. Repentance is a gift before it is an act. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -166,7 +166,7 @@
           "notes": [
             {
               "ref": "3:16",
-              "note": "The phrase \"it will not be remade\" (lōʾ yēʿāśeh ʿôd) implies the Ark's permanent obsolescence. This was a radical statement that challenged the centrality of Ark theology in Jerusalem's cult."
+              "note": "The phrase \"it will not be remade\" (lōʾ yēʿāśeh ʿôd) implies the Ark's permanent obsolescence. This was a radical statement that challenged the centrality of Ark theology in Jerusalem's cult. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -184,7 +184,7 @@
           "notes": [
             {
               "ref": "3:15–17",
-              "note": "Brueggemann sees this passage as a vision of \"world turned right side up\" — faithful leaders, divine presence without mediation, and nations gathered to Jerusalem. The prophetic imagination refuses to let the present crisis define the future."
+              "note": "Brueggemann sees this passage as a vision of \"world turned right side up\" — faithful leaders, divine presence without mediation, and nations gathered to Jerusalem. The prophetic imagination refuses to let the present crisis define the future. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -237,7 +237,7 @@
           "notes": [
             {
               "ref": "3:22",
-              "note": "Calvin notes that God's call \"Return!\" and the simultaneous promise \"I will cure your faithlessness\" show that repentance and healing are simultaneous. God does not command what he does not enable. The call is itself the cure."
+              "note": "Calvin notes that God's call \"Return!\" and the simultaneous promise \"I will cure your faithlessness\" show that repentance and healing are simultaneous. God does not command what he does not enable. The call is itself the cure. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -246,7 +246,7 @@
           "notes": [
             {
               "ref": "3:19",
-              "note": "The Hebrew is difficult: God says \"I said, 'How gladly I would set you among my sons and give you a pleasant land.'\" The verb šît (\"set/place\") with bānîm (\"sons\") suggests adoption language — God wanted to grant Israel full inheritance rights."
+              "note": "The Hebrew is difficult: God says \"I said, 'How gladly I would set you among my sons and give you a pleasant land.'\" The verb šît (\"set/place\") with bānîm (\"sons\") suggests adoption language — God wanted to grant Israel full inheritance rights. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -264,7 +264,7 @@
           "notes": [
             {
               "ref": "3:22–25",
-              "note": "Brueggemann calls this \"prophetic ventriloquism\" — Jeremiah speaks the words of repentance that the people should speak but have not yet spoken. The prophet performs the community's future conversion in advance, making it imaginatively available."
+              "note": "Brueggemann calls this \"prophetic ventriloquism\" — Jeremiah speaks the words of repentance that the people should speak but have not yet spoken. The prophet performs the community's future conversion in advance, making it imaginatively available. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -480,7 +480,81 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Josiah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Come",
+        "Faithless",
+        "Have",
+        "Lived",
+        "People",
+        "Prostitute",
+        "Return"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

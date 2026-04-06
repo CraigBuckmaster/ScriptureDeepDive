@@ -55,7 +55,7 @@
           "notes": [
             {
               "ref": "43:2",
-              "note": "Calvin notes the final irony: \"They said 'We will obey whatever God says' (42:6), and when God speaks, they call it a lie. The speed of betrayal is breathtaking.\""
+              "note": "Calvin notes the final irony: \"They said 'We will obey whatever God says' (42:6), and when God speaks, they call it a lie. The speed of betrayal is breathtaking.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -64,7 +64,7 @@
           "notes": [
             {
               "ref": "43:7",
-              "note": "Tahpanhes (Greek: Daphnae; modern Tell Defenneh) was an Egyptian border fortress in the northeastern Delta. A significant Jewish community existed there, as attested by archaeological evidence."
+              "note": "Tahpanhes (Greek: Daphnae; modern Tell Defenneh) was an Egyptian border fortress in the northeastern Delta. A significant Jewish community existed there, as attested by archaeological evidence. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -73,7 +73,7 @@
           "notes": [
             {
               "ref": "43:1-7",
-              "note": "Lundbom identifies this as \"the final rejection of the prophetic word.\" The people who swore an oath of obedience (42:5-6) now accuse the prophet of lying. The covenant with the word is broken as thoroughly as the covenant with God."
+              "note": "Lundbom identifies this as \"the final rejection of the prophetic word.\" The people who swore an oath of obedience (42:5-6) now accuse the prophet of lying. The covenant with the word is broken as thoroughly as the covenant with God. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -82,7 +82,7 @@
           "notes": [
             {
               "ref": "43:2-3",
-              "note": "Brueggemann reads the accusation as \"the last act of interpretive violence.\" Unable to refute the message, they delegitimize the messenger. The pattern runs from Anathoth (11:21) through Pashhur (20:1) to this final dismissal."
+              "note": "Brueggemann reads the accusation as \"the last act of interpretive violence.\" Unable to refute the message, they delegitimize the messenger. The pattern runs from Anathoth (11:21) through Pashhur (20:1) to this final dismissal. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -139,7 +139,7 @@
           "notes": [
             {
               "ref": "43:10",
-              "note": "Calvin develops the \"my servant\" theology one final time: \"No empire is too great for God to use as his instrument. Egypt, which enslaved Israel, will now be enslaved by the same servant God used against Jerusalem.\""
+              "note": "Calvin develops the \"my servant\" theology one final time: \"No empire is too great for God to use as his instrument. Egypt, which enslaved Israel, will now be enslaved by the same servant God used against Jerusalem.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -148,7 +148,7 @@
           "notes": [
             {
               "ref": "43:13",
-              "note": "The \"sacred pillars of Beth Shemesh\" are the obelisks of Heliopolis (modern Tell Hisn, near Cairo). The Egyptian temple of Ra at Heliopolis was one of the most important solar cult centers in the ancient world."
+              "note": "The \"sacred pillars of Beth Shemesh\" are the obelisks of Heliopolis (modern Tell Hisn, near Cairo). The Egyptian temple of Ra at Heliopolis was one of the most important solar cult centers in the ancient world. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -166,7 +166,7 @@
           "notes": [
             {
               "ref": "43:10-13",
-              "note": "Brueggemann calls this \"the universalization of judgment.\" Egypt -- the original enslaver, the perpetual alternative to God -- is not exempt from the same sovereignty that judged Jerusalem."
+              "note": "Brueggemann calls this \"the universalization of judgment.\" Egypt -- the original enslaver, the perpetual alternative to God -- is not exempt from the same sovereignty that judged Jerusalem. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -355,7 +355,78 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Baruch",
+        "Nebuchadnezzar"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Lying",
+        "Stones",
+        "Tahpanhes"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

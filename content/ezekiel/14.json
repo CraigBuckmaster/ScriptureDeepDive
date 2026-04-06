@@ -73,7 +73,7 @@
           "notes": [
             {
               "ref": "14:3-5",
-              "note": "Calvin sees this as the definitive statement on hypocrisy: outward consultation of God while maintaining inward loyalty to other gods. God exposes the disconnect between appearance and reality."
+              "note": "Calvin sees this as the definitive statement on hypocrisy: outward consultation of God while maintaining inward loyalty to other gods. God exposes the disconnect between appearance and reality. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -173,7 +173,7 @@
           "notes": [
             {
               "ref": "14:14-20",
-              "note": "Calvin uses this passage to teach the limits of intercessory merit: no saint's righteousness can cover another's sin. Each person stands before God individually. This undermines any theology of transferred merit from saints to sinners."
+              "note": "Calvin uses this passage to teach the limits of intercessory merit: no saint's righteousness can cover another's sin. Each person stands before God individually. This undermines any theology of transferred merit from saints to sinners. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -442,7 +442,82 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Ezekiel",
+        "Daniel",
+        "Noah",
+        "Job"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Daniel",
+        "Even",
+        "Hearts",
+        "Idols",
+        "Noah",
+        "Their"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

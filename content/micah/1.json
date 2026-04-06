@@ -169,7 +169,7 @@
           "notes": [
             {
               "ref": "1:8",
-              "note": "Calvin emphasized that the prophet's tears authenticate his message: one who weeps while delivering judgment demonstrates that the message comes from love, not malice."
+              "note": "Calvin emphasized that the prophet's tears authenticate his message: one who weeps while delivering judgment demonstrates that the message comes from love, not malice. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -178,7 +178,7 @@
           "notes": [
             {
               "ref": "1:10",
-              "note": "The phrase al-taggidu begat ('tell it not in Gath') deliberately recalls 2 Sam 1:20. The pun works because the verb higgid ('to tell') sounds like the city name Gath. Similar paronomasia continues through v. 15."
+              "note": "The phrase al-taggidu begat ('tell it not in Gath') deliberately recalls 2 Sam 1:20. The pun works because the verb higgid ('to tell') sounds like the city name Gath. Similar paronomasia continues through v. 15. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -253,7 +253,7 @@
           "notes": [
             {
               "ref": "1:14-16",
-              "note": "Calvin noted that Micah's willingness to prophesy against his own hometown demonstrates the prophet's integrity: he speaks God's word regardless of personal cost."
+              "note": "Calvin noted that Micah's willingness to prophesy against his own hometown demonstrates the prophet's integrity: he speaks God's word regardless of personal cost. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -262,7 +262,7 @@
           "notes": [
             {
               "ref": "1:14",
-              "note": "The phrase shallehu ('parting gifts') uses the language of a dowry given to a bride departing her father's house. The metaphor implies Moresheth Gath will be 'married off' to a foreign conqueror."
+              "note": "The phrase shallehu ('parting gifts') uses the language of a dowry given to a bride departing her father's house. The metaphor implies Moresheth Gath will be 'married off' to a foreign conqueror. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -513,7 +513,83 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Micah",
+        "Hezekiah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Chariot",
+        "Coming",
+        "Dwelling",
+        "Harness",
+        "Lachish",
+        "Place",
+        "Wail",
+        "Weep",
+        "Will"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

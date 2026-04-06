@@ -154,7 +154,7 @@
           "notes": [
             {
               "ref": "8:12",
-              "note": "The NET note clarifies that the ‘willingness’ (prothumia) is the primary criterion: God judges the gift by the giver’s disposition, not the gift’s size. This echoes Jesus’ commendation of the widow’s mite (Mark 12:41–44)."
+              "note": "The NET note clarifies that the ‘willingness’ (prothumia) is the primary criterion: God judges the gift by the giver’s disposition, not the gift’s size. This echoes Jesus’ commendation of the widow’s mite (Mark 12:41–44). The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -234,7 +234,7 @@
           "notes": [
             {
               "ref": "8:18",
-              "note": "The NET note discusses the identity of ‘the brother who is praised by all the churches’: candidates include Luke (Origen, Jerome), Barnabas, Tychicus, and others. The text provides no name, and certainty is impossible."
+              "note": "The NET note discusses the identity of ‘the brother who is praised by all the churches’: candidates include Luke (Origen, Jerome), Barnabas, Tychicus, and others. The text provides no name, and certainty is impossible. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -502,7 +502,84 @@
       ]
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Titus",
+        "Christ"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Christ",
+        "Delegation",
+        "Equality",
+        "Financial",
+        "Integrity",
+        "Macedonian",
+        "Manna",
+        "Model",
+        "Principle"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

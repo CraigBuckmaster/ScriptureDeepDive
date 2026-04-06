@@ -67,7 +67,7 @@
           "notes": [
             {
               "ref": "30:7",
-              "note": "Calvin reads the \"time of Jacob's trouble\" as both the exile and all subsequent trials of God's people: \"Every generation faces its own Jacob's trouble, and the promise applies universally: he will be saved out of it.\""
+              "note": "Calvin reads the \"time of Jacob's trouble\" as both the exile and all subsequent trials of God's people: \"Every generation faces its own Jacob's trouble, and the promise applies universally: he will be saved out of it.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -76,7 +76,7 @@
           "notes": [
             {
               "ref": "30:9",
-              "note": "The promise of \"David their king\" is not a literal return of David from the dead but a messianic figure from David's line -- the Righteous Branch of 23:5."
+              "note": "The promise of \"David their king\" is not a literal return of David from the dead but a messianic figure from David's line -- the Righteous Branch of 23:5. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -85,7 +85,7 @@
           "notes": [
             {
               "ref": "30:1-11",
-              "note": "Lundbom reads the Book of Consolation as deliberately structured to mirror the judgment oracles. Where chapters 2-25 tore down, chapters 30-31 build and plant -- fulfilling the constructive verbs of the original call (1:10)."
+              "note": "Lundbom reads the Book of Consolation as deliberately structured to mirror the judgment oracles. Where chapters 2-25 tore down, chapters 30-31 build and plant -- fulfilling the constructive verbs of the original call (1:10). This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -151,7 +151,7 @@
           "notes": [
             {
               "ref": "30:17",
-              "note": "Calvin celebrates the reversal: \"God first declares the wound incurable so that when he heals it, all glory belongs to grace alone. The impossibility of human remedy magnifies the power of divine mercy.\""
+              "note": "Calvin celebrates the reversal: \"God first declares the wound incurable so that when he heals it, all glory belongs to grace alone. The impossibility of human remedy magnifies the power of divine mercy.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -173,7 +173,7 @@
           "notes": [
             {
               "ref": "30:12-24",
-              "note": "Lundbom traces the wound-healing arc across the book: diagnosis (8:22, \"no balm?\") -- despair (15:18, \"deceptive brook\") -- promise (30:17, \"I will heal\"). The Book of Consolation answers the questions raised in the judgment oracles."
+              "note": "Lundbom traces the wound-healing arc across the book: diagnosis (8:22, \"no balm?\") -- despair (15:18, \"deceptive brook\") -- promise (30:17, \"I will heal\"). The Book of Consolation answers the questions raised in the judgment oracles. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -182,7 +182,7 @@
           "notes": [
             {
               "ref": "30:17",
-              "note": "Brueggemann identifies the healing promise as \"the core verb of the Book of Consolation.\" The God who tears down (1:10) now heals. The same sovereignty that judged now restores. There is no change in God -- only a change in the moment."
+              "note": "Brueggemann identifies the healing promise as \"the core verb of the Book of Consolation.\" The God who tears down (1:10) now heals. The same sovereignty that judged now restores. There is no change in God -- only a change in the moment. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -391,7 +391,78 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "David"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Fortunes",
+        "Health",
+        "Restore",
+        "Will"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

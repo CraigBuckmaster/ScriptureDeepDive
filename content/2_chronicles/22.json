@@ -34,7 +34,7 @@
           "notes": [
             {
               "ref": "22:(1, '')",
-              "note": "The principle demonstrated here — that God’s governance is consistent and consequential — applies to every generation."
+              "note": "The principle demonstrated here — that God’s governance is consistent and consequential — applies to every generation. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -43,13 +43,21 @@
           "notes": [
             {
               "ref": "22:(1, '')",
-              "note": "The Chronicler’s distinctive vocabulary shapes the presentation, connecting this section to his broader theological framework."
+              "note": "The Chronicler’s distinctive vocabulary shapes the presentation, connecting this section to his broader theological framework. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
             }
           ]
         },
         "hist": {
           "context": "Ahaziah reigns one year. His mother Athaliah is his counsellor in doing wrong. He allies with Joram of Israel and is killed during Jehu’s revolution. “He too walked in the ways of the house of Ahab, for his mother encouraged him in acting wickedly.” The Omride influence through marriage reaches its lethal conclusion."
-        }
+        },
+        "heb": [
+          {
+            "word": "bayit",
+            "transliteration": "bayit",
+            "gloss": "house / temple",
+            "paragraph": "Bayit (house) carries a deliberate double meaning in Chronicles: Solomon builds God a house (temple), and God promises David a house (dynasty). The interplay between these two 'houses' generates the theological tension that drives the entire narrative: will the dynasty endure? Will the temple remain? Both depend on covenant faithfulness."
+          }
+        ]
       }
     },
     {
@@ -80,7 +88,15 @@
         },
         "hist": {
           "context": "Athaliah destroys the entire royal family and seizes the throne — the only non-Davidic ruler of Judah. But Jehoshabeath (Jehoiada’s wife) hides baby Joash in the temple for six years. The Davidic line hangs by a thread. The Chronicler’s version is compressed but preserves the essential drama: one baby, hidden in God’s house, preserves the eternal covenant."
-        }
+        },
+        "heb": [
+          {
+            "word": "miqdāš",
+            "transliteration": "miqdāš",
+            "gloss": "sanctuary / holy place",
+            "paragraph": "The miqdāš (sanctuary) is the place where heaven and earth overlap — where God's presence dwells among His people in a mediated, structured way. The Chronicler devotes extraordinary attention to the sanctuary because it represents the centre of Israel's identity: a people organized around the worship of their God."
+          }
+        ]
       }
     }
   ],

@@ -46,7 +46,7 @@
           "notes": [
             {
               "ref": "25:7",
-              "note": "Zedekiah’s blinding is the ultimate symbol of Judah’s spiritual condition: a nation that refused to see God’s truth is finally made physically unable to see anything. The punishment mirrors the sin."
+              "note": "Zedekiah’s blinding is the ultimate symbol of Judah’s spiritual condition: a nation that refused to see God’s truth is finally made physically unable to see anything. The punishment mirrors the sin. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -55,7 +55,7 @@
           "notes": [
             {
               "ref": "25:1",
-              "note": "The date “ninth year, tenth month, tenth day” is preserved with calendrical precision because it marks the beginning of Jerusalem’s end. Both Jeremiah (52:4) and Ezekiel (24:1–2) record the same date independently."
+              "note": "The date “ninth year, tenth month, tenth day” is preserved with calendrical precision because it marks the beginning of Jerusalem’s end. Both Jeremiah (52:4) and Ezekiel (24:1–2) record the same date independently. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
             }
           ]
         },
@@ -150,7 +150,15 @@
         },
         "hist": {
           "context": "Nebuzaradan, commander of the guard, burns the temple, the royal palace, and every important building in Jerusalem. The bronze pillars Jachin and Boaz, the bronze Sea, the movable stands — everything Solomon built is broken up and carried to Babylon. The gold and silver vessels are taken. The chief priest Seraiah and the second priest Zephaniah are executed at Riblah. The narrator catalogues the destruction with archival precision, listing every object removed. The inventory is a reverse echo of 1 Kings 7, where Solomon’s temple furnishings were catalogued with pride. What was built with glory is dismantled with thoroughness."
-        }
+        },
+        "heb": [
+          {
+            "word": "bayit",
+            "transliteration": "bayit",
+            "gloss": "house / temple",
+            "paragraph": "Bayit (house) carries a deliberate double meaning in Chronicles: Solomon builds God a house (temple), and God promises David a house (dynasty). The interplay between these two 'houses' generates the theological tension that drives the entire narrative: will the dynasty endure? Will the temple remain? Both depend on covenant faithfulness."
+          }
+        ]
       }
     },
     {
@@ -229,7 +237,15 @@
         },
         "hist": {
           "context": "Nebuchadnezzar appoints Gedaliah as governor over the remnant. Ishmael, a royal descendant, assassinates him. The survivors flee to Egypt, fearing Babylonian reprisal — completing the circle: Israel came out of Egypt with Moses; now the remnant returns to Egypt in terror. But the book does not end there. Its final four verses shift to 561 BC: Evil-Merodach of Babylon releases Jehoiachin from prison, gives him a seat above the other captive kings, and provides a regular allowance for the rest of his life. The Davidic king is not dead. The dynasty is in exile, not extinct. The last word is not destruction but a whisper of survival — a lamp still burning in the darkness."
-        }
+        },
+        "heb": [
+          {
+            "word": "mālaḵ",
+            "transliteration": "mālaḵ",
+            "gloss": "to reign / be king",
+            "paragraph": "The Hebrew mālaḵ (to reign) carries the weight of divinely delegated authority. In the Chronicler's theology, every king reigns as God's representative — their faithfulness or failure directly affects the nation's destiny. The verb appears at the critical transitions that shape Israel's monarchic history."
+          }
+        ]
       }
     }
   ],

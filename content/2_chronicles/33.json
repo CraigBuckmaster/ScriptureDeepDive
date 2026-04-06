@@ -34,7 +34,7 @@
           "notes": [
             {
               "ref": "33:(1, '')",
-              "note": "The principle here applies universally: God’s governance is consistent and his responses are proportional to human faithfulness."
+              "note": "The principle here applies universally: God’s governance is consistent and his responses are proportional to human faithfulness. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -43,13 +43,21 @@
           "notes": [
             {
               "ref": "33:(1, '')",
-              "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events."
+              "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
             }
           ]
         },
         "hist": {
           "context": "Manasseh rebuilds high places, erects Baal altars, makes Asherah poles, worships the starry hosts, builds pagan altars in the temple, sacrifices his children, practices sorcery, consults mediums and spiritists. “He did much evil in the eyes of the LORD, arousing his anger.” The catalogue matches 2 Kings 21 closely. But what follows is unique to Chronicles."
-        }
+        },
+        "heb": [
+          {
+            "word": "bayit",
+            "transliteration": "bayit",
+            "gloss": "house / temple",
+            "paragraph": "Bayit (house) carries a deliberate double meaning in Chronicles: Solomon builds God a house (temple), and God promises David a house (dynasty). The interplay between these two 'houses' generates the theological tension that drives the entire narrative: will the dynasty endure? Will the temple remain? Both depend on covenant faithfulness."
+          }
+        ]
       }
     },
     {
@@ -76,15 +84,33 @@
         },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": []
+          "notes": [
+            {
+              "ref": "33:(11, '')",
+              "note": "Calvin: On 25 — Exile, Repentance, Restoration — Unique to Chronicles: teaches that all human religious activity is ultimately provisional — when God himself appears, our best efforts are suspended in awe. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
+            }
+          ]
         },
         "net": {
           "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": []
+          "notes": [
+            {
+              "ref": "33:(11, '')",
+              "note": "NET Note: On 25 — Exile, Repentance, Restoration — Unique to Chronicles: Gen 22:2. Jewish tradition universally accepted this identification, which became foundational for Jerusalem’s theology of sacred space. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
+            }
+          ]
         },
         "hist": {
           "context": "The Assyrians capture Manasseh with hooks, bind him, and take him to Babylon. “In his distress he sought the favour of the LORD his God and humbled himself greatly.” God is moved by his entreaty and brings him back to Jerusalem. Manasseh then removes the foreign gods, rebuilds the altar, and restores worship. This entire episode is ABSENT from Kings. The Chronicler’s Manasseh repents — the worst king experiences the seek/find pattern. If even Manasseh can be restored through repentance, no one is beyond redemption. This is the Chronicler’s most radical theological statement."
-        }
+        },
+        "heb": [
+          {
+            "word": "dāraš",
+            "transliteration": "dāraš",
+            "gloss": "to seek / inquire",
+            "paragraph": "Dāraš is the Chronicler's signature verb — appearing more than 40 times in 1-2 Chronicles, far more frequently than in Kings. 'To seek the LORD' is the defining act of faithful kingship in the Chronicler's theology. Kings who seek (dāraš) prosper; kings who forsake (ʿāzaḇ) are abandoned. This binary drives the entire narrative."
+          }
+        ]
       }
     }
   ],

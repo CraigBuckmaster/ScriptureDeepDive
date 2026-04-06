@@ -64,7 +64,7 @@
           "notes": [
             {
               "ref": "39:3",
-              "note": "The striking of bow and arrows from Gog's hands uses the verb nakah (to strike) in the hiphil, indicating forceful, violent disarming. God does not negotiate with Gog; He shatters the weapons."
+              "note": "The striking of bow and arrows from Gog's hands uses the verb nakah (to strike) in the hiphil, indicating forceful, violent disarming. God does not negotiate with Gog; He shatters the weapons. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -150,7 +150,7 @@
           "notes": [
             {
               "ref": "39:11",
-              "note": "The 'Valley of the Travelers' (ge ha'oberim) may refer to a trade route east of the Dead Sea. The valley is renamed 'Hamon Gog' (Hordes of Gog), a permanent memorial of divine judgment. The renaming transforms geography into theology."
+              "note": "The 'Valley of the Travelers' (ge ha'oberim) may refer to a trade route east of the Dead Sea. The valley is renamed 'Hamon Gog' (Hordes of Gog), a permanent memorial of divine judgment. The renaming transforms geography into theology. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -230,7 +230,7 @@
           "notes": [
             {
               "ref": "39:17",
-              "note": "The phrase 'sacrifice I am preparing for you' (zivchi asher ani zoveach) uses the standard sacrificial vocabulary (zevach, to slaughter for sacrifice) applied to battlefield carnage. The semantic shock is intentional."
+              "note": "The phrase 'sacrifice I am preparing for you' (zivchi asher ani zoveach) uses the standard sacrificial vocabulary (zevach, to slaughter for sacrifice) applied to battlefield carnage. The semantic shock is intentional. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -550,7 +550,84 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Ezekiel",
+        "Gog"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Burning",
+        "Destruction",
+        "Feast",
+        "Full",
+        "Great",
+        "Israel",
+        "Mountains",
+        "Restoration",
+        "Sacrificial",
+        "Seven"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

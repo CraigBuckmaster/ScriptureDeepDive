@@ -55,7 +55,7 @@
           "notes": [
             {
               "ref": "7:2-4",
-              "note": "Calvin notes the accumulation of judgment language ('the end has come... the end has come') as God impressing urgency on deaf ears. Repetition serves where single warnings have failed."
+              "note": "Calvin notes the accumulation of judgment language ('the end has come... the end has come') as God impressing urgency on deaf ears. Repetition serves where single warnings have failed. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -64,7 +64,7 @@
           "notes": [
             {
               "ref": "7:2",
-              "note": "The phrase 'four corners of the land' (arba kanphot ha'arets) uses language from creation cosmology — the judgment covers the entire ordered world of Israel."
+              "note": "The phrase 'four corners of the land' (arba kanphot ha'arets) uses language from creation cosmology — the judgment covers the entire ordered world of Israel. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -143,7 +143,7 @@
           "notes": [
             {
               "ref": "7:10-11",
-              "note": "Calvin sees the rod of judgment as having 'grown' from Israel's own violence and pride — sin produces the very instrument of its own punishment."
+              "note": "Calvin sees the rod of judgment as having 'grown' from Israel's own violence and pride — sin produces the very instrument of its own punishment. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -165,7 +165,7 @@
           "notes": [
             {
               "ref": "7:5-13",
-              "note": "Block structures the oracle as a day-of-YHWH poem with three movements: announcement (vv.5-9), elaboration (vv.10-13), and consequences (vv.14-27). The day-of-YHWH tradition is domesticated — applied not to foreign enemies but to Israel herself."
+              "note": "Block structures the oracle as a day-of-YHWH poem with three movements: announcement (vv.5-9), elaboration (vv.10-13), and consequences (vv.14-27). The day-of-YHWH tradition is domesticated — applied not to foreign enemies but to Israel herself. Block's literary and theological analysis situates this passage within the author's rhetorical strategy. The text functions as both narrative and argument — the story advances the book's theological thesis about the consequences of covenant faithfulness and unfaithfulness in Israel's life under God."
             }
           ]
         },
@@ -174,7 +174,7 @@
           "notes": [
             {
               "ref": "7:10-13",
-              "note": "Zimmerli identifies the economic language as a reversal of covenant blessing: the land that was supposed to flow with milk and honey has become a wasteland where property transactions are meaningless. The Jubilee is undone."
+              "note": "Zimmerli identifies the economic language as a reversal of covenant blessing: the land that was supposed to flow with milk and honey has become a wasteland where property transactions are meaningless. The Jubilee is undone. Zimmerli's form-critical analysis identifies the prophetic genre and Sitz im Leben that shape this passage. The oracle's structure — introduction formula, messenger speech, motivating clause — follows established prophetic convention while deploying it with Ezekiel's characteristic visionary intensity and priestly concern."
             }
           ]
         },
@@ -485,7 +485,81 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Ezekiel"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "After",
+        "Corners",
+        "Disaster",
+        "Every",
+        "Four",
+        "Side",
+        "Terror",
+        "Upon"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

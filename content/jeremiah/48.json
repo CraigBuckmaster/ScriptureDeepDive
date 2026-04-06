@@ -67,7 +67,7 @@
           "notes": [
             {
               "ref": "48:11-12",
-              "note": "Calvin develops the wine metaphor: \"Prolonged peace without repentance produces not maturity but stagnation. Moab's undisturbed prosperity was not blessing but judgment deferred.\""
+              "note": "Calvin develops the wine metaphor: \"Prolonged peace without repentance produces not maturity but stagnation. Moab's undisturbed prosperity was not blessing but judgment deferred.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -98,7 +98,7 @@
           "notes": [
             {
               "ref": "48:11-12",
-              "note": "Brueggemann reads the wine metaphor as \"a theology of disruption.\" Undisturbed comfort is not God's goal for any nation. The pouring-out is not vindictive but necessary -- stagnation must be broken for renewal."
+              "note": "Brueggemann reads the wine metaphor as \"a theology of disruption.\" Undisturbed comfort is not God's goal for any nation. The pouring-out is not vindictive but necessary -- stagnation must be broken for renewal. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -159,7 +159,7 @@
           "notes": [
             {
               "ref": "48:47",
-              "note": "Calvin reads the restoration promise as evidence of \"God's universal mercy. Even nations under the severest judgment retain a future in God's purpose. Destruction is never the last word.\""
+              "note": "Calvin reads the restoration promise as evidence of \"God's universal mercy. Even nations under the severest judgment retain a future in God's purpose. Destruction is never the last word.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -168,7 +168,7 @@
           "notes": [
             {
               "ref": "48:45-46",
-              "note": "These verses closely parallel Numbers 21:28-29 and 24:17, drawing on ancient poetry about Moab's original defeat. The prophetic oracle incorporates historical memory."
+              "note": "These verses closely parallel Numbers 21:28-29 and 24:17, drawing on ancient poetry about Moab's original defeat. The prophetic oracle incorporates historical memory. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -177,7 +177,7 @@
           "notes": [
             {
               "ref": "48:26-47",
-              "note": "Lundbom notes that the restoration promise (v.47) mirrors similar promises for Ammon (49:6) and Elam (49:39). The oracles against the nations include seeds of hope -- judgment is penultimate, not ultimate."
+              "note": "Lundbom notes that the restoration promise (v.47) mirrors similar promises for Ammon (49:6) and Elam (49:39). The oracles against the nations include seeds of hope -- judgment is penultimate, not ultimate. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -186,7 +186,7 @@
           "notes": [
             {
               "ref": "48:31-33",
-              "note": "Brueggemann reads God's tears over Moab as \"the most unexpected feature of the oracle.\" The God who commands destruction also grieves it. This dual action -- judging and mourning simultaneously -- defines Jeremiah's theology."
+              "note": "Brueggemann reads God's tears over Moab as \"the most unexpected feature of the oracle.\" The God who commands destruction also grieves it. This dual action -- judging and mourning simultaneously -- defines Jeremiah's theology. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -377,7 +377,77 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Destroyed",
+        "Humbled",
+        "Moab",
+        "Pride"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

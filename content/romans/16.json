@@ -108,7 +108,7 @@
           "notes": [
             {
               "ref": "16:1 2",
-              "note": "Schreiner argues that Phoebe’s role as letter-carrier was significant: she would have been the first to read the letter publicly and would have been expected to explain and interpret it. Her commendation is Paul’s way of authorising her role."
+              "note": "Schreiner argues that Phoebe’s role as letter-carrier was significant: she would have been the first to read the letter publicly and would have been expected to explain and interpret it. Her commendation is Paul’s way of authorising her role. Schreiner's exegesis emphasizes the eschatological dimension of the passage. The author writes with the end in view — present suffering and ethical obligation are framed by the certainty of Christ's return and the final vindication of God's people. This already-not-yet tension shapes every imperative in the text."
             }
           ]
         },
@@ -534,7 +534,83 @@
       ]
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Christ",
+        "Phoebe",
+        "Priscilla",
+        "Aquila"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Another",
+        "Glory",
+        "Greet",
+        "Holy",
+        "Only",
+        "Wise"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

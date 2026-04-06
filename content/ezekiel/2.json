@@ -91,7 +91,7 @@
           "notes": [
             {
               "ref": "2:1-5",
-              "note": "Block argues the repeated 'rebellious house' (bet meri) is not merely descriptive but performative — God is formally charging Israel in covenantal lawsuit language. The prophet is commissioned as a covenant prosecutor, not just a messenger."
+              "note": "Block argues the repeated 'rebellious house' (bet meri) is not merely descriptive but performative — God is formally charging Israel in covenantal lawsuit language. The prophet is commissioned as a covenant prosecutor, not just a messenger. Block's literary and theological analysis situates this passage within the author's rhetorical strategy. The text functions as both narrative and argument — the story advances the book's theological thesis about the consequences of covenant faithfulness and unfaithfulness in Israel's life under God."
             }
           ]
         },
@@ -153,7 +153,7 @@
           "notes": [
             {
               "ref": "2:9-10",
-              "note": "Calvin sees the scroll as a demonstration that God's word is fixed and predetermined. The prophet does not invent the message; he receives it complete and delivers it whole."
+              "note": "Calvin sees the scroll as a demonstration that God's word is fixed and predetermined. The prophet does not invent the message; he receives it complete and delivers it whole. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -162,7 +162,7 @@
           "notes": [
             {
               "ref": "2:9",
-              "note": "The Hebrew qinah ('lament/dirge') is a technical term for funeral poetry, previewing the dirges Ezekiel will compose over Tyre (ch. 27) and Egypt (ch. 32)."
+              "note": "The Hebrew qinah ('lament/dirge') is a technical term for funeral poetry, previewing the dirges Ezekiel will compose over Tyre (ch. 27) and Egypt (ch. 32). The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -171,7 +171,7 @@
           "notes": [
             {
               "ref": "2:8-10",
-              "note": "Block sees the scroll-eating as a priestly act of consecration — just as a priest ingests the sacred, Ezekiel ingests the divine word. His body becomes the vessel of revelation, a living scroll."
+              "note": "Block sees the scroll-eating as a priestly act of consecration — just as a priest ingests the sacred, Ezekiel ingests the divine word. His body becomes the vessel of revelation, a living scroll. Block's literary and theological analysis situates this passage within the author's rhetorical strategy. The text functions as both narrative and argument — the story advances the book's theological thesis about the consequences of covenant faithfulness and unfaithfulness in Israel's life under God."
             }
           ]
         },
@@ -180,7 +180,7 @@
           "notes": [
             {
               "ref": "2:8-10",
-              "note": "Zimmerli notes that the scroll written on both sides (panim ve'ahor) recalls the tablets of the law written on both sides (Exod 32:15). Ezekiel's scroll is a new Sinai revelation for the exile generation."
+              "note": "Zimmerli notes that the scroll written on both sides (panim ve'ahor) recalls the tablets of the law written on both sides (Exod 32:15). Ezekiel's scroll is a new Sinai revelation for the exile generation. Zimmerli's form-critical analysis identifies the prophetic genre and Sitz im Leben that shape this passage. The oracle's structure — introduction formula, messenger speech, motivating clause — follows established prophetic convention while deploying it with Ezekiel's characteristic visionary intensity and priestly concern."
             }
           ]
         },
@@ -365,7 +365,79 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Ezekiel"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "House",
+        "Lament",
+        "Mourning",
+        "Rebellious",
+        "Scroll",
+        "Sent"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

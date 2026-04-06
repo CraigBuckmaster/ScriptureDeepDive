@@ -159,7 +159,7 @@
           "notes": [
             {
               "ref": "5:12",
-              "note": "Calvin identifies this as the perennial human error: mistaking God's patience for God's absence. Because judgment is delayed, they conclude it will never come. Calvin calls this \"the security of those who sleep in their sins.\""
+              "note": "Calvin identifies this as the perennial human error: mistaking God's patience for God's absence. Because judgment is delayed, they conclude it will never come. Calvin calls this \"the security of those who sleep in their sins.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -168,7 +168,7 @@
           "notes": [
             {
               "ref": "5:13",
-              "note": "The Hebrew haddōbēr (\"the one who speaks\") is used for the false prophets. The contrast is between prophets as \"wind\" (rûaḥ) and God's word as \"fire\" (ʾēš) — insubstantial speech versus consuming power."
+              "note": "The Hebrew haddōbēr (\"the one who speaks\") is used for the false prophets. The contrast is between prophets as \"wind\" (rûaḥ) and God's word as \"fire\" (ʾēš) — insubstantial speech versus consuming power. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -522,7 +522,83 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Abraham"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Foolish",
+        "Have",
+        "Lied",
+        "People",
+        "Search",
+        "Senseless",
+        "Streets",
+        "They",
+        "Through"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

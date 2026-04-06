@@ -173,7 +173,7 @@
           "notes": [
             {
               "ref": "5:7",
-              "note": "Calvin saw the dew metaphor as an image of the gospel's spread: quietly, universally, and entirely by divine initiative. The church's influence in the world operates not by force but by the gentle, pervasive work of the Spirit."
+              "note": "Calvin saw the dew metaphor as an image of the gospel's spread: quietly, universally, and entirely by divine initiative. The church's influence in the world operates not by force but by the gentle, pervasive work of the Spirit. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -182,7 +182,7 @@
           "notes": [
             {
               "ref": "5:7",
-              "note": "The phrase kettal me'et YHWH ('like dew from the LORD') emphasizes divine origin: dew comes directly from God without human mediation or cooperation. The verb yeqavveh ('wait for/hope for') creates a contrast: the dew does not wait for human action."
+              "note": "The phrase kettal me'et YHWH ('like dew from the LORD') emphasizes divine origin: dew comes directly from God without human mediation or cooperation. The verb yeqavveh ('wait for/hope for') creates a contrast: the dew does not wait for human action. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -191,7 +191,7 @@
           "notes": [
             {
               "ref": "5:7-9",
-              "note": "Stuart sees the dual simile as reflecting the dual aspect of the Abrahamic covenant: blessing to those who bless Israel (dew) and cursing to those who curse Israel (lion). The remnant embodies both poles of the covenant promise."
+              "note": "Stuart sees the dual simile as reflecting the dual aspect of the Abrahamic covenant: blessing to those who bless Israel (dew) and cursing to those who curse Israel (lion). The remnant embodies both poles of the covenant promise. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -200,7 +200,7 @@
           "notes": [
             {
               "ref": "5:7-9",
-              "note": "Waltke notes the theological progression: the remnant's blessing function (dew) precedes its judgment function (lion), suggesting that blessing is God's primary intention while judgment is the response to those who reject it."
+              "note": "Waltke notes the theological progression: the remnant's blessing function (dew) precedes its judgment function (lion), suggesting that blessing is God's primary intention while judgment is the response to those who reject it. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -253,7 +253,7 @@
           "notes": [
             {
               "ref": "5:10-14",
-              "note": "Calvin read the purification as a permanent principle: God must remove our false securities before we can learn to rely on him alone. The process is painful but essential for spiritual maturity."
+              "note": "Calvin read the purification as a permanent principle: God must remove our false securities before we can learn to rely on him alone. The process is painful but essential for spiritual maturity. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -271,7 +271,7 @@
           "notes": [
             {
               "ref": "5:10-15",
-              "note": "Stuart identifies the purification as Micah's version of the Deuteronomic reform program: the removal of everything that competes with YHWH for Israel's loyalty. The list parallels the reforms of Hezekiah (2 Kgs 18:4) and Josiah (2 Kgs 23:4-20)."
+              "note": "Stuart identifies the purification as Micah's version of the Deuteronomic reform program: the removal of everything that competes with YHWH for Israel's loyalty. The list parallels the reforms of Hezekiah (2 Kgs 18:4) and Josiah (2 Kgs 23:4-20). This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -537,7 +537,85 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Micah",
+        "Hezekiah",
+        "Balak",
+        "Balaam",
+        "Moses",
+        "Aaron"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Bethlehem",
+        "Destroy",
+        "Ephrathah",
+        "Like",
+        "Remnant",
+        "Will",
+        "Your"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

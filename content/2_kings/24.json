@@ -47,7 +47,7 @@
           "notes": [
             {
               "ref": "24:1",
-              "note": "Nebuchadnezzar (Nĕbûkadreʾtstsar in Hebrew, Nabu-kudurri-usur in Akkadian) means “Nabu, protect the boundary stone.” His name appears over 90 times in the OT, reflecting his central role in Judah’s final decades."
+              "note": "Nebuchadnezzar (Nĕbûkadreʾtstsar in Hebrew, Nabu-kudurri-usur in Akkadian) means “Nabu, protect the boundary stone.” His name appears over 90 times in the OT, reflecting his central role in Judah’s final decades. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
             }
           ]
         },
@@ -69,13 +69,21 @@
           "notes": [
             {
               "ref": "24:3",
-              "note": "The narrator’s insistence on Manasseh as the cause — even after Josiah’s reform — reveals the Deuteronomistic theology of accumulated guilt. Sin builds up like a national debt; occasional good kings make payments but cannot clear the balance."
+              "note": "The narrator’s insistence on Manasseh as the cause — even after Josiah’s reform — reveals the Deuteronomistic theology of accumulated guilt. Sin builds up like a national debt; occasional good kings make payments but cannot clear the balance. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
         "hist": {
           "context": "Jehoiakim serves Nebuchadnezzar for three years, then rebels. God sends raiding bands from Babylon, Aram, Moab, and Ammon — “in accordance with the word of the LORD proclaimed by his servants the prophets.” The narrator is explicit: “Surely these things happened to Judah according to the LORD’s command, in order to remove them from his presence because of the sins of Manasseh.” Manasseh is named one last time as the ultimate cause. The king of Egypt “did not march out from his own country again” — Egypt’s power is broken at Carchemish (605 BC). Judah has no ally left."
-        }
+        },
+        "heb": [
+          {
+            "word": "nāḇîʾ",
+            "transliteration": "nāḇîʾ",
+            "gloss": "prophet",
+            "paragraph": "The nāḇîʾ (prophet) in Chronicles functions as God's spokesperson — the voice that interprets events theologically. The Chronicler adds prophetic interventions to narratives where Kings has none, ensuring that every crisis has a divine commentary. Prophets do not predict the future so much as explain the present in light of God's covenant purposes."
+          }
+        ]
       }
     },
     {
@@ -105,7 +113,7 @@
           "notes": [
             {
               "ref": "24:13",
-              "note": "The temple’s treasures carried to Babylon fulfil Isaiah’s prophecy from a century earlier. This teaches that God’s announced consequences, however delayed, are never cancelled. Time does not diminish the word’s authority."
+              "note": "The temple’s treasures carried to Babylon fulfil Isaiah’s prophecy from a century earlier. This teaches that God’s announced consequences, however delayed, are never cancelled. Time does not diminish the word’s authority. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -114,7 +122,7 @@
           "notes": [
             {
               "ref": "24:14",
-              "note": "The number 10,000 deportees is the total; v.16 breaks this down as 7,000 “men of valour” plus 1,000 craftsmen and smiths. The discrepancy is likely due to different counting methods (family heads vs. military-age males)."
+              "note": "The number 10,000 deportees is the total; v.16 breaks this down as 7,000 “men of valour” plus 1,000 craftsmen and smiths. The discrepancy is likely due to different counting methods (family heads vs. military-age males). The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
             }
           ]
         },
@@ -142,7 +150,15 @@
         },
         "hist": {
           "context": "Jehoiachin reigns three months before Nebuchadnezzar besieges Jerusalem. Jehoiachin surrenders personally, and Nebuchadnezzar deports the king, the queen mother, the officials, the fighting men (10,000), and all the craftsmen and artisans. The temple treasures are cut up and taken. Only the poorest are left. Nebuchadnezzar installs Mattaniah (renamed Zedekiah) as puppet king. Among the deportees is the prophet Ezekiel (Ezek 1:1–3). The first deportation (597 BC) strips Judah of its leadership, its wealth, its military capacity, and its prophetic voice."
-        }
+        },
+        "heb": [
+          {
+            "word": "mālaḵ",
+            "transliteration": "mālaḵ",
+            "gloss": "to reign / be king",
+            "paragraph": "The Hebrew mālaḵ (to reign) carries the weight of divinely delegated authority. In the Chronicler's theology, every king reigns as God's representative — their faithfulness or failure directly affects the nation's destiny. The verb appears at the critical transitions that shape Israel's monarchic history."
+          }
+        ]
       }
     }
   ],

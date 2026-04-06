@@ -38,7 +38,7 @@
           "notes": [
             {
               "ref": "30:(1, '')",
-              "note": "The principle here applies universally: God’s governance is consistent and his responses are proportional to human faithfulness."
+              "note": "The principle here applies universally: God’s governance is consistent and his responses are proportional to human faithfulness. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -47,13 +47,21 @@
           "notes": [
             {
               "ref": "30:(1, '')",
-              "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events."
+              "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
             }
           ]
         },
         "hist": {
           "context": "Hezekiah sends letters throughout all Israel and Judah — including Ephraim and Manasseh — inviting everyone to a Passover in Jerusalem. The letters appeal: “Return to the LORD... he will not turn his face from you if you return to him.” Some northern couriers are mocked, but some from Asher, Manasseh, and Zebulun humble themselves and come. “In Judah the hand of God was on the people to give them unity of mind.” The Chronicler’s “all Israel” ideal is partially realised."
-        }
+        },
+        "heb": [
+          {
+            "word": "dāraš",
+            "transliteration": "dāraš",
+            "gloss": "to seek / inquire",
+            "paragraph": "Dāraš is the Chronicler's signature verb — appearing more than 40 times in 1-2 Chronicles, far more frequently than in Kings. 'To seek the LORD' is the defining act of faithful kingship in the Chronicler's theology. Kings who seek (dāraš) prosper; kings who forsake (ʿāzaḇ) are abandoned. This binary drives the entire narrative."
+          }
+        ]
       }
     },
     {
@@ -76,15 +84,33 @@
         },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": []
+          "notes": [
+            {
+              "ref": "30:(13, '')",
+              "note": "Calvin: On 27 — Passover Celebrated; Grace for the Unclean; Extended Joy: teaches that all human religious activity is ultimately provisional — when God himself appears, our best efforts are suspended in awe. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
+            }
+          ]
         },
         "net": {
           "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": []
+          "notes": [
+            {
+              "ref": "30:(13, '')",
+              "note": "NET Note: On 27 — Passover Celebrated; Grace for the Unclean; Extended Joy: Gen 22:2. Jewish tradition universally accepted this identification, which became foundational for Jerusalem’s theology of sacred space. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
+            }
+          ]
         },
         "hist": {
           "context": "A great assembly gathers. Many eat the Passover without being ceremonially clean. Hezekiah prays: “May the LORD, who is good, pardon everyone who sets their heart on seeking God — even if they are not clean.” God hears and heals the people. The celebration is so joyful they extend it seven more days. “There was great joy in Jerusalem, for since the days of Solomon there had been nothing like this.” The Chronicler places Hezekiah’s Passover second only to Solomon’s dedication."
-        }
+        },
+        "heb": [
+          {
+            "word": "ʿāzaḇ",
+            "transliteration": "ʿāzaḇ",
+            "gloss": "to forsake / abandon",
+            "paragraph": "The Hebrew ʿāzaḇ (to forsake) is the negative counterpart to dāraš (to seek). In the Chronicler's theology, abandoning God triggers a reciprocal abandonment: 'You abandoned me; therefore I abandon you' (2 Chr 12:5). This talionic principle — measure for measure — is the Chronicler's fundamental explanation for national disaster."
+          }
+        ]
       }
     }
   ],

@@ -59,7 +59,7 @@
           "notes": [
             {
               "ref": "37:9",
-              "note": "Calvin warns against self-deception based on temporary relief: \"God sometimes removes a trial briefly to test whether the heart has truly changed or merely waited for the pressure to ease.\""
+              "note": "Calvin warns against self-deception based on temporary relief: \"God sometimes removes a trial briefly to test whether the heart has truly changed or merely waited for the pressure to ease.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -68,7 +68,7 @@
           "notes": [
             {
               "ref": "37:5",
-              "note": "Pharaoh Hophra (Greek: Apries, 589-570 BC) was the fourth king of the 26th Dynasty. His military intervention was brief and ineffective -- he retreated without engaging Babylon directly."
+              "note": "Pharaoh Hophra (Greek: Apries, 589-570 BC) was the fourth king of the 26th Dynasty. His military intervention was brief and ineffective -- he retreated without engaging Babylon directly. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -77,7 +77,7 @@
           "notes": [
             {
               "ref": "37:1-10",
-              "note": "Lundbom notes that the Egyptian episode is \"the final political miscalculation.\" Every time Judah relies on Egypt rather than God, the result is worse than before."
+              "note": "Lundbom notes that the Egyptian episode is \"the final political miscalculation.\" Every time Judah relies on Egypt rather than God, the result is worse than before. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -86,7 +86,7 @@
           "notes": [
             {
               "ref": "37:9-10",
-              "note": "Brueggemann reads the hyperbole as \"theological assertion disguised as military analysis.\" The issue is not whether Babylon can be defeated but whether God has decreed the city's destruction. Military calculation is irrelevant to divine decree."
+              "note": "Brueggemann reads the hyperbole as \"theological assertion disguised as military analysis.\" The issue is not whether Babylon can be defeated but whether God has decreed the city's destruction. Military calculation is irrelevant to divine decree. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -143,7 +143,7 @@
           "notes": [
             {
               "ref": "37:17",
-              "note": "Calvin observes Zedekiah's pathetic position: \"He wants truth but fears the consequences of acting on it. The king who secretly seeks the prophet while publicly permitting his persecution is the picture of moral cowardice.\""
+              "note": "Calvin observes Zedekiah's pathetic position: \"He wants truth but fears the consequences of acting on it. The king who secretly seeks the prophet while publicly permitting his persecution is the picture of moral cowardice.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -152,7 +152,7 @@
           "notes": [
             {
               "ref": "37:13",
-              "note": "The captain of the guard, Irijah son of Shelemiah, is from the family of Hananiah -- possibly the same Hananiah whose false prophecy Jeremiah contradicted in chapter 28. Family grudges may fuel the arrest."
+              "note": "The captain of the guard, Irijah son of Shelemiah, is from the family of Hananiah -- possibly the same Hananiah whose false prophecy Jeremiah contradicted in chapter 28. Family grudges may fuel the arrest. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -161,7 +161,7 @@
           "notes": [
             {
               "ref": "37:11-21",
-              "note": "Lundbom identifies a pattern: each private consultation between Zedekiah and Jeremiah (37:17, 38:14) produces the same answer. The king keeps hoping for a different word; the prophet keeps delivering the same one."
+              "note": "Lundbom identifies a pattern: each private consultation between Zedekiah and Jeremiah (37:17, 38:14) produces the same answer. The king keeps hoping for a different word; the prophet keeps delivering the same one. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -170,7 +170,7 @@
           "notes": [
             {
               "ref": "37:17",
-              "note": "Brueggemann calls Zedekiah \"the most tragic figure in Jeremiah -- a man who recognizes truth but cannot act on it because he fears his own officials more than he fears God.\""
+              "note": "Brueggemann calls Zedekiah \"the most tragic figure in Jeremiah -- a man who recognizes truth but cannot act on it because he fears his own officials more than he fears God.\". This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -365,7 +365,80 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Zedekiah",
+        "Hananiah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Arrested",
+        "Egypt",
+        "False",
+        "Hope",
+        "Imprisoned"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

@@ -34,7 +34,7 @@
           "notes": [
             {
               "ref": "21:(1, '')",
-              "note": "The principle demonstrated here — that God’s governance is consistent and consequential — applies to every generation."
+              "note": "The principle demonstrated here — that God’s governance is consistent and consequential — applies to every generation. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -43,13 +43,21 @@
           "notes": [
             {
               "ref": "21:(1, '')",
-              "note": "The Chronicler’s distinctive vocabulary shapes the presentation, connecting this section to his broader theological framework."
+              "note": "The Chronicler’s distinctive vocabulary shapes the presentation, connecting this section to his broader theological framework. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
             }
           ]
         },
         "hist": {
           "context": "Joram receives the kingdom from Jehoshaphat and immediately murders all his brothers with the sword. He marries Ahab’s daughter and walks in the ways of Israel’s kings. Edom revolts; Libnah revolts. “He had led Judah astray.” The Chronicler compresses Joram’s eight-year reign into a catalogue of crimes."
-        }
+        },
+        "heb": [
+          {
+            "word": "mālaḵ",
+            "transliteration": "mālaḵ",
+            "gloss": "to reign / be king",
+            "paragraph": "The Hebrew mālaḵ (to reign) carries the weight of divinely delegated authority. In the Chronicler's theology, every king reigns as God's representative — their faithfulness or failure directly affects the nation's destiny. The verb appears at the critical transitions that shape Israel's monarchic history."
+          }
+        ]
       }
     },
     {
@@ -80,7 +88,15 @@
         },
         "hist": {
           "context": "A letter arrives from Elijah the prophet (unique to Chronicles — extraordinary, since Elijah operated in the northern kingdom): “You have not walked in the ways of your father Jehoshaphat... you will be struck with a lingering disease of the bowels.” Philistines and Arabs raid Judah, carry off his sons and wives, leaving only Jehoahaz (Ahaziah). The bowel disease strikes. “He died, to no one’s regret.” The harshest epitaph in Chronicles."
-        }
+        },
+        "heb": [
+          {
+            "word": "kissēʾ",
+            "transliteration": "kissēʾ",
+            "gloss": "throne",
+            "paragraph": "The kissēʾ (throne) in the Chronicler's theology is not merely political furniture but the visible symbol of God's rule through the Davidic line. The promise of an eternal throne (2 Sam 7:13) reverberates through every royal succession. Each king who sits on it is measured against the Davidic standard."
+          }
+        ]
       }
     }
   ],

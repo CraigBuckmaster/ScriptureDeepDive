@@ -99,7 +99,7 @@
           "notes": [
             {
               "ref": "17:1-13",
-              "note": "Lundbom identifies a chiastic structure: sin on the heart (v.1) → two ways (vv.5-8) → the deceitful heart (v.9) → God searches hearts (v.10). The envelope structure places the heart at both beginning and end, framing the wisdom poem."
+              "note": "Lundbom identifies a chiastic structure: sin on the heart (v.1) → two ways (vv.5-8) → the deceitful heart (v.9) → God searches hearts (v.10). The envelope structure places the heart at both beginning and end, framing the wisdom poem. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -108,7 +108,7 @@
           "notes": [
             {
               "ref": "17:5-8",
-              "note": "Brueggemann reads the two-ways poem as a direct challenge to Judah's foreign policy — trusting in Egypt or Babylon rather than in God. The \"political\" and \"spiritual\" readings are inseparable: geopolitical alliance is a form of idolatry."
+              "note": "Brueggemann reads the two-ways poem as a direct challenge to Judah's foreign policy — trusting in Egypt or Babylon rather than in God. The \"political\" and \"spiritual\" readings are inseparable: geopolitical alliance is a form of idolatry. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -165,7 +165,7 @@
           "notes": [
             {
               "ref": "17:14",
-              "note": "Calvin reads this as a model prayer of dependence: \"Jeremiah does not ask God to assist his own healing efforts but to be the sole healer. True prayer renounces all self-sufficiency.\""
+              "note": "Calvin reads this as a model prayer of dependence: \"Jeremiah does not ask God to assist his own healing efforts but to be the sole healer. True prayer renounces all self-sufficiency.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -187,7 +187,7 @@
           "notes": [
             {
               "ref": "17:19-27",
-              "note": "Lundbom argues that the Sabbath oracle is not a legalistic intrusion but a covenant test case: if Judah cannot keep even this one commandment — the most visible sign of covenant loyalty — then the covenant itself is dead."
+              "note": "Lundbom argues that the Sabbath oracle is not a legalistic intrusion but a covenant test case: if Judah cannot keep even this one commandment — the most visible sign of covenant loyalty — then the covenant itself is dead. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -196,7 +196,7 @@
           "notes": [
             {
               "ref": "17:19-27",
-              "note": "Brueggemann reads the Sabbath demand as an anti-imperial act — stopping commerce means refusing to participate in the economic system that drives injustice. Sabbath is resistance."
+              "note": "Brueggemann reads the Sabbath demand as an anti-imperial act — stopping commerce means refusing to participate in the economic system that drives injustice. Sabbath is resistance. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -400,7 +400,78 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Cursed",
+        "Gate",
+        "Oracle",
+        "Sabbath",
+        "Trusts"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

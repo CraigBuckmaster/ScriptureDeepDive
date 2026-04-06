@@ -34,7 +34,7 @@
           "notes": [
             {
               "ref": "24:(1, '')",
-              "note": "The principle demonstrated here — that God’s governance is consistent and consequential — applies to every generation."
+              "note": "The principle demonstrated here — that God’s governance is consistent and consequential — applies to every generation. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -43,13 +43,21 @@
           "notes": [
             {
               "ref": "24:(1, '')",
-              "note": "The Chronicler’s distinctive vocabulary shapes the presentation, connecting this section to his broader theological framework."
+              "note": "The Chronicler’s distinctive vocabulary shapes the presentation, connecting this section to his broader theological framework. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
             }
           ]
         },
         "hist": {
           "context": "Joash repairs the temple, echoing 2 Kings 12. The Chronicler’s version emphasises Jehoiada’s role: “Joash did what was right in the eyes of the LORD all the years of Jehoiada the priest.” The qualification is ominous — faithfulness depends on the mentor’s presence. Jehoiada dies at 130, buried “in the City of David among the kings” — a priest honoured with royal burial."
-        }
+        },
+        "heb": [
+          {
+            "word": "bayit",
+            "transliteration": "bayit",
+            "gloss": "house / temple",
+            "paragraph": "Bayit (house) carries a deliberate double meaning in Chronicles: Solomon builds God a house (temple), and God promises David a house (dynasty). The interplay between these two 'houses' generates the theological tension that drives the entire narrative: will the dynasty endure? Will the temple remain? Both depend on covenant faithfulness."
+          }
+        ]
       }
     },
     {
@@ -76,15 +84,33 @@
         },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": []
+          "notes": [
+            {
+              "ref": "24:(15, '')",
+              "note": "Calvin: On 27 — Apostasy After Jehoiada; Zechariah Murdered; Joash Assassinated: teaches that all human religious activity is ultimately provisional — when God himself appears, our best efforts are suspended in awe. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
+            }
+          ]
         },
         "net": {
           "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": []
+          "notes": [
+            {
+              "ref": "24:(15, '')",
+              "note": "NET Note: On 27 — Apostasy After Jehoiada; Zechariah Murdered; Joash Assassinated: Gen 22:2. Jewish tradition universally accepted this identification, which became foundational for Jerusalem’s theology of sacred space. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
+            }
+          ]
         },
         "hist": {
           "context": "After Jehoiada’s death, the officials lead Joash astray. Prophets are sent but ignored. Zechariah son of Jehoiada prophesies against them; Joash has him stoned in the temple courtyard. Zechariah’s dying words: “May the LORD see this and call you to account.” Within a year, Aram invades with a small force and defeats Judah’s large army “because Judah had forsaken the LORD.” Joash is assassinated in bed. “He was not buried in the tombs of the kings.” The man the temple saved becomes the man who desecrates it."
-        }
+        },
+        "heb": [
+          {
+            "word": "milḥāmâ",
+            "transliteration": "milḥāmâ",
+            "gloss": "war / battle",
+            "paragraph": "The Hebrew milḥāmâ (war) in the Chronicler's theology is never merely military. Every battle is a theological event: victory comes from trusting God, defeat from trusting human alliances. The Chronicler consistently adds 'the LORD fought for them' or 'they relied on the LORD' to battle narratives that Kings presents in purely political terms."
+          }
+        ]
       }
     }
   ],

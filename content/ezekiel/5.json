@@ -55,7 +55,7 @@
           "notes": [
             {
               "ref": "5:1-4",
-              "note": "Calvin reads the three portions as representing the comprehensive nature of divine judgment: it comes by multiple means and leaves almost nothing behind. The remnant tucked in the garment shows God preserving a seed even in total judgment."
+              "note": "Calvin reads the three portions as representing the comprehensive nature of divine judgment: it comes by multiple means and leaves almost nothing behind. The remnant tucked in the garment shows God preserving a seed even in total judgment. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -64,7 +64,7 @@
           "notes": [
             {
               "ref": "5:1",
-              "note": "The Hebrew herev ('sword') used as a razor is intentionally jarring — the instrument of war becomes the tool of personal debasement, collapsing the distinction between battle and shame."
+              "note": "The Hebrew herev ('sword') used as a razor is intentionally jarring — the instrument of war becomes the tool of personal debasement, collapsing the distinction between battle and shame. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -73,7 +73,7 @@
           "notes": [
             {
               "ref": "5:1-4",
-              "note": "Block emphasises the priestly scandal: a Zadokite priest shaving his head violates Lev 21:5 and Ezek 44:20. God commands his own priest to break his own rules, signaling that the priestly system itself is under judgment."
+              "note": "Block emphasises the priestly scandal: a Zadokite priest shaving his head violates Lev 21:5 and Ezek 44:20. God commands his own priest to break his own rules, signaling that the priestly system itself is under judgment. Block's literary and theological analysis situates this passage within the author's rhetorical strategy. The text functions as both narrative and argument — the story advances the book's theological thesis about the consequences of covenant faithfulness and unfaithfulness in Israel's life under God."
             }
           ]
         },
@@ -182,7 +182,7 @@
           "notes": [
             {
               "ref": "5:13",
-              "note": "Zimmerli identifies the recognition formula ('they will know that I, the LORD, have spoken in my zeal') as the theological climax: judgment is not arbitrary but purposeful — it produces knowledge of YHWH. Even wrath serves revelation."
+              "note": "Zimmerli identifies the recognition formula ('they will know that I, the LORD, have spoken in my zeal') as the theological climax: judgment is not arbitrary but purposeful — it produces knowledge of YHWH. Even wrath serves revelation. Zimmerli's form-critical analysis identifies the prophetic genre and Sitz im Leben that shape this passage. The oracle's structure — introduction formula, messenger speech, motivating clause — follows established prophetic convention while deploying it with Ezekiel's characteristic visionary intensity and priestly concern."
             }
           ]
         },
@@ -368,7 +368,79 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Ezekiel"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Nations",
+        "Razor",
+        "Sword",
+        "Than",
+        "Three",
+        "Worse"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

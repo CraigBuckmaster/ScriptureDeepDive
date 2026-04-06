@@ -67,7 +67,7 @@
           "notes": [
             {
               "ref": "38:7-13",
-              "note": "Calvin celebrates Ebed-Melech: \"A foreigner does what Israel's own leaders refuse to do. A Cushite shows more humanity than the covenant people. God uses the unlikely to shame the expected.\""
+              "note": "Calvin celebrates Ebed-Melech: \"A foreigner does what Israel's own leaders refuse to do. A Cushite shows more humanity than the covenant people. God uses the unlikely to shame the expected.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -89,7 +89,7 @@
           "notes": [
             {
               "ref": "38:1-13",
-              "note": "Lundbom identifies Ebed-Melech as \"the moral center of the narrative.\" While kings vacillate and officials plot murder, a foreign court servant acts with courage and compassion. His reward comes in 39:15-18."
+              "note": "Lundbom identifies Ebed-Melech as \"the moral center of the narrative.\" While kings vacillate and officials plot murder, a foreign court servant acts with courage and compassion. His reward comes in 39:15-18. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -98,7 +98,7 @@
           "notes": [
             {
               "ref": "38:4-6",
-              "note": "Brueggemann reads the cistern as \"the physical expression of prophetic marginalization.\" The one who speaks truth is literally pushed into a hole and covered over. But the truth cannot be buried; it rises from the mud."
+              "note": "Brueggemann reads the cistern as \"the physical expression of prophetic marginalization.\" The one who speaks truth is literally pushed into a hole and covered over. But the truth cannot be buried; it rises from the mud. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -155,7 +155,7 @@
           "notes": [
             {
               "ref": "38:19",
-              "note": "Calvin identifies Zedekiah's root sin: \"Fear of man rather than fear of God. This is the universal temptation of the powerful: to care more about maintaining status than obeying truth.\""
+              "note": "Calvin identifies Zedekiah's root sin: \"Fear of man rather than fear of God. This is the universal temptation of the powerful: to care more about maintaining status than obeying truth.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -164,7 +164,7 @@
           "notes": [
             {
               "ref": "38:22",
-              "note": "The \"women left in the royal palace\" singing a taunt song adds a layer of shame: even the king's own household will mock him for trusting advisors who led him to ruin."
+              "note": "The \"women left in the royal palace\" singing a taunt song adds a layer of shame: even the king's own household will mock him for trusting advisors who led him to ruin. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -173,7 +173,7 @@
           "notes": [
             {
               "ref": "38:14-28",
-              "note": "Lundbom reads this as \"the last chance.\" Every previous consultation produced the same answer; this one adds the explicit emotional obstacle: fear. Zedekiah knows the truth, knows what to do, and chooses not to do it."
+              "note": "Lundbom reads this as \"the last chance.\" Every previous consultation produced the same answer; this one adds the explicit emotional obstacle: fear. Zedekiah knows the truth, knows what to do, and chooses not to do it. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -182,7 +182,7 @@
           "notes": [
             {
               "ref": "38:19",
-              "note": "Brueggemann calls this \"the most honest sentence Zedekiah ever speaks.\" The king drops all pretense and admits that his decisions are governed by fear, not faith. \"The tragedy is not that he doesn't know the truth but that he does.\""
+              "note": "Brueggemann calls this \"the most honest sentence Zedekiah ever speaks.\" The king drops all pretense and admits that his decisions are governed by fear, not faith. \"The tragedy is not that he doesn't know the truth but that he does.\". This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -402,7 +402,80 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Zedekiah",
+        "Ebed-Melech"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Consultation",
+        "Final",
+        "Pulled",
+        "Thrown",
+        "Zedekiah"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

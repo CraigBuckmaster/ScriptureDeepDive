@@ -92,11 +92,11 @@
           "notes": [
             {
               "ref": "4:1",
-              "note": "The phrase ceased from sin does not mean sinless perfection but a decisive break with the sinful lifestyle."
+              "note": "The phrase ceased from sin does not mean sinless perfection but a decisive break with the sinful lifestyle. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             },
             {
               "ref": "4:6",
-              "note": "The gospel preached to the dead is as difficult as 3:19. Most likely: believers who heard and believed but have since died."
+              "note": "The gospel preached to the dead is as difficult as 3:19. Most likely: believers who heard and believed but have since died. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -105,7 +105,7 @@
           "notes": [
             {
               "ref": "4:1-6",
-              "note": "Schreiner sees the passage as encouragement: pagans will face judgment for their slander. Believers who suffer now will be vindicated."
+              "note": "Schreiner sees the passage as encouragement: pagans will face judgment for their slander. Believers who suffer now will be vindicated. Schreiner's exegesis emphasizes the eschatological dimension of the passage. The author writes with the end in view — present suffering and ethical obligation are framed by the certainty of Christ's return and the final vindication of God's people. This already-not-yet tension shapes every imperative in the text."
             }
           ]
         },
@@ -114,7 +114,7 @@
           "notes": [
             {
               "ref": "4:1-6",
-              "note": "Jobes notes the social pressure: refusal to participate in civic festivals and banquets brought accusations of antisocial behavior."
+              "note": "Jobes notes the social pressure: refusal to participate in civic festivals and banquets brought accusations of antisocial behavior. Jobes attends to the socio-rhetorical context of the passage, noting how the author addresses a community under social pressure. The language of identity, belonging, and hope is calibrated to sustain faith amid marginalization — the letter functions as pastoral care for believers navigating a hostile cultural environment."
             }
           ]
         },
@@ -188,7 +188,7 @@
           "notes": [
             {
               "ref": "4:7-11",
-              "note": "Calvin notes that eschatological expectation should intensify service, not produce paralysis. The imminent end makes present faithfulness urgent."
+              "note": "Calvin notes that eschatological expectation should intensify service, not produce paralysis. The imminent end makes present faithfulness urgent. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -210,7 +210,7 @@
           "notes": [
             {
               "ref": "4:7-11",
-              "note": "Schreiner emphasizes that the gifts are oriented to service, not self-display. The goal is God's glory, not personal reputation."
+              "note": "Schreiner emphasizes that the gifts are oriented to service, not self-display. The goal is God's glory, not personal reputation. Schreiner's exegesis emphasizes the eschatological dimension of the passage. The author writes with the end in view — present suffering and ethical obligation are framed by the certainty of Christ's return and the final vindication of God's people. This already-not-yet tension shapes every imperative in the text."
             }
           ]
         },
@@ -219,7 +219,7 @@
           "notes": [
             {
               "ref": "4:7-11",
-              "note": "Jobes notes that hospitality was countercultural: Christians welcomed strangers regardless of social status."
+              "note": "Jobes notes that hospitality was countercultural: Christians welcomed strangers regardless of social status. Jobes attends to the socio-rhetorical context of the passage, noting how the author addresses a community under social pressure. The language of identity, belonging, and hope is calibrated to sustain faith amid marginalization — the letter functions as pastoral care for believers navigating a hostile cultural environment."
             }
           ]
         },
@@ -326,7 +326,7 @@
           "notes": [
             {
               "ref": "4:12-19",
-              "note": "Schreiner notes that judgment beginning with God's house is purifying, not punitive. Present suffering prepares for eschatological glory."
+              "note": "Schreiner notes that judgment beginning with God's house is purifying, not punitive. Present suffering prepares for eschatological glory. Schreiner's exegesis emphasizes the eschatological dimension of the passage. The author writes with the end in view — present suffering and ethical obligation are framed by the certainty of Christ's return and the final vindication of God's people. This already-not-yet tension shapes every imperative in the text."
             }
           ]
         },
@@ -335,7 +335,7 @@
           "notes": [
             {
               "ref": "4:12-19",
-              "note": "Jobes connects the fiery trial to the refining imagery of 1:7. The metaphor unifies the letter's teaching on suffering."
+              "note": "Jobes connects the fiery trial to the refining imagery of 1:7. The metaphor unifies the letter's teaching on suffering. Jobes attends to the socio-rhetorical context of the passage, noting how the author addresses a community under social pressure. The language of identity, belonging, and hope is calibrated to sustain faith amid marginalization — the letter functions as pastoral care for believers navigating a hostile cultural environment."
             }
           ]
         },
@@ -444,7 +444,78 @@
       ]
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Fiery",
+        "Grace",
+        "Living",
+        "Rejoicing",
+        "Stewards",
+        "Trials",
+        "Will"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

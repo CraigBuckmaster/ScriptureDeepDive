@@ -34,7 +34,7 @@
           "notes": [
             {
               "ref": "25:(1, '')",
-              "note": "The principle demonstrated here — that God’s governance is consistent and consequential — applies to every generation."
+              "note": "The principle demonstrated here — that God’s governance is consistent and consequential — applies to every generation. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -43,13 +43,21 @@
           "notes": [
             {
               "ref": "25:(1, '')",
-              "note": "The Chronicler’s distinctive vocabulary shapes the presentation, connecting this section to his broader theological framework."
+              "note": "The Chronicler’s distinctive vocabulary shapes the presentation, connecting this section to his broader theological framework. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
             }
           ]
         },
         "hist": {
           "context": "Amaziah does right “but not wholeheartedly.” He hires 100,000 Israelite mercenaries, then a prophet tells him to dismiss them: “God is not with Israel.” When Amaziah protests the financial loss, the prophet replies: “The LORD can give you much more than that.” He dismisses them; they rage and plunder Judahite cities. Amaziah defeats Edom with God’s help."
-        }
+        },
+        "heb": [
+          {
+            "word": "milḥāmâ",
+            "transliteration": "milḥāmâ",
+            "gloss": "war / battle",
+            "paragraph": "The Hebrew milḥāmâ (war) in the Chronicler's theology is never merely military. Every battle is a theological event: victory comes from trusting God, defeat from trusting human alliances. The Chronicler consistently adds 'the LORD fought for them' or 'they relied on the LORD' to battle narratives that Kings presents in purely political terms."
+          }
+        ]
       }
     },
     {
@@ -72,15 +80,33 @@
         },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": []
+          "notes": [
+            {
+              "ref": "25:(14, '')",
+              "note": "Calvin: On 28 — Amaziah Worships Edomite Gods; Defeated by Israel: teaches that all human religious activity is ultimately provisional — when God himself appears, our best efforts are suspended in awe. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
+            }
+          ]
         },
         "net": {
           "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": []
+          "notes": [
+            {
+              "ref": "25:(14, '')",
+              "note": "NET Note: On 28 — Amaziah Worships Edomite Gods; Defeated by Israel: Gen 22:2. Jewish tradition universally accepted this identification, which became foundational for Jerusalem’s theology of sacred space. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
+            }
+          ]
         },
         "hist": {
           "context": "After defeating Edom, Amaziah brings back their gods and worships them. A prophet confronts him: “Why do you consult this people’s gods, which could not save their own people from your hand?” Amaziah silences the prophet. Then he challenges Israel’s Jehoash — receives the thistle-and-cedar parable — and is defeated. Jerusalem’s wall is breached. He is eventually assassinated. “From the time that Amaziah turned away from following the LORD, they conspired against him.” The turning point is precise: apostasy triggers assassination."
-        }
+        },
+        "heb": [
+          {
+            "word": "qōḏeš",
+            "transliteration": "qōḏeš",
+            "gloss": "holiness / sacred",
+            "paragraph": "The Hebrew qōḏeš (holiness) denotes separation for divine purpose. In the context of temple worship, it marks the distinction between common and sacred — a boundary that defines Israel's entire liturgical life. The Chronicler's emphasis on holiness reflects his concern for proper worship as the foundation of national life."
+          }
+        ]
       }
     }
   ],

@@ -204,7 +204,7 @@
           "notes": [
             {
               "ref": "12:14–21",
-              "note": "Schreiner emphasises that Paul’s non-retaliation ethic is grounded in trust in God’s justice. Believers can refrain from vengeance because God will vindicate. The prohibition of revenge is not passivity but an active trust in divine judgment."
+              "note": "Schreiner emphasises that Paul’s non-retaliation ethic is grounded in trust in God’s justice. Believers can refrain from vengeance because God will vindicate. The prohibition of revenge is not passivity but an active trust in divine judgment. Schreiner's exegesis emphasizes the eschatological dimension of the passage. The author writes with the end in view — present suffering and ethical obligation are framed by the certainty of Christ's return and the final vindication of God's people. This already-not-yet tension shapes every imperative in the text."
             }
           ]
         },
@@ -479,7 +479,80 @@
       "note": "The οὖν ('therefore') of 12:1 is the great hinge of Romans — doctrine (chs. 1-11) becomes ethics (chs. 12-16). The 'living sacrifice' (θυσίαν ζῶσαν) replaces temple worship with whole-life obedience. The body metaphor (vv. 4-8) parallels 1 Corinthians 12."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Christ"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Bodies",
+        "Love",
+        "Must",
+        "Offer",
+        "Sincere",
+        "Your"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

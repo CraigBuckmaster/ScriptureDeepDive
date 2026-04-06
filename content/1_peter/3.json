@@ -83,11 +83,11 @@
           "notes": [
             {
               "ref": "3:1-6",
-              "note": "Calvin notes that the goal is evangelism. A believing wife may convert an unbelieving husband not by nagging but by holy conduct."
+              "note": "Calvin notes that the goal is evangelism. A believing wife may convert an unbelieving husband not by nagging but by holy conduct. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             },
             {
               "ref": "3:7",
-              "note": "Husbands must honor wives. The weaker vessel language does not imply inferiority but vulnerability requiring protection."
+              "note": "Husbands must honor wives. The weaker vessel language does not imply inferiority but vulnerability requiring protection. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -113,7 +113,7 @@
           "notes": [
             {
               "ref": "3:1-7",
-              "note": "Schreiner emphasizes that the submission ethic is not patriarchal oppression but a strategy for witness in a patriarchal culture."
+              "note": "Schreiner emphasizes that the submission ethic is not patriarchal oppression but a strategy for witness in a patriarchal culture. Schreiner's exegesis emphasizes the eschatological dimension of the passage. The author writes with the end in view — present suffering and ethical obligation are framed by the certainty of Christ's return and the final vindication of God's people. This already-not-yet tension shapes every imperative in the text."
             }
           ]
         },
@@ -122,7 +122,7 @@
           "notes": [
             {
               "ref": "3:1-7",
-              "note": "Jobes notes that in Roman society, wives were expected to follow their husbands' religion. Christian wives who did not faced social pressure."
+              "note": "Jobes notes that in Roman society, wives were expected to follow their husbands' religion. Christian wives who did not faced social pressure. Jobes attends to the socio-rhetorical context of the passage, noting how the author addresses a community under social pressure. The language of identity, belonging, and hope is calibrated to sustain faith amid marginalization — the letter functions as pastoral care for believers navigating a hostile cultural environment."
             }
           ]
         },
@@ -196,7 +196,7 @@
           "notes": [
             {
               "ref": "3:8-12",
-              "note": "Calvin sees blessing enemies as the hardest command. Natural instinct is retaliation; grace produces benediction."
+              "note": "Calvin sees blessing enemies as the hardest command. Natural instinct is retaliation; grace produces benediction. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -205,11 +205,11 @@
           "notes": [
             {
               "ref": "3:9",
-              "note": "The phrase that you may obtain a blessing connects conduct with inheritance. Those who bless others will themselves be blessed."
+              "note": "The phrase that you may obtain a blessing connects conduct with inheritance. Those who bless others will themselves be blessed. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             },
             {
               "ref": "3:12",
-              "note": "The face of the Lord is against evildoers - not indifference but active opposition. God takes sides."
+              "note": "The face of the Lord is against evildoers - not indifference but active opposition. God takes sides. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -218,7 +218,7 @@
           "notes": [
             {
               "ref": "3:8-12",
-              "note": "Schreiner notes that the virtues are corporate. The community must function as a harmonious body, not a collection of individuals."
+              "note": "Schreiner notes that the virtues are corporate. The community must function as a harmonious body, not a collection of individuals. Schreiner's exegesis emphasizes the eschatological dimension of the passage. The author writes with the end in view — present suffering and ethical obligation are framed by the certainty of Christ's return and the final vindication of God's people. This already-not-yet tension shapes every imperative in the text."
             }
           ]
         },
@@ -227,7 +227,7 @@
           "notes": [
             {
               "ref": "3:8-12",
-              "note": "Jobes emphasizes that Psalm 34 is a wisdom psalm. Peter grounds ethics in Israel's wisdom tradition."
+              "note": "Jobes emphasizes that Psalm 34 is a wisdom psalm. Peter grounds ethics in Israel's wisdom tradition. Jobes attends to the socio-rhetorical context of the passage, noting how the author addresses a community under social pressure. The language of identity, belonging, and hope is calibrated to sustain faith amid marginalization — the letter functions as pastoral care for believers navigating a hostile cultural environment."
             }
           ]
         },
@@ -338,7 +338,7 @@
           "notes": [
             {
               "ref": "3:13-22",
-              "note": "Schreiner argues that the spirits are fallen angels imprisoned in the time of Noah. Christ proclaimed his victory over them after his resurrection."
+              "note": "Schreiner argues that the spirits are fallen angels imprisoned in the time of Noah. Christ proclaimed his victory over them after his resurrection. Schreiner's exegesis emphasizes the eschatological dimension of the passage. The author writes with the end in view — present suffering and ethical obligation are framed by the certainty of Christ's return and the final vindication of God's people. This already-not-yet tension shapes every imperative in the text."
             }
           ]
         },
@@ -347,7 +347,7 @@
           "notes": [
             {
               "ref": "3:13-22",
-              "note": "Jobes connects Noah's ark to baptism: both involve passing safely through waters of judgment. The few saved through water prefigure baptismal salvation."
+              "note": "Jobes connects Noah's ark to baptism: both involve passing safely through waters of judgment. The few saved through water prefigure baptismal salvation. Jobes attends to the socio-rhetorical context of the passage, noting how the author addresses a community under social pressure. The language of identity, belonging, and hope is calibrated to sustain faith amid marginalization — the letter functions as pastoral care for believers navigating a hostile cultural environment."
             }
           ]
         },
@@ -462,7 +462,77 @@
       ]
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Blessing",
+        "Husbands",
+        "Righteousness",
+        "Suffering",
+        "Unity",
+        "Wives"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

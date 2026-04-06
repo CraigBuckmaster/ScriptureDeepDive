@@ -67,7 +67,7 @@
           "notes": [
             {
               "ref": "12:3-6",
-              "note": "Calvin highlights the public nature of the sign-act: done 'in their sight' because words alone have failed. God accommodates his message to the stubbornness of the audience — if they will not hear, perhaps they will see."
+              "note": "Calvin highlights the public nature of the sign-act: done 'in their sight' because words alone have failed. God accommodates his message to the stubbornness of the audience — if they will not hear, perhaps they will see. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -155,7 +155,7 @@
           "notes": [
             {
               "ref": "12:22-25",
-              "note": "Calvin applies this to every generation that mocks prophetic warnings: delay is not cancellation. God's patience in withholding judgment is mistaken for weakness, but when the appointed time comes, every word will be fulfilled."
+              "note": "Calvin applies this to every generation that mocks prophetic warnings: delay is not cancellation. God's patience in withholding judgment is mistaken for weakness, but when the appointed time comes, every word will be fulfilled. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -383,7 +383,79 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Ezekiel",
+        "Nebuchadnezzar"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Baggage",
+        "Blinded",
+        "Delay",
+        "Exile",
+        "More"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

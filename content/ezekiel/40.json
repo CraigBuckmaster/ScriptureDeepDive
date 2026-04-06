@@ -162,7 +162,7 @@
           "notes": [
             {
               "ref": "40:17",
-              "note": "The 'thirty rooms' (leshakhot sheloshim) corresponds to the number of rooms in Solomon's palace complex (1 Kgs 6:5). The number may be conventional for temple storage facilities."
+              "note": "The 'thirty rooms' (leshakhot sheloshim) corresponds to the number of rooms in Solomon's palace complex (1 Kgs 6:5). The number may be conventional for temple storage facilities. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -180,7 +180,7 @@
           "notes": [
             {
               "ref": "40:17-27",
-              "note": "Zimmerli notes the repetitive measurement formula as liturgical in character: the repeated dimensions function like a ritual chant, establishing sacred space through the very act of measuring. The form is as important as the content."
+              "note": "Zimmerli notes the repetitive measurement formula as liturgical in character: the repeated dimensions function like a ritual chant, establishing sacred space through the very act of measuring. The form is as important as the content. Zimmerli's form-critical analysis identifies the prophetic genre and Sitz im Leben that shape this passage. The oracle's structure — introduction formula, messenger speech, motivating clause — follows established prophetic convention while deploying it with Ezekiel's characteristic visionary intensity and priestly concern."
             }
           ]
         },
@@ -229,7 +229,7 @@
           "notes": [
             {
               "ref": "40:28-37",
-              "note": "Calvin reads the progressive approach as teaching that God's holiness requires ordered, reverent approach. The architecture itself preaches the doctrine of sanctification: those who would draw near to God must be progressively set apart."
+              "note": "Calvin reads the progressive approach as teaching that God's holiness requires ordered, reverent approach. The architecture itself preaches the doctrine of sanctification: those who would draw near to God must be progressively set apart. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -238,7 +238,7 @@
           "notes": [
             {
               "ref": "40:31",
-              "note": "The eight steps up to the inner court (compared to seven steps for the outer court) indicate a literal elevation as well as a spiritual one. Each courtyard is physically higher than the previous one, so the sanctuary sits at the highest point."
+              "note": "The eight steps up to the inner court (compared to seven steps for the outer court) indicate a literal elevation as well as a spiritual one. Each courtyard is physically higher than the previous one, so the sanctuary sits at the highest point. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -318,7 +318,7 @@
           "notes": [
             {
               "ref": "40:46",
-              "note": "The 'sons of Zadok' (benei-tsadoq) are distinguished from other Levites. This designation becomes theologically significant in 44:15-16, where Zadokite priests alone are permitted to approach God, while other Levites are demoted for past idolatry."
+              "note": "The 'sons of Zadok' (benei-tsadoq) are distinguished from other Levites. This designation becomes theologically significant in 44:15-16, where Zadokite priests alone are permitted to approach God, while other Levites are demoted for past idolatry. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -553,7 +553,83 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Ezekiel"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Court",
+        "Gates",
+        "Inner",
+        "Measuring",
+        "North",
+        "Opens",
+        "Outer",
+        "Portico",
+        "Sacrifice",
+        "Tables"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

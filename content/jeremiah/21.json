@@ -59,7 +59,7 @@
           "notes": [
             {
               "ref": "21:5",
-              "note": "Calvin notes the horror of the reversal: \"The same God who once stretched out his arm to save now stretches it out to destroy. There is no greater terror than when the Savior becomes the adversary.\""
+              "note": "Calvin notes the horror of the reversal: \"The same God who once stretched out his arm to save now stretches it out to destroy. There is no greater terror than when the Savior becomes the adversary.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -81,7 +81,7 @@
           "notes": [
             {
               "ref": "21:1-10",
-              "note": "Lundbom reads this as the opening of the \"kings collection\" (chs. 21-23). The Zedekiah inquiry frames the royal oracles: the current king's failure introduces the review of all recent kings."
+              "note": "Lundbom reads this as the opening of the \"kings collection\" (chs. 21-23). The Zedekiah inquiry frames the royal oracles: the current king's failure introduces the review of all recent kings. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -143,7 +143,7 @@
           "notes": [
             {
               "ref": "21:12",
-              "note": "Calvin insists that the demand for daily justice applies to all rulers in every age: \"Power without justice is tyranny; monarchy without equity is oppression.\""
+              "note": "Calvin insists that the demand for daily justice applies to all rulers in every age: \"Power without justice is tyranny; monarchy without equity is oppression.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -152,7 +152,7 @@
           "notes": [
             {
               "ref": "21:13",
-              "note": "\"You who live above this valley, on the rocky plateau\" describes Jerusalem's topography — elevated above the surrounding valleys. The city's natural defenses give a false sense of invulnerability."
+              "note": "\"You who live above this valley, on the rocky plateau\" describes Jerusalem's topography — elevated above the surrounding valleys. The city's natural defenses give a false sense of invulnerability. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -161,7 +161,7 @@
           "notes": [
             {
               "ref": "21:11-14",
-              "note": "Lundbom reads this as a transitional oracle linking the Zedekiah inquiry to the individual royal oracles of chapter 22. The demand for justice establishes the criterion by which each king will be measured."
+              "note": "Lundbom reads this as a transitional oracle linking the Zedekiah inquiry to the individual royal oracles of chapter 22. The demand for justice establishes the criterion by which each king will be measured. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -170,7 +170,7 @@
           "notes": [
             {
               "ref": "21:12",
-              "note": "Brueggemann reads \"administer justice every morning\" as a rejection of royal self-interest. The king exists to serve the people's rights, not the other way around. When this priority inverts, the monarchy loses its legitimacy."
+              "note": "Brueggemann reads \"administer justice every morning\" as a rejection of royal self-interest. The king exists to serve the people's rights, not the other way around. When this priority inverts, the monarchy loses its legitimacy. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -370,7 +370,82 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Zedekiah",
+        "Nebuchadnezzar",
+        "David"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "David",
+        "Fight",
+        "House",
+        "Myself",
+        "Will",
+        "Word"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

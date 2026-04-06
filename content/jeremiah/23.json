@@ -99,7 +99,7 @@
           "notes": [
             {
               "ref": "23:1-8",
-              "note": "Lundbom identifies this oracle as the theological climax of the royal collection (chs. 21-23). The failed shepherds (ch. 22) are replaced by the Righteous Branch — the Davidic line is not abolished but purified."
+              "note": "Lundbom identifies this oracle as the theological climax of the royal collection (chs. 21-23). The failed shepherds (ch. 22) are replaced by the Righteous Branch — the Davidic line is not abolished but purified. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -179,7 +179,7 @@
           "notes": [
             {
               "ref": "23:29",
-              "note": "Calvin's classic comment: \"The word of God is a hammer, not a feather. It does not caress the conscience but breaks it. Those who preach only comfort have replaced the hammer with a cushion.\""
+              "note": "Calvin's classic comment: \"The word of God is a hammer, not a feather. It does not caress the conscience but breaks it. Those who preach only comfort have replaced the hammer with a cushion.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -467,7 +467,81 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Zedekiah",
+        "David"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Against",
+        "False",
+        "Prophets",
+        "Raise",
+        "Righteous",
+        "Will"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

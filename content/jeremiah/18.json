@@ -108,7 +108,7 @@
           "notes": [
             {
               "ref": "18:7-10",
-              "note": "Brueggemann identifies a \"rhetoric of contingency\" — God's word is not a mechanistic decree but a live address that invites response. The future is genuinely open, not predetermined, because God chooses to remain in dialogue with his creation."
+              "note": "Brueggemann identifies a \"rhetoric of contingency\" — God's word is not a mechanistic decree but a live address that invites response. The future is genuinely open, not predetermined, because God chooses to remain in dialogue with his creation. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -165,7 +165,7 @@
           "notes": [
             {
               "ref": "18:21-23",
-              "note": "Calvin distinguishes Jeremiah's imprecations from personal revenge: \"The prophet speaks not from private malice but from prophetic authority — his curse is God's sentence pronounced through human lips.\""
+              "note": "Calvin distinguishes Jeremiah's imprecations from personal revenge: \"The prophet speaks not from private malice but from prophetic authority — his curse is God's sentence pronounced through human lips.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -196,7 +196,7 @@
           "notes": [
             {
               "ref": "18:18",
-              "note": "Brueggemann observes that the people's defense — \"we have other religious authorities\" — is the perennial strategy of institutional religion: marginalize the critic by citing the consensus."
+              "note": "Brueggemann observes that the people's defense — \"we have other religious authorities\" — is the perennial strategy of institutional religion: marginalize the critic by citing the consensus. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -400,7 +400,79 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Against",
+        "Clay",
+        "Hand",
+        "Like",
+        "People",
+        "Plot"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

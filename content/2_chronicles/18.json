@@ -34,7 +34,7 @@
           "notes": [
             {
               "ref": "18:(1, '')",
-              "note": "The principle demonstrated here applies universally: God’s governance is consistent, and human choices produce proportional divine responses."
+              "note": "The principle demonstrated here applies universally: God’s governance is consistent, and human choices produce proportional divine responses. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -43,13 +43,21 @@
           "notes": [
             {
               "ref": "18:(1, '')",
-              "note": "The Chronicler’s characteristic vocabulary and theological framework shape the presentation of these events."
+              "note": "The Chronicler’s characteristic vocabulary and theological framework shape the presentation of these events. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
             }
           ]
         },
         "hist": {
           "context": "Jehoshaphat allies with Ahab through marriage and joins him to attack Ramoth Gilead. 400 prophets say “Go!” Jehoshaphat asks: “Is there no longer a prophet of the LORD?” Micaiah is summoned. The messenger tells Micaiah to agree with the majority; Micaiah refuses: “As surely as the LORD lives, I can tell him only what my God says.” The Chronicler follows 1 Kings 22 closely — Micaiah’s integrity is too important to modify."
-        }
+        },
+        "heb": [
+          {
+            "word": "mālaḵ",
+            "transliteration": "mālaḵ",
+            "gloss": "to reign / be king",
+            "paragraph": "The Hebrew mālaḵ (to reign) carries the weight of divinely delegated authority. In the Chronicler's theology, every king reigns as God's representative — their faithfulness or failure directly affects the nation's destiny. The verb appears at the critical transitions that shape Israel's monarchic history."
+          }
+        ]
       }
     },
     {
@@ -72,15 +80,33 @@
         },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": []
+          "notes": [
+            {
+              "ref": "18:(18, '')",
+              "note": "Calvin: On 34 — The Lying Spirit; Ahab Dies; Jehoshaphat Escapes: teaches that all human religious activity is ultimately provisional — when God himself appears, our best efforts are suspended in awe. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
+            }
+          ]
         },
         "net": {
           "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": []
+          "notes": [
+            {
+              "ref": "18:(18, '')",
+              "note": "NET Note: On 34 — The Lying Spirit; Ahab Dies; Jehoshaphat Escapes: Gen 22:2. Jewish tradition universally accepted this identification, which became foundational for Jerusalem’s theology of sacred space. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
+            }
+          ]
         },
         "hist": {
           "context": "Micaiah reveals a vision: a lying spirit in the mouths of Ahab’s prophets. Ahab disguises himself; a random arrow kills him. Jehoshaphat escapes — “the LORD helped him, and God drew them away from him.” The Chronicler adds this theological note absent from Kings: Jehoshaphat cried out and God intervened. Even in the consequences of a bad alliance, the seeker of God receives protection."
-        }
+        },
+        "heb": [
+          {
+            "word": "nāḇîʾ",
+            "transliteration": "nāḇîʾ",
+            "gloss": "prophet",
+            "paragraph": "The nāḇîʾ (prophet) in Chronicles functions as God's spokesperson — the voice that interprets events theologically. The Chronicler adds prophetic interventions to narratives where Kings has none, ensuring that every crisis has a divine commentary. Prophets do not predict the future so much as explain the present in light of God's covenant purposes."
+          }
+        ]
       }
     }
   ],

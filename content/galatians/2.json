@@ -628,7 +628,87 @@
       "note": "Galatians 2 moves from autobiography (vv. 1-14) to theology (vv. 15-21), with the Antioch incident (vv. 11-14) serving as the hinge. The rebuke of Peter is not a tangent — it is Paul demonstrating that even the recognized pillars must submit to the truth of the gospel. The chapter ends with one of Paul's densest theological statements on union with Christ."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Christ",
+        "Peter",
+        "James",
+        "Barnabas",
+        "Titus"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Accepted",
+        "Christ",
+        "Faith",
+        "Jerusalem",
+        "Justified",
+        "Opposes",
+        "Paul",
+        "Peter",
+        "Pillars"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 2,

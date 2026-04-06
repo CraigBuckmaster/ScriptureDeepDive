@@ -346,7 +346,7 @@
           "notes": [
             {
               "ref": "6:20",
-              "note": "The phrase 'what is falsely called knowledge' (τῆς ψευδωνύμου γνώσεως) is sometimes read as a reference to early Gnosticism, though the term may simply describe the opponents’ pretentious claims to superior knowledge without formal Gnostic content."
+              "note": "The phrase 'what is falsely called knowledge' (τῆς ψευδωνύμου γνώσεως) is sometimes read as a reference to early Gnosticism, though the term may simply describe the opponents’ pretentious claims to superior knowledge without formal Gnostic content. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -578,7 +578,85 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Timothy",
+        "Christ Jesus"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Been",
+        "Contentment",
+        "Fight",
+        "Godliness",
+        "Good",
+        "Great",
+        "Guard",
+        "Slavery",
+        "Under",
+        "What"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 2,

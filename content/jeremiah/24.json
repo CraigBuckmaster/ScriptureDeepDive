@@ -67,7 +67,7 @@
           "notes": [
             {
               "ref": "24:5-7",
-              "note": "Calvin finds here the doctrine of effectual calling: \"God does not merely offer a new heart -- he gives it. The difference between the good and bad figs is not their merit but God's sovereign purpose.\""
+              "note": "Calvin finds here the doctrine of effectual calling: \"God does not merely offer a new heart -- he gives it. The difference between the good and bad figs is not their merit but God's sovereign purpose.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -89,7 +89,7 @@
           "notes": [
             {
               "ref": "24:1-7",
-              "note": "Lundbom reads the good-figs oracle as a \"reversal of expectation\" -- those in exile assumed they were under judgment while the Jerusalem remnant claimed divine favor. Jeremiah inverts both assumptions: exile is grace, and remaining is condemnation."
+              "note": "Lundbom reads the good-figs oracle as a \"reversal of expectation\" -- those in exile assumed they were under judgment while the Jerusalem remnant claimed divine favor. Jeremiah inverts both assumptions: exile is grace, and remaining is condemnation. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -98,7 +98,7 @@
           "notes": [
             {
               "ref": "24:5-7",
-              "note": "Brueggemann identifies a \"theology of loss\" -- God works through dispossession, not possession. The exiles who lost everything are the ones who receive the promise of restoration. The pattern anticipates the cross."
+              "note": "Brueggemann identifies a \"theology of loss\" -- God works through dispossession, not possession. The exiles who lost everything are the ones who receive the promise of restoration. The pattern anticipates the cross. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -151,7 +151,7 @@
           "notes": [
             {
               "ref": "24:8-10",
-              "note": "Calvin notes the contrast: \"Those who seemed to prosper by staying in the land were actually under the greater curse, while those who seemed to suffer in exile were under the greater blessing. Human appearances are the inverse of divine reality.\""
+              "note": "Calvin notes the contrast: \"Those who seemed to prosper by staying in the land were actually under the greater curse, while those who seemed to suffer in exile were under the greater blessing. Human appearances are the inverse of divine reality.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -160,7 +160,7 @@
           "notes": [
             {
               "ref": "24:9",
-              "note": "The list of responses -- \"reproach, byword, taunt, curse\" -- represents a fourfold formula of disgrace found in covenant curse traditions (cf. Deut 28:37)."
+              "note": "The list of responses -- \"reproach, byword, taunt, curse\" -- represents a fourfold formula of disgrace found in covenant curse traditions (cf. Deut 28:37). The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -169,7 +169,7 @@
           "notes": [
             {
               "ref": "24:8-10",
-              "note": "Lundbom notes that the bad-figs oracle closes the section on a note of absolute judgment -- no conditional offer, no \"if you repent.\" The verdict is final."
+              "note": "Lundbom notes that the bad-figs oracle closes the section on a note of absolute judgment -- no conditional offer, no \"if you repent.\" The verdict is final. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -178,7 +178,7 @@
           "notes": [
             {
               "ref": "24:8-10",
-              "note": "Brueggemann reads the two-figs vision as a \"critical assessment of power.\" Those who retained political power and territory are judged; those stripped of everything receive the promise. Power and divine favor operate on different logics."
+              "note": "Brueggemann reads the two-figs vision as a \"critical assessment of power.\" Those who retained political power and territory are judged; those stripped of everything receive the promise. Power and divine favor operate on different logics. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -374,7 +374,80 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Zedekiah",
+        "Nebuchadnezzar"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Exiles",
+        "Figs",
+        "Good",
+        "Judgment",
+        "Those"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

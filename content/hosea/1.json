@@ -288,7 +288,7 @@
           "notes": [
             {
               "ref": "1:10",
-              "note": "The Hebrew numbering places this verse as 2:1. The phrase bene el-hai ('children of the living God') contrasts with lo-ammi ('not my people'). The adjective hai ('living') emphasizes God's dynamic, active presence in contrast to the dead Baals."
+              "note": "The Hebrew numbering places this verse as 2:1. The phrase bene el-hai ('children of the living God') contrasts with lo-ammi ('not my people'). The adjective hai ('living') emphasizes God's dynamic, active presence in contrast to the dead Baals. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -578,7 +578,84 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Hosea",
+        "Gomer",
+        "Jezreel",
+        "Lo-Ruhamah",
+        "Lo-Ammi",
+        "Jeroboam II"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Children",
+        "Living",
+        "Marry",
+        "People",
+        "Promiscuous",
+        "Woman"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

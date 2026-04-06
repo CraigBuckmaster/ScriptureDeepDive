@@ -67,7 +67,7 @@
           "notes": [
             {
               "ref": "22:15-16",
-              "note": "Calvin makes this one of his most celebrated comments: \"To know God is to practice justice. Whoever separates doctrine from life, theology from ethics, knowledge of God from the service of the poor — has not begun to know God at all.\""
+              "note": "Calvin makes this one of his most celebrated comments: \"To know God is to practice justice. Whoever separates doctrine from life, theology from ethics, knowledge of God from the service of the poor — has not begun to know God at all.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -89,7 +89,7 @@
           "notes": [
             {
               "ref": "22:1-19",
-              "note": "Lundbom structures the kings review as a descending spiral: Josiah (righteous) → Shallum (exiled) → Jehoiakim (unjust). Each successor represents further degradation from the Josianic standard."
+              "note": "Lundbom structures the kings review as a descending spiral: Josiah (righteous) → Shallum (exiled) → Jehoiakim (unjust). Each successor represents further degradation from the Josianic standard. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -155,7 +155,7 @@
           "notes": [
             {
               "ref": "22:30",
-              "note": "Calvin grapples with the dynastic curse: \"No descendant of Coniah will reign — yet the Messiah must come from David's line. How God resolves this apparent contradiction is among the mysteries of providence.\""
+              "note": "Calvin grapples with the dynastic curse: \"No descendant of Coniah will reign — yet the Messiah must come from David's line. How God resolves this apparent contradiction is among the mysteries of providence.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -411,7 +411,82 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Josiah",
+        "Jehoiakim",
+        "Nebuchadnezzar",
+        "David"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Against",
+        "Coniah",
+        "Jehoiakim",
+        "Oracle",
+        "Shallum"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

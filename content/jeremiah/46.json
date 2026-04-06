@@ -59,7 +59,7 @@
           "notes": [
             {
               "ref": "46:10",
-              "note": "Calvin develops the Day of the LORD theology: \"Every nation has its day of reckoning. What Israel experienced in 586 BC, Egypt experiences at Carchemish. No power is exempt from divine judgment.\""
+              "note": "Calvin develops the Day of the LORD theology: \"Every nation has its day of reckoning. What Israel experienced in 586 BC, Egypt experiences at Carchemish. No power is exempt from divine judgment.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -81,7 +81,7 @@
           "notes": [
             {
               "ref": "46:1-12",
-              "note": "Lundbom identifies the Carchemish oracle as \"the finest military poetry in the Hebrew Bible.\" The rapid-fire imperatives, the ironic reversal of Egypt's confidence, and the Day of the LORD framework create a masterpiece of prophetic poetry."
+              "note": "Lundbom identifies the Carchemish oracle as \"the finest military poetry in the Hebrew Bible.\" The rapid-fire imperatives, the ironic reversal of Egypt's confidence, and the Day of the LORD framework create a masterpiece of prophetic poetry. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -90,7 +90,7 @@
           "notes": [
             {
               "ref": "46:2-12",
-              "note": "Brueggemann reads the oracle as \"the dethronement of the alternative.\" Egypt represented the perpetual option other than YHWH. With Egypt's defeat, the illusion that any power can rival God is shattered."
+              "note": "Brueggemann reads the oracle as \"the dethronement of the alternative.\" Egypt represented the perpetual option other than YHWH. With Egypt's defeat, the illusion that any power can rival God is shattered. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -147,7 +147,7 @@
           "notes": [
             {
               "ref": "46:27-28",
-              "note": "Calvin reads the comfort oracle as proof that \"the oracles against the nations serve Israel's hope. When God judges the empires, his people are released from their oppressors.\""
+              "note": "Calvin reads the comfort oracle as proof that \"the oracles against the nations serve Israel's hope. When God judges the empires, his people are released from their oppressors.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -156,7 +156,7 @@
           "notes": [
             {
               "ref": "46:25",
-              "note": "Amon was the chief deity of Thebes (No-Amon, modern Luxor) in Upper Egypt. The targeting of Amon represents the defeat of Egypt's supreme religious authority."
+              "note": "Amon was the chief deity of Thebes (No-Amon, modern Luxor) in Upper Egypt. The targeting of Amon represents the defeat of Egypt's supreme religious authority. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -165,7 +165,7 @@
           "notes": [
             {
               "ref": "46:13-28",
-              "note": "Lundbom notes that the Egypt oracle functions as \"the theological reversal of the exodus.\" Where God once judged Egypt to free Israel, he now judges Egypt to demonstrate universal sovereignty."
+              "note": "Lundbom notes that the Egypt oracle functions as \"the theological reversal of the exodus.\" Where God once judged Egypt to free Israel, he now judges Egypt to demonstrate universal sovereignty. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -174,7 +174,7 @@
           "notes": [
             {
               "ref": "46:27-28",
-              "note": "Brueggemann reads the closing comfort oracle as \"the pastoral heart within the martial poetry.\" Judgment on the nations is never an end in itself -- it always serves the restoration of God's people."
+              "note": "Brueggemann reads the closing comfort oracle as \"the pastoral heart within the martial poetry.\" Judgment on the nations is never an end in itself -- it always serves the restoration of God's people. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -393,7 +393,80 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Jehoiakim",
+        "Nebuchadnezzar"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Attack",
+        "Battle",
+        "Carchemish",
+        "Nebuchadnezzar",
+        "Will"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

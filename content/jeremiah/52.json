@@ -63,7 +63,7 @@
           "notes": [
             {
               "ref": "52:12-16",
-              "note": "Calvin reads the appendix as \"God's signature on the prophetic word. Every prediction fulfilled proves that the prophet spoke truth. The fall of Jerusalem is the validation of forty years of ministry.\""
+              "note": "Calvin reads the appendix as \"God's signature on the prophetic word. Every prediction fulfilled proves that the prophet spoke truth. The fall of Jerusalem is the validation of forty years of ministry.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -81,7 +81,7 @@
           "notes": [
             {
               "ref": "52:1-23",
-              "note": "Lundbom reads the appendix as \"the historical verification of the prophetic word.\" The editorial decision to append this account after \"the words of Jeremiah end here\" creates a literary frame: prophecy (chs. 1-51) validated by history (ch. 52)."
+              "note": "Lundbom reads the appendix as \"the historical verification of the prophetic word.\" The editorial decision to append this account after \"the words of Jeremiah end here\" creates a literary frame: prophecy (chs. 1-51) validated by history (ch. 52). This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -90,7 +90,7 @@
           "notes": [
             {
               "ref": "52:17-23",
-              "note": "Brueggemann reads the temple inventory as \"an act of liturgical mourning.\" The detailed listing of what was lost -- each pot, each pillar, each decoration -- functions as a funeral register for a dead institution."
+              "note": "Brueggemann reads the temple inventory as \"an act of liturgical mourning.\" The detailed listing of what was lost -- each pot, each pillar, each decoration -- functions as a funeral register for a dead institution. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -173,7 +173,7 @@
           "notes": [
             {
               "ref": "52:31-34",
-              "note": "Lundbom calls the ending \"the most important four verses in the book for messianic theology.\" The Davidic line survives in exile -- diminished, dependent, but alive. From this survivor, the genealogy leads to Jesus."
+              "note": "Lundbom calls the ending \"the most important four verses in the book for messianic theology.\" The Davidic line survives in exile -- diminished, dependent, but alive. From this survivor, the genealogy leads to Jesus. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -435,7 +435,82 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Zedekiah",
+        "Nebuchadnezzar",
+        "David"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Deportations",
+        "Fall",
+        "Jehoiachin",
+        "Jerusalem",
+        "Released",
+        "Retold"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,
