@@ -1,130 +1,81 @@
 {
-  "macarthur": "all",
-  "calvin": "all",
-  "netbible": "all",
-  "sarna": [
-    "genesis",
-    "exodus"
-  ],
   "alter": [
     "genesis",
     "exodus",
     "ruth",
+    "psalms",
     "proverbs",
     "ecclesiastes",
-    "song_of_solomon",
-    "psalms",
-    "lamentations"
+    "song_of_solomon"
   ],
-  "hubbard": [
-    "ruth"
+  "andersen_freedman": [
+    "hosea",
+    "amos"
   ],
-  "waltke": [
-    "proverbs",
-    "micah"
-  ],
-  "robertson": [
-    "matthew",
-    "mark",
-    "luke",
-    "john",
-    "acts",
-    "habakkuk",
-    "nahum",
-    "zephaniah"
-  ],
-  "catena": [
-    "matthew",
-    "mark",
-    "luke",
-    "john"
-  ],
-  "marcus": [
-    "mark"
-  ],
-  "rhoads": [
-    "mark"
-  ],
-  "keener": [
-    "acts"
-  ],
-  "milgrom": [
-    "leviticus",
-    "numbers"
+  "anderson": [
+    "2_samuel"
   ],
   "ashley": [
     "numbers"
   ],
-  "craigie": [
-    "deuteronomy"
-  ],
-  "tigay": [
-    "deuteronomy"
-  ],
-  "hess": [
-    "joshua"
-  ],
-  "howard": [
-    "joshua"
-  ],
-  "block": [
-    "judges",
-    "ezekiel"
-  ],
-  "webb": [
-    "judges"
+  "beale": [
+    "revelation"
   ],
   "bergen": [
     "1_samuel",
     "2_samuel"
   ],
-  "tsumura": [
-    "1_samuel"
+  "berlin": [
+    "lamentations"
   ],
-  "anderson": [
-    "2_samuel"
+  "block": [
+    "judges",
+    "ezekiel"
   ],
-  "wiseman": [
-    "1_kings",
-    "2_kings"
+  "boda": [
+    "zechariah"
   ],
-  "provan": [
-    "1_kings",
-    "2_kings"
+  "bruce": [
+    "galatians",
+    "philemon"
   ],
-  "selman": [
-    "1_chronicles",
-    "2_chronicles"
+  "brueggemann": [
+    "jeremiah"
   ],
-  "japhet": [
-    "1_chronicles",
-    "2_chronicles"
+  "calvin": "all",
+  "cat": [
+    "mark"
   ],
-  "kidner": [
-    "ezra",
-    "nehemiah",
-    "psalms"
+  "catena": [
+    "matthew",
+    "luke",
+    "john"
   ],
-  "williamson": [
-    "ezra",
-    "nehemiah"
-  ],
-  "jobes": [
-    "esther"
-  ],
-  "levenson": [
-    "esther"
+  "childs": [
+    "isaiah"
   ],
   "clines": [
     "job"
   ],
-  "habel": [
-    "job"
+  "cockerill": [
+    "hebrews"
   ],
-  "longman": [
-    "ecclesiastes",
-    "song_of_solomon",
+  "collins": [
     "daniel"
+  ],
+  "craigie": [
+    "deuteronomy"
+  ],
+  "davids": [
+    "2_peter",
+    "jude"
+  ],
+  "fee": [
+    "1_corinthians",
+    "2_corinthians",
+    "philippians",
+    "1_thessalonians",
+    "2_thessalonians"
   ],
   "fox": [
     "ecclesiastes"
@@ -132,57 +83,317 @@
   "garrett": [
     "song_of_solomon"
   ],
-  "vangemeren": [
-    "psalms"
-  ],
   "goldingay": [
     "psalms",
     "daniel"
   ],
-  "collins": [
+  "green": [
+    "jude"
+  ],
+  "habel": [
+    "job"
+  ],
+  "harris": [
+    "2_corinthians"
+  ],
+  "hess": [
+    "joshua"
+  ],
+  "hill": [
+    "malachi"
+  ],
+  "howard": [
+    "joshua"
+  ],
+  "hubbard": [
+    "ruth"
+  ],
+  "jobes": [
+    "esther",
+    "1_peter"
+  ],
+  "keener": [
+    "acts"
+  ],
+  "kidner": [
+    "ezra",
+    "nehemiah",
+    "psalms"
+  ],
+  "kruse": [
+    "1_john",
+    "2_john",
+    "3_john"
+  ],
+  "lane": [
+    "hebrews"
+  ],
+  "levenson": [
+    "esther"
+  ],
+  "lincoln": [
+    "ephesians"
+  ],
+  "longman": [
+    "ecclesiastes",
+    "song_of_solomon",
     "daniel"
-  ],
-  "childs": [
-    "isaiah"
-  ],
-  "oswalt": [
-    "isaiah"
-  ],
-  "oconnor": [
-    "lamentations"
-  ],
-  "berlin": [
-    "lamentations"
   ],
   "lundbom": [
     "jeremiah"
   ],
-  "brueggemann": [
-    "jeremiah"
-  ],
-  "zimmerli": [
-    "ezekiel"
-  ],
-  "stuart": [
-    "jonah",
+  "mac": [
+    "genesis",
+    "exodus",
+    "leviticus",
+    "numbers",
+    "deuteronomy",
+    "joshua",
+    "judges",
+    "1_samuel",
+    "2_samuel",
+    "ezra",
+    "nehemiah",
+    "esther",
+    "job",
+    "psalms",
+    "proverbs",
+    "ecclesiastes",
+    "song_of_solomon",
+    "isaiah",
+    "jeremiah",
+    "lamentations",
+    "ezekiel",
+    "daniel",
+    "hosea",
+    "joel",
     "amos",
     "obadiah",
-    "joel",
+    "jonah",
+    "micah",
+    "nahum",
+    "habakkuk",
+    "zephaniah",
+    "haggai",
+    "zechariah",
+    "malachi",
+    "matthew",
+    "mark",
+    "luke",
+    "john",
+    "acts",
+    "romans",
+    "1_corinthians",
+    "2_corinthians",
+    "galatians",
+    "ephesians",
+    "philippians",
+    "colossians",
+    "1_thessalonians",
+    "2_thessalonians",
+    "1_timothy",
+    "2_timothy",
+    "titus",
+    "philemon",
+    "hebrews",
+    "james",
+    "1_peter",
+    "2_peter",
+    "1_john",
+    "2_john",
+    "3_john",
+    "jude",
+    "revelation"
+  ],
+  "mar": [
+    "mark"
+  ],
+  "mccartney": [
+    "james"
+  ],
+  "milgrom": [
+    "leviticus",
+    "numbers"
+  ],
+  "moo": [
+    "romans",
+    "galatians",
+    "colossians",
+    "james"
+  ],
+  "mounce": [
+    "1_timothy",
+    "2_timothy",
+    "titus"
+  ],
+  "net": [
+    "genesis",
+    "exodus",
+    "leviticus",
+    "numbers",
+    "deuteronomy",
+    "joshua",
+    "judges",
+    "ruth",
+    "1_samuel",
+    "2_samuel",
+    "1_kings",
+    "2_kings",
+    "1_chronicles",
+    "2_chronicles",
+    "ezra",
+    "nehemiah",
+    "esther",
+    "job",
+    "psalms",
+    "proverbs",
+    "ecclesiastes",
+    "song_of_solomon",
+    "isaiah",
+    "lamentations",
+    "daniel",
+    "matthew",
+    "mark",
+    "luke",
+    "john",
+    "acts"
+  ],
+  "netbible": [
+    "deuteronomy",
+    "jeremiah",
+    "ezekiel",
     "hosea",
+    "joel",
+    "amos",
+    "obadiah",
+    "jonah",
+    "micah",
+    "nahum",
+    "habakkuk",
+    "zephaniah",
+    "haggai",
+    "zechariah",
+    "malachi",
+    "matthew",
+    "romans",
+    "1_corinthians",
+    "2_corinthians",
+    "galatians",
+    "ephesians",
+    "philippians",
+    "colossians",
+    "1_thessalonians",
+    "2_thessalonians",
+    "1_timothy",
+    "2_timothy",
+    "titus",
+    "philemon",
+    "hebrews",
+    "james",
+    "1_peter",
+    "2_peter",
+    "1_john",
+    "2_john",
+    "3_john",
+    "jude",
+    "revelation"
+  ],
+  "obrien": [
+    "ephesians",
+    "colossians",
+    "philemon"
+  ],
+  "oconnor": [
+    "lamentations"
+  ],
+  "osborne": [
+    "revelation"
+  ],
+  "oswalt": [
+    "isaiah"
+  ],
+  "provan": [
+    "1_kings",
+    "2_kings"
+  ],
+  "rho": [
+    "mark"
+  ],
+  "robertson": [
+    "nahum",
+    "habakkuk",
+    "zephaniah",
+    "matthew",
+    "luke",
+    "acts"
+  ],
+  "sarna": [
+    "genesis",
+    "exodus"
+  ],
+  "schreiner": [
+    "romans",
+    "1_peter",
+    "2_peter",
+    "jude"
+  ],
+  "silva": [
+    "philippians"
+  ],
+  "stuart": [
+    "hosea",
+    "joel",
+    "amos",
+    "obadiah",
+    "jonah",
     "micah"
   ],
-  "andersen_freedman": [
-    "amos",
-    "hosea"
+  "thiselton": [
+    "1_corinthians"
+  ],
+  "tigay": [
+    "deuteronomy"
+  ],
+  "towner": [
+    "1_timothy",
+    "2_timothy",
+    "titus"
+  ],
+  "tsumura": [
+    "1_samuel"
+  ],
+  "vangemeren": [
+    "psalms"
   ],
   "verhoef": [
     "haggai",
     "malachi"
   ],
-  "boda": [
-    "zechariah"
+  "waltke": [
+    "proverbs",
+    "micah"
   ],
-  "hill": [
-    "malachi"
+  "wanamaker": [
+    "1_thessalonians",
+    "2_thessalonians"
+  ],
+  "webb": [
+    "judges"
+  ],
+  "williamson": [
+    "ezra",
+    "nehemiah"
+  ],
+  "wiseman": [
+    "1_kings",
+    "2_kings"
+  ],
+  "yarbrough": [
+    "1_john",
+    "2_john",
+    "3_john"
+  ],
+  "zimmerli": [
+    "ezekiel"
   ]
 }
