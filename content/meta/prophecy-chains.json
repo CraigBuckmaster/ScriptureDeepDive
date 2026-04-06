@@ -5,13 +5,42 @@
     "category": "messianic",
     "type": "progressive_revelation",
     "summary": "The protoevangelium—first gospel promise—unfolds from Genesis 3:15 through the narrowing of Abraham's seed to Christ, the ultimate serpent-crusher.",
-    "tags": ["proto-gospel", "promise", "genesis"],
+    "tags": [
+      "proto-gospel",
+      "promise",
+      "genesis"
+    ],
     "links": [
-      {"book_dir": "genesis", "chapter_num": 3, "verse_ref": "3:15", "note": "Initial promise: seed of woman will crush serpent's head"},
-      {"book_dir": "genesis", "chapter_num": 12, "verse_ref": "12:3", "note": "Blessing narrowed to Abraham's offspring"},
-      {"book_dir": "genesis", "chapter_num": 22, "verse_ref": "22:18", "note": "Reaffirmed through Isaac"},
-      {"book_dir": "galatians", "chapter_num": 3, "verse_ref": "3:16", "note": "Paul identifies the singular 'seed' as Christ"},
-      {"book_dir": "galatians", "chapter_num": 4, "verse_ref": "4:4", "note": "Born of a woman, born under law"}
+      {
+        "book_dir": "genesis",
+        "chapter_num": 3,
+        "verse_ref": "3:15",
+        "note": "Initial promise: seed of woman will crush serpent's head"
+      },
+      {
+        "book_dir": "genesis",
+        "chapter_num": 12,
+        "verse_ref": "12:3",
+        "note": "Blessing narrowed to Abraham's offspring"
+      },
+      {
+        "book_dir": "genesis",
+        "chapter_num": 22,
+        "verse_ref": "22:18",
+        "note": "Reaffirmed through Isaac"
+      },
+      {
+        "book_dir": "galatians",
+        "chapter_num": 3,
+        "verse_ref": "3:16",
+        "note": "Paul identifies the singular 'seed' as Christ"
+      },
+      {
+        "book_dir": "galatians",
+        "chapter_num": 4,
+        "verse_ref": "4:4",
+        "note": "Born of a woman, born under law"
+      }
     ]
   },
   {
@@ -20,14 +49,48 @@
     "category": "messianic",
     "type": "direct_fulfillment",
     "summary": "Jacob's blessing prophesies that the royal scepter will not depart from Judah until Shiloh comes—a prophecy linking kingship to the Messiah through David's line.",
-    "tags": ["kingship", "judah", "davidic"],
+    "tags": [
+      "kingship",
+      "judah",
+      "davidic"
+    ],
     "links": [
-      {"book_dir": "genesis", "chapter_num": 49, "verse_ref": "49:10", "note": "Scepter prophecy: until Shiloh comes"},
-      {"book_dir": "2_samuel", "chapter_num": 7, "verse_ref": "7:12-16", "note": "Davidic covenant establishes eternal throne"},
-      {"book_dir": "psalms", "chapter_num": 2, "verse_ref": "2:6-7", "note": "God's king installed on Zion"},
-      {"book_dir": "isaiah", "chapter_num": 9, "verse_ref": "9:6-7", "note": "Child born to reign on David's throne forever"},
-      {"book_dir": "matthew", "chapter_num": 1, "verse_ref": "1:1-17", "note": "Genealogy establishes Jesus as son of David, tribe of Judah"},
-      {"book_dir": "luke", "chapter_num": 1, "verse_ref": "1:32-33", "note": "Angel declares Jesus will inherit David's throne"}
+      {
+        "book_dir": "genesis",
+        "chapter_num": 49,
+        "verse_ref": "49:10",
+        "note": "Scepter prophecy: until Shiloh comes"
+      },
+      {
+        "book_dir": "2_samuel",
+        "chapter_num": 7,
+        "verse_ref": "7:12-16",
+        "note": "Davidic covenant establishes eternal throne"
+      },
+      {
+        "book_dir": "psalms",
+        "chapter_num": 2,
+        "verse_ref": "2:6-7",
+        "note": "God's king installed on Zion"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 9,
+        "verse_ref": "9:6-7",
+        "note": "Child born to reign on David's throne forever"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 1,
+        "verse_ref": "1:1-17",
+        "note": "Genealogy establishes Jesus as son of David, tribe of Judah"
+      },
+      {
+        "book_dir": "luke",
+        "chapter_num": 1,
+        "verse_ref": "1:32-33",
+        "note": "Angel declares Jesus will inherit David's throne"
+      }
     ]
   },
   {
@@ -36,13 +99,42 @@
     "category": "messianic",
     "type": "direct_fulfillment",
     "summary": "Moses prophesies a future prophet whom God will raise up from Israel, speaking God's words directly—a role ultimately filled by Jesus as the new lawgiver.",
-    "tags": ["prophet", "moses", "torah"],
+    "tags": [
+      "prophet",
+      "moses",
+      "torah"
+    ],
     "links": [
-      {"book_dir": "deuteronomy", "chapter_num": 18, "verse_ref": "18:15-19", "note": "Promise of a prophet like Moses"},
-      {"book_dir": "john", "chapter_num": 1, "verse_ref": "1:21,45", "note": "Jews ask John if he is 'the Prophet'; Philip identifies Jesus"},
-      {"book_dir": "john", "chapter_num": 6, "verse_ref": "6:14", "note": "Crowd recognizes Jesus as 'the Prophet'"},
-      {"book_dir": "acts", "chapter_num": 3, "verse_ref": "3:22-23", "note": "Peter explicitly applies Deuteronomy to Jesus"},
-      {"book_dir": "acts", "chapter_num": 7, "verse_ref": "7:37", "note": "Stephen quotes the prophecy in his defense"}
+      {
+        "book_dir": "deuteronomy",
+        "chapter_num": 18,
+        "verse_ref": "18:15-19",
+        "note": "Promise of a prophet like Moses"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 1,
+        "verse_ref": "1:21,45",
+        "note": "Jews ask John if he is 'the Prophet'; Philip identifies Jesus"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 6,
+        "verse_ref": "6:14",
+        "note": "Crowd recognizes Jesus as 'the Prophet'"
+      },
+      {
+        "book_dir": "acts",
+        "chapter_num": 3,
+        "verse_ref": "3:22-23",
+        "note": "Peter explicitly applies Deuteronomy to Jesus"
+      },
+      {
+        "book_dir": "acts",
+        "chapter_num": 7,
+        "verse_ref": "7:37",
+        "note": "Stephen quotes the prophecy in his defense"
+      }
     ]
   },
   {
@@ -51,17 +143,67 @@
     "category": "covenant",
     "type": "progressive_revelation",
     "summary": "God's unconditional covenant with David promises an eternal dynasty, throne, and kingdom—progressively revealed as fulfilled in Christ's eternal reign.",
-    "tags": ["covenant", "davidic", "kingship", "eternal"],
+    "tags": [
+      "covenant",
+      "davidic",
+      "kingship",
+      "eternal"
+    ],
     "links": [
-      {"book_dir": "2_samuel", "chapter_num": 7, "verse_ref": "7:11-16", "note": "Nathan delivers the covenant: house, throne, kingdom forever"},
-      {"book_dir": "1_chronicles", "chapter_num": 17, "verse_ref": "17:11-14", "note": "Parallel account emphasizing eternal kingdom"},
-      {"book_dir": "psalms", "chapter_num": 89, "verse_ref": "89:3-4,29,36", "note": "Psalmist celebrates the covenant's permanence"},
-      {"book_dir": "psalms", "chapter_num": 132, "verse_ref": "132:11-12", "note": "God's oath to David"},
-      {"book_dir": "isaiah", "chapter_num": 9, "verse_ref": "9:7", "note": "He will reign on David's throne forever"},
-      {"book_dir": "jeremiah", "chapter_num": 33, "verse_ref": "33:17-21", "note": "Branch of righteousness to reign"},
-      {"book_dir": "ezekiel", "chapter_num": 37, "verse_ref": "37:24-25", "note": "David my servant will be king over them forever"},
-      {"book_dir": "luke", "chapter_num": 1, "verse_ref": "1:32-33", "note": "Gabriel announces Jesus will sit on David's throne forever"},
-      {"book_dir": "acts", "chapter_num": 2, "verse_ref": "2:30-31", "note": "Peter declares Jesus is the promised descendant"}
+      {
+        "book_dir": "2_samuel",
+        "chapter_num": 7,
+        "verse_ref": "7:11-16",
+        "note": "Nathan delivers the covenant: house, throne, kingdom forever"
+      },
+      {
+        "book_dir": "1_chronicles",
+        "chapter_num": 17,
+        "verse_ref": "17:11-14",
+        "note": "Parallel account emphasizing eternal kingdom"
+      },
+      {
+        "book_dir": "psalms",
+        "chapter_num": 89,
+        "verse_ref": "89:3-4,29,36",
+        "note": "Psalmist celebrates the covenant's permanence"
+      },
+      {
+        "book_dir": "psalms",
+        "chapter_num": 132,
+        "verse_ref": "132:11-12",
+        "note": "God's oath to David"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 9,
+        "verse_ref": "9:7",
+        "note": "He will reign on David's throne forever"
+      },
+      {
+        "book_dir": "jeremiah",
+        "chapter_num": 33,
+        "verse_ref": "33:17-21",
+        "note": "Branch of righteousness to reign"
+      },
+      {
+        "book_dir": "ezekiel",
+        "chapter_num": 37,
+        "verse_ref": "37:24-25",
+        "note": "David my servant will be king over them forever"
+      },
+      {
+        "book_dir": "luke",
+        "chapter_num": 1,
+        "verse_ref": "1:32-33",
+        "note": "Gabriel announces Jesus will sit on David's throne forever"
+      },
+      {
+        "book_dir": "acts",
+        "chapter_num": 2,
+        "verse_ref": "2:30-31",
+        "note": "Peter declares Jesus is the promised descendant"
+      }
     ]
   },
   {
@@ -70,18 +212,73 @@
     "category": "messianic",
     "type": "direct_fulfillment",
     "summary": "Isaiah's four Servant Songs progressively reveal a figure who suffers vicariously for Israel and the nations—fulfilled in Jesus' passion and death.",
-    "tags": ["servant", "isaiah", "passion", "atonement"],
+    "tags": [
+      "servant",
+      "isaiah",
+      "passion",
+      "atonement"
+    ],
     "links": [
-      {"book_dir": "isaiah", "chapter_num": 42, "verse_ref": "42:1-9", "note": "First Servant Song: gentle justice-bringer"},
-      {"book_dir": "isaiah", "chapter_num": 49, "verse_ref": "49:1-7", "note": "Second Servant Song: light to the nations"},
-      {"book_dir": "isaiah", "chapter_num": 50, "verse_ref": "50:4-9", "note": "Third Servant Song: obedient despite suffering"},
-      {"book_dir": "isaiah", "chapter_num": 52, "verse_ref": "52:13-15", "note": "Introduction to fourth song: exaltation after humiliation"},
-      {"book_dir": "isaiah", "chapter_num": 53, "verse_ref": "53:1-12", "note": "Fourth Servant Song: vicarious suffering and death"},
-      {"book_dir": "matthew", "chapter_num": 8, "verse_ref": "8:17", "note": "Matthew quotes Isa 53:4 re: healing ministry"},
-      {"book_dir": "matthew", "chapter_num": 12, "verse_ref": "12:17-21", "note": "Matthew quotes Servant Song 1"},
-      {"book_dir": "luke", "chapter_num": 22, "verse_ref": "22:37", "note": "Jesus quotes Isa 53:12—numbered with transgressors"},
-      {"book_dir": "acts", "chapter_num": 8, "verse_ref": "8:32-35", "note": "Philip explains Isaiah 53 to Ethiopian eunuch"},
-      {"book_dir": "romans", "chapter_num": 10, "verse_ref": "10:16", "note": "Paul quotes Isa 53:1 on Israel's unbelief"}
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 42,
+        "verse_ref": "42:1-9",
+        "note": "First Servant Song: gentle justice-bringer"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 49,
+        "verse_ref": "49:1-7",
+        "note": "Second Servant Song: light to the nations"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 50,
+        "verse_ref": "50:4-9",
+        "note": "Third Servant Song: obedient despite suffering"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 52,
+        "verse_ref": "52:13-15",
+        "note": "Introduction to fourth song: exaltation after humiliation"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 53,
+        "verse_ref": "53:1-12",
+        "note": "Fourth Servant Song: vicarious suffering and death"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 8,
+        "verse_ref": "8:17",
+        "note": "Matthew quotes Isa 53:4 re: healing ministry"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 12,
+        "verse_ref": "12:17-21",
+        "note": "Matthew quotes Servant Song 1"
+      },
+      {
+        "book_dir": "luke",
+        "chapter_num": 22,
+        "verse_ref": "22:37",
+        "note": "Jesus quotes Isa 53:12—numbered with transgressors"
+      },
+      {
+        "book_dir": "acts",
+        "chapter_num": 8,
+        "verse_ref": "8:32-35",
+        "note": "Philip explains Isaiah 53 to Ethiopian eunuch"
+      },
+      {
+        "book_dir": "romans",
+        "chapter_num": 10,
+        "verse_ref": "10:16",
+        "note": "Paul quotes Isa 53:1 on Israel's unbelief"
+      }
     ]
   },
   {
@@ -90,12 +287,36 @@
     "category": "messianic",
     "type": "direct_fulfillment",
     "summary": "Isaiah's sign to Ahaz—a virgin conceiving Immanuel—finds its ultimate fulfillment in Mary's miraculous conception of Jesus.",
-    "tags": ["immanuel", "birth", "sign"],
+    "tags": [
+      "immanuel",
+      "birth",
+      "sign"
+    ],
     "links": [
-      {"book_dir": "isaiah", "chapter_num": 7, "verse_ref": "7:14", "note": "The virgin shall conceive and bear a son, Immanuel"},
-      {"book_dir": "isaiah", "chapter_num": 8, "verse_ref": "8:8,10", "note": "Immanuel connection continued"},
-      {"book_dir": "matthew", "chapter_num": 1, "verse_ref": "1:22-23", "note": "Matthew explicitly applies Isaiah 7:14 to Jesus"},
-      {"book_dir": "luke", "chapter_num": 1, "verse_ref": "1:26-35", "note": "Gabriel announces virgin conception"}
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 7,
+        "verse_ref": "7:14",
+        "note": "The virgin shall conceive and bear a son, Immanuel"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 8,
+        "verse_ref": "8:8,10",
+        "note": "Immanuel connection continued"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 1,
+        "verse_ref": "1:22-23",
+        "note": "Matthew explicitly applies Isaiah 7:14 to Jesus"
+      },
+      {
+        "book_dir": "luke",
+        "chapter_num": 1,
+        "verse_ref": "1:26-35",
+        "note": "Gabriel announces virgin conception"
+      }
     ]
   },
   {
@@ -104,13 +325,42 @@
     "category": "messianic",
     "type": "direct_fulfillment",
     "summary": "Isaiah's throne names reveal the divine nature and saving mission of the coming Davidic king—a child who is also Mighty God and Eternal Father.",
-    "tags": ["names", "divine", "davidic"],
+    "tags": [
+      "names",
+      "divine",
+      "davidic"
+    ],
     "links": [
-      {"book_dir": "isaiah", "chapter_num": 9, "verse_ref": "9:6-7", "note": "Four-fold name and eternal Davidic reign"},
-      {"book_dir": "luke", "chapter_num": 1, "verse_ref": "1:32-33", "note": "Jesus' kingdom will have no end"},
-      {"book_dir": "luke", "chapter_num": 2, "verse_ref": "2:11", "note": "Savior, Christ the Lord born"},
-      {"book_dir": "john", "chapter_num": 1, "verse_ref": "1:1-3,14", "note": "The Word was God, became flesh"},
-      {"book_dir": "colossians", "chapter_num": 1, "verse_ref": "1:15-17", "note": "He is the image of the invisible God"}
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 9,
+        "verse_ref": "9:6-7",
+        "note": "Four-fold name and eternal Davidic reign"
+      },
+      {
+        "book_dir": "luke",
+        "chapter_num": 1,
+        "verse_ref": "1:32-33",
+        "note": "Jesus' kingdom will have no end"
+      },
+      {
+        "book_dir": "luke",
+        "chapter_num": 2,
+        "verse_ref": "2:11",
+        "note": "Savior, Christ the Lord born"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 1,
+        "verse_ref": "1:1-3,14",
+        "note": "The Word was God, became flesh"
+      },
+      {
+        "book_dir": "colossians",
+        "chapter_num": 1,
+        "verse_ref": "1:15-17",
+        "note": "He is the image of the invisible God"
+      }
     ]
   },
   {
@@ -119,15 +369,55 @@
     "category": "messianic",
     "type": "progressive_revelation",
     "summary": "The prophets use 'Branch' imagery to describe the coming righteous king from David's line who will restore justice and usher in an age of peace.",
-    "tags": ["branch", "jesse", "davidic", "restoration"],
+    "tags": [
+      "branch",
+      "jesse",
+      "davidic",
+      "restoration"
+    ],
     "links": [
-      {"book_dir": "isaiah", "chapter_num": 11, "verse_ref": "11:1-10", "note": "Shoot from Jesse's stump, Spirit-empowered righteous rule"},
-      {"book_dir": "jeremiah", "chapter_num": 23, "verse_ref": "23:5-6", "note": "Righteous Branch executing justice"},
-      {"book_dir": "jeremiah", "chapter_num": 33, "verse_ref": "33:15-16", "note": "Branch to spring up for David"},
-      {"book_dir": "zechariah", "chapter_num": 3, "verse_ref": "3:8", "note": "My servant the Branch"},
-      {"book_dir": "zechariah", "chapter_num": 6, "verse_ref": "6:12-13", "note": "The man called Branch—priest-king"},
-      {"book_dir": "matthew", "chapter_num": 2, "verse_ref": "2:23", "note": "He will be called a Nazarene (possible wordplay on netzer/branch)"},
-      {"book_dir": "romans", "chapter_num": 15, "verse_ref": "15:12", "note": "Paul quotes Isaiah 11:10—root of Jesse"}
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 11,
+        "verse_ref": "11:1-10",
+        "note": "Shoot from Jesse's stump, Spirit-empowered righteous rule"
+      },
+      {
+        "book_dir": "jeremiah",
+        "chapter_num": 23,
+        "verse_ref": "23:5-6",
+        "note": "Righteous Branch executing justice"
+      },
+      {
+        "book_dir": "jeremiah",
+        "chapter_num": 33,
+        "verse_ref": "33:15-16",
+        "note": "Branch to spring up for David"
+      },
+      {
+        "book_dir": "zechariah",
+        "chapter_num": 3,
+        "verse_ref": "3:8",
+        "note": "My servant the Branch"
+      },
+      {
+        "book_dir": "zechariah",
+        "chapter_num": 6,
+        "verse_ref": "6:12-13",
+        "note": "The man called Branch—priest-king"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 2,
+        "verse_ref": "2:23",
+        "note": "He will be called a Nazarene (possible wordplay on netzer/branch)"
+      },
+      {
+        "book_dir": "romans",
+        "chapter_num": 15,
+        "verse_ref": "15:12",
+        "note": "Paul quotes Isaiah 11:10—root of Jesse"
+      }
     ]
   },
   {
@@ -136,12 +426,36 @@
     "category": "messianic",
     "type": "direct_fulfillment",
     "summary": "Micah prophesies that from tiny Bethlehem will come a ruler whose origins are from ancient days—pointing to Christ's dual nature and birthplace.",
-    "tags": ["bethlehem", "birth", "origins"],
+    "tags": [
+      "bethlehem",
+      "birth",
+      "origins"
+    ],
     "links": [
-      {"book_dir": "micah", "chapter_num": 5, "verse_ref": "5:2", "note": "Bethlehem Ephrathah—ruler whose origins are from of old"},
-      {"book_dir": "matthew", "chapter_num": 2, "verse_ref": "2:1-6", "note": "Scribes quote Micah to Herod; Jesus born in Bethlehem"},
-      {"book_dir": "luke", "chapter_num": 2, "verse_ref": "2:4-7", "note": "Joseph travels to Bethlehem for census; Jesus born"},
-      {"book_dir": "john", "chapter_num": 7, "verse_ref": "7:42", "note": "Crowd debates whether Christ comes from Bethlehem"}
+      {
+        "book_dir": "micah",
+        "chapter_num": 5,
+        "verse_ref": "5:2",
+        "note": "Bethlehem Ephrathah—ruler whose origins are from of old"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 2,
+        "verse_ref": "2:1-6",
+        "note": "Scribes quote Micah to Herod; Jesus born in Bethlehem"
+      },
+      {
+        "book_dir": "luke",
+        "chapter_num": 2,
+        "verse_ref": "2:4-7",
+        "note": "Joseph travels to Bethlehem for census; Jesus born"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 7,
+        "verse_ref": "7:42",
+        "note": "Crowd debates whether Christ comes from Bethlehem"
+      }
     ]
   },
   {
@@ -150,13 +464,42 @@
     "category": "messianic",
     "type": "direct_fulfillment",
     "summary": "Zechariah prophesies a king entering Jerusalem humbly on a donkey—fulfilled precisely in Jesus' triumphal entry.",
-    "tags": ["triumphal entry", "jerusalem", "humility"],
+    "tags": [
+      "triumphal entry",
+      "jerusalem",
+      "humility"
+    ],
     "links": [
-      {"book_dir": "zechariah", "chapter_num": 9, "verse_ref": "9:9", "note": "King comes gentle, riding on a donkey"},
-      {"book_dir": "matthew", "chapter_num": 21, "verse_ref": "21:1-9", "note": "Triumphal entry explicitly fulfills Zechariah"},
-      {"book_dir": "mark", "chapter_num": 11, "verse_ref": "11:1-10", "note": "Jesus enters on colt"},
-      {"book_dir": "luke", "chapter_num": 19, "verse_ref": "19:28-38", "note": "Blessed is the king who comes"},
-      {"book_dir": "john", "chapter_num": 12, "verse_ref": "12:12-15", "note": "John quotes Zechariah 9:9"}
+      {
+        "book_dir": "zechariah",
+        "chapter_num": 9,
+        "verse_ref": "9:9",
+        "note": "King comes gentle, riding on a donkey"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 21,
+        "verse_ref": "21:1-9",
+        "note": "Triumphal entry explicitly fulfills Zechariah"
+      },
+      {
+        "book_dir": "mark",
+        "chapter_num": 11,
+        "verse_ref": "11:1-10",
+        "note": "Jesus enters on colt"
+      },
+      {
+        "book_dir": "luke",
+        "chapter_num": 19,
+        "verse_ref": "19:28-38",
+        "note": "Blessed is the king who comes"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 12,
+        "verse_ref": "12:12-15",
+        "note": "John quotes Zechariah 9:9"
+      }
     ]
   },
   {
@@ -165,12 +508,36 @@
     "category": "messianic",
     "type": "direct_fulfillment",
     "summary": "Zechariah prophesies that Israel will look on the one they pierced and mourn—a text applied to Christ's crucifixion and future recognition.",
-    "tags": ["piercing", "crucifixion", "mourning"],
+    "tags": [
+      "piercing",
+      "crucifixion",
+      "mourning"
+    ],
     "links": [
-      {"book_dir": "zechariah", "chapter_num": 12, "verse_ref": "12:10", "note": "They will look on me, the one they have pierced"},
-      {"book_dir": "zechariah", "chapter_num": 13, "verse_ref": "13:1,6-7", "note": "Fountain for cleansing; shepherd struck"},
-      {"book_dir": "matthew", "chapter_num": 26, "verse_ref": "26:31", "note": "Jesus quotes 'strike the shepherd'"},
-      {"book_dir": "john", "chapter_num": 19, "verse_ref": "19:34,37", "note": "Soldier pierces Jesus' side; John cites Zechariah"}
+      {
+        "book_dir": "zechariah",
+        "chapter_num": 12,
+        "verse_ref": "12:10",
+        "note": "They will look on me, the one they have pierced"
+      },
+      {
+        "book_dir": "zechariah",
+        "chapter_num": 13,
+        "verse_ref": "13:1,6-7",
+        "note": "Fountain for cleansing; shepherd struck"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 26,
+        "verse_ref": "26:31",
+        "note": "Jesus quotes 'strike the shepherd'"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 19,
+        "verse_ref": "19:34,37",
+        "note": "Soldier pierces Jesus' side; John cites Zechariah"
+      }
     ]
   },
   {
@@ -179,11 +546,30 @@
     "category": "messianic",
     "type": "typological_fulfillment",
     "summary": "Psalm 110 declares the Messiah a priest forever in the order of Melchizedek—a pre-Aaronic priesthood that Hebrews expounds at length.",
-    "tags": ["priesthood", "melchizedek", "eternal"],
+    "tags": [
+      "priesthood",
+      "melchizedek",
+      "eternal"
+    ],
     "links": [
-      {"book_dir": "genesis", "chapter_num": 14, "verse_ref": "14:18-20", "note": "Melchizedek—priest of God Most High—blesses Abraham"},
-      {"book_dir": "psalms", "chapter_num": 110, "verse_ref": "110:4", "note": "You are a priest forever in the order of Melchizedek"},
-      {"book_dir": "matthew", "chapter_num": 22, "verse_ref": "22:41-45", "note": "Jesus uses Psalm 110 to show Messiah is David's Lord"}
+      {
+        "book_dir": "genesis",
+        "chapter_num": 14,
+        "verse_ref": "14:18-20",
+        "note": "Melchizedek—priest of God Most High—blesses Abraham"
+      },
+      {
+        "book_dir": "psalms",
+        "chapter_num": 110,
+        "verse_ref": "110:4",
+        "note": "You are a priest forever in the order of Melchizedek"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 22,
+        "verse_ref": "22:41-45",
+        "note": "Jesus uses Psalm 110 to show Messiah is David's Lord"
+      }
     ]
   },
   {
@@ -192,13 +578,43 @@
     "category": "messianic",
     "type": "direct_fulfillment",
     "summary": "Daniel's vision of one like a son of man receiving eternal dominion shapes Jesus' self-designation and his claims before the Sanhedrin.",
-    "tags": ["daniel", "son of man", "kingdom", "glory"],
+    "tags": [
+      "daniel",
+      "son of man",
+      "kingdom",
+      "glory"
+    ],
     "links": [
-      {"book_dir": "daniel", "chapter_num": 7, "verse_ref": "7:13-14", "note": "One like a son of man approaches the Ancient of Days"},
-      {"book_dir": "matthew", "chapter_num": 24, "verse_ref": "24:30", "note": "Son of Man coming on clouds with power"},
-      {"book_dir": "matthew", "chapter_num": 26, "verse_ref": "26:64", "note": "Jesus tells Caiaphas he will see Son of Man coming"},
-      {"book_dir": "mark", "chapter_num": 14, "verse_ref": "14:62", "note": "Jesus affirms Daniel 7 imagery at trial"},
-      {"book_dir": "acts", "chapter_num": 7, "verse_ref": "7:56", "note": "Stephen sees Son of Man at God's right hand"}
+      {
+        "book_dir": "daniel",
+        "chapter_num": 7,
+        "verse_ref": "7:13-14",
+        "note": "One like a son of man approaches the Ancient of Days"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 24,
+        "verse_ref": "24:30",
+        "note": "Son of Man coming on clouds with power"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 26,
+        "verse_ref": "26:64",
+        "note": "Jesus tells Caiaphas he will see Son of Man coming"
+      },
+      {
+        "book_dir": "mark",
+        "chapter_num": 14,
+        "verse_ref": "14:62",
+        "note": "Jesus affirms Daniel 7 imagery at trial"
+      },
+      {
+        "book_dir": "acts",
+        "chapter_num": 7,
+        "verse_ref": "7:56",
+        "note": "Stephen sees Son of Man at God's right hand"
+      }
     ]
   },
   {
@@ -207,12 +623,37 @@
     "category": "messianic",
     "type": "direct_fulfillment",
     "summary": "Daniel's prophecy of seventy weeks outlines a timeline culminating in the Anointed One being cut off—a framework for Messiah's coming and death.",
-    "tags": ["daniel", "timeline", "anointed", "death"],
+    "tags": [
+      "daniel",
+      "timeline",
+      "anointed",
+      "death"
+    ],
     "links": [
-      {"book_dir": "daniel", "chapter_num": 9, "verse_ref": "9:24-27", "note": "Seventy 'sevens' decreed; Anointed One cut off"},
-      {"book_dir": "luke", "chapter_num": 3, "verse_ref": "3:1-3", "note": "Ministry timing—15th year of Tiberius"},
-      {"book_dir": "mark", "chapter_num": 1, "verse_ref": "1:15", "note": "The time is fulfilled, kingdom at hand"},
-      {"book_dir": "galatians", "chapter_num": 4, "verse_ref": "4:4", "note": "Fullness of time"}
+      {
+        "book_dir": "daniel",
+        "chapter_num": 9,
+        "verse_ref": "9:24-27",
+        "note": "Seventy 'sevens' decreed; Anointed One cut off"
+      },
+      {
+        "book_dir": "luke",
+        "chapter_num": 3,
+        "verse_ref": "3:1-3",
+        "note": "Ministry timing—15th year of Tiberius"
+      },
+      {
+        "book_dir": "mark",
+        "chapter_num": 1,
+        "verse_ref": "1:15",
+        "note": "The time is fulfilled, kingdom at hand"
+      },
+      {
+        "book_dir": "galatians",
+        "chapter_num": 4,
+        "verse_ref": "4:4",
+        "note": "Fullness of time"
+      }
     ]
   },
   {
@@ -221,11 +662,31 @@
     "category": "messianic",
     "type": "typological_fulfillment",
     "summary": "Hosea's reflection on Israel's exodus becomes a type fulfilled when Jesus returns from Egypt—Israel's story recapitulated in the Messiah.",
-    "tags": ["egypt", "exodus", "typology", "hosea"],
+    "tags": [
+      "egypt",
+      "exodus",
+      "typology",
+      "hosea"
+    ],
     "links": [
-      {"book_dir": "exodus", "chapter_num": 4, "verse_ref": "4:22-23", "note": "Israel is my firstborn son"},
-      {"book_dir": "hosea", "chapter_num": 11, "verse_ref": "11:1", "note": "Out of Egypt I called my son"},
-      {"book_dir": "matthew", "chapter_num": 2, "verse_ref": "2:13-15", "note": "Flight to Egypt and return fulfills Hosea"}
+      {
+        "book_dir": "exodus",
+        "chapter_num": 4,
+        "verse_ref": "4:22-23",
+        "note": "Israel is my firstborn son"
+      },
+      {
+        "book_dir": "hosea",
+        "chapter_num": 11,
+        "verse_ref": "11:1",
+        "note": "Out of Egypt I called my son"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 2,
+        "verse_ref": "2:13-15",
+        "note": "Flight to Egypt and return fulfills Hosea"
+      }
     ]
   },
   {
@@ -234,17 +695,66 @@
     "category": "messianic",
     "type": "direct_fulfillment",
     "summary": "Isaiah's call to prepare a way in the wilderness is applied by all four Gospels to John the Baptist as forerunner of Christ.",
-    "tags": ["john the baptist", "forerunner", "wilderness"],
+    "tags": [
+      "john the baptist",
+      "forerunner",
+      "wilderness"
+    ],
     "links": [
-      {"book_dir": "isaiah", "chapter_num": 40, "verse_ref": "40:3-5", "note": "A voice crying: prepare the way of the Lord"},
-      {"book_dir": "malachi", "chapter_num": 3, "verse_ref": "3:1", "note": "I will send my messenger ahead of you"},
-      {"book_dir": "malachi", "chapter_num": 4, "verse_ref": "4:5-6", "note": "I will send Elijah before the day of the Lord"},
-      {"book_dir": "matthew", "chapter_num": 3, "verse_ref": "3:1-3", "note": "Matthew quotes Isaiah 40 re: John"},
-      {"book_dir": "matthew", "chapter_num": 11, "verse_ref": "11:10,14", "note": "Jesus identifies John as Elijah figure"},
-      {"book_dir": "mark", "chapter_num": 1, "verse_ref": "1:2-4", "note": "Mark opens with Isaiah 40 and Malachi"},
-      {"book_dir": "luke", "chapter_num": 1, "verse_ref": "1:17,76", "note": "Zechariah prophesies John's role"},
-      {"book_dir": "luke", "chapter_num": 3, "verse_ref": "3:4-6", "note": "Luke quotes Isaiah 40 at length"},
-      {"book_dir": "john", "chapter_num": 1, "verse_ref": "1:23", "note": "John identifies himself with Isaiah 40:3"}
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 40,
+        "verse_ref": "40:3-5",
+        "note": "A voice crying: prepare the way of the Lord"
+      },
+      {
+        "book_dir": "malachi",
+        "chapter_num": 3,
+        "verse_ref": "3:1",
+        "note": "I will send my messenger ahead of you"
+      },
+      {
+        "book_dir": "malachi",
+        "chapter_num": 4,
+        "verse_ref": "4:5-6",
+        "note": "I will send Elijah before the day of the Lord"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 3,
+        "verse_ref": "3:1-3",
+        "note": "Matthew quotes Isaiah 40 re: John"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 11,
+        "verse_ref": "11:10,14",
+        "note": "Jesus identifies John as Elijah figure"
+      },
+      {
+        "book_dir": "mark",
+        "chapter_num": 1,
+        "verse_ref": "1:2-4",
+        "note": "Mark opens with Isaiah 40 and Malachi"
+      },
+      {
+        "book_dir": "luke",
+        "chapter_num": 1,
+        "verse_ref": "1:17,76",
+        "note": "Zechariah prophesies John's role"
+      },
+      {
+        "book_dir": "luke",
+        "chapter_num": 3,
+        "verse_ref": "3:4-6",
+        "note": "Luke quotes Isaiah 40 at length"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 1,
+        "verse_ref": "1:23",
+        "note": "John identifies himself with Isaiah 40:3"
+      }
     ]
   },
   {
@@ -253,10 +763,25 @@
     "category": "messianic",
     "type": "direct_fulfillment",
     "summary": "Isaiah 61's Spirit-anointed herald of jubilee is read by Jesus in Nazareth and declared fulfilled in their hearing—his mission statement.",
-    "tags": ["spirit", "anointing", "jubilee", "nazareth"],
+    "tags": [
+      "spirit",
+      "anointing",
+      "jubilee",
+      "nazareth"
+    ],
     "links": [
-      {"book_dir": "isaiah", "chapter_num": 61, "verse_ref": "61:1-2", "note": "Spirit of the Lord upon me to proclaim good news"},
-      {"book_dir": "luke", "chapter_num": 4, "verse_ref": "4:16-21", "note": "Jesus reads Isaiah 61 in Nazareth, declares it fulfilled"}
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 61,
+        "verse_ref": "61:1-2",
+        "note": "Spirit of the Lord upon me to proclaim good news"
+      },
+      {
+        "book_dir": "luke",
+        "chapter_num": 4,
+        "verse_ref": "4:16-21",
+        "note": "Jesus reads Isaiah 61 in Nazareth, declares it fulfilled"
+      }
     ]
   },
   {
@@ -265,14 +790,48 @@
     "category": "messianic",
     "type": "direct_fulfillment",
     "summary": "Psalm 22 details the sufferings of David's greater Son—pierced hands, mocking crowds, garments divided—all fulfilled at the cross.",
-    "tags": ["crucifixion", "psalms", "suffering"],
+    "tags": [
+      "crucifixion",
+      "psalms",
+      "suffering"
+    ],
     "links": [
-      {"book_dir": "psalms", "chapter_num": 22, "verse_ref": "22:1", "note": "Cry of abandonment"},
-      {"book_dir": "psalms", "chapter_num": 22, "verse_ref": "22:6-8", "note": "Mocking, shaking heads"},
-      {"book_dir": "psalms", "chapter_num": 22, "verse_ref": "22:14-18", "note": "Bones out of joint, pierced hands and feet, casting lots"},
-      {"book_dir": "matthew", "chapter_num": 27, "verse_ref": "27:35,39,43,46", "note": "Casting lots, mocking, 'Eli, Eli'"},
-      {"book_dir": "mark", "chapter_num": 15, "verse_ref": "15:24,29,34", "note": "Dividing garments, shaking heads, cry of dereliction"},
-      {"book_dir": "john", "chapter_num": 19, "verse_ref": "19:23-24,28", "note": "Soldiers cast lots for tunic; 'I thirst'"}
+      {
+        "book_dir": "psalms",
+        "chapter_num": 22,
+        "verse_ref": "22:1",
+        "note": "Cry of abandonment"
+      },
+      {
+        "book_dir": "psalms",
+        "chapter_num": 22,
+        "verse_ref": "22:6-8",
+        "note": "Mocking, shaking heads"
+      },
+      {
+        "book_dir": "psalms",
+        "chapter_num": 22,
+        "verse_ref": "22:14-18",
+        "note": "Bones out of joint, pierced hands and feet, casting lots"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 27,
+        "verse_ref": "27:35,39,43,46",
+        "note": "Casting lots, mocking, 'Eli, Eli'"
+      },
+      {
+        "book_dir": "mark",
+        "chapter_num": 15,
+        "verse_ref": "15:24,29,34",
+        "note": "Dividing garments, shaking heads, cry of dereliction"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 19,
+        "verse_ref": "19:23-24,28",
+        "note": "Soldiers cast lots for tunic; 'I thirst'"
+      }
     ]
   },
   {
@@ -280,12 +839,70 @@
     "title": "You Will Not Let Your Holy One See Decay",
     "category": "messianic",
     "type": "direct_fulfillment",
-    "summary": "Psalm 16's confidence that God will not abandon to Sheol is applied by Peter and Paul to Christ's resurrection.",
-    "tags": ["resurrection", "psalms", "life"],
+    "summary": "The hope of resurrection emerges gradually in Israel's Scripture — from the Psalter's trust that God will not abandon the faithful to Sheol, through the prophets' visions of death swallowed up, to the explicit expectations in Daniel. The NT authors read these texts as fulfilled in Jesus' rising.",
+    "tags": [
+      "resurrection",
+      "psalms",
+      "prophets",
+      "life",
+      "death",
+      "third-day"
+    ],
     "links": [
-      {"book_dir": "psalms", "chapter_num": 16, "verse_ref": "16:9-11", "note": "You will not abandon me to the realm of the dead"},
-      {"book_dir": "acts", "chapter_num": 2, "verse_ref": "2:25-31", "note": "Peter's Pentecost sermon applies Psalm 16 to Jesus"},
-      {"book_dir": "acts", "chapter_num": 13, "verse_ref": "13:35-37", "note": "Paul quotes Psalm 16 in Antioch Pisidia"}
+      {
+        "book_dir": "job",
+        "chapter_num": 19,
+        "verse_ref": "19:25-27",
+        "note": "My Redeemer lives — the earliest personal hope of vindication beyond death"
+      },
+      {
+        "book_dir": "psalms",
+        "chapter_num": 16,
+        "verse_ref": "16:9-11",
+        "note": "You will not abandon me to the grave, nor let your faithful one see decay"
+      },
+      {
+        "book_dir": "psalms",
+        "chapter_num": 49,
+        "verse_ref": "49:15",
+        "note": "God will redeem me from the realm of the dead; he will surely take me to himself"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 25,
+        "verse_ref": "25:8",
+        "note": "He will swallow up death forever — the prophetic vision of death's abolition"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 26,
+        "verse_ref": "26:19",
+        "note": "Your dead will live; their bodies will rise — the clearest OT resurrection promise"
+      },
+      {
+        "book_dir": "hosea",
+        "chapter_num": 6,
+        "verse_ref": "6:2",
+        "note": "On the third day he will raise us up — the 'third day' motif echoed in the kerygma"
+      },
+      {
+        "book_dir": "daniel",
+        "chapter_num": 12,
+        "verse_ref": "12:2-3",
+        "note": "Many who sleep in the dust will awake — individual bodily resurrection made explicit"
+      },
+      {
+        "book_dir": "acts",
+        "chapter_num": 2,
+        "verse_ref": "2:25-31",
+        "note": "Peter at Pentecost: Psalm 16 was fulfilled when God raised Jesus from the dead"
+      },
+      {
+        "book_dir": "acts",
+        "chapter_num": 13,
+        "verse_ref": "13:35-37",
+        "note": "Paul at Antioch: the one God raised did not see decay — Psalm 16 realized"
+      }
     ]
   },
   {
@@ -294,14 +911,49 @@
     "category": "covenant",
     "type": "direct_fulfillment",
     "summary": "Jeremiah's promise of a new covenant written on hearts—fulfilled in Christ's blood and the Spirit's ministry.",
-    "tags": ["covenant", "jeremiah", "heart", "spirit"],
+    "tags": [
+      "covenant",
+      "jeremiah",
+      "heart",
+      "spirit"
+    ],
     "links": [
-      {"book_dir": "jeremiah", "chapter_num": 31, "verse_ref": "31:31-34", "note": "New covenant: law on hearts, sins forgiven"},
-      {"book_dir": "ezekiel", "chapter_num": 36, "verse_ref": "36:25-27", "note": "New heart, new spirit, Spirit within"},
-      {"book_dir": "matthew", "chapter_num": 26, "verse_ref": "26:28", "note": "This is my blood of the covenant"},
-      {"book_dir": "mark", "chapter_num": 14, "verse_ref": "14:24", "note": "Blood of the covenant poured out"},
-      {"book_dir": "luke", "chapter_num": 22, "verse_ref": "22:20", "note": "This cup is the new covenant in my blood"},
-      {"book_dir": "2_corinthians", "chapter_num": 3, "verse_ref": "3:3,6", "note": "Ministers of new covenant, Spirit gives life"}
+      {
+        "book_dir": "jeremiah",
+        "chapter_num": 31,
+        "verse_ref": "31:31-34",
+        "note": "New covenant: law on hearts, sins forgiven"
+      },
+      {
+        "book_dir": "ezekiel",
+        "chapter_num": 36,
+        "verse_ref": "36:25-27",
+        "note": "New heart, new spirit, Spirit within"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 26,
+        "verse_ref": "26:28",
+        "note": "This is my blood of the covenant"
+      },
+      {
+        "book_dir": "mark",
+        "chapter_num": 14,
+        "verse_ref": "14:24",
+        "note": "Blood of the covenant poured out"
+      },
+      {
+        "book_dir": "luke",
+        "chapter_num": 22,
+        "verse_ref": "22:20",
+        "note": "This cup is the new covenant in my blood"
+      },
+      {
+        "book_dir": "2_corinthians",
+        "chapter_num": 3,
+        "verse_ref": "3:3,6",
+        "note": "Ministers of new covenant, Spirit gives life"
+      }
     ]
   },
   {
@@ -310,14 +962,49 @@
     "category": "covenant",
     "type": "progressive_revelation",
     "summary": "God's promise to Abraham—land, seed, blessing—unfolds through Genesis and finds fulfillment in Christ as the blessing extends to all nations.",
-    "tags": ["covenant", "abraham", "blessing", "nations"],
+    "tags": [
+      "covenant",
+      "abraham",
+      "blessing",
+      "nations"
+    ],
     "links": [
-      {"book_dir": "genesis", "chapter_num": 12, "verse_ref": "12:1-3", "note": "Initial promise: great nation, blessing to all peoples"},
-      {"book_dir": "genesis", "chapter_num": 15, "verse_ref": "15:1-6,18-21", "note": "Covenant ceremony, land promise, faith credited as righteousness"},
-      {"book_dir": "genesis", "chapter_num": 17, "verse_ref": "17:1-8", "note": "Covenant sign (circumcision), name change, everlasting covenant"},
-      {"book_dir": "genesis", "chapter_num": 22, "verse_ref": "22:16-18", "note": "Sworn promise after Isaac's near-sacrifice"},
-      {"book_dir": "romans", "chapter_num": 4, "verse_ref": "4:13-17", "note": "Abraham father of all who believe"},
-      {"book_dir": "galatians", "chapter_num": 3, "verse_ref": "3:8-9,14,16,29", "note": "Gentiles blessed with Abraham; believers are Abraham's offspring"}
+      {
+        "book_dir": "genesis",
+        "chapter_num": 12,
+        "verse_ref": "12:1-3",
+        "note": "Initial promise: great nation, blessing to all peoples"
+      },
+      {
+        "book_dir": "genesis",
+        "chapter_num": 15,
+        "verse_ref": "15:1-6,18-21",
+        "note": "Covenant ceremony, land promise, faith credited as righteousness"
+      },
+      {
+        "book_dir": "genesis",
+        "chapter_num": 17,
+        "verse_ref": "17:1-8",
+        "note": "Covenant sign (circumcision), name change, everlasting covenant"
+      },
+      {
+        "book_dir": "genesis",
+        "chapter_num": 22,
+        "verse_ref": "22:16-18",
+        "note": "Sworn promise after Isaac's near-sacrifice"
+      },
+      {
+        "book_dir": "romans",
+        "chapter_num": 4,
+        "verse_ref": "4:13-17",
+        "note": "Abraham father of all who believe"
+      },
+      {
+        "book_dir": "galatians",
+        "chapter_num": 3,
+        "verse_ref": "3:8-9,14,16,29",
+        "note": "Gentiles blessed with Abraham; believers are Abraham's offspring"
+      }
     ]
   },
   {
@@ -326,15 +1013,55 @@
     "category": "covenant",
     "type": "typological_fulfillment",
     "summary": "The Sinai covenant establishes Israel as God's treasured possession through law and sacrificial system—shadows pointing to Christ.",
-    "tags": ["covenant", "sinai", "law", "tabernacle"],
+    "tags": [
+      "covenant",
+      "sinai",
+      "law",
+      "tabernacle"
+    ],
     "links": [
-      {"book_dir": "exodus", "chapter_num": 19, "verse_ref": "19:3-6", "note": "Kingdom of priests, holy nation"},
-      {"book_dir": "exodus", "chapter_num": 20, "verse_ref": "20:1-17", "note": "Ten Commandments"},
-      {"book_dir": "exodus", "chapter_num": 24, "verse_ref": "24:3-8", "note": "Covenant ratified with blood"},
-      {"book_dir": "exodus", "chapter_num": 25, "verse_ref": "25:8-9", "note": "Build a sanctuary according to pattern"},
-      {"book_dir": "romans", "chapter_num": 10, "verse_ref": "10:4", "note": "Christ is the end of the law for righteousness"},
-      {"book_dir": "galatians", "chapter_num": 3, "verse_ref": "3:19,24-25", "note": "Law as guardian until Christ came"},
-      {"book_dir": "colossians", "chapter_num": 2, "verse_ref": "2:16-17", "note": "These are a shadow; the reality is Christ"}
+      {
+        "book_dir": "exodus",
+        "chapter_num": 19,
+        "verse_ref": "19:3-6",
+        "note": "Kingdom of priests, holy nation"
+      },
+      {
+        "book_dir": "exodus",
+        "chapter_num": 20,
+        "verse_ref": "20:1-17",
+        "note": "Ten Commandments"
+      },
+      {
+        "book_dir": "exodus",
+        "chapter_num": 24,
+        "verse_ref": "24:3-8",
+        "note": "Covenant ratified with blood"
+      },
+      {
+        "book_dir": "exodus",
+        "chapter_num": 25,
+        "verse_ref": "25:8-9",
+        "note": "Build a sanctuary according to pattern"
+      },
+      {
+        "book_dir": "romans",
+        "chapter_num": 10,
+        "verse_ref": "10:4",
+        "note": "Christ is the end of the law for righteousness"
+      },
+      {
+        "book_dir": "galatians",
+        "chapter_num": 3,
+        "verse_ref": "3:19,24-25",
+        "note": "Law as guardian until Christ came"
+      },
+      {
+        "book_dir": "colossians",
+        "chapter_num": 2,
+        "verse_ref": "2:16-17",
+        "note": "These are a shadow; the reality is Christ"
+      }
     ]
   },
   {
@@ -343,11 +1070,31 @@
     "category": "covenant",
     "type": "direct_fulfillment",
     "summary": "God's post-flood covenant with all creation preserves the natural order and foreshadows final restoration—never again destruction by flood.",
-    "tags": ["covenant", "noah", "creation", "rainbow"],
+    "tags": [
+      "covenant",
+      "noah",
+      "creation",
+      "rainbow"
+    ],
     "links": [
-      {"book_dir": "genesis", "chapter_num": 8, "verse_ref": "8:21-22", "note": "Seedtime and harvest, never again curse ground"},
-      {"book_dir": "genesis", "chapter_num": 9, "verse_ref": "9:8-17", "note": "Everlasting covenant with all life, rainbow sign"},
-      {"book_dir": "isaiah", "chapter_num": 54, "verse_ref": "54:9-10", "note": "As I swore in days of Noah"}
+      {
+        "book_dir": "genesis",
+        "chapter_num": 8,
+        "verse_ref": "8:21-22",
+        "note": "Seedtime and harvest, never again curse ground"
+      },
+      {
+        "book_dir": "genesis",
+        "chapter_num": 9,
+        "verse_ref": "9:8-17",
+        "note": "Everlasting covenant with all life, rainbow sign"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 54,
+        "verse_ref": "54:9-10",
+        "note": "As I swore in days of Noah"
+      }
     ]
   },
   {
@@ -356,18 +1103,73 @@
     "category": "judgment",
     "type": "progressive_revelation",
     "summary": "The prophets repeatedly warn of 'the day of the Lord'—a day of darkness and judgment that finds partial fulfillment in historical events and ultimate fulfillment in Christ's return.",
-    "tags": ["day of lord", "judgment", "darkness", "eschatology"],
+    "tags": [
+      "day of lord",
+      "judgment",
+      "darkness",
+      "eschatology"
+    ],
     "links": [
-      {"book_dir": "isaiah", "chapter_num": 2, "verse_ref": "2:12-21", "note": "Day against the proud and lofty"},
-      {"book_dir": "isaiah", "chapter_num": 13, "verse_ref": "13:6-13", "note": "Day of the Lord near—destruction from Almighty"},
-      {"book_dir": "joel", "chapter_num": 1, "verse_ref": "1:15", "note": "Day of the Lord is near"},
-      {"book_dir": "joel", "chapter_num": 2, "verse_ref": "2:1-2,31", "note": "Day of darkness; sun to darkness, moon to blood"},
-      {"book_dir": "amos", "chapter_num": 5, "verse_ref": "5:18-20", "note": "Woe to those desiring the day—darkness not light"},
-      {"book_dir": "zephaniah", "chapter_num": 1, "verse_ref": "1:14-18", "note": "Great day of the Lord near—day of wrath"},
-      {"book_dir": "malachi", "chapter_num": 4, "verse_ref": "4:1,5", "note": "Burning like furnace; Elijah before the day"},
-      {"book_dir": "acts", "chapter_num": 2, "verse_ref": "2:17-21", "note": "Peter quotes Joel at Pentecost"},
-      {"book_dir": "1_thessalonians", "chapter_num": 5, "verse_ref": "5:2-4", "note": "Day of Lord comes like a thief"},
-      {"book_dir": "2_thessalonians", "chapter_num": 2, "verse_ref": "2:1-4", "note": "Day will not come until..."}
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 2,
+        "verse_ref": "2:12-21",
+        "note": "Day against the proud and lofty"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 13,
+        "verse_ref": "13:6-13",
+        "note": "Day of the Lord near—destruction from Almighty"
+      },
+      {
+        "book_dir": "joel",
+        "chapter_num": 1,
+        "verse_ref": "1:15",
+        "note": "Day of the Lord is near"
+      },
+      {
+        "book_dir": "joel",
+        "chapter_num": 2,
+        "verse_ref": "2:1-2,31",
+        "note": "Day of darkness; sun to darkness, moon to blood"
+      },
+      {
+        "book_dir": "amos",
+        "chapter_num": 5,
+        "verse_ref": "5:18-20",
+        "note": "Woe to those desiring the day—darkness not light"
+      },
+      {
+        "book_dir": "zephaniah",
+        "chapter_num": 1,
+        "verse_ref": "1:14-18",
+        "note": "Great day of the Lord near—day of wrath"
+      },
+      {
+        "book_dir": "malachi",
+        "chapter_num": 4,
+        "verse_ref": "4:1,5",
+        "note": "Burning like furnace; Elijah before the day"
+      },
+      {
+        "book_dir": "acts",
+        "chapter_num": 2,
+        "verse_ref": "2:17-21",
+        "note": "Peter quotes Joel at Pentecost"
+      },
+      {
+        "book_dir": "1_thessalonians",
+        "chapter_num": 5,
+        "verse_ref": "5:2-4",
+        "note": "Day of Lord comes like a thief"
+      },
+      {
+        "book_dir": "2_thessalonians",
+        "chapter_num": 2,
+        "verse_ref": "2:1-4",
+        "note": "Day will not come until..."
+      }
     ]
   },
   {
@@ -376,15 +1178,55 @@
     "category": "judgment",
     "type": "direct_fulfillment",
     "summary": "Moses predicted exile for covenant unfaithfulness; the prophets specify Babylon as the agent; then promise restoration after 70 years.",
-    "tags": ["exile", "babylon", "return", "restoration"],
+    "tags": [
+      "exile",
+      "babylon",
+      "return",
+      "restoration"
+    ],
     "links": [
-      {"book_dir": "deuteronomy", "chapter_num": 28, "verse_ref": "28:36-37,64-68", "note": "Exile curses for disobedience"},
-      {"book_dir": "deuteronomy", "chapter_num": 30, "verse_ref": "30:1-5", "note": "Restoration promise after exile"},
-      {"book_dir": "isaiah", "chapter_num": 39, "verse_ref": "39:5-7", "note": "Babylon will carry everything away"},
-      {"book_dir": "jeremiah", "chapter_num": 25, "verse_ref": "25:11-12", "note": "70 years serving Babylon"},
-      {"book_dir": "jeremiah", "chapter_num": 29, "verse_ref": "29:10-14", "note": "After 70 years, I will bring you back"},
-      {"book_dir": "daniel", "chapter_num": 9, "verse_ref": "9:1-2", "note": "Daniel reads Jeremiah's 70 years"},
-      {"book_dir": "ezra", "chapter_num": 1, "verse_ref": "1:1-4", "note": "Cyrus fulfills Jeremiah's word"}
+      {
+        "book_dir": "deuteronomy",
+        "chapter_num": 28,
+        "verse_ref": "28:36-37,64-68",
+        "note": "Exile curses for disobedience"
+      },
+      {
+        "book_dir": "deuteronomy",
+        "chapter_num": 30,
+        "verse_ref": "30:1-5",
+        "note": "Restoration promise after exile"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 39,
+        "verse_ref": "39:5-7",
+        "note": "Babylon will carry everything away"
+      },
+      {
+        "book_dir": "jeremiah",
+        "chapter_num": 25,
+        "verse_ref": "25:11-12",
+        "note": "70 years serving Babylon"
+      },
+      {
+        "book_dir": "jeremiah",
+        "chapter_num": 29,
+        "verse_ref": "29:10-14",
+        "note": "After 70 years, I will bring you back"
+      },
+      {
+        "book_dir": "daniel",
+        "chapter_num": 9,
+        "verse_ref": "9:1-2",
+        "note": "Daniel reads Jeremiah's 70 years"
+      },
+      {
+        "book_dir": "ezra",
+        "chapter_num": 1,
+        "verse_ref": "1:1-4",
+        "note": "Cyrus fulfills Jeremiah's word"
+      }
     ]
   },
   {
@@ -393,14 +1235,49 @@
     "category": "judgment",
     "type": "direct_fulfillment",
     "summary": "The prophets warned Israel (northern kingdom) of Assyrian conquest for her idolatry—fulfilled in 722 BC.",
-    "tags": ["israel", "assyria", "judgment", "722 bc"],
+    "tags": [
+      "israel",
+      "assyria",
+      "judgment",
+      "722 bc"
+    ],
     "links": [
-      {"book_dir": "1_kings", "chapter_num": 14, "verse_ref": "14:15-16", "note": "God will strike Israel, uproot"},
-      {"book_dir": "2_kings", "chapter_num": 17, "verse_ref": "17:6-23", "note": "Assyria captures Samaria—covenant violations listed"},
-      {"book_dir": "hosea", "chapter_num": 1, "verse_ref": "1:4-5", "note": "End of house of Israel"},
-      {"book_dir": "hosea", "chapter_num": 9, "verse_ref": "9:3,17", "note": "Return to Egypt, wanderers among nations"},
-      {"book_dir": "amos", "chapter_num": 5, "verse_ref": "5:27", "note": "Exile beyond Damascus"},
-      {"book_dir": "amos", "chapter_num": 7, "verse_ref": "7:11,17", "note": "Israel will surely go into exile"}
+      {
+        "book_dir": "1_kings",
+        "chapter_num": 14,
+        "verse_ref": "14:15-16",
+        "note": "God will strike Israel, uproot"
+      },
+      {
+        "book_dir": "2_kings",
+        "chapter_num": 17,
+        "verse_ref": "17:6-23",
+        "note": "Assyria captures Samaria—covenant violations listed"
+      },
+      {
+        "book_dir": "hosea",
+        "chapter_num": 1,
+        "verse_ref": "1:4-5",
+        "note": "End of house of Israel"
+      },
+      {
+        "book_dir": "hosea",
+        "chapter_num": 9,
+        "verse_ref": "9:3,17",
+        "note": "Return to Egypt, wanderers among nations"
+      },
+      {
+        "book_dir": "amos",
+        "chapter_num": 5,
+        "verse_ref": "5:27",
+        "note": "Exile beyond Damascus"
+      },
+      {
+        "book_dir": "amos",
+        "chapter_num": 7,
+        "verse_ref": "7:11,17",
+        "note": "Israel will surely go into exile"
+      }
     ]
   },
   {
@@ -409,16 +1286,60 @@
     "category": "judgment",
     "type": "direct_fulfillment",
     "summary": "The prophets pronounce judgment on surrounding nations—Babylon, Edom, Tyre, Egypt, Assyria—demonstrating God's sovereignty over all history.",
-    "tags": ["nations", "judgment", "sovereignty"],
+    "tags": [
+      "nations",
+      "judgment",
+      "sovereignty"
+    ],
     "links": [
-      {"book_dir": "isaiah", "chapter_num": 13, "verse_ref": "13:1,19-22", "note": "Oracle against Babylon"},
-      {"book_dir": "isaiah", "chapter_num": 17, "verse_ref": "17:1-3", "note": "Oracle against Damascus"},
-      {"book_dir": "isaiah", "chapter_num": 19, "verse_ref": "19:1-4", "note": "Oracle against Egypt"},
-      {"book_dir": "jeremiah", "chapter_num": 50, "verse_ref": "50:1-3", "note": "Babylon captured—images shamed"},
-      {"book_dir": "ezekiel", "chapter_num": 25, "verse_ref": "25:12-14", "note": "Against Edom"},
-      {"book_dir": "ezekiel", "chapter_num": 26, "verse_ref": "26:3-6", "note": "Against Tyre"},
-      {"book_dir": "nahum", "chapter_num": 1, "verse_ref": "1:1,14", "note": "Oracle against Nineveh"},
-      {"book_dir": "obadiah", "chapter_num": 1, "verse_ref": "1:1-4", "note": "Against Edom"}
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 13,
+        "verse_ref": "13:1,19-22",
+        "note": "Oracle against Babylon"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 17,
+        "verse_ref": "17:1-3",
+        "note": "Oracle against Damascus"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 19,
+        "verse_ref": "19:1-4",
+        "note": "Oracle against Egypt"
+      },
+      {
+        "book_dir": "jeremiah",
+        "chapter_num": 50,
+        "verse_ref": "50:1-3",
+        "note": "Babylon captured—images shamed"
+      },
+      {
+        "book_dir": "ezekiel",
+        "chapter_num": 25,
+        "verse_ref": "25:12-14",
+        "note": "Against Edom"
+      },
+      {
+        "book_dir": "ezekiel",
+        "chapter_num": 26,
+        "verse_ref": "26:3-6",
+        "note": "Against Tyre"
+      },
+      {
+        "book_dir": "nahum",
+        "chapter_num": 1,
+        "verse_ref": "1:1,14",
+        "note": "Oracle against Nineveh"
+      },
+      {
+        "book_dir": "obadiah",
+        "chapter_num": 1,
+        "verse_ref": "1:1-4",
+        "note": "Against Edom"
+      }
     ]
   },
   {
@@ -427,14 +1348,49 @@
     "category": "judgment",
     "type": "direct_fulfillment",
     "summary": "The prophets predicted Babylon's fall to the Medes and Persians—fulfilled in 539 BC when Cyrus captured the city.",
-    "tags": ["babylon", "medes", "persians", "cyrus"],
+    "tags": [
+      "babylon",
+      "medes",
+      "persians",
+      "cyrus"
+    ],
     "links": [
-      {"book_dir": "isaiah", "chapter_num": 13, "verse_ref": "13:17-22", "note": "Medes against Babylon—never inhabited again"},
-      {"book_dir": "isaiah", "chapter_num": 21, "verse_ref": "21:9", "note": "Babylon has fallen, has fallen"},
-      {"book_dir": "isaiah", "chapter_num": 44, "verse_ref": "44:28", "note": "Cyrus named as God's shepherd"},
-      {"book_dir": "isaiah", "chapter_num": 45, "verse_ref": "45:1-4", "note": "Cyrus anointed to subdue nations"},
-      {"book_dir": "jeremiah", "chapter_num": 51, "verse_ref": "51:11,28", "note": "Kings of the Medes against Babylon"},
-      {"book_dir": "daniel", "chapter_num": 5, "verse_ref": "5:26-31", "note": "Handwriting on wall; Babylon falls that night"}
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 13,
+        "verse_ref": "13:17-22",
+        "note": "Medes against Babylon—never inhabited again"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 21,
+        "verse_ref": "21:9",
+        "note": "Babylon has fallen, has fallen"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 44,
+        "verse_ref": "44:28",
+        "note": "Cyrus named as God's shepherd"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 45,
+        "verse_ref": "45:1-4",
+        "note": "Cyrus anointed to subdue nations"
+      },
+      {
+        "book_dir": "jeremiah",
+        "chapter_num": 51,
+        "verse_ref": "51:11,28",
+        "note": "Kings of the Medes against Babylon"
+      },
+      {
+        "book_dir": "daniel",
+        "chapter_num": 5,
+        "verse_ref": "5:26-31",
+        "note": "Handwriting on wall; Babylon falls that night"
+      }
     ]
   },
   {
@@ -443,13 +1399,43 @@
     "category": "judgment",
     "type": "direct_fulfillment",
     "summary": "Daniel's visions reveal a sequence of world empires—Babylon, Persia, Greece, Rome—ultimately replaced by God's indestructible kingdom.",
-    "tags": ["daniel", "kingdoms", "statue", "beast"],
+    "tags": [
+      "daniel",
+      "kingdoms",
+      "statue",
+      "beast"
+    ],
     "links": [
-      {"book_dir": "daniel", "chapter_num": 2, "verse_ref": "2:31-45", "note": "Statue of four metals; stone strikes"},
-      {"book_dir": "daniel", "chapter_num": 7, "verse_ref": "7:1-14,17-27", "note": "Four beasts; Son of Man receives kingdom"},
-      {"book_dir": "daniel", "chapter_num": 8, "verse_ref": "8:20-22", "note": "Ram (Persia), goat (Greece) named"},
-      {"book_dir": "luke", "chapter_num": 2, "verse_ref": "2:1", "note": "Augustus (Roman emperor) context of Jesus' birth"},
-      {"book_dir": "mark", "chapter_num": 1, "verse_ref": "1:15", "note": "Kingdom of God is at hand"}
+      {
+        "book_dir": "daniel",
+        "chapter_num": 2,
+        "verse_ref": "2:31-45",
+        "note": "Statue of four metals; stone strikes"
+      },
+      {
+        "book_dir": "daniel",
+        "chapter_num": 7,
+        "verse_ref": "7:1-14,17-27",
+        "note": "Four beasts; Son of Man receives kingdom"
+      },
+      {
+        "book_dir": "daniel",
+        "chapter_num": 8,
+        "verse_ref": "8:20-22",
+        "note": "Ram (Persia), goat (Greece) named"
+      },
+      {
+        "book_dir": "luke",
+        "chapter_num": 2,
+        "verse_ref": "2:1",
+        "note": "Augustus (Roman emperor) context of Jesus' birth"
+      },
+      {
+        "book_dir": "mark",
+        "chapter_num": 1,
+        "verse_ref": "1:15",
+        "note": "Kingdom of God is at hand"
+      }
     ]
   },
   {
@@ -458,15 +1444,55 @@
     "category": "restoration",
     "type": "progressive_revelation",
     "summary": "The prophets promise Israel's regathering from exile—partially fulfilled in the post-exilic return, with fuller spiritual dimensions in the church.",
-    "tags": ["regathering", "exile", "return", "restoration"],
+    "tags": [
+      "regathering",
+      "exile",
+      "return",
+      "restoration"
+    ],
     "links": [
-      {"book_dir": "deuteronomy", "chapter_num": 30, "verse_ref": "30:3-5", "note": "God will gather you from all nations"},
-      {"book_dir": "isaiah", "chapter_num": 11, "verse_ref": "11:11-12", "note": "Second time to recover remnant"},
-      {"book_dir": "isaiah", "chapter_num": 43, "verse_ref": "43:5-7", "note": "Bring my sons from afar"},
-      {"book_dir": "jeremiah", "chapter_num": 29, "verse_ref": "29:14", "note": "I will gather you from all nations"},
-      {"book_dir": "jeremiah", "chapter_num": 31, "verse_ref": "31:8-10", "note": "He who scattered will gather"},
-      {"book_dir": "ezekiel", "chapter_num": 37, "verse_ref": "37:21-22", "note": "Gather from nations, one nation in land"},
-      {"book_dir": "ezra", "chapter_num": 1, "verse_ref": "1:1-4", "note": "Cyrus releases exiles to return"}
+      {
+        "book_dir": "deuteronomy",
+        "chapter_num": 30,
+        "verse_ref": "30:3-5",
+        "note": "God will gather you from all nations"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 11,
+        "verse_ref": "11:11-12",
+        "note": "Second time to recover remnant"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 43,
+        "verse_ref": "43:5-7",
+        "note": "Bring my sons from afar"
+      },
+      {
+        "book_dir": "jeremiah",
+        "chapter_num": 29,
+        "verse_ref": "29:14",
+        "note": "I will gather you from all nations"
+      },
+      {
+        "book_dir": "jeremiah",
+        "chapter_num": 31,
+        "verse_ref": "31:8-10",
+        "note": "He who scattered will gather"
+      },
+      {
+        "book_dir": "ezekiel",
+        "chapter_num": 37,
+        "verse_ref": "37:21-22",
+        "note": "Gather from nations, one nation in land"
+      },
+      {
+        "book_dir": "ezra",
+        "chapter_num": 1,
+        "verse_ref": "1:1-4",
+        "note": "Cyrus releases exiles to return"
+      }
     ]
   },
   {
@@ -475,14 +1501,49 @@
     "category": "restoration",
     "type": "direct_fulfillment",
     "summary": "Ezekiel promises internal transformation—a new heart replacing stone, God's Spirit within—fulfilled through regeneration in Christ.",
-    "tags": ["heart", "spirit", "regeneration", "transformation"],
+    "tags": [
+      "heart",
+      "spirit",
+      "regeneration",
+      "transformation"
+    ],
     "links": [
-      {"book_dir": "ezekiel", "chapter_num": 11, "verse_ref": "11:19-20", "note": "One heart, new spirit, heart of flesh"},
-      {"book_dir": "ezekiel", "chapter_num": 36, "verse_ref": "36:25-27", "note": "Clean water, new heart, my Spirit within you"},
-      {"book_dir": "john", "chapter_num": 3, "verse_ref": "3:5-8", "note": "Born of water and Spirit"},
-      {"book_dir": "romans", "chapter_num": 8, "verse_ref": "8:9-11", "note": "Spirit of God lives in you"},
-      {"book_dir": "2_corinthians", "chapter_num": 3, "verse_ref": "3:3,6", "note": "Written on hearts by Spirit"},
-      {"book_dir": "titus", "chapter_num": 3, "verse_ref": "3:5-6", "note": "Washing of rebirth and renewal by Spirit"}
+      {
+        "book_dir": "ezekiel",
+        "chapter_num": 11,
+        "verse_ref": "11:19-20",
+        "note": "One heart, new spirit, heart of flesh"
+      },
+      {
+        "book_dir": "ezekiel",
+        "chapter_num": 36,
+        "verse_ref": "36:25-27",
+        "note": "Clean water, new heart, my Spirit within you"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 3,
+        "verse_ref": "3:5-8",
+        "note": "Born of water and Spirit"
+      },
+      {
+        "book_dir": "romans",
+        "chapter_num": 8,
+        "verse_ref": "8:9-11",
+        "note": "Spirit of God lives in you"
+      },
+      {
+        "book_dir": "2_corinthians",
+        "chapter_num": 3,
+        "verse_ref": "3:3,6",
+        "note": "Written on hearts by Spirit"
+      },
+      {
+        "book_dir": "titus",
+        "chapter_num": 3,
+        "verse_ref": "3:5-6",
+        "note": "Washing of rebirth and renewal by Spirit"
+      }
     ]
   },
   {
@@ -491,12 +1552,37 @@
     "category": "restoration",
     "type": "progressive_revelation",
     "summary": "Ezekiel's vision of dry bones coming to life prophesies Israel's national restoration—and typifies spiritual resurrection through the Spirit.",
-    "tags": ["ezekiel", "resurrection", "spirit", "israel"],
+    "tags": [
+      "ezekiel",
+      "resurrection",
+      "spirit",
+      "israel"
+    ],
     "links": [
-      {"book_dir": "ezekiel", "chapter_num": 37, "verse_ref": "37:1-14", "note": "Valley of bones brought to life"},
-      {"book_dir": "romans", "chapter_num": 6, "verse_ref": "6:4-5", "note": "Walk in newness of life"},
-      {"book_dir": "ephesians", "chapter_num": 2, "verse_ref": "2:1,5", "note": "Dead in trespasses, made alive with Christ"},
-      {"book_dir": "colossians", "chapter_num": 2, "verse_ref": "2:13", "note": "Dead in sins, God made alive"}
+      {
+        "book_dir": "ezekiel",
+        "chapter_num": 37,
+        "verse_ref": "37:1-14",
+        "note": "Valley of bones brought to life"
+      },
+      {
+        "book_dir": "romans",
+        "chapter_num": 6,
+        "verse_ref": "6:4-5",
+        "note": "Walk in newness of life"
+      },
+      {
+        "book_dir": "ephesians",
+        "chapter_num": 2,
+        "verse_ref": "2:1,5",
+        "note": "Dead in trespasses, made alive with Christ"
+      },
+      {
+        "book_dir": "colossians",
+        "chapter_num": 2,
+        "verse_ref": "2:13",
+        "note": "Dead in sins, God made alive"
+      }
     ]
   },
   {
@@ -505,16 +1591,60 @@
     "category": "restoration",
     "type": "direct_fulfillment",
     "summary": "The prophets promise temple restoration after exile—fulfilled in Zerubbabel's temple, with greater glory anticipated in Christ.",
-    "tags": ["temple", "zerubbabel", "glory"],
+    "tags": [
+      "temple",
+      "zerubbabel",
+      "glory"
+    ],
     "links": [
-      {"book_dir": "isaiah", "chapter_num": 44, "verse_ref": "44:28", "note": "Cyrus shall say of Jerusalem, 'Let it be rebuilt'"},
-      {"book_dir": "jeremiah", "chapter_num": 30, "verse_ref": "30:18", "note": "City rebuilt on its ruins"},
-      {"book_dir": "ezekiel", "chapter_num": 40, "verse_ref": "40:1-5", "note": "Vision of new temple"},
-      {"book_dir": "haggai", "chapter_num": 2, "verse_ref": "2:7-9", "note": "Glory of this house greater than former"},
-      {"book_dir": "zechariah", "chapter_num": 4, "verse_ref": "4:9", "note": "Zerubbabel's hands have laid foundation"},
-      {"book_dir": "zechariah", "chapter_num": 6, "verse_ref": "6:12-13", "note": "Branch will build temple of the Lord"},
-      {"book_dir": "ezra", "chapter_num": 6, "verse_ref": "6:14-16", "note": "Temple completed"},
-      {"book_dir": "john", "chapter_num": 2, "verse_ref": "2:19-21", "note": "Jesus speaks of temple of his body"}
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 44,
+        "verse_ref": "44:28",
+        "note": "Cyrus shall say of Jerusalem, 'Let it be rebuilt'"
+      },
+      {
+        "book_dir": "jeremiah",
+        "chapter_num": 30,
+        "verse_ref": "30:18",
+        "note": "City rebuilt on its ruins"
+      },
+      {
+        "book_dir": "ezekiel",
+        "chapter_num": 40,
+        "verse_ref": "40:1-5",
+        "note": "Vision of new temple"
+      },
+      {
+        "book_dir": "haggai",
+        "chapter_num": 2,
+        "verse_ref": "2:7-9",
+        "note": "Glory of this house greater than former"
+      },
+      {
+        "book_dir": "zechariah",
+        "chapter_num": 4,
+        "verse_ref": "4:9",
+        "note": "Zerubbabel's hands have laid foundation"
+      },
+      {
+        "book_dir": "zechariah",
+        "chapter_num": 6,
+        "verse_ref": "6:12-13",
+        "note": "Branch will build temple of the Lord"
+      },
+      {
+        "book_dir": "ezra",
+        "chapter_num": 6,
+        "verse_ref": "6:14-16",
+        "note": "Temple completed"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 2,
+        "verse_ref": "2:19-21",
+        "note": "Jesus speaks of temple of his body"
+      }
     ]
   },
   {
@@ -523,14 +1653,49 @@
     "category": "restoration",
     "type": "direct_fulfillment",
     "summary": "Joel prophesies the outpouring of God's Spirit on all people—sons and daughters, old and young—fulfilled at Pentecost.",
-    "tags": ["spirit", "pentecost", "joel", "prophecy"],
+    "tags": [
+      "spirit",
+      "pentecost",
+      "joel",
+      "prophecy"
+    ],
     "links": [
-      {"book_dir": "joel", "chapter_num": 2, "verse_ref": "2:28-32", "note": "Pour out Spirit; sons and daughters prophesy"},
-      {"book_dir": "isaiah", "chapter_num": 32, "verse_ref": "32:15", "note": "Spirit poured from on high"},
-      {"book_dir": "isaiah", "chapter_num": 44, "verse_ref": "44:3", "note": "Pour out Spirit on offspring"},
-      {"book_dir": "ezekiel", "chapter_num": 39, "verse_ref": "39:29", "note": "I will pour out my Spirit on Israel"},
-      {"book_dir": "acts", "chapter_num": 2, "verse_ref": "2:1-4,16-21", "note": "Pentecost: Peter quotes Joel 2"},
-      {"book_dir": "acts", "chapter_num": 10, "verse_ref": "10:44-47", "note": "Spirit falls on Gentiles too"}
+      {
+        "book_dir": "joel",
+        "chapter_num": 2,
+        "verse_ref": "2:28-32",
+        "note": "Pour out Spirit; sons and daughters prophesy"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 32,
+        "verse_ref": "32:15",
+        "note": "Spirit poured from on high"
+      },
+      {
+        "book_dir": "isaiah",
+        "chapter_num": 44,
+        "verse_ref": "44:3",
+        "note": "Pour out Spirit on offspring"
+      },
+      {
+        "book_dir": "ezekiel",
+        "chapter_num": 39,
+        "verse_ref": "39:29",
+        "note": "I will pour out my Spirit on Israel"
+      },
+      {
+        "book_dir": "acts",
+        "chapter_num": 2,
+        "verse_ref": "2:1-4,16-21",
+        "note": "Pentecost: Peter quotes Joel 2"
+      },
+      {
+        "book_dir": "acts",
+        "chapter_num": 10,
+        "verse_ref": "10:44-47",
+        "note": "Spirit falls on Gentiles too"
+      }
     ]
   },
   {
@@ -539,14 +1704,49 @@
     "category": "typological",
     "type": "typological_fulfillment",
     "summary": "Paul explicitly identifies Adam as a 'type' of Christ—the first Adam bringing death, the last Adam bringing life and righteousness.",
-    "tags": ["adam", "typology", "first", "last"],
+    "tags": [
+      "adam",
+      "typology",
+      "first",
+      "last"
+    ],
     "links": [
-      {"book_dir": "genesis", "chapter_num": 1, "verse_ref": "1:26-28", "note": "Adam created in God's image, given dominion"},
-      {"book_dir": "genesis", "chapter_num": 2, "verse_ref": "2:7", "note": "God breathed into Adam life"},
-      {"book_dir": "genesis", "chapter_num": 3, "verse_ref": "3:17-19", "note": "Death through Adam's sin"},
-      {"book_dir": "romans", "chapter_num": 5, "verse_ref": "5:12-14", "note": "Adam a pattern of the one to come"},
-      {"book_dir": "romans", "chapter_num": 5, "verse_ref": "5:15-19", "note": "Contrast: trespass vs gift"},
-      {"book_dir": "1_corinthians", "chapter_num": 15, "verse_ref": "15:21-22,45-49", "note": "Last Adam a life-giving spirit"}
+      {
+        "book_dir": "genesis",
+        "chapter_num": 1,
+        "verse_ref": "1:26-28",
+        "note": "Adam created in God's image, given dominion"
+      },
+      {
+        "book_dir": "genesis",
+        "chapter_num": 2,
+        "verse_ref": "2:7",
+        "note": "God breathed into Adam life"
+      },
+      {
+        "book_dir": "genesis",
+        "chapter_num": 3,
+        "verse_ref": "3:17-19",
+        "note": "Death through Adam's sin"
+      },
+      {
+        "book_dir": "romans",
+        "chapter_num": 5,
+        "verse_ref": "5:12-14",
+        "note": "Adam a pattern of the one to come"
+      },
+      {
+        "book_dir": "romans",
+        "chapter_num": 5,
+        "verse_ref": "5:15-19",
+        "note": "Contrast: trespass vs gift"
+      },
+      {
+        "book_dir": "1_corinthians",
+        "chapter_num": 15,
+        "verse_ref": "15:21-22,45-49",
+        "note": "Last Adam a life-giving spirit"
+      }
     ]
   },
   {
@@ -555,14 +1755,49 @@
     "category": "typological",
     "type": "typological_fulfillment",
     "summary": "Abraham's near-sacrifice of Isaac on Moriah prefigures the Father offering His Son, with a substitute ram foreshadowing Christ the Lamb.",
-    "tags": ["isaac", "sacrifice", "substitute", "moriah"],
+    "tags": [
+      "isaac",
+      "sacrifice",
+      "substitute",
+      "moriah"
+    ],
     "links": [
-      {"book_dir": "genesis", "chapter_num": 22, "verse_ref": "22:1-2", "note": "Take your son, your only son, whom you love"},
-      {"book_dir": "genesis", "chapter_num": 22, "verse_ref": "22:7-8", "note": "God himself will provide the lamb"},
-      {"book_dir": "genesis", "chapter_num": 22, "verse_ref": "22:13-14", "note": "Ram provided as substitute—YHWH Yireh"},
-      {"book_dir": "john", "chapter_num": 1, "verse_ref": "1:29", "note": "Behold, the Lamb of God"},
-      {"book_dir": "john", "chapter_num": 3, "verse_ref": "3:16", "note": "God gave his only Son"},
-      {"book_dir": "romans", "chapter_num": 8, "verse_ref": "8:32", "note": "Did not spare his own Son"}
+      {
+        "book_dir": "genesis",
+        "chapter_num": 22,
+        "verse_ref": "22:1-2",
+        "note": "Take your son, your only son, whom you love"
+      },
+      {
+        "book_dir": "genesis",
+        "chapter_num": 22,
+        "verse_ref": "22:7-8",
+        "note": "God himself will provide the lamb"
+      },
+      {
+        "book_dir": "genesis",
+        "chapter_num": 22,
+        "verse_ref": "22:13-14",
+        "note": "Ram provided as substitute—YHWH Yireh"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 1,
+        "verse_ref": "1:29",
+        "note": "Behold, the Lamb of God"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 3,
+        "verse_ref": "3:16",
+        "note": "God gave his only Son"
+      },
+      {
+        "book_dir": "romans",
+        "chapter_num": 8,
+        "verse_ref": "8:32",
+        "note": "Did not spare his own Son"
+      }
     ]
   },
   {
@@ -571,15 +1806,55 @@
     "category": "typological",
     "type": "typological_fulfillment",
     "summary": "Joseph's suffering, rejection by brothers, exaltation, and saving of his family prefigures Christ's pattern of humiliation followed by glorification.",
-    "tags": ["joseph", "suffering", "exaltation", "typology"],
+    "tags": [
+      "joseph",
+      "suffering",
+      "exaltation",
+      "typology"
+    ],
     "links": [
-      {"book_dir": "genesis", "chapter_num": 37, "verse_ref": "37:4,18-28", "note": "Brothers hate him, sell him"},
-      {"book_dir": "genesis", "chapter_num": 39, "verse_ref": "39:20-21", "note": "Imprisoned though innocent"},
-      {"book_dir": "genesis", "chapter_num": 41, "verse_ref": "41:39-45", "note": "Exalted to second in Egypt"},
-      {"book_dir": "genesis", "chapter_num": 45, "verse_ref": "45:4-8", "note": "You meant evil; God meant it for good"},
-      {"book_dir": "genesis", "chapter_num": 50, "verse_ref": "50:20", "note": "God intended it for good—to save many lives"},
-      {"book_dir": "acts", "chapter_num": 7, "verse_ref": "7:9-10", "note": "Stephen recounts Joseph's suffering and exaltation"},
-      {"book_dir": "philippians", "chapter_num": 2, "verse_ref": "2:8-11", "note": "Humbled himself, therefore God exalted him"}
+      {
+        "book_dir": "genesis",
+        "chapter_num": 37,
+        "verse_ref": "37:4,18-28",
+        "note": "Brothers hate him, sell him"
+      },
+      {
+        "book_dir": "genesis",
+        "chapter_num": 39,
+        "verse_ref": "39:20-21",
+        "note": "Imprisoned though innocent"
+      },
+      {
+        "book_dir": "genesis",
+        "chapter_num": 41,
+        "verse_ref": "41:39-45",
+        "note": "Exalted to second in Egypt"
+      },
+      {
+        "book_dir": "genesis",
+        "chapter_num": 45,
+        "verse_ref": "45:4-8",
+        "note": "You meant evil; God meant it for good"
+      },
+      {
+        "book_dir": "genesis",
+        "chapter_num": 50,
+        "verse_ref": "50:20",
+        "note": "God intended it for good—to save many lives"
+      },
+      {
+        "book_dir": "acts",
+        "chapter_num": 7,
+        "verse_ref": "7:9-10",
+        "note": "Stephen recounts Joseph's suffering and exaltation"
+      },
+      {
+        "book_dir": "philippians",
+        "chapter_num": 2,
+        "verse_ref": "2:8-11",
+        "note": "Humbled himself, therefore God exalted him"
+      }
     ]
   },
   {
@@ -588,15 +1863,55 @@
     "category": "typological",
     "type": "typological_fulfillment",
     "summary": "Moses' role as prophet, mediator, and deliverer from bondage typifies Christ, the greater Moses who delivers from sin and death.",
-    "tags": ["moses", "deliverer", "mediator", "exodus"],
+    "tags": [
+      "moses",
+      "deliverer",
+      "mediator",
+      "exodus"
+    ],
     "links": [
-      {"book_dir": "exodus", "chapter_num": 2, "verse_ref": "2:1-10", "note": "Moses saved from death as infant"},
-      {"book_dir": "exodus", "chapter_num": 3, "verse_ref": "3:7-10", "note": "Sent to deliver Israel"},
-      {"book_dir": "exodus", "chapter_num": 14, "verse_ref": "14:21-22", "note": "Leads through Red Sea"},
-      {"book_dir": "deuteronomy", "chapter_num": 18, "verse_ref": "18:15", "note": "Prophet like me"},
-      {"book_dir": "matthew", "chapter_num": 2, "verse_ref": "2:13-15", "note": "Jesus saved from Herod, called from Egypt"},
-      {"book_dir": "john", "chapter_num": 1, "verse_ref": "1:17", "note": "Law through Moses; grace and truth through Jesus"},
-      {"book_dir": "acts", "chapter_num": 7, "verse_ref": "7:35-37", "note": "Stephen: Moses as type, prophet to come"}
+      {
+        "book_dir": "exodus",
+        "chapter_num": 2,
+        "verse_ref": "2:1-10",
+        "note": "Moses saved from death as infant"
+      },
+      {
+        "book_dir": "exodus",
+        "chapter_num": 3,
+        "verse_ref": "3:7-10",
+        "note": "Sent to deliver Israel"
+      },
+      {
+        "book_dir": "exodus",
+        "chapter_num": 14,
+        "verse_ref": "14:21-22",
+        "note": "Leads through Red Sea"
+      },
+      {
+        "book_dir": "deuteronomy",
+        "chapter_num": 18,
+        "verse_ref": "18:15",
+        "note": "Prophet like me"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 2,
+        "verse_ref": "2:13-15",
+        "note": "Jesus saved from Herod, called from Egypt"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 1,
+        "verse_ref": "1:17",
+        "note": "Law through Moses; grace and truth through Jesus"
+      },
+      {
+        "book_dir": "acts",
+        "chapter_num": 7,
+        "verse_ref": "7:35-37",
+        "note": "Stephen: Moses as type, prophet to come"
+      }
     ]
   },
   {
@@ -605,14 +1920,49 @@
     "category": "typological",
     "type": "typological_fulfillment",
     "summary": "The Passover lamb whose blood protected Israel from death typifies Christ, our Passover sacrificed for us.",
-    "tags": ["passover", "lamb", "blood", "redemption"],
+    "tags": [
+      "passover",
+      "lamb",
+      "blood",
+      "redemption"
+    ],
     "links": [
-      {"book_dir": "exodus", "chapter_num": 12, "verse_ref": "12:3-7", "note": "Lamb without defect, blood on doorposts"},
-      {"book_dir": "exodus", "chapter_num": 12, "verse_ref": "12:12-13", "note": "Blood as sign; death passes over"},
-      {"book_dir": "exodus", "chapter_num": 12, "verse_ref": "12:46", "note": "No bone broken"},
-      {"book_dir": "john", "chapter_num": 1, "verse_ref": "1:29,36", "note": "Lamb of God who takes away sin"},
-      {"book_dir": "john", "chapter_num": 19, "verse_ref": "19:14,33,36", "note": "Crucified at Passover preparation; no bones broken"},
-      {"book_dir": "1_corinthians", "chapter_num": 5, "verse_ref": "5:7", "note": "Christ, our Passover lamb, has been sacrificed"}
+      {
+        "book_dir": "exodus",
+        "chapter_num": 12,
+        "verse_ref": "12:3-7",
+        "note": "Lamb without defect, blood on doorposts"
+      },
+      {
+        "book_dir": "exodus",
+        "chapter_num": 12,
+        "verse_ref": "12:12-13",
+        "note": "Blood as sign; death passes over"
+      },
+      {
+        "book_dir": "exodus",
+        "chapter_num": 12,
+        "verse_ref": "12:46",
+        "note": "No bone broken"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 1,
+        "verse_ref": "1:29,36",
+        "note": "Lamb of God who takes away sin"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 19,
+        "verse_ref": "19:14,33,36",
+        "note": "Crucified at Passover preparation; no bones broken"
+      },
+      {
+        "book_dir": "1_corinthians",
+        "chapter_num": 5,
+        "verse_ref": "5:7",
+        "note": "Christ, our Passover lamb, has been sacrificed"
+      }
     ]
   },
   {
@@ -621,15 +1971,55 @@
     "category": "typological",
     "type": "typological_fulfillment",
     "summary": "The tabernacle and temple—God's dwelling among Israel—serve as copies pointing to Christ, the true dwelling of God with humanity.",
-    "tags": ["tabernacle", "temple", "presence", "glory"],
+    "tags": [
+      "tabernacle",
+      "temple",
+      "presence",
+      "glory"
+    ],
     "links": [
-      {"book_dir": "exodus", "chapter_num": 25, "verse_ref": "25:8-9", "note": "Make a sanctuary that I may dwell among them"},
-      {"book_dir": "exodus", "chapter_num": 40, "verse_ref": "40:34-35", "note": "Glory fills the tabernacle"},
-      {"book_dir": "1_kings", "chapter_num": 8, "verse_ref": "8:10-11", "note": "Glory fills Solomon's temple"},
-      {"book_dir": "john", "chapter_num": 1, "verse_ref": "1:14", "note": "Word became flesh and tabernacled among us"},
-      {"book_dir": "john", "chapter_num": 2, "verse_ref": "2:19-21", "note": "Temple of his body"},
-      {"book_dir": "colossians", "chapter_num": 2, "verse_ref": "2:17", "note": "Shadow; reality belongs to Christ"},
-      {"book_dir": "ephesians", "chapter_num": 2, "verse_ref": "2:21-22", "note": "We are being built into a dwelling for God"}
+      {
+        "book_dir": "exodus",
+        "chapter_num": 25,
+        "verse_ref": "25:8-9",
+        "note": "Make a sanctuary that I may dwell among them"
+      },
+      {
+        "book_dir": "exodus",
+        "chapter_num": 40,
+        "verse_ref": "40:34-35",
+        "note": "Glory fills the tabernacle"
+      },
+      {
+        "book_dir": "1_kings",
+        "chapter_num": 8,
+        "verse_ref": "8:10-11",
+        "note": "Glory fills Solomon's temple"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 1,
+        "verse_ref": "1:14",
+        "note": "Word became flesh and tabernacled among us"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 2,
+        "verse_ref": "2:19-21",
+        "note": "Temple of his body"
+      },
+      {
+        "book_dir": "colossians",
+        "chapter_num": 2,
+        "verse_ref": "2:17",
+        "note": "Shadow; reality belongs to Christ"
+      },
+      {
+        "book_dir": "ephesians",
+        "chapter_num": 2,
+        "verse_ref": "2:21-22",
+        "note": "We are being built into a dwelling for God"
+      }
     ]
   },
   {
@@ -638,13 +2028,43 @@
     "category": "typological",
     "type": "typological_fulfillment",
     "summary": "The manna that sustained Israel in the wilderness typifies Christ, the true bread from heaven who gives eternal life.",
-    "tags": ["manna", "bread", "wilderness", "life"],
+    "tags": [
+      "manna",
+      "bread",
+      "wilderness",
+      "life"
+    ],
     "links": [
-      {"book_dir": "exodus", "chapter_num": 16, "verse_ref": "16:4,14-15", "note": "Bread from heaven; what is it?"},
-      {"book_dir": "exodus", "chapter_num": 16, "verse_ref": "16:31,35", "note": "Ate manna forty years"},
-      {"book_dir": "deuteronomy", "chapter_num": 8, "verse_ref": "8:3", "note": "Man does not live by bread alone"},
-      {"book_dir": "john", "chapter_num": 6, "verse_ref": "6:30-35", "note": "True bread from heaven; I am the bread of life"},
-      {"book_dir": "john", "chapter_num": 6, "verse_ref": "6:48-51", "note": "Bread that gives life to the world"}
+      {
+        "book_dir": "exodus",
+        "chapter_num": 16,
+        "verse_ref": "16:4,14-15",
+        "note": "Bread from heaven; what is it?"
+      },
+      {
+        "book_dir": "exodus",
+        "chapter_num": 16,
+        "verse_ref": "16:31,35",
+        "note": "Ate manna forty years"
+      },
+      {
+        "book_dir": "deuteronomy",
+        "chapter_num": 8,
+        "verse_ref": "8:3",
+        "note": "Man does not live by bread alone"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 6,
+        "verse_ref": "6:30-35",
+        "note": "True bread from heaven; I am the bread of life"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 6,
+        "verse_ref": "6:48-51",
+        "note": "Bread that gives life to the world"
+      }
     ]
   },
   {
@@ -653,11 +2073,31 @@
     "category": "typological",
     "type": "typological_fulfillment",
     "summary": "Moses' bronze serpent, lifted up for Israel's healing, is explicitly applied by Jesus to his own crucifixion—look and live.",
-    "tags": ["serpent", "healing", "lifted up", "cross"],
+    "tags": [
+      "serpent",
+      "healing",
+      "lifted up",
+      "cross"
+    ],
     "links": [
-      {"book_dir": "numbers", "chapter_num": 21, "verse_ref": "21:4-9", "note": "Fiery serpents; bronze serpent on pole"},
-      {"book_dir": "john", "chapter_num": 3, "verse_ref": "3:14-15", "note": "As Moses lifted up serpent, so Son of Man must be lifted up"},
-      {"book_dir": "john", "chapter_num": 12, "verse_ref": "12:32", "note": "When I am lifted up, I will draw all people"}
+      {
+        "book_dir": "numbers",
+        "chapter_num": 21,
+        "verse_ref": "21:4-9",
+        "note": "Fiery serpents; bronze serpent on pole"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 3,
+        "verse_ref": "3:14-15",
+        "note": "As Moses lifted up serpent, so Son of Man must be lifted up"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 12,
+        "verse_ref": "12:32",
+        "note": "When I am lifted up, I will draw all people"
+      }
     ]
   },
   {
@@ -666,13 +2106,43 @@
     "category": "typological",
     "type": "typological_fulfillment",
     "summary": "Jesus identifies Jonah's three days in the fish as prefiguring his death, burial, and resurrection—the only sign given to his generation.",
-    "tags": ["jonah", "three days", "resurrection", "sign"],
+    "tags": [
+      "jonah",
+      "three days",
+      "resurrection",
+      "sign"
+    ],
     "links": [
-      {"book_dir": "jonah", "chapter_num": 1, "verse_ref": "1:17", "note": "Jonah in belly of fish three days and nights"},
-      {"book_dir": "jonah", "chapter_num": 2, "verse_ref": "2:10", "note": "Fish vomits Jonah onto dry land"},
-      {"book_dir": "matthew", "chapter_num": 12, "verse_ref": "12:39-41", "note": "Sign of Jonah; three days in heart of earth"},
-      {"book_dir": "matthew", "chapter_num": 16, "verse_ref": "16:4", "note": "No sign except sign of Jonah"},
-      {"book_dir": "luke", "chapter_num": 11, "verse_ref": "11:29-30", "note": "Son of Man will be a sign like Jonah"}
+      {
+        "book_dir": "jonah",
+        "chapter_num": 1,
+        "verse_ref": "1:17",
+        "note": "Jonah in belly of fish three days and nights"
+      },
+      {
+        "book_dir": "jonah",
+        "chapter_num": 2,
+        "verse_ref": "2:10",
+        "note": "Fish vomits Jonah onto dry land"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 12,
+        "verse_ref": "12:39-41",
+        "note": "Sign of Jonah; three days in heart of earth"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 16,
+        "verse_ref": "16:4",
+        "note": "No sign except sign of Jonah"
+      },
+      {
+        "book_dir": "luke",
+        "chapter_num": 11,
+        "verse_ref": "11:29-30",
+        "note": "Son of Man will be a sign like Jonah"
+      }
     ]
   },
   {
@@ -681,14 +2151,49 @@
     "category": "typological",
     "type": "typological_fulfillment",
     "summary": "David's role as shepherd of Israel prefigures Christ, the Good Shepherd who lays down his life for the sheep.",
-    "tags": ["david", "shepherd", "king", "flock"],
+    "tags": [
+      "david",
+      "shepherd",
+      "king",
+      "flock"
+    ],
     "links": [
-      {"book_dir": "1_samuel", "chapter_num": 16, "verse_ref": "16:11-13", "note": "David taken from sheep to be anointed king"},
-      {"book_dir": "2_samuel", "chapter_num": 5, "verse_ref": "5:2", "note": "You will shepherd my people Israel"},
-      {"book_dir": "psalms", "chapter_num": 23, "verse_ref": "23:1", "note": "The Lord is my shepherd"},
-      {"book_dir": "ezekiel", "chapter_num": 34, "verse_ref": "34:23-24", "note": "My servant David will shepherd them"},
-      {"book_dir": "matthew", "chapter_num": 2, "verse_ref": "2:6", "note": "Ruler who will shepherd my people"},
-      {"book_dir": "john", "chapter_num": 10, "verse_ref": "10:11,14-15", "note": "I am the good shepherd; I lay down my life"}
+      {
+        "book_dir": "1_samuel",
+        "chapter_num": 16,
+        "verse_ref": "16:11-13",
+        "note": "David taken from sheep to be anointed king"
+      },
+      {
+        "book_dir": "2_samuel",
+        "chapter_num": 5,
+        "verse_ref": "5:2",
+        "note": "You will shepherd my people Israel"
+      },
+      {
+        "book_dir": "psalms",
+        "chapter_num": 23,
+        "verse_ref": "23:1",
+        "note": "The Lord is my shepherd"
+      },
+      {
+        "book_dir": "ezekiel",
+        "chapter_num": 34,
+        "verse_ref": "34:23-24",
+        "note": "My servant David will shepherd them"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 2,
+        "verse_ref": "2:6",
+        "note": "Ruler who will shepherd my people"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 10,
+        "verse_ref": "10:11,14-15",
+        "note": "I am the good shepherd; I lay down my life"
+      }
     ]
   },
   {
@@ -697,13 +2202,43 @@
     "category": "typological",
     "type": "typological_fulfillment",
     "summary": "The Day of Atonement ritual—high priest entering the Most Holy Place with blood—typifies Christ's once-for-all entrance into heaven.",
-    "tags": ["atonement", "blood", "high priest", "mercy seat"],
+    "tags": [
+      "atonement",
+      "blood",
+      "high priest",
+      "mercy seat"
+    ],
     "links": [
-      {"book_dir": "leviticus", "chapter_num": 16, "verse_ref": "16:2-6", "note": "Aaron enters Most Holy Place once a year"},
-      {"book_dir": "leviticus", "chapter_num": 16, "verse_ref": "16:15-16", "note": "Blood sprinkled on mercy seat"},
-      {"book_dir": "leviticus", "chapter_num": 16, "verse_ref": "16:20-22", "note": "Scapegoat bears sins away"},
-      {"book_dir": "romans", "chapter_num": 3, "verse_ref": "3:25", "note": "God presented Christ as sacrifice of atonement"},
-      {"book_dir": "colossians", "chapter_num": 1, "verse_ref": "1:20", "note": "Making peace through blood of cross"}
+      {
+        "book_dir": "leviticus",
+        "chapter_num": 16,
+        "verse_ref": "16:2-6",
+        "note": "Aaron enters Most Holy Place once a year"
+      },
+      {
+        "book_dir": "leviticus",
+        "chapter_num": 16,
+        "verse_ref": "16:15-16",
+        "note": "Blood sprinkled on mercy seat"
+      },
+      {
+        "book_dir": "leviticus",
+        "chapter_num": 16,
+        "verse_ref": "16:20-22",
+        "note": "Scapegoat bears sins away"
+      },
+      {
+        "book_dir": "romans",
+        "chapter_num": 3,
+        "verse_ref": "3:25",
+        "note": "God presented Christ as sacrifice of atonement"
+      },
+      {
+        "book_dir": "colossians",
+        "chapter_num": 1,
+        "verse_ref": "1:20",
+        "note": "Making peace through blood of cross"
+      }
     ]
   },
   {
@@ -712,13 +2247,43 @@
     "category": "typological",
     "type": "typological_fulfillment",
     "summary": "The Sabbath rest instituted at creation and codified at Sinai points forward to the rest offered in Christ and the eternal rest to come.",
-    "tags": ["sabbath", "rest", "creation", "fulfillment"],
+    "tags": [
+      "sabbath",
+      "rest",
+      "creation",
+      "fulfillment"
+    ],
     "links": [
-      {"book_dir": "genesis", "chapter_num": 2, "verse_ref": "2:2-3", "note": "God rested on seventh day, blessed it"},
-      {"book_dir": "exodus", "chapter_num": 20, "verse_ref": "20:8-11", "note": "Remember the Sabbath; creation pattern"},
-      {"book_dir": "deuteronomy", "chapter_num": 5, "verse_ref": "5:12-15", "note": "Sabbath linked to exodus redemption"},
-      {"book_dir": "matthew", "chapter_num": 11, "verse_ref": "11:28-30", "note": "Come to me, I will give you rest"},
-      {"book_dir": "colossians", "chapter_num": 2, "verse_ref": "2:16-17", "note": "Sabbath a shadow; reality is Christ"}
+      {
+        "book_dir": "genesis",
+        "chapter_num": 2,
+        "verse_ref": "2:2-3",
+        "note": "God rested on seventh day, blessed it"
+      },
+      {
+        "book_dir": "exodus",
+        "chapter_num": 20,
+        "verse_ref": "20:8-11",
+        "note": "Remember the Sabbath; creation pattern"
+      },
+      {
+        "book_dir": "deuteronomy",
+        "chapter_num": 5,
+        "verse_ref": "5:12-15",
+        "note": "Sabbath linked to exodus redemption"
+      },
+      {
+        "book_dir": "matthew",
+        "chapter_num": 11,
+        "verse_ref": "11:28-30",
+        "note": "Come to me, I will give you rest"
+      },
+      {
+        "book_dir": "colossians",
+        "chapter_num": 2,
+        "verse_ref": "2:16-17",
+        "note": "Sabbath a shadow; reality is Christ"
+      }
     ]
   },
   {
@@ -727,14 +2292,49 @@
     "category": "typological",
     "type": "typological_fulfillment",
     "summary": "The rock struck by Moses that gave Israel water typifies Christ, the spiritual rock who provides living water.",
-    "tags": ["rock", "water", "wilderness", "christ"],
+    "tags": [
+      "rock",
+      "water",
+      "wilderness",
+      "christ"
+    ],
     "links": [
-      {"book_dir": "exodus", "chapter_num": 17, "verse_ref": "17:5-6", "note": "Strike the rock at Horeb; water flows"},
-      {"book_dir": "numbers", "chapter_num": 20, "verse_ref": "20:7-11", "note": "Speak to rock; Moses strikes it"},
-      {"book_dir": "psalms", "chapter_num": 78, "verse_ref": "78:15-16", "note": "He split rocks in the wilderness"},
-      {"book_dir": "john", "chapter_num": 4, "verse_ref": "4:13-14", "note": "Living water I give—spring of eternal life"},
-      {"book_dir": "john", "chapter_num": 7, "verse_ref": "7:37-39", "note": "Rivers of living water from within"},
-      {"book_dir": "1_corinthians", "chapter_num": 10, "verse_ref": "10:4", "note": "That rock was Christ"}
+      {
+        "book_dir": "exodus",
+        "chapter_num": 17,
+        "verse_ref": "17:5-6",
+        "note": "Strike the rock at Horeb; water flows"
+      },
+      {
+        "book_dir": "numbers",
+        "chapter_num": 20,
+        "verse_ref": "20:7-11",
+        "note": "Speak to rock; Moses strikes it"
+      },
+      {
+        "book_dir": "psalms",
+        "chapter_num": 78,
+        "verse_ref": "78:15-16",
+        "note": "He split rocks in the wilderness"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 4,
+        "verse_ref": "4:13-14",
+        "note": "Living water I give—spring of eternal life"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 7,
+        "verse_ref": "7:37-39",
+        "note": "Rivers of living water from within"
+      },
+      {
+        "book_dir": "1_corinthians",
+        "chapter_num": 10,
+        "verse_ref": "10:4",
+        "note": "That rock was Christ"
+      }
     ]
   },
   {
@@ -743,13 +2343,43 @@
     "category": "typological",
     "type": "typological_fulfillment",
     "summary": "The cities of refuge that protected the innocent manslayer typify Christ, our refuge from judgment and condemnation.",
-    "tags": ["refuge", "protection", "manslayer", "safety"],
+    "tags": [
+      "refuge",
+      "protection",
+      "manslayer",
+      "safety"
+    ],
     "links": [
-      {"book_dir": "numbers", "chapter_num": 35, "verse_ref": "35:9-15", "note": "Six cities of refuge designated"},
-      {"book_dir": "deuteronomy", "chapter_num": 19, "verse_ref": "19:2-6", "note": "Cities accessible, manslayer may flee"},
-      {"book_dir": "joshua", "chapter_num": 20, "verse_ref": "20:1-6", "note": "Cities established as refuge"},
-      {"book_dir": "psalms", "chapter_num": 46, "verse_ref": "46:1", "note": "God is our refuge and strength"},
-      {"book_dir": "romans", "chapter_num": 8, "verse_ref": "8:1", "note": "No condemnation for those in Christ Jesus"}
+      {
+        "book_dir": "numbers",
+        "chapter_num": 35,
+        "verse_ref": "35:9-15",
+        "note": "Six cities of refuge designated"
+      },
+      {
+        "book_dir": "deuteronomy",
+        "chapter_num": 19,
+        "verse_ref": "19:2-6",
+        "note": "Cities accessible, manslayer may flee"
+      },
+      {
+        "book_dir": "joshua",
+        "chapter_num": 20,
+        "verse_ref": "20:1-6",
+        "note": "Cities established as refuge"
+      },
+      {
+        "book_dir": "psalms",
+        "chapter_num": 46,
+        "verse_ref": "46:1",
+        "note": "God is our refuge and strength"
+      },
+      {
+        "book_dir": "romans",
+        "chapter_num": 8,
+        "verse_ref": "8:1",
+        "note": "No condemnation for those in Christ Jesus"
+      }
     ]
   },
   {
@@ -758,11 +2388,30 @@
     "category": "typological",
     "type": "typological_fulfillment",
     "summary": "The offering of firstfruits at harvest prefigures Christ's resurrection as the firstfruits of those who will rise.",
-    "tags": ["firstfruits", "harvest", "resurrection"],
+    "tags": [
+      "firstfruits",
+      "harvest",
+      "resurrection"
+    ],
     "links": [
-      {"book_dir": "leviticus", "chapter_num": 23, "verse_ref": "23:9-14", "note": "Wave sheaf of firstfruits before the Lord"},
-      {"book_dir": "exodus", "chapter_num": 23, "verse_ref": "23:19", "note": "Bring firstfruits to house of the Lord"},
-      {"book_dir": "1_corinthians", "chapter_num": 15, "verse_ref": "15:20,23", "note": "Christ has been raised, firstfruits of those who sleep"}
+      {
+        "book_dir": "leviticus",
+        "chapter_num": 23,
+        "verse_ref": "23:9-14",
+        "note": "Wave sheaf of firstfruits before the Lord"
+      },
+      {
+        "book_dir": "exodus",
+        "chapter_num": 23,
+        "verse_ref": "23:19",
+        "note": "Bring firstfruits to house of the Lord"
+      },
+      {
+        "book_dir": "1_corinthians",
+        "chapter_num": 15,
+        "verse_ref": "15:20,23",
+        "note": "Christ has been raised, firstfruits of those who sleep"
+      }
     ]
   },
   {
@@ -771,15 +2420,55 @@
     "category": "typological",
     "type": "typological_fulfillment",
     "summary": "The kinsman-redeemer institution—family member who redeems property and family—typifies Christ who became flesh to redeem his people.",
-    "tags": ["goel", "kinsman", "redeemer", "ruth"],
+    "tags": [
+      "goel",
+      "kinsman",
+      "redeemer",
+      "ruth"
+    ],
     "links": [
-      {"book_dir": "leviticus", "chapter_num": 25, "verse_ref": "25:25,47-49", "note": "Kinsman may redeem property or person"},
-      {"book_dir": "ruth", "chapter_num": 2, "verse_ref": "2:20", "note": "Boaz is one of our kinsman-redeemers"},
-      {"book_dir": "ruth", "chapter_num": 3, "verse_ref": "3:9", "note": "Spread your garment—you are redeemer"},
-      {"book_dir": "ruth", "chapter_num": 4, "verse_ref": "4:9-10,13-14", "note": "Boaz redeems Ruth and Naomi"},
-      {"book_dir": "john", "chapter_num": 1, "verse_ref": "1:14", "note": "Word became flesh—kinsman"},
-      {"book_dir": "galatians", "chapter_num": 4, "verse_ref": "4:4-5", "note": "Born of woman to redeem"},
-      {"book_dir": "ephesians", "chapter_num": 1, "verse_ref": "1:7", "note": "In him we have redemption"}
+      {
+        "book_dir": "leviticus",
+        "chapter_num": 25,
+        "verse_ref": "25:25,47-49",
+        "note": "Kinsman may redeem property or person"
+      },
+      {
+        "book_dir": "ruth",
+        "chapter_num": 2,
+        "verse_ref": "2:20",
+        "note": "Boaz is one of our kinsman-redeemers"
+      },
+      {
+        "book_dir": "ruth",
+        "chapter_num": 3,
+        "verse_ref": "3:9",
+        "note": "Spread your garment—you are redeemer"
+      },
+      {
+        "book_dir": "ruth",
+        "chapter_num": 4,
+        "verse_ref": "4:9-10,13-14",
+        "note": "Boaz redeems Ruth and Naomi"
+      },
+      {
+        "book_dir": "john",
+        "chapter_num": 1,
+        "verse_ref": "1:14",
+        "note": "Word became flesh—kinsman"
+      },
+      {
+        "book_dir": "galatians",
+        "chapter_num": 4,
+        "verse_ref": "4:4-5",
+        "note": "Born of woman to redeem"
+      },
+      {
+        "book_dir": "ephesians",
+        "chapter_num": 1,
+        "verse_ref": "1:7",
+        "note": "In him we have redemption"
+      }
     ]
   }
 ]
