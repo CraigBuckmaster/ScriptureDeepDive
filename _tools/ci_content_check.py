@@ -469,29 +469,42 @@ def build_summary_markdown(
             lines.append(f" ({t2_calls} Tier 2 API calls, ~${t2_cost:.2f})")
         lines.append("")
 
-        # Show non-passing claims grouped by chapter → panel
+        # Compact summary: group non-passing claims by status + type
         if issues_by_chapter:
-            for ch_id in sorted(issues_by_chapter.keys()):
-                claims = issues_by_chapter[ch_id]
-                lines.append(f"#### {ch_id}")
+            all_issues = [c for claims in issues_by_chapter.values() for c in claims]
+
+            # Show refuted claims in full (these are blocking)
+            refuted = [c for c in all_issues if c["status"] == STATUS_REFUTED]
+            if refuted:
+                lines.append(f"#### ❌ Refuted ({len(refuted)})")
                 lines.append("")
-                lines.append("| Panel | Type | Status | Note |")
-                lines.append("|-------|------|--------|------|")
-                for c in claims:
-                    status_icon = "❌" if c["status"] == STATUS_REFUTED else "⚠️"
+                lines.append("| Chapter | Panel | Type | Note |")
+                lines.append("|---------|-------|------|------|")
+                for c in refuted:
                     note = c["notes"][:120] if c["notes"] else ""
-                    lines.append(
-                        f"| `{c['panel_type']}` | {c['claim_type']} "
-                        f"| {status_icon} {c['status']} | {note} |"
-                    )
+                    lines.append(f"| {c['chapter_id']} | `{c['panel_type']}` | {c['claim_type']} | {note} |")
                 lines.append("")
 
-                # Show fix suggestions for refuted claims
-                refuted = [c for c in claims if c["status"] == STATUS_REFUTED and c.get("fix_suggestion")]
-                if refuted:
-                    for c in refuted:
+                # Fix suggestions
+                with_fix = [c for c in refuted if c.get("fix_suggestion")]
+                if with_fix:
+                    for c in with_fix:
                         lines.append(f"> **Fix `{c['panel_type']}`:** {c['fix_suggestion'][:200]}")
                     lines.append("")
+
+            # Summarize flagged/unverified as counts only (not individual rows)
+            flagged = [c for c in all_issues if c["status"] == STATUS_FLAGGED]
+            unverified = [c for c in all_issues if c["status"] not in (STATUS_REFUTED, STATUS_FLAGGED)]
+            if flagged or unverified:
+                lines.append("| Status | Count | Types |")
+                lines.append("|--------|-------|-------|")
+                if flagged:
+                    types = sorted(set(c["claim_type"] for c in flagged))
+                    lines.append(f"| ⚠️ Flagged | {len(flagged)} | {', '.join(types)} |")
+                if unverified:
+                    types = sorted(set(c["claim_type"] for c in unverified))
+                    lines.append(f"| ℹ️ Unverified | {len(unverified)} | {', '.join(types)} |")
+                lines.append("")
 
     # ── Regression ─────────────────────────────────────────────
     if regression["resolved"]:

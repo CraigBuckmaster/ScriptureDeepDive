@@ -4608,34 +4608,60 @@
     ],
     "passage": "Exodus 1",
     "question": "Identity of the \"New King\"",
-    "context": "",
+    "context": "Exodus 1:8 introduces 'a new king over Egypt, who did not know Joseph.' The question of whether this pharaoh represents a new dynasty — most commonly identified with the native Egyptian 18th Dynasty that expelled the Hyksos (c. 1550 BC) — or simply a new ruler within the same dynasty has significant implications for dating the exodus and for understanding Israel's transition from favored guests to enslaved population. The LXX adds 'who did not know Joseph,' which some take as emphasizing political repudiation rather than mere ignorance.",
     "positions": [
       {
         "id": "new-dynasty-post-hyksos",
         "label": "New Dynasty — Post-Hyksos",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Sarna, Cassuto",
         "argument": "The Hyksos were Semitic rulers sympathetic to Joseph's people. Their expulsion c.1550 BC by Ahmose I created a native dynasty that viewed Semites as a threat. \"Did not know Joseph\" reflects this political rupture — a new regime with no obligation to honour the Semitic administrator's legacy.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Explains the dramatic shift from favor to oppression as a regime change; the Hyksos were Semitic rulers, making native Egyptian hostility toward a Semitic population historically coherent; aligns with the verb 'did not know' (yāda') as political repudiation of Hyksos-era arrangements.",
+        "weaknesses": "Depends on identifying the Israelites with or alongside the Hyksos, which is debated; the text itself does not specify a dynastic change; the Hyksos-expulsion date (c. 1550 BC) creates chronological tension with some exodus dating schemes.",
+        "key_verses": [
+          "Exodus 1:8",
+          "Exodus 1:9-10",
+          "Genesis 47:1-6",
+          "Acts 7:18"
+        ]
       },
       {
         "id": "new-king-same-dynasty",
         "label": "New King, Same Dynasty",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Kitchen, Hoffmeier",
         "argument": "The term \"new king\" need not mean a new dynasty. It may simply refer to a new reign within a continuing dynasty — the accession of a king who chose to repudiate his predecessor's policies. This allows more flexibility in identifying the specific pharaoh.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Requires fewer historical assumptions; 'new king' (melek ḥādāsh) need not imply a new dynasty — it can mean a new ruler with new policies; political amnesia within a single dynasty is well attested in Egyptian history.",
+        "weaknesses": "Struggles to explain why the same dynasty that elevated Joseph would suddenly enslave his people; the totality of the policy reversal (forced labor, infanticide) implies more than a change of ruler; the term ḥādāsh carries connotations of discontinuity that favor a more dramatic break.",
+        "key_verses": [
+          "Exodus 1:8",
+          "Exodus 1:11-14",
+          "Genesis 50:22-26"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The new-dynasty reading (post-Hyksos expulsion) remains the majority view because it best explains the radical shift from Joseph's privileged position to Israelite oppression: a native Egyptian dynasty would have reasons to distrust a Semitic population associated with the hated Hyksos. The same-dynasty view avoids speculative historical reconstruction but struggles to explain the severity of the policy reversal. Both readings agree that 'did not know Joseph' carries political rather than cognitive weight — it means refusal to honor the prior relationship, not mere ignorance.",
+    "related_passages": [
+      "Exodus 1:8-14",
+      "Genesis 47:1-6",
+      "Acts 7:17-19",
+      "Genesis 15:13-14",
+      "Exodus 1:15-22"
+    ],
+    "tags": [
+      "pharaoh",
+      "hyksos",
+      "dating",
+      "egypt",
+      "oppression",
+      "exodus"
+    ]
   },
   {
     "id": "was-moses-killing-of-the-egyptian-morally-justified",
@@ -4720,7 +4746,7 @@
     ],
     "passage": "Exodus 3",
     "question": "The Revelation of the Divine Name: New at Sinai or Previously Known?",
-    "context": "",
+    "context": "In Exodus 6:2–3, God says to Moses, 'I appeared to Abraham, to Isaac and to Jacob as God Almighty (El Shaddai), but by my name the LORD (YHWH) I did not make myself fully known to them.' Yet Genesis uses the name YHWH extensively, including in patriarchal speech (Gen 15:2, 7; 16:2). This apparent contradiction is central to the documentary hypothesis (different sources used different divine names) and to evangelical harmonization efforts. The key exegetical question is whether Exodus 6:3 denies prior knowledge of the name or prior experience of its covenantal significance.",
     "positions": [
       {
         "id": "new-revelation",
@@ -4729,25 +4755,51 @@
         "scholar_ids": [],
         "proponents": "Most source critics (Wellhausen, Noth)",
         "argument": "Exodus 6:3 states explicitly: \"by my name the LORD I did not make myself known to [Abraham, Isaac, Jacob].\" The Tetragrammaton was unknown before Moses. The appearances of YHWH in Genesis are either anachronistic editorial insertions by the Jahwist source or should be translated differently.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Takes Exodus 6:3 at face value — the patriarchs did not know the name YHWH; explains the Genesis use of YHWH as the narrator's retrospective application of the name; consistent with source-critical analysis that identifies distinct divine-name traditions.",
+        "weaknesses": "Must explain why the final-form narrator used YHWH throughout Genesis if the name was unknown before Moses; Genesis 4:26 ('At that time people began to call on the name of the LORD') explicitly introduces YHWH worship in the pre-patriarchal period; the reading creates a flat contradiction within the canonical text.",
+        "key_verses": [
+          "Exodus 6:2-3",
+          "Genesis 4:26",
+          "Exodus 3:13-15"
+        ]
       },
       {
         "id": "previously-known-now-fully-disclosed",
         "label": "Previously Known, Now Fully Disclosed",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna",
+          "macarthur"
+        ],
         "proponents": "Conservative scholars (Kitchen, Sarna, MacArthur)",
         "argument": "Gen 4:26 (\"at that time people began to call upon the name of the LORD\") shows YHWH was known earlier. Gen 15:7 has God identify himself as YHWH to Abraham. Exod 6:3 means not \"never heard the name\" but \"never experienced the full covenant significance of the name\" — Abraham knew the name but not the full redemptive programme it encodes. The disclosure at the burning bush is qualitative, not merely nominal.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Resolves the canonical tension by distinguishing nominal knowledge from experiential knowledge; the niphal nôda'tî ('made myself known') supports experiential rather than informational meaning; the patriarchs knew the name but had not yet experienced YHWH's covenant-keeping power through national deliverance.",
+        "weaknesses": "The plain sense of 'by my name YHWH I did not make myself known' resists the experiential reinterpretation; the reading requires treating Exodus 6:3b as a rhetorical question or qualified statement, which is grammatically possible but debated; may be driven more by harmonization needs than by the text's own syntax.",
+        "key_verses": [
+          "Exodus 6:2-3",
+          "Exodus 6:6-8",
+          "Genesis 15:7",
+          "Psalm 9:10"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Source critics take Exodus 6:3 as evidence that the P source did not use YHWH before Moses, while J used it from Genesis 4:26 onward — two incompatible traditions preserved by a redactor. Evangelical interpreters generally read 6:3 as distinguishing between knowing the name (which the patriarchs did) and experiencing its fullness through the exodus acts of deliverance. The Hebrew nôda'tî ('I made myself known') can carry experiential weight beyond mere nominal identification. Neither reading is without difficulty: the source-critical reading must explain the final form's coherence, while the evangelical reading must explain why the text frames the name as something new.",
+    "related_passages": [
+      "Exodus 6:2-8",
+      "Exodus 3:13-15",
+      "Genesis 4:26",
+      "Genesis 15:7",
+      "Genesis 28:13",
+      "Psalm 9:10"
+    ],
+    "tags": [
+      "divine-name",
+      "yhwh",
+      "el-shaddai",
+      "revelation",
+      "documentary-hypothesis",
+      "exodus"
+    ]
   },
   {
     "id": "the-nature-of-the-divine-name-yhwh",
@@ -4837,34 +4889,61 @@
     ],
     "passage": "Exodus 4",
     "question": "Moses' Authorship and the 'Not Eloquent' Claim",
-    "context": "",
+    "context": "Moses claims to be 'slow of speech and tongue' (Exodus 4:10), yet the Pentateuch contains some of the most powerful rhetoric in the Hebrew Bible, including the Song of the Sea (ch. 15) and Deuteronomy's speeches. Critics ask how an inarticulate man could produce such literary masterpieces; defenders note that writing ability and speaking ability are distinct skills, and that God explicitly promises to help Moses speak (4:11–12). The question intersects with broader Mosaic authorship debates.",
     "positions": [
       {
         "id": "moses-as-historical-author-of-these-spee",
         "label": "Moses as historical author of these speeches",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Traditional, MacArthur, Kitchen",
         "argument": "If Moses authored the Pentateuch, his claim of not being eloquent requires explanation. Possible answers: (1) the claim was literally true in Hebrew — he may have been more fluent in Egyptian; (2) Aaron's role as spokesman was genuine for the early encounters; (3) Moses grew in confidence over time (cf. Deut 1:3, where he speaks extensively without Aaron).",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Acts 7:22 describes Moses as 'educated in all the wisdom of the Egyptians, powerful in speech and action,' suggesting the impediment was overcome; God's promise to be 'with your mouth' (4:12) directly addresses the limitation; writing and public speaking are distinct skills.",
+        "weaknesses": "The repeated emphasis on the impediment (4:10; 6:12, 30) seems too sustained for mere convention; if God overcame the impediment, the narrative purpose of Aaron as spokesman (4:14–16) is unclear; the literary polish of the Pentateuch suggests professional scribal composition.",
+        "key_verses": [
+          "Exodus 4:10-12",
+          "Exodus 4:14-16",
+          "Acts 7:22",
+          "Deuteronomy 31:9"
+        ]
       },
       {
         "id": "later-editorial-composition",
         "label": "Later editorial composition",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Documentary hypothesis scholars",
         "argument": "The 'not eloquent' claim is a narrative device from a source tradition (J or E) that emphasised Moses' need for Aaron. Another tradition (D, Deuteronomy) shows Moses as eloquent. The contradiction is resolved by positing multiple sources rather than authorial self-consistency.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The 'reluctant prophet' motif (cf. Jeremiah, Isaiah, Jonah) is a recognized literary convention; the Pentateuch's literary sophistication reflects scribal composition; the speech impediment functions narratively to introduce Aaron as co-leader, not as biographical data about authorship.",
+        "weaknesses": "Identifying the claim as literary convention does not preclude a historical core; the text itself attributes writing to Moses (Exod 17:14; 24:4; 34:27); later editorial shaping is compatible with Mosaic origination of the core material.",
+        "key_verses": [
+          "Exodus 4:10",
+          "Exodus 17:14",
+          "Exodus 24:4",
+          "Jeremiah 1:6-9"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The tension between Moses' self-described speech impediment and the Pentateuch's literary quality admits multiple resolutions. Moses' claim may be a conventional modesty topos (cf. Jeremiah 1:6); it may describe a genuine speech impediment that did not affect writing; or it may reflect a real limitation that God overcame as promised (4:11–12). Critical scholars generally see the claim as a literary motif (the reluctant prophet) rather than biographical data. The question ultimately turns on one's prior commitments regarding Mosaic authorship rather than on the speech-impediment claim itself.",
+    "related_passages": [
+      "Exodus 4:10-16",
+      "Exodus 6:12",
+      "Exodus 6:30",
+      "Jeremiah 1:6-9",
+      "Isaiah 6:5-7",
+      "Acts 7:22"
+    ],
+    "tags": [
+      "moses",
+      "authorship",
+      "speech",
+      "reluctant-prophet",
+      "pentateuch"
+    ]
   },
   {
     "id": "the-three-day-journey-diplomatic-minimalism-or-genuine-reque",
@@ -4876,34 +4955,60 @@
     ],
     "passage": "Exodus 5",
     "question": "The 'Three-Day Journey': Diplomatic Minimalism or Genuine Request?",
-    "context": "",
+    "context": "Moses repeatedly asks Pharaoh for permission to take a three-day journey into the wilderness to worship (Exodus 3:18; 5:3; 8:27), yet God's actual intention is permanent departure from Egypt. The discrepancy raises ethical questions: is Moses being deceptive, or is the 'three-day journey' a legitimate diplomatic opening that Pharaoh is expected to understand as a broader request? ANE diplomatic conventions and prophetic speech patterns inform both readings.",
     "positions": [
       {
         "id": "diplomatic-opening-gambit",
         "label": "Diplomatic opening gambit",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Cassuto, Fretheim",
         "argument": "Moses asks for less than God intends in order to begin negotiation. This is a standard ancient diplomatic approach — start with a modest, reasonable request; escalate if refused. The three-day journey is not the full Exodus but a first step deliberately designed to seem achievable.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "ANE diplomatic protocol routinely used minimized initial requests; Pharaoh's refusal of even the smaller request exposes his tyranny and justifies escalation; the progressive negotiations (three-day journey → men only → all people → livestock too) follow a recognized bargaining pattern.",
+        "weaknesses": "Can appear to endorse strategic deception in God's name; the text never acknowledges the gap between the stated request and the actual divine intent; modern readers may find the diplomatic-convention explanation too convenient.",
+        "key_verses": [
+          "Exodus 3:18",
+          "Exodus 5:1-3",
+          "Exodus 8:25-28",
+          "Exodus 10:24-26"
+        ]
       },
       {
         "id": "genuine-religious-request",
         "label": "Genuine religious request",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Sarna, Kitchen",
         "argument": "Wilderness sacrifices were a genuine practice. The request is real, not tactical. The full extent of the Exodus was not revealed to Pharaoh immediately because the revelation was progressive — each refusal revealed more of God's plan. The initial request was genuine; the subsequent plagues were the escalating divine response to Pharaoh's refusal.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Takes the request at face value — worship in the wilderness was genuinely needed (Egyptian territory was unsuitable for Israelite sacrifice, cf. 8:26); the request becomes moot when Pharaoh refuses, at which point God escalates; no deception is involved because the initial request is sincere.",
+        "weaknesses": "God tells Moses in advance that the goal is permanent departure (3:8, 17), making the three-day request a subset of the full intent at best; the reading must explain why the text never returns to the three-day framework after the tenth plague; treats the request too literally for ANE diplomatic context.",
+        "key_verses": [
+          "Exodus 3:18",
+          "Exodus 8:26-27",
+          "Exodus 3:8"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Most scholars recognize that the three-day request functions within ANE diplomatic conventions where initial requests were understood as negotiating positions, not literal terms. Pharaoh's refusal of even the minimal request demonstrates his unreasonableness and justifies the escalation of plagues. The ethical question depends on whether one applies modern Western standards of literal truthfulness or ANE conventions of diplomatic speech. The narrative itself shows no concern about deception — the focus is entirely on Pharaoh's refusal and God's response.",
+    "related_passages": [
+      "Exodus 3:18",
+      "Exodus 5:1-3",
+      "Exodus 8:25-28",
+      "Exodus 10:8-11",
+      "Exodus 10:24-26"
+    ],
+    "tags": [
+      "moses",
+      "pharaoh",
+      "diplomacy",
+      "ethics",
+      "exodus-request",
+      "ancient-near-east"
+    ]
   },
   {
     "id": "exodus-6-3-and-the-documentary-hypothesis",
@@ -5228,34 +5333,62 @@
     ],
     "passage": "Exodus 10",
     "question": "Pharaoh's Servants' Role in the Hardening Narrative",
-    "context": "",
+    "context": "Pharaoh's servants (officials/courtiers) play a notable role in the plague narrative. By the seventh plague, they urge Pharaoh to release Israel (10:7), recognizing what Pharaoh refuses to admit. Their progressive persuasion contrasts with Pharaoh's escalating hardness. The question is whether the servants function as morally culpable participants in the oppression or as literary devices that heighten the narrative's dramatic tension.",
     "positions": [
       {
         "id": "servants-as-morally-culpable-accomplices",
         "label": "Servants as morally culpable accomplices",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "MacArthur, most conservative scholars",
         "argument": "Exodus 9:34 explicitly states 'he and his servants hardened their hearts.' The servants are morally responsible participants in the corporate resistance to God. Their later plea (10:7) does not exonerate them — it merely shows their pragmatic calculation has changed while Pharaoh's has not.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The servants participate in the oppression system; the magicians actively oppose Moses (7:11, 22; 8:7); Exodus 9:20–21 distinguishes servants who feared God from those who did not, implying moral accountability; the final plague strikes all Egyptian firstborn, including servants' households.",
+        "weaknesses": "The text shows servants progressively breaking from Pharaoh (8:19 — 'This is the finger of God'; 10:7 — 'Let the people go'), complicating a flat culpability reading; some servants actively protect Israelites during the hail warning (9:20).",
+        "key_verses": [
+          "Exodus 7:11-12",
+          "Exodus 9:20-21",
+          "Exodus 10:7",
+          "Exodus 12:30"
+        ]
       },
       {
         "id": "servants-as-narrative-device-for-escalat",
         "label": "Servants as narrative device for escalation",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Alter, literary critics",
         "argument": "The servants' plea in 10:7 functions narratively to isolate Pharaoh — he is now resisting not only God and Moses but his own court. The servants are less developed characters than Pharaoh; their shift marks the political isolation that precedes Pharaoh's total defeat in ch.14.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The servants function as a dramatic foil: their growing recognition of YHWH's power makes Pharaoh's hardness increasingly irrational; the magicians' progression (replication → failure → acknowledgment → absence) tracks the narrative's escalation; 10:7 creates the climactic 'even your own people see it' moment.",
+        "weaknesses": "Reducing the servants to a literary device underplays their moral agency, which the text emphasizes in 9:20–21; the narrative distinguishes individual servants' responses, suggesting they are more than plot functions; literary function and moral characterization are not mutually exclusive.",
+        "key_verses": [
+          "Exodus 8:18-19",
+          "Exodus 9:11",
+          "Exodus 10:7",
+          "Exodus 11:3"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The servants serve both functions simultaneously. They are participants in the oppression (beneficiaries of slave labor who initially comply with Pharaoh's orders), yet they also function as a narrative gauge of reasonable response — when even Pharaoh's own officials can see the futility, Pharaoh's hardness becomes inexcusable. The seventh-plague turning point (10:7) is widely recognized as a key structural moment. Some servants respond to warnings (9:20 — those who 'feared the word of the LORD'), showing that individual moral agency persists even within a complicit system.",
+    "related_passages": [
+      "Exodus 7:11",
+      "Exodus 8:19",
+      "Exodus 9:20-21",
+      "Exodus 10:7",
+      "Exodus 11:3",
+      "Exodus 12:33"
+    ],
+    "tags": [
+      "pharaoh",
+      "servants",
+      "hardening",
+      "plagues",
+      "moral-agency",
+      "narrative"
+    ]
   },
   {
     "id": "the-death-of-the-firstborn-theological-justice-and-the-probl",
@@ -5346,45 +5479,79 @@
     ],
     "passage": "Exodus 12",
     "question": "Passover and Atonement: Substitution or Apotropaic Sign?",
-    "context": "",
+    "context": "The Passover lamb's blood on the doorposts (Exodus 12) has been interpreted through multiple theological lenses. Christian theology typically reads it as substitutionary atonement — the lamb dies in place of the firstborn. ANE parallels suggest an apotropaic function — the blood wards off the destroyer as a protective sign. A third reading emphasizes the blood as a covenant-recognition mark: God 'passes over' houses marked as belonging to his covenant people. The question has significant implications for how one reads the cross in light of Passover.",
     "positions": [
       {
         "id": "substitutionary-atonement",
         "label": "Substitutionary atonement",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Calvin, MacArthur, evangelical tradition",
         "argument": "The lamb dies in place of the firstborn. The blood covers the household; the destroying angel 'passes over' those protected by the blood. The structure is substitutionary: an innocent life is taken so that another life is spared. This is the same structure as the sin offering (Lev 4) and finds its fulfilment in Christ's sacrifice (1 Cor 5:7: 'Christ our Passover has been sacrificed').",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The lamb dies so the firstborn does not — the substitutionary logic is present even if the term 'atonement' is not used; NT writers explicitly develop the Passover-lamb-as-substitute theology (1 Cor 5:7; John 1:29; 1 Pet 1:18–19); the selection, inspection, and slaughter of a 'lamb without defect' implies sacrificial significance.",
+        "weaknesses": "Exodus 12 does not use atonement vocabulary (kipper); the text focuses on the blood as a sign (12:13), not on the lamb's death as substitution; reading full NT substitutionary atonement back into Exodus may over-determine the original meaning.",
+        "key_verses": [
+          "Exodus 12:5-7",
+          "Exodus 12:13",
+          "1 Corinthians 5:7",
+          "1 Peter 1:18-19"
+        ]
       },
       {
         "id": "apotropaic-ritual-warding-off-divine-dem",
         "label": "Apotropaic ritual: warding off divine/demonic harm",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Some critical scholars (de Vaux, Noth)",
         "argument": "The blood-on-doorposts ritual has parallels in ancient Near Eastern apotropaic practices — blood or red ochre applied to doorways to ward off harmful spirits. The Passover may have begun as a pre-Israelite shepherding festival (marking the transition from winter to spring pastures) that was historicised into the Exodus narrative. The 'destroyer' (mashchit, v.23) is not YHWH himself but a sub-divine agent.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The blood functions explicitly as a sign (12:13) that causes the destroyer to 'pass over'; ANE parallels for blood-on-doorposts as protective ritual are well attested; the text's own emphasis is on protection from the mashḥît (destroyer), not on the lamb's death as atoning sacrifice.",
+        "weaknesses": "Comparing Israelite worship to pagan apotropaic magic risks flattening the theological distinctiveness of the event; the later canonical trajectory clearly develops sacrificial and substitutionary dimensions that are at least embryonic in Exodus 12; the term 'apotropaic' may import categories foreign to the text's own theological world.",
+        "key_verses": [
+          "Exodus 12:13",
+          "Exodus 12:23",
+          "Exodus 12:7"
+        ]
       },
       {
         "id": "divine-recognition-sign-within-covenant",
         "label": "Divine recognition sign within covenant",
         "tradition_family": "reformed",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke"
+        ],
         "proponents": "Sarna, Childs",
         "argument": "The blood is a covenant sign — a visible marker that identifies the household as belonging to YHWH and therefore exempt from judgment. The mechanism is not strictly substitutionary (the lamb doesn't die for the firstborn's specific sin) nor merely apotropaic (warding off evil) but covenantal: the sign identifies covenant membership, and the covenant member is protected.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The blood marks covenant community membership — God recognizes and protects his own; the communal-meal context (12:3–4) emphasizes corporate identity over individual substitution; the ongoing observance (12:14, 24–27) functions as covenant renewal rather than repeated atonement.",
+        "weaknesses": "Does not fully account for why blood specifically is required — if the sign is purely identificatory, any mark would suffice; the death of the lamb remains unexplained if the blood is only a recognition sign; may under-read the sacrificial dimension.",
+        "key_verses": [
+          "Exodus 12:3-4",
+          "Exodus 12:13-14",
+          "Exodus 12:24-27"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The three readings are not strictly incompatible, but they emphasize different aspects. The substitutionary reading draws strong support from later biblical theology (Isaiah 53; 1 Cor 5:7) but may read NT categories back into Exodus. The apotropaic reading fits the ANE context and the text's own language (the destroyer, the blood as sign) but may strip the event of its atoning dimension. The covenant-recognition reading accounts for the communal-meal context and the marking of God's people. Most scholars recognize multiple layers: the Passover functions simultaneously as protection, identification, and (at least incipiently) substitution.",
+    "related_passages": [
+      "Exodus 12:1-28",
+      "Exodus 12:43-49",
+      "Isaiah 53:7",
+      "1 Corinthians 5:7",
+      "John 1:29",
+      "1 Peter 1:18-19"
+    ],
+    "tags": [
+      "passover",
+      "atonement",
+      "substitution",
+      "apotropaic",
+      "blood",
+      "covenant",
+      "lamb"
+    ]
   },
   {
     "id": "the-exodus-route-northern-central-or-southern",
@@ -5396,7 +5563,7 @@
     ],
     "passage": "Exodus 13",
     "question": "The Exodus Route: Northern, Central, or Southern?",
-    "context": "",
+    "context": "The exodus route from Egypt to Sinai is one of the most debated geographical questions in biblical studies. Exodus 13:17–18 rules out the northern 'Way of the Philistines' (Way of Horus), but the alternative is unclear. Proposed routes depend on identifying the 'Sea of Reeds' (yam sûp), the location of Sinai/Horeb, and several way-stations (Succoth, Etham, Pi-hahiroth, Marah, Elim). None of these identifications is certain, and each proposed route has geographical, archaeological, and textual arguments in its favor.",
     "positions": [
       {
         "id": "northern-route-way-of-horus",
@@ -5405,20 +5572,32 @@
         "scholar_ids": [],
         "proponents": "Some archaeologists",
         "argument": "The most direct route from Goshen to Canaan ran along the Mediterranean coast. 'The way of the Philistines' mentioned in 13:17 could refer to this route. The 'Sea of Reeds' could be a marshy lake in the eastern Delta.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The Bitter Lakes and Lake Timsah provide plausible 'Sea of Reeds' locations; the route passes near known Egyptian sites (Pithom, Rameses); Exodus 14:2 mentions Pi-hahiroth and Baal-Zephon, which may be located in the northern isthmus region.",
+        "weaknesses": "Exodus 13:17 explicitly says God did not lead them by 'the road through the Philistine country' (the northern coastal route); the Bitter Lakes are shallow and small, raising questions about the dramatic crossing described in Exodus 14; places Sinai problematically close to Egypt.",
+        "key_verses": [
+          "Exodus 13:17-18",
+          "Exodus 14:2",
+          "Numbers 33:5-8"
+        ]
       },
       {
         "id": "central-southern-route-via-sinai",
         "label": "Central/Southern route via Sinai",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna",
+          "macarthur"
+        ],
         "proponents": "Traditional identification, most evangelical scholars",
         "argument": "The route through the central or southern Sinai Peninsula leads to the traditional location of Mt Sinai at Jebel Musa. The crossing of yam suph occurred at the Gulf of Suez or at a lake in the Suez region. This route's length fits the wilderness wandering narrative.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Has the longest interpretive tradition (Byzantine monasticism, early pilgrimage); Jebel Musa fits the description of a large, isolated mountain; the route's three-day stages between way-stations match the Sinai Peninsula's geography; the wilderness of Sin and Sinai are etymologically connected.",
+        "weaknesses": "The identification of Jebel Musa with Sinai dates only to the 4th century AD; the deep-water crossing required at the Gulf of Suez raises historical questions; the Sinai Peninsula is geologically volcanic-free, yet the Sinai theophany descriptions (smoke, fire, earthquake) suggest volcanic imagery.",
+        "key_verses": [
+          "Exodus 15:22-27",
+          "Exodus 16:1",
+          "Exodus 19:1-2",
+          "1 Kings 19:8"
+        ]
       },
       {
         "id": "eastern-route-via-midian",
@@ -5427,14 +5606,33 @@
         "scholar_ids": [],
         "proponents": "Har el-Lawz theory, some recent scholars",
         "argument": "Mt Sinai is identified with Jebel al-Lawz in northwestern Arabia (modern Saudi Arabia). The crossing occurred at the Gulf of Aqaba. This route fits Paul's statement that 'Sinai is in Arabia' (Gal 4:25). Archaeological evidence at Jebel al-Lawz is disputed.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Galatians 4:25 says 'Sinai is a mountain in Arabia'; Moses encountered the burning bush while tending Jethro's flocks in Midian (northwest Arabia); volcanic activity in the Hejaz region fits the fire-and-smoke theophany descriptions; several scholars have proposed Jebel al-Lawz as Sinai.",
+        "weaknesses": "Requires crossing the Gulf of Aqaba, which is deep and wide — an even more dramatic crossing than the Gulf of Suez; challenges centuries of tradition and early Christian testimony; the Jebel al-Lawz identification has been promoted by popular writers but lacks mainstream archaeological support.",
+        "key_verses": [
+          "Exodus 3:1",
+          "Exodus 18:1-5",
+          "Galatians 4:25",
+          "Deuteronomy 33:2"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "No consensus exists. The traditional southern route (via the Sinai Peninsula to Jebel Musa) has the longest interpretive tradition and the support of early Christian pilgrimage sites. The central route avoids the problems of the deep-water southern crossing but lacks strong way-station identifications. The eastern route (via Midian, placing Sinai in northwest Arabia) has gained recent attention but challenges centuries of tradition. All three routes must account for the same textual data, and the identification of specific sites remains conjectural in each case.",
+    "related_passages": [
+      "Exodus 13:17-18",
+      "Exodus 14:1-4",
+      "Exodus 15:22-27",
+      "Numbers 33:1-49",
+      "1 Kings 19:8",
+      "Galatians 4:25"
+    ],
+    "tags": [
+      "exodus-route",
+      "geography",
+      "sinai",
+      "sea-of-reeds",
+      "archaeology",
+      "wilderness"
+    ]
   },
   {
     "id": "the-crossing-of-the-sea-historical-and-geographical-question",
@@ -5446,18 +5644,25 @@
     ],
     "passage": "Exodus 14",
     "question": "The Crossing of the Sea: Historical and Geographical Questions",
-    "context": "",
+    "context": "The crossing of the 'Sea of Reeds' (yam sûp, Exodus 14–15) is the defining miracle of the exodus. The narrative describes a 'strong east wind' driving back the waters, the Israelites crossing on dry ground, and the waters returning to drown the Egyptian army. Scholars debate whether this describes a supernatural division of deep water, a natural wind-setdown event in a shallow lake or lagoon, or a theological narrative whose historical core is less specific than either reconstruction allows.",
     "positions": [
       {
         "id": "traditional-miraculous-crossing-of-deep-",
         "label": "Traditional: miraculous crossing of deep water",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "MacArthur, evangelical consensus",
         "argument": "The 'walls of water on the right hand and on the left' (14:22, 29) describe deep water divided supernaturally. The Egyptian army drowned in returning waters. The event is miraculous and historically particular. The Song of the Sea (ch.15) celebrates it as an unambiguous act of divine power.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Takes the narrative at face value: walls of water on both sides (14:22, 29), dry ground, Egyptian army drowned in deep water; consistent with the Song of the Sea's cosmic imagery ('the depths covered them,' 15:5); Hebrews 11:29 treats it as a faith event requiring supernatural explanation.",
+        "weaknesses": "The text's own reference to the east wind (14:21) suggests natural agency is involved; the 'walls of water' may be poetic rather than literal (cf. the Song's use of metaphor); identifying the sea body with a deep-water location (Gulf of Suez) creates geographical difficulties.",
+        "key_verses": [
+          "Exodus 14:21-22",
+          "Exodus 14:28-29",
+          "Exodus 15:5",
+          "Hebrews 11:29"
+        ]
       },
       {
         "id": "natural-event-wind-setdown-in-shallow-la",
@@ -5466,25 +5671,50 @@
         "scholar_ids": [],
         "proponents": "Hort, Nof and Paldor (1992)",
         "argument": "A strong east wind could produce a wind setdown in a shallow lake (like Lake Manzala in the eastern Delta), exposing a ridge of dry land. Israel crosses; the wind stops; Egyptians drown in the returning water. The event is real but naturalistic. This model fits the yam suph = Reed Sea reading.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The text explicitly cites 'a strong east wind all that night' (14:21) as the mechanism; wind-setdown effects in shallow bodies of water are scientifically documented; Lake Timsah and the Bitter Lakes are geographically plausible shallow-water locations; the Egyptian chariots bogging down (14:25) fits muddy lakebed conditions.",
+        "weaknesses": "Reduces the event to a fortuitous natural occurrence, which contradicts the text's theological framing; the 'walls of water' language (14:22) is hard to reconcile with shallow-lake setdown; the Egyptian army's complete destruction requires more than a shallow-lake event.",
+        "key_verses": [
+          "Exodus 14:21",
+          "Exodus 14:25",
+          "Exodus 14:27"
+        ]
       },
       {
         "id": "theological-narrative-historically-groun",
         "label": "Theological narrative: historically grounded but not literally divisible sea",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Some critical scholars",
         "argument": "The crossing narrative is a theological celebration of a real historical event (perhaps Israel escaped Egypt through a providential circumstance) that has been amplified into cosmic myth in the Song of Moses. The 'walls of water' are poetic, not descriptive.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Recognizes that the text's genre is proclamatory — it declares YHWH's victory over Pharaoh and the gods of Egypt; the Song of the Sea (ch. 15) uses mythic divine-warrior imagery that intentionally exceeds historical description; allows for a historical kernel without requiring precise reconstruction of the event.",
+        "weaknesses": "Can dissolve the historical event into pure theology, which the narrative's specificity (place names, military details, timing) resists; the Israelite tradition consistently treats the crossing as a real historical event (Ps 77; 106; Josh 2:10; 4:23); the 'historical kernel' can become so vague as to be unfalsifiable.",
+        "key_verses": [
+          "Exodus 14:13-14",
+          "Exodus 15:1-3",
+          "Psalm 77:16-20",
+          "Joshua 2:10"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The text itself combines natural agency ('a strong east wind,' 14:21) with supernatural framing ('the LORD drove the sea back'). This dual causation makes it resistant to purely miraculous or purely naturalistic readings. The traditional reading emphasizes the miracle; the wind-setdown hypothesis provides a scientifically modeled mechanism; the theological-narrative approach notes that the text's genre is proclamation, not chronicle. All three readings must account for the Song of the Sea (ch. 15), which uses cosmic-battle imagery that exceeds any historical reconstruction.",
+    "related_passages": [
+      "Exodus 14:1-31",
+      "Exodus 15:1-21",
+      "Psalm 77:16-20",
+      "Psalm 106:9-12",
+      "Isaiah 51:9-11",
+      "Hebrews 11:29"
+    ],
+    "tags": [
+      "sea-crossing",
+      "miracle",
+      "yam-suf",
+      "exodus",
+      "divine-warrior",
+      "natural-explanation"
+    ]
   },
   {
     "id": "the-song-of-the-sea-date-and-historical-authenticity",
@@ -5496,18 +5726,24 @@
     ],
     "passage": "Exodus 15",
     "question": "The Song of the Sea: Date and Historical Authenticity",
-    "context": "",
+    "context": "The Song of the Sea (Exodus 15:1–18) is widely considered one of the oldest poems in the Hebrew Bible. Its archaic Hebrew features — pronominal suffixes, vocabulary, syntax — have led many scholars to date it to the early pre-monarchic period (12th–11th century BC). Others argue that archaizing is a recognized literary technique and that the song's references to the temple/sanctuary (15:17) suggest a later date. The question of the song's antiquity intersects with debates about oral tradition, literacy, and the historical reliability of early Israelite poetry.",
     "positions": [
       {
         "id": "archaic-near-contemporary-composition",
         "label": "Archaic, near-contemporary composition",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Cross and Freedman (1955), Kitchen, Sarna",
         "argument": "The archaic linguistic features date the song to approximately the 13th–12th century BC, consistent with Mosaic authorship or composition within a generation of the Exodus. The song is one of the earliest extended Hebrew texts, preserving features that were archaic by the time of standard Biblical Hebrew prose.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The song's linguistic features (archaic verb forms, pronominal suffixes, vocabulary) are comparable to other early Hebrew poetry like the Song of Deborah (Judg 5); Cross and Freedman's linguistic analysis dated it to the 12th–11th century BC; the song shows no awareness of the monarchy or temple.",
+        "weaknesses": "Archaizing is a known literary technique — archaic forms can be deliberately employed in later composition; the reference to a 'sanctuary' (15:17) has been taken as evidence of knowledge of the Jerusalem temple; precise linguistic dating of Hebrew poetry remains methodologically contested.",
+        "key_verses": [
+          "Exodus 15:1-3",
+          "Exodus 15:17-18",
+          "Judges 5:1-5"
+        ]
       },
       {
         "id": "later-composition-attributed-to-moses",
@@ -5516,14 +5752,31 @@
         "scholar_ids": [],
         "proponents": "Most critical scholars (von Rad, Noth)",
         "argument": "The song is a later literary composition (10th–8th century BC) celebrating the Exodus traditions. The archaic features are literary archaisms — deliberate stylistic choices imitating early poetry rather than evidence of actual antiquity. The song was attributed to Moses as part of the literary convention of placing speeches and songs in the mouths of central characters.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The reference to God's 'sanctuary' and 'mountain of your inheritance' (15:17) most naturally refers to the Jerusalem temple; archaic features can be imitated; attribution to Moses follows a common ancient pattern of associating songs with heroic figures.",
+        "weaknesses": "The density of archaic features exceeds what is typical of deliberate archaizing; 15:17 can refer to the promised land or Sinai rather than the temple; the Song of Deborah (Judg 5), which shares linguistic features, is widely accepted as ancient — the same criteria should apply to Exodus 15.",
+        "key_verses": [
+          "Exodus 15:17",
+          "Exodus 15:1",
+          "Psalm 78:54"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The song's archaic linguistic features are widely acknowledged, but their interpretation divides scholars. The majority of both critical and evangelical scholars accept an early date (pre-monarchic at latest), though they disagree on how close to the event itself it may be. The reference to the 'sanctuary' (15:17) is the main argument for a later date, but it can be read as forward-looking prophecy or as a reference to the promised land generally. The song's pride of place in the narrative and its distinctive poetic form support its antiquity as a celebrated liturgical piece preserved with care.",
+    "related_passages": [
+      "Exodus 15:1-21",
+      "Judges 5:1-31",
+      "Deuteronomy 32:1-43",
+      "Psalm 68:1-35",
+      "2 Samuel 22:1-51"
+    ],
+    "tags": [
+      "song-of-the-sea",
+      "poetry",
+      "archaic-hebrew",
+      "dating",
+      "liturgy",
+      "oral-tradition"
+    ]
   },
   {
     "id": "what-was-manna-natural-substance-or-pure-miracle",
@@ -5535,34 +5788,61 @@
     ],
     "passage": "Exodus 16",
     "question": "What Was Manna? Natural Substance or Pure Miracle?",
-    "context": "",
+    "context": "Manna (Exodus 16) has been compared to naturally occurring substances in the Sinai: the secretion of tamarisk trees (caused by scale insects), a lichen (Lecanora esculenta), or honeydew. The Bedouin of the Sinai call the tamarisk secretion mann. However, the biblical description attributes properties to manna that no known natural substance possesses: it appears daily with the dew, melts in the sun, spoils overnight (except before the Sabbath), and sustains an entire nation for forty years.",
     "positions": [
       {
         "id": "pure-miracle",
         "label": "Pure miracle",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Calvin, MacArthur, traditional",
         "argument": "The manna was a supernatural creation — daily bread from heaven with properties no natural substance possesses: double portion on day six, none on day seven, rapid decay (except on day six). Ps 78:24–25 calls it 'grain of heaven' and 'food of angels.' John 6:31–35 uses it as the type of Christ as the bread of life. The miraculous character is essential to its theological meaning.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The text's described properties (Sabbath exception, forty-year duration, cessation at Canaan's border, quantity for the entire nation) exceed any natural explanation; Psalm 78:24–25 calls it 'grain of heaven' and 'bread of angels'; Jesus treats it as divine provision (John 6:31–35); the manna pot preserved in the ark (Exod 16:33–34) implies uniqueness beyond natural phenomena.",
+        "weaknesses": "The text itself uses the word mān, possibly derived from the Bedouin term for tamarisk secretion, suggesting some natural connection; dismissing all natural parallels may miss how God often works through natural processes; the miraculous reading depends on accepting the text's numbers and durations literally.",
+        "key_verses": [
+          "Exodus 16:14-15",
+          "Exodus 16:23-26",
+          "Deuteronomy 8:3",
+          "Joshua 5:12"
+        ]
       },
       {
         "id": "naturalistically-identified-substance-di",
         "label": "Naturalistically identified substance divinely directed",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Many mainstream scholars",
         "argument": "The tamarisk honeydew secretion (or similar substance) is identified as the natural base. God works through a real natural phenomenon, directing its scale, timing, and Sabbath absence. This approach respects both the text's natural description and the archaeological reality of the Sinai environment.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The Bedouin mann (tamarisk secretion) is a real substance found in the Sinai; the description of manna as white, flake-like, and sweet matches the tamarisk secretion; identifying a natural basis does not preclude divine timing and provision — God could use a natural substance supernaturally.",
+        "weaknesses": "Tamarisk secretion appears only briefly in June, not year-round; it occurs in tiny quantities — far insufficient for a large population; it does not spoil overnight, melt in the sun, or observe a Sabbath schedule; the identification requires ignoring most of the text's described properties.",
+        "key_verses": [
+          "Exodus 16:14-15",
+          "Exodus 16:31",
+          "Numbers 11:7-9"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The tamarisk-secretion identification is the most common naturalistic proposal, but it fails to account for the manna's supernatural properties in the text: daily appearance, Sabbath exception, quantity sufficient for millions, year-round availability, and cessation upon entering Canaan (Josh 5:12). Most scholars who accept the historicity of the account see it as miraculous provision that may have used natural phenomena as a starting point but transcended them. Those who read the account theologically focus on its function as a test of faith and dependence on God (Deut 8:3) rather than on its material composition.",
+    "related_passages": [
+      "Exodus 16:1-36",
+      "Numbers 11:4-9",
+      "Deuteronomy 8:3",
+      "Joshua 5:12",
+      "John 6:31-35",
+      "Psalm 78:23-25"
+    ],
+    "tags": [
+      "manna",
+      "miracle",
+      "wilderness",
+      "provision",
+      "natural-explanation",
+      "faith"
+    ]
   },
   {
     "id": "exodus-17-and-numbers-20-one-meribah-or-two",
@@ -5574,18 +5854,25 @@
     ],
     "passage": "Exodus 17",
     "question": "Exodus 17 and Numbers 20: One Meribah or Two?",
-    "context": "",
+    "context": "Both Exodus 17:1–7 and Numbers 20:1–13 describe Moses striking a rock to produce water at a place called Meribah. The similarities are striking: murmuring people, water from rock, the name Meribah. Source critics typically see these as variant traditions of a single event preserved in different Pentateuchal sources. The traditional reading treats them as two distinct events at different times and places — Rephidim early in the wilderness period and Kadesh near the end.",
     "positions": [
       {
         "id": "two-distinct-events",
         "label": "Two distinct events",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Calvin, MacArthur, most evangelical scholars",
         "argument": "Exodus 17 (Rephidim, early in the wilderness) and Numbers 20 (Kadesh, forty years later) are two separate incidents. The similar features (water, rock, complaint, Meribah) reflect recurring patterns rather than duplication. Moses' striking the rock in Num 20 is a new act of disobedience, not the same act as Exod 17.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The canonical placement separates them by nearly forty years; the circumstances differ significantly (Moses' sin in Numbers 20 has no counterpart in Exodus 17); different locations (Rephidim vs. Kadesh) are specified; Deuteronomy 32:51 specifically locates Moses' sin at 'the waters of Meribah Kadesh,' distinguishing it from Rephidim.",
+        "weaknesses": "The name Meribah appearing twice for the same type of event is suspicious; the structural parallels (murmuring, water, rock, naming) suggest literary dependence; if two events are distinct, the narrative adds little new theological content the second time.",
+        "key_verses": [
+          "Exodus 17:1-7",
+          "Numbers 20:1-13",
+          "Deuteronomy 32:51",
+          "Psalm 95:8"
+        ]
       },
       {
         "id": "duplicate-accounts-of-one-event",
@@ -5594,14 +5881,31 @@
         "scholar_ids": [],
         "proponents": "Many source critics",
         "argument": "The two accounts share too many features (location names, staff, complaint, divine provision from rock) to be independent events. They represent two variant traditions (J and P) of the same incident that were preserved separately and appear in different positions in the canonical narrative.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Explains the shared name, structure, and key elements as variant traditions of a single event; consistent with source-critical analysis of the Pentateuch; Psalm 95 and 81 reference 'Meribah' as a single paradigmatic event without distinguishing two occasions.",
+        "weaknesses": "The differences (Moses' sin, location, timing) are significant enough that a single event requires considerable variation in transmission; the redactor included both, suggesting the final editor understood them as distinct; the Deuteronomy 32:51 reference to 'Meribah Kadesh' implies awareness of a specific location for Moses' sin.",
+        "key_verses": [
+          "Exodus 17:7",
+          "Numbers 20:13",
+          "Psalm 81:7"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The two-event reading has the advantage of the text's own placement: Exodus 17 occurs at Rephidim early in the journey, Numbers 20 at Kadesh in the fortieth year. The differences (Moses' sin in Numbers 20 vs. no sin in Exodus 17; rod from the ark vs. rod of Moses) support distinctness. The duplicate-traditions reading explains the name overlap and structural similarities but must account for why a redactor would include both if they are the same event. Psalm 95:8 and 81:7 reference Meribah as a paradigmatic event without distinguishing two occasions, which leaves the question somewhat open.",
+    "related_passages": [
+      "Exodus 17:1-7",
+      "Numbers 20:1-13",
+      "Deuteronomy 32:51",
+      "Psalm 95:8-9",
+      "Psalm 81:7",
+      "1 Corinthians 10:4"
+    ],
+    "tags": [
+      "meribah",
+      "water-from-rock",
+      "wilderness",
+      "moses-sin",
+      "source-criticism"
+    ]
   },
   {
     "id": "jethro-s-religious-status-pagan-or-yhwh-worshipper",
@@ -5613,34 +5917,61 @@
     ],
     "passage": "Exodus 18",
     "question": "Jethro's Religious Status: Pagan or YHWH-Worshipper?",
-    "context": "",
+    "context": "Jethro (Reuel), Moses' father-in-law, is a 'priest of Midian' (Exodus 2:16; 3:1; 18:1). In Exodus 18, after hearing about the exodus, Jethro declares 'Now I know that the LORD is greater than all other gods' (18:11) and offers sacrifices to God (18:12). The 'Kenite hypothesis' suggests that YHWH worship originated among the Midianites/Kenites and was mediated to Israel through Moses' Midianite connections. The alternative is that Jethro's response in Exodus 18 represents a genuine conversion prompted by the exodus events.",
     "positions": [
       {
         "id": "a-pre-existing-yhwh-worshipper-kenite-hy",
         "label": "A pre-existing YHWH worshipper (Kenite hypothesis)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Rowley, some scholars",
         "argument": "Jethro belongs to the Kenites, who are associated with Israelite worship throughout the OT (Judg 1:16; 4:11). The Kenite hypothesis proposes that YHWH was known and worshipped in Midian before Moses' encounter with the burning bush — which is why Moses found God at Horeb (the Midianite sacred mountain). Jethro's confession in 18:11 is not conversion but recognition of a God already known.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Moses encounters the burning bush in Midian at 'the mountain of God' (3:1), suggesting pre-existing sanctity; Jethro is already a 'priest' before the exodus; the Kenites (Jethro's clan) later align with Israel (Judg 1:16; 4:11), suggesting pre-existing religious affinity; Jethro's confident liturgical actions in 18:12 suggest familiarity rather than first-time worship.",
+        "weaknesses": "No extra-biblical evidence for YHWH worship among Midianites exists; the hypothesis is built entirely on inference; Jethro's statement 'Now I know' (18:11) more naturally reads as new knowledge than as confirmation of prior belief; the 'mountain of God' designation may be the narrator's retrospective label rather than a pre-Mosaic name.",
+        "key_verses": [
+          "Exodus 2:16",
+          "Exodus 3:1",
+          "Exodus 18:11-12",
+          "Judges 1:16"
+        ]
       },
       {
         "id": "genuine-conversion-at-the-exodus-news",
         "label": "Genuine conversion at the Exodus news",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Sarna, Childs, Calvin",
         "argument": "Jethro was a pagan priest ('priest of Midian') who heard the Exodus news and responded with genuine theological transformation. 'Now I know' (18:11) signals new knowledge, not prior commitment. His worship of YHWH in v.12 is the first recorded instance of Gentile conversion to the worship of Israel's God — the Exodus's global reach in one person.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Jethro's 'Now I know that the LORD is greater than all other gods' (18:11) reads most naturally as a conversion statement; the sacrifices in 18:12 follow the declaration, suggesting response rather than routine; preserves the distinctiveness of YHWH's self-revelation to Israel through Moses at the burning bush.",
+        "weaknesses": "If Jethro converts, his prior priestly role served other gods — yet the text shows no criticism of his Midianite priesthood; the ease with which he offers YHWH sacrifices suggests prior liturgical knowledge; the conversion reading may be motivated by theological discomfort with the Kenite hypothesis rather than by textual evidence.",
+        "key_verses": [
+          "Exodus 18:10-12",
+          "Exodus 18:11",
+          "Numbers 10:29-32"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Jethro's declaration in 18:11 can be read as either recognition of a God he already worshipped or as a conversion statement. The Kenite hypothesis remains influential in critical scholarship but is largely circumstantial — no Midianite text mentioning YHWH has been found. The conversion reading preserves YHWH's self-revelation as uniquely Israelite while acknowledging Jethro's positive role. Most scholars agree that the text presents Jethro favorably regardless of his prior religious status, and that his administrative advice (18:13–27) is endorsed without reservation.",
+    "related_passages": [
+      "Exodus 2:16-22",
+      "Exodus 3:1",
+      "Exodus 18:1-27",
+      "Judges 1:16",
+      "Judges 4:11",
+      "Numbers 10:29-32"
+    ],
+    "tags": [
+      "jethro",
+      "midian",
+      "kenite-hypothesis",
+      "yhwh-worship",
+      "conversion",
+      "priesthood"
+    ]
   },
   {
     "id": "the-sinai-covenant-conditional-or-unconditional",
@@ -5652,34 +5983,63 @@
     ],
     "passage": "Exodus 19",
     "question": "The Sinai Covenant: Conditional or Unconditional?",
-    "context": "",
+    "context": "Exodus 19:5–6 frames Israel's covenant relationship with 'if you obey me fully and keep my covenant,' making obedience a precondition for the promise of being 'a kingdom of priests and a holy nation.' This conditional phrasing contrasts with the Abrahamic covenant (Genesis 15, 17), which is typically understood as unconditional. The question of whether the Sinai covenant is fundamentally conditional (bilateral obligations) or unconditional in its foundation (God's sovereign election of Israel) has far-reaching implications for covenant theology, law-gospel distinctions, and Israel's national destiny.",
     "positions": [
       {
         "id": "conditional-obedience-required",
         "label": "Conditional: obedience required",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "MacArthur, most evangelical scholars",
         "argument": "The 'if' of 19:5 makes the Sinai covenant explicitly conditional. Israel's failure activates the curses of Deut 28 and ultimately exile.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The 'if' clause in 19:5 is explicit; Deuteronomy 28 elaborates blessings for obedience and curses for disobedience in exhaustive detail; the historical prophets consistently attribute Israel's exile to covenant violation, confirming conditionality; the golden-calf episode (ch. 32) demonstrates that the covenant can be broken.",
+        "weaknesses": "Does not fully account for God's preservation of Israel even after repeated covenant violations; the prophetic tradition promises restoration after exile (Jer 31:31–34), suggesting the relationship transcends the conditional framework; Exodus 20:2 grounds the covenant in prior divine action, not in Israel's obedience.",
+        "key_verses": [
+          "Exodus 19:5-6",
+          "Deuteronomy 28:1-2",
+          "Deuteronomy 28:15",
+          "Leviticus 26:14-16"
+        ]
       },
       {
         "id": "unconditional-in-its-foundational-promis",
         "label": "Unconditional in its foundational promise",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "waltke"
+        ],
         "proponents": "Some Reformed scholars",
         "argument": "The covenant is conditioned in specific blessings but not in ultimate commitment — God will not abandon Israel even when they break the covenant (Lev 26:44–45).",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "God establishes the relationship by sovereign redemptive act (20:2) before issuing any commands; the covenant formula ('I will be your God, you will be my people') is a divine commitment; even after the golden calf, God renews the covenant (34:10) rather than abandoning Israel; the new covenant (Jer 31:31–34) transforms the heart rather than abandoning the framework.",
+        "weaknesses": "The explicit 'if' in 19:5 and the extensive curse-and-blessing structure of Deuteronomy 28 are difficult to read as merely rhetorical; Israel's exile — the covenant's ultimate sanction — actually occurred, confirming operational conditionality; can over-emphasize divine sovereignty at the expense of human responsibility the text clearly affirms.",
+        "key_verses": [
+          "Exodus 20:2",
+          "Exodus 34:10",
+          "Jeremiah 31:31-34",
+          "Romans 11:29"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The Sinai covenant contains both conditional and unconditional elements. The foundational relationship ('I am the LORD your God, who brought you out of Egypt,' 20:2) is established by divine initiative, not earned. Yet the covenant blessings are explicitly conditioned on obedience (19:5; Deut 28). Most scholars recognize this as a both/and rather than either/or: the covenant is unconditionally initiated but conditionally maintained. The distinction between covenant relationship (unconditional election) and covenant blessings (conditional obedience) is widely accepted as the key to resolving the tension.",
+    "related_passages": [
+      "Exodus 19:3-8",
+      "Exodus 20:1-2",
+      "Deuteronomy 28:1-68",
+      "Leviticus 26:3-45",
+      "Jeremiah 31:31-34",
+      "Galatians 3:15-22"
+    ],
+    "tags": [
+      "covenant",
+      "sinai",
+      "conditional",
+      "unconditional",
+      "obedience",
+      "election"
+    ]
   },
   {
     "id": "how-many-commandments-and-how-are-they-numbered",
@@ -5691,18 +6051,24 @@
     ],
     "passage": "Exodus 20",
     "question": "How Many Commandments and How Are They Numbered?",
-    "context": "",
+    "context": "Exodus 20:2–17 and Deuteronomy 5:6–21 present the 'Ten Words' (Decalogue), but the text does not number them. Three major traditions divide the material differently: the Protestant/Reformed tradition, the Catholic/Lutheran tradition, and the Jewish tradition. The key differences involve whether 'I am the LORD your God' (20:2) is a commandment or a preamble, and whether the prohibition of coveting is one commandment or two.",
     "positions": [
       {
         "id": "protestant-reformed-numbering",
         "label": "Protestant/Reformed numbering",
         "tradition_family": "reformed",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke"
+        ],
         "proponents": "Calvin, Reformed tradition",
         "argument": "Commandment 1: no other gods. Commandment 2: no images. Commandments 3–10 follow sequentially.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Treats 'no other gods' and 'no graven images' as separate commandments, reflecting distinct prohibitions (idolatry of concept vs. idolatry of form); widely used in Reformed, Anglican, and most Protestant traditions; treats the self-identification (20:2) as a preamble, consistent with ANE treaty structure.",
+        "weaknesses": "Combines the two coveting clauses into one commandment, though the Deuteronomy version changes the order (wife before house), suggesting they may be distinct; the separation of 'other gods' from 'images' is not obvious in the text's flow, where one leads directly into the other.",
+        "key_verses": [
+          "Exodus 20:3",
+          "Exodus 20:4-6",
+          "Exodus 20:17"
+        ]
       },
       {
         "id": "catholic-lutheran-numbering",
@@ -5711,25 +6077,50 @@
         "scholar_ids": [],
         "proponents": "Augustine, Luther",
         "argument": "Commandments 1 and 2 combined; commandment 10 split into two (coveting wife; coveting property).",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Combines 'no other gods' and 'no images' as a single prohibition against idolatry, which reads naturally in the text's flow; splits coveting into two (neighbor's wife vs. neighbor's property), which the Deuteronomy version supports by changing the order; follows Augustine's influential enumeration.",
+        "weaknesses": "Combining the gods/images prohibitions can be seen as downplaying the image prohibition's distinctiveness; the Augustinian numbering was partly motivated by catechetical convenience rather than exegesis; critics charge that the Catholic tradition's combination facilitated tolerance of religious imagery.",
+        "key_verses": [
+          "Exodus 20:3-6",
+          "Exodus 20:17",
+          "Deuteronomy 5:21"
+        ]
       },
       {
         "id": "jewish-traditional-numbering",
         "label": "Jewish traditional numbering",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Philo, Maimonides",
         "argument": "The preamble 'I am the LORD your God' is Commandment 1. 'No other gods/no images' is Commandment 2.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Treats 'I am the LORD your God' (20:2) as the first word, honoring the covenantal self-identification as foundational; the phrase 'ten words' (dĕbārîm) supports treating the self-identification as a 'word' rather than mere preamble; this is the oldest attested numbering (Philo, Josephus, Talmud).",
+        "weaknesses": "The self-identification is declarative, not imperative — it does not command anything, which makes calling it a 'commandment' imprecise; combining 'no other gods' and 'no images' into a single commandment (as in the Catholic tradition) faces the same objections.",
+        "key_verses": [
+          "Exodus 20:2",
+          "Exodus 20:3-6",
+          "Exodus 34:28",
+          "Deuteronomy 4:13"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "All three traditions agree that there are ten commandments ('ten words,' Exod 34:28; Deut 4:13; 10:4); they disagree on where the boundaries fall. The Jewish tradition treats the self-identification ('I am the LORD') as the first word, reflecting the covenantal preamble's importance. The Protestant/Reformed tradition separates the prohibition of other gods from the prohibition of images; the Catholic/Lutheran tradition combines them and splits coveting into two. No tradition can claim exclusive textual support — the text presents continuous prose without numbering, and all three divisions are ancient.",
+    "related_passages": [
+      "Exodus 20:1-17",
+      "Deuteronomy 5:6-21",
+      "Exodus 34:28",
+      "Deuteronomy 4:13",
+      "Deuteronomy 10:4",
+      "Matthew 19:16-19"
+    ],
+    "tags": [
+      "decalogue",
+      "ten-commandments",
+      "numbering",
+      "law",
+      "covenanting",
+      "tradition"
+    ]
   },
   {
     "id": "does-the-mosaic-law-approve-of-slavery",
@@ -5741,34 +6132,65 @@
     ],
     "passage": "Exodus 21",
     "question": "Does the Mosaic Law Approve of Slavery?",
-    "context": "",
+    "context": "The Book of the Covenant (Exodus 21–23) regulates slavery: Hebrew slaves serve six years then go free (21:2); a master who kills a slave is punished (21:20); but a slave who survives a beating by a day or two incurs no penalty because the slave is the master's 'property' (21:21). These laws neither prohibit slavery nor fully endorse it. The question is whether Mosaic legislation approves of slavery, merely regulates an existing institution, or represents a progressive step toward abolition within its historical context.",
     "positions": [
       {
         "id": "regulation-without-endorsement",
         "label": "Regulation without endorsement",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Calvin, most evangelical scholars",
         "argument": "The Mosaic law regulates existing social institutions without divine endorsement. Israel's law introduced significant protections (six-year limit, freedom for injury) substantially more humane than surrounding cultures.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The laws regulate an institution that existed universally in the ANE — Israel did not invent slavery; the humanitarian provisions (term limits, protections, manumission) ameliorate existing practice; the Deuteronomy 23:15–16 asylum law is unprecedented in the ANE and undermines the institution from within.",
+        "weaknesses": "Regulation implies legal legitimacy — the law does not call slavery sinful or unjust; the 'property' language (21:21) is morally troubling regardless of context; the distinction between Hebrew and foreign slaves (Lev 25:44–46) introduces an ethnic hierarchy that is difficult to defend.",
+        "key_verses": [
+          "Exodus 21:2-6",
+          "Exodus 21:20-21",
+          "Exodus 21:26-27",
+          "Deuteronomy 23:15-16"
+        ]
       },
       {
         "id": "progressive-revelation-toward-abolition",
         "label": "Progressive revelation toward abolition",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "waltke"
+        ],
         "proponents": "Most contemporary evangelical scholars",
         "argument": "The trajectory moves from regulation toward liberation: Jubilee (Lev 25), the prophets, the NT's 'neither slave nor free' (Gal 3:28), and Philemon all point toward abolition as the covenant's ultimate direction.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Places the Mosaic laws on a redemptive trajectory: creation dignity (Gen 1:27) → regulation → prophetic critique (Isa 58:6; Jer 34:8–22) → Paul's Philemon letter → abolition; the exodus narrative itself is the foundational anti-slavery text ('I brought you out of the land of slavery'); the trajectory hermeneutic allows affirmation of Scripture while acknowledging the laws' historical limitations.",
+        "weaknesses": "The 'trajectory' approach can impose a modern framework onto texts that may not have envisioned abolition; Leviticus 25:44–46 permits permanent enslavement of foreigners, which resists progressive-trajectory readings; if the trajectory is divinely intended, the question of why God did not simply prohibit slavery remains.",
+        "key_verses": [
+          "Genesis 1:27",
+          "Exodus 20:2",
+          "Isaiah 58:6",
+          "Philemon 1:15-16",
+          "Galatians 3:28"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The Mosaic laws neither institute slavery nor call for its abolition. They regulate an existing ANE institution with notable humanitarian improvements: six-year term limits for Hebrew slaves, protections against lethal violence, asylum for escaped slaves (Deut 23:15–16), and Sabbath rest. These provisions exceed anything found in contemporary law codes (Hammurabi, Hittite laws). Whether this constitutes progressive revelation toward abolition or regulation-without-endorsement depends on one's hermeneutical framework. Both readings agree the laws are ameliorative within their context; they disagree on whether the trajectory is theologically intentional.",
+    "related_passages": [
+      "Exodus 21:1-11",
+      "Exodus 21:20-21",
+      "Exodus 21:26-27",
+      "Leviticus 25:39-46",
+      "Deuteronomy 15:12-18",
+      "Deuteronomy 23:15-16",
+      "Philemon 1:15-16"
+    ],
+    "tags": [
+      "slavery",
+      "law",
+      "ethics",
+      "ancient-near-east",
+      "progressive-revelation",
+      "human-dignity"
+    ]
   },
   {
     "id": "the-book-of-the-covenant-and-ancient-near-eastern-law-codes",
@@ -5780,7 +6202,7 @@
     ],
     "passage": "Exodus 22",
     "question": "The Book of the Covenant and Ancient Near Eastern Law Codes",
-    "context": "",
+    "context": "The Book of the Covenant (Exodus 20:22–23:33) shares significant structural and topical parallels with Mesopotamian law codes, especially the Laws of Hammurabi (c. 1750 BC). Both address bodily injury, property damage, slavery, and animal liability. Some parallel laws are strikingly similar (the goring-ox provisions). Scholars debate whether the Israelite code depends directly on Hammurabi, reflects a shared ANE legal tradition, or represents independent legislation arising from comparable social conditions.",
     "positions": [
       {
         "id": "dependent-on-hammurabi-s-code",
@@ -5789,25 +6211,47 @@
         "scholar_ids": [],
         "proponents": "Some critical scholars (Westbrook, Paul)",
         "argument": "Several laws in the Book of the Covenant have close parallels in Hammurabi's Code (c.1754 BC): goring ox (Laws 250–252), deposit of property (Laws 120–126), seduction of an unbetrothed woman (Law 130). The parallels suggest literary dependence or a common ancient Near Eastern legal tradition that Israel inherited.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The structural parallels (casuistic formulation, topic sequence, specific provisions like the goring ox) are too detailed to be coincidental; Hammurabi's Code was widely circulated in the ANE for over a millennium, making Israelite awareness plausible; the Babylonian legal tradition demonstrably influenced Hittite and Assyrian law, making Israelite influence conceivable.",
+        "weaknesses": "No mechanism for direct transmission has been demonstrated; the Book of the Covenant has significant content with no Mesopotamian parallel (Sabbath laws, alien protection, festival legislation); the theological framework (covenant, monotheism, egalitarian justice) is radically different from Hammurabi's royal-authority basis.",
+        "key_verses": [
+          "Exodus 21:28-32",
+          "Exodus 21:33-36",
+          "Exodus 22:1-4"
+        ]
       },
       {
         "id": "independent-composition-reflecting-commo",
         "label": "Independent composition reflecting common legal culture",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna",
+          "macarthur"
+        ],
         "proponents": "Sarna, Kitchen, most evangelical scholars",
         "argument": "The parallels reflect the common legal problems of agricultural societies (goring animals, property disputes, personal injury) that every ancient law code must address. The differences are as significant as the similarities: Israel's law is notably more egalitarian (same standard for all social classes) and more theologically grounded (law flows from covenant) than Hammurabi. Parallel structures do not require literary dependence.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Similar social conditions (agriculture, livestock, property disputes) naturally generate similar legal solutions; the parallel provisions are practical rather than literary — they address universal problems; the theological framework of Israelite law (covenant motivation, egalitarian penalties, divine authority) has no Mesopotamian parallel and represents genuine independence.",
+        "weaknesses": "Pure coincidence struggles to explain the density of parallels, especially in the goring-ox laws where the correspondence is verbally close; completely ruling out cultural influence in the interconnected ANE world is overly isolationist; shared tradition and divine revelation are not mutually exclusive — God could work through existing legal conventions.",
+        "key_verses": [
+          "Exodus 20:22-23",
+          "Exodus 21:28-36",
+          "Exodus 23:9"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Direct literary dependence of the Book of the Covenant on Hammurabi's Code is unlikely — the cultural gap (Babylonian → Israelite) and the absence of a demonstrated transmission mechanism argue against it. Shared ANE legal tradition is the most widely accepted explanation: similar social conditions produce similar legal responses across cultures. The key distinctives of Israelite law — the absence of class-based penalties, the theological grounding in covenant, and the humanitarian provisions — are as significant as the parallels. The debate is important because it shapes how one reads Israelite law: as divine revelation sui generis, as adapted common tradition, or as a combination of both.",
+    "related_passages": [
+      "Exodus 20:22-23:33",
+      "Exodus 21:28-36",
+      "Leviticus 24:17-22",
+      "Deuteronomy 22:1-4"
+    ],
+    "tags": [
+      "book-of-the-covenant",
+      "hammurabi",
+      "law-codes",
+      "ancient-near-east",
+      "legal-parallels"
+    ]
   },
   {
     "id": "the-feast-legislation-historical-development-or-mosaic-antiq",
@@ -5819,34 +6263,59 @@
     ],
     "passage": "Exodus 23",
     "question": "The Feast Legislation: Historical Development or Mosaic Antiquity?",
-    "context": "",
+    "context": "The three annual pilgrimage feasts — Unleavened Bread/Passover, Weeks/Harvest, and Ingathering/Tabernacles — appear in multiple Pentateuchal passages (Exod 23:14–17; 34:18–23; Lev 23; Deut 16). Critical scholars have argued that the feasts evolved from Canaanite agricultural festivals, were gradually historicized (linked to exodus events), and received their final Pentateuchal form late. Conservative scholars maintain that the feasts were instituted by Moses with their historical and agricultural dimensions already integrated.",
     "positions": [
       {
         "id": "mosaic-antiquity",
         "label": "Mosaic antiquity",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Kitchen, evangelical scholars",
         "argument": "The three annual feasts — Unleavened Bread, Harvest/Weeks, and Ingathering/Booths — are ancient, fitting a pre-settlement semi-nomadic context transitioning to agricultural life. The agricultural references (firstfruits, harvest) reflect anticipation of Canaan, not Canaanite borrowing. The Book of the Covenant is Mosaic in origin.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The feasts are integrated with the exodus narrative from their first mention (Exod 12–13); Moses had motive and authority to establish a national liturgical calendar; the agricultural and historical dimensions are presented as unified from the beginning, not as layers to be separated.",
+        "weaknesses": "The variations between the Exodus, Leviticus, and Deuteronomy versions suggest development over time; the Canaanite agricultural calendar predates Israel's settlement, making some borrowing plausible; post-exilic texts (Neh 8:17) suggest Tabernacles was rediscovered, implying it was not continuously observed.",
+        "key_verses": [
+          "Exodus 23:14-17",
+          "Exodus 12:14",
+          "Leviticus 23:4-8"
+        ]
       },
       {
         "id": "post-settlement-development",
         "label": "Post-settlement development",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Many critical scholars",
         "argument": "The agricultural festivals (Firstfruits, Harvest, Ingathering) presuppose a settled agricultural life and may have been adopted from Canaanite agricultural religion and theologised into Israelite covenant terms. The law codes developed over centuries; the Book of the Covenant represents an early stratum (perhaps 10th–9th century BC) of this development.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The agricultural festivals presuppose settled agricultural life, which Israel did not have in the wilderness; the variations across Pentateuchal sources suggest compositional layers; the Canaanite Ugaritic texts attest similar harvest festivals, suggesting cultural continuity.",
+        "weaknesses": "The Passover's link to the exodus is so integral that separating the historical from the agricultural is artificial; anticipatory legislation for settled life is attested elsewhere in the Torah (Deut's city-of-refuge laws); the Ugaritic parallels show shared cultural context, not necessarily borrowing.",
+        "key_verses": [
+          "Exodus 23:16",
+          "Deuteronomy 16:9-12",
+          "Nehemiah 8:17"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The agricultural origins of the feast calendar are undeniable — the festivals are tied to harvest seasons. The question is whether these agricultural occasions were original and later historicized, or whether Moses intentionally appropriated agricultural timing for theologically historicized celebrations. Both readings agree that the canonical form integrates agriculture and history; they disagree on the direction of development. The Passover's connection to the exodus event is so foundational that purely agricultural origins are difficult to sustain for that feast, while Tabernacles' agricultural character is so prominent that purely historical origins are equally strained.",
+    "related_passages": [
+      "Exodus 23:14-17",
+      "Exodus 34:18-23",
+      "Leviticus 23:1-44",
+      "Deuteronomy 16:1-17",
+      "Numbers 28-29"
+    ],
+    "tags": [
+      "feasts",
+      "passover",
+      "weeks",
+      "tabernacles",
+      "agricultural",
+      "liturgical-calendar"
+    ]
   },
   {
     "id": "the-sinai-covenant-and-ancient-near-eastern-suzerainty-treat",
@@ -5858,34 +6327,60 @@
     ],
     "passage": "Exodus 24",
     "question": "The Sinai Covenant and Ancient Near Eastern Suzerainty Treaties",
-    "context": "",
+    "context": "Mendenhall's 1954 comparison of the Sinai covenant to Hittite suzerainty treaties (c. 1400–1200 BC) became one of the most influential proposals in OT scholarship. The parallels include: historical prologue, stipulations, divine witnesses, blessings and curses, and document deposition. If the parallels hold, they support a second-millennium dating of the Sinai tradition. Subsequent scholars (McCarthy, Kitchen, Weinfeld) debated whether first-millennium Assyrian treaties are equally or more relevant.",
     "positions": [
       {
         "id": "close-structural-parallel-covenant-follo",
         "label": "Close structural parallel: covenant follows treaty form",
         "tradition_family": "reformed",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke"
+        ],
         "proponents": "Mendenhall (1954), Kline, Kitchen",
         "argument": "Second-millennium Hittite suzerainty treaties have the same structural elements as the Sinai covenant: preamble (self-identification of the great king), historical prologue (the king's acts for the vassal), treaty stipulations (obligations), document clause (write and read), divine witnesses, blessings and curses. The structural parallel supports a second-millennium date for the Sinai covenant, consistent with Mosaic authorship.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The Decalogue and Book of the Covenant follow the Hittite treaty pattern: preamble (20:2a), historical prologue (20:2b), stipulations (20:3–23:19), document clause (24:7), and ratification ceremony (24:3–8); the historical-prologue element is distinctive of second-millennium treaties; Kitchen's analysis argues for a Late Bronze Age date based on formal structure.",
+        "weaknesses": "The parallel is not exact — the Sinai covenant lacks some treaty elements (divine witnesses are absent because God is the suzerain); treaty conventions were not rigidly fixed to specific centuries; overly precise dating based on form alone is methodologically questionable.",
+        "key_verses": [
+          "Exodus 20:2",
+          "Exodus 20:3-17",
+          "Exodus 24:3-8",
+          "Exodus 24:7"
+        ]
       },
       {
         "id": "first-millennium-parallels-are-also-rele",
         "label": "First-millennium parallels are also relevant",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Some critical scholars",
         "argument": "Assyrian and Neo-Babylonian treaty forms from the first millennium BC also contain similar elements. The parallel with second-millennium forms is not unique; treaty forms evolved across the ancient Near East. The structural argument for a second-millennium date requires that the specific combination of elements is uniquely second-millennium, which some scholars dispute.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Assyrian vassal treaties (especially Esarhaddon's, 672 BC) share curse structures closely paralleling Deuteronomy 28; Weinfeld's analysis showed Deuteronomy's loyalty language matches Neo-Assyrian vocabulary; treaty traditions evolved continuously, making exclusive second-millennium dating overconfident.",
+        "weaknesses": "The historical prologue — a key element of Exodus 20:2 and Deuteronomy 1–4 — is characteristic of second- not first-millennium treaties; the Assyrian parallels are strongest for Deuteronomy, not necessarily for the Exodus 19–24 material; proximity to Assyrian treaties could indicate resistance (Israel co-opting Assyrian forms) rather than dependence.",
+        "key_verses": [
+          "Deuteronomy 28:20-44",
+          "Deuteronomy 13:1-5",
+          "2 Kings 23:3"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The Sinai covenant shares structural elements with both second-millennium Hittite and first-millennium Assyrian treaties. The historical prologue — central to Hittite treaties but absent from most Assyrian ones — is the strongest argument for second-millennium parallels. However, treaty conventions evolved rather than changed abruptly, and exclusive dating based on form-critical parallels is methodologically fragile. Most scholars agree that the covenant employs treaty conventions recognizable across the ANE; the dating debate remains unresolved but less binary than originally framed.",
+    "related_passages": [
+      "Exodus 19-24",
+      "Deuteronomy 1-11",
+      "Deuteronomy 28:1-68",
+      "Joshua 24:1-27",
+      "2 Kings 23:1-3"
+    ],
+    "tags": [
+      "covenant",
+      "suzerainty-treaty",
+      "hittite",
+      "assyrian",
+      "ancient-near-east",
+      "dating"
+    ]
   },
   {
     "id": "does-the-tabernacle-describe-a-historical-structure-or-a-lit",
@@ -5897,18 +6392,26 @@
     ],
     "passage": "Exodus 25",
     "question": "Does the Tabernacle Describe a Historical Structure or a Literary-Theological Construct?",
-    "context": "",
+    "context": "The tabernacle instructions in Exodus 25–31 and execution account in 35–40 describe an elaborate portable sanctuary with precise dimensions, materials, and furnishings. Critics (Wellhausen, Noth) argued that the tabernacle is a literary retrojection of the Jerusalem temple into the wilderness period — a priestly idealization (P source) with no historical basis. Defenders point to ANE parallels for portable shrines, the plausibility of the materials in an Egyptian-exodus context, and the tabernacle traditions' distinctiveness from temple descriptions.",
     "positions": [
       {
         "id": "historical-structure-real-tent-of-meetin",
         "label": "Historical structure: real tent of meeting",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "sarna"
+        ],
         "proponents": "Kitchen, evangelical scholars",
         "argument": "The tabernacle materials, dimensions, and construction techniques are consistent with late Bronze Age Egyptian and Near Eastern portable sanctuaries. Kitchen documents parallels with Egyptian tent-shrine structures from the period. The tabernacle was a real physical structure built in the wilderness, consistent with its described materials and size.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "ANE parallels for portable shrines are well attested (Egyptian pre-dynastic tent shrines, Midianite tent shrine at Timna); the tabernacle's design differs significantly from Solomon's temple, arguing against retrojection; 2 Samuel 7:6–7 remembers the tent tradition as genuine history; Hebrews 8:5 treats it as a divinely revealed pattern.",
+        "weaknesses": "The scale and expense of the described tabernacle strain credulity for a wilderness community; the priestly source's systematic theological concerns (holiness gradations, sacrifice system) may have shaped the description beyond historical memory; no archaeological trace of the tabernacle itself has been found.",
+        "key_verses": [
+          "Exodus 25:8-9",
+          "Exodus 40:34-38",
+          "2 Samuel 7:6-7",
+          "Hebrews 8:5"
+        ]
       },
       {
         "id": "ideal-literary-construct-theological-sta",
@@ -5917,14 +6420,32 @@
         "scholar_ids": [],
         "proponents": "Some critical scholars (Noth, Cross)",
         "argument": "The tabernacle descriptions are too elaborate and sophisticated for a wilderness context. They reflect the ideology of the Jerusalem temple projected backward onto the wilderness period. The tabernacle narrative is a theological idealisation, not a historical record.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The tabernacle account's systematic theology (holiness zones, exact measurements, cosmic symbolism) reflects priestly intellectual construction; the amount of precious materials required (over a ton of gold, Exod 38:24) is implausible for wilderness refugees; the detailed execution account (chs. 35–40) repeating the instructions nearly verbatim is a literary rather than historical pattern.",
+        "weaknesses": "The retrojection hypothesis has been weakened by ANE portable-shrine parallels; the tabernacle differs from the temple in ways a retrojection would not; Israel's Egyptian sojourn provides a plausible source for skilled craftsmen and precious materials (cf. the 'plundering' of Egypt, 12:35–36); the Timna tent shrine discovery specifically undermines the claim that such structures are historically implausible.",
+        "key_verses": [
+          "Exodus 25:1-9",
+          "Exodus 38:24-31",
+          "1 Kings 6:1-38"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Archaeological evidence for portable shrines in the ANE (Egyptian bark shrines, Midianite tent shrines at Timna) has significantly weakened the pure-retrojection hypothesis. The tabernacle's design is distinct from Solomon's temple in important details (portable frame vs. stone walls, different proportions, different furnishing arrangement), arguing against simple literary dependency. However, the priestly account's elaborate detail and systematic theology may reflect later editorial development of an authentic wilderness tradition. Most current scholarship accepts a historical core for the wilderness tabernacle while acknowledging priestly literary shaping in the final text.",
+    "related_passages": [
+      "Exodus 25-31",
+      "Exodus 35-40",
+      "1 Kings 6-7",
+      "2 Samuel 7:6-7",
+      "Numbers 1:50-53",
+      "Hebrews 8:5"
+    ],
+    "tags": [
+      "tabernacle",
+      "historicity",
+      "priestly-source",
+      "portable-shrine",
+      "temple",
+      "wilderness"
+    ]
   },
   {
     "id": "the-tabernacle-and-the-jerusalem-temple-continuity-or-displa",
@@ -5936,18 +6457,25 @@
     ],
     "passage": "Exodus 26",
     "question": "The Tabernacle and the Jerusalem Temple: Continuity or Displacement?",
-    "context": "",
+    "context": "The relationship between the portable wilderness tabernacle and Solomon's permanent temple in Jerusalem is theologically significant. Are they continuous (the temple fulfills and replaces the tabernacle in an unbroken line of divine dwelling) or discontinuous (the temple represents a theological shift from God's mobile presence to a fixed location)? 2 Samuel 7:5–7 records God's ambivalence about a permanent house, suggesting the tabernacle's mobility had theological value. Yet 1 Kings 8:10–11 describes the glory filling the temple just as it filled the tabernacle (Exod 40:34–35), suggesting continuity.",
     "positions": [
       {
         "id": "continuity-the-temple-fulfils-the-tabern",
         "label": "Continuity: the temple fulfils the tabernacle",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "waltke"
+        ],
         "proponents": "Traditional, evangelical",
         "argument": "Solomon's temple is a permanent, elaborated version of the portable tabernacle. The same sacred spaces (Holy Place, Holy of Holies), the same furnishings (Ark, lampstand, incense altar, table), and the same glory-cloud (1 Kgs 8:10–11) connect the two structures. The tabernacle is not replaced but fulfilled: the mobile presence becomes the settled presence.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The ark is physically transferred from tabernacle to temple (1 Kgs 8:1–9); the glory-filling parallel is unmistakable; the temple's architectural plan scales up the tabernacle's proportions; Solomon's prayer (1 Kgs 8:27) maintains that heaven cannot contain God, preserving transcendence.",
+        "weaknesses": "2 Samuel 7:5–7 expresses divine reservation about a permanent house; the temple's association with monarchy introduces political dynamics absent from the tabernacle; the prophetic critique of temple theology (Jer 7:4 — 'the temple of the LORD, the temple of the LORD') suggests the temple created dangers the tabernacle did not.",
+        "key_verses": [
+          "1 Kings 8:1-11",
+          "Exodus 40:34-35",
+          "1 Kings 8:27"
+        ]
       },
       {
         "id": "displacement-the-temple-represents-a-the",
@@ -5956,14 +6484,33 @@
         "scholar_ids": [],
         "proponents": "Some scholars, particularly in the Deuteronomic tradition",
         "argument": "The tabernacle was the legitimate worship space; the temple represents the accommodation of Israelite religion to Canaanite and ancient Near Eastern royal temple traditions. Nathan's oracle (2 Sam 7:5–7) has God questioning whether he ever asked for a house of cedar. The tabernacle's mobility was theologically appropriate to the covenant God who accompanies his people; the temple's permanence introduced a dangerous theology of guaranteed presence.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "2 Samuel 7:5–7 preserves God's questioning of the temple project; the tabernacle's mobility symbolized God's freedom, while the temple risks localizing and controlling divine presence; Stephen's speech (Acts 7:44–50) contrasts the tabernacle favorably with the temple; the prophetic critique of temple theology was vindicated by the exile.",
+        "weaknesses": "God ultimately endorses the temple (2 Sam 7:12–13; 1 Kgs 9:3); the glory-filling of the temple demonstrates divine approval; the displacement reading overstates the contrast — the same God who inhabited the tent chose to inhabit the temple; Stephen's critique may target temple misuse rather than the temple itself.",
+        "key_verses": [
+          "2 Samuel 7:5-7",
+          "Acts 7:44-50",
+          "Jeremiah 7:4",
+          "1 Kings 9:3"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The canonical witness supports both continuity and discontinuity. The glory-filling parallel (Exod 40:34–35 → 1 Kgs 8:10–11) and the transfer of the ark to the temple (1 Kgs 8:1–9) signal continuity. Yet 2 Samuel 7:5–7 preserves a tradition that God preferred the tent, and the prophets later critiqued temple theology as potentially idolatrous (Jer 7:4). Most scholars see fulfillment with tension: the temple legitimately continues the tabernacle's function while introducing risks (localization of God's presence, royal co-optation) that the tabernacle's mobility avoided.",
+    "related_passages": [
+      "Exodus 40:34-38",
+      "2 Samuel 7:1-17",
+      "1 Kings 8:1-11",
+      "1 Kings 8:27",
+      "Jeremiah 7:1-15",
+      "Acts 7:44-50"
+    ],
+    "tags": [
+      "tabernacle",
+      "temple",
+      "divine-presence",
+      "continuity",
+      "solomon",
+      "theology"
+    ]
   },
   {
     "id": "the-altar-s-horns-liturgical-cosmic-or-legal",
@@ -5975,18 +6522,25 @@
     ],
     "passage": "Exodus 27",
     "question": "The Altar's Horns: Liturgical, Cosmic, or Legal?",
-    "context": "",
+    "context": "The bronze altar (Exodus 27:2) and incense altar (30:2) both feature 'horns' at four corners. Blood is applied to these horns in specific rituals (Lev 4:7, 18, 25, 30). The horns also serve as a place of asylum — one could grasp the altar's horns for protection (1 Kings 1:50; 2:28). The function and symbolism of the horns have been debated: are they primarily liturgical (blood-application sites), cosmic (symbols of divine power), or legal (asylum markers)?",
     "positions": [
       {
         "id": "liturgical-sites-of-blood-application",
         "label": "Liturgical: sites of blood application",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Most scholars",
         "argument": "The primary function of the altar horns is the application of sacrificial blood in specific offering types (Lev 4:7, 18, 25, 30, 34; 8:15; 9:9). The horns make the altar a site of atonement in its most concentrated form — blood on the horns is the most direct application of the sacrificial act to the altar itself.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The Pentateuchal texts focus entirely on the horns as blood-application sites in purification rituals (Lev 4:7, 18, 25, 30); the horns mark the highest points of the altar, appropriate for blood that ascends toward God; the ritual function is the most explicitly described in the text.",
+        "weaknesses": "Does not explain why horns specifically — any protrusion would serve for blood application; the horn shape carries symbolic freight beyond mere function; the asylum usage in Kings suggests the horns had meaning beyond ritual.",
+        "key_verses": [
+          "Exodus 27:2",
+          "Leviticus 4:7",
+          "Leviticus 4:25",
+          "Leviticus 4:30"
+        ]
       },
       {
         "id": "cosmic-symbols-of-divine-power-and-prote",
@@ -5995,14 +6549,33 @@
         "scholar_ids": [],
         "proponents": "Some scholars (Albright)",
         "argument": "Horns in the ancient Near East were symbols of divine power — the horn of the bull was the emblem of El and other deities. The altar's four horns may represent the four directions of divine power extending from the central sanctuary. The asylum function (grasping the horns) would then invoke that divine protective power.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Horns are a pervasive ANE symbol of power, strength, and authority (cf. Deut 33:17; Ps 75:4–5; Dan 7:7–8); the four-corner placement may symbolize cosmic totality (four directions); the altar with horns represents God's power extending in all directions.",
+        "weaknesses": "The cosmic reading is inferential — the text describes the horns without explaining their symbolism; the ANE power-horn association may not transfer directly to Israelite altar architecture; the liturgical function is explicitly described while the cosmic symbolism must be inferred.",
+        "key_verses": [
+          "Exodus 27:2",
+          "Deuteronomy 33:17",
+          "Psalm 75:4-5",
+          "1 Kings 22:11"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The altar horns likely carried multiple layers of meaning simultaneously. The liturgical function is most prominent in the Pentateuchal texts, where blood application to the horns is central to purification rites. The power symbolism draws on the widespread ANE association of horns with strength and authority. The asylum function is attested in the historical books but may be derivative — the altar provides protection because it is God's sacred space, not because the horns have independent legal significance. Most scholars see the functions as layered rather than competing.",
+    "related_passages": [
+      "Exodus 27:2",
+      "Exodus 30:2-3",
+      "Leviticus 4:7",
+      "Leviticus 4:25",
+      "1 Kings 1:50-53",
+      "1 Kings 2:28-34"
+    ],
+    "tags": [
+      "altar",
+      "horns",
+      "liturgy",
+      "blood-ritual",
+      "asylum",
+      "symbolism"
+    ]
   },
   {
     "id": "the-urim-and-thummim-oracle-lots-or-something-else",
@@ -6014,18 +6587,25 @@
     ],
     "passage": "Exodus 28",
     "question": "The Urim and Thummim: Oracle, Lots, or Something Else?",
-    "context": "",
+    "context": "The Urim and Thummim are mentioned in the priestly breastpiece (Exodus 28:30; Lev 8:8) as objects used for divine guidance. Their names may mean 'lights and perfections' or 'curses and completions.' Their physical form, method of use, and historical longevity are all uncertain. 1 Samuel 14:41 (LXX) provides the most detailed account of their use, suggesting a binary yes/no oracle. By the post-exilic period, they appear to have fallen out of use (Ezra 2:63; Neh 7:65).",
     "positions": [
       {
         "id": "sacred-lots-binary-yes-no-oracle",
         "label": "Sacred lots (binary yes/no oracle)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Most mainstream scholars",
         "argument": "The Urim and Thummim (v.30) were likely a pair of objects drawn by lot to give yes/no answers to specific questions addressed to God. 1 Sam 14:41–42 (LXX fuller text) describes their use for binary selection. They were 'taken out' (1 Sam 14:37–38) and gave definitive answers, consistent with a lot-oracle mechanism.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "1 Samuel 14:41 (LXX) describes a binary selection process (Saul vs. Jonathan); 1 Samuel 28:6 lists Urim alongside dreams and prophets as consultation methods; casting lots was a legitimate and widespread practice in the ANE and in Israel (Prov 16:33; Lev 16:8; Acts 1:26).",
+        "weaknesses": "The MT of 1 Samuel 14:41 is shorter than the LXX and less explicit; if the Urim and Thummim were simply lots, their placement in the high priest's breastpiece seems excessive; the names 'lights' and 'perfections' do not obviously connect to lot-casting.",
+        "key_verses": [
+          "1 Samuel 14:41",
+          "1 Samuel 28:6",
+          "Numbers 27:21",
+          "Proverbs 16:33"
+        ]
       },
       {
         "id": "flash-of-divine-light-illumination-oracl",
@@ -6034,9 +6614,13 @@
         "scholar_ids": [],
         "proponents": "Some traditional Jewish interpreters",
         "argument": "The root ur (Urim = lights) suggests visual illumination — specific letters on the high priest's breastpiece would light up to spell out a divine answer. This interpretation appears in rabbinic sources (Talmud Yoma 73b) and in some patristic writers. The name 'Urim' (lights) favours this reading.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The name 'Urim' derives from 'ôr (light), suggesting luminous revelation; the breastpiece stones may have been understood to glow or flash in response to inquiry; this reading explains the priestly breastpiece as more than a container — it is itself the revelatory medium.",
+        "weaknesses": "No biblical text describes the Urim as producing light; the luminous interpretation is entirely etymological; the practice described in 1 Samuel 14:41 is procedurally inconsistent with illumination; the reading may romanticize the oracle beyond what the evidence supports.",
+        "key_verses": [
+          "Exodus 28:30",
+          "Leviticus 8:8",
+          "Exodus 28:15-21"
+        ]
       },
       {
         "id": "objects-of-unknown-function",
@@ -6045,14 +6629,32 @@
         "scholar_ids": [],
         "proponents": "Many critical scholars",
         "argument": "The exact nature of the Urim and Thummim is irretrievably lost. They appear in early Israelite texts (1 Sam, Num) and then disappear after the Babylonian exile. Post-exilic texts (Ezra 2:63) acknowledge that their function cannot be performed without a priest who knows how to use them.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Acknowledges the genuine uncertainty: no complete description of appearance or procedure exists in the Bible; the post-exilic community itself seems unsure of how they worked (Ezra 2:63 — 'until there should be a priest with Urim and Thummim'); scholarly humility about gaps in evidence is appropriate.",
+        "weaknesses": "Agnosticism may be unnecessarily cautious — the lot-casting evidence from 1 Samuel 14:41 is reasonably clear; saying 'we don't know' does not help the reader engage with the texts that mention them; the binary-oracle reading, while not certain, is well-supported enough to serve as a working hypothesis.",
+        "key_verses": [
+          "Exodus 28:30",
+          "Ezra 2:63",
+          "Nehemiah 7:65"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The sacred-lots interpretation has the strongest textual support, based on 1 Samuel 14:41 (LXX) and the binary-decision contexts in which they appear. The 'divine illumination' reading is etymologically suggestive but lacks procedural description. The honest answer is that we do not know with certainty what the Urim and Thummim were or exactly how they functioned. Their disappearance from post-exilic practice (Ezra 2:63) and replacement by prophecy and Scripture suggests the biblical tradition itself outgrew this mode of revelation.",
+    "related_passages": [
+      "Exodus 28:30",
+      "Leviticus 8:8",
+      "Numbers 27:21",
+      "1 Samuel 14:41",
+      "1 Samuel 28:6",
+      "Ezra 2:63"
+    ],
+    "tags": [
+      "urim-thummim",
+      "oracle",
+      "priesthood",
+      "divine-guidance",
+      "lots",
+      "breastpiece"
+    ]
   },
   {
     "id": "ordination-does-the-ceremony-make-the-priest-or-confirm-divi",
@@ -6064,34 +6666,61 @@
     ],
     "passage": "Exodus 29",
     "question": "Ordination: Does the Ceremony Make the Priest or Confirm Divine Appointment?",
-    "context": "",
+    "context": "Exodus 29 describes the elaborate ordination ceremony for Aaron and his sons. The seven-day ritual includes washing, robing, anointing, sacrifice, and blood application to the right ear, thumb, and toe. The question is whether this ceremony constitutes the priests (i.e., the ritual itself transforms them into priests) or merely confirms and publicly marks a prior divine appointment. The distinction matters for understanding the relationship between divine calling and ritual institution in Israelite religion.",
     "positions": [
       {
         "id": "the-ceremony-constitutes-the-priest",
         "label": "The ceremony constitutes the priest",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Catholic, Orthodox, high-church tradition",
         "argument": "The ordination ceremony is a sacramental act that effects what it signifies: the person is not a priest before the ceremony and is a priest after it. The washing, clothing, and anointing are not merely symbols of an appointment already made; they are the means by which the appointment is executed. Holy orders is a sacrament that confers priestly character.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The Hebrew millē' yād ('fill the hand') in 29:9 is a technical term for priestly installation that implies conferral of authority; the seven-day duration and the elaborateness of the ritual suggest real transformation, not mere acknowledgment; without the ceremony, Aaron and his sons cannot approach the altar — the ritual is operatively necessary.",
+        "weaknesses": "Exodus 28:1 presents God's choice of Aaron as prior to and independent of the ceremony; the constitutive reading can overemphasize ritual at the expense of divine calling, which the text clearly presents as foundational; Hebrews 5:4 emphasizes being 'called by God, just as Aaron was,' making the divine call primary.",
+        "key_verses": [
+          "Exodus 29:9",
+          "Exodus 29:35",
+          "Leviticus 8:33-36"
+        ]
       },
       {
         "id": "the-ceremony-confirms-and-publicly-marks",
         "label": "The ceremony confirms and publicly marks a prior divine appointment",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "waltke"
+        ],
         "proponents": "Protestant/Reformed tradition",
         "argument": "God's appointment precedes the ceremony; the ceremony publicly marks and confirms what God has already determined. Calvin reads the priestly garments and ordination as divine accommodation to human weakness — Israel needed visible, enacted signs of what God was doing spiritually. The ceremony is meaningful and necessary but not independently efficacious.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "God's appointment (28:1 — 'Have Aaron your brother brought to you... so they may serve me as priests') precedes and grounds the ceremony; the ceremony is a public enactment of what God has already determined; Hebrews 5:1–4 treats the divine call as the essential element.",
+        "weaknesses": "The text commands the ceremony as necessary, not optional — merely confirmatory rites are not usually seven days long with elaborate blood rituals; the 'filling of the hand' language suggests the ceremony confers something, not merely recognizes it; the confirmatory reading can undervalue the ritual's own significance.",
+        "key_verses": [
+          "Exodus 28:1",
+          "Exodus 29:1-7",
+          "Hebrews 5:1-4"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The text presents both divine appointment and ritual consecration as essential. God chooses Aaron and his sons (28:1) before the ceremony occurs, yet the ceremony is commanded as necessary — they cannot serve without it. The seven-day duration (29:35), the specific blood application, and the anointing oil all suggest the ceremony effects a real change in status, not merely recognition of a prior one. Most scholars see the ordination as sacramental in the broad sense: divine appointment is the basis, but the ritual is the means by which the appointment becomes operative.",
+    "related_passages": [
+      "Exodus 28:1",
+      "Exodus 29:1-46",
+      "Leviticus 8:1-36",
+      "Numbers 3:10",
+      "Hebrews 5:1-4",
+      "Hebrews 7:11-28"
+    ],
+    "tags": [
+      "ordination",
+      "priesthood",
+      "aaron",
+      "ritual",
+      "consecration",
+      "calling"
+    ]
   },
   {
     "id": "the-incense-altar-s-late-placement-in-the-text",
@@ -6103,7 +6732,7 @@
     ],
     "passage": "Exodus 30",
     "question": "The Incense Altar's Late Placement in the Text",
-    "context": "",
+    "context": "The incense altar (golden altar) appears in Exodus 30:1–10, after the tabernacle instructions (chs. 25–27) and the priestly garments and ordination (chs. 28–29). Its late placement has puzzled commentators: why is this important furnishing described separately from the other tabernacle furniture? Source critics argue the incense altar is a later priestly addition to the tabernacle tradition. Others propose a deliberate topical arrangement that places the incense altar with the ordination and atonement material because of its role in the Day of Atonement (30:10).",
     "positions": [
       {
         "id": "source-critical-explanation-later-additi",
@@ -6112,25 +6741,50 @@
         "scholar_ids": [],
         "proponents": "Wellhausen, some critical scholars",
         "argument": "The incense altar is absent from the ch.25 list of tabernacle furnishings and appears separately in ch.30. This suggests it was added to the tabernacle tradition at a later stage — possibly during the monarchy period, when daily incense burning became standard temple practice.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The incense altar's separation from the other furnishings is unexpected if the text is a unified composition; the Day of Atonement ritual (30:10) may presuppose the later Leviticus 16 tradition; source-critical analysis identifies Exodus 30–31 as a secondary layer added to the P source.",
+        "weaknesses": "The execution account (37:25–28) includes the incense altar seamlessly, suggesting the final author considered it integral; the 'later addition' label does not explain why a redactor placed it here rather than with the other furniture; the topical-arrangement explanation provides a coherent literary rationale without requiring source division.",
+        "key_verses": [
+          "Exodus 30:1-10",
+          "Exodus 30:10",
+          "Exodus 37:25-28"
+        ]
       },
       {
         "id": "deliberate-topical-arrangement",
         "label": "Deliberate topical arrangement",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna",
+          "macarthur"
+        ],
         "proponents": "Sarna, Childs, evangelical scholars",
         "argument": "The placement of the incense altar in ch.30 alongside the anointing oil and incense formulas reflects a deliberate thematic arrangement: all the olfactory elements of the tabernacle are grouped together. This is not evidence of late addition but of literary organisation. The incense altar belongs with the incense formula that follows it.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Exodus 30–31 groups items for ongoing priestly service: incense altar, census half-shekel, bronze laver, anointing oil, incense recipe, Sabbath instruction — all operational rather than constructional; the incense altar's atonement function (30:10) connects it thematically to the ordination material in chapter 29; this arrangement distinguishes building the tabernacle (chs. 25–27) from maintaining its worship (chs. 30–31).",
+        "weaknesses": "The topical distinction (construction vs. maintenance) is not explicitly stated in the text and must be inferred; the bronze laver (30:17–21) is arguably constructional, blurring the boundary; the arrangement remains unusual enough that some editorial explanation is likely involved.",
+        "key_verses": [
+          "Exodus 30:1-10",
+          "Exodus 30:11-16",
+          "Exodus 30:17-21",
+          "Exodus 30:22-38"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The late placement is genuinely unusual and requires explanation. The source-critical view (later addition) accounts for the structural anomaly but must explain why the execution account (37:25–28) includes it without any seam. The topical-arrangement view notes that Exodus 30 groups items related to ongoing priestly service (incense altar, census tax, laver, anointing oil, incense recipe) — maintenance provisions distinct from the initial construction. This topical explanation has gained ground even among critical scholars and provides a coherent literary rationale for the placement.",
+    "related_passages": [
+      "Exodus 30:1-10",
+      "Exodus 25:23-30",
+      "Exodus 27:1-8",
+      "Exodus 37:25-28",
+      "Leviticus 16:12-13",
+      "1 Kings 7:48"
+    ],
+    "tags": [
+      "incense-altar",
+      "tabernacle",
+      "source-criticism",
+      "literary-structure",
+      "priestly-service"
+    ]
   },
   {
     "id": "sabbath-universal-creation-ordinance-or-specific-israelite-c",
@@ -6142,45 +6796,81 @@
     ],
     "passage": "Exodus 31",
     "question": "Sabbath: Universal Creation Ordinance or Specific Israelite Covenant Sign?",
-    "context": "",
+    "context": "The Sabbath commandment in Exodus 20:8–11 grounds the institution in creation: God rested on the seventh day (Gen 2:2–3). Yet Deuteronomy 5:15 grounds it in the exodus: 'Remember that you were slaves in Egypt.' The dual grounding raises the question of whether the Sabbath is a universal ordinance rooted in the creation order (binding on all humanity) or a specific covenant sign between God and Israel (Exod 31:13, 17). A third view holds that both are true — creation rest particularized in the Mosaic covenant.",
     "positions": [
       {
         "id": "universal-creation-ordinance",
         "label": "Universal creation ordinance",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Calvin, Reformed tradition",
         "argument": "The Sabbath is grounded in creation (Gen 2:2–3) and is therefore binding on all humanity. Sinai formalises what creation already established. Sunday worship maintains the creation-rest principle with the day changed to celebrate resurrection.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Genesis 2:2–3 establishes the seven-day pattern before the Mosaic covenant; Exodus 20:11 explicitly grounds the commandment in creation; Mark 2:27 ('The Sabbath was made for man, not man for the Sabbath') implies universal applicability; the rest principle reflects human creational design.",
+        "weaknesses": "No evidence exists of Sabbath observance before the manna episode (Exod 16); Exodus 31:13, 17 identifies the Sabbath as a sign 'between me and the Israelites,' limiting its scope; if universally binding, the absence of Sabbath-keeping commands for gentile believers in Acts 15 is puzzling.",
+        "key_verses": [
+          "Genesis 2:2-3",
+          "Exodus 20:8-11",
+          "Mark 2:27",
+          "Isaiah 56:6-7"
+        ]
       },
       {
         "id": "specific-israelite-covenant-sign",
         "label": "Specific Israelite covenant sign",
         "tradition_family": "reformed",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Dispensationalists",
         "argument": "The 'sign between me and the Israelites forever' (v.17) makes it specifically Israelite. The new covenant does not require Sabbath observance; Col 2:16 and Rom 14:5 support Christian freedom regarding days.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Exodus 31:13, 17 explicitly identifies the Sabbath as a covenant sign between God and Israel; Ezekiel 20:12 calls it a mark of distinction; Nehemiah 9:13–14 treats Sabbath revelation as Sinai-specific; Colossians 2:16–17 treats it as a shadow fulfilled in Christ.",
+        "weaknesses": "Must explain why the Sabbath commandment appeals to creation (Exod 20:11) if it has no pre-Sinai significance; Genesis 2:2–3 establishes a rest pattern that predates Israel; the covenant-sign reading can under-read the creation dimension.",
+        "key_verses": [
+          "Exodus 31:13-17",
+          "Ezekiel 20:12",
+          "Nehemiah 9:13-14",
+          "Colossians 2:16-17"
+        ]
       },
       {
         "id": "both-creation-rest-particularised-in-the",
         "label": "Both: creation rest particularised in the Sinai covenant",
         "tradition_family": "reformed",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke"
+        ],
         "proponents": "Westminster/Reformed consensus",
         "argument": "The creation Sabbath is universally binding; Sinai specifies the day and the penalty. The new covenant fulfils the Sabbath in Christ (Heb 4) while maintaining the one-in-seven principle.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Resolves the dual grounding: the creation pattern (Exod 20:11) provides the universal basis, while the covenant sign (Exod 31:13, 17) provides the Israelite application; the Deuteronomy 5 exodus-grounding adds a redemptive layer without contradicting creation; allows the Sabbath to function as both gift and command.",
+        "weaknesses": "The 'both' position can appear as harmonization rather than exegesis; it risks satisfying no one by compromising between the other views; the practical question of whether Sabbath is binding on Christians remains unresolved even if both grounds are accepted.",
+        "key_verses": [
+          "Exodus 20:8-11",
+          "Deuteronomy 5:12-15",
+          "Exodus 31:13",
+          "Genesis 2:2-3"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The creation-ordinance view has significant support from Genesis 2:2–3 and the Exodus 20 formulation, while the covenant-sign view draws on Exodus 31:13, 17 and Ezekiel 20:12, 20. The 'both' position is increasingly common: the creation pattern establishes a universal principle of rest that is particularized as a covenant obligation for Israel. This resolves the dual grounding (creation in Exodus 20, exodus in Deuteronomy 5) as complementary rather than competing. The NT's treatment (Col 2:16–17; Mark 2:27) adds further complexity about the Sabbath's ongoing applicability.",
+    "related_passages": [
+      "Exodus 20:8-11",
+      "Exodus 31:12-17",
+      "Deuteronomy 5:12-15",
+      "Genesis 2:1-3",
+      "Ezekiel 20:12",
+      "Mark 2:27-28",
+      "Colossians 2:16-17"
+    ],
+    "tags": [
+      "sabbath",
+      "creation",
+      "covenant-sign",
+      "rest",
+      "law",
+      "universal-particular"
+    ]
   },
   {
     "id": "why-did-aaron-comply",
@@ -6192,18 +6882,25 @@
     ],
     "passage": "Exodus 32",
     "question": "Why Did Aaron Comply?",
-    "context": "",
+    "context": "When the people demand 'gods who will go before us' (Exodus 32:1), Aaron collects gold jewelry, casts a golden calf, and declares a festival 'to the LORD' (32:5). His later excuse to Moses — 'I threw it into the fire, and out came this calf!' (32:24) — is transparently evasive. The question of why Aaron, the designated high priest, complied with the people's demand has generated three main explanations: personal weakness, tactical delay, and a structural commentary on priesthood's vulnerability to popular pressure.",
     "positions": [
       {
         "id": "weakness-and-crowd-pressure",
         "label": "Weakness and crowd pressure",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "sarna"
+        ],
         "proponents": "Most commentators",
         "argument": "Aaron lacked moral courage to resist popular demand. His later excuse ('I threw it in the fire and out came this calf') reveals the depth of his evasiveness. This is the portrait of a leader who enables the people's worst impulses.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The simplest reading of the text: Aaron is asked, Aaron complies; his absurd excuse (32:24) confirms he knows he did wrong; Deuteronomy 9:20 says God was angry enough with Aaron to destroy him, confirming culpability; leadership failure under popular pressure is a realistic and well-attested phenomenon.",
+        "weaknesses": "Does not explain why the narrator provides no psychological motivation for the designated high priest's catastrophic failure; the weakness reading can flatten a complex narrative into simple character flaw.",
+        "key_verses": [
+          "Exodus 32:1-4",
+          "Exodus 32:24",
+          "Deuteronomy 9:20"
+        ]
       },
       {
         "id": "tactical-stalling-to-buy-time",
@@ -6212,9 +6909,12 @@
         "scholar_ids": [],
         "proponents": "Some Jewish interpreters (Midrash)",
         "argument": "Aaron agreed hoping Moses would return before completion. The lengthy collection and fashioning process was deliberate delay. This reading softens his culpability but strains the plain narrative sense.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Aaron calls for gold earrings (32:2), which might have been designed to deter the people by requiring personal sacrifice; he declares a 'festival to the LORD' (32:5), possibly attempting to redirect the worship toward YHWH; the delay tactic would explain why Aaron is not punished as severely as the people.",
+        "weaknesses": "The people enthusiastically comply with the gold request, and Aaron proceeds to build the calf — if it was a stalling tactic, it failed completely and Aaron escalated anyway; the text provides no hint of tactical intent; Deuteronomy 9:20 describes God's anger at Aaron, inconsistent with a sympathetic stalling reading.",
+        "key_verses": [
+          "Exodus 32:2-5",
+          "Exodus 32:5"
+        ]
       },
       {
         "id": "structural-problem-of-the-priesthood",
@@ -6223,14 +6923,31 @@
         "scholar_ids": [],
         "proponents": "Literary/theological reading",
         "argument": "Aaron's compliance foreshadows the recurring problem: the designated covenant mediator can become the instrument of apostasy. Ch.32 explains why the priestly system requires external accountability — Moses, not Aaron, is the real intercessor.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The golden calf episode occurs between the priestly ordination instructions (chs. 28–29) and their execution (Lev 8–9), creating a structural irony: the designated high priest commits the foundational sin before his ordination is complete; this problematizes the priesthood's reliability and anticipates later priestly failures (Nadab/Abihu, Eli's sons).",
+        "weaknesses": "This reading is more about the narrative's function than Aaron's motivation; it explains what the text does but not why Aaron did what he did; the structural-irony reading may be a modern literary observation that the ancient author did not consciously intend.",
+        "key_verses": [
+          "Exodus 28:1",
+          "Exodus 32:1-6",
+          "Leviticus 10:1-3",
+          "1 Samuel 2:12-17"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The narrative presents Aaron's compliance without explicit explanation, which may itself be the point: the text shows the failure without excusing it. Aaron's weak excuse (32:24) is deliberately absurd, signaling the narrator's critical stance. The weakness reading is simplest and most widely held. The stalling reading is creative but lacks clear textual support. The structural reading offers genuine insight — the golden calf episode problematizes the priesthood before it even begins — but may over-systematize a narrative designed to shock through its simplicity.",
+    "related_passages": [
+      "Exodus 32:1-6",
+      "Exodus 32:21-24",
+      "Deuteronomy 9:20",
+      "1 Kings 12:28-30",
+      "Nehemiah 9:18"
+    ],
+    "tags": [
+      "aaron",
+      "golden-calf",
+      "priesthood",
+      "leadership-failure",
+      "idolatry"
+    ]
   },
   {
     "id": "the-tent-of-meeting-same-as-the-tabernacle-or-a-prior-struct",
@@ -6242,34 +6959,58 @@
     ],
     "passage": "Exodus 33",
     "question": "The Tent of Meeting: Same as the Tabernacle or a Prior Structure?",
-    "context": "",
+    "context": "Exodus 33:7–11 describes a 'tent of meeting' that Moses pitches outside the camp where he speaks with God 'face to face.' This tent appears before the tabernacle is constructed (chs. 35–40), is located outside rather than in the center of the camp, and is served by Joshua rather than Levitical priests. Source critics identify it as an E-source tradition distinct from the P-source tabernacle. The alternative reading treats the Exodus 33 tent as a proleptic or provisional reference to the yet-to-be-constructed tabernacle.",
     "positions": [
       {
         "id": "a-separate-earlier-structure",
         "label": "A separate, earlier structure",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Most critical scholars, many evangelical",
         "argument": "The tent of meeting in Exod 33 is placed outside the camp, before the tabernacle is built (chs.35–40). It is an improvised structure that served as the pre-tabernacle meeting place. Once the tabernacle is complete, it takes over the function of the tent of meeting and is placed in the centre of the camp.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The differences in location, personnel, and access are most naturally explained by a different structure; the tent's placement outside the camp is theologically significant — after the golden calf sin, God's presence withdraws from the camp's center; a simpler pre-tabernacle tent is historically plausible for the early wilderness period.",
+        "weaknesses": "The narrative of Exodus 25–40 presents a single authoritative sanctuary plan; introducing a separate structure complicates the text without explicit textual warrant; the 'tent of meeting' name is used for the tabernacle itself in 40:2, making the distinction terminologically confusing.",
+        "key_verses": [
+          "Exodus 33:7",
+          "Exodus 33:9-11",
+          "Numbers 11:16-17"
+        ]
       },
       {
         "id": "proleptic-reference-to-the-tabernacle",
         "label": "Proleptic reference to the tabernacle",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Some traditional commentators",
         "argument": "The tent of meeting is the tabernacle, described proleptically before its construction is narrated. The chronological narrative sometimes anticipates the completed structure.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Preserves the unity of the Exodus narrative; the 'tent of meeting' name is used consistently for the tabernacle (40:2); the passage may describe practices that were regularized once the tabernacle was built, described proleptically in the narrative.",
+        "weaknesses": "Cannot easily explain why the tent is outside the camp (the tabernacle is explicitly central, Num 2) or why Joshua rather than Levites attends it; proleptic readings are not the natural way to read prose narrative; the differences are too specific for mere anticipation.",
+        "key_verses": [
+          "Exodus 33:7-11",
+          "Exodus 40:2",
+          "Numbers 2:2"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The differences between the Exodus 33 tent and the tabernacle of chapters 35–40 are significant: location (outside vs. center), attendant (Joshua vs. Levites), and access (open to seekers vs. restricted to priests). The separate-structure reading accounts for these differences naturally. The proleptic reading preserves textual unity but must explain the discrepancies. A moderate position suggests a simpler pre-tabernacle tent that was superseded by the elaborate tabernacle — not contradictory sources but sequential structures.",
+    "related_passages": [
+      "Exodus 33:7-11",
+      "Exodus 40:1-38",
+      "Numbers 11:16-17",
+      "Numbers 12:4-5",
+      "Deuteronomy 31:14-15"
+    ],
+    "tags": [
+      "tent-of-meeting",
+      "tabernacle",
+      "moses",
+      "divine-presence",
+      "source-criticism"
+    ]
   },
   {
     "id": "the-thirteen-attributes-mercy-or-mercy-and-justice",
@@ -6281,34 +7022,64 @@
     ],
     "passage": "Exodus 34",
     "question": "The Thirteen Attributes: Mercy or Mercy-and-Justice?",
-    "context": "",
+    "context": "Exodus 34:6–7 declares God's character in what Jewish tradition identifies as the 'Thirteen Attributes of Mercy' (middot harachamim). The passage begins with compassion and grace but concludes with 'he does not leave the guilty unpunished; he punishes the children and their children for the sin of the parents.' The question is whether the passage as a whole emphasizes mercy (with justice as a subordinate qualifier) or presents mercy and justice as equally absolute divine attributes held in tension.",
     "positions": [
       {
         "id": "mercy-predominates",
         "label": "Mercy predominates",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Most Jewish liturgical use",
         "argument": "The list opens with five mercy-attributes and closes with two justice-attributes. Jewish liturgical use emphasises mercy as the foundation of Israel's appeal to God.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The mercy descriptors fill 34:6–7a with six to eight attributes; the punishment clause is proportionally smaller; later biblical citations (Ps 86:15; 103:8; Joel 2:13; Jonah 4:2) consistently quote the mercy portion and omit the punishment clause; the passage responds to the golden calf crisis — mercy is the dominant need and the dominant declaration.",
+        "weaknesses": "Omitting the punishment clause distorts the passage's own balance; 'he does not leave the guilty unpunished' is categorical, not qualified; selective quotation in later texts reflects liturgical usage, not necessarily the original passage's intent; Nahum 1:3 quotes the justice clause specifically, showing it was not forgotten.",
+        "key_verses": [
+          "Exodus 34:6-7",
+          "Psalm 103:8-12",
+          "Jonah 4:2",
+          "Joel 2:13"
+        ]
       },
       {
         "id": "justice-limits-mercy-both-absolute",
         "label": "Justice limits mercy: both absolute",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "waltke"
+        ],
         "proponents": "Calvin, Reformed theology",
         "argument": "God's mercy and justice are not in tension — both are fully expressed, but only through the cross where the punishment falls on the substitute rather than the sinner.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The passage includes both — to omit either is to misread; 'does not leave the guilty unpunished' is not a reluctant footnote but a divine self-declaration; the intergenerational punishment clause (though limited to three/four generations vs. mercy to thousands) affirms justice's reality; the NT cross holds mercy and justice together precisely in the way this passage demands.",
+        "weaknesses": "The proportional imbalance (mercy to thousands, punishment to three/four generations) does suggest mercy predominates even within the justice-inclusive reading; reading the passage as balanced can flatten its rhetoric, which clearly builds toward mercy; Ezekiel 18 later limits the intergenerational punishment principle, complicating a simple 'both absolute' reading.",
+        "key_verses": [
+          "Exodus 34:6-7",
+          "Nahum 1:3",
+          "Romans 3:25-26",
+          "Ezekiel 18:20"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Jewish liturgical tradition emphasizes the mercy reading by stopping the count at 'forgiving' and treating the punishment clause as outside the thirteen attributes. Christian theology more commonly reads the passage as holding mercy and justice in creative tension — both are absolute, neither compromises the other. The textual structure itself supports mercy's dominance: the mercy descriptors are extensive (34:6–7a), while the punishment clause is briefer and qualified by the three/four generation limit. Most scholars agree that mercy predominates in the passage's rhetoric while justice remains genuinely present.",
+    "related_passages": [
+      "Exodus 34:6-7",
+      "Numbers 14:18",
+      "Nehemiah 9:17",
+      "Psalm 86:15",
+      "Psalm 103:8-12",
+      "Joel 2:13",
+      "Jonah 4:2",
+      "Nahum 1:3"
+    ],
+    "tags": [
+      "divine-attributes",
+      "mercy",
+      "justice",
+      "thirteen-attributes",
+      "character-of-god"
+    ]
   },
   {
     "id": "the-willing-heart-covenant-response-or-natural-impulse",
@@ -6320,34 +7091,62 @@
     ],
     "passage": "Exodus 35",
     "question": "The Willing Heart: Covenant Response or Natural Impulse?",
-    "context": "",
+    "context": "Exodus 35:5, 21, 29 describe the tabernacle offerings as given by 'everyone whose heart was willing' (nĕdîb lēb). The voluntary generosity is so abundant that Moses must restrain the people (36:6–7). Theological readings debate whether this willingness is a Spirit-empowered covenant response (divine grace enabling human generosity) or a natural community dynamic (enthusiasm for a shared religious project). The answer shapes how one reads the relationship between grace and human agency in the OT.",
     "positions": [
       {
         "id": "covenant-response-to-grace",
         "label": "Covenant response to grace",
         "tradition_family": "reformed",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke",
+          "calvin"
+        ],
         "proponents": "Calvin, Reformed tradition",
         "argument": "The willing heart is the fruit of the Spirit's work in response to covenant grace already received. Israel gives freely because God gave first — the Exodus, Sinai, forgiveness after the golden calf.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The willingness follows immediately after the covenant renewal (ch. 34), framing it as a response to divine mercy; the Spirit-filling of Bezalel (35:31) demonstrates divine enablement for the entire project; 1 Chronicles 29:14 ('everything comes from you, and we have given you only what comes from your hand') grounds generosity in prior grace.",
+        "weaknesses": "The text does not explicitly attribute the people's willingness to the Spirit — only the craftsmen receive Spirit-filling; emphasizing divine causation can diminish the genuine voluntariness the text celebrates; the contrast with the golden calf episode (people's initiative for evil) suggests free human agency is genuinely in play.",
+        "key_verses": [
+          "Exodus 35:21",
+          "Exodus 35:29",
+          "Exodus 35:30-31",
+          "1 Chronicles 29:14"
+        ]
       },
       {
         "id": "natural-religious-community-dynamics",
         "label": "Natural religious community dynamics",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Sociological reading",
         "argument": "The outpouring of gifts reflects the social and religious dynamics of a community with a shared project. Large voluntary communal gifts are a feature of intense religious community life.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The text presents the giving as straightforwardly voluntary — people whose hearts 'stirred them' bring offerings; community enthusiasm for shared sacred projects is a well-attested sociological phenomenon; the abundance requiring restraint (36:6–7) is a realistic detail about communal giving, not a theological abstraction.",
+        "weaknesses": "Reducing the event to sociology misses the theological context: this community has just been forgiven for the golden calf and has received renewed covenant promises; the parallel with Bezalel's Spirit-filling suggests divine involvement in the project as a whole; the 'natural' reading can secularize a text that is deeply embedded in covenant theology.",
+        "key_verses": [
+          "Exodus 35:5",
+          "Exodus 35:22",
+          "Exodus 36:5-7"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The text emphasizes both divine enablement (Bezalel and Oholiab are Spirit-filled, 35:30–35) and voluntary human response (the people give freely from willing hearts). The Reformed reading stresses that the willing heart itself is a gift of grace; the more general evangelical reading highlights genuine human initiative responding to God's prior acts. The text resists a stark either/or: the willingness follows the covenant renewal (ch. 34) and is thus shaped by grace, yet it is presented as genuinely voluntary rather than coerced or irresistible.",
+    "related_passages": [
+      "Exodus 35:4-29",
+      "Exodus 36:2-7",
+      "Exodus 35:30-35",
+      "1 Chronicles 29:6-17",
+      "2 Corinthians 8:1-5",
+      "2 Corinthians 9:7"
+    ],
+    "tags": [
+      "willing-heart",
+      "generosity",
+      "tabernacle-offerings",
+      "grace",
+      "human-agency",
+      "covenant"
+    ]
   },
   {
     "id": "why-repeat-the-tabernacle-instructions-in-full",
@@ -6359,18 +7158,26 @@
     ],
     "passage": "Exodus 36",
     "question": "Why Repeat the Tabernacle Instructions in Full?",
-    "context": "",
+    "context": "Exodus 35–40 repeats the tabernacle construction instructions from chapters 25–31 almost verbatim, changing only from imperative ('you shall make') to narrative ('they made'). The repetition adds approximately 6 chapters of near-identical material. Source critics have attributed this to the combination of parallel priestly sources. The covenant-verification reading sees the repetition as theologically intentional: demonstrating that Israel executed God's plan exactly as commanded — a counterpoint to the golden calf's unauthorized worship.",
     "positions": [
       {
         "id": "covenant-verification",
         "label": "Covenant verification",
         "tradition_family": "reformed",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna",
+          "waltke"
+        ],
         "proponents": "Childs, Sarna",
         "argument": "The execution chapters confirm every instruction was followed. The reader witnesses total obedience — which is the theological point after the golden calf's total disobedience. The length is the message.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The 'as the LORD commanded' refrain occurs over a dozen times, making exact obedience the dominant theme; the golden calf episode (ch. 32) makes the faithful-execution theme narratively necessary; the parallel between Moses' inspection and approval (39:43) and God's creation-completion assessment (Gen 1:31; 2:1–3) is widely recognized.",
+        "weaknesses": "The theological reading does not fully explain why the text needed to be nearly verbatim rather than summarized; a brief narrative ('they did everything as the LORD commanded') would make the same theological point more efficiently; the literary convention explanation is complementary but different from the theological one.",
+        "key_verses": [
+          "Exodus 39:32",
+          "Exodus 39:42-43",
+          "Exodus 40:16",
+          "Exodus 40:33"
+        ]
       },
       {
         "id": "two-independent-sources-combined",
@@ -6379,14 +7186,30 @@
         "scholar_ids": [],
         "proponents": "Some critical scholars",
         "argument": "The instruction (P source) and execution accounts were originally independent documents combined by a later editor. The repetition reflects source combination rather than intentional literary structure.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The near-verbatim repetition is most economically explained as two versions of the same tradition preserved by a redactor; the slight differences between the instruction and execution accounts (e.g., order of items) are easier to explain as source variation than as deliberate literary artistry.",
+        "weaknesses": "Does not explain why a redactor would include both when one would suffice — source combination typically involves more creative editing; the 'as the LORD commanded' refrain appears to be a deliberate editorial addition that presupposes both sections, arguing for compositional intention; the canonical-function reading accounts for the repetition's theological purpose regardless of its compositional history.",
+        "key_verses": [
+          "Exodus 25:1-9",
+          "Exodus 35:4-19",
+          "Exodus 39:32"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The near-verbatim repetition is jarring to modern readers but reflects an ANE literary convention where precise execution of divine instructions is documented fully. The covenant-verification reading has gained wide acceptance: the golden calf episode (ch. 32) showed Israel's capacity for unauthorized worship, and the exact repetition in chapters 35–40 demonstrates the opposite — faithful obedience to every detail. The refrain 'as the LORD commanded Moses' (39:1, 5, 7, 21, 26, 29, 31, 32, 42, 43) reinforces this theological point. Whether the repetition also reflects source combination is a separate question from its canonical function.",
+    "related_passages": [
+      "Exodus 25-31",
+      "Exodus 35-40",
+      "Exodus 32:1-6",
+      "Exodus 39:42-43",
+      "Genesis 1:1-2:3"
+    ],
+    "tags": [
+      "tabernacle",
+      "repetition",
+      "obedience",
+      "literary-structure",
+      "covenant-verification"
+    ]
   },
   {
     "id": "the-ark-furniture-or-throne",
@@ -6398,34 +7221,64 @@
     ],
     "passage": "Exodus 37",
     "question": "The Ark: Furniture or Throne?",
-    "context": "",
+    "context": "The ark of the covenant (Exodus 25:10–22) is described with two primary functions: it contains the covenant tablets (25:16, 21) and its cover (kapporet) serves as the place where God meets Moses (25:22). The question is whether the ark functions primarily as a container (a chest holding the covenant document, consistent with ANE treaty-deposit conventions) or as a throne/footstool (God is 'enthroned between the cherubim,' 1 Sam 4:4; 2 Sam 6:2; Ps 80:1), with the tablets being secondary to the presence function.",
     "positions": [
       {
         "id": "divine-footstool-throne",
         "label": "Divine footstool/throne",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Most scholars (Mowinckel, Eichrodt, Sarna)",
         "argument": "The Ark is the footstool of the invisible divine throne — God is enthroned above the cherubim (Ps 80:1; 99:1). The mercy seat is the meeting point between footstool and invisible enthroned presence.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Multiple texts describe God as 'enthroned between the cherubim' (1 Sam 4:4; 2 Sam 6:2; Ps 80:1; 99:1); 1 Chronicles 28:2 calls the ark 'the footstool of our God'; the kapporet (mercy seat) is where God's presence manifests (25:22; Lev 16:2); ANE parallels show divine thrones flanked by winged guardians.",
+        "weaknesses": "The Exodus text's first stated purpose is to contain the tablets (25:16, 21), making the container function explicitly primary; the throne/footstool language appears in later texts, possibly reflecting theological development rather than original design intent; if the ark is primarily a throne, the covenant tablets become secondary, which undercuts the 'ark of the covenant' designation.",
+        "key_verses": [
+          "1 Samuel 4:4",
+          "2 Samuel 6:2",
+          "Psalm 80:1",
+          "1 Chronicles 28:2"
+        ]
       },
       {
         "id": "container-for-the-covenant-document",
         "label": "Container for the covenant document",
         "tradition_family": "reformed",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "waltke",
+          "macarthur"
+        ],
         "proponents": "Literalist reading",
         "argument": "The Ark is primarily a storage chest for the covenant tablets. Its sacredness derives from what it contains.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The Exodus instructions explicitly state 'put the tablets of the covenant law in the ark' (25:16, 21); ANE suzerainty treaties were deposited before the deity — the ark fulfills this treaty-deposit convention; Deuteronomy 10:1–5 recounts the ark's construction specifically as a container for the tablets.",
+        "weaknesses": "The container function does not account for the elaborate cherubim design, the kapporet's role as meeting place, or the throne language in later texts; if the ark is merely a box, its extraordinary sanctity (death upon touching, 2 Sam 6:6–7) seems disproportionate; the presence function (25:22) adds a dimension that 'container' alone cannot capture.",
+        "key_verses": [
+          "Exodus 25:16",
+          "Exodus 25:21",
+          "Deuteronomy 10:1-5",
+          "Exodus 25:22"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Both functions are textually attested and need not be mutually exclusive. The container function is primary in the Exodus description (25:16, 21 — 'put in the ark the tablets'); the throne/footstool function is primary in the historical and poetic literature (1 Sam 4:4; Ps 80:1; 99:1). The ark may have been understood as both: a covenant document box (ANE treaty convention) that also served as the footstool of God's invisible throne (the cherubim forming the armrests or guardians). The dual function enriches both its legal (covenant) and liturgical (divine presence) significance.",
+    "related_passages": [
+      "Exodus 25:10-22",
+      "Deuteronomy 10:1-5",
+      "1 Samuel 4:4",
+      "2 Samuel 6:2",
+      "Psalm 80:1",
+      "Psalm 99:1",
+      "1 Chronicles 28:2",
+      "Hebrews 9:4-5"
+    ],
+    "tags": [
+      "ark-of-the-covenant",
+      "throne",
+      "covenant-document",
+      "cherubim",
+      "divine-presence"
+    ]
   },
   {
     "id": "the-materials-census-historical-record-or-theological-testim",
@@ -6437,34 +7290,58 @@
     ],
     "passage": "Exodus 38",
     "question": "The Materials Census: Historical Record or Theological Testimony?",
-    "context": "",
+    "context": "Exodus 38:24–31 provides a detailed accounting of materials used in the tabernacle: approximately 29 talents of gold, 100 talents of silver, and 70 talents of bronze. These figures have been evaluated as either a historical inventory record (reflecting actual material collected) or a theological idealization (symbolic numbers expressing the tabernacle's value and the people's devotion). The amounts are substantial — roughly 1 ton of gold, 3.5 tons of silver, and 2.5 tons of bronze.",
     "positions": [
       {
         "id": "historical-record",
         "label": "Historical record",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Kitchen, evangelical archaeologists",
         "argument": "The census is a genuine financial record consistent with ancient Near Eastern temple building records. Egyptian and Mesopotamian records routinely documented materials used.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "ANE temple-building inscriptions regularly include material inventories; the silver amount is tied to a specific per-capita calculation (603,550 × half-shekel), showing mathematical precision; the 'plundering of Egypt' (12:35–36) provides a plausible source for the wealth; accurate record-keeping of sacred materials is a priestly obligation.",
+        "weaknesses": "The quantities are enormous for a wilderness community; the census number (603,550) is itself debated as possibly symbolic; if the census number is inflated, the material figures derived from it are correspondingly unreliable.",
+        "key_verses": [
+          "Exodus 38:24-31",
+          "Exodus 12:35-36",
+          "Exodus 30:13-16"
+        ]
       },
       {
         "id": "theological-idealization",
         "label": "Theological idealization",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Some critical scholars",
         "argument": "The numbers are too precise to be genuine records — a theological statement about perfect obedience, not an accountant's ledger.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The amounts may reflect the tabernacle's idealized theological significance rather than historical precision; the priestly tradition emphasizes the tabernacle's cosmic dimensions, and idealized material quantities fit this theological framing; the specific figures may have numerological or symbolic significance within priestly thought.",
+        "weaknesses": "The precision of the accounting (specific weights, per-capita calculations) argues against mere symbolism; calling the figures 'idealized' requires identifying what is being idealized and why, which is speculative; ANE temple records use precise figures that are accepted as historical — the same standard should apply here.",
+        "key_verses": [
+          "Exodus 38:24-28",
+          "Exodus 38:29-31",
+          "1 Chronicles 22:14"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The quantities are large but not impossibly so for a community that 'plundered the Egyptians' (12:35–36) and received centuries of accumulated wealth. The silver calculation is tied to a specific census (38:25–26 — a bekah per person at 603,550 men), giving it an internally consistent mathematical basis. Whether the census figure itself is literal or representative is a separate question, but the materials census is at least internally coherent. Most scholars note that precise accounting of sacred materials is well attested in ANE temple-building records, supporting the historical-record reading.",
+    "related_passages": [
+      "Exodus 38:24-31",
+      "Exodus 12:35-36",
+      "Exodus 30:11-16",
+      "1 Chronicles 22:14",
+      "1 Chronicles 29:2-9"
+    ],
+    "tags": [
+      "tabernacle-materials",
+      "census",
+      "gold-silver-bronze",
+      "historicity",
+      "temple-records"
+    ]
   },
   {
     "id": "just-as-the-lord-commanded-how-many-times-in-ch-39",
@@ -6476,34 +7353,67 @@
     ],
     "passage": "Exodus 39",
     "question": "'Just as the LORD commanded': How Many Times in Ch.39?",
-    "context": "",
+    "context": "The phrase 'as the LORD commanded Moses' (ka'asher ṣiwwāh YHWH 'et-Mōsheh) recurs throughout Exodus 39–40 with striking frequency. Scholars count the occurrences differently depending on whether they include only the exact formula or also minor variations. Some count seven occurrences specifically in chapter 39 (linking the number to creation's seven days), while others count approximately sixteen across chapters 39–40. The repetition is widely seen as theologically deliberate, connecting the tabernacle's construction to the creation narrative.",
     "positions": [
       {
         "id": "seven-times-specifically-in-ch-39",
         "label": "Seven times specifically in ch.39",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna"
+        ],
         "proponents": "Sarna, most commentators",
         "argument": "The phrase appears seven times in ch.39 (vv.1, 5, 7, 21, 26, 29, 31) — the creation number. The sevenfold completion of the priestly garments mirrors the seven days of creation.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The seven-fold repetition in a single chapter is structurally conspicuous and likely deliberate; the creation parallel is strengthened: seven acts of obedient making parallel seven days of divine making; Moses' inspection (39:43) mirrors God's assessment of creation (Gen 1:31); the Sabbath framework (31:12–17) bookends the construction narrative.",
+        "weaknesses": "The count of exactly seven requires careful delimitation of which formulas qualify — minor variations may push the count above or below seven; the creation-parallel reading, while attractive, may impose a structure the author did not consciously design.",
+        "key_verses": [
+          "Exodus 39:1",
+          "Exodus 39:5",
+          "Exodus 39:7",
+          "Exodus 39:26",
+          "Exodus 39:29",
+          "Exodus 39:31",
+          "Exodus 39:43"
+        ]
       },
       {
         "id": "approximately-sixteen-times-in-chs-39-40",
         "label": "Approximately sixteen times in chs.39–40",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Broad count",
         "argument": "Counting all instances in the execution section, the phrase appears approximately sixteen times. The cumulative effect confirms total obedience.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Counting all occurrences across chapters 39–40 gives a comprehensive picture of the obedience emphasis; the higher count reflects the text's actual repetitive rhetoric more accurately; the theological point (comprehensive exact obedience) is served by abundance, not by a precise numerological scheme.",
+        "weaknesses": "A count of sixteen lacks the symbolic resonance of seven; the broader count may obscure the chapter-39 concentration that drives the creation-parallel reading; the higher count makes it harder to identify a deliberate numerological pattern.",
+        "key_verses": [
+          "Exodus 39:1-43",
+          "Exodus 40:16",
+          "Exodus 40:19",
+          "Exodus 40:21",
+          "Exodus 40:25",
+          "Exodus 40:27",
+          "Exodus 40:29",
+          "Exodus 40:32"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The exact count depends on which variations of the formula are included, but the theological purpose is clear regardless of the precise number. The seven-in-chapter-39 reading draws an explicit parallel to Genesis 1's seven days, with Moses' inspection and blessing (39:43) paralleling God's 'very good' assessment (Gen 1:31). The broader sixteen-occurrences count covers chapters 39–40 and emphasizes comprehensive obedience. Both counts point to the same theological conclusion: the tabernacle's construction is presented as a new creation — the ordering of sacred space that mirrors the ordering of the cosmos.",
+    "related_passages": [
+      "Exodus 39:1-43",
+      "Exodus 40:1-33",
+      "Genesis 1:31-2:3",
+      "Genesis 6:22",
+      "Exodus 39:43"
+    ],
+    "tags": [
+      "obedience-formula",
+      "tabernacle",
+      "creation-parallel",
+      "literary-structure",
+      "seven"
+    ]
   },
   {
     "id": "why-does-exodus-end-with-the-glory-and-not-with-entry-into-c",
@@ -6515,18 +7425,26 @@
     ],
     "passage": "Exodus 40",
     "question": "Why Does Exodus End with the Glory and Not with Entry into Canaan?",
-    "context": "",
+    "context": "Exodus ends with the glory of the LORD filling the tabernacle (40:34–38) — not with arrival in the promised land. The book's narrative arc runs from slavery in Egypt to God's dwelling among his people, making divine presence rather than geographic destination the climax. This ending challenges the assumption that the exodus is primarily about land acquisition and reframes it as primarily about divine-human fellowship. The alternative view sees the ending as an editorial decision to create a pentateuchal series, with Leviticus–Numbers continuing the Sinai material.",
     "positions": [
       {
         "id": "the-exodus-s-goal-is-divine-dwelling-not",
         "label": "The Exodus's goal is divine dwelling, not territorial possession",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "sarna",
+          "waltke"
+        ],
         "proponents": "Childs, Fretheim",
         "argument": "The book ends where its purpose statement said it would (29:45: 'I will dwell among the Israelites'). The land is the next chapter; the covenant goal — divine presence among the covenant people — is achieved here.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Exodus 25:8 ('let them make me a sanctuary, so that I may dwell among them') explicitly states the tabernacle's purpose as divine dwelling; 29:45–46 defines the exodus itself in terms of dwelling: 'I brought them out of Egypt so that I might dwell among them'; the glory-filling forms a perfect inclusio with 3:12 ('you will worship God on this mountain') — the exodus achieves its goal.",
+        "weaknesses": "The land promise remains unfulfilled at the end of Exodus, and the Pentateuch as a whole moves toward it; emphasizing divine presence over land can understate the land's theological importance in the covenant; the ending may be both theologically designed and editorially pragmatic.",
+        "key_verses": [
+          "Exodus 25:8",
+          "Exodus 29:45-46",
+          "Exodus 40:34-38",
+          "Exodus 3:12"
+        ]
       },
       {
         "id": "editorial-decision-to-separate-exodus-fr",
@@ -6535,14 +7453,32 @@
         "scholar_ids": [],
         "proponents": "Source critics",
         "argument": "The Pentateuch's division into five books is a later editorial decision. The natural narrative continuation is the journey to Canaan. Exodus 40 is an artificial stopping point.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The Pentateuch was divided into five scrolls for practical reasons; the Sinai material continues through Leviticus and into Numbers 10; the ending at the glory-filling creates a natural break before the cultic legislation of Leviticus; the editorial explanation is simpler than a grand theological design.",
+        "weaknesses": "The choice of where to divide is itself interpretive — an editor who ended Exodus with the glory-filling made a theological statement even if the motivation was practical; the glory-filling parallel to creation (Gen 1:31–2:3) is too precise to be merely editorial; the editorial reading undervalues the literary artistry of the canonical form.",
+        "key_verses": [
+          "Exodus 40:34-38",
+          "Leviticus 1:1",
+          "Numbers 10:11-12"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Both readings identify real features of the text. The theological reading correctly notes that Exodus 40:34–38 forms a deliberate literary climax: the book moves from God delivering Israel out of Egypt to God dwelling in Israel's midst. The editorial reading correctly observes that the material had to be divided somewhere. However, the specific choice to end with the glory-filling (rather than, say, after the golden calf or after the covenant renewal) is theologically loaded. The ending redefines the exodus: the goal was never merely leaving Egypt or reaching Canaan, but establishing the conditions for God's presence among his people.",
+    "related_passages": [
+      "Exodus 40:34-38",
+      "Exodus 25:8",
+      "Exodus 29:45-46",
+      "1 Kings 8:10-11",
+      "Revelation 21:3",
+      "John 1:14"
+    ],
+    "tags": [
+      "glory",
+      "divine-presence",
+      "tabernacle",
+      "exodus-goal",
+      "literary-structure",
+      "theology"
+    ]
   },
   {
     "id": "source-and-date-of-the-burnt-offering",
