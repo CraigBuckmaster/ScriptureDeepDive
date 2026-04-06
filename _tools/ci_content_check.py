@@ -649,6 +649,7 @@ def main():
     # ── Run checks ───────────────────────────────────────────
     hard_errors = []
     quality_warnings = []
+    quality_passing = []
     accuracy_warnings = []
     quality_results = {}
     accuracy_results = {}
@@ -663,6 +664,8 @@ def main():
             for r in qr:
                 if r["score"] >= 0 and r["score"] < QUALITY_FLOOR:
                     quality_warnings.append((book, r))
+                elif r["score"] >= QUALITY_FLOOR:
+                    quality_passing.append((book, r))
 
     # Accuracy
     if not args.quality_only:
@@ -726,6 +729,10 @@ def main():
         "quality_warnings": [
             {"book": b, "chapter": r["chapter"], "score": r["score"]}
             for b, r in quality_warnings
+        ],
+        "quality_passing": [
+            {"book": b, "chapter": r["chapter"], "score": r["score"]}
+            for b, r in quality_passing
         ],
         "accuracy_warnings_count": len(accuracy_warnings),
         "new_refuted": len(regression["new_refuted"]),
