@@ -162,7 +162,7 @@ def main():
 
     # Cross-ref threads — update this count when Batch 13 (thread expansion) ships
     thread_count = q1(cur, "SELECT COUNT(*) FROM cross_ref_threads")
-    check("31 cross-ref threads", thread_count == 31, f"got {thread_count}")
+    check("32 cross-ref threads", thread_count == 32, f"got {thread_count}")
 
     # Each thread has 3+ steps
     short_threads = q(cur,
