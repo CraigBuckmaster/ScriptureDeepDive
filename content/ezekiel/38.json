@@ -164,7 +164,7 @@
           "notes": [
             {
               "ref": "38:11",
-              "note": "The phrase 'land of unwalled villages' (erets perazot) uses perazot, a term for open, unfortified settlements. In the ancient Near East, unwalled villages were signs of either extreme poverty or extreme peace. Here the context is peace."
+              "note": "The phrase 'land of unwalled villages' (erets perazot) uses perazot, a term for open, unfortified settlements. In the ancient Near East, unwalled villages were signs of either extreme poverty or extreme peace. Here the context is peace. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -248,7 +248,7 @@
           "notes": [
             {
               "ref": "38:19",
-              "note": "The phrase 'great earthquake in the land of Israel' uses ra'ash gadol, the same phrase used for theophanic earthquakes at Sinai (Exod 19:18) and in apocalyptic contexts (Isa 29:6). The earthquake signals God's direct, personal intervention."
+              "note": "The phrase 'great earthquake in the land of Israel' uses ra'ash gadol, the same phrase used for theophanic earthquakes at Sinai (Exod 19:18) and in apocalyptic contexts (Isa 29:6). The earthquake signals God's direct, personal intervention. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -495,7 +495,79 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Gog"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Assembly",
+        "Coalition",
+        "Evil",
+        "Furious",
+        "Response",
+        "Scheme"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

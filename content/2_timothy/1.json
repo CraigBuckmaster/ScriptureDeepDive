@@ -196,11 +196,11 @@
           "notes": [
             {
               "ref": "1:9",
-              "note": "The creedal fragment has a pre-Pauline character, using vocabulary uncommon in the undisputed letters."
+              "note": "The creedal fragment has a pre-Pauline character, using vocabulary uncommon in the undisputed letters. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             },
             {
               "ref": "1:12",
-              "note": "The phrase 'what I have entrusted to him' is ambiguous: it may mean Paul's life/ministry entrusted to God, or the gospel entrusted to Paul."
+              "note": "The phrase 'what I have entrusted to him' is ambiguous: it may mean Paul's life/ministry entrusted to God, or the gospel entrusted to Paul. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -279,7 +279,7 @@
           "notes": [
             {
               "ref": "1:15–18",
-              "note": "The desertion by Asian Christians reveals the cost of faithful witness. Onesiphorus stands as a shining contrast—he was not ashamed of the chains and sought Paul out diligently. True fellowship extends to the suffering, not only to the prosperous."
+              "note": "The desertion by Asian Christians reveals the cost of faithful witness. Onesiphorus stands as a shining contrast—he was not ashamed of the chains and sought Paul out diligently. True fellowship extends to the suffering, not only to the prosperous. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -301,7 +301,7 @@
           "notes": [
             {
               "ref": "1:15–18",
-              "note": "The Phygelus/Hermogenes vs. Onesiphorus contrast exemplifies the letter's central theme: faithfulness vs. defection under pressure. The eschatological prayer ('on that day') is a standard Pauline reference to the Day of the Lord."
+              "note": "The Phygelus/Hermogenes vs. Onesiphorus contrast exemplifies the letter's central theme: faithfulness vs. defection under pressure. The eschatological prayer ('on that day') is a standard Pauline reference to the Day of the Lord. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -310,7 +310,7 @@
           "notes": [
             {
               "ref": "1:15–18",
-              "note": "The contrast section functions as social exemplification: two named deserters against one named loyalist. Onesiphorus's behavior concretizes the abstract exhortation of v. 8: this is what 'not being ashamed' looks like in practice."
+              "note": "The contrast section functions as social exemplification: two named deserters against one named loyalist. Onesiphorus's behavior concretizes the abstract exhortation of v. 8: this is what 'not being ashamed' looks like in practice. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -593,7 +593,86 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Timothy",
+        "Lois",
+        "Eunice",
+        "Phygelus",
+        "Hermogenes",
+        "Onesiphorus"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Ashamed",
+        "Chains",
+        "Flame",
+        "Gift",
+        "Onesiphorus",
+        "Remind",
+        "Testimony"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

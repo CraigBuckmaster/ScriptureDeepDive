@@ -580,7 +580,84 @@
       "note": "Hebrews 7 is the exegetical heart of the letter — the Melchizedek typology that has been built since 5:6 is fully developed. The argument's logic: (1) Melchizedek's silence on genealogy/death points to an eternal priesthood; (2) Abraham's tithe to Melchizedek establishes the latter's superiority to Levi; (3) Psalm 110:4's oath establishes Christ's priesthood as permanent and superior to anything the Levitical system offered."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jesus",
+        "Abraham",
+        "Melchizedek"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Always",
+        "Change",
+        "Intercede",
+        "King",
+        "Lives",
+        "Means",
+        "Melchizedek",
+        "Priesthood",
+        "Salem"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

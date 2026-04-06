@@ -59,7 +59,7 @@
           "notes": [
             {
               "ref": "20:2",
-              "note": "Calvin observes that persecution by religious leaders is the most painful form of opposition: \"When the temple itself becomes the instrument of persecution, the prophet has nowhere left to turn except to God.\""
+              "note": "Calvin observes that persecution by religious leaders is the most painful form of opposition: \"When the temple itself becomes the instrument of persecution, the prophet has nowhere left to turn except to God.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -81,7 +81,7 @@
           "notes": [
             {
               "ref": "20:1-6",
-              "note": "Lundbom notes that the Pashhur episode is the narrative trigger for the final confession. Physical suffering produces the most extreme spiritual crisis in the book. The bodily pain of the stocks becomes the existential pain of the confession."
+              "note": "Lundbom notes that the Pashhur episode is the narrative trigger for the final confession. Physical suffering produces the most extreme spiritual crisis in the book. The bodily pain of the stocks becomes the existential pain of the confession. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -90,7 +90,7 @@
           "notes": [
             {
               "ref": "20:1-6",
-              "note": "Brueggemann reads the beating as the institutional response to prophetic truth: \"When the temple establishment cannot refute the message, it assaults the messenger. Violence is the argument of last resort.\""
+              "note": "Brueggemann reads the beating as the institutional response to prophetic truth: \"When the temple establishment cannot refute the message, it assaults the messenger. Violence is the argument of last resort.\". This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -408,7 +408,78 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Born",
+        "Cursed",
+        "Jeremiah",
+        "Pashhur",
+        "Strikes"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

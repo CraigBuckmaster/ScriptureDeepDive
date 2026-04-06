@@ -761,7 +761,88 @@
       "note": "1 Corinthians 1 establishes the letter's central counter-cultural claim: the cross inverts all human valuation systems. The division problem (vv. 10-17) and the wisdom problem (vv. 18-31) are connected — the factions are a symptom of importing the world's status-via-wisdom framework into the church. Paul will return to wisdom, status, and boasting repeatedly throughout the letter."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Apollos",
+        "Cephas",
+        "Christ",
+        "Sosthenes",
+        "Stephanas",
+        "Gaius"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Called",
+        "Chose",
+        "Christ",
+        "Cross",
+        "Divided",
+        "Foolish",
+        "Holy",
+        "Message",
+        "Things"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

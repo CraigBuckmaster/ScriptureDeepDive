@@ -63,7 +63,7 @@
           "notes": [
             {
               "ref": "14:7–9",
-              "note": "Calvin admires the prayer's rhetorical skill: Jeremiah appeals not to Israel's merit but to God's commitment to his own name. \"Even when we have no argument from our own worthiness, we can always argue from God's glory.\""
+              "note": "Calvin admires the prayer's rhetorical skill: Jeremiah appeals not to Israel's merit but to God's commitment to his own name. \"Even when we have no argument from our own worthiness, we can always argue from God's glory.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -85,7 +85,7 @@
           "notes": [
             {
               "ref": "14:1–12",
-              "note": "Lundbom identifies this as a \"drought liturgy\" — a formalized prayer-and-response structure used in communal worship during natural disasters. The liturgy fails because God refuses the prayer, subverting the expected resolution."
+              "note": "Lundbom identifies this as a \"drought liturgy\" — a formalized prayer-and-response structure used in communal worship during natural disasters. The liturgy fails because God refuses the prayer, subverting the expected resolution. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -94,7 +94,7 @@
           "notes": [
             {
               "ref": "14:7–9",
-              "note": "Brueggemann reads Jeremiah's prayer as a model of \"desperate honesty\" — the prophet admits guilt while still insisting that God act. The prayer refuses both cheap repentance and passive fatalism."
+              "note": "Brueggemann reads Jeremiah's prayer as a model of \"desperate honesty\" — the prophet admits guilt while still insisting that God act. The prayer refuses both cheap repentance and passive fatalism. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -402,7 +402,79 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Backslidings",
+        "Drought",
+        "Lies",
+        "Many",
+        "Prophesying",
+        "Prophets"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

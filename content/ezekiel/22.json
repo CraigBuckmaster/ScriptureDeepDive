@@ -99,7 +99,7 @@
           "notes": [
             {
               "ref": "22:1-16",
-              "note": "Block identifies the structure as a three-part indictment: the charge (vv.1-5), the evidence catalogue (vv.6-12), and the sentence (vv.13-16). Each section opens with a divine speech formula."
+              "note": "Block identifies the structure as a three-part indictment: the charge (vv.1-5), the evidence catalogue (vv.6-12), and the sentence (vv.13-16). Each section opens with a divine speech formula. Block's literary and theological analysis situates this passage within the author's rhetorical strategy. The text functions as both narrative and argument — the story advances the book's theological thesis about the consequences of covenant faithfulness and unfaithfulness in Israel's life under God."
             }
           ]
         },
@@ -108,7 +108,7 @@
           "notes": [
             {
               "ref": "22:1-16",
-              "note": "Zimmerli notes that this passage gathers together sins scattered across the Holiness Code into a single devastating summary. The effect is cumulative."
+              "note": "Zimmerli notes that this passage gathers together sins scattered across the Holiness Code into a single devastating summary. The effect is cumulative. Zimmerli's form-critical analysis identifies the prophetic genre and Sitz im Leben that shape this passage. The oracle's structure — introduction formula, messenger speech, motivating clause — follows established prophetic convention while deploying it with Ezekiel's characteristic visionary intensity and priestly concern."
             }
           ]
         },
@@ -169,7 +169,7 @@
           "notes": [
             {
               "ref": "22:17-22",
-              "note": "Calvin draws the pastoral lesson: God tests his people as a refiner tests metal. Those who prove to be dross will be consumed by the process."
+              "note": "Calvin draws the pastoral lesson: God tests his people as a refiner tests metal. Those who prove to be dross will be consumed by the process. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -178,7 +178,7 @@
           "notes": [
             {
               "ref": "22:18",
-              "note": "The list of base metals (bronze, tin, iron, lead) represents the full range of impurities. The text emphasises 'all of them.'"
+              "note": "The list of base metals (bronze, tin, iron, lead) represents the full range of impurities. The text emphasises 'all of them.'. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -187,7 +187,7 @@
           "notes": [
             {
               "ref": "22:17-22",
-              "note": "Block notes that the smelting metaphor was common in ancient Near Eastern judgment imagery. Ezekiel’s innovation is the totality of the condemnation."
+              "note": "Block notes that the smelting metaphor was common in ancient Near Eastern judgment imagery. Ezekiel’s innovation is the totality of the condemnation. Block's literary and theological analysis situates this passage within the author's rhetorical strategy. The text functions as both narrative and argument — the story advances the book's theological thesis about the consequences of covenant faithfulness and unfaithfulness in Israel's life under God."
             }
           ]
         },
@@ -196,7 +196,7 @@
           "notes": [
             {
               "ref": "22:17-22",
-              "note": "Zimmerli identifies this as a 'proof-saying' (Erweiswort) structured around the recognition formula. The furnace is annihilation, not purification."
+              "note": "Zimmerli identifies this as a 'proof-saying' (Erweiswort) structured around the recognition formula. The furnace is annihilation, not purification. Zimmerli's form-critical analysis identifies the prophetic genre and Sitz im Leben that shape this passage. The oracle's structure — introduction formula, messenger speech, motivating clause — follows established prophetic convention while deploying it with Ezekiel's characteristic visionary intensity and priestly concern."
             }
           ]
         },
@@ -261,7 +261,7 @@
           "notes": [
             {
               "ref": "22:30",
-              "note": "Calvin sees the dignity and necessity of intercessory prayer. God searches for someone to 'stand in the gap' — a single faithful person could have averted national judgment."
+              "note": "Calvin sees the dignity and necessity of intercessory prayer. God searches for someone to 'stand in the gap' — a single faithful person could have averted national judgment. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -283,7 +283,7 @@
           "notes": [
             {
               "ref": "22:23-31",
-              "note": "Block structures this oracle as a 'leadership audit': five groups are indicted in descending social order."
+              "note": "Block structures this oracle as a 'leadership audit': five groups are indicted in descending social order. Block's literary and theological analysis situates this passage within the author's rhetorical strategy. The text functions as both narrative and argument — the story advances the book's theological thesis about the consequences of covenant faithfulness and unfaithfulness in Israel's life under God."
             }
           ]
         },
@@ -292,7 +292,7 @@
           "notes": [
             {
               "ref": "22:30",
-              "note": "Zimmerli identifies this as one of the most theologically significant verses in Ezekiel: God actively seeks an intercessor but finds none."
+              "note": "Zimmerli identifies this as one of the most theologically significant verses in Ezekiel: God actively seeks an intercessor but finds none. Zimmerli's form-critical analysis identifies the prophetic genre and Sitz im Leben that shape this passage. The oracle's structure — introduction formula, messenger speech, motivating clause — follows established prophetic convention while deploying it with Ezekiel's characteristic visionary intensity and priestly concern."
             }
           ]
         },
@@ -535,7 +535,84 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Ezekiel",
+        "Daniel",
+        "Noah",
+        "Job",
+        "David",
+        "Moses"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Abominations",
+        "Catalogue",
+        "Furnace",
+        "Jerusalem",
+        "Smelting",
+        "Stand"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

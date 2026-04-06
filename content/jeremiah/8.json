@@ -95,7 +95,7 @@
           "notes": [
             {
               "ref": "8:4–12",
-              "note": "Lundbom identifies a \"nature wisdom\" argument: birds follow their instincts faithfully, but Israel defies its deepest covenantal instincts. The argument from lesser to greater (qal waḥomer) shames the audience."
+              "note": "Lundbom identifies a \"nature wisdom\" argument: birds follow their instincts faithfully, but Israel defies its deepest covenantal instincts. The argument from lesser to greater (qal waḥomer) shames the audience. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -187,7 +187,7 @@
           "notes": [
             {
               "ref": "8:18–22",
-              "note": "Lundbom identifies this as the beginning of Jeremiah's \"confessions\" — the intimate laments that distinguish this prophet from all others. The prophet does not stand above the crisis but is engulfed by it."
+              "note": "Lundbom identifies this as the beginning of Jeremiah's \"confessions\" — the intimate laments that distinguish this prophet from all others. The prophet does not stand above the crisis but is engulfed by it. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -418,7 +418,79 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Falsely",
+        "Handled",
+        "Harvest",
+        "Past",
+        "Scribes",
+        "Summer"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

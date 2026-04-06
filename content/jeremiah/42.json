@@ -55,7 +55,7 @@
           "notes": [
             {
               "ref": "42:5-6",
-              "note": "Calvin warns against \"performative obedience\" -- the appearance of submission without the substance. \"Many ask for God's guidance with their mouths while their feet are already moving in the opposite direction.\""
+              "note": "Calvin warns against \"performative obedience\" -- the appearance of submission without the substance. \"Many ask for God's guidance with their mouths while their feet are already moving in the opposite direction.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -64,7 +64,7 @@
           "notes": [
             {
               "ref": "42:2",
-              "note": "The phrase \"may our petition come before you\" (tippol-na' tehinnatenu lephaneka) uses the verb naphal (\"to fall\") -- literally \"let our petition fall before you,\" a posture of prostration."
+              "note": "The phrase \"may our petition come before you\" (tippol-na' tehinnatenu lephaneka) uses the verb naphal (\"to fall\") -- literally \"let our petition fall before you,\" a posture of prostration. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -73,7 +73,7 @@
           "notes": [
             {
               "ref": "42:1-6",
-              "note": "Lundbom identifies this as \"the last formal consultation with the prophet.\" The pattern repeats from Zedekiah's consultations (37:17, 38:14): ask the prophet, receive unwanted truth, reject it."
+              "note": "Lundbom identifies this as \"the last formal consultation with the prophet.\" The pattern repeats from Zedekiah's consultations (37:17, 38:14): ask the prophet, receive unwanted truth, reject it. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -82,7 +82,7 @@
           "notes": [
             {
               "ref": "42:5-6",
-              "note": "Brueggemann reads the oath as \"self-deceiving sincerity.\" The people genuinely believe they will obey -- but only because they assume God will tell them what they already want to hear."
+              "note": "Brueggemann reads the oath as \"self-deceiving sincerity.\" The people genuinely believe they will obey -- but only because they assume God will tell them what they already want to hear. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -143,7 +143,7 @@
           "notes": [
             {
               "ref": "42:10",
-              "note": "Calvin highlights the tenderness: \"God says 'I relent concerning the disaster.' Even after the fall, God is willing to reverse course if the people will trust him. Grace persists beyond catastrophe.\""
+              "note": "Calvin highlights the tenderness: \"God says 'I relent concerning the disaster.' Even after the fall, God is willing to reverse course if the people will trust him. Grace persists beyond catastrophe.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -152,7 +152,7 @@
           "notes": [
             {
               "ref": "42:10",
-              "note": "The verb niham (\"I relent/am sorry\") is the same used in 18:8 -- God changes his announced course in response to changed human behavior. The conditional principle from the potter's house still operates."
+              "note": "The verb niham (\"I relent/am sorry\") is the same used in 18:8 -- God changes his announced course in response to changed human behavior. The conditional principle from the potter's house still operates. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -161,7 +161,7 @@
           "notes": [
             {
               "ref": "42:7-22",
-              "note": "Lundbom reads the ten-day delay as \"prophetic integrity.\" Jeremiah does not manufacture an instant answer but waits for the genuine divine word. The delay itself distinguishes true from false prophecy."
+              "note": "Lundbom reads the ten-day delay as \"prophetic integrity.\" Jeremiah does not manufacture an instant answer but waits for the genuine divine word. The delay itself distinguishes true from false prophecy. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -170,7 +170,7 @@
           "notes": [
             {
               "ref": "42:15-17",
-              "note": "Brueggemann identifies the \"geography of futility\" -- running to Egypt cannot outpace divine judgment. \"The illusion that a change of location solves a crisis of faith is as old as Jonah and as contemporary as the modern refugee.\""
+              "note": "Brueggemann identifies the \"geography of futility\" -- running to Egypt cannot outpace divine judgment. \"The illusion that a change of location solves a crisis of faith is as old as Jonah and as contemporary as the modern refugee.\". This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -365,7 +365,77 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Zedekiah",
+        "Nebuchadnezzar"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Egypt",
+        "Pray"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

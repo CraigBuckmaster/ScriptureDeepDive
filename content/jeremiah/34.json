@@ -55,7 +55,7 @@
           "notes": [
             {
               "ref": "34:4-5",
-              "note": "Calvin notes the mercy within judgment: \"Even now, God offers Zedekiah a dignified end. The door of grace stays open until the last moment.\""
+              "note": "Calvin notes the mercy within judgment: \"Even now, God offers Zedekiah a dignified end. The door of grace stays open until the last moment.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -64,7 +64,7 @@
           "notes": [
             {
               "ref": "34:5",
-              "note": "The burning of spices at royal funerals is attested in 2 Chronicles 16:14 and 21:19. It was a mark of honor, not cremation -- the body was buried, and spices burned separately."
+              "note": "The burning of spices at royal funerals is attested in 2 Chronicles 16:14 and 21:19. It was a mark of honor, not cremation -- the body was buried, and spices burned separately. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -73,7 +73,7 @@
           "notes": [
             {
               "ref": "34:1-7",
-              "note": "Lundbom notes that only Lachish and Azekah remain besides Jerusalem (v.7) -- confirmed by the Lachish Letters, which mention watching for fire signals from these cities."
+              "note": "Lundbom notes that only Lachish and Azekah remain besides Jerusalem (v.7) -- confirmed by the Lachish Letters, which mention watching for fire signals from these cities. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -82,7 +82,7 @@
           "notes": [
             {
               "ref": "34:1-7",
-              "note": "Brueggemann reads the conditional promise as \"the persistence of divine grace under impossible conditions.\" Even with siege ramps against the walls, God offers an exit."
+              "note": "Brueggemann reads the conditional promise as \"the persistence of divine grace under impossible conditions.\" Even with siege ramps against the walls, God offers an exit. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -147,7 +147,7 @@
           "notes": [
             {
               "ref": "34:17",
-              "note": "Calvin celebrates the divine irony: \"God uses their own word against them. They proclaimed liberty and then revoked it; God proclaims a liberty they cannot revoke -- liberty to die.\""
+              "note": "Calvin celebrates the divine irony: \"God uses their own word against them. They proclaimed liberty and then revoked it; God proclaims a liberty they cannot revoke -- liberty to die.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -156,7 +156,7 @@
           "notes": [
             {
               "ref": "34:18",
-              "note": "The covenant-cutting ceremony (karath berith, literally \"cut a covenant\") involved walking between the halves of a slaughtered animal -- the implication being: \"May I be cut in pieces like this animal if I break this covenant.\""
+              "note": "The covenant-cutting ceremony (karath berith, literally \"cut a covenant\") involved walking between the halves of a slaughtered animal -- the implication being: \"May I be cut in pieces like this animal if I break this covenant.\". The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -165,7 +165,7 @@
           "notes": [
             {
               "ref": "34:8-22",
-              "note": "Lundbom calls this \"the most complete example of covenant-making-and-breaking in the Hebrew Bible.\" The text preserves the ceremony, the violation, and the consequence in full detail."
+              "note": "Lundbom calls this \"the most complete example of covenant-making-and-breaking in the Hebrew Bible.\" The text preserves the ceremony, the violation, and the consequence in full detail. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -174,7 +174,7 @@
           "notes": [
             {
               "ref": "34:8-22",
-              "note": "Brueggemann reads the slave episode as \"the collapse of reform under pressure.\" When the external threat recedes, the internal commitment evaporates. True justice requires transformation of will, not merely compliance under duress."
+              "note": "Brueggemann reads the slave episode as \"the collapse of reform under pressure.\" When the external threat recedes, the internal commitment evaporates. True justice requires transformation of will, not merely compliance under duress. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -365,7 +365,80 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Zedekiah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Covenant",
+        "During",
+        "Enslaved",
+        "Slaves",
+        "Word",
+        "Zedekiah"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

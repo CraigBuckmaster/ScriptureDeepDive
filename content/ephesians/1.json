@@ -591,7 +591,82 @@
       "note": "Ephesians 1 is architecturally shaped by trinitarian movement: Father (election, vv. 3-6), Son (redemption, vv. 7-12), Spirit (sealing, vv. 13-14), followed by a prayer that the readers grasp these realities. The berakah form (vv. 3-14) is liturgical — Paul is teaching theology through doxology. Key theological terms: 'chosen' (eklektos), 'predestined' (proorizo), 'mystery' (mysterion), 'fullness' (pleroma)."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Christ"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Chosen",
+        "Creation",
+        "Greatness",
+        "Immeasurable",
+        "Mystery",
+        "Power",
+        "Will",
+        "World"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

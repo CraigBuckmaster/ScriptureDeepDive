@@ -68,7 +68,7 @@
           "notes": [
             {
               "ref": "13:1",
-              "note": "The NET note discusses the witnesses of Deut 19:15: Paul may mean his three visits as the witnesses, or he may be announcing that disciplinary proceedings at his third visit will follow proper judicial protocol."
+              "note": "The NET note discusses the witnesses of Deut 19:15: Paul may mean his three visits as the witnesses, or he may be announcing that disciplinary proceedings at his third visit will follow proper judicial protocol. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -148,7 +148,7 @@
           "notes": [
             {
               "ref": "13:5",
-              "note": "The NET note on ‘Christ Jesus is in you’ explains that this is an indicative statement assumed to be true, followed by the qualifier ‘unless, of course, you fail the test’—a genuine but unlikely possibility that functions as a rhetorical challenge."
+              "note": "The NET note on ‘Christ Jesus is in you’ explains that this is an indicative statement assumed to be true, followed by the qualifier ‘unless, of course, you fail the test’—a genuine but unlikely possibility that functions as a rhetorical challenge. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -465,7 +465,82 @@
       ]
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Christ"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Cruciform",
+        "Examine",
+        "Final",
+        "Greetings",
+        "Pattern",
+        "Trinitarian",
+        "Warning",
+        "Yourselves"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

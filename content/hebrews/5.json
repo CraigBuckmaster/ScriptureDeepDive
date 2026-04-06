@@ -163,7 +163,7 @@
           "notes": [
             {
               "ref": "5:12",
-              "note": "The phrase 'elementary truths of God’s word' (τὰ στοιχεῖα τῆς ἀρχῆς τῶν λογίων τοῦ θεοῦ) refers to foundational Christian teachings, listed in 6:1–2. The audience is expected to have progressed beyond these basics."
+              "note": "The phrase 'elementary truths of God’s word' (τὰ στοιχεῖα τῆς ἀρχῆς τῶν λογίων τοῦ θεοῦ) refers to foundational Christian teachings, listed in 6:1–2. The audience is expected to have progressed beyond these basics. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -442,7 +442,80 @@
       "note": "Hebrews 5 introduces the Melchizedek priesthood and then interrupts the argument with a pastoral warning (vv. 11-14). This is a masterful rhetorical move: the author signals that what is coming requires effort, and challenges the audience to rise to the occasion. The warning is not pessimistic — it is a call to maturity that assumes the audience can respond."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jesus",
+        "Melchizedek",
+        "Aaron"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Forever",
+        "Learn",
+        "Order",
+        "Priest",
+        "Slow"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

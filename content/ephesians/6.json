@@ -600,7 +600,83 @@
       "note": "Ephesians 6 completes the household code (vv. 1-9) and then dramatically reframes the entire ethical section by revealing its ultimate context: the battle is cosmic, not merely domestic. The armor passage (vv. 10-17) is the eschatological frame for all the preceding ethics — the virtues Paul has urged (humility, love, truth-speaking, forgiveness) are the very armor of God. The letter ends with prayer as the capstone of the armor, and with Tychicus as the living letter alongside the written one."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Christ",
+        "Tychicus"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Armour",
+        "Benediction",
+        "Children",
+        "Final",
+        "Full",
+        "Greetings",
+        "Parents",
+        "Slaves"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

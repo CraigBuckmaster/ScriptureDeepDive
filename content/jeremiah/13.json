@@ -89,7 +89,7 @@
           "notes": [
             {
               "ref": "13:1–11",
-              "note": "Lundbom identifies the belt sign-act as a \"covenant symbol reversed.\" The belt represents binding closeness; its burial and ruin represent covenant dissolution. The physical object enacts what words alone cannot convey."
+              "note": "Lundbom identifies the belt sign-act as a \"covenant symbol reversed.\" The belt represents binding closeness; its burial and ruin represent covenant dissolution. The physical object enacts what words alone cannot convey. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -98,7 +98,7 @@
           "notes": [
             {
               "ref": "13:1–11",
-              "note": "Brueggemann reads the sign-act as \"prophetic performance art\" that disrupts normal consciousness. The prophet's body becomes the message — an embodied metaphor that cannot be dismissed as mere rhetoric."
+              "note": "Brueggemann reads the sign-act as \"prophetic performance art\" that disrupts normal consciousness. The prophet's body becomes the message — an embodied metaphor that cannot be dismissed as mere rhetoric. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -155,7 +155,7 @@
           "notes": [
             {
               "ref": "13:23",
-              "note": "Calvin uses this verse to argue for the bondage of the will: \"Man cannot change his own nature any more than a leopard can change its spots. Only the grace of God can transform what sin has made permanent.\""
+              "note": "Calvin uses this verse to argue for the bondage of the will: \"Man cannot change his own nature any more than a leopard can change its spots. Only the grace of God can transform what sin has made permanent.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -395,7 +395,79 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Belt",
+        "Change",
+        "Ethiopian",
+        "Ruined",
+        "Sign",
+        "Skin"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

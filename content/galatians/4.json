@@ -582,7 +582,86 @@
       "note": "Galatians 4 moves through three modes of persuasion: theological argument (vv. 1-11), emotional appeal (vv. 12-20), and allegorical exegesis (vv. 21-31). Paul's anguish in vv. 19-20 is the emotional heart of the letter — the only place where he abandons argument and pleads as a mother. The Hagar/Sarah allegory is typological rather than allegorical in the modern sense — Paul reads Israel's history as pointing forward to its fulfillment in Christ."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Abraham",
+        "Christ",
+        "Hagar",
+        "Sarah",
+        "Isaac"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Allegory",
+        "Back",
+        "Born",
+        "Hagar",
+        "Sarah",
+        "Sent",
+        "Slavery",
+        "Turn"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

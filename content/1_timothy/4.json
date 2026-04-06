@@ -258,7 +258,7 @@
           "notes": [
             {
               "ref": "4:14",
-              "note": "The laying on of hands (ἐπιθέσεως τῶν χειρῶν) here is by the πρεσβυτερίου (body of elders), while in 2 Tim 1:6 it is by Paul’s own hands. These likely refer to the same event from different perspectives, not two separate ordinations."
+              "note": "The laying on of hands (ἐπιθέσεως τῶν χειρῶν) here is by the πρεσβυτερίου (body of elders), while in 2 Tim 1:6 it is by Paul’s own hands. These likely refer to the same event from different perspectives, not two separate ordinations. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -492,7 +492,83 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Timothy"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Despise",
+        "Godliness",
+        "Later",
+        "Some",
+        "Times",
+        "Train",
+        "Your",
+        "Yourself",
+        "Youth"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

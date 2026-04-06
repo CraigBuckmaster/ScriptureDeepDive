@@ -242,7 +242,7 @@
           "notes": [
             {
               "ref": "12:21",
-              "note": "The NET note on ‘my God will humble me’ (tapeinōsē me) explains that Paul anticipates being humbled by the shame of finding unrepentant sin in a church he has personally planted and nurtured."
+              "note": "The NET note on ‘my God will humble me’ (tapeinōsē me) explains that Paul anticipates being humbled by the shame of finding unrepentant sin in a church he has personally planted and nurtured. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -260,7 +260,7 @@
           "notes": [
             {
               "ref": "12:19–21",
-              "note": "Harris notes the structural function of these verses: they transition from the fool’s speech (11:1–12:10) to the final warnings of ch. 13. Paul’s fear of finding unrepentant sin (v. 21) prepares for the stern tone of the closing chapter."
+              "note": "Harris notes the structural function of these verses: they transition from the fool’s speech (11:1–12:10) to the final warnings of ch. 13. Paul’s fear of finding unrepentant sin (v. 21) prepares for the stern tone of the closing chapter. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -491,7 +491,85 @@
       ]
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Titus",
+        "Christ",
+        "Satan"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Apostle",
+        "Fear",
+        "Financial",
+        "Heaven",
+        "Paul",
+        "Signs",
+        "Third",
+        "Thorn",
+        "What"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

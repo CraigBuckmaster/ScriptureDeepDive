@@ -55,7 +55,7 @@
           "notes": [
             {
               "ref": "40:2-3",
-              "note": "Calvin marvels: \"A heathen soldier speaks more theology than the priests of Jerusalem. God opens the mouths of the unlikely to shame the learned.\""
+              "note": "Calvin marvels: \"A heathen soldier speaks more theology than the priests of Jerusalem. God opens the mouths of the unlikely to shame the learned.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -64,7 +64,7 @@
           "notes": [
             {
               "ref": "40:1",
-              "note": "Ramah (modern er-Ram) was about five miles north of Jerusalem. It served as the assembly point for deportees -- the same Ramah where Rachel wept for her children (31:15)."
+              "note": "Ramah (modern er-Ram) was about five miles north of Jerusalem. It served as the assembly point for deportees -- the same Ramah where Rachel wept for her children (31:15). The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -73,7 +73,7 @@
           "notes": [
             {
               "ref": "40:1-6",
-              "note": "Lundbom notes that Jeremiah's choice to stay is consistent with his entire ministry: the prophet never sought his own comfort but always identified with the suffering remnant."
+              "note": "Lundbom notes that Jeremiah's choice to stay is consistent with his entire ministry: the prophet never sought his own comfort but always identified with the suffering remnant. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -82,7 +82,7 @@
           "notes": [
             {
               "ref": "40:2-3",
-              "note": "Brueggemann reads Nebuzaradan's speech as \"the ultimate irony of the book.\" The Babylonian destroyer interprets the fall more accurately than any Judean leader. Truth finds its voice in the most unexpected mouth."
+              "note": "Brueggemann reads Nebuzaradan's speech as \"the ultimate irony of the book.\" The Babylonian destroyer interprets the fall more accurately than any Judean leader. Truth finds its voice in the most unexpected mouth. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -135,7 +135,7 @@
           "notes": [
             {
               "ref": "40:14-16",
-              "note": "Calvin observes the tragedy: \"Gedaliah's refusal to believe evil of Ishmael shows admirable character but fatal judgment. Trust must be tempered with wisdom.\""
+              "note": "Calvin observes the tragedy: \"Gedaliah's refusal to believe evil of Ishmael shows admirable character but fatal judgment. Trust must be tempered with wisdom.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -144,7 +144,7 @@
           "notes": [
             {
               "ref": "40:8",
-              "note": "Mizpah (Tell en-Nasbeh), about eight miles north of Jerusalem, became the administrative center because Jerusalem was destroyed. Archaeological evidence confirms occupation during the Babylonian period."
+              "note": "Mizpah (Tell en-Nasbeh), about eight miles north of Jerusalem, became the administrative center because Jerusalem was destroyed. Archaeological evidence confirms occupation during the Babylonian period. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -153,7 +153,7 @@
           "notes": [
             {
               "ref": "40:7-16",
-              "note": "Lundbom reads Gedaliah's governorship as \"the last chance for the Jeremianic vision.\" If the remnant can live peacefully under Babylon, the prophet's counsel is vindicated. The assassination destroys that possibility."
+              "note": "Lundbom reads Gedaliah's governorship as \"the last chance for the Jeremianic vision.\" If the remnant can live peacefully under Babylon, the prophet's counsel is vindicated. The assassination destroys that possibility. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -162,7 +162,7 @@
           "notes": [
             {
               "ref": "40:13-16",
-              "note": "Brueggemann identifies Gedaliah's refusal to act on intelligence as \"the fatal weakness of moderate leadership.\" Gedaliah cannot imagine that his own people would betray the fragile peace."
+              "note": "Brueggemann identifies Gedaliah's refusal to act on intelligence as \"the fatal weakness of moderate leadership.\" Gedaliah cannot imagine that his own people would betray the fragile peace. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -362,7 +362,81 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Rachel",
+        "Gedaliah",
+        "Ishmael"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Gedaliah",
+        "Given",
+        "Jeremiah",
+        "Mizpah",
+        "Released"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

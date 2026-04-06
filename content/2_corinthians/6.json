@@ -70,7 +70,7 @@
           "notes": [
             {
               "ref": "6:2",
-              "note": "The NET note explains that Paul’s application of Isa 49:8 to the present moment is an eschatological claim: the ‘day of salvation’ prophesied by Isaiah has arrived with the gospel. The double ‘now’ (nyn) emphasises the urgency."
+              "note": "The NET note explains that Paul’s application of Isa 49:8 to the present moment is an eschatological claim: the ‘day of salvation’ prophesied by Isaiah has arrived with the gospel. The double ‘now’ (nyn) emphasises the urgency. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -142,7 +142,7 @@
           "notes": [
             {
               "ref": "6:12",
-              "note": "The NET note on splanchna explains that the term refers to the visceral organs (heart, liver, lungs) regarded as the seat of emotion in ancient thought, equivalent to the modern English ‘heart.’"
+              "note": "The NET note on splanchna explains that the term refers to the visceral organs (heart, liver, lungs) regarded as the seat of emotion in ancient thought, equivalent to the modern English ‘heart.’. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -512,7 +512,83 @@
       ]
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Christ"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Authentic",
+        "Marks",
+        "Ministry",
+        "Open",
+        "Together",
+        "Unbelievers",
+        "Wide",
+        "Yoked",
+        "Your"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

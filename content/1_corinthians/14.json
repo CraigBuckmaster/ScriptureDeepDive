@@ -190,7 +190,7 @@
           "notes": [
             {
               "ref": "14:13–25",
-              "note": "Thiselton provides extensive treatment of the nous/pneuma distinction. Paul's position is neither rationalist nor irrationalist but integrative: authentic worship engages the whole person. The Isaiah citation is typological, not allegorical."
+              "note": "Thiselton provides extensive treatment of the nous/pneuma distinction. Paul's position is neither rationalist nor irrationalist but integrative: authentic worship engages the whole person. The Isaiah citation is typological, not allegorical. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -630,7 +630,80 @@
       "note": "1 Corinthians 14 applies the love-principle of ch. 13 to the specific question of tongues vs. prophecy. The criterion is not which gift is more impressive but which builds up the community. The chapter's practical regulations (vv. 26-40) show Paul as a pastor: he does not forbid tongues (v. 39) but orders them for the community's benefit."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Assembly",
+        "Intelligibility",
+        "Order",
+        "Prophecy",
+        "Superior",
+        "Tongues",
+        "Worship"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

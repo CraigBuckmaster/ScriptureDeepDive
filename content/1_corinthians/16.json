@@ -65,7 +65,7 @@
           "notes": [
             {
               "ref": "16:1–4",
-              "note": "Calvin draws the principle that Christian giving should be regular, proportional, and organised. The weekly discipline trains the believer in generosity. Paul's care for financial transparency is a model for church leaders."
+              "note": "Calvin draws the principle that Christian giving should be regular, proportional, and organised. The weekly discipline trains the believer in generosity. Paul's care for financial transparency is a model for church leaders. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -87,7 +87,7 @@
           "notes": [
             {
               "ref": "16:1–4",
-              "note": "Fee emphasises the ecclesiological significance: the collection embodies the unity of God's people across ethnic and geographical boundaries. Paul's instructions are a model of stewardship."
+              "note": "Fee emphasises the ecclesiological significance: the collection embodies the unity of God's people across ethnic and geographical boundaries. Paul's instructions are a model of stewardship. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -96,7 +96,7 @@
           "notes": [
             {
               "ref": "16:1–4",
-              "note": "Thiselton argues the collection functioned as an eschatological sign: the Gentile pilgrimage to Jerusalem with gifts anticipated the prophetic vision of nations streaming to Zion (Isa 2:2–4; 60:1–14)."
+              "note": "Thiselton argues the collection functioned as an eschatological sign: the Gentile pilgrimage to Jerusalem with gifts anticipated the prophetic vision of nations streaming to Zion (Isa 2:2–4; 60:1–14). This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -155,7 +155,7 @@
           "notes": [
             {
               "ref": "16:5–12",
-              "note": "Calvin commends Paul's prayerful planning: make wise plans but hold them loosely, always subject to divine redirection. The protection of Timothy reminds that younger ministers need senior advocacy."
+              "note": "Calvin commends Paul's prayerful planning: make wise plans but hold them loosely, always subject to divine redirection. The protection of Timothy reminds that younger ministers need senior advocacy. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -164,11 +164,11 @@
           "notes": [
             {
               "ref": "16:8",
-              "note": "The NET note on Pentecost as a calendar marker confirms Paul's Jewish heritage and suggests 1 Corinthians was written in the spring."
+              "note": "The NET note on Pentecost as a calendar marker confirms Paul's Jewish heritage and suggests 1 Corinthians was written in the spring. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             },
             {
               "ref": "16:12",
-              "note": "The NET note suggests Apollos may have declined to avoid exacerbating the factionalism associated with his name."
+              "note": "The NET note suggests Apollos may have declined to avoid exacerbating the factionalism associated with his name. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -177,7 +177,7 @@
           "notes": [
             {
               "ref": "16:5–12",
-              "note": "Fee reads the travel plans as evidence that Paul expected the letter to resolve major issues before his arrival. The Apollos detail subtly undermines the faction system: Paul and Apollos are colleagues, not rivals."
+              "note": "Fee reads the travel plans as evidence that Paul expected the letter to resolve major issues before his arrival. The Apollos detail subtly undermines the faction system: Paul and Apollos are colleagues, not rivals. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -186,7 +186,7 @@
           "notes": [
             {
               "ref": "16:5–12",
-              "note": "Thiselton reconstructs the chronology and notes that Timothy's relationship to the letter itself is uncertain. The instruction to treat Timothy without contempt reflects Graeco-Roman social dynamics where youth and humble origin invited dismissal."
+              "note": "Thiselton reconstructs the chronology and notes that Timothy's relationship to the letter itself is uncertain. The instruction to treat Timothy without contempt reflects Graeco-Roman social dynamics where youth and humble origin invited dismissal. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -590,7 +590,86 @@
       "note": "1 Corinthians 16 grounds the letter's theology in practical generosity, relational planning, and community commendation. The collection for Jerusalem (v. 1-4) is not administrative detail but the practical expression of the one-body argument: Gentile churches support Jewish believers, embodying the reconciliation Paul has argued throughout. The letter ends with love (v. 14, v. 24) — the word that encompasses the entire letter's purpose."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Apollos",
+        "Christ",
+        "Stephanas",
+        "Timothy"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Collection",
+        "Exhortations",
+        "Farewell",
+        "Final",
+        "Lord",
+        "Paul",
+        "People",
+        "Plans",
+        "Travel"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

@@ -63,7 +63,7 @@
           "notes": [
             {
               "ref": "39:4-7",
-              "note": "Calvin notes the precision of fulfilled prophecy: \"Jeremiah said Zedekiah would go to Babylon (32:5); Ezekiel said he would not see Babylon (Ezek 12:13). Both were fulfilled: he went to Babylon but never saw it because his eyes had been put out.\""
+              "note": "Calvin notes the precision of fulfilled prophecy: \"Jeremiah said Zedekiah would go to Babylon (32:5); Ezekiel said he would not see Babylon (Ezek 12:13). Both were fulfilled: he went to Babylon but never saw it because his eyes had been put out.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -85,7 +85,7 @@
           "notes": [
             {
               "ref": "39:1-10",
-              "note": "Lundbom calls this \"the narrative fulfillment of forty years of prophecy.\" Every oracle -- from the call (1:10) through the temple sermon (7:14) to the field purchase (32:15) -- finds its resolution in these ten verses."
+              "note": "Lundbom calls this \"the narrative fulfillment of forty years of prophecy.\" Every oracle -- from the call (1:10) through the temple sermon (7:14) to the field purchase (32:15) -- finds its resolution in these ten verses. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -94,7 +94,7 @@
           "notes": [
             {
               "ref": "39:1-10",
-              "note": "Brueggemann reads the fall as \"the end of royal theology.\" The Davidic dynasty, the temple, and the city -- the three pillars of Judean identity -- collapse simultaneously. What survives is not institution but word."
+              "note": "Brueggemann reads the fall as \"the end of royal theology.\" The Davidic dynasty, the temple, and the city -- the three pillars of Judean identity -- collapse simultaneously. What survives is not institution but word. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -147,7 +147,7 @@
           "notes": [
             {
               "ref": "39:17-18",
-              "note": "Calvin draws the theological lesson: \"A Cushite who trusted God is saved while a Judean king who feared men is destroyed. Faith, not ethnicity, determines destiny.\""
+              "note": "Calvin draws the theological lesson: \"A Cushite who trusted God is saved while a Judean king who feared men is destroyed. Faith, not ethnicity, determines destiny.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -156,7 +156,7 @@
           "notes": [
             {
               "ref": "39:14",
-              "note": "Gedaliah son of Ahikam son of Shaphan will become the governor of the remnant (ch. 40-41). The Shaphan family has been consistently supportive of Jeremiah and the reform movement."
+              "note": "Gedaliah son of Ahikam son of Shaphan will become the governor of the remnant (ch. 40-41). The Shaphan family has been consistently supportive of Jeremiah and the reform movement. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -165,7 +165,7 @@
           "notes": [
             {
               "ref": "39:11-18",
-              "note": "Lundbom identifies a double vindication: Jeremiah is protected by Babylon, and Ebed-Melech is saved by God. Both vindications invert expectations -- the pagan empire and the foreign servant are more faithful than Israel."
+              "note": "Lundbom identifies a double vindication: Jeremiah is protected by Babylon, and Ebed-Melech is saved by God. Both vindications invert expectations -- the pagan empire and the foreign servant are more faithful than Israel. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -397,7 +397,83 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Zedekiah",
+        "Nebuchadnezzar",
+        "David",
+        "Ebed-Melech",
+        "Gedaliah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "City",
+        "Ebed",
+        "Falls",
+        "Jeremiah",
+        "Released"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

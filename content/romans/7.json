@@ -59,7 +59,7 @@
           "notes": [
             {
               "ref": "7:4",
-              "note": "Calvin notes that death to the law does not mean the law is abolished but that its condemning power has been terminated for the believer. The moral content of the law remains; its condemnation does not."
+              "note": "Calvin notes that death to the law does not mean the law is abolished but that its condemning power has been terminated for the believer. The moral content of the law remains; its condemnation does not. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -90,7 +90,7 @@
           "notes": [
             {
               "ref": "7:4–6",
-              "note": "Schreiner emphasises that ‘bearing fruit for God’ is the purpose of release from the law. Freedom from law is not for autonomy but for fruitfulness. The law could command but not empower; the Spirit empowers what the law commanded."
+              "note": "Schreiner emphasises that ‘bearing fruit for God’ is the purpose of release from the law. Freedom from law is not for autonomy but for fruitfulness. The law could command but not empower; the Spirit empowers what the law commanded. Schreiner's exegesis emphasizes the eschatological dimension of the passage. The author writes with the end in view — present suffering and ethical obligation are framed by the certainty of Christ's return and the final vindication of God's people. This already-not-yet tension shapes every imperative in the text."
             }
           ]
         },
@@ -601,7 +601,82 @@
       "note": "The 'I' of Romans 7:14-25 is debated: is Paul describing pre-conversion experience, Christian struggle, or humanity under law generally? The 'wretched man' cry (v. 24) sets up the triumphant answer of chapter 8."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Adam",
+        "Christ"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Death",
+        "Opportunity",
+        "Released",
+        "Seizing",
+        "Through",
+        "Want",
+        "What"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

@@ -173,7 +173,7 @@
           "notes": [
             {
               "ref": "16:15-22",
-              "note": "Calvin reads this as a warning that the most dangerous temptation follows the greatest blessing. Jerusalem's beauty became the occasion of her fall precisely because she forgot the Giver and worshiped the gifts."
+              "note": "Calvin reads this as a warning that the most dangerous temptation follows the greatest blessing. Jerusalem's beauty became the occasion of her fall precisely because she forgot the Giver and worshiped the gifts. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -204,7 +204,7 @@
           "notes": [
             {
               "ref": "16:20-21",
-              "note": "Zimmerli sees child sacrifice as the theological nadir of the allegory: the foundling child who was saved from death now sacrifices her own children to death. The rescued becomes the destroyer — the most devastating reversal in the entire book."
+              "note": "Zimmerli sees child sacrifice as the theological nadir of the allegory: the foundling child who was saved from death now sacrifices her own children to death. The rescued becomes the destroyer — the most devastating reversal in the entire book. Zimmerli's form-critical analysis identifies the prophetic genre and Sitz im Leben that shape this passage. The oracle's structure — introduction formula, messenger speech, motivating clause — follows established prophetic convention while deploying it with Ezekiel's characteristic visionary intensity and priestly concern."
             }
           ]
         },
@@ -269,7 +269,7 @@
           "notes": [
             {
               "ref": "16:60-63",
-              "note": "Calvin marvels at the everlasting covenant: after rehearsing the most horrifying catalog of sin in the OT, God ends with unconditional grace. The covenant stands because God remembers, not because Jerusalem repents."
+              "note": "Calvin marvels at the everlasting covenant: after rehearsing the most horrifying catalog of sin in the OT, God ends with unconditional grace. The covenant stands because God remembers, not because Jerusalem repents. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -300,7 +300,7 @@
           "notes": [
             {
               "ref": "16:59-63",
-              "note": "Zimmerli identifies the covenant renewal as unilateral: God establishes (heqim) rather than cuts (karat) the covenant, using language of reaffirmation rather than new initiation. God honors his original commitment despite total human failure."
+              "note": "Zimmerli identifies the covenant renewal as unilateral: God establishes (heqim) rather than cuts (karat) the covenant, using language of reaffirmation rather than new initiation. God honors his original commitment despite total human failure. Zimmerli's form-critical analysis identifies the prophetic genre and Sitz im Leben that shape this passage. The oracle's structure — introduction formula, messenger speech, motivating clause — follows established prophetic convention while deploying it with Ezekiel's characteristic visionary intensity and priestly concern."
             }
           ]
         },
@@ -523,7 +523,82 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Ezekiel"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Abandoned",
+        "Everlasting",
+        "Every",
+        "From",
+        "Infant",
+        "Judgment",
+        "Passerby",
+        "Prostitution",
+        "Shame"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

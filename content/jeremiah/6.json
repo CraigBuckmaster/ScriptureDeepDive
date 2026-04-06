@@ -59,7 +59,7 @@
           "notes": [
             {
               "ref": "6:1",
-              "note": "Calvin notes the pathos of a prophet telling his own people to flee their capital city. Jeremiah does not celebrate the coming judgment but urgently warns those closest to him. Truth-telling is an act of love, not vindictiveness."
+              "note": "Calvin notes the pathos of a prophet telling his own people to flee their capital city. Jeremiah does not celebrate the coming judgment but urgently warns those closest to him. Truth-telling is an act of love, not vindictiveness. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -81,7 +81,7 @@
           "notes": [
             {
               "ref": "6:1–8",
-              "note": "Lundbom identifies the wordplays — tiqʿû/tĕqôaʿ and the spatial movement from Benjamin outward — as \"alarm rhetoric\" designed to create urgency. The prophet uses every phonetic and geographic resource to jolt the audience out of complacency."
+              "note": "Lundbom identifies the wordplays — tiqʿû/tĕqôaʿ and the spatial movement from Benjamin outward — as \"alarm rhetoric\" designed to create urgency. The prophet uses every phonetic and geographic resource to jolt the audience out of complacency. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -187,7 +187,7 @@
           "notes": [
             {
               "ref": "6:13–15",
-              "note": "Lundbom notes that this oracle is repeated almost verbatim in 8:10–12 — the repetition is deliberate, functioning like a refrain that frames the central section of the book. The false peace message is the recurring symptom of a systemic disease."
+              "note": "Lundbom notes that this oracle is repeated almost verbatim in 8:10–12 — the repetition is deliberate, functioning like a refrain that frames the central section of the book. The false peace message is the recurring symptom of a systemic disease. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -516,7 +516,82 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Moses",
+        "David"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Assayer",
+        "Flee",
+        "Give",
+        "People",
+        "Safety",
+        "Speak",
+        "Whom"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

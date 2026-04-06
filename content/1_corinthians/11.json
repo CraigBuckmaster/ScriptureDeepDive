@@ -615,7 +615,83 @@
       "note": "1 Corinthians 11 addresses two worship disorders. The head covering passage (vv. 2-16) is the most debated in the letter — the theological principle (order, glory, creation) is clear even if the specific practice is culturally conditioned. The Lord's Supper passage (vv. 17-34) is foundational for Christian worship — Paul's institution narrative is the earliest eucharistic text in the NT, and the pastoral problem it addresses (social stratification) remains a live issue."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Christ"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Coverings",
+        "Divisions",
+        "Head",
+        "Institution",
+        "Lord",
+        "Observance",
+        "Order",
+        "Proper",
+        "Supper"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

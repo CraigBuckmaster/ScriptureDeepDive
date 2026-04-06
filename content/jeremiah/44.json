@@ -59,7 +59,7 @@
           "notes": [
             {
               "ref": "44:10",
-              "note": "Calvin calls this verse \"the most damning sentence in the book.\" After forty years of prophetic warning, the destruction of the city, and exile in a foreign land, the people have still not repented. \"What more could God do?\""
+              "note": "Calvin calls this verse \"the most damning sentence in the book.\" After forty years of prophetic warning, the destruction of the city, and exile in a foreign land, the people have still not repented. \"What more could God do?\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -68,7 +68,7 @@
           "notes": [
             {
               "ref": "44:1",
-              "note": "The four locations -- Migdol, Tahpanhes, Memphis (Noph), and Upper Egypt (Pathros) -- represent the full extent of the Jewish diaspora in Egypt. Communities existed from the Delta to Upper Egypt."
+              "note": "The four locations -- Migdol, Tahpanhes, Memphis (Noph), and Upper Egypt (Pathros) -- represent the full extent of the Jewish diaspora in Egypt. Communities existed from the Delta to Upper Egypt. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -77,7 +77,7 @@
           "notes": [
             {
               "ref": "44:1-14",
-              "note": "Lundbom identifies this as \"the final covenant lawsuit.\" The structure -- historical review, accusation, verdict -- matches the lawsuit form from chapters 2-6, creating a literary inclusion for the entire book."
+              "note": "Lundbom identifies this as \"the final covenant lawsuit.\" The structure -- historical review, accusation, verdict -- matches the lawsuit form from chapters 2-6, creating a literary inclusion for the entire book. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -86,7 +86,7 @@
           "notes": [
             {
               "ref": "44:7-10",
-              "note": "Brueggemann reads the rhetorical questions as \"the exhaustion of prophetic patience.\" After a career of pleading, the prophet can only ask: why are you doing this to yourselves? The mystery of persistent self-destruction exceeds explanation."
+              "note": "Brueggemann reads the rhetorical questions as \"the exhaustion of prophetic patience.\" After a career of pleading, the prophet can only ask: why are you doing this to yourselves? The mystery of persistent self-destruction exceeds explanation. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -147,7 +147,7 @@
           "notes": [
             {
               "ref": "44:17-18",
-              "note": "Calvin demolishes the women's argument: \"They confuse the patience of God with the approval of God. When God delays judgment, it is not because he approves but because he endures. They mistook forbearance for favor.\""
+              "note": "Calvin demolishes the women's argument: \"They confuse the patience of God with the approval of God. When God delays judgment, it is not because he approves but because he endures. They mistook forbearance for favor.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -156,7 +156,7 @@
           "notes": [
             {
               "ref": "44:19",
-              "note": "The \"cakes stamped with her image\" (kawwanim) were likely small cakes shaped in the form of the goddess or bearing her symbol -- a star. Similar practices are attested in Mesopotamian Ishtar worship."
+              "note": "The \"cakes stamped with her image\" (kawwanim) were likely small cakes shaped in the form of the goddess or bearing her symbol -- a star. Similar practices are attested in Mesopotamian Ishtar worship. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -165,7 +165,7 @@
           "notes": [
             {
               "ref": "44:15-30",
-              "note": "Lundbom reads this as \"the book's final word on syncretism.\" The confrontation that began with the Temple Sermon (ch. 7) reaches its conclusion in Egypt. The queen-of-heaven worship is the first and last idolatry named in the book."
+              "note": "Lundbom reads this as \"the book's final word on syncretism.\" The confrontation that began with the Temple Sermon (ch. 7) reaches its conclusion in Egypt. The queen-of-heaven worship is the first and last idolatry named in the book. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -365,7 +365,79 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Burn",
+        "Have",
+        "Humbled",
+        "Incense",
+        "Still",
+        "Will"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

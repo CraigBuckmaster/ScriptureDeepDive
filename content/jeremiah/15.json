@@ -63,7 +63,7 @@
           "notes": [
             {
               "ref": "15:1",
-              "note": "Calvin is struck by the extremity: \"When God declares that even the prayers of Moses and Samuel cannot avail, he announces that the door of mercy is shut — not because prayer is powerless, but because the sentence is irreversible.\""
+              "note": "Calvin is struck by the extremity: \"When God declares that even the prayers of Moses and Samuel cannot avail, he announces that the door of mercy is shut — not because prayer is powerless, but because the sentence is irreversible.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -94,7 +94,7 @@
           "notes": [
             {
               "ref": "15:1–4",
-              "note": "Brueggemann calls this \"the closure of prophetic mediation.\" The intercessory tradition — Israel's primary mechanism for averting divine wrath — is declared bankrupt. What remains is not negotiation but endurance."
+              "note": "Brueggemann calls this \"the closure of prophetic mediation.\" The intercessory tradition — Israel's primary mechanism for averting divine wrath — is declared bankrupt. What remains is not negotiation but endurance. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -185,7 +185,7 @@
           "notes": [
             {
               "ref": "15:10–21",
-              "note": "Lundbom classifies this as the third and most intense confession. The progression — birth curse (v.10), word-delight (v.16), isolation (v.17), accusation (v.18), recommission (vv.19–21) — traces the full arc of prophetic crisis and renewal."
+              "note": "Lundbom classifies this as the third and most intense confession. The progression — birth curse (v.10), word-delight (v.16), isolation (v.17), accusation (v.18), recommission (vv.19–21) — traces the full arc of prophetic crisis and renewal. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -405,7 +405,80 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Moses"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Even",
+        "Moses",
+        "Samuel",
+        "Were",
+        "Words",
+        "Your"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

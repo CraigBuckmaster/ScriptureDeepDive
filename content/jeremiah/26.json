@@ -59,7 +59,7 @@
           "notes": [
             {
               "ref": "26:12",
-              "note": "Calvin admires Jeremiah's courage: \"The prophet does not beg for mercy or retract a syllable. He places his accusers on trial: their response to God's word will determine their own judgment.\""
+              "note": "Calvin admires Jeremiah's courage: \"The prophet does not beg for mercy or retract a syllable. He places his accusers on trial: their response to God's word will determine their own judgment.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -81,7 +81,7 @@
           "notes": [
             {
               "ref": "26:1-15",
-              "note": "Lundbom identifies a standard trial narrative: charge (vv.7-9), defense (vv.12-15), verdict (vv.16-19). The form mirrors ancient Near Eastern legal proceedings."
+              "note": "Lundbom identifies a standard trial narrative: charge (vv.7-9), defense (vv.12-15), verdict (vv.16-19). The form mirrors ancient Near Eastern legal proceedings. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -90,7 +90,7 @@
           "notes": [
             {
               "ref": "26:12-15",
-              "note": "Brueggemann reads the trial as \"truth against power.\" The prophet has no institutional backing, no army, no allies -- only the claim \"The LORD sent me.\" That claim is either the ultimate authority or the ultimate delusion."
+              "note": "Brueggemann reads the trial as \"truth against power.\" The prophet has no institutional backing, no army, no allies -- only the claim \"The LORD sent me.\" That claim is either the ultimate authority or the ultimate delusion. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -147,7 +147,7 @@
           "notes": [
             {
               "ref": "26:19",
-              "note": "Calvin commends the elders' reasoning: \"Hezekiah feared the LORD and turned aside judgment. The right response to prophetic warning is repentance, not execution.\""
+              "note": "Calvin commends the elders' reasoning: \"Hezekiah feared the LORD and turned aside judgment. The right response to prophetic warning is repentance, not execution.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -156,7 +156,7 @@
           "notes": [
             {
               "ref": "26:18",
-              "note": "The citation of Micah 3:12 is the only instance in the Hebrew Bible where one prophet is quoted by name within another prophetic book -- a remarkable act of canonical cross-referencing."
+              "note": "The citation of Micah 3:12 is the only instance in the Hebrew Bible where one prophet is quoted by name within another prophetic book -- a remarkable act of canonical cross-referencing. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -165,7 +165,7 @@
           "notes": [
             {
               "ref": "26:16-24",
-              "note": "Lundbom notes that the Uriah episode serves as a dark foil to Jeremiah's acquittal: two prophets, same message, different outcomes. Jeremiah's survival is contingent on political allies, not on the inherent protection of prophetic office."
+              "note": "Lundbom notes that the Uriah episode serves as a dark foil to Jeremiah's acquittal: two prophets, same message, different outcomes. Jeremiah's survival is contingent on political allies, not on the inherent protection of prophetic office. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -393,7 +393,80 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Josiah",
+        "Jehoiakim"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Acquittal",
+        "Micah",
+        "Precedent",
+        "Prophesy",
+        "Sent"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

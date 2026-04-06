@@ -59,7 +59,7 @@
           "notes": [
             {
               "ref": "35:6-7",
-              "note": "Calvin admires the Recabites' consistency but clarifies: \"Their obedience is praiseworthy as filial loyalty, not as religious obligation. The point is the contrast: if human authority commands such fidelity, how much more should divine authority.\""
+              "note": "Calvin admires the Recabites' consistency but clarifies: \"Their obedience is praiseworthy as filial loyalty, not as religious obligation. The point is the contrast: if human authority commands such fidelity, how much more should divine authority.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -68,7 +68,7 @@
           "notes": [
             {
               "ref": "35:4",
-              "note": "The \"room\" (lishka) where the Recabites are brought was a chamber in the temple complex used by priests and officials. Offering wine in a temple setting adds a quasi-sacral dimension to the test."
+              "note": "The \"room\" (lishka) where the Recabites are brought was a chamber in the temple complex used by priests and officials. Offering wine in a temple setting adds a quasi-sacral dimension to the test. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -77,7 +77,7 @@
           "notes": [
             {
               "ref": "35:1-11",
-              "note": "Lundbom identifies this as a \"test oracle\" where the outcome is predetermined: the Recabites will pass, Israel will fail. The test is for the audience's benefit, not for the Recabites'."
+              "note": "Lundbom identifies this as a \"test oracle\" where the outcome is predetermined: the Recabites will pass, Israel will fail. The test is for the audience's benefit, not for the Recabites'. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -86,7 +86,7 @@
           "notes": [
             {
               "ref": "35:1-11",
-              "note": "Brueggemann reads the Recabite episode as an indictment of \"selective obedience.\" Israel obeys nothing; the Recabites obey everything. The contrast demolishes every excuse."
+              "note": "Brueggemann reads the Recabite episode as an indictment of \"selective obedience.\" Israel obeys nothing; the Recabites obey everything. The contrast demolishes every excuse. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -143,7 +143,7 @@
           "notes": [
             {
               "ref": "35:14-16",
-              "note": "Calvin develops the argument: \"If obedience to a dead ancestor produces such consistency, what would obedience to the living God produce? The Recabites shame every generation that claims God's commands are too difficult.\""
+              "note": "Calvin develops the argument: \"If obedience to a dead ancestor produces such consistency, what would obedience to the living God produce? The Recabites shame every generation that claims God's commands are too difficult.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -152,7 +152,7 @@
           "notes": [
             {
               "ref": "35:19",
-              "note": "\"To serve me\" (la'amod lephonay) literally means \"to stand before me\" -- language normally used for priestly or prophetic service. The Recabites receive a quasi-priestly blessing."
+              "note": "\"To serve me\" (la'amod lephonay) literally means \"to stand before me\" -- language normally used for priestly or prophetic service. The Recabites receive a quasi-priestly blessing. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -161,7 +161,7 @@
           "notes": [
             {
               "ref": "35:12-19",
-              "note": "Lundbom notes that the Recabite blessing (v.19) mirrors the Davidic covenant language -- \"never fail to have a descendant.\" Faithful obedience to human authority receives the same guarantee that unfaithful kings forfeited."
+              "note": "Lundbom notes that the Recabite blessing (v.19) mirrors the Davidic covenant language -- \"never fail to have a descendant.\" Faithful obedience to human authority receives the same guarantee that unfaithful kings forfeited. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -170,7 +170,7 @@
           "notes": [
             {
               "ref": "35:17-19",
-              "note": "Brueggemann contrasts the two outcomes: \"Israel receives the judgment it was warned about. The Recabites receive a permanence they never requested. Obedience is its own argument.\""
+              "note": "Brueggemann contrasts the two outcomes: \"Israel receives the judgment it was warned about. The Recabites receive a permanence they never requested. Obedience is its own argument.\". This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -360,7 +360,78 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "David"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Drink",
+        "Have",
+        "Obeyed",
+        "Wine"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

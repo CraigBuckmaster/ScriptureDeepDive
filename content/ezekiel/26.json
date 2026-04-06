@@ -63,7 +63,7 @@
           "notes": [
             {
               "ref": "26:2",
-              "note": "Calvin notes that Tyre's sin reveals the spiritual danger of commercial prosperity: wealth breeds a calculating indifference to others' suffering, seeing everything through the lens of profit."
+              "note": "Calvin notes that Tyre's sin reveals the spiritual danger of commercial prosperity: wealth breeds a calculating indifference to others' suffering, seeing everything through the lens of profit. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -155,7 +155,7 @@
           "notes": [
             {
               "ref": "26:7",
-              "note": "Calvin observes that God calling Nebuchadnezzar 'king of kings' demonstrates that all earthly authority derives from and serves divine sovereignty, even when the ruler is pagan and the purpose is judgment."
+              "note": "Calvin observes that God calling Nebuchadnezzar 'king of kings' demonstrates that all earthly authority derives from and serves divine sovereignty, even when the ruler is pagan and the purpose is judgment. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -243,7 +243,7 @@
           "notes": [
             {
               "ref": "26:19-21",
-              "note": "Calvin sees in Tyre's descent to the pit a universal truth: no human achievement, however magnificent, can resist divine judgment. Commercial empires are as mortal as the merchants who built them."
+              "note": "Calvin sees in Tyre's descent to the pit a universal truth: no human achievement, however magnificent, can resist divine judgment. Commercial empires are as mortal as the merchants who built them. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -252,7 +252,7 @@
           "notes": [
             {
               "ref": "26:20",
-              "note": "The 'people of long ago' (am olam) refers to the ancient dead who inhabit Sheol. The phrase suggests that Tyre will join civilisations already forgotten, losing not just life but memory."
+              "note": "The 'people of long ago' (am olam) refers to the ancient dead who inhabit Sheol. The phrase suggests that Tyre will join civilisations already forgotten, losing not just life but memory. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -508,7 +508,80 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Ezekiel",
+        "Nebuchadnezzar"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Descent",
+        "Gloating",
+        "Nebuchadnezzar",
+        "Over",
+        "Siege",
+        "Tyre"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

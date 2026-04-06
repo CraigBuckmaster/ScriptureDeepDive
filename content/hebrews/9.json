@@ -668,7 +668,81 @@
       "note": "Hebrews 9 is the architectural center of the letter's argument — both physically (middle of 13 chapters) and theologically. The tabernacle, the Day of Atonement ritual, and the covenant inauguration sacrifice are all read as typological pointers to Christ's once-for-all sacrifice. The Yom Kippur liturgy was designed to teach the people that access to God required blood — and what it taught in shadow, Christ accomplished in reality."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Christ",
+        "Death",
+        "Earthly",
+        "Entered",
+        "Finality",
+        "Inaugurate",
+        "Necessity",
+        "Once",
+        "Regulations",
+        "Tabernacle"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

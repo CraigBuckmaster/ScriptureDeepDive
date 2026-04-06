@@ -99,7 +99,7 @@
           "notes": [
             {
               "ref": "31:1-22",
-              "note": "Lundbom structures this section as a progressive restoration: land (vv.2-6), people (vv.7-14), grief-to-comfort (vv.15-17), repentance (vv.18-20), and new creation (vv.21-22). Each layer builds toward the climactic new covenant oracle."
+              "note": "Lundbom structures this section as a progressive restoration: land (vv.2-6), people (vv.7-14), grief-to-comfort (vv.15-17), repentance (vv.18-20), and new creation (vv.21-22). Each layer builds toward the climactic new covenant oracle. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -108,7 +108,7 @@
           "notes": [
             {
               "ref": "31:3",
-              "note": "Brueggemann calls \"everlasting love\" the \"theological ground zero of the Book of Consolation.\" Everything that follows flows from the simple claim that God's love precedes and survives every catastrophe."
+              "note": "Brueggemann calls \"everlasting love\" the \"theological ground zero of the Book of Consolation.\" Everything that follows flows from the simple claim that God's love precedes and survives every catastrophe. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -480,7 +480,80 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Rachel"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Covenant",
+        "Everlasting",
+        "Have",
+        "Loved",
+        "Make",
+        "Will"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

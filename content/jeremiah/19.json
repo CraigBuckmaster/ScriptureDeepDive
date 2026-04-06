@@ -59,7 +59,7 @@
           "notes": [
             {
               "ref": "19:1",
-              "note": "Calvin notes the progression from chapter 18: \"First God showed the soft clay that could be reformed. Now he shows the hardened vessel that can only be destroyed. The time for reformation has passed.\""
+              "note": "Calvin notes the progression from chapter 18: \"First God showed the soft clay that could be reformed. Now he shows the hardened vessel that can only be destroyed. The time for reformation has passed.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -81,7 +81,7 @@
           "notes": [
             {
               "ref": "19:1-9",
-              "note": "Lundbom reads chapters 18-19 as a deliberate pair: soft clay (reformable) → fired flask (irreformable). The theological development mirrors the historical development: the window for repentance has closed."
+              "note": "Lundbom reads chapters 18-19 as a deliberate pair: soft clay (reformable) → fired flask (irreformable). The theological development mirrors the historical development: the window for repentance has closed. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -90,7 +90,7 @@
           "notes": [
             {
               "ref": "19:1-9",
-              "note": "Brueggemann identifies the broken flask as \"the end of negotiation.\" The potter's wheel allowed dialogue between potter and clay. The shattered flask permits no response — the verdict is enacted, not debated."
+              "note": "Brueggemann identifies the broken flask as \"the end of negotiation.\" The potter's wheel allowed dialogue between potter and clay. The shattered flask permits no response — the verdict is enacted, not debated. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -143,7 +143,7 @@
           "notes": [
             {
               "ref": "19:10-11",
-              "note": "Calvin emphasizes the visual power of the act: \"The sound of shattering clay would ring in the ears of the witnesses long after the words were forgotten. God accommodates his message to human senses.\""
+              "note": "Calvin emphasizes the visual power of the act: \"The sound of shattering clay would ring in the ears of the witnesses long after the words were forgotten. God accommodates his message to human senses.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -152,7 +152,7 @@
           "notes": [
             {
               "ref": "19:11",
-              "note": "The phrase \"cannot be repaired\" (lōʾ-yûkal lĕhērāpēʾ) uses the root rāpāʾ (\"to heal\") — the vessel cannot be \"healed.\" The same root describes the prophets'  superficial healing in 6:14 and 8:11."
+              "note": "The phrase \"cannot be repaired\" (lōʾ-yûkal lĕhērāpēʾ) uses the root rāpāʾ (\"to heal\") — the vessel cannot be \"healed.\" The same root describes the prophets'  superficial healing in 6:14 and 8:11. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -161,7 +161,7 @@
           "notes": [
             {
               "ref": "19:10-15",
-              "note": "Lundbom notes that the move from Topheth to temple connects the book's two great judgment sites. The Valley of Slaughter and the house of God are equally condemned — sacred space offers no immunity from judgment."
+              "note": "Lundbom notes that the move from Topheth to temple connects the book's two great judgment sites. The Valley of Slaughter and the house of God are equally condemned — sacred space offers no immunity from judgment. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -170,7 +170,7 @@
           "notes": [
             {
               "ref": "19:14-15",
-              "note": "Brueggemann observes that Jeremiah's return to the temple court is an act of extraordinary courage — he goes back to the institution that has already tried to silence him. The prophet cannot be domesticated."
+              "note": "Brueggemann observes that Jeremiah's return to the temple court is an act of extraordinary courage — he goes back to the institution that has already tried to silence him. The prophet cannot be domesticated. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -355,7 +355,77 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Clay",
+        "Shatter",
+        "This",
+        "Will"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

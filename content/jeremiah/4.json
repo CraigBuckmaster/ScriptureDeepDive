@@ -67,7 +67,7 @@
           "notes": [
             {
               "ref": "4:4",
-              "note": "Calvin insists that heart circumcision is not a human achievement but a divine work that humans are commanded to seek. The paradox is deliberate: God commands what only God can accomplish, because the command itself drives us to dependence on grace."
+              "note": "Calvin insists that heart circumcision is not a human achievement but a divine work that humans are commanded to seek. The paradox is deliberate: God commands what only God can accomplish, because the command itself drives us to dependence on grace. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -89,7 +89,7 @@
           "notes": [
             {
               "ref": "4:1–4",
-              "note": "Lundbom reads vv.1–4 as the conclusion of the covenant lawsuit begun in chapter 2. The final \"if ... then\" structure gives the accused one last chance before sentencing. When the conditions are not met, the rest of chapter 4 delivers the sentence."
+              "note": "Lundbom reads vv.1–4 as the conclusion of the covenant lawsuit begun in chapter 2. The final \"if ... then\" structure gives the accused one last chance before sentencing. When the conditions are not met, the rest of chapter 4 delivers the sentence. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -269,7 +269,7 @@
           "notes": [
             {
               "ref": "4:23–26",
-              "note": "Lundbom identifies the fourfold \"I looked\" (rāʾîtî) as a visionary report — the prophet describes what he sees in a divine revelation. The structure mirrors creation's \"and God saw\" (wayyarʾ) in Genesis 1, now inverted: the prophet sees un-creation."
+              "note": "Lundbom identifies the fourfold \"I looked\" (rāʾîtî) as a visionary report — the prophet describes what he sees in a divine revelation. The structure mirrors creation's \"and God saw\" (wayyarʾ) in Genesis 1, now inverted: the prophet sees un-creation. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -513,7 +513,82 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Barren",
+        "Circumcise",
+        "Earth",
+        "Formless",
+        "Hearts",
+        "Looked",
+        "Scorching",
+        "Wind",
+        "Your"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

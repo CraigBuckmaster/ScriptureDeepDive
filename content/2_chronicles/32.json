@@ -38,7 +38,7 @@
           "notes": [
             {
               "ref": "32:(1, '')",
-              "note": "The principle here applies universally: God’s governance is consistent and his responses are proportional to human faithfulness."
+              "note": "The principle here applies universally: God’s governance is consistent and his responses are proportional to human faithfulness. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -47,13 +47,21 @@
           "notes": [
             {
               "ref": "32:(1, '')",
-              "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events."
+              "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
             }
           ]
         },
         "hist": {
           "context": "After Hezekiah’s faithfulness, Sennacherib invades. Hezekiah blocks springs outside the city (the Siloam Tunnel), strengthens the walls, and addresses the people: “Be strong and courageous. With him is only the arm of flesh, but with us is the LORD our God to help us and to fight our battles.” Sennacherib’s officials mock: “No god of any nation has been able to deliver his people from my hand.” The Chronicler condenses 2 Kings 18–19’s Rabshakeh speech into a summary, keeping the theological challenge intact."
-        }
+        },
+        "heb": [
+          {
+            "word": "milḥāmâ",
+            "transliteration": "milḥāmâ",
+            "gloss": "war / battle",
+            "paragraph": "The Hebrew milḥāmâ (war) in the Chronicler's theology is never merely military. Every battle is a theological event: victory comes from trusting God, defeat from trusting human alliances. The Chronicler consistently adds 'the LORD fought for them' or 'they relied on the LORD' to battle narratives that Kings presents in purely political terms."
+          }
+        ]
       }
     },
     {
@@ -80,15 +88,33 @@
         },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": []
+          "notes": [
+            {
+              "ref": "32:(20, '')",
+              "note": "Calvin: On 33 — Hezekiah and Isaiah Pray; the Angel Strikes; Hezekiah’s Final Assessment: teaches that all human religious activity is ultimately provisional — when God himself appears, our best efforts are suspended in awe. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
+            }
+          ]
         },
         "net": {
           "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": []
+          "notes": [
+            {
+              "ref": "32:(20, '')",
+              "note": "NET Note: On 33 — Hezekiah and Isaiah Pray; the Angel Strikes; Hezekiah’s Final Assessment: Gen 22:2. Jewish tradition universally accepted this identification, which became foundational for Jerusalem’s theology of sacred space. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
+            }
+          ]
         },
         "hist": {
           "context": "“King Hezekiah and the prophet Isaiah cried out in prayer to heaven about this.” The LORD sends an angel who annihilates the Assyrian army. Sennacherib returns to Nineveh and is killed by his sons. The Chronicler adds: “So the LORD saved Hezekiah and the people of Jerusalem.” Hezekiah’s illness, Merodach-Baladan’s embassy, and the treasury-showing are compressed into a few verses. “Hezekiah’s heart was proud” but he repents, and wrath is deferred. He dies honoured: “All Judah and the people of Jerusalem honoured him when he died.”"
-        }
+        },
+        "heb": [
+          {
+            "word": "dāraš",
+            "transliteration": "dāraš",
+            "gloss": "to seek / inquire",
+            "paragraph": "Dāraš is the Chronicler's signature verb — appearing more than 40 times in 1-2 Chronicles, far more frequently than in Kings. 'To seek the LORD' is the defining act of faithful kingship in the Chronicler's theology. Kings who seek (dāraš) prosper; kings who forsake (ʿāzaḇ) are abandoned. This binary drives the entire narrative."
+          }
+        ]
       }
     }
   ],

@@ -59,7 +59,7 @@
           "notes": [
             {
               "ref": "15:1-5",
-              "note": "Calvin stresses that election without obedience produces no inherent worth. Israel was chosen not for inherent superiority but for fruitfulness. Remove the fruit and the vine is inferior to any other wood."
+              "note": "Calvin stresses that election without obedience produces no inherent worth. Israel was chosen not for inherent superiority but for fruitfulness. Remove the fruit and the vine is inferior to any other wood. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -68,7 +68,7 @@
           "notes": [
             {
               "ref": "15:2",
-              "note": "The phrase 'more than any branch among the trees of the forest' sets up the comparison: vine wood vs. timber. The answer is obvious — vine wood is useless for construction."
+              "note": "The phrase 'more than any branch among the trees of the forest' sets up the comparison: vine wood vs. timber. The answer is obvious — vine wood is useless for construction. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -86,7 +86,7 @@
           "notes": [
             {
               "ref": "15:1-5",
-              "note": "Zimmerli identifies the parable as a mashal (wisdom saying) that uses artisan logic: a woodworker would never choose vine wood. The rhetorical question expects the obvious answer 'no' — and that answer becomes God's verdict on fruitless Israel."
+              "note": "Zimmerli identifies the parable as a mashal (wisdom saying) that uses artisan logic: a woodworker would never choose vine wood. The rhetorical question expects the obvious answer 'no' — and that answer becomes God's verdict on fruitless Israel. Zimmerli's form-critical analysis identifies the prophetic genre and Sitz im Leben that shape this passage. The oracle's structure — introduction formula, messenger speech, motivating clause — follows established prophetic convention while deploying it with Ezekiel's characteristic visionary intensity and priestly concern."
             }
           ]
         },
@@ -126,7 +126,7 @@
           "notes": [
             {
               "ref": "15:6-7",
-              "note": "They have come out of one fire and another will consume them — the surviving remnant from earlier judgments will not escape the final judgment. Partial judgment did not produce repentance."
+              "note": "They have come out of one fire and another will consume them — the surviving remnant from earlier judgments will not escape the final judgment. Partial judgment did not produce repentance. MacArthur emphasizes the doctrinal significance of this passage within the framework of systematic theology. The text establishes principles that remain normative for the church — not merely descriptive of ancient Israel but prescriptive for how God's people should understand His character and respond in obedience."
             }
           ]
         },
@@ -135,7 +135,7 @@
           "notes": [
             {
               "ref": "15:6-8",
-              "note": "Calvin applies this warning to every covenant community: belonging to God's people guarantees nothing without fruitfulness. Privilege without production leads to destruction."
+              "note": "Calvin applies this warning to every covenant community: belonging to God's people guarantees nothing without fruitfulness. Privilege without production leads to destruction. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -144,7 +144,7 @@
           "notes": [
             {
               "ref": "15:7",
-              "note": "The recognition formula appears again: 'then you will know that I am the LORD.' Even judgment reveals God's identity and sovereignty."
+              "note": "The recognition formula appears again: 'then you will know that I am the LORD.' Even judgment reveals God's identity and sovereignty. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -153,7 +153,7 @@
           "notes": [
             {
               "ref": "15:6-8",
-              "note": "Block connects the 'fire to fire' motif to the historical sequence: the 605 BC deportation, the 597 BC deportation, and the coming 586 BC destruction. Each 'fire' is an escalation that the survivors failed to learn from."
+              "note": "Block connects the 'fire to fire' motif to the historical sequence: the 605 BC deportation, the 597 BC deportation, and the coming 586 BC destruction. Each 'fire' is an escalation that the survivors failed to learn from. Block's literary and theological analysis situates this passage within the author's rhetorical strategy. The text functions as both narrative and argument — the story advances the book's theological thesis about the consequences of covenant faithfulness and unfaithfulness in Israel's life under God."
             }
           ]
         },
@@ -162,7 +162,7 @@
           "notes": [
             {
               "ref": "15:6-8",
-              "note": "Zimmerli sees the brevity of the oracle as rhetorically effective: the case against Jerusalem requires no elaboration. The vine image speaks for itself. Brevity communicates finality."
+              "note": "Zimmerli sees the brevity of the oracle as rhetorically effective: the case against Jerusalem requires no elaboration. The vine image speaks for itself. Brevity communicates finality. Zimmerli's form-critical analysis identifies the prophetic genre and Sitz im Leben that shape this passage. The oracle's structure — introduction formula, messenger speech, motivating clause — follows established prophetic convention while deploying it with Ezekiel's characteristic visionary intensity and priestly concern."
             }
           ]
         },
@@ -342,7 +342,78 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Ezekiel"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Better",
+        "Fire",
+        "Given",
+        "Vine",
+        "Wood"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

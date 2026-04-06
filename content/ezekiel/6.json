@@ -69,7 +69,7 @@
           "notes": [
             {
               "ref": "6:2-3",
-              "note": "Calvin notes that God addresses the mountains because the people are too hardened to hear. When the audience refuses to listen, God preaches to creation itself as a witness against human rebellion."
+              "note": "Calvin notes that God addresses the mountains because the people are too hardened to hear. When the audience refuses to listen, God preaches to creation itself as a witness against human rebellion. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -91,7 +91,7 @@
           "notes": [
             {
               "ref": "6:1-7",
-              "note": "Block emphasises the addressee: Ezekiel preaches to the mountains, not the people. This is a declaration of holy war against the land itself. The land that was given as covenant gift has been polluted and must be cleansed by violence."
+              "note": "Block emphasises the addressee: Ezekiel preaches to the mountains, not the people. This is a declaration of holy war against the land itself. The land that was given as covenant gift has been polluted and must be cleansed by violence. Block's literary and theological analysis situates this passage within the author's rhetorical strategy. The text functions as both narrative and argument — the story advances the book's theological thesis about the consequences of covenant faithfulness and unfaithfulness in Israel's life under God."
             }
           ]
         },
@@ -100,7 +100,7 @@
           "notes": [
             {
               "ref": "6:1-7",
-              "note": "Zimmerli classifies this as a 'proof-saying' (Erweiswort) — the genre centers on the recognition formula 'then you will know that I am the LORD.' The entire oracle exists to produce knowledge of YHWH through the act of judgment."
+              "note": "Zimmerli classifies this as a 'proof-saying' (Erweiswort) — the genre centers on the recognition formula 'then you will know that I am the LORD.' The entire oracle exists to produce knowledge of YHWH through the act of judgment. Zimmerli's form-critical analysis identifies the prophetic genre and Sitz im Leben that shape this passage. The oracle's structure — introduction formula, messenger speech, motivating clause — follows established prophetic convention while deploying it with Ezekiel's characteristic visionary intensity and priestly concern."
             }
           ]
         },
@@ -161,7 +161,7 @@
           "notes": [
             {
               "ref": "6:8-10",
-              "note": "Calvin sees the remnant's self-loathing as a mark of genuine repentance. They do not merely regret consequences but grieve the sin itself — the broken adulterous heart that departed from God."
+              "note": "Calvin sees the remnant's self-loathing as a mark of genuine repentance. They do not merely regret consequences but grieve the sin itself — the broken adulterous heart that departed from God. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -192,7 +192,7 @@
           "notes": [
             {
               "ref": "6:11-14",
-              "note": "Zimmerli identifies the clapping and stamping as ritual gestures of mourning that the prophet performs on God's behalf — God himself grieves the necessity of judgment. The desolation from desert to Riblah encompasses the entire promised land."
+              "note": "Zimmerli identifies the clapping and stamping as ritual gestures of mourning that the prophet performs on God's behalf — God himself grieves the necessity of judgment. The desolation from desert to Riblah encompasses the entire promised land. Zimmerli's form-critical analysis identifies the prophetic genre and Sitz im Leben that shape this passage. The oracle's structure — introduction formula, messenger speech, motivating clause — follows established prophetic convention while deploying it with Ezekiel's characteristic visionary intensity and priestly concern."
             }
           ]
         },
@@ -384,7 +384,79 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Ezekiel"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Destruction",
+        "High",
+        "Places",
+        "Scattered",
+        "Survivors",
+        "Total"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

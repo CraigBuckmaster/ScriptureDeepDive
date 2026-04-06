@@ -59,7 +59,7 @@
           "notes": [
             {
               "ref": "8:1-4",
-              "note": "Calvin notes that the vision is given while the elders sit before Ezekiel — God reveals Jerusalem's corruption to the exiles so they understand why the city must fall. The vision serves a pastoral purpose: removing false hope."
+              "note": "Calvin notes that the vision is given while the elders sit before Ezekiel — God reveals Jerusalem's corruption to the exiles so they understand why the city must fall. The vision serves a pastoral purpose: removing false hope. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -90,7 +90,7 @@
           "notes": [
             {
               "ref": "8:1-6",
-              "note": "Zimmerli argues the 'image of jealousy' is not necessarily Asherah but could be any cultic image. The point is not the identity of the idol but its location: it stands where only YHWH should be honored. Placement, not type, constitutes the offense."
+              "note": "Zimmerli argues the 'image of jealousy' is not necessarily Asherah but could be any cultic image. The point is not the identity of the idol but its location: it stands where only YHWH should be honored. Placement, not type, constitutes the offense. Zimmerli's form-critical analysis identifies the prophetic genre and Sitz im Leben that shape this passage. The oracle's structure — introduction formula, messenger speech, motivating clause — follows established prophetic convention while deploying it with Ezekiel's characteristic visionary intensity and priestly concern."
             }
           ]
         },
@@ -151,7 +151,7 @@
           "notes": [
             {
               "ref": "8:12",
-              "note": "Calvin highlights the self-deception: the elders claim God has abandoned the land, so they are free to worship other gods. In reality, their idolatry is what will cause God to leave — they confuse cause and effect."
+              "note": "Calvin highlights the self-deception: the elders claim God has abandoned the land, so they are free to worship other gods. In reality, their idolatry is what will cause God to leave — they confuse cause and effect. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -239,7 +239,7 @@
           "notes": [
             {
               "ref": "8:16-18",
-              "note": "Calvin sees the priests turning their backs on the temple as the most powerful image in the chapter: those ordained to face God have deliberately turned away. Their physical posture enacts their spiritual apostasy."
+              "note": "Calvin sees the priests turning their backs on the temple as the most powerful image in the chapter: those ordained to face God have deliberately turned away. Their physical posture enacts their spiritual apostasy. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -485,7 +485,84 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Ezekiel",
+        "Jaazaniah",
+        "Tammuz"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Backs",
+        "Creeping",
+        "Elders",
+        "Gate",
+        "Image",
+        "Jealousy",
+        "Temple",
+        "Things",
+        "Worshiping"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

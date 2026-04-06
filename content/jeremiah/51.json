@@ -63,7 +63,7 @@
           "notes": [
             {
               "ref": "51:7",
-              "note": "Calvin develops the golden cup: \"Babylon was God's instrument -- the cup of wrath nations were forced to drink (25:15). But the cup-bearer who served God's judgment is now judged for the cruelty with which she executed it.\""
+              "note": "Calvin develops the golden cup: \"Babylon was God's instrument -- the cup of wrath nations were forced to drink (25:15). But the cup-bearer who served God's judgment is now judged for the cruelty with which she executed it.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -85,7 +85,7 @@
           "notes": [
             {
               "ref": "51:1-33",
-              "note": "Lundbom identifies the creation hymn (vv.15-19) as \"the theological center of the oracle.\" Judgment on Babylon is grounded in creation -- the God who made everything has authority to unmake any empire."
+              "note": "Lundbom identifies the creation hymn (vv.15-19) as \"the theological center of the oracle.\" Judgment on Babylon is grounded in creation -- the God who made everything has authority to unmake any empire. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -155,7 +155,7 @@
           "notes": [
             {
               "ref": "51:63-64",
-              "note": "Calvin reads the sinking scroll as a final statement about the power of God's word: \"The scroll sinks but the word rises. What is written and sealed cannot be undone by any human power. Babylon sinks; the truth floats.\""
+              "note": "Calvin reads the sinking scroll as a final statement about the power of God's word: \"The scroll sinks but the word rises. What is written and sealed cannot be undone by any human power. Babylon sinks; the truth floats.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -177,7 +177,7 @@
           "notes": [
             {
               "ref": "51:59-64",
-              "note": "Lundbom calls the sinking scroll \"the final sign-act and the perfect closure.\" The book that began with the word of the LORD (1:4) ends with the word sinking into the Euphrates -- the word goes into the deep but cannot be silenced."
+              "note": "Lundbom calls the sinking scroll \"the final sign-act and the perfect closure.\" The book that began with the word of the LORD (1:4) ends with the word sinking into the Euphrates -- the word goes into the deep but cannot be silenced. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -186,7 +186,7 @@
           "notes": [
             {
               "ref": "51:63-64",
-              "note": "Brueggemann reads the sinking scroll as \"the ultimate performative act.\" The word does not merely describe Babylon's fall -- it enacts it. The scroll in the river is Babylon in history: going down, not to rise again."
+              "note": "Brueggemann reads the sinking scroll as \"the ultimate performative act.\" The word does not merely describe Babylon's fall -- it enacts it. The scroll in the river is Babylon in history: going down, not to rise again. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -404,7 +404,82 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Baruch",
+        "Zedekiah",
+        "Nebuchadnezzar"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Babylon",
+        "Kings",
+        "Medes",
+        "Repay",
+        "Stirred",
+        "What"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

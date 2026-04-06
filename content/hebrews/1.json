@@ -588,7 +588,84 @@
       "note": "Hebrews 1 opens with the most dense and theologically rich prologue in the NT (vv. 1-4), followed by a carefully constructed catena of OT texts. The structure is comparison/contrast — not to disparage angels, but to establish the absolute uniqueness of the Son's revelatory authority. The sermon's exhortatory purpose begins in 2:1: 'Therefore we must pay much closer attention.'"
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jesus",
+        "Moses",
+        "Abraham",
+        "Melchizedek",
+        "Aaron",
+        "Abel"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Angels",
+        "Days",
+        "Ever",
+        "Last",
+        "These",
+        "Which"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

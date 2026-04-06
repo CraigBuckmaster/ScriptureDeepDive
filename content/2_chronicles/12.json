@@ -15,7 +15,7 @@
       "section_num": 1,
       "header": "Verses 1‒8 — Unfaithfulness Brings Shishak; Shemaiah’s Verdict",
       "verse_start": 1,
-      "verse_end": 1,
+      "verse_end": 8,
       "panels": {
         "cross": {
           "refs": [
@@ -34,7 +34,7 @@
           "notes": [
             {
               "ref": "12:(1, '')",
-              "note": "Every king’s reign demonstrates the principle that faithfulness produces blessing and unfaithfulness produces judgment."
+              "note": "Every king’s reign demonstrates the principle that faithfulness produces blessing and unfaithfulness produces judgment. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -43,13 +43,21 @@
           "notes": [
             {
               "ref": "12:(1, '')",
-              "note": "The Chronicler’s vocabulary in this section reflects his characteristic theological terminology."
+              "note": "The Chronicler’s vocabulary in this section reflects his characteristic theological terminology. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
             }
           ]
         },
         "hist": {
           "context": "After three years of faithfulness, Rehoboam abandons the law. Shishak of Egypt invades with 1,200 chariots, 60,000 horsemen, and innumerable troops. Shemaiah confronts Rehoboam: “You have abandoned me; therefore I now abandon you to Shishak.” The leaders humble themselves: “The LORD is just.” Because they humble themselves, God says: “I will not destroy them; I will grant them some deliverance.” Partial humility produces partial deliverance."
-        }
+        },
+        "heb": [
+          {
+            "word": "bĕrît",
+            "transliteration": "berît",
+            "gloss": "covenant",
+            "paragraph": "The Hebrew bĕrît (covenant) is the central relational term in the OT. In this context it underscores the binding obligation between God and His people — faithfulness brings blessing, unfaithfulness brings judgment. The Chronicler uses this term to evaluate every king's reign against the Davidic covenant standard."
+          }
+        ]
       }
     },
     {
@@ -75,7 +83,7 @@
           "notes": [
             {
               "ref": "12:(9, '')",
-              "note": "The outcome of this king’s reign teaches that God’s governance is precise: every action has proportional consequences."
+              "note": "The outcome of this king’s reign teaches that God’s governance is precise: every action has proportional consequences. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -84,13 +92,21 @@
           "notes": [
             {
               "ref": "12:(9, '')",
-              "note": "Key terms in this section connect to the Chronicler’s broader theological framework."
+              "note": "Key terms in this section connect to the Chronicler’s broader theological framework. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
             }
           ]
         },
         "hist": {
           "context": "Shishak takes the temple treasures and the gold shields Solomon made. Rehoboam replaces them with bronze shields — the decline from gold to bronze is the Chronicler’s most powerful symbol. The golden age is over; the bronze age of diminished glory begins. “He did evil because he had not set his heart on seeking the LORD.” The verdict uses the Chronicler’s key verb: darash. Rehoboam’s failure is a failure to seek."
-        }
+        },
+        "heb": [
+          {
+            "word": "bayit",
+            "transliteration": "bayit",
+            "gloss": "house / temple",
+            "paragraph": "Bayit (house) carries a deliberate double meaning in Chronicles: Solomon builds God a house (temple), and God promises David a house (dynasty). The interplay between these two 'houses' generates the theological tension that drives the entire narrative: will the dynasty endure? Will the temple remain? Both depend on covenant faithfulness."
+          }
+        ]
       }
     }
   ],

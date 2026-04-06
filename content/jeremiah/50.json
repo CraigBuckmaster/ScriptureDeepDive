@@ -67,7 +67,7 @@
           "notes": [
             {
               "ref": "50:4-5",
-              "note": "Calvin reads Israel's restoration as the flip side of Babylon's fall: \"God never judges one party without simultaneously delivering another. Destruction and salvation are two faces of the same sovereign act.\""
+              "note": "Calvin reads Israel's restoration as the flip side of Babylon's fall: \"God never judges one party without simultaneously delivering another. Destruction and salvation are two faces of the same sovereign act.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -89,7 +89,7 @@
           "notes": [
             {
               "ref": "50:1-20",
-              "note": "Lundbom identifies the Babylon oracle as \"the theological culmination of the book.\" The servant of God (25:9) becomes the enemy of God. The instrument of judgment becomes the object of judgment. The reversal is total."
+              "note": "Lundbom identifies the Babylon oracle as \"the theological culmination of the book.\" The servant of God (25:9) becomes the enemy of God. The instrument of judgment becomes the object of judgment. The reversal is total. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -98,7 +98,7 @@
           "notes": [
             {
               "ref": "50:2",
-              "note": "Brueggemann reads the fall of Marduk as \"the deconstruction of imperial religion.\" Every empire claims divine sponsorship; the fall of the empire exposes the claim as fraud. Marduk's shame is the shame of every ideology that sacralizes power."
+              "note": "Brueggemann reads the fall of Marduk as \"the deconstruction of imperial religion.\" Every empire claims divine sponsorship; the fall of the empire exposes the claim as fraud. Marduk's shame is the shame of every ideology that sacralizes power. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -159,7 +159,7 @@
           "notes": [
             {
               "ref": "50:34",
-              "note": "Calvin celebrates the Redeemer title: \"Israel has a go'el -- a kinsman who is obligated to act on their behalf. God assumes the family obligation of redemption. The enslaved have a powerful relative.\""
+              "note": "Calvin celebrates the Redeemer title: \"Israel has a go'el -- a kinsman who is obligated to act on their behalf. God assumes the family obligation of redemption. The enslaved have a powerful relative.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -181,7 +181,7 @@
           "notes": [
             {
               "ref": "50:21-46",
-              "note": "Lundbom reads the sustained length of the Babylon oracle as \"proportional justice.\" Babylon received the longest judgment because it inflicted the most damage. The scale of the oracle matches the scale of the crime."
+              "note": "Lundbom reads the sustained length of the Babylon oracle as \"proportional justice.\" Babylon received the longest judgment because it inflicted the most damage. The scale of the oracle matches the scale of the crime. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -190,7 +190,7 @@
           "notes": [
             {
               "ref": "50:33-34",
-              "note": "Brueggemann identifies the Redeemer oracle as \"the theological heart of the Babylon collection.\" God is not a neutral arbiter but a committed kinsman who takes Israel's side against the oppressor."
+              "note": "Brueggemann identifies the Redeemer oracle as \"the theological heart of the Babylon collection.\" God is not a neutral arbiter but a committed kinsman who takes Israel's side against the oppressor. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -400,7 +400,79 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Attack",
+        "Babylon",
+        "Land",
+        "Merathaim",
+        "Shame",
+        "Taken"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

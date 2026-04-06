@@ -87,7 +87,7 @@
           "notes": [
             {
               "ref": "3:1–9",
-              "note": "Moo identifies two parallel arguments: experiential (vv. 1–5) and scriptural (vv. 6–9), both reaching the same conclusion. The Abraham argument is compressed here compared to Romans 4, reflecting the letter’s urgency."
+              "note": "Moo identifies two parallel arguments: experiential (vv. 1–5) and scriptural (vv. 6–9), both reaching the same conclusion. The Abraham argument is compressed here compared to Romans 4, reflecting the letter’s urgency. Moo's exegesis situates James within the broader wisdom tradition, noting how the author draws on Proverbs, Sirach, and Jesus's own teaching to construct a practical theology of faithful living. The epistle's imperatives are grounded not in legalism but in the transformative reality of the 'implanted word' (1:21)."
             }
           ]
         },
@@ -96,7 +96,7 @@
           "notes": [
             {
               "ref": "3:1–9",
-              "note": "Bruce draws attention to the visual imagery: Christ was ‘publicly portrayed as crucified’ before the Galatians’ eyes. The verb prographō can mean ‘placarded.’ Bruce argues that the Abraham argument is the backbone of the letter."
+              "note": "Bruce draws attention to the visual imagery: Christ was ‘publicly portrayed as crucified’ before the Galatians’ eyes. The verb prographō can mean ‘placarded.’ Bruce argues that the Abraham argument is the backbone of the letter. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -243,7 +243,7 @@
           "notes": [
             {
               "ref": "3:19–22",
-              "note": "Calvin addresses the law’s purpose: by exposing sin and pronouncing condemnation, it drives the sinner to Christ for mercy. Calvin uses the analogy of a mirror: the law shows us our deformity so that we flee to the physician."
+              "note": "Calvin addresses the law’s purpose: by exposing sin and pronouncing condemnation, it drives the sinner to Christ for mercy. Calvin uses the analogy of a mirror: the law shows us our deformity so that we flee to the physician. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -749,7 +749,86 @@
       "note": "Galatians 3 is Paul's most concentrated biblical argument, drawing on Genesis 15, Deuteronomy 27 and 21, Leviticus 18, and Habakkuk 2 to demonstrate that faith-righteousness antedates the Mosaic law and cannot be displaced by it. The chapter uses three distinct argument types: experiential (vv. 1-5), exegetical (vv. 6-18), and logical (vv. 19-29)."
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Abraham",
+        "Christ",
+        "Moses"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Aside",
+        "Believing",
+        "Christ",
+        "Curse",
+        "Does",
+        "Jesus",
+        "Promise",
+        "Receive",
+        "Redeemed",
+        "Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

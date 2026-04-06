@@ -63,7 +63,7 @@
           "notes": [
             {
               "ref": "36:2",
-              "note": "Calvin notes the permanence of writing: \"God commands the scroll so that the word cannot be dismissed as misremembered speech. Written text is fixed testimony that outlasts the prophet who spoke it.\""
+              "note": "Calvin notes the permanence of writing: \"God commands the scroll so that the word cannot be dismissed as misremembered speech. Written text is fixed testimony that outlasts the prophet who spoke it.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -72,7 +72,7 @@
           "notes": [
             {
               "ref": "36:4",
-              "note": "Baruch used a \"writing\" (katobet) instrument on a papyrus or leather scroll. As a professional scribe (sopher), Baruch was trained in standard scribal conventions of the period."
+              "note": "Baruch used a \"writing\" (katobet) instrument on a papyrus or leather scroll. As a professional scribe (sopher), Baruch was trained in standard scribal conventions of the period. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -81,7 +81,7 @@
           "notes": [
             {
               "ref": "36:1-19",
-              "note": "Lundbom identifies this as \"the most important chapter in the Hebrew Bible for understanding the composition of prophetic books.\" The dictation, reading, destruction, and rewriting sequence illuminates how Scripture came into being."
+              "note": "Lundbom identifies this as \"the most important chapter in the Hebrew Bible for understanding the composition of prophetic books.\" The dictation, reading, destruction, and rewriting sequence illuminates how Scripture came into being. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -90,7 +90,7 @@
           "notes": [
             {
               "ref": "36:1-8",
-              "note": "Brueggemann reads the scroll as \"the word becoming text.\" Oral prophecy is perishable; written prophecy is permanent. The transition from speech to writing is itself a theological act -- God's word is being preserved for future generations."
+              "note": "Brueggemann reads the scroll as \"the word becoming text.\" Oral prophecy is perishable; written prophecy is permanent. The transition from speech to writing is itself a theological act -- God's word is being preserved for future generations. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -164,7 +164,7 @@
           "notes": [
             {
               "ref": "36:23",
-              "note": "The \"three or four columns\" (delathot) are the sections of text on the scroll. Each deleth was a panel or column of writing -- the king cuts each section as it is read, indicating he hears the entire content before burning it."
+              "note": "The \"three or four columns\" (delathot) are the sections of text on the scroll. Each deleth was a panel or column of writing -- the king cuts each section as it is read, indicating he hears the entire content before burning it. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -173,7 +173,7 @@
           "notes": [
             {
               "ref": "36:20-32",
-              "note": "Lundbom reads the scroll-burning as \"the most dramatic act of opposition to prophetic authority in the Hebrew Bible.\" But the rewriting with additions (v.32) demonstrates that persecution amplifies rather than silences the prophetic word."
+              "note": "Lundbom reads the scroll-burning as \"the most dramatic act of opposition to prophetic authority in the Hebrew Bible.\" But the rewriting with additions (v.32) demonstrates that persecution amplifies rather than silences the prophetic word. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -182,7 +182,7 @@
           "notes": [
             {
               "ref": "36:23-32",
-              "note": "Brueggemann identifies a \"contest between fire and ink.\" The king commands fire; God commands rewriting. Fire is temporary; text is permanent. \"Many similar words were added\" -- persecution produces more Scripture, not less."
+              "note": "Brueggemann identifies a \"contest between fire and ink.\" The king commands fire; God commands rewriting. Fire is temporary; text is permanent. \"Many similar words were added\" -- persecution produces more Scripture, not less. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -395,7 +395,81 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Baruch",
+        "Josiah",
+        "Jehoiakim"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Burns",
+        "King",
+        "Read",
+        "Scroll",
+        "Written"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

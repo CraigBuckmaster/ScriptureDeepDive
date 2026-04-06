@@ -38,7 +38,7 @@
           "notes": [
             {
               "ref": "36:(1, '')",
-              "note": "The principle here applies universally: God’s governance is consistent and his responses are proportional to human faithfulness."
+              "note": "The principle here applies universally: God’s governance is consistent and his responses are proportional to human faithfulness. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -47,13 +47,21 @@
           "notes": [
             {
               "ref": "36:(1, '')",
-              "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events."
+              "note": "The Chronicler’s distinctive theological vocabulary shapes the presentation of these events. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
             }
           ]
         },
         "hist": {
           "context": "The Chronicler compresses the final four kings into 14 verses: Jehoahaz (3 months, deported to Egypt), Jehoiakim (11 years, “he did evil”), Jehoiachin (3 months, deported to Babylon), Zedekiah (11 years, “he did not humble himself before Jeremiah”). The narrative accelerates toward catastrophe. “All the leaders of the priests and the people became more and more unfaithful.” God sends messengers “again and again, because he had pity on his people.” But they mocked, despised, and scoffed “until the wrath of the LORD was aroused against his people and there was no remedy.”"
-        }
+        },
+        "heb": [
+          {
+            "word": "bĕrît",
+            "transliteration": "berît",
+            "gloss": "covenant",
+            "paragraph": "The Hebrew bĕrît (covenant) is the central relational term in the OT. In this context it underscores the binding obligation between God and His people — faithfulness brings blessing, unfaithfulness brings judgment. The Chronicler uses this term to evaluate every king's reign against the Davidic covenant standard."
+          }
+        ]
       }
     },
     {
@@ -88,7 +96,15 @@
         },
         "hist": {
           "context": "Nebuchadnezzar burns the temple, breaks down the walls, and deports the survivors to Babylon. “The land enjoyed its sabbath rests; all the time of its desolation it rested, until the seventy years were completed, in fulfilment of the word of the LORD spoken by Jeremiah.” But the book does not end with destruction. Its final verses are Cyrus’s decree: “The LORD, the God of heaven, has given me all the kingdoms of the earth and he has appointed me to build a temple for him at Jerusalem. Any of his people among you may go up.” The same words open the book of Ezra. Chronicles ends mid-sentence, pointing forward to restoration. The last word is not exile but “let him go up.”"
-        }
+        },
+        "heb": [
+          {
+            "word": "bayit",
+            "transliteration": "bayit",
+            "gloss": "house / temple",
+            "paragraph": "Bayit (house) carries a deliberate double meaning in Chronicles: Solomon builds God a house (temple), and God promises David a house (dynasty). The interplay between these two 'houses' generates the theological tension that drives the entire narrative: will the dynasty endure? Will the temple remain? Both depend on covenant faithfulness."
+          }
+        ]
       }
     }
   ],

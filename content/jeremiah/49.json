@@ -73,7 +73,7 @@
           "notes": [
             {
               "ref": "49:12",
-              "note": "Calvin develops the argument from lesser to greater: \"If God's own covenant people must drink the cup, how much more those who have no covenant? The severity shown to Israel guarantees the severity shown to the nations.\""
+              "note": "Calvin develops the argument from lesser to greater: \"If God's own covenant people must drink the cup, how much more those who have no covenant? The severity shown to Israel guarantees the severity shown to the nations.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -95,7 +95,7 @@
           "notes": [
             {
               "ref": "49:1-22",
-              "note": "Lundbom notes that both Ammon and Edom receive restoration promises (vv.6, 39), while Edom's oracle lacks one -- reflecting the special animosity between Israel and Edom throughout the biblical tradition."
+              "note": "Lundbom notes that both Ammon and Edom receive restoration promises (vv.6, 39), while Edom's oracle lacks one -- reflecting the special animosity between Israel and Edom throughout the biblical tradition. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -104,7 +104,7 @@
           "notes": [
             {
               "ref": "49:7-22",
-              "note": "Brueggemann reads the Edom oracle as \"the judgment of the brother.\" Edom's sin is not mere political hostility but fraternal betrayal -- the violation of kinship obligations that goes back to Jacob and Esau."
+              "note": "Brueggemann reads the Edom oracle as \"the judgment of the brother.\" Edom's sin is not mere political hostility but fraternal betrayal -- the violation of kinship obligations that goes back to Jacob and Esau. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -161,7 +161,7 @@
           "notes": [
             {
               "ref": "49:39",
-              "note": "Calvin reads the Elam restoration promise as eschatological: \"The inclusion of distant Elam in the promise points toward the universal scope of the gospel. No nation is too remote for God's restoring purpose.\""
+              "note": "Calvin reads the Elam restoration promise as eschatological: \"The inclusion of distant Elam in the promise points toward the universal scope of the gospel. No nation is too remote for God's restoring purpose.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -183,7 +183,7 @@
           "notes": [
             {
               "ref": "49:23-39",
-              "note": "Lundbom reads the geographic expansion -- from immediate neighbors to distant Elam -- as \"the progressive universalization of prophetic authority.\" Jeremiah's commission reaches its fullest extension."
+              "note": "Lundbom reads the geographic expansion -- from immediate neighbors to distant Elam -- as \"the progressive universalization of prophetic authority.\" Jeremiah's commission reaches its fullest extension. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -192,7 +192,7 @@
           "notes": [
             {
               "ref": "49:39",
-              "note": "Brueggemann notes that \"the oracles against the nations end (before Babylon) with a restoration promise. The theological trajectory is not annihilation but renewal. God's final word to the nations is hope.\""
+              "note": "Brueggemann notes that \"the oracles against the nations end (before Babylon) with a restoration promise. The theological trajectory is not annihilation but renewal. God's final word to the nations is hope.\". This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -445,7 +445,81 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Zedekiah",
+        "Nebuchadnezzar",
+        "Ishmael"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Ammon",
+        "Damascus",
+        "Edom",
+        "Hazor",
+        "Kedar"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

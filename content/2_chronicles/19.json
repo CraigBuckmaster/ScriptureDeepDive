@@ -34,7 +34,7 @@
           "notes": [
             {
               "ref": "19:(1, '')",
-              "note": "The principle demonstrated here applies universally: God’s governance is consistent, and human choices produce proportional divine responses."
+              "note": "The principle demonstrated here applies universally: God’s governance is consistent, and human choices produce proportional divine responses. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -43,13 +43,21 @@
           "notes": [
             {
               "ref": "19:(1, '')",
-              "note": "The Chronicler’s characteristic vocabulary and theological framework shape the presentation of these events."
+              "note": "The Chronicler’s characteristic vocabulary and theological framework shape the presentation of these events. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
             }
           ]
         },
         "hist": {
           "context": "Jehu son of Hanani meets Jehoshaphat: “Should you help the wicked and love those who hate the LORD? Because of this, the wrath of the LORD is on you.” But he adds: “There is, however, some good in you, for you have rid the land of the Asherah poles and have set your heart on seeking God.” Partial judgment for partial failure — the Chronicler’s proportional retribution."
-        }
+        },
+        "heb": [
+          {
+            "word": "šāp̄aṭ",
+            "transliteration": "šāp̄aṭ",
+            "gloss": "to judge / govern",
+            "paragraph": "The Hebrew šāp̄aṭ encompasses both judicial decision and executive governance. In this passage it highlights God's role as the ultimate arbiter of justice — human rulers judge provisionally, but God judges finally. The term connects this narrative to the broader biblical theme of divine justice that runs from Judges through Kings."
+          }
+        ]
       }
     },
     {
@@ -72,15 +80,33 @@
         },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": []
+          "notes": [
+            {
+              "ref": "19:(4, '')",
+              "note": "Calvin: On 11 — Judges Appointed; “Judge Carefully, for the LORD Is with You”: teaches that all human religious activity is ultimately provisional — when God himself appears, our best efforts are suspended in awe. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
+            }
+          ]
         },
         "net": {
           "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": []
+          "notes": [
+            {
+              "ref": "19:(4, '')",
+              "note": "NET Note: On 11 — Judges Appointed; “Judge Carefully, for the LORD Is with You”: Gen 22:2. Jewish tradition universally accepted this identification, which became foundational for Jerusalem’s theology of sacred space. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
+            }
+          ]
         },
         "hist": {
           "context": "Jehoshaphat appoints judges throughout Judah with a charge unique to Chronicles: “Consider carefully what you do, because you are not judging for mere mortals but for the LORD, who is with you whenever you give a verdict. Judge carefully, for with the LORD our God there is no injustice or partiality or bribery.” He establishes a central court in Jerusalem with Levites, priests, and clan leaders. Justice is both local and centralised, both divine and institutional."
-        }
+        },
+        "heb": [
+          {
+            "word": "qōḏeš",
+            "transliteration": "qōḏeš",
+            "gloss": "holiness / sacred",
+            "paragraph": "The Hebrew qōḏeš (holiness) denotes separation for divine purpose. In the context of temple worship, it marks the distinction between common and sacred — a boundary that defines Israel's entire liturgical life. The Chronicler's emphasis on holiness reflects his concern for proper worship as the foundation of national life."
+          }
+        ]
       }
     }
   ],

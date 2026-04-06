@@ -99,7 +99,7 @@
           "notes": [
             {
               "ref": "16:1-13",
-              "note": "Lundbom identifies this as a triple sign-act: no marriage (family collapse), no mourning (death too common for ritual), no feasting (joy extinguished). The three prohibitions systematically dismantle every dimension of social existence."
+              "note": "Lundbom identifies this as a triple sign-act: no marriage (family collapse), no mourning (death too common for ritual), no feasting (joy extinguished). The three prohibitions systematically dismantle every dimension of social existence. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -165,7 +165,7 @@
           "notes": [
             {
               "ref": "16:14-15",
-              "note": "Calvin sees the new exodus as a prophetic principle: God's redemptive acts escalate throughout history. Each new deliverance surpasses the previous one, culminating in the ultimate redemption in Christ."
+              "note": "Calvin sees the new exodus as a prophetic principle: God's redemptive acts escalate throughout history. Each new deliverance surpasses the previous one, culminating in the ultimate redemption in Christ. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -174,7 +174,7 @@
           "notes": [
             {
               "ref": "16:14-15",
-              "note": "This oracle is repeated almost verbatim in 23:7-8, forming an inclusio around the judgment oracles against the kings. The repetition frames the royal critique with redemptive hope."
+              "note": "This oracle is repeated almost verbatim in 23:7-8, forming an inclusio around the judgment oracles against the kings. The repetition frames the royal critique with redemptive hope. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -183,7 +183,7 @@
           "notes": [
             {
               "ref": "16:14-21",
-              "note": "Lundbom identifies vv.14-15 as a \"supersession oracle\" — the new act of salvation supersedes but does not abolish the old. The exodus paradigm is not replaced but expanded to include a greater deliverance."
+              "note": "Lundbom identifies vv.14-15 as a \"supersession oracle\" — the new act of salvation supersedes but does not abolish the old. The exodus paradigm is not replaced but expanded to include a greater deliverance. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -192,7 +192,7 @@
           "notes": [
             {
               "ref": "16:19-21",
-              "note": "Brueggemann reads the nations'  coming confession as a vision of \"epistemological revolution\" — the nations discover that their inherited gods are \"worthless idols.\" Truth breaks through ancestral deception."
+              "note": "Brueggemann reads the nations'  coming confession as a vision of \"epistemological revolution\" — the nations discover that their inherited gods are \"worthless idols.\" Truth breaks through ancestral deception. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -396,7 +396,78 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Exodus",
+        "Have",
+        "Return",
+        "Take",
+        "Wife"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

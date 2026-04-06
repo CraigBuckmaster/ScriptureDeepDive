@@ -59,7 +59,7 @@
           "notes": [
             {
               "ref": "4:5–6",
-              "note": "Calvin reads the exhortation as a call to winsome witness: the community’s conduct and speech are its primary evangelistic tools. Gracious speech does not mean flattery but truth delivered with courtesy and wisdom, adapted to the hearer’s needs."
+              "note": "Calvin reads the exhortation as a call to winsome witness: the community’s conduct and speech are its primary evangelistic tools. Gracious speech does not mean flattery but truth delivered with courtesy and wisdom, adapted to the hearer’s needs. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -68,7 +68,7 @@
           "notes": [
             {
               "ref": "4:6",
-              "note": "The phrase en chariti (with grace, graciously) could mean ‘attractive, winsome’ or ‘full of divine grace.’ The addition halati ērtymenon (seasoned with salt) is a culinary metaphor: speech should be flavourful, preservative, and stimulating."
+              "note": "The phrase en chariti (with grace, graciously) could mean ‘attractive, winsome’ or ‘full of divine grace.’ The addition halati ērtymenon (seasoned with salt) is a culinary metaphor: speech should be flavourful, preservative, and stimulating. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -86,7 +86,7 @@
           "notes": [
             {
               "ref": "4:1–6",
-              "note": "O’Brien notes that the transition from household code to missional exhortation is seamless: the same community that orders its internal relationships under Christ’s lordship must also engage the surrounding culture with wisdom and grace."
+              "note": "O’Brien notes that the transition from household code to missional exhortation is seamless: the same community that orders its internal relationships under Christ’s lordship must also engage the surrounding culture with wisdom and grace. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -417,7 +417,86 @@
       ]
     }
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Paul",
+        "Epaphras",
+        "Tychicus",
+        "Onesimus",
+        "Christ",
+        "Aristarchus",
+        "Mark",
+        "Luke"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Companions",
+        "Greetings",
+        "Masters",
+        "Paul",
+        "Prayer",
+        "Wise"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

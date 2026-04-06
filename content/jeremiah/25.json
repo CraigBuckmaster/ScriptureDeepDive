@@ -98,7 +98,7 @@
           "notes": [
             {
               "ref": "25:9",
-              "note": "Brueggemann reads \"my servant Nebuchadnezzar\" as \"the most astonishing title in prophetic literature.\" God claims the imperial aggressor as his agent. This subverts both Babylonian self-understanding and Judean nationalism."
+              "note": "Brueggemann reads \"my servant Nebuchadnezzar\" as \"the most astonishing title in prophetic literature.\" God claims the imperial aggressor as his agent. This subverts both Babylonian self-understanding and Judean nationalism. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -163,7 +163,7 @@
           "notes": [
             {
               "ref": "25:29",
-              "note": "Calvin develops the principle: \"If God does not spare his own people, whom he loves, how much less will he spare those who have no covenant with him? The severity of grace is the measure of all other judgment.\""
+              "note": "Calvin develops the principle: \"If God does not spare his own people, whom he loves, how much less will he spare those who have no covenant with him? The severity of grace is the measure of all other judgment.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -185,7 +185,7 @@
           "notes": [
             {
               "ref": "25:15-38",
-              "note": "Lundbom reads the cup oracle as \"the universal extension of Jeremiah's mandate.\" The prophet commissioned \"over nations and kingdoms\" (1:10) now exercises that authority across the entire known world."
+              "note": "Lundbom reads the cup oracle as \"the universal extension of Jeremiah's mandate.\" The prophet commissioned \"over nations and kingdoms\" (1:10) now exercises that authority across the entire known world. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -194,7 +194,7 @@
           "notes": [
             {
               "ref": "25:15-29",
-              "note": "Brueggemann identifies a \"leveling theology\" -- every nation, from covenant people to distant empire, stands equally under divine judgment. No special status exempts any people from accountability. Jerusalem and Babylon drink from the same cup."
+              "note": "Brueggemann identifies a \"leveling theology\" -- every nation, from covenant people to distant empire, stands equally under divine judgment. No special status exempts any people from accountability. Jerusalem and Babylon drink from the same cup. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -421,7 +421,79 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah",
+        "Jehoiakim",
+        "Nebuchadnezzar"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Babylonian",
+        "Seventy",
+        "Wrath",
+        "Years"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

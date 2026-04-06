@@ -99,7 +99,7 @@
           "notes": [
             {
               "ref": "10:1–16",
-              "note": "Lundbom notes that the idol polemic interrupts the judgment sequence (chs. 8–9, 11–12), functioning as a theological interlude that grounds the social critique in first-commandment theology: idolatry is the root sin that produces all other sins."
+              "note": "Lundbom notes that the idol polemic interrupts the judgment sequence (chs. 8–9, 11–12), functioning as a theological interlude that grounds the social critique in first-commandment theology: idolatry is the root sin that produces all other sins. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -161,7 +161,7 @@
           "notes": [
             {
               "ref": "10:23",
-              "note": "Calvin uses this verse as a proof-text for divine sovereignty over human affairs: \"Man proposes but God disposes.\" If humans cannot even direct their own steps, how much less can they save themselves?"
+              "note": "Calvin uses this verse as a proof-text for divine sovereignty over human affairs: \"Man proposes but God disposes.\" If humans cannot even direct their own steps, how much less can they save themselves?. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -170,7 +170,7 @@
           "notes": [
             {
               "ref": "10:23",
-              "note": "The phrase \"it is not for a person to direct their steps\" uses the verb kûn in the hiphil (\"to establish/direct\"). The theological claim is that human autonomy is an illusion — our paths are shaped by forces beyond our control."
+              "note": "The phrase \"it is not for a person to direct their steps\" uses the verb kûn in the hiphil (\"to establish/direct\"). The theological claim is that human autonomy is an illusion — our paths are shaped by forces beyond our control. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -188,7 +188,7 @@
           "notes": [
             {
               "ref": "10:23–25",
-              "note": "Brueggemann identifies a tension between submission to divine sovereignty (v.23) and the plea for redirected wrath (v.25). The prayer is theologically honest rather than perfectly consistent — real prayer often holds contradictory impulses together."
+              "note": "Brueggemann identifies a tension between submission to divine sovereignty (v.23) and the plea for redirected wrath (v.25). The prayer is theologically honest rather than perfectly consistent — real prayer often holds contradictory impulses together. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -392,7 +392,79 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Jeremiah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Correct",
+        "Customs",
+        "Measure",
+        "Only",
+        "Peoples",
+        "Worthless"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

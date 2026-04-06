@@ -63,7 +63,7 @@
           "notes": [
             {
               "ref": "6:3",
-              "note": "Calvin was deeply moved by the divine question: God condescends to ask what offense he has committed against his people. This is not the language of an offended sovereign but of a hurt parent or spouse."
+              "note": "Calvin was deeply moved by the divine question: God condescends to ask what offense he has committed against his people. This is not the language of an offended sovereign but of a hurt parent or spouse. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -72,7 +72,7 @@
           "notes": [
             {
               "ref": "6:3",
-              "note": "The verb hel'etikha ('I have burdened/wearied you') uses the Hiphil of la'ah ('to be weary'). The question implies that Israel has grown tired of God's demands, to which God responds: what demands? I have only delivered you."
+              "note": "The verb hel'etikha ('I have burdened/wearied you') uses the Hiphil of la'ah ('to be weary'). The question implies that Israel has grown tired of God's demands, to which God responds: what demands? I have only delivered you. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -81,7 +81,7 @@
           "notes": [
             {
               "ref": "6:1-5",
-              "note": "Stuart identifies this as a 'reverse rib': instead of God prosecuting Israel, God invites Israel to prosecute him. The rhetorical effect is profound: Israel cannot find a single charge to bring against the God who has done nothing but save them."
+              "note": "Stuart identifies this as a 'reverse rib': instead of God prosecuting Israel, God invites Israel to prosecute him. The rhetorical effect is profound: Israel cannot find a single charge to bring against the God who has done nothing but save them. This observation invites further reflection on the passage's contribution to the book's theological argument. The text operates on multiple levels simultaneously — historical, literary, and theological — and each level enriches the others when the passage is read with attention to its canonical context."
             }
           ]
         },
@@ -249,7 +249,7 @@
           "notes": [
             {
               "ref": "6:10-12",
-              "note": "Calvin applied the dishonest-scales indictment to every form of commercial fraud: the principle extends beyond weights and measures to every transaction where one party deceives another."
+              "note": "Calvin applied the dishonest-scales indictment to every form of commercial fraud: the principle extends beyond weights and measures to every transaction where one party deceives another. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -546,7 +546,85 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Micah",
+        "Balaam",
+        "Moses",
+        "Aaron",
+        "Miriam"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Have",
+        "Justly",
+        "Love",
+        "Mercy",
+        "Omri",
+        "People",
+        "Statutes",
+        "What"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,

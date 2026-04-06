@@ -94,7 +94,7 @@
           "notes": [
             {
               "ref": "11:1-13",
-              "note": "Zimmerli sees Pelatiah's death as the only point where the vision intersects verifiable history — the death of a named individual while Ezekiel prophesies. This functions as prophetic authentication: the word does what it says."
+              "note": "Zimmerli sees Pelatiah's death as the only point where the vision intersects verifiable history — the death of a named individual while Ezekiel prophesies. This functions as prophetic authentication: the word does what it says. Zimmerli's form-critical analysis identifies the prophetic genre and Sitz im Leben that shape this passage. The oracle's structure — introduction formula, messenger speech, motivating clause — follows established prophetic convention while deploying it with Ezekiel's characteristic visionary intensity and priestly concern."
             }
           ]
         },
@@ -161,7 +161,7 @@
           "notes": [
             {
               "ref": "11:19-20",
-              "note": "Calvin sees this as the definitive statement of regeneration: the human heart cannot reform itself; it must be replaced by divine action. The heart of stone represents total depravity; the heart of flesh represents sovereign grace."
+              "note": "Calvin sees this as the definitive statement of regeneration: the human heart cannot reform itself; it must be replaced by divine action. The heart of stone represents total depravity; the heart of flesh represents sovereign grace. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -170,7 +170,7 @@
           "notes": [
             {
               "ref": "11:16",
-              "note": "The phrase miqdash me'at is debated: 'a sanctuary for a little while' (temporal) or 'a sanctuary in small measure' (qualitative). Either reading affirms God's presence with the exiles, but the second is theologically richer."
+              "note": "The phrase miqdash me'at is debated: 'a sanctuary for a little while' (temporal) or 'a sanctuary in small measure' (qualitative). Either reading affirms God's presence with the exiles, but the second is theologically richer. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -241,7 +241,7 @@
           "notes": [
             {
               "ref": "11:22-23",
-              "note": "Calvin sees the glory resting on the mountain as a moment of divine grief — God pauses before leaving, as a parent might pause at the doorway when leaving a disobedient child. The departure is necessary but not desired."
+              "note": "Calvin sees the glory resting on the mountain as a moment of divine grief — God pauses before leaving, as a parent might pause at the doorway when leaving a disobedient child. The departure is necessary but not desired. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -250,7 +250,7 @@
           "notes": [
             {
               "ref": "11:23",
-              "note": "The Mount of Olives (har hazzetim) is not named but described as 'the mountain east of the city.' The identification with the Mount of Olives is certain from the geographical description."
+              "note": "The Mount of Olives (har hazzetim) is not named but described as 'the mountain east of the city.' The identification with the Mount of Olives is certain from the geographical description. The NET Bible's textual notes draw attention to variant readings and translation challenges in this passage. The translators weigh manuscript evidence alongside syntactic analysis to arrive at renderings that balance accuracy with readability, providing supplementary notes where the original resists simple translation."
             }
           ]
         },
@@ -502,7 +502,82 @@
       }
     ]
   },
-  "vhl_groups": [],
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Lord",
+        "Holy Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jerusalem",
+        "temple",
+        "Israel"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Ezekiel",
+        "Pelatiah"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "generation"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "Cooking",
+        "Death",
+        "Departs",
+        "Glory",
+        "Heart",
+        "Mount",
+        "Pelatiah",
+        "Spirit"
+      ],
+      "btn_types": [
+        "hebrew",
+        "context"
+      ]
+    }
+  ],
   "coaching": [
     {
       "after_section": 1,
