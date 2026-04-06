@@ -127,6 +127,8 @@ jobs:
               f.write(data.get('summary_markdown', ''))
           with open('ci_issues.json', 'w') as f:
               json.dump(data.get('issues_to_create', []), f)
+          with open('ci_passing.json', 'w') as f:
+              json.dump(data.get('quality_passing', []), f)
           with open('ci_status.txt', 'w') as f:
               f.write(data.get('status', 'pass'))
           "
@@ -262,18 +264,52 @@ jobs:
               return;
             }
 
-            for (const issue of issues) {
-              // Check for duplicate (same title already open)
-              const { data: existing } = await github.rest.issues.listForRepo({
+            // Fetch all open content+bug issues once (paginate to avoid missing any)
+            const existing = [];
+            let page = 1;
+            while (true) {
+              const { data: batch } = await github.rest.issues.listForRepo({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 state: 'open',
-                labels: issue.labels.join(','),
+                labels: 'content,bug',
+                per_page: 100,
+                page,
               });
+              existing.push(...batch);
+              if (batch.length < 100) break;
+              page++;
+            }
 
-              const duplicate = existing.find(e => e.title === issue.title);
+            // Helper: extract the chapter prefix from a title for dedup matching.
+            // "[Content Quality] Mark 2 below 90 (78)" → "[Content Quality] Mark 2 below 90"
+            // "[Content Accuracy] genesis/3 — 1 refuted" → "[Content Accuracy] genesis/3"
+            function titlePrefix(title) {
+              const qualityMatch = title.match(/^(\[Content Quality\]\s+.+?\s+below\s+\d+)/);
+              if (qualityMatch) return qualityMatch[1];
+              const accuracyMatch = title.match(/^(\[Content Accuracy\]\s+\S+)/);
+              if (accuracyMatch) return accuracyMatch[1];
+              return title;
+            }
+
+            for (const issue of issues) {
+              const prefix = titlePrefix(issue.title);
+              const duplicate = existing.find(e => titlePrefix(e.title) === prefix);
+
               if (duplicate) {
-                console.log(`Skipping duplicate: ${issue.title} (#${duplicate.number})`);
+                // Update title and body if the score has changed
+                if (duplicate.title !== issue.title || duplicate.body !== issue.body) {
+                  await github.rest.issues.update({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: duplicate.number,
+                    title: issue.title,
+                    body: issue.body,
+                  });
+                  console.log(`Updated issue #${duplicate.number}: ${issue.title}`);
+                } else {
+                  console.log(`No changes for #${duplicate.number}: ${issue.title}`);
+                }
                 continue;
               }
 
@@ -285,6 +321,69 @@ jobs:
                 labels: issue.labels,
               });
               console.log(`Created issue: ${issue.title} (#${created.number})`);
+            }
+
+      - name: Auto-close resolved quality issues
+        continue-on-error: true
+        if: >
+          always() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          retries: 3
+          retry-exempt-status-codes: 400,401,404,422
+          script: |
+            const fs = require('fs');
+            let passingJson = '[]';
+            try { passingJson = fs.readFileSync('ci_passing.json', 'utf8'); } catch { return; }
+
+            let passing;
+            try {
+              passing = JSON.parse(passingJson);
+            } catch (e) {
+              console.log('Failed to parse passing JSON:', e);
+              return;
+            }
+            if (!passing.length) return;
+
+            // Fetch all open content+bug issues
+            const existing = [];
+            let page = 1;
+            while (true) {
+              const { data: batch } = await github.rest.issues.listForRepo({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'open',
+                labels: 'content,bug',
+                per_page: 100,
+                page,
+              });
+              existing.push(...batch);
+              if (batch.length < 100) break;
+              page++;
+            }
+
+            // Build prefixes for passing chapters
+            // e.g. book="mark", chapter=2 → "[Content Quality] Mark 2 below"
+            for (const ch of passing) {
+              const name = ch.book.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+              const prefix = `[Content Quality] ${name} ${ch.chapter} below`;
+              const match = existing.find(e => e.title.startsWith(prefix));
+              if (match) {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: match.number,
+                  body: `## Resolved\n\nChapter now scores **${ch.score}** (≥90). Closing automatically.\n\n---\n*Auto-closed by Content Pipeline CI*`,
+                });
+                await github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: match.number,
+                  state: 'closed',
+                  state_reason: 'completed',
+                });
+                console.log(`Closed resolved issue #${match.number}: ${match.title} (now ${ch.score})`);
+              }
             }
 
       # ── Stage 7: Final gate ──────────────────────────────────

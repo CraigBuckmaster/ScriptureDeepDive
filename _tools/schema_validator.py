@@ -25,7 +25,8 @@ Usage:
 """
 import os, sys, json, re
 from pathlib import Path
-from collections import Counter
+from collections import Counter, defaultdict
+from difflib import SequenceMatcher
 
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / 'content'
@@ -38,13 +39,10 @@ warnings = 0
 
 
 def warn(label, detail=''):
-    """Log a warning (does not affect pass/fail counts)."""
+    """Record a warning. Prints but does not affect pass/fail counts."""
     global warnings
     warnings += 1
-    msg = f"  [WARN] {label}"
-    if detail:
-        msg += f" — {detail}"
-    print(msg)
+    print(f"  [WARN] {label}" + (f" — {detail}" if detail else ""))
 
 
 def check(label, condition, detail=''):
@@ -74,7 +72,7 @@ def main():
 
     Returns 0 if all checks pass, 1 if any fail.
     """
-    global passed, failed
+    global passed, failed, warnings
 
     print("=" * 60)
     print("Content Validation")
@@ -522,8 +520,172 @@ def main():
                       f"{strongs} missing definition.short")
         print(f"  Hebrew lexicon entries: {len(hl_data)}")
 
-    # ── 8. Unregistered scholar check (#559) ──
-    print("\n--- 8. UNREGISTERED SCHOLARS ---")
+    # ── 8. Timeline link validation ──
+    print("\n--- 8. TIMELINE LINK VALIDATION ---")
+
+    tl_path = META / 'timelines.json'
+    if tl_path.exists():
+        tl_data = json.loads(tl_path.read_text())
+        valid_event_ids = set()
+        for key, val in tl_data.items():
+            if isinstance(val, list):
+                for item in val:
+                    if isinstance(item, dict) and 'id' in item:
+                        valid_event_ids.add(item['id'])
+
+        tl_checked = 0
+        tl_invalid = 0
+        for book_dir in sorted(CONTENT.iterdir()):
+            if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
+                continue
+            for json_file in sorted(book_dir.glob('*.json')):
+                try:
+                    with open(json_file) as f:
+                        data = json.load(f)
+                except json.JSONDecodeError:
+                    continue
+                tl = data.get('timeline_link')
+                if isinstance(tl, dict):
+                    eid = tl.get('event_id')
+                    if eid:
+                        tl_checked += 1
+                        if eid not in valid_event_ids:
+                            tl_invalid += 1
+                            check(f"{json_file.name} timeline_link event_id valid",
+                                  False, f"'{eid}' not in timelines.json")
+
+        print(f"  Timeline links checked: {tl_checked}")
+        print(f"  Invalid event IDs: {tl_invalid}")
+    else:
+        print("  timelines.json not found — skipping")
+
+    # ── 9. Near-duplicate detection ──
+    print("\n--- 9. NEAR-DUPLICATE DETECTION ---")
+
+    dup_count = 0
+    for book_dir in sorted(CONTENT.iterdir()):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
+            continue
+        for json_file in sorted(book_dir.glob('*.json')):
+            try:
+                with open(json_file) as f:
+                    data = json.load(f)
+            except json.JSONDecodeError:
+                continue
+            # Group scholar notes by panel_key within this chapter
+            scholar_notes = defaultdict(list)
+            for sec in data.get('sections', []):
+                panels = sec.get('panels', {})
+                for panel_key, panel_val in panels.items():
+                    if panel_key in ('heb', 'cross'):
+                        continue
+                    if isinstance(panel_val, dict):
+                        for note_obj in panel_val.get('notes', []):
+                            note_text = note_obj.get('note', '')
+                            if note_text:
+                                scholar_notes[panel_key].append(note_text)
+            # Compare pairs within same scholar+chapter
+            for panel_key, notes in scholar_notes.items():
+                for i in range(len(notes)):
+                    for j in range(i + 1, len(notes)):
+                        ratio = SequenceMatcher(None, notes[i], notes[j]).ratio()
+                        if ratio > 0.85:
+                            dup_count += 1
+                            warn(f"{json_file.name} [{panel_key}] near-duplicate notes",
+                                 f"ratio={ratio:.2f}")
+
+    print(f"  Near-duplicates found: {dup_count}")
+
+    # ── 10. Coaching tip bounds check ──
+    print("\n--- 10. COACHING TIP BOUNDS CHECK ---")
+
+    oob_tips = 0
+    for book_dir in sorted(CONTENT.iterdir()):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
+            continue
+        for json_file in sorted(book_dir.glob('*.json')):
+            try:
+                with open(json_file) as f:
+                    data = json.load(f)
+            except json.JSONDecodeError:
+                continue
+            sections = data.get('sections', [])
+            for tip in data.get('coaching', []):
+                after = tip.get('after_section')
+                if after is not None and not (0 <= after < len(sections)):
+                    oob_tips += 1
+                    warn(f"{json_file.name} coaching after_section out of bounds",
+                         f"after_section={after}, sections=0..{len(sections)-1}")
+
+    print(f"  Out-of-bounds coaching tips: {oob_tips}")
+
+    # ── 11. Scholar scope enforcement ──
+    print("\n--- 11. SCHOLAR SCOPE ENFORCEMENT ---")
+
+    scope_violations = 0
+    scopes_path_11 = META / 'scholar-scopes.json'
+    if scopes_path_11.exists():
+        scopes_data = json.loads(scopes_path_11.read_text())
+        for book_dir in sorted(CONTENT.iterdir()):
+            if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
+                continue
+            for json_file in sorted(book_dir.glob('*.json')):
+                try:
+                    with open(json_file) as f:
+                        data = json.load(f)
+                except json.JSONDecodeError:
+                    continue
+                bdir = data.get('book_dir', book_dir.name)
+                for sec in data.get('sections', []):
+                    panels = sec.get('panels', {})
+                    for panel_key in panels:
+                        if panel_key not in scopes_data:
+                            continue
+                        allowed = scopes_data[panel_key]
+                        if allowed == 'all':
+                            continue
+                        if isinstance(allowed, list) and bdir not in allowed:
+                            scope_violations += 1
+                            warn(f"{json_file.name} scholar '{panel_key}' out of scope",
+                                 f"book_dir='{bdir}' not in {allowed}")
+
+        print(f"  Scope violations: {scope_violations}")
+    else:
+        print("  scholar-scopes.json not found — skipping")
+
+    # ── 12. Hebrew/Greek gloss consistency ──
+    print("\n--- 12. HEBREW/GREEK GLOSS CONSISTENCY ---")
+
+    word_glosses = defaultdict(set)
+    for book_dir in sorted(CONTENT.iterdir()):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear'):
+            continue
+        for json_file in sorted(book_dir.glob('*.json')):
+            try:
+                with open(json_file) as f:
+                    data = json.load(f)
+            except json.JSONDecodeError:
+                continue
+            for sec in data.get('sections', []):
+                panels = sec.get('panels', {})
+                heb_entries = panels.get('heb', [])
+                if isinstance(heb_entries, list):
+                    for entry in heb_entries:
+                        word = entry.get('word', '')
+                        gloss = entry.get('gloss', '')
+                        if word and gloss:
+                            word_glosses[word].add(gloss.strip().lower())
+
+    divergent_count = 0
+    for word, glosses in word_glosses.items():
+        if len(glosses) > 3:
+            divergent_count += 1
+            print(f"  [INFO] '{word}' has {len(glosses)} distinct glosses: {sorted(glosses)[:5]}...")
+
+    print(f"  Divergent words (>3 glosses): {divergent_count}")
+
+    # ── 13. Unregistered scholar check (#559) ──
+    print("\n--- 13. UNREGISTERED SCHOLARS ---")
 
     scholars_path = META / 'scholars.json'
     if scholars_path.exists():
@@ -557,8 +719,8 @@ def main():
     else:
         print("  [SKIP] scholars.json not found")
 
-    # ── 9. Verse overlap check (#560) ──
-    print("\n--- 9. VERSE OVERLAPS ---")
+    # ── 14. Verse overlap check (#560) ──
+    print("\n--- 14. VERSE OVERLAPS ---")
 
     overlaps = []
     for book_dir in sorted(CONTENT.iterdir()):
@@ -585,8 +747,8 @@ def main():
             warn("Verse overlap", o)
     print(f"  Verse overlaps (warning until #558): {len(overlaps)}")
 
-    # ── 10. Verse gap warning (#562) ──
-    print("\n--- 10. VERSE GAPS ---")
+    # ── 15. Verse gap warning (#562) ──
+    print("\n--- 15. VERSE GAPS ---")
 
     gaps = []
     for book_dir in sorted(CONTENT.iterdir()):
@@ -616,8 +778,7 @@ def main():
 
     # ── Summary ──
     print(f"\n{'='*60}")
-    warn_msg = f", {warnings} warnings" if warnings else ""
-    print(f"RESULTS: {passed} passed, {failed} failed{warn_msg}")
+    print(f"RESULTS: {passed} passed, {failed} failed, {warnings} warnings")
     if failed == 0:
         print("[OK] ALL CONTENT CHECKS PASSED")
     else:
