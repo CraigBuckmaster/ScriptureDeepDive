@@ -222,7 +222,7 @@
   },
   {
     "id": "netbible",
-    "panel_key": "netbible",
+    "panel_key": "net",
     "label": "NET Notes",
     "name": "NET Bible Notes",
     "color": "#d8e8d0",
@@ -299,7 +299,7 @@
   },
   {
     "id": "catena",
-    "panel_key": "catena",
+    "panel_key": "cat",
     "label": "Catena Aurea",
     "name": "Catena Aurea",
     "color": "#b888d8",
@@ -338,7 +338,7 @@
   },
   {
     "id": "marcus",
-    "panel_key": "marcus",
+    "panel_key": "mar",
     "label": "Marcus",
     "name": "Joel Marcus",
     "color": "#70d8d8",
@@ -374,7 +374,7 @@
   },
   {
     "id": "rhoads",
-    "panel_key": "rhoads",
+    "panel_key": "rho",
     "label": "Rhoads",
     "name": "David Rhoads",
     "color": "#e8c060",
@@ -1740,5 +1740,270 @@
         "body": "The First Epistle to the Corinthians (NICNT, 1987) — A magisterial commentary that remains the standard evangelical treatment decades later.\n\nGod's Empowering Presence: The Holy Spirit in the Letters of Paul (1994) — A comprehensive study of Paul's pneumatology.\n\nPauline Christology: An Exegetical-Theological Study (2007) — His mature treatment of Paul's understanding of Christ.\n\nNew Testament Exegesis: A Handbook for Students and Pastors (1983, 3rd ed. 2002) — The most widely used guide to NT exegetical method in seminary education."
       }
     ]
+  },
+  {
+    "id": "beale",
+    "panel_key": "beale",
+    "label": "Beale",
+    "name": "G.K. Beale",
+    "color": "#7b68ee",
+    "tradition": "Reformed · Contemporary",
+    "scope": [
+      "revelation"
+    ],
+    "scope_text": "Revelation",
+    "description": "NIGTC commentary on Revelation. Reformed theologian specializing in the use of the Old Testament in the New Testament.",
+    "eyebrow": "Reformed · NT Scholar"
+  },
+  {
+    "id": "osborne",
+    "panel_key": "osborne",
+    "label": "Osborne",
+    "name": "Grant R. Osborne",
+    "color": "#20b2aa",
+    "tradition": "Evangelical · Contemporary",
+    "scope": [
+      "revelation"
+    ],
+    "scope_text": "Revelation",
+    "description": "BECNT commentary on Revelation. Known for balanced evangelical scholarship and hermeneutics textbooks.",
+    "eyebrow": "Evangelical · NT Scholar"
+  },
+  {
+    "id": "thiselton",
+    "panel_key": "thiselton",
+    "label": "Thiselton",
+    "name": "Anthony C. Thiselton",
+    "color": "#daa520",
+    "tradition": "Anglican · Contemporary",
+    "scope": [
+      "1_corinthians"
+    ],
+    "scope_text": "1 Corinthians",
+    "description": "NIGTC commentary on 1 Corinthians. Leading figure in theological hermeneutics and philosophy of language.",
+    "eyebrow": "Anglican · Hermeneutics"
+  },
+  {
+    "id": "lane",
+    "panel_key": "lane",
+    "label": "Lane",
+    "name": "William L. Lane",
+    "color": "#cd853f",
+    "tradition": "Evangelical · 20th Century",
+    "scope": [
+      "hebrews"
+    ],
+    "scope_text": "Hebrews",
+    "description": "WBC commentary on Hebrews. Known for meticulous historical and rhetorical analysis.",
+    "eyebrow": "Evangelical · NT Scholar"
+  },
+  {
+    "id": "cockerill",
+    "panel_key": "cockerill",
+    "label": "Cockerill",
+    "name": "Gareth Lee Cockerill",
+    "color": "#8fbc8f",
+    "tradition": "Wesleyan · Contemporary",
+    "scope": [
+      "hebrews"
+    ],
+    "scope_text": "Hebrews",
+    "description": "NICNT commentary on Hebrews. Emphasizes the sermon's rhetorical structure and pastoral purpose.",
+    "eyebrow": "Wesleyan · NT Scholar"
+  },
+  {
+    "id": "harris",
+    "panel_key": "harris",
+    "label": "Harris",
+    "name": "Murray J. Harris",
+    "color": "#b8860b",
+    "tradition": "Evangelical · Contemporary",
+    "scope": [
+      "2_corinthians"
+    ],
+    "scope_text": "2 Corinthians",
+    "description": "NIGTC commentary on 2 Corinthians. Known for careful grammatical analysis and theological precision.",
+    "eyebrow": "Evangelical · NT Scholar"
+  },
+  {
+    "id": "mounce",
+    "panel_key": "mounce",
+    "label": "Mounce",
+    "name": "William D. Mounce",
+    "color": "#6a5acd",
+    "tradition": "Evangelical · Contemporary",
+    "scope": [
+      "1_timothy",
+      "2_timothy",
+      "titus"
+    ],
+    "scope_text": "Pastoral Epistles",
+    "description": "WBC commentary on the Pastoral Epistles. Also known for Greek grammar textbooks used widely in seminaries.",
+    "eyebrow": "Evangelical · NT Scholar"
+  },
+  {
+    "id": "towner",
+    "panel_key": "towner",
+    "label": "Towner",
+    "name": "Philip H. Towner",
+    "color": "#5f9ea0",
+    "tradition": "Evangelical · Contemporary",
+    "scope": [
+      "1_timothy",
+      "2_timothy",
+      "titus"
+    ],
+    "scope_text": "Pastoral Epistles",
+    "description": "NICNT commentary on the Pastoral Epistles. Emphasizes social-historical context and practical theology.",
+    "eyebrow": "Evangelical · NT Scholar"
+  },
+  {
+    "id": "obrien",
+    "panel_key": "obrien",
+    "label": "O'Brien",
+    "name": "Peter T. O'Brien",
+    "color": "#db7093",
+    "tradition": "Reformed · Contemporary",
+    "scope": [
+      "colossians",
+      "ephesians",
+      "philemon"
+    ],
+    "scope_text": "Prison Epistles",
+    "description": "WBC/NIGTC commentaries on Colossians, Ephesians, and Philemon. Known for rigorous exegetical work.",
+    "eyebrow": "Reformed · NT Scholar"
+  },
+  {
+    "id": "yarbrough",
+    "panel_key": "yarbrough",
+    "label": "Yarbrough",
+    "name": "Robert W. Yarbrough",
+    "color": "#ff7f50",
+    "tradition": "Evangelical · Contemporary",
+    "scope": [
+      "1_john",
+      "2_john",
+      "3_john"
+    ],
+    "scope_text": "Johannine Epistles",
+    "description": "BECNT commentary on 1–3 John. Combines careful exegesis with theological reflection.",
+    "eyebrow": "Evangelical · NT Scholar"
+  },
+  {
+    "id": "kruse",
+    "panel_key": "kruse",
+    "label": "Kruse",
+    "name": "Colin G. Kruse",
+    "color": "#87ceeb",
+    "tradition": "Evangelical · Contemporary",
+    "scope": [
+      "1_john",
+      "2_john",
+      "3_john"
+    ],
+    "scope_text": "Johannine Epistles",
+    "description": "TNTC/Pillar commentaries on Johannine writings. Known for accessible yet scholarly treatment.",
+    "eyebrow": "Evangelical · NT Scholar"
+  },
+  {
+    "id": "wanamaker",
+    "panel_key": "wanamaker",
+    "label": "Wanamaker",
+    "name": "Charles A. Wanamaker",
+    "color": "#9370db",
+    "tradition": "Mainline · Contemporary",
+    "scope": [
+      "1_thessalonians",
+      "2_thessalonians"
+    ],
+    "scope_text": "Thessalonian Epistles",
+    "description": "NIGTC commentary on 1–2 Thessalonians. Emphasizes social-scientific and rhetorical analysis.",
+    "eyebrow": "Academic · NT Scholar"
+  },
+  {
+    "id": "bruce",
+    "panel_key": "bruce",
+    "label": "Bruce",
+    "name": "F.F. Bruce",
+    "color": "#2e8b57",
+    "tradition": "Evangelical · 20th Century",
+    "scope": [
+      "galatians",
+      "philemon"
+    ],
+    "scope_text": "Galatians, Philemon",
+    "description": "NIGTC commentary on Galatians. One of the most influential evangelical NT scholars of the 20th century.",
+    "eyebrow": "Evangelical · 20th Century"
+  },
+  {
+    "id": "lincoln",
+    "panel_key": "lincoln",
+    "label": "Lincoln",
+    "name": "Andrew T. Lincoln",
+    "color": "#4682b4",
+    "tradition": "Mainline · Contemporary",
+    "scope": [
+      "ephesians"
+    ],
+    "scope_text": "Ephesians",
+    "description": "WBC commentary on Ephesians. Known for careful literary and theological analysis.",
+    "eyebrow": "Academic · NT Scholar"
+  },
+  {
+    "id": "davids",
+    "panel_key": "davids",
+    "label": "Davids",
+    "name": "Peter H. Davids",
+    "color": "#bc8f8f",
+    "tradition": "Evangelical · Contemporary",
+    "scope": [
+      "2_peter",
+      "jude"
+    ],
+    "scope_text": "2 Peter, Jude",
+    "description": "NICNT commentary on 2 Peter and Jude. Also authored major commentary on James.",
+    "eyebrow": "Evangelical · NT Scholar"
+  },
+  {
+    "id": "mccartney",
+    "panel_key": "mccartney",
+    "label": "McCartney",
+    "name": "Dan G. McCartney",
+    "color": "#f4a460",
+    "tradition": "Reformed · Contemporary",
+    "scope": [
+      "james"
+    ],
+    "scope_text": "James",
+    "description": "BECNT commentary on James. Combines Reformed theology with careful exegesis.",
+    "eyebrow": "Reformed · NT Scholar"
+  },
+  {
+    "id": "silva",
+    "panel_key": "silva",
+    "label": "Silva",
+    "name": "Moisés Silva",
+    "color": "#deb887",
+    "tradition": "Reformed · Contemporary",
+    "scope": [
+      "philippians"
+    ],
+    "scope_text": "Philippians",
+    "description": "BECNT commentary on Philippians. Renowned for work in biblical linguistics and lexicography.",
+    "eyebrow": "Reformed · NT Scholar"
+  },
+  {
+    "id": "green",
+    "panel_key": "green",
+    "label": "Green",
+    "name": "Gene L. Green",
+    "color": "#66cdaa",
+    "tradition": "Evangelical · Contemporary",
+    "scope": [
+      "jude"
+    ],
+    "scope_text": "Jude",
+    "description": "BECNT commentary on Jude and 2 Peter. Emphasizes socio-historical context.",
+    "eyebrow": "Evangelical · NT Scholar"
   }
 ]
