@@ -48,7 +48,7 @@ interface SettingsState {
 export const useSettingsStore = create<SettingsState>((set) => ({
   translation: 'kjv',
   fontSize: 16,
-  vhlEnabled: true,
+  vhlEnabled: false,
   bookListMode: 'canonical',
   studyCoachEnabled: true,
   theme: 'dark' as ThemePreference,
@@ -118,7 +118,7 @@ export const useSettingsStore = create<SettingsState>((set) => ({
       set({
         translation: (t && TRANSLATION_MAP.has(t) ? t : 'kjv'),
         fontSize: f ? Math.min(24, Math.max(12, parseInt(f, 10) || 16)) : 16,
-        vhlEnabled: v !== '0',
+        vhlEnabled: v === '1',
         bookListMode: blm === 'canonical' ? 'canonical' : 'thematic',
         studyCoachEnabled: sc !== '0',
         theme: (VALID_THEMES.includes(th as ThemePreference) ? th : 'dark') as ThemePreference,

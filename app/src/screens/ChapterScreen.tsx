@@ -68,6 +68,7 @@ function ChapterScreen() {
   const { switchTranslation } = useTranslationSwitch();
   const { checkAndPrompt } = useStoreReview();
   const studyCoachEnabled = useSettingsStore((s) => s.studyCoachEnabled);
+  const vhlEnabled = useSettingsStore((s) => s.vhlEnabled);
   const activePanel = useReaderStore((s) => s.activePanel);
   const setActivePanel = useReaderStore((s) => s.setActivePanel);
   const clearActivePanel = useReaderStore((s) => s.clearActivePanel);
@@ -361,10 +362,10 @@ function ChapterScreen() {
   // Bookmarked verses
   const { bookmarked, toggleBookmark } = useBookmarkedVerses(bookId, chapterNum);
 
-  // All VHL group names active by default
+  // VHL highlights — controlled by Settings toggle (default off)
   const activeVhlGroups = useMemo(
-    () => vhlGroups.map((g) => g.group_name),
-    [vhlGroups]
+    () => vhlEnabled ? vhlGroups.map((g) => g.group_name) : [],
+    [vhlGroups, vhlEnabled]
   );
 
   // Layout callbacks for ChapterVerseList
