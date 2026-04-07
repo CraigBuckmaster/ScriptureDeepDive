@@ -44,8 +44,6 @@ import { LensToggleBar } from '../components/LensToggleBar';
 
 import { TRANSLATION_MAP } from '../db/translationRegistry';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
-import { useChapterFingerprint } from '../hooks/useChapterFingerprint';
-import { ChapterFingerprint } from '../components/ChapterFingerprint';
 import { usePremium } from '../hooks/usePremium';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
@@ -107,17 +105,6 @@ function ChapterScreen() {
     }
     setActiveLens(lensId);
   }, [isPremium, showUpgrade]);
-
-  const sectionPanelsForFingerprint = useMemo(
-    () => sections.map((s) => s.panels),
-    [sections],
-  );
-  const fingerprintScores = useChapterFingerprint(
-    sectionPanelsForFingerprint,
-    chapterPanels,
-    !!chapter?.timeline_link_event,
-    !!chapter?.map_story_link_id,
-  );
 
   const redLetterVerses = useRedLetter(bookId, chapterNum);
 
@@ -532,8 +519,6 @@ function ChapterScreen() {
               })
             : undefined}
         />
-
-        {fingerprintScores && <ChapterFingerprint scores={fingerprintScores} />}
 
         {bookData?.genre_label && bookData?.genre_guidance ? (
           <GenreBanner
