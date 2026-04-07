@@ -13,6 +13,7 @@
 import React, { useState, useCallback, useMemo, useEffect, useRef, useReducer } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { ArrowLeft } from 'lucide-react-native';
 import Svg, {
   Defs, LinearGradient, Stop,
   Rect, Line, Circle, G, Text as SvgText,
@@ -157,6 +158,15 @@ function TimelineScreen() {
   return (
     <View style={[styles.container, { backgroundColor: base.bg }]}>
       <View style={{ paddingTop: insets.top }}>
+        {/* Back button */}
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          accessibilityRole="button"
+          accessibilityLabel="Go back"
+          style={[styles.backButton, { backgroundColor: base.bgElevated }]}
+        >
+          <ArrowLeft size={20} color={base.gold} />
+        </TouchableOpacity>
         <EraFilterBar activeEra={filterEra} onSelect={handleEraChange} />
 
         {/* Category toggles */}
@@ -403,6 +413,22 @@ function TimelineScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  backButton: {
+    position: 'absolute',
+    left: 12,
+    top: 8,
+    zIndex: 15,
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 4,
   },
   loadingPad: {
     padding: spacing.lg,

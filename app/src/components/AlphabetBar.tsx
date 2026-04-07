@@ -25,6 +25,11 @@ export function AlphabetBar({ activeLetter, availableLetters, onSelect }: Props)
       horizontal
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.container}
+      scrollEventThrottle={16}
+      directionalLockEnabled
+      alwaysBounceVertical={false}
+      bounces={false}
+      nestedScrollEnabled={false}
     >
       {LETTERS.map((letter) => {
         const available = availableLetters.has(letter);

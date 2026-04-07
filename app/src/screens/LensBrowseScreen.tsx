@@ -9,6 +9,7 @@ import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-nati
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp } from '../navigation/types';
+import { ScreenHeader } from '../components/ScreenHeader';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { useAsyncData } from '../hooks/useAsyncData';
 import { getAllLenses } from '../db/content/hermeneutics';
@@ -49,18 +50,10 @@ function LensBrowseScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
+      <View style={styles.headerPad}>
+        <ScreenHeader title="Hermeneutic Lenses" onBack={() => navigation.goBack()} />
+      </View>
       <ScrollView contentContainerStyle={styles.content}>
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          activeOpacity={0.7}
-          style={styles.backRow}
-        >
-          <Text style={[styles.backText, { color: base.gold }]}>{'<'} Explore</Text>
-        </TouchableOpacity>
-
-        <Text style={[styles.title, { color: base.gold }]} accessibilityRole="header">
-          Hermeneutic Lenses
-        </Text>
         <Text style={[styles.intro, { color: base.textDim }]}>
           Read Scripture through different interpretive frameworks. Each lens highlights
           different aspects of the text and reshapes the study tools shown alongside it.
@@ -107,21 +100,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  headerPad: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.md,
+  },
   content: {
     padding: spacing.md,
     paddingBottom: spacing.xxl,
-  },
-  backRow: {
-    marginBottom: spacing.sm,
-  },
-  backText: {
-    fontFamily: fontFamily.uiMedium,
-    fontSize: 13,
-  },
-  title: {
-    fontFamily: fontFamily.displaySemiBold,
-    fontSize: 22,
-    marginBottom: spacing.sm,
   },
   intro: {
     fontFamily: fontFamily.ui,

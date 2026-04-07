@@ -12,8 +12,8 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
-import { ChevronLeft } from 'lucide-react-native';
 import type { ScreenNavProp } from '../navigation/types';
+import { ScreenHeader } from '../components/ScreenHeader';
 import { useContentLibrary, type ContentCategory } from '../hooks/useContentLibrary';
 import { ContentLibraryCard } from '../components/ContentLibraryCard';
 import { useTheme, spacing, radii, fontFamily, MIN_TOUCH_TARGET } from '../theme';
@@ -76,16 +76,8 @@ function ContentLibraryScreen() {
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       {/* Header */}
-      <View style={[styles.header, { borderBottomColor: base.border }]}>
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          accessibilityLabel="Go back"
-          style={styles.backButton}
-        >
-          <ChevronLeft size={22} color={base.gold} />
-        </TouchableOpacity>
-        <Text style={[styles.headerTitle, { color: base.gold }]}>Content Library</Text>
-        <View style={styles.backButton} />
+      <View style={styles.headerPad}>
+        <ScreenHeader title="Content Library" onBack={() => navigation.goBack()} />
       </View>
 
       {/* Category tabs */}
@@ -189,23 +181,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: spacing.sm,
-    height: 48,
-    borderBottomWidth: 1,
-  },
-  backButton: {
-    minWidth: MIN_TOUCH_TARGET,
-    minHeight: MIN_TOUCH_TARGET,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  headerTitle: {
-    fontFamily: fontFamily.displaySemiBold,
-    fontSize: 17,
+  headerPad: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.md,
   },
   tabRow: {
     flexDirection: 'row',
