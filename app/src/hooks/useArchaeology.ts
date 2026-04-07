@@ -108,18 +108,10 @@ export function useArchaeologyDetail(discoveryId: string): ArchaeologyDetailData
     ])
       .then(([d, vl, imgs]) => {
         if (mountedRef.current) {
-          const finalImages = imgs.length > 0 ? imgs : parseInlineImages(d);
-          console.log('[ArchDetail]', discoveryId, {
-            discoveryFound: !!d,
-            hasImagesJson: !!d?.images_json,
-            imagesTableCount: imgs.length,
-            inlineParseCount: parseInlineImages(d).length,
-            finalCount: finalImages.length,
-          });
           setDiscovery(d);
           setVerseLinks(vl);
           // Prefer images from the separate table; fall back to inline JSON
-          setImages(finalImages);
+          setImages(imgs.length > 0 ? imgs : parseInlineImages(d));
           setLoading(false);
         }
       })
