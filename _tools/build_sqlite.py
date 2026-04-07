@@ -32,6 +32,8 @@ ROOT = Path(__file__).resolve().parent.parent
 META = ROOT / 'content' / 'meta'
 VERSES_DIR = ROOT / 'content' / 'verses'
 DB_PATH = ROOT / 'scripture.db'
+AUDIT_DIR = ROOT / '_tools' / 'audit'
+REFERENCE_MATRIX_PATH = AUDIT_DIR / 'reference_matrix.json'
 TRANSLATIONS_DIR = ROOT / 'app' / 'assets' / 'translations'
 APP_DB_TS = ROOT / 'app' / 'src' / 'db' / 'database.ts'
 VERSION_FILE = ROOT / '_tools' / 'db_version.json'
@@ -651,6 +653,139 @@ def _load_json(path):
         return json.load(f)
 
 
+
+# ---------------------------------------------------------------------------
+# Refuted claim filtering
+# ---------------------------------------------------------------------------
+
+def _load_refuted_claims():
+    """Load refuted claims from the accuracy audit reference matrix.
+
+    Returns a dict keyed by (book_dir, chapter_num, section_num_or_None, panel_type)
+    containing sets of claim_text prefixes (first 200 chars) to match against.
+    """
+    if not REFERENCE_MATRIX_PATH.exists():
+        return {}
+
+    matrix = json.load(open(REFERENCE_MATRIX_PATH, encoding='utf-8'))
+    claims = matrix.get('claims', {})
+
+    refuted = {}
+    for claim_id, claim in claims.items():
+        if claim.get('status') != 'REFUTED':
+            continue
+        ch_id = claim.get('chapter_id', '')
+        m = re.search(r'(\d+)$', ch_id)
+        ch_num = int(m.group(1)) if m else None
+        key = (
+            claim.get('book_dir'),
+            ch_num,
+            claim.get('section_num'),  # None for chapter panels
+            claim.get('panel_type'),
+        )
+        text = (claim.get('claim_text') or '')[:200]
+        if text:
+            refuted.setdefault(key, set()).add(text)
+
+    return refuted
+
+
+def _extract_note_texts(panel_type, entry):
+    """Extract all matchable text representations from a panel entry.
+
+    Returns a list of text strings to match against, since the accuracy
+    extractor may capture different fields of the same entry as separate claims.
+    """
+    texts = []
+    if isinstance(entry, dict):
+        # Hebrew word studies: {word, transliteration, gloss, paragraph}
+        if 'word' in entry:
+            w = entry.get('word', '')
+            t = entry.get('transliteration', '')
+            g = entry.get('gloss', '')
+            texts.append(f"{w} ({t}) = {g}")
+        if 'paragraph' in entry:
+            texts.append(entry['paragraph'][:200])
+        # Scholar/commentary notes: {ref, note}
+        if 'note' in entry:
+            texts.append(entry['note'][:200])
+        # Cross-ref: {ref, note} — extractor prefixes with [ref]
+        if 'ref' in entry and 'note' in entry:
+            texts.append(f"[{entry['ref']}] {entry['note']}"[:200])
+        # People entries: description text
+        if 'description' in entry:
+            texts.append(entry['description'][:200])
+    if isinstance(entry, str):
+        texts.append(entry[:200])
+    return texts
+
+
+def _is_refuted(entry_texts, refuted_texts):
+    """Check if any of the entry's text representations match a refuted claim."""
+    for text in entry_texts:
+        if not text:
+            continue
+        for rt in refuted_texts:
+            if not rt:
+                continue
+            if text.startswith(rt) or rt.startswith(text):
+                return True
+    return False
+
+
+def _filter_refuted_notes(content, panel_type, refuted_texts):
+    """Remove individual notes/entries from a panel that match refuted claims.
+
+    Returns the filtered content (same type as input), or None if the entire
+    panel should be removed (e.g., single-value panel like hist.context).
+    """
+    if not refuted_texts:
+        return content
+
+    # List-based panels (heb entries, hebtext entries, ppl entries, etc.)
+    if isinstance(content, list):
+        filtered = [e for e in content
+                    if not _is_refuted(_extract_note_texts(panel_type, e), refuted_texts)]
+        return filtered
+
+    if isinstance(content, dict):
+        # Scholar commentary: {source, notes: [...]}
+        if 'notes' in content and isinstance(content['notes'], list):
+            filtered_notes = [e for e in content['notes']
+                              if not _is_refuted(_extract_note_texts(panel_type, e), refuted_texts)]
+            if not filtered_notes:
+                return None  # All notes refuted, remove entire panel
+            result = dict(content)
+            result['notes'] = filtered_notes
+            return result
+
+        # Cross-ref panel: {refs: [...]}
+        if 'refs' in content and isinstance(content['refs'], list):
+            filtered_refs = [e for e in content['refs']
+                             if not _is_refuted(_extract_note_texts(panel_type, e), refuted_texts)]
+            if not filtered_refs:
+                return None
+            result = dict(content)
+            result['refs'] = filtered_refs
+            return result
+
+        # Hist panel: {context: "..."}
+        if 'context' in content:
+            text = content['context'][:200]
+            if any(text.startswith(rt) or rt.startswith(text) for rt in refuted_texts if text and rt):
+                return None
+            return content
+
+        # Thread/tx/rec/src panels with mixed structures — check all string values
+        for key, val in content.items():
+            if isinstance(val, str) and len(val) > 50:
+                text = val[:200]
+                if any(text.startswith(rt) or rt.startswith(text) for rt in refuted_texts if text and rt):
+                    return None
+
+    return content
+
+
 # ---------------------------------------------------------------------------
 # Population functions
 # ---------------------------------------------------------------------------
@@ -685,6 +820,13 @@ def populate_chapters(cur):
     sec_panel_count = 0
     ch_panel_count = 0
     vhl_count = 0
+    refuted_hidden = 0
+
+    # Load refuted claims for filtering
+    refuted_claims = _load_refuted_claims()
+    if refuted_claims:
+        total_refuted = sum(len(v) for v in refuted_claims.values())
+        print(f"  Refuted claims loaded: {total_refuted} (will be hidden from DB)")
 
     content_dir = ROOT / 'content'
     for book_dir in sorted(content_dir.iterdir()):
@@ -733,6 +875,14 @@ def populate_chapters(cur):
 
                 # Section panels
                 for ptype, content in sec.get('panels', {}).items():
+                    # Filter refuted claims from this panel
+                    refuted_key = (book_id, ch_num, sn, ptype)
+                    refuted_texts = refuted_claims.get(refuted_key, set())
+                    if refuted_texts:
+                        content = _filter_refuted_notes(content, ptype, refuted_texts)
+                        if content is None:
+                            refuted_hidden += 1
+                            continue  # Entire panel refuted, skip it
                     cur.execute(
                         'INSERT INTO section_panels (section_id, panel_type, content_json) '
                         'VALUES (?, ?, ?)',
@@ -742,6 +892,14 @@ def populate_chapters(cur):
 
             # Chapter panels
             for ptype, content in data.get('chapter_panels', {}).items():
+                # Filter refuted claims from chapter-level panels (section_num=None)
+                refuted_key = (book_id, ch_num, None, ptype)
+                refuted_texts = refuted_claims.get(refuted_key, set())
+                if refuted_texts:
+                    content = _filter_refuted_notes(content, ptype, refuted_texts)
+                    if content is None:
+                        refuted_hidden += 1
+                        continue  # Entire panel refuted, skip it
                 cur.execute(
                     'INSERT INTO chapter_panels (chapter_id, panel_type, content_json) '
                     'VALUES (?, ?, ?)',
@@ -759,6 +917,8 @@ def populate_chapters(cur):
                 )
                 vhl_count += 1
 
+    if refuted_hidden:
+        print(f"  Refuted notes hidden: {refuted_hidden} panels stripped or filtered")
     return chapter_count, section_count, sec_panel_count, ch_panel_count, vhl_count
 
 
