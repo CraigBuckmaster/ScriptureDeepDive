@@ -731,6 +731,7 @@ export interface ArchaeologicalDiscovery {
   significance: string;
   description: string;
   image_url?: string;
+  images_json?: string;
   source?: string;
   display_order: number;
 }

@@ -550,6 +550,7 @@ CREATE TABLE IF NOT EXISTS archaeological_discoveries (
   significance TEXT NOT NULL,
   description TEXT NOT NULL,
   image_url TEXT,
+  images_json TEXT,
   source TEXT,
   display_order INTEGER NOT NULL
 );
@@ -1592,14 +1593,16 @@ def populate_archaeology(cur):
     img_count = 0
 
     for d in discoveries:
+        images_list = d.get('images', [])
+        images_json = json.dumps(images_list) if images_list else None
         cur.execute(
             'INSERT INTO archaeological_discoveries '
             '(id, name, category, date_range, location, significance, '
-            'description, image_url, source, display_order) '
-            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            'description, image_url, images_json, source, display_order) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
             (d['id'], d['name'], d['category'], d.get('date_range'),
              d.get('location'), d['significance'], d['description'],
-             d.get('image_url'), d.get('source'),
+             d.get('image_url'), images_json, d.get('source'),
              d.get('display_order', 0))
         )
         disc_count += 1

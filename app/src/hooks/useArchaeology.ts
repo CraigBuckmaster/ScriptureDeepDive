@@ -68,6 +68,25 @@ export interface ArchaeologyDetailData {
   loading: boolean;
 }
 
+/** Parse images_json from the discovery row, falling back to empty array. */
+function parseInlineImages(discovery: ArchaeologicalDiscovery | null): ArchaeologyImage[] {
+  if (!discovery?.images_json) return [];
+  try {
+    const parsed = JSON.parse(discovery.images_json);
+    if (!Array.isArray(parsed)) return [];
+    return parsed.map((img: Record<string, unknown>, idx: number) => ({
+      id: idx,
+      discovery_id: discovery.id,
+      url: String(img.url ?? ''),
+      caption: img.caption ? String(img.caption) : undefined,
+      credit: img.credit ? String(img.credit) : undefined,
+      display_order: idx,
+    }));
+  } catch {
+    return [];
+  }
+}
+
 export function useArchaeologyDetail(discoveryId: string): ArchaeologyDetailData {
   const [discovery, setDiscovery] = useState<ArchaeologicalDiscovery | null>(null);
   const [verseLinks, setVerseLinks] = useState<ArchaeologyVerseLink[]>([]);
@@ -91,7 +110,8 @@ export function useArchaeologyDetail(discoveryId: string): ArchaeologyDetailData
         if (mountedRef.current) {
           setDiscovery(d);
           setVerseLinks(vl);
-          setImages(imgs);
+          // Prefer images from the separate table; fall back to inline JSON
+          setImages(imgs.length > 0 ? imgs : parseInlineImages(d));
           setLoading(false);
         }
       })
