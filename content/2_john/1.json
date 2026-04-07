@@ -311,7 +311,7 @@
           ]
         },
         "hist": {
-          "context": "Though I have much to write to you, I would rather not use paper and ink. Instead I hope to come to you and talk face to face, so that our joy may be complete. The children of your elect sister greet you."
+          "context": "Ancient letter-writing conventions regularly included a preference for face-to-face conversation over written correspondence. Papyrus ('paper') and carbon-based ink were expensive, and letters required trusted couriers. John's expressed desire to visit rather than write further reflects both the limitations of ancient communication and the pastoral priority of personal presence. The 'elect sister' whose children send greetings likely refers to a sister congregation, using the same familial metaphor as the letter's opening address to the 'elect lady.' This network of house churches connected by travelling teachers and letter-carriers was the infrastructure of early Christianity."
         }
       }
     }
@@ -384,7 +384,80 @@
         }
       ],
       "note": "2 John is a brief letter combining exhortation to love with warning against deceivers. Truth and love must both be maintained."
-    }
+    },
+    "ppl": [
+      {
+        "name": "The Elder (John)",
+        "role": "Apostle and overseer",
+        "text": "The author identifies himself simply as \"the elder\" (ho presbyteros), a title of both age and authority. Early church tradition unanimously identifies this elder with the apostle John, the last surviving member of the Twelve, writing from Ephesus in his old age to churches under his pastoral care."
+      },
+      {
+        "name": "The Elect Lady",
+        "role": "Recipient (house church or individual)",
+        "text": "The identity of the \"elect lady\" (eklektē kyria) is debated. Most scholars read it as a personification of a local house church, with \"her children\" being its members. Others take it as a literal woman named Kyria who hosted a congregation. Either reading reflects the prominent role of women in early Christian hospitality and church leadership."
+      }
+    ],
+    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>The elder, To the lady chosen by God and to her children, whom I love in the truth—and not I only, but also all who know the truth</td></tr><tr><td class=\"t-label\">ESV</td><td>The elder to the elect lady and her children, whom I love in truth, and not only I, but also all who know the truth</td></tr><tr><td class=\"t-label\">NIV</td><td>Anyone who runs ahead and does not continue in the teaching of Christ does not have God; whoever continues in the teaching has both the Father and the Son.</td></tr><tr><td class=\"t-label\">ESV</td><td>Everyone who goes on ahead and does not abide in the teaching of Christ, does not have God. Whoever abides in the teaching has both the Father and the Son.</td></tr>",
+    "src": [
+      {
+        "title": "Didache (c. AD 50-120)",
+        "quote": "Instructions on receiving travelling teachers and testing their authenticity.",
+        "note": "The Didache reflects the same concern as 2 John: itinerant teachers could be genuine or fraudulent. Both texts establish protocols for evaluating travelling ministers — the Didache by testing their behaviour, 2 John by testing their christological confession."
+      },
+      {
+        "title": "Ignatius of Antioch, Letters (c. AD 110)",
+        "quote": "Warnings against docetists who denied the physical reality of Christ.",
+        "note": "Ignatius combated the same docetic heresy John addresses. His letters to Asian churches confirm that denial of Christ's incarnation was a live threat in the early second century, precisely the region where John ministered."
+      }
+    ],
+    "rec": [
+      {
+        "who": "Polycarp of Smyrna (c. 69-155)",
+        "text": "Polycarp, a direct disciple of John, echoed 2 John's warning against those who deny Christ coming in the flesh, calling such teaching the mark of antichrist. His connection to John makes his reception of this letter's theology particularly significant."
+      },
+      {
+        "who": "Clement of Alexandria (c. 150-215)",
+        "text": "Clement accepted 2 John as apostolic and cited it alongside 1 John. He interpreted the \"elect lady\" as the church universal, reading the letter as addressed to all believers rather than a single congregation."
+      }
+    ],
+    "hebtext": [
+      {
+        "word": "ἀλήθεια",
+        "tlit": "alētheia",
+        "gloss": "truth",
+        "note": "Alētheia (\"truth\") appears five times in the first four verses, establishing it as the letter's controlling concept. For John, truth is not abstract philosophy but the revealed reality of God in Christ — inseparable from love and obedience. The concentration of truth-language in such a short letter is remarkable."
+      },
+      {
+        "word": "πλάνος",
+        "tlit": "planos",
+        "gloss": "deceiver",
+        "note": "Planos (\"deceiver\") in verse 7 identifies the false teachers as deliberate misleaders, not merely confused believers. The term carries connotations of intentional misdirection. John pairs it with \"antichrist\" (antichristos), indicating that christological denial is not a minor doctrinal error but an opposition to Christ himself."
+      }
+    ],
+    "thread": [
+      {
+        "anchor": "1 John 4:2-3",
+        "target": "Testing the spirits",
+        "type": "Echo",
+        "text": "2 John's christological test (\"Jesus Christ as coming in the flesh\") directly echoes 1 John's criterion for distinguishing the Spirit of God from the spirit of antichrist. The shorter letter applies the theological framework of the longer one to a specific pastoral situation.",
+        "direction": "backward"
+      },
+      {
+        "anchor": "3 John 1:5-8",
+        "target": "Hospitality to true teachers",
+        "type": "Complement",
+        "text": "2 John warns against welcoming false teachers; 3 John commends hospitality toward true ones. Together the two letters form a balanced pastoral ethic: discernment determines who receives the church's support.",
+        "direction": "forward"
+      }
+    ],
+    "tx": [
+      {
+        "ref": "Codex Vaticanus (B) vs Codex Alexandrinus (A)",
+        "title": "Verse 8 variant: \"you\" vs \"we\"",
+        "content": "A significant textual variant occurs in verse 8: some manuscripts read \"what we have worked for\" while others read \"what you have worked for.\" The shift between first and second person affects whether John includes himself in the warning or addresses the recipients directly.",
+        "note": "Most modern translations follow the external evidence for \"you\" (hymeis), while the \"we\" reading may reflect scribal harmonisation with 1 John's frequent first-person plural style."
+      }
+    ]
   },
   "vhl_groups": [
     {
