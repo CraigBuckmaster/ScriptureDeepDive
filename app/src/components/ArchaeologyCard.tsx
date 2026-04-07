@@ -121,6 +121,7 @@ const styles = StyleSheet.create({
   meta: {
     fontFamily: fontFamily.ui,
     fontSize: 11,
+    flexShrink: 1,
   },
   significance: {
     fontFamily: fontFamily.body,
