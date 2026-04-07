@@ -76,7 +76,7 @@ def bump_db_version():
     old_version = DB_VERSION
 
     # Write new version to db_version.json (single source of truth)
-    VERSION_FILE.write_text(json.dumps({"version": new_version}, indent=2) + '\n')
+    VERSION_FILE.write_text(json.dumps({"version": new_version}, indent=2) + '\n', encoding='utf-8')
 
     # Sync to app/src/db/database.ts so the app knows to replace the old DB
     if APP_DB_TS.exists():
@@ -86,7 +86,7 @@ def bump_db_version():
             f"const EXPECTED_DB_VERSION = '{new_version}';",
             ts_content
         )
-        APP_DB_TS.write_text(ts_content)
+        APP_DB_TS.write_text(ts_content, encoding='utf-8')
         print(f"  DB version: {old_version} -> {new_version} (synced to database.ts)")
     else:
         print(f"  DB version: {old_version} -> {new_version} (database.ts not found)")
