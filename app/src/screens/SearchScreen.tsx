@@ -1,5 +1,6 @@
 /**
- * SearchScreen — Full FTS5 search across verses, people, word studies.
+ * SearchScreen — Full FTS5 search across verses, people, word studies,
+ * and archaeological evidence.
  *
  * Fixes from Phase 4A:
  *   - Verse results show book display name (via joined book_name)
@@ -18,7 +19,7 @@ import { useSearch } from '../hooks/useSearch';
 import { SearchInput } from '../components/SearchInput';
 import { SearchFilterChips, type SearchFilter } from '../components/SearchFilterChips';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
-import type { Person, WordStudy, Verse } from '../types';
+import type { Person, WordStudy, Verse, ArchaeologicalDiscovery } from '../types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 const INITIAL_VERSE_LIMIT = 20;
@@ -49,6 +50,10 @@ function SearchScreen() {
       title: 'People',
       data: results.people.map((p) => ({ type: 'person' as const, item: p })),
     }] : []),
+    ...(results.discoveries.length ? [{
+      title: 'Archaeological Evidence',
+      data: results.discoveries.map((d) => ({ type: 'discovery' as const, item: d })),
+    }] : []),
     ...(results.wordStudies.length ? [{
       title: 'Word Studies',
       data: results.wordStudies.map((w) => ({ type: 'word' as const, item: w })),
@@ -60,10 +65,10 @@ function SearchScreen() {
         ...(hasMoreVerses ? [{ type: 'loadMore' as const, item: null }] : []),
       ],
     }] : []),
-  ], [results.people, results.wordStudies, displayedVerses, hasMoreVerses]);
+  ], [results.people, results.discoveries, results.wordStudies, displayedVerses, hasMoreVerses]);
 
   const trimmed = query.trim();
-  const hasResults = results.people.length > 0 || results.wordStudies.length > 0 || results.verses.length > 0;
+  const hasResults = results.people.length > 0 || results.wordStudies.length > 0 || results.verses.length > 0 || results.discoveries.length > 0;
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
@@ -72,7 +77,7 @@ function SearchScreen() {
         <SearchInput
           value={query}
           onChangeText={handleQueryChange}
-          placeholder="Search verses, people, word studies..."
+          placeholder="Search verses, people, evidence..."
           autoFocus
         />
       </View>
@@ -94,7 +99,7 @@ function SearchScreen() {
         <View style={styles.emptyCenter}>
           <SearchIcon size={28} color={base.textMuted + '60'} />
           <Text style={[styles.emptyText, { color: base.textMuted }]}>
-            Search verses, people, and more
+            Search verses, people, evidence, and more
           </Text>
         </View>
       ) : !hasResults && !isLoading ? (
@@ -153,6 +158,28 @@ function SearchScreen() {
                 </TouchableOpacity>
               );
             }
+            if (type === 'discovery') {
+              const d = item as ArchaeologicalDiscovery;
+              return (
+                <TouchableOpacity
+                  onPress={() => navigation.navigate('ExploreTab', {
+                    screen: 'ArchaeologyDetail',
+                    params: { discoveryId: d.id },
+                  })}
+                  style={styles.discoveryRow}
+                  accessibilityRole="button"
+                  accessibilityLabel={`View evidence: ${d.name}`}
+                >
+                  <Text style={styles.discoveryEmoji}>🏛</Text>
+                  <View style={styles.discoveryText}>
+                    <Text style={[styles.discoveryName, { color: base.text }]} numberOfLines={1}>{d.name}</Text>
+                    <Text style={[styles.discoveryMeta, { color: base.textMuted }]} numberOfLines={1}>
+                      {[d.category, d.location].filter(Boolean).join(' · ')}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              );
+            }
             if (type === 'word') {
               const w = item as WordStudy;
               return (
@@ -177,7 +204,7 @@ function SearchScreen() {
               <TouchableOpacity
                 onPress={() => navigation.navigate('ReadTab', {
                   screen: 'Chapter',
-                  params: { bookId: v.book_id, chapterNum: v.chapter_num },
+                  params: { bookId: v.book_id, chapterNum: v.chapter_num, verseNum: v.verse_num },
                 })}
                 style={styles.verseRow}
                 accessibilityRole="button"
@@ -262,6 +289,27 @@ const styles = StyleSheet.create({
   wordTranslit: {
     fontFamily: fontFamily.bodyItalic,
     fontSize: 12,
+  },
+  // Discovery
+  discoveryRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
+    paddingVertical: spacing.sm,
+  },
+  discoveryEmoji: {
+    fontSize: 18,
+  },
+  discoveryText: {
+    flex: 1,
+  },
+  discoveryName: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 14,
+  },
+  discoveryMeta: {
+    fontFamily: fontFamily.ui,
+    fontSize: 11,
   },
   // Verse
   verseRow: {
