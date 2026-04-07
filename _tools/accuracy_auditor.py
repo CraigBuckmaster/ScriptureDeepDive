@@ -151,41 +151,74 @@ def score_chapter(results: list[VerificationResult],
                   claims: list[Claim]) -> dict:
     """Compute accuracy score for a chapter.
 
-    Returns dict with overall score, per-type scores, and counts.
+    Returns three key metrics:
+    - verified_pct: Of claims we've checked, what % passed? (VERIFIED+SKIPPED) / checked
+    - coverage_pct: What % of total claims have been checked? checked / total
+    - refuted_count: Hard count of known-bad claims (red flag)
+
+    Also returns legacy 'score' for backwards compatibility (now = verified_pct).
     """
-    # Group by claim type
-    type_claims = defaultdict(list)
+    # Count by status
+    status_counts = Counter(r.status for r in results)
+    total = len(results)
+
+    verified = status_counts.get(STATUS_VERIFIED, 0)
+    skipped = status_counts.get(STATUS_SKIPPED, 0)
+    flagged = status_counts.get(STATUS_FLAGGED, 0)
+    refuted = status_counts.get(STATUS_REFUTED, 0)
+    unverified = status_counts.get(STATUS_UNVERIFIED, 0)
+
+    # Checked = everything except UNVERIFIED
+    checked = verified + skipped + flagged + refuted
+    passing = verified + skipped
+
+    # Three key metrics
+    if checked > 0:
+        verified_pct = (passing / checked) * 100.0
+    else:
+        verified_pct = 0.0  # No checked claims = 0%, not 100%
+
+    if total > 0:
+        coverage_pct = (checked / total) * 100.0
+    else:
+        coverage_pct = 0.0
+
+    refuted_count = refuted
+
+    # Per-type breakdown (for detailed reports)
     type_results = defaultdict(list)
     for claim, result in zip(claims, results):
-        type_claims[claim.claim_type].append(claim)
         type_results[claim.claim_type].append(result)
 
     type_scores = {}
     for ctype in CLAIM_TYPES:
         results_for_type = type_results.get(ctype, [])
-        total = len(results_for_type)
-        if total == 0:
-            type_scores[ctype] = 100.0  # No claims = perfect score
+        type_total = len(results_for_type)
+        if type_total == 0:
+            type_scores[ctype] = None  # No claims = no score (not 100%)
             continue
-        passing = sum(1 for r in results_for_type
-                      if r.status in PASSING_STATUSES)
-        type_scores[ctype] = (passing / total) * 100.0
-
-    # Weighted overall score
-    weighted_sum = sum(
-        type_scores.get(ctype, 100.0) * weight
-        for ctype, weight in SCORING_WEIGHTS.items()
-    )
-    overall = weighted_sum
-
-    # Counts
-    status_counts = Counter(r.status for r in results)
+        type_checked = sum(1 for r in results_for_type
+                          if r.status != STATUS_UNVERIFIED)
+        type_passing = sum(1 for r in results_for_type
+                          if r.status in PASSING_STATUSES)
+        if type_checked > 0:
+            type_scores[ctype] = (type_passing / type_checked) * 100.0
+        else:
+            type_scores[ctype] = None
 
     return {
-        "score": round(overall, 1),
-        "grade": score_to_grade(overall),
-        "type_scores": {k: round(v, 1) for k, v in type_scores.items()},
-        "total_claims": len(claims),
+        # New three-metric system
+        "verified_pct": round(verified_pct, 1),
+        "coverage_pct": round(coverage_pct, 1),
+        "refuted_count": refuted_count,
+        # Legacy (verified_pct is the new "score")
+        "score": round(verified_pct, 1),
+        "grade": score_to_grade(verified_pct),
+        # Details
+        "type_scores": {k: round(v, 1) if v is not None else None
+                       for k, v in type_scores.items()},
+        "total_claims": total,
+        "checked_claims": checked,
         "by_status": dict(status_counts),
     }
 
@@ -266,47 +299,99 @@ def generate_summary(matrix: dict, chapter_scores: dict) -> dict:
     for ch_key, score_data in chapter_scores.items():
         book_dir, ch_num = ch_key
         books[book_dir]["chapters"][str(ch_num)] = {
+            # New three-metric system
+            "verified_pct": score_data.get("verified_pct", score_data["score"]),
+            "coverage_pct": score_data.get("coverage_pct", 0),
+            "refuted_count": score_data.get("refuted_count", 0),
+            # Legacy
             "score": score_data["score"],
             "grade": score_data["grade"],
             "claims": score_data["total_claims"],
+            "checked": score_data.get("checked_claims", 0),
             **score_data["by_status"],
         }
         # Accumulate type scores
         for ctype, tscore in score_data["type_scores"].items():
-            if ctype not in books[book_dir]["by_type"]:
-                books[book_dir]["by_type"][ctype] = []
-            books[book_dir]["by_type"][ctype].append(tscore)
+            if tscore is not None:  # Skip types with no claims
+                if ctype not in books[book_dir]["by_type"]:
+                    books[book_dir]["by_type"][ctype] = []
+                books[book_dir]["by_type"][ctype].append(tscore)
 
     # Compute book averages
     book_summaries = {}
     for book_dir, data in books.items():
-        ch_scores = [ch["score"] for ch in data["chapters"].values()]
-        avg = sum(ch_scores) / len(ch_scores) if ch_scores else 0
+        chapters = list(data["chapters"].values())
+        
+        # Average verified_pct (weighted by checked claims)
+        total_checked = sum(ch.get("checked", 0) for ch in chapters)
+        if total_checked > 0:
+            weighted_verified = sum(
+                ch.get("verified_pct", 0) * ch.get("checked", 0) 
+                for ch in chapters
+            ) / total_checked
+        else:
+            weighted_verified = 0
+        
+        # Average coverage
+        total_claims = sum(ch.get("claims", 0) for ch in chapters)
+        if total_claims > 0:
+            avg_coverage = (total_checked / total_claims) * 100
+        else:
+            avg_coverage = 0
+        
+        # Total refuted
+        total_refuted = sum(ch.get("refuted_count", 0) for ch in chapters)
+        
+        # Type averages (only for types with data)
         type_avgs = {}
         for ctype, scores in data["by_type"].items():
-            type_avgs[ctype] = round(sum(scores) / len(scores), 1) if scores else 0
+            if scores:
+                type_avgs[ctype] = round(sum(scores) / len(scores), 1)
+        
         book_summaries[book_dir] = {
-            "score": round(avg, 1),
-            "grade": score_to_grade(avg),
+            # New three-metric system
+            "verified_pct": round(weighted_verified, 1),
+            "coverage_pct": round(avg_coverage, 1),
+            "refuted_count": total_refuted,
+            # Legacy
+            "score": round(weighted_verified, 1),
+            "grade": score_to_grade(weighted_verified),
             "chapters": data["chapters"],
             "by_type": type_avgs,
         }
 
-    # Worst chapters
-    all_ch = [(k, v) for k, v in chapter_scores.items()]
-    all_ch.sort(key=lambda x: x[1]["score"])
+    # Worst chapters (by verified_pct, but only those with coverage > 0)
+    all_ch = [(k, v) for k, v in chapter_scores.items() 
+              if v.get("checked_claims", 0) > 0]
+    all_ch.sort(key=lambda x: x[1].get("verified_pct", x[1]["score"]))
     worst = [
         {"chapter_id": f"{k[0]}{k[1]}", "book": k[0],
+         "verified_pct": v.get("verified_pct", v["score"]),
+         "coverage_pct": v.get("coverage_pct", 0),
+         "refuted_count": v.get("refuted_count", 0),
          "score": v["score"], **v["by_status"]}
         for k, v in all_ch[:20]
     ]
 
-    all_scores = [v["score"] for v in chapter_scores.values()]
-    corpus_avg = sum(all_scores) / len(all_scores) if all_scores else 0
+    # Corpus averages
+    all_verified = [v.get("verified_pct", v["score"]) for v in chapter_scores.values()
+                    if v.get("checked_claims", 0) > 0]
+    corpus_verified = sum(all_verified) / len(all_verified) if all_verified else 0
+    
+    total_corpus_claims = sum(v["total_claims"] for v in chapter_scores.values())
+    total_corpus_checked = sum(v.get("checked_claims", 0) for v in chapter_scores.values())
+    corpus_coverage = (total_corpus_checked / total_corpus_claims * 100) if total_corpus_claims else 0
+    
+    total_corpus_refuted = sum(v.get("refuted_count", 0) for v in chapter_scores.values())
 
     summary = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "corpus_average": round(corpus_avg, 1),
+        # New three-metric system
+        "corpus_verified_pct": round(corpus_verified, 1),
+        "corpus_coverage_pct": round(corpus_coverage, 1),
+        "corpus_refuted_count": total_corpus_refuted,
+        # Legacy
+        "corpus_average": round(corpus_verified, 1),
         "books": book_summaries,
         "worst_chapters": worst,
     }

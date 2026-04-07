@@ -494,34 +494,69 @@ function renderOverview() {
   const cs = DATA.corpus_stats || {};
   const bs = cs.by_status || {};
   const total = DATA.total_claims || 0;
-  const verified = (bs.VERIFIED||0) + (bs.SKIPPED||0);
-  const score = total > 0 ? (verified/total*100) : 0;
+  
+  // New three-metric calculation
+  const verified = bs.VERIFIED || 0;
+  const skipped = bs.SKIPPED || 0;
+  const flagged = bs.FLAGGED || 0;
+  const refuted = bs.REFUTED || 0;
+  const unverified = bs.UNVERIFIED || 0;
+  
+  const checked = verified + skipped + flagged + refuted;
+  const passing = verified + skipped;
+  
+  // Three key metrics
+  const verifiedPct = checked > 0 ? (passing / checked * 100) : 0;
+  const coveragePct = total > 0 ? (checked / total * 100) : 0;
+  const refutedCount = refuted;
 
   let html = '';
 
-  // Top stats
+  // New three-metric header
+  html += '<div class="card card-gold" style="margin-bottom:16px">';
+  html += '<div style="display:flex;justify-content:space-around;text-align:center;padding:8px 0">';
+  
+  // Verified %
+  html += '<div>';
+  html += '<div style="font-size:36px;font-weight:700;color:var(--green)">' + verifiedPct.toFixed(1) + '%</div>';
+  html += '<div style="font-size:11px;color:var(--muted)">Verified Accuracy</div>';
+  html += '<div style="font-size:9px;color:var(--dim)">of checked claims</div>';
+  html += '</div>';
+  
+  // Coverage %
+  html += '<div>';
+  html += '<div style="font-size:36px;font-weight:700;color:var(--gold)">' + coveragePct.toFixed(1) + '%</div>';
+  html += '<div style="font-size:11px;color:var(--muted)">Coverage</div>';
+  html += '<div style="font-size:9px;color:var(--dim)">claims checked</div>';
+  html += '</div>';
+  
+  // Refuted count
+  const refColor = refutedCount > 100 ? 'red' : refutedCount > 0 ? 'orange' : 'green';
+  html += '<div>';
+  html += '<div style="font-size:36px;font-weight:700;color:var(--' + refColor + ')">' + fmt(refutedCount) + '</div>';
+  html += '<div style="font-size:11px;color:var(--muted)">Refuted</div>';
+  html += '<div style="font-size:9px;color:var(--dim)">need fixing</div>';
+  html += '</div>';
+  
+  html += '</div></div>';
+
+  // Status breakdown
   html += '<div class="grid-4" style="margin-bottom:16px">';
   html += statBox(fmt(total), 'Total Claims', 'gold');
-  html += statBox(fmt(bs.VERIFIED||0), 'Verified', 'green');
-  html += statBox(fmt(bs.FLAGGED||0), 'Flagged', 'orange');
-  html += statBox(fmt(bs.REFUTED||0), 'Refuted', 'red');
+  html += statBox(fmt(checked), 'Checked', 'blue');
+  html += statBox(fmt(passing), 'Passing', 'green');
+  html += statBox(fmt(flagged), 'Flagged', 'orange');
   html += '</div>';
 
-  // Score + progress
-  html += '<div class="card card-gold" style="margin-bottom:16px">';
-  html += '<div style="display:flex;align-items:center;gap:24px">';
-  html += '<div style="text-align:center;min-width:100px">';
-  html += '<div style="font-size:42px;font-weight:700;color:var(--gold)">' + score.toFixed(1) + '</div>';
-  html += '<div style="font-size:11px;color:var(--muted)">Proven Accuracy %</div>';
-  html += '</div>';
-  html += '<div style="flex:1">';
+  // Progress bar
+  html += '<div class="card" style="margin-bottom:16px">';
   html += progressBar(bs, total);
   html += '<div style="display:flex;gap:16px;margin-top:6px;flex-wrap:wrap">';
   for (const [s,c] of [['VERIFIED','green'],['SKIPPED','blue'],['FLAGGED','orange'],['REFUTED','red'],['UNVERIFIED','muted']]) {
     const n = bs[s]||0;
     if (n > 0) html += '<span style="font-size:10px;color:var(--'+c+')">&#9679; '+s+': '+fmt(n)+' ('+pct(n,total)+'%)</span>';
   }
-  html += '</div></div></div></div>';
+  html += '</div></div>';
 
   // By claim type
   const bt = cs.by_type || {};
