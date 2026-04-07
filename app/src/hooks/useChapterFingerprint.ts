@@ -11,7 +11,7 @@ import type { SectionPanel, ChapterPanel } from '../types';
 
 /** Known scholar panel types (commentary panels attributed to scholars). */
 const SCHOLAR_TYPES = new Set([
-  'mac', 'calvin', 'sarna', 'alter', 'net', 'oswalt', 'childs',
+  'mac', 'calvin', 'sarna', 'alter', 'net', 'netbible', 'oswalt', 'childs',
   'collins', 'longman', 'goldingay', 'moo', 'fee', 'bruce', 'wright',
   'keener', 'beale', 'wenham', 'waltke', 'hamilton', 'sailhamer',
   'kidner', 'craigie', 'dearman', 'stuart', 'hubbard', 'block',

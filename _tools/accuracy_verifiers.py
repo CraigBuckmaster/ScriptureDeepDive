@@ -457,6 +457,7 @@ class ScholarValidator:
         # Panel key aliases (content JSON key → scholars.json panel_key)
         self._aliases = {
             "net": "netbible",
+            "netbible": "net",
             "mar": "marcus",
             "cat": "catena",
             "rho": "rhoads",
