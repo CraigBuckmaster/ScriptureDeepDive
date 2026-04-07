@@ -24,7 +24,7 @@ jest.mock('@react-navigation/native', () => {
 // ── Hooks ─────────────────────────────────────────────────────────
 
 const mockSearchResults = {
-  results: { people: [] as any[], wordStudies: [] as any[], verses: [] as any[] },
+  results: { people: [] as any[], wordStudies: [] as any[], verses: [] as any[], discoveries: [] as any[] },
   isLoading: false,
 };
 
@@ -54,7 +54,7 @@ jest.mock('@/components/SearchFilterChips', () => ({
 describe('SearchScreen', () => {
   beforeEach(() => {
     jest.clearAllMocks();
-    mockSearchResults.results = { people: [], wordStudies: [], verses: [] };
+    mockSearchResults.results = { people: [], wordStudies: [], verses: [], discoveries: [] };
     mockSearchResults.isLoading = false;
   });
 
@@ -70,12 +70,12 @@ describe('SearchScreen', () => {
 
   it('shows idle state message when no query entered', () => {
     const { getByText } = renderWithProviders(<SearchScreen />);
-    expect(getByText('Search verses, people, and more')).toBeTruthy();
+    expect(getByText('Search verses, people, evidence, and more')).toBeTruthy();
   });
 
   it('shows search input with correct placeholder', () => {
     const { getByPlaceholderText } = renderWithProviders(<SearchScreen />);
-    expect(getByPlaceholderText('Search verses, people, word studies...')).toBeTruthy();
+    expect(getByPlaceholderText('Search verses, people, evidence...')).toBeTruthy();
   });
 
   it('renders results sections when people data is available', () => {
