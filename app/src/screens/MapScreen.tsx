@@ -8,8 +8,9 @@
  */
 
 import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react';
-import { View, StyleSheet, useWindowDimensions } from 'react-native';
+import { View, TouchableOpacity, StyleSheet, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { ArrowLeft } from 'lucide-react-native';
 import MapView, { PROVIDER_GOOGLE, PROVIDER_DEFAULT } from 'react-native-maps';
 
 import { usePlaces } from '../hooks/usePlaces';
@@ -191,6 +192,16 @@ function MapScreen({ route, navigation }: {
         )}
       </MapView>
 
+      {/* Floating back button */}
+      <TouchableOpacity
+        onPress={() => navigation.goBack()}
+        accessibilityRole="button"
+        accessibilityLabel="Go back"
+        style={[styles.backButton, { top: insets.top + 8, backgroundColor: base.bgElevated }]}
+      >
+        <ArrowLeft size={20} color={base.gold} />
+      </TouchableOpacity>
+
       {/* Era filter — overlaid at top below status bar */}
       <View style={[styles.topControls, { paddingTop: insets.top }]} pointerEvents="box-none">
         <EraFilterBar activeEra={activeEra} onSelect={handleEraChange} />
@@ -253,6 +264,21 @@ const styles = StyleSheet.create({
   },
   loadingPad: {
     padding: spacing.lg,
+  },
+  backButton: {
+    position: 'absolute',
+    left: 12,
+    zIndex: 15,
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 4,
   },
   topControls: {
     position: 'absolute',
