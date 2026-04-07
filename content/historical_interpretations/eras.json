@@ -1,0 +1,44 @@
+[
+  {
+    "id": "apostolic",
+    "name": "Apostolic Fathers",
+    "date_range": "70\u2013150 AD",
+    "description": "The earliest post-apostolic writers who had direct or near-direct contact with the apostles. Their works\u2014letters, homilies, and manuals like the Didache\u2014show how the first Christian communities read Scripture before formal doctrinal categories developed. Key figures include Clement of Rome, Ignatius of Antioch, and Polycarp of Smyrna.",
+    "display_order": 1
+  },
+  {
+    "id": "patristic",
+    "name": "Church Fathers",
+    "date_range": "150\u2013600 AD",
+    "description": "The great theologians who shaped Christian orthodoxy through the ecumenical councils. This era produced the major schools of interpretation\u2014Alexandrian (allegorical) and Antiochene (literal-historical)\u2014and defined core doctrines of Trinity and Christology. Key figures include Origen, Augustine, Chrysostom, Jerome, and Athanasius.",
+    "display_order": 2
+  },
+  {
+    "id": "medieval",
+    "name": "Medieval",
+    "date_range": "600\u20131500 AD",
+    "description": "The era of monasticism, scholasticism, and the fourfold sense of Scripture (literal, allegorical, moral, anagogical). Theologians systematized patristic insights using Aristotelian philosophy, producing massive commentaries and theological summaries. Key figures include Thomas Aquinas, Bernard of Clairvaux, Anselm of Canterbury, and Peter Lombard.",
+    "display_order": 3
+  },
+  {
+    "id": "reformation",
+    "name": "Reformation",
+    "date_range": "1500\u20131700 AD",
+    "description": "The Reformers broke from medieval allegorizing to emphasize the literal-grammatical sense, sola scriptura, and the perspicuity of Scripture. This era produced landmark commentaries and confessional documents that still shape Protestant interpretation today. Key figures include Martin Luther, John Calvin, Huldrych Zwingli, and Thomas Cranmer.",
+    "display_order": 4
+  },
+  {
+    "id": "modern",
+    "name": "Modern Critical",
+    "date_range": "1700\u20131950 AD",
+    "description": "The rise of historical-critical methods\u2014source criticism, form criticism, and redaction criticism\u2014transformed biblical studies into an academic discipline. Scholars investigated the human origins and literary history of biblical texts while others mounted robust theological responses. Key figures include Julius Wellhausen, Karl Barth, Gerhard von Rad, and Rudolf Bultmann.",
+    "display_order": 5
+  },
+  {
+    "id": "contemporary",
+    "name": "Contemporary",
+    "date_range": "1950\u2013present",
+    "description": "Contemporary scholarship integrates historical-critical insights with literary, canonical, and theological approaches. New perspectives on Paul, Ancient Near Eastern backgrounds, and discourse analysis have reshaped longstanding debates. Key figures include N.T. Wright, D.A. Carson, G.K. Beale, and Tremper Longman III.",
+    "display_order": 6
+  }
+]
