@@ -9302,34 +9302,61 @@
     ],
     "passage": "Numbers 1",
     "question": "Interpretive Question: 1:1",
-    "context": "",
+    "context": "Numbers opens with a census commanded in the wilderness of Sinai, dated precisely to the second year after the exodus. Milgrom's Anchor Bible commentary treats the census as a military muster roll characteristic of P's organizational agenda. Ashley's NICOT commentary reads it as both practical preparation and theological statement about God's faithfulness to the Abrahamic promise of innumerable descendants. The tension between historical reportage and idealized priestly structure shapes how scholars read the implausibly large totals (603,550 fighting men).",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
         "label": "Critical/Analytical scholarship",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Milgrom: \"On the first day of the second month of the second year after the Israelites came out of Egypt\" — the precise date anchors Numbers in the wi…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Identifies the literary and redactional features that distinguish the census from parallel traditions. Accounts for the implausible population totals by reading ʾelep as 'clan' or 'military unit' rather than 'thousand,' a reading with lexical support.",
+        "weaknesses": "The source-critical dating of P to the exilic period struggles to explain why a late author would invent a wilderness census with such specific detail. Reducing the numbers to clan counts creates arithmetic problems with the Levitical totals.",
+        "key_verses": [
+          "Numbers 1:1-3",
+          "Numbers 1:46",
+          "Exodus 30:12",
+          "Numbers 26:51"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "macarthur"
+        ],
         "proponents": "Reads The First Census within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Takes the text's own chronological and organizational claims seriously. Connects the census to the Abrahamic promise of innumerable descendants, providing a strong canonical reading that links Genesis to Numbers.",
+        "weaknesses": "Accepting the numbers at face value creates logistical problems (2-3 million people in the Sinai) that archaeological evidence does not support. The theological reading can underplay genuine literary tensions in the text.",
+        "key_verses": [
+          "Numbers 1:1-3",
+          "Genesis 15:5",
+          "Exodus 1:7",
+          "Numbers 1:46"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The census of Numbers 1 sits at the intersection of historical, theological, and literary questions. Critical scholars emphasize the P source's organizational interests and question the feasibility of the numbers, while evangelical scholars stress the theological significance of God numbering his covenant people. Both sides agree the census serves a literary function of transitioning Israel from Sinai legislation to wilderness march. The exact interpretation of the large numbers remains an open question across traditions.",
+    "related_passages": [
+      "Exodus 30:11-16",
+      "Exodus 38:26",
+      "Numbers 26:1-51",
+      "2 Samuel 24:1-9",
+      "1 Chronicles 21:1-6"
+    ],
+    "tags": [
+      "census",
+      "wilderness",
+      "priestly-source",
+      "covenant-promise",
+      "military-organization"
+    ]
   },
   {
     "id": "historical-and-literary-integrity-of-the-camp-arrangement",
@@ -9341,34 +9368,59 @@
     ],
     "passage": "Numbers 2",
     "question": "Historical and Literary Integrity of The Camp Arrangement",
-    "context": "",
+    "context": "Numbers 2 presents an idealized camp arrangement with twelve tribes organized in four groups of three around the tabernacle. Noth and Gray argued this reflects a post-exilic priestly ideal projected back into the wilderness period, noting parallels with ancient Near Eastern temple-city layouts. Milgrom and Ashley counter that the arrangement has practical military parallels in Egyptian and Mesopotamian camp organization. The chapter's symmetrical structure raises the question of whether it describes historical practice or theological symbolism.",
     "positions": [
       {
         "id": "critical-scholarship-noth-gray",
         "label": "Critical scholarship (Noth, Gray)",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Identifies The Camp Arrangement as a composite of J, E, and P sources redacted together, with inconsistencies explained by source combination.",
         "argument": "The source-critical approach accounts for apparent repetitions and tensions but has been questioned for its circular methodology.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Identifies genuine tensions between the idealized symmetry of the camp and the practical realities of wilderness life. The post-exilic temple-city parallels (especially Ezekiel 48) provide a plausible literary context for the arrangement's composition.",
+        "weaknesses": "Dismissing all organizational detail as late invention overlooks genuine ancient Near Eastern parallels for military camp arrangements. The assumption that idealized structure equals late composition is methodologically questionable.",
+        "key_verses": [
+          "Numbers 2:1-2",
+          "Numbers 2:17",
+          "Numbers 2:34",
+          "Ezekiel 48:30-35"
+        ]
       },
       {
         "id": "literary-and-canonical-unity-milgrom-ash",
         "label": "Literary and canonical unity (Milgrom, Ashley)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley"
+        ],
         "proponents": "Reads The Camp Arrangement as a literary unit with deliberate structure, arguing that apparent inconsistencies are rhetorical or theological rather than redactional.",
         "argument": "The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Egyptian military camp layouts (e.g., Ramesses II at Kadesh) provide credible parallels for organized tribal encampments. The theological reading of God dwelling at the center of his people integrates the arrangement with Numbers' broader theme of holiness gradations.",
+        "weaknesses": "The perfect symmetry of the arrangement (identical group sizes, cardinal-point orientation) suggests idealization beyond what any historical camp would achieve. The Egyptian parallels are not exact matches.",
+        "key_verses": [
+          "Numbers 2:1-2",
+          "Numbers 2:17",
+          "Exodus 25:8",
+          "Numbers 2:34"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The camp arrangement debate reflects broader disagreements about the historicity of priestly material. Source critics see an idealized post-exilic projection, while literary and evangelical scholars find plausible ancient parallels and deliberate theological symbolism. Both approaches recognize the chapter's careful literary structure. The question of whether the arrangement is historical reportage or theological architecture remains unresolved, though most scholars now acknowledge the text's literary intentionality regardless of historical judgment.",
+    "related_passages": [
+      "Exodus 25:8",
+      "Numbers 10:11-28",
+      "Ezekiel 48:1-35",
+      "Revelation 21:12-14"
+    ],
+    "tags": [
+      "camp-arrangement",
+      "tabernacle",
+      "priestly-source",
+      "tribal-organization",
+      "literary-structure"
+    ]
   },
   {
     "id": "interpretive-question-3-9",
@@ -9380,34 +9432,61 @@
     ],
     "passage": "Numbers 3",
     "question": "Interpretive Question: 3:9",
-    "context": "",
+    "context": "Numbers 3:9 describes the Levites as 'given wholly' (nĕtûnîm nĕtûnîm) to Aaron, using an emphatic doubling that Milgrom identifies as a technical term for sacred dedication. The passage raises questions about the Levites' status: are they servants of the priests, substitutes for the firstborn, or a dedicated sacred guild? The relationship between Levitical service and firstborn redemption (3:11-13) adds further complexity, as it implies the Levites replaced an earlier system of firstborn consecration.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
         "label": "Critical/Analytical scholarship",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Milgrom: \"Give the Levites to Aaron and his sons — they are to be given wholly to him.\" The Levites are not independent ministers but appendages of th…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The emphatic doubling nĕtûnîm nĕtûnîm is a genuine linguistic feature that deserves close attention. Critical analysis of the Levites' evolving status across Pentateuchal sources illuminates real tensions between Numbers, Deuteronomy, and Ezekiel on Levitical roles.",
+        "weaknesses": "Reconstructing a detailed institutional history from formulaic variations risks over-reading subtle linguistic differences. The developmental model assumes a linear evolution that may not reflect the complexity of Israelite religious practice.",
+        "key_verses": [
+          "Numbers 3:9",
+          "Numbers 3:11-13",
+          "Numbers 8:16",
+          "Deuteronomy 10:8"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "calvin"
+        ],
         "proponents": "Reads The Levites within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reading the Levites' appointment as a unified divine act integrates the firstborn-substitution theology with the broader Sinai covenant narrative. The canonical approach highlights how Levitical service embodies Israel's corporate holiness.",
+        "weaknesses": "The canonical reading can smooth over genuine differences between how Levites function in Numbers versus Deuteronomy, where they appear to have equal priestly status. The theological emphasis may underplay the institutional politics evident in the text.",
+        "key_verses": [
+          "Numbers 3:9",
+          "Numbers 3:12-13",
+          "Exodus 13:2",
+          "Numbers 18:6"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The status of the Levites in Numbers 3 involves overlapping theological and institutional concerns. Critical scholars see the emphatic 'given' formula as evidence of evolving priestly legislation that progressively subordinated Levites to Aaronide priests. Evangelical scholars read the same formula as a single, coherent act of divine appointment. Both recognize that the firstborn-substitution theology is distinctive to Numbers and shapes Israel's understanding of sacred service.",
+    "related_passages": [
+      "Numbers 8:14-19",
+      "Exodus 13:2",
+      "Exodus 32:25-29",
+      "1 Samuel 1:27-28",
+      "Deuteronomy 10:8-9"
+    ],
+    "tags": [
+      "levites",
+      "priesthood",
+      "firstborn-substitution",
+      "sacred-service",
+      "priestly-source"
+    ]
   },
   {
     "id": "historical-and-literary-integrity-of-the-transport-duties-of",
@@ -9419,34 +9498,61 @@
     ],
     "passage": "Numbers 4",
     "question": "Historical and Literary Integrity of The Transport Duties of the Levitical Clans",
-    "context": "",
+    "context": "Numbers 4 details the specific transport duties assigned to the three Levitical clans — Kohathites, Gershonites, and Merarites — for dismantling and carrying the tabernacle. Source critics have identified this chapter as a classic P text, noting its systematic structure and cultic precision. The extreme specificity of the instructions (who covers what, in which order, with what materials) raises questions about whether this reflects actual wilderness practice or idealized temple procedure projected backward.",
     "positions": [
       {
         "id": "critical-scholarship-noth-gray",
         "label": "Critical scholarship (Noth, Gray)",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Identifies The Transport Duties of the Levitical Clans as a composite of J, E, and P sources redacted together, with inconsistencies explained by source combination.",
         "argument": "The source-critical approach accounts for apparent repetitions and tensions but has been questioned for its circular methodology.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Correctly identifies the systematic, almost bureaucratic quality of the instructions as characteristic of P's literary style. Notes genuine parallels with ancient Near Eastern temple inventories and transport records from Mesopotamia.",
+        "weaknesses": "The assumption that systematic organization must be late overlooks the practical necessity of organized transport for a portable sanctuary. The source-critical approach struggles to explain why a post-exilic author would invent such detailed wilderness logistics.",
+        "key_verses": [
+          "Numbers 4:4-6",
+          "Numbers 4:15",
+          "Numbers 4:19-20",
+          "2 Samuel 6:6-7"
+        ]
       },
       {
         "id": "literary-and-canonical-unity-milgrom-ash",
         "label": "Literary and canonical unity (Milgrom, Ashley)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "macarthur"
+        ],
         "proponents": "Reads The Transport Duties of the Levitical Clans as a literary unit with deliberate structure, arguing that apparent inconsistencies are rhetorical or theological rather than redactional.",
         "argument": "The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The holiness-gradient theology (most sacred objects require most careful handling) integrates seamlessly with Numbers' broader theme of approaching God with appropriate reverence. Ancient parallels for organized military/cultic transport support historicity.",
+        "weaknesses": "The extreme specificity of materials and procedures may reflect idealized prescription rather than historical description. The perfect tripartite division of labor among Levitical clans seems schematized.",
+        "key_verses": [
+          "Numbers 4:4-6",
+          "Numbers 4:15",
+          "Numbers 4:24-28",
+          "Numbers 4:29-33"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The transport duties of Numbers 4 illustrate the broader debate about P's historical reliability. Critics see idealized temple logistics; evangelical scholars see plausible wilderness organization. Both sides acknowledge the chapter's careful literary design. The holiness-gradient theology (Kohathites handle the most sacred objects but cannot touch them directly) is recognized across traditions as a key theological motif regardless of one's historical judgment.",
+    "related_passages": [
+      "Numbers 7:1-9",
+      "Numbers 10:17-21",
+      "Exodus 25-27",
+      "1 Chronicles 15:2-15",
+      "2 Samuel 6:6-7"
+    ],
+    "tags": [
+      "levitical-clans",
+      "tabernacle-transport",
+      "holiness-gradation",
+      "priestly-source",
+      "kohathites"
+    ]
   },
   {
     "id": "historical-and-literary-integrity-of-purity-of-the-camp",
@@ -9458,34 +9564,61 @@
     ],
     "passage": "Numbers 5",
     "question": "Historical and Literary Integrity of Purity of the Camp",
-    "context": "",
+    "context": "Numbers 5 collects three apparently disparate purity regulations: exclusion of the impure from the camp (5:1-4), restitution for wrongs (5:5-10), and the sotah ordeal for suspected adultery (5:11-31). Source critics have long treated these as originally independent legal fragments combined by a redactor. Milgrom argues they share a unifying theme: all three address threats to the camp's holiness that could drive God's presence away. The sotah ordeal in particular has attracted extensive discussion for its unique ritual procedure involving holy water and dust from the tabernacle floor.",
     "positions": [
       {
         "id": "critical-scholarship-noth-gray",
         "label": "Critical scholarship (Noth, Gray)",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Identifies Purity of the Camp as a composite of J, E, and P sources redacted together, with inconsistencies explained by source combination.",
         "argument": "The source-critical approach accounts for apparent repetitions and tensions but has been questioned for its circular methodology.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Correctly identifies the diverse origins of the three sections and the distinctive ritual features of the sotah ordeal. Ancient Near Eastern parallels for trial-by-ordeal (e.g., Laws of Hammurabi §132) illuminate the cultural background.",
+        "weaknesses": "Treating the sections as disconnected fragments underplays the redactor's thematic coherence. The assumption that diverse material must reflect diverse sources ignores the possibility of intentional topical arrangement.",
+        "key_verses": [
+          "Numbers 5:1-4",
+          "Numbers 5:6-8",
+          "Numbers 5:12-15",
+          "Numbers 5:23-28"
+        ]
       },
       {
         "id": "literary-and-canonical-unity-milgrom-ash",
         "label": "Literary and canonical unity (Milgrom, Ashley)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "calvin"
+        ],
         "proponents": "Reads Purity of the Camp as a literary unit with deliberate structure, arguing that apparent inconsistencies are rhetorical or theological rather than redactional.",
         "argument": "The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The thematic reading — all three laws protect the camp's sanctity — provides a coherent rationale for the chapter's arrangement. The sotah ordeal's theological interpretation as divine (not human) judgment aligns with Numbers' emphasis on God's active presence in the camp.",
+        "weaknesses": "The canonical reading can underplay the genuine strangeness of the sotah ritual and the ethical questions it raises about women's status. Harmonizing the three sections thematically does not resolve their distinct literary styles.",
+        "key_verses": [
+          "Numbers 5:3",
+          "Numbers 5:8",
+          "Numbers 5:16-17",
+          "Numbers 5:21-22"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The unity or disunity of Numbers 5 depends on whether one reads thematically or source-critically. The chapter's three sections share a concern for maintaining the camp's purity — physical, social, and sexual — which suggests intentional arrangement regardless of the sections' compositional origins. The sotah ordeal remains the most debated element, with scholars divided on whether it represents archaic trial-by-ordeal or a sophisticated theological mechanism for divine adjudication.",
+    "related_passages": [
+      "Leviticus 13-14",
+      "Leviticus 19:20-22",
+      "Deuteronomy 24:1-4",
+      "Exodus 32:20",
+      "Proverbs 6:34-35"
+    ],
+    "tags": [
+      "purity-laws",
+      "sotah-ordeal",
+      "camp-holiness",
+      "restitution",
+      "jealousy-offering"
+    ]
   },
   {
     "id": "interpretive-question-6-24-26",
@@ -9497,34 +9630,61 @@
     ],
     "passage": "Numbers 6",
     "question": "Interpretive Question: 6:24–26",
-    "context": "",
+    "context": "The Aaronic Blessing (Numbers 6:24-26) is one of the most recognized texts in the Hebrew Bible. Its antiquity was dramatically confirmed by the Ketef Hinnom silver amulets, discovered in 1979 and dated to the late seventh or early sixth century BCE, making them the oldest known biblical text. Milgrom notes this archaeological evidence challenges late-dating of P material. The blessing's three-line structure with ascending syllable counts (3-5-7 words) reflects careful poetic composition. Its theological content — divine protection, favor, and peace — encapsulates Israel's understanding of the priestly role as mediator of divine blessing.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
         "label": "Critical/Analytical scholarship",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Milgrom: The Ketef Hinnom amulets containing the Aaronic Blessing date to the late 7th century BC — the oldest surviving biblical text. Their use as p…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The Ketef Hinnom evidence provides a concrete archaeological anchor for the blessing's antiquity. Literary analysis reveals sophisticated poetic structure (ascending syllable count, chiastic divine-name placement) that suggests careful liturgical composition predating the final P redaction.",
+        "weaknesses": "The amulets prove the blessing existed by the seventh century but cannot definitively date it to the Mosaic period. The relationship between the amulet text and the canonical form shows minor variations that complicate claims of exact transmission.",
+        "key_verses": [
+          "Numbers 6:24",
+          "Numbers 6:25",
+          "Numbers 6:26",
+          "Numbers 6:27"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "macarthur"
+        ],
         "proponents": "Reads The Nazirite Vow and the Aaronic Blessing within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reads the blessing as an authentic Mosaic-era formula preserved faithfully through priestly transmission, consistent with the text's own claim of divine origin. The Ketef Hinnom discovery supports the conservative dating and undermines late-dating assumptions.",
+        "weaknesses": "The canonical reading assumes unbroken transmission from Moses to the Second Temple period, which is difficult to verify independently. The theological emphasis on the blessing's divine origin can bypass legitimate questions about its compositional history.",
+        "key_verses": [
+          "Numbers 6:22-23",
+          "Numbers 6:24-26",
+          "Numbers 6:27",
+          "Deuteronomy 10:8"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The Aaronic Blessing is a rare point of relative consensus: the Ketef Hinnom evidence confirms its antiquity, and its literary artistry is widely recognized. The debate shifts to what the blessing reveals about priestly theology — whether it reflects an early, independent liturgical tradition incorporated into P, or whether P preserves an authentic Mosaic-era formula. Both sides agree it represents a high point of Israelite liturgical expression.",
+    "related_passages": [
+      "Psalm 67:1",
+      "Psalm 4:6",
+      "Genesis 12:2-3",
+      "Deuteronomy 10:8",
+      "2 Corinthians 13:14"
+    ],
+    "tags": [
+      "aaronic-blessing",
+      "ketef-hinnom",
+      "priestly-benediction",
+      "liturgy",
+      "divine-presence"
+    ]
   },
   {
     "id": "interpretive-question-7-89",
@@ -9536,34 +9696,61 @@
     ],
     "passage": "Numbers 7",
     "question": "Interpretive Question: 7:89",
-    "context": "",
+    "context": "Numbers 7:89 stands as a puzzling single verse appended to the lengthy tribal offerings chapter. After twelve nearly identical offering descriptions, the text suddenly notes that Moses heard God's voice speaking from between the cherubim above the ark's cover. Milgrom observes that the verb form (wayyišmaʿ, 'and he heard') with its unusual reflexive nuance suggests Moses heard the voice 'speaking to itself' — a divine self-communication that Moses was permitted to overhear. This verse connects the completed tabernacle dedication to divine communication, linking offering and oracle.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
         "label": "Critical/Analytical scholarship",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Milgrom: The verb \"heard\" (wayyišmaʿ) with no stated object immediately — \"he heard the voice\" — creates a moment of rhetorical suspense before the so…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The linguistic analysis of wayyišmaʿ as reflexive is philologically grounded and reveals a distinctive theology of divine speech. Identifying 7:89 as a redactional bridge between the offering catalogue and the subsequent Levitical instructions explains its unusual placement.",
+        "weaknesses": "The reflexive reading of the verb is disputed; many grammarians treat it as a standard passive or denominative. Over-reading a single verse's grammar risks constructing theology from a linguistic ambiguity.",
+        "key_verses": [
+          "Numbers 7:89",
+          "Exodus 25:22",
+          "Leviticus 1:1",
+          "Numbers 12:8"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "calvin"
+        ],
         "proponents": "Reads The Offerings of the Leaders within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reading 7:89 as the climactic conclusion to the offering chapter provides a satisfying theological arc: the people's worship is answered by God's speech. This connects the tabernacle's dedication to its primary function as the site of divine revelation.",
+        "weaknesses": "The canonical reading may underplay the awkwardness of a single verse following a repetitive 89-verse offering catalogue. The shift in topic is abrupt enough to suggest editorial activity rather than original composition.",
+        "key_verses": [
+          "Numbers 7:89",
+          "Exodus 25:22",
+          "Exodus 33:11",
+          "Numbers 1:1"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Numbers 7:89 functions as a theological hinge: the completion of the tribal offerings enables divine communication. Whether one reads the unusual grammar as a reflexive ('speaking to itself') or a simple passive ('being spoken'), the verse establishes that the tabernacle is now fully operational as a place of divine-human encounter. Scholars agree this verse deliberately connects the preceding offering catalogue to the ongoing Sinai revelation, though they differ on whether it reflects an original composition or a redactional suture.",
+    "related_passages": [
+      "Exodus 25:22",
+      "Exodus 33:9-11",
+      "Leviticus 1:1",
+      "Numbers 12:6-8",
+      "1 Samuel 3:3-4"
+    ],
+    "tags": [
+      "divine-communication",
+      "tabernacle",
+      "cherubim",
+      "offerings",
+      "mosaic-revelation"
+    ]
   },
   {
     "id": "historical-and-literary-integrity-of-the-lampstand-the-levit",
@@ -9575,34 +9762,61 @@
     ],
     "passage": "Numbers 8",
     "question": "Historical and Literary Integrity of The Lampstand; the Levites Consecrated and Retired",
-    "context": "",
+    "context": "Numbers 8 combines two distinct subjects: the lampstand arrangement (8:1-4) and the Levitical consecration ceremony (8:5-26), including the retirement age of fifty. Source critics see these as separate P fragments joined by a redactor. The Levitical consecration ceremony — involving shaving, sprinkling, and wave-offering of the Levites themselves — is unique in the Pentateuch and raises questions about the relationship between priestly and Levitical ordination. The retirement provision (8:24-26) appears to conflict with Numbers 4:3, which sets the service age at thirty rather than twenty-five.",
     "positions": [
       {
         "id": "critical-scholarship-noth-gray",
         "label": "Critical scholarship (Noth, Gray)",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Identifies The Lampstand; the Levites Consecrated and Retired as a composite of J, E, and P sources redacted together, with inconsistencies explained by source combination.",
         "argument": "The source-critical approach accounts for apparent repetitions and tensions but has been questioned for its circular methodology.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Correctly identifies the age discrepancy between Numbers 4:3 (age 30) and 8:24 (age 25) as evidence of different source layers. The consecration ceremony's unique features distinguish it from Aaronide ordination in Leviticus 8, supporting distinct institutional traditions.",
+        "weaknesses": "The age discrepancy may reflect an apprenticeship period (25-30 as training, 30-50 as full service) rather than contradictory sources. Treating every apparent tension as evidence of composite authorship can overlook pragmatic explanations.",
+        "key_verses": [
+          "Numbers 8:1-4",
+          "Numbers 8:10-11",
+          "Numbers 8:24-26",
+          "Numbers 4:3"
+        ]
       },
       {
         "id": "literary-and-canonical-unity-milgrom-ash",
         "label": "Literary and canonical unity (Milgrom, Ashley)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "macarthur"
+        ],
         "proponents": "Reads The Lampstand; the Levites Consecrated and Retired as a literary unit with deliberate structure, arguing that apparent inconsistencies are rhetorical or theological rather than redactional.",
         "argument": "The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The apprenticeship explanation (five years of training before full service) harmonizes the age discrepancy plausibly. Reading the lampstand and consecration together theologically — light and service in God's presence — provides a coherent chapter-level reading.",
+        "weaknesses": "The apprenticeship theory is not stated in the text and may be a harmonizing inference. The combination of lampstand regulations with Levitical consecration does create an awkward literary seam.",
+        "key_verses": [
+          "Numbers 8:5-7",
+          "Numbers 8:14-16",
+          "Numbers 8:24-26",
+          "1 Chronicles 23:24"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Numbers 8 presents both literary and historical challenges. The age discrepancy (25 vs. 30) and the combination of lampstand and consecration material suggest editorial activity, but the chapter's theological coherence — preparing the Levites to serve in a properly lit, consecrated sanctuary — argues for intentional arrangement. The retirement provision is distinctive in ancient Near Eastern religion and reflects a humane concern for aging servants that both traditions recognize.",
+    "related_passages": [
+      "Exodus 25:31-40",
+      "Numbers 4:3",
+      "Numbers 3:5-13",
+      "Leviticus 8:1-36",
+      "1 Chronicles 23:24-27"
+    ],
+    "tags": [
+      "lampstand",
+      "levitical-consecration",
+      "retirement-age",
+      "wave-offering",
+      "priestly-source"
+    ]
   },
   {
     "id": "historical-and-literary-integrity-of-the-second-passover-and",
@@ -9614,34 +9828,61 @@
     ],
     "passage": "Numbers 9",
     "question": "Historical and Literary Integrity of The Second Passover and the Guiding Cloud",
-    "context": "",
+    "context": "Numbers 9 contains two sections: the provision for a second-month Passover for those ritually impure at the appointed time (9:1-14) and the cloud-and-fire guidance system over the tabernacle (9:15-23). The second Passover is remarkable as case law generated by a specific inquiry brought to Moses, who consults God for a ruling — a pattern that reveals how Israelite law developed through precedent. The cloud guidance section's repetitive style (the cloud lifted... they set out; the cloud settled... they encamped) has been attributed to liturgical recitation or P's characteristic style.",
     "positions": [
       {
         "id": "critical-scholarship-noth-gray",
         "label": "Critical scholarship (Noth, Gray)",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Identifies The Second Passover and the Guiding Cloud as a composite of J, E, and P sources redacted together, with inconsistencies explained by source combination.",
         "argument": "The source-critical approach accounts for apparent repetitions and tensions but has been questioned for its circular methodology.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Identifies the case-law format of the second Passover as a distinctive legal genre that illuminates Israelite jurisprudence. The cloud section's repetitive structure parallels other P liturgical texts and may reflect actual recitation practice.",
+        "weaknesses": "Separating the two sections as unrelated P fragments overlooks their shared theme of divine responsiveness — God provides both legal flexibility and visible guidance. The late-dating of this material is complicated by the Passover's clear connection to exodus traditions.",
+        "key_verses": [
+          "Numbers 9:6-8",
+          "Numbers 9:10-12",
+          "Numbers 9:15-17",
+          "Numbers 9:22-23"
+        ]
       },
       {
         "id": "literary-and-canonical-unity-milgrom-ash",
         "label": "Literary and canonical unity (Milgrom, Ashley)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "calvin"
+        ],
         "proponents": "Reads The Second Passover and the Guiding Cloud as a literary unit with deliberate structure, arguing that apparent inconsistencies are rhetorical or theological rather than redactional.",
         "argument": "The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reading both sections as expressions of God's attentive guidance provides strong canonical coherence. The second Passover demonstrates God's pastoral concern for those who want to worship but face legitimate obstacles — a principle with enduring theological significance.",
+        "weaknesses": "The canonical reading can idealize the repetitive cloud section, which may reflect redactional expansion rather than original composition. The relationship between this Passover account and Exodus 12 involves genuine chronological tension.",
+        "key_verses": [
+          "Numbers 9:1-5",
+          "Numbers 9:10-11",
+          "Numbers 9:15-16",
+          "Numbers 9:23"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Numbers 9 illustrates two modes of divine guidance: through legal provision (the second Passover) and through visible presence (the cloud). Critical scholars see these as separate traditions combined by a P redactor, while evangelical scholars read them as complementary aspects of God's comprehensive guidance. The second Passover's case-law format is widely recognized as a window into how Israelite legal reasoning operated, regardless of one's dating of the material.",
+    "related_passages": [
+      "Exodus 12:1-14",
+      "Exodus 13:21-22",
+      "Exodus 40:34-38",
+      "2 Chronicles 30:1-20",
+      "Nehemiah 9:12"
+    ],
+    "tags": [
+      "second-passover",
+      "cloud-guidance",
+      "case-law",
+      "divine-presence",
+      "wilderness-march"
+    ]
   },
   {
     "id": "historical-and-literary-integrity-of-the-silver-trumpets-and",
@@ -9653,34 +9894,61 @@
     ],
     "passage": "Numbers 10",
     "question": "Historical and Literary Integrity of The Silver Trumpets and the Departure from Sinai",
-    "context": "",
+    "context": "Numbers 10 marks a major structural transition: the silver trumpet instructions (10:1-10) conclude the Sinai legislation, and the departure narrative (10:11-36) begins the wilderness march. The trumpet regulations — two silver trumpets for assembly, alarm, and festival — have parallels in ancient Near Eastern military and cultic practice. The departure sequence follows the camp arrangement of chapter 2 precisely, which literary scholars note as deliberate compositional design. Moses' invitation to Hobab (10:29-32) introduces a non-Israelite figure as wilderness guide, raising questions about the relationship between divine and human guidance.",
     "positions": [
       {
         "id": "critical-scholarship-noth-gray",
         "label": "Critical scholarship (Noth, Gray)",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Identifies The Silver Trumpets and the Departure from Sinai as a composite of J, E, and P sources redacted together, with inconsistencies explained by source combination.",
         "argument": "The source-critical approach accounts for apparent repetitions and tensions but has been questioned for its circular methodology.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Correctly identifies the structural significance of the chapter as a compositional hinge. The ancient poetry in 10:35-36 (the ark-war cry) is widely accepted as archaic on linguistic grounds, which complicates simplistic late-dating of the surrounding material.",
+        "weaknesses": "Attributing the Hobab episode to J and the trumpet regulations to P creates a fragmented reading that obscures the chapter's deliberate march-preparation sequence. The source labels explain less than the literary structure.",
+        "key_verses": [
+          "Numbers 10:1-2",
+          "Numbers 10:11-12",
+          "Numbers 10:29-32",
+          "Numbers 10:35-36"
+        ]
       },
       {
         "id": "literary-and-canonical-unity-milgrom-ash",
         "label": "Literary and canonical unity (Milgrom, Ashley)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "macarthur"
+        ],
         "proponents": "Reads The Silver Trumpets and the Departure from Sinai as a literary unit with deliberate structure, arguing that apparent inconsistencies are rhetorical or theological rather than redactional.",
         "argument": "The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reading the chapter as unified march preparation — from signal instruments to departure order to human guide to divine accompaniment — provides a compelling narrative arc. The Hobab episode illustrates how faith and practical wisdom coexist in biblical theology.",
+        "weaknesses": "The canonical reading may underplay the genuine tension between Hobab as human guide and the cloud as divine guide. The trumpet regulations' relationship to the surrounding narrative feels procedurally inserted.",
+        "key_verses": [
+          "Numbers 10:1-2",
+          "Numbers 10:13-14",
+          "Numbers 10:29-32",
+          "Numbers 10:35-36"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Numbers 10 is recognized across traditions as a pivotal structural moment in the book. The chapter's combination of cultic regulation, military organization, and narrative departure signals Israel's transition from receiving law to living it out. The Hobab episode's tension with the cloud guidance of chapter 9 is either a source-critical seam or a theological statement about the compatibility of divine sovereignty and human agency. The ancient song fragments in 10:35-36 are widely regarded as among the oldest poetry in the Bible.",
+    "related_passages": [
+      "Numbers 2:1-34",
+      "Exodus 18:27",
+      "Judges 1:16",
+      "Judges 4:11",
+      "Psalm 68:1"
+    ],
+    "tags": [
+      "silver-trumpets",
+      "wilderness-departure",
+      "hobab",
+      "ark-of-covenant",
+      "ancient-poetry"
+    ]
   },
   {
     "id": "interpretive-question-11-16-17",
@@ -9692,34 +9960,62 @@
     ],
     "passage": "Numbers 11",
     "question": "Interpretive Question: 11:16–17",
-    "context": "",
+    "context": "In Numbers 11:16-17, God instructs Moses to gather seventy elders to share the burden of leadership, promising to take some of the Spirit resting on Moses and place it on them. This passage parallels Exodus 18's Jethro-inspired delegation but introduces a pneumatic dimension: leadership is authenticated by the Spirit's visible activity. Milgrom notes the parallel with the Jethro tradition but emphasizes the different mechanism — prophetic Spirit rather than administrative competence. The subsequent Eldad and Medad episode (11:26-29) further complicates the question of who can receive the Spirit and whether prophetic authority can operate outside institutional boundaries.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
         "label": "Critical/Analytical scholarship",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom",
+          "ashley"
+        ],
         "proponents": "Milgrom: The seventy elders parallel the Jethro tradition of Exod 18 but with a different mechanism: not administrative efficiency but spiritual endow…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Distinguishing the prophetic-Spirit mechanism from the administrative-delegation model of Exodus 18 illuminates genuine theological development in Israel's understanding of leadership. The Spirit-distribution concept has clear parallels in prophetic-call narratives.",
+        "weaknesses": "Treating Exodus 18 and Numbers 11 as entirely separate traditions ignores their complementary relationship — administrative wisdom and prophetic endowment are both necessary for leadership. The source-critical separation can fragment a coherent theology of Spirit-empowered governance.",
+        "key_verses": [
+          "Numbers 11:16-17",
+          "Numbers 11:25",
+          "Numbers 11:26-29",
+          "Exodus 18:21-22"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "calvin",
+          "macarthur"
+        ],
         "proponents": "Reads Fire, Quail, and the Seventy Elders within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reading the seventy elders as a single narrative of God equipping leaders for the wilderness march provides theological coherence. Moses' generous response to Eldad and Medad (11:29) reveals a vision of shared Spirit that anticipates Pentecost and challenges hierarchical models of authority.",
+        "weaknesses": "The canonical reading can smooth over the tension between Moses' exhaustion (11:14-15) and the triumphalist theology of Spirit-empowerment. The text's frank depiction of leadership burnout deserves attention alongside the theological resolution.",
+        "key_verses": [
+          "Numbers 11:16-17",
+          "Numbers 11:25",
+          "Numbers 11:29",
+          "Joel 2:28"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The seventy elders episode raises enduring questions about the nature of divinely authorized leadership. Critical scholars see two distinct traditions (Jethro/administrative and Sinai/prophetic) combined here, while evangelical scholars read a unified narrative of Spirit-empowered governance. Moses' response to the Eldad-Medad episode — 'I wish that all the LORD's people were prophets' (11:29) — is recognized across traditions as a remarkably generous theology of the Spirit that anticipates Joel 2:28-29.",
+    "related_passages": [
+      "Exodus 18:13-26",
+      "Numbers 11:26-29",
+      "Joel 2:28-29",
+      "Acts 2:17-18",
+      "1 Samuel 10:5-6"
+    ],
+    "tags": [
+      "seventy-elders",
+      "holy-spirit",
+      "prophetic-authority",
+      "shared-leadership",
+      "eldad-medad"
+    ]
   },
   {
     "id": "interpretive-question-12-1-16",
@@ -9731,34 +10027,62 @@
     ],
     "passage": "Numbers 12",
     "question": "Interpretive Question: 12:1–16",
-    "context": "",
+    "context": "Numbers 12 recounts Miriam and Aaron's challenge to Moses' unique authority, ostensibly triggered by his Cushite wife but actually focused on prophetic prerogative: 'Has the LORD spoken only through Moses? Hasn't he also spoken through us?' (12:2). God's response sharply distinguishes Moses' mode of revelation (face-to-face, not in riddles) from all other prophets (visions and dreams). Miriam alone is struck with a skin disease, which Ashley reads as suggesting she was the instigator. The identity of the Cushite wife — whether Ethiopian or Midianite — remains debated.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
         "label": "Critical/Analytical scholarship",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "milgrom"
+        ],
         "proponents": "Ashley: The Miriam-Aaron episode reveals that the challenges to covenant authority do not only come from outside the community (the rabble, the Egypti…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Identifies the text's concern with prophetic hierarchy as a theological statement about the nature of revelation. The Cushite wife question opens productive discussion about Israelite attitudes toward intermarriage and ethnic identity in the wilderness period.",
+        "weaknesses": "The source-critical tendency to separate the Cushite-wife complaint from the prophetic-authority challenge may miss the narrative's point: both issues concern boundaries of acceptable behavior for covenant leaders.",
+        "key_verses": [
+          "Numbers 12:1",
+          "Numbers 12:2",
+          "Numbers 12:6-8",
+          "Numbers 12:10"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "calvin",
+          "macarthur"
+        ],
         "proponents": "Reads Miriam and Aaron within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reading Moses' unique revelatory status as a canonical foundation for understanding all subsequent prophecy provides strong theological architecture. The passage's christological potential (cf. Hebrews 3:1-6) enriches its significance for the whole canon.",
+        "weaknesses": "The canonical reading must grapple honestly with the asymmetric punishment of Miriam. Traditional explanations (she was the instigator, she was healed after seven days) may not fully satisfy concerns about gender dynamics in the narrative.",
+        "key_verses": [
+          "Numbers 12:2",
+          "Numbers 12:6-8",
+          "Numbers 12:10-15",
+          "Deuteronomy 34:10"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Numbers 12 establishes a hierarchy of revelation that shapes all subsequent biblical prophecy: Moses' direct communication with God is unique and unrepeatable. Both critical and evangelical scholars recognize this as a foundational text for prophetic theology. The asymmetric punishment (Miriam alone) raises gender questions that modern readers find troubling, though traditional readings see it as reflecting her role as primary instigator rather than gender discrimination. The Cushite wife's identity remains genuinely uncertain.",
+    "related_passages": [
+      "Exodus 33:11",
+      "Deuteronomy 34:10",
+      "Numbers 11:29",
+      "Hebrews 3:1-6",
+      "Micah 6:4"
+    ],
+    "tags": [
+      "miriam",
+      "prophetic-authority",
+      "cushite-wife",
+      "divine-revelation",
+      "mosaic-uniqueness"
+    ]
   },
   {
     "id": "historical-and-literary-integrity-of-the-spies",
@@ -9770,34 +10094,61 @@
     ],
     "passage": "Numbers 13",
     "question": "Historical and Literary Integrity of The Spies",
-    "context": "",
+    "context": "Numbers 13 narrates the reconnaissance mission to Canaan, a watershed moment that leads to the wilderness wandering. Source critics identify two distinct spy traditions: a J account featuring Caleb scouting the Hebron region and a P account sending twelve tribal leaders to survey all of Canaan. The enormous grape cluster from Eshcol has been read as both historical memory and literary hyperbole symbolizing the land's abundance. The spies' report of Nephilim (13:33) introduces a mythological element that raises questions about the narrative's genre.",
     "positions": [
       {
         "id": "critical-scholarship-noth-gray",
         "label": "Critical scholarship (Noth, Gray)",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Identifies The Spies as a composite of J, E, and P sources redacted together, with inconsistencies explained by source combination.",
         "argument": "The source-critical approach accounts for apparent repetitions and tensions but has been questioned for its circular methodology.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Identifying J and P strands explains the tension between Caleb alone (13:30) and Caleb plus Joshua as faithful spies. The source analysis illuminates how the tradition grew from a regional Caleb scout story into a national twelve-tribe expedition.",
+        "weaknesses": "The two-source theory creates problems: the narrative reads coherently as a single story of escalating fear. Deuteronomy 1's retelling, which could serve as a control text, does not neatly align with either proposed source.",
+        "key_verses": [
+          "Numbers 13:1-2",
+          "Numbers 13:27-28",
+          "Numbers 13:30",
+          "Numbers 13:33"
+        ]
       },
       {
         "id": "literary-and-canonical-unity-milgrom-ash",
         "label": "Literary and canonical unity (Milgrom, Ashley)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "macarthur"
+        ],
         "proponents": "Reads The Spies as a literary unit with deliberate structure, arguing that apparent inconsistencies are rhetorical or theological rather than redactional.",
         "argument": "The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reading the chapter as a unified narrative emphasizes the dramatic contrast between faith and fear, which is the text's clear theological purpose. The literary structure — send, see, report, divide — is coherent and compelling as a single composition.",
+        "weaknesses": "The canonical reading must account for the tension between 13:30 (Caleb alone speaks up) and 14:6 (Joshua joins him). The narrative's Nephilim reference and giant grape cluster suggest literary shaping that the historical reading should acknowledge.",
+        "key_verses": [
+          "Numbers 13:2",
+          "Numbers 13:27-28",
+          "Numbers 13:30-33",
+          "Joshua 14:7-8"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The spy narrative is a turning point in Numbers regardless of how one reads its compositional history. Both traditions agree the chapter portrays a crisis of faith: ten spies see the land's challenges as insurmountable, while Caleb (and Joshua, per the P tradition) trusts God's promise. The source-critical division into J and P accounts explains some narrative tensions but risks fragmenting a powerful literary unity. The theological lesson — that the land's dangers do not override God's faithfulness — is recognized across traditions.",
+    "related_passages": [
+      "Deuteronomy 1:19-33",
+      "Joshua 14:6-12",
+      "Hebrews 3:16-19",
+      "Psalm 95:7-11",
+      "Numbers 14:1-10"
+    ],
+    "tags": [
+      "spy-narrative",
+      "caleb",
+      "promised-land",
+      "faith-crisis",
+      "wilderness-generation"
+    ]
   },
   {
     "id": "historical-and-literary-integrity-of-the-rebellion-at-kadesh",
@@ -9809,34 +10160,61 @@
     ],
     "passage": "Numbers 14",
     "question": "Historical and Literary Integrity of The Rebellion at Kadesh",
-    "context": "",
+    "context": "Numbers 14 records Israel's collective refusal to enter Canaan after the spies' report, God's threatened annihilation, Moses' intercession, and the resulting sentence of forty years' wandering. Source critics see J and P interwoven: J emphasizes the people's weeping and Moses' intercession (quoting Exodus 34:6-7), while P focuses on the glory of God appearing at the tent of meeting. The chapter contains one of the most theologically dense divine speeches in the Pentateuch, where God's justice and mercy are held in tension. The failed attempt to enter Canaan after the sentence (14:39-45) underscores the irreversibility of divine judgment.",
     "positions": [
       {
         "id": "critical-scholarship-noth-gray",
         "label": "Critical scholarship (Noth, Gray)",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Identifies The Rebellion at Kadesh as a composite of J, E, and P sources redacted together, with inconsistencies explained by source combination.",
         "argument": "The source-critical approach accounts for apparent repetitions and tensions but has been questioned for its circular methodology.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Source analysis illuminates how Moses' intercession quote from Exodus 34:6-7 functions as an intertextual anchor connecting the golden calf rebellion to the Kadesh rebellion. Identifying J and P strands explains the dual divine-response pattern (personal address in J, glory-theophany in P).",
+        "weaknesses": "The source division fragments one of the Bible's most dramatically unified narratives. The intercessory prayer reads as a single, coherent rhetorical strategy that loses force when dissected into sources.",
+        "key_verses": [
+          "Numbers 14:2-4",
+          "Numbers 14:11-12",
+          "Numbers 14:17-19",
+          "Numbers 14:29-35"
+        ]
       },
       {
         "id": "literary-and-canonical-unity-milgrom-ash",
         "label": "Literary and canonical unity (Milgrom, Ashley)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "macarthur"
+        ],
         "proponents": "Reads The Rebellion at Kadesh as a literary unit with deliberate structure, arguing that apparent inconsistencies are rhetorical or theological rather than redactional.",
         "argument": "The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reading the chapter as unified drama highlights the theological architecture: rebellion, divine wrath, intercession, modified judgment, and failed self-rescue. The canonical approach connects this passage to the NT's use of the wilderness generation as a paradigm of unbelief (Hebrews 3-4).",
+        "weaknesses": "The canonical reading must account for the severity of the judgment — an entire generation condemned to die in the wilderness — and resist the temptation to soften it with premature theological resolution.",
+        "key_verses": [
+          "Numbers 14:11",
+          "Numbers 14:17-19",
+          "Numbers 14:29-30",
+          "Numbers 14:40-45"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Numbers 14 is the theological center of the book: Israel's defining failure and God's defining response. Both critical and confessional scholars recognize Moses' intercession as a masterful appeal to God's character and covenant reputation. The chapter's treatment of divine justice — judgment falls on the guilty generation while preserving the nation and its future — establishes a pattern that reverberates through prophetic literature. The source-critical division clarifies some tensions but risks obscuring the chapter's dramatic coherence.",
+    "related_passages": [
+      "Exodus 32:7-14",
+      "Exodus 34:6-7",
+      "Deuteronomy 1:34-40",
+      "Psalm 95:10-11",
+      "Hebrews 3:7-19"
+    ],
+    "tags": [
+      "kadesh-rebellion",
+      "divine-judgment",
+      "mosaic-intercession",
+      "wilderness-sentence",
+      "faith-failure"
+    ]
   },
   {
     "id": "historical-and-literary-integrity-of-supplementary-offering-",
@@ -9848,34 +10226,61 @@
     ],
     "passage": "Numbers 15",
     "question": "Historical and Literary Integrity of Supplementary Offering Laws",
-    "context": "",
+    "context": "Numbers 15 presents supplementary offering regulations, the Sabbath-breaker execution, and the tassel commandment. Its placement after the Kadesh catastrophe of chapter 14 has puzzled commentators. Milgrom argues the chapter's opening phrase 'When you enter the land' (15:2) is a deliberate word of hope: despite the wilderness sentence, God still intends to bring Israel into Canaan. The chapter's combination of offering laws, a narrative of capital punishment, and the tassel commandment appears disjointed but may be unified by the theme of ongoing covenant obligation even under judgment.",
     "positions": [
       {
         "id": "critical-scholarship-noth-gray",
         "label": "Critical scholarship (Noth, Gray)",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Identifies Supplementary Offering Laws as a composite of J, E, and P sources redacted together, with inconsistencies explained by source combination.",
         "argument": "The source-critical approach accounts for apparent repetitions and tensions but has been questioned for its circular methodology.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The source-critical identification of independent legal units explains the chapter's apparent lack of narrative coherence. The observation that 'when you enter the land' presupposes a settled agricultural context supports post-settlement composition of the offering regulations.",
+        "weaknesses": "The source-critical approach underplays the powerful rhetorical effect of hope language immediately after the Kadesh judgment. Treating the three sections as unrelated fragments misses the unifying theme of covenant obligation persisting through judgment.",
+        "key_verses": [
+          "Numbers 15:1-2",
+          "Numbers 15:22-26",
+          "Numbers 15:32-36",
+          "Numbers 15:38-40"
+        ]
       },
       {
         "id": "literary-and-canonical-unity-milgrom-ash",
         "label": "Literary and canonical unity (Milgrom, Ashley)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "calvin"
+        ],
         "proponents": "Reads Supplementary Offering Laws as a literary unit with deliberate structure, arguing that apparent inconsistencies are rhetorical or theological rather than redactional.",
         "argument": "The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The canonical placement reading — offering laws as hope after judgment — is theologically compelling and literarily sophisticated. The tassel commandment's function as a visible reminder of covenant identity connects daily life to Sinai revelation.",
+        "weaknesses": "The Sabbath-breaker execution (stoning for gathering wood) presents genuine ethical difficulty that the canonical reading must address honestly rather than absorb into a general theology of holiness.",
+        "key_verses": [
+          "Numbers 15:2",
+          "Numbers 15:27-29",
+          "Numbers 15:35-36",
+          "Numbers 15:38-41"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Numbers 15's placement is its most debated feature. Read after the Kadesh judgment, the offering laws' forward-looking 'when you enter the land' language functions as divine reassurance. Both traditions recognize the tassel commandment (15:37-41) as a powerful daily reminder of covenant identity. The Sabbath-breaker episode (15:32-36) raises difficult ethical questions but illustrates the seriousness of covenant law in the wilderness period. The chapter's apparent disjointedness may reflect intentional pastoral theology rather than careless redaction.",
+    "related_passages": [
+      "Numbers 14:29-35",
+      "Leviticus 4:1-35",
+      "Exodus 31:14-15",
+      "Deuteronomy 22:12",
+      "Matthew 23:5"
+    ],
+    "tags": [
+      "offering-laws",
+      "sabbath-violation",
+      "tassels-tzitzit",
+      "covenant-hope",
+      "wilderness-legislation"
+    ]
   },
   {
     "id": "interpretive-question-16-20-35",
@@ -9887,34 +10292,61 @@
     ],
     "passage": "Numbers 16",
     "question": "Interpretive Question: 16:20–35",
-    "context": "",
+    "context": "Numbers 16:20-35 describes the dual judgment on Korah's rebellion: the earth swallows Dathan and Abiram's households while fire consumes the 250 incense-offerers. Source critics have long identified two originally separate rebellion stories — a J narrative about Dathan and Abiram challenging Moses' civil authority and a P narrative about Korah's Levites challenging Aaronide priestly prerogatives. Milgrom notes that the fire-and-earthquake dual judgment corresponds to these two distinct challenges. The severity of the punishment — including families — raises theological questions about collective judgment.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
         "label": "Critical/Analytical scholarship",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Milgrom: The dual judgment — fire for the 250 incense-burners, earthquake for Dathan and Abiram — distinguishes two aspects of the rebellion. The ince…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The two-rebellion theory explains the narrative's most puzzling features: the abrupt shifts between characters, the dual punishment modes, and the inconsistent numbering of rebels. Deuteronomy 11:6 mentions only Dathan and Abiram (not Korah), supporting the independence of the traditions.",
+        "weaknesses": "Numbers 26:9-11 and Psalm 106:16-18 treat the rebellion as a unified event, complicating the separation. The final text's dramatic coherence — escalating challenge meets escalating judgment — argues for intentional literary design.",
+        "key_verses": [
+          "Numbers 16:20-22",
+          "Numbers 16:31-33",
+          "Numbers 16:35",
+          "Deuteronomy 11:6"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "macarthur"
+        ],
         "proponents": "Reads Korah's Rebellion within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reading the rebellion as a unified challenge to God's appointed order provides a clear theological message: both civil and religious authority have divine sanction. The dramatic structure — Moses proposes a test, God renders judgment — is narratively compelling as a single story.",
+        "weaknesses": "The canonical reading must grapple with the severity of collective punishment and the apparent merging of distinct challenges. Jude 1:11's reference to Korah shows the tradition developed further in ways that assume the unified reading.",
+        "key_verses": [
+          "Numbers 16:28-30",
+          "Numbers 16:31-35",
+          "Numbers 26:9-11",
+          "Jude 1:11"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Korah's rebellion is the most complex compositional question in Numbers. The two-rebellion theory (Dathan-Abiram/civil vs. Korah/priestly) has strong source-critical support but the canonical text presents them as a unified challenge to divinely appointed authority. Both traditions agree the episode establishes a non-negotiable principle: priestly authority comes from God, not human ambition. The inclusion of families in the judgment reflects ancient corporate solidarity theology that modern readers find deeply challenging.",
+    "related_passages": [
+      "Numbers 26:9-11",
+      "Deuteronomy 11:6",
+      "Psalm 106:16-18",
+      "Jude 1:11",
+      "2 Timothy 2:19"
+    ],
+    "tags": [
+      "korahs-rebellion",
+      "priestly-authority",
+      "divine-judgment",
+      "corporate-solidarity",
+      "source-criticism"
+    ]
   },
   {
     "id": "interpretive-question-16-46-50",
@@ -9926,34 +10358,62 @@
     ],
     "passage": "Numbers 16",
     "question": "Interpretive Question: 16:46–50",
-    "context": "",
+    "context": "The day after Korah's dramatic destruction, the entire congregation accuses Moses and Aaron of killing the LORD's people (Numbers 16:41). A plague breaks out, and Aaron runs into the assembly with incense to make atonement, literally standing between the living and the dead (16:48). Ashley notes the bitter irony: the congregation's immediate reversion to accusation after witnessing divine judgment reveals the depth of Israel's rebellion pattern. The incense that was the instrument of the 250 rebels' death now becomes the instrument of the people's salvation in Aaron's hands.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
         "label": "Critical/Analytical scholarship",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "milgrom"
+        ],
         "proponents": "Ashley: The community's instant reversion to accusation the day after the Korah judgment (\"You have killed the Lord's people\") reveals the depth of th…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Identifies the literary irony of incense functioning as both death (for the 250) and life (for the congregation). The critical approach highlights how this episode functions as a P apologetic for Aaronide priestly authority — Aaron's legitimacy is demonstrated by his intercessory courage, not merely by divine appointment.",
+        "weaknesses": "Reducing the episode to P's priestly apologetic underplays its genuine theological power. The narrative's emotional force — Aaron running into a plague — transcends source-critical categorization.",
+        "key_verses": [
+          "Numbers 16:41-42",
+          "Numbers 16:46-48",
+          "Numbers 16:49-50",
+          "Leviticus 10:1-2"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "calvin",
+          "macarthur"
+        ],
         "proponents": "Reads Korah's Rebellion within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The canonical reading highlights Aaron's Christological foreshadowing: the priest who stands between the living and the dead, making atonement at personal risk. This provides a powerful typological connection to Christ's intercessory work in Hebrews.",
+        "weaknesses": "The typological reading can overshadow the immediate narrative context: this is a story about communal stubbornness as much as priestly heroism. The congregation's instant reversion to accusation deserves theological attention alongside Aaron's faithfulness.",
+        "key_verses": [
+          "Numbers 16:46-48",
+          "Numbers 16:49-50",
+          "Hebrews 7:25",
+          "Romans 8:34"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Numbers 16:46-50 is widely regarded as one of the most powerful images in the Pentateuch: the high priest standing between life and death, using the very instrument of judgment (incense) as a means of salvation. Both critical and evangelical scholars recognize this as a defining statement about authentic priestly ministry. The episode vindicates Aaron's priesthood more powerfully than any administrative appointment could — he is the one willing to risk his life for the people who have just accused him.",
+    "related_passages": [
+      "Numbers 17:1-13",
+      "Leviticus 10:1-2",
+      "Exodus 30:1-10",
+      "Hebrews 7:25",
+      "Romans 8:34"
+    ],
+    "tags": [
+      "aarons-intercession",
+      "plague-atonement",
+      "incense",
+      "priestly-mediation",
+      "rebellion-aftermath"
+    ]
   },
   {
     "id": "interpretive-question-17-5",
@@ -9965,34 +10425,61 @@
     ],
     "passage": "Numbers 17",
     "question": "Interpretive Question: 17:5",
-    "context": "",
+    "context": "In Numbers 17, God settles the question of priestly authority definitively by having each tribe deposit a staff in the tent of meeting; Aaron's staff alone sprouts, buds, blossoms, and produces almonds overnight. Milgrom notes the significance of God's stated purpose: 'I will rid myself of this constant grumbling' (17:5). The miraculous botanic language — four stages of growth compressed into one night — emphasizes the supernatural character of Aaron's selection. The staff is then preserved before the ark as a perpetual witness (17:10), creating an ongoing memorial alongside the manna jar and the tablets.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
         "label": "Critical/Analytical scholarship",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Milgrom: \"The man I choose — his staff will sprout, and I will rid myself of this constant grumbling against you, the Israelites.\" The sign is not mer…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Identifies the literary progression from rebellion (16) to plague (16:41-50) to definitive sign (17) as a carefully constructed P narrative arc. The almond-tree language connects to Jeremiah 1:11-12 (šāqēd / šōqēd wordplay), suggesting a shared prophetic tradition of divine watchfulness.",
+        "weaknesses": "The P-source attribution, while textually supported, can reduce this powerful narrative to institutional apologetics. The miracle's theological significance extends beyond priestly politics to creation theology — God who gives life arbitrates death.",
+        "key_verses": [
+          "Numbers 17:1-5",
+          "Numbers 17:8",
+          "Numbers 17:10",
+          "Jeremiah 1:11-12"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "calvin"
+        ],
         "proponents": "Reads Aaron's Staff Buds within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The canonical reading emphasizes God's patience: after rebellion, plague, and intercession, God provides a gentle, creative sign rather than more judgment. The staff's preservation alongside the manna and tablets creates a three-object witness to God's provision, revelation, and chosen leadership.",
+        "weaknesses": "The canonical reading can idealize the resolution while underplaying the continuing grumbling that follows (chs. 20-21). The miracle settles the formal question of priestly authority but does not transform the people's hearts.",
+        "key_verses": [
+          "Numbers 17:5",
+          "Numbers 17:8",
+          "Numbers 17:10",
+          "Hebrews 9:4"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The budding staff resolves the authority crisis that has dominated Numbers 16-17. Both traditions recognize the miracle's literary function: after argument (ch. 16a), judgment (16b), plague and intercession (16:41-50), God provides a silent, objective sign that settles the matter permanently. The four-stage botanical miracle is deliberately excessive — God doesn't merely vindicate Aaron but does so with overwhelming creative power. The staff's preservation as a memorial creates a canonical parallel with other ark objects that define Israel's covenant identity.",
+    "related_passages": [
+      "Numbers 16:1-50",
+      "Exodus 16:33-34",
+      "Hebrews 9:4",
+      "Jeremiah 1:11-12",
+      "Isaiah 11:1"
+    ],
+    "tags": [
+      "aarons-staff",
+      "priestly-vindication",
+      "miracle",
+      "memorial-object",
+      "divine-selection"
+    ]
   },
   {
     "id": "historical-and-literary-integrity-of-priestly-and-levitical-",
@@ -10004,34 +10491,61 @@
     ],
     "passage": "Numbers 18",
     "question": "Historical and Literary Integrity of Priestly and Levitical Portions",
-    "context": "",
+    "context": "Numbers 18 establishes the economic foundation of the priesthood: priests receive portions of offerings, and Levites receive tithes in exchange for their landlessness. Source critics identify this as P legislation that codifies an institutional arrangement developed over centuries. Milgrom argues the chapter responds directly to the crisis of chapters 16-17 by defining priestly and Levitical responsibilities and compensation, thus reducing future jurisdictional conflict. The 'tithe of the tithe' provision (18:26) — Levites giving a tenth of their tithe to the priests — creates a hierarchical economic structure.",
     "positions": [
       {
         "id": "critical-scholarship-noth-gray",
         "label": "Critical scholarship (Noth, Gray)",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Identifies Priestly and Levitical Portions as a composite of J, E, and P sources redacted together, with inconsistencies explained by source combination.",
         "argument": "The source-critical approach accounts for apparent repetitions and tensions but has been questioned for its circular methodology.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Identifies the institutional development behind the tithe system and its differences from the Deuteronomic tithe (Deuteronomy 14:22-29). The tithe-of-the-tithe provision reveals a sophisticated hierarchical economy that may reflect post-settlement institutional practice.",
+        "weaknesses": "Assuming the system must be late because it is sophisticated underestimates the organizational capacity of the wilderness community. The connection to the Korah crisis (chs. 16-17) suggests the legislation responds to a specific narrative context, not just institutional evolution.",
+        "key_verses": [
+          "Numbers 18:8-10",
+          "Numbers 18:20-21",
+          "Numbers 18:26-28",
+          "Deuteronomy 18:1-2"
+        ]
       },
       {
         "id": "literary-and-canonical-unity-milgrom-ash",
         "label": "Literary and canonical unity (Milgrom, Ashley)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "macarthur"
+        ],
         "proponents": "Reads Priestly and Levitical Portions as a literary unit with deliberate structure, arguing that apparent inconsistencies are rhetorical or theological rather than redactional.",
         "argument": "The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reading the chapter as God's comprehensive provision for those who serve full-time in sacred ministry provides a coherent theological rationale. The principle 'the LORD is their inheritance' (18:20) establishes a model of trust-based ministry economics that the NT develops (1 Corinthians 9:13-14).",
+        "weaknesses": "The canonical reading can idealize the tithe system without acknowledging the tensions between Numbers 18 and Deuteronomy 14's different tithe provisions. Historical questions about when and how the system was implemented deserve honest engagement.",
+        "key_verses": [
+          "Numbers 18:20",
+          "Numbers 18:21",
+          "Numbers 18:26",
+          "1 Corinthians 9:13-14"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Numbers 18 provides the economic counterpart to the theological vindication of chapters 16-17. Both traditions recognize the chapter's practical wisdom: if the Levites have no land inheritance, their livelihood must be institutionally guaranteed. The tithe system's hierarchical structure (people → Levites → priests) mirrors the holiness-gradation theology that pervades Numbers. Whether this system reflects Mosaic-era practice or later institutional development remains debated, but its theological rationale — the Levites' 'inheritance is the LORD' (18:20) — is recognized as foundational.",
+    "related_passages": [
+      "Deuteronomy 18:1-8",
+      "Leviticus 27:30-33",
+      "Nehemiah 10:37-39",
+      "Malachi 3:8-10",
+      "Hebrews 7:4-10"
+    ],
+    "tags": [
+      "priestly-portions",
+      "tithe-system",
+      "levitical-inheritance",
+      "economic-structure",
+      "holiness-gradation"
+    ]
   },
   {
     "id": "historical-and-literary-integrity-of-the-red-heifer",
@@ -10043,34 +10557,61 @@
     ],
     "passage": "Numbers 19",
     "question": "Historical and Literary Integrity of The Red Heifer",
-    "context": "",
+    "context": "Numbers 19 describes the red heifer purification ritual for corpse contamination — one of the most enigmatic rituals in the Hebrew Bible. The paradox is foundational: the heifer's ashes purify the impure but render the preparer impure. Milgrom identifies this as a 'ritual detergent' that absorbs impurity, explaining why contact with it contaminates the handler. The ritual has no clear ancient Near Eastern parallel, making it difficult to contextualize. Rabbinic tradition considers it the paradigmatic ḥuqqah — a statute beyond rational explanation — and even Solomon was said to have been unable to fathom it.",
     "positions": [
       {
         "id": "critical-scholarship-noth-gray",
         "label": "Critical scholarship (Noth, Gray)",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Identifies The Red Heifer as a composite of J, E, and P sources redacted together, with inconsistencies explained by source combination.",
         "argument": "The source-critical approach accounts for apparent repetitions and tensions but has been questioned for its circular methodology.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Milgrom's 'ritual detergent' theory provides a rational framework for the paradox: the ashes absorb impurity from the contaminated person, which is why handling them contaminates the preparer. The comparative absence of ANE parallels supports the ritual's distinctiveness within Israelite religion.",
+        "weaknesses": "The detergent model, while illuminating, does not fully explain why water mixed with ashes purifies while the preparation process contaminates. The theory imposes a quasi-scientific logic on what may be an irreducibly theological category.",
+        "key_verses": [
+          "Numbers 19:2-6",
+          "Numbers 19:9",
+          "Numbers 19:11-13",
+          "Numbers 19:17-19"
+        ]
       },
       {
         "id": "literary-and-canonical-unity-milgrom-ash",
         "label": "Literary and canonical unity (Milgrom, Ashley)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "calvin"
+        ],
         "proponents": "Reads The Red Heifer as a literary unit with deliberate structure, arguing that apparent inconsistencies are rhetorical or theological rather than redactional.",
         "argument": "The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Accepting the ritual's irreducible mystery (the ḥuqqah tradition) respects the text's own theological categories. The christological typology (Hebrews 9:13-14) provides a satisfying canonical resolution: Christ's sacrifice purifies the conscience as the heifer's ashes purify the body.",
+        "weaknesses": "Declaring the ritual 'beyond reason' can function as a conversation-stopper that avoids legitimate anthropological and theological analysis. The christological reading, while canonically valuable, should not replace engagement with the ritual's own Pentateuchal context.",
+        "key_verses": [
+          "Numbers 19:2-3",
+          "Numbers 19:9",
+          "Numbers 19:11-12",
+          "Hebrews 9:13-14"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The red heifer ritual is the most mysterious purification rite in the Pentateuch. Both traditions acknowledge its paradoxical logic: what purifies the impure contaminates the pure. Milgrom's 'ritual detergent' model provides the most widely cited explanation, though it does not fully resolve the paradox. The ritual's unique status in Jewish tradition as beyond rational comprehension has given it enduring theological significance. Christian typology sees the heifer as prefiguring Christ's sacrifice (Hebrews 9:13-14), adding another interpretive layer.",
+    "related_passages": [
+      "Leviticus 11:24-28",
+      "Numbers 31:19-24",
+      "Hebrews 9:13-14",
+      "Psalm 51:7",
+      "Ezekiel 36:25"
+    ],
+    "tags": [
+      "red-heifer",
+      "corpse-impurity",
+      "purification-ritual",
+      "paradox",
+      "ritual-detergent"
+    ]
   },
   {
     "id": "interpretive-question-20-2-13",
@@ -10082,34 +10623,61 @@
     ],
     "passage": "Numbers 20",
     "question": "Interpretive Question: 20:2–13",
-    "context": "",
+    "context": "The waters of Meribah episode (Numbers 20:2-13) is one of the most debated passages in the Pentateuch: God tells Moses to speak to the rock, Moses strikes it twice, water flows, but God bars Moses from entering the Promised Land. What exactly was Moses' sin? Milgrom notes the rabbinic tradition identified at least ten different explanations: striking instead of speaking, striking twice, losing his temper, failing to sanctify God, taking credit ('shall we bring water?'), and more. The severity of the punishment — exclusion from the land after decades of faithful service — has troubled readers across traditions.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
         "label": "Critical/Analytical scholarship",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Milgrom: The rabbis debated exactly what Moses’s sin was — striking instead of speaking, striking twice, losing his temper, or saying \"we.\" Milgrom’s …",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The critical approach catalogues the full range of interpretive options and situates the episode within the broader wilderness rebellion pattern. Milgrom's analysis of the Hebrew verb forms and the comparison with Exodus 17 illuminates genuine textual differences between the two water-from-rock traditions.",
+        "weaknesses": "The multiplicity of explanations for Moses' sin can lead to analytical paralysis rather than interpretive clarity. The critical tendency to separate this from Exodus 17 as a doublet may miss the deliberate narrative contrast between faithful obedience (Exodus 17) and failure (Numbers 20).",
+        "key_verses": [
+          "Numbers 20:7-8",
+          "Numbers 20:10-11",
+          "Numbers 20:12",
+          "Psalm 106:32-33"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "macarthur"
+        ],
         "proponents": "Reads The Waters of Meribah within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The canonical reading emphasizes the theological principle: those in positions of greatest trust bear the greatest accountability. Connecting Moses' exclusion to God's holiness (20:12) provides a coherent theological framework even when the specific sin remains debated.",
+        "weaknesses": "The confessional reading can too quickly move to theological lesson-drawing without sitting with the genuine tragedy of Moses' exclusion. The punishment's proportionality remains a genuine pastoral and theological problem.",
+        "key_verses": [
+          "Numbers 20:8",
+          "Numbers 20:10-12",
+          "Deuteronomy 3:25-26",
+          "Deuteronomy 32:51"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Moses' sin at Meribah remains genuinely ambiguous, and this ambiguity may be intentional: the text emphasizes the severity of failing to 'treat God as holy' (20:12) without specifying the exact failure. Both traditions agree that the punishment's severity underscores the high standard expected of covenant mediators. The most common readings — anger, disobedience (striking vs. speaking), or taking credit — each find some textual support but none is conclusive. This ambiguity has generated some of the richest interpretive discussion in biblical commentary.",
+    "related_passages": [
+      "Exodus 17:1-7",
+      "Deuteronomy 3:23-27",
+      "Deuteronomy 32:48-52",
+      "Psalm 106:32-33",
+      "Numbers 27:12-14"
+    ],
+    "tags": [
+      "meribah",
+      "moses-sin",
+      "divine-holiness",
+      "leadership-accountability",
+      "exclusion-from-land"
+    ]
   },
   {
     "id": "historical-and-literary-integrity-of-the-bronze-serpent",
@@ -10121,34 +10689,61 @@
     ],
     "passage": "Numbers 21",
     "question": "Historical and Literary Integrity of The Bronze Serpent",
-    "context": "",
+    "context": "Numbers 21:4-9 narrates the bronze serpent episode: venomous snakes punish Israel's complaint, and God instructs Moses to make a bronze serpent on a pole so that anyone bitten who looks at it will live. The episode raises immediate theological questions — is this not a graven image? — and has a rich afterlife: Hezekiah destroys the bronze serpent centuries later because Israel was worshipping it (2 Kings 18:4), and Jesus identifies it as a type of his crucifixion (John 3:14-15). Source critics debate whether the episode is an etiological legend explaining the Nehushtan idol or an authentic wilderness tradition.",
     "positions": [
       {
         "id": "critical-scholarship-noth-gray",
         "label": "Critical scholarship (Noth, Gray)",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Identifies The Bronze Serpent as a composite of J, E, and P sources redacted together, with inconsistencies explained by source combination.",
         "argument": "The source-critical approach accounts for apparent repetitions and tensions but has been questioned for its circular methodology.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The etiological reading plausibly connects the wilderness tradition to the Nehushtan idol that Hezekiah later destroyed, explaining how a legitimate Mosaic object became an object of idolatrous worship. The serpent's ANE associations (healing, chaos) enrich the interpretation.",
+        "weaknesses": "Treating the entire episode as an etiology invented to explain the Nehushtan's existence underestimates the narrative's theological sophistication. The text's own emphasis is on looking in faith, not on the object's manufacture.",
+        "key_verses": [
+          "Numbers 21:6-7",
+          "Numbers 21:8-9",
+          "2 Kings 18:4",
+          "Deuteronomy 8:15"
+        ]
       },
       {
         "id": "literary-and-canonical-unity-milgrom-ash",
         "label": "Literary and canonical unity (Milgrom, Ashley)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "macarthur"
+        ],
         "proponents": "Reads The Bronze Serpent as a literary unit with deliberate structure, arguing that apparent inconsistencies are rhetorical or theological rather than redactional.",
         "argument": "The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The typological reading (John 3:14) integrates the episode into the gospel narrative with Jesus' own authorization. The theological principle — healing comes through looking in faith at what God provides, not through the object itself — is canonically rich and pastorally applicable.",
+        "weaknesses": "The typological reading can bypass the OT narrative's own concerns, including the uncomfortable reality that God sent the snakes in the first place. The canonical reading must also account for 2 Kings 18:4's destruction of the same object.",
+        "key_verses": [
+          "Numbers 21:8-9",
+          "John 3:14-15",
+          "2 Kings 18:4",
+          "1 Corinthians 10:9"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The bronze serpent occupies a unique position in biblical theology: commanded by God yet later destroyed as an idol, it illustrates how legitimate sacred objects can become illegitimate when the gaze shifts from God to the object. Both traditions recognize the paradox of God using a serpent image to heal serpent bites — a homeopathic logic that inverts the curse. Jesus' appropriation in John 3:14 gives the episode canonical significance far beyond its narrative context, making it one of the most typologically important episodes in Numbers.",
+    "related_passages": [
+      "2 Kings 18:4",
+      "John 3:14-15",
+      "Exodus 4:2-5",
+      "Deuteronomy 8:15",
+      "1 Corinthians 10:9"
+    ],
+    "tags": [
+      "bronze-serpent",
+      "nehushtan",
+      "typology",
+      "healing",
+      "faith-obedience"
+    ]
   },
   {
     "id": "interpretive-question-22-36-41",
@@ -10160,34 +10755,62 @@
     ],
     "passage": "Numbers 22",
     "question": "Interpretive Question: 22:36–41",
-    "context": "",
+    "context": "Numbers 22:36-41 describes Balak's reception of Balaam and the elaborate preparations for the oracles that follow. Ashley notes the narrative irony: Balak has invested enormous diplomatic and financial resources to hire a diviner, yet the reader already knows from 22:12 and 22:20 that God has sovereignly determined the oracle's content. The donkey episode (22:22-35) has already demonstrated that even an animal can perceive what the prophet cannot. The closing verses set up the oracle cycle by positioning Balaam at Bamoth Baal, where he can see the edge of Israel's camp — the visual encounter triggers the prophetic word.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
         "label": "Critical/Analytical scholarship",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "milgrom"
+        ],
         "proponents": "Ashley: The chapter’s closing verses set up the oracles with deliberate narrative irony: Balak has spent enormous resources (the repeated embassy, the…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The literary-critical approach illuminates the sophisticated ironic structure of the Balaam narrative, identifying how the text systematically undermines human attempts to control divine speech. The ANE parallels for hired divination (e.g., the Deir Alla inscription) provide important cultural context for Balaam's role.",
+        "weaknesses": "The source-critical tendency to separate J and E Balaam traditions can fragment a narrative whose literary power depends on its accumulated irony. The Deir Alla inscription, while fascinating, raises more questions about Balaam's historical identity than it answers.",
+        "key_verses": [
+          "Numbers 22:36-38",
+          "Numbers 22:40-41",
+          "Numbers 22:12",
+          "Numbers 22:20"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "calvin",
+          "macarthur"
+        ],
         "proponents": "Reads Balak Summons Balaam within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reading the Balaam narrative as a unified demonstration of divine sovereignty over pagan religion provides a powerful theological statement. Balak's frustration and Balaam's inability to curse Israel illustrate the principle that no human power can override God's blessing on his covenant people.",
+        "weaknesses": "The canonical reading can overlook the moral complexity of Balaam's character — he is neither purely villain nor purely prophet, and the later tradition (Numbers 31:16; 2 Peter 2:15) adds negative dimensions that the oracle cycle itself does not emphasize.",
+        "key_verses": [
+          "Numbers 22:38",
+          "Numbers 22:41",
+          "Numbers 23:8",
+          "Micah 6:5"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The Balaam narrative is one of the most sophisticated literary compositions in the Pentateuch, and 22:36-41 establishes its central irony: human attempts to manipulate divine speech are futile. Both traditions recognize the narrative's dark comedy — Balak's elaborate preparations are doomed to fail. The passage's placement of Balaam at Bamoth Baal ('heights of Baal') underscores the religious context: pagan divination meets Israelite prophecy. Scholars agree that the Balaam cycle contains some of the finest Hebrew poetry in Numbers.",
+    "related_passages": [
+      "Numbers 22:1-20",
+      "Numbers 22:22-35",
+      "Numbers 23:1-12",
+      "2 Peter 2:15-16",
+      "Micah 6:5"
+    ],
+    "tags": [
+      "balaam",
+      "balak",
+      "divine-sovereignty",
+      "narrative-irony",
+      "pagan-divination"
+    ]
   },
   {
     "id": "historical-and-literary-integrity-of-the-first-and-second-or",
@@ -10199,34 +10822,61 @@
     ],
     "passage": "Numbers 23",
     "question": "Historical and Literary Integrity of The First and Second Oracles of Balaam",
-    "context": "",
+    "context": "Numbers 23 contains Balaam's first two oracles, each framed by an elaborate ritual sequence: seven altars, seven bulls, seven rams. The first oracle (23:7-10) declares Israel uncursable; the second (23:18-24) affirms that God does not change his mind. Source critics have debated whether the oracles originated independently or were composed as a unified cycle. The poetry's archaic features — unusual vocabulary, parallelistic structure, and possible pre-monarchic imagery — suggest considerable antiquity. The ironic narrative frame (Balak moves Balaam to different viewpoints hoping for different results) adds literary sophistication.",
     "positions": [
       {
         "id": "critical-scholarship-noth-gray",
         "label": "Critical scholarship (Noth, Gray)",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Identifies The First and Second Oracles of Balaam as a composite of J, E, and P sources redacted together, with inconsistencies explained by source combination.",
         "argument": "The source-critical approach accounts for apparent repetitions and tensions but has been questioned for its circular methodology.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Linguistic analysis identifies genuinely archaic features in the oracle poetry (unusual verb forms, rare vocabulary) that support early dating independent of the surrounding prose. The comparative study of ANE divination rituals enriches understanding of the seven-altars protocol.",
+        "weaknesses": "Archaic language can be deliberately employed in later compositions for literary effect (archaizing), so linguistic dating alone is not decisive. Separating the oracles from their narrative frame reduces them to isolated poems and misses the cumulative irony.",
+        "key_verses": [
+          "Numbers 23:7-10",
+          "Numbers 23:18-24",
+          "Numbers 23:10",
+          "Numbers 23:19"
+        ]
       },
       {
         "id": "literary-and-canonical-unity-milgrom-ash",
         "label": "Literary and canonical unity (Milgrom, Ashley)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "macarthur"
+        ],
         "proponents": "Reads The First and Second Oracles of Balaam as a literary unit with deliberate structure, arguing that apparent inconsistencies are rhetorical or theological rather than redactional.",
         "argument": "The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reading the oracles within their narrative frame highlights the escalating frustration of Balak and the increasing boldness of divine blessing — each oracle goes further than the last. The theological content (23:19 on divine faithfulness) provides canonical foundations for understanding God's character throughout Scripture.",
+        "weaknesses": "The confessional emphasis on theological content can underplay the oracles' poetic artistry and their independent literary significance. The narrative frame's humor deserves appreciation alongside its theology.",
+        "key_verses": [
+          "Numbers 23:7-8",
+          "Numbers 23:10",
+          "Numbers 23:19-20",
+          "Numbers 23:23-24"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The Balaam oracles are recognized across traditions as some of the finest Hebrew poetry in the Pentateuch. Their archaic linguistic features suggest early composition, regardless of when they were incorporated into the Numbers narrative. The first oracle's climax — 'Who can count the dust of Jacob?' (23:10) — echoes the Abrahamic promise, while the second oracle's declaration that God does not lie or change his mind (23:19) has become a foundational text for the doctrine of divine immutability. Balak's comic insistence on trying different viewpoints underscores the futility of opposing divine blessing.",
+    "related_passages": [
+      "Genesis 12:2-3",
+      "Genesis 13:16",
+      "1 Samuel 15:29",
+      "Malachi 3:6",
+      "James 1:17"
+    ],
+    "tags": [
+      "balaam-oracles",
+      "divine-blessing",
+      "divine-immutability",
+      "archaic-poetry",
+      "abrahamic-promise"
+    ]
   },
   {
     "id": "interpretive-question-24-17",
@@ -10238,34 +10888,63 @@
     ],
     "passage": "Numbers 24",
     "question": "Interpretive Question: 24:17",
-    "context": "",
+    "context": "Numbers 24:17 contains Balaam's famous star-and-scepter oracle: 'A star will come out of Jacob; a scepter will rise out of Israel.' This verse became one of the most debated messianic texts in Second Temple Judaism. The Bar Kokhba revolt (132-135 CE) took its leader's name ('Son of the Star') from this verse. Milgrom notes the oracle was originally understood as referring to David's conquests of Moab and Edom (24:17b-18), but its messianic reinterpretation was well established before the Christian era. The Dead Sea Scrolls (CD 7:18-20; 4QTestimonia) cite it as a messianic proof text.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
         "label": "Critical/Analytical scholarship",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Milgrom: The star-and-sceptre oracle was understood messianically in the Second Temple period and the NT. Bar Kokhba (\"son of a star\") took his messia…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Situating the oracle in its original context as a reference to David's Moabite and Edomite conquests provides a concrete historical anchor. The comparative analysis of ANE royal astral imagery illuminates the star-and-scepter metaphors without requiring an exclusively messianic reading.",
+        "weaknesses": "Limiting the oracle to its Davidic referent ignores its demonstrable messianic reception in pre-Christian Judaism (Dead Sea Scrolls, Targumim). The text's own language — visionary, future-oriented, cosmic in scope — invites reading beyond any single historical figure.",
+        "key_verses": [
+          "Numbers 24:17",
+          "Numbers 24:18-19",
+          "2 Samuel 8:2",
+          "2 Samuel 8:13-14"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "macarthur",
+          "calvin"
+        ],
         "proponents": "Reads The Third and Fourth Oracles within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The messianic reading, supported by both Jewish and Christian interpretive traditions, recognizes that the oracle's language transcends David. The canonical connections — Genesis 49:10's Shiloh prophecy, Isaiah 11's shoot of Jesse, Revelation 22:16's 'bright morning star' — form a coherent prophetic trajectory.",
+        "weaknesses": "The canonical reading can bypass the oracle's immediate context (victory over Moab and Edom) in its eagerness to reach christological conclusions. The messianic reading should complement, not replace, the historical interpretation.",
+        "key_verses": [
+          "Numbers 24:17",
+          "Genesis 49:10",
+          "Isaiah 11:1",
+          "Matthew 2:2",
+          "Revelation 22:16"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Numbers 24:17 illustrates the layered nature of biblical prophecy: the original referent (likely David) does not exhaust the text's significance. Both Jewish and Christian traditions have read it messianically, though they diverge on the identity of the messianic figure. The verse's reception history — from Bar Kokhba to the Dead Sea Scrolls to Matthew's star of Bethlehem — demonstrates its enduring generative power. Scholars agree the oracle had a proximate historical referent (the Davidic monarchy) but disagree on whether the messianic dimension was original or a later interpretive development.",
+    "related_passages": [
+      "Genesis 49:10",
+      "Isaiah 11:1-5",
+      "Matthew 2:1-12",
+      "Revelation 22:16",
+      "2 Samuel 8:2"
+    ],
+    "tags": [
+      "star-prophecy",
+      "messianic-oracle",
+      "balaam",
+      "davidic-monarchy",
+      "second-temple-interpretation"
+    ]
   },
   {
     "id": "interpretive-question-25-13",
@@ -10277,34 +10956,61 @@
     ],
     "passage": "Numbers 25",
     "question": "Interpretive Question: 25:13",
-    "context": "",
+    "context": "Numbers 25:13 grants Phinehas a 'covenant of a lasting priesthood' for his zealous act of killing an Israelite man and a Midianite woman during the Baal Peor apostasy. Milgrom notes this covenant was interpreted in later tradition as establishing the Zadokite priestly line. The passage raises acute ethical questions: Phinehas acts as executioner without trial, his violence is rewarded with a perpetual covenant, and the narrative frames his action as atonement for the community's sin. The relationship between zeal, violence, and divine approval has generated extensive theological reflection.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
         "label": "Critical/Analytical scholarship",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Milgrom: The \"covenant of a lasting priesthood\" granted to Phinehas is interpreted in later tradition as the establishment of the Zadokite priestly li…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Contextualizing the Phinehas covenant within ANE sacral-warfare traditions provides important cultural background. The critical approach honestly confronts the ethical difficulty of rewarding extrajudicial killing and traces how this text was used to justify violence in Second Temple Judaism.",
+        "weaknesses": "The ethical critique, while necessary, can obscure the narrative's own theological logic: Israel faces extinction from a plague, and Phinehas' action is presented as atonement that stops the plague. The text operates within a conceptual world where communal holiness requires decisive action.",
+        "key_verses": [
+          "Numbers 25:7-8",
+          "Numbers 25:11-13",
+          "Psalm 106:30-31",
+          "1 Maccabees 2:26"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "macarthur"
+        ],
         "proponents": "Reads Baal Peor within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The canonical reading connects the Phinehas covenant to the broader priestly theme: faithful priests who act decisively for God's honor receive enduring divine approval. The connection to Malachi 2:4-5's 'covenant with Levi' provides canonical coherence for the priesthood's theological foundations.",
+        "weaknesses": "The confessional reading must carefully distinguish between the unique covenantal context of Phinehas' action and any generalized endorsement of religious violence. The passage's reception history in Zealot ideology demonstrates the danger of uncritical application.",
+        "key_verses": [
+          "Numbers 25:11-13",
+          "Malachi 2:4-5",
+          "Ezekiel 44:15",
+          "Psalm 106:30-31"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The Phinehas covenant is one of the most ethically challenging texts in Numbers. Both traditions recognize that the narrative presents Phinehas' action as divinely approved zeal that turned back God's wrath from Israel. The theological difficulty lies in the apparent endorsement of extrajudicial violence. Critical scholars contextualize this within ANE concepts of sacral warfare; evangelical scholars emphasize the unique covenantal context that should not be universalized as a model for violence. The passage's later reception (Psalm 106:30-31; Sirach 45:23-24; 1 Maccabees 2:26) shaped Zealot ideology in the Second Temple period.",
+    "related_passages": [
+      "Numbers 25:1-9",
+      "Psalm 106:28-31",
+      "1 Maccabees 2:26",
+      "Malachi 2:4-5",
+      "Ezekiel 44:15"
+    ],
+    "tags": [
+      "phinehas-covenant",
+      "priestly-zeal",
+      "baal-peor",
+      "lasting-priesthood",
+      "sacral-violence"
+    ]
   },
   {
     "id": "historical-and-literary-integrity-of-the-second-census",
@@ -10316,34 +11022,61 @@
     ],
     "passage": "Numbers 26",
     "question": "Historical and Literary Integrity of The Second Census",
-    "context": "",
+    "context": "Numbers 26 records the second census after the plague at Baal Peor, forming an inclusio with the first census of chapter 1. The total fighting force drops slightly from 603,550 to 601,730, reflecting the wilderness generation's attrition. Source critics identify this as a P document parallel to Numbers 1 but with notable differences: additional genealogical data, references to rebellion casualties (Dathan, Abiram, Korah's sons who did not die), and the forward-looking provision for land distribution. The census functions as a narrative hinge between the wilderness wandering and the preparation for conquest.",
     "positions": [
       {
         "id": "critical-scholarship-noth-gray",
         "label": "Critical scholarship (Noth, Gray)",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Identifies The Second Census as a composite of J, E, and P sources redacted together, with inconsistencies explained by source combination.",
         "argument": "The source-critical approach accounts for apparent repetitions and tensions but has been questioned for its circular methodology.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The source-critical comparison between the two census lists reveals compositional patterns: the second census adds genealogical detail and references to narrative events (rebellions, plagues) that the first census lacks. This supports reading the second census as a redactional composition aware of the intervening narrative.",
+        "weaknesses": "The differences between the two censuses are exactly what one would expect in a historical second count: updated genealogies, references to intervening events, and a new purpose (land allocation). These need not indicate different sources.",
+        "key_verses": [
+          "Numbers 26:1-4",
+          "Numbers 26:11",
+          "Numbers 26:51",
+          "Numbers 26:63-65"
+        ]
       },
       {
         "id": "literary-and-canonical-unity-milgrom-ash",
         "label": "Literary and canonical unity (Milgrom, Ashley)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "macarthur"
+        ],
         "proponents": "Reads The Second Census as a literary unit with deliberate structure, arguing that apparent inconsistencies are rhetorical or theological rather than redactional.",
         "argument": "The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The canonical reading highlights the theological significance: God has kept his promise to preserve the nation through judgment, and the new generation stands ready to inherit. The slight population decrease demonstrates that judgment was real, not merely rhetorical.",
+        "weaknesses": "The large numbers present the same historical challenges as the first census. The canonical reading's emphasis on theological significance should not bypass the legitimate question of whether these figures are literal counts, representative numbers, or literary conventions.",
+        "key_verses": [
+          "Numbers 26:1-2",
+          "Numbers 26:51",
+          "Numbers 26:63-65",
+          "Numbers 1:46"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The second census is universally recognized as a structural marker in Numbers: the old generation has died, and the new generation is counted for the land distribution. Both traditions note the narrative poignancy — the slight decrease in total population after forty years of judgment underscores the cost of the Kadesh rebellion. The census's dual function (military muster and land-allocation registry) bridges Numbers' wilderness narrative with Joshua's conquest account. The mention of Korah's surviving sons (26:11) provides an important qualification to the rebellion narrative's apparent totality.",
+    "related_passages": [
+      "Numbers 1:1-46",
+      "Numbers 14:29-30",
+      "Numbers 26:63-65",
+      "Joshua 14-19",
+      "1 Chronicles 6:22-28"
+    ],
+    "tags": [
+      "second-census",
+      "wilderness-generation",
+      "land-distribution",
+      "tribal-numbers",
+      "narrative-structure"
+    ]
   },
   {
     "id": "historical-and-literary-integrity-of-the-daughters-of-zeloph",
@@ -10355,34 +11088,61 @@
     ],
     "passage": "Numbers 27",
     "question": "Historical and Literary Integrity of The Daughters of Zelophehad; Joshua Appointed",
-    "context": "",
+    "context": "Numbers 27:1-11 presents the case of Zelophehad's daughters — Mahlah, Noah, Hoglah, Milkah, and Tirzah — who petition for inheritance rights in the absence of a male heir. The case is remarkable for its narrative format (a specific legal problem brought to Moses, who consults God) and for its progressive outcome: daughters can inherit when there are no sons. This is one of the earliest recorded legal precedents for women's property rights in the ancient Near East. The chapter also includes Joshua's commissioning (27:12-23), creating a dual transition: new inheritance law and new leadership.",
     "positions": [
       {
         "id": "critical-scholarship-noth-gray",
         "label": "Critical scholarship (Noth, Gray)",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Identifies The Daughters of Zelophehad; Joshua Appointed as a composite of J, E, and P sources redacted together, with inconsistencies explained by source combination.",
         "argument": "The source-critical approach accounts for apparent repetitions and tensions but has been questioned for its circular methodology.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The source-critical identification of this as a P legal narrative illuminates its institutional context and its relationship to other inheritance legislation. The case-law format provides a window into how Israelite jurisprudence functioned through precedent rather than abstract legislation.",
+        "weaknesses": "The source-critical approach can undervalue the narrative's progressive character by treating it as institutional legislation rather than as a genuine expansion of rights. The combination with Joshua's commissioning may be redactional but creates meaningful thematic unity.",
+        "key_verses": [
+          "Numbers 27:1-4",
+          "Numbers 27:5-7",
+          "Numbers 27:8-11",
+          "Joshua 17:3-4"
+        ]
       },
       {
         "id": "literary-and-canonical-unity-milgrom-ash",
         "label": "Literary and canonical unity (Milgrom, Ashley)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "calvin"
+        ],
         "proponents": "Reads The Daughters of Zelophehad; Joshua Appointed as a literary unit with deliberate structure, arguing that apparent inconsistencies are rhetorical or theological rather than redactional.",
         "argument": "The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The canonical reading celebrates God's justice in responding to the daughters' legitimate claim. The passage demonstrates that biblical law, while operating within patriarchal structures, contains within itself the seeds of greater justice — a principle with enduring theological significance.",
+        "weaknesses": "The canonical celebration of the daughters' victory should be balanced by recognition that the ruling is still limited: daughters inherit only when there are no sons (27:8). The modification in chapter 36 further constrains their rights by requiring endogamous marriage.",
+        "key_verses": [
+          "Numbers 27:1-4",
+          "Numbers 27:5-7",
+          "Numbers 27:8-11",
+          "Numbers 36:6-9"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Zelophehad's daughters represent one of the most progressive legal developments in the Pentateuch. Both traditions recognize the case's significance: God rules in favor of the daughters' claim, establishing a precedent that modifies existing inheritance practice. The narrative's case-law format reveals how Israelite law developed through specific situations brought before authoritative adjudicators. The combination with Joshua's commissioning creates a chapter about succession on multiple levels — inheritance of land and inheritance of leadership.",
+    "related_passages": [
+      "Numbers 36:1-13",
+      "Numbers 26:33",
+      "Joshua 17:3-6",
+      "Numbers 27:12-23",
+      "Deuteronomy 21:15-17"
+    ],
+    "tags": [
+      "zelophehads-daughters",
+      "inheritance-law",
+      "womens-rights",
+      "case-law",
+      "joshua-commission"
+    ]
   },
   {
     "id": "interpretive-question-28-1-8",
@@ -10394,34 +11154,61 @@
     ],
     "passage": "Numbers 28",
     "question": "Interpretive Question: 28:1-8",
-    "context": "",
+    "context": "Numbers 28:1-8 opens the comprehensive public offering calendar (chs. 28-29) with the tamid — the daily burnt offering of two lambs, one at morning and one at twilight. Milgrom notes this calendar is unique in the Pentateuch for its systematic completeness, covering every level of offering from daily to annual. The tamid's theological significance lies in its constancy: regardless of Israel's spiritual state or historical circumstances, the perpetual offering maintains the covenantal relationship. The calendar's placement near the end of Numbers, as the new generation prepares for Canaan, frames worship as foundational to the nation's identity.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
         "label": "Critical/Analytical scholarship",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Milgrom: The comprehensive public offering calendar of Num 28-29 is unique in the Pentateuch for its systematic completeness. Where Lev 23 lists the f…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Milgrom's comparison of the Numbers 28-29 calendar with Exodus 29 and Leviticus 23 reveals compositional differences that illuminate the development of Israelite worship legislation. The systematic completeness of the Numbers calendar suggests a comprehensive P codification designed to be the definitive offering guide.",
+        "weaknesses": "Treating the calendar as merely a P codification can underplay its theological depth. The tamid's conceptual simplicity — unceasing offering — carries profound implications for understanding Israel's continuous relationship with God.",
+        "key_verses": [
+          "Numbers 28:1-2",
+          "Numbers 28:3-6",
+          "Numbers 28:7-8",
+          "Exodus 29:38-42"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "macarthur"
+        ],
         "proponents": "Reads The Offering Calendar within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The canonical reading emphasizes the tamid as a type of Christ's perpetual intercession (Hebrews 7:25) and a model for the Christian practice of constant prayer. The offering's uninterrupted character demonstrates that covenant relationship requires daily maintenance, not episodic attention.",
+        "weaknesses": "The typological reading should not obscure the offering's own Pentateuchal significance as Israel's daily worship obligation. The cost of the daily offering (two lambs daily for centuries) was a substantial economic commitment that deserves practical attention alongside theological reflection.",
+        "key_verses": [
+          "Numbers 28:3-4",
+          "Numbers 28:6",
+          "Exodus 29:38-42",
+          "Hebrews 7:25"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The tamid (daily offering) represents the most basic form of Israelite worship: an uninterrupted, twice-daily act of consecration. Both traditions recognize the offering calendar's systematic quality as a comprehensive worship theology. The tamid's constancy — morning and evening without exception — establishes worship as the non-negotiable foundation of covenant life. The calendar's relationship to parallel legislation in Exodus 29:38-42 and Leviticus 23 raises compositional questions, but all agree on the tamid's theological centrality.",
+    "related_passages": [
+      "Exodus 29:38-42",
+      "Leviticus 23:1-44",
+      "Daniel 8:11-13",
+      "Daniel 12:11",
+      "1 Chronicles 16:40"
+    ],
+    "tags": [
+      "tamid-offering",
+      "daily-sacrifice",
+      "offering-calendar",
+      "worship-theology",
+      "perpetual-consecration"
+    ]
   },
   {
     "id": "historical-and-literary-integrity-of-the-autumn-feasts",
@@ -10433,34 +11220,61 @@
     ],
     "passage": "Numbers 29",
     "question": "Historical and Literary Integrity of The Autumn Feasts",
-    "context": "",
+    "context": "Numbers 29 details the offering requirements for the autumn festivals: Feast of Trumpets (29:1-6), Day of Atonement (29:7-11), and the elaborate eight-day Feast of Tabernacles (29:12-38). The Tabernacles offerings are remarkable for their scale: beginning with thirteen bulls on day one and decreasing by one each day to seven on day seven, totaling seventy bulls. Milgrom notes that the number seventy was associated in ancient tradition with the seventy nations of the world (Genesis 10), leading to rabbinic interpretation that Israel offered sacrifices on behalf of all nations during Tabernacles.",
     "positions": [
       {
         "id": "critical-scholarship-noth-gray",
         "label": "Critical scholarship (Noth, Gray)",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Identifies The Autumn Feasts as a composite of J, E, and P sources redacted together, with inconsistencies explained by source combination.",
         "argument": "The source-critical approach accounts for apparent repetitions and tensions but has been questioned for its circular methodology.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The source-critical approach situates the festival calendar within P's comprehensive cultic legislation and identifies its relationship to the parallel Leviticus 23 calendar. The numerical analysis (seventy bulls = seventy nations) connects to a genuine ANE numerological tradition.",
+        "weaknesses": "The source-critical focus on P's redactional activity can miss the worship experience these texts prescribed. The descending bull sequence creates a liturgical crescendo-in-reverse that deserves attention as a performed reality, not just a literary construct.",
+        "key_verses": [
+          "Numbers 29:1-2",
+          "Numbers 29:7-8",
+          "Numbers 29:12-13",
+          "Numbers 29:35-38"
+        ]
       },
       {
         "id": "literary-and-canonical-unity-milgrom-ash",
         "label": "Literary and canonical unity (Milgrom, Ashley)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "calvin"
+        ],
         "proponents": "Reads The Autumn Feasts as a literary unit with deliberate structure, arguing that apparent inconsistencies are rhetorical or theological rather than redactional.",
         "argument": "The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The canonical reading connects the autumn feasts to their eschatological fulfillment: Trumpets to the final trumpet (1 Thessalonians 4:16), Atonement to Christ's once-for-all sacrifice (Hebrews 9:11-12), and Tabernacles to God's dwelling with humanity (Revelation 21:3). This typological framework provides rich theological architecture.",
+        "weaknesses": "The typological eagerness can leap past the festivals' own significance in Israelite worship. The practical economics and communal experience of these festivals deserve attention alongside their prophetic typology.",
+        "key_verses": [
+          "Numbers 29:1",
+          "Numbers 29:7",
+          "Numbers 29:12-13",
+          "Numbers 29:35"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The autumn festival calendar's most striking feature is the descending bull sequence at Tabernacles, which totals seventy — a number of clear symbolic significance. Both traditions recognize the festivals' liturgical artistry and theological depth. The Day of Atonement's brief treatment here (compared to Leviticus 16) suggests Numbers 29 focuses on offering quantities rather than ritual procedure. The rabbinic interpretation of the seventy bulls as prayers for the nations, while speculative, reflects the text's genuine universalistic potential.",
+    "related_passages": [
+      "Leviticus 23:23-44",
+      "Leviticus 16:1-34",
+      "Zechariah 14:16-19",
+      "John 7:37-39",
+      "Genesis 10:1-32"
+    ],
+    "tags": [
+      "autumn-feasts",
+      "tabernacles",
+      "day-of-atonement",
+      "seventy-bulls",
+      "festival-calendar"
+    ]
   },
   {
     "id": "interpretive-question-30-3-5",
@@ -10472,34 +11286,61 @@
     ],
     "passage": "Numbers 30",
     "question": "Interpretive Question: 30:3-5",
-    "context": "",
+    "context": "Numbers 30:3-5 addresses the specific case of a young woman's vow: if she makes a vow while living in her father's house and he hears of it and says nothing, it stands; if he forbids it on the day he hears, it is annulled. Milgrom notes the legal logic: the household authority structure means vows with potential economic consequences require the patriarch's tacit or explicit approval. The silence-equals-consent principle is distinctive in biblical law and reflects a carefully calibrated balance between individual religious devotion and household economic stability.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
         "label": "Critical/Analytical scholarship",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Milgrom: The vow law's household authority structure reflects the legal reality that women's covenant obligations in ancient Israel were embedded in f…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The critical approach contextualizes the vow law within ancient Near Eastern legal traditions where women's legal agency was mediated through male household heads. The analysis of the silence-equals-consent mechanism reveals genuine legal sophistication in Israelite jurisprudence.",
+        "weaknesses": "The critical comparison with ANE law can normalize patriarchal limitations rather than noting their distinctive features. The vow law's careful protections for women's religious expression (the father must object promptly or lose his right to annul) deserve recognition as a progressive element.",
+        "key_verses": [
+          "Numbers 30:3-5",
+          "Numbers 30:4-5",
+          "Deuteronomy 23:21",
+          "Ecclesiastes 5:4"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "calvin"
+        ],
         "proponents": "Reads The Law of Vows within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The canonical reading situates the vow law within a theology of covenant faithfulness: vows to God are serious commitments that affect the entire household. The provision protects women from rashly binding themselves to obligations they cannot fulfill independently.",
+        "weaknesses": "The protective reading can too easily excuse the gendered asymmetry: men's vows require no external validation. Honest engagement with the text requires acknowledging that women's religious agency is more constrained than men's in this legal framework.",
+        "key_verses": [
+          "Numbers 30:2-3",
+          "Numbers 30:4-5",
+          "Numbers 30:15",
+          "Deuteronomy 23:21-23"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Numbers 30:3-5 illustrates the tension between individual piety and communal obligation in Israelite law. Both traditions recognize the practical wisdom of the provision: vows that affect household resources require household authority's consent. The silence-equals-consent principle demonstrates legal sophistication — the father must object on the day he learns of the vow, creating a narrow window that protects both the woman's devotion and the father's authority. Modern readers will inevitably bring questions about gender equity that the ancient text does not directly address.",
+    "related_passages": [
+      "Numbers 30:6-15",
+      "Leviticus 27:1-8",
+      "Deuteronomy 23:21-23",
+      "Ecclesiastes 5:4-5",
+      "Acts 5:1-11"
+    ],
+    "tags": [
+      "vow-law",
+      "household-authority",
+      "womens-vows",
+      "silence-consent",
+      "religious-obligation"
+    ]
   },
   {
     "id": "interpretive-question-30-1-15",
@@ -10511,34 +11352,62 @@
     ],
     "passage": "Numbers 30",
     "question": "Interpretive Question: 30:1-15",
-    "context": "",
+    "context": "Numbers 30:1-15 as a whole provides the most detailed vow legislation in the Pentateuch, covering four categories of women: unmarried daughters (30:3-5), newly married women with prior vows (30:6-8), widows and divorcees (30:9), and married women (30:10-15). Ashley notes the careful pastoral concern embedded in the legislation: each category addresses different authority relationships and economic realities. The widow and divorcee provision (30:9) is significant: their vows stand without male oversight, recognizing their independent legal standing — a notable exception to the patriarchal pattern.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
         "label": "Critical/Analytical scholarship",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom",
+          "ashley"
+        ],
         "proponents": "Ashley: The vow law's careful attention to household authority and gender is characteristic of Numbers' pastoral concern for practical covenant living…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The critical approach identifies the law's careful attention to different social situations as evidence of sophisticated legal reasoning. The widow/divorcee provision reveals that the patriarchal framework is not absolute — women without male authority have independent legal agency, indicating the law's capacity for nuance.",
+        "weaknesses": "The critical analysis can present the legislation as merely an artifact of patriarchal culture without acknowledging its genuine protections. The careful timing requirements (object on the day you hear) limit male authority in ways that ANE parallels often do not.",
+        "key_verses": [
+          "Numbers 30:1-2",
+          "Numbers 30:6-8",
+          "Numbers 30:9",
+          "Numbers 30:10-15"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "calvin",
+          "macarthur"
+        ],
         "proponents": "Reads The Law of Vows within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The canonical reading emphasizes the seriousness of vows before God (Ecclesiastes 5:4-5; Matthew 5:33-37) and sees the legislation as protecting the integrity of covenant commitments. The pastoral framework ensures that religious devotion and household harmony are held together rather than set in opposition.",
+        "weaknesses": "The canonical reading must honestly engage with the gendered asymmetry rather than dissolving it into general principles about household order. The text does treat women's vows differently from men's, and theological reflection should address this rather than explain it away.",
+        "key_verses": [
+          "Numbers 30:1-2",
+          "Numbers 30:9",
+          "Numbers 30:13-15",
+          "Matthew 5:33-37"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Numbers 30's vow legislation reveals a legal system grappling with the intersection of religious obligation, household economics, and gender. The four-category framework demonstrates careful attention to women's varied social circumstances. The widow/divorcee exception (30:9) is particularly significant: women without male household heads have full legal agency over their vows. Both traditions recognize this as evidence of the law's pastoral sensitivity, though they differ on whether the overall framework is prescriptive for all time or reflects culturally conditioned household structures.",
+    "related_passages": [
+      "Numbers 30:3-5",
+      "Leviticus 27:1-8",
+      "1 Samuel 1:11-28",
+      "Matthew 5:33-37",
+      "James 5:12"
+    ],
+    "tags": [
+      "vow-legislation",
+      "womens-legal-status",
+      "household-authority",
+      "widow-rights",
+      "pastoral-law"
+    ]
   },
   {
     "id": "historical-and-literary-integrity-of-the-war-against-midian",
@@ -10550,34 +11419,61 @@
     ],
     "passage": "Numbers 31",
     "question": "Historical and Literary Integrity of The War Against Midian",
-    "context": "",
+    "context": "Numbers 31 narrates the war against Midian in retaliation for the Baal Peor apostasy (ch. 25). The chapter is one of the most ethically challenging in the Old Testament: 12,000 Israelite soldiers kill all adult Midianite males, and Moses commands the execution of women who had participated in the Peor seduction, sparing only virgin girls. Source critics generally identify this as a late P composition with idealized military features (zero Israelite casualties, impossibly large spoil numbers). The ethical difficulty has generated extensive theological reflection on holy war, genocide, and divine command ethics.",
     "positions": [
       {
         "id": "critical-scholarship-noth-gray",
         "label": "Critical scholarship (Noth, Gray)",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Identifies The War Against Midian as a composite of J, E, and P sources redacted together, with inconsistencies explained by source combination.",
         "argument": "The source-critical approach accounts for apparent repetitions and tensions but has been questioned for its circular methodology.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The literary analysis identifies the chapter's idealized features (zero casualties, precise spoil division, ceremonial purification protocol) as evidence of theological composition rather than historical reportage. This framework reduces but does not eliminate the ethical difficulty by suggesting the text describes an idealized holy-war theology rather than historical events.",
+        "weaknesses": "Dismissing the chapter as late fiction does not resolve the ethical problem: the text still presents God as commanding violence against women and children. The literary analysis can become an evasion strategy if it implies the ethical questions only arise from historical readings.",
+        "key_verses": [
+          "Numbers 31:1-3",
+          "Numbers 31:7-8",
+          "Numbers 31:15-18",
+          "Numbers 31:49"
+        ]
       },
       {
         "id": "literary-and-canonical-unity-milgrom-ash",
         "label": "Literary and canonical unity (Milgrom, Ashley)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "macarthur"
+        ],
         "proponents": "Reads The War Against Midian as a literary unit with deliberate structure, arguing that apparent inconsistencies are rhetorical or theological rather than redactional.",
         "argument": "The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The canonical reading situates the Midianite war within the specific covenant context of Baal Peor retaliation (25:16-18) and the unique holy-war theology of the Pentateuch. The divine command framework provides a theological rationale even while acknowledging the ethical weight.",
+        "weaknesses": "The divine command framework does not fully resolve the moral difficulty for modern readers. The selective killing of women based on sexual history is particularly troubling and requires honest theological engagement rather than apologetic deflection.",
+        "key_verses": [
+          "Numbers 31:1-3",
+          "Numbers 25:16-18",
+          "Numbers 31:15-18",
+          "Deuteronomy 20:16-18"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Numbers 31 confronts readers with the most difficult ethical questions in the Pentateuch. Both traditions acknowledge the chapter's difficulties: the scale of violence, the gendered killing, and the zero-casualty claim all challenge historical and ethical credulity. Critical scholars read the idealized features as evidence of late literary composition rather than historical reportage. Evangelical scholars grapple with the divine command framework while acknowledging the genuine moral weight of the text. No interpretive tradition claims this chapter is easy or straightforward.",
+    "related_passages": [
+      "Numbers 25:1-18",
+      "Numbers 25:16-18",
+      "Deuteronomy 20:10-18",
+      "Joshua 6:17-21",
+      "1 Samuel 15:1-35"
+    ],
+    "tags": [
+      "holy-war",
+      "midian",
+      "baal-peor-retaliation",
+      "war-ethics",
+      "divine-command"
+    ]
   },
   {
     "id": "historical-and-literary-integrity-of-the-transjordan-tribes",
@@ -10589,34 +11485,61 @@
     ],
     "passage": "Numbers 32",
     "question": "Historical and Literary Integrity of The Transjordan Tribes",
-    "context": "",
+    "context": "Numbers 32 narrates the request of Reuben, Gad, and half of Manasseh to settle east of the Jordan. Moses' angry response — 'Are you going to sit here while your brothers go to war?' (32:6) — echoes the Kadesh rebellion's refusal to enter the land. The negotiated compromise (the Transjordan tribes will fight alongside their brothers before settling) establishes a precedent for tribal obligation that Joshua 22 later develops. Source critics see this as a composite text with J and P elements, while literary scholars note the deliberate parallel with Numbers 13-14.",
     "positions": [
       {
         "id": "critical-scholarship-noth-gray",
         "label": "Critical scholarship (Noth, Gray)",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Identifies The Transjordan Tribes as a composite of J, E, and P sources redacted together, with inconsistencies explained by source combination.",
         "argument": "The source-critical approach accounts for apparent repetitions and tensions but has been questioned for its circular methodology.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The source-critical approach identifies the composite nature of the narrative (J and P elements) and illuminates the text's literary relationship to the Kadesh rebellion. The parallel structure (tribal request threatening covenant unity, resolved through negotiation) reveals deliberate compositional design.",
+        "weaknesses": "Fragmenting the narrative into sources obscures its dramatic arc: accusation, defense, counter-proposal, agreement. The chapter reads as a coherent negotiation narrative that loses its rhetorical force when dissected.",
+        "key_verses": [
+          "Numbers 32:1-5",
+          "Numbers 32:6-15",
+          "Numbers 32:16-19",
+          "Numbers 32:20-24"
+        ]
       },
       {
         "id": "literary-and-canonical-unity-milgrom-ash",
         "label": "Literary and canonical unity (Milgrom, Ashley)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "macarthur"
+        ],
         "proponents": "Reads The Transjordan Tribes as a literary unit with deliberate structure, arguing that apparent inconsistencies are rhetorical or theological rather than redactional.",
         "argument": "The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The canonical reading highlights the positive resolution: unlike the Kadesh generation, the Transjordan tribes commit to fighting alongside their brothers before enjoying their inheritance. This demonstrates growth in covenant faithfulness and provides a model for negotiating competing legitimate interests.",
+        "weaknesses": "The canonical reading can over-idealize the resolution. Judges 5:15-17's criticism of Reuben and Gilead for not joining Deborah's battle suggests the Transjordan settlement created ongoing problems of tribal participation that the Numbers narrative does not fully anticipate.",
+        "key_verses": [
+          "Numbers 32:6-7",
+          "Numbers 32:16-19",
+          "Numbers 32:20-24",
+          "Joshua 22:1-6"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The Transjordan settlement raises the fundamental question of what constitutes faithful participation in God's promises. Moses' initial reaction links the request to the Kadesh rebellion, but the negotiated solution demonstrates that legitimate needs can be accommodated within covenant obligations. Both traditions recognize the literary parallel with chapters 13-14 as intentional: the new generation faces a similar test (will they settle for less than the full promise?) but navigates it through negotiation rather than rebellion.",
+    "related_passages": [
+      "Numbers 13-14",
+      "Deuteronomy 3:12-20",
+      "Joshua 1:12-18",
+      "Joshua 22:1-34",
+      "Judges 5:15-17"
+    ],
+    "tags": [
+      "transjordan-tribes",
+      "reuben-gad",
+      "tribal-obligation",
+      "settlement-negotiation",
+      "kadesh-parallel"
+    ]
   },
   {
     "id": "interpretive-question-33-1-49",
@@ -10628,34 +11551,62 @@
     ],
     "passage": "Numbers 33",
     "question": "Interpretive Question: 33:1-49",
-    "context": "",
+    "context": "Numbers 33:1-49 provides a comprehensive itinerary of Israel's wilderness journey in 42 stages from Rameses to the plains of Moab. Ashley notes the symbolic potential of the number 42 (6 × 7, one short of completion). The itinerary is attributed to Moses' own record-keeping (33:2), a rare authorial claim in the Pentateuch. Many of the place names appear nowhere else in the Bible, which has been taken as evidence of either archaic authenticity (real places forgotten by later tradition) or literary construction (invented stations to fill the chronological framework).",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
         "label": "Critical/Analytical scholarship",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "milgrom"
+        ],
         "proponents": "Ashley: The itinerary's 42 stages has attracted symbolic interpretation: 42 is 6 times 7 (the number before completion). Whether or not this is the co…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Critical analysis of the itinerary against known Egyptian and Sinai geography reveals that some stations (Rameses, Succoth, Ezion Geber) can be plausibly identified while others remain unknown, which is consistent with partial historical memory. The comparison with Deuteronomy 10:6-7's different itinerary reveals genuine textual tensions.",
+        "weaknesses": "The inability to identify many stations does not prove they are fictional — ancient place names are routinely lost. The specificity of the list (42 names with no narrative padding) argues against literary invention.",
+        "key_verses": [
+          "Numbers 33:1-2",
+          "Numbers 33:3-5",
+          "Numbers 33:36-37",
+          "Numbers 33:48-49"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "calvin"
+        ],
         "proponents": "Reads The Wilderness Itinerary within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The explicit attribution to Moses' record-keeping (33:2) provides a canonical basis for treating the itinerary as historical documentation. The retrospective function — recounting God's faithfulness through 42 stages of journey — creates a powerful prelude to the conquest narrative.",
+        "weaknesses": "Taking the itinerary as straightforward historical record must account for the discrepancies with other biblical itinerary fragments. The symbolic potential of 42 stations (and Matthew 1:17's 42 generations) suggests the number may be structured rather than purely documentary.",
+        "key_verses": [
+          "Numbers 33:1-2",
+          "Numbers 33:3-4",
+          "Numbers 33:38-39",
+          "Numbers 33:48-49"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The wilderness itinerary's 42 stations present a genuine historical puzzle: many sites cannot be identified, yet the list's specificity argues against pure invention. Both traditions recognize the itinerary's structural function as a retrospective summary before entering the Promised Land. The number 42 may carry symbolic weight (incompleteness before the seventh unit), and the explicit attribution to Moses' writing (33:2) is noteworthy as one of the few claims of Mosaic authorship within the Pentateuch itself.",
+    "related_passages": [
+      "Exodus 12:37",
+      "Numbers 10:12",
+      "Deuteronomy 10:6-7",
+      "Psalm 78:12-55",
+      "Acts 7:36"
+    ],
+    "tags": [
+      "wilderness-itinerary",
+      "forty-two-stations",
+      "mosaic-authorship",
+      "geographical-memory",
+      "retrospective-summary"
+    ]
   },
   {
     "id": "interpretive-question-34-17",
@@ -10667,34 +11618,61 @@
     ],
     "passage": "Numbers 34",
     "question": "Interpretive Question: 34:17",
-    "context": "",
+    "context": "Numbers 34:17 names Eleazar the priest and Joshua son of Nun as the two leaders who will distribute the land among the tribes. Milgrom notes this dual authority structure — priestly and civil — reflects a consistent pattern throughout Numbers where religious and political leadership operate in tandem. The pairing anticipates the post-Mosaic governance arrangement where no single figure combines Moses' prophetic, priestly, and civil authority. The subsequent list of tribal leaders for land distribution (34:18-29) establishes a decentralized allocation process.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
         "label": "Critical/Analytical scholarship",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Milgrom: Eleazar and Joshua as co-administrators reflect the dual authority structure throughout Numbers: the priestly dimension (Eleazar) ensures the…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The critical approach identifies the Eleazar-Joshua pairing as a P-authorized governance model that legitimates priestly involvement in civil affairs. This reflects the post-exilic community's own governance structure (high priest alongside civil governor), suggesting the arrangement may be read back into the wilderness period.",
+        "weaknesses": "The projection theory assumes P's composition is post-exilic, which remains debated. The Eleazar-Joshua pairing is narratively motivated by Moses' death and the need for succession; it need not reflect post-exilic institutional politics.",
+        "key_verses": [
+          "Numbers 34:17",
+          "Numbers 27:18-23",
+          "Joshua 14:1",
+          "Joshua 19:51"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "calvin"
+        ],
         "proponents": "Reads The Boundaries of the Promised Land within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The canonical reading sees the dual authority as God's wise provision for a post-Mosaic era. No single leader can replace Moses; shared leadership ensures both holiness (Eleazar) and military competence (Joshua) shape the nation's future.",
+        "weaknesses": "The canonical reading can idealize the arrangement without noting that the priestly-civil partnership was often conflictual in later Israelite history (cf. the monarchy's tensions with the priesthood). The model is more complex in practice than in principle.",
+        "key_verses": [
+          "Numbers 34:17",
+          "Numbers 27:18-21",
+          "Joshua 14:1",
+          "Joshua 21:1"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The Eleazar-Joshua dual authority is recognized across traditions as a deliberate theological statement: after Moses, leadership is shared rather than concentrated. This principle shapes Israel's governance through the judges period and into the monarchy. Both traditions note that the priestly-civil partnership reflects Numbers' holiness-gradation theology applied to governance. The arrangement implicitly acknowledges that comprehensive prophetic authority (Moses' model) is unrepeatable.",
+    "related_passages": [
+      "Numbers 27:18-23",
+      "Joshua 14:1",
+      "Joshua 19:51",
+      "Joshua 21:1",
+      "Judges 20:27-28"
+    ],
+    "tags": [
+      "dual-authority",
+      "eleazar-joshua",
+      "land-distribution",
+      "shared-leadership",
+      "post-mosaic-governance"
+    ]
   },
   {
     "id": "interpretive-question-35-28",
@@ -10706,34 +11684,61 @@
     ],
     "passage": "Numbers 35",
     "question": "Interpretive Question: 35:28",
-    "context": "",
+    "context": "Numbers 35:28 stipulates that an accidental killer must remain in the city of refuge until the death of the high priest, after which they may return home. Milgrom notes the theological logic: the high priest's death functions as a kind of atonement, absorbing the bloodguilt that the accidental killer bears. This is not a legal technicality but a profound theological statement — the high priest's life is vicarious, his death expiatory. The institution of cities of refuge itself represents a remarkable legal innovation: distinguishing intentional from accidental killing and providing sanctuary from blood vengeance.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
         "label": "Critical/Analytical scholarship",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Milgrom: \"The accused must stay in his city of refuge until the death of the high priest; only after the death of the high priest may he return to his…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Milgrom's analysis of the high priest's death as expiatory provides the most theologically coherent explanation for the otherwise puzzling release mechanism. The comparative ANE evidence for sanctuary cities enriches understanding of the institution's cultural context.",
+        "weaknesses": "The expiatory interpretation, while compelling, is not explicitly stated in the text — it is inferred from the structure of the legislation. Alternative explanations (administrative convenience, new-era symbolism) deserve consideration.",
+        "key_verses": [
+          "Numbers 35:25",
+          "Numbers 35:28",
+          "Numbers 35:32-33",
+          "Joshua 20:6"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "macarthur"
+        ],
         "proponents": "Reads Cities of Refuge within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The canonical reading identifies the high priest's death as a powerful type of Christ's atoning death: the one whose death releases the confined from their guilt. The cities of refuge as a whole foreshadow the gospel's provision of sanctuary for those fleeing the consequences of sin.",
+        "weaknesses": "The typological reading should not obscure the provision's own legal significance: Israel developed a remarkably humane distinction between intentional and accidental killing at a time when blood vengeance was the norm. This legal innovation deserves appreciation in its own right.",
+        "key_verses": [
+          "Numbers 35:25",
+          "Numbers 35:28",
+          "Numbers 35:33",
+          "Hebrews 6:18"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The high priest's death as the release mechanism for the accidental killer is one of the most theologically suggestive provisions in the Pentateuch. Both traditions recognize the vicarious logic: someone's death must answer for the bloodshed, and the high priest's natural death fulfills this requirement. The christological potential is obvious (Hebrews develops it), but the provision also reveals a sophisticated understanding of communal guilt and vicarious resolution within the OT's own theological framework. The cities of refuge as an institution represent genuine legal innovation in distinguishing degrees of culpability.",
+    "related_passages": [
+      "Numbers 35:9-15",
+      "Deuteronomy 19:1-13",
+      "Joshua 20:1-9",
+      "Hebrews 6:18",
+      "Romans 8:1"
+    ],
+    "tags": [
+      "cities-of-refuge",
+      "high-priest-death",
+      "vicarious-atonement",
+      "bloodguilt",
+      "accidental-killing"
+    ]
   },
   {
     "id": "historical-and-literary-integrity-of-the-daughters-of-zeloph-ch36",
@@ -10745,34 +11750,61 @@
     ],
     "passage": "Numbers 36",
     "question": "Historical and Literary Integrity of The Daughters of Zelophehad",
-    "context": "",
+    "context": "Numbers 36 returns to the Zelophehad daughters' case from chapter 27, now addressing the tribal leaders' concern: if the daughters marry outside their tribe, their inherited land will transfer permanently to another tribe. The solution — daughters who inherit must marry within their father's tribe — creates an inclusio that frames the second half of Numbers (chs. 27-36) with the Zelophehad case. Source critics see this as a P addendum that qualifies the earlier ruling. The chapter's final verse (36:13) serves as a colophon for the entire plains-of-Moab legislation.",
     "positions": [
       {
         "id": "critical-scholarship-noth-gray",
         "label": "Critical scholarship (Noth, Gray)",
         "tradition_family": "critical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Identifies The Daughters of Zelophehad as a composite of J, E, and P sources redacted together, with inconsistencies explained by source combination.",
         "argument": "The source-critical approach accounts for apparent repetitions and tensions but has been questioned for its circular methodology.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The source-critical reading identifies the chapter as a necessary qualification of 27:1-11 that addresses a genuine legal lacuna: unrestricted daughter inheritance would erode tribal land boundaries over generations. The P attribution explains the legislation's concern with institutional stability.",
+        "weaknesses": "Treating the chapter as merely a P addendum underplays its literary function as an inclusio with chapter 27. The modification is narratively motivated by a legitimate tribal concern, not just by redactional activity.",
+        "key_verses": [
+          "Numbers 36:1-4",
+          "Numbers 36:5-9",
+          "Numbers 36:10-12",
+          "Numbers 36:13"
+        ]
       },
       {
         "id": "literary-and-canonical-unity-milgrom-ash",
         "label": "Literary and canonical unity (Milgrom, Ashley)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "ashley",
+          "calvin"
+        ],
         "proponents": "Reads The Daughters of Zelophehad as a literary unit with deliberate structure, arguing that apparent inconsistencies are rhetorical or theological rather than redactional.",
         "argument": "The literary approach has gained ground; the chapter’s internal coherence supports reading it as a unified composition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The canonical reading highlights the balance between individual rights and communal responsibility: the daughters retain their inheritance right but accept a constraint (endogamous marriage) that preserves tribal integrity. This models how communities negotiate competing legitimate interests.",
+        "weaknesses": "The marriage restriction further limits women's autonomy beyond what chapter 27 already constrained. Honest engagement requires acknowledging that the resolution prioritizes tribal land preservation over women's freedom of marital choice.",
+        "key_verses": [
+          "Numbers 36:5-7",
+          "Numbers 36:8-9",
+          "Numbers 36:10-12",
+          "Leviticus 25:23"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Numbers 36 illustrates the complexity of implementing new legal principles within existing social structures. The modification of chapter 27's ruling — daughters may inherit but must marry within the tribe — balances individual rights with communal land preservation. Both traditions recognize the inclusio structure (27 and 36 as bookends) as intentional literary design. The chapter demonstrates that biblical law develops through case-by-case refinement rather than abstract codification, a process that values both innovation and stability.",
+    "related_passages": [
+      "Numbers 27:1-11",
+      "Joshua 17:3-6",
+      "Leviticus 25:23-28",
+      "Ruth 4:1-12",
+      "1 Kings 21:1-3"
+    ],
+    "tags": [
+      "zelophehads-daughters",
+      "tribal-inheritance",
+      "endogamy",
+      "land-theology",
+      "legal-refinement"
+    ]
   },
   {
     "id": "authorship-and-date-of-deuteronomy",
@@ -10880,18 +11912,25 @@
     ],
     "passage": "Joshua 1",
     "question": "Historicity of the Conquest",
-    "context": "",
+    "context": "The historicity of Israel's conquest of Canaan as described in Joshua is one of the most debated questions in biblical scholarship. Three major models have emerged: the military conquest model (Albright, Kitchen), emphasizing archaeological evidence for Late Bronze Age destructions at Canaanite sites; the gradual infiltration model (Alt, Noth), proposing peaceful pastoral settlement that Joshua idealizes as military victory; and the peasant revolt model (Mendenhall, Gottwald), arguing that 'Israel' emerged from internal Canaanite social upheaval rather than external invasion. Archaeological evidence is ambiguous: some sites show Late Bronze destructions (Hazor, Lachish) while others show no evidence of conquest (Jericho, Ai).",
     "positions": [
       {
         "id": "military-conquest-albright-kitchen",
         "label": "Military conquest (Albright, Kitchen)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "hess"
+        ],
         "proponents": "W.F. Albright, K. Kitchen, R. Hess",
         "argument": "Archaeological destruction layers at Hazor, Lachish, and Bethel support a late Bronze Age conquest. The book reflects historical memory of a swift, unified military campaign c.1400 BC.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Archaeological destructions at Hazor and Lachish in the late thirteenth century BCE correlate plausibly with Joshua's account. The Merneptah Stele (c. 1208 BCE) confirms Israel's existence as an entity in Canaan by the late thirteenth century, consistent with a preceding conquest.",
+        "weaknesses": "Jericho and Ai — the first two conquest targets in Joshua — show no evidence of Late Bronze Age destruction layers. The destruction evidence at other sites can be attributed to Egyptian campaigns, Sea Peoples incursions, or inter-Canaanite conflict rather than Israelite conquest.",
+        "key_verses": [
+          "Joshua 6:20-21",
+          "Joshua 10:28-43",
+          "Joshua 11:10-11",
+          "Judges 1:8"
+        ]
       },
       {
         "id": "gradual-infiltration-alt-noth",
@@ -10900,25 +11939,49 @@
         "scholar_ids": [],
         "proponents": "A. Alt, M. Noth",
         "argument": "Settlement was peaceful and incremental — pastoral nomads gradually settled alongside existing populations. Joshua's conquest narrative is theological, not historical.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The gradual infiltration model accounts for the Judges 1 evidence of incomplete conquest and the archaeological continuity between Late Bronze and Iron I material culture at many sites. The pastoral-nomadic settlement pattern is well attested in the ancient Near East.",
+        "weaknesses": "The model must explain why Israel's collective memory universally remembers a dramatic military conquest rather than gradual settlement. The Judges 1 evidence could represent a later phase after an initial conquest rather than the primary settlement mode.",
+        "key_verses": [
+          "Judges 1:1-7",
+          "Judges 1:19-36",
+          "Joshua 13:1-7",
+          "Joshua 15:63"
+        ]
       },
       {
         "id": "peasant-revolt-mendenhall-gottwald",
         "label": "Peasant revolt (Mendenhall, Gottwald)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "howard"
+        ],
         "proponents": "G. Mendenhall, N. Gottwald",
         "argument": "Canaanite underclass revolted against city-state rulers, later mythologised as external conquest. Archaeology shows cultural continuity, not destruction.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The sociological model explains the emergence of early Israelite settlements in the central highlands without requiring a large-scale invasion from outside Canaan. Material culture continuity between Canaanite and early Israelite sites supports internal origins.",
+        "weaknesses": "The model has lost support due to limited evidence for the kind of social revolution it proposes. The distinctive features of early Israelite material culture (four-room houses, collar-rim jars, absence of pig bones) may indicate a different ethnic group rather than revolting Canaanites.",
+        "key_verses": [
+          "Joshua 24:14-15",
+          "Judges 5:6-8",
+          "Judges 9:1-6",
+          "1 Samuel 8:5"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The conquest question remains genuinely unresolved, with each model explaining some evidence while struggling with other data. The military conquest model matches some archaeological destructions but not others. The infiltration model explains the mixed evidence but must account for the strong conquest tradition in Israel's collective memory. The peasant revolt model provides a sociological framework but has lost favor due to limited material evidence. Most current scholars adopt modified positions that combine elements of multiple models. The theological question — what kind of land-gift is God making? — persists regardless of the historical reconstruction.",
+    "related_passages": [
+      "Deuteronomy 7:1-5",
+      "Joshua 6:1-27",
+      "Joshua 10:28-43",
+      "Joshua 11:10-13",
+      "Judges 1:1-36"
+    ],
+    "tags": [
+      "conquest-historicity",
+      "archaeological-evidence",
+      "settlement-models",
+      "promised-land",
+      "holy-war"
+    ]
   },
   {
     "id": "the-date-of-ruth-pre-exilic-or-post-exilic-composition",
