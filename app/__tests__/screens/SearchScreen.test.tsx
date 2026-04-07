@@ -83,6 +83,7 @@ describe('SearchScreen', () => {
       people: [{ id: 'moses', name: 'Moses', role: 'Prophet', era: 'exodus' }],
       wordStudies: [],
       verses: [],
+      discoveries: [],
     };
     // The SectionList needs a query with length >= 2 to render,
     // but since useSearch is mocked, the results will be available.
@@ -98,6 +99,7 @@ describe('SearchScreen', () => {
       verses: [
         { id: 1, book_id: 'genesis', chapter_num: 1, verse_num: 1, text: 'In the beginning', book_name: 'Genesis' },
       ],
+      discoveries: [],
     };
     const { toJSON } = renderWithProviders(<SearchScreen />);
     expect(toJSON()).toBeTruthy();
@@ -108,6 +110,7 @@ describe('SearchScreen', () => {
       people: [],
       wordStudies: [{ id: 'w1', original: '\u05D7\u05B6\u05E1\u05B6\u05D3', transliteration: 'chesed' }],
       verses: [],
+      discoveries: [],
     };
     const { toJSON } = renderWithProviders(<SearchScreen />);
     expect(toJSON()).toBeTruthy();
