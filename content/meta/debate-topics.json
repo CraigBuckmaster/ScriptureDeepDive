@@ -7490,7 +7490,7 @@
     ],
     "passage": "Leviticus 1",
     "question": "Source and Date of The Burnt Offering",
-    "context": "",
+    "context": "The burnt offering (ʿōlâ) is the first sacrifice detailed in Leviticus, requiring the complete combustion of the animal. The documentary hypothesis assigns this material to the Priestly source (P), dated to the exilic or post-exilic period. However, burnt offerings appear throughout the Pentateuch and are attested in second-millennium ANE ritual texts from Ugarit and Mari, raising questions about a late date for the legislation.",
     "positions": [
       {
         "id": "documentary-hypothesis-wellhausen-noth",
@@ -7499,25 +7499,48 @@
         "scholar_ids": [],
         "proponents": "Assigns The Burnt Offering to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.",
         "argument": "This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Explains the systematic, codified character of the sacrificial legislation and its priestly vocabulary (technical terms like qorbān, ʾiššeh); accounts for differences between Leviticus 1 and earlier patriarchal sacrifice narratives.",
+        "weaknesses": "Struggles to explain the close parallels between Levitical burnt offering procedures and second-millennium Ugaritic and Hittite sacrificial texts; a post-exilic origin for such archaic ritual details is difficult to account for.",
+        "key_verses": [
+          "Leviticus 1:3-4",
+          "Leviticus 1:9",
+          "Genesis 8:20",
+          "Exodus 29:18"
+        ]
       },
       {
         "id": "unified-authorship-milgrom-wenham-conser",
         "label": "Unified authorship (Milgrom, Wenham, conservative scholarship)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for The Burnt Offering.",
         "argument": "Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The burnt offering's parallels with Ugaritic ʿōlâ texts and Hittite burnt offering rituals strongly support an early date; the archaic Hebrew vocabulary in Leviticus 1 fits a pre-monarchic rather than post-exilic setting.",
+        "weaknesses": "Does not fully explain the highly systematic literary arrangement of the sacrificial laws, which suggests editorial shaping; the question of Mosaic authorship is distinct from the question of antiquity.",
+        "key_verses": [
+          "Leviticus 1:1-2",
+          "Exodus 20:24",
+          "1 Samuel 7:9",
+          "Psalm 51:16-17"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The antiquity of the burnt offering as a ritual practice is not seriously disputed; the debate centers on when the Levitical codification took its present literary form. Milgrom's comparative work with ANE parallels has shifted scholarly opinion toward recognizing pre-exilic roots for much of the Priestly material, even among scholars who maintain some form of the documentary hypothesis. The distinction between the age of the practice and the date of its literary codification remains the key differentiator.",
+    "related_passages": [
+      "Genesis 22:2",
+      "Exodus 29:38-42",
+      "Numbers 28:1-8",
+      "1 Kings 18:38"
+    ],
+    "tags": [
+      "sacrifice",
+      "burnt-offering",
+      "priestly-source",
+      "documentary-hypothesis",
+      "ancient-near-east"
+    ]
   },
   {
     "id": "source-and-date-of-the-grain-offering",
@@ -7529,7 +7552,7 @@
     ],
     "passage": "Leviticus 2",
     "question": "Source and Date of The Grain Offering",
-    "context": "",
+    "context": "The grain offering (minḥâ) in Leviticus 2 details procedures for presenting cereal offerings of fine flour, oil, and frankincense. The documentary hypothesis classifies this as P material. Milgrom noted that the grain offering terminology and procedures have close parallels in second-millennium Mesopotamian and Ugaritic temple records, suggesting the ritual predates its literary codification.",
     "positions": [
       {
         "id": "documentary-hypothesis-wellhausen-noth",
@@ -7538,25 +7561,48 @@
         "scholar_ids": [],
         "proponents": "Assigns The Grain Offering to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.",
         "argument": "This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The grain offering's integration into the systematic sacrificial code of P, with its characteristic vocabulary and formulaic structure, fits the documentary model of priestly editorial activity.",
+        "weaknesses": "Cannot easily account for archaic features in the grain offering regulations, including the prohibition of leaven and honey (Lev 2:11), which parallel Mesopotamian offering restrictions known from much earlier periods.",
+        "key_verses": [
+          "Leviticus 2:1-2",
+          "Leviticus 2:11",
+          "Leviticus 6:14-18",
+          "Numbers 15:1-12"
+        ]
       },
       {
         "id": "unified-authorship-milgrom-wenham-conser",
         "label": "Unified authorship (Milgrom, Wenham, conservative scholarship)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for The Grain Offering.",
         "argument": "Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The minḥâ terminology appears in early biblical narratives (Gen 4:3-5, Judg 6:18-19) with consistent meaning, suggesting continuity rather than post-exilic innovation; ANE parallels from Ugarit confirm antiquity.",
+        "weaknesses": "The literary arrangement of Leviticus 1-7 shows deliberate editorial structuring that likely postdates the original ritual prescriptions, even if the core material is ancient.",
+        "key_verses": [
+          "Leviticus 2:1",
+          "Genesis 4:3-5",
+          "Judges 6:18-19",
+          "1 Samuel 2:17"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Both sides agree the grain offering is an ancient practice. The debate is whether Leviticus 2 represents a post-exilic priestly codification of older traditions or a substantially Mosaic text with later editorial touches. Milgrom's demonstration of ANE parallels has made a purely late dating increasingly difficult to maintain, though the literary shaping of the material likely involved multiple editorial stages.",
+    "related_passages": [
+      "Genesis 4:3-5",
+      "Judges 6:18-19",
+      "1 Kings 8:64",
+      "Ezekiel 46:14"
+    ],
+    "tags": [
+      "sacrifice",
+      "grain-offering",
+      "priestly-source",
+      "documentary-hypothesis",
+      "ancient-near-east"
+    ]
   },
   {
     "id": "source-and-date-of-the-fellowship-offering",
@@ -7568,7 +7614,7 @@
     ],
     "passage": "Leviticus 3",
     "question": "Source and Date of The Fellowship Offering",
-    "context": "",
+    "context": "The fellowship offering (zebaḥ šelāmîm, also 'peace offering') in Leviticus 3 describes a shared sacrificial meal where portions go to God (fat), the priest, and the worshipper. This communal aspect distinguishes it from the wholly consumed burnt offering. Critical scholars assign it to P, while comparative studies note parallels with Ugaritic communal sacrifice texts.",
     "positions": [
       {
         "id": "documentary-hypothesis-wellhausen-noth",
@@ -7577,25 +7623,48 @@
         "scholar_ids": [],
         "proponents": "Assigns The Fellowship Offering to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.",
         "argument": "This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The fellowship offering's detailed fat-burning regulations and blood manipulation procedures reflect priestly systematization consistent with P's editorial characteristics.",
+        "weaknesses": "Communal sacrificial meals are among the oldest attested ritual practices in the ANE; assigning the legislation to a late date does not explain why the ritual structure matches second-millennium patterns so closely.",
+        "key_verses": [
+          "Leviticus 3:1-5",
+          "Leviticus 3:16-17",
+          "Leviticus 7:11-21",
+          "Numbers 6:14"
+        ]
       },
       {
         "id": "unified-authorship-milgrom-wenham-conser",
         "label": "Unified authorship (Milgrom, Wenham, conservative scholarship)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for The Fellowship Offering.",
         "argument": "Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The šelāmîm sacrifice appears in early narratives (Exod 24:5, 1 Sam 11:15) as an established practice, and Ugaritic šlmm texts confirm the terminology and concept in the Late Bronze Age.",
+        "weaknesses": "The detailed regulations in Leviticus 3 and 7 show signs of systematic arrangement that may reflect later editorial compilation of earlier ritual traditions.",
+        "key_verses": [
+          "Leviticus 3:1",
+          "Exodus 24:5",
+          "1 Samuel 11:15",
+          "Amos 5:22"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The fellowship offering is widely recognized as one of the oldest Israelite sacrificial types, with clear ANE antecedents. The scholarly consensus has moved toward acknowledging the antiquity of the ritual while debating the date of its literary formulation in Leviticus. The communal meal aspect connects it to covenant-making ceremonies throughout the biblical narrative.",
+    "related_passages": [
+      "Exodus 24:5-11",
+      "1 Samuel 11:15",
+      "2 Samuel 6:17-18",
+      "1 Kings 8:63"
+    ],
+    "tags": [
+      "sacrifice",
+      "peace-offering",
+      "fellowship-offering",
+      "priestly-source",
+      "communal-meal"
+    ]
   },
   {
     "id": "source-and-date-of-the-sin-offering",
@@ -7607,7 +7676,7 @@
     ],
     "passage": "Leviticus 4",
     "question": "Source and Date of The Sin Offering",
-    "context": "",
+    "context": "The sin offering (ḥaṭṭāʾt) in Leviticus 4 addresses inadvertent violations of divine commands, with different procedures depending on whether the offender is the high priest, the community, a leader, or a commoner. The graded system reflects a sophisticated theology of impurity and atonement. Milgrom argued that the ḥaṭṭāʾt is better understood as a 'purification offering' that cleanses the sanctuary rather than the sinner.",
     "positions": [
       {
         "id": "documentary-hypothesis-wellhausen-noth",
@@ -7616,25 +7685,49 @@
         "scholar_ids": [],
         "proponents": "Assigns The Sin Offering to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.",
         "argument": "This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The sin offering's complex graded system and its integration with the Day of Atonement ritual (Lev 16) reflect the kind of systematic priestly theology associated with P's editorial framework.",
+        "weaknesses": "The distinction between inadvertent and deliberate sin in the sacrificial system reflects a moral sophistication attested in early legal codes; the Hittite Instructions for Temple Officials contain analogous purity concepts.",
+        "key_verses": [
+          "Leviticus 4:2-3",
+          "Leviticus 4:13-14",
+          "Leviticus 4:27-28",
+          "Leviticus 16:16"
+        ]
       },
       {
         "id": "unified-authorship-milgrom-wenham-conser",
         "label": "Unified authorship (Milgrom, Wenham, conservative scholarship)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for The Sin Offering.",
         "argument": "Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Milgrom's reinterpretation of ḥaṭṭāʾt as 'purification offering' — removing impurity from the sanctuary rather than guilt from the person — resolves longstanding exegetical difficulties and finds support in Akkadian and Hittite purification rituals.",
+        "weaknesses": "The purification model, while compelling, does not fully account for passages where the offering clearly addresses moral guilt (e.g., Lev 5:5-6), suggesting the offering may have had a broader semantic range.",
+        "key_verses": [
+          "Leviticus 4:1-2",
+          "Leviticus 5:5-6",
+          "Leviticus 16:16",
+          "Numbers 15:27-29"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Milgrom's 'purification offering' thesis has significantly influenced scholarship, shifting the conversation from source dating toward understanding the offering's theological function. The graded system in Leviticus 4 reflects a nuanced theology of holiness and contamination that most scholars now recognize as having deep roots in Israelite religion, regardless of the dating of its literary formulation.",
+    "related_passages": [
+      "Leviticus 16:1-34",
+      "Numbers 15:22-31",
+      "Hebrews 9:13-14",
+      "Hebrews 10:4"
+    ],
+    "tags": [
+      "sacrifice",
+      "sin-offering",
+      "purification",
+      "atonement",
+      "priestly-source",
+      "impurity"
+    ]
   },
   {
     "id": "interpretive-question-5-11-13",
@@ -7646,7 +7739,7 @@
     ],
     "passage": "Leviticus 5",
     "question": "Interpretive Question: 5:11–13",
-    "context": "",
+    "context": "Leviticus 5:11-13 permits a tenth of an ephah of fine flour as a sin offering for those too poor to afford birds. This is the only case where a non-blood sacrifice functions as a ḥaṭṭāʾt, creating a theological tension with Leviticus 17:11 ('it is the blood that makes atonement'). Scholars debate whether this exception undermines the centrality of blood in atonement theology.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
@@ -7655,25 +7748,49 @@
         "scholar_ids": [],
         "proponents": "Milgrom: The flour offering as the lowest-grade ḥaṭṭāʾt provokes a hermeneutical question: how can flour purge the sanctuary? Milgrom's answer: it is …",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Recognizing the flour offering as a genuine exception to blood atonement opens important theological questions about the nature of atonement in the Hebrew Bible — it suggests atonement is ultimately about divine grace rather than a rigid blood mechanism.",
+        "weaknesses": "May overstate the exception's theological significance; the flour offering may function differently from blood sacrifices rather than contradicting them.",
+        "key_verses": [
+          "Leviticus 5:11",
+          "Leviticus 5:12-13",
+          "Leviticus 17:11",
+          "Hebrews 9:22"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Reads The Guilt Offering within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reading the flour offering within the larger sacrificial system preserves the coherence of Levitical atonement theology; Milgrom argued the flour functions as a symbolic substitute that still invokes the principle of kipper (ransom/atonement) without requiring literal blood.",
+        "weaknesses": "The traditional harmonization does not fully address why the text explicitly calls the flour offering a ḥaṭṭāʾt and declares it effective for atonement, using the same formula as blood sacrifices.",
+        "key_verses": [
+          "Leviticus 5:11-13",
+          "Leviticus 4:26",
+          "Leviticus 17:11",
+          "Numbers 15:28"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "This passage is a test case for atonement theology. Milgrom's explanation — that the flour serves as a symbolic blood substitute maintaining the principle of ransom — is widely cited but not universally accepted. The broader question of whether blood is the mechanism or merely the normal medium of atonement remains open, with implications for how the NT appropriates Levitical atonement language.",
+    "related_passages": [
+      "Leviticus 17:11",
+      "Hebrews 9:22",
+      "Numbers 15:27-29",
+      "Psalm 51:16-17"
+    ],
+    "tags": [
+      "atonement",
+      "blood",
+      "poverty",
+      "sacrifice",
+      "sin-offering",
+      "theological-tension"
+    ]
   },
   {
     "id": "source-and-date-of-priestly-procedures",
@@ -7685,7 +7802,7 @@
     ],
     "passage": "Leviticus 6",
     "question": "Source and Date of Priestly Procedures",
-    "context": "",
+    "context": "Leviticus 6-7 provides supplementary instructions (tôrâ) for the priests on handling sacrificial materials — portions to be eaten, time limits, and disposal of remains. These chapters repeat and expand on Leviticus 1-5 from the priestly perspective, leading critical scholars to see them as a separate P layer.",
     "positions": [
       {
         "id": "documentary-hypothesis-wellhausen-noth",
@@ -7694,25 +7811,48 @@
         "scholar_ids": [],
         "proponents": "Assigns Priestly Procedures to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.",
         "argument": "This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The shift in addressee (from the layperson in Lev 1-5 to the priest in Lev 6-7) and differences in vocabulary support the view that these represent distinct literary layers within the Priestly tradition.",
+        "weaknesses": "Different addressees do not necessarily imply different authors or dates; instruction manuals commonly separate public rules from professional guidelines in a single composition.",
+        "key_verses": [
+          "Leviticus 6:8-9",
+          "Leviticus 6:14",
+          "Leviticus 6:25",
+          "Leviticus 7:37-38"
+        ]
       },
       {
         "id": "unified-authorship-milgrom-wenham-conser",
         "label": "Unified authorship (Milgrom, Wenham, conservative scholarship)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for Priestly Procedures.",
         "argument": "Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The complementary relationship between Lev 1-5 and 6-7 — public instructions followed by priestly procedural details — mirrors the structure of ANE ritual texts from Hatti and Emar, supporting a unified compositional strategy.",
+        "weaknesses": "Even if the structure is unified, the material may have been compiled from earlier sources, making authorship distinct from literary unity.",
+        "key_verses": [
+          "Leviticus 6:8-13",
+          "Leviticus 7:1-7",
+          "Leviticus 7:37-38",
+          "Exodus 29:38-42"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The relationship between Leviticus 1-5 and 6-7 is best understood as complementary rather than contradictory. Whether this reflects a single author or a unified editorial process remains debated. The ANE parallels cited by Milgrom have made purely source-critical fragmentation of the text less persuasive.",
+    "related_passages": [
+      "Exodus 29:38-46",
+      "Numbers 18:8-19",
+      "Ezekiel 44:28-31",
+      "1 Samuel 2:12-17"
+    ],
+    "tags": [
+      "priestly-procedures",
+      "sacrifice",
+      "priestly-source",
+      "literary-structure",
+      "torah"
+    ]
   },
   {
     "id": "interpretive-question-7-18",
@@ -7724,7 +7864,7 @@
     ],
     "passage": "Leviticus 7",
     "question": "Interpretive Question: 7:18",
-    "context": "",
+    "context": "Leviticus 7:18 warns that if fellowship offering meat is eaten on the third day, the sacrifice 'will not be accepted' and the offerer 'will bear their iniquity' (piggûl). The term piggûl is rare and debated — does it denote ritual contamination of the meat itself, or moral culpability of the person who violates the time limit?",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
@@ -7733,25 +7873,48 @@
         "scholar_ids": [],
         "proponents": "Milgrom: \"Piggul\" (pîggûl, \"desecrated/abhorrent\") — the technical term for an offering invalidated by improper intention, specifically by intending t…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reading piggûl as ritual contamination aligns with the broader Levitical purity system where substances become impure through improper handling or timing; the meat itself becomes 'offensive' or 'foul.'",
+        "weaknesses": "This reading risks reducing the warning to a purely ritual-mechanical concern without adequate weight on the moral dimension of 'bearing iniquity.'",
+        "key_verses": [
+          "Leviticus 7:18",
+          "Leviticus 19:7-8",
+          "Isaiah 65:4",
+          "Ezekiel 4:14"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Reads The Guilt and Fellowship Offerings within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The 'bearing iniquity' formula elsewhere in Leviticus always carries moral weight (cf. 5:1, 17; 17:16; 20:17); the traditional reading preserves the ethical seriousness of violating sacrificial law.",
+        "weaknesses": "May impose a moral framework on what is primarily a ritual regulation; the parallel in 19:7-8 suggests the focus is on the offerer's disregard for sacred time limits rather than inherent moral evil.",
+        "key_verses": [
+          "Leviticus 7:18",
+          "Leviticus 5:1",
+          "Leviticus 5:17",
+          "Leviticus 19:7-8"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Milgrom argued that piggûl represents a unique category combining ritual and moral dimensions — the meat becomes contaminated through the offerer's negligent intent to eat it late. This both/and interpretation has gained traction as preferable to a strict either/or. The concept anticipates later rabbinic discussions of intention (kavvanah) in sacrifice.",
+    "related_passages": [
+      "Leviticus 19:5-8",
+      "Ezekiel 4:14",
+      "Isaiah 65:4",
+      "Malachi 1:7-8"
+    ],
+    "tags": [
+      "piggul",
+      "sacrifice",
+      "ritual-purity",
+      "fellowship-offering",
+      "intention"
+    ]
   },
   {
     "id": "interpretive-question-8-1-5",
@@ -7763,7 +7926,7 @@
     ],
     "passage": "Leviticus 8",
     "question": "Interpretive Question: 8:1–5",
-    "context": "",
+    "context": "Leviticus 8:1-5 describes Moses performing the ordination of Aaron and his sons at the Tent of Meeting, with the entire assembly gathered. The passage raises questions about the relationship between Moses' priestly role here and the exclusive Aaronic priesthood established in the same text.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
@@ -7772,25 +7935,48 @@
         "scholar_ids": [],
         "proponents": "Milgrom: The ordination ceremony is a liturgical drama with three acts: purification (washing), investiture (clothing), and sanctification (anointing)…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Critical analysis identifies the tension between Moses as officiant and Aaron as priest as evidence of competing priestly traditions being merged by the P editor; Moses' temporary priestly role reflects an older tradition.",
+        "weaknesses": "The tension may be intentional rather than evidence of editorial seams — ordination ceremonies by definition require an existing authority to install the new officeholders.",
+        "key_verses": [
+          "Leviticus 8:1-5",
+          "Leviticus 8:6-9",
+          "Exodus 29:1-9",
+          "Numbers 3:1-4"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Reads The Ordination of Aaron within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Moses' unique role as mediator of the covenant naturally extends to installing the priesthood; this is not a competing tradition but a logical narrative sequence where the lawgiver commissions the institutions the law establishes.",
+        "weaknesses": "Does not fully address why later biblical tradition never mentions Moses performing priestly functions again, which may suggest the ordination narrative reflects a specific literary purpose.",
+        "key_verses": [
+          "Leviticus 8:1-5",
+          "Exodus 29:1-9",
+          "Exodus 40:12-15",
+          "Hebrews 7:11"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Moses' priestly role in Leviticus 8 is best understood as transitional — he acts as God's authorized agent to establish the Aaronic priesthood, after which his priestly functions cease. This reading avoids both source-critical fragmentation and the theological difficulty of competing priesthoods. The narrative makes a deliberate point about legitimate succession.",
+    "related_passages": [
+      "Exodus 29:1-37",
+      "Exodus 40:12-16",
+      "Numbers 3:1-4",
+      "Hebrews 5:1-4"
+    ],
+    "tags": [
+      "ordination",
+      "priesthood",
+      "moses",
+      "aaron",
+      "tent-of-meeting"
+    ]
   },
   {
     "id": "interpretive-question-8-33-36",
@@ -7802,7 +7988,7 @@
     ],
     "passage": "Leviticus 8",
     "question": "Interpretive Question: 8:33–36",
-    "context": "",
+    "context": "Leviticus 8:33-36 commands Aaron and his sons to remain at the entrance to the Tent of Meeting for seven days during their ordination. The seven-day confinement raises questions about its purpose — is it a quarantine period for ritual purification, a symbolic death-and-rebirth transition, or a practical training period?",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
@@ -7811,25 +7997,48 @@
         "scholar_ids": [],
         "proponents": "Milgrom: The seven-day liminality period is paralleled in ancient Near Eastern ordination rites. The candidate is \"betwixt and between\" — no longer co…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Comparative ANE evidence shows that installation rituals for priests and kings commonly involved multi-day seclusion periods; the seven-day period may reflect a liminal transition rite analogous to those attested at Emar and in Hittite texts.",
+        "weaknesses": "Drawing too heavily on ANE parallels risks obscuring the distinctively Israelite theological meaning of the ordination period.",
+        "key_verses": [
+          "Leviticus 8:33-36",
+          "Leviticus 14:8-9",
+          "Exodus 29:35",
+          "Ezekiel 43:25-27"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Reads The Ordination of Aaron within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The seven-day period mirrors other purification periods in Leviticus (skin disease cleansing in ch. 14, Nazirite contamination in Num 6) and establishes the priests' complete consecration before they handle holy things on the eighth day.",
+        "weaknesses": "The parallel with purification rituals does not fully explain why newly ordained priests need purification — they have not been contaminated, but are being elevated to a new status.",
+        "key_verses": [
+          "Leviticus 8:33-36",
+          "Leviticus 9:1",
+          "Leviticus 14:8-9",
+          "Numbers 6:9-12"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The seven-day ordination confinement most likely serves multiple purposes simultaneously: ritual separation from the profane world, symbolic completion (seven as the number of fullness), and preparation for the eighth-day inauguration of public ministry. Milgrom's observation that the eighth day marks the transition from consecration to service has been widely adopted.",
+    "related_passages": [
+      "Leviticus 9:1-6",
+      "Exodus 29:35-37",
+      "Ezekiel 43:25-27",
+      "Numbers 6:9-12"
+    ],
+    "tags": [
+      "ordination",
+      "seven-days",
+      "priesthood",
+      "consecration",
+      "liminal-rite"
+    ]
   },
   {
     "id": "source-and-date-of-the-eighth-day",
@@ -7841,7 +8050,7 @@
     ],
     "passage": "Leviticus 9",
     "question": "Source and Date of The Eighth Day",
-    "context": "",
+    "context": "Leviticus 9 narrates the climactic eighth day when Aaron offers his first sacrifices as high priest and the glory of the LORD appears to all the people. Critical scholars see this as the literary climax of P's ordination narrative, while others emphasize its theological significance as the inauguration of the tabernacle cultus.",
     "positions": [
       {
         "id": "documentary-hypothesis-wellhausen-noth",
@@ -7850,25 +8059,48 @@
         "scholar_ids": [],
         "proponents": "Assigns The Eighth Day to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.",
         "argument": "This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The chapter's close verbal connections with Exodus 29 and 40 suggest P's editorial hand shaping a coherent narrative arc from tabernacle construction to priestly installation to divine manifestation.",
+        "weaknesses": "Verbal connections between related texts are equally consistent with a single author composing a unified narrative; literary coherence does not require multiple sources.",
+        "key_verses": [
+          "Leviticus 9:1",
+          "Leviticus 9:23-24",
+          "Exodus 29:43-46",
+          "Exodus 40:34-35"
+        ]
       },
       {
         "id": "unified-authorship-milgrom-wenham-conser",
         "label": "Unified authorship (Milgrom, Wenham, conservative scholarship)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for The Eighth Day.",
         "argument": "Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The narrative arc from Exodus 25 through Leviticus 9 forms a coherent theological progression — God commands a dwelling, Israel builds it, the priesthood is installed, and God's glory fills the sanctuary. This grand narrative is more naturally read as a unified composition.",
+        "weaknesses": "A unified reading must still account for repetitions and tensions within the larger narrative that suggest editorial activity.",
+        "key_verses": [
+          "Leviticus 9:1",
+          "Leviticus 9:23-24",
+          "Exodus 40:34-35",
+          "2 Chronicles 7:1-3"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Leviticus 9 functions as the theological climax of the tabernacle-priesthood narrative. Whether one attributes the text to P or to a unified Mosaic composition, its literary and theological achievement is widely recognized. The fire from the LORD consuming the offerings (9:24) parallels Solomon's temple dedication (2 Chr 7:1), creating a canonical echo that both traditions value.",
+    "related_passages": [
+      "Exodus 40:34-38",
+      "2 Chronicles 7:1-3",
+      "1 Kings 8:10-11",
+      "Numbers 16:35"
+    ],
+    "tags": [
+      "eighth-day",
+      "glory-of-god",
+      "priesthood",
+      "tabernacle",
+      "divine-fire"
+    ]
   },
   {
     "id": "interpretive-question-10-2",
@@ -7880,7 +8112,7 @@
     ],
     "passage": "Leviticus 10",
     "question": "Interpretive Question: 10:2",
-    "context": "",
+    "context": "Leviticus 10:2 records the deaths of Nadab and Abihu when 'fire came out from the LORD and consumed them' after they offered 'unauthorized fire' (ʾēš zārâ). The text does not specify their precise offense, generating extensive interpretive debate about what made their fire 'unauthorized' or 'strange.'",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
@@ -7889,25 +8121,49 @@
         "scholar_ids": [],
         "proponents": "Milgrom: The fire that consumed them was the same fire from 9:24 — the divine fire that has taken up residence on the altar. It is not an exceptional …",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reading the offense as a violation of specific ritual procedures (wrong incense, wrong time, wrong source of fire) fits the immediate literary context of precise sacrificial regulations in Leviticus 1-9.",
+        "weaknesses": "The text conspicuously does not specify which procedure was violated, suggesting the author may have intended the ambiguity; excessive precision in reconstruction may miss the narrative's point.",
+        "key_verses": [
+          "Leviticus 10:1-2",
+          "Leviticus 16:1-2",
+          "Exodus 30:9",
+          "Numbers 3:4"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "calvin"
+        ],
         "proponents": "Reads Nadab and Abihu within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The traditional reading emphasizes the theological principle: the offense was approaching God in a way He had 'not commanded' (10:1). The specific violation matters less than the principle that worship must conform to divine instruction, not human innovation.",
+        "weaknesses": "A purely principled reading risks domesticating a deeply unsettling narrative; the shocking disproportion between an unclear offense and instant death deserves more theological wrestling.",
+        "key_verses": [
+          "Leviticus 10:1-3",
+          "Leviticus 16:1-2",
+          "Numbers 26:61",
+          "1 Chronicles 24:2"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The narrative's deliberate ambiguity about the precise offense likely serves a literary and theological purpose — it universalizes the warning. The immediate context (the prohibition on priestly wine in 10:8-11) has led some scholars to suggest intoxication, but this remains speculative. The passage functions as the dark counterpart to the divine fire of 9:24: the same God who accepts authorized worship consumes unauthorized worship.",
+    "related_passages": [
+      "Leviticus 16:1-2",
+      "Numbers 16:35",
+      "2 Samuel 6:6-7",
+      "Acts 5:1-11"
+    ],
+    "tags": [
+      "nadab-abihu",
+      "unauthorized-fire",
+      "divine-judgment",
+      "priesthood",
+      "holiness"
+    ]
   },
   {
     "id": "source-and-date-of-clean-and-unclean-animals",
@@ -7919,7 +8175,7 @@
     ],
     "passage": "Leviticus 11",
     "question": "Source and Date of Clean and Unclean Animals",
-    "context": "",
+    "context": "Leviticus 11 lists clean and unclean animals, establishing dietary laws (kashrut) that remain foundational to Jewish practice. The rationale for the classifications — whether hygienic, symbolic, ecological, or theological — is one of the most debated questions in Levitical studies. Milgrom, Mary Douglas, and others have proposed competing frameworks.",
     "positions": [
       {
         "id": "documentary-hypothesis-wellhausen-noth",
@@ -7928,25 +8184,48 @@
         "scholar_ids": [],
         "proponents": "Assigns Clean and Unclean Animals to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.",
         "argument": "This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The systematic classification scheme in Leviticus 11 shows editorial arrangement consistent with P's organizational patterns; parallel but different lists in Deuteronomy 14 suggest independent literary traditions.",
+        "weaknesses": "Differences between Leviticus 11 and Deuteronomy 14 are minor and consistent with the same laws addressed to different audiences (priests vs. laity); the core classifications are identical.",
+        "key_verses": [
+          "Leviticus 11:1-8",
+          "Leviticus 11:46-47",
+          "Deuteronomy 14:3-21",
+          "Acts 10:9-16"
+        ]
       },
       {
         "id": "unified-authorship-milgrom-wenham-conser",
         "label": "Unified authorship (Milgrom, Wenham, conservative scholarship)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for Clean and Unclean Animals.",
         "argument": "Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The dietary laws cohere with the holiness theology of Leviticus — Israel's distinction between clean and unclean mirrors God's separation of Israel from the nations. Milgrom demonstrated that the classifications follow an internally consistent logic related to locomotion and habitat.",
+        "weaknesses": "No single explanatory framework (hygiene, symbolism, anomaly) fully accounts for every classification; some animals defy neat categorization under any proposed rationale.",
+        "key_verses": [
+          "Leviticus 11:1-2",
+          "Leviticus 11:44-45",
+          "Deuteronomy 14:1-2",
+          "Mark 7:18-19"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The rationale for the food laws remains one of the great interpretive puzzles. Mary Douglas's influential 'anomaly' theory (animals that don't fit their category are unclean), Milgrom's locomotion-based classification, and theological readings (holiness = separation) each illuminate aspects without fully explaining the whole. The NT's abrogation of the food laws (Mark 7:18-19, Acts 10) adds a canonical dimension to the debate.",
+    "related_passages": [
+      "Deuteronomy 14:3-21",
+      "Mark 7:14-23",
+      "Acts 10:9-16",
+      "Romans 14:14"
+    ],
+    "tags": [
+      "food-laws",
+      "clean-unclean",
+      "dietary-regulations",
+      "holiness",
+      "kashrut"
+    ]
   },
   {
     "id": "interpretive-question-12-1-5",
@@ -7958,7 +8237,7 @@
     ],
     "passage": "Leviticus 12",
     "question": "Interpretive Question: 12:1–5",
-    "context": "",
+    "context": "Leviticus 12:1-5 prescribes purification periods after childbirth: 7 days for a boy (plus 33 days), 14 days for a girl (plus 66 days). The doubled period for a girl has generated extensive debate about whether the text reflects patriarchal devaluation of women, biological observation, or a different theological logic.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
@@ -7967,25 +8246,48 @@
         "scholar_ids": [],
         "proponents": "Milgrom: The doubled purification period for a girl (80 days vs 40 for a boy) has generated extensive debate. Milgrom's suggestion: the female child h…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Analyzing the differential periods in their ANE cultural context avoids anachronistic moral judgments; the doubled period may relate to the daughter's own future reproductive capacity, doubling the source of impurity rather than reflecting lesser value.",
+        "weaknesses": "Even contextual explanations must grapple with the asymmetry's effect on women's participation in worship and social life; explaining the rationale does not eliminate the practical disparity.",
+        "key_verses": [
+          "Leviticus 12:1-5",
+          "Leviticus 12:6-8",
+          "Leviticus 15:19-24",
+          "Luke 2:22-24"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Reads Purification After Childbirth within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The traditional reading that the periods relate to the biology of postpartum bleeding (longer recovery for girls in ancient observation) preserves the text's concern with bodily impurity rather than gender hierarchy; the same offering is required regardless of the child's sex.",
+        "weaknesses": "Ancient biological claims about differential recovery times lack medical support; the equal-offering point, while valid, does not fully explain why the waiting period differs.",
+        "key_verses": [
+          "Leviticus 12:1-5",
+          "Leviticus 12:6-8",
+          "Leviticus 15:19-30",
+          "Luke 2:22-24"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "No scholarly consensus exists on the reason for the differential. Milgrom's suggestion that the doubled period relates to the daughter's future fertility (doubling the impurity source) is creative but speculative. The most defensible position is that the text operates within an impurity framework where the asymmetry relates to blood-flow duration rather than gender valuation. The equal purification offering (12:6-8) supports this reading.",
+    "related_passages": [
+      "Leviticus 15:19-30",
+      "Luke 2:22-24",
+      "Galatians 3:28",
+      "Exodus 13:2"
+    ],
+    "tags": [
+      "childbirth",
+      "purification",
+      "gender",
+      "impurity",
+      "blood"
+    ]
   },
   {
     "id": "interpretive-question-12-6-7",
@@ -7997,7 +8299,7 @@
     ],
     "passage": "Leviticus 12",
     "question": "Interpretive Question: 12:6–7",
-    "context": "",
+    "context": "Leviticus 12:6-7 prescribes a burnt offering and sin offering after the purification period for childbirth. The requirement of a sin offering for a natural biological process raises the question of whether childbirth itself is sinful or merely generates ritual impurity. This has implications for understanding the relationship between sin and impurity in Leviticus.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
@@ -8006,25 +8308,49 @@
         "scholar_ids": [],
         "proponents": "Milgrom: The ḥaṭṭāʾt here is not for sin but for transition from impurity to purity. Milgrom's consistent interpretation: it purges the sanctuary of w…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Recognizing the sin/purification offering as addressing ritual impurity rather than moral sin aligns with Milgrom's broader reinterpretation of ḥaṭṭāʾt as a purification offering — the mother purifies the sanctuary from the impurity her blood-flow has generated.",
+        "weaknesses": "If the offering merely addresses impurity, the use of the term ḥaṭṭāʾt ('sin offering') is misleading — the traditional translation carries theological weight that a purely ritual reading may understate.",
+        "key_verses": [
+          "Leviticus 12:6-8",
+          "Leviticus 4:26",
+          "Leviticus 15:28-30",
+          "Luke 2:22-24"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "calvin"
+        ],
         "proponents": "Reads Purification After Childbirth within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reading the sin offering as addressing the consequences of the Fall — pain in childbirth (Gen 3:16) and the mortal condition that blood-flow represents — preserves a theological connection between sin, mortality, and purification across the canon.",
+        "weaknesses": "This reading imports Genesis 3 theology into Leviticus without textual warrant; Leviticus 12 never mentions sin, the Fall, or moral guilt.",
+        "key_verses": [
+          "Leviticus 12:6-7",
+          "Genesis 3:16",
+          "Psalm 51:5",
+          "Luke 2:22-24"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The question turns on how one understands the ḥaṭṭāʾt: as a sin offering (traditional) or a purification offering (Milgrom). If purification, the offering addresses sanctuary contamination from biological impurity, with no moral judgment on the mother. If sin offering, it may reflect a theology connecting all blood-flow to mortality and the fallen human condition. Luke 2:22-24's application to Mary keeps this debate theologically live.",
+    "related_passages": [
+      "Leviticus 15:28-30",
+      "Genesis 3:16",
+      "Psalm 51:5",
+      "Luke 2:22-24"
+    ],
+    "tags": [
+      "childbirth",
+      "sin-offering",
+      "purification",
+      "impurity",
+      "hattat"
+    ]
   },
   {
     "id": "source-and-date-of-skin-diseases-and-mould",
@@ -8036,7 +8362,7 @@
     ],
     "passage": "Leviticus 13",
     "question": "Source and Date of Skin Diseases and Mould",
-    "context": "",
+    "context": "Leviticus 13 details diagnostic procedures for ṣāraʿat — traditionally translated 'leprosy' but now understood to cover various skin conditions, fabric molds, and building infections. The diagnostic role assigned to priests rather than physicians is distinctive to Israelite religion. Critical scholars assign these chapters to P, while others note the archaic medical vocabulary.",
     "positions": [
       {
         "id": "documentary-hypothesis-wellhausen-noth",
@@ -8045,25 +8371,49 @@
         "scholar_ids": [],
         "proponents": "Assigns Skin Diseases and Mould to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.",
         "argument": "This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The priestly diagnostic role supports assigning this material to P's systematic integration of purity and priesthood; the detailed case-law format reflects editorial compilation.",
+        "weaknesses": "Priestly involvement in medical-ritual diagnosis is attested in second-millennium Hittite texts, making this feature consistent with an early date.",
+        "key_verses": [
+          "Leviticus 13:1-3",
+          "Leviticus 13:45-46",
+          "Leviticus 14:1-7",
+          "2 Kings 5:1-14"
+        ]
       },
       {
         "id": "unified-authorship-milgrom-wenham-conser",
         "label": "Unified authorship (Milgrom, Wenham, conservative scholarship)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for Skin Diseases and Mould.",
         "argument": "Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The diagnostic procedures show remarkable observational precision consistent with ancient medical practice; the quarantine protocols reflect practical disease control rather than post-exilic theologizing.",
+        "weaknesses": "The practical medical aspects do not settle the dating question — ancient practices could be codified in either an early or late literary framework.",
+        "key_verses": [
+          "Leviticus 13:1-8",
+          "Leviticus 13:47-59",
+          "Deuteronomy 24:8",
+          "Luke 17:12-14"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Modern scholarship universally rejects the identification of ṣāraʿat with Hansen's disease (clinical leprosy). Milgrom demonstrated that the condition encompasses various skin ailments whose common feature is visual abnormality suggesting divine displeasure. The priest's role is diagnostic and declaratory (clean/unclean), not therapeutic — a distinction that illuminates Jesus' instruction to healed lepers to 'show yourselves to the priests' (Luke 17:14).",
+    "related_passages": [
+      "Leviticus 14:1-32",
+      "Numbers 12:10-15",
+      "2 Kings 5:1-14",
+      "Luke 17:12-19"
+    ],
+    "tags": [
+      "skin-disease",
+      "leprosy",
+      "tsaraat",
+      "diagnosis",
+      "priestly-role",
+      "purity"
+    ]
   },
   {
     "id": "source-and-date-of-the-purification-of-skin-disease",
@@ -8075,7 +8425,7 @@
     ],
     "passage": "Leviticus 14",
     "question": "Source and Date of The Purification of Skin Disease",
-    "context": "",
+    "context": "Leviticus 14 prescribes an elaborate purification ritual for healed ṣāraʿat involving two birds (one killed, one released), cedar wood, scarlet yarn, and hyssop. The ritual has striking parallels to scapegoat symbolism and has been compared to Mesopotamian and Hittite purification rites.",
     "positions": [
       {
         "id": "documentary-hypothesis-wellhausen-noth",
@@ -8084,25 +8434,48 @@
         "scholar_ids": [],
         "proponents": "Assigns The Purification of Skin Disease to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.",
         "argument": "This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The complex ritual with its dual-bird ceremony reflects systematic priestly ritual theology characteristic of P; the integration with the sin/guilt offering system shows editorial coordination.",
+        "weaknesses": "The dual-bird ritual has close parallels in second-millennium Hittite substitute rituals, suggesting the ceremony's roots are significantly older than any proposed P date.",
+        "key_verses": [
+          "Leviticus 14:1-7",
+          "Leviticus 14:48-53",
+          "Leviticus 16:7-10",
+          "Numbers 19:6"
+        ]
       },
       {
         "id": "unified-authorship-milgrom-wenham-conser",
         "label": "Unified authorship (Milgrom, Wenham, conservative scholarship)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for The Purification of Skin Disease.",
         "argument": "Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The bird ritual's parallels with Hittite and Mesopotamian elimination rites (transferring impurity to a live animal/bird that carries it away) demonstrate the antiquity of the underlying ritual pattern; Milgrom showed these parallels convincingly.",
+        "weaknesses": "Antiquity of the ritual pattern does not prove antiquity of its Levitical codification; the literary shaping may still be later.",
+        "key_verses": [
+          "Leviticus 14:1-7",
+          "Leviticus 14:49-53",
+          "Leviticus 16:20-22",
+          "Hebrews 9:13-14"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The dual-bird purification ceremony is one of the strongest cases for the antiquity of Levitical ritual material, given its precise parallels with second-millennium Hittite elimination rites. The symbolic structure — one bird killed (representing death to impurity), one released (carrying impurity away) — prefigures the Day of Atonement scapegoat and, in Christian reading, the dual aspects of Christ's atoning work.",
+    "related_passages": [
+      "Leviticus 16:7-22",
+      "Numbers 19:1-10",
+      "Hebrews 9:13-14",
+      "Mark 1:40-45"
+    ],
+    "tags": [
+      "purification",
+      "birds",
+      "elimination-rite",
+      "tsaraat",
+      "scapegoat-typology"
+    ]
   },
   {
     "id": "source-and-date-of-bodily-discharges",
@@ -8114,7 +8487,7 @@
     ],
     "passage": "Leviticus 15",
     "question": "Source and Date of Bodily Discharges",
-    "context": "",
+    "context": "Leviticus 15 addresses ritual impurity from bodily discharges — male (normal and abnormal) and female (menstruation and abnormal). The chapter's systematic treatment of gender-parallel cases reflects a concern for comprehensive purity legislation. Scholars debate whether these regulations reflect hygienic wisdom, symbolic theology, or social control.",
     "positions": [
       {
         "id": "documentary-hypothesis-wellhausen-noth",
@@ -8123,25 +8496,48 @@
         "scholar_ids": [],
         "proponents": "Assigns Bodily Discharges to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.",
         "argument": "This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The systematic gender-parallel structure (male abnormal, male normal, female abnormal, female normal) shows the kind of schematic arrangement characteristic of P's editorial methodology.",
+        "weaknesses": "Systematic arrangement is a feature of legal codification generally, not uniquely of late sources; similar structured presentations appear in second-millennium Hittite purity laws.",
+        "key_verses": [
+          "Leviticus 15:1-15",
+          "Leviticus 15:16-18",
+          "Leviticus 15:19-24",
+          "Leviticus 15:25-30"
+        ]
       },
       {
         "id": "unified-authorship-milgrom-wenham-conser",
         "label": "Unified authorship (Milgrom, Wenham, conservative scholarship)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for Bodily Discharges.",
         "argument": "Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The regulations demonstrate a sophisticated understanding of impurity as a spectrum (from minor to major, temporary to chronic) that Milgrom argued reflects genuine ancient medical-ritual observation rather than post-exilic invention.",
+        "weaknesses": "The practical effect of the menstrual regulations on women's participation in worship and social life deserves critical evaluation regardless of the dating question.",
+        "key_verses": [
+          "Leviticus 15:1-2",
+          "Leviticus 15:19",
+          "Leviticus 15:31",
+          "Mark 5:25-34"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Milgrom's key insight is that Leviticus 15 treats both male and female discharges with structural symmetry, arguing against readings that see the laws as primarily targeting women. The impurity is generated by the loss of life-fluids (semen, blood), connecting to the broader Levitical theology that associates holiness with life and impurity with forces of death. Jesus' healing of the woman with the flow of blood (Mark 5:25-34) directly engages this system.",
+    "related_passages": [
+      "Leviticus 12:1-8",
+      "Mark 5:25-34",
+      "Ezekiel 36:17",
+      "2 Samuel 11:4"
+    ],
+    "tags": [
+      "bodily-discharges",
+      "menstruation",
+      "impurity",
+      "purity-laws",
+      "gender"
+    ]
   },
   {
     "id": "interpretive-question-16-2",
@@ -8153,7 +8549,7 @@
     ],
     "passage": "Leviticus 16",
     "question": "Interpretive Question: 16:2",
-    "context": "",
+    "context": "Leviticus 16:2 warns Aaron not to enter the Most Holy Place 'at any time' lest he die, establishing that the high priest may enter only on the Day of Atonement. This restriction creates tension with other texts (Exodus 25:22) that seem to present the Holy of Holies as a place of ongoing divine communication. The relationship between access, atonement, and the presence of God is theologically significant.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
@@ -8162,25 +8558,49 @@
         "scholar_ids": [],
         "proponents": "Milgrom: The prohibition on Aaron entering the Most Holy Place \"whenever he chooses\" directly recalls the death of Nadab and Abihu (Lev 10:1–2) — the …",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reading the restriction as a response to the Nadab and Abihu incident (10:1-2) preserves the narrative logic — unauthorized approach to God is deadly, therefore access must be strictly regulated. The restriction creates the theological weight of the Day of Atonement.",
+        "weaknesses": "If access was always restricted to once per year, it is unclear how ongoing divine communication (Exod 25:22, Num 7:89) functioned — was Moses exempt from the restriction?",
+        "key_verses": [
+          "Leviticus 16:1-2",
+          "Leviticus 16:34",
+          "Exodus 25:22",
+          "Numbers 7:89"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur",
+          "calvin"
+        ],
         "proponents": "Reads The Day of Atonement within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The traditional reading distinguishes Moses' unique prophetic access from the ongoing priestly ministry — Moses spoke with God directly, but the regular priestly cultus required the annual atonement ritual to maintain God's dwelling among a sinful people.",
+        "weaknesses": "This distinction works theologically but is not explicitly stated in the text; it requires inferring a hierarchy of access not spelled out in Leviticus 16 itself.",
+        "key_verses": [
+          "Leviticus 16:1-2",
+          "Leviticus 16:29-34",
+          "Hebrews 9:6-7",
+          "Hebrews 10:19-22"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The restriction in 16:2 establishes the Day of Atonement as the annual climax of Israelite worship — the one day when the barrier between God and humanity is ritually breached. The NT letter to the Hebrews builds its central argument on this passage, presenting Christ's death as opening permanent access to God's presence (Heb 10:19-22). The tension between restricted access and God's desire to dwell with His people is fundamental to biblical theology.",
+    "related_passages": [
+      "Exodus 25:22",
+      "Numbers 7:89",
+      "Hebrews 9:1-14",
+      "Hebrews 10:19-22"
+    ],
+    "tags": [
+      "day-of-atonement",
+      "holy-of-holies",
+      "access-to-god",
+      "high-priest",
+      "atonement"
+    ]
   },
   {
     "id": "source-and-date-of-the-blood-prohibition",
@@ -8192,7 +8612,7 @@
     ],
     "passage": "Leviticus 17",
     "question": "Source and Date of The Blood Prohibition",
-    "context": "",
+    "context": "Leviticus 17 prohibits consuming blood, grounding the prohibition in the theological claim that 'the life of a creature is in the blood' (17:11) and that blood has been given for atonement on the altar. This chapter bridges the sacrificial legislation (1-16) and the Holiness Code (18-26), and its placement is debated.",
     "positions": [
       {
         "id": "documentary-hypothesis-wellhausen-noth",
@@ -8201,25 +8621,48 @@
         "scholar_ids": [],
         "proponents": "Assigns The Blood Prohibition to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.",
         "argument": "This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The chapter's transitional position and distinctive vocabulary have led some scholars to see it as an editorial bridge connecting P's sacrificial legislation with H's ethical code.",
+        "weaknesses": "Transitional positioning is equally consistent with deliberate compositional design; a bridge chapter does not require a different author or date.",
+        "key_verses": [
+          "Leviticus 17:10-12",
+          "Leviticus 17:14",
+          "Genesis 9:4",
+          "Acts 15:20"
+        ]
       },
       {
         "id": "unified-authorship-milgrom-wenham-conser",
         "label": "Unified authorship (Milgrom, Wenham, conservative scholarship)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for The Blood Prohibition.",
         "argument": "Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The blood prohibition's roots in Genesis 9:4 (the Noahic covenant) demonstrate its antiquity; the theological rationale connecting blood, life, and atonement is foundational rather than derivative, suggesting it precedes rather than follows the sacrificial system.",
+        "weaknesses": "The connection to Genesis 9:4 could reflect editorial harmonization rather than genuine antiquity.",
+        "key_verses": [
+          "Leviticus 17:11",
+          "Leviticus 17:14",
+          "Genesis 9:4",
+          "Deuteronomy 12:23-25"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Leviticus 17:11 is one of the most theologically significant verses in the Pentateuch, providing the foundational rationale for blood sacrifice. Its claim that blood atones 'because of the life' has generated extensive theological reflection in both Jewish and Christian traditions. The early church's retention of the blood prohibition (Acts 15:20) demonstrates its perceived universality beyond the Mosaic covenant.",
+    "related_passages": [
+      "Genesis 9:3-6",
+      "Deuteronomy 12:23-25",
+      "Acts 15:19-21",
+      "Hebrews 9:22"
+    ],
+    "tags": [
+      "blood-prohibition",
+      "atonement",
+      "life-blood",
+      "sacrifice",
+      "noahic-covenant"
+    ]
   },
   {
     "id": "source-and-date-of-sexual-ethics",
@@ -8231,7 +8674,7 @@
     ],
     "passage": "Leviticus 18",
     "question": "Source and Date of Sexual Ethics",
-    "context": "",
+    "context": "Leviticus 18 prohibits various sexual relationships including incest, adultery, homosexual acts, and bestiality. These prohibitions are framed as distinctives separating Israel from the practices of Egypt and Canaan. The chapter is central to ongoing debates about the applicability of Levitical sexual ethics in contemporary contexts.",
     "positions": [
       {
         "id": "documentary-hypothesis-wellhausen-noth",
@@ -8240,25 +8683,49 @@
         "scholar_ids": [],
         "proponents": "Assigns Sexual Ethics to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.",
         "argument": "This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The Holiness Code framework (H) provides a literary-historical context for understanding how these laws functioned within Israelite identity formation; awareness of the redactional history prevents naive proof-texting.",
+        "weaknesses": "Source-critical analysis does not resolve the normative question — identifying a text as H rather than P says nothing about whether its moral claims are binding.",
+        "key_verses": [
+          "Leviticus 18:1-5",
+          "Leviticus 18:22",
+          "Leviticus 18:24-30",
+          "Leviticus 20:13"
+        ]
       },
       {
         "id": "unified-authorship-milgrom-wenham-conser",
         "label": "Unified authorship (Milgrom, Wenham, conservative scholarship)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for Sexual Ethics.",
         "argument": "Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The framing as creation-order ethics (not merely cultural boundary markers) supports their enduring moral authority; the NT's continued prohibition of sexual immorality (porneia) draws on this Levitical framework.",
+        "weaknesses": "Determining which Levitical laws remain morally binding and which are culturally conditioned requires a hermeneutical framework that the text itself does not provide.",
+        "key_verses": [
+          "Leviticus 18:1-5",
+          "Leviticus 18:22-23",
+          "Romans 1:26-27",
+          "1 Corinthians 6:9-11"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The debate over Leviticus 18's contemporary applicability is one of the most contested in biblical hermeneutics. Those who see the prohibitions as grounded in creation order argue for their permanent validity; those who see them as ancient Israelite identity markers embedded in the Holiness Code's purity framework question their direct applicability. Both sides must grapple with the NT's selective engagement with Levitical sexual ethics.",
+    "related_passages": [
+      "Leviticus 20:10-21",
+      "Romans 1:24-27",
+      "1 Corinthians 6:9-11",
+      "Matthew 19:4-6"
+    ],
+    "tags": [
+      "sexual-ethics",
+      "holiness-code",
+      "incest",
+      "homosexuality",
+      "moral-law",
+      "hermeneutics"
+    ]
   },
   {
     "id": "source-and-date-of-the-holiness-of-daily-life",
@@ -8270,7 +8737,7 @@
     ],
     "passage": "Leviticus 19",
     "question": "Source and Date of The Holiness of Daily Life",
-    "context": "",
+    "context": "Leviticus 19 contains a wide-ranging collection of ethical and ritual commandments including 'love your neighbor as yourself' (19:18). Often called 'the Holiness Code in miniature,' it interweaves moral, ritual, and social regulations in a way that defies neat modern categorization. Jesus identified 19:18 as the second greatest commandment.",
     "positions": [
       {
         "id": "documentary-hypothesis-wellhausen-noth",
@@ -8279,25 +8746,50 @@
         "scholar_ids": [],
         "proponents": "Assigns The Holiness of Daily Life to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.",
         "argument": "This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The chapter's mixture of ritual and ethical commands, its distinctive 'I am the LORD' formula, and its parallels with Deuteronomy place it within the Holiness School (H), a pre-exilic priestly tradition distinct from P.",
+        "weaknesses": "The H/P distinction has become increasingly contested; some scholars see continuity rather than separate sources within the priestly tradition.",
+        "key_verses": [
+          "Leviticus 19:2",
+          "Leviticus 19:18",
+          "Leviticus 19:33-34",
+          "Matthew 22:39"
+        ]
       },
       {
         "id": "unified-authorship-milgrom-wenham-conser",
         "label": "Unified authorship (Milgrom, Wenham, conservative scholarship)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom",
+          "macarthur"
+        ],
         "proponents": "Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for The Holiness of Daily Life.",
         "argument": "Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The integration of ethics and ritual in Leviticus 19 reflects a holistic theology of holiness where love of neighbor, honest commerce, and proper worship are inseparable — a vision that Jesus affirmed as central to Torah.",
+        "weaknesses": "The holistic reading, while theologically compelling, does not resolve specific questions about which regulations (e.g., mixed fabrics in 19:19) remain binding for non-Israelites.",
+        "key_verses": [
+          "Leviticus 19:2",
+          "Leviticus 19:18",
+          "Leviticus 19:35-36",
+          "Matthew 5:43-48"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Leviticus 19 stands at the intersection of virtually every hermeneutical debate about the Old Testament's relevance. Its command to love the neighbor (19:18) is universally affirmed; its command against mixed fabrics (19:19) is universally ignored by Christians. How to distinguish between the two — and on what principled basis — remains the central question of OT ethics.",
+    "related_passages": [
+      "Matthew 22:36-40",
+      "Mark 12:28-34",
+      "James 2:8",
+      "Galatians 5:14"
+    ],
+    "tags": [
+      "holiness",
+      "love-neighbor",
+      "ethics",
+      "holiness-code",
+      "daily-life",
+      "hermeneutics"
+    ]
   },
   {
     "id": "interpretive-question-20-13",
@@ -8309,7 +8801,7 @@
     ],
     "passage": "Leviticus 20",
     "question": "Interpretive Question: 20:13",
-    "context": "",
+    "context": "Leviticus 20:13 prescribes the death penalty for male homosexual acts, using the same 'abomination' (tôʿēbâ) language as 18:22. The verse is central to contemporary debates about homosexuality and the Bible, with sharp disagreement about whether the prohibition reflects permanent moral law or culturally conditioned purity legislation.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
@@ -8318,25 +8810,50 @@
         "scholar_ids": [],
         "proponents": "Milgrom: The death penalty for male homosexual intercourse is the same as for adultery (v.10) — both are treated as capital covenant violations. Milgr…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Contextual analysis notes that tôʿēbâ in Leviticus often denotes boundary violations between Israelite and Canaanite practice rather than universal moral absolutes; the same term is applied to eating shellfish (Deut 14:3) and other culturally specific prohibitions.",
+        "weaknesses": "The sexual prohibitions of Leviticus 18 and 20 are distinguished from purity regulations by their capital penalties and their framing as violations that 'defile the land' — language not used for dietary laws.",
+        "key_verses": [
+          "Leviticus 20:13",
+          "Leviticus 18:22",
+          "Leviticus 18:24-28",
+          "Romans 1:26-27"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Reads Penalties for Violations within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The creation-order framework (male and female complementarity in Gen 1-2) provides a theological basis for the prohibition that transcends the Holiness Code's cultural context; the NT's continued disapproval (Rom 1:26-27, 1 Cor 6:9) suggests the prohibition was understood as permanent.",
+        "weaknesses": "Selectively applying Leviticus 20's capital penalties while retaining its sexual ethics requires a hermeneutical framework distinguishing moral from civil law — a distinction the text itself does not make.",
+        "key_verses": [
+          "Leviticus 20:13",
+          "Genesis 1:27",
+          "Genesis 2:24",
+          "1 Corinthians 6:9-11"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "This verse sits at the intersection of hermeneutics, ethics, and pastoral theology. Scholars who read it as culturally conditioned point to its Holiness Code context and the selective application of other Levitical laws. Scholars who read it as permanently binding appeal to creation theology and NT continuity. Responsible engagement requires acknowledging the genuine complexity of applying ancient legal texts to contemporary questions without either dismissing or weaponizing the text.",
+    "related_passages": [
+      "Leviticus 18:22",
+      "Genesis 1:27",
+      "Genesis 2:24",
+      "Romans 1:26-27",
+      "1 Corinthians 6:9-11"
+    ],
+    "tags": [
+      "homosexuality",
+      "sexual-ethics",
+      "death-penalty",
+      "toevah",
+      "hermeneutics",
+      "holiness-code"
+    ]
   },
   {
     "id": "source-and-date-of-the-holiness-of-the-priests",
@@ -8348,7 +8865,7 @@
     ],
     "passage": "Leviticus 21",
     "question": "Source and Date of The Holiness of the Priests",
-    "context": "",
+    "context": "Leviticus 21 establishes special holiness requirements for priests (no contact with the dead except immediate family, physical wholeness requirements) and even stricter standards for the high priest. These regulations raise questions about the relationship between physical condition and spiritual fitness that later tradition significantly modified.",
     "positions": [
       {
         "id": "documentary-hypothesis-wellhausen-noth",
@@ -8357,25 +8874,48 @@
         "scholar_ids": [],
         "proponents": "Assigns The Holiness of the Priests to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.",
         "argument": "This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The regulations' focus on priestly distinctiveness as a symbol of God's holiness fits the H source's emphasis on graduated holiness (lay → priest → high priest → God).",
+        "weaknesses": "Graduated holiness is a theological concept that could originate at any period; it does not require the H/P source distinction.",
+        "key_verses": [
+          "Leviticus 21:1-4",
+          "Leviticus 21:10-12",
+          "Leviticus 21:16-23",
+          "Ezekiel 44:25-27"
+        ]
       },
       {
         "id": "unified-authorship-milgrom-wenham-conser",
         "label": "Unified authorship (Milgrom, Wenham, conservative scholarship)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for The Holiness of the Priests.",
         "argument": "Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The physical wholeness requirements are best understood as symbolic: the priest who represents God's perfection before the people must embody wholeness as a visible sign, not because physical disability implies spiritual deficiency.",
+        "weaknesses": "The symbolic reading, while theologically preferable, does not change the text's practical effect of excluding disabled men from priestly service.",
+        "key_verses": [
+          "Leviticus 21:1-6",
+          "Leviticus 21:16-23",
+          "Leviticus 21:21-22",
+          "Hebrews 7:26-28"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The priestly wholeness requirements are among the most ethically challenging texts in Leviticus for modern readers. Milgrom's symbolic reading (wholeness represents God's perfection) is widely adopted but does not eliminate the exclusionary effect. The NT's transformation of priesthood (Hebrews 7) effectively supersedes these requirements while preserving the theological principle that those who represent God should reflect His character.",
+    "related_passages": [
+      "Leviticus 22:1-9",
+      "Ezekiel 44:15-31",
+      "Hebrews 7:26-28",
+      "1 Peter 2:9"
+    ],
+    "tags": [
+      "priesthood",
+      "holiness",
+      "physical-wholeness",
+      "disability",
+      "graduated-holiness"
+    ]
   },
   {
     "id": "source-and-date-of-the-holiness-of-the-offerings",
@@ -8387,7 +8927,7 @@
     ],
     "passage": "Leviticus 22",
     "question": "Source and Date of The Holiness of the Offerings",
-    "context": "",
+    "context": "Leviticus 22 details regulations ensuring the holiness of sacrificial offerings — both the fitness of the priest to handle them and the fitness of the animal to be offered. The insistence on 'without defect' animals establishes a principle of giving God the best that carries through to prophetic critique (Malachi 1:6-8).",
     "positions": [
       {
         "id": "documentary-hypothesis-wellhausen-noth",
@@ -8396,25 +8936,48 @@
         "scholar_ids": [],
         "proponents": "Assigns The Holiness of the Offerings to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.",
         "argument": "This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The systematic regulations reflect P's concern for maintaining strict boundaries between holy and common, clean and unclean — the fourfold distinction that structures priestly theology.",
+        "weaknesses": "These distinctions are not uniquely P; similar categories appear throughout the Pentateuch and in ANE temple regulations from various periods.",
+        "key_verses": [
+          "Leviticus 22:1-9",
+          "Leviticus 22:17-25",
+          "Leviticus 22:32-33",
+          "Malachi 1:6-8"
+        ]
       },
       {
         "id": "unified-authorship-milgrom-wenham-conser",
         "label": "Unified authorship (Milgrom, Wenham, conservative scholarship)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for The Holiness of the Offerings.",
         "argument": "Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The 'without defect' requirement for sacrificial animals establishes a theological principle — offering the best to God — that persists across both Testaments and is foundational for understanding Christ as the unblemished sacrifice.",
+        "weaknesses": "The typological reading, while theologically rich, risks anachronistically importing NT categories into Levitical legislation.",
+        "key_verses": [
+          "Leviticus 22:17-25",
+          "Leviticus 22:32",
+          "Malachi 1:7-8",
+          "1 Peter 1:18-19"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Leviticus 22's insistence on unblemished offerings establishes a principle that reverberates through biblical theology. Malachi's sharp critique of defective offerings shows the ongoing relevance of this standard in post-exilic worship. The NT identification of Christ as the 'lamb without blemish' (1 Pet 1:19) depends directly on this Levitical category.",
+    "related_passages": [
+      "Malachi 1:6-14",
+      "1 Peter 1:18-19",
+      "Hebrews 9:14",
+      "Deuteronomy 17:1"
+    ],
+    "tags": [
+      "offerings",
+      "without-defect",
+      "holiness",
+      "sacrifice",
+      "priestly-regulations"
+    ]
   },
   {
     "id": "source-and-date-of-the-sacred-calendar",
@@ -8426,7 +8989,7 @@
     ],
     "passage": "Leviticus 23",
     "question": "Source and Date of The Sacred Calendar",
-    "context": "",
+    "context": "Leviticus 23 presents the liturgical calendar: Sabbath, Passover/Unleavened Bread, Firstfruits, Weeks (Pentecost), Trumpets, Day of Atonement, and Tabernacles. This is the most comprehensive festival list in the Pentateuch, with parallel but different versions in Exodus 23, 34 and Deuteronomy 16.",
     "positions": [
       {
         "id": "documentary-hypothesis-wellhausen-noth",
@@ -8435,25 +8998,49 @@
         "scholar_ids": [],
         "proponents": "Assigns The Sacred Calendar to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.",
         "argument": "This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Differences between the festival lists in Exodus 23, 34, Leviticus 23, Numbers 28-29, and Deuteronomy 16 are best explained by different sources (JE, P, H, D) preserving distinct liturgical traditions.",
+        "weaknesses": "The differences are largely supplementary rather than contradictory — each list emphasizes different aspects of the same festivals, consistent with a single tradition addressed to different audiences.",
+        "key_verses": [
+          "Leviticus 23:1-4",
+          "Leviticus 23:33-36",
+          "Exodus 23:14-17",
+          "Deuteronomy 16:1-17"
+        ]
       },
       {
         "id": "unified-authorship-milgrom-wenham-conser",
         "label": "Unified authorship (Milgrom, Wenham, conservative scholarship)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for The Sacred Calendar.",
         "argument": "Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The festivals themselves are grounded in agricultural rhythms and historical commemoration that predate any proposed literary source; Passover is attested as an early Israelite practice by virtually all scholars regardless of their dating of the literary texts.",
+        "weaknesses": "The antiquity of the festivals does not resolve the question of when Leviticus 23's particular literary formulation was composed.",
+        "key_verses": [
+          "Leviticus 23:1-4",
+          "Leviticus 23:5-8",
+          "Leviticus 23:33-43",
+          "John 7:37-39"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The festivals listed in Leviticus 23 are universally recognized as ancient Israelite institutions with pre-monarchic roots. The scholarly debate concerns the date of their literary codification, not their antiquity. The NT's extensive engagement with these festivals (Passover/Last Supper, Pentecost/Acts 2, Tabernacles/John 7) demonstrates their enduring theological significance.",
+    "related_passages": [
+      "Exodus 23:14-17",
+      "Numbers 28-29",
+      "Deuteronomy 16:1-17",
+      "Colossians 2:16-17"
+    ],
+    "tags": [
+      "festivals",
+      "liturgical-calendar",
+      "sabbath",
+      "passover",
+      "tabernacles",
+      "pentecost"
+    ]
   },
   {
     "id": "source-and-date-of-the-lampstand-the-bread-and-the-blaspheme",
@@ -8465,7 +9052,7 @@
     ],
     "passage": "Leviticus 24",
     "question": "Source and Date of The Lampstand, the Bread, and the Blasphemer",
-    "context": "",
+    "context": "Leviticus 24 unusually combines ritual legislation (the lampstand and showbread) with a narrative incident (the blasphemer's execution). This juxtaposition of law and narrative is rare in Leviticus and has led to theories about the chapter's compositional history.",
     "positions": [
       {
         "id": "documentary-hypothesis-wellhausen-noth",
@@ -8474,25 +9061,48 @@
         "scholar_ids": [],
         "proponents": "Assigns The Lampstand, the Bread, and the Blasphemer to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.",
         "argument": "This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The abrupt shift from ritual legislation (24:1-9) to narrative (24:10-23) suggests editorial compilation from different sources; the narrative may have been placed here to illustrate the consequences of violating the holiness of God's name.",
+        "weaknesses": "The juxtaposition may be deliberately literary rather than accidental: the holy Name maintained by the lampstand and bread (permanent divine presence) is the same Name the blasphemer profanes.",
+        "key_verses": [
+          "Leviticus 24:1-4",
+          "Leviticus 24:10-16",
+          "Leviticus 24:17-22",
+          "Exodus 25:30-31"
+        ]
       },
       {
         "id": "unified-authorship-milgrom-wenham-conser",
         "label": "Unified authorship (Milgrom, Wenham, conservative scholarship)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for The Lampstand, the Bread, and the Blasphemer.",
         "argument": "Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The chapter's thematic unity centers on maintaining God's holy presence: the lampstand and bread sustain it symbolically, while the blasphemy narrative warns against verbal assault on it. The lex talionis section (24:17-22) extends the principle to all violations of sacred order.",
+        "weaknesses": "Even a thematic reading must acknowledge the genre shift, which is unusual for Leviticus and may reflect an editorial decision to illustrate law with narrative.",
+        "key_verses": [
+          "Leviticus 24:1-9",
+          "Leviticus 24:10-16",
+          "Leviticus 24:19-22",
+          "Exodus 27:20-21"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The blasphemy narrative's placement in Leviticus 24 is best explained as deliberate: it dramatizes the holiness principles that the surrounding legislation codifies. The lex talionis ('eye for eye') in 24:19-22, often misunderstood as vindictive, was a principle of proportional justice limiting excessive punishment — a point both Jewish and Christian interpreters have long recognized.",
+    "related_passages": [
+      "Exodus 25:30-40",
+      "Exodus 27:20-21",
+      "Matthew 5:38-39",
+      "Exodus 21:23-25"
+    ],
+    "tags": [
+      "lampstand",
+      "showbread",
+      "blasphemy",
+      "lex-talionis",
+      "holy-name"
+    ]
   },
   {
     "id": "source-and-date-of-the-sabbath-year-and-jubilee",
@@ -8504,7 +9114,7 @@
     ],
     "passage": "Leviticus 25",
     "question": "Source and Date of The Sabbath Year and Jubilee",
-    "context": "",
+    "context": "Leviticus 25 establishes the sabbatical year (every 7th year, land rests) and the Jubilee (every 50th year, land returns to original owners, slaves freed). The Jubilee is one of the most revolutionary economic provisions in ancient law, yet there is no clear evidence it was ever fully implemented. Scholars debate whether it was an ideal or a practiced institution.",
     "positions": [
       {
         "id": "documentary-hypothesis-wellhausen-noth",
@@ -8513,25 +9123,49 @@
         "scholar_ids": [],
         "proponents": "Assigns The Sabbath Year and Jubilee to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.",
         "argument": "This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The Jubilee's utopian character and lack of historical attestation suggest it may be an idealized post-exilic vision projecting social justice concerns back onto the Mosaic period; similar idealized legislation appears in Ezekiel 40-48.",
+        "weaknesses": "Absence of evidence is not evidence of absence; the sabbatical year, which is related, is attested in the Maccabean period and in documents from Elephantine.",
+        "key_verses": [
+          "Leviticus 25:8-12",
+          "Leviticus 25:23-28",
+          "Leviticus 25:39-43",
+          "Isaiah 61:1-2"
+        ]
       },
       {
         "id": "unified-authorship-milgrom-wenham-conser",
         "label": "Unified authorship (Milgrom, Wenham, conservative scholarship)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for The Sabbath Year and Jubilee.",
         "argument": "Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The theological principle underlying the Jubilee — that the land belongs to God and humans are tenants (25:23) — is consistently maintained across the Pentateuch and finds expression in early Israelite land-tenure practices; ANE parallels (mīšarum edicts) show debt-release was a known institution.",
+        "weaknesses": "Even if the principle is ancient, the systematic 50-year cycle described in Leviticus 25 may be a later idealization of earlier, more ad hoc debt-release practices.",
+        "key_verses": [
+          "Leviticus 25:10",
+          "Leviticus 25:23",
+          "Leviticus 25:39-42",
+          "Luke 4:18-19"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "The Jubilee's theological vision — periodic economic reset grounded in divine ownership of the land — has inspired social justice movements from antiquity to the present. Whether it was ever fully practiced is less important than its function as a prophetic ideal within the Torah. Jesus' inaugural sermon in Nazareth (Luke 4:18-19) quotes Isaiah 61, which itself draws on Jubilee language, suggesting the concept found its ultimate fulfillment in a different register.",
+    "related_passages": [
+      "Exodus 23:10-11",
+      "Deuteronomy 15:1-11",
+      "Isaiah 61:1-2",
+      "Luke 4:16-21"
+    ],
+    "tags": [
+      "jubilee",
+      "sabbatical-year",
+      "land",
+      "economic-justice",
+      "slavery",
+      "divine-ownership"
+    ]
   },
   {
     "id": "source-and-date-of-blessings-and-curses",
@@ -8543,7 +9177,7 @@
     ],
     "passage": "Leviticus 26",
     "question": "Source and Date of Blessings and Curses",
-    "context": "",
+    "context": "Leviticus 26 presents covenant blessings for obedience and escalating curses for disobedience, culminating in exile — but ending with a promise of restoration. The chapter has close parallels with Deuteronomy 28 and ANE vassal treaty curses, particularly Hittite and Assyrian suzerainty treaties.",
     "positions": [
       {
         "id": "documentary-hypothesis-wellhausen-noth",
@@ -8552,25 +9186,49 @@
         "scholar_ids": [],
         "proponents": "Assigns Blessings and Curses to the Priestly (P) source, dated to the post-exilic period (6th–5th c. BC) on the basis of vocabulary, theology, and redaction-critical analysis.",
         "argument": "This view treats the Levitical legislation as crystallised priestly tradition rather than Mosaic prescription.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The blessing-curse structure mirrors ANE treaty curses, particularly 7th-century Assyrian vassal treaties (e.g., Esarhaddon's Succession Treaty), supporting a pre-exilic H composition that draws on established covenant-treaty forms.",
+        "weaknesses": "Treaty-curse parallels span from the 2nd to 1st millennium, making them useful for identifying the literary genre but not for precise dating.",
+        "key_verses": [
+          "Leviticus 26:3-13",
+          "Leviticus 26:14-39",
+          "Leviticus 26:40-45",
+          "Deuteronomy 28:1-68"
+        ]
       },
       {
         "id": "unified-authorship-milgrom-wenham-conser",
         "label": "Unified authorship (Milgrom, Wenham, conservative scholarship)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "Argues that the detailed ANE parallels, archaic vocabulary, and internal coherence support a second-millennium date for Blessings and Curses.",
         "argument": "Milgrom’s detailed comparison with ANE ritual texts demonstrates the antiquity and coherence of the material regardless of the dating question.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The pattern of escalating discipline (26:14-39) with a promise of covenant faithfulness despite Israel's failure (26:44-45) is foundational to prophetic theology; its placement as Leviticus's conclusion gives the entire book a covenantal framework.",
+        "weaknesses": "The specificity of the exile predictions (26:33-39) has led some to argue these details were written or expanded after the Babylonian exile, as vaticinium ex eventu.",
+        "key_verses": [
+          "Leviticus 26:3-6",
+          "Leviticus 26:33-35",
+          "Leviticus 26:40-45",
+          "Jeremiah 16:14-15"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Leviticus 26 functions as the covenant's enforcement mechanism, transforming the preceding laws from mere regulations into covenant stipulations with consequences. The close parallels with ANE treaty curses demonstrate Israel's use of established political-legal forms to express its unique theological relationship with God. The chapter's final promise that God 'will not reject them or abhor them so as to destroy them completely' (26:44) is one of the strongest statements of irrevocable covenant commitment in the Hebrew Bible.",
+    "related_passages": [
+      "Deuteronomy 28:1-68",
+      "Deuteronomy 30:1-10",
+      "Jeremiah 31:31-34",
+      "Romans 11:1-2"
+    ],
+    "tags": [
+      "blessings-curses",
+      "covenant",
+      "exile",
+      "restoration",
+      "treaty-curses",
+      "discipline"
+    ]
   },
   {
     "id": "interpretive-question-27-34",
@@ -8582,7 +9240,7 @@
     ],
     "passage": "Leviticus 27",
     "question": "Interpretive Question: 27:34",
-    "context": "",
+    "context": "Leviticus 27:34 states 'These are the commands the LORD gave Moses at Mount Sinai for the Israelites,' functioning as a colophon for the entire book. Chapter 27 itself deals with vows and dedications — seemingly anticlimactic after the covenant blessings and curses of chapter 26. Scholars debate whether chapter 27 is an appendix or an integral conclusion.",
     "positions": [
       {
         "id": "critical-analytical-scholarship",
@@ -8591,25 +9249,48 @@
         "scholar_ids": [],
         "proponents": "Milgrom: The colophon — \"These are the commands the Lord gave Moses at Mount Sinai for the Israelites\" — is identical in structure to the Exodus colop…",
         "argument": "Emphasises historical-critical, literary, or text-critical analysis.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Reading chapter 27 as a later appendix explains its anti-climactic position after the covenant conclusion of chapter 26; the dedicatory legislation may have been added to address practical questions that arose in later priestly practice.",
+        "weaknesses": "Appendices are a normal feature of ancient legal collections (cf. Hammurabi's Code); their presence does not require a different author or late date.",
+        "key_verses": [
+          "Leviticus 27:1-8",
+          "Leviticus 27:28-29",
+          "Leviticus 27:34",
+          "Numbers 30:1-2"
+        ]
       },
       {
         "id": "traditional-confessional-reading",
         "label": "Traditional/Confessional reading",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "milgrom"
+        ],
         "proponents": "Reads Vows and Dedications within the canonical framework of fulfilled prophecy and covenant theology.",
         "argument": "Represented by Calvin, MacArthur, and the evangelical tradition.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Chapter 27 completes the book by addressing voluntary devotion to God beyond what the law requires — after establishing what God demands (chs. 1-26), the book concludes with what Israel may freely offer. This creates a meaningful theological arc.",
+        "weaknesses": "The theological reading is attractive but may be imposed on material that was placed here for more mundane editorial reasons.",
+        "key_verses": [
+          "Leviticus 27:1-2",
+          "Leviticus 27:30-33",
+          "Leviticus 27:34",
+          "Deuteronomy 23:21-23"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "Whether chapter 27 is an appendix or an integral conclusion, its placement after the covenant blessings and curses creates a meaningful final word: Israel's relationship with God extends beyond obligation into voluntary devotion. The colophon in 27:34 provides closure for the entire Sinai revelation that began in Exodus 19.",
+    "related_passages": [
+      "Numbers 30:1-2",
+      "Deuteronomy 23:21-23",
+      "Ecclesiastes 5:4-5",
+      "Acts 5:1-4"
+    ],
+    "tags": [
+      "vows",
+      "dedications",
+      "colophon",
+      "voluntary-devotion",
+      "appendix"
+    ]
   },
   {
     "id": "interpretive-question-1-1",
@@ -10136,7 +10817,7 @@
     ],
     "passage": "Deuteronomy 1, 2, 3 (+31 more)",
     "question": "Authorship and Date of Deuteronomy",
-    "context": "",
+    "context": "Deuteronomy's authorship and date is one of the most consequential debates in biblical studies. In 1805, W.M.L. de Wette proposed that the 'Book of the Law' found in the temple during Josiah's reforms (2 Kings 22-23) was an early form of Deuteronomy, dating its composition to the 7th century BC. This thesis became foundational for the documentary hypothesis. Conservative scholars defend Mosaic authorship, noting the book's consistent self-attribution to Moses and its covenant-treaty structure paralleling second-millennium Hittite suzerainty treaties rather than first-millennium Assyrian forms.",
     "positions": [
       {
         "id": "critical-scholarship-josian-composition-",
@@ -10145,25 +10826,49 @@
         "scholar_ids": [],
         "proponents": "",
         "argument": "This view treats the Mosaic attribution as a literary fiction and explains the book’s similarities with 7th-century Assyrian treaty forms — though the Hittite parallels are structurally closer.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "The Josianic composition theory explains the striking correspondence between Deuteronomy's centralization of worship and Josiah's reforms; it accounts for Deuteronomy's distinctive vocabulary and theology, which differ from the other Pentateuchal sources.",
+        "weaknesses": "A purely Josianic date struggles to explain Deuteronomy's covenant structure, which more closely parallels 2nd-millennium Hittite treaties than 7th-century Assyrian ones; it also requires explaining why a 'pious fraud' would be accepted as Mosaic.",
+        "key_verses": [
+          "Deuteronomy 1:1-5",
+          "Deuteronomy 31:9-13",
+          "2 Kings 22:8-13",
+          "Deuteronomy 12:1-7"
+        ]
       },
       {
         "id": "mosaic-authorship-early-composition-klin",
         "label": "Mosaic authorship / early composition (Kline, Craigie, evangelical scholarship)",
         "tradition_family": "evangelical",
-        "scholar_ids": [],
+        "scholar_ids": [
+          "macarthur"
+        ],
         "proponents": "",
         "argument": "Craigie and Kline argue that the treaty-form evidence makes a late date structurally implausible. The “prophet like Moses” passage (18:15) is best read as a genuine prediction, not a post-exilic retrojection.",
-        "strengths": "",
-        "weaknesses": "",
-        "key_verses": []
+        "strengths": "Moses' self-attribution permeates the book (1:1, 4:44, 31:9, 31:24-26); the suzerainty treaty structure (preamble, historical prologue, stipulations, blessings/curses, witnesses) matches 2nd-millennium Hittite models better than 1st-millennium forms; the book's setting as farewell speeches fits the ANE testament genre.",
+        "weaknesses": "Moses' self-attribution does not exclude later editorial expansion; the book acknowledges his death (ch. 34) and contains phrases like 'to this day' suggesting later updating; some features may reflect both an early core and later editorial layers.",
+        "key_verses": [
+          "Deuteronomy 1:1",
+          "Deuteronomy 31:9",
+          "Deuteronomy 31:24-26",
+          "Deuteronomy 34:5-12"
+        ]
       }
     ],
-    "synthesis": "",
-    "related_passages": [],
-    "tags": []
+    "synthesis": "A mediating position has emerged among many scholars: Deuteronomy preserves a core of genuinely ancient covenant-treaty material (possibly Mosaic in origin) that was edited and expanded during the monarchic period, reaching something close to its present form by the 7th century. Kitchen's work on treaty structures has made a purely late date harder to defend, while the book's literary shaping clearly reflects editorial activity beyond a single author. The theological content — God's faithfulness, the call to love God with all one's heart — transcends the dating debate.",
+    "related_passages": [
+      "2 Kings 22:1-23:25",
+      "Joshua 24:1-27",
+      "Jeremiah 11:1-8",
+      "Matthew 4:1-11"
+    ],
+    "tags": [
+      "authorship",
+      "deuteronomy",
+      "documentary-hypothesis",
+      "josiah",
+      "mosaic-authorship",
+      "treaty-structure"
+    ]
   },
   {
     "id": "historicity-of-the-conquest",
