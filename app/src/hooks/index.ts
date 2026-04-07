@@ -32,7 +32,6 @@ export { useStoreReview } from './useStoreReview';
 export { useStreakData } from './useStreakData';
 export { useScreenView } from './useScreenView';
 export { useRedLetter } from './useRedLetter';
-export { useChapterFingerprint, FINGERPRINT_LABELS } from './useChapterFingerprint';
 export { useTopicData } from './useTopicData';
 export { useDictionaryBrowse, useDictionaryDetail } from './useDictionary';
 export { useTopicDetail } from './useTopicDetail';
