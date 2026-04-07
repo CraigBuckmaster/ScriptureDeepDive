@@ -84,8 +84,8 @@ export function useArchaeologyDetail(discoveryId: string): ArchaeologyDetailData
     setLoading(true);
     Promise.all([
       getDiscovery(discoveryId),
-      getDiscoveryVerseLinks(discoveryId),
-      getDiscoveryImages(discoveryId),
+      getDiscoveryVerseLinks(discoveryId).catch(() => [] as ArchaeologyVerseLink[]),
+      getDiscoveryImages(discoveryId).catch(() => [] as ArchaeologyImage[]),
     ])
       .then(([d, vl, imgs]) => {
         if (mountedRef.current) {
