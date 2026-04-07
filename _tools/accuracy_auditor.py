@@ -73,13 +73,29 @@ def load_chapter(book_dir: str, chapter_num: int) -> dict:
 
 
 def iter_chapters(book_filter: str = None,
-                  chapter_filter: str = None) -> list[tuple[str, int, dict]]:
+                  chapter_filter: str = None,
+                  chapters_list: list = None) -> list[tuple[str, int, dict]]:
     """Iterate over chapters, optionally filtered.
+
+    Args:
+        book_filter: Single book ID to filter to
+        chapter_filter: Single chapter ID like "gen1"
+        chapters_list: List of {"book": str, "chapter": int} dicts for targeted runs
 
     Yields: (book_dir, chapter_num, chapter_data)
     """
     books_meta = json.load(open(META_DIR / "books.json", encoding='utf-8'))
     chapters = []
+
+    # Targeted list mode (e.g., re-running T2 on specific chapters)
+    if chapters_list:
+        for item in chapters_list:
+            book_id = item["book"]
+            ch_num = item["chapter"]
+            data = load_chapter(book_id, ch_num)
+            if data:
+                chapters.append((book_id, ch_num, data))
+        return chapters
 
     if chapter_filter:
         # Parse chapter filter like "gen1" → book=genesis, ch=1
@@ -514,6 +530,8 @@ def main():
     )
     parser.add_argument("--book", help="Audit a single book (e.g., genesis)")
     parser.add_argument("--chapter", help="Audit a single chapter (e.g., gen1)")
+    parser.add_argument("--chapters-file",
+                        help="JSON file with list of {book, chapter} to audit")
     parser.add_argument("--tier", type=int, default=1,
                         help="Max verification tier (0-3, default 1)")
     parser.add_argument("--scholar", help="Audit one scholar across all books")
@@ -547,11 +565,21 @@ def main():
 
     start_time = time.time()
 
+    # ── Load target chapters list if provided ─────────────────
+    chapters_list = None
+    if args.chapters_file:
+        if not args.json:
+            print(f"  Loading targets from {args.chapters_file}...")
+        chapters_list = json.load(open(args.chapters_file, encoding='utf-8'))
+        if not args.json:
+            print(f"  Targeting {len(chapters_list)} specific chapters")
+
     # ── Load chapters ────────────────────────────────────────
     if not args.meta_only:
         chapters = iter_chapters(
             book_filter=args.book,
             chapter_filter=args.chapter,
+            chapters_list=chapters_list,
         )
     else:
         chapters = []
