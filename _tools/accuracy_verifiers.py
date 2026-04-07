@@ -460,6 +460,7 @@ class ScholarValidator:
             "netbible": "net",
             "mar": "marcus",
             "cat": "catena",
+            "catena": "cat",
             "rho": "rhoads",
             # These scholars exist in content but not yet in scholars.json
             # They self-alias so the validator doesn't flag them as unknown
