@@ -769,8 +769,19 @@ class Tier2Verifier:
             # Rate limiting: simple delay
             time.sleep(1.2)  # ~50 RPM
 
-            with urllib.request.urlopen(req, timeout=60) as resp:
-                result = json.load(resp)
+            # Retry with backoff for transient network errors
+            last_err = None
+            for attempt in range(3):
+                try:
+                    with urllib.request.urlopen(req, timeout=90) as resp:
+                        result = json.load(resp)
+                    break
+                except (urllib.error.URLError, OSError, TimeoutError) as e:
+                    last_err = e
+                    if attempt < 2:
+                        time.sleep(2 ** (attempt + 1))
+            else:
+                raise last_err
 
             self._call_count += 1
 
@@ -846,7 +857,17 @@ class Tier2Verifier:
         all_results = []
         for i in range(0, len(claims), self.BATCH_SIZE):
             batch = claims[i:i + self.BATCH_SIZE]
-            results = self.verify_batch(batch, book_name, chapter_num)
+            try:
+                results = self.verify_batch(batch, book_name, chapter_num)
+            except (KeyboardInterrupt, SystemExit):
+                raise
+            except Exception as e:
+                now = datetime.now(timezone.utc).isoformat()
+                results = [VerificationResult(
+                    claim_id=c.id, status=STATUS_UNVERIFIED, confidence=0,
+                    notes=f"Tier 2 batch error: {str(e)[:100]}",
+                    verified_at=now, tier=2,
+                ) for c in batch]
             all_results.extend(results)
         return all_results
 
