@@ -76,7 +76,12 @@ function GalleryImage({ image, width }: ImageItemProps) {
           </View>
         )}
         <Image
-          source={{ uri: image.url }}
+          source={{
+            uri: image.url,
+            headers: {
+              'User-Agent': 'ScriptureDeepDive/1.0 (https://companionstudy.app; contact@companionstudy.app)',
+            },
+          }}
           style={styles.image}
           resizeMode="contain"
           onLoad={handleLoad}
