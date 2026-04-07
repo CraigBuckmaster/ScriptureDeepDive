@@ -61,7 +61,7 @@ function ChapterScreen() {
   const { base } = useTheme();
   const navigation = useNavigation<ScreenNavProp<'Read', 'Chapter'>>();
   const route = useRoute<ScreenRouteProp<'Read', 'Chapter'>>();
-  const { bookId, chapterNum, openPanel, planId, planDayNum } = route.params ?? {};
+  const { bookId, chapterNum, openPanel, planId, planDayNum, verseNum: initialVerseNum } = route.params ?? {};
 
   const fontSize = useSettingsStore((s) => s.fontSize);
   const translation = useSettingsStore((s) => s.translation);
@@ -276,6 +276,23 @@ function ChapterScreen() {
     setTtsActive(false);
     setActiveLens(null);
   }, [bookId, chapterNum]);
+
+  // Auto-scroll to a specific verse when navigated with verseNum param (e.g. from search)
+  const scrolledToInitialVerse = useRef(false);
+  useEffect(() => {
+    scrolledToInitialVerse.current = false;
+  }, [bookId, chapterNum]);
+
+  useEffect(() => {
+    if (!initialVerseNum || scrolledToInitialVerse.current || isLoading) return;
+    const y = verseYMap.current[initialVerseNum];
+    if (y != null) {
+      scrolledToInitialVerse.current = true;
+      setTimeout(() => {
+        scrollRef.current?.scrollTo({ y: Math.max(0, y - 80), animated: true });
+      }, 150);
+    }
+  }, [initialVerseNum, isLoading, verses]);
 
   const totalChapters = bookData?.total_chapters ?? 1;
   const hasPrev = chapterNum > 1;

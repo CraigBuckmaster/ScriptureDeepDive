@@ -4,14 +4,15 @@
  */
 
 import { useState, useEffect, useRef } from 'react';
-import { searchVerses, searchPeople, getAllWordStudies } from '../db/content';
-import type { Verse, Person, WordStudy } from '../types';
+import { searchVerses, searchPeople, getAllWordStudies, searchDiscoveries } from '../db/content';
+import type { Verse, Person, WordStudy, ArchaeologicalDiscovery } from '../types';
 import { logger } from '../utils/logger';
 
 interface SearchResults {
   verses: Verse[];
   people: Person[];
   wordStudies: WordStudy[];
+  discoveries: ArchaeologicalDiscovery[];
 }
 
 export function useSearch(
@@ -19,7 +20,7 @@ export function useSearch(
   testament?: 'ot' | 'nt' | null,
   bookId?: string | null,
 ) {
-  const [results, setResults] = useState<SearchResults>({ verses: [], people: [], wordStudies: [] });
+  const [results, setResults] = useState<SearchResults>({ verses: [], people: [], wordStudies: [], discoveries: [] });
   const [isLoading, setIsLoading] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const wordStudyCache = useRef<WordStudy[]>([]);
@@ -29,7 +30,7 @@ export function useSearch(
 
     const trimmed = query.trim();
     if (trimmed.length < 2) {
-      setResults({ verses: [], people: [], wordStudies: [] });
+      setResults({ verses: [], people: [], wordStudies: [], discoveries: [] });
       setIsLoading(false);
       return;
     }
@@ -43,9 +44,10 @@ export function useSearch(
         }
 
         const lower = trimmed.toLowerCase();
-        const [verses, rawPeople] = await Promise.all([
+        const [verses, rawPeople, discoveries] = await Promise.all([
           searchVerses(trimmed, 20, testament, bookId),
           searchPeople(trimmed),
+          searchDiscoveries(trimmed),
         ]);
 
         // Sort people by relevance: direct name match → name contains → role/bio match
@@ -74,9 +76,9 @@ export function useSearch(
           ws.id.toLowerCase().includes(lower)
         );
 
-        setResults({ verses, people, wordStudies });
+        setResults({ verses, people, wordStudies, discoveries });
       } catch (err) {
-        setResults({ verses: [], people: [], wordStudies: [] });
+        setResults({ verses: [], people: [], wordStudies: [], discoveries: [] });
       } finally {
         setIsLoading(false);
       }

@@ -22,7 +22,7 @@ export type ReadStackParamList = {
   BookList: undefined;
   ChapterList: { bookId: string };
   BookIntro: { bookId: string };
-  Chapter: { bookId: string; chapterNum: number; openPanel?: OpenPanelParam; planId?: string; planDayNum?: number };
+  Chapter: { bookId: string; chapterNum: number; openPanel?: OpenPanelParam; planId?: string; planDayNum?: number; verseNum?: number };
   ParallelPassage: { entryId: string };
   ParallelDetail: { entryId: string };
   HarmonyBrowse: undefined;
@@ -35,7 +35,7 @@ export type ReadStackParamList = {
 
 export type HomeStackParamList = {
   HomeMain: undefined;
-  Chapter: { bookId: string; chapterNum: number; openPanel?: OpenPanelParam; planId?: string; planDayNum?: number };
+  Chapter: { bookId: string; chapterNum: number; openPanel?: OpenPanelParam; planId?: string; planDayNum?: number; verseNum?: number };
   ChapterList: { bookId: string };
   BookList: undefined;
   BookIntro: { bookId: string };
@@ -97,7 +97,7 @@ export type ExploreStackParamList = {
     transliteration?: string;
     gloss?: string;
   } | undefined;
-  Chapter: { bookId: string; chapterNum: number; openPanel?: OpenPanelParam; planId?: string; planDayNum?: number };
+  Chapter: { bookId: string; chapterNum: number; openPanel?: OpenPanelParam; planId?: string; planDayNum?: number; verseNum?: number };
 };
 
 export type MoreStackParamList = {

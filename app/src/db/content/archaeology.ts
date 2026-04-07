@@ -41,16 +41,30 @@ export async function getDiscoveriesByCategory(
   );
 }
 
+/**
+ * Sanitize user input for FTS5 MATCH queries.
+ */
+function sanitizeFtsQuery(query: string): string {
+  return query
+    .replace(/["\*\(\)\{\}\[\]^~:]/g, '')
+    .split(/\s+/)
+    .filter((w) => w.length >= 2)
+    .map((w) => `"${w}"`)
+    .join(' ');
+}
+
 export async function searchDiscoveries(
   query: string,
 ): Promise<ArchaeologicalDiscovery[]> {
+  const ftsQuery = sanitizeFtsQuery(query);
+  if (!ftsQuery) return [];
   return getDb().getAllAsync<ArchaeologicalDiscovery>(
     `SELECT d.* FROM archaeology_fts fts
      JOIN archaeological_discoveries d ON d.rowid = fts.rowid
      WHERE fts MATCH ?
      ORDER BY rank
      LIMIT 30`,
-    [query]
+    [ftsQuery]
   );
 }
 
