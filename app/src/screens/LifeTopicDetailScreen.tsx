@@ -44,7 +44,7 @@ function LifeTopicDetailScreen() {
     (ref: string) => {
       const parsed = parseReference(ref);
       if (parsed) {
-        navigation.push('Chapter', { bookId: parsed.bookId, chapterNum: parsed.chapter });
+        navigation.push('Chapter', { bookId: parsed.bookId, chapterNum: parsed.chapter, verseNum: parsed.verseStart });
       }
     },
     [navigation],
