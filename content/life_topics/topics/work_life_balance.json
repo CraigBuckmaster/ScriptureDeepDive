@@ -1,0 +1,78 @@
+{
+  "id": "work_life_balance",
+  "category_id": "modern_life",
+  "title": "Work-Life Balance",
+  "subtitle": "What the Bible Says About Work-Life Balance",
+  "summary": "Scripture establishes a rhythm of purposeful work and deliberate rest, warning against both idleness and overwork while grounding identity in God rather than productivity.",
+  "body": "God works for six days and rests on the seventh, embedding a rhythm into creation itself [verse:gen.2.2-3]. The Sabbath commandment extends this pattern to all of Israel: six days you shall labor, but the seventh is a sabbath to the Lord [verse:exod.20.8-10]. Rest is not laziness — it is obedience. It declares that the world does not depend on our ceaseless activity.\n\nJesus modeled this rhythm. He withdrew to lonely places to pray even when crowds pressed in with needs [verse:luke.5.16]. He slept in the boat during a storm [verse:mark.4.38]. He was never frantic, never rushed, never defined by his to-do list. His peace came from knowing his Father's assignment, not from completing every task.\n\nThe psalm warns against workaholism's underlying anxiety: unless the Lord builds the house, those who build it labor in vain. In vain you rise early and stay up late, toiling for food to eat — for God grants sleep to those he loves [verse:ps.127.1-2]. Overwork is often a trust issue: we work as though everything depends on us because we have not internalized that it does not.\n\nPaul commands diligent work [verse:col.3.23] but never at the expense of the relationships and rest that sustain it. Martha is busy with many preparations while Mary sits at Jesus' feet; Jesus gently says that Mary has chosen what is better [verse:luke.10.41-42].\n\nBalance is not fifty-fifty division but rightly ordered priorities: work hard, rest deliberately, and remember that your identity is secured by grace, not performance.",
+  "display_order": 3,
+  "verses": [
+    {
+      "verse_ref": "exod.20.8-10",
+      "verse_order": 1,
+      "annotation": "The Sabbath commandment — work has a boundary, and rest is commanded, not optional.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "ps.127.1-2",
+      "verse_order": 2,
+      "annotation": "Overwork is futile without the Lord — God grants sleep to those he loves.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "gen.2.2-3",
+      "verse_order": 3,
+      "annotation": "God's own rhythm of work and rest as the model for human life.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "luke.5.16",
+      "verse_order": 4,
+      "annotation": "Jesus withdrawing to pray despite demand — rest as a spiritual priority, not a luxury.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "luke.10.41-42",
+      "verse_order": 5,
+      "annotation": "Martha's busyness vs. Mary's presence — Jesus values being over doing.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "col.3.23",
+      "verse_order": 6,
+      "annotation": "Work heartily as for the Lord — diligence directed by purpose, not anxiety.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "matt.11.28-30",
+      "verse_order": 7,
+      "annotation": "Jesus invites the weary and burdened to find rest — his yoke is easy and his burden light.",
+      "is_primary": false
+    }
+  ],
+  "scholars": [
+    {
+      "scholar_id": "goldingay",
+      "quote": "Goldingay reads Psalm 127 as wisdom literature's sharpest rebuke of the self-made life — the psalm insists that human striving without divine partnership produces anxiety, not achievement.",
+      "source": "Psalms (Goldingay, 2006)",
+      "display_order": 1
+    },
+    {
+      "scholar_id": "keener",
+      "quote": "Keener observes that Jesus' withdrawal pattern in Luke's Gospel is deliberate, not reactive — solitary prayer was the source of his public ministry's power, modeling the priority of spiritual renewal over relentless activity.",
+      "source": "Acts: An Exegetical Commentary (Keener, 2012)",
+      "display_order": 2
+    },
+    {
+      "scholar_id": "obrien",
+      "quote": "O'Brien interprets Colossians 3:23 within the broader context of the new self — work done for the Lord is dignified and purposeful, but it is always subordinate to identity in Christ, never a substitute for it.",
+      "source": "Colossians, Philemon (O'Brien, 1982)",
+      "display_order": 3
+    }
+  ],
+  "related": [
+    "burnout",
+    "busy_ness",
+    "financial_stress"
+  ]
+}

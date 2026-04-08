@@ -1,0 +1,79 @@
+{
+  "id": "marriage",
+  "category_id": "relationships",
+  "title": "Marriage",
+  "subtitle": "What the Bible Says About Marriage",
+  "summary": "Scripture presents marriage as a covenant of mutual self-giving, rooted in creation's design and elevated by the New Testament as a reflection of Christ's love for the church.",
+  "body": "Marriage in Scripture begins not with a command but with a recognition. God saw that it was not good for the man to be alone and created a partner corresponding to him [verse:gen.2.18]. The result is a one-flesh union — a bond so deep that Jesus later cited it as the reason divorce was never part of the original design [verse:matt.19.4-6].\n\nThe most extensive New Testament teaching on marriage appears in Ephesians 5, where Paul frames the husband-wife relationship as a living picture of Christ and the church [verse:eph.5.25-33]. The standard for husbands is not authority but sacrifice — loving as Christ loved, which means giving himself up. Wives are called to respect, and the whole passage is prefaced by mutual submission [verse:eph.5.21].\n\nProverbs offers practical wisdom: a spouse of noble character is worth more than rubies [verse:prov.31.10]. The Song of Solomon celebrates the passionate, sensual dimension of marital love without embarrassment — desire within covenant is a gift, not a concession [verse:song.8.6-7].\n\nPaul also addresses the challenges honestly. Marriage brings divided attention and legitimate concern for a spouse's needs [verse:1cor.7.32-34]. It is not an escape from difficulty but a context for sacrificial love.\n\nScripture treats marriage as both beautiful and demanding — a covenant that images something far larger than itself.",
+  "display_order": 1,
+  "verses": [
+    {
+      "verse_ref": "gen.2.18",
+      "verse_order": 1,
+      "annotation": "God identifies human solitude as the first 'not good' and creates partnership.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "matt.19.4-6",
+      "verse_order": 2,
+      "annotation": "Jesus roots marriage in creation's design: what God has joined, let no one separate.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "eph.5.25-33",
+      "verse_order": 3,
+      "annotation": "Marriage as a reflection of Christ's self-giving love for the church.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "eph.5.21",
+      "verse_order": 4,
+      "annotation": "The often-missed preface: submit to one another out of reverence for Christ.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "prov.31.10",
+      "verse_order": 5,
+      "annotation": "A noble spouse's worth exceeds material wealth.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "song.8.6-7",
+      "verse_order": 6,
+      "annotation": "Love is as strong as death — passionate marital love celebrated without apology.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "1cor.7.32-34",
+      "verse_order": 7,
+      "annotation": "Paul's honest acknowledgment that marriage brings real complexity and divided attention.",
+      "is_primary": false
+    }
+  ],
+  "scholars": [
+    {
+      "scholar_id": "sarna",
+      "quote": "Sarna explains that the 'one flesh' language in Genesis 2:24 describes not merely physical union but the establishment of a new primary kinship bond that supersedes even the parent-child relationship.",
+      "source": "Genesis (Sarna, JPS Torah Commentary, 1989)",
+      "display_order": 1
+    },
+    {
+      "scholar_id": "fee",
+      "quote": "Fee argues that Paul's teaching on marriage in 1 Corinthians 7 is remarkably egalitarian for its era — both husband and wife have mutual authority over each other's bodies, a reciprocity that was counter-cultural in the ancient world.",
+      "source": "The First Epistle to the Corinthians (Fee, NICNT, 1987)",
+      "display_order": 2
+    },
+    {
+      "scholar_id": "longman",
+      "quote": "Longman reads the Song of Solomon as a celebration of erotic love within covenant — the book's inclusion in Scripture is a theological affirmation that physical desire between spouses is part of God's good design.",
+      "source": "Song of Songs (Longman, NICOT, 2001)",
+      "display_order": 3
+    }
+  ],
+  "related": [
+    "divorce",
+    "singleness",
+    "love",
+    "commitment"
+  ]
+}
