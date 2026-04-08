@@ -20,6 +20,8 @@ export const EraCard = React.memo(function EraCard({ era, onPress }: Props) {
       activeOpacity={0.7}
       onPress={onPress}
       disabled={!onPress}
+      accessibilityRole="button"
+      accessibilityLabel={`${era.name}, ${era.date_range}`}
       style={[
         styles.card,
         { backgroundColor: base.bgElevated, borderColor: color + '40' },

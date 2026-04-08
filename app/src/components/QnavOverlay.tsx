@@ -107,6 +107,9 @@ export function QnavOverlay({
         data={filteredBooks}
         keyExtractor={(b: BookWithProgress) => b.id}
         contentContainerStyle={styles.listContent}
+        maxToRenderPerBatch={10}
+        windowSize={7}
+        initialNumToRender={20}
         renderItem={({ item: book }: { item: BookWithProgress }) => (
           <View>
             <TouchableOpacity

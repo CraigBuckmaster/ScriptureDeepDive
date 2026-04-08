@@ -7,6 +7,7 @@ import { getSupabase } from '../lib/supabase';
 import type { Submission } from '../types';
 
 const PAGE_SIZE = 20;
+const LOAD_MORE_DEBOUNCE_MS = 300;
 
 export function useSubmissionFeed(
   sort: 'newest' | 'top_rated',
@@ -16,6 +17,7 @@ export function useSubmissionFeed(
   const [loading, setLoading] = useState(true);
   const [hasMore, setHasMore] = useState(true);
   const pageRef = useRef(0);
+  const loadMoreTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const fetchPage = useCallback(
     async (page: number, reset: boolean) => {
@@ -68,8 +70,11 @@ export function useSubmissionFeed(
 
   const loadMore = useCallback(() => {
     if (loading || !hasMore) return;
-    pageRef.current += 1;
-    fetchPage(pageRef.current, false);
+    clearTimeout(loadMoreTimer.current);
+    loadMoreTimer.current = setTimeout(() => {
+      pageRef.current += 1;
+      fetchPage(pageRef.current, false);
+    }, LOAD_MORE_DEBOUNCE_MS);
   }, [loading, hasMore, fetchPage]);
 
   return { submissions, loading, loadMore, hasMore };

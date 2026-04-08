@@ -21,7 +21,6 @@ REFERENCE_MATRIX_PATH = AUDIT_DIR / "reference_matrix.json"
 SUMMARY_PATH = AUDIT_DIR / "summary.json"
 STRONGS_OT_PATH = AUDIT_DIR / "strongs_ot.json"
 STRONGS_NT_PATH = AUDIT_DIR / "strongs_nt.json"
-ENV_FILE = TOOLS_DIR / ".env"
 
 # ─── Claim Types ────────────────────────────────────────────────────
 
@@ -220,12 +219,7 @@ def load_book_aliases() -> dict:
 # ─── API Configuration (Phase 3+) ──────────────────────────────────
 
 def load_api_key() -> str | None:
-    """Load Anthropic API key from .env file or environment."""
-    if ENV_FILE.exists():
-        for line in ENV_FILE.read_text(encoding='utf-8').splitlines():
-            line = line.strip()
-            if line.startswith("ANTHROPIC_API_KEY="):
-                return line.split("=", 1)[1].strip()
+    """Load Anthropic API key from environment."""
     return os.environ.get("ANTHROPIC_API_KEY")
 
 

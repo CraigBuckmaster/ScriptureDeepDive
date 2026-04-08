@@ -20,6 +20,8 @@ function TopicListItem({ title, subtitle, categoryName, onPress }: Props) {
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.7}
+      accessibilityRole="button"
+      accessibilityLabel={title}
       style={[styles.row, { borderBottomColor: base.border + '40' }]}
     >
       <Text style={[styles.title, { color: base.text }]}>{title}</Text>

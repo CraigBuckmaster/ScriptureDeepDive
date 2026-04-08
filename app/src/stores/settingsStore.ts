@@ -57,50 +57,50 @@ export const useSettingsStore = create<SettingsState>((set) => ({
   redLetterEnabled: true,
   isHydrated: false,
 
-  setTranslation: async (t) => {
+  setTranslation: (t) => {
     set({ translation: t });
-    await setPreference('translation', t);
+    setPreference('translation', t).catch((err) => { logger.warn('settingsStore', 'Failed to persist translation', err); });
   },
 
-  setFontSize: async (s) => {
+  setFontSize: (s) => {
     const clamped = Math.min(24, Math.max(12, s));
     set({ fontSize: clamped });
-    await setPreference('fontSize', String(clamped));
+    setPreference('fontSize', String(clamped)).catch((err) => { logger.warn('settingsStore', 'Failed to persist fontSize', err); });
   },
 
-  setVhlEnabled: async (v) => {
+  setVhlEnabled: (v) => {
     set({ vhlEnabled: v });
-    await setPreference('vhlEnabled', v ? '1' : '0');
+    setPreference('vhlEnabled', v ? '1' : '0').catch((err) => { logger.warn('settingsStore', 'Failed to persist vhlEnabled', err); });
   },
 
-  setBookListMode: async (m) => {
+  setBookListMode: (m) => {
     set({ bookListMode: m });
-    await setPreference('bookListMode', m);
+    setPreference('bookListMode', m).catch((err) => { logger.warn('settingsStore', 'Failed to persist bookListMode', err); });
   },
 
-  setStudyCoachEnabled: async (v) => {
+  setStudyCoachEnabled: (v) => {
     set({ studyCoachEnabled: v });
-    await setPreference('studyCoachEnabled', v ? '1' : '0');
+    setPreference('studyCoachEnabled', v ? '1' : '0').catch((err) => { logger.warn('settingsStore', 'Failed to persist studyCoachEnabled', err); });
   },
 
-  setTheme: async (t) => {
+  setTheme: (t) => {
     set({ theme: t });
-    await setPreference('theme', t);
+    setPreference('theme', t).catch((err) => { logger.warn('settingsStore', 'Failed to persist theme', err); });
   },
 
-  setTtsVoice: async (v) => {
+  setTtsVoice: (v) => {
     set({ ttsVoice: v });
-    await setPreference('ttsVoice', v);
+    setPreference('ttsVoice', v).catch((err) => { logger.warn('settingsStore', 'Failed to persist ttsVoice', err); });
   },
 
-  setRedLetterEnabled: async (v) => {
+  setRedLetterEnabled: (v) => {
     set({ redLetterEnabled: v });
-    await setPreference('redLetterEnabled', v ? '1' : '0');
+    setPreference('redLetterEnabled', v ? '1' : '0').catch((err) => { logger.warn('settingsStore', 'Failed to persist redLetterEnabled', err); });
   },
 
-  setComparisonTranslation: async (t) => {
+  setComparisonTranslation: (t) => {
     set({ comparisonTranslation: t });
-    await setPreference('comparisonTranslation', t ?? '');
+    setPreference('comparisonTranslation', t ?? '').catch((err) => { logger.warn('settingsStore', 'Failed to persist comparisonTranslation', err); });
   },
 
   hydrate: async () => {

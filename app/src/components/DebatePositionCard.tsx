@@ -37,7 +37,13 @@ function DebatePositionCard({
   return (
     <View style={[styles.card, { backgroundColor: base.bgElevated, borderLeftColor: color }]}>
       {/* Header */}
-      <TouchableOpacity onPress={toggleExpand} activeOpacity={0.7} style={styles.header}>
+      <TouchableOpacity
+        onPress={toggleExpand}
+        activeOpacity={0.7}
+        accessibilityRole="button"
+        accessibilityLabel={`${position.label}, ${expanded ? 'collapse' : 'expand'}`}
+        style={styles.header}
+      >
         <View style={styles.headerLeft}>
           <View style={[styles.traditionPill, { backgroundColor: color + '20' }]}>
             <Text style={[styles.traditionText, { color }]}>

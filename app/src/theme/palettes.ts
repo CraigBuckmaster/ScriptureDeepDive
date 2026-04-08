@@ -80,8 +80,8 @@ const sepiaBase: BaseColors = {
   bg3: '#e4d8c0',
   text: '#2c2418',
   textDim: '#5a4e3c',
-  textMuted: '#7a6e5c',
-  gold: '#9a7a28',
+  textMuted: '#6a5e4c',        // WCAG AA: 5.2:1 on bg, 4.7:1 on bgElevated
+  gold: '#886818',             // WCAG AA: 4.3:1 on bg, 3.8:1 on bgElevated
   goldDim: '#7a5e14',
   goldBright: '#b89030',
   border: '#c8b898',
@@ -90,7 +90,7 @@ const sepiaBase: BaseColors = {
   navText: '#4a3e2c',
   danger: '#c04848',
   success: '#4a8a4a',
-  redLetter: '#b05040',
+  redLetter: '#9a3a2a',        // WCAG AA: 5.7:1 on bg
 };
 
 const lightBase: BaseColors = {

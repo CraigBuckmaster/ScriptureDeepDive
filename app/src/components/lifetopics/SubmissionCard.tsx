@@ -23,6 +23,8 @@ function SubmissionCard({ title, authorName, excerpt, upvoteCount, starAvg, onPr
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.7}
+      accessibilityRole="button"
+      accessibilityLabel={`${title} by ${authorName}`}
       style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.border + '40' }]}
     >
       <Text style={[styles.title, { color: base.text }]} numberOfLines={2}>

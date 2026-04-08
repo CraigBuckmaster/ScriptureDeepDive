@@ -43,19 +43,16 @@ jobs:
         id: validate_json
         run: |
           python3 _tools/schema_validator.py 2>&1 | tee validate_json.log
-        continue-on-error: true
 
       - name: Build scripture.db
         id: build_db
         run: |
           python3 _tools/build_sqlite.py 2>&1 | tee build_db.log
-        continue-on-error: true
 
       - name: Validate scripture.db integrity
         id: validate_db
         run: |
           python3 _tools/validate_sqlite.py 2>&1 | tee validate_db.log
-        continue-on-error: true
 
       # ── Stage 2: Detect changed chapters ─────────────────────
 
@@ -105,11 +102,6 @@ jobs:
             else
               echo "Tier 1 only (tier2 label present but no ANTHROPIC_API_KEY secret)"
             fi
-          fi
-
-          # Write .env for the accuracy auditor
-          if [ -n "$ANTHROPIC_API_KEY" ]; then
-            echo "ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY" > _tools/.env
           fi
 
           # Run the orchestrator

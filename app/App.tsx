@@ -13,6 +13,7 @@ import { initUserDatabase } from './src/db/userDatabase';
 import { useSettingsStore, useAuthStore, usePremiumStore } from './src/stores';
 import { pruneEvents } from './src/services/analytics';
 import { checkAndScheduleReengagement } from './src/services/reengagement';
+import { syncPremiumStatus } from './src/services/purchases';
 import { RootNavigator } from './src/navigation';
 import { ErrorBoundary } from './src/components/ErrorBoundary';
 import { closeAllTranslationDbs } from './src/db/translationManager';
@@ -96,10 +97,13 @@ export default function App() {
     init();
   }, []);
 
-  // Re-engagement: check on app foreground
+  // Re-engagement + premium sync: check on app foreground
   useEffect(() => {
     const sub = AppState.addEventListener('change', (state) => {
-      if (state === 'active' && dbReady) checkAndScheduleReengagement();
+      if (state === 'active' && dbReady) {
+        checkAndScheduleReengagement();
+        syncPremiumStatus();
+      }
     });
     return () => sub.remove();
   }, [dbReady]);
