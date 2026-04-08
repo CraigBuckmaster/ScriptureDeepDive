@@ -596,5 +596,113 @@
       ]
     }
   },
-  "vhl_groups": []
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Jericho",
+        "Jordan",
+        "Gilgal",
+        "Ai",
+        "Gibeon",
+        "Shiloh",
+        "Shechem",
+        "Hebron",
+        "Hazor",
+        "Canaan",
+        "Ebal",
+        "Gerizim",
+        "Kadesh"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Joshua",
+        "Caleb",
+        "Rahab",
+        "Achan",
+        "Phinehas",
+        "Eleazar",
+        "Moses",
+        "God",
+        "LORD",
+        "Israel",
+        "Gibeonites"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "time",
+        "generation",
+        "month"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "covenant",
+        "land",
+        "inheritance",
+        "conquest",
+        "obey",
+        "strong",
+        "courageous",
+        "holy",
+        "destroy",
+        "possess",
+        "allotment",
+        "faithfulness",
+        "promise",
+        "rest"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
 }
