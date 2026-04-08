@@ -568,7 +568,135 @@
         "theme": "Poetic Justice",
         "content": "The fratricide king died shamefully. The sanctuary that funded his rise became a crematorium. Those who live by treachery perish by treachery."
       }
-    ]
+    ],
+    "lit": {
+      "rows": [
+        {
+          "label": "Anti-King: The Bramble Parable",
+          "text": "Jotham's fable is the sharpest political satire in the Hebrew Bible. The productive trees (olive, fig, vine) refuse the crown because they have real work to do; only the worthless bramble accepts — and immediately threatens to burn the cedars of Lebanon. Kingship attracts those least fit to hold it.",
+          "is_key": false
+        },
+        {
+          "label": "Covenant Betrayal and Poetic Justice",
+          "text": "Abimelech murders seventy brothers on a single stone to seize power, then is killed by a single stone dropped by a woman. The narrator frames the entire chapter as divine retribution: 'God repaid the wickedness of Abimelech' (v. 56). Violence begets violence in exact proportion.",
+          "is_key": false
+        },
+        {
+          "label": "Shechem: The Anti-Covenant City",
+          "text": "The city where Israel renewed covenant under Joshua (Josh 24) becomes the site of covenant betrayal under Abimelech. The lords of Shechem enthrone a half-Canaanite tyrant in the temple of Baal-Berith ('lord of the covenant') — a dark inversion of everything the covenant was meant to produce.",
+          "is_key": false
+        }
+      ],
+      "note": ""
+    }
   },
-  "vhl_groups": []
+  "vhl_groups": [
+    {
+      "name": "divine",
+      "css_class": "vhl-divine",
+      "words": [
+        "God",
+        "LORD",
+        "Spirit",
+        "Angel",
+        "Lord",
+        "Holy Spirit",
+        "Father",
+        "Son",
+        "I AM",
+        "Almighty",
+        "Shaddai"
+      ],
+      "btn_types": [
+        "hebrew",
+        "hebrew-text",
+        "context"
+      ]
+    },
+    {
+      "name": "places",
+      "css_class": "vhl-place",
+      "words": [
+        "Canaan",
+        "Gilead",
+        "Shiloh",
+        "Shechem",
+        "Gaza",
+        "Bethlehem",
+        "Dan",
+        "Mizpah",
+        "Ophrah",
+        "Timnah",
+        "Hazor"
+      ],
+      "btn_types": [
+        "places",
+        "context"
+      ]
+    },
+    {
+      "name": "people",
+      "css_class": "vhl-person",
+      "words": [
+        "Othniel",
+        "Ehud",
+        "Deborah",
+        "Barak",
+        "Gideon",
+        "Abimelech",
+        "Jephthah",
+        "Samson",
+        "Delilah",
+        "God",
+        "LORD",
+        "Israel",
+        "Philistines"
+      ],
+      "btn_types": [
+        "people",
+        "context"
+      ]
+    },
+    {
+      "name": "time",
+      "css_class": "vhl-time",
+      "words": [
+        "day",
+        "days",
+        "year",
+        "years",
+        "time",
+        "generation",
+        "month"
+      ],
+      "btn_types": [
+        "timeline",
+        "context"
+      ]
+    },
+    {
+      "name": "key",
+      "css_class": "vhl-key",
+      "words": [
+        "evil",
+        "cry",
+        "deliver",
+        "judge",
+        "rest",
+        "oppress",
+        "forsake",
+        "serve",
+        "covenant",
+        "idolatry",
+        "Baal",
+        "Ashtoreth",
+        "cycle",
+        "king"
+      ],
+      "btn_types": [
+        "literary",
+        "cross"
+      ]
+    }
+  ]
 }
