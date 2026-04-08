@@ -392,5 +392,243 @@
       "heb-niphal"
     ],
     "display_order": 7
+  },
+  {
+    "id": "heb-construct",
+    "title": "Construct State",
+    "language": "hebrew",
+    "category": "nouns",
+    "summary": "A noun form that links two nouns in a possessive or descriptive relationship — the Hebrew equivalent of 'of' or 's.",
+    "body": "The Construct State is how Hebrew expresses the relationship between two nouns without using a separate word for \"of.\" The first noun (the construct) is bound tightly to the second noun (the absolute), forming a single unit of meaning: מֶלֶךְ יִשְׂרָאֵל (melekh Yisra'el) means \"king of Israel.\"\n\n## How to Recognize It\n\nThe construct noun typically shortens its vowels because it loses its independent stress. It leans forward phonetically into the following word. For example, דָּבָר (davar, \"word\") in the absolute becomes דְּבַר (devar) in the construct: דְּבַר יְהוָה (devar YHWH, \"word of the LORD\"). The construct noun never takes the definite article — if the whole phrase is definite, only the second noun gets the article or is a proper name.\n\n## Range of Relationships\n\nThe construct chain can express far more than simple possession. **Possession:** \"the house of the king.\" **Material:** \"vessels of gold.\" **Description:** \"men of valor\" (valorous men). **Source:** \"rivers of Eden.\" **Apposition:** \"the land of Canaan\" (the land that is Canaan). Context determines which relationship is intended.\n\n## Why It Matters for Interpretation\n\nConstruct chains are everywhere in Hebrew — recognizing them prevents misreading two separate nouns as unrelated. Theologically significant phrases are often construct chains: \"the fear of the LORD,\" \"the covenant of peace,\" \"the Holy One of Israel.\" Understanding the construct also explains why certain divine titles work the way they do and why word order in Hebrew poetry sometimes differs from what English readers expect.",
+    "examples": [
+      {
+        "ref": "Gen 1:1",
+        "text": "שָׁמַיִם וְאֵת הָאָרֶץ — but note: בְּרֵאשִׁית (bereshit) — 'in the beginning of'",
+        "explanation": "The very first word of the Bible may be a construct form — 'in-beginning-of,' which has generated centuries of debate about whether Genesis 1:1 is an independent clause or a temporal subordinate clause."
+      },
+      {
+        "ref": "Ps 24:1",
+        "text": "לַיהוָה הָאָרֶץ (la-YHWH ha'arets) — but: הַר־קָדְשׁוֹ (har-qodsho) — 'his holy mountain'",
+        "explanation": "The construct הַר (har, 'mountain of') bound to קָדְשׁוֹ (qodsho, 'his holiness') creates 'the mountain of his holiness' — that is, 'his holy mountain.'"
+      },
+      {
+        "ref": "Isa 1:4",
+        "text": "קְדוֹשׁ יִשְׂרָאֵל (qedosh Yisra'el) — 'the Holy One of Israel'",
+        "explanation": "A construct chain forming one of Isaiah's most important divine titles — 'Holy One' is bound to 'Israel,' expressing both God's transcendence and his covenant relationship."
+      }
+    ],
+    "related_articles": [
+      "heb-absolute"
+    ],
+    "display_order": 1
+  },
+  {
+    "id": "heb-absolute",
+    "title": "Absolute State",
+    "language": "hebrew",
+    "category": "nouns",
+    "summary": "The independent, standalone form of a Hebrew noun — the default dictionary form that carries its own stress and can take the definite article.",
+    "body": "The Absolute State is the independent, freestanding form of a Hebrew noun. It is the form you find in dictionaries and the form a noun takes when it stands on its own or when it is the second noun in a construct chain.\n\n## How to Recognize It\n\nThe absolute noun retains its full vowels and carries its own stress accent. It can take the definite article הַ (ha-): הַמֶּלֶךְ (hammelekh, \"the king\"). It can also stand alone as an indefinite noun: מֶלֶךְ (melekh, \"a king\"). When a noun appears at the end of a construct chain, it is always in the absolute state and determines the definiteness of the entire phrase.\n\n## Relationship to the Construct\n\nThe absolute and construct are two states of the same noun, not two different words. The absolute is the default; the construct is the bound form. Comparing them reveals vowel changes: דָּבָר (davar, absolute) versus דְּבַר (devar, construct). In some nouns the difference is dramatic: בַּיִת (bayit, \"house,\" absolute) versus בֵּית (bet, construct, as in בֵּית לֶחֶם, \"Bethlehem\" — literally \"house of bread\").\n\n## Why It Matters for Interpretation\n\nRecognizing the absolute state helps readers identify which noun in a phrase is independent and which is bound. Since the absolute noun determines definiteness for the whole construct chain, identifying it correctly affects translation. Many familiar place names are actually frozen construct chains with an absolute second noun: Bethlehem (\"house of bread\"), Bethel (\"house of God\"), Israel (\"he strives with God\").",
+    "examples": [
+      {
+        "ref": "Gen 28:19",
+        "text": "בֵּית אֵל (bet 'El) — 'Bethel'",
+        "explanation": "אֵל ('God') is in the absolute state — the independent noun that completes the construct chain. The place name literally means 'house of God.'"
+      },
+      {
+        "ref": "Ruth 1:1",
+        "text": "בֵּית לֶחֶם (bet lechem) — 'Bethlehem'",
+        "explanation": "לֶחֶם ('bread') is in the absolute state. The town name is a frozen construct chain: 'house of bread' — fitting for the setting of a story about famine and provision."
+      },
+      {
+        "ref": "Deut 6:4",
+        "text": "יְהוָה אֱלֹהֵינוּ (YHWH 'eloheinu) — 'the LORD our God'",
+        "explanation": "יְהוָה stands in the absolute as a proper noun. אֱלֹהֵינוּ ('our God') is a construct form with the pronominal suffix, creating the creedal declaration."
+      }
+    ],
+    "related_articles": [
+      "heb-construct"
+    ],
+    "display_order": 2
+  },
+  {
+    "id": "heb-segolate",
+    "title": "Segolate Nouns",
+    "language": "hebrew",
+    "category": "nouns",
+    "summary": "A class of Hebrew nouns originally monosyllabic that developed a helping vowel (often segol), creating distinctive two-syllable patterns like מֶלֶךְ (king) and סֵפֶר (book).",
+    "body": "Segolate nouns are a common class of Hebrew nouns named after the segol vowel (ֶ) that frequently appears in their forms. They were originally one-syllable words that developed a secondary \"helping\" vowel to make them easier to pronounce.\n\n## How to Recognize Them\n\nSegolate nouns are typically two-syllable words with stress on the first syllable — unusual in Hebrew, where stress normally falls on the last syllable. The three main patterns are: **segol-segol** like מֶלֶךְ (melekh, \"king\"); **segol-tsere** like סֵפֶר (sefer, \"book\"); and **segol-holem** like קֹדֶשׁ (qodesh, \"holiness\"). The accent on the first syllable is the key diagnostic feature.\n\n## How They Behave\n\nWhen segolate nouns take suffixes (possessive pronouns, plural endings), they revert to their original monosyllabic form. מֶלֶךְ becomes מַלְכִּי (malki, \"my king\") — the helping vowel disappears because the suffix provides a new syllable. The plural of סֵפֶר is סְפָרִים (sefarim), not סֵפֶרִים. This reversion pattern is predictable once you recognize the noun class.\n\n## Why It Matters for Interpretation\n\nSegolate nouns include many of Hebrew's most theologically important words: מֶלֶךְ (king), קֹדֶשׁ (holiness), אֶרֶץ (land/earth), נֶפֶשׁ (soul/life), חֶסֶד (steadfast love). Recognizing the class helps with parsing — if you see מַלְכִּי and need to find the root, knowing segolate reversion tells you the dictionary form is מֶלֶךְ, not a verb form. It also explains why related words in different Semitic languages sometimes look quite different from their Hebrew equivalents.",
+    "examples": [
+      {
+        "ref": "Ps 24:7",
+        "text": "מֶלֶךְ הַכָּבוֹד (melekh hakkavod) — 'King of glory'",
+        "explanation": "מֶלֶךְ is a classic segolate noun — originally *malk, with a helping segol vowel inserted. In construct ('king of'), the form stays the same because the helping vowel is already in the first syllable."
+      },
+      {
+        "ref": "Gen 1:1",
+        "text": "אֶרֶץ (erets) — 'earth/land'",
+        "explanation": "Another segolate noun (originally *ʾarṣ). One of the most frequent words in the Hebrew Bible — its segolate pattern explains why the plural is אֲרָצוֹת (aratsot), reverting to the monosyllabic base."
+      },
+      {
+        "ref": "Ps 23:3",
+        "text": "נַפְשִׁי (nafshi) — 'my soul'",
+        "explanation": "The segolate noun נֶפֶשׁ (nefesh) reverts to its base form when a suffix is added: nafsh + i = nafshi. The helping vowel disappears as predicted by the segolate pattern."
+      }
+    ],
+    "related_articles": [
+      "heb-construct",
+      "heb-absolute"
+    ],
+    "display_order": 3
+  },
+  {
+    "id": "heb-casus-pendens",
+    "title": "Casus Pendens (Fronted Subject)",
+    "language": "hebrew",
+    "category": "syntax",
+    "summary": "A construction where a noun or phrase is placed at the front of a sentence in an independent position, then resumed by a pronoun — used to signal topic shifts, emphasis, or contrast.",
+    "body": "Casus pendens (Latin for \"hanging case\") is a construction where a noun is placed at the beginning of a sentence in an isolated, independent position, then picked up again by a pronoun in the main clause. English approximations include: \"As for David, he went...\" or \"The land — God gave it to Abraham.\"\n\n## How to Recognize It\n\nThe pattern is: **fronted noun + clause with resumptive pronoun**. The fronted noun \"hangs\" outside the clause's normal syntax and is then referenced by a pronoun within the clause. For example: וְהָאָרֶץ הָיְתָה (veha'arets hayetah) — \"Now the earth, it was...\" (Gen 1:2). The noun הָאָרֶץ is fronted and the verb agrees with it, but the construction marks a deliberate break from the preceding narrative flow.\n\n## What It Signals\n\n**Topic shift** is the most common function — the narrator moves the spotlight from one subject to another. **Contrast** sets two subjects against each other: \"As for Abel, he brought...; and as for Cain, he brought...\" **Emphasis** draws special attention to the fronted element. **Background information** pauses the narrative to provide context before resuming the main storyline.\n\n## Why It Matters for Interpretation\n\nCasus pendens is one of the narrator's most important tools for directing the reader's attention. In Genesis 1:2, the fronted הָאָרֶץ shifts focus from the act of creation (v.1) to the state of the earth — a key interpretive signal that verse 2 is providing background, not continuing the sequence. Spotting casus pendens prevents readers from treating every sentence as sequential narrative when the author intended a pause or shift.",
+    "examples": [
+      {
+        "ref": "Gen 1:2",
+        "text": "וְהָאָרֶץ הָיְתָה תֹהוּ וָבֹהוּ (veha'arets hayetah tohu vavohu)",
+        "explanation": "The earth is fronted with a disjunctive vav — 'Now the earth, it was formless and void.' This signals a shift from the creation event (v.1) to background description of the earth's pre-formed state."
+      },
+      {
+        "ref": "Gen 3:12",
+        "text": "הָאִשָּׁה אֲשֶׁר נָתַתָּה (ha'ishah asher natattah) — 'the woman whom you gave'",
+        "explanation": "Adam fronts 'the woman' before the main clause — a casus pendens that shifts blame by making the woman the topic before explaining what she did."
+      },
+      {
+        "ref": "Gen 13:15",
+        "text": "כָּל־הָאָרֶץ אֲשֶׁר־אַתָּה רֹאֶה לְךָ אֶתְּנֶנָּה (kol-ha'arets... lekha 'ettennah)",
+        "explanation": "'All the land that you see — to you I will give it.' The land is fronted as a casus pendens, then resumed by the suffix pronoun on the verb. The fronting emphasizes the scope of God's promise."
+      }
+    ],
+    "related_articles": [
+      "heb-vav-consecutive",
+      "heb-waw-narrative"
+    ],
+    "display_order": 1
+  },
+  {
+    "id": "heb-waw-narrative",
+    "title": "Waw-Consecutive Narrative",
+    "language": "hebrew",
+    "category": "syntax",
+    "summary": "The default storytelling mode of biblical Hebrew prose, where chains of wayyiqtol verbs carry the narrative forward in sequential action.",
+    "body": "Waw-Consecutive Narrative refers to the prose style that dominates Hebrew storytelling. The narrator establishes a setting (often with a temporal clause or a Perfect verb), then advances the plot through a chain of wayyiqtol (vav-consecutive imperfect) verbs, each pushing the story one step forward.\n\n## The Basic Pattern\n\nA narrative typically opens with a scene-setting clause, then launches the chain: \"And he went... and he saw... and he took... and he said...\" Each wayyiqtol is connected to the previous one, creating a tight sequence of events. The chain continues until the narrator deliberately breaks it.\n\n## Breaking the Chain\n\nWhen the narrator interrupts the wayyiqtol chain with a different construction — a nominal clause, a casus pendens, a Perfect verb, or a participle — this break is always significant. It signals: **background information** (\"Now the serpent was crafty...\"), **simultaneous action** (something happening at the same time as the main plot), **contrast** (shifting to a different character's response), or **commentary** (the narrator stepping in to explain).\n\n## Why It Matters for Interpretation\n\nUnderstanding waw-consecutive narrative is essential for reading Hebrew prose at its intended pace. The chain creates forward momentum — readers feel the events rushing ahead. Chain breaks create pauses where the narrator wants readers to stop, consider background, or notice a contrast. Many translation disagreements trace back to whether a particular clause continues the chain or breaks it, which affects whether events are understood as sequential or simultaneous.",
+    "examples": [
+      {
+        "ref": "Gen 1:3-5",
+        "text": "וַיֹּאמֶר... וַיְהִי... וַיַּרְא... וַיַּבְדֵּל... וַיִּקְרָא",
+        "explanation": "A classic wayyiqtol chain: 'And God said... and there was... and God saw... and God separated... and God called.' Five sequential verbs driving Day One forward in rapid succession."
+      },
+      {
+        "ref": "Gen 3:1",
+        "text": "וְהַנָּחָשׁ הָיָה עָרוּם (vehanachash hayah arum)",
+        "explanation": "A chain break — the narrator interrupts the Eden story with a nominal clause: 'Now the serpent was crafty.' The break pauses the action to introduce a new character and set up the coming conflict."
+      },
+      {
+        "ref": "1 Sam 1:1-2",
+        "text": "וַיְהִי אִישׁ... וְלוֹ שְׁתֵּי נָשִׁים (vayehi ish... velo shtei nashim)",
+        "explanation": "The narrative opens with a wayyiqtol ('there was a man'), then breaks the chain with a circumstantial clause ('and he had two wives') to provide essential background before the story proper begins."
+      }
+    ],
+    "related_articles": [
+      "heb-vav-consecutive",
+      "heb-casus-pendens"
+    ],
+    "display_order": 2
+  },
+  {
+    "id": "heb-speech-markers",
+    "title": "Direct Speech Markers",
+    "language": "hebrew",
+    "category": "discourse",
+    "summary": "Hebrew words and constructions that introduce, structure, and add nuance to quoted speech — including לֵאמֹר (le'mor), כֹּה אָמַר (ko amar), and others.",
+    "body": "Hebrew uses several distinctive markers to introduce and frame direct speech. Unlike English, which relies on quotation marks, biblical Hebrew signals speech through specific words and formulas that also convey information about the speech's authority, urgency, and context.\n\n## Key Markers\n\n**לֵאמֹר (le'mor, \"saying\")** is the most common speech introduction. It follows a verb of communication and introduces the quoted words: \"And God spoke to Moses, saying (le'mor): '...'\" Despite its frequency, le'mor is not mere filler — it signals that what follows is a direct quotation.\n\n**כֹּה אָמַר (ko amar, \"thus says\")** is the prophetic messenger formula. It identifies the prophet as a messenger delivering someone else's words — specifically God's. The formula parallels ancient Near Eastern diplomatic language where a messenger would say \"Thus says the Great King...\" before delivering the royal message.\n\n**נְאֻם יְהוָה (ne'um YHWH, \"declaration of the LORD\")** appears within or at the end of prophetic speech as a stamp of divine authority. It functions like a signature confirming the source.\n\n## Why It Matters for Interpretation\n\nSpeech markers help readers distinguish between the narrator's voice, a character's words, and God's direct speech — distinctions that affect how authoritative a statement is within the text. The messenger formula is particularly important: when a prophet says \"thus says the LORD,\" the claim is not personal opinion but transmitted divine speech. Recognizing where speech begins and ends also resolves ambiguity in passages where it is unclear who is speaking.",
+    "examples": [
+      {
+        "ref": "Exod 3:14",
+        "text": "וַיֹּאמֶר אֱלֹהִים אֶל־מֹשֶׁה (vayyomer 'Elohim 'el-Mosheh)",
+        "explanation": "The standard speech introduction: 'And God said to Moses.' The wayyiqtol of אמר plus the recipient marked with אֶל is the basic formula for quoted divine speech."
+      },
+      {
+        "ref": "Isa 7:7",
+        "text": "כֹּה אָמַר אֲדֹנָי יְהוִה (ko amar 'Adonai YHWH) — 'thus says the Lord GOD'",
+        "explanation": "The prophetic messenger formula — Isaiah delivers God's words using the same formula ancient diplomats used to relay royal messages. The prophet claims to be a courier, not the author."
+      },
+      {
+        "ref": "Jer 1:8",
+        "text": "נְאֻם יְהוָה (ne'um YHWH) — 'declares the LORD'",
+        "explanation": "The divine-speech stamp placed within Jeremiah's oracle, confirming that the preceding words carry God's authority. It functions as a signature of authenticity."
+      }
+    ],
+    "related_articles": [
+      "heb-hinneh"
+    ],
+    "display_order": 1
+  },
+  {
+    "id": "heb-hinneh",
+    "title": "Hinneh Clauses",
+    "language": "hebrew",
+    "category": "discourse",
+    "summary": "The Hebrew particle הִנֵּה (hinneh, 'behold') that draws the audience into a character's immediate perception — functioning as a narrative camera shift.",
+    "body": "הִנֵּה (hinneh), often translated \"behold\" or \"look,\" is one of Hebrew's most versatile discourse particles. Far from being archaic filler, it functions as a narrative spotlight — shifting the reader's perspective to see what a character sees at the moment they see it.\n\n## How It Functions\n\n**Perceptual shift:** Hinneh moves the reader from the narrator's external viewpoint into a character's immediate experience. When Genesis 22:13 says Abraham \"lifted his eyes and saw — וְהִנֵּה (vehinneh) — a ram caught in a thicket,\" the particle places the reader behind Abraham's eyes at the moment of discovery.\n\n**Surprise or new information:** Hinneh often introduces something unexpected. \"He looked, and behold — the bush was burning but not consumed\" (Exod 3:2). The particle signals that what follows defied expectation.\n\n**Presentational:** When a character uses hinneh to introduce themselves or something they are offering, it functions as a presentation: הִנְנִי (hineni, \"here I am\") — Abraham's response to God's call.\n\n## Why It Matters for Interpretation\n\nHinneh is the narrator's camera direction. It tells the reader where to look and whose perspective to adopt. Translating it simply as \"and\" or omitting it entirely (as some modern translations do) loses the narrative artistry. The particle marks moments of discovery, revelation, and dramatic turning points. When God says \"Behold, I am doing a new thing\" (Isa 43:19), the hinneh demands the audience's immediate attention — this is not a casual announcement but a dramatic revelation requiring their gaze.",
+    "examples": [
+      {
+        "ref": "Gen 22:13",
+        "text": "וְהִנֵּה אַיִל (vehinneh ayil) — 'and behold, a ram'",
+        "explanation": "The hinneh shifts the reader into Abraham's perception at the critical moment — he lifts his eyes and there, suddenly, is the ram. The particle captures the surprise and relief of the discovery."
+      },
+      {
+        "ref": "Gen 22:1",
+        "text": "הִנֵּנִי (hineni) — 'Here I am'",
+        "explanation": "Abraham's presentational hinneh with first-person suffix — 'behold me.' It signals complete availability and readiness to respond, not merely physical location."
+      },
+      {
+        "ref": "Gen 28:12",
+        "text": "וְהִנֵּה סֻלָּם (vehinneh sullam) — 'and behold, a ladder'",
+        "explanation": "Jacob dreams, and hinneh pulls the reader into his dream-vision: suddenly there is a ladder reaching heaven. The particle marks the boundary between ordinary sleep and divine revelation."
+      }
+    ],
+    "related_articles": [
+      "heb-speech-markers",
+      "heb-casus-pendens"
+    ],
+    "display_order": 2
+  },
+  {
+    "id": "heb-chiasm",
+    "title": "Chiasm (Hebrew Poetry)",
+    "language": "hebrew",
+    "category": "syntax",
+    "summary": "A literary-syntactic structure where elements are arranged in an A-B-B'-A' mirror pattern, with the center point carrying the passage's main emphasis.",
+    "body": "A chiasm (also called chiasmus, from the Greek letter chi = X) is a mirror-image structure in which ideas are presented in one order and then repeated in reverse. The pattern A-B-C-B'-A' creates a structure where the outer elements correspond to each other and the center receives the greatest emphasis.\n\n## How to Recognize It\n\nLook for repeated themes, words, or phrases that appear in reverse order across a passage. A simple chiasm might span two verses; complex ones can structure entire chapters or books. The key indicators are: **verbal parallels** (the same or similar words recurring), **thematic correspondence** (matching ideas at matching positions), and **a distinct center** that does not have a corresponding partner.\n\n## Examples in Hebrew Syntax\n\nHebrew poetry frequently uses chiasm at the line level: \"The LORD is my shepherd / I shall not want\" inverts into \"I will fear no evil / for you are with me\" (Psalm 23). At the macro level, entire books display chiastic structure — Genesis 1-11 and the book of Ruth are frequently analyzed this way. The flood narrative (Gen 6-9) has one of the most widely recognized chiasms, centering on \"God remembered Noah\" (8:1).\n\n## Why It Matters for Interpretation\n\nThe center of a chiasm is the author's main point. In the flood narrative, the theological center is not destruction or judgment but God's remembering — an act of covenant faithfulness. Missing the chiastic structure means missing the emphasis. Chiastic analysis also helps identify the boundaries of literary units, resolve structural questions about how a passage is organized, and reveal connections between corresponding elements that might otherwise go unnoticed.",
+    "examples": [
+      {
+        "ref": "Gen 8:1",
+        "text": "וַיִּזְכֹּר אֱלֹהִים אֶת־נֹחַ (vayyizkor 'Elohim 'et-Noach) — 'And God remembered Noah'",
+        "explanation": "The center of the flood narrative's chiasm (Gen 6:10–9:19). The entire flood story mirrors around this single verse, making God's covenantal remembering — not the flood itself — the theological focal point."
+      },
+      {
+        "ref": "Ps 3:8",
+        "text": "A: Salvation belongs to the LORD / B: Your blessing / B': be on your people / A': (Selah)",
+        "explanation": "A compact chiasm within a single verse — 'salvation' (A) and 'blessing' (B) are paired and reversed, centering the psalm's conclusion on God's saving action toward his people."
+      },
+      {
+        "ref": "Isa 6:10",
+        "text": "Heart-Ears-Eyes / Eyes-Ears-Heart",
+        "explanation": "Isaiah's commission reverses the order of perception organs: 'Make the heart fat, ears heavy, eyes shut' then 'lest they see with eyes, hear with ears, understand with heart.' The chiasm reinforces the totality of the judicial hardening."
+      }
+    ],
+    "related_articles": [
+      "lit-chiasm",
+      "lit-parallelism",
+      "lit-inclusio"
+    ],
+    "display_order": 3
   }
 ]
