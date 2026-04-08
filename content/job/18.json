@@ -426,5 +426,17 @@
     }
   ],
   "prayer_prompt": "As you consider Bildad's vivid description of the fate of the wicked, consider asking God whether you have ever used theology as a way to assign someone else's suffering to their sin — and whether that impulse reveals more about your fears than their failures.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Bildad escalates: 'How long before you stop your talk?' (v. 2). The friends are as frustrated with Job as Job is with them. Neither side can persuade the other because they're operating from incompatible premises. The friends assume guilt; Job knows innocence. No argument bridges that gap.",
+      "genre_tag": "narrative_structure"
+    },
+    {
+      "after_section": 2,
+      "tip": "Bildad's horror-movie description of the wicked (vv. 8-21) — trapped by their own feet, terror on every side, forgotten by all — is detailed cruelty dressed as doctrine. He's essentially saying: 'This is what happens to people like you, Job.' Theology becomes assault.",
+      "genre_tag": "theological_insight"
+    }
+  ]
 }

@@ -426,5 +426,17 @@
     }
   ],
   "prayer_prompt": "As you reflect on Elihu's argument that God is beyond human reach — 'If you sin, how does that affect him?' — consider asking God whether His transcendence means He is indifferent, or whether a God who is beyond being harmed can still choose to care.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Elihu argues that human righteousness doesn't benefit God and human wickedness doesn't harm God (vv. 6-8). God is beyond our moral transactions. This is both true and beside the point — Job wasn't claiming to benefit God, only to deserve better treatment. Elihu's theology is correct in general but misses Job's specific complaint.",
+      "genre_tag": "theological_insight"
+    },
+    {
+      "after_section": 2,
+      "tip": "'But no one says, \"Where is God my Maker, who gives songs in the night?\"' (v. 10). Elihu suggests the problem isn't God's absence but humanity's failure to seek properly. This echoes God's coming speeches: the issue may not be divine injustice but human perspective. Elihu is a flawed herald of a better message.",
+      "genre_tag": "close_reading"
+    }
+  ]
 }

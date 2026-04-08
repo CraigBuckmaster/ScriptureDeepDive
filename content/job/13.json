@@ -453,5 +453,17 @@
     }
   ],
   "prayer_prompt": "As you reflect on Job demanding a hearing with God — 'Though he slay me, yet will I hope in him' — consider asking God whether you can hold together trust and protest, devotion and complaint, in the same breath.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Job announces his intention to argue his case before God directly (v. 3) and warns the friends: 'Will you speak wickedly on God's behalf?' (v. 7). This is stunning — Job accuses the orthodox defenders of lying for God. Their retribution theology, meant to honor divine justice, actually misrepresents it.",
+      "genre_tag": "theological_insight"
+    },
+    {
+      "after_section": 2,
+      "tip": "'Though he slay me, yet will I hope in him; I will surely defend my ways to his face' (v. 15). This verse crystallizes Job's position: unwavering trust combined with unwavering complaint. He won't accept guilt to buy peace, and he won't abandon God in his confusion. Faith and protest coexist.",
+      "genre_tag": "close_reading"
+    }
+  ]
 }

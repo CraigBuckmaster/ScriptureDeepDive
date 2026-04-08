@@ -446,5 +446,17 @@
     }
   ],
   "prayer_prompt": "As you reflect on Job remembering his former days of honor and influence, consider asking God whether nostalgia for what you have lost is preventing you from seeing what He is doing in the present.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Job's final summation begins with nostalgia: 'How I long for the months gone by' (v. 2). He catalogs his former blessings — God's protection, family prosperity, community respect. This isn't boasting but baseline establishment. Job describes who he was before suffering to contrast with who he's become. The loss is total.",
+      "genre_tag": "narrative_structure"
+    },
+    {
+      "after_section": 2,
+      "tip": "Job's past righteousness (vv. 12-17) directly refutes Eliphaz's fabricated accusations in chapter 22. He rescued the poor, championed the widow, broke the fangs of the wicked. His integrity isn't a claim but a documented record. The friends accused a philanthropist of exploitation. Their theology blinded them to the man in front of them.",
+      "genre_tag": "close_reading"
+    }
+  ]
 }

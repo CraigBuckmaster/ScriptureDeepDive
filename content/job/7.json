@@ -469,5 +469,17 @@
     }
   ],
   "prayer_prompt": "As you reflect on Job turning from his friends to address God directly — 'What is mankind that you make so much of them?' — consider asking God whether you have the courage to bring your complaints straight to Him rather than talking about Him to others.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Job shifts from addressing friends to addressing God directly. 'What is mankind that you make so much of them?' (v. 17) parodies Psalm 8's wonder into accusation. The psalm celebrates divine attention; Job experiences it as surveillance. Same words, opposite meaning. Suffering has inverted his entire theology of God's care.",
+      "genre_tag": "close_reading"
+    },
+    {
+      "after_section": 2,
+      "tip": "Job's question 'Why have you made me your target?' (v. 20) is bold but not blasphemous. He's doing what the Psalms do — bringing raw complaint to God rather than polite resignation. The difference between Job and his friends is that Job talks to God while they only talk about God. Relationship, even angry relationship, trumps detached orthodoxy.",
+      "genre_tag": "theological_insight"
+    }
+  ]
 }

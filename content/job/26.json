@@ -442,5 +442,17 @@
     }
   ],
   "prayer_prompt": "As you consider Job's hymn to God's power over chaos — 'He spreads out the northern skies over empty space' — consider asking God whether you can worship His power even when that power has not been exercised on your behalf.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Job's sarcasm reaches new heights: 'How you have helped the powerless! How you have saved the arm that is feeble!' (v. 2). The friends came to help and made things worse. Job then delivers his own hymn to God's power (vv. 5-14), proving he knows the tradition as well as they do. He's not theologically ignorant; he's theologically wounded.",
+      "genre_tag": "close_reading"
+    },
+    {
+      "after_section": 2,
+      "tip": "'And these are but the outer fringe of his works; how faint the whisper we hear of him!' (v. 14). Job affirms divine mystery more profoundly than the friends ever did. God's power over chaos (Rahab, the serpent, the deep) exceeds human comprehension. Job's complaint isn't that God is small but that God is incomprehensibly vast — and currently incomprehensible in his dealings with Job.",
+      "genre_tag": "theological_insight"
+    }
+  ]
 }

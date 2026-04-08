@@ -612,5 +612,22 @@
     }
   ],
   "prayer_prompt": "As you consider Job's final words — 'My ears had heard of you but now my eyes have seen you' — consider asking God whether your knowledge of Him is secondhand or firsthand, and whether suffering has brought you closer to seeing Him as He is.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Job's final response: 'My ears had heard of you but now my eyes have seen you' (v. 5). This isn't intellectual assent but personal encounter. Job's theology was correct; his experience was limited. The divine speeches didn't explain suffering — they revealed the Sufferer's God. Relationship, not explanation, is the answer to Job's quest.",
+      "genre_tag": "theological_insight"
+    },
+    {
+      "after_section": 2,
+      "tip": "'I despise myself and repent in dust and ashes' (v. 6). But the Hebrew is debated — 'despise' may mean 'reject' (my accusations) rather than self-loathing. Job isn't confessing the sins the friends invented. He's withdrawing his legal case because he's met the Judge face to face. You don't sue Someone you've come to trust.",
+      "genre_tag": "close_reading"
+    },
+    {
+      "after_section": 3,
+      "tip": "The epilogue vindicates Job against his friends: 'You have not spoken the truth about me, as my servant Job has' (v. 7). This is stunning — God prefers Job's protests to the friends' orthodoxy. Honest complaint beats dishonest comfort. Job's restoration (double possessions, new children) doesn't 'explain' his suffering but closes the narrative frame. The satan's wager is answered: Job feared God for nothing. Faith without reward is possible.",
+      "genre_tag": "narrative_structure"
+    }
+  ]
 }

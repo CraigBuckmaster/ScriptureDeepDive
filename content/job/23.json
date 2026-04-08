@@ -446,5 +446,17 @@
     }
   ],
   "prayer_prompt": "As you reflect on Job's longing — 'If only I knew where to find him' — consider asking God whether you have experienced His absence during your greatest need, and whether you kept searching even when He seemed to have withdrawn.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Job's longing reaches its peak: 'If only I knew where to find him' (v. 3). He wants a courtroom hearing, confident he would be acquitted. 'There the upright can establish their innocence before him' (v. 7). Job's faith in divine justice persists even as he experiences divine silence. He trusts God against God.",
+      "genre_tag": "theological_insight"
+    },
+    {
+      "after_section": 2,
+      "tip": "'But he knows the way that I take; when he has tested me, I will come forth as gold' (v. 10). This is not resignation but confident defiance. Job claims his suffering is a refining test he will pass. The friends see failure; Job claims future vindication. His theology of testing will prove correct — but not in ways he expects.",
+      "genre_tag": "close_reading"
+    }
+  ]
 }

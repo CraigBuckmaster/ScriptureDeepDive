@@ -457,5 +457,17 @@
     }
   ],
   "prayer_prompt": "As you reflect on Job pointing out that the wicked often prosper while the righteous suffer, consider asking God whether you can accept a world that does not resolve neatly — and whether your faith depends on visible evidence of cosmic fairness.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Job finally takes on retribution theology directly: 'Why do the wicked live on, growing old and increasing in power?' (v. 7). He doesn't deny that some wicked suffer; he observes that many prosper. The friends' neat categories collapse under empirical observation. Job does theology from evidence, not axioms.",
+      "genre_tag": "theological_insight"
+    },
+    {
+      "after_section": 2,
+      "tip": "Second dialogue cycle ends. Job has demolished the retribution principle — not with doctrine but with observation. The wicked often die peacefully; the righteous often suffer. 'How can you console me with your nonsense?' (v. 34). The friends' comfort is built on lies. Truth-telling, even painful truth, matters more than false peace.",
+      "genre_tag": "narrative_structure"
+    }
+  ]
 }

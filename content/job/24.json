@@ -437,5 +437,17 @@
     }
   ],
   "prayer_prompt": "As you consider Job's catalogue of injustices — the poor exploited, the wicked unpunished — consider asking God why He delays justice, and whether you can trust His timeline when the evidence seems to argue against His involvement.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Job broadens his argument: 'Why does the Almighty not set times for judgment?' (v. 1). The wicked oppress the poor, steal from orphans, murder in darkness — and face no consequences. Job isn't complaining only about his own suffering but about systemic injustice. His case is Exhibit A in a larger indictment.",
+      "genre_tag": "theological_insight"
+    },
+    {
+      "after_section": 2,
+      "tip": "Job describes the wicked dying peacefully: 'They are exalted for a little while, and then they are gone' (v. 24). But note the defiant conclusion: 'Who can prove me wrong?' (v. 25). Job challenges anyone to refute his observations. The friends speak from axioms; Job speaks from evidence. Theology must account for the world as it is.",
+      "genre_tag": "close_reading"
+    }
+  ]
 }
