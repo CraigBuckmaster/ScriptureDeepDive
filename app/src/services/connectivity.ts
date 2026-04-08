@@ -69,20 +69,27 @@ export function startMonitoring(): void {
     // NetInfo not available — use polling fallback
   }
 
-  // Polling fallback: check reachability every 15 seconds
+  // Polling fallback: check reachability every 15 seconds.
+  // Require two consecutive failures before marking offline so a single
+  // slow/blocked fetch on startup doesn't flash the banner incorrectly.
   _polling = true;
+  let _consecutiveFails = 0;
   const check = async () => {
     try {
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 5000);
-      await fetch('https://www.google.com/generate_204', {
+      await fetch('https://clients3.google.com/generate_204', {
         method: 'HEAD',
         signal: controller.signal,
       });
       clearTimeout(timeout);
+      _consecutiveFails = 0;
       setConnected(true);
     } catch {
-      setConnected(false);
+      _consecutiveFails++;
+      if (_consecutiveFails >= 2) {
+        setConnected(false);
+      }
     }
   };
 
