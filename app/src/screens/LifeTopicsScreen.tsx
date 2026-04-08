@@ -45,7 +45,10 @@ function LifeTopicsScreen() {
   const [activeTab, setActiveTab] = useState<TabMode>('browse');
   const { data: categories, loading: catLoading } = useLifeTopicCategories();
   const [selectedCategory, setSelectedCategory] = useState<string | undefined>(undefined);
-  const { data: topics, loading: topicsLoading } = useLifeTopics(selectedCategory);
+  const { data: allTopics, loading: allTopicsLoading } = useLifeTopics();
+  const { data: filteredTopics, loading: filteredLoading } = useLifeTopics(selectedCategory);
+  const topics = selectedCategory ? filteredTopics : allTopics;
+  const topicsLoading = selectedCategory ? filteredLoading : allTopicsLoading;
   const { search, setSearch, results: searchResults, searching } = useLifeTopicSearch();
   const { feed, loading: feedLoading, hasFollows } = useFollowingFeed();
 
@@ -59,10 +62,13 @@ function LifeTopicsScreen() {
   }, [categories]);
 
   // Count topics per category
-  const categoriesWithCounts = useMemo(() => {
-    if (!selectedCategory) return categories;
-    return categories;
-  }, [categories, selectedCategory]);
+  const topicCountMap = useMemo(() => {
+    const map: Record<string, number> = {};
+    allTopics.forEach((t) => {
+      map[t.category_id] = (map[t.category_id] ?? 0) + 1;
+    });
+    return map;
+  }, [allTopics]);
 
   const handleTopicPress = useCallback(
     (topicId: string) => {
@@ -88,11 +94,11 @@ function LifeTopicsScreen() {
       <CategoryCard
         name={item.name}
         icon={item.icon}
-        topicCount={0}
+        topicCount={topicCountMap[item.id] ?? 0}
         onPress={() => handleCategoryPress(item.id)}
       />
     ),
-    [handleCategoryPress],
+    [handleCategoryPress, topicCountMap],
   );
 
   const renderTopicItem = useCallback(
@@ -294,7 +300,7 @@ function LifeTopicsScreen() {
           {!showTopicsList ? (
             /* Category grid */
             <FlatList
-              data={categoriesWithCounts}
+              data={categories}
               keyExtractor={(item) => item.id}
               renderItem={renderCategoryItem}
               numColumns={2}
