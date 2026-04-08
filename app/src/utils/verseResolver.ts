@@ -114,6 +114,35 @@ export function getBookByName(name: string): BookEntry | null {
 }
 
 /**
+ * Parse a dot-notation reference used in content JSON.
+ * Handles: "rom.7.15-20", "1cor.6.12", "john.8.34-36", "ps.23"
+ */
+export function parseDotReference(refString: string): ParsedRef | null {
+  const s = refString.trim();
+  if (!s) return null;
+
+  // Match: book_id.chapter.verseStart-verseEnd (verse parts optional)
+  const m = s.match(/^([a-z0-9_]+)\.(\d+)(?:\.(\d+)(?:-(\d+))?)?$/i);
+  if (!m) return null;
+
+  const bookStr = m[1];
+  const chapter = parseInt(m[2], 10);
+  const verseStart = m[3] ? parseInt(m[3], 10) : undefined;
+  const verseEnd = m[4] ? parseInt(m[4], 10) : undefined;
+
+  const book = getBookByName(bookStr);
+  if (!book) return null;
+
+  return {
+    bookId: book.id,
+    bookName: book.name,
+    chapter,
+    verseStart,
+    verseEnd: verseEnd ?? verseStart,
+  };
+}
+
+/**
  * Parse a reference string into structured data.
  * Handles: "Gen 1:1", "Gen 1:1-3", "Genesis 1:1–2:3", "1 Cor 13", "Ps 23"
  */
