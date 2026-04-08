@@ -13,11 +13,11 @@ Validation sections:
   4. FTS5 SEARCH           — Full-text search smoke tests (verses + people)
   5. CROSS-BOOK SPOT CHECKS — Specific chapters verified for expected panel types
 
-IMPORTANT: Many checks use hardcoded expected counts (e.g. "282 people", "51 scholars").
-These counts reflect the current state of the content and WILL drift as content is
-enriched. A count-mismatch failure does NOT necessarily mean the data is broken —
-it may just mean the expected count needs updating. Referential integrity and content
-quality checks (sections 2-3) are the ones that catch real problems.
+Key counts (people, scholars, chapters) are derived dynamically from the
+authoritative meta files in content/meta/. Other threshold checks (places, VHL
+groups, etc.) still use approximate lower bounds that may need occasional updates.
+Referential integrity and content quality checks (sections 2-3) are the ones
+that catch real problems.
 
 Exit codes:
   0 = all checks passed
@@ -38,6 +38,28 @@ del _sys
 
 ROOT = Path(__file__).resolve().parent.parent
 DB_PATH = ROOT / 'scripture.db'
+META_DIR = ROOT / 'content' / 'meta'
+
+
+def get_expected_counts():
+    """Derive expected counts from authoritative meta files instead of hardcoding."""
+    people_path = META_DIR / 'people.json'
+    scholars_path = META_DIR / 'scholars.json'
+    books_path = META_DIR / 'books.json'
+
+    with open(people_path, encoding='utf-8') as f:
+        people_data = json.load(f)
+    people_count = len(people_data.get('people', []))
+
+    with open(scholars_path, encoding='utf-8') as f:
+        scholars_data = json.load(f)
+    scholars_count = len(scholars_data)
+
+    with open(books_path, encoding='utf-8') as f:
+        books_data = json.load(f)
+    chapters_count = sum(b.get('total_chapters', 0) for b in books_data)
+
+    return people_count, scholars_count, chapters_count
 
 passed = 0
 failed = 0
@@ -93,6 +115,8 @@ def main():
     conn = sqlite3.connect(str(DB_PATH))
     cur = conn.cursor()
 
+    expected_people, expected_scholars, expected_chapters = get_expected_counts()
+
     print("=" * 60)
     print("Phase 0G: Validating scripture.db")
     print("=" * 60)
@@ -102,22 +126,15 @@ def main():
     # =========================================================
     print("\n--- 1. COMPLETENESS ---")
 
-    # NOTE ON HARDCODED COUNTS:
-    # The expected counts below (282 people, 51 scholars, etc.) reflect a known-good
-    # snapshot. They WILL drift as content is enriched — a count mismatch just means
-    # the expected value here needs updating, not that the data is broken.
-    # The checks that catch real problems are in sections 2 (referential integrity)
-    # and 3 (content quality). Update these counts after intentional content changes.
-
     # Books — 66 is the Protestant biblical canon, this should never change
     live = q1(cur, "SELECT COUNT(*) FROM books WHERE is_live=1")
     pending = q1(cur, "SELECT COUNT(*) FROM books WHERE is_live=0")
     check("66 live books", live == 66, f"got {live}")
     check("0 pending books", pending == 0, f"got {pending}")
 
-    # Chapters — 1189 is the total across all 66 books (Protestant canon)
+    # Chapters — derived from meta/books.json
     ch_count = q1(cur, "SELECT COUNT(*) FROM chapters")
-    check("1189 chapters", ch_count == 1189, f"got {ch_count}")
+    check(f"{expected_chapters} chapters", ch_count == expected_chapters, f"got {ch_count}")
 
     # Every chapter has 2+ sections (except legitimately short chapters)
     # These chapters are legitimately short enough that 1 section is correct:
@@ -149,9 +166,9 @@ def main():
         check(f"Every chapter has '{ptype}' panel", len(missing) == 0,
               f"{len(missing)} chapters missing {ptype}")
 
-    # Meta tables — these counts drift as content is enriched. Update after changes.
-    check("282 people", q1(cur, "SELECT COUNT(*) FROM people") == 282)
-    check("72 scholars", q1(cur, "SELECT COUNT(*) FROM scholars") == 72)
+    # Meta tables — counts derived from meta files (people.json, scholars.json)
+    check(f"{expected_people} people", q1(cur, "SELECT COUNT(*) FROM people") == expected_people)
+    check(f"{expected_scholars} scholars", q1(cur, "SELECT COUNT(*) FROM scholars") == expected_scholars)
     check("71+ places", q1(cur, "SELECT COUNT(*) FROM places") >= 60)
     check("28+ map stories", q1(cur, "SELECT COUNT(*) FROM map_stories") >= 15)
     check("14+ word studies", q1(cur, "SELECT COUNT(*) FROM word_studies") >= 14)

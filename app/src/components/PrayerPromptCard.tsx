@@ -37,6 +37,8 @@ function PrayerPromptCard({ prompt }: Props) {
           style={styles.headerLeft}
           onPress={handleToggle}
           activeOpacity={0.7}
+          accessibilityRole="button"
+          accessibilityLabel={`Reflect and Pray, ${expanded ? 'collapse' : 'expand'}`}
         >
           <Heart size={14} color={base.textMuted} />
           <Text style={[styles.title, { color: base.textDim }]}>Reflect & Pray</Text>
@@ -44,6 +46,8 @@ function PrayerPromptCard({ prompt }: Props) {
         <TouchableOpacity
           onPress={handleDismiss}
           hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+          accessibilityRole="button"
+          accessibilityLabel="Dismiss prayer prompt"
         >
           <Text style={[styles.dismiss, { color: base.textMuted }]}>✕</Text>
         </TouchableOpacity>

@@ -42,6 +42,9 @@ function getAuth() {
   return { getSupabase, isSupabaseAvailable };
 }
 
+/** Module-scoped subscription reference to prevent leaks on hot reload. */
+let authSub: { unsubscribe: () => void } | null = null;
+
 export const useAuthStore = create<AuthState>((set) => ({
   user: null,
   isLoading: false,
@@ -64,10 +67,12 @@ export const useAuthStore = create<AuthState>((set) => ({
         syncProfile(session.user);
       }
 
-      supabase.auth.onAuthStateChange((_event: string, newSession: any) => {
+      authSub?.unsubscribe();
+      const { data } = supabase.auth.onAuthStateChange((_event: string, newSession: any) => {
         set({ user: newSession?.user ?? null });
         if (newSession?.user) syncProfile(newSession.user);
       });
+      authSub = data.subscription;
     } catch (err) {
       logger.warn('authStore', 'Failed to hydrate auth session', err);
     } finally {

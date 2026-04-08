@@ -41,6 +41,8 @@ function StudyCoachCard({ tip, tone, onDismiss }: Props) {
         <TouchableOpacity
           onPress={onDismiss}
           hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+          accessibilityRole="button"
+          accessibilityLabel="Dismiss study tip"
         >
           <Text style={[styles.dismiss, { color: base.textMuted }]}>✕</Text>
         </TouchableOpacity>

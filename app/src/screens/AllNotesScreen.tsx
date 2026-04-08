@@ -347,6 +347,8 @@ function AllNotesScreen() {
         data={groups}
         keyExtractor={(g) => g.key}
         contentContainerStyle={styles.listContent}
+        maxToRenderPerBatch={10}
+        windowSize={5}
         ListEmptyComponent={
           <View style={styles.emptyWrap}>
             <Text style={[styles.emptyText, { color: base.textMuted }]}>

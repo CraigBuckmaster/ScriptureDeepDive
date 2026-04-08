@@ -20,6 +20,8 @@ function CategoryCard({ name, icon, topicCount, onPress }: Props) {
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.7}
+      accessibilityRole="button"
+      accessibilityLabel={`${name}, ${topicCount} ${topicCount === 1 ? 'topic' : 'topics'}`}
       style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.gold + '20' }]}
     >
       {icon ? (

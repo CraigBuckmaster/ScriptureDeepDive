@@ -152,6 +152,9 @@ function ConcordanceScreen() {
           )}
           contentContainerStyle={styles.listContent}
           showsVerticalScrollIndicator={false}
+          maxToRenderPerBatch={10}
+          windowSize={5}
+          initialNumToRender={15}
         />
       ) : searched ? (
         <View style={styles.emptyWrap}>

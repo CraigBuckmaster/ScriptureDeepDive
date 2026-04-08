@@ -32,6 +32,8 @@ function ArchaeologyCardInner({
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.7}
+      accessibilityRole="button"
+      accessibilityLabel={`${name}, ${category}`}
       style={[
         styles.card,
         { backgroundColor: base.bgElevated, borderColor: base.border + '40' },

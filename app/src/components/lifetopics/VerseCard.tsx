@@ -20,6 +20,8 @@ function VerseCard({ verseRef, annotation, isPrimary, onPress }: Props) {
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.7}
+      accessibilityRole="button"
+      accessibilityLabel={`Verse ${verseRef}${isPrimary ? ', key verse' : ''}`}
       style={[
         styles.card,
         {

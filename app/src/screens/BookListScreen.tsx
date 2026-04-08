@@ -166,6 +166,8 @@ function BookListScreen() {
           keyExtractor={(b) => b.id}
           renderItem={renderBookRow}
           contentContainerStyle={styles.listContent}
+          maxToRenderPerBatch={15}
+          windowSize={7}
           ListEmptyComponent={
             <View style={styles.emptyWrap}>
               <Text style={[styles.emptyText, { color: base.textMuted }]}>No books matching "{search.trim()}"</Text>
@@ -179,6 +181,8 @@ function BookListScreen() {
           keyExtractor={(b) => b.id}
           renderItem={renderBookRow}
           contentContainerStyle={styles.listContent}
+          maxToRenderPerBatch={15}
+          windowSize={7}
         />
       ) : (
         <SectionList

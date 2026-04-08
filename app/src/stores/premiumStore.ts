@@ -87,6 +87,7 @@ export const usePremiumStore = create<PremiumState>((set) => ({
   },
 
   __devSetPremium: (enabled) => {
+    if (!__DEV__) return;
     set({
       isPremium: enabled,
       purchaseType: enabled ? 'lifetime' : null,

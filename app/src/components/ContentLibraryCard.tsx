@@ -26,6 +26,8 @@ function ContentLibraryCard({ entry, onPress }: Props) {
     <TouchableOpacity
       onPress={() => onPress(entry)}
       activeOpacity={0.7}
+      accessibilityRole="button"
+      accessibilityLabel={`${entry.title}, ${refLabel}`}
       style={[styles.card, { backgroundColor: base.bgElevated, borderColor: base.border }]}
     >
       <Text

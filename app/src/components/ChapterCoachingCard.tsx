@@ -33,6 +33,8 @@ function ChapterCoachingCard({ coaching, onRefPress }: Props) {
         style={styles.header}
         onPress={() => setExpanded(!expanded)}
         activeOpacity={0.7}
+        accessibilityRole="button"
+        accessibilityLabel={`Study Guide, ${expanded ? 'collapse' : 'expand'}`}
       >
         <View style={styles.headerLeft}>
           <BookOpen size={14} color={base.gold} />
