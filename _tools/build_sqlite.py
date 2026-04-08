@@ -813,7 +813,7 @@ def populate_chapters(cur):
               ├── chapter_panels{} → chapter_panel rows (lit, themes, ppl, tx, etc.)
               └── vhl_groups[] → vhl_group rows (highlighted words by category)
 
-    Skips content/meta/, content/verses/, content/interlinear/, content/archaeology/, content/life_topics/ (handled separately).
+    Skips content/meta/, content/verses/, content/interlinear/, content/archaeology/, content/life_topics/, content/historical_interpretations/ (handled separately).
     """
     chapter_count = 0
     section_count = 0
@@ -830,7 +830,7 @@ def populate_chapters(cur):
 
     content_dir = ROOT / 'content'
     for book_dir in sorted(content_dir.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations'):
             continue
         book_id = book_dir.name
         for json_file in sorted(book_dir.glob('*.json')):
@@ -1906,7 +1906,7 @@ def populate_content_library(cur):
     count = 0
     content_dir = ROOT / 'content'
     for book_dir in sorted(content_dir.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations'):
             continue
         book_id = book_dir.name
         info = book_info.get(book_id)
