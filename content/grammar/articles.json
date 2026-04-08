@@ -630,5 +630,185 @@
       "lit-inclusio"
     ],
     "display_order": 3
+  },
+  {
+    "id": "grk-present",
+    "title": "Present Tense",
+    "language": "greek",
+    "category": "verbs",
+    "summary": "The Greek verb tense expressing ongoing, continuous, or repeated action — emphasizing the process or duration of an activity rather than its completion.",
+    "body": "The Greek Present tense describes action as ongoing, in progress, or habitual. Unlike the English present tense, which primarily locates action in the current moment, the Greek Present focuses on the kind of action — specifically, action viewed as continuous or repeated.\n\n## How to Recognize It\n\nPresent tense verbs use the present stem without augment or reduplication. In the Indicative mood, they carry primary endings: λύω (luo, \"I am loosing\"), λύεις (lueis, \"you are loosing\"), λύει (luei, \"he/she is loosing\"). The Present stem is typically the simplest form of the verb.\n\n## Aspect, Not Just Time\n\nThe most important insight about the Greek Present is that it expresses **imperfective aspect** — the speaker views the action from the inside, as ongoing or unfolding. This explains its various uses: **progressive** (\"I am writing\" — action in process), **habitual** (\"I write daily\" — repeated action), **gnomic** (\"the sun rises\" — universal truth), and **historical present** (using present tense in past narrative for vividness).\n\n## Why It Matters for Interpretation\n\nWhen Jesus says μένετε ἐν ἐμοί (menete en emoi, \"remain in me,\" John 15:4), the Present tense conveys ongoing, continuous action — not a one-time decision but a sustained state of abiding. When Paul writes \"I am doing\" something in the Present, the emphasis falls on the ongoing nature of the activity. Recognizing the Present's aspectual force prevents readers from flattening Greek verbs into simple English time references.",
+    "examples": [
+      {
+        "ref": "John 15:4",
+        "text": "μένετε ἐν ἐμοί (menete en emoi) — 'remain in me'",
+        "explanation": "The Present imperative conveys continuous, ongoing action — 'keep remaining in me,' not a single act but a sustained relationship."
+      },
+      {
+        "ref": "1 John 3:6",
+        "text": "πᾶς ὁ ἁμαρτάνων (pas ho hamartanon) — 'everyone who sins'",
+        "explanation": "The Present participle describes habitual, characteristic action — 'everyone who keeps on sinning' or 'who practices sin as a lifestyle,' not an isolated act."
+      },
+      {
+        "ref": "Mark 1:40",
+        "text": "ἔρχεται (erchetai) — 'he comes'",
+        "explanation": "A historical present — Mark uses present tense to narrate a past event, creating immediacy and drawing the reader into the scene as if it were happening now."
+      }
+    ],
+    "related_articles": [
+      "grk-imperfect",
+      "grk-aorist"
+    ],
+    "display_order": 1
+  },
+  {
+    "id": "grk-aorist",
+    "title": "Aorist Tense",
+    "language": "greek",
+    "category": "verbs",
+    "summary": "The Greek verb tense viewing action as a simple, complete whole — a snapshot of the event without reference to its duration, repetition, or ongoing nature.",
+    "body": "The Aorist is the most common Greek verb tense and often the most misunderstood. Its name comes from ἀόριστος (aoristos, \"undefined\" or \"unbounded\"), and this is exactly what it does — it presents action without defining its internal structure. The Aorist simply says \"it happened\" without commenting on how long, how often, or whether it continues.\n\n## How to Recognize It\n\nThe Aorist Indicative typically has an augment (ε- prefix) and uses secondary endings: ἔλυσα (elusa, \"I loosed\"). The distinctive σ (sigma) before the ending marks the first Aorist; second Aorist forms use a different stem without the sigma: ἔβαλον (ebalon, \"I threw\"). Outside the Indicative mood, the Aorist has no augment.\n\n## The \"Snapshot\" Tense\n\nThe Aorist views action as a **perfective aspect** — a complete whole, like a snapshot rather than a video. This does not mean the action was instantaneous or happened only once. A war lasting years can be described in the Aorist if the speaker views it as a single complete event. The Aorist makes no comment about duration — it simply packages the action as a unit.\n\n## Why It Matters for Interpretation\n\nThe Aorist is the default, unmarked tense — choosing a different tense (Present, Perfect) is the marked choice that carries special meaning. When Paul says ἥμαρτον (hemarton, \"all sinned,\" Rom 5:12), the Aorist views humanity's sin as a single complete reality. When Jesus says in the Aorist \"your sins are forgiven,\" it presents forgiveness as a definitive, accomplished act. The most common mistake is over-interpreting the Aorist as \"once for all\" — it can mean that, but the tense itself is simply unmarked for such distinctions.",
+    "examples": [
+      {
+        "ref": "Rom 5:12",
+        "text": "πάντες ἥμαρτον (pantes hemarton) — 'all sinned'",
+        "explanation": "The Aorist views humanity's sin as a complete whole — a single, summary reality rather than an ongoing process. The tense packages all human sin into one statement."
+      },
+      {
+        "ref": "John 1:14",
+        "text": "ὁ λόγος σὰρξ ἐγένετο (ho logos sarx egeneto) — 'the Word became flesh'",
+        "explanation": "The Aorist presents the incarnation as a decisive, complete event — a single moment of becoming that changed everything, viewed as an accomplished fact."
+      },
+      {
+        "ref": "Luke 15:10",
+        "text": "γίνεται χαρά (ginetai chara) — but contrast: ἥμαρτεν (hemarten) — 'who sinned'",
+        "explanation": "In the parable, the sinner's past is summarized in a single Aorist — the whole history of sin viewed as one complete reality, now resolved by repentance."
+      }
+    ],
+    "related_articles": [
+      "grk-present",
+      "grk-perfect"
+    ],
+    "display_order": 2
+  },
+  {
+    "id": "grk-imperfect",
+    "title": "Imperfect Tense",
+    "language": "greek",
+    "category": "verbs",
+    "summary": "The Greek tense combining past time reference with ongoing or repeated action — used for background description, habitual past action, and narrative scene-setting.",
+    "body": "The Imperfect tense combines two features: **past time** reference and **imperfective aspect** (ongoing or repeated action). It describes what was happening, what used to happen, or what someone was in the process of doing in the past.\n\n## How to Recognize It\n\nThe Imperfect uses the present stem with an augment (ε- prefix) and secondary endings: ἔλυον (eluon, \"I was loosing\"). It shares the present stem (distinguishing it from the Aorist) but adds the augment (distinguishing it from the Present). The Imperfect only exists in the Indicative mood.\n\n## What It Expresses\n\n**Progressive past:** \"he was teaching\" — action in process at a past moment. **Habitual past:** \"he used to pray\" — repeated past action. **Inceptive:** \"he began to speak\" — the start of an action. **Conative:** \"he was trying to persuade\" — attempted but not necessarily completed action. These uses all share the common thread of viewing past action from the inside, as ongoing or unfinished.\n\n## Why It Matters for Interpretation\n\nThe Imperfect sets scenes and provides background in narrative. When Mark writes that Jesus ἐδίδασκεν (edidasken, \"was teaching\"), the Imperfect places the reader inside an ongoing activity — the teaching was already in progress when the next event interrupts. The conative Imperfect is especially significant: when Acts says the crowd ἔπειθον (epeithon, \"were trying to persuade\"), the Imperfect signals the attempt was ongoing and possibly unsuccessful. Distinguishing Imperfect from Aorist often determines whether an action is seen as process or event.",
+    "examples": [
+      {
+        "ref": "Mark 1:21",
+        "text": "ἐδίδασκεν (edidasken) — 'he was teaching'",
+        "explanation": "The Imperfect sets the scene — Jesus was in the ongoing process of teaching when the man with an unclean spirit interrupted. The teaching is background; the interruption is foreground."
+      },
+      {
+        "ref": "Matt 19:13",
+        "text": "ἐπετίμων (epetimōn) — 'they were rebuking'",
+        "explanation": "Imperfect expressing repeated or ongoing action — the disciples kept rebuking those bringing children. The tense conveys their persistent, continuing resistance."
+      },
+      {
+        "ref": "Acts 26:11",
+        "text": "ἠνάγκαζον (ēnankazon) — 'I was trying to force'",
+        "explanation": "A conative Imperfect — Paul was attempting to force believers to blaspheme. The tense leaves open whether he succeeded, emphasizing the ongoing effort rather than the result."
+      }
+    ],
+    "related_articles": [
+      "grk-present",
+      "grk-aorist"
+    ],
+    "display_order": 3
+  },
+  {
+    "id": "grk-perfect",
+    "title": "Perfect Tense",
+    "language": "greek",
+    "category": "verbs",
+    "summary": "The Greek tense expressing a completed action whose results continue into the present — combining past accomplishment with present relevance.",
+    "body": "The Greek Perfect is one of the most theologically loaded tenses. It expresses action that was completed in the past but whose effects or results continue into the present moment. It answers the question: \"What happened, and what state does that leave us in now?\"\n\n## How to Recognize It\n\nThe Perfect is identified by **reduplication** — the first consonant of the stem is doubled with an epsilon: λέλυκα (leluka, \"I have loosed\"). Verbs beginning with a vowel use an augment instead. The Perfect also has its own distinctive endings and often a κ (kappa) before the ending in the active voice.\n\n## What It Expresses\n\nThe Perfect combines two elements: **completed action** and **continuing result**. γέγραπται (gegraptai, \"it is written/it stands written\") means the writing happened in the past and the written text continues to exist and carry authority now. The emphasis can fall on either the completion or the ongoing state, depending on context.\n\n## Why It Matters for Interpretation\n\nThe Perfect is the tense of abiding results. When Jesus cries τετέλεσται (tetelestai, \"it is finished,\" John 19:30), the Perfect declares not just that the work is complete but that its completed state endures — the results are permanent. When Scripture is cited with γέγραπται (\"it is written\"), the Perfect emphasizes that what was written continues to stand as authoritative. Every Perfect tense verb invites the reader to consider not just what happened but what continues to be true because it happened.",
+    "examples": [
+      {
+        "ref": "John 19:30",
+        "text": "τετέλεσται (tetelestai) — 'it is finished'",
+        "explanation": "The Perfect declares the work of redemption as completed with permanent, enduring results. The state of 'being finished' continues indefinitely from this moment."
+      },
+      {
+        "ref": "Rom 1:17",
+        "text": "γέγραπται (gegraptai) — 'it is written'",
+        "explanation": "The standard Scripture-citation formula in the Perfect tense — what was written in the past stands written now, carrying ongoing authority and relevance."
+      },
+      {
+        "ref": "John 20:31",
+        "text": "γέγραπται (but note:) ταῦτα γέγραπται — 'these things have been written'",
+        "explanation": "John uses the Perfect to describe his own Gospel — the writing is complete and its purpose (that readers may believe) continues as an ongoing effect of the finished text."
+      }
+    ],
+    "related_articles": [
+      "grk-aorist",
+      "grk-pluperfect"
+    ],
+    "display_order": 4
+  },
+  {
+    "id": "grk-pluperfect",
+    "title": "Pluperfect Tense",
+    "language": "greek",
+    "category": "verbs",
+    "summary": "The Greek tense expressing a completed action whose results existed at a past point — the 'past of the Perfect,' indicating a state that was already in effect.",
+    "body": "The Pluperfect is the rarest Greek tense, appearing fewer than 100 times in the New Testament. It functions as a \"past Perfect\" — describing a state that was already in effect at a point in the past. Where the Perfect says \"it stands written now,\" the Pluperfect says \"it stood written then.\"\n\n## How to Recognize It\n\nThe Pluperfect combines Perfect features (reduplication) with past-tense markers (augment and secondary endings): ἐλελύκειν (elelukein, \"I had loosed\"). In practice, many New Testament Pluperfects are irregular or simplified forms, making them less predictable than other tenses.\n\n## What It Expresses\n\nThe Pluperfect describes a state of affairs that was already established at the time of the narrative. It provides background information about conditions that were already in place before the main action: \"Lazarus had already been dead four days\" (John 11:17). The emphasis is on the existing state at a past moment.\n\n## Why It Matters for Interpretation\n\nThe Pluperfect is the narrator's tool for establishing what was already true before the story's events unfold. Its rarity makes each occurrence notable — the author chose this specific form to emphasize that a condition was already firmly in place. In John's Gospel particularly, the Pluperfect creates dramatic tension by establishing existing states that Jesus then transforms: Lazarus had been dead, the man had been blind, the relationship had been established.",
+    "examples": [
+      {
+        "ref": "John 11:44",
+        "text": "ἐξῆλθεν ὁ τεθνηκώς (exēlthen ho tethnēkōs) — but note: δεδεμένος (dedemenos) — 'having been bound'",
+        "explanation": "The Perfect participle describes Lazarus's existing state at the moment he emerged — he was still bound, the wrappings from his burial were still in place. The completed binding continued as his present condition."
+      },
+      {
+        "ref": "John 9:22",
+        "text": "ἤδη γὰρ συνετέθειντο (ēdē gar sunetethento) — 'for they had already agreed'",
+        "explanation": "The Pluperfect establishes that the Jewish leaders' decision was already firmly in place — the agreement preceded and explains the fear described in the narrative."
+      },
+      {
+        "ref": "John 6:17",
+        "text": "σκοτία ἤδη ἐγεγόνει (skotia ēdē egegonei) — 'darkness had already come'",
+        "explanation": "The Pluperfect sets the scene: darkness was already established when the disciples set out. The existing condition of darkness creates the atmosphere for what follows — Jesus walking on the water."
+      }
+    ],
+    "related_articles": [
+      "grk-perfect",
+      "grk-imperfect"
+    ],
+    "display_order": 5
+  },
+  {
+    "id": "grk-future",
+    "title": "Future Tense",
+    "language": "greek",
+    "category": "verbs",
+    "summary": "The Greek tense expressing action expected to occur after the time of speaking — used for predictions, promises, commands, and deliberative questions.",
+    "body": "The Future tense describes action that has not yet taken place but is expected or intended. In Greek, the Future carries a range of nuances beyond simple prediction — it can express promise, command, deliberation, or inevitable outcome.\n\n## How to Recognize It\n\nThe Future typically inserts a σ (sigma) between the verb stem and the primary endings: λύσω (lusō, \"I will loose\"). It uses primary endings like the Present tense but with the distinctive sigma marker. Some verbs form the Future irregularly: ἔρχομαι (erchomai) becomes ἐλεύσομαι (eleusomai).\n\n## What It Expresses\n\n**Predictive:** Simple future events — \"this will happen.\" **Imperatival:** Commands framed as Future statements — \"you shall not murder\" (οὐ φονεύσεις, ou phoneuseis) uses the Future indicative as a command, echoing the Hebrew legal style of the Ten Commandments. **Deliberative:** Questions about what to do — \"shall we sin?\" (ἁμαρτήσωμεν) uses subjunctive, but Future can serve similar deliberative functions. **Gnomic:** General truths about what will always be the case.\n\n## Why It Matters for Interpretation\n\nThe imperatival Future is crucial for understanding New Testament ethics. When Jesus says \"you shall love your neighbor\" (ἀγαπήσεις, agapēseis), the Future form carries the force of a divine command — not a prediction about what you will do but a declaration of what you must do. This usage comes directly from the Septuagint's rendering of Hebrew law. Recognizing when a Future is predictive versus imperatival prevents misreading commands as mere forecasts.",
+    "examples": [
+      {
+        "ref": "Matt 5:48",
+        "text": "ἔσεσθε (esesthe) — 'you shall be'",
+        "explanation": "An imperatival Future — 'you shall be perfect' is not a prediction but a command, carrying the weight of divine expectation framed as inevitable destiny."
+      },
+      {
+        "ref": "Matt 16:18",
+        "text": "οἰκοδομήσω (oikodomēsō) — 'I will build'",
+        "explanation": "A predictive Future expressing Jesus's firm intention and promise — 'I will build my church.' The Future carries the force of a declaration, not mere speculation."
+      },
+      {
+        "ref": "Rom 6:14",
+        "text": "οὐ κυριεύσει (ou kurieusei) — 'sin will not have dominion'",
+        "explanation": "The Future here functions as both prediction and promise — sin's dominion is declared to be a settled future reality for those in Christ, not merely a hope."
+      }
+    ],
+    "related_articles": [
+      "grk-present",
+      "grk-aorist"
+    ],
+    "display_order": 6
   }
 ]
