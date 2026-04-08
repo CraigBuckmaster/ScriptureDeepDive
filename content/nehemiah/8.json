@@ -270,15 +270,6 @@
             }
           ]
         },
-        "net": {
-          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": [
-            {
-              "ref": "8:15",
-              "note": "The NET lists the specific trees: olive, wild olive, myrtle, palm, and leafy branches — matching Lev 23:40. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
-            }
-          ]
-        },
         "williamson": {
           "source": "H.G.M. Williamson, Ezra, Nehemiah, WBC (1985) — Scholarly Paraphrase",
           "notes": [
@@ -566,5 +557,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "Ezra reads the Law from dawn until noon. The Levites 'made it clear and gave the meaning so that the people could understand.' The people weep, but Nehemiah says 'Do not grieve, for the joy of the LORD is your strength.' Conviction leads to grief; grief is redirected toward joy. The sequence matters.",
+      "genre_tag": "theological_insight"
+    }
+  ],
+  "prayer_prompt": "Ezra read the Law and the Levites helped the people understand; they wept, then celebrated. Consider asking God about your response to Scripture — do you weep at conviction and celebrate in understanding?"
 }

@@ -176,34 +176,12 @@
             }
           ]
         },
-        "net": {
-          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": [
-            {
-              "ref": "7:8",
-              "note": "The NET notes covering the face is a Persian execution custom: irrevocable condemnation. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
-            },
-            {
-              "ref": "7:10",
-              "note": "The NET observes the pattern echoes Proverbs: the pit-digger falls in. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
-            }
-          ]
-        },
         "levenson": {
           "source": "Jon D. Levenson, Esther, OTL (1997) — Scholarly Paraphrase",
           "notes": [
             {
               "ref": "7:10",
               "note": "Levenson: the reversal is the governing concept. What was planned for the Jews happens to their enemy. Levenson's literary reading situates the text within the Persian-period context that produced it. The narrative's themes of divine providence, diaspora identity, and reversal of fortune speak directly to the experience of Jewish communities navigating life under foreign rule while maintaining covenant faithfulness."
-            }
-          ]
-        },
-        "jobes": {
-          "source": "Karen H. Jobes, Esther, NIVAC (1999) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "7:8–10",
-              "note": "Jobes: Haman killed on his own gallows. The symmetry is too perfect for chance. The structure speaks for itself. Jobes attends to the socio-rhetorical context of the passage, noting how the author addresses a community under social pressure. The language of identity, belonging, and hope is calibrated to sustain faith amid marginalization — the letter functions as pastoral care for believers navigating a hostile cultural environment."
             }
           ]
         }
@@ -440,5 +418,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "Haman falls on the couch where Esther is reclining and the king interprets it as assault. The reversal is complete in a single moment — from the king's favorite to condemned criminal. The book's architecture of reversal reaches its climax: the man who built a gallows will hang on it.",
+      "genre_tag": "literary_pattern"
+    }
+  ],
+  "prayer_prompt": "Esther revealed Haman's plot; the gallows Haman built for Mordecai received Haman. Consider asking God about the reversals He orchestrates — the traps that catch their makers."
 }

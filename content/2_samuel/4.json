@@ -168,24 +168,6 @@
             }
           ]
         },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "4:(9, '')",
-              "note": "Bergen: On 12 — David Executes the Assassins: : the narrative advances 2 Samuel's central theological argument — God's covenant with David (ch 7) is both unconditional in its promise and consequential in its outworking. David's sins do not void the covenant but unleash its disciplinary clauses."
-            }
-          ]
-        },
-        "anderson": {
-          "source": "A.A. Anderson, 2 Samuel, Word Biblical Commentary (1989) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "4:(9, '')",
-              "note": "Anderson: On 12 — David Executes the Assassins: : the text-critical evidence for this passage reveals occasional divergences between MT, LXX, and 4QSamᵃ. The philological analysis illuminates the narrator's craft and the institutional vocabulary of the early monarchy."
-            }
-          ]
-        },
         "hist": {
           "context": "This section addresses \"how much more when wicked men have killed a righteous man\"; hands and feet cut off. The narrative advances 2 Samuel's central tension: the Davidic covenant is unconditional in its promise but consequential in its outworking. David's victories, sins, and sufferings all serve the larger story of God building a kingdom through a flawed but chosen king."
         }
@@ -416,5 +398,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "When Ishbosheth's assassins bring his head to David expecting reward, David executes them instead. Like his refusal to kill Saul, David will not build his kingdom on murder — even murder that benefits him. Legitimacy matters more than expediency.",
+      "genre_tag": "canonical_thread"
+    }
+  ],
+  "prayer_prompt": "As you reflect on David's refusal to reward the men who murdered Ish-Bosheth, consider asking God whether you have ever been tempted to benefit from someone else's wrongdoing while keeping your own hands technically clean."
 }

@@ -141,43 +141,12 @@
             }
           ]
         },
-        "mac": {
-          "source": "MacArthur Study Bible — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "24:(8, '')",
-              "note": "MacArthur: On 22 — David's Speech; Saul Weeps: reveals the heart of 1 Samuel's theology: God is building a kingdom, and the question is not whether Israel will have a king, but what kind of king God will provide. Human selection fails; divine selection endures."
-            }
-          ]
-        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
             {
               "ref": "24:(8, '')",
               "note": "Calvin: On 22 — David's Speech; Saul Weeps: : God's providence operates through the full range of human experience — ambition, grief, jealousy, courage, and prayer. Nothing in the Samuel narrative happens outside divine sovereignty, yet human responsibility is never diminished."
-            }
-          ]
-        },
-        "net": {
-          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": []
-        },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "24:(8, '')",
-              "note": "Bergen: On 22 — David's Speech; Saul Weeps: : the narrative advances 1 Samuel's central theological argument — the transition from theocratic judges to anointed monarchy. God remains sovereign over the process, using human ambition, failure, and faith to accomplish his redemptive purposes."
-            }
-          ]
-        },
-        "tsumura": {
-          "source": "David T. Tsumura, The First Book of Samuel, NICOT (2007) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "24:(8, '')",
-              "note": "Tsumura: On 22 — David's Speech; Saul Weeps: : the Hebrew syntax and vocabulary in this section exhibit features characteristic of early monarchic prose narrative. Key terms carry specific institutional and covenantal connotations that anchor the passage in the broader Deuteronomistic framework."
             }
           ]
         },
@@ -411,5 +380,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "David cuts Saul's robe in the cave and is immediately 'conscience-stricken.' He refuses to kill the LORD's anointed even when handed the perfect opportunity. David's restraint is not pragmatic — it is theological. He will not seize by force what God has promised to give by providence.",
+      "genre_tag": "theological_insight"
+    }
+  ],
+  "prayer_prompt": "As you reflect on David cutting Saul's robe in the cave but refusing to kill the man who was trying to kill him, consider asking God whether you can distinguish between opportunities and temptations — and whether you trust His timing over your own advantage."
 }

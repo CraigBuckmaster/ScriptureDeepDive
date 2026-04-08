@@ -168,24 +168,6 @@
             }
           ]
         },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "4:(12, '')",
-              "note": "Bergen: On 22 — Eli Falls; Ichabod — the Glory Has Departed: : the narrative advances 1 Samuel's central theological argument — the transition from theocratic judges to anointed monarchy. God remains sovereign over the process, using human ambition, failure, and faith to accomplish his redemptive purposes."
-            }
-          ]
-        },
-        "tsumura": {
-          "source": "David T. Tsumura, The First Book of Samuel, NICOT (2007) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "4:(12, '')",
-              "note": "Tsumura: On 22 — Eli Falls; Ichabod — the Glory Has Departed: : the Hebrew syntax and vocabulary in this section exhibit features characteristic of early monarchic prose narrative. Key terms carry specific institutional and covenantal connotations that anchor the passage in the broader Deuteronomistic framework."
-            }
-          ]
-        },
         "hist": {
           "context": "The name 'Ichabod' means 'the glory has departed' not 'Where is the glory?'"
         }
@@ -416,5 +398,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "Israel treats the ark as a talisman — bring it to the battlefield and God must fight. They lose anyway. The ark is captured. Eli's daughter-in-law names her son Ichabod: 'The glory has departed from Israel.' The name becomes a verdict on the entire era.",
+      "genre_tag": "theological_insight"
+    }
+  ],
+  "prayer_prompt": "As you reflect on Israel treating the ark like a lucky charm and losing it in battle, consider asking God whether you have ever confused His presence with a prop — reducing worship to a formula for getting what you want."
 }

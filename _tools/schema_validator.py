@@ -108,7 +108,7 @@ def main():
     books_found = Counter()
 
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations'):
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             total_files += 1
@@ -193,7 +193,7 @@ def main():
     valid_css = {'vhl-divine', 'vhl-place', 'vhl-person', 'vhl-time', 'vhl-key'}
     bad_css = set()
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations'):
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             with open(json_file, encoding='utf-8') as f:
@@ -540,7 +540,7 @@ def main():
         tl_checked = 0
         tl_invalid = 0
         for book_dir in sorted(CONTENT.iterdir()):
-            if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
+            if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations'):
                 continue
             for json_file in sorted(book_dir.glob('*.json')):
                 try:
@@ -568,7 +568,7 @@ def main():
 
     dup_count = 0
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations'):
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:
@@ -605,7 +605,7 @@ def main():
 
     oob_tips = 0
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations'):
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:
@@ -614,12 +614,13 @@ def main():
             except json.JSONDecodeError:
                 continue
             sections = data.get('sections', [])
+            valid_nums = {s.get('section_num') for s in sections}
             for tip in data.get('coaching', []):
                 after = tip.get('after_section')
-                if after is not None and not (0 <= after < len(sections)):
+                if after is not None and after not in valid_nums:
                     oob_tips += 1
                     warn(f"{json_file.name} coaching after_section out of bounds",
-                         f"after_section={after}, sections=0..{len(sections)-1}")
+                         f"after_section={after}, valid section_nums={sorted(valid_nums)}")
 
     print(f"  Out-of-bounds coaching tips: {oob_tips}")
 
@@ -631,7 +632,7 @@ def main():
     if scopes_path_11.exists():
         scopes_data = json.loads(scopes_path_11.read_text(encoding='utf-8'))
         for book_dir in sorted(CONTENT.iterdir()):
-            if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
+            if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations'):
                 continue
             for json_file in sorted(book_dir.glob('*.json')):
                 try:
@@ -662,7 +663,7 @@ def main():
 
     word_glosses = defaultdict(set)
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations'):
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:
@@ -706,7 +707,7 @@ def main():
         }
         unregistered = []
         for book_dir in sorted(CONTENT.iterdir()):
-            if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
+            if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations'):
                 continue
             for json_file in sorted(book_dir.glob('*.json')):
                 try:
@@ -728,7 +729,7 @@ def main():
 
     overlaps = []
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations'):
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:
@@ -758,7 +759,7 @@ def main():
 
     gaps = []
     for book_dir in sorted(CONTENT.iterdir()):
-        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics'):
+        if not book_dir.is_dir() or book_dir.name in ('meta', 'verses', 'interlinear', 'archaeology', 'life_topics', 'historical_interpretations'):
             continue
         for json_file in sorted(book_dir.glob('*.json')):
             try:

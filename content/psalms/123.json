@@ -5,7 +5,10 @@
   "chapter_num": 123,
   "title": "Psalms 123",
   "subtitle": "I Lift My Eyes to You",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "solomon-temple",
+    "text": "See on Timeline — Song of Ascent"
+  },
   "map_story_link": null,
   "sections": [
     {
@@ -66,15 +69,6 @@
             "paragraph": "\"We have endured no end of contempt (būz). We have endured no end of ridicule from the arrogant, of contempt from the proud\" (vv.3–4). The occasion for the upward gaze: suffering. The proud and arrogant mock; the pilgrims endure. The psalm is only four verses: two of watching, two of suffering. The watching is the response to the suffering."
           }
         ],
-        "mac": {
-          "source": "MacArthur Study Bible — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "123:3–4",
-              "note": "\"Have mercy on us, LORD, have mercy. We have endured no end of ridicule from the arrogant.\" The double mercy plea. The endurance is real; the mercy is needed. Four verses: fixed gaze + suffered contempt = plea for mercy. MacArthur emphasizes the doctrinal significance of this passage within the framework of systematic theology. The text establishes principles that remain normative for the church — not merely descriptive of ancient Israel but prescriptive for how God's people should understand His character and respond in obedience."
-            }
-          ]
-        },
         "cross": {
           "refs": [
             {
@@ -287,5 +281,6 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "prayer_prompt": "The pilgrim lifts eyes to God, waiting for mercy like servants watching their master. Consider asking God about your posture of waiting — attentive, expectant, dependent."
 }

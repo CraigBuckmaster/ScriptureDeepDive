@@ -150,39 +150,12 @@
             }
           ]
         },
-        "calvin": {
-          "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "5:(6, '')",
-              "note": "Calvin: On 16 — David Captures Jerusalem; the City of David: : God's providence governs every detail of David's reign — victories, sins, and consequences alike serve the divine purpose. David is simultaneously the anointed king and a broken sinner, and God uses both dimensions to accomplish his will."
-            }
-          ]
-        },
         "net": {
           "source": "NET Bible Full Notes Edition — Biblical Studies Press",
           "notes": [
             {
               "ref": "5:(6, '')",
               "note": "NET Note: On 16 — David Captures Jerusalem; the City of David: ced disjunctive clauses that provide background information and shift perspective. Key institutional terms —melek,nāgîd,māšîaḥ— carry distinct political and theological connotations. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
-            }
-          ]
-        },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "5:(6, '')",
-              "note": "Bergen: On 16 — David Captures Jerusalem; the City of David: : the narrative advances 2 Samuel's central theological argument — God's covenant with David (ch 7) is both unconditional in its promise and consequential in its outworking. David's sins do not void the covenant but unleash its disciplinary clauses."
-            }
-          ]
-        },
-        "anderson": {
-          "source": "A.A. Anderson, 2 Samuel, Word Biblical Commentary (1989) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "5:(6, '')",
-              "note": "Anderson: On 16 — David Captures Jerusalem; the City of David: : the text-critical evidence for this passage reveals occasional divergences between MT, LXX, and 4QSamᵃ. The philological analysis illuminates the narrator's craft and the institutional vocabulary of the early monarchy."
             }
           ]
         },
@@ -214,51 +187,6 @@
             {
               "ref": "Matt 1:1",
               "note": "\"Jesus Christ the son of David.\" The NT opens by placing Jesus in David's lineage — everything in 2 Samuel points forward to the king who will sit on David's throne forever."
-            }
-          ]
-        },
-        "mac": {
-          "source": "MacArthur Study Bible — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "5:17",
-              "note": "MacArthur: The passage on the Valley of Rephaim; \"the sound of marching in the balsam trees\" reveals God's sovereign management of David's kingdom — blessings and judgments alike serve the covenant purpose. The Davidic covenant (ch 7) is the theological backbone of the entire book; every episode is read in its light."
-            }
-          ]
-        },
-        "calvin": {
-          "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "5:(17, '')",
-              "note": "Calvin: On 25 — Two Victories Over the Philistines: : God's providence governs every detail of David's reign — victories, sins, and consequences alike serve the divine purpose. David is simultaneously the anointed king and a broken sinner, and God uses both dimensions to accomplish his will."
-            }
-          ]
-        },
-        "net": {
-          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": [
-            {
-              "ref": "5:(17, '')",
-              "note": "NET Note: On 25 — Two Victories Over the Philistines: ced disjunctive clauses that provide background information and shift perspective. Key institutional terms —melek,nāgîd,māšîaḥ— carry distinct political and theological connotations. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
-            }
-          ]
-        },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "5:(17, '')",
-              "note": "Bergen: On 25 — Two Victories Over the Philistines: : the narrative advances 2 Samuel's central theological argument — God's covenant with David (ch 7) is both unconditional in its promise and consequential in its outworking. David's sins do not void the covenant but unleash its disciplinary clauses."
-            }
-          ]
-        },
-        "anderson": {
-          "source": "A.A. Anderson, 2 Samuel, Word Biblical Commentary (1989) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "5:(17, '')",
-              "note": "Anderson: On 25 — Two Victories Over the Philistines: : the text-critical evidence for this passage reveals occasional divergences between MT, LXX, and 4QSamᵃ. The philological analysis illuminates the narrator's craft and the institutional vocabulary of the early monarchy."
             }
           ]
         },
@@ -498,5 +426,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "David captures Jerusalem — a neutral city belonging to neither Judah nor the northern tribes. The political genius is evident: the capital belongs to the king alone, avoiding tribal jealousy. Jerusalem becomes 'the City of David' — not the city of any tribe.",
+      "genre_tag": "close_reading"
+    }
+  ],
+  "prayer_prompt": "As you consider David finally becoming king of all Israel after years of waiting, consider asking God whether the delays in your life are His way of preparing not just you but the people around you for what He has planned."
 }

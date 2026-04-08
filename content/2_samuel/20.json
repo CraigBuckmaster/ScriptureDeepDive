@@ -141,48 +141,12 @@
             }
           ]
         },
-        "mac": {
-          "source": "MacArthur Study Bible — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "20:14",
-              "note": "MacArthur: The passage on Sheba beheaded; the city saved; David's administration listed again reveals God's sovereign management of David's kingdom — blessings and judgments alike serve the covenant purpose. The Davidic covenant (ch 7) is the theological backbone of the entire book; every episode is read in its light."
-            }
-          ]
-        },
-        "calvin": {
-          "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "20:(14, '')",
-              "note": "Calvin: On 26 — The Wise Woman of Abel; David's Officials: : God's providence governs every detail of David's reign — victories, sins, and consequences alike serve the divine purpose. David is simultaneously the anointed king and a broken sinner, and God uses both dimensions to accomplish his will."
-            }
-          ]
-        },
         "net": {
           "source": "NET Bible Full Notes Edition — Biblical Studies Press",
           "notes": [
             {
               "ref": "20:(14, '')",
               "note": "NET Note: On 26 — The Wise Woman of Abel; David's Officials: ced disjunctive clauses that provide background information and shift perspective. Key institutional terms —melek,nāgîd,māšîaḥ— carry distinct political and theological connotations. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
-            }
-          ]
-        },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "20:(14, '')",
-              "note": "Bergen: On 26 — The Wise Woman of Abel; David's Officials: : the narrative advances 2 Samuel's central theological argument — God's covenant with David (ch 7) is both unconditional in its promise and consequential in its outworking. David's sins do not void the covenant but unleash its disciplinary clauses."
-            }
-          ]
-        },
-        "anderson": {
-          "source": "A.A. Anderson, 2 Samuel, Word Biblical Commentary (1989) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "20:(14, '')",
-              "note": "Anderson: On 26 — The Wise Woman of Abel; David's Officials: : the text-critical evidence for this passage reveals occasional divergences between MT, LXX, and 4QSamᵃ. The philological analysis illuminates the narrator's craft and the institutional vocabulary of the early monarchy."
             }
           ]
         },
@@ -416,5 +380,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "Sheba's revolt — 'We have no share in David!' — exposes the fragility of the united monarchy. The tribal fracture line between Judah and Israel that Sheba exploits is the same one that will permanently split the kingdom under Rehoboam. The seeds of 1 Kings 12 are already germinating.",
+      "genre_tag": "canonical_thread"
+    }
+  ],
+  "prayer_prompt": "As you reflect on Sheba's revolt erupting just as David was restored, consider asking God whether you expect seasons of victory to be uninterrupted — and whether you have the resilience to face the next crisis before the last one has fully healed."
 }

@@ -168,24 +168,6 @@
             }
           ]
         },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "5:(6, '')",
-              "note": "Bergen: On 12 — Plagues on Ashdod, Gath, and Ekron: : the narrative advances 1 Samuel's central theological argument — the transition from theocratic judges to anointed monarchy. God remains sovereign over the process, using human ambition, failure, and faith to accomplish his redemptive purposes."
-            }
-          ]
-        },
-        "tsumura": {
-          "source": "David T. Tsumura, The First Book of Samuel, NICOT (2007) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "5:(6, '')",
-              "note": "Tsumura: On 12 — Plagues on Ashdod, Gath, and Ekron: : the Hebrew syntax and vocabulary in this section exhibit features characteristic of early monarchic prose narrative. Key terms carry specific institutional and covenantal connotations that anchor the passage in the broader Deuteronomistic framework."
-            }
-          ]
-        },
         "hist": {
           "context": "This section addresses tumours and mice; the Philistines pass the ark from city to city. The narrative advances 1 Samuel's central question: what kind of king does Israel need? Every episode contributes to the answer — not the one who looks the part, but the one whose heart is aligned with God's purposes."
         }
@@ -416,5 +398,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Dagon falls face down before the ark — twice. The second time his head and hands break off. The scene is darkly comic: the Philistine god literally prostrates himself before Israel's God, then disintegrates. The ark needs no army to defend itself.",
+      "genre_tag": "literary_pattern"
+    }
+  ],
+  "prayer_prompt": "As you consider the idol Dagon falling face-down before the ark, consider asking God whether there are idols in your life that He has already toppled — things you keep propping back up that He keeps knocking down."
 }

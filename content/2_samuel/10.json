@@ -141,15 +141,6 @@
             }
           ]
         },
-        "mac": {
-          "source": "MacArthur Study Bible — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "10:6",
-              "note": "MacArthur: The passage on two-front battle; Joab's trust in God; Aramean coalition crushed reveals God's sovereign management of David's kingdom — blessings and judgments alike serve the covenant purpose. The Davidic covenant (ch 7) is the theological backbone of the entire book; every episode is read in its light."
-            }
-          ]
-        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -165,24 +156,6 @@
             {
               "ref": "10:(6, '')",
               "note": "NET Note: On 19 — Joab Defeats Ammon and Aram: ced disjunctive clauses that provide background information and shift perspective. Key institutional terms —melek,nāgîd,māšîaḥ— carry distinct political and theological connotations. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
-            }
-          ]
-        },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "10:(6, '')",
-              "note": "Bergen: On 19 — Joab Defeats Ammon and Aram: : the narrative advances 2 Samuel's central theological argument — God's covenant with David (ch 7) is both unconditional in its promise and consequential in its outworking. David's sins do not void the covenant but unleash its disciplinary clauses."
-            }
-          ]
-        },
-        "anderson": {
-          "source": "A.A. Anderson, 2 Samuel, Word Biblical Commentary (1989) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "10:(6, '')",
-              "note": "Anderson: On 19 — Joab Defeats Ammon and Aram: : the text-critical evidence for this passage reveals occasional divergences between MT, LXX, and 4QSamᵃ. The philological analysis illuminates the narrator's craft and the institutional vocabulary of the early monarchy."
             }
           ]
         },
@@ -416,5 +389,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "David sends envoys to comfort the Ammonite king; they are humiliated. The misread act of kindness triggers a war that sets the stage for chapter 11. The narrator is arranging events — it is during 'the time when kings go off to war' that David stays home, and everything falls apart.",
+      "genre_tag": "literary_pattern"
+    }
+  ],
+  "prayer_prompt": "As you reflect on Hanun humiliating David's ambassadors, consider asking God whether you have ever misread someone's genuine goodwill as a threat — and what that suspicion cost the relationship."
 }

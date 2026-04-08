@@ -141,15 +141,6 @@
             }
           ]
         },
-        "mac": {
-          "source": "MacArthur Study Bible — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "8:22",
-              "note": "MacArthur: The passage on \"the LORD will rule over you\" — then immediately makes an idol demonstrates the consequences of covenant unfaithfulness — not as abstract theology but as lived disaster. When Israel forsakes God, God does not merely withdraw blessing; he actively delivers them into the hands of their enemies."
-            }
-          ]
-        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -174,15 +165,6 @@
             {
               "ref": "8:(22, '')",
               "note": "Block: On 35 — Gideon Refuses Kingship but Makes an Ephod: : the narrative here exhibits the characteristic Judges cycle — Israel's failure provokes divine discipline, which produces a cry for help, which God answers through a flawed but Spirit-empowered deliverer. The pattern is theological, not merely historical."
-            }
-          ]
-        },
-        "webb": {
-          "source": "Barry G. Webb, The Book of Judges, NICOT (2012) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "8:(22, '')",
-              "note": "Webb: On 35 — Gideon Refuses Kingship but Makes an Ephod: : the placement of this episode within the book's larger structure advances the thesis of progressive deterioration. Each judge cycle descends further from the Othniel paradigm (3:7-11), demonstrating that human deliverance without heart-change produces only temporary relief."
             }
           ]
         },
@@ -417,5 +399,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "Gideon refuses the crown — 'I will not rule over you... The LORD will rule over you' — then immediately makes a gold ephod that becomes an idol. His words are right; his actions contradict them. Judges shows that even the best leaders in this era carry the seeds of the next apostasy.",
+      "genre_tag": "theological_insight"
+    }
+  ],
+  "prayer_prompt": "Gideon declined kingship but made an ephod that became a snare — success leading to subtle idolatry. Consider asking God about the trophies of victory that have become objects of misplaced devotion."
 }

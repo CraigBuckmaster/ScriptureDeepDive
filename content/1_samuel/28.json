@@ -168,24 +168,6 @@
             }
           ]
         },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "28:(7, '')",
-              "note": "Bergen: On 25 — The Ghost of Samuel: \"Tomorrow You Will Be with Me\": : the narrative advances 1 Samuel's central theological argument — the transition from theocratic judges to anointed monarchy. God remains sovereign over the process, using human ambition, failure, and faith to accomplish his redemptive purposes."
-            }
-          ]
-        },
-        "tsumura": {
-          "source": "David T. Tsumura, The First Book of Samuel, NICOT (2007) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "28:(7, '')",
-              "note": "Tsumura: On 25 — The Ghost of Samuel: \"Tomorrow You Will Be with Me\": : the Hebrew syntax and vocabulary in this section exhibit features characteristic of early monarchic prose narrative. Key terms carry specific institutional and covenantal connotations that anchor the passage in the broader Deuteronomistic framework."
-            }
-          ]
-        },
         "hist": {
           "context": "This section addresses the medium at Endor; Samuel appears; \"the LORD has torn the kingdom from you\". The narrative advances 1 Samuel's central question: what kind of king does Israel need? Every episode contributes to the answer — not the one who looks the part, but the one whose heart is aligned with God's purposes."
         }
@@ -416,5 +398,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "Saul consults the medium at Endor — violating his own decree against necromancy. Samuel's ghost delivers the final verdict: 'Tomorrow you and your sons will be with me.' The king who began by prophesying (10:10) ends by consulting the dead. His spiritual trajectory is a complete inversion.",
+      "genre_tag": "canonical_thread"
+    }
+  ],
+  "prayer_prompt": "As you reflect on Saul consulting the medium at Endor after God stopped answering him, consider asking God whether His silence in your life is driving you toward illegitimate sources of guidance — and whether repentance would reopen the conversation."
 }

@@ -57,7 +57,24 @@
             "gloss": "generations / genealogy",
             "paragraph": "The Hebrew tôlĕḏôt (generations) is a structuring device that traces the thread of God's purpose through family lines. From Genesis to Chronicles, genealogies are not mere lists but theological arguments: they demonstrate continuity, establish legitimacy, and show that God's covenant promises pass from generation to generation."
           }
-        ]
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "15:1-3",
+              "note": "The Chronicler's portrait of David emphasizes his role as the ideal theocratic king — the man after God's own heart who established worship, organized the Levites, and prepared for the temple. David's reign points typologically to Christ, the Son of David, who perfectly fulfills every dimension of the Davidic covenant (2 Sam 7:12-16; Rom 1:3)."
+            },
+            {
+              "ref": "15:8",
+              "note": "The Chronicler's perspective consistently emphasizes God's faithfulness to His covenant promises despite Israel's unfaithfulness. This dual theme — human failure and divine grace — is the heartbeat of all Scripture and finds its ultimate resolution in the cross of Christ, where God's justice and mercy meet perfectly (Rom 3:25-26)."
+            },
+            {
+              "ref": "15:14-15",
+              "note": "The Chronicler wrote for a post-exilic community needing to understand their identity and hope. His message remains vital: God's promises to David are irrevocable, worship is the center of covenant life, and faithfulness — not circumstances — determines blessing. Believers today can take the same comfort: our God is faithful even when we are not (2 Tim 2:13)."
+            }
+          ]
+        }
       }
     },
     {
@@ -75,15 +92,6 @@
             {
               "ref": "Ps 150:1–6",
               "note": "“Praise the LORD with the sounding of the trumpet, with harp and lyre... Let everything that has breath praise the LORD.” The full-spectrum worship described here."
-            }
-          ]
-        },
-        "calvin": {
-          "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "15:29",
-              "note": "Michal’s contempt for David’s dancing warns against the spirit of religious sophistication that despises genuine worship. Those who are too dignified to worship wholeheartedly are spiritually poorer than those who dance. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -106,7 +114,16 @@
             "gloss": "holiness / sacred",
             "paragraph": "The Hebrew qōḏeš (holiness) denotes separation for divine purpose. In the context of temple worship, it marks the distinction between common and sacred — a boundary that defines Israel's entire liturgical life. The Chronicler's emphasis on holiness reflects his concern for proper worship as the foundation of national life."
           }
-        ]
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "15:16-18",
+              "note": "The Chronicler records this history not merely as political narrative but as theological instruction. Every event demonstrates God's sovereign governance of His people and His unwavering faithfulness to the Davidic covenant. The believing reader is meant to see in these events the pattern of God's dealings with His church in every age."
+            }
+          ]
+        }
       }
     }
   ],
@@ -337,5 +354,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "David corrects the Uzzah disaster: this time Levites carry the ark with poles, as Moses commanded. David says explicitly: 'It was because you, the Levites, did not bring it up the first time that the LORD our God broke out in anger.' Learning from failure is itself an act of faithfulness.",
+      "genre_tag": "canonical_thread"
+    }
+  ],
+  "prayer_prompt": "The second attempt to move the ark succeeded because they did it properly. Consider asking God about the second attempts He's allowing you — and what you learned from the first failure."
 }

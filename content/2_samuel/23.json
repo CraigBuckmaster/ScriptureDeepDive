@@ -168,24 +168,6 @@
             }
           ]
         },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "23:(8, '')",
-              "note": "Bergen: On 39 — The Thirty-Seven Mighty Men: : the narrative advances 2 Samuel's central theological argument — God's covenant with David (ch 7) is both unconditional in its promise and consequential in its outworking. David's sins do not void the covenant but unleash its disciplinary clauses."
-            }
-          ]
-        },
-        "anderson": {
-          "source": "A.A. Anderson, 2 Samuel, Word Biblical Commentary (1989) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "23:(8, '')",
-              "note": "Anderson: On 39 — The Thirty-Seven Mighty Men: : the text-critical evidence for this passage reveals occasional divergences between MT, LXX, and 4QSamᵃ. The philological analysis illuminates the narrator's craft and the institutional vocabulary of the early monarchy."
-            }
-          ]
-        },
         "hist": {
           "context": "This section addresses Josheb-Basshebeth, Eleazar, Shammah; the Three and the Thirty; Uriah the Hittite listed last. The narrative advances 2 Samuel's central tension: the Davidic covenant is unconditional in its promise but consequential in its outworking. David's victories, sins, and sufferings all serve the larger story of God building a kingdom through a flawed but chosen king."
         }
@@ -416,5 +398,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "David's mighty men risk their lives to bring him water from the well at Bethlehem. David pours it out as an offering to God: 'Is it not the blood of men who went at the risk of their lives?' He refuses to drink what cost others their safety. The gesture transforms water into sacrament.",
+      "genre_tag": "theological_insight"
+    }
+  ],
+  "prayer_prompt": "As you consider David's mighty men — warriors defined by extraordinary loyalty and courage — consider asking God who your mighty men are, and whether you are the kind of leader worth that level of devotion."
 }

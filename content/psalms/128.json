@@ -5,7 +5,10 @@
   "chapter_num": 128,
   "title": "Psalms 128",
   "subtitle": "Blessed Are All Who Fear the LORD",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "solomon-temple",
+    "text": "See on Timeline — Song of Ascent"
+  },
   "map_story_link": null,
   "sections": [
     {
@@ -316,5 +319,6 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "prayer_prompt": "Blessed is the one who fears the LORD — prosperity will follow. Consider asking God about the blessing that flows from fearing Him — not material success, but relational flourishing."
 }

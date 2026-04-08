@@ -5,7 +5,10 @@
   "chapter_num": 32,
   "title": "Psalms 32",
   "subtitle": "The Joy of Forgiveness",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "david-bathsheba",
+    "text": "See on Timeline — Forgiveness after Sin"
+  },
   "map_story_link": null,
   "sections": [
     {
@@ -477,5 +480,6 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "prayer_prompt": "As you reflect on the joy of forgiveness — 'When I kept silent, my bones wasted away' — consider asking God whether unconfessed sin is draining your vitality, and what freedom might feel like if you stopped carrying it."
 }

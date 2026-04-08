@@ -5,7 +5,10 @@
   "chapter_num": 19,
   "title": "Psalms 19",
   "subtitle": "The Heavens Declare; The Law Revives",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "sinai-covenant",
+    "text": "See on Timeline — The Law from Sinai"
+  },
   "map_story_link": null,
   "sections": [
     {
@@ -458,5 +461,6 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "prayer_prompt": "As you consider the heavens declaring God's glory and the law reviving the soul, consider asking God whether you are attentive to both of His revelations — creation and Scripture — or whether you neglect one in favor of the other."
 }

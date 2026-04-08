@@ -168,15 +168,6 @@
             }
           ]
         },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "7:(18, '')",
-              "note": "Bergen: On 29 — David's Prayer: \"Who Am I, Sovereign LORD?\": : the narrative advances 2 Samuel's central theological argument — God's covenant with David (ch 7) is both unconditional in its promise and consequential in its outworking. David's sins do not void the covenant but unleash its disciplinary clauses."
-            }
-          ]
-        },
         "anderson": {
           "source": "A.A. Anderson, 2 Samuel, Word Biblical Commentary (1989) — Scholarly Paraphrase",
           "notes": [
@@ -416,5 +407,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "David wants to build God a house (temple); God responds by building David a house (dynasty). The wordplay on 'house' (bayit) drives the entire chapter. The Davidic covenant — 'your throne will be established forever' — becomes the foundation of messianic expectation through the rest of Scripture.",
+      "genre_tag": "canonical_thread"
+    }
+  ],
+  "prayer_prompt": "As you consider God's promise to establish David's throne forever, consider asking the Lord whether you are trying to build something for God that He never asked for — and whether you can receive what He wants to build through you instead."
 }

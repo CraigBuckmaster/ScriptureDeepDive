@@ -143,15 +143,6 @@
             }
           ]
         },
-        "calvin": {
-          "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "13:14",
-              "note": "Calvin: \"He says ‘remember’ — not ‘reward.’ He wants God’s recognition, not compensation.\". Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
-            }
-          ]
-        },
         "net": {
           "source": "NET Bible Full Notes Edition — Biblical Studies Press",
           "notes": [
@@ -691,5 +682,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "Nehemiah returns from Persia to find every reform undone: Tobiah has a room in the temple, tithes have stopped, Sabbath is violated, intermarriage has resumed. His response is furious — he throws out furniture, rebukes officials, even pulls out hair. The book ends not with triumph but with the exhausting reality that reform requires constant vigilance.",
+      "genre_tag": "theological_insight"
+    }
+  ],
+  "prayer_prompt": "Nehemiah's final reforms addressed Sabbath-breaking, mixed marriages, and Levite neglect. Consider asking God about the reforms that need to continue after initial success."
 }

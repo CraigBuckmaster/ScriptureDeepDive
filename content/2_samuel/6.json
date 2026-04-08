@@ -168,15 +168,6 @@
             }
           ]
         },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "6:(12, '')",
-              "note": "Bergen: On 23 — David Dances Before the Ark; Michal Despises Him: : the narrative advances 2 Samuel's central theological argument — God's covenant with David (ch 7) is both unconditional in its promise and consequential in its outworking. David's sins do not void the covenant but unleash its disciplinary clauses."
-            }
-          ]
-        },
         "anderson": {
           "source": "A.A. Anderson, 2 Samuel, Word Biblical Commentary (1989) — Scholarly Paraphrase",
           "notes": [
@@ -416,5 +407,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "David dances before the ark 'with all his might,' wearing a linen ephod. Michal despises him from the window. The contrast is sharp: the king humbles himself in worship while the queen cares about royal dignity. Michal's contempt costs her children — barrenness is the narrator's verdict on her priorities.",
+      "genre_tag": "theological_insight"
+    }
+  ],
+  "prayer_prompt": "As you reflect on David dancing before the ark with all his might, consider asking God whether your worship has ever been that uninhibited — and whether Michal's contempt for David's abandon mirrors a voice inside you that calls passionate devotion undignified."
 }

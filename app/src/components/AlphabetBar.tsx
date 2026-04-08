@@ -25,6 +25,12 @@ export function AlphabetBar({ activeLetter, availableLetters, onSelect }: Props)
       horizontal
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.container}
+      style={styles.scrollView}
+      scrollEventThrottle={16}
+      directionalLockEnabled
+      alwaysBounceVertical={false}
+      bounces={false}
+      nestedScrollEnabled={false}
     >
       {LETTERS.map((letter) => {
         const available = availableLetters.has(letter);
@@ -61,11 +67,14 @@ export function AlphabetBar({ activeLetter, availableLetters, onSelect }: Props)
 }
 
 const styles = StyleSheet.create({
+  scrollView: {
+    flexGrow: 0,
+    height: 36,
+  },
   container: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 8,
-    height: 36,
   },
   letterBtn: {
     width: 28,

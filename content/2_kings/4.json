@@ -47,10 +47,6 @@
             {
               "ref": "4:2",
               "note": "God asks what we have, not what we lack. He begins with our resources and multiplies them. The principle governs all ministry. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
-            },
-            {
-              "ref": "4:7",
-              "note": "Miracles restore us to responsible living, not exemption from it. Divine provision enables us to meet our obligations. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -91,6 +87,23 @@
         },
         "hist": {
           "context": "A prophet’s widow faces a creditor who will take her two sons as debt slaves. She has nothing but a flask of oil. Elisha tells her to borrow empty vessels, then pour. The oil flows until every vessel is full. She sells the oil, pays the debt, and lives on the rest. The miracle addresses real-world need: debt slavery was a concrete social crisis. God’s provision works through human action (she must borrow), is proportional to faith (the oil stops when vessels run out), and is comprehensive (debt paid, sons freed, livelihood secured)."
+        },
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "4:1-3",
+              "note": "The narrative of Kings presents Israel's history as a theological argument: obedience to God's covenant brings blessing; disobedience brings judgment. This section continues that theme, demonstrating that God's sovereignty operates through human choices and their consequences. Every passage in Kings ultimately points to the need for a perfect King who will fulfill what no earthly monarch could."
+            },
+            {
+              "ref": "4:4",
+              "note": "The theological framework of Kings evaluates every monarch by a single standard: fidelity to the covenant expressed in exclusive worship of Yahweh at the chosen place. Political success, military prowess, and economic prosperity are irrelevant apart from covenant obedience. This standard anticipates the NT principle that faithfulness to God's Word is the only measure of true success (Rev 2:10)."
+            },
+            {
+              "ref": "4:6-7",
+              "note": "The practical lesson for every believer is that obedience to God's Word is the only path to genuine blessing. The kings who prospered spiritually were those who feared the Lord and walked in His ways. The same principle governs the Christian life: 'If you love Me, keep My commandments' (John 14:15). Obedience is not the means of salvation but the evidence of it."
+            }
+          ]
         }
       }
     },
@@ -127,19 +140,6 @@
             {
               "ref": "Gen 18:10–14",
               "note": "Sarah laughed at the promise of a son; the Shunammite resists for the same reason. Both receive against all expectation."
-            }
-          ]
-        },
-        "calvin": {
-          "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "4:16",
-              "note": "God’s promises often exceed our capacity to trust them. God does not blame our weakness but fulfils his word despite it. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
-            },
-            {
-              "ref": "4:34",
-              "note": "Elisha’s body-to-body contact prefigures the Word made flesh — God enters our condition so his life might flow into our death. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -184,6 +184,19 @@
         },
         "hist": {
           "context": "The longest narrative in the Elisha cycle. A wealthy Shunammite builds Elisha a room, and he promises her a son. The child is born but dies years later of apparent heatstroke. She rides to Carmel: “Did I ask you for a son? Didn’t I say, Don’t raise my hopes?” Gehazi’s staff fails; Elisha comes himself, lies upon the child, and the boy revives. The miracle parallels 1 Kings 17:17–24 but with deeper emotional texture — particularly the woman’s resistance to hope and her raw grief when hope fails."
+        },
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "4:8-10",
+              "note": "The formulaic record of this king's reign and death reminds us that every earthly throne is temporary. No matter how powerful or prosperous, every human ruler faces the same end. Only the throne of David's greater Son endures forever (Luke 1:32-33). The believer's hope rests not in human leadership but in Christ's eternal kingdom."
+            },
+            {
+              "ref": "4:36-37",
+              "note": "The recurring refrain of royal death and succession is a sobering reminder of human mortality. Yet for the believer, death has lost its sting through the resurrection of Christ (1 Cor 15:55-57). The hope of the Old Testament saints — dimly perceived but genuinely held — has been fully revealed in the gospel: those who trust in Christ will reign with Him forever (2 Tim 2:12; Rev 22:5)."
+            }
+          ]
         }
       }
     },
@@ -202,15 +215,6 @@
             {
               "ref": "Matt 14:20",
               "note": "“They all ate and were satisfied.” Jesus’ miracle exceeds Elisha’s by a factor of fifty."
-            }
-          ]
-        },
-        "calvin": {
-          "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "4:43",
-              "note": "The miracle begins precisely where human capacity ends. God asks only that we obey and then watch him work. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -517,5 +521,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "The widow's oil multiplies until she runs out of vessels. The miracle is limited not by God's supply but by human preparation — she should have borrowed more jars. The principle applies broadly: God's provision often scales to the size of our expectation and effort.",
+      "genre_tag": "theological_insight"
+    }
+  ],
+  "prayer_prompt": "As you reflect on Elisha's miracles among ordinary people — oil multiplied, a child raised, poison neutralized — consider asking God whether you believe He cares about your everyday crises as much as the dramatic ones."
 }

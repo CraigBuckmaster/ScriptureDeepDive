@@ -5,7 +5,10 @@
   "chapter_num": 131,
   "title": "Psalms 131",
   "subtitle": "My Heart Is Not Proud",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "solomon-temple",
+    "text": "See on Timeline — Song of Ascent"
+  },
   "map_story_link": null,
   "sections": [
     {
@@ -291,5 +294,6 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "prayer_prompt": "My heart is not proud; I have calmed and quieted myself like a weaned child. Consider asking God about your own ambition and anxiety — what stilling and quieting you need."
 }

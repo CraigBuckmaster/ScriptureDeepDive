@@ -150,39 +150,12 @@
             }
           ]
         },
-        "calvin": {
-          "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "12:(6, '')",
-              "note": "Calvin: On 25 — Historical Retrospective; Thunder as Warning: : God's providence operates through the full range of human experience — ambition, grief, jealousy, courage, and prayer. Nothing in the Samuel narrative happens outside divine sovereignty, yet human responsibility is never diminished."
-            }
-          ]
-        },
         "net": {
           "source": "NET Bible Full Notes Edition — Biblical Studies Press",
           "notes": [
             {
               "ref": "12:(6, '')",
               "note": "NET Note: On 25 — Historical Retrospective; Thunder as Warning: tegically placedwĕqatalforms that signal shifts in perspective or background information. The narrator's technique is sophisticated and deliberate. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
-            }
-          ]
-        },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "12:(6, '')",
-              "note": "Bergen: On 25 — Historical Retrospective; Thunder as Warning: : the narrative advances 1 Samuel's central theological argument — the transition from theocratic judges to anointed monarchy. God remains sovereign over the process, using human ambition, failure, and faith to accomplish his redemptive purposes."
-            }
-          ]
-        },
-        "tsumura": {
-          "source": "David T. Tsumura, The First Book of Samuel, NICOT (2007) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "12:(6, '')",
-              "note": "Tsumura: On 25 — Historical Retrospective; Thunder as Warning: : the Hebrew syntax and vocabulary in this section exhibit features characteristic of early monarchic prose narrative. Key terms carry specific institutional and covenantal connotations that anchor the passage in the broader Deuteronomistic framework."
             }
           ]
         },
@@ -416,5 +389,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "Samuel's farewell speech parallels Joshua 24 — covenant review, challenge, warning. Samuel adds thunder and rain during wheat harvest (meteorologically impossible) as a sign. The prophet steps aside but makes clear that kingship does not replace prophetic accountability. Kings will answer to prophets.",
+      "genre_tag": "canonical_thread"
+    }
+  ],
+  "prayer_prompt": "As you reflect on Samuel's farewell — reminding Israel of God's faithfulness across generations — consider asking God to help you remember His track record in your own life, especially when the future feels uncertain."
 }

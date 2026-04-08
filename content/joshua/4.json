@@ -168,10 +168,6 @@
             }
           ]
         },
-        "hess": {
-          "source": "Richard S. Hess, Joshua, Tyndale OT Commentary (1996) — Scholarly Paraphrase",
-          "notes": []
-        },
         "howard": {
           "source": "David M. Howard Jr., Joshua, New American Commentary (1998) — Scholarly Paraphrase",
           "notes": [
@@ -408,5 +404,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "The memorial stones serve a specific pedagogical purpose: 'When your children ask... tell them.' Israel's worship is built on children's questions. The monument exists not as decoration but as a conversation starter across generations.",
+      "genre_tag": "theological_insight"
+    }
+  ],
+  "prayer_prompt": "Memorial stones were set up so future generations would ask, 'What do these mean?' Consider asking God what memorials of His faithfulness you should be establishing — and what story you'll tell when others ask."
 }

@@ -168,24 +168,6 @@
             }
           ]
         },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "20:(24, '')",
-              "note": "Bergen: On 42 — Saul's Rage at the Table; the Farewell: : the narrative advances 1 Samuel's central theological argument — the transition from theocratic judges to anointed monarchy. God remains sovereign over the process, using human ambition, failure, and faith to accomplish his redemptive purposes."
-            }
-          ]
-        },
-        "tsumura": {
-          "source": "David T. Tsumura, The First Book of Samuel, NICOT (2007) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "20:(24, '')",
-              "note": "Tsumura: On 42 — Saul's Rage at the Table; the Farewell: : the Hebrew syntax and vocabulary in this section exhibit features characteristic of early monarchic prose narrative. Key terms carry specific institutional and covenantal connotations that anchor the passage in the broader Deuteronomistic framework."
-            }
-          ]
-        },
         "hist": {
           "context": "This section addresses new moon feast; Saul hurls spear at Jonathan; the field, the arrows, the tears. The narrative advances 1 Samuel's central question: what kind of king does Israel need? Every episode contributes to the answer — not the one who looks the part, but the one whose heart is aligned with God's purposes."
         }
@@ -416,5 +398,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "Jonathan and David's covenant is remarkable: the crown prince voluntarily cedes his claim to the throne. Jonathan recognizes what Saul refuses to accept — that God has chosen David. Loyalty to God's purposes overrides loyalty to family dynasty. It costs Jonathan everything.",
+      "genre_tag": "theological_insight"
+    }
+  ],
+  "prayer_prompt": "As you reflect on the covenant between David and Jonathan — a friendship that cost Jonathan his own throne — consider asking God whether you have a friendship marked by that kind of sacrificial loyalty, and what it would take to build one."
 }

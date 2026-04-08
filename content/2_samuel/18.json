@@ -150,39 +150,12 @@
             }
           ]
         },
-        "calvin": {
-          "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "18:(19, '')",
-              "note": "Calvin: On 33 — David's Grief: \"O My Son Absalom!\": : God's providence governs every detail of David's reign — victories, sins, and consequences alike serve the divine purpose. David is simultaneously the anointed king and a broken sinner, and God uses both dimensions to accomplish his will."
-            }
-          ]
-        },
         "net": {
           "source": "NET Bible Full Notes Edition — Biblical Studies Press",
           "notes": [
             {
               "ref": "18:(19, '')",
               "note": "NET Note: On 33 — David's Grief: \"O My Son Absalom!\": ced disjunctive clauses that provide background information and shift perspective. Key institutional terms —melek,nāgîd,māšîaḥ— carry distinct political and theological connotations. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
-            }
-          ]
-        },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "18:(19, '')",
-              "note": "Bergen: On 33 — David's Grief: \"O My Son Absalom!\": : the narrative advances 2 Samuel's central theological argument — God's covenant with David (ch 7) is both unconditional in its promise and consequential in its outworking. David's sins do not void the covenant but unleash its disciplinary clauses."
-            }
-          ]
-        },
-        "anderson": {
-          "source": "A.A. Anderson, 2 Samuel, Word Biblical Commentary (1989) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "18:(19, '')",
-              "note": "Anderson: On 33 — David's Grief: \"O My Son Absalom!\": : the text-critical evidence for this passage reveals occasional divergences between MT, LXX, and 4QSamᵃ. The philological analysis illuminates the narrator's craft and the institutional vocabulary of the early monarchy."
             }
           ]
         },
@@ -416,5 +389,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "'O my son Absalom! My son, my son Absalom! If only I had died instead of you!' David's grief is the emotional center of the entire narrative. The father who could not discipline his son now cannot stop mourning him. Nathan's prophecy — 'the sword will never depart from your house' — is fulfilled in the king's own tears.",
+      "genre_tag": "canonical_thread"
+    }
+  ],
+  "prayer_prompt": "As you reflect on David's anguished cry — 'O my son Absalom! If only I had died instead of you!' — consider asking God to help you hold the tension between justice and grief, between consequences deserved and love that wishes it could absorb them."
 }

@@ -3,37 +3,47 @@
   "testament": "ot",
   "book_dir": "judges",
   "chapter_num": 9,
-  "title": "Judges 9",
-  "subtitle": "Abimelech: The Anti-Judge",
+  "title": "Abimelech's Bloody Rise and Shameful Fall",
+  "subtitle": "The anti-judge who seized power through fratricide and perished by a woman's hand",
   "timeline_link": {
     "event_id": "judges-gideon",
-    "text": "See on Timeline — Gideon"
+    "text": "See on Timeline — Gideon's Judgeship"
   },
   "map_story_link": null,
   "sections": [
     {
       "section_num": 1,
-      "header": "Verses 1–21 — Abimelech Seizes Power; Jotham's Fable",
+      "header": "Verses 1–6 — Abimelech's Conspiracy and Bloody Rise to Power",
       "verse_start": 1,
-      "verse_end": 21,
+      "verse_end": 6,
       "panels": {
         "heb": [
           {
-            "word": "key term",
-            "transliteration": "transliteration",
-            "gloss": "meaning",
-            "paragraph": "A key Hebrew term in this section on murder of 70 brothers; the parable of the trees carries theological weight that illuminates the passage's role in Judges' narrative of covenant decline and divine patience."
+            "word": "אֲבִימֶלֶךְ",
+            "transliteration": "ʾăbîmelek",
+            "gloss": "my father is king",
+            "paragraph": "The name Abimelech means 'my father is king' — deeply ironic since Gideon had refused kingship (8:23). The name reveals Abimelech's ambition: he wants the monarchy his father rejected. His mother was a concubine from Shechem, making him half-Israelite and half-Canaanite — a liminal figure whose divided loyalties shape the narrative."
+          },
+          {
+            "word": "שִׁבְעִים אִישׁ",
+            "transliteration": "šibʿîm ʾîš",
+            "gloss": "seventy men",
+            "paragraph": "The murder of seventy brothers 'on one stone' evokes sacrificial slaughter. The number seventy is formulaic in the ancient Near East for a complete set of royal sons. Abimelech's fratricide eliminates all rivals in a single brutal act, establishing his rule on a foundation of blood."
           }
         ],
         "cross": {
           "refs": [
             {
-              "ref": "Judg 2:11-19",
-              "note": "The programmatic cycle statement — sin, oppression, cry, deliverance, rest, relapse — governs every episode in Judges. Each cycle is a local instance of this universal pattern."
+              "ref": "Judg 8:30-31",
+              "note": "Gideon had seventy sons and a concubine in Shechem who bore Abimelech. The seeds of this tragedy were planted in Gideon's polygamy and compromise."
             },
             {
-              "ref": "Heb 11:32-34",
-              "note": "The NT celebrates the judges' faith while acknowledging their failures. \"Who through faith conquered kingdoms, administered justice, and gained what was promised\" — imperfect faith still accomplishes God's purposes."
+              "ref": "2 Kings 10:7",
+              "note": "Jehu would later slaughter seventy sons of Ahab. The parallel is grim: usurpers eliminate royal families to secure power."
+            },
+            {
+              "ref": "Judg 8:22-23",
+              "note": "Gideon refused kingship: 'The LORD will rule over you.' Abimelech's seizure of power repudiates his father's piety."
             }
           ]
         },
@@ -41,20 +51,12 @@
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
             {
-              "ref": "9:1",
-              "note": "MacArthur: The passage on murder of 70 brothers; the parable of the trees demonstrates the consequences of covenant unfaithfulness — not as abstract theology but as lived disaster. When Israel forsakes God, God does not merely withdraw blessing; he actively delivers them into the hands of their enemies."
+              "ref": "9:1-3",
+              "note": "MacArthur notes that Abimelech exploited his mother's Shechemite connections to gain local support. His appeal to kinship ('I am your flesh and blood') masks raw ambition. The Shechemites chose a half-Canaanite tyrant over legitimate Israelite leadership — a catastrophic compromise."
             },
             {
-              "ref": "9:2",
-              "note": "MacArthur: Yet even in judgment, God's compassion prevails. When the people cry out, he raises a deliverer. The cycle reveals a God who is both just and merciful — who punishes sin but cannot ultimately abandon the people he has chosen."
-            },
-            {
-              "ref": "9:3",
-              "note": "MacArthur: The judges themselves are deeply flawed. This is not accidental but theological: God uses broken instruments to accomplish his purposes, ensuring that the glory belongs to him, not to the deliverer. No judge is the Messiah; every judge points to the need for one."
-            },
-            {
-              "ref": "9:4",
-              "note": "MacArthur: The NT reads the Judges period as both warning and hope. Hebrews 11:32 lists Gideon, Barak, Samson, and Jephthah among the faithful — not because they were perfect, but because, in their best moments, they trusted God against impossible odds."
+              "ref": "9:4-6",
+              "note": "The seventy shekels from Baal-Berith's temple funded the hiring of 'reckless scoundrels.' MacArthur emphasizes that Abimelech's reign began with pagan money and mercenary violence. The coronation by 'the great tree at the pillar in Shechem' occurred at a Canaanite sacred site."
             }
           ]
         },
@@ -62,82 +64,90 @@
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
             {
-              "ref": "9:1",
-              "note": "Calvin: On murder of 70 brothers; the parable of the trees: God's patience with Israel across repeated cycles of apostasy and deliverance displays the persistence of covenant grace. He does not abandon his people when they abandon him — though he disciplines them severely. This is the pattern of every believer's life."
+              "ref": "9:1-6",
+              "note": "Calvin sees in Abimelech the fruit of Gideon's compromises. Gideon's concubine, Gideon's ephod, Gideon's many sons — each sowed seeds that now produce fratricide and tyranny. Sin does not stay contained; it metastasizes across generations."
             },
             {
-              "ref": "9:2",
-              "note": "Calvin: The practical application for the church is sobering: spiritual decline is not sudden but cyclical. Each generation must fight the same battles of faith. Inherited religion without personal conviction produces exactly the moral chaos described in Judges."
+              "ref": "9:5",
+              "note": "Calvin notes that Jotham alone escaped — the providential preservation of one witness to pronounce curse and await vindication. God's justice works through human agents, even when most are complicit in evil."
             }
           ]
         },
         "net": {
-          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "source": "NET Bible Full Notes — Biblical Studies Press",
           "notes": [
             {
-              "ref": "9:1",
-              "note": "NET Note: The Hebrew syntax in this section employs thewayyiqtolnarrative chain with characteristic markers of the Deuteronomistic editorial framework. The repeated formula \"the Israelites did evil in the eyes of the LORD\" (wayyaʿăśû... hāraʿ bĕʿênê YHWH) frames each cycle."
+              "ref": "9:2",
+              "note": "The phrase 'all the citizens of Shechem' (kol-baʿălê šĕkem) uses baʿal, which can mean 'lord,' 'citizen,' or 'Baal-worshiper.' The ambiguity may be intentional: these Shechemites are citizens, landowners, and likely syncretistic in religion."
             },
             {
-              "ref": "9:2",
-              "note": "NET Note: Key terms carry specific theological weight:šāpaṭ(\"to judge\") means not merely judicial arbitration but executive leadership and military deliverance — the \"judges\" are better understood as \"deliverers\" or \"champions.\""
+              "ref": "9:4",
+              "note": "The 'temple of Baal-Berith' (bêt bĕrît) means 'lord of the covenant.' This Canaanite deity was associated with treaty-making. The irony is thick: covenant money funds covenant-breaking murder."
             }
           ]
         },
         "block": {
-          "source": "Daniel I. Block, Judges, Ruth, New American Commentary (1999) — Scholarly Paraphrase",
+          "source": "Daniel Block, NAC Judges — Scholarly Paraphrase",
           "notes": [
             {
-              "ref": "9:1",
-              "note": "Block: On murder of 70 brothers; the parable of the trees: the narrative here exhibits the characteristic Judges cycle — Israel's failure provokes divine discipline, which produces a cry for help, which God answers through a flawed but Spirit-empowered deliverer. The pattern is theological, not merely historical."
+              "ref": "9:1-3",
+              "note": "Block emphasizes Abimelech's rhetoric: he frames the issue as Shechemite self-interest versus outside rule. His argument is purely political, devoid of theological content. Abimelech never invokes YHWH or Israel's covenant — he operates entirely in Canaanite categories."
             },
             {
-              "ref": "9:3",
-              "note": "Block: The literary artistry of this section is deliberate: the narrator uses irony, wordplay, and structural echoes to expose the gap between what Israel should be (a covenant people) and what it has become (indistinguishable from Canaan)."
+              "ref": "9:5-6",
+              "note": "Block notes that the 'one stone' suggests ritual execution, possibly at a sacred site. The number seventy and the single stone evoke Canaanite royal succession rituals. Abimelech adopts Canaanite political patterns wholesale."
             }
           ]
         },
         "webb": {
-          "source": "Barry G. Webb, The Book of Judges, NICOT (2012) — Scholarly Paraphrase",
+          "source": "Barry Webb, NICOT Judges — Scholarly Paraphrase",
           "notes": [
             {
-              "ref": "9:1",
-              "note": "Webb: On murder of 70 brothers; the parable of the trees: the placement of this episode within the book's larger structure advances the thesis of progressive deterioration. Each judge cycle descends further from the Othniel paradigm (3:7-11), demonstrating that human deliverance without heart-change produces only temporary relief."
+              "ref": "9:1-6",
+              "note": "Webb reads this as anti-monarchy polemic: when Israel seeks a king, this is what they get — fratricide, Canaanite alliances, and pagan funding. Abimelech is the dark mirror of the kingship Israel will later demand (1 Sam 8)."
             },
             {
-              "ref": "9:2",
-              "note": "Webb: The theological irony is central to the narrator's purpose — God uses increasingly unlikely and morally compromised agents to deliver Israel, demonstrating that salvation depends on divine grace, not human virtue."
+              "ref": "9:4",
+              "note": "Webb observes that 'reckless and rash' (rêqîm ûpōḥăzîm) men became Abimelech's power base. The adjectives suggest empty, worthless characters. Tyranny attracts and empowers the worst elements of society."
             }
           ]
         },
-        "hist": {
-          "context": "This section addresses murder of 70 brothers; the parable of the trees. The narrative advances the book's central argument: when Israel forsakes the covenant, disaster follows; when Israel cries out, God raises a deliverer — but each cycle descends further into moral compromise."
-        }
+        "hist": "Shechem occupied a strategic position in the central hill country, controlling the pass between Mount Ebal and Mount Gerizim. Its mixed Israelite-Canaanite population made it a natural base for Abimelech's hybrid identity. The temple of Baal-Berith (El-Berith) was a significant Canaanite sanctuary; its treasury funded Abimelech's coup. Archaeological excavations at Tell Balata (Shechem) have uncovered a massive Middle Bronze Age temple that may have continued in use into the Iron Age."
       }
     },
     {
       "section_num": 2,
-      "header": "Verses 22–57 — Civil War; Abimelech Dies by a Millstone",
-      "verse_start": 22,
-      "verse_end": 57,
+      "header": "Verses 7–21 — Jotham's Fable of the Trees and Prophetic Curse",
+      "verse_start": 7,
+      "verse_end": 21,
       "panels": {
         "heb": [
           {
-            "word": "key term",
-            "transliteration": "transliteration",
-            "gloss": "meaning",
-            "paragraph": "A key Hebrew term in this section on Shechem revolts; tower burned; a woman's millstone ends the tyrant carries theological weight that illuminates the passage's role in Judges' narrative of covenant decline and divine patience."
+            "word": "מָשָׁל",
+            "transliteration": "māšāl",
+            "gloss": "parable, proverb",
+            "paragraph": "Jotham's speech is a māšāl — a wisdom saying that uses analogy to convey truth. The fable of the trees seeking a king is the oldest known example of political fable in ancient literature. Through allegory, Jotham exposes the absurdity of Shechem's choice: they rejected worthy rulers and crowned a thornbush."
+          },
+          {
+            "word": "אָטָד",
+            "transliteration": "ʾāṭād",
+            "gloss": "thornbush, bramble",
+            "paragraph": "The thornbush (ʾāṭād) represents Abimelech. Unlike the olive, fig, and vine — which produce valuable fruit — the thornbush produces nothing useful and is flammable. Jotham's image predicts that Abimelech will destroy those who crowned him, just as a thornbush fire consumes the cedars."
           }
         ],
         "cross": {
           "refs": [
             {
-              "ref": "Judg 2:11-19",
-              "note": "The programmatic cycle statement — sin, oppression, cry, deliverance, rest, relapse — governs every episode in Judges. Each cycle is a local instance of this universal pattern."
+              "ref": "2 Kings 14:9",
+              "note": "Jehoash uses a similar plant fable to mock Amaziah: a thistle demanding a cedar's daughter. Biblical authors employed plant parables for political critique."
             },
             {
-              "ref": "Heb 11:32-34",
-              "note": "The NT celebrates the judges' faith while acknowledging their failures. \"Who through faith conquered kingdoms, administered justice, and gained what was promised\" — imperfect faith still accomplishes God's purposes."
+              "ref": "Ezek 17:1-10",
+              "note": "Ezekiel's parable of the eagles and the vine critiques Zedekiah's politics. Prophetic fables expose political folly through vivid imagery."
+            },
+            {
+              "ref": "Judg 9:56-57",
+              "note": "Jotham's curse is fulfilled exactly: God repaid Abimelech's wickedness and brought Jotham's curse on the Shechemites."
             }
           ]
         },
@@ -145,8 +155,12 @@
           "source": "MacArthur Study Bible — Faithful Paraphrase",
           "notes": [
             {
-              "ref": "9:22",
-              "note": "MacArthur: The passage on Shechem revolts; tower burned; a woman's millstone ends the tyrant demonstrates the consequences of covenant unfaithfulness — not as abstract theology but as lived disaster. When Israel forsakes God, God does not merely withdraw blessing; he actively delivers them into the hands of their enemies."
+              "ref": "9:7-15",
+              "note": "MacArthur notes the fable's structure: olive, fig, and vine decline kingship because they have productive work; only the worthless thornbush accepts. The parable indicts both Abimelech (worthless) and Shechem (foolish for choosing him). True leadership serves; tyranny exploits."
+            },
+            {
+              "ref": "9:16-21",
+              "note": "Jotham's application is biting: 'If you have acted honorably... then rejoice!' The conditional exposes the obvious truth — they have not acted honorably. The curse operates covenantally: faithlessness brings mutual destruction."
             }
           ]
         },
@@ -154,268 +168,407 @@
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
             {
-              "ref": "9:(22, '')",
-              "note": "Calvin: On 57 — Civil War; Abimelech Dies by a Millstone: cles of apostasy and deliverance displays the persistence of covenant grace. He does not abandon his people when they abandon him — though he disciplines them severely. This is the pattern of every believer's life."
+              "ref": "9:7-15",
+              "note": "Calvin admires the fable's rhetorical brilliance. Jotham does not rage or threaten; he tells a story that convicts. The best trees refuse a crown; the worst tree craves it. Those who seek power most aggressively are often least fit to wield it."
+            },
+            {
+              "ref": "9:20",
+              "note": "Calvin sees the mutual destruction of Abimelech and Shechem as divine justice working through human agency. Those who conspire in wickedness become instruments of each other's punishment. Sin is self-consuming."
             }
           ]
         },
         "net": {
-          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
+          "source": "NET Bible Full Notes — Biblical Studies Press",
           "notes": [
             {
-              "ref": "9:(22, '')",
-              "note": "NET Note: On 57 — Civil War; Abimelech Dies by a Millstone: teristic markers of the Deuteronomistic editorial framework. The repeated formula \"the Israelites did evil in the eyes of the LORD\" (wayyaʿăśû... hāraʿ bĕʿênê YHWH) frames each cycle. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
+              "ref": "9:8",
+              "note": "The phrase mālĕkâ ʿālênû ('reign over us') uses the verb mālak, which will become central to Israel's monarchy debates. The trees' request anticipates 1 Samuel 8: 'Give us a king to lead us.'"
+            },
+            {
+              "ref": "9:15",
+              "note": "The thornbush's threat — 'let fire come out... and consume the cedars of Lebanon' — is absurdly grandiose. A bramble claiming to shelter cedars is laughable; a bramble threatening cedars with fire is ominous. Both elements characterize Abimelech."
             }
           ]
         },
         "block": {
-          "source": "Daniel I. Block, Judges, Ruth, New American Commentary (1999) — Scholarly Paraphrase",
+          "source": "Daniel Block, NAC Judges — Scholarly Paraphrase",
           "notes": [
             {
-              "ref": "9:(22, '')",
-              "note": "Block: On 57 — Civil War; Abimelech Dies by a Millstone: : the narrative here exhibits the characteristic Judges cycle — Israel's failure provokes divine discipline, which produces a cry for help, which God answers through a flawed but Spirit-empowered deliverer. The pattern is theological, not merely historical."
+              "ref": "9:7-15",
+              "note": "Block reads the fable as anti-monarchical theology. The worthy plants serve their divine purpose (oil, sweetness, wine); they do not seek to 'hold sway' over others. Only the useless thornbush craves dominion. Abimelech embodies the Canaanite model of kingship that Israel must reject."
+            },
+            {
+              "ref": "9:16-21",
+              "note": "Block notes that Jotham fled to Beer — 'well' — a place of refuge like other wilderness wells in biblical narrative. From safety, he awaits the curse's fulfillment. His role is prophetic: he speaks the word and withdraws."
             }
           ]
         },
         "webb": {
-          "source": "Barry G. Webb, The Book of Judges, NICOT (2012) — Scholarly Paraphrase",
+          "source": "Barry Webb, NICOT Judges — Scholarly Paraphrase",
           "notes": [
             {
-              "ref": "9:(22, '')",
-              "note": "Webb: On 57 — Civil War; Abimelech Dies by a Millstone: : the placement of this episode within the book's larger structure advances the thesis of progressive deterioration. Each judge cycle descends further from the Othniel paradigm (3:7-11), demonstrating that human deliverance without heart-change produces only temporary relief."
+              "ref": "9:7-15",
+              "note": "Webb emphasizes the fable's universality: it critiques not just Abimelech but the human tendency to elevate the unworthy while the worthy decline public service. Democratic and monarchic systems alike face this dynamic."
+            },
+            {
+              "ref": "9:19-20",
+              "note": "Webb notes the chiastic structure of the curse: 'May fire come from Abimelech and consume Shechem / may fire come from Shechem and consume Abimelech.' The curse is symmetrical — both parties will destroy each other."
             }
           ]
         },
-        "hist": {
-          "context": "This section addresses Shechem revolts; tower burned; a woman's millstone ends the tyrant. The narrative advances the book's central argument: when Israel forsakes the covenant, disaster follows; when Israel cries out, God raises a deliverer — but each cycle descends further into moral compromise."
-        }
+        "hist": "Political fables using trees and plants appear across ancient Near Eastern literature. The Egyptian 'Contendings of Horus and Seth' includes plant imagery; Mesopotamian wisdom literature uses similar devices. Jotham's fable belongs to this international tradition but serves distinctly Israelite theological purposes: exposing the folly of choosing Canaanite-style kingship."
+      }
+    },
+    {
+      "section_num": 3,
+      "header": "Verses 22–41 — Abimelech's Troubled Reign and Gaal's Failed Revolt",
+      "verse_start": 22,
+      "verse_end": 41,
+      "panels": {
+        "heb": [
+          {
+            "word": "רוּחַ רָעָה",
+            "transliteration": "rûaḥ rāʿâ",
+            "gloss": "evil spirit",
+            "paragraph": "God sent a 'spirit of evil' (rûaḥ rāʿâ) between Abimelech and Shechem. This is not demonic possession but divinely orchestrated discord — God uses the natural consequences of treachery to bring judgment. Those who conspired in blood now turn on each other. The 'spirit' is the atmosphere of mutual suspicion that betrayers inevitably create."
+          },
+          {
+            "word": "בָּגַד",
+            "transliteration": "bāgad",
+            "gloss": "to deal treacherously",
+            "paragraph": "The Shechemites 'dealt treacherously' (bāgad) with Abimelech — the same verb used for covenant violation. Having betrayed Gideon's house by supporting Abimelech, they now betray Abimelech himself. Treachery breeds treachery; the conspirators cannot trust each other."
+          }
+        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "1 Sam 16:14",
+              "note": "An 'evil spirit from the LORD' tormented Saul. God uses spirits to accomplish judgment; human freedom operates within divine sovereignty."
+            },
+            {
+              "ref": "1 Kings 22:19-23",
+              "note": "A 'lying spirit' deceived Ahab's prophets. The OT portrays God as sovereign even over the means of judgment."
+            },
+            {
+              "ref": "Judg 9:57",
+              "note": "The narrator confirms that God repaid both Abimelech's wickedness and Shechem's crime. The evil spirit initiated a chain leading to mutual destruction."
+            }
+          ]
+        },
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "9:22-25",
+              "note": "MacArthur notes that Abimelech 'governed' (śār) but was not called 'judge' (šōpēṭ). He ruled without divine calling or deliverer role. The ambushes and highway robbery indicate breakdown of order — the very stability Abimelech promised has collapsed."
+            },
+            {
+              "ref": "9:26-41",
+              "note": "Gaal's revolt exploited Shechemite discontent but failed through incompetence and Zebul's cunning. MacArthur sees here the chaos that follows when societies reject God's order: one tyrant, then rebels, then more tyranny."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "9:22-25",
+              "note": "Calvin observes that three years of uneasy rule preceded the breakdown. Evil alliances often endure briefly before mutual suspicion destroys them. God is patient, allowing sin to ripen before judgment falls."
+            },
+            {
+              "ref": "9:30-41",
+              "note": "Calvin notes Zebul's role as double agent — outwardly serving Shechem while secretly informing Abimelech. Treacherous societies produce treacherous individuals. No one can be trusted when trust itself has been destroyed."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "9:23",
+              "note": "The Hebrew wayyĕšallaḥ ('and God sent') uses the Piel of šālaḥ, emphasizing deliberate divine action. God actively introduces the discord that will accomplish His purposes."
+            },
+            {
+              "ref": "9:37",
+              "note": "Gaal's reference to 'the center of the land' (ṭabbûr hāʾāreṣ) literally means 'navel of the earth' — a term for sacred geography. Shechem's location between Gerizim and Ebal gave it cosmic significance in Canaanite thought."
+            }
+          ]
+        },
+        "block": {
+          "source": "Daniel Block, NAC Judges — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "9:22-25",
+              "note": "Block emphasizes that Abimelech ruled 'over Israel' — the narrator's ironic note. This Canaanite-style tyrant with pagan backing claimed authority over YHWH's people. The banditry represents divine judgment working through social breakdown."
+            },
+            {
+              "ref": "9:26-41",
+              "note": "Block reads Gaal as another opportunist exploiting instability. His boast — 'Who is Abimelech... that we should serve him?' — echoes the Shechemites' earlier rejection of Gideon's sons. Shechem lurches from one failed leader to another."
+            }
+          ]
+        },
+        "webb": {
+          "source": "Barry Webb, NICOT Judges — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "9:23-25",
+              "note": "Webb sees the 'evil spirit' as the literary pivot of the chapter. Before v.23, conspiracy; after v.23, disintegration. God's intervention transforms human choices into divine judgment. The Shechemites become 'ambushers' — the verb describes what they helped Abimelech do to Gideon's sons."
+            },
+            {
+              "ref": "9:35-41",
+              "note": "Webb notes the battle's ironic geography: it occurs at the same city gate where Abimelech was crowned. The place of his illegitimate enthronement becomes the site of his vindication against rebels."
+            }
+          ]
+        },
+        "hist": "The social dynamics reflect Late Bronze and early Iron Age Canaan: city-states with mixed populations, shifting allegiances, and endemic political violence. Shechem's archaeology shows destruction layers consistent with the kind of internal conflict described here. The 'men lying in ambush' reflect guerrilla tactics common when central authority weakened."
+      }
+    },
+    {
+      "section_num": 4,
+      "header": "Verses 42–49 — Abimelech Destroys Shechem and Burns the Tower",
+      "verse_start": 42,
+      "verse_end": 49,
+      "panels": {
+        "heb": [
+          {
+            "word": "מִגְדָּל",
+            "transliteration": "migdāl",
+            "gloss": "tower, fortress",
+            "paragraph": "The 'tower of Shechem' (migdal-šĕkem) was a fortified stronghold, probably the temple of El-Berith itself. Archaeological evidence suggests a massive tower-temple structure at Shechem. The citizens who fled there sought sanctuary in their god's house — a sanctuary Abimelech violated with fire."
+          },
+          {
+            "word": "צְרִיחַ",
+            "transliteration": "ṣĕrîaḥ",
+            "gloss": "vault, inner chamber",
+            "paragraph": "The 'inner chamber' (ṣĕrîaḥ) of the temple of El-Berith was the last refuge. The word suggests a fortified crypt or basement. Approximately a thousand men and women died there — the same number as the Shechemites who crowned Abimelech. The sanctuary became a crematorium."
+          }
+        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Judg 9:15",
+              "note": "Jotham's curse predicted fire from the thornbush consuming the cedars. Now Abimelech literally burns the tower where Shechem's leaders shelter."
+            },
+            {
+              "ref": "Judg 9:20",
+              "note": "'May fire come out from Abimelech and consume the citizens of Shechem.' The curse's first half is fulfilled with horrifying precision."
+            },
+            {
+              "ref": "Deut 32:35",
+              "note": "'Vengeance is mine; I will repay.' God used Abimelech as His instrument of judgment on Shechem, even as Abimelech himself remained guilty."
+            }
+          ]
+        },
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "9:42-45",
+              "note": "MacArthur notes the total destruction: Abimelech killed the people, demolished the city, and sowed it with salt. Salting a conquered city was an ancient Near Eastern curse ritual, rendering the land symbolically barren. Shechem — so recently the scene of Abimelech's coronation — became a wasteland."
+            },
+            {
+              "ref": "9:46-49",
+              "note": "The temple of El-Berith ('god of the covenant') became a death trap. MacArthur observes the theological irony: the shrine that funded Abimelech's rise became the furnace of Shechem's destruction. Pagan religion offered no protection from the consequences of pagan politics."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "9:42-49",
+              "note": "Calvin sees God's providence operating through Abimelech's wrath. The tyrant does not know he is fulfilling Jotham's curse; he acts from rage and ambition. Yet every branch carried to the tower, every flame that caught, accomplished divine justice. Human fury serves God's purposes."
+            },
+            {
+              "ref": "9:49",
+              "note": "Calvin notes the round number — 'about a thousand men and women' — suggesting totality. An entire community perished in their sanctuary. False gods cannot save their worshipers when the true God executes judgment."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "9:45",
+              "note": "The phrase wayyizrāʿehā meleḥ ('and he sowed it with salt') describes a ritual act. Salt symbolized barrenness and curse. The verb zāraʿ ('sow') creates bitter irony: Abimelech 'sows' not seed but sterility."
+            },
+            {
+              "ref": "9:46",
+              "note": "The phrase bêt ʾēl bĕrît ('temple of El-Berith') identifies this as a Canaanite sanctuary. 'El-Berith' may be another name for Baal-Berith or a distinct deity. Either way, the 'covenant god' failed to protect his covenant-makers."
+            }
+          ]
+        },
+        "block": {
+          "source": "Daniel Block, NAC Judges — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "9:42-45",
+              "note": "Block emphasizes that Abimelech's tactics — ambush, massacre, demolition, salting — represent standard ancient Near Eastern siege warfare. But the narrator wants readers to see beyond military history to theological judgment: Shechem reaps what it sowed."
+            },
+            {
+              "ref": "9:46-49",
+              "note": "Block notes that fleeing to the temple was a desperate measure; normally, sacred space offered protection. But Abimelech respects no sanctuary. The fire that consumes the temple literalizes Jotham's metaphor: the thornbush burns everything."
+            }
+          ]
+        },
+        "webb": {
+          "source": "Barry Webb, NICOT Judges — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "9:45",
+              "note": "Webb observes that sowing salt was more symbolic than practical — the amount required to actually sterilize soil would be enormous. The act declared Shechem cursed, devoted to destruction, never to be rebuilt (though it later was)."
+            },
+            {
+              "ref": "9:48-49",
+              "note": "Webb notes the grim detail: Abimelech commanded, 'What you have seen me do, do quickly!' His men imitated his violence. Tyranny creates imitators; violence begets violence. The army's efficiency in mass murder reflects their leader's character."
+            }
+          ]
+        },
+        "hist": "Archaeological excavations at Tell Balata (Shechem) reveal a massive MB IIB temple with walls over five meters thick — the 'tower' or 'fortress-temple' of the narrative. Destruction layers from the Late Bronze/Iron I transition show conflagration evidence. While precise dating is debated, the site's history includes violent destruction consistent with the Judges 9 account."
+      }
+    },
+    {
+      "section_num": 5,
+      "header": "Verses 50–57 — Abimelech's Death at Thebez and Divine Justice",
+      "verse_start": 50,
+      "verse_end": 57,
+      "panels": {
+        "heb": [
+          {
+            "word": "פֶּלַח רֶכֶב",
+            "transliteration": "pelaḥ rekeb",
+            "gloss": "upper millstone",
+            "paragraph": "A woman dropped an 'upper millstone' (pelaḥ rekeb) on Abimelech's head. The millstone was a heavy domestic implement used for grinding grain — a woman's tool. Abimelech, who had slaughtered seventy brothers, was felled by a household item thrown by an unnamed woman. The mighty warrior's death was unheroic and humiliating."
+          },
+          {
+            "word": "קָלוֹן",
+            "transliteration": "qālôn",
+            "gloss": "shame, disgrace",
+            "paragraph": "Abimelech's dying concern was shame (qālôn): 'Draw your sword and kill me, so they cannot say a woman killed me.' Honor culture made death by a woman's hand the ultimate disgrace for a warrior. His armor-bearer complied, but the narrator ensures we know the truth: Abimelech died of a woman's blow."
+          }
+        ],
+        "cross": {
+          "refs": [
+            {
+              "ref": "Judg 4:21",
+              "note": "Jael killed Sisera with a tent peg through his temple — another mighty warrior slain by a woman's hand using a domestic implement. God delights to overthrow the proud through unlikely agents."
+            },
+            {
+              "ref": "2 Sam 11:21",
+              "note": "Joab warns his messenger that David might ask, 'Who killed Abimelech? Was it not a woman who threw an upper millstone on him?' The story became proverbial for shameful military death."
+            },
+            {
+              "ref": "Judg 9:20",
+              "note": "'May fire come out from the citizens of Shechem and Beth Millo and consume Abimelech.' The curse's second half is fulfilled: Abimelech dies violently."
+            }
+          ]
+        },
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "9:50-54",
+              "note": "MacArthur notes the poetic justice: Abimelech, who stormed towers to massacre the helpless, died storming a tower when a helpless woman dropped a stone. His concern for reputation — 'lest they say a woman killed him' — reveals his shallow values. Honor mattered more than righteousness."
+            },
+            {
+              "ref": "9:55-57",
+              "note": "The narrator's summary emphasizes divine justice: 'God repaid the wickedness that Abimelech had done... God also made the people of Shechem pay... The curse of Jotham was fulfilled.' Nothing was accidental; everything served God's purposes."
+            }
+          ]
+        },
+        "calvin": {
+          "source": "John Calvin, Commentaries — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "9:50-54",
+              "note": "Calvin observes that Abimelech's death matches his life: violent, prideful, and ultimately futile. His final act — ordering his own death to preserve honor — shows a man who never understood that true honor comes from God, not from how one dies."
+            },
+            {
+              "ref": "9:56-57",
+              "note": "Calvin emphasizes the narrator's theological interpretation: this was not random tragedy but divine judgment. Both parties received exactly what their crimes deserved. The curse that seemed like futile words from a fugitive became the script that history followed."
+            }
+          ]
+        },
+        "net": {
+          "source": "NET Bible Full Notes — Biblical Studies Press",
+          "notes": [
+            {
+              "ref": "9:53",
+              "note": "The phrase wattāreṣ ʾet-gulgōltô ('and she crushed his skull') uses the verb rāṣaṣ, which means to shatter or crush. The skull (gulgōlet) is literally 'his head-bone.' The clinical description emphasizes the severity of the wound."
+            },
+            {
+              "ref": "9:54",
+              "note": "The phrase pen-yōʾmĕrû lî ʾiššâ hărāgātû ('lest they say of me, a woman killed him') reveals cultural assumptions about gender and honor. The passive construction ('it will be said') invokes public reputation — Abimelech's last concern is what people will think."
+            }
+          ]
+        },
+        "block": {
+          "source": "Daniel Block, NAC Judges — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "9:50-54",
+              "note": "Block notes the literary pattern: Abimelech followed Shechem's destruction with an identical assault on Thebez. But God interrupted the repetition. The tyrant who succeeded through violence was stopped by violence — specifically, the kind of unheroic violence he used against others."
+            },
+            {
+              "ref": "9:56-57",
+              "note": "Block emphasizes the summary's comprehensiveness: God repaid Abimelech 'for the wickedness he had done to his father'; God made Shechem pay 'for all their wickedness.' Both parties, both crimes, both judgments — nothing escaped divine accounting."
+            }
+          ]
+        },
+        "webb": {
+          "source": "Barry Webb, NICOT Judges — Scholarly Paraphrase",
+          "notes": [
+            {
+              "ref": "9:53-54",
+              "note": "Webb observes that the unnamed woman parallels the unnamed concubine of chapter 19 and the named Jael of chapter 4. Women in Judges often become God's agents of judgment when men fail. The patriarchal order is subverted for divine purposes."
+            },
+            {
+              "ref": "9:56-57",
+              "note": "Webb reads the conclusion as the narrator's final comment on the entire Gideon-Abimelech complex. What began with Gideon's flawed victory ends with his son's shameful defeat. The cycle shows Israel descending, not ascending."
+            }
+          ]
+        },
+        "hist": "Death by a woman's hand was considered deeply shameful in ancient Mediterranean honor cultures. Warriors were supposed to die in battle against other warriors. Abimelech's request for his armor-bearer to finish him mirrors Saul's later request (1 Sam 31:4) — both sought to avoid the dishonor of an ignoble death. The millstone detail is strikingly realistic; upper millstones were heavy enough to cause fatal skull fractures."
       }
     }
   ],
   "chapter_panels": {
     "ppl": [
       {
-        "name": "Israel",
-        "role": "The covenant people in decline",
-        "text": "In chapter 9, Israel's relationship with God continues the pattern established in the prologue (2:6-23): cyclical failure punctuated by divine mercy. The people are collectively responsible for the moral collapse the book describes."
-      }
-    ],
-    "trans": "<tr><th>Version</th><th>Translation</th></tr><tr><td class=\"t-label\">NIV</td><td>When the brothers repeated all this to the citizens of Shechem, they were inclined to follow Abimelek, for they said, “He is related to us.”</td></tr><tr><td class=\"t-label\">ESV</td><td>And his mother’s relatives spoke all these words on his behalf in the ears of all the leaders of Shechem, and their hearts inclined to follow Abimelech, for they said, “He is our brother.”</td></tr><tr><td class=\"t-label\">NIV</td><td>“Ask all the citizens of Shechem, ‘Which is better for you: to have all seventy of Jerub-Baal’s sons rule over you, or just one man?’ Remember, I am your flesh and blood.”</td></tr><tr><td class=\"t-label\">ESV</td><td>“Say in the ears of all the leaders of Shechem, ‘Which is better for you, that all seventy of the sons of Jerubbaal rule over you, or that one rule over you?’ Remember also that I am your bone and your flesh.”</td></tr>",
-    "src": [
-      {
-        "title": "Amarna Letters",
-        "quote": "Letters from Canaanite vassal kings describe the political fragmentation and inter-city rivalries characterising the Judges period.",
-        "note": "The correspondence confirms Canaan's decentralised city-state structure — the landscape in which tribal judges operated as regional deliverers."
+        "name": "Abimelech",
+        "role": "Son of Gideon; self-appointed king",
+        "text": "Abimelech's name means 'my father is king' — ironic since Gideon refused kingship. He murdered his seventy brothers, ruled briefly through tyranny, and died shamefully when a woman crushed his skull. He represents Canaanite-style kingship at its worst."
       },
       {
-        "title": "Merneptah Stele (c.1207 BC)",
-        "quote": "The earliest extra-biblical mention of Israel in Canaan, dating to the period of the Judges.",
-        "note": "Places Israel in Canaan during the Judges period, corroborating the biblical settlement chronology."
+        "name": "Jotham",
+        "role": "Youngest son of Gideon; prophetic survivor",
+        "text": "Jotham alone escaped the massacre. From Mount Gerizim, he pronounced a curse-fable that predicted Abimelech's and Shechem's mutual destruction. He then fled and awaited vindication — which came exactly as he foretold."
       },
       {
-        "title": "Ugaritic Baal Cycle (KTU 1.1-6)",
-        "quote": "Describes Baal's conflict with Mot and Yam — the religious background to Judges' repeated Baal worship.",
-        "note": "Understanding Canaanite religion is essential: Israel was drawn to a sophisticated fertility cult, not abstract idolatry."
-      }
-    ],
-    "rec": [
-      {
-        "who": "Origen (c.185-254)",
-        "text": "Origen reads Judges 9 allegorically: the enemies represent sins that oppress the soul, and the judges represent Christ who delivers the believer from spiritual bondage. The cycle of sin and deliverance maps onto the Christian life of repentance and grace."
-      }
-    ],
-    "lit": {
-      "rows": [
-        {
-          "label": "Abimelech Seizes Power; Jotham's Fable — 9:1-21",
-          "text": "Sets the narrative context",
-          "is_key": false
-        },
-        {
-          "label": "Resolution",
-          "text": "The narrative advances through divine action and human response",
-          "is_key": false
-        }
-      ],
-      "note": ""
-    },
-    "hebtext": [
-      {
-        "word": "key term",
-        "tlit": "transliteration",
-        "gloss": "meaning",
-        "note": "A key Hebrew term in this section on murder of 70 brothers; the parable of the trees carries theological weight that illuminates the passage's role in Judges' narrative of covenant decline and divine patience."
+        "name": "Gaal",
+        "role": "Opportunistic rebel",
+        "text": "Gaal exploited Shechemite discontent to launch a failed revolt against Abimelech. His boasts exceeded his ability; Zebul's treachery and Abimelech's military skill quickly crushed his uprising."
       },
       {
-        "word": "key term",
-        "tlit": "transliteration",
-        "gloss": "meaning",
-        "note": "A key Hebrew term in this section on Shechem revolts; tower burned; a woman's millstone ends the tyrant carries theological weight that illuminates the passage's role in Judges' narrative of covenant decline and divine patience."
+        "name": "Zebul",
+        "role": "Abimelech's governor in Shechem",
+        "text": "Zebul served as Abimelech's representative in Shechem but secretly reported Gaal's conspiracy. His double-dealing helped Abimelech defeat the revolt — a loyalist in a city of traitors."
       }
     ],
-    "thread": [
+    "themes": [
       {
-        "anchor": "Deut 28:15-68",
-        "target": "The curse warnings fulfilled",
-        "type": "Fulfilment",
-        "text": "Judges 9 shows Deuteronomy's covenant curses being enacted in history. The oppressors who afflict Israel are not random enemies but covenant consequences.",
-        "direction": "backward"
+        "theme": "Divine Judgment",
+        "content": "God sent an 'evil spirit' to turn conspirators against each other. Both Abimelech and Shechem received exactly what their crimes deserved. Jotham's curse was fulfilled precisely."
       },
       {
-        "anchor": "Heb 11:32-34",
-        "target": "Judges in the faith hall of fame",
-        "type": "Echo",
-        "text": "The NT redeems the judges' legacy: their faith, however flawed, accomplished God's purposes and points forward to Christ, the perfect deliverer.",
-        "direction": "forward"
-      }
-    ],
-    "tx": [
-      {
-        "ref": "LXX Judges (Vaticanus vs Alexandrinus)",
-        "title": "Two distinct Greek text traditions",
-        "content": "Judges has two significantly different LXX traditions (B and A), suggesting independent translation from different Hebrew Vorlagen.",
-        "note": "The textual diversity indicates a complex transmission history with multiple Hebrew editions."
+        "theme": "The Failure of Canaanite Kingship",
+        "content": "Abimelech represents everything wrong with Canaanite political models: violence, paganism, exploitation. His story warns against importing foreign patterns of leadership."
       },
       {
-        "ref": "4QJudgᵃ (Dead Sea Scrolls)",
-        "title": "Fragmentary Qumran witness",
-        "content": "Cave 4 fragments generally align with MT but show minor variants in spelling.",
-        "note": "The Qumran evidence supports MT reliability while confirming textual variation existed."
+        "theme": "Poetic Justice",
+        "content": "The fratricide king died shamefully. The sanctuary that funded his rise became a crematorium. Those who live by treachery perish by treachery."
       }
-    ],
-    "themes": {
-      "scores": [
-        {
-          "label": "Covenant unfaithfulness",
-          "score": 10
-        },
-        {
-          "label": "Divine patience",
-          "score": 10
-        },
-        {
-          "label": "Moral decline",
-          "score": 10
-        },
-        {
-          "label": "Spirit-empowerment",
-          "score": 10
-        },
-        {
-          "label": "Idolatry",
-          "score": 10
-        }
-      ],
-      "note": "Judges 9: the downward spiral continues. The refrain \"everyone did what was right in his own eyes\" is not freedom but chaos — the absence of divine authority produces moral anarchy, not liberation."
-    }
+    ]
   },
-  "vhl_groups": [
-    {
-      "name": "divine",
-      "css_class": "vhl-divine",
-      "words": [
-        "God",
-        "LORD",
-        "Spirit",
-        "Angel",
-        "Lord",
-        "Holy Spirit",
-        "Father",
-        "Son",
-        "I AM",
-        "Almighty",
-        "Shaddai"
-      ],
-      "btn_types": [
-        "hebrew",
-        "hebrew-text",
-        "context"
-      ]
-    },
-    {
-      "name": "places",
-      "css_class": "vhl-place",
-      "words": [
-        "Canaan",
-        "Gilead",
-        "Shiloh",
-        "Shechem",
-        "Gaza",
-        "Bethlehem",
-        "Dan",
-        "Mizpah",
-        "Ophrah",
-        "Timnah",
-        "Hazor"
-      ],
-      "btn_types": [
-        "places",
-        "context"
-      ]
-    },
-    {
-      "name": "people",
-      "css_class": "vhl-person",
-      "words": [
-        "Othniel",
-        "Ehud",
-        "Deborah",
-        "Barak",
-        "Gideon",
-        "Abimelech",
-        "Jephthah",
-        "Samson",
-        "Delilah",
-        "God",
-        "LORD",
-        "Israel",
-        "Philistines"
-      ],
-      "btn_types": [
-        "people",
-        "context"
-      ]
-    },
-    {
-      "name": "time",
-      "css_class": "vhl-time",
-      "words": [
-        "day",
-        "days",
-        "year",
-        "years",
-        "time",
-        "generation",
-        "month"
-      ],
-      "btn_types": [
-        "timeline",
-        "context"
-      ]
-    },
-    {
-      "name": "key",
-      "css_class": "vhl-key",
-      "words": [
-        "evil",
-        "cry",
-        "deliver",
-        "judge",
-        "rest",
-        "oppress",
-        "forsake",
-        "serve",
-        "covenant",
-        "idolatry",
-        "Baal",
-        "Ashtoreth",
-        "cycle",
-        "king"
-      ],
-      "btn_types": [
-        "literary",
-        "cross"
-      ]
-    }
-  ]
+  "vhl_groups": []
 }

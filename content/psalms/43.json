@@ -5,7 +5,10 @@
   "chapter_num": 43,
   "title": "Psalms 43",
   "subtitle": "Send Me Your Light and Your Truth",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "first-temple-destroyed",
+    "text": "See on Timeline — Longing for the Temple"
+  },
   "map_story_link": null,
   "sections": [
     {
@@ -291,5 +294,6 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "prayer_prompt": "As you consider 'Send me your light and your faithful care,' consider asking God whether you are waiting for His guidance to find you or actively asking Him to send it — and whether you would follow it if it led somewhere uncomfortable."
 }

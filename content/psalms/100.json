@@ -5,7 +5,10 @@
   "chapter_num": 100,
   "title": "Psalms 100",
   "subtitle": "Shout for Joy to the LORD, All the Earth",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "solomon-temple",
+    "text": "See on Timeline — Temple Worship"
+  },
   "map_story_link": null,
   "sections": [
     {
@@ -295,5 +298,6 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "prayer_prompt": "Shout for joy and enter His gates with thanksgiving. Consider asking God about the gratitude that should characterize your approach to Him — what thanksgiving you've neglected."
 }

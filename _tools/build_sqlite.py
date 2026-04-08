@@ -849,15 +849,16 @@ def populate_chapters(cur):
             cur.execute(
                 'INSERT INTO chapters (id, book_id, chapter_num, title, subtitle, '
                 'timeline_link_event, timeline_link_text, '
-                'map_story_link_id, map_story_link_text, coaching_json) '
-                'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                'map_story_link_id, map_story_link_text, coaching_json, prayer_prompt) '
+                'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                 (chapter_id, book_id, ch_num,
                  data.get('title'), data.get('subtitle'),
                  tl['event_id'] if tl else None,
                  tl['text'] if tl else None,
                  ms['story_id'] if ms else None,
                  ms['text'] if ms else None,
-                 coaching_str)
+                 coaching_str,
+                 data.get('prayer_prompt'))
             )
             chapter_count += 1
 

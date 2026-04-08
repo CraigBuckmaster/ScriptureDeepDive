@@ -168,24 +168,6 @@
             }
           ]
         },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "19:(11, '')",
-              "note": "Bergen: On 24 — Michal's Rescue; David Flees to Samuel at Ramah: : the narrative advances 1 Samuel's central theological argument — the transition from theocratic judges to anointed monarchy. God remains sovereign over the process, using human ambition, failure, and faith to accomplish his redemptive purposes."
-            }
-          ]
-        },
-        "tsumura": {
-          "source": "David T. Tsumura, The First Book of Samuel, NICOT (2007) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "19:(11, '')",
-              "note": "Tsumura: On 24 — Michal's Rescue; David Flees to Samuel at Ramah: : the Hebrew syntax and vocabulary in this section exhibit features characteristic of early monarchic prose narrative. Key terms carry specific institutional and covenantal connotations that anchor the passage in the broader Deuteronomistic framework."
-            }
-          ]
-        },
         "hist": {
           "context": "This section addresses Michal's deception with the idol; Saul's men and then Saul himself prophesy at Naioth. The narrative advances 1 Samuel's central question: what kind of king does Israel need? Every episode contributes to the answer — not the one who looks the part, but the one whose heart is aligned with God's purposes."
         }
@@ -416,5 +398,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "Saul sends men to capture David, but they encounter prophets and begin prophesying themselves. Saul goes personally — and he too prophesies, stripping off his clothes. The Spirit overrides the king's murderous intent. 'Is Saul also among the prophets?' is asked again (cf. 10:11), but now it is ironic rather than hopeful.",
+      "genre_tag": "canonical_thread"
+    }
+  ],
+  "prayer_prompt": "As you consider Saul hunting David despite knowing David had done nothing wrong, consider asking God for the grace to endure unjust treatment without becoming bitter — and to trust Him to vindicate you in His own time."
 }

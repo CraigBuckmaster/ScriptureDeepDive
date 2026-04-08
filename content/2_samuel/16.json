@@ -19,10 +19,16 @@
       "panels": {
         "heb": [
           {
-            "word": "key term",
-            "transliteration": "transliteration",
-            "gloss": "meaning",
-            "paragraph": "A key Hebrew term in this section on Ziba slanders Mephibosheth; Shimei curses David; \"let him curse — perhaps the LORD will repay me\" carries theological weight illuminating 2 Samuel's interplay of covenant promise, royal failure, and divine faithfulness."
+            "word": "qālal",
+            "transliteration": "qālal",
+            "gloss": "to curse / to be light",
+            "paragraph": "Shimei's relentless cursing (qālal) of David echoes the covenant curses of Deuteronomy. The same root can mean 'to be light' or 'trivial' — Shimei treats the LORD's anointed as worthless. David's refusal to retaliate shows remarkable restraint: he accepts the curse as potentially from God's own hand."
+          },
+          {
+            "word": "ʿāpār",
+            "transliteration": "ʿāpār",
+            "gloss": "dust / earth",
+            "paragraph": "Shimei throws dust (ʿāpār) at David — a gesture of contempt and mourning. The image recalls Genesis 3:19 ('to dust you shall return') and anticipates David's own mortality. The king who once conquered Jerusalem now flees it covered in the dust of humiliation."
           }
         ],
         "cross": {
@@ -111,7 +117,7 @@
           ]
         },
         "hist": {
-          "context": "This section addresses Ziba slanders Mephibosheth; Shimei curses David; \"let him curse — perhaps the LORD will repay me\". The narrative advances 2 Samuel's central tension: the Davidic covenant is unconditional in its promise but consequential in its outworking. David's victories, sins, and sufferings all serve the larger story of God building a kingdom through a flawed but chosen king."
+          "context": "David flees Jerusalem during Absalom's coup. Ziba, servant of Mephibosheth, meets him with supplies but slanders his master, claiming Mephibosheth hopes to reclaim Saul's throne. David rashly grants Ziba all of Mephibosheth's property — a decision he'll later regret (19:24-30). At Bahurim, Shimei of Saul's clan emerges to curse David, calling him a 'man of blood' for displacing Saul's house. David forbids retaliation, interpreting even this humiliation as potentially from God."
         }
       }
     },
@@ -123,10 +129,10 @@
       "panels": {
         "heb": [
           {
-            "word": "key term",
-            "transliteration": "transliteration",
-            "gloss": "meaning",
-            "paragraph": "This section addresses Ziba's deception regarding Mephibosheth and Shimei's cursing of David, not Hushai's deception or Ahithophel's advice about concubines, which occur in chapter 17."
+            "word": "ʿēṣāh",
+            "transliteration": "ʿēṣāh",
+            "gloss": "counsel / advice",
+            "paragraph": "Ahithophel's counsel (ʿēṣāh) was legendary — 'like inquiring of God' (v. 23). The Hebrew ʿēṣāh carries weight: it's the same word used for divine guidance. Ahithophel's advice to publicly violate David's concubines is politically shrewd but morally monstrous, fulfilling Nathan's prophecy (12:11-12)."
           }
         ],
         "cross": {
@@ -187,7 +193,7 @@
           ]
         },
         "hist": {
-          "context": "This section addresses Ziba's deception and Shimei's cursing in chapter 16. Hushai's deception and Ahithophel's counsel occur in chapter 17."
+          "context": "Hushai reaches Jerusalem and convinces Absalom he has defected. Meanwhile, Ahithophel — David's former counselor turned traitor — advises Absalom to publicly take David's concubines on the palace roof. This act accomplishes two things: it signals an irreparable break with David (no reconciliation possible), and it fulfills Nathan's judgment that David's own house would rise against him. The chapter ends noting Ahithophel's counsel was regarded as oracular."
         }
       }
     }
@@ -416,5 +422,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "Shimei curses David: 'Get out, you murderer!' David forbids his men from retaliating: 'The LORD has told him to curse David. Who can ask, Why do you do this?' David accepts the cursing as possibly deserved — a remarkable act of self-awareness from a man mid-crisis. Even in flight, he is more spiritually lucid than Saul ever was.",
+      "genre_tag": "theological_insight"
+    }
+  ],
+  "prayer_prompt": "As you reflect on Shimei cursing David and David refusing to silence him, consider asking God whether there is a harsh voice in your life that, painful as it is, He may be allowing because it carries a truth you need to hear."
 }

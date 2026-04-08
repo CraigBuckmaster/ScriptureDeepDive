@@ -5,7 +5,10 @@
   "chapter_num": 121,
   "title": "Psalms 121",
   "subtitle": "I Lift My Eyes to the Mountains",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "solomon-temple",
+    "text": "See on Timeline — Song of Ascent"
+  },
   "map_story_link": null,
   "sections": [
     {
@@ -295,5 +298,6 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "prayer_prompt": "The pilgrim lifts eyes to the hills, knowing help comes from the LORD. Consider asking God about where you look for help — are your eyes on the hills or on the Maker of heaven and earth?"
 }

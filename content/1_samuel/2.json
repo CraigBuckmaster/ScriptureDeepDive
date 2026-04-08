@@ -168,24 +168,6 @@
             }
           ]
         },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "2:(12, '')",
-              "note": "Bergen: On 26 — Hophni and Phinehas: Worthless Priests: : the narrative advances 1 Samuel's central theological argument — the transition from theocratic judges to anointed monarchy. God remains sovereign over the process, using human ambition, failure, and faith to accomplish his redemptive purposes."
-            }
-          ]
-        },
-        "tsumura": {
-          "source": "David T. Tsumura, The First Book of Samuel, NICOT (2007) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "2:(12, '')",
-              "note": "Tsumura: On 26 — Hophni and Phinehas: Worthless Priests: : the Hebrew syntax and vocabulary in this section exhibit features characteristic of early monarchic prose narrative. Key terms carry specific institutional and covenantal connotations that anchor the passage in the broader Deuteronomistic framework."
-            }
-          ]
-        },
         "hist": {
           "context": "This section addresses contempt for offerings; sexual immorality; Samuel grows in favour. The narrative advances 1 Samuel's central question: what kind of king does Israel need? Every episode contributes to the answer — not the one who looks the part, but the one whose heart is aligned with God's purposes."
         }
@@ -214,51 +196,6 @@
             {
               "ref": "Heb 11:32-34",
               "note": "The NT celebrates Samuel and David among the faithful — imperfect people who, in their best moments, trusted God against impossible odds."
-            }
-          ]
-        },
-        "mac": {
-          "source": "MacArthur Study Bible — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "2:(27, '')",
-              "note": "MacArthur: On 36 — The Man of God's Prophecy Against Eli's House: reveals the heart of 1 Samuel's theology: God is building a kingdom, and the question is not whether Israel will have a king, but what kind of king God will provide. Human selection fails; divine selection endures."
-            }
-          ]
-        },
-        "calvin": {
-          "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "2:(27, '')",
-              "note": "Calvin: On 36 — The Man of God's Prophecy Against Eli's House: : God's providence operates through the full range of human experience — ambition, grief, jealousy, courage, and prayer. Nothing in the Samuel narrative happens outside divine sovereignty, yet human responsibility is never diminished."
-            }
-          ]
-        },
-        "net": {
-          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": [
-            {
-              "ref": "2:(27, '')",
-              "note": "NET Note: On 36 — The Man of God's Prophecy Against Eli's House: tegically placedwĕqatalforms that signal shifts in perspective or background information. The narrator's technique is sophisticated and deliberate. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
-            }
-          ]
-        },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "2:(27, '')",
-              "note": "Bergen: On 36 — The Man of God's Prophecy Against Eli's House: : the narrative advances 1 Samuel's central theological argument — the transition from theocratic judges to anointed monarchy. God remains sovereign over the process, using human ambition, failure, and faith to accomplish his redemptive purposes."
-            }
-          ]
-        },
-        "tsumura": {
-          "source": "David T. Tsumura, The First Book of Samuel, NICOT (2007) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "2:(27, '')",
-              "note": "Tsumura: On 36 — The Man of God's Prophecy Against Eli's House: : the Hebrew syntax and vocabulary in this section exhibit features characteristic of early monarchic prose narrative. Key terms carry specific institutional and covenantal connotations that anchor the passage in the broader Deuteronomistic framework."
             }
           ]
         },
@@ -498,5 +435,18 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Hannah's prayer (vv. 1-10) moves from personal thanksgiving to cosmic theology — God raises the poor, guards the faithful, shatters the mighty. The final word mentions 'his king' and 'his anointed' — remarkable since Israel has no king yet. Hannah's song anticipates the entire book's trajectory.",
+      "genre_tag": "canonical_thread"
+    },
+    {
+      "after_section": 2,
+      "tip": "Eli's sons take the meat before it is offered to God and sleep with women at the tabernacle entrance. The narrator calls them 'scoundrels' who 'had no regard for the LORD.' Priestly corruption is presented as the systemic failure that necessitates a new kind of leadership.",
+      "genre_tag": "theological_insight"
+    }
+  ],
+  "prayer_prompt": "As you reflect on Hannah's song — exalting a God who lifts the poor from the dust and seats them with princes — consider asking God whether you truly believe He reverses the world's hierarchies, and whether your life reflects that conviction."
 }

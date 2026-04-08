@@ -141,15 +141,6 @@
             }
           ]
         },
-        "mac": {
-          "source": "MacArthur Study Bible — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "14:10",
-              "note": "MacArthur: The passage on \"out of the eater, something to eat\" — rage and abandonment demonstrates the consequences of covenant unfaithfulness — not as abstract theology but as lived disaster. When Israel forsakes God, God does not merely withdraw blessing; he actively delivers them into the hands of their enemies."
-            }
-          ]
-        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -174,15 +165,6 @@
             {
               "ref": "14:(10, '')",
               "note": "Block: On 20 — The Riddle, the Betrayal, the Slaughter: : the narrative here exhibits the characteristic Judges cycle — Israel's failure provokes divine discipline, which produces a cry for help, which God answers through a flawed but Spirit-empowered deliverer. The pattern is theological, not merely historical."
-            }
-          ]
-        },
-        "webb": {
-          "source": "Barry G. Webb, The Book of Judges, NICOT (2012) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "14:(10, '')",
-              "note": "Webb: On 20 — The Riddle, the Betrayal, the Slaughter: : the placement of this episode within the book's larger structure advances the thesis of progressive deterioration. Each judge cycle descends further from the Othniel paradigm (3:7-11), demonstrating that human deliverance without heart-change produces only temporary relief."
             }
           ]
         },
@@ -438,5 +420,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Samson wants a Philistine wife; his parents object. The narrator interjects: 'His parents did not know that this was from the LORD, who was seeking an occasion to confront the Philistines.' God works through Samson's worst impulses. The instrument is flawed; the purpose is not.",
+      "genre_tag": "theological_insight"
+    }
+  ],
+  "prayer_prompt": "Samson's wedding riddle began a cycle of revenge and counter-revenge. Consider asking God about conflicts in your life that have escalated beyond the original offense."
 }

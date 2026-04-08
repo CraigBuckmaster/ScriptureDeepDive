@@ -168,15 +168,6 @@
             }
           ]
         },
-        "hess": {
-          "source": "Richard S. Hess, Joshua, Tyndale OT Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "17:7",
-              "note": "Hess: The archaeological and textual evidence for complaint about insufficient land; Joshua's challenge in this section aligns with Late Bronze Age Canaanite material culture. The narrative details — toponyms, military tactics, territorial descriptions — reflect authentic local knowledge consistent with an early source."
-            }
-          ]
-        },
         "howard": {
           "source": "David M. Howard Jr., Joshua, New American Commentary (1998) — Scholarly Paraphrase",
           "notes": [
@@ -413,5 +404,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "The tribe of Joseph complains they have too little land. Joshua's response is sharp: 'If you are so numerous, go up into the forest and clear land.' They protest there are iron chariots in the valley. Joshua says go anyway. Entitlement meets challenge — and loses.",
+      "genre_tag": "close_reading"
+    }
+  ],
+  "prayer_prompt": "Manasseh complained about their portion; Joshua told them to clear the forest and take more. Consider asking God if your complaints about what you've been given are really about your unwillingness to do the work."
 }

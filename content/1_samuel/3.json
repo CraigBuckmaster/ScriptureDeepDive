@@ -168,24 +168,6 @@
             }
           ]
         },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "3:(11, '')",
-              "note": "Bergen: On 21 — Samuel's First Prophecy: Judgment on Eli: : the narrative advances 1 Samuel's central theological argument — the transition from theocratic judges to anointed monarchy. God remains sovereign over the process, using human ambition, failure, and faith to accomplish his redemptive purposes."
-            }
-          ]
-        },
-        "tsumura": {
-          "source": "David T. Tsumura, The First Book of Samuel, NICOT (2007) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "3:(11, '')",
-              "note": "Tsumura: On 21 — Samuel's First Prophecy: Judgment on Eli: : the Hebrew syntax and vocabulary in this section exhibit features characteristic of early monarchic prose narrative. Key terms carry specific institutional and covenantal connotations that anchor the passage in the broader Deuteronomistic framework."
-            }
-          ]
-        },
         "hist": {
           "context": "This section addresses \"I am about to do something that will make the ears tingle\"; Samuel established as prophet. The narrative advances 1 Samuel's central question: what kind of king does Israel need? Every episode contributes to the answer — not the one who looks the part, but the one whose heart is aligned with God's purposes."
         }
@@ -416,5 +398,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "'In those days the word of the LORD was rare; there were not many visions.' The sentence explains why Samuel does not recognize God's voice — he has no frame of reference. The spiritual famine is institutional: the priesthood has failed to mediate divine communication.",
+      "genre_tag": "close_reading"
+    }
+  ],
+  "prayer_prompt": "As you consider the young Samuel learning to recognize God's voice in the night, consider asking the Lord whether you have cultivated the stillness to hear Him — and whether, like Samuel, you are willing to say 'Speak, for your servant is listening' even before you know what He will ask."
 }

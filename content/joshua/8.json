@@ -159,10 +159,6 @@
             }
           ]
         },
-        "net": {
-          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": []
-        },
         "hess": {
           "source": "Richard S. Hess, Joshua, Tyndale OT Commentary (1996) — Scholarly Paraphrase",
           "notes": [
@@ -221,39 +217,12 @@
             }
           ]
         },
-        "calvin": {
-          "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "8:(30, '')",
-              "note": "Calvin: On 35 — Altar at Mount Ebal; the Torah Read Aloud: conditional — but it is given to a man who must still fight. God's sovereignty does not eliminate human effort; it guarantees its success when exercised in obedience. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
-            }
-          ]
-        },
         "net": {
           "source": "NET Bible Full Notes Edition — Biblical Studies Press",
           "notes": [
             {
               "ref": "8:(30, '')",
               "note": "NET Note: On 35 — Altar at Mount Ebal; the Torah Read Aloud: meditation in ancient Israel was vocal, not silent. Joshua was to speak the Torah continuously, making it the soundtrack of his leadership. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
-            }
-          ]
-        },
-        "hess": {
-          "source": "Richard S. Hess, Joshua, Tyndale OT Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "8:30",
-              "note": "Hess: The archaeological and textual evidence for covenant renewal; blessings and curses read in this section aligns with Late Bronze Age Canaanite material culture. The narrative details — toponyms, military tactics, territorial descriptions — reflect authentic local knowledge consistent with an early source."
-            }
-          ]
-        },
-        "howard": {
-          "source": "David M. Howard Jr., Joshua, New American Commentary (1998) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "8:(30, '')",
-              "note": "Howard: On 35 — Altar at Mount Ebal; the Torah Read Aloud: strong, v.6), C (meditate on Torah, v.7-8), B' (command to be strong, v.9a), A' (promise of presence, v.9b). The Torah stands at the centre — it is the pivot around which both courage and presence rotate."
             }
           ]
         },
@@ -490,5 +459,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 3,
+      "tip": "After Ai's capture, Joshua builds an altar on Mount Ebal and reads the entire law — blessings from Gerizim, curses from Ebal, exactly as Moses commanded (Deuteronomy 27). The conquest pauses for covenant ceremony. Military progress is subordinated to liturgical obedience.",
+      "genre_tag": "canonical_thread"
+    }
+  ],
+  "prayer_prompt": "After Achan's sin was dealt with, Ai was taken and the covenant renewed. Consider asking God about the sequence of confession, cleansing, and renewed commitment in your own life."
 }

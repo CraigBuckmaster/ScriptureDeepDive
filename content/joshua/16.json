@@ -168,15 +168,6 @@
             }
           ]
         },
-        "hess": {
-          "source": "Richard S. Hess, Joshua, Tyndale OT Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "16:6",
-              "note": "Hess: The archaeological and textual evidence for Gezer's inhabitants remain; forced labour in this section aligns with Late Bronze Age Canaanite material culture. The narrative details — toponyms, military tactics, territorial descriptions — reflect authentic local knowledge consistent with an early source."
-            }
-          ]
-        },
         "howard": {
           "source": "David M. Howard Jr., Joshua, New American Commentary (1998) — Scholarly Paraphrase",
           "notes": [
@@ -413,5 +404,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "Ephraim 'did not dislodge the Canaanites living in Gezer; to this day the Canaanites live among the people of Ephraim but are required to do forced labor.' The pattern of incomplete conquest — toleration followed by coexistence followed by assimilation — is Judges' origin story, planted right here in Joshua.",
+      "genre_tag": "canonical_thread"
+    }
+  ],
+  "prayer_prompt": "Ephraim received their allotment but failed to drive out the Canaanites. Consider asking God what you've received but not fully claimed — what compromise you've accepted."
 }

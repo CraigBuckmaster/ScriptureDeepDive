@@ -57,6 +57,23 @@
         },
         "hist": {
           "context": "David amasses enormous resources: iron for nails, bronze beyond weighing, cedar logs without number, 100,000 talents of gold and 1,000,000 talents of silver. Then he charges Solomon: “Now, my son, the LORD be with you... build the house of the LORD your God, as he told you.” David explains why he cannot build it himself: “You have shed much blood and have fought many wars. You are not to build a house for my Name because you have shed much blood.” The warrior prepares; the peacemaker builds."
+        },
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "22:1-3",
+              "note": "Solomon's wisdom was a direct gift from God, granted in response to humble petition rather than selfish ambition (cf. James 1:5). Yet even Solomon's legendary wisdom proved insufficient apart from sustained obedience. The truly wise king whom Solomon foreshadows is Christ, in whom 'are hidden all the treasures of wisdom and knowledge' (Col 2:3)."
+            },
+            {
+              "ref": "22:8",
+              "note": "Solomon's reign — in both its glory and its eventual decline — serves as a living parable of the danger of spiritual compromise. The wisest man who ever lived was undone by disobedience to clear commands of Scripture (Deut 17:16-17). If Solomon could fall, no believer dare presume upon their own strength. Sustained faithfulness requires sustained dependence on God's grace."
+            },
+            {
+              "ref": "22:15-16",
+              "note": "The Chronicler wrote for a post-exilic community needing to understand their identity and hope. His message remains vital: God's promises to David are irrevocable, worship is the center of covenant life, and faithfulness — not circumstances — determines blessing. Believers today can take the same comfort: our God is faithful even when we are not (2 Tim 2:13)."
+            }
+          ]
         }
       }
     },
@@ -71,24 +88,6 @@
             {
               "ref": "1 Chr 28:1–10",
               "note": "David’s later public charge to the leaders expands on this private commissioning."
-            }
-          ]
-        },
-        "calvin": {
-          "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "22:19",
-              "note": "“Devote your heart and soul” before “build the sanctuary” teaches that the inner temple must be built before the outer one. God does not dwell in buildings made by uncommitted hands. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
-            }
-          ]
-        },
-        "net": {
-          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": [
-            {
-              "ref": "22:19",
-              "note": "The imperative sequence — darash (seek) then banah (build) — establishes a theological priority: devotion before construction. The syntax encodes the Chronicler’s theology. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
             }
           ]
         },
@@ -329,5 +328,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "David tells Solomon: 'You are to build a house for my Name because you will be a man of peace.' David's disqualification — 'you have shed much blood' — is not a moral condemnation but a liturgical one. The temple requires a builder whose reign symbolizes shalom. War and worship need different hands.",
+      "genre_tag": "theological_insight"
+    }
+  ],
+  "prayer_prompt": "David gathered materials for a temple he wouldn't build. Consider asking God about the work you're preparing for others to complete — your legacy beyond your own accomplishments."
 }

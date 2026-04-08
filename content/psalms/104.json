@@ -5,21 +5,54 @@
   "chapter_num": 104,
   "title": "Psalms 104",
   "subtitle": "The Creation Hymn",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "creation",
+    "text": "See on Timeline — Creation Hymn"
+  },
   "map_story_link": null,
   "sections": [
     {
       "section_num": 1,
       "header": "Verses 1’18 — “He Wraps Himself in Light”",
       "verse_start": 1,
-      "verse_end": 1,
+      "verse_end": 18,
       "panels": {
         "heb": [
           {
-            "word": "יְסוֹד",
-            "transliteration": "yəsōd",
-            "gloss": "he founded / he established",
-            "paragraph": "יְסוֹד (yəsōd) = foundation (noun)"
+            "word": "בָּרֲכִי",
+            "transliteration": "bārăkhî",
+            "gloss": "bless / praise",
+            "paragraph": "The psalm opens with the imperative בָּרֲכִי נַפְשִׁי (bārăkhî napšî) — 'Bless, O my soul!' This reflexive call to praise brackets the psalm (vv.1, 35), framing the entire creation hymn as an act of worship. The verb בָּרַךְ (bārakh) means to kneel in homage, to bless. The psalmist summons his own נֶפֶשׁ (nepeš) — his whole animated self — to the task of praising the Creator."
+          },
+          {
+            "word": "אוֹר",
+            "transliteration": "ʾôr",
+            "gloss": "light",
+            "paragraph": "\"He wraps himself in light (אוֹר) as with a garment\" (v.2). Light is God's clothing — not metaphor for mere brightness but for unapproachable glory (cf. 1 Tim 6:16). The creation account begins with light (Gen 1:3); here the Creator himself is robed in it. The image suggests both radiance and hiddenness: light reveals, yet staring at the sun blinds."
+          },
+          {
+            "word": "נוֹטֶה",
+            "transliteration": "nôṭeh",
+            "gloss": "stretching out",
+            "paragraph": "\"He stretches out (נוֹטֶה) the heavens like a tent\" (v.2). The participle נוֹטֶה (from נָטָה, nāṭâ) depicts ongoing action — God continually holds the sky in place like tent fabric. The same verb describes pitching a nomad's tent (Gen 12:8). The cosmos is God's dwelling, casually erected like a Bedouin shelter. What fills humans with awe is, for the Creator, routine habitation."
+          },
+          {
+            "word": "תְּהוֹם",
+            "transliteration": "tĕhôm",
+            "gloss": "the deep / abyss",
+            "paragraph": "\"You covered it with the deep (תְּהוֹם) as with a garment\" (v.6). תְּהוֹם echoes Genesis 1:2 — the primordial waters over which the Spirit hovered. In ANE mythology, the deep (Tiamat in Babylonian) was a chaos-monster to be defeated. Here it is merely a garment God drapes and then pushes back at His rebuke (v.7). No battle, just command. The waters that could swallow the earth now obey boundaries (v.9)."
+          },
+          {
+            "word": "גְּבוּל",
+            "transliteration": "gĕbûl",
+            "gloss": "boundary",
+            "paragraph": "\"You set a boundary (גְּבוּל) they cannot cross\" (v.9). The noun גְּבוּל means border, limit, territory. God's word establishes cosmic zoning: the sea has its place, the land has its place. This is covenant language applied to creation — YHWH sets limits that chaos cannot transgress. The same word describes Israel's territorial boundaries (Num 34). Creation order mirrors covenant order."
+          },
+          {
+            "word": "יָסַד",
+            "transliteration": "yāsad",
+            "gloss": "he founded / established",
+            "paragraph": "\"He set the earth on its foundations (יָסַד)\" (v.5). The verb יָסַד means to found, establish, lay a base. The earth is not floating randomly but anchored on מְכוֹנֶיהָ (mĕkhônêhā) — its 'bases' or 'foundations.' This is architectural language: God is a master builder who constructs the world to stand firm. \"It can never be moved\" (בַּל־תִּמּוֹט) — creation is stable because God made it so."
           }
         ],
         "mac": {
@@ -315,5 +348,6 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "prayer_prompt": "The creation hymn celebrates God's sustaining care for all creatures. Consider asking God about your place in His creation — how you receive His care and extend it to others."
 }

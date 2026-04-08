@@ -5,7 +5,10 @@
   "chapter_num": 129,
   "title": "Psalms 129",
   "subtitle": "They Have Greatly Oppressed Me from My Youth",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "solomon-temple",
+    "text": "See on Timeline — Song of Ascent"
+  },
   "map_story_link": null,
   "sections": [
     {
@@ -320,5 +323,6 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "prayer_prompt": "Israel has been greatly oppressed from youth but never destroyed. Consider asking God about your own resilience — the oppression you've survived and the strength that sustained you."
 }

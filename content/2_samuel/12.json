@@ -168,15 +168,6 @@
             }
           ]
         },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "12:(15, '')",
-              "note": "Bergen: On 25 — The Child Dies; Solomon Is Born: : the narrative advances 2 Samuel's central theological argument — God's covenant with David (ch 7) is both unconditional in its promise and consequential in its outworking. David's sins do not void the covenant but unleash its disciplinary clauses."
-            }
-          ]
-        },
         "anderson": {
           "source": "A.A. Anderson, 2 Samuel, Word Biblical Commentary (1989) — Scholarly Paraphrase",
           "notes": [
@@ -232,33 +223,6 @@
             {
               "ref": "12:(26, '')",
               "note": "Calvin: On 31 — The Capture of Rabbah: : God's providence governs every detail of David's reign — victories, sins, and consequences alike serve the divine purpose. David is simultaneously the anointed king and a broken sinner, and God uses both dimensions to accomplish his will."
-            }
-          ]
-        },
-        "net": {
-          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": [
-            {
-              "ref": "12:(26, '')",
-              "note": "NET Note: On 31 — The Capture of Rabbah: ced disjunctive clauses that provide background information and shift perspective. Key institutional terms —melek,nāgîd,māšîaḥ— carry distinct political and theological connotations. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
-            }
-          ]
-        },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "12:(26, '')",
-              "note": "Bergen: On 31 — The Capture of Rabbah: : the narrative advances 2 Samuel's central theological argument — God's covenant with David (ch 7) is both unconditional in its promise and consequential in its outworking. David's sins do not void the covenant but unleash its disciplinary clauses."
-            }
-          ]
-        },
-        "anderson": {
-          "source": "A.A. Anderson, 2 Samuel, Word Biblical Commentary (1989) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "12:(26, '')",
-              "note": "Anderson: On 31 — The Capture of Rabbah: : the text-critical evidence for this passage reveals occasional divergences between MT, LXX, and 4QSamᵃ. The philological analysis illuminates the narrator's craft and the institutional vocabulary of the early monarchy."
             }
           ]
         },
@@ -498,5 +462,18 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Nathan's parable about the rich man stealing the poor man's lamb traps David into pronouncing his own sentence: 'The man who did this must die!' Then: 'You are the man.' The prophetic confrontation works because David's moral intuition is intact — he can see injustice everywhere except in himself.",
+      "genre_tag": "close_reading"
+    },
+    {
+      "after_section": 2,
+      "tip": "David's response — 'I have sinned against the LORD' — is immediate and unqualified. No excuses, no blame-shifting, no 'but I felt compelled' (contrast Saul in 1 Samuel 13). The difference between Saul and David is not the absence of sin but the quality of repentance.",
+      "genre_tag": "canonical_thread"
+    }
+  ],
+  "prayer_prompt": "As you reflect on Nathan's parable and the devastating words 'You are the man,' consider asking God whether there is a truth about yourself that everyone around you can see but you — and whether you would receive it if someone had the courage to say it."
 }

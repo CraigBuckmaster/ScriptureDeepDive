@@ -168,24 +168,6 @@
             }
           ]
         },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "22:(26, '')",
-              "note": "Bergen: On 51 — \"He Gives His King Great Victories\": : the narrative advances 2 Samuel's central theological argument — God's covenant with David (ch 7) is both unconditional in its promise and consequential in its outworking. David's sins do not void the covenant but unleash its disciplinary clauses."
-            }
-          ]
-        },
-        "anderson": {
-          "source": "A.A. Anderson, 2 Samuel, Word Biblical Commentary (1989) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "22:(26, '')",
-              "note": "Anderson: On 51 — \"He Gives His King Great Victories\": : the text-critical evidence for this passage reveals occasional divergences between MT, LXX, and 4QSamᵃ. The philological analysis illuminates the narrator's craft and the institutional vocabulary of the early monarchy."
-            }
-          ]
-        },
         "hist": {
           "context": "This section addresses the lamp of Israel; pursuing enemies; \"to David and his descendants forever\". The narrative advances 2 Samuel's central tension: the Davidic covenant is unconditional in its promise but consequential in its outworking. David's victories, sins, and sufferings all serve the larger story of God building a kingdom through a flawed but chosen king."
         }
@@ -416,5 +398,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "David's psalm of thanksgiving (nearly identical to Psalm 18) places this cosmic poetry — mountains shaking, divine warrior descending — in the mouth of a man whose reign included adultery, murder, and family disintegration. The psalm is not denial; it is the claim that God's faithfulness persists despite the psalmist's failures.",
+      "genre_tag": "theological_insight"
+    }
+  ],
+  "prayer_prompt": "As you reflect on David's great song of deliverance, consider asking God to help you compose your own — to recount the specific ways He has been your rock, your fortress, and your deliverer, not in general terms but from your actual story."
 }

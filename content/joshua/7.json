@@ -168,10 +168,6 @@
             }
           ]
         },
-        "hess": {
-          "source": "Richard S. Hess, Joshua, Tyndale OT Commentary (1996) — Scholarly Paraphrase",
-          "notes": []
-        },
         "howard": {
           "source": "David M. Howard Jr., Joshua, New American Commentary (1998) — Scholarly Paraphrase",
           "notes": [
@@ -408,5 +404,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Achan's sin is described as Israel's sin — 'the Israelites were unfaithful.' One person's hidden disobedience affects the entire community. The corporate solidarity principle operating here is foreign to modern individualism but fundamental to how the Old Testament understands covenant.",
+      "genre_tag": "theological_insight"
+    }
+  ],
+  "prayer_prompt": "One man's hidden sin brought defeat on the whole community. Consider asking God what hidden thing in your life might be affecting others around you — what needs to be brought into the light."
 }

@@ -168,15 +168,6 @@
             }
           ]
         },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "26:(13, '')",
-              "note": "Bergen: On 25 — David Confronts Saul from the Hill: : the narrative advances 1 Samuel's central theological argument — the transition from theocratic judges to anointed monarchy. God remains sovereign over the process, using human ambition, failure, and faith to accomplish his redemptive purposes."
-            }
-          ]
-        },
         "tsumura": {
           "source": "David T. Tsumura, The First Book of Samuel, NICOT (2007) — Scholarly Paraphrase",
           "notes": [
@@ -416,5 +407,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "David spares Saul a second time, taking his spear and water jug as proof. The repetition (after ch. 24) is not redundant — it deepens the portrait. David's mercy is not a one-time impulse but a settled conviction. Saul responds with tears both times, but changes nothing. The gap between feeling and transformation is the tragedy.",
+      "genre_tag": "canonical_thread"
+    }
+  ],
+  "prayer_prompt": "As you reflect on David sparing Saul a second time — even when his own men urged him to strike — consider asking God whether you are as committed to restraint the second time as you were the first, or whether your patience is wearing thin."
 }

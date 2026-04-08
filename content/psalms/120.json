@@ -5,7 +5,10 @@
   "chapter_num": 120,
   "title": "Psalms 120",
   "subtitle": "I Call on the LORD in My Distress",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "solomon-temple",
+    "text": "See on Timeline — Song of Ascent"
+  },
   "map_story_link": null,
   "sections": [
     {
@@ -320,5 +323,6 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "prayer_prompt": "The pilgrim calls to God from among people of deceit. Consider asking God about the lies you've been living among — and what truthful community you need."
 }

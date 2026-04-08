@@ -5,7 +5,10 @@
   "chapter_num": 107,
   "title": "Psalms 107",
   "subtitle": "Give Thanks to the LORD, for He Is Good",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "ezra-return",
+    "text": "See on Timeline — The Redeemed Return"
+  },
   "map_story_link": null,
   "sections": [
     {
@@ -307,5 +310,6 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "prayer_prompt": "Four groups of redeemed people are invited to give thanks for God's rescue. Consider asking God from what He has rescued you — and whether you've given appropriate thanks."
 }

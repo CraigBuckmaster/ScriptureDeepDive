@@ -141,15 +141,6 @@
             }
           ]
         },
-        "mac": {
-          "source": "MacArthur Study Bible — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "6:(13, '')",
-              "note": "MacArthur: On 21 — Beth Shemesh: Joy and Judgment: reveals the heart of 1 Samuel's theology: God is building a kingdom, and the question is not whether Israel will have a king, but what kind of king God will provide. Human selection fails; divine selection endures."
-            }
-          ]
-        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -169,24 +160,6 @@
             {
               "ref": "6:19-21",
               "note": "The judgment on Beth Shemesh for 'looking into the ark' presents a notorious textual difficulty: the MT reads 70 men killed (with the number 50,070 likely a scribal corruption), while the LXX has different numbers. NET translators note the probable original was 70, a representative number for community leadership. The theological point parallels Numbers 4:20's prohibition against Levites looking at the holy objects — the ark's holiness demands regulated approach even among Israelites."
-            }
-          ]
-        },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "6:(13, '')",
-              "note": "Bergen: On 21 — Beth Shemesh: Joy and Judgment: : the narrative advances 1 Samuel's central theological argument — the transition from theocratic judges to anointed monarchy. God remains sovereign over the process, using human ambition, failure, and faith to accomplish his redemptive purposes."
-            }
-          ]
-        },
-        "tsumura": {
-          "source": "David T. Tsumura, The First Book of Samuel, NICOT (2007) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "6:(13, '')",
-              "note": "Tsumura: On 21 — Beth Shemesh: Joy and Judgment: : the Hebrew syntax and vocabulary in this section exhibit features characteristic of early monarchic prose narrative. Key terms carry specific institutional and covenantal connotations that anchor the passage in the broader Deuteronomistic framework."
             }
           ]
         },
@@ -420,5 +393,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "The Philistines design an experiment: put the ark on a cart pulled by cows that have never been yoked, with their calves penned up. If the cows walk toward Israel against their natural instinct, it proves God's hand. The pagan priests apply empirical reasoning to theology — and get the right answer.",
+      "genre_tag": "close_reading"
+    }
+  ],
+  "prayer_prompt": "As you reflect on the Philistines sending the ark back on an untended cart, consider asking God whether you have ever tried to return something sacred to its rightful place while keeping your distance from the God who owns it."
 }

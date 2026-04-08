@@ -5,7 +5,10 @@
   "chapter_num": 77,
   "title": "Psalms 77",
   "subtitle": "I Cried Out to God for Help",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "exodus",
+    "text": "See on Timeline — The Exodus Remembered"
+  },
   "map_story_link": null,
   "sections": [
     {
@@ -304,5 +307,6 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "prayer_prompt": "The psalmist cries out in distress, wondering if God has forgotten him. Consider asking God about the nights when you've questioned His presence — and what remembering His past deeds might do for your present anxiety."
 }

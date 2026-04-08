@@ -150,30 +150,12 @@
             }
           ]
         },
-        "calvin": {
-          "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "15:(13, '')",
-              "note": "Calvin: On 37 — David Flees Jerusalem: : God's providence governs every detail of David's reign — victories, sins, and consequences alike serve the divine purpose. David is simultaneously the anointed king and a broken sinner, and God uses both dimensions to accomplish his will."
-            }
-          ]
-        },
         "net": {
           "source": "NET Bible Full Notes Edition — Biblical Studies Press",
           "notes": [
             {
               "ref": "15:(13, '')",
               "note": "NET Note: On 37 — David Flees Jerusalem: ced disjunctive clauses that provide background information and shift perspective. Key institutional terms —melek,nāgîd,māšîaḥ— carry distinct political and theological connotations. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
-            }
-          ]
-        },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "15:(13, '')",
-              "note": "Bergen: On 37 — David Flees Jerusalem: : the narrative advances 2 Samuel's central theological argument — God's covenant with David (ch 7) is both unconditional in its promise and consequential in its outworking. David's sins do not void the covenant but unleash its disciplinary clauses."
             }
           ]
         },
@@ -416,5 +398,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "David flees Jerusalem weeping, barefoot, head covered. The anointed king ascending the Mount of Olives in humiliation prefigures another anointed one who will ascend the same mount in anguish (Luke 22:39). David's exile from Jerusalem because of sin within his house foreshadows the larger pattern of exile in Israel's story.",
+      "genre_tag": "canonical_thread"
+    }
+  ],
+  "prayer_prompt": "As you consider David fleeing Jerusalem barefoot and weeping as his own son usurps the throne, consider asking God to give you David's posture in crisis — grief without rage, humility without collapse, trust without passivity."
 }

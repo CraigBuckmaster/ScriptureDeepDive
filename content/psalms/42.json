@@ -5,7 +5,10 @@
   "chapter_num": 42,
   "title": "Psalms 42",
   "subtitle": "As the Deer Pants for Streams of Water",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "first-temple-destroyed",
+    "text": "See on Timeline — Longing for the Temple"
+  },
   "map_story_link": null,
   "sections": [
     {
@@ -313,5 +316,6 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "prayer_prompt": "As you reflect on 'As the deer pants for streams of water, so my soul pants for you,' consider asking God whether your longing for Him matches that intensity — or whether you have so many other streams that your spiritual thirst has dulled."
 }

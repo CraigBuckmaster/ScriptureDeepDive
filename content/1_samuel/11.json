@@ -168,24 +168,6 @@
             }
           ]
         },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "11:(12, '')",
-              "note": "Bergen: On 15 — Saul's Kingship Confirmed at Gilgal: : the narrative advances 1 Samuel's central theological argument — the transition from theocratic judges to anointed monarchy. God remains sovereign over the process, using human ambition, failure, and faith to accomplish his redemptive purposes."
-            }
-          ]
-        },
-        "tsumura": {
-          "source": "David T. Tsumura, The First Book of Samuel, NICOT (2007) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "11:(12, '')",
-              "note": "Tsumura: On 15 — Saul's Kingship Confirmed at Gilgal: : the Hebrew syntax and vocabulary in this section exhibit features characteristic of early monarchic prose narrative. Key terms carry specific institutional and covenantal connotations that anchor the passage in the broader Deuteronomistic framework."
-            }
-          ]
-        },
         "hist": {
           "context": "This section addresses \"shall Saul reign?\"; mercy for opponents; renewal of the kingdom. The narrative advances 1 Samuel's central question: what kind of king does Israel need? Every episode contributes to the answer — not the one who looks the part, but the one whose heart is aligned with God's purposes."
         }
@@ -416,5 +398,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "After the Jabesh-Gilead victory, some want to execute those who opposed Saul's kingship. Saul refuses: 'No one shall be put to death today, for this day the LORD has rescued Israel.' This is Saul at his best — generous, God-centered, restrained. The contrast with his later paranoia makes the decline more painful.",
+      "genre_tag": "canonical_thread"
+    }
+  ],
+  "prayer_prompt": "As you consider Saul's decisive action to rescue Jabesh Gilead, consider asking God whether there are moments of boldness He is offering you right now — situations that require immediate courage rather than endless deliberation."
 }

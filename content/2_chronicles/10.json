@@ -61,7 +61,24 @@
             "gloss": "to reign / be king",
             "paragraph": "The Hebrew mālaḵ (to reign) carries the weight of divinely delegated authority. In the Chronicler's theology, every king reigns as God's representative — their faithfulness or failure directly affects the nation's destiny. The verb appears at the critical transitions that shape Israel's monarchic history."
           }
-        ]
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "10:1-3",
+              "note": "The Chronicler records this history not merely as political narrative but as theological instruction. Every event demonstrates God's sovereign governance of His people and His unwavering faithfulness to the Davidic covenant. The believing reader is meant to see in these events the pattern of God's dealings with His church in every age."
+            },
+            {
+              "ref": "10:6",
+              "note": "The Chronicler's perspective consistently emphasizes God's faithfulness to His covenant promises despite Israel's unfaithfulness. This dual theme — human failure and divine grace — is the heartbeat of all Scripture and finds its ultimate resolution in the cross of Christ, where God's justice and mercy meet perfectly (Rom 3:25-26)."
+            },
+            {
+              "ref": "10:10-11",
+              "note": "The Chronicler wrote for a post-exilic community needing to understand their identity and hope. His message remains vital: God's promises to David are irrevocable, worship is the center of covenant life, and faithfulness — not circumstances — determines blessing. Believers today can take the same comfort: our God is faithful even when we are not (2 Tim 2:13)."
+            }
+          ]
+        }
       }
     },
     {
@@ -83,15 +100,6 @@
             {
               "ref": "2 Chr 11:1–4",
               "note": "Shemaiah's oracle forbidding Rehoboam from attacking the north — God claims authorship of the division, transforming political rebellion into divine judgment."
-            }
-          ]
-        },
-        "calvin": {
-          "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "10:15",
-              "note": "That the division was “from God” teaches that God accomplishes his purposes even through human folly. Providence is not thwarted by sin; it operates through it. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -306,5 +314,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "The division of the kingdom is attributed to divine causation: 'This turn of events was from God, to fulfill the word the LORD had spoken.' The Chronicler, like Kings, sees political catastrophe as prophetic fulfillment. History is not random — it is narrated covenant.",
+      "genre_tag": "theological_insight"
+    }
+  ],
+  "prayer_prompt": "Rehoboam rejected wise counsel and the kingdom divided. Consider asking God about the counsel you've rejected — and what divisions your stubbornness has caused."
 }

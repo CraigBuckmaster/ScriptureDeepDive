@@ -168,15 +168,6 @@
             }
           ]
         },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "24:(10, '')",
-              "note": "Bergen: On 17 — The Plague: Seventy Thousand Die: : the narrative advances 2 Samuel's central theological argument — God's covenant with David (ch 7) is both unconditional in its promise and consequential in its outworking. David's sins do not void the covenant but unleash its disciplinary clauses."
-            }
-          ]
-        },
         "anderson": {
           "source": "A.A. Anderson, 2 Samuel, Word Biblical Commentary (1989) — Scholarly Paraphrase",
           "notes": [
@@ -241,24 +232,6 @@
             {
               "ref": "24:(18, '')",
               "note": "NET Note: On 25 — David Buys the Threshing Floor; the Plague Stops: ced disjunctive clauses that provide background information and shift perspective. Key institutional terms —melek,nāgîd,māšîaḥ— carry distinct political and theological connotations."
-            }
-          ]
-        },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "24:(18, '')",
-              "note": "Bergen: On 25 — David Buys the Threshing Floor; the Plague Stops: : the narrative advances 2 Samuel's central theological argument — God's covenant with David (ch 7) is both unconditional in its promise and consequential in its outworking. David's sins do not void the covenant but unleash its disciplinary clauses."
-            }
-          ]
-        },
-        "anderson": {
-          "source": "A.A. Anderson, 2 Samuel, Word Biblical Commentary (1989) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "24:(18, '')",
-              "note": "Anderson: On 25 — David Buys the Threshing Floor; the Plague Stops: : the text-critical evidence for this passage reveals occasional divergences between MT, LXX, and 4QSamᵃ. The philological analysis illuminates the narrator's craft and the institutional vocabulary of the early monarchy."
             }
           ]
         },
@@ -498,5 +471,18 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "David insists on paying full price for Araunah's threshing floor: 'I will not sacrifice to the LORD my God burnt offerings that cost me nothing.' The principle embedded here — worship must cost the worshiper something — will echo through the prophets' critique of empty ritual.",
+      "genre_tag": "theological_insight"
+    },
+    {
+      "after_section": 3,
+      "tip": "The threshing floor David purchases becomes the site of Solomon's temple (2 Chronicles 3:1). The book ends where the temple begins — on a piece of ground bought during judgment, consecrated by sacrifice. Disaster becomes holy ground.",
+      "genre_tag": "canonical_thread"
+    }
+  ],
+  "prayer_prompt": "As you reflect on David's census and his choice to fall into God's hands rather than human hands when judgment came, consider asking God whether you trust His discipline more than people's mercy — and what that trust reveals about how you know Him."
 }

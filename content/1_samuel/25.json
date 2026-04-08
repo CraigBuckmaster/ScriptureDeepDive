@@ -168,24 +168,6 @@
             }
           ]
         },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "25:(18, '')",
-              "note": "Bergen: On 44 — Abigail's Wisdom; Nabal's Death; David's New Wife: : the narrative advances 1 Samuel's central theological argument — the transition from theocratic judges to anointed monarchy. God remains sovereign over the process, using human ambition, failure, and faith to accomplish his redemptive purposes."
-            }
-          ]
-        },
-        "tsumura": {
-          "source": "David T. Tsumura, The First Book of Samuel, NICOT (2007) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "25:(18, '')",
-              "note": "Tsumura: On 44 — Abigail's Wisdom; Nabal's Death; David's New Wife: : the Hebrew syntax and vocabulary in this section exhibit features characteristic of early monarchic prose narrative. Key terms carry specific institutional and covenantal connotations that anchor the passage in the broader Deuteronomistic framework."
-            }
-          ]
-        },
         "hist": {
           "context": "This section addresses Abigail intercedes; \"the LORD will make a lasting dynasty\"; Nabal struck by God; David marries Abigail. The narrative advances 1 Samuel's central question: what kind of king does Israel need? Every episode contributes to the answer — not the one who looks the part, but the one whose heart is aligned with God's purposes."
         }
@@ -416,5 +398,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "Abigail intercepts David's vengeance raid with food, wisdom, and a speech that reads like prophecy: 'The LORD will certainly make a lasting dynasty for my lord.' She saves David from himself — from becoming the kind of man who avenges personal insults with massacre. Without Abigail, David's story could have ended at Nabal's doorstep.",
+      "genre_tag": "theological_insight"
+    }
+  ],
+  "prayer_prompt": "As you consider Abigail's wisdom in defusing David's rage against Nabal, consider asking God whether there is a situation in your life where a wise voice is trying to prevent you from doing something you would regret."
 }

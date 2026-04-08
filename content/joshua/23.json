@@ -159,19 +159,6 @@
             }
           ]
         },
-        "net": {
-          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": []
-        },
-        "hess": {
-          "source": "Richard S. Hess, Joshua, Tyndale OT Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "23:9",
-              "note": "Hess: The archaeological and textual evidence for conditional promise; consequences of disobedience in this section aligns with Late Bronze Age Canaanite material culture. The narrative details — toponyms, military tactics, territorial descriptions — reflect authentic local knowledge consistent with an early source."
-            }
-          ]
-        },
         "howard": {
           "source": "David M. Howard Jr., Joshua, New American Commentary (1998) — Scholarly Paraphrase",
           "notes": [
@@ -408,5 +395,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "Joshua's farewell warning — 'if you turn away and ally yourselves with the survivors of these nations... they will become snares and traps' — reads like a preview of Judges. The speech is both warning and prophecy. Joshua knows what Israel will do even as he pleads against it.",
+      "genre_tag": "canonical_thread"
+    }
+  ],
+  "prayer_prompt": "Joshua's farewell warned that the God who gave victory would also bring judgment for unfaithfulness. Consider asking God about the seriousness of the covenant — not just blessing, but accountability."
 }

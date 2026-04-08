@@ -44,8 +44,6 @@ import { LensToggleBar } from '../components/LensToggleBar';
 
 import { TRANSLATION_MAP } from '../db/translationRegistry';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
-import { useChapterFingerprint } from '../hooks/useChapterFingerprint';
-import { ChapterFingerprint } from '../components/ChapterFingerprint';
 import { usePremium } from '../hooks/usePremium';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
@@ -70,6 +68,7 @@ function ChapterScreen() {
   const { switchTranslation } = useTranslationSwitch();
   const { checkAndPrompt } = useStoreReview();
   const studyCoachEnabled = useSettingsStore((s) => s.studyCoachEnabled);
+  const vhlEnabled = useSettingsStore((s) => s.vhlEnabled);
   const activePanel = useReaderStore((s) => s.activePanel);
   const setActivePanel = useReaderStore((s) => s.setActivePanel);
   const clearActivePanel = useReaderStore((s) => s.clearActivePanel);
@@ -107,17 +106,6 @@ function ChapterScreen() {
     }
     setActiveLens(lensId);
   }, [isPremium, showUpgrade]);
-
-  const sectionPanelsForFingerprint = useMemo(
-    () => sections.map((s) => s.panels),
-    [sections],
-  );
-  const fingerprintScores = useChapterFingerprint(
-    sectionPanelsForFingerprint,
-    chapterPanels,
-    !!chapter?.timeline_link_event,
-    !!chapter?.map_story_link_id,
-  );
 
   const redLetterVerses = useRedLetter(bookId, chapterNum);
 
@@ -391,10 +379,10 @@ function ChapterScreen() {
   // Bookmarked verses
   const { bookmarked, toggleBookmark } = useBookmarkedVerses(bookId, chapterNum);
 
-  // All VHL group names active by default
+  // VHL highlights — controlled by Settings toggle (default off)
   const activeVhlGroups = useMemo(
-    () => vhlGroups.map((g) => g.group_name),
-    [vhlGroups]
+    () => vhlEnabled ? vhlGroups.map((g) => g.group_name) : [],
+    [vhlGroups, vhlEnabled]
   );
 
   // Layout callbacks for ChapterVerseList
@@ -549,8 +537,6 @@ function ChapterScreen() {
               })
             : undefined}
         />
-
-        {fingerprintScores && <ChapterFingerprint scores={fingerprintScores} />}
 
         {bookData?.genre_label && bookData?.genre_guidance ? (
           <GenreBanner

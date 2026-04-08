@@ -159,14 +159,6 @@
             }
           ]
         },
-        "net": {
-          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": []
-        },
-        "hess": {
-          "source": "Richard S. Hess, Joshua, Tyndale OT Commentary (1996) — Scholarly Paraphrase",
-          "notes": []
-        },
         "howard": {
           "source": "David M. Howard Jr., Joshua, New American Commentary (1998) — Scholarly Paraphrase",
           "notes": [
@@ -403,5 +395,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Joshua rebukes seven tribes: 'How long will you wait before you begin to take possession of the land?' The promised land requires active participation. Passivity is not trust — it is a failure to respond to what God has already given.",
+      "genre_tag": "theological_insight"
+    }
+  ],
+  "prayer_prompt": "Seven tribes delayed claiming their inheritance until Joshua confronted them. Consider asking God what you're delaying that He's already made available — what fear disguises itself as patience."
 }

@@ -5,7 +5,10 @@
   "chapter_num": 148,
   "title": "Psalms 148",
   "subtitle": "Praise the LORD from the Heavens",
-  "timeline_link": null,
+  "timeline_link": {
+    "event_id": "creation",
+    "text": "See on Timeline — Cosmic Praise"
+  },
   "map_story_link": null,
   "sections": [
     {
@@ -299,5 +302,6 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "prayer_prompt": "Praise the LORD from the heavens; praise him in the heights above. Consider asking God about your place in the cosmic choir — sun, moon, stars, sea creatures all praise Him."
 }

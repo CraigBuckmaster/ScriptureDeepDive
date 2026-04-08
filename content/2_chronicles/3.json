@@ -57,6 +57,23 @@
         },
         "hist": {
           "context": "Construction begins in Solomon’s fourth year, on the site David purchased from Ornan. The Chronicler adds the Moriah identification absent from Kings — connecting the temple to Abraham’s supreme act of faith. Dimensions: 60 cubits long, 20 wide. The portico is 20 cubits wide and 120 cubits high (an enormous figure, perhaps symbolic). The interior is overlaid with gold, decorated with palm trees and chains, and set with precious stones."
+        },
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "3:1-3",
+              "note": "The Chronicler records this history not merely as political narrative but as theological instruction. Every event demonstrates God's sovereign governance of His people and His unwavering faithfulness to the Davidic covenant. The believing reader is meant to see in these events the pattern of God's dealings with His church in every age."
+            },
+            {
+              "ref": "3:5",
+              "note": "The Chronicler's perspective consistently emphasizes God's faithfulness to His covenant promises despite Israel's unfaithfulness. This dual theme — human failure and divine grace — is the heartbeat of all Scripture and finds its ultimate resolution in the cross of Christ, where God's justice and mercy meet perfectly (Rom 3:25-26)."
+            },
+            {
+              "ref": "3:8-9",
+              "note": "The Chronicler wrote for a post-exilic community needing to understand their identity and hope. His message remains vital: God's promises to David are irrevocable, worship is the center of covenant life, and faithfulness — not circumstances — determines blessing. Believers today can take the same comfort: our God is faithful even when we are not (2 Tim 2:13)."
+            }
+          ]
         }
       }
     },
@@ -75,15 +92,6 @@
             {
               "ref": "Exod 26:31–33",
               "note": "The tabernacle veil. Solomon’s veil uses the same colours: blue, purple, and crimson."
-            }
-          ]
-        },
-        "calvin": {
-          "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "3:14",
-              "note": "The veil separating holy from most holy teaches that access to God’s deepest presence is restricted but real. The barrier exists not to exclude but to regulate approach. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -330,5 +338,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "The Chronicler specifies that Solomon builds the temple on Mount Moriah — 'where the LORD had appeared to his father David... on the threshing floor of Araunah.' The site connects three moments: Abraham's near-sacrifice of Isaac, David's altar during plague, and Solomon's temple. Sacred geography accumulates meaning.",
+      "genre_tag": "canonical_thread"
+    }
+  ],
+  "prayer_prompt": "The temple was built on Mount Moriah — where Abraham almost sacrificed Isaac. Consider asking God about the sacred sites in your life where sacrifice and provision intersect."
 }

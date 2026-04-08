@@ -149,15 +149,6 @@
             }
           ]
         },
-        "mac": {
-          "source": "MacArthur Study Bible — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "3:(12, '')",
-              "note": "MacArthur: On 30 — Ehud: The Left-Handed Assassin: demonstrates the consequences of covenant unfaithfulness — not as abstract theology but as lived disaster. When Israel forsakes God, God does not merely withdraw blessing; he actively delivers them into the hands of their enemies."
-            }
-          ]
-        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -182,15 +173,6 @@
             {
               "ref": "3:(12, '')",
               "note": "Block: On 30 — Ehud: The Left-Handed Assassin: : the narrative here exhibits the characteristic Judges cycle — Israel's failure provokes divine discipline, which produces a cry for help, which God answers through a flawed but Spirit-empowered deliverer. The pattern is theological, not merely historical."
-            }
-          ]
-        },
-        "webb": {
-          "source": "Barry G. Webb, The Book of Judges, NICOT (2012) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "3:(12, '')",
-              "note": "Webb: On 30 — Ehud: The Left-Handed Assassin: : the placement of this episode within the book's larger structure advances the thesis of progressive deterioration. Each judge cycle descends further from the Othniel paradigm (3:7-11), demonstrating that human deliverance without heart-change produces only temporary relief."
             }
           ]
         },
@@ -225,48 +207,12 @@
             }
           ]
         },
-        "mac": {
-          "source": "MacArthur Study Bible — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "3:31",
-              "note": "MacArthur: The passage on one-verse deliverer; unconventional weapon demonstrates the consequences of covenant unfaithfulness — not as abstract theology but as lived disaster. When Israel forsakes God, God does not merely withdraw blessing; he actively delivers them into the hands of their enemies."
-            }
-          ]
-        },
-        "calvin": {
-          "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "3:(31, '')",
-              "note": "Calvin: On Shamgar: Six Hundred Philistines with an Oxgoad: cles of apostasy and deliverance displays the persistence of covenant grace. He does not abandon his people when they abandon him — though he disciplines them severely. This is the pattern of every believer's life."
-            }
-          ]
-        },
-        "net": {
-          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": [
-            {
-              "ref": "3:(31, '')",
-              "note": "NET Note: On Shamgar: Six Hundred Philistines with an Oxgoad: teristic markers of the Deuteronomistic editorial framework. The repeated formula \"the Israelites did evil in the eyes of the LORD\" (wayyaʿăśû... hāraʿ bĕʿênê YHWH) frames each cycle. The NET translators note that the underlying Hebrew/Greek syntax carries nuances that most English versions cannot fully represent. Lexical analysis of the key terms reveals semantic ranges that enrich the passage beyond what a single English gloss can convey, connecting this text to a wider web of biblical usage."
-            }
-          ]
-        },
         "block": {
           "source": "Daniel I. Block, Judges, Ruth, New American Commentary (1999) — Scholarly Paraphrase",
           "notes": [
             {
               "ref": "3:(31, '')",
               "note": "Block: On Shamgar: Six Hundred Philistines with an Oxgoad: : the narrative here exhibits the characteristic Judges cycle — Israel's failure provokes divine discipline, which produces a cry for help, which God answers through a flawed but Spirit-empowered deliverer. The pattern is theological, not merely historical."
-            }
-          ]
-        },
-        "webb": {
-          "source": "Barry G. Webb, The Book of Judges, NICOT (2012) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "3:(31, '')",
-              "note": "Webb: On Shamgar: Six Hundred Philistines with an Oxgoad: : the placement of this episode within the book's larger structure advances the thesis of progressive deterioration. Each judge cycle descends further from the Othniel paradigm (3:7-11), demonstrating that human deliverance without heart-change produces only temporary relief."
             }
           ]
         },
@@ -507,5 +453,18 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Othniel is the 'ideal' judge — brief, successful, faithful. Every detail matches the pattern perfectly. He exists as a benchmark against which every subsequent judge will be measured and found wanting.",
+      "genre_tag": "structure_guide"
+    },
+    {
+      "after_section": 2,
+      "tip": "Ehud's assassination of Eglon is told with grotesque physical detail — the fat closing over the blade, the intestinal release. The narrator is not squeamish; the graphic realism serves a literary purpose, depicting the messiness of deliverance in a fallen world.",
+      "genre_tag": "close_reading"
+    }
+  ],
+  "prayer_prompt": "Othniel, Ehud, and Shamgar used different methods — Spirit empowerment, cleverness, and an ox-goad. Consider asking God about the unexpected tools and methods He might use through you."
 }

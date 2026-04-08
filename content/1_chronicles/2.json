@@ -57,7 +57,24 @@
             "gloss": "generations / genealogy",
             "paragraph": "The Hebrew tôlĕḏôt (generations) is a structuring device that traces the thread of God's purpose through family lines. From Genesis to Chronicles, genealogies are not mere lists but theological arguments: they demonstrate continuity, establish legitimacy, and show that God's covenant promises pass from generation to generation."
           }
-        ]
+        ],
+        "mac": {
+          "source": "MacArthur Study Bible — Faithful Paraphrase",
+          "notes": [
+            {
+              "ref": "2:1-3",
+              "note": "The Chronicler records this history not merely as political narrative but as theological instruction. Every event demonstrates God's sovereign governance of His people and His unwavering faithfulness to the Davidic covenant. The believing reader is meant to see in these events the pattern of God's dealings with His church in every age."
+            },
+            {
+              "ref": "2:9",
+              "note": "The Chronicler's perspective consistently emphasizes God's faithfulness to His covenant promises despite Israel's unfaithfulness. This dual theme — human failure and divine grace — is the heartbeat of all Scripture and finds its ultimate resolution in the cross of Christ, where God's justice and mercy meet perfectly (Rom 3:25-26)."
+            },
+            {
+              "ref": "2:16-17",
+              "note": "The Chronicler wrote for a post-exilic community needing to understand their identity and hope. His message remains vital: God's promises to David are irrevocable, worship is the center of covenant life, and faithfulness — not circumstances — determines blessing. Believers today can take the same comfort: our God is faithful even when we are not (2 Tim 2:13)."
+            }
+          ]
+        }
       }
     },
     {
@@ -71,15 +88,6 @@
             {
               "ref": "Josh 15:13–19",
               "note": "Caleb’s allotment in Judah’s territory. The Chronicler traces Caleb’s descendants through their settlements, connecting people to places."
-            }
-          ]
-        },
-        "calvin": {
-          "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "2:34",
-              "note": "The inclusion of Jarha the Egyptian within Judah’s genealogy teaches that God’s covenant community has always absorbed outsiders. The genealogy is not a wall but a gate — open to those who join Israel. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
             }
           ]
         },
@@ -311,5 +319,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "The genealogy traces Judah's line first — before the other tribes — because the Chronicler is building toward David. The genealogical order is theological, not chronological. Judah leads because the Davidic dynasty matters most to the post-exilic community.",
+      "genre_tag": "structure_guide"
+    }
+  ],
+  "prayer_prompt": "The genealogy traces Judah's line to David through unlikely figures. Consider asking God about the unexpected people in your own spiritual lineage — who shaped your faith in ways you haven't acknowledged."
 }

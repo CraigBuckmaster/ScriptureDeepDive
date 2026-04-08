@@ -168,24 +168,6 @@
             }
           ]
         },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "27:(8, '')",
-              "note": "Bergen: On 12 — David Raids Israel's Enemies While Deceiving Achish: : the narrative advances 1 Samuel's central theological argument — the transition from theocratic judges to anointed monarchy. God remains sovereign over the process, using human ambition, failure, and faith to accomplish his redemptive purposes."
-            }
-          ]
-        },
-        "tsumura": {
-          "source": "David T. Tsumura, The First Book of Samuel, NICOT (2007) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "27:(8, '')",
-              "note": "Tsumura: On 12 — David Raids Israel's Enemies While Deceiving Achish: : the Hebrew syntax and vocabulary in this section exhibit features characteristic of early monarchic prose narrative. Key terms carry specific institutional and covenantal connotations that anchor the passage in the broader Deuteronomistic framework."
-            }
-          ]
-        },
         "hist": {
           "context": "This section addresses Geshurites, Girzites, Amalekites; \"against the Negev of Judah\" — Achish trusts David. The narrative advances 1 Samuel's central question: what kind of king does Israel need? Every episode contributes to the answer — not the one who looks the part, but the one whose heart is aligned with God's purposes."
         }
@@ -416,5 +398,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "David lives among the Philistines and deceives Achish about his raids. The future king of Israel is hiding, lying, and serving Israel's enemies. The narrative presents this without moralizing — David is surviving. But the moral ambiguity is deliberate: even the chosen king is compromised by circumstances.",
+      "genre_tag": "theological_insight"
+    }
+  ],
+  "prayer_prompt": "As you consider David living among the Philistines and deceiving King Achish about his raids, consider asking God whether you have ever found yourself living a double life — surviving by telling different stories to different people."
 }

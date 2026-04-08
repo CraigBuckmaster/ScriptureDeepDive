@@ -168,24 +168,6 @@
             }
           ]
         },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "14:(16, '')",
-              "note": "Bergen: On 46 — Saul's Foolish Oath; Jonathan Nearly Executed: : the narrative advances 1 Samuel's central theological argument — the transition from theocratic judges to anointed monarchy. God remains sovereign over the process, using human ambition, failure, and faith to accomplish his redemptive purposes."
-            }
-          ]
-        },
-        "tsumura": {
-          "source": "David T. Tsumura, The First Book of Samuel, NICOT (2007) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "14:(16, '')",
-              "note": "Tsumura: On 46 — Saul's Foolish Oath; Jonathan Nearly Executed: : the Hebrew syntax and vocabulary in this section exhibit features characteristic of early monarchic prose narrative. Key terms carry specific institutional and covenantal connotations that anchor the passage in the broader Deuteronomistic framework."
-            }
-          ]
-        },
         "hist": {
           "context": "This section addresses \"cursed be anyone who eats\"; Jonathan eats honey unknowingly; the people rescue him. The narrative advances 1 Samuel's central question: what kind of king does Israel need? Every episode contributes to the answer — not the one who looks the part, but the one whose heart is aligned with God's purposes."
         }
@@ -217,15 +199,6 @@
             }
           ]
         },
-        "mac": {
-          "source": "MacArthur Study Bible — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "14:(47, '')",
-              "note": "MacArthur: On 52 — Summary of Saul's Reign and Wars: reveals the heart of 1 Samuel's theology: God is building a kingdom, and the question is not whether Israel will have a king, but what kind of king God will provide. Human selection fails; divine selection endures."
-            }
-          ]
-        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
@@ -245,24 +218,6 @@
             {
               "ref": "14:49-52",
               "note": "The family register and the note about perpetual Philistine warfare provide the administrative and military context for Saul's reign. NET translators observe that Saul's practice of conscripting any strong or brave warrior he noticed (v.52) indicates a charismatic-military rather than bureaucratic model of governance — in contrast to David's later institutional army divisions (1 Chronicles 27). The mention of Abner as army commander establishes a figure who will play a crucial role in the transition to David's kingship."
-            }
-          ]
-        },
-        "bergen": {
-          "source": "Robert D. Bergen, 1, 2 Samuel, New American Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "14:(47, '')",
-              "note": "Bergen: On 52 — Summary of Saul's Reign and Wars: : the narrative advances 1 Samuel's central theological argument — the transition from theocratic judges to anointed monarchy. God remains sovereign over the process, using human ambition, failure, and faith to accomplish his redemptive purposes."
-            }
-          ]
-        },
-        "tsumura": {
-          "source": "David T. Tsumura, The First Book of Samuel, NICOT (2007) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "14:(47, '')",
-              "note": "Tsumura: On 52 — Summary of Saul's Reign and Wars: : the Hebrew syntax and vocabulary in this section exhibit features characteristic of early monarchic prose narrative. Key terms carry specific institutional and covenantal connotations that anchor the passage in the broader Deuteronomistic framework."
             }
           ]
         },
@@ -502,5 +457,13 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Jonathan says 'Nothing can hinder the LORD from saving, whether by many or by few.' Compare this to Saul's anxious head-counting in the previous chapter. Father and son represent two postures toward the same God — one calculates odds, the other trusts regardless of them.",
+      "genre_tag": "canonical_thread"
+    }
+  ],
+  "prayer_prompt": "As you reflect on Jonathan climbing the cliff at Michmash with only his armor-bearer, saying 'Nothing can hinder the LORD from saving,' consider asking God whether your faith is bold enough to act on what you believe — or whether you wait for safer odds."
 }

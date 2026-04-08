@@ -141,34 +141,12 @@
             }
           ]
         },
-        "mac": {
-          "source": "MacArthur Study Bible — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "24:14",
-              "note": "MacArthur: The passage on Joshua's challenge; the people's threefold commitment reveals God's character in action — not as abstract theology but as concrete intervention in Israel's history. Every battle, every boundary, every judgment call demonstrates that YHWH is a God who acts, not merely a God who speaks."
-            }
-          ]
-        },
         "calvin": {
           "source": "John Calvin, Commentaries — Faithful Paraphrase",
           "notes": [
             {
               "ref": "24:(14, '')",
               "note": "Calvin: On 24 — Choose This Day Whom You Will Serve: conditional — but it is given to a man who must still fight. God's sovereignty does not eliminate human effort; it guarantees its success when exercised in obedience. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
-            }
-          ]
-        },
-        "net": {
-          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": []
-        },
-        "hess": {
-          "source": "Richard S. Hess, Joshua, Tyndale OT Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "24:14",
-              "note": "Hess: The archaeological and textual evidence for Joshua's challenge; the people's threefold commitment in this section aligns with Late Bronze Age Canaanite material culture. The narrative details — toponyms, military tactics, territorial descriptions — reflect authentic local knowledge consistent with an early source."
             }
           ]
         },
@@ -218,37 +196,6 @@
             {
               "ref": "24:(25, '')",
               "note": "MacArthur: On 33 — Covenant Made; Joshua and Eleazar Die: he greatest leader Israel has ever known is dead. Yet God's program does not pause. The death of a leader is never the death of the mission. God buries his workers but carries on his work. MacArthur emphasizes the doctrinal significance of this passage within the framework of systematic theology. The text establishes principles that remain normative for the church — not merely descriptive of ancient Israel but prescriptive for how God's people should understand His character and respond in obedience."
-            }
-          ]
-        },
-        "calvin": {
-          "source": "John Calvin, Commentaries — Faithful Paraphrase",
-          "notes": [
-            {
-              "ref": "24:(25, '')",
-              "note": "Calvin: On 33 — Covenant Made; Joshua and Eleazar Die: conditional — but it is given to a man who must still fight. God's sovereignty does not eliminate human effort; it guarantees its success when exercised in obedience. Calvin's reading characteristically emphasizes divine sovereignty and human responsibility in tension — God ordains the outcome while the actors remain morally accountable. This dual emphasis reflects Calvin's broader hermeneutic: Scripture always speaks both about God's plan and about human duty under that plan."
-            }
-          ]
-        },
-        "net": {
-          "source": "NET Bible Full Notes Edition — Biblical Studies Press",
-          "notes": []
-        },
-        "hess": {
-          "source": "Richard S. Hess, Joshua, Tyndale OT Commentary (1996) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "24:25",
-              "note": "Hess: The archaeological and textual evidence for stone witness at Shechem; burials; Joseph's bones in this section aligns with Late Bronze Age Canaanite material culture. The narrative details — toponyms, military tactics, territorial descriptions — reflect authentic local knowledge consistent with an early source."
-            }
-          ]
-        },
-        "howard": {
-          "source": "David M. Howard Jr., Joshua, New American Commentary (1998) — Scholarly Paraphrase",
-          "notes": [
-            {
-              "ref": "24:(25, '')",
-              "note": "Howard: On 33 — Covenant Made; Joshua and Eleazar Die: strong, v.6), C (meditate on Torah, v.7-8), B' (command to be strong, v.9a), A' (promise of presence, v.9b). The Torah stands at the centre — it is the pivot around which both courage and presence rotate."
             }
           ]
         },
@@ -485,5 +432,18 @@
         "cross"
       ]
     }
-  ]
+  ],
+  "coaching": [
+    {
+      "after_section": 2,
+      "tip": "'Choose for yourselves this day whom you will serve.' The people respond enthusiastically. Joshua pushes back: 'You are not able to serve the LORD.' He is not doubting God's grace — he is testing the depth of their commitment. Cheap enthusiasm is worse than honest uncertainty.",
+      "genre_tag": "close_reading"
+    },
+    {
+      "after_section": 3,
+      "tip": "Joshua is buried; Joseph's bones are finally buried at Shechem (fulfilling Genesis 50:25); Eleazar the priest dies. Three burials close the book — the era of the conquest generation is over. What comes next has no guaranteed leader. The transition to Judges begins with a void.",
+      "genre_tag": "canonical_thread"
+    }
+  ],
+  "prayer_prompt": "At Shechem, Joshua set the choice starkly: 'Choose this day whom you will serve.' Consider asking God what choice you've been avoiding — what ambiguity you've preserved that He wants resolved."
 }
