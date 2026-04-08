@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+#
+# pre-commit hook — block commits that contain high-entropy API-key patterns.
+#
+# Install:
+#   git config core.hooksPath .githooks
+#
+# Patterns checked (case-insensitive):
+#   - Google Maps / GCP keys (AIza...)
+#   - Generic secret assignments (api_key=, secret=, password= with a value)
+
+set -euo pipefail
+
+STAGED=$(git diff --cached --name-only --diff-filter=ACM)
+
+if [ -z "$STAGED" ]; then
+  exit 0
+fi
+
+ISSUES=0
+
+# Pattern 1: Google API keys (AIzaSy followed by 33 chars)
+if git diff --cached -U0 | grep -qP 'AIzaSy[0-9A-Za-z_-]{33}'; then
+  echo "ERROR: Staged changes contain a Google API key (AIzaSy...)."
+  echo "       Move the key to .env and reference it via process.env."
+  ISSUES=1
+fi
+
+# Pattern 2: Inline secret assignments (catches most KEY=<value> patterns)
+if git diff --cached -U0 -- ':!*.example' ':!*.sample' ':!*.md' ':!.githooks/*' ':!scripts/*' \
+   | grep -iP '(api_key|apikey|secret|password|token)\s*[:=]\s*["\x27]?[A-Za-z0-9_/+=-]{20,}' >/dev/null 2>&1; then
+  echo "WARNING: Staged changes may contain an inline secret."
+  echo "         Please verify no credentials are being committed."
+  # Warn only — don't block, since this pattern can have false positives.
+fi
+
+if [ "$ISSUES" -gt 0 ]; then
+  echo ""
+  echo "Commit blocked. Remove the secret and try again."
+  exit 1
+fi
