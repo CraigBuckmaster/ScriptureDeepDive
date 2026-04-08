@@ -3,16 +3,18 @@
  * quote, source, and era badge. Uses church era colors from theme.
  */
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, spacing, radii, fontFamily, churchEras } from '../../theme';
 import type { HistoricalInterpretation } from '../../types';
 
 interface Props {
   interpretation: HistoricalInterpretation;
+  onVersePress?: (verseRef: string) => void;
 }
 
 export const InterpretationCard = React.memo(function InterpretationCard({
   interpretation,
+  onVersePress,
 }: Props) {
   const { base } = useTheme();
   const eraColor = churchEras[interpretation.era] ?? base.gold;
@@ -24,12 +26,27 @@ export const InterpretationCard = React.memo(function InterpretationCard({
         { backgroundColor: base.bgElevated, borderColor: eraColor + '30' },
       ]}
     >
-      {/* Era badge */}
-      <View style={[styles.eraBadge, { backgroundColor: eraColor + '25' }]}>
-        <View style={[styles.eraDot, { backgroundColor: eraColor }]} />
-        <Text style={[styles.eraLabel, { color: eraColor }]}>
-          {interpretation.era_label}
-        </Text>
+      {/* Era badge + verse ref row */}
+      <View style={styles.badgeRow}>
+        <View style={[styles.eraBadge, { backgroundColor: eraColor + '25' }]}>
+          <View style={[styles.eraDot, { backgroundColor: eraColor }]} />
+          <Text style={[styles.eraLabel, { color: eraColor }]}>
+            {interpretation.era_label}
+          </Text>
+        </View>
+        {interpretation.verse_ref && onVersePress ? (
+          <TouchableOpacity
+            onPress={() => onVersePress(interpretation.verse_ref)}
+            style={[styles.verseRefPill, { backgroundColor: base.gold + '18', borderColor: base.gold + '35' }]}
+            activeOpacity={0.7}
+            accessibilityRole="button"
+            accessibilityLabel={`Go to ${interpretation.verse_ref}`}
+          >
+            <Text style={[styles.verseRefText, { color: base.gold }]}>
+              {interpretation.verse_ref}
+            </Text>
+          </TouchableOpacity>
+        ) : null}
       </View>
 
       {/* Author line */}
@@ -74,15 +91,30 @@ const styles = StyleSheet.create({
     padding: spacing.md,
     marginBottom: spacing.sm,
   },
+  badgeRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: spacing.sm,
+  },
   eraBadge: {
     flexDirection: 'row',
     alignItems: 'center',
-    alignSelf: 'flex-start',
     gap: 4,
     borderRadius: radii.pill,
     paddingHorizontal: 8,
     paddingVertical: 3,
-    marginBottom: spacing.sm,
+  },
+  verseRefPill: {
+    borderWidth: 1,
+    borderRadius: radii.pill,
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+  },
+  verseRefText: {
+    fontFamily: fontFamily.uiMedium,
+    fontSize: 10,
+    letterSpacing: 0.3,
   },
   eraDot: {
     width: 6,

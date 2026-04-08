@@ -6,10 +6,10 @@
  * 1-2 eras visible for free users, all eras for premium.
  */
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef, useCallback } from 'react';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useNavigation, useRoute, useFocusEffect } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
@@ -20,6 +20,7 @@ import { useVerseInterpretations } from '../hooks/useInterpretations';
 import { usePremium } from '../hooks/usePremium';
 import { useTheme, spacing, fontFamily, churchEras } from '../theme';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
+import { parseReference } from '../utils/verseResolver';
 import type { HistoricalInterpretation } from '../types';
 
 /** Number of free eras visible to non-premium users. */
@@ -33,6 +34,38 @@ function TimeTravelDetailScreen() {
 
   const { data: interpretations, loading } = useVerseInterpretations(verseRef);
   const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
+
+  const scrollRef = useRef<ScrollView>(null);
+  const cardYMap = useRef<Record<string, number>>({});
+  const lastPressedCardId = useRef<string | null>(null);
+
+  // Restore scroll position when returning from chapter view
+  const handleScrollRestore = useCallback(() => {
+    const id = lastPressedCardId.current;
+    if (id && cardYMap.current[id] != null) {
+      setTimeout(() => {
+        scrollRef.current?.scrollTo({ y: Math.max(0, cardYMap.current[id] - 80), animated: true });
+      }, 150);
+    }
+  }, []);
+
+  const handleVersePress = useCallback((refStr: string, cardId: string) => {
+    const parsed = parseReference(refStr);
+    if (!parsed) return;
+    lastPressedCardId.current = cardId;
+    navigation.push('Chapter', {
+      bookId: parsed.bookId,
+      chapterNum: parsed.chapter,
+      verseNum: parsed.verseStart,
+    });
+  }, [navigation]);
+
+  // Restore scroll position when returning from chapter view
+  useFocusEffect(
+    useCallback(() => {
+      handleScrollRestore();
+    }, [handleScrollRestore])
+  );
 
   // Group interpretations by era, preserving display_order
   const groupedByEra = useMemo(() => {
@@ -88,7 +121,7 @@ function TimeTravelDetailScreen() {
         <Text style={[styles.verseRef, { color: base.gold }]}>{verseRef}</Text>
       </View>
 
-      <ScrollView style={styles.scroll} contentContainerStyle={styles.scrollContent}>
+      <ScrollView ref={scrollRef} style={styles.scroll} contentContainerStyle={styles.scrollContent}>
         {interpretations.length === 0 ? (
           <View style={styles.emptyState}>
             <Text style={[styles.emptyText, { color: base.textMuted }]}>
@@ -112,7 +145,17 @@ function TimeTravelDetailScreen() {
                     style={[styles.timelineLine, { borderLeftColor: eraColor + '40' }]}
                   >
                     {group.items.map((interp) => (
-                      <InterpretationCard key={interp.id} interpretation={interp} />
+                      <View
+                        key={interp.id}
+                        onLayout={(e) => {
+                          cardYMap.current[interp.id] = e.nativeEvent.layout.y;
+                        }}
+                      >
+                        <InterpretationCard
+                          interpretation={interp}
+                          onVersePress={(ref) => handleVersePress(ref, interp.id)}
+                        />
+                      </View>
                     ))}
                   </View>
                 </View>
