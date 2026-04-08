@@ -17,6 +17,7 @@ import { EraTimeline } from '../components/interpretations/EraTimeline';
 import { useInterpretationEras } from '../hooks/useInterpretations';
 import { useAsyncData } from '../hooks/useAsyncData';
 import { getInterpretationsByEra } from '../db/content/interpretations';
+import { parseReference } from '../utils/verseResolver';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 import type { InterpretationEra, HistoricalInterpretation } from '../types';
 
@@ -66,16 +67,32 @@ function TimeTravelBrowseScreen() {
     [navigation],
   );
 
+  const handleVersePress = useCallback(
+    (refStr: string) => {
+      const parsed = parseReference(refStr);
+      if (!parsed) return;
+      navigation.push('Chapter', {
+        bookId: parsed.bookId,
+        chapterNum: parsed.chapter,
+        verseNum: parsed.verseStart,
+      });
+    },
+    [navigation],
+  );
+
   const renderItem: ListRenderItem<DisplayItem> = useCallback(
     ({ item }) => {
       if (item.type === 'era') {
         return <EraCard era={item.data} onPress={() => handleEraPress(item.data)} />;
       }
       return (
-        <InterpretationCard interpretation={item.data} />
+        <InterpretationCard
+          interpretation={item.data}
+          onVersePress={handleVersePress}
+        />
       );
     },
-    [handleEraPress],
+    [handleEraPress, handleVersePress],
   );
 
   const keyExtractor = useCallback(
