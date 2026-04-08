@@ -21,13 +21,30 @@ const SRC = path.join(ROOT, 'scripture.db');
 const DST = path.resolve(__dirname, '..', 'assets', 'scripture.db');
 const BUILD_SCRIPT = path.join(ROOT, '_tools', 'build_sqlite.py');
 
-// Build DB if it doesn't exist
-if (!fs.existsSync(SRC)) {
-  console.log('📦 scripture.db not found — building from content...');
+/**
+ * Check if any file under `dir` is newer than `refPath`.
+ * Returns true if the DB should be rebuilt.
+ */
+function hasNewerContent(dir, refPath) {
+  const refMtime = fs.statSync(refPath).mtimeMs;
+  try {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        if (hasNewerContent(full, refPath)) return true;
+      } else {
+        if (fs.statSync(full).mtimeMs > refMtime) return true;
+      }
+    }
+  } catch { /* dir doesn't exist — not stale */ }
+  return false;
+}
+
+function buildDb() {
   try {
     execSync(`python3 "${BUILD_SCRIPT}"`, { cwd: ROOT, stdio: 'inherit' });
   } catch {
-    // Try 'python' on Windows if 'python3' isn't available
     try {
       execSync(`python "${BUILD_SCRIPT}"`, { cwd: ROOT, stdio: 'inherit' });
     } catch (e) {
@@ -35,6 +52,18 @@ if (!fs.existsSync(SRC)) {
       process.exit(1);
     }
   }
+}
+
+// Build DB if it doesn't exist
+if (!fs.existsSync(SRC)) {
+  console.log('📦 scripture.db not found — building from content...');
+  buildDb();
+} else if (
+  hasNewerContent(path.join(ROOT, 'content'), SRC) ||
+  fs.statSync(path.join(ROOT, '_tools', 'build_sqlite.py')).mtimeMs > fs.statSync(SRC).mtimeMs
+) {
+  console.log('📦 Content changed since last build — rebuilding scripture.db...');
+  buildDb();
 }
 
 if (!fs.existsSync(SRC)) {

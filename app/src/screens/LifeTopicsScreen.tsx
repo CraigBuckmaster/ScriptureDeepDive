@@ -43,12 +43,9 @@ function LifeTopicsScreen() {
   const { isPremium, upgradeRequest, showUpgrade, dismissUpgrade } = usePremium();
 
   const [activeTab, setActiveTab] = useState<TabMode>('browse');
-  const { data: categories, loading: catLoading } = useLifeTopicCategories();
+  const { data: categories, loading: catLoading, error: catError } = useLifeTopicCategories();
   const [selectedCategory, setSelectedCategory] = useState<string | undefined>(undefined);
-  const { data: allTopics, loading: allTopicsLoading } = useLifeTopics();
-  const { data: filteredTopics, loading: filteredLoading } = useLifeTopics(selectedCategory);
-  const topics = selectedCategory ? filteredTopics : allTopics;
-  const topicsLoading = selectedCategory ? filteredLoading : allTopicsLoading;
+  const { data: topics, loading: topicsLoading, error: topicsError } = useLifeTopics(selectedCategory);
   const { search, setSearch, results: searchResults, searching } = useLifeTopicSearch();
   const { feed, loading: feedLoading, hasFollows } = useFollowingFeed();
 
@@ -280,7 +277,13 @@ function LifeTopicsScreen() {
           ListEmptyComponent={
             <View style={styles.emptyState}>
               <Text style={[styles.emptyText, { color: base.textMuted }]}>
-                {selectedCategory ? 'No topics in this category' : 'No topics available'}
+                {topicsError
+                  ? `Error loading topics: ${topicsError.message}`
+                  : catError
+                    ? `Error loading categories: ${catError.message}`
+                    : selectedCategory
+                      ? 'No topics in this category'
+                      : 'No topics available — try rebuilding scripture.db'}
               </Text>
             </View>
           }
