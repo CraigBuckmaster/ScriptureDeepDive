@@ -1,0 +1,10 @@
+[
+  { "id": "mental_health", "name": "Mental Health", "icon": "brain.head.profile", "display_order": 1 },
+  { "id": "relationships", "name": "Relationships", "icon": "heart.circle", "display_order": 2 },
+  { "id": "identity", "name": "Identity & Purpose", "icon": "person.crop.circle", "display_order": 3 },
+  { "id": "struggles", "name": "Personal Struggles", "icon": "flame", "display_order": 4 },
+  { "id": "social", "name": "Social Issues", "icon": "globe", "display_order": 5 },
+  { "id": "spiritual", "name": "Spiritual Questions", "icon": "sparkles", "display_order": 6 },
+  { "id": "modern_life", "name": "Modern Life", "icon": "iphone", "display_order": 7 },
+  { "id": "transitions", "name": "Life Transitions", "icon": "arrow.triangle.branch", "display_order": 8 }
+]

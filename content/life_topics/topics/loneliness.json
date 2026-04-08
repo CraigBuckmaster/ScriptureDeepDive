@@ -1,0 +1,79 @@
+{
+  "id": "loneliness",
+  "category_id": "mental_health",
+  "title": "Loneliness",
+  "subtitle": "What the Bible Says About Loneliness",
+  "summary": "From the beginning, God declared isolation 'not good.' Scripture acknowledges the ache of loneliness while pointing toward divine presence and human community as its remedy.",
+  "body": "The first thing God called 'not good' in creation was not sin but solitude — the man alone [verse:gen.2.18]. Human beings were designed for connection, and loneliness is the ache of that design unmet.\n\nDavid knew loneliness intimately. Hunted by Saul, abandoned by allies, he wrote psalms from caves where no one stood with him [verse:ps.142.4]. Yet in that same prayer he turned to God as his refuge and portion. Paul experienced similar isolation near the end of his life, writing to Timothy that everyone had deserted him — but adding immediately that the Lord stood at his side [verse:2tim.4.16-17].\n\nJesus himself experienced the deepest loneliness imaginable on the cross, crying out the opening words of Psalm 22: a moment of felt abandonment by the Father [verse:matt.27.46]. If the Son of God knew this ache, loneliness is no mark of failure.\n\nScripture's remedy is twofold. Vertically, God promises never to leave or forsake his people [verse:deut.31.6]. Horizontally, the early church modeled radical togetherness — sharing meals, possessions, and daily life [verse:acts.2.46-47]. Both dimensions are necessary. Divine presence does not eliminate the need for human community, and human community cannot substitute for the presence of God.",
+  "display_order": 3,
+  "verses": [
+    {
+      "verse_ref": "gen.2.18",
+      "verse_order": 1,
+      "annotation": "The first 'not good' in creation: God identifies human isolation as a problem requiring a solution.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "ps.142.4",
+      "verse_order": 2,
+      "annotation": "David's cave prayer — no one cares for his soul, so he turns to God as his only refuge.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "2tim.4.16-17",
+      "verse_order": 3,
+      "annotation": "Paul, abandoned by all, testifies that the Lord stood with him and strengthened him.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "matt.27.46",
+      "verse_order": 4,
+      "annotation": "Jesus' cry of dereliction — the ultimate experience of felt abandonment.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "deut.31.6",
+      "verse_order": 5,
+      "annotation": "God's promise to Israel before entering the land: I will never leave you or forsake you.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "acts.2.46-47",
+      "verse_order": 6,
+      "annotation": "The early church's daily practice of shared meals and togetherness as a counter to isolation.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "ps.68.6",
+      "verse_order": 7,
+      "annotation": "God sets the lonely in families — community as divine provision.",
+      "is_primary": false
+    }
+  ],
+  "scholars": [
+    {
+      "scholar_id": "brueggemann",
+      "quote": "Brueggemann argues that the individual lament psalms functioned communally — they were prayed in assembly, which meant that even the loneliest cry was heard by the gathered people of God.",
+      "source": "The Psalms and the Life of Faith (Brueggemann, 1995)",
+      "display_order": 1
+    },
+    {
+      "scholar_id": "keener",
+      "quote": "Keener notes that the house-church structure of early Christianity was deliberately designed to prevent isolation, with shared meals serving as the primary social fabric holding diverse believers together.",
+      "source": "Acts: An Exegetical Commentary, Vol. 1 (Keener, 2012)",
+      "display_order": 2
+    },
+    {
+      "scholar_id": "calvin",
+      "quote": "Calvin reads David's cave psalms as evidence that God sometimes permits isolation so that believers learn to find their sufficiency in God alone before being restored to community.",
+      "source": "Commentary on the Psalms (Calvin, 1557)",
+      "display_order": 3
+    }
+  ],
+  "related": [
+    "depression",
+    "community",
+    "belonging",
+    "friendship"
+  ]
+}
