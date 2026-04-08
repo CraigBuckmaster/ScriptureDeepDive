@@ -1203,5 +1203,367 @@
       "heb-hinneh"
     ],
     "display_order": 1
+  },
+  {
+    "id": "lit-chiasm",
+    "title": "Chiasm",
+    "language": "literary",
+    "category": "literary",
+    "summary": "A mirror-image literary structure (A-B-C-B'-A') where the center point carries the passage's main emphasis — used across both testaments at every scale from verse to book.",
+    "body": "A chiasm arranges ideas in a pattern that ascends to a center point and then descends in reverse order. Named after the Greek letter chi (X), the structure creates corresponding pairs that frame a focal center.\n\n## How to Recognize It\n\nLook for repeated words, phrases, or themes appearing in reverse order. A simple chiasm: A-B-B'-A'. A complex one might have five or more layers: A-B-C-D-C'-B'-A'. The unpaired center element (D in this example) is the theological or narrative climax — the point the author most wants the reader to notice.\n\n## Scale and Scope\n\nChiasm operates at every level of the biblical text. **Micro-chiasm** spans a single verse or two. **Section chiasm** structures a pericope or chapter. **Macro-chiasm** organizes an entire book — scholars have identified chiastic structures in Genesis, Deuteronomy, Matthew, and Revelation, among others. The flood narrative (Gen 6-9) contains perhaps the most widely accepted macro-chiasm, centering on \"God remembered Noah\" (8:1).\n\n## Why It Matters for Interpretation\n\nThe center of a chiasm is the author's main point. Identifying it reorients interpretation — the flood narrative's center is not judgment but divine remembrance. Corresponding elements in the outer rings are meant to be read together, revealing connections that linear reading might miss. Chiastic analysis also helps determine the boundaries of literary units.",
+    "examples": [
+      {
+        "ref": "Gen 6:10–9:19",
+        "text": "A: Noah's sons / B: Ark / C: Flood rises / D: God remembered Noah / C': Flood recedes / B': Ark / A': Noah's sons",
+        "explanation": "The flood narrative's macro-chiasm centers on Gen 8:1 — 'God remembered Noah.' The theological focal point is not destruction but covenantal faithfulness."
+      },
+      {
+        "ref": "Amos 5:4-6a",
+        "text": "A: Seek me / B: Do not seek Bethel / C: Do not enter Gilgal / B': Gilgal will go into exile / A': Seek the LORD",
+        "explanation": "A compact prophetic chiasm — the outer frame ('seek the LORD') envelops the warning about idolatrous sanctuaries, centering the passage on Gilgal's judgment."
+      },
+      {
+        "ref": "Matt 13:13-18",
+        "text": "A: Seeing / B: Hearing / C: Heart grown dull / B': Hearing / A': Seeing",
+        "explanation": "Jesus's quotation of Isaiah 6 follows a chiastic pattern in the Greek, centering on the hardened heart — the root problem from which failed perception flows."
+      }
+    ],
+    "related_articles": [
+      "heb-chiasm",
+      "lit-inclusio",
+      "lit-parallelism"
+    ],
+    "display_order": 1
+  },
+  {
+    "id": "lit-inclusio",
+    "title": "Inclusio",
+    "language": "literary",
+    "category": "literary",
+    "summary": "A framing device where a passage opens and closes with the same word, phrase, or theme — creating a literary bracket that defines a unit's boundaries and emphasizes its unifying idea.",
+    "body": "An inclusio (also called an envelope structure or literary bracket) occurs when a passage begins and ends with the same or similar wording, creating a frame that marks the unit as a coherent whole.\n\n## How to Recognize It\n\nLook for verbal repetition at the beginning and end of a passage. The repeated element might be an exact phrase, a thematic echo, or a structural parallel. Psalm 8 opens and closes with \"LORD, our Lord, how majestic is your name in all the earth!\" — a textbook inclusio. The repetition signals that everything between the brackets belongs together as a single unit.\n\n## What It Accomplishes\n\n**Boundary marking:** The inclusio tells readers where a literary unit begins and ends — crucial in a text originally without chapter and verse divisions. **Thematic emphasis:** The repeated element states the passage's governing idea. **Unity:** Everything within the brackets should be read as addressing the framing theme. The content between the brackets develops, explores, or complicates the idea stated in the frame.\n\n## Why It Matters for Interpretation\n\nRecognizing an inclusio prevents readers from breaking a passage at the wrong point. It also identifies the controlling theme — whatever the brackets say is the lens through which the enclosed material should be read. When Psalm 8's inclusio frames the psalm with divine majesty, the discussion of human dignity in the middle must be read as a subset of that majesty, not an independent topic.",
+    "examples": [
+      {
+        "ref": "Ps 8:2,10",
+        "text": "יְהוָה אֲדֹנֵינוּ מָה־אַדִּיר שִׁמְךָ — 'LORD, our Lord, how majestic is your name'",
+        "explanation": "The psalm opens and closes with identical praise of God's majestic name. The inclusio frames human dignity (vv.4-9) as derivative of and subordinate to divine glory."
+      },
+      {
+        "ref": "Matt 5:3,10",
+        "text": "ὅτι αὐτῶν ἐστιν ἡ βασιλεία τῶν οὐρανῶν — 'for theirs is the kingdom of heaven'",
+        "explanation": "The first and last Beatitudes share the identical reward clause, bracketing the entire set. The inclusio makes 'kingdom of heaven' the governing concept for all eight beatitudes."
+      },
+      {
+        "ref": "Eccl 1:2; 12:8",
+        "text": "הֲבֵל הֲבָלִים — 'vanity of vanities'",
+        "explanation": "Ecclesiastes opens and closes with the same declaration, framing the entire book's exploration of meaning under the banner of hebel — breath, vapor, futility."
+      }
+    ],
+    "related_articles": [
+      "lit-chiasm",
+      "lit-parallelism"
+    ],
+    "display_order": 2
+  },
+  {
+    "id": "lit-parallelism",
+    "title": "Parallelism",
+    "language": "literary",
+    "category": "literary",
+    "summary": "The foundational structure of Hebrew poetry where successive lines echo, advance, contrast, or complete each other's thought — the biblical equivalent of rhyme and meter.",
+    "body": "Parallelism is the defining feature of biblical poetry. Instead of rhyming sounds (as in English poetry), Hebrew poetry rhymes ideas — placing two or more lines in relationship to each other so that the second line echoes, advances, contrasts, or completes the first.\n\n## Main Types\n\n**Synonymous parallelism:** The second line restates the first in different words: \"The heavens declare the glory of God / the skies proclaim the work of his hands\" (Ps 19:1). The restatement is never merely redundant — subtle differences between the lines sharpen meaning.\n\n**Antithetic parallelism:** The second line states the opposite: \"A wise son brings joy to his father / but a foolish son brings grief to his mother\" (Prov 10:1). The contrast highlights both sides by juxtaposition.\n\n**Synthetic (progressive) parallelism:** The second line extends or develops the first rather than restating or contrasting: \"I lift up my eyes to the mountains / where does my help come from?\" (Ps 121:1). Each line adds new information.\n\n## Why It Matters for Interpretation\n\nRecognizing parallelism prevents two common errors: treating synonymous lines as saying two different things, and treating progressive lines as saying the same thing. The relationship between the A-line and B-line is where meaning resides. In synonymous parallelism, the slight differences between the lines are the interpretive gold — what did the poet sharpen, narrow, or intensify in the restatement?",
+    "examples": [
+      {
+        "ref": "Ps 19:1",
+        "text": "A: The heavens declare the glory of God / B: the skies proclaim the work of his hands",
+        "explanation": "Synonymous parallelism — 'heavens/skies' and 'declare/proclaim' are parallel pairs. But note the progression: 'glory of God' (abstract) sharpens to 'work of his hands' (concrete)."
+      },
+      {
+        "ref": "Prov 10:1",
+        "text": "A: A wise son brings joy to his father / B: but a foolish son brings grief to his mother",
+        "explanation": "Antithetic parallelism — wisdom vs. folly, joy vs. grief, father vs. mother. Each element has its opposite, creating a complete picture through contrast."
+      },
+      {
+        "ref": "Ps 1:1",
+        "text": "A: walk in the counsel of the wicked / B: stand in the way of sinners / C: sit in the seat of mockers",
+        "explanation": "Progressive parallelism with intensification — the verbs move from walking to standing to sitting (increasing permanence), while the company degrades from wicked to sinners to mockers."
+      }
+    ],
+    "related_articles": [
+      "lit-chiasm",
+      "lit-merism",
+      "lit-inclusio"
+    ],
+    "display_order": 3
+  },
+  {
+    "id": "lit-acrostic",
+    "title": "Acrostic",
+    "language": "literary",
+    "category": "literary",
+    "summary": "A poetic form where successive lines, verses, or stanzas begin with consecutive letters of the Hebrew alphabet — signaling completeness and aiding memorization.",
+    "body": "An acrostic poem structures its lines or stanzas according to the 22 letters of the Hebrew alphabet, with each unit beginning with the next letter in sequence: aleph, bet, gimel, and so on.\n\n## Where It Appears\n\nSeveral biblical poems use the acrostic form: Psalms 9-10 (partial), 25, 34, 37, 111, 112, 119, and 145; Proverbs 31:10-31; Lamentations 1-4; and Nahum 1 (partial). Psalm 119 is the most elaborate — each letter gets eight verses, for a total of 176 verses.\n\n## What It Signals\n\n**Completeness:** Running through the entire alphabet symbolizes covering a topic from A to Z — comprehensively, exhaustively. **Artistry and effort:** The constraint demonstrates the poet's skill and dedication. **Memory aid:** The alphabetic structure helped with oral memorization in a culture where texts were heard more often than read.\n\n## Why It Matters for Interpretation\n\nThe acrostic form explains structural features that might otherwise puzzle readers. The seemingly random sequence of topics in Psalm 119 makes sense when you realize each stanza is constrained by its opening letter, not by topical flow. In Lamentations, the acrostic structure imposes order on chaos — grief is given form, and the discipline of the alphabet contains the overwhelming emotion of Jerusalem's destruction.",
+    "examples": [
+      {
+        "ref": "Ps 119",
+        "text": "א (Aleph) vv.1-8, ב (Bet) vv.9-16, ג (Gimel) vv.17-24...",
+        "explanation": "The most extensive biblical acrostic — 22 stanzas of 8 verses each, every verse in a stanza beginning with the same Hebrew letter. The form expresses exhaustive devotion to Torah."
+      },
+      {
+        "ref": "Lam 1-4",
+        "text": "Chapters 1-3 follow the standard alphabet; chapter 3 triples each letter (3 verses per letter); chapter 4 returns to single verses",
+        "explanation": "Lamentations intensifies the acrostic in chapter 3 (the theological center), giving each letter three verses. The alphabetic structure imposes order on the city's devastation."
+      },
+      {
+        "ref": "Prov 31:10-31",
+        "text": "אֵשֶׁת חַיִל (eshet chayil) — 'a woman of valor'",
+        "explanation": "The 'excellent wife' poem runs through all 22 letters, presenting her virtues as comprehensive — from aleph to tav, she embodies every possible excellence."
+      }
+    ],
+    "related_articles": [
+      "lit-parallelism",
+      "lit-inclusio"
+    ],
+    "display_order": 4
+  },
+  {
+    "id": "lit-merism",
+    "title": "Merism",
+    "language": "literary",
+    "category": "literary",
+    "summary": "A figure of speech that names two extremes or contrasting parts to represent the whole — 'heavens and earth' meaning 'everything that exists.'",
+    "body": "Merism expresses totality by naming two opposite extremes or component parts. Rather than saying \"everything,\" the biblical writer says \"heavens and earth\" — the two ends of the spectrum that encompass all between them.\n\n## How to Recognize It\n\nLook for paired opposites that together represent a complete category: \"young and old\" (everyone), \"day and night\" (all the time), \"good and evil\" (all moral knowledge), \"near and far\" (everywhere). The two named elements are not the point — what they encompass together is the point.\n\n## Biblical Examples\n\nGenesis 1:1 uses the most famous biblical merism: \"the heavens and the earth\" — meaning the entirety of the created order, not merely sky and ground. \"The tree of the knowledge of good and evil\" (Gen 2:17) uses merism to describe comprehensive moral knowledge — knowing everything across the spectrum. \"You know my sitting down and my rising up\" (Ps 139:2) means God knows every moment of David's life.\n\n## Why It Matters for Interpretation\n\nMissing a merism leads to reading two specific items where the author intended totality. When Psalm 139 says God knows David's \"sitting and rising,\" the point is not that God watches two particular postures but that he knows David's entire life — every moment from rest to activity. Recognizing merism reveals the scope of biblical claims about God's knowledge, power, and dominion.",
+    "examples": [
+      {
+        "ref": "Gen 1:1",
+        "text": "הַשָּׁמַיִם וְאֵת הָאָרֶץ (hashamayim ve'et ha'arets) — 'the heavens and the earth'",
+        "explanation": "The foundational merism — not merely sky and ground but the totality of created reality. Everything that exists falls between these two poles."
+      },
+      {
+        "ref": "Ps 139:2",
+        "text": "שִׁבְתִּי וְקוּמִי (shivti vequmi) — 'my sitting and my rising'",
+        "explanation": "Merism for all of David's activity — every moment from rest to motion. God's knowledge encompasses not just two postures but the entire spectrum of daily life."
+      },
+      {
+        "ref": "Isa 45:7",
+        "text": "יוֹצֵר אוֹר וּבוֹרֵא חֹשֶׁךְ (yotser 'or uvore choshekh) — 'forming light and creating darkness'",
+        "explanation": "Merism declaring God's sovereignty over all reality — light and darkness together encompass everything. The claim is total: nothing exists outside God's creative authority."
+      }
+    ],
+    "related_articles": [
+      "lit-hendiadys",
+      "lit-parallelism"
+    ],
+    "display_order": 5
+  },
+  {
+    "id": "lit-hendiadys",
+    "title": "Hendiadys",
+    "language": "literary",
+    "category": "literary",
+    "summary": "A figure of speech expressing a single complex idea through two words joined by 'and' — where one word modifies the other rather than both being equal partners.",
+    "body": "Hendiadys (Greek: \"one through two\") occurs when a writer uses two nouns connected by \"and\" to express a single idea that would normally be stated as a noun plus adjective or noun plus modifier. Instead of saying \"a gracious covenant,\" the writer says \"grace and covenant.\"\n\n## How to Recognize It\n\nLook for two nouns joined by \"and\" (Hebrew: וְ, waw; Greek: καί, kai) where the phrase makes better sense if one noun modifies the other. \"Steadfast love and faithfulness\" might be hendiadys for \"faithful steadfast love.\" Not every paired noun is hendiadys — context and interpretive tradition guide identification.\n\n## Distinguishing Hendiadys from Word Pairs\n\nThe key question: are these two separate things or one complex thing? \"Tohu vavohu\" (Gen 1:2, \"formless and void\") is likely hendiadys — not two distinct conditions but one comprehensive description of primordial disorder. \"Grace and truth\" (John 1:14) may be hendiadys for \"gracious truth\" or \"true grace,\" or it may name two distinct divine attributes. The ambiguity is sometimes deliberate.\n\n## Why It Matters for Interpretation\n\nMisreading hendiadys as two separate items doubles the author's point count and dilutes each one. If \"signs and wonders\" is hendiadys, the meaning is \"wonderful signs\" — one category of divine action, not two. Recognizing the figure creates a sharper, more focused reading.",
+    "examples": [
+      {
+        "ref": "Gen 1:2",
+        "text": "תֹהוּ וָבֹהוּ (tohu vavohu) — 'formless and void'",
+        "explanation": "Likely hendiadys — not two separate conditions but one comprehensive state of primordial disorder. The pair functions as a single intensified description: complete unformed chaos."
+      },
+      {
+        "ref": "Gen 3:16",
+        "text": "עִצְּבוֹנֵךְ וְהֵרֹנֵךְ (itstsevonekh veheronekh) — 'your pain and your conception'",
+        "explanation": "Probable hendiadys: 'your painful conception' or 'the pain of your childbearing.' The two nouns describe one experience rather than two separate realities."
+      },
+      {
+        "ref": "Acts 14:3",
+        "text": "σημεῖα καὶ τέρατα (sēmeia kai terata) — 'signs and wonders'",
+        "explanation": "A standard hendiadys pair — not two categories of miracles but one: 'wonderful signs' or 'sign-wonders.' The pair appears as a fixed expression throughout the NT."
+      }
+    ],
+    "related_articles": [
+      "lit-merism",
+      "lit-hyperbole"
+    ],
+    "display_order": 6
+  },
+  {
+    "id": "lit-hyperbole",
+    "title": "Hyperbole",
+    "language": "literary",
+    "category": "literary",
+    "summary": "Deliberate exaggeration used not to deceive but to emphasize — a rhetorical strategy appearing throughout Scripture in poetry, prophecy, and the teachings of Jesus.",
+    "body": "Hyperbole is intentional overstatement used for emphasis, not deception. The speaker says more than is literally true in order to convey the emotional weight or urgency of a point. Biblical writers and speakers use hyperbole frequently and expect their audience to recognize it.\n\n## Recognizing It\n\nHyperbole is identified by contextual impossibility or extreme exaggeration that signals figurative intent. When Jesus says to remove the \"log\" from your own eye (Matt 7:3), no one imagines a literal timber — the exaggeration makes the point memorable and forceful. Prophetic literature uses cosmic hyperbole: stars falling, mountains melting, the sun going dark — language of upheaval that describes political and spiritual catastrophe through the imagery of creation's undoing.\n\n## Where It Appears\n\n**Wisdom literature:** \"I have seen everything under the sun\" (Eccl 1:14) — comprehensive scope, not literal exhaustion. **Prophetic oracles:** \"Every valley shall be raised up\" (Isa 40:4) — sweeping transformation. **Jesus's teaching:** \"If your right hand causes you to sin, cut it off\" (Matt 5:30) — radical urgency. **Narrative:** \"The whole world went after him\" (John 12:19) — the crowd was large, not literally the entire planet.\n\n## Why It Matters for Interpretation\n\nFailing to recognize hyperbole leads to either impossible literalism or dismissal of the text as false. Recognizing it preserves both the text's truthfulness and its rhetorical power. Hyperbole tells the reader how the speaker feels about the subject — the emotional register matters as much as the factual content.",
+    "examples": [
+      {
+        "ref": "Matt 7:3",
+        "text": "τὴν δοκὸν τὴν ἐν τῷ ὀφθαλμῷ σου (tēn dokon tēn en tō ophthalmō sou) — 'the log in your eye'",
+        "explanation": "Jesus uses absurd exaggeration — a construction beam in someone's eye — to make the point about self-examination unforgettably vivid. The hyperbole is the pedagogy."
+      },
+      {
+        "ref": "Ps 6:6",
+        "text": "אַשְׁחֶה בְכָל־לַיְלָה מִטָּתִי (ashcheh vekhol-laylah mittati) — 'every night I flood my bed [with tears]'",
+        "explanation": "The psalmist's hyperbole conveys the intensity of grief — not literal nightly flooding but emotional devastation so overwhelming that exaggeration is the only adequate expression."
+      },
+      {
+        "ref": "Deut 1:28",
+        "text": "עָרִים גְּדֹלֹת וּבְצוּרֹת בַּשָּׁמָיִם (arim gedolot uvtsurot bashamayim) — 'cities great and fortified up to heaven'",
+        "explanation": "The spies describe Canaanite cities with walls 'reaching heaven.' The hyperbole reveals their fear — the cities felt impossibly formidable, and the exaggeration communicates the emotional reality."
+      }
+    ],
+    "related_articles": [
+      "lit-irony",
+      "lit-merism"
+    ],
+    "display_order": 7
+  },
+  {
+    "id": "lit-irony",
+    "title": "Irony",
+    "language": "literary",
+    "category": "literary",
+    "summary": "A literary device where the surface meaning and the intended meaning diverge — used by biblical narrators, prophets, and Jesus to create dramatic tension and expose human folly.",
+    "body": "Irony occurs when there is a gap between what is said (or expected) and what is meant (or happens). Biblical writers use irony extensively — it is one of the narrator's most sophisticated tools for guiding the reader's moral and theological judgment.\n\n## Types in Scripture\n\n**Verbal irony:** Saying the opposite of what is meant. When Micaiah tells Ahab to \"go up and triumph\" (1 Kings 22:15), the king recognizes the irony — the prophet means the opposite. **Dramatic irony:** The audience knows something a character does not. In the book of Esther, Haman builds a gallows for Mordecai, not knowing he will hang on it himself. **Situational irony:** Events turn out opposite to expectation. The one who came to curse Israel (Balaam) ends up blessing them.\n\n## The Narrator's Tool\n\nHebrew narrative is famously understated — the narrator rarely comments directly. Irony is how the narrator makes judgments without stating them. When Judges says \"everyone did what was right in his own eyes,\" the irony is that the reader has just witnessed moral catastrophe — what people considered \"right\" was anything but.\n\n## Why It Matters for Interpretation\n\nMissing irony means missing the narrator's verdict. The surface level of the text presents events; the ironic undercurrent provides the evaluation. Recognizing irony is essential for reading the Joseph narrative, Esther, Jonah, and much of Jesus's interaction with the Pharisees, where surface politeness masks devastating critique.",
+    "examples": [
+      {
+        "ref": "Esth 6:6",
+        "text": "Haman asks: 'What should be done for the man the king delights to honor?'",
+        "explanation": "Supreme dramatic irony — Haman assumes the king wants to honor him, so he designs an elaborate tribute. The reader already knows it is for Mordecai. Haman literally scripts his own humiliation."
+      },
+      {
+        "ref": "Judg 21:25",
+        "text": "אִישׁ הַיָּשָׁר בְּעֵינָיו יַעֲשֶׂה (ish hayyashar be'einav ya'aseh) — 'everyone did what was right in his own eyes'",
+        "explanation": "Devastating situational irony — after chapters of violence and moral collapse, the narrator says the people did 'what was right.' The gap between 'right in their eyes' and actual righteousness is the narrator's judgment."
+      },
+      {
+        "ref": "John 11:50",
+        "text": "Caiaphas: 'It is better that one man die for the people'",
+        "explanation": "The high priest unknowingly speaks profound theological truth — Jesus will indeed die for the people. John notes the irony explicitly: Caiaphas prophesied without knowing it (v.51). The villain states the gospel."
+      }
+    ],
+    "related_articles": [
+      "lit-hyperbole",
+      "lit-parallelism"
+    ],
+    "display_order": 8
+  },
+  {
+    "id": "lit-lament",
+    "title": "Lament (Genre)",
+    "language": "literary",
+    "category": "literary",
+    "summary": "A structured prayer genre for expressing grief, protest, and petition to God — the most common psalm type, following a pattern from complaint through trust to praise.",
+    "body": "Lament is not merely complaining — it is a structured, theologically informed genre for bringing grief, confusion, and even protest before God. Lament psalms follow a recognizable pattern that moves through stages of emotional and spiritual processing.\n\n## The Pattern\n\nA typical lament includes: **Address to God** (turning toward God, not away). **Complaint** (honest description of the crisis — enemies, illness, God's apparent absence). **Petition** (asking God to act). **Motivation** (reasons God should intervene — his character, his promises, his reputation). **Confidence** (affirmation of trust despite the situation). **Praise** (vow to praise God when deliverance comes). Not every lament contains all elements, and they may appear in different orders.\n\n## Individual and Communal\n\nIndividual laments (Psalms 3, 13, 22, 42-43, 88) express personal crisis. Communal laments (Psalms 44, 74, 80, 137) address national disaster. Both use the same basic structure but differ in scope. Psalm 88 is the only lament that never reaches the praise stage — it ends in darkness, making it a unique witness to unresolved suffering.\n\n## Why It Matters for Interpretation\n\nLament gives grief a grammar. Understanding the genre reveals that biblical faith does not require pretending everything is fine — it provides a structured way to bring the worst to God honestly. The movement from complaint to praise is not denial but a journey through honest engagement with suffering toward reoriented trust.",
+    "examples": [
+      {
+        "ref": "Ps 13:1-6",
+        "text": "How long, LORD? Will you forget me forever? / How long will you hide your face?",
+        "explanation": "A compact lament covering all stages: complaint (vv.1-2), petition (vv.3-4), confidence and praise (vv.5-6). The movement from 'how long?' to 'I will sing' shows the genre's transformative arc."
+      },
+      {
+        "ref": "Ps 22:1",
+        "text": "אֵלִי אֵלִי לָמָה עֲזַבְתָּנִי (eli eli lamah azavtani) — 'My God, my God, why have you forsaken me?'",
+        "explanation": "The opening of a lament that Jesus quotes on the cross. The address ('My God') maintains relationship even while protesting abandonment — lament always speaks to God, not about him."
+      },
+      {
+        "ref": "Ps 88:18",
+        "text": "מַחְשָׁךְ (machshakh) — 'darkness'",
+        "explanation": "The final word of Psalm 88 — the only lament that never reaches praise. It ends with 'darkness is my closest friend,' making it an honest witness that some suffering has no tidy resolution within the psalmist's experience."
+      }
+    ],
+    "related_articles": [
+      "lit-hymn",
+      "lit-parallelism"
+    ],
+    "display_order": 9
+  },
+  {
+    "id": "lit-hymn",
+    "title": "Hymn (Genre)",
+    "language": "literary",
+    "category": "literary",
+    "summary": "A psalm genre centered on praise of God for who he is and what he has done — typically structured with a call to praise, reasons for praise, and a concluding call.",
+    "body": "The Hymn is a psalm genre focused on praise — not petition, lament, or instruction, but celebration of God's character and deeds. Hymns follow a basic pattern that orients the worshiper from summons to substance.\n\n## The Pattern\n\n**Call to praise:** An imperative summoning the community (or creation) to worship: \"Praise the LORD!\" \"Sing to the LORD a new song!\" **Body of praise:** The reasons for praise, introduced by כִּי (ki, \"for/because\"): God's creative power, his acts in history, his faithfulness, his justice. **Conclusion:** Often a renewed call to praise, creating an inclusio, or a doxology.\n\n## Types of Hymns\n\n**Creation hymns** (Ps 8, 19, 104) celebrate God as maker. **Historical hymns** (Ps 105, 106, 136) retell God's acts in Israel's history. **Enthronement hymns** (Ps 93, 95-99) declare \"The LORD reigns!\" **Zion hymns** (Ps 46, 48, 87) celebrate God's chosen city. Each subtype has its own characteristic vocabulary and themes.\n\n## Why It Matters for Interpretation\n\nRecognizing a psalm as a hymn orients the reader to its purpose: the goal is not instruction or petition but praise. The כִּי (\"for\") clauses in the body are the theological content — they tell the community why God deserves praise. These reason-clauses often contain some of the Bible's most concentrated theological statements about God's nature and activity.",
+    "examples": [
+      {
+        "ref": "Ps 117",
+        "text": "הַלְלוּ אֶת־יְהוָה כָּל־גּוֹיִם (halelu 'et-YHWH kol-goyim) — 'Praise the LORD, all nations'",
+        "explanation": "The shortest psalm — a perfect miniature hymn with call to praise (v.1a), reason for praise (v.1b-2a: 'his steadfast love is great'), and concluding 'Praise the LORD!' (v.2b)."
+      },
+      {
+        "ref": "Ps 136",
+        "text": "כִּי לְעוֹלָם חַסְדּוֹ (ki le'olam chasdo) — 'for his steadfast love endures forever'",
+        "explanation": "The Great Hallel repeats this כִּי clause 26 times — the refrain is the theological core. The hymn recounts creation and exodus, but every act is interpreted through the lens of enduring covenant love."
+      },
+      {
+        "ref": "Ps 100:1-2",
+        "text": "הָרִיעוּ לַיהוָה כָּל־הָאָרֶץ (hari'u la-YHWH kol-ha'arets) — 'Shout for joy to the LORD, all the earth'",
+        "explanation": "A universal call to praise — the imperative הָרִיעוּ summons not just Israel but all creation. The hymn's structure moves from call (vv.1-2) to reason (v.3) to response (vv.4-5)."
+      }
+    ],
+    "related_articles": [
+      "lit-lament",
+      "lit-parallelism"
+    ],
+    "display_order": 10
+  },
+  {
+    "id": "lit-wisdom-saying",
+    "title": "Wisdom Saying (Genre)",
+    "language": "literary",
+    "category": "literary",
+    "summary": "A concise, memorable statement distilling practical or theological insight about life — the basic building block of biblical wisdom literature, especially Proverbs.",
+    "body": "Wisdom sayings are compact, often two-line statements that capture observed patterns in life, moral principles, or theological truths. They are the primary genre of Proverbs and appear throughout Ecclesiastes, Job's dialogues, and Jesus's teaching.\n\n## Forms\n\n**Proverb proper:** A short, pithy observation: \"A soft answer turns away wrath\" (Prov 15:1). **Better-than saying:** Compares two goods: \"Better a little with the fear of the LORD than great wealth with turmoil\" (Prov 15:16). **Numerical saying:** \"There are three things... four things...\" (Prov 30:15-31). **Instruction:** A longer unit with imperative + motivation: \"My son, do not despise the LORD's discipline... for the LORD disciplines those he loves\" (Prov 3:11-12). **Beatitude:** \"Blessed is the one who finds wisdom\" (Prov 3:13).\n\n## How They Work\n\nWisdom sayings are generalizations, not promises. \"Train up a child in the way he should go, and when he is old he will not depart from it\" (Prov 22:6) describes a reliable pattern, not an absolute guarantee. Reading proverbs as unconditional promises leads to theological confusion when exceptions occur.\n\n## Why It Matters for Interpretation\n\nGenre determines expectations. Proverbs offer probable outcomes, not certain ones. Recognizing this prevents the painful misapplication of treating every proverb as a divine contract. Jesus's use of wisdom forms (beatitudes, comparisons, pithy sayings) connects his teaching to Israel's wisdom tradition while transforming its content.",
+    "examples": [
+      {
+        "ref": "Prov 15:1",
+        "text": "מַעֲנֶה רַּךְ יָשִׁיב חֵמָה (ma'aneh rakh yashiv chemah) — 'a soft answer turns away wrath'",
+        "explanation": "A classic observational proverb — it states a general truth about human interaction. It is wisdom gained from experience, not a magical formula that works 100% of the time."
+      },
+      {
+        "ref": "Prov 15:16",
+        "text": "טוֹב מְעַט בְּיִרְאַת יְהוָה (tov me'at beyir'at YHWH) — 'better a little with the fear of the LORD'",
+        "explanation": "A 'better-than' saying — it does not condemn wealth but establishes a priority hierarchy. The form forces a choice between two goods, training the reader in value discernment."
+      },
+      {
+        "ref": "Matt 5:3",
+        "text": "μακάριοι οἱ πτωχοὶ τῷ πνεύματι (makarioi hoi ptōchoi tō pneumati) — 'blessed are the poor in spirit'",
+        "explanation": "Jesus uses the wisdom beatitude form to make a counter-cultural claim — the 'blessed' are not who conventional wisdom expects. The genre connects Jesus to Israel's sages while overturning their expectations."
+      }
+    ],
+    "related_articles": [
+      "lit-lament",
+      "lit-hymn"
+    ],
+    "display_order": 11
+  },
+  {
+    "id": "lit-apocalyptic",
+    "title": "Apocalyptic (Genre)",
+    "language": "literary",
+    "category": "literary",
+    "summary": "A genre using symbolic visions, cosmic imagery, and angelic mediators to reveal hidden divine realities — found in Daniel, Revelation, and portions of the prophets.",
+    "body": "Apocalyptic literature (from ἀποκάλυψις, apokalupsis, \"unveiling\" or \"revelation\") uses highly symbolic language to disclose heavenly realities and the divine plan for history. It emerged during periods of intense persecution and national crisis.\n\n## Key Features\n\n**Symbolic imagery:** Numbers, colors, animals, and cosmic events carry conventional meanings. The number seven means completeness; four means universality; beasts represent empires. **Dualism:** A sharp contrast between the present evil age and the coming age of God's kingdom. **Heavenly perspective:** The seer is transported to heaven or receives visions showing reality from God's viewpoint. **Angelic mediators:** An angel interprets the visions for the human seer. **Deterministic history:** Events unfold according to God's predetermined plan, often in structured sequences.\n\n## How to Read It\n\nApocalyptic imagery functions more like political cartoons than photographs — the images represent realities but are not meant to be decoded as literal predictions of specific events. A beast with ten horns represents concentrated political power, not a literal creature. The genre demands readers ask \"what does this symbol mean?\" rather than \"what will this look like?\"\n\n## Why It Matters for Interpretation\n\nMisreading apocalyptic as literal prediction is the most common interpretive error in the genre. Recognizing the conventional symbol system prevents bizarre literalism. Equally important: apocalyptic was written to encourage persecuted communities, assuring them that God remains sovereign despite present suffering. The pastoral function matters as much as the predictive content.",
+    "examples": [
+      {
+        "ref": "Dan 7:3-7",
+        "text": "Four great beasts coming up from the sea",
+        "explanation": "Four beasts represent four empires — the imagery is political symbolism, not zoology. Daniel's angelic interpreter confirms this (7:17): 'these four beasts are four kingdoms.' The genre signals symbolic reading."
+      },
+      {
+        "ref": "Rev 5:5-6",
+        "text": "The Lion of Judah... a Lamb standing as though slain",
+        "explanation": "Jesus is simultaneously described as a Lion and a slaughtered Lamb — impossible if literal, powerfully coherent as symbol. The juxtaposition captures the apocalyptic paradox: victory through suffering."
+      },
+      {
+        "ref": "Rev 1:12-16",
+        "text": "One like a son of man with eyes like fire, feet like bronze, a sword from his mouth",
+        "explanation": "The vision of Christ uses composite symbolism — each feature represents an attribute (judgment, stability, the power of his word). Reading this as a literal physical description misses the genre entirely."
+      }
+    ],
+    "related_articles": [
+      "lit-hyperbole",
+      "lit-irony"
+    ],
+    "display_order": 12
   }
 ]
