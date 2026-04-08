@@ -466,6 +466,23 @@ const MIGRATIONS: Migration[] = [
       CREATE INDEX IF NOT EXISTS idx_app_notifications_created ON app_notifications(created_at);
     `,
   },
+  {
+    version: 14,
+    description: 'Offline sync queue — write-ahead log for mutations pending server sync',
+    sql: `
+      CREATE TABLE IF NOT EXISTS sync_queue (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        operation TEXT NOT NULL,
+        payload_json TEXT NOT NULL,
+        created_at TEXT NOT NULL DEFAULT (datetime('now')),
+        attempts INTEGER NOT NULL DEFAULT 0,
+        last_error TEXT
+      );
+      CREATE INDEX IF NOT EXISTS idx_sync_queue_created ON sync_queue(created_at);
+
+      ALTER TABLE flagged_content ADD COLUMN synced INTEGER NOT NULL DEFAULT 0;
+    `,
+  },
 ];
 
 /**

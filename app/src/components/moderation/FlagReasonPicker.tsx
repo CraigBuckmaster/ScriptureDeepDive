@@ -17,7 +17,7 @@ import {
   Platform,
 } from 'react-native';
 import { useTheme, spacing, fontFamily, MIN_TOUCH_TARGET } from '../../theme';
-import { flagContent } from '../../db/user';
+import { submitFlag } from '../../services/engagementApi';
 
 const REASONS = [
   'Spam',
@@ -62,7 +62,23 @@ export const FlagReasonPicker = memo(function FlagReasonPicker({
     if (!selected) return;
     setSubmitting(true);
     try {
-      await flagContent(contentId, contentType, selected, selected === 'Other' ? details : undefined);
+      const result = await submitFlag(
+        contentId,
+        contentType,
+        selected,
+        selected === 'Other' ? details : undefined,
+      );
+      if (result.rateLimited) {
+        // Stay open so user sees feedback — briefly flash message then close
+        setSubmitting(false);
+        // Alert is simple and cross-platform
+        const { Alert } = require('react-native');
+        Alert.alert(
+          'Rate Limit Reached',
+          'You can submit up to 5 reports per hour. Please try again later.',
+        );
+        return;
+      }
     } finally {
       reset();
       onClose();
