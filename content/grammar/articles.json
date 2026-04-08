@@ -7,11 +7,26 @@
     "summary": "The Hebrew verb form that typically expresses completed action, a settled state, or a past event viewed as a whole.",
     "body": "The Perfect (also called Qatal after its paradigm form) is one of the two primary Hebrew verb conjugations. Unlike English past tense, the Perfect does not simply mean \"past\" — it describes an action the speaker views as complete, certain, or settled.\n\n## How to Recognize It\n\nPerfect verbs carry their subject markers as suffixes attached to the end of the verb. For example, כָּתַב (katav) means \"he wrote,\" while כָּתְבָה (katvah) means \"she wrote\" and כָּתַבְתָּ (katavta) means \"you wrote.\" This suffix pattern distinguishes the Perfect from the Imperfect, which uses prefixes.\n\n## Common Uses\n\nThe Perfect appears in several contexts beyond simple past tense. **Completed action** is the most straightforward use — something that happened and is done. **Stative meaning** describes a settled condition: יָדַעְתִּי (yadati) can mean \"I know\" (a settled state of knowing) rather than \"I knew.\" The **prophetic perfect** is especially important for interpretation: prophets sometimes use the Perfect for future events to express absolute certainty that God will act, treating the prophecy as already accomplished.\n\n## Why It Matters for Interpretation\n\nRecognizing the Perfect helps readers avoid flattening Hebrew into English tense categories. When Isaiah writes בָּרָא (bara, \"he created\") in the Perfect, the emphasis falls on the completeness of God's creative act — it is finished and settled. When a prophet uses the Perfect for a future promise, it signals unshakable divine commitment. The form does not merely locate an event in time; it reveals how the speaker understands that event's status — as done, certain, and whole.",
     "examples": [
-      {"ref": "Gen 1:1", "text": "בָּרָא (bara) — 'created'", "explanation": "The very first verb in the Bible appears in the Perfect, presenting God's creation as a completed, accomplished act viewed as a unified whole."},
-      {"ref": "Isa 9:6", "text": "יֶלֶד יֻלַּד־לָנוּ (yeled yullad-lanu) — 'a child is born to us'", "explanation": "Isaiah uses the Perfect for a future messianic prophecy (the 'prophetic perfect'), expressing God's promise as so certain it can be spoken of as already accomplished."},
-      {"ref": "Gen 4:1", "text": "יָדַע (yada) — 'knew'", "explanation": "The Perfect of this verb conveys intimate knowledge as a completed, defining experience — not merely a past action but a state that resulted from it."}
+      {
+        "ref": "Gen 1:1",
+        "text": "בָּרָא (bara) — 'created'",
+        "explanation": "The very first verb in the Bible appears in the Perfect, presenting God's creation as a completed, accomplished act viewed as a unified whole."
+      },
+      {
+        "ref": "Isa 9:6",
+        "text": "יֶלֶד יֻלַּד־לָנוּ (yeled yullad-lanu) — 'a child is born to us'",
+        "explanation": "Isaiah uses the Perfect for a future messianic prophecy (the 'prophetic perfect'), expressing God's promise as so certain it can be spoken of as already accomplished."
+      },
+      {
+        "ref": "Gen 4:1",
+        "text": "יָדַע (yada) — 'knew'",
+        "explanation": "The Perfect of this verb conveys intimate knowledge as a completed, defining experience — not merely a past action but a state that resulted from it."
+      }
     ],
-    "related_articles": ["heb-imperfect", "heb-vav-consecutive"],
+    "related_articles": [
+      "heb-imperfect",
+      "heb-vav-consecutive"
+    ],
     "display_order": 8
   },
   {
@@ -22,11 +37,27 @@
     "summary": "The Hebrew verb form expressing incomplete, ongoing, habitual, or future action from the speaker's perspective.",
     "body": "The Imperfect (also called Yiqtol) is the second primary Hebrew verb conjugation. Where the Perfect presents action as complete, the Imperfect presents action as unfinished — in progress, repeated, or yet to happen.\n\n## How to Recognize It\n\nImperfect verbs carry their subject markers as prefixes at the beginning of the verb, sometimes with additional suffixes. The prefix יִ (yi-) typically marks third-person masculine singular: יִכְתֹּב (yikhtov, \"he will write\" or \"he writes\"). The prefix תִ (ti-) marks second-person or third-person feminine: תִּכְתֹּב (tikhtov). This prefix system is the clearest formal distinction from the Perfect's suffix pattern.\n\n## Common Uses\n\n**Future action** is the most frequent English translation: \"he will go,\" \"they will say.\" But the Imperfect is far more versatile. **Habitual or customary action** describes what someone does regularly: \"he used to sacrifice\" (as in Job 1:5, where Job's repeated offerings are in the Imperfect). **Progressive action** captures something in process: \"the waters were receding\" in the flood narrative. **Modal nuances** like wish, possibility, or obligation often appear in the Imperfect as well — \"may the LORD bless you\" uses an Imperfect (jussive) form.\n\n## Why It Matters for Interpretation\n\nThe Imperfect invites readers into action that is open, unfolding, or not yet resolved. In poetry, it creates a sense of vividness and immediacy. In law, it expresses ongoing obligation rather than one-time commands. In prophecy, it can convey either prediction or divine intention. Recognizing the Imperfect helps avoid reading Hebrew narrative as a flat sequence of completed events — some actions are deliberately presented as ongoing, repeated, or still in motion.",
     "examples": [
-      {"ref": "Job 1:5", "text": "יַעֲלֶה (ya'aleh) — 'he would offer'", "explanation": "The Imperfect here expresses habitual, repeated action — Job customarily offered sacrifices for his children, not just once but as an ongoing practice."},
-      {"ref": "Exod 15:1", "text": "אָשִׁירָה (ashirah) — 'I will sing'", "explanation": "Moses uses the Imperfect (cohortative form) to express a deliberate resolve — an intention unfolding from the present moment forward."},
-      {"ref": "Gen 2:6", "text": "יַעֲלֶה (ya'aleh) — 'used to rise up'", "explanation": "The Imperfect describes the mist's habitual, repeated action of rising from the ground — an ongoing natural process, not a single event."}
+      {
+        "ref": "Job 1:5",
+        "text": "יַעֲלֶה (ya'aleh) — 'he would offer'",
+        "explanation": "The Imperfect here expresses habitual, repeated action — Job customarily offered sacrifices for his children, not just once but as an ongoing practice."
+      },
+      {
+        "ref": "Exod 15:1",
+        "text": "אָשִׁירָה (ashirah) — 'I will sing'",
+        "explanation": "Moses uses the Imperfect (cohortative form) to express a deliberate resolve — an intention unfolding from the present moment forward."
+      },
+      {
+        "ref": "Gen 2:6",
+        "text": "יַעֲלֶה (ya'aleh) — 'used to rise up'",
+        "explanation": "The Imperfect describes the mist's habitual, repeated action of rising from the ground — an ongoing natural process, not a single event."
+      }
     ],
-    "related_articles": ["heb-perfect", "heb-vav-consecutive", "heb-participle"],
+    "related_articles": [
+      "heb-perfect",
+      "heb-vav-consecutive",
+      "heb-participle"
+    ],
     "display_order": 9
   },
   {
@@ -37,11 +68,26 @@
     "summary": "A distinctive Hebrew construction that chains verbs into narrative sequence, converting an Imperfect into past meaning or a Perfect into future meaning.",
     "body": "The Vav-Consecutive (also called Waw-Consecutive) is one of the most distinctive features of biblical Hebrew. It attaches the conjunction וַ (va-, \"and\") or וְ (ve-, \"and\") to a verb form and shifts its temporal sense — turning an Imperfect into a narrative past (Wayyiqtol) or a Perfect into a future continuation (Weqatal).\n\n## How to Recognize It\n\n**Wayyiqtol** is by far the more common form. It looks like an Imperfect verb with וַיִּ (vay-) prefixed and a doubled first consonant: וַיֹּאמֶר (vayyomer, \"and he said\"), וַיֵּלֶךְ (vayyélekh, \"and he went\"). This form drives virtually all Old Testament narrative prose. **Weqatal** is rarer, appearing mainly in legal and prophetic texts. It attaches וְ to a Perfect form and shifts it toward future or consequential meaning.\n\n## The Narrative Chain\n\nHebrew storytelling typically begins with a Perfect or temporal clause to set the scene, then chains Wayyiqtol forms to advance the plot: \"In the beginning God created... and God said... and there was... and God saw...\" (Genesis 1). Each Wayyiqtol moves the action forward one step. Breaking this chain — by inserting a non-Wayyiqtol form — signals a pause, background information, or a shift in focus.\n\n## Why It Matters for Interpretation\n\nThe Vav-Consecutive is the backbone of Hebrew narrative pacing. When a storyteller breaks the chain, it is always significant. A switch from Wayyiqtol to a standard Perfect or a nominal clause signals that the narrator is stepping back to provide commentary, give background, or highlight a contrast. Learning to spot these chain breaks reveals the narrator's literary artistry and interpretive priorities.",
     "examples": [
-      {"ref": "Gen 1:3", "text": "וַיֹּאמֶר (vayyomer) — 'and [God] said'", "explanation": "The quintessential Wayyiqtol — it advances the creation narrative step by step, each 'and God said' pushing the story forward in sequential action."},
-      {"ref": "Gen 3:6", "text": "וַתִּקַּח... וַתֹּאכַל... וַתִּתֵּן (vattiqach... vattoʾkhal... vattitten) — 'and she took... and ate... and gave'", "explanation": "Three rapid Wayyiqtol forms create a devastating chain of sequential actions — the speed of the narrative mirrors Eve's quick succession of choices."},
-      {"ref": "Exod 19:3", "text": "וּמֹשֶׁה עָלָה (u-Mosheh alah) — 'Now Moses went up'", "explanation": "This is NOT a Wayyiqtol — it breaks the chain with a subject-first clause, signaling a shift in scene and focus from the people to Moses. The chain break is the narrator's spotlight."}
+      {
+        "ref": "Gen 1:3",
+        "text": "וַיֹּאמֶר (vayyomer) — 'and [God] said'",
+        "explanation": "The quintessential Wayyiqtol — it advances the creation narrative step by step, each 'and God said' pushing the story forward in sequential action."
+      },
+      {
+        "ref": "Gen 3:6",
+        "text": "וַתִּקַּח... וַתֹּאכַל... וַתִּתֵּן (vattiqach... vattoʾkhal... vattitten) — 'and she took... and ate... and gave'",
+        "explanation": "Three rapid Wayyiqtol forms create a devastating chain of sequential actions — the speed of the narrative mirrors Eve's quick succession of choices."
+      },
+      {
+        "ref": "Exod 19:3",
+        "text": "וּמֹשֶׁה עָלָה (u-Mosheh alah) — 'Now Moses went up'",
+        "explanation": "This is NOT a Wayyiqtol — it breaks the chain with a subject-first clause, signaling a shift in scene and focus from the people to Moses. The chain break is the narrator's spotlight."
+      }
     ],
-    "related_articles": ["heb-perfect", "heb-imperfect"],
+    "related_articles": [
+      "heb-perfect",
+      "heb-imperfect"
+    ],
     "display_order": 10
   },
   {
@@ -52,11 +98,26 @@
     "summary": "The Hebrew verb form used for direct positive commands, expressing the speaker's will or urgent instruction to a second person.",
     "body": "The Hebrew Imperative is the form of direct command — \"Go!\" \"Listen!\" \"Keep!\" It addresses a second person (\"you\") and is used only for positive commands. Negative commands (\"do not...\") use different constructions: the Imperfect with אַל (al) for immediate prohibitions, or the Imperfect with לֹא (lo) for permanent laws.\n\n## How to Recognize It\n\nThe Imperative is closely related to the Imperfect — it looks like an Imperfect with its prefix removed. From יִכְתֹּב (yikhtov, \"he will write\"), the Imperative is כְּתֹב (ketov, \"Write!\"). It comes in four forms: masculine singular, feminine singular, masculine plural, and feminine plural. The masculine singular is the base form most commonly encountered.\n\n## Intensified Commands\n\nHebrew adds nuance through related volitional forms. The **Cohortative** (first person: \"Let me...\" or \"Let us...\") adds ה ָ (-ah) to the Imperfect: נֵלְכָה (nelkhah, \"let us go\"). The **Jussive** (third person: \"Let him...\" or \"May he...\") uses a shortened Imperfect. Together with the Imperative, these three forms cover the full range of directed will across all persons.\n\n## Why It Matters for Interpretation\n\nThe Imperative carries force and urgency. When God commands with an Imperative, it expresses direct divine authority. The famous שְׁמַע (shema, \"Hear!\") of Deuteronomy 6:4 is an Imperative — not a suggestion or observation but a summons demanding Israel's full attention. Recognizing Imperatives also helps distinguish absolute commands from narrative descriptions. In wisdom literature, Imperatives mark the teacher's direct instruction to the student, creating an intimate teacher-pupil dynamic.",
     "examples": [
-      {"ref": "Deut 6:4", "text": "שְׁמַע (shema) — 'Hear!'", "explanation": "The most famous Imperative in the Hebrew Bible — a direct command summoning Israel to attentive obedience, not merely passive listening."},
-      {"ref": "Gen 12:1", "text": "לֶךְ־לְךָ (lekh-lekha) — 'Go forth!'", "explanation": "God's Imperative to Abraham is intensified by the reflexive lekha ('for yourself'), making the command deeply personal — 'Go, you yourself, from your land.'"},
-      {"ref": "Ps 34:9", "text": "טַעֲמוּ (ta'amu) — 'Taste!'", "explanation": "The psalmist uses a plural Imperative to invite the audience into direct experience — 'Taste and see that the LORD is good' is a command, not a suggestion."}
+      {
+        "ref": "Deut 6:4",
+        "text": "שְׁמַע (shema) — 'Hear!'",
+        "explanation": "The most famous Imperative in the Hebrew Bible — a direct command summoning Israel to attentive obedience, not merely passive listening."
+      },
+      {
+        "ref": "Gen 12:1",
+        "text": "לֶךְ־לְךָ (lekh-lekha) — 'Go forth!'",
+        "explanation": "God's Imperative to Abraham is intensified by the reflexive lekha ('for yourself'), making the command deeply personal — 'Go, you yourself, from your land.'"
+      },
+      {
+        "ref": "Ps 34:9",
+        "text": "טַעֲמוּ (ta'amu) — 'Taste!'",
+        "explanation": "The psalmist uses a plural Imperative to invite the audience into direct experience — 'Taste and see that the LORD is good' is a command, not a suggestion."
+      }
     ],
-    "related_articles": ["heb-imperfect", "heb-infinitive"],
+    "related_articles": [
+      "heb-imperfect",
+      "heb-infinitive"
+    ],
     "display_order": 11
   },
   {
@@ -67,11 +128,26 @@
     "summary": "Two Hebrew verb forms that function as verbal nouns — the Infinitive Construct expressing purpose or temporal clauses, and the Infinitive Absolute intensifying or emphasizing action.",
     "body": "Hebrew has two infinitive forms that serve very different functions. The **Infinitive Construct** acts as a verbal noun — similar to English \"to write\" or \"writing.\" The **Infinitive Absolute** is an intensifying form with no direct English equivalent.\n\n## Infinitive Construct\n\nThe Infinitive Construct is the workhorse form. It frequently appears with the preposition לְ (le-, \"to\") to express purpose: \"to keep,\" \"to guard,\" \"to do.\" With the preposition בְּ (be-, \"in/when\") or כְּ (ke-, \"as/when\"), it creates temporal clauses: \"when he arrived\" literally reads \"in his arriving.\" Because it functions as a noun, it can take possessive suffixes that indicate its subject: שָׁמְרוֹ (shamro) means \"his keeping\" or \"when he kept.\"\n\n## Infinitive Absolute\n\nThe Infinitive Absolute is one of Hebrew's most expressive tools. Its primary function is intensification: when placed before a matching finite verb, it creates emphasis that English can only approximate with words like \"surely,\" \"certainly,\" or \"indeed.\" The construction מוֹת תָּמוּת (mot tamut) literally reads \"dying you shall die\" — meaning \"you shall surely die.\"\n\n## Why It Matters for Interpretation\n\nThe Infinitive Absolute signals moments of heightened emphasis. When God says מוֹת תָּמוּת (\"you shall surely die\") in Genesis 2:17, the doubled form conveys absolute certainty — this is no casual warning. Translators often flatten this construction into ordinary English, losing the rhetorical force. The Infinitive Construct, meanwhile, reveals purpose and timing in ways that matter for understanding character motivation and narrative sequence.",
     "examples": [
-      {"ref": "Gen 2:17", "text": "מוֹת תָּמוּת (mot tamut) — 'you shall surely die'", "explanation": "The Infinitive Absolute מוֹת paired with the finite verb תָּמוּת creates emphatic certainty — God's warning carries absolute, unmistakable force."},
-      {"ref": "Gen 2:15", "text": "לְעָבְדָהּ וּלְשָׁמְרָהּ (le'ovdah uleshomrah) — 'to work it and to keep it'", "explanation": "Two Infinitive Constructs with לְ express the purpose for which God placed Adam in the garden — these are his defining vocational tasks."},
-      {"ref": "Exod 21:28", "text": "נָגֹחַ (nagoach) — 'was in the habit of goring'", "explanation": "The Infinitive Absolute used independently here indicates habitual, repeated action — the ox was characteristically a gorer, establishing legal liability."}
+      {
+        "ref": "Gen 2:17",
+        "text": "מוֹת תָּמוּת (mot tamut) — 'you shall surely die'",
+        "explanation": "The Infinitive Absolute מוֹת paired with the finite verb תָּמוּת creates emphatic certainty — God's warning carries absolute, unmistakable force."
+      },
+      {
+        "ref": "Gen 2:15",
+        "text": "לְעָבְדָהּ וּלְשָׁמְרָהּ (le'ovdah uleshomrah) — 'to work it and to keep it'",
+        "explanation": "Two Infinitive Constructs with לְ express the purpose for which God placed Adam in the garden — these are his defining vocational tasks."
+      },
+      {
+        "ref": "Exod 21:28",
+        "text": "נָגֹחַ (nagoach) — 'was in the habit of goring'",
+        "explanation": "The Infinitive Absolute used independently here indicates habitual, repeated action — the ox was characteristically a gorer, establishing legal liability."
+      }
     ],
-    "related_articles": ["heb-imperative", "heb-participle"],
+    "related_articles": [
+      "heb-imperative",
+      "heb-participle"
+    ],
     "display_order": 12
   },
   {
@@ -82,11 +158,239 @@
     "summary": "A Hebrew verbal adjective expressing ongoing or characteristic action, used to describe a subject's continuous activity or defining role.",
     "body": "The Hebrew Participle straddles the boundary between verb and adjective. It describes action that is ongoing, continuous, or characteristic of the subject — not a one-time event but a defining activity or state.\n\n## How to Recognize It\n\nThe active Qal Participle follows the pattern קֹטֵל (qotel): שֹׁמֵר (shomer, \"guarding/one who guards\"), כֹּתֵב (kotev, \"writing/one who writes\"). The passive Participle follows the pattern קָטוּל (qatul): כָּתוּב (katuv, \"written\"). Because Participles function as adjectives, they agree with their noun in gender and number and can take the definite article: הַשֹּׁמֵר (ha-shomer, \"the one who guards\").\n\n## Common Uses\n\n**Present tense** is the most frequent translation in prose, since Hebrew has no dedicated present tense form: אֲנִי כֹּתֵב (ani kotev) means \"I am writing\" — ongoing action at the moment of speaking. **Characterization** uses Participles to define someone by their habitual activity: רֹעֶה (ro'eh, \"shepherd\") is literally \"one who shepherds\" — an active Participle turned into a role. **Circumstantial clauses** describe background action simultaneous with the main verb: \"Abraham was sitting (יֹשֵׁב, yoshev) at the tent entrance\" sets the scene for the visitors' arrival.\n\n## Why It Matters for Interpretation\n\nParticiples reveal what is ongoing, characteristic, and defining. When God is called שֹׁמֵר יִשְׂרָאֵל (shomer Yisra'el, \"Guardian of Israel\") in Psalm 121:4, the Participle means this is not a one-time act but God's continuous, defining activity — he is always guarding. When narrative uses a Participle to set a scene, it signals simultaneous background action that gives context to the foreground events. Participles also form many of Hebrew's most important theological titles and divine epithets.",
     "examples": [
-      {"ref": "Ps 121:4", "text": "שׁוֹמֵר יִשְׂרָאֵל (shomer Yisra'el) — 'Guardian of Israel'", "explanation": "The Participle defines God's continuous, characteristic activity — he is the one who is always keeping Israel, not merely someone who guarded them once."},
-      {"ref": "Gen 18:1", "text": "יֹשֵׁב (yoshev) — 'sitting'", "explanation": "The Participle sets the circumstantial background: Abraham was in the midst of sitting at his tent entrance when the LORD appeared — the ongoing scene into which the divine visit intrudes."},
-      {"ref": "Gen 4:2", "text": "רֹעֵה צֹאן (ro'eh tson) — 'a keeper of flocks'", "explanation": "Abel is defined by a Participle — shepherding is not something he once did but his characteristic identity and vocation."}
+      {
+        "ref": "Ps 121:4",
+        "text": "שׁוֹמֵר יִשְׂרָאֵל (shomer Yisra'el) — 'Guardian of Israel'",
+        "explanation": "The Participle defines God's continuous, characteristic activity — he is the one who is always keeping Israel, not merely someone who guarded them once."
+      },
+      {
+        "ref": "Gen 18:1",
+        "text": "יֹשֵׁב (yoshev) — 'sitting'",
+        "explanation": "The Participle sets the circumstantial background: Abraham was in the midst of sitting at his tent entrance when the LORD appeared — the ongoing scene into which the divine visit intrudes."
+      },
+      {
+        "ref": "Gen 4:2",
+        "text": "רֹעֵה צֹאן (ro'eh tson) — 'a keeper of flocks'",
+        "explanation": "Abel is defined by a Participle — shepherding is not something he once did but his characteristic identity and vocation."
+      }
     ],
-    "related_articles": ["heb-imperfect", "heb-infinitive"],
+    "related_articles": [
+      "heb-imperfect",
+      "heb-infinitive"
+    ],
     "display_order": 13
+  },
+  {
+    "id": "heb-qal",
+    "title": "Qal (Simple Active)",
+    "language": "hebrew",
+    "category": "verbs",
+    "summary": "The basic, simple verb stem expressing active voice — the most common form in biblical Hebrew, accounting for roughly 70% of all verb occurrences.",
+    "body": "The Qal is the foundational Hebrew verb stem. Its name comes from the root קלל meaning \"light\" or \"simple,\" reflecting its status as the unmarked base form from which all other stems are derived.\n\n## How to Recognize It\n\nThe Qal has no distinctive prefix or infix — it is the default. In the Perfect, a typical Qal verb looks like קָטַל (qatal, \"he killed\"). In the Imperfect, it becomes יִקְטֹל (yiqtol). The absence of a doubled middle root letter and the absence of prefixed consonants like ה or נ distinguish the Qal from derived stems.\n\n## What It Expresses\n\nThe Qal expresses simple, active action: \"he wrote,\" \"she said,\" \"they went.\" It also covers stative verbs describing a state of being: כָּבֵד (kaved, \"he was heavy\"), זָקֵן (zaqen, \"he was old\"). These stative Qal verbs often use a different vowel pattern, typically with tsere or holem in the second syllable.\n\n## Why It Matters for Interpretation\n\nBecause the Qal is the unmarked stem, choosing a different stem is always meaningful. When a writer uses Piel instead of Qal, or Hiphil instead of Qal, that shift signals intensification, causation, or a changed role for the subject. Understanding the Qal as the baseline makes these shifts visible. Recognizing Qal stative verbs also prevents misreading a state of being as an action — \"he was heavy\" is quite different from \"he made heavy.\"",
+    "examples": [
+      {
+        "ref": "Gen 1:1",
+        "text": "בָּרָא (bara) — 'created'",
+        "explanation": "A Qal Perfect — God performs the simple active action of creating. The extraordinary nature comes from the subject and object, not from the verb stem itself."
+      },
+      {
+        "ref": "Exod 3:4",
+        "text": "וַיִּקְרָא (vayyiqra) — 'and he called'",
+        "explanation": "A Qal Wayyiqtol — God calls to Moses from the bush in the simple active voice. The directness of the Qal underscores the personal nature of the encounter."
+      },
+      {
+        "ref": "1 Sam 4:18",
+        "text": "כָּבֵד (kaved) — 'was heavy'",
+        "explanation": "A Qal stative verb — Eli 'was heavy,' describing his physical condition as a characteristic state, not an active action."
+      }
+    ],
+    "related_articles": [
+      "heb-niphal",
+      "heb-piel",
+      "heb-hiphil"
+    ],
+    "display_order": 1
+  },
+  {
+    "id": "heb-niphal",
+    "title": "Niphal (Simple Passive / Reflexive)",
+    "language": "hebrew",
+    "category": "verbs",
+    "summary": "The Hebrew verb stem expressing passive voice, reflexive action, or middle voice — the passive counterpart to the Qal.",
+    "body": "The Niphal is the passive and reflexive counterpart to the Qal. When a Qal verb describes active action (\"he broke\"), the Niphal of the same root describes action received (\"it was broken\") or turned back on the subject (\"he hid himself\").\n\n## How to Recognize It\n\nThe Niphal is identified by a prefixed נ (nun) in the Perfect: נִקְטַל (niqtal, \"he was killed\"). In the Imperfect the nun assimilates into the following consonant with a dagesh: יִקָּטֵל (yiqqatel). This nun prefix — present or assimilated — is the Niphal's signature.\n\n## Three Distinct Uses\n\n**Passive** is the most common function — the subject receives the action: \"the land was divided,\" \"the word was spoken.\" **Reflexive** means the subject acts on itself: נִשְׁמַר (nishmar) can mean \"he guarded himself.\" **Middle voice** describes the subject allowing or experiencing an action: when God \"appears\" (Niphal of ראה), it suggests he chose to make himself visible — not that someone passively spotted him.\n\n## Why It Matters for Interpretation\n\nThe Niphal often reveals theological perspective. When creation is described in Niphal forms, the emphasis shifts from the actor to the result. The middle-voice Niphal is especially important for divine encounters: God \"lets himself be found\" (2 Chr 15:2) implies both divine sovereignty and responsiveness. Distinguishing passive from reflexive Niphal uses can change the meaning of a passage significantly.",
+    "examples": [
+      {
+        "ref": "Gen 12:7",
+        "text": "וַיֵּרָא (vayyera) — 'and he appeared'",
+        "explanation": "Niphal of ראה ('to see') — God 'let himself be seen' by Abram. The middle-voice Niphal implies divine initiative in choosing to become visible."
+      },
+      {
+        "ref": "Gen 2:4",
+        "text": "בְּהִבָּרְאָם (behibbar'am) — 'when they were created'",
+        "explanation": "Niphal passive of ברא — the focus shifts from God as actor to the heavens and earth as recipients of creative action."
+      },
+      {
+        "ref": "Gen 7:23",
+        "text": "וַיִּמָּחוּ (vayyimmachu) — 'and they were blotted out'",
+        "explanation": "Niphal passive — the living things 'were wiped away' in the flood. The passive emphasizes the devastating result rather than the agent."
+      }
+    ],
+    "related_articles": [
+      "heb-qal",
+      "heb-pual",
+      "heb-hophal"
+    ],
+    "display_order": 2
+  },
+  {
+    "id": "heb-piel",
+    "title": "Piel (Intensive Active)",
+    "language": "hebrew",
+    "category": "verbs",
+    "summary": "The intensive active verb stem that strengthens, intensifies, or extends the meaning of the basic Qal action.",
+    "body": "The Piel is the intensive active stem. Where the Qal says \"he broke,\" the Piel says \"he shattered\" — the same root, but the action is intensified, extended, or made more thorough.\n\n## How to Recognize It\n\nThe Piel is identified by a doubled middle root consonant, visible as a dagesh forte: קִטֵּל (qittel) versus Qal קָטַל (qatal). The vowel pattern also shifts — typically hireq under the first consonant and tsere under the doubled second consonant in the Perfect.\n\n## What It Expresses\n\n**Intensive action** amplifies the Qal: שָׁבַר (shavar, Qal) means \"he broke,\" while שִׁבֵּר (shibber, Piel) means \"he shattered.\" **Factitive use** brings about a state: Qal קָדַשׁ (qadash) means \"he was holy,\" Piel קִדֵּשׁ (qiddesh) means \"he made holy.\" **Denominative verbs** create action from nouns: דָּבָר (davar) is \"word,\" דִּבֵּר (dibber, Piel) is \"he spoke.\"\n\n## Why It Matters for Interpretation\n\nThe Piel signals the author wants to convey more than simple action. The factitive use is especially important theologically — when God \"sanctifies\" in the Piel, he actively makes something holy, not merely declaring it so. When psalmists use Piel forms for God's activity, the intensification communicates thoroughness and completeness.",
+    "examples": [
+      {
+        "ref": "Ps 51:4",
+        "text": "כַּבְּסֵנִי (kabbeseni) — 'wash me thoroughly'",
+        "explanation": "Piel of כבס ('to wash') — David asks not for a simple rinse but intensive, thorough cleansing. The Piel conveys the depth of purification he seeks."
+      },
+      {
+        "ref": "Gen 1:22",
+        "text": "וַיְבָרֶךְ (vayvarekh) — 'and he blessed'",
+        "explanation": "Piel of ברך — God actively bestows blessing. The Piel makes this a factitive act: God brings about the state of blessedness."
+      },
+      {
+        "ref": "Exod 31:13",
+        "text": "מְקַדִּשְׁכֶם (meqaddishkhem) — 'who sanctifies you'",
+        "explanation": "Piel participle of קדשׁ — God 'makes you holy.' The Piel factitive shows God actively producing holiness in his people."
+      }
+    ],
+    "related_articles": [
+      "heb-qal",
+      "heb-pual",
+      "heb-hithpael"
+    ],
+    "display_order": 3
+  },
+  {
+    "id": "heb-pual",
+    "title": "Pual (Intensive Passive)",
+    "language": "hebrew",
+    "category": "verbs",
+    "summary": "The passive counterpart to the Piel — expressing intensive action received by the subject.",
+    "body": "The Pual is the passive form of the Piel stem. Just as the Niphal serves as the passive of the Qal, the Pual expresses the same intensive or factitive action as the Piel but from the perspective of the one receiving it.\n\n## How to Recognize It\n\nLike the Piel, the Pual has a doubled middle root consonant. The distinguishing feature is its vowel pattern: the Pual uses a qibbuts (short u-vowel) under the first consonant: קֻטַּל (quttal, \"he was killed intensively\") versus Piel קִטֵּל (qittel). The Pual is relatively rare — it appears far less frequently than its active counterpart.\n\n## What It Expresses\n\nThe Pual expresses the result of intensive or factitive action upon the subject. If the Piel of כסה (kissah) means \"he covered thoroughly,\" the Pual כֻּסָּה (kussah) means \"it was thoroughly covered.\" The emphasis falls on the completeness of the action received.\n\n## Why It Matters for Interpretation\n\nThe Pual highlights the thoroughness of what has been done to the subject. When a psalm describes sins as \"covered\" in the Pual (Ps 32:1), the intensive passive underscores that the covering is complete and total — nothing remains exposed. The rarity of the Pual also makes it noteworthy when it does appear — the author has chosen a specific and emphatic form.",
+    "examples": [
+      {
+        "ref": "Ps 32:1",
+        "text": "כְּסוּי חֲטָאָה (kesuy chata'ah) — 'whose sin is covered'",
+        "explanation": "Pual passive participle of כסה — sin has been thoroughly, intensively covered. The Pual emphasizes the completeness of divine forgiveness."
+      },
+      {
+        "ref": "Isa 53:5",
+        "text": "מְדֻכָּא (medhukka) — 'crushed'",
+        "explanation": "Pual participle of דכא — the Servant was not merely struck but thoroughly crushed. The intensive passive conveys the totality of suffering endured."
+      },
+      {
+        "ref": "Ps 119:21",
+        "text": "אֲרוּרִים (arurim) — 'cursed'",
+        "explanation": "Pual passive participle — those who stray are thoroughly, completely cursed. The Pual intensifies the weight of the pronouncement."
+      }
+    ],
+    "related_articles": [
+      "heb-piel",
+      "heb-niphal"
+    ],
+    "display_order": 4
+  },
+  {
+    "id": "heb-hiphil",
+    "title": "Hiphil (Causative Active)",
+    "language": "hebrew",
+    "category": "verbs",
+    "summary": "The causative active verb stem — the subject causes someone or something else to perform the action of the root.",
+    "body": "The Hiphil is the causative active stem. Where the Qal describes simple action (\"he went\"), the Hiphil describes causing that action (\"he made go\" or \"he led\"). The subject does not perform the root action directly but causes another to do so.\n\n## How to Recognize It\n\nThe Hiphil is identified by a prefixed ה (he) in the Perfect: הִקְטִיל (hiqtil, \"he caused to kill\"). In the Imperfect, the ה disappears but a distinctive hireq-yod vowel pattern remains: יַקְטִיל (yaqtil). The Hiphil participle uses a מ prefix: מַקְטִיל (maqtil). These patterns make it generally recognizable even without seeing the he prefix.\n\n## What It Expresses\n\n**Causative action** is the core meaning: Qal מָלַךְ (malakh) means \"he reigned,\" Hiphil הִמְלִיךְ (himlikh) means \"he made someone king.\" **Declarative use** announces a state: Hiphil of צדק (tsadaq) means \"he declared righteous.\" **State-entry** describes entering a condition: Qal זָקֵן (zaqen) means \"he was old,\" Hiphil הִזְקִין (hizqin) means \"he grew old\" — entering the state.\n\n## Why It Matters for Interpretation\n\nThe Hiphil is theologically crucial because it identifies who causes what. When God \"brings out\" Israel from Egypt (Hiphil of יצא), the causative stem makes God the agent behind Israel's departure — they did not leave on their own. The declarative Hiphil of צדק underlies the doctrine of justification: God \"declares righteous\" rather than \"makes righteous\" — a key distinction in biblical theology.",
+    "examples": [
+      {
+        "ref": "Exod 6:6",
+        "text": "וְהוֹצֵאתִי (vehotse'ti) — 'and I will bring out'",
+        "explanation": "Hiphil of יצא ('to go out') — God does not merely let Israel leave but actively causes their departure. The causative stem makes God the driving agent of the Exodus."
+      },
+      {
+        "ref": "Gen 15:6",
+        "text": "וַיַּחְשְׁבֶהָ (vayyachshevehah) — 'and he credited it'",
+        "explanation": "Hiphil of חשׁב — God 'caused it to be reckoned' as righteousness. The causative stem shows God actively crediting Abram's faith as righteousness."
+      },
+      {
+        "ref": "Josh 7:7",
+        "text": "הֶעֱבַרְתָּ (he'evarta) — 'you brought across'",
+        "explanation": "Hiphil of עבר ('to cross') — Joshua reminds God that he caused Israel to cross the Jordan. The causative stem assigns responsibility for the crossing to God."
+      }
+    ],
+    "related_articles": [
+      "heb-qal",
+      "heb-hophal"
+    ],
+    "display_order": 5
+  },
+  {
+    "id": "heb-hophal",
+    "title": "Hophal (Causative Passive)",
+    "language": "hebrew",
+    "category": "verbs",
+    "summary": "The passive counterpart to the Hiphil — the subject is caused to undergo the action by an unstated agent.",
+    "body": "The Hophal is the passive form of the Hiphil stem. It is the rarest of the seven major verb stems. Where the Hiphil says \"he caused X to happen,\" the Hophal says \"X was caused to happen\" — the agent of causation drops out or is left unstated.\n\n## How to Recognize It\n\nThe Hophal is identified by a prefixed ה with a qamets-hatuf or qibbuts vowel (short o/u sound) in the Perfect: הָקְטַל (hoqtal) or הֻקְטַל (huqtal). In the Imperfect, a similar short u-vowel appears under the prefix: יָקְטַל (yoqtal). The passive vowel pattern under the ה prefix distinguishes it from the active Hiphil's hireq.\n\n## What It Expresses\n\nThe Hophal expresses causative action in the passive — someone was caused or made to do something, but the causer is not named. If Hiphil הִשְׁלִיךְ (hishlikh) means \"he threw\" (caused to fall), Hophal הָשְׁלַךְ (hoshlakh) means \"he was thrown\" (was caused to fall). The emphasis falls entirely on the subject's experience.\n\n## Why It Matters for Interpretation\n\nThe Hophal's rarity makes each occurrence noteworthy. Its passive causative structure is particularly effective for describing divine judgment where God's agency is implied but not named — things \"are caused to happen\" by an unnamed but understood power. It also appears in legal texts to describe what shall be done to someone, leaving the enforcing agent unspecified.",
+    "examples": [
+      {
+        "ref": "Ezek 32:32",
+        "text": "הָשְׁלַךְ (hoshlakh) — 'was cast down'",
+        "explanation": "Hophal of שׁלך — Pharaoh 'was caused to be thrown down.' The passive causative implies divine agency behind the humiliation without naming God directly."
+      },
+      {
+        "ref": "Lev 6:15",
+        "text": "הָקְרְבָה (hoqrevah) — 'it was offered'",
+        "explanation": "Hophal of קרב — the offering 'was caused to be brought near.' The passive focuses on the ritual requirement rather than identifying who performs it."
+      },
+      {
+        "ref": "Isa 14:15",
+        "text": "תּוּרַד (turad) — 'you will be brought down'",
+        "explanation": "Hophal of ירד ('to descend') — the king of Babylon will be caused to go down to Sheol. The causative passive implies irresistible divine force behind his fall."
+      }
+    ],
+    "related_articles": [
+      "heb-hiphil",
+      "heb-pual"
+    ],
+    "display_order": 6
+  },
+  {
+    "id": "heb-hithpael",
+    "title": "Hithpael (Reflexive / Reciprocal)",
+    "language": "hebrew",
+    "category": "verbs",
+    "summary": "The reflexive-reciprocal verb stem where the subject acts on itself, for itself, or in interaction with others.",
+    "body": "The Hithpael is the reflexive stem of the Hebrew verb system. It describes action that the subject performs on itself, for its own benefit, or in mutual interaction with others.\n\n## How to Recognize It\n\nThe Hithpael is identified by a prefixed הִתְ (hit-) along with a doubled middle root consonant: הִתְקַטֵּל (hitqattel). In the Imperfect, the ה drops but the תְ remains: יִתְקַטֵּל (yitqattel). An interesting phonological feature: when the first root letter is a sibilant (שׂ, שׁ, צ), the ת and the sibilant swap positions — so הִתְשַׁמֵּר becomes הִשְׁתַּמֵּר.\n\n## What It Expresses\n\n**Reflexive action** — the subject acts on itself: הִתְקַדֵּשׁ (hitqaddesh) means \"he sanctified himself.\" **Reciprocal action** — subjects act on each other: הִתְרָאָה (hitra'ah) can mean \"they looked at each other.\" **Iterative action** — repeated or habitual activity: הִתְהַלֵּךְ (hithalekh) means \"he walked about\" or \"he walked habitually.\" **Pretend or show oneself** — presenting a characteristic: הִתְנַבֵּא (hitnabber) can mean \"he prophesied\" or \"he acted as a prophet.\"\n\n## Why It Matters for Interpretation\n\nThe Hithpael often reveals personal engagement and intentionality. When Genesis 3:8 says Adam and Eve \"hid themselves\" (Hithpael), the reflexive form emphasizes their deliberate, self-directed action — they actively concealed themselves. When God \"walks about\" in the garden (Hithpael of הלך), the iterative sense suggests leisurely, repeated movement — a portrait of divine presence as habitual and intimate rather than a single dramatic appearance.",
+    "examples": [
+      {
+        "ref": "Gen 3:8",
+        "text": "וַיִּתְחַבֵּא (vayyitchabbe) — 'and he hid himself'",
+        "explanation": "Hithpael of חבא — Adam actively, deliberately concealed himself from God. The reflexive stem emphasizes the self-directed nature of his hiding."
+      },
+      {
+        "ref": "Gen 3:8",
+        "text": "הִתְהַלֵּךְ (hithalekh) — 'walking about'",
+        "explanation": "Hithpael of הלך — God was 'walking about' in the garden, suggesting habitual, repeated, leisurely movement. The iterative Hithpael portrays intimate divine presence."
+      },
+      {
+        "ref": "1 Kings 18:28",
+        "text": "וַיִּתְגֹּדְדוּ (vayyitgodedu) — 'and they cut themselves'",
+        "explanation": "Hithpael of גדד — the prophets of Baal cut themselves in a reflexive action. The stem makes clear these are self-inflicted wounds."
+      }
+    ],
+    "related_articles": [
+      "heb-piel",
+      "heb-niphal"
+    ],
+    "display_order": 7
   }
 ]
