@@ -23,7 +23,7 @@ import { ScreenHeader } from '../components/ScreenHeader';
 import { SearchInput } from '../components/SearchInput';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import { UpgradePrompt } from '../components/UpgradePrompt';
-import { CategoryCard, TopicListItem } from '../components/lifetopics';
+import { TopicListItem } from '../components/lifetopics';
 import {
   useLifeTopicCategories,
   useLifeTopics,
@@ -32,7 +32,7 @@ import {
 import { usePremium } from '../hooks/usePremium';
 import { useFollowingFeed, type FeedItem } from '../hooks/useFollowingFeed';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
-import type { LifeTopic, LifeTopicCategory } from '../types';
+import type { LifeTopic } from '../types';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 type TabMode = 'browse' | 'following';
@@ -61,15 +61,6 @@ function LifeTopicsScreen() {
     return map;
   }, [categories]);
 
-  // Count topics per category
-  const topicCountMap = useMemo(() => {
-    const map: Record<string, number> = {};
-    allTopics.forEach((t) => {
-      map[t.category_id] = (map[t.category_id] ?? 0) + 1;
-    });
-    return map;
-  }, [allTopics]);
-
   const handleTopicPress = useCallback(
     (topicId: string) => {
       if (!isPremium) {
@@ -87,18 +78,6 @@ function LifeTopicsScreen() {
       setSearch('');
     },
     [setSearch],
-  );
-
-  const renderCategoryItem = useCallback(
-    ({ item }: { item: LifeTopicCategory }) => (
-      <CategoryCard
-        name={item.name}
-        icon={item.icon}
-        topicCount={topicCountMap[item.id] ?? 0}
-        onPress={() => handleCategoryPress(item.id)}
-      />
-    ),
-    [handleCategoryPress, topicCountMap],
   );
 
   const renderTopicItem = useCallback(
@@ -216,10 +195,6 @@ function LifeTopicsScreen() {
     );
   }
 
-  // Category browse mode (no category selected) — show grid
-  // Topic list mode (category selected) — show list
-  const showTopicsList = !!selectedCategory;
-
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: base.bg }]}>
       <View style={styles.headerPad}>
@@ -296,36 +271,20 @@ function LifeTopicsScreen() {
       </View>
 
       {activeTab === 'browse' ? (
-        <>
-          {!showTopicsList ? (
-            /* Category grid */
-            <FlatList
-              data={categories}
-              keyExtractor={(item) => item.id}
-              renderItem={renderCategoryItem}
-              numColumns={2}
-              columnWrapperStyle={styles.columnWrapper}
-              contentContainerStyle={styles.listPad}
-              showsVerticalScrollIndicator={false}
-            />
-          ) : (
-            /* Topic list */
-            <FlatList
-              data={topics}
-              keyExtractor={(item) => item.id}
-              renderItem={renderTopicItem}
-              contentContainerStyle={styles.listPad}
-              showsVerticalScrollIndicator={false}
-              ListEmptyComponent={
-                <View style={styles.emptyState}>
-                  <Text style={[styles.emptyText, { color: base.textMuted }]}>
-                    No topics in this category
-                  </Text>
-                </View>
-              }
-            />
-          )}
-        </>
+        <FlatList
+          data={topics}
+          keyExtractor={(item) => item.id}
+          renderItem={renderTopicItem}
+          contentContainerStyle={styles.listPad}
+          showsVerticalScrollIndicator={false}
+          ListEmptyComponent={
+            <View style={styles.emptyState}>
+              <Text style={[styles.emptyText, { color: base.textMuted }]}>
+                {selectedCategory ? 'No topics in this category' : 'No topics available'}
+              </Text>
+            </View>
+          }
+        />
       ) : (
         /* Following tab */
         feedLoading ? (
