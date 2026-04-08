@@ -59,10 +59,10 @@ DENSITY_TIERS = [
     (999999,  "rich",     10),
 ]
 
-# Per-panel-type threshold multipliers (v1: uniform, ready for per-type tuning)
+# Per-panel-type threshold multipliers — lower = more lenient for shorter panels
 PANEL_THRESHOLD_MULTIPLIERS = {
-    # "heb": 0.5,    # Hebrew panels are naturally shorter
-    # "cross": 0.7,  # Cross-ref panels are note-based
+    "heb": 0.5,      # Hebrew panels are naturally shorter (word studies)
+    "cross": 0.5,    # Cross-ref panels are citations, not commentary
 }
 
 # Placeholder / template artifact patterns
@@ -173,14 +173,30 @@ def extract_panel_text(panel_key, panel_data):
                 parts.append(entry.get("gloss", ""))
         return " ".join(p for p in parts if p)
 
-    # Cross-references — dict with refs list
+    # Cross-references — dict with refs list + echoes list
     if panel_key == "cross" and isinstance(panel_data, dict):
-        refs = panel_data.get("refs", [])
-        return " ".join(r.get("note", "") for r in refs if isinstance(r, dict))
+        parts = []
+        for r in panel_data.get("refs", []):
+            if isinstance(r, dict):
+                parts.append(r.get("note", ""))
+        for e in panel_data.get("echoes", []):
+            if isinstance(e, dict):
+                parts.append(e.get("source_context", ""))
+                parts.append(e.get("target_context", ""))
+        return " ".join(p for p in parts if p)
 
-    # Historical context — dict with historical + context fields
+    # Historical context — dict with historical + context + ane + audience fields
     if panel_key == "hist" and isinstance(panel_data, dict):
-        parts = [panel_data.get("historical", ""), panel_data.get("context", "")]
+        parts = [
+            panel_data.get("historical", ""),
+            panel_data.get("context", ""),
+            panel_data.get("audience", ""),
+        ]
+        ane = panel_data.get("ane", [])
+        if isinstance(ane, list):
+            parts.extend(str(item) for item in ane)
+        elif isinstance(ane, str):
+            parts.append(ane)
         return " ".join(p for p in parts if p)
 
     # Timeline — list of dicts with text
