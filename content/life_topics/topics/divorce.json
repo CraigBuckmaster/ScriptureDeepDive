@@ -1,0 +1,73 @@
+{
+  "id": "divorce",
+  "category_id": "relationships",
+  "title": "Divorce",
+  "subtitle": "What the Bible Says About Divorce",
+  "summary": "Scripture takes divorce seriously as a departure from God's design while also extending grace to those who experience it, recognizing that hardness of heart sometimes makes separation unavoidable.",
+  "body": "Jesus addressed divorce directly when Pharisees tested him with a question about Mosaic permission. His answer went back to creation: from the beginning, God made them male and female, and what God has joined together, let no one separate [verse:matt.19.6]. Moses permitted divorce, Jesus explained, because of hardness of heart — it was a concession, not an ideal [verse:matt.19.8].\n\nThe Old Testament's most direct statement comes through Malachi: God hates divorce, describing it as dealing treacherously with the wife of one's youth [verse:mal.2.16]. The context is covenantal faithfulness — divorce is framed as covenant breaking.\n\nYet Scripture is not without nuance. Paul addresses mixed marriages where an unbelieving spouse chooses to leave: the believer is not enslaved in such cases [verse:1cor.7.15]. Deuteronomy's regulations on divorce certificates were designed to protect the vulnerable spouse, particularly women who would otherwise be abandoned without legal standing [verse:deut.24.1-4].\n\nGod himself uses divorce language metaphorically. Through Jeremiah, God describes giving faithless Israel a certificate of divorce — yet even then extends an invitation to return [verse:jer.3.1,jer.3.8]. The pattern is judgment paired with grace.\n\nScripture holds the ideal of lifelong covenant together with compassion for broken situations, refusing to collapse into either cheap permissiveness or merciless rigidity.",
+  "display_order": 3,
+  "verses": [
+    {
+      "verse_ref": "matt.19.6",
+      "verse_order": 1,
+      "annotation": "Jesus affirms the creation design: what God joined, humans should not separate.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "matt.19.8",
+      "verse_order": 2,
+      "annotation": "Divorce was permitted due to hard hearts — a concession, not a command.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "mal.2.16",
+      "verse_order": 3,
+      "annotation": "God's hatred of divorce framed in the context of covenantal treachery.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "1cor.7.15",
+      "verse_order": 4,
+      "annotation": "Paul's exception: if an unbelieving spouse departs, the believer is not bound.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "deut.24.1-4",
+      "verse_order": 5,
+      "annotation": "Mosaic divorce regulations designed to protect the vulnerable party.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "jer.3.8",
+      "verse_order": 6,
+      "annotation": "God uses divorce metaphor for Israel's unfaithfulness — yet still offers restoration.",
+      "is_primary": false
+    }
+  ],
+  "scholars": [
+    {
+      "scholar_id": "keener",
+      "quote": "Keener notes that Jesus' teaching on divorce was counter-cultural in a world where men could divorce wives for trivial reasons — Jesus elevated marriage by restricting divorce, thereby protecting women.",
+      "source": "A Commentary on the Gospel of Matthew (Keener, 1999)",
+      "display_order": 1
+    },
+    {
+      "scholar_id": "fee",
+      "quote": "Fee reads Paul's 'not enslaved' in 1 Corinthians 7:15 as genuine freedom — the abandoned believer is released from the marriage obligation, not left in permanent limbo.",
+      "source": "The First Epistle to the Corinthians (Fee, NICNT, 1987)",
+      "display_order": 2
+    },
+    {
+      "scholar_id": "brueggemann",
+      "quote": "Brueggemann observes that God's own use of divorce language in Jeremiah 3 prevents any simplistic reading — if God can speak of divorce while still pursuing reconciliation, the topic resists rigid legalism.",
+      "source": "A Commentary on Jeremiah (Brueggemann, 1998)",
+      "display_order": 3
+    }
+  ],
+  "related": [
+    "marriage",
+    "forgiveness",
+    "healing_from_trauma",
+    "grace"
+  ]
+}

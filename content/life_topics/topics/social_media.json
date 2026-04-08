@@ -1,0 +1,78 @@
+{
+  "id": "social_media",
+  "category_id": "modern_life",
+  "title": "Social Media",
+  "subtitle": "What the Bible Says About Social Media",
+  "summary": "Though Scripture predates social media, its teachings on speech, comparison, approval-seeking, and the stewardship of time speak directly to how believers should navigate digital platforms.",
+  "body": "Social media did not exist when the Bible was written, but the human dynamics it amplifies are ancient. The desire for approval, the tendency to compare, the power of words to heal or destroy — all of these are addressed extensively in Scripture.\n\nJesus warns against practicing righteousness to be seen by others [verse:matt.6.1]. Social media structurally incentivizes exactly this — curating a public image of virtue, generosity, or spirituality for the approval of an audience. Paul offers the alternative: do not conform to the pattern of this world, but be transformed by the renewing of your mind [verse:rom.12.2].\n\nThe comparison trap is Proverbs territory. As iron sharpens iron, so one person sharpens another [verse:prov.27.17] — but social media often replaces sharpening with measuring. Paul addresses this directly: when they measure themselves by themselves and compare themselves with themselves, they are not wise [verse:2cor.10.12].\n\nThe power of speech applies whether spoken or typed. Let your conversation be always full of grace, seasoned with salt [verse:col.4.6]. The same tongue that blesses can also curse [verse:jas.3.9-10]. Online anonymity and distance do not change the moral weight of words.\n\nTime stewardship matters too. Paul urges believers to be careful how they walk, making the best use of the time [verse:eph.5.15-16]. Endless scrolling is not inherently sinful, but it is a question of whether we are investing our attention in what matters most.",
+  "display_order": 1,
+  "verses": [
+    {
+      "verse_ref": "matt.6.1",
+      "verse_order": 1,
+      "annotation": "Jesus warns against performing righteousness for public approval — directly applicable to curated online personas.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "2cor.10.12",
+      "verse_order": 2,
+      "annotation": "Measuring ourselves by ourselves and comparing is unwise — the core dynamic of social media.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "rom.12.2",
+      "verse_order": 3,
+      "annotation": "Nonconformity to worldly patterns through mental renewal — resisting the platform's pull.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "col.4.6",
+      "verse_order": 4,
+      "annotation": "Speech full of grace — the standard for every comment, post, and reply.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "jas.3.9-10",
+      "verse_order": 5,
+      "annotation": "The same tongue that praises God can curse people — inconsistency in speech is condemned.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "eph.5.15-16",
+      "verse_order": 6,
+      "annotation": "Making the best use of time — a stewardship question for how we spend attention.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "prov.27.17",
+      "verse_order": 7,
+      "annotation": "Iron sharpening iron — real community vs. the shallow connections social media often provides.",
+      "is_primary": false
+    }
+  ],
+  "scholars": [
+    {
+      "scholar_id": "keener",
+      "quote": "Keener argues that Jesus' teaching on public righteousness in Matthew 6 addresses a universal human tendency that social media has simply made more visible — the desire to be seen doing good can corrupt the good itself.",
+      "source": "A Commentary on the Gospel of Matthew (Keener, 1999)",
+      "display_order": 1
+    },
+    {
+      "scholar_id": "harris",
+      "quote": "Harris reads 2 Corinthians 10:12 as Paul identifying self-referential comparison as a mark of spiritual immaturity — wisdom measures itself by God's standards, not by the curated lives of others.",
+      "source": "The Second Epistle to the Corinthians (Harris, 2005)",
+      "display_order": 2
+    },
+    {
+      "scholar_id": "lincoln",
+      "quote": "Lincoln interprets Ephesians 5:15-16 as presenting time as a moral resource — how believers allocate attention is a question of wisdom or folly, not merely preference.",
+      "source": "Ephesians (Lincoln, 1990)",
+      "display_order": 3
+    }
+  ],
+  "related": [
+    "comparison",
+    "digital_addiction",
+    "self_worth"
+  ]
+}

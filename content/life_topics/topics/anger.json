@@ -1,0 +1,84 @@
+{
+  "id": "anger",
+  "category_id": "struggles",
+  "title": "Anger",
+  "subtitle": "What the Bible Says About Anger",
+  "summary": "Scripture distinguishes between righteous anger at injustice and destructive anger that harms relationships, calling believers to be slow to anger and quick to pursue peace.",
+  "body": "Anger is one of the few emotions attributed directly to God throughout Scripture. The Lord is angered by injustice, idolatry, and the oppression of the vulnerable. Yet the same Bible that affirms divine anger consistently warns humans about their own. James puts it plainly: everyone should be quick to listen, slow to speak, and slow to become angry, because human anger does not produce the righteousness that God desires [verse:jas.1.19-20].\n\nThe distinction matters. Jesus himself overturns tables in the temple out of zeal for his Father's house [verse:john.2.13-17]. Yet he also warns that unresolved anger toward a brother carries the same moral gravity as murder [verse:matt.5.21-22]. The issue is not whether anger arises but what it becomes once it does.\n\nPaul strikes the balance in Ephesians: be angry, but do not sin — and do not let the sun go down on your anger [verse:eph.4.26-27]. Anger given a deadline stays useful; anger given a permanent address becomes bitterness. Proverbs reinforces this with practical wisdom: a person slow to anger has great understanding, while a quick temper promotes folly [verse:prov.14.29].\n\nThe goal Scripture sets is not the suppression of anger but its transformation — channeling legitimate grievance toward constructive action while refusing to let it curdle into malice or revenge. Vengeance belongs to God [verse:rom.12.19]; believers are called to overcome evil with good.",
+  "display_order": 5,
+  "verses": [
+    {
+      "verse_ref": "jas.1.19-20",
+      "verse_order": 1,
+      "annotation": "James' foundational counsel: be slow to anger because human wrath does not achieve God's purposes.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "eph.4.26-27",
+      "verse_order": 2,
+      "annotation": "Paul permits anger but demands urgency in resolving it — unresolved anger gives the devil a foothold.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "matt.5.21-22",
+      "verse_order": 3,
+      "annotation": "Jesus elevates anger toward a brother to the level of the murder commandment.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "prov.14.29",
+      "verse_order": 4,
+      "annotation": "Slowness to anger is linked to understanding; a quick temper is linked to folly.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "john.2.13-17",
+      "verse_order": 5,
+      "annotation": "Jesus' righteous anger in cleansing the temple — a model of anger directed at genuine injustice.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "rom.12.19",
+      "verse_order": 6,
+      "annotation": "Vengeance belongs to God — believers are to leave room for divine justice rather than taking it themselves.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "prov.15.1",
+      "verse_order": 7,
+      "annotation": "A gentle answer deflects wrath, but a harsh word escalates it.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "col.3.8",
+      "verse_order": 8,
+      "annotation": "Paul commands believers to rid themselves of anger, rage, and malice as part of putting on the new self.",
+      "is_primary": false
+    }
+  ],
+  "scholars": [
+    {
+      "scholar_id": "davids",
+      "quote": "Davids reads James 1:19-20 as establishing a fundamental principle of the Christian life: anger that serves self rather than God always distorts the justice it claims to pursue.",
+      "source": "The Epistle of James (Davids, 1982)",
+      "display_order": 1
+    },
+    {
+      "scholar_id": "lincoln",
+      "quote": "Lincoln argues that Paul's 'be angry but do not sin' in Ephesians 4 reflects a realistic pastoral theology — anger is inevitable, but its duration and direction determine whether it builds up or tears down.",
+      "source": "Ephesians (Lincoln, 1990)",
+      "display_order": 2
+    },
+    {
+      "scholar_id": "longman",
+      "quote": "Longman notes that Proverbs consistently presents self-control over anger as a hallmark of wisdom, contrasting the fool who vents freely with the wise person who holds back.",
+      "source": "Proverbs (Longman, 2006)",
+      "display_order": 3
+    }
+  ],
+  "related": [
+    "forgiveness",
+    "conflict_resolution",
+    "boundaries"
+  ]
+}

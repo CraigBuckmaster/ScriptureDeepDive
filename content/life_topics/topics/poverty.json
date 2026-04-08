@@ -1,0 +1,78 @@
+{
+  "id": "poverty",
+  "category_id": "social",
+  "title": "Poverty",
+  "subtitle": "What the Bible Says About Poverty",
+  "summary": "Scripture commands care for the poor as a non-negotiable expression of faith, linking generosity to the vulnerable directly with one's relationship to God.",
+  "body": "God's concern for the poor runs from Genesis to Revelation. The Law of Moses built economic safety nets into Israel's national life: gleaning rights for the destitute [verse:lev.19.9-10], the sabbatical year's debt release, and the Year of Jubilee's land restoration. Poverty was never meant to be permanent in God's design.\n\nProverbs connects the treatment of the poor directly to the Creator: whoever is generous to the poor lends to the Lord [verse:prov.19.17]. The inverse is equally stark — whoever shuts their ears to the cry of the poor will themselves cry out and not be answered [verse:prov.21.13]. This is not transactional religion; it reflects the character of a God who identifies with the marginalized.\n\nJesus inaugurates his ministry by reading Isaiah's prophecy: the Spirit has anointed me to proclaim good news to the poor [verse:luke.4.18-19]. His teaching consistently privileges the economically vulnerable — blessed are the poor, woe to the rich who have already received their comfort. The early church took this seriously, sharing possessions so that none among them had need [verse:acts.4.34-35].\n\nJohn poses the challenge in its starkest form: if anyone has material possessions and sees a brother in need but has no pity, how can the love of God be in that person [verse:1john.3.17]? Compassion for the poor is not optional Christian behavior — it is evidence of genuine faith.",
+  "display_order": 3,
+  "verses": [
+    {
+      "verse_ref": "prov.19.17",
+      "verse_order": 1,
+      "annotation": "Generosity to the poor is described as lending to the Lord — God takes it personally.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "luke.4.18-19",
+      "verse_order": 2,
+      "annotation": "Jesus defines his mission in terms of good news for the poor and freedom for the oppressed.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "lev.19.9-10",
+      "verse_order": 3,
+      "annotation": "The gleaning laws — economic legislation designed to ensure the poor could eat.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "prov.21.13",
+      "verse_order": 4,
+      "annotation": "Ignoring the cry of the poor disqualifies one's own cries from being heard.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "acts.4.34-35",
+      "verse_order": 5,
+      "annotation": "The early church's radical sharing eliminated need among its members.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "1john.3.17",
+      "verse_order": 6,
+      "annotation": "Material indifference to a brother's need is incompatible with the love of God.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "deut.15.7-8",
+      "verse_order": 7,
+      "annotation": "An open-handed generosity commanded toward the poor among God's people.",
+      "is_primary": false
+    }
+  ],
+  "scholars": [
+    {
+      "scholar_id": "keener",
+      "quote": "Keener emphasizes that Jesus' Nazareth sermon in Luke 4 was a programmatic declaration — the poor were not merely one audience among many but the primary recipients of the kingdom's good news.",
+      "source": "A Commentary on the Gospel of Matthew (Keener, 1999)",
+      "display_order": 1
+    },
+    {
+      "scholar_id": "longman",
+      "quote": "Longman reads Proverbs' teaching on poverty as wisdom literature's insistence that the treatment of the vulnerable is the clearest indicator of a person's true character and relationship with God.",
+      "source": "Proverbs (Longman, 2006)",
+      "display_order": 2
+    },
+    {
+      "scholar_id": "kruse",
+      "quote": "Kruse argues that 1 John 3:17 makes compassionate action the litmus test of genuine faith — love that remains merely verbal when physical needs are present is not love at all.",
+      "source": "The Letters of John (Kruse, 2000)",
+      "display_order": 3
+    }
+  ],
+  "related": [
+    "justice",
+    "materialism",
+    "financial_stress"
+  ]
+}

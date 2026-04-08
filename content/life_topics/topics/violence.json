@@ -1,0 +1,78 @@
+{
+  "id": "violence",
+  "category_id": "social",
+  "title": "Violence",
+  "subtitle": "What the Bible Says About Violence",
+  "summary": "Scripture grieves violence as a corruption of God's creation, calls believers to peacemaking, and holds out a vision of a world where swords become plowshares.",
+  "body": "Violence enters the biblical story almost immediately. Cain kills Abel, and God confronts the act with a haunting question and a curse [verse:gen.4.10-12]. By Genesis 6, the earth is so filled with violence that God grieves having made humanity at all. Violence is not a minor theme — it is the corruption that most grieves the Creator.\n\nJesus addresses violence at the level of the heart. He calls his followers to turn the other cheek [verse:matt.5.38-39] — not as passive weakness but as a refusal to let the aggressor set the terms. He rebukes Peter for drawing a sword in the garden: those who live by the sword will die by it [verse:matt.26.52]. His way is different.\n\nPaul extends this ethic to the community: do not repay evil for evil, but overcome evil with good [verse:rom.12.17-21]. The logic is not that evil does not exist but that it is defeated by a superior force — sacrificial love, not retaliatory violence.\n\nThe prophetic vision looks toward a world remade. Isaiah pictures a day when nations will beat their swords into plowshares and learn war no more [verse:isa.2.4]. This is not naive optimism — it is hope grounded in the character of a God who will one day make all things new. In the meantime, Jesus declares: blessed are the peacemakers, for they will be called children of God [verse:matt.5.9].",
+  "display_order": 6,
+  "verses": [
+    {
+      "verse_ref": "matt.5.38-39",
+      "verse_order": 1,
+      "annotation": "Jesus replaces retaliation with a counter-cultural response — turning the other cheek.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "rom.12.17-21",
+      "verse_order": 2,
+      "annotation": "Paul commands overcoming evil with good rather than repaying violence with violence.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "gen.4.10-12",
+      "verse_order": 3,
+      "annotation": "The first murder — God holds Cain accountable and the earth itself cries out.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "matt.26.52",
+      "verse_order": 4,
+      "annotation": "Jesus rebukes the use of the sword — those who live by violence will perish by it.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "isa.2.4",
+      "verse_order": 5,
+      "annotation": "The prophetic vision of swords beaten into plowshares — the end of war.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "matt.5.9",
+      "verse_order": 6,
+      "annotation": "Blessed are the peacemakers — they reflect God's character as his children.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "ps.11.5",
+      "verse_order": 7,
+      "annotation": "The Lord examines the righteous, but his soul hates the one who loves violence.",
+      "is_primary": false
+    }
+  ],
+  "scholars": [
+    {
+      "scholar_id": "keener",
+      "quote": "Keener reads Jesus' teaching on turning the other cheek not as endorsing passivity but as a creative refusal to participate in the cycle of violence — it asserts dignity while denying the aggressor moral authority.",
+      "source": "A Commentary on the Gospel of Matthew (Keener, 1999)",
+      "display_order": 1
+    },
+    {
+      "scholar_id": "moo",
+      "quote": "Moo interprets Romans 12:17-21 as Paul's most sustained argument against retaliatory violence, grounded in trust that God's justice will ultimately prevail and human vengeance is therefore unnecessary.",
+      "source": "The Letter to the Romans (Moo, 2018)",
+      "display_order": 2
+    },
+    {
+      "scholar_id": "oswalt",
+      "quote": "Oswalt reads Isaiah 2:4 as the ultimate horizon of God's redemptive plan — a world where the instruments of destruction are repurposed for cultivation, because the underlying hostility has been removed.",
+      "source": "The Book of Isaiah, Chapters 1-39 (Oswalt, 1986)",
+      "display_order": 3
+    }
+  ],
+  "related": [
+    "anger",
+    "justice",
+    "forgiveness"
+  ]
+}

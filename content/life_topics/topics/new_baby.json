@@ -1,0 +1,78 @@
+{
+  "id": "new_baby",
+  "category_id": "transitions",
+  "title": "New Baby",
+  "subtitle": "What the Bible Says About Welcoming a New Child",
+  "summary": "Scripture celebrates children as a gift from God, honors the weight of parental responsibility, and offers comfort for the exhaustion, fear, and wonder that accompany new parenthood.",
+  "body": "Children are consistently framed as a blessing in Scripture. The psalmist declares: children are a heritage from the Lord, offspring a reward from him [verse:ps.127.3]. In a culture that sometimes treats children as burdens or accessories, this is a counter-cultural affirmation: a new life is a gift from the Creator.\n\nThe arrival of a child carries weight. God tells Jeremiah: before I formed you in the womb I knew you, before you were born I set you apart [verse:jer.1.5]. Every child arrives already known and already purposed by God. Parents are not creating significance — they are stewarding it.\n\nJesus elevates children to an unexpected status. He places a child in the midst of arguing disciples and says: whoever welcomes one of these little children in my name welcomes me [verse:mark.9.36-37]. The kingdom belongs to those who become like children [verse:matt.18.3]. In welcoming a baby, parents participate in something the kingdom values highly.\n\nThe responsibility is real. Deuteronomy instructs parents to impress God's commands on their children, talking about them at every ordinary moment — sitting at home, walking along the road, lying down, and getting up [verse:deut.6.6-7]. Faith formation is not a scheduled activity but the atmosphere of daily life.\n\nNew parenthood is also exhausting and often frightening. Isaiah's promise speaks to the overwhelmed parent: he tends his flock like a shepherd; he gathers the lambs in his arms and carries them close to his heart; he gently leads those that have young [verse:isa.40.11]. God is gentle with those who are caring for the small and the new.",
+  "display_order": 8,
+  "verses": [
+    {
+      "verse_ref": "ps.127.3",
+      "verse_order": 1,
+      "annotation": "Children as a heritage from the Lord — a new baby is a gift, not an accident.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "isa.40.11",
+      "verse_order": 2,
+      "annotation": "God gently leads those who have young — tenderness toward exhausted parents.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "jer.1.5",
+      "verse_order": 3,
+      "annotation": "Known by God before birth — every child arrives already purposed.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "deut.6.6-7",
+      "verse_order": 4,
+      "annotation": "Teaching children in everyday moments — faith formation as a way of life.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "mark.9.36-37",
+      "verse_order": 5,
+      "annotation": "Jesus places a child at the center — welcoming a little one is welcoming him.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "matt.18.3",
+      "verse_order": 6,
+      "annotation": "Unless you become like children, you will not enter the kingdom — childlikeness as spiritual model.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "ps.139.13-16",
+      "verse_order": 7,
+      "annotation": "Knit together in the womb — God's intimate involvement in forming every new life.",
+      "is_primary": false
+    }
+  ],
+  "scholars": [
+    {
+      "scholar_id": "goldingay",
+      "quote": "Goldingay reads Psalm 127:3 as the wisdom tradition's correction to viewing children instrumentally — they are a heritage, a word that implies trust and stewardship rather than ownership.",
+      "source": "Psalms (Goldingay, 2006)",
+      "display_order": 1
+    },
+    {
+      "scholar_id": "oswalt",
+      "quote": "Oswalt interprets Isaiah 40:11 as one of the prophet's gentlest images — the shepherd who carries lambs and leads nursing ewes slowly reveals a God who accommodates the pace of the vulnerable.",
+      "source": "The Book of Isaiah, Chapters 40-66 (Oswalt, 1998)",
+      "display_order": 2
+    },
+    {
+      "scholar_id": "lundbom",
+      "quote": "Lundbom reads Jeremiah 1:5 as establishing that divine purpose precedes human existence — the child is not a blank slate but a person already known and commissioned by God before drawing breath.",
+      "source": "Jeremiah 1-20 (Lundbom, 1999)",
+      "display_order": 3
+    }
+  ],
+  "related": [
+    "parenting",
+    "overwhelm",
+    "marriage"
+  ]
+}
