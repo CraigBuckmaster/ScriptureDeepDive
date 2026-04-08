@@ -21,18 +21,50 @@ import { closeAllTranslationDbs } from './src/db/translationManager';
 // Keep splash visible while we load
 SplashScreen.preventAutoHideAsync();
 
-/** Deep linking configuration for scripture:// URLs. */
+/** Deep linking configuration for scripture:// URLs.
+ *
+ * Supported links:
+ *   scripture://chapter/genesis/1        → ChapterScreen
+ *   scripture://chapter/john/3/16        → ChapterScreen (verse-level)
+ *   scripture://scholar/spurgeon         → ScholarBio
+ *   scripture://topic/covenant           → TopicDetail
+ *   scripture://debate/predestination    → DebateDetail
+ *   scripture://prophecy/messianic-line  → ProphecyDetail
+ *   scripture://concept/atonement        → ConceptDetail
+ *   scripture://word-study/agape         → WordStudyDetail
+ *   scripture://people/abraham           → GenealogyTree (person)
+ *   scripture://map                      → Map
+ *   scripture://timeline                 → Timeline
+ */
 const linking: any = {
   prefixes: ['scripture://'],
   config: {
     screens: {
       HomeTab: {
         screens: {
-          Chapter: 'book/:bookId/:chapterNum',
+          Chapter: {
+            path: 'chapter/:bookId/:chapterNum/:verseNum?',
+            parse: {
+              chapterNum: Number,
+              verseNum: (v: string) => (v ? Number(v) : undefined),
+            },
+          },
+        },
+      },
+      ReadTab: {
+        screens: {
+          BookList: 'books',
+          ChapterList: 'book/:bookId',
         },
       },
       ExploreTab: {
         screens: {
+          ScholarBio: 'scholar/:scholarId',
+          TopicDetail: 'topic/:topicId',
+          DebateDetail: 'debate/:topicId',
+          ProphecyDetail: 'prophecy/:chainId',
+          ConceptDetail: 'concept/:conceptId',
+          WordStudyDetail: 'word-study/:wordId',
           GenealogyTree: 'people/:personId',
           Map: 'map',
           Timeline: 'timeline',

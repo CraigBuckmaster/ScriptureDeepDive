@@ -95,9 +95,12 @@ def main():
         'hebtext', 'thread', 'tx', 'debate', 'discourse',
     }
 
+    CURRENT_SCHEMA_VERSION = '1.0'
+
     # ── 1. Schema validation per chapter ──
     print("\n--- 1. CHAPTER SCHEMA ---")
 
+    stale_schema_count = 0
     total_files = 0
     total_sections = 0
     total_sec_panels = 0
@@ -125,6 +128,11 @@ def main():
             for key in ('book_dir', 'chapter_num', 'title', 'sections'):
                 if key not in data:
                     check(f"{json_file.name} has '{key}'", False)
+
+            # Schema version check
+            sv = data.get('schema_version', '0.0')
+            if sv != CURRENT_SCHEMA_VERSION:
+                stale_schema_count += 1
 
             sections = data.get('sections', [])
             check(f"{json_file.name} has sections", len(sections) >= 1,
@@ -155,6 +163,9 @@ def main():
 
     check("All hebtext clean (no HTML)", hebtext_html == 0,
           f"{hebtext_html} still have HTML")
+
+    if stale_schema_count > 0:
+        warn(f"{stale_schema_count}/{total_files} files at stale schema version (run migrate_content.py)")
 
     print(f"\n  Files: {total_files}")
     print(f"  Sections: {total_sections}")

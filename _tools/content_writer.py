@@ -239,6 +239,7 @@ def save_chapter(book_dir, ch, data):
 
     # ── Build chapter envelope ──
     chapter = {
+        'schema_version': '1.0',
         'chapter_id': None,
         'testament': None,
         'book_dir': book_dir,
