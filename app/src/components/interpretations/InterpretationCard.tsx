@@ -9,18 +9,26 @@ import type { HistoricalInterpretation } from '../../types';
 
 interface Props {
   interpretation: HistoricalInterpretation;
+  onPress?: () => void;
   onVersePress?: (verseRef: string) => void;
 }
 
 export const InterpretationCard = React.memo(function InterpretationCard({
   interpretation,
+  onPress,
   onVersePress,
 }: Props) {
   const { base } = useTheme();
   const eraColor = churchEras[interpretation.era] ?? base.gold;
 
+  const Wrapper = onPress ? TouchableOpacity : View;
+  const wrapperProps = onPress
+    ? { onPress, activeOpacity: 0.7, accessibilityRole: 'button' as const }
+    : {};
+
   return (
-    <View
+    <Wrapper
+      {...wrapperProps}
       style={[
         styles.card,
         { backgroundColor: base.bgElevated, borderColor: eraColor + '30' },
@@ -80,7 +88,7 @@ export const InterpretationCard = React.memo(function InterpretationCard({
           {interpretation.source_date ? ` (${interpretation.source_date})` : ''}
         </Text>
       </View>
-    </View>
+    </Wrapper>
   );
 });
 

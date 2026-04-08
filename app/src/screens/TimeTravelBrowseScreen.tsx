@@ -72,10 +72,13 @@ function TimeTravelBrowseScreen() {
         return <EraCard era={item.data} onPress={() => handleEraPress(item.data)} />;
       }
       return (
-        <InterpretationCard interpretation={item.data} />
+        <InterpretationCard
+          interpretation={item.data}
+          onPress={() => handleInterpretationPress(item.data)}
+        />
       );
     },
-    [handleEraPress],
+    [handleEraPress, handleInterpretationPress],
   );
 
   const keyExtractor = useCallback(
