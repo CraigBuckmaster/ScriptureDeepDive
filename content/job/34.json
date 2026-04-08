@@ -446,5 +446,17 @@
     }
   ],
   "prayer_prompt": "As you consider Elihu's defense of God's justice — 'It is unthinkable that God would do wrong' — consider asking God whether defending His character requires you to deny the complexity of human experience, or whether both can be held together.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Elihu defends God's justice: 'It is unthinkable that God would do wrong' (v. 12). His argument resembles the friends' but with different emphasis. He's not accusing Job of sin but defending God's character against Job's accusations. The question isn't 'What did Job do?' but 'How can God be unjust?' Elihu thinks Job has overreached in his complaints.",
+      "genre_tag": "theological_insight"
+    },
+    {
+      "after_section": 2,
+      "tip": "'Should God then reward you on your terms?' (v. 33). Elihu identifies Job's demand for vindication as potentially problematic — Job wants God to conform to human standards of justice. But what if divine justice operates on a larger scale? Elihu isn't wrong that Job's expectations may need recalibrating. God's speeches will confirm this, but differently than Elihu imagines.",
+      "genre_tag": "close_reading"
+    }
+  ]
 }

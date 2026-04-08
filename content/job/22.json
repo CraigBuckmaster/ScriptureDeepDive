@@ -442,5 +442,17 @@
     }
   ],
   "prayer_prompt": "As you consider Eliphaz now directly accusing Job of specific sins he never committed, consider asking God whether you have ever fabricated evidence to preserve a theory — inventing faults in others to protect your belief that suffering is always deserved.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Third dialogue cycle begins. Eliphaz abandons inference for invention: 'Is not your wickedness great? Are not your sins endless?' (v. 5). He fabricates specific crimes — exploiting widows, ignoring the hungry — that directly contradict Job's actual life (see ch. 31). When theology requires evidence that doesn't exist, the friends manufacture it.",
+      "genre_tag": "narrative_structure"
+    },
+    {
+      "after_section": 2,
+      "tip": "Eliphaz's call to repentance (vv. 21-30) would be beautiful pastoral counsel to an actual sinner. 'Submit to God and be at peace' (v. 21). But prescribing repentance to the innocent is spiritual malpractice. The friends have moved from misreading Job's situation to bearing false witness against him.",
+      "genre_tag": "theological_insight"
+    }
+  ]
 }

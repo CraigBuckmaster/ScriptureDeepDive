@@ -409,5 +409,17 @@
     }
   ],
   "prayer_prompt": "As you reflect on Bildad's final, abbreviated speech — the friends have nothing left to say — consider asking God whether you know when to stop arguing and simply sit with someone in their pain.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Bildad's third speech is the shortest in the book — only six verses. The friends are running out of arguments. His theology shrinks to one point: God is so transcendent that no human can be righteous by comparison (vv. 4-6). But this doesn't address Job's claim. Job never said he was righteous compared to God, only innocent of the charges implied by his suffering.",
+      "genre_tag": "narrative_structure"
+    },
+    {
+      "after_section": 2,
+      "tip": "Notice what's missing: Zophar never gives a third speech. The third cycle is incomplete. Whether he had nothing left to say or the author deliberately silenced him, the effect is clear: the friends have been talked out. Their theological resources are exhausted. Job's persistence has outlasted their orthodoxy.",
+      "genre_tag": "narrative_structure"
+    }
+  ]
 }

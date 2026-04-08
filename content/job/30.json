@@ -441,5 +441,17 @@
     }
   ],
   "prayer_prompt": "As you consider Job describing his present misery — mocked by those he once helped, abandoned by the community that honored him — consider asking God whether you have ever felt the sting of being forgotten by people who benefited from your generosity.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "The contrast with chapter 29 is devastating. 'But now they mock me' (v. 1). Those who once honored Job now spit at him. Social collapse accompanies physical collapse. Suffering isn't private — it's performed before a community that reads it as divine verdict. Job's shame is public theology.",
+      "genre_tag": "close_reading"
+    },
+    {
+      "after_section": 2,
+      "tip": "'I cry out to you, God, but you do not answer' (v. 20). Job's final complaint to God is abandonment. Not cruelty, not injustice, but silence. The worst suffering isn't pain but being ignored. God seems indifferent to Job's screaming. This silence will end in chapter 38 — but Job doesn't know that. We do. Dramatic irony shapes the reading.",
+      "genre_tag": "theological_insight"
+    }
+  ]
 }

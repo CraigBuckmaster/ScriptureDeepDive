@@ -427,5 +427,17 @@
     }
   ],
   "prayer_prompt": "As you consider young Elihu's anger at both Job and his friends — frustrated that no one has answered Job adequately — consider asking God whether there are moments when a fresh perspective is needed, and whether youth disqualifies or qualifies someone to speak.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Enter Elihu — young, angry, and previously silent. He's frustrated with the friends for failing to refute Job and with Job for self-justification. His long introduction (vv. 6-22) is either appropriate deference or pompous throat-clearing, depending on your reading. Scholars debate whether Elihu is wise corrective or windy addition.",
+      "genre_tag": "narrative_structure"
+    },
+    {
+      "after_section": 2,
+      "tip": "'I am full of words, and the spirit within me compels me' (v. 18). Elihu's self-description is unintentionally comic — he's been waiting to talk and can barely contain himself. Whether his speeches add insight or just volume is the interpretive question. Many readers find him tedious; others see him preparing the way for God's speeches.",
+      "genre_tag": "close_reading"
+    }
+  ]
 }

@@ -458,5 +458,17 @@
     }
   ],
   "prayer_prompt": "As you consider Eliphaz's opening argument — that the innocent never perish — consider asking God whether you have ever offered someone suffering a theology that was neat but not true, and whether your need for the world to make sense has made you cruel.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "First dialogue cycle begins. Pattern to track: Eliphaz speaks (ch 4-5), Job replies (ch 6-7); Bildad speaks (ch 8), Job replies (ch 9-10); Zophar speaks (ch 11), Job replies (ch 12-14). Each friend represents a variation of retribution theology: suffering proves guilt, repentance brings restoration. Eliphaz appeals to experience and vision.",
+      "genre_tag": "narrative_structure"
+    },
+    {
+      "after_section": 2,
+      "tip": "Eliphaz's night vision (vv. 12-21) is genuinely eerie poetry. But the message — 'Can a mortal be more righteous than God?' — is a straw man. Job never claimed to be more righteous than God. He claimed to be innocent of deserving this specific suffering. The friends consistently answer questions Job isn't asking.",
+      "genre_tag": "theological_insight"
+    }
+  ]
 }

@@ -480,5 +480,17 @@
     }
   ],
   "prayer_prompt": "As you reflect on Job cursing the day of his birth — wishing he had never existed — consider asking God whether you can bring Him your rawest, most unfiltered grief without dressing it up, trusting that He is not offended by honest despair.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Job's curse is the anti-Genesis. Where God said 'Let there be light,' Job says 'Let that day be darkness.' He's not cursing God but wishing himself unborn. This is the collapse of blessing vocabulary — the same mouth that 'blessed the LORD' in chapter 1 now curses his existence. Poetry replaces prose because grief cannot be contained in ordinary speech.",
+      "genre_tag": "theological_insight"
+    },
+    {
+      "after_section": 2,
+      "tip": "Job asks 'Why?' seven times in this chapter (vv. 11, 12, 16, 20, 23). These aren't requests for information but protests against existence itself. Notice what Job doesn't do: he doesn't curse God, doesn't accept guilt, doesn't pretend everything is fine. Lament is an act of faith — only someone who believes God listens would bother crying out at all.",
+      "genre_tag": "close_reading"
+    }
+  ]
 }

@@ -446,5 +446,17 @@
     }
   ],
   "prayer_prompt": "As you reflect on Elihu's claim that God speaks through suffering to keep people from the pit, consider asking God whether pain in your life has ever functioned as a warning — and whether you heard it.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Elihu's first speech argues that God does speak to humans — through dreams and suffering (vv. 14-22). This isn't the friends' retribution theology but a pedagogy of pain: suffering as divine communication, not punishment. The distinction matters. Elihu suggests Job should listen for what God might be teaching, not assume he's being condemned.",
+      "genre_tag": "theological_insight"
+    },
+    {
+      "after_section": 2,
+      "tip": "Elihu imagines a mediating angel who declares 'Spare them from going down to the pit; I have found a ransom' (v. 24). This is closer to Job's longing for an arbiter (9:33) than the friends ever came. Elihu may be young and verbose, but he's grasping toward a theology of intercession that the friends never contemplated.",
+      "genre_tag": "close_reading"
+    }
+  ]
 }

@@ -475,5 +475,17 @@
     }
   ],
   "prayer_prompt": "As you reflect on Eliphaz telling Job that suffering is God's discipline and he should welcome it, consider asking God whether you have confused every painful experience with correction — and whether some suffering simply requires endurance, not explanation.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Eliphaz quotes a proverb: 'Resentment kills a fool' (v. 2). He's already categorizing Job's lament as dangerous anger. The irony is thick: Eliphaz offers wisdom about wisdom while misreading his friend entirely. His theology is correct in general — God does discipline and restore — but misapplied to Job's specific situation.",
+      "genre_tag": "close_reading"
+    },
+    {
+      "after_section": 2,
+      "tip": "'Blessed is the one whom God corrects' (v. 17). Eliphaz assumes Job needs correction. The promise of restoration (vv. 19-26) would be comforting if the premise were true. But we know from the prologue that Job's suffering isn't discipline. Eliphaz speaks beautiful truths that are pastorally catastrophic because he's reading the wrong diagnosis.",
+      "genre_tag": "theological_insight"
+    }
+  ]
 }

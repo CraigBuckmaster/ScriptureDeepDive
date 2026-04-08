@@ -479,5 +479,17 @@
     }
   ],
   "prayer_prompt": "As you consider Job's reply — 'A despairing man should have the devotion of his friends' — consider asking God whether you are the kind of friend who shows up in suffering or the kind who arrives with a lecture.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Job's first reply ignores Eliphaz's theology and instead describes his pain. 'If only my anguish could be weighed' (v. 2). He's not debating doctrine; he's pleading for acknowledgment. The friends want to explain suffering. Job wants someone to sit in it with him. This disconnect will persist for 35 chapters.",
+      "genre_tag": "close_reading"
+    },
+    {
+      "after_section": 2,
+      "tip": "Job compares his friends to seasonal streams — promising water but dry when needed (vv. 15-20). This is one of the book's most devastating images. The friends came to comfort but brought theology lectures instead. 'Anyone who withholds kindness from a friend forsakes the fear of the Almighty' (v. 14). Job indicts their pastoral failure.",
+      "genre_tag": "theological_insight"
+    }
+  ]
 }

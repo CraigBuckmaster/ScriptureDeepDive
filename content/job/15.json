@@ -446,5 +446,17 @@
     }
   ],
   "prayer_prompt": "As you reflect on Eliphaz's tone growing harsher — accusing Job of undermining piety — consider asking God whether you become more aggressive when your arguments fail to persuade, and whether volume has ever substituted for truth in your speech.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Second dialogue cycle begins. The gloves come off. Eliphaz abandons gentle appeal for direct accusation: 'Are you the first man ever born?' (v. 7). He mocks Job's claim to wisdom and accuses him of 'crafty' speech (v. 5). The pastoral pretense is gone. Job's resistance has exhausted their patience.",
+      "genre_tag": "narrative_structure"
+    },
+    {
+      "after_section": 2,
+      "tip": "Eliphaz's portrait of the wicked (vv. 20-35) is meant as warning, but Job will later turn these images against the friends themselves. The wicked 'shakes his fist at God' — but Job openly challenges God and isn't destroyed. The wicked lives in terror — but Job's friends claim the righteous prosper. Whose experience matches reality?",
+      "genre_tag": "theological_insight"
+    }
+  ]
 }
