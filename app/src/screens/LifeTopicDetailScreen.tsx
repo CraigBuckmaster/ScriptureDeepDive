@@ -12,7 +12,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Share as ShareIcon } from 'lucide-react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
-import { parseReference } from '../utils/verseResolver';
+import { parseDotReference, parseReference } from '../utils/verseResolver';
 import { shareLifeTopic } from '../utils/shareLifeTopic';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
@@ -42,9 +42,9 @@ function LifeTopicDetailScreen() {
 
   const handleVersePress = useCallback(
     (ref: string) => {
-      const parsed = parseReference(ref);
+      const parsed = parseDotReference(ref) ?? parseReference(ref);
       if (parsed) {
-        navigation.push('Chapter', { bookId: parsed.bookId, chapterNum: parsed.chapter });
+        navigation.push('Chapter', { bookId: parsed.bookId, chapterNum: parsed.chapter, verseNum: parsed.verseStart });
       }
     },
     [navigation],
