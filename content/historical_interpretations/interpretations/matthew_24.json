@@ -1,0 +1,80 @@
+[
+  {
+    "id": "matt24_apostolic_didache",
+    "verse_ref": "Matthew 24",
+    "era": "apostolic",
+    "era_label": "Apostolic Fathers",
+    "author": "Didache",
+    "author_dates": "c. 50–120 AD",
+    "source_title": "The Teaching of the Twelve Apostles",
+    "source_date": "c. 50–120 AD",
+    "interpretation": "The Didache's final chapter draws heavily on the Olivet Discourse, warning that 'in the last days' false prophets and corrupters will multiply, love will turn to hatred, and a 'world-deceiver' will appear performing signs. The text treats Jesus's warnings as directly applicable to the community's present experience and imminent future, listing specific signs — the appearance of fire in the sky, the trumpet sound, and the resurrection of the saints — as the sequence preceding the Lord's return.",
+    "context": "The Didache shows that the earliest Christian communities read Matthew 24 as a practical guide for their own eschatological vigilance, blending Jesus's warnings with apocalyptic expectation in a liturgical-catechetical context.",
+    "display_order": 1
+  },
+  {
+    "id": "matt24_patristic_chrysostom",
+    "verse_ref": "Matthew 24",
+    "era": "patristic",
+    "era_label": "Church Fathers",
+    "author": "John Chrysostom",
+    "author_dates": "c. 349–407 AD",
+    "source_title": "Homilies on Matthew (Homilies 75–77)",
+    "source_date": "c. 390 AD",
+    "interpretation": "Chrysostom distinguished sharply between Jesus's predictions about the destruction of Jerusalem (fulfilled in 70 AD) and his teaching about the second coming (still future). He argued that Jesus deliberately interwove the two topics so that the disciples — and later readers — would see the fall of the temple as a concrete historical confirmation that the second coming would likewise occur. The 'abomination of desolation' refers to the Roman armies, and the warnings about flight apply to the Jewish War.",
+    "context": "Chrysostom's two-referent approach — partly fulfilled in 70 AD, partly still awaited — became the most common patristic reading and remains influential in both Eastern Orthodox and many Protestant interpretations.",
+    "display_order": 2
+  },
+  {
+    "id": "matt24_patristic_augustine",
+    "verse_ref": "Matthew 24",
+    "era": "patristic",
+    "era_label": "Church Fathers",
+    "author": "Augustine of Hippo",
+    "author_dates": "354–430 AD",
+    "source_title": "Epistle 199 (to Hesychius)",
+    "source_date": "c. 419 AD",
+    "interpretation": "Augustine warned against using the Olivet Discourse to calculate the timing of Christ's return, arguing that Jesus explicitly declared that no one knows the day or hour. He read the discourse primarily as moral exhortation: the point is not to decode a prophetic timetable but to live in constant readiness. The 'signs' Jesus describes — wars, famines, false prophets — characterize the entire age between the ascension and the parousia rather than marking a specific end-times countdown.",
+    "context": "Augustine's anti-calculationist reading shaped Western theology's cautious stance toward date-setting and apocalyptic speculation, providing the theological rationale for amillennial and inaugurated eschatology.",
+    "display_order": 3
+  },
+  {
+    "id": "matt24_reformation_luther",
+    "verse_ref": "Matthew 24",
+    "era": "reformation",
+    "era_label": "Reformation",
+    "author": "Martin Luther",
+    "author_dates": "1483–1546 AD",
+    "source_title": "Sermon on Matthew 24 (Church Postil)",
+    "source_date": "1522",
+    "interpretation": "Luther read the Olivet Discourse as addressing both the destruction of Jerusalem and the end of the world, but he emphasized its immediate pastoral application: the believer must not be led astray by false teachers or terrified by tumultuous events. Luther identified the papacy as the 'abomination of desolation' standing in the holy place — a historicist reading that located the Antichrist within the institutional church rather than in a future political figure.",
+    "context": "Luther's identification of the pope as Antichrist was characteristic of Reformation-era historicism, which read Revelation and the Olivet Discourse as a map of church history with the Reformation as the climactic chapter.",
+    "display_order": 4
+  },
+  {
+    "id": "matt24_modern_schweitzer",
+    "verse_ref": "Matthew 24",
+    "era": "modern",
+    "era_label": "Modern Critical",
+    "author": "Albert Schweitzer",
+    "author_dates": "1875–1965",
+    "source_title": "The Quest of the Historical Jesus",
+    "source_date": "1906",
+    "interpretation": "Schweitzer argued that Jesus genuinely expected the end of the world within the lifetime of his disciples and that the Olivet Discourse represents his authentic eschatological teaching. When the end did not come as predicted, Jesus chose the path of suffering to force God's hand. Schweitzer's 'consistent eschatology' took Jesus's apocalyptic language at face value and concluded that the historical Jesus was fundamentally an apocalyptic prophet whose central prediction was not fulfilled.",
+    "context": "Schweitzer's reading provoked a century of debate about whether Jesus's eschatological language should be taken literally, metaphorically, or as referring to events already realized in his ministry and resurrection.",
+    "display_order": 5
+  },
+  {
+    "id": "matt24_contemporary_wright",
+    "verse_ref": "Matthew 24",
+    "era": "contemporary",
+    "era_label": "Contemporary",
+    "author": "N.T. Wright",
+    "author_dates": "b. 1948",
+    "source_title": "Jesus and the Victory of God",
+    "source_date": "1996",
+    "interpretation": "Wright contends that the bulk of the Olivet Discourse — including the cosmic imagery of the sun darkening and stars falling — refers to the destruction of Jerusalem in 70 AD, not to the end of the space-time universe. The 'coming of the Son of Man' draws on Daniel 7 and depicts vindication and enthronement, not a downward physical return. Jesus was warning his disciples about the imminent catastrophe that would befall Jerusalem within a generation, using standard Old Testament prophetic imagery for the overthrow of nations.",
+    "context": "Wright's preterist reading challenges both futurist and liberal interpretations: against futurists, the discourse is primarily about 70 AD; against Schweitzer, Jesus was not a failed apocalypticist but an accurate prophet of Jerusalem's fall.",
+    "display_order": 6
+  }
+]
