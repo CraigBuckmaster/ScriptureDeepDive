@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native';
+import { Alert, View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native';
 import { useTheme, spacing, radii, fontFamily } from '../theme';
 import { selectionFeedback } from '../utils/haptics';
 
@@ -55,7 +55,12 @@ export function HighlightColorPicker({ visible, currentColor, onSelect, onClose 
 
           {currentColor && (
             <TouchableOpacity
-              onPress={() => { onSelect(null); onClose(); }}
+              onPress={() => {
+                Alert.alert('Remove Highlight', 'Remove this highlight?', [
+                  { text: 'Cancel', style: 'cancel' },
+                  { text: 'Remove', style: 'destructive', onPress: () => { onSelect(null); onClose(); } },
+                ]);
+              }}
               style={styles.removeButton}
             >
               <Text style={[styles.removeLabel, { color: base.textMuted }]}>Remove highlight</Text>
