@@ -614,12 +614,13 @@ def main():
             except json.JSONDecodeError:
                 continue
             sections = data.get('sections', [])
+            valid_nums = {s.get('section_num') for s in sections}
             for tip in data.get('coaching', []):
                 after = tip.get('after_section')
-                if after is not None and not (0 <= after < len(sections)):
+                if after is not None and after not in valid_nums:
                     oob_tips += 1
                     warn(f"{json_file.name} coaching after_section out of bounds",
-                         f"after_section={after}, sections=0..{len(sections)-1}")
+                         f"after_section={after}, valid section_nums={sorted(valid_nums)}")
 
     print(f"  Out-of-bounds coaching tips: {oob_tips}")
 
