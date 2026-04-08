@@ -1,0 +1,80 @@
+[
+  {
+    "id": "dan9_patristic_julius",
+    "verse_ref": "Daniel 9:24–27",
+    "era": "patristic",
+    "era_label": "Church Fathers",
+    "author": "Julius Africanus",
+    "author_dates": "c. 160–240 AD",
+    "source_title": "Chronographiae",
+    "source_date": "c. 221 AD",
+    "interpretation": "Julius Africanus produced the earliest detailed chronological calculation of the seventy weeks, counting 490 years from the twentieth year of Artaxerxes (Nehemiah's commission) to the crucifixion of Christ. He treated the weeks as literal seven-year periods and argued that the seventieth week culminated in Christ's death and resurrection. His calculation became the template for virtually all subsequent patristic chronologies of this passage.",
+    "context": "Africanus established the dominant early Christian approach: the seventy weeks are a messianic timetable pointing to Jesus, with the final week centered on the passion. This framework endured for centuries.",
+    "display_order": 1
+  },
+  {
+    "id": "dan9_patristic_jerome",
+    "verse_ref": "Daniel 9:24–27",
+    "era": "patristic",
+    "era_label": "Church Fathers",
+    "author": "Jerome",
+    "author_dates": "c. 347–420 AD",
+    "source_title": "Commentary on Daniel",
+    "source_date": "c. 407 AD",
+    "interpretation": "Jerome surveyed multiple Christian and Jewish calculations of the seventy weeks and favored a christological reading: the 'anointed one' cut off is Christ, and the destruction of the city refers to the Roman siege of 70 AD. He engaged extensively with the anti-Christian interpretation of Porphyry, who dated the passage to the Maccabean period and identified the anointed one as the high priest Onias III. Jerome insisted that the scope and specificity of Daniel's prophecy far exceeded Antiochus IV and could only be fulfilled in Christ.",
+    "context": "Jerome's commentary preserved Porphyry's arguments while refuting them, giving later generations access to the earliest known critical reading of Daniel. His defense of the christological interpretation became standard in the Western church.",
+    "display_order": 2
+  },
+  {
+    "id": "dan9_medieval_aquinas",
+    "verse_ref": "Daniel 9:24–27",
+    "era": "medieval",
+    "era_label": "Medieval",
+    "author": "Thomas Aquinas",
+    "author_dates": "1225–1274 AD",
+    "source_title": "Catena Aurea (on Matthew 24)",
+    "source_date": "c. 1263 AD",
+    "interpretation": "Aquinas followed the patristic consensus that the seventy weeks culminate in Christ's ministry and the subsequent destruction of Jerusalem. He identified the 'abomination of desolation' with the Roman desecration of the temple in 70 AD, reading Daniel 9 and Matthew 24 as parallel prophecies with the same referent. The final half-week corresponds to the period between Christ's death and the fall of the city.",
+    "context": "By linking Daniel 9 directly to Matthew 24 and the events of 70 AD, Aquinas reinforced the preterist elements already present in patristic interpretation, keeping the focus on historical fulfillment rather than future speculation.",
+    "display_order": 3
+  },
+  {
+    "id": "dan9_reformation_calvin",
+    "verse_ref": "Daniel 9:24–27",
+    "era": "reformation",
+    "era_label": "Reformation",
+    "author": "John Calvin",
+    "author_dates": "1509–1564 AD",
+    "source_title": "Commentaries on the Book of the Prophet Daniel",
+    "source_date": "1561 AD",
+    "interpretation": "Calvin rejected rigid day-year chronological calculations, arguing that the seventy weeks provide a general divine timetable rather than an exact countdown. He identified the anointed one as Christ and the covenant of the final week as the new covenant established through Christ's ministry. The cessation of sacrifice refers to Christ's atonement rendering the Levitical system obsolete, while the destruction refers to the Roman judgment on Jerusalem.",
+    "context": "Calvin's willingness to treat the numbers as approximate rather than mathematically precise distinguished his approach from both patristic chronographers and later dispensationalist interpreters who demanded exact year-counts.",
+    "display_order": 4
+  },
+  {
+    "id": "dan9_modern_darby",
+    "verse_ref": "Daniel 9:24–27",
+    "era": "modern",
+    "era_label": "Modern Critical",
+    "author": "John Nelson Darby",
+    "author_dates": "1800–1882 AD",
+    "source_title": "Studies on the Book of Daniel",
+    "source_date": "c. 1850s",
+    "interpretation": "Darby introduced the idea of a 'parenthesis' or gap between the sixty-ninth and seventieth weeks. After the Messiah is cut off at the end of the sixty-ninth week, God's prophetic clock stops for the church age — an indeterminate period not foreseen by Daniel. The seventieth week remains unfulfilled and will resume as a future seven-year tribulation under the Antichrist, culminating in Christ's second coming. The one who makes a covenant in the final week is not Christ but a future Roman prince.",
+    "context": "Darby's gap theory became the cornerstone of dispensationalist eschatology and profoundly shaped popular evangelical readings of Daniel 9 through the Scofield Reference Bible, Hal Lindsey, and the Left Behind series.",
+    "display_order": 5
+  },
+  {
+    "id": "dan9_contemporary_wright",
+    "verse_ref": "Daniel 9:24–27",
+    "era": "contemporary",
+    "era_label": "Contemporary",
+    "author": "N.T. Wright",
+    "author_dates": "b. 1948",
+    "source_title": "Jesus and the Victory of God",
+    "source_date": "1996",
+    "interpretation": "Wright reads Daniel 9 within Israel's ongoing narrative of exile: the seventy weeks represent the extended exile that persists even after the physical return from Babylon. Jesus understood himself as the one through whom Israel's exile would finally end — not through military victory but through his own suffering and death. The destruction of the temple in 70 AD confirmed that the old covenant order had passed, and the new covenant community was the true return from exile.",
+    "context": "Wright's reading embeds Daniel 9 within a broader historical-theological framework where exile and restoration are the controlling categories, offering a non-dispensationalist messianic interpretation that takes both the first-century context and Jesus's self-understanding seriously.",
+    "display_order": 6
+  }
+]
