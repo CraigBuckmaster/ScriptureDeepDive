@@ -17,7 +17,7 @@ export function useSubmissionFeed(
   const [loading, setLoading] = useState(true);
   const [hasMore, setHasMore] = useState(true);
   const pageRef = useRef(0);
-  const loadMoreTimer = useRef<ReturnType<typeof setTimeout>>();
+  const loadMoreTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const fetchPage = useCallback(
     async (page: number, reset: boolean) => {
