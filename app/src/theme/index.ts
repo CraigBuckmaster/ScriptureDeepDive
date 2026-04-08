@@ -11,6 +11,8 @@ export type { PanelColors } from './colors';
 export { fontFamily, typography, scaledTypography } from './typography';
 export type { TypographyPreset } from './typography';
 export { spacing, radii, MIN_TOUCH_TARGET } from './spacing';
+export { BREAKPOINTS, useBreakpoint } from './breakpoints';
+export type { Breakpoint, BreakpointInfo } from './breakpoints';
 export { FONT_MAP } from './fonts';
 
 export { useTheme } from './ThemeContext';

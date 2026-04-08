@@ -61,6 +61,7 @@
 
 import { useState, useCallback, useMemo, useRef } from 'react';
 import { useWindowDimensions, type ViewStyle } from 'react-native';
+import { BREAKPOINTS } from '../theme/breakpoints';
 import { Gesture } from 'react-native-gesture-handler';
 import {
   useSharedValue,
@@ -84,7 +85,7 @@ interface TreeGestureResult {
 
 export function useTreeGestures(): TreeGestureResult {
   const { width: SCREEN_W, height: SCREEN_H } = useWindowDimensions();
-  const isMobile = SCREEN_W < 768;
+  const isMobile = SCREEN_W < BREAKPOINTS.tablet;
 
   const initialScale = isMobile
     ? TREE_CONSTANTS.initialScaleMobile
