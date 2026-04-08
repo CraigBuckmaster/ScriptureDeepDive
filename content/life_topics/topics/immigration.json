@@ -1,0 +1,78 @@
+{
+  "id": "immigration",
+  "category_id": "social",
+  "title": "Immigration",
+  "subtitle": "What the Bible Says About Immigration and Foreigners",
+  "summary": "Scripture repeatedly commands hospitality toward the foreigner, grounding this ethic in Israel's own experience as strangers in Egypt and in God's universal love for displaced people.",
+  "body": "The command to welcome the foreigner appears more than thirty times in the Old Testament — a frequency that suggests God anticipated his people would need constant reminding. The foundational logic is experiential: you know what it feels like to be a stranger, because you were strangers in Egypt [verse:exod.23.9]. Empathy rooted in memory is the engine of biblical immigration ethics.\n\nThe Law goes further than mere tolerance. Israel is commanded to love the foreigner as themselves [verse:lev.19.33-34]. This is the same standard applied to loving one's neighbor — the alien is not a lesser category. Deuteronomy explicitly includes the foreigner among those for whom God executes justice, alongside the fatherless and widows [verse:deut.10.18-19].\n\nRuth, one of Scripture's most celebrated figures, is a Moabite immigrant who becomes an ancestor of David and of Jesus. Her story embeds foreign inclusion into the very genealogy of the Messiah. Likewise, Jesus' parable of the Good Samaritan makes an ethnic outsider the moral hero, shattering assumptions about who counts as neighbor [verse:luke.10.30-37].\n\nThe writer of Hebrews urges hospitality to strangers, noting that some who have done so have entertained angels without knowing it [verse:heb.13.2]. The New Testament vision of the church is a community without borders, where every wall of hostility has been broken down [verse:eph.2.19].\n\nNone of this resolves every modern policy question, but it establishes an unmistakable posture: the people of God are to be known for welcoming the displaced, not fearing them.",
+  "display_order": 4,
+  "verses": [
+    {
+      "verse_ref": "lev.19.33-34",
+      "verse_order": 1,
+      "annotation": "The command to love the foreigner as yourself — the same standard as loving your neighbor.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "exod.23.9",
+      "verse_order": 2,
+      "annotation": "Do not oppress the foreigner — you know how it feels because you were foreigners in Egypt.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "deut.10.18-19",
+      "verse_order": 3,
+      "annotation": "God himself executes justice for the foreigner, and commands Israel to love the foreigner in return.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "luke.10.30-37",
+      "verse_order": 4,
+      "annotation": "The Good Samaritan — an ethnic outsider demonstrates the love that insiders failed to show.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "heb.13.2",
+      "verse_order": 5,
+      "annotation": "Hospitality to strangers as a sacred duty — some have unknowingly hosted angels.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "eph.2.19",
+      "verse_order": 6,
+      "annotation": "Believers are no longer foreigners but fellow citizens — the church models borderless community.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "matt.25.35",
+      "verse_order": 7,
+      "annotation": "Jesus identifies with the stranger: I was a stranger and you invited me in.",
+      "is_primary": false
+    }
+  ],
+  "scholars": [
+    {
+      "scholar_id": "keener",
+      "quote": "Keener reads the Good Samaritan as Jesus deliberately choosing the most despised ethnic category to embody neighbor-love, dismantling his audience's assumptions about who deserves compassion.",
+      "source": "A Commentary on the Gospel of Matthew (Keener, 1999)",
+      "display_order": 1
+    },
+    {
+      "scholar_id": "lincoln",
+      "quote": "Lincoln argues that Ephesians 2:19 envisions the church as a polity where ethnic and national origins no longer determine belonging — a radical counter to both ancient and modern tribalism.",
+      "source": "Ephesians (Lincoln, 1990)",
+      "display_order": 2
+    },
+    {
+      "scholar_id": "cockerill",
+      "quote": "Cockerill reads Hebrews 13:2 as grounding hospitality in the awareness that God's messengers often appear in unexpected forms — welcoming the stranger is an act of faith in God's sovereignty over human encounters.",
+      "source": "The Epistle to the Hebrews (Cockerill, 2012)",
+      "display_order": 3
+    }
+  ],
+  "related": [
+    "racism_and_prejudice",
+    "justice",
+    "poverty"
+  ]
+}
