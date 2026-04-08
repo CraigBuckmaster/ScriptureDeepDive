@@ -441,5 +441,17 @@
     }
   ],
   "prayer_prompt": "As you consider Job's lament — 'Why did you bring me out of the womb?' — consider asking God whether you believe He can handle questions that sound like accusations, and whether His love is large enough to absorb your most painful 'why.'",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Job's questions — 'Does it please you to oppress me?' (v. 3) — assume God is somehow gaining from Job's pain. This isn't heresy but honest confusion. The prologue showed us the heavenly wager; Job sees only the suffering. His interpretive framework has collapsed. Without the reader's knowledge, his theology makes no sense of his experience.",
+      "genre_tag": "theological_insight"
+    },
+    {
+      "after_section": 2,
+      "tip": "'Your hands shaped me and made me. Will you now turn and destroy me?' (v. 8). Job appeals to creation intimacy as grounds for mercy. The imagery of being made like clay (v. 9) will return when God speaks from the whirlwind. Job's rhetorical questions will become God's literal ones — but with a different tone.",
+      "genre_tag": "close_reading"
+    }
+  ]
 }

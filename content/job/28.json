@@ -464,5 +464,17 @@
     }
   ],
   "prayer_prompt": "As you consider the Wisdom Hymn — 'Where shall wisdom be found?' — and its answer that the fear of the Lord is wisdom, consider asking God whether you have been searching for understanding in places that can never supply it.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "The wisdom poem stands outside the dialogue — no speaker identified. It's a theological interlude asking: 'Where can wisdom be found?' (v. 12). Humans mine gold and sapphires from the earth, but wisdom isn't excavated. The friends claimed wisdom through tradition; Job claimed it through experience. This poem says both are insufficient.",
+      "genre_tag": "theological_insight"
+    },
+    {
+      "after_section": 2,
+      "tip": "'God understands the way to it and he alone knows where it dwells' (v. 23). The answer to 'Where is wisdom?' is 'With God alone.' The poem prepares for the divine speeches: humans cannot litigate the universe because they lack the cosmic perspective. Job's demand for a hearing isn't wrong — but it underestimates what a hearing with God would involve.",
+      "genre_tag": "close_reading"
+    }
+  ]
 }

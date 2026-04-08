@@ -560,5 +560,22 @@
     }
   ],
   "prayer_prompt": "As you reflect on Job's agonized question — 'How can a mortal be righteous before God?' — consider asking God whether you have felt the terrifying gap between His power and your smallness, and what it means to approach that gap with honesty rather than pretense.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Job's reply to Bildad is his most legally sophisticated yet. He doesn't deny God's power — he catalogs it (vv. 4-10). The problem isn't that God is weak but that God is unaccountable. 'How can a mere mortal prove their innocence before God?' (v. 2). Job wants a courtroom but fears the judge is also the prosecutor.",
+      "genre_tag": "theological_insight"
+    },
+    {
+      "after_section": 2,
+      "tip": "The longing for an 'arbiter' or mediator (v. 33) is one of the book's most poignant moments. Job needs someone to stand between him and God, to level the playing field. Christians read this as foreshadowing, but for Job it's pure lament — he imagines a solution that doesn't exist. Hope defined by its absence.",
+      "genre_tag": "close_reading"
+    },
+    {
+      "after_section": 3,
+      "tip": "Job's complaint that God 'destroys both the blameless and the wicked' (v. 22) is the theological crisis point. If suffering doesn't distinguish righteous from wicked, what's the moral structure of the universe? Job is articulating what his friends cannot face: the evidence suggests God is not governing by their neat categories.",
+      "genre_tag": "theological_insight"
+    }
+  ]
 }

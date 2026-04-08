@@ -476,5 +476,17 @@
     }
   ],
   "prayer_prompt": "As you reflect on Job's declaration — 'I know that my Redeemer lives' — erupting from the depths of his suffering, consider asking God whether your deepest convictions have been forged in comfort or in crisis, and which kind endures.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Job's most famous words: 'I know that my Redeemer lives' (v. 25). But the Hebrew is notoriously difficult. 'Redeemer' (goel) is a kinsman who vindicates family honor. Job expects vindication — but when? After death? In some post-mortem vision? The hope is real but undefined. He's grasping at a God beyond the God who afflicts him.",
+      "genre_tag": "theological_insight"
+    },
+    {
+      "after_section": 2,
+      "tip": "'Have pity on me, my friends, have pity, for the hand of God has struck me' (v. 21). Job's plea strips away all argument and begs for simple compassion. The friends offer explanations; Job asks for presence. This is the pastoral failure of the book: right answers to the wrong questions, theology when tears were needed.",
+      "genre_tag": "close_reading"
+    }
+  ]
 }

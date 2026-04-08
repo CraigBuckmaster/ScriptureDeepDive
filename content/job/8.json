@@ -447,5 +447,17 @@
     }
   ],
   "prayer_prompt": "As you consider Bildad's insistence that God does not pervert justice, consider asking God whether your commitment to His fairness has become so rigid that it leaves no room for mystery — and whether you would rather defend a doctrine than comfort a friend.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Bildad enters with tradition's authority: 'Ask the former generation' (v. 8). His argument is simpler than Eliphaz's: the universe runs on moral cause and effect. If Job's children died, they must have sinned (v. 4). This is breathtakingly cruel, but Bildad doesn't see it. He's reciting doctrine, not reading the room.",
+      "genre_tag": "narrative_structure"
+    },
+    {
+      "after_section": 2,
+      "tip": "Bildad's imagery of papyrus without water (vv. 11-13) describes the godless — implicitly categorizing Job among them unless he repents. The promise 'God will yet fill your mouth with laughter' (v. 21) is conditional on Job accepting guilt he doesn't have. The friends offer hope at the price of integrity.",
+      "genre_tag": "theological_insight"
+    }
+  ]
 }

@@ -442,5 +442,17 @@
     }
   ],
   "prayer_prompt": "As you consider Zophar's insistence that the wicked always get what they deserve, consider asking God to free you from a transactional view of His justice — the belief that good behavior guarantees good outcomes and suffering proves guilt.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Zophar's second speech doubles down: the triumph of the wicked is brief (v. 5), their prosperity evaporates (v. 28). He offers no new arguments, only louder repetition. The friends have emptied their quiver. They have one doctrine — retribution — and Job's case has broken it. They can only restate what has already failed.",
+      "genre_tag": "narrative_structure"
+    },
+    {
+      "after_section": 2,
+      "tip": "Zophar's imagery of the wicked choking on their wealth (vv. 12-19) is vivid but irrelevant. Job wasn't greedy; he was generous (see ch. 31). The friends construct a strawman sinner because they cannot face an innocent sufferer. Their theology requires Job's guilt more than Job requires their comfort.",
+      "genre_tag": "theological_insight"
+    }
+  ]
 }

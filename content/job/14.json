@@ -454,5 +454,17 @@
     }
   ],
   "prayer_prompt": "As you consider Job's meditation on human mortality — 'A tree has hope; if it is cut down it will sprout again. But a man dies and is laid low' — consider asking God to help you sit honestly with your own finitude rather than rushing past it.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Job meditates on human mortality — brief lives, inescapable death. The tree metaphor (vv. 7-9) offers hope: cut down, a tree can sprout again. But humans? 'Mortals lie down and do not rise' (v. 12). This is pre-resurrection theology, wrestling with death's finality without the New Testament's answer.",
+      "genre_tag": "theological_insight"
+    },
+    {
+      "after_section": 2,
+      "tip": "First dialogue cycle ends. Score: Friends 3, Job 3. Nobody has moved. The friends insist suffering implies guilt; Job insists on innocence. But notice Job's trajectory: he began cursing his birth, he's now longing for vindication after death (v. 13). Even in despair, he's groping toward hope — a resurrection intuition without a resurrection doctrine.",
+      "genre_tag": "narrative_structure"
+    }
+  ]
 }

@@ -445,5 +445,17 @@
     }
   ],
   "prayer_prompt": "As you consider Job's sharp reply — 'I am not inferior to you; who does not know all this?' — consider asking God whether you have been on the receiving end of advice so obvious it felt insulting, and whether you have ever done the same to someone else.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Job's sarcasm peaks: 'Doubtless you are the only people who matter, and wisdom will die with you!' (v. 2). He matches the friends' wisdom poetry with his own, proving he knows the tradition as well as they do. The issue isn't ignorance but application. Job isn't theologically illiterate; he's theologically betrayed.",
+      "genre_tag": "close_reading"
+    },
+    {
+      "after_section": 2,
+      "tip": "Job's catalog of God's power (vv. 13-25) echoes the friends' hymns but with darker implications. God tears down without rebuilding, leads priests away stripped, overthrows the established. Job is using their own theology against them: if God does whatever he wants, maybe God isn't as predictable as you claim.",
+      "genre_tag": "theological_insight"
+    }
+  ]
 }

@@ -401,5 +401,17 @@
     }
   ],
   "prayer_prompt": "As you reflect on Job saying 'My days are cut short; the grave awaits me,' consider asking God what it feels like to lose hope for the future while maintaining faith in the person of God — and whether those two things can coexist.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Job's despair deepens: 'My spirit is broken, my days are cut short, the grave awaits me' (v. 1). He's stopped arguing and started dying. The friends have become 'mockers' rather than comforters. Isolation compounds physical suffering — he has neither health nor understanding companions.",
+      "genre_tag": "close_reading"
+    },
+    {
+      "after_section": 2,
+      "tip": "Job asks God to be his own guarantor (v. 3) since no human will vouch for him. He's still talking to God even as he accuses God. The relationship persists through the rupture. This is what the satan bet against: that Job's faith was transactional. Job's complaints, paradoxically, prove it isn't.",
+      "genre_tag": "theological_insight"
+    }
+  ]
 }

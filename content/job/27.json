@@ -439,5 +439,17 @@
     }
   ],
   "prayer_prompt": "As you reflect on Job's oath — 'I will not deny my integrity' — consider asking God whether you value your integrity enough to maintain it when everyone, even your closest friends, insists you should abandon it.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Job takes an oath: 'As surely as God lives, who has denied me justice... I will not deny my integrity' (vv. 2-5). An oath invokes God as witness to truth. Job swears by the very God he accuses — a paradox of faith. He trusts God enough to invoke God's name while protesting God's treatment. Relationship persists through rupture.",
+      "genre_tag": "theological_insight"
+    },
+    {
+      "after_section": 2,
+      "tip": "Third cycle ends. Some scholars see verses 13-23 as displaced (perhaps originally Zophar's missing speech) because they sound like the friends' retribution theology. But Job may be quoting them sarcastically or acknowledging partial truth: yes, the wicked sometimes suffer — just not reliably or soon enough. The ambiguity reflects Job's complex position.",
+      "genre_tag": "narrative_structure"
+    }
+  ]
 }

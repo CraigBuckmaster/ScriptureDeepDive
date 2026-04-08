@@ -497,5 +497,17 @@
     }
   ],
   "prayer_prompt": "As you consider God finally answering Job — 'Where were you when I laid the earth's foundation?' — consider asking God whether you are willing to be questioned rather than receiving answers, and whether His presence is enough even when explanation is withheld.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "'Then the LORD answered Job out of the whirlwind' (v. 1). God finally speaks — but not what Job expected. No explanation of suffering, no defense of divine justice, no verdict on Job's case. Instead, a cosmic tour: 'Where were you when I laid the earth's foundation?' (v. 4). God doesn't answer Job's questions; God questions Job's questions.",
+      "genre_tag": "theological_insight"
+    },
+    {
+      "after_section": 2,
+      "tip": "God's questions (vv. 4-38) aren't insults but invitations to wonder. Can Job command the morning? Does he know where light dwells? The point isn't Job's ignorance but the scale of what God manages. Job wanted to argue his case; God reveals the case is infinitely larger than Job imagined. The universe isn't a courtroom with Job as plaintiff.",
+      "genre_tag": "close_reading"
+    }
+  ]
 }

@@ -446,5 +446,17 @@
     }
   ],
   "prayer_prompt": "As you reflect on Elihu describing thunder, lightning, and ice as instruments of God's will, consider asking God whether the vastness of the physical world humbles you the way it should — and whether your questions shrink in the presence of what you cannot control.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Elihu's storm hymn (vv. 1-13) catalogs divine power in weather — thunder, lightning, snow, wind. His point: God controls forces beyond human comprehension or management. 'Do you know how God controls the clouds?' (v. 15). The rhetorical questions anticipate God's own barrage of questions in chapter 38.",
+      "genre_tag": "close_reading"
+    },
+    {
+      "after_section": 2,
+      "tip": "'The Almighty is beyond our reach' (v. 23). Elihu's final word is divine transcendence — God cannot be summoned to human courts. This is truer than Elihu knows. God will speak, but not as a defendant answering Job's charges. The courtroom metaphor Job constructed will be dismantled by God's sheer presence. Job asked for a hearing; he's about to get a revelation.",
+      "genre_tag": "theological_insight"
+    }
+  ]
 }

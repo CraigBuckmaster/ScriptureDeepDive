@@ -441,5 +441,17 @@
     }
   ],
   "prayer_prompt": "As you consider Elihu pointing to the approaching storm as evidence of God's majesty, consider asking God whether you see His power in the natural world around you — or whether you have become so insulated from creation that its witness no longer reaches you.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Elihu claims to speak 'on behalf of my Maker' (v. 2) — audacious for a young man who just berated his elders for speaking presumptuously. His confidence borders on arrogance. Yet his core point isn't wrong: God does use suffering instructively. The question is whether that's what's happening to Job specifically.",
+      "genre_tag": "close_reading"
+    },
+    {
+      "after_section": 2,
+      "tip": "Elihu begins describing a storm (vv. 26-33). This is transition poetry: his speech segues into natural phenomena as God's speech approaches. Whether Elihu sees the storm coming or is simply using storm imagery, the effect is dramatic preparation. The theophany is about to begin. Elihu falls silent because Someone greater is about to speak.",
+      "genre_tag": "narrative_structure"
+    }
+  ]
 }

@@ -437,5 +437,17 @@
     }
   ],
   "prayer_prompt": "As you consider Job's first reply — 'I am unworthy — how can I reply to you? I put my hand over my mouth' — consider asking God whether there are questions in your life that were never meant to be answered but only surrendered.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "'Will the one who contends with the Almighty correct him?' (v. 2). God pauses for Job's response. Job's answer is brief: 'I put my hand over my mouth' (v. 4). This isn't groveling but appropriate silence. Job asked for a hearing; he got more than he bargained for. What can you say when the Creator of the cosmos takes you on a tour?",
+      "genre_tag": "close_reading"
+    },
+    {
+      "after_section": 2,
+      "tip": "God's second speech introduces Behemoth (vv. 15-24) — likely the hippopotamus, but mythically inflated. 'It ranks first among the works of God' (v. 19). God takes pride in this beast that Job cannot tame or control. The point: there are powers in creation beyond human management. Job wanted to manage God's justice; God shows him unmanageable wonders.",
+      "genre_tag": "theological_insight"
+    }
+  ]
 }

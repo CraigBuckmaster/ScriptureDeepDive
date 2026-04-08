@@ -473,5 +473,17 @@
     }
   ],
   "prayer_prompt": "As you reflect on Job's extraordinary oath of innocence — covering everything from lust to injustice to idolatry — consider asking God whether you could take that same inventory of your life with the same confidence, and what it reveals if you cannot.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Job's oath of innocence is a legal masterpiece — the ancient Near East's version of a lie detector test. He lists potential sins and invokes curses on himself if guilty. 'If I have walked with falsehood... let my crops be uprooted' (vv. 5-8). Each 'if' is a formal denial under oath. Job puts his life on the line for his integrity.",
+      "genre_tag": "close_reading"
+    },
+    {
+      "after_section": 2,
+      "tip": "Job's ethics are remarkably progressive: equal treatment of servants (v. 13), care for the poor (v. 16), rejection of wealth-worship (v. 24), love for enemies (v. 29), hospitality to strangers (v. 32). His virtue list exceeds anything in Mosaic law. Job isn't defending bare minimums but a life of extraordinary righteousness. The friends attacked a saint.",
+      "genre_tag": "theological_insight"
+    }
+  ]
 }

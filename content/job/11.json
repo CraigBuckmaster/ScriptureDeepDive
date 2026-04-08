@@ -456,5 +456,17 @@
     }
   ],
   "prayer_prompt": "As you reflect on Zophar telling Job that God's wisdom is deeper than he can fathom, consider asking God whether the friends' theology is partially right but applied with devastating timing — and whether you have ever wielded a true idea as a weapon.",
-  "schema_version": "1.0"
+  "schema_version": "1.0",
+  "coaching": [
+    {
+      "after_section": 1,
+      "tip": "Zophar is the bluntest of the three friends. He accuses Job of 'babbling' and 'mockery' (v. 3) and wishes God would speak to expose Job's secret sins. 'Know this: God has even forgotten some of your sin' (v. 6). The cruel irony: Zophar invokes divine speech as punishment, not knowing God will indeed speak — and vindicate Job.",
+      "genre_tag": "narrative_structure"
+    },
+    {
+      "after_section": 2,
+      "tip": "Zophar's description of God's unfathomable wisdom (vv. 7-9) is theologically sound but pastorally weaponized. He uses transcendence to shut down Job's questions: 'Who are you to question the inscrutable?' But the book will answer differently — God's speeches engage Job's questions rather than dismissing them.",
+      "genre_tag": "theological_insight"
+    }
+  ]
 }
