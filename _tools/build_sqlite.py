@@ -2163,8 +2163,8 @@ def main():
     conn = sqlite3.connect(str(DB_PATH))
     cur = conn.cursor()
 
-    # Enable WAL mode for better concurrent reads
-    cur.execute('PRAGMA journal_mode=WAL')
+    # Use DELETE journal mode (WAL + executescript fails in some environments)
+    cur.execute('PRAGMA journal_mode=DELETE')
     # Disable FK enforcement during bulk inserts for speed
     cur.execute('PRAGMA foreign_keys=OFF')
 
