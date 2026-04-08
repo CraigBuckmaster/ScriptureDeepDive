@@ -813,7 +813,7 @@ def populate_chapters(cur):
               ├── chapter_panels{} → chapter_panel rows (lit, themes, ppl, tx, etc.)
               └── vhl_groups[] → vhl_group rows (highlighted words by category)
 
-    Skips content/meta/, content/verses/, content/interlinear/, content/archaeology/, content/life_topics/ (handled separately).
+    Skips content/meta/, content/verses/, content/interlinear/, content/archaeology/, content/life_topics/, content/historical_interpretations/ (handled separately).
     """
     chapter_count = 0
     section_count = 0
