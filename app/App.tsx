@@ -5,6 +5,7 @@ import * as ScreenOrientation from 'expo-screen-orientation';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer, DarkTheme, DefaultTheme } from '@react-navigation/native';
 
 import { FONT_MAP, ThemeProvider, useTheme } from './src/theme';
@@ -171,9 +172,11 @@ export default function App() {
 
   return (
     <GestureHandlerRootView style={appStyles.rootView} onLayout={onLayoutReady}>
-      <ThemeProvider>
-        <AppShell />
-      </ThemeProvider>
+      <SafeAreaProvider>
+        <ThemeProvider>
+          <AppShell />
+        </ThemeProvider>
+      </SafeAreaProvider>
     </GestureHandlerRootView>
   );
 }
