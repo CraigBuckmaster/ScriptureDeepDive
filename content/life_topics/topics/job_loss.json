@@ -1,0 +1,78 @@
+{
+  "id": "job_loss",
+  "category_id": "transitions",
+  "title": "Job Loss",
+  "subtitle": "What the Bible Says About Job Loss",
+  "summary": "Scripture meets the fear and grief of job loss with assurance of God's provision, reminders that identity is not found in employment, and practical wisdom for navigating uncertainty.",
+  "body": "Losing a job strikes at more than income — it threatens identity, purpose, and security. In a culture that asks what do you do as a first question, unemployment can feel like invisibility. But Scripture locates human value elsewhere: you are fearfully and wonderfully made [verse:ps.139.14]. That truth does not change with an employment status.\n\nJesus addresses the anxiety that follows loss directly. Do not worry about your life, what you will eat or drink [verse:matt.6.25-34]. This is not dismissive of real financial pressure — it is a redirection of trust from circumstances to the character of a Father who knows what his children need.\n\nJoseph's story is the Bible's most dramatic example of unjust career disruption. Sold into slavery, falsely accused, imprisoned — and through it all, the Lord was with Joseph and gave him success in whatever he did [verse:gen.39.2-3]. The narrative insists that God's presence persists through professional devastation, not just despite it but within it.\n\nJeremiah relays God's words to exiles who had lost everything: I know the plans I have for you, plans to prosper you and not to harm you, plans to give you hope and a future [verse:jer.29.11]. The promise was given to people in displacement, not people in comfort.\n\nPaul learned to be content in every circumstance, including seasons of need [verse:phil.4.12-13]. Contentment during job loss is not pretending that everything is fine — it is refusing to let a circumstance define what God has already secured.",
+  "display_order": 1,
+  "verses": [
+    {
+      "verse_ref": "matt.6.25-34",
+      "verse_order": 1,
+      "annotation": "Jesus addresses worry about provision — the Father who feeds birds is aware of your needs.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "jer.29.11",
+      "verse_order": 2,
+      "annotation": "God's plans for hope and a future — spoken to people in exile and loss, not comfort.",
+      "is_primary": true
+    },
+    {
+      "verse_ref": "ps.139.14",
+      "verse_order": 3,
+      "annotation": "Fearfully and wonderfully made — identity grounded in creation, not employment.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "gen.39.2-3",
+      "verse_order": 4,
+      "annotation": "God's presence with Joseph through unjust career loss — faithfulness in displacement.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "phil.4.12-13",
+      "verse_order": 5,
+      "annotation": "Paul's contentment in need and plenty — strength through Christ in every season.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "ps.37.25",
+      "verse_order": 6,
+      "annotation": "The psalmist's testimony: I have never seen the righteous forsaken or their children begging bread.",
+      "is_primary": false
+    },
+    {
+      "verse_ref": "deut.31.8",
+      "verse_order": 7,
+      "annotation": "The Lord goes before you — he will never leave or forsake you. Do not be afraid.",
+      "is_primary": false
+    }
+  ],
+  "scholars": [
+    {
+      "scholar_id": "keener",
+      "quote": "Keener emphasizes that Jesus' teaching on worry in Matthew 6 does not prohibit planning but attacks the corrosive anxiety that assumes God is uninvolved — trust in divine provision is the antidote to financial fear.",
+      "source": "A Commentary on the Gospel of Matthew (Keener, 1999)",
+      "display_order": 1
+    },
+    {
+      "scholar_id": "lundbom",
+      "quote": "Lundbom reads Jeremiah 29:11 in its exilic context, arguing that the promise of a future and a hope was given precisely when those things seemed impossible — the words are designed for darkness, not daylight.",
+      "source": "Jeremiah 21-36 (Lundbom, 2004)",
+      "display_order": 2
+    },
+    {
+      "scholar_id": "fee",
+      "quote": "Fee argues that Paul's contentment in Philippians 4 is not stoic detachment but christological dependence — strength in hardship comes from union with Christ, not from inner fortitude.",
+      "source": "Paul's Letter to the Philippians (Fee, 1995)",
+      "display_order": 3
+    }
+  ],
+  "related": [
+    "financial_stress",
+    "anxiety",
+    "finding_purpose"
+  ]
+}
