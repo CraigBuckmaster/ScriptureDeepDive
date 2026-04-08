@@ -46,6 +46,7 @@ import { usePremium } from '../hooks/usePremium';
 import { withErrorBoundary } from '../components/ScreenErrorBoundary';
 
 import { ChapterVerseList } from '../components/ChapterVerseList';
+import { ChapterReaderProvider } from '../components/ChapterReaderContext';
 import { ChapterPanelSheet } from '../components/ChapterPanelSheet';
 
 import { useChapterTTS } from '../hooks/chapter/useChapterTTS';
@@ -272,42 +273,44 @@ function ChapterScreen() {
           <GenreBanner genreLabel={bookData.genre_label} genreGuidance={bookData.genre_guidance} />
         ) : null}
 
-        <ChapterVerseList
-          sections={sections}
-          verses={verses}
-          vhlGroups={vhlGroups}
-          activeVhlGroups={activeVhlGroups}
-          notedVerses={notedVerses}
-          activeSectionPanel={panels.activeSectionPanelType}
-          fontSize={fontSize}
-          handleSectionPanelToggle={panels.handleSectionPanelToggle}
-          onNotePress={handleNotePress}
-          onVerseLongPress={handleVerseLongPress}
-          onInterlinearPress={handleInterlinearPress}
-          activeVerseNum={ttsHook.activeVerseNum}
-          depthMap={panels.depthMap}
-          recordOpen={panels.recordOpen}
-          comparisonVerses={comparisonTranslation ? comparisonVerses : undefined}
-          comparisonLabel={comparisonLabel}
-          primaryLabel={primaryLabel}
-          redLetterVerses={redLetterVerses}
-          highlightMap={highlightMap}
-          clearActivePanel={panels.clearActivePanel}
-          onRefPress={handleRefPress}
-          openPanel={openPanel}
-          onSectionLayout={scroll.handleSectionLayout}
-          onVerseLayout={scroll.handleVerseLayout}
-          onBtnRowLayout={scroll.handleBtnRowLayout}
-          studyCoachEnabled={studyCoachEnabled}
-          coachingTips={coachingTips}
-          chapterCoaching={chapterCoaching}
-          dismissedTips={dismissedTips}
-          onDismissTip={handleDismissTip}
-          chapterPanels={chapterPanels}
-          activeChapterPanelType={panels.activeChapterPanelType}
-          handleChapterPanelToggle={panels.handleChapterPanelToggle}
-          prayerPrompt={chapter?.prayer_prompt}
-        />
+        <ChapterReaderProvider
+          verse={{
+            verses, vhlGroups, activeVhlGroups, notedVerses, fontSize,
+            redLetterVerses, highlightMap, activeVerseNum: ttsHook.activeVerseNum,
+            comparisonVerses: comparisonTranslation ? comparisonVerses : undefined,
+            comparisonLabel, primaryLabel,
+          }}
+          panel={{
+            activeSectionPanel: panels.activeSectionPanelType,
+            activeChapterPanelType: panels.activeChapterPanelType,
+            depthMap: panels.depthMap, openPanel,
+          }}
+          callbacks={{
+            handleSectionPanelToggle: panels.handleSectionPanelToggle,
+            handleChapterPanelToggle: panels.handleChapterPanelToggle,
+            clearActivePanel: panels.clearActivePanel,
+            recordOpen: panels.recordOpen,
+            onNotePress: handleNotePress,
+            onVerseLongPress: handleVerseLongPress,
+            onInterlinearPress: handleInterlinearPress,
+            onRefPress: handleRefPress,
+          }}
+          layout={{
+            onSectionLayout: scroll.handleSectionLayout,
+            onVerseLayout: scroll.handleVerseLayout,
+            onBtnRowLayout: scroll.handleBtnRowLayout,
+          }}
+          coaching={{
+            studyCoachEnabled, coachingTips, chapterCoaching,
+            dismissedTips, onDismissTip: handleDismissTip,
+          }}
+        >
+          <ChapterVerseList
+            sections={sections}
+            chapterPanels={chapterPanels}
+            prayerPrompt={chapter?.prayer_prompt}
+          />
+        </ChapterReaderProvider>
       </ScrollView>
 
       {ttsHook.ttsActive && (
