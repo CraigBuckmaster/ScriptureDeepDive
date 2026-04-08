@@ -932,5 +932,276 @@
       "heb-imperative"
     ],
     "display_order": 10
+  },
+  {
+    "id": "grk-nominative",
+    "title": "Nominative Case",
+    "language": "greek",
+    "category": "nouns",
+    "summary": "The case of the subject — identifies who or what performs the action of the verb, and also serves for predicate nominatives and forms of address.",
+    "body": "The Nominative is the case of the subject. It answers the question \"who?\" or \"what?\" in relation to the verb. In a sentence like \"God loved the world,\" θεός (theos, \"God\") stands in the Nominative because God performs the action of loving.\n\n## How to Recognize It\n\nNominative forms are typically the dictionary or base forms of nouns. First declension feminines end in -η or -α (singular), second declension masculines in -ος, and second declension neuters in -ον. Plural Nominatives use -αι, -οι, and -α respectively.\n\n## Key Uses\n\n**Subject:** The most common function — the doer of the action. **Predicate nominative:** A noun that renames or identifies the subject after a linking verb: \"God is love\" — both \"God\" and \"love\" stand in the Nominative. **Nominative of address:** Sometimes used instead of the Vocative for direct address, especially in Koine Greek where the Vocative was declining in use.\n\n## Why It Matters for Interpretation\n\nThe Nominative matters most in predicate constructions where word order is flexible. In John 1:1, θεὸς ἦν ὁ λόγος (theos ēn ho logos), identifying which noun is the subject and which is the predicate nominative is crucial — the presence or absence of the article helps determine this, with significant theological implications for how \"the Word was God\" is understood.",
+    "examples": [
+      {
+        "ref": "John 1:1",
+        "text": "θεὸς ἦν ὁ λόγος (theos ēn ho logos) — 'the Word was God'",
+        "explanation": "Both θεός and λόγος are Nominative. The article on λόγος identifies it as the subject; anarthrous θεός is the predicate nominative, describing the nature of the Word."
+      },
+      {
+        "ref": "Rom 8:28",
+        "text": "ὁ θεός (ho theos) — 'God'",
+        "explanation": "Nominative with the article — God as the subject who works all things together for good. The Nominative places God as the active agent of the promise."
+      },
+      {
+        "ref": "John 11:25",
+        "text": "ἐγώ εἰμι ἡ ἀνάστασις (egō eimi hē anastasis) — 'I am the resurrection'",
+        "explanation": "A predicate nominative — ἀνάστασις renames the subject ἐγώ. Jesus does not merely bring resurrection; he is identified with it."
+      }
+    ],
+    "related_articles": [
+      "grk-accusative",
+      "grk-genitive"
+    ],
+    "display_order": 1
+  },
+  {
+    "id": "grk-genitive",
+    "title": "Genitive Case",
+    "language": "greek",
+    "category": "nouns",
+    "summary": "The case of description, relationship, and separation — expressing possession, source, quality, and a wide range of qualifying relationships between nouns.",
+    "body": "The Genitive is the most versatile Greek case, carrying over 30 recognized uses. Its core function is to qualify or describe another noun — answering questions like \"whose?,\" \"what kind?,\" \"from where?,\" or \"concerning what?\"\n\n## How to Recognize It\n\nGenitive singular endings include -ου (second declension), -ης or -ας (first declension), and -ος (third declension). The Genitive plural ending -ων is consistent across all declensions and is one of the most recognizable case markers.\n\n## Major Uses\n\n**Possessive:** \"the grace of God\" — God's grace. **Subjective genitive:** The genitive noun performs the action implied by the head noun: \"the love of God\" = God loves. **Objective genitive:** The genitive noun receives the action: \"the love of God\" = love directed toward God. **Source or origin:** \"the gospel of Christ\" — the gospel originating from Christ. **Description:** \"body of death\" = a death-characterized body. **Partitive:** \"some of the disciples\" — the genitive indicates the whole from which a part is taken.\n\n## Why It Matters for Interpretation\n\nThe subjective vs. objective genitive distinction is one of the most consequential grammatical decisions in New Testament interpretation. In πίστις Χριστοῦ (pistis Christou, \"faith of Christ\"), does the Genitive mean \"faith in Christ\" (objective — Christ receives faith) or \"the faithfulness of Christ\" (subjective — Christ exercises faithfulness)? This single grammatical question affects how entire books of Paul are understood.",
+    "examples": [
+      {
+        "ref": "Gal 2:16",
+        "text": "πίστεως Ἰησοῦ Χριστοῦ (pisteōs Iēsou Christou) — 'faith of Jesus Christ'",
+        "explanation": "The most debated Genitive in the NT — is it objective ('faith in Christ') or subjective ('Christ's faithfulness')? The grammatical ambiguity drives a major theological discussion about the basis of justification."
+      },
+      {
+        "ref": "Rom 8:35",
+        "text": "ἀγάπης τοῦ Χριστοῦ (agapēs tou Christou) — 'the love of Christ'",
+        "explanation": "Likely a subjective Genitive — 'Christ's love for us,' since the context asks who can separate us from the love Christ has for believers."
+      },
+      {
+        "ref": "Rev 1:1",
+        "text": "ἀποκάλυψις Ἰησοῦ Χριστοῦ (apokalupsis Iēsou Christou) — 'revelation of Jesus Christ'",
+        "explanation": "Genitive of source — the revelation that comes from Jesus Christ, or possibly subjective — the revelation that Jesus Christ gives. The title's ambiguity frames the entire book."
+      }
+    ],
+    "related_articles": [
+      "grk-nominative",
+      "grk-dative",
+      "grk-genitive-absolute"
+    ],
+    "display_order": 2
+  },
+  {
+    "id": "grk-dative",
+    "title": "Dative Case",
+    "language": "greek",
+    "category": "nouns",
+    "summary": "The case of the indirect object, instrument, location, and personal interest — expressing to whom, by what means, where, and for whose benefit an action occurs.",
+    "body": "The Dative is the case of personal interest and means. It answers questions like \"to whom?,\" \"for whom?,\" \"by what means?,\" and \"where?\" It absorbed the functions of two earlier Greek cases (the Locative and Instrumental), giving it a broad range of uses.\n\n## How to Recognize It\n\nDative singular endings include -ῳ (second declension), -ῃ or -ᾳ (first declension), and -ι (third declension). An iota subscript (ᾳ, ῃ, ῳ) is a reliable Dative marker. The Dative plural uses -οις, -αις, or -σι(ν).\n\n## Major Uses\n\n**Indirect object:** \"He gave the book to her\" — the recipient. **Instrument or means:** \"by grace you have been saved\" — grace as the means. **Sphere or location:** \"in Christ\" — the spiritual sphere in which something is true. **Advantage/disadvantage:** \"he died for us\" — for our benefit. **Association:** \"fellowship with the Spirit\" — togetherness.\n\n## Why It Matters for Interpretation\n\nPaul's ἐν Χριστῷ (en Christō, \"in Christ\") is a Dative construction that appears over 80 times in his letters. Whether this Dative expresses sphere (\"within the realm of Christ\"), instrument (\"by means of Christ\"), or association (\"in union with Christ\") affects how readers understand the believer's relationship to Christ. The instrumental Dative in Ephesians 2:8 (\"by grace... through faith\") makes grace the means of salvation — a grammatical point with profound theological weight.",
+    "examples": [
+      {
+        "ref": "Eph 2:8",
+        "text": "τῇ γὰρ χάριτί ἐστε σεσῳσμένοι (tē gar chariti este sesōsmenoi) — 'for by grace you have been saved'",
+        "explanation": "Dative of means — grace is the instrument through which salvation comes. The case identifies grace as the means, not merely the context, of salvation."
+      },
+      {
+        "ref": "Phil 1:1",
+        "text": "τοῖς ἁγίοις ἐν Χριστῷ Ἰησοῦ (tois hagiois en Christō Iēsou) — 'to the saints in Christ Jesus'",
+        "explanation": "The Dative τοῖς ἁγίοις marks the recipients; ἐν Χριστῷ is a Dative of sphere — the saints exist 'in the realm of' Christ Jesus."
+      },
+      {
+        "ref": "Rom 6:10",
+        "text": "τῇ ἁμαρτίᾳ ἀπέθανεν (tē hamartia apethanen) — 'he died to sin'",
+        "explanation": "Dative of reference or disadvantage — Christ's death was 'with reference to sin' or 'to sin's detriment.' The case specifies the relationship between the death and sin."
+      }
+    ],
+    "related_articles": [
+      "grk-genitive",
+      "grk-accusative"
+    ],
+    "display_order": 3
+  },
+  {
+    "id": "grk-accusative",
+    "title": "Accusative Case",
+    "language": "greek",
+    "category": "nouns",
+    "summary": "The case of the direct object and extent — identifying what receives the action of the verb and expressing the scope, direction, or duration of an activity.",
+    "body": "The Accusative is the case of the direct object. It answers the question \"what?\" or \"whom?\" — identifying the person or thing that directly receives the verb's action. It also expresses extent of time and space.\n\n## How to Recognize It\n\nAccusative singular endings include -ον (second declension masculine), -ην or -αν (first declension), and -α or -ν (third declension). Neuter nouns have identical Nominative and Accusative forms. The Accusative plural uses -ους, -ας, or -α (neuter).\n\n## Major Uses\n\n**Direct object:** \"God loved the world\" — κόσμον (kosmon) is Accusative, receiving God's love. **Extent of time:** \"forty days\" — indicating duration. **Extent of space:** \"they traveled a great distance\" — indicating how far. **Double accusative:** Some verbs take two Accusative objects — a person and a thing: \"he taught them many things.\" **Adverbial accusative:** Functioning as a modifier: \"freely\" (δωρεάν, dōrean) is technically an Accusative noun used adverbially.\n\n## Why It Matters for Interpretation\n\nThe Accusative identifies what is affected by an action. When John says God loved τὸν κόσμον (ton kosmon, \"the world\"), the Accusative places the entire world as the direct recipient of divine love — not a limited group but the cosmos itself. The double accusative construction in passages about teaching or appointing determines both who is acted upon and what they receive, which matters for understanding discipleship texts.",
+    "examples": [
+      {
+        "ref": "John 3:16",
+        "text": "τὸν κόσμον (ton kosmon) — 'the world'",
+        "explanation": "Accusative direct object — the world receives God's love. The Accusative places the entire cosmos as the object of divine affection."
+      },
+      {
+        "ref": "Matt 4:2",
+        "text": "ἡμέρας τεσσεράκοντα (hēmeras tesserakonta) — 'forty days'",
+        "explanation": "Accusative of extent of time — indicating the duration of Jesus's fasting. The case specifies how long, not when."
+      },
+      {
+        "ref": "Mark 6:34",
+        "text": "ἐδίδασκεν αὐτοὺς πολλά (edidasken autous polla) — 'he was teaching them many things'",
+        "explanation": "Double accusative — αὐτούς (them, person) and πολλά (many things, content). Both are Accusative, specifying both the recipients and the substance of the teaching."
+      }
+    ],
+    "related_articles": [
+      "grk-nominative",
+      "grk-dative"
+    ],
+    "display_order": 4
+  },
+  {
+    "id": "grk-vocative",
+    "title": "Vocative Case",
+    "language": "greek",
+    "category": "nouns",
+    "summary": "The case of direct address — used when speaking to a person or personified entity, often carrying emotional weight or indicating the speaker's relationship to the one addressed.",
+    "body": "The Vocative is the case of direct address. It names the person being spoken to: \"Lord!\" \"Father!\" \"Brothers!\" In Koine Greek, the Vocative was merging with the Nominative, so many instances of direct address use Nominative forms.\n\n## How to Recognize It\n\nThe Vocative has distinct forms mainly in the second declension singular, where -ος becomes -ε: κύριος (kurios, \"Lord,\" Nominative) becomes κύριε (kurie, \"Lord!\" Vocative). First declension and plural forms are usually identical to the Nominative. The interjection ὦ (ō, \"O!\") sometimes precedes the Vocative for emphasis.\n\n## What It Expresses\n\nThe Vocative creates direct, personal communication. In prayer, it identifies the one being addressed: πάτερ (pater, \"Father!\"). In teaching, it identifies the audience: ἀδελφοί (adelphoi, \"Brothers!\"). The Vocative can carry emotional intensity — the repeated κύριε, κύριε (kurie, kurie, \"Lord, Lord!\") in Matthew 7:21 conveys desperate urgency.\n\n## Why It Matters for Interpretation\n\nThe Vocative reveals relationship and tone. When Jesus addresses God as πάτερ (\"Father\") rather than using a more formal title, the Vocative signals intimacy. When Paul switches between ἀδελφοί (\"brothers\") and ὦ ἀνόητοι Γαλάται (\"O foolish Galatians!\"), the Vocative with ὦ signals heightened emotion — frustration and urgency that the simple Nominative of address would not convey.",
+    "examples": [
+      {
+        "ref": "Mark 14:36",
+        "text": "αββα ὁ πατήρ (abba ho patēr) — 'Abba, Father'",
+        "explanation": "Vocative of intimate address — Jesus combines the Aramaic 'Abba' with the Greek Vocative πατήρ in Gethsemane. The Vocative signals the most personal, vulnerable prayer in the Gospels."
+      },
+      {
+        "ref": "Gal 3:1",
+        "text": "ὦ ἀνόητοι Γαλάται (ō anoētoi Galatai) — 'O foolish Galatians!'",
+        "explanation": "Vocative with the exclamatory ὦ — Paul's frustration erupts in a direct address that signals emotional intensity. The Vocative makes the rebuke personal and pointed."
+      },
+      {
+        "ref": "Matt 7:21",
+        "text": "κύριε κύριε (kurie kurie) — 'Lord, Lord!'",
+        "explanation": "Doubled Vocative — the repetition conveys desperate urgency. Jesus quotes those who address him directly yet are rejected, making the Vocative tragically ironic."
+      }
+    ],
+    "related_articles": [
+      "grk-nominative"
+    ],
+    "display_order": 5
+  },
+  {
+    "id": "grk-genitive-absolute",
+    "title": "Genitive Absolute",
+    "language": "greek",
+    "category": "syntax",
+    "summary": "A grammatically independent participial clause in the Genitive case that provides background, timing, or circumstance for the main action of a sentence.",
+    "body": "The Genitive Absolute is a participial phrase that stands grammatically independent from the main clause. It consists of a noun (or pronoun) in the Genitive case plus a Genitive participle, and it typically provides the temporal, causal, or circumstantial setting for the main action.\n\n## How to Recognize It\n\nLook for a Genitive noun or pronoun paired with a Genitive participle where the subject of this phrase is different from the subject of the main verb. This grammatical independence is the defining feature — the Genitive Absolute has its own subject, separate from the main clause.\n\n## What It Expresses\n\n**Temporal setting:** \"While he was speaking, they arrived\" — the Genitive Absolute sets the time. **Causal background:** \"Because the hour was late, he departed.\" **Concessive:** \"Although he was tired, he continued.\" The specific relationship (time, cause, concession) must be determined from context.\n\n## Why It Matters for Interpretation\n\nThe Genitive Absolute is the Gospel writers' primary tool for scene-setting and transitions. It tells readers what was happening in the background when the foreground action took place. Recognizing it prevents readers from treating background circumstance as part of the main action. It also reveals narrative pacing — Genitive Absolutes slow the action, provide context, and create the setting into which the main events arrive.",
+    "examples": [
+      {
+        "ref": "Matt 26:6",
+        "text": "τοῦ δὲ Ἰησοῦ γενομένου ἐν Βηθανίᾳ (tou de Iēsou genomenou en Bēthania)",
+        "explanation": "Genitive Absolute — 'Now when Jesus was in Bethany.' The phrase sets the scene independently; Jesus's being in Bethany provides the backdrop for the anointing story that follows."
+      },
+      {
+        "ref": "Matt 8:1",
+        "text": "καταβάντος δὲ αὐτοῦ (katabontos de autou) — 'when he had come down'",
+        "explanation": "Temporal Genitive Absolute — 'when he came down from the mountain.' The phrase transitions from the Sermon on the Mount to the healing narratives, marking a change of setting."
+      },
+      {
+        "ref": "Acts 21:10",
+        "text": "ἐπιμενόντων ἡμῶν ἡμέρας πλείους (epimenontōn hēmōn) — 'while we were staying many days'",
+        "explanation": "Genitive Absolute providing temporal duration — 'while we were remaining for several days.' The background setting establishes how long they waited before the prophet Agabus arrived."
+      }
+    ],
+    "related_articles": [
+      "grk-genitive",
+      "grk-articular-infinitive"
+    ],
+    "display_order": 1
+  },
+  {
+    "id": "grk-articular-infinitive",
+    "title": "Articular Infinitive",
+    "language": "greek",
+    "category": "syntax",
+    "summary": "An infinitive preceded by a neuter article, allowing it to function as a noun in various cases — used to express purpose, time, cause, and result with precision.",
+    "body": "The Articular Infinitive is a distinctively Greek construction that places the neuter article before an infinitive, turning the verb into a noun that can fill any case role. Different prepositions with the article create specific meanings.\n\n## How to Recognize It\n\nLook for the neuter article (τό, τοῦ, τῷ) immediately before an infinitive. The article's case, combined with any preceding preposition, determines the meaning: τοῦ + infinitive often expresses purpose, μετὰ τό + infinitive means \"after,\" ἐν τῷ + infinitive means \"while\" or \"when,\" πρὸ τοῦ + infinitive means \"before,\" and εἰς τό + infinitive expresses purpose or result.\n\n## Common Patterns\n\n**τοῦ + infinitive (purpose):** \"He came in order to save.\" **ἐν τῷ + infinitive (temporal):** \"While he was sowing\" — simultaneous action. **μετὰ τό + infinitive (subsequent time):** \"After he spoke\" — action following. **διὰ τό + infinitive (cause):** \"Because they had no root\" — expressing the reason. **εἰς τό + infinitive (purpose/result):** \"So that all might believe.\"\n\n## Why It Matters for Interpretation\n\nThe articular infinitive allows Greek to express temporal and logical relationships with a precision that English often cannot match. When Luke writes ἐν τῷ σπείρειν (en tō speirein, \"while he was sowing,\" Luke 8:5), the construction precisely timestamps the action — not before or after but during. Recognizing these constructions prevents readers from missing the logical connectors that structure an argument or narrative.",
+    "examples": [
+      {
+        "ref": "Luke 8:5",
+        "text": "ἐν τῷ σπείρειν αὐτόν (en tō speirein auton) — 'while he was sowing'",
+        "explanation": "ἐν + Dative articular infinitive — expressing simultaneous time. The construction precisely locates the falling of seed during the ongoing act of sowing."
+      },
+      {
+        "ref": "Matt 13:25",
+        "text": "ἐν δὲ τῷ καθεύδειν τοὺς ἀνθρώπους (en de tō katheudein) — 'while the men were sleeping'",
+        "explanation": "Temporal articular infinitive — the enemy's action occurs during the sleeping. The construction pinpoints the vulnerability moment with grammatical precision."
+      },
+      {
+        "ref": "Phil 1:21",
+        "text": "τὸ ζῆν Χριστός (to zēn Christos) — 'to live is Christ'",
+        "explanation": "Nominative articular infinitive — the article τό turns the infinitive 'to live' into a noun serving as the subject. Living itself is equated with Christ through this nominalized construction."
+      }
+    ],
+    "related_articles": [
+      "grk-genitive-absolute",
+      "heb-infinitive"
+    ],
+    "display_order": 2
+  },
+  {
+    "id": "grk-conditionals",
+    "title": "Conditional Sentences (1st–4th Class)",
+    "language": "greek",
+    "category": "syntax",
+    "summary": "Four patterns for 'if... then' statements in Greek, each using a different combination of mood and particle to signal how the speaker views the condition — from assumed true to contrary to fact.",
+    "body": "Greek conditional sentences use four distinct patterns to express different relationships between a premise (\"if...\") and its consequence. Each class uses a specific combination of particles and moods that reveals how the speaker regards the condition.\n\n## The Four Classes\n\n**First class (assumed true):** εἰ + Indicative in the protasis. The speaker assumes the condition is true for the sake of argument: \"If you are the Son of God (and I assume you are), then command these stones...\" This does not mean the condition is objectively true — only that the speaker treats it as true.\n\n**Second class (contrary to fact):** εἰ + past Indicative, often with ἄν in the apodosis. The speaker assumes the condition is not true: \"If he were here (but he is not), my brother would not have died.\" The past tense Indicative signals unreality.\n\n**Third class (possible/uncertain):** ἐάν + Subjunctive. The condition is presented as possible but not assumed: \"If anyone should sin, we have an advocate.\" The Subjunctive signals contingency.\n\n**Fourth class (remote possibility):** εἰ + Optative. The condition is presented as remotely possible. This class is extremely rare in the New Testament and never appears in a complete form.\n\n## Why It Matters for Interpretation\n\nMisidentifying the class of a condition can invert its meaning. When Satan says \"if you are the Son of God\" (first class), he is not expressing doubt — the grammar assumes the premise is true. When Martha says \"if you had been here\" (second class), the grammar signals she knows Jesus was not there. The mood of the conditional clause is the key to the speaker's perspective.",
+    "examples": [
+      {
+        "ref": "Matt 4:3",
+        "text": "εἰ υἱὸς εἶ τοῦ θεοῦ (ei huios ei tou theou) — 'if you are the Son of God'",
+        "explanation": "First class — εἰ + Indicative. Satan assumes the premise is true: 'Since you are the Son of God...' The temptation works precisely because Jesus's identity is not in question."
+      },
+      {
+        "ref": "John 11:21",
+        "text": "εἰ ἦς ὧδε, οὐκ ἂν ἀπέθανεν (ei ēs hōde, ouk an apethanen)",
+        "explanation": "Second class — contrary to fact. Martha says 'if you had been here (but you were not), my brother would not have died.' The past Indicative + ἄν signals that the condition was not met."
+      },
+      {
+        "ref": "1 John 2:1",
+        "text": "ἐάν τις ἁμάρτῃ (ean tis hamartē) — 'if anyone should sin'",
+        "explanation": "Third class — ἐάν + Subjunctive. Sin is presented as possible but not inevitable. The Subjunctive treats the condition as a genuine contingency, not an assumption."
+      }
+    ],
+    "related_articles": [
+      "grk-indicative",
+      "grk-subjunctive",
+      "grk-optative"
+    ],
+    "display_order": 3
+  },
+  {
+    "id": "grk-discourse-markers",
+    "title": "Discourse Markers (οὖν, δέ, γάρ, ἀλλά)",
+    "language": "greek",
+    "category": "discourse",
+    "summary": "Small connecting words that structure Greek argument and narrative — signaling continuation, contrast, cause, inference, and transition between ideas.",
+    "body": "Greek discourse markers are small, often untranslated words that serve as the connective tissue of argument and narrative. They tell the reader how each sentence relates to what came before — whether it continues, contrasts, explains, or draws a conclusion.\n\n## The Big Four\n\n**δέ (de, \"and/but/now\")** is the most common connector, signaling mild contrast or simple continuation. It is the default \"next step\" marker: \"And he said... But she replied...\" Its meaning ranges from \"and\" to \"but\" depending on context.\n\n**γάρ (gar, \"for/because\")** signals that the current clause explains or supports the previous one. It answers \"why?\": \"Do not be anxious, for (γάρ) your Father knows what you need.\" Tracking γάρ clauses reveals the logical backbone of Paul's arguments.\n\n**οὖν (oun, \"therefore/then\")** signals inference or result — what follows is a conclusion drawn from what preceded. It answers \"so what?\": \"Therefore (οὖν), since we have been justified by faith, we have peace.\"\n\n**ἀλλά (alla, \"but/rather\")** signals strong contrast or correction — what follows replaces or overrides what preceded: \"Not my will, but (ἀλλά) yours be done.\" It is stronger than δέ.\n\n## Why It Matters for Interpretation\n\nTranslations frequently omit or flatten these markers, obscuring the logical structure of the original. Following the γάρ chains in Romans reveals Paul's step-by-step argument in a way that ignoring them cannot. When Paul writes οὖν, he signals a conclusion — what follows is the point of everything preceding it. Missing these markers means missing the argument's architecture.",
+    "examples": [
+      {
+        "ref": "Rom 5:1",
+        "text": "Δικαιωθέντες οὖν (dikaiōthentes oun) — 'Therefore, having been justified'",
+        "explanation": "οὖν marks the conclusion of Romans 1-4 — everything Paul has argued about justification by faith now leads to this result: peace with God. The discourse marker signals 'here is the payoff.'"
+      },
+      {
+        "ref": "Rom 1:16",
+        "text": "δύναμις γὰρ θεοῦ (dunamis gar theou) — 'for it is the power of God'",
+        "explanation": "γάρ explains why Paul is not ashamed of the gospel — because (γάρ) it is God's power for salvation. The marker connects Paul's confidence to its theological basis."
+      },
+      {
+        "ref": "Mark 14:36",
+        "text": "ἀλλ' οὐ τί ἐγὼ θέλω ἀλλὰ τί σύ (all' ou ti egō thelō alla ti su)",
+        "explanation": "Double ἀλλά — strong correction: 'but not what I will, but what you will.' Each ἀλλά overrides the previous element, creating the sharpest possible contrast between Jesus's will and the Father's."
+      }
+    ],
+    "related_articles": [
+      "heb-speech-markers",
+      "heb-hinneh"
+    ],
+    "display_order": 1
   }
 ]
