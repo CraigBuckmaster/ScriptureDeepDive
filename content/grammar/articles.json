@@ -27,7 +27,12 @@
       "heb-imperfect",
       "heb-vav-consecutive"
     ],
-    "display_order": 8
+    "display_order": 8,
+    "related_articles_json": [
+      "heb-imperfect",
+      "heb-vav-consecutive",
+      "heb-participle"
+    ]
   },
   {
     "id": "heb-imperfect",
@@ -58,7 +63,12 @@
       "heb-vav-consecutive",
       "heb-participle"
     ],
-    "display_order": 9
+    "display_order": 9,
+    "related_articles_json": [
+      "heb-perfect",
+      "heb-vav-consecutive",
+      "heb-imperative"
+    ]
   },
   {
     "id": "heb-vav-consecutive",
@@ -88,7 +98,12 @@
       "heb-perfect",
       "heb-imperfect"
     ],
-    "display_order": 10
+    "display_order": 10,
+    "related_articles_json": [
+      "heb-perfect",
+      "heb-imperfect",
+      "heb-waw-narrative"
+    ]
   },
   {
     "id": "heb-imperative",
@@ -118,7 +133,11 @@
       "heb-imperfect",
       "heb-infinitive"
     ],
-    "display_order": 11
+    "display_order": 11,
+    "related_articles_json": [
+      "heb-imperfect",
+      "heb-infinitive"
+    ]
   },
   {
     "id": "heb-infinitive",
@@ -148,7 +167,12 @@
       "heb-imperative",
       "heb-participle"
     ],
-    "display_order": 12
+    "display_order": 12,
+    "related_articles_json": [
+      "heb-imperative",
+      "heb-participle",
+      "grk-articular-infinitive"
+    ]
   },
   {
     "id": "heb-participle",
@@ -178,7 +202,12 @@
       "heb-imperfect",
       "heb-infinitive"
     ],
-    "display_order": 13
+    "display_order": 13,
+    "related_articles_json": [
+      "heb-perfect",
+      "heb-imperfect",
+      "heb-infinitive"
+    ]
   },
   {
     "id": "heb-qal",
@@ -209,7 +238,12 @@
       "heb-piel",
       "heb-hiphil"
     ],
-    "display_order": 1
+    "display_order": 1,
+    "related_articles_json": [
+      "heb-niphal",
+      "heb-piel",
+      "heb-hiphil"
+    ]
   },
   {
     "id": "heb-niphal",
@@ -240,7 +274,13 @@
       "heb-pual",
       "heb-hophal"
     ],
-    "display_order": 2
+    "display_order": 2,
+    "related_articles_json": [
+      "heb-qal",
+      "heb-pual",
+      "heb-hophal",
+      "heb-hithpael"
+    ]
   },
   {
     "id": "heb-piel",
@@ -271,7 +311,12 @@
       "heb-pual",
       "heb-hithpael"
     ],
-    "display_order": 3
+    "display_order": 3,
+    "related_articles_json": [
+      "heb-qal",
+      "heb-pual",
+      "heb-hithpael"
+    ]
   },
   {
     "id": "heb-pual",
@@ -301,7 +346,12 @@
       "heb-piel",
       "heb-niphal"
     ],
-    "display_order": 4
+    "display_order": 4,
+    "related_articles_json": [
+      "heb-piel",
+      "heb-niphal",
+      "heb-hophal"
+    ]
   },
   {
     "id": "heb-hiphil",
@@ -331,7 +381,11 @@
       "heb-qal",
       "heb-hophal"
     ],
-    "display_order": 5
+    "display_order": 5,
+    "related_articles_json": [
+      "heb-qal",
+      "heb-hophal"
+    ]
   },
   {
     "id": "heb-hophal",
@@ -361,7 +415,12 @@
       "heb-hiphil",
       "heb-pual"
     ],
-    "display_order": 6
+    "display_order": 6,
+    "related_articles_json": [
+      "heb-hiphil",
+      "heb-niphal",
+      "heb-pual"
+    ]
   },
   {
     "id": "heb-hithpael",
@@ -391,7 +450,11 @@
       "heb-piel",
       "heb-niphal"
     ],
-    "display_order": 7
+    "display_order": 7,
+    "related_articles_json": [
+      "heb-niphal",
+      "heb-piel"
+    ]
   },
   {
     "id": "heb-construct",
@@ -420,7 +483,12 @@
     "related_articles": [
       "heb-absolute"
     ],
-    "display_order": 1
+    "display_order": 1,
+    "related_articles_json": [
+      "heb-absolute",
+      "heb-segolate",
+      "grk-genitive"
+    ]
   },
   {
     "id": "heb-absolute",
@@ -449,7 +517,11 @@
     "related_articles": [
       "heb-construct"
     ],
-    "display_order": 2
+    "display_order": 2,
+    "related_articles_json": [
+      "heb-construct",
+      "heb-segolate"
+    ]
   },
   {
     "id": "heb-segolate",
@@ -479,7 +551,11 @@
       "heb-construct",
       "heb-absolute"
     ],
-    "display_order": 3
+    "display_order": 3,
+    "related_articles_json": [
+      "heb-construct",
+      "heb-absolute"
+    ]
   },
   {
     "id": "heb-casus-pendens",
@@ -509,7 +585,11 @@
       "heb-vav-consecutive",
       "heb-waw-narrative"
     ],
-    "display_order": 1
+    "display_order": 1,
+    "related_articles_json": [
+      "heb-waw-narrative",
+      "heb-chiasm"
+    ]
   },
   {
     "id": "heb-waw-narrative",
@@ -539,7 +619,12 @@
       "heb-vav-consecutive",
       "heb-casus-pendens"
     ],
-    "display_order": 2
+    "display_order": 2,
+    "related_articles_json": [
+      "heb-vav-consecutive",
+      "heb-casus-pendens",
+      "heb-speech-markers"
+    ]
   },
   {
     "id": "heb-speech-markers",
@@ -568,7 +653,12 @@
     "related_articles": [
       "heb-hinneh"
     ],
-    "display_order": 1
+    "display_order": 1,
+    "related_articles_json": [
+      "heb-hinneh",
+      "heb-waw-narrative",
+      "grk-discourse-markers"
+    ]
   },
   {
     "id": "heb-hinneh",
@@ -598,7 +688,11 @@
       "heb-speech-markers",
       "heb-casus-pendens"
     ],
-    "display_order": 2
+    "display_order": 2,
+    "related_articles_json": [
+      "heb-speech-markers",
+      "heb-participle"
+    ]
   },
   {
     "id": "heb-chiasm",
@@ -629,7 +723,13 @@
       "lit-parallelism",
       "lit-inclusio"
     ],
-    "display_order": 3
+    "display_order": 3,
+    "related_articles_json": [
+      "lit-chiasm",
+      "lit-parallelism",
+      "lit-inclusio",
+      "heb-casus-pendens"
+    ]
   },
   {
     "id": "grk-present",
@@ -659,7 +759,12 @@
       "grk-imperfect",
       "grk-aorist"
     ],
-    "display_order": 1
+    "display_order": 1,
+    "related_articles_json": [
+      "grk-imperfect",
+      "grk-aorist",
+      "grk-perfect"
+    ]
   },
   {
     "id": "grk-aorist",
@@ -689,7 +794,12 @@
       "grk-present",
       "grk-perfect"
     ],
-    "display_order": 2
+    "display_order": 2,
+    "related_articles_json": [
+      "grk-present",
+      "grk-perfect",
+      "grk-imperfect"
+    ]
   },
   {
     "id": "grk-imperfect",
@@ -719,7 +829,11 @@
       "grk-present",
       "grk-aorist"
     ],
-    "display_order": 3
+    "display_order": 3,
+    "related_articles_json": [
+      "grk-present",
+      "grk-aorist"
+    ]
   },
   {
     "id": "grk-perfect",
@@ -749,7 +863,12 @@
       "grk-aorist",
       "grk-pluperfect"
     ],
-    "display_order": 4
+    "display_order": 4,
+    "related_articles_json": [
+      "grk-aorist",
+      "grk-pluperfect",
+      "grk-present"
+    ]
   },
   {
     "id": "grk-pluperfect",
@@ -779,7 +898,11 @@
       "grk-perfect",
       "grk-imperfect"
     ],
-    "display_order": 5
+    "display_order": 5,
+    "related_articles_json": [
+      "grk-perfect",
+      "grk-aorist"
+    ]
   },
   {
     "id": "grk-future",
@@ -809,7 +932,12 @@
       "grk-present",
       "grk-aorist"
     ],
-    "display_order": 6
+    "display_order": 6,
+    "related_articles_json": [
+      "grk-present",
+      "grk-aorist",
+      "grk-subjunctive"
+    ]
   },
   {
     "id": "grk-indicative",
@@ -839,7 +967,12 @@
       "grk-subjunctive",
       "grk-conditionals"
     ],
-    "display_order": 7
+    "display_order": 7,
+    "related_articles_json": [
+      "grk-subjunctive",
+      "grk-imperative",
+      "grk-optative"
+    ]
   },
   {
     "id": "grk-subjunctive",
@@ -870,7 +1003,12 @@
       "grk-imperative",
       "grk-conditionals"
     ],
-    "display_order": 8
+    "display_order": 8,
+    "related_articles_json": [
+      "grk-indicative",
+      "grk-optative",
+      "grk-conditionals"
+    ]
   },
   {
     "id": "grk-optative",
@@ -900,7 +1038,11 @@
       "grk-subjunctive",
       "grk-indicative"
     ],
-    "display_order": 9
+    "display_order": 9,
+    "related_articles_json": [
+      "grk-subjunctive",
+      "grk-indicative"
+    ]
   },
   {
     "id": "grk-imperative",
@@ -931,7 +1073,12 @@
       "grk-indicative",
       "heb-imperative"
     ],
-    "display_order": 10
+    "display_order": 10,
+    "related_articles_json": [
+      "grk-indicative",
+      "grk-subjunctive",
+      "heb-imperative"
+    ]
   },
   {
     "id": "grk-nominative",
@@ -961,7 +1108,11 @@
       "grk-accusative",
       "grk-genitive"
     ],
-    "display_order": 1
+    "display_order": 1,
+    "related_articles_json": [
+      "grk-accusative",
+      "grk-vocative"
+    ]
   },
   {
     "id": "grk-genitive",
@@ -992,7 +1143,12 @@
       "grk-dative",
       "grk-genitive-absolute"
     ],
-    "display_order": 2
+    "display_order": 2,
+    "related_articles_json": [
+      "grk-dative",
+      "grk-genitive-absolute",
+      "heb-construct"
+    ]
   },
   {
     "id": "grk-dative",
@@ -1022,7 +1178,11 @@
       "grk-genitive",
       "grk-accusative"
     ],
-    "display_order": 3
+    "display_order": 3,
+    "related_articles_json": [
+      "grk-genitive",
+      "grk-accusative"
+    ]
   },
   {
     "id": "grk-accusative",
@@ -1052,7 +1212,11 @@
       "grk-nominative",
       "grk-dative"
     ],
-    "display_order": 4
+    "display_order": 4,
+    "related_articles_json": [
+      "grk-nominative",
+      "grk-dative"
+    ]
   },
   {
     "id": "grk-vocative",
@@ -1081,7 +1245,11 @@
     "related_articles": [
       "grk-nominative"
     ],
-    "display_order": 5
+    "display_order": 5,
+    "related_articles_json": [
+      "grk-nominative",
+      "grk-imperative"
+    ]
   },
   {
     "id": "grk-genitive-absolute",
@@ -1111,7 +1279,11 @@
       "grk-genitive",
       "grk-articular-infinitive"
     ],
-    "display_order": 1
+    "display_order": 1,
+    "related_articles_json": [
+      "grk-genitive",
+      "grk-aorist"
+    ]
   },
   {
     "id": "grk-articular-infinitive",
@@ -1141,7 +1313,11 @@
       "grk-genitive-absolute",
       "heb-infinitive"
     ],
-    "display_order": 2
+    "display_order": 2,
+    "related_articles_json": [
+      "heb-infinitive",
+      "grk-genitive"
+    ]
   },
   {
     "id": "grk-conditionals",
@@ -1172,7 +1348,12 @@
       "grk-subjunctive",
       "grk-optative"
     ],
-    "display_order": 3
+    "display_order": 3,
+    "related_articles_json": [
+      "grk-subjunctive",
+      "grk-indicative",
+      "grk-optative"
+    ]
   },
   {
     "id": "grk-discourse-markers",
@@ -1202,7 +1383,11 @@
       "heb-speech-markers",
       "heb-hinneh"
     ],
-    "display_order": 1
+    "display_order": 1,
+    "related_articles_json": [
+      "heb-speech-markers",
+      "heb-hinneh"
+    ]
   },
   {
     "id": "lit-chiasm",
@@ -1233,7 +1418,12 @@
       "lit-inclusio",
       "lit-parallelism"
     ],
-    "display_order": 1
+    "display_order": 1,
+    "related_articles_json": [
+      "heb-chiasm",
+      "lit-inclusio",
+      "lit-parallelism"
+    ]
   },
   {
     "id": "lit-inclusio",
@@ -1263,7 +1453,11 @@
       "lit-chiasm",
       "lit-parallelism"
     ],
-    "display_order": 2
+    "display_order": 2,
+    "related_articles_json": [
+      "lit-chiasm",
+      "lit-parallelism"
+    ]
   },
   {
     "id": "lit-parallelism",
@@ -1294,7 +1488,12 @@
       "lit-merism",
       "lit-inclusio"
     ],
-    "display_order": 3
+    "display_order": 3,
+    "related_articles_json": [
+      "lit-chiasm",
+      "lit-inclusio",
+      "lit-merism"
+    ]
   },
   {
     "id": "lit-acrostic",
@@ -1324,7 +1523,10 @@
       "lit-parallelism",
       "lit-inclusio"
     ],
-    "display_order": 4
+    "display_order": 4,
+    "related_articles_json": [
+      "lit-parallelism"
+    ]
   },
   {
     "id": "lit-merism",
@@ -1354,7 +1556,12 @@
       "lit-hendiadys",
       "lit-parallelism"
     ],
-    "display_order": 5
+    "display_order": 5,
+    "related_articles_json": [
+      "lit-hendiadys",
+      "lit-parallelism",
+      "lit-hyperbole"
+    ]
   },
   {
     "id": "lit-hendiadys",
@@ -1384,7 +1591,10 @@
       "lit-merism",
       "lit-hyperbole"
     ],
-    "display_order": 6
+    "display_order": 6,
+    "related_articles_json": [
+      "lit-merism"
+    ]
   },
   {
     "id": "lit-hyperbole",
@@ -1414,7 +1624,11 @@
       "lit-irony",
       "lit-merism"
     ],
-    "display_order": 7
+    "display_order": 7,
+    "related_articles_json": [
+      "lit-irony",
+      "lit-merism"
+    ]
   },
   {
     "id": "lit-irony",
@@ -1444,7 +1658,10 @@
       "lit-hyperbole",
       "lit-parallelism"
     ],
-    "display_order": 8
+    "display_order": 8,
+    "related_articles_json": [
+      "lit-hyperbole"
+    ]
   },
   {
     "id": "lit-lament",
@@ -1474,7 +1691,11 @@
       "lit-hymn",
       "lit-parallelism"
     ],
-    "display_order": 9
+    "display_order": 9,
+    "related_articles_json": [
+      "lit-hymn",
+      "lit-parallelism"
+    ]
   },
   {
     "id": "lit-hymn",
@@ -1504,7 +1725,11 @@
       "lit-lament",
       "lit-parallelism"
     ],
-    "display_order": 10
+    "display_order": 10,
+    "related_articles_json": [
+      "lit-lament",
+      "lit-parallelism"
+    ]
   },
   {
     "id": "lit-wisdom-saying",
@@ -1534,7 +1759,11 @@
       "lit-lament",
       "lit-hymn"
     ],
-    "display_order": 11
+    "display_order": 11,
+    "related_articles_json": [
+      "lit-parallelism",
+      "lit-merism"
+    ]
   },
   {
     "id": "lit-apocalyptic",
@@ -1564,6 +1793,11 @@
       "lit-hyperbole",
       "lit-irony"
     ],
-    "display_order": 12
+    "display_order": 12,
+    "related_articles_json": [
+      "lit-chiasm",
+      "lit-irony",
+      "lit-hyperbole"
+    ]
   }
 ]
