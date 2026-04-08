@@ -113,7 +113,7 @@ describe('useChapterScroll', () => {
 
   it('resets scrollProgress on chapter change', () => {
     const { result, rerender } = renderHook(
-      ({ bookId, chapterNum }) =>
+      ({ bookId, chapterNum }: { bookId: string; chapterNum: number }) =>
         useChapterScroll(createOptions({ bookId, chapterNum })),
       { initialProps: { bookId: 'genesis', chapterNum: 1 } },
     );

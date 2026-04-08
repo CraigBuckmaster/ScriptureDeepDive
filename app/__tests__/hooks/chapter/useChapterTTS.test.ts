@@ -111,7 +111,7 @@ describe('useChapterTTS', () => {
 
   it('stops TTS on chapter change', () => {
     const { rerender } = renderHook(
-      ({ bookId, chapterNum }) =>
+      ({ bookId, chapterNum }: { bookId: string; chapterNum: number }) =>
         useChapterTTS(createOptions({ bookId, chapterNum })),
       { initialProps: { bookId: 'genesis', chapterNum: 1 } },
     );

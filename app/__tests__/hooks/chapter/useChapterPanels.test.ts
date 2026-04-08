@@ -73,7 +73,7 @@ const mockSections = [
 
 function createOptions(overrides = {}) {
   return {
-    chapterId: 1 as number | undefined,
+    chapterId: 'ch-1' as string | undefined,
     sections: mockSections as any,
     isPremium: false,
     bookId: 'genesis',

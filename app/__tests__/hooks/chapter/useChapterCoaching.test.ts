@@ -87,7 +87,7 @@ describe('useChapterCoaching', () => {
 
   it('resets dismissedTips when chapter changes', () => {
     const { result, rerender } = renderHook(
-      ({ bookId, chapterNum }) => useChapterCoaching(null, bookId, chapterNum),
+      ({ bookId, chapterNum }: { bookId: string; chapterNum: number }) => useChapterCoaching(null, bookId, chapterNum),
       { initialProps: { bookId: 'genesis', chapterNum: 1 } },
     );
 
@@ -104,7 +104,7 @@ describe('useChapterCoaching', () => {
 
   it('resets dismissedTips when bookId changes', () => {
     const { result, rerender } = renderHook(
-      ({ bookId, chapterNum }) => useChapterCoaching(null, bookId, chapterNum),
+      ({ bookId, chapterNum }: { bookId: string; chapterNum: number }) => useChapterCoaching(null, bookId, chapterNum),
       { initialProps: { bookId: 'genesis', chapterNum: 1 } },
     );
 

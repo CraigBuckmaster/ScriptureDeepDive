@@ -93,7 +93,7 @@ describe('useChapterHighlights', () => {
     mockGetHighlightsForChapter.mockResolvedValue([]);
 
     const { rerender } = renderHook(
-      ({ bookId, chapterNum }) => useChapterHighlights(bookId, chapterNum),
+      ({ bookId, chapterNum }: { bookId: string; chapterNum: number }) => useChapterHighlights(bookId, chapterNum),
       { initialProps: { bookId: 'genesis', chapterNum: 1 } },
     );
 

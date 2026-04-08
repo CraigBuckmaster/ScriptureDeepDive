@@ -16,7 +16,7 @@ interface SectionData extends Section {
 }
 
 interface UseChapterPanelsOptions {
-  chapterId: number | undefined;
+  chapterId: string | undefined;
   sections: SectionData[];
   isPremium: boolean;
   bookId: string;
