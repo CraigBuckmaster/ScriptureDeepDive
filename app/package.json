@@ -12,6 +12,10 @@
     "web": "node scripts/setup.js && expo start --web",
     "pre-update": "node scripts/pre-eas-update.js",
     "test": "jest",
+    "lint": "eslint src/ --max-warnings 0",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx}\"",
     "update": "node scripts/pre-eas-update.js && eas update --branch production"
   },
   "dependencies": {
@@ -60,9 +64,16 @@
     "@types/d3-hierarchy": "^3.1.7",
     "@types/jest": "^29.5.14",
     "@types/react": "~19.1.10",
+    "@typescript-eslint/eslint-plugin": "^8.58.1",
+    "@typescript-eslint/parser": "^8.58.1",
     "babel-preset-expo": "~54.0.10",
+    "eslint": "^8.57.1",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
     "jest": "^29.7.0",
     "jest-expo": "~54.0.17",
+    "prettier": "^3.8.1",
     "typescript": "^5.3.3"
   },
   "private": true

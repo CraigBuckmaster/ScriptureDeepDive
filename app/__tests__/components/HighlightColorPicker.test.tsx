@@ -1,4 +1,5 @@
 import React from 'react';
+import { Alert } from 'react-native';
 import { fireEvent } from '@testing-library/react-native';
 import { renderWithProviders } from '../helpers/renderWithProviders';
 import { HighlightColorPicker, HIGHLIGHT_COLORS } from '@/components/HighlightColorPicker';
@@ -8,6 +9,8 @@ jest.mock('@/utils/haptics', () => ({
   mediumImpact: jest.fn(),
   selectionFeedback: jest.fn(),
 }));
+
+jest.spyOn(Alert, 'alert');
 
 describe('HighlightColorPicker', () => {
   const mockOnSelect = jest.fn();
@@ -55,11 +58,24 @@ describe('HighlightColorPicker', () => {
     expect(getByText('Remove highlight')).toBeTruthy();
   });
 
-  it('calls onSelect with null when remove is pressed', () => {
+  it('shows confirmation dialog when remove is pressed', () => {
     const { getByText } = renderWithProviders(
       <HighlightColorPicker visible={true} currentColor="gold" onSelect={mockOnSelect} onClose={mockOnClose} />,
     );
     fireEvent.press(getByText('Remove highlight'));
+    expect(Alert.alert).toHaveBeenCalledWith(
+      'Remove Highlight',
+      'Remove this highlight?',
+      expect.arrayContaining([
+        expect.objectContaining({ text: 'Cancel', style: 'cancel' }),
+        expect.objectContaining({ text: 'Remove', style: 'destructive' }),
+      ]),
+    );
+
+    // Simulate pressing the destructive "Remove" button
+    const buttons = (Alert.alert as jest.Mock).mock.calls[0][2];
+    const removeBtn = buttons.find((b: any) => b.text === 'Remove');
+    removeBtn.onPress();
     expect(mockOnSelect).toHaveBeenCalledWith(null);
     expect(mockOnClose).toHaveBeenCalled();
   });

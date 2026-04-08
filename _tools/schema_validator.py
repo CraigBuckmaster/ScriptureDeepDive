@@ -785,6 +785,231 @@ def main():
             warn(f"...and {len(gaps) - 20} more verse gaps")
     print(f"  Verse gaps (warning only): {len(gaps)}")
 
+    # ── 16. Historical interpretations validation (#987) ──
+    hist_dir = CONTENT / 'historical_interpretations'
+    if hist_dir.is_dir():
+        print("\n--- 16. HISTORICAL INTERPRETATIONS ---")
+
+        # Validate eras.json
+        eras_path = hist_dir / 'eras.json'
+        if eras_path.exists():
+            eras_data = json.loads(eras_path.read_text(encoding='utf-8'))
+            check("eras.json is list", isinstance(eras_data, list))
+            era_ids = set()
+            for i, era in enumerate(eras_data):
+                for key in ('id', 'name', 'date_range', 'description', 'display_order'):
+                    check(f"era [{i}] has '{key}'", key in era,
+                          f"era {era.get('id', f'index {i}')} missing '{key}'")
+                if 'id' in era:
+                    era_ids.add(era['id'])
+            print(f"  eras: {len(eras_data)}")
+        else:
+            era_ids = set()
+            check("eras.json exists", False, "file not found")
+
+        # Validate interpretation files
+        interp_dir = hist_dir / 'interpretations'
+        interp_files = sorted(interp_dir.glob('*.json')) if interp_dir.is_dir() else []
+        total_interps = 0
+        for json_file in interp_files:
+            try:
+                entries = json.loads(json_file.read_text(encoding='utf-8'))
+            except json.JSONDecodeError as e:
+                check(f"{json_file.name} valid JSON", False, str(e))
+                continue
+            check(f"{json_file.name} is list", isinstance(entries, list))
+            if not isinstance(entries, list):
+                continue
+            for j, entry in enumerate(entries):
+                total_interps += 1
+                for key in ('id', 'verse_ref', 'era', 'author', 'interpretation'):
+                    check(f"{json_file.stem} entry [{j}] has '{key}'", key in entry,
+                          f"entry {entry.get('id', f'index {j}')} missing '{key}'")
+                # era referential integrity
+                era_val = entry.get('era')
+                if era_val and era_ids:
+                    check(f"{json_file.stem} entry [{j}] era valid",
+                          era_val in era_ids,
+                          f"'{era_val}' not in eras.json")
+        print(f"  interpretation files: {len(interp_files)}")
+        print(f"  total entries: {total_interps}")
+
+    # ── 17. Interlinear data validation (#972) ──
+    interlinear_dir = CONTENT / 'interlinear'
+    if interlinear_dir.is_dir():
+        print("\n--- 17. INTERLINEAR DATA ---")
+
+        # OT books use H (Hebrew), NT books use G (Greek)
+        nt_books = {
+            'matthew', 'mark', 'luke', 'john', 'acts', 'romans',
+            '1_corinthians', '2_corinthians', 'galatians', 'ephesians',
+            'philippians', 'colossians', '1_thessalonians', '2_thessalonians',
+            '1_timothy', '2_timothy', 'titus', 'philemon', 'hebrews',
+            'james', '1_peter', '2_peter', '1_john', '2_john', '3_john',
+            'jude', 'revelation',
+        }
+        strongs_re = re.compile(r'^[HG]\d{1,5}$')
+        required_fields = ('ch', 'v', 'pos', 'original', 'transliteration', 'strongs', 'morphology', 'gloss')
+
+        interlinear_files = sorted(interlinear_dir.glob('*.json'))
+        check("Interlinear files exist", len(interlinear_files) > 0,
+              "no JSON files in content/interlinear/")
+        total_words = 0
+        total_schema_issues = 0
+        total_strongs_issues = 0
+        total_empty_original = 0
+
+        for json_file in interlinear_files:
+            book_name = json_file.stem
+            expected_prefix = 'G' if book_name in nt_books else 'H'
+
+            try:
+                data = json.loads(json_file.read_text(encoding='utf-8'))
+            except (json.JSONDecodeError, UnicodeDecodeError) as e:
+                check(f"interlinear {json_file.name} valid JSON/UTF-8", False, str(e))
+                continue
+
+            check(f"interlinear {json_file.name} is list", isinstance(data, list))
+            if not isinstance(data, list):
+                continue
+
+            total_words += len(data)
+            check(f"interlinear {json_file.name} non-empty", len(data) > 0)
+
+            # Validate word entries (sample first 200 + last 50 for speed on large files)
+            sample = data[:200] + data[-50:] if len(data) > 250 else data
+            for i, word in enumerate(sample):
+                idx = i if i < 200 else len(data) - 50 + (i - 200)
+                # Required fields
+                for key in required_fields:
+                    if key not in word:
+                        total_schema_issues += 1
+                        if total_schema_issues <= 5:
+                            check(f"interlinear {book_name} word [{idx}] has '{key}'", False)
+
+                # strongs format
+                s = word.get('strongs', '')
+                if s and not strongs_re.match(s):
+                    total_strongs_issues += 1
+                    if total_strongs_issues <= 5:
+                        check(f"interlinear {book_name} word [{idx}] strongs format", False,
+                              f"got '{s}'")
+
+                # strongs prefix matches testament
+                if s and s[0] != expected_prefix:
+                    total_strongs_issues += 1
+                    if total_strongs_issues <= 5:
+                        check(f"interlinear {book_name} word [{idx}] strongs prefix",
+                              False, f"expected '{expected_prefix}' got '{s[0]}'")
+
+                # original text should not be empty
+                if not word.get('original', '').strip():
+                    total_empty_original += 1
+
+            # Chapter continuity: check chapters are sequential
+            chapters = sorted(set(w.get('ch', 0) for w in data))
+            if chapters:
+                expected_chapters = list(range(chapters[0], chapters[-1] + 1))
+                missing = set(expected_chapters) - set(chapters)
+                if missing:
+                    check(f"interlinear {book_name} no missing chapters", False,
+                          f"missing chapters: {sorted(missing)[:10]}")
+
+        check("Interlinear schema issues", total_schema_issues == 0,
+              f"{total_schema_issues} missing fields")
+        check("Interlinear strongs format", total_strongs_issues == 0,
+              f"{total_strongs_issues} invalid strongs")
+        if total_empty_original > 0:
+            warn(f"Interlinear empty 'original' fields: {total_empty_original}")
+
+        print(f"  interlinear files: {len(interlinear_files)}")
+        print(f"  total words: {total_words}")
+
+    # ── 18. Verse data completeness validation (#981) ──
+    verses_dir = CONTENT / 'verses'
+    if verses_dir.is_dir():
+        print("\n--- 18. VERSE DATA COMPLETENESS ---")
+
+        translations = sorted(d.name for d in verses_dir.iterdir() if d.is_dir())
+        check("Verse translations exist", len(translations) >= 2,
+              f"got {len(translations)}: {translations}")
+
+        # Build expected book list from meta/books.json
+        expected_books = {b['id']: b['total_chapters'] for b in books if b.get('is_live')}
+        verse_required_fields = ('ref', 'text', 'book', 'ch', 'v')
+
+        # Bundled translations must be complete; downloadable may be partial
+        translations_json = ROOT / 'app' / 'src' / 'db' / 'translations.json'
+        bundled_ids = set()
+        if translations_json.exists():
+            bundled_ids = {t['id'] for t in json.loads(translations_json.read_text(encoding='utf-8')) if t.get('bundled')}
+
+        for trans in translations:
+            trans_dir = verses_dir / trans
+            trans_files = {f.stem: f for f in trans_dir.glob('*.json')}
+
+            is_bundled = trans in bundled_ids
+
+            # Check all 66 books present
+            missing_books = set(expected_books.keys()) - set(trans_files.keys())
+            check(f"verses/{trans} has all {len(expected_books)} books",
+                  len(missing_books) == 0,
+                  f"missing: {sorted(missing_books)[:10]}")
+
+            total_verses = 0
+            schema_issues = 0
+            empty_text = 0
+            encoding_issues = 0
+
+            for book_id, json_path in sorted(trans_files.items()):
+                try:
+                    data = json.loads(json_path.read_text(encoding='utf-8'))
+                except UnicodeDecodeError as e:
+                    encoding_issues += 1
+                    check(f"verses/{trans}/{book_id} UTF-8", False, str(e))
+                    continue
+                except json.JSONDecodeError as e:
+                    check(f"verses/{trans}/{book_id} valid JSON", False, str(e))
+                    continue
+
+                if not isinstance(data, list):
+                    check(f"verses/{trans}/{book_id} is list", False)
+                    continue
+
+                total_verses += len(data)
+
+                # Check no empty verse arrays
+                check(f"verses/{trans}/{book_id} non-empty", len(data) > 0)
+
+                # Chapter count matches expected
+                if book_id in expected_books:
+                    chapters_found = set(v.get('ch', 0) for v in data)
+                    expected_ch = expected_books[book_id]
+                    if len(chapters_found) != expected_ch:
+                        if is_bundled:
+                            check(f"verses/{trans}/{book_id} has {expected_ch} chapters",
+                                  False, f"got {len(chapters_found)}")
+                        else:
+                            warn(f"verses/{trans}/{book_id} has {len(chapters_found)}/{expected_ch} chapters (downloadable)")
+
+                # Sample field validation (check first + last 20 verses)
+                sample = data[:20] + data[-20:] if len(data) > 40 else data
+                for v in sample:
+                    for key in verse_required_fields:
+                        if key not in v:
+                            schema_issues += 1
+                    if not v.get('text', '').strip():
+                        empty_text += 1
+
+            check(f"verses/{trans} schema", schema_issues == 0,
+                  f"{schema_issues} missing fields")
+            if empty_text > 0:
+                warn(f"verses/{trans} has {empty_text} empty text fields (sampled)")
+            if encoding_issues > 0:
+                check(f"verses/{trans} encoding", False,
+                      f"{encoding_issues} files with encoding issues")
+            print(f"  {trans}: {len(trans_files)} books, {total_verses} verses")
+
     # ── Summary ──
     print(f"\n{'='*60}")
     print(f"RESULTS: {passed} passed, {failed} failed, {warnings} warnings")
