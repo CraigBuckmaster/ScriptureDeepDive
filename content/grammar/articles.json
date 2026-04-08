@@ -810,5 +810,127 @@
       "grk-aorist"
     ],
     "display_order": 6
+  },
+  {
+    "id": "grk-indicative",
+    "title": "Indicative Mood",
+    "language": "greek",
+    "category": "verbs",
+    "summary": "The mood of assertion and reality — used to make factual statements, ask real questions, and describe events presented as actual occurrences.",
+    "body": "The Indicative is the mood of reality. It presents the speaker's words as statements of fact, real questions, or assertions about what is, was, or will be the case. It is the only Greek mood that carries full time significance — Present, Aorist, Imperfect, Perfect, Pluperfect, and Future all function with time reference in the Indicative.\n\n## How to Recognize It\n\nThe Indicative has no special mood marker — it is the default, unmarked mood. Its forms are distinguished by tense stems, augments, and endings that students learn as their baseline verb paradigms. All six Greek tenses appear in the Indicative.\n\n## What It Expresses\n\n**Declarative statements:** \"God loved the world\" — presenting an assertion as fact. **Real questions:** \"Do you believe?\" — asking about actual reality. **Conditional reality:** In first-class conditions (εἰ + Indicative), the speaker assumes the condition is true for the sake of argument: \"If you are the Son of God\" assumes the truth of the premise.\n\n## Why It Matters for Interpretation\n\nThe Indicative is significant precisely because departures from it are meaningful. When a speaker switches from Indicative to Subjunctive, they move from asserting reality to expressing possibility. In conditional sentences, the mood of the protasis (\"if\" clause) signals how the speaker regards the condition — the Indicative presents it as real or assumed, while other moods present it as hypothetical. Recognizing the Indicative as the mood of assertion helps readers understand what biblical authors present as settled fact versus possibility or wish.",
+    "examples": [
+      {
+        "ref": "John 3:16",
+        "text": "ἠγάπησεν ὁ θεός (ēgapēsen ho theos) — 'God loved'",
+        "explanation": "Aorist Indicative — a factual assertion presented as reality. The Indicative mood declares God's love as an actual historical act, not a wish or possibility."
+      },
+      {
+        "ref": "Matt 4:3",
+        "text": "εἰ υἱὸς εἶ τοῦ θεοῦ (ei huios ei tou theou) — 'if you are the Son of God'",
+        "explanation": "First-class condition with εἰ + Indicative — the tempter frames the premise as assumed reality. The Indicative does not express doubt but takes the condition as given for argument's sake."
+      },
+      {
+        "ref": "John 11:25",
+        "text": "ἐγώ εἰμι ἡ ἀνάστασις (egō eimi hē anastasis) — 'I am the resurrection'",
+        "explanation": "Present Indicative — Jesus asserts his identity as a statement of present reality. The Indicative makes this a declaration of fact, not a metaphor or aspiration."
+      }
+    ],
+    "related_articles": [
+      "grk-subjunctive",
+      "grk-conditionals"
+    ],
+    "display_order": 7
+  },
+  {
+    "id": "grk-subjunctive",
+    "title": "Subjunctive Mood",
+    "language": "greek",
+    "category": "verbs",
+    "summary": "The mood of possibility, purpose, and exhortation — used when the speaker presents action as potential, intended, or uncertain rather than asserted as fact.",
+    "body": "The Subjunctive is the mood of projected possibility. It does not assert that something is happening (Indicative) or command it to happen (Imperative) — it presents action as something that may, might, or should happen, or that is intended or purposed.\n\n## How to Recognize It\n\nThe Subjunctive uses a lengthened connecting vowel — where the Indicative has ο/ε, the Subjunctive has ω/η. So λύω (Indicative \"I loose\") becomes λύω (Subjunctive \"I might loose\") — the forms can look identical in first person singular, but context and accompanying particles distinguish them. The Subjunctive appears only in Present and Aorist tenses.\n\n## Common Constructions\n\n**Purpose clauses** with ἵνα (hina, \"in order that\"): \"He came in order that he might save\" — the saving is the intended purpose, not yet accomplished. **Conditional clauses** with ἐάν (ean, \"if\"): third-class conditions present the premise as possible but uncertain. **Hortatory subjunctive** in first person plural: \"let us love one another\" — an exhortation, not a command. **Prohibitions** with μή (mē) + Aorist Subjunctive: \"do not begin to...\" — prohibiting the initiation of an action.\n\n## Why It Matters for Interpretation\n\nThe Subjunctive reveals purpose and contingency. Purpose clauses with ἵνα are among the most theologically significant constructions in the New Testament — they express why God acts, why Jesus came, why the Spirit was sent. Distinguishing Subjunctive from Indicative in conditional sentences determines whether the author treats a condition as real or merely possible, which directly affects doctrinal interpretation.",
+    "examples": [
+      {
+        "ref": "John 3:16",
+        "text": "ἵνα πᾶς ὁ πιστεύων... μὴ ἀπόληται (hina pas ho pisteuōn... mē apolētai)",
+        "explanation": "Purpose clause: 'in order that everyone believing might not perish.' The Subjunctive ἀπόληται presents non-perishing as the intended purpose of God's gift, framed as projected outcome."
+      },
+      {
+        "ref": "1 John 4:7",
+        "text": "ἀγαπῶμεν (agapōmen) — 'let us love'",
+        "explanation": "Hortatory Subjunctive — not a command from superior to inferior but an inclusive exhortation. John includes himself in the call: 'let us love one another.'"
+      },
+      {
+        "ref": "1 Cor 11:28",
+        "text": "δοκιμαζέτω... καὶ ἐσθιέτω (but note ἵνα μή...): ἵνα μὴ κρίμα (hina mē krima)",
+        "explanation": "Purpose with negation — 'in order that judgment might not come.' The Subjunctive frames avoidance of judgment as the purpose behind self-examination."
+      }
+    ],
+    "related_articles": [
+      "grk-indicative",
+      "grk-imperative",
+      "grk-conditionals"
+    ],
+    "display_order": 8
+  },
+  {
+    "id": "grk-optative",
+    "title": "Optative Mood",
+    "language": "greek",
+    "category": "verbs",
+    "summary": "The mood of wish and remote possibility — rare in the New Testament, used for prayers, benedictions, and emphatic denials (μὴ γένοιτο).",
+    "body": "The Optative is the mood of wish and remote possibility. By New Testament times it was fading from everyday Greek, making its approximately 70 occurrences in the New Testament deliberate stylistic choices rather than common grammar.\n\n## How to Recognize It\n\nThe Optative is identified by the mood marker ι (iota) or the diphthong οι (oi) inserted before the ending: λύοι (luoi, \"may he loose\"), λύσαι (lusai, \"may he loose\" — Aorist). The distinctive endings -οιμι, -οις, -οι (active) are relatively easy to spot once learned.\n\n## What It Expresses\n\n**Wish or prayer:** The voluntative Optative expresses a desire: \"May the Lord bless you.\" **Remote possibility:** More remote than the Subjunctive — \"if this should happen\" (unlikely). **Emphatic denial:** Paul's famous μὴ γένοιτο (mē genoito, \"may it never be!\" or \"absolutely not!\") uses the Optative to express the strongest possible rejection of an idea.\n\n## Why It Matters for Interpretation\n\nThe Optative's rarity makes each occurrence significant. Paul's μὴ γένοιτο appears 15 times in his letters, always at moments of intense theological argumentation where he rejects a false conclusion with maximum rhetorical force. Benedictions using the Optative (\"May the God of peace sanctify you,\" 1 Thess 5:23) frame the blessing as a genuine wish or prayer rather than a promise or prediction — the speaker is asking, not declaring.",
+    "examples": [
+      {
+        "ref": "Rom 6:2",
+        "text": "μὴ γένοιτο (mē genoito) — 'may it never be!'",
+        "explanation": "Paul's signature Optative of emphatic denial — the strongest way to reject a conclusion in Greek. 'Should we sin so grace may increase? Absolutely not!' The Optative carries the force of horrified rejection."
+      },
+      {
+        "ref": "1 Thess 5:23",
+        "text": "ἁγιάσαι ὑμᾶς (hagiasai humas) — 'may he sanctify you'",
+        "explanation": "An Optative of wish/prayer — Paul expresses his desire that God sanctify the Thessalonians. This is prayer language, not a guarantee or command."
+      },
+      {
+        "ref": "Luke 1:38",
+        "text": "γένοιτό μοι (genoito moi) — 'may it be to me'",
+        "explanation": "Mary's response to Gabriel uses the Optative of wish — 'let it happen to me according to your word.' The mood expresses willing acceptance framed as a prayer of consent."
+      }
+    ],
+    "related_articles": [
+      "grk-subjunctive",
+      "grk-indicative"
+    ],
+    "display_order": 9
+  },
+  {
+    "id": "grk-imperative",
+    "title": "Imperative Mood",
+    "language": "greek",
+    "category": "verbs",
+    "summary": "The mood of command — used for direct orders, requests, and prayers, with tense choice (Present vs. Aorist) signaling whether the action should be ongoing or initiated.",
+    "body": "The Greek Imperative is the mood of command and request. It directs someone to act — whether as an authoritative order, a polite request, or a prayer to God.\n\n## How to Recognize It\n\nThe Imperative has its own distinctive endings: second person singular -ε (active) or -ου (middle), second person plural -ετε or -εσθε. Third person forms also exist (\"let him/them...\"), using -έτω and -έτωσαν. The Imperative appears only in Present and Aorist tenses — no Future, Perfect, or Imperfect Imperative exists.\n\n## Tense Significance\n\nThe choice between **Present Imperative** and **Aorist Imperative** is crucial. The Present Imperative commands ongoing or repeated action: \"keep asking\" (αἰτεῖτε, aiteite). The Aorist Imperative commands a specific, discrete action: \"ask\" (αἰτήσατε, aitēsate) — do this now, as a single act. Prohibitions follow a different pattern: μή + Present Imperative means \"stop doing\" something already in progress, while μή + Aorist Subjunctive means \"don't start doing\" something.\n\n## Why It Matters for Interpretation\n\nThe Present/Aorist distinction in commands directly affects application. When Jesus says \"keep asking, keep seeking, keep knocking\" (Matt 7:7) using Present Imperatives, the tense demands persistence — not a one-time request but continuous, ongoing prayer. When he says \"repent\" (μετανοήσατε, metanoēsate) with an Aorist Imperative, it calls for a decisive act of turning. The prohibition pattern is equally important: \"stop worrying\" (μὴ μεριμνᾶτε, Present) implies the audience was already worrying.",
+    "examples": [
+      {
+        "ref": "Matt 7:7",
+        "text": "αἰτεῖτε... ζητεῖτε... κρούετε (aiteite... zēteite... krouete) — 'ask... seek... knock'",
+        "explanation": "Three Present Imperatives — the tense demands ongoing, persistent action. Jesus commands continuous asking, seeking, and knocking, not a single attempt."
+      },
+      {
+        "ref": "Matt 6:9",
+        "text": "ἁγιασθήτω (hagiasthētō) — 'let it be hallowed'",
+        "explanation": "Third person Aorist Imperative passive — 'let your name be sanctified.' The Aorist frames this as a decisive request for God's name to be honored, while the passive acknowledges God as the one who ultimately hallows his own name."
+      },
+      {
+        "ref": "Matt 6:25",
+        "text": "μὴ μεριμνᾶτε (mē merimnate) — 'do not worry'",
+        "explanation": "μή + Present Imperative — 'stop worrying.' The Present tense implies the audience was already engaged in anxiety. Jesus commands them to cease an action already in progress."
+      }
+    ],
+    "related_articles": [
+      "grk-subjunctive",
+      "grk-indicative",
+      "heb-imperative"
+    ],
+    "display_order": 10
   }
 ]
