@@ -240,8 +240,9 @@ def main():
     check("543 timeline entries", tl_count == 543, f"got {tl_count}")
 
     # Eras table (#1115) — one row per era from era_config
+    # 17 = 11 OT + intertestamental + 5 NT subdivisions (#1114)
     era_count = q1(cur, "SELECT COUNT(*) FROM eras")
-    check("12 eras", era_count == 12, f"got {era_count}")
+    check("17 eras", era_count == 17, f"got {era_count}")
 
     # Every era must have name and hex
     missing_name = q(cur, "SELECT id FROM eras WHERE name IS NULL OR name = ''")
