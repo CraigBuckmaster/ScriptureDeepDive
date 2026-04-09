@@ -22,6 +22,8 @@ import BottomSheet, { BottomSheetScrollView } from '@gorhom/bottom-sheet';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { getAllTimelineEntries } from '../db/content';
+import { useContentImages } from '../hooks/useContentImages';
+import { ContentImageGallery } from '../components/ContentImageGallery';
 import { EraFilterBar } from '../components/tree/EraFilterBar';
 import { BadgeChip } from '../components/BadgeChip';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
@@ -74,6 +76,7 @@ function TimelineScreen() {
   const [filterEra, setFilterEra] = useState<string>('all');
   const [filters, dispatchFilter] = useReducer(filterReducer, INITIAL_FILTERS);
   const [selectedEvent, setSelectedEvent] = useState<PositionedEvent | null>(null);
+  const { images: eventImages } = useContentImages('timeline', selectedEvent?.id);
   const timelineScrollRef = useRef<ScrollView>(null);
   const sheetRef = useRef<BottomSheet>(null);
   const { width: screenWidth } = useWindowDimensions();
@@ -357,6 +360,7 @@ function TimelineScreen() {
                 <View style={[styles.eraAccentBar, { backgroundColor: eras[selectedEvent.era] ?? base.gold }]} />
               )}
               {selectedEvent.era && <BadgeChip label={eraNames[selectedEvent.era] ?? selectedEvent.era} color={eras[selectedEvent.era] ?? base.gold} />}
+              {eventImages.length > 0 && <ContentImageGallery images={eventImages} />}
               <Text style={[styles.detailTitle, { color: base.text }]}>
                 {selectedEvent.name}
               </Text>

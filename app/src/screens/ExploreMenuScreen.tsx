@@ -118,10 +118,8 @@ function ExploreMenuScreen() {
   useEffect(() => {
     const urls: string[] = [];
     for (const section of SECTIONS.slice(0, 2)) {
-      const sectionImages = imageRegistry[section.id];
-      if (!sectionImages) continue;
       for (const f of section.features.slice(0, 3)) {
-        const fi = sectionImages[f.screen];
+        const fi = imageRegistry[f.screen];
         if (fi?.images?.[0]) urls.push(fi.images[0].url);
       }
     }
@@ -153,17 +151,9 @@ function ExploreMenuScreen() {
     setActiveJump((prev) => prev === sectionId ? null : sectionId);
   }, []);
 
-  // ── Image lookup helpers ────────────────────────────────────
-  const getFeatureImages = useCallback((sectionId: string, screenName: string) => {
-    return imageRegistry[sectionId]?.[screenName];
-  }, [imageRegistry]);
-
-  const getRecImages = useCallback((screenName: string) => {
-    // Search all sections for the screen's images
-    for (const sectionImages of Object.values(imageRegistry)) {
-      if (sectionImages[screenName]) return sectionImages[screenName];
-    }
-    return undefined;
+  // ── Image lookup (flat registry keyed by screen name) ──────
+  const getScreenImages = useCallback((screenName: string) => {
+    return imageRegistry[screenName];
   }, [imageRegistry]);
 
   const showStartHere = chaptersRead !== null && chaptersRead < 5 && !startHereDismissed;
@@ -221,7 +211,7 @@ function ExploreMenuScreen() {
               contentContainerStyle={styles.carouselContent}
             >
               {recommendations.map((rec, i) => {
-                const recImgData = getRecImages(rec.screen);
+                const recImgData = getScreenImages(rec.screen);
                 return (
                   <RecommendedCard
                     key={`rec-${i}`}
@@ -258,7 +248,7 @@ function ExploreMenuScreen() {
                 snapToInterval={CARD_WIDTH + spacing.sm}
               >
                 {section.features.map((f, cardIndex) => {
-                  const imgData = getFeatureImages(section.id, f.screen);
+                  const imgData = getScreenImages(f.screen);
                   return (
                     <FeatureCard
                       key={f.screen}

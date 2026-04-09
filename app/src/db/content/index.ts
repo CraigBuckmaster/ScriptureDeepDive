@@ -55,6 +55,7 @@ export {
 export {
   getGrammarArticle, getGrammarArticles, searchGrammarArticles,
 } from './grammar';
+export { getContentImages, getFeaturedImages } from './images';
 export { searchVerses, searchPeople } from './search';
 export { getContentStats } from './stats';
 export type { ContentStats } from './stats';

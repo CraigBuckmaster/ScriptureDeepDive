@@ -9,6 +9,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { ScreenNavProp, ScreenRouteProp } from '../navigation/types';
 import { usePersonDetail } from '../hooks/usePersonDetail';
+import { useContentImages } from '../hooks/useContentImages';
+import { ContentImageGallery } from '../components/ContentImageGallery';
 import { BadgeChip } from '../components/BadgeChip';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
@@ -23,6 +25,7 @@ function PersonDetailScreen() {
   const route = useRoute<ScreenRouteProp<'Explore', 'PersonDetail'>>();
   const { personId } = route.params ?? {};
   const { person, parents, children, spouses, isLoading } = usePersonDetail(personId);
+  const { images: contentImages } = useContentImages('people', personId);
 
   if (isLoading || !person) {
     return (
@@ -54,6 +57,8 @@ function PersonDetailScreen() {
         />
 
         {eraLabel ? <BadgeChip label={eraLabel} color={eraColor} /> : null}
+
+        {contentImages.length > 0 && <ContentImageGallery images={contentImages} />}
 
         <View style={[styles.divider, { backgroundColor: base.border }]} />
 

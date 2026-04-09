@@ -631,6 +631,23 @@ CREATE INDEX IF NOT EXISTS idx_grammar_language ON grammar_articles(language);
 CREATE INDEX IF NOT EXISTS idx_grammar_category ON grammar_articles(category);
 
 -- ══════════════════════════════════════════════════════════════
+-- CONTENT IMAGES (generic image table for any content type)
+-- ══════════════════════════════════════════════════════════════
+
+CREATE TABLE IF NOT EXISTS content_images (
+  id INTEGER PRIMARY KEY,
+  content_type TEXT NOT NULL,
+  content_id TEXT NOT NULL,
+  url TEXT NOT NULL,
+  caption TEXT,
+  credit TEXT,
+  display_order INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE INDEX IF NOT EXISTS idx_content_images
+  ON content_images(content_type, content_id);
+
+-- ══════════════════════════════════════════════════════════════
 -- NOTE: User tables (notes, bookmarks, preferences, highlights,
 -- reading progress, plans) live in a separate user.db managed by
 -- the app's userDatabase.ts migration system. They are NOT bundled
@@ -2020,6 +2037,98 @@ def populate_content_library(cur):
     return count
 
 
+def populate_content_images(cur):
+    """Populate content_images table by scanning content meta files for images[].
+
+    Follows the same pattern as archaeology — entries in content JSON files
+    can optionally include an images[] array. This function scans all content
+    types listed below and inserts any images found.
+
+    Archaeology keeps its own archaeology_images table (no migration needed).
+
+    Part of Epic #1071 (#1085).
+    """
+    CONTENT_SOURCES = [
+        # (content_type, file_path, entries_extractor, id_field)
+        ('people', META / 'people.json', lambda d: d.get('people', []), 'id'),
+        ('timeline', META / 'timelines.json', lambda d: d if isinstance(d, list) else [], 'id'),
+        ('map_story', META / 'map-stories.json', lambda d: d if isinstance(d, list) else [], 'id'),
+        ('concept', META / 'concepts.json', lambda d: d if isinstance(d, list) else [], 'id'),
+        ('topic', META / 'topics.json', lambda d: d if isinstance(d, list) else [], 'id'),
+        ('prophecy', META / 'prophecy-chains.json', lambda d: d if isinstance(d, list) else [], 'id'),
+        ('thread', META / 'cross-refs.json', lambda d: d if isinstance(d, list) else [], 'id'),
+        ('harmony', META / 'synoptic.json', lambda d: d if isinstance(d, list) else [], 'id'),
+        ('word_study', META / 'word-studies.json', lambda d: d if isinstance(d, list) else [], 'id'),
+        ('scholar', META / 'scholar-bios.json', lambda d: list(d.values()) if isinstance(d, dict) else d, 'key'),
+        ('debate', META / 'debate-topics.json', lambda d: d if isinstance(d, list) else [], 'id'),
+        ('difficult', META / 'difficult-passages.json', lambda d: d if isinstance(d, list) else [], 'id'),
+        ('grammar', ROOT / 'content' / 'grammar' / 'articles.json', lambda d: d if isinstance(d, list) else [], 'id'),
+        ('time_travel', ROOT / 'content' / 'historical_interpretations' / 'eras.json', lambda d: d if isinstance(d, list) else [], 'id'),
+    ]
+
+    count = 0
+
+    for content_type, path, extractor, id_field in CONTENT_SOURCES:
+        if not path.exists():
+            continue
+        try:
+            data = _load_json(path)
+        except Exception:
+            continue
+
+        entries = extractor(data)
+        for entry in entries:
+            if not isinstance(entry, dict):
+                continue
+            content_id = entry.get(id_field)
+            if not content_id:
+                continue
+            images = entry.get('images')
+            if not images or not isinstance(images, list):
+                continue
+            for idx, img in enumerate(images):
+                if not isinstance(img, dict) or not img.get('url'):
+                    continue
+                cur.execute(
+                    'INSERT INTO content_images '
+                    '(content_type, content_id, url, caption, credit, display_order) '
+                    'VALUES (?, ?, ?, ?, ?, ?)',
+                    (content_type, content_id, img['url'],
+                     img.get('caption'), img.get('credit'), idx)
+                )
+                count += 1
+
+    # Life topics: scan individual topic JSON files
+    topics_dir = ROOT / 'content' / 'life_topics' / 'topics'
+    if topics_dir.exists():
+        for topic_file in sorted(topics_dir.glob('*.json')):
+            try:
+                topic = _load_json(topic_file)
+            except Exception:
+                continue
+            if not isinstance(topic, dict):
+                continue
+            topic_id = topic.get('id')
+            if not topic_id:
+                continue
+            images = topic.get('images')
+            if not images or not isinstance(images, list):
+                continue
+            for idx, img in enumerate(images):
+                if not isinstance(img, dict) or not img.get('url'):
+                    continue
+                cur.execute(
+                    'INSERT INTO content_images '
+                    '(content_type, content_id, url, caption, credit, display_order) '
+                    'VALUES (?, ?, ?, ?, ?, ?)',
+                    ('life_topic', topic_id, img['url'],
+                     img.get('caption'), img.get('credit'), idx)
+                )
+                count += 1
+
+    return count
+
+
 def build_fts(cur):
     """Populate FTS5 indexes."""
     cur.execute('INSERT INTO verses_fts(verses_fts) VALUES("rebuild")')
@@ -2285,6 +2394,9 @@ def main():
 
     n = populate_grammar_articles(cur)
     print(f"  [OK] grammar_articles: {n} rows")
+
+    n = populate_content_images(cur)
+    print(f"  [OK] content_images: {n} rows")
 
     n = compute_difficulty(cur)
     print(f"  [OK] difficulty scores: {n} chapters rated")
